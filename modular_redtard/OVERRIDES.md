@@ -18,6 +18,9 @@
 | `/mob/living/carbon/update_health_hud(shown_health_amount)` | `hud/rogue_hud_bridges.dm` | `code/modules/mob/living/carbon/carbon.dm` | Если под `HUD_MOB_HEALTH` лежит `/atom/movable/screen/healths/rogue`: шлёт `COMSIG_CARBON_UPDATING_HEALTH_HUD` как оригинал, рисует индикатор Азура, обновляет куклу. Иначе `..()`. | Сигнал и его флаг `COMPONENT_OVERRIDE_HEALTH_HUD`; `/mob/living/carbon/human/update_health_hud` по-прежнему зовёт `..()` |
 | `/mob/living/update_stamina_hud(shown_stamina_loss)` | `hud/rogue_hud_bridges.dm` | `code/modules/mob/living/living.dm` | Если под `HUD_MOB_STAMINA` лежит `/atom/movable/screen/stamina/rogue`: шкала Азура. Иначе `..()`. | Формулу порога (`maxHealth - crit_threshold`) |
 | `/atom/movable/screen/plane_master/generate_relay_to(target_plane, relay_loc, show_to, blend_override, relay_layer)` | `hud/rogue_hud_bridges.dm` | `code/_onclick/hud/rendering/render_plate.dm` | Если якорь не передан (путь `add_relay_to()`: эмиссивы, параллакс), берёт якорь группы (`home.relay_loc`, с префиксом карты для попапов) вместо жёсткого `"1,1"`, затем `..()` | Что оригинал по-прежнему подставляет `"1,1"` по умолчанию и что `generate_render_relays()` читает `home.relay_loc` |
+| `/datum/map_config/LoadConfig(filename, error_if_missing)` | `maps/era.dm` | `code/datums/map_config.dm` | `..()`, затем читает ключ `era` из того же JSON; неизвестное значение пишет в лог и грузит карту как modern. Возвращает то, что вернул оригинал | Что оригинал по-прежнему возвращает декодированный JSON (проверка на истину в `load_map_config`) |
+| `/datum/controller/subsystem/mapping/PreInit()` | `maps/pool.dm` | `code/controllers/subsystem/mapping.dm` | `..()`; если `next_map.json` нет (`current_map.defaulted`), загружает случайную votable medieval-карту из `config.maplist` | Что `next_map.json` по-прежнему читается первым, и что у оригинального `Initialize()` ветка `defaultmap` не срабатывает для медиевал-карты |
+| `/datum/job/map_check()` | `maps/pool.dm` | `code/modules/jobs/job_types/_job.dm` | `..()`; если эпоха роли не `any` и не совпадает с эпохой карты, роль отключается (`FALSE`) | Сигнатуру `map_check()` и то, что `setup_occupations()` вызывает её при инициализации SSjob |
 | `/datum/mood/update_mood_icon()` | `hud/rogue_hud_bridges.dm` | `code/datums/mood.dm` | Если под `HUD_MOB_MOOD` лежит `/atom/movable/screen/mood/rogue`: спрайт Азура по `mood_level`, без тонировки по рассудку и без спец-иконок мудлетов. Иначе `..()`. | Шкалу `MOOD_LEVEL_*` (1..9) |
 | `/datum/mood/modify_hud(datum/source)` | `hud/rogue_hud_bridges.dm` | `code/datums/mood.dm` | `..()`, затем на рогатаунном HUD сразу `update_mood_icon()`, чтобы снять синюю тонировку, которую ставит оригинал. | Что оригинал по-прежнему добавляет элемент через `add_screen_object` |
 
@@ -27,6 +30,12 @@
 |---|---|---|---|
 | `/mob/living/carbon/human/hud_type` | `hud/human_hud_switch.dm` | `/datum/hud/human` (`human_defines.dm`) | `/datum/hud/rogue/human` |
 | `/datum/plane_master_group/main/relay_loc` | `hud/rogue_hud_bridges.dm` | `"1,1"` (`plane_master_group.dm`) | `"SCREEN_SOUTHWEST"`: копии плейнов якорятся в угол плейна, а не вида; без бордюра это тот же тайл. Без этого левый HUD сдвигает весь мир вправо |
+
+## Ступень 4 — дополнение (пул карт)
+
+| `/datum/job/var/map_era` (новая переменная) | `maps/era.dm` | — | `"modern"`: эпоха роли, по умолчанию modern |
+| `/datum/map_config/var/map_era` (новая переменная) | `maps/era.dm` | — | `"modern"`: эпоха карты, читается из JSON |
+| `/datum/job/assistant/map_era` | `maps/era.dm` | `"modern"` | `"any"`: тестовый Ассистент доступен на любой карте |
 
 ## Ступень 3 — новые процедуры на типах ТГ
 

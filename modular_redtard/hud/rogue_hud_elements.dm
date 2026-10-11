@@ -1,8 +1,6 @@
-/// TRUE if some TG system (mood, crafting) listens for clicks on this element
 /atom/movable/screen/proc/rogue_has_click_listener()
 	return !isnull(_listen_lookup?[COMSIG_SCREEN_ELEMENT_CLICK])
 
-/// Azure's left panel behind the HUD columns, without the border Azure draws around the map
 /atom/movable/screen/rogue/panel
 	name = " "
 	icon = ROGUE_HUD_ICON_PANEL
@@ -12,7 +10,6 @@
 	layer = ROGUE_BACKHUD_LAYER
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
-/// TG's inventory toggle with Azure's bag sprite, in the bottom-left corner: shows and hides the inventory block
 /atom/movable/screen/human/toggle/rogue
 	name = "inventory"
 	icon = ROGUE_HUD_ICON
@@ -25,7 +22,6 @@
 	. = ..()
 	icon_state = base_icon_state
 
-/// TG's toggle reads usr.client unchecked; the same flip, safe for client-less mobs
 /atom/movable/screen/human/toggle/rogue/Click(location, control, params)
 	var/datum/hud/viewer_hud = usr.hud_used
 	if(!viewer_hud)
@@ -49,7 +45,6 @@
 	layer = ROGUE_HUD_LAYER + 0.1
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
-/// Azure's combat mode button, driving TG combat mode
 /atom/movable/screen/combattoggle/rogue
 	name = "combat mode"
 	icon = ROGUE_HUD_ICON
@@ -78,7 +73,6 @@
 		return
 	return ..()
 
-/// Azure's weapon intent selector. The intents themselves come with the combat port, which handles COMSIG_MOB_ROGUE_HUD_INTENT_CLICK.
 /atom/movable/screen/rogue/weapon_intents
 	name = "intent"
 	icon = ROGUE_HUD_ICON_INTENT_BASE
@@ -99,7 +93,6 @@
 		return
 	rogue_hud_not_implemented(user)
 
-/// Azure's hit map: four 32x16 cells on the right half of the 128x32 base, numbered left to right, top to bottom
 /atom/movable/screen/rogue/weapon_intents/proc/get_index_at_loc(icon_x, icon_y)
 	if(icon_x <= 64)
 		return null
@@ -107,7 +100,6 @@
 		return icon_y > 16 ? 1 : 3
 	return icon_y > 16 ? 2 : 4
 
-/// Azure's stress indicator, showing TG mood
 /atom/movable/screen/mood/rogue
 	name = "sanity"
 	icon = ROGUE_HUD_ICON
@@ -131,7 +123,6 @@
 	SIGNAL_HANDLER
 	update_from_mood()
 
-/// Picks Azure's stress sprite for the owner's TG mood level and state
 /atom/movable/screen/mood/rogue/proc/update_from_mood()
 	var/mob/living/owner = get_mob()
 	color = null
@@ -154,7 +145,6 @@
 			state = "mood_sick"
 	icon_state = state
 
-/// Azure's "life" indicator: blood loss, toxin and oxygen damage
 /atom/movable/screen/healths/rogue
 	name = "life"
 	icon = ROGUE_HUD_ICON_HEAT
@@ -172,7 +162,6 @@
 		return
 	user.check_self_for_injuries()
 
-/// Azure's update_health_hud body for the bloods element
 /atom/movable/screen/healths/rogue/proc/update_for(mob/living/owner)
 	cut_overlays()
 	if(owner.stat == DEAD)
@@ -206,7 +195,6 @@
 		return "[prefix]80"
 	return "[prefix]100"
 
-/// Azure's fatigue bar, showing TG stamina damage
 /atom/movable/screen/stamina/rogue
 	icon = ROGUE_HUD_ICON_HEAT
 	icon_state = "stam100"
@@ -221,7 +209,6 @@
 	var/threshold = user.maxHealth - user.crit_threshold
 	to_chat(user, span_info("<b>Stamina:</b> [round(max(threshold - user.get_stamina_loss(), 0), 0.1)] / [round(threshold, 0.1)]"))
 
-/// Azure's 5% fatigue steps, from "stam100" (rested) down to "stam0" (spent)
 /atom/movable/screen/stamina/rogue/proc/update_for(mob/living/owner, shown_stamina_loss)
 	if(owner.stat == DEAD)
 		return
@@ -258,7 +245,6 @@
 	icon_state = "[owner?.get_active_held_item() ? "throw" : "catch"][throwing]"
 	return ..()
 
-/// Azure's give/take button; giving goes through TG's item offering
 /atom/movable/screen/rogue/give
 	name = "give/take"
 	icon_state = "take0"
@@ -299,7 +285,6 @@
 	screen_loc = rogueui_drop
 	layer = ROGUE_HUD_LAYER
 
-/// Azure's lower half of the stance tile: lie down, right click looks down
 /atom/movable/screen/rest/rogue
 	name = "lay down"
 	icon = ROGUE_HUD_ICON
@@ -324,7 +309,6 @@
 		return
 	user.set_resting(TRUE, silent = FALSE)
 
-/// Azure's upper half of the stance tile: stand up, right click looks up
 /atom/movable/screen/rogue/stand_up
 	name = "stand up"
 	icon_state = "act_rest_up"
@@ -344,7 +328,6 @@
 		return
 	user.set_resting(FALSE, silent = FALSE)
 
-/// Azure's sprint toggle, driving TG run/walk
 /atom/movable/screen/mov_intent/rogue
 	name = "sprint mode"
 	icon = ROGUE_HUD_ICON
@@ -373,7 +356,6 @@
 		return
 	user.mind.print_levels(user)
 
-/// Azure's crafting button; TG's personal crafting component takes it over and opens its menu
 /atom/movable/screen/craft/rogue
 	icon = ROGUE_HUD_ICON
 	icon_state = "craft"
@@ -385,7 +367,6 @@
 	if(!rogue_has_click_listener())
 		rogue_hud_not_implemented(usr)
 
-/// Azure's eye button: middle click looks up; eyelids, fixed gaze and looking around are not ported
 /atom/movable/screen/rogue/eye
 	name = "eye intent"
 	icon_state = "eye"
@@ -418,7 +399,6 @@
 	else
 		user.look_up()
 
-/// Azure's hourglass over the hands. The middle one shows TG's click cooldown; the per-hand ones wait for the combat port.
 /atom/movable/screen/rogue/clickdelay
 	name = "click delay"
 	icon_state = ""
@@ -426,7 +406,6 @@
 	layer = ROGUE_HUD_LAYER + 1
 	alpha = 230
 
-/// Shows the hourglass for delay deciseconds
 /atom/movable/screen/rogue/clickdelay/proc/show_delay(delay)
 	if(delay <= 0)
 		return
@@ -458,7 +437,6 @@
 /atom/movable/screen/inventory/hand/rogue
 	layer = ROGUE_HUD_LAYER
 
-/// TG's hand overlays name TG-only active states; Azure marks the active hand with "hand_active"
 /atom/movable/screen/inventory/hand/rogue/update_overlays()
 	. = ..()
 	. -= list("lhandactive", "rhandactive")
@@ -468,7 +446,6 @@
 /atom/movable/screen/inventory/rogue
 	layer = ROGUE_HUD_LAYER
 
-/// Azure marks worn items that are damaged or broken
 /atom/movable/screen/inventory/rogue/update_icon_state()
 	. = ..()
 	var/mob/owner = get_mob()
@@ -481,7 +458,6 @@
 	if(worn.integrity_failure && worn.get_integrity_percentage() <= worn.integrity_failure)
 		icon_state = "slotbroke"
 
-/// TG's equip preview with Azure's colours
 /atom/movable/screen/inventory/rogue/add_overlays()
 	var/mob/user = get_mob()
 	if(!user || !slot_id)
@@ -496,16 +472,13 @@
 	object_overlay = item_overlay
 	add_overlay(object_overlay)
 
-/// Azure's body doll on roguehud64.dmi: picks the target zone and shows limb damage and bleeding
 /atom/movable/screen/zone_sel/rogue
 	icon = ROGUE_HUD_ICON_64
 	icon_state = "m-zone_sel"
 	screen_loc = rogueui_targetdoll
 	layer = ROGUE_HUD_LAYER
 	overlay_icon = null
-	/// Hover overlays by Azure state name, shared by all rogue dolls
 	var/static/list/rogue_hover_cache = list()
-	/// Last limb state drawn, so health updates that change nothing skip the overlay rebuild
 	var/limb_state_key
 
 /atom/movable/screen/zone_sel/rogue/Click(location, control, params)
@@ -541,7 +514,6 @@
 		vis_contents -= rogue_hover_cache[hovering]
 		hovering = null
 
-/// TG zone for a click on the doll; Azure's finer zones fold into the zones TG targets
 /atom/movable/screen/zone_sel/rogue/get_zone_at(icon_x, icon_y)
 	var/static/list/rogue_to_tg = list(
 		"head" = BODY_ZONE_HEAD,
@@ -566,7 +538,6 @@
 	)
 	return rogue_to_tg[get_rogue_zone_at(icon_x, icon_y)]
 
-/// "m" or "f": Azure draws a male and a female doll
 /atom/movable/screen/zone_sel/rogue/proc/body_prefix()
 	var/mob/owner = get_mob()
 	var/body_type = owner?.gender
@@ -594,7 +565,6 @@
 		selection.layer = layer + 0.2
 		. += selection
 
-/// Azure's limb layers: base limb, damage tint by alpha, bleeding, and dark purple for a missing limb
 /atom/movable/screen/zone_sel/rogue/proc/limb_overlays(mob/owner, prefix)
 	. = list()
 	if(!ishuman(owner) || owner.stat == DEAD)
@@ -624,7 +594,6 @@
 			bleed_layer.layer = layer + 0.12
 			. += bleed_layer
 
-/// Rebuilds the doll only when limb damage, bleeding or limbs changed
 /atom/movable/screen/zone_sel/rogue/proc/refresh_limbs()
 	var/mob/living/carbon/human/owner = get_mob()
 	if(!istype(owner))
@@ -639,7 +608,6 @@
 	limb_state_key = new_key
 	update_appearance()
 
-/// Azure's pixel map of the 64x64 doll, male and female variants
 /atom/movable/screen/zone_sel/rogue/proc/get_rogue_zone_at(icon_x, icon_y)
 	if(body_prefix() == "f")
 		return get_female_zone_at(icon_x, icon_y)

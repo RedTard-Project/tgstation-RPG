@@ -1,13 +1,10 @@
-/// Rogue HUD: Azure Peak's layout on TG's HUD datum. Plane masters, palette and screentips stay TG's.
 /datum/hud/rogue
 	ui_style = ROGUE_HUD_ICON
-	/// Keys TG systems (mood, personal crafting) add elements under on their own, and the rogue element that stands in for theirs
 	var/static/list/adopted_types = list(
 		HUD_MOB_MOOD = /atom/movable/screen/mood/rogue,
 		HUD_MOB_CRAFTING_MENU = /atom/movable/screen/craft/rogue,
 	)
 
-/// Under an adopted key the caller gets the rogue element, at Azure's place, whatever type and location it asked for
 /datum/hud/rogue/add_screen_object(atom/movable/screen/new_object, hud_key, group_key = HUD_GROUP_STATIC, ui_icon, ui_loc, update_screen = FALSE)
 	var/rogue_type = hud_key && adopted_types[hud_key]
 	if(!rogue_type)
@@ -26,7 +23,6 @@
 	add_screen_object(/atom/movable/screen/rogue/placeholder/scannies, HUD_ROGUE_SCANNIES, group_key = FALSE)
 	add_screen_object(/atom/movable/screen/rogue/panel, HUD_ROGUE_PANEL, HUD_GROUP_STATIC)
 
-/// Azure's hands sit above the belt, not at TG's centre-bottom slots
 /datum/hud/rogue/build_hand_slots(update_hud = FALSE)
 	for(var/atom/movable/screen/inventory/hand/hand in screen_groups[HUD_GROUP_STATIC])
 		remove_screen_object(hand, FALSE)
@@ -44,7 +40,6 @@
 /datum/hud/rogue/human
 	default_inventory_slots = /datum/inventory_slot/rogue
 
-/// Elements in Azure's creation order; inventory boxes come from default_inventory_slots and fold away with the toggle, as on TG
 /datum/hud/rogue/human/initialize_screen_objects()
 	. = ..()
 	add_screen_object(/atom/movable/screen/rogue/placeholder/read, HUD_ROGUE_READ, group_key = FALSE)
@@ -88,7 +83,6 @@
 	add_screen_object(/atom/movable/screen/rogue/stub/energy, HUD_ROGUE_ENERGY, HUD_GROUP_INFO)
 	add_screen_object(/atom/movable/screen/rogue/stub/feint, HUD_ROGUE_FEINT, HUD_GROUP_INFO)
 
-/// Azure keeps only the hands, the info bars and the weapon intents (moved to the corner) on the reduced HUD
 /datum/hud/rogue/human/show_hud(version = 0, mob/viewmob)
 	var/atom/movable/screen/intents = screen_objects[HUD_ROGUE_WEAPON_INTENTS]
 	intents?.screen_loc = initial(intents.screen_loc)
@@ -99,7 +93,6 @@
 	intents.screen_loc = rogueui_intents_alt
 	screenmob.client.screen += intents
 
-/// TG's human slot locking, applied to the rogue boxes
 /datum/hud/rogue/human/update_locked_slots()
 	var/mob/living/carbon/human/human_mob = mymob
 	if(!istype(human_mob))
@@ -128,7 +121,6 @@
 			continue
 		inv.alpha = (blocked_slots & inv.slot_id) ? 128 : initial(inv.alpha)
 
-/// Azure's inventory boxes for the slots TG has; the rest are stubs in rogue_hud_stubs.dm
 /datum/inventory_slot/rogue
 	abstract_type = /datum/inventory_slot/rogue
 	icon_full = "genslot"

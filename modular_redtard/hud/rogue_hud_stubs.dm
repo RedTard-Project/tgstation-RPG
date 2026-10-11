@@ -1,15 +1,12 @@
-/// Tells the clicking player that the mechanic behind this rogue HUD element is not ported yet
 /atom/movable/screen/proc/rogue_hud_not_implemented(mob/user)
 	if(!ismob(user))
 		return
 	user.balloon_alert(user, ROGUE_HUD_STUB_TEXT)
 
-/// Base for rogue HUD elements that have no TG screen type to extend
 /atom/movable/screen/rogue
 	icon = ROGUE_HUD_ICON
 	layer = ROGUE_HUD_LAYER
 
-/// A visible, clickable element whose mechanic is not ported yet; every click answers with a balloon alert
 /atom/movable/screen/rogue/stub
 	mouse_over_pointer = MOUSE_HAND_POINTER
 
@@ -57,9 +54,7 @@
 	screen_loc = rogueui_feint
 	layer = ROGUE_HUD_LAYER + 0.1
 
-/// Azure inventory slot with no TG item slot behind it; same sprite and place as in Azure
 /atom/movable/screen/rogue/stub/slot
-	/// Key suffix, Azure's slot name
 	var/slot_name
 
 /atom/movable/screen/rogue/stub/slot/wrists
@@ -92,8 +87,6 @@
 	screen_loc = rogueui_mouth
 	slot_name = "mouth"
 
-/// Present in Azure's HUD but invisible until a mechanic that is not ported turns it on.
-/// Registered under its key with Azure's sprite and place, kept off the client screen.
 /atom/movable/screen/rogue/placeholder
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 

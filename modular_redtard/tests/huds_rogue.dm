@@ -1,4 +1,3 @@
-// code/modules/unit_tests/_unit_tests.dm undefines these after its own includes; same definitions, scoped to this file
 #define TEST_ASSERT(assertion, reason) if (!(assertion)) { return Fail("Assertion failed: [reason || "No reason"]", __FILE__, __LINE__) }
 #define TEST_ASSERT_EQUAL(a, b, message) do { \
 	var/lhs = ##a; \
@@ -8,25 +7,21 @@
 	} \
 } while (FALSE)
 
-/// Shared setup for the rogue HUD tests
 /datum/unit_test/rogue_hud
 	abstract_type = /datum/unit_test/rogue_hud
 
-/// Builds the HUD a player would get, without a client: same steps as create_mob_hud(), so mood and crafting attach too
 /datum/unit_test/rogue_hud/proc/make_hud_user()
 	var/mob/living/carbon/human/consistent/dummy = allocate(__IMPLIED_TYPE__)
 	dummy.set_hud_used(new dummy.hud_type(dummy))
 	SEND_SIGNAL(dummy, COMSIG_MOB_HUD_CREATED)
 	return dummy
 
-/// Clicks a screen element as the given mob, with BYOND-style params
 /datum/unit_test/rogue_hud/proc/click_as(mob/user, atom/movable/screen/element, params = "left=1")
 	var/old_usr = usr
 	usr = user
 	element.Click(null, null, params)
 	usr = old_usr
 
-/// verify_basic_huds for humans: combat intent and a health indicator
 /datum/unit_test/rogue_hud/basics
 
 /datum/unit_test/rogue_hud/basics/Run()
@@ -37,7 +32,6 @@
 	if(hud.needs_health_indicator && isnull(hud.screen_objects[HUD_MOB_HEALTHDOLL]) && isnull(hud.screen_objects[HUD_MOB_HEALTH]))
 		TEST_FAIL("[dummy] using [hud.type] does not have a Health Doll or Health HUD.")
 
-/// Humans get the rogue HUD and no /datum/hud/human exists
 /datum/unit_test/rogue_hud/replaces_human_hud
 
 /datum/unit_test/rogue_hud/replaces_human_hud/Run()
@@ -50,7 +44,6 @@
 		if(!QDELETED(tg_hud))
 			TEST_FAIL("A /datum/hud/human exists for [tg_hud.mymob]")
 
-/// Every Azure element sits under its key with Azure's sprite, screen_loc (literal values from Azure's _defines.dm and human.dm), layer, plane and group
 /datum/unit_test/rogue_hud/layout
 
 /datum/unit_test/rogue_hud/layout/Run()
@@ -59,10 +52,7 @@
 	var/icon/hud_icon = 'modular_redtard/icons/mob/roguehud.dmi'
 	var/icon/heat_icon = 'modular_redtard/icons/mob/rogueheat.dmi'
 	var/no_group = "none"
-	// Azure's give/take button names states its roguehud.dmi does not have; the port keeps them as they are
-	// Screen locations are Azure's literal values, except the inventory block, which the customer moved to the corner (README)
 	var/list/states_missing_in_azure = list(HUD_ROGUE_GIVE)
-	// key = list(type, screen_loc, icon, icon_state, layer, plane, group)
 	var/list/expected = list(
 		HUD_ROGUE_PANEL = list(/atom/movable/screen/rogue/panel, "WEST-5,SOUTH+7", 'modular_redtard/icons/mob/roguehud_panel.dmi', "panel", CURSE_LAYER + 0.1, FULLSCREEN_PLANE, HUD_GROUP_STATIC),
 		HUD_HUMAN_TOGGLE_INVENTORY = list(/atom/movable/screen/human/toggle/rogue, "WEST-5,SOUTH", hud_icon, "back", 24, HUD_PLANE, HUD_GROUP_STATIC),
@@ -149,7 +139,6 @@
 			continue
 		TEST_FAIL("Unexpected element [hud_key] ([hud.screen_objects[hud_key].type]) on the rogue HUD")
 
-/// TG code finds the rogue elements under its keys and with the types it casts to; keys the rogue HUD drops stay empty
 /datum/unit_test/rogue_hud/tg_keys
 
 /datum/unit_test/rogue_hud/tg_keys/Run()
@@ -175,7 +164,6 @@
 	var/list/dropped_keys = list(HUD_MOB_HUNGER, HUD_MOB_HEALTHDOLL, HUD_MOB_SPACESUIT, HUD_MOB_SLEEP, HUD_MOB_PULL, HUD_MOB_RESIST, HUD_MOB_LANGUAGE_MENU, HUD_MOB_NAVIGATE_MENU, HUD_MOB_AREA_CREATOR, HUD_MOB_FLOOR_CHANGER, HUD_MOB_MEMORIES, HUD_MOB_SWAPHAND_2)
 	for(var/hud_key in dropped_keys)
 		TEST_ASSERT_NULL(hud.screen_objects[hud_key], "[hud_key] is not part of Azure's HUD")
-	// TG's systems that add their own element get the rogue one back
 	var/atom/movable/screen/craft = hud.screen_objects[HUD_MOB_CRAFTING_MENU]
 	TEST_ASSERT(craft.rogue_has_click_listener(), "Personal crafting did not take over the rogue craft button")
 	TEST_ASSERT_EQUAL(hud.add_screen_object(/atom/movable/screen/mood, HUD_MOB_MOOD, HUD_GROUP_INFO), hud.screen_objects[HUD_MOB_MOOD], "Adding TG's mood element replaced the rogue one")
@@ -184,7 +172,6 @@
 	TEST_ASSERT(istype(readded, /atom/movable/screen/craft/rogue), "Re-adding the crafting button made [readded.type]")
 	TEST_ASSERT_EQUAL(readded.screen_loc, "WEST-4,CENTER+3", "Re-added crafting button left Azure's place")
 
-/// Every stub answers a click without runtimes
 /datum/unit_test/rogue_hud/stub_clicks
 
 /datum/unit_test/rogue_hud/stub_clicks/Run()
@@ -200,7 +187,6 @@
 		click_as(dummy, element, "right=1")
 	TEST_ASSERT_EQUAL(stubs, 12, "Stub count changed; update the stub table in modular_redtard/README.md")
 
-/// Every grouped element reacts to left, right and middle clicks without runtimes
 /datum/unit_test/rogue_hud/all_clicks
 
 /datum/unit_test/rogue_hud/all_clicks/Run()
@@ -216,7 +202,6 @@
 	dummy.set_combat_mode(FALSE)
 	dummy.set_resting(FALSE, instant = TRUE)
 
-/// The weapon intent widget routes Azure's four cells to the combat port's handler, and the combat toggle drives TG combat mode
 /datum/unit_test/rogue_hud/intents
 
 /datum/unit_test/rogue_hud/intents/Run()
@@ -253,7 +238,6 @@
 	last_index = index
 	return COMPONENT_ROGUE_INTENT_HANDLED
 
-/// The rogue elements follow TG state: zone picks, throw mode, sprint, stamina and health readouts
 /datum/unit_test/rogue_hud/state_mapping
 
 /datum/unit_test/rogue_hud/state_mapping/Run()
@@ -309,7 +293,6 @@
 		dummy.mob_mood.update_mood_icon()
 		TEST_ASSERT_EQUAL(mood.icon_state, mood_steps[level], "Mood level [level]")
 
-/// Hands past Azure's two get a slot without a place on screen
 /datum/unit_test/rogue_hud/many_hands
 
 /datum/unit_test/rogue_hud/many_hands/Run()
@@ -320,7 +303,6 @@
 	TEST_ASSERT_NULL(hud.screen_objects[HUD_KEY_HAND_SLOT(4)].screen_loc, "Azure has no place for a fourth hand")
 	TEST_ASSERT_EQUAL(hud.screen_objects[HUD_KEY_HAND_SLOT(2)].screen_loc, "WEST-2:-16,SOUTH+7", "Right hand moved")
 
-/// The bag button in the corner folds the inventory block, as TG's toggle does
 /datum/unit_test/rogue_hud/inventory_toggle
 
 /datum/unit_test/rogue_hud/inventory_toggle/Run()
@@ -336,7 +318,6 @@
 	click_as(dummy, toggle)
 	TEST_ASSERT(!hud.inventory_shown, "The bag button did not fold the inventory")
 
-/// The rogue HUD keeps its element count to Azure's inventory; TG's human HUD is measured for the README baseline
 /datum/unit_test/rogue_hud/screen_object_count
 
 /datum/unit_test/rogue_hud/screen_object_count/Run()
@@ -352,7 +333,6 @@
 	TEST_ASSERT(rogue_count <= ROGUE_HUD_MAX_SCREEN_OBJECTS, "Rogue HUD has [rogue_count] screen objects, the documented ceiling is [ROGUE_HUD_MAX_SCREEN_OBJECTS]")
 	TEST_ASSERT(rogue_shown <= ROGUE_HUD_MAX_SHOWN_OBJECTS, "Rogue HUD shows [rogue_shown] screen objects, the documented ceiling is [ROGUE_HUD_MAX_SHOWN_OBJECTS]")
 
-/// Elements show_hud() puts on screen in the standard view, before mood and crafting add theirs
 /datum/unit_test/rogue_hud/screen_object_count/proc/count_shown(datum/hud/hud)
 	. = 0
 	for(var/group_key in list(HUD_GROUP_STATIC, HUD_GROUP_HOTKEYS, HUD_GROUP_INFO, HUD_GROUP_SCREEN_OVERLAYS))

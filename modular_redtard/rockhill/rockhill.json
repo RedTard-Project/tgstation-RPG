@@ -1,0 +1,17 @@
+{
+	"version": 1,
+	"map_name": "Rockhill",
+	"map_path": "map_files/rockhill",
+	"map_file": "rockhill_new.dmm",
+	"era": "medieval",
+	"traits": [{"Up": true}, {"Up": true, "Down": true}, {"Up": true, "Down": true}, {"Up": true, "Down": true}, {"Down": true}],
+	"space_empty_levels": 0,
+	"space_ruin_levels": 0,
+	"minetype": "none",
+	"shuttles": {
+		"cargo": "cargo_box",
+		"ferry": "ferry_fancy",
+		"whiteship": "whiteship_meta",
+		"emergency": "emergency_meta"
+	}
+}

@@ -13,7 +13,6 @@ import zlib
 
 PNG_SIGNATURE = b'\x89PNG\r\n\x1a\n'
 
-
 def read_chunks(data):
     pos = 8
     while pos < len(data):
@@ -22,14 +21,12 @@ def read_chunks(data):
         yield kind, data[pos + 8:pos + 8 + length]
         pos += 12 + length
 
-
 def paeth(a, b, c):
     p = a + b - c
     pa, pb, pc = abs(p - a), abs(p - b), abs(p - c)
     if pa <= pb and pa <= pc:
         return a
     return b if pb <= pc else c
-
 
 def decode_rgba(path):
     data = open(path, 'rb').read()
@@ -66,10 +63,8 @@ def decode_rgba(path):
         prev = line
     return width, height, rows
 
-
 def chunk(kind, body):
     return struct.pack('>I', len(body)) + kind + body + struct.pack('>I', zlib.crc32(kind + body) & 0xFFFFFFFF)
-
 
 def encode_dmi(path, width, height, rows, description):
     raw = b''.join(b'\x00' + bytes(row) for row in rows)
@@ -79,7 +74,6 @@ def encode_dmi(path, width, height, rows, description):
     out += chunk(b'IDAT', zlib.compress(raw, 9))
     out += chunk(b'IEND', b'')
     open(path, 'wb').write(out)
-
 
 def main():
     source, frame_index, frame_w, frame_h, out = sys.argv[1:6]
@@ -106,7 +100,6 @@ def main():
         lines += [f'state = "{name}"', '\tdirs = 1', '\tframes = 1']
     lines.append('# END DMI')
     encode_dmi(out, size_w * len(states), size_h, out_rows, '\n'.join(lines) + '\n')
-
 
 if __name__ == '__main__':
     main()

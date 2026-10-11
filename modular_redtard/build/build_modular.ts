@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import { DreamDaemon, DreamMaker } from '../../tools/build/lib/byond';
+import { prepareRockhill } from './prepare_rockhill.ts';
 
 const UPSTREAM_DME = 'tgstation.dme';
 const MODULE_INCLUDE = '#include "modular_redtard\\_module.dme"';
@@ -11,9 +12,7 @@ const TEST_BASE = 'tgstation.redtard.test';
 const CI_LOG_DIR = 'data/logs/ci';
 const NEXT_MAP = 'data/next_map.json';
 const NEXT_MAP_BACKUP = 'data/next_map.json.redtard-backup';
-/// Key in the low-memory map JSON that marks it as ours; TG ignores keys it does not know
 const LOWMEM_MARKER = 'redtard_lowmem';
-/// Upstream targets every compile needs first. Juke compares their inputs and outputs, so each one rebuilds only after a change (tgui sources, .toml icons, behavior trees, the font).
 const PREREQUISITES = ['icon-cutter', 'behavior-tree-compiler', 'tgui', 'tg-font'];
 
 type BuildOptions = {
@@ -44,7 +43,7 @@ async function main() {
       await runUpstream(PREREQUISITES);
       await compileModular(BUILD_BASE, ['CBT', ...options.defines], options);
       promoteArtifacts();
-      restoreNextMap();
+      resetNextMapForNormalStart();
       await DreamDaemon({ dmbFile: FINAL_DMB, namedDmVersion: options.dmVersion }, options.port, '-trusted');
       break;
     case 'lowmem':
@@ -130,8 +129,8 @@ function parseArgs(args: string[]): BuildOptions {
   return options;
 }
 
-/// Copies tgstation.dme with the module include before END_INCLUDE and compiles the copy; tgstation.dme itself is never written.
 async function compileModular(baseName: string, defines: string[], options: BuildOptions) {
+  await prepareRockhill();
   const dme = fs.readFileSync(UPSTREAM_DME, 'utf-8');
   if (!dme.includes(END_INCLUDE)) {
     throw new Error(`${UPSTREAM_DME} has no ${END_INCLUDE} marker`);
@@ -160,7 +159,6 @@ function promoteArtifacts() {
   removeIfExists(`${BUILD_BASE}.rsc`);
 }
 
-/// Same flow as upstream dm-test, on the modular build. --focus runs only the tests listed in tests/focus.dm.
 async function runTests(options: BuildOptions) {
   const defines = ['CBT', 'CIBUILDING', ...options.defines];
   if (options.focus) {
@@ -192,7 +190,6 @@ async function runTests(options: BuildOptions) {
       'log-directory=ci',
     );
   } catch (error) {
-    // DreamDaemon's exit code is not the verdict (Windows builds exit non-zero after -close); clean_run.lk is
     console.warn(`modular_redtard: DreamDaemon exited with ${error}`);
   } finally {
     removeIfExists(`${TEST_BASE}.dmb`);
@@ -211,8 +208,6 @@ async function runTests(options: BuildOptions) {
   console.log(fs.readFileSync(cleanRun, 'utf-8'));
 }
 
-/// Boots the server on one test map with no mining level and no space ruins: TG reads data/next_map.json at boot.
-/// The previous next_map.json is kept aside and put back when DreamDaemon exits.
 async function runLowMemory(options: BuildOptions) {
   const source = `_maps/map_jsons/${options.map}.json`;
   if (!fs.existsSync(source)) {
@@ -237,7 +232,12 @@ async function runLowMemory(options: BuildOptions) {
   }
 }
 
-/// Undoes a low-memory launch: drops our next_map.json (also one left by a killed run) and puts the saved one back
+function resetNextMapForNormalStart() {
+  for (const file of [NEXT_MAP, NEXT_MAP_BACKUP]) {
+    removeIfExists(file);
+  }
+}
+
 function restoreNextMap() {
   if (fs.existsSync(NEXT_MAP)) {
     let ours = false;

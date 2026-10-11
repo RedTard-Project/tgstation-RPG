@@ -1,0 +1,44 @@
+{
+	"source": {
+		"name": "Rockhill",
+		"project": "Ratwood-2.0",
+		"url": "https://raw.githubusercontent.com/Rotwood-Vale/Ratwood-2.0/main/_maps/map_files/rockhill/rockhill.dmm",
+		"local": "C:/RedTardProject/Ratwood-2.0-fork/_maps/map_files/rockhill/rockhill.dmm"
+	},
+	"title": {
+		"url": "https://raw.githubusercontent.com/Rotwood-Vale/Ratwood-2.0/main/icons/title_static.png",
+		"local": "C:/RedTardProject/Ratwood-2.0-fork/icons/title_static.png",
+		"file": "Rockhill+splash.png"
+	},
+	"output": {
+		"map": "_maps/map_files/rockhill/rockhill_new.dmm",
+		"map_json": "_maps/map_jsons/rockhill.json",
+		"title_dir": "config/title_screens/images"
+	},
+	"spawn": {
+		"path": "/obj/effect/landmark/start/assistant",
+		"turf": "/turf/open/floor/plating"
+	},
+	"rules": [
+		{"prefix": "/turf/open/floor/rogue/grass", "to": "/turf/open/floor/grass"},
+		{"prefix": "/turf/open/floor/rogue/concrete", "to": "/turf/open/floor/concrete"},
+		{"prefix": "/turf/open/floor/rogue/blocks", "to": "/turf/open/floor/concrete"},
+		{"prefix": "/turf/open/floor/rogue/ruinedwood", "to": "/turf/open/floor/wood"},
+		{"prefix": "/turf/open/floor/rogue/wood", "to": "/turf/open/floor/wood"},
+		{"prefix": "/turf/open/floor/rogue/carpet", "to": "/turf/open/floor/carpet"},
+		{"prefix": "/turf/open/floor", "to": "/turf/open/floor/plating"},
+		{"prefix": "/turf/open/transparent/openspace", "to": "/turf/open/openspace"},
+		{"prefix": "/turf/open/water", "to": "/turf/open/water"},
+		{"prefix": "/turf/open", "to": "/turf/open/floor/plating"},
+		{"prefix": "/turf/closed/mineral", "to": "/turf/closed/mineral/iron"},
+		{"prefix": "/turf/closed", "to": "/turf/closed/wall"},
+		{"prefix": "/turf", "to": "/turf/open/floor/plating"},
+		{"prefix": "/area", "to": "/area"},
+		{"prefix": "/obj/structure/table", "to": "/obj/structure/table"},
+		{"prefix": "/obj/structure/chair", "to": "/obj/structure/chair"},
+		{"prefix": "/obj/machinery/light", "to": "/obj/machinery/light"},
+		{"prefix": "/obj/effect/landmark/start/assistant", "to": "/obj/effect/landmark/start/assistant"},
+		{"prefix": "/obj", "drop": true},
+		{"prefix": "/mob", "drop": true}
+	]
+}

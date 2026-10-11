@@ -1,5 +1,3 @@
-// Compiled only with -DREDTARD_TEST_FOCUS (build/build.cmd dm-test --focus): runs the rogue HUD tests and the upstream tests that touch the human HUD.
-
 TEST_FOCUS(/datum/unit_test/rogue_hud/basics)
 TEST_FOCUS(/datum/unit_test/rogue_hud/replaces_human_hud)
 TEST_FOCUS(/datum/unit_test/rogue_hud/layout)
