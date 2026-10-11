@@ -1,0 +1,364 @@
+// code/modules/unit_tests/_unit_tests.dm undefines these after its own includes; same definitions, scoped to this file
+#define TEST_ASSERT(assertion, reason) if (!(assertion)) { return Fail("Assertion failed: [reason || "No reason"]", __FILE__, __LINE__) }
+#define TEST_ASSERT_EQUAL(a, b, message) do { \
+	var/lhs = ##a; \
+	var/rhs = ##b; \
+	if (lhs != rhs) { \
+		return Fail("Expected [isnull(lhs) ? "null" : lhs] to be equal to [isnull(rhs) ? "null" : rhs].[message ? " [message]" : ""]", __FILE__, __LINE__); \
+	} \
+} while (FALSE)
+
+/// Shared setup for the rogue HUD tests
+/datum/unit_test/rogue_hud
+	abstract_type = /datum/unit_test/rogue_hud
+
+/// Builds the HUD a player would get, without a client: same steps as create_mob_hud(), so mood and crafting attach too
+/datum/unit_test/rogue_hud/proc/make_hud_user()
+	var/mob/living/carbon/human/consistent/dummy = allocate(__IMPLIED_TYPE__)
+	dummy.set_hud_used(new dummy.hud_type(dummy))
+	SEND_SIGNAL(dummy, COMSIG_MOB_HUD_CREATED)
+	return dummy
+
+/// Clicks a screen element as the given mob, with BYOND-style params
+/datum/unit_test/rogue_hud/proc/click_as(mob/user, atom/movable/screen/element, params = "left=1")
+	var/old_usr = usr
+	usr = user
+	element.Click(null, null, params)
+	usr = old_usr
+
+/// verify_basic_huds for humans: combat intent and a health indicator
+/datum/unit_test/rogue_hud/basics
+
+/datum/unit_test/rogue_hud/basics/Run()
+	var/mob/living/carbon/human/dummy = make_hud_user()
+	var/datum/hud/hud = dummy.hud_used
+	if(!HAS_TRAIT(dummy, TRAIT_COMBAT_MODE_LOCK) && isnull(hud.screen_objects[HUD_MOB_INTENTS]))
+		TEST_FAIL("[dummy] using [hud.type] does not have an Action Intent.")
+	if(hud.needs_health_indicator && isnull(hud.screen_objects[HUD_MOB_HEALTHDOLL]) && isnull(hud.screen_objects[HUD_MOB_HEALTH]))
+		TEST_FAIL("[dummy] using [hud.type] does not have a Health Doll or Health HUD.")
+
+/// Humans get the rogue HUD and no /datum/hud/human exists
+/datum/unit_test/rogue_hud/replaces_human_hud
+
+/datum/unit_test/rogue_hud/replaces_human_hud/Run()
+	TEST_ASSERT_EQUAL(/mob/living/carbon/human::hud_type, /datum/hud/rogue/human, "Humans do not use the rogue HUD")
+	for(var/mob/living/carbon/human/species_type as anything in list(/mob/living/carbon/human/species/lizard, /mob/living/carbon/human/species/monkey))
+		TEST_ASSERT_EQUAL(species_type::hud_type, /datum/hud/rogue/human, "[species_type] does not use the rogue HUD")
+	var/mob/living/carbon/human/dummy = make_hud_user()
+	TEST_ASSERT(istype(dummy.hud_used, /datum/hud/rogue/human), "hud_used is [dummy.hud_used.type], expected /datum/hud/rogue/human")
+	for(var/datum/hud/human/tg_hud)
+		if(!QDELETED(tg_hud))
+			TEST_FAIL("A /datum/hud/human exists for [tg_hud.mymob]")
+
+/// Every Azure element sits under its key with Azure's sprite, screen_loc (literal values from Azure's _defines.dm and human.dm), layer, plane and group
+/datum/unit_test/rogue_hud/layout
+
+/datum/unit_test/rogue_hud/layout/Run()
+	var/mob/living/carbon/human/dummy = make_hud_user()
+	var/datum/hud/hud = dummy.hud_used
+	var/icon/hud_icon = 'modular_redtard/icons/mob/roguehud.dmi'
+	var/icon/heat_icon = 'modular_redtard/icons/mob/rogueheat.dmi'
+	var/no_group = "none"
+	// Azure's give/take button names states its roguehud.dmi does not have; the port keeps them as they are
+	// Screen locations are Azure's literal values, except the inventory block, which the customer moved to the corner (README)
+	var/list/states_missing_in_azure = list(HUD_ROGUE_GIVE)
+	// key = list(type, screen_loc, icon, icon_state, layer, plane, group)
+	var/list/expected = list(
+		HUD_ROGUE_PANEL = list(/atom/movable/screen/rogue/panel, "WEST-5,SOUTH+7", 'modular_redtard/icons/mob/roguehud_panel.dmi', "panel", CURSE_LAYER + 0.1, FULLSCREEN_PLANE, HUD_GROUP_STATIC),
+		HUD_HUMAN_TOGGLE_INVENTORY = list(/atom/movable/screen/human/toggle/rogue, "WEST-5,SOUTH", hud_icon, "back", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_GRAIN = list(/atom/movable/screen/rogue/placeholder/grain, "1,1", 'modular_redtard/icons/hud/grain.dmi', "grain", 13, HUD_PLANE, no_group),
+		HUD_ROGUE_SCANNIES = list(/atom/movable/screen/rogue/placeholder/scannies, "WEST-5:0,SOUTH:0", 'modular_redtard/icons/mob/roguehudback2.dmi', "crt", CURSE_LAYER + 0.2, FULLSCREEN_PLANE, no_group),
+		HUD_ROGUE_READ = list(/atom/movable/screen/rogue/placeholder/read, "1,1", 'modular_redtard/icons/hud/read.dmi', "", 24, HUD_PLANE, no_group),
+		HUD_ROGUE_READ_TEXT_RIGHT = list(/atom/movable/screen/rogue/placeholder/readtext, "5,5", null, "", 24.02, HUD_PLANE, no_group),
+		HUD_ROGUE_READ_TEXT_LEFT = list(/atom/movable/screen/rogue/placeholder/readtext, "5,5", null, "", 24.02, HUD_PLANE, no_group),
+		HUD_ROGUE_WEAPON_INTENTS = list(/atom/movable/screen/rogue/weapon_intents, "WEST-5:-16,SOUTH+8", 'modular_redtard/icons/mob/rogueintentbase.dmi', "intentbase", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_MOB_MOOD = list(/atom/movable/screen/mood/rogue, "WEST-3,CENTER+3", hud_icon, null, 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_RMB_INTENT = list(/atom/movable/screen/rogue/stub/rmb_intent, "WEST-4:-16,CENTER+1", hud_icon, "rmbintent", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_MOB_HEALTH = list(/atom/movable/screen/healths/rogue, "WEST-1:6,CENTER+4:17", heat_icon, "dam0", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_QUAD_INTENTS = list(/atom/movable/screen/rogue/stub/quad_intents, "WEST-4:-16,SOUTH+7", hud_icon, "mmbintents0", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_DEF_INTENT = list(/atom/movable/screen/rogue/stub/def_intent, "WEST-2,NORTH-5", hud_icon, "def1n", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_MOB_INTENTS = list(/atom/movable/screen/combattoggle/rogue, "WEST-1:-16,CENTER+1", hud_icon, "combat0", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_GIVE = list(/atom/movable/screen/rogue/give, "WEST-1:-16,SOUTH+7", hud_icon, "take0", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_HEATSTAM_OVERLAY = list(/atom/movable/screen/rogue/heatstam_overlay, "WEST-1,CENTER+2", heat_icon, "heatstamover", 24.1, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_FOV = list(/atom/movable/screen/rogue/placeholder/fov, "1,1", 'modular_redtard/icons/mob/vision_cone.dmi', "combat", FLASH_LAYER - 0.5, FULLSCREEN_PLANE, no_group),
+		HUD_ROGUE_FOV_BLOCKER = list(/atom/movable/screen/rogue/placeholder/fov_blocker, "1,1", 'modular_redtard/icons/mob/vision_cone.dmi', "combat_v", 24, FIELD_OF_VISION_BLOCKER_PLANE, no_group),
+		HUD_ROGUE_CLICKDELAY_LEFT = list(/atom/movable/screen/rogue/clickdelay/left, "WEST-3:-16,SOUTH+7", hud_icon, "", 25, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_CLICKDELAY_RIGHT = list(/atom/movable/screen/rogue/clickdelay/right, "WEST-2:-16,SOUTH+7", hud_icon, "", 25, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_CLICKDELAY_MID = list(/atom/movable/screen/rogue/clickdelay/next_move, "WEST-3:0,SOUTH+7", hud_icon, "", 25, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_DEFDELAY = list(/atom/movable/screen/rogue/stub/defdelay, "WEST-1:-5,SOUTH+10:15", hud_icon, "defdelay0", 25, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_KEY_HAND_SLOT(1) = list(/atom/movable/screen/inventory/hand/rogue, "WEST-3:-16,SOUTH+7", hud_icon, "hand_l", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_KEY_HAND_SLOT(2) = list(/atom/movable/screen/inventory/hand/rogue, "WEST-2:-16,SOUTH+7", hud_icon, "hand_r", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_ID) = list(/atom/movable/screen/inventory/rogue, "WEST-5,SOUTH+2", hud_icon, "ring", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_ROGUE_SLOT_STUB("wrists") = list(/atom/movable/screen/rogue/stub/slot/wrists, "WEST-3,SOUTH+3", hud_icon, "wrist", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_MASK) = list(/atom/movable/screen/inventory/rogue, "WEST-5,SOUTH+5", hud_icon, "mask", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_NECK) = list(/atom/movable/screen/inventory/rogue, "WEST-5,SOUTH+3", hud_icon, "neck", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_BACK) = list(/atom/movable/screen/inventory/rogue, "WEST-3,SOUTH+4", hud_icon, "back", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_ROGUE_SLOT_STUB("backr") = list(/atom/movable/screen/rogue/stub/slot/backr, "WEST-5,SOUTH+4", hud_icon, "back", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_GLOVES) = list(/atom/movable/screen/inventory/rogue, "WEST-3,SOUTH+2", hud_icon, "gloves", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_HEAD) = list(/atom/movable/screen/inventory/rogue, "WEST-4,SOUTH+5", hud_icon, "head", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_FEET) = list(/atom/movable/screen/inventory/rogue, "WEST-3,SOUTH", hud_icon, "shoes", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_BELT) = list(/atom/movable/screen/inventory/rogue, "WEST-4,SOUTH+1", hud_icon, "belt", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_RPOCKET) = list(/atom/movable/screen/inventory/rogue, "WEST-5,SOUTH+1", hud_icon, "hip", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_LPOCKET) = list(/atom/movable/screen/inventory/rogue, "WEST-3,SOUTH+1", hud_icon, "hip", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_ICLOTHING) = list(/atom/movable/screen/inventory/rogue, "WEST-4,SOUTH+2", hud_icon, "shirt", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_ROGUE_SLOT_STUB("pants") = list(/atom/movable/screen/rogue/stub/slot/pants, "WEST-4,SOUTH", hud_icon, "pants", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_OCLOTHING) = list(/atom/movable/screen/inventory/rogue, "WEST-4,SOUTH+3", hud_icon, "armor", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_ROGUE_SLOT_STUB("cloak") = list(/atom/movable/screen/rogue/stub/slot/cloak, "WEST-4,SOUTH+4", hud_icon, "cloak", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_ROGUE_SLOT_STUB("mouth") = list(/atom/movable/screen/rogue/stub/slot/mouth, "WEST-3,SOUTH+5", hud_icon, "mouth", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_MOB_DROP = list(/atom/movable/screen/drop/rogue, "WEST-1:-16,SOUTH+7", hud_icon, "act_drop", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_MOB_THROW = list(/atom/movable/screen/throw_catch/rogue, "WEST-1:-16,SOUTH+7", hud_icon, "catch0", 24, HUD_PLANE, HUD_GROUP_HOTKEYS),
+		HUD_ROGUE_STAND_UP = list(/atom/movable/screen/rogue/stand_up, "WEST-4,CENTER+2", hud_icon, "act_rest_up", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_MOB_REST = list(/atom/movable/screen/rest/rogue, "WEST-4,CENTER+2", hud_icon, "act_rest_down", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_SKILLS = list(/atom/movable/screen/rogue/skills, "WEST-4,CENTER+3", hud_icon, "skills", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_MOB_CRAFTING_MENU = list(/atom/movable/screen/craft/rogue, "WEST-4,CENTER+3", hud_icon, "craft", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_SNEAK = list(/atom/movable/screen/rogue/stub/sneak, "WEST-3,CENTER+2", hud_icon, "sneak0", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_MOB_MOVE_INTENT = list(/atom/movable/screen/mov_intent/rogue, "WEST-3,CENTER+2", hud_icon, null, 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_EYE = list(/atom/movable/screen/rogue/eye, "WEST-2,CENTER+3", hud_icon, "eye", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_ADVSETUP = list(/atom/movable/screen/rogue/placeholder/advsetup, "CENTER-1,CENTER-1:16", null, "", 24, HUD_PLANE, no_group),
+		HUD_MOB_ZONE_SELECTOR = list(/atom/movable/screen/zone_sel/rogue, "WEST-3:-16,CENTER+4:6", 'modular_redtard/icons/mob/roguehud64.dmi', null, 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_MOB_STAMINA = list(/atom/movable/screen/stamina/rogue, "WEST-1,CENTER+2", heat_icon, "stam100", 24, HUD_PLANE, HUD_GROUP_INFO),
+		HUD_ROGUE_ENERGY = list(/atom/movable/screen/rogue/stub/energy, "WEST-1,CENTER+2", heat_icon, "energy100", 24, HUD_PLANE, HUD_GROUP_INFO),
+		HUD_ROGUE_FEINT = list(/atom/movable/screen/rogue/stub/feint, "WEST-1:-6,SOUTH+10:15", 'modular_redtard/icons/mob/roguefeint.dmi', "feintbar0", 24.1, HUD_PLANE, HUD_GROUP_INFO),
+	)
+	for(var/hud_key in expected)
+		var/list/row = expected[hud_key]
+		var/atom/movable/screen/element = hud.screen_objects[hud_key]
+		if(!istype(element, row[1]))
+			TEST_FAIL("[hud_key]: expected [row[1]], got [element ? element.type : "nothing"]")
+			continue
+		if(element.screen_loc != row[2])
+			TEST_FAIL("[hud_key]: screen_loc is [element.screen_loc], Azure has [row[2]]")
+		if(element.icon != row[3])
+			TEST_FAIL("[hud_key]: icon is [element.icon], expected [row[3]]")
+		if(!isnull(row[4]) && "[element.icon_state]" != row[4])
+			TEST_FAIL("[hud_key]: icon_state is [element.icon_state], expected [row[4]]")
+		var/state_exists = !element.icon || !element.icon_state || icon_exists(element.icon, element.icon_state)
+		if(state_exists == (hud_key in states_missing_in_azure))
+			TEST_FAIL("[hud_key]: icon_state [element.icon_state] [state_exists ? "now exists in" : "is missing from"] [element.icon]; update states_missing_in_azure and the README")
+		if(element.layer != row[5])
+			TEST_FAIL("[hud_key]: layer is [element.layer], expected [row[5]]")
+		if(element.plane != row[6])
+			TEST_FAIL("[hud_key]: plane is [element.plane], expected [row[6]]")
+		var/expected_group = row[7] == no_group ? null : row[7]
+		if(element.hud_group_key != expected_group)
+			TEST_FAIL("[hud_key]: group is [element.hud_group_key], expected [expected_group]")
+	for(var/hud_key in hud.screen_objects)
+		if(hud_key in expected)
+			continue
+		if(hud_key in list(HUD_MOB_TOGGLE_PALETTE, HUD_MOB_PALETTE_UP, HUD_MOB_PALETTE_DOWN, HUD_MOB_SCREENTIP))
+			continue
+		TEST_FAIL("Unexpected element [hud_key] ([hud.screen_objects[hud_key].type]) on the rogue HUD")
+
+/// TG code finds the rogue elements under its keys and with the types it casts to; keys the rogue HUD drops stay empty
+/datum/unit_test/rogue_hud/tg_keys
+
+/datum/unit_test/rogue_hud/tg_keys/Run()
+	var/mob/living/carbon/human/dummy = make_hud_user()
+	var/datum/hud/hud = dummy.hud_used
+	var/list/typed_keys = list(
+		HUD_MOB_INTENTS = /atom/movable/screen/combattoggle,
+		HUD_MOB_HEALTH = /atom/movable/screen/healths,
+		HUD_MOB_STAMINA = /atom/movable/screen/stamina,
+		HUD_MOB_ZONE_SELECTOR = /atom/movable/screen/zone_sel,
+		HUD_MOB_MOOD = /atom/movable/screen/mood,
+		HUD_MOB_THROW = /atom/movable/screen/throw_catch,
+		HUD_MOB_REST = /atom/movable/screen/rest,
+		HUD_MOB_MOVE_INTENT = /atom/movable/screen/mov_intent,
+		HUD_MOB_DROP = /atom/movable/screen/drop,
+		HUD_MOB_CRAFTING_MENU = /atom/movable/screen/craft,
+		HUD_KEY_HAND_SLOT(1) = /atom/movable/screen/inventory/hand,
+		HUD_KEY_HAND_SLOT(2) = /atom/movable/screen/inventory/hand,
+		HUD_HUMAN_TOGGLE_INVENTORY = /atom/movable/screen/human/toggle,
+	)
+	for(var/hud_key in typed_keys)
+		TEST_ASSERT(istype(hud.screen_objects[hud_key], typed_keys[hud_key]), "[hud_key] is not a [typed_keys[hud_key]]")
+	var/list/dropped_keys = list(HUD_MOB_HUNGER, HUD_MOB_HEALTHDOLL, HUD_MOB_SPACESUIT, HUD_MOB_SLEEP, HUD_MOB_PULL, HUD_MOB_RESIST, HUD_MOB_LANGUAGE_MENU, HUD_MOB_NAVIGATE_MENU, HUD_MOB_AREA_CREATOR, HUD_MOB_FLOOR_CHANGER, HUD_MOB_MEMORIES, HUD_MOB_SWAPHAND_2)
+	for(var/hud_key in dropped_keys)
+		TEST_ASSERT_NULL(hud.screen_objects[hud_key], "[hud_key] is not part of Azure's HUD")
+	// TG's systems that add their own element get the rogue one back
+	var/atom/movable/screen/craft = hud.screen_objects[HUD_MOB_CRAFTING_MENU]
+	TEST_ASSERT(craft.rogue_has_click_listener(), "Personal crafting did not take over the rogue craft button")
+	TEST_ASSERT_EQUAL(hud.add_screen_object(/atom/movable/screen/mood, HUD_MOB_MOOD, HUD_GROUP_INFO), hud.screen_objects[HUD_MOB_MOOD], "Adding TG's mood element replaced the rogue one")
+	hud.remove_screen_object(HUD_MOB_CRAFTING_MENU, FALSE)
+	var/atom/movable/screen/readded = hud.add_screen_object(/atom/movable/screen/craft, HUD_MOB_CRAFTING_MENU, HUD_GROUP_STATIC, hud.ui_style, ui_human_crafting)
+	TEST_ASSERT(istype(readded, /atom/movable/screen/craft/rogue), "Re-adding the crafting button made [readded.type]")
+	TEST_ASSERT_EQUAL(readded.screen_loc, "WEST-4,CENTER+3", "Re-added crafting button left Azure's place")
+
+/// Every stub answers a click without runtimes
+/datum/unit_test/rogue_hud/stub_clicks
+
+/datum/unit_test/rogue_hud/stub_clicks/Run()
+	var/mob/living/carbon/human/dummy = make_hud_user()
+	var/datum/hud/hud = dummy.hud_used
+	var/stubs = 0
+	for(var/hud_key in hud.screen_objects)
+		var/atom/movable/screen/element = hud.screen_objects[hud_key]
+		if(!istype(element, /atom/movable/screen/rogue/stub))
+			continue
+		stubs++
+		click_as(dummy, element)
+		click_as(dummy, element, "right=1")
+	TEST_ASSERT_EQUAL(stubs, 12, "Stub count changed; update the stub table in modular_redtard/README.md")
+
+/// Every grouped element reacts to left, right and middle clicks without runtimes
+/datum/unit_test/rogue_hud/all_clicks
+
+/datum/unit_test/rogue_hud/all_clicks/Run()
+	var/mob/living/carbon/human/dummy = make_hud_user()
+	var/datum/hud/hud = dummy.hud_used
+	for(var/hud_key in hud.screen_objects.Copy())
+		var/atom/movable/screen/element = hud.screen_objects[hud_key]
+		if(QDELETED(element) || isnull(element.hud_group_key) || element.mouse_opacity == MOUSE_OPACITY_TRANSPARENT)
+			continue
+		for(var/params in list("left=1;icon-x=20;icon-y=20", "right=1;icon-x=20;icon-y=20", "middle=1;icon-x=20;icon-y=20"))
+			dummy.next_move = 0
+			click_as(dummy, element, params)
+	dummy.set_combat_mode(FALSE)
+	dummy.set_resting(FALSE, instant = TRUE)
+
+/// The weapon intent widget routes Azure's four cells to the combat port's handler, and the combat toggle drives TG combat mode
+/datum/unit_test/rogue_hud/intents
+
+/datum/unit_test/rogue_hud/intents/Run()
+	var/mob/living/carbon/human/dummy = make_hud_user()
+	var/datum/hud/hud = dummy.hud_used
+	var/atom/movable/screen/rogue/weapon_intents/intents = hud.screen_objects[HUD_ROGUE_WEAPON_INTENTS]
+	var/datum/rogue_hud_intent_probe/probe = new
+	probe.RegisterSignal(dummy, COMSIG_MOB_ROGUE_HUD_INTENT_CLICK, TYPE_PROC_REF(/datum/rogue_hud_intent_probe, on_intent_click))
+	var/list/cells = list("icon-x=80;icon-y=24" = 1, "icon-x=100;icon-y=24" = 2, "icon-x=80;icon-y=8" = 3, "icon-x=100;icon-y=8" = 4)
+	for(var/cell in cells)
+		click_as(dummy, intents, "left=1;[cell]")
+		TEST_ASSERT_EQUAL(probe.last_index, cells[cell], "Clicking [cell] picked the wrong intent")
+	probe.last_index = null
+	click_as(dummy, intents, "left=1;icon-x=10;icon-y=10")
+	TEST_ASSERT_NULL(probe.last_index, "The left half of the intent base is not a cell in Azure")
+	probe.UnregisterSignal(dummy, COMSIG_MOB_ROGUE_HUD_INTENT_CLICK)
+	qdel(probe)
+	click_as(dummy, intents, "left=1;icon-x=80;icon-y=24")
+
+	var/atom/movable/screen/combattoggle/rogue/combat = hud.screen_objects[HUD_MOB_INTENTS]
+	TEST_ASSERT(!dummy.combat_mode, "Dummy starts in combat mode")
+	click_as(dummy, combat)
+	TEST_ASSERT(dummy.combat_mode, "The combat button did not turn combat mode on")
+	TEST_ASSERT_EQUAL(combat.icon_state, "combat1", "The combat button did not show combat mode")
+	click_as(dummy, combat)
+	TEST_ASSERT(!dummy.combat_mode, "The combat button did not turn combat mode off")
+	TEST_ASSERT_EQUAL(combat.icon_state, "combat0", "The combat button did not show combat mode off")
+
+/datum/rogue_hud_intent_probe
+	var/last_index
+
+/datum/rogue_hud_intent_probe/proc/on_intent_click(datum/source, index, list/modifiers)
+	SIGNAL_HANDLER
+	last_index = index
+	return COMPONENT_ROGUE_INTENT_HANDLED
+
+/// The rogue elements follow TG state: zone picks, throw mode, sprint, stamina and health readouts
+/datum/unit_test/rogue_hud/state_mapping
+
+/datum/unit_test/rogue_hud/state_mapping/Run()
+	var/mob/living/carbon/human/consistent/dummy = make_hud_user()
+	var/datum/hud/hud = dummy.hud_used
+
+	var/atom/movable/screen/zone_sel/rogue/doll = hud.screen_objects[HUD_MOB_ZONE_SELECTOR]
+	var/list/zone_clicks = list("icon-x=33;icon-y=34" = BODY_ZONE_CHEST, "icon-x=31;icon-y=49" = BODY_ZONE_PRECISE_EYES, "icon-x=20;icon-y=2" = BODY_ZONE_R_LEG, "icon-x=33;icon-y=43" = BODY_ZONE_PRECISE_MOUTH, "icon-x=18;icon-y=27" = BODY_ZONE_R_ARM)
+	for(var/zone_click in zone_clicks)
+		click_as(dummy, doll, "left=1;[zone_click]")
+		TEST_ASSERT_EQUAL(dummy.zone_selected, zone_clicks[zone_click], "Doll click at [zone_click] picked the wrong zone")
+
+	var/atom/movable/screen/throw_catch/rogue/throw_button = hud.screen_objects[HUD_MOB_THROW]
+	dummy.throw_mode_on(THROW_MODE_TOGGLE)
+	TEST_ASSERT_EQUAL(throw_button.icon_state, "catch1", "Throw mode with empty hands")
+	var/obj/item/toy/plush/held = allocate(__IMPLIED_TYPE__)
+	dummy.put_in_active_hand(held)
+	TEST_ASSERT_EQUAL(throw_button.icon_state, "throw1", "Throw mode with an item in hand")
+	dummy.throw_mode_off(THROW_MODE_TOGGLE)
+	TEST_ASSERT_EQUAL(throw_button.icon_state, "throw0", "Throw mode off with an item in hand")
+
+	var/atom/movable/screen/rogue/give/give_button = hud.screen_objects[HUD_ROGUE_GIVE]
+	TEST_ASSERT_EQUAL(give_button.icon_state, "give0", "Give button with an item in hand")
+
+	var/atom/movable/screen/mov_intent/rogue/sprint = hud.screen_objects[HUD_MOB_MOVE_INTENT]
+	dummy.set_move_intent(MOVE_INTENT_RUN)
+	sprint.update_appearance(UPDATE_ICON_STATE)
+	TEST_ASSERT_EQUAL(sprint.icon_state, "sprint1", "Running shows sprint")
+	dummy.set_move_intent(MOVE_INTENT_WALK)
+	sprint.update_appearance(UPDATE_ICON_STATE)
+	TEST_ASSERT_EQUAL(sprint.icon_state, "sprint0", "Walking hides sprint")
+
+	var/atom/movable/screen/stamina/rogue/stamina = hud.screen_objects[HUD_MOB_STAMINA]
+	var/threshold = dummy.maxHealth - dummy.crit_threshold
+	var/list/stamina_steps = list("0" = "stam100", "0.03" = "stam100", "0.06" = "stam95", "0.5" = "stam55", "0.97" = "stam5", "1" = "stam0")
+	for(var/fraction in stamina_steps)
+		stamina.update_for(dummy, text2num(fraction) * threshold)
+		TEST_ASSERT_EQUAL(stamina.icon_state, stamina_steps[fraction], "Stamina at [fraction] of the threshold")
+
+	var/atom/movable/screen/healths/rogue/health = hud.screen_objects[HUD_MOB_HEALTH]
+	health.update_for(dummy)
+	TEST_ASSERT_EQUAL(health.icon_state, "dam0", "Healthy life indicator")
+	dummy.set_blood_volume(BLOOD_VOLUME_NORMAL * 0.7)
+	health.update_for(dummy)
+	TEST_ASSERT_EQUAL(health.icon_state, "dam30", "Life indicator after losing 30% blood")
+	dummy.set_blood_volume(BLOOD_VOLUME_NORMAL)
+
+	var/atom/movable/screen/mood/rogue/mood = hud.screen_objects[HUD_MOB_MOOD]
+	TEST_ASSERT_NULL(mood.color, "TG's mood tint stayed on the rogue element")
+	var/list/mood_steps = list("1" = "stress4", "4" = "stress", "5" = "mood_idle", "6" = "peace", "9" = "mood_nirvana")
+	for(var/level in mood_steps)
+		dummy.mob_mood.mood_level = text2num(level)
+		dummy.mob_mood.update_mood_icon()
+		TEST_ASSERT_EQUAL(mood.icon_state, mood_steps[level], "Mood level [level]")
+
+/// Hands past Azure's two get a slot without a place on screen
+/datum/unit_test/rogue_hud/many_hands
+
+/datum/unit_test/rogue_hud/many_hands/Run()
+	var/mob/living/carbon/human/dummy = make_hud_user()
+	var/datum/hud/hud = dummy.hud_used
+	dummy.change_number_of_hands(4)
+	TEST_ASSERT_NOTNULL(hud.screen_objects[HUD_KEY_HAND_SLOT(4)], "Fourth hand has no slot")
+	TEST_ASSERT_NULL(hud.screen_objects[HUD_KEY_HAND_SLOT(4)].screen_loc, "Azure has no place for a fourth hand")
+	TEST_ASSERT_EQUAL(hud.screen_objects[HUD_KEY_HAND_SLOT(2)].screen_loc, "WEST-2:-16,SOUTH+7", "Right hand moved")
+
+/// The bag button in the corner folds the inventory block, as TG's toggle does
+/datum/unit_test/rogue_hud/inventory_toggle
+
+/datum/unit_test/rogue_hud/inventory_toggle/Run()
+	var/mob/living/carbon/human/dummy = make_hud_user()
+	var/datum/hud/hud = dummy.hud_used
+	TEST_ASSERT(!hud.inventory_shown, "The inventory starts unfolded")
+	var/list/folded = hud.screen_groups[HUD_GROUP_TOGGLEABLE_INVENTORY]
+	TEST_ASSERT_EQUAL(length(folded), 17, "The inventory block should hold 17 boxes and nothing else")
+	var/atom/movable/screen/toggle = hud.screen_objects[HUD_HUMAN_TOGGLE_INVENTORY]
+	click_as(dummy, toggle)
+	TEST_ASSERT(hud.inventory_shown, "The bag button did not unfold the inventory")
+	TEST_ASSERT_EQUAL(toggle.icon_state, "back", "The bag button lost its sprite")
+	click_as(dummy, toggle)
+	TEST_ASSERT(!hud.inventory_shown, "The bag button did not fold the inventory")
+
+/// The rogue HUD keeps its element count to Azure's inventory; TG's human HUD is measured for the README baseline
+/datum/unit_test/rogue_hud/screen_object_count
+
+/datum/unit_test/rogue_hud/screen_object_count/Run()
+	var/mob/living/carbon/human/dummy = make_hud_user()
+	var/datum/hud/rogue_hud = dummy.hud_used
+	var/datum/hud/human/tg_hud = new(dummy)
+	var/tg_count = length(tg_hud.screen_objects)
+	var/tg_shown = count_shown(tg_hud)
+	qdel(tg_hud)
+	var/rogue_count = length(rogue_hud.screen_objects)
+	var/rogue_shown = count_shown(rogue_hud)
+	TEST_NOTICE(src, "Screen objects, TG human HUD: [tg_count] registered, [tg_shown] on screen in the standard view. Rogue HUD: [rogue_count] registered, [rogue_shown] on screen.")
+	TEST_ASSERT(rogue_count <= ROGUE_HUD_MAX_SCREEN_OBJECTS, "Rogue HUD has [rogue_count] screen objects, the documented ceiling is [ROGUE_HUD_MAX_SCREEN_OBJECTS]")
+	TEST_ASSERT(rogue_shown <= ROGUE_HUD_MAX_SHOWN_OBJECTS, "Rogue HUD shows [rogue_shown] screen objects, the documented ceiling is [ROGUE_HUD_MAX_SHOWN_OBJECTS]")
+
+/// Elements show_hud() puts on screen in the standard view, before mood and crafting add theirs
+/datum/unit_test/rogue_hud/screen_object_count/proc/count_shown(datum/hud/hud)
+	. = 0
+	for(var/group_key in list(HUD_GROUP_STATIC, HUD_GROUP_HOTKEYS, HUD_GROUP_INFO, HUD_GROUP_SCREEN_OVERLAYS))
+		. += length(hud.screen_groups[group_key])
+	if(hud.inventory_shown)
+		. += length(hud.screen_groups[HUD_GROUP_TOGGLEABLE_INVENTORY])
+
+#undef TEST_ASSERT
+#undef TEST_ASSERT_EQUAL

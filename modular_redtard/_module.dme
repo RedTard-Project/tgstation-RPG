@@ -1,0 +1,25 @@
+// modular_redtard: the single module root. The build wrapper (build/) includes this file before tgstation.dme's END_INCLUDE.
+
+#include "hud\rogue_hud_layout.dm"
+#include "hud\rogue_hud_stubs.dm"
+#include "hud\rogue_hud_elements.dm"
+#include "hud\rogue_hud.dm"
+#include "hud\rogue_hud_bridges.dm"
+#include "hud\human_hud_switch.dm"
+
+#ifdef UNIT_TESTS
+#include "tests\huds_rogue.dm"
+#endif
+
+#ifdef REDTARD_TEST_FOCUS
+#include "tests\focus.dm"
+#endif
+// BEGIN_INTERNALS
+// END_INTERNALS
+// BEGIN_FILE_DIR
+#define FILE_DIR .
+// END_FILE_DIR
+// BEGIN_PREFERENCES
+// END_PREFERENCES
+// BEGIN_INCLUDE
+// END_INCLUDE
