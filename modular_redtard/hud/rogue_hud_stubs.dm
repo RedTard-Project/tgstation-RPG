@@ -54,39 +54,6 @@
 	screen_loc = rogueui_feint
 	layer = ROGUE_HUD_LAYER + 0.1
 
-/atom/movable/screen/rogue/stub/slot
-	var/slot_name
-
-/atom/movable/screen/rogue/stub/slot/wrists
-	name = "wrists"
-	icon_state = "wrist"
-	screen_loc = rogueui_wrists
-	slot_name = "wrists"
-
-/atom/movable/screen/rogue/stub/slot/backr
-	name = "backr"
-	icon_state = "back"
-	screen_loc = rogueui_backr
-	slot_name = "backr"
-
-/atom/movable/screen/rogue/stub/slot/pants
-	name = "trou"
-	icon_state = "pants"
-	screen_loc = rogueui_pants
-	slot_name = "pants"
-
-/atom/movable/screen/rogue/stub/slot/cloak
-	name = "cloak"
-	icon_state = "cloak"
-	screen_loc = rogueui_cloak
-	slot_name = "cloak"
-
-/atom/movable/screen/rogue/stub/slot/mouth
-	name = "mouth"
-	icon_state = "mouth"
-	screen_loc = rogueui_mouth
-	slot_name = "mouth"
-
 /atom/movable/screen/rogue/placeholder
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 

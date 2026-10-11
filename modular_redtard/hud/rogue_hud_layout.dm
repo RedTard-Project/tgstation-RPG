@@ -1,4 +1,4 @@
-#define ROGUE_HUD_MAX_SCREEN_OBJECTS 59
+#define ROGUE_HUD_MAX_SCREEN_OBJECTS 62
 #define ROGUE_HUD_MAX_SHOWN_OBJECTS 34
 
 #define ROGUE_HUD_STUB_TEXT "не реализовано"
@@ -34,7 +34,10 @@
 #define rogueui_neck "WEST-5,SOUTH+3"
 #define rogueui_armor "WEST-4,SOUTH+3"
 #define rogueui_wrists "WEST-3,SOUTH+3"
-#define rogueui_ringr "WEST-5,SOUTH+2"
+#define rogueui_ring1 "WEST-5:-8,SOUTH+2:8"
+#define rogueui_ring2 "WEST-5:8,SOUTH+2:8"
+#define rogueui_ring3 "WEST-5:-8,SOUTH+2:-8"
+#define rogueui_ring4 "WEST-5:8,SOUTH+2:-8"
 #define rogueui_shirt "WEST-4,SOUTH+2"
 #define rogueui_gloves "WEST-3,SOUTH+2"
 #define rogueui_beltr "WEST-5,SOUTH+1"
@@ -73,6 +76,7 @@
 
 #define rogueui_intents_alt "EAST-1:28,SOUTH:5"
 
+#define rogueui_ring_position(index) (index == 1 ? rogueui_ring1 : (index == 2 ? rogueui_ring2 : (index == 3 ? rogueui_ring3 : rogueui_ring4)))
 #define rogueui_hand_position(index) (index == 1 ? "WEST-3:-16,SOUTH+7" : (index == 2 ? "WEST-2:-16,SOUTH+7" : null))
 
 #define HUD_ROGUE_PANEL "rogue_panel"
@@ -100,7 +104,6 @@
 #define HUD_ROGUE_ADVSETUP "rogue_advsetup"
 #define HUD_ROGUE_ENERGY "rogue_energy"
 #define HUD_ROGUE_FEINT "rogue_feint"
-#define HUD_ROGUE_SLOT_STUB(slot_name) "rogue_slot_stub:[slot_name]"
 
 #define COMSIG_MOB_ROGUE_HUD_INTENT_CLICK "mob_rogue_hud_intent_click"
 	#define COMPONENT_ROGUE_INTENT_HANDLED (1<<0)

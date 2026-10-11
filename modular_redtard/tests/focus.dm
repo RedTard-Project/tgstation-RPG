@@ -1,3 +1,4 @@
+#ifdef REDTARD_TEST_FOCUS
 TEST_FOCUS(/datum/unit_test/rogue_hud/basics)
 TEST_FOCUS(/datum/unit_test/rogue_hud/replaces_human_hud)
 TEST_FOCUS(/datum/unit_test/rogue_hud/layout)
@@ -18,3 +19,4 @@ TEST_FOCUS(/datum/unit_test/strip_menu_ui_status)
 TEST_FOCUS(/datum/unit_test/many_armed_humans)
 TEST_FOCUS(/datum/unit_test/rogue_hud/many_hands)
 TEST_FOCUS(/datum/unit_test/rogue_hud/inventory_toggle)
+#endif

@@ -446,12 +446,15 @@
 /atom/movable/screen/inventory/rogue
 	layer = ROGUE_HUD_LAYER
 
+/atom/movable/screen/inventory/rogue/proc/get_worn_item()
+	return get_mob()?.get_item_by_slot(slot_id)
+
 /atom/movable/screen/inventory/rogue/update_icon_state()
 	. = ..()
-	var/mob/owner = get_mob()
-	if(!owner || !slot_id)
+	if(!get_mob() || !slot_id)
 		return
-	var/obj/item/worn = owner.get_item_by_slot(slot_id)
+	var/obj/item/worn = get_worn_item()
+	icon_state = worn ? icon_full : icon_empty
 	if(!worn?.uses_integrity || !worn.max_integrity || worn.get_integrity() >= worn.max_integrity)
 		return
 	icon_state = "slotdmg"
@@ -463,7 +466,7 @@
 	if(!user || !slot_id)
 		return
 	var/obj/item/holding = user.get_active_held_item()
-	if(!holding || user.get_item_by_slot(slot_id))
+	if(!holding || get_worn_item())
 		return
 	var/image/item_overlay = image(holding)
 	item_overlay.alpha = 92
@@ -471,6 +474,32 @@
 	cut_overlay(object_overlay)
 	object_overlay = item_overlay
 	add_overlay(object_overlay)
+
+/atom/movable/screen/inventory/rogue/indexed
+	var/slot_index = 0
+
+/atom/movable/screen/inventory/rogue/indexed/get_worn_item()
+	var/mob/living/carbon/human/owner = get_mob()
+	return istype(owner) ? owner.get_rogue_indexed(slot_id, slot_index) : null
+
+/atom/movable/screen/inventory/rogue/indexed/Click(location, control, params)
+	var/mob/living/carbon/human/owner = get_mob()
+	if(!istype(owner))
+		return ..()
+	owner.aim_rogue_slot(slot_id, slot_index)
+	. = ..()
+	owner.aim_rogue_slot(slot_id, null)
+
+/atom/movable/screen/inventory/rogue/indexed/add_overlays()
+	var/mob/living/carbon/human/owner = get_mob()
+	if(!istype(owner))
+		return ..()
+	owner.aim_rogue_slot(slot_id, slot_index)
+	. = ..()
+	owner.aim_rogue_slot(slot_id, null)
+
+/atom/movable/screen/inventory/rogue/indexed/ring
+	transform = matrix(0.5, 0, 0, 0, 0.5, 0)
 
 /atom/movable/screen/zone_sel/rogue
 	icon = ROGUE_HUD_ICON_64

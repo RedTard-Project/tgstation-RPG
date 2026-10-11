@@ -63,8 +63,6 @@
 
 	build_hand_slots()
 
-	for(var/atom/movable/screen/rogue/stub/slot/slot_type as anything in subtypesof(/atom/movable/screen/rogue/stub/slot))
-		add_screen_object(slot_type, HUD_ROGUE_SLOT_STUB(initial(slot_type.slot_name)), HUD_GROUP_TOGGLEABLE_INVENTORY)
 	add_screen_object(/atom/movable/screen/human/toggle/rogue, HUD_HUMAN_TOGGLE_INVENTORY, HUD_GROUP_STATIC)
 
 	add_screen_object(/atom/movable/screen/drop/rogue, HUD_MOB_DROP, HUD_GROUP_STATIC)
@@ -101,19 +99,15 @@
 	if((isnull(human_mob.w_uniform) || !(human_mob.w_uniform.item_flags & IN_INVENTORY)) && !HAS_TRAIT(human_mob, TRAIT_NO_JUMPSUIT))
 		var/obj/item/bodypart/chest = human_mob.get_bodypart(BODY_ZONE_CHEST)
 		if(isnull(chest) || IS_ORGANIC_LIMB(chest))
-			blocked_slots |= ITEM_SLOT_ID|ITEM_SLOT_BELT
-		var/obj/item/bodypart/left_leg = human_mob.get_bodypart(BODY_ZONE_L_LEG)
-		if(isnull(left_leg) || IS_ORGANIC_LIMB(left_leg))
-			blocked_slots |= ITEM_SLOT_LPOCKET
-		var/obj/item/bodypart/right_leg = human_mob.get_bodypart(BODY_ZONE_R_LEG)
-		if(isnull(right_leg) || IS_ORGANIC_LIMB(right_leg))
-			blocked_slots |= ITEM_SLOT_RPOCKET
+			blocked_slots |= ITEM_SLOT_ID
+	if(isnull(human_mob.belt) || !(human_mob.belt.item_flags & IN_INVENTORY))
+		blocked_slots |= ITEM_SLOT_POCKETS
 	if(human_mob.num_hands <= 0)
 		blocked_slots |= ITEM_SLOT_GLOVES
 	if(human_mob.num_legs < 2)
 		blocked_slots |= ITEM_SLOT_FEET
 	if(isnull(human_mob.get_bodypart(BODY_ZONE_HEAD)))
-		blocked_slots |= ITEM_SLOT_HEAD|ITEM_SLOT_MASK
+		blocked_slots |= ITEM_SLOT_HEAD|ITEM_SLOT_MASK|ITEM_SLOT_ROGUE_MOUTH
 
 	for(var/slot_key in screen_objects)
 		var/atom/movable/screen/inventory/inv = screen_objects[slot_key]
@@ -129,9 +123,58 @@
 
 /datum/inventory_slot/rogue/ring
 	name = "ring"
+	slot_id = ITEM_SLOT_ROGUE_RING
 	icon_state = "ring"
-	screen_loc = rogueui_ringr
-	slot_id = ITEM_SLOT_ID
+	screen_type = /atom/movable/screen/inventory/rogue/indexed/ring
+
+/datum/inventory_slot/rogue/ring/create_element(datum/hud/hud)
+	for(var/index in 1 to ROGUE_RING_SLOTS)
+		var/atom/movable/screen/inventory/rogue/indexed/cell = hud.add_screen_object(screen_type, HUD_ROGUE_RING_SLOT(index), screen_group, hud.ui_style, rogueui_ring_position(index))
+		cell.name = HUD_ROGUE_RING_SLOT(index)
+		cell.icon_state = icon_state
+		cell.icon_full = icon_full
+		cell.slot_id = slot_id
+		cell.slot_index = index
+
+/datum/inventory_slot/rogue/ring/get_slot_item(mob/owner, ring_index = 1)
+	var/mob/living/carbon/human/wearer = owner
+	return istype(wearer) ? wearer.get_rogue_ring(ring_index) : null
+
+/datum/inventory_slot/rogue/ring/get_screen_slot(datum/hud/hud, ring_index = 1)
+	return hud.screen_objects[HUD_ROGUE_RING_SLOT(ring_index)]
+
+/datum/inventory_slot/rogue/ring/update_inventory_slot(datum/hud/hud, mob/owner, ring_index = null)
+	if(isnull(ring_index))
+		for(var/index in 1 to ROGUE_RING_SLOTS)
+			update_inventory_slot(hud, owner, index)
+		return
+	var/atom/movable/screen/inventory/slot = get_screen_slot(hud, ring_index)
+	if(slot)
+		update_slot_icon_contents(slot, get_slot_item(owner, ring_index))
+
+/datum/inventory_slot/rogue/mouth
+	name = "mouth"
+	slot_id = ITEM_SLOT_ROGUE_MOUTH
+	icon_state = "mouth"
+	screen_loc = rogueui_mouth
+
+/datum/inventory_slot/rogue/wrists
+	name = "wrists"
+	icon_state = "wrist"
+	screen_loc = rogueui_wrists
+	slot_id = ITEM_SLOT_ROGUE_WRISTS
+
+/datum/inventory_slot/rogue/cloak
+	name = "cloak"
+	icon_state = "cloak"
+	screen_loc = rogueui_cloak
+	slot_id = ITEM_SLOT_ROGUE_CLOAK
+
+/datum/inventory_slot/rogue/pants
+	name = "trou"
+	icon_state = "pants"
+	screen_loc = rogueui_pants
+	slot_id = ITEM_SLOT_ICLOTHING
 
 /datum/inventory_slot/rogue/mask
 	name = "mask"
@@ -150,6 +193,35 @@
 	icon_state = "back"
 	screen_loc = rogueui_backl
 	slot_id = ITEM_SLOT_BACK
+
+/datum/inventory_slot/rogue/backl/create_element(datum/hud/hud)
+	. = ..()
+	var/atom/movable/screen/inventory/rogue/indexed/cell = hud.add_screen_object(/atom/movable/screen/inventory/rogue/indexed, HUD_ROGUE_BACKR, screen_group, hud.ui_style, rogueui_backr)
+	cell.name = HUD_ROGUE_BACKR
+	cell.icon_state = icon_state
+	cell.icon_full = icon_full
+	cell.slot_id = slot_id
+	cell.slot_index = ROGUE_BACK_RIGHT
+
+/datum/inventory_slot/rogue/backl/get_slot_item(mob/owner, back_index = 1)
+	var/mob/living/carbon/human/wearer = owner
+	if(back_index == ROGUE_BACK_RIGHT)
+		return istype(wearer) ? wearer.wear_backr : null
+	return ..()
+
+/datum/inventory_slot/rogue/backl/get_screen_slot(datum/hud/hud, back_index = 1)
+	if(back_index == ROGUE_BACK_RIGHT)
+		return hud.screen_objects[HUD_ROGUE_BACKR]
+	return ..()
+
+/datum/inventory_slot/rogue/backl/update_inventory_slot(datum/hud/hud, mob/owner, back_index = null)
+	if(isnull(back_index))
+		update_inventory_slot(hud, owner, 1)
+		update_inventory_slot(hud, owner, ROGUE_BACK_RIGHT)
+		return
+	var/atom/movable/screen/inventory/slot = get_screen_slot(hud, back_index)
+	if(slot)
+		update_slot_icon_contents(slot, get_slot_item(owner, back_index))
 
 /datum/inventory_slot/rogue/gloves
 	name = "gloves"
@@ -191,7 +263,7 @@
 	name = "shirt"
 	icon_state = "shirt"
 	screen_loc = rogueui_shirt
-	slot_id = ITEM_SLOT_ICLOTHING
+	slot_id = ITEM_SLOT_ROGUE_SHIRT
 
 /datum/inventory_slot/rogue/armor
 	name = "armor"

@@ -26,7 +26,8 @@
 	if(!.)
 		return
 	var/datum/map_config/active = SSmapping.current_map
-	if(!active || map_era == JOB_ERA_ANY)
+	if(!active || map_era == JOB_ERA_ANY || map_era == active.map_era)
 		return
-	if(map_era != active.map_era)
-		return FALSE
+	job_flags &= ~JOB_NEW_PLAYER_JOINABLE
+	total_positions = 0
+	spawn_positions = 0

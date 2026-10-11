@@ -4,7 +4,46 @@
 	"map_path": "map_files/rockhill",
 	"map_file": "rockhill_new.dmm",
 	"era": "medieval",
-	"traits": [{"Up": true}, {"Up": true, "Down": true}, {"Up": true, "Down": true}, {"Up": true, "Down": true}, {"Down": true}],
+	"traits": [
+		{
+			"Gravity": true,
+			"Linkage": null,
+			"No Parallax": true,
+			"Up": true,
+			"Baseturf": "/turf/open/floor/rogue/naturalstone"
+		},
+		{
+			"Gravity": true,
+			"Linkage": null,
+			"No Parallax": true,
+			"Up": true,
+			"Down": true,
+			"Baseturf": "/turf/open/openspace"
+		},
+		{
+			"Gravity": true,
+			"Linkage": null,
+			"No Parallax": true,
+			"Up": true,
+			"Down": true,
+			"Baseturf": "/turf/open/openspace"
+		},
+		{
+			"Gravity": true,
+			"Linkage": null,
+			"No Parallax": true,
+			"Up": true,
+			"Down": true,
+			"Baseturf": "/turf/open/openspace"
+		},
+		{
+			"Gravity": true,
+			"Linkage": null,
+			"No Parallax": true,
+			"Down": true,
+			"Baseturf": "/turf/open/openspace"
+		}
+	],
 	"space_empty_levels": 0,
 	"space_ruin_levels": 0,
 	"minetype": "none",
@@ -13,5 +52,19 @@
 		"ferry": "ferry_fancy",
 		"whiteship": "whiteship_meta",
 		"emergency": "emergency_meta"
+	},
+	"job_changes": {
+		"Enslaved Adventurer": {
+			"total_positions": 2,
+			"spawn_positions": 2
+		},
+		"Man at Arms": {
+			"total_positions": 4,
+			"spawn_positions": 4
+		},
+		"Forest Warden": {
+			"total_positions": 4,
+			"spawn_positions": 4
+		}
 	}
 }

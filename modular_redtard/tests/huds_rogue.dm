@@ -1,3 +1,4 @@
+#ifdef UNIT_TESTS
 #define TEST_ASSERT(assertion, reason) if (!(assertion)) { return Fail("Assertion failed: [reason || "No reason"]", __FILE__, __LINE__) }
 #define TEST_ASSERT_EQUAL(a, b, message) do { \
 	var/lhs = ##a; \
@@ -78,23 +79,26 @@
 		HUD_ROGUE_DEFDELAY = list(/atom/movable/screen/rogue/stub/defdelay, "WEST-1:-5,SOUTH+10:15", hud_icon, "defdelay0", 25, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_KEY_HAND_SLOT(1) = list(/atom/movable/screen/inventory/hand/rogue, "WEST-3:-16,SOUTH+7", hud_icon, "hand_l", 24, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_KEY_HAND_SLOT(2) = list(/atom/movable/screen/inventory/hand/rogue, "WEST-2:-16,SOUTH+7", hud_icon, "hand_r", 24, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_KEY_ITEM_SLOT(ITEM_SLOT_ID) = list(/atom/movable/screen/inventory/rogue, "WEST-5,SOUTH+2", hud_icon, "ring", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
-		HUD_ROGUE_SLOT_STUB("wrists") = list(/atom/movable/screen/rogue/stub/slot/wrists, "WEST-3,SOUTH+3", hud_icon, "wrist", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_ROGUE_RING_SLOT(1) = list(/atom/movable/screen/inventory/rogue/indexed/ring, "WEST-5:-8,SOUTH+2:8", hud_icon, "ring", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_ROGUE_RING_SLOT(2) = list(/atom/movable/screen/inventory/rogue/indexed/ring, "WEST-5:8,SOUTH+2:8", hud_icon, "ring", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_ROGUE_RING_SLOT(3) = list(/atom/movable/screen/inventory/rogue/indexed/ring, "WEST-5:-8,SOUTH+2:-8", hud_icon, "ring", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_ROGUE_RING_SLOT(4) = list(/atom/movable/screen/inventory/rogue/indexed/ring, "WEST-5:8,SOUTH+2:-8", hud_icon, "ring", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_ROGUE_WRISTS) = list(/atom/movable/screen/inventory/rogue, "WEST-3,SOUTH+3", hud_icon, "wrist", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
 		HUD_KEY_ITEM_SLOT(ITEM_SLOT_MASK) = list(/atom/movable/screen/inventory/rogue, "WEST-5,SOUTH+5", hud_icon, "mask", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
 		HUD_KEY_ITEM_SLOT(ITEM_SLOT_NECK) = list(/atom/movable/screen/inventory/rogue, "WEST-5,SOUTH+3", hud_icon, "neck", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
 		HUD_KEY_ITEM_SLOT(ITEM_SLOT_BACK) = list(/atom/movable/screen/inventory/rogue, "WEST-3,SOUTH+4", hud_icon, "back", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
-		HUD_ROGUE_SLOT_STUB("backr") = list(/atom/movable/screen/rogue/stub/slot/backr, "WEST-5,SOUTH+4", hud_icon, "back", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_ROGUE_BACKR = list(/atom/movable/screen/inventory/rogue/indexed, "WEST-5,SOUTH+4", hud_icon, "back", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
 		HUD_KEY_ITEM_SLOT(ITEM_SLOT_GLOVES) = list(/atom/movable/screen/inventory/rogue, "WEST-3,SOUTH+2", hud_icon, "gloves", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
 		HUD_KEY_ITEM_SLOT(ITEM_SLOT_HEAD) = list(/atom/movable/screen/inventory/rogue, "WEST-4,SOUTH+5", hud_icon, "head", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
 		HUD_KEY_ITEM_SLOT(ITEM_SLOT_FEET) = list(/atom/movable/screen/inventory/rogue, "WEST-3,SOUTH", hud_icon, "shoes", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
 		HUD_KEY_ITEM_SLOT(ITEM_SLOT_BELT) = list(/atom/movable/screen/inventory/rogue, "WEST-4,SOUTH+1", hud_icon, "belt", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
 		HUD_KEY_ITEM_SLOT(ITEM_SLOT_RPOCKET) = list(/atom/movable/screen/inventory/rogue, "WEST-5,SOUTH+1", hud_icon, "hip", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
 		HUD_KEY_ITEM_SLOT(ITEM_SLOT_LPOCKET) = list(/atom/movable/screen/inventory/rogue, "WEST-3,SOUTH+1", hud_icon, "hip", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
-		HUD_KEY_ITEM_SLOT(ITEM_SLOT_ICLOTHING) = list(/atom/movable/screen/inventory/rogue, "WEST-4,SOUTH+2", hud_icon, "shirt", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
-		HUD_ROGUE_SLOT_STUB("pants") = list(/atom/movable/screen/rogue/stub/slot/pants, "WEST-4,SOUTH", hud_icon, "pants", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_ROGUE_SHIRT) = list(/atom/movable/screen/inventory/rogue, "WEST-4,SOUTH+2", hud_icon, "shirt", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_ICLOTHING) = list(/atom/movable/screen/inventory/rogue, "WEST-4,SOUTH", hud_icon, "pants", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
 		HUD_KEY_ITEM_SLOT(ITEM_SLOT_OCLOTHING) = list(/atom/movable/screen/inventory/rogue, "WEST-4,SOUTH+3", hud_icon, "armor", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
-		HUD_ROGUE_SLOT_STUB("cloak") = list(/atom/movable/screen/rogue/stub/slot/cloak, "WEST-4,SOUTH+4", hud_icon, "cloak", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
-		HUD_ROGUE_SLOT_STUB("mouth") = list(/atom/movable/screen/rogue/stub/slot/mouth, "WEST-3,SOUTH+5", hud_icon, "mouth", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_ROGUE_CLOAK) = list(/atom/movable/screen/inventory/rogue, "WEST-4,SOUTH+4", hud_icon, "cloak", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_ROGUE_MOUTH) = list(/atom/movable/screen/inventory/rogue, "WEST-3,SOUTH+5", hud_icon, "mouth", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
 		HUD_MOB_DROP = list(/atom/movable/screen/drop/rogue, "WEST-1:-16,SOUTH+7", hud_icon, "act_drop", 24, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_MOB_THROW = list(/atom/movable/screen/throw_catch/rogue, "WEST-1:-16,SOUTH+7", hud_icon, "catch0", 24, HUD_PLANE, HUD_GROUP_HOTKEYS),
 		HUD_ROGUE_STAND_UP = list(/atom/movable/screen/rogue/stand_up, "WEST-4,CENTER+2", hud_icon, "act_rest_up", 24, HUD_PLANE, HUD_GROUP_STATIC),
@@ -185,7 +189,7 @@
 		stubs++
 		click_as(dummy, element)
 		click_as(dummy, element, "right=1")
-	TEST_ASSERT_EQUAL(stubs, 12, "Stub count changed; update the stub table in modular_redtard/README.md")
+	TEST_ASSERT_EQUAL(stubs, 7, "Stub count changed; update the stub table in modular_redtard/README.md")
 
 /datum/unit_test/rogue_hud/all_clicks
 
@@ -310,7 +314,7 @@
 	var/datum/hud/hud = dummy.hud_used
 	TEST_ASSERT(!hud.inventory_shown, "The inventory starts unfolded")
 	var/list/folded = hud.screen_groups[HUD_GROUP_TOGGLEABLE_INVENTORY]
-	TEST_ASSERT_EQUAL(length(folded), 17, "The inventory block should hold 17 boxes and nothing else")
+	TEST_ASSERT_EQUAL(length(folded), 20, "The inventory block should hold 20 boxes (four ring cells) and nothing else")
 	var/atom/movable/screen/toggle = hud.screen_objects[HUD_HUMAN_TOGGLE_INVENTORY]
 	click_as(dummy, toggle)
 	TEST_ASSERT(hud.inventory_shown, "The bag button did not unfold the inventory")
@@ -342,3 +346,4 @@
 
 #undef TEST_ASSERT
 #undef TEST_ASSERT_EQUAL
+#endif

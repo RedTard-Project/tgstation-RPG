@@ -3,42 +3,417 @@
 		"name": "Rockhill",
 		"project": "Ratwood-2.0",
 		"url": "https://raw.githubusercontent.com/Rotwood-Vale/Ratwood-2.0/main/_maps/map_files/rockhill/rockhill.dmm",
-		"local": "C:/RedTardProject/Ratwood-2.0-fork/_maps/map_files/rockhill/rockhill.dmm"
+		"local": "C:/RedTardProject/Ratwood-2.0-fork/_maps/map_files/rockhill/rockhill.dmm",
+		"code_root": "C:/RedTardProject/Ratwood-2.0-fork",
+		"map_adjustment": "C:/RedTardProject/Ratwood-2.0-fork/_maps/map_files/rockhill/map_adjustment_rockhill.dm"
+	},
+	"replacements": [
+		{
+			"prefix": "/turf/open/transparent/openspace",
+			"to": "/turf/open/openspace/rockhill"
+		},
+		{
+			"prefix": "/obj/effect/landmark",
+			"drop": true
+		},
+		{
+			"prefix": "/obj/structure/stairs",
+			"to": "/obj/structure/stairs"
+		},
+		{
+			"prefix": "/obj/structure/mineral_door",
+			"to": "/obj/structure/mineral_door/wood"
+		},
+		{
+			"prefix": "/obj/structure/table",
+			"to": "/obj/structure/table/wood"
+		},
+		{
+			"prefix": "/obj/structure/chair",
+			"to": "/obj/structure/chair/wood"
+		},
+		{
+			"prefix": "/obj/structure/chair/stool",
+			"to": "/obj/structure/chair/stool"
+		},
+		{
+			"prefix": "/obj/structure/bed",
+			"to": "/obj/structure/bed"
+		},
+		{
+			"prefix": "/obj/structure/rack",
+			"to": "/obj/structure/rack"
+		},
+		{
+			"prefix": "/obj/structure/closet",
+			"to": "/obj/structure/closet/crate/wooden"
+		},
+		{
+			"prefix": "/obj/effect/landmark/latejoin",
+			"to": "/obj/effect/landmark/latejoin"
+		},
+		{
+			"prefix": "/obj/effect/landmark/observer_start",
+			"to": "/obj/effect/landmark/observer_start"
+		},
+		{
+			"prefix": "/obj/effect/landmark/start/baronlate",
+			"to": "/obj/effect/landmark/latejoin"
+		},
+		{
+			"prefix": "/obj/effect/landmark/start/retainerlate",
+			"to": "/obj/effect/landmark/latejoin"
+		},
+		{
+			"prefix": "/obj/effect/landmark/start/rockhillslavelate",
+			"to": "/obj/effect/landmark/latejoin"
+		},
+		{
+			"prefix": "/obj/effect/landmark/start",
+			"rebase": "/obj/effect/landmark/start/rockhill"
+		},
+		{
+			"prefix": "/turf/open/floor/carpet",
+			"rebase": "/turf/open/floor/carpet/rockhill",
+			"reskin": true
+		},
+		{
+			"prefix": "/turf/open/lava",
+			"rebase": "/turf/open/lava/rockhill",
+			"reskin": true
+		},
+		{
+			"prefix": "/turf/closed",
+			"to": "/turf/closed/rockhill",
+			"exact": true
+		},
+		{
+			"prefix": "/turf/open/water",
+			"to": "/turf/open/water/rockhill",
+			"exact": true
+		}
+	],
+	"port": {
+		"categories": [
+			{
+				"file": "areas.dm",
+				"prefixes": [
+					"/area"
+				],
+				"vars": [
+					"name"
+				]
+			},
+			{
+				"file": "turfs_open.dm",
+				"prefixes": [
+					"/turf/open"
+				],
+				"graft": "/turf/open/floor/rockhill",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state"
+				],
+				"smoothing": true
+			},
+			{
+				"file": "turfs_water.dm",
+				"prefixes": [
+					"/turf/open/water"
+				],
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"rockhill_water_level",
+					"rockhill_water_color"
+				],
+				"graft": "/turf/open/water/rockhill",
+				"rename": {
+					"rockhill_water_level": "water_level",
+					"rockhill_water_color": "water_color"
+				},
+				"smoothing": true
+			},
+			{
+				"file": "turfs_closed.dm",
+				"prefixes": [
+					"/turf/closed"
+				],
+				"graft": "/turf/closed/rockhill",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"opacity"
+				],
+				"smoothing": true
+			},
+			{
+				"file": "structures.dm",
+				"prefixes": [
+					"/obj/structure",
+					"/obj/machinery"
+				],
+				"graft": "/obj/structure/rockhill",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"density",
+					"opacity",
+					"pixel_x",
+					"pixel_y",
+					"layer"
+				]
+			},
+			{
+				"file": "windows.dm",
+				"prefixes": [
+					"/obj/structure/roguewindow"
+				],
+				"graft": "/obj/structure/rockhill/window",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"density",
+					"opacity",
+					"pixel_x",
+					"pixel_y",
+					"layer"
+				]
+			},
+			{
+				"file": "lights.dm",
+				"prefixes": [
+					"/obj/machinery/light/rogue",
+					"/obj/machinery/light/roguestreet"
+				],
+				"graft": "/obj/structure/rockhill/light",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"density",
+					"opacity",
+					"pixel_x",
+					"pixel_y",
+					"layer",
+					"light_range",
+					"light_power",
+					"light_color"
+				],
+				"rename": {
+					"light_range": "brightness",
+					"light_power": "bulb_power",
+					"light_color": "bulb_colour"
+				}
+			},
+			{
+				"file": "decals.dm",
+				"prefixes": [
+					"/obj/effect/decal"
+				],
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"pixel_x",
+					"pixel_y",
+					"layer"
+				]
+			},
+			{
+				"file": "items.dm",
+				"prefixes": [
+					"/obj/item"
+				],
+				"graft": "/obj/item/rockhill",
+				"natural": [
+					"/obj/item/clothing",
+					"/obj/item/reagent_containers",
+					"/obj/item/storage"
+				],
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"w_class",
+					"force",
+					"throwforce",
+					"lefthand_file",
+					"righthand_file",
+					"inhand_icon_state",
+					"worn_icon",
+					"worn_icon_state",
+					"pixel_x",
+					"pixel_y",
+					"slot_flags",
+					"armor_type",
+					"body_parts_covered",
+					"rogue_onhip",
+					"rogue_onback"
+				],
+				"rename": {
+					"inhand_icon_state": "item_state",
+					"worn_icon": "mob_overlay_icon",
+					"worn_icon_state": "item_state",
+					"rogue_onhip": "experimental_onhip",
+					"rogue_onback": "experimental_onback"
+				},
+				"true_only": [
+					"rogue_onhip",
+					"rogue_onback"
+				],
+				"slot_worn_icons": {
+					"worn_icon": {
+						"ITEM_SLOT_MOUTH": "icons/roguetown/clothing/onmob/mouth_items.dmi",
+						"ITEM_SLOT_BACK_L": "icons/roguetown/clothing/onmob/back_l.dmi",
+						"ITEM_SLOT_BACK": "icons/roguetown/clothing/onmob/back_l.dmi",
+						"ITEM_SLOT_BACK_R": "icons/roguetown/clothing/onmob/back_r.dmi"
+					},
+					"worn_icon_backr": {
+						"ITEM_SLOT_BACK_R": "icons/roguetown/clothing/onmob/back_r.dmi",
+						"ITEM_SLOT_BACK": "icons/roguetown/clothing/onmob/back_r.dmi"
+					},
+					"worn_icon_hipl": {
+						"ITEM_SLOT_HIP": "icons/roguetown/clothing/onmob/belt_l.dmi"
+					},
+					"worn_icon_hipr": {
+						"ITEM_SLOT_HIP": "icons/roguetown/clothing/onmob/belt_r.dmi"
+					}
+				}
+			},
+			{
+				"file": "humans.dm",
+				"prefixes": [
+					"/mob/living/carbon/human"
+				],
+				"natural": [
+					"/mob/living/carbon/human"
+				],
+				"vars": [
+					"name",
+					"desc"
+				]
+			},
+			{
+				"file": "mobs.dm",
+				"prefixes": [
+					"/mob/living"
+				],
+				"graft": "/mob/living/basic/rockhill",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"icon_living",
+					"icon_dead",
+					"health",
+					"maxHealth",
+					"pixel_x",
+					"pixel_y"
+				]
+			},
+			{
+				"file": "spawners.dm",
+				"prefixes": [
+					"/obj/effect/spawner/lootdrop"
+				],
+				"graft": "/obj/effect/spawner/random/rockhill",
+				"vars": [
+					"name",
+					"loot",
+					"spawn_loot_count"
+				],
+				"rename": {
+					"spawn_loot_count": "lootcount"
+				}
+			}
+		],
+		"smoothing_families": {
+			"/turf/closed": "SMOOTH_GROUP_WALLS",
+			"/turf/closed/mineral": "SMOOTH_GROUP_MINERAL_WALLS",
+			"/turf/closed/basic": "SMOOTH_GROUP_MINERAL_WALLS",
+			"/turf/closed/wall/mineral/rogue/wood": "SMOOTH_GROUP_WOOD_WALLS",
+			"/turf/closed/wall/mineral/rogue/wooddark": "SMOOTH_GROUP_WOOD_WALLS",
+			"/turf/closed/wall/mineral/rogue/decowood": "SMOOTH_GROUP_WOOD_WALLS",
+			"/turf/open/floor/rogue/wood": "SMOOTH_GROUP_OPEN_FLOOR",
+			"/turf/open/floor/rogue/woodturned": "SMOOTH_GROUP_OPEN_FLOOR"
+		},
+		"extra_icons": [
+			"icons/turf/newwater.dmi"
+		],
+		"reskin_vars": {
+			"initial_gas_mix": "OPENTURF_DEFAULT_ATMOS",
+			"init_air": "FALSE"
+		},
+		"armor": {
+			"scale": 0.7,
+			"cap": 70
+		}
+	},
+	"jobs": {
+		"departments": {
+			"NOBLEMEN": "/datum/job_department/rockhill_nobles",
+			"COURTIERS": "/datum/job_department/rockhill_courtiers",
+			"GARRISON": "/datum/job_department/rockhill_garrison",
+			"CHURCHMEN": "/datum/job_department/rockhill_church",
+			"INQUISITION": "/datum/job_department/rockhill_inquisition",
+			"YEOMEN": "/datum/job_department/rockhill_yeomen",
+			"PEASANTS": "/datum/job_department/rockhill_peasants",
+			"YOUNGFOLK": "/datum/job_department/rockhill_youngfolk",
+			"WANDERERS": "/datum/job_department/rockhill_wanderers",
+			"NONE": "/datum/job_department/rockhill_wanderers"
+		},
+		"retitle": {
+			"/datum/job/roguetown/cook": "Manor Cook",
+			"/datum/job/roguetown/warden": "Forest Warden"
+		}
 	},
 	"title": {
-		"url": "https://raw.githubusercontent.com/Rotwood-Vale/Ratwood-2.0/main/icons/title_static.png",
-		"local": "C:/RedTardProject/Ratwood-2.0-fork/icons/title_static.png",
-		"file": "Rockhill+splash.png"
+		"prefix": "Rockhill+ratwood-",
+		"sources": [
+			{
+				"file": "title_static.png",
+				"name": "static",
+				"kind": "png",
+				"origin": "Ratwood-2.0/icons/title_static.png"
+			},
+			{
+				"file": "rogueworld_title.dmi",
+				"name": "rogueworld",
+				"kind": "dmi",
+				"origin": "Ratwood-2.0/icons/rogueworld_title.dmi"
+			},
+			{
+				"file": "foolishdefault_title.dmi",
+				"name": "foolish",
+				"kind": "dmi",
+				"origin": "Ratwood-2.0/icons/foolishdefault_title.dmi"
+			},
+			{
+				"file": "default_title.dmi",
+				"name": "default",
+				"kind": "dmi",
+				"origin": "Ratwood-2.0/icons/default_title.dmi"
+			}
+		]
 	},
 	"output": {
 		"map": "_maps/map_files/rockhill/rockhill_new.dmm",
 		"map_json": "_maps/map_jsons/rockhill.json",
 		"title_dir": "config/title_screens/images"
-	},
-	"spawn": {
-		"path": "/obj/effect/landmark/start/assistant",
-		"turf": "/turf/open/floor/plating"
-	},
-	"rules": [
-		{"prefix": "/turf/open/floor/rogue/grass", "to": "/turf/open/floor/grass"},
-		{"prefix": "/turf/open/floor/rogue/concrete", "to": "/turf/open/floor/concrete"},
-		{"prefix": "/turf/open/floor/rogue/blocks", "to": "/turf/open/floor/concrete"},
-		{"prefix": "/turf/open/floor/rogue/ruinedwood", "to": "/turf/open/floor/wood"},
-		{"prefix": "/turf/open/floor/rogue/wood", "to": "/turf/open/floor/wood"},
-		{"prefix": "/turf/open/floor/rogue/carpet", "to": "/turf/open/floor/carpet"},
-		{"prefix": "/turf/open/floor", "to": "/turf/open/floor/plating"},
-		{"prefix": "/turf/open/transparent/openspace", "to": "/turf/open/openspace"},
-		{"prefix": "/turf/open/water", "to": "/turf/open/water"},
-		{"prefix": "/turf/open", "to": "/turf/open/floor/plating"},
-		{"prefix": "/turf/closed/mineral", "to": "/turf/closed/mineral/iron"},
-		{"prefix": "/turf/closed", "to": "/turf/closed/wall"},
-		{"prefix": "/turf", "to": "/turf/open/floor/plating"},
-		{"prefix": "/area", "to": "/area"},
-		{"prefix": "/obj/structure/table", "to": "/obj/structure/table"},
-		{"prefix": "/obj/structure/chair", "to": "/obj/structure/chair"},
-		{"prefix": "/obj/machinery/light", "to": "/obj/machinery/light"},
-		{"prefix": "/obj/effect/landmark/start/assistant", "to": "/obj/effect/landmark/start/assistant"},
-		{"prefix": "/obj", "drop": true},
-		{"prefix": "/mob", "drop": true}
-	]
+	}
 }
