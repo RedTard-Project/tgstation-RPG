@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import { DreamDaemon, DreamMaker } from '../../tools/build/lib/byond';
-import { prepareRockhill } from './prepare_rockhill.ts';
+import { prepareRockhill, printMapFailure, runBootstrapPython } from './prepare_rockhill.ts';
 
 const UPSTREAM_DME = 'tgstation.dme';
 const MODULE_INCLUDE = '#include "modular_redtard\\_module.dme"';
@@ -14,6 +14,7 @@ const NEXT_MAP = 'data/next_map.json';
 const NEXT_MAP_BACKUP = 'data/next_map.json.redtard-backup';
 const LOWMEM_MARKER = 'redtard_lowmem';
 const PREREQUISITES = ['icon-cutter', 'behavior-tree-compiler', 'tgui', 'tg-font'];
+const CONTENT_CHECK = 'modular_redtard/tools/check_modular_content.py';
 
 type BuildOptions = {
   target: string;
@@ -129,8 +130,23 @@ function parseArgs(args: string[]): BuildOptions {
   return options;
 }
 
+function checkModularContent(): void {
+  const { status, output } = runBootstrapPython([CONTENT_CHECK]);
+  if (status === 0) {
+    console.log(`modular_redtard: content check (${CONTENT_CHECK}): clean`);
+  } else {
+    console.warn(`modular_redtard: WARNING - content check (${CONTENT_CHECK}, the TG unit-test rules for our types):\n${output}`);
+  }
+}
+
 async function compileModular(baseName: string, defines: string[], options: BuildOptions) {
-  await prepareRockhill();
+  try {
+    await prepareRockhill();
+  } catch (error) {
+    printMapFailure(error);
+    process.exit(1);
+  }
+  checkModularContent();
   const dme = fs.readFileSync(UPSTREAM_DME, 'utf-8');
   if (!dme.includes(END_INCLUDE)) {
     throw new Error(`${UPSTREAM_DME} has no ${END_INCLUDE} marker`);

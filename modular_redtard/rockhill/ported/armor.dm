@@ -1,3 +1,43 @@
+/datum/armor/clothing_under/rockhill_ascendant
+	melee = 54
+	bullet = 56
+
+/datum/armor/clothing_under/rockhill_brigandine
+	melee = 47
+	bullet = 49
+
+/datum/armor/clothing_under/rockhill_cuirass
+	melee = 51
+	bullet = 28
+
+/datum/armor/clothing_under/rockhill_leather
+	melee = 35
+	bullet = 21
+
+/datum/armor/clothing_under/rockhill_leather_good
+	melee = 49
+	bullet = 35
+
+/datum/armor/clothing_under/rockhill_leather_studded
+	melee = 51
+	bullet = 28
+
+/datum/armor/clothing_under/rockhill_maille
+	melee = 51
+	bullet = 7
+
+/datum/armor/clothing_under/rockhill_padded_bad
+	melee = 23
+	bullet = 28
+
+/datum/armor/clothing_under/rockhill_plate
+	melee = 44
+	bullet = 28
+
+/datum/armor/clothing_under/rockhill_plate_bsteel
+	melee = 63
+	bullet = 56
+
 /datum/armor/rockhill_ascendant
 	melee = 54
 	bullet = 56

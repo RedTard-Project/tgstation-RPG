@@ -2,10 +2,23 @@
 	"source": {
 		"name": "Rockhill",
 		"project": "Ratwood-2.0",
+		"repository": "https://github.com/Rotwood-Vale/Ratwood-2.0.git",
+		"branch": "main",
 		"url": "https://raw.githubusercontent.com/Rotwood-Vale/Ratwood-2.0/main/_maps/map_files/rockhill/rockhill.dmm",
-		"local": "C:/RedTardProject/Ratwood-2.0-fork/_maps/map_files/rockhill/rockhill.dmm",
-		"code_root": "C:/RedTardProject/Ratwood-2.0-fork",
-		"map_adjustment": "C:/RedTardProject/Ratwood-2.0-fork/_maps/map_files/rockhill/map_adjustment_rockhill.dm"
+		"map": "_maps/map_files/rockhill/rockhill.dmm",
+		"map_adjustment": "_maps/map_files/rockhill/map_adjustment_rockhill.dm",
+		"sparse": [
+			"/code/",
+			"/icons/",
+			"/interface/",
+			"/modular*/",
+			"/roguetown.dme",
+			"/_maps/*.dm",
+			"/_maps/map_files/rockhill/",
+			"/sound/misc/",
+			"/sound/foley/",
+			"/sound/items/"
+		]
 	},
 	"replacements": [
 		{
@@ -242,6 +255,11 @@
 			"prefix": "/turf/open/water",
 			"to": "/turf/open/water/rockhill",
 			"exact": true
+		},
+		{
+			"prefix": "/obj/effect",
+			"exact": true,
+			"drop": true
 		}
 	],
 	"port": {
@@ -485,7 +503,8 @@
 				],
 				"paths": [
 					"origin_type"
-				]
+				],
+				"sprite_checks": true
 			},
 			{
 				"file": "humans.dm",
@@ -562,7 +581,14 @@
 			"repair_cost_first",
 			"repair_cost_second",
 			"item_chair"
-		]
+		],
+		"assets": {
+			"restricted_licenses": [
+				"icons/roguetown/clothing/licensed-infraredbaron/LICENSE.md",
+				"modular_deserttown/icons/clothing/LICENSE.md"
+			],
+			"reviewed_licenses": []
+		}
 	},
 	"jobs": {
 		"departments": {

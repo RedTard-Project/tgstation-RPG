@@ -532,8 +532,6 @@
 	locked = FALSE
 	lockid = null
 	lock_strength = 100
-	open_sound = 'modular_redtard/rockhill/sound/blank.ogg'
-	close_sound = 'modular_redtard/rockhill/sound/blank.ogg'
 
 /obj/structure/closet/crate/wooden/rockhill/crate/coffin/royal
 	name = "gilded casket"
@@ -546,8 +544,6 @@
 	locked = FALSE
 	lockid = null
 	lock_strength = 100
-	open_sound = 'modular_redtard/rockhill/sound/blank.ogg'
-	close_sound = 'modular_redtard/rockhill/sound/blank.ogg'
 
 /obj/structure/closet/crate/wooden/rockhill/crate/coffin/vampire
 	name = "sleep casket"
@@ -560,8 +556,6 @@
 	locked = FALSE
 	lockid = null
 	lock_strength = 100
-	open_sound = 'modular_redtard/rockhill/sound/blank.ogg'
-	close_sound = 'modular_redtard/rockhill/sound/blank.ogg'
 
 /obj/structure/closet/crate/wooden/rockhill/crate/drawer
 	name = "drawer"
@@ -682,8 +676,6 @@
 	locked = FALSE
 	lockid = null
 	lock_strength = 100
-	open_sound = 'modular_redtard/rockhill/sound/blank.ogg'
-	close_sound = 'modular_redtard/rockhill/sound/blank.ogg'
 
 /obj/structure/closet/crate/wooden/rockhill/crate/roguecloset
 	name = "closet"

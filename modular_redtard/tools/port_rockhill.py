@@ -3,6 +3,7 @@ import json
 import os
 import re
 import shutil
+import subprocess
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -12,6 +13,10 @@ CONFIG = 'modular_redtard/rockhill/config.json'
 OUT_DIR = 'modular_redtard/rockhill/ported'
 ICON_DIR = 'modular_redtard/rockhill/icons'
 REPORT = 'modular_redtard/rockhill/PORTED_CONTENT.md'
+CHECKOUT = '.cache/ratwood'
+BLANK_WORN = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+TG_WORN_SLOTS = ('ITEM_SLOT_BACK', 'ITEM_SLOT_ID', 'ITEM_SLOT_GLOVES', 'ITEM_SLOT_EYES', 'ITEM_SLOT_EARS', 'ITEM_SLOT_NECK', 'ITEM_SLOT_MASK', 'ITEM_SLOT_BELT')
+WEAR_COVERAGE = {'/obj/item/clothing/gloves': ('hands', {'HAND_LEFT', 'HAND_RIGHT'}), '/obj/item/clothing/shoes': ('feet', {'FOOT_LEFT', 'FOOT_RIGHT'})}
 DECLARATION_ROOTS = ['code', 'modular_redtard']
 
 TYPE_LINE = re.compile(r'^(/[A-Za-z0-9_/]+)\s*$')
@@ -32,7 +37,51 @@ LOOT_LIST = re.compile(r'\bloot\s*=\s*list\(([^)]*)\)')
 PROB_CALL = re.compile(r'\bprob\((\d+)\)')
 ONMOB_TAGS = {'onback': 'ROGUE_ONMOB_BACK', 'onbelt': 'ROGUE_ONMOB_HIP'}
 DEFINE_VALUES = {}
+SOURCE_REVISION = []
 ARMOR_DATUMS = {}
+BLANK_USERS = set()
+NO_SPRITE = []
+LISTINGS = {}
+LICENSE_FILE = re.compile(r'(?i)^(licen[cs]e|copying)([-_.][\w.-]*)?$')
+CURRENT = [None]
+RESTRICTED = collections.defaultdict(set)
+UNREVIEWED = collections.defaultdict(set)
+
+
+def asset_license(rel):
+    parts = rel.split('/')[:-1]
+    for depth in range(len(parts), 0, -1):
+        folder = os.path.join(CHECKOUT, *parts[:depth])
+        if folder not in LISTINGS:
+            LISTINGS[folder] = {name.lower(): name for name in os.listdir(folder)} if os.path.isdir(folder) else {}
+        for name in LISTINGS[folder].values():
+            if LICENSE_FILE.match(name) and os.path.isfile(os.path.join(folder, name)):
+                return '/'.join(parts[:depth] + [name])
+    return None
+
+
+def asset_allowed(rel, assets):
+    license = asset_license(rel)
+    if license is None or license in assets.get('reviewed_licenses', []):
+        return True
+    if license in assets.get('restricted_licenses', []):
+        RESTRICTED[license].add(CURRENT[0])
+    else:
+        UNREVIEWED[license].add(rel)
+    return False
+
+
+def exact_case(root, rel):
+    parts = rel.replace('\\', '/').split('/')
+    current = root
+    fixed = []
+    for part in parts:
+        if current not in LISTINGS:
+            LISTINGS[current] = {name.lower(): name for name in os.listdir(current)} if os.path.isdir(current) else {}
+        name = LISTINGS[current].get(part.lower(), part)
+        fixed.append(name)
+        current = os.path.join(current, name)
+    return '/'.join(fixed)
 COVERAGE_MAP = {
     'HEAD': 'HEAD', 'MOUTH': 'HEAD', 'NOSE': 'HEAD', 'EARS': 'HEAD', 'HAIR': 'HEAD', 'LEFT_EYE': 'HEAD', 'RIGHT_EYE': 'HEAD',
     'CHEST': 'CHEST', 'VITALS': 'CHEST', 'GROIN': 'GROIN', 'NECK': 'NECK',
@@ -163,7 +212,7 @@ def parse_codebase(code_root):
             if not line.startswith(('\t', ' ')):
                 m = TYPE_LINE.match(line)
                 if m and '/proc/' not in m.group(1) and '/verb/' not in m.group(1):
-                    current = m.group(1)
+                    current = m.group(1).rstrip("/")
                     types[current]
                 else:
                     current = None
@@ -374,11 +423,39 @@ def literal(value, tg_names):
     return None
 
 
+def git(*args):
+    return subprocess.run(['git', '-C', CHECKOUT, *args], check=True, capture_output=True, text=True).stdout
+
+
+def sync_source(source):
+    if not os.path.isdir(os.path.join(CHECKOUT, '.git')):
+        os.makedirs(os.path.dirname(CHECKOUT), exist_ok=True)
+        print('cloning', source['repository'], source['branch'], 'into', CHECKOUT)
+        subprocess.run(['git', 'clone', '--depth', '1', '--filter=blob:none', '--no-checkout', '--branch', source['branch'], source['repository'], CHECKOUT], check=True)
+    elif '--no-pull' not in sys.argv:
+        print('syncing', CHECKOUT, 'to', source['repository'], source['branch'])
+        git('remote', 'set-url', 'origin', source['repository'])
+        git('fetch', '--depth', '1', 'origin', source['branch'])
+        git('reset', '--hard', 'FETCH_HEAD')
+    git('sparse-checkout', 'set', '--no-cone', *source['sparse'])
+    git('read-tree', '-mu', 'HEAD')
+    absent = [os.path.relpath(path, CHECKOUT).replace('\\', '/') for path in included_files(CHECKOUT) if not os.path.exists(path)]
+    if absent:
+        git('sparse-checkout', 'add', *('/' + path for path in absent))
+        git('read-tree', '-mu', 'HEAD')
+    absent = [path for path in included_files(CHECKOUT) if not os.path.exists(path)]
+    if absent:
+        raise SystemExit('files the Ratwood .dme includes are missing from ' + CHECKOUT + ':\n  ' + '\n  '.join(absent))
+    SOURCE_REVISION[:] = git('log', '-1', '--format=%H %cs').split()
+    print('ratwood revision:', ' '.join(SOURCE_REVISION))
+
+
 def main():
     if not os.path.exists(CONFIG):
         raise SystemExit('run from the repository root')
     cfg = json.load(open(CONFIG, encoding='utf-8'))
-    code_root = cfg['source']['code_root']
+    code_root = CHECKOUT
+    sync_source(cfg['source'])
     port = cfg['port']
     rules = cfg['replacements']
     print('parsing', code_root)
@@ -387,7 +464,7 @@ def main():
     print('ratwood types:', len(types))
     declared = declared_paths(DECLARATION_ROOTS, [OUT_DIR])
     tg_names = tg_defines('code')
-    usage, per_level = map_usage(cfg['source']['local'])
+    usage, per_level = map_usage(os.path.join(CHECKOUT, cfg['source']['map']))
 
     if '--inventory' in sys.argv:
         for z in sorted(per_level):
@@ -678,9 +755,9 @@ def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items, jobs=
         m = ICON_LITERAL.match(raw.strip())
         if not m:
             return None
-        rel = m.group(1).replace('\\', '/')
-        src = os.path.join(cfg['source']['code_root'], rel)
-        if not os.path.exists(src):
+        rel = exact_case(CHECKOUT, m.group(1))
+        src = os.path.join(CHECKOUT, rel)
+        if not os.path.exists(src) or not asset_allowed(rel, port.get('assets', {})):
             return None
         dest_rel = rel[len('icons/'):] if rel.startswith('icons/') else rel
         dest = f'{ICON_DIR}/{dest_rel}'
@@ -689,13 +766,69 @@ def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items, jobs=
 
     sheet_states = {}
 
+    def sheet_states_of(ref):
+        rel = ref.strip("'")
+        src = next((source for source, dest in icons.items() if dest == rel), rel)
+        if src not in sheet_states:
+            sheet_states[src] = dmi.state_names(src) if os.path.exists(src) else set()
+        return sheet_states[src]
+
+    def fix_sprites(path, block):
+        values = {}
+        for line in block[1:]:
+            name, sep, value = line.strip().partition(' = ')
+            if sep:
+                values[name] = value
+
+        def text(name):
+            value = values.get(name, '')
+            return value[1:-1] if len(value) > 1 and value[0] == '"' and value[-1] == '"' else None
+
+        def put(name, value):
+            block[:] = [line for line in block if not line.startswith(f'\t{name} = ')]
+            block.append(f'\t{name} = {value}')
+
+        if any(path in users for users in RESTRICTED.values()):
+            NO_SPRITE.append((path, 'restricted licence', text('icon_state') or ''))
+            put('icon_state', 'null')
+            put('inhand_icon_state', 'null')
+            put('worn_icon', f"'{BLANK_WORN}'")
+            put('worn_icon_state', 'null')
+            BLANK_USERS.add(path)
+            return
+        world = values.get('icon')
+        state = text('icon_state')
+        if world and ICON_LITERAL.match(world) and state is not None and state not in sheet_states_of(world):
+            NO_SPRITE.append((path, world.strip("'"), state))
+            put('icon_state', 'null')
+
+        hands = [values.get(name) for name in ('lefthand_file', 'righthand_file')]
+        if any(ICON_LITERAL.match(sheet or '') for sheet in hands):
+            held = text('inhand_icon_state')
+            fits = held is not None and all(ICON_LITERAL.match(sheet or '') and held in sheet_states_of(sheet) for sheet in hands)
+            put('inhand_icon_state', f'"{held}"' if fits else 'null')
+
+        flags = values.get('slot_flags', '')
+        wearable = bool(flags) or boundary_match(path, '/obj/item/clothing')
+        if not wearable or any(pocket in flags for pocket in ('ITEM_SLOT_POCKETS', 'ITEM_SLOT_LPOCKET', 'ITEM_SLOT_RPOCKET')):
+            return
+        look = text('worn_icon_state') or text('icon_state')
+        sheet = values.get('worn_icon')
+        if sheet and ICON_LITERAL.match(sheet) and look and look in sheet_states_of(sheet):
+            put('worn_icon_state', f'"{look}"')
+            return
+        if sheet or any(slot in flags for slot in TG_WORN_SLOTS) or boundary_match(path, '/obj/item/clothing'):
+            BLANK_USERS.add(path)
+            put('worn_icon', f"'{BLANK_WORN}'")
+            put('worn_icon_state', 'null')
+
     def slot_worn_icon(path, sheets):
         flags = rw.resolve(path, 'slot_flags') or ''
         state = next((v.strip().strip('"') for v in (rw.resolve(path, 'item_state'), rw.resolve(path, 'icon_state')) if v and v.strip() != 'null'), '')
         for flag, sheet in sheets.items():
             if flag not in re.findall(r'ITEM_SLOT_[A-Z_]+', flags):
                 continue
-            src = os.path.join(cfg['source']['code_root'], sheet)
+            src = os.path.join(CHECKOUT, sheet)
             if src not in sheet_states:
                 sheet_states[src] = {s['name'] for s in dmi.read(src).states} if os.path.exists(src) else set()
             if state in sheet_states[src]:
@@ -733,7 +866,7 @@ def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items, jobs=
         m = ICON_LITERAL.match((raw_icon or '').strip())
         if not m:
             return None
-        src = os.path.join(cfg['source']['code_root'], m.group(1))
+        src = os.path.join(CHECKOUT, m.group(1))
         if not os.path.exists(src):
             return None
         if src not in sheets:
@@ -819,6 +952,7 @@ def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items, jobs=
                 else:
                     cat.setdefault('_graft_blocks', {})[g] = block[1:]
         for path in paths:
+            CURRENT[0] = path
             block = [path]
             block += cat.get('_graft_blocks', {}).get(path, [])
             smooth = smoothing_lines(path) if cat.get('smoothing') else None
@@ -850,7 +984,7 @@ def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items, jobs=
                         block.append(f'\tslot_flags = {flags}')
                     continue
                 if name == 'armor_type':
-                    armor = armor_type_value(rw.resolve(path, 'armor'), port['armor'])
+                    armor = armor_type_value(rw.resolve(path, 'armor'), port['armor'], armor_wear(path, coverage_value(rw.resolve(path, 'body_parts_covered'))))
                     if armor:
                         block.append(f'\tarmor_type = {armor}')
                     continue
@@ -880,6 +1014,8 @@ def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items, jobs=
                 sheet = slot_worn_icon(path, sheets)
                 if sheet:
                     block.append(f'\t{name} = {icon_ref(sheet)}')
+            if cat.get('sprite_checks'):
+                fix_sprites(path, block)
             if cat.get('runtime_look') and not smooth:
                 look = runtime_look(rw, path)
                 kind, data = look.get('icon', (None, None))
@@ -953,9 +1089,9 @@ def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items, jobs=
     sounds = {}
 
     def sound_ref(raw):
-        rel = ICON_LITERAL.match(raw.strip()).group(1).replace('\\', '/')
-        src = os.path.join(cfg['source']['code_root'], rel)
-        if not os.path.exists(src):
+        rel = exact_case(CHECKOUT, ICON_LITERAL.match(raw.strip()).group(1))
+        src = os.path.join(CHECKOUT, rel)
+        if not os.path.exists(src) or not asset_allowed(rel, port.get('assets', {})):
             return None
         sounds[src] = f"{SOUND_DIR}/{rel[len('sound/'):] if rel.startswith('sound/') else rel}"
         return f"'{sounds[src]}'"
@@ -1018,7 +1154,7 @@ def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items, jobs=
         print(f'{file}: {len(blocks)} rebased types')
 
     for rel in port.get('extra_icons', []):
-        src = os.path.join(cfg['source']['code_root'], rel)
+        src = os.path.join(CHECKOUT, rel)
         icons[src] = f"{ICON_DIR}/{rel[len('icons/'):] if rel.startswith('icons/') else rel}"
 
     edge_lines = []
@@ -1037,6 +1173,18 @@ def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items, jobs=
     open(f'{OUT_DIR}/{EDGES_FILE}', 'w', encoding='utf-8', newline='\n').write('\n'.join(edge_lines) + '\n')
     print(f"smoothing: {smoothed['bitmask']} bitmask types from {sum(1 for v in sheets.values() if v)} sheets, {smoothed['edges']} edge receivers, {len(edge_states)} edge sources")
 
+    if UNREVIEWED:
+        raise SystemExit('assets under a licence nobody has reviewed; add each licence to port.assets.reviewed_licenses or restricted_licenses in ' + CONFIG + ':\n  ' + '\n  '.join(f'{license}: {len(files)} file(s), e.g. {sorted(files)[0]}' for license, files in sorted(UNREVIEWED.items())))
+    for license in port.get('assets', {}).get('restricted_licenses', []):
+        folder = os.path.dirname(license)
+        copied = f"{ICON_DIR}/{folder[len('icons/'):] if folder.startswith('icons/') else folder}"
+        if os.path.isdir(copied):
+            shutil.rmtree(copied)
+            print('removed restricted copies:', copied)
+    if BLANK_USERS:
+        os.makedirs(os.path.dirname(BLANK_WORN), exist_ok=True)
+        dmi.write(BLANK_WORN, 32, 32, [('', bytes(32 * 32 * 4))])
+        print(f'blank worn sheet: {len(BLANK_USERS)} wearables without a worn sprite')
     for src, dest in list(icons.items()) + list(sounds.items()):
         os.makedirs(os.path.dirname(dest), exist_ok=True)
         shutil.copyfile(src, dest)
@@ -1048,6 +1196,8 @@ def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items, jobs=
         out.write('Generated by `modular_redtard/tools/port_rockhill.py` from the Ratwood-2.0 code tree and the Rockhill map. ')
         out.write('Each type keeps its Ratwood path, so the map loads it unchanged; `parent_type` grafts the Ratwood branch onto a TG or module base. ')
         out.write('Re-run the tool after the map gains new types (the map generator fails on a missing turf or area and warns on a missing object).\n\n')
+        if SOURCE_REVISION:
+            out.write(f'Ratwood revision: `{SOURCE_REVISION[0]}` ({SOURCE_REVISION[1]}).\n\n')
         for file in [cat['file'] for cat in categories] + ['turfs_reskin.dm']:
             rows = report_rows.get(file, [])
             if not rows:
@@ -1061,12 +1211,27 @@ def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items, jobs=
             out.write(f'| `{path}` | {count} |\n')
         out.write('\n## Icons\n\n')
         for src, dest in sorted(icons.items(), key=lambda kv: kv[1]):
-            rel = os.path.relpath(src, cfg['source']['code_root']).replace('\\', '/')
+            rel = os.path.relpath(src, CHECKOUT).replace('\\', '/')
             out.write(f'- `{dest}` from Ratwood `{rel}`\n')
+        if RESTRICTED:
+            out.write('\n## Restricted assets (not copied)\n\n')
+            out.write('Their folder carries a proprietary licence that forbids redistribution and use outside Ratwood (`port.assets.restricted_licenses`). The port never copies them; the types that use them get no sprite.\n\n')
+            for license, users in sorted(RESTRICTED.items()):
+                out.write(f'- `{license}`: {", ".join(f"`{user}`" for user in sorted(users))}\n')
+        if NO_SPRITE:
+            out.write(f'\n## Items without a world sprite ({len(NO_SPRITE)})\n\n')
+            out.write('Ratwood names an `icon_state` its sheet does not have (a sprite chosen at runtime, or a broken one). The port writes `icon_state = null`, as TG does for an item with no sprite, so the TG icon tests pass and the item stays listed here.\n\n| Type | Sheet | Missing state |\n|---|---|---|\n')
+            for path, sheet, state in sorted(NO_SPRITE):
+                out.write(f'| `{path}` | `{sheet}` | `{state}` |\n')
+        if BLANK_USERS:
+            out.write(f'\n## Wearables without a worn sprite ({len(BLANK_USERS)})\n\n')
+            out.write(f'No sheet holds their worn state: `worn_icon = \'{BLANK_WORN}\'` (one empty state) and `worn_icon_state = null`, the TG way to say "no worn sprite".\n\n')
+            for path in sorted(BLANK_USERS):
+                out.write(f'- `{path}`\n')
         if sounds:
             out.write('\n## Sounds\n\n')
             for src, dest in sorted(sounds.items(), key=lambda kv: kv[1]):
-                rel = os.path.relpath(src, cfg['source']['code_root']).replace('\\', '/')
+                rel = os.path.relpath(src, CHECKOUT).replace('\\', '/')
                 out.write(f'- `{dest}` from Ratwood `{rel}`\n')
     print('report:', REPORT, 'skipped types:', len(skipped))
     return generated
@@ -1153,7 +1318,16 @@ def coverage_value(raw):
     return '|'.join(sorted(tokens)) if tokens else None
 
 
-def armor_type_value(raw, armor_cfg):
+def armor_wear(path, coverage):
+    if boundary_match(path, '/obj/item/clothing/under'):
+        return 'under'
+    for root, (wear, extremity) in WEAR_COVERAGE.items():
+        if boundary_match(path, root) and set((coverage or '|'.join(extremity)).split('|')) == extremity:
+            return wear
+    return None
+
+
+def armor_type_value(raw, armor_cfg, wear=None):
     value = expand_define(raw)
     numbers = {k: float(n) for k, n in re.findall(r'"(\w+)"\s*=\s*(-?\d+(?:\.\d+)?)', value)}
     if not numbers:
@@ -1167,13 +1341,18 @@ def armor_type_value(raw, armor_cfg):
         'fire': scaled(numbers.get('fire', 0)),
         'acid': scaled(numbers.get('acid', 0)),
     }
+    if wear in ('hands', 'feet'):
+        fields['melee'] = fields['bullet'] = 0
     if not any(fields.values()):
         return None
     name = (raw or '').strip()
     if re.match(r'^ARMOR_[A-Z0-9_]+$', name):
-        path = '/datum/armor/rockhill_' + name[len('ARMOR_'):].lower()
+        leaf = 'rockhill_' + name[len('ARMOR_'):].lower()
     else:
-        path = '/datum/armor/rockhill_m{melee}_b{bullet}_f{fire}_a{acid}'.format(**fields)
+        leaf = 'rockhill_m{melee}_b{bullet}_f{fire}_a{acid}'.format(**fields)
+    if wear in ('hands', 'feet'):
+        leaf += '_' + wear
+    path = ('/datum/armor/clothing_under/' if wear == 'under' else '/datum/armor/') + leaf
     ARMOR_DATUMS[path] = fields
     return path
 
@@ -1303,7 +1482,7 @@ def role_outfit(rw, job):
 def select_jobs(cfg, rw):
     jobs_cfg = cfg['jobs']
     departments = jobs_cfg['departments']
-    blacklist, _, _ = map_adjustment(cfg['source']['map_adjustment'])
+    blacklist, _, _ = map_adjustment(os.path.join(CHECKOUT, cfg['source']['map_adjustment']))
     taken = tg_job_titles()
     retitle = {p: f'"{t}"' for p, t in jobs_cfg.get('retitle', {}).items()}
     ported = []
@@ -1329,7 +1508,7 @@ def select_jobs(cfg, rw):
 def generate_jobs(cfg, rw, usage, role_outfits, valid):
     jobs_cfg = cfg['jobs']
     departments = jobs_cfg['departments']
-    blacklist, slots, retitles = map_adjustment(cfg['source']['map_adjustment'])
+    blacklist, slots, retitles = map_adjustment(os.path.join(CHECKOUT, cfg['source']['map_adjustment']))
     retitle = {p: f'"{t}"' for p, t in jobs_cfg.get('retitle', {}).items()}
     taken = tg_job_titles()
     ported = select_jobs(cfg, rw)

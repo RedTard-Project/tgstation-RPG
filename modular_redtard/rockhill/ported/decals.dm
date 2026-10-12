@@ -161,6 +161,13 @@
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "cobblestone_edges"
 
+/obj/effect/decal/edge/desert_gray
+	name = "stone edge"
+	desc = "A piece of stone used to border city roads."
+	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
+	icon_state = "border"
+	color = "#655653"
+
 /obj/effect/decal/herringbone
 	name = "herringbone flooring"
 	desc = "These stone bricks have been carefully arranged in a rather pleasing pattern."
@@ -211,6 +218,18 @@
 	desc = "Whether by starvation, disease, inter-pack conflict, or an unlucky kick from a saiga, this volf has died."
 	icon = 'modular_redtard/rockhill/icons/roguetown/mob/monster/vol.dmi'
 	icon_state = "bones"
+
+/obj/effect/decal/shadow_floor
+	name = ""
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/decoration.dmi'
+	icon_state = "shadow_floor"
+
+/obj/effect/decal/shadow_floor/corner
+	name = ""
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/decoration.dmi'
+	icon_state = "shad_floorcorn"
 
 /obj/effect/decal/wood/herringbone
 	name = "herringbone flooring"

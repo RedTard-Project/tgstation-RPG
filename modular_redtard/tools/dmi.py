@@ -65,6 +65,22 @@ def _paeth(a, b, c):
     return b if pb <= pc else c
 
 
+def state_names(path):
+    data = open(path, 'rb').read()
+    for kind, body in _chunks(data):
+        if kind == b'zTXt':
+            key, rest = body.split(b'\x00', 1)
+            if key == b'Description':
+                text = zlib.decompress(rest[1:]).decode('utf-8', 'replace')
+                return {m.group(1) for m in re.finditer(r'^state = "((?:[^"\\]|\\.)*)"', text, re.M)}
+        elif kind in (b'tEXt', b'iTXt'):
+            key, rest = body.split(b'\x00', 1)
+            if key == b'Description':
+                text = rest.split(b'\x00', 3)[-1] if kind == b'iTXt' else rest
+                return {m.group(1) for m in re.finditer(r'^state = "((?:[^"\\]|\\.)*)"', text.decode('utf-8', 'replace'), re.M)}
+    return set()
+
+
 def read(path):
     data = open(path, 'rb').read()
     idat = []

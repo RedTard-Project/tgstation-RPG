@@ -53,16 +53,16 @@
 	name = "Unknown"
 
 /mob/living/carbon/human/species/orc/npc/berserker
-	name = "Unknown"
+	name = "orc"
 
 /mob/living/carbon/human/species/orc/npc/footsoldier
-	name = "Unknown"
+	name = "orc"
 
 /mob/living/carbon/human/species/orc/npc/marauder
-	name = "Unknown"
+	name = "orc"
 
 /mob/living/carbon/human/species/orc/npc/warlord
-	name = "Unknown"
+	name = "orc"
 
 /mob/living/carbon/human/species/skeleton/npc/bogguard
 	name = "skeleton"

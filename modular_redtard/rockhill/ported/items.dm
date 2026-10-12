@@ -151,8 +151,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/alch/atropa
 	name = "atropa"
@@ -163,8 +163,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/alch/benedictus
 	name = "benedictus"
@@ -175,8 +175,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/alch/bone
 	name = "tail bone"
@@ -188,8 +188,8 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/alch/calendula
 	name = "calendula"
@@ -200,8 +200,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/alch/coaldust
 	name = "coal dust"
@@ -212,8 +212,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/alch/earthdust
 	name = "earth essentia"
@@ -224,8 +224,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/alch/euphrasia
 	name = "euphrasia"
@@ -236,8 +236,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/alch/golddust
 	name = "gold dust"
@@ -248,8 +248,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/alch/hypericum
 	name = "hypericum"
@@ -260,8 +260,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/alch/infernaldust
 	name = "infernal dust"
@@ -272,8 +272,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/alch/irondust
 	name = "iron dust"
@@ -284,8 +284,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/alch/magicdust
 	name = "pure essentia"
@@ -296,8 +296,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/alch/matricaria
 	name = "matricaria"
@@ -308,8 +308,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/alch/mentha
 	name = "mentha"
@@ -320,8 +320,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/alch/mineraldust
 	name = "mineral dusts"
@@ -332,8 +332,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/alch/paris
 	name = "paris"
@@ -344,8 +344,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/alch/rosa
 	name = "rosa"
@@ -356,10 +356,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "rosa"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head_items.dmi'
-	worn_icon_state = "rosa"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK|ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
+	worn_icon_state = "rosa"
 
 /obj/item/alch/runedust
 	name = "raw essentia"
@@ -370,8 +370,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/alch/salvia
 	name = "salvia"
@@ -382,10 +382,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head_items.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
+	inhand_icon_state = null
+	worn_icon_state = "salvia"
 
 /obj/item/alch/silverdust
 	name = "silver dust"
@@ -396,8 +396,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/alch/solardust
 	name = "solar dust"
@@ -408,8 +408,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/alch/swampdust
 	name = "swampweed dust"
@@ -420,8 +420,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/alch/symphitum
 	name = "symphitum"
@@ -432,8 +432,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/alch/taraxacum
 	name = "taraxacum"
@@ -444,8 +444,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/alch/transisdust
 	name = "sui dust"
@@ -456,8 +456,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/alch/urtica
 	name = "urtica"
@@ -468,8 +468,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/alch/valeriana
 	name = "valeriana"
@@ -480,8 +480,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/alch/viscera
 	name = "viscera"
@@ -492,8 +492,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/alch/waterdust
 	name = "water essentia"
@@ -504,8 +504,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/ammo_casing/caseless/rogue/arrow/iron
 	name = "iron broadhead arrow"
@@ -517,9 +517,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BELT
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/ammo_casing/caseless/rogue/arrow/iron/decrepit
 	name = "decrepit broadhead arrow"
@@ -531,9 +532,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BELT
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/ammo_casing/caseless/rogue/bolt
 	name = "bolt"
@@ -545,9 +547,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BELT
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/ammo_casing/caseless/rogue/bolt/decrepit
 	name = "decrepit bolt"
@@ -559,9 +562,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BELT
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/ammo_casing/caseless/rogue/javelin/steel/ancient/decrepit
 	name = "decrepit javelin"
@@ -573,9 +577,10 @@
 	throwforce = 20
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BELT
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/armor_brush
 	parent_type = /obj/item/rockhill
@@ -587,8 +592,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/artefact/dendor_hose
 	name = "Dendor's Endless Hose"
@@ -599,9 +604,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/artefact/eora_heart
 	name = "Eora's Heart"
@@ -612,8 +617,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/artefact/necra_censer
 	name = "Necra's censer"
@@ -625,8 +630,8 @@
 	throwforce = 4
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "necra_censer"
 	worn_icon_state = "necra_censer"
+	inhand_icon_state = "necra_censer"
 
 /obj/item/artefact/noc_phylactery
 	name = "Noc's Phylactery"
@@ -637,8 +642,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/artifact/astrata_star
 	name = "Star of Astrata"
@@ -649,8 +654,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/artifact/ravox_lens
 	name = "Ravox trace lens"
@@ -661,9 +666,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BELT
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/ash
 	parent_type = /obj/item/rockhill
@@ -675,8 +681,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/azure_lipstick/black
 	name = "black lipstick"
@@ -687,8 +693,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/bait/leech
 	name = "bag of leechbait"
@@ -700,8 +706,8 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/barometer
 	parent_type = /obj/item/rockhill
@@ -713,8 +719,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/bedroll
 	parent_type = /obj/item/rockhill
@@ -725,9 +731,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/bedsheet/rogue/cloth
 	name = "bedsheet"
@@ -739,8 +745,8 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "cloth_bedsheet"
 	worn_icon_state = "cloth_bedsheet"
+	inhand_icon_state = null
 
 /obj/item/bedsheet/rogue/double_pelt
 	name = "bedsheet"
@@ -752,8 +758,8 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "double_pelt_bedsheet"
 	worn_icon_state = "double_pelt_bedsheet"
+	inhand_icon_state = null
 
 /obj/item/bedsheet/rogue/fabric
 	name = "bedsheet"
@@ -765,8 +771,8 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "fabric_bedsheet"
 	worn_icon_state = "fabric_bedsheet"
+	inhand_icon_state = null
 
 /obj/item/bedsheet/rogue/fabric_double
 	name = "bedsheet"
@@ -778,8 +784,8 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "double_fabric_bedsheet"
 	worn_icon_state = "double_fabric_bedsheet"
+	inhand_icon_state = null
 
 /obj/item/bedsheet/rogue/pelt
 	name = "bedsheet"
@@ -791,8 +797,8 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "pelt_bedsheet"
 	worn_icon_state = "pelt_bedsheet"
+	inhand_icon_state = null
 
 /obj/item/bedsheet/rogue/wool
 	name = "bedsheet"
@@ -804,8 +810,8 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "wool_bedsheet"
 	worn_icon_state = "wool_bedsheet"
+	inhand_icon_state = null
 
 /obj/item/bmbstrap
 	parent_type = /obj/item/rockhill
@@ -817,10 +823,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
-	inhand_icon_state = "bombdolier"
-	worn_icon = 'modular_redtard/rockhill/icons/modular_azurepeak/icons/obj/items/bombdolier.dmi'
-	worn_icon_state = "bombdolier"
 	slot_flags = ITEM_SLOT_BACK
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/bodypart/r_arm
 	parent_type = /obj/item/rockhill
@@ -833,8 +839,8 @@
 	throwforce = 3
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/bodypart/r_arm/goblin
 	name = "right arm"
@@ -846,8 +852,8 @@
 	throwforce = 3
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/bomb
 	parent_type = /obj/item/rockhill
@@ -860,261 +866,261 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/bonechill
 	name = "Scroll of Bone Chill"
-	desc = ""
-	icon = 'modular_redtard/rockhill/icons/obj/library.dmi'
+	desc = "A scroll of potential known only to those that can decipher its secrets."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
 	icon_state = "scrolldarkred"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/enlarge
 	name = "Scroll of Enlarge"
-	desc = ""
-	icon = 'modular_redtard/rockhill/icons/obj/library.dmi'
+	desc = "A scroll of potential known only to those that can decipher its secrets."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
 	icon_state = "scrolldarkred"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/ensnare
 	name = "Scroll of Ensnare"
-	desc = ""
-	icon = 'modular_redtard/rockhill/icons/obj/library.dmi'
+	desc = "A scroll of potential known only to those that can decipher its secrets."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
 	icon_state = "scrolldarkred"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/featherfall
 	name = "Scroll of Featherfall"
-	desc = ""
-	icon = 'modular_redtard/rockhill/icons/obj/library.dmi'
+	desc = "A scroll of potential known only to those that can decipher its secrets."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
 	icon_state = "scrolldarkred"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/fetch
 	name = "Scroll of Fetch"
-	desc = ""
-	icon = 'modular_redtard/rockhill/icons/obj/library.dmi'
+	desc = "A scroll of potential known only to those that can decipher its secrets."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
 	icon_state = "scrollpurple"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/fireball
 	name = "Scroll of Fireball"
-	desc = ""
-	icon = 'modular_redtard/rockhill/icons/obj/library.dmi'
+	desc = "A scroll of potential known only to those that can decipher its secrets."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
 	icon_state = "scrollred"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/forcewall_weak
 	name = "Scroll of Forcewall"
-	desc = ""
-	icon = 'modular_redtard/rockhill/icons/obj/library.dmi'
+	desc = "A scroll of potential known only to those that can decipher its secrets."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
 	icon_state = "scrolldarkred"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/fortitude
 	name = "Scroll of Fortitude"
-	desc = ""
-	icon = 'modular_redtard/rockhill/icons/obj/library.dmi'
+	desc = "A scroll of potential known only to those that can decipher its secrets."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
 	icon_state = "scrolldarkred"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/frostbolt
 	name = "Scroll of Frostbolt"
-	desc = ""
-	icon = 'modular_redtard/rockhill/icons/obj/library.dmi'
+	desc = "A scroll of potential known only to those that can decipher its secrets."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
 	icon_state = "scrolldarkred"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/greaterfireball
 	name = "Scroll of Greater Fireball"
-	desc = ""
-	icon = 'modular_redtard/rockhill/icons/obj/library.dmi'
+	desc = "A scroll of potential known only to those that can decipher its secrets."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
 	icon_state = "scrollred"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/guidance
 	name = "Scroll of Guidance"
-	desc = ""
-	icon = 'modular_redtard/rockhill/icons/obj/library.dmi'
+	desc = "A scroll of potential known only to those that can decipher its secrets."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
 	icon_state = "scrolldarkred"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/invisibility
 	name = "Scroll of Invisibility"
-	desc = ""
-	icon = 'modular_redtard/rockhill/icons/obj/library.dmi'
+	desc = "A scroll of potential known only to those that can decipher its secrets."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
 	icon_state = "scrollpurple"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/leap
 	name = "Scroll of Leap"
-	desc = ""
-	icon = 'modular_redtard/rockhill/icons/obj/library.dmi'
+	desc = "A scroll of potential known only to those that can decipher its secrets."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
 	icon_state = "scrolldarkred"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/lesserknock
 	name = "Scroll of Lesser Knock"
-	desc = ""
-	icon = 'modular_redtard/rockhill/icons/obj/library.dmi'
+	desc = "A scroll of potential known only to those that can decipher its secrets."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
 	icon_state = "scrollred"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/lightning
 	name = "Scroll of Lightning"
-	desc = ""
-	icon = 'modular_redtard/rockhill/icons/obj/library.dmi'
+	desc = "A scroll of potential known only to those that can decipher its secrets."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
 	icon_state = "scrollyellow"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/message
 	name = "Scroll of Message"
-	desc = ""
-	icon = 'modular_redtard/rockhill/icons/obj/library.dmi'
+	desc = "A scroll of potential known only to those that can decipher its secrets."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
 	icon_state = "scrolldarkred"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/repel
 	name = "Scroll of Repel"
-	desc = ""
-	icon = 'modular_redtard/rockhill/icons/obj/library.dmi'
+	desc = "A scroll of potential known only to those that can decipher its secrets."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
 	icon_state = "scrolldarkred"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/sicknessray
 	name = "Scroll of Sickness Ray"
-	desc = ""
-	icon = 'modular_redtard/rockhill/icons/obj/library.dmi'
+	desc = "A scroll of potential known only to those that can decipher its secrets."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
 	icon_state = "scrollgreen"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/skeleton
 	name = "Scroll of Raise Skeleton"
-	desc = ""
-	icon = 'modular_redtard/rockhill/icons/obj/library.dmi'
+	desc = "A scroll of potential known only to those that can decipher its secrets."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
 	icon_state = "scrolldarkred"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/skeleton/lesser
 	name = "Scroll of Lesser Raise Skeletons"
-	desc = ""
-	icon = 'modular_redtard/rockhill/icons/obj/library.dmi'
+	desc = "A scroll of potential known only to those that can decipher its secrets."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
 	icon_state = "scrolldarkred"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/spitfire
 	name = "Scroll of Spitfire"
-	desc = ""
-	icon = 'modular_redtard/rockhill/icons/obj/library.dmi'
+	desc = "A scroll of potential known only to those that can decipher its secrets."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
 	icon_state = "scrollred"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/book/rogue/abyssor
 	name = "A Tale of Those Who Live At Sea"
@@ -1125,9 +1131,9 @@
 	force = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/book/rogue/arcyne
 	name = "Latent Magicks, where does Arcyne Power come from?"
@@ -1138,9 +1144,9 @@
 	force = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/book/rogue/beardling
 	name = "Rock and Stone - ABC & Tales for Beardlings"
@@ -1151,9 +1157,9 @@
 	force = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/book/rogue/bibble
 	name = "The Verses and Acts of the Ten"
@@ -1164,9 +1170,9 @@
 	force = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/book/rogue/bibble/psy
 	name = "Tome of Psydon"
@@ -1177,9 +1183,9 @@
 	force = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/book/rogue/bibble/zizo
 	name = "Lexicon of Her Truth"
@@ -1190,9 +1196,9 @@
 	force = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/book/rogue/cardgame
 	name = "Graystone's Torment Basic Rules"
@@ -1203,9 +1209,9 @@
 	force = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/book/rogue/cooking
 	name = "Tastes Fit For The Lord"
@@ -1216,9 +1222,9 @@
 	force = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/book/rogue/law
 	name = "Tome of Justice"
@@ -1229,9 +1235,9 @@
 	force = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/book/rogue/necra
 	name = "Burial Rites for Necra"
@@ -1242,9 +1248,9 @@
 	force = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/book/rogue/nitebeast
 	name = "Legend of the Nitebeast"
@@ -1255,9 +1261,9 @@
 	force = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/book/rogue/noc
 	name = "Dreamseeker"
@@ -1268,9 +1274,9 @@
 	force = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/book/rogue/playerbook
 	name = "unknown title"
@@ -1281,9 +1287,9 @@
 	force = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/book/rogue/swatchbook
 	name = "Tailor's Swatchbook"
@@ -1294,9 +1300,9 @@
 	force = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/book/rogue/sword
 	name = "The Six Follies: How To Survive by the Sword"
@@ -1307,9 +1313,9 @@
 	force = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/book/rogue/tales1
 	name = "Assorted Tales From Yester Yils"
@@ -1320,9 +1326,9 @@
 	force = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/book/rogue/tales3
 	name = "Myths & Legends of the Peaks & Beyond Volume I"
@@ -1333,9 +1339,9 @@
 	force = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/book/rogue/xylix
 	name = "book"
@@ -1346,9 +1352,9 @@
 	force = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/book/rogue/yeoldecookingmanual
 	name = "Ye olde ways of cookinge"
@@ -1359,9 +1365,9 @@
 	force = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/book/spellbook
 	parent_type = /obj/item/rockhill
@@ -1373,9 +1379,9 @@
 	force = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/book_crafting_kit
 	parent_type = /obj/item/rockhill
@@ -1387,8 +1393,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/bottle_kit
 	parent_type = /obj/item/rockhill
@@ -1400,8 +1406,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/bouquet/calendula
 	parent_type = /obj/item/rockhill
@@ -1413,8 +1419,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "bouquet_calendula"
 	worn_icon_state = "bouquet_calendula"
+	inhand_icon_state = null
 
 /obj/item/bouquet/matricaria
 	parent_type = /obj/item/rockhill
@@ -1426,8 +1432,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "bouquet_matricaria"
 	worn_icon_state = "bouquet_matricaria"
+	inhand_icon_state = null
 
 /obj/item/bouquet/rosa
 	parent_type = /obj/item/rockhill
@@ -1439,8 +1445,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "bouquet_rosa"
 	worn_icon_state = "bouquet_rosa"
+	inhand_icon_state = null
 
 /obj/item/bouquet/salvia
 	parent_type = /obj/item/rockhill
@@ -1452,8 +1458,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "bouquet_salvia"
 	worn_icon_state = "bouquet_salvia"
+	inhand_icon_state = null
 
 /obj/item/broom
 	parent_type = /obj/item/rockhill
@@ -1466,9 +1472,10 @@
 	throwforce = 1
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/burial_shroud
 	parent_type = /obj/item/rockhill
@@ -1480,8 +1487,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/candle/candlestick/gold
 	name = "three-stick gold candlestick"
@@ -1492,8 +1499,8 @@
 	force = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "candle1"
 	worn_icon_state = "candle1"
+	inhand_icon_state = null
 
 /obj/item/candle/candlestick/gold/lit
 	name = "three-stick gold candlestick"
@@ -1504,8 +1511,8 @@
 	force = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "candle1"
 	worn_icon_state = "candle1"
+	inhand_icon_state = null
 
 /obj/item/candle/candlestick/gold/single
 	name = "one-stick gold candlestick"
@@ -1516,8 +1523,8 @@
 	force = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "candle1"
 	worn_icon_state = "candle1"
+	inhand_icon_state = null
 
 /obj/item/candle/candlestick/gold/single/lit
 	name = "one-stick gold candlestick"
@@ -1528,8 +1535,8 @@
 	force = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "candle1"
 	worn_icon_state = "candle1"
+	inhand_icon_state = null
 
 /obj/item/candle/candlestick/silver
 	name = "three-stick silver candlestick"
@@ -1540,8 +1547,8 @@
 	force = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "candle1"
 	worn_icon_state = "candle1"
+	inhand_icon_state = null
 
 /obj/item/candle/candlestick/silver/lit
 	name = "three-stick silver candlestick"
@@ -1552,8 +1559,8 @@
 	force = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "candle1"
 	worn_icon_state = "candle1"
+	inhand_icon_state = null
 
 /obj/item/candle/candlestick/silver/single/lit
 	name = "one-stick silver candlestick"
@@ -1564,8 +1571,8 @@
 	force = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "candle1"
 	worn_icon_state = "candle1"
+	inhand_icon_state = null
 
 /obj/item/candle/eora
 	name = "eora's candle"
@@ -1576,8 +1583,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "candle1"
 	worn_icon_state = "candle1"
+	inhand_icon_state = null
 
 /obj/item/candle/eora/lit
 	name = "eora's candle"
@@ -1588,8 +1595,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "candle1"
 	worn_icon_state = "candle1"
+	inhand_icon_state = null
 
 /obj/item/candle/gold/lit
 	name = "gold candle"
@@ -1600,8 +1607,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "candle1"
 	worn_icon_state = "candle1"
+	inhand_icon_state = null
 
 /obj/item/candle/silver/lit
 	name = "silver candle"
@@ -1612,8 +1619,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "candle1"
 	worn_icon_state = "candle1"
+	inhand_icon_state = null
 
 /obj/item/candle/skull
 	name = "candle"
@@ -1624,8 +1631,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "candle1"
 	worn_icon_state = "candle1"
+	inhand_icon_state = null
 
 /obj/item/candle/skull/lit
 	name = "candle"
@@ -1636,8 +1643,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "candle1"
 	worn_icon_state = "candle1"
+	inhand_icon_state = null
 
 /obj/item/candle/yellow
 	name = "candle"
@@ -1648,8 +1655,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "candle1"
 	worn_icon_state = "candle1"
+	inhand_icon_state = null
 
 /obj/item/candle/yellow/lit
 	name = "candle"
@@ -1660,8 +1667,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "candle1"
 	worn_icon_state = "candle1"
+	inhand_icon_state = null
 
 /obj/item/carvedgem/jade/wyrm
 	name = "jade wyrm"
@@ -1672,8 +1679,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/carvedgem/onyxa/snake
 	name = "onyxa snake statue"
@@ -1684,8 +1691,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/carvedgem/onyxa/spider
 	name = "onyxa spider statue"
@@ -1696,8 +1703,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/carvedgem/opal
 	name = "opal base"
@@ -1708,8 +1715,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/carvedgem/porcelain/bauble
 	name = "porcelain bauble"
@@ -1720,8 +1727,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/carvedgem/porcelain/bust
 	name = "porcelain bust"
@@ -1732,8 +1739,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/carvedgem/porcelain/comb
 	name = "porcelain comb"
@@ -1744,8 +1751,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/carvedgem/porcelain/fancyvase
 	name = "fancy porcelain vase"
@@ -1756,8 +1763,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/carvedgem/porcelain/fish
 	name = "porcelain fish figurine"
@@ -1768,8 +1775,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/carvedgem/porcelain/vase
 	name = "porcelain vase"
@@ -1780,20 +1787,20 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/carvedgem/rose/statue/baotha
 	name = "baothan statuette"
 	desc = "A statue carved out of filthy, filthy rosestone."
-	icon = 'modular_redtard/rockhill/icons/roguetown/gems/gem_amber.dmi'
+	icon = 'modular_redtard/rockhill/icons/roguetown/gems/gem_rose.dmi'
 	icon_state = "statue_rose"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/chair/rogue
 	name = "chair"
@@ -1805,9 +1812,9 @@
 	throwforce = 25
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/chairs_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/chairs_righthand.dmi'
-	inhand_icon_state = "chair"
 	worn_icon_state = "chair"
 	origin_type = /obj/structure/chair/wood/rockhill/wood/rogue
+	inhand_icon_state = "chair"
 
 /obj/item/chair/rogue/fancy
 	name = "chair"
@@ -1819,9 +1826,9 @@
 	throwforce = 25
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/chairs_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/chairs_righthand.dmi'
-	inhand_icon_state = "chair"
 	worn_icon_state = "chair"
 	origin_type = /obj/structure/chair/wood/rockhill/wood/rogue/fancy
+	inhand_icon_state = "chair"
 
 /obj/item/chair/stool/bar/rogue
 	name = "stool"
@@ -1833,9 +1840,9 @@
 	throwforce = 20
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/chairs_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/chairs_righthand.dmi'
-	inhand_icon_state = "stool_bar"
 	worn_icon_state = "stool_bar"
 	origin_type = /obj/structure/chair/wood/rockhill/stool/rogue
+	inhand_icon_state = "stool_bar"
 
 /obj/item/chair/stool/bar/rogue/crafted
 	name = "stool"
@@ -1847,9 +1854,9 @@
 	throwforce = 20
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/chairs_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/chairs_righthand.dmi'
-	inhand_icon_state = "stool_bar"
 	worn_icon_state = "stool_bar"
 	origin_type = /obj/structure/chair/wood/rockhill/stool/rogue
+	inhand_icon_state = "stool_bar"
 
 /obj/item/chalk
 	parent_type = /obj/item/rockhill
@@ -1862,8 +1869,8 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/chastity
 	parent_type = /obj/item/rockhill
@@ -1875,9 +1882,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = "cage_belt"
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/chastity/chastity_belt
 	name = "chastity insertable"
@@ -1888,9 +1895,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
-	inhand_icon_state = "cage_insert"
 	worn_icon = "cage_insert"
 	worn_icon_state = "cage_insert"
+	inhand_icon_state = null
 
 /obj/item/chastity/chastity_belt/anal
 	name = "chastity insertable with anal shield"
@@ -1901,9 +1908,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
-	inhand_icon_state = "cage_insert_shield"
 	worn_icon = "cage_insert"
 	worn_icon_state = "cage_insert_shield"
+	inhand_icon_state = null
 
 /obj/item/chastity/chastity_belt/spiked
 	name = "spiked chastity insertable"
@@ -1914,9 +1921,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
-	inhand_icon_state = "cage_insert_spiked"
 	worn_icon = "cage_insert"
 	worn_icon_state = "cage_insert_spiked"
+	inhand_icon_state = null
 
 /obj/item/chastity/chastity_belt/spiked_anal
 	name = "spiked chastity insertable with anal shield"
@@ -1927,9 +1934,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
-	inhand_icon_state = "cage_insert_spikeshield"
 	worn_icon = "cage_insert"
 	worn_icon_state = "cage_insert_spikeshield"
+	inhand_icon_state = null
 
 /obj/item/chastity/chastity_cage
 	name = "chastity cage"
@@ -1940,9 +1947,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
-	inhand_icon_state = "cage_standard"
 	worn_icon = "cage_standard"
 	worn_icon_state = "cage_standard"
+	inhand_icon_state = null
 
 /obj/item/chastity/chastity_cage/flat
 	name = "flat chastity cage"
@@ -1953,9 +1960,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
-	inhand_icon_state = "cage_flat"
 	worn_icon = "cage_standard"
 	worn_icon_state = "cage_flat"
+	inhand_icon_state = null
 
 /obj/item/chastity/chastity_cage/flat/anal
 	name = "flat chastity cage with anal shield"
@@ -1966,9 +1973,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
-	inhand_icon_state = "cage_flat_shield"
 	worn_icon = "cage_standard"
 	worn_icon_state = "cage_flat_shield"
+	inhand_icon_state = null
 
 /obj/item/chastity/chastity_cage/flat/spiked
 	name = "spiked flat chastity cage"
@@ -1979,9 +1986,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
-	inhand_icon_state = "cage_flat_spiked"
 	worn_icon = "cage_standard"
 	worn_icon_state = "cage_flat_spiked"
+	inhand_icon_state = null
 
 /obj/item/chastity/chastity_cage/flat/spiked_anal
 	name = "spiked flat chastity cage with anal shield"
@@ -1992,9 +1999,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
-	inhand_icon_state = "cage_flat_spikeshield"
 	worn_icon = "cage_standard"
 	worn_icon_state = "cage_flat_spikeshield"
+	inhand_icon_state = null
 
 /obj/item/chastity/chastity_cage/spiked
 	name = "spiked chastity cage"
@@ -2005,9 +2012,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
-	inhand_icon_state = "cage_standard_spiked"
 	worn_icon = "cage_standard"
 	worn_icon_state = "cage_standard_spiked"
+	inhand_icon_state = null
 
 /obj/item/chastity/chastity_cage/spiked_anal
 	name = "spiked chastity cage with anal shield"
@@ -2018,9 +2025,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
-	inhand_icon_state = "cage_standard_spikeshield"
 	worn_icon = "cage_standard"
 	worn_icon_state = "cage_standard_spikeshield"
+	inhand_icon_state = null
 
 /obj/item/chastity/cursed
 	name = "cursed chastity device"
@@ -2031,9 +2038,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
-	inhand_icon_state = "cage_cursed"
 	worn_icon = "cage_cursed"
 	worn_icon_state = "cage_cursed"
+	inhand_icon_state = null
 
 /obj/item/chastity/intersex
 	name = "intersex chastity device"
@@ -2044,9 +2051,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
-	inhand_icon_state = "cage_belt"
 	worn_icon = "cage_belt"
 	worn_icon_state = "cage_belt"
+	inhand_icon_state = null
 
 /obj/item/chastity/intersex/spiked
 	name = "spiked intersex chastity device"
@@ -2057,9 +2064,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
-	inhand_icon_state = "cage_belt"
 	worn_icon = "cage_belt"
 	worn_icon_state = "cage_belt"
+	inhand_icon_state = null
 
 /obj/item/clothing/armor/gambeson/tailcoat
 	name = "tailcoat"
@@ -2070,11 +2077,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "butlercoat"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "butlercoat"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_padded
+	inhand_icon_state = null
+	worn_icon_state = "butlercoat"
 
 /obj/item/clothing/cloak/absolutionistrobe
 	name = "absolver's robe"
@@ -2085,10 +2092,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "absolutionistrobe"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = "absolutionistrobe"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	inhand_icon_state = null
+	worn_icon_state = "absolutionistrobe"
 
 /obj/item/clothing/cloak/abyssortabard
 	name = "abyssorite tabard"
@@ -2099,11 +2106,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "abyssortabard"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = "abyssortabard"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "abyssortabard"
 
 /obj/item/clothing/cloak/apron
 	name = "apron"
@@ -2114,11 +2121,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "apron"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = "apron"
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "apron"
 
 /obj/item/clothing/cloak/apron/blacksmith
 	name = "leather apron"
@@ -2129,12 +2136,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "leather_apron"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = "leather_apron"
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
 	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "leather_apron"
 
 /obj/item/clothing/cloak/apron/cook
 	name = "cook apron"
@@ -2145,11 +2152,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "aproncook"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = "aproncook"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = GROIN
+	inhand_icon_state = null
+	worn_icon_state = "aproncook"
 
 /obj/item/clothing/cloak/apron/maid
 	name = "maid apron"
@@ -2160,11 +2167,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "maidapron"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = "maidapron"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	inhand_icon_state = "maidapron"
+	worn_icon_state = "maidapron"
 
 /obj/item/clothing/cloak/apron/waist
 	name = "apron"
@@ -2175,11 +2182,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "waistpron"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = "waistpron"
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = GROIN
+	inhand_icon_state = null
+	worn_icon_state = "waistpron"
 
 /obj/item/clothing/cloak/apron/waist/bar
 	name = "apron"
@@ -2190,11 +2197,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "waistpron"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = "waistpron"
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = GROIN
+	inhand_icon_state = null
+	worn_icon_state = "waistpron"
 
 /obj/item/clothing/cloak/apron/waist/brown
 	name = "apron"
@@ -2205,11 +2212,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "waistpron"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = "waistpron"
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = GROIN
+	inhand_icon_state = null
+	worn_icon_state = "waistpron"
 
 /obj/item/clothing/cloak/black_cloak
 	name = "fur overcoat"
@@ -2220,11 +2227,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "black_cloak"
 
 /obj/item/clothing/cloak/cape
 	name = "cape"
@@ -2235,10 +2242,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "cape"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = "cape"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	inhand_icon_state = null
+	worn_icon_state = "cape"
 
 /obj/item/clothing/cloak/captain
 	name = "captain's cape"
@@ -2249,10 +2256,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/captain.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
+	inhand_icon_state = null
+	worn_icon_state = "capcloak"
 
 /obj/item/clothing/cloak/chasuble
 	name = "chasuble"
@@ -2263,25 +2270,24 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "chasuble"
 
 /obj/item/clothing/cloak/citywatch
 	name = "citywatch cape"
 	desc = "A handsome cloak, denoting a certain cosmipolitan authority"
-	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/licensed-infraredbaron/cloaks.dmi'
-	icon_state = "citywatch_cape"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "citywatch_cape"
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/licensed-infraredbaron/onmob/cloaks.dmi'
-	worn_icon_state = "citywatch_cape"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	icon_state = null
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/cloak/citywatchcaptain
 	name = "citywatch captain's cloak"
@@ -2292,10 +2298,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "sheriffcloak"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = "sheriffcloak"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	inhand_icon_state = null
+	worn_icon_state = "sheriffcloak"
 
 /obj/item/clothing/cloak/darkcloak/bear/wardenmaster
 	name = "Warden trophy-cloak"
@@ -2306,10 +2312,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "bear_cloak"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = "bear_cloak"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	inhand_icon_state = null
+	worn_icon_state = "bear_cloak"
 
 /obj/item/clothing/cloak/duelistcape
 	name = "duelist cape"
@@ -2320,10 +2326,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "duelistcape"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = "duelistcape"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	inhand_icon_state = null
+	worn_icon_state = "duelistcape"
 
 /obj/item/clothing/cloak/half
 	name = "halfcloak"
@@ -2334,10 +2340,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	inhand_icon_state = null
+	worn_icon_state = "halfcloak"
 
 /obj/item/clothing/cloak/half/red
 	name = "halfcloak"
@@ -2348,10 +2354,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	inhand_icon_state = null
+	worn_icon_state = "halfcloak"
 
 /obj/item/clothing/cloak/half/vet
 	name = "town watch cloak"
@@ -2362,10 +2368,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	inhand_icon_state = null
+	worn_icon_state = "guardcloak"
 
 /obj/item/clothing/cloak/heartfelt
 	name = "red cloak"
@@ -2376,11 +2382,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "heartfelt_cloak"
 
 /obj/item/clothing/cloak/hierophant
 	name = "hierophant's sash"
@@ -2391,10 +2397,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "naledisash"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = "naledisash"
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
+	inhand_icon_state = null
+	worn_icon_state = "naledisash"
 
 /obj/item/clothing/cloak/holysee
 	name = "holy silver vestments"
@@ -2405,11 +2411,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "silvertabard"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/martyr.dmi'
-	worn_icon_state = "silvertabard"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "silvertabard"
 
 /obj/item/clothing/cloak/lordcloak
 	name = "lordly cloak"
@@ -2420,10 +2426,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "lord_cloak"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = "lord_cloak"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	inhand_icon_state = null
+	worn_icon_state = "lord_cloak"
 
 /obj/item/clothing/cloak/lordcloak/baronycloak
 	name = "Barony Cloak"
@@ -2434,10 +2440,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "lord_cloak"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = "lord_cloak"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	inhand_icon_state = null
+	worn_icon_state = "lord_cloak"
 
 /obj/item/clothing/cloak/lordcloak/ladycloak
 	name = "ladylike shortcloak"
@@ -2448,10 +2454,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "shortcloak"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = "shortcloak"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	inhand_icon_state = null
+	worn_icon_state = "shortcloak"
 
 /obj/item/clothing/cloak/martyr
 	name = "martyr cloak"
@@ -2462,11 +2468,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "martyrcloak"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = "martyrcloak"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "martyrcloak"
 
 /obj/item/clothing/cloak/matron
 	name = "matron cloak"
@@ -2477,11 +2483,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "matroncloak"
 
 /obj/item/clothing/cloak/psydontabard
 	name = "psydonian tabard"
@@ -2492,11 +2498,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "psydontabard"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = "psydontabard"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "psydontabard"
 
 /obj/item/clothing/cloak/raincloak/brown
 	name = "rain cloak"
@@ -2507,10 +2513,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "rain_cloak"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = "rain_cloak"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	inhand_icon_state = null
+	worn_icon_state = "rain_cloak"
 
 /obj/item/clothing/cloak/raincloak/furcloak/crafted
 	name = "fur cloak"
@@ -2521,10 +2527,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "rain_cloak"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = "rain_cloak"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	inhand_icon_state = null
+	worn_icon_state = "rain_cloak"
 
 /obj/item/clothing/cloak/raincloak/green
 	name = "rain cloak"
@@ -2535,10 +2541,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "rain_cloak"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = "rain_cloak"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	inhand_icon_state = null
+	worn_icon_state = "rain_cloak"
 
 /obj/item/clothing/cloak/raincloak/mortus
 	name = "rain cloak"
@@ -2549,10 +2555,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "rain_cloak"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = "rain_cloak"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	inhand_icon_state = null
+	worn_icon_state = "rain_cloak"
 
 /obj/item/clothing/cloak/shadowcloak/vanguard
 	name = "vanguard cloak"
@@ -2563,10 +2569,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	inhand_icon_state = null
+	worn_icon_state = "shadowcloak"
 
 /obj/item/clothing/cloak/stabard
 	name = "surcoat"
@@ -2577,11 +2583,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "stabard"
 
 /obj/item/clothing/cloak/stabard/black
 	name = "surcoat"
@@ -2592,11 +2598,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "stabard"
 
 /obj/item/clothing/cloak/stabard/bog
 	name = "bogman tabard"
@@ -2607,11 +2613,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "stabard"
 
 /obj/item/clothing/cloak/stabard/guard
 	name = "guard tabard"
@@ -2622,11 +2628,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "stabard"
 
 /obj/item/clothing/cloak/stabard/guardhood
 	name = "guard hood"
@@ -2637,11 +2643,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "guard_hood"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
-	worn_icon_state = "guard_hood"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST
+	inhand_icon_state = null
+	worn_icon_state = "guard_hood"
 
 /obj/item/clothing/cloak/stabard/surcoat
 	name = "jupon"
@@ -2652,11 +2658,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "surcoat"
 
 /obj/item/clothing/cloak/stabard/surcoat/bailiff
 	name = "jupon"
@@ -2667,11 +2673,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "surcoat"
 
 /obj/item/clothing/cloak/stabard/surcoat/councillor
 	name = "jupon"
@@ -2682,11 +2688,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "surcoat"
 
 /obj/item/clothing/cloak/stabard/surcoat/guard
 	name = "jupon"
@@ -2697,11 +2703,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "surcoat"
 
 /obj/item/clothing/cloak/stole
 	name = "stole"
@@ -2712,10 +2718,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "stole_gold"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = "stole_gold"
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
+	inhand_icon_state = null
+	worn_icon_state = "stole_gold"
 
 /obj/item/clothing/cloak/stole/purple
 	name = "stole"
@@ -2726,10 +2732,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "stole_gold"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = "stole_gold"
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
+	inhand_icon_state = null
+	worn_icon_state = "stole_gold"
 
 /obj/item/clothing/cloak/stole/red
 	name = "stole"
@@ -2740,10 +2746,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "stole_red"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = "stole_red"
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
+	inhand_icon_state = null
+	worn_icon_state = "stole_red"
 
 /obj/item/clothing/cloak/tabard
 	name = "tabard"
@@ -2754,11 +2760,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "tabard"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
-	worn_icon_state = "tabard"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "tabard"
 
 /obj/item/clothing/cloak/tabard/knight
 	name = "tabard"
@@ -2769,11 +2775,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "tabard"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
-	worn_icon_state = "tabard"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "tabard"
 
 /obj/item/clothing/cloak/tabard/knight/guard
 	name = "tabard"
@@ -2784,11 +2790,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "tabard"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
-	worn_icon_state = "tabard"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "tabard"
 
 /obj/item/clothing/cloak/tabard/retinue
 	name = "tabard"
@@ -2799,11 +2805,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "tabard"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
-	worn_icon_state = "tabard"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "tabard"
 
 /obj/item/clothing/cloak/tabard/retinue/baronycloak
 	name = "tabard"
@@ -2814,11 +2820,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "tabard"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
-	worn_icon_state = "tabard"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "tabard"
 
 /obj/item/clothing/cloak/templar/abyssor
 	name = "abyssor tabard"
@@ -2829,11 +2835,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "tabard_abyssor"
 
 /obj/item/clothing/cloak/templar/astratan
 	name = "astratan tabard"
@@ -2844,10 +2850,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
+	inhand_icon_state = null
+	worn_icon_state = "astratatabard"
 
 /obj/item/clothing/cloak/templar/eoran
 	name = "eoran tabard"
@@ -2858,10 +2864,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
+	inhand_icon_state = null
+	worn_icon_state = "eoratabard"
 
 /obj/item/clothing/cloak/templar/malumite
 	name = "tabard of malum"
@@ -2872,10 +2878,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
+	inhand_icon_state = null
+	worn_icon_state = "malumtabard"
 
 /obj/item/clothing/cloak/templar/necran
 	name = "necran tabard"
@@ -2886,10 +2892,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
+	inhand_icon_state = null
+	worn_icon_state = "necratabard"
 
 /obj/item/clothing/cloak/templar/pestran
 	name = "pestran tabard"
@@ -2900,10 +2906,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
+	inhand_icon_state = null
+	worn_icon_state = "pestratabard"
 
 /obj/item/clothing/cloak/templar/ravox
 	name = "justice tabard"
@@ -2914,11 +2920,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "justicetabard"
 
 /obj/item/clothing/cloak/templar/undivided
 	name = "see tabard"
@@ -2929,10 +2935,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
+	inhand_icon_state = null
+	worn_icon_state = "seetabard"
 
 /obj/item/clothing/cloak/templar/xylixian
 	name = "xylixian cloak"
@@ -2943,10 +2949,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
+	inhand_icon_state = null
+	worn_icon_state = "xylixcloak"
 
 /obj/item/clothing/cloak/undivided
 	name = "see cloak"
@@ -2957,10 +2963,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/cloak/wardencloak
 	name = "warden cloak"
@@ -2971,10 +2977,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	inhand_icon_state = null
+	worn_icon_state = "wardencloak"
 
 /obj/item/clothing/gloves/roguetown/angle
 	name = "heavy leather gloves"
@@ -2985,12 +2991,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES
-	armor_type = /datum/armor/rockhill_leather_good
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "angle"
 
 /obj/item/clothing/gloves/roguetown/angle/atgervi
 	name = "fur-lined leather gloves"
@@ -3001,12 +3006,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "atgervi_raider_gloves"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
-	worn_icon_state = "atgervi_raider_gloves"
 	slot_flags = ITEM_SLOT_GLOVES
-	armor_type = /datum/armor/rockhill_leather_good
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "atgervi_raider_gloves"
 
 /obj/item/clothing/gloves/roguetown/angle/grenzelgloves/blacksmith
 	name = "forge gauntlets"
@@ -3017,12 +3021,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "grenzelgloves"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
-	worn_icon_state = "grenzelgloves"
 	slot_flags = ITEM_SLOT_GLOVES
-	armor_type = /datum/armor/rockhill_leather_good
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "grenzelgloves"
 
 /obj/item/clothing/gloves/roguetown/bandages/pugilist
 	name = "pugilistic bandages"
@@ -3033,12 +3036,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "clothwraps"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
-	worn_icon_state = "clothwraps"
 	slot_flags = ITEM_SLOT_GLOVES
-	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "clothwraps"
 
 /obj/item/clothing/gloves/roguetown/blacksteel/modern/plategloves
 	name = "blacksteel plate gauntlets"
@@ -3049,12 +3051,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "bplategloves"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/blkknight.dmi'
-	worn_icon_state = "bplategloves"
 	slot_flags = ITEM_SLOT_GLOVES
-	armor_type = /datum/armor/rockhill_plate_bsteel
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "bplategloves"
 
 /obj/item/clothing/gloves/roguetown/chain
 	name = "chain gauntlets"
@@ -3065,12 +3066,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES
-	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "cgloves"
 
 /obj/item/clothing/gloves/roguetown/chain/ancient
 	name = "ancient chain gauntlets"
@@ -3081,12 +3081,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES
-	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "acgloves"
 
 /obj/item/clothing/gloves/roguetown/chain/ancient/decrepit
 	name = "decrepit chain gauntlets"
@@ -3097,12 +3096,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES
-	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "acgloves"
 
 /obj/item/clothing/gloves/roguetown/chain/iron
 	name = "iron chain gauntlets"
@@ -3113,12 +3111,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES
-	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "icgloves"
 
 /obj/item/clothing/gloves/roguetown/chain/psydon
 	name = "psydonic chain-wrapped gloves"
@@ -3129,12 +3126,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "psydongloveschains"
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
-	worn_icon_state = "psydongloveschains"
 	slot_flags = ITEM_SLOT_GLOVES
-	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/gloves/roguetown/fingerless
 	name = "fingerless gloves"
@@ -3145,11 +3141,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "fingerless_gloves"
 
 /obj/item/clothing/gloves/roguetown/fingerless_leather
 	name = "fingerless leather gloves"
@@ -3160,12 +3156,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES
-	armor_type = /datum/armor/rockhill_leather_good
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "roguegloves"
 
 /obj/item/clothing/gloves/roguetown/leather
 	name = "leather gloves"
@@ -3176,12 +3171,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES
-	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "leather_gloves"
 
 /obj/item/clothing/gloves/roguetown/leather/black
 	name = "leather gloves"
@@ -3192,12 +3186,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES
-	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "leather_gloves"
 
 /obj/item/clothing/gloves/roguetown/leather/horsey
 	name = "arm harness"
@@ -3208,12 +3201,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "harms"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
-	worn_icon_state = "harms"
 	slot_flags = ITEM_SLOT_GLOVES
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|HAND_LEFT|HAND_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "harms"
 
 /obj/item/clothing/gloves/roguetown/nomagic
 	name = "gem encrusted mana binding gloves"
@@ -3223,11 +3216,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/gloves/roguetown/otavan/inqgloves
 	name = "inquisitorial leather gloves"
@@ -3238,12 +3231,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "inqgloves"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
-	worn_icon_state = "inqgloves"
 	slot_flags = ITEM_SLOT_GLOVES
-	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "inqgloves"
 
 /obj/item/clothing/gloves/roguetown/otavan/psygloves
 	name = "psydonic leather gloves"
@@ -3254,12 +3246,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "psydongloves"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
-	worn_icon_state = "psydongloves"
 	slot_flags = ITEM_SLOT_GLOVES
-	armor_type = /datum/armor/rockhill_leather_good
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "psydongloves"
 
 /obj/item/clothing/gloves/roguetown/plate
 	name = "plate gauntlets"
@@ -3270,12 +3261,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "gauntlets"
 
 /obj/item/clothing/gloves/roguetown/plate/ancient
 	name = "ancient plate gauntlets"
@@ -3286,12 +3276,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "agauntlets"
 
 /obj/item/clothing/gloves/roguetown/plate/ancient/decrepit
 	name = "decrepit plate gauntlets"
@@ -3302,12 +3291,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "agauntlets"
 
 /obj/item/clothing/gloves/roguetown/plate/graggar
 	name = "vicious gauntlets"
@@ -3318,12 +3306,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES
-	armor_type = /datum/armor/rockhill_ascendant
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "graggarplategloves"
 
 /obj/item/clothing/gloves/roguetown/plate/holysee
 	name = "holy silver plate gauntlets"
@@ -3334,12 +3321,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "silvergloves"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/martyr.dmi'
-	worn_icon_state = "silvergloves"
 	slot_flags = ITEM_SLOT_GLOVES
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "silvergloves"
 
 /obj/item/clothing/gloves/roguetown/plate/iron
 	name = "iron plate gauntlets"
@@ -3350,12 +3336,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "igauntlets"
 
 /obj/item/clothing/gloves/roguetown/plate/matthios
 	name = "gilded gauntlets"
@@ -3366,12 +3351,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES
-	armor_type = /datum/armor/rockhill_ascendant
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "matthiosgloves"
 
 /obj/item/clothing/gloves/roguetown/plate/zizo
 	name = "avantyne plate gauntlets"
@@ -3382,12 +3366,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES
-	armor_type = /datum/armor/rockhill_ascendant
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "zizogauntlets"
 
 /obj/item/clothing/gloves/xylix
 	name = "Pickpocket gloves"
@@ -3398,11 +3381,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/head/inqarticles/blackbag
 	name = "black bag"
@@ -3413,12 +3396,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "blackbag"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
-	worn_icon_state = "blackbag"
 	slot_flags = ITEM_SLOT_HEAD
 	armor_type = /datum/armor/rockhill_blackbag
 	body_parts_covered = HEAD
+	inhand_icon_state = null
+	worn_icon_state = "blackbag"
 
 /obj/item/clothing/head/roguetown/archercap
 	name = "archer's cap"
@@ -3429,10 +3412,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/armingcap
 	name = "cap"
@@ -3443,10 +3426,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "armingcap"
 	worn_icon_state = "armingcap"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/articap
 	name = "artificer's cap"
@@ -3457,10 +3440,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/bardhat
 	name = "bard's hat"
@@ -3471,10 +3454,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/beekeeper
 	name = "beekeeper's hood"
@@ -3485,11 +3468,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "beekeeper"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
-	worn_icon_state = "beekeeper"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	body_parts_covered = HEAD|NECK
+	inhand_icon_state = null
+	worn_icon_state = "beekeeper"
 
 /obj/item/clothing/head/roguetown/brimmed
 	name = "hat"
@@ -3500,10 +3483,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/chaperon
 	name = "chaperon hat"
@@ -3514,10 +3497,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "chaperon"
 	worn_icon_state = "chaperon"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/chaperon/brown
 	name = "chaperon hat"
@@ -3528,10 +3511,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "chaperon"
 	worn_icon_state = "chaperon"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/chaperon/noble
 	name = "noble's chaperon"
@@ -3542,10 +3525,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "noblechaperon"
 	worn_icon_state = "noblechaperon"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/chaperon/noble/bailiff
 	name = "Marshal's chaperon"
@@ -3556,11 +3539,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "noblechaperon"
 	worn_icon_state = "noblechaperon"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_spellsinger
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/chaperon/noble/guildmaster
 	name = "Guildmaster's chapereon"
@@ -3571,10 +3554,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "noblechaperon"
 	worn_icon_state = "noblechaperon"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/chaperon/noble/hand
 	name = "hand's chaperon"
@@ -3585,10 +3568,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "noblechaperon"
 	worn_icon_state = "noblechaperon"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/circlet
 	name = "golden circlet"
@@ -3599,10 +3582,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "circlet"
 	worn_icon_state = "circlet"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/cookhat
 	name = "cook hat"
@@ -3613,10 +3596,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "chef"
 	worn_icon_state = "chef"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = "chef"
 
 /obj/item/clothing/head/roguetown/crown/surplus
 	name = "crown"
@@ -3627,10 +3610,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/dendormask
 	name = "briarmask"
@@ -3641,27 +3624,26 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "dendormask"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
-	worn_icon_state = "dendormask"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	body_parts_covered = HEAD
+	inhand_icon_state = null
+	worn_icon_state = "dendormask"
 
 /obj/item/clothing/head/roguetown/duchess_hood
 	name = "duchess hood"
 	desc = ""
-	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/licensed-infraredbaron/head.dmi'
-	icon_state = "duchess_hood"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "duchess_hood"
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/licensed-infraredbaron/onmob/head.dmi'
-	worn_icon_state = "duchess_hood"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	armor_type = /datum/armor/rockhill_padded_bad
 	body_parts_covered = HEAD
+	icon_state = null
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/head/roguetown/duelisthat
 	name = "duelist's hat"
@@ -3672,10 +3654,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/eoramask
 	name = "eoran mask"
@@ -3686,11 +3668,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "eoramask"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/64x64/head.dmi'
 	worn_icon_state = "eoramask"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/fancyhat
 	name = "fancy hat"
@@ -3701,10 +3683,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "fancyhat"
 	worn_icon_state = "fancyhat"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/fedora
 	name = "archeologist's hat"
@@ -3715,10 +3697,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "curator"
 	worn_icon_state = "curator"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/fisherhat
 	name = "straw hat"
@@ -3729,10 +3711,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "fisherhat"
 	worn_icon_state = "fisherhat"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/hatfur
 	name = "fur hat"
@@ -3743,10 +3725,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/headband/monk
 	name = "monk's headband"
@@ -3757,11 +3739,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "headband"
 	worn_icon_state = "headband"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_spellsinger
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/headdress
 	name = "nemes"
@@ -3772,10 +3754,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/headdress/alt
 	name = "nemes"
@@ -3786,10 +3768,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet
 	name = "helmet"
@@ -3800,13 +3782,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/bandana
 	name = "bandana"
@@ -3817,13 +3799,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
-	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD
 	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = "that"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/bascinet
 	name = "bascinet"
@@ -3834,13 +3816,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "bascinet_novisor"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "bascinet_novisor"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/bascinet/antler
 	name = "wardens's helmet"
@@ -3851,12 +3833,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "bascinet_novisor"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/warden64.dmi'
 	worn_icon_state = "bascinet_novisor"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/bascinet/atgervi
 	name = "owl helmet"
@@ -3867,13 +3849,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "atgervi_raider"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/32x48/atgervi.dmi'
 	worn_icon_state = "atgervi_raider"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/bascinet/etruscan
 	name = "\improper Etruscan bascinet"
@@ -3884,13 +3866,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "klappvisier"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "klappvisier"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/bascinet/pigface
 	name = "pigface bascinet"
@@ -3901,13 +3883,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "hounskull"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "hounskull"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/blacksteel/modern/armet
 	name = "blacksteel armet"
@@ -3918,13 +3900,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "bplatehelm"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/blkknight.dmi'
 	worn_icon_state = "bplatehelm"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate_bsteel
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/blacksteel/psythorns
 	name = "crown of psydonian thorns"
@@ -3935,13 +3917,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "psybarbs"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
-	worn_icon_state = "psybarbs"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	armor_type = /datum/armor/rockhill_plate_bsteel
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "psybarbs"
 
 /obj/item/clothing/head/roguetown/helmet/citywatch
 	name = "city watch helmet"
@@ -3952,13 +3934,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "citywatch_helmet"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "citywatch_helmet"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/citywatch/captain
 	name = "watch captain helmet"
@@ -3969,13 +3951,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "citywatch_helmet"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "citywatch_helmet"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/coppercap
 	name = "lamellar cap"
@@ -3986,13 +3968,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/goblin
 	name = "goblin helmet"
@@ -4003,13 +3985,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "plate_helm"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "plate_helm"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy
 	name = "barbute"
@@ -4020,13 +4002,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "barbute"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "barbute"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/absolver
 	name = "psydonic conical helm"
@@ -4037,13 +4019,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "absolutionisthelm"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/64x64/head.dmi'
 	worn_icon_state = "absolutionisthelm"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD|NECK
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/ancient
 	name = "ancient barbute"
@@ -4054,13 +4036,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "barbute"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "barbute"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/ancient/decrepit
 	name = "decrepit barbute"
@@ -4071,13 +4053,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "barbute"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "barbute"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/bucket
 	name = "bucket helmet"
@@ -4088,13 +4070,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "topfhelm"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "topfhelm"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/bucket/iron
 	name = "iron bucket helm"
@@ -4105,13 +4087,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "ironplate"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "ironplate"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/captain
 	name = "captain's helmet"
@@ -4122,13 +4104,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "barbute"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/captain.dmi'
 	worn_icon_state = "barbute"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/frogmouth
 	name = "froggemund helmet"
@@ -4139,13 +4121,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "frogmouth"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "frogmouth"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD|NECK
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/graggar
 	name = "vicious helmet"
@@ -4156,13 +4138,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "barbute"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "barbute"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_ascendant
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/guard
 	name = "steel savoyard"
@@ -4173,13 +4155,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "barbute"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "barbute"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/guard/ancient
 	name = "ancient savoyard"
@@ -4190,13 +4172,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "barbute"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "barbute"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/guard/ancient/decrepit
 	name = "decrepit savoyard"
@@ -4207,13 +4189,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "barbute"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "barbute"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/holysee
 	name = "holy silver bascinet"
@@ -4224,13 +4206,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "silverbascinet"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/martyrhelmets.dmi'
 	worn_icon_state = "silverbascinet"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/knight
 	name = "knight's helmet"
@@ -4241,13 +4223,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "knight"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "knight"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/knight/armet
 	name = "armet"
@@ -4258,13 +4240,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "knight"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "knight"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/knight/iron
 	name = "iron knight's helmet"
@@ -4275,13 +4257,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "knight"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "knight"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/matthios
 	name = "gilded visage"
@@ -4292,12 +4274,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "barbute"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/64x64/head.dmi'
 	worn_icon_state = "barbute"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_ascendant
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/pestran
 	name = "pestran helmet"
@@ -4308,13 +4290,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "pestranhelm"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "pestranhelm"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/zizo
 	name = "avantyne barbute"
@@ -4325,13 +4307,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "barbute"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "barbute"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_ascendant
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/horned
 	name = "horned cap"
@@ -4342,13 +4324,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/kettle
 	name = "kettle helmet"
@@ -4359,13 +4341,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/kettle/
 	name = "kettle helmet"
@@ -4376,13 +4358,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/kettle/iron
 	name = "iron kettle helmet"
@@ -4393,13 +4375,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/leather
 	name = "leather helmet"
@@ -4410,13 +4392,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/leather/armorhood
 	name = "padded leather hood"
@@ -4427,13 +4409,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "studhood"
 	worn_icon = 'modular_redtard/rockhill/icons/modular_stonehedge/icons/clothing/armor/onmob/head.dmi'
-	worn_icon_state = "studhood"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_m46_b14_f0_a0
 	body_parts_covered = HEAD|NECK
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "studhood"
 
 /obj/item/clothing/head/roguetown/helmet/leather/armorhood/advanced
 	name = "studded leather hood"
@@ -4444,13 +4426,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "studhood"
 	worn_icon = 'modular_redtard/rockhill/icons/modular_stonehedge/icons/clothing/armor/onmob/head.dmi'
-	worn_icon_state = "studhood"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_leather_studded
 	body_parts_covered = HEAD|NECK
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "studhood"
 
 /obj/item/clothing/head/roguetown/helmet/leather/goblin
 	name = "goblin helmet"
@@ -4461,13 +4443,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "leather_helm"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "leather_helm"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
 	name = "volf helmet"
@@ -4478,13 +4460,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "volfhead"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "volfhead"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/sallet
 	name = "sallet"
@@ -4495,13 +4477,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/sallet/visored
 	name = "visored sallet"
@@ -4512,13 +4494,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/sallet/zyb
 	name = "kulah khud"
@@ -4529,13 +4511,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/64x64/head.dmi'
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/skullcap
 	name = "skull cap"
@@ -4546,13 +4528,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/winged
 	name = "winged cap"
@@ -4563,13 +4545,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/64x64/head.dmi'
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/horsey
 	name = "head bit"
@@ -4580,10 +4562,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "hbit"
-	worn_icon_state = "hbit"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK|ITEM_SLOT_ROGUE_MOUTH
 	body_parts_covered = HEAD
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/head/roguetown/inqhat
 	name = "inquisitorial hat"
@@ -4594,11 +4577,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "inqhat"
 	worn_icon_state = "inqhat"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_spellsinger
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/jester
 	name = "jester's hat"
@@ -4609,10 +4592,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "jester"
 	worn_icon_state = "jester"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/knitcap
 	name = "knit cap"
@@ -4623,10 +4606,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/maidband
 	name = "maid headband"
@@ -4637,10 +4620,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "maidband"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
-	worn_icon_state = "maidband"
 	slot_flags = ITEM_SLOT_HEAD
+	inhand_icon_state = null
+	worn_icon_state = "maidband"
 
 /obj/item/clothing/head/roguetown/menacing
 	name = "sack hood"
@@ -4651,10 +4634,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "menacing"
 	worn_icon_state = "menacing"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/necrahood
 	name = "death shroud"
@@ -4665,10 +4648,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "necrahood"
 	worn_icon_state = "necrahood"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/nightman
 	name = "teller's hat"
@@ -4679,10 +4662,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/nochood
 	name = "moon hood"
@@ -4693,10 +4676,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "nochood"
 	worn_icon_state = "nochood"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/nun
 	name = "nun's veil"
@@ -4707,10 +4690,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/nyle/consortcrown
 	name = "gem-encrusted crown"
@@ -4721,9 +4704,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "consortcrown"
-	worn_icon_state = "consortcrown"
 	slot_flags = ITEM_SLOT_HEAD
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/head/roguetown/physician
 	name = "doctor's hat"
@@ -4734,10 +4718,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/priesthat
 	name = "priest's hat"
@@ -4748,11 +4732,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/64x64/head.dmi'
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/priestmask
 	name = "solar visage"
@@ -4763,10 +4747,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "priesthead"
 	worn_icon_state = "priesthead"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/roguehood
 	name = "hood"
@@ -4777,12 +4761,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "basichood"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
-	worn_icon_state = "basichood"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = HEAD|NECK
+	inhand_icon_state = null
+	worn_icon_state = "basichood"
 
 /obj/item/clothing/head/roguetown/roguehood/abyssor
 	name = "depths hood"
@@ -4793,12 +4777,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "abyssorhood"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
-	worn_icon_state = "abyssorhood"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = NECK
+	inhand_icon_state = null
+	worn_icon_state = "abyssorhood"
 
 /obj/item/clothing/head/roguetown/roguehood/astrata
 	name = "sun hood"
@@ -4809,12 +4793,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "astratahood"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
-	worn_icon_state = "astratahood"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = NECK
+	inhand_icon_state = null
+	worn_icon_state = "astratahood"
 
 /obj/item/clothing/head/roguetown/roguehood/black
 	name = "hood"
@@ -4825,12 +4809,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "basichood"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
-	worn_icon_state = "basichood"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = HEAD|NECK
+	inhand_icon_state = null
+	worn_icon_state = "basichood"
 
 /obj/item/clothing/head/roguetown/roguehood/mage
 	name = "hood"
@@ -4841,12 +4825,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "basichood"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
-	worn_icon_state = "basichood"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = HEAD|NECK
+	inhand_icon_state = null
+	worn_icon_state = "basichood"
 
 /obj/item/clothing/head/roguetown/roguehood/psydon
 	name = "psydonian hood"
@@ -4857,12 +4841,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "psydonhood"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
-	worn_icon_state = "psydonhood"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	armor_type = /datum/armor/rockhill_spellsinger
 	body_parts_covered = HEAD|NECK
+	inhand_icon_state = null
+	worn_icon_state = "psydonhood"
 
 /obj/item/clothing/head/roguetown/roguehood/random
 	name = "hood"
@@ -4873,12 +4857,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "basichood"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
-	worn_icon_state = "basichood"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = HEAD|NECK
+	inhand_icon_state = null
+	worn_icon_state = "basichood"
 
 /obj/item/clothing/head/roguetown/roguehood/shalal/heavyhood
 	name = "heavy hood"
@@ -4889,12 +4873,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "heavyhood"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
-	worn_icon_state = "heavyhood"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK|ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = HEAD|NECK
+	inhand_icon_state = null
+	worn_icon_state = "heavyhood"
 
 /obj/item/clothing/head/roguetown/shawl
 	name = "shawl"
@@ -4905,10 +4889,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/strawhat
 	name = "straw hat"
@@ -4919,10 +4903,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/veiled/loudmouth
 	name = "loudmouth's headcover"
@@ -4933,10 +4917,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "loudmouth"
-	worn_icon_state = "loudmouth"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	body_parts_covered = HEAD|NECK
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/head/roguetown/witchhat
 	name = "witch hat"
@@ -4947,10 +4932,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "witch"
 	worn_icon_state = "witch"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/witchhat/old
 	name = "decrepit witch hat"
@@ -4961,10 +4946,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "witchold"
 	worn_icon_state = "witchold"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/wizhat
 	name = "wizard hat"
@@ -4975,11 +4960,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/64x64/head.dmi'
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/wizhat/black
 	name = "wizard hat"
@@ -4990,11 +4975,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/64x64/head.dmi'
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/wizhat/gen
 	name = "wizard hat"
@@ -5005,11 +4990,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/64x64/head.dmi'
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/wizhat/random
 	name = "wizard hat"
@@ -5020,11 +5005,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "that"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/64x64/head.dmi'
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = "that"
 
 /obj/item/clothing/mask/cigarette/pipe
 	name = "pipe"
@@ -5035,10 +5020,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "pipeoff"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/mouth_items.dmi'
-	worn_icon_state = "pipeoff"
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
+	worn_icon_state = "pipeoff"
 
 /obj/item/clothing/mask/cigarette/pipe/crafted
 	name = "pipe"
@@ -5049,10 +5034,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "pipeoff"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/mouth_items.dmi'
-	worn_icon_state = "pipeoff"
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
+	worn_icon_state = "pipeoff"
 
 /obj/item/clothing/mask/cigarette/pipe/westman
 	name = "westman pipe"
@@ -5063,10 +5048,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "longpipeoff"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/mouth_items.dmi'
-	worn_icon_state = "longpipeoff"
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
+	worn_icon_state = "longpipeoff"
 
 /obj/item/clothing/mask/cigarette/rollie
 	name = "zig"
@@ -5077,10 +5062,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "spliffoff"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/mouth_items.dmi'
-	worn_icon_state = "spliffoff"
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
+	worn_icon_state = "spliffoff"
 
 /obj/item/clothing/mask/cigarette/rollie/nicotine
 	name = "zig"
@@ -5091,10 +5076,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "spliffoff"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/mouth_items.dmi'
-	worn_icon_state = "spliffoff"
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
+	worn_icon_state = "spliffoff"
 
 /obj/item/clothing/mask/rogue/blindfold
 	name = "blindfold"
@@ -5105,11 +5090,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "blindfold"
 	worn_icon = 'modular_redtard/rockhill/icons/mob/clothing/eyes.dmi'
-	worn_icon_state = "blindfold"
 	slot_flags = ITEM_SLOT_MASK
 	body_parts_covered = HEAD
+	inhand_icon_state = "blindfold"
+	worn_icon_state = "blindfold"
 
 /obj/item/clothing/mask/rogue/duelmask
 	name = "duelist's mask"
@@ -5120,11 +5105,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK
 	body_parts_covered = HEAD
+	inhand_icon_state = null
+	worn_icon_state = "duelmask"
 
 /obj/item/clothing/mask/rogue/exoticsilkmask
 	name = "exotic silk mask"
@@ -5134,39 +5119,37 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/exoticsilkmask/green
 	name = "exotic silk mask"
-	icon = 'modular_redtard/rockhill/icons/modular_deserttown/icons/clothing/masks.dmi'
-	icon_state = "exoticsilkmaskg"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "exoticsilkmaskg"
-	worn_icon = 'modular_redtard/rockhill/icons/modular_deserttown/icons/clothing/onmob/masks.dmi'
-	worn_icon_state = "exoticsilkmaskg"
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	icon_state = null
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/mask/rogue/exoticsilkmask/red
 	name = "exotic silk mask"
-	icon = 'modular_redtard/rockhill/icons/modular_deserttown/icons/clothing/masks.dmi'
-	icon_state = "exoticsilkmaskr"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "exoticsilkmaskr"
-	worn_icon = 'modular_redtard/rockhill/icons/modular_deserttown/icons/clothing/onmob/masks.dmi'
-	worn_icon_state = "exoticsilkmaskr"
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	icon_state = null
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask
 	name = "iron mask"
@@ -5176,13 +5159,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/ancient/decrepit
 	name = "decrepit mask"
@@ -5193,13 +5176,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/carved/ambermask
 	name = "amber mask"
@@ -5210,13 +5193,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/carved/coralmask
 	name = "heartstone mask"
@@ -5227,13 +5210,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/carved/jademask
 	name = "jade mask"
@@ -5244,13 +5227,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/carved/onyxamask
 	name = "onyxa mask"
@@ -5261,13 +5244,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/carved/opalmask
 	name = "opal mask"
@@ -5278,13 +5261,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/carved/porcelainmask
 	name = "porcelain mask"
@@ -5295,13 +5278,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/carved/rosemask
 	name = "rosestone mask"
@@ -5312,13 +5295,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/carved/turqmask
 	name = "cerulite mask"
@@ -5329,13 +5312,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/hound
 	name = "hound mask"
@@ -5345,13 +5328,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/psydonmask
 	name = "psydonic mask"
@@ -5362,13 +5345,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "psydonmask"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = "psydonmask"
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/shadowfacemask
 	name = "spider rider's mask"
@@ -5379,13 +5362,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/yoruku_oni
 	name = "oni mask"
@@ -5396,13 +5379,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/goblin_mask
 	name = "goblin"
@@ -5413,11 +5396,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK
 	body_parts_covered = HEAD
+	inhand_icon_state = null
+	worn_icon_state = "goblin"
 
 /obj/item/clothing/mask/rogue/horsey
 	name = "head blinders"
@@ -5428,11 +5411,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "hblinders"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
-	worn_icon_state = "hblinders"
 	slot_flags = ITEM_SLOT_MASK
 	body_parts_covered = HEAD
+	inhand_icon_state = null
+	worn_icon_state = "hblinders"
 
 /obj/item/clothing/mask/rogue/physician
 	name = "plague mask"
@@ -5443,11 +5426,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/sack
 	name = "sack mask"
@@ -5458,12 +5441,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_padded
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/sack/psy
 	name = "psydonic sack mask"
@@ -5474,12 +5457,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_padded
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/skullmask
 	name = "skull mask"
@@ -5490,13 +5473,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_padded_bad
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/spectacles
 	name = "spectacles"
@@ -5506,11 +5489,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	body_parts_covered = HEAD
+	inhand_icon_state = null
+	worn_icon_state = "glasses"
 
 /obj/item/clothing/mask/rogue/spectacles/golden
 	name = "golden spectacles"
@@ -5520,11 +5503,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	body_parts_covered = HEAD
+	inhand_icon_state = null
+	worn_icon_state = "goggles"
 
 /obj/item/clothing/mask/rogue/spectacles/inq/spawnpair
 	name = "otavan nocshade lens-pair"
@@ -5535,11 +5518,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	body_parts_covered = HEAD
+	inhand_icon_state = null
+	worn_icon_state = "bglasses"
 
 /obj/item/clothing/mask/rogue/xylixmask
 	name = "jester mask"
@@ -5550,11 +5533,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "xylixmask"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = "xylixmask"
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/bevor
 	name = "bevor"
@@ -5565,12 +5548,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD|NECK
+	inhand_icon_state = null
+	worn_icon_state = "bevor"
 
 /obj/item/clothing/neck/roguetown/chaincoif
 	name = "chain coif"
@@ -5581,12 +5564,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "chaincoif"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
-	worn_icon_state = "chaincoif"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = HEAD|NECK
+	inhand_icon_state = null
+	worn_icon_state = "chaincoif"
 
 /obj/item/clothing/neck/roguetown/chaincoif/ancient/decrepit
 	name = "decrepit coif"
@@ -5597,12 +5580,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "chaincoif"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
-	worn_icon_state = "chaincoif"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = HEAD|NECK
+	inhand_icon_state = null
+	worn_icon_state = "chaincoif"
 
 /obj/item/clothing/neck/roguetown/chaincoif/chainmantle
 	name = "chain mantle"
@@ -5613,12 +5596,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "chaincoif"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
-	worn_icon_state = "chaincoif"
 	slot_flags = ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = HEAD|NECK
+	inhand_icon_state = null
+	worn_icon_state = "chaincoif"
 
 /obj/item/clothing/neck/roguetown/chaincoif/iron
 	name = "iron chain coif"
@@ -5629,12 +5612,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "chaincoif"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
-	worn_icon_state = "chaincoif"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = HEAD|NECK
+	inhand_icon_state = null
+	worn_icon_state = "chaincoif"
 
 /obj/item/clothing/neck/roguetown/coif
 	name = "coif"
@@ -5645,12 +5628,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "coif"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
-	worn_icon_state = "coif"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_padded_bad
 	body_parts_covered = HEAD|NECK
+	inhand_icon_state = null
+	worn_icon_state = "coif"
 
 /obj/item/clothing/neck/roguetown/coif/padded
 	name = "padded coif"
@@ -5661,12 +5644,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "ccoif"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
-	worn_icon_state = "ccoif"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_padded
 	body_parts_covered = HEAD|NECK
+	inhand_icon_state = null
+	worn_icon_state = "ccoif"
 
 /obj/item/clothing/neck/roguetown/collar/catbell
 	name = "catbell collar"
@@ -5677,11 +5660,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "catbellcollar"
 	worn_icon = 'modular_redtard/rockhill/icons/modular/icons/mob/collars_leashes.dmi'
-	worn_icon_state = "catbellcollar"
 	slot_flags = ITEM_SLOT_NECK
 	body_parts_covered = NECK
+	inhand_icon_state = null
+	worn_icon_state = "catbellcollar"
 
 /obj/item/clothing/neck/roguetown/collar/cowbell
 	name = "cowbell collar"
@@ -5692,11 +5675,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "cowbellcollar"
 	worn_icon = 'modular_redtard/rockhill/icons/modular/icons/mob/collars_leashes.dmi'
-	worn_icon_state = "cowbellcollar"
 	slot_flags = ITEM_SLOT_NECK
 	body_parts_covered = NECK
+	inhand_icon_state = null
+	worn_icon_state = "cowbellcollar"
 
 /obj/item/clothing/neck/roguetown/collar/leather
 	name = "leather collar"
@@ -5707,11 +5690,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "leathercollar"
 	worn_icon = 'modular_redtard/rockhill/icons/modular/icons/mob/collars_leashes.dmi'
-	worn_icon_state = "leathercollar"
 	slot_flags = ITEM_SLOT_NECK
 	body_parts_covered = NECK
+	inhand_icon_state = null
+	worn_icon_state = "leathercollar"
 
 /obj/item/clothing/neck/roguetown/collar/leather/nomagic
 	name = "mana-binding collar"
@@ -5722,11 +5705,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "leathercollar"
 	worn_icon = 'modular_redtard/rockhill/icons/modular/icons/mob/collars_leashes.dmi'
-	worn_icon_state = "leathercollar"
 	slot_flags = ITEM_SLOT_NECK
 	body_parts_covered = NECK
+	inhand_icon_state = null
+	worn_icon_state = "leathercollar"
 
 /obj/item/clothing/neck/roguetown/cursed_collar
 	name = "cursed collar"
@@ -5737,11 +5720,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "cursed_collar"
 	worn_icon = 'modular_redtard/rockhill/icons/modular_stonehedge/icons/clothing/armor/onmob/neck.dmi'
-	worn_icon_state = "cursed_collar"
 	slot_flags = ITEM_SLOT_NECK
 	body_parts_covered = NECK
+	inhand_icon_state = null
+	worn_icon_state = "cursed_collar"
 
 /obj/item/clothing/neck/roguetown/gorget
 	name = "gorget"
@@ -5752,12 +5735,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = NECK
+	inhand_icon_state = null
+	worn_icon_state = "gorget"
 
 /obj/item/clothing/neck/roguetown/gorget/copper
 	name = "neck protector"
@@ -5768,12 +5751,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_plate_bad
 	body_parts_covered = NECK
+	inhand_icon_state = null
+	worn_icon_state = "copperneck"
 
 /obj/item/clothing/neck/roguetown/gorget/cursed_collar
 	name = "lesser cursed collar"
@@ -5784,12 +5767,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "cursed_collar"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
-	worn_icon_state = "cursed_collar"
 	slot_flags = ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = NECK
+	inhand_icon_state = null
+	worn_icon_state = "cursed_collar"
 
 /obj/item/clothing/neck/roguetown/gorget/forlorncollar
 	name = "vreccale"
@@ -5800,12 +5783,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = NECK
+	inhand_icon_state = null
+	worn_icon_state = "iwolfcollaralt"
 
 /obj/item/clothing/neck/roguetown/gorget/steel
 	name = "steel gorget"
@@ -5816,12 +5799,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = NECK
+	inhand_icon_state = null
+	worn_icon_state = "sgorget"
 
 /obj/item/clothing/neck/roguetown/gorget/steel/ancient
 	name = "ancient gorget"
@@ -5832,12 +5815,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = NECK
+	inhand_icon_state = null
+	worn_icon_state = "ancientgorget"
 
 /obj/item/clothing/neck/roguetown/gorget/steel/ancient/decrepit
 	name = "decrepit gorget"
@@ -5848,12 +5831,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = NECK
+	inhand_icon_state = null
+	worn_icon_state = "ancientgorget"
 
 /obj/item/clothing/neck/roguetown/horus
 	name = "amulet of appraisal"
@@ -5864,11 +5847,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK
 	body_parts_covered = NECK
+	inhand_icon_state = null
+	worn_icon_state = "horus"
 
 /obj/item/clothing/neck/roguetown/leather
 	name = "hardened leather gorget"
@@ -5879,12 +5862,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_leather_good
 	body_parts_covered = NECK
+	inhand_icon_state = null
+	worn_icon_state = "lgorget"
 
 /obj/item/clothing/neck/roguetown/luckcharm
 	name = "luck charm"
@@ -5895,11 +5878,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/ornateamulet
 	name = "ornate amulet"
@@ -5910,11 +5893,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK
 	body_parts_covered = NECK
+	inhand_icon_state = null
+	worn_icon_state = "ornateamulet"
 
 /obj/item/clothing/neck/roguetown/psicross
 	name = "psycross"
@@ -5925,11 +5908,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/abyssor
 	name = "amulet of Abyssor"
@@ -5940,11 +5923,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/astrata
 	name = "amulet of Astrata"
@@ -5955,11 +5938,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/bpearl
 	name = "blue pearl amulet"
@@ -5970,11 +5953,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/decrepit
 	name = "decrepit psicross"
@@ -5985,11 +5968,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/dendor
 	name = "amulet of Dendor"
@@ -6000,11 +5983,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/eora
 	name = "amulet of Eora"
@@ -6015,11 +5998,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/g
 	name = "golden psycross"
@@ -6030,11 +6013,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "psycross_g"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	worn_icon_state = "psycross_g"
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/inhumen
 	name = "inverted psycross"
@@ -6045,11 +6028,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_RING|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/inhumen/ancient
 	name = "ancient zcross"
@@ -6060,11 +6043,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_RING|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/inhumen/g
 	name = "golden inverted psycross"
@@ -6075,11 +6058,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_RING|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/malum
 	name = "amulet of Malum"
@@ -6090,11 +6073,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/malum/secret
 	name = "beriddled amulet"
@@ -6105,11 +6088,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/necra
 	name = "amulet of Necra"
@@ -6120,11 +6103,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/noc
 	name = "amulet of Noc"
@@ -6135,11 +6118,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/pearl
 	name = "pearl amulet"
@@ -6150,11 +6133,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/pestra
 	name = "amulet of Pestra"
@@ -6165,11 +6148,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/ravox
 	name = "amulet of Ravox"
@@ -6180,11 +6163,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/shell
 	name = "oyster shell necklace"
@@ -6195,11 +6178,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/shell/bracelet
 	name = "shell bracelet"
@@ -6210,11 +6193,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/silver
 	name = "silver psycross"
@@ -6225,11 +6208,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "psycross_s"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	worn_icon_state = "psycross_s"
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/silver/undivided
 	name = "silver amulet of the Ten"
@@ -6240,11 +6223,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "psycross_s"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	worn_icon_state = "psycross_s"
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/ten
 	name = "amulet of the Ten"
@@ -6255,11 +6238,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_RING|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/weeping
 	name = "weeping psicross"
@@ -6270,11 +6253,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	inhand_icon_state = null
+	worn_icon_state = "psicrossblood"
 
 /obj/item/clothing/neck/roguetown/psicross/wood
 	name = "wooden psycross"
@@ -6285,11 +6268,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "psycross_w"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	worn_icon_state = "psycross_w"
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/skullamulet
 	name = "skull amulet"
@@ -6300,11 +6283,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK
 	body_parts_covered = NECK
+	inhand_icon_state = null
+	worn_icon_state = "skullamulet"
 
 /obj/item/clothing/neck/roguetown/skullamulet/gemerald
 	name = "gemerald skull amulet"
@@ -6315,11 +6298,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK
 	body_parts_covered = NECK
+	inhand_icon_state = null
+	worn_icon_state = "skullamulet"
 
 /obj/item/clothing/neck/roguetown/talkstone
 	name = "talkstone"
@@ -6330,11 +6313,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "talkstone"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
-	worn_icon_state = "talkstone"
 	slot_flags = ITEM_SLOT_NECK
 	body_parts_covered = NECK
+	inhand_icon_state = null
+	worn_icon_state = "talkstone"
 
 /obj/item/clothing/ring/active/nomag
 	name = "ring of null magic"
@@ -6345,10 +6328,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	inhand_icon_state = null
+	worn_icon_state = "ruby"
 
 /obj/item/clothing/ring/decrepit
 	name = "decrepit ring"
@@ -6359,10 +6342,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/ring/diamond
 	name = "gold dorpel ring"
@@ -6373,10 +6356,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/ring/diamonds
 	name = "silver dorpel ring"
@@ -6387,10 +6370,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/ring/emerald
 	name = "gold gemerald ring"
@@ -6401,10 +6384,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/ring/emeralds
 	name = "silver gemerald ring"
@@ -6415,10 +6398,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/ring/gold
 	name = "gold ring"
@@ -6429,10 +6412,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	inhand_icon_state = null
+	worn_icon_state = "ring_g"
 
 /obj/item/clothing/ring/quartz
 	name = "gold blortz ring"
@@ -6443,10 +6426,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/ring/quartzs
 	name = "silver blortz ring"
@@ -6457,10 +6440,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/ring/ruby
 	name = "gold rontz ring"
@@ -6471,10 +6454,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/ring/rubys
 	name = "silver rontz ring"
@@ -6485,10 +6468,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/ring/sapphire
 	name = "gold saffira ring"
@@ -6499,10 +6482,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/ring/sapphires
 	name = "silver saffira ring"
@@ -6513,10 +6496,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/ring/signet
 	name = "gold signet ring"
@@ -6527,10 +6510,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/ring/signet/silver
 	name = "silver signet ring"
@@ -6541,10 +6524,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/ring/silver
 	name = "silver ring"
@@ -6555,10 +6538,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	inhand_icon_state = null
+	worn_icon_state = "ring_s"
 
 /obj/item/clothing/ring/statamythortz
 	name = "ring of wisdom"
@@ -6569,10 +6552,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/ring/statgemerald
 	name = "ring of swiftness"
@@ -6583,10 +6566,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/ring/statonyx
 	name = "ring of vitality"
@@ -6597,10 +6580,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/ring/statrontz
 	name = "ring of courage"
@@ -6611,10 +6594,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/ring/topaz
 	name = "gold toper ring"
@@ -6625,10 +6608,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/ring/topazs
 	name = "silver toper ring"
@@ -6639,10 +6622,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/shoes/roguetown/anklets
 	name = "golden anklets"
@@ -6653,12 +6636,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "anklets"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
-	worn_icon_state = "anklets"
 	slot_flags = ITEM_SLOT_FEET
-	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "anklets"
 
 /obj/item/clothing/shoes/roguetown/boots
 	name = "dark boots"
@@ -6669,12 +6651,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "blackboots"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
-	worn_icon_state = "blackboots"
 	slot_flags = ITEM_SLOT_FEET
-	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "blackboots"
 
 /obj/item/clothing/shoes/roguetown/boots/armor
 	name = "plated boots"
@@ -6685,12 +6666,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "armorboots"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
-	worn_icon_state = "armorboots"
 	slot_flags = ITEM_SLOT_FEET
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "armorboots"
 
 /obj/item/clothing/shoes/roguetown/boots/armor/ancient
 	name = "ancient boots"
@@ -6701,12 +6681,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "armorboots"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
-	worn_icon_state = "armorboots"
 	slot_flags = ITEM_SLOT_FEET
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "armorboots"
 
 /obj/item/clothing/shoes/roguetown/boots/armor/ancient/decrepit
 	name = "decrepit boots"
@@ -6717,12 +6696,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "armorboots"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
-	worn_icon_state = "armorboots"
 	slot_flags = ITEM_SLOT_FEET
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "armorboots"
 
 /obj/item/clothing/shoes/roguetown/boots/armor/graggar
 	name = "vicious boots"
@@ -6733,12 +6711,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "armorboots"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
-	worn_icon_state = "armorboots"
 	slot_flags = ITEM_SLOT_FEET
-	armor_type = /datum/armor/rockhill_ascendant
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "armorboots"
 
 /obj/item/clothing/shoes/roguetown/boots/armor/holysee
 	name = "holy silver plated boots"
@@ -6749,12 +6726,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "silverboots"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/martyr.dmi'
-	worn_icon_state = "silverboots"
 	slot_flags = ITEM_SLOT_FEET
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "silverboots"
 
 /obj/item/clothing/shoes/roguetown/boots/armor/iron
 	name = "iron plated boots"
@@ -6765,12 +6741,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "iplateboots"
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
-	worn_icon_state = "iplateboots"
 	slot_flags = ITEM_SLOT_FEET
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/shoes/roguetown/boots/armor/matthios
 	name = "gilded boots"
@@ -6781,12 +6756,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "armorboots"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
-	worn_icon_state = "armorboots"
 	slot_flags = ITEM_SLOT_FEET
-	armor_type = /datum/armor/rockhill_ascendant
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "armorboots"
 
 /obj/item/clothing/shoes/roguetown/boots/armor/zizo
 	name = "avantyne boots"
@@ -6797,12 +6771,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "armorboots"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
-	worn_icon_state = "armorboots"
 	slot_flags = ITEM_SLOT_FEET
-	armor_type = /datum/armor/rockhill_ascendant
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "armorboots"
 
 /obj/item/clothing/shoes/roguetown/boots/blacksteel/modern/plateboots
 	name = "blacksteel plate boots"
@@ -6813,12 +6786,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "bplateboots"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/blkknight.dmi'
-	worn_icon_state = "bplateboots"
 	slot_flags = ITEM_SLOT_FEET
-	armor_type = /datum/armor/rockhill_plate_bsteel
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "bplateboots"
 
 /obj/item/clothing/shoes/roguetown/boots/footwraps/padded
 	name = "padded cloth footwraps"
@@ -6829,12 +6801,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "blackboots"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
-	worn_icon_state = "blackboots"
 	slot_flags = ITEM_SLOT_FEET
-	armor_type = /datum/armor/rockhill_padded
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "blackboots"
 
 /obj/item/clothing/shoes/roguetown/boots/horsey
 	name = "leg harness"
@@ -6845,12 +6816,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "hlegs"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
-	worn_icon_state = "hlegs"
 	slot_flags = ITEM_SLOT_FEET
 	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "hlegs"
 
 /obj/item/clothing/shoes/roguetown/boots/leather
 	name = "leather boots"
@@ -6861,12 +6832,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "leatherboots"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
-	worn_icon_state = "leatherboots"
 	slot_flags = ITEM_SLOT_FEET
-	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "leatherboots"
 
 /obj/item/clothing/shoes/roguetown/boots/leather/atgervi
 	name = "ba'atur leather boots"
@@ -6877,12 +6847,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "atgervi_boots"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
-	worn_icon_state = "atgervi_boots"
 	slot_flags = ITEM_SLOT_FEET
-	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "atgervi_boots"
 
 /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
 	name = "heavy leather boots"
@@ -6893,12 +6862,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "alboots"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
-	worn_icon_state = "alboots"
 	slot_flags = ITEM_SLOT_FEET
-	armor_type = /datum/armor/rockhill_leather_good
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "alboots"
 
 /obj/item/clothing/shoes/roguetown/boots/nobleboot
 	name = "noble boots"
@@ -6909,12 +6877,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "nobleboots"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
-	worn_icon_state = "nobleboots"
 	slot_flags = ITEM_SLOT_FEET
-	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "nobleboots"
 
 /obj/item/clothing/shoes/roguetown/boots/otavan/inqboots
 	name = "inquisitorial boots"
@@ -6925,12 +6892,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "inqboots"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
-	worn_icon_state = "inqboots"
 	slot_flags = ITEM_SLOT_FEET
-	armor_type = /datum/armor/rockhill_leather_good
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "inqboots"
 
 /obj/item/clothing/shoes/roguetown/boots/psydonboots
 	name = "psydonic leather boots"
@@ -6941,12 +6907,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "psydonboots"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
-	worn_icon_state = "psydonboots"
 	slot_flags = ITEM_SLOT_FEET
-	armor_type = /datum/armor/rockhill_leather_good
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "psydonboots"
 
 /obj/item/clothing/shoes/roguetown/gladiator
 	name = "leather sandals"
@@ -6957,11 +6922,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "gladiator"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
-	worn_icon_state = "gladiator"
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "gladiator"
 
 /obj/item/clothing/shoes/roguetown/jester
 	name = "funny shoes"
@@ -6972,11 +6937,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "jestershoes"
 
 /obj/item/clothing/shoes/roguetown/ridingboots
 	name = "riding boots"
@@ -6987,11 +6952,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "ridingboots"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
-	worn_icon_state = "ridingboots"
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "ridingboots"
 
 /obj/item/clothing/shoes/roguetown/sandals
 	name = "sandals"
@@ -7002,11 +6967,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "sandals"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
-	worn_icon_state = "sandals"
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "sandals"
 
 /obj/item/clothing/shoes/roguetown/sandals/ancient
 	name = "ancient armored sandals"
@@ -7017,12 +6982,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "sandals"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
-	worn_icon_state = "sandals"
 	slot_flags = ITEM_SLOT_FEET
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "sandals"
 
 /obj/item/clothing/shoes/roguetown/sandals/ancient/decrepit
 	name = "decrepit armored sandals"
@@ -7033,12 +6997,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "sandals"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
-	worn_icon_state = "sandals"
 	slot_flags = ITEM_SLOT_FEET
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "sandals"
 
 /obj/item/clothing/shoes/roguetown/sandals/toga_sandals
 	name = "fancy sandals"
@@ -7049,11 +7012,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "toga_sandals"
 	worn_icon = 'modular_redtard/rockhill/icons/modular_rmh/icons/clothing/valentyi/onmob/toga_sandals.dmi'
-	worn_icon_state = "toga_sandals"
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "toga_sandals"
 
 /obj/item/clothing/shoes/roguetown/shortboots
 	name = "shortboots"
@@ -7064,11 +7027,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "shortboots"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
-	worn_icon_state = "shortboots"
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "shortboots"
 
 /obj/item/clothing/shoes/roguetown/simpleshoes
 	name = "shoes"
@@ -7079,11 +7042,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "simpleshoe"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
-	worn_icon_state = "simpleshoe"
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "simpleshoe"
 
 /obj/item/clothing/shoes/roguetown/simpleshoes/buckle
 	name = "buckled shoes"
@@ -7094,11 +7057,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "simpleshoe"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
-	worn_icon_state = "simpleshoe"
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "simpleshoe"
 
 /obj/item/clothing/suit/roguetown/armor/armordress/winterdress
 	name = "winter dress"
@@ -7109,13 +7072,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts_royalty.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "winterdress"
 
 /obj/item/clothing/suit/roguetown/armor/brigandine
 	name = "brigandine"
@@ -7126,13 +7089,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_brigandine
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "brigandine"
 
 /obj/item/clothing/suit/roguetown/armor/brigandine/captain
 	name = "captain's brigandine"
@@ -7143,13 +7106,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/captain.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "capplate"
 
 /obj/item/clothing/suit/roguetown/armor/brigandine/gronn
 	name = "byrine hauberk"
@@ -7160,13 +7123,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "gronnchain"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/gronn.dmi'
-	worn_icon_state = "gronnchain"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_brigandine
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "gronnchain"
 
 /obj/item/clothing/suit/roguetown/armor/brigandine/light
 	name = "lightweight brigandine"
@@ -7177,13 +7140,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_brigandine
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "light_brigandine"
 
 /obj/item/clothing/suit/roguetown/armor/brigandine/light/retinue
 	name = "lightweight brigandine"
@@ -7194,13 +7157,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_brigandine
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "light_brigandine"
 
 /obj/item/clothing/suit/roguetown/armor/brigandine/retinue
 	name = "brigandine"
@@ -7211,13 +7174,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_brigandine
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "brigandine"
 
 /obj/item/clothing/suit/roguetown/armor/chainmail
 	name = "haubergeon"
@@ -7228,13 +7191,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "haubergeon"
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/ancient
 	name = "ancient haubergeon"
@@ -7245,13 +7208,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "ancientchain"
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/ancient/decrepit
 	name = "decrepit haubergeon"
@@ -7262,13 +7225,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "ancientchain"
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/bikini
 	name = "chainmail corslet"
@@ -7279,13 +7242,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "chainkini"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "chainkini"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "chainkini"
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 	name = "hauberk"
@@ -7296,13 +7259,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "hauberk"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "hauberk"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "hauberk"
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/ancient
 	name = "ancient hauberk"
@@ -7313,13 +7276,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "hauberk"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "hauberk"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "hauberk"
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/ancient/decrepit
 	name = "decrepit hauberk"
@@ -7330,13 +7293,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "hauberk"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "hauberk"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "hauberk"
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/atgervi
 	name = "nöküd's hauberk"
@@ -7347,13 +7310,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "atgervi_raider_mail"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "atgervi_raider_mail"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "atgervi_raider_mail"
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/iron
 	name = "iron hauberk"
@@ -7364,13 +7327,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "ihauberk"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "ihauberk"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "ihauberk"
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 	name = "iron haubergeon"
@@ -7381,13 +7344,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "ihaubergeon"
 
 /obj/item/clothing/suit/roguetown/armor/corset
 	name = "corset"
@@ -7398,12 +7361,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "corset"
 
 /obj/item/clothing/suit/roguetown/armor/gambeson
 	name = "gambeson"
@@ -7414,13 +7377,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_padded
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "gambeson"
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/councillor
 	name = "gambeson"
@@ -7431,13 +7394,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_padded
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "gambeson"
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
 	name = "padded gambeson"
@@ -7448,13 +7411,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_padded_good
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "gambesonp"
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/inq
 	name = "inquisitorial leather tunic"
@@ -7465,13 +7428,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_padded
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "leathertunic"
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/otavan
 	name = "fencing gambeson"
@@ -7482,13 +7445,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_padded_good
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "fancygamb"
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/royal
 	name = "royal gambeson"
@@ -7499,13 +7462,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_padded_good
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "royalgamb"
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/zyb
 	name = "padded desert coat"
@@ -7516,13 +7479,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_padded_good
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "sherwani"
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/light
 	name = "light gambeson"
@@ -7533,13 +7496,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_padded_bad
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "gambeson"
 
 /obj/item/clothing/suit/roguetown/armor/heartfelt
 	name = "coat of armor"
@@ -7550,13 +7513,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "heartfelt"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "heartfelt"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "heartfelt"
 
 /obj/item/clothing/suit/roguetown/armor/heartfelt/hand
 	name = "coat of armor"
@@ -7567,13 +7530,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "heartfelt_hand"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "heartfelt_hand"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "heartfelt_hand"
 
 /obj/item/clothing/suit/roguetown/armor/leather
 	name = "leather armor"
@@ -7584,13 +7547,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "roguearmor"
 
 /obj/item/clothing/suit/roguetown/armor/leather/bikini
 	name = "leather corslet"
@@ -7601,13 +7564,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "leatherkini"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "leatherkini"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "leatherkini"
 
 /obj/item/clothing/suit/roguetown/armor/leather/cuirass
 	name = "leather cuirass"
@@ -7618,13 +7581,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "leather"
 
 /obj/item/clothing/suit/roguetown/armor/leather/goblin
 	name = "goblin armor"
@@ -7635,13 +7598,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "leather_armor"
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "leather_armor"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/suit/roguetown/armor/leather/heavy
 	name = "hardened leather armor"
@@ -7652,13 +7615,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "roguearmor_belt"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "roguearmor_belt"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_leather_good
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "roguearmor_belt"
 
 /obj/item/clothing/suit/roguetown/armor/leather/heavy/coat
 	name = "hardened leather coat"
@@ -7669,13 +7632,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "roguearmor_coat"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "roguearmor_coat"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_leather_good
 	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "roguearmor_coat"
 
 /obj/item/clothing/suit/roguetown/armor/leather/heavy/jacket
 	name = "hardened leather jacket"
@@ -7686,13 +7649,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "leatherjacketo"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "leatherjacketo"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_leather_good
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "leatherjacketo"
 
 /obj/item/clothing/suit/roguetown/armor/leather/hide
 	name = "hide armor"
@@ -7703,13 +7666,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "hidearmor"
 
 /obj/item/clothing/suit/roguetown/armor/leather/hide/bikini
 	name = "hide corslet"
@@ -7720,13 +7683,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "hidearmorkini"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "hidearmorkini"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "hidearmorkini"
 
 /obj/item/clothing/suit/roguetown/armor/leather/hide/goblin
 	name = "goblin loincloth"
@@ -7737,12 +7700,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "cloth_armor"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "cloth_armor"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "cloth_armor"
 
 /obj/item/clothing/suit/roguetown/armor/leather/jacket/artijacket
 	name = "artificer jacket"
@@ -7753,132 +7716,125 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "artijacket"
 
 /obj/item/clothing/suit/roguetown/armor/leather/newkeep/duchess
 	name = "duchess dress"
 	desc = ""
-	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
-	icon_state = "duchess"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "duchess"
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "duchess"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	icon_state = null
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/suit/roguetown/armor/leather/newkeep/duke
 	name = "ducal uniform"
 	desc = ""
-	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
-	icon_state = "duke"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "duke"
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "duke"
-	slot_flags = ITEM_SLOT_OCLOTHING
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST
 	rogue_onhip = TRUE
+	icon_state = null
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/suit/roguetown/armor/leather/newkeep/hand
 	name = "Hand's Jacket"
 	desc = "A heavy coat of fine, yet rugged fabric. Reinforced, because one never knows."
-	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
-	icon_state = "hand"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "hand"
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "hand"
-	slot_flags = ITEM_SLOT_OCLOTHING
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_leather_studded
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	icon_state = null
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/suit/roguetown/armor/leather/newkeep/heir
 	name = "Heir's uniform"
 	desc = ""
-	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
-	icon_state = "heir"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "heir"
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "heir"
-	slot_flags = ITEM_SLOT_OCLOTHING
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|FOOT_LEFT|FOOT_RIGHT|GROIN|HAND_LEFT|HAND_RIGHT|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	icon_state = null
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/suit/roguetown/armor/leather/newkeep/heiress
 	name = "Heiress's uniform"
 	desc = ""
-	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
-	icon_state = "heiress"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "heiress"
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "heiress"
-	slot_flags = ITEM_SLOT_OCLOTHING
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|FOOT_LEFT|FOOT_RIGHT|GROIN|HAND_LEFT|HAND_RIGHT|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	icon_state = null
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/suit/roguetown/armor/leather/newkeep/magos
 	name = "Magos' Robes"
 	desc = ""
-	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
-	icon_state = "magos"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "magos"
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "magos"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	icon_state = null
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/suit/roguetown/armor/leather/newkeep/steward
 	name = "Steward's Vest"
 	desc = "Smart and modern garb, embroidered with real gold"
-	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
-	icon_state = "steward"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "steward"
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "steward"
-	slot_flags = ITEM_SLOT_OCLOTHING
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_padded_bad
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	icon_state = null
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/suit/roguetown/armor/leather/studded
 	name = "studded leather armor"
@@ -7889,13 +7845,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "studleather"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "studleather"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_leather_studded
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "studleather"
 
 /obj/item/clothing/suit/roguetown/armor/leather/studded/bikini
 	name = "studded leather corslet"
@@ -7906,13 +7862,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "studleatherkini"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "studleatherkini"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_leather_studded
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "studleatherkini"
 
 /obj/item/clothing/suit/roguetown/armor/leather/studded/bikini/horsey
 	name = "harness corset"
@@ -7923,13 +7879,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "hcorset"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "hcorset"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_leather_studded
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "hcorset"
 
 /obj/item/clothing/suit/roguetown/armor/leather/studded/warden
 	name = "forester's armor"
@@ -7940,13 +7896,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "studleather"
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/warden.dmi'
-	worn_icon_state = "studleather"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_leather_studded
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/suit/roguetown/armor/leather/studded/warden/upgraded
 	name = "forester's brigandine"
@@ -7957,13 +7913,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "studleather"
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/warden.dmi'
-	worn_icon_state = "studleather"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_brigandine
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest
 	name = "leather vest"
@@ -7974,13 +7930,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "vest"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "vest"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_leather_bad
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "vest"
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/black
 	name = "leather vest"
@@ -7991,13 +7947,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "vest"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "vest"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_leather_bad
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "vest"
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/hand
 	name = "hand's vest"
@@ -8008,13 +7964,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "vest"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "vest"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_leather_bad
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "vest"
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
 	name = "sea jacket"
@@ -8025,13 +7981,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "vest"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "vest"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_leather_bad
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "vest"
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/nightman
 	name = "silk jacket"
@@ -8042,13 +7998,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "vest"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "vest"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_leather_bad
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "vest"
 
 /obj/item/clothing/suit/roguetown/armor/longcoat
 	name = "longcoat"
@@ -8059,12 +8015,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "longcoat"
 
 /obj/item/clothing/suit/roguetown/armor/plate
 	name = "steel half-plate"
@@ -8075,13 +8031,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "halfplate"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "halfplate"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "halfplate"
 
 /obj/item/clothing/suit/roguetown/armor/plate/ancient
 	name = "ancient half-plate"
@@ -8092,13 +8048,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "ancientplate"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "ancientplate"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "ancientplate"
 
 /obj/item/clothing/suit/roguetown/armor/plate/ancient/decrepit
 	name = "decrepit half-plate"
@@ -8109,13 +8065,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "ancientplate"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "ancientplate"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "ancientplate"
 
 /obj/item/clothing/suit/roguetown/armor/plate/bikini
 	name = "half-plate corslet"
@@ -8126,13 +8082,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "halfplatekini"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "halfplatekini"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "halfplatekini"
 
 /obj/item/clothing/suit/roguetown/armor/plate/blacksteel_half_plate
 	name = "blacksteel cuirass"
@@ -8143,13 +8099,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "grenzelcuirass"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "grenzelcuirass"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "grenzelcuirass"
 
 /obj/item/clothing/suit/roguetown/armor/plate/citywatch
 	name = "citywatch armor"
@@ -8160,13 +8116,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "citywatch"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "citywatch"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "citywatch"
 
 /obj/item/clothing/suit/roguetown/armor/plate/citywatch/captain
 	name = "watch captain armor"
@@ -8177,13 +8133,30 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "citywatch"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "citywatch"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "citywatch"
+
+/obj/item/clothing/suit/roguetown/armor/plate/cuirass
+	name = "steel half-plate"
+	desc = "\'Adventurer-fit\' plate armor with pauldrons. The poor fitting leaves many small gaps for daggers and bolts to pierce something vital, so a gambeson is recommended."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "halfplate"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	armor_type = /datum/armor/rockhill_plate
+	body_parts_covered = CHEST|GROIN
+	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "halfplate"
 
 /obj/item/clothing/suit/roguetown/armor/plate/fluted/graggar
 	name = "vicious half-plate"
@@ -8194,13 +8167,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "halfplate"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "halfplate"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_ascendant
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "halfplate"
 
 /obj/item/clothing/suit/roguetown/armor/plate/full/holysee
 	name = "holy silver plate"
@@ -8211,13 +8184,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "silverarmor"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/martyr.dmi'
-	worn_icon_state = "silverarmor"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "silverarmor"
 
 /obj/item/clothing/suit/roguetown/armor/plate/full/iron
 	name = "iron plate armor"
@@ -8228,13 +8201,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "halfplate"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "halfplate"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "halfplate"
 
 /obj/item/clothing/suit/roguetown/armor/plate/full/matthios
 	name = "gilded fullplate"
@@ -8245,13 +8218,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "halfplate"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "halfplate"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_ascendant
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "halfplate"
 
 /obj/item/clothing/suit/roguetown/armor/plate/full/zizo
 	name = "avantyne fullplate"
@@ -8262,13 +8235,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "halfplate"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "halfplate"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_ascendant
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "halfplate"
 
 /obj/item/clothing/suit/roguetown/armor/plate/half
 	name = "steel cuirass"
@@ -8279,13 +8252,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "cuirass"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "cuirass"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = CHEST
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "cuirass"
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/ancient
 	name = "ancient cuirass"
@@ -8296,13 +8269,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "cuirass"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "cuirass"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = CHEST
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "cuirass"
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/ancient/decrepit
 	name = "decrepit cuirass"
@@ -8313,13 +8286,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "cuirass"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "cuirass"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = CHEST
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "cuirass"
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/copper
 	name = "heart protector"
@@ -8330,13 +8303,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "cuirass"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "cuirass"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_m52_b28_f0_a0
 	body_parts_covered = CHEST
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "cuirass"
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/fencer/psydon
 	name = "psydonic chestplate"
@@ -8347,13 +8320,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "ornatechestplate"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "ornatechestplate"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = CHEST
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "ornatechestplate"
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/fluted
 	name = "fluted cuirass"
@@ -8364,13 +8337,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "cuirass"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "cuirass"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = CHEST|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "cuirass"
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/fluted/ornate
 	name = "psydonic cuirass"
@@ -8381,13 +8354,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "cuirass"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "cuirass"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = CHEST|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "cuirass"
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/iron
 	name = "iron breastplate"
@@ -8398,13 +8371,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "cuirass"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "cuirass"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = CHEST
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "cuirass"
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/iron/goblin
 	name = "goblin mail"
@@ -8415,13 +8388,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "plate_armor"
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "plate_armor"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/suit/roguetown/armor/plate/iron
 	name = "iron half-plate"
@@ -8432,13 +8405,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "ihalfplate"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "ihalfplate"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = CHEST|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "ihalfplate"
 
 /obj/item/clothing/suit/roguetown/armor/plate/modern/blacksteel_full_plate
 	name = "blacksteel plate armor"
@@ -8449,13 +8422,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "bplate"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/blkknight.dmi'
-	worn_icon_state = "bplate"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_plate_bsteel
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "bplate"
 
 /obj/item/clothing/suit/roguetown/armor/plate/scale
 	name = "scalemail"
@@ -8466,13 +8439,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "halfplate"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "halfplate"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "halfplate"
 
 /obj/item/clothing/suit/roguetown/armor/plate/scale/inqcoat
 	name = "inquisitorial duster"
@@ -8483,13 +8456,13 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "inqcoat"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "inqcoat"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_leather_studded
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "inqcoat"
 
 /obj/item/clothing/suit/roguetown/shirt/apothshirt
 	name = "apothecary shirt"
@@ -8500,11 +8473,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "apothshirt"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "apothshirt"
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST
+	inhand_icon_state = null
+	worn_icon_state = "apothshirt"
 
 /obj/item/clothing/suit/roguetown/shirt/dress/courtesan
 	name = "courtesan dress"
@@ -8515,11 +8488,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "dress"
 	worn_icon = 'modular_redtard/rockhill/icons/modular_rmh/icons/clothing/vladegeg/onmob/courtesan.dmi'
-	worn_icon_state = "dress"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "dress"
 
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/black
 	name = "dress"
@@ -8530,11 +8503,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "dressgen"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "dressgen"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "dressgen"
 
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/purple
 	name = "dress"
@@ -8545,11 +8518,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "dressgen"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "dressgen"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "dressgen"
 
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
 	name = "dress"
@@ -8560,11 +8533,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "dressgen"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "dressgen"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "dressgen"
 
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy/black
 	name = "sheer dress"
@@ -8575,10 +8548,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "dressgen"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "dressgen"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	inhand_icon_state = null
+	worn_icon_state = "dressgen"
 
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy/random
 	name = "sheer dress"
@@ -8589,10 +8562,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "dressgen"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "dressgen"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	inhand_icon_state = null
+	worn_icon_state = "dressgen"
 
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/strapless/random
 	name = "strapless dress"
@@ -8603,11 +8576,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "dressgen"
-	worn_icon = 'modular_redtard/rockhill/icons/modular_hearthstone/icons/obj/items/clothes/on_mob/dress.dmi'
-	worn_icon_state = "dressgen"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/strapless/red
 	name = "strapless dress"
@@ -8618,11 +8591,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "dressgen"
-	worn_icon = 'modular_redtard/rockhill/icons/modular_hearthstone/icons/obj/items/clothes/on_mob/dress.dmi'
-	worn_icon_state = "dressgen"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/suit/roguetown/shirt/dress/hw_dress
 	name = "salad green dress"
@@ -8633,11 +8606,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "hdress"
 	worn_icon = 'modular_redtard/rockhill/icons/modular_rmh/icons/clothing/valentyi/onmob/skyrim_dress.dmi'
-	worn_icon_state = "hdress"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "hdress"
 
 /obj/item/clothing/suit/roguetown/shirt/dress/maid
 	name = "maid dress"
@@ -8648,11 +8621,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "maiddress"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "maiddress"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "maiddress"
 
 /obj/item/clothing/suit/roguetown/shirt/dress/maid/servant
 	name = "servant gown"
@@ -8663,11 +8636,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "maidgown"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "maidgown"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "maidgown"
 
 /obj/item/clothing/suit/roguetown/shirt/dress/royal
 	name = "royal gown"
@@ -8678,11 +8651,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "dress"
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts_royalty.dmi'
-	worn_icon_state = "dress"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/suit/roguetown/shirt/dress/royal/hand_m
 	name = "gilded dress shirt"
@@ -8693,11 +8666,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "dress"
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts_royalty.dmi'
-	worn_icon_state = "dress"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/suit/roguetown/shirt/dress/royal/prince
 	name = "gilded dress shirt"
@@ -8708,11 +8681,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "dress"
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts_royalty.dmi'
-	worn_icon_state = "dress"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/suit/roguetown/shirt/dress/royal/princess
 	name = "pristine dress"
@@ -8723,11 +8696,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "dress"
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts_royalty.dmi'
-	worn_icon_state = "dress"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress
 	name = "chemise"
@@ -8738,11 +8711,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "silkdress"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "silkdress"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "silkdress"
 
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/loudmouth
 	name = "crier's garb"
@@ -8753,11 +8726,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "loudmouthrobe"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "loudmouthrobe"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "loudmouthrobe"
 
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/princess
 	name = "chemise"
@@ -8768,11 +8741,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "silkdress"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "silkdress"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "silkdress"
 
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/random
 	name = "chemise"
@@ -8783,11 +8756,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "silkdress"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "silkdress"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "silkdress"
 
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/steward
 	name = "ornate silk dress"
@@ -8798,11 +8771,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "stewarddress"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "stewarddress"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "stewarddress"
 
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/weddingdress
 	name = "wedding silk dress"
@@ -8813,11 +8786,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "weddingdress"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "weddingdress"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "weddingdress"
 
 /obj/item/clothing/suit/roguetown/shirt/dress/silkydress
 	name = "silky dress"
@@ -8828,11 +8801,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "silkydress"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "silkydress"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "silkydress"
 
 /obj/item/clothing/suit/roguetown/shirt/dress/silkydress/random
 	name = "silky dress"
@@ -8843,11 +8816,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "silkydress"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "silkydress"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "silkydress"
 
 /obj/item/clothing/suit/roguetown/shirt/dress/skyrim_dress
 	name = "light blue dress"
@@ -8858,11 +8831,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "dress"
 	worn_icon = 'modular_redtard/rockhill/icons/modular_rmh/icons/clothing/valentyi/onmob/skyrim_dress.dmi'
-	worn_icon_state = "dress"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "dress"
 
 /obj/item/clothing/suit/roguetown/shirt/dress/skyrim_taven
 	name = "waitress dress"
@@ -8873,11 +8846,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "tavern"
 	worn_icon = 'modular_redtard/rockhill/icons/modular_rmh/icons/clothing/vladegeg/onmob/skyrim_tavern.dmi'
-	worn_icon_state = "tavern"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "tavern"
 
 /obj/item/clothing/suit/roguetown/shirt/dress/toga
 	name = "toga"
@@ -8888,11 +8861,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "toga"
 	worn_icon = 'modular_redtard/rockhill/icons/modular_rmh/icons/clothing/valentyi/onmob/toga.dmi'
-	worn_icon_state = "toga"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "toga"
 
 /obj/item/clothing/suit/roguetown/shirt/dress/velvet
 	name = "velvet dress"
@@ -8903,11 +8876,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "dress"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "dress"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "dress"
 
 /obj/item/clothing/suit/roguetown/shirt/exoticsilkbra
 	name = "exotic silk bra"
@@ -8918,41 +8891,39 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "exoticsilkbra"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "exoticsilkbra"
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST
+	inhand_icon_state = null
+	worn_icon_state = "exoticsilkbra"
 
 /obj/item/clothing/suit/roguetown/shirt/exoticsilkbra/green
 	name = "exotic silk bra"
 	desc = "An exquisite bra crafted from the finest silk and adorned with gold rings. It leaves little to the imagination."
-	icon = 'modular_redtard/rockhill/icons/modular_deserttown/icons/clothing/shirts.dmi'
-	icon_state = "exoticsilkbrag"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "exoticsilkbrag"
-	worn_icon = 'modular_redtard/rockhill/icons/modular_deserttown/icons/clothing/onmob/shirts.dmi'
-	worn_icon_state = "exoticsilkbrag"
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST
+	icon_state = null
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/suit/roguetown/shirt/exoticsilkbra/red
 	name = "exotic silk bra"
 	desc = "Fanciful gold laced silks barely able to conceal what little it covers. Long, flowing sleeves droop from the upper arms to a ring on each hand, fluttering in the wind and with every movement."
-	icon = 'modular_redtard/rockhill/icons/modular_deserttown/icons/clothing/shirts.dmi'
-	icon_state = "exoticsilkbrar"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "exoticsilkbrar"
-	worn_icon = 'modular_redtard/rockhill/icons/modular_deserttown/icons/clothing/onmob/shirts.dmi'
-	worn_icon_state = "exoticsilkbrar"
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST
+	icon_state = null
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/suit/roguetown/shirt/formal
 	name = "formal shirt"
@@ -8963,11 +8934,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/maniac/clothing_mob.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST
+	inhand_icon_state = null
+	worn_icon_state = "shirt"
 
 /obj/item/clothing/suit/roguetown/shirt/jester
 	name = "jester's tunick"
@@ -8978,11 +8949,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "jestershirt"
 
 /obj/item/clothing/suit/roguetown/shirt/rags
 	name = "rags"
@@ -8993,11 +8964,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "rags"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "rags"
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "rags"
 
 /obj/item/clothing/suit/roguetown/shirt/robe
 	name = "robe"
@@ -9008,11 +8979,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "white_robe"
 
 /obj/item/clothing/suit/roguetown/shirt/robe/abyssor
 	name = "depths robe"
@@ -9023,11 +8994,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "abyssorrobe"
 
 /obj/item/clothing/suit/roguetown/shirt/robe/archivist
 	name = "scholar's robe"
@@ -9038,11 +9009,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "archivist"
 
 /obj/item/clothing/suit/roguetown/shirt/robe/astrata
 	name = "sun robe"
@@ -9053,11 +9024,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "astratarobe"
 
 /obj/item/clothing/suit/roguetown/shirt/robe/black
 	name = "robe"
@@ -9068,11 +9039,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "white_robe"
 
 /obj/item/clothing/suit/roguetown/shirt/robe/dendor
 	name = "briar robe"
@@ -9083,11 +9054,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "dendorrobe"
 
 /obj/item/clothing/suit/roguetown/shirt/robe/eora
 	name = "eoran robe"
@@ -9098,11 +9069,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "eorarobes"
 
 /obj/item/clothing/suit/roguetown/shirt/robe/eora/alt
 	name = "open eoran robe"
@@ -9113,10 +9084,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
+	inhand_icon_state = null
+	worn_icon_state = "eorastraps"
 
 /obj/item/clothing/suit/roguetown/shirt/robe/hierophant
 	name = "hierophant's kandys"
@@ -9127,12 +9098,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "desertgown"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "desertgown"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_padded_good
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "desertgown"
 
 /obj/item/clothing/suit/roguetown/shirt/robe/mage
 	name = "robe"
@@ -9143,11 +9114,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "white_robe"
 
 /obj/item/clothing/suit/roguetown/shirt/robe/mageblue
 	name = "robe"
@@ -9158,11 +9129,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "white_robe"
 
 /obj/item/clothing/suit/roguetown/shirt/robe/magegreen
 	name = "robe"
@@ -9173,11 +9144,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "white_robe"
 
 /obj/item/clothing/suit/roguetown/shirt/robe/magered
 	name = "robe"
@@ -9188,11 +9159,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "white_robe"
 
 /obj/item/clothing/suit/roguetown/shirt/robe/merchant
 	name = "guilder jacket"
@@ -9203,11 +9174,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "merrobe"
 
 /obj/item/clothing/suit/roguetown/shirt/robe/monk
 	name = "nomadic monk vestments"
@@ -9218,12 +9189,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "priestunder"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "priestunder"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_padded_good
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "priestunder"
 
 /obj/item/clothing/suit/roguetown/shirt/robe/necra
 	name = "mourning robe"
@@ -9234,11 +9205,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "necrarobe"
 
 /obj/item/clothing/suit/roguetown/shirt/robe/noc
 	name = "moon robe"
@@ -9249,11 +9220,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "nocrobe"
 
 /obj/item/clothing/suit/roguetown/shirt/robe/nun
 	name = "nun's habit"
@@ -9264,11 +9235,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "nun"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "nun"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = "nun"
+	worn_icon_state = "nun"
 
 /obj/item/clothing/suit/roguetown/shirt/robe/phys
 	name = "physicker's robe"
@@ -9279,11 +9250,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "surgrobe"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = "surgrobe"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "surgrobe"
 
 /obj/item/clothing/suit/roguetown/shirt/robe/physician
 	name = "plague coat"
@@ -9294,11 +9265,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "physcoat"
 
 /obj/item/clothing/suit/roguetown/shirt/robe/priest
 	name = "solar vestments"
@@ -9309,12 +9280,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_padded
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "priestrobe"
 
 /obj/item/clothing/suit/roguetown/shirt/robe/wizard
 	name = "wizard's robe"
@@ -9325,11 +9296,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "wizardrobes"
 
 /obj/item/clothing/suit/roguetown/shirt/shortshirt
 	name = "shirt"
@@ -9340,11 +9311,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "shortshirt"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "shortshirt"
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST
+	inhand_icon_state = null
+	worn_icon_state = "shortshirt"
 
 /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
 	name = "shirt"
@@ -9355,11 +9326,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "shortshirt"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "shortshirt"
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST
+	inhand_icon_state = null
+	worn_icon_state = "shortshirt"
 
 /obj/item/clothing/suit/roguetown/shirt/tunic
 	name = "tunic"
@@ -9370,11 +9341,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "tunic"
 
 /obj/item/clothing/suit/roguetown/shirt/tunic/black
 	name = "tunic"
@@ -9385,11 +9356,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "tunic"
 
 /obj/item/clothing/suit/roguetown/shirt/tunic/noblecoat
 	name = "fancy coat"
@@ -9400,11 +9371,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "noblecoat"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "noblecoat"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "noblecoat"
 
 /obj/item/clothing/suit/roguetown/shirt/tunic/purple
 	name = "tunic"
@@ -9415,11 +9386,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "tunic"
 
 /obj/item/clothing/suit/roguetown/shirt/tunic/random
 	name = "tunic"
@@ -9430,11 +9401,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "tunic"
 
 /obj/item/clothing/suit/roguetown/shirt/tunic/red
 	name = "tunic"
@@ -9445,11 +9416,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "tunic"
 
 /obj/item/clothing/suit/roguetown/shirt/tunic/silktunic
 	name = "ornate silk tunic"
@@ -9460,11 +9431,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "stewardtunic"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "stewardtunic"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "stewardtunic"
 
 /obj/item/clothing/suit/roguetown/shirt/tunic/white
 	name = "tunic"
@@ -9475,11 +9446,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "tunic"
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt
 	name = "shirt"
@@ -9490,11 +9461,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "undershirt"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "undershirt"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST
+	inhand_icon_state = null
+	worn_icon_state = "undershirt"
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/artificer
 	name = "tinker suit"
@@ -9505,11 +9476,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "undershirt"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "undershirt"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST
+	inhand_icon_state = null
+	worn_icon_state = "undershirt"
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/black
 	name = "shirt"
@@ -9520,11 +9491,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "undershirt"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "undershirt"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST
+	inhand_icon_state = null
+	worn_icon_state = "undershirt"
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/blouse
 	name = "blouse"
@@ -9535,11 +9506,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "undershirt"
-	worn_icon = 'modular_redtard/rockhill/icons/modular_rmh/icons/clothing/vladegeg/onmob/formal.dmi'
-	worn_icon_state = "undershirt"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/formal
 	name = "formal shirt"
@@ -9550,11 +9521,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "butlershirt"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "butlershirt"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST
+	inhand_icon_state = null
+	worn_icon_state = "butlershirt"
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/guard
 	name = "shirt"
@@ -9565,11 +9536,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "undershirt"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "undershirt"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST
+	inhand_icon_state = null
+	worn_icon_state = "undershirt"
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/lowcut
 	name = "low cut tunic"
@@ -9580,11 +9551,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "undershirt"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "undershirt"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST
+	inhand_icon_state = null
+	worn_icon_state = "undershirt"
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/priest
 	name = "undervestments"
@@ -9595,11 +9566,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "priestunder"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "priestunder"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	inhand_icon_state = null
+	worn_icon_state = "priestunder"
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
 	name = "formal silks"
@@ -9610,11 +9581,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "undershirt"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "undershirt"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST
+	inhand_icon_state = null
+	worn_icon_state = "undershirt"
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/random
 	name = "shirt"
@@ -9625,11 +9596,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "undershirt"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "undershirt"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST
+	inhand_icon_state = null
+	worn_icon_state = "undershirt"
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor
 	name = "shirt"
@@ -9640,11 +9611,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "undershirt"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "undershirt"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST
+	inhand_icon_state = null
+	worn_icon_state = "undershirt"
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor/red
 	name = "shirt"
@@ -9655,11 +9626,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "undershirt"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "undershirt"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST
+	inhand_icon_state = null
+	worn_icon_state = "undershirt"
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
 	name = "shirt"
@@ -9670,11 +9641,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "undershirt"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "undershirt"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|CHEST
+	inhand_icon_state = null
+	worn_icon_state = "undershirt"
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant/l
 	name = "shirt"
@@ -9685,11 +9656,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "undershirt"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
-	worn_icon_state = "undershirt"
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_RIGHT|CHEST
+	inhand_icon_state = null
+	worn_icon_state = "undershirt"
 
 /obj/item/clothing/under/roguetown/chainlegs
 	name = "steel chain chausses"
@@ -9700,12 +9671,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "chain_legs"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "chain_legs"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_maille
+	armor_type = /datum/armor/clothing_under/rockhill_maille
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "chain_legs"
 
 /obj/item/clothing/under/roguetown/chainlegs/captain
 	name = "captain's chausses"
@@ -9716,12 +9687,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "capplateleg"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/captain.dmi'
-	worn_icon_state = "capplateleg"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_cuirass
+	armor_type = /datum/armor/clothing_under/rockhill_cuirass
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "capplateleg"
 
 /obj/item/clothing/under/roguetown/chainlegs/iron
 	name = "iron chain chausses"
@@ -9732,12 +9703,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "chain_legs"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "chain_legs"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_maille
+	armor_type = /datum/armor/clothing_under/rockhill_maille
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "chain_legs"
 
 /obj/item/clothing/under/roguetown/chainlegs/iron/kilt
 	name = "iron chain kilt"
@@ -9748,12 +9719,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "ichainkilt"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "ichainkilt"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_maille
+	armor_type = /datum/armor/clothing_under/rockhill_maille
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "ichainkilt"
 
 /obj/item/clothing/under/roguetown/chainlegs/kilt
 	name = "steel chain kilt"
@@ -9764,12 +9735,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "chainkilt"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "chainkilt"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_maille
+	armor_type = /datum/armor/clothing_under/rockhill_maille
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "chainkilt"
 
 /obj/item/clothing/under/roguetown/chainlegs/kilt/ancient
 	name = "ancient chain kilt"
@@ -9780,12 +9751,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "chainkilt"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "chainkilt"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_maille
+	armor_type = /datum/armor/clothing_under/rockhill_maille
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "chainkilt"
 
 /obj/item/clothing/under/roguetown/chainlegs/kilt/ancient/decrepit
 	name = "decrepit chain kilt"
@@ -9796,12 +9767,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "chainkilt"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "chainkilt"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_maille
+	armor_type = /datum/armor/clothing_under/rockhill_maille
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "chainkilt"
 
 /obj/item/clothing/under/roguetown/chainlegs/skirt
 	name = "steel chain skirt"
@@ -9812,12 +9783,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "chain_skirt"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "chain_skirt"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_maille
+	armor_type = /datum/armor/clothing_under/rockhill_maille
 	body_parts_covered = LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "chain_skirt"
 
 /obj/item/clothing/under/roguetown/heavy_leather_pants
 	name = "hardened leather trousers"
@@ -9828,12 +9799,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "roguepants"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "roguepants"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_leather_good
+	armor_type = /datum/armor/clothing_under/rockhill_leather_good
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "roguepants"
 
 /obj/item/clothing/under/roguetown/heavy_leather_pants/otavan
 	name = "otavan leather trousers"
@@ -9844,12 +9815,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "roguepants"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "roguepants"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_leather_good
+	armor_type = /datum/armor/clothing_under/rockhill_leather_good
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "roguepants"
 
 /obj/item/clothing/under/roguetown/heavy_leather_pants/shorts
 	name = "hardened leather shorts"
@@ -9860,12 +9831,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "rogueshorts"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "rogueshorts"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_leather_good
+	armor_type = /datum/armor/clothing_under/rockhill_leather_good
 	body_parts_covered = GROIN
+	inhand_icon_state = null
+	worn_icon_state = "rogueshorts"
 
 /obj/item/clothing/under/roguetown/loincloth
 	name = "large loincloth"
@@ -9876,11 +9847,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "loincloth"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "loincloth"
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "loincloth"
 
 /obj/item/clothing/under/roguetown/loincloth/brown
 	name = "large loincloth"
@@ -9891,11 +9862,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "loincloth"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "loincloth"
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "loincloth"
 
 /obj/item/clothing/under/roguetown/platelegs
 	name = "steel plate chausses"
@@ -9906,12 +9877,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "plate_legs"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "plate_legs"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_plate
+	armor_type = /datum/armor/clothing_under/rockhill_plate
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "plate_legs"
 
 /obj/item/clothing/under/roguetown/platelegs/ancient
 	name = "ancient plate chausses"
@@ -9922,12 +9893,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "plate_legs"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "plate_legs"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_plate
+	armor_type = /datum/armor/clothing_under/rockhill_plate
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "plate_legs"
 
 /obj/item/clothing/under/roguetown/platelegs/ancient/decrepit
 	name = "decrepit plate chausses"
@@ -9938,12 +9909,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "plate_legs"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "plate_legs"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_plate
+	armor_type = /datum/armor/clothing_under/rockhill_plate
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "plate_legs"
 
 /obj/item/clothing/under/roguetown/platelegs/blacksteel/modern
 	name = "blacksteel plate chausses"
@@ -9954,12 +9925,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "bplatelegs"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/blkknight.dmi'
-	worn_icon_state = "bplatelegs"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_plate_bsteel
+	armor_type = /datum/armor/clothing_under/rockhill_plate_bsteel
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "bplatelegs"
 
 /obj/item/clothing/under/roguetown/platelegs/graggar
 	name = "vicious leggings"
@@ -9970,12 +9941,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "plate_legs"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "plate_legs"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_ascendant
+	armor_type = /datum/armor/clothing_under/rockhill_ascendant
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "plate_legs"
 
 /obj/item/clothing/under/roguetown/platelegs/holysee
 	name = "holy silver chausses"
@@ -9986,12 +9957,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "silverlegs"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/martyr.dmi'
-	worn_icon_state = "silverlegs"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_plate
+	armor_type = /datum/armor/clothing_under/rockhill_plate
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "silverlegs"
 
 /obj/item/clothing/under/roguetown/platelegs/iron
 	name = "iron plate chausses"
@@ -10002,12 +9973,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "iplate_legs"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "iplate_legs"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_plate
+	armor_type = /datum/armor/clothing_under/rockhill_plate
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "iplate_legs"
 
 /obj/item/clothing/under/roguetown/platelegs/matthios
 	name = "gilded leggings"
@@ -10018,12 +9989,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "plate_legs"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "plate_legs"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_ascendant
+	armor_type = /datum/armor/clothing_under/rockhill_ascendant
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "plate_legs"
 
 /obj/item/clothing/under/roguetown/platelegs/skirt
 	name = "steel plate tassets"
@@ -10034,12 +10005,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "plate_skirt"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "plate_skirt"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_plate
+	armor_type = /datum/armor/clothing_under/rockhill_plate
 	body_parts_covered = LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "plate_skirt"
 
 /obj/item/clothing/under/roguetown/platelegs/zizo
 	name = "avantyne garments"
@@ -10050,12 +10021,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "plate_legs"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "plate_legs"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_ascendant
+	armor_type = /datum/armor/clothing_under/rockhill_ascendant
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "plate_legs"
 
 /obj/item/clothing/under/roguetown/skirt/blue
 	name = "skirt"
@@ -10066,11 +10037,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "skirt"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "skirt"
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "skirt"
 
 /obj/item/clothing/under/roguetown/skirt/random
 	name = "skirt"
@@ -10081,11 +10052,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "skirt"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "skirt"
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "skirt"
 
 /obj/item/clothing/under/roguetown/skirt/red
 	name = "skirt"
@@ -10096,11 +10067,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "skirt"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "skirt"
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "skirt"
 
 /obj/item/clothing/under/roguetown/splintlegs
 	name = "brigandine chausses"
@@ -10111,12 +10082,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "splintlegs"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "splintlegs"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_brigandine
+	armor_type = /datum/armor/clothing_under/rockhill_brigandine
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "splintlegs"
 
 /obj/item/clothing/under/roguetown/splintlegs/iron
 	name = "splinted leggings"
@@ -10127,12 +10098,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "ironsplintlegs"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "ironsplintlegs"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_leather_studded
+	armor_type = /datum/armor/clothing_under/rockhill_leather_studded
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "ironsplintlegs"
 
 /obj/item/clothing/under/roguetown/tights
 	name = "tights"
@@ -10143,11 +10114,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "tights"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "tights"
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "tights"
 
 /obj/item/clothing/under/roguetown/tights/black
 	name = "tights"
@@ -10158,11 +10129,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "tights"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "tights"
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "tights"
 
 /obj/item/clothing/under/roguetown/tights/formal
 	name = "formal pants"
@@ -10173,11 +10144,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "tights"
-	worn_icon = 'modular_redtard/rockhill/icons/roguetown/maniac/clothing_mob.dmi'
-	worn_icon_state = "tights"
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/under/roguetown/tights/random
 	name = "tights"
@@ -10188,11 +10159,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "tights"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "tights"
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "tights"
 
 /obj/item/clothing/under/roguetown/tights/sailor
 	name = "sailor's pants"
@@ -10203,11 +10174,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "tights"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "tights"
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "tights"
 
 /obj/item/clothing/under/roguetown/tights/vagrant
 	name = "tights"
@@ -10218,11 +10189,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "tights"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "tights"
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN|LEG_LEFT
+	inhand_icon_state = null
+	worn_icon_state = "tights"
 
 /obj/item/clothing/under/roguetown/tights/vagrant/l
 	name = "tights"
@@ -10233,11 +10204,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "tights"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "tights"
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "tights"
 
 /obj/item/clothing/under/roguetown/trou
 	name = "work trousers"
@@ -10248,12 +10219,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "trou"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "trou"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_padded_bad
+	armor_type = /datum/armor/clothing_under/rockhill_padded_bad
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "trou"
 
 /obj/item/clothing/under/roguetown/trou/apothecary
 	name = "apothecary trousers"
@@ -10264,12 +10235,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "apothpants"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "apothpants"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_padded_bad
+	armor_type = /datum/armor/clothing_under/rockhill_padded_bad
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "apothpants"
 
 /obj/item/clothing/under/roguetown/trou/artipants
 	name = "tinker trousers"
@@ -10280,12 +10251,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "artipants"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "artipants"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_padded_bad
+	armor_type = /datum/armor/clothing_under/rockhill_padded_bad
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "artipants"
 
 /obj/item/clothing/under/roguetown/trou/beltpants
 	name = "belt-buckled trousers"
@@ -10296,12 +10267,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "beltpants"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "beltpants"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_padded_bad
+	armor_type = /datum/armor/clothing_under/rockhill_padded_bad
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "beltpants"
 
 /obj/item/clothing/under/roguetown/trou/formal
 	name = "formal trousers"
@@ -10312,12 +10283,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "butlerpants"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "butlerpants"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_padded_bad
+	armor_type = /datum/armor/clothing_under/rockhill_padded_bad
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "butlerpants"
 
 /obj/item/clothing/under/roguetown/trou/formal/shorts
 	name = "trouser shorts"
@@ -10328,12 +10299,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "butlershorts"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "butlershorts"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_padded_bad
+	armor_type = /datum/armor/clothing_under/rockhill_padded_bad
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "butlershorts"
 
 /obj/item/clothing/under/roguetown/trou/leather
 	name = "leather trousers"
@@ -10344,12 +10315,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "trou"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "trou"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_leather
+	armor_type = /datum/armor/clothing_under/rockhill_leather
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "trou"
 
 /obj/item/clothing/under/roguetown/trou/leather/atgervi
 	name = "fur pants"
@@ -10360,12 +10331,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "atgervi_pants"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "atgervi_pants"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_leather
+	armor_type = /datum/armor/clothing_under/rockhill_leather
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "atgervi_pants"
 
 /obj/item/clothing/under/roguetown/trou/leather/mourning
 	name = "mourning trousers"
@@ -10376,12 +10347,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "trou"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "trou"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_leather
+	armor_type = /datum/armor/clothing_under/rockhill_leather
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "trou"
 
 /obj/item/clothing/under/roguetown/trou/leather/pontifex/zyb
 	name = "baggy desert pants"
@@ -10392,12 +10363,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "monkpants"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "monkpants"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_leather
+	armor_type = /datum/armor/clothing_under/rockhill_leather
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "monkpants"
 
 /obj/item/clothing/under/roguetown/trou/leathertights
 	name = "leather tights"
@@ -10408,12 +10379,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "leathertights"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
-	worn_icon_state = "leathertights"
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/rockhill_padded_bad
+	armor_type = /datum/armor/clothing_under/rockhill_padded_bad
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "leathertights"
 
 /obj/item/clothing/wrists/roguetown/bracers
 	name = "bracers"
@@ -10424,12 +10395,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "bracers"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
-	worn_icon_state = "bracers"
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "bracers"
 
 /obj/item/clothing/wrists/roguetown/bracers/ancient
 	name = "ancient bracers"
@@ -10440,12 +10411,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "bracers"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
-	worn_icon_state = "bracers"
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "bracers"
 
 /obj/item/clothing/wrists/roguetown/bracers/ancient/decrepit
 	name = "decrepit bracers"
@@ -10456,12 +10427,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "bracers"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
-	worn_icon_state = "bracers"
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "bracers"
 
 /obj/item/clothing/wrists/roguetown/bracers/cloth/monk
 	name = "monk's wrappings"
@@ -10472,12 +10443,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "nocwrappings"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
-	worn_icon_state = "nocwrappings"
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
 	armor_type = /datum/armor/rockhill_padded_good
 	body_parts_covered = ARM_LEFT|ARM_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "nocwrappings"
 
 /obj/item/clothing/wrists/roguetown/bracers/iron
 	name = "iron bracers"
@@ -10488,12 +10459,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "ibracers"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
-	worn_icon_state = "ibracers"
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "ibracers"
 
 /obj/item/clothing/wrists/roguetown/bracers/leather
 	name = "leather bracers"
@@ -10504,12 +10475,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "lbracers"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
-	worn_icon_state = "lbracers"
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = ARM_LEFT|ARM_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "lbracers"
 
 /obj/item/clothing/wrists/roguetown/bracers/psythorns
 	name = "psydonic thorns"
@@ -10520,12 +10491,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "psybarbs"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
-	worn_icon_state = "psybarbs"
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
 	armor_type = /datum/armor/rockhill_plate_bsteel
 	body_parts_covered = ARM_LEFT|ARM_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "psybarbs"
 
 /obj/item/clothing/wrists/roguetown/nocwrappings
 	name = "moon wrappings"
@@ -10535,10 +10506,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "nocwrappings"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
-	worn_icon_state = "nocwrappings"
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
+	inhand_icon_state = null
+	worn_icon_state = "nocwrappings"
 
 /obj/item/clothing/wrists/roguetown/royalsleeves
 	name = "royal sleeves"
@@ -10549,10 +10520,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "royalsleeves"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
-	worn_icon_state = "royalsleeves"
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
+	inhand_icon_state = null
+	worn_icon_state = "royalsleeves"
 
 /obj/item/clothing/wrists/roguetown/splintarms
 	name = "brigandine rerebraces"
@@ -10563,12 +10534,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "splintarms"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
-	worn_icon_state = "splintarms"
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
 	armor_type = /datum/armor/rockhill_brigandine
 	body_parts_covered = ARM_LEFT|ARM_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "splintarms"
 
 /obj/item/clothing/wrists/roguetown/splintarms/iron
 	name = "splint bracers"
@@ -10579,12 +10550,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "ironsplintarms"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
-	worn_icon_state = "ironsplintarms"
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
 	armor_type = /datum/armor/rockhill_leather_studded
 	body_parts_covered = ARM_LEFT|ARM_RIGHT
+	inhand_icon_state = null
+	worn_icon_state = "ironsplintarms"
 
 /obj/item/clothing/wrists/roguetown/wrappings
 	name = "solar wrappings"
@@ -10594,10 +10565,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
-	inhand_icon_state = "wrappings"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
-	worn_icon_state = "wrappings"
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
+	inhand_icon_state = null
+	worn_icon_state = "wrappings"
 
 /obj/item/contraption/linker
 	name = "engineering wrench"
@@ -10608,9 +10579,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/contraption/linker/master
 	name = "Guild Master's Wrench"
@@ -10621,9 +10592,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/cooking/pan
 	name = "frypan"
@@ -10635,10 +10606,10 @@
 	throwforce = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/cooking/pan/decrepit
 	name = "decrepit pan"
@@ -10650,10 +10621,10 @@
 	throwforce = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/cooking/platter
 	name = "platter"
@@ -10664,8 +10635,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/cooking/platter/bronze
 	name = "bronze platter"
@@ -10676,8 +10647,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/cooking/platter/carved
 	name = "carved platter"
@@ -10688,8 +10659,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/cooking/platter/carved/porcelain
 	name = "porcelain platter"
@@ -10700,8 +10671,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/cooking/platter/copper
 	name = "copper platter"
@@ -10712,8 +10683,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/cooking/platter/decrepit
 	name = "decrepit platter"
@@ -10724,8 +10695,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/cooking/platter/gold
 	name = "gold platter"
@@ -10736,8 +10707,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/cooking/platter/pewter
 	name = "pewter platter"
@@ -10748,8 +10719,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/cooking/platter/silver
 	name = "silver platter"
@@ -10760,8 +10731,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/cushion/desert1
 	name = "desert cushion"
@@ -10771,8 +10742,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/cushion/desert2
 	name = "desert cushion"
@@ -10782,8 +10753,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/cushion/zybantine
 	name = "zybantine cushion"
@@ -10793,8 +10764,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/dildo/blacksteel
 	name = "unfinished dildo"
@@ -10806,8 +10777,8 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
-	inhand_icon_state = "dildo"
 	worn_icon_state = "dildo"
+	inhand_icon_state = "dildo"
 
 /obj/item/dildo/bronze
 	name = "unfinished dildo"
@@ -10819,8 +10790,8 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
-	inhand_icon_state = "dildo"
 	worn_icon_state = "dildo"
+	inhand_icon_state = "dildo"
 
 /obj/item/dildo/iron
 	name = "unfinished dildo"
@@ -10832,8 +10803,8 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
-	inhand_icon_state = "dildo"
 	worn_icon_state = "dildo"
+	inhand_icon_state = "dildo"
 
 /obj/item/dildo/steel
 	name = "unfinished dildo"
@@ -10845,8 +10816,8 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
-	inhand_icon_state = "dildo"
 	worn_icon_state = "dildo"
+	inhand_icon_state = "dildo"
 
 /obj/item/dildo/wood
 	name = "unfinished dildo"
@@ -10858,8 +10829,8 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
-	inhand_icon_state = "dildo"
 	worn_icon_state = "dildo"
+	inhand_icon_state = "dildo"
 
 /obj/item/dummy/treasure
 	name = "zenarii"
@@ -10870,8 +10841,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/dye_brush
 	parent_type = /obj/item/rockhill
@@ -10883,8 +10854,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/fishingcage
 	parent_type = /obj/item/rockhill
@@ -10897,9 +10868,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/fishingrod
 	parent_type = /obj/item/rockhill
@@ -10911,9 +10883,9 @@
 	force = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/fishingrod/abyssoid
 	name = "Abyssor's rod"
@@ -10924,9 +10896,9 @@
 	force = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/fishingrod/decrepit
 	name = "decrepit fishing rod"
@@ -10937,9 +10909,9 @@
 	force = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/flashlight/flare/torch/lantern
 	parent_type = /obj/item/rockhill
@@ -10951,9 +10923,9 @@
 	force = 1
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "torch"
 	worn_icon_state = "torch"
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = "torch"
 
 /obj/item/flashlight/flare/torch/lantern/psycenser
 	name = "Golgatha"
@@ -10964,9 +10936,9 @@
 	force = 30
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "psycenser"
 	worn_icon_state = "psycenser"
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/flashlight/flare/torch/lantern/pumpkin/zizo
 	name = "zumpkin lamptern"
@@ -10977,9 +10949,9 @@
 	force = 1
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "torch"
 	worn_icon_state = "torch"
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = "torch"
 
 /obj/item/flashlight/flare/torch/metal
 	parent_type = /obj/item/rockhill
@@ -10991,9 +10963,9 @@
 	force = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "torch"
 	worn_icon_state = "torch"
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = "torch"
 
 /obj/item/flint
 	parent_type = /obj/item/rockhill
@@ -11006,9 +10978,9 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/flowercrown/rosa
 	name = "crown of rosa"
@@ -11019,10 +10991,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "rosa_crown"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head_items.dmi'
-	worn_icon_state = "rosa_crown"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
+	inhand_icon_state = null
+	worn_icon_state = "rosa_crown"
 
 /obj/item/flowercrown/salvia
 	name = "crown of salvia"
@@ -11033,10 +11005,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "salvia_crown"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head_items.dmi'
-	worn_icon_state = "salvia_crown"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
+	inhand_icon_state = null
+	worn_icon_state = "salvia_crown"
 
 /obj/item/folding_table_stored
 	parent_type = /obj/item/rockhill
@@ -11048,8 +11020,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/grapplinghook
 	parent_type = /obj/item/rockhill
@@ -11061,8 +11033,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "grappler"
 	worn_icon_state = "grappler"
+	inhand_icon_state = "grappler"
 
 /obj/item/grown/log/tree/small
 	parent_type = /obj/item/rockhill
@@ -11074,8 +11046,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/grown/log/tree/stake
 	parent_type = /obj/item/rockhill
@@ -11088,9 +11060,9 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/grown/log/tree/stick
 	parent_type = /obj/item/rockhill
@@ -11102,9 +11074,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/gun/ballistic/firearm/arquebus_pistol
 	name = "arquebus pistol"
@@ -11116,13 +11088,13 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "pistol"
 	worn_icon_state = "pistol"
 	pixel_x = 0
 	pixel_y = 0
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow
 	parent_type = /obj/item/rockhill
@@ -11135,11 +11107,11 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "bow"
 	worn_icon_state = "bow"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow
 	name = "yew longbow"
@@ -11151,13 +11123,14 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "bow"
-	worn_icon_state = "bow"
 	pixel_x = -16
 	pixel_y = -16
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
 	name = "recurve bow"
@@ -11169,13 +11142,13 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "bow"
 	worn_icon_state = "bow"
 	pixel_x = -16
 	pixel_y = -16
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve/warden
 	name = "blackhorn bow"
@@ -11187,13 +11160,13 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "bow"
 	worn_icon_state = "bow"
 	pixel_x = -16
 	pixel_y = -16
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 	parent_type = /obj/item/rockhill
@@ -11206,11 +11179,12 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "crossbow"
-	worn_icon_state = "crossbow"
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow
 	name = "slurbow"
@@ -11222,11 +11196,11 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "slurbow"
 	worn_icon_state = "slurbow"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/sling
 	parent_type = /obj/item/rockhill
@@ -11239,11 +11213,11 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "sling"
 	worn_icon_state = "sling"
 	slot_flags = ITEM_SLOT_BELT|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/hair_dye_cream
 	parent_type = /obj/item/rockhill
@@ -11255,8 +11229,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/handheld_bell
 	parent_type = /obj/item/rockhill
@@ -11269,8 +11243,8 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/heart_blood_canister
 	parent_type = /obj/item/rockhill
@@ -11282,8 +11256,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/heart_blood_canister/filled
 	name = "Full heartblood canister"
@@ -11294,8 +11268,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/heart_blood_vial
 	parent_type = /obj/item/rockhill
@@ -11307,8 +11281,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/heart_blood_vial/filled
 	name = "Full heartblood vial"
@@ -11319,8 +11293,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/heart_canister
 	parent_type = /obj/item/rockhill
@@ -11332,8 +11306,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/herbseed/artemisia
 	name = "herb seeds"
@@ -11343,8 +11317,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/herbseed/atropa
 	name = "herb seeds"
@@ -11354,8 +11328,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/herbseed/benedictus
 	name = "herb seeds"
@@ -11365,8 +11339,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/herbseed/calendula
 	name = "herb seeds"
@@ -11376,8 +11350,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/herbseed/euphrasia
 	name = "herb seeds"
@@ -11387,8 +11361,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/herbseed/hypericum
 	name = "herb seeds"
@@ -11398,8 +11372,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/herbseed/manabloom
 	name = "herb seeds"
@@ -11409,8 +11383,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/herbseed/matricaria
 	name = "herb seeds"
@@ -11420,8 +11394,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/herbseed/mentha
 	name = "herb seeds"
@@ -11431,8 +11405,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/herbseed/paris
 	name = "herb seeds"
@@ -11442,8 +11416,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/herbseed/rosa
 	name = "herb seeds"
@@ -11453,8 +11427,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/herbseed/salvia
 	name = "herb seeds"
@@ -11464,8 +11438,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/herbseed/symphitum
 	name = "herb seeds"
@@ -11475,8 +11449,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/herbseed/taraxacum
 	name = "herb seeds"
@@ -11486,8 +11460,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/herbseed/urtica
 	name = "herb seeds"
@@ -11497,8 +11471,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/herbseed/valeriana
 	name = "herb seeds"
@@ -11508,8 +11482,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/hunting_map/boars
 	name = "boar signs"
@@ -11520,8 +11494,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/hunting_map/white_stag
 	name = "legend of the white stag"
@@ -11532,8 +11506,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/impact_grenade/smoke/blind_gas
 	name = "blinding gas belcher"
@@ -11545,8 +11519,8 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/ingot/bronze
 	name = "bronze bar"
@@ -11557,8 +11531,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/ingot/copper
 	name = "copper bar"
@@ -11569,8 +11543,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/ingot/decrepit
 	name = "decrepit ingot"
@@ -11581,8 +11555,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/ingot/gold
 	name = "gold bar"
@@ -11593,8 +11567,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/ingot/iron
 	name = "iron bar"
@@ -11605,8 +11579,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/ingot/silver
 	name = "silver bar"
@@ -11617,8 +11591,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/ingot/steel
 	name = "steel bar"
@@ -11629,8 +11603,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/ingot/tin
 	name = "tin bar"
@@ -11641,8 +11615,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/inqarticles/garrote
 	name = "\proper seizing garrote"
@@ -11654,9 +11628,9 @@
 	throwforce = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "garrote"
 	worn_icon_state = "garrote"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
+	inhand_icon_state = null
 
 /obj/item/inqarticles/indexer
 	name = "\improper INDEXER"
@@ -11668,9 +11642,9 @@
 	throwforce = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "indexer"
 	worn_icon_state = "indexer"
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/inqarticles/tallowpot
 	name = "tallowpot"
@@ -11682,8 +11656,8 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "tallowpot"
 	worn_icon_state = "tallowpot"
+	inhand_icon_state = null
 
 /obj/item/jingle_bells
 	parent_type = /obj/item/rockhill
@@ -11696,8 +11670,21 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
+
+/obj/item/kitchen/fork/bronze
+	parent_type = /obj/item/rockhill
+	name = "bronze fork"
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cookware/fork.dmi'
+	icon_state = "fork_bronze"
+	w_class = WEIGHT_CLASS_TINY
+	force = 8
+	throwforce = 5
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/kitchen/fork/decrepit
 	parent_type = /obj/item/rockhill
@@ -11709,8 +11696,8 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/kitchen/fork/gold
 	parent_type = /obj/item/rockhill
@@ -11722,8 +11709,8 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/kitchen/fork/iron
 	parent_type = /obj/item/rockhill
@@ -11735,8 +11722,8 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/kitchen/fork/silver
 	parent_type = /obj/item/rockhill
@@ -11748,8 +11735,8 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/kitchen/fork/tin
 	parent_type = /obj/item/rockhill
@@ -11761,8 +11748,21 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
+
+/obj/item/kitchen/spoon/bronze
+	parent_type = /obj/item/rockhill
+	name = "bronze spoon"
+	desc = "Traditional utensil for shoveling soup into your mouth, or to churn butter with."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cookware/spoon.dmi'
+	icon_state = "spoon_bronze"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/kitchen/spoon/gold
 	parent_type = /obj/item/rockhill
@@ -11774,8 +11774,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/kitchen/spoon/iron
 	parent_type = /obj/item/rockhill
@@ -11787,8 +11787,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/kitchen/spoon/silver
 	parent_type = /obj/item/rockhill
@@ -11800,8 +11800,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/kitchen/spoon/tin
 	parent_type = /obj/item/rockhill
@@ -11813,8 +11813,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/leash
 	parent_type = /obj/item/rockhill
@@ -11827,9 +11827,9 @@
 	throwforce = 1
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/leash/chain
 	name = "chain leash"
@@ -11841,9 +11841,9 @@
 	throwforce = 1
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "chainleash"
 	worn_icon_state = "chainleash"
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/leash/leather
 	name = "leather leash"
@@ -11855,9 +11855,9 @@
 	throwforce = 1
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "leatherleash"
 	worn_icon_state = "leatherleash"
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/legwears/fishnet/black
 	name = "fishnet stockings"
@@ -11868,9 +11868,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/legwears/fishnet/red
 	name = "fishnet stockings"
@@ -11881,9 +11881,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/legwears/silk
 	name = "silk stockings"
@@ -11894,9 +11894,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/legwears/silk/random
 	name = "silk stockings"
@@ -11907,9 +11907,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/listeningdevice
 	parent_type = /obj/item/rockhill
@@ -11922,8 +11922,8 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/lockpick
 	parent_type = /obj/item/rockhill
@@ -11936,10 +11936,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	picklvl = 1
+	inhand_icon_state = null
 
 /obj/item/lockpick/goldpin
 	name = "gold hairpin"
@@ -11951,11 +11951,11 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "goldpin"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head_items.dmi'
 	worn_icon_state = "goldpin"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
 	picklvl = 1
+	inhand_icon_state = null
 
 /obj/item/lockpick/goldpin/silver
 	name = "silver hairpin"
@@ -11967,11 +11967,11 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "silverpin"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head_items.dmi'
 	worn_icon_state = "silverpin"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
 	picklvl = 1
+	inhand_icon_state = null
 
 /obj/item/lockpickring/mundane
 	name = "lockpickring"
@@ -11983,9 +11983,9 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	inhand_icon_state = null
 
 /obj/item/magic/artifact
 	name = "runed artifact"
@@ -11996,8 +11996,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/magic/infernal/core
 	name = "infernal core"
@@ -12008,8 +12008,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/magic/infernal/fang
 	name = "hellhound fang"
@@ -12020,8 +12020,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/magic/infernal/flame
 	name = "abyssal flame"
@@ -12032,8 +12032,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/magic/manacrystal
 	name = "crystalized mana"
@@ -12044,8 +12044,20 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
+
+/obj/item/magic/melded/t1
+	name = "arcanic meld"
+	desc = "A melding of infernal ash, fairy dust and elemental mote."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/magic_resources.dmi'
+	icon_state = "meld"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/mattcoin
 	parent_type = /obj/item/rockhill
@@ -12058,9 +12070,9 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_RING
+	inhand_icon_state = null
 
 /obj/item/millstone
 	parent_type = /obj/item/rockhill
@@ -12072,8 +12084,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/mini_flagpole
 	parent_type = /obj/item/rockhill
@@ -12085,8 +12097,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/mini_flagpole/apothecary
 	name = "apothecary miniature flagpole"
@@ -12097,8 +12109,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/mini_flagpole/artificer
 	name = "artificer miniature flagpole"
@@ -12109,8 +12121,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/mini_flagpole/bathhouse
 	name = "bathhouse miniature flagpole"
@@ -12121,8 +12133,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/mini_flagpole/blacksmith
 	name = "blacksmith miniature flagpole"
@@ -12133,8 +12145,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/mini_flagpole/church
 	name = "church miniature flagpole"
@@ -12145,8 +12157,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/mini_flagpole/duke
 	name = "duke miniature flagpole"
@@ -12157,8 +12169,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/mini_flagpole/freeform2
 	name = "freeform miniature flagpole"
@@ -12169,8 +12181,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/mini_flagpole/innkeeper
 	name = "innkeeper miniature flagpole"
@@ -12181,8 +12193,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/mini_flagpole/merchant
 	name = "merchant miniature flagpole"
@@ -12193,8 +12205,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/mini_flagpole/steward
 	name = "steward miniature flagpole"
@@ -12205,8 +12217,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/mini_flagpole/tailor
 	name = "tailor miniature flagpole"
@@ -12217,8 +12229,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/mini_flagpole/university
 	name = "university miniature flagpole"
@@ -12229,8 +12241,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/mundane/puzzlebox/easy
 	name = "\improper wooden puzzle-box"
@@ -12241,8 +12253,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/mundane/puzzlebox/impossible
 	name = "\improper royal puzzle-box"
@@ -12252,8 +12264,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/mundane/puzzlebox/medium
 	name = "\improper ebony puzzle-box"
@@ -12263,8 +12275,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/natural/bone
 	name = "bone"
@@ -12275,9 +12287,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/natural/bundle/bone/full
 	name = "stack of bones"
@@ -12289,9 +12301,9 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/natural/bundle/cloth
 	name = "bundle of cloth"
@@ -12303,8 +12315,8 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/natural/bundle/cloth/bandage
 	name = "roll of bandages"
@@ -12316,8 +12328,8 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/natural/bundle/cloth/bandage/full
 	name = "roll of bandages"
@@ -12329,8 +12341,8 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/natural/bundle/cloth/roll
 	name = "bundle of cloth"
@@ -12342,8 +12354,8 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/natural/bundle/curred_hide
 	name = "bundle of cured leather"
@@ -12355,8 +12367,8 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/natural/bundle/fibers
 	name = "fiber bundle"
@@ -12368,9 +12380,9 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/natural/bundle/fibers/full
 	name = "fiber bundle"
@@ -12382,9 +12394,9 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/natural/bundle/plank
 	name = "stack of wooden planks"
@@ -12396,8 +12408,8 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = "plankbundle"
 	worn_icon_state = "plankbundle"
+	inhand_icon_state = null
 
 /obj/item/natural/bundle/silk
 	name = "silken weave"
@@ -12409,9 +12421,9 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/natural/bundle/stick
 	name = "bundle of sticks"
@@ -12423,8 +12435,8 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/natural/bundle/worms
 	name = "worms"
@@ -12436,8 +12448,8 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/natural/cloth
 	name = "cloth"
@@ -12449,10 +12461,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/mouth_items.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/natural/dirtclod
 	name = "clod"
@@ -12464,8 +12476,8 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/natural/feather
 	name = "feather"
@@ -12477,10 +12489,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/natural/feather/infernal
 	name = "infernal feather"
@@ -12492,10 +12504,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/natural/fibers
 	name = "fibers"
@@ -12507,9 +12519,22 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
+
+/obj/item/natural/fur
+	name = "fur"
+	desc = "Fur from one of Dendor's creachers."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/natural.dmi'
+	icon_state = "wool1"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	throwforce = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/natural/fur/fox
 	name = "fur"
@@ -12521,8 +12546,8 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/natural/glass_shard
 	name = "shard"
@@ -12534,8 +12559,8 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = "shard"
 	worn_icon_state = "shard"
+	inhand_icon_state = null
 
 /obj/item/natural/head/minotaur
 	name = "minotaur head"
@@ -12546,8 +12571,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/natural/head/saiga
 	name = "saiga head"
@@ -12558,8 +12583,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/natural/hide
 	name = "hide"
@@ -12571,8 +12596,8 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/natural/hide/cured
 	name = "cured leather"
@@ -12584,8 +12609,8 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/natural/poo
 	name = "nightsoil"
@@ -12597,8 +12622,8 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/natural/poo/cow
 	name = "cow pie"
@@ -12610,8 +12635,8 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/natural/poo/horse
 	name = "droppings"
@@ -12623,8 +12648,8 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/natural/rock
 	name = "boulder"
@@ -12636,8 +12661,8 @@
 	throwforce = 25
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/natural/rock/coal
 	name = "boulder"
@@ -12649,8 +12674,8 @@
 	throwforce = 25
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/natural/rock/gem
 	name = "boulder"
@@ -12662,8 +12687,8 @@
 	throwforce = 25
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/natural/rock/iron
 	name = "boulder"
@@ -12675,8 +12700,8 @@
 	throwforce = 25
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/natural/rock/random
 	name = "boulder"
@@ -12688,8 +12713,8 @@
 	throwforce = 25
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/natural/rock/salt
 	name = "boulder"
@@ -12701,8 +12726,8 @@
 	throwforce = 25
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/natural/rock/silver
 	name = "boulder"
@@ -12714,8 +12739,8 @@
 	throwforce = 25
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/natural/saddle
 	name = "saddle"
@@ -12727,9 +12752,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/natural/stone
 	name = "stone"
@@ -12741,9 +12767,9 @@
 	throwforce = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/natural/stoneblock
 	name = "stone block"
@@ -12755,8 +12781,8 @@
 	throwforce = 18
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/natural/whetstone
 	name = "whetstone"
@@ -12768,9 +12794,9 @@
 	throwforce = 18
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/natural/wood/plank
 	name = "wooden plank"
@@ -12782,8 +12808,8 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/natural/worms
 	name = "worm"
@@ -12795,8 +12821,8 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/natural/worms/grubs
 	name = "grub"
@@ -12808,8 +12834,8 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/natural/worms/leech
 	name = "leech"
@@ -12821,8 +12847,8 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/natural/worms/leech/cheele
 	name = "cheele"
@@ -12834,8 +12860,8 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/necra_censer
 	parent_type = /obj/item/rockhill
@@ -12848,8 +12874,8 @@
 	throwforce = 4
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "necra_censer"
 	worn_icon_state = "necra_censer"
+	inhand_icon_state = "necra_censer"
 
 /obj/item/necro_relics/necro_crystal
 	name = "dark crystal"
@@ -12860,8 +12886,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/needle
 	parent_type = /obj/item/rockhill
@@ -12874,9 +12900,9 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/needle/pestra
 	name = "needle of pestra"
@@ -12887,9 +12913,9 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/needle/thorn
 	name = "needle"
@@ -12901,9 +12927,9 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/net
 	parent_type = /obj/item/rockhill
@@ -12916,9 +12942,9 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
+	inhand_icon_state = null
 
 /obj/item/paper/inqslip/accusation
 	name = "accusation"
@@ -12930,10 +12956,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_HEAD
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/paper/inqslip/arrival/abso
 	name = "arrival slip"
@@ -12945,10 +12971,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_HEAD
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/paper/inqslip/arrival/adju
 	name = "arrival slip"
@@ -12960,10 +12986,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_HEAD
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/paper/inqslip/arrival/inq
 	name = "arrival slip"
@@ -12975,10 +13001,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_HEAD
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/paper/inqslip/confession
 	name = "confession"
@@ -12990,10 +13016,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_HEAD
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/paper/inquisition_poultice_info
 	parent_type = /obj/item/rockhill
@@ -13006,10 +13032,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_HEAD
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/paper/scroll
 	parent_type = /obj/item/rockhill
@@ -13021,9 +13047,9 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	body_parts_covered = HEAD
+	inhand_icon_state = null
 
 /obj/item/perfume/random
 	name = "perfume bottle"
@@ -13034,8 +13060,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/polishing_cream
 	parent_type = /obj/item/rockhill
@@ -13047,8 +13073,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/powderflask
 	parent_type = /obj/item/rockhill
@@ -13060,9 +13086,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "powderflask"
 	worn_icon_state = "powderflask"
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/quicksilver
 	parent_type = /obj/item/rockhill
@@ -13074,8 +13100,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/quiver/Warrows
 	name = "quiver"
@@ -13086,9 +13112,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
-	inhand_icon_state = "quiver"
 	worn_icon_state = "quiver"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/quiver/Wbolts
 	name = "quiver"
@@ -13099,9 +13125,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
-	inhand_icon_state = "quiver"
 	worn_icon_state = "quiver"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/quiver/arrows
 	name = "quiver"
@@ -13112,9 +13138,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
-	inhand_icon_state = "quiver"
 	worn_icon_state = "quiver"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/quiver/bodkin
 	name = "quiver"
@@ -13125,9 +13151,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
-	inhand_icon_state = "quiver"
 	worn_icon_state = "quiver"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/quiver/bolts
 	name = "quiver"
@@ -13138,9 +13164,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
-	inhand_icon_state = "quiver"
 	worn_icon_state = "quiver"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/quiver/bullet/lead
 	name = "lead ball pouch"
@@ -13151,9 +13177,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
-	inhand_icon_state = "slingpouch"
 	worn_icon_state = "slingpouch"
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/quiver/heavybluntbolts
 	name = "quiver"
@@ -13164,9 +13190,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
-	inhand_icon_state = "quiver"
 	worn_icon_state = "quiver"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/quiver/javelin
 	name = "javelinbag"
@@ -13177,9 +13203,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
-	inhand_icon_state = "javelinbag"
 	worn_icon_state = "javelinbag"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/quiver/javelin/iron
 	name = "javelinbag"
@@ -13190,9 +13216,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
-	inhand_icon_state = "javelinbag"
 	worn_icon_state = "javelinbag"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/quiver/javelin/steel
 	name = "javelinbag"
@@ -13203,9 +13229,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
-	inhand_icon_state = "javelinbag"
 	worn_icon_state = "javelinbag"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/quiver/sling
 	name = "sling bullet pouch"
@@ -13216,9 +13242,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
-	inhand_icon_state = "slingpouch"
 	worn_icon_state = "slingpouch"
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/quiver/sling/iron
 	name = "sling bullet pouch"
@@ -13229,9 +13255,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
-	inhand_icon_state = "slingpouch"
 	worn_icon_state = "slingpouch"
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/quiver/zigs
 	name = "zig box"
@@ -13242,22 +13268,22 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
-	inhand_icon_state = "smokebox"
 	worn_icon_state = "smokebox"
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/ration
 	parent_type = /obj/item/rockhill
 	name = "ration wrapping paper"
 	desc = "A piece of paper greased with a thin layer of oil, used to wrap food and preserve it for a long journey. The final size of the ration depends on the size of the original food item. The food will last as long as the ration is wrapped."
-	icon = 'modular_redtard/rockhill/icons/modular/Neu_food/icons/cookware/ration.dmi'
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cookware/ration.dmi'
 	icon_state = "ration_wrapper"
 	w_class = WEIGHT_CLASS_TINY
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/badrecipe
 	name = "burned mess"
@@ -13268,8 +13294,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/butter
 	name = "stick of butter"
@@ -13280,8 +13306,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/butterslice
 	name = "butter"
@@ -13292,8 +13318,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/crow
 	name = "zad"
@@ -13304,8 +13330,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/deadmouse
 	name = "dead mouse"
@@ -13316,8 +13342,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/egg
 	name = "egg"
@@ -13328,8 +13354,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/fat/salo
 	name = "salo"
@@ -13340,80 +13366,80 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/fish/crab
 	name = "crab"
 	desc = "A defensive shellfish that's a real hassle to crack open, they taste great when made into cakes with butterdough slice."
-	icon = 'modular_redtard/rockhill/icons/modular/Neu_food/icons/raw/raw_fish.dmi'
-	icon_state = "crab"
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/raw/raw_fish.dmi'
 	w_class = WEIGHT_CLASS_TINY
 	force = 8
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/fish/lobster
 	name = "lobster"
 	desc = "A hard-shelled cretin, barely fit for eating."
-	icon = 'modular_redtard/rockhill/icons/modular/Neu_food/icons/raw/raw_fish.dmi'
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/raw/raw_fish.dmi'
 	icon_state = "lobster"
 	w_class = WEIGHT_CLASS_TINY
 	force = 8
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/fish/oyster
 	name = "oyster"
 	desc = "A stubborn shellfish that MIGHT hide a prize within, can be opened with a knife to reveal the flesh within."
-	icon = 'modular_redtard/rockhill/icons/modular/Neu_food/icons/raw/raw_fish.dmi'
-	icon_state = "oyster"
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/raw/raw_fish.dmi'
 	w_class = WEIGHT_CLASS_TINY
 	force = 8
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/fish/plaice
 	name = "plaice"
 	desc = "A popular flatfish for eating. Found on tables of noblefolk and peasantry alike."
-	icon = 'modular_redtard/rockhill/icons/modular/Neu_food/icons/raw/raw_fish.dmi'
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/raw/raw_fish.dmi'
 	icon_state = "plaice"
 	w_class = WEIGHT_CLASS_TINY
 	force = 8
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/fish/sole
 	name = "sole"
 	desc = "An ugly flatfish, slimy and with both eyes on one side of its head. Nothing to do with feet."
-	icon = 'modular_redtard/rockhill/icons/modular/Neu_food/icons/raw/raw_fish.dmi'
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/raw/raw_fish.dmi'
 	icon_state = "sole"
 	w_class = WEIGHT_CLASS_TINY
 	force = 8
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/fish/sunny
 	name = "sunny"
 	desc = "A pitiful beast, clinging to Astrata's light as if it would make it stronger. Little does it know that it needs faith for such miracles."
-	icon = 'modular_redtard/rockhill/icons/modular/Neu_food/icons/raw/raw_fish.dmi'
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/raw/raw_fish.dmi'
 	icon_state = "sunny"
 	w_class = WEIGHT_CLASS_TINY
 	force = 8
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/apple
 	name = "apple"
@@ -13424,10 +13450,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/64x64/head.dmi'
-	worn_icon_state = null
 	slot_flags = ITEM_SLOT_HEAD
+	inhand_icon_state = null
+	worn_icon_state = "apple"
 
 /obj/item/reagent_containers/food/snacks/grown/berries/rogue
 	name = "jacksberries"
@@ -13438,8 +13464,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison
 	name = "jacksberries"
@@ -13450,8 +13476,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/cabbage/rogue
 	name = "cabbage"
@@ -13462,8 +13488,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/garlick/rogue
 	name = "garlick bulb"
@@ -13474,8 +13500,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/oat
 	name = "oat grain"
@@ -13486,8 +13512,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/onion/rogue
 	name = "onion"
@@ -13498,8 +13524,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/potato/rogue
 	name = "potato"
@@ -13510,8 +13536,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/fyritius
 	name = "fyritius flower"
@@ -13522,8 +13548,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed
 	name = "westleach leaf"
@@ -13534,8 +13560,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry
 	name = "westleach leaf"
@@ -13546,8 +13572,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/rosa_petals
 	name = "fresh rosa petals"
@@ -13558,8 +13584,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/swampweeddry
 	name = "swampweed"
@@ -13570,8 +13596,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/tealeaves_dry
 	name = "dried tea leaves"
@@ -13582,8 +13608,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/wheat
 	name = "wheat grain"
@@ -13594,8 +13620,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/bread
 	name = "bread loaf"
@@ -13606,8 +13632,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/cheddar
 	name = "wheel of cheese"
@@ -13618,8 +13644,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/cheddarwedge
 	name = "wedge of cheese"
@@ -13630,8 +13656,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/cheddarwedge/aged
 	name = "wedge of aged cheese"
@@ -13642,8 +13668,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/cheese
 	name = "fresh cheese"
@@ -13654,8 +13680,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/crackerscooked
 	name = "hardtack"
@@ -13666,8 +13692,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/dough
 	name = "dough"
@@ -13678,8 +13704,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/foodbase/hardtack_raw
 	name = "crackerdough"
@@ -13690,8 +13716,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/friedrat
 	name = "fried rat"
@@ -13702,8 +13728,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/honey
 	name = "honey"
@@ -13714,8 +13740,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/bacon
 	name = "raw bacon"
@@ -13726,8 +13752,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/coppiette
 	name = "coppiette"
@@ -13738,8 +13764,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/mince
 	name = "mince"
@@ -13750,8 +13776,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/mince/beef
 	name = "minced meat"
@@ -13762,8 +13788,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/poultry
 	name = "plucked bird"
@@ -13774,8 +13800,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked
 	name = "roast bird"
@@ -13786,8 +13812,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/salami
 	name = "salumoi"
@@ -13798,8 +13824,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/sausage
 	name = "raw sausage"
@@ -13810,8 +13836,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/spider
 	name = "spidermeat"
@@ -13822,8 +13848,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak
 	name = "raw meat"
@@ -13834,8 +13860,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak/wolf
 	name = "raw volf meat"
@@ -13846,8 +13872,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat_rotten
 	name = "rotten meat"
@@ -13858,8 +13884,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/apple
 	name = "apple pie"
@@ -13870,8 +13896,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/raisinbreadslice
 	name = "raisin loaf slice"
@@ -13882,8 +13908,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/raisins
 	name = "raisins"
@@ -13894,8 +13920,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/smallrat
 	name = "rat"
@@ -13906,8 +13932,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/smallrat/dead
 	name = "rat"
@@ -13918,8 +13944,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/tallow
 	name = "tallow"
@@ -13930,8 +13956,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/tallow/red
 	name = "inquisitorial tallow"
@@ -13942,8 +13968,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/zizo_bane
 	name = "Zizo's bane"
@@ -13954,8 +13980,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle
 	name = "bottle"
@@ -13966,10 +13992,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical
 	name = "alchemical vial"
@@ -13980,9 +14006,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/conpot
 	name = "alchemical vial"
@@ -13993,9 +14019,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/endpot
 	name = "alchemical vial"
@@ -14006,9 +14032,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/healthpot
 	name = "alchemical vial"
@@ -14019,9 +14045,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/healthpotnew
 	name = "alchemical vial"
@@ -14032,9 +14058,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/intpot
 	name = "alchemical vial"
@@ -14045,9 +14071,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/lucpot
 	name = "alchemical vial"
@@ -14058,9 +14084,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/perpot
 	name = "alchemical vial"
@@ -14071,9 +14097,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/rogue/rotcure
 	name = "alchemical vial"
@@ -14084,9 +14110,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/spdpot
 	name = "alchemical vial"
@@ -14097,9 +14123,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/spidervenom_paralytic
 	name = "alchemical vial"
@@ -14110,9 +14136,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/strpot
 	name = "alchemical vial"
@@ -14123,9 +14149,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/claybottle
 	name = "clay bottle"
@@ -14136,10 +14162,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/clayfancyvase
 	name = "fancy ceramic vase"
@@ -14150,10 +14176,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/clayvase
 	name = "ceramic vase"
@@ -14164,10 +14190,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/frankenbrew
 	name = "bottle of Reanimation Elixir"
@@ -14178,10 +14204,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue
 	name = "bottle"
@@ -14192,10 +14218,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/antidote
 	name = "bottle"
@@ -14206,10 +14232,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer
 	name = "Bottle of beer"
@@ -14220,10 +14246,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/apfelweinheim
 	name = "Bottle of Apfelweinheim Cider"
@@ -14234,10 +14260,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/aurorian
 	name = "Bottle of Aurorian Herbal Beer"
@@ -14248,10 +14274,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/avarmead
 	name = "Bottle of Golden Mead"
@@ -14262,10 +14288,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/avarrice
 	name = "Bottle of Aavnic White"
@@ -14276,10 +14302,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/butterhairs
 	name = "Bottle of Butterhairs"
@@ -14290,10 +14316,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/fireleaf
 	name = "Bottle of Fireleaf"
@@ -14304,10 +14330,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/gronnmead
 	name = "Bottle of Shieldmaiden Mead"
@@ -14318,10 +14344,24 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+
+/obj/item/reagent_containers/glass/bottle/rogue/beer/hagwoodbitter
+	name = "Bottle of Hagwood Bitters"
+	desc = "A bottle with the hagwood bitters cork-seal. The least bitter thing to be exported from the Grenzelhoft occupied state of Zorn."
+	icon = 'modular_redtard/rockhill/icons/obj/alcohol.dmi'
+	icon_state = "beer"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/jagdtrunk
 	name = "Bottle of Schnapps"
@@ -14332,10 +14372,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/kgunlager
 	name = "Bottle of Yamaguchi Tea Lager"
@@ -14346,10 +14386,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/kgunplum
 	name = "Bottle of Plum Wine"
@@ -14360,10 +14400,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/kgunsake
 	name = "Bottle of Aavnic White"
@@ -14374,10 +14414,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/murkwine
 	name = "Bottle of beer"
@@ -14388,10 +14428,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/nred
 	name = "Bottle of Norwandine Ale"
@@ -14402,10 +14442,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/saigamilk
 	name = "Bottle of brewed Saiga Milk"
@@ -14416,10 +14456,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/stonebeardreserve
 	name = "Bottle of Stonebeards Reserve"
@@ -14430,10 +14470,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/voddena
 	name = "Bottle of beer"
@@ -14444,10 +14484,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/berrypoison
 	name = "bottle"
@@ -14458,10 +14498,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/elfblue
 	name = "Bottle of Valmora Blue"
@@ -14472,10 +14512,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/elfred
 	name = "Bottle of Elven Red"
@@ -14486,10 +14526,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/emberwine
 	name = "bottle"
@@ -14500,10 +14540,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/healthpot
 	name = "bottle"
@@ -14514,10 +14554,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/healthpotnew
 	name = "bottle"
@@ -14528,10 +14568,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/luxwine
 	name = "Bottle of Luxintenebre"
@@ -14542,10 +14582,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/manapot
 	name = "bottle"
@@ -14556,10 +14596,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/poison
 	name = "bottle"
@@ -14570,10 +14610,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/redwine
 	name = "Bottle of Otavan Red"
@@ -14584,10 +14624,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/stampoison
 	name = "bottle"
@@ -14598,10 +14638,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/stampot
 	name = "bottle"
@@ -14612,10 +14652,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/strongmanapot
 	name = "bottle"
@@ -14626,10 +14666,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/strongpoison
 	name = "bottle"
@@ -14640,10 +14680,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/strongstampoison
 	name = "bottle"
@@ -14654,10 +14694,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/strongstampot
 	name = "bottle"
@@ -14668,10 +14708,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/water
 	name = "bottle"
@@ -14682,10 +14722,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/whitewine
 	name = "Bottle of Otavan White"
@@ -14696,10 +14736,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/wine
 	name = "Bottle of wine"
@@ -14710,10 +14750,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/wine/sourwine
 	name = "Bottle of Grenzelhoft Sour"
@@ -14724,10 +14764,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/waterskin
 	name = "waterskin"
@@ -14738,12 +14778,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	worn_icon_hipl = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_l.dmi'
 	worn_icon_hipr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_r.dmi'
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bowl
 	name = "wooden bowl"
@@ -14755,8 +14795,8 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bowl/bronze
 	name = "bronze bowl"
@@ -14768,8 +14808,8 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bowl/carved/coral
 	name = "heartstone bowl"
@@ -14781,8 +14821,8 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bowl/decrepit
 	name = "decrepit bowl"
@@ -14794,8 +14834,8 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bowl/gold
 	name = "gold bowl"
@@ -14807,8 +14847,8 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bowl/iron
 	name = "iron bowl"
@@ -14820,8 +14860,8 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bowl/silver
 	name = "silver bowl"
@@ -14833,8 +14873,8 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bowl/tin
 	name = "tin bowl"
@@ -14846,8 +14886,8 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bucket
 	name = "bucket"
@@ -14859,9 +14899,9 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
-	inhand_icon_state = "woodbucket"
 	worn_icon_state = "woodbucket"
 	armor_type = /datum/armor/rockhill_m14_b0_f52_a35
+	inhand_icon_state = "woodbucket"
 
 /obj/item/reagent_containers/glass/bucket/pot
 	name = "pot"
@@ -14873,9 +14913,9 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
-	inhand_icon_state = "pot"
 	worn_icon_state = "pot"
 	armor_type = /datum/armor/rockhill_m14_b0_f52_a35
+	inhand_icon_state = "pot"
 
 /obj/item/reagent_containers/glass/bucket/pot/copper
 	name = "copper pot"
@@ -14887,9 +14927,9 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
-	inhand_icon_state = "pot"
 	worn_icon_state = "pot"
 	armor_type = /datum/armor/rockhill_m14_b0_f52_a35
+	inhand_icon_state = "pot"
 
 /obj/item/reagent_containers/glass/bucket/pot/decrepit
 	name = "decrepit pot"
@@ -14901,9 +14941,9 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
-	inhand_icon_state = "pot"
 	worn_icon_state = "pot"
 	armor_type = /datum/armor/rockhill_m14_b0_f52_a35
+	inhand_icon_state = "pot"
 
 /obj/item/reagent_containers/glass/bucket/pot/stone
 	name = "stone pot"
@@ -14915,9 +14955,9 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
-	inhand_icon_state = "pot"
 	worn_icon_state = "pot"
 	armor_type = /datum/armor/rockhill_m14_b0_f52_a35
+	inhand_icon_state = "pot"
 
 /obj/item/reagent_containers/glass/bucket/pot/teapot/fancy
 	name = "teapot"
@@ -14929,23 +14969,23 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
-	inhand_icon_state = "pot"
 	worn_icon_state = "pot"
 	armor_type = /datum/armor/rockhill_m14_b0_f52_a35
+	inhand_icon_state = "pot"
 
 /obj/item/reagent_containers/glass/bucket/pot/teapot/porcelain
 	name = "porcelain teapot"
 	desc = "A dainty porcelain teapot used to serve tea."
 	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cookware/pot.dmi'
-	icon_state = "teapot_porcelain"
 	w_class = WEIGHT_CLASS_BULKY
 	force = 10
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
-	inhand_icon_state = "pot"
 	worn_icon_state = "pot"
 	armor_type = /datum/armor/rockhill_m14_b0_f52_a35
+	icon_state = null
+	inhand_icon_state = "pot"
 
 /obj/item/reagent_containers/glass/cup
 	name = "metal cup"
@@ -14957,8 +14997,8 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/bronzegob
 	name = "bronze goblet"
@@ -14970,8 +15010,8 @@
 	throwforce = 17
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/bronzemug
 	name = "bronze mug"
@@ -14983,8 +15023,8 @@
 	throwforce = 13
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/ceramic/fancy
 	name = "fancy teacup"
@@ -14996,8 +15036,8 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/claycup
 	name = "clay canister"
@@ -15009,8 +15049,8 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/golden
 	name = "golden goblet"
@@ -15022,8 +15062,8 @@
 	throwforce = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/golden/psydon
 	name = "Psydon's Chalice"
@@ -15035,8 +15075,8 @@
 	throwforce = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/golden/small
 	name = "golden cup"
@@ -15048,8 +15088,8 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/porcelain/fancy
 	name = "fancy porcelain teacup"
@@ -15061,8 +15101,8 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/silver
 	name = "silver goblet"
@@ -15074,8 +15114,8 @@
 	throwforce = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/silver/small
 	name = "silver cup"
@@ -15087,8 +15127,8 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/skull
 	name = "skull goblet"
@@ -15100,8 +15140,8 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/steel
 	name = "goblet"
@@ -15113,8 +15153,8 @@
 	throwforce = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/tin
 	name = "tin goblet"
@@ -15126,8 +15166,8 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/tin/small
 	name = "tin cup"
@@ -15139,8 +15179,8 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/wooden
 	name = "wooden cup"
@@ -15152,8 +15192,8 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/mortar
 	name = "alchemical mortar"
@@ -15164,8 +15204,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/lux
 	name = "lux"
@@ -15176,8 +15216,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "lux"
 	worn_icon_state = "lux"
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/lux_impure
 	name = "impure lux"
@@ -15188,8 +15228,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "lux_impure"
 	worn_icon_state = "lux_impure"
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/peppermill
 	name = "pepper mill"
@@ -15200,8 +15240,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/powder/flour
 	name = "flour"
@@ -15212,8 +15252,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "spice"
 	worn_icon_state = "spice"
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/powder/herozium
 	name = "herozium"
@@ -15224,8 +15264,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "herozium"
 	worn_icon_state = "herozium"
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/powder/moondust
 	name = "moondust"
@@ -15236,8 +15276,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "spice"
 	worn_icon_state = "spice"
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/powder/moondust_purest
 	name = "moondust"
@@ -15248,8 +15288,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "spice"
 	worn_icon_state = "spice"
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/powder/ozium
 	name = "ozium"
@@ -15260,8 +15300,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "spice"
 	worn_icon_state = "spice"
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/powder/salt
 	name = "salt"
@@ -15272,8 +15312,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "spice"
 	worn_icon_state = "spice"
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/powder/sleep_powder
 	name = "powder"
@@ -15284,8 +15324,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "spice"
 	worn_icon_state = "spice"
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/powder/spice
 	name = "spice"
@@ -15296,8 +15336,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "spice"
 	worn_icon_state = "spice"
+	inhand_icon_state = null
 
 /obj/item/reagent_containers/powder/starsugar
 	name = "starsugar"
@@ -15308,8 +15348,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "starsugar"
 	worn_icon_state = "starsugar"
+	inhand_icon_state = null
 
 /obj/item/recipe_book/alchemy
 	name = "Secrets of Alchemy"
@@ -15319,8 +15359,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/recipe_book/blacksmithing
 	name = "The Smith's Legacy"
@@ -15330,8 +15370,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/recipe_book/builder
 	name = "The Builder's Handbook - For Carpenters and Masons"
@@ -15341,8 +15381,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/recipe_book/ceramics
 	name = "The Potter's Handbook"
@@ -15352,8 +15392,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/recipe_book/cooking
 	name = "The Culinary Codex"
@@ -15364,8 +15404,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/recipe_book/engineering
 	name = "The Artificer's Handbook"
@@ -15375,8 +15415,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/recipe_book/leatherworking
 	name = "The Tanned Hide Tome: Mastery of Leather and Craft"
@@ -15386,8 +15426,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/recipe_book/magic
 	name = "The Magister's Grimoire"
@@ -15397,8 +15437,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/recipe_book/sewing
 	name = "Threads of Destiny: A Tailor's Codex"
@@ -15408,8 +15448,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/recipe_book/survival
 	name = "The Survival Handbook"
@@ -15420,8 +15460,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/repair_kit
 	parent_type = /obj/item/rockhill
@@ -15434,9 +15474,9 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/repair_kit/bad
 	name = "fabric patch"
@@ -15448,9 +15488,9 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/repair_kit/metal
 	name = "armor plates"
@@ -15462,9 +15502,9 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/repair_kit/metal/bad
 	name = "metal scrap kit"
@@ -15476,9 +15516,9 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/restraints/legcuffs/beartrap/armed
 	parent_type = /obj/item/rockhill
@@ -15491,8 +15531,8 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/restraints/legcuffs/beartrap/armed/camouflage
 	name = "mantrap"
@@ -15504,8 +15544,8 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/riddleofsteel
 	parent_type = /obj/item/rockhill
@@ -15517,9 +15557,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/ritechalk
 	parent_type = /obj/item/rockhill
@@ -15531,8 +15571,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/rogue/instrument/accord
 	name = "accordion"
@@ -15544,9 +15584,9 @@
 	throwforce = 7
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/rogue/instrument/drum
 	name = "drum"
@@ -15558,9 +15598,9 @@
 	throwforce = 7
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/rogue/instrument/flute
 	name = "flute"
@@ -15572,9 +15612,9 @@
 	throwforce = 7
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/rogue/instrument/guitar
 	name = "guitar"
@@ -15586,9 +15626,9 @@
 	throwforce = 7
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/rogue/instrument/harp
 	name = "harp"
@@ -15600,9 +15640,9 @@
 	throwforce = 7
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/rogue/instrument/hurdygurdy
 	name = "hurdy-gurdy"
@@ -15614,9 +15654,9 @@
 	throwforce = 7
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/rogue/instrument/lute
 	name = "lute"
@@ -15628,9 +15668,9 @@
 	throwforce = 7
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/rogue/instrument/trumpet
 	name = "trumpet"
@@ -15642,9 +15682,9 @@
 	throwforce = 7
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/rogue/painting/skullzhg
 	name = "morbid painting"
@@ -15655,8 +15695,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/roguebin
 	parent_type = /obj/item/rockhill
@@ -15668,8 +15708,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/roguebin/trash
 	name = "trash bin"
@@ -15680,8 +15720,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/roguebin/water
 	name = "wood bin"
@@ -15692,8 +15732,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/roguebin/water/gross
 	name = "wood bin"
@@ -15704,8 +15744,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/roguecoin/copper
 	name = "zenny"
@@ -15716,9 +15756,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/roguecoin/copper/pile
 	name = "zenny"
@@ -15729,9 +15769,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/roguecoin/gilbranze
 	name = "psilen"
@@ -15742,9 +15782,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/roguecoin/gilbranze/pile
 	name = "psilen"
@@ -15755,9 +15795,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/roguecoin/gold
 	name = "zenar"
@@ -15768,9 +15808,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/roguecoin/gold/pile
 	name = "zenar"
@@ -15781,9 +15821,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/roguecoin/silver
 	name = "ziliqua"
@@ -15794,9 +15834,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/roguecoin/silver/pile
 	name = "ziliqua"
@@ -15807,9 +15847,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/roguegear/bronze
 	name = "cog"
@@ -15820,8 +15860,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/roguegear/wood/basic
 	name = "wooden cog"
@@ -15832,8 +15872,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/roguegem/amethyst
 	name = "amythortz"
@@ -15844,9 +15884,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/roguegem/blue
 	name = "blortz"
@@ -15857,9 +15897,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/roguegem/diamond
 	name = "dorpel"
@@ -15870,9 +15910,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/roguegem/green
 	name = "gemerald"
@@ -15883,9 +15923,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/roguegem/random
 	name = "random gem"
@@ -15896,9 +15936,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/roguegem/ruby
 	name = "rontz"
@@ -15909,9 +15949,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/roguegem/violet
 	name = "saffira"
@@ -15922,9 +15962,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/roguegem/yellow
 	name = "toper"
@@ -15935,9 +15975,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	inhand_icon_state = null
 
 /obj/item/roguekey/apartments/stable1
 	name = "stable i key"
@@ -15949,10 +15989,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "stable1"
+	inhand_icon_state = null
 
 /obj/item/roguekey/apartments/stable2
 	name = "stable ii key"
@@ -15964,10 +16004,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "stable2"
+	inhand_icon_state = null
 
 /obj/item/roguekey/archive
 	parent_type = /obj/item/rockhill
@@ -15980,10 +16020,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "archive"
+	inhand_icon_state = null
 
 /obj/item/roguekey/armory
 	parent_type = /obj/item/rockhill
@@ -15996,10 +16036,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "armory"
+	inhand_icon_state = null
 
 /obj/item/roguekey/baron
 	parent_type = /obj/item/rockhill
@@ -16012,10 +16052,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "BaronManor"
+	inhand_icon_state = null
 
 /obj/item/roguekey/baronguest
 	parent_type = /obj/item/rockhill
@@ -16028,10 +16068,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "BaronManorGuest"
+	inhand_icon_state = null
 
 /obj/item/roguekey/bath
 	parent_type = /obj/item/rockhill
@@ -16044,10 +16084,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "bath"
+	inhand_icon_state = null
 
 /obj/item/roguekey/church
 	parent_type = /obj/item/rockhill
@@ -16060,10 +16100,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "church"
+	inhand_icon_state = null
 
 /obj/item/roguekey/courtphysician
 	parent_type = /obj/item/rockhill
@@ -16076,10 +16116,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "cphysician"
+	inhand_icon_state = null
 
 /obj/item/roguekey/crafterguild
 	parent_type = /obj/item/rockhill
@@ -16092,10 +16132,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "crafterguild"
+	inhand_icon_state = null
 
 /obj/item/roguekey/craftermaster
 	parent_type = /obj/item/rockhill
@@ -16108,10 +16148,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "craftermaster"
+	inhand_icon_state = null
 
 /obj/item/roguekey/crier
 	parent_type = /obj/item/rockhill
@@ -16124,10 +16164,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "crier"
+	inhand_icon_state = null
 
 /obj/item/roguekey/dungeon
 	parent_type = /obj/item/rockhill
@@ -16140,10 +16180,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "dungeon"
+	inhand_icon_state = null
 
 /obj/item/roguekey/fancyroomi
 	parent_type = /obj/item/rockhill
@@ -16156,10 +16196,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "fancyi"
+	inhand_icon_state = null
 
 /obj/item/roguekey/fancyroomii
 	parent_type = /obj/item/rockhill
@@ -16172,10 +16212,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "fancyii"
+	inhand_icon_state = null
 
 /obj/item/roguekey/fancyroomiii
 	parent_type = /obj/item/rockhill
@@ -16188,10 +16228,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "fancyiii"
+	inhand_icon_state = null
 
 /obj/item/roguekey/fancyroomiv
 	parent_type = /obj/item/rockhill
@@ -16204,10 +16244,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "fancyiv"
+	inhand_icon_state = null
 
 /obj/item/roguekey/fancyroomv
 	parent_type = /obj/item/rockhill
@@ -16220,10 +16260,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "fancyv"
+	inhand_icon_state = null
 
 /obj/item/roguekey/farm
 	parent_type = /obj/item/rockhill
@@ -16236,10 +16276,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "farm"
+	inhand_icon_state = null
 
 /obj/item/roguekey/garrison
 	parent_type = /obj/item/rockhill
@@ -16252,10 +16292,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "garrison"
+	inhand_icon_state = null
 
 /obj/item/roguekey/graveyard
 	parent_type = /obj/item/rockhill
@@ -16268,10 +16308,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "graveyard"
+	inhand_icon_state = null
 
 /obj/item/roguekey/hand
 	parent_type = /obj/item/rockhill
@@ -16284,10 +16324,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "hand"
+	inhand_icon_state = null
 
 /obj/item/roguekey/heir
 	parent_type = /obj/item/rockhill
@@ -16300,10 +16340,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "heir"
+	inhand_icon_state = null
 
 /obj/item/roguekey/inquisition
 	parent_type = /obj/item/rockhill
@@ -16316,10 +16356,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "inquisition"
+	inhand_icon_state = null
 
 /obj/item/roguekey/keeper
 	parent_type = /obj/item/rockhill
@@ -16332,10 +16372,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "keeper"
+	inhand_icon_state = null
 
 /obj/item/roguekey/keeper_inner
 	parent_type = /obj/item/rockhill
@@ -16348,10 +16388,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "keeper2"
+	inhand_icon_state = null
 
 /obj/item/roguekey/knight
 	parent_type = /obj/item/rockhill
@@ -16364,10 +16404,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "knight"
+	inhand_icon_state = null
 
 /obj/item/roguekey/mage
 	parent_type = /obj/item/rockhill
@@ -16380,10 +16420,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "mage"
+	inhand_icon_state = null
 
 /obj/item/roguekey/manor
 	parent_type = /obj/item/rockhill
@@ -16396,10 +16436,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "manor"
+	inhand_icon_state = null
 
 /obj/item/roguekey/manor/counsilroom/i
 	name = "Counsillor's Room I Key"
@@ -16411,10 +16451,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "counsil1"
+	inhand_icon_state = null
 
 /obj/item/roguekey/manor/counsilroom/ii
 	name = "Counsillor's Room II Key"
@@ -16426,10 +16466,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "counsil2"
+	inhand_icon_state = null
 
 /obj/item/roguekey/manor/counsilroom/iii
 	name = "Counsillor's Room III Key"
@@ -16441,10 +16481,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "counsil3"
+	inhand_icon_state = null
 
 /obj/item/roguekey/manor/guestroom/i
 	name = "Manor Guestroom I Key"
@@ -16456,10 +16496,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "guestroom1"
+	inhand_icon_state = null
 
 /obj/item/roguekey/manor/guestroom/ii
 	name = "Manor Guestroom II Key"
@@ -16471,10 +16511,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "guestroom2"
+	inhand_icon_state = null
 
 /obj/item/roguekey/manor/guestroom/iii
 	name = "Manor Guestroom III Key"
@@ -16486,10 +16526,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "guestroom3"
+	inhand_icon_state = null
 
 /obj/item/roguekey/mercenary
 	parent_type = /obj/item/rockhill
@@ -16502,10 +16542,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "merc"
+	inhand_icon_state = null
 
 /obj/item/roguekey/merchant
 	parent_type = /obj/item/rockhill
@@ -16518,10 +16558,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "merchant"
+	inhand_icon_state = null
 
 /obj/item/roguekey/nightmaiden
 	parent_type = /obj/item/rockhill
@@ -16534,10 +16574,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "nightmaiden"
+	inhand_icon_state = null
 
 /obj/item/roguekey/nightmaiden/rooms/i
 	name = "baths room I key"
@@ -16549,10 +16589,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "lux1"
+	inhand_icon_state = null
 
 /obj/item/roguekey/nightmaiden/rooms/ii
 	name = "baths room II key"
@@ -16564,10 +16604,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "lux2"
+	inhand_icon_state = null
 
 /obj/item/roguekey/nightmaiden/rooms/iii
 	name = "baths room III key"
@@ -16579,10 +16619,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "lux3"
+	inhand_icon_state = null
 
 /obj/item/roguekey/nightmaiden/rooms/iv
 	name = "baths room IV key"
@@ -16594,10 +16634,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "lux4"
+	inhand_icon_state = null
 
 /obj/item/roguekey/nightmaiden/rooms/punish
 	name = "baths punishment room  key"
@@ -16609,10 +16649,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "punishroom"
+	inhand_icon_state = null
 
 /obj/item/roguekey/nightmaiden/rooms/steam
 	name = "baths steam room key"
@@ -16624,10 +16664,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "steam"
+	inhand_icon_state = null
 
 /obj/item/roguekey/nightmaiden/rooms/v
 	name = "baths room V key"
@@ -16639,10 +16679,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "lux5"
+	inhand_icon_state = null
 
 /obj/item/roguekey/nightman
 	parent_type = /obj/item/rockhill
@@ -16655,10 +16695,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "nightman"
+	inhand_icon_state = null
 
 /obj/item/roguekey/physician
 	parent_type = /obj/item/rockhill
@@ -16671,10 +16711,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "physician"
+	inhand_icon_state = null
 
 /obj/item/roguekey/priest
 	parent_type = /obj/item/rockhill
@@ -16687,10 +16727,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "priest"
+	inhand_icon_state = null
 
 /obj/item/roguekey/puritan
 	parent_type = /obj/item/rockhill
@@ -16703,10 +16743,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "puritan"
+	inhand_icon_state = null
 
 /obj/item/roguekey/roomhunt
 	parent_type = /obj/item/rockhill
@@ -16719,10 +16759,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "roomhunt"
+	inhand_icon_state = null
 
 /obj/item/roguekey/roomi
 	parent_type = /obj/item/rockhill
@@ -16735,10 +16775,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "roomi"
+	inhand_icon_state = null
 
 /obj/item/roguekey/roomii
 	parent_type = /obj/item/rockhill
@@ -16751,10 +16791,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "roomii"
+	inhand_icon_state = null
 
 /obj/item/roguekey/roomiii
 	parent_type = /obj/item/rockhill
@@ -16767,10 +16807,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "roomiii"
+	inhand_icon_state = null
 
 /obj/item/roguekey/roomiv
 	parent_type = /obj/item/rockhill
@@ -16783,10 +16823,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "roomiv"
+	inhand_icon_state = null
 
 /obj/item/roguekey/roomix
 	parent_type = /obj/item/rockhill
@@ -16799,10 +16839,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "roomix"
+	inhand_icon_state = null
 
 /obj/item/roguekey/roomv
 	parent_type = /obj/item/rockhill
@@ -16815,10 +16855,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "roomv"
+	inhand_icon_state = null
 
 /obj/item/roguekey/roomvi
 	parent_type = /obj/item/rockhill
@@ -16831,10 +16871,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "roomvi"
+	inhand_icon_state = null
 
 /obj/item/roguekey/roomvii
 	parent_type = /obj/item/rockhill
@@ -16847,10 +16887,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "roomvii"
+	inhand_icon_state = null
 
 /obj/item/roguekey/roomviii
 	parent_type = /obj/item/rockhill
@@ -16863,10 +16903,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "roomviii"
+	inhand_icon_state = null
 
 /obj/item/roguekey/roomx
 	parent_type = /obj/item/rockhill
@@ -16879,10 +16919,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "roomx"
+	inhand_icon_state = null
 
 /obj/item/roguekey/royal
 	parent_type = /obj/item/rockhill
@@ -16895,10 +16935,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "royal"
+	inhand_icon_state = null
 
 /obj/item/roguekey/sergeant
 	parent_type = /obj/item/rockhill
@@ -16911,10 +16951,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "sergeant"
+	inhand_icon_state = null
 
 /obj/item/roguekey/servant
 	parent_type = /obj/item/rockhill
@@ -16927,10 +16967,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "servant"
+	inhand_icon_state = null
 
 /obj/item/roguekey/sheriff
 	parent_type = /obj/item/rockhill
@@ -16943,10 +16983,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "sheriff"
+	inhand_icon_state = null
 
 /obj/item/roguekey/shop
 	parent_type = /obj/item/rockhill
@@ -16959,10 +16999,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "shop"
+	inhand_icon_state = null
 
 /obj/item/roguekey/slaverdungeon
 	parent_type = /obj/item/rockhill
@@ -16975,10 +17015,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "DTManorCells"
+	inhand_icon_state = null
 
 /obj/item/roguekey/slaverhouse
 	parent_type = /obj/item/rockhill
@@ -16991,10 +17031,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "SlaverHome"
+	inhand_icon_state = null
 
 /obj/item/roguekey/slaverpillory
 	parent_type = /obj/item/rockhill
@@ -17007,10 +17047,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "SlaveAuction"
+	inhand_icon_state = null
 
 /obj/item/roguekey/steward
 	parent_type = /obj/item/rockhill
@@ -17023,10 +17063,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "steward"
+	inhand_icon_state = null
 
 /obj/item/roguekey/tailor
 	parent_type = /obj/item/rockhill
@@ -17039,10 +17079,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "tailor"
+	inhand_icon_state = null
 
 /obj/item/roguekey/tavern
 	parent_type = /obj/item/rockhill
@@ -17055,10 +17095,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "tavern"
+	inhand_icon_state = null
 
 /obj/item/roguekey/tavernkeep
 	parent_type = /obj/item/rockhill
@@ -17071,10 +17111,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "innkeep"
+	inhand_icon_state = null
 
 /obj/item/roguekey/tower
 	parent_type = /obj/item/rockhill
@@ -17087,10 +17127,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "tower"
+	inhand_icon_state = null
 
 /obj/item/roguekey/townie
 	parent_type = /obj/item/rockhill
@@ -17103,10 +17143,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "townie"
+	inhand_icon_state = null
 
 /obj/item/roguekey/vault
 	parent_type = /obj/item/rockhill
@@ -17119,10 +17159,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "vault"
+	inhand_icon_state = null
 
 /obj/item/roguekey/walls
 	parent_type = /obj/item/rockhill
@@ -17135,10 +17175,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "walls"
+	inhand_icon_state = null
 
 /obj/item/roguekey/warden
 	parent_type = /obj/item/rockhill
@@ -17151,10 +17191,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	lockid = "warden"
+	inhand_icon_state = null
 
 /obj/item/roguemachine/mastermail
 	name = "MASTER OF MAILS"
@@ -17164,9 +17204,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	pixel_y = 32
+	inhand_icon_state = null
 
 /obj/item/roguemachine/navigator
 	name = "navigator"
@@ -17177,8 +17217,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/roguemachine/navigator/blackmarket
 	name = "suspicious navigator"
@@ -17189,8 +17229,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/roguemachine/navigator/private
 	name = "private navigator"
@@ -17201,8 +17241,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/roguemachine/zadcote/bathhouse
 	name = "bathhouse zadcote"
@@ -17213,8 +17253,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/roguemachine/zadcote/merchant
 	name = "trading zadcote"
@@ -17225,8 +17265,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/roguemachine/zadcote/steward
 	name = "stewardry zadcote"
@@ -17237,8 +17277,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/rogueore/cinnabar
 	name = "cinnabar"
@@ -17249,8 +17289,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/rogueore/coal
 	name = "coal"
@@ -17261,8 +17301,20 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
+
+/obj/item/rogueore/copper
+	name = "raw copper"
+	desc = "A burnished ore with reddish gleams."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/ore.dmi'
+	icon_state = "orecop1"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/rogueore/gold
 	name = "raw gold"
@@ -17273,8 +17325,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/rogueore/iron
 	name = "raw iron"
@@ -17285,8 +17337,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/rogueore/silver
 	name = "raw silver"
@@ -17297,8 +17349,20 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
+
+/obj/item/rogueore/tin
+	name = "raw tin"
+	desc = "A mass of soft, almost malleable white ore."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/ore.dmi'
+	icon_state = "oretin1"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/roguestatue/clay
 	name = "ceramic statue"
@@ -17309,8 +17373,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/roguestatue/decrepit
 	name = "decrepit statue"
@@ -17321,8 +17385,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/roguestatue/glass
 	name = "glass statue"
@@ -17333,8 +17397,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/roguestatue/gold
 	name = "gold statue"
@@ -17345,8 +17409,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/roguestatue/gold/loot
 	name = "gold statuette"
@@ -17357,8 +17421,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/roguestatue/iron
 	name = "iron statue"
@@ -17369,8 +17433,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/roguestatue/silver
 	name = "silver statue"
@@ -17381,8 +17445,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/roguestatue/steel
 	name = "steel statue"
@@ -17393,8 +17457,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/blowrod
 	name = "blowing rod"
@@ -17406,11 +17470,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/chisel
 	name = "chisel"
@@ -17422,11 +17486,11 @@
 	throwforce = 2
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/eaglebeak
 	name = "steel lucerne"
@@ -17438,12 +17502,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/eaglebeak/lucerne
 	name = "lucerne"
@@ -17455,12 +17519,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/estoc
 	name = "estoc"
@@ -17472,12 +17536,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/fishspear
 	name = "fishing spear"
@@ -17489,12 +17553,12 @@
 	throwforce = 35
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/flail
 	name = "flail"
@@ -17506,11 +17570,11 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/flail/peasantwarflail/matthios
 	name = "Gilded Flail"
@@ -17522,13 +17586,14 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
-	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/rogueweapon/flail/sflail
 	name = "flail"
@@ -17540,11 +17605,11 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/flail/sflail/ancient
 	name = "ancient flail"
@@ -17556,11 +17621,11 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/flail/sflail/ancient/decrepit
 	name = "decrepit flail"
@@ -17572,11 +17637,11 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/flail/sflail/silver
 	name = "silver morningstar"
@@ -17588,11 +17653,11 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/greataxe
 	name = "greataxe"
@@ -17604,12 +17669,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/greataxe/silver
 	name = "silver poleaxe"
@@ -17621,12 +17686,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/greataxe/steel
 	name = "steel greataxe"
@@ -17638,12 +17703,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/greataxe/steel/doublehead
 	name = "double-headed steel greataxe"
@@ -17655,12 +17720,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/greataxe/steel/doublehead/graggar
 	name = "vicious greataxe"
@@ -17672,12 +17737,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/greataxe/steel/doublehead/minotaur
 	name = "minotaur greataxe"
@@ -17689,12 +17754,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/greatsword
 	name = "greatsword"
@@ -17706,12 +17771,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/greatsword/ancient
 	name = "ancient greatsword"
@@ -17723,12 +17788,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/greatsword/ancient/decrepit
 	name = "decrepit greatsword"
@@ -17740,12 +17805,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/greatsword/zwei
 	name = "claymore"
@@ -17757,12 +17822,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/halberd
 	name = "halberd"
@@ -17774,12 +17839,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/halberd/bardiche
 	name = "bardiche"
@@ -17791,12 +17856,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/halberd/bardiche/ancient
 	name = "ancient bardiche"
@@ -17808,12 +17873,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/halberd/bardiche/ancient/decrepit
 	name = "decrepit bardiche"
@@ -17825,12 +17890,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/halberd/glaive
 	name = "glaive"
@@ -17842,12 +17907,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/hammer/ancient/decrepit
 	name = "decrepit hammer"
@@ -17859,11 +17924,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/hammer/artefact/malum
 	name = "Malum's tool"
@@ -17875,11 +17940,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/hammer/blacksteel
 	name = "blacksteel hammer"
@@ -17891,11 +17956,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bs_masterhammer"
 	worn_icon_state = "bs_masterhammer"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/hammer/copper
 	name = "copper hammer"
@@ -17907,11 +17972,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/hammer/iron
 	name = "hammer"
@@ -17923,11 +17988,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/hammer/steel
 	name = "claw hammer"
@@ -17939,11 +18004,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/hammer/stone
 	name = "stone hammer"
@@ -17955,11 +18020,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/hammer/wood
 	name = "wooden mallet"
@@ -17971,11 +18036,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/handsaw
 	name = "handsaw"
@@ -17987,11 +18052,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/hoe
 	name = "hoe"
@@ -18003,11 +18068,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/polearms_righthand.dmi'
-	inhand_icon_state = "pitchfork"
-	worn_icon_state = "pitchfork"
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/rogueweapon/hoe/decrepit
 	name = "decrepit hoe"
@@ -18019,11 +18085,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/polearms_righthand.dmi'
-	inhand_icon_state = "pitchfork"
-	worn_icon_state = "pitchfork"
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/rogueweapon/hoe/stone
 	name = "stone hoe"
@@ -18035,11 +18102,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/polearms_righthand.dmi'
-	inhand_icon_state = "pitchfork"
-	worn_icon_state = "pitchfork"
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/rogueweapon/huntingknife
 	name = "hunting knife"
@@ -18051,12 +18119,12 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
 	picklvl = 1
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/bronze
 	name = "bronze knife"
@@ -18068,12 +18136,12 @@
 	throwforce = 18
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
 	picklvl = 1
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/chefknife
 	name = "chef's knife"
@@ -18085,12 +18153,12 @@
 	throwforce = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
 	picklvl = 0.9
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/cleaver
 	name = "cleaver"
@@ -18102,10 +18170,10 @@
 	throwforce = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
-	inhand_icon_state = "cleaver"
 	worn_icon_state = "cleaver"
 	slot_flags = ITEM_SLOT_POCKETS
 	picklvl = 0.8
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/combat
 	name = "seax"
@@ -18117,12 +18185,12 @@
 	throwforce = 16
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
 	picklvl = 1.1
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/copper
 	name = "copper knife"
@@ -18134,12 +18202,12 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
 	picklvl = 0.5
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger
 	name = "iron dagger"
@@ -18151,12 +18219,12 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
 	picklvl = 1.0
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/dtace
 	name = "'De Tace'"
@@ -18168,12 +18236,12 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
 	picklvl = 1.3
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/navaja
 	name = "navaja"
@@ -18185,12 +18253,12 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "elfdag"
 	worn_icon_state = "elfdag"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
 	picklvl = 1.0
+	inhand_icon_state = "elfdag"
 
 /obj/item/rogueweapon/huntingknife/idagger/silver
 	name = "silver dagger"
@@ -18202,12 +18270,12 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
 	picklvl = 1.1
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/silver/arcyne
 	name = "arcyne silver dagger"
@@ -18219,12 +18287,12 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
 	picklvl = 1.1
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/silver/elvish
 	name = "elvish dagger"
@@ -18236,12 +18304,12 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "elfdag"
 	worn_icon_state = "elfdag"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
 	picklvl = 1.2
+	inhand_icon_state = "elfdag"
 
 /obj/item/rogueweapon/huntingknife/idagger/silver/elvish/drow
 	name = "dark elvish dagger"
@@ -18253,12 +18321,12 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "elfdag"
 	worn_icon_state = "elfdag"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
 	picklvl = 1.2
+	inhand_icon_state = "elfdag"
 
 /obj/item/rogueweapon/huntingknife/idagger/silver/psydagger
 	name = "psydonic dagger"
@@ -18270,12 +18338,12 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
 	picklvl = 1.1
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel
 	name = "steel dagger"
@@ -18287,12 +18355,12 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
 	picklvl = 1.1
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/ancient
 	name = "ancient dagger"
@@ -18304,12 +18372,12 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
 	picklvl = 0.7
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/ancient/decrepit
 	name = "decrepit dagger"
@@ -18321,12 +18389,12 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
 	picklvl = 0.7
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/holysee
 	name = "eclipsum dagger"
@@ -18338,12 +18406,12 @@
 	throwforce = 33
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
 	picklvl = 1.1
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/parrying
 	name = "steel parrying dagger"
@@ -18355,12 +18423,12 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
 	picklvl = 1.1
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/parrying/vaquero
 	name = "sail dagger"
@@ -18372,12 +18440,12 @@
 	throwforce = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
 	picklvl = 1.1
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/pestrasickle
 	name = "plaguebringer sickle"
@@ -18389,12 +18457,12 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
 	picklvl = 1.1
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/special
 	name = "steel dagger"
@@ -18406,12 +18474,12 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
 	picklvl = 1.1
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/warden_machete
 	name = "Wardens' seax"
@@ -18423,12 +18491,12 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
 	picklvl = 1.0
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/wood
 	name = "wooden dagger"
@@ -18440,12 +18508,12 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
 	picklvl = 0.7
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/scissors
 	name = "iron scissors"
@@ -18457,12 +18525,12 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
 	picklvl = 1
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/scissors/steel
 	name = "steel scissors"
@@ -18474,12 +18542,12 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
 	picklvl = 1
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/stoneknife
 	name = "stone knife"
@@ -18491,12 +18559,12 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
 	picklvl = 0.3
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/throwingknife
 	name = "iron tossblade"
@@ -18508,12 +18576,12 @@
 	throwforce = 22
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
 	picklvl = 0.8
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/throwingknife/steel
 	name = "steel tossblade"
@@ -18525,12 +18593,12 @@
 	throwforce = 28
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
 	picklvl = 0.9
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/throwingknife/steel/ancient
 	name = "ancient tossblade"
@@ -18542,12 +18610,12 @@
 	throwforce = 28
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
 	picklvl = 0.6
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/throwingknife/steel/ancient/decrepit
 	name = "decrepit tossblade"
@@ -18559,12 +18627,12 @@
 	throwforce = 16
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
 	picklvl = 0.6
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/katar
 	name = "katar"
@@ -18576,11 +18644,11 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/katar/punchdagger
 	name = "punch dagger"
@@ -18592,11 +18660,11 @@
 	throwforce = 8
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/knuckles
 	name = "steel knuckles"
@@ -18608,11 +18676,11 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/knuckles/ancient/decrepit
 	name = "decrepit knuckles"
@@ -18624,11 +18692,11 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/lordscepter
 	name = "master's rod"
@@ -18640,11 +18708,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/mace
 	name = "mace"
@@ -18656,11 +18724,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_righthand.dmi'
-	inhand_icon_state = "mace_greyscale"
 	worn_icon_state = "mace_greyscale"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/church
 	name = "bell ringer"
@@ -18672,11 +18740,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_righthand.dmi'
-	inhand_icon_state = "mace_greyscale"
 	worn_icon_state = "mace_greyscale"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/cudgel
 	name = "cudgel"
@@ -18688,11 +18756,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_righthand.dmi'
-	inhand_icon_state = "mace_greyscale"
 	worn_icon_state = "mace_greyscale"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/cudgel/copper
 	name = "copper bludgeon"
@@ -18704,11 +18772,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_righthand.dmi'
-	inhand_icon_state = "mace_greyscale"
 	worn_icon_state = "mace_greyscale"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/cudgel/justice
 	name = "'Justice'"
@@ -18720,11 +18788,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_righthand.dmi'
-	inhand_icon_state = "mace_greyscale"
 	worn_icon_state = "mace_greyscale"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/goden
 	name = "Goedendag"
@@ -18736,12 +18804,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_righthand.dmi'
-	inhand_icon_state = "mace_greyscale"
 	worn_icon_state = "mace_greyscale"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/goden/steel
 	name = "grand mace"
@@ -18753,12 +18821,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_righthand.dmi'
-	inhand_icon_state = "mace_greyscale"
 	worn_icon_state = "mace_greyscale"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/goden/steel/ancient
 	name = "ancient grand mace"
@@ -18770,12 +18838,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_righthand.dmi'
-	inhand_icon_state = "mace_greyscale"
 	worn_icon_state = "mace_greyscale"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/goden/steel/ancient/decrepit
 	name = "decrepit grand mace"
@@ -18787,12 +18855,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_righthand.dmi'
-	inhand_icon_state = "mace_greyscale"
 	worn_icon_state = "mace_greyscale"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/parasol
 	name = "paper parasol"
@@ -18804,10 +18872,10 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_righthand.dmi'
-	inhand_icon_state = "mace_greyscale"
 	worn_icon_state = "mace_greyscale"
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/parasol/noble
 	name = "fine parasol"
@@ -18819,12 +18887,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_righthand.dmi'
-	inhand_icon_state = "mace_greyscale"
 	worn_icon_state = "mace_greyscale"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/spiked
 	name = "mace"
@@ -18836,11 +18904,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_righthand.dmi'
-	inhand_icon_state = "mace_greyscale"
 	worn_icon_state = "mace_greyscale"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/steel
 	name = "steel mace"
@@ -18852,11 +18920,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_righthand.dmi'
-	inhand_icon_state = "mace_greyscale"
 	worn_icon_state = "mace_greyscale"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/steel/ancient
 	name = "ancient mace"
@@ -18868,11 +18936,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_righthand.dmi'
-	inhand_icon_state = "mace_greyscale"
 	worn_icon_state = "mace_greyscale"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/steel/ancient/decrepit
 	name = "decrepit mace"
@@ -18884,11 +18952,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_righthand.dmi'
-	inhand_icon_state = "mace_greyscale"
 	worn_icon_state = "mace_greyscale"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/steel/morningstar
 	name = "steel mace"
@@ -18900,11 +18968,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_righthand.dmi'
-	inhand_icon_state = "mace_greyscale"
 	worn_icon_state = "mace_greyscale"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/steel/silver
 	name = "silver mace"
@@ -18916,11 +18984,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_righthand.dmi'
-	inhand_icon_state = "mace_greyscale"
 	worn_icon_state = "mace_greyscale"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/stunmace
 	name = "stunmace"
@@ -18932,11 +19000,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_righthand.dmi'
-	inhand_icon_state = "mace_greyscale"
 	worn_icon_state = "mace_greyscale"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/warhammer
 	name = "warhammer"
@@ -18948,11 +19016,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_righthand.dmi'
-	inhand_icon_state = "mace_greyscale"
 	worn_icon_state = "mace_greyscale"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/warhammer/steel
 	name = "steel warhammer"
@@ -18964,11 +19032,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_righthand.dmi'
-	inhand_icon_state = "mace_greyscale"
 	worn_icon_state = "mace_greyscale"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/warhammer/steel/ancient
 	name = "ancient warhammer"
@@ -18980,11 +19048,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_righthand.dmi'
-	inhand_icon_state = "mace_greyscale"
 	worn_icon_state = "mace_greyscale"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/warhammer/steel/ancient/decrepit
 	name = "decrepit warhammer"
@@ -18996,11 +19064,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_righthand.dmi'
-	inhand_icon_state = "mace_greyscale"
 	worn_icon_state = "mace_greyscale"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/warhammer/steel/silver
 	name = "silver warhammer"
@@ -19012,11 +19080,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_righthand.dmi'
-	inhand_icon_state = "mace_greyscale"
 	worn_icon_state = "mace_greyscale"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/woodclub
 	name = "wooden club"
@@ -19028,11 +19096,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_righthand.dmi'
-	inhand_icon_state = "mace_greyscale"
 	worn_icon_state = "mace_greyscale"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/woodclub/crafted
 	name = "wooden club"
@@ -19044,11 +19112,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_righthand.dmi'
-	inhand_icon_state = "mace_greyscale"
 	worn_icon_state = "mace_greyscale"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/wsword
 	name = "wooden sword"
@@ -19060,11 +19128,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_righthand.dmi'
-	inhand_icon_state = "mace_greyscale"
 	worn_icon_state = "mace_greyscale"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/pick
 	name = "iron pick"
@@ -19076,11 +19144,27 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
+
+/obj/item/rogueweapon/pick/bronze
+	name = "dolabra"
+	desc = "A so-called 'legionnaire's tool'; antiquated, but nevertheless beloved by many for its versatility. It offers an answer for labors both above-and-below, courtesy of its bronze axhead-and-picktip."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/tools.dmi'
+	icon_state = "bronzepick"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 20
+	throwforce = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	worn_icon_state = "sabre"
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/pick/copper
 	name = "copper pick"
@@ -19092,11 +19176,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/pick/decrepit
 	name = "decrepit pick"
@@ -19108,11 +19192,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/pick/militia
 	name = "militia warpick"
@@ -19124,11 +19208,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/pick/steel
 	name = "steel pick"
@@ -19140,11 +19224,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/pick/stone
 	name = "stone pick"
@@ -19156,11 +19240,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/pitchfork
 	name = "pitchfork"
@@ -19172,11 +19256,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/polearms_righthand.dmi'
-	inhand_icon_state = "pitchfork"
-	worn_icon_state = "pitchfork"
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/rogueweapon/pitchfork/decrepit
 	name = "decrepit pitchfork"
@@ -19188,11 +19273,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/polearms_righthand.dmi'
-	inhand_icon_state = "pitchfork"
-	worn_icon_state = "pitchfork"
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/rogueweapon/scabbard
 	name = "scabbard"
@@ -19204,11 +19290,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
-	inhand_icon_state = "scabbard"
 	worn_icon_state = "scabbard"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/scabbard/gwstrap
 	name = "greatweapon strap"
@@ -19220,12 +19306,13 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
-	inhand_icon_state = "gwstrap"
-	worn_icon_state = "gwstrap"
 	pixel_x = -16
 	pixel_y = -16
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/rogueweapon/scabbard/sheath
 	name = "dagger sheath"
@@ -19237,11 +19324,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
-	inhand_icon_state = "sheath"
 	worn_icon_state = "sheath"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/scabbard/sheath/courtphysician
 	name = "fancy cane"
@@ -19253,11 +19340,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
-	inhand_icon_state = "doccanesheath"
 	worn_icon_state = "doccanesheath"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/scabbard/sheath/noble
 	name = "silver-decorated knife sheath"
@@ -19269,11 +19356,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
-	inhand_icon_state = "sheath"
 	worn_icon_state = "sheath"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/scabbard/sheath/royal
 	name = "gold-decorated knife sheath"
@@ -19285,11 +19372,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
-	inhand_icon_state = "sheath"
 	worn_icon_state = "sheath"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/scabbard/sword
 	name = "simple scabbard"
@@ -19301,11 +19388,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
-	inhand_icon_state = "scabbard"
 	worn_icon_state = "scabbard"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/scabbard/sword/noble
 	name = "silver-decorated scabbard"
@@ -19317,11 +19404,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
-	inhand_icon_state = "scabbard"
 	worn_icon_state = "scabbard"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/scabbard/sword/royal
 	name = "gold-decorated scabbard"
@@ -19333,11 +19420,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
-	inhand_icon_state = "scabbard"
 	worn_icon_state = "scabbard"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/scythe
 	name = "scythe"
@@ -19349,12 +19436,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/shield/atgervi
 	name = "kite shield"
@@ -19366,11 +19453,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "atgervi_shield"
-	worn_icon_state = "atgervi_shield"
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "atgervi_shield"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/rogueweapon/shield/buckler
 	name = "buckler"
@@ -19382,11 +19470,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/shield/buckler/ancient
 	name = "ancient buckler"
@@ -19398,11 +19486,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/shield/capbuckler
 	name = "'Order'"
@@ -19414,11 +19502,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/shield/heater
 	name = "heater shield"
@@ -19430,11 +19518,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
-	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/rogueweapon/shield/iron
 	name = "iron shield"
@@ -19446,11 +19535,12 @@
 	throwforce = 25
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
-	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/rogueweapon/shield/tower/holysee
 	name = "see shield"
@@ -19462,11 +19552,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
-	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/rogueweapon/shield/tower/metal
 	name = "kite shield"
@@ -19478,11 +19569,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
-	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/rogueweapon/shield/tower/metal/ancient
 	name = "ancient shield"
@@ -19494,11 +19586,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
-	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/rogueweapon/shield/tower/metal/ancient/decrepit
 	name = "decrepit shield"
@@ -19510,11 +19603,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
-	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/rogueweapon/shield/tower/spidershield
 	name = "spider shield"
@@ -19526,11 +19620,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
-	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/rogueweapon/shield/wood
 	name = "wooden shield"
@@ -19542,11 +19637,12 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
-	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/rogueweapon/shovel
 	name = "shovel"
@@ -19558,11 +19654,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/shovel/decrepit
 	name = "decrepit shovel"
@@ -19574,11 +19670,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/shovel/silver
 	name = "silver shovel"
@@ -19590,11 +19686,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/shovel/small
 	name = "spade"
@@ -19606,11 +19702,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/sickle
 	name = "sickle"
@@ -19622,11 +19718,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "crysknife"
 	worn_icon_state = "crysknife"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "crysknife"
 
 /obj/item/rogueweapon/spear
 	name = "spear"
@@ -19638,12 +19734,12 @@
 	throwforce = 25
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/ancient
 	name = "ancient spear"
@@ -19655,12 +19751,12 @@
 	throwforce = 25
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/ancient/decrepit
 	name = "decrepit spear"
@@ -19672,12 +19768,12 @@
 	throwforce = 25
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/billhook
 	name = "billhook"
@@ -19689,12 +19785,12 @@
 	throwforce = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/bronze
 	name = "bronze spear"
@@ -19706,12 +19802,12 @@
 	throwforce = 30
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/improvisedbillhook
 	name = "improvised billhook"
@@ -19723,12 +19819,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/militia
 	name = "militia spear"
@@ -19740,12 +19836,12 @@
 	throwforce = 25
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/partizan
 	name = "partizan"
@@ -19757,12 +19853,12 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/silver
 	name = "silver spear"
@@ -19774,12 +19870,12 @@
 	throwforce = 25
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/stone
 	name = "stone spear"
@@ -19791,12 +19887,12 @@
 	throwforce = 20
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/stone/copper
 	name = "copper spear"
@@ -19808,12 +19904,12 @@
 	throwforce = 20
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = 0
 	pixel_y = 0
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/stoneaxe
 	name = "stone axe"
@@ -19825,11 +19921,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "axe"
 	worn_icon_state = "axe"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/battle
 	name = "battle axe"
@@ -19841,11 +19937,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "axe"
 	worn_icon_state = "axe"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/handaxe
 	name = "hatchet"
@@ -19857,11 +19953,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "axe"
 	worn_icon_state = "axe"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/handaxe/copper
 	name = "copper hatchet"
@@ -19873,11 +19969,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "axe"
 	worn_icon_state = "axe"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/oath
 	name = "oath"
@@ -19889,13 +19985,14 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "axe"
-	worn_icon_state = "axe"
 	pixel_x = -16
 	pixel_y = -16
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/woodcut
 	name = "axe"
@@ -19907,11 +20004,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "axe"
 	worn_icon_state = "axe"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/woodcut/silver
 	name = "silver war axe"
@@ -19923,11 +20020,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "axe"
 	worn_icon_state = "axe"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/woodcut/steel
 	name = "steel axe"
@@ -19939,11 +20036,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "axe"
 	worn_icon_state = "axe"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/woodcut/steel/ancient
 	name = "ancient axe"
@@ -19955,11 +20052,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "axe"
 	worn_icon_state = "axe"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/woodcut/steel/ancient/decrepit
 	name = "decrepit axe"
@@ -19971,11 +20068,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "axe"
 	worn_icon_state = "axe"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/woodcut/steel/atgervi
 	name = "Bearded Axe"
@@ -19987,11 +20084,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "atgervi_axe"
 	worn_icon_state = "atgervi_axe"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "atgervi_axe"
 
 /obj/item/rogueweapon/stoneaxe/woodcut/steel/woodcutter
 	name = "woodcutter's axe"
@@ -20003,11 +20100,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "axe"
-	worn_icon_state = "axe"
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/woodcut/wardenpick
 	name = "Wardens' axe"
@@ -20019,11 +20117,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "axe"
 	worn_icon_state = "axe"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/bonesetter
 	name = "bone forceps"
@@ -20035,11 +20133,11 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/cautery
 	name = "cautery iron"
@@ -20051,11 +20149,11 @@
 	throwforce = 18
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/cautery/branding
 	name = "branding iron"
@@ -20067,11 +20165,11 @@
 	throwforce = 18
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/cautery/branding/slave
 	name = "slaver branding iron"
@@ -20083,11 +20181,11 @@
 	throwforce = 18
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/hemostat
 	name = "forceps"
@@ -20099,11 +20197,11 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/hemostat/improv
 	name = "improvised clamp"
@@ -20115,11 +20213,11 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/multitool
 	name = "surgical multitool"
@@ -20131,10 +20229,10 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/retractor
 	name = "speculum"
@@ -20146,11 +20244,11 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/retractor/improv
 	name = "improvised retractor"
@@ -20162,11 +20260,11 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/saw
 	name = "saw"
@@ -20178,11 +20276,11 @@
 	throwforce = 16
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/saw/improv
 	name = "improvised saw"
@@ -20194,11 +20292,11 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/scalpel
 	name = "scalpel"
@@ -20210,11 +20308,11 @@
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "bone_dagger"
 	worn_icon_state = "bone_dagger"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword
 	name = "arming sword"
@@ -20226,11 +20324,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/capsabre
 	name = "'Law'"
@@ -20242,11 +20340,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/cutlass
 	name = "cutlass"
@@ -20258,11 +20356,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/decorated
 	name = "decorated arming sword"
@@ -20274,11 +20372,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/falchion/militia
 	name = "maciejowski"
@@ -20290,11 +20388,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/falx
 	name = "falx"
@@ -20306,11 +20404,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/iron
 	name = "iron arming sword"
@@ -20322,11 +20420,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/long
 	name = "longsword"
@@ -20338,13 +20436,13 @@
 	throwforce = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_righthand.dmi'
-	inhand_icon_state = "longsword"
 	worn_icon_state = "longsword"
 	pixel_x = -16
 	pixel_y = -16
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/dec
 	name = "decorated longsword"
@@ -20356,13 +20454,13 @@
 	throwforce = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_righthand.dmi'
-	inhand_icon_state = "longsword"
 	worn_icon_state = "longsword"
 	pixel_x = -16
 	pixel_y = -16
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/exe
 	name = "executioners sword"
@@ -20374,13 +20472,14 @@
 	throwforce = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_righthand.dmi'
-	inhand_icon_state = "longsword"
-	worn_icon_state = "longsword"
 	pixel_x = -16
 	pixel_y = -16
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "longsword"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/rogueweapon/sword/long/kriegmesser/silver
 	name = "silver broadsword"
@@ -20392,13 +20491,13 @@
 	throwforce = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_righthand.dmi'
-	inhand_icon_state = "longsword"
 	worn_icon_state = "longsword"
 	pixel_x = -16
 	pixel_y = -16
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/marlin
 	name = "shalal saber"
@@ -20410,13 +20509,13 @@
 	throwforce = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_righthand.dmi'
-	inhand_icon_state = "marlin"
 	worn_icon_state = "marlin"
 	pixel_x = -16
 	pixel_y = -16
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/long/martyr
 	name = "martyr sword"
@@ -20428,13 +20527,13 @@
 	throwforce = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguemartyr_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguemartyr_righthand.dmi'
-	inhand_icon_state = "martyrsword"
 	worn_icon_state = "martyrsword"
 	pixel_x = -16
 	pixel_y = -16
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "martyrsword"
 
 /obj/item/rogueweapon/sword/long/rhomphaia
 	name = "rhomphaia"
@@ -20446,13 +20545,13 @@
 	throwforce = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_righthand.dmi'
-	inhand_icon_state = "longsword"
 	worn_icon_state = "longsword"
 	pixel_x = -16
 	pixel_y = -16
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/silver
 	name = "silver longsword"
@@ -20464,13 +20563,13 @@
 	throwforce = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_righthand.dmi'
-	inhand_icon_state = "longsword"
 	worn_icon_state = "longsword"
 	pixel_x = -16
 	pixel_y = -16
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/training
 	name = "training sword"
@@ -20482,13 +20581,13 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_righthand.dmi'
-	inhand_icon_state = "longsword"
 	worn_icon_state = "longsword"
 	pixel_x = -16
 	pixel_y = -16
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/zizo
 	name = "avantyne longsword"
@@ -20500,13 +20599,13 @@
 	throwforce = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_righthand.dmi'
-	inhand_icon_state = "longsword"
 	worn_icon_state = "longsword"
 	pixel_x = -16
 	pixel_y = -16
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/rapier
 	name = "rapier"
@@ -20518,13 +20617,13 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/rapier/courtphysician
 	name = "cane blade"
@@ -20536,13 +20635,13 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/rapier/lord
 	name = "sword of the Mad Duke"
@@ -20554,13 +20653,13 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/rapier/silver
 	name = "silver rapier"
@@ -20572,13 +20671,13 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/sabre
 	name = "sabre"
@@ -20590,11 +20689,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/sabre/ancient
 	name = "ancient khopesh"
@@ -20606,11 +20705,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/sabre/ancient/decrepit
 	name = "decrepit khopesh"
@@ -20622,11 +20721,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/sabre/elf
 	name = "elvish saber"
@@ -20638,11 +20737,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "esaber"
 	worn_icon_state = "esaber"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "esaber"
 
 /obj/item/rogueweapon/sword/sabre/iron
 	name = "iron sabre"
@@ -20654,11 +20753,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/sabre/stalker
 	name = "stalker sabre"
@@ -20670,11 +20769,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short
 	name = "steel shortsword"
@@ -20686,11 +20785,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/ancient
 	name = "ancient shortsword"
@@ -20702,11 +20801,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/ancient/decrepit
 	name = "decrepit short sword"
@@ -20718,11 +20817,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/falchion
 	name = "falchion"
@@ -20734,11 +20833,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/gladius
 	name = "gladius"
@@ -20750,11 +20849,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/gladius/ancient
 	name = "ancient gladius"
@@ -20766,11 +20865,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/gladius/ancient/decrepit
 	name = "decrepit gladius"
@@ -20782,11 +20881,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/iron
 	name = "iron shortsword"
@@ -20798,11 +20897,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/iron/chipped
 	name = "chipped iron shortsword"
@@ -20814,11 +20913,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/messer
 	name = "steel messer"
@@ -20830,11 +20929,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/messer/copper
 	name = "copper messer"
@@ -20846,11 +20945,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/messer/iron
 	name = "hunting sword"
@@ -20862,11 +20961,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/silver
 	name = "silver shortsword"
@@ -20878,11 +20977,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/silver
 	name = "silver arming sword"
@@ -20894,11 +20993,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/stone
 	name = "stone sword"
@@ -20910,11 +21009,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/thresher
 	name = "thresher"
@@ -20926,11 +21025,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_righthand.dmi'
-	inhand_icon_state = "mace_greyscale"
-	worn_icon_state = "mace_greyscale"
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "mace_greyscale"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/rogueweapon/thresher/decrepit
 	name = "decrepit thresher"
@@ -20942,11 +21042,12 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_righthand.dmi'
-	inhand_icon_state = "mace_greyscale"
-	worn_icon_state = "mace_greyscale"
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "mace_greyscale"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/rogueweapon/tongs
 	name = "tongs"
@@ -20958,11 +21059,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/tongs/blacksteel
 	name = "blacksteel tongs"
@@ -20974,11 +21075,11 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/whip
 	name = "whip"
@@ -20990,11 +21091,11 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BELT|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/whip/antique
 	name = "Repenta En"
@@ -21006,11 +21107,11 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BELT|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/whip/bronze
 	name = "bronze whip"
@@ -21022,11 +21123,11 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BELT|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/whip/silver
 	name = "silver whip"
@@ -21038,11 +21139,11 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BELT|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/whip/spiderwhip
 	name = "lashkiss whip"
@@ -21054,11 +21155,11 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
 	worn_icon_state = "sabre"
 	slot_flags = ITEM_SLOT_BELT|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/woodstaff
 	name = "wooden staff"
@@ -21070,13 +21171,14 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
-	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/rogueweapon/woodstaff/
 	name = "wooden staff"
@@ -21088,13 +21190,14 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
-	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/rogueweapon/woodstaff/aries
 	name = "staff of the shepherd"
@@ -21106,13 +21209,14 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
-	worn_icon_state = "sabre"
 	pixel_x = 0
 	pixel_y = 0
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/rogueweapon/woodstaff/quarterstaff
 	name = "wooden quarterstaff"
@@ -21124,13 +21228,14 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
-	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/rogueweapon/woodstaff/quarterstaff/iron
 	name = "iron quarterstaff"
@@ -21142,13 +21247,14 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
-	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/rogueweapon/woodstaff/quarterstaff/silver
 	name = "silver quarterstaff"
@@ -21160,13 +21266,14 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
-	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/rogueweapon/woodstaff/quarterstaff/steel
 	name = "steel quarterstaff"
@@ -21178,13 +21285,14 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
-	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/rogueweapon/woodstaff/quartz
 	name = "blortz-focused staff"
@@ -21196,13 +21304,14 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
-	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/rogueweapon/woodstaff/riddle_of_steel/magos
 	name = "\improper Staff of the Court Magos"
@@ -21214,13 +21323,14 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
-	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/rogueweapon/woodstaff/ruby
 	name = "ronts-focused staff"
@@ -21232,13 +21342,14 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
-	inhand_icon_state = "sabre"
-	worn_icon_state = "sabre"
 	pixel_x = -16
 	pixel_y = -16
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	inhand_icon_state = "sabre"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/rope
 	parent_type = /obj/item/rockhill
@@ -21251,9 +21362,9 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
+	inhand_icon_state = null
 
 /obj/item/rope/chain
 	name = "chain"
@@ -21265,9 +21376,9 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
+	inhand_icon_state = null
 
 /obj/item/rope/inqarticles/inquirycord
 	name = "inquiry cordage"
@@ -21279,9 +21390,9 @@
 	throwforce = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "inqcordage"
 	worn_icon_state = "inqcordage"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
+	inhand_icon_state = null
 
 /obj/item/rotation_contraption/cog
 	name = ""
@@ -21291,8 +21402,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/rotation_contraption/horizontal
 	name = ""
@@ -21302,8 +21413,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/rotation_contraption/large_cog
 	name = ""
@@ -21313,8 +21424,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/rotation_contraption/minecart_rail
 	name = ""
@@ -21324,8 +21435,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/rotation_contraption/minecart_rail/railbreak
 	name = ""
@@ -21335,8 +21446,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/rotation_contraption/shaft
 	name = ""
@@ -21346,8 +21457,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/rotation_contraption/vertical
 	name = ""
@@ -21357,8 +21468,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/rotation_contraption/waterwheel
 	name = ""
@@ -21368,8 +21479,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/satchel_bomb
 	parent_type = /obj/item/rockhill
@@ -21382,9 +21493,9 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/scomstone
 	parent_type = /obj/item/rockhill
@@ -21397,9 +21508,9 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_RING
+	inhand_icon_state = null
 
 /obj/item/scomstone/bad/garrison
 	name = "houndstone"
@@ -21411,9 +21522,9 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_RING
+	inhand_icon_state = null
 
 /obj/item/seal/crown
 	name = "crown seal"
@@ -21424,8 +21535,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "stamp"
 	worn_icon_state = "stamp"
+	inhand_icon_state = "stamp"
 
 /obj/item/seal/guildmaster
 	name = "guild master's seal"
@@ -21436,8 +21547,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "stamp"
 	worn_icon_state = "stamp"
+	inhand_icon_state = "stamp"
 
 /obj/item/seal/hand
 	name = "hand's seal"
@@ -21448,8 +21559,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "stamp"
 	worn_icon_state = "stamp"
+	inhand_icon_state = "stamp"
 
 /obj/item/seal/knight_captain
 	name = "knight captain's seal"
@@ -21460,8 +21571,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "stamp"
 	worn_icon_state = "stamp"
+	inhand_icon_state = "stamp"
 
 /obj/item/seal/marshal
 	name = "marshal's seal"
@@ -21472,8 +21583,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "stamp"
 	worn_icon_state = "stamp"
+	inhand_icon_state = "stamp"
 
 /obj/item/seal/master_warden
 	name = "master warden's seal"
@@ -21484,8 +21595,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "stamp"
 	worn_icon_state = "stamp"
+	inhand_icon_state = "stamp"
 
 /obj/item/seal/merchant
 	name = "merchant's seal"
@@ -21496,8 +21607,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "stamp"
 	worn_icon_state = "stamp"
+	inhand_icon_state = "stamp"
 
 /obj/item/seal/nightmaster
 	name = "night seal"
@@ -21508,8 +21619,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "stamp"
 	worn_icon_state = "stamp"
+	inhand_icon_state = "stamp"
 
 /obj/item/seal/prelate
 	name = "prelate's seal"
@@ -21520,8 +21631,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "stamp"
 	worn_icon_state = "stamp"
+	inhand_icon_state = "stamp"
 
 /obj/item/seal/steward
 	name = "steward's seal"
@@ -21532,8 +21643,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "stamp"
 	worn_icon_state = "stamp"
+	inhand_icon_state = "stamp"
 
 /obj/item/seal/watchcaptain
 	name = "watch captain's seal"
@@ -21544,8 +21655,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "stamp"
 	worn_icon_state = "stamp"
+	inhand_icon_state = "stamp"
 
 /obj/item/seeds/berryrogue
 	parent_type = /obj/item/rockhill
@@ -21556,8 +21667,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/seeds/blackberry
 	parent_type = /obj/item/rockhill
@@ -21568,8 +21679,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/seeds/garlick
 	parent_type = /obj/item/rockhill
@@ -21580,8 +21691,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/seeds/pear
 	parent_type = /obj/item/rockhill
@@ -21592,8 +21703,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/seeds/pipeweed
 	parent_type = /obj/item/rockhill
@@ -21604,8 +21715,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/seeds/raspberry
 	parent_type = /obj/item/rockhill
@@ -21616,8 +21727,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/seeds/rice
 	parent_type = /obj/item/rockhill
@@ -21628,8 +21739,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/seeds/strawberry
 	parent_type = /obj/item/rockhill
@@ -21640,8 +21751,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/seeds/swampweed
 	parent_type = /obj/item/rockhill
@@ -21652,8 +21763,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/seeds/tangerine
 	parent_type = /obj/item/rockhill
@@ -21664,8 +21775,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/seeds/treesap
 	parent_type = /obj/item/rockhill
@@ -21677,8 +21788,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/signal_flare
 	parent_type = /obj/item/rockhill
@@ -21690,9 +21801,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/signal_flare_gun
 	parent_type = /obj/item/rockhill
@@ -21704,10 +21815,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/flaregun_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/flaregun_righthand.dmi'
-	inhand_icon_state = "flaregun"
 	worn_icon_state = "flaregun"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
+	inhand_icon_state = "flaregun"
 
 /obj/item/signal_horn
 	parent_type = /obj/item/rockhill
@@ -21719,9 +21830,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/skillbook/unfinished
 	name = "unfinished skillbook"
@@ -21732,8 +21843,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/skull
 	parent_type = /obj/item/rockhill
@@ -21745,8 +21856,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/soap/bath
 	parent_type = /obj/item/rockhill
@@ -21759,8 +21870,8 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/custodial_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/custodial_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/speakerinq
 	parent_type = /obj/item/rockhill
@@ -21773,9 +21884,9 @@
 	throwforce = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_RING
+	inhand_icon_state = null
 
 /obj/item/spellbook_unfinished/pre_arcyne
 	name = "tome in waiting"
@@ -21786,8 +21897,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/storage/backpack/rogue/backpack
 	name = "backpack"
@@ -21798,10 +21909,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "backpack"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/back_l.dmi'
-	worn_icon_state = "backpack"
 	slot_flags = ITEM_SLOT_BACK
+	inhand_icon_state = null
+	worn_icon_state = "backpack"
 
 /obj/item/storage/backpack/rogue/backpack/bagpack
 	name = "rucksack"
@@ -21812,10 +21923,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "rucksack"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/back_l.dmi'
-	worn_icon_state = "rucksack"
 	slot_flags = ITEM_SLOT_BACK
+	inhand_icon_state = null
+	worn_icon_state = "rucksack"
 
 /obj/item/storage/backpack/rogue/satchel
 	name = "satchel"
@@ -21826,11 +21937,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "satchel"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/back_l.dmi'
-	worn_icon_state = "satchel"
 	slot_flags = ITEM_SLOT_BACK
 	worn_icon_backr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/back_r.dmi'
+	inhand_icon_state = null
+	worn_icon_state = "satchel"
 
 /obj/item/storage/backpack/rogue/satchel/black
 	name = "satchel"
@@ -21841,11 +21952,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "satchel"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/back_l.dmi'
-	worn_icon_state = "satchel"
 	slot_flags = ITEM_SLOT_BACK
 	worn_icon_backr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/back_r.dmi'
+	inhand_icon_state = null
+	worn_icon_state = "satchel"
 
 /obj/item/storage/backpack/rogue/satchel/otavan
 	name = "otavan leather satchel"
@@ -21856,11 +21967,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "osatchel"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/back_l.dmi'
-	worn_icon_state = "osatchel"
 	slot_flags = ITEM_SLOT_BACK
 	worn_icon_backr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/back_r.dmi'
+	inhand_icon_state = null
+	worn_icon_state = "osatchel"
 
 /obj/item/storage/backpack/rogue/satchel/short
 	name = "short satchel"
@@ -21871,11 +21982,11 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "satchelshort"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/back_l.dmi'
 	worn_icon_state = "satchelshort"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	worn_icon_backr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/back_r.dmi'
+	inhand_icon_state = null
 
 /obj/item/storage/belt/rogue/leather
 	name = "belt"
@@ -21886,10 +21997,10 @@
 	force = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "leather"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
-	worn_icon_state = "leather"
 	slot_flags = ITEM_SLOT_BELT
+	inhand_icon_state = null
+	worn_icon_state = "leather"
 
 /obj/item/storage/belt/rogue/leather/
 	name = "belt"
@@ -21900,10 +22011,10 @@
 	force = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "leather"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
-	worn_icon_state = "leather"
 	slot_flags = ITEM_SLOT_BELT
+	inhand_icon_state = null
+	worn_icon_state = "leather"
 
 /obj/item/storage/belt/rogue/leather/black
 	name = "black belt"
@@ -21914,10 +22025,10 @@
 	force = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "blackbelt"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
-	worn_icon_state = "blackbelt"
 	slot_flags = ITEM_SLOT_BELT
+	inhand_icon_state = null
+	worn_icon_state = "blackbelt"
 
 /obj/item/storage/belt/rogue/leather/cloth
 	name = "cloth sash"
@@ -21928,10 +22039,10 @@
 	force = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "leather"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
-	worn_icon_state = "leather"
 	slot_flags = ITEM_SLOT_BELT
+	inhand_icon_state = null
+	worn_icon_state = "leather"
 
 /obj/item/storage/belt/rogue/leather/exoticsilkbelt
 	name = "exotic silk belt"
@@ -21942,38 +22053,36 @@
 	force = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "leather"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
-	worn_icon_state = "leather"
 	slot_flags = ITEM_SLOT_BELT
+	inhand_icon_state = null
+	worn_icon_state = "leather"
 
 /obj/item/storage/belt/rogue/leather/exoticsilkbelt/skirtgreen
 	name = "green exotic silk skirt"
 	desc = "A gold adorned belt with the softest of silk skirts barely concealing one's bits."
-	icon = 'modular_redtard/rockhill/icons/modular_deserttown/icons/clothing/belts.dmi'
-	icon_state = "exoticsilkskirt2"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "exoticsilkskirt2"
-	worn_icon = 'modular_redtard/rockhill/icons/modular_deserttown/icons/clothing/onmob/belts.dmi'
-	worn_icon_state = "exoticsilkskirt2"
 	slot_flags = ITEM_SLOT_BELT
+	icon_state = null
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/storage/belt/rogue/leather/exoticsilkbelt/skirtred
 	name = "red exotic silk skirt"
 	desc = "A gold adorned belt with the softest of silk skirts barely concealing one's bits."
-	icon = 'modular_redtard/rockhill/icons/modular_deserttown/icons/clothing/belts.dmi'
-	icon_state = "exoticsilkskirt"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "exoticsilkskirt"
-	worn_icon = 'modular_redtard/rockhill/icons/modular_deserttown/icons/clothing/onmob/belts.dmi'
-	worn_icon_state = "exoticsilkskirt"
 	slot_flags = ITEM_SLOT_BELT
+	icon_state = null
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/storage/belt/rogue/leather/knifebelt
 	name = "tossblade belt"
@@ -21984,10 +22093,10 @@
 	force = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "knife"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
-	worn_icon_state = "knife"
 	slot_flags = ITEM_SLOT_BELT
+	inhand_icon_state = null
+	worn_icon_state = "knife"
 
 /obj/item/storage/belt/rogue/leather/knifebelt/black/psydon
 	name = "tossblade belt"
@@ -21998,10 +22107,10 @@
 	force = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "blackknife"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
-	worn_icon_state = "blackknife"
 	slot_flags = ITEM_SLOT_BELT
+	inhand_icon_state = null
+	worn_icon_state = "blackknife"
 
 /obj/item/storage/belt/rogue/leather/knifebelt/black/steel
 	name = "tossblade belt"
@@ -22012,10 +22121,10 @@
 	force = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "blackknife"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
-	worn_icon_state = "blackknife"
 	slot_flags = ITEM_SLOT_BELT
+	inhand_icon_state = null
+	worn_icon_state = "blackknife"
 
 /obj/item/storage/belt/rogue/leather/knifebelt/iron
 	name = "tossblade belt"
@@ -22026,10 +22135,10 @@
 	force = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "knife"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
-	worn_icon_state = "knife"
 	slot_flags = ITEM_SLOT_BELT
+	inhand_icon_state = null
+	worn_icon_state = "knife"
 
 /obj/item/storage/belt/rogue/leather/plaquegold
 	name = "plaque belt"
@@ -22040,10 +22149,10 @@
 	force = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "leather"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
-	worn_icon_state = "leather"
 	slot_flags = ITEM_SLOT_BELT
+	inhand_icon_state = null
+	worn_icon_state = "leather"
 
 /obj/item/storage/belt/rogue/leather/plaquegold/steward
 	name = "fancy gold belt"
@@ -22054,10 +22163,10 @@
 	force = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "stewardbelt"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
-	worn_icon_state = "stewardbelt"
 	slot_flags = ITEM_SLOT_BELT
+	inhand_icon_state = null
+	worn_icon_state = "stewardbelt"
 
 /obj/item/storage/belt/rogue/leather/plaquesilver
 	name = "plaque belt"
@@ -22068,10 +22177,10 @@
 	force = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "leather"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
-	worn_icon_state = "leather"
 	slot_flags = ITEM_SLOT_BELT
+	inhand_icon_state = null
+	worn_icon_state = "leather"
 
 /obj/item/storage/belt/rogue/leather/rope
 	name = "rope belt"
@@ -22082,10 +22191,10 @@
 	force = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "rope"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
-	worn_icon_state = "rope"
 	slot_flags = ITEM_SLOT_BELT
+	inhand_icon_state = null
+	worn_icon_state = "rope"
 
 /obj/item/storage/belt/rogue/leather/shalal
 	name = "shalal belt"
@@ -22096,10 +22205,10 @@
 	force = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "leather"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
-	worn_icon_state = "leather"
 	slot_flags = ITEM_SLOT_BELT
+	inhand_icon_state = null
+	worn_icon_state = "leather"
 
 /obj/item/storage/belt/rogue/leather/steel
 	name = "steel belt"
@@ -22110,10 +22219,10 @@
 	force = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "leather"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
-	worn_icon_state = "leather"
 	slot_flags = ITEM_SLOT_BELT
+	inhand_icon_state = null
+	worn_icon_state = "leather"
 
 /obj/item/storage/belt/rogue/leather/steel/tasset
 	name = "tasseted belt"
@@ -22124,10 +22233,10 @@
 	force = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "leather"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
-	worn_icon_state = "leather"
 	slot_flags = ITEM_SLOT_BELT
+	inhand_icon_state = null
+	worn_icon_state = "leather"
 
 /obj/item/storage/belt/rogue/leather/suspenders/butler
 	name = "suspenders"
@@ -22138,10 +22247,10 @@
 	force = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "butlersuspenders"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
-	worn_icon_state = "butlersuspenders"
 	slot_flags = ITEM_SLOT_BELT
+	inhand_icon_state = null
+	worn_icon_state = "butlersuspenders"
 
 /obj/item/storage/belt/rogue/pouch
 	name = "pouch"
@@ -22152,12 +22261,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "pouch"
 	worn_icon = null
 	worn_icon_state = "pouch"
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_CLOAK
 	worn_icon_hipl = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_l.dmi'
 	worn_icon_hipr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_r.dmi'
+	inhand_icon_state = null
 
 /obj/item/storage/belt/rogue/pouch/coins/mid
 	name = "pouch"
@@ -22168,12 +22277,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "pouch"
 	worn_icon = null
 	worn_icon_state = "pouch"
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_CLOAK
 	worn_icon_hipl = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_l.dmi'
 	worn_icon_hipr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_r.dmi'
+	inhand_icon_state = null
 
 /obj/item/storage/belt/rogue/pouch/coins/poor
 	name = "pouch"
@@ -22184,12 +22293,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "pouch"
 	worn_icon = null
 	worn_icon_state = "pouch"
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_CLOAK
 	worn_icon_hipl = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_l.dmi'
 	worn_icon_hipr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_r.dmi'
+	inhand_icon_state = null
 
 /obj/item/storage/belt/rogue/pouch/coins/rich
 	name = "pouch"
@@ -22200,12 +22309,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "pouch"
 	worn_icon = null
 	worn_icon_state = "pouch"
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_CLOAK
 	worn_icon_hipl = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_l.dmi'
 	worn_icon_hipr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_r.dmi'
+	inhand_icon_state = null
 
 /obj/item/storage/belt/rogue/pouch/coins/veryrich
 	name = "pouch"
@@ -22216,12 +22325,12 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "pouch"
 	worn_icon = null
 	worn_icon_state = "pouch"
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_CLOAK
 	worn_icon_hipl = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_l.dmi'
 	worn_icon_hipr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_r.dmi'
+	inhand_icon_state = null
 
 /obj/item/storage/belt/rogue/surgery_bag
 	name = "surgeon's bag"
@@ -22232,10 +22341,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = ""
 	worn_icon = null
 	worn_icon_state = ""
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/storage/belt/rogue/surgery_bag/full
 	name = "surgeon's bag"
@@ -22246,10 +22355,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = ""
 	worn_icon = null
 	worn_icon_state = ""
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/storage/belt/rogue/surgery_bag/full/physician
 	name = "surgeon's bag"
@@ -22260,10 +22369,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = ""
 	worn_icon = null
 	worn_icon_state = ""
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/storage/hip/orestore/bronze
 	name = "mechanized ore bag"
@@ -22274,9 +22383,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "rucksack"
 	worn_icon_state = "rucksack"
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/archivist
 	name = "keyring"
@@ -22288,10 +22397,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/manor, /obj/item/roguekey/archive, /obj/item/roguekey/tower)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/baronretainer
 	name = "baron-retainer keyring"
@@ -22303,10 +22412,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/warden, /obj/item/roguekey/walls, /obj/item/roguekey/slaverdungeon, /obj/item/roguekey/slaverpillory, /obj/item/roguekey/slaverhouse)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/bathsi
 	name = "baths room I keyring"
@@ -22318,10 +22427,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/nightmaiden/rooms/i, /obj/item/roguekey/nightmaiden/rooms/i, /obj/item/roguekey/nightmaiden/rooms/i, /obj/item/roguekey/nightmaiden/rooms/i)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/bathsii
 	name = "baths room II keyring"
@@ -22333,10 +22442,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/nightmaiden/rooms/ii, /obj/item/roguekey/nightmaiden/rooms/ii, /obj/item/roguekey/nightmaiden/rooms/ii, /obj/item/roguekey/nightmaiden/rooms/ii)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/bathsiii
 	name = "baths room III keyring"
@@ -22348,10 +22457,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/nightmaiden/rooms/iii, /obj/item/roguekey/nightmaiden/rooms/iii, /obj/item/roguekey/nightmaiden/rooms/iii, /obj/item/roguekey/nightmaiden/rooms/iii)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/bathsiv
 	name = "baths room IV keyring"
@@ -22363,10 +22472,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/nightmaiden/rooms/iv, /obj/item/roguekey/nightmaiden/rooms/iv, /obj/item/roguekey/nightmaiden/rooms/iv, /obj/item/roguekey/nightmaiden/rooms/iv)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/bathspunish
 	name = "baths punishment room keyring"
@@ -22378,10 +22487,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/nightmaiden/rooms/punish, /obj/item/roguekey/nightmaiden/rooms/punish, /obj/item/roguekey/nightmaiden/rooms/punish, /obj/item/roguekey/nightmaiden/rooms/punish)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/bathssteam
 	name = "baths steam room keyring"
@@ -22393,10 +22502,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/nightmaiden/rooms/steam, /obj/item/roguekey/nightmaiden/rooms/steam, /obj/item/roguekey/nightmaiden/rooms/steam, /obj/item/roguekey/nightmaiden/rooms/steam)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/bathsv
 	name = "baths room V keyring"
@@ -22408,10 +22517,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/nightmaiden/rooms/v, /obj/item/roguekey/nightmaiden/rooms/v, /obj/item/roguekey/nightmaiden/rooms/v, /obj/item/roguekey/nightmaiden/rooms/v)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/chaplain
 	name = "keyring"
@@ -22423,10 +22532,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/church, /obj/item/roguekey/graveyard, /obj/item/roguekey/manor)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/churchie
 	name = "keyring"
@@ -22438,10 +22547,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/church, /obj/item/roguekey/graveyard, /obj/item/roguekey/keeper)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/dungeoneer
 	name = "keyring"
@@ -22453,10 +22562,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/armory)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/guard
 	name = "keyring"
@@ -22468,10 +22577,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/warden, /obj/item/roguekey/walls)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/guardcastle
 	name = "keyring"
@@ -22483,10 +22592,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/armory)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/guardsergeant
 	name = "keyring"
@@ -22498,10 +22607,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/warden, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/armory, /obj/item/roguekey/sergeant)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/guildmaster
 	name = "keyring"
@@ -22513,10 +22622,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/crafterguild, /obj/item/roguekey/tailor, /obj/item/roguekey/craftermaster, /obj/item/seal/guildmaster)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/hand
 	name = "keyring"
@@ -22528,10 +22637,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/hand, /obj/item/roguekey/steward, /obj/item/roguekey/tavern, /obj/item/roguekey/church, /obj/item/roguekey/walls, /obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/manor, /obj/item/roguekey/graveyard, /obj/item/roguekey/armory, /obj/item/roguekey/sergeant, /obj/item/roguekey/knight, /obj/item/roguekey/servant, /obj/item/seal/hand)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/heir
 	name = "keyring"
@@ -22543,10 +22652,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/manor, /obj/item/roguekey/heir, /obj/item/roguekey/garrison, /obj/item/roguekey/servant)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/innkeep
 	name = "keyring"
@@ -22558,10 +22667,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/tavern, /obj/item/roguekey/tavernkeep, /obj/item/roguekey/roomhunt, /obj/item/roguekey/roomix, /obj/item/roguekey/roomviii, /obj/item/roguekey/roomvii, /obj/item/roguekey/roomvi, /obj/item/roguekey/roomv, /obj/item/roguekey/roomiv, /obj/item/roguekey/roomiii, /obj/item/roguekey/roomii, /obj/item/roguekey/roomi, /obj/item/roguekey/fancyroomi, /obj/item/roguekey/fancyroomii, /obj/item/roguekey/fancyroomiii, /obj/item/roguekey/fancyroomiv, /obj/item/roguekey/fancyroomv)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/kcaptain
 	name = "keyring"
@@ -22573,10 +22682,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/sheriff, /obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/armory, /obj/item/roguekey/sergeant, /obj/item/roguekey/knight, /obj/item/seal/knight_captain)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/lord
 	name = "keyring"
@@ -22588,10 +22697,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/hand, /obj/item/roguekey/steward, /obj/item/roguekey/tavern, /obj/item/roguekey/church, /obj/item/roguekey/walls, /obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/manor, /obj/item/roguekey/graveyard, /obj/item/roguekey/royal, /obj/item/roguekey/armory, /obj/item/roguekey/sergeant, /obj/item/roguekey/knight, /obj/item/roguekey/servant, /obj/item/seal/crown)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/mage
 	name = "keyring"
@@ -22603,10 +22712,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/manor, /obj/item/roguekey/tower, /obj/item/roguekey/mage)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/mageapprentice
 	name = "keyring"
@@ -22618,10 +22727,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/manor, /obj/item/roguekey/tower)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/manor/counsilroom/i
 	name = "Counsillor's Room I Keyring"
@@ -22633,10 +22742,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/manor/counsilroom/i, /obj/item/roguekey/manor/counsilroom/i)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/manor/counsilroom/ii
 	name = "Counsillor's Room II Keyring"
@@ -22648,10 +22757,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/manor/counsilroom/ii, /obj/item/roguekey/manor/counsilroom/ii)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/manor/counsilroom/iii
 	name = "Counsillor's Room III Keyring"
@@ -22663,10 +22772,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/manor/counsilroom/iii, /obj/item/roguekey/manor/counsilroom/iii)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/merchant
 	name = "keyring"
@@ -22678,10 +22787,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/shop, /obj/item/roguekey/merchant, /obj/item/seal/merchant)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/nightman
 	name = "keyring"
@@ -22693,10 +22802,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/nightman, /obj/item/roguekey/nightmaiden, /obj/item/seal/nightmaster)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/physician
 	name = "keyring"
@@ -22708,10 +22817,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/manor, /obj/item/roguekey/garrison, /obj/item/roguekey/physician, /obj/item/roguekey/courtphysician, /obj/item/roguekey/keeper)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/priest
 	name = "keyring"
@@ -22723,10 +22832,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/priest, /obj/item/roguekey/church, /obj/item/roguekey/graveyard, /obj/item/seal/prelate)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/puritan
 	name = "keyring"
@@ -22738,10 +22847,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/puritan, /obj/item/roguekey/inquisition)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/rockhillslaver
 	name = "keyring"
@@ -22753,10 +22862,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/slaverdungeon, /obj/item/roguekey/slaverpillory, /obj/item/roguekey/slaverhouse)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/rockhillslaves
 	name = "keyring"
@@ -22768,10 +22877,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/slaverhouse)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/servant
 	name = "keyring"
@@ -22783,10 +22892,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/manor, /obj/item/roguekey/garrison, /obj/item/roguekey/servant)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/sheriff
 	name = "keyring"
@@ -22798,10 +22907,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/sheriff, /obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/armory, /obj/item/roguekey/sergeant, /obj/item/roguekey/knight, /obj/item/seal/marshal)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/soilson
 	name = "keyring"
@@ -22813,10 +22922,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/farm, /obj/item/roguekey/apartments/stable1, /obj/item/roguekey/apartments/stable2)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/squire
 	name = "keyring"
@@ -22828,10 +22937,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/armory)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/steward
 	name = "keyring"
@@ -22843,10 +22952,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/steward, /obj/item/roguekey/garrison, /obj/item/roguekey/manor, /obj/item/roguekey/servant, /obj/item/seal/steward)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/tailor
 	name = "keyring"
@@ -22858,10 +22967,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/crafterguild, /obj/item/roguekey/tailor)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/wardenmaster
 	name = "keyring"
@@ -22873,10 +22982,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/sheriff, /obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/armory, /obj/item/roguekey/sergeant, /obj/item/roguekey/warden, /obj/item/seal/master_warden)
+	inhand_icon_state = null
 
 /obj/item/storage/keyring/watchcaptain
 	name = "keyring"
@@ -22888,10 +22997,10 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
 	rockhill_keys = list(/obj/item/roguekey/sheriff, /obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/armory, /obj/item/roguekey/sergeant, /obj/item/roguekey/knight, /obj/item/seal/watchcaptain)
+	inhand_icon_state = null
 
 /obj/item/storage/magebag/associate
 	name = "scholar's pouch"
@@ -22902,9 +23011,9 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "summoning"
 	worn_icon_state = "summoning"
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/storage/pill_bottle/dice
 	name = "bag of gaming dice"
@@ -22915,8 +23024,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/storage/pill_bottle/dice/bakers_dozen
 	name = "bag of baker's dozen dice"
@@ -22927,8 +23036,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/storage/pill_bottle/dice/dice_poker
 	name = "bag of dice poker dice"
@@ -22939,8 +23048,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/storage/pill_bottle/dice/dice_war
 	name = "bag of war dice"
@@ -22951,8 +23060,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/storage/pill_bottle/dice/dwarven
 	name = "bag of dwarven dice"
@@ -22963,8 +23072,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/storage/pill_bottle/dice/farkle
 	name = "bag of farkle dice"
@@ -22975,8 +23084,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/storage/pill_bottle/dice/hazard
 	name = "bag of gaming dice"
@@ -22987,8 +23096,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/storage/pill_bottle/dice/liars_dice
 	name = "bag of liar's dice"
@@ -22999,8 +23108,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/storage/pill_bottle/dice/threes_away
 	name = "bag of three's away dice"
@@ -23011,8 +23120,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/storage/roguebag
 	name = "sack"
@@ -23023,10 +23132,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "cbag"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head_items.dmi'
-	worn_icon_state = "cbag"
 	slot_flags = ITEM_SLOT_HEAD
+	inhand_icon_state = null
+	worn_icon_state = "cbag"
 
 /obj/item/storage/roguebag/food
 	name = "sack"
@@ -23037,10 +23146,10 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = "cbag"
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head_items.dmi'
-	worn_icon_state = "cbag"
 	slot_flags = ITEM_SLOT_HEAD
+	inhand_icon_state = null
+	worn_icon_state = "cbag"
 
 /obj/item/tablecloth/silk
 	name = "silk tablecloth"
@@ -23051,8 +23160,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/tntstick
 	parent_type = /obj/item/rockhill
@@ -23065,9 +23174,9 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	inhand_icon_state = null
 
 /obj/item/toy/cards/deck/tarot/majorarcana
 	parent_type = /obj/item/rockhill
@@ -23080,8 +23189,8 @@
 	throwforce = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/trash/applecore
 	parent_type = /obj/item/rockhill
@@ -23093,8 +23202,8 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null
 
 /obj/item/underworld/coin
 	name = "The Toll"
@@ -23105,5 +23214,5 @@
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
-	inhand_icon_state = null
 	worn_icon_state = null
+	inhand_icon_state = null

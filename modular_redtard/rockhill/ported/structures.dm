@@ -25,6 +25,9 @@
 /obj/structure/flora/ausbushes
 	parent_type = /obj/structure/rockhill
 
+/obj/structure/flora/maple
+	parent_type = /obj/structure/rockhill
+
 /obj/structure/fluff/iconsign
 	parent_type = /obj/structure/rockhill
 
@@ -1077,6 +1080,27 @@
 	icon_state = "stones_2"
 	density = FALSE
 	layer = BELOW_OBJ_LAYER
+
+/obj/structure/flora/maple/b
+	name = "maple tree"
+	desc = "A maple tree, trees with brillant orange, red and yellow leaves, a common imported tree from Grenzelhoft."
+	icon = 'modular_redtard/rockhill/icons/obj/structures/maple_tree.dmi'
+	icon_state = "maple2"
+	layer = ABOVE_ALL_MOB_LAYER
+
+/obj/structure/flora/maple/c
+	name = "maple tree"
+	desc = "A maple tree, trees with brillant orange, red and yellow leaves, a common imported tree from Grenzelhoft."
+	icon = 'modular_redtard/rockhill/icons/obj/structures/maple_tree.dmi'
+	icon_state = "maple3"
+	layer = ABOVE_ALL_MOB_LAYER
+
+/obj/structure/flora/maple/d
+	name = "maple tree"
+	desc = "A maple tree, trees with brillant orange, red and yellow leaves, a common imported tree from Grenzelhoft."
+	icon = 'modular_redtard/rockhill/icons/obj/structures/maple_tree.dmi'
+	icon_state = "maple4"
+	layer = ABOVE_ALL_MOB_LAYER
 
 /obj/structure/flora/mushroomcluster
 	parent_type = /obj/structure/rockhill

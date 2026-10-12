@@ -369,15 +369,6 @@
 	opacity = 1
 	smoothing_groups = SMOOTH_GROUP_WALLS
 
-/turf/closed/wall/mineral/rogue/pipe/joint/eight
-	name = "metal wall"
-	desc = "Solid steel made into an impenetrable obstacle."
-	icon = 'modular_redtard/rockhill/icons/turf/pipewall.dmi'
-	icon_state = "iron_joint"
-	opacity = 1
-	dir = 8
-	smoothing_groups = SMOOTH_GROUP_WALLS
-
 /turf/closed/wall/mineral/rogue/pipe/joint/four
 	name = "metal wall"
 	desc = "Solid steel made into an impenetrable obstacle."
@@ -605,6 +596,14 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = SMOOTH_GROUP_WALLS
 	canSmoothWith = SMOOTH_GROUP_WALLS + SMOOTH_GROUP_WOOD_WALLS
+
+/turf/closed/wall/mineral/rogue/stonebrick/stonebricklight
+	name = "lit stone brick wall"
+	desc = "Rows of overlapping bricks form this wall, this one glows with a soft light."
+	icon = 'modular_redtard/rockhill/icons/turf/roguewall.dmi'
+	icon_state = "stonebricklight"
+	opacity = 1
+	smoothing_groups = SMOOTH_GROUP_WALLS
 
 /turf/closed/wall/mineral/rogue/tent
 	name = "tent"

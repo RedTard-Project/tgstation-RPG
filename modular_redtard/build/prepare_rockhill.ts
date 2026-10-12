@@ -15,6 +15,9 @@ const REPLACED_VARS = new Set(['dir', 'pixel_x', 'pixel_y']);
 const KEPT_VARS = new Set(['dir', 'pixel_x', 'pixel_y', 'name', 'desc', 'icon_state', 'color']);
 const CLOSED_TURF_REMOVED = ['/obj/structure/mineral_door', '/obj/structure/stairs', '/obj/structure/window', '/obj/structure/roguewindow', '/obj/effect/decal'];
 const GROUNDLESS_TURFS = ['/turf/open/water', '/turf/open/transparent', '/turf/open/openspace', '/turf/open/lava'];
+const ONE_PER_TILE = ['/obj/structure/chair', '/obj/structure/closet', '/obj/structure/table'];
+const NO_IDENTICAL = ['/obj/machinery', '/obj/structure/window'];
+const MAPLINT_SCRIPT = 'modular_redtard/tools/run_maplint.py';
 const DECAL_PREFIX = '/obj/effect/decal';
 const SPAWN_ROOT = '/obj/effect/landmark/start';
 const LATEJOIN_TARGET = '/obj/effect/landmark/latejoin';
@@ -24,7 +27,7 @@ type Rule = { prefix: string; to?: string; rebase?: string; drop?: boolean; exac
 type TitleSource = { file: string; name: string; kind: 'png' | 'dmi'; origin: string };
 
 type Config = {
-  source: { name: string; project: string; url: string; local?: string };
+  source: { name: string; project: string; url: string; repository: string; branch: string };
   title: { prefix: string; sources: TitleSource[] };
   output: { map: string; map_json: string; title_dir: string };
   replacements: Rule[];
@@ -39,11 +42,23 @@ type Tally = { kept: number; replaced: number; dropped: number; missing: number 
 
 type Size = { width: number; height: number };
 
+type Declarations = { types: Set<string>; abstract: Set<string> };
+
+type Problems = {
+  fatal: Map<string, number>;
+  missingObjects: Map<string, number>;
+  abstractPlaced: Map<string, number>;
+  brokenTiles: string[];
+  lostTiles: number;
+  stacked: number;
+  staleRules: string[];
+};
+
 export async function prepareRockhill(): Promise<void> {
   const config = readConfig();
   fs.mkdirSync(TMP_DIR, { recursive: true });
 
-  const source = await downloadText(config.source.url, config.source.local, 'map');
+  const source = await downloadText(config.source.url, 'map');
   const lines = source.split(/\r?\n/);
   const levelStart = lines.findIndex((line) => LEVEL_LINE.test(line));
   if (levelStart < 0) {
@@ -53,22 +68,24 @@ export async function prepareRockhill(): Promise<void> {
   const models = parseModels(lines.slice(0, levelStart));
   const levels = lines.slice(levelStart);
 
-  const declared = declaredTypes();
-  checkReplacementTargets(config.replacements, declared);
+  const declarations = declaredTypes();
+  const declared = declarations.types;
+  const problems: Problems = {
+    fatal: new Map(),
+    missingObjects: new Map(),
+    abstractPlaced: new Map(),
+    brokenTiles: [],
+    lostTiles: 0,
+    stacked: 0,
+    staleRules: staleReplacementTargets(config.replacements, declared),
+  };
 
   const tally: Record<string, Tally> = {};
-  const fatal = new Map<string, number>();
-  const missingObjects = new Map<string, number>();
   const targets = new Map<string, number>();
   for (const model of models) {
-    model.pops = convertPops(model, config.replacements, config.map_vars || {}, declared, tally, fatal, missingObjects, targets);
+    model.pops = convertPops(model, config.replacements, config.map_vars || {}, declarations, tally, problems, targets);
   }
-  if (fatal.size) {
-    throw new Error(`the map uses turf/area types the compile lacks; port them with modular_redtard/tools/port_rockhill.py or add a replacement:\n  ${[...fatal.keys()].sort().join('\n  ')}`);
-  }
-  if (missingObjects.size) {
-    console.warn(`modular_redtard: WARNING - ${missingObjects.size} object type(s) are neither ported nor replaced and were dropped (see report.md next to ${config.output.map}).`);
-  }
+  reportProblems(config, problems);
 
   const usage = tileUsage(models, levels);
   const spawns = [...usage.entries()].filter(([atomPath]) => atomPath.startsWith(`${SPAWN_ROOT}/`)).reduce((total, [, count]) => total + count, 0);
@@ -81,7 +98,7 @@ export async function prepareRockhill(): Promise<void> {
   for (const model of models) {
     out.push(`"${model.key}" = (`, ...emitPops(model.pops));
   }
-  out.push(...levels);
+  out.push('', ...levels);
   const text = out.join('\n');
   fs.mkdirSync(path.dirname(config.output.map), { recursive: true });
   fs.writeFileSync(`${config.output.map}.tmp`, text.endsWith('\n') ? text : `${text}\n`);
@@ -94,7 +111,8 @@ export async function prepareRockhill(): Promise<void> {
   fs.writeFileSync(config.output.map_json, `${JSON.stringify(mapJson, null, '\t')}\n`);
 
   const titles = await installTitles(config);
-  writeReport(config, tally, missingObjects, targets, titles, size, spawns, latejoins);
+  writeReport(config, tally, problems, targets, titles, size, spawns, latejoins);
+  runMaplint(config.output.map);
 }
 
 function readConfig(): Config {
@@ -175,14 +193,55 @@ function longestRule(atomPath: string, rules: Rule[]): Rule | null {
   return best;
 }
 
-function checkReplacementTargets(rules: Rule[], declared: Set<string>): void {
-  const stale = rules.filter((rule) => rule.to && !declared.has(rule.to)).map((rule) => `${rule.prefix} -> ${rule.to}`);
-  if (stale.length) {
-    throw new Error(`${CONFIG_PATH} replaces into types the compile lacks:\n  ${stale.join('\n  ')}`);
-  }
+function staleReplacementTargets(rules: Rule[], declared: Set<string>): string[] {
+  return rules
+    .filter((rule) => (rule.to && !declared.has(rule.to)) || (rule.rebase && !declared.has(rule.rebase)))
+    .map((rule) => `${rule.prefix} -> ${rule.to || rule.rebase}`)
+    .sort();
 }
 
-function convertPops(model: Model, rules: Rule[], mapVars: Record<string, string[]>, declared: Set<string>, tally: Record<string, Tally>, fatal: Map<string, number>, missingObjects: Map<string, number>, targets: Map<string, number>): Pop[] {
+function counted(entries: Map<string, number>): string {
+  return [...entries.entries()]
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .map(([atomPath, count]) => `${atomPath} (${count})`)
+    .join('\n  ');
+}
+
+function reportProblems(config: Config, problems: Problems): void {
+  if (problems.staleRules.length) {
+    console.warn(`modular_redtard: WARNING - ${CONFIG_PATH} has ${problems.staleRules.length} replacement(s) pointing at a type the compile lacks; atoms they catch are reported below as missing:\n  ${problems.staleRules.join('\n  ')}`);
+  }
+  if (problems.missingObjects.size) {
+    console.warn(`modular_redtard: WARNING - ${config.source.name} places ${problems.missingObjects.size} object type(s) that are neither ported nor replaced; they are dropped from the map (placements in brackets):\n  ${counted(problems.missingObjects)}`);
+  }
+  if (problems.abstractPlaced.size) {
+    console.warn(`modular_redtard: WARNING - ${config.source.name} places ${problems.abstractPlaced.size} abstract type(s) (abstract_type = own path); retarget them at a concrete subtype:\n  ${counted(problems.abstractPlaced)}`);
+  }
+  if (!problems.fatal.size && !problems.brokenTiles.length) {
+    return;
+  }
+  const lines = [`${config.source.name} (${config.source.url}) cannot be converted; the generated map was NOT updated.`];
+  if (problems.fatal.size) {
+    lines.push(`Area/turf types the compile lacks (placements in brackets); ${problems.lostTiles} tile model(s) lose their area or turf to them, and such a tile breaks the map loader:\n  ${counted(problems.fatal)}`);
+  }
+  if (problems.brokenTiles.length) {
+    lines.push(`${problems.brokenTiles.length} tile model(s) end up without exactly one area and a turf:\n  ${problems.brokenTiles.slice(0, 20).join('\n  ')}${problems.brokenTiles.length > 20 ? '\n  ...' : ''}`);
+  }
+  lines.push(`Port them: run python modular_redtard/tools/port_rockhill.py (it syncs its Ratwood cache to ${config.source.repository} ${config.source.branch}, the branch the map comes from) and commit the result, or add a replacement rule.`);
+  throw new Error(lines.join('\n'));
+}
+
+export function printMapFailure(error: unknown): void {
+  console.error('');
+  console.error('============================================================');
+  console.error(' MAP GENERATION FAILED - the generated .dmm was NOT updated');
+  console.error('============================================================');
+  console.error(error instanceof Error ? error.message : String(error));
+  console.error('============================================================');
+}
+
+function convertPops(model: Model, rules: Rule[], mapVars: Record<string, string[]>, declarations: Declarations, tally: Record<string, Tally>, problems: Problems, targets: Map<string, number>): Pop[] {
+  const declared = declarations.types;
   const kept: Pop[] = [];
   const sourceTurfs = model.pops.filter((pop) => pop.path.startsWith('/turf/'));
   const sourceTurf = sourceTurfs.length ? sourceTurfs[sourceTurfs.length - 1].path : '';
@@ -203,13 +262,13 @@ function convertPops(model: Model, rules: Rule[], mapVars: Record<string, string
       continue;
     }
     if (!declared.has(target)) {
-      if (kind === 'turf' || kind === 'area') {
-        fatal.set(pop.path, (fatal.get(pop.path) || 0) + 1);
-      } else {
-        missingObjects.set(pop.path, (missingObjects.get(pop.path) || 0) + 1);
-      }
+      const missing = kind === 'turf' || kind === 'area' ? problems.fatal : problems.missingObjects;
+      missing.set(pop.path, (missing.get(pop.path) || 0) + 1);
       bucket.missing++;
       continue;
+    }
+    if (declarations.abstract.has(target)) {
+      problems.abstractPlaced.set(target, (problems.abstractPlaced.get(target) || 0) + 1);
     }
     const replaced = target !== pop.path;
     if (replaced) {
@@ -225,10 +284,47 @@ function convertPops(model: Model, rules: Rule[], mapVars: Record<string, string
   const areas = kept.filter((pop) => pop.path === '/area' || pop.path.startsWith('/area/'));
   const turfs = kept.filter((pop) => pop.path.startsWith('/turf/'));
   if (areas.length !== 1 || !turfs.length) {
-    throw new Error(`tile ${model.key} needs one area and a turf after conversion, has ${areas.length} area(s) and ${turfs.length} turf(s)`);
+    if (model.pops.some((pop) => problems.fatal.has(pop.path))) {
+      problems.lostTiles++;
+    } else {
+      problems.brokenTiles.push(`"${model.key}": ${areas.length} area(s), ${turfs.length} turf(s)`);
+    }
+    return kept;
   }
   const objects = kept.filter((pop) => pop.path !== '/area' && !pop.path.startsWith('/area/') && !pop.path.startsWith('/turf/'));
-  return [...objects, turfs[turfs.length - 1], areas[0]];
+  return [...withoutStacking(objects, problems), turfs[turfs.length - 1], areas[0]];
+}
+
+function withoutStacking(objects: Pop[], problems: Problems): Pop[] {
+  const families = new Set<string>();
+  const identical = new Set<string>();
+  return objects.filter((pop) => {
+    const under = (prefix: string) => pop.path === prefix || pop.path.startsWith(`${prefix}/`);
+    const family = ONE_PER_TILE.find(under);
+    const signature = NO_IDENTICAL.some(under) ? `${pop.path}${JSON.stringify(pop.vars.map((entry) => entry.lines))}` : null;
+    if ((family && families.has(family)) || (signature && identical.has(signature))) {
+      problems.stacked++;
+      return false;
+    }
+    if (family) families.add(family);
+    if (signature) identical.add(signature);
+    return true;
+  });
+}
+
+export function runBootstrapPython(args: string[]): { status: number | null; output: string } {
+  const python = process.platform === 'win32' ? 'tools\\bootstrap\\python.bat' : 'tools/bootstrap/python';
+  const result = spawnSync(python, args, { encoding: 'utf-8', shell: process.platform === 'win32' });
+  return { status: result.status, output: `${result.stdout || ''}${result.stderr || ''}`.trim() };
+}
+
+function runMaplint(mapPath: string): void {
+  const { status, output } = runBootstrapPython([MAPLINT_SCRIPT, mapPath]);
+  if (status === 0) {
+    console.log(`modular_redtard: maplint: ${mapPath} OK`);
+  } else {
+    console.warn(`modular_redtard: WARNING - maplint (tools/maplint, the TG map rules) on ${mapPath}:\n${output}`);
+  }
 }
 
 function emitPops(pops: Pop[]): string[] {
@@ -284,14 +380,23 @@ function mapSize(levels: string[]): Size {
   return { width, height };
 }
 
-function declaredTypes(): Set<string> {
+function declaredTypes(): Declarations {
   const types = new Set<string>();
+  const abstract = new Set<string>();
   for (const root of DECLARATION_DIRS) {
     for (const file of walk(root)) {
       if (!file.endsWith('.dm')) continue;
-      for (const line of fs.readFileSync(file, 'utf-8').split('\n')) {
+      let current: string | null = null;
+      for (const raw of fs.readFileSync(file, 'utf-8').split('\n')) {
+        const line = raw.replace(/\r$/, '');
+        const own = /^\s+abstract_type\s*=\s*(\/[\w/]+)\s*$/.exec(line);
+        if (own) {
+          if (own[1] === current) abstract.add(current);
+          continue;
+        }
         const match = /^(\/[a-zA-Z0-9_/]+)/.exec(line);
         if (!match) continue;
+        current = /^(\/[\w/]+)\s*$/.test(line) ? match[1] : null;
         const segments = match[1].split('/').filter(Boolean);
         for (let depth = 1; depth <= segments.length; depth++) {
           types.add('/' + segments.slice(0, depth).join('/'));
@@ -302,7 +407,7 @@ function declaredTypes(): Set<string> {
   if (types.size < 10000) {
     throw new Error(`type scanner found only ${types.size} declared paths; run from the repository root`);
   }
-  return types;
+  return { types, abstract };
 }
 
 function walk(root: string): string[] {
@@ -318,12 +423,12 @@ function walk(root: string): string[] {
   return files;
 }
 
-async function downloadText(url: string, local: string | undefined, label: string): Promise<string> {
-  const bytes = await downloadBytes(url, local, label);
+async function downloadText(url: string, label: string): Promise<string> {
+  const bytes = await downloadBytes(url, label);
   return Buffer.from(bytes).toString('utf-8');
 }
 
-async function downloadBytes(url: string, local: string | undefined, label: string): Promise<Uint8Array> {
+async function downloadBytes(url: string, label: string): Promise<Uint8Array> {
   try {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), DOWNLOAD_TIMEOUT_MS);
@@ -348,10 +453,6 @@ async function downloadBytes(url: string, local: string | undefined, label: stri
     return new Uint8Array(fs.readFileSync(download));
   }
 
-  if (local && fs.existsSync(local)) {
-    console.log(`modular_redtard: ${label}: download failed, using the local copy ${local}`);
-    return new Uint8Array(fs.readFileSync(local));
-  }
   throw new Error(`could not download the ${label} from ${url}: ${result.stderr}`);
 }
 
@@ -384,7 +485,8 @@ async function installTitles(config: Config): Promise<number> {
   return written;
 }
 
-function writeReport(config: Config, tally: Record<string, Tally>, missingObjects: Map<string, number>, targets: Map<string, number>, titles: number, size: Size, spawns: number, latejoins: number): void {
+function writeReport(config: Config, tally: Record<string, Tally>, problems: Problems, targets: Map<string, number>, titles: number, size: Size, spawns: number, latejoins: number): void {
+  const missingObjects = problems.missingObjects;
   const lines = [`# ${config.source.name} port report`, '', `source: ${config.source.url}`, `output: ${config.output.map}`, `world size: ${size.width}x${size.height}`, `spawn tiles: ${spawns}, latejoin tiles: ${latejoins}`, `title screens: ${titles}`, ''];
   lines.push('| kind | kept | replaced | dropped | missing |', '|---|---|---|---|---|');
   for (const kind of Object.keys(tally).sort()) {
@@ -401,22 +503,27 @@ function writeReport(config: Config, tally: Record<string, Tally>, missingObject
       lines.push(`- ${atomPath}: ${count}`);
     }
   }
+  if (problems.abstractPlaced.size) {
+    lines.push('', 'abstract types placed on the map:');
+    for (const [atomPath, count] of [...problems.abstractPlaced.entries()].sort((a, b) => b[1] - a[1])) {
+      lines.push(`- ${atomPath}: ${count}`);
+    }
+  }
+  lines.push('', `stacked duplicates removed (one chair/table/closet per tile, no identical machinery or windows - the TG maplint rules): ${problems.stacked}`);
+  if (problems.staleRules.length) {
+    lines.push('', 'replacement rules pointing at missing types:', ...problems.staleRules.map((rule) => `- ${rule}`));
+  }
   const report = path.join(path.dirname(config.output.map), 'report.md');
   fs.writeFileSync(report, `${lines.join('\n')}\n`);
   const sum = (field: keyof Tally) => Object.values(tally).reduce((total, t) => total + t[field], 0);
-  console.log(`modular_redtard: ${config.source.name} ready (${size.width}x${size.height}): ${sum('kept')} kept, ${sum('replaced')} replaced, ${sum('dropped')} dropped, ${sum('missing')} missing; ${spawns} spawn and ${latejoins} latejoin tiles. Report: ${report}`);
+  console.log(`modular_redtard: ${config.source.name} ready (${size.width}x${size.height}): ${sum('kept')} kept, ${sum('replaced')} replaced, ${sum('dropped')} dropped, ${sum('missing')} missing, ${problems.stacked} stacked duplicates removed; ${spawns} spawn and ${latejoins} latejoin tiles. Report: ${report}`);
 }
 
 if (import.meta.main) {
   try {
     await prepareRockhill();
   } catch (error) {
-    console.error('');
-    console.error('============================================================');
-    console.error(' MAP GENERATION FAILED - the generated .dmm was NOT updated');
-    console.error('============================================================');
-    console.error(error instanceof Error ? error.message : String(error));
-    console.error('============================================================');
+    printMapFailure(error);
     process.exit(1);
   }
 }

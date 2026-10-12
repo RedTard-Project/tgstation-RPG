@@ -121,9 +121,6 @@
 /obj/effect/landmark/start/rockhill/nightman
 	parent_type = /obj/effect/landmark/start/assistant
 
-/obj/effect/landmark/start/rockhill/orphan
-	name = JOB_ROCKHILL_VAGABOND
-
 /obj/effect/landmark/start/rockhill/orthodoxist
 	name = JOB_ROCKHILL_ORTHODOXIST
 
@@ -186,9 +183,6 @@
 
 /obj/effect/landmark/start/rockhill/templar
 	name = JOB_ROCKHILL_TEMPLAR
-
-/obj/effect/landmark/start/rockhill/vagrant
-	parent_type = /obj/effect/landmark/start/assistant
 
 /obj/effect/landmark/start/rockhill/vanguard
 	name = JOB_ROCKHILL_VANGUARD

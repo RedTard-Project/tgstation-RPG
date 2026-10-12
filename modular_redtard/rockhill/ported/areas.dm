@@ -49,6 +49,9 @@
 /area/rogue/indoors/town/dwarfin/rockhill
 	name = "The Guild of Craft"
 
+/area/rogue/indoors/town/engineerworkshop
+	name = "The Engineer's Workshop"
+
 /area/rogue/indoors/town/garrison
 	name = "Garrison"
 
@@ -66,6 +69,9 @@
 
 /area/rogue/indoors/town/shop
 	name = "Shop"
+
+/area/rogue/indoors/town/tailor
+	name = "Tailor's Shop"
 
 /area/rogue/indoors/town/tavern
 	name = "tavern"
