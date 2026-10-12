@@ -176,6 +176,7 @@
 	icon = 'modular_redtard/rockhill/icons/turf/roguewall.dmi'
 	icon_state = "decostone-e"
 	opacity = 1
+	dir = 4
 	smoothing_groups = SMOOTH_GROUP_WALLS
 
 /turf/closed/wall/mineral/rogue/decostone/end/west
@@ -184,6 +185,7 @@
 	icon = 'modular_redtard/rockhill/icons/turf/roguewall.dmi'
 	icon_state = "decostone-e"
 	opacity = 1
+	dir = 8
 	smoothing_groups = SMOOTH_GROUP_WALLS
 
 /turf/closed/wall/mineral/rogue/decostone/fluffstone
@@ -304,6 +306,7 @@
 	icon = 'modular_redtard/rockhill/icons/turf/roguewall.dmi'
 	icon_state = "decowood"
 	opacity = 1
+	rockhill_random_dir = TRUE
 	smoothing_groups = SMOOTH_GROUP_WOOD_WALLS
 
 /turf/closed/wall/mineral/rogue/decowood/vert
@@ -312,6 +315,7 @@
 	icon = 'modular_redtard/rockhill/icons/turf/roguewall.dmi'
 	icon_state = "decowood-vert"
 	opacity = 1
+	rockhill_random_dir = TRUE
 	smoothing_groups = SMOOTH_GROUP_WOOD_WALLS
 
 /turf/closed/wall/mineral/rogue/pipe
@@ -336,6 +340,7 @@
 	icon = 'modular_redtard/rockhill/icons/turf/pipewall.dmi'
 	icon_state = "iron_corner"
 	opacity = 1
+	dir = 8
 	smoothing_groups = SMOOTH_GROUP_WALLS
 
 /turf/closed/wall/mineral/rogue/pipe/corners/four
@@ -344,6 +349,7 @@
 	icon = 'modular_redtard/rockhill/icons/turf/pipewall.dmi'
 	icon_state = "iron_corner"
 	opacity = 1
+	dir = 4
 	smoothing_groups = SMOOTH_GROUP_WALLS
 
 /turf/closed/wall/mineral/rogue/pipe/corners/one
@@ -352,6 +358,7 @@
 	icon = 'modular_redtard/rockhill/icons/turf/pipewall.dmi'
 	icon_state = "iron_corner"
 	opacity = 1
+	dir = 1
 	smoothing_groups = SMOOTH_GROUP_WALLS
 
 /turf/closed/wall/mineral/rogue/pipe/joint
@@ -368,6 +375,7 @@
 	icon = 'modular_redtard/rockhill/icons/turf/pipewall.dmi'
 	icon_state = "iron_joint"
 	opacity = 1
+	dir = 8
 	smoothing_groups = SMOOTH_GROUP_WALLS
 
 /turf/closed/wall/mineral/rogue/pipe/joint/four
@@ -376,6 +384,7 @@
 	icon = 'modular_redtard/rockhill/icons/turf/pipewall.dmi'
 	icon_state = "iron_joint"
 	opacity = 1
+	dir = 4
 	smoothing_groups = SMOOTH_GROUP_WALLS
 
 /turf/closed/wall/mineral/rogue/pipe/joint/one
@@ -384,6 +393,7 @@
 	icon = 'modular_redtard/rockhill/icons/turf/pipewall.dmi'
 	icon_state = "iron_joint"
 	opacity = 1
+	dir = 1
 	smoothing_groups = SMOOTH_GROUP_WALLS
 
 /turf/closed/wall/mineral/rogue/pipe/line/four
@@ -392,6 +402,7 @@
 	icon = 'modular_redtard/rockhill/icons/turf/pipewall.dmi'
 	icon_state = "iron_line"
 	opacity = 1
+	dir = 4
 	smoothing_groups = SMOOTH_GROUP_WALLS
 
 /turf/closed/wall/mineral/rogue/roofwall/center
@@ -416,6 +427,7 @@
 	icon = 'modular_redtard/rockhill/icons/turf/roguewall.dmi'
 	icon_state = "roofTurf_IC"
 	opacity = 1
+	dir = 1
 	smoothing_groups = SMOOTH_GROUP_WALLS
 
 /turf/closed/wall/mineral/rogue/roofwall/innercorner/dir4
@@ -424,6 +436,7 @@
 	icon = 'modular_redtard/rockhill/icons/turf/roguewall.dmi'
 	icon_state = "roofTurf_IC"
 	opacity = 1
+	dir = 4
 	smoothing_groups = SMOOTH_GROUP_WALLS
 
 /turf/closed/wall/mineral/rogue/roofwall/innercorner/dir8
@@ -432,6 +445,7 @@
 	icon = 'modular_redtard/rockhill/icons/turf/roguewall.dmi'
 	icon_state = "roofTurf_IC"
 	opacity = 1
+	dir = 8
 	smoothing_groups = SMOOTH_GROUP_WALLS
 
 /turf/closed/wall/mineral/rogue/roofwall/middle
@@ -448,6 +462,7 @@
 	icon = 'modular_redtard/rockhill/icons/turf/roguewall.dmi'
 	icon_state = "roofTurf_M"
 	opacity = 1
+	dir = 1
 	smoothing_groups = SMOOTH_GROUP_WALLS
 
 /turf/closed/wall/mineral/rogue/roofwall/middle/dir4
@@ -456,6 +471,7 @@
 	icon = 'modular_redtard/rockhill/icons/turf/roguewall.dmi'
 	icon_state = "roofTurf_M"
 	opacity = 1
+	dir = 4
 	smoothing_groups = SMOOTH_GROUP_WALLS
 
 /turf/closed/wall/mineral/rogue/roofwall/middle/dir8
@@ -464,6 +480,7 @@
 	icon = 'modular_redtard/rockhill/icons/turf/roguewall.dmi'
 	icon_state = "roofTurf_M"
 	opacity = 1
+	dir = 8
 	smoothing_groups = SMOOTH_GROUP_WALLS
 
 /turf/closed/wall/mineral/rogue/roofwall/outercorner
@@ -480,6 +497,7 @@
 	icon = 'modular_redtard/rockhill/icons/turf/roguewall.dmi'
 	icon_state = "roofTurf_OC"
 	opacity = 1
+	dir = 1
 	smoothing_groups = SMOOTH_GROUP_WALLS
 
 /turf/closed/wall/mineral/rogue/roofwall/outercorner/dir4
@@ -488,6 +506,7 @@
 	icon = 'modular_redtard/rockhill/icons/turf/roguewall.dmi'
 	icon_state = "roofTurf_OC"
 	opacity = 1
+	dir = 4
 	smoothing_groups = SMOOTH_GROUP_WALLS
 
 /turf/closed/wall/mineral/rogue/roofwall/outercorner/dir8
@@ -496,6 +515,7 @@
 	icon = 'modular_redtard/rockhill/icons/turf/roguewall.dmi'
 	icon_state = "roofTurf_OC"
 	opacity = 1
+	dir = 8
 	smoothing_groups = SMOOTH_GROUP_WALLS
 
 /turf/closed/wall/mineral/rogue/stone
@@ -638,6 +658,7 @@
 	icon = 'modular_redtard/rockhill/icons/turf/roguewall.dmi'
 	icon_state = "endwooddark"
 	opacity = 1
+	dir = 4
 	smoothing_groups = SMOOTH_GROUP_WOOD_WALLS
 
 /turf/closed/wall/mineral/rogue/wooddark/end/north
@@ -646,6 +667,7 @@
 	icon = 'modular_redtard/rockhill/icons/turf/roguewall.dmi'
 	icon_state = "endwooddark"
 	opacity = 1
+	dir = 1
 	smoothing_groups = SMOOTH_GROUP_WOOD_WALLS
 
 /turf/closed/wall/mineral/rogue/wooddark/end/west
@@ -654,6 +676,7 @@
 	icon = 'modular_redtard/rockhill/icons/turf/roguewall.dmi'
 	icon_state = "endwooddark"
 	opacity = 1
+	dir = 8
 	smoothing_groups = SMOOTH_GROUP_WOOD_WALLS
 
 /turf/closed/wall/mineral/rogue/wooddark/horizontal
@@ -695,4 +718,8 @@
 	icon = 'modular_redtard/rockhill/icons/turf/roguewall.dmi'
 	icon_state = "shroud1"
 	opacity = 1
+	rockhill_variant = "shroud#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 2
+	rockhill_random_dir = TRUE
 	smoothing_groups = SMOOTH_GROUP_WALLS

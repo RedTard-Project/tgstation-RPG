@@ -25,6 +25,11 @@ PROC_LINE = re.compile(r'^(/[A-Za-z0-9_/]+?)/(?:proc/|verb/)?([A-Za-z_][A-Za-z0-
 PROCS = collections.defaultdict(set)
 PRE_EQUIP = {}
 ONMOB = {}
+INIT_BODIES = {}
+FILL_BODIES = {}
+NEW_IN_SRC = re.compile(r'new\s+(/obj/item/[A-Za-z0-9_/]+)\s*\(\s*src\s*\)')
+LOOT_LIST = re.compile(r'\bloot\s*=\s*list\(([^)]*)\)')
+PROB_CALL = re.compile(r'\bprob\((\d+)\)')
 ONMOB_TAGS = {'onback': 'ROGUE_ONMOB_BACK', 'onbelt': 'ROGUE_ONMOB_HIP'}
 DEFINE_VALUES = {}
 ARMOR_DATUMS = {}
@@ -51,6 +56,7 @@ SLOT_FLAG_MAP = {
     'ITEM_SLOT_HIP': 'ITEM_SLOT_POCKETS', 'ITEM_SLOT_WRISTS': 'ITEM_SLOT_ROGUE_WRISTS',
 }
 SMOOTH_DIR = 'modular_redtard/rockhill/icons/smooth'
+SOUND_DIR = 'modular_redtard/rockhill/sound'
 EDGES_FILE = 'turf_edges.dm'
 
 
@@ -164,7 +170,12 @@ def parse_codebase(code_root):
                     pm = PROC_LINE.match(line)
                     if pm:
                         PROCS[pm.group(1)].add(pm.group(2))
-                        bodies = {'pre_equip': ('/datum/outfit/', PRE_EQUIP), 'getonmobprop': ('/obj/item', ONMOB)}.get(pm.group(2))
+                        bodies = {
+                            'pre_equip': ('/datum/outfit/', PRE_EQUIP),
+                            'getonmobprop': ('/obj/item', ONMOB),
+                            'Initialize': (('/turf/', '/obj/structure', '/obj/machinery'), INIT_BODIES),
+                            'PopulateContents': ('/obj/structure/closet', FILL_BODIES),
+                        }.get(pm.group(2))
                         if bodies and pm.group(1).startswith(bodies[0]):
                             body = []
                             while i < len(lines) and (not lines[i].strip() or lines[i].startswith(('\t', ' '))):
@@ -321,6 +332,22 @@ def loot_entries(raw):
     return [(item, int(weight) if weight else 1) for item, weight in re.findall(r'(/obj/item/[A-Za-z0-9_/]+)\s*(?:=\s*(\d+))?', raw)]
 
 
+def closet_fill(rw, path):
+    contents, loot, chance = [], [], 100
+    p = path
+    while p and p.startswith('/obj/structure/closet'):
+        for bodies in (INIT_BODIES, FILL_BODIES):
+            body = '\n'.join(bodies.get(p, []))
+            contents += NEW_IN_SRC.findall(body)
+            m = LOOT_LIST.search(body)
+            if m and not loot:
+                loot = [(item, int(float(weight)) if weight else 1) for item, weight in list_paths(m.group(1))]
+                pm = PROB_CALL.search(body)
+                chance = int(pm.group(1)) if pm else 100
+        p = rw.parent(p)
+    return contents, loot, chance
+
+
 def runtime_path(path, rules):
     rule = replacement_for(path, rules)
     if rule is None:
@@ -388,9 +415,167 @@ def main():
     for dressed in role_outfits.values():
         outfit_items |= set(dressed['slots'].values())
         outfit_items |= {item for item, _ in dressed['contents'] or []}
-    generated = generate(cfg, port, rules, rw, declared, tg_names, usage, outfit_items)
+    mapgen = mapgen_spec(rw, usage)
+    mapgen_types = {path for gen in mapgen.values() for module in gen['modules'] for key in ('spawnableAtoms', 'spawnableTurfs') for path, _ in module[key]}
+    fill_items = set()
+    for path in usage:
+        if (replacement_for(path, rules) or {}).get('port', {}).get('fill'):
+            contents, loot, _ = closet_fill(rw, path)
+            fill_items |= set(contents) | {item for item, _ in loot}
+    generated = generate(cfg, port, rules, rw, declared, tg_names, usage, outfit_items | mapgen_types | fill_items, set(jobs))
     generate_onmob(generated)
+    generate_mapgen(mapgen, rules, declared | generated, tg_names)
     generate_jobs(cfg, rw, usage, role_outfits, declared | generated)
+
+
+MAPGEN_LANDMARK = '/obj/effect/landmark/mapGenerator'
+MAPGEN_WEIGHTED = ('spawnableAtoms', 'spawnableTurfs')
+MAPGEN_PATHS = ('allowed_turfs', 'excluded_turfs', 'allowed_areas')
+MAPGEN_SCALARS = ('clusterCheckFlags', 'clusterMin', 'clusterMax', 'include_subtypes')
+
+
+def list_paths(raw):
+    return [(p, w) for p, w in re.findall(r'(/[A-Za-z0-9_/]+)\s*(?:=\s*(-?[\d.]+))?', raw or '')]
+
+
+def mapgen_spec(rw, usage):
+    spec = {}
+    for landmark in sorted(p for p in usage if p.startswith(MAPGEN_LANDMARK + '/')):
+        generator = (rw.resolve(landmark, 'mapGeneratorType') or '').strip()
+        if not generator.startswith('/datum/'):
+            continue
+        modules = []
+        for module, _ in list_paths(rw.resolve(generator, 'modules')):
+            data = {'path': module}
+            for key in MAPGEN_WEIGHTED:
+                data[key] = list_paths(rw.resolve(module, key))
+            for key in MAPGEN_PATHS:
+                data[key] = [p for p, _ in list_paths(rw.resolve(module, key))]
+            for key in MAPGEN_SCALARS:
+                data[key] = rw.resolve(module, key)
+            modules.append(data)
+        spec[landmark] = {'generator': generator, 'modules': modules}
+    return spec
+
+
+def generate_mapgen(spec, rules, valid, tg_names):
+    implicit = {v.rsplit('/', k)[0] for v in valid for k in range(1, v.count('/'))}
+
+    def kept(path, atoms):
+        rule = replacement_for(path, rules)
+        if rule and (atoms and not rule.get('rebase')):
+            return None
+        target = runtime_path(path, rules)
+        return target if target in valid or (not atoms and target in implicit) else None
+
+    blocks = []
+    emitted = set()
+    for landmark, gen in spec.items():
+        name = gen['generator'].rsplit('/', 1)[1]
+        generator = f'/datum/map_generator/rockhill/{name}'
+        blocks.append([landmark, f'\tmapGeneratorType = {generator}'])
+        if generator in emitted:
+            continue
+        emitted.add(generator)
+        module_paths = []
+        for module in gen['modules']:
+            path = f"/datum/map_generator_module/rockhill/{module['path'].rsplit('/', 1)[1]}"
+            block = [path]
+            for key in MAPGEN_WEIGHTED:
+                entries = {}
+                for p, w in module[key]:
+                    target = kept(p, key == 'spawnableAtoms')
+                    if target:
+                        entries[target] = w or '1'
+                entries = list(entries.items())
+                if entries:
+                    block.append(f'\t{key} = list(' + ', '.join(f'{p} = {w}' for p, w in entries) + ')')
+            skip = False
+            for key in MAPGEN_PATHS:
+                if not module[key]:
+                    continue
+                entries = sorted({kept(p, False) for p in module[key]} - {None})
+                if not entries:
+                    skip = key != 'excluded_turfs'
+                    continue
+                block.append(f'\t{key} = list(' + ', '.join(entries) + ')')
+            for key in MAPGEN_SCALARS:
+                value = literal(module[key], tg_names)
+                if value is not None:
+                    block.append(f'\t{key} = {value}')
+            if skip:
+                continue
+            module_paths.append(path)
+            if path not in emitted:
+                emitted.add(path)
+                blocks.append(block)
+        blocks.append([generator, '\tmodules = list(' + ', '.join(module_paths) + ')'])
+    open(f'{OUT_DIR}/mapgen.dm', 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    print(f'mapgen.dm: {len(spec)} landmarks, {len(emitted)} generator and module types')
+
+
+def parse_look_line(text, look):
+    if 'dir' not in look and re.fullmatch(r'dir\s*=\s*pick\(\s*(?:GLOB\.cardinals|NORTH\s*,\s*SOUTH\s*,\s*(?:EAST\s*,\s*WEST|WEST\s*,\s*EAST))\s*\)', text):
+        look['dir'] = True
+        return
+    m = re.fullmatch(r'icon_state\s*=\s*(.+)', text)
+    if not m or 'icon' in look:
+        return
+    value = m.group(1).strip()
+    if re.fullmatch(r'[A-Za-z_]\w*', value):
+        look['icon'] = ('var', value)
+        return
+    lit = re.fullmatch(r'"([^"\[\]]*)"', value)
+    if lit:
+        look['icon'] = ('state', lit.group(1))
+        return
+    var = re.fullmatch(r'"(\[(?:initial\()?icon_state\)?\])?([^"\[\]]*)\[(rand|pick)\(([\d\s,]+)\)\]([^"\[\]]*)"', value)
+    if not var:
+        return
+    numbers = sorted(int(n) for n in var.group(4).split(',') if n.strip())
+    if var.group(3) == 'rand':
+        low, high = numbers[0], numbers[-1]
+    elif numbers == list(range(numbers[0], numbers[-1] + 1)):
+        low, high = numbers[0], numbers[-1]
+    else:
+        return
+    look['icon'] = ('variant', (bool(var.group(1)), var.group(2), var.group(5), low, high))
+
+
+def parse_look(body):
+    look = {}
+    guard = False
+    for line in body:
+        text = line.strip()
+        if not text or text.startswith('//'):
+            continue
+        indent = len(line) - len(line.lstrip('\t'))
+        if indent == 1:
+            guard = re.fullmatch(r'if\s*\(\s*icon_state\s*==\s*(?:"[^"]*"|initial\(icon_state\))\s*\)', text) is not None
+            if not guard:
+                parse_look_line(text, look)
+        elif indent == 2 and guard:
+            parse_look_line(text, look)
+    return look
+
+
+def runtime_look(rw, path):
+    look = {}
+    seen = set()
+    p = path
+    while p and p not in seen:
+        seen.add(p)
+        if p in INIT_BODIES:
+            for aspect, value in parse_look(INIT_BODIES[p]).items():
+                look.setdefault(aspect, value)
+        p = rw.parent(p)
+    if look.get('icon', (None,))[0] == 'var':
+        value = (rw.resolve(path, look['icon'][1]) or '').strip()
+        if re.fullmatch(r'"[^"\[\]]*"', value):
+            look['icon'] = ('state', value.strip('"'))
+        else:
+            del look['icon']
+    return look
 
 
 def parse_onmob(body):
@@ -464,7 +649,7 @@ def category_for(path, categories):
     return best[0] if best else None
 
 
-def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items):
+def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items, jobs=frozenset()):
     categories = port['categories']
     chosen = collections.defaultdict(list)
     skipped = collections.Counter()
@@ -474,6 +659,10 @@ def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items):
             port_usage[item] += 0
     for item in extra_items:
         port_usage[item] += 0
+    for path in list(port_usage):
+        for name in port.get('linked_types', []):
+            for item, _ in list_paths(rw.resolve(path, name)):
+                port_usage[item] += 0
     for path, count in sorted(port_usage.items()):
         if replacement_for(path, rules) or path in declared:
             continue
@@ -518,6 +707,7 @@ def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items):
     runtime = {p: runtime_path(p, rules) for p in used_turfs}
     reskins = [p for p in used_turfs if (replacement_for(p, rules) or {}).get('reskin')]
     valid = declared | generated | {runtime[p] for p in reskins}
+    valid |= {runtime_path(p, rules) for p in usage if (replacement_for(p, rules) or {}).get('rebase') and replacement_for(p, rules).get('port')}
     sheets = {}
     families = port['smoothing_families']
 
@@ -637,6 +827,19 @@ def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items):
                     continue
                 source_name = cat.get('rename', {}).get(name, name)
                 value = rw.resolve(path, source_name)
+                if name in cat.get('skip_default', []) and (value or 'null').strip() in ('null', '0', 'FALSE', '""'):
+                    continue
+                if name in cat.get('paths', []):
+                    target = runtime_path(value.strip(), rules) if value and value.strip().startswith('/') else None
+                    if target in valid:
+                        block.append(f'\t{name} = {target}')
+                    continue
+                if name in cat.get('path_lists', []):
+                    entries = [runtime_path(p, rules) for p, _ in list_paths(value)]
+                    entries = [p for p in entries if p in valid]
+                    if entries:
+                        block.append(f'\t{name} = list(' + ', '.join(entries) + ')')
+                    continue
                 if name in cat.get('true_only', []):
                     if value and value.strip() == 'TRUE':
                         block.append(f'\t{name} = TRUE')
@@ -677,6 +880,19 @@ def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items):
                 sheet = slot_worn_icon(path, sheets)
                 if sheet:
                     block.append(f'\t{name} = {icon_ref(sheet)}')
+            if cat.get('runtime_look') and not smooth:
+                look = runtime_look(rw, path)
+                kind, data = look.get('icon', (None, None))
+                if kind == 'state':
+                    block = [line for line in block if not line.startswith('\ticon_state = ')]
+                    block.append(f'\ticon_state = "{data}"')
+                elif kind == 'variant':
+                    current, prefix, suffix, low, high = data
+                    if current:
+                        prefix = (rw.resolve(path, 'icon_state') or '').strip().strip('"') + prefix
+                    block += [f'\trockhill_variant = "{prefix}#{suffix}"', f'\trockhill_variant_min = {low}', f'\trockhill_variant_max = {high}']
+                if look.get('dir'):
+                    block.append('\trockhill_random_dir = TRUE')
             for name, value in cat.get('fixed_vars', {}).items():
                 block.append(f'\t{name} = {value}')
             if smooth:
@@ -734,6 +950,73 @@ def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items):
     open(f'{OUT_DIR}/turfs_reskin.dm', 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in reskin_blocks) + '\n')
     print(f'turfs_reskin.dm: {len(reskin_blocks)} types')
 
+    sounds = {}
+
+    def sound_ref(raw):
+        rel = ICON_LITERAL.match(raw.strip()).group(1).replace('\\', '/')
+        src = os.path.join(cfg['source']['code_root'], rel)
+        if not os.path.exists(src):
+            return None
+        sounds[src] = f"{SOUND_DIR}/{rel[len('sound/'):] if rel.startswith('sound/') else rel}"
+        return f"'{sounds[src]}'"
+
+    ported = set(generated)
+    rebased = collections.defaultdict(list)
+    for path in sorted(usage):
+        rule = replacement_for(path, rules) or {}
+        spec = rule.get('port')
+        if not rule.get('rebase') or not spec:
+            continue
+        block = [runtime_path(path, rules)]
+        for name in spec['vars']:
+            value = rw.resolve(path, name)
+            if name in spec.get('path_strings', []):
+                entries = [p for p, _ in list_paths(value)]
+                value = ('list(' + ', '.join(f'"{p}"' for p in entries) + ')') if entries else None
+            elif name in spec.get('ported_paths', []):
+                raw = (value or '').strip()
+                target = runtime_path(raw, rules) if raw.startswith('/') else None
+                value = 'null' if raw == 'null' else (target if target in ported else None)
+            elif name in spec.get('paths', []):
+                target = runtime_path(value.strip(), rules) if value and value.strip().startswith('/') else None
+                value = target if target in valid or target in jobs else None
+            elif name in spec.get('sounds', []) and value and ICON_LITERAL.match(value.strip()):
+                value = sound_ref(value)
+            elif value and ICON_LITERAL.match(value.strip()):
+                value = icon_ref(value)
+            else:
+                value = literal(value, tg_names)
+            if value is not None:
+                block.append(f'\t{name} = {value}')
+        if spec.get('runtime_look'):
+            look = runtime_look(rw, path)
+            kind, data = look.get('icon', (None, None))
+            if kind == 'state':
+                block = [line for line in block if not line.startswith('\ticon_state = ')] + [f'\ticon_state = "{data}"']
+            elif kind == 'variant':
+                current, prefix, suffix, low, high = data
+                if current:
+                    prefix = (rw.resolve(path, 'icon_state') or '').strip().strip('"') + prefix
+                block += [f'\trockhill_variant = "{prefix}#{suffix}"', f'\trockhill_variant_min = {low}', f'\trockhill_variant_max = {high}']
+            if look.get('dir'):
+                block.append('\trockhill_random_dir = TRUE')
+        if spec.get('fill'):
+            contents, loot, chance = closet_fill(rw, path)
+            contents = [p for p in (runtime_path(c, rules) for c in contents) if p in valid]
+            loot = [(p, w) for p, w in ((runtime_path(i, rules), w) for i, w in loot) if p in valid]
+            if contents:
+                block.append('\trockhill_contents = list(' + ', '.join(contents) + ')')
+            if loot:
+                block += ['\trockhill_loot = list('] + [f'\t\t{p} = {w},' for p, w in loot] + ['\t\t)']
+                if chance != 100:
+                    block.append(f'\trockhill_loot_chance = {chance}')
+        rebased[spec['file']].append(block)
+        report_rows.setdefault(spec['file'], []).append((path, usage[path]))
+        generated.add(block[0])
+    for file, blocks in rebased.items():
+        open(f'{OUT_DIR}/{file}', 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+        print(f'{file}: {len(blocks)} rebased types')
+
     for rel in port.get('extra_icons', []):
         src = os.path.join(cfg['source']['code_root'], rel)
         icons[src] = f"{ICON_DIR}/{rel[len('icons/'):] if rel.startswith('icons/') else rel}"
@@ -754,10 +1037,11 @@ def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items):
     open(f'{OUT_DIR}/{EDGES_FILE}', 'w', encoding='utf-8', newline='\n').write('\n'.join(edge_lines) + '\n')
     print(f"smoothing: {smoothed['bitmask']} bitmask types from {sum(1 for v in sheets.values() if v)} sheets, {smoothed['edges']} edge receivers, {len(edge_states)} edge sources")
 
-    for src, dest in icons.items():
+    for src, dest in list(icons.items()) + list(sounds.items()):
         os.makedirs(os.path.dirname(dest), exist_ok=True)
         shutil.copyfile(src, dest)
     print('icons copied:', len(icons), 'bytes:', sum(os.path.getsize(d) for d in icons.values()))
+    print('sounds copied:', len(sounds))
 
     with open(REPORT, 'w', encoding='utf-8', newline='\n') as out:
         out.write('# Ported Ratwood content\n\n')
@@ -779,6 +1063,11 @@ def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items):
         for src, dest in sorted(icons.items(), key=lambda kv: kv[1]):
             rel = os.path.relpath(src, cfg['source']['code_root']).replace('\\', '/')
             out.write(f'- `{dest}` from Ratwood `{rel}`\n')
+        if sounds:
+            out.write('\n## Sounds\n\n')
+            for src, dest in sorted(sounds.items(), key=lambda kv: kv[1]):
+                rel = os.path.relpath(src, cfg['source']['code_root']).replace('\\', '/')
+                out.write(f'- `{dest}` from Ratwood `{rel}`\n')
     print('report:', REPORT, 'skipped types:', len(skipped))
     return generated
 
@@ -1008,7 +1297,7 @@ def role_outfit(rw, job):
     backs = [ratwood_slots[slot] for slot in ('backl', 'backr') if slot in ratwood_slots]
     backs.sort(key=lambda path: not path.startswith('/obj/item/storage'))
     tg.update(zip(('back', 'backr'), backs))
-    return {'source': source, 'slots': tg, 'contents': contents}
+    return {'source': source, 'slots': tg, 'contents': contents, 'advclass': subclasses[0] if subclasses else None}
 
 
 def select_jobs(cfg, rw):
@@ -1085,6 +1374,8 @@ def generate_jobs(cfg, rw, usage, role_outfits, valid):
         if order is not None:
             block.append(f'\tdisplay_order = {order}')
         block += ['\tdepartments_list = list(', f"\t\t{departments[dept]},", '\t\t)']
+        if role_outfits.get(p, {}).get('advclass'):
+            block.append(f'\trockhill_advclass = "{role_outfits[p]["advclass"]}"')
         alternates = []
         f_title = string_value(rw.resolve(p, 'f_title'))
         if f_title and f_title != titles[p] and f_title.strip('"') not in taken:

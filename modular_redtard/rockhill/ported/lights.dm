@@ -157,6 +157,7 @@
 	light_range = 8
 	light_power = 1
 	light_color = "#ff13d8ff"
+	color = "#f858b5ff"
 
 /obj/machinery/light/rogue/candle/floorcandle/pink
 	name = "candles"
@@ -168,6 +169,7 @@
 	light_range = 8
 	light_power = 1
 	light_color = "#ff13d8ff"
+	color = "#f858b5ff"
 
 /obj/machinery/light/rogue/candle/green
 	name = "candles"

@@ -39,19 +39,19 @@
 	name = "window"
 	desc = "A glass window, it separates a small slice of civilization from the savage outside world."
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/roguewindow.dmi'
-	icon_state = "woodwindowdir"
 	density = TRUE
 	opacity = TRUE
 	layer = TABLE_LAYER
+	icon_state = "woodwindow"
 
 /obj/structure/roguewindow/openclose/reinforced
 	name = "window"
 	desc = "A glass window reinforced with a metal mesh, it still won't keep you alive tonight."
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/roguewindow.dmi'
-	icon_state = "reinforcedwindowdir"
 	density = TRUE
 	opacity = TRUE
 	layer = TABLE_LAYER
+	icon_state = "reinforcedwindow"
 
 /obj/structure/roguewindow/stained/silver
 	name = "psydonite window"

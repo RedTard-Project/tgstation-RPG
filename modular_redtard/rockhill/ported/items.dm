@@ -109,6 +109,9 @@
 /obj/item/roguegem
 	parent_type = /obj/item/rockhill
 
+/obj/item/roguekey/apartments
+	parent_type = /obj/item/rockhill
+
 /obj/item/roguemachine
 	parent_type = /obj/item/rockhill
 
@@ -1793,7 +1796,6 @@
 	worn_icon_state = null
 
 /obj/item/chair/rogue
-	parent_type = /obj/item/rockhill
 	name = "chair"
 	desc = ""
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/chairs.dmi'
@@ -1805,6 +1807,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/chairs_righthand.dmi'
 	inhand_icon_state = "chair"
 	worn_icon_state = "chair"
+	origin_type = /obj/structure/chair/wood/rockhill/wood/rogue
 
 /obj/item/chair/rogue/fancy
 	name = "chair"
@@ -1818,9 +1821,9 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/chairs_righthand.dmi'
 	inhand_icon_state = "chair"
 	worn_icon_state = "chair"
+	origin_type = /obj/structure/chair/wood/rockhill/wood/rogue/fancy
 
 /obj/item/chair/stool/bar/rogue
-	parent_type = /obj/item/rockhill
 	name = "stool"
 	desc = "Three stubby legs nailed to the underside of a small round seat. Stable, if simple."
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
@@ -1832,6 +1835,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/chairs_righthand.dmi'
 	inhand_icon_state = "stool_bar"
 	worn_icon_state = "stool_bar"
+	origin_type = /obj/structure/chair/wood/rockhill/stool/rogue
 
 /obj/item/chair/stool/bar/rogue/crafted
 	name = "stool"
@@ -1845,6 +1849,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/chairs_righthand.dmi'
 	inhand_icon_state = "stool_bar"
 	worn_icon_state = "stool_bar"
+	origin_type = /obj/structure/chair/wood/rockhill/stool/rogue
 
 /obj/item/chalk
 	parent_type = /obj/item/rockhill
@@ -11330,7 +11335,172 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 
+/obj/item/herbseed/artemisia
+	name = "herb seeds"
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/produce.dmi'
+	icon_state = "seeds"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+
+/obj/item/herbseed/atropa
+	name = "herb seeds"
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/produce.dmi'
+	icon_state = "seeds"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+
+/obj/item/herbseed/benedictus
+	name = "herb seeds"
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/produce.dmi'
+	icon_state = "seeds"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+
+/obj/item/herbseed/calendula
+	name = "herb seeds"
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/produce.dmi'
+	icon_state = "seeds"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+
+/obj/item/herbseed/euphrasia
+	name = "herb seeds"
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/produce.dmi'
+	icon_state = "seeds"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+
+/obj/item/herbseed/hypericum
+	name = "herb seeds"
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/produce.dmi'
+	icon_state = "seeds"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+
 /obj/item/herbseed/manabloom
+	name = "herb seeds"
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/produce.dmi'
+	icon_state = "seeds"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+
+/obj/item/herbseed/matricaria
+	name = "herb seeds"
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/produce.dmi'
+	icon_state = "seeds"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+
+/obj/item/herbseed/mentha
+	name = "herb seeds"
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/produce.dmi'
+	icon_state = "seeds"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+
+/obj/item/herbseed/paris
+	name = "herb seeds"
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/produce.dmi'
+	icon_state = "seeds"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+
+/obj/item/herbseed/rosa
+	name = "herb seeds"
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/produce.dmi'
+	icon_state = "seeds"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+
+/obj/item/herbseed/salvia
+	name = "herb seeds"
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/produce.dmi'
+	icon_state = "seeds"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+
+/obj/item/herbseed/symphitum
+	name = "herb seeds"
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/produce.dmi'
+	icon_state = "seeds"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+
+/obj/item/herbseed/taraxacum
+	name = "herb seeds"
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/produce.dmi'
+	icon_state = "seeds"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+
+/obj/item/herbseed/urtica
+	name = "herb seeds"
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/produce.dmi'
+	icon_state = "seeds"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+
+/obj/item/herbseed/valeriana
 	name = "herb seeds"
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/produce.dmi'
 	icon_state = "seeds"
@@ -11769,6 +11939,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	picklvl = 1
 
 /obj/item/lockpick/goldpin
 	name = "gold hairpin"
@@ -11784,6 +11955,7 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head_items.dmi'
 	worn_icon_state = "goldpin"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
+	picklvl = 1
 
 /obj/item/lockpick/goldpin/silver
 	name = "silver hairpin"
@@ -11799,6 +11971,7 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head_items.dmi'
 	worn_icon_state = "silverpin"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
+	picklvl = 1
 
 /obj/item/lockpickring/mundane
 	name = "lockpickring"
@@ -11813,6 +11986,18 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+
+/obj/item/magic/artifact
+	name = "runed artifact"
+	desc = "An old stone from age long ago, marked with glowing sigils."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/magic_resources.dmi'
+	icon_state = "runedartifact"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
 
 /obj/item/magic/infernal/core
 	name = "infernal core"
@@ -11843,6 +12028,18 @@
 	desc = "A flickering, black flame contained in a crystal; the heart of an archfiend. Or at least, what passes for one. It pulses with dense thrums of magick."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/magic_resources.dmi'
 	icon_state = "abyssalflame"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+
+/obj/item/magic/manacrystal
+	name = "crystalized mana"
+	desc = "A crystal made of mana, woven into an artificial structure."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/magic_resources.dmi'
+	icon_state = "manacrystal"
 	w_class = WEIGHT_CLASS_SMALL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
@@ -13141,6 +13338,30 @@
 	icon_state = "salo4"
 	w_class = WEIGHT_CLASS_TINY
 	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+
+/obj/item/reagent_containers/food/snacks/fish/crab
+	name = "crab"
+	desc = "A defensive shellfish that's a real hassle to crack open, they taste great when made into cakes with butterdough slice."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_food/icons/raw/raw_fish.dmi'
+	icon_state = "crab"
+	w_class = WEIGHT_CLASS_TINY
+	force = 8
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+
+/obj/item/reagent_containers/food/snacks/fish/lobster
+	name = "lobster"
+	desc = "A hard-shelled cretin, barely fit for eating."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_food/icons/raw/raw_fish.dmi'
+	icon_state = "lobster"
+	w_class = WEIGHT_CLASS_TINY
+	force = 8
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	inhand_icon_state = null
@@ -15718,21 +15939,6 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
 
-/obj/item/roguekey
-	parent_type = /obj/item/rockhill
-	name = "key"
-	desc = "An unremarkable iron key."
-	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
-	icon_state = "iron"
-	w_class = WEIGHT_CLASS_TINY
-	force = 0
-	throwforce = 0
-	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
-	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon_state = null
-	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
-
 /obj/item/roguekey/apartments/stable1
 	name = "stable i key"
 	desc = "An unremarkable iron key."
@@ -15746,6 +15952,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "stable1"
 
 /obj/item/roguekey/apartments/stable2
 	name = "stable ii key"
@@ -15760,8 +15967,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "stable2"
 
 /obj/item/roguekey/archive
+	parent_type = /obj/item/rockhill
 	name = "archive key"
 	desc = "This key looks barely used."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -15774,8 +15983,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "archive"
 
 /obj/item/roguekey/armory
+	parent_type = /obj/item/rockhill
 	name = "armory key"
 	desc = "This key opens the garrison's armory."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -15788,8 +15999,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "armory"
 
 /obj/item/roguekey/baron
+	parent_type = /obj/item/rockhill
 	name = "Lowtown Manor Key"
 	desc = "A key to the Lowtown Manor, home of the Baron"
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -15802,8 +16015,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "BaronManor"
 
 /obj/item/roguekey/baronguest
+	parent_type = /obj/item/rockhill
 	name = "Lowtown Manor Guest Key"
 	desc = "A key to the guest rooms of the Lowtown Manor."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -15816,8 +16031,26 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "BaronManorGuest"
+
+/obj/item/roguekey/bath
+	parent_type = /obj/item/rockhill
+	name = "bathhouse quarter key"
+	desc = "The key to an employee's quarters. Hope it's not lost."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
+	icon_state = "brownkey"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "bath"
 
 /obj/item/roguekey/church
+	parent_type = /obj/item/rockhill
 	name = "church key"
 	desc = "This bronze key should open almost all doors in the church."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -15830,8 +16063,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "church"
 
 /obj/item/roguekey/courtphysician
+	parent_type = /obj/item/rockhill
 	name = "court physician key"
 	desc = "The key smells of herbs, feeling soothing to the touch. This one is especially prestigious"
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -15844,8 +16079,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "cphysician"
 
 /obj/item/roguekey/crafterguild
+	parent_type = /obj/item/rockhill
 	name = "guild's key"
 	desc = "The key to the Crafter's Guild."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -15858,8 +16095,26 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "crafterguild"
+
+/obj/item/roguekey/craftermaster
+	parent_type = /obj/item/rockhill
+	name = "guildmaster's key"
+	desc = "The key of the Crafter's Guild Guildmaster."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
+	icon_state = "hornkey"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "craftermaster"
 
 /obj/item/roguekey/crier
+	parent_type = /obj/item/rockhill
 	name = "crier's key"
 	desc = "This key should open and close the crier's office."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -15872,8 +16127,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "crier"
 
 /obj/item/roguekey/dungeon
+	parent_type = /obj/item/rockhill
 	name = "dungeon key"
 	desc = "This key should unlock the rusty bars and doors of the dungeon."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -15886,8 +16143,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "dungeon"
 
 /obj/item/roguekey/fancyroomi
+	parent_type = /obj/item/rockhill
 	name = "luxury room I key"
 	desc = "The key to the first luxury room."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -15900,8 +16159,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "fancyi"
 
 /obj/item/roguekey/fancyroomii
+	parent_type = /obj/item/rockhill
 	name = "luxury room II key"
 	desc = "The key to the second luxury room."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -15914,8 +16175,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "fancyii"
 
 /obj/item/roguekey/fancyroomiii
+	parent_type = /obj/item/rockhill
 	name = "luxury room III key"
 	desc = "The key to the third luxury room."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -15928,8 +16191,42 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "fancyiii"
+
+/obj/item/roguekey/fancyroomiv
+	parent_type = /obj/item/rockhill
+	name = "luxury room IV key"
+	desc = "The key to the fourth luxury room."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
+	icon_state = "hornkey"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "fancyiv"
+
+/obj/item/roguekey/fancyroomv
+	parent_type = /obj/item/rockhill
+	name = "luxury room V key"
+	desc = "The key to the fifth luxury room."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
+	icon_state = "hornkey"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "fancyv"
 
 /obj/item/roguekey/farm
+	parent_type = /obj/item/rockhill
 	name = "farm key"
 	desc = "This is a rusty key that'll open farm doors."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -15942,8 +16239,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "farm"
 
 /obj/item/roguekey/garrison
+	parent_type = /obj/item/rockhill
 	name = "town watch key"
 	desc = "This key belongs to the town guards."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -15956,8 +16255,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "garrison"
 
 /obj/item/roguekey/graveyard
+	parent_type = /obj/item/rockhill
 	name = "crypt key"
 	desc = "This rusty key belongs to the gravekeeper."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -15970,8 +16271,42 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "graveyard"
+
+/obj/item/roguekey/hand
+	parent_type = /obj/item/rockhill
+	name = "hand's key"
+	desc = "This regal key belongs to the Grand Duke's Right Hand."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
+	icon_state = "cheesekey"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "hand"
+
+/obj/item/roguekey/heir
+	parent_type = /obj/item/rockhill
+	name = "heir room key"
+	desc = "A highly coveted key belonging to the doors of the heirs of this realm."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
+	icon_state = "hornkey"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "heir"
 
 /obj/item/roguekey/inquisition
+	parent_type = /obj/item/rockhill
 	name = "inquisition key"
 	desc = "This key opens the doors leading into the church's basement, where the inquisition dwells."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -15984,8 +16319,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "inquisition"
 
 /obj/item/roguekey/keeper
+	parent_type = /obj/item/rockhill
 	name = "beast sanctum key"
 	desc = "This key should open and close the heart beast's sanctum."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -15998,8 +16335,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "keeper"
 
 /obj/item/roguekey/keeper_inner
+	parent_type = /obj/item/rockhill
 	name = "beast inner sanctum key"
 	desc = "This key should open and close the iron gates within the beast's sanctum."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -16012,12 +16351,14 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "keeper2"
 
-/obj/item/roguekey/lord
-	name = "master key"
-	desc = "The Lord's key."
+/obj/item/roguekey/knight
+	parent_type = /obj/item/rockhill
+	name = "knight's key"
+	desc = "This is a key to the knight's chambers."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
-	icon_state = "bosskey"
+	icon_state = "ekey"
 	w_class = WEIGHT_CLASS_TINY
 	force = 0
 	throwforce = 0
@@ -16026,8 +16367,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "knight"
 
 /obj/item/roguekey/mage
+	parent_type = /obj/item/rockhill
 	name = "magicians's key"
 	desc = "This is the court wizard's key. It watches you..."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -16040,8 +16383,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "mage"
 
 /obj/item/roguekey/manor
+	parent_type = /obj/item/rockhill
 	name = "manor key"
 	desc = "This key will open any manor doors."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -16054,6 +16399,52 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "manor"
+
+/obj/item/roguekey/manor/counsilroom/i
+	name = "Counsillor's Room I Key"
+	desc = "This key will open the manor first councilroom."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
+	icon_state = "mazekey"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "counsil1"
+
+/obj/item/roguekey/manor/counsilroom/ii
+	name = "Counsillor's Room II Key"
+	desc = "This key will open the manor second councilroom."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
+	icon_state = "mazekey"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "counsil2"
+
+/obj/item/roguekey/manor/counsilroom/iii
+	name = "Counsillor's Room III Key"
+	desc = "This key will open the manor third councilroom."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
+	icon_state = "mazekey"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "counsil3"
 
 /obj/item/roguekey/manor/guestroom/i
 	name = "Manor Guestroom I Key"
@@ -16068,6 +16459,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "guestroom1"
 
 /obj/item/roguekey/manor/guestroom/ii
 	name = "Manor Guestroom II Key"
@@ -16082,6 +16474,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "guestroom2"
 
 /obj/item/roguekey/manor/guestroom/iii
 	name = "Manor Guestroom III Key"
@@ -16096,8 +16489,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "guestroom3"
 
 /obj/item/roguekey/mercenary
+	parent_type = /obj/item/rockhill
 	name = "mercenary key"
 	desc = "Why, a mercenary would not kick doors down."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -16110,8 +16505,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "merc"
 
 /obj/item/roguekey/merchant
+	parent_type = /obj/item/rockhill
 	name = "merchant's key"
 	desc = "A merchant's key."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -16124,8 +16521,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "merchant"
 
 /obj/item/roguekey/nightmaiden
+	parent_type = /obj/item/rockhill
 	name = "bathhouse key"
 	desc = "This regal key opens doors inside the bath-house."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -16138,8 +16537,115 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "nightmaiden"
+
+/obj/item/roguekey/nightmaiden/rooms/i
+	name = "baths room I key"
+	desc = "This regal key opens the baths first room."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
+	icon_state = "bathkey"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "lux1"
+
+/obj/item/roguekey/nightmaiden/rooms/ii
+	name = "baths room II key"
+	desc = "This regal key opens the baths second room."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
+	icon_state = "bathkey"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "lux2"
+
+/obj/item/roguekey/nightmaiden/rooms/iii
+	name = "baths room III key"
+	desc = "This regal key opens the baths third room."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
+	icon_state = "bathkey"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "lux3"
+
+/obj/item/roguekey/nightmaiden/rooms/iv
+	name = "baths room IV key"
+	desc = "This regal key opens the baths fourth room."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
+	icon_state = "bathkey"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "lux4"
+
+/obj/item/roguekey/nightmaiden/rooms/punish
+	name = "baths punishment room  key"
+	desc = "This regal key opens the baths punishment room."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
+	icon_state = "spikekey"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "punishroom"
+
+/obj/item/roguekey/nightmaiden/rooms/steam
+	name = "baths steam room key"
+	desc = "This regal key opens the baths steam room."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
+	icon_state = "bathkey"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "steam"
+
+/obj/item/roguekey/nightmaiden/rooms/v
+	name = "baths room V key"
+	desc = "This regal key opens the baths fifth room."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
+	icon_state = "bathkey"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "lux5"
 
 /obj/item/roguekey/nightman
+	parent_type = /obj/item/rockhill
 	name = "bathmaster's key"
 	desc = "This regal key opens the bathmaster's office - and his vault."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -16152,8 +16658,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "nightman"
 
 /obj/item/roguekey/physician
+	parent_type = /obj/item/rockhill
 	name = "town physician key"
 	desc = "The key smells of herbs, feeling soothing to the touch."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -16166,8 +16674,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "physician"
 
 /obj/item/roguekey/priest
+	parent_type = /obj/item/rockhill
 	name = "Bishop's key"
 	desc = "This is the master key of the church."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -16180,8 +16690,42 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "priest"
+
+/obj/item/roguekey/puritan
+	parent_type = /obj/item/rockhill
+	name = "puritan's key"
+	desc = "This is an intricate key."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
+	icon_state = "mazekey"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "puritan"
+
+/obj/item/roguekey/roomhunt
+	parent_type = /obj/item/rockhill
+	name = "HUNT room key"
+	desc = "The key to the HUNT room, the penthouse suite of the local inn."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
+	icon_state = "brownkey"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "roomhunt"
 
 /obj/item/roguekey/roomi
+	parent_type = /obj/item/rockhill
 	name = "room I key"
 	desc = "The key to the first room."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -16194,8 +16738,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "roomi"
 
 /obj/item/roguekey/roomii
+	parent_type = /obj/item/rockhill
 	name = "room II key"
 	desc = "The key to the second room."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -16208,8 +16754,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "roomii"
 
 /obj/item/roguekey/roomiii
+	parent_type = /obj/item/rockhill
 	name = "room III key"
 	desc = "The key to the third room."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -16222,8 +16770,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "roomiii"
 
 /obj/item/roguekey/roomiv
+	parent_type = /obj/item/rockhill
 	name = "room IV key"
 	desc = "The key to the fourth room."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -16236,8 +16786,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "roomiv"
 
 /obj/item/roguekey/roomix
+	parent_type = /obj/item/rockhill
 	name = "room IX key"
 	desc = "The key to the ninth room."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -16250,8 +16802,42 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "roomix"
+
+/obj/item/roguekey/roomv
+	parent_type = /obj/item/rockhill
+	name = "room V key"
+	desc = "The key to the fifth room."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
+	icon_state = "brownkey"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "roomv"
+
+/obj/item/roguekey/roomvi
+	parent_type = /obj/item/rockhill
+	name = "room VI key"
+	desc = "The key to the sixth room."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
+	icon_state = "brownkey"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "roomvi"
 
 /obj/item/roguekey/roomvii
+	parent_type = /obj/item/rockhill
 	name = "room VII key"
 	desc = "The key to the seventh room."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -16264,8 +16850,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "roomvii"
 
 /obj/item/roguekey/roomviii
+	parent_type = /obj/item/rockhill
 	name = "room VIII key"
 	desc = "The key to the eighth room."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -16278,8 +16866,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "roomviii"
 
 /obj/item/roguekey/roomx
+	parent_type = /obj/item/rockhill
 	name = "room X key"
 	desc = "The key to the tenth room."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -16292,8 +16882,26 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "roomx"
+
+/obj/item/roguekey/royal
+	parent_type = /obj/item/rockhill
+	name = "Royal Key"
+	desc = "The Key to the royal chambers. It even feels pretentious."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
+	icon_state = "ekey"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "royal"
 
 /obj/item/roguekey/sergeant
+	parent_type = /obj/item/rockhill
 	name = "sergeant key"
 	desc = "This key belongs to the sergeant of the Men-at-Arms."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -16306,8 +16914,26 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "sergeant"
+
+/obj/item/roguekey/servant
+	parent_type = /obj/item/rockhill
+	name = "servant key"
+	desc = "A key of the ducal servants. Hope it's not lost..."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
+	icon_state = "brownkey"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "servant"
 
 /obj/item/roguekey/sheriff
+	parent_type = /obj/item/rockhill
 	name = "Knight Captain's key"
 	desc = "This key belongs to the captain of the guard."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -16320,8 +16946,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "sheriff"
 
 /obj/item/roguekey/shop
+	parent_type = /obj/item/rockhill
 	name = "shop key"
 	desc = "This key opens and closes a shop door."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -16334,8 +16962,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "shop"
 
 /obj/item/roguekey/slaverdungeon
+	parent_type = /obj/item/rockhill
 	name = "Slaver's Dungeon Key"
 	desc = "A key to the Slaver Dungeon in Lowtown"
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -16348,8 +16978,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "DTManorCells"
 
 /obj/item/roguekey/slaverhouse
+	parent_type = /obj/item/rockhill
 	name = "Slaver's Office Key"
 	desc = "A key to the Slaver Office in Lowtown"
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -16362,8 +16994,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "SlaverHome"
 
 /obj/item/roguekey/slaverpillory
+	parent_type = /obj/item/rockhill
 	name = "Auction Pillory Key"
 	desc = "A key to the Slaver Pillories in Lowtown"
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -16376,8 +17010,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "SlaveAuction"
 
 /obj/item/roguekey/steward
+	parent_type = /obj/item/rockhill
 	name = "steward's key"
 	desc = "This key belongs to the court's greedy steward."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -16390,8 +17026,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "steward"
 
 /obj/item/roguekey/tailor
+	parent_type = /obj/item/rockhill
 	name = "tailor's key"
 	desc = "This key opens the tailor's shop. There is a thin thread wrapped around it."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -16404,8 +17042,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "tailor"
 
 /obj/item/roguekey/tavern
+	parent_type = /obj/item/rockhill
 	name = "tavern key"
 	desc = "This key should open and close any tavern door."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -16418,8 +17058,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "tavern"
 
 /obj/item/roguekey/tavernkeep
+	parent_type = /obj/item/rockhill
 	name = "innkeep's key"
 	desc = "This key opens and closes the innkeep's bedroom."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -16432,8 +17074,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "innkeep"
 
 /obj/item/roguekey/tower
+	parent_type = /obj/item/rockhill
 	name = "tower key"
 	desc = "This key should open anything within the tower."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -16446,8 +17090,26 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "tower"
+
+/obj/item/roguekey/townie
+	parent_type = /obj/item/rockhill
+	name = "town dwelling key"
+	desc = "The key of some townie's home. Hope it's not lost."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
+	icon_state = "brownkey"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "townie"
 
 /obj/item/roguekey/vault
+	parent_type = /obj/item/rockhill
 	name = "vault key"
 	desc = "This key opens the mighty vault."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -16460,8 +17122,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "vault"
 
 /obj/item/roguekey/walls
+	parent_type = /obj/item/rockhill
 	name = "walls key"
 	desc = "This is a rusty key."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -16474,8 +17138,10 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "walls"
 
 /obj/item/roguekey/warden
+	parent_type = /obj/item/rockhill
 	name = "watchtower key"
 	desc = "This key belongs to the wardens."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
@@ -16488,6 +17154,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	lockid = "warden"
 
 /obj/item/roguemachine/mastermail
 	name = "MASTER OF MAILS"
@@ -17389,6 +18056,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	picklvl = 1
 
 /obj/item/rogueweapon/huntingknife/bronze
 	name = "bronze knife"
@@ -17405,6 +18073,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	picklvl = 1
 
 /obj/item/rogueweapon/huntingknife/chefknife
 	name = "chef's knife"
@@ -17421,6 +18090,7 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	picklvl = 0.9
 
 /obj/item/rogueweapon/huntingknife/cleaver
 	name = "cleaver"
@@ -17435,6 +18105,7 @@
 	inhand_icon_state = "cleaver"
 	worn_icon_state = "cleaver"
 	slot_flags = ITEM_SLOT_POCKETS
+	picklvl = 0.8
 
 /obj/item/rogueweapon/huntingknife/combat
 	name = "seax"
@@ -17451,6 +18122,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	picklvl = 1.1
 
 /obj/item/rogueweapon/huntingknife/copper
 	name = "copper knife"
@@ -17467,6 +18139,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	picklvl = 0.5
 
 /obj/item/rogueweapon/huntingknife/idagger
 	name = "iron dagger"
@@ -17483,6 +18156,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	picklvl = 1.0
 
 /obj/item/rogueweapon/huntingknife/idagger/dtace
 	name = "'De Tace'"
@@ -17499,6 +18173,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	picklvl = 1.3
 
 /obj/item/rogueweapon/huntingknife/idagger/navaja
 	name = "navaja"
@@ -17515,6 +18190,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	picklvl = 1.0
 
 /obj/item/rogueweapon/huntingknife/idagger/silver
 	name = "silver dagger"
@@ -17531,6 +18207,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	picklvl = 1.1
 
 /obj/item/rogueweapon/huntingknife/idagger/silver/arcyne
 	name = "arcyne silver dagger"
@@ -17547,6 +18224,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	picklvl = 1.1
 
 /obj/item/rogueweapon/huntingknife/idagger/silver/elvish
 	name = "elvish dagger"
@@ -17563,6 +18241,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	picklvl = 1.2
 
 /obj/item/rogueweapon/huntingknife/idagger/silver/elvish/drow
 	name = "dark elvish dagger"
@@ -17579,6 +18258,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	picklvl = 1.2
 
 /obj/item/rogueweapon/huntingknife/idagger/silver/psydagger
 	name = "psydonic dagger"
@@ -17595,6 +18275,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	picklvl = 1.1
 
 /obj/item/rogueweapon/huntingknife/idagger/steel
 	name = "steel dagger"
@@ -17611,6 +18292,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	picklvl = 1.1
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/ancient
 	name = "ancient dagger"
@@ -17627,6 +18309,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	picklvl = 0.7
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/ancient/decrepit
 	name = "decrepit dagger"
@@ -17643,6 +18326,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	picklvl = 0.7
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/holysee
 	name = "eclipsum dagger"
@@ -17659,6 +18343,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	picklvl = 1.1
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/parrying
 	name = "steel parrying dagger"
@@ -17675,6 +18360,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	picklvl = 1.1
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/parrying/vaquero
 	name = "sail dagger"
@@ -17691,6 +18377,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	picklvl = 1.1
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/pestrasickle
 	name = "plaguebringer sickle"
@@ -17707,6 +18394,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	picklvl = 1.1
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/special
 	name = "steel dagger"
@@ -17723,6 +18411,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	picklvl = 1.1
 
 /obj/item/rogueweapon/huntingknife/idagger/warden_machete
 	name = "Wardens' seax"
@@ -17739,6 +18428,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	picklvl = 1.0
 
 /obj/item/rogueweapon/huntingknife/idagger/wood
 	name = "wooden dagger"
@@ -17755,6 +18445,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	picklvl = 0.7
 
 /obj/item/rogueweapon/huntingknife/scissors
 	name = "iron scissors"
@@ -17771,6 +18462,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	picklvl = 1
 
 /obj/item/rogueweapon/huntingknife/scissors/steel
 	name = "steel scissors"
@@ -17787,6 +18479,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	picklvl = 1
 
 /obj/item/rogueweapon/huntingknife/stoneknife
 	name = "stone knife"
@@ -17803,6 +18496,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	picklvl = 0.3
 
 /obj/item/rogueweapon/huntingknife/throwingknife
 	name = "iron tossblade"
@@ -17819,6 +18513,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	picklvl = 0.8
 
 /obj/item/rogueweapon/huntingknife/throwingknife/steel
 	name = "steel tossblade"
@@ -17835,6 +18530,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	picklvl = 0.9
 
 /obj/item/rogueweapon/huntingknife/throwingknife/steel/ancient
 	name = "ancient tossblade"
@@ -17851,6 +18547,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	picklvl = 0.6
 
 /obj/item/rogueweapon/huntingknife/throwingknife/steel/ancient/decrepit
 	name = "decrepit tossblade"
@@ -17867,6 +18564,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	picklvl = 0.6
 
 /obj/item/rogueweapon/katar
 	name = "katar"
@@ -20729,6 +21427,126 @@
 	inhand_icon_state = "stamp"
 	worn_icon_state = "stamp"
 
+/obj/item/seal/guildmaster
+	name = "guild master's seal"
+	desc = "A small seal for marking official documents. It has a small loop to attach it to a keyring. A small magical charm lets it tint the wax when heated."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/stamps.dmi'
+	icon_state = "stamp"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	inhand_icon_state = "stamp"
+	worn_icon_state = "stamp"
+
+/obj/item/seal/hand
+	name = "hand's seal"
+	desc = "A small seal for marking official documents. It has a small loop to attach it to a keyring. A small magical charm lets it tint the wax when heated."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/stamps.dmi'
+	icon_state = "stamp"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	inhand_icon_state = "stamp"
+	worn_icon_state = "stamp"
+
+/obj/item/seal/knight_captain
+	name = "knight captain's seal"
+	desc = "A small seal for marking official documents. It has a small loop to attach it to a keyring. A small magical charm lets it tint the wax when heated."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/stamps.dmi'
+	icon_state = "stamp"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	inhand_icon_state = "stamp"
+	worn_icon_state = "stamp"
+
+/obj/item/seal/marshal
+	name = "marshal's seal"
+	desc = "A small seal for marking official documents. It has a small loop to attach it to a keyring. A small magical charm lets it tint the wax when heated."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/stamps.dmi'
+	icon_state = "stamp"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	inhand_icon_state = "stamp"
+	worn_icon_state = "stamp"
+
+/obj/item/seal/master_warden
+	name = "master warden's seal"
+	desc = "A small seal for marking official documents. It has a small loop to attach it to a keyring. A small magical charm lets it tint the wax when heated."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/stamps.dmi'
+	icon_state = "stamp"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	inhand_icon_state = "stamp"
+	worn_icon_state = "stamp"
+
+/obj/item/seal/merchant
+	name = "merchant's seal"
+	desc = "A small seal for marking official documents. It has a small loop to attach it to a keyring. A small magical charm lets it tint the wax when heated."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/stamps.dmi'
+	icon_state = "stamp"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	inhand_icon_state = "stamp"
+	worn_icon_state = "stamp"
+
+/obj/item/seal/nightmaster
+	name = "night seal"
+	desc = "A small seal for marking official documents. It has a small loop to attach it to a keyring. A small magical charm lets it tint the wax when heated."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/stamps.dmi'
+	icon_state = "stamp"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	inhand_icon_state = "stamp"
+	worn_icon_state = "stamp"
+
+/obj/item/seal/prelate
+	name = "prelate's seal"
+	desc = "A small seal for marking official documents. It has a small loop to attach it to a keyring. A small magical charm lets it tint the wax when heated."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/stamps.dmi'
+	icon_state = "stamp"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	inhand_icon_state = "stamp"
+	worn_icon_state = "stamp"
+
+/obj/item/seal/steward
+	name = "steward's seal"
+	desc = "A small seal for marking official documents. It has a small loop to attach it to a keyring. A small magical charm lets it tint the wax when heated."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/stamps.dmi'
+	icon_state = "stamp"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	inhand_icon_state = "stamp"
+	worn_icon_state = "stamp"
+
+/obj/item/seal/watchcaptain
+	name = "watch captain's seal"
+	desc = "A small seal for marking official documents. It has a small loop to attach it to a keyring. A small magical charm lets it tint the wax when heated."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/stamps.dmi'
+	icon_state = "stamp"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	inhand_icon_state = "stamp"
+	worn_icon_state = "stamp"
+
 /obj/item/seeds/berryrogue
 	parent_type = /obj/item/rockhill
 	name = "seeds"
@@ -20814,6 +21632,18 @@
 	worn_icon_state = null
 
 /obj/item/seeds/strawberry
+	parent_type = /obj/item/rockhill
+	name = "seeds"
+	icon = 'modular_redtard/rockhill/icons/obj/hydroponics/seeds.dmi'
+	icon_state = "seed"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	inhand_icon_state = null
+	worn_icon_state = null
+
+/obj/item/seeds/swampweed
 	parent_type = /obj/item/rockhill
 	name = "seeds"
 	icon = 'modular_redtard/rockhill/icons/obj/hydroponics/seeds.dmi'
@@ -21448,20 +22278,6 @@
 	worn_icon_state = "rucksack"
 	slot_flags = ITEM_SLOT_POCKETS
 
-/obj/item/storage/keyring
-	name = "keyring"
-	desc = "Will help you organize your keys."
-	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
-	icon_state = "keyring0"
-	w_class = WEIGHT_CLASS_TINY
-	force = 0
-	throwforce = 0
-	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
-	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
-	inhand_icon_state = null
-	worn_icon_state = null
-	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
-
 /obj/item/storage/keyring/archivist
 	name = "keyring"
 	desc = "Will help you organize your keys."
@@ -21475,6 +22291,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/manor, /obj/item/roguekey/archive, /obj/item/roguekey/tower)
 
 /obj/item/storage/keyring/baronretainer
 	name = "baron-retainer keyring"
@@ -21489,6 +22306,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/warden, /obj/item/roguekey/walls, /obj/item/roguekey/slaverdungeon, /obj/item/roguekey/slaverpillory, /obj/item/roguekey/slaverhouse)
 
 /obj/item/storage/keyring/bathsi
 	name = "baths room I keyring"
@@ -21503,6 +22321,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/nightmaiden/rooms/i, /obj/item/roguekey/nightmaiden/rooms/i, /obj/item/roguekey/nightmaiden/rooms/i, /obj/item/roguekey/nightmaiden/rooms/i)
 
 /obj/item/storage/keyring/bathsii
 	name = "baths room II keyring"
@@ -21517,6 +22336,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/nightmaiden/rooms/ii, /obj/item/roguekey/nightmaiden/rooms/ii, /obj/item/roguekey/nightmaiden/rooms/ii, /obj/item/roguekey/nightmaiden/rooms/ii)
 
 /obj/item/storage/keyring/bathsiii
 	name = "baths room III keyring"
@@ -21531,6 +22351,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/nightmaiden/rooms/iii, /obj/item/roguekey/nightmaiden/rooms/iii, /obj/item/roguekey/nightmaiden/rooms/iii, /obj/item/roguekey/nightmaiden/rooms/iii)
 
 /obj/item/storage/keyring/bathsiv
 	name = "baths room IV keyring"
@@ -21545,6 +22366,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/nightmaiden/rooms/iv, /obj/item/roguekey/nightmaiden/rooms/iv, /obj/item/roguekey/nightmaiden/rooms/iv, /obj/item/roguekey/nightmaiden/rooms/iv)
 
 /obj/item/storage/keyring/bathspunish
 	name = "baths punishment room keyring"
@@ -21559,6 +22381,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/nightmaiden/rooms/punish, /obj/item/roguekey/nightmaiden/rooms/punish, /obj/item/roguekey/nightmaiden/rooms/punish, /obj/item/roguekey/nightmaiden/rooms/punish)
 
 /obj/item/storage/keyring/bathssteam
 	name = "baths steam room keyring"
@@ -21573,6 +22396,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/nightmaiden/rooms/steam, /obj/item/roguekey/nightmaiden/rooms/steam, /obj/item/roguekey/nightmaiden/rooms/steam, /obj/item/roguekey/nightmaiden/rooms/steam)
 
 /obj/item/storage/keyring/bathsv
 	name = "baths room V keyring"
@@ -21587,6 +22411,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/nightmaiden/rooms/v, /obj/item/roguekey/nightmaiden/rooms/v, /obj/item/roguekey/nightmaiden/rooms/v, /obj/item/roguekey/nightmaiden/rooms/v)
 
 /obj/item/storage/keyring/chaplain
 	name = "keyring"
@@ -21601,6 +22426,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/church, /obj/item/roguekey/graveyard, /obj/item/roguekey/manor)
 
 /obj/item/storage/keyring/churchie
 	name = "keyring"
@@ -21615,6 +22441,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/church, /obj/item/roguekey/graveyard, /obj/item/roguekey/keeper)
 
 /obj/item/storage/keyring/dungeoneer
 	name = "keyring"
@@ -21629,6 +22456,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/armory)
 
 /obj/item/storage/keyring/guard
 	name = "keyring"
@@ -21643,6 +22471,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/warden, /obj/item/roguekey/walls)
 
 /obj/item/storage/keyring/guardcastle
 	name = "keyring"
@@ -21657,6 +22486,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/armory)
 
 /obj/item/storage/keyring/guardsergeant
 	name = "keyring"
@@ -21671,6 +22501,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/warden, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/armory, /obj/item/roguekey/sergeant)
 
 /obj/item/storage/keyring/guildmaster
 	name = "keyring"
@@ -21685,6 +22516,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/crafterguild, /obj/item/roguekey/tailor, /obj/item/roguekey/craftermaster, /obj/item/seal/guildmaster)
 
 /obj/item/storage/keyring/hand
 	name = "keyring"
@@ -21699,6 +22531,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/hand, /obj/item/roguekey/steward, /obj/item/roguekey/tavern, /obj/item/roguekey/church, /obj/item/roguekey/walls, /obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/manor, /obj/item/roguekey/graveyard, /obj/item/roguekey/armory, /obj/item/roguekey/sergeant, /obj/item/roguekey/knight, /obj/item/roguekey/servant, /obj/item/seal/hand)
 
 /obj/item/storage/keyring/heir
 	name = "keyring"
@@ -21713,6 +22546,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/manor, /obj/item/roguekey/heir, /obj/item/roguekey/garrison, /obj/item/roguekey/servant)
 
 /obj/item/storage/keyring/innkeep
 	name = "keyring"
@@ -21727,6 +22561,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/tavern, /obj/item/roguekey/tavernkeep, /obj/item/roguekey/roomhunt, /obj/item/roguekey/roomix, /obj/item/roguekey/roomviii, /obj/item/roguekey/roomvii, /obj/item/roguekey/roomvi, /obj/item/roguekey/roomv, /obj/item/roguekey/roomiv, /obj/item/roguekey/roomiii, /obj/item/roguekey/roomii, /obj/item/roguekey/roomi, /obj/item/roguekey/fancyroomi, /obj/item/roguekey/fancyroomii, /obj/item/roguekey/fancyroomiii, /obj/item/roguekey/fancyroomiv, /obj/item/roguekey/fancyroomv)
 
 /obj/item/storage/keyring/kcaptain
 	name = "keyring"
@@ -21741,6 +22576,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/sheriff, /obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/armory, /obj/item/roguekey/sergeant, /obj/item/roguekey/knight, /obj/item/seal/knight_captain)
 
 /obj/item/storage/keyring/lord
 	name = "keyring"
@@ -21755,6 +22591,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/hand, /obj/item/roguekey/steward, /obj/item/roguekey/tavern, /obj/item/roguekey/church, /obj/item/roguekey/walls, /obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/manor, /obj/item/roguekey/graveyard, /obj/item/roguekey/royal, /obj/item/roguekey/armory, /obj/item/roguekey/sergeant, /obj/item/roguekey/knight, /obj/item/roguekey/servant, /obj/item/seal/crown)
 
 /obj/item/storage/keyring/mage
 	name = "keyring"
@@ -21769,6 +22606,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/manor, /obj/item/roguekey/tower, /obj/item/roguekey/mage)
 
 /obj/item/storage/keyring/mageapprentice
 	name = "keyring"
@@ -21783,6 +22621,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/manor, /obj/item/roguekey/tower)
 
 /obj/item/storage/keyring/manor/counsilroom/i
 	name = "Counsillor's Room I Keyring"
@@ -21797,6 +22636,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/manor/counsilroom/i, /obj/item/roguekey/manor/counsilroom/i)
 
 /obj/item/storage/keyring/manor/counsilroom/ii
 	name = "Counsillor's Room II Keyring"
@@ -21811,6 +22651,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/manor/counsilroom/ii, /obj/item/roguekey/manor/counsilroom/ii)
 
 /obj/item/storage/keyring/manor/counsilroom/iii
 	name = "Counsillor's Room III Keyring"
@@ -21825,6 +22666,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/manor/counsilroom/iii, /obj/item/roguekey/manor/counsilroom/iii)
 
 /obj/item/storage/keyring/merchant
 	name = "keyring"
@@ -21839,6 +22681,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/shop, /obj/item/roguekey/merchant, /obj/item/seal/merchant)
 
 /obj/item/storage/keyring/nightman
 	name = "keyring"
@@ -21853,6 +22696,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/nightman, /obj/item/roguekey/nightmaiden, /obj/item/seal/nightmaster)
 
 /obj/item/storage/keyring/physician
 	name = "keyring"
@@ -21867,6 +22711,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/manor, /obj/item/roguekey/garrison, /obj/item/roguekey/physician, /obj/item/roguekey/courtphysician, /obj/item/roguekey/keeper)
 
 /obj/item/storage/keyring/priest
 	name = "keyring"
@@ -21881,6 +22726,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/priest, /obj/item/roguekey/church, /obj/item/roguekey/graveyard, /obj/item/seal/prelate)
 
 /obj/item/storage/keyring/puritan
 	name = "keyring"
@@ -21895,6 +22741,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/puritan, /obj/item/roguekey/inquisition)
 
 /obj/item/storage/keyring/rockhillslaver
 	name = "keyring"
@@ -21909,6 +22756,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/slaverdungeon, /obj/item/roguekey/slaverpillory, /obj/item/roguekey/slaverhouse)
 
 /obj/item/storage/keyring/rockhillslaves
 	name = "keyring"
@@ -21923,6 +22771,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/slaverhouse)
 
 /obj/item/storage/keyring/servant
 	name = "keyring"
@@ -21937,6 +22786,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/manor, /obj/item/roguekey/garrison, /obj/item/roguekey/servant)
 
 /obj/item/storage/keyring/sheriff
 	name = "keyring"
@@ -21951,6 +22801,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/sheriff, /obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/armory, /obj/item/roguekey/sergeant, /obj/item/roguekey/knight, /obj/item/seal/marshal)
 
 /obj/item/storage/keyring/soilson
 	name = "keyring"
@@ -21965,6 +22816,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/farm, /obj/item/roguekey/apartments/stable1, /obj/item/roguekey/apartments/stable2)
 
 /obj/item/storage/keyring/squire
 	name = "keyring"
@@ -21979,6 +22831,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/armory)
 
 /obj/item/storage/keyring/steward
 	name = "keyring"
@@ -21993,6 +22846,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/steward, /obj/item/roguekey/garrison, /obj/item/roguekey/manor, /obj/item/roguekey/servant, /obj/item/seal/steward)
 
 /obj/item/storage/keyring/tailor
 	name = "keyring"
@@ -22007,6 +22861,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/crafterguild, /obj/item/roguekey/tailor)
 
 /obj/item/storage/keyring/wardenmaster
 	name = "keyring"
@@ -22021,6 +22876,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/sheriff, /obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/armory, /obj/item/roguekey/sergeant, /obj/item/roguekey/warden, /obj/item/seal/master_warden)
 
 /obj/item/storage/keyring/watchcaptain
 	name = "keyring"
@@ -22035,6 +22891,7 @@
 	inhand_icon_state = null
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rockhill_keys = list(/obj/item/roguekey/sheriff, /obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/armory, /obj/item/roguekey/sergeant, /obj/item/roguekey/knight, /obj/item/seal/watchcaptain)
 
 /obj/item/storage/magebag/associate
 	name = "scholar's pouch"

@@ -17,36 +17,187 @@
 			"drop": true
 		},
 		{
+			"prefix": "/obj/effect/landmark/mapGenerator",
+			"rebase": "/obj/effect/landmark/mapGenerator"
+		},
+		{
 			"prefix": "/obj/structure/stairs",
-			"to": "/obj/structure/stairs"
+			"rebase": "/obj/structure/rockhill/stairs",
+			"port": {
+				"file": "stairs.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state"
+				]
+			}
 		},
 		{
 			"prefix": "/obj/structure/mineral_door",
-			"to": "/obj/structure/mineral_door/wood"
+			"rebase": "/obj/structure/mineral_door/rockhill",
+			"port": {
+				"file": "doors.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"base_state",
+					"over_state",
+					"opacity",
+					"density",
+					"windowed",
+					"keylock",
+					"locked",
+					"lockid",
+					"lockdifficulty",
+					"lock_strength",
+					"masterkey",
+					"swing_closed",
+					"grant_resident_key",
+					"resident_key_amount",
+					"resident_key_type",
+					"resident_role",
+					"max_integrity",
+					"kickthresh",
+					"repairable",
+					"repair_cost_first",
+					"repair_cost_second",
+					"resident_advclass"
+				],
+				"paths": [
+					"resident_key_type",
+					"resident_role",
+					"repair_cost_first",
+					"repair_cost_second"
+				],
+				"path_strings": [
+					"resident_advclass"
+				]
+			}
 		},
 		{
 			"prefix": "/obj/structure/table",
-			"to": "/obj/structure/table/wood"
+			"rebase": "/obj/structure/table/wood/rockhill",
+			"port": {
+				"file": "furniture.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"density",
+					"pixel_x",
+					"pixel_y",
+					"layer",
+					"dir",
+					"alpha",
+					"color"
+				],
+				"runtime_look": true
+			}
 		},
 		{
 			"prefix": "/obj/structure/chair",
-			"to": "/obj/structure/chair/wood"
-		},
-		{
-			"prefix": "/obj/structure/chair/stool",
-			"to": "/obj/structure/chair/stool"
+			"rebase": "/obj/structure/chair/wood/rockhill",
+			"port": {
+				"file": "furniture.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"density",
+					"pixel_x",
+					"pixel_y",
+					"layer",
+					"dir",
+					"alpha",
+					"color",
+					"item_chair"
+				],
+				"runtime_look": true,
+				"ported_paths": [
+					"item_chair"
+				]
+			}
 		},
 		{
 			"prefix": "/obj/structure/bed",
-			"to": "/obj/structure/bed"
+			"rebase": "/obj/structure/bed/rockhill",
+			"port": {
+				"file": "furniture.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"density",
+					"pixel_x",
+					"pixel_y",
+					"layer",
+					"dir",
+					"alpha",
+					"color"
+				],
+				"runtime_look": true
+			}
 		},
 		{
 			"prefix": "/obj/structure/rack",
-			"to": "/obj/structure/rack"
+			"rebase": "/obj/structure/rack/rockhill",
+			"port": {
+				"file": "furniture.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"density",
+					"pixel_x",
+					"pixel_y",
+					"layer",
+					"dir",
+					"alpha",
+					"color"
+				],
+				"runtime_look": true
+			}
 		},
 		{
 			"prefix": "/obj/structure/closet",
-			"to": "/obj/structure/closet/crate/wooden"
+			"rebase": "/obj/structure/closet/crate/wooden/rockhill",
+			"port": {
+				"file": "furniture.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"density",
+					"pixel_x",
+					"pixel_y",
+					"layer",
+					"dir",
+					"alpha",
+					"color",
+					"base_icon_state",
+					"keylock",
+					"locked",
+					"lockid",
+					"lockdifficulty",
+					"lock_strength",
+					"open_sound",
+					"close_sound"
+				],
+				"runtime_look": true,
+				"sounds": [
+					"open_sound",
+					"close_sound"
+				],
+				"fill": true
+			}
 		},
 		{
 			"prefix": "/obj/effect/landmark/latejoin",
@@ -114,9 +265,11 @@
 					"name",
 					"desc",
 					"icon",
-					"icon_state"
+					"icon_state",
+					"dir"
 				],
-				"smoothing": true
+				"smoothing": true,
+				"runtime_look": true
 			},
 			{
 				"file": "turfs_water.dm",
@@ -129,14 +282,21 @@
 					"icon",
 					"icon_state",
 					"rockhill_water_level",
-					"rockhill_water_color"
+					"rockhill_water_color",
+					"dir",
+					"rockhill_flow"
 				],
 				"graft": "/turf/open/water/rockhill",
 				"rename": {
 					"rockhill_water_level": "water_level",
-					"rockhill_water_color": "water_color"
+					"rockhill_water_color": "water_color",
+					"rockhill_flow": "swimdir"
 				},
-				"smoothing": true
+				"smoothing": true,
+				"runtime_look": true,
+				"true_only": [
+					"rockhill_flow"
+				]
 			},
 			{
 				"file": "turfs_closed.dm",
@@ -149,9 +309,11 @@
 					"desc",
 					"icon",
 					"icon_state",
-					"opacity"
+					"opacity",
+					"dir"
 				],
-				"smoothing": true
+				"smoothing": true,
+				"runtime_look": true
 			},
 			{
 				"file": "structures.dm",
@@ -169,8 +331,12 @@
 					"opacity",
 					"pixel_x",
 					"pixel_y",
-					"layer"
-				]
+					"layer",
+					"dir",
+					"alpha",
+					"color"
+				],
+				"runtime_look": true
 			},
 			{
 				"file": "windows.dm",
@@ -187,8 +353,12 @@
 					"opacity",
 					"pixel_x",
 					"pixel_y",
-					"layer"
-				]
+					"layer",
+					"dir",
+					"alpha",
+					"color"
+				],
+				"runtime_look": true
 			},
 			{
 				"file": "lights.dm",
@@ -209,13 +379,17 @@
 					"layer",
 					"light_range",
 					"light_power",
-					"light_color"
+					"light_color",
+					"dir",
+					"alpha",
+					"color"
 				],
 				"rename": {
 					"light_range": "brightness",
 					"light_power": "bulb_power",
 					"light_color": "bulb_colour"
-				}
+				},
+				"runtime_look": true
 			},
 			{
 				"file": "decals.dm",
@@ -229,7 +403,10 @@
 					"icon_state",
 					"pixel_x",
 					"pixel_y",
-					"layer"
+					"layer",
+					"dir",
+					"alpha",
+					"color"
 				]
 			},
 			{
@@ -241,7 +418,8 @@
 				"natural": [
 					"/obj/item/clothing",
 					"/obj/item/reagent_containers",
-					"/obj/item/storage"
+					"/obj/item/storage",
+					"/obj/item/chair"
 				],
 				"vars": [
 					"name",
@@ -262,14 +440,19 @@
 					"armor_type",
 					"body_parts_covered",
 					"rogue_onhip",
-					"rogue_onback"
+					"rogue_onback",
+					"lockid",
+					"picklvl",
+					"rockhill_keys",
+					"origin_type"
 				],
 				"rename": {
 					"inhand_icon_state": "item_state",
 					"worn_icon": "mob_overlay_icon",
 					"worn_icon_state": "item_state",
 					"rogue_onhip": "experimental_onhip",
-					"rogue_onback": "experimental_onback"
+					"rogue_onback": "experimental_onback",
+					"rockhill_keys": "keys"
 				},
 				"true_only": [
 					"rogue_onhip",
@@ -292,7 +475,17 @@
 					"worn_icon_hipr": {
 						"ITEM_SLOT_HIP": "icons/roguetown/clothing/onmob/belt_r.dmi"
 					}
-				}
+				},
+				"skip_default": [
+					"lockid",
+					"picklvl"
+				],
+				"path_lists": [
+					"rockhill_keys"
+				],
+				"paths": [
+					"origin_type"
+				]
 			},
 			{
 				"file": "humans.dm",
@@ -362,7 +555,14 @@
 		"armor": {
 			"scale": 0.7,
 			"cap": 70
-		}
+		},
+		"linked_types": [
+			"keys",
+			"resident_key_type",
+			"repair_cost_first",
+			"repair_cost_second",
+			"item_chair"
+		]
 	},
 	"jobs": {
 		"departments": {
@@ -415,5 +615,28 @@
 		"map": "_maps/map_files/rockhill/rockhill_new.dmm",
 		"map_json": "_maps/map_jsons/rockhill.json",
 		"title_dir": "config/title_screens/images"
+	},
+	"map_vars": {
+		"/obj/structure/mineral_door": [
+			"lockid",
+			"locked",
+			"name",
+			"keylock",
+			"masterkey",
+			"lockdifficulty",
+			"swing_closed",
+			"icon_state",
+			"door_opened"
+		],
+		"/obj/item/roguekey": [
+			"lockid"
+		],
+		"/obj/structure/closet": [
+			"lockid",
+			"locked",
+			"keylock",
+			"lockdifficulty",
+			"name"
+		]
 	}
 }

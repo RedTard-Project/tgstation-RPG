@@ -22,7 +22,7 @@
 #define ROGUE_SCANNIES_LAYER (CURSE_LAYER + 0.2)
 
 #define rogueui_backhudl "WEST-5:0,SOUTH:0"
-#define rogueui_panel "WEST-5,SOUTH+7"
+#define rogueui_panel_toggle "WEST-5,NORTH"
 
 #define rogueui_inventory_toggle "WEST-5,SOUTH"
 #define rogueui_mask "WEST-5,SOUTH+5"
@@ -79,7 +79,8 @@
 #define rogueui_ring_position(index) (index == 1 ? rogueui_ring1 : (index == 2 ? rogueui_ring2 : (index == 3 ? rogueui_ring3 : rogueui_ring4)))
 #define rogueui_hand_position(index) (index == 1 ? "WEST-3:-16,SOUTH+7" : (index == 2 ? "WEST-2:-16,SOUTH+7" : null))
 
-#define HUD_ROGUE_PANEL "rogue_panel"
+#define HUD_ROGUE_PANEL_TOGGLE "rogue_panel_toggle"
+#define HUD_GROUP_ROGUE_PANEL (SCREEN_GROUP_AMT + 1)
 #define HUD_ROGUE_GRAIN "rogue_grain"
 #define HUD_ROGUE_SCANNIES "rogue_scannies"
 #define HUD_ROGUE_READ "rogue_read"

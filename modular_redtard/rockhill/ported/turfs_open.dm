@@ -6,6 +6,7 @@
 	desc = "Warm sand that, sadly, have been mixed with dirt."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "grimshart"
+	rockhill_random_dir = TRUE
 	smoothing_flags = SMOOTH_BITMASK_CARDINALS
 
 /turf/open/floor/rogue/blocks
@@ -13,48 +14,57 @@
 	desc = "These rough stone slabs have been arranged in a neat grid for a rustic yet tidy charm."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "blocks"
+	rockhill_random_dir = TRUE
 
 /turf/open/floor/rogue/blocks/flipped
 	name = "stone flooring"
 	desc = "These rough stone slabs have been arranged in a neat grid for a rustic yet tidy charm."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "blocks"
+	dir = 8
+	rockhill_random_dir = TRUE
 
 /turf/open/floor/rogue/blocks/green
 	name = "stone flooring"
 	desc = "These rough stone slabs have been arranged in a neat grid for a rustic yet tidy charm."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "greenblocks"
+	rockhill_random_dir = TRUE
 
 /turf/open/floor/rogue/blocks/newstone/alt
 	name = "stone flooring"
 	desc = "These rough stone slabs have been arranged in a neat grid for a rustic yet tidy charm."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "bluestone"
+	rockhill_random_dir = TRUE
 
 /turf/open/floor/rogue/blocks/paving
 	name = "stone flooring"
 	desc = "These rough stone slabs have been arranged in a neat grid for a rustic yet tidy charm."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "paving"
+	rockhill_random_dir = TRUE
 
 /turf/open/floor/rogue/blocks/platform
 	name = "platform"
 	desc = "A destructible platform."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "blocks"
+	rockhill_random_dir = TRUE
 
 /turf/open/floor/rogue/blocks/stonered
 	name = "large red tiles"
 	desc = "Large red earthen tiles carefully set in a pleasantly symmetrical pattern."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "stoneredlarge"
+	rockhill_random_dir = TRUE
 
 /turf/open/floor/rogue/blocks/stonered/tiny
 	name = "square red tiles"
 	desc = "Small square earthen tiles carefully arranged in a somewhat plain pattern."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "stoneredtiny"
+	rockhill_random_dir = TRUE
 
 /turf/open/floor/rogue/carpet
 	name = "floor"
@@ -73,6 +83,7 @@
 	desc = "Plush fabric softens your step. Did you remember to wipe your shoes?"
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "carpet_c"
+	rockhill_random_dir = TRUE
 
 /turf/open/floor/rogue/carpet/lord/left
 	name = "floor"
@@ -91,6 +102,7 @@
 	desc = "Glazed tiling that has withstood the decades with barely a scratch despite the steady accumulation of dirt and grime."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "church"
+	rockhill_random_dir = TRUE
 	smoothing_flags = SMOOTH_BITMASK_CARDINALS
 
 /turf/open/floor/rogue/churchbrick
@@ -98,6 +110,7 @@
 	desc = ""
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "church_brick"
+	rockhill_random_dir = TRUE
 	smoothing_flags = SMOOTH_BITMASK_CARDINALS
 
 /turf/open/floor/rogue/churchmarble
@@ -105,6 +118,7 @@
 	desc = "Polished marble tiling clacks softly with every footstep. A prized material for vaunted halls."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "church_marble"
+	rockhill_random_dir = TRUE
 	smoothing_flags = SMOOTH_BITMASK_CARDINALS
 
 /turf/open/floor/rogue/churchrough
@@ -112,6 +126,7 @@
 	desc = ""
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "church_rough"
+	rockhill_random_dir = TRUE
 	smoothing_flags = SMOOTH_BITMASK_CARDINALS
 
 /turf/open/floor/rogue/cobble
@@ -119,6 +134,9 @@
 	desc = "Stone bricks carefully inlaid upon the ground for a more refined and resilient path."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "cobblestone1"
+	rockhill_variant = "cobblestone#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 3
 	smoothing_flags = SMOOTH_BITMASK_CARDINALS
 
 /turf/open/floor/rogue/cobble/mossy
@@ -126,6 +144,9 @@
 	desc = "Dirt and moss have crept between the gaps of this stone-brick flooring."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "mossystone1"
+	rockhill_variant = "mossystone#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 3
 	smoothing_flags = SMOOTH_BITMASK_CARDINALS
 
 /turf/open/floor/rogue/cobblerock
@@ -140,12 +161,20 @@
 	desc = "Solid stone slabs have been carefully carved and laid to rest with nary a hair's breadth between them."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "concretefloor1"
+	rockhill_variant = "concretefloor#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 2
+	rockhill_random_dir = TRUE
 
 /turf/open/floor/rogue/concrete/bronze
 	name = "slab flooring"
 	desc = "Solid stone slabs have been carefully carved and laid to rest with nary a hair's breadth between them."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "concretefloor1"
+	rockhill_variant = "concretefloor#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 2
+	rockhill_random_dir = TRUE
 
 /turf/open/floor/rogue/deserttile
 	name = "floor"
@@ -179,6 +208,7 @@
 	desc = "Grass, sodden with mud and bogwater."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "grass"
+	rockhill_random_dir = TRUE
 	smoothing_flags = SMOOTH_BITMASK_CARDINALS
 
 /turf/open/floor/rogue/grass/nospawn
@@ -186,6 +216,7 @@
 	desc = "Grass, sodden with mud and bogwater."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "grass"
+	rockhill_random_dir = TRUE
 	smoothing_flags = SMOOTH_BITMASK_CARDINALS
 
 /turf/open/floor/rogue/grasscold
@@ -193,6 +224,7 @@
 	desc = "Grass, frigid and touched by winter."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "grass_cold"
+	rockhill_random_dir = TRUE
 	smoothing_flags = SMOOTH_BITMASK_CARDINALS
 
 /turf/open/floor/rogue/grassgrey
@@ -200,6 +232,7 @@
 	desc = "Pale, like a bloated corpse."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "grass_grey"
+	rockhill_random_dir = TRUE
 	smoothing_flags = SMOOTH_BITMASK_CARDINALS
 
 /turf/open/floor/rogue/grasspurple
@@ -207,6 +240,7 @@
 	desc = "Thin fungal strands rising from the ground. Spongey to walk on."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "grass_purple"
+	rockhill_random_dir = TRUE
 	smoothing_flags = SMOOTH_BITMASK_CARDINALS
 
 /turf/open/floor/rogue/grassred
@@ -214,6 +248,7 @@
 	desc = "Grass, ripe with Dendor's blood."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "grass_red"
+	rockhill_random_dir = TRUE
 	smoothing_flags = SMOOTH_BITMASK_CARDINALS
 
 /turf/open/floor/rogue/grassyel
@@ -221,6 +256,7 @@
 	desc = "Grass, blessed by Astrata's light."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "grass_yel"
+	rockhill_random_dir = TRUE
 	smoothing_flags = SMOOTH_BITMASK_CARDINALS
 
 /turf/open/floor/rogue/greenstone
@@ -264,6 +300,7 @@
 	desc = "These stone bricks have been carefully arranged in a rather pleasing pattern."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "herringbone"
+	rockhill_random_dir = TRUE
 	smoothing_flags = SMOOTH_BITMASK_CARDINALS
 
 /turf/open/floor/rogue/hexstone
@@ -271,6 +308,7 @@
 	desc = ""
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "hexstone"
+	rockhill_random_dir = TRUE
 	smoothing_flags = SMOOTH_BITMASK_CARDINALS
 
 /turf/open/floor/rogue/metal
@@ -278,12 +316,14 @@
 	desc = "Covered in the tell-tale nicks of thousands of hammer-blows, this metal flooring clangs beneath your feet with every step."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "plating1"
+	rockhill_random_dir = TRUE
 
 /turf/open/floor/rogue/metal/barograte
 	name = "floor"
 	desc = "Covered in the tell-tale nicks of thousands of hammer-blows, this metal flooring clangs beneath your feet with every step."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "barograte"
+	rockhill_random_dir = TRUE
 
 /turf/open/floor/rogue/naturalstone
 	name = "rough stone ground"
@@ -296,109 +336,124 @@
 	name = "roof"
 	desc = "Overlapping wooden shingles protect the building and its inhabitants from the rain."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
-	icon_state = "roof-arw"
+	icon_state = "roof"
 
 /turf/open/floor/rogue/rooftop/green
 	name = "roof"
 	desc = "Overlapping wooden shingles protect the building and its inhabitants from the rain."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
-	icon_state = "roofg-arw"
+	icon_state = "roofg"
 
 /turf/open/floor/rogue/rooftop/green/corner1
 	name = "roof"
 	desc = "Overlapping wooden shingles protect the building and its inhabitants from the rain."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
-	icon_state = "roofgc1-arw"
+	icon_state = "roofgc1"
 
 /turf/open/floor/rogue/rooftop/green/corner1/direight
 	name = "roof"
 	desc = "Overlapping wooden shingles protect the building and its inhabitants from the rain."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
-	icon_state = "roofgc1-arw"
+	dir = 8
+	icon_state = "roofgc1"
 
 /turf/open/floor/rogue/rooftop/green/corner1/dirfive
 	name = "roof"
 	desc = "Overlapping wooden shingles protect the building and its inhabitants from the rain."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
-	icon_state = "roofgc1-arw"
+	dir = 5
+	icon_state = "roofgc1"
 
 /turf/open/floor/rogue/rooftop/green/corner1/dirfour
 	name = "roof"
 	desc = "Overlapping wooden shingles protect the building and its inhabitants from the rain."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
-	icon_state = "roofgc1-arw"
+	dir = 4
+	icon_state = "roofgc1"
 
 /turf/open/floor/rogue/rooftop/green/corner1/dirone
 	name = "roof"
 	desc = "Overlapping wooden shingles protect the building and its inhabitants from the rain."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
-	icon_state = "roofgc1-arw"
+	dir = 1
+	icon_state = "roofgc1"
 
 /turf/open/floor/rogue/rooftop/green/corner1/dirten
 	name = "roof"
 	desc = "Overlapping wooden shingles protect the building and its inhabitants from the rain."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
-	icon_state = "roofgc1-arw"
+	dir = 10
+	icon_state = "roofgc1"
 
 /turf/open/floor/rogue/rooftop/green/east
 	name = "roof"
 	desc = "Overlapping wooden shingles protect the building and its inhabitants from the rain."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
-	icon_state = "roofg-arw"
+	dir = 4
+	icon_state = "roofg"
 
 /turf/open/floor/rogue/rooftop/green/north
 	name = "roof"
 	desc = "Overlapping wooden shingles protect the building and its inhabitants from the rain."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
-	icon_state = "roofg-arw"
+	dir = 1
+	icon_state = "roofg"
 
 /turf/open/floor/rogue/rooftop/green/west
 	name = "roof"
 	desc = "Overlapping wooden shingles protect the building and its inhabitants from the rain."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
-	icon_state = "roofg-arw"
+	dir = 8
+	icon_state = "roofg"
 
 /turf/open/floor/rogue/ruinedwood
 	name = "wooden floorboards"
 	desc = "Interlocking wooden floorboards scratched with thousands of steps."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "wooden_floor"
+	rockhill_random_dir = TRUE
 
 /turf/open/floor/rogue/ruinedwood/chevron
 	name = "floorboards"
 	desc = "Interlocking wooden floorboards."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "weird2"
+	rockhill_random_dir = TRUE
 
 /turf/open/floor/rogue/ruinedwood/herringbone
 	name = "wooden herringbone flooring"
 	desc = "Thin planks of wood carefully arranged in a rather pleasing pattern."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "herringbonewood"
+	rockhill_random_dir = TRUE
 
 /turf/open/floor/rogue/ruinedwood/herringbone_clear
 	name = "wooden herringbone flooring"
 	desc = "Thin planks of wood carefully arranged in a rather pleasing pattern."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "herringbonewood2"
+	rockhill_random_dir = TRUE
 
 /turf/open/floor/rogue/ruinedwood/platform
 	name = "platform"
 	desc = "A destructible platform."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "wooden_floor"
+	rockhill_random_dir = TRUE
 
 /turf/open/floor/rogue/ruinedwood/spiral
 	name = "wooden floorboards"
 	desc = "Interlocking wooden floorboards."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "weird1"
+	rockhill_random_dir = TRUE
 
 /turf/open/floor/rogue/ruinedwood/turned
 	name = "wooden floorboards"
 	desc = "Interlocking wooden floorboards scratched with thousands of steps."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "wooden_floort"
+	rockhill_random_dir = TRUE
 
 /turf/open/floor/rogue/snowpatchy
 	name = "patchy snow"
@@ -412,6 +467,7 @@
 	desc = "A rugged blanket of snow."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "snowrough"
+	rockhill_random_dir = TRUE
 	smoothing_flags = SMOOTH_BITMASK_CARDINALS
 
 /turf/open/floor/rogue/tile
@@ -509,12 +565,14 @@
 	desc = "Bundles of twigs have been laid flat against the ground. They creak and crackle with the slightest weight."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "twig"
+	rockhill_random_dir = TRUE
 
 /turf/open/floor/rogue/twig/platform
 	name = "twig platform"
 	desc = "A destructible platform."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "twig"
+	rockhill_random_dir = TRUE
 
 /turf/open/floor/rogue/underworld/road
 	name = "ash"
@@ -533,6 +591,7 @@
 	desc = "Once, it burned anything it touched with the hatred of hell itself. Now a hardened black crust crunches beneath your feet."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "lavafloor"
+	rockhill_random_dir = TRUE
 
 /turf/open/floor/rogue/wood
 	name = "floor"

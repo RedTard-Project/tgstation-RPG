@@ -4,6 +4,7 @@
 	exp_granted_type = EXP_TYPE_CREW
 	map_era = MAP_ERA_MEDIEVAL
 	job_flags = ROCKHILL_JOB_FLAGS
+	var/rockhill_advclass
 
 /datum/job/roguetown/config_check()
 	if(type == abstract_type)

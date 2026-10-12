@@ -25,16 +25,10 @@
 /obj/structure/flora/ausbushes
 	parent_type = /obj/structure/rockhill
 
-/obj/structure/flora/tinymushrooms
-	parent_type = /obj/structure/rockhill
-
 /obj/structure/fluff/iconsign
 	parent_type = /obj/structure/rockhill
 
 /obj/structure/fluff/pillow
-	parent_type = /obj/structure/rockhill
-
-/obj/structure/fluff/railing
 	parent_type = /obj/structure/rockhill
 
 /obj/structure/fluff/walldeco
@@ -181,6 +175,7 @@
 	icon_state = "floorgrille"
 	density = FALSE
 	layer = TABLE_LAYER
+	rockhill_random_dir = TRUE
 
 /obj/structure/bars/grille/rusty
 	name = "rusty grille"
@@ -189,6 +184,8 @@
 	icon_state = "floorgrille"
 	density = FALSE
 	layer = TABLE_LAYER
+	color = "#d9c8c1"
+	rockhill_random_dir = TRUE
 
 /obj/structure/bars/nopassthrow
 	name = "bars"
@@ -255,6 +252,7 @@
 	icon_state = "bars"
 	density = TRUE
 	layer = ABOVE_MOB_LAYER
+	color = "#ffcd9f"
 
 /obj/structure/bars/shop
 	name = "bars"
@@ -451,6 +449,8 @@
 	density = FALSE
 	opacity = 0
 	layer = ABOVE_MOB_LAYER
+	alpha = 255
+	color = "#414143"
 
 /obj/structure/curtain/blue
 	parent_type = /obj/structure/rockhill
@@ -461,6 +461,7 @@
 	density = FALSE
 	opacity = 0
 	layer = ABOVE_MOB_LAYER
+	alpha = 255
 
 /obj/structure/curtain/brown
 	parent_type = /obj/structure/rockhill
@@ -471,6 +472,7 @@
 	density = FALSE
 	opacity = 0
 	layer = ABOVE_MOB_LAYER
+	alpha = 255
 
 /obj/structure/curtain/directional/black
 	name = "curtain"
@@ -480,6 +482,8 @@
 	density = FALSE
 	opacity = 0
 	layer = ABOVE_MOB_LAYER
+	alpha = 255
+	color = "#414143"
 
 /obj/structure/curtain/directional/blue
 	name = "curtain"
@@ -489,6 +493,7 @@
 	density = FALSE
 	opacity = 0
 	layer = ABOVE_MOB_LAYER
+	alpha = 255
 
 /obj/structure/curtain/directional/brown
 	name = "curtain"
@@ -498,6 +503,7 @@
 	density = FALSE
 	opacity = 0
 	layer = ABOVE_MOB_LAYER
+	alpha = 255
 
 /obj/structure/curtain/directional/crafted
 	name = "curtain"
@@ -507,6 +513,8 @@
 	density = FALSE
 	opacity = 0
 	layer = ABOVE_MOB_LAYER
+	alpha = 255
+	color = "#ffffff"
 
 /obj/structure/curtain/directional/drab
 	name = "curtain"
@@ -516,6 +524,7 @@
 	density = FALSE
 	opacity = 0
 	layer = ABOVE_MOB_LAYER
+	alpha = 255
 
 /obj/structure/curtain/directional/magenta
 	name = "curtain"
@@ -525,6 +534,8 @@
 	density = FALSE
 	opacity = 0
 	layer = ABOVE_MOB_LAYER
+	alpha = 255
+	color = "#962e5c"
 
 /obj/structure/curtain/directional/orange
 	name = "curtain"
@@ -534,6 +545,8 @@
 	density = FALSE
 	opacity = 0
 	layer = ABOVE_MOB_LAYER
+	alpha = 255
+	color = "#a3622c"
 
 /obj/structure/curtain/directional/red
 	name = "curtain"
@@ -543,6 +556,8 @@
 	density = FALSE
 	opacity = 0
 	layer = ABOVE_MOB_LAYER
+	alpha = 255
+	color = "#a32121"
 
 /obj/structure/curtain/directional/yellow
 	name = "curtain"
@@ -552,6 +567,8 @@
 	density = FALSE
 	opacity = 0
 	layer = ABOVE_MOB_LAYER
+	alpha = 255
+	color = "#a18727"
 
 /obj/structure/curtain/drab
 	parent_type = /obj/structure/rockhill
@@ -562,6 +579,7 @@
 	density = FALSE
 	opacity = 0
 	layer = ABOVE_MOB_LAYER
+	alpha = 255
 
 /obj/structure/curtain/green
 	parent_type = /obj/structure/rockhill
@@ -572,6 +590,7 @@
 	density = FALSE
 	opacity = 0
 	layer = ABOVE_MOB_LAYER
+	alpha = 255
 
 /obj/structure/curtain/magenta
 	parent_type = /obj/structure/rockhill
@@ -582,6 +601,8 @@
 	density = FALSE
 	opacity = 0
 	layer = ABOVE_MOB_LAYER
+	alpha = 255
+	color = "#962e5c"
 
 /obj/structure/curtain/orange
 	parent_type = /obj/structure/rockhill
@@ -592,6 +613,8 @@
 	density = FALSE
 	opacity = 0
 	layer = ABOVE_MOB_LAYER
+	alpha = 255
+	color = "#a3622c"
 
 /obj/structure/curtain/purple
 	parent_type = /obj/structure/rockhill
@@ -602,6 +625,8 @@
 	density = FALSE
 	opacity = 0
 	layer = ABOVE_MOB_LAYER
+	alpha = 255
+	color = "#8747b1"
 
 /obj/structure/curtain/red
 	parent_type = /obj/structure/rockhill
@@ -612,6 +637,8 @@
 	density = FALSE
 	opacity = 0
 	layer = ABOVE_MOB_LAYER
+	alpha = 255
+	color = "#a32121"
 
 /obj/structure/curtain/yellow
 	parent_type = /obj/structure/rockhill
@@ -622,6 +649,8 @@
 	density = FALSE
 	opacity = 0
 	layer = ABOVE_MOB_LAYER
+	alpha = 255
+	color = "#a18727"
 
 /obj/structure/deadbody/adventurer_leather
 	name = "dead adventurer"
@@ -760,6 +789,10 @@
 	icon = 'modular_redtard/rockhill/icons/modular_deserttown/icons/drapes.dmi'
 	icon_state = "zybantinedrape1"
 	layer = BELOW_OBJ_LAYER
+	color = "#a3a3a3"
+	rockhill_variant = "zybantinedrape#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 2
 
 /obj/structure/dungeon_entry/center
 	name = "The Tomb of Alotheos"
@@ -948,6 +981,9 @@
 	icon = 'modular_redtard/rockhill/icons/obj/flora/ausflora.dmi'
 	icon_state = "brflowers_1"
 	layer = BELOW_OBJ_LAYER
+	rockhill_variant = "brflowers_#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 3
 
 /obj/structure/flora/ausbushes/fernybush
 	name = "bush"
@@ -955,6 +991,9 @@
 	icon = 'modular_redtard/rockhill/icons/obj/flora/ausflora.dmi'
 	icon_state = "fernybush_1"
 	layer = BELOW_OBJ_LAYER
+	rockhill_variant = "fernybush_#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 3
 
 /obj/structure/flora/ausbushes/lavendergrass
 	name = "bush"
@@ -962,6 +1001,9 @@
 	icon = 'modular_redtard/rockhill/icons/obj/flora/ausflora.dmi'
 	icon_state = "lavendergrass_1"
 	layer = BELOW_OBJ_LAYER
+	rockhill_variant = "lavendergrass_#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 4
 
 /obj/structure/flora/ausbushes/ppflowers
 	name = "bush"
@@ -969,6 +1011,9 @@
 	icon = 'modular_redtard/rockhill/icons/obj/flora/ausflora.dmi'
 	icon_state = "ppflowers_1"
 	layer = BELOW_OBJ_LAYER
+	rockhill_variant = "ppflowers_#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 3
 
 /obj/structure/flora/ausbushes/stalkybush
 	name = "bush"
@@ -976,6 +1021,9 @@
 	icon = 'modular_redtard/rockhill/icons/obj/flora/ausflora.dmi'
 	icon_state = "stalkybush_1"
 	layer = BELOW_OBJ_LAYER
+	rockhill_variant = "stalkybush_#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 3
 
 /obj/structure/flora/ausbushes/ywflowers
 	name = "bush"
@@ -983,6 +1031,9 @@
 	icon = 'modular_redtard/rockhill/icons/obj/flora/ausflora.dmi'
 	icon_state = "ywflowers_1"
 	layer = BELOW_OBJ_LAYER
+	rockhill_variant = "ywflowers_#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 3
 
 /obj/structure/flora/hotspring_rocks
 	parent_type = /obj/structure/rockhill
@@ -1036,55 +1087,24 @@
 	density = TRUE
 	layer = BELOW_OBJ_LAYER
 
-/obj/structure/flora/newbranch
-	parent_type = /obj/structure/rockhill
-	name = "branch"
-	desc = "A stable branch, should be safe to walk on."
-	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tree.dmi'
-	icon_state = "branch-end1"
-	density = FALSE
-	layer = BELOW_OBJ_LAYER
-
-/obj/structure/flora/newbranch/connector
-	name = "branch"
-	desc = "A stable branch, should be safe to walk on."
-	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tree.dmi'
-	icon_state = "branch-extend"
-	density = FALSE
-	layer = BELOW_OBJ_LAYER
-
-/obj/structure/flora/newbranch/leafless
-	name = "branch"
-	desc = "A stable branch, should be safe to walk on."
-	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tree.dmi'
-	icon_state = "branch-end1"
-	density = FALSE
-	layer = BELOW_OBJ_LAYER
-
-/obj/structure/flora/newleaf
-	parent_type = /obj/structure/rockhill
-	name = "leaves"
-	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tree.dmi'
-	icon_state = "center-leaf1"
-	density = FALSE
+/obj/structure/flora/mushroomcluster/unhappy
+	name = "mushroom cluster"
+	desc = "A cluster of mushrooms native to the underdark."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/foliage.dmi'
+	icon_state = "mushroomclusterunhappy"
+	density = TRUE
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/newleaf/corner
+	parent_type = /obj/structure/rockhill
 	name = "leaves"
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tree.dmi'
 	icon_state = "corner-leaf1"
 	density = FALSE
 	layer = BELOW_OBJ_LAYER
-
-/obj/structure/flora/newtree
-	parent_type = /obj/structure/rockhill
-	name = "tree"
-	desc = "The thick core of a tree."
-	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tree.dmi'
-	icon_state = "tree1"
-	density = 1
-	opacity = 1
-	layer = BELOW_OBJ_LAYER
+	rockhill_variant = "corner-leaf#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 2
 
 /obj/structure/flora/rock/jungle
 	parent_type = /obj/structure/rockhill
@@ -1093,6 +1113,9 @@
 	icon_state = "rock"
 	density = FALSE
 	layer = BELOW_OBJ_LAYER
+	rockhill_variant = "rock#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 5
 
 /obj/structure/flora/roguegrass
 	parent_type = /obj/structure/rockhill
@@ -1125,6 +1148,9 @@
 	pixel_x = -16
 	pixel_y = -12
 	layer = ABOVE_ALL_MOB_LAYER
+	rockhill_variant = "bush#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 3
 
 /obj/structure/flora/roguegrass/bush/wall
 	name = "great bush"
@@ -1134,6 +1160,9 @@
 	density = TRUE
 	opacity = TRUE
 	layer = ABOVE_ALL_MOB_LAYER
+	rockhill_variant = "bushwall#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 2
 
 /obj/structure/flora/roguegrass/bush/wall/tall
 	name = "great bush"
@@ -1144,6 +1173,9 @@
 	opacity = 1
 	pixel_x = -16
 	layer = ABOVE_ALL_MOB_LAYER
+	rockhill_variant = "tallbush#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 2
 
 /obj/structure/flora/roguegrass/bush/wall/tall/grown
 	name = "great bush"
@@ -1154,6 +1186,9 @@
 	opacity = 1
 	pixel_x = -16
 	layer = ABOVE_ALL_MOB_LAYER
+	rockhill_variant = "tallbush#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 2
 
 /obj/structure/flora/roguegrass/bush/westleach
 	name = "westleach bush"
@@ -1168,6 +1203,9 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/foliage.dmi'
 	icon_state = "bush1winter"
 	layer = ABOVE_ALL_MOB_LAYER
+	rockhill_variant = "bush#winter"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 4
 
 /obj/structure/flora/roguegrass/bush/winter/wall
 	name = "bush"
@@ -1175,6 +1213,9 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/foliage.dmi'
 	icon_state = "bush5winter"
 	layer = ABOVE_ALL_MOB_LAYER
+	rockhill_variant = "bush#winter"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 4
 
 /obj/structure/flora/roguegrass/herb/artemisia
 	name = "artemisia"
@@ -1248,6 +1289,9 @@
 	icon = 'modular_redtard/rockhill/icons/obj/flora/jungleflora.dmi'
 	icon_state = "grassa"
 	layer = BELOW_OBJ_LAYER
+	rockhill_variant = "grassa#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 5
 
 /obj/structure/flora/roguegrass/jungle/sparse
 	name = "jungle grass"
@@ -1255,6 +1299,9 @@
 	icon = 'modular_redtard/rockhill/icons/obj/flora/jungleflora.dmi'
 	icon_state = "grassb"
 	layer = BELOW_OBJ_LAYER
+	rockhill_variant = "grassb#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 5
 
 /obj/structure/flora/roguegrass/maneater
 	name = "grass"
@@ -1270,6 +1317,23 @@
 	icon_state = "maneater-hidden"
 	layer = BELOW_OBJ_LAYER
 
+/obj/structure/flora/roguegrass/maneater/real/juvenile
+	name = "juvenile maneater"
+	desc = "Green and vivid. This one seems smaller than usual."
+	icon = 'modular_redtard/rockhill/icons/roguetown/mob/monster/maneater.dmi'
+	icon_state = "maneater-hidden"
+	layer = BELOW_OBJ_LAYER
+
+/obj/structure/flora/roguegrass/pumpkin
+	name = "bunch of wild pumpkins"
+	desc = "Wild pumpkins overgrown with vines."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/foliage.dmi'
+	icon_state = "pumpkin1"
+	layer = BELOW_OBJ_LAYER
+	rockhill_variant = "pumpkin#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 2
+
 /obj/structure/flora/roguegrass/pyroclasticflowers
 	name = "odd group of flowers"
 	desc = "A cluster of dangerously combustible flowers."
@@ -1283,6 +1347,9 @@
 	icon = 'modular_redtard/rockhill/icons/obj/flora/ausflora.dmi'
 	icon_state = "reedbush_1"
 	layer = BELOW_OBJ_LAYER
+	rockhill_variant = "reedbush_#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 4
 
 /obj/structure/flora/roguegrass/swampweed
 	name = "bunch of swampweed"
@@ -1290,6 +1357,9 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/foliage.dmi'
 	icon_state = "swampweed1"
 	layer = ABOVE_ALL_MOB_LAYER
+	rockhill_variant = "swampweed#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 3
 
 /obj/structure/flora/roguegrass/thorn_bush
 	name = "thorn bush"
@@ -1343,6 +1413,9 @@
 	opacity = 0
 	pixel_x = -16
 	layer = ABOVE_ALL_MOB_LAYER
+	rockhill_variant = "happymush#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 5
 
 /obj/structure/flora/rogueshroom/unhappy/angel
 	name = "grieving angel"
@@ -1394,6 +1467,10 @@
 	opacity = 1
 	pixel_x = -16
 	layer = 4.81
+	alpha = 200
+	rockhill_variant = "t#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 16
 
 /obj/structure/flora/roguetree/burnt
 	name = "burnt tree"
@@ -1404,6 +1481,10 @@
 	opacity = 1
 	pixel_x = -32
 	layer = 4.81
+	alpha = 200
+	rockhill_variant = "t#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 4
 
 /obj/structure/flora/roguetree/evil
 	name = "old tree"
@@ -1414,6 +1495,10 @@
 	opacity = 1
 	pixel_x = -16
 	layer = 4.81
+	alpha = 200
+	rockhill_variant = "wv#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 2
 
 /obj/structure/flora/roguetree/pine
 	name = "pine tree"
@@ -1424,6 +1509,10 @@
 	opacity = 1
 	pixel_x = -16
 	layer = 4.81
+	alpha = 200
+	rockhill_variant = "pine#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 4
 
 /obj/structure/flora/roguetree/pine/dead
 	name = "burnt pine tree"
@@ -1434,6 +1523,10 @@
 	opacity = 1
 	pixel_x = -16
 	layer = 4.81
+	alpha = 200
+	rockhill_variant = "dead#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 3
 
 /obj/structure/flora/roguetree/stump
 	name = "tree stump"
@@ -1444,6 +1537,10 @@
 	opacity = 0
 	pixel_x = -16
 	layer = TABLE_LAYER
+	alpha = 255
+	rockhill_variant = "t#stump"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 4
 
 /obj/structure/flora/roguetree/stump/log
 	name = "ancient log"
@@ -1454,16 +1551,21 @@
 	opacity = 0
 	pixel_x = -16
 	layer = TABLE_LAYER
+	alpha = 255
+	rockhill_variant = "log#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 2
 
 /obj/structure/flora/roguetree/wise
 	name = "sacred tree"
 	desc = "A blessed primordial tree, ancient beyond years. Said to be the very embodiment of the Tree Father himself—whose presence alone imbues druids with wild energies."
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/foliagetall.dmi'
-	icon_state = "mystical"
 	density = 1
 	opacity = 1
 	pixel_x = -16
 	layer = 4.81
+	alpha = 200
+	icon_state = "mystical"
 
 /obj/structure/flora/sakura
 	parent_type = /obj/structure/rockhill
@@ -1474,6 +1576,14 @@
 	pixel_x = -60
 	pixel_y = -10
 	layer = ABOVE_ALL_MOB_LAYER
+
+/obj/structure/flora/tinymushrooms
+	parent_type = /obj/structure/rockhill
+	name = "small mushroom cluster"
+	desc = "A cluster of tiny mushrooms that are growing in a suspicious circle shape."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/foliage.dmi'
+	icon_state = "tinymushrooms"
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/tinymushrooms/unhappy
 	name = "small mushroom cluster"
@@ -1557,6 +1667,7 @@
 	density = FALSE
 	opacity = 0
 	layer = BELOW_OBJ_LAYER
+	rockhill_random_dir = TRUE
 
 /obj/structure/fluff/customsign
 	parent_type = /obj/structure/rockhill
@@ -1774,6 +1885,7 @@
 	layer = BELOW_MOB_LAYER
 
 /obj/structure/fluff/railing/border
+	parent_type = /obj/structure/rockhill
 	name = "border"
 	desc = ""
 	icon = 'modular_redtard/rockhill/icons/obj/railing.dmi'
@@ -1790,6 +1902,7 @@
 	density = FALSE
 	opacity = 0
 	layer = ABOVE_MOB_LAYER
+	dir = 4
 
 /obj/structure/fluff/railing/border/north
 	name = "border"
@@ -1799,6 +1912,7 @@
 	density = FALSE
 	opacity = 0
 	layer = ABOVE_MOB_LAYER
+	dir = 1
 
 /obj/structure/fluff/railing/border/west
 	name = "border"
@@ -1808,8 +1922,10 @@
 	density = FALSE
 	opacity = 0
 	layer = ABOVE_MOB_LAYER
+	dir = 8
 
 /obj/structure/fluff/railing/corner
+	parent_type = /obj/structure/rockhill
 	name = "railing"
 	desc = "A simple barrier of wood meant to prevent falls."
 	icon = 'modular_redtard/rockhill/icons/obj/railing.dmi'
@@ -1817,6 +1933,7 @@
 	density = FALSE
 	opacity = 0
 	layer = ABOVE_MOB_LAYER
+	dir = 9
 
 /obj/structure/fluff/railing/corner/north_east
 	name = "railing"
@@ -1826,6 +1943,7 @@
 	density = FALSE
 	opacity = 0
 	layer = ABOVE_MOB_LAYER
+	dir = 5
 
 /obj/structure/fluff/railing/corner/south_east
 	name = "railing"
@@ -1835,6 +1953,7 @@
 	density = FALSE
 	opacity = 0
 	layer = ABOVE_MOB_LAYER
+	dir = 6
 
 /obj/structure/fluff/railing/corner/south_west
 	name = "railing"
@@ -1844,8 +1963,10 @@
 	density = FALSE
 	opacity = 0
 	layer = ABOVE_MOB_LAYER
+	dir = 10
 
 /obj/structure/fluff/railing/fence
+	parent_type = /obj/structure/rockhill
 	name = "palisade"
 	desc = "A rudimentary barrier that might keep the monsters at bay."
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
@@ -1862,8 +1983,10 @@
 	density = TRUE
 	opacity = TRUE
 	layer = 2.91
+	color = "#cccac5"
 
 /obj/structure/fluff/railing/wood
+	parent_type = /obj/structure/rockhill
 	name = "railing"
 	desc = "A simple barrier of wood meant to prevent falls."
 	icon = 'modular_redtard/rockhill/icons/obj/railing.dmi'
@@ -1880,6 +2003,7 @@
 	density = FALSE
 	opacity = 0
 	layer = ABOVE_MOB_LAYER
+	dir = 4
 
 /obj/structure/fluff/railing/wood/north
 	name = "railing"
@@ -1889,6 +2013,7 @@
 	density = FALSE
 	opacity = 0
 	layer = ABOVE_MOB_LAYER
+	dir = 1
 
 /obj/structure/fluff/railing/wood/west
 	name = "railing"
@@ -1898,6 +2023,7 @@
 	density = FALSE
 	opacity = 0
 	layer = ABOVE_MOB_LAYER
+	dir = 8
 
 /obj/structure/fluff/signage
 	parent_type = /obj/structure/rockhill
@@ -2220,6 +2346,7 @@
 	density = FALSE
 	opacity = 0
 	layer = ABOVE_OPEN_TURF_LAYER
+	color = "#fcff5e"
 
 /obj/structure/fluff/traveltile/magicportal
 	name = "mysterious portal"
@@ -2238,6 +2365,7 @@
 	density = FALSE
 	opacity = 0
 	layer = ABOVE_OPEN_TURF_LAYER
+	color = "#ff0d00"
 
 /obj/structure/fluff/traveltile/rockhillentrance
 	name = "To Rockhill"
@@ -2362,6 +2490,10 @@
 	density = FALSE
 	opacity = 0
 	layer = 4.26
+	alpha = 180
+	rockhill_variant = "chains#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 8
 
 /obj/structure/fluff/walldeco/church/line
 	name = ""
@@ -2630,6 +2762,9 @@
 	icon_state = "walldec1"
 	density = FALSE
 	opacity = 0
+	rockhill_variant = "walldec#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 6
 
 /obj/structure/fluff/walldeco/stone/bronze
 	name = ""
@@ -2638,6 +2773,10 @@
 	icon_state = "walldec1"
 	density = FALSE
 	opacity = 0
+	color = "#ff9c1a"
+	rockhill_variant = "walldec#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 6
 
 /obj/structure/fluff/walldeco/vinez
 	name = "vines"
@@ -2680,6 +2819,10 @@
 	opacity = 0
 	pixel_y = 32
 	layer = BELOW_MOB_LAYER
+	rockhill_variant = "wanted#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 3
+	rockhill_random_dir = TRUE
 
 /obj/structure/fluff/walldeco/wantedposter/l
 	name = "bandit notice"
@@ -2691,6 +2834,10 @@
 	pixel_x = -32
 	pixel_y = 0
 	layer = BELOW_MOB_LAYER
+	rockhill_variant = "wanted#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 3
+	rockhill_random_dir = TRUE
 
 /obj/structure/gate
 	parent_type = /obj/structure/rockhill
@@ -2892,6 +3039,7 @@
 	icon_state = "manabloom2"
 	density = FALSE
 	layer = BELOW_MOB_LAYER
+	color = null
 
 /obj/structure/mannequin/male
 	parent_type = /obj/structure/rockhill
@@ -3468,6 +3616,10 @@
 	density = TRUE
 	opacity = 0
 	layer = TABLE_LAYER
+	alpha = 255
+	rockhill_variant = "rock#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 4
 
 /obj/structure/roguetent
 	parent_type = /obj/structure/rockhill
@@ -3503,6 +3655,8 @@
 	icon_state = "stickyweb3"
 	opacity = TRUE
 	layer = BELOW_OBJ_LAYER
+	alpha = 109
+	rockhill_random_dir = TRUE
 
 /obj/structure/standingbell
 	parent_type = /obj/structure/rockhill
@@ -3564,6 +3718,10 @@
 	icon_state = "Light1"
 	density = FALSE
 	layer = SPACEVINE_LAYER
+	rockhill_variant = "Light#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 2
+	rockhill_random_dir = TRUE
 
 /obj/structure/voidstoneobelisk
 	parent_type = /obj/structure/rockhill
@@ -3620,6 +3778,7 @@
 	opacity = 0
 	pixel_x = -15
 	layer = ABOVE_ALL_MOB_LAYER
+	color = "#a3c2a8"
 
 /obj/structure/well/poisoned
 	name = "dubious well"
@@ -3629,6 +3788,7 @@
 	density = TRUE
 	opacity = 0
 	layer = 2.91
+	color = "#59aa65"
 
 /obj/structure/wild_plant/nospread/manabloom
 	name = "wild manabloom"

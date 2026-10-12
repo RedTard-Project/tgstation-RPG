@@ -11,6 +11,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_inquisition,
 		)
+	rockhill_advclass = "/datum/advclass/absolver"
 
 /datum/job/roguetown/adventurer
 	title = JOB_ROCKHILL_ADVENTURER
@@ -22,6 +23,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_wanderers,
 		)
+	rockhill_advclass = "/datum/advclass/cleric"
 
 /datum/job/roguetown/adventurer/courtagent
 	title = JOB_ROCKHILL_COURT_AGENT
@@ -33,6 +35,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_wanderers,
 		)
+	rockhill_advclass = "/datum/advclass/cleric"
 
 /datum/job/roguetown/adventurer/courtslave
 	title = JOB_ROCKHILL_ENSLAVED_ADVENTURER
@@ -44,6 +47,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_wanderers,
 		)
+	rockhill_advclass = "/datum/advclass/cleric"
 
 /datum/job/roguetown/apothecary
 	title = JOB_ROCKHILL_APOTHECARY
@@ -55,6 +59,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_courtiers,
 		)
+	rockhill_advclass = "/datum/advclass/apothecary"
 
 /datum/job/roguetown/archivist
 	title = JOB_ROCKHILL_ARCHIVIST
@@ -66,6 +71,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_yeomen,
 		)
+	rockhill_advclass = "/datum/advclass/archivist"
 
 /datum/job/roguetown/barkeep
 	title = JOB_ROCKHILL_INNKEEPER
@@ -77,6 +83,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_yeomen,
 		)
+	rockhill_advclass = "/datum/advclass/barkeep"
 
 /datum/job/roguetown/baron
 	title = JOB_ROCKHILL_BARON
@@ -88,6 +95,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_nobles,
 		)
+	rockhill_advclass = "/datum/advclass/baron/shrewd_nobleman"
 	alternate_titles = list(
 		"Baroness",
 		)
@@ -102,6 +110,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_garrison,
 		)
+	rockhill_advclass = "/datum/advclass/baron_retainer/henchman"
 
 /datum/job/roguetown/butler
 	title = JOB_ROCKHILL_SENESCHAL
@@ -113,6 +122,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_courtiers,
 		)
+	rockhill_advclass = "/datum/advclass/seneschal/seneschal"
 
 /datum/job/roguetown/captain
 	title = JOB_ROCKHILL_KNIGHT_CAPTAIN
@@ -124,6 +134,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_nobles,
 		)
+	rockhill_advclass = "/datum/advclass/captain/infantry"
 
 /datum/job/roguetown/chaplain
 	title = JOB_ROCKHILL_COURT_CHAPLAIN
@@ -135,6 +146,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_courtiers,
 		)
+	rockhill_advclass = "/datum/advclass/chaplain"
 
 /datum/job/roguetown/churchling
 	title = JOB_ROCKHILL_CHURCHLING
@@ -146,6 +158,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_youngfolk,
 		)
+	rockhill_advclass = "/datum/advclass/churchling"
 
 /datum/job/roguetown/clerk
 	title = JOB_ROCKHILL_CLERK
@@ -157,6 +170,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_nobles,
 		)
+	rockhill_advclass = "/datum/advclass/clerk"
 
 /datum/job/roguetown/cook
 	title = JOB_ROCKHILL_MANOR_COOK
@@ -168,6 +182,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_peasants,
 		)
+	rockhill_advclass = "/datum/advclass/cook"
 
 /datum/job/roguetown/councillor
 	title = JOB_ROCKHILL_COUNCILLOR
@@ -179,6 +194,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_nobles,
 		)
+	rockhill_advclass = "/datum/advclass/councillor"
 
 /datum/job/roguetown/crier
 	title = JOB_ROCKHILL_TOWN_CRIER
@@ -190,6 +206,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_yeomen,
 		)
+	rockhill_advclass = "/datum/advclass/towncrier"
 
 /datum/job/roguetown/druid
 	title = JOB_ROCKHILL_DRUID
@@ -201,6 +218,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_church,
 		)
+	rockhill_advclass = "/datum/advclass/druid"
 	alternate_titles = list(
 		"Druidess",
 		)
@@ -215,6 +233,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_garrison,
 		)
+	rockhill_advclass = "/datum/advclass/dungeoneer"
 
 /datum/job/roguetown/farmer
 	title = JOB_ROCKHILL_SOILSON
@@ -227,6 +246,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_peasants,
 		)
+	rockhill_advclass = "/datum/advclass/soilson"
 	alternate_titles = list(
 		"Soilbride",
 		)
@@ -241,6 +261,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_youngfolk,
 		)
+	rockhill_advclass = "/datum/advclass/gapprentice"
 
 /datum/job/roguetown/guardsman
 	title = JOB_ROCKHILL_CITY_GUARD
@@ -252,6 +273,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_garrison,
 		)
+	rockhill_advclass = "/datum/advclass/guardsman/cityguard"
 
 /datum/job/roguetown/guildmaster
 	title = JOB_ROCKHILL_GUILDMASTER
@@ -263,6 +285,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_yeomen,
 		)
+	rockhill_advclass = "/datum/advclass/guildmaster"
 
 /datum/job/roguetown/guildsman
 	title = JOB_ROCKHILL_GUILDSMAN
@@ -274,6 +297,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_yeomen,
 		)
+	rockhill_advclass = "/datum/advclass/guildsman/artificer"
 
 /datum/job/roguetown/hand
 	title = JOB_ROCKHILL_HAND
@@ -285,6 +309,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_nobles,
 		)
+	rockhill_advclass = "/datum/advclass/hand/blademaster"
 
 /datum/job/roguetown/heartfelt/hand
 	title = JOB_ROCKHILL_HAND_OF_HEARTFELT
@@ -296,6 +321,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_wanderers,
 		)
+	rockhill_advclass = "/datum/advclass/heartfelt/hand/marshal"
 
 /datum/job/roguetown/heartfelt/knight
 	title = JOB_ROCKHILL_KNIGHT_OF_HEARTFELT
@@ -307,6 +333,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_wanderers,
 		)
+	rockhill_advclass = "/datum/advclass/heartfelt/knight"
 
 /datum/job/roguetown/heartfelt/lord
 	title = JOB_ROCKHILL_LORD_OF_HEARTFELT
@@ -318,6 +345,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_wanderers,
 		)
+	rockhill_advclass = "/datum/advclass/heartfelt/lord/lord"
 
 /datum/job/roguetown/jester
 	title = JOB_ROCKHILL_JESTER
@@ -340,6 +368,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_church,
 		)
+	rockhill_advclass = "/datum/advclass/keeper"
 
 /datum/job/roguetown/knavewench
 	title = JOB_ROCKHILL_TAPSTER
@@ -351,6 +380,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_peasants,
 		)
+	rockhill_advclass = "/datum/advclass/tapster"
 
 /datum/job/roguetown/knight
 	title = JOB_ROCKHILL_KNIGHT
@@ -362,6 +392,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_nobles,
 		)
+	rockhill_advclass = "/datum/advclass/knight/heavy"
 
 /datum/job/roguetown/lord
 	title = JOB_ROCKHILL_GRAND_DUKE
@@ -373,6 +404,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_nobles,
 		)
+	rockhill_advclass = "/datum/advclass/lord/warrior"
 	alternate_titles = list(
 		"Grand Duchess",
 		"Duke",
@@ -389,6 +421,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_peasants,
 		)
+	rockhill_advclass = "/datum/advclass/lunatic"
 
 /datum/job/roguetown/magician
 	title = JOB_ROCKHILL_COURT_MAGICIAN
@@ -400,6 +433,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_courtiers,
 		)
+	rockhill_advclass = "/datum/advclass/courtmage"
 
 /datum/job/roguetown/manorguard
 	title = JOB_ROCKHILL_MAN_AT_ARMS
@@ -411,6 +445,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_garrison,
 		)
+	rockhill_advclass = "/datum/advclass/manorguard/footsman"
 
 /datum/job/roguetown/marshal
 	title = JOB_ROCKHILL_MARSHAL
@@ -422,6 +457,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_nobles,
 		)
+	rockhill_advclass = "/datum/advclass/marshal/classic"
 
 /datum/job/roguetown/martyr
 	title = JOB_ROCKHILL_MARTYR
@@ -433,6 +469,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_church,
 		)
+	rockhill_advclass = "/datum/advclass/martyr"
 
 /datum/job/roguetown/mercenary
 	title = JOB_ROCKHILL_MERCENARY
@@ -444,6 +481,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_wanderers,
 		)
+	rockhill_advclass = "/datum/advclass/mercenary/atgervi"
 
 /datum/job/roguetown/merchant
 	title = JOB_ROCKHILL_MERCHANT
@@ -455,6 +493,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_yeomen,
 		)
+	rockhill_advclass = "/datum/advclass/merchant"
 
 /datum/job/roguetown/monk
 	title = JOB_ROCKHILL_ACOLYTE
@@ -466,6 +505,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_church,
 		)
+	rockhill_advclass = "/datum/advclass/acolyte"
 
 /datum/job/roguetown/nightmaiden
 	title = JOB_ROCKHILL_BATHHOUSE_ATTENDANT
@@ -477,6 +517,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_peasants,
 		)
+	rockhill_advclass = "/datum/advclass/nightmaiden"
 	alternate_titles = list(
 		"Nightswain",
 		"Nightmaiden",
@@ -492,6 +533,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_yeomen,
 		)
+	rockhill_advclass = "/datum/advclass/bathmaster"
 	alternate_titles = list(
 		"Bathmatron",
 		"Nightmaster",
@@ -508,6 +550,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_peasants,
 		)
+	rockhill_advclass = "/datum/advclass/vagabond_original"
 
 /datum/job/roguetown/orthodoxist
 	title = JOB_ROCKHILL_ORTHODOXIST
@@ -519,6 +562,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_inquisition,
 		)
+	rockhill_advclass = "/datum/advclass/psydoniantemplar"
 
 /datum/job/roguetown/physician
 	title = JOB_ROCKHILL_HEAD_PHYSICIAN
@@ -530,6 +574,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_nobles,
 		)
+	rockhill_advclass = "/datum/advclass/physician"
 	alternate_titles = list(
 		"Court Physician",
 		)
@@ -544,6 +589,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_peasants,
 		)
+	rockhill_advclass = "/datum/advclass/artificer"
 
 /datum/job/roguetown/priest
 	title = JOB_ROCKHILL_BISHOP
@@ -555,6 +601,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_church,
 		)
+	rockhill_advclass = "/datum/advclass/bishop"
 
 /datum/job/roguetown/prince
 	title = JOB_ROCKHILL_PRINCE
@@ -566,6 +613,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_nobles,
 		)
+	rockhill_advclass = "/datum/advclass/heir/daring"
 	alternate_titles = list(
 		"Princess",
 		)
@@ -580,6 +628,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_peasants,
 		)
+	rockhill_advclass = "/datum/advclass/prisoner_blacksmith"
 
 /datum/job/roguetown/puritan
 	title = JOB_ROCKHILL_INQUISITOR
@@ -591,6 +640,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_inquisition,
 		)
+	rockhill_advclass = "/datum/advclass/puritan/inspector"
 
 /datum/job/roguetown/rockhillslave
 	title = JOB_ROCKHILL_SLAVE
@@ -602,6 +652,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_peasants,
 		)
+	rockhill_advclass = "/datum/advclass/slave/house_slave"
 
 /datum/job/roguetown/rookie
 	title = JOB_ROCKHILL_ROOKIE
@@ -613,6 +664,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_garrison,
 		)
+	rockhill_advclass = "/datum/advclass/rookie/frontline"
 
 /datum/job/roguetown/sergeant
 	title = JOB_ROCKHILL_SERGEANT
@@ -624,6 +676,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_garrison,
 		)
+	rockhill_advclass = "/datum/advclass/sergeant/sergeant"
 
 /datum/job/roguetown/servant
 	title = JOB_ROCKHILL_SERVANT
@@ -635,6 +688,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_courtiers,
 		)
+	rockhill_advclass = "/datum/advclass/servant/servant"
 
 /datum/job/roguetown/shophand
 	title = JOB_ROCKHILL_SHOPHAND
@@ -646,6 +700,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_youngfolk,
 		)
+	rockhill_advclass = "/datum/advclass/shophand"
 
 /datum/job/roguetown/slaver
 	title = JOB_ROCKHILL_SLAVER
@@ -657,6 +712,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_yeomen,
 		)
+	rockhill_advclass = "/datum/advclass/slaver"
 
 /datum/job/roguetown/squire
 	title = JOB_ROCKHILL_SQUIRE
@@ -668,6 +724,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_garrison,
 		)
+	rockhill_advclass = "/datum/advclass/squire/lancer"
 
 /datum/job/roguetown/steward
 	title = JOB_ROCKHILL_STEWARD
@@ -679,6 +736,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_nobles,
 		)
+	rockhill_advclass = "/datum/advclass/steward"
 
 /datum/job/roguetown/tailor
 	title = JOB_ROCKHILL_TAILOR
@@ -690,6 +748,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_yeomen,
 		)
+	rockhill_advclass = "/datum/advclass/tailor"
 
 /datum/job/roguetown/templar
 	title = JOB_ROCKHILL_TEMPLAR
@@ -701,6 +760,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_church,
 		)
+	rockhill_advclass = "/datum/advclass/templar/crusader"
 
 /datum/job/roguetown/vanguard
 	title = JOB_ROCKHILL_VANGUARD
@@ -712,6 +772,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_garrison,
 		)
+	rockhill_advclass = "/datum/advclass/vanguard/footman"
 
 /datum/job/roguetown/veteran
 	title = JOB_ROCKHILL_VETERAN
@@ -723,6 +784,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_garrison,
 		)
+	rockhill_advclass = "/datum/advclass/veteran/battlemaster"
 
 /datum/job/roguetown/villager
 	title = JOB_ROCKHILL_TOWNER
@@ -734,6 +796,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_peasants,
 		)
+	rockhill_advclass = "/datum/advclass/barbersurgeon"
 
 /datum/job/roguetown/wapprentice
 	title = JOB_ROCKHILL_MAGICIANS_ASSOCIATE
@@ -745,6 +808,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_courtiers,
 		)
+	rockhill_advclass = "/datum/advclass/wapprentice/associate"
 
 /datum/job/roguetown/warden
 	title = JOB_ROCKHILL_FOREST_WARDEN
@@ -756,6 +820,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_garrison,
 		)
+	rockhill_advclass = "/datum/advclass/warden/ranger"
 
 /datum/job/roguetown/wardenmaster
 	title = JOB_ROCKHILL_MASTER_WARDEN
@@ -767,6 +832,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_garrison,
 		)
+	rockhill_advclass = "/datum/advclass/wardenmaster/wardenmaster"
 
 /datum/job/roguetown/watchcaptain
 	title = JOB_ROCKHILL_WATCH_CAPTAIN
@@ -778,6 +844,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_garrison,
 		)
+	rockhill_advclass = "/datum/advclass/watchcaptain/watchcaptain"
 
 /datum/job/roguetown/wretch
 	title = JOB_ROCKHILL_WRETCH
@@ -789,6 +856,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_wanderers,
 		)
+	rockhill_advclass = "/datum/advclass/wretch/licker"
 
 /datum/outfit/job/roguetown/absolver
 	name = JOB_ROCKHILL_ABSOLVER

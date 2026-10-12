@@ -55,28 +55,28 @@
 	var/no_group = "none"
 	var/list/states_missing_in_azure = list(HUD_ROGUE_GIVE)
 	var/list/expected = list(
-		HUD_ROGUE_PANEL = list(/atom/movable/screen/rogue/panel, "WEST-5,SOUTH+7", 'modular_redtard/icons/mob/roguehud_panel.dmi', "panel", CURSE_LAYER + 0.1, FULLSCREEN_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_PANEL_TOGGLE = list(/atom/movable/screen/rogue/panel_toggle, "WEST-5,NORTH", hud_icon, "template_small", 24, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_HUMAN_TOGGLE_INVENTORY = list(/atom/movable/screen/human/toggle/rogue, "WEST-5,SOUTH", hud_icon, "back", 24, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_ROGUE_GRAIN = list(/atom/movable/screen/rogue/placeholder/grain, "1,1", 'modular_redtard/icons/hud/grain.dmi', "grain", 13, HUD_PLANE, no_group),
 		HUD_ROGUE_SCANNIES = list(/atom/movable/screen/rogue/placeholder/scannies, "WEST-5:0,SOUTH:0", 'modular_redtard/icons/mob/roguehudback2.dmi', "crt", CURSE_LAYER + 0.2, FULLSCREEN_PLANE, no_group),
 		HUD_ROGUE_READ = list(/atom/movable/screen/rogue/placeholder/read, "1,1", 'modular_redtard/icons/hud/read.dmi', "", 24, HUD_PLANE, no_group),
 		HUD_ROGUE_READ_TEXT_RIGHT = list(/atom/movable/screen/rogue/placeholder/readtext, "5,5", null, "", 24.02, HUD_PLANE, no_group),
 		HUD_ROGUE_READ_TEXT_LEFT = list(/atom/movable/screen/rogue/placeholder/readtext, "5,5", null, "", 24.02, HUD_PLANE, no_group),
-		HUD_ROGUE_WEAPON_INTENTS = list(/atom/movable/screen/rogue/weapon_intents, "WEST-5:-16,SOUTH+8", 'modular_redtard/icons/mob/rogueintentbase.dmi', "intentbase", 24, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_MOB_MOOD = list(/atom/movable/screen/mood/rogue, "WEST-3,CENTER+3", hud_icon, null, 24, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_ROGUE_RMB_INTENT = list(/atom/movable/screen/rogue/stub/rmb_intent, "WEST-4:-16,CENTER+1", hud_icon, "rmbintent", 24, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_MOB_HEALTH = list(/atom/movable/screen/healths/rogue, "WEST-1:6,CENTER+4:17", heat_icon, "dam0", 24, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_ROGUE_QUAD_INTENTS = list(/atom/movable/screen/rogue/stub/quad_intents, "WEST-4:-16,SOUTH+7", hud_icon, "mmbintents0", 24, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_ROGUE_DEF_INTENT = list(/atom/movable/screen/rogue/stub/def_intent, "WEST-2,NORTH-5", hud_icon, "def1n", 24, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_MOB_INTENTS = list(/atom/movable/screen/combattoggle/rogue, "WEST-1:-16,CENTER+1", hud_icon, "combat0", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_WEAPON_INTENTS = list(/atom/movable/screen/rogue/weapon_intents, "WEST-5:-16,SOUTH+8", 'modular_redtard/icons/mob/rogueintentbase.dmi', "intentbase", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_MOB_MOOD = list(/atom/movable/screen/mood/rogue, "WEST-3,CENTER+3", hud_icon, null, 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_RMB_INTENT = list(/atom/movable/screen/rogue/stub/rmb_intent, "WEST-4:-16,CENTER+1", hud_icon, "rmbintent", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_MOB_HEALTH = list(/atom/movable/screen/healths/rogue, "WEST-1:6,CENTER+4:17", heat_icon, "dam0", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_QUAD_INTENTS = list(/atom/movable/screen/rogue/stub/quad_intents, "WEST-4:-16,SOUTH+7", hud_icon, "mmbintents0", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_DEF_INTENT = list(/atom/movable/screen/rogue/stub/def_intent, "WEST-2,NORTH-5", hud_icon, "def1n", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_MOB_INTENTS = list(/atom/movable/screen/combattoggle/rogue, "WEST-1:-16,CENTER+1", hud_icon, "combat0", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 		HUD_ROGUE_GIVE = list(/atom/movable/screen/rogue/give, "WEST-1:-16,SOUTH+7", hud_icon, "take0", 24, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_ROGUE_HEATSTAM_OVERLAY = list(/atom/movable/screen/rogue/heatstam_overlay, "WEST-1,CENTER+2", heat_icon, "heatstamover", 24.1, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_HEATSTAM_OVERLAY = list(/atom/movable/screen/rogue/heatstam_overlay, "WEST-1,CENTER+2", heat_icon, "heatstamover", 24.1, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 		HUD_ROGUE_FOV = list(/atom/movable/screen/rogue/placeholder/fov, "1,1", 'modular_redtard/icons/mob/vision_cone.dmi', "combat", FLASH_LAYER - 0.5, FULLSCREEN_PLANE, no_group),
 		HUD_ROGUE_FOV_BLOCKER = list(/atom/movable/screen/rogue/placeholder/fov_blocker, "1,1", 'modular_redtard/icons/mob/vision_cone.dmi', "combat_v", 24, FIELD_OF_VISION_BLOCKER_PLANE, no_group),
 		HUD_ROGUE_CLICKDELAY_LEFT = list(/atom/movable/screen/rogue/clickdelay/left, "WEST-3:-16,SOUTH+7", hud_icon, "", 25, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_ROGUE_CLICKDELAY_RIGHT = list(/atom/movable/screen/rogue/clickdelay/right, "WEST-2:-16,SOUTH+7", hud_icon, "", 25, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_ROGUE_CLICKDELAY_MID = list(/atom/movable/screen/rogue/clickdelay/next_move, "WEST-3:0,SOUTH+7", hud_icon, "", 25, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_ROGUE_DEFDELAY = list(/atom/movable/screen/rogue/stub/defdelay, "WEST-1:-5,SOUTH+10:15", hud_icon, "defdelay0", 25, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_DEFDELAY = list(/atom/movable/screen/rogue/stub/defdelay, "WEST-1:-5,SOUTH+10:15", hud_icon, "defdelay0", 25, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 		HUD_KEY_HAND_SLOT(1) = list(/atom/movable/screen/inventory/hand/rogue, "WEST-3:-16,SOUTH+7", hud_icon, "hand_l", 24, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_KEY_HAND_SLOT(2) = list(/atom/movable/screen/inventory/hand/rogue, "WEST-2:-16,SOUTH+7", hud_icon, "hand_r", 24, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_ROGUE_RING_SLOT(1) = list(/atom/movable/screen/inventory/rogue/indexed/ring, "WEST-5:-8,SOUTH+2:8", hud_icon, "ring", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
@@ -101,18 +101,18 @@
 		HUD_KEY_ITEM_SLOT(ITEM_SLOT_ROGUE_MOUTH) = list(/atom/movable/screen/inventory/rogue, "WEST-3,SOUTH+5", hud_icon, "mouth", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
 		HUD_MOB_DROP = list(/atom/movable/screen/drop/rogue, "WEST-1:-16,SOUTH+7", hud_icon, "act_drop", 24, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_MOB_THROW = list(/atom/movable/screen/throw_catch/rogue, "WEST-1:-16,SOUTH+7", hud_icon, "catch0", 24, HUD_PLANE, HUD_GROUP_HOTKEYS),
-		HUD_ROGUE_STAND_UP = list(/atom/movable/screen/rogue/stand_up, "WEST-4,CENTER+2", hud_icon, "act_rest_up", 24, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_MOB_REST = list(/atom/movable/screen/rest/rogue, "WEST-4,CENTER+2", hud_icon, "act_rest_down", 24, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_ROGUE_SKILLS = list(/atom/movable/screen/rogue/skills, "WEST-4,CENTER+3", hud_icon, "skills", 24, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_MOB_CRAFTING_MENU = list(/atom/movable/screen/craft/rogue, "WEST-4,CENTER+3", hud_icon, "craft", 24, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_ROGUE_SNEAK = list(/atom/movable/screen/rogue/stub/sneak, "WEST-3,CENTER+2", hud_icon, "sneak0", 24, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_MOB_MOVE_INTENT = list(/atom/movable/screen/mov_intent/rogue, "WEST-3,CENTER+2", hud_icon, null, 24, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_ROGUE_EYE = list(/atom/movable/screen/rogue/eye, "WEST-2,CENTER+3", hud_icon, "eye", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_STAND_UP = list(/atom/movable/screen/rogue/stand_up, "WEST-4,CENTER+2", hud_icon, "act_rest_up", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_MOB_REST = list(/atom/movable/screen/rest/rogue, "WEST-4,CENTER+2", hud_icon, "act_rest_down", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_SKILLS = list(/atom/movable/screen/rogue/skills, "WEST-4,CENTER+3", hud_icon, "skills", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_MOB_CRAFTING_MENU = list(/atom/movable/screen/craft/rogue, "WEST-4,CENTER+3", hud_icon, "craft", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_SNEAK = list(/atom/movable/screen/rogue/stub/sneak, "WEST-3,CENTER+2", hud_icon, "sneak0", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_MOB_MOVE_INTENT = list(/atom/movable/screen/mov_intent/rogue, "WEST-3,CENTER+2", hud_icon, null, 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_EYE = list(/atom/movable/screen/rogue/eye, "WEST-2,CENTER+3", hud_icon, "eye", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 		HUD_ROGUE_ADVSETUP = list(/atom/movable/screen/rogue/placeholder/advsetup, "CENTER-1,CENTER-1:16", null, "", 24, HUD_PLANE, no_group),
-		HUD_MOB_ZONE_SELECTOR = list(/atom/movable/screen/zone_sel/rogue, "WEST-3:-16,CENTER+4:6", 'modular_redtard/icons/mob/roguehud64.dmi', null, 24, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_MOB_STAMINA = list(/atom/movable/screen/stamina/rogue, "WEST-1,CENTER+2", heat_icon, "stam100", 24, HUD_PLANE, HUD_GROUP_INFO),
-		HUD_ROGUE_ENERGY = list(/atom/movable/screen/rogue/stub/energy, "WEST-1,CENTER+2", heat_icon, "energy100", 24, HUD_PLANE, HUD_GROUP_INFO),
-		HUD_ROGUE_FEINT = list(/atom/movable/screen/rogue/stub/feint, "WEST-1:-6,SOUTH+10:15", 'modular_redtard/icons/mob/roguefeint.dmi', "feintbar0", 24.1, HUD_PLANE, HUD_GROUP_INFO),
+		HUD_MOB_ZONE_SELECTOR = list(/atom/movable/screen/zone_sel/rogue, "WEST-3:-16,CENTER+4:6", 'modular_redtard/icons/mob/roguehud64.dmi', null, 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_MOB_STAMINA = list(/atom/movable/screen/stamina/rogue, "WEST-1,CENTER+2", heat_icon, "stam100", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_ENERGY = list(/atom/movable/screen/rogue/stub/energy, "WEST-1,CENTER+2", heat_icon, "energy100", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_FEINT = list(/atom/movable/screen/rogue/stub/feint, "WEST-1:-6,SOUTH+10:15", 'modular_redtard/icons/mob/roguefeint.dmi', "feintbar0", 24.1, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 	)
 	for(var/hud_key in expected)
 		var/list/row = expected[hud_key]
@@ -341,6 +341,9 @@
 	. = 0
 	for(var/group_key in list(HUD_GROUP_STATIC, HUD_GROUP_HOTKEYS, HUD_GROUP_INFO, HUD_GROUP_SCREEN_OVERLAYS))
 		. += length(hud.screen_groups[group_key])
+	var/datum/hud/rogue/rogue_hud = hud
+	if(istype(rogue_hud) && rogue_hud.panel_shown)
+		. += length(rogue_hud.screen_groups[HUD_GROUP_ROGUE_PANEL])
 	if(hud.inventory_shown)
 		. += length(hud.screen_groups[HUD_GROUP_TOGGLEABLE_INVENTORY])
 

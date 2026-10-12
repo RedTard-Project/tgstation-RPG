@@ -1,14 +1,34 @@
 /atom/movable/screen/proc/rogue_has_click_listener()
 	return !isnull(_listen_lookup?[COMSIG_SCREEN_ELEMENT_CLICK])
 
-/atom/movable/screen/rogue/panel
-	name = " "
-	icon = ROGUE_HUD_ICON_PANEL
-	icon_state = "panel"
-	screen_loc = rogueui_panel
-	plane = FULLSCREEN_PLANE
-	layer = ROGUE_BACKHUD_LAYER
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+/atom/movable/screen/rogue/panel_toggle
+	name = "panel"
+	icon_state = "template_small"
+	screen_loc = rogueui_panel_toggle
+	mouse_over_pointer = MOUSE_HAND_POINTER
+
+/atom/movable/screen/rogue/panel_toggle/update_overlays()
+	. = ..()
+	var/datum/hud/rogue/viewer_hud = hud
+	if(!istype(viewer_hud) || viewer_hud.panel_shown)
+		. += "corner"
+
+/atom/movable/screen/rogue/panel_toggle/Click(location, control, params)
+	var/datum/hud/rogue/viewer_hud = usr.hud_used
+	if(!istype(viewer_hud))
+		return
+	var/mob/target = usr
+	if(isobserver(usr) && ishuman(usr.client?.eye) && usr.client.eye != usr)
+		target = usr.client.eye
+	var/datum/hud/rogue/target_hud = target.hud_used
+	var/list/panel = istype(target_hud) ? target_hud.screen_groups[HUD_GROUP_ROGUE_PANEL] : null
+	viewer_hud.panel_shown = !viewer_hud.panel_shown
+	if(usr.client && panel)
+		if(viewer_hud.panel_shown)
+			usr.client.screen |= panel
+		else
+			usr.client.screen -= panel
+	update_appearance()
 
 /atom/movable/screen/human/toggle/rogue
 	name = "inventory"
@@ -501,6 +521,9 @@
 /atom/movable/screen/inventory/rogue/indexed/ring
 	transform = matrix(0.5, 0, 0, 0, 0.5, 0)
 
+/mob
+	var/rogue_zone_precise
+
 /atom/movable/screen/zone_sel/rogue
 	icon = ROGUE_HUD_ICON_64
 	icon_state = "m-zone_sel"
@@ -508,42 +531,6 @@
 	layer = ROGUE_HUD_LAYER
 	overlay_icon = null
 	var/static/list/rogue_hover_cache = list()
-	var/limb_state_key
-
-/atom/movable/screen/zone_sel/rogue/Click(location, control, params)
-	var/list/modifiers = params2list(params)
-	if(LAZYACCESS(modifiers, RIGHT_CLICK))
-		var/mob/living/carbon/user = usr
-		if(iscarbon(user) && user == get_mob())
-			user.check_self_for_injuries()
-		return
-	return ..()
-
-/atom/movable/screen/zone_sel/rogue/MouseMove(location, control, params)
-	if(isobserver(usr))
-		return
-	var/list/modifiers = params2list(params)
-	var/zone = get_rogue_zone_at(text2num(LAZYACCESS(modifiers, ICON_X)), text2num(LAZYACCESS(modifiers, ICON_Y)))
-	var/choice = zone ? "[body_prefix()]_[zone]" : null
-	if(hovering == choice)
-		return
-	vis_contents -= rogue_hover_cache[hovering]
-	hovering = choice
-	if(!choice)
-		return
-	var/obj/effect/overlay/zone_sel/rogue/overlay_object = rogue_hover_cache[choice]
-	if(!overlay_object)
-		overlay_object = new
-		overlay_object.icon_state = choice
-		rogue_hover_cache[choice] = overlay_object
-	vis_contents += overlay_object
-
-/atom/movable/screen/zone_sel/rogue/MouseExited(location, control, params)
-	if(!isobserver(usr) && hovering)
-		vis_contents -= rogue_hover_cache[hovering]
-		hovering = null
-
-/atom/movable/screen/zone_sel/rogue/get_zone_at(icon_x, icon_y)
 	var/static/list/rogue_to_tg = list(
 		"head" = BODY_ZONE_HEAD,
 		"skull" = BODY_ZONE_HEAD,
@@ -565,7 +552,60 @@
 		"l_leg" = BODY_ZONE_L_LEG,
 		"l_foot" = BODY_ZONE_L_LEG,
 	)
+	var/static/list/zone_parts
+	var/limb_state_key
+
+/atom/movable/screen/zone_sel/rogue/Click(location, control, params)
+	var/list/modifiers = params2list(params)
+	if(LAZYACCESS(modifiers, RIGHT_CLICK))
+		var/mob/living/carbon/user = usr
+		if(iscarbon(user) && user == get_mob())
+			user.check_self_for_injuries()
+		return
+	if(isobserver(usr))
+		return
+	var/part = get_rogue_zone_at(text2num(LAZYACCESS(modifiers, ICON_X)), text2num(LAZYACCESS(modifiers, ICON_Y)))
+	var/mob/owner = get_mob()
+	if(!part || usr != owner)
+		return TRUE
+	owner.rogue_zone_precise = part
+	set_selected_zone(rogue_to_tg[part], usr)
+	update_appearance()
+	return TRUE
+
+/atom/movable/screen/zone_sel/rogue/MouseMove(location, control, params)
+	if(isobserver(usr))
+		return
+	var/list/modifiers = params2list(params)
+	var/part = get_rogue_zone_at(text2num(LAZYACCESS(modifiers, ICON_X)), text2num(LAZYACCESS(modifiers, ICON_Y)))
+	var/choice = part ? "[body_prefix()]_[part]" : null
+	if(hovering == choice)
+		return
+	vis_contents -= rogue_hover_cache[hovering]
+	hovering = choice
+	if(!choice)
+		return
+	var/obj/effect/overlay/zone_sel/rogue/overlay_object = rogue_hover_cache[choice]
+	if(!overlay_object)
+		overlay_object = new
+		overlay_object.icon_state = choice
+		rogue_hover_cache[choice] = overlay_object
+	vis_contents += overlay_object
+
+/atom/movable/screen/zone_sel/rogue/MouseExited(location, control, params)
+	if(!isobserver(usr) && hovering)
+		vis_contents -= rogue_hover_cache[hovering]
+		hovering = null
+
+/atom/movable/screen/zone_sel/rogue/get_zone_at(icon_x, icon_y)
 	return rogue_to_tg[get_rogue_zone_at(icon_x, icon_y)]
+
+/atom/movable/screen/zone_sel/rogue/proc/get_zone_parts(zone)
+	if(!zone_parts)
+		zone_parts = list()
+		for(var/part in rogue_to_tg)
+			LAZYADDASSOCLIST(zone_parts, rogue_to_tg[part], part)
+	return zone_parts[zone] || list(zone)
 
 /atom/movable/screen/zone_sel/rogue/proc/body_prefix()
 	var/mob/owner = get_mob()
@@ -586,11 +626,9 @@
 		return
 	var/prefix = body_prefix()
 	. += limb_overlays(owner, prefix)
-	var/static/list/selection_states = list(
-		BODY_ZONE_PRECISE_EYES = list("r_eye", "l_eye"),
-	)
-	for(var/zone in selection_states[owner.zone_selected] || list(owner.zone_selected))
-		var/mutable_appearance/selection = mutable_appearance(icon, "[prefix]_[zone]")
+	var/list/selected_parts = rogue_to_tg[owner.rogue_zone_precise] == owner.zone_selected ? list(owner.rogue_zone_precise) : get_zone_parts(owner.zone_selected)
+	for(var/part in selected_parts)
+		var/mutable_appearance/selection = mutable_appearance(icon, "[prefix]_[part]")
 		selection.layer = layer + 0.2
 		. += selection
 

@@ -40,6 +40,7 @@
 	icon = 'modular_redtard/rockhill/icons/effects/blood.dmi'
 	icon_state = "pool1"
 	layer = ABOVE_NORMAL_TURF_LAYER
+	alpha = 150
 
 /obj/effect/decal/cleanable/blood/splatter/walls
 	name = "blood"
@@ -47,6 +48,7 @@
 	icon = 'modular_redtard/rockhill/icons/effects/blood.dmi'
 	icon_state = "splatter1"
 	layer = BULLET_HOLE_LAYER
+	alpha = 200
 
 /obj/effect/decal/cleanable/coom
 	name = "mess"
@@ -54,6 +56,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/natural.dmi'
 	icon_state = "mess1"
 	layer = ABOVE_NORMAL_TURF_LAYER
+	alpha = 150
 
 /obj/effect/decal/cleanable/debris/glassy
 	name = "glass shards"
@@ -82,6 +85,7 @@
 	icon = 'modular_redtard/rockhill/icons/modular/Mapping/icons/webbing.dmi'
 	icon_state = "cobweb1"
 	layer = WALL_OBJ_LAYER
+	alpha = 200
 
 /obj/effect/decal/cleanable/dirt/cobweb/cobweb2
 	name = "cobweb"
@@ -89,6 +93,7 @@
 	icon = 'modular_redtard/rockhill/icons/modular/Mapping/icons/webbing.dmi'
 	icon_state = "cobweb2"
 	layer = WALL_OBJ_LAYER
+	alpha = 200
 
 /obj/effect/decal/cleanable/roguerune/arcyne/enchantment
 	name = "Imbuement Array"
@@ -97,6 +102,7 @@
 	icon_state = "imbuement"
 	pixel_x = -32
 	pixel_y = -32
+	color = null
 
 /obj/effect/decal/cleanable/roguerune/arcyne/enchantment/greater
 	name = "Greater Imbuement Array"
@@ -105,6 +111,7 @@
 	icon_state = "imbuement"
 	pixel_x = -64
 	pixel_y = -64
+	color = null
 
 /obj/effect/decal/cleanable/roguerune/arcyne/summoning/adv
 	name = "warded sealate confinement matrix"
@@ -113,6 +120,7 @@
 	icon_state = "warded"
 	pixel_x = -64
 	pixel_y = -64
+	color = null
 
 /obj/effect/decal/cleanable/roguerune/arcyne/summoning/max
 	name = "noc's eye warded sealate confinement matrix"
@@ -121,6 +129,7 @@
 	icon_state = "huge_runeblued"
 	pixel_x = -96
 	pixel_y = -96
+	color = null
 
 /obj/effect/decal/cleanable/roguerune/arcyne/summoning/mid
 	name = "sealate confinement matrix"
@@ -129,6 +138,7 @@
 	icon_state = "sealate"
 	pixel_x = -32
 	pixel_y = -32
+	color = null
 
 /obj/effect/decal/cleanable/roguerune/arcyne/teleport
 	name = "planar convergence matrix"
@@ -137,6 +147,7 @@
 	icon_state = "portal"
 	pixel_x = -64
 	pixel_y = -64
+	color = null
 
 /obj/effect/decal/cobble/mossy
 	name = "mossy brick floor"

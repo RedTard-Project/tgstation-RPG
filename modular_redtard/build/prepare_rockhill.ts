@@ -28,6 +28,7 @@ type Config = {
   title: { prefix: string; sources: TitleSource[] };
   output: { map: string; map_json: string; title_dir: string };
   replacements: Rule[];
+  map_vars?: Record<string, string[]>;
 };
 
 type Pop = { path: string; vars: Array<{ name: string; lines: string[] }> };
@@ -60,7 +61,7 @@ export async function prepareRockhill(): Promise<void> {
   const missingObjects = new Map<string, number>();
   const targets = new Map<string, number>();
   for (const model of models) {
-    model.pops = convertPops(model, config.replacements, declared, tally, fatal, missingObjects, targets);
+    model.pops = convertPops(model, config.replacements, config.map_vars || {}, declared, tally, fatal, missingObjects, targets);
   }
   if (fatal.size) {
     throw new Error(`the map uses turf/area types the compile lacks; port them with modular_redtard/tools/port_rockhill.py or add a replacement:\n  ${[...fatal.keys()].sort().join('\n  ')}`);
@@ -181,7 +182,7 @@ function checkReplacementTargets(rules: Rule[], declared: Set<string>): void {
   }
 }
 
-function convertPops(model: Model, rules: Rule[], declared: Set<string>, tally: Record<string, Tally>, fatal: Map<string, number>, missingObjects: Map<string, number>, targets: Map<string, number>): Pop[] {
+function convertPops(model: Model, rules: Rule[], mapVars: Record<string, string[]>, declared: Set<string>, tally: Record<string, Tally>, fatal: Map<string, number>, missingObjects: Map<string, number>, targets: Map<string, number>): Pop[] {
   const kept: Pop[] = [];
   const sourceTurfs = model.pops.filter((pop) => pop.path.startsWith('/turf/'));
   const sourceTurf = sourceTurfs.length ? sourceTurfs[sourceTurfs.length - 1].path : '';
@@ -218,7 +219,8 @@ function convertPops(model: Model, rules: Rule[], declared: Set<string>, tally: 
     }
     targets.set(target, (targets.get(target) || 0) + 1);
     const allowed = kind === 'area' ? new Set<string>() : kind === 'turf' ? TURF_VARS : replaced ? REPLACED_VARS : KEPT_VARS;
-    kept.push({ path: target, vars: pop.vars.filter((entry) => allowed.has(entry.name)) });
+    const extra = Object.entries(mapVars).filter(([prefix]) => under(prefix)).flatMap(([, names]) => names);
+    kept.push({ path: target, vars: pop.vars.filter((entry) => allowed.has(entry.name) || extra.includes(entry.name)) });
   }
   const areas = kept.filter((pop) => pop.path === '/area' || pop.path.startsWith('/area/'));
   const turfs = kept.filter((pop) => pop.path.startsWith('/turf/'));
