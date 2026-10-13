@@ -1,0 +1,51 @@
+#include "clothing\_defines.dm"
+#include "clothing\slots.dm"
+#include "clothing\onmob.dm"
+#include "clothing\sleeves.dm"
+#include "clothing\stripping.dm"
+#include "hud\rogue_hud_layout.dm"
+#include "hud\rogue_hud_stubs.dm"
+#include "hud\rogue_hud_elements.dm"
+#include "hud\rogue_hud.dm"
+#include "hud\rogue_hud_bridges.dm"
+#include "hud\human_hud_switch.dm"
+#include "maps\era.dm"
+#include "maps\pool.dm"
+#include "maps\world_size.dm"
+#include "maps\era_limits.dm"
+#include "rockhill\_rockhill.dm"
+
+#ifdef UNIT_TESTS
+#include "tests\huds_rogue.dm"
+#endif
+
+#ifdef REDTARD_TEST_FOCUS
+#include "tests\focus.dm"
+#endif
+// BEGIN_INTERNALS
+// END_INTERNALS
+// BEGIN_FILE_DIR
+#define FILE_DIR .
+// END_FILE_DIR
+// BEGIN_PREFERENCES
+// END_PREFERENCES
+// BEGIN_INCLUDE
+#include "clothing\_defines.dm"
+#include "clothing\onmob.dm"
+#include "clothing\sleeves.dm"
+#include "clothing\slots.dm"
+#include "clothing\stripping.dm"
+#include "hud\human_hud_switch.dm"
+#include "hud\rogue_hud.dm"
+#include "hud\rogue_hud_bridges.dm"
+#include "hud\rogue_hud_elements.dm"
+#include "hud\rogue_hud_layout.dm"
+#include "hud\rogue_hud_stubs.dm"
+#include "maps\era.dm"
+#include "maps\era_limits.dm"
+#include "maps\pool.dm"
+#include "maps\world_size.dm"
+#include "rockhill\_rockhill.dm"
+#include "tests\focus.dm"
+#include "tests\huds_rogue.dm"
+// END_INCLUDE

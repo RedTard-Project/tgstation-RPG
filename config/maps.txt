@@ -15,43 +15,44 @@ Format:
 	webmap_url (link to the a webmap to see the map in the user's browser)
 endmap
 
-# Production-level maps.
+# Medieval maps: the only pool that is voted, rotated, or started on a normal launch.
+
+map rockhill
+	votable
+	default
+endmap
+
+# Modern maps: they stay in the list so an admin can pick them with Change Map, but they are
+# never voted, never rotated, and never the random normal-launch pick.
 
 map deltastation
 	minplayers 50
-	votable
 endmap
 
 map icebox
 	minplayers 25
-	votable
 endmap
 
 map catwalkstation
 	minplayers 25
-	votable
 endmap
 
 map metastation
 	minplayers 25
 	#voteweight 0.5
-	votable
 	#feedbacklink https://www.youtube.com/watch?v=XG8b7WhANNA
 	#webmap_url https://webmap.affectedarc07.co.uk/maps/tgstation/metastation
 endmap
 
 map tramstation
 	minplayers 35
-	votable
 endmap
 
 map nebulastation
 	minplayers 35
-	votable
 endmap
 
 map kilostation
-	votable
 	maxplayers 40
 endmap
 
