@@ -174,20 +174,31 @@ def _chunk(kind, body):
 
 
 def write(path, frame_width, frame_height, named_cells):
-    count = len(named_cells)
+    states = []
+    for name, _ in named_cells:
+        states += [f'state = "{name}"', '\tdirs = 1', '\tframes = 1']
+    _sheet(path, frame_width, frame_height, [cell for _, cell in named_cells], states)
+
+
+def write_animated(path, frame_width, frame_height, cells, delays):
+    states = ['state = ""', '\tdirs = 1', f'\tframes = {len(cells)}']
+    if len(cells) > 1:
+        states.append('\tdelay = ' + ','.join(str(delay) for delay in delays))
+    _sheet(path, frame_width, frame_height, cells, states)
+
+
+def _sheet(path, frame_width, frame_height, cells, states):
+    count = len(cells)
     columns = max(1, math.ceil(math.sqrt(count)))
     rows = math.ceil(count / columns)
     width, height = columns * frame_width, rows * frame_height
     canvas = bytearray(width * height * 4)
-    for index, (_, cell) in enumerate(named_cells):
+    for index, cell in enumerate(cells):
         row, col = divmod(index, columns)
         for y in range(frame_height):
             start = ((row * frame_height + y) * width + col * frame_width) * 4
             canvas[start:start + frame_width * 4] = cell[y * frame_width * 4:(y + 1) * frame_width * 4]
-    description = ['# BEGIN DMI', 'version = 4.0', f'\twidth = {frame_width}', f'\theight = {frame_height}']
-    for name, _ in named_cells:
-        description += [f'state = "{name}"', '\tdirs = 1', '\tframes = 1']
-    description.append('# END DMI')
+    description = ['# BEGIN DMI', 'version = 4.0', f'\twidth = {frame_width}', f'\theight = {frame_height}'] + states + ['# END DMI']
     text = ('\n'.join(description) + '\n').encode('utf-8')
     raw = b''.join(b'\x00' + bytes(canvas[y * width * 4:(y + 1) * width * 4]) for y in range(height))
     out = SIGNATURE
@@ -219,15 +230,13 @@ def corners_to_bitmask(dmi, prefix, preview_state=None):
         else:
             a, b, d, names = j & S, j & E, j & SE, ('4-s', '4-e', '4-se', '4-f', '4-i')
         edge_a, edge_b, corner, full, inner = names
-        if a and b and d:
-            return full
         if a and b:
-            return inner
-        if b:
-            return edge_a
+            return full if d else corner
         if a:
+            return edge_a
+        if b:
             return edge_b
-        return corner
+        return inner
 
     out = []
     for j in BITMASK_JUNCTIONS:

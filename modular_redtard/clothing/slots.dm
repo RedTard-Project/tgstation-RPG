@@ -176,10 +176,20 @@
 	if(slot == ITEM_SLOT_ROGUE_MOUTH && (!worn?.worn_icon || !get_bodypart(BODY_ZONE_HEAD)))
 		worn = null
 	hud_used?.update_inventory_slot(slot)
-	var/mutable_appearance/look
+	var/list/looks
 	if(worn)
-		look = worn.build_worn_icon(default_layer = layer_value, default_icon_file = worn.icon)
-	set_rogue_overlay("[slot]", look)
+		looks = list(worn.build_worn_icon(default_layer = layer_value, default_icon_file = worn.icon))
+		var/list/sleeves
+		switch(slot)
+			if(ITEM_SLOT_ROGUE_SHIRT)
+				sleeves = rogue_sleeves(worn, ROGUE_SHIRT_SLEEVE_LAYER)
+			if(ITEM_SLOT_ROGUE_WRISTS)
+				sleeves = rogue_sleeves(worn, ROGUE_WRISTS_SLEEVE_LAYER)
+			if(ITEM_SLOT_ROGUE_CLOAK)
+				sleeves = rogue_sleeves(worn, ROGUE_CLOAK_LAYER, whole = TRUE)
+		if(sleeves)
+			looks += sleeves
+	set_rogue_overlay("[slot]", looks)
 
 /mob/living/carbon/human/proc/update_rogue_ring(index)
 	hud_used?.update_inventory_slot(ITEM_SLOT_ROGUE_RING, index)

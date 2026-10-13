@@ -62,6 +62,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/machines.dmi'
 	icon_state = "evilchair"
 	item_chair = null
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/bench
 	name = "bench"
@@ -69,6 +70,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "bench"
 	item_chair = null
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/bench/church
 	name = "bench"
@@ -76,6 +78,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "church_benchleft"
 	item_chair = null
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/bench/church/mid
 	name = "bench"
@@ -83,6 +86,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "church_benchmid"
 	item_chair = null
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/bench/church/r
 	name = "bench"
@@ -90,6 +94,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "church_benchright"
 	item_chair = null
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/bench/church/smallbench
 	name = "bench"
@@ -97,6 +102,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "benchsmall"
 	item_chair = null
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/bench/couch
 	name = "bench"
@@ -104,6 +110,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "redcouch"
 	item_chair = null
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/bench/couch/r
 	name = "bench"
@@ -111,6 +118,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "redcouch2"
 	item_chair = null
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/bench/coucha
 	name = "bench"
@@ -118,6 +126,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "couchaleft"
 	item_chair = null
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/bench/coucha/r
 	name = "bench"
@@ -125,6 +134,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "coucharight"
 	item_chair = null
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/bench/couchablack
 	name = "bench"
@@ -132,6 +142,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "couchablackaleft"
 	item_chair = null
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/bench/couchablack/r
 	name = "bench"
@@ -139,6 +150,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "couchablackaright"
 	item_chair = null
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/bench/couchamagenta
 	name = "bench"
@@ -146,6 +158,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "couchamagentaleft"
 	item_chair = null
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/bench/couchamagenta/r
 	name = "bench"
@@ -153,6 +166,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "couchamagentaright"
 	item_chair = null
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/bench/ultimacouch
 	name = "bench"
@@ -160,6 +174,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "ultimacouchleft"
 	item_chair = null
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/bench/ultimacouch/r
 	name = "bench"
@@ -167,6 +182,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "ultimacouchright"
 	item_chair = null
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/frankenstein
 	name = "Fulmenor chair"
@@ -176,6 +192,7 @@
 	density = FALSE
 	pixel_x = -8
 	item_chair = null
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/hotspring_bench
 	name = "park bench"
@@ -183,6 +200,7 @@
 	icon = 'modular_redtard/rockhill/icons/obj/structures/hotspring.dmi'
 	icon_state = "parkbench_sofamiddle"
 	item_chair = null
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/hotspring_bench/left
 	name = "park bench"
@@ -190,6 +208,7 @@
 	icon = 'modular_redtard/rockhill/icons/obj/structures/hotspring.dmi'
 	icon_state = "parkbench_sofaend_left"
 	item_chair = null
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/hotspring_bench/right
 	name = "park bench"
@@ -197,6 +216,7 @@
 	icon = 'modular_redtard/rockhill/icons/obj/structures/hotspring.dmi'
 	icon_state = "parkbench_sofaend_right"
 	item_chair = null
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/office
 	name = "chair"
@@ -204,6 +224,7 @@
 	icon = 'modular_redtard/rockhill/icons/obj/chairs.dmi'
 	icon_state = "officechair_dark"
 	item_chair = null
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/smallbench
 	name = "small bench"
@@ -212,6 +233,7 @@
 	icon_state = "benchsmall"
 	density = FALSE
 	item_chair = null
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/stool/rogue
 	name = "stool"
@@ -219,6 +241,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "barstool"
 	item_chair = /obj/item/chair/stool/bar/rogue
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/wood
 	name = "chair"
@@ -226,6 +249,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "chair1"
 	item_chair = null
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/wood/rogue
 	name = "chair"
@@ -233,6 +257,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "chair2"
 	item_chair = /obj/item/chair/rogue
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/wood/rogue/chair3
 	name = "chair"
@@ -240,6 +265,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "chair3"
 	item_chair = /obj/item/chair/rogue
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/wood/rogue/chair4
 	name = "chair"
@@ -247,6 +273,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "chair4"
 	item_chair = /obj/item/chair/rogue
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/wood/rogue/chair5
 	name = "chair"
@@ -254,6 +281,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "chair5"
 	item_chair = /obj/item/chair/rogue
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/wood/rogue/fancy
 	name = "chair"
@@ -261,6 +289,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "chair1"
 	item_chair = /obj/item/chair/rogue/fancy
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/wood/rogue/throne
 	name = "chair"
@@ -268,6 +297,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "thronechair"
 	item_chair = null
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/wood/rogue/throne/zybantine
 	name = "zybantine throne"
@@ -276,6 +306,7 @@
 	icon_state = "zybantinethrone"
 	pixel_x = -16
 	item_chair = null
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/wood/zybantine
 	name = "zybantine chair"
@@ -283,6 +314,7 @@
 	icon = 'modular_redtard/rockhill/icons/modular_deserttown/icons/chairs.dmi'
 	icon_state = "zybantinechair"
 	item_chair = null
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/zybantine_sofa/left
 	name = "zybantine sofa"
@@ -290,6 +322,7 @@
 	icon = 'modular_redtard/rockhill/icons/modular_deserttown/icons/chairs.dmi'
 	icon_state = "zybantinesofa_left"
 	item_chair = null
+	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/zybantine_sofa/right
 	name = "zybantine sofa"
@@ -297,6 +330,7 @@
 	icon = 'modular_redtard/rockhill/icons/modular_deserttown/icons/chairs.dmi'
 	icon_state = "zybantinesofa_right"
 	item_chair = null
+	layer = OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/chest
 	name = "chest"
@@ -304,7 +338,6 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "chest3s"
 	density = TRUE
-	layer = BELOW_OBJ_LAYER
 	base_icon_state = "chest3s"
 	keylock = TRUE
 	locked = FALSE
@@ -312,6 +345,7 @@
 	lock_strength = 100
 	open_sound = 'modular_redtard/rockhill/sound/misc/chestopen.ogg'
 	close_sound = 'modular_redtard/rockhill/sound/misc/chestclose.ogg'
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/chest/crafted
 	name = "chest"
@@ -319,7 +353,6 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "chest3s"
 	density = TRUE
-	layer = BELOW_OBJ_LAYER
 	base_icon_state = "chest3s"
 	keylock = FALSE
 	locked = FALSE
@@ -327,6 +360,7 @@
 	lock_strength = 100
 	open_sound = 'modular_redtard/rockhill/sound/misc/chestopen.ogg'
 	close_sound = 'modular_redtard/rockhill/sound/misc/chestclose.ogg'
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/chest/crate
 	name = "crate"
@@ -334,7 +368,6 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "woodchest"
 	density = TRUE
-	layer = BELOW_OBJ_LAYER
 	base_icon_state = "woodchest"
 	keylock = TRUE
 	locked = FALSE
@@ -342,6 +375,7 @@
 	lock_strength = 100
 	open_sound = 'modular_redtard/rockhill/sound/misc/chestopen.ogg'
 	close_sound = 'modular_redtard/rockhill/sound/misc/chestclose.ogg'
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/chest/gold
 	name = "chest"
@@ -349,7 +383,6 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "chest3"
 	density = TRUE
-	layer = BELOW_OBJ_LAYER
 	base_icon_state = "chest3"
 	keylock = TRUE
 	locked = FALSE
@@ -357,6 +390,7 @@
 	lock_strength = 100
 	open_sound = 'modular_redtard/rockhill/sound/misc/chestopen.ogg'
 	close_sound = 'modular_redtard/rockhill/sound/misc/chestclose.ogg'
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/chest/inqcrate
 	name = "otavan chest"
@@ -364,7 +398,6 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "chestweird2"
 	density = TRUE
-	layer = BELOW_OBJ_LAYER
 	base_icon_state = "chestweird2"
 	keylock = TRUE
 	locked = FALSE
@@ -372,6 +405,7 @@
 	lock_strength = 100
 	open_sound = 'modular_redtard/rockhill/sound/misc/chestopen.ogg'
 	close_sound = 'modular_redtard/rockhill/sound/misc/chestclose.ogg'
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/chest/inqreliquary
 	name = "otavan reliquary"
@@ -379,7 +413,6 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "chestweird1"
 	density = TRUE
-	layer = BELOW_OBJ_LAYER
 	base_icon_state = "chestweird1"
 	keylock = TRUE
 	locked = FALSE
@@ -387,6 +420,7 @@
 	lock_strength = 100
 	open_sound = 'modular_redtard/rockhill/sound/misc/chestopen.ogg'
 	close_sound = 'modular_redtard/rockhill/sound/misc/chestclose.ogg'
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/chest/lootbox
 	name = "chest"
@@ -394,7 +428,6 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "chest3s"
 	density = TRUE
-	layer = BELOW_OBJ_LAYER
 	base_icon_state = "chest3s"
 	keylock = TRUE
 	locked = FALSE
@@ -402,6 +435,7 @@
 	lock_strength = 100
 	open_sound = 'modular_redtard/rockhill/sound/misc/chestopen.ogg'
 	close_sound = 'modular_redtard/rockhill/sound/misc/chestclose.ogg'
+	layer = BELOW_OBJ_LAYER
 	rockhill_loot = list(
 		/obj/item/cooking/pan = 33,
 		/obj/item/bomb = 6,
@@ -436,7 +470,6 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "chest_neu"
 	density = TRUE
-	layer = BELOW_OBJ_LAYER
 	base_icon_state = "chest_neu"
 	keylock = TRUE
 	locked = FALSE
@@ -444,6 +477,7 @@
 	lock_strength = 100
 	open_sound = 'modular_redtard/rockhill/sound/misc/chestopen.ogg'
 	close_sound = 'modular_redtard/rockhill/sound/misc/chestclose.ogg'
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/chest/neu_fancy
 	name = "fancy chest"
@@ -451,7 +485,6 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "chestfancy_neu"
 	density = TRUE
-	layer = BELOW_OBJ_LAYER
 	base_icon_state = "chestfancy_neu"
 	keylock = TRUE
 	locked = FALSE
@@ -459,6 +492,7 @@
 	lock_strength = 100
 	open_sound = 'modular_redtard/rockhill/sound/misc/chestopen.ogg'
 	close_sound = 'modular_redtard/rockhill/sound/misc/chestclose.ogg'
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/chest/neu_iron
 	name = "reinforced chest"
@@ -466,7 +500,6 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "chestiron_neu"
 	density = TRUE
-	layer = BELOW_OBJ_LAYER
 	base_icon_state = "chestiron_neu"
 	keylock = TRUE
 	locked = FALSE
@@ -474,6 +507,7 @@
 	lock_strength = 100
 	open_sound = 'modular_redtard/rockhill/sound/misc/chestopen.ogg'
 	close_sound = 'modular_redtard/rockhill/sound/misc/chestclose.ogg'
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/chest/old_crate
 	name = "old crate"
@@ -481,7 +515,6 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "woodchestalt"
 	density = TRUE
-	layer = BELOW_OBJ_LAYER
 	base_icon_state = "woodchestalt"
 	keylock = TRUE
 	locked = FALSE
@@ -489,6 +522,7 @@
 	lock_strength = 100
 	open_sound = 'modular_redtard/rockhill/sound/misc/chestopen.ogg'
 	close_sound = 'modular_redtard/rockhill/sound/misc/chestclose.ogg'
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/chest/old_crate/apothseed
 	name = "apothecary's herb seed crate"
@@ -496,7 +530,6 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "woodchestalt"
 	density = TRUE
-	layer = BELOW_OBJ_LAYER
 	base_icon_state = "woodchestalt"
 	keylock = TRUE
 	locked = FALSE
@@ -504,6 +537,7 @@
 	lock_strength = 100
 	open_sound = 'modular_redtard/rockhill/sound/misc/chestopen.ogg'
 	close_sound = 'modular_redtard/rockhill/sound/misc/chestclose.ogg'
+	layer = BELOW_OBJ_LAYER
 	rockhill_contents = list(/obj/item/herbseed/matricaria, /obj/item/herbseed/symphitum, /obj/item/herbseed/taraxacum, /obj/item/herbseed/atropa, /obj/item/herbseed/euphrasia, /obj/item/herbseed/paris, /obj/item/herbseed/calendula, /obj/item/herbseed/mentha, /obj/item/herbseed/urtica, /obj/item/herbseed/salvia, /obj/item/herbseed/hypericum, /obj/item/herbseed/benedictus, /obj/item/herbseed/valeriana, /obj/item/herbseed/artemisia, /obj/item/herbseed/rosa, /obj/item/seeds/swampweed, /obj/item/seeds/pipeweed)
 
 /obj/structure/closet/crate/wooden/rockhill/crate/chest/wicker
@@ -512,7 +546,6 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "wicker"
 	density = TRUE
-	layer = BELOW_OBJ_LAYER
 	base_icon_state = "wicker"
 	keylock = TRUE
 	locked = FALSE
@@ -520,6 +553,7 @@
 	lock_strength = 100
 	open_sound = 'modular_redtard/rockhill/sound/items/book_close.ogg'
 	close_sound = 'modular_redtard/rockhill/sound/items/book_close.ogg'
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/coffin
 	name = "casket"
@@ -527,11 +561,11 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "casket"
 	density = TRUE
-	layer = BELOW_OBJ_LAYER
 	keylock = FALSE
 	locked = FALSE
 	lockid = null
 	lock_strength = 100
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/coffin/royal
 	name = "gilded casket"
@@ -539,11 +573,11 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "rcasket"
 	density = TRUE
-	layer = BELOW_OBJ_LAYER
 	keylock = FALSE
 	locked = FALSE
 	lockid = null
 	lock_strength = 100
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/coffin/vampire
 	name = "sleep casket"
@@ -551,11 +585,11 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "vcasket"
 	density = TRUE
-	layer = BELOW_OBJ_LAYER
 	keylock = FALSE
 	locked = FALSE
 	lockid = null
 	lock_strength = 100
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/drawer
 	name = "drawer"
@@ -563,7 +597,6 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "drawer5"
 	density = TRUE
-	layer = BELOW_OBJ_LAYER
 	base_icon_state = "drawer5"
 	keylock = FALSE
 	locked = FALSE
@@ -571,6 +604,7 @@
 	lock_strength = 100
 	open_sound = 'modular_redtard/rockhill/sound/misc/chestopen.ogg'
 	close_sound = 'modular_redtard/rockhill/sound/misc/chestclose.ogg'
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/drawer/drawer1
 	name = "drawer"
@@ -578,7 +612,6 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "drawer1"
 	density = TRUE
-	layer = BELOW_OBJ_LAYER
 	base_icon_state = "drawer1"
 	keylock = FALSE
 	locked = FALSE
@@ -586,6 +619,7 @@
 	lock_strength = 100
 	open_sound = 'modular_redtard/rockhill/sound/misc/chestopen.ogg'
 	close_sound = 'modular_redtard/rockhill/sound/misc/chestclose.ogg'
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/drawer/drawer2
 	name = "drawer"
@@ -593,7 +627,6 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "drawer2"
 	density = TRUE
-	layer = BELOW_OBJ_LAYER
 	base_icon_state = "drawer2"
 	keylock = FALSE
 	locked = FALSE
@@ -601,6 +634,7 @@
 	lock_strength = 100
 	open_sound = 'modular_redtard/rockhill/sound/misc/chestopen.ogg'
 	close_sound = 'modular_redtard/rockhill/sound/misc/chestclose.ogg'
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/drawer/drawer3
 	name = "drawer"
@@ -608,7 +642,6 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "drawer3"
 	density = TRUE
-	layer = BELOW_OBJ_LAYER
 	base_icon_state = "drawer3"
 	keylock = FALSE
 	locked = FALSE
@@ -616,6 +649,7 @@
 	lock_strength = 100
 	open_sound = 'modular_redtard/rockhill/sound/misc/chestopen.ogg'
 	close_sound = 'modular_redtard/rockhill/sound/misc/chestclose.ogg'
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/drawer/drawer4
 	name = "drawer"
@@ -623,7 +657,6 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "drawer4"
 	density = TRUE
-	layer = BELOW_OBJ_LAYER
 	base_icon_state = "drawer4"
 	keylock = FALSE
 	locked = FALSE
@@ -631,6 +664,7 @@
 	lock_strength = 100
 	open_sound = 'modular_redtard/rockhill/sound/misc/chestopen.ogg'
 	close_sound = 'modular_redtard/rockhill/sound/misc/chestclose.ogg'
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/drawer/inn
 	name = "drawer"
@@ -639,7 +673,6 @@
 	icon_state = "drawer5"
 	density = TRUE
 	pixel_y = 16
-	layer = BELOW_OBJ_LAYER
 	base_icon_state = "drawer5"
 	keylock = FALSE
 	locked = FALSE
@@ -647,6 +680,7 @@
 	lock_strength = 100
 	open_sound = 'modular_redtard/rockhill/sound/misc/chestopen.ogg'
 	close_sound = 'modular_redtard/rockhill/sound/misc/chestclose.ogg'
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/drawer/random
 	name = "drawer"
@@ -655,7 +689,6 @@
 	icon_state = "drawer1"
 	density = TRUE
 	pixel_y = 8
-	layer = BELOW_OBJ_LAYER
 	base_icon_state = "drawer1"
 	keylock = FALSE
 	locked = FALSE
@@ -663,6 +696,7 @@
 	lock_strength = 100
 	open_sound = 'modular_redtard/rockhill/sound/misc/chestopen.ogg'
 	close_sound = 'modular_redtard/rockhill/sound/misc/chestclose.ogg'
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/miningcar
 	name = "mine cart"
@@ -670,12 +704,12 @@
 	icon = 'modular_redtard/rockhill/icons/obj/track.dmi'
 	icon_state = "minecart"
 	density = TRUE
-	layer = BELOW_OBJ_LAYER
 	base_icon_state = "minecart"
 	keylock = FALSE
 	locked = FALSE
 	lockid = null
 	lock_strength = 100
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/roguecloset
 	name = "closet"
@@ -683,7 +717,6 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "closet"
 	density = TRUE
-	layer = BELOW_OBJ_LAYER
 	base_icon_state = "closet"
 	keylock = FALSE
 	locked = FALSE
@@ -691,6 +724,7 @@
 	lock_strength = 100
 	open_sound = 'modular_redtard/rockhill/sound/foley/doors/creak.ogg'
 	close_sound = 'modular_redtard/rockhill/sound/foley/latch.ogg'
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/roguecloset/dark
 	name = "closet"
@@ -698,7 +732,6 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "closetdark"
 	density = TRUE
-	layer = BELOW_OBJ_LAYER
 	base_icon_state = "closetdark"
 	keylock = FALSE
 	locked = FALSE
@@ -706,6 +739,7 @@
 	lock_strength = 100
 	open_sound = 'modular_redtard/rockhill/sound/foley/doors/creak.ogg'
 	close_sound = 'modular_redtard/rockhill/sound/foley/latch.ogg'
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/roguecloset/inn
 	name = "closet"
@@ -713,7 +747,6 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "closet3"
 	density = TRUE
-	layer = BELOW_OBJ_LAYER
 	base_icon_state = "closet3"
 	keylock = FALSE
 	locked = FALSE
@@ -721,6 +754,7 @@
 	lock_strength = 100
 	open_sound = 'modular_redtard/rockhill/sound/foley/doors/creak.ogg'
 	close_sound = 'modular_redtard/rockhill/sound/foley/latch.ogg'
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/roguecloset/inn/chest
 	name = "closet"
@@ -728,7 +762,6 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "woodchest"
 	density = TRUE
-	layer = BELOW_OBJ_LAYER
 	base_icon_state = "woodchest"
 	keylock = FALSE
 	locked = FALSE
@@ -736,6 +769,7 @@
 	lock_strength = 100
 	open_sound = 'modular_redtard/rockhill/sound/foley/doors/creak.ogg'
 	close_sound = 'modular_redtard/rockhill/sound/foley/latch.ogg'
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/roguecloset/inn/south
 	name = "closet"
@@ -744,7 +778,6 @@
 	icon_state = "closet3"
 	density = TRUE
 	pixel_y = 16
-	layer = BELOW_OBJ_LAYER
 	base_icon_state = "closet3"
 	keylock = FALSE
 	locked = FALSE
@@ -752,6 +785,7 @@
 	lock_strength = 100
 	open_sound = 'modular_redtard/rockhill/sound/foley/doors/creak.ogg'
 	close_sound = 'modular_redtard/rockhill/sound/foley/latch.ogg'
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/roguecloset/lord
 	name = "closet"
@@ -759,7 +793,6 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "closetlord"
 	density = TRUE
-	layer = BELOW_OBJ_LAYER
 	base_icon_state = "closetlord"
 	keylock = TRUE
 	locked = TRUE
@@ -767,6 +800,7 @@
 	lock_strength = 100
 	open_sound = 'modular_redtard/rockhill/sound/foley/doors/creak.ogg'
 	close_sound = 'modular_redtard/rockhill/sound/foley/latch.ogg'
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/dirthole/closed
 	name = "hole"
@@ -774,13 +808,13 @@
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "gravecovered"
 	density = FALSE
-	layer = 2.8
 	keylock = FALSE
 	locked = TRUE
 	lockid = null
 	lock_strength = 100
 	open_sound = 'modular_redtard/rockhill/sound/misc/cupboard_open.ogg'
 	close_sound = 'modular_redtard/rockhill/sound/misc/cupboard_close.ogg'
+	layer = 2.8
 
 /obj/structure/closet/crate/wooden/rockhill/dirthole/closed/loot
 	name = "hole"
@@ -788,13 +822,13 @@
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "gravecovered"
 	density = FALSE
-	layer = 2.8
 	keylock = FALSE
 	locked = TRUE
 	lockid = null
 	lock_strength = 100
 	open_sound = 'modular_redtard/rockhill/sound/misc/cupboard_open.ogg'
 	close_sound = 'modular_redtard/rockhill/sound/misc/cupboard_close.ogg'
+	layer = 2.8
 
 /obj/structure/closet/crate/wooden/rockhill/dirthole/grave
 	name = "hole"
@@ -802,13 +836,13 @@
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "grave"
 	density = FALSE
-	layer = 2.8
 	keylock = FALSE
 	locked = FALSE
 	lockid = null
 	lock_strength = 100
 	open_sound = 'modular_redtard/rockhill/sound/misc/cupboard_open.ogg'
 	close_sound = 'modular_redtard/rockhill/sound/misc/cupboard_close.ogg'
+	layer = 2.8
 
 /obj/structure/rack/rockhill/rogue
 	name = "rack"
@@ -963,8 +997,8 @@
 	desc = ""
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tables.dmi'
 	density = TRUE
-	layer = TABLE_LAYER
 	icon_state = "tablewood1"
+	layer = TABLE_LAYER
 
 /obj/structure/table/wood/rockhill/wood/fancy
 	name = "fancy table"
@@ -1036,8 +1070,8 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tables.dmi'
 	icon_state = "largetable"
 	density = TRUE
-	layer = TABLE_LAYER
 	dir = 4
+	layer = TABLE_LAYER
 
 /obj/structure/table/wood/rockhill/wood/large_table/middle_west
 	name = "wooden table"
@@ -1045,8 +1079,8 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tables.dmi'
 	icon_state = "largetable"
 	density = TRUE
-	layer = TABLE_LAYER
 	dir = 8
+	layer = TABLE_LAYER
 
 /obj/structure/table/wood/rockhill/wood/large_table/north
 	name = "wooden table"
@@ -1054,8 +1088,8 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tables.dmi'
 	icon_state = "largetable"
 	density = TRUE
-	layer = TABLE_LAYER
 	dir = 1
+	layer = TABLE_LAYER
 
 /obj/structure/table/wood/rockhill/wood/large_table/north_east
 	name = "wooden table"
@@ -1063,8 +1097,8 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tables.dmi'
 	icon_state = "largetable"
 	density = TRUE
-	layer = TABLE_LAYER
 	dir = 5
+	layer = TABLE_LAYER
 
 /obj/structure/table/wood/rockhill/wood/large_table/north_west
 	name = "wooden table"
@@ -1072,8 +1106,8 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tables.dmi'
 	icon_state = "largetable"
 	density = TRUE
-	layer = TABLE_LAYER
 	dir = 9
+	layer = TABLE_LAYER
 
 /obj/structure/table/wood/rockhill/wood/large_table/south_east
 	name = "wooden table"
@@ -1081,8 +1115,8 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tables.dmi'
 	icon_state = "largetable"
 	density = TRUE
-	layer = TABLE_LAYER
 	dir = 6
+	layer = TABLE_LAYER
 
 /obj/structure/table/wood/rockhill/wood/large_table/south_west
 	name = "wooden table"
@@ -1090,8 +1124,8 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tables.dmi'
 	icon_state = "largetable"
 	density = TRUE
-	layer = TABLE_LAYER
 	dir = 10
+	layer = TABLE_LAYER
 
 /obj/structure/table/wood/rockhill/wood/long_table
 	name = "wooden table"
@@ -1107,8 +1141,8 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tables.dmi'
 	icon_state = "longtable"
 	density = TRUE
-	layer = TABLE_LAYER
 	dir = 8
+	layer = TABLE_LAYER
 
 /obj/structure/table/wood/rockhill/wood/long_table/mid
 	name = "wooden table"
@@ -1124,8 +1158,8 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tables.dmi'
 	icon_state = "longtable_mid"
 	density = TRUE
-	layer = TABLE_LAYER
 	dir = 1
+	layer = TABLE_LAYER
 
 /obj/structure/table/wood/rockhill/wood/long_table/north_east
 	name = "wooden table"
@@ -1133,8 +1167,8 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tables.dmi'
 	icon_state = "longtable"
 	density = TRUE
-	layer = TABLE_LAYER
 	dir = 4
+	layer = TABLE_LAYER
 
 /obj/structure/table/wood/rockhill/wood/long_table/right
 	name = "wooden table"
@@ -1142,8 +1176,8 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tables.dmi'
 	icon_state = "longtable"
 	density = TRUE
-	layer = TABLE_LAYER
 	dir = 1
+	layer = TABLE_LAYER
 
 /obj/structure/table/wood/rockhill/wood/map
 	name = "wooden table"

@@ -1,6 +1,7 @@
 #include "clothing\_defines.dm"
 #include "clothing\slots.dm"
 #include "clothing\onmob.dm"
+#include "clothing\sleeves.dm"
 #include "clothing\stripping.dm"
 #include "hud\rogue_hud_layout.dm"
 #include "hud\rogue_hud_stubs.dm"
@@ -29,6 +30,11 @@
 // BEGIN_PREFERENCES
 // END_PREFERENCES
 // BEGIN_INCLUDE
+#include "clothing\_defines.dm"
+#include "clothing\onmob.dm"
+#include "clothing\sleeves.dm"
+#include "clothing\slots.dm"
+#include "clothing\stripping.dm"
 #include "hud\human_hud_switch.dm"
 #include "hud\rogue_hud.dm"
 #include "hud\rogue_hud_bridges.dm"
@@ -36,6 +42,7 @@
 #include "hud\rogue_hud_layout.dm"
 #include "hud\rogue_hud_stubs.dm"
 #include "maps\era.dm"
+#include "maps\era_limits.dm"
 #include "maps\pool.dm"
 #include "maps\world_size.dm"
 #include "rockhill\_rockhill.dm"

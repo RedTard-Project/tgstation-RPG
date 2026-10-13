@@ -40,6 +40,7 @@ DEFINE_VALUES = {}
 SOURCE_REVISION = []
 ARMOR_DATUMS = {}
 BLANK_USERS = set()
+BITMASK_TURFS = set()
 NO_SPRITE = []
 LISTINGS = {}
 LICENSE_FILE = re.compile(r'(?i)^(licen[cs]e|copying)([-_.][\w.-]*)?$')
@@ -107,6 +108,14 @@ SLOT_FLAG_MAP = {
 SMOOTH_DIR = 'modular_redtard/rockhill/icons/smooth'
 SOUND_DIR = 'modular_redtard/rockhill/sound'
 EDGES_FILE = 'turf_edges.dm'
+SMOOTHING_FILE = 'smoothing.dm'
+AREAS_JSON = 'areas.json'
+SUNLIT_LEAF = 'sunlit'
+TG_LAYERS = 'code/__DEFINES/layers.dm'
+SMOOTH_BITS = {'SMOOTH_TRUE': 1, 'SMOOTH_MORE': 2, 'SMOOTH_DIAGONAL': 4, 'SMOOTH_BORDER': 8}
+BYOND_LAYERS = {'AREA_LAYER': '1', 'TURF_LAYER': '2', 'OBJ_LAYER': '3', 'MOB_LAYER': '4', 'FLY_LAYER': '5', 'EFFECTS_LAYER': '5000', 'TOPDOWN_LAYER': '10000', 'BACKGROUND_LAYER': '20000'}
+TURF_GROUP_BASE = 1000
+OBJ_GROUP_BASE = 2000
 
 
 def strip_comments(text):
@@ -316,6 +325,153 @@ def tg_defines(root):
     return names
 
 
+def random_pick(rw, path):
+    p = path
+    while p:
+        body = '\n'.join(INIT_BODIES.get(p, []))
+        if body:
+            match = re.search(r'pick\(\s*list\(([^)]*)\)\s*\)', body)
+            if match and 'INITIALIZE_HINT_QDEL' in body and re.search(r'\bnew\b', body):
+                return [found for found, _ in list_paths(match.group(1))]
+            return []
+        p = rw.parent(p)
+    return []
+
+
+def state_leaf(state):
+    return 'state_' + re.sub(r'[^A-Za-z0-9_]', '_', state)
+
+
+def smooth_bits(raw):
+    value = (raw or '').strip()
+    if NUMBER.match(value):
+        return int(float(value))
+    bits = 0
+    for token in re.findall(r'[A-Z_]+', value):
+        bits |= SMOOTH_BITS.get(token, 0)
+    return bits
+
+
+def smooth_rule(rw, path):
+    bits = smooth_bits(rw.resolve(path, 'smooth'))
+    if not bits & (SMOOTH_BITS['SMOOTH_TRUE'] | SMOOTH_BITS['SMOOTH_MORE']):
+        return None
+    raw = (rw.resolve(path, 'canSmoothWith') or '').strip()
+    return {
+        'more': bool(bits & SMOOTH_BITS['SMOOTH_MORE']),
+        'entries': None if not raw or raw == 'null' else re.findall(r'(/(?:turf|obj)/[A-Za-z0-9_/]+)', raw),
+        'diagonal': (rw.resolve(path, 'smooth_diag') or 'TRUE').strip() not in ('FALSE', '0'),
+        'border': bool(bits & SMOOTH_BITS['SMOOTH_BORDER']),
+    }
+
+
+def smooth_matches(path, rule, candidates):
+    if rule['entries'] is None:
+        return [path] if path in candidates else []
+    return sorted(q for q in candidates if any(q == e or (rule['more'] and q.startswith(e + '/')) for e in rule['entries']))
+
+
+def group_define(runtime):
+    return 'SMOOTH_GROUP_ROCKHILL_' + re.sub(r'[^A-Za-z0-9]+', '_', runtime.split('/', 2)[2]).upper().strip('_')
+
+
+def define_number(expr, table, depth=0):
+    if depth > 16:
+        raise ValueError(expr)
+
+    def value_of(match):
+        name = match.group(0)
+        raw = BYOND_LAYERS.get(name) if name in BYOND_LAYERS else table.get(name)
+        if raw is None:
+            raise ValueError(name)
+        return '(' + repr(define_number(raw, table, depth + 1)) + ')'
+
+    text = re.sub(r'[A-Za-z_][A-Za-z0-9_]*', value_of, (expr or '').strip())
+    if not text or not re.fullmatch(r'[\d\s.+\-*/()]+', text):
+        raise ValueError(expr)
+    return float(eval(text, {'__builtins__': {}}))
+
+
+def tg_define_values(path):
+    values = {}
+    for line in open(path, encoding='utf-8', errors='ignore'):
+        m = re.match(r'^\s*#define\s+([A-Za-z_][A-Za-z0-9_]*)\s+(.+?)\s*(?://.*)?$', line)
+        if m:
+            values[m.group(1)] = m.group(2)
+    return values
+
+
+def number_or_none(raw, table):
+    try:
+        return define_number(raw, table) if raw else None
+    except ValueError:
+        return None
+
+
+def layer_expression(raw, value, tg_values):
+    m = re.fullmatch(r'([A-Z_][A-Z0-9_]*)(?:\s*([+-])\s*(\d+(?:\.\d+)?))?', raw.strip())
+    if m:
+        tg = number_or_none(m.group(1), tg_values)
+        ours = number_or_none(m.group(1), DEFINE_VALUES)
+        if tg is not None and ours is not None and abs(tg - ours) < 1e-9 and tg < define_number('TOPDOWN_LAYER', tg_values):
+            return m.group(1) if not m.group(2) else f'{m.group(1)} {m.group(2)} {m.group(3)}'
+    return f'{value:g}'
+
+
+
+def placement_lines(rw, path, runtime, tg_values):
+    plane = number_or_none(rw.resolve(path, 'plane') or rw.types.get('/atom', {}).get('plane'), DEFINE_VALUES)
+    raw_layer = rw.resolve(path, 'layer')
+    layer = number_or_none(raw_layer, DEFINE_VALUES)
+    decal = boundary_match(runtime, '/obj/effect/decal')
+    base_plane = 'FLOOR_PLANE' if decal else 'GAME_PLANE'
+    if plane is None:
+        kind = 'floor' if decal else 'game'
+    elif plane <= define_number('WALL_PLANE', DEFINE_VALUES):
+        kind = 'floor'
+    elif plane < define_number('GAME_PLANE_FOV_HIDDEN', DEFINE_VALUES):
+        kind = 'lower'
+    elif plane == define_number('GAME_PLANE_FOV_HIDDEN', DEFINE_VALUES):
+        kind = 'game'
+    else:
+        kind = 'upper'
+    tg_plane = {'floor': 'FLOOR_PLANE', 'lower': 'GAME_PLANE', 'game': 'GAME_PLANE', 'upper': 'ABOVE_GAME_PLANE'}[kind]
+    lines = [f'\tplane = {tg_plane}'] if tg_plane != base_plane else []
+    if kind == 'floor':
+        if not decal:
+            lines.append('\tlayer = ABOVE_OPEN_TURF_LAYER')
+        return lines
+    if layer is None:
+        if decal:
+            lines.append('\tlayer = LOW_OBJ_LAYER')
+        return lines
+    if kind == 'lower' and layer > define_number('BELOW_MOB_LAYER', tg_values):
+        lines.append('\tlayer = BELOW_MOB_LAYER')
+        return lines
+    lines.append(f'\tlayer = {layer_expression(raw_layer, layer, tg_values)}')
+    return lines
+
+
+def turf_state_edits(map_path):
+    edits = set()
+    current = None
+    for line in open(map_path, encoding='utf-8'):
+        line = line.rstrip('\n')
+        if line.startswith('('):
+            break
+        match = re.match(r'^(/turf/[A-Za-z0-9_/]+)\{$', line)
+        if match:
+            current = match.group(1)
+            continue
+        if current:
+            state = re.match(r'^\s*icon_state = "([^"\[\\]*)";?$', line)
+            if state:
+                edits.add((current, state.group(1)))
+            if re.match(r'^\s*\}[,)]$', line):
+                current = None
+    return edits
+
+
 def map_usage(map_path):
     lines = open(map_path, encoding='utf-8').read().split('\n')
     models = {}
@@ -463,6 +619,7 @@ def main():
     rw = Codebase(types)
     print('ratwood types:', len(types))
     declared = declared_paths(DECLARATION_ROOTS, [OUT_DIR])
+    tg_declared = declared_paths(['code'], [])
     tg_names = tg_defines('code')
     usage, per_level = map_usage(os.path.join(CHECKOUT, cfg['source']['map']))
 
@@ -495,11 +652,14 @@ def main():
     mapgen = mapgen_spec(rw, usage)
     mapgen_types = {path for gen in mapgen.values() for module in gen['modules'] for key in ('spawnableAtoms', 'spawnableTurfs') for path, _ in module[key]}
     fill_items = set()
+    for path in set(usage) | mapgen_types:
+        if path.startswith('/obj/structure'):
+            fill_items |= set(random_pick(rw, path))
     for path in usage:
         if (replacement_for(path, rules) or {}).get('port', {}).get('fill'):
             contents, loot, _ = closet_fill(rw, path)
             fill_items |= set(contents) | {item for item, _ in loot}
-    generated = generate(cfg, port, rules, rw, declared, tg_names, usage, outfit_items | mapgen_types | fill_items, set(jobs))
+    generated = generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, outfit_items | mapgen_types | fill_items, set(jobs))
     generate_onmob(generated)
     generate_mapgen(mapgen, rules, declared | generated, tg_names)
     generate_jobs(cfg, rw, usage, role_outfits, declared | generated)
@@ -726,8 +886,10 @@ def category_for(path, categories):
     return best[0] if best else None
 
 
-def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items, jobs=frozenset()):
+def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra_items, jobs=frozenset()):
     categories = port['categories']
+    tg_values = tg_define_values(TG_LAYERS)
+    outdoor_areas = []
     chosen = collections.defaultdict(list)
     skipped = collections.Counter()
     port_usage = collections.Counter(usage)
@@ -741,7 +903,7 @@ def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items, jobs=
             for item, _ in list_paths(rw.resolve(path, name)):
                 port_usage[item] += 0
     for path, count in sorted(port_usage.items()):
-        if replacement_for(path, rules) or path in declared:
+        if replacement_for(path, rules) or path in tg_declared:
             continue
         cat = category_for(path, categories)
         if cat is None:
@@ -840,27 +1002,14 @@ def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items, jobs=
     runtime = {p: runtime_path(p, rules) for p in used_turfs}
     reskins = [p for p in used_turfs if (replacement_for(p, rules) or {}).get('reskin')]
     valid = declared | generated | {runtime[p] for p in reskins}
+    valid |= {'/'.join(p.split('/')[:k]) for p in generated for k in range(3, p.count('/') + 1)}
     valid |= {runtime_path(p, rules) for p in usage if (replacement_for(p, rules) or {}).get('rebase') and replacement_for(p, rules).get('port')}
     sheets = {}
-    families = port['smoothing_families']
-
-    def family_of(path):
-        best = None
-        for prefix, group in families.items():
-            if (path == prefix or path.startswith(prefix + '/')) and (best is None or len(prefix) > len(best[0])):
-                best = (prefix, group)
-        return best[1] if best else None
-
-    def smooth_targets(path):
-        raw = rw.resolve(path, 'canSmoothWith') or ''
-        found = set()
-        for entry in re.findall(r'(/turf/[A-Za-z0-9_/]+)', raw):
-            for q in used_turfs:
-                if (q == entry or q.startswith(entry + '/')) and runtime[q] in valid:
-                    found.add(runtime[q])
-            if entry in valid and replacement_for(entry, rules) is None:
-                found.add(entry)
-        return sorted(found)
+    used_objs = sorted(p for p in usage if p.startswith('/obj/'))
+    smooth_candidates = set(used_turfs) | set(used_objs)
+    smoothing_paths = {p for cat in categories if cat.get('smoothing') for p in chosen.get(cat['file'], [])} | set(reskins)
+    if os.path.isdir(SMOOTH_DIR):
+        shutil.rmtree(SMOOTH_DIR)
 
     def convert_sheet(raw_icon, preview):
         m = ICON_LITERAL.match((raw_icon or '').strip())
@@ -880,28 +1029,80 @@ def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items, jobs=
                 sheets[src] = prefix
         return sheets[src]
 
-    def smoothing_lines(path):
-        flags = rw.resolve(path, 'smooth') or ''
-        if 'SMOOTH_TRUE' not in flags and 'SMOOTH_MORE' not in flags:
-            return None
-        group = family_of(path)
-        if not group:
-            return None
+    state_edits = sorted(turf_state_edits(os.path.join(CHECKOUT, cfg['source']['map'])))
+    bitmask = {}
+    for path in sorted(smoothing_paths):
+        if not smooth_rule(rw, path):
+            continue
         raw = rw.resolve(path, 'smooth_icon')
         if not raw or raw.strip() == 'null':
             raw = rw.resolve(path, 'icon')
         prefix = convert_sheet(raw, (rw.resolve(path, 'icon_state') or '').strip().strip('"'))
+        if prefix:
+            bitmask[path] = prefix
+    BITMASK_TURFS.update(bitmask)
+    state_variants = collections.defaultdict(set)
+    for path, state in state_edits:
+        target = runtime_path(path, rules)
+        if (target in valid or target in generated) and path not in bitmask and not (replacement_for(path, rules) or {}).get('reskin') and runtime_look(rw, path).get('icon', (None, None))[0] != 'state':
+            state_variants[path].add(f'{target}/{state_leaf(state)}')
+
+    def matched_runtimes(path):
+        found = set()
+        for q in smooth_matches(path, smooth_rule(rw, path), smooth_candidates):
+            target = runtime_path(q, rules)
+            if target and target in valid:
+                found.add(target)
+        return found
+
+    friends = {path: matched_runtimes(path) for path in bitmask}
+    owners = {runtime_path(p, rules) for p in bitmask} | {t for found in friends.values() for t in found}
+    group_numbers = {o: TURF_GROUP_BASE + i for i, o in enumerate(sorted(o for o in owners if o.startswith('/turf/')))}
+    group_numbers.update({o: -(OBJ_GROUP_BASE + i) for i, o in enumerate(sorted(o for o in owners if not o.startswith('/turf/')))})
+    group_defines = {o: group_define(o) for o in owners}
+    if len(set(group_defines.values())) != len(group_defines):
+        raise SystemExit('two smoothing owners map to the same group define')
+    grouped = set()
+
+    def group_list(targets):
+        return ' + '.join(group_defines[t] for t in sorted(targets, key=lambda t: group_numbers[t]))
+
+    def group_lines(target):
+        if target not in group_defines:
+            return []
+        grouped.add(target)
+        return [f'\tsmoothing_groups = {group_defines[target]}']
+
+    def smooth_targets(path):
+        rule = smooth_rule(rw, path)
+        if not rule:
+            return []
+        found = set()
+        for q in smooth_matches(path, rule, set(used_turfs)):
+            if runtime[q] in valid:
+                found.add(runtime[q])
+                found |= state_variants.get(q, set())
+        return sorted(found)
+
+    def smoothing_lines(path):
+        prefix = bitmask.get(path)
         if not prefix:
             return None
-        friends = {group} | {family_of(p) for p in smooth_targets(path)} - {None}
-        return [
+        rule = smooth_rule(rw, path)
+        lines = [
             f"\ticon = '{SMOOTH_DIR}/{prefix}.dmi'",
             f'\ticon_state = "{prefix}-0"',
             f'\tbase_icon_state = "{prefix}"',
-            '\tsmoothing_flags = SMOOTH_BITMASK',
-            f'\tsmoothing_groups = {group}',
-            f"\tcanSmoothWith = {' + '.join(sorted(friends))}",
         ]
+        if friends[path]:
+            flags = 'SMOOTH_BITMASK' if rule['diagonal'] else 'SMOOTH_BITMASK_CARDINALS'
+            if rule['border']:
+                flags += ' | SMOOTH_BORDER'
+            lines += [f'\tsmoothing_flags = {flags}', f'\tcanSmoothWith = {group_list(friends[path])}']
+        else:
+            lines += ['\tsmoothing_flags = NONE', '\tcanSmoothWith = null']
+        own = runtime_path(path, rules)
+        return lines + (group_lines(own) or ['\tsmoothing_groups = null'])
 
     def edge_receiver(path):
         p = path
@@ -928,8 +1129,6 @@ def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items, jobs=
     if os.path.isdir(OUT_DIR):
         shutil.rmtree(OUT_DIR)
     os.makedirs(OUT_DIR)
-    if os.path.isdir(SMOOTH_DIR):
-        shutil.rmtree(SMOOTH_DIR)
     report_rows = collections.defaultdict(list)
     smoothed = collections.Counter()
     for cat in categories:
@@ -939,7 +1138,7 @@ def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items, jobs=
         blocks = []
         grafted = set()
         for path in paths:
-            g = graft_point(path, declared)
+            g = graft_point(path, tg_declared)
             if g and any(boundary_match(g, n) or g.startswith(n + '/') for n in cat.get('natural', [])):
                 continue
             if g and g not in grafted and cat.get('graft'):
@@ -959,9 +1158,21 @@ def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items, jobs=
             for name in cat['vars']:
                 if smooth and name in ('icon', 'icon_state'):
                     continue
+                if name == 'layer' and cat.get('placement'):
+                    continue
                 source_name = cat.get('rename', {}).get(name, name)
                 value = rw.resolve(path, source_name)
                 if name in cat.get('skip_default', []) and (value or 'null').strip() in ('null', '0', 'FALSE', '""'):
+                    continue
+                if name in cat.get('mapped_vars', {}):
+                    mapped = cat['mapped_vars'][name].get((value or '').strip().strip('()').strip())
+                    if mapped:
+                        block.append(f'\t{name} = {mapped}')
+                    continue
+                if name in cat.get('flag_vars', []):
+                    if value is not None:
+                        kept = [token for token in re.findall(r'[A-Z_][A-Z0-9_]*', value) if token in tg_names]
+                        block.append(f'\t{name} = ' + (' | '.join(kept) if kept else 'NONE'))
                     continue
                 if name in cat.get('paths', []):
                     target = runtime_path(value.strip(), rules) if value and value.strip().startswith('/') else None
@@ -1008,10 +1219,10 @@ def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items, jobs=
                     continue
                 block.append(f'\t{name} = {value}')
             own_worn = rw.resolve(path, cat.get('rename', {}).get('worn_icon', 'worn_icon'))
-            for name, sheets in cat.get('slot_worn_icons', {}).items():
+            for name, slot_sheets in cat.get('slot_worn_icons', {}).items():
                 if name in cat['vars'] or (own_worn and own_worn.strip() != 'null'):
                     continue
-                sheet = slot_worn_icon(path, sheets)
+                sheet = slot_worn_icon(path, slot_sheets)
                 if sheet:
                     block.append(f'\t{name} = {icon_ref(sheet)}')
             if cat.get('sprite_checks'):
@@ -1029,18 +1240,28 @@ def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items, jobs=
                     block += [f'\trockhill_variant = "{prefix}#{suffix}"', f'\trockhill_variant_min = {low}', f'\trockhill_variant_max = {high}']
                 if look.get('dir'):
                     block.append('\trockhill_random_dir = TRUE')
+            if cat.get('random_pick'):
+                picks = [target for target in (runtime_path(found, rules) for found in random_pick(rw, path)) if target in valid]
+                if picks:
+                    block.append('\trockhill_random_pick = list(' + ', '.join(picks) + ')')
             for name, value in cat.get('fixed_vars', {}).items():
                 block.append(f'\t{name} = {value}')
+            if cat.get('placement'):
+                block += placement_lines(rw, path, path, tg_values)
             if smooth:
                 block += smooth
                 smoothed['bitmask'] += 1
-            elif cat.get('smoothing') and path.startswith('/turf/closed') and family_of(path):
-                block.append(f'\tsmoothing_groups = {family_of(path)}')
-            elif cat.get('smoothing') and edge_receiver(path):
-                block.append('\tsmoothing_flags = SMOOTH_BITMASK_CARDINALS')
-                edge_sources[path] = smooth_targets(path)
-                smoothed['edges'] += 1
+            else:
+                block += group_lines(path)
+                if cat.get('smoothing') and edge_receiver(path):
+                    block.append('\tsmoothing_flags = SMOOTH_BITMASK_CARDINALS')
+                    edge_sources[path] = smooth_targets(path)
+                    smoothed['edges'] += 1
             blocks.append(block)
+            if cat.get('sunlit'):
+                blocks.append([f'{path}/{SUNLIT_LEAF}', '\tstatic_lighting = FALSE', '\tbase_lighting_alpha = 255', '\tbase_lighting_color = ROCKHILL_SUNLIGHT_COLOR'])
+                if (rw.resolve(path, 'outdoors') or '').strip() in ('TRUE', '1'):
+                    outdoor_areas.append(path)
             report_rows[cat['file']].append((path, usage[path]))
         text = '\n\n'.join('\n'.join(b) for b in blocks) + '\n'
         open(f"{OUT_DIR}/{cat['file']}", 'w', encoding='utf-8', newline='\n').write(text)
@@ -1065,9 +1286,10 @@ def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items, jobs=
             if value is not None:
                 block.append(f'\t{name} = {value}')
         raw_icon = rw.resolve(path, 'icon')
-        prefix = convert_sheet(raw_icon, (rw.resolve(path, 'icon_state') or '').strip().strip('"'))
-        if prefix:
-            block += [f"\ticon = '{SMOOTH_DIR}/{prefix}.dmi'", f'\ticon_state = "{prefix}-0"', f'\tbase_icon_state = "{prefix}"']
+        smooth = smoothing_lines(path)
+        if smooth:
+            block += smooth
+            smoothed['bitmask'] += 1
         else:
             icon = icon_ref(raw_icon) if raw_icon else None
             state = literal(rw.resolve(path, 'icon_state'), tg_names)
@@ -1075,6 +1297,8 @@ def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items, jobs=
                 block.append(f'\ticon = {icon}')
             if state:
                 block.append(f'\ticon_state = {state}')
+            block += group_lines(target) or ['\tsmoothing_groups = null']
+            block.append('\tcanSmoothWith = null')
             if edge_receiver(path):
                 block.append('\tsmoothing_flags = SMOOTH_BITMASK_CARDINALS')
                 edge_sources[target] = smooth_targets(path)
@@ -1105,6 +1329,8 @@ def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items, jobs=
             continue
         block = [runtime_path(path, rules)]
         for name in spec['vars']:
+            if name == 'layer' and spec.get('placement'):
+                continue
             value = rw.resolve(path, name)
             if name in spec.get('path_strings', []):
                 entries = [p for p, _ in list_paths(value)]
@@ -1136,6 +1362,8 @@ def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items, jobs=
                 block += [f'\trockhill_variant = "{prefix}#{suffix}"', f'\trockhill_variant_min = {low}', f'\trockhill_variant_max = {high}']
             if look.get('dir'):
                 block.append('\trockhill_random_dir = TRUE')
+        if spec.get('placement'):
+            block += placement_lines(rw, path, block[0], tg_values)
         if spec.get('fill'):
             contents, loot, chance = closet_fill(rw, path)
             contents = [p for p in (runtime_path(c, rules) for c in contents) if p in valid]
@@ -1149,9 +1377,24 @@ def generate(cfg, port, rules, rw, declared, tg_names, usage, extra_items, jobs=
         rebased[spec['file']].append(block)
         report_rows.setdefault(spec['file'], []).append((path, usage[path]))
         generated.add(block[0])
+    state_blocks = []
+    for path, variants in sorted(state_variants.items()):
+        for variant in sorted(variants):
+            state = next(state for p, state in state_edits if p == path and variant.endswith('/' + state_leaf(state)))
+            state_blocks.append([variant, f'\ticon_state = "{state}"', '\trockhill_variant = null'])
+    open(f'{OUT_DIR}/turf_states.dm', 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in state_blocks) + '\n')
+    print(f'turf_states.dm: {len(state_blocks)} turf subtypes for map icon_state edits')
+
     for file, blocks in rebased.items():
         open(f'{OUT_DIR}/{file}', 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
         print(f'{file}: {len(blocks)} rebased types')
+
+    smoothing_out = [f'#define {group_defines[o]} {"S_TURF" if group_numbers[o] >= 0 else "S_OBJ"}({abs(group_numbers[o])})' for o in sorted(owners, key=lambda o: group_numbers[o])]
+    for owner in sorted(owners - grouped):
+        smoothing_out += ['', owner, f'\tsmoothing_groups = {group_defines[owner]}']
+    open(f'{OUT_DIR}/{SMOOTHING_FILE}', 'w', encoding='utf-8', newline='\n').write('\n'.join(smoothing_out) + '\n')
+    print(f'{SMOOTHING_FILE}: {len(owners)} smoothing groups, {len(owners - grouped)} set on types declared elsewhere')
+    open(f'{OUT_DIR}/{AREAS_JSON}', 'w', encoding='utf-8', newline='\n').write(json.dumps({'sunlit': SUNLIT_LEAF, 'outdoors': sorted(outdoor_areas)}, indent='\t') + '\n')
 
     for rel in port.get('extra_icons', []):
         src = os.path.join(CHECKOUT, rel)
@@ -1580,6 +1823,16 @@ def generate_jobs(cfg, rw, usage, role_outfits, valid):
     open(f'{OUT_DIR}/jobs.dm', 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
 
     by_suffix = {p.rsplit('/', 1)[1]: p for p in ported}
+    by_title = {}
+    for p in ported:
+        for var in ('title', 'f_title'):
+            source_title = string_value(rw.resolve(p, var))
+            if source_title:
+                by_title.setdefault(source_title.strip('"'), p)
+        for extra in retitles.get(p, []):
+            by_title.setdefault(extra, p)
+    title_map = {source: titles[p].strip('"') for source, p in by_title.items()}
+    open(f'{OUT_DIR}/titles.json', 'w', encoding='utf-8', newline='\n').write(json.dumps(title_map, indent='\t', ensure_ascii=False, sort_keys=True) + '\n')
     marks = []
     matched = 0
     late = {r['prefix'] for r in cfg['replacements'] if r.get('to') == '/obj/effect/landmark/latejoin'}
@@ -1587,12 +1840,18 @@ def generate_jobs(cfg, rw, usage, role_outfits, valid):
         if any(lm == pre or lm.startswith(pre + '/') for pre in late):
             continue
         target = LANDMARK_REBASE + lm[len(LANDMARK_ROOT):]
-        job = by_suffix.get(lm.rsplit('/', 1)[1])
+        source_name = (string_value(rw.resolve(lm, 'name')) or '').strip('"')
+        job = by_title.get(source_name) or by_suffix.get(lm.rsplit('/', 1)[1])
+        roles = [title_map[role.strip('"')] for role in re.findall(r'"[^"]*"', rw.resolve(lm, 'jobspawn_override') or '') if role.strip('"') in title_map]
+        block = [target]
         if job:
-            marks.append([target, f'\tname = {defines[job]}'])
+            block.append(f'\tname = {defines[job]}')
             matched += 1
         else:
-            marks.append([target, '\tparent_type = /obj/effect/landmark/start/assistant'])
+            block.append('\tname = JOB_ASSISTANT')
+        if roles:
+            block.append('\trockhill_latejoin_roles = list(' + ', '.join(f'"{role}"' for role in roles) + ')')
+        marks.append(block)
     open(f'{OUT_DIR}/landmarks.dm', 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in marks) + '\n')
 
     map_json_path = 'modular_redtard/rockhill/rockhill.json'

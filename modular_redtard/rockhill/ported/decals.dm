@@ -39,7 +39,6 @@
 	desc = ""
 	icon = 'modular_redtard/rockhill/icons/effects/blood.dmi'
 	icon_state = "pool1"
-	layer = ABOVE_NORMAL_TURF_LAYER
 	alpha = 150
 
 /obj/effect/decal/cleanable/blood/splatter/walls
@@ -47,15 +46,15 @@
 	desc = ""
 	icon = 'modular_redtard/rockhill/icons/effects/blood.dmi'
 	icon_state = "splatter1"
-	layer = BULLET_HOLE_LAYER
 	alpha = 200
+	plane = GAME_PLANE
+	layer = BULLET_HOLE_LAYER
 
 /obj/effect/decal/cleanable/coom
 	name = "mess"
 	desc = ""
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/natural.dmi'
 	icon_state = "mess1"
-	layer = ABOVE_NORMAL_TURF_LAYER
 	alpha = 150
 
 /obj/effect/decal/cleanable/debris/glassy
@@ -63,37 +62,36 @@
 	desc = ""
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/crafting.dmi'
 	icon_state = "tiny"
-	layer = ABOVE_NORMAL_TURF_LAYER
 
 /obj/effect/decal/cleanable/debris/stony
 	name = "stone chippings"
 	desc = ""
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/crafting.dmi'
 	icon_state = "pebbly"
-	layer = ABOVE_NORMAL_TURF_LAYER
 
 /obj/effect/decal/cleanable/debris/woody
 	name = "sawdust"
 	desc = ""
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/crafting.dmi'
 	icon_state = "woody"
-	layer = ABOVE_NORMAL_TURF_LAYER
 
 /obj/effect/decal/cleanable/dirt/cobweb
 	name = "cobweb"
 	desc = ""
 	icon = 'modular_redtard/rockhill/icons/modular/Mapping/icons/webbing.dmi'
 	icon_state = "cobweb1"
-	layer = WALL_OBJ_LAYER
 	alpha = 200
+	plane = ABOVE_GAME_PLANE
+	layer = WALL_OBJ_LAYER
 
 /obj/effect/decal/cleanable/dirt/cobweb/cobweb2
 	name = "cobweb"
 	desc = ""
 	icon = 'modular_redtard/rockhill/icons/modular/Mapping/icons/webbing.dmi'
 	icon_state = "cobweb2"
-	layer = WALL_OBJ_LAYER
 	alpha = 200
+	plane = ABOVE_GAME_PLANE
+	layer = WALL_OBJ_LAYER
 
 /obj/effect/decal/cleanable/roguerune/arcyne/enchantment
 	name = "Imbuement Array"

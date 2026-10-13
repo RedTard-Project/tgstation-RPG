@@ -1,0 +1,32 @@
+{
+	"sunlit": "sunlit",
+	"outdoors": [
+		"/area/rogue/outdoors/beach/harbor",
+		"/area/rogue/outdoors/bograt/above",
+		"/area/rogue/outdoors/bograt/north",
+		"/area/rogue/outdoors/bograt/south",
+		"/area/rogue/outdoors/bograt/sunken",
+		"/area/rogue/outdoors/bograt/west",
+		"/area/rogue/outdoors/bogsafe",
+		"/area/rogue/outdoors/exposed/bath/vault",
+		"/area/rogue/outdoors/exposed/town/keep",
+		"/area/rogue/outdoors/mountains",
+		"/area/rogue/outdoors/mountains/decap/rockhill",
+		"/area/rogue/outdoors/rtfield/eora",
+		"/area/rogue/outdoors/rtfield/rockhill",
+		"/area/rogue/outdoors/rtfield/rockhill/above",
+		"/area/rogue/outdoors/town/church",
+		"/area/rogue/outdoors/town/graveyard",
+		"/area/rogue/outdoors/town/grove",
+		"/area/rogue/outdoors/town/rockhill",
+		"/area/rogue/outdoors/town/roofs",
+		"/area/rogue/outdoors/town/roofs/church",
+		"/area/rogue/outdoors/town/roofs/keep",
+		"/area/rogue/outdoors/town/roofs/tavern",
+		"/area/rogue/outdoors/woodsafe",
+		"/area/rogue/outdoors/woodsrat/above",
+		"/area/rogue/outdoors/woodsrat/north",
+		"/area/rogue/outdoors/woodsrat/safe",
+		"/area/rogue/outdoors/woodsrat/south"
+	]
+}

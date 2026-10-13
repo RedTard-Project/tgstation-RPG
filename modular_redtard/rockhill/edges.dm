@@ -10,7 +10,7 @@ GLOBAL_LIST_EMPTY(rockhill_turf_edge_caches)
 		rockhill_edges = null
 	var/list/sources = GLOB.rockhill_turf_edge_caches[type]
 	if(!sources)
-		sources = typecacheof(GLOB.rockhill_turf_edge_sources[type])
+		sources = typecacheof(GLOB.rockhill_turf_edge_sources[type], only_root_path = TRUE)
 		GLOB.rockhill_turf_edge_caches[type] = sources
 	var/override = GLOB.rockhill_turf_edge_overrides[type]
 	for(var/direction in GLOB.cardinals)

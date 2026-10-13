@@ -7,10 +7,10 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi'
 	icon_state = "badfire1"
 	density = FALSE
-	layer = 2.8
 	light_range = 5
 	light_power = 1
 	light_color = "#da5e21"
+	layer = 2.8
 
 /obj/machinery/light/rogue/campfire/densefire
 	name = "campfire"
@@ -18,10 +18,10 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi'
 	icon_state = "densefire1"
 	density = TRUE
-	layer = 2.8
 	light_range = 5
 	light_power = 1
 	light_color = "#eea96a"
+	layer = 2.8
 
 /obj/machinery/light/rogue/campfire/fireplace
 	name = "fireplace"
@@ -29,10 +29,10 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi'
 	icon_state = "wallfire1"
 	density = FALSE
-	layer = 2.8
 	light_range = 5
 	light_power = 1
 	light_color = "#ffa35c"
+	layer = 2.8
 
 /obj/machinery/light/rogue/campfire/fireplace/blue
 	name = "fireplace"
@@ -40,10 +40,10 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/wallfireblue.dmi'
 	icon_state = "wallfire1"
 	density = FALSE
-	layer = 2.8
 	light_range = 5
 	light_power = 1
 	light_color = "#6e90ff"
+	layer = 2.8
 
 /obj/machinery/light/rogue/campfire/fireplace/crafted
 	name = "fireplace"
@@ -52,10 +52,10 @@
 	icon_state = "wallfire1"
 	density = FALSE
 	pixel_y = 32
-	layer = 2.8
 	light_range = 5
 	light_power = 1
 	light_color = "#ffa35c"
+	layer = 2.8
 
 /obj/machinery/light/rogue/campfire/fireplace/inn
 	name = "grand fireplace"
@@ -63,10 +63,10 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi'
 	icon_state = "wallfire1"
 	density = FALSE
-	layer = 2.8
 	light_range = 5
 	light_power = 1
 	light_color = "#ffa35c"
+	layer = 2.8
 
 /obj/machinery/light/rogue/campfire/longlived
 	name = "campfire"
@@ -74,10 +74,10 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi'
 	icon_state = "badfire1"
 	density = FALSE
-	layer = 2.8
 	light_range = 5
 	light_power = 1
 	light_color = "#da5e21"
+	layer = 2.8
 
 /obj/machinery/light/rogue/candle
 	name = "candles"
@@ -85,10 +85,10 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi'
 	icon_state = "wallcandle1"
 	pixel_y = 32
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/candle/blue
 	name = "candles"
@@ -96,10 +96,10 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi'
 	icon_state = "wallcandleb1"
 	pixel_y = 32
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#7b60f3"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/candle/blue/l
 	name = "candles"
@@ -108,10 +108,10 @@
 	icon_state = "wallcandleb1"
 	pixel_x = -32
 	pixel_y = 0
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#7b60f3"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/candle/blue/r
 	name = "candles"
@@ -120,10 +120,10 @@
 	icon_state = "wallcandleb1"
 	pixel_x = 32
 	pixel_y = 0
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#7b60f3"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/candle/floorcandle
 	name = "candles"
@@ -131,10 +131,10 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/lighting.dmi'
 	icon_state = "floorcandle1"
 	pixel_y = 0
-	layer = TABLE_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	layer = TABLE_LAYER
 
 /obj/machinery/light/rogue/candle/floorcandle/alt
 	name = "candles"
@@ -142,10 +142,10 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/lighting.dmi'
 	icon_state = "floorcandlee1"
 	pixel_y = 0
-	layer = TABLE_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	layer = TABLE_LAYER
 
 /obj/machinery/light/rogue/candle/floorcandle/alt/pink
 	name = "candles"
@@ -153,11 +153,11 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/lighting.dmi'
 	icon_state = "floorcandlee1"
 	pixel_y = 0
-	layer = TABLE_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#ff13d8ff"
 	color = "#f858b5ff"
+	layer = TABLE_LAYER
 
 /obj/machinery/light/rogue/candle/floorcandle/pink
 	name = "candles"
@@ -165,11 +165,11 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/lighting.dmi'
 	icon_state = "floorcandle1"
 	pixel_y = 0
-	layer = TABLE_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#ff13d8ff"
 	color = "#f858b5ff"
+	layer = TABLE_LAYER
 
 /obj/machinery/light/rogue/candle/green
 	name = "candles"
@@ -177,10 +177,10 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi'
 	icon_state = "wallcandleg1"
 	pixel_y = 32
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#60f382"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/candle/green/l
 	name = "candles"
@@ -189,10 +189,10 @@
 	icon_state = "wallcandleg1"
 	pixel_x = -32
 	pixel_y = 0
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#60f382"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/candle/green/r
 	name = "candles"
@@ -201,10 +201,10 @@
 	icon_state = "wallcandleg1"
 	pixel_x = 32
 	pixel_y = 0
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#60f382"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/candle/l
 	name = "candles"
@@ -213,10 +213,10 @@
 	icon_state = "wallcandle1"
 	pixel_x = -32
 	pixel_y = 0
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/candle/off
 	name = "candles"
@@ -224,10 +224,10 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi'
 	icon_state = "wallcandle0"
 	pixel_y = 32
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/candle/off/l
 	name = "candles"
@@ -236,10 +236,10 @@
 	icon_state = "wallcandle0"
 	pixel_x = -32
 	pixel_y = 0
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/candle/off/r
 	name = "candles"
@@ -248,10 +248,10 @@
 	icon_state = "wallcandle0"
 	pixel_x = 32
 	pixel_y = 0
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/candle/r
 	name = "candles"
@@ -260,10 +260,10 @@
 	icon_state = "wallcandle1"
 	pixel_x = 32
 	pixel_y = 0
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/candle/red
 	name = "candles"
@@ -271,10 +271,10 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi'
 	icon_state = "wallcandler1"
 	pixel_y = 32
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#f02929"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/candle/red/l
 	name = "candles"
@@ -283,10 +283,10 @@
 	icon_state = "wallcandler1"
 	pixel_x = -32
 	pixel_y = 0
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#f02929"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/candle/red/r
 	name = "candles"
@@ -295,10 +295,10 @@
 	icon_state = "wallcandler1"
 	pixel_x = 32
 	pixel_y = 0
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#f02929"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/candle/weak/l
 	name = "candles"
@@ -307,10 +307,10 @@
 	icon_state = "wallcandle1"
 	pixel_x = -32
 	pixel_y = 0
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/candle/weak/r
 	name = "candles"
@@ -319,10 +319,10 @@
 	icon_state = "wallcandle1"
 	pixel_x = 32
 	pixel_y = 0
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/cauldron
 	name = "cauldron"
@@ -331,10 +331,10 @@
 	icon_state = "cauldron1"
 	density = TRUE
 	opacity = FALSE
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/chand
 	name = "chandelier"
@@ -344,10 +344,10 @@
 	density = FALSE
 	pixel_x = -10
 	pixel_y = -10
-	layer = 2.0
 	light_range = 10
 	light_power = 1
 	light_color = "#f9ad80"
+	layer = 2
 
 /obj/machinery/light/rogue/firebowl
 	name = "brazier"
@@ -355,10 +355,10 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi'
 	icon_state = "stonefire1"
 	density = TRUE
-	layer = WALL_OBJ_LAYER
 	light_range = 12
 	light_power = 1
 	light_color = "#ffa35c"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/firebowl/church
 	name = "brazier"
@@ -366,10 +366,10 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi'
 	icon_state = "churchfire1"
 	density = TRUE
-	layer = WALL_OBJ_LAYER
 	light_range = 12
 	light_power = 1
 	light_color = "#ffa35c"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/firebowl/church/off
 	name = "brazier"
@@ -377,10 +377,10 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi'
 	icon_state = "churchfire0"
 	density = TRUE
-	layer = WALL_OBJ_LAYER
 	light_range = 12
 	light_power = 1
 	light_color = "#ffa35c"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/firebowl/off
 	name = "brazier"
@@ -388,10 +388,10 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi'
 	icon_state = "stonefire0"
 	density = TRUE
-	layer = WALL_OBJ_LAYER
 	light_range = 12
 	light_power = 1
 	light_color = "#ffa35c"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/firebowl/standing
 	name = "standing fire"
@@ -399,10 +399,10 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi'
 	icon_state = "standing1"
 	density = FALSE
-	layer = WALL_OBJ_LAYER
 	light_range = 12
 	light_power = 1
 	light_color = "#ff9648"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/firebowl/standing/blue
 	name = "standing fire"
@@ -410,10 +410,10 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi'
 	icon_state = "standingb1"
 	density = FALSE
-	layer = WALL_OBJ_LAYER
 	light_range = 12
 	light_power = 1
 	light_color = "#7b60f3"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/firebowl/standing/green
 	name = "standing fire"
@@ -421,10 +421,10 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi'
 	icon_state = "standingg1"
 	density = FALSE
-	layer = WALL_OBJ_LAYER
 	light_range = 12
 	light_power = 1
 	light_color = "#8ee2a7"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/firebowl/standing/red
 	name = "standing fire"
@@ -432,10 +432,10 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi'
 	icon_state = "standingr1"
 	density = FALSE
-	layer = WALL_OBJ_LAYER
 	light_range = 12
 	light_power = 1
 	light_color = "#f02929"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/firebowl/stump
 	name = "brazier"
@@ -443,10 +443,10 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi'
 	icon_state = "stumpfire1"
 	density = TRUE
-	layer = WALL_OBJ_LAYER
 	light_range = 12
 	light_power = 1
 	light_color = "#ffa35c"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/forge
 	name = "stone forge"
@@ -454,10 +454,10 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/forge.dmi'
 	icon_state = "forge0"
 	density = TRUE
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/hearth
 	name = "hearth"
@@ -465,10 +465,10 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi'
 	icon_state = "hearth1"
 	density = TRUE
-	layer = TABLE_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	layer = TABLE_LAYER
 
 /obj/machinery/light/rogue/lanternpost
 	name = "lantern post"
@@ -476,10 +476,11 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tallstructure.dmi'
 	icon_state = "streetlantern1"
 	density = FALSE
-	layer = WALL_OBJ_LAYER
 	light_range = 5
 	light_power = 1
 	light_color = "#f9ad80"
+	plane = ABOVE_GAME_PLANE
+	layer = WALL_OBJ_LAYER
 
 /obj/machinery/light/rogue/oven/east
 	name = "oven"
@@ -488,10 +489,10 @@
 	icon_state = "oven1"
 	density = FALSE
 	pixel_x = -32
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/oven/north
 	name = "oven"
@@ -500,10 +501,10 @@
 	icon_state = "oven1"
 	density = FALSE
 	pixel_y = -32
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/oven/south
 	name = "oven"
@@ -512,10 +513,10 @@
 	icon_state = "oven1"
 	density = FALSE
 	pixel_y = 32
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/oven/west
 	name = "oven"
@@ -524,10 +525,10 @@
 	icon_state = "oven1"
 	density = FALSE
 	pixel_x = 32
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/smelter
 	name = "stone furnace"
@@ -535,10 +536,10 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/forge.dmi'
 	icon_state = "cavesmelter0"
 	density = TRUE
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/smelter/bronze
 	name = "bronze melter"
@@ -546,10 +547,10 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/forge.dmi'
 	icon_state = "brosmelter0"
 	density = TRUE
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/smelter/great
 	name = "great furnace"
@@ -557,10 +558,10 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/forge.dmi'
 	icon_state = "smelter0"
 	density = TRUE
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/smelter/hiron
 	name = "iron bloomery"
@@ -568,10 +569,10 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/forge.dmi'
 	icon_state = "hironsmelter0"
 	density = TRUE
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/torchholder
 	name = "sconce"
@@ -579,10 +580,11 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi'
 	icon_state = "torchwall1"
 	density = FALSE
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	plane = ABOVE_GAME_PLANE
+	layer = WALL_OBJ_LAYER
 
 /obj/machinery/light/rogue/torchholder/c
 	name = "sconce"
@@ -591,10 +593,11 @@
 	icon_state = "torchwall1"
 	density = FALSE
 	pixel_y = 32
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	plane = ABOVE_GAME_PLANE
+	layer = WALL_OBJ_LAYER
 
 /obj/machinery/light/rogue/torchholder/hotspring
 	name = "stone lantern"
@@ -602,10 +605,11 @@
 	icon = 'modular_redtard/rockhill/icons/obj/structures/hotspring.dmi'
 	icon_state = "stonelantern1"
 	density = FALSE
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	plane = ABOVE_GAME_PLANE
+	layer = WALL_OBJ_LAYER
 
 /obj/machinery/light/rogue/torchholder/hotspring/standing
 	name = "standing stone lantern"
@@ -613,10 +617,11 @@
 	icon = 'modular_redtard/rockhill/icons/obj/structures/hotspring.dmi'
 	icon_state = "stonelantern_standing1"
 	density = FALSE
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	plane = ABOVE_GAME_PLANE
+	layer = WALL_OBJ_LAYER
 
 /obj/machinery/light/rogue/torchholder/l
 	name = "sconce"
@@ -624,10 +629,11 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi'
 	icon_state = "torchwall1"
 	density = FALSE
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	plane = ABOVE_GAME_PLANE
+	layer = WALL_OBJ_LAYER
 
 /obj/machinery/light/rogue/torchholder/r
 	name = "sconce"
@@ -635,10 +641,11 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi'
 	icon_state = "torchwall1"
 	density = FALSE
-	layer = WALL_OBJ_LAYER
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	plane = ABOVE_GAME_PLANE
+	layer = WALL_OBJ_LAYER
 
 /obj/machinery/light/roguestreet
 	parent_type = /obj/structure/rockhill/light
@@ -646,10 +653,11 @@
 	desc = "An obelisk of caste iron with an eerily glowing lamp attached to it. A promise of new technology at the dawn of a new age."
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tallstructure.dmi'
 	icon_state = "slamp1"
-	layer = 4.81
 	light_range = 10.9
 	light_power = 0.95
 	light_color = "#58dd90"
+	plane = ABOVE_GAME_PLANE
+	layer = 4.81
 
 /obj/machinery/light/roguestreet/midlamp
 	name = "street lamp"
@@ -658,20 +666,22 @@
 	icon_state = "midlamp1"
 	density = TRUE
 	pixel_x = -16
-	layer = 4.81
 	light_range = 10.9
 	light_power = 0.95
 	light_color = "#58dd90"
+	plane = ABOVE_GAME_PLANE
+	layer = 4.81
 
 /obj/machinery/light/roguestreet/orange
 	name = "street lamp"
 	desc = "An obelisk of caste iron with an eerily glowing lamp attached to it. A promise of new technology at the dawn of a new age."
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tallstructure.dmi'
 	icon_state = "o_slamp1"
-	layer = 4.81
 	light_range = 10.9
 	light_power = 1
 	light_color = "#da8c45"
+	plane = ABOVE_GAME_PLANE
+	layer = 4.81
 
 /obj/machinery/light/roguestreet/orange/midlamp
 	name = "street lamp"
@@ -680,10 +690,11 @@
 	icon_state = "o_midlamp1"
 	density = TRUE
 	pixel_x = -16
-	layer = 4.81
 	light_range = 10.9
 	light_power = 1
 	light_color = "#da8c45"
+	plane = ABOVE_GAME_PLANE
+	layer = 4.81
 
 /obj/machinery/light/roguestreet/orange/walllamp
 	name = "wall lamp"
@@ -691,10 +702,11 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tallstructure.dmi'
 	icon_state = "o_wlamp1"
 	density = FALSE
-	layer = 4.81
 	light_range = 7.8
 	light_power = 1
 	light_color = "#da8c45"
+	plane = ABOVE_GAME_PLANE
+	layer = 4.81
 
 /obj/machinery/light/roguestreet/walllamp
 	name = "wall lamp"
@@ -702,7 +714,8 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tallstructure.dmi'
 	icon_state = "wlamp1"
 	density = FALSE
-	layer = 4.81
 	light_range = 7.8
 	light_power = 0.95
 	light_color = "#58dd90"
+	plane = ABOVE_GAME_PLANE
+	layer = 4.81

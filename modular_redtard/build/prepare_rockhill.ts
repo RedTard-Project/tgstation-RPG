@@ -1,7 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
-import { framesOf, parseDmi, writePng } from './title_frames.ts';
 
 const CONFIG_PATH = 'modular_redtard/rockhill/config.json';
 const SHARED_DIR = 'modular_redtard/rockhill';
@@ -10,19 +9,24 @@ const DECLARATION_DIRS = ['code', 'modular_redtard'];
 const DOWNLOAD_TIMEOUT_MS = 180000;
 const LEVEL_LINE = /^\(\d+,\d+,\d+\) = \{"$/;
 const TILE_OPEN = /^"([^"]+)" = \($/;
-const TURF_VARS = new Set(['dir']);
+const TURF_VARS = new Set(['dir', 'name', 'desc', 'color']);
 const REPLACED_VARS = new Set(['dir', 'pixel_x', 'pixel_y']);
 const KEPT_VARS = new Set(['dir', 'pixel_x', 'pixel_y', 'name', 'desc', 'icon_state', 'color']);
-const CLOSED_TURF_REMOVED = ['/obj/structure/mineral_door', '/obj/structure/stairs', '/obj/structure/window', '/obj/structure/roguewindow', '/obj/effect/decal'];
+const CLOSED_TURF_REMOVED = ['/obj/structure/mineral_door', '/obj/structure/stairs', '/obj/structure/window', '/obj/effect/decal'];
 const GROUNDLESS_TURFS = ['/turf/open/water', '/turf/open/transparent', '/turf/open/openspace', '/turf/open/lava'];
 const ONE_PER_TILE = ['/obj/structure/chair', '/obj/structure/closet', '/obj/structure/table'];
 const NO_IDENTICAL = ['/obj/machinery', '/obj/structure/window'];
 const MAPLINT_SCRIPT = 'modular_redtard/tools/run_maplint.py';
+const ROLE_TITLES = 'modular_redtard/rockhill/ported/titles.json';
+const START_LANDMARK = '/obj/effect/landmark/start/rockhill';
 const DECAL_PREFIX = '/obj/effect/decal';
 const SPAWN_ROOT = '/obj/effect/landmark/start';
 const LATEJOIN_TARGET = '/obj/effect/landmark/latejoin';
+const AREA_FLAGS = 'modular_redtard/rockhill/ported/areas.json';
+const TRANSPARENT_TURFS = ['/turf/open/transparent', '/turf/closed/transparent'];
+const KEY_ALPHABET = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-type Rule = { prefix: string; to?: string; rebase?: string; drop?: boolean; exact?: boolean; reskin?: boolean };
+type Rule = { prefix: string; to?: string; rebase?: string; drop?: boolean; exact?: boolean; reskin?: boolean; port?: Record<string, unknown> };
 
 type TitleSource = { file: string; name: string; kind: 'png' | 'dmi'; origin: string };
 
@@ -36,7 +40,9 @@ type Config = {
 
 type Pop = { path: string; vars: Array<{ name: string; lines: string[] }> };
 
-type Model = { key: string; pops: Pop[] };
+type Model = { key: string; pops: Pop[]; sourceTurf?: string };
+
+type Sunlight = { levels: string[]; tiles: number; models: number };
 
 type Tally = { kept: number; replaced: number; dropped: number; missing: number };
 
@@ -51,6 +57,7 @@ type Problems = {
   brokenTiles: string[];
   lostTiles: number;
   stacked: number;
+  turfStates: { mapped: number; dropped: number };
   staleRules: string[];
 };
 
@@ -66,7 +73,7 @@ export async function prepareRockhill(): Promise<void> {
   }
   const header = lines.slice(0, levelStart).filter((line) => line.startsWith('//'));
   const models = parseModels(lines.slice(0, levelStart));
-  const levels = lines.slice(levelStart);
+  const rawLevels = lines.slice(levelStart);
 
   const declarations = declaredTypes();
   const declared = declarations.types;
@@ -77,16 +84,20 @@ export async function prepareRockhill(): Promise<void> {
     brokenTiles: [],
     lostTiles: 0,
     stacked: 0,
+    turfStates: { mapped: 0, dropped: 0 },
     staleRules: staleReplacementTargets(config.replacements, declared),
   };
 
   const tally: Record<string, Tally> = {};
   const targets = new Map<string, number>();
   for (const model of models) {
+    model.sourceTurf = lastTurf(model.pops);
     model.pops = convertPops(model, config.replacements, config.map_vars || {}, declarations, tally, problems, targets);
   }
   reportProblems(config, problems);
 
+  const sunlight = applySunlight(models, rawLevels, declared);
+  const levels = sunlight.levels;
   const usage = tileUsage(models, levels);
   const spawns = [...usage.entries()].filter(([atomPath]) => atomPath.startsWith(`${SPAWN_ROOT}/`)).reduce((total, [, count]) => total + count, 0);
   if (!spawns) {
@@ -111,7 +122,7 @@ export async function prepareRockhill(): Promise<void> {
   fs.writeFileSync(config.output.map_json, `${JSON.stringify(mapJson, null, '\t')}\n`);
 
   const titles = await installTitles(config);
-  writeReport(config, tally, problems, targets, titles, size, spawns, latejoins);
+  writeReport(config, tally, problems, targets, titles, size, spawns, latejoins, sunlight);
   runMaplint(config.output.map);
 }
 
@@ -240,6 +251,91 @@ export function printMapFailure(error: unknown): void {
   console.error('============================================================');
 }
 
+function lastTurf(pops: Pop[]): string {
+  const turfs = pops.filter((pop) => pop.path.startsWith('/turf/'));
+  return turfs.length ? turfs[turfs.length - 1].path : '';
+}
+
+function applySunlight(models: Model[], levels: string[], declared: Set<string>): Sunlight {
+  const flags = JSON.parse(fs.readFileSync(AREA_FLAGS, 'utf-8')) as { sunlit: string; outdoors: string[] };
+  const outdoors = new Set(flags.outdoors);
+  const byKey = new Map(models.map((model) => [model.key, model]));
+  const columns = new Map<string, number[]>();
+  let height = -1;
+  levels.forEach((line, index) => {
+    const header = /^\((\d+),\d+,(\d+)\) = \{"$/.exec(line);
+    if (!header) return;
+    const rows: number[] = [];
+    for (let row = index + 1; levels[row] !== '"}'; row++) rows.push(row);
+    if (height >= 0 && rows.length !== height) {
+      throw new Error(`level column ${header[1]},${header[2]} is ${rows.length} tiles high, others are ${height}; the sunlight pass needs equal levels`);
+    }
+    height = rows.length;
+    columns.set(`${header[1]},${header[2]}`, rows);
+  });
+  const under = (atomPath: string, prefixes: string[]) => prefixes.some((prefix) => atomPath === prefix || atomPath.startsWith(`${prefix}/`));
+  const areaOf = (model: Model) => model.pops[model.pops.length - 1].path;
+  const transparent = (model: Model) => under(model.sourceTurf || '', TRANSPARENT_TURFS);
+  const closed = (model: Model) => under(model.sourceTurf || '', ['/turf/closed']);
+  const modelAt = (x: string, row: number, z: number) => {
+    const rows = columns.get(`${x},${z}`);
+    return rows ? byKey.get(levels[rows[row]]) : undefined;
+  };
+  const skyVisible = (x: string, row: number, z: number, model: Model): boolean => {
+    if (closed(model)) return transparent(model);
+    let current = model;
+    for (let level = z + 1; ; level++) {
+      const above = modelAt(x, row, level);
+      if (!above) return outdoors.has(areaOf(current));
+      if (!transparent(above)) return false;
+      current = above;
+    }
+  };
+  const used = new Set(models.map((model) => model.key));
+  const keyLength = models[0].key.length;
+  let counter = 0;
+  const freshKey = () => {
+    while (true) {
+      let value = counter++;
+      let key = '';
+      for (let i = 0; i < keyLength; i++) {
+        key = KEY_ALPHABET[value % KEY_ALPHABET.length] + key;
+        value = Math.floor(value / KEY_ALPHABET.length);
+      }
+      if (value) throw new Error(`no free ${keyLength}-letter tile keys left for the sunlit tile models`);
+      if (!used.has(key)) {
+        used.add(key);
+        return key;
+      }
+    }
+  };
+  const sunlitKeys = new Map<string, string>();
+  const out = [...levels];
+  let tiles = 0;
+  for (const [position, rows] of columns) {
+    const [x, z] = position.split(',');
+    rows.forEach((lineIndex, row) => {
+      const model = byKey.get(levels[lineIndex]);
+      if (!model || closed(model) || !skyVisible(x, row, Number(z), model)) return;
+      const area = `${areaOf(model)}/${flags.sunlit}`;
+      if (!declared.has(area)) {
+        throw new Error(`${area} is not declared; re-run python modular_redtard/tools/port_rockhill.py so every map area gets its sunlit subtype`);
+      }
+      let key = sunlitKeys.get(model.key);
+      if (!key) {
+        key = freshKey();
+        sunlitKeys.set(model.key, key);
+        const lit: Model = { key, pops: [...model.pops.slice(0, -1), { path: area, vars: [] }], sourceTurf: model.sourceTurf };
+        models.push(lit);
+        byKey.set(key, lit);
+      }
+      out[lineIndex] = key;
+      tiles++;
+    });
+  }
+  return { levels: out, tiles, models: sunlitKeys.size };
+}
+
 function convertPops(model: Model, rules: Rule[], mapVars: Record<string, string[]>, declarations: Declarations, tally: Record<string, Tally>, problems: Problems, targets: Map<string, number>): Pop[] {
   const declared = declarations.types;
   const kept: Pop[] = [];
@@ -270,16 +366,29 @@ function convertPops(model: Model, rules: Rule[], mapVars: Record<string, string
     if (declarations.abstract.has(target)) {
       problems.abstractPlaced.set(target, (problems.abstractPlaced.get(target) || 0) + 1);
     }
+    let placed = target;
+    const stateEdit = kind === 'turf' ? pop.vars.find((entry) => entry.name === 'icon_state') : undefined;
+    if (stateEdit) {
+      const state = /^\s*icon_state\s*=\s*"([^"[\\]*)"/.exec(stateEdit.lines[0])?.[1];
+      const variant = state === undefined ? '' : `${target}/state_${state.replace(/[^A-Za-z0-9_]/g, '_')}`;
+      if (variant && declared.has(variant)) {
+        placed = variant;
+        problems.turfStates.mapped++;
+      } else {
+        problems.turfStates.dropped++;
+      }
+    }
     const replaced = target !== pop.path;
     if (replaced) {
       bucket.replaced++;
     } else {
       bucket.kept++;
     }
-    targets.set(target, (targets.get(target) || 0) + 1);
-    const allowed = kind === 'area' ? new Set<string>() : kind === 'turf' ? TURF_VARS : replaced ? REPLACED_VARS : KEPT_VARS;
+    targets.set(placed, (targets.get(placed) || 0) + 1);
+    const allowed = kind === 'area' ? new Set<string>() : kind === 'turf' ? TURF_VARS : replaced && !rule?.port ? REPLACED_VARS : KEPT_VARS;
     const extra = Object.entries(mapVars).filter(([prefix]) => under(prefix)).flatMap(([, names]) => names);
-    kept.push({ path: target, vars: pop.vars.filter((entry) => allowed.has(entry.name) || extra.includes(entry.name)) });
+    const vars = pop.vars.filter((entry) => allowed.has(entry.name) || extra.includes(entry.name));
+    kept.push({ path: placed, vars: placed === START_LANDMARK || placed.startsWith(`${START_LANDMARK}/`) ? landmarkVars(vars) : vars });
   }
   const areas = kept.filter((pop) => pop.path === '/area' || pop.path.startsWith('/area/'));
   const turfs = kept.filter((pop) => pop.path.startsWith('/turf/'));
@@ -293,6 +402,32 @@ function convertPops(model: Model, rules: Rule[], mapVars: Record<string, string
   }
   const objects = kept.filter((pop) => pop.path !== '/area' && !pop.path.startsWith('/area/') && !pop.path.startsWith('/turf/'));
   return [...withoutStacking(objects, problems), turfs[turfs.length - 1], areas[0]];
+}
+
+let roleTitlesCache: Record<string, string> | null = null;
+
+function roleTitles(): Record<string, string> {
+  if (!roleTitlesCache) {
+    roleTitlesCache = fs.existsSync(ROLE_TITLES) ? (JSON.parse(fs.readFileSync(ROLE_TITLES, 'utf-8')) as Record<string, string>) : {};
+  }
+  return roleTitlesCache;
+}
+
+function landmarkVars(vars: Pop['vars']): Pop['vars'] {
+  const titles = roleTitles();
+  const role = (raw: string) => titles[raw] || raw;
+  return vars.flatMap((entry) => {
+    const text = entry.lines.join(' ');
+    if (entry.name === 'name') {
+      const quoted = /"([^"]*)"/.exec(text);
+      return quoted ? [{ name: 'name', lines: [`\tname = "${role(quoted[1])}"`] }] : [];
+    }
+    if (entry.name === 'jobspawn_override') {
+      const roles = [...text.matchAll(/"([^"]*)"/g)].map((match) => match[1]).filter((name) => titles[name]).map((name) => `"${titles[name]}"`);
+      return roles.length ? [{ name: 'rockhill_latejoin_roles', lines: [`\trockhill_latejoin_roles = list(${roles.join(', ')})`] }] : [];
+    }
+    return [entry];
+  });
 }
 
 function withoutStacking(objects: Pop[], problems: Problems): Pop[] {
@@ -470,24 +605,15 @@ async function installTitles(config: Config): Promise<number> {
     if (!fs.existsSync(from)) {
       throw new Error(`title asset ${from} is missing; copy it from ${source.origin}`);
     }
-    const bytes = new Uint8Array(fs.readFileSync(from));
-    if (source.kind === 'png') {
-      fs.writeFileSync(path.join(dir, `${config.title.prefix}${source.name}.png`), bytes);
-      written++;
-      continue;
-    }
-    const frames = framesOf(parseDmi(bytes));
-    frames.forEach((frame, index) => {
-      writePng(path.join(dir, `${config.title.prefix}${source.name}-${String(index + 1).padStart(3, '0')}.png`), frame);
-    });
-    written += frames.length;
+    fs.copyFileSync(from, path.join(dir, `${config.title.prefix}${source.name}.${source.kind}`));
+    written++;
   }
   return written;
 }
 
-function writeReport(config: Config, tally: Record<string, Tally>, problems: Problems, targets: Map<string, number>, titles: number, size: Size, spawns: number, latejoins: number): void {
+function writeReport(config: Config, tally: Record<string, Tally>, problems: Problems, targets: Map<string, number>, titles: number, size: Size, spawns: number, latejoins: number, sunlight: Sunlight): void {
   const missingObjects = problems.missingObjects;
-  const lines = [`# ${config.source.name} port report`, '', `source: ${config.source.url}`, `output: ${config.output.map}`, `world size: ${size.width}x${size.height}`, `spawn tiles: ${spawns}, latejoin tiles: ${latejoins}`, `title screens: ${titles}`, ''];
+  const lines = [`# ${config.source.name} port report`, '', `source: ${config.source.url}`, `output: ${config.output.map}`, `world size: ${size.width}x${size.height}`, `spawn tiles: ${spawns}, latejoin tiles: ${latejoins}`, `title screens: ${titles}`, `sunlit tiles (open sky above, Ratwood roof rule): ${sunlight.tiles} in ${sunlight.models} split tile models`, ''];
   lines.push('| kind | kept | replaced | dropped | missing |', '|---|---|---|---|---|');
   for (const kind of Object.keys(tally).sort()) {
     const t = tally[kind];
@@ -509,6 +635,7 @@ function writeReport(config: Config, tally: Record<string, Tally>, problems: Pro
       lines.push(`- ${atomPath}: ${count}`);
     }
   }
+  lines.push('', `turf icon_state edits: ${problems.turfStates.mapped} moved to state_* subtypes (rockhill/ported/turf_states.dm), ${problems.turfStates.dropped} dropped (smoothing, a look Ratwood forces at load, or not ported yet)`);
   lines.push('', `stacked duplicates removed (one chair/table/closet per tile, no identical machinery or windows - the TG maplint rules): ${problems.stacked}`);
   if (problems.staleRules.length) {
     lines.push('', 'replacement rules pointing at missing types:', ...problems.staleRules.map((rule) => `- ${rule}`));

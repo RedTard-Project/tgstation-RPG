@@ -7,6 +7,7 @@
 	density = TRUE
 	opacity = FALSE
 	layer = TABLE_LAYER
+	smoothing_groups = SMOOTH_GROUP_ROCKHILL_STRUCTURE_ROGUEWINDOW
 
 /obj/structure/roguewindow/harem2
 	name = "harem window"
@@ -16,6 +17,7 @@
 	density = TRUE
 	opacity = TRUE
 	layer = TABLE_LAYER
+	smoothing_groups = SMOOTH_GROUP_ROCKHILL_STRUCTURE_ROGUEWINDOW_HAREM2
 
 /obj/structure/roguewindow/harem3
 	name = "harem window"
@@ -25,6 +27,7 @@
 	density = TRUE
 	opacity = FALSE
 	layer = TABLE_LAYER
+	smoothing_groups = SMOOTH_GROUP_ROCKHILL_STRUCTURE_ROGUEWINDOW_HAREM3
 
 /obj/structure/roguewindow/harem3/frosted
 	name = "frosted glass window"
@@ -34,6 +37,7 @@
 	density = TRUE
 	opacity = TRUE
 	layer = TABLE_LAYER
+	smoothing_groups = SMOOTH_GROUP_ROCKHILL_STRUCTURE_ROGUEWINDOW_HAREM3_FROSTED
 
 /obj/structure/roguewindow/openclose
 	name = "window"
@@ -41,8 +45,9 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/roguewindow.dmi'
 	density = TRUE
 	opacity = TRUE
-	layer = TABLE_LAYER
 	icon_state = "woodwindow"
+	layer = TABLE_LAYER
+	smoothing_groups = SMOOTH_GROUP_ROCKHILL_STRUCTURE_ROGUEWINDOW_OPENCLOSE
 
 /obj/structure/roguewindow/openclose/reinforced
 	name = "window"
@@ -50,8 +55,9 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/roguewindow.dmi'
 	density = TRUE
 	opacity = TRUE
-	layer = TABLE_LAYER
 	icon_state = "reinforcedwindow"
+	layer = TABLE_LAYER
+	smoothing_groups = SMOOTH_GROUP_ROCKHILL_STRUCTURE_ROGUEWINDOW_OPENCLOSE_REINFORCED
 
 /obj/structure/roguewindow/stained/silver
 	name = "psydonite window"
@@ -61,6 +67,7 @@
 	density = TRUE
 	opacity = TRUE
 	layer = TABLE_LAYER
+	smoothing_groups = SMOOTH_GROUP_ROCKHILL_STRUCTURE_ROGUEWINDOW_STAINED_SILVER
 
 /obj/structure/roguewindow/stained/yellow
 	name = "astratan window"
@@ -70,6 +77,7 @@
 	density = TRUE
 	opacity = TRUE
 	layer = TABLE_LAYER
+	smoothing_groups = SMOOTH_GROUP_ROCKHILL_STRUCTURE_ROGUEWINDOW_STAINED_YELLOW
 
 /obj/structure/roguewindow/stained/zizo
 	name = "zizite window"
@@ -79,3 +87,4 @@
 	density = TRUE
 	opacity = TRUE
 	layer = TABLE_LAYER
+	smoothing_groups = SMOOTH_GROUP_ROCKHILL_STRUCTURE_ROGUEWINDOW_STAINED_ZIZO

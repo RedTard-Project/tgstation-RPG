@@ -100,3 +100,19 @@
 	department_bitflags = DEPARTMENT_BITFLAG_ROCKHILL_WANDERERS
 	display_order = 9
 	ui_color = "#777777"
+
+/obj/effect/landmark/start/rockhill
+	var/list/rockhill_latejoin_roles
+
+/obj/effect/landmark/start/rockhill/Initialize(mapload)
+	. = ..()
+	if(!length(rockhill_latejoin_roles))
+		return
+	delete_after_roundstart = FALSE
+	for(var/role in rockhill_latejoin_roles)
+		LAZYADDASSOCLIST(GLOB.jobspawn_overrides, role, src)
+
+/obj/effect/landmark/start/rockhill/Destroy()
+	for(var/role in rockhill_latejoin_roles)
+		LAZYREMOVEASSOC(GLOB.jobspawn_overrides, role, src)
+	return ..()

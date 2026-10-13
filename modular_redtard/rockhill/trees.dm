@@ -109,7 +109,6 @@
 
 /obj/structure/flora/newbranch
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN
-	plane = FLOOR_PLANE
 	max_integrity = 30
 	var/leafy = TRUE
 	var/branch_state
@@ -147,5 +146,4 @@
 	leafy = FALSE
 
 /obj/structure/flora/newleaf
-	plane = FLOOR_PLANE
 	max_integrity = 10

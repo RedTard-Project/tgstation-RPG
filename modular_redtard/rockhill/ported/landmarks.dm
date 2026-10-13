@@ -11,16 +11,17 @@
 	name = JOB_ROCKHILL_INNKEEPER
 
 /obj/effect/landmark/start/rockhill/barkeeper
-	parent_type = /obj/effect/landmark/start/assistant
+	name = JOB_ROCKHILL_INNKEEPER
 
 /obj/effect/landmark/start/rockhill/baron
 	name = JOB_ROCKHILL_BARON
 
 /obj/effect/landmark/start/rockhill/bogguardsman
-	parent_type = /obj/effect/landmark/start/assistant
+	name = JOB_ASSISTANT
+	rockhill_latejoin_roles = list("Vanguard")
 
 /obj/effect/landmark/start/rockhill/bogmaster
-	parent_type = /obj/effect/landmark/start/assistant
+	name = JOB_ROCKHILL_MASTER_WARDEN
 
 /obj/effect/landmark/start/rockhill/butler
 	name = JOB_ROCKHILL_SENESCHAL
@@ -56,10 +57,10 @@
 	name = JOB_ROCKHILL_SOILSON
 
 /obj/effect/landmark/start/rockhill/gravedigger
-	parent_type = /obj/effect/landmark/start/assistant
+	name = JOB_ASSISTANT
 
 /obj/effect/landmark/start/rockhill/guard_captain
-	parent_type = /obj/effect/landmark/start/assistant
+	name = JOB_ROCKHILL_KNIGHT_CAPTAIN
 
 /obj/effect/landmark/start/rockhill/guardsman
 	name = JOB_ROCKHILL_CITY_GUARD
@@ -71,10 +72,10 @@
 	name = JOB_ROCKHILL_GUILDSMAN
 
 /obj/effect/landmark/start/rockhill/hand
-	name = JOB_ROCKHILL_HAND_OF_HEARTFELT
+	name = JOB_ROCKHILL_HAND
 
 /obj/effect/landmark/start/rockhill/hostage
-	parent_type = /obj/effect/landmark/start/assistant
+	name = JOB_ASSISTANT
 
 /obj/effect/landmark/start/rockhill/jester
 	name = JOB_ROCKHILL_JESTER
@@ -89,7 +90,7 @@
 	name = JOB_ROCKHILL_KNIGHT
 
 /obj/effect/landmark/start/rockhill/lady
-	parent_type = /obj/effect/landmark/start/assistant
+	name = JOB_ASSISTANT
 
 /obj/effect/landmark/start/rockhill/lord
 	name = JOB_ROCKHILL_GRAND_DUKE
@@ -98,7 +99,7 @@
 	name = JOB_ROCKHILL_COURT_MAGICIAN
 
 /obj/effect/landmark/start/rockhill/manorguardsman
-	parent_type = /obj/effect/landmark/start/assistant
+	name = JOB_ROCKHILL_MAN_AT_ARMS
 
 /obj/effect/landmark/start/rockhill/marshal
 	name = JOB_ROCKHILL_MARSHAL
@@ -119,7 +120,10 @@
 	name = JOB_ROCKHILL_BATHHOUSE_ATTENDANT
 
 /obj/effect/landmark/start/rockhill/nightman
-	parent_type = /obj/effect/landmark/start/assistant
+	name = JOB_ROCKHILL_BATHMASTER
+
+/obj/effect/landmark/start/rockhill/orphan
+	name = JOB_ROCKHILL_VAGABOND
 
 /obj/effect/landmark/start/rockhill/orthodoxist
 	name = JOB_ROCKHILL_ORTHODOXIST
@@ -134,7 +138,7 @@
 	name = JOB_ROCKHILL_PRINCE
 
 /obj/effect/landmark/start/rockhill/prisonerb
-	parent_type = /obj/effect/landmark/start/assistant
+	name = JOB_ASSISTANT
 
 /obj/effect/landmark/start/rockhill/prisonerr
 	name = JOB_ROCKHILL_PRISONER_TOWN
@@ -143,19 +147,19 @@
 	name = JOB_ROCKHILL_INQUISITOR
 
 /obj/effect/landmark/start/rockhill/retainer
-	parent_type = /obj/effect/landmark/start/assistant
+	name = JOB_ROCKHILL_RETAINER
 
 /obj/effect/landmark/start/rockhill/rockhillslave
 	name = JOB_ROCKHILL_SLAVE
 
 /obj/effect/landmark/start/rockhill/rockhillslaver
-	parent_type = /obj/effect/landmark/start/assistant
+	name = JOB_ASSISTANT
 
 /obj/effect/landmark/start/rockhill/rookie
 	name = JOB_ROCKHILL_ROOKIE
 
 /obj/effect/landmark/start/rockhill/sapprentice
-	parent_type = /obj/effect/landmark/start/assistant
+	name = JOB_ROCKHILL_GUILD_APPRENTICE
 
 /obj/effect/landmark/start/rockhill/sergeant
 	name = JOB_ROCKHILL_SERGEANT
@@ -164,7 +168,7 @@
 	name = JOB_ROCKHILL_SERVANT
 
 /obj/effect/landmark/start/rockhill/sheriff
-	parent_type = /obj/effect/landmark/start/assistant
+	name = JOB_ROCKHILL_WATCH_CAPTAIN
 
 /obj/effect/landmark/start/rockhill/shophand
 	name = JOB_ROCKHILL_SHOPHAND
@@ -176,13 +180,16 @@
 	name = JOB_ROCKHILL_STEWARD
 
 /obj/effect/landmark/start/rockhill/suitor
-	parent_type = /obj/effect/landmark/start/assistant
+	name = JOB_ASSISTANT
 
 /obj/effect/landmark/start/rockhill/tailor
 	name = JOB_ROCKHILL_TAILOR
 
 /obj/effect/landmark/start/rockhill/templar
 	name = JOB_ROCKHILL_TEMPLAR
+
+/obj/effect/landmark/start/rockhill/vagrant
+	name = JOB_ASSISTANT
 
 /obj/effect/landmark/start/rockhill/vanguard
 	name = JOB_ROCKHILL_VANGUARD

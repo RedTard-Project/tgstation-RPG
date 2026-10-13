@@ -216,9 +216,9 @@
 
 /datum/inventory_slot/rogue/backl/get_slot_item(mob/owner, back_index = 1)
 	var/mob/living/carbon/human/wearer = owner
-	if(back_index == ROGUE_BACK_RIGHT)
-		return istype(wearer) ? wearer.wear_backr : null
-	return ..()
+	if(!istype(wearer))
+		return ..()
+	return wearer.get_rogue_indexed(ITEM_SLOT_BACK, back_index)
 
 /datum/inventory_slot/rogue/backl/get_screen_slot(datum/hud/hud, back_index = 1)
 	if(back_index == ROGUE_BACK_RIGHT)

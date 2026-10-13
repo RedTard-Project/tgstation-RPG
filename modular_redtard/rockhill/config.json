@@ -108,7 +108,8 @@
 					"alpha",
 					"color"
 				],
-				"runtime_look": true
+				"runtime_look": true,
+				"placement": true
 			}
 		},
 		{
@@ -133,7 +134,8 @@
 				"runtime_look": true,
 				"ported_paths": [
 					"item_chair"
-				]
+				],
+				"placement": true
 			}
 		},
 		{
@@ -154,7 +156,8 @@
 					"alpha",
 					"color"
 				],
-				"runtime_look": true
+				"runtime_look": true,
+				"placement": true
 			}
 		},
 		{
@@ -175,7 +178,8 @@
 					"alpha",
 					"color"
 				],
-				"runtime_look": true
+				"runtime_look": true,
+				"placement": true
 			}
 		},
 		{
@@ -209,7 +213,8 @@
 					"open_sound",
 					"close_sound"
 				],
-				"fill": true
+				"fill": true,
+				"placement": true
 			}
 		},
 		{
@@ -260,6 +265,68 @@
 			"prefix": "/obj/effect",
 			"exact": true,
 			"drop": true
+		},
+		{
+			"prefix": "/obj/structure/plasticflaps",
+			"rebase": "/obj/structure/rockhill/flaps",
+			"port": {
+				"file": "flaps.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"density",
+					"opacity",
+					"dir",
+					"pixel_x",
+					"pixel_y"
+				]
+			}
+		},
+		{
+			"prefix": "/obj/structure/gate",
+			"rebase": "/obj/structure/rockhill/gate",
+			"port": {
+				"file": "gates.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"base_state",
+					"density",
+					"opacity",
+					"max_integrity"
+				]
+			}
+		},
+		{
+			"prefix": "/obj/structure/winch",
+			"rebase": "/obj/structure/rockhill/winch",
+			"port": {
+				"file": "gates.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"density"
+				]
+			}
+		},
+		{
+			"prefix": "/obj/structure/ladder",
+			"rebase": "/obj/structure/ladder/rockhill",
+			"port": {
+				"file": "ladders.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state"
+				]
+			}
 		}
 	],
 	"port": {
@@ -270,8 +337,13 @@
 					"/area"
 				],
 				"vars": [
-					"name"
-				]
+					"name",
+					"outdoors"
+				],
+				"true_only": [
+					"outdoors"
+				],
+				"sunlit": true
 			},
 			{
 				"file": "turfs_open.dm",
@@ -352,9 +424,15 @@
 					"layer",
 					"dir",
 					"alpha",
-					"color"
+					"color",
+					"obj_flags"
 				],
-				"runtime_look": true
+				"runtime_look": true,
+				"flag_vars": [
+					"obj_flags"
+				],
+				"random_pick": true,
+				"placement": true
 			},
 			{
 				"file": "windows.dm",
@@ -376,7 +454,8 @@
 					"alpha",
 					"color"
 				],
-				"runtime_look": true
+				"runtime_look": true,
+				"placement": true
 			},
 			{
 				"file": "lights.dm",
@@ -407,7 +486,8 @@
 					"light_power": "bulb_power",
 					"light_color": "bulb_colour"
 				},
-				"runtime_look": true
+				"runtime_look": true,
+				"placement": true
 			},
 			{
 				"file": "decals.dm",
@@ -425,7 +505,8 @@
 					"dir",
 					"alpha",
 					"color"
-				]
+				],
+				"placement": true
 			},
 			{
 				"file": "items.dm",
@@ -462,7 +543,17 @@
 					"lockid",
 					"picklvl",
 					"rockhill_keys",
-					"origin_type"
+					"origin_type",
+					"alternate_worn_layer",
+					"rogue_sleeved",
+					"valid_blade",
+					"valid_blades",
+					"invalid_blades",
+					"sheathe_icon",
+					"worn_x_dimension",
+					"worn_y_dimension",
+					"inhand_x_dimension",
+					"inhand_y_dimension"
 				],
 				"rename": {
 					"inhand_icon_state": "item_state",
@@ -470,7 +561,8 @@
 					"worn_icon_state": "item_state",
 					"rogue_onhip": "experimental_onhip",
 					"rogue_onback": "experimental_onback",
-					"rockhill_keys": "keys"
+					"rockhill_keys": "keys",
+					"rogue_sleeved": "sleeved"
 				},
 				"true_only": [
 					"rogue_onhip",
@@ -499,12 +591,26 @@
 					"picklvl"
 				],
 				"path_lists": [
-					"rockhill_keys"
+					"rockhill_keys",
+					"valid_blades",
+					"invalid_blades"
 				],
 				"paths": [
-					"origin_type"
+					"origin_type",
+					"valid_blade"
 				],
-				"sprite_checks": true
+				"sprite_checks": true,
+				"mapped_vars": {
+					"alternate_worn_layer": {
+						"CLOAK_BEHIND_LAYER": "BODY_BEHIND_LAYER",
+						"TABARD_LAYER": "ROGUE_TABARD_LAYER",
+						"UNDER_CLOAK_LAYER": "ROGUE_UNDER_CLOAK_LAYER",
+						"NECK_LAYER": "NECK_LAYER",
+						"SHIRT_LAYER": "ROGUE_SHIRT_LAYER",
+						"WRISTS_LAYER": "ROGUE_WRISTS_LAYER",
+						"8.9": "(HANDS_LAYER - 0.1)"
+					}
+				}
 			},
 			{
 				"file": "humans.dm",
@@ -554,16 +660,6 @@
 				}
 			}
 		],
-		"smoothing_families": {
-			"/turf/closed": "SMOOTH_GROUP_WALLS",
-			"/turf/closed/mineral": "SMOOTH_GROUP_MINERAL_WALLS",
-			"/turf/closed/basic": "SMOOTH_GROUP_MINERAL_WALLS",
-			"/turf/closed/wall/mineral/rogue/wood": "SMOOTH_GROUP_WOOD_WALLS",
-			"/turf/closed/wall/mineral/rogue/wooddark": "SMOOTH_GROUP_WOOD_WALLS",
-			"/turf/closed/wall/mineral/rogue/decowood": "SMOOTH_GROUP_WOOD_WALLS",
-			"/turf/open/floor/rogue/wood": "SMOOTH_GROUP_OPEN_FLOOR",
-			"/turf/open/floor/rogue/woodturned": "SMOOTH_GROUP_OPEN_FLOOR"
-		},
 		"extra_icons": [
 			"icons/turf/newwater.dmi"
 		],
@@ -609,31 +705,13 @@
 		}
 	},
 	"title": {
-		"prefix": "Rockhill+ratwood-",
+		"prefix": "Rockhill+redtard-",
 		"sources": [
 			{
-				"file": "title_static.png",
-				"name": "static",
-				"kind": "png",
-				"origin": "Ratwood-2.0/icons/title_static.png"
-			},
-			{
-				"file": "rogueworld_title.dmi",
-				"name": "rogueworld",
+				"file": "redtard_logo.dmi",
+				"name": "logo",
 				"kind": "dmi",
-				"origin": "Ratwood-2.0/icons/rogueworld_title.dmi"
-			},
-			{
-				"file": "foolishdefault_title.dmi",
-				"name": "foolish",
-				"kind": "dmi",
-				"origin": "Ratwood-2.0/icons/foolishdefault_title.dmi"
-			},
-			{
-				"file": "default_title.dmi",
-				"name": "default",
-				"kind": "dmi",
-				"origin": "Ratwood-2.0/icons/default_title.dmi"
+				"origin": "RedTard logo, Logo_480x480_.gif supplied by the project owner (2026-10-13), converted by modular_redtard/tools/gif_to_dmi.py --every 9"
 			}
 		]
 	},
@@ -663,6 +741,16 @@
 			"keylock",
 			"lockdifficulty",
 			"name"
+		],
+		"/obj/effect/landmark/start": [
+			"name",
+			"jobspawn_override"
+		],
+		"/obj/structure/gate": [
+			"gid"
+		],
+		"/obj/structure/winch": [
+			"gid"
 		]
 	}
 }

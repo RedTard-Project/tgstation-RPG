@@ -14,11 +14,11 @@
 	parent_type = /area/station
 	name = "Rockhill"
 	requires_power = FALSE
+	ambient_buzz = null
 
-/area/rogue/outdoors
-	outdoors = TRUE
-	static_lighting = FALSE
-	base_lighting_alpha = 255
+/area/rogue/Initialize(mapload)
+	. = ..()
+	ambientsounds = null
 
 /turf/open/floor/rockhill
 	name = "ground"
@@ -68,10 +68,23 @@
 /obj/structure/rockhill
 	anchored = TRUE
 	density = FALSE
+	var/list/rockhill_random_pick
 
 /obj/structure/rockhill/Initialize(mapload)
 	. = ..()
+	if(length(rockhill_random_pick))
+		var/picked = pick(rockhill_random_pick)
+		var/atom/movable/spawned = new picked(loc)
+		spawned.pixel_x += rand(-3, 3)
+		return INITIALIZE_HINT_QDEL
 	apply_rockhill_look()
+
+/obj/structure/rockhill/flaps
+	name = "iron bars"
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
+	icon_state = "bars_passage"
+	layer = ABOVE_MOB_LAYER
+	can_atmos_pass = ATMOS_PASS_NO
 
 /obj/structure/rockhill/window
 	density = TRUE
