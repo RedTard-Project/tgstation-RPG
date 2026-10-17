@@ -6,6 +6,7 @@
 		"branch": "main",
 		"url": "https://raw.githubusercontent.com/Rotwood-Vale/Ratwood-2.0/main/_maps/map_files/rockhill/rockhill.dmm",
 		"map": "_maps/map_files/rockhill/rockhill.dmm",
+		"map_json": "_maps/rockhill.json",
 		"map_adjustment": "_maps/map_files/rockhill/map_adjustment_rockhill.dm",
 		"sparse": [
 			"/code/",
@@ -17,7 +18,9 @@
 			"/_maps/map_files/rockhill/",
 			"/sound/misc/",
 			"/sound/foley/",
-			"/sound/items/"
+			"/sound/items/",
+			"/_maps/rockhill.json",
+			"/_maps/map_files/otherz/"
 		]
 	},
 	"replacements": [
@@ -327,6 +330,60 @@
 					"icon_state"
 				]
 			}
+		},
+		{
+			"prefix": "/obj/structure/fluff/traveltile",
+			"rebase": "/obj/structure/rockhill/traveltile",
+			"port": {
+				"file": "traveltiles.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"color",
+					"layer",
+					"aportalid",
+					"aportalgoesto",
+					"required_trait",
+					"required_jobs",
+					"travel_time",
+					"travel_message",
+					"travel_deny_message",
+					"travel_access_hint",
+					"watchable"
+				],
+				"define_strings": [
+					"required_trait"
+				],
+				"string_lists": [
+					"required_jobs"
+				],
+				"placement": true
+			}
+		},
+		{
+			"prefix": "/obj/effect/spawner/trap",
+			"to": "/obj/effect/spawner/random/rockhill/trap",
+			"exact": true
+		},
+		{
+			"prefix": "/obj/random/spider",
+			"to": "/obj/effect/spawner/random/rockhill/mirespider",
+			"exact": true
+		},
+		{
+			"prefix": "/obj/vehicle/ridden/dinghy",
+			"rebase": "/obj/vehicle/ridden/rockhill/dinghy",
+			"port": {
+				"file": "vehicles.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state"
+				]
+			}
 		}
 	],
 	"port": {
@@ -359,7 +416,8 @@
 					"dir"
 				],
 				"smoothing": true,
-				"runtime_look": true
+				"runtime_look": true,
+				"init_overlays": true
 			},
 			{
 				"file": "turfs_water.dm",
@@ -403,7 +461,8 @@
 					"dir"
 				],
 				"smoothing": true,
-				"runtime_look": true
+				"runtime_look": true,
+				"init_overlays": true
 			},
 			{
 				"file": "structures.dm",
@@ -425,14 +484,37 @@
 					"dir",
 					"alpha",
 					"color",
-					"obj_flags"
+					"obj_flags",
+					"time_between_triggers"
 				],
 				"runtime_look": true,
 				"flag_vars": [
 					"obj_flags"
 				],
 				"random_pick": true,
-				"placement": true
+				"placement": true,
+				"natural": [
+					"/obj/structure/trap"
+				],
+				"type_vars": {
+					"/obj/structure/lever": [
+						"redstone_id",
+						"toggled"
+					],
+					"/obj/structure/bars": [
+						"redstone_id"
+					],
+					"/obj/structure/floordoor": [
+						"redstone_id",
+						"togg",
+						"base_state",
+						"delay2open",
+						"delay2close"
+					],
+					"/obj/structure/kybraxor": [
+						"redstone_id"
+					]
+				}
 			},
 			{
 				"file": "windows.dm",
@@ -455,7 +537,12 @@
 					"color"
 				],
 				"runtime_look": true,
-				"placement": true
+				"placement": true,
+				"type_vars": {
+					"/obj/structure/roguewindow": [
+						"base_state"
+					]
+				}
 			},
 			{
 				"file": "lights.dm",
@@ -492,7 +579,8 @@
 			{
 				"file": "decals.dm",
 				"prefixes": [
-					"/obj/effect/decal"
+					"/obj/effect/decal",
+					"/obj/effect/turf_decal"
 				],
 				"vars": [
 					"name",
@@ -506,6 +594,39 @@
 					"alpha",
 					"color"
 				],
+				"placement": true
+			},
+			{
+				"file": "effects.dm",
+				"prefixes": [
+					"/obj/effect/wisp",
+					"/obj/effect/lily_petal",
+					"/obj/effect/particle_effect/smoke",
+					"/obj/effect/falling_sakura",
+					"/obj/effect/falling_maple",
+					"/obj/effect/oneway"
+				],
+				"graft": "/obj/effect/rockhill",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"color",
+					"alpha",
+					"pixel_x",
+					"pixel_y",
+					"opacity",
+					"invisibility",
+					"light_range",
+					"light_power",
+					"light_color",
+					"dir",
+					"layer"
+				],
+				"rename": {
+					"light_range": "light_outer_range"
+				},
 				"placement": true
 			},
 			{
@@ -540,6 +661,7 @@
 					"body_parts_covered",
 					"rogue_onhip",
 					"rogue_onback",
+					"rogue_inhand",
 					"lockid",
 					"picklvl",
 					"rockhill_keys",
@@ -553,7 +675,9 @@
 					"worn_x_dimension",
 					"worn_y_dimension",
 					"inhand_x_dimension",
-					"inhand_y_dimension"
+					"inhand_y_dimension",
+					"rogue_grid_width",
+					"rogue_grid_height"
 				],
 				"rename": {
 					"inhand_icon_state": "item_state",
@@ -561,8 +685,11 @@
 					"worn_icon_state": "item_state",
 					"rogue_onhip": "experimental_onhip",
 					"rogue_onback": "experimental_onback",
+					"rogue_inhand": "experimental_inhand",
 					"rockhill_keys": "keys",
-					"rogue_sleeved": "sleeved"
+					"rogue_sleeved": "sleeved",
+					"rogue_grid_width": "grid_width",
+					"rogue_grid_height": "grid_height"
 				},
 				"true_only": [
 					"rogue_onhip",
@@ -610,7 +737,8 @@
 						"WRISTS_LAYER": "ROGUE_WRISTS_LAYER",
 						"8.9": "(HANDS_LAYER - 0.1)"
 					}
-				}
+				},
+				"grid_storage": true
 			},
 			{
 				"file": "humans.dm",
@@ -658,11 +786,67 @@
 				"rename": {
 					"spawn_loot_count": "lootcount"
 				}
+			},
+			{
+				"file": "map_spawners.dm",
+				"prefixes": [
+					"/obj/effect/spawner/roguemap"
+				],
+				"graft": "/obj/effect/spawner/random/rockhill",
+				"vars": [
+					"name",
+					"loot",
+					"spawn_loot_chance"
+				],
+				"rename": {
+					"loot": "spawned",
+					"spawn_loot_chance": "probby"
+				},
+				"path_lists": [
+					"loot"
+				]
 			}
 		],
 		"extra_icons": [
-			"icons/turf/newwater.dmi"
+			"icons/turf/newwater.dmi",
+			"icons/effects/particles/particle.dmi",
+			"icons/effects/96x96.dmi",
+			"icons/effects/effects.dmi",
+			"icons/effects/32x200.dmi",
+			"icons/time.dmi"
 		],
+		"extra_sounds": [
+			"sound/misc/newday.ogg",
+			"sound/misc/midday.ogg",
+			"sound/misc/nightfall.ogg"
+		],
+		"female_worn_slots": [
+			"ITEM_SLOT_PANTS",
+			"ITEM_SLOT_SHIRT",
+			"ITEM_SLOT_ARMOR",
+			"ITEM_SLOT_SHOES",
+			"ITEM_SLOT_GLOVES",
+			"ITEM_SLOT_RING",
+			"ITEM_SLOT_CLOAK",
+			"ITEM_SLOT_BELT",
+			"ITEM_SLOT_WRISTS"
+		],
+		"grid_storage": {
+			"from": "/datum/component/storage/concrete",
+			"to": "/datum/storage/rogue_grid",
+			"file": "storage.dm",
+			"vars": {
+				"screen_max_columns": "screen_max_columns",
+				"screen_max_rows": "screen_max_rows",
+				"max_specific_storage": "max_w_class",
+				"max_slots": "max_items",
+				"allow_quick_gather": "allow_quick_gather",
+				"allow_quick_empty": "allow_quick_empty",
+				"insert_preposition": "insert_preposition",
+				"attack_hand_interact": "attack_hand_interact",
+				"rogue_not_while_equipped": "not_while_equipped"
+			}
+		},
 		"reskin_vars": {
 			"initial_gas_mix": "OPENTURF_DEFAULT_ATMOS",
 			"init_air": "FALSE"
@@ -676,7 +860,8 @@
 			"resident_key_type",
 			"repair_cost_first",
 			"repair_cost_second",
-			"item_chair"
+			"item_chair",
+			"spawned"
 		],
 		"assets": {
 			"restricted_licenses": [
@@ -684,7 +869,24 @@
 				"modular_deserttown/icons/clothing/LICENSE.md"
 			],
 			"reviewed_licenses": []
-		}
+		},
+		"extra_types": [
+			"/obj/structure/trap/curse",
+			"/obj/structure/trap/curse/hidden",
+			"/obj/structure/trap/flame",
+			"/obj/structure/trap/shock",
+			"/obj/structure/trap/bomb",
+			"/obj/structure/trap/rock_fall",
+			"/obj/structure/trap/saw_blades",
+			"/obj/structure/trap/wall_projectile",
+			"/obj/structure/trap/wall_projectile/acidsplash",
+			"/obj/structure/trap/wall_projectile/frostbolt",
+			"/obj/structure/trap/water",
+			"/obj/structure/sawblade_trap",
+			"/mob/living/simple_animal/hostile/rogue/mirespider_paralytic",
+			"/mob/living/simple_animal/hostile/retaliate/rogue/mirespider",
+			"/obj/item/rogueweapon/mace/oar"
+		]
 	},
 	"jobs": {
 		"departments": {
@@ -702,6 +904,9 @@
 		"retitle": {
 			"/datum/job/roguetown/cook": "Manor Cook",
 			"/datum/job/roguetown/warden": "Forest Warden"
+		},
+		"access_traits": {
+			"/obj/structure/fluff/traveltile": "required_trait"
 		}
 	},
 	"title": {
@@ -751,6 +956,23 @@
 		],
 		"/obj/structure/winch": [
 			"gid"
+		],
+		"/obj/structure/fluff/traveltile": [
+			"aportalid",
+			"aportalgoesto",
+			"alpha"
+		],
+		"/obj/structure/lever": [
+			"redstone_id"
+		],
+		"/obj/structure/bars": [
+			"redstone_id"
+		],
+		"/obj/structure/floordoor": [
+			"redstone_id"
+		],
+		"/obj/structure/kybraxor": [
+			"redstone_id"
 		]
 	}
 }

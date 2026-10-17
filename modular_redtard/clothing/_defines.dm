@@ -11,8 +11,13 @@
 #define ROGUE_BACK_RIGHT 2
 #define HUD_ROGUE_BACKR "backr"
 
+#define ROGUE_FEMALE_SUFFIX "_f"
+
 #define ROGUE_ONMOB_HIP "onbelt"
 #define ROGUE_ONMOB_BACK "onback"
+#define ROGUE_ONMOB_HAND "gen"
+#define ROGUE_ONMOB_WIELDED "wielded"
+#define ROGUE_OVERLAY_HANDS_BEHIND "hands_behind"
 #define ROGUE_OVERLAY_BACK_LEFT "backl"
 #define ROGUE_OVERLAY_HIP_LEFT "hipl"
 #define ROGUE_OVERLAY_HIP_RIGHT "hipr"

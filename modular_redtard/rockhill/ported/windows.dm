@@ -7,6 +7,7 @@
 	density = TRUE
 	opacity = FALSE
 	layer = TABLE_LAYER
+	base_state = "window-solid"
 	smoothing_groups = SMOOTH_GROUP_ROCKHILL_STRUCTURE_ROGUEWINDOW
 
 /obj/structure/roguewindow/harem2
@@ -17,6 +18,7 @@
 	density = TRUE
 	opacity = TRUE
 	layer = TABLE_LAYER
+	base_state = "harem2-solid"
 	smoothing_groups = SMOOTH_GROUP_ROCKHILL_STRUCTURE_ROGUEWINDOW_HAREM2
 
 /obj/structure/roguewindow/harem3
@@ -27,6 +29,7 @@
 	density = TRUE
 	opacity = FALSE
 	layer = TABLE_LAYER
+	base_state = "harem3-solid"
 	smoothing_groups = SMOOTH_GROUP_ROCKHILL_STRUCTURE_ROGUEWINDOW_HAREM3
 
 /obj/structure/roguewindow/harem3/frosted
@@ -37,6 +40,7 @@
 	density = TRUE
 	opacity = TRUE
 	layer = TABLE_LAYER
+	base_state = "harem3-solid"
 	smoothing_groups = SMOOTH_GROUP_ROCKHILL_STRUCTURE_ROGUEWINDOW_HAREM3_FROSTED
 
 /obj/structure/roguewindow/openclose
@@ -47,6 +51,7 @@
 	opacity = TRUE
 	icon_state = "woodwindow"
 	layer = TABLE_LAYER
+	base_state = "woodwindow"
 	smoothing_groups = SMOOTH_GROUP_ROCKHILL_STRUCTURE_ROGUEWINDOW_OPENCLOSE
 
 /obj/structure/roguewindow/openclose/reinforced
@@ -57,6 +62,7 @@
 	opacity = TRUE
 	icon_state = "reinforcedwindow"
 	layer = TABLE_LAYER
+	base_state = "reinforcedwindow"
 	smoothing_groups = SMOOTH_GROUP_ROCKHILL_STRUCTURE_ROGUEWINDOW_OPENCLOSE_REINFORCED
 
 /obj/structure/roguewindow/stained/silver
@@ -67,6 +73,7 @@
 	density = TRUE
 	opacity = TRUE
 	layer = TABLE_LAYER
+	base_state = "stained-silver"
 	smoothing_groups = SMOOTH_GROUP_ROCKHILL_STRUCTURE_ROGUEWINDOW_STAINED_SILVER
 
 /obj/structure/roguewindow/stained/yellow
@@ -77,6 +84,7 @@
 	density = TRUE
 	opacity = TRUE
 	layer = TABLE_LAYER
+	base_state = "stained-yellow"
 	smoothing_groups = SMOOTH_GROUP_ROCKHILL_STRUCTURE_ROGUEWINDOW_STAINED_YELLOW
 
 /obj/structure/roguewindow/stained/zizo
@@ -87,4 +95,5 @@
 	density = TRUE
 	opacity = TRUE
 	layer = TABLE_LAYER
+	base_state = "stained-zizo"
 	smoothing_groups = SMOOTH_GROUP_ROCKHILL_STRUCTURE_ROGUEWINDOW_STAINED_ZIZO

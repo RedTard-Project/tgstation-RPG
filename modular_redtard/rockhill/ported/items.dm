@@ -139,6 +139,24 @@
 /obj/item/underworld
 	parent_type = /obj/item/rockhill
 
+/obj/item/alch/airdust
+	name = "air essentia"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/alchemy.dmi'
+	icon_state = "air_runedust"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+
 /obj/item/alch/artemisia
 	name = "artemisia"
 	desc = ""
@@ -149,6 +167,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -166,6 +185,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -183,6 +203,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -201,11 +222,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/alch/calendula
@@ -218,6 +242,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -235,6 +260,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -252,6 +278,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -269,6 +296,25 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+
+/obj/item/alch/firedust
+	name = "fire essentia"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/alchemy.dmi'
+	icon_state = "fire_runedust"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -286,6 +332,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -303,6 +350,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -320,6 +368,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -337,6 +386,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -354,6 +404,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -371,6 +422,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -388,6 +440,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -405,6 +458,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -422,6 +476,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -440,6 +495,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head_items.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	alternate_worn_layer = (HANDS_LAYER - 0.1)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -459,6 +515,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -477,6 +534,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head_items.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
+	rogue_inhand = FALSE
 	alternate_worn_layer = (HANDS_LAYER - 0.1)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -496,6 +554,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -513,6 +572,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -530,6 +590,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -547,6 +608,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -564,6 +626,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -581,6 +644,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -598,6 +662,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -615,6 +680,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -632,6 +698,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -649,6 +716,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -667,6 +735,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -687,6 +756,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -707,6 +777,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -727,6 +798,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -747,6 +819,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -767,11 +840,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/artefact/dendor_hose
@@ -785,11 +861,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/artefact/eora_heart
@@ -802,6 +881,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -820,11 +900,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "necra_censer"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "necra_censer"
 
 /obj/item/artefact/noc_phylactery
@@ -837,6 +920,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -854,6 +938,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -871,6 +956,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -891,6 +977,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -908,6 +995,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -926,11 +1014,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/barometer
@@ -944,11 +1035,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/bedroll
@@ -962,11 +1056,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/bedsheet/rogue/cloth
@@ -980,6 +1077,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "cloth_bedsheet"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -998,6 +1096,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "double_pelt_bedsheet"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -1016,6 +1115,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "fabric_bedsheet"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -1034,6 +1134,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "double_fabric_bedsheet"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -1052,6 +1153,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "pelt_bedsheet"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -1070,6 +1172,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "wool_bedsheet"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -1088,6 +1191,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
 	slot_flags = ITEM_SLOT_BACK
+	rogue_inhand = TRUE
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -1110,11 +1214,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/bodypart/r_arm/goblin
@@ -1128,11 +1235,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/bomb
@@ -1148,11 +1258,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/bonechill
@@ -1165,11 +1278,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/enlarge
@@ -1182,11 +1298,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/ensnare
@@ -1199,11 +1318,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/featherfall
@@ -1216,11 +1338,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/fetch
@@ -1233,11 +1358,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/fireball
@@ -1250,11 +1378,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/forcewall_weak
@@ -1267,11 +1398,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/fortitude
@@ -1284,11 +1418,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/frostbolt
@@ -1301,11 +1438,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/greaterfireball
@@ -1318,11 +1458,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/guidance
@@ -1335,11 +1478,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/invisibility
@@ -1352,11 +1498,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/leap
@@ -1369,11 +1518,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/lesserknock
@@ -1386,11 +1538,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/lightning
@@ -1403,11 +1558,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/message
@@ -1420,11 +1578,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/repel
@@ -1437,11 +1598,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/sicknessray
@@ -1454,11 +1618,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/skeleton
@@ -1471,11 +1638,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/skeleton/lesser
@@ -1488,11 +1658,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/granter/spell/blackstone/spitfire
@@ -1505,11 +1678,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/rogue/abyssor
@@ -1523,11 +1699,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/rogue/arcyne
@@ -1541,11 +1720,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/rogue/beardling
@@ -1559,11 +1741,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/rogue/bibble
@@ -1577,11 +1762,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/rogue/bibble/psy
@@ -1595,11 +1783,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/rogue/bibble/zizo
@@ -1613,11 +1804,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/rogue/cardgame
@@ -1631,11 +1825,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/rogue/cooking
@@ -1649,11 +1846,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/rogue/law
@@ -1667,11 +1867,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/rogue/necra
@@ -1685,11 +1888,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/rogue/nitebeast
@@ -1703,11 +1909,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/rogue/noc
@@ -1721,11 +1930,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/rogue/playerbook
@@ -1739,11 +1951,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/rogue/swatchbook
@@ -1757,11 +1972,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/rogue/sword
@@ -1775,11 +1993,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/rogue/tales1
@@ -1793,11 +2014,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/rogue/tales3
@@ -1811,11 +2035,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/rogue/xylix
@@ -1829,11 +2056,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/rogue/yeoldecookingmanual
@@ -1847,11 +2077,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/book/spellbook
@@ -1866,11 +2099,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/book_crafting_kit
@@ -1884,6 +2120,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -1902,11 +2139,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/bouquet/calendula
@@ -1920,11 +2160,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "bouquet_calendula"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/bouquet/matricaria
@@ -1938,11 +2181,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "bouquet_matricaria"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/bouquet/rosa
@@ -1956,11 +2202,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "bouquet_rosa"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/bouquet/salvia
@@ -1974,11 +2223,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "bouquet_salvia"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/broom
@@ -1993,6 +2245,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	slot_flags = ITEM_SLOT_BACK
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -2013,6 +2266,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -2030,6 +2284,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "candle1"
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -2047,6 +2302,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "candle1"
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -2064,6 +2320,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "candle1"
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -2081,6 +2338,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "candle1"
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -2098,6 +2356,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "candle1"
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -2115,6 +2374,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "candle1"
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -2132,6 +2392,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "candle1"
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -2149,6 +2410,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "candle1"
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -2166,6 +2428,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "candle1"
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -2183,6 +2446,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "candle1"
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -2200,6 +2464,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "candle1"
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -2217,6 +2482,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "candle1"
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -2234,6 +2500,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "candle1"
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -2251,6 +2518,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "candle1"
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -2268,6 +2536,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "candle1"
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -2285,11 +2554,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/carvedgem/onyxa/snake
@@ -2302,11 +2574,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/carvedgem/onyxa/spider
@@ -2319,11 +2594,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/carvedgem/opal
@@ -2336,11 +2614,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/carvedgem/porcelain/bauble
@@ -2353,11 +2634,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/carvedgem/porcelain/bust
@@ -2370,11 +2654,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/carvedgem/porcelain/comb
@@ -2387,11 +2674,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/carvedgem/porcelain/fancyvase
@@ -2404,11 +2694,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/carvedgem/porcelain/fish
@@ -2421,11 +2714,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/carvedgem/porcelain/vase
@@ -2438,11 +2734,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/carvedgem/rose/statue/baotha
@@ -2455,11 +2754,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/chair/rogue
@@ -2473,6 +2775,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/chairs_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/chairs_righthand.dmi'
 	worn_icon_state = "chair"
+	rogue_inhand = TRUE
 	origin_type = /obj/structure/chair/wood/rockhill/wood/rogue
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -2492,6 +2795,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/chairs_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/chairs_righthand.dmi'
 	worn_icon_state = "chair"
+	rogue_inhand = TRUE
 	origin_type = /obj/structure/chair/wood/rockhill/wood/rogue/fancy
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -2511,6 +2815,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/chairs_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/chairs_righthand.dmi'
 	worn_icon_state = "stool_bar"
+	rogue_inhand = TRUE
 	origin_type = /obj/structure/chair/wood/rockhill/stool/rogue
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -2530,6 +2835,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/chairs_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/chairs_righthand.dmi'
 	worn_icon_state = "stool_bar"
+	rogue_inhand = TRUE
 	origin_type = /obj/structure/chair/wood/rockhill/stool/rogue
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -2550,6 +2856,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -2569,11 +2876,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
 	worn_icon = "cage_belt"
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/chastity/chastity_belt
@@ -2587,11 +2897,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
 	worn_icon = "cage_insert"
 	worn_icon_state = "cage_insert"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/chastity/chastity_belt/anal
@@ -2605,11 +2918,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
 	worn_icon = "cage_insert"
 	worn_icon_state = "cage_insert_shield"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/chastity/chastity_belt/spiked
@@ -2623,11 +2939,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
 	worn_icon = "cage_insert"
 	worn_icon_state = "cage_insert_spiked"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/chastity/chastity_belt/spiked_anal
@@ -2641,11 +2960,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
 	worn_icon = "cage_insert"
 	worn_icon_state = "cage_insert_spikeshield"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/chastity/chastity_cage
@@ -2659,11 +2981,35 @@
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
 	worn_icon = "cage_standard"
 	worn_icon_state = "cage_standard"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	inhand_icon_state = null
+
+/obj/item/chastity/chastity_cage/anal
+	name = "chastity cage with anal shield"
+	desc = "A secure cage with a rear shield to deny anal access too."
+	icon = 'modular_redtard/rockhill/icons/modular/icons/obj/lewd/chastity.dmi'
+	icon_state = "cage_standard_shield"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
+	worn_icon = "cage_standard"
+	worn_icon_state = "cage_standard_shield"
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/chastity/chastity_cage/flat
@@ -2677,11 +3023,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
 	worn_icon = "cage_standard"
 	worn_icon_state = "cage_flat"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/chastity/chastity_cage/flat/anal
@@ -2695,11 +3044,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
 	worn_icon = "cage_standard"
 	worn_icon_state = "cage_flat_shield"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/chastity/chastity_cage/flat/spiked
@@ -2713,11 +3065,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
 	worn_icon = "cage_standard"
 	worn_icon_state = "cage_flat_spiked"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/chastity/chastity_cage/flat/spiked_anal
@@ -2731,11 +3086,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
 	worn_icon = "cage_standard"
 	worn_icon_state = "cage_flat_spikeshield"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/chastity/chastity_cage/spiked
@@ -2749,11 +3107,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
 	worn_icon = "cage_standard"
 	worn_icon_state = "cage_standard_spiked"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/chastity/chastity_cage/spiked_anal
@@ -2767,11 +3128,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
 	worn_icon = "cage_standard"
 	worn_icon_state = "cage_standard_spikeshield"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/chastity/cursed
@@ -2785,11 +3149,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
 	worn_icon = "cage_cursed"
 	worn_icon_state = "cage_cursed"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/chastity/intersex
@@ -2803,11 +3170,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
 	worn_icon = "cage_belt"
 	worn_icon_state = "cage_belt"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/chastity/intersex/spiked
@@ -2821,11 +3191,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
 	worn_icon = "cage_belt"
 	worn_icon_state = "cage_belt"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/armor/gambeson/tailcoat
@@ -2840,6 +3213,7 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_padded
+	rogue_inhand = TRUE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_maids.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -2847,6 +3221,7 @@
 	inhand_y_dimension = 64
 	inhand_icon_state = null
 	worn_icon_state = "butlercoat"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/absolutionistrobe
 	name = "absolver's robe"
@@ -2859,13 +3234,17 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "absolutionistrobe"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/abyssortabard
 	name = "abyssorite tabard"
@@ -2879,14 +3258,18 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "abyssortabard"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/apron
 	name = "apron"
@@ -2900,14 +3283,18 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "apron"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/apron/blacksmith
 	name = "leather apron"
@@ -2922,14 +3309,18 @@
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
 	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = CHEST|GROIN
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "leather_apron"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/apron/cook
 	name = "cook apron"
@@ -2943,14 +3334,18 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = GROIN
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "aproncook"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/apron/maid
 	name = "maid apron"
@@ -2964,14 +3359,18 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = "maidapron"
 	worn_icon_state = "maidapron"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/apron/waist
 	name = "apron"
@@ -2985,14 +3384,18 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = GROIN
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "waistpron"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/apron/waist/bar
 	name = "apron"
@@ -3006,14 +3409,18 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = GROIN
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "waistpron"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/apron/waist/brown
 	name = "apron"
@@ -3027,14 +3434,18 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = GROIN
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "waistpron"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/black_cloak
 	name = "fur overcoat"
@@ -3048,13 +3459,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "black_cloak"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/cape
 	name = "cape"
@@ -3067,14 +3482,41 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	alternate_worn_layer = BODY_BEHIND_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "cape"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/cloak/cape/blkknight
+	name = "blood cape"
+	desc = "A beautiful, flowing cape. Too bad it tangles too much on the vegetation."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/blkknight.dmi'
+	icon_state = "bkcape"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
+	alternate_worn_layer = BODY_BEHIND_LAYER
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/blkknight.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/cloak/captain
 	name = "captain's cape"
@@ -3087,14 +3529,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/captain.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	alternate_worn_layer = BODY_BEHIND_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/captain.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "capcloak"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/chasuble
 	name = "chasuble"
@@ -3108,11 +3554,14 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "chasuble"
 
@@ -3124,11 +3573,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -3145,14 +3597,42 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	alternate_worn_layer = BODY_BEHIND_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "sheriffcloak"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/cloak/darkcloak
+	name = "dark cloak"
+	desc = "It'll warm up your flesh, but not your cold, dead heart."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/cloaks.dmi'
+	icon_state = "dark_cloak"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
+	alternate_worn_layer = BODY_BEHIND_LAYER
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	inhand_icon_state = null
+	worn_icon_state = "dark_cloak"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/darkcloak/bear/wardenmaster
 	name = "Warden trophy-cloak"
@@ -3165,14 +3645,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	alternate_worn_layer = BODY_BEHIND_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "bear_cloak"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/duelistcape
 	name = "duelist cape"
@@ -3185,12 +3669,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	alternate_worn_layer = BODY_BEHIND_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "duelistcape"
 
@@ -3205,14 +3692,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	alternate_worn_layer = BODY_BEHIND_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "halfcloak"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/half/red
 	name = "halfcloak"
@@ -3225,14 +3716,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	alternate_worn_layer = BODY_BEHIND_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "halfcloak"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/half/vet
 	name = "town watch cloak"
@@ -3245,14 +3740,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	alternate_worn_layer = BODY_BEHIND_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "guardcloak"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/heartfelt
 	name = "red cloak"
@@ -3266,13 +3765,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "heartfelt_cloak"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/hierophant
 	name = "hierophant's sash"
@@ -3285,13 +3788,17 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "naledisash"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/holysee
 	name = "holy silver vestments"
@@ -3305,14 +3812,18 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/martyr.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_cloaks.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "silvertabard"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/lordcloak
 	name = "lordly cloak"
@@ -3325,14 +3836,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	alternate_worn_layer = BODY_BEHIND_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "lord_cloak"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/lordcloak/baronycloak
 	name = "Barony Cloak"
@@ -3345,14 +3860,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	alternate_worn_layer = BODY_BEHIND_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "lord_cloak"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/lordcloak/ladycloak
 	name = "ladylike shortcloak"
@@ -3365,14 +3884,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	alternate_worn_layer = BODY_BEHIND_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "shortcloak"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/martyr
 	name = "martyr cloak"
@@ -3386,13 +3909,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "martyrcloak"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/matron
 	name = "matron cloak"
@@ -3406,13 +3933,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "matroncloak"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/psydontabard
 	name = "psydonian tabard"
@@ -3426,14 +3957,42 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST|GROIN
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "psydontabard"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/cloak/raincloak/blue
+	name = "rain cloak"
+	desc = "This one will help against the rainy weather."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/cloaks.dmi'
+	icon_state = "rain_cloak"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
+	alternate_worn_layer = BODY_BEHIND_LAYER
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	inhand_icon_state = null
+	worn_icon_state = "rain_cloak"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/raincloak/brown
 	name = "rain cloak"
@@ -3446,14 +4005,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	alternate_worn_layer = BODY_BEHIND_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "rain_cloak"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/raincloak/furcloak/crafted
 	name = "fur cloak"
@@ -3466,14 +4029,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	alternate_worn_layer = BODY_BEHIND_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "rain_cloak"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/raincloak/green
 	name = "rain cloak"
@@ -3486,14 +4053,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	alternate_worn_layer = BODY_BEHIND_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "rain_cloak"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/raincloak/mortus
 	name = "rain cloak"
@@ -3506,14 +4077,42 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	alternate_worn_layer = BODY_BEHIND_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "rain_cloak"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/cloak/raincloak/red
+	name = "rain cloak"
+	desc = "This one will help against the rainy weather."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/cloaks.dmi'
+	icon_state = "rain_cloak"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
+	alternate_worn_layer = BODY_BEHIND_LAYER
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	inhand_icon_state = null
+	worn_icon_state = "rain_cloak"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/shadowcloak/vanguard
 	name = "vanguard cloak"
@@ -3526,14 +4125,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	alternate_worn_layer = BODY_BEHIND_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "shadowcloak"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/stabard
 	name = "surcoat"
@@ -3547,14 +4150,18 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "stabard"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/stabard/black
 	name = "surcoat"
@@ -3568,14 +4175,18 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "stabard"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/stabard/bog
 	name = "bogman tabard"
@@ -3589,14 +4200,18 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "stabard"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/stabard/guard
 	name = "guard tabard"
@@ -3610,14 +4225,18 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "stabard"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/stabard/guardhood
 	name = "guard hood"
@@ -3631,14 +4250,18 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "guard_hood"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/stabard/surcoat
 	name = "jupon"
@@ -3652,14 +4275,18 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "surcoat"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/stabard/surcoat/bailiff
 	name = "jupon"
@@ -3673,14 +4300,18 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "surcoat"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/stabard/surcoat/councillor
 	name = "jupon"
@@ -3694,14 +4325,18 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "surcoat"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/stabard/surcoat/guard
 	name = "jupon"
@@ -3715,14 +4350,18 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "surcoat"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/stole
 	name = "stole"
@@ -3735,13 +4374,17 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "stole_gold"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/stole/purple
 	name = "stole"
@@ -3754,13 +4397,17 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "stole_gold"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/stole/red
 	name = "stole"
@@ -3773,13 +4420,17 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "stole_red"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/tabard
 	name = "tabard"
@@ -3793,14 +4444,18 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "tabard"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/tabard/knight
 	name = "tabard"
@@ -3814,14 +4469,18 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "tabard"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/tabard/knight/guard
 	name = "tabard"
@@ -3835,14 +4494,18 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "tabard"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/tabard/retinue
 	name = "tabard"
@@ -3856,14 +4519,18 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "tabard"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/tabard/retinue/baronycloak
 	name = "tabard"
@@ -3877,14 +4544,18 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "tabard"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/templar/abyssor
 	name = "abyssor tabard"
@@ -3898,14 +4569,18 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "tabard_abyssor"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/templar/astratan
 	name = "astratan tabard"
@@ -3918,14 +4593,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "astratatabard"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/templar/eoran
 	name = "eoran tabard"
@@ -3938,14 +4617,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "eoratabard"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/templar/malumite
 	name = "tabard of malum"
@@ -3958,14 +4641,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "malumtabard"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/templar/necran
 	name = "necran tabard"
@@ -3978,14 +4665,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "necratabard"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/templar/pestran
 	name = "pestran tabard"
@@ -3998,14 +4689,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "pestratabard"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/templar/ravox
 	name = "justice tabard"
@@ -4019,13 +4714,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_cloaks.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "justicetabard"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/templar/undivided
 	name = "see tabard"
@@ -4038,14 +4737,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "seetabard"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/templar/xylixian
 	name = "xylixian cloak"
@@ -4058,14 +4761,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_cloaks.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "xylixcloak"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/undivided
 	name = "see cloak"
@@ -4077,12 +4784,15 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	alternate_worn_layer = BODY_BEHIND_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -4098,14 +4808,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	alternate_worn_layer = BODY_BEHIND_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "wardencloak"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/gloves/roguetown/angle
 	name = "heavy leather gloves"
@@ -4119,13 +4833,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	slot_flags = ITEM_SLOT_GLOVES
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "angle"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/gloves/roguetown/angle/atgervi
 	name = "fur-lined leather gloves"
@@ -4139,13 +4857,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	slot_flags = ITEM_SLOT_GLOVES
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "atgervi_raider_gloves"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/gloves/roguetown/angle/grenzelgloves/blacksmith
 	name = "forge gauntlets"
@@ -4159,13 +4881,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	slot_flags = ITEM_SLOT_GLOVES
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "grenzelgloves"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/gloves/roguetown/bandages/pugilist
 	name = "pugilistic bandages"
@@ -4179,13 +4905,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	slot_flags = ITEM_SLOT_GLOVES
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "clothwraps"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/gloves/roguetown/blacksteel/modern/plategloves
 	name = "blacksteel plate gauntlets"
@@ -4199,13 +4929,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/blkknight.dmi'
 	slot_flags = ITEM_SLOT_GLOVES
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/blkknight.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "bplategloves"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/gloves/roguetown/chain
 	name = "chain gauntlets"
@@ -4219,13 +4953,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	slot_flags = ITEM_SLOT_GLOVES
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "cgloves"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/gloves/roguetown/chain/ancient
 	name = "ancient chain gauntlets"
@@ -4239,13 +4977,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	slot_flags = ITEM_SLOT_GLOVES
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "acgloves"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/gloves/roguetown/chain/ancient/decrepit
 	name = "decrepit chain gauntlets"
@@ -4259,13 +5001,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	slot_flags = ITEM_SLOT_GLOVES
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "acgloves"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/gloves/roguetown/chain/iron
 	name = "iron chain gauntlets"
@@ -4279,13 +5025,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	slot_flags = ITEM_SLOT_GLOVES
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "icgloves"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/gloves/roguetown/chain/psydon
 	name = "psydonic chain-wrapped gloves"
@@ -4298,11 +5048,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_GLOVES
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -4319,13 +5072,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	slot_flags = ITEM_SLOT_GLOVES
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "fingerless_gloves"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/gloves/roguetown/fingerless_leather
 	name = "fingerless leather gloves"
@@ -4339,13 +5096,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	slot_flags = ITEM_SLOT_GLOVES
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "roguegloves"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/gloves/roguetown/leather
 	name = "leather gloves"
@@ -4359,13 +5120,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	slot_flags = ITEM_SLOT_GLOVES
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "leather_gloves"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/gloves/roguetown/leather/black
 	name = "leather gloves"
@@ -4379,13 +5144,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	slot_flags = ITEM_SLOT_GLOVES
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "leather_gloves"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/gloves/roguetown/leather/horsey
 	name = "arm harness"
@@ -4400,13 +5169,17 @@
 	slot_flags = ITEM_SLOT_GLOVES
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "harms"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/gloves/roguetown/nomagic
 	name = "gem encrusted mana binding gloves"
@@ -4418,11 +5191,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_GLOVES
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -4439,13 +5215,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	slot_flags = ITEM_SLOT_GLOVES
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "inqgloves"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/gloves/roguetown/otavan/psygloves
 	name = "psydonic leather gloves"
@@ -4459,13 +5239,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	slot_flags = ITEM_SLOT_GLOVES
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "psydongloves"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/gloves/roguetown/plate
 	name = "plate gauntlets"
@@ -4479,13 +5263,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	slot_flags = ITEM_SLOT_GLOVES
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "gauntlets"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/gloves/roguetown/plate/ancient
 	name = "ancient plate gauntlets"
@@ -4499,13 +5287,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	slot_flags = ITEM_SLOT_GLOVES
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "agauntlets"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/gloves/roguetown/plate/ancient/decrepit
 	name = "decrepit plate gauntlets"
@@ -4519,13 +5311,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	slot_flags = ITEM_SLOT_GLOVES
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "agauntlets"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/gloves/roguetown/plate/graggar
 	name = "vicious gauntlets"
@@ -4539,13 +5335,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	slot_flags = ITEM_SLOT_GLOVES
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "graggarplategloves"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/gloves/roguetown/plate/holysee
 	name = "holy silver plate gauntlets"
@@ -4559,13 +5359,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/martyr.dmi'
 	slot_flags = ITEM_SLOT_GLOVES
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/martyr.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "silvergloves"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/gloves/roguetown/plate/iron
 	name = "iron plate gauntlets"
@@ -4579,13 +5383,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	slot_flags = ITEM_SLOT_GLOVES
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "igauntlets"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/gloves/roguetown/plate/matthios
 	name = "gilded gauntlets"
@@ -4599,13 +5407,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	slot_flags = ITEM_SLOT_GLOVES
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "matthiosgloves"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/gloves/roguetown/plate/zizo
 	name = "avantyne plate gauntlets"
@@ -4619,13 +5431,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	slot_flags = ITEM_SLOT_GLOVES
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "zizogauntlets"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/gloves/xylix
 	name = "Pickpocket gloves"
@@ -4638,11 +5454,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_GLOVES
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = TRUE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -4660,11 +5479,14 @@
 	slot_flags = ITEM_SLOT_HEAD
 	armor_type = /datum/armor/rockhill_blackbag
 	body_parts_covered = HEAD
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "blackbag"
 
@@ -4680,11 +5502,14 @@
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/armingcap
@@ -4699,11 +5524,14 @@
 	worn_icon_state = "armingcap"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/articap
@@ -4718,11 +5546,14 @@
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/bardhat
@@ -4737,11 +5568,14 @@
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/beekeeper
@@ -4756,12 +5590,15 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = (HANDS_LAYER - 0.1)
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "beekeeper"
 
@@ -4777,11 +5614,14 @@
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/chaperon
@@ -4796,11 +5636,14 @@
 	worn_icon_state = "chaperon"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/chaperon/brown
@@ -4815,11 +5658,14 @@
 	worn_icon_state = "chaperon"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/chaperon/noble
@@ -4834,11 +5680,14 @@
 	worn_icon_state = "noblechaperon"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/chaperon/noble/bailiff
@@ -4854,11 +5703,14 @@
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_spellsinger
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/chaperon/noble/guildmaster
@@ -4873,11 +5725,14 @@
 	worn_icon_state = "noblechaperon"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/chaperon/noble/hand
@@ -4892,11 +5747,14 @@
 	worn_icon_state = "noblechaperon"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/circlet
@@ -4911,11 +5769,14 @@
 	worn_icon_state = "circlet"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/cookhat
@@ -4930,12 +5791,37 @@
 	worn_icon_state = "chef"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = "chef"
+
+/obj/item/clothing/head/roguetown/crown/fakecrown
+	name = "fake crown"
+	desc = "You shouldn't be seeing this."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "serpcrown"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon_state = "that"
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/crown/surplus
 	name = "crown"
@@ -4949,11 +5835,14 @@
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/dendormask
@@ -4968,11 +5857,14 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "dendormask"
 
@@ -4986,11 +5878,14 @@
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	armor_type = /datum/armor/rockhill_padded_bad
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -5008,11 +5903,14 @@
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/eoramask
@@ -5028,11 +5926,14 @@
 	worn_icon_state = "eoramask"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/fancyhat
@@ -5047,11 +5948,14 @@
 	worn_icon_state = "fancyhat"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/fedora
@@ -5066,11 +5970,14 @@
 	worn_icon_state = "curator"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/fisherhat
@@ -5085,11 +5992,14 @@
 	worn_icon_state = "fisherhat"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/hatfur
@@ -5104,11 +6014,14 @@
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/headband/monk
@@ -5124,11 +6037,14 @@
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_spellsinger
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/headdress
@@ -5143,11 +6059,14 @@
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/headdress/alt
@@ -5162,11 +6081,14 @@
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet
@@ -5184,11 +6106,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/bandana
@@ -5204,11 +6129,14 @@
 	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = "that"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -5228,11 +6156,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/bascinet/antler
@@ -5249,11 +6180,14 @@
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/bascinet/atgervi
@@ -5271,11 +6205,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 48
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/bascinet/etruscan
@@ -5293,11 +6230,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/bascinet/pigface
@@ -5315,11 +6255,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/blacksteel/modern/armet
@@ -5337,11 +6280,14 @@
 	armor_type = /datum/armor/rockhill_plate_bsteel
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/blacksteel/psythorns
@@ -5358,12 +6304,15 @@
 	armor_type = /datum/armor/rockhill_plate_bsteel
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	alternate_worn_layer = (HANDS_LAYER - 0.1)
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "psybarbs"
 
@@ -5382,11 +6331,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/citywatch/captain
@@ -5404,11 +6356,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/coppercap
@@ -5426,11 +6381,14 @@
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/goblin
@@ -5448,11 +6406,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy
@@ -5470,11 +6431,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/absolver
@@ -5492,11 +6456,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD|NECK
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/ancient
@@ -5514,11 +6481,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/ancient/decrepit
@@ -5536,11 +6506,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/bucket
@@ -5558,11 +6531,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/bucket/iron
@@ -5580,11 +6556,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/captain
@@ -5602,11 +6581,14 @@
 	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/frogmouth
@@ -5624,11 +6606,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD|NECK
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/graggar
@@ -5646,11 +6631,14 @@
 	armor_type = /datum/armor/rockhill_ascendant
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/guard
@@ -5668,11 +6656,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/guard/ancient
@@ -5690,11 +6681,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/guard/ancient/decrepit
@@ -5712,11 +6706,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/holysee
@@ -5734,11 +6731,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/knight
@@ -5756,11 +6756,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/knight/armet
@@ -5778,11 +6781,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/knight/iron
@@ -5800,11 +6806,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/matthios
@@ -5821,11 +6830,14 @@
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_ascendant
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/pestran
@@ -5843,11 +6855,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/zizo
@@ -5865,11 +6880,14 @@
 	armor_type = /datum/armor/rockhill_ascendant
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/horned
@@ -5887,11 +6905,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/kettle
@@ -5909,11 +6930,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/kettle/
@@ -5931,11 +6955,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/kettle/iron
@@ -5953,11 +6980,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/leather
@@ -5975,11 +7005,14 @@
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/leather/armorhood
@@ -5996,11 +7029,14 @@
 	armor_type = /datum/armor/rockhill_m46_b14_f0_a0
 	body_parts_covered = HEAD|NECK
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "studhood"
 
@@ -6018,11 +7054,14 @@
 	armor_type = /datum/armor/rockhill_leather_studded
 	body_parts_covered = HEAD|NECK
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "studhood"
 
@@ -6041,11 +7080,14 @@
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
@@ -6063,11 +7105,14 @@
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/sallet
@@ -6085,11 +7130,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/sallet/visored
@@ -6107,11 +7155,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/sallet/zyb
@@ -6129,11 +7180,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/skullcap
@@ -6151,11 +7205,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/winged
@@ -6173,11 +7230,36 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	inhand_icon_state = "that"
+
+/obj/item/clothing/head/roguetown/hennin
+	name = "hennin"
+	desc = "A hat typically worn by women in nobility."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "hennin"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon_state = "that"
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/horsey
@@ -6191,11 +7273,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK|ITEM_SLOT_ROGUE_MOUTH
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -6213,11 +7298,14 @@
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_spellsinger
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/jester
@@ -6232,11 +7320,14 @@
 	worn_icon_state = "jester"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/knitcap
@@ -6251,11 +7342,14 @@
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/maidband
@@ -6269,11 +7363,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	slot_flags = ITEM_SLOT_HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "maidband"
 
@@ -6289,11 +7386,14 @@
 	worn_icon_state = "menacing"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/necrahood
@@ -6308,11 +7408,14 @@
 	worn_icon_state = "necrahood"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/nightman
@@ -6327,11 +7430,14 @@
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/nochood
@@ -6346,11 +7452,14 @@
 	worn_icon_state = "nochood"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/nun
@@ -6365,11 +7474,14 @@
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/nyle/consortcrown
@@ -6382,11 +7494,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -6403,11 +7518,14 @@
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/priesthat
@@ -6423,11 +7541,14 @@
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/priestmask
@@ -6442,11 +7563,14 @@
 	worn_icon_state = "priesthead"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/roguehood
@@ -6462,12 +7586,15 @@
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = (HANDS_LAYER - 0.1)
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "basichood"
 
@@ -6484,12 +7611,15 @@
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = (HANDS_LAYER - 0.1)
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "abyssorhood"
 
@@ -6506,12 +7636,15 @@
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = (HANDS_LAYER - 0.1)
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "astratahood"
 
@@ -6528,12 +7661,15 @@
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = (HANDS_LAYER - 0.1)
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "basichood"
 
@@ -6550,12 +7686,15 @@
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = (HANDS_LAYER - 0.1)
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "basichood"
 
@@ -6572,12 +7711,15 @@
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	armor_type = /datum/armor/rockhill_spellsinger
 	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = (HANDS_LAYER - 0.1)
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "psydonhood"
 
@@ -6594,12 +7736,15 @@
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = (HANDS_LAYER - 0.1)
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "basichood"
 
@@ -6616,12 +7761,15 @@
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK|ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = (HANDS_LAYER - 0.1)
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "heavyhood"
 
@@ -6637,11 +7785,14 @@
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/strawhat
@@ -6656,11 +7807,14 @@
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/veiled/loudmouth
@@ -6674,11 +7828,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -6695,11 +7852,14 @@
 	worn_icon_state = "witch"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/witchhat/old
@@ -6714,11 +7874,14 @@
 	worn_icon_state = "witchold"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/wizhat
@@ -6734,11 +7897,14 @@
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/wizhat/black
@@ -6754,11 +7920,14 @@
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/wizhat/gen
@@ -6774,11 +7943,14 @@
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/wizhat/random
@@ -6794,11 +7966,14 @@
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = "that"
 
 /obj/item/clothing/mask/cigarette/pipe
@@ -6812,11 +7987,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/mouth_items.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "pipeoff"
 
@@ -6831,11 +8009,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/mouth_items.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "pipeoff"
 
@@ -6850,11 +8031,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/mouth_items.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "longpipeoff"
 
@@ -6869,11 +8053,36 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/mouth_items.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	inhand_icon_state = null
+	worn_icon_state = "spliffoff"
+
+/obj/item/clothing/mask/cigarette/rollie/cannabis
+	name = "swampleaf zig"
+	desc = "A paper wrapped cartridge of sweet smelling smokeleaf."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/lighting.dmi'
+	icon_state = "spliffoff"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/mouth_items.dmi'
+	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "spliffoff"
 
@@ -6888,11 +8097,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/mouth_items.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "spliffoff"
 
@@ -6908,11 +8120,14 @@
 	worn_icon = 'modular_redtard/rockhill/icons/mob/clothing/eyes.dmi'
 	slot_flags = ITEM_SLOT_MASK
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = "blindfold"
 	worn_icon_state = "blindfold"
 
@@ -6928,11 +8143,14 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	slot_flags = ITEM_SLOT_MASK
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "duelmask"
 
@@ -6948,11 +8166,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/exoticsilkmask/green
@@ -6963,11 +8184,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -6981,11 +8205,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -7005,11 +8232,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/ancient/decrepit
@@ -7027,11 +8257,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/carved/ambermask
@@ -7049,11 +8282,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/carved/coralmask
@@ -7071,11 +8307,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/carved/jademask
@@ -7093,11 +8332,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/carved/onyxamask
@@ -7115,11 +8357,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/carved/opalmask
@@ -7137,11 +8382,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/carved/porcelainmask
@@ -7159,11 +8407,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/carved/rosemask
@@ -7181,11 +8432,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/carved/turqmask
@@ -7203,11 +8457,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/hound
@@ -7224,11 +8481,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/psydonmask
@@ -7246,11 +8506,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/shadowfacemask
@@ -7268,11 +8531,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/yoruku_oni
@@ -7290,11 +8556,14 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/goblin_mask
@@ -7309,11 +8578,14 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	slot_flags = ITEM_SLOT_MASK
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "goblin"
 
@@ -7329,11 +8601,14 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	slot_flags = ITEM_SLOT_MASK
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "hblinders"
 
@@ -7350,11 +8625,60 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	inhand_icon_state = null
+
+/obj/item/clothing/mask/rogue/ragmask/black
+	name = "rag mask"
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/masks.dmi'
+	icon_state = "ragmask"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	inhand_icon_state = null
+
+/obj/item/clothing/mask/rogue/ragmask/red
+	name = "rag mask"
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/masks.dmi'
+	icon_state = "ragmask"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/sack
@@ -7371,11 +8695,14 @@
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_padded
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/sack/psy
@@ -7392,11 +8719,14 @@
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
 	armor_type = /datum/armor/rockhill_padded
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/skullmask
@@ -7414,11 +8744,14 @@
 	armor_type = /datum/armor/rockhill_padded_bad
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/spectacles
@@ -7432,11 +8765,14 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "glasses"
 
@@ -7451,11 +8787,14 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "goggles"
 
@@ -7471,11 +8810,14 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "bglasses"
 
@@ -7492,11 +8834,14 @@
 	worn_icon_state = "xylixmask"
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/bevor
@@ -7512,12 +8857,15 @@
 	slot_flags = ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "bevor"
 
@@ -7534,12 +8882,15 @@
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "chaincoif"
 
@@ -7556,12 +8907,15 @@
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "chaincoif"
 
@@ -7578,12 +8932,15 @@
 	slot_flags = ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "chaincoif"
 
@@ -7600,12 +8957,15 @@
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "chaincoif"
 
@@ -7622,12 +8982,15 @@
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_padded_bad
 	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "coif"
 
@@ -7644,12 +9007,15 @@
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_padded
 	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "ccoif"
 
@@ -7665,12 +9031,15 @@
 	worn_icon = 'modular_redtard/rockhill/icons/modular/icons/mob/collars_leashes.dmi'
 	slot_flags = ITEM_SLOT_NECK
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "catbellcollar"
 
@@ -7686,12 +9055,15 @@
 	worn_icon = 'modular_redtard/rockhill/icons/modular/icons/mob/collars_leashes.dmi'
 	slot_flags = ITEM_SLOT_NECK
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "cowbellcollar"
 
@@ -7707,12 +9079,15 @@
 	worn_icon = 'modular_redtard/rockhill/icons/modular/icons/mob/collars_leashes.dmi'
 	slot_flags = ITEM_SLOT_NECK
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "leathercollar"
 
@@ -7728,12 +9103,15 @@
 	worn_icon = 'modular_redtard/rockhill/icons/modular/icons/mob/collars_leashes.dmi'
 	slot_flags = ITEM_SLOT_NECK
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "leathercollar"
 
@@ -7749,12 +9127,15 @@
 	worn_icon = 'modular_redtard/rockhill/icons/modular_stonehedge/icons/clothing/armor/onmob/neck.dmi'
 	slot_flags = ITEM_SLOT_NECK
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "cursed_collar"
 
@@ -7771,12 +9152,15 @@
 	slot_flags = ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "gorget"
 
@@ -7793,12 +9177,15 @@
 	slot_flags = ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_plate_bad
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "copperneck"
 
@@ -7815,12 +9202,15 @@
 	slot_flags = ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "cursed_collar"
 
@@ -7837,12 +9227,15 @@
 	slot_flags = ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "iwolfcollaralt"
 
@@ -7859,12 +9252,15 @@
 	slot_flags = ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "sgorget"
 
@@ -7881,12 +9277,15 @@
 	slot_flags = ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "ancientgorget"
 
@@ -7903,12 +9302,15 @@
 	slot_flags = ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "ancientgorget"
 
@@ -7924,12 +9326,15 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	slot_flags = ITEM_SLOT_NECK
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "horus"
 
@@ -7946,12 +9351,15 @@
 	slot_flags = ITEM_SLOT_NECK
 	armor_type = /datum/armor/rockhill_leather_good
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "lgorget"
 
@@ -7968,12 +9376,15 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/ornateamulet
@@ -7988,12 +9399,15 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	slot_flags = ITEM_SLOT_NECK
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "ornateamulet"
 
@@ -8010,12 +9424,15 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/abyssor
@@ -8031,12 +9448,15 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/astrata
@@ -8052,12 +9472,15 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/bpearl
@@ -8073,12 +9496,15 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/decrepit
@@ -8094,12 +9520,15 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/dendor
@@ -8115,12 +9544,15 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/eora
@@ -8136,12 +9568,15 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/g
@@ -8157,12 +9592,15 @@
 	worn_icon_state = "psycross_g"
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/inhumen
@@ -8178,12 +9616,15 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_RING|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/inhumen/ancient
@@ -8199,12 +9640,15 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_RING|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/inhumen/g
@@ -8220,12 +9664,15 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_RING|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/malum
@@ -8241,12 +9688,15 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/malum/secret
@@ -8262,12 +9712,15 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/necra
@@ -8283,12 +9736,15 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/noc
@@ -8304,12 +9760,15 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/pearl
@@ -8325,12 +9784,15 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/pestra
@@ -8346,12 +9808,15 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/ravox
@@ -8367,12 +9832,15 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/shell
@@ -8388,12 +9856,15 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/shell/bracelet
@@ -8407,12 +9878,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -8430,12 +9904,15 @@
 	worn_icon_state = "psycross_s"
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/silver/undivided
@@ -8451,12 +9928,15 @@
 	worn_icon_state = "psycross_s"
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/ten
@@ -8472,12 +9952,39 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_RING|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	inhand_icon_state = null
+
+/obj/item/clothing/neck/roguetown/psicross/undivided
+	name = "see amulet"
+	desc = "An amulet, typically worn by the Holy See's own influential figures. Stalwart for centuries against the darkness. Both a mark of station and grace."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/neck.dmi'
+	icon_state = "undivided"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
+	body_parts_covered = NECK
+	rogue_inhand = FALSE
+	alternate_worn_layer = NECK_LAYER
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/weeping
@@ -8492,12 +9999,15 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "psicrossblood"
 
@@ -8514,12 +10024,15 @@
 	worn_icon_state = "psycross_w"
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/skullamulet
@@ -8534,12 +10047,15 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	slot_flags = ITEM_SLOT_NECK
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "skullamulet"
 
@@ -8555,12 +10071,15 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	slot_flags = ITEM_SLOT_NECK
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "skullamulet"
 
@@ -8576,12 +10095,15 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	slot_flags = ITEM_SLOT_NECK
 	body_parts_covered = NECK
+	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "talkstone"
 
@@ -8596,6 +10118,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -8614,6 +10137,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -8633,6 +10157,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -8652,6 +10177,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -8671,6 +10197,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -8690,6 +10217,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -8710,6 +10238,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -8728,6 +10257,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -8747,6 +10277,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -8766,6 +10297,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -8785,6 +10317,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -8804,6 +10337,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -8823,6 +10357,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -8842,6 +10377,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -8851,9 +10387,9 @@
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 
-/obj/item/clothing/ring/signet/silver
+/obj/item/clothing/ring/signet/silver/inqscomm
 	name = "silver signet ring"
-	desc = "A ring of blessed silver, bearing the Archbishop's symbol. By dipping it in melted tallow, it can seal writs of religious importance."
+	desc = "The order of Saint Malum was tasked with coming up with a way for the Orthodoxy to communicate with each other, while still being able to seal missives with tallow. After three yils of restless toil, they came up with this marvel of otavan technology. May your communications endure.\n There is a button on the side. It urges you to press it."
 	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/rings.dmi'
 	icon_state = "signet_silver"
 	w_class = WEIGHT_CLASS_TINY
@@ -8861,6 +10397,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -8881,6 +10418,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -8899,6 +10437,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -8918,6 +10457,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -8937,6 +10477,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -8956,6 +10497,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -8975,6 +10517,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -8994,6 +10537,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -9015,13 +10559,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "anklets"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/boots
 	name = "dark boots"
@@ -9035,13 +10583,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "blackboots"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/boots/armor
 	name = "plated boots"
@@ -9055,13 +10607,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "armorboots"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/boots/armor/ancient
 	name = "ancient boots"
@@ -9075,13 +10631,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "armorboots"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/boots/armor/ancient/decrepit
 	name = "decrepit boots"
@@ -9095,13 +10655,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "armorboots"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/boots/armor/graggar
 	name = "vicious boots"
@@ -9115,13 +10679,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "armorboots"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/boots/armor/holysee
 	name = "holy silver plated boots"
@@ -9135,13 +10703,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/martyr.dmi'
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/martyr.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "silverboots"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/boots/armor/iron
 	name = "iron plated boots"
@@ -9154,11 +10726,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -9175,13 +10750,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "armorboots"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/boots/armor/zizo
 	name = "avantyne boots"
@@ -9195,13 +10774,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "armorboots"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/boots/blacksteel/modern/plateboots
 	name = "blacksteel plate boots"
@@ -9215,13 +10798,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/blkknight.dmi'
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/blkknight.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "bplateboots"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/boots/footwraps/padded
 	name = "padded cloth footwraps"
@@ -9235,13 +10822,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "blackboots"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/boots/horsey
 	name = "leg harness"
@@ -9256,13 +10847,17 @@
 	slot_flags = ITEM_SLOT_FEET
 	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "hlegs"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/boots/leather
 	name = "leather boots"
@@ -9276,13 +10871,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "leatherboots"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/boots/leather/atgervi
 	name = "ba'atur leather boots"
@@ -9296,13 +10895,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "atgervi_boots"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
 	name = "heavy leather boots"
@@ -9316,13 +10919,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "alboots"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/boots/nobleboot
 	name = "noble boots"
@@ -9336,13 +10943,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "nobleboots"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/boots/otavan/inqboots
 	name = "inquisitorial boots"
@@ -9356,13 +10967,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "inqboots"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/boots/psydonboots
 	name = "psydonic leather boots"
@@ -9376,13 +10991,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "psydonboots"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/gladiator
 	name = "leather sandals"
@@ -9396,13 +11015,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "gladiator"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/jester
 	name = "funny shoes"
@@ -9416,13 +11039,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "jestershoes"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/ridingboots
 	name = "riding boots"
@@ -9436,13 +11063,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "ridingboots"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/sandals
 	name = "sandals"
@@ -9456,13 +11087,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "sandals"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/sandals/ancient
 	name = "ancient armored sandals"
@@ -9476,13 +11111,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "sandals"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/sandals/ancient/decrepit
 	name = "decrepit armored sandals"
@@ -9496,13 +11135,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "sandals"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/sandals/toga_sandals
 	name = "fancy sandals"
@@ -9516,13 +11159,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/modular_rmh/icons/clothing/valentyi/onmob/toga_sandals.dmi'
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "toga_sandals"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/shortboots
 	name = "shortboots"
@@ -9536,13 +11183,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "shortboots"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/simpleshoes
 	name = "shoes"
@@ -9556,13 +11207,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "simpleshoe"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/simpleshoes/buckle
 	name = "buckled shoes"
@@ -9576,13 +11231,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "simpleshoe"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/armordress/winterdress
 	name = "winter dress"
@@ -9598,13 +11257,17 @@
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts_royalty.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "winterdress"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/brigandine
 	name = "brigandine"
@@ -9620,13 +11283,17 @@
 	armor_type = /datum/armor/rockhill_brigandine
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "brigandine"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/brigandine/captain
 	name = "captain's brigandine"
@@ -9642,13 +11309,17 @@
 	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/captain.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "capplate"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/brigandine/gronn
 	name = "byrine hauberk"
@@ -9664,13 +11335,17 @@
 	armor_type = /datum/armor/rockhill_brigandine
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "gronnchain"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/brigandine/light
 	name = "lightweight brigandine"
@@ -9686,13 +11361,17 @@
 	armor_type = /datum/armor/rockhill_brigandine
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "light_brigandine"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/brigandine/light/retinue
 	name = "lightweight brigandine"
@@ -9708,13 +11387,17 @@
 	armor_type = /datum/armor/rockhill_brigandine
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "light_brigandine"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/brigandine/retinue
 	name = "brigandine"
@@ -9730,13 +11413,17 @@
 	armor_type = /datum/armor/rockhill_brigandine
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "brigandine"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/chainmail
 	name = "haubergeon"
@@ -9752,13 +11439,17 @@
 	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "haubergeon"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/ancient
 	name = "ancient haubergeon"
@@ -9774,13 +11465,17 @@
 	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "ancientchain"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/ancient/decrepit
 	name = "decrepit haubergeon"
@@ -9796,13 +11491,17 @@
 	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "ancientchain"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/bikini
 	name = "chainmail corslet"
@@ -9818,13 +11517,17 @@
 	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "chainkini"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 	name = "hauberk"
@@ -9840,13 +11543,17 @@
 	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "hauberk"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/ancient
 	name = "ancient hauberk"
@@ -9862,13 +11569,17 @@
 	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "hauberk"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/ancient/decrepit
 	name = "decrepit hauberk"
@@ -9884,13 +11595,17 @@
 	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "hauberk"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/atgervi
 	name = "nöküd's hauberk"
@@ -9906,13 +11621,17 @@
 	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "atgervi_raider_mail"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/iron
 	name = "iron hauberk"
@@ -9928,13 +11647,17 @@
 	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "ihauberk"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 	name = "iron haubergeon"
@@ -9950,13 +11673,17 @@
 	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "ihaubergeon"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/corset
 	name = "corset"
@@ -9971,13 +11698,17 @@
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "corset"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/gambeson
 	name = "gambeson"
@@ -9993,13 +11724,17 @@
 	armor_type = /datum/armor/rockhill_padded
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "gambeson"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/councillor
 	name = "gambeson"
@@ -10015,13 +11750,17 @@
 	armor_type = /datum/armor/rockhill_padded
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "gambeson"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
 	name = "padded gambeson"
@@ -10037,13 +11776,17 @@
 	armor_type = /datum/armor/rockhill_padded_good
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "gambesonp"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/inq
 	name = "inquisitorial leather tunic"
@@ -10059,13 +11802,17 @@
 	armor_type = /datum/armor/rockhill_padded
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "leathertunic"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/otavan
 	name = "fencing gambeson"
@@ -10081,13 +11828,17 @@
 	armor_type = /datum/armor/rockhill_padded_good
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "fancygamb"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/royal
 	name = "royal gambeson"
@@ -10103,13 +11854,17 @@
 	armor_type = /datum/armor/rockhill_padded_good
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "royalgamb"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/zyb
 	name = "padded desert coat"
@@ -10125,13 +11880,17 @@
 	armor_type = /datum/armor/rockhill_padded_good
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "sherwani"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/light
 	name = "light gambeson"
@@ -10147,13 +11906,17 @@
 	armor_type = /datum/armor/rockhill_padded_bad
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "gambeson"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/heartfelt
 	name = "coat of armor"
@@ -10169,13 +11932,17 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "heartfelt"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/heartfelt/hand
 	name = "coat of armor"
@@ -10191,13 +11958,17 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "heartfelt_hand"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/leather
 	name = "leather armor"
@@ -10213,13 +11984,17 @@
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "roguearmor"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/leather/bikini
 	name = "leather corslet"
@@ -10235,13 +12010,17 @@
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "leatherkini"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/leather/cuirass
 	name = "leather cuirass"
@@ -10257,13 +12036,17 @@
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "leather"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/leather/goblin
 	name = "goblin armor"
@@ -10278,11 +12061,14 @@
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -10301,13 +12087,17 @@
 	armor_type = /datum/armor/rockhill_leather_good
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "roguearmor_belt"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/leather/heavy/coat
 	name = "hardened leather coat"
@@ -10323,13 +12113,17 @@
 	armor_type = /datum/armor/rockhill_leather_good
 	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "roguearmor_coat"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/leather/heavy/jacket
 	name = "hardened leather jacket"
@@ -10345,13 +12139,17 @@
 	armor_type = /datum/armor/rockhill_leather_good
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "leatherjacketo"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/leather/hide
 	name = "hide armor"
@@ -10367,13 +12165,17 @@
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "hidearmor"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/leather/hide/bikini
 	name = "hide corslet"
@@ -10389,13 +12191,17 @@
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "hidearmorkini"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/leather/hide/goblin
 	name = "goblin loincloth"
@@ -10410,11 +12216,14 @@
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "cloth_armor"
 
@@ -10432,13 +12241,17 @@
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "artijacket"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/leather/newkeep/duchess
 	name = "duchess dress"
@@ -10451,11 +12264,14 @@
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -10472,11 +12288,14 @@
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -10493,11 +12312,14 @@
 	armor_type = /datum/armor/rockhill_leather_studded
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -10514,11 +12336,14 @@
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|FOOT_LEFT|FOOT_RIGHT|GROIN|HAND_LEFT|HAND_RIGHT|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -10535,11 +12360,14 @@
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|FOOT_LEFT|FOOT_RIGHT|GROIN|HAND_LEFT|HAND_RIGHT|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -10556,11 +12384,14 @@
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -10577,11 +12408,14 @@
 	armor_type = /datum/armor/rockhill_padded_bad
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -10601,13 +12435,17 @@
 	armor_type = /datum/armor/rockhill_leather_studded
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "studleather"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/leather/studded/bikini
 	name = "studded leather corslet"
@@ -10623,13 +12461,17 @@
 	armor_type = /datum/armor/rockhill_leather_studded
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "studleatherkini"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/leather/studded/bikini/horsey
 	name = "harness corset"
@@ -10645,13 +12487,17 @@
 	armor_type = /datum/armor/rockhill_leather_studded
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "hcorset"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/leather/studded/warden
 	name = "forester's armor"
@@ -10666,11 +12512,14 @@
 	armor_type = /datum/armor/rockhill_leather_studded
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -10688,11 +12537,14 @@
 	armor_type = /datum/armor/rockhill_brigandine
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -10711,13 +12563,17 @@
 	armor_type = /datum/armor/rockhill_leather_bad
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "vest"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/black
 	name = "leather vest"
@@ -10733,13 +12589,17 @@
 	armor_type = /datum/armor/rockhill_leather_bad
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "vest"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/hand
 	name = "hand's vest"
@@ -10755,13 +12615,17 @@
 	armor_type = /datum/armor/rockhill_leather_bad
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "vest"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
 	name = "sea jacket"
@@ -10777,13 +12641,17 @@
 	armor_type = /datum/armor/rockhill_leather_bad
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "vest"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/nightman
 	name = "silk jacket"
@@ -10799,13 +12667,17 @@
 	armor_type = /datum/armor/rockhill_leather_bad
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "vest"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/longcoat
 	name = "longcoat"
@@ -10820,13 +12692,17 @@
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "longcoat"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate
 	name = "steel half-plate"
@@ -10842,13 +12718,17 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "halfplate"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate/ancient
 	name = "ancient half-plate"
@@ -10864,13 +12744,17 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "ancientplate"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate/ancient/decrepit
 	name = "decrepit half-plate"
@@ -10886,13 +12770,17 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "ancientplate"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate/bikini
 	name = "half-plate corslet"
@@ -10908,13 +12796,17 @@
 	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "halfplatekini"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate/blacksteel_half_plate
 	name = "blacksteel cuirass"
@@ -10930,13 +12822,17 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "grenzelcuirass"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate/citywatch
 	name = "citywatch armor"
@@ -10952,13 +12848,17 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "citywatch"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate/citywatch/captain
 	name = "watch captain armor"
@@ -10974,13 +12874,17 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "citywatch"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate/cuirass
 	name = "steel half-plate"
@@ -10996,13 +12900,17 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "halfplate"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate/fluted/graggar
 	name = "vicious half-plate"
@@ -11018,13 +12926,17 @@
 	armor_type = /datum/armor/rockhill_ascendant
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "halfplate"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate/full/holysee
 	name = "holy silver plate"
@@ -11040,13 +12952,17 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "silverarmor"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate/full/iron
 	name = "iron plate armor"
@@ -11062,13 +12978,17 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "halfplate"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate/full/matthios
 	name = "gilded fullplate"
@@ -11084,13 +13004,17 @@
 	armor_type = /datum/armor/rockhill_ascendant
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "halfplate"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate/full/zizo
 	name = "avantyne fullplate"
@@ -11106,13 +13030,17 @@
 	armor_type = /datum/armor/rockhill_ascendant
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "halfplate"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate/half
 	name = "steel cuirass"
@@ -11128,13 +13056,17 @@
 	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = CHEST
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "cuirass"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/ancient
 	name = "ancient cuirass"
@@ -11150,13 +13082,17 @@
 	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = CHEST
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "cuirass"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/ancient/decrepit
 	name = "decrepit cuirass"
@@ -11172,13 +13108,17 @@
 	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = CHEST
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "cuirass"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/copper
 	name = "heart protector"
@@ -11194,13 +13134,17 @@
 	armor_type = /datum/armor/rockhill_m52_b28_f0_a0
 	body_parts_covered = CHEST
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "cuirass"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/fencer/psydon
 	name = "psydonic chestplate"
@@ -11216,13 +13160,17 @@
 	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = CHEST
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "ornatechestplate"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/fluted
 	name = "fluted cuirass"
@@ -11238,13 +13186,17 @@
 	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = CHEST|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "cuirass"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/fluted/ornate
 	name = "psydonic cuirass"
@@ -11260,13 +13212,17 @@
 	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = CHEST|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "cuirass"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/iron
 	name = "iron breastplate"
@@ -11282,13 +13238,17 @@
 	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = CHEST
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "cuirass"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/iron/goblin
 	name = "goblin mail"
@@ -11303,11 +13263,14 @@
 	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -11326,13 +13289,17 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = CHEST|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "ihalfplate"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate/modern/blacksteel_full_plate
 	name = "blacksteel plate armor"
@@ -11348,13 +13315,17 @@
 	armor_type = /datum/armor/rockhill_plate_bsteel
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/blkknight.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "bplate"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate/scale
 	name = "scalemail"
@@ -11370,13 +13341,17 @@
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "halfplate"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate/scale/inqcoat
 	name = "inquisitorial duster"
@@ -11392,13 +13367,43 @@
 	armor_type = /datum/armor/rockhill_leather_studded
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "inqcoat"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/workervest
+	name = "striped tunic"
+	desc = "This cheap tunic is often used by sturdy laborous men and women."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "workervest"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	armor_type = /datum/armor/rockhill_padded_bad
+	body_parts_covered = CHEST
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	inhand_icon_state = null
+	worn_icon_state = "workervest"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/apothshirt
 	name = "apothecary shirt"
@@ -11412,13 +13417,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "apothshirt"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/dress/courtesan
 	name = "courtesan dress"
@@ -11432,13 +13441,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/modular_rmh/icons/clothing/vladegeg/onmob/courtesan.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/modular_rmh/icons/clothing/vladegeg/onmob/helpers/courtesan_sleeves.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "dress"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/black
 	name = "dress"
@@ -11452,13 +13465,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "dressgen"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/purple
 	name = "dress"
@@ -11472,13 +13489,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "dressgen"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
 	name = "dress"
@@ -11492,13 +13513,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "dressgen"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy/black
 	name = "sheer dress"
@@ -11511,13 +13536,17 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "dressgen"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy/random
 	name = "sheer dress"
@@ -11530,13 +13559,17 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "dressgen"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/strapless/random
 	name = "strapless dress"
@@ -11549,11 +13582,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -11569,11 +13605,106 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+
+/obj/item/clothing/suit/roguetown/shirt/dress/gown
+	name = "spring gown"
+	desc = "A delicate gown that captures the essence of the season of renewal."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/shirts_gown.dmi'
+	icon_state = "springgown"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts_gown.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+
+/obj/item/clothing/suit/roguetown/shirt/dress/gown/fallgown
+	name = "fall gown"
+	desc = "A solemn long-sleeved gown that signifies the season of year's end."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/shirts_gown.dmi'
+	icon_state = "fallgown"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts_gown.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+
+/obj/item/clothing/suit/roguetown/shirt/dress/gown/summergown
+	name = "summer gown"
+	desc = "A breezy flowing gown fit for warm weathers."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/shirts_gown.dmi'
+	icon_state = "summergown"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts_gown.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+
+/obj/item/clothing/suit/roguetown/shirt/dress/gown/wintergown
+	name = "winter gown"
+	desc = "A warm elegant gown adorned with soft fur for the cold winter."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/shirts_gown.dmi'
+	icon_state = "wintergown"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts_gown.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -11590,13 +13721,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/modular_rmh/icons/clothing/valentyi/onmob/skyrim_dress.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "hdress"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/dress/maid
 	name = "maid dress"
@@ -11610,13 +13745,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_maids.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "maiddress"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/dress/maid/servant
 	name = "servant gown"
@@ -11630,13 +13769,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_maids.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "maidgown"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/dress/royal
 	name = "royal gown"
@@ -11649,11 +13792,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts_royalty.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -11669,11 +13815,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts_royalty.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -11689,11 +13838,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts_royalty.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -11709,11 +13861,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts_royalty.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -11730,13 +13885,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "silkdress"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/loudmouth
 	name = "crier's garb"
@@ -11750,13 +13909,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "loudmouthrobe"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/princess
 	name = "chemise"
@@ -11770,13 +13933,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "silkdress"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/random
 	name = "chemise"
@@ -11790,13 +13957,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "silkdress"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/steward
 	name = "ornate silk dress"
@@ -11810,13 +13981,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "stewarddress"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/weddingdress
 	name = "wedding silk dress"
@@ -11830,13 +14005,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "weddingdress"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/dress/silkydress
 	name = "silky dress"
@@ -11850,13 +14029,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "silkydress"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/dress/silkydress/random
 	name = "silky dress"
@@ -11870,13 +14053,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "silkydress"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/dress/skyrim_dress
 	name = "light blue dress"
@@ -11890,13 +14077,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/modular_rmh/icons/clothing/valentyi/onmob/skyrim_dress.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "dress"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/dress/skyrim_taven
 	name = "waitress dress"
@@ -11910,13 +14101,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/modular_rmh/icons/clothing/vladegeg/onmob/skyrim_tavern.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "tavern"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/dress/toga
 	name = "toga"
@@ -11930,13 +14125,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/modular_rmh/icons/clothing/valentyi/onmob/toga.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "toga"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/dress/velvet
 	name = "velvet dress"
@@ -11950,13 +14149,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "dress"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/exoticsilkbra
 	name = "exotic silk bra"
@@ -11970,13 +14173,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "exoticsilkbra"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/exoticsilkbra/green
 	name = "exotic silk bra"
@@ -11987,11 +14194,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -12006,11 +14216,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -12028,11 +14241,14 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/maniac/clothing_mob.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "shirt"
 
@@ -12048,13 +14264,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "jestershirt"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/rags
 	name = "rags"
@@ -12068,13 +14288,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "rags"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/robe
 	name = "robe"
@@ -12088,13 +14312,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "white_robe"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/robe/abyssor
 	name = "depths robe"
@@ -12108,13 +14336,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "abyssorrobe"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/robe/archivist
 	name = "scholar's robe"
@@ -12128,13 +14360,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "archivist"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/robe/astrata
 	name = "sun robe"
@@ -12148,13 +14384,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "astratarobe"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/robe/black
 	name = "robe"
@@ -12168,13 +14408,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "white_robe"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/robe/dendor
 	name = "briar robe"
@@ -12188,13 +14432,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "dendorrobe"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/robe/eora
 	name = "eoran robe"
@@ -12208,13 +14456,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "eorarobes"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/robe/eora/alt
 	name = "open eoran robe"
@@ -12227,13 +14479,17 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "eorastraps"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/robe/hierophant
 	name = "hierophant's kandys"
@@ -12248,13 +14504,17 @@
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_padded_good
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "desertgown"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/robe/mage
 	name = "robe"
@@ -12268,13 +14528,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "white_robe"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/robe/mageblue
 	name = "robe"
@@ -12288,13 +14552,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "white_robe"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/robe/magegreen
 	name = "robe"
@@ -12308,13 +14576,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "white_robe"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/robe/magered
 	name = "robe"
@@ -12328,13 +14600,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "white_robe"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/robe/merchant
 	name = "guilder jacket"
@@ -12348,13 +14624,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "merrobe"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/robe/monk
 	name = "nomadic monk vestments"
@@ -12369,13 +14649,17 @@
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_padded_good
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "priestunder"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/robe/necra
 	name = "mourning robe"
@@ -12389,13 +14673,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "necrarobe"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/robe/noc
 	name = "moon robe"
@@ -12409,13 +14697,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "nocrobe"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/robe/nun
 	name = "nun's habit"
@@ -12429,13 +14721,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = "nun"
 	worn_icon_state = "nun"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/robe/phys
 	name = "physicker's robe"
@@ -12449,13 +14745,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "surgrobe"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/robe/physician
 	name = "plague coat"
@@ -12469,13 +14769,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "physcoat"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/robe/priest
 	name = "solar vestments"
@@ -12490,13 +14794,17 @@
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_padded
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "priestrobe"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/robe/wizard
 	name = "wizard's robe"
@@ -12510,11 +14818,14 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "wizardrobes"
 
@@ -12530,13 +14841,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "shortshirt"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
 	name = "shirt"
@@ -12550,13 +14865,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "shortshirt"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/tunic
 	name = "tunic"
@@ -12570,13 +14889,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "tunic"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/tunic/black
 	name = "tunic"
@@ -12590,13 +14913,41 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "tunic"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/shirt/tunic/green
+	name = "tunic"
+	desc = "Modest and fashionable, with the right colors."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/shirts.dmi'
+	icon_state = "tunic"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	inhand_icon_state = null
+	worn_icon_state = "tunic"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/tunic/noblecoat
 	name = "fancy coat"
@@ -12610,13 +14961,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "noblecoat"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/tunic/purple
 	name = "tunic"
@@ -12630,13 +14985,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "tunic"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/tunic/random
 	name = "tunic"
@@ -12650,13 +15009,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "tunic"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/tunic/red
 	name = "tunic"
@@ -12670,13 +15033,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "tunic"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/tunic/silktunic
 	name = "ornate silk tunic"
@@ -12690,13 +15057,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "stewardtunic"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/tunic/white
 	name = "tunic"
@@ -12710,13 +15081,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "tunic"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt
 	name = "shirt"
@@ -12730,13 +15105,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "undershirt"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/artificer
 	name = "tinker suit"
@@ -12750,13 +15129,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "undershirt"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/black
 	name = "shirt"
@@ -12770,13 +15153,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "undershirt"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/blouse
 	name = "blouse"
@@ -12789,11 +15176,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/modular_rmh/icons/clothing/vladegeg/onmob/helpers/formal_sleeves.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -12810,13 +15200,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_maids.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "butlershirt"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/guard
 	name = "shirt"
@@ -12830,13 +15224,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "undershirt"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/lowcut
 	name = "low cut tunic"
@@ -12850,13 +15248,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "undershirt"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/priest
 	name = "undervestments"
@@ -12870,13 +15272,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "priestunder"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
 	name = "formal silks"
@@ -12890,13 +15296,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "undershirt"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/random
 	name = "shirt"
@@ -12910,13 +15320,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "undershirt"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor
 	name = "shirt"
@@ -12930,13 +15344,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "undershirt"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor/red
 	name = "shirt"
@@ -12950,13 +15368,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "undershirt"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
 	name = "shirt"
@@ -12970,13 +15392,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|CHEST
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "undershirt"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant/l
 	name = "shirt"
@@ -12990,13 +15416,41 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_RIGHT|CHEST
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "undershirt"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/shirt/vampire
+	name = "regal silks"
+	desc = "A set of ornate robes with a sash coming across the breast."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/shirts.dmi'
+	icon_state = "vrobe"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
+	slot_flags = ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	inhand_icon_state = null
+	worn_icon_state = "vrobe"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/chainlegs
 	name = "steel chain chausses"
@@ -13011,13 +15465,17 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_maille
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "chain_legs"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/chainlegs/captain
 	name = "captain's chausses"
@@ -13032,13 +15490,17 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_cuirass
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "capplateleg"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/chainlegs/iron
 	name = "iron chain chausses"
@@ -13053,13 +15515,17 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_maille
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "chain_legs"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/chainlegs/iron/kilt
 	name = "iron chain kilt"
@@ -13074,14 +15540,18 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_maille
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_SHIRT_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "ichainkilt"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/chainlegs/kilt
 	name = "steel chain kilt"
@@ -13096,14 +15566,18 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_maille
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_SHIRT_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "chainkilt"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/chainlegs/kilt/ancient
 	name = "ancient chain kilt"
@@ -13118,14 +15592,18 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_maille
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_SHIRT_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "chainkilt"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/chainlegs/kilt/ancient/decrepit
 	name = "decrepit chain kilt"
@@ -13140,14 +15618,18 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_maille
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_SHIRT_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "chainkilt"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/chainlegs/skirt
 	name = "steel chain skirt"
@@ -13162,13 +15644,17 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_maille
 	body_parts_covered = LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "chain_skirt"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/heavy_leather_pants
 	name = "hardened leather trousers"
@@ -13183,13 +15669,17 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_leather_good
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "roguepants"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/heavy_leather_pants/otavan
 	name = "otavan leather trousers"
@@ -13204,13 +15694,17 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_leather_good
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "roguepants"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/heavy_leather_pants/shorts
 	name = "hardened leather shorts"
@@ -13225,13 +15719,17 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_leather_good
 	body_parts_covered = GROIN
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "rogueshorts"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/loincloth
 	name = "large loincloth"
@@ -13245,13 +15743,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "loincloth"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/loincloth/brown
 	name = "large loincloth"
@@ -13265,13 +15767,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "loincloth"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/platelegs
 	name = "steel plate chausses"
@@ -13286,13 +15792,17 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_plate
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "plate_legs"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/platelegs/ancient
 	name = "ancient plate chausses"
@@ -13307,13 +15817,17 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_plate
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "plate_legs"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/platelegs/ancient/decrepit
 	name = "decrepit plate chausses"
@@ -13328,13 +15842,17 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_plate
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "plate_legs"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/platelegs/blacksteel/modern
 	name = "blacksteel plate chausses"
@@ -13349,13 +15867,17 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_plate_bsteel
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/blkknight.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "bplatelegs"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/platelegs/graggar
 	name = "vicious leggings"
@@ -13370,13 +15892,17 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_ascendant
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "plate_legs"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/platelegs/holysee
 	name = "holy silver chausses"
@@ -13391,13 +15917,17 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_plate
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "silverlegs"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/platelegs/iron
 	name = "iron plate chausses"
@@ -13412,13 +15942,17 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_plate
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "iplate_legs"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/platelegs/matthios
 	name = "gilded leggings"
@@ -13433,13 +15967,17 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_ascendant
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "plate_legs"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/platelegs/skirt
 	name = "steel plate tassets"
@@ -13454,13 +15992,17 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_plate
 	body_parts_covered = LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "plate_skirt"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/platelegs/zizo
 	name = "avantyne garments"
@@ -13475,13 +16017,17 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_ascendant
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "plate_legs"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/skirt/blue
 	name = "skirt"
@@ -13495,14 +16041,18 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_SHIRT_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "skirt"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/skirt/random
 	name = "skirt"
@@ -13516,14 +16066,18 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_SHIRT_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "skirt"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/skirt/red
 	name = "skirt"
@@ -13537,14 +16091,18 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_SHIRT_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "skirt"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/splintlegs
 	name = "brigandine chausses"
@@ -13559,13 +16117,17 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_brigandine
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "splintlegs"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/splintlegs/iron
 	name = "splinted leggings"
@@ -13580,13 +16142,17 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_leather_studded
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "ironsplintlegs"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/tights
 	name = "tights"
@@ -13600,13 +16166,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "tights"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/tights/black
 	name = "tights"
@@ -13620,13 +16190,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "tights"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/tights/formal
 	name = "formal pants"
@@ -13639,11 +16213,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -13660,13 +16237,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "tights"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/tights/sailor
 	name = "sailor's pants"
@@ -13680,13 +16261,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "tights"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/tights/vagrant
 	name = "tights"
@@ -13700,13 +16285,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN|LEG_LEFT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "tights"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/tights/vagrant/l
 	name = "tights"
@@ -13720,13 +16309,17 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "tights"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/trou
 	name = "work trousers"
@@ -13741,13 +16334,17 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_padded_bad
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "trou"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/trou/apothecary
 	name = "apothecary trousers"
@@ -13762,13 +16359,17 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_padded_bad
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "apothpants"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/trou/artipants
 	name = "tinker trousers"
@@ -13783,13 +16384,17 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_padded_bad
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "artipants"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/trou/beltpants
 	name = "belt-buckled trousers"
@@ -13804,13 +16409,17 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_padded_bad
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "beltpants"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/trou/formal
 	name = "formal trousers"
@@ -13825,13 +16434,17 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_padded_bad
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_maids.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "butlerpants"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/trou/formal/shorts
 	name = "trouser shorts"
@@ -13846,13 +16459,17 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_padded_bad
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_maids.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "butlershorts"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/trou/leather
 	name = "leather trousers"
@@ -13867,13 +16484,17 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_leather
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "trou"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/trou/leather/atgervi
 	name = "fur pants"
@@ -13888,13 +16509,17 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_leather
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "atgervi_pants"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/trou/leather/mourning
 	name = "mourning trousers"
@@ -13909,13 +16534,17 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_leather
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "trou"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/trou/leather/pontifex/zyb
 	name = "baggy desert pants"
@@ -13930,13 +16559,17 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_leather
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "monkpants"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/trou/leathertights
 	name = "leather tights"
@@ -13951,13 +16584,17 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	armor_type = /datum/armor/clothing_under/rockhill_padded_bad
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "leathertights"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/wrists/roguetown/bracers
 	name = "bracers"
@@ -13972,13 +16609,17 @@
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "bracers"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/wrists/roguetown/bracers/ancient
 	name = "ancient bracers"
@@ -13993,13 +16634,17 @@
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "bracers"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/wrists/roguetown/bracers/ancient/decrepit
 	name = "decrepit bracers"
@@ -14014,13 +16659,17 @@
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "bracers"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/wrists/roguetown/bracers/cloth/monk
 	name = "monk's wrappings"
@@ -14035,13 +16684,17 @@
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
 	armor_type = /datum/armor/rockhill_padded_good
 	body_parts_covered = ARM_LEFT|ARM_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "nocwrappings"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/wrists/roguetown/bracers/iron
 	name = "iron bracers"
@@ -14056,13 +16709,17 @@
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "ibracers"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/wrists/roguetown/bracers/leather
 	name = "leather bracers"
@@ -14077,13 +16734,17 @@
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = ARM_LEFT|ARM_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "lbracers"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/wrists/roguetown/bracers/psythorns
 	name = "psydonic thorns"
@@ -14098,14 +16759,18 @@
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
 	armor_type = /datum/armor/rockhill_plate_bsteel
 	body_parts_covered = ARM_LEFT|ARM_RIGHT
+	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_WRISTS_LAYER
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "psybarbs"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/wrists/roguetown/nocwrappings
 	name = "moon wrappings"
@@ -14117,13 +16782,17 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "nocwrappings"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/wrists/roguetown/royalsleeves
 	name = "royal sleeves"
@@ -14136,13 +16805,17 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "royalsleeves"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/wrists/roguetown/splintarms
 	name = "brigandine rerebraces"
@@ -14157,13 +16830,17 @@
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
 	armor_type = /datum/armor/rockhill_brigandine
 	body_parts_covered = ARM_LEFT|ARM_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "splintarms"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/wrists/roguetown/splintarms/iron
 	name = "splint bracers"
@@ -14178,13 +16855,17 @@
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
 	armor_type = /datum/armor/rockhill_leather_studded
 	body_parts_covered = ARM_LEFT|ARM_RIGHT
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "ironsplintarms"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/wrists/roguetown/wrappings
 	name = "solar wrappings"
@@ -14196,13 +16877,17 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "wrappings"
+	rogue_female_worn = TRUE
 
 /obj/item/contraption/linker
 	name = "engineering wrench"
@@ -14215,11 +16900,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/contraption/linker/master
@@ -14233,11 +16921,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/cooking/pan
@@ -14253,11 +16944,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/cooking/pan/decrepit
@@ -14273,11 +16967,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/cooking/platter
@@ -14290,11 +16987,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/cooking/platter/bronze
@@ -14307,11 +17007,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/cooking/platter/carved
@@ -14324,11 +17027,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/cooking/platter/carved/porcelain
@@ -14341,11 +17047,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/cooking/platter/copper
@@ -14358,11 +17067,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/cooking/platter/decrepit
@@ -14375,11 +17087,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/cooking/platter/gold
@@ -14392,11 +17107,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/cooking/platter/pewter
@@ -14409,11 +17127,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/cooking/platter/silver
@@ -14426,6 +17147,29 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	inhand_icon_state = null
+
+/obj/item/coveter
+	parent_type = /obj/item/rockhill
+	name = "Covetous Crown"
+	desc = "A Crown which craves the brow of miesters and the vault's jawbank; it could be also be mounted upon a restrained person's head to drain their miester account in a pinch."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
+	icon_state = "crown_object"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 10
+	throwforce = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -14442,6 +17186,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -14458,6 +17203,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -14474,6 +17220,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -14492,6 +17239,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
 	worn_icon_state = "dildo"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -14510,6 +17258,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
 	worn_icon_state = "dildo"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -14528,6 +17277,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
 	worn_icon_state = "dildo"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -14546,6 +17296,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
 	worn_icon_state = "dildo"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -14564,6 +17315,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/icons/mob/inhands/lewd/items_righthand.dmi'
 	worn_icon_state = "dildo"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -14581,6 +17333,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -14599,11 +17352,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/fishingcage
@@ -14618,6 +17374,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	slot_flags = ITEM_SLOT_BACK
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -14639,11 +17396,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = null
 
 /obj/item/fishingrod/abyssoid
@@ -14657,11 +17417,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = null
 
 /obj/item/fishingrod/decrepit
@@ -14675,11 +17438,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = null
 
 /obj/item/flashlight/flare/torch/lantern
@@ -14694,12 +17460,36 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "torch"
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "torch"
+
+/obj/item/flashlight/flare/torch/lantern/bronzelamptern
+	name = "bronze lamptern"
+	desc = "A marvel of engineering that emits a strange green glow."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/lighting.dmi'
+	icon_state = "bronzelamp"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 1
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = "bronzelamp"
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	inhand_icon_state = null
 
 /obj/item/flashlight/flare/torch/lantern/psycenser
 	name = "Golgatha"
@@ -14712,11 +17502,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "psycenser"
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/flashlight/flare/torch/lantern/pumpkin/zizo
@@ -14730,11 +17523,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "torch"
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "torch"
 
 /obj/item/flashlight/flare/torch/metal
@@ -14749,11 +17545,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "torch"
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = "torch"
 
 /obj/item/flint
@@ -14769,11 +17568,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/flowercrown/rosa
@@ -14787,12 +17589,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head_items.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
+	rogue_inhand = FALSE
 	alternate_worn_layer = (HANDS_LAYER - 0.1)
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "rosa_crown"
 
@@ -14807,12 +17612,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head_items.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
+	rogue_inhand = FALSE
 	alternate_worn_layer = (HANDS_LAYER - 0.1)
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "salvia_crown"
 
@@ -14827,11 +17635,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/grapplinghook
@@ -14845,11 +17656,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "grappler"
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = "grappler"
 
 /obj/item/grown/log/tree/small
@@ -14863,11 +17677,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 96
 	inhand_icon_state = null
 
 /obj/item/grown/log/tree/stake
@@ -14883,11 +17700,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/grown/log/tree/stick
@@ -14902,12 +17722,41 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
+
+/obj/item/gun/ballistic/firearm/arquebus
+	name = "arquebus rifle"
+	desc = "A smokepowder weapon that shoots an armor piercing metal ball. A true work of art, manufactured by a conclave of smiths deep within the rot plagued lands of Naledi."
+	icon = 'modular_redtard/rockhill/icons/modular_helmsguard/icons/weapons/arquebus.dmi'
+	icon_state = "arquebus"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 10
+	throwforce = 5
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	pixel_x = -16
+	pixel_y = -16
+	slot_flags = ITEM_SLOT_BACK
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 96
+	rogue_grid_height = 64
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/gun/ballistic/firearm/arquebus_pistol
 	name = "arquebus pistol"
@@ -14925,11 +17774,14 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 96
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow
@@ -14947,6 +17799,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -14969,6 +17822,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -14994,6 +17848,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15017,6 +17872,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15038,6 +17894,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15061,6 +17918,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15083,11 +17941,14 @@
 	slot_flags = ITEM_SLOT_BELT|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/hair_dye_cream
@@ -15101,11 +17962,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/handheld_bell
@@ -15120,11 +17984,35 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	inhand_icon_state = null
+
+/obj/item/handmirror
+	parent_type = /obj/item/rockhill
+	name = "hand mirror"
+	desc = "Mirror, mirror, in my hand, who's the fairest in the land?"
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
+	icon_state = "handmirror"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/heart_blood_canister
@@ -15138,6 +18026,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15155,6 +18044,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15173,6 +18063,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15190,6 +18081,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15208,6 +18100,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15224,6 +18117,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15240,6 +18134,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15256,6 +18151,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15272,6 +18168,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15288,6 +18185,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15304,6 +18202,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15320,6 +18219,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15336,6 +18236,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15352,6 +18253,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15368,6 +18270,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15384,6 +18287,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15400,6 +18304,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15416,6 +18321,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15432,6 +18338,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15448,6 +18355,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15464,6 +18372,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15481,6 +18390,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15498,6 +18408,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15516,11 +18427,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/ingot/bronze
@@ -15533,11 +18447,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/ingot/copper
@@ -15550,11 +18467,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/ingot/decrepit
@@ -15567,11 +18487,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/ingot/gold
@@ -15584,11 +18507,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/ingot/iron
@@ -15601,11 +18527,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/ingot/silver
@@ -15618,11 +18547,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/ingot/steel
@@ -15635,11 +18567,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/ingot/tin
@@ -15652,11 +18587,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/inqarticles/garrote
@@ -15671,11 +18609,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "garrote"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/inqarticles/indexer
@@ -15690,11 +18631,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "indexer"
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/inqarticles/tallowpot
@@ -15708,11 +18652,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "tallowpot"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/jingle_bells
@@ -15727,11 +18674,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/kitchen/fork/bronze
@@ -15745,6 +18695,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15763,6 +18714,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15781,6 +18733,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15799,6 +18752,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15817,6 +18771,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15835,6 +18790,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15853,6 +18809,26 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+
+/obj/item/kitchen/spoon/decrepit
+	parent_type = /obj/item/rockhill
+	name = "decrepit spoon"
+	desc = "Traditional utensil for shoveling soup into your mouth, or to churn butter with."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cookware/spoon.dmi'
+	icon_state = "aspoon"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15871,6 +18847,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15889,6 +18866,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15907,6 +18885,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15925,6 +18904,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -15945,11 +18925,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/leash/chain
@@ -15964,11 +18947,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
 	worn_icon_state = "chainleash"
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/leash/leather
@@ -15983,11 +18969,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
 	worn_icon_state = "leatherleash"
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/legwears/fishnet/black
@@ -16001,6 +18990,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -16019,6 +19009,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -16037,6 +19028,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -16055,6 +19047,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -16074,11 +19067,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/lockpick
@@ -16094,12 +19090,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
 	picklvl = 1
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/lockpick/goldpin
@@ -16115,12 +19114,15 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head_items.dmi'
 	worn_icon_state = "goldpin"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	picklvl = 1
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/lockpick/goldpin/silver
@@ -16136,12 +19138,15 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head_items.dmi'
 	worn_icon_state = "silverpin"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	picklvl = 1
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/lockpickring/mundane
@@ -16156,6 +19161,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -16173,11 +19179,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/magic/infernal/core
@@ -16190,11 +19199,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/magic/infernal/fang
@@ -16207,11 +19219,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/magic/infernal/flame
@@ -16224,11 +19239,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/magic/manacrystal
@@ -16241,11 +19259,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/magic/melded/t1
@@ -16258,11 +19279,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/mattcoin
@@ -16278,11 +19302,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_RING
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/millstone
@@ -16296,6 +19323,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -16314,6 +19342,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -16331,6 +19360,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -16348,6 +19378,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -16365,6 +19396,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -16382,6 +19414,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -16399,6 +19432,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -16416,6 +19450,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -16433,6 +19468,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -16450,6 +19486,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -16467,6 +19504,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -16484,6 +19522,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -16501,6 +19540,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -16518,6 +19558,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -16535,11 +19576,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/mundane/puzzlebox/impossible
@@ -16551,11 +19595,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/mundane/puzzlebox/medium
@@ -16567,11 +19614,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/bone
@@ -16585,11 +19635,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/bundle/bone/full
@@ -16604,11 +19657,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/bundle/cloth
@@ -16622,11 +19678,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/bundle/cloth/bandage
@@ -16640,11 +19699,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/bundle/cloth/bandage/full
@@ -16658,11 +19720,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/bundle/cloth/roll
@@ -16676,11 +19741,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/bundle/curred_hide
@@ -16694,11 +19762,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/bundle/fibers
@@ -16713,11 +19784,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/bundle/fibers/full
@@ -16732,11 +19806,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/bundle/plank
@@ -16750,11 +19827,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = "plankbundle"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 128
+	rogue_grid_height = 224
 	inhand_icon_state = null
 
 /obj/item/natural/bundle/silk
@@ -16769,11 +19849,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/bundle/stick
@@ -16787,11 +19870,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/bundle/worms
@@ -16805,11 +19891,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/cloth
@@ -16825,11 +19914,14 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/mouth_items.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/dirtclod
@@ -16843,11 +19935,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/feather
@@ -16863,11 +19958,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/feather/infernal
@@ -16883,11 +19981,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/fibers
@@ -16902,11 +20003,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/fur
@@ -16920,11 +20024,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/fur/fox
@@ -16938,11 +20045,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/glass_shard
@@ -16956,11 +20066,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = "shard"
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/head/minotaur
@@ -16973,11 +20086,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 96
+	rogue_grid_height = 96
 	inhand_icon_state = null
 
 /obj/item/natural/head/saiga
@@ -16990,11 +20106,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/hide
@@ -17008,11 +20127,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/hide/cured
@@ -17026,11 +20148,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/poo
@@ -17044,11 +20169,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/poo/cow
@@ -17062,11 +20190,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/poo/horse
@@ -17080,11 +20211,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/rock
@@ -17098,11 +20232,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 96
+	rogue_grid_height = 96
 	inhand_icon_state = null
 
 /obj/item/natural/rock/coal
@@ -17116,11 +20253,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 96
+	rogue_grid_height = 96
 	inhand_icon_state = null
 
 /obj/item/natural/rock/gem
@@ -17134,11 +20274,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 96
+	rogue_grid_height = 96
 	inhand_icon_state = null
 
 /obj/item/natural/rock/iron
@@ -17152,11 +20295,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 96
+	rogue_grid_height = 96
 	inhand_icon_state = null
 
 /obj/item/natural/rock/random
@@ -17170,11 +20316,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 96
+	rogue_grid_height = 96
 	inhand_icon_state = null
 
 /obj/item/natural/rock/salt
@@ -17188,11 +20337,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 96
+	rogue_grid_height = 96
 	inhand_icon_state = null
 
 /obj/item/natural/rock/silver
@@ -17206,11 +20358,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 96
+	rogue_grid_height = 96
 	inhand_icon_state = null
 
 /obj/item/natural/saddle
@@ -17224,11 +20379,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	slot_flags = ITEM_SLOT_BACK
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -17245,11 +20403,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/stoneblock
@@ -17263,11 +20424,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/whetstone
@@ -17282,11 +20446,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/wood/plank
@@ -17300,11 +20467,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 224
 	inhand_icon_state = null
 
 /obj/item/natural/worms
@@ -17318,11 +20488,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/worms/grubs
@@ -17336,11 +20509,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/worms/leech
@@ -17354,11 +20530,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/natural/worms/leech/cheele
@@ -17372,11 +20551,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/necra_censer
@@ -17391,11 +20573,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "necra_censer"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = "necra_censer"
 
 /obj/item/necro_relics/necro_crystal
@@ -17408,11 +20593,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/needle
@@ -17428,11 +20616,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/needle/pestra
@@ -17446,11 +20637,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/needle/thorn
@@ -17465,11 +20659,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/net
@@ -17485,6 +20682,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -17505,6 +20703,7 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_HEAD
 	body_parts_covered = HEAD
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -17525,6 +20724,7 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_HEAD
 	body_parts_covered = HEAD
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -17545,6 +20745,7 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_HEAD
 	body_parts_covered = HEAD
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -17565,6 +20766,7 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_HEAD
 	body_parts_covered = HEAD
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -17585,6 +20787,7 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_HEAD
 	body_parts_covered = HEAD
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -17606,6 +20809,7 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_HEAD
 	body_parts_covered = HEAD
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -17625,6 +20829,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	body_parts_covered = HEAD
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -17642,6 +20847,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -17660,11 +20866,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/powderflask
@@ -17679,11 +20888,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "powderflask"
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/quicksilver
@@ -17697,6 +20909,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -17715,6 +20928,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
 	worn_icon_state = "quiver"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -17734,6 +20948,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
 	worn_icon_state = "quiver"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -17753,6 +20968,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
 	worn_icon_state = "quiver"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -17772,6 +20988,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
 	worn_icon_state = "quiver"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -17791,6 +21008,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
 	worn_icon_state = "quiver"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -17810,12 +21028,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
 	worn_icon_state = "slingpouch"
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/quiver/heavybluntbolts
@@ -17829,6 +21050,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
 	worn_icon_state = "quiver"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -17848,6 +21070,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
 	worn_icon_state = "javelinbag"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -17867,6 +21090,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
 	worn_icon_state = "javelinbag"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -17886,6 +21110,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
 	worn_icon_state = "javelinbag"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -17905,12 +21130,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
 	worn_icon_state = "slingpouch"
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/quiver/sling/iron
@@ -17924,12 +21152,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
 	worn_icon_state = "slingpouch"
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/quiver/zigs
@@ -17943,12 +21174,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
 	worn_icon_state = "smokebox"
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/ration
@@ -17962,11 +21196,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/badrecipe
@@ -17979,11 +21216,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/butter
@@ -17996,11 +21236,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/butterslice
@@ -18013,11 +21256,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/crow
@@ -18030,11 +21276,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/deadmouse
@@ -18047,11 +21296,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/egg
@@ -18064,11 +21316,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/fat/salo
@@ -18081,11 +21336,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/fish/crab
@@ -18097,11 +21355,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	icon_state = null
 	inhand_icon_state = null
 
@@ -18115,11 +21376,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/fish/oyster
@@ -18131,11 +21395,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	icon_state = null
 	inhand_icon_state = null
 
@@ -18149,11 +21416,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/fish/sole
@@ -18166,11 +21436,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/fish/sunny
@@ -18183,11 +21456,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/apple
@@ -18201,11 +21477,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/64x64/head.dmi'
 	slot_flags = ITEM_SLOT_HEAD
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "apple"
 
@@ -18219,11 +21498,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison
@@ -18236,11 +21518,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/cabbage/rogue
@@ -18253,11 +21538,34 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	inhand_icon_state = null
+
+/obj/item/reagent_containers/food/snacks/grown/carrot
+	name = "carrot"
+	desc = "A long vegetable said to help with eyesight. Often baked"
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/produce.dmi'
+	icon_state = "carrot"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	worn_icon_state = null
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/garlick/rogue
@@ -18270,11 +21578,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/oat
@@ -18287,11 +21598,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/onion/rogue
@@ -18304,11 +21618,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/potato/rogue
@@ -18321,11 +21638,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/fyritius
@@ -18338,11 +21658,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed
@@ -18355,11 +21678,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry
@@ -18372,11 +21698,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/rosa_petals
@@ -18389,11 +21718,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/swampweeddry
@@ -18406,11 +21738,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/tealeaves_dry
@@ -18423,11 +21758,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/wheat
@@ -18440,11 +21778,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/bread
@@ -18457,11 +21798,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/cheddar
@@ -18474,11 +21818,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/cheddarwedge
@@ -18491,11 +21838,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/cheddarwedge/aged
@@ -18508,11 +21858,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/cheese
@@ -18525,11 +21878,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/crackerscooked
@@ -18542,11 +21898,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/dough
@@ -18559,11 +21918,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/foodbase/hardtack_raw
@@ -18576,11 +21938,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/friedrat
@@ -18593,11 +21958,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/honey
@@ -18610,11 +21978,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/bacon
@@ -18627,11 +21998,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/coppiette
@@ -18644,11 +22018,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/mince
@@ -18661,11 +22038,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/mince/beef
@@ -18678,11 +22058,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/poultry
@@ -18695,11 +22078,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked
@@ -18712,11 +22098,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/salami
@@ -18729,11 +22118,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/sausage
@@ -18746,11 +22138,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/spider
@@ -18763,11 +22158,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak
@@ -18780,11 +22178,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak/wolf
@@ -18797,11 +22198,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat_rotten
@@ -18814,11 +22218,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/apple
@@ -18831,11 +22238,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/raisinbreadslice
@@ -18848,11 +22258,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/raisins
@@ -18865,11 +22278,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/smallrat
@@ -18882,11 +22298,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/smallrat/dead
@@ -18899,11 +22318,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/tallow
@@ -18916,11 +22338,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/tallow/red
@@ -18933,11 +22358,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/zizo_bane
@@ -18950,11 +22378,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle
@@ -18969,11 +22400,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical
@@ -18987,11 +22421,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/conpot
@@ -19005,11 +22442,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/endpot
@@ -19023,11 +22463,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/healthpot
@@ -19041,11 +22484,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/healthpotnew
@@ -19059,11 +22505,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/intpot
@@ -19077,11 +22526,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/lucpot
@@ -19095,11 +22547,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/perpot
@@ -19113,11 +22568,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/rogue/rotcure
@@ -19131,11 +22589,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/spdpot
@@ -19149,11 +22610,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/spidervenom_paralytic
@@ -19167,11 +22631,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/strpot
@@ -19185,11 +22652,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/claybottle
@@ -19204,11 +22674,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/clayfancyvase
@@ -19223,11 +22696,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/clayvase
@@ -19242,11 +22718,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/frankenbrew
@@ -19261,11 +22740,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue
@@ -19280,11 +22762,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/antidote
@@ -19299,11 +22784,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer
@@ -19318,11 +22806,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/apfelweinheim
@@ -19337,11 +22828,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/aurorian
@@ -19356,11 +22850,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/avarmead
@@ -19375,11 +22872,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/avarrice
@@ -19394,11 +22894,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/butterhairs
@@ -19413,11 +22916,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/fireleaf
@@ -19432,11 +22938,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/gronnmead
@@ -19451,11 +22960,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/hagwoodbitter
@@ -19470,11 +22982,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/jagdtrunk
@@ -19489,11 +23004,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/kgunlager
@@ -19508,11 +23026,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/kgunplum
@@ -19527,11 +23048,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/kgunsake
@@ -19546,11 +23070,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/murkwine
@@ -19565,11 +23092,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/nred
@@ -19584,11 +23114,36 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	inhand_icon_state = null
+
+/obj/item/reagent_containers/glass/bottle/rogue/beer/rtoper
+	name = "Bottle Rockhill Cider"
+	desc = "A bottle with the Rockhill-crest cork-seal. An especially tart cider from the duchy of Rockhill. Myths say the brewers let the barrels age in the bog, which results in that especially strong flavour."
+	icon = 'modular_redtard/rockhill/icons/obj/alcohol.dmi'
+	icon_state = "ale"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_onhip = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/saigamilk
@@ -19603,11 +23158,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/stonebeardreserve
@@ -19622,11 +23180,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/voddena
@@ -19641,11 +23202,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/berrypoison
@@ -19660,11 +23224,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/elfblue
@@ -19679,11 +23246,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/elfred
@@ -19698,11 +23268,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/emberwine
@@ -19717,11 +23290,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/healthpot
@@ -19736,11 +23312,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/healthpotnew
@@ -19755,11 +23334,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/luxwine
@@ -19774,11 +23356,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/manapot
@@ -19793,11 +23378,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/poison
@@ -19812,11 +23400,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/redwine
@@ -19831,11 +23422,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/stampoison
@@ -19850,11 +23444,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/stampot
@@ -19869,11 +23466,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/strongmanapot
@@ -19888,11 +23488,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/strongpoison
@@ -19907,11 +23510,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/strongstampoison
@@ -19926,11 +23532,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/strongstampot
@@ -19945,11 +23554,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/water
@@ -19964,11 +23576,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/whitewine
@@ -19983,11 +23598,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/wine
@@ -20002,11 +23620,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/wine/sourwine
@@ -20021,11 +23642,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/waterskin
@@ -20040,11 +23664,14 @@
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	worn_icon_hipl = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_l.dmi'
 	worn_icon_hipr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_r.dmi'
 	inhand_icon_state = null
@@ -20060,11 +23687,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bowl/bronze
@@ -20078,11 +23708,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bowl/carved/coral
@@ -20096,11 +23729,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bowl/decrepit
@@ -20114,11 +23750,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bowl/gold
@@ -20132,11 +23771,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bowl/iron
@@ -20150,11 +23792,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bowl/silver
@@ -20168,11 +23813,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bowl/tin
@@ -20186,11 +23834,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bucket
@@ -20205,11 +23856,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
 	worn_icon_state = "woodbucket"
 	armor_type = /datum/armor/rockhill_m14_b0_f52_a35
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "woodbucket"
 
 /obj/item/reagent_containers/glass/bucket/pot
@@ -20224,11 +23878,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
 	worn_icon_state = "pot"
 	armor_type = /datum/armor/rockhill_m14_b0_f52_a35
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "pot"
 
 /obj/item/reagent_containers/glass/bucket/pot/copper
@@ -20243,11 +23900,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
 	worn_icon_state = "pot"
 	armor_type = /datum/armor/rockhill_m14_b0_f52_a35
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "pot"
 
 /obj/item/reagent_containers/glass/bucket/pot/decrepit
@@ -20262,11 +23922,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
 	worn_icon_state = "pot"
 	armor_type = /datum/armor/rockhill_m14_b0_f52_a35
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "pot"
 
 /obj/item/reagent_containers/glass/bucket/pot/stone
@@ -20281,11 +23944,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
 	worn_icon_state = "pot"
 	armor_type = /datum/armor/rockhill_m14_b0_f52_a35
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "pot"
 
 /obj/item/reagent_containers/glass/bucket/pot/teapot/fancy
@@ -20300,11 +23966,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
 	worn_icon_state = "pot"
 	armor_type = /datum/armor/rockhill_m14_b0_f52_a35
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "pot"
 
 /obj/item/reagent_containers/glass/bucket/pot/teapot/porcelain
@@ -20318,11 +23987,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
 	worn_icon_state = "pot"
 	armor_type = /datum/armor/rockhill_m14_b0_f52_a35
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	icon_state = null
 	inhand_icon_state = "pot"
 
@@ -20337,11 +24009,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/bronzegob
@@ -20355,11 +24030,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/bronzemug
@@ -20373,11 +24051,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/ceramic/fancy
@@ -20391,11 +24072,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/claycup
@@ -20409,11 +24093,56 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	inhand_icon_state = null
+
+/obj/item/reagent_containers/glass/cup/decrepitgob
+	name = "decrepit goblet"
+	desc = "Frayed bronze, coiled into a hooked vessel. To think that this was once a nobleman's goblet; yet, it has endured far longer than their now-withered bloodline."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cookware/cup.dmi'
+	icon_state = "agoblet"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 10
+	throwforce = 15
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	inhand_icon_state = null
+
+/obj/item/reagent_containers/glass/cup/decrepitmug
+	name = "decrepit mug"
+	desc = "Frayed bronze, coiled into a cup. Here, adventurers of centuries-past would laugh and legendize; but now, nothing but empty chairs and empty tables remain."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cookware/cup.dmi'
+	icon_state = "amug"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 5
+	throwforce = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/golden
@@ -20427,11 +24156,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/golden/psydon
@@ -20445,11 +24177,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/golden/small
@@ -20463,11 +24198,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/porcelain/fancy
@@ -20481,11 +24219,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/silver
@@ -20499,11 +24240,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/silver/small
@@ -20517,11 +24261,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/skull
@@ -20535,11 +24282,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/steel
@@ -20553,11 +24303,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/tin
@@ -20571,11 +24324,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/tin/small
@@ -20589,11 +24345,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/wooden
@@ -20607,11 +24366,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/mortar
@@ -20624,11 +24386,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/lux
@@ -20641,11 +24406,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "lux"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/lux_impure
@@ -20658,11 +24426,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "lux_impure"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/peppermill
@@ -20675,11 +24446,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/powder/flour
@@ -20692,11 +24466,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "spice"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/powder/herozium
@@ -20709,11 +24486,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "herozium"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/powder/moondust
@@ -20726,11 +24506,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "spice"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/powder/moondust_purest
@@ -20743,11 +24526,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "spice"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/powder/ozium
@@ -20760,11 +24546,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "spice"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/powder/salt
@@ -20777,11 +24566,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "spice"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/powder/sleep_powder
@@ -20794,11 +24586,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "spice"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/powder/spice
@@ -20811,11 +24606,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "spice"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/powder/starsugar
@@ -20828,11 +24626,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "starsugar"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/recipe_book/alchemy
@@ -20844,11 +24645,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/recipe_book/blacksmithing
@@ -20860,11 +24664,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/recipe_book/builder
@@ -20876,11 +24683,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/recipe_book/ceramics
@@ -20892,11 +24702,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/recipe_book/cooking
@@ -20909,11 +24722,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/recipe_book/engineering
@@ -20925,11 +24741,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/recipe_book/leatherworking
@@ -20941,11 +24760,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/recipe_book/magic
@@ -20957,11 +24779,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/recipe_book/sewing
@@ -20973,11 +24798,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/recipe_book/survival
@@ -20990,11 +24818,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/repair_kit
@@ -21010,11 +24841,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/repair_kit/bad
@@ -21029,11 +24863,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/repair_kit/metal
@@ -21048,11 +24885,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/repair_kit/metal/bad
@@ -21067,11 +24907,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/restraints/legcuffs/beartrap/armed
@@ -21086,11 +24929,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 256
+	rogue_grid_height = 256
 	inhand_icon_state = null
 
 /obj/item/restraints/legcuffs/beartrap/armed/camouflage
@@ -21104,11 +24950,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 256
+	rogue_grid_height = 256
 	inhand_icon_state = null
 
 /obj/item/riddleofsteel
@@ -21123,6 +24972,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -21141,6 +24991,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -21160,11 +25011,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogue/instrument/drum
@@ -21179,11 +25033,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogue/instrument/flute
@@ -21198,11 +25055,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogue/instrument/guitar
@@ -21217,11 +25077,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogue/instrument/harp
@@ -21236,11 +25099,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogue/instrument/hurdygurdy
@@ -21255,11 +25121,36 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	inhand_icon_state = null
+
+/obj/item/rogue/instrument/jawharp
+	name = "jaw harp"
+	desc = "A vibrating reed attached to a sturdy frame, originally crafted in the Gronn Steppes. It produces a buzzing sound that mimics the winds of the plains."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/music.dmi'
+	icon_state = "jawharp"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 23
+	throwforce = 7
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/rogue/instrument/lute
@@ -21274,11 +25165,36 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	inhand_icon_state = null
+
+/obj/item/rogue/instrument/shamisen
+	name = "shamisen"
+	desc = "The shamisen, or simply «three strings», is an kazengunese stringed instrument with a washer, which is usually played with the help of a bachi."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/music.dmi'
+	icon_state = "shamisen"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 23
+	throwforce = 7
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogue/instrument/trumpet
@@ -21293,11 +25209,58 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	inhand_icon_state = null
+
+/obj/item/rogue/instrument/viola
+	name = "viola"
+	desc = "The prim and proper Viola, every prince's first instrument taught."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/music.dmi'
+	icon_state = "viola"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 23
+	throwforce = 7
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	inhand_icon_state = null
+
+/obj/item/rogue/instrument/vocals
+	name = "vocalist's talisman"
+	desc = "This talisman emanates a soft shimmer of light. When held, it can amplify and even change a bard's voice."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/music.dmi'
+	icon_state = "vtalisman"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 23
+	throwforce = 7
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogue/painting/skullzhg
@@ -21310,6 +25273,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -21328,12 +25292,33 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	rogue_storage_type = /datum/storage/rogue_grid/roguetown/bin
+
+/obj/item/roguebin/crackers
+	name = "wood bin"
+	desc = "A washbin, a trashbin, a bloodbin... Your choices are limitless."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
+	icon_state = "washbin1"
+	w_class = WEIGHT_CLASS_GIGANTIC
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+	rogue_storage_type = /datum/storage/rogue_grid/roguetown/bin
 
 /obj/item/roguebin/trash
 	name = "trash bin"
@@ -21345,12 +25330,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	rogue_storage_type = /datum/storage/rogue_grid/roguetown/bin
 
 /obj/item/roguebin/water
 	name = "wood bin"
@@ -21362,12 +25349,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	rogue_storage_type = /datum/storage/rogue_grid/roguetown/bin
 
 /obj/item/roguebin/water/gross
 	name = "wood bin"
@@ -21379,12 +25368,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	rogue_storage_type = /datum/storage/rogue_grid/roguetown/bin
 
 /obj/item/roguecoin/copper
 	name = "zenny"
@@ -21397,6 +25388,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -21415,6 +25407,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -21433,6 +25426,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -21451,6 +25445,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -21469,6 +25464,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -21487,6 +25483,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -21505,6 +25502,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -21523,6 +25521,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -21540,11 +25539,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguegear/wood/basic
@@ -21557,11 +25559,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguegem/amethyst
@@ -21575,6 +25580,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -21593,6 +25599,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -21611,6 +25618,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -21629,6 +25637,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -21647,6 +25656,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -21665,6 +25675,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -21683,6 +25694,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -21701,6 +25713,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -21720,11 +25733,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	icon_state = null
 	inhand_icon_state = null
 
@@ -21740,12 +25756,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "stable1"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/apartments/stable2
@@ -21760,12 +25779,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "stable2"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/archive
@@ -21780,12 +25802,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "archive"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/armory
@@ -21800,12 +25825,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "armory"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/baron
@@ -21820,12 +25848,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "BaronManor"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/baronguest
@@ -21840,12 +25871,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "BaronManorGuest"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/bath
@@ -21860,12 +25894,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "bath"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/church
@@ -21880,12 +25917,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "church"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/courtphysician
@@ -21900,12 +25940,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "cphysician"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/crafterguild
@@ -21920,12 +25963,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "crafterguild"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/craftermaster
@@ -21940,12 +25986,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "craftermaster"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/crier
@@ -21960,12 +26009,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "crier"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/dungeon
@@ -21980,12 +26032,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "dungeon"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/fancyroomi
@@ -22000,12 +26055,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "fancyi"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/fancyroomii
@@ -22020,12 +26078,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "fancyii"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/fancyroomiii
@@ -22040,12 +26101,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "fancyiii"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/fancyroomiv
@@ -22060,12 +26124,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "fancyiv"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/fancyroomv
@@ -22080,12 +26147,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "fancyv"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/farm
@@ -22100,12 +26170,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "farm"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/garrison
@@ -22120,12 +26193,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "garrison"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/graveyard
@@ -22140,12 +26216,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "graveyard"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/hand
@@ -22160,12 +26239,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "hand"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/heir
@@ -22180,12 +26262,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "heir"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/inquisition
@@ -22200,12 +26285,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "inquisition"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/keeper
@@ -22220,12 +26308,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "keeper"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/keeper_inner
@@ -22240,12 +26331,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "keeper2"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/knight
@@ -22260,12 +26354,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "knight"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/lord
@@ -22280,12 +26377,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "lord"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/mage
@@ -22300,12 +26400,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "mage"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/manor
@@ -22320,12 +26423,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "manor"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/manor/counsilroom/i
@@ -22340,12 +26446,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "counsil1"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/manor/counsilroom/ii
@@ -22360,12 +26469,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "counsil2"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/manor/counsilroom/iii
@@ -22380,12 +26492,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "counsil3"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/manor/guestroom/i
@@ -22400,12 +26515,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "guestroom1"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/manor/guestroom/ii
@@ -22420,12 +26538,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "guestroom2"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/manor/guestroom/iii
@@ -22440,12 +26561,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "guestroom3"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/mercenary
@@ -22460,12 +26584,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "merc"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/merchant
@@ -22480,12 +26607,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "merchant"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/nightmaiden
@@ -22500,12 +26630,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "nightmaiden"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/nightmaiden/rooms/i
@@ -22520,12 +26653,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "lux1"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/nightmaiden/rooms/ii
@@ -22540,12 +26676,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "lux2"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/nightmaiden/rooms/iii
@@ -22560,12 +26699,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "lux3"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/nightmaiden/rooms/iv
@@ -22580,12 +26722,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "lux4"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/nightmaiden/rooms/punish
@@ -22600,12 +26745,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "punishroom"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/nightmaiden/rooms/steam
@@ -22620,12 +26768,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "steam"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/nightmaiden/rooms/v
@@ -22640,12 +26791,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "lux5"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/nightman
@@ -22660,12 +26814,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "nightman"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/physician
@@ -22680,12 +26837,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "physician"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/priest
@@ -22700,12 +26860,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "priest"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/puritan
@@ -22720,12 +26883,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "puritan"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/roomhunt
@@ -22740,12 +26906,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "roomhunt"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/roomi
@@ -22760,12 +26929,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "roomi"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/roomii
@@ -22780,12 +26952,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "roomii"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/roomiii
@@ -22800,12 +26975,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "roomiii"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/roomiv
@@ -22820,12 +26998,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "roomiv"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/roomix
@@ -22840,12 +27021,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "roomix"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/roomv
@@ -22860,12 +27044,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "roomv"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/roomvi
@@ -22880,12 +27067,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "roomvi"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/roomvii
@@ -22900,12 +27090,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "roomvii"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/roomviii
@@ -22920,12 +27113,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "roomviii"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/roomx
@@ -22940,12 +27136,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "roomx"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/royal
@@ -22960,12 +27159,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "royal"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/sergeant
@@ -22980,12 +27182,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "sergeant"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/servant
@@ -23000,12 +27205,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "servant"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/sheriff
@@ -23020,12 +27228,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "sheriff"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/shop
@@ -23040,12 +27251,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "shop"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/slaverdungeon
@@ -23060,12 +27274,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "DTManorCells"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/slaverhouse
@@ -23080,12 +27297,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "SlaverHome"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/slaverpillory
@@ -23100,12 +27320,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "SlaveAuction"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/steward
@@ -23120,12 +27343,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "steward"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/tailor
@@ -23140,12 +27366,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "tailor"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/tavern
@@ -23160,12 +27389,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "tavern"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/tavernkeep
@@ -23180,12 +27412,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "innkeep"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/tower
@@ -23200,12 +27435,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "tower"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/townie
@@ -23220,12 +27458,38 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "townie"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	inhand_icon_state = null
+
+/obj/item/roguekey/vampire
+	name = "mansion key"
+	desc = "The key to a vampire lord's castle."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
+	icon_state = "vampkey"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
+	lockid = "mansionvampire"
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/vault
@@ -23240,12 +27504,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "vault"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/walls
@@ -23260,12 +27527,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "walls"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguekey/warden
@@ -23280,12 +27550,15 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
 	lockid = "warden"
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguemachine/mastermail
@@ -23298,6 +27571,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	pixel_y = 32
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -23315,6 +27589,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -23332,6 +27607,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -23349,6 +27625,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -23366,6 +27643,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -23383,6 +27661,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -23400,6 +27679,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -23417,11 +27697,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/rogueore/coal
@@ -23434,11 +27717,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/rogueore/copper
@@ -23451,11 +27737,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/rogueore/gold
@@ -23468,11 +27757,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/rogueore/iron
@@ -23485,11 +27777,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/rogueore/silver
@@ -23502,11 +27797,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/rogueore/tin
@@ -23519,11 +27817,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/roguestatue/clay
@@ -23536,11 +27837,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/roguestatue/decrepit
@@ -23553,11 +27857,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/roguestatue/glass
@@ -23570,11 +27877,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/roguestatue/gold
@@ -23587,11 +27897,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/roguestatue/gold/loot
@@ -23604,11 +27917,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/roguestatue/iron
@@ -23621,11 +27937,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/roguestatue/silver
@@ -23638,11 +27957,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/roguestatue/steel
@@ -23655,11 +27977,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/blowrod
@@ -23676,6 +28001,7 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -23698,12 +28024,15 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/eaglebeak
@@ -23721,6 +28050,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -23744,6 +28074,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -23767,6 +28098,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -23790,6 +28122,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -23812,12 +28145,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/flail/peasantwarflail/matthios
@@ -23835,12 +28171,15 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -23859,12 +28198,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/flail/sflail/ancient
@@ -23881,12 +28223,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/flail/sflail/ancient/decrepit
@@ -23903,12 +28248,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/flail/sflail/silver
@@ -23925,12 +28273,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/greataxe
@@ -23948,6 +28299,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -23971,6 +28323,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -23994,6 +28347,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -24017,6 +28371,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -24040,6 +28395,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -24063,6 +28419,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -24086,6 +28443,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -24109,6 +28467,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -24132,6 +28491,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -24155,6 +28515,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -24178,6 +28539,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -24201,6 +28563,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -24224,6 +28587,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -24247,6 +28611,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -24270,6 +28635,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -24292,12 +28658,15 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/hammer/artefact/malum
@@ -24314,12 +28683,15 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/hammer/blacksteel
@@ -24336,12 +28708,15 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/hammer/copper
@@ -24358,12 +28733,15 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/hammer/iron
@@ -24380,12 +28758,15 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/hammer/steel
@@ -24402,12 +28783,15 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/hammer/stone
@@ -24424,12 +28808,15 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/hammer/wood
@@ -24446,12 +28833,15 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/handsaw
@@ -24468,12 +28858,15 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/hoe
@@ -24489,6 +28882,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -24512,6 +28906,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -24535,6 +28930,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -24559,6 +28955,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	picklvl = 1
 	rogue_sleeved = null
 	sheathe_icon = "huntingknife"
@@ -24566,6 +28963,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/bronze
@@ -24582,6 +28981,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	picklvl = 1
 	rogue_sleeved = null
 	sheathe_icon = "genknife"
@@ -24589,6 +28989,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/chefknife
@@ -24605,6 +29007,7 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	picklvl = 0.9
 	rogue_sleeved = null
 	sheathe_icon = "huntingknife"
@@ -24612,6 +29015,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/cleaver
@@ -24626,6 +29031,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
 	worn_icon_state = "cleaver"
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = FALSE
 	picklvl = 0.8
 	rogue_sleeved = null
 	sheathe_icon = "huntingknife"
@@ -24633,6 +29039,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/combat
@@ -24649,6 +29057,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	picklvl = 1.1
 	rogue_sleeved = null
 	sheathe_icon = "combatknife"
@@ -24656,6 +29065,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/copper
@@ -24672,6 +29083,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	picklvl = 0.5
 	rogue_sleeved = null
 	sheathe_icon = "huntingknife"
@@ -24679,6 +29091,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger
@@ -24695,6 +29109,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	picklvl = 1.0
 	rogue_sleeved = null
 	sheathe_icon = "idagger"
@@ -24702,6 +29117,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/dtace
@@ -24718,6 +29135,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	picklvl = 1.3
 	rogue_sleeved = null
 	sheathe_icon = "stiletto"
@@ -24725,6 +29143,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/navaja
@@ -24741,6 +29161,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	picklvl = 1.0
 	rogue_sleeved = null
 	sheathe_icon = "idagger"
@@ -24748,6 +29169,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "elfdag"
 
 /obj/item/rogueweapon/huntingknife/idagger/silver
@@ -24764,6 +29187,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	picklvl = 1.1
 	rogue_sleeved = null
 	sheathe_icon = "sildagger"
@@ -24771,6 +29195,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/silver/arcyne
@@ -24787,6 +29213,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	picklvl = 1.1
 	rogue_sleeved = null
 	sheathe_icon = "sildagger"
@@ -24794,6 +29221,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/silver/elvish
@@ -24810,6 +29239,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	picklvl = 1.2
 	rogue_sleeved = null
 	sheathe_icon = "sildagger"
@@ -24817,6 +29247,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "elfdag"
 
 /obj/item/rogueweapon/huntingknife/idagger/silver/elvish/drow
@@ -24833,6 +29265,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	picklvl = 1.2
 	rogue_sleeved = null
 	sheathe_icon = "sildagger"
@@ -24840,6 +29273,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "elfdag"
 
 /obj/item/rogueweapon/huntingknife/idagger/silver/psydagger
@@ -24856,6 +29291,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	picklvl = 1.1
 	rogue_sleeved = null
 	sheathe_icon = "psydagger"
@@ -24863,6 +29299,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel
@@ -24879,6 +29317,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	picklvl = 1.1
 	rogue_sleeved = null
 	sheathe_icon = "sdagger"
@@ -24886,6 +29325,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/ancient
@@ -24902,6 +29343,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	picklvl = 0.7
 	rogue_sleeved = null
 	sheathe_icon = "adagger"
@@ -24909,6 +29351,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/ancient/decrepit
@@ -24925,6 +29369,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	picklvl = 0.7
 	rogue_sleeved = null
 	sheathe_icon = "adagger"
@@ -24932,6 +29377,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/holysee
@@ -24948,6 +29395,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	picklvl = 1.1
 	rogue_sleeved = null
 	sheathe_icon = "gsdagger"
@@ -24955,6 +29403,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/parrying
@@ -24971,6 +29421,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	picklvl = 1.1
 	rogue_sleeved = null
 	sheathe_icon = "spdagger"
@@ -24978,6 +29429,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/parrying/vaquero
@@ -24994,6 +29447,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	picklvl = 1.1
 	rogue_sleeved = null
 	sheathe_icon = "spdagger"
@@ -25001,6 +29455,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/pestrasickle
@@ -25017,6 +29473,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	picklvl = 1.1
 	rogue_sleeved = null
 	sheathe_icon = "sdagger"
@@ -25024,6 +29481,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/special
@@ -25040,6 +29499,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	picklvl = 1.1
 	rogue_sleeved = null
 	sheathe_icon = "sdaggeralt"
@@ -25047,6 +29507,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/warden_machete
@@ -25063,6 +29525,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	picklvl = 1.0
 	rogue_sleeved = null
 	sheathe_icon = "warden_machete"
@@ -25070,6 +29533,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/wood
@@ -25086,6 +29551,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	picklvl = 0.7
 	rogue_sleeved = null
 	sheathe_icon = "idagger"
@@ -25093,6 +29559,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/scissors
@@ -25109,6 +29577,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	picklvl = 1
 	rogue_sleeved = null
 	sheathe_icon = "huntingknife"
@@ -25116,6 +29585,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/scissors/steel
@@ -25132,6 +29603,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	picklvl = 1
 	rogue_sleeved = null
 	sheathe_icon = "huntingknife"
@@ -25139,6 +29611,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/stoneknife
@@ -25155,6 +29629,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	picklvl = 0.3
 	rogue_sleeved = null
 	sheathe_icon = "huntingknife"
@@ -25162,6 +29637,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/throwingknife
@@ -25178,6 +29655,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	picklvl = 0.8
 	rogue_sleeved = null
 	sheathe_icon = "huntingknife"
@@ -25185,6 +29663,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/throwingknife/steel
@@ -25201,6 +29681,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	picklvl = 0.9
 	rogue_sleeved = null
 	sheathe_icon = "huntingknife"
@@ -25208,6 +29689,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/throwingknife/steel/ancient
@@ -25224,6 +29707,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	picklvl = 0.6
 	rogue_sleeved = null
 	sheathe_icon = "huntingknife"
@@ -25231,6 +29715,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/throwingknife/steel/ancient/decrepit
@@ -25247,6 +29733,7 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	picklvl = 0.6
 	rogue_sleeved = null
 	sheathe_icon = "huntingknife"
@@ -25254,6 +29741,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/katar
@@ -25270,12 +29759,15 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/katar/punchdagger
@@ -25292,12 +29784,15 @@
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/knuckles
@@ -25314,12 +29809,15 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/knuckles/ancient/decrepit
@@ -25336,12 +29834,15 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/lordscepter
@@ -25358,12 +29859,15 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/mace
@@ -25380,6 +29884,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -25402,6 +29907,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -25424,12 +29930,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/cudgel/copper
@@ -25446,12 +29955,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/cudgel/justice
@@ -25468,12 +29980,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/goden
@@ -25491,6 +30006,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -25514,6 +30030,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -25537,6 +30054,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -25560,6 +30078,30 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = "mace_greyscale"
+
+/obj/item/rogueweapon/mace/oar
+	name = "oar"
+	desc = "A wooden club with a flattened head for paddling boats about."
+	icon = 'modular_redtard/rockhill/icons/obj/boat_accessories.dmi'
+	icon_state = "oar"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 15
+	throwforce = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_righthand.dmi'
+	worn_icon_state = "mace_greyscale"
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -25581,12 +30123,15 @@
 	worn_icon_state = "mace_greyscale"
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/parasol/noble
@@ -25604,12 +30149,15 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/spiked
@@ -25626,6 +30174,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -25648,6 +30197,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -25670,6 +30220,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -25692,6 +30243,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -25714,6 +30266,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -25736,6 +30289,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -25758,6 +30312,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -25780,6 +30335,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -25802,6 +30358,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -25824,6 +30381,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -25846,6 +30404,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -25868,6 +30427,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -25890,6 +30450,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -25912,6 +30473,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -25934,6 +30496,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -25956,12 +30519,15 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/pick/bronze
@@ -25978,12 +30544,15 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/pick/copper
@@ -26000,12 +30569,15 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/pick/decrepit
@@ -26022,12 +30594,15 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/pick/militia
@@ -26044,12 +30619,15 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/pick/steel
@@ -26066,12 +30644,15 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/pick/stone
@@ -26088,12 +30669,15 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/pitchfork
@@ -26109,6 +30693,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -26132,6 +30717,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -26156,6 +30742,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
 	rogue_sleeved = null
 	sheathe_icon = null
@@ -26179,6 +30766,7 @@
 	pixel_y = -16
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
+	rogue_inhand = TRUE
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
 	rogue_sleeved = null
 	sheathe_icon = null
@@ -26204,6 +30792,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
 	rogue_sleeved = null
 	valid_blade = /obj/item/rogueweapon/huntingknife
@@ -26212,6 +30801,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/scabbard/sheath/courtphysician
@@ -26228,6 +30819,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
 	rogue_sleeved = null
 	valid_blade = /obj/item/rogueweapon/sword/rapier/courtphysician
@@ -26236,6 +30828,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/scabbard/sheath/noble
@@ -26252,6 +30846,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
 	rogue_sleeved = null
 	valid_blade = /obj/item/rogueweapon/huntingknife
@@ -26260,6 +30855,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/scabbard/sheath/royal
@@ -26276,6 +30873,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
 	rogue_sleeved = null
 	valid_blade = /obj/item/rogueweapon/huntingknife
@@ -26284,6 +30882,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/scabbard/sword
@@ -26300,6 +30900,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
 	rogue_sleeved = null
 	valid_blade = /obj/item/rogueweapon/sword
@@ -26325,6 +30926,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
 	rogue_sleeved = null
 	valid_blade = /obj/item/rogueweapon/sword
@@ -26350,6 +30952,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
 	rogue_sleeved = null
 	valid_blade = /obj/item/rogueweapon/sword
@@ -26376,6 +30979,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -26397,6 +31001,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -26421,12 +31026,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/shield/buckler/ancient
@@ -26443,12 +31051,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/shield/capbuckler
@@ -26465,12 +31076,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/shield/heater
@@ -26486,6 +31100,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -26509,6 +31124,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -26532,6 +31148,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -26555,6 +31172,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -26578,6 +31196,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -26601,6 +31220,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -26624,6 +31244,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -26647,6 +31268,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -26671,12 +31293,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/shovel/decrepit
@@ -26693,12 +31318,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/shovel/silver
@@ -26715,12 +31343,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/shovel/small
@@ -26737,12 +31368,15 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/sickle
@@ -26759,12 +31393,40 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	inhand_icon_state = "crysknife"
+
+/obj/item/rogueweapon/sickle/decrepit
+	name = "decrepit sickle"
+	desc = "Her thought was simple; to separate the wheat from the chaff. By removing the limitations set upon one's spirit by lyfe, only then could divinity be obtained. She was correct - yet Her ascension had gone terribly awry, all-the-same."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/tools.dmi'
+	icon_state = "asickle"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 10
+	throwforce = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	worn_icon_state = "crysknife"
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "crysknife"
 
 /obj/item/rogueweapon/spear
@@ -26782,6 +31444,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -26805,6 +31468,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -26828,6 +31492,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -26851,6 +31516,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -26874,6 +31540,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -26897,6 +31564,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -26920,6 +31588,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -26943,6 +31612,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -26966,6 +31636,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -26989,6 +31660,7 @@
 	pixel_y = -16
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -27012,6 +31684,7 @@
 	pixel_y = 0
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -27034,6 +31707,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -27056,6 +31730,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -27078,12 +31753,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/handaxe/copper
@@ -27100,12 +31778,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/oath
@@ -27123,6 +31804,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -27147,6 +31829,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -27169,6 +31852,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -27191,6 +31875,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -27213,6 +31898,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -27235,6 +31921,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -27257,6 +31944,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -27278,6 +31966,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -27302,6 +31991,7 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -27324,12 +32014,15 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/cautery
@@ -27346,12 +32039,15 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/cautery/branding
@@ -27368,12 +32064,15 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/cautery/branding/slave
@@ -27390,12 +32089,15 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/hemostat
@@ -27412,12 +32114,15 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/hemostat/improv
@@ -27434,12 +32139,15 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/multitool
@@ -27455,12 +32163,15 @@
 	worn_icon_state = "bone_dagger"
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/retractor
@@ -27477,12 +32188,15 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/retractor/improv
@@ -27499,12 +32213,15 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/saw
@@ -27521,12 +32238,15 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/saw/improv
@@ -27543,12 +32263,15 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/scalpel
@@ -27565,12 +32288,15 @@
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword
@@ -27587,12 +32313,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "sword1"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/capsabre
@@ -27609,12 +32338,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "sword1"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/cutlass
@@ -27631,12 +32363,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "cutlass"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/decorated
@@ -27653,12 +32388,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "sword1"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/falchion/militia
@@ -27675,12 +32413,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "sword1"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/falx
@@ -27697,12 +32438,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "sword1"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/iron
@@ -27719,12 +32463,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "isword"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/long
@@ -27743,12 +32490,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "longsword"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/dec
@@ -27767,12 +32517,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "longsword"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/exe
@@ -27790,12 +32543,15 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "longsword"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "longsword"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -27816,12 +32572,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "psysword"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/marlin
@@ -27840,12 +32599,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "longsword"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/long/martyr
@@ -27864,12 +32626,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "longsword"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "martyrsword"
 
 /obj/item/rogueweapon/sword/long/rhomphaia
@@ -27888,12 +32653,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "longsword"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/silver
@@ -27912,12 +32680,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "psysword"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/training
@@ -27936,12 +32707,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "longsword"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/zizo
@@ -27960,12 +32734,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "zizolongsword"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/rapier
@@ -27984,12 +32761,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "rapier"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/rapier/courtphysician
@@ -28008,12 +32788,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "doccaneblade"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/rapier/lord
@@ -28032,12 +32815,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "lordrapier"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/rapier/silver
@@ -28056,12 +32842,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "psyrapier"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/sabre
@@ -28078,12 +32867,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "saber"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/sabre/ancient
@@ -28100,12 +32892,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "saber"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/sabre/ancient/decrepit
@@ -28122,12 +32917,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "saber"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/sabre/elf
@@ -28144,12 +32942,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "saber"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "esaber"
 
 /obj/item/rogueweapon/sword/sabre/iron
@@ -28166,12 +32967,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "saber"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/sabre/stalker
@@ -28188,12 +32992,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "spidersaber"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short
@@ -28210,12 +33017,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "swordshort"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/ancient
@@ -28232,12 +33042,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "ashortsword"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/ancient/decrepit
@@ -28254,12 +33067,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "ashortsword"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/falchion
@@ -28276,12 +33092,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "falchion"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/gladius
@@ -28298,12 +33117,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "gladius"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/gladius/ancient
@@ -28320,12 +33142,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "gladius"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/gladius/ancient/decrepit
@@ -28342,12 +33167,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "gladius"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/iron
@@ -28364,12 +33192,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "iswordshort"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/iron/chipped
@@ -28386,12 +33217,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "iswordshort_d"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/messer
@@ -28408,12 +33242,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "swordshort"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/messer/copper
@@ -28430,12 +33267,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "swordshort"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/messer/iron
@@ -28452,12 +33292,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "isword"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/silver
@@ -28474,12 +33317,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "psyswordshort"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/silver
@@ -28496,12 +33342,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "silversword"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/stone
@@ -28518,12 +33367,15 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "sword1"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/thresher
@@ -28539,6 +33391,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -28562,6 +33415,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -28586,12 +33440,40 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	inhand_icon_state = "sabre"
+
+/obj/item/rogueweapon/tongs/ancient/decrepit
+	name = "decrepit tongs"
+	desc = "How many ingots of once-pure alloy have these rusted, falling-apart jaws handled? The lyves taken through proxy of weapons once pincered by this tool? Perhaps it's about time that tally incremented yet again."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/tools.dmi'
+	icon_state = "atongs"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 5
+	throwforce = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	worn_icon_state = "sabre"
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/tongs/blacksteel
@@ -28608,12 +33490,15 @@
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/whip
@@ -28630,12 +33515,15 @@
 	slot_flags = ITEM_SLOT_BELT|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/whip/antique
@@ -28652,12 +33540,15 @@
 	slot_flags = ITEM_SLOT_BELT|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/whip/bronze
@@ -28674,12 +33565,15 @@
 	slot_flags = ITEM_SLOT_BELT|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/whip/silver
@@ -28696,12 +33590,15 @@
 	slot_flags = ITEM_SLOT_BELT|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/whip/spiderwhip
@@ -28718,12 +33615,15 @@
 	slot_flags = ITEM_SLOT_BELT|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/woodstaff
@@ -28741,6 +33641,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -28766,6 +33667,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -28791,6 +33693,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -28816,6 +33719,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -28841,6 +33745,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -28866,6 +33771,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -28891,6 +33797,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -28916,6 +33823,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -28941,6 +33849,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -28966,6 +33875,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_x_dimension = 32
@@ -28989,11 +33899,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rope/chain
@@ -29008,11 +33921,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rope/inqarticles/inquirycord
@@ -29027,11 +33943,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "inqcordage"
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/rotation_contraption/cog
@@ -29043,11 +33962,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/rotation_contraption/horizontal
@@ -29059,11 +33981,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/rotation_contraption/large_cog
@@ -29075,11 +34000,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/rotation_contraption/minecart_rail
@@ -29091,11 +34019,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rotation_contraption/minecart_rail/railbreak
@@ -29107,11 +34038,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/rotation_contraption/shaft
@@ -29123,11 +34057,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/rotation_contraption/vertical
@@ -29139,11 +34076,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/rotation_contraption/waterwheel
@@ -29155,11 +34095,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 96
+	rogue_grid_height = 96
 	inhand_icon_state = null
 
 /obj/item/satchel_bomb
@@ -29175,6 +34118,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -29195,11 +34139,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_RING
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/scomstone/bad/garrison
@@ -29214,11 +34161,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_RING
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/seal/crown
@@ -29231,6 +34181,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "stamp"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -29248,6 +34199,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "stamp"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -29265,6 +34217,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "stamp"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -29282,6 +34235,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "stamp"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -29299,6 +34253,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "stamp"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -29316,6 +34271,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "stamp"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -29333,6 +34289,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "stamp"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -29350,6 +34307,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "stamp"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -29367,6 +34325,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "stamp"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -29384,6 +34343,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "stamp"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -29401,6 +34361,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "stamp"
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -29418,6 +34379,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -29435,6 +34397,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -29452,6 +34415,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -29469,6 +34433,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -29486,6 +34451,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -29503,6 +34469,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -29520,6 +34487,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -29537,6 +34505,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -29554,6 +34523,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -29571,6 +34541,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -29589,6 +34560,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -29608,11 +34580,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/signal_flare_gun
@@ -29628,11 +34603,14 @@
 	worn_icon_state = "flaregun"
 	slot_flags = ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = "flaregun"
 
 /obj/item/signal_horn
@@ -29647,11 +34625,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/skillbook/unfinished
@@ -29664,11 +34645,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/skull
@@ -29682,6 +34666,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -29701,6 +34686,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/custodial_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/custodial_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -29721,11 +34707,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_RING
+	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/spellbook_unfinished/pre_arcyne
@@ -29738,11 +34727,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/storage/backpack/rogue/backpack
@@ -29756,6 +34748,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/back_l.dmi'
 	slot_flags = ITEM_SLOT_BACK
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -29763,6 +34756,7 @@
 	inhand_y_dimension = 64
 	inhand_icon_state = null
 	worn_icon_state = "backpack"
+	storage_type = /datum/storage/rogue_grid/roguetown/backpack
 
 /obj/item/storage/backpack/rogue/backpack/bagpack
 	name = "rucksack"
@@ -29775,6 +34769,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/back_l.dmi'
 	slot_flags = ITEM_SLOT_BACK
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -29782,6 +34777,7 @@
 	inhand_y_dimension = 64
 	inhand_icon_state = null
 	worn_icon_state = "rucksack"
+	storage_type = /datum/storage/rogue_grid/roguetown/sack/bag
 
 /obj/item/storage/backpack/rogue/satchel
 	name = "satchel"
@@ -29794,6 +34790,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/back_l.dmi'
 	slot_flags = ITEM_SLOT_BACK
+	rogue_inhand = TRUE
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -29803,6 +34800,7 @@
 	worn_icon_backr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/back_r.dmi'
 	inhand_icon_state = null
 	worn_icon_state = "satchel"
+	storage_type = /datum/storage/rogue_grid/roguetown/satchel
 
 /obj/item/storage/backpack/rogue/satchel/black
 	name = "satchel"
@@ -29815,6 +34813,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/back_l.dmi'
 	slot_flags = ITEM_SLOT_BACK
+	rogue_inhand = TRUE
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -29824,6 +34823,7 @@
 	worn_icon_backr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/back_r.dmi'
 	inhand_icon_state = null
 	worn_icon_state = "satchel"
+	storage_type = /datum/storage/rogue_grid/roguetown/satchel
 
 /obj/item/storage/backpack/rogue/satchel/otavan
 	name = "otavan leather satchel"
@@ -29836,6 +34836,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/back_l.dmi'
 	slot_flags = ITEM_SLOT_BACK
+	rogue_inhand = TRUE
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -29845,6 +34846,7 @@
 	worn_icon_backr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/back_r.dmi'
 	inhand_icon_state = null
 	worn_icon_state = "osatchel"
+	storage_type = /datum/storage/rogue_grid/roguetown/satchel
 
 /obj/item/storage/backpack/rogue/satchel/short
 	name = "short satchel"
@@ -29858,6 +34860,7 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/back_l.dmi'
 	worn_icon_state = "satchelshort"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -29866,6 +34869,7 @@
 	inhand_y_dimension = 64
 	worn_icon_backr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/back_r.dmi'
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/satchelshort
 
 /obj/item/storage/belt/rogue/leather
 	name = "belt"
@@ -29878,13 +34882,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
 	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "leather"
+	rogue_female_worn = TRUE
+	storage_type = /datum/storage/rogue_grid/roguetown/belt
 
 /obj/item/storage/belt/rogue/leather/
 	name = "belt"
@@ -29897,13 +34906,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
 	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "leather"
+	rogue_female_worn = TRUE
+	storage_type = /datum/storage/rogue_grid/roguetown/belt
 
 /obj/item/storage/belt/rogue/leather/black
 	name = "black belt"
@@ -29916,13 +34930,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
 	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "blackbelt"
+	rogue_female_worn = TRUE
+	storage_type = /datum/storage/rogue_grid/roguetown/belt
 
 /obj/item/storage/belt/rogue/leather/cloth
 	name = "cloth sash"
@@ -29935,13 +34954,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
 	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "leather"
+	rogue_female_worn = TRUE
+	storage_type = /datum/storage/rogue_grid/roguetown/belt/cloth
 
 /obj/item/storage/belt/rogue/leather/exoticsilkbelt
 	name = "exotic silk belt"
@@ -29954,13 +34978,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
 	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "leather"
+	rogue_female_worn = TRUE
+	storage_type = /datum/storage/rogue_grid/roguetown/belt
 
 /obj/item/storage/belt/rogue/leather/exoticsilkbelt/skirtgreen
 	name = "green exotic silk skirt"
@@ -29970,15 +34999,19 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/belt
 
 /obj/item/storage/belt/rogue/leather/exoticsilkbelt/skirtred
 	name = "red exotic silk skirt"
@@ -29988,15 +35021,19 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/belt
 
 /obj/item/storage/belt/rogue/leather/knifebelt
 	name = "tossblade belt"
@@ -30009,13 +35046,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
 	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "knife"
+	rogue_female_worn = TRUE
+	storage_type = /datum/storage/rogue_grid/roguetown/belt/knife_belt
 
 /obj/item/storage/belt/rogue/leather/knifebelt/black/psydon
 	name = "tossblade belt"
@@ -30028,13 +35070,17 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
 	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "blackknife"
+	storage_type = /datum/storage/rogue_grid/roguetown/belt/knife_belt
 
 /obj/item/storage/belt/rogue/leather/knifebelt/black/steel
 	name = "tossblade belt"
@@ -30047,13 +35093,17 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
 	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "blackknife"
+	storage_type = /datum/storage/rogue_grid/roguetown/belt/knife_belt
 
 /obj/item/storage/belt/rogue/leather/knifebelt/iron
 	name = "tossblade belt"
@@ -30066,13 +35116,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
 	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "knife"
+	rogue_female_worn = TRUE
+	storage_type = /datum/storage/rogue_grid/roguetown/belt/knife_belt
 
 /obj/item/storage/belt/rogue/leather/plaquegold
 	name = "plaque belt"
@@ -30085,13 +35140,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
 	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "leather"
+	rogue_female_worn = TRUE
+	storage_type = /datum/storage/rogue_grid/roguetown/belt
 
 /obj/item/storage/belt/rogue/leather/plaquegold/steward
 	name = "fancy gold belt"
@@ -30104,13 +35164,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
 	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "stewardbelt"
+	rogue_female_worn = TRUE
+	storage_type = /datum/storage/rogue_grid/roguetown/belt
 
 /obj/item/storage/belt/rogue/leather/plaquesilver
 	name = "plaque belt"
@@ -30123,13 +35188,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
 	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "leather"
+	rogue_female_worn = TRUE
+	storage_type = /datum/storage/rogue_grid/roguetown/belt
 
 /obj/item/storage/belt/rogue/leather/rope
 	name = "rope belt"
@@ -30142,13 +35212,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
 	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "rope"
+	rogue_female_worn = TRUE
+	storage_type = /datum/storage/rogue_grid/roguetown/belt/cloth
 
 /obj/item/storage/belt/rogue/leather/shalal
 	name = "shalal belt"
@@ -30161,13 +35236,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
 	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "leather"
+	rogue_female_worn = TRUE
+	storage_type = /datum/storage/rogue_grid/roguetown/belt
 
 /obj/item/storage/belt/rogue/leather/steel
 	name = "steel belt"
@@ -30180,13 +35260,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
 	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "leather"
+	rogue_female_worn = TRUE
+	storage_type = /datum/storage/rogue_grid/roguetown/belt
 
 /obj/item/storage/belt/rogue/leather/steel/tasset
 	name = "tasseted belt"
@@ -30199,13 +35284,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
 	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "leather"
+	rogue_female_worn = TRUE
+	storage_type = /datum/storage/rogue_grid/roguetown/belt
 
 /obj/item/storage/belt/rogue/leather/suspenders/butler
 	name = "suspenders"
@@ -30218,13 +35308,18 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
 	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "butlersuspenders"
+	rogue_female_worn = TRUE
+	storage_type = /datum/storage/rogue_grid/roguetown/belt
 
 /obj/item/storage/belt/rogue/pouch
 	name = "pouch"
@@ -30238,14 +35333,18 @@
 	worn_icon = null
 	worn_icon_state = "pouch"
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	worn_icon_hipl = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_l.dmi'
 	worn_icon_hipr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_r.dmi'
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/coin_pouch
 
 /obj/item/storage/belt/rogue/pouch/coins/mid
 	name = "pouch"
@@ -30259,14 +35358,18 @@
 	worn_icon = null
 	worn_icon_state = "pouch"
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	worn_icon_hipl = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_l.dmi'
 	worn_icon_hipr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_r.dmi'
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/coin_pouch
 
 /obj/item/storage/belt/rogue/pouch/coins/poor
 	name = "pouch"
@@ -30280,14 +35383,18 @@
 	worn_icon = null
 	worn_icon_state = "pouch"
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	worn_icon_hipl = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_l.dmi'
 	worn_icon_hipr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_r.dmi'
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/coin_pouch
 
 /obj/item/storage/belt/rogue/pouch/coins/rich
 	name = "pouch"
@@ -30301,14 +35408,18 @@
 	worn_icon = null
 	worn_icon_state = "pouch"
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	worn_icon_hipl = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_l.dmi'
 	worn_icon_hipr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_r.dmi'
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/coin_pouch
 
 /obj/item/storage/belt/rogue/pouch/coins/veryrich
 	name = "pouch"
@@ -30322,14 +35433,18 @@
 	worn_icon = null
 	worn_icon_state = "pouch"
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	worn_icon_hipl = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_l.dmi'
 	worn_icon_hipr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_r.dmi'
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/coin_pouch
 
 /obj/item/storage/belt/rogue/surgery_bag
 	name = "surgeon's bag"
@@ -30343,12 +35458,16 @@
 	worn_icon = null
 	worn_icon_state = ""
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/surgery_bag
 
 /obj/item/storage/belt/rogue/surgery_bag/full
 	name = "surgeon's bag"
@@ -30362,12 +35481,16 @@
 	worn_icon = null
 	worn_icon_state = ""
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/surgery_bag
 
 /obj/item/storage/belt/rogue/surgery_bag/full/physician
 	name = "surgeon's bag"
@@ -30381,12 +35504,16 @@
 	worn_icon = null
 	worn_icon_state = ""
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/surgery_bag
 
 /obj/item/storage/hip/orestore/bronze
 	name = "mechanized ore bag"
@@ -30399,12 +35526,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "rucksack"
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/grid/orestore/bronze
 
 /obj/item/storage/keyring
 	name = "keyring"
@@ -30418,12 +35547,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/archivist
 	name = "keyring"
@@ -30437,6 +35568,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/manor, /obj/item/roguekey/archive, /obj/item/roguekey/tower)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -30444,6 +35576,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/baronretainer
 	name = "baron-retainer keyring"
@@ -30457,6 +35590,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/warden, /obj/item/roguekey/walls, /obj/item/roguekey/slaverdungeon, /obj/item/roguekey/slaverpillory, /obj/item/roguekey/slaverhouse)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -30464,6 +35598,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/bathsi
 	name = "baths room I keyring"
@@ -30477,6 +35612,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/nightmaiden/rooms/i, /obj/item/roguekey/nightmaiden/rooms/i, /obj/item/roguekey/nightmaiden/rooms/i, /obj/item/roguekey/nightmaiden/rooms/i)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -30484,6 +35620,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/bathsii
 	name = "baths room II keyring"
@@ -30497,6 +35634,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/nightmaiden/rooms/ii, /obj/item/roguekey/nightmaiden/rooms/ii, /obj/item/roguekey/nightmaiden/rooms/ii, /obj/item/roguekey/nightmaiden/rooms/ii)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -30504,6 +35642,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/bathsiii
 	name = "baths room III keyring"
@@ -30517,6 +35656,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/nightmaiden/rooms/iii, /obj/item/roguekey/nightmaiden/rooms/iii, /obj/item/roguekey/nightmaiden/rooms/iii, /obj/item/roguekey/nightmaiden/rooms/iii)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -30524,6 +35664,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/bathsiv
 	name = "baths room IV keyring"
@@ -30537,6 +35678,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/nightmaiden/rooms/iv, /obj/item/roguekey/nightmaiden/rooms/iv, /obj/item/roguekey/nightmaiden/rooms/iv, /obj/item/roguekey/nightmaiden/rooms/iv)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -30544,6 +35686,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/bathspunish
 	name = "baths punishment room keyring"
@@ -30557,6 +35700,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/nightmaiden/rooms/punish, /obj/item/roguekey/nightmaiden/rooms/punish, /obj/item/roguekey/nightmaiden/rooms/punish, /obj/item/roguekey/nightmaiden/rooms/punish)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -30564,6 +35708,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/bathssteam
 	name = "baths steam room keyring"
@@ -30577,6 +35722,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/nightmaiden/rooms/steam, /obj/item/roguekey/nightmaiden/rooms/steam, /obj/item/roguekey/nightmaiden/rooms/steam, /obj/item/roguekey/nightmaiden/rooms/steam)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -30584,6 +35730,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/bathsv
 	name = "baths room V keyring"
@@ -30597,6 +35744,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/nightmaiden/rooms/v, /obj/item/roguekey/nightmaiden/rooms/v, /obj/item/roguekey/nightmaiden/rooms/v, /obj/item/roguekey/nightmaiden/rooms/v)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -30604,6 +35752,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/chaplain
 	name = "keyring"
@@ -30617,6 +35766,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/church, /obj/item/roguekey/graveyard, /obj/item/roguekey/manor)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -30624,6 +35774,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/churchie
 	name = "keyring"
@@ -30637,6 +35788,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/church, /obj/item/roguekey/graveyard, /obj/item/roguekey/keeper)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -30644,6 +35796,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/dungeoneer
 	name = "keyring"
@@ -30657,6 +35810,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/armory)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -30664,6 +35818,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/guard
 	name = "keyring"
@@ -30677,6 +35832,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/warden, /obj/item/roguekey/walls)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -30684,6 +35840,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/guardcastle
 	name = "keyring"
@@ -30697,6 +35854,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/armory)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -30704,6 +35862,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/guardsergeant
 	name = "keyring"
@@ -30717,6 +35876,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/warden, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/armory, /obj/item/roguekey/sergeant)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -30724,6 +35884,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/guildmaster
 	name = "keyring"
@@ -30737,6 +35898,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/crafterguild, /obj/item/roguekey/tailor, /obj/item/roguekey/craftermaster, /obj/item/seal/guildmaster)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -30744,6 +35906,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/hand
 	name = "keyring"
@@ -30757,6 +35920,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/hand, /obj/item/roguekey/steward, /obj/item/roguekey/tavern, /obj/item/roguekey/church, /obj/item/roguekey/walls, /obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/manor, /obj/item/roguekey/graveyard, /obj/item/roguekey/armory, /obj/item/roguekey/sergeant, /obj/item/roguekey/knight, /obj/item/roguekey/servant, /obj/item/seal/hand)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -30764,6 +35928,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/heir
 	name = "keyring"
@@ -30777,6 +35942,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/manor, /obj/item/roguekey/heir, /obj/item/roguekey/garrison, /obj/item/roguekey/servant)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -30784,6 +35950,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/innkeep
 	name = "keyring"
@@ -30797,6 +35964,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/tavern, /obj/item/roguekey/tavernkeep, /obj/item/roguekey/roomhunt, /obj/item/roguekey/roomix, /obj/item/roguekey/roomviii, /obj/item/roguekey/roomvii, /obj/item/roguekey/roomvi, /obj/item/roguekey/roomv, /obj/item/roguekey/roomiv, /obj/item/roguekey/roomiii, /obj/item/roguekey/roomii, /obj/item/roguekey/roomi, /obj/item/roguekey/fancyroomi, /obj/item/roguekey/fancyroomii, /obj/item/roguekey/fancyroomiii, /obj/item/roguekey/fancyroomiv, /obj/item/roguekey/fancyroomv)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -30804,6 +35972,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/kcaptain
 	name = "keyring"
@@ -30817,6 +35986,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/sheriff, /obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/armory, /obj/item/roguekey/sergeant, /obj/item/roguekey/knight, /obj/item/seal/knight_captain)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -30824,6 +35994,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/lord
 	name = "keyring"
@@ -30837,6 +36008,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/hand, /obj/item/roguekey/steward, /obj/item/roguekey/tavern, /obj/item/roguekey/church, /obj/item/roguekey/walls, /obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/manor, /obj/item/roguekey/graveyard, /obj/item/roguekey/royal, /obj/item/roguekey/armory, /obj/item/roguekey/sergeant, /obj/item/roguekey/knight, /obj/item/roguekey/servant, /obj/item/seal/crown)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -30844,6 +36016,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/mage
 	name = "keyring"
@@ -30857,6 +36030,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/manor, /obj/item/roguekey/tower, /obj/item/roguekey/mage)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -30864,6 +36038,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/mageapprentice
 	name = "keyring"
@@ -30877,6 +36052,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/manor, /obj/item/roguekey/tower)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -30884,6 +36060,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/manor/counsilroom/i
 	name = "Counsillor's Room I Keyring"
@@ -30897,6 +36074,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/manor/counsilroom/i, /obj/item/roguekey/manor/counsilroom/i)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -30904,6 +36082,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/manor/counsilroom/ii
 	name = "Counsillor's Room II Keyring"
@@ -30917,6 +36096,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/manor/counsilroom/ii, /obj/item/roguekey/manor/counsilroom/ii)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -30924,6 +36104,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/manor/counsilroom/iii
 	name = "Counsillor's Room III Keyring"
@@ -30937,6 +36118,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/manor/counsilroom/iii, /obj/item/roguekey/manor/counsilroom/iii)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -30944,6 +36126,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/merchant
 	name = "keyring"
@@ -30957,6 +36140,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/shop, /obj/item/roguekey/merchant, /obj/item/seal/merchant)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -30964,6 +36148,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/nightman
 	name = "keyring"
@@ -30977,6 +36162,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/nightman, /obj/item/roguekey/nightmaiden, /obj/item/seal/nightmaster)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -30984,6 +36170,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/physician
 	name = "keyring"
@@ -30997,6 +36184,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/manor, /obj/item/roguekey/garrison, /obj/item/roguekey/physician, /obj/item/roguekey/courtphysician, /obj/item/roguekey/keeper)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -31004,6 +36192,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/priest
 	name = "keyring"
@@ -31017,6 +36206,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/priest, /obj/item/roguekey/church, /obj/item/roguekey/graveyard, /obj/item/seal/prelate)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -31024,6 +36214,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/puritan
 	name = "keyring"
@@ -31037,6 +36228,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/puritan, /obj/item/roguekey/inquisition)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -31044,6 +36236,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/rockhillslaver
 	name = "keyring"
@@ -31057,6 +36250,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/slaverdungeon, /obj/item/roguekey/slaverpillory, /obj/item/roguekey/slaverhouse)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -31064,6 +36258,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/rockhillslaves
 	name = "keyring"
@@ -31077,6 +36272,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/slaverhouse)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -31084,6 +36280,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/servant
 	name = "keyring"
@@ -31097,6 +36294,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/manor, /obj/item/roguekey/garrison, /obj/item/roguekey/servant)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -31104,6 +36302,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/sheriff
 	name = "keyring"
@@ -31117,6 +36316,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/sheriff, /obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/armory, /obj/item/roguekey/sergeant, /obj/item/roguekey/knight, /obj/item/seal/marshal)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -31124,6 +36324,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/soilson
 	name = "keyring"
@@ -31137,6 +36338,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/farm, /obj/item/roguekey/apartments/stable1, /obj/item/roguekey/apartments/stable2)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -31144,6 +36346,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/squire
 	name = "keyring"
@@ -31157,6 +36360,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/armory)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -31164,6 +36368,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/steward
 	name = "keyring"
@@ -31177,6 +36382,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/steward, /obj/item/roguekey/garrison, /obj/item/roguekey/manor, /obj/item/roguekey/servant, /obj/item/seal/steward)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -31184,6 +36390,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/tailor
 	name = "keyring"
@@ -31197,6 +36404,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/crafterguild, /obj/item/roguekey/tailor)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -31204,6 +36412,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/wardenmaster
 	name = "keyring"
@@ -31217,6 +36426,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/sheriff, /obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/armory, /obj/item/roguekey/sergeant, /obj/item/roguekey/warden, /obj/item/seal/master_warden)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -31224,6 +36434,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/keyring/watchcaptain
 	name = "keyring"
@@ -31237,6 +36448,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
 	rockhill_keys = list(/obj/item/roguekey/sheriff, /obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/armory, /obj/item/roguekey/sergeant, /obj/item/roguekey/knight, /obj/item/seal/watchcaptain)
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -31244,6 +36456,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
 /obj/item/storage/magebag/associate
 	name = "scholar's pouch"
@@ -31256,12 +36469,14 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "summoning"
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/grid/magebag
 
 /obj/item/storage/pill_bottle/dice
 	name = "bag of gaming dice"
@@ -31273,12 +36488,16 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/dice_pouch
 
 /obj/item/storage/pill_bottle/dice/bakers_dozen
 	name = "bag of baker's dozen dice"
@@ -31290,12 +36509,16 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/dice_pouch
 
 /obj/item/storage/pill_bottle/dice/dice_poker
 	name = "bag of dice poker dice"
@@ -31307,12 +36530,16 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/dice_pouch
 
 /obj/item/storage/pill_bottle/dice/dice_war
 	name = "bag of war dice"
@@ -31324,12 +36551,16 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/dice_pouch
 
 /obj/item/storage/pill_bottle/dice/dwarven
 	name = "bag of dwarven dice"
@@ -31341,12 +36572,16 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/dice_pouch
 
 /obj/item/storage/pill_bottle/dice/farkle
 	name = "bag of farkle dice"
@@ -31358,12 +36593,16 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/dice_pouch
 
 /obj/item/storage/pill_bottle/dice/hazard
 	name = "bag of gaming dice"
@@ -31375,12 +36614,16 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/dice_pouch
 
 /obj/item/storage/pill_bottle/dice/liars_dice
 	name = "bag of liar's dice"
@@ -31392,12 +36635,16 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/dice_pouch
 
 /obj/item/storage/pill_bottle/dice/threes_away
 	name = "bag of three's away dice"
@@ -31409,12 +36656,16 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/dice_pouch
 
 /obj/item/storage/roguebag
 	name = "sack"
@@ -31427,13 +36678,17 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head_items.dmi'
 	slot_flags = ITEM_SLOT_HEAD
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "cbag"
+	storage_type = /datum/storage/rogue_grid/roguetown/sack
 
 /obj/item/storage/roguebag/food
 	name = "sack"
@@ -31446,13 +36701,17 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head_items.dmi'
 	slot_flags = ITEM_SLOT_HEAD
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "cbag"
+	storage_type = /datum/storage/rogue_grid/roguetown/sack
 
 /obj/item/tablecloth/silk
 	name = "silk tablecloth"
@@ -31464,11 +36723,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
 	inhand_icon_state = null
 
 /obj/item/tntstick
@@ -31484,6 +36746,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -31503,11 +36766,14 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/trash/applecore
@@ -31521,6 +36787,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -31538,6 +36805,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = null
+	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32

@@ -23,6 +23,11 @@
 	icon = 'modular_redtard/rockhill/icons/obj/stairscurve.dmi'
 	icon_state = "woodCWdown"
 
+/obj/structure/rockhill/stairs/d
+	name = "stairs"
+	icon = 'modular_redtard/rockhill/icons/obj/stairs.dmi'
+	icon_state = "stairs"
+
 /obj/structure/rockhill/stairs/dark
 	name = "stairs"
 	icon = 'modular_redtard/rockhill/icons/obj/stairs.dmi'

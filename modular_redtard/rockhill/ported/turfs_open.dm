@@ -189,6 +189,13 @@
 	icon_state = "dirt"
 	smoothing_flags = SMOOTH_BITMASK_CARDINALS
 
+/turf/open/floor/rogue/dirt/ambush
+	name = "dirt"
+	desc = "The dirt is pocked with the scars of countless wars."
+	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
+	icon_state = "dirt"
+	smoothing_flags = SMOOTH_BITMASK_CARDINALS
+
 /turf/open/floor/rogue/dirt/nospawn
 	name = "dirt"
 	desc = "The dirt is pocked with the scars of countless wars."

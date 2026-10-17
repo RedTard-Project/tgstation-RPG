@@ -194,6 +194,25 @@
 	item_chair = null
 	layer = OBJ_LAYER
 
+/obj/structure/chair/wood/rockhill/frankenstein/zizo
+	name = "Fulmenor chair"
+	desc = "A nightmarish contraption of pipes, and sparking electrodes. It seems permanently fixed to the ground. Affectionately known as the ZRONK device."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/struc48x48.dmi'
+	icon_state = "frankenchair0"
+	density = FALSE
+	pixel_x = -8
+	item_chair = null
+	layer = OBJ_LAYER
+
+/obj/structure/chair/wood/rockhill/freedomchair
+	name = "LIBERTAS"
+	desc = "A chair-shaped machine normally used to place cursed collars onto a prisoner's neck. This one's been tampered with, and now does the opposite - re-purposed to remove those wretched iron collars."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/machines.dmi'
+	icon_state = "evilchair"
+	color = "#F75D59"
+	item_chair = null
+	layer = OBJ_LAYER
+
 /obj/structure/chair/wood/rockhill/hotspring_bench
 	name = "park bench"
 	desc = ""
@@ -673,6 +692,7 @@
 	icon_state = "drawer5"
 	density = TRUE
 	pixel_y = 16
+	dir = SOUTH
 	base_icon_state = "drawer5"
 	keylock = FALSE
 	locked = FALSE
@@ -778,6 +798,7 @@
 	icon_state = "closet3"
 	density = TRUE
 	pixel_y = 16
+	dir = SOUTH
 	base_icon_state = "closet3"
 	keylock = FALSE
 	locked = FALSE
@@ -859,6 +880,7 @@
 	icon_state = "shelf"
 	density = FALSE
 	pixel_y = 32
+	dir = SOUTH
 	layer = TABLE_LAYER
 
 /obj/structure/rack/rockhill/rogue/shelf/big
@@ -868,6 +890,7 @@
 	icon_state = "shelf_big"
 	density = FALSE
 	pixel_y = 16
+	dir = SOUTH
 	layer = TABLE_LAYER
 
 /obj/structure/rack/rockhill/rogue/shelf/biggest
@@ -877,6 +900,7 @@
 	icon_state = "shelf_biggest"
 	density = FALSE
 	pixel_y = 0
+	dir = SOUTH
 	layer = TABLE_LAYER
 
 /obj/structure/rack/rockhill/rogue/shelf/notdense
@@ -886,6 +910,7 @@
 	icon_state = "shelf"
 	density = FALSE
 	pixel_y = 24
+	dir = SOUTH
 	layer = TABLE_LAYER
 
 /obj/structure/table/wood/rockhill/church
@@ -1187,6 +1212,14 @@
 	density = TRUE
 	layer = TABLE_LAYER
 
+/obj/structure/table/wood/rockhill/wood/map/five
+	name = "wooden table"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tables.dmi'
+	icon_state = "map5"
+	density = TRUE
+	layer = TABLE_LAYER
+
 /obj/structure/table/wood/rockhill/wood/map/four
 	name = "wooden table"
 	desc = ""
@@ -1208,6 +1241,14 @@
 	desc = ""
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tables.dmi'
 	icon_state = "map3"
+	density = TRUE
+	layer = TABLE_LAYER
+
+/obj/structure/table/wood/rockhill/wood/map/two
+	name = "wooden table"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tables.dmi'
+	icon_state = "map2"
 	density = TRUE
 	layer = TABLE_LAYER
 

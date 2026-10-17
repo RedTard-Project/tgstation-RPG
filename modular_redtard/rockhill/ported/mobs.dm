@@ -7,6 +7,14 @@
 /mob/living/simple_animal/pet
 	parent_type = /mob/living/basic/rockhill
 
+/mob/living/carbon/spirit
+	parent_type = /mob/living/basic/rockhill
+	name = "Wanderer"
+	icon = 'modular_redtard/rockhill/icons/roguetown/underworld/enigma_husks.dmi'
+	icon_state = "hollow"
+	health = 100
+	maxHealth = 100
+
 /mob/living/simple_animal/butterfly
 	parent_type = /mob/living/basic/rockhill
 	name = "butterfly"
@@ -28,6 +36,16 @@
 	icon_dead = "chicken_brown_dead"
 	health = 15
 	maxHealth = 15
+
+/mob/living/simple_animal/hostile/retaliate/bat
+	name = "bat"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/mob/animal.dmi'
+	icon_state = "bat"
+	icon_living = "bat"
+	icon_dead = "bat_dead"
+	health = 50
+	maxHealth = 50
 
 /mob/living/simple_animal/hostile/retaliate/frog
 	name = "frog"
@@ -265,6 +283,13 @@
 	icon_living = "MinotaurFem_Axe"
 	icon_dead = "MinotaurFem_dead"
 	pixel_x = -16
+
+/mob/living/simple_animal/hostile/retaliate/rogue/mirespider
+	name = "mire crawler"
+	icon = 'modular_redtard/rockhill/icons/modular_hearthstone/icons/mob/mirespider_small.dmi'
+	icon_state = "crawler"
+	icon_living = "crawler"
+	icon_dead = "crawler_dead"
 
 /mob/living/simple_animal/hostile/retaliate/rogue/mirespider/angry
 	name = "mire crawler"
@@ -523,6 +548,13 @@
 	icon_living = "lurker"
 	icon_dead = "lurker_dead"
 	pixel_x = -4
+
+/mob/living/simple_animal/hostile/rogue/mirespider_paralytic
+	name = "aragn"
+	icon = 'modular_redtard/rockhill/icons/modular_hearthstone/icons/mob/mirespider_small.dmi'
+	icon_state = "aragn"
+	icon_living = "aragn"
+	icon_dead = "aragn_dead"
 
 /mob/living/simple_animal/hostile/rogue/mirespider_paralytic/angry
 	name = "aragn"

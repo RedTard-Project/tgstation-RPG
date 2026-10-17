@@ -147,6 +147,60 @@
 	pixel_y = -64
 	color = null
 
+/obj/effect/decal/cleanable/sigil
+	name = "sigils"
+	desc = "Strange runics."
+	icon = 'modular_redtard/rockhill/icons/effects/sigils.dmi'
+	icon_state = "center"
+
+/obj/effect/decal/cleanable/sigil/E
+	name = "sigils"
+	desc = "Strange runics."
+	icon = 'modular_redtard/rockhill/icons/effects/sigils.dmi'
+	icon_state = "E"
+
+/obj/effect/decal/cleanable/sigil/N
+	name = "sigils"
+	desc = "Strange runics."
+	icon = 'modular_redtard/rockhill/icons/effects/sigils.dmi'
+	icon_state = "N"
+
+/obj/effect/decal/cleanable/sigil/NE
+	name = "sigils"
+	desc = "Strange runics."
+	icon = 'modular_redtard/rockhill/icons/effects/sigils.dmi'
+	icon_state = "NE"
+
+/obj/effect/decal/cleanable/sigil/NW
+	name = "sigils"
+	desc = "Strange runics."
+	icon = 'modular_redtard/rockhill/icons/effects/sigils.dmi'
+	icon_state = "NW"
+
+/obj/effect/decal/cleanable/sigil/S
+	name = "sigils"
+	desc = "Strange runics."
+	icon = 'modular_redtard/rockhill/icons/effects/sigils.dmi'
+	icon_state = "S"
+
+/obj/effect/decal/cleanable/sigil/SE
+	name = "sigils"
+	desc = "Strange runics."
+	icon = 'modular_redtard/rockhill/icons/effects/sigils.dmi'
+	icon_state = "SE"
+
+/obj/effect/decal/cleanable/sigil/SW
+	name = "sigils"
+	desc = "Strange runics."
+	icon = 'modular_redtard/rockhill/icons/effects/sigils.dmi'
+	icon_state = "SW"
+
+/obj/effect/decal/cleanable/sigil/W
+	name = "sigils"
+	desc = "Strange runics."
+	icon = 'modular_redtard/rockhill/icons/effects/sigils.dmi'
+	icon_state = "W"
+
 /obj/effect/decal/cobble/mossy
 	name = "mossy brick floor"
 	desc = "Dirt and moss have crept between the gaps of this stone-brick flooring. Rather fitting for an outdoor garden; not so much for a home."
@@ -158,6 +212,12 @@
 	desc = "Erosion and time have worn this path to half-scattered rocks slowly sinking back into the earth."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "cobblestone_edges"
+
+/obj/effect/decal/edge
+	name = "stone edge"
+	desc = "A piece of stone used to border city roads."
+	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
+	icon_state = "border"
 
 /obj/effect/decal/edge/desert_gray
 	name = "stone edge"
@@ -234,3 +294,9 @@
 	desc = "thin planks of wood carefully arranged in a rather pleasing pattern."
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "herringbonewoodedge"
+
+/obj/effect/turf_decal/magedecal
+	icon = 'modular_redtard/rockhill/icons/effects/96x96.dmi'
+	icon_state = "imbuement2"
+	plane = GAME_PLANE
+	layer = 2.039

@@ -358,6 +358,7 @@
 	light_range = 12
 	light_power = 1
 	light_color = "#ffa35c"
+	dir = SOUTH
 	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/firebowl/church
@@ -369,6 +370,7 @@
 	light_range = 12
 	light_power = 1
 	light_color = "#ffa35c"
+	dir = SOUTH
 	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/firebowl/church/off
@@ -380,6 +382,7 @@
 	light_range = 12
 	light_power = 1
 	light_color = "#ffa35c"
+	dir = SOUTH
 	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/firebowl/off
@@ -391,6 +394,7 @@
 	light_range = 12
 	light_power = 1
 	light_color = "#ffa35c"
+	dir = SOUTH
 	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/firebowl/standing
@@ -402,6 +406,7 @@
 	light_range = 12
 	light_power = 1
 	light_color = "#ff9648"
+	dir = SOUTH
 	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/firebowl/standing/blue
@@ -413,6 +418,7 @@
 	light_range = 12
 	light_power = 1
 	light_color = "#7b60f3"
+	dir = SOUTH
 	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/firebowl/standing/green
@@ -424,6 +430,7 @@
 	light_range = 12
 	light_power = 1
 	light_color = "#8ee2a7"
+	dir = SOUTH
 	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/firebowl/standing/red
@@ -435,6 +442,7 @@
 	light_range = 12
 	light_power = 1
 	light_color = "#f02929"
+	dir = SOUTH
 	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/firebowl/stump
@@ -446,6 +454,7 @@
 	light_range = 12
 	light_power = 1
 	light_color = "#ffa35c"
+	dir = SOUTH
 	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/forge
@@ -492,6 +501,7 @@
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	dir = EAST
 	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/oven/north
@@ -504,6 +514,7 @@
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	dir = NORTH
 	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/oven/south
@@ -516,6 +527,7 @@
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	dir = SOUTH
 	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/oven/west
@@ -528,6 +540,7 @@
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	dir = WEST
 	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/smelter
@@ -632,6 +645,7 @@
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	dir = EAST
 	plane = ABOVE_GAME_PLANE
 	layer = WALL_OBJ_LAYER
 
@@ -644,6 +658,7 @@
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
+	dir = WEST
 	plane = ABOVE_GAME_PLANE
 	layer = WALL_OBJ_LAYER
 

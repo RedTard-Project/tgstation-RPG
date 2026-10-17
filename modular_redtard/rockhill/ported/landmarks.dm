@@ -1,11 +1,18 @@
 /obj/effect/landmark/start/rockhill/absolver
 	name = JOB_ROCKHILL_ABSOLVER
 
+/obj/effect/landmark/start/rockhill/adventurerlate
+	rockhill_latejoin_roles = list("Adventurer", "Refugee")
+
 /obj/effect/landmark/start/rockhill/apothecary
 	name = JOB_ROCKHILL_APOTHECARY
 
 /obj/effect/landmark/start/rockhill/archivist
 	name = JOB_ROCKHILL_ARCHIVIST
+
+/obj/effect/landmark/start/rockhill/bandit
+
+/obj/effect/landmark/start/rockhill/banditlate
 
 /obj/effect/landmark/start/rockhill/barkeep
 	name = JOB_ROCKHILL_INNKEEPER
@@ -56,6 +63,10 @@
 /obj/effect/landmark/start/rockhill/farmer
 	name = JOB_ROCKHILL_SOILSON
 
+/obj/effect/landmark/start/rockhill/gnoll
+
+/obj/effect/landmark/start/rockhill/gnolllate
+
 /obj/effect/landmark/start/rockhill/gravedigger
 	name = JOB_ASSISTANT
 
@@ -91,6 +102,8 @@
 
 /obj/effect/landmark/start/rockhill/lady
 	name = JOB_ASSISTANT
+
+/obj/effect/landmark/start/rockhill/lich
 
 /obj/effect/landmark/start/rockhill/lord
 	name = JOB_ROCKHILL_GRAND_DUKE
@@ -191,6 +204,12 @@
 /obj/effect/landmark/start/rockhill/vagrant
 	name = JOB_ASSISTANT
 
+/obj/effect/landmark/start/rockhill/vampireknight
+
+/obj/effect/landmark/start/rockhill/vampirelord
+
+/obj/effect/landmark/start/rockhill/vampirespawn
+
 /obj/effect/landmark/start/rockhill/vanguard
 	name = JOB_ROCKHILL_VANGUARD
 
@@ -202,3 +221,10 @@
 
 /obj/effect/landmark/start/rockhill/wapprentice
 	name = JOB_ROCKHILL_MAGICIANS_ASSOCIATE
+
+/obj/effect/landmark/start/rockhill/wretch
+	name = JOB_ROCKHILL_WRETCH
+	rockhill_latejoin_roles = list("Wretch")
+
+/obj/effect/landmark/start/rockhill/wretchlate
+	rockhill_latejoin_roles = list("Wretch")

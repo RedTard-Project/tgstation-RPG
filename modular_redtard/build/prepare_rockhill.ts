@@ -31,7 +31,7 @@ type Rule = { prefix: string; to?: string; rebase?: string; drop?: boolean; exac
 type TitleSource = { file: string; name: string; kind: 'png' | 'dmi'; origin: string };
 
 type Config = {
-  source: { name: string; project: string; url: string; repository: string; branch: string };
+  source: { name: string; project: string; url: string; repository: string; branch: string; map: string; map_json?: string };
   title: { prefix: string; sources: TitleSource[] };
   output: { map: string; map_json: string; title_dir: string };
   replacements: Rule[];
@@ -43,6 +43,14 @@ type Pop = { path: string; vars: Array<{ name: string; lines: string[] }> };
 type Model = { key: string; pops: Pop[]; sourceTurf?: string };
 
 type Sunlight = { levels: string[]; tiles: number; models: number };
+
+type Traits = Record<string, unknown>;
+
+type MapSource = { label: string; name: string; url: string; output: string; traits: Traits[] };
+
+type Converted = { source: MapSource; header: string[]; models: Model[]; levels: string[] };
+
+type Written = { source: MapSource; sunlight: Sunlight; size: Size; levels: number; usage: Map<string, number> };
 
 type Tally = { kept: number; replaced: number; dropped: number; missing: number };
 
@@ -64,16 +72,9 @@ type Problems = {
 export async function prepareRockhill(): Promise<void> {
   const config = readConfig();
   fs.mkdirSync(TMP_DIR, { recursive: true });
-
-  const source = await downloadText(config.source.url, 'map');
-  const lines = source.split(/\r?\n/);
-  const levelStart = lines.findIndex((line) => LEVEL_LINE.test(line));
-  if (levelStart < 0) {
-    throw new Error('the source map has no level sections');
-  }
-  const header = lines.slice(0, levelStart).filter((line) => line.startsWith('//'));
-  const models = parseModels(lines.slice(0, levelStart));
-  const rawLevels = lines.slice(levelStart);
+  const mapJson = JSON.parse(fs.readFileSync(path.join(SHARED_DIR, 'rockhill.json'), 'utf-8'));
+  const station: MapSource = { label: 'map', name: config.source.name, url: config.source.url, output: config.output.map, traits: mapJson.traits };
+  const sources = [station, ...(await extraMaps(config, mapJson.traits))];
 
   const declarations = declaredTypes();
   const declared = declarations.types;
@@ -87,43 +88,111 @@ export async function prepareRockhill(): Promise<void> {
     turfStates: { mapped: 0, dropped: 0 },
     staleRules: staleReplacementTargets(config.replacements, declared),
   };
-
   const tally: Record<string, Tally> = {};
   const targets = new Map<string, number>();
-  for (const model of models) {
-    model.sourceTurf = lastTurf(model.pops);
-    model.pops = convertPops(model, config.replacements, config.map_vars || {}, declarations, tally, problems, targets);
+
+  const converted: Converted[] = [];
+  for (const source of sources) {
+    const lines = (await downloadText(source.url, source.label)).split(/\r?\n/);
+    const levelStart = lines.findIndex((line) => LEVEL_LINE.test(line));
+    if (levelStart < 0) {
+      throw new Error(`${source.url} has no level sections`);
+    }
+    const models = parseModels(lines.slice(0, levelStart));
+    for (const model of models) {
+      model.sourceTurf = lastTurf(model.pops);
+      model.pops = convertPops(model, config.replacements, config.map_vars || {}, declarations, tally, problems, targets);
+    }
+    const header = lines.slice(0, levelStart).filter((line) => line.startsWith('//'));
+    converted.push({ source, header, models, levels: lines.slice(levelStart) });
   }
   reportProblems(config, problems);
 
-  const sunlight = applySunlight(models, rawLevels, declared);
-  const levels = sunlight.levels;
-  const usage = tileUsage(models, levels);
-  const spawns = [...usage.entries()].filter(([atomPath]) => atomPath.startsWith(`${SPAWN_ROOT}/`)).reduce((total, [, count]) => total + count, 0);
-  if (!spawns) {
-    throw new Error(`the converted map has no ${SPAWN_ROOT} landmark; port or replace the start landmarks`);
-  }
-  const latejoins = usage.get(LATEJOIN_TARGET) || 0;
+  const extraDir = path.posix.join(path.posix.dirname(config.output.map), 'otherz');
+  fs.rmSync(extraDir, { recursive: true, force: true });
+  const written: Written[] = converted.map((map) => {
+    const zLevels = levelCount(map.levels);
+    if (map.source !== station && map.source.traits.length !== zLevels) {
+      throw new Error(`${map.source.url} has ${zLevels} z-level(s) but its Ratwood map config lists ${map.source.traits.length} trait set(s)`);
+    }
+    const sunlight = applySunlight(map.models, map.levels, declared);
+    writeMap(map.source.output, map.header, map.models, sunlight.levels);
+    return { source: map.source, sunlight, size: mapSize(sunlight.levels), levels: zLevels, usage: tileUsage(map.models, sunlight.levels) };
+  });
 
+  const count = (atomPath: (candidate: string) => boolean) => written.reduce((total, map) => total + [...map.usage.entries()].filter(([candidate]) => atomPath(candidate)).reduce((sum, [, n]) => sum + n, 0), 0);
+  const spawns = count((candidate) => candidate.startsWith(`${SPAWN_ROOT}/`));
+  if (!spawns) {
+    throw new Error(`the converted maps have no ${SPAWN_ROOT} landmark; port or replace the start landmarks`);
+  }
+  const latejoins = count((candidate) => candidate === LATEJOIN_TARGET);
+
+  const size = written[0].size;
+  mapJson.world_size = [size.width, size.height];
+  mapJson.other_z = written.slice(1).map((map) => ({
+    name: map.source.name,
+    map_path: path.posix.relative('_maps', path.posix.dirname(map.source.output)),
+    map_file: path.posix.basename(map.source.output),
+    traits: map.source.traits,
+  }));
+  fs.mkdirSync(path.dirname(config.output.map_json), { recursive: true });
+  fs.writeFileSync(config.output.map_json, `${JSON.stringify(mapJson, null, '\t')}\n`);
+
+  const titles = await installTitles(config);
+  writeReport(config, tally, problems, targets, titles, written, spawns, latejoins);
+  for (const map of written) {
+    runMaplint(map.source.output);
+  }
+}
+
+async function extraMaps(config: Config, stationTraits: Traits[]): Promise<MapSource[]> {
+  if (!config.source.map_json) {
+    return [];
+  }
+  if (!config.source.url.endsWith(config.source.map)) {
+    throw new Error(`${CONFIG_PATH}: source.url must end with source.map, so the generator can find the other ${config.source.project} files next to it`);
+  }
+  const raw = config.source.url.slice(0, config.source.url.length - config.source.map.length);
+  const world = JSON.parse(await downloadText(raw + config.source.map_json, 'map list')) as { other_z?: string[] };
+  const level = (index: number): Traits => {
+    const template = stationTraits[index === 0 ? 0 : Math.min(1, stationTraits.length - 1)] || {};
+    return Object.fromEntries(Object.entries(template).filter(([key]) => key !== 'Up' && key !== 'Down'));
+  };
+  const out: MapSource[] = [];
+  for (const entry of world.other_z || []) {
+    const conf = JSON.parse(await downloadText(raw + entry, entry)) as { map_name: string; map_path: string; map_file: string; traits?: Traits[] };
+    const id = path.posix.basename(conf.map_file, '.dmm');
+    const traits = conf.traits?.length ? conf.traits : [{}];
+    out.push({
+      label: id,
+      name: conf.map_name,
+      url: `${raw}_maps/${conf.map_path}/${conf.map_file}`,
+      output: path.posix.join(path.posix.dirname(config.output.map), 'otherz', `${id}.dmm`),
+      traits: traits.map((own, index) => ({ ...level(index), ...Object.fromEntries(Object.entries(own).filter(([key]) => key !== 'Name')) })),
+    });
+  }
+  return out;
+}
+
+function writeMap(output: string, header: string[], models: Model[], levels: string[]): void {
   const out: string[] = [...header];
   for (const model of models) {
     out.push(`"${model.key}" = (`, ...emitPops(model.pops));
   }
   out.push('', ...levels);
   const text = out.join('\n');
-  fs.mkdirSync(path.dirname(config.output.map), { recursive: true });
-  fs.writeFileSync(`${config.output.map}.tmp`, text.endsWith('\n') ? text : `${text}\n`);
-  fs.renameSync(`${config.output.map}.tmp`, config.output.map);
+  fs.mkdirSync(path.dirname(output), { recursive: true });
+  fs.writeFileSync(`${output}.tmp`, text.endsWith('\n') ? text : `${text}\n`);
+  fs.renameSync(`${output}.tmp`, output);
+}
 
-  const size = mapSize(levels);
-  const mapJson = JSON.parse(fs.readFileSync(path.join(SHARED_DIR, 'rockhill.json'), 'utf-8'));
-  mapJson.world_size = [size.width, size.height];
-  fs.mkdirSync(path.dirname(config.output.map_json), { recursive: true });
-  fs.writeFileSync(config.output.map_json, `${JSON.stringify(mapJson, null, '\t')}\n`);
-
-  const titles = await installTitles(config);
-  writeReport(config, tally, problems, targets, titles, size, spawns, latejoins, sunlight);
-  runMaplint(config.output.map);
+function levelCount(levels: string[]): number {
+  let count = 0;
+  for (const line of levels) {
+    const header = /^\(\d+,\d+,(\d+)\) = \{"$/.exec(line);
+    if (header) count = Math.max(count, Number(header[1]));
+  }
+  return count;
 }
 
 function readConfig(): Config {
@@ -611,9 +680,15 @@ async function installTitles(config: Config): Promise<number> {
   return written;
 }
 
-function writeReport(config: Config, tally: Record<string, Tally>, problems: Problems, targets: Map<string, number>, titles: number, size: Size, spawns: number, latejoins: number, sunlight: Sunlight): void {
+function writeReport(config: Config, tally: Record<string, Tally>, problems: Problems, targets: Map<string, number>, titles: number, maps: Written[], spawns: number, latejoins: number): void {
   const missingObjects = problems.missingObjects;
-  const lines = [`# ${config.source.name} port report`, '', `source: ${config.source.url}`, `output: ${config.output.map}`, `world size: ${size.width}x${size.height}`, `spawn tiles: ${spawns}, latejoin tiles: ${latejoins}`, `title screens: ${titles}`, `sunlit tiles (open sky above, Ratwood roof rule): ${sunlight.tiles} in ${sunlight.models} split tile models`, ''];
+  const station = maps[0];
+  const lines = [`# ${config.source.name} port report`, '', `source: ${config.source.url}`, `output: ${config.output.map}`, `world size: ${station.size.width}x${station.size.height}`, `spawn tiles: ${spawns}, latejoin tiles: ${latejoins}`, `title screens: ${titles}`, ''];
+  lines.push('| map | size | z-levels | sunlit tiles (open sky above, Ratwood roof rule) | output |', '|---|---|---|---|---|');
+  for (const map of maps) {
+    lines.push(`| ${map.source.name} | ${map.size.width}x${map.size.height} | ${map.levels} | ${map.sunlight.tiles} in ${map.sunlight.models} split tile models | \`${map.source.output}\` |`);
+  }
+  lines.push('');
   lines.push('| kind | kept | replaced | dropped | missing |', '|---|---|---|---|---|');
   for (const kind of Object.keys(tally).sort()) {
     const t = tally[kind];
@@ -643,7 +718,8 @@ function writeReport(config: Config, tally: Record<string, Tally>, problems: Pro
   const report = path.join(path.dirname(config.output.map), 'report.md');
   fs.writeFileSync(report, `${lines.join('\n')}\n`);
   const sum = (field: keyof Tally) => Object.values(tally).reduce((total, t) => total + t[field], 0);
-  console.log(`modular_redtard: ${config.source.name} ready (${size.width}x${size.height}): ${sum('kept')} kept, ${sum('replaced')} replaced, ${sum('dropped')} dropped, ${sum('missing')} missing, ${problems.stacked} stacked duplicates removed; ${spawns} spawn and ${latejoins} latejoin tiles. Report: ${report}`);
+  const extras = maps.slice(1).map((map) => `${map.source.name} ${map.size.width}x${map.size.height}x${map.levels}`).join(', ');
+  console.log(`modular_redtard: ${config.source.name} ready (${station.size.width}x${station.size.height}${extras ? `; other z: ${extras}` : ''}): ${sum('kept')} kept, ${sum('replaced')} replaced, ${sum('dropped')} dropped, ${sum('missing')} missing, ${problems.stacked} stacked duplicates removed; ${spawns} spawn and ${latejoins} latejoin tiles. Report: ${report}`);
 }
 
 if (import.meta.main) {

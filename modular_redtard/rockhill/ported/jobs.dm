@@ -233,6 +233,9 @@
 	departments_list = list(
 		/datum/job_department/rockhill_garrison,
 		)
+	mind_traits = list(
+		"dungeonmasterlaborcamp",
+		)
 	rockhill_advclass = "/datum/advclass/dungeoneer"
 
 /datum/job/roguetown/farmer
@@ -855,6 +858,9 @@
 	outfit = /datum/outfit/job/roguetown/wretch
 	departments_list = list(
 		/datum/job_department/rockhill_wanderers,
+		)
+	mind_traits = list(
+		"Hidden Domiciles",
 		)
 	rockhill_advclass = "/datum/advclass/wretch/licker"
 
@@ -1760,7 +1766,7 @@
 		/obj/item/roguekey/inquisition = 1,
 		/obj/item/paper/inqslip/arrival/adju = 1,
 		/obj/item/storage/belt/rogue/pouch/coins/mid = 1,
-		/obj/item/clothing/ring/signet/silver = 1,
+		/obj/item/clothing/ring/signet/silver/inqscomm = 1,
 		)
 
 /datum/outfit/job/roguetown/physician

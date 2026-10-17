@@ -4,6 +4,8 @@
 
 /obj/item/proc/rogue_onmob_prop(tag)
 	switch(tag)
+		if(ROGUE_ONMOB_HAND)
+			return list("shrink" = 0.2, "sx" = -7, "sy" = -4, "nx" = 7, "ny" = -4, "wx" = -4, "wy" = -4, "ex" = 2, "ey" = -4, "nturn" = 0, "sturn" = 0, "wturn" = 0, "eturn" = 0, "nflip" = 0, "sflip" = 0, "wflip" = 0, "eflip" = 0, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0)
 		if(ROGUE_ONMOB_HIP)
 			return list("shrink" = 0.3, "sx" = -2, "sy" = -5, "nx" = 4, "ny" = -5, "wx" = 0, "wy" = -5, "ex" = 2, "ey" = -5, "nturn" = 0, "sturn" = 0, "wturn" = 0, "eturn" = 0, "nflip" = 0, "sflip" = 0, "wflip" = 0, "eflip" = 0, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0)
 		if(ROGUE_ONMOB_BACK)
@@ -29,7 +31,7 @@
 
 /obj/item/proc/build_rogue_onmob_icon(tag, behind, mirrored)
 	var/list/prop = rogue_onmob_prop(tag)
-	if(!prop || !icon)
+	if(!prop || !icon || isnull(icon_state))
 		return null
 	var/state = (behind && icon_exists(icon, "[icon_state]_behind")) ? "[icon_state]_behind" : icon_state
 	var/icon/blended = icon(icon, state)

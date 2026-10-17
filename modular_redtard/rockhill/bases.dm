@@ -3,18 +3,22 @@
 	var/rockhill_variant
 	var/rockhill_variant_min = 1
 	var/rockhill_variant_max = 1
+	var/rockhill_overlay
 
 /atom/proc/apply_rockhill_look()
 	if(rockhill_random_dir)
 		setDir(pick(GLOB.cardinals))
 	if(rockhill_variant && icon_state == initial(icon_state))
 		icon_state = replacetext(rockhill_variant, "#", "[rand(rockhill_variant_min, rockhill_variant_max)]")
+	if(rockhill_overlay)
+		add_overlay(mutable_appearance(icon, rockhill_overlay))
 
 /area/rogue
 	parent_type = /area/station
 	name = "Rockhill"
 	requires_power = FALSE
 	ambient_buzz = null
+	var/rockhill_sunlit = FALSE
 
 /area/rogue/Initialize(mapload)
 	. = ..()
@@ -78,6 +82,11 @@
 		spawned.pixel_x += rand(-3, 3)
 		return INITIALIZE_HINT_QDEL
 	apply_rockhill_look()
+	register_redstone()
+
+/obj/structure/rockhill/Destroy()
+	unregister_redstone()
+	return ..()
 
 /obj/structure/rockhill/flaps
 	name = "iron bars"
@@ -93,6 +102,9 @@
 
 /obj/item/rockhill
 	name = "item"
+
+/obj/item/clothing/under/roguetown
+	female_sprite_flags = NO_FEMALE_UNIFORM
 
 /obj/effect/spawner/random/rockhill
 	name = "rockhill loot"

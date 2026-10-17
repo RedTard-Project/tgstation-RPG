@@ -13,10 +13,6 @@
 
 /obj/item/storage/keyring/Initialize(mapload)
 	. = ..()
-	atom_storage.set_holdable(list(/obj/item/roguekey))
-	atom_storage.max_slots = 20
-	atom_storage.max_total_storage = 20
-	atom_storage.max_specific_storage = WEIGHT_CLASS_SMALL
 	update_appearance(UPDATE_ICON_STATE)
 
 /obj/item/storage/keyring/PopulateContents()

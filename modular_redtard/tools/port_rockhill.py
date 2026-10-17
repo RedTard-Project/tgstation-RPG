@@ -15,6 +15,7 @@ ICON_DIR = 'modular_redtard/rockhill/icons'
 REPORT = 'modular_redtard/rockhill/PORTED_CONTENT.md'
 CHECKOUT = '.cache/ratwood'
 BLANK_WORN = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+FEMALE_WORN_SUFFIX = '_f'
 TG_WORN_SLOTS = ('ITEM_SLOT_BACK', 'ITEM_SLOT_ID', 'ITEM_SLOT_GLOVES', 'ITEM_SLOT_EYES', 'ITEM_SLOT_EARS', 'ITEM_SLOT_NECK', 'ITEM_SLOT_MASK', 'ITEM_SLOT_BELT')
 WEAR_COVERAGE = {'/obj/item/clothing/gloves': ('hands', {'HAND_LEFT', 'HAND_RIGHT'}), '/obj/item/clothing/shoes': ('feet', {'FOOT_LEFT', 'FOOT_RIGHT'})}
 DECLARATION_ROOTS = ['code', 'modular_redtard']
@@ -32,14 +33,17 @@ PRE_EQUIP = {}
 ONMOB = {}
 INIT_BODIES = {}
 FILL_BODIES = {}
+STORAGE_NEW = {}
+HOLD_LIST = re.compile(r'(?:typecacheof|set_holdable)\(\s*list\(')
 NEW_IN_SRC = re.compile(r'new\s+(/obj/item/[A-Za-z0-9_/]+)\s*\(\s*src\s*\)')
 LOOT_LIST = re.compile(r'\bloot\s*=\s*list\(([^)]*)\)')
 PROB_CALL = re.compile(r'\bprob\((\d+)\)')
-ONMOB_TAGS = {'onback': 'ROGUE_ONMOB_BACK', 'onbelt': 'ROGUE_ONMOB_HIP'}
+ONMOB_TAGS = {'onback': 'ROGUE_ONMOB_BACK', 'onbelt': 'ROGUE_ONMOB_HIP', 'gen': 'ROGUE_ONMOB_HAND', 'wielded': 'ROGUE_ONMOB_WIELDED'}
 DEFINE_VALUES = {}
 SOURCE_REVISION = []
 ARMOR_DATUMS = {}
 BLANK_USERS = set()
+FEMALE_USERS = set()
 BITMASK_TURFS = set()
 NO_SPRITE = []
 LISTINGS = {}
@@ -114,6 +118,7 @@ SUNLIT_LEAF = 'sunlit'
 TG_LAYERS = 'code/__DEFINES/layers.dm'
 SMOOTH_BITS = {'SMOOTH_TRUE': 1, 'SMOOTH_MORE': 2, 'SMOOTH_DIAGONAL': 4, 'SMOOTH_BORDER': 8}
 BYOND_LAYERS = {'AREA_LAYER': '1', 'TURF_LAYER': '2', 'OBJ_LAYER': '3', 'MOB_LAYER': '4', 'FLY_LAYER': '5', 'EFFECTS_LAYER': '5000', 'TOPDOWN_LAYER': '10000', 'BACKGROUND_LAYER': '20000'}
+BYOND_DIRECTIONS = {'NORTH', 'SOUTH', 'EAST', 'WEST', 'NORTHEAST', 'NORTHWEST', 'SOUTHEAST', 'SOUTHWEST', 'UP', 'DOWN'}
 TURF_GROUP_BASE = 1000
 OBJ_GROUP_BASE = 2000
 
@@ -231,8 +236,9 @@ def parse_codebase(code_root):
                         bodies = {
                             'pre_equip': ('/datum/outfit/', PRE_EQUIP),
                             'getonmobprop': ('/obj/item', ONMOB),
-                            'Initialize': (('/turf/', '/obj/structure', '/obj/machinery'), INIT_BODIES),
+                            'Initialize': (('/turf/', '/obj/structure', '/obj/machinery', '/obj/item'), INIT_BODIES),
                             'PopulateContents': ('/obj/structure/closet', FILL_BODIES),
+                            'New': ('/datum/component/storage', STORAGE_NEW),
                         }.get(pm.group(2))
                         if bodies and pm.group(1).startswith(bodies[0]):
                             body = []
@@ -423,7 +429,7 @@ def placement_lines(rw, path, runtime, tg_values):
     plane = number_or_none(rw.resolve(path, 'plane') or rw.types.get('/atom', {}).get('plane'), DEFINE_VALUES)
     raw_layer = rw.resolve(path, 'layer')
     layer = number_or_none(raw_layer, DEFINE_VALUES)
-    decal = boundary_match(runtime, '/obj/effect/decal')
+    decal = boundary_match(runtime, '/obj/effect/decal') or boundary_match(runtime, '/obj/effect/turf_decal')
     base_plane = 'FLOOR_PLANE' if decal else 'GAME_PLANE'
     if plane is None:
         kind = 'floor' if decal else 'game'
@@ -470,6 +476,17 @@ def turf_state_edits(map_path):
             if re.match(r'^\s*\}[,)]$', line):
                 current = None
     return edits
+
+
+def source_maps(cfg):
+    maps = [cfg['source']['map']]
+    listing = cfg['source'].get('map_json')
+    if listing:
+        world = json.load(open(os.path.join(CHECKOUT, listing), encoding='utf-8'))
+        for entry in world.get('other_z', []):
+            conf = json.load(open(os.path.join(CHECKOUT, entry), encoding='utf-8'))
+            maps.append(f"_maps/{conf['map_path']}/{conf['map_file']}")
+    return maps
 
 
 def map_usage(map_path):
@@ -574,8 +591,11 @@ def literal(value, tg_names):
         return v
     if ICON_LITERAL.match(v):
         return v
-    if re.match(r'^[A-Z_][A-Z0-9_]*$', v) and v in tg_names:
+    if re.match(r'^[A-Z_][A-Z0-9_]*$', v) and (v in tg_names or v in BYOND_DIRECTIONS):
         return v
+    time = re.fullmatch(r'(\d+(?:\.\d+)?)\s*(SECONDS|MINUTES|DECISECONDS)', v)
+    if time:
+        return f'{time.group(1)} {time.group(2)}'
     return None
 
 
@@ -621,7 +641,12 @@ def main():
     declared = declared_paths(DECLARATION_ROOTS, [OUT_DIR])
     tg_declared = declared_paths(['code'], [])
     tg_names = tg_defines('code')
-    usage, per_level = map_usage(os.path.join(CHECKOUT, cfg['source']['map']))
+    maps = source_maps(cfg)
+    usage, per_level = map_usage(os.path.join(CHECKOUT, maps[0]))
+    station_usage = collections.Counter(usage)
+    for extra in maps[1:]:
+        usage.update(map_usage(os.path.join(CHECKOUT, extra))[0])
+    print('maps:', ', '.join(maps))
 
     if '--inventory' in sys.argv:
         for z in sorted(per_level):
@@ -651,7 +676,7 @@ def main():
         outfit_items |= {item for item, _ in dressed['contents'] or []}
     mapgen = mapgen_spec(rw, usage)
     mapgen_types = {path for gen in mapgen.values() for module in gen['modules'] for key in ('spawnableAtoms', 'spawnableTurfs') for path, _ in module[key]}
-    fill_items = set()
+    fill_items = set(cfg['port'].get('extra_types', []))
     for path in set(usage) | mapgen_types:
         if path.startswith('/obj/structure'):
             fill_items |= set(random_pick(rw, path))
@@ -662,7 +687,7 @@ def main():
     generated = generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, outfit_items | mapgen_types | fill_items, set(jobs))
     generate_onmob(generated)
     generate_mapgen(mapgen, rules, declared | generated, tg_names)
-    generate_jobs(cfg, rw, usage, role_outfits, declared | generated)
+    generate_jobs(cfg, rw, usage, role_outfits, declared | generated, station_usage)
 
 
 MAPGEN_LANDMARK = '/obj/effect/landmark/mapGenerator'
@@ -815,6 +840,20 @@ def runtime_look(rw, path):
     return look
 
 
+def init_overlay(rw, path):
+    p = path
+    seen = set()
+    while p and p not in seen:
+        seen.add(p)
+        body = '\n'.join(INIT_BODIES.get(p, []))
+        if body:
+            found = re.search(r'mutable_appearance\(\s*icon\s*,\s*"([^"\[\]]+)"', body)
+            if found and 'add_overlay(' in body:
+                return found.group(1)
+        p = rw.parent(p)
+    return None
+
+
 def parse_onmob(body):
     text = '\n'.join(body)
     found = {}
@@ -935,6 +974,40 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
             sheet_states[src] = dmi.state_names(src) if os.path.exists(src) else set()
         return sheet_states[src]
 
+    grid_spec = port.get('grid_storage', {})
+    grid_used = set()
+
+    def grid_type(component):
+        component = (component or '').strip()
+        if not grid_spec or not boundary_match(component, grid_spec['from']):
+            return None
+        grid_used.add(component)
+        return grid_spec['to'] + component[len(grid_spec['from']):]
+
+    def added_storage(path):
+        p = path
+        while p:
+            body = INIT_BODIES.get(p)
+            if body is not None:
+                found = re.search(r'AddComponent\((/datum/component/storage[A-Za-z0-9_/]*)', '\n'.join(body))
+                if found:
+                    return found.group(1)
+                if not any('..()' in line for line in body):
+                    return None
+            p = rw.parent(p)
+        return None
+
+    def grid_storage_lines(path):
+        lines = []
+        if boundary_match(path, '/obj/item/storage'):
+            target = grid_type(rw.resolve(path, 'component_type'))
+            if target:
+                lines.append(f'\tstorage_type = {target}')
+        target = grid_type(added_storage(path))
+        if target:
+            lines.append(f'\trogue_storage_type = {target}')
+        return lines
+
     def fix_sprites(path, block):
         values = {}
         for line in block[1:]:
@@ -978,6 +1051,10 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
         sheet = values.get('worn_icon')
         if sheet and ICON_LITERAL.match(sheet) and look and look in sheet_states_of(sheet):
             put('worn_icon_state', f'"{look}"')
+            ratwood_slots = set(re.findall(r'ITEM_SLOT_[A-Z_]+', rw.resolve(path, 'slot_flags') or ''))
+            if look + FEMALE_WORN_SUFFIX in sheet_states_of(sheet) and ratwood_slots & set(port.get('female_worn_slots', [])):
+                put('rogue_female_worn', 'TRUE')
+                FEMALE_USERS.add(path)
             return
         if sheet or any(slot in flags for slot in TG_WORN_SLOTS) or boundary_match(path, '/obj/item/clothing'):
             BLANK_USERS.add(path)
@@ -1029,7 +1106,7 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                 sheets[src] = prefix
         return sheets[src]
 
-    state_edits = sorted(turf_state_edits(os.path.join(CHECKOUT, cfg['source']['map'])))
+    state_edits = sorted(set().union(*(turf_state_edits(os.path.join(CHECKOUT, source)) for source in source_maps(cfg))))
     bitmask = {}
     for path in sorted(smoothing_paths):
         if not smooth_rule(rw, path):
@@ -1246,8 +1323,20 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                     block.append('\trockhill_random_pick = list(' + ', '.join(picks) + ')')
             for name, value in cat.get('fixed_vars', {}).items():
                 block.append(f'\t{name} = {value}')
+            if cat.get('grid_storage'):
+                block += grid_storage_lines(path)
             if cat.get('placement'):
                 block += placement_lines(rw, path, path, tg_values)
+            for prefix, names in cat.get('type_vars', {}).items():
+                if boundary_match(path, prefix):
+                    for name in names:
+                        value = literal(rw.resolve(path, name), tg_names)
+                        if value is not None:
+                            block.append(f'\t{name} = {value}')
+            if cat.get('init_overlays'):
+                overlay = init_overlay(rw, path)
+                if overlay:
+                    block.append(f'\trockhill_overlay = "{overlay}"')
             if smooth:
                 block += smooth
                 smoothed['bitmask'] += 1
@@ -1259,13 +1348,16 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                     smoothed['edges'] += 1
             blocks.append(block)
             if cat.get('sunlit'):
-                blocks.append([f'{path}/{SUNLIT_LEAF}', '\tstatic_lighting = FALSE', '\tbase_lighting_alpha = 255', '\tbase_lighting_color = ROCKHILL_SUNLIGHT_COLOR'])
+                blocks.append([f'{path}/{SUNLIT_LEAF}', '\trockhill_sunlit = TRUE', '\tbase_lighting_alpha = 255', '\tbase_lighting_color = COLOR_STARLIGHT'])
                 if (rw.resolve(path, 'outdoors') or '').strip() in ('TRUE', '1'):
                     outdoor_areas.append(path)
             report_rows[cat['file']].append((path, usage[path]))
         text = '\n\n'.join('\n'.join(b) for b in blocks) + '\n'
         open(f"{OUT_DIR}/{cat['file']}", 'w', encoding='utf-8', newline='\n').write(text)
         print(f"{cat['file']}: {len(paths)} types")
+
+    if grid_spec:
+        generate_grid_storage(rw, grid_spec, grid_used, tg_names, valid, rules)
 
     armor_lines = []
     for path, fields in sorted(ARMOR_DATUMS.items()):
@@ -1320,6 +1412,10 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
         sounds[src] = f"{SOUND_DIR}/{rel[len('sound/'):] if rel.startswith('sound/') else rel}"
         return f"'{sounds[src]}'"
 
+    for rel in port.get('extra_sounds', []):
+        if not sound_ref(f"'{rel}'"):
+            raise SystemExit(f'extra_sounds: {rel} is missing from the Ratwood checkout or not licensed')
+
     ported = set(generated)
     rebased = collections.defaultdict(list)
     for path in sorted(usage):
@@ -1342,6 +1438,12 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
             elif name in spec.get('paths', []):
                 target = runtime_path(value.strip(), rules) if value and value.strip().startswith('/') else None
                 value = target if target in valid or target in jobs else None
+            elif name in spec.get('define_strings', []):
+                expanded = expand_define(value)
+                value = expanded if expanded and STRING_LITERAL.match(expanded) else None
+            elif name in spec.get('string_lists', []):
+                entries = re.findall(r'"((?:[^"\\]|\\.)*)"', value or '')
+                value = ('list(' + ', '.join(f'"{entry}"' for entry in entries) + ')') if entries else None
             elif name in spec.get('sounds', []) and value and ICON_LITERAL.match(value.strip()):
                 value = sound_ref(value)
             elif value and ICON_LITERAL.match(value.strip()):
@@ -1397,8 +1499,7 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
     open(f'{OUT_DIR}/{AREAS_JSON}', 'w', encoding='utf-8', newline='\n').write(json.dumps({'sunlit': SUNLIT_LEAF, 'outdoors': sorted(outdoor_areas)}, indent='\t') + '\n')
 
     for rel in port.get('extra_icons', []):
-        src = os.path.join(CHECKOUT, rel)
-        icons[src] = f"{ICON_DIR}/{rel[len('icons/'):] if rel.startswith('icons/') else rel}"
+        icons[os.path.join(CHECKOUT, rel)] = icon_dest(rel)
 
     edge_lines = []
     for name in ('rockhill_turf_edges', 'rockhill_turf_edge_overrides', 'rockhill_turf_edge_sources'):
@@ -1428,6 +1529,7 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
         os.makedirs(os.path.dirname(BLANK_WORN), exist_ok=True)
         dmi.write(BLANK_WORN, 32, 32, [('', bytes(32 * 32 * 4))])
         print(f'blank worn sheet: {len(BLANK_USERS)} wearables without a worn sprite')
+    print(f'female worn sprites: {len(FEMALE_USERS)} wearables')
     for src, dest in list(icons.items()) + list(sounds.items()):
         os.makedirs(os.path.dirname(dest), exist_ok=True)
         shutil.copyfile(src, dest)
@@ -1478,6 +1580,51 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                 out.write(f'- `{dest}` from Ratwood `{rel}`\n')
     print('report:', REPORT, 'skipped types:', len(skipped))
     return generated
+
+
+def held_paths(body):
+    text = '\n'.join(body)
+    found = HOLD_LIST.search(text)
+    if not found:
+        return None
+    depth = 1
+    k = found.end()
+    while k < len(text) and depth:
+        depth += {'(': 1, ')': -1}.get(text[k], 0)
+        k += 1
+    return re.findall(r'/[A-Za-z0-9_]+(?:/[A-Za-z0-9_]+)*', text[found.end():k - 1])
+
+
+def generate_grid_storage(rw, spec, used, tg_names, valid, rules):
+    root = spec['from']
+    chain = set()
+    for component in used:
+        p = component
+        while p and boundary_match(p, root):
+            chain.add(p)
+            p = rw.parent(p)
+    blocks = []
+    holders = 0
+    for component in sorted(chain, key=lambda p: (p.count('/'), p)):
+        target = spec['to'] + component[len(root):]
+        block = [target]
+        for name, source in spec['vars'].items():
+            raw = rw.resolve(component, source) if component == root else rw.types.get(component, {}).get(source)
+            value = literal(raw, tg_names)
+            if value is not None:
+                block.append(f'\t{name} = {value}')
+        blocks.append(block)
+        held = held_paths(STORAGE_NEW.get(component, []))
+        if held is not None:
+            kept = sorted({runtime_path(p, rules) for p in held} & valid)
+            blocks.append([f'{target}/New()', '\t. = ..()', '\tset_holdable(list(' + ', '.join(kept) + '))'])
+            holders += 1
+    open(f'{OUT_DIR}/{spec["file"]}', 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    print(f'{spec["file"]}: {len(chain)} grid storages, {holders} with a can-hold list')
+
+
+def icon_dest(rel):
+    return f"{ICON_DIR}/{rel[len('icons/'):] if rel.startswith('icons/') else rel}"
 
 
 JOB_ROOT = '/datum/job/roguetown'
@@ -1748,7 +1895,7 @@ def select_jobs(cfg, rw):
     return ported
 
 
-def generate_jobs(cfg, rw, usage, role_outfits, valid):
+def generate_jobs(cfg, rw, usage, role_outfits, valid, station_usage):
     jobs_cfg = cfg['jobs']
     departments = jobs_cfg['departments']
     blacklist, slots, retitles = map_adjustment(os.path.join(CHECKOUT, cfg['source']['map_adjustment']))
@@ -1763,6 +1910,13 @@ def generate_jobs(cfg, rw, usage, role_outfits, valid):
             raise SystemExit(f'{p} and {seen[t]} share the title {t}')
         seen[t] = p
     defines = {p: define_name(t.strip('"')) for p, t in titles.items()}
+    access_traits = set()
+    for prefix, var in jobs_cfg.get('access_traits', {}).items():
+        for used in usage:
+            if boundary_match(used, prefix):
+                expanded = expand_define(rw.resolve(used, var))
+                if expanded and STRING_LITERAL.match(expanded):
+                    access_traits.add(expanded)
 
     lines = [f'#define {defines[p]} {titles[p]}' for p in ported]
     open(f'{OUT_DIR}/job_titles.dm', 'w', encoding='utf-8', newline='\n').write('\n'.join(lines) + '\n')
@@ -1796,6 +1950,9 @@ def generate_jobs(cfg, rw, usage, role_outfits, valid):
         if order is not None:
             block.append(f'\tdisplay_order = {order}')
         block += ['\tdepartments_list = list(', f"\t\t{departments[dept]},", '\t\t)']
+        traits = sorted(set(expand_define(token) for token in re.findall(r'[A-Z_][A-Z0-9_]*', rw.resolve(p, 'job_traits') or '')) & access_traits)
+        if traits:
+            block += ['\tmind_traits = list('] + [f'\t\t{trait},' for trait in traits] + ['\t\t)']
         if role_outfits.get(p, {}).get('advclass'):
             block.append(f'\trockhill_advclass = "{role_outfits[p]["advclass"]}"')
         alternates = []
@@ -1847,7 +2004,7 @@ def generate_jobs(cfg, rw, usage, role_outfits, valid):
         if job:
             block.append(f'\tname = {defines[job]}')
             matched += 1
-        else:
+        elif lm in station_usage:
             block.append('\tname = JOB_ASSISTANT')
         if roles:
             block.append('\trockhill_latejoin_roles = list(' + ', '.join(f'"{role}"' for role in roles) + ')')

@@ -15,6 +15,7 @@ const NEXT_MAP_BACKUP = 'data/next_map.json.redtard-backup';
 const LOWMEM_MARKER = 'redtard_lowmem';
 const PREREQUISITES = ['icon-cutter', 'behavior-tree-compiler', 'tgui', 'tg-font'];
 const CONTENT_CHECK = 'modular_redtard/tools/check_modular_content.py';
+const MODULE_DEFINES = ['MINIMAL_CENTCOM'];
 
 type BuildOptions = {
   target: string;
@@ -157,7 +158,7 @@ async function compileModular(baseName: string, defines: string[], options: Buil
   fs.writeFileSync(`${baseName}.dme`, withModule);
   try {
     await DreamMaker(`${baseName}.dme`, {
-      defines,
+      defines: [...MODULE_DEFINES, ...defines],
       warningsAsErrors: options.warningsAsErrors,
       ignoreWarningCodes: options.ignoreWarningCodes,
       namedDmVersion: options.dmVersion,

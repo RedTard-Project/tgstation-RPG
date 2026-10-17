@@ -250,4 +250,8 @@ def corners_to_bitmask(dmi, prefix, preview_state=None):
         out.append((f'{prefix}-{j}', bytes(canvas)))
     preview = cells.get(preview_state) if preview_state else None
     out.insert(0, (prefix, preview if preview else out[0][1]))
+    taken = {name for name, _ in out}
+    for name, cell in cells.items():
+        if name not in CORNER_STATES and name not in taken:
+            out.append((name, cell))
     return out

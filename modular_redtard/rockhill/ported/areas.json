@@ -1,6 +1,7 @@
 {
 	"sunlit": "sunlit",
 	"outdoors": [
+		"/area/rogue/outdoors/banditcamp",
 		"/area/rogue/outdoors/beach/harbor",
 		"/area/rogue/outdoors/bograt/above",
 		"/area/rogue/outdoors/bograt/north",
@@ -23,10 +24,14 @@
 		"/area/rogue/outdoors/town/roofs/church",
 		"/area/rogue/outdoors/town/roofs/keep",
 		"/area/rogue/outdoors/town/roofs/tavern",
+		"/area/rogue/outdoors/woods",
+		"/area/rogue/outdoors/woods/above",
+		"/area/rogue/outdoors/woods/vampire_lair",
 		"/area/rogue/outdoors/woodsafe",
 		"/area/rogue/outdoors/woodsrat/above",
 		"/area/rogue/outdoors/woodsrat/north",
 		"/area/rogue/outdoors/woodsrat/safe",
-		"/area/rogue/outdoors/woodsrat/south"
+		"/area/rogue/outdoors/woodsrat/south",
+		"/area/rogue/outdoors/wretch"
 	]
 }

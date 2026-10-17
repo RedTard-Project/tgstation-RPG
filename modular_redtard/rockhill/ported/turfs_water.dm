@@ -17,6 +17,17 @@
 	icon_state = "bathtile"
 	smoothing_flags = SMOOTH_BITMASK_CARDINALS
 
+/turf/open/water/bloody
+	parent_type = /turf/open/water/rockhill
+	name = "blood"
+	desc = "Is that... a river of blood? EVIL!"
+	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
+	rockhill_water_level = 2
+	rockhill_water_color = "#941010"
+	icon_state = "dirt"
+	rockhill_random_dir = TRUE
+	smoothing_flags = SMOOTH_BITMASK_CARDINALS
+
 /turf/open/water/cleanshallow
 	parent_type = /turf/open/water/rockhill
 	name = "water"
