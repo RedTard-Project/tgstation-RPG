@@ -35,6 +35,11 @@
 #include "combat\attack.dm"
 #include "combat\defense.dm"
 #include "combat\mob.dm"
+#include "lighting\_defines.dm"
+#include "lighting\config.dm"
+#include "lighting\carrier.dm"
+#include "lighting\subsystem.dm"
+#include "lighting\overrides.dm"
 #include "rockhill\_rockhill.dm"
 
 #ifdef UNIT_TESTS
@@ -79,6 +84,11 @@
 #include "hud\rogue_hud_elements.dm"
 #include "hud\rogue_hud_layout.dm"
 #include "hud\rogue_hud_stubs.dm"
+#include "lighting\_defines.dm"
+#include "lighting\carrier.dm"
+#include "lighting\config.dm"
+#include "lighting\overrides.dm"
+#include "lighting\subsystem.dm"
 #include "maps\centcom.dm"
 #include "maps\era.dm"
 #include "maps\era_limits.dm"

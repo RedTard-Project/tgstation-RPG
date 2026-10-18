@@ -1,0 +1,111 @@
+/datum/controller/subsystem/lighting/Initialize()
+	SSrogue_light.configure()
+	return ..()
+
+/datum/controller/subsystem/lighting/create_all_lighting_objects()
+	if(!SSrogue_light.uses_cells())
+		return ..()
+	for(var/area/lit_area as anything in GLOB.areas)
+		if(!lit_area.static_lighting)
+			continue
+		for(var/list/zlevel_turfs as anything in lit_area.get_zlevel_turf_lists())
+			for(var/turf/area_turf as anything in zlevel_turfs)
+				if(area_turf.space_lit)
+					continue
+				var/datum/rogue_light_cell/existing = area_turf.lighting_object
+				if(!QDELETED(existing) && existing.affected_turf == area_turf)
+					continue
+				new /datum/rogue_light_cell(area_turf)
+			CHECK_TICK
+		CHECK_TICK
+
+/turf/lighting_build_overlay()
+	if(!SSrogue_light.uses_cells())
+		return ..()
+	if(lighting_object)
+		qdel(lighting_object, force = TRUE)
+	new /datum/rogue_light_cell(src)
+
+/turf/reconsider_lights()
+	if(!SSrogue_light.native)
+		return ..()
+	SSrogue_light.turf_changed(src)
+
+/turf/recalculate_directional_opacity()
+	. = ..()
+	if(SSrogue_light.native && SSlighting.initialized)
+		SSrogue_light.turf_changed(src)
+
+/turf/get_static_lumcount(minlum = 0, maxlum = 1)
+	if(!SSrogue_light.native)
+		return ..()
+	var/totallums = lighting_object?.rogue_lum || 0
+	return (totallums - minlum) / (maxlum - minlum)
+
+/atom/movable/lighting_object
+	var/rogue_look = ROGUE_LIGHT_DARK
+	var/rogue_lum = 0
+
+/atom/movable/lighting_object/Initialize(mapload)
+	. = ..()
+	if(. == INITIALIZE_HINT_QDEL)
+		return
+	if(SSrogue_light.uses_cells())
+		var/turf/lit = affected_turf
+		SSlighting.objects_queue -= src
+		needs_update = FALSE
+		lit.lighting_object = null
+		affected_turf = null
+		new /datum/rogue_light_cell(lit)
+		return INITIALIZE_HINT_QDEL
+	if(SSrogue_light.native && SSlighting.initialized)
+		SSrogue_light.turf_changed(affected_turf)
+
+/atom/movable/lighting_object/Destroy(force)
+	var/turf/lit = affected_turf
+	. = ..()
+	if(. != QDEL_HINT_LETMELIVE && lit && SSrogue_light.native)
+		SSrogue_light.turf_changed(lit)
+
+/atom/movable/lighting_object/update()
+	if(!SSrogue_light.native)
+		return ..()
+	rogue_show_look(rogue_look)
+
+/atom/movable/lighting_object/proc/rogue_show_look(new_look)
+	rogue_look = new_look
+	var/list/looks = SSrogue_light.looks
+	if(!new_look || new_look > length(looks) || !looks[new_look])
+		icon_state = "lighting_dark"
+		color = null
+		luminosity = FALSE
+		rogue_lum = 0
+		return
+	icon_state = null
+	color = looks[new_look]
+	luminosity = TRUE
+	rogue_lum = SSrogue_light.look_lums[new_look]
+
+/datum/light_source
+	var/rogue_light_id = 0
+
+/datum/light_source/update_corners()
+	if(!SSrogue_light.native)
+		return ..()
+	if(!refresh_values())
+		return
+	SSrogue_light.light_set(src)
+	applied_lum_r = lum_r
+	applied_lum_g = lum_g
+	applied_lum_b = lum_b
+
+/datum/light_source/remove_lum()
+	if(!SSrogue_light.native)
+		return ..()
+	applied = FALSE
+	effect_str = null
+	SSrogue_light.light_remove(src)
+
+/datum/light_source/recalc_corner(datum/lighting_corner/corner)
+	if(!SSrogue_light.native)
+		return ..()
