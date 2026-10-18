@@ -12,6 +12,20 @@
 		/datum/job_department/rockhill_inquisition,
 		)
 	rockhill_advclass = "/datum/advclass/absolver"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/absolver
+	rockhill_traits = list(
+		TRAIT_NOPAINSTUN,
+		TRAIT_PACIFISM,
+		TRAIT_LUX_FREAK,
+		TRAIT_EMPATH,
+		TRAIT_CRITICAL_RESISTANCE,
+		TRAIT_BLOOD_RESISTANCE,
+		TRAIT_SILVER_BLESSED,
+		TRAIT_STEELHEARTED,
+		TRAIT_INQUISITION,
+		TRAIT_RITUALIST,
+		TRAIT_SELF_AWARE,
+		)
 
 /datum/job/roguetown/adventurer
 	title = JOB_ROCKHILL_ADVENTURER
@@ -24,6 +38,11 @@
 		/datum/job_department/rockhill_wanderers,
 		)
 	rockhill_advclass = "/datum/advclass/cleric"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/adventurer
+	rockhill_traits = list(
+		TRAIT_CIVILIZEDBARBARIAN,
+		TRAIT_OUTLANDER,
+		)
 
 /datum/job/roguetown/adventurer/courtagent
 	title = JOB_ROCKHILL_COURT_AGENT
@@ -36,6 +55,11 @@
 		/datum/job_department/rockhill_wanderers,
 		)
 	rockhill_advclass = "/datum/advclass/cleric"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/adventurer/courtagent
+	rockhill_traits = list(
+		TRAIT_CIVILIZEDBARBARIAN,
+		TRAIT_OUTLANDER,
+		)
 
 /datum/job/roguetown/adventurer/courtslave
 	title = JOB_ROCKHILL_ENSLAVED_ADVENTURER
@@ -48,6 +72,11 @@
 		/datum/job_department/rockhill_wanderers,
 		)
 	rockhill_advclass = "/datum/advclass/cleric"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/adventurer/courtslave
+	rockhill_traits = list(
+		TRAIT_CIVILIZEDBARBARIAN,
+		TRAIT_OUTLANDER,
+		)
 
 /datum/job/roguetown/apothecary
 	title = JOB_ROCKHILL_APOTHECARY
@@ -60,6 +89,13 @@
 		/datum/job_department/rockhill_courtiers,
 		)
 	rockhill_advclass = "/datum/advclass/apothecary"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/apothecary
+	rockhill_traits = list(
+		TRAIT_MEDICINE_EXPERT,
+		TRAIT_ALCHEMY_EXPERT,
+		TRAIT_NOSTINK,
+		TRAIT_EMPATH,
+		)
 
 /datum/job/roguetown/archivist
 	title = JOB_ROCKHILL_ARCHIVIST
@@ -72,6 +108,20 @@
 		/datum/job_department/rockhill_yeomen,
 		)
 	rockhill_advclass = "/datum/advclass/archivist"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/archivist
+	rockhill_traits = list(
+		TRAIT_ARCYNE_T2,
+		TRAIT_MAGEARMOR,
+		TRAIT_INTELLECTUAL,
+		TRAIT_SEEPRICES_SHITTY,
+		TRAIT_GOODWRITER,
+		TRAIT_MEDICINE_EXPERT,
+		TRAIT_ALCHEMY_EXPERT,
+		TRAIT_SMITHING_EXPERT,
+		TRAIT_SEWING_EXPERT,
+		TRAIT_SURVIVAL_EXPERT,
+		TRAIT_HOMESTEAD_EXPERT,
+		)
 
 /datum/job/roguetown/barkeep
 	title = JOB_ROCKHILL_INNKEEPER
@@ -84,6 +134,15 @@
 		/datum/job_department/rockhill_yeomen,
 		)
 	rockhill_advclass = "/datum/advclass/barkeep"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/barkeep
+	rockhill_traits = list(
+		TRAIT_MEDIUMARMOR,
+		TRAIT_TAVERN_FIGHTER,
+		TRAIT_EMPATH,
+		TRAIT_DODGEEXPERT,
+		TRAIT_CICERONE,
+		TRAIT_HOMESTEAD_EXPERT,
+		)
 
 /datum/job/roguetown/baron
 	title = JOB_ROCKHILL_BARON
@@ -96,6 +155,11 @@
 		/datum/job_department/rockhill_nobles,
 		)
 	rockhill_advclass = "/datum/advclass/baron/shrewd_nobleman"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/baron
+	rockhill_traits = list(
+		TRAIT_NOBLE,
+		TRAIT_SEEPRICES,
+		)
 	alternate_titles = list(
 		"Baroness",
 		)
@@ -111,6 +175,11 @@
 		/datum/job_department/rockhill_garrison,
 		)
 	rockhill_advclass = "/datum/advclass/baron_retainer/henchman"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/baron_retainer
+	rockhill_traits = list(
+		TRAIT_HEAVYARMOR,
+		TRAIT_STEELHEARTED,
+		)
 
 /datum/job/roguetown/butler
 	title = JOB_ROCKHILL_SENESCHAL
@@ -123,6 +192,16 @@
 		/datum/job_department/rockhill_courtiers,
 		)
 	rockhill_advclass = "/datum/advclass/seneschal/seneschal"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/butler
+	rockhill_traits = list(
+		TRAIT_CICERONE,
+		TRAIT_KEENEARS,
+		TRAIT_SLEUTH,
+		TRAIT_HOMESTEAD_EXPERT,
+		TRAIT_SEWING_EXPERT,
+		TRAIT_ROYALSERVANT,
+		TRAIT_ROYAL_SUBSIDY,
+		)
 
 /datum/job/roguetown/captain
 	title = JOB_ROCKHILL_KNIGHT_CAPTAIN
@@ -135,6 +214,13 @@
 		/datum/job_department/rockhill_nobles,
 		)
 	rockhill_advclass = "/datum/advclass/captain/infantry"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/captain
+	rockhill_traits = list(
+		TRAIT_HEAVYARMOR,
+		TRAIT_STEELHEARTED,
+		TRAIT_NOBLE,
+		TRAIT_GUARDSMAN,
+		)
 
 /datum/job/roguetown/chaplain
 	title = JOB_ROCKHILL_COURT_CHAPLAIN
@@ -147,6 +233,10 @@
 		/datum/job_department/rockhill_courtiers,
 		)
 	rockhill_advclass = "/datum/advclass/chaplain"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/chaplain
+	rockhill_traits = list(
+		TRAIT_EMPATH,
+		)
 
 /datum/job/roguetown/churchling
 	title = JOB_ROCKHILL_CHURCHLING
@@ -159,6 +249,10 @@
 		/datum/job_department/rockhill_youngfolk,
 		)
 	rockhill_advclass = "/datum/advclass/churchling"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/churchling
+	rockhill_traits = list(
+		TRAIT_HOMESTEAD_EXPERT,
+		)
 
 /datum/job/roguetown/clerk
 	title = JOB_ROCKHILL_CLERK
@@ -171,6 +265,11 @@
 		/datum/job_department/rockhill_nobles,
 		)
 	rockhill_advclass = "/datum/advclass/clerk"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/clerk
+	rockhill_traits = list(
+		TRAIT_SEEPRICES,
+		TRAIT_ROYAL_SUBSIDY,
+		)
 
 /datum/job/roguetown/cook
 	title = JOB_ROCKHILL_MANOR_COOK
@@ -183,6 +282,11 @@
 		/datum/job_department/rockhill_peasants,
 		)
 	rockhill_advclass = "/datum/advclass/cook"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/cook
+	rockhill_traits = list(
+		TRAIT_CICERONE,
+		TRAIT_HOMESTEAD_EXPERT,
+		)
 
 /datum/job/roguetown/councillor
 	title = JOB_ROCKHILL_COUNCILLOR
@@ -195,6 +299,11 @@
 		/datum/job_department/rockhill_nobles,
 		)
 	rockhill_advclass = "/datum/advclass/councillor"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/councillor
+	rockhill_traits = list(
+		TRAIT_NOBLE,
+		TRAIT_SEEPRICES_SHITTY,
+		)
 
 /datum/job/roguetown/crier
 	title = JOB_ROCKHILL_TOWN_CRIER
@@ -207,6 +316,14 @@
 		/datum/job_department/rockhill_yeomen,
 		)
 	rockhill_advclass = "/datum/advclass/towncrier"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/crier
+	rockhill_traits = list(
+		TRAIT_INTELLECTUAL,
+		TRAIT_ARCYNE_T1,
+		TRAIT_MAGEARMOR,
+		TRAIT_SEEPRICES_SHITTY,
+		TRAIT_HOMESTEAD_EXPERT,
+		)
 
 /datum/job/roguetown/druid
 	title = JOB_ROCKHILL_DRUID
@@ -219,6 +336,16 @@
 		/datum/job_department/rockhill_church,
 		)
 	rockhill_advclass = "/datum/advclass/druid"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/druid
+	rockhill_traits = list(
+		TRAIT_SEEDKNOW,
+		TRAIT_OUTDOORSMAN,
+		TRAIT_RITUALIST,
+		TRAIT_HOMESTEAD_EXPERT,
+		TRAIT_WILDERNESSGUIDE,
+		TRAIT_WOODWALKER,
+		TRAIT_EXPERT_HUNTER,
+		)
 	alternate_titles = list(
 		"Druidess",
 		)
@@ -237,6 +364,15 @@
 		"dungeonmasterlaborcamp",
 		)
 	rockhill_advclass = "/datum/advclass/dungeoneer"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/dungeoneer
+	rockhill_traits = list(
+		TRAIT_STEELHEARTED,
+		TRAIT_DUNGEONMASTER,
+		TRAIT_GUARDSMAN,
+		TRAIT_DEATHBYSNUSNU,
+		TRAIT_PURITAN_ADVENTURER,
+		TRAIT_DUNGEONMASTER_LABOR_CAMP,
+		)
 
 /datum/job/roguetown/farmer
 	title = JOB_ROCKHILL_SOILSON
@@ -250,6 +386,13 @@
 		/datum/job_department/rockhill_peasants,
 		)
 	rockhill_advclass = "/datum/advclass/soilson"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/farmer
+	rockhill_traits = list(
+		TRAIT_SEEDKNOW,
+		TRAIT_NOSTINK,
+		TRAIT_LONGSTRIDER,
+		TRAIT_HOMESTEAD_EXPERT,
+		)
 	alternate_titles = list(
 		"Soilbride",
 		)
@@ -265,6 +408,11 @@
 		/datum/job_department/rockhill_youngfolk,
 		)
 	rockhill_advclass = "/datum/advclass/gapprentice"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/gapprentice
+	rockhill_traits = list(
+		TRAIT_TRAINED_SMITH,
+		TRAIT_SMITHING_EXPERT,
+		)
 
 /datum/job/roguetown/guardsman
 	title = JOB_ROCKHILL_CITY_GUARD
@@ -277,6 +425,12 @@
 		/datum/job_department/rockhill_garrison,
 		)
 	rockhill_advclass = "/datum/advclass/guardsman/cityguard"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/guardsman
+	rockhill_traits = list(
+		TRAIT_MEDIUMARMOR,
+		TRAIT_GUARDSMAN,
+		TRAIT_STEELHEARTED,
+		)
 
 /datum/job/roguetown/guildmaster
 	title = JOB_ROCKHILL_GUILDMASTER
@@ -289,6 +443,17 @@
 		/datum/job_department/rockhill_yeomen,
 		)
 	rockhill_advclass = "/datum/advclass/guildmaster"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/guildmaster
+	rockhill_traits = list(
+		TRAIT_TRAINED_SMITH,
+		TRAIT_SEEPRICES,
+		TRAIT_SMITHING_EXPERT,
+		TRAIT_SEWING_EXPERT,
+		TRAIT_HOMESTEAD_EXPERT,
+		TRAIT_LEGENDARY_MINER,
+		TRAIT_MASTER_CARPENTER,
+		TRAIT_MASTER_MASON,
+		)
 
 /datum/job/roguetown/guildsman
 	title = JOB_ROCKHILL_GUILDSMAN
@@ -301,6 +466,18 @@
 		/datum/job_department/rockhill_yeomen,
 		)
 	rockhill_advclass = "/datum/advclass/guildsman/artificer"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/guildsman
+	rockhill_traits = list(
+		TRAIT_ARCYNE_T1,
+		TRAIT_MASTER_CARPENTER,
+		TRAIT_MASTER_MASON,
+		TRAIT_HOMESTEAD_EXPERT,
+		TRAIT_ALCHEMY_EXPERT,
+		TRAIT_FUSILIER,
+		TRAIT_LEGENDARY_MINER,
+		TRAIT_TRAINED_SMITH,
+		TRAIT_SMITHING_EXPERT,
+		)
 
 /datum/job/roguetown/hand
 	title = JOB_ROCKHILL_HAND
@@ -313,6 +490,13 @@
 		/datum/job_department/rockhill_nobles,
 		)
 	rockhill_advclass = "/datum/advclass/hand/blademaster"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/hand
+	rockhill_traits = list(
+		TRAIT_STEELHEARTED,
+		TRAIT_HEAVYARMOR,
+		TRAIT_NOBLE,
+		TRAIT_EXPERT_HUNTER,
+		)
 
 /datum/job/roguetown/heartfelt/hand
 	title = JOB_ROCKHILL_HAND_OF_HEARTFELT
@@ -325,6 +509,13 @@
 		/datum/job_department/rockhill_wanderers,
 		)
 	rockhill_advclass = "/datum/advclass/heartfelt/hand/marshal"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/heartfelt/hand
+	rockhill_traits = list(
+		TRAIT_HEAVYARMOR,
+		TRAIT_NOBLE,
+		TRAIT_HEARTFELT,
+		TRAIT_STEELHEARTED,
+		)
 
 /datum/job/roguetown/heartfelt/knight
 	title = JOB_ROCKHILL_KNIGHT_OF_HEARTFELT
@@ -337,6 +528,14 @@
 		/datum/job_department/rockhill_wanderers,
 		)
 	rockhill_advclass = "/datum/advclass/heartfelt/knight"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/heartfelt/knight
+	rockhill_traits = list(
+		TRAIT_NOBLE,
+		TRAIT_HEAVYARMOR,
+		TRAIT_STEELHEARTED,
+		TRAIT_HEARTFELT,
+		TRAIT_GOODTRAINER,
+		)
 
 /datum/job/roguetown/heartfelt/lord
 	title = JOB_ROCKHILL_LORD_OF_HEARTFELT
@@ -349,6 +548,12 @@
 		/datum/job_department/rockhill_wanderers,
 		)
 	rockhill_advclass = "/datum/advclass/heartfelt/lord/lord"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/heartfelt/lord
+	rockhill_traits = list(
+		TRAIT_NOBLE,
+		TRAIT_HEAVYARMOR,
+		TRAIT_HEARTFELT,
+		)
 
 /datum/job/roguetown/jester
 	title = JOB_ROCKHILL_JESTER
@@ -359,6 +564,13 @@
 	outfit = /datum/outfit/job/roguetown/jester
 	departments_list = list(
 		/datum/job_department/rockhill_courtiers,
+		)
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/jester
+	rockhill_traits = list(
+		TRAIT_ZJUMP,
+		TRAIT_NOFALLDAMAGE1,
+		TRAIT_LEAPER,
+		TRAIT_NUTCRACKER,
 		)
 
 /datum/job/roguetown/keeper
@@ -372,6 +584,18 @@
 		/datum/job_department/rockhill_church,
 		)
 	rockhill_advclass = "/datum/advclass/keeper"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/keeper
+	rockhill_traits = list(
+		TRAIT_MEDICINE_EXPERT,
+		TRAIT_HOMESTEAD_EXPERT,
+		TRAIT_ALCHEMY_EXPERT,
+		TRAIT_SEWING_EXPERT,
+		TRAIT_SURVIVAL_EXPERT,
+		TRAIT_NOSTINK,
+		TRAIT_STEELHEARTED,
+		TRAIT_RITUALIST,
+		TRAIT_NUMBED_LIMBS,
+		)
 
 /datum/job/roguetown/knavewench
 	title = JOB_ROCKHILL_TAPSTER
@@ -384,6 +608,11 @@
 		/datum/job_department/rockhill_peasants,
 		)
 	rockhill_advclass = "/datum/advclass/tapster"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/knavewench
+	rockhill_traits = list(
+		TRAIT_CICERONE,
+		TRAIT_HOMESTEAD_EXPERT,
+		)
 
 /datum/job/roguetown/knight
 	title = JOB_ROCKHILL_KNIGHT
@@ -396,6 +625,14 @@
 		/datum/job_department/rockhill_nobles,
 		)
 	rockhill_advclass = "/datum/advclass/knight/heavy"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/knight
+	rockhill_traits = list(
+		TRAIT_HEAVYARMOR,
+		TRAIT_NOBLE,
+		TRAIT_STEELHEARTED,
+		TRAIT_GUARDSMAN,
+		TRAIT_EXPERT_HUNTER,
+		)
 
 /datum/job/roguetown/lord
 	title = JOB_ROCKHILL_GRAND_DUKE
@@ -408,6 +645,12 @@
 		/datum/job_department/rockhill_nobles,
 		)
 	rockhill_advclass = "/datum/advclass/lord/warrior"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/lord
+	rockhill_traits = list(
+		TRAIT_NOBLE,
+		TRAIT_DNR,
+		TRAIT_HEAVYARMOR,
+		)
 	alternate_titles = list(
 		"Grand Duchess",
 		"Duke",
@@ -425,6 +668,10 @@
 		/datum/job_department/rockhill_peasants,
 		)
 	rockhill_advclass = "/datum/advclass/lunatic"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/lunatic
+	rockhill_traits = list(
+		TRAIT_JESTERPHOBIA,
+		)
 
 /datum/job/roguetown/magician
 	title = JOB_ROCKHILL_COURT_MAGICIAN
@@ -437,6 +684,16 @@
 		/datum/job_department/rockhill_courtiers,
 		)
 	rockhill_advclass = "/datum/advclass/courtmage"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/magician
+	rockhill_traits = list(
+		TRAIT_MAGEARMOR,
+		TRAIT_ARCYNE_T4,
+		TRAIT_SEEPRICES,
+		TRAIT_INTELLECTUAL,
+		TRAIT_ALCHEMY_EXPERT,
+		TRAIT_NOBLE,
+		TRAIT_MAGEDEXTERITY,
+		)
 
 /datum/job/roguetown/manorguard
 	title = JOB_ROCKHILL_MAN_AT_ARMS
@@ -449,6 +706,12 @@
 		/datum/job_department/rockhill_garrison,
 		)
 	rockhill_advclass = "/datum/advclass/manorguard/footsman"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/manorguard
+	rockhill_traits = list(
+		TRAIT_MEDIUMARMOR,
+		TRAIT_GUARDSMAN,
+		TRAIT_STEELHEARTED,
+		)
 
 /datum/job/roguetown/marshal
 	title = JOB_ROCKHILL_MARSHAL
@@ -461,6 +724,12 @@
 		/datum/job_department/rockhill_nobles,
 		)
 	rockhill_advclass = "/datum/advclass/marshal/classic"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/marshal
+	rockhill_traits = list(
+		TRAIT_NOBLE,
+		TRAIT_HEAVYARMOR,
+		TRAIT_PERFECT_TRACKER,
+		)
 
 /datum/job/roguetown/martyr
 	title = JOB_ROCKHILL_MARTYR
@@ -473,6 +742,17 @@
 		/datum/job_department/rockhill_church,
 		)
 	rockhill_advclass = "/datum/advclass/martyr"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/martyr
+	rockhill_traits = list(
+		TRAIT_HEAVYARMOR,
+		TRAIT_STEELHEARTED,
+		TRAIT_SILVER_BLESSED,
+		TRAIT_EMPATH,
+		TRAIT_MEDICINE_EXPERT,
+		TRAIT_DUALWIELDER,
+		TRAIT_VOTARY,
+		TRAIT_CONVICTION,
+		)
 
 /datum/job/roguetown/mercenary
 	title = JOB_ROCKHILL_MERCENARY
@@ -485,6 +765,12 @@
 		/datum/job_department/rockhill_wanderers,
 		)
 	rockhill_advclass = "/datum/advclass/mercenary/atgervi"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/mercenary
+	rockhill_traits = list(
+		TRAIT_MEDIUMARMOR,
+		TRAIT_STEELHEARTED,
+		TRAIT_OUTLANDER,
+		)
 
 /datum/job/roguetown/merchant
 	title = JOB_ROCKHILL_MERCHANT
@@ -497,6 +783,11 @@
 		/datum/job_department/rockhill_yeomen,
 		)
 	rockhill_advclass = "/datum/advclass/merchant"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/merchant
+	rockhill_traits = list(
+		TRAIT_SEEPRICES,
+		TRAIT_CICERONE,
+		)
 
 /datum/job/roguetown/monk
 	title = JOB_ROCKHILL_ACOLYTE
@@ -509,6 +800,11 @@
 		/datum/job_department/rockhill_church,
 		)
 	rockhill_advclass = "/datum/advclass/acolyte"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/monk
+	rockhill_traits = list(
+		TRAIT_RITUALIST,
+		TRAIT_HOMESTEAD_EXPERT,
+		)
 
 /datum/job/roguetown/nightmaiden
 	title = JOB_ROCKHILL_BATHHOUSE_ATTENDANT
@@ -521,6 +817,15 @@
 		/datum/job_department/rockhill_peasants,
 		)
 	rockhill_advclass = "/datum/advclass/nightmaiden"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/nightmaiden
+	rockhill_traits = list(
+		TRAIT_NUTCRACKER,
+		TRAIT_CICERONE,
+		TRAIT_EMPATH,
+		TRAIT_GOODLOVER,
+		TRAIT_HOMESTEAD_EXPERT,
+		TRAIT_BATHHOUSE_DANCER,
+		)
 	alternate_titles = list(
 		"Nightswain",
 		"Nightmaiden",
@@ -537,6 +842,14 @@
 		/datum/job_department/rockhill_yeomen,
 		)
 	rockhill_advclass = "/datum/advclass/bathmaster"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/niteman
+	rockhill_traits = list(
+		TRAIT_SEEPRICES,
+		TRAIT_CICERONE,
+		TRAIT_NUTCRACKER,
+		TRAIT_GOODLOVER,
+		TRAIT_HOMESTEAD_EXPERT,
+		)
 	alternate_titles = list(
 		"Bathmatron",
 		"Nightmaster",
@@ -554,6 +867,7 @@
 		/datum/job_department/rockhill_peasants,
 		)
 	rockhill_advclass = "/datum/advclass/vagabond_original"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/orphan
 
 /datum/job/roguetown/orthodoxist
 	title = JOB_ROCKHILL_ORTHODOXIST
@@ -566,6 +880,13 @@
 		/datum/job_department/rockhill_inquisition,
 		)
 	rockhill_advclass = "/datum/advclass/psydoniantemplar"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/orthodoxist
+	rockhill_traits = list(
+		TRAIT_HEAVYARMOR,
+		TRAIT_OUTLANDER,
+		TRAIT_STEELHEARTED,
+		TRAIT_INQUISITION,
+		)
 
 /datum/job/roguetown/physician
 	title = JOB_ROCKHILL_HEAD_PHYSICIAN
@@ -578,6 +899,14 @@
 		/datum/job_department/rockhill_nobles,
 		)
 	rockhill_advclass = "/datum/advclass/physician"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/physician
+	rockhill_traits = list(
+		TRAIT_MEDICINE_EXPERT,
+		TRAIT_ALCHEMY_EXPERT,
+		TRAIT_NOSTINK,
+		TRAIT_EMPATH,
+		TRAIT_NOBLE,
+		)
 	alternate_titles = list(
 		"Court Physician",
 		)
@@ -593,6 +922,12 @@
 		/datum/job_department/rockhill_peasants,
 		)
 	rockhill_advclass = "/datum/advclass/artificer"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/pilgrim
+	rockhill_traits = list(
+		TRAIT_TRAINED_SMITH,
+		TRAIT_SMITHING_EXPERT,
+		TRAIT_ARCYNE_T1,
+		)
 
 /datum/job/roguetown/priest
 	title = JOB_ROCKHILL_BISHOP
@@ -605,6 +940,16 @@
 		/datum/job_department/rockhill_church,
 		)
 	rockhill_advclass = "/datum/advclass/bishop"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/priest
+	rockhill_traits = list(
+		TRAIT_CHOSEN,
+		TRAIT_RITUALIST,
+		TRAIT_GRAVEROBBER,
+		TRAIT_RESONANCE,
+		TRAIT_VOTARY,
+		TRAIT_HOMESTEAD_EXPERT,
+		TRAIT_HOLYWARRIOR,
+		)
 
 /datum/job/roguetown/prince
 	title = JOB_ROCKHILL_PRINCE
@@ -617,6 +962,11 @@
 		/datum/job_department/rockhill_nobles,
 		)
 	rockhill_advclass = "/datum/advclass/heir/daring"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/prince
+	rockhill_traits = list(
+		TRAIT_MEDIUMARMOR,
+		TRAIT_NOBLE,
+		)
 	alternate_titles = list(
 		"Princess",
 		)
@@ -632,6 +982,10 @@
 		/datum/job_department/rockhill_peasants,
 		)
 	rockhill_advclass = "/datum/advclass/prisoner_blacksmith"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/prisonerr
+	rockhill_traits = list(
+		TRAIT_TRAINED_SMITH,
+		)
 
 /datum/job/roguetown/puritan
 	title = JOB_ROCKHILL_INQUISITOR
@@ -644,6 +998,20 @@
 		/datum/job_department/rockhill_inquisition,
 		)
 	rockhill_advclass = "/datum/advclass/puritan/inspector"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/puritan
+	rockhill_traits = list(
+		TRAIT_STEELHEARTED,
+		TRAIT_DODGEEXPERT,
+		TRAIT_MEDIUMARMOR,
+		TRAIT_BLACKBAGGER,
+		TRAIT_SILVER_BLESSED,
+		TRAIT_INQUISITION,
+		TRAIT_PERFECT_TRACKER,
+		TRAIT_SLEUTH,
+		TRAIT_PURITAN,
+		TRAIT_OUTLANDER,
+		TRAIT_NOBLE,
+		)
 
 /datum/job/roguetown/rockhillslave
 	title = JOB_ROCKHILL_SLAVE
@@ -656,6 +1024,11 @@
 		/datum/job_department/rockhill_peasants,
 		)
 	rockhill_advclass = "/datum/advclass/slave/house_slave"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/rockhillslave
+	rockhill_traits = list(
+		TRAIT_HOMESTEAD_EXPERT,
+		TRAIT_OWNED_SLAVE,
+		)
 
 /datum/job/roguetown/rookie
 	title = JOB_ROCKHILL_ROOKIE
@@ -668,6 +1041,12 @@
 		/datum/job_department/rockhill_garrison,
 		)
 	rockhill_advclass = "/datum/advclass/rookie/frontline"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/rookie
+	rockhill_traits = list(
+		TRAIT_MEDIUMARMOR,
+		TRAIT_SQUIRE_REPAIR,
+		TRAIT_GUARDSMAN,
+		)
 
 /datum/job/roguetown/sergeant
 	title = JOB_ROCKHILL_SERGEANT
@@ -680,6 +1059,12 @@
 		/datum/job_department/rockhill_garrison,
 		)
 	rockhill_advclass = "/datum/advclass/sergeant/sergeant"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/sergeant
+	rockhill_traits = list(
+		TRAIT_GUARDSMAN,
+		TRAIT_STEELHEARTED,
+		TRAIT_MEDIUMARMOR,
+		)
 
 /datum/job/roguetown/servant
 	title = JOB_ROCKHILL_SERVANT
@@ -692,6 +1077,15 @@
 		/datum/job_department/rockhill_courtiers,
 		)
 	rockhill_advclass = "/datum/advclass/servant/servant"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/servant
+	rockhill_traits = list(
+		TRAIT_CICERONE,
+		TRAIT_KEENEARS,
+		TRAIT_SLEUTH,
+		TRAIT_ROYALSERVANT,
+		TRAIT_ROYAL_SUBSIDY,
+		TRAIT_HOMESTEAD_EXPERT,
+		)
 
 /datum/job/roguetown/shophand
 	title = JOB_ROCKHILL_SHOPHAND
@@ -704,6 +1098,10 @@
 		/datum/job_department/rockhill_youngfolk,
 		)
 	rockhill_advclass = "/datum/advclass/shophand"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/shophand
+	rockhill_traits = list(
+		TRAIT_SEEPRICES,
+		)
 
 /datum/job/roguetown/slaver
 	title = JOB_ROCKHILL_SLAVER
@@ -716,6 +1114,10 @@
 		/datum/job_department/rockhill_yeomen,
 		)
 	rockhill_advclass = "/datum/advclass/slaver"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/slaver
+	rockhill_traits = list(
+		TRAIT_SLEUTH,
+		)
 
 /datum/job/roguetown/squire
 	title = JOB_ROCKHILL_SQUIRE
@@ -728,6 +1130,12 @@
 		/datum/job_department/rockhill_garrison,
 		)
 	rockhill_advclass = "/datum/advclass/squire/lancer"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/squire
+	rockhill_traits = list(
+		TRAIT_MEDIUMARMOR,
+		TRAIT_SQUIRE_REPAIR,
+		TRAIT_EXPERT_HUNTER,
+		)
 
 /datum/job/roguetown/steward
 	title = JOB_ROCKHILL_STEWARD
@@ -740,6 +1148,12 @@
 		/datum/job_department/rockhill_nobles,
 		)
 	rockhill_advclass = "/datum/advclass/steward"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/steward
+	rockhill_traits = list(
+		TRAIT_NOBLE,
+		TRAIT_SEEPRICES,
+		TRAIT_ROYAL_SUBSIDY,
+		)
 
 /datum/job/roguetown/tailor
 	title = JOB_ROCKHILL_TAILOR
@@ -752,6 +1166,11 @@
 		/datum/job_department/rockhill_yeomen,
 		)
 	rockhill_advclass = "/datum/advclass/tailor"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/tailor
+	rockhill_traits = list(
+		TRAIT_SEWING_EXPERT,
+		TRAIT_EFFICIENT_WEAVER,
+		)
 
 /datum/job/roguetown/templar
 	title = JOB_ROCKHILL_TEMPLAR
@@ -764,6 +1183,12 @@
 		/datum/job_department/rockhill_church,
 		)
 	rockhill_advclass = "/datum/advclass/templar/crusader"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/templar
+	rockhill_traits = list(
+		TRAIT_HEAVYARMOR,
+		TRAIT_RITUALIST,
+		TRAIT_STEELHEARTED,
+		)
 
 /datum/job/roguetown/vanguard
 	title = JOB_ROCKHILL_VANGUARD
@@ -776,6 +1201,11 @@
 		/datum/job_department/rockhill_garrison,
 		)
 	rockhill_advclass = "/datum/advclass/vanguard/footman"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/vanguard
+	rockhill_traits = list(
+		TRAIT_MEDIUMARMOR,
+		TRAIT_SURVIVAL_EXPERT,
+		)
 
 /datum/job/roguetown/veteran
 	title = JOB_ROCKHILL_VETERAN
@@ -788,6 +1218,12 @@
 		/datum/job_department/rockhill_garrison,
 		)
 	rockhill_advclass = "/datum/advclass/veteran/battlemaster"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/veteran
+	rockhill_traits = list(
+		TRAIT_HEAVYARMOR,
+		TRAIT_STEELHEARTED,
+		TRAIT_COMBAT_AWARE,
+		)
 
 /datum/job/roguetown/villager
 	title = JOB_ROCKHILL_TOWNER
@@ -800,6 +1236,13 @@
 		/datum/job_department/rockhill_peasants,
 		)
 	rockhill_advclass = "/datum/advclass/barbersurgeon"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/villager
+	rockhill_traits = list(
+		TRAIT_EMPATH,
+		TRAIT_NOSTINK,
+		TRAIT_MEDICINE_EXPERT,
+		TRAIT_ALCHEMY_EXPERT,
+		)
 
 /datum/job/roguetown/wapprentice
 	title = JOB_ROCKHILL_MAGICIANS_ASSOCIATE
@@ -812,6 +1255,13 @@
 		/datum/job_department/rockhill_courtiers,
 		)
 	rockhill_advclass = "/datum/advclass/wapprentice/associate"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/wapprentice
+	rockhill_traits = list(
+		TRAIT_ARCYNE_T3,
+		TRAIT_MAGEDEXTERITY,
+		TRAIT_MAGEARMOR,
+		TRAIT_ARCYNE_T2,
+		)
 
 /datum/job/roguetown/warden
 	title = JOB_ROCKHILL_FOREST_WARDEN
@@ -824,6 +1274,14 @@
 		/datum/job_department/rockhill_garrison,
 		)
 	rockhill_advclass = "/datum/advclass/warden/ranger"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/warden
+	rockhill_traits = list(
+		TRAIT_DODGEEXPERT,
+		TRAIT_OUTDOORSMAN,
+		TRAIT_WOODSMAN,
+		TRAIT_SURVIVAL_EXPERT,
+		TRAIT_EXPERT_HUNTER,
+		)
 
 /datum/job/roguetown/wardenmaster
 	title = JOB_ROCKHILL_MASTER_WARDEN
@@ -836,6 +1294,18 @@
 		/datum/job_department/rockhill_garrison,
 		)
 	rockhill_advclass = "/datum/advclass/wardenmaster/wardenmaster"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/wardenmaster
+	rockhill_traits = list(
+		TRAIT_OUTDOORSMAN,
+		TRAIT_STEELHEARTED,
+		TRAIT_MEDIUMARMOR,
+		TRAIT_DODGEEXPERT,
+		TRAIT_WOODSMAN,
+		TRAIT_SURVIVAL_EXPERT,
+		TRAIT_FUSILIER,
+		TRAIT_PERFECT_TRACKER,
+		TRAIT_SLEUTH,
+		)
 
 /datum/job/roguetown/watchcaptain
 	title = JOB_ROCKHILL_WATCH_CAPTAIN
@@ -848,6 +1318,14 @@
 		/datum/job_department/rockhill_garrison,
 		)
 	rockhill_advclass = "/datum/advclass/watchcaptain/watchcaptain"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/watchcaptain
+	rockhill_traits = list(
+		TRAIT_GUARDSMAN,
+		TRAIT_STEELHEARTED,
+		TRAIT_MEDIUMARMOR,
+		TRAIT_PERFECT_TRACKER,
+		TRAIT_SLEUTH,
+		)
 
 /datum/job/roguetown/wretch
 	title = JOB_ROCKHILL_WRETCH
@@ -863,6 +1341,15 @@
 		"Hidden Domiciles",
 		)
 	rockhill_advclass = "/datum/advclass/wretch/licker"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/wretch
+	rockhill_traits = list(
+		TRAIT_STEELHEARTED,
+		TRAIT_SILVER_WEAK,
+		TRAIT_OUTLAW,
+		TRAIT_HERESIARCH,
+		TRAIT_SELF_SUSTENANCE,
+		TRAIT_ZURCH,
+		)
 
 /datum/outfit/job/roguetown/absolver
 	name = JOB_ROCKHILL_ABSOLVER

@@ -4,10 +4,15 @@
 		"project": "Ratwood-2.0",
 		"repository": "https://github.com/Rotwood-Vale/Ratwood-2.0.git",
 		"branch": "main",
-		"url": "https://raw.githubusercontent.com/Rotwood-Vale/Ratwood-2.0/main/_maps/map_files/rockhill/rockhill.dmm",
 		"map": "_maps/map_files/rockhill/rockhill.dmm",
 		"map_json": "_maps/rockhill.json",
 		"map_adjustment": "_maps/map_files/rockhill/map_adjustment_rockhill.dm",
+		"pack": [
+			"/_maps/*.json",
+			"/_maps/map_files/rockhill/*.dmm",
+			"/_maps/map_files/otherz/",
+			"/_maps/dungeon_generator/"
+		],
 		"sparse": [
 			"/code/",
 			"/icons/",
@@ -24,7 +29,8 @@
 			"/sound/weather/rain/",
 			"/sound/weather/snow/",
 			"/sound/weather/sand/",
-			"/_maps/dungeon_generator/"
+			"/_maps/dungeon_generator/",
+			"/sound/combat/"
 		],
 		"always_other_z": [
 			"_maps/map_files/otherz/dungeon.json"
@@ -752,7 +758,23 @@
 					"inhand_x_dimension",
 					"inhand_y_dimension",
 					"rogue_grid_width",
-					"rogue_grid_height"
+					"rogue_grid_height",
+					"rogue_force_wielded",
+					"wdefense",
+					"wdefense_wbonus",
+					"wlength",
+					"wbalance",
+					"minstr",
+					"can_parry",
+					"armour_penetration",
+					"associated_skill",
+					"possible_item_intents",
+					"gripped_intents",
+					"parrysound",
+					"rogue_armor",
+					"armor_class",
+					"rogue_prevent_crits",
+					"rogue_blocksound"
 				],
 				"rename": {
 					"inhand_icon_state": "item_state",
@@ -764,7 +786,11 @@
 					"rockhill_keys": "keys",
 					"rogue_sleeved": "sleeved",
 					"rogue_grid_width": "grid_width",
-					"rogue_grid_height": "grid_height"
+					"rogue_grid_height": "grid_height",
+					"armour_penetration": "armor_penetration",
+					"rogue_prevent_crits": "prevent_crits",
+					"rogue_blocksound": "blocksound",
+					"rogue_force_wielded": "force_wielded"
 				},
 				"true_only": [
 					"rogue_onhip",
@@ -789,8 +815,16 @@
 					}
 				},
 				"skip_default": [
+					"armor_class",
+					"armour_penetration",
+					"can_parry",
 					"lockid",
-					"picklvl"
+					"minstr",
+					"picklvl",
+					"rogue_force_wielded",
+					"wbalance",
+					"wdefense",
+					"wdefense_wbonus"
 				],
 				"path_lists": [
 					"rockhill_keys",
@@ -813,7 +847,42 @@
 						"8.9": "(HANDS_LAYER - 0.1)"
 					}
 				},
-				"grid_storage": true
+				"grid_storage": true,
+				"numeric_vars": [
+					"rogue_force_wielded",
+					"wdefense",
+					"wdefense_wbonus",
+					"wlength",
+					"wbalance",
+					"minstr",
+					"armor_class",
+					"armour_penetration"
+				],
+				"intent_lists": [
+					"possible_item_intents",
+					"gripped_intents"
+				],
+				"numeric_defaults": {
+					"wlength": 2
+				},
+				"skill_vars": [
+					"associated_skill"
+				],
+				"string_lists": [
+					"rogue_prevent_crits"
+				],
+				"string_define_vars": [
+					"rogue_blocksound"
+				],
+				"sound_lists": [
+					"parrysound"
+				],
+				"clothing_only": [
+					"rogue_armor",
+					"armor_class",
+					"rogue_prevent_crits",
+					"rogue_blocksound"
+				]
 			},
 			{
 				"file": "humans.dm",
@@ -888,7 +957,9 @@
 			"icons/effects/96x96.dmi",
 			"icons/effects/effects.dmi",
 			"icons/effects/32x200.dmi",
-			"icons/time.dmi"
+			"icons/time.dmi",
+			"icons/effects/waterfall.dmi",
+			"icons/effects/particles/smoke.dmi"
 		],
 		"extra_sounds": [
 			"sound/misc/newday.ogg",
@@ -912,7 +983,32 @@
 			"sound/weather/rain/thunder_4.ogg",
 			"sound/weather/rain/thunder_5.ogg",
 			"sound/weather/rain/thunder_6.ogg",
-			"sound/foley/ladder.ogg"
+			"sound/foley/ladder.ogg",
+			"sound/combat/parry/parrygen.ogg",
+			"sound/combat/dodge.ogg",
+			"sound/combat/hits/armor/plate_slashed (1).ogg",
+			"sound/combat/hits/armor/plate_slashed (2).ogg",
+			"sound/combat/hits/armor/plate_slashed (3).ogg",
+			"sound/combat/hits/armor/plate_slashed (4).ogg",
+			"sound/combat/hits/armor/plate_stabbed (1).ogg",
+			"sound/combat/hits/armor/plate_stabbed (2).ogg",
+			"sound/combat/hits/armor/plate_stabbed (3).ogg",
+			"sound/combat/hits/armor/plate_blunt (1).ogg",
+			"sound/combat/hits/armor/plate_blunt (2).ogg",
+			"sound/combat/hits/armor/plate_blunt (3).ogg",
+			"sound/combat/hits/armor/chain_slashed (1).ogg",
+			"sound/combat/hits/armor/chain_slashed (2).ogg",
+			"sound/combat/hits/armor/chain_slashed (3).ogg",
+			"sound/combat/hits/armor/chain_slashed (4).ogg",
+			"sound/combat/hits/armor/chain_blunt (1).ogg",
+			"sound/combat/hits/armor/chain_blunt (2).ogg",
+			"sound/combat/hits/armor/chain_blunt (3).ogg",
+			"sound/combat/hits/armor/light_stabbed (1).ogg",
+			"sound/combat/hits/armor/light_stabbed (2).ogg",
+			"sound/combat/hits/armor/light_stabbed (3).ogg",
+			"sound/combat/hits/armor/light_blunt (1).ogg",
+			"sound/combat/hits/armor/light_blunt (2).ogg",
+			"sound/combat/hits/armor/light_blunt (3).ogg"
 		],
 		"extra_files": {
 			"strings/calendar_events.json": "modular_redtard/rockhill/strings/calendar_events.json",
@@ -1011,7 +1107,37 @@
 			"/mob/living/simple_animal/hostile/rogue/mirespider_paralytic",
 			"/mob/living/simple_animal/hostile/retaliate/rogue/mirespider",
 			"/obj/item/rogueweapon/mace/oar"
-		]
+		],
+		"intents": {
+			"file": "intents.dm",
+			"rename": {
+				"canparry": "parriable_intent",
+				"candodge": "dodgeable_intent"
+			},
+			"strings": [
+				"name",
+				"desc",
+				"icon_state",
+				"blade_class",
+				"item_d_type"
+			],
+			"numeric": [
+				"damfactor",
+				"penfactor",
+				"clickcd",
+				"releasedrain",
+				"misscost",
+				"reach",
+				"chargetime",
+				"swingdelay"
+			],
+			"flags": [
+				"canparry",
+				"candodge",
+				"no_attack",
+				"unarmed"
+			]
+		}
 	},
 	"jobs": {
 		"departments": {
@@ -1098,6 +1224,438 @@
 		],
 		"/obj/structure/kybraxor": [
 			"redstone_id"
+		],
+		"/obj/effect/mapping_helpers/secret_door_creator": [
+			"redstone_id",
+			"floor_turf",
+			"override_floor"
 		]
+	},
+	"attributes": {
+		"skills_file": "skills.dm",
+		"sheets_file": "attribute_sheets.dm",
+		"skill_root": "/datum/skill",
+		"skill_target": "/datum/attribute/skill",
+		"sheet_root": "/datum/attribute_holder/sheet/job/rockhill",
+		"level_scale": 10,
+		"stats": {
+			"strength": "ROGUE_STAT_STRENGTH",
+			"perception": "ROGUE_STAT_PERCEPTION",
+			"intelligence": "ROGUE_STAT_INTELLIGENCE",
+			"constitution": "ROGUE_STAT_CONSTITUTION",
+			"willpower": "ROGUE_STAT_WILLPOWER",
+			"endurance": "ROGUE_STAT_WILLPOWER",
+			"speed": "ROGUE_STAT_SPEED",
+			"fortune": "ROGUE_STAT_FORTUNE"
+		},
+		"meta": {
+			"/datum/skill/combat/knives": {
+				"category": "ROGUE_SKILL_CATEGORY_MELEE",
+				"defaults": {
+					"ROGUE_STAT_SPEED": -5,
+					"ROGUE_STAT_PERCEPTION": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_SPEED"
+			},
+			"/datum/skill/combat/swords": {
+				"category": "ROGUE_SKILL_CATEGORY_MELEE",
+				"defaults": {
+					"ROGUE_STAT_STRENGTH": -5,
+					"ROGUE_STAT_SPEED": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/combat/polearms": {
+				"category": "ROGUE_SKILL_CATEGORY_MELEE",
+				"defaults": {
+					"ROGUE_STAT_STRENGTH": -5,
+					"ROGUE_STAT_WILLPOWER": -7
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/combat/maces": {
+				"category": "ROGUE_SKILL_CATEGORY_MELEE",
+				"defaults": {
+					"ROGUE_STAT_STRENGTH": -5,
+					"ROGUE_STAT_WILLPOWER": -7
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/combat/axes": {
+				"category": "ROGUE_SKILL_CATEGORY_MELEE",
+				"defaults": {
+					"ROGUE_STAT_STRENGTH": -5,
+					"ROGUE_STAT_WILLPOWER": -7
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/combat/whipsflails": {
+				"category": "ROGUE_SKILL_CATEGORY_MELEE",
+				"defaults": {
+					"ROGUE_STAT_SPEED": -7,
+					"ROGUE_STAT_PERCEPTION": -8
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_HARD",
+				"governing": "ROGUE_STAT_SPEED"
+			},
+			"/datum/skill/combat/bows": {
+				"category": "ROGUE_SKILL_CATEGORY_RANGED",
+				"defaults": {
+					"ROGUE_STAT_PERCEPTION": -5,
+					"ROGUE_STAT_STRENGTH": -7
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_PERCEPTION"
+			},
+			"/datum/skill/combat/crossbows": {
+				"category": "ROGUE_SKILL_CATEGORY_RANGED",
+				"defaults": {
+					"ROGUE_STAT_PERCEPTION": -5,
+					"ROGUE_STAT_INTELLIGENCE": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_PERCEPTION"
+			},
+			"/datum/skill/combat/wrestling": {
+				"category": "ROGUE_SKILL_CATEGORY_MELEE",
+				"defaults": {
+					"ROGUE_STAT_STRENGTH": -5,
+					"ROGUE_STAT_WILLPOWER": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/combat/unarmed": {
+				"category": "ROGUE_SKILL_CATEGORY_MELEE",
+				"defaults": {
+					"ROGUE_STAT_STRENGTH": -4,
+					"ROGUE_STAT_WILLPOWER": -5
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/combat/shields": {
+				"category": "ROGUE_SKILL_CATEGORY_BLOCKING",
+				"defaults": {
+					"ROGUE_STAT_WILLPOWER": -4,
+					"ROGUE_STAT_STRENGTH": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_WILLPOWER"
+			},
+			"/datum/skill/combat/slings": {
+				"category": "ROGUE_SKILL_CATEGORY_RANGED",
+				"defaults": {
+					"ROGUE_STAT_PERCEPTION": -5,
+					"ROGUE_STAT_STRENGTH": -7
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_PERCEPTION"
+			},
+			"/datum/skill/combat/firearms": {
+				"category": "ROGUE_SKILL_CATEGORY_RANGED",
+				"defaults": {
+					"ROGUE_STAT_PERCEPTION": -5,
+					"ROGUE_STAT_INTELLIGENCE": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_PERCEPTION"
+			},
+			"/datum/skill/craft/crafting": {
+				"category": "ROGUE_SKILL_CATEGORY_TRADE",
+				"defaults": {
+					"ROGUE_STAT_INTELLIGENCE": -4
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_INTELLIGENCE"
+			},
+			"/datum/skill/craft/weaponsmithing": {
+				"category": "ROGUE_SKILL_CATEGORY_TRADE",
+				"defaults": {
+					"/datum/attribute/skill/craft/blacksmithing": -5
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_HARD",
+				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/craft/armorsmithing": {
+				"category": "ROGUE_SKILL_CATEGORY_TRADE",
+				"defaults": {
+					"/datum/attribute/skill/craft/blacksmithing": -5
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_HARD",
+				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/craft/blacksmithing": {
+				"category": "ROGUE_SKILL_CATEGORY_TRADE",
+				"defaults": {
+					"ROGUE_STAT_STRENGTH": -5,
+					"ROGUE_STAT_INTELLIGENCE": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/craft/smelting": {
+				"category": "ROGUE_SKILL_CATEGORY_TRADE",
+				"defaults": {
+					"/datum/attribute/skill/craft/blacksmithing": -5
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_WILLPOWER"
+			},
+			"/datum/skill/craft/carpentry": {
+				"category": "ROGUE_SKILL_CATEGORY_TRADE",
+				"defaults": {
+					"ROGUE_STAT_STRENGTH": -4,
+					"ROGUE_STAT_INTELLIGENCE": -5
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/craft/masonry": {
+				"category": "ROGUE_SKILL_CATEGORY_TRADE",
+				"defaults": {
+					"ROGUE_STAT_STRENGTH": -4,
+					"ROGUE_STAT_WILLPOWER": -5
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/craft/engineering": {
+				"category": "ROGUE_SKILL_CATEGORY_TRADE",
+				"defaults": {
+					"ROGUE_STAT_INTELLIGENCE": -7
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_VERY_HARD",
+				"governing": "ROGUE_STAT_INTELLIGENCE"
+			},
+			"/datum/skill/craft/cooking": {
+				"category": "ROGUE_SKILL_CATEGORY_DOMESTIC",
+				"defaults": {
+					"ROGUE_STAT_INTELLIGENCE": -4
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_INTELLIGENCE"
+			},
+			"/datum/skill/craft/sewing": {
+				"category": "ROGUE_SKILL_CATEGORY_DOMESTIC",
+				"defaults": {
+					"ROGUE_STAT_PERCEPTION": -5,
+					"ROGUE_STAT_INTELLIGENCE": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_PERCEPTION"
+			},
+			"/datum/skill/craft/tanning": {
+				"category": "ROGUE_SKILL_CATEGORY_TRADE",
+				"defaults": {
+					"ROGUE_STAT_PERCEPTION": -5,
+					"ROGUE_STAT_STRENGTH": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_PERCEPTION"
+			},
+			"/datum/skill/craft/ceramics": {
+				"category": "ROGUE_SKILL_CATEGORY_TRADE",
+				"defaults": {
+					"ROGUE_STAT_INTELLIGENCE": -4,
+					"ROGUE_STAT_PERCEPTION": -5
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_INTELLIGENCE"
+			},
+			"/datum/skill/craft/alchemy": {
+				"category": "ROGUE_SKILL_CATEGORY_RESEARCH",
+				"defaults": {
+					"ROGUE_STAT_INTELLIGENCE": -7
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_VERY_HARD",
+				"governing": "ROGUE_STAT_INTELLIGENCE"
+			},
+			"/datum/skill/labor/farming": {
+				"category": "ROGUE_SKILL_CATEGORY_DOMESTIC",
+				"defaults": {
+					"ROGUE_STAT_INTELLIGENCE": -4
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_INTELLIGENCE"
+			},
+			"/datum/skill/labor/mining": {
+				"category": "ROGUE_SKILL_CATEGORY_DOMESTIC",
+				"defaults": {
+					"ROGUE_STAT_STRENGTH": -4,
+					"ROGUE_STAT_WILLPOWER": -5
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/labor/fishing": {
+				"category": "ROGUE_SKILL_CATEGORY_DOMESTIC",
+				"defaults": {
+					"ROGUE_STAT_PERCEPTION": -4
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_PERCEPTION"
+			},
+			"/datum/skill/labor/butchering": {
+				"category": "ROGUE_SKILL_CATEGORY_DOMESTIC",
+				"defaults": {
+					"ROGUE_STAT_STRENGTH": -4,
+					"ROGUE_STAT_PERCEPTION": -5
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/labor/lumberjacking": {
+				"category": "ROGUE_SKILL_CATEGORY_DOMESTIC",
+				"defaults": {
+					"ROGUE_STAT_STRENGTH": -4,
+					"ROGUE_STAT_WILLPOWER": -5
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/magic/holy": {
+				"category": "ROGUE_SKILL_CATEGORY_MAGIC",
+				"defaults": {
+					"ROGUE_STAT_FORTUNE": -8
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_VERY_HARD",
+				"governing": "ROGUE_STAT_FORTUNE"
+			},
+			"/datum/skill/magic/blood": {
+				"category": "ROGUE_SKILL_CATEGORY_MAGIC",
+				"defaults": {
+					"ROGUE_STAT_CONSTITUTION": -8
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_VERY_HARD",
+				"governing": "ROGUE_STAT_CONSTITUTION"
+			},
+			"/datum/skill/magic/arcane": {
+				"category": "ROGUE_SKILL_CATEGORY_MAGIC",
+				"defaults": {
+					"ROGUE_STAT_INTELLIGENCE": -8
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_VERY_HARD",
+				"governing": "ROGUE_STAT_INTELLIGENCE"
+			},
+			"/datum/skill/magic/druidic": {
+				"category": "ROGUE_SKILL_CATEGORY_MAGIC",
+				"defaults": {
+					"ROGUE_STAT_PERCEPTION": -8,
+					"ROGUE_STAT_FORTUNE": -9
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_VERY_HARD",
+				"governing": "ROGUE_STAT_PERCEPTION"
+			},
+			"/datum/skill/misc/athletics": {
+				"category": "ROGUE_SKILL_CATEGORY_GENERAL",
+				"defaults": {
+					"ROGUE_STAT_WILLPOWER": -4
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_WILLPOWER"
+			},
+			"/datum/skill/misc/climbing": {
+				"category": "ROGUE_SKILL_CATEGORY_GENERAL",
+				"defaults": {
+					"ROGUE_STAT_STRENGTH": -5,
+					"ROGUE_STAT_WILLPOWER": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/misc/reading": {
+				"category": "ROGUE_SKILL_CATEGORY_GENERAL",
+				"defaults": {
+					"ROGUE_STAT_INTELLIGENCE": -8
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_INTELLIGENCE"
+			},
+			"/datum/skill/misc/swimming": {
+				"category": "ROGUE_SKILL_CATEGORY_GENERAL",
+				"defaults": {
+					"ROGUE_STAT_WILLPOWER": -5,
+					"ROGUE_STAT_STRENGTH": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_WILLPOWER"
+			},
+			"/datum/skill/misc/stealing": {
+				"category": "ROGUE_SKILL_CATEGORY_SKULDUGGERY",
+				"defaults": {
+					"ROGUE_STAT_PERCEPTION": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_HARD",
+				"governing": "ROGUE_STAT_PERCEPTION"
+			},
+			"/datum/skill/misc/sneaking": {
+				"category": "ROGUE_SKILL_CATEGORY_SKULDUGGERY",
+				"defaults": {
+					"ROGUE_STAT_SPEED": -5
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_SPEED"
+			},
+			"/datum/skill/misc/lockpicking": {
+				"category": "ROGUE_SKILL_CATEGORY_SKULDUGGERY",
+				"defaults": {
+					"ROGUE_STAT_PERCEPTION": -7,
+					"ROGUE_STAT_INTELLIGENCE": -7
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_HARD",
+				"governing": "ROGUE_STAT_PERCEPTION"
+			},
+			"/datum/skill/misc/riding": {
+				"category": "ROGUE_SKILL_CATEGORY_GENERAL",
+				"defaults": {
+					"ROGUE_STAT_WILLPOWER": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_WILLPOWER"
+			},
+			"/datum/skill/misc/music": {
+				"category": "ROGUE_SKILL_CATEGORY_GENERAL",
+				"defaults": {
+					"ROGUE_STAT_INTELLIGENCE": -7,
+					"ROGUE_STAT_PERCEPTION": -8
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_HARD",
+				"governing": "ROGUE_STAT_INTELLIGENCE"
+			},
+			"/datum/skill/misc/medicine": {
+				"category": "ROGUE_SKILL_CATEGORY_MEDICAL",
+				"defaults": {
+					"ROGUE_STAT_INTELLIGENCE": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_INTELLIGENCE"
+			},
+			"/datum/skill/misc/tracking": {
+				"category": "ROGUE_SKILL_CATEGORY_GENERAL",
+				"defaults": {
+					"ROGUE_STAT_PERCEPTION": -5
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_PERCEPTION"
+			},
+			"/datum/skill/misc/hunting": {
+				"category": "ROGUE_SKILL_CATEGORY_DOMESTIC",
+				"defaults": {
+					"ROGUE_STAT_PERCEPTION": -5,
+					"ROGUE_STAT_STRENGTH": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_PERCEPTION"
+			}
+		}
+	},
+	"traits": {
+		"output": "modular_redtard/rockhill/ported/traits.dm"
 	}
 }

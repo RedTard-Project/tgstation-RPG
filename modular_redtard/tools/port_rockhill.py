@@ -1,4 +1,5 @@
 import collections
+from collections import OrderedDict
 import json
 import os
 import re
@@ -42,6 +43,9 @@ ONMOB_TAGS = {'onback': 'ROGUE_ONMOB_BACK', 'onbelt': 'ROGUE_ONMOB_HIP', 'gen': 
 DEFINE_VALUES = {}
 SOURCE_REVISION = []
 ARMOR_DATUMS = {}
+ROGUE_ARMOR_DATUMS = {}
+USED_INTENTS = set()
+DEFAULT_INTENTS = ('/datum/intent/use',)
 BLANK_USERS = set()
 FEMALE_USERS = set()
 BITMASK_TURFS = set()
@@ -532,6 +536,176 @@ def generate_dungeon_templates(rw, spec, tg_names):
     print(f"{spec['file']}: {len(blocks)} dungeon templates, {len(templates)} maps")
 
 
+SKILL_CALL = re.compile(r'\b(?:H|human|user)\.(?:mind\??\.)?(adjust_skillrank(?:_up_to)?)\(\s*(/datum/skill/[A-Za-z0-9_/]+)\s*,\s*([A-Z_0-9]+|-?\d+)')
+STAT_CALL = re.compile(r'\b(?:H|human|user)\.change_stat\(\s*(STATKEY_[A-Z]+|"[a-z]+")\s*,\s*(-?\d+)\s*\)')
+TRAIT_CALL = re.compile(r'\bADD_TRAIT\(\s*(?:H|human|user)\s*,\s*(TRAIT_[A-Z0-9_]+)\s*,')
+CONTROL_LINE = re.compile(r'^(if|else|for|switch|while|do)\b(.*)$')
+ROGUE_TRAITS_FILE = 'code/__DEFINES/traits.dm'
+
+
+def unconditional_lines(body):
+    lines = []
+    stack = []
+    for line in body:
+        text = line.strip()
+        if not text:
+            continue
+        indent = len(line) - len(line.lstrip('\t'))
+        while stack and stack[-1][0] >= indent:
+            stack.pop()
+        control = CONTROL_LINE.match(text)
+        if control:
+            mind_only = control.group(1) == 'if' and re.fullmatch(r'\(\s*H\.mind\s*\)', control.group(2).strip()) is not None
+            stack.append((indent, mind_only))
+            continue
+        if all(ok for _, ok in stack):
+            lines.append(text)
+    return lines
+
+
+def rogue_trait_table():
+    text = strip_comments(open(os.path.join(CHECKOUT, ROGUE_TRAITS_FILE), encoding='utf-8', errors='ignore').read())
+    start = text.find('GLOBAL_LIST_INIT(roguetraits, list(')
+    if start < 0:
+        raise SystemExit(f'{ROGUE_TRAITS_FILE}: no roguetraits list')
+    body = text[start:text.find('\n))', start)]
+    table = {}
+    for name, span, desc in re.findall(r'(TRAIT_[A-Z0-9_]+)\s*=\s*(span_[a-z_]+)\(\s*("(?:[^"\\]|\\.)*")\s*\)', body):
+        if STRING_LITERAL.match(desc):
+            table[name] = (span, desc)
+    return table
+
+
+def generate_traits(cfg, tg_names, needed):
+    spec = cfg['traits']
+    table = rogue_trait_table()
+    wanted = sorted(set(table) | set(needed))
+    defines = []
+    skipped = []
+    for name in wanted:
+        if name in tg_names:
+            continue
+        value = DEFINE_VALUES.get(name, '').strip()
+        if not STRING_LITERAL.match(value):
+            skipped.append(name)
+            continue
+        defines.append(f'#define {name} {value}')
+    known = (set(tg_names) | {line.split()[1] for line in defines})
+    descriptions = [f'\t{name} = {span}({desc}),' for name, (span, desc) in sorted(table.items()) if name in known and span in tg_names]
+    out = defines + ['', 'GLOBAL_LIST_INIT(rogue_trait_descriptions, list('] + descriptions + ['\t))']
+    open(spec['output'], 'w', encoding='utf-8', newline='\n').write('\n'.join(out) + '\n')
+    print(f"traits: {len(defines)} defines, {len(descriptions)} descriptions, {len(skipped)} without a string value")
+    return known
+
+
+def role_attributes(rw, job, advclass, outfit_source, attr_cfg):
+    scale = attr_cfg['level_scale']
+    stats = collections.Counter()
+    skills = {}
+    traits = []
+
+    def stat_key(token):
+        return attr_cfg['stats'].get(expand_define(token).strip('"'))
+
+    def level(token):
+        value = expand_define(token)
+        return int(float(value)) * scale if NUMBER.match(value) else None
+
+    def raise_skill(path, token, additive):
+        value = level(token)
+        if value is None:
+            return
+        skills[path] = skills.get(path, 0) + value if additive else max(skills.get(path, 0), value)
+
+    if advclass:
+        for token, amount in re.findall(r'(STATKEY_[A-Z]+|"[a-z]+")\s*=\s*(-?\d+)', rw.resolve(advclass, 'subclass_stats') or ''):
+            if stat_key(token):
+                stats[stat_key(token)] += int(amount)
+        for path, token in re.findall(r'(/datum/skill/[A-Za-z0-9_/]+)\s*=\s*([A-Z_0-9]+|\d+)', rw.resolve(advclass, 'subclass_skills') or ''):
+            raise_skill(path, token, False)
+        traits += re.findall(r'(TRAIT_[A-Z0-9_]+)', rw.resolve(advclass, 'traits_applied') or '')
+    else:
+        for token, amount in re.findall(r'(STATKEY_[A-Z]+|"[a-z]+")\s*=\s*(-?\d+)', rw.resolve(job, 'job_stats') or ''):
+            if stat_key(token):
+                stats[stat_key(token)] += int(amount)
+    traits += re.findall(r'(TRAIT_[A-Z0-9_]+)', rw.resolve(job, 'job_traits') or '')
+    parts = (outfit_source or '').split('/')
+    for k in range(3, len(parts) + 1):
+        outfit = '/'.join(parts[:k])
+        for text in unconditional_lines(PRE_EQUIP.get(outfit, [])):
+            for call, path, token in SKILL_CALL.findall(text):
+                raise_skill(path, token, call == 'adjust_skillrank')
+            for token, amount in STAT_CALL.findall(text):
+                if stat_key(token):
+                    stats[stat_key(token)] += int(amount)
+            traits += TRAIT_CALL.findall(text)
+    return {'stats': {k: v for k, v in stats.items() if v}, 'skills': skills, 'traits': list(dict.fromkeys(traits))}
+
+
+def generate_skills(cfg, rw):
+    spec = cfg['attributes']
+    blocks = []
+    for path, meta in spec['meta'].items():
+        if path not in rw.types:
+            raise SystemExit(f'attributes.meta: {path} is not a Ratwood skill')
+        target = spec['skill_target'] + path[len(spec['skill_root']):]
+        block = [target]
+        for var in ('name', 'desc'):
+            value = string_value(rw.resolve(path, var))
+            if value and value != '""':
+                block.append(f'\t{var} = {value}')
+        block.append(f"\tcategory = {meta['category']}")
+        block.append(f"\tdifficulty = {meta['difficulty']}")
+        if meta.get('governing'):
+            block.append(f"\tgoverning_attribute = {meta['governing']}")
+        if meta.get('defaults'):
+            block += ['\tdefault_attributes = list('] + [f'\t\t{k} = {v},' for k, v in meta['defaults'].items()] + ['\t\t)']
+        dreams = [d for d in re.findall(r'"(?:[^"\\]|\\.)*"', rw.resolve(path, 'dreams') or '') if STRING_LITERAL.match(d)]
+        if dreams:
+            block += ['\tdreams = list('] + [f'\t\t{d},' for d in dreams] + ['\t\t)']
+        blocks.append(block)
+    missing = sorted(p for p in rw.types if p.startswith(spec['skill_root'] + '/') and p not in spec['meta'] and (rw.types[p].get('abstract_type') or '').strip() != p)
+    if missing:
+        raise SystemExit('Ratwood skills without attributes.meta entries:\n  ' + '\n  '.join(missing))
+    open(f"{OUT_DIR}/{spec['skills_file']}", 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    print(f"{spec['skills_file']}: {len(blocks)} skills")
+
+
+def generate_attribute_sheets(cfg, rw, jobs, role_outfits, known_traits):
+    spec = cfg['attributes']
+    blocks = []
+    per_job = {}
+    unknown_skills = collections.Counter()
+    unknown_traits = collections.Counter()
+    for job in jobs:
+        dressed = role_outfits.get(job, {})
+        data = role_attributes(rw, job, dressed.get('advclass'), dressed.get('source'), spec)
+        entries = [f'\t\t{stat} = {amount},' for stat, amount in sorted(data['stats'].items())]
+        for path, value in sorted(data['skills'].items()):
+            if path not in spec['meta']:
+                unknown_skills[path] += 1
+                continue
+            entries.append(f"\t\t{spec['skill_target'] + path[len(spec['skill_root']):]} = {min(value, 60)},")
+        traits = []
+        for trait in data['traits']:
+            if trait in known_traits:
+                traits.append(trait)
+            else:
+                unknown_traits[trait] += 1
+        sheet = None
+        if entries:
+            sheet = spec['sheet_root'] + job[len(JOB_ROOT):]
+            blocks.append([sheet, '\traw_attribute_list = list('] + entries + ['\t\t)'])
+        per_job[job] = {'sheet': sheet, 'traits': traits}
+    open(f"{OUT_DIR}/{spec['sheets_file']}", 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    print(f"{spec['sheets_file']}: {len(blocks)} role sheets")
+    if unknown_skills:
+        print('  skills without a port:', ', '.join(f'{p} ({n})' for p, n in unknown_skills.most_common()))
+    if unknown_traits:
+        print('  traits without a define:', ', '.join(f'{p} ({n})' for p, n in unknown_traits.most_common()))
+    return per_job
+
+
 def map_usage(map_path):
     lines = open(map_path, encoding='utf-8').read().split('\n')
     models = {}
@@ -642,20 +816,57 @@ def literal(value, tg_names):
     return None
 
 
+def checkout_root():
+    return os.path.abspath(CHECKOUT)
+
+
+def checkout_git_dir():
+    return os.path.join(checkout_root(), '.git')
+
+
+def same_path(a, b):
+    return os.path.normcase(os.path.normpath(os.path.abspath(a))) == os.path.normcase(os.path.normpath(os.path.abspath(b)))
+
+
+def git_env():
+    env = dict(os.environ, GIT_CEILING_DIRECTORIES=os.path.dirname(checkout_root()))
+    for name in ('GIT_DIR', 'GIT_WORK_TREE', 'GIT_INDEX_FILE', 'GIT_COMMON_DIR'):
+        env.pop(name, None)
+    return env
+
+
 def git(*args):
-    return subprocess.run(['git', '-C', CHECKOUT, *args], check=True, capture_output=True, text=True).stdout
+    command = ['git', '--git-dir', checkout_git_dir(), '--work-tree', checkout_root(), '-c', 'gc.auto=0', '-c', 'maintenance.auto=false', *args]
+    return subprocess.run(command, check=True, capture_output=True, text=True, env=git_env(), cwd=os.path.dirname(checkout_root())).stdout
+
+
+def checkout_valid():
+    if not os.path.isfile(os.path.join(checkout_git_dir(), 'HEAD')):
+        return False
+    result = subprocess.run(['git', '--git-dir', checkout_git_dir(), 'rev-parse', '--absolute-git-dir'], capture_output=True, text=True, env=git_env(), cwd=os.path.dirname(checkout_root()))
+    return result.returncode == 0 and same_path(result.stdout.strip(), checkout_git_dir())
 
 
 def sync_source(source):
-    if not os.path.isdir(os.path.join(CHECKOUT, '.git')):
-        os.makedirs(os.path.dirname(CHECKOUT), exist_ok=True)
+    cache_root = os.path.abspath('.cache')
+    if not same_path(os.path.dirname(checkout_root()), cache_root) or same_path(checkout_git_dir(), '.git'):
+        raise SystemExit(f'refusing to use {checkout_root()} as the Ratwood cache: it must be a folder inside {cache_root}')
+    if not checkout_valid():
+        if os.path.exists(checkout_root()):
+            print('the Ratwood cache', CHECKOUT, 'is not a valid git repository; recloning it')
+            shutil.rmtree(checkout_root())
+        os.makedirs(os.path.dirname(checkout_root()), exist_ok=True)
         print('cloning', source['repository'], source['branch'], 'into', CHECKOUT)
-        subprocess.run(['git', 'clone', '--depth', '1', '--filter=blob:none', '--no-checkout', '--branch', source['branch'], source['repository'], CHECKOUT], check=True)
+        subprocess.run(['git', 'clone', '--depth', '1', '--filter=blob:none', '--no-checkout', '--config', 'gc.auto=0', '--config', 'maintenance.auto=false', '--branch', source['branch'], source['repository'], checkout_root()], check=True, env=git_env(), cwd=os.path.dirname(checkout_root()))
+        if not checkout_valid():
+            raise SystemExit(f'{CHECKOUT}: the fresh clone is not a valid git repository; refusing to run git there')
     elif '--no-pull' not in sys.argv:
         print('syncing', CHECKOUT, 'to', source['repository'], source['branch'])
         git('remote', 'set-url', 'origin', source['repository'])
         git('fetch', '--depth', '1', 'origin', source['branch'])
         git('reset', '--hard', 'FETCH_HEAD')
+    git('config', 'gc.auto', '0')
+    git('config', 'maintenance.auto', 'false')
     git('sparse-checkout', 'set', '--no-cone', *source['sparse'])
     git('read-tree', '-mu', 'HEAD')
     absent = [os.path.relpath(path, CHECKOUT).replace('\\', '/') for path in included_files(CHECKOUT) if not os.path.exists(path)]
@@ -730,7 +941,14 @@ def main():
     generated = generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, outfit_items | mapgen_types | fill_items, set(jobs))
     generate_onmob(generated)
     generate_mapgen(mapgen, rules, declared | generated, tg_names)
-    generate_jobs(cfg, rw, usage, role_outfits, declared | generated, station_usage)
+    role_traits = set()
+    for job in jobs:
+        dressed = role_outfits.get(job, {})
+        role_traits |= set(role_attributes(rw, job, dressed.get('advclass'), dressed.get('source'), cfg['attributes'])['traits'])
+    known_traits = generate_traits(cfg, tg_names, role_traits)
+    generate_skills(cfg, rw)
+    role_attrs = generate_attribute_sheets(cfg, rw, jobs, role_outfits, known_traits)
+    generate_jobs(cfg, rw, usage, role_outfits, declared | generated, station_usage, role_attrs)
 
 
 MAPGEN_LANDMARK = '/obj/effect/landmark/mapGenerator'
@@ -1019,6 +1237,16 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
 
     runtime_sounds = {}
 
+    sounds = {}
+
+    def sound_ref(raw):
+        rel = exact_case(CHECKOUT, ICON_LITERAL.match(raw.strip()).group(1))
+        src = os.path.join(CHECKOUT, rel)
+        if not os.path.exists(src) or not asset_allowed(rel, port.get('assets', {})):
+            return None
+        sounds[src] = f"{SOUND_DIR}/{rel[len('sound/'):] if rel.startswith('sound/') else rel}"
+        return f"'{sounds[src]}'"
+
     def runtime_sound(rel, root):
         dest = f"{root}/{rel[len('sound/'):] if rel.startswith('sound/') else rel}"
         runtime_sounds[os.path.join(CHECKOUT, rel)] = dest
@@ -1279,6 +1507,8 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                     cat.setdefault('_graft_blocks', {})[g] = block[1:]
         if cat.get('sound_vars'):
             fetch_sources([f for p in paths for source_name in cat['sound_vars'].values() for f in sound_files(rw.resolve(p, source_name))])
+        if cat.get('sound_lists'):
+            fetch_sources([f for p in paths for name in cat['sound_lists'] for f in sound_files(rw.resolve(p, cat.get('rename', {}).get(name, name)))])
         for path in paths:
             CURRENT[0] = path
             block = [path]
@@ -1297,6 +1527,44 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                     mapped = cat['mapped_vars'][name].get((value or '').strip().strip('()').strip())
                     if mapped:
                         block.append(f'\t{name} = {mapped}')
+                    continue
+                if name in cat.get('clothing_only', []) and not path.startswith('/obj/item/clothing/'):
+                    continue
+                if name in cat.get('numeric_vars', []):
+                    number = define_value_number(value)
+                    if number is not None and not (number == 0 and name in cat.get('skip_default', [])) and number != cat.get('numeric_defaults', {}).get(name):
+                        block.append(f'\t{name} = {number}')
+                    continue
+                if name in cat.get('intent_lists', []):
+                    entries = intent_paths(rw, value)
+                    if entries and tuple(entries) != DEFAULT_INTENTS:
+                        USED_INTENTS.update(entries)
+                        block.append(f'\t{name} = list(' + ', '.join(entries) + ')')
+                    continue
+                if name in cat.get('skill_vars', []):
+                    target = skill_target(cfg, value)
+                    if target:
+                        block.append(f'\t{name} = {target}')
+                    continue
+                if name in cat.get('string_lists', []):
+                    entries = string_list(value)
+                    if entries:
+                        block.append(f'\t{name} = list(' + ', '.join(entries) + ')')
+                    continue
+                if name in cat.get('string_define_vars', []):
+                    expanded = expand_define(value)
+                    if STRING_LITERAL.match(expanded):
+                        block.append(f'\t{name} = {expanded}')
+                    continue
+                if name in cat.get('sound_lists', []):
+                    refs = [ref for ref in (sound_ref(f"'{f}'") for f in sound_files(value)) if ref]
+                    if refs:
+                        block.append(f'\t{name} = list(' + ', '.join(refs) + ')')
+                    continue
+                if name == 'rogue_armor':
+                    armor = rogue_armor_value(rw.resolve(path, 'armor'))
+                    if armor:
+                        block.append(f'\trogue_armor = {armor}')
                     continue
                 if name in cat.get('flag_vars', []):
                     if value is not None:
@@ -1417,6 +1685,13 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
     if port.get('dungeon_templates'):
         generate_dungeon_templates(rw, port['dungeon_templates'], tg_names)
 
+    rogue_armor_lines = []
+    for path, fields in sorted(ROGUE_ARMOR_DATUMS.items()):
+        rogue_armor_lines += [path] + [f'\t{k} = {v}' for k, v in fields.items() if v] + ['']
+    open(f'{OUT_DIR}/rogue_armor.dm', 'w', encoding='utf-8', newline='\n').write('\n'.join(rogue_armor_lines).rstrip() + '\n')
+    print(f'rogue_armor.dm: {len(ROGUE_ARMOR_DATUMS)} armor datums')
+    generate_intents(rw, port.get('intents', {}), sound_ref)
+
     armor_lines = []
     for path, fields in sorted(ARMOR_DATUMS.items()):
         armor_lines += [path] + [f'\t{k} = {v}' for k, v in fields.items() if v] + ['']
@@ -1460,15 +1735,6 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
     open(f'{OUT_DIR}/turfs_reskin.dm', 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in reskin_blocks) + '\n')
     print(f'turfs_reskin.dm: {len(reskin_blocks)} types')
 
-    sounds = {}
-
-    def sound_ref(raw):
-        rel = exact_case(CHECKOUT, ICON_LITERAL.match(raw.strip()).group(1))
-        src = os.path.join(CHECKOUT, rel)
-        if not os.path.exists(src) or not asset_allowed(rel, port.get('assets', {})):
-            return None
-        sounds[src] = f"{SOUND_DIR}/{rel[len('sound/'):] if rel.startswith('sound/') else rel}"
-        return f"'{sounds[src]}'"
 
     for rel in port.get('extra_sounds', []):
         if not sound_ref(f"'{rel}'"):
@@ -1834,25 +2100,116 @@ def armor_type_value(raw, armor_cfg, wear=None):
     def scaled(n):
         return int(round(min(max(n, 0) * scale, cap)))
     fields = {
-        'melee': scaled(sum(numbers.get(k, 0) for k in ('blunt', 'slash', 'stab')) / 3),
-        'bullet': scaled(numbers.get('piercing', 0)),
         'fire': scaled(numbers.get('fire', 0)),
         'acid': scaled(numbers.get('acid', 0)),
     }
-    if wear in ('hands', 'feet'):
-        fields['melee'] = fields['bullet'] = 0
     if not any(fields.values()):
         return None
     name = (raw or '').strip()
     if re.match(r'^ARMOR_[A-Z0-9_]+$', name):
         leaf = 'rockhill_' + name[len('ARMOR_'):].lower()
     else:
-        leaf = 'rockhill_m{melee}_b{bullet}_f{fire}_a{acid}'.format(**fields)
+        leaf = 'rockhill_f{fire}_a{acid}'.format(**fields)
     if wear in ('hands', 'feet'):
         leaf += '_' + wear
     path = ('/datum/armor/clothing_under/' if wear == 'under' else '/datum/armor/') + leaf
     ARMOR_DATUMS[path] = fields
     return path
+
+
+def rogue_armor_value(raw):
+    value = expand_define(raw)
+    numbers = {k: int(float(n)) for k, n in re.findall(r'"(\w+)"\s*=\s*(-?\d+(?:\.\d+)?)', value)}
+    fields = OrderedDict((k, max(0, numbers.get(k, 0))) for k in ('blunt', 'slash', 'stab', 'piercing', 'fire', 'acid', 'magic'))
+    if not any(fields.values()):
+        return None
+    name = (raw or '').strip()
+    if re.match(r'^ARMOR_[A-Z0-9_]+$', name):
+        leaf = name[len('ARMOR_'):].lower()
+    else:
+        leaf = 'b{blunt}_s{slash}_t{stab}_p{piercing}_f{fire}_a{acid}'.format(**fields)
+    path = '/datum/rogue_armor/' + leaf
+    ROGUE_ARMOR_DATUMS[path] = fields
+    return path
+
+
+def define_value_number(raw):
+    if raw is None:
+        return None
+    value = expand_define(raw.strip())
+    for _ in range(4):
+        stripped = value.strip()
+        if stripped.startswith('(') and stripped.endswith(')'):
+            value = expand_define(stripped[1:-1])
+        else:
+            break
+    value = value.strip()
+    if not NUMBER.match(value):
+        return None
+    number = float(value)
+    return int(number) if number == int(number) else number
+
+
+def intent_paths(rw, raw):
+    out = []
+    for token in re.findall(r'(/datum/intent[A-Za-z0-9_/]*|[A-Z_][A-Z0-9_]*)', raw or ''):
+        path = token if token.startswith('/') else expand_define(token)
+        if path.startswith('/datum/intent') and path in rw.types and path not in out:
+            out.append(path)
+    return out
+
+
+def skill_target(cfg, raw):
+    spec = cfg['attributes']
+    path = (raw or '').strip()
+    if path in spec['meta']:
+        return spec['skill_target'] + path[len(spec['skill_root']):]
+    return None
+
+
+def string_list(raw):
+    out = []
+    for token in re.findall(r'"(?:[^"\\]|\\.)*"|[A-Z_][A-Z0-9_]*', raw or ''):
+        value = token if token.startswith('"') else expand_define(token)
+        if STRING_LITERAL.match(value) and value not in out:
+            out.append(value)
+    return out
+
+
+def generate_intents(rw, spec, sound_ref):
+    renames = spec.get('rename', {})
+    numeric = spec.get('numeric', [])
+    flags = spec.get('flags', [])
+    strings = spec.get('strings', [])
+    blocks = []
+    fetch_sources([f for path in USED_INTENTS for f in sound_files(rw.resolve(path, 'hitsound'))])
+    for path in sorted(USED_INTENTS):
+        block = [path]
+        for name in strings:
+            value = string_value(rw.resolve(path, renames.get(name, name)))
+            if value is None:
+                value = expand_define(rw.resolve(path, renames.get(name, name)) or '')
+                value = value if STRING_LITERAL.match(value) else None
+            if value is not None:
+                block.append(f'\t{name} = {value}')
+        verbs = string_list(rw.resolve(path, 'attack_verb'))
+        if verbs:
+            block.append('\tattack_verb = list(' + ', '.join(verbs) + ')')
+        for name in numeric:
+            number = define_value_number(rw.resolve(path, renames.get(name, name)))
+            if number is not None:
+                block.append(f'\t{name} = {number}')
+        for name in flags:
+            value = (rw.resolve(path, renames.get(name, name)) or '').strip()
+            if value in ('TRUE', 'FALSE', '0', '1'):
+                block.append(f"\t{name} = {'TRUE' if value in ('TRUE', '1') else 'FALSE'}")
+        sounds = sound_files(rw.resolve(path, 'hitsound'))
+        refs = [ref for ref in (sound_ref(f"'{f}'") for f in sounds) if ref]
+        if refs:
+            block.append('\thitsound = list(' + ', '.join(refs) + ')')
+        blocks.append(block)
+    open(f"{OUT_DIR}/{spec.get('file', 'intents.dm')}", 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    print(f"{spec.get('file', 'intents.dm')}: {len(blocks)} intents")
 
 
 def slot_flags_value(raw):
@@ -2003,7 +2360,7 @@ def select_jobs(cfg, rw):
     return ported
 
 
-def generate_jobs(cfg, rw, usage, role_outfits, valid, station_usage):
+def generate_jobs(cfg, rw, usage, role_outfits, valid, station_usage, role_attrs=None):
     jobs_cfg = cfg['jobs']
     departments = jobs_cfg['departments']
     blacklist, slots, retitles = map_adjustment(os.path.join(CHECKOUT, cfg['source']['map_adjustment']))
@@ -2063,6 +2420,11 @@ def generate_jobs(cfg, rw, usage, role_outfits, valid, station_usage):
             block += ['\tmind_traits = list('] + [f'\t\t{trait},' for trait in traits] + ['\t\t)']
         if role_outfits.get(p, {}).get('advclass'):
             block.append(f'\trockhill_advclass = "{role_outfits[p]["advclass"]}"')
+        attrs = (role_attrs or {}).get(p, {})
+        if attrs.get('sheet'):
+            block.append(f"\tattribute_sheet = {attrs['sheet']}")
+        if attrs.get('traits'):
+            block += ['\trockhill_traits = list('] + [f'\t\t{trait},' for trait in attrs['traits']] + ['\t\t)']
         alternates = []
         f_title = string_value(rw.resolve(p, 'f_title'))
         if f_title and f_title != titles[p] and f_title.strip('"') not in taken:

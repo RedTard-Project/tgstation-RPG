@@ -100,9 +100,44 @@
 	screen_loc = rogueui_intents
 	mouse_over_pointer = MOUSE_HAND_POINTER
 
+/atom/movable/screen/rogue/weapon_intents/Initialize(mapload, datum/hud/hud_owner)
+	. = ..()
+	var/mob/living/owner = hud_owner?.mymob
+	if(isliving(owner))
+		RegisterSignals(owner, list(COMSIG_MOB_ROGUE_INTENT_CHANGED, COMSIG_MOB_SWAP_HANDS, COMSIG_MOB_UPDATE_HELD_ITEMS), PROC_REF(on_intents_changed))
+	update_appearance(UPDATE_OVERLAYS)
+
+/atom/movable/screen/rogue/weapon_intents/proc/on_intents_changed(datum/source)
+	SIGNAL_HANDLER
+	update_appearance(UPDATE_OVERLAYS)
+
+/atom/movable/screen/rogue/weapon_intents/update_overlays()
+	. = ..()
+	var/mob/living/owner = get_mob()
+	if(!isliving(owner))
+		return
+	var/obj/item/held = owner.get_active_held_item()
+	var/list/intents = held?.rogue_intents()
+	var/shown = min(length(intents), ROGUE_INTENT_SLOTS)
+	if(!shown)
+		return
+	var/static/list/offsets_x = list(64, 96, 64, 96)
+	var/static/list/offsets_y = list(16, 16, 0, 0)
+	for(var/slot in 1 to shown)
+		var/datum/intent/intent = rogue_intent(intents[slot])
+		var/mutable_appearance/intent_icon = mutable_appearance(intent.icon, intent.icon_state)
+		intent_icon.pixel_x = offsets_x[slot]
+		intent_icon.pixel_y = offsets_y[slot]
+		. += intent_icon
+	var/selected = clamp(owner.rogue_intent_slot(), 1, shown)
+	var/mutable_appearance/border = mutable_appearance(ROGUE_HUD_ICON, "intentselected")
+	border.pixel_x = offsets_x[selected]
+	border.pixel_y = offsets_y[selected]
+	. += border
+
 /atom/movable/screen/rogue/weapon_intents/Click(location, control, params)
 	. = ..()
-	var/mob/user = get_mob()
+	var/mob/living/user = get_mob()
 	if(usr != user)
 		return
 	var/list/modifiers = params2list(params)
@@ -111,7 +146,42 @@
 		return
 	if(SEND_SIGNAL(user, COMSIG_MOB_ROGUE_HUD_INTENT_CLICK, index, modifiers) & COMPONENT_ROGUE_INTENT_HANDLED)
 		return
+	if(isliving(user))
+		if(LAZYACCESS(modifiers, SHIFT_CLICK))
+			user.rogue_examine_intent(index)
+			return
+		if(user.rogue_select_intent(index))
+			return
 	rogue_hud_not_implemented(user)
+
+/atom/movable/screen/rogue/def_intent
+	name = "defense intent"
+	icon_state = "def2n"
+	screen_loc = rogueui_def
+	mouse_over_pointer = MOUSE_HAND_POINTER
+
+/atom/movable/screen/rogue/def_intent/Initialize(mapload, datum/hud/hud_owner)
+	. = ..()
+	var/mob/living/owner = hud_owner?.mymob
+	if(isliving(owner))
+		RegisterSignal(owner, COMSIG_MOB_ROGUE_INTENT_CHANGED, PROC_REF(on_intents_changed))
+	update_appearance(UPDATE_ICON_STATE)
+
+/atom/movable/screen/rogue/def_intent/proc/on_intents_changed(datum/source)
+	SIGNAL_HANDLER
+	update_appearance(UPDATE_ICON_STATE)
+
+/atom/movable/screen/rogue/def_intent/update_icon_state()
+	. = ..()
+	var/mob/living/owner = get_mob()
+	icon_state = "def[isliving(owner) ? owner.rogue_def_intent : ROGUE_INTENT_PARRY]n"
+
+/atom/movable/screen/rogue/def_intent/Click(location, control, params)
+	. = ..()
+	var/mob/living/user = usr
+	if(!isliving(user) || user != get_mob())
+		return
+	user.rogue_toggle_def_intent()
 
 /atom/movable/screen/rogue/weapon_intents/proc/get_index_at_loc(icon_x, icon_y)
 	if(icon_x <= 64)
@@ -368,13 +438,13 @@
 
 /atom/movable/screen/rogue/skills/Click(location, control, params)
 	. = ..()
-	var/mob/user = usr
-	if(user != get_mob())
+	var/mob/living/user = usr
+	if(!isliving(user) || user != get_mob())
 		return
-	if(LAZYACCESS(params2list(params), RIGHT_CLICK) || !user.mind)
-		rogue_hud_not_implemented(user)
+	if(LAZYACCESS(params2list(params), RIGHT_CLICK))
+		user.rogue_print_traits()
 		return
-	user.mind.print_levels(user)
+	user.rogue_open_attributes(user)
 
 /atom/movable/screen/craft/rogue
 	icon = ROGUE_HUD_ICON

@@ -24,11 +24,6 @@
 	icon_state = "mmbintents0"
 	screen_loc = rogueui_quad
 
-/atom/movable/screen/rogue/stub/def_intent
-	name = "defense intent"
-	icon_state = "def1n"
-	screen_loc = rogueui_def
-
 /atom/movable/screen/rogue/stub/defdelay
 	name = "defense readiness"
 	icon_state = "defdelay0"

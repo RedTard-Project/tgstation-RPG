@@ -67,7 +67,7 @@
 		HUD_ROGUE_RMB_INTENT = list(/atom/movable/screen/rogue/stub/rmb_intent, "WEST+1,CENTER+1", hud_icon, "rmbintent", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 		HUD_MOB_HEALTH = list(/atom/movable/screen/healths/rogue, "WEST+4:22,CENTER+4:17", heat_icon, "dam0", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 		HUD_ROGUE_QUAD_INTENTS = list(/atom/movable/screen/rogue/stub/quad_intents, "WEST+1,SOUTH+7", hud_icon, "mmbintents0", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
-		HUD_ROGUE_DEF_INTENT = list(/atom/movable/screen/rogue/stub/def_intent, "WEST+3:16,NORTH-5", hud_icon, "def1n", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_DEF_INTENT = list(/atom/movable/screen/rogue/def_intent, "WEST+3:16,NORTH-5", hud_icon, "def2n", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 		HUD_MOB_INTENTS = list(/atom/movable/screen/combattoggle/rogue, "WEST+4,CENTER+1", hud_icon, "combat0", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 		HUD_ROGUE_GIVE = list(/atom/movable/screen/rogue/give, "WEST+4,SOUTH+7", hud_icon, "take0", 24, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_ROGUE_HEATSTAM_OVERLAY = list(/atom/movable/screen/rogue/heatstam_overlay, "WEST+4:16,CENTER+2", heat_icon, "heatstamover", 24.1, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),

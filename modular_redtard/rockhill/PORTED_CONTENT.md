@@ -2926,9 +2926,11 @@ Ratwood revision: `eafb26b3220a6d1985625c0d79b5ba1edf2002bc` (2026-10-17).
 - `modular_redtard/rockhill/icons/effects/blood.dmi` from Ratwood `icons/effects/blood.dmi`
 - `modular_redtard/rockhill/icons/effects/effects.dmi` from Ratwood `icons/effects/effects.dmi`
 - `modular_redtard/rockhill/icons/effects/particles/particle.dmi` from Ratwood `icons/effects/particles/particle.dmi`
+- `modular_redtard/rockhill/icons/effects/particles/smoke.dmi` from Ratwood `icons/effects/particles/smoke.dmi`
 - `modular_redtard/rockhill/icons/effects/sigils.dmi` from Ratwood `icons/effects/sigils.dmi`
 - `modular_redtard/rockhill/icons/effects/spacevines.dmi` from Ratwood `icons/effects/spacevines.dmi`
 - `modular_redtard/rockhill/icons/effects/tomatodecal.dmi` from Ratwood `icons/effects/tomatodecal.dmi`
+- `modular_redtard/rockhill/icons/effects/waterfall.dmi` from Ratwood `icons/effects/waterfall.dmi`
 - `modular_redtard/rockhill/icons/mob/animal.dmi` from Ratwood `icons/mob/animal.dmi`
 - `modular_redtard/rockhill/icons/mob/clothing/eyes.dmi` from Ratwood `icons/mob/clothing/eyes.dmi`
 - `modular_redtard/rockhill/icons/mob/human_parts.dmi` from Ratwood `icons/mob/human_parts.dmi`
@@ -3289,7 +3291,7 @@ Their folder carries a proprietary licence that forbids redistribution and use o
 - `icons/roguetown/clothing/licensed-infraredbaron/LICENSE.md`: `/obj/item/clothing/cloak/citywatch`, `/obj/item/clothing/head/roguetown/duchess_hood`, `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/duchess`, `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/duke`, `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/hand`, `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/heir`, `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/heiress`, `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/magos`, `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/steward`
 - `modular_deserttown/icons/clothing/LICENSE.md`: `/obj/item/clothing/mask/rogue/exoticsilkmask/green`, `/obj/item/clothing/mask/rogue/exoticsilkmask/red`, `/obj/item/clothing/suit/roguetown/shirt/exoticsilkbra/green`, `/obj/item/clothing/suit/roguetown/shirt/exoticsilkbra/red`, `/obj/item/storage/belt/rogue/leather/exoticsilkbelt/skirtgreen`, `/obj/item/storage/belt/rogue/leather/exoticsilkbelt/skirtred`
 
-## Items without a world sprite (23)
+## Items without a world sprite (24)
 
 Ratwood names an `icon_state` its sheet does not have (a sprite chosen at runtime, or a broken one). The port writes `icon_state = null`, as TG does for an item with no sprite, so the TG icon tests pass and the item stays listed here.
 
@@ -3318,6 +3320,7 @@ Ratwood names an `icon_state` its sheet does not have (a sprite chosen at runtim
 | `/obj/item/roguekey` | `modular_redtard/rockhill/icons/roguetown/items/keys.dmi` | `iron` |
 | `/obj/item/storage/belt/rogue/leather/exoticsilkbelt/skirtgreen` | `restricted licence` | `exoticsilkskirt2` |
 | `/obj/item/storage/belt/rogue/leather/exoticsilkbelt/skirtred` | `restricted licence` | `exoticsilkskirt` |
+| `/obj/machinery/light/rogue/campfire/pyre` | `modular_redtard/rockhill/icons/roguetown/misc/tallstructure.dmi` | `pyre1` |
 
 ## Wearables without a worn sprite (116)
 
@@ -3565,9 +3568,95 @@ Area music and ambience are copied into a folder git ignores and are read from d
 
 ## Sounds
 
+- `modular_redtard/rockhill/sound/combat/dodge.ogg` from Ratwood `sound/combat/dodge.ogg`
+- `modular_redtard/rockhill/sound/combat/hits/armor/chain_blunt (1).ogg` from Ratwood `sound/combat/hits/armor/chain_blunt (1).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/armor/chain_blunt (2).ogg` from Ratwood `sound/combat/hits/armor/chain_blunt (2).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/armor/chain_blunt (3).ogg` from Ratwood `sound/combat/hits/armor/chain_blunt (3).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/armor/chain_slashed (1).ogg` from Ratwood `sound/combat/hits/armor/chain_slashed (1).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/armor/chain_slashed (2).ogg` from Ratwood `sound/combat/hits/armor/chain_slashed (2).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/armor/chain_slashed (3).ogg` from Ratwood `sound/combat/hits/armor/chain_slashed (3).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/armor/chain_slashed (4).ogg` from Ratwood `sound/combat/hits/armor/chain_slashed (4).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/armor/light_blunt (1).ogg` from Ratwood `sound/combat/hits/armor/light_blunt (1).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/armor/light_blunt (2).ogg` from Ratwood `sound/combat/hits/armor/light_blunt (2).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/armor/light_blunt (3).ogg` from Ratwood `sound/combat/hits/armor/light_blunt (3).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/armor/light_stabbed (1).ogg` from Ratwood `sound/combat/hits/armor/light_stabbed (1).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/armor/light_stabbed (2).ogg` from Ratwood `sound/combat/hits/armor/light_stabbed (2).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/armor/light_stabbed (3).ogg` from Ratwood `sound/combat/hits/armor/light_stabbed (3).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/armor/plate_blunt (1).ogg` from Ratwood `sound/combat/hits/armor/plate_blunt (1).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/armor/plate_blunt (2).ogg` from Ratwood `sound/combat/hits/armor/plate_blunt (2).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/armor/plate_blunt (3).ogg` from Ratwood `sound/combat/hits/armor/plate_blunt (3).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/armor/plate_slashed (1).ogg` from Ratwood `sound/combat/hits/armor/plate_slashed (1).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/armor/plate_slashed (2).ogg` from Ratwood `sound/combat/hits/armor/plate_slashed (2).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/armor/plate_slashed (3).ogg` from Ratwood `sound/combat/hits/armor/plate_slashed (3).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/armor/plate_slashed (4).ogg` from Ratwood `sound/combat/hits/armor/plate_slashed (4).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/armor/plate_stabbed (1).ogg` from Ratwood `sound/combat/hits/armor/plate_stabbed (1).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/armor/plate_stabbed (2).ogg` from Ratwood `sound/combat/hits/armor/plate_stabbed (2).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/armor/plate_stabbed (3).ogg` from Ratwood `sound/combat/hits/armor/plate_stabbed (3).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/bladed/genchop (1).ogg` from Ratwood `sound/combat/hits/bladed/genchop (1).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/bladed/genchop (2).ogg` from Ratwood `sound/combat/hits/bladed/genchop (2).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/bladed/genchop (3).ogg` from Ratwood `sound/combat/hits/bladed/genchop (3).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg` from Ratwood `sound/combat/hits/bladed/genslash (1).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg` from Ratwood `sound/combat/hits/bladed/genslash (2).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg` from Ratwood `sound/combat/hits/bladed/genslash (3).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg` from Ratwood `sound/combat/hits/bladed/genstab (1).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg` from Ratwood `sound/combat/hits/bladed/genstab (2).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg` from Ratwood `sound/combat/hits/bladed/genstab (3).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (1).ogg` from Ratwood `sound/combat/hits/bladed/smallslash (1).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (2).ogg` from Ratwood `sound/combat/hits/bladed/smallslash (2).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (3).ogg` from Ratwood `sound/combat/hits/bladed/smallslash (3).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg` from Ratwood `sound/combat/hits/blunt/bluntsmall (1).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg` from Ratwood `sound/combat/hits/blunt/bluntsmall (2).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/blunt/daze_hit.ogg` from Ratwood `sound/combat/hits/blunt/daze_hit.ogg`
+- `modular_redtard/rockhill/sound/combat/hits/blunt/flailhit.ogg` from Ratwood `sound/combat/hits/blunt/flailhit.ogg`
+- `modular_redtard/rockhill/sound/combat/hits/blunt/frying_pan(1).ogg` from Ratwood `sound/combat/hits/blunt/frying_pan(1).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/blunt/frying_pan(2).ogg` from Ratwood `sound/combat/hits/blunt/frying_pan(2).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/blunt/frying_pan(3).ogg` from Ratwood `sound/combat/hits/blunt/frying_pan(3).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/blunt/frying_pan(4).ogg` from Ratwood `sound/combat/hits/blunt/frying_pan(4).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg` from Ratwood `sound/combat/hits/blunt/metalblunt (1).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg` from Ratwood `sound/combat/hits/blunt/metalblunt (2).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg` from Ratwood `sound/combat/hits/blunt/metalblunt (3).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/blunt/shovel_hit.ogg` from Ratwood `sound/combat/hits/blunt/shovel_hit.ogg`
+- `modular_redtard/rockhill/sound/combat/hits/blunt/shovel_hit2.ogg` from Ratwood `sound/combat/hits/blunt/shovel_hit2.ogg`
+- `modular_redtard/rockhill/sound/combat/hits/blunt/shovel_hit3.ogg` from Ratwood `sound/combat/hits/blunt/shovel_hit3.ogg`
+- `modular_redtard/rockhill/sound/combat/hits/blunt/woodblunt (1).ogg` from Ratwood `sound/combat/hits/blunt/woodblunt (1).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/blunt/woodblunt (2).ogg` from Ratwood `sound/combat/hits/blunt/woodblunt (2).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/kick/kick.ogg` from Ratwood `sound/combat/hits/kick/kick.ogg`
+- `modular_redtard/rockhill/sound/combat/hits/pick/genpick (1).ogg` from Ratwood `sound/combat/hits/pick/genpick (1).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/pick/genpick (2).ogg` from Ratwood `sound/combat/hits/pick/genpick (2).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/punch/punch_hard (1).ogg` from Ratwood `sound/combat/hits/punch/punch_hard (1).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/punch/punch_hard (2).ogg` from Ratwood `sound/combat/hits/punch/punch_hard (2).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/punch/punch_hard (3).ogg` from Ratwood `sound/combat/hits/punch/punch_hard (3).ogg`
+- `modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg` from Ratwood `sound/combat/parry/bladed/bladedlarge (1).ogg`
+- `modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg` from Ratwood `sound/combat/parry/bladed/bladedlarge (2).ogg`
+- `modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg` from Ratwood `sound/combat/parry/bladed/bladedlarge (3).ogg`
+- `modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg` from Ratwood `sound/combat/parry/bladed/bladedmedium (1).ogg`
+- `modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg` from Ratwood `sound/combat/parry/bladed/bladedmedium (2).ogg`
+- `modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg` from Ratwood `sound/combat/parry/bladed/bladedmedium (3).ogg`
+- `modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg` from Ratwood `sound/combat/parry/bladed/bladedsmall (1).ogg`
+- `modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg` from Ratwood `sound/combat/parry/bladed/bladedsmall (2).ogg`
+- `modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg` from Ratwood `sound/combat/parry/bladed/bladedsmall (3).ogg`
+- `modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg` from Ratwood `sound/combat/parry/bladed/bladedthin (1).ogg`
+- `modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg` from Ratwood `sound/combat/parry/bladed/bladedthin (2).ogg`
+- `modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg` from Ratwood `sound/combat/parry/bladed/bladedthin (3).ogg`
+- `modular_redtard/rockhill/sound/combat/parry/parrygen.ogg` from Ratwood `sound/combat/parry/parrygen.ogg`
+- `modular_redtard/rockhill/sound/combat/parry/pugilism/unarmparry (1).ogg` from Ratwood `sound/combat/parry/pugilism/unarmparry (1).ogg`
+- `modular_redtard/rockhill/sound/combat/parry/pugilism/unarmparry (2).ogg` from Ratwood `sound/combat/parry/pugilism/unarmparry (2).ogg`
+- `modular_redtard/rockhill/sound/combat/parry/pugilism/unarmparry (3).ogg` from Ratwood `sound/combat/parry/pugilism/unarmparry (3).ogg`
+- `modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg` from Ratwood `sound/combat/parry/shield/metalshield (1).ogg`
+- `modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg` from Ratwood `sound/combat/parry/shield/metalshield (2).ogg`
+- `modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg` from Ratwood `sound/combat/parry/shield/metalshield (3).ogg`
+- `modular_redtard/rockhill/sound/combat/parry/shield/towershield (1).ogg` from Ratwood `sound/combat/parry/shield/towershield (1).ogg`
+- `modular_redtard/rockhill/sound/combat/parry/shield/towershield (2).ogg` from Ratwood `sound/combat/parry/shield/towershield (2).ogg`
+- `modular_redtard/rockhill/sound/combat/parry/shield/towershield (3).ogg` from Ratwood `sound/combat/parry/shield/towershield (3).ogg`
+- `modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg` from Ratwood `sound/combat/parry/wood/parrywood (1).ogg`
+- `modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg` from Ratwood `sound/combat/parry/wood/parrywood (2).ogg`
+- `modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg` from Ratwood `sound/combat/parry/wood/parrywood (3).ogg`
+- `modular_redtard/rockhill/sound/combat/shieldbash_wood.ogg` from Ratwood `sound/combat/shieldbash_wood.ogg`
 - `modular_redtard/rockhill/sound/foley/doors/creak.ogg` from Ratwood `sound/foley/doors/creak.ogg`
 - `modular_redtard/rockhill/sound/foley/ladder.ogg` from Ratwood `sound/foley/ladder.ogg`
 - `modular_redtard/rockhill/sound/foley/latch.ogg` from Ratwood `sound/foley/latch.ogg`
+- `modular_redtard/rockhill/sound/foley/slap.ogg` from Ratwood `sound/foley/slap.ogg`
+- `modular_redtard/rockhill/sound/items/beartrap2.ogg` from Ratwood `sound/items/beartrap2.ogg`
 - `modular_redtard/rockhill/sound/items/book_close.ogg` from Ratwood `sound/items/book_close.ogg`
 - `modular_redtard/rockhill/sound/misc/area.ogg` from Ratwood `sound/misc/area.ogg`
 - `modular_redtard/rockhill/sound/misc/chestclose.ogg` from Ratwood `sound/misc/chestclose.ogg`

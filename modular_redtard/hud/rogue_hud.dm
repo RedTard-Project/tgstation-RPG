@@ -61,7 +61,7 @@
 	add_screen_object(/atom/movable/screen/rogue/stub/rmb_intent, HUD_ROGUE_RMB_INTENT, HUD_GROUP_ROGUE_PANEL)
 	add_screen_object(/atom/movable/screen/healths/rogue, HUD_MOB_HEALTH, HUD_GROUP_ROGUE_PANEL)
 	add_screen_object(/atom/movable/screen/rogue/stub/quad_intents, HUD_ROGUE_QUAD_INTENTS, HUD_GROUP_ROGUE_PANEL)
-	add_screen_object(/atom/movable/screen/rogue/stub/def_intent, HUD_ROGUE_DEF_INTENT, HUD_GROUP_ROGUE_PANEL)
+	add_screen_object(/atom/movable/screen/rogue/def_intent, HUD_ROGUE_DEF_INTENT, HUD_GROUP_ROGUE_PANEL)
 	add_screen_object(/atom/movable/screen/combattoggle/rogue, HUD_MOB_INTENTS, HUD_GROUP_ROGUE_PANEL)
 	add_screen_object(/atom/movable/screen/rogue/give, HUD_ROGUE_GIVE, HUD_GROUP_STATIC)
 	add_screen_object(/atom/movable/screen/rogue/heatstam_overlay, HUD_ROGUE_HEATSTAM_OVERLAY, HUD_GROUP_ROGUE_PANEL)

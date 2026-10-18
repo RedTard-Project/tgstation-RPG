@@ -810,6 +810,7 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -831,6 +832,7 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -852,6 +854,7 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -873,6 +876,7 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -894,6 +898,7 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -915,6 +920,7 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -936,6 +942,7 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	possible_item_intents = list(/datum/intent/mace/strike)
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -957,6 +964,10 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	wdefense = 3
+	armour_penetration = 30
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/sword/thrust, /datum/intent/spear/bash, /datum/intent/spear/cut)
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -1944,6 +1955,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/reading
 	inhand_icon_state = null
 
 /obj/item/book/rogue/arcyne
@@ -1965,6 +1977,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/reading
 	inhand_icon_state = null
 
 /obj/item/book/rogue/beardling
@@ -1986,6 +1999,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/reading
 	inhand_icon_state = null
 
 /obj/item/book/rogue/bibble
@@ -2007,6 +2021,8 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/reading
+	possible_item_intents = list(/datum/intent/use, /datum/intent/bless)
 	inhand_icon_state = null
 
 /obj/item/book/rogue/bibble/psy
@@ -2028,6 +2044,8 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/reading
+	possible_item_intents = list(/datum/intent/use, /datum/intent/bless)
 	inhand_icon_state = null
 
 /obj/item/book/rogue/bibble/zizo
@@ -2049,6 +2067,8 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/reading
+	possible_item_intents = list(/datum/intent/use, /datum/intent/bless)
 	inhand_icon_state = null
 
 /obj/item/book/rogue/cardgame
@@ -2070,6 +2090,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/reading
 	inhand_icon_state = null
 
 /obj/item/book/rogue/cooking
@@ -2091,6 +2112,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/reading
 	inhand_icon_state = null
 
 /obj/item/book/rogue/fishing
@@ -2112,6 +2134,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/reading
 	inhand_icon_state = null
 
 /obj/item/book/rogue/law
@@ -2133,6 +2156,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/reading
 	inhand_icon_state = null
 
 /obj/item/book/rogue/necra
@@ -2154,6 +2178,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/reading
 	inhand_icon_state = null
 
 /obj/item/book/rogue/nitebeast
@@ -2175,6 +2200,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/reading
 	inhand_icon_state = null
 
 /obj/item/book/rogue/noc
@@ -2196,6 +2222,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/reading
 	inhand_icon_state = null
 
 /obj/item/book/rogue/playerbook
@@ -2217,6 +2244,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/reading
 	inhand_icon_state = null
 
 /obj/item/book/rogue/swatchbook
@@ -2238,6 +2266,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/reading
 	inhand_icon_state = null
 
 /obj/item/book/rogue/sword
@@ -2259,6 +2288,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/reading
 	inhand_icon_state = null
 
 /obj/item/book/rogue/tales1
@@ -2280,6 +2310,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/reading
 	inhand_icon_state = null
 
 /obj/item/book/rogue/tales3
@@ -2301,6 +2332,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/reading
 	inhand_icon_state = null
 
 /obj/item/book/rogue/xylix
@@ -2322,6 +2354,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/reading
 	inhand_icon_state = null
 
 /obj/item/book/rogue/yeoldecookingmanual
@@ -2343,6 +2376,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/reading
 	inhand_icon_state = null
 
 /obj/item/book/spellbook
@@ -2365,6 +2399,8 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	associated_skill = /datum/attribute/skill/misc/reading
+	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	inhand_icon_state = null
 
 /obj/item/book_crafting_kit
@@ -2509,6 +2545,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 4
+	gripped_intents = list(/datum/intent/use, /datum/intent/mace/strike/wood)
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -2548,6 +2586,7 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/candle/candlestick/gold/lit
@@ -2566,6 +2605,7 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/candle/candlestick/gold/single
@@ -2584,6 +2624,7 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/candle/candlestick/gold/single/lit
@@ -2602,6 +2643,7 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/candle/candlestick/silver
@@ -2620,6 +2662,7 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/candle/candlestick/silver/lit
@@ -2638,6 +2681,7 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/candle/candlestick/silver/single/lit
@@ -2656,6 +2700,7 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/candle/eora
@@ -3076,6 +3121,11 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 20
+	wdefense = 1
+	can_parry = TRUE
+	possible_item_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
+	gripped_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
 	inhand_icon_state = "chair"
 
 /obj/item/chair/rogue/fancy
@@ -3096,6 +3146,11 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 20
+	wdefense = 1
+	can_parry = TRUE
+	possible_item_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
+	gripped_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
 	inhand_icon_state = "chair"
 
 /obj/item/chair/stool/bar/rogue
@@ -3116,6 +3171,11 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 15
+	wdefense = 1
+	can_parry = TRUE
+	possible_item_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
+	gripped_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
 	inhand_icon_state = "stool_bar"
 
 /obj/item/chair/stool/bar/rogue/crafted
@@ -3136,6 +3196,11 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 15
+	wdefense = 1
+	can_parry = TRUE
+	possible_item_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
+	gripped_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
 	inhand_icon_state = "stool_bar"
 
 /obj/item/chalk
@@ -3506,13 +3571,13 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_padded
 	rogue_inhand = TRUE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_maids.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_armor = /datum/rogue_armor/padded
 	inhand_icon_state = null
 	worn_icon_state = "butlercoat"
 	rogue_female_worn = TRUE
@@ -3601,7 +3666,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
-	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = CHEST|GROIN
 	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_TABARD_LAYER
@@ -3612,6 +3676,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/clothing
 	inhand_icon_state = null
 	worn_icon_state = "leather_apron"
 	rogue_female_worn = TRUE
@@ -5328,6 +5393,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather_good
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "angle"
 	rogue_female_worn = TRUE
@@ -5352,6 +5420,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather_good
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "atgervi_raider_gloves"
 	rogue_female_worn = TRUE
@@ -5376,6 +5447,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather_good
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "grenzelgloves"
 	rogue_female_worn = TRUE
@@ -5400,6 +5474,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather_good
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "grenzelgloves"
 	rogue_female_worn = TRUE
@@ -5424,6 +5501,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather
+	rogue_prevent_crits = list("slash", "stabbing", "blunt")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "clothwraps"
 	rogue_female_worn = TRUE
@@ -5448,6 +5528,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate_bsteel
+	rogue_prevent_crits = list("chopping", "slash", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "bplategloves"
 	rogue_female_worn = TRUE
@@ -5472,6 +5555,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/maille
+	rogue_prevent_crits = list("slash", "stabbing", "blunt")
+	rogue_blocksound = "chain"
 	inhand_icon_state = null
 	worn_icon_state = "cgloves"
 	rogue_female_worn = TRUE
@@ -5496,6 +5582,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/maille
+	rogue_prevent_crits = list("slash", "stabbing", "blunt")
+	rogue_blocksound = "chain"
 	inhand_icon_state = null
 	worn_icon_state = "acgloves"
 	rogue_female_worn = TRUE
@@ -5520,6 +5609,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/maille
+	rogue_prevent_crits = list("slash", "stabbing", "blunt")
+	rogue_blocksound = "chain"
 	inhand_icon_state = null
 	worn_icon_state = "acgloves"
 	rogue_female_worn = TRUE
@@ -5544,6 +5636,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/maille
+	rogue_prevent_crits = list("slash", "stabbing", "blunt")
+	rogue_blocksound = "chain"
 	inhand_icon_state = null
 	worn_icon_state = "icgloves"
 	rogue_female_worn = TRUE
@@ -5567,6 +5662,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/maille
+	rogue_prevent_crits = list("slash", "stabbing", "blunt")
+	rogue_blocksound = "chain"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -5591,6 +5689,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/blackoak
+	rogue_prevent_crits = list("blunt", "smashing", "stab")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "welfhand"
 	rogue_female_worn = TRUE
@@ -5615,6 +5716,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "fingerless_gloves"
 	rogue_female_worn = TRUE
@@ -5639,6 +5741,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather_good
+	rogue_prevent_crits = list("slash", "stabbing", "blunt")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "roguegloves"
 	rogue_female_worn = TRUE
@@ -5663,6 +5768,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather
+	rogue_prevent_crits = list("slash", "stabbing", "blunt")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "leather_gloves"
 	rogue_female_worn = TRUE
@@ -5687,6 +5795,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather
+	rogue_prevent_crits = list("slash", "stabbing", "blunt")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "leather_gloves"
 	rogue_female_worn = TRUE
@@ -5702,7 +5813,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	slot_flags = ITEM_SLOT_GLOVES
-	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|HAND_LEFT|HAND_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
@@ -5712,6 +5822,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather
+	rogue_prevent_crits = list("slash", "stabbing", "blunt")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "harms"
 	rogue_female_worn = TRUE
@@ -5758,6 +5871,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/maille
+	rogue_prevent_crits = list("chopping", "slash", "blunt", "twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "inqgloves"
 	rogue_female_worn = TRUE
@@ -5782,6 +5898,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather_good
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "psydongloves"
 	rogue_female_worn = TRUE
@@ -5806,6 +5925,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("chopping", "slash", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "gauntlets"
 	rogue_female_worn = TRUE
@@ -5830,6 +5952,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("chopping", "slash", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "agauntlets"
 	rogue_female_worn = TRUE
@@ -5854,6 +5979,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("chopping", "slash", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "agauntlets"
 	rogue_female_worn = TRUE
@@ -5877,6 +6005,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/grudgebearer
+	rogue_prevent_crits = list("twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -5901,6 +6032,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/ascendant
+	rogue_prevent_crits = list("chopping", "slash", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "graggarplategloves"
 	rogue_female_worn = TRUE
@@ -5925,6 +6059,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("chopping", "slash", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "silvergloves"
 	rogue_female_worn = TRUE
@@ -5949,6 +6086,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("chopping", "slash", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "igauntlets"
 	rogue_female_worn = TRUE
@@ -5973,6 +6113,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/ascendant
+	rogue_prevent_crits = list("chopping", "slash", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "matthiosgloves"
 	rogue_female_worn = TRUE
@@ -5997,6 +6140,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/ascendant
+	rogue_prevent_crits = list("chopping", "slash", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "zizogauntlets"
 	rogue_female_worn = TRUE
@@ -6020,6 +6166,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -6045,6 +6192,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/blackbag
+	rogue_prevent_crits = list("slash", "blunt", "twist", "peel", "pierce", "chopping", "lashing", "stabbing")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "blackbag"
 
@@ -6058,7 +6208,6 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_HEAD
-	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = HEAD|NECK
 	rogue_inhand = FALSE
 	rogue_sleeved = null
@@ -6068,6 +6217,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/clothing
+	rogue_prevent_crits = list("twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -6283,7 +6435,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon_state = "noblechaperon"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_spellsinger
 	body_parts_covered = HEAD
 	rogue_inhand = FALSE
 	rogue_sleeved = null
@@ -6293,6 +6444,8 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/spellsinger
+	rogue_prevent_crits = list("slash", "blunt", "twist")
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/chaperon/noble/guildmaster
@@ -6458,7 +6611,6 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
-	armor_type = /datum/armor/rockhill_padded_bad
 	body_parts_covered = HEAD
 	rogue_inhand = FALSE
 	rogue_sleeved = null
@@ -6468,6 +6620,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/padded_bad
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -6639,7 +6792,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon_state = "headband"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_spellsinger
 	body_parts_covered = HEAD
 	rogue_inhand = FALSE
 	rogue_sleeved = null
@@ -6649,6 +6801,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/spellsinger
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/headdress
@@ -6707,7 +6862,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -6718,6 +6872,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/bandana
@@ -6730,7 +6887,6 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_HEAD
-	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -6741,6 +6897,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/clothing
+	rogue_prevent_crits = list("twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = "that"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -6757,7 +6916,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "bascinet_novisor"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -6768,6 +6926,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/bascinet/antler
@@ -6782,7 +6943,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/warden64.dmi'
 	worn_icon_state = "bascinet_novisor"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_inhand = FALSE
 	rogue_sleeved = null
@@ -6792,6 +6952,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/bascinet/atgervi
@@ -6806,7 +6969,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/32x48/atgervi.dmi'
 	worn_icon_state = "atgervi_raider"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -6817,6 +6979,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/bascinet/etruscan
@@ -6831,7 +6996,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "klappvisier"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -6842,6 +7006,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/bascinet/pigface
@@ -6856,7 +7023,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "hounskull"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -6867,6 +7033,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/bascinet/pigface/hounskull
@@ -6881,7 +7050,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "hounskull"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -6892,6 +7060,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/blacksteel/modern/armet
@@ -6906,7 +7077,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/blkknight.dmi'
 	worn_icon_state = "bplatehelm"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate_bsteel
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -6917,6 +7087,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate_bsteel
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/blacksteel/psythorns
@@ -6930,7 +7103,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
-	armor_type = /datum/armor/rockhill_plate_bsteel
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -6942,6 +7114,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate_bsteel
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "psybarbs"
 
@@ -6957,7 +7132,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "citywatch_helmet"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -6968,6 +7142,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/citywatch/captain
@@ -6982,7 +7160,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "citywatch_helmet"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -6993,6 +7170,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/coppercap
@@ -7007,7 +7188,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7018,6 +7198,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/goblin
@@ -7032,7 +7215,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "plate_helm"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7043,6 +7225,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy
@@ -7057,7 +7242,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "barbute"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7068,6 +7252,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/absolver
@@ -7082,7 +7270,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/64x64/head.dmi'
 	worn_icon_state = "absolutionisthelm"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD|NECK
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7093,6 +7280,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/ancient
@@ -7107,7 +7297,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "barbute"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7118,6 +7307,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/ancient/decrepit
@@ -7132,7 +7325,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "barbute"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7143,6 +7335,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/astratan
@@ -7157,7 +7353,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "astratahnelm"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7168,6 +7363,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/bucket
@@ -7182,7 +7381,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "topfhelm"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7193,6 +7391,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/bucket/iron
@@ -7207,7 +7409,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "ironplate"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7218,6 +7419,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/captain
@@ -7232,7 +7437,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/captain.dmi'
 	worn_icon_state = "barbute"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7243,6 +7447,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/cuirass
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/dwarven
@@ -7257,7 +7465,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/race_armor.dmi'
 	worn_icon_state = "dwarfhead"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_grudgebearer
 	body_parts_covered = HEAD|NECK
 	rogue_inhand = FALSE
 	rogue_sleeved = null
@@ -7267,6 +7474,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/grudgebearer
+	armor_class = 2
+	rogue_prevent_crits = list("twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/elven_helm
@@ -7281,7 +7492,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/race_armor.dmi'
 	worn_icon_state = "welfhead"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_blackoak
 	body_parts_covered = HEAD|NECK
 	rogue_inhand = FALSE
 	rogue_sleeved = null
@@ -7291,6 +7501,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/blackoak
+	armor_class = 2
+	rogue_prevent_crits = list("blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/frogmouth
@@ -7305,7 +7519,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "frogmouth"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD|NECK
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7316,6 +7529,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/graggar
@@ -7330,7 +7547,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "barbute"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_ascendant
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7341,6 +7557,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/ascendant
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/guard
@@ -7355,7 +7575,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "barbute"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7366,6 +7585,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/guard/ancient
@@ -7380,7 +7603,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "barbute"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7391,6 +7613,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/guard/ancient/decrepit
@@ -7405,7 +7631,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "barbute"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7416,6 +7641,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/holysee
@@ -7430,7 +7659,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/martyrhelmets.dmi'
 	worn_icon_state = "silverbascinet"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7441,6 +7669,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/knight
@@ -7455,7 +7687,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "knight"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7466,6 +7697,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/knight/armet
@@ -7480,7 +7715,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "knight"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7491,6 +7725,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/knight/iron
@@ -7505,7 +7743,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "knight"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7516,6 +7753,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/knight/skettle
@@ -7530,7 +7771,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "skettle"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7541,6 +7781,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/matthios
@@ -7555,7 +7799,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/64x64/head.dmi'
 	worn_icon_state = "barbute"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_ascendant
 	body_parts_covered = HEAD
 	rogue_inhand = FALSE
 	rogue_sleeved = null
@@ -7565,6 +7808,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/ascendant
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/pestran
@@ -7579,7 +7826,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "pestranhelm"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7590,6 +7836,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/heavy/zizo
@@ -7604,7 +7854,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "barbute"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_ascendant
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7615,6 +7864,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/ascendant
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/horned
@@ -7629,7 +7882,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7640,6 +7892,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/kettle
@@ -7654,7 +7909,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7665,6 +7919,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/kettle/
@@ -7679,7 +7936,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7690,6 +7946,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/kettle/iron
@@ -7704,7 +7963,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7715,6 +7973,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/leather
@@ -7729,7 +7990,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7740,6 +8000,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather
+	rogue_prevent_crits = list("blunt", "twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/leather/armorhood
@@ -7753,7 +8016,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/modular_stonehedge/icons/clothing/armor/onmob/head.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_NECK
-	armor_type = /datum/armor/rockhill_m46_b14_f0_a0
 	body_parts_covered = HEAD|NECK
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7764,6 +8026,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/b70_s65_t60_p20_f0_a0
+	rogue_prevent_crits = list("slash", "blunt", "twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "studhood"
 
@@ -7778,7 +8043,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/modular_stonehedge/icons/clothing/armor/onmob/head.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_NECK
-	armor_type = /datum/armor/rockhill_leather_studded
 	body_parts_covered = HEAD|NECK
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7789,6 +8053,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_studded
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "twist", "chopping", "smashing")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "studhood"
 
@@ -7804,7 +8071,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "leather_helm"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7815,6 +8081,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather
+	rogue_prevent_crits = list("blunt", "twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
@@ -7829,7 +8098,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "volfhead"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7840,6 +8108,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather
+	rogue_prevent_crits = list("blunt", "twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/sallet
@@ -7854,7 +8125,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7865,6 +8135,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/sallet/visored
@@ -7879,7 +8152,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7890,6 +8162,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/sallet/zyb
@@ -7904,7 +8179,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/64x64/head.dmi'
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7915,6 +8189,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/skullcap
@@ -7929,7 +8206,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7940,6 +8216,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/helmet/winged
@@ -7954,7 +8233,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/64x64/head.dmi'
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = TRUE
@@ -7965,6 +8243,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/hennin
@@ -8023,7 +8304,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon_state = "inqhat"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_spellsinger
 	body_parts_covered = HEAD
 	rogue_inhand = FALSE
 	rogue_sleeved = null
@@ -8033,6 +8313,8 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/spellsinger
+	rogue_prevent_crits = list("slash", "blunt", "twist")
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/jester
@@ -8311,7 +8593,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
-	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = HEAD|NECK
 	rogue_inhand = FALSE
 	alternate_worn_layer = (HANDS_LAYER - 0.1)
@@ -8322,6 +8603,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/clothing
 	inhand_icon_state = null
 	worn_icon_state = "basichood"
 
@@ -8336,7 +8618,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
-	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = NECK
 	rogue_inhand = FALSE
 	alternate_worn_layer = (HANDS_LAYER - 0.1)
@@ -8347,6 +8628,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/clothing
 	inhand_icon_state = null
 	worn_icon_state = "abyssorhood"
 
@@ -8361,7 +8643,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
-	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = NECK
 	rogue_inhand = FALSE
 	alternate_worn_layer = (HANDS_LAYER - 0.1)
@@ -8372,6 +8653,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/clothing
 	inhand_icon_state = null
 	worn_icon_state = "astratahood"
 
@@ -8386,7 +8668,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
-	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = HEAD|NECK
 	rogue_inhand = FALSE
 	alternate_worn_layer = (HANDS_LAYER - 0.1)
@@ -8397,6 +8678,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/clothing
 	inhand_icon_state = null
 	worn_icon_state = "basichood"
 
@@ -8411,7 +8693,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
-	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = HEAD
 	rogue_inhand = FALSE
 	alternate_worn_layer = (HANDS_LAYER - 0.1)
@@ -8422,6 +8703,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/clothing
 	inhand_icon_state = null
 	worn_icon_state = "feldhood"
 
@@ -8436,7 +8718,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
-	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = HEAD|NECK
 	rogue_inhand = FALSE
 	alternate_worn_layer = (HANDS_LAYER - 0.1)
@@ -8447,6 +8728,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/clothing
 	inhand_icon_state = null
 	worn_icon_state = "basichood"
 
@@ -8461,7 +8743,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
-	armor_type = /datum/armor/rockhill_spellsinger
 	body_parts_covered = HEAD|NECK
 	rogue_inhand = FALSE
 	alternate_worn_layer = (HANDS_LAYER - 0.1)
@@ -8472,6 +8753,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/spellsinger
+	rogue_prevent_crits = list("slash", "blunt", "twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "psydonhood"
 
@@ -8486,7 +8770,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
-	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = HEAD|NECK
 	rogue_inhand = FALSE
 	alternate_worn_layer = (HANDS_LAYER - 0.1)
@@ -8497,6 +8780,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/clothing
 	inhand_icon_state = null
 	worn_icon_state = "basichood"
 
@@ -8511,7 +8795,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK|ITEM_SLOT_NECK
-	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = HEAD|NECK
 	rogue_inhand = FALSE
 	alternate_worn_layer = (HANDS_LAYER - 0.1)
@@ -8522,6 +8805,8 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/clothing
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "heavyhood"
 
@@ -8588,6 +8873,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -9003,7 +9289,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -9014,6 +9299,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/ancient/decrepit
@@ -9028,7 +9316,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -9039,6 +9326,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/carved/ambermask
@@ -9053,7 +9343,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -9064,6 +9353,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/carved/coralmask
@@ -9078,7 +9370,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -9089,6 +9380,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/carved/jademask
@@ -9103,7 +9397,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -9114,6 +9407,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/carved/onyxamask
@@ -9128,7 +9424,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -9139,6 +9434,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/carved/opalmask
@@ -9153,7 +9451,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -9164,6 +9461,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/carved/porcelainmask
@@ -9178,7 +9478,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -9189,6 +9488,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/carved/rosemask
@@ -9203,7 +9505,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -9214,6 +9515,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/carved/turqmask
@@ -9228,7 +9532,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -9239,6 +9542,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/copper
@@ -9264,6 +9570,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/bronze
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/goldmask
@@ -9277,7 +9586,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -9288,6 +9596,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/hound
@@ -9301,7 +9612,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -9312,6 +9622,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/psydonmask
@@ -9326,7 +9639,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = "psydonmask"
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -9337,6 +9649,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/shadowfacemask
@@ -9351,7 +9666,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -9362,6 +9676,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/facemask/yoruku_oni
@@ -9376,7 +9693,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -9387,6 +9703,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/goblin_mask
@@ -9409,6 +9728,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_prevent_crits = list("slash", "blunt", "twist", "peel", "pierce", "chopping", "lashing", "stabbing")
 	inhand_icon_state = null
 	worn_icon_state = "goblin"
 
@@ -9516,7 +9836,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_padded
 	body_parts_covered = HEAD
 	rogue_inhand = FALSE
 	rogue_sleeved = null
@@ -9526,6 +9845,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/padded
+	rogue_prevent_crits = list("blunt")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/sack/psy
@@ -9540,7 +9862,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_padded
 	body_parts_covered = HEAD
 	rogue_inhand = FALSE
 	rogue_sleeved = null
@@ -9550,6 +9871,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/padded
+	rogue_prevent_crits = list("blunt")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/skullmask
@@ -9564,7 +9888,6 @@
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
 	worn_icon_state = null
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
-	armor_type = /datum/armor/rockhill_padded_bad
 	body_parts_covered = HEAD
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -9575,6 +9898,8 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/padded_bad
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/spectacles
@@ -9678,7 +10003,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	slot_flags = ITEM_SLOT_NECK
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = HEAD|NECK
 	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
@@ -9689,6 +10013,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "bevor"
 
@@ -9703,7 +10030,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_NECK
-	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = HEAD|NECK
 	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
@@ -9714,6 +10040,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/maille
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "chain"
 	inhand_icon_state = null
 	worn_icon_state = "chaincoif"
 
@@ -9728,7 +10057,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_NECK
-	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = HEAD|NECK
 	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
@@ -9739,6 +10067,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/maille
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "chain"
 	inhand_icon_state = null
 	worn_icon_state = "chaincoif"
 
@@ -9753,7 +10084,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	slot_flags = ITEM_SLOT_NECK
-	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = HEAD|NECK
 	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
@@ -9764,6 +10094,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/maille
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "chain"
 	inhand_icon_state = null
 	worn_icon_state = "chaincoif"
 
@@ -9778,7 +10111,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_NECK
-	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = HEAD|NECK
 	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
@@ -9789,6 +10121,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/maille
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "chain"
 	inhand_icon_state = null
 	worn_icon_state = "chaincoif"
 
@@ -9803,7 +10138,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_NECK
-	armor_type = /datum/armor/rockhill_padded_bad
 	body_parts_covered = HEAD|NECK
 	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
@@ -9814,6 +10148,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/padded_bad
+	rogue_prevent_crits = list("slash", "blunt")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "coif"
 
@@ -9828,7 +10165,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_NECK
-	armor_type = /datum/armor/rockhill_padded
 	body_parts_covered = HEAD|NECK
 	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
@@ -9839,6 +10175,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/padded
+	rogue_prevent_crits = list("slash", "blunt")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "ccoif"
 
@@ -9973,7 +10312,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	slot_flags = ITEM_SLOT_NECK
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = NECK
 	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
@@ -9984,6 +10322,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "gorget"
 
@@ -9998,7 +10339,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	slot_flags = ITEM_SLOT_NECK
-	armor_type = /datum/armor/rockhill_plate_bad
 	body_parts_covered = NECK
 	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
@@ -10009,6 +10349,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate_bad
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "copperneck"
 
@@ -10023,7 +10366,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	slot_flags = ITEM_SLOT_NECK
-	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = NECK
 	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
@@ -10034,6 +10376,8 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/clothing
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "cursed_collar"
 
@@ -10048,7 +10392,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	slot_flags = ITEM_SLOT_NECK
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = NECK
 	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
@@ -10059,6 +10402,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "iwolfcollaralt"
 
@@ -10073,7 +10419,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	slot_flags = ITEM_SLOT_NECK
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = NECK
 	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
@@ -10084,6 +10429,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "sgorget"
 
@@ -10098,7 +10446,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	slot_flags = ITEM_SLOT_NECK
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = NECK
 	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
@@ -10109,6 +10456,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "ancientgorget"
 
@@ -10123,7 +10473,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	slot_flags = ITEM_SLOT_NECK
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = NECK
 	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
@@ -10134,6 +10483,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "ancientgorget"
 
@@ -10172,7 +10524,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
 	slot_flags = ITEM_SLOT_NECK
-	armor_type = /datum/armor/rockhill_leather_good
 	body_parts_covered = NECK
 	rogue_inhand = FALSE
 	alternate_worn_layer = NECK_LAYER
@@ -10183,6 +10534,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather_good
+	rogue_prevent_crits = list("slash", "chopping", "blunt", "twist", "smashing")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "lgorget"
 
@@ -10208,6 +10562,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/ornateamulet
@@ -10256,6 +10611,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/abyssor
@@ -10280,6 +10636,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/astrata
@@ -10304,6 +10661,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/bpearl
@@ -10328,6 +10686,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/decrepit
@@ -10352,6 +10711,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/dendor
@@ -10376,6 +10736,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/eora
@@ -10400,6 +10761,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/g
@@ -10424,6 +10786,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/inhumen
@@ -10448,6 +10811,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/inhumen/ancient
@@ -10472,6 +10836,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/inhumen/g
@@ -10496,6 +10861,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/malum
@@ -10520,6 +10886,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/malum/secret
@@ -10544,6 +10911,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/necra
@@ -10568,6 +10936,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/noc
@@ -10592,6 +10961,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/pearl
@@ -10616,6 +10986,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/pestra
@@ -10640,6 +11011,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/ravox
@@ -10664,6 +11036,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/shell
@@ -10688,6 +11061,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/shell/bracelet
@@ -10710,6 +11084,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -10736,6 +11111,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/silver/undivided
@@ -10760,6 +11136,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/ten
@@ -10784,6 +11161,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/undivided
@@ -10808,6 +11186,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/psicross/weeping
@@ -10831,6 +11210,8 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
 	inhand_icon_state = null
 	worn_icon_state = "psicrossblood"
 
@@ -10856,6 +11237,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	inhand_icon_state = null
 
 /obj/item/clothing/neck/roguetown/skullamulet
@@ -11390,6 +11772,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/clothing
 	inhand_icon_state = null
 	worn_icon_state = "anklets"
 	rogue_female_worn = TRUE
@@ -11414,6 +11797,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/clothing
 	inhand_icon_state = null
 	worn_icon_state = "blackboots"
 	rogue_female_worn = TRUE
@@ -11438,6 +11822,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "armorboots"
 	rogue_female_worn = TRUE
@@ -11462,6 +11849,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "armorboots"
 	rogue_female_worn = TRUE
@@ -11486,6 +11876,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "armorboots"
 	rogue_female_worn = TRUE
@@ -11509,6 +11902,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/grudgebearer
+	rogue_prevent_crits = list("twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -11533,6 +11929,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/ascendant
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "armorboots"
 	rogue_female_worn = TRUE
@@ -11557,6 +11956,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "silverboots"
 	rogue_female_worn = TRUE
@@ -11580,6 +11982,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -11604,6 +12009,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/ascendant
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "armorboots"
 	rogue_female_worn = TRUE
@@ -11628,6 +12036,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/ascendant
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "armorboots"
 	rogue_female_worn = TRUE
@@ -11652,6 +12063,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate_bsteel
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "bplateboots"
 	rogue_female_worn = TRUE
@@ -11676,6 +12090,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/padded
 	inhand_icon_state = null
 	worn_icon_state = "blackboots"
 	rogue_female_worn = TRUE
@@ -11691,7 +12106,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
 	slot_flags = ITEM_SLOT_FEET
-	armor_type = /datum/armor/rockhill_clothing
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = null
@@ -11701,6 +12115,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/clothing
 	inhand_icon_state = null
 	worn_icon_state = "hlegs"
 	rogue_female_worn = TRUE
@@ -11725,6 +12140,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/clothing
 	inhand_icon_state = null
 	worn_icon_state = "leatherboots"
 	rogue_female_worn = TRUE
@@ -11749,6 +12165,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/clothing
 	inhand_icon_state = null
 	worn_icon_state = "atgervi_boots"
 	rogue_female_worn = TRUE
@@ -11773,6 +12190,8 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_good
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "twist")
 	inhand_icon_state = null
 	worn_icon_state = "alboots"
 	rogue_female_worn = TRUE
@@ -11797,6 +12216,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/clothing
 	inhand_icon_state = null
 	worn_icon_state = "nobleboots"
 	rogue_female_worn = TRUE
@@ -11821,6 +12241,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_good
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "inqboots"
 	rogue_female_worn = TRUE
@@ -11845,6 +12268,8 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_good
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "twist")
 	inhand_icon_state = null
 	worn_icon_state = "psydonboots"
 	rogue_female_worn = TRUE
@@ -11965,6 +12390,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
 	inhand_icon_state = null
 	worn_icon_state = "sandals"
 	rogue_female_worn = TRUE
@@ -11989,6 +12415,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
 	inhand_icon_state = null
 	worn_icon_state = "sandals"
 	rogue_female_worn = TRUE
@@ -12100,7 +12527,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts_royalty.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12111,6 +12537,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "blunt")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "winterdress"
 	rogue_female_worn = TRUE
@@ -12126,7 +12556,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_brigandine
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12137,6 +12566,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/brigandine
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "brigandine"
 	rogue_female_worn = TRUE
@@ -12152,7 +12585,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/captain.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12163,6 +12595,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/cuirass
+	armor_class = 3
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "capplate"
 	rogue_female_worn = TRUE
@@ -12178,7 +12614,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/gronn.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_brigandine
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12189,6 +12624,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/brigandine
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "gronnchain"
 	rogue_female_worn = TRUE
@@ -12204,7 +12643,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_brigandine
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12215,6 +12653,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/brigandine
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "light_brigandine"
 	rogue_female_worn = TRUE
@@ -12230,7 +12672,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_brigandine
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12241,6 +12682,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/brigandine
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "light_brigandine"
 	rogue_female_worn = TRUE
@@ -12256,7 +12701,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_brigandine
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12267,6 +12711,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/brigandine
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "brigandine"
 	rogue_female_worn = TRUE
@@ -12282,7 +12730,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12293,6 +12740,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/maille
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "chain"
 	inhand_icon_state = null
 	worn_icon_state = "haubergeon"
 	rogue_female_worn = TRUE
@@ -12308,7 +12759,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12319,6 +12769,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/maille
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "chain"
 	inhand_icon_state = null
 	worn_icon_state = "ancientchain"
 	rogue_female_worn = TRUE
@@ -12334,7 +12788,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12345,6 +12798,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/maille
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "chain"
 	inhand_icon_state = null
 	worn_icon_state = "ancientchain"
 	rogue_female_worn = TRUE
@@ -12360,7 +12817,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12371,6 +12827,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/maille
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "chain"
 	inhand_icon_state = null
 	worn_icon_state = "chainkini"
 	rogue_female_worn = TRUE
@@ -12386,7 +12846,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12397,6 +12856,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/maille
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "chain"
 	inhand_icon_state = null
 	worn_icon_state = "hauberk"
 	rogue_female_worn = TRUE
@@ -12412,7 +12875,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12423,6 +12885,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/maille
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "chain"
 	inhand_icon_state = null
 	worn_icon_state = "hauberk"
 	rogue_female_worn = TRUE
@@ -12438,7 +12904,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12449,6 +12914,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/maille
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "chain"
 	inhand_icon_state = null
 	worn_icon_state = "hauberk"
 	rogue_female_worn = TRUE
@@ -12464,7 +12933,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12475,6 +12943,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/maille
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "chain"
 	inhand_icon_state = null
 	worn_icon_state = "atgervi_raider_mail"
 	rogue_female_worn = TRUE
@@ -12490,7 +12962,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12501,6 +12972,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/maille
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "chain"
 	inhand_icon_state = null
 	worn_icon_state = "ihauberk"
 	rogue_female_worn = TRUE
@@ -12516,7 +12991,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_maille
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12527,6 +13001,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/maille
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "chain"
 	inhand_icon_state = null
 	worn_icon_state = "ihaubergeon"
 	rogue_female_worn = TRUE
@@ -12552,6 +13030,8 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	armor_class = 1
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "corset"
 	rogue_female_worn = TRUE
@@ -12567,7 +13047,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_padded
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12578,6 +13057,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/padded
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt")
+	rogue_blocksound = "softunder"
 	inhand_icon_state = null
 	worn_icon_state = "gambeson"
 	rogue_female_worn = TRUE
@@ -12593,7 +13076,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_padded
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12604,6 +13086,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/padded
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt")
+	rogue_blocksound = "softunder"
 	inhand_icon_state = null
 	worn_icon_state = "gambeson"
 	rogue_female_worn = TRUE
@@ -12619,7 +13105,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_padded_good
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12630,6 +13115,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/padded_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt", "chopping")
+	rogue_blocksound = "softunder"
 	inhand_icon_state = null
 	worn_icon_state = "gambesonp"
 	rogue_female_worn = TRUE
@@ -12645,7 +13134,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_padded
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12656,6 +13144,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/padded
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt", "chopping")
+	rogue_blocksound = "softunder"
 	inhand_icon_state = null
 	worn_icon_state = "leathertunic"
 	rogue_female_worn = TRUE
@@ -12671,7 +13163,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_padded_good
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12682,6 +13173,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/padded_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt", "chopping")
+	rogue_blocksound = "softunder"
 	inhand_icon_state = null
 	worn_icon_state = "fancygamb"
 	rogue_female_worn = TRUE
@@ -12697,7 +13192,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_padded_good
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12708,6 +13202,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/padded_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt", "chopping")
+	rogue_blocksound = "softunder"
 	inhand_icon_state = null
 	worn_icon_state = "royalgamb"
 	rogue_female_worn = TRUE
@@ -12723,7 +13221,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_padded_good
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12734,6 +13231,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/padded_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt", "chopping")
+	rogue_blocksound = "softunder"
 	inhand_icon_state = null
 	worn_icon_state = "sherwani"
 	rogue_female_worn = TRUE
@@ -12749,7 +13250,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_padded_bad
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12760,6 +13260,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/padded_bad
+	armor_class = 1
+	rogue_blocksound = "softunder"
 	inhand_icon_state = null
 	worn_icon_state = "gambeson"
 	rogue_female_worn = TRUE
@@ -12775,7 +13278,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_padded
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12786,6 +13288,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/padded
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt")
+	rogue_blocksound = "softunder"
 	inhand_icon_state = null
 	worn_icon_state = "shadowrobe"
 	rogue_female_worn = TRUE
@@ -12801,7 +13307,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12812,6 +13317,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 3
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "heartfelt"
 	rogue_female_worn = TRUE
@@ -12827,7 +13336,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12838,6 +13346,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 3
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "heartfelt_hand"
 	rogue_female_worn = TRUE
@@ -12853,7 +13365,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12864,6 +13375,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "roguearmor"
 	rogue_female_worn = TRUE
@@ -12879,7 +13394,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12890,6 +13404,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "leatherkini"
 	rogue_female_worn = TRUE
@@ -12905,7 +13423,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12916,6 +13433,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "leather"
 	rogue_female_worn = TRUE
@@ -12930,7 +13451,6 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12941,6 +13461,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -12956,7 +13480,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_leather_good
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12967,6 +13490,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "chopping", "smashing")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "roguearmor_belt"
 	rogue_female_worn = TRUE
@@ -12982,7 +13509,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_leather_good
 	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -12993,6 +13519,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "chopping", "smashing")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "roguearmor_coat"
 	rogue_female_worn = TRUE
@@ -13008,7 +13538,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_leather_good
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13019,6 +13548,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "chopping", "smashing")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "leatherjacketo"
 	rogue_female_worn = TRUE
@@ -13034,7 +13567,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13045,6 +13577,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "hidearmor"
 	rogue_female_worn = TRUE
@@ -13060,7 +13596,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13071,6 +13606,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "hidearmorkini"
 	rogue_female_worn = TRUE
@@ -13096,6 +13635,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "cloth_armor"
 
@@ -13110,7 +13652,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13121,6 +13662,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "artijacket"
 	rogue_female_worn = TRUE
@@ -13133,7 +13678,6 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
-	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13144,6 +13688,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt")
+	rogue_blocksound = "soft"
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -13157,7 +13705,6 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13168,6 +13715,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt")
+	rogue_blocksound = "soft"
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -13181,7 +13732,6 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_leather_studded
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13192,6 +13742,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_studded
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt")
+	rogue_blocksound = "soft"
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -13205,7 +13759,6 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|FOOT_LEFT|FOOT_RIGHT|GROIN|HAND_LEFT|HAND_RIGHT|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13216,6 +13769,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt")
+	rogue_blocksound = "soft"
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -13229,7 +13786,6 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|FOOT_LEFT|FOOT_RIGHT|GROIN|HAND_LEFT|HAND_RIGHT|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13240,6 +13796,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt")
+	rogue_blocksound = "soft"
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -13253,7 +13813,6 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13264,6 +13823,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt")
+	rogue_blocksound = "soft"
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -13277,7 +13840,6 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_padded_bad
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13288,6 +13850,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/padded_bad
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt")
+	rogue_blocksound = "soft"
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -13304,7 +13870,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_leather_studded
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13315,6 +13880,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_studded
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "chopping", "smashing")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "studleather"
 	rogue_female_worn = TRUE
@@ -13330,7 +13899,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_leather_studded
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13341,6 +13909,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_studded
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "chopping", "smashing")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "studleatherkini"
 	rogue_female_worn = TRUE
@@ -13356,7 +13928,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_leather_studded
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13367,6 +13938,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_studded
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "chopping", "smashing")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "hcorset"
 	rogue_female_worn = TRUE
@@ -13381,7 +13956,6 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_leather_studded
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13392,6 +13966,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_studded
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "chopping", "smashing")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -13406,7 +13984,6 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_brigandine
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13417,6 +13994,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/brigandine
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "chopping", "smashing")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -13432,7 +14013,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_leather_bad
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13443,6 +14023,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_bad
+	armor_class = 1
+	rogue_prevent_crits = list("slash")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "vest"
 	rogue_female_worn = TRUE
@@ -13458,7 +14042,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_leather_bad
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13469,6 +14052,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_bad
+	armor_class = 1
+	rogue_prevent_crits = list("slash")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "vest"
 	rogue_female_worn = TRUE
@@ -13484,7 +14071,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_leather_bad
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13495,6 +14081,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_bad
+	armor_class = 1
+	rogue_prevent_crits = list("slash")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "vest"
 	rogue_female_worn = TRUE
@@ -13510,7 +14100,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_leather_bad
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13521,6 +14110,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_bad
+	armor_class = 1
+	rogue_prevent_crits = list("slash")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "vest"
 	rogue_female_worn = TRUE
@@ -13536,7 +14129,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_leather_bad
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13547,6 +14139,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_bad
+	armor_class = 1
+	rogue_prevent_crits = list("slash")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "vest"
 	rogue_female_worn = TRUE
@@ -13572,6 +14168,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "longcoat"
 	rogue_female_worn = TRUE
@@ -13587,7 +14184,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13598,6 +14194,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 3
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "halfplate"
 	rogue_female_worn = TRUE
@@ -13613,7 +14213,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13624,6 +14223,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 3
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "ancientplate"
 	rogue_female_worn = TRUE
@@ -13639,7 +14242,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13650,6 +14252,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 3
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "ancientplate"
 	rogue_female_worn = TRUE
@@ -13665,7 +14271,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13676,6 +14281,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/cuirass
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "halfplatekini"
 	rogue_female_worn = TRUE
@@ -13691,7 +14300,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13702,6 +14310,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "grenzelcuirass"
 	rogue_female_worn = TRUE
@@ -13717,7 +14329,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13728,6 +14339,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "citywatch"
 	rogue_female_worn = TRUE
@@ -13743,7 +14358,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13754,6 +14368,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "citywatch"
 	rogue_female_worn = TRUE
@@ -13769,7 +14387,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = CHEST|GROIN
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13780,6 +14397,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 3
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "halfplate"
 	rogue_female_worn = TRUE
@@ -13795,7 +14416,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_ascendant
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13806,6 +14426,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/ascendant
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "halfplate"
 	rogue_female_worn = TRUE
@@ -13821,7 +14445,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/martyr.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13832,6 +14455,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 3
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "silverarmor"
 	rogue_female_worn = TRUE
@@ -13847,7 +14474,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13858,6 +14484,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 3
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "halfplate"
 	rogue_female_worn = TRUE
@@ -13873,7 +14503,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_ascendant
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13884,6 +14513,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/ascendant
+	armor_class = 3
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "halfplate"
 	rogue_female_worn = TRUE
@@ -13899,7 +14532,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_ascendant
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13910,6 +14542,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/ascendant
+	armor_class = 3
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "halfplate"
 	rogue_female_worn = TRUE
@@ -13925,7 +14561,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = CHEST
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13936,6 +14571,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/cuirass
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "cuirass"
 	rogue_female_worn = TRUE
@@ -13951,7 +14590,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = CHEST
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13962,6 +14600,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/cuirass
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "cuirass"
 	rogue_female_worn = TRUE
@@ -13977,7 +14619,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = CHEST
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -13988,6 +14629,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/cuirass
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "cuirass"
 	rogue_female_worn = TRUE
@@ -14003,7 +14648,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_m52_b28_f0_a0
 	body_parts_covered = CHEST
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -14014,6 +14658,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/b75_s75_t75_p40_f0_a0
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "cuirass"
 	rogue_female_worn = TRUE
@@ -14029,7 +14677,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = CHEST
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -14040,6 +14687,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/cuirass
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "ornatechestplate"
 	rogue_female_worn = TRUE
@@ -14055,7 +14706,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = CHEST|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -14066,6 +14716,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/cuirass
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "cuirass"
 	rogue_female_worn = TRUE
@@ -14081,7 +14735,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = CHEST|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -14092,6 +14745,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/cuirass
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "cuirass"
 	rogue_female_worn = TRUE
@@ -14107,7 +14764,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = CHEST
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -14118,6 +14774,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/cuirass
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "cuirass"
 	rogue_female_worn = TRUE
@@ -14132,7 +14792,6 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_cuirass
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -14143,6 +14802,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/cuirass
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -14158,7 +14821,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = CHEST|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -14169,6 +14831,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 3
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "ihalfplate"
 	rogue_female_worn = TRUE
@@ -14184,7 +14850,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/blkknight.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_plate_bsteel
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -14195,6 +14860,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate_bsteel
+	armor_class = 3
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "bplate"
 	rogue_female_worn = TRUE
@@ -14210,7 +14879,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -14221,6 +14889,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "halfplate"
 	rogue_female_worn = TRUE
@@ -14236,7 +14908,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_leather_studded
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -14247,6 +14918,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_studded
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "inqcoat"
 	rogue_female_worn = TRUE
@@ -14262,7 +14937,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
-	armor_type = /datum/armor/rockhill_padded_bad
 	body_parts_covered = CHEST
 	rogue_onhip = TRUE
 	rogue_inhand = FALSE
@@ -14273,6 +14947,8 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/padded_bad
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "workervest"
 	rogue_female_worn = TRUE
@@ -15446,7 +16122,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_padded_good
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
@@ -15456,6 +16131,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/padded_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt", "chopping")
 	inhand_icon_state = null
 	worn_icon_state = "desertgown"
 	rogue_female_worn = TRUE
@@ -15591,7 +16269,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_padded_good
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
@@ -15601,6 +16278,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/padded_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt", "chopping")
 	inhand_icon_state = null
 	worn_icon_state = "priestunder"
 	rogue_female_worn = TRUE
@@ -15736,7 +16416,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
-	armor_type = /datum/armor/rockhill_padded
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
@@ -15746,6 +16425,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/padded
 	inhand_icon_state = null
 	worn_icon_state = "priestrobe"
 	rogue_female_worn = TRUE
@@ -16455,7 +17135,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_maille
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
@@ -16465,6 +17144,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/maille
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "chain"
 	inhand_icon_state = null
 	worn_icon_state = "chain_legs"
 	rogue_female_worn = TRUE
@@ -16480,7 +17163,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/captain.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_cuirass
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
@@ -16490,6 +17172,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/cuirass
+	armor_class = 3
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "chain"
 	inhand_icon_state = null
 	worn_icon_state = "capplateleg"
 	rogue_female_worn = TRUE
@@ -16505,7 +17191,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_maille
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
@@ -16515,6 +17200,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/maille
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "chain"
 	inhand_icon_state = null
 	worn_icon_state = "chain_legs"
 	rogue_female_worn = TRUE
@@ -16530,7 +17219,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_maille
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_SHIRT_LAYER
@@ -16541,6 +17229,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/maille
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "chain"
 	inhand_icon_state = null
 	worn_icon_state = "ichainkilt"
 	rogue_female_worn = TRUE
@@ -16556,7 +17248,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_maille
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_SHIRT_LAYER
@@ -16567,6 +17258,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/maille
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "chain"
 	inhand_icon_state = null
 	worn_icon_state = "chainkilt"
 	rogue_female_worn = TRUE
@@ -16582,7 +17277,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_maille
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_SHIRT_LAYER
@@ -16593,6 +17287,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/maille
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "chain"
 	inhand_icon_state = null
 	worn_icon_state = "chainkilt"
 	rogue_female_worn = TRUE
@@ -16608,7 +17306,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_maille
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_SHIRT_LAYER
@@ -16619,6 +17316,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/maille
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "chain"
 	inhand_icon_state = null
 	worn_icon_state = "chainkilt"
 	rogue_female_worn = TRUE
@@ -16634,7 +17335,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_maille
 	body_parts_covered = LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
@@ -16644,6 +17344,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/maille
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "chain"
 	inhand_icon_state = null
 	worn_icon_state = "chain_skirt"
 	rogue_female_worn = TRUE
@@ -16659,7 +17363,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_leather_good
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
@@ -16669,6 +17372,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "chopping", "blunt", "twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "roguepants"
 	rogue_female_worn = TRUE
@@ -16684,7 +17391,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_leather_good
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
@@ -16694,6 +17400,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "chopping", "blunt", "twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "roguepants"
 	rogue_female_worn = TRUE
@@ -16709,7 +17419,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_leather_good
 	body_parts_covered = GROIN
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
@@ -16719,6 +17428,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "chopping", "blunt", "twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "rogueshorts"
 	rogue_female_worn = TRUE
@@ -16782,7 +17495,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_plate
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
@@ -16792,6 +17504,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 3
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "plate_legs"
 	rogue_female_worn = TRUE
@@ -16807,7 +17523,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_plate
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
@@ -16817,6 +17532,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 3
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "plate_legs"
 	rogue_female_worn = TRUE
@@ -16832,7 +17551,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_plate
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
@@ -16842,6 +17560,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 3
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "plate_legs"
 	rogue_female_worn = TRUE
@@ -16857,7 +17579,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/blkknight.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_plate_bsteel
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/blkknight.dmi'
@@ -16867,6 +17588,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate_bsteel
+	armor_class = 3
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "bplatelegs"
 	rogue_female_worn = TRUE
@@ -16882,7 +17607,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_ascendant
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
@@ -16892,6 +17616,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/ascendant
+	armor_class = 3
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "plate_legs"
 	rogue_female_worn = TRUE
@@ -16907,7 +17635,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/martyr.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_plate
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
@@ -16917,6 +17644,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 3
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "silverlegs"
 	rogue_female_worn = TRUE
@@ -16932,7 +17663,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_plate
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
@@ -16942,6 +17672,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 3
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "iplate_legs"
 	rogue_female_worn = TRUE
@@ -16957,7 +17691,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_ascendant
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
@@ -16967,6 +17700,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/ascendant
+	armor_class = 3
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "stab")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "plate_legs"
 	rogue_female_worn = TRUE
@@ -16982,7 +17719,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_plate
 	body_parts_covered = LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
@@ -16992,6 +17728,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "plate_skirt"
 	rogue_female_worn = TRUE
@@ -17007,7 +17747,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_ascendant
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
@@ -17017,6 +17756,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/ascendant
+	armor_class = 3
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "stab")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "plate_legs"
 	rogue_female_worn = TRUE
@@ -17132,7 +17875,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_brigandine
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
@@ -17142,6 +17884,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/brigandine
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "splintlegs"
 	rogue_female_worn = TRUE
@@ -17157,7 +17903,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_leather_studded
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
@@ -17167,6 +17912,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather_studded
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "ironsplintlegs"
 	rogue_female_worn = TRUE
@@ -17397,7 +18146,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_padded_bad
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
@@ -17407,6 +18155,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/padded_bad
+	armor_class = 1
+	rogue_prevent_crits = list("slash")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "trou"
 	rogue_female_worn = TRUE
@@ -17422,7 +18174,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_padded_bad
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
@@ -17432,6 +18183,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/padded_bad
+	armor_class = 1
+	rogue_prevent_crits = list("slash")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "apothpants"
 	rogue_female_worn = TRUE
@@ -17447,7 +18202,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_padded_bad
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
@@ -17457,6 +18211,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/padded_bad
+	armor_class = 1
+	rogue_prevent_crits = list("slash")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "artipants"
 	rogue_female_worn = TRUE
@@ -17472,7 +18230,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_padded_bad
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
@@ -17482,6 +18239,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/padded_bad
+	armor_class = 1
+	rogue_prevent_crits = list("slash")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "beltpants"
 	rogue_female_worn = TRUE
@@ -17497,7 +18258,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_padded_bad
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_maids.dmi'
@@ -17507,6 +18267,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/padded_bad
+	armor_class = 1
+	rogue_prevent_crits = list("slash")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "butlerpants"
 	rogue_female_worn = TRUE
@@ -17522,7 +18286,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_padded_bad
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_maids.dmi'
@@ -17532,6 +18295,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/padded_bad
+	armor_class = 1
+	rogue_prevent_crits = list("slash")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "butlershorts"
 	rogue_female_worn = TRUE
@@ -17547,7 +18314,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_leather
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
@@ -17557,6 +18323,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt", "twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "trou"
 	rogue_female_worn = TRUE
@@ -17572,7 +18342,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_leather
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
@@ -17582,6 +18351,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt", "twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "atgervi_pants"
 	rogue_female_worn = TRUE
@@ -17597,7 +18370,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_leather
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
@@ -17607,6 +18379,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt", "twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "trou"
 	rogue_female_worn = TRUE
@@ -17622,7 +18398,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_leather
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
@@ -17632,6 +18407,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt", "twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "monkpants"
 	rogue_female_worn = TRUE
@@ -17647,7 +18426,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_padded_bad
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
@@ -17657,6 +18435,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/padded_bad
+	armor_class = 1
+	rogue_prevent_crits = list("slash")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "leathertights"
 	rogue_female_worn = TRUE
@@ -17672,7 +18454,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor_type = /datum/armor/clothing_under/rockhill_padded_bad
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
@@ -17682,6 +18463,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/padded_bad
+	armor_class = 1
+	rogue_prevent_crits = list("slash")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "trou"
 	rogue_female_worn = TRUE
@@ -17721,7 +18506,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
@@ -17731,6 +18515,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "bracers"
 	rogue_female_worn = TRUE
@@ -17746,7 +18533,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
@@ -17756,6 +18542,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "bracers"
 	rogue_female_worn = TRUE
@@ -17771,7 +18560,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
@@ -17781,6 +18569,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "bracers"
 	rogue_female_worn = TRUE
@@ -17796,7 +18587,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
-	armor_type = /datum/armor/rockhill_padded_good
 	body_parts_covered = ARM_LEFT|ARM_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
@@ -17806,6 +18596,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/padded_good
+	rogue_prevent_crits = list("slash", "chopping", "stabbing", "blunt", "twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "nocwrappings"
 	rogue_female_worn = TRUE
@@ -17831,6 +18624,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/bronze
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "copperarm"
 	rogue_female_worn = TRUE
@@ -17846,7 +18642,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
-	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
@@ -17856,6 +18651,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "ibracers"
 	rogue_female_worn = TRUE
@@ -17871,7 +18669,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
-	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = ARM_LEFT|ARM_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
@@ -17881,6 +18678,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "lbracers"
 	rogue_female_worn = TRUE
@@ -17896,7 +18696,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
-	armor_type = /datum/armor/rockhill_plate_bsteel
 	body_parts_covered = ARM_LEFT|ARM_RIGHT
 	rogue_inhand = FALSE
 	alternate_worn_layer = ROGUE_WRISTS_LAYER
@@ -17907,6 +18706,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate_bsteel
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "psybarbs"
 	rogue_female_worn = TRUE
@@ -17967,7 +18769,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
-	armor_type = /datum/armor/rockhill_brigandine
 	body_parts_covered = ARM_LEFT|ARM_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
@@ -17977,6 +18778,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/brigandine
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "splintarms"
 	rogue_female_worn = TRUE
@@ -17992,7 +18796,6 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
-	armor_type = /datum/armor/rockhill_leather_studded
 	body_parts_covered = ARM_LEFT|ARM_RIGHT
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
@@ -18002,6 +18805,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_studded
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "ironsplintarms"
 	rogue_female_worn = TRUE
@@ -18091,6 +18897,11 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 2
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/craft/cooking
+	possible_item_intents = list(/datum/intent/mace/strike/pan)
 	inhand_icon_state = null
 
 /obj/item/cooking/pan/decrepit
@@ -18114,6 +18925,11 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 2
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/craft/cooking
+	possible_item_intents = list(/datum/intent/mace/strike/pan)
 	inhand_icon_state = null
 
 /obj/item/cooking/platter
@@ -18312,6 +19128,7 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	possible_item_intents = list(/datum/intent/hit)
 	inhand_icon_state = "rods"
 
 /obj/item/coveter
@@ -18498,6 +19315,7 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	gripped_intents = list(/datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/dummy/treasure
@@ -18581,6 +19399,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	possible_item_intents = list(/datum/intent/cast, /datum/intent/spear/bash)
 	inhand_icon_state = null
 
 /obj/item/fishingrod/abyssoid
@@ -18602,6 +19421,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	possible_item_intents = list(/datum/intent/cast, /datum/intent/spear/bash)
 	inhand_icon_state = null
 
 /obj/item/fishingrod/decrepit
@@ -18623,6 +19443,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	possible_item_intents = list(/datum/intent/cast, /datum/intent/spear/bash)
 	inhand_icon_state = null
 
 /obj/item/flashlight/flare/torch/lantern
@@ -18645,6 +19466,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
 	inhand_icon_state = "torch"
 
 /obj/item/flashlight/flare/torch/lantern/bronzelamptern
@@ -18666,6 +19488,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/flashlight/flare/torch/lantern/copper
@@ -18687,6 +19510,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
 	inhand_icon_state = "torch"
 
 /obj/item/flashlight/flare/torch/lantern/psycenser
@@ -18708,6 +19532,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/mace/smash/flail/golgotha)
 	inhand_icon_state = null
 
 /obj/item/flashlight/flare/torch/lantern/pumpkin/zizo
@@ -18729,6 +19554,8 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 1
+	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
 	inhand_icon_state = "torch"
 
 /obj/item/flashlight/flare/torch/metal
@@ -18751,6 +19578,8 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	wdefense = 1
+	possible_item_intents = list(/datum/intent/use, /datum/intent/mace/strike)
 	inhand_icon_state = "torch"
 
 /obj/item/flint
@@ -18862,6 +19691,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/grapple, /datum/intent/attach, /datum/intent/reel)
 	inhand_icon_state = "grappler"
 
 /obj/item/grown/log/tree/small
@@ -18883,6 +19713,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 96
+	possible_item_intents = list(/datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/grown/log/tree/stake
@@ -18906,6 +19737,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/stab, /datum/intent/pick)
 	inhand_icon_state = null
 
 /obj/item/grown/log/tree/stick
@@ -18928,6 +19760,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/gun/ballistic/firearm/arquebus
@@ -18952,6 +19785,12 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 96
 	rogue_grid_height = 64
+	rogue_force_wielded = 15
+	wlength = 3
+	minstr = 10
+	can_parry = TRUE
+	possible_item_intents = list(/datum/intent/mace/strike/wood)
+	gripped_intents = list(/datum/intent/shoot/firearm, /datum/intent/arc/firearm, /datum/intent/hit)
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -18980,6 +19819,11 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 96
 	rogue_grid_height = 32
+	rogue_force_wielded = 15
+	wlength = 1
+	minstr = 10
+	can_parry = TRUE
+	possible_item_intents = list(/datum/intent/shoot/firearm, /datum/intent/arc/firearm, /datum/intent/mace/strike/wood)
 	inhand_icon_state = null
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow
@@ -19003,6 +19847,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	can_parry = TRUE
+	possible_item_intents = list(/datum/intent/shoot/bow/short, /datum/intent/arc/bow/short, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow
@@ -19026,6 +19872,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	can_parry = TRUE
+	possible_item_intents = list(/datum/intent/shoot/bow, /datum/intent/arc/bow, /datum/intent/hit)
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -19052,6 +19900,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	can_parry = TRUE
+	possible_item_intents = list(/datum/intent/shoot/bow, /datum/intent/arc/bow, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve/warden
@@ -19076,6 +19926,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	can_parry = TRUE
+	possible_item_intents = list(/datum/intent/shoot/bow, /datum/intent/arc/bow, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
@@ -19098,6 +19950,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	can_parry = TRUE
+	possible_item_intents = list(/datum/intent/shoot/crossbow, /datum/intent/arc/crossbow, /datum/intent/hit)
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -19122,6 +19976,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	can_parry = TRUE
+	possible_item_intents = list(/datum/intent/shoot/crossbow/slurbow, /datum/intent/arc/crossbow/slurbow, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/sling
@@ -19147,6 +20003,8 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	can_parry = TRUE
+	possible_item_intents = list(/datum/intent/swing/sling, /datum/intent/arc/sling, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/hair_dye_cream
@@ -19815,6 +20673,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	gripped_intents = list(/datum/intent/garrote/grab, /datum/intent/garrote/choke)
 	inhand_icon_state = null
 
 /obj/item/inqarticles/indexer
@@ -19899,6 +20758,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	wbalance = 1
+	possible_item_intents = list(/datum/intent/use, /datum/intent/dagger/thrust/fork)
 	inhand_icon_state = null
 
 /obj/item/kitchen/fork/decrepit
@@ -19918,6 +20779,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	wbalance = 1
+	possible_item_intents = list(/datum/intent/use, /datum/intent/dagger/thrust/fork)
 	inhand_icon_state = null
 
 /obj/item/kitchen/fork/gold
@@ -19937,6 +20800,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	wbalance = 1
+	possible_item_intents = list(/datum/intent/use, /datum/intent/dagger/thrust/fork)
 	inhand_icon_state = null
 
 /obj/item/kitchen/fork/iron
@@ -19956,6 +20821,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	wbalance = 1
+	possible_item_intents = list(/datum/intent/use, /datum/intent/dagger/thrust/fork)
 	inhand_icon_state = null
 
 /obj/item/kitchen/fork/silver
@@ -19975,6 +20842,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	wbalance = 1
+	possible_item_intents = list(/datum/intent/use, /datum/intent/dagger/thrust/fork)
 	inhand_icon_state = null
 
 /obj/item/kitchen/fork/tin
@@ -19994,6 +20863,8 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	wbalance = 1
+	possible_item_intents = list(/datum/intent/use, /datum/intent/dagger/thrust/fork)
 	inhand_icon_state = null
 
 /obj/item/kitchen/spoon/bronze
@@ -20273,6 +21144,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/lockpick
@@ -20297,6 +21169,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	associated_skill = /datum/attribute/skill/misc/lockpicking
 	inhand_icon_state = null
 
 /obj/item/lockpick/goldpin
@@ -20321,6 +21194,8 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/lockpicking
+	possible_item_intents = list(/datum/intent/use, /datum/intent/stab)
 	inhand_icon_state = null
 
 /obj/item/lockpick/goldpin/silver
@@ -20345,6 +21220,8 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/lockpicking
+	possible_item_intents = list(/datum/intent/use, /datum/intent/stab)
 	inhand_icon_state = null
 
 /obj/item/lockpickring
@@ -20529,6 +21406,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/millstone
@@ -21179,6 +22057,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/natural/cloth
@@ -21396,6 +22275,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/stab)
 	inhand_icon_state = null
 
 /obj/item/natural/head/minotaur
@@ -21562,6 +22442,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 96
 	rogue_grid_height = 96
+	rogue_force_wielded = 22
+	minstr = 11
+	associated_skill = /datum/attribute/skill/combat/unarmed
+	gripped_intents = list(/datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/natural/rock/coal
@@ -21583,6 +22467,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 96
 	rogue_grid_height = 96
+	rogue_force_wielded = 22
+	minstr = 11
+	associated_skill = /datum/attribute/skill/combat/unarmed
+	gripped_intents = list(/datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/natural/rock/gem
@@ -21604,6 +22492,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 96
 	rogue_grid_height = 96
+	rogue_force_wielded = 22
+	minstr = 11
+	associated_skill = /datum/attribute/skill/combat/unarmed
+	gripped_intents = list(/datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/natural/rock/iron
@@ -21625,6 +22517,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 96
 	rogue_grid_height = 96
+	rogue_force_wielded = 22
+	minstr = 11
+	associated_skill = /datum/attribute/skill/combat/unarmed
+	gripped_intents = list(/datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/natural/rock/random
@@ -21646,6 +22542,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 96
 	rogue_grid_height = 96
+	rogue_force_wielded = 22
+	minstr = 11
+	associated_skill = /datum/attribute/skill/combat/unarmed
+	gripped_intents = list(/datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/natural/rock/random_ore
@@ -21666,6 +22566,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 96
 	rogue_grid_height = 96
+	rogue_force_wielded = 22
+	minstr = 11
+	associated_skill = /datum/attribute/skill/combat/unarmed
+	gripped_intents = list(/datum/intent/hit)
 	icon_state = null
 	inhand_icon_state = null
 
@@ -21688,6 +22592,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 96
 	rogue_grid_height = 96
+	rogue_force_wielded = 22
+	minstr = 11
+	associated_skill = /datum/attribute/skill/combat/unarmed
+	gripped_intents = list(/datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/natural/rock/silver
@@ -21709,6 +22617,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 96
 	rogue_grid_height = 96
+	rogue_force_wielded = 22
+	minstr = 11
+	associated_skill = /datum/attribute/skill/combat/unarmed
+	gripped_intents = list(/datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/natural/saddle
@@ -21730,6 +22642,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/riding
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -21754,6 +22667,8 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/combat/unarmed
+	possible_item_intents = list(/datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/natural/stoneblock
@@ -21775,6 +22690,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/natural/whetstone
@@ -21797,6 +22713,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit, /datum/intent/dagger/cut)
 	inhand_icon_state = null
 
 /obj/item/natural/wood/plank
@@ -22611,6 +23528,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/butter
@@ -22631,6 +23549,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/butterslice
@@ -22651,6 +23570,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/crow
@@ -22671,6 +23591,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/deadmouse
@@ -22691,6 +23612,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/egg
@@ -22711,6 +23633,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/fat
@@ -22731,6 +23654,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food, /datum/intent/splash)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/fat/salo
@@ -22751,6 +23675,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food, /datum/intent/splash)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/fish
@@ -22770,6 +23695,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
 	icon_state = null
 	inhand_icon_state = null
 
@@ -22790,6 +23716,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
 	icon_state = null
 	inhand_icon_state = null
 
@@ -22810,6 +23737,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
 	icon_state = null
 	inhand_icon_state = null
 
@@ -22831,6 +23759,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/fish/oyster
@@ -22850,6 +23779,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
 	icon_state = null
 	inhand_icon_state = null
 
@@ -22871,6 +23801,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/fish/sole
@@ -22891,6 +23822,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/fish/sunny
@@ -22911,6 +23843,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/apple
@@ -22932,6 +23865,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 	worn_icon_state = "apple"
 
@@ -22953,6 +23887,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison
@@ -22973,6 +23908,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/cabbage/rogue
@@ -22993,6 +23929,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/carrot
@@ -23013,6 +23950,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/garlick/rogue
@@ -23033,6 +23971,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/oat
@@ -23053,6 +23992,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/onion/rogue
@@ -23073,6 +24013,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/potato/rogue
@@ -23093,6 +24034,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/fyritius
@@ -23113,6 +24055,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed
@@ -23133,6 +24076,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry
@@ -23153,6 +24097,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/poppy
@@ -23174,6 +24119,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/rosa_petals
@@ -23194,6 +24140,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/swampweed
@@ -23214,6 +24161,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/swampweeddry
@@ -23234,6 +24182,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/tealeaves_dry
@@ -23254,6 +24203,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/sunflower
@@ -23276,6 +24226,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 	worn_icon_state = "sunflower"
 
@@ -23297,6 +24248,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/biscuit
@@ -23317,6 +24269,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/bread
@@ -23337,6 +24290,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/breadslice
@@ -23357,6 +24311,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/cheddar
@@ -23377,6 +24332,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/cheddar/aged
@@ -23397,6 +24353,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/cheddarwedge
@@ -23417,6 +24374,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/cheddarwedge/aged
@@ -23437,6 +24395,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/cheese
@@ -23457,6 +24416,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/cheesebun
@@ -23477,6 +24437,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/crackerscooked
@@ -23497,6 +24458,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/dough
@@ -23517,6 +24479,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/foodbase/hardtack_raw
@@ -23537,6 +24500,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/friedrat
@@ -23557,6 +24521,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/frybirdtato
@@ -23577,6 +24542,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/fryfish/shrimp
@@ -23597,6 +24563,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/honey
@@ -23617,6 +24584,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/bacon
@@ -23637,6 +24605,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/coppiette
@@ -23657,6 +24626,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/fatty
@@ -23677,6 +24647,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/mince
@@ -23697,6 +24668,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/mince/beef
@@ -23717,6 +24689,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/mince/fish
@@ -23737,6 +24710,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/poultry
@@ -23757,6 +24731,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked
@@ -23777,6 +24752,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/salami
@@ -23797,6 +24773,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/salami/slice
@@ -23817,6 +24794,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/sausage
@@ -23837,6 +24815,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked
@@ -23857,6 +24836,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/spider
@@ -23877,6 +24857,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak
@@ -23897,6 +24878,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak/wolf
@@ -23917,6 +24899,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat_rotten
@@ -23937,6 +24920,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/apple
@@ -23957,6 +24941,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/poison
@@ -23977,6 +24962,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/raisinbreadslice
@@ -23997,6 +24983,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/raisins
@@ -24017,6 +25004,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/truffles
@@ -24037,6 +25025,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/veg/onion_sliced
@@ -24057,6 +25046,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/smallrat
@@ -24077,6 +25067,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/smallrat/dead
@@ -24097,6 +25088,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/tallow
@@ -24117,6 +25109,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/tallow/red
@@ -24137,6 +25130,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/zizo_bane
@@ -24157,6 +25151,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle
@@ -24179,6 +25174,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical
@@ -24200,6 +25196,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/conpot
@@ -24221,6 +25218,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/endpot
@@ -24242,6 +25240,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/healthpot
@@ -24263,6 +25262,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/healthpotnew
@@ -24284,6 +25284,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/intpot
@@ -24305,6 +25306,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/lucpot
@@ -24326,6 +25328,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/perpot
@@ -24347,6 +25350,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/rogue/rotcure
@@ -24368,6 +25372,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/spdpot
@@ -24389,6 +25394,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/spidervenom_paralytic
@@ -24410,6 +25416,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/strpot
@@ -24431,6 +25438,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/claybottle
@@ -24453,6 +25461,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/claybottle/nred
@@ -24475,6 +25484,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/claybottle/whitewine
@@ -24497,6 +25507,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/claybottle/wine
@@ -24519,6 +25530,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/clayfancyvase
@@ -24541,6 +25553,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/clayvase
@@ -24563,6 +25576,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/frankenbrew
@@ -24585,6 +25599,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue
@@ -24607,6 +25622,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/antidote
@@ -24629,6 +25645,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer
@@ -24651,6 +25668,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/apfelweinheim
@@ -24673,6 +25691,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/aurorian
@@ -24695,6 +25714,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/avarmead
@@ -24717,6 +25737,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/avarrice
@@ -24739,6 +25760,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/butterhairs
@@ -24761,6 +25783,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/fireleaf
@@ -24783,6 +25806,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/gronnmead
@@ -24805,6 +25829,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/hagwoodbitter
@@ -24827,6 +25852,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/jagdtrunk
@@ -24849,6 +25875,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/kgunlager
@@ -24871,6 +25898,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/kgunplum
@@ -24893,6 +25921,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/kgunsake
@@ -24915,6 +25944,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/murkwine
@@ -24937,6 +25967,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/nred
@@ -24959,6 +25990,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/rtoper
@@ -24981,6 +26013,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/saigamilk
@@ -25003,6 +26036,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/stonebeardreserve
@@ -25025,6 +26059,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/voddena
@@ -25047,6 +26082,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/berrypoison
@@ -25069,6 +26105,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/elfblue
@@ -25091,6 +26128,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/elfred
@@ -25113,6 +26151,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/emberwine
@@ -25135,6 +26174,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/healthpot
@@ -25157,6 +26197,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/healthpotnew
@@ -25179,6 +26220,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/luxwine
@@ -25201,6 +26243,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/manapot
@@ -25223,6 +26266,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/poison
@@ -25245,6 +26289,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/redwine
@@ -25267,6 +26312,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/stampoison
@@ -25289,6 +26335,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/stampot
@@ -25311,6 +26358,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/strongmanapot
@@ -25333,6 +26381,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/strongpoison
@@ -25355,6 +26404,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/strongstampoison
@@ -25377,6 +26427,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/strongstampot
@@ -25399,6 +26450,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/water
@@ -25421,6 +26473,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/whitewine
@@ -25443,6 +26496,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/wine
@@ -25465,6 +26519,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/wine/sourwine
@@ -25487,6 +26542,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bottle/waterskin
@@ -25509,6 +26565,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	worn_icon_hipl = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_l.dmi'
 	worn_icon_hipr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_r.dmi'
 	inhand_icon_state = null
@@ -25532,6 +26589,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bowl/bronze
@@ -25553,6 +26611,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bowl/carved/coral
@@ -25574,6 +26633,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bowl/decrepit
@@ -25595,6 +26655,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bowl/gold
@@ -25616,6 +26677,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bowl/iron
@@ -25637,6 +26699,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bowl/silver
@@ -25658,6 +26721,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bowl/tin
@@ -25679,6 +26743,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/bucket
@@ -25692,7 +26757,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
 	worn_icon_state = "woodbucket"
-	armor_type = /datum/armor/rockhill_m14_b0_f52_a35
+	armor_type = /datum/armor/rockhill_f52_a35
 	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -25701,6 +26766,8 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
+	gripped_intents = list(/datum/intent/pour)
 	inhand_icon_state = "woodbucket"
 
 /obj/item/reagent_containers/glass/bucket/pot
@@ -25714,7 +26781,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
 	worn_icon_state = "pot"
-	armor_type = /datum/armor/rockhill_m14_b0_f52_a35
+	armor_type = /datum/armor/rockhill_f52_a35
 	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -25723,6 +26790,8 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
+	gripped_intents = list(/datum/intent/pour)
 	inhand_icon_state = "pot"
 
 /obj/item/reagent_containers/glass/bucket/pot/copper
@@ -25736,7 +26805,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
 	worn_icon_state = "pot"
-	armor_type = /datum/armor/rockhill_m14_b0_f52_a35
+	armor_type = /datum/armor/rockhill_f52_a35
 	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -25745,6 +26814,8 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
+	gripped_intents = list(/datum/intent/pour)
 	inhand_icon_state = "pot"
 
 /obj/item/reagent_containers/glass/bucket/pot/decrepit
@@ -25758,7 +26829,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
 	worn_icon_state = "pot"
-	armor_type = /datum/armor/rockhill_m14_b0_f52_a35
+	armor_type = /datum/armor/rockhill_f52_a35
 	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -25767,6 +26838,8 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
+	gripped_intents = list(/datum/intent/pour)
 	inhand_icon_state = "pot"
 
 /obj/item/reagent_containers/glass/bucket/pot/stone
@@ -25780,7 +26853,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
 	worn_icon_state = "pot"
-	armor_type = /datum/armor/rockhill_m14_b0_f52_a35
+	armor_type = /datum/armor/rockhill_f52_a35
 	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -25789,6 +26862,8 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
+	gripped_intents = list(/datum/intent/pour)
 	inhand_icon_state = "pot"
 
 /obj/item/reagent_containers/glass/bucket/pot/teapot/fancy
@@ -25802,7 +26877,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
 	worn_icon_state = "pot"
-	armor_type = /datum/armor/rockhill_m14_b0_f52_a35
+	armor_type = /datum/armor/rockhill_f52_a35
 	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -25811,6 +26886,8 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
+	gripped_intents = list(/datum/intent/pour)
 	inhand_icon_state = "pot"
 
 /obj/item/reagent_containers/glass/bucket/pot/teapot/porcelain
@@ -25823,7 +26900,7 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/food_righthand.dmi'
 	worn_icon_state = "pot"
-	armor_type = /datum/armor/rockhill_m14_b0_f52_a35
+	armor_type = /datum/armor/rockhill_f52_a35
 	rogue_inhand = TRUE
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -25832,6 +26909,8 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
+	gripped_intents = list(/datum/intent/pour)
 	icon_state = null
 	inhand_icon_state = "pot"
 
@@ -25854,6 +26933,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/bronzegob
@@ -25875,6 +26955,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/bronzemug
@@ -25896,6 +26977,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/ceramic/fancy
@@ -25917,6 +26999,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/claycup
@@ -25938,6 +27021,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/decrepitgob
@@ -25959,6 +27043,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/decrepitmug
@@ -25980,6 +27065,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/golden
@@ -26001,6 +27087,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/golden/poison
@@ -26022,6 +27109,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/golden/psydon
@@ -26043,6 +27131,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/golden/small
@@ -26064,6 +27153,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/porcelain/fancy
@@ -26085,6 +27175,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/silver
@@ -26106,6 +27197,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/silver/small
@@ -26127,6 +27219,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/skull
@@ -26148,6 +27241,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/steel
@@ -26169,6 +27263,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/tin
@@ -26190,6 +27285,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/tin/small
@@ -26211,6 +27307,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/wooden
@@ -26232,6 +27329,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/cup/wooden/crafted
@@ -26253,6 +27351,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/glass/mortar
@@ -26273,6 +27372,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/lux
@@ -26898,6 +27998,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	can_parry = TRUE
 	inhand_icon_state = null
 
 /obj/item/rogue/instrument/drum
@@ -26920,6 +28021,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	can_parry = TRUE
 	inhand_icon_state = null
 
 /obj/item/rogue/instrument/flute
@@ -26942,6 +28044,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	can_parry = TRUE
 	inhand_icon_state = null
 
 /obj/item/rogue/instrument/guitar
@@ -26964,6 +28067,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	can_parry = TRUE
 	inhand_icon_state = null
 
 /obj/item/rogue/instrument/harp
@@ -26986,6 +28090,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	can_parry = TRUE
 	inhand_icon_state = null
 
 /obj/item/rogue/instrument/hurdygurdy
@@ -27008,6 +28113,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	can_parry = TRUE
 	inhand_icon_state = null
 
 /obj/item/rogue/instrument/jawharp
@@ -27030,6 +28136,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	can_parry = TRUE
 	inhand_icon_state = null
 
 /obj/item/rogue/instrument/lute
@@ -27052,6 +28159,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	can_parry = TRUE
 	inhand_icon_state = null
 
 /obj/item/rogue/instrument/shamisen
@@ -27074,6 +28182,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	can_parry = TRUE
 	inhand_icon_state = null
 
 /obj/item/rogue/instrument/trumpet
@@ -27096,6 +28205,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	can_parry = TRUE
 	inhand_icon_state = null
 
 /obj/item/rogue/instrument/viola
@@ -27118,6 +28228,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	can_parry = TRUE
 	inhand_icon_state = null
 
 /obj/item/rogue/instrument/vocals
@@ -27140,6 +28251,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	can_parry = TRUE
 	inhand_icon_state = null
 
 /obj/item/rogue/painting/queen
@@ -29905,6 +31017,12 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	possible_item_intents = list(/datum/intent/mace/strike)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/chisel
@@ -29930,6 +31048,12 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/stab)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/eaglebeak
@@ -29954,6 +31078,17 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 30
+	wdefense = 5
+	wdefense_wbonus = 3
+	wlength = 4
+	wbalance = -1
+	minstr = 11
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/thrust/eaglebeak/oneh)
+	gripped_intents = list(/datum/intent/spear/bash/eaglebeak, /datum/intent/mace/smash/eaglebeak, /datum/intent/spear/thrust/eaglebeak, /datum/intent/mace/warhammer/pick/ranged)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/eaglebeak/lucerne
@@ -29978,6 +31113,17 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 25
+	wdefense = 5
+	wdefense_wbonus = 3
+	wlength = 4
+	wbalance = -1
+	minstr = 11
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/thrust/eaglebeak/oneh)
+	gripped_intents = list(/datum/intent/spear/bash/eaglebeak, /datum/intent/mace/smash/eaglebeak, /datum/intent/spear/thrust/eaglebeak, /datum/intent/mace/warhammer/pick/ranged)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/estoc
@@ -30002,6 +31148,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 25
+	wdefense = 3
+	wdefense_wbonus = 6
+	wlength = 4
+	minstr = 8
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/thrust, /datum/intent/sword/strike)
+	gripped_intents = list(/datum/intent/sword/thrust/estoc, /datum/intent/sword/lunge/estoc, /datum/intent/sword/peel/big, /datum/intent/sword/strike)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/fishspear
@@ -30026,6 +31182,14 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	wdefense = 4
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 8
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/bash, /datum/intent/spear/cast)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/flail
@@ -30051,6 +31215,12 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	wdefense_wbonus = 3
+	minstr = 4
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/flail/strike, /datum/intent/mace/smash/flail)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/flail/militia
@@ -30076,6 +31246,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	wdefense = 3
+	wdefense_wbonus = 3
+	wbalance = -1
+	minstr = 4
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/flail/strike, /datum/intent/mace/smash/flail/militia)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/flail/peasantwarflail
@@ -30102,6 +31280,17 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	rogue_force_wielded = 35
+	wdefense = 4
+	wdefense_wbonus = 3
+	wlength = 4
+	wbalance = -1
+	minstr = 9
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/flail/strike)
+	gripped_intents = list(/datum/intent/flail/strikerange, /datum/intent/mace/smash/flailrange, /datum/intent/flail/sweep)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/flail/peasantwarflail/matthios
@@ -30128,6 +31317,17 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	rogue_force_wielded = 35
+	wdefense = 7
+	wdefense_wbonus = 3
+	wlength = 4
+	wbalance = -1
+	minstr = 9
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/flail/strike/matthiosflail)
+	gripped_intents = list(/datum/intent/flail/strike/matthiosflail, /datum/intent/mace/smash/flail/matthiosflail, /datum/intent/flail/sweep)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -30155,6 +31355,12 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	wdefense_wbonus = 3
+	minstr = 5
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/flail/strike, /datum/intent/mace/smash/flail)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/flail/sflail/ancient
@@ -30180,6 +31386,12 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	wdefense_wbonus = 3
+	minstr = 5
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/flail/strike, /datum/intent/mace/smash/flail)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/flail/sflail/ancient/decrepit
@@ -30205,6 +31417,12 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	wdefense_wbonus = 3
+	minstr = 5
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/flail/strike, /datum/intent/mace/smash/flail)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/flail/sflail/silver
@@ -30230,6 +31448,12 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	wdefense_wbonus = 3
+	minstr = 12
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/flail/strike, /datum/intent/mace/smash/flailrange)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/greataxe
@@ -30254,6 +31478,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 30
+	wdefense = 6
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 11
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/axes
+	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/spear/bash)
+	gripped_intents = list(/datum/intent/axe/cut/battle/greataxe, /datum/intent/axe/chop/battle/greataxe, /datum/intent/axe/sweep, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/greataxe/militia
@@ -30278,6 +31512,17 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 25
+	wdefense = 4
+	wdefense_wbonus = 3
+	wlength = 4
+	wbalance = -1
+	minstr = 10
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/axes
+	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/spear/bash)
+	gripped_intents = list(/datum/intent/rend/reach, /datum/intent/axe/chop/battle/greataxe, /datum/intent/sword/peel/big, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/greataxe/silver
@@ -30302,6 +31547,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 25
+	wdefense = 6
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 12
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/mace/strike)
+	gripped_intents = list(/datum/intent/axe/cut/battle/greataxe, /datum/intent/axe/chop/battle/greataxe, /datum/intent/mace/rangedthrust)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/greataxe/steel
@@ -30326,6 +31581,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 30
+	wdefense = 6
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 11
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/axes
+	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/spear/bash)
+	gripped_intents = list(/datum/intent/axe/cut/battle/greataxe, /datum/intent/axe/chop/battle/greataxe, /datum/intent/axe/sweep, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/greataxe/steel/doublehead
@@ -30350,6 +31615,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 35
+	wdefense = 6
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 12
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/axes
+	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/spear/bash)
+	gripped_intents = list(/datum/intent/axe/cut/battle/greataxe, /datum/intent/axe/chop/battle/greataxe, /datum/intent/axe/sweep, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/greataxe/steel/doublehead/graggar
@@ -30374,6 +31649,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 40
+	wdefense = 6
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 12
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/axes
+	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/spear/bash)
+	gripped_intents = list(/datum/intent/axe/cut/battle/greataxe, /datum/intent/axe/chop/battle/greataxe, /datum/intent/axe/sweep, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/greataxe/steel/doublehead/minotaur
@@ -30398,6 +31683,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 35
+	wdefense = 6
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 14
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/axes
+	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/spear/bash)
+	gripped_intents = list(/datum/intent/axe/cut/battle/greataxe, /datum/intent/axe/chop/battle/greataxe, /datum/intent/axe/sweep, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/greatsword
@@ -30422,6 +31717,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 35
+	wdefense = 5
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 9
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/chop, /datum/intent/sword/strike)
+	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/greatsword/ancient
@@ -30446,6 +31751,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 35
+	wdefense = 5
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 9
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/chop, /datum/intent/sword/strike)
+	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/greatsword/ancient/decrepit
@@ -30470,6 +31785,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 25
+	wdefense = 5
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 9
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/chop, /datum/intent/sword/strike)
+	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/greatsword/grenz
@@ -30494,6 +31819,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 35
+	wdefense = 4
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 9
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/chop, /datum/intent/sword/strike)
+	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/greatsword/zwei
@@ -30518,6 +31853,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 30
+	wdefense = 4
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 9
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/chop, /datum/intent/sword/strike)
+	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/halberd
@@ -30542,6 +31887,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 30
+	wdefense = 6
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 9
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/bash)
+	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut/halberd, /datum/intent/sword/chop, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/halberd/bardiche
@@ -30566,6 +31921,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 30
+	wdefense = 6
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 9
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/thrust/eaglebeak/oneh, /datum/intent/spear/bash)
+	gripped_intents = list(/datum/intent/spear/cut, /datum/intent/spear/cut/bardiche/cleave, /datum/intent/spear/cut/glaive/sweep, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/halberd/bardiche/ancient
@@ -30590,6 +31955,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 30
+	wdefense = 6
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 9
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/thrust/eaglebeak/oneh, /datum/intent/spear/bash)
+	gripped_intents = list(/datum/intent/spear/cut, /datum/intent/spear/cut/bardiche/cleave, /datum/intent/spear/cut/glaive/sweep, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/halberd/bardiche/ancient/decrepit
@@ -30614,6 +31989,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 22
+	wdefense = 6
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 9
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/thrust/eaglebeak/oneh, /datum/intent/spear/bash)
+	gripped_intents = list(/datum/intent/spear/cut, /datum/intent/spear/cut/bardiche/cleave, /datum/intent/spear/cut/glaive/sweep, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/halberd/glaive
@@ -30638,6 +32023,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 30
+	wdefense = 9
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 9
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/bash)
+	gripped_intents = list(/datum/intent/spear/thrust/glaive, /datum/intent/spear/cut/glaive, /datum/intent/spear/cut/glaive/sweep, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/hammer/ancient/decrepit
@@ -30663,6 +32058,13 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/hammer/artefact/malum
@@ -30688,6 +32090,13 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 10
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/forge, /datum/intent/smelt)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/hammer/blacksteel
@@ -30713,6 +32122,13 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/hammer/copper
@@ -30738,6 +32154,13 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/hammer/iron
@@ -30763,6 +32186,13 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/hammer/steel
@@ -30788,6 +32218,13 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/hammer/stone
@@ -30813,6 +32250,13 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/hammer/wood
@@ -30838,6 +32282,13 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/handsaw
@@ -30863,6 +32314,12 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	wdefense_wbonus = 3
+	wlength = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/axes
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/hoe
@@ -30885,6 +32342,13 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 15
+	wdefense = 3
+	wdefense_wbonus = 3
+	can_parry = TRUE
+	possible_item_intents = list(/datum/intent/till, /datum/intent/pick)
+	gripped_intents = list(/datum/intent/till, /datum/intent/pick, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -30909,6 +32373,13 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 15
+	wdefense = 3
+	wdefense_wbonus = 3
+	can_parry = TRUE
+	possible_item_intents = list(/datum/intent/till, /datum/intent/pick)
+	gripped_intents = list(/datum/intent/till, /datum/intent/pick, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -30933,6 +32404,13 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 15
+	wdefense = 3
+	wdefense_wbonus = 3
+	can_parry = TRUE
+	possible_item_intents = list(/datum/intent/till, /datum/intent/pick)
+	gripped_intents = list(/datum/intent/till, /datum/intent/pick, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -30957,6 +32435,13 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 12
+	wdefense = 3
+	wdefense_wbonus = 3
+	can_parry = TRUE
+	possible_item_intents = list(/datum/intent/till, /datum/intent/pick)
+	gripped_intents = list(/datum/intent/till, /datum/intent/pick, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -30985,6 +32470,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/dagger/chop)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/bronze
@@ -31011,6 +32504,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/bronze, /datum/intent/dagger/sucker_punch, /datum/intent/dagger/thrust/bronze)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/chefknife
@@ -31037,6 +32538,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver, /datum/intent/dagger/thrust)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/cleaver
@@ -31061,6 +32570,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/combat
@@ -31087,6 +32604,15 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 4
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	minstr = 9
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/chop/cleaver, /datum/intent/dagger/cut/heavy, /datum/intent/dagger/sucker_punch, /datum/intent/dagger/thrust/combat)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/copper
@@ -31113,6 +32639,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/dagger/chop)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger
@@ -31139,6 +32673,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/dtace
@@ -31165,6 +32707,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/navaja
@@ -31191,6 +32741,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 2
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = "elfdag"
 
 /obj/item/rogueweapon/huntingknife/idagger/silver
@@ -31217,6 +32775,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 6
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/silver/arcyne
@@ -31243,6 +32809,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 6
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/silver/elvish
@@ -31269,6 +32843,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 6
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = "elfdag"
 
 /obj/item/rogueweapon/huntingknife/idagger/silver/elvish/drow
@@ -31295,6 +32877,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 6
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = "elfdag"
 
 /obj/item/rogueweapon/huntingknife/idagger/silver/psydagger
@@ -31321,6 +32911,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 6
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel
@@ -31347,6 +32945,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/ancient
@@ -31373,6 +32979,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/ancient/decrepit
@@ -31399,6 +33013,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/holysee
@@ -31425,6 +33047,15 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	armour_penetration = 50
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/parrying
@@ -31451,6 +33082,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 8
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/parrying/vaquero
@@ -31477,6 +33116,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 9
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/pestrasickle
@@ -31503,6 +33150,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/special
@@ -31529,6 +33184,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/warden_machete
@@ -31555,6 +33218,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/thrust/weak, /datum/intent/dagger/cut/heavy, /datum/intent/dagger/chop/cleaver, /datum/intent/dagger/sucker_punch)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/idagger/wood
@@ -31581,6 +33252,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/thrust/wood, /datum/intent/dagger/sucker_punch, /datum/intent/dagger/thrust/pick/wood)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/scissors
@@ -31607,6 +33286,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/snip, /datum/intent/dagger/thrust, /datum/intent/dagger/cut)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/scissors/steel
@@ -31633,6 +33320,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/snip, /datum/intent/dagger/thrust, /datum/intent/dagger/cut)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/stoneknife
@@ -31659,6 +33354,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 1
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/throwingknife
@@ -31685,6 +33388,15 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 1
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	armour_penetration = 30
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/chop)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/throwingknife/steel
@@ -31711,6 +33423,15 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 1
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	armour_penetration = 40
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/chop)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/throwingknife/steel/ancient
@@ -31737,6 +33458,15 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 1
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	armour_penetration = 40
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/chop)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/throwingknife/steel/ancient/decrepit
@@ -31763,6 +33493,15 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 1
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	armour_penetration = 40
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/chop)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/katar
@@ -31788,6 +33527,12 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/unarmed
+	possible_item_intents = list(/datum/intent/katar/cut, /datum/intent/katar/thrust)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/katar/punchdagger
@@ -31813,6 +33558,12 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/unarmed
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/thrust/pick)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/knuckles
@@ -31838,6 +33589,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	wdefense = 4
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/unarmed
+	possible_item_intents = list(/datum/intent/knuckles/strike, /datum/intent/knuckles/smash, /datum/intent/knuckles/strike/wallop, /datum/intent/effect/daze/unarmed)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/pugilism/unarmparry (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/pugilism/unarmparry (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/pugilism/unarmparry (3).ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/knuckles/ancient/decrepit
@@ -31863,6 +33622,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	wdefense = 4
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/unarmed
+	possible_item_intents = list(/datum/intent/knuckles/strike, /datum/intent/knuckles/smash, /datum/intent/knuckles/strike/wallop, /datum/intent/effect/daze/unarmed)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/pugilism/unarmparry (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/pugilism/unarmparry (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/pugilism/unarmparry (3).ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/lordscepter
@@ -31888,6 +33655,15 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	rogue_force_wielded = 20
+	wdefense = 3
+	wdefense_wbonus = 3
+	minstr = 5
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/lordbash, /datum/intent/lord_electrocute, /datum/intent/lord_silence)
+	gripped_intents = list(/datum/intent/lordbash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/mace
@@ -31911,6 +33687,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 25
+	wdefense = 2
+	wdefense_wbonus = 3
+	wbalance = -1
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike)
+	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/effect/daze)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/church
@@ -31934,6 +33720,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 30
+	wdefense = 3
+	wdefense_wbonus = 3
+	wbalance = -1
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike)
+	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/effect/daze)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/cudgel
@@ -31959,6 +33755,17 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	rogue_force_wielded = 25
+	wdefense = 1
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = -1
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/strike/wallop)
+	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/strike/wallop, /datum/intent/mace/smash, /datum/intent/effect/daze)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/cudgel/copper
@@ -31984,6 +33791,17 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	rogue_force_wielded = 20
+	wdefense = 2
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = -1
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/strike/wallop)
+	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/strike/wallop, /datum/intent/mace/smash, /datum/intent/effect/daze)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/cudgel/justice
@@ -32009,6 +33827,17 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	rogue_force_wielded = 30
+	wdefense = 5
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/strike/wallop)
+	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/goden
@@ -32033,6 +33862,17 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 30
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 3
+	wbalance = -1
+	minstr = 10
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike)
+	gripped_intents = list(/datum/intent/mace/strike/goden, /datum/intent/mace/smash/goden, /datum/intent/mace/rangedthrust, /datum/intent/effect/daze)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/goden/steel
@@ -32057,6 +33897,17 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 35
+	wdefense = 3
+	wdefense_wbonus = 5
+	wlength = 3
+	wbalance = -1
+	minstr = 10
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike)
+	gripped_intents = list(/datum/intent/mace/strike/goden, /datum/intent/mace/smash/goden, /datum/intent/mace/rangedthrust, /datum/intent/effect/daze)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/goden/steel/ancient
@@ -32081,6 +33932,17 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 35
+	wdefense = 3
+	wdefense_wbonus = 5
+	wlength = 3
+	wbalance = -1
+	minstr = 10
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike)
+	gripped_intents = list(/datum/intent/mace/strike/goden, /datum/intent/mace/smash/goden, /datum/intent/mace/rangedthrust, /datum/intent/effect/daze)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/goden/steel/ancient/decrepit
@@ -32105,6 +33967,17 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 22
+	wdefense = 3
+	wdefense_wbonus = 5
+	wlength = 3
+	wbalance = -1
+	minstr = 10
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike)
+	gripped_intents = list(/datum/intent/mace/strike/goden, /datum/intent/mace/smash/goden, /datum/intent/mace/rangedthrust, /datum/intent/effect/daze)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/oar
@@ -32128,6 +34001,15 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 25
+	wdefense = 10
+	wdefense_wbonus = 3
+	wbalance = -1
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/parasol
@@ -32152,6 +34034,16 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 6
+	wdefense = 1
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	minstr = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike/wood)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/parasol/noble
@@ -32178,6 +34070,16 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 6
+	wdefense = 1
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	minstr = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike/wood)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/spiked
@@ -32201,6 +34103,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 25
+	wdefense = 2
+	wdefense_wbonus = 3
+	wbalance = -1
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike)
+	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/effect/daze)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/steel
@@ -32224,6 +34136,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 32
+	wdefense = 3
+	wdefense_wbonus = 3
+	wbalance = -1
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike)
+	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/effect/daze)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/steel/ancient
@@ -32247,6 +34169,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 32
+	wdefense = 3
+	wdefense_wbonus = 3
+	wbalance = -1
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike)
+	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/effect/daze)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/steel/ancient/decrepit
@@ -32270,6 +34202,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 21
+	wdefense = 3
+	wdefense_wbonus = 3
+	wbalance = -1
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike)
+	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/effect/daze)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/steel/morningstar
@@ -32293,6 +34235,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 32
+	wdefense = 3
+	wdefense_wbonus = 3
+	wbalance = -1
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike)
+	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/effect/daze)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/steel/silver
@@ -32316,6 +34268,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 35
+	wdefense = 5
+	wdefense_wbonus = 3
+	wbalance = -1
+	minstr = 10
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike)
+	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/effect/daze)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/stunmace
@@ -32339,6 +34301,12 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 25
+	wdefense_wbonus = 3
+	minstr = 5
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/warhammer
@@ -32362,6 +34330,15 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 25
+	wdefense = 3
+	wdefense_wbonus = 3
+	wbalance = -1
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/mace/warhammer/pick)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/warhammer/steel
@@ -32385,6 +34362,15 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 25
+	wdefense = 4
+	wdefense_wbonus = 3
+	wbalance = -1
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/mace/warhammer/pick, /datum/intent/mace/warhammer/stab)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/warhammer/steel/ancient
@@ -32408,6 +34394,15 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 25
+	wdefense = 4
+	wdefense_wbonus = 3
+	wbalance = -1
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/mace/warhammer/pick, /datum/intent/mace/warhammer/stab)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/warhammer/steel/ancient/decrepit
@@ -32431,6 +34426,15 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 25
+	wdefense = 4
+	wdefense_wbonus = 3
+	wbalance = -1
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/mace/warhammer/pick, /datum/intent/mace/warhammer/stab)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/warhammer/steel/silver
@@ -32454,6 +34458,15 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 30
+	wdefense = 5
+	wdefense_wbonus = 3
+	wbalance = -1
+	minstr = 10
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/mace/warhammer/pick, /datum/intent/mace/warhammer/stab)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/woodclub
@@ -32477,6 +34490,15 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 18
+	wdefense = 1
+	wdefense_wbonus = 3
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike/wood)
+	gripped_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/woodclub/crafted
@@ -32500,6 +34522,15 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 18
+	wdefense = 1
+	wdefense_wbonus = 3
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike/wood)
+	gripped_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/wsword
@@ -32523,6 +34554,15 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 8
+	wdefense = 5
+	wdefense_wbonus = 3
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/mace/strike/wood)
+	gripped_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/pick
@@ -32548,6 +34588,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_force_wielded = 21
+	wdefense = 3
+	wdefense_wbonus = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/labor/mining
+	possible_item_intents = list(/datum/intent/pick/bad)
+	gripped_intents = list(/datum/intent/pick)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/pick/bronze
@@ -32573,6 +34621,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_force_wielded = 25
+	wdefense = 3
+	wdefense_wbonus = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/labor/mining
+	possible_item_intents = list(/datum/intent/pick/bad, /datum/intent/axe/chop, /datum/intent/axe/cut, /datum/intent/mace/strike)
+	gripped_intents = list(/datum/intent/pick, /datum/intent/axe/chop, /datum/intent/till, /datum/intent/flailthresh)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/pick/copper
@@ -32598,6 +34654,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_force_wielded = 19
+	wdefense = 3
+	wdefense_wbonus = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/labor/mining
+	possible_item_intents = list(/datum/intent/pick/bad)
+	gripped_intents = list(/datum/intent/pick)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/pick/decrepit
@@ -32623,6 +34687,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_force_wielded = 17
+	wdefense = 3
+	wdefense_wbonus = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/labor/mining
+	possible_item_intents = list(/datum/intent/pick/bad)
+	gripped_intents = list(/datum/intent/pick)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/pick/militia
@@ -32648,6 +34720,15 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_force_wielded = 25
+	wdefense = 2
+	wdefense_wbonus = 4
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/labor/mining
+	possible_item_intents = list(/datum/intent/pick/bad)
+	gripped_intents = list(/datum/intent/pick, /datum/intent/stab/militia)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/pick/militia/steel
@@ -32673,6 +34754,16 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_force_wielded = 30
+	wdefense = 3
+	wdefense_wbonus = 5
+	wlength = 1
+	wbalance = -1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/axes
+	possible_item_intents = list(/datum/intent/pick/bad)
+	gripped_intents = list(/datum/intent/pick, /datum/intent/stab/militia)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/pick/steel
@@ -32698,6 +34789,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_force_wielded = 28
+	wdefense = 3
+	wdefense_wbonus = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/labor/mining
+	possible_item_intents = list(/datum/intent/pick/bad)
+	gripped_intents = list(/datum/intent/pick)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/pick/stone
@@ -32723,6 +34822,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	rogue_force_wielded = 17
+	wdefense = 3
+	wdefense_wbonus = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/labor/mining
+	possible_item_intents = list(/datum/intent/pick/bad)
+	gripped_intents = list(/datum/intent/pick)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/pitchfork
@@ -32745,6 +34852,15 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 15
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 4
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/bash)
+	gripped_intents = list(/datum/intent/spear/bash, /datum/intent/spear/thrust, /datum/intent/pforkdump)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -32771,6 +34887,15 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 15
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 4
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/bash)
+	gripped_intents = list(/datum/intent/spear/bash, /datum/intent/spear/thrust, /datum/intent/pforkdump)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -32795,6 +34920,15 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 15
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 4
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/bash)
+	gripped_intents = list(/datum/intent/spear/bash, /datum/intent/spear/thrust, /datum/intent/pforkdump)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -32821,6 +34955,10 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	possible_item_intents = list(/datum/intent/shield/bash)
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/scabbard/gwstrap
@@ -32845,6 +34983,10 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	possible_item_intents = list(/datum/intent/shield/bash)
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -32874,6 +35016,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	possible_item_intents = list(/datum/intent/shield/bash)
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/scabbard/sheath/courtphysician
@@ -32901,6 +35047,10 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	possible_item_intents = list(/datum/intent/shield/bash)
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/scabbard/sheath/noble
@@ -32928,6 +35078,12 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 2
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/shield/bash, /datum/intent/shield/block)
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/scabbard/sheath/royal
@@ -32955,6 +35111,12 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 4
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/shield/bash, /datum/intent/shield/block)
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/scabbard/sword
@@ -32981,6 +35143,10 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	possible_item_intents = list(/datum/intent/shield/bash)
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/scabbard/sword/noble
@@ -33007,6 +35173,12 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	wdefense = 4
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/shield/bash, /datum/intent/shield/block, /datum/intent/mace/smash/shield)
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/scabbard/sword/royal
@@ -33033,6 +35205,12 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	wdefense = 6
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/shield/bash, /datum/intent/shield/block, /datum/intent/mace/smash/shield)
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/scythe
@@ -33057,6 +35235,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 25
+	wdefense = 6
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 8
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/labor/farming
+	possible_item_intents = list(/datum/intent/spear/bash)
+	gripped_intents = list(/datum/intent/spear/cut/scythe, /datum/intent/spear/bash, /datum/intent/mace/strike)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/shield/atgervi
@@ -33079,6 +35267,13 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	wdefense = 10
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/shields
+	possible_item_intents = list(/datum/intent/shield/bash, /datum/intent/shield/block, /datum/intent/mace/smash/shield)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/towershield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (3).ogg')
 	inhand_icon_state = "atgervi_shield"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -33106,6 +35301,13 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 9
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/shields
+	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/shield/buckler/ancient
@@ -33131,6 +35333,13 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 9
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/shields
+	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/shield/capbuckler
@@ -33156,6 +35365,13 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 10
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/shields
+	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/shield/heater
@@ -33178,6 +35394,13 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	wdefense = 10
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/shields
+	possible_item_intents = list(/datum/intent/shield/bash, /datum/intent/shield/block, /datum/intent/mace/smash/shield)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/towershield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (3).ogg')
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -33202,6 +35425,13 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	wdefense = 10
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/shields
+	possible_item_intents = list(/datum/intent/mace/smash/shield/metal, /datum/intent/shield/block)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -33226,6 +35456,12 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	wdefense = 10
+	wdefense_wbonus = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/shields
+	possible_item_intents = list(/datum/intent/shield/bash, /datum/intent/shield/block, /datum/intent/mace/smash/shield)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/towershield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (3).ogg')
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -33250,6 +35486,12 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	wdefense = 11
+	wdefense_wbonus = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/shields
+	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -33274,6 +35516,12 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	wdefense = 12
+	wdefense_wbonus = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/shields
+	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -33298,6 +35546,12 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	wdefense = 12
+	wdefense_wbonus = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/shields
+	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -33322,6 +35576,12 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	wdefense = 9
+	wdefense_wbonus = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/shields
+	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -33346,6 +35606,12 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	wdefense = 10
+	wdefense_wbonus = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/shields
+	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/towershield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (3).ogg')
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -33370,6 +35636,13 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	wdefense = 10
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/shields
+	possible_item_intents = list(/datum/intent/shield/bash, /datum/intent/shield/block, /datum/intent/mace/smash/shield)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/towershield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (3).ogg')
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -33397,6 +35670,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/shovelscoop, /datum/intent/mace/strike/shovel)
+	gripped_intents = list(/datum/intent/shovelscoop, /datum/intent/mace/strike/shovel, /datum/intent/axe/chop/stone)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/shovel/decrepit
@@ -33422,6 +35703,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/shovelscoop, /datum/intent/mace/strike/shovel)
+	gripped_intents = list(/datum/intent/shovelscoop, /datum/intent/mace/strike/shovel, /datum/intent/axe/chop/stone)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/shovel/silver
@@ -33447,6 +35736,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/shovelscoop, /datum/intent/mace/strike/shovel)
+	gripped_intents = list(/datum/intent/shovelscoop, /datum/intent/mace/strike/shovel, /datum/intent/axe/chop/stone)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/shovel/small
@@ -33472,6 +35769,13 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/shovelscoop, /datum/intent/mace/strike/shovel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/sickle
@@ -33497,6 +35801,12 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	possible_item_intents = list(/datum/intent/dagger/cut)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "crysknife"
 
 /obj/item/rogueweapon/sickle/decrepit
@@ -33522,6 +35832,12 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	possible_item_intents = list(/datum/intent/dagger/cut)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "crysknife"
 
 /obj/item/rogueweapon/spear
@@ -33546,6 +35862,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 30
+	wdefense = 5
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 8
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
+	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/ancient
@@ -33570,6 +35896,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 30
+	wdefense = 5
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 8
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
+	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/ancient/decrepit
@@ -33594,6 +35930,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 22
+	wdefense = 5
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 8
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
+	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/billhook
@@ -33618,6 +35964,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 30
+	wdefense = 6
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 8
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
+	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/bronze
@@ -33642,6 +35998,17 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 28
+	wdefense = 5
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 8
+	can_parry = TRUE
+	armour_penetration = 22
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
+	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/improvisedbillhook
@@ -33666,6 +36033,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 25
+	wdefense = 4
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 8
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
+	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/militia
@@ -33690,6 +36067,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 30
+	wdefense = 5
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 8
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
+	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/partizan
@@ -33714,6 +36101,17 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 30
+	wdefense = 6
+	wdefense_wbonus = 3
+	wlength = 4
+	wbalance = -1
+	minstr = 12
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/bash)
+	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/rend/reach/partizan, /datum/intent/partizan/peel, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/silver
@@ -33738,6 +36136,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 25
+	wdefense = 6
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 11
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
+	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/stone
@@ -33762,6 +36170,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 18
+	wdefense = 4
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 6
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
+	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/stone/copper
@@ -33786,6 +36204,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 18
+	wdefense = 4
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 6
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
+	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/stoneaxe
@@ -33809,6 +36237,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 20
+	wdefense = 1
+	wdefense_wbonus = 3
+	wlength = 1
+	minstr = 8
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/axes
+	possible_item_intents = list(/datum/intent/axe/chop/stone)
+	gripped_intents = list(/datum/intent/axe/chop/stone)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/battle
@@ -33832,6 +36270,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 30
+	wdefense = 4
+	wdefense_wbonus = 3
+	wlength = 3
+	minstr = 9
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/axes
+	possible_item_intents = list(/datum/intent/axe/cut/battle, /datum/intent/axe/chop/battle, /datum/intent/axe/bash, /datum/intent/sword/peel)
+	gripped_intents = list(/datum/intent/axe/cut/battle, /datum/intent/axe/chop/battle, /datum/intent/axe/bash, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/handaxe
@@ -33857,6 +36305,15 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	rogue_force_wielded = 20
+	wdefense = 2
+	wdefense_wbonus = 3
+	wlength = 1
+	minstr = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/axes
+	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/handaxe/copper
@@ -33882,6 +36339,15 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	rogue_force_wielded = 20
+	wdefense = 2
+	wdefense_wbonus = 3
+	wlength = 1
+	minstr = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/axes
+	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/oath
@@ -33906,6 +36372,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 40
+	wdefense = 5
+	wdefense_wbonus = 3
+	wlength = 3
+	minstr = 12
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/axes
+	possible_item_intents = list(/datum/intent/axe/cut/battle, /datum/intent/axe/chop/battle, /datum/intent/axe/bash)
+	gripped_intents = list(/datum/intent/axe/cut/battle, /datum/intent/axe/chop/battle, /datum/intent/axe/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -33931,6 +36407,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 26
+	wdefense = 2
+	wdefense_wbonus = 3
+	wlength = 1
+	minstr = 8
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/axes
+	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/sword/peel)
+	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/woodcut/silver
@@ -33954,6 +36440,15 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 26
+	wdefense = 5
+	wdefense_wbonus = 3
+	wlength = 1
+	minstr = 11
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/axes
+	possible_item_intents = list(/datum/intent/axe/cut/battle, /datum/intent/axe/chop/battle, /datum/intent/axe/bash, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/woodcut/steel
@@ -33977,6 +36472,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 28
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	minstr = 8
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/axes
+	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/sword/peel)
+	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/woodcut/steel/ancient
@@ -34000,6 +36505,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 28
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	minstr = 8
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/axes
+	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/sword/peel)
+	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/woodcut/steel/ancient/decrepit
@@ -34023,6 +36538,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 20
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	minstr = 8
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/axes
+	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/sword/peel)
+	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/woodcut/steel/atgervi
@@ -34046,6 +36571,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 33
+	wdefense = 5
+	wdefense_wbonus = 3
+	wlength = 3
+	minstr = 8
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/axes
+	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/sword/peel)
+	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	inhand_icon_state = "atgervi_axe"
 
 /obj/item/rogueweapon/stoneaxe/woodcut/steel/woodcutter
@@ -34068,6 +36603,16 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 28
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 3
+	minstr = 8
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/axes
+	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash, /datum/intent/sword/peel)
+	gripped_intents = list(/datum/intent/axe/cut/long, /datum/intent/axe/chop/long, /datum/intent/axe/bash, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -34093,6 +36638,15 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 28
+	wdefense = 2
+	wdefense_wbonus = 3
+	minstr = 8
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/axes
+	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/mace/warhammer/pick, /datum/intent/axe/bash)
+	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/mace/warhammer/pick, /datum/intent/axe/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/bonesetter
@@ -34118,6 +36672,13 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/cautery
@@ -34143,6 +36704,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = -1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/use, /datum/intent/mace/strike, /datum/intent/mace/smash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/cautery/branding
@@ -34168,6 +36737,13 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = -1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/cautery/branding/slave
@@ -34193,6 +36769,13 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = -1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/hammer
@@ -34218,6 +36801,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = -1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/use, /datum/intent/mace/strike, /datum/intent/mace/smash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/hemostat
@@ -34243,6 +36834,13 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/hemostat/improv
@@ -34268,6 +36866,13 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/multitool
@@ -34292,6 +36897,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 2
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/misc/medicine
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/retractor
@@ -34317,6 +36930,13 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/retractor/improv
@@ -34342,6 +36962,13 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/saw
@@ -34367,6 +36994,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/saw/improv
@@ -34392,6 +37027,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/scalpel
@@ -34417,6 +37060,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword
@@ -34442,6 +37093,15 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 25
+	wdefense = 4
+	wdefense_wbonus = 3
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike, /datum/intent/sword/peel)
+	gripped_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/capsabre
@@ -34467,6 +37127,15 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 25
+	wdefense = 7
+	wdefense_wbonus = 3
+	wbalance = 1
+	minstr = 5
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust/sabre, /datum/intent/sword/peel, /datum/intent/sword/strike)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/cutlass
@@ -34492,6 +37161,15 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 25
+	wdefense = 6
+	wdefense_wbonus = 3
+	wbalance = 1
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/chop, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/decorated
@@ -34517,6 +37195,15 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 25
+	wdefense = 4
+	wdefense_wbonus = 3
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike, /datum/intent/sword/peel)
+	gripped_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/falchion/militia
@@ -34542,6 +37229,16 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 25
+	wdefense = 3
+	wdefense_wbonus = 3
+	wbalance = -1
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike)
+	gripped_intents = list(/datum/intent/rend, /datum/intent/sword/chop/militia, /datum/intent/sword/peel, /datum/intent/sword/strike)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/falx
@@ -34567,6 +37264,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 25
+	wdefense = 6
+	wdefense_wbonus = 3
+	minstr = 4
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/falx, /datum/intent/sword/chop/falx, /datum/intent/sword/strike, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/iron
@@ -34592,6 +37297,15 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 25
+	wdefense = 4
+	wdefense_wbonus = 3
+	minstr = 6
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike, /datum/intent/sword/peel)
+	gripped_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/long
@@ -34619,6 +37333,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 30
+	wdefense = 4
+	wdefense_wbonus = 4
+	wlength = 3
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/dec
@@ -34646,6 +37368,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 30
+	wdefense = 4
+	wdefense_wbonus = 4
+	wlength = 3
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/exe
@@ -34672,6 +37402,16 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 30
+	wdefense = 4
+	wdefense_wbonus = 4
+	wlength = 3
+	minstr = 12
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/chop/heavy, /datum/intent/sword/thrust/exe, /datum/intent/sword/peel)
+	gripped_intents = list(/datum/intent/sword/chop/heavy, /datum/intent/sword/cut/exe/cleave, /datum/intent/sword/cut/exe/sweep, /datum/intent/rend)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = "longsword"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -34701,6 +37441,16 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 25
+	wdefense = 6
+	wdefense_wbonus = 4
+	wlength = 3
+	minstr = 11
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/krieg, /datum/intent/sword/chop/falx, /datum/intent/rend/krieg, /datum/intent/sword/strike)
+	gripped_intents = list(/datum/intent/sword/cut/krieg, /datum/intent/sword/thrust/krieg, /datum/intent/rend/krieg, /datum/intent/sword/strike)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/marlin
@@ -34728,6 +37478,16 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 31
+	wdefense = 5
+	wdefense_wbonus = 4
+	wlength = 3
+	minstr = 6
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike, /datum/intent/sword/peel)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike, /datum/intent/sword/chop, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/long/martyr
@@ -34755,6 +37515,15 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 36
+	wdefense = 4
+	wdefense_wbonus = 4
+	wlength = 3
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike, /datum/intent/sword/peel)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/peel, /datum/intent/sword/chop)
 	inhand_icon_state = "martyrsword"
 
 /obj/item/rogueweapon/sword/long/oldpsysword
@@ -34782,6 +37551,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 30
+	wdefense = 4
+	wdefense_wbonus = 4
+	wlength = 3
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/rhomphaia
@@ -34809,6 +37586,16 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 30
+	wdefense = 4
+	wdefense_wbonus = 4
+	wlength = 3
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/falx, /datum/intent/sword/strike, /datum/intent/sword/chop/falx, /datum/intent/sword/peel)
+	gripped_intents = list(/datum/intent/sword/cut/falx, /datum/intent/sword/strike, /datum/intent/sword/chop/falx, /datum/intent/sword/cut/zwei/sweep)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/silver
@@ -34836,6 +37623,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 25
+	wdefense = 6
+	wdefense_wbonus = 4
+	wlength = 3
+	minstr = 9
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/training
@@ -34863,6 +37658,16 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 8
+	wdefense = 4
+	wdefense_wbonus = 4
+	wlength = 3
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/sword/thrust/blunt, /datum/intent/sword/peel/weak)
+	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/sword/thrust/blunt, /datum/intent/sword/peel/weak)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/zizo
@@ -34890,6 +37695,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 35
+	wdefense = 4
+	wdefense_wbonus = 4
+	wlength = 3
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/rapier
@@ -34917,6 +37730,15 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 25
+	wdefense = 7
+	wdefense_wbonus = 3
+	wbalance = 1
+	minstr = 6
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/rapier/courtphysician
@@ -34944,6 +37766,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 7
+	wdefense_wbonus = 3
+	wbalance = 1
+	minstr = 6
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/rapier/dec
@@ -34971,6 +37801,15 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 25
+	wdefense = 7
+	wdefense_wbonus = 3
+	wbalance = 1
+	minstr = 6
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/rapier/lord
@@ -34998,6 +37837,15 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 25
+	wdefense = 7
+	wdefense_wbonus = 3
+	wbalance = 1
+	minstr = 6
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/rapier/silver
@@ -35025,6 +37873,15 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 20
+	wdefense = 8
+	wdefense_wbonus = 3
+	wbalance = 1
+	minstr = 8
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/sabre
@@ -35050,6 +37907,15 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 25
+	wdefense = 7
+	wdefense_wbonus = 3
+	wbalance = 1
+	minstr = 5
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust/sabre, /datum/intent/sword/peel, /datum/intent/sword/strike)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/sabre/ancient
@@ -35075,6 +37941,15 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 25
+	wdefense = 7
+	wdefense_wbonus = 3
+	wbalance = 1
+	minstr = 5
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust/sabre, /datum/intent/sword/peel, /datum/intent/sword/strike)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/sabre/ancient/decrepit
@@ -35100,6 +37975,15 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 25
+	wdefense = 7
+	wdefense_wbonus = 3
+	wbalance = 1
+	minstr = 5
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust/sabre, /datum/intent/sword/peel, /datum/intent/sword/strike)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/sabre/elf
@@ -35125,6 +38009,15 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 25
+	wdefense = 7
+	wdefense_wbonus = 3
+	wbalance = 1
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust/sabre, /datum/intent/sword/peel, /datum/intent/sword/strike)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	inhand_icon_state = "esaber"
 
 /obj/item/rogueweapon/sword/sabre/iron
@@ -35150,6 +38043,15 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 25
+	wdefense = 7
+	wdefense_wbonus = 3
+	wbalance = 1
+	minstr = 5
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust/sabre, /datum/intent/sword/peel, /datum/intent/sword/strike)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/sabre/stalker
@@ -35175,6 +38077,15 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 25
+	wdefense = 9
+	wdefense_wbonus = 3
+	wbalance = 1
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust/sabre, /datum/intent/sword/peel, /datum/intent/dagger/sucker_punch)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short
@@ -35200,6 +38111,16 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	rogue_force_wielded = 25
+	wdefense = 4
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	minstr = 4
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/ancient
@@ -35225,6 +38146,16 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	rogue_force_wielded = 25
+	wdefense = 4
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	minstr = 4
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/ancient/decrepit
@@ -35250,6 +38181,16 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	rogue_force_wielded = 25
+	wdefense = 4
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	minstr = 4
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/falchion
@@ -35275,6 +38216,16 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	rogue_force_wielded = 25
+	wdefense = 6
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	minstr = 4
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/gladius
@@ -35300,6 +38251,16 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	rogue_force_wielded = 25
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	minstr = 4
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/gladius/ancient
@@ -35325,6 +38286,16 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	rogue_force_wielded = 25
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	minstr = 4
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/gladius/ancient/decrepit
@@ -35350,6 +38321,16 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	rogue_force_wielded = 25
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	minstr = 4
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/iron
@@ -35375,6 +38356,16 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	rogue_force_wielded = 25
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	minstr = 4
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/iron/chipped
@@ -35400,6 +38391,16 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	rogue_force_wielded = 25
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	minstr = 4
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/messer
@@ -35425,6 +38426,16 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	rogue_force_wielded = 25
+	wdefense = 4
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	minstr = 6
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/rend/krieg/short, /datum/intent/axe/chop, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/messer/copper
@@ -35450,6 +38461,16 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	rogue_force_wielded = 25
+	wdefense = 2
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	minstr = 4
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/rend/krieg/short, /datum/intent/axe/chop, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/messer/iron
@@ -35475,6 +38496,15 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	rogue_force_wielded = 25
+	wdefense = 2
+	wdefense_wbonus = 3
+	wbalance = 1
+	minstr = 4
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/rend/krieg/short, /datum/intent/axe/chop, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/silver
@@ -35500,6 +38530,16 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 96
+	rogue_force_wielded = 20
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/silver
@@ -35525,6 +38565,15 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 23
+	wdefense = 5
+	wdefense_wbonus = 3
+	minstr = 9
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike, /datum/intent/sword/peel)
+	gripped_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/stone
@@ -35550,6 +38599,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	rogue_force_wielded = 25
+	wdefense = 4
+	wdefense_wbonus = 3
+	minstr = 4
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/chop)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/thresher
@@ -35572,6 +38629,13 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 15
+	wdefense = 3
+	wdefense_wbonus = 3
+	can_parry = TRUE
+	possible_item_intents = list(/datum/intent/mace/strike)
+	gripped_intents = list(/datum/intent/flailthresh, /datum/intent/mace/strike)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "mace_greyscale"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -35596,6 +38660,13 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 7
+	wdefense = 3
+	wdefense_wbonus = 3
+	can_parry = TRUE
+	possible_item_intents = list(/datum/intent/mace/strike)
+	gripped_intents = list(/datum/intent/flailthresh, /datum/intent/mace/strike)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "mace_greyscale"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -35623,6 +38694,12 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 10
+	can_parry = TRUE
+	possible_item_intents = list(/datum/intent/mace/strike)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/tongs/ancient/decrepit
@@ -35648,6 +38725,12 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 10
+	can_parry = TRUE
+	possible_item_intents = list(/datum/intent/mace/strike)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/tongs/blacksteel
@@ -35673,6 +38756,12 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense = 6
+	wdefense_wbonus = 3
+	wlength = 10
+	can_parry = TRUE
+	possible_item_intents = list(/datum/intent/mace/strike)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/whip
@@ -35698,6 +38787,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense_wbonus = 3
+	wlength = 4
+	wbalance = 1
+	minstr = 6
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/lash, /datum/intent/whip/crack, /datum/intent/whip/punish)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/whip/antique
@@ -35723,6 +38820,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense_wbonus = 3
+	wlength = 4
+	wbalance = 1
+	minstr = 11
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/lash, /datum/intent/whip/crack, /datum/intent/whip/punish)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/whip/bronze
@@ -35748,6 +38853,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense_wbonus = 3
+	wlength = 4
+	wbalance = -1
+	minstr = 13
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/lash/holy, /datum/intent/whip/crack, /datum/intent/whip/punish)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/whip/silver
@@ -35773,6 +38886,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense_wbonus = 3
+	wlength = 4
+	wbalance = -1
+	minstr = 12
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/lash/holy, /datum/intent/whip/crack, /datum/intent/whip/punish)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/whip/spiderwhip
@@ -35798,6 +38919,14 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	wdefense_wbonus = 3
+	wlength = 4
+	wbalance = 1
+	minstr = 10
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/lash/holy, /datum/intent/whip/crack, /datum/intent/whip/punish, /datum/intent/dagger/sucker_punch)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/woodstaff
@@ -35822,6 +38951,15 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 15
+	wdefense = 5
+	wdefense_wbonus = 8
+	wlength = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/bash)
+	gripped_intents = list(/datum/intent/spear/bash, /datum/intent/mace/smash/wood)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -35848,6 +38986,15 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 15
+	wdefense = 5
+	wdefense_wbonus = 8
+	wlength = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/bash)
+	gripped_intents = list(/datum/intent/spear/bash, /datum/intent/mace/smash/wood)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -35874,6 +39021,14 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 28
+	wdefense = 5
+	wdefense_wbonus = 8
+	wlength = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/bash, /datum/intent/priest_smite, /datum/intent/priest_silence)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -35900,6 +39055,15 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 30
+	wdefense = 6
+	wdefense_wbonus = 8
+	wlength = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/bash, /datum/intent/spear/cut/oneh)
+	gripped_intents = list(/datum/intent/pick/ranged, /datum/intent/spear/thrust, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -35926,6 +39090,15 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 20
+	wdefense = 5
+	wdefense_wbonus = 8
+	wlength = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/bash)
+	gripped_intents = list(/datum/intent/spear/bash/ranged/quarterstaff, /datum/intent/spear/thrust/quarterstaff)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -35952,6 +39125,15 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 22
+	wdefense = 5
+	wdefense_wbonus = 8
+	wlength = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/bash)
+	gripped_intents = list(/datum/intent/spear/bash/ranged/quarterstaff, /datum/intent/spear/thrust/quarterstaff)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -35978,6 +39160,15 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 27
+	wdefense = 5
+	wdefense_wbonus = 8
+	wlength = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/bash)
+	gripped_intents = list(/datum/intent/spear/bash/ranged/quarterstaff, /datum/intent/spear/thrust/quarterstaff)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -36004,6 +39195,15 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 25
+	wdefense = 5
+	wdefense_wbonus = 8
+	wlength = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/bash)
+	gripped_intents = list(/datum/intent/spear/bash/ranged/quarterstaff, /datum/intent/spear/thrust/quarterstaff)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -36030,6 +39230,15 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 15
+	wdefense = 5
+	wdefense_wbonus = 8
+	wlength = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/bash, /datum/intent/special/magicarc)
+	gripped_intents = list(/datum/intent/spear/bash, /datum/intent/special/magicarc, /datum/intent/mace/smash/wood)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -36056,6 +39265,15 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 15
+	wdefense = 5
+	wdefense_wbonus = 8
+	wlength = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/bash, /datum/intent/special/magicarc)
+	gripped_intents = list(/datum/intent/spear/bash, /datum/intent/special/magicarc, /datum/intent/mace/smash/wood)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -36082,6 +39300,15 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	rogue_force_wielded = 15
+	wdefense = 5
+	wdefense_wbonus = 8
+	wlength = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/bash, /datum/intent/special/magicarc)
+	gripped_intents = list(/datum/intent/spear/bash, /datum/intent/special/magicarc, /datum/intent/mace/smash/wood)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -36107,6 +39334,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/tie)
 	inhand_icon_state = null
 
 /obj/item/rope/chain
@@ -36129,6 +39357,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/tie, /datum/intent/whips)
 	inhand_icon_state = null
 
 /obj/item/rope/inqarticles/inquirycord
@@ -36151,6 +39380,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/tie)
 	inhand_icon_state = null
 
 /obj/item/rotation_contraption/cog
@@ -36347,6 +39577,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/scomstone/bad
@@ -36369,6 +39600,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/scomstone/bad/garrison
@@ -36391,6 +39623,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/seal/crown
@@ -36850,6 +40083,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/use/flaregun)
 	inhand_icon_state = "flaregun"
 
 /obj/item/signal_horn
@@ -36954,6 +40188,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
 	inhand_icon_state = null
 
 /obj/item/spellbook_unfinished/pre_arcyne
@@ -37129,6 +40364,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	wbalance = 1
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
 	inhand_icon_state = null
 	worn_icon_state = "leather"
 	rogue_female_worn = TRUE
@@ -37153,6 +40391,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	wbalance = 1
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
 	inhand_icon_state = null
 	worn_icon_state = "leather"
 	rogue_female_worn = TRUE
@@ -37177,6 +40418,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	wbalance = 1
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
 	inhand_icon_state = null
 	worn_icon_state = "blackbelt"
 	rogue_female_worn = TRUE
@@ -37201,6 +40445,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	wbalance = 1
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
 	inhand_icon_state = null
 	worn_icon_state = "leather"
 	rogue_female_worn = TRUE
@@ -37225,6 +40472,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	wbalance = 1
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
 	inhand_icon_state = null
 	worn_icon_state = "leather"
 	rogue_female_worn = TRUE
@@ -37246,6 +40496,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	wbalance = 1
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -37268,6 +40521,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	wbalance = 1
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -37293,6 +40549,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	wbalance = 1
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
 	inhand_icon_state = null
 	worn_icon_state = "knife"
 	rogue_female_worn = TRUE
@@ -37317,6 +40576,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	wbalance = 1
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
 	inhand_icon_state = null
 	worn_icon_state = "blackknife"
 	storage_type = /datum/storage/rogue_grid/roguetown/belt/knife_belt
@@ -37340,6 +40602,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	wbalance = 1
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
 	inhand_icon_state = null
 	worn_icon_state = "blackknife"
 	storage_type = /datum/storage/rogue_grid/roguetown/belt/knife_belt
@@ -37363,6 +40628,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	wbalance = 1
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
 	inhand_icon_state = null
 	worn_icon_state = "knife"
 	rogue_female_worn = TRUE
@@ -37387,6 +40655,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	wbalance = 1
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
 	inhand_icon_state = null
 	worn_icon_state = "leather"
 	rogue_female_worn = TRUE
@@ -37411,6 +40682,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	wbalance = 1
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
 	inhand_icon_state = null
 	worn_icon_state = "stewardbelt"
 	rogue_female_worn = TRUE
@@ -37435,6 +40709,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	wbalance = 1
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
 	inhand_icon_state = null
 	worn_icon_state = "leather"
 	rogue_female_worn = TRUE
@@ -37459,6 +40736,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	wbalance = 1
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
 	inhand_icon_state = null
 	worn_icon_state = "rope"
 	rogue_female_worn = TRUE
@@ -37483,6 +40763,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	wbalance = 1
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
 	inhand_icon_state = null
 	worn_icon_state = "leather"
 	rogue_female_worn = TRUE
@@ -37507,6 +40790,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	wbalance = 1
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
 	inhand_icon_state = null
 	worn_icon_state = "leather"
 	rogue_female_worn = TRUE
@@ -37531,6 +40817,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	wbalance = 1
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
 	inhand_icon_state = null
 	worn_icon_state = "leather"
 	rogue_female_worn = TRUE
@@ -37555,6 +40844,9 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
+	wbalance = 1
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
 	inhand_icon_state = null
 	worn_icon_state = "butlersuspenders"
 	rogue_female_worn = TRUE

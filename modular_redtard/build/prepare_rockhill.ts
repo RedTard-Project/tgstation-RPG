@@ -6,7 +6,9 @@ const CONFIG_PATH = 'modular_redtard/rockhill/config.json';
 const SHARED_DIR = 'modular_redtard/rockhill';
 const TMP_DIR = 'tmp/modular_redtard/rockhill';
 const DECLARATION_DIRS = ['code', 'modular_redtard'];
-const DOWNLOAD_TIMEOUT_MS = 180000;
+const PACK_DIR = path.posix.join(TMP_DIR, 'pack');
+const PACK_ROOT = path.resolve(PACK_DIR);
+const PACK_GIT_DIR = path.join(PACK_ROOT, '.git');
 const LEVEL_LINE = /^\(\d+,\d+,\d+\) = \{"$/;
 const TILE_OPEN = /^"([^"]+)" = \($/;
 const TURF_VARS = new Set(['dir', 'name', 'desc', 'color']);
@@ -33,7 +35,7 @@ type Rule = { prefix: string; to?: string; rebase?: string; drop?: boolean; exac
 type TitleSource = { file: string; name: string; kind: 'png' | 'dmi'; origin: string };
 
 type Config = {
-  source: { name: string; project: string; url: string; repository: string; branch: string; map: string; map_json?: string; always_other_z?: string[]; templates?: string };
+  source: { name: string; project: string; repository: string; branch: string; map: string; map_json?: string; always_other_z?: string[]; templates?: string; pack: string[] };
   title: { prefix: string; sources: TitleSource[] };
   output: { map: string; map_json: string; title_dir: string };
   replacements: Rule[];
@@ -48,7 +50,7 @@ type Sunlight = { levels: string[]; tiles: number; models: number };
 
 type Traits = Record<string, unknown>;
 
-type MapSource = { label: string; name: string; url: string; output: string; traits: Traits[]; template?: boolean };
+type MapSource = { label: string; name: string; file: string; output: string; traits: Traits[]; template?: boolean };
 
 type Converted = { source: MapSource; header: string[]; models: Model[]; levels: string[] };
 
@@ -75,8 +77,9 @@ export async function prepareRockhill(): Promise<void> {
   const config = readConfig();
   fs.mkdirSync(TMP_DIR, { recursive: true });
   const mapJson = JSON.parse(fs.readFileSync(path.join(SHARED_DIR, 'rockhill.json'), 'utf-8'));
-  const station: MapSource = { label: 'map', name: config.source.name, url: config.source.url, output: config.output.map, traits: mapJson.traits };
-  const sources = [station, ...(await extraMaps(config, mapJson.traits)), ...templateMaps(config)];
+  const station: MapSource = { label: 'map', name: config.source.name, file: config.source.map, output: config.output.map, traits: mapJson.traits };
+  const pack = fetchPack(config);
+  const sources = [station, ...extraMaps(config, pack, mapJson.traits), ...templateMaps(config)];
 
   const declarations = declaredTypes();
   const declared = declarations.types;
@@ -95,10 +98,10 @@ export async function prepareRockhill(): Promise<void> {
 
   const converted: Converted[] = [];
   for (const source of sources) {
-    const lines = (await downloadText(source.url, source.label)).split(/\r?\n/);
+    const lines = readPacked(config, pack, source.file).split(/\r?\n/);
     const levelStart = lines.findIndex((line) => LEVEL_LINE.test(line));
     if (levelStart < 0) {
-      throw new Error(`${source.url} has no level sections`);
+      throw new Error(`${source.file} has no level sections`);
     }
     const models = parseModels(lines.slice(0, levelStart));
     for (const model of models) {
@@ -116,7 +119,7 @@ export async function prepareRockhill(): Promise<void> {
   const written: Written[] = converted.map((map) => {
     const zLevels = levelCount(map.levels);
     if (map.source !== station && !map.source.template && map.source.traits.length !== zLevels) {
-      throw new Error(`${map.source.url} has ${zLevels} z-level(s) but its Ratwood map config lists ${map.source.traits.length} trait set(s)`);
+      throw new Error(`${map.source.file} has ${zLevels} z-level(s) but its Ratwood map config lists ${map.source.traits.length} trait set(s)`);
     }
     const sunlight = map.source.template || map.source.traits.some((level) => level[NO_SKY_TRAIT]) ? { levels: map.levels, tiles: 0, models: 0 } : applySunlight(map.models, map.levels, declared);
     writeMap(map.source.output, map.header, map.models, sunlight.levels);
@@ -148,15 +151,11 @@ export async function prepareRockhill(): Promise<void> {
   }
 }
 
-async function extraMaps(config: Config, stationTraits: Traits[]): Promise<MapSource[]> {
+function extraMaps(config: Config, pack: string, stationTraits: Traits[]): MapSource[] {
   if (!config.source.map_json) {
     return [];
   }
-  if (!config.source.url.endsWith(config.source.map)) {
-    throw new Error(`${CONFIG_PATH}: source.url must end with source.map, so the generator can find the other ${config.source.project} files next to it`);
-  }
-  const raw = config.source.url.slice(0, config.source.url.length - config.source.map.length);
-  const world = JSON.parse(await downloadText(raw + config.source.map_json, 'map list')) as { other_z?: string[] };
+  const world = JSON.parse(readPacked(config, pack, config.source.map_json)) as { other_z?: string[] };
   world.other_z = [...(world.other_z || []), ...(config.source.always_other_z || [])];
   const level = (index: number): Traits => {
     const template = stationTraits[index === 0 ? 0 : Math.min(1, stationTraits.length - 1)] || {};
@@ -164,13 +163,13 @@ async function extraMaps(config: Config, stationTraits: Traits[]): Promise<MapSo
   };
   const out: MapSource[] = [];
   for (const entry of world.other_z || []) {
-    const conf = JSON.parse(await downloadText(raw + entry, entry)) as { map_name: string; map_path: string; map_file: string; traits?: Traits[] };
+    const conf = JSON.parse(readPacked(config, pack, entry)) as { map_name: string; map_path: string; map_file: string; traits?: Traits[] };
     const id = path.posix.basename(conf.map_file, '.dmm');
     const traits = conf.traits?.length ? conf.traits : [{}];
     out.push({
       label: id,
       name: conf.map_name,
-      url: `${raw}_maps/${conf.map_path}/${conf.map_file}`,
+      file: `_maps/${conf.map_path}/${conf.map_file}`,
       output: path.posix.join(path.posix.dirname(config.output.map), 'otherz', `${id}.dmm`),
       traits: traits.map((own, index) => ({ ...level(index), ...Object.fromEntries(Object.entries(own).filter(([key]) => key !== 'Name')) })),
     });
@@ -182,12 +181,11 @@ function templateMaps(config: Config): MapSource[] {
   if (!config.source.templates || !fs.existsSync(config.source.templates)) {
     return [];
   }
-  const raw = config.source.url.slice(0, config.source.url.length - config.source.map.length);
   const manifest = JSON.parse(fs.readFileSync(config.source.templates, 'utf-8')) as Array<{ source: string; output: string }>;
   return manifest.map((entry) => ({
     label: path.posix.basename(entry.source, '.dmm'),
     name: path.posix.basename(entry.source, '.dmm'),
-    url: raw + entry.source.split('/').map(encodeURIComponent).join('/'),
+    file: entry.source,
     output: entry.output,
     traits: [],
     template: true,
@@ -217,8 +215,8 @@ function levelCount(levels: string[]): number {
 
 function readConfig(): Config {
   const config = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf-8')) as Config;
-  if (!config.source?.url || !config.output?.map || !Array.isArray(config.replacements)) {
-    throw new Error(`${CONFIG_PATH} must define source.url, output.map and replacements`);
+  if (!config.source?.repository || !config.source.branch || !config.source.map || !config.source.pack?.length || !config.output?.map || !Array.isArray(config.replacements)) {
+    throw new Error(`${CONFIG_PATH} must define source.repository, source.branch, source.map, source.pack, output.map and replacements`);
   }
   return config;
 }
@@ -320,7 +318,7 @@ function reportProblems(config: Config, problems: Problems): void {
   if (!problems.fatal.size && !problems.brokenTiles.length) {
     return;
   }
-  const lines = [`${config.source.name} (${config.source.url}) cannot be converted; the generated map was NOT updated.`];
+  const lines = [`${config.source.name} (${config.source.repository} ${config.source.branch}:${config.source.map}) cannot be converted; the generated map was NOT updated.`];
   if (problems.fatal.size) {
     lines.push(`Area/turf types the compile lacks (placements in brackets); ${problems.lostTiles} tile model(s) lose their area or turf to them, and such a tile breaks the map loader:\n  ${counted(problems.fatal)}`);
   }
@@ -648,37 +646,89 @@ function walk(root: string): string[] {
   return files;
 }
 
-async function downloadText(url: string, label: string): Promise<string> {
-  const bytes = await downloadBytes(url, label);
-  return Buffer.from(bytes).toString('utf-8');
+function fetchPack(config: Config): string {
+  const { repository, branch, pack } = config.source;
+  const remote = `refs/remotes/origin/${branch}`;
+  assertPackLocation();
+  if (!packRepositoryValid(remote)) {
+    fs.rmSync(PACK_ROOT, { recursive: true, force: true });
+    runGit(['clone', '--quiet', '--depth', '1', '--filter=blob:none', '--no-checkout', '--config', 'gc.auto=0', '--config', 'maintenance.auto=false', '--branch', branch, repository, PACK_ROOT]);
+    if (!packRepositoryValid(remote)) {
+      throw new Error(`${PACK_DIR}: the fresh clone is not a valid git repository; refusing to run git there`);
+    }
+  } else {
+    packGit(['remote', 'set-url', 'origin', repository]);
+    packGit(['fetch', '--quiet', '--depth', '1', '--filter=blob:none', 'origin', `+refs/heads/${branch}:${remote}`]);
+  }
+  packGit(['config', 'core.sparseCheckout', 'true']);
+  packGit(['config', 'gc.auto', '0']);
+  packGit(['config', 'maintenance.auto', 'false']);
+  fs.mkdirSync(path.join(PACK_GIT_DIR, 'info'), { recursive: true });
+  fs.writeFileSync(path.join(PACK_GIT_DIR, 'info', 'sparse-checkout'), `${pack.join('\n')}\n`);
+  packGit(['checkout', '--quiet', '--force', '--detach', remote]);
+  const commit = packGit(['rev-parse', '--short', 'HEAD']);
+  const files = packGit(['ls-files', '-t']).split('\n').filter((line) => line.startsWith('H ')).map((line) => line.slice(2));
+  const bytes = files.reduce((total, file) => total + fs.statSync(path.join(PACK_ROOT, file)).size, 0);
+  console.log(`modular_redtard: ${config.source.project} ${branch} @ ${commit}: ${files.length} map file(s), ${(bytes / 1048576).toFixed(1)} MB, fetched as one git pack (source.pack in ${CONFIG_PATH})`);
+  return PACK_DIR;
 }
 
-async function downloadBytes(url: string, label: string): Promise<Uint8Array> {
-  try {
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), DOWNLOAD_TIMEOUT_MS);
-    try {
-      const response = await fetch(url, { signal: controller.signal });
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}`);
-      }
-      console.log(`modular_redtard: downloaded the ${label} from ${url}`);
-      return new Uint8Array(await response.arrayBuffer());
-    } finally {
-      clearTimeout(timeout);
-    }
-  } catch (error) {
-    console.log(`modular_redtard: ${label}: fetch failed (${String(error)}), retrying with curl.`);
-  }
+function samePath(a: string, b: string): boolean {
+  const normal = (value: string) => {
+    const resolved = path.resolve(value).replace(/\\/g, '/').replace(/\/+$/, '');
+    return process.platform === 'win32' ? resolved.toLowerCase() : resolved;
+  };
+  return normal(a) === normal(b);
+}
 
-  const download = path.join(TMP_DIR, `curl-${label}`);
-  const result = spawnSync(process.platform === 'win32' ? 'curl.exe' : 'curl', ['-L', '--fail', '--silent', '--show-error', '--output', download, url], { encoding: 'utf-8' });
-  if (result.status === 0) {
-    console.log(`modular_redtard: downloaded the ${label} with curl from ${url}`);
-    return new Uint8Array(fs.readFileSync(download));
+function assertPackLocation(): void {
+  const tmpRoot = path.resolve(TMP_DIR);
+  if (!PACK_ROOT.startsWith(tmpRoot + path.sep) || samePath(PACK_GIT_DIR, path.resolve('.git'))) {
+    throw new Error(`refusing to use ${PACK_ROOT} as the map pack: it must be a folder inside ${tmpRoot}`);
   }
+}
 
-  throw new Error(`could not download the ${label} from ${url}: ${result.stderr}`);
+function packRepositoryValid(remote: string): boolean {
+  if (!fs.existsSync(path.join(PACK_GIT_DIR, 'HEAD'))) {
+    return false;
+  }
+  const gitDir = gitResult(['--git-dir', PACK_GIT_DIR, 'rev-parse', '--absolute-git-dir']);
+  if (gitDir.status !== 0 || !samePath((gitDir.stdout || '').trim(), PACK_GIT_DIR)) {
+    return false;
+  }
+  return gitResult(['--git-dir', PACK_GIT_DIR, 'rev-parse', '--verify', '--quiet', remote]).status === 0;
+}
+
+function readPacked(config: Config, pack: string, file: string): string {
+  const full = path.posix.join(pack, file);
+  if (!fs.existsSync(full)) {
+    throw new Error(`${config.source.project} ${config.source.branch} has no ${file} in the pack; add its folder to source.pack in ${CONFIG_PATH} (or the file is gone upstream)`);
+  }
+  return fs.readFileSync(full, 'utf-8');
+}
+
+function packGit(args: string[]): string {
+  return runGit(['--git-dir', PACK_GIT_DIR, '--work-tree', PACK_ROOT, '-c', 'gc.auto=0', '-c', 'maintenance.auto=false', ...args]);
+}
+
+function gitResult(args: string[]) {
+  const env: Record<string, string | undefined> = { ...process.env, GIT_CEILING_DIRECTORIES: path.dirname(PACK_ROOT) };
+  for (const name of ['GIT_DIR', 'GIT_WORK_TREE', 'GIT_INDEX_FILE', 'GIT_COMMON_DIR']) {
+    delete env[name];
+  }
+  fs.mkdirSync(path.dirname(PACK_ROOT), { recursive: true });
+  return spawnSync('git', args, { encoding: 'utf-8', cwd: path.dirname(PACK_ROOT), env });
+}
+
+function runGit(args: string[]): string {
+  const result = gitResult(args);
+  if (result.error) {
+    throw new Error(`git is required to fetch the ${PACK_DIR} map pack: ${String(result.error)}`);
+  }
+  if (result.status !== 0) {
+    throw new Error(`git ${args.join(' ')} failed for ${PACK_DIR}:\n${`${result.stdout || ''}${result.stderr || ''}`.trim()}`);
+  }
+  return (result.stdout || '').trim();
 }
 
 async function installTitles(config: Config): Promise<number> {
@@ -704,7 +754,7 @@ async function installTitles(config: Config): Promise<number> {
 function writeReport(config: Config, tally: Record<string, Tally>, problems: Problems, targets: Map<string, number>, titles: number, maps: Written[], spawns: number, latejoins: number): void {
   const missingObjects = problems.missingObjects;
   const station = maps[0];
-  const lines = [`# ${config.source.name} port report`, '', `source: ${config.source.url}`, `output: ${config.output.map}`, `world size: ${station.size.width}x${station.size.height}`, `spawn tiles: ${spawns}, latejoin tiles: ${latejoins}`, `title screens: ${titles}`, ''];
+  const lines = [`# ${config.source.name} port report`, '', `source: ${config.source.repository} ${config.source.branch}:${config.source.map}`, `output: ${config.output.map}`, `world size: ${station.size.width}x${station.size.height}`, `spawn tiles: ${spawns}, latejoin tiles: ${latejoins}`, `title screens: ${titles}`, ''];
   lines.push('| map | size | z-levels | sunlit tiles (open sky above, Ratwood roof rule) | output |', '|---|---|---|---|---|');
   for (const map of maps) {
     lines.push(`| ${map.source.name} | ${map.size.width}x${map.size.height} | ${map.levels} | ${map.sunlight.tiles} in ${map.sunlight.models} split tile models | \`${map.source.output}\` |`);

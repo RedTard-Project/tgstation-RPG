@@ -14,7 +14,7 @@ GLOBAL_LIST_EMPTY(rockhill_redstone)
 /obj/structure/rockhill/proc/send_redstone(mob/user)
 	if(!redstone_id)
 		return
-	for(var/obj/structure/rockhill/linked as anything in GLOB.rockhill_redstone[redstone_id])
+	for(var/obj/structure/linked as anything in GLOB.rockhill_redstone[redstone_id])
 		if(linked != src)
 			INVOKE_ASYNC(linked, PROC_REF(redstone_triggered), user)
 

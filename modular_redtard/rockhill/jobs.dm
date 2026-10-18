@@ -5,11 +5,24 @@
 	map_era = MAP_ERA_MEDIEVAL
 	job_flags = ROCKHILL_JOB_FLAGS
 	var/rockhill_advclass
+	var/attribute_sheet
+	var/list/rockhill_traits
 
 /datum/job/roguetown/config_check()
 	if(type == abstract_type)
 		return FALSE
 	return ..()
+
+/datum/job/roguetown/after_spawn(mob/living/spawned, client/player_client)
+	. = ..()
+	for(var/trait in rockhill_traits)
+		ADD_TRAIT(spawned, trait, JOB_TRAIT)
+	if(!ishuman(spawned))
+		return
+	var/mob/living/carbon/human/human = spawned
+	human.rogue_apply_age()
+	if(attribute_sheet)
+		human.attributes?.add_sheet(attribute_sheet)
 
 /datum/outfit/job/roguetown
 	name = "Rockhill"

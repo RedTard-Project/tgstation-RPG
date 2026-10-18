@@ -83,12 +83,12 @@
 	name = "pyre"
 	desc = "Oily smoke curls from a weak sputtering flame."
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tallstructure.dmi'
-	icon_state = "pyre1"
 	density = FALSE
 	light_range = 10
 	light_power = 1
 	light_color = "#da5e21"
 	dir = NORTH
+	icon_state = null
 	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/candle
