@@ -48,9 +48,18 @@
 	fire = 52
 	acid = 70
 
+/datum/armor/rockhill_blackoak
+	melee = 56
+	bullet = 28
+
 /datum/armor/rockhill_brigandine
 	melee = 47
 	bullet = 49
+
+/datum/armor/rockhill_bronze
+	melee = 49
+	bullet = 49
+	fire = 35
 
 /datum/armor/rockhill_clothing
 	melee = 12
@@ -59,6 +68,10 @@
 /datum/armor/rockhill_cuirass
 	melee = 51
 	bullet = 28
+
+/datum/armor/rockhill_grudgebearer
+	melee = 70
+	bullet = 70
 
 /datum/armor/rockhill_leather
 	melee = 35

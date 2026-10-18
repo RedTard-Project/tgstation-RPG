@@ -70,7 +70,10 @@ GLOBAL_LIST_INIT(rockhill_day_names, list("MOON'S DAE", "TIW'S DAE", "WEDDING'S 
 	return time2text(rockhill_time(), format, NO_TIMEZONE)
 
 /proc/rockhill_day_name()
-	return GLOB.rockhill_days_passed ? GLOB.rockhill_day_names[GLOB.rockhill_days_passed] : "TWILIGHT"
+	if(!GLOB.rockhill_days_passed)
+		return "TWILIGHT"
+	var/list/parts = rockhill_date_parts()
+	return GLOB.rockhill_day_names[MODULUS(parts[1] - 1, ROCKHILL_CALENDAR_DAYS_IN_WEEK) + 1]
 
 /proc/rockhill_clock_steps(base_type)
 	var/list/steps = list()
@@ -119,6 +122,7 @@ SUBSYSTEM_DEF(rockhill_daynight)
 		return SS_INIT_NO_NEED
 	steps = rockhill_clock_steps(/datum/rockhill_clock_step/sky)
 	phases = rockhill_clock_steps(/datum/rockhill_clock_step/phase)
+	rockhill_load_calendar_events()
 	current = rockhill_clock_step_at(steps, rockhill_time())
 	shown_color = target_color = from_color = pick(current.colors)
 	apply_sky(shown_color)
@@ -164,8 +168,11 @@ SUBSYSTEM_DEF(rockhill_daynight)
 		GLOB.rockhill_days_passed = GLOB.rockhill_days_passed % length(GLOB.rockhill_day_names) + 1
 		GLOB.rockhill_dawns++
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_ROCKHILL_TIME_OF_DAY, old, now)
+	if(now.name == ROCKHILL_DAWN)
+		rockhill_announce_new_dawn()
 	for(var/mob/living/player as anything in GLOB.alive_player_list)
 		player.rockhill_time_change()
+	rockhill_refresh_all_area_sounds()
 
 /datum/controller/subsystem/rockhill_daynight/proc/apply_sky(new_color)
 	var/old_color = GLOB.starlight_color
@@ -185,6 +192,7 @@ SUBSYSTEM_DEF(rockhill_daynight)
 	. = ..()
 	if(GLOB.rockhill_time_of_day)
 		. += "Time of day: [rockhill_day_name()] ᛉ [uppertext(GLOB.rockhill_time_of_day)] ᛉ [rockhill_timestamp()]"
+		. += "IC Date: [rockhill_date_short()]"
 
 ADMIN_VERB(rockhill_set_time_of_day, R_DEBUG, "SetTODOverride", "Force the Rockhill time of day, or hand it back to the clock.", ADMIN_CATEGORY_DEBUG)
 	if(!SSrockhill_daynight.initialized || !SSrockhill_daynight.can_fire)

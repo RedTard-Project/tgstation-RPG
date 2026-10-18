@@ -1,3 +1,10 @@
+/obj/structure/bed/rockhill
+	name = "bed"
+	desc = "A soft warm bed complete with sheets and pillows."
+	icon = 'modular_redtard/rockhill/icons/obj/objects.dmi'
+	icon_state = "bed"
+	layer = BELOW_OBJ_LAYER
+
 /obj/structure/bed/rockhill/rogue
 	name = "bed"
 	desc = "A soft warm bed complete with sheets and pillows."
@@ -351,6 +358,18 @@
 	item_chair = null
 	layer = OBJ_LAYER
 
+/obj/structure/closet/crate/wooden/rockhill/burial_shroud
+	name = "winding sheet"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/obj/bodybag.dmi'
+	icon_state = "shroud"
+	density = FALSE
+	keylock = FALSE
+	locked = FALSE
+	lockid = null
+	lock_strength = 100
+	layer = BELOW_OBJ_LAYER
+
 /obj/structure/closet/crate/wooden/rockhill/crate/chest
 	name = "chest"
 	desc = ""
@@ -433,6 +452,21 @@
 	icon_state = "chestweird1"
 	density = TRUE
 	base_icon_state = "chestweird1"
+	keylock = TRUE
+	locked = FALSE
+	lockid = null
+	lock_strength = 100
+	open_sound = 'modular_redtard/rockhill/sound/misc/chestopen.ogg'
+	close_sound = 'modular_redtard/rockhill/sound/misc/chestclose.ogg'
+	layer = BELOW_OBJ_LAYER
+
+/obj/structure/closet/crate/wooden/rockhill/crate/chest/loot_chest
+	name = "chest"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
+	icon_state = "chest3s"
+	density = TRUE
+	base_icon_state = "chest3s"
 	keylock = TRUE
 	locked = FALSE
 	lockid = null
@@ -746,6 +780,21 @@
 	close_sound = 'modular_redtard/rockhill/sound/foley/latch.ogg'
 	layer = BELOW_OBJ_LAYER
 
+/obj/structure/closet/crate/wooden/rockhill/crate/roguecloset/crafted
+	name = "closet"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
+	icon_state = "closet"
+	density = TRUE
+	base_icon_state = "closet"
+	keylock = FALSE
+	locked = FALSE
+	lockid = null
+	lock_strength = 100
+	open_sound = 'modular_redtard/rockhill/sound/foley/doors/creak.ogg'
+	close_sound = 'modular_redtard/rockhill/sound/foley/latch.ogg'
+	layer = BELOW_OBJ_LAYER
+
 /obj/structure/closet/crate/wooden/rockhill/crate/roguecloset/dark
 	name = "closet"
 	desc = ""
@@ -822,6 +871,20 @@
 	open_sound = 'modular_redtard/rockhill/sound/foley/doors/creak.ogg'
 	close_sound = 'modular_redtard/rockhill/sound/foley/latch.ogg'
 	layer = BELOW_OBJ_LAYER
+
+/obj/structure/closet/crate/wooden/rockhill/dirthole
+	name = "hole"
+	desc = "Just a small hole..."
+	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
+	icon_state = "hole1"
+	density = FALSE
+	keylock = FALSE
+	locked = FALSE
+	lockid = null
+	lock_strength = 100
+	open_sound = 'modular_redtard/rockhill/sound/misc/cupboard_open.ogg'
+	close_sound = 'modular_redtard/rockhill/sound/misc/cupboard_close.ogg'
+	layer = 2.8
 
 /obj/structure/closet/crate/wooden/rockhill/dirthole/closed
 	name = "hole"

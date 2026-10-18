@@ -218,6 +218,9 @@ def parse_codebase(code_root):
             if dm:
                 defines.add(dm.group(1))
                 rest = line[dm.end():]
+                while rest.rstrip().endswith('\\') and i < len(lines):
+                    rest = rest.rstrip()[:-1] + ' ' + lines[i].strip()
+                    i += 1
                 if not rest.startswith('('):
                     DEFINE_VALUES[dm.group(1)] = rest.strip()
                 continue
@@ -478,15 +481,55 @@ def turf_state_edits(map_path):
     return edits
 
 
-def source_maps(cfg):
+def source_maps(cfg, rw=None):
     maps = [cfg['source']['map']]
     listing = cfg['source'].get('map_json')
+    entries = []
     if listing:
         world = json.load(open(os.path.join(CHECKOUT, listing), encoding='utf-8'))
-        for entry in world.get('other_z', []):
-            conf = json.load(open(os.path.join(CHECKOUT, entry), encoding='utf-8'))
-            maps.append(f"_maps/{conf['map_path']}/{conf['map_file']}")
+        entries += world.get('other_z', [])
+    entries += cfg['source'].get('always_other_z', [])
+    for entry in entries:
+        conf = json.load(open(os.path.join(CHECKOUT, entry), encoding='utf-8'))
+        maps.append(f"_maps/{conf['map_path']}/{conf['map_file']}")
+    spec = cfg['port'].get('dungeon_templates')
+    if spec and rw:
+        maps += [template['source'] for template in dungeon_templates(rw, spec)]
     return maps
+
+
+def dungeon_templates(rw, spec):
+    out = []
+    for path in sorted(rw.types):
+        if not boundary_match(path, spec['prefix']):
+            continue
+        mappath = (rw.resolve(path, 'mappath') or '').strip().strip('"')
+        abstract = (rw.resolve(path, 'abstract_type') or '').strip() == path
+        if abstract or mappath in ('', 'null'):
+            continue
+        rel = mappath[len('_maps/'):] if mappath.startswith('_maps/') else mappath
+        out.append({'type': path, 'source': mappath, 'output': f"{spec['output_dir']}/{rel.split('/', 1)[1] if '/' in rel else rel}"})
+    return out
+
+
+def generate_dungeon_templates(rw, spec, tg_names):
+    templates = dungeon_templates(rw, spec)
+    blocks = []
+    for path in sorted(p for p in rw.types if boundary_match(p, spec['prefix']) and p != spec['prefix']):
+        block = [path]
+        if (rw.types[path].get('abstract_type') or '').strip() == path:
+            block.append(f'\tabstract_type = {path}')
+        for name in spec['vars']:
+            value = literal(rw.types[path].get(name), tg_names)
+            if value is not None:
+                block.append(f'\t{name} = {value}')
+        found = next((t for t in templates if t['type'] == path), None)
+        if found:
+            block.append(f'\tmappath = "{found["output"]}"')
+        blocks.append(block)
+    open(f"{OUT_DIR}/{spec['file']}", 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    open(spec['manifest'], 'w', encoding='utf-8', newline='\n').write(json.dumps([{'source': t['source'], 'output': t['output']} for t in templates], indent='\t') + '\n')
+    print(f"{spec['file']}: {len(blocks)} dungeon templates, {len(templates)} maps")
 
 
 def map_usage(map_path):
@@ -641,7 +684,7 @@ def main():
     declared = declared_paths(DECLARATION_ROOTS, [OUT_DIR])
     tg_declared = declared_paths(['code'], [])
     tg_names = tg_defines('code')
-    maps = source_maps(cfg)
+    maps = source_maps(cfg, rw)
     usage, per_level = map_usage(os.path.join(CHECKOUT, maps[0]))
     station_usage = collections.Counter(usage)
     for extra in maps[1:]:
@@ -974,6 +1017,13 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
             sheet_states[src] = dmi.state_names(src) if os.path.exists(src) else set()
         return sheet_states[src]
 
+    runtime_sounds = {}
+
+    def runtime_sound(rel, root):
+        dest = f"{root}/{rel[len('sound/'):] if rel.startswith('sound/') else rel}"
+        runtime_sounds[os.path.join(CHECKOUT, rel)] = dest
+        return dest
+
     grid_spec = port.get('grid_storage', {})
     grid_used = set()
 
@@ -1227,6 +1277,8 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                     blocks.append(block)
                 else:
                     cat.setdefault('_graft_blocks', {})[g] = block[1:]
+        if cat.get('sound_vars'):
+            fetch_sources([f for p in paths for source_name in cat['sound_vars'].values() for f in sound_files(rw.resolve(p, source_name))])
         for path in paths:
             CURRENT[0] = path
             block = [path]
@@ -1325,6 +1377,10 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                 block.append(f'\t{name} = {value}')
             if cat.get('grid_storage'):
                 block += grid_storage_lines(path)
+            for name, source_name in cat.get('sound_vars', {}).items():
+                files = [f for f in sound_files(rw.resolve(path, source_name)) if os.path.exists(os.path.join(CHECKOUT, f))]
+                listed = ', '.join(f'"{runtime_sound(f, cat["runtime_sounds"])}"' for f in files)
+                block.append(f'\t{name} = ' + (f'list({listed})' if files else 'null'))
             if cat.get('placement'):
                 block += placement_lines(rw, path, path, tg_values)
             for prefix, names in cat.get('type_vars', {}).items():
@@ -1358,6 +1414,8 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
 
     if grid_spec:
         generate_grid_storage(rw, grid_spec, grid_used, tg_names, valid, rules)
+    if port.get('dungeon_templates'):
+        generate_dungeon_templates(rw, port['dungeon_templates'], tg_names)
 
     armor_lines = []
     for path, fields in sorted(ARMOR_DATUMS.items()):
@@ -1533,7 +1591,23 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
     for src, dest in list(icons.items()) + list(sounds.items()):
         os.makedirs(os.path.dirname(dest), exist_ok=True)
         shutil.copyfile(src, dest)
+    for src, dest in runtime_sounds.items():
+        os.makedirs(os.path.dirname(dest), exist_ok=True)
+        shutil.copyfile(src, dest)
+    extra_files = port.get('extra_files', {})
+    fetch_sources(list(extra_files))
+    for rel, dest in extra_files.items():
+        src = os.path.join(CHECKOUT, rel)
+        if not os.path.exists(src):
+            raise SystemExit(f'extra_files: {rel} is missing from the Ratwood checkout')
+        os.makedirs(os.path.dirname(dest), exist_ok=True)
+        shutil.copyfile(src, dest)
+    print('extra files copied:', len(extra_files))
+    for root in {cat['runtime_sounds'] for cat in categories if cat.get('runtime_sounds')}:
+        os.makedirs(root, exist_ok=True)
+        open(f'{root}/.gitignore', 'w', encoding='utf-8', newline='\n').write('*\n!.gitignore\n')
     print('icons copied:', len(icons), 'bytes:', sum(os.path.getsize(d) for d in icons.values()))
+    print('runtime sounds copied:', len(runtime_sounds), 'bytes:', sum(os.path.getsize(d) for d in runtime_sounds.values()))
     print('sounds copied:', len(sounds))
 
     with open(REPORT, 'w', encoding='utf-8', newline='\n') as out:
@@ -1573,6 +1647,16 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
             out.write(f'No sheet holds their worn state: `worn_icon = \'{BLANK_WORN}\'` (one empty state) and `worn_icon_state = null`, the TG way to say "no worn sprite".\n\n')
             for path in sorted(BLANK_USERS):
                 out.write(f'- `{path}`\n')
+        if extra_files:
+            out.write('\n## Files\n\n')
+            for rel, dest in sorted(extra_files.items(), key=lambda kv: kv[1]):
+                out.write(f'- `{dest}` from Ratwood `{rel}`\n')
+        if runtime_sounds:
+            out.write('\n## Runtime sounds (not committed)\n\n')
+            out.write('Area music and ambience are copied into a folder git ignores and are read from disk at runtime; part of the music is third-party commercial tracks (see Ratwood `sound/music/credits.txt`), so the repository does not redistribute them. A missing file is skipped.\n\n')
+            for src, dest in sorted(runtime_sounds.items(), key=lambda kv: kv[1]):
+                rel = os.path.relpath(src, CHECKOUT).replace('\\', '/')
+                out.write(f'- `{dest}` from Ratwood `{rel}`\n')
         if sounds:
             out.write('\n## Sounds\n\n')
             for src, dest in sorted(sounds.items(), key=lambda kv: kv[1]):
@@ -1580,6 +1664,30 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                 out.write(f'- `{dest}` from Ratwood `{rel}`\n')
     print('report:', REPORT, 'skipped types:', len(skipped))
     return generated
+
+
+SOUND_LITERAL = re.compile(r"'(sound/[^']+?\.(?:ogg|wav|mp3))'")
+
+
+def sound_files(raw):
+    text = raw or ''
+    for _ in range(8):
+        names = [name for name in set(re.findall(r'\b[A-Z_][A-Z0-9_]*\b', text)) if name in DEFINE_VALUES]
+        if not names:
+            break
+        for name in names:
+            text = re.sub(rf'\b{name}\b', lambda _match, value=DEFINE_VALUES[name]: value, text)
+    return SOUND_LITERAL.findall(text)
+
+
+def fetch_sources(paths):
+    absent = sorted({p for p in paths if not os.path.exists(os.path.join(CHECKOUT, p))})
+    if absent:
+        git('sparse-checkout', 'add', *('/' + p for p in absent))
+        git('read-tree', '-mu', 'HEAD')
+    missing = [p for p in absent if not os.path.exists(os.path.join(CHECKOUT, p))]
+    if missing:
+        print('runtime sounds missing from Ratwood:', ', '.join(missing))
 
 
 def held_paths(body):

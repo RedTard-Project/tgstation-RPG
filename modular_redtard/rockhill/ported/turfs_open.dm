@@ -45,6 +45,13 @@
 	icon_state = "paving"
 	rockhill_random_dir = TRUE
 
+/turf/open/floor/rogue/blocks/paving/vert
+	name = "stone flooring"
+	desc = "These rough stone slabs have been arranged in a neat grid for a rustic yet tidy charm."
+	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
+	icon_state = "paving-t"
+	rockhill_random_dir = TRUE
+
 /turf/open/floor/rogue/blocks/platform
 	name = "platform"
 	desc = "A destructible platform."
@@ -332,6 +339,13 @@
 	icon_state = "barograte"
 	rockhill_random_dir = TRUE
 
+/turf/open/floor/rogue/metal/barograte/open
+	name = "floor"
+	desc = "Covered in the tell-tale nicks of thousands of hammer-blows, this metal flooring clangs beneath your feet with every step."
+	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
+	icon_state = "barograteopen"
+	rockhill_random_dir = TRUE
+
 /turf/open/floor/rogue/naturalstone
 	name = "rough stone ground"
 	desc = "Rough stone that's been exposed to the air either through erosion or the swing of a pickaxe. A few patchy lichens eke out a living between the cracks."
@@ -461,6 +475,14 @@
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "wooden_floort"
 	rockhill_random_dir = TRUE
+
+/turf/open/floor/rogue/snow
+	name = "snow"
+	desc = "A gentle blanket of snow."
+	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
+	icon_state = "snow"
+	rockhill_random_dir = TRUE
+	smoothing_flags = SMOOTH_BITMASK_CARDINALS
 
 /turf/open/floor/rogue/snowpatchy
 	name = "patchy snow"

@@ -44,10 +44,15 @@ GLOBAL_LIST_INIT(rockhill_day_ordinals, list("FIRST", "SECOND", "THIRD", "FOURTH
 	if(!GLOB.rockhill_days_passed || mind.rockhill_dawn_seen == GLOB.rockhill_dawns)
 		return
 	mind.rockhill_dawn_seen = GLOB.rockhill_dawns
+	var/list/feasts = list()
+	for(var/datum/rockhill_calendar_event/event as anything in rockhill_events_today())
+		feasts += event.title
 	var/atom/movable/screen/rockhill_dawn_text/splash = new
-	splash.maptext = MAPTEXT("<span style='vertical-align:top; text-align:center; color: #7c5b10; font-size: 150%; text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;'>DAWN OF THE [GLOB.rockhill_day_ordinals[GLOB.rockhill_days_passed]] DAE<br>[rockhill_day_name()]</span>")
+	splash.maptext = MAPTEXT("<span style='vertical-align:top; text-align:center; color: #7c5b10; font-size: 150%; text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;'>DAWN OF THE [GLOB.rockhill_day_ordinals[GLOB.rockhill_days_passed]] DAE<br>[rockhill_day_name()]<br>[uppertext(rockhill_date_short())][length(feasts) ? "<br>- [uppertext(jointext(feasts, " & "))] -" : ""]</span>")
 	playsound_local(src, 'modular_redtard/rockhill/sound/misc/newday.ogg', 60, FALSE)
 	rockhill_flash_screen(splash, 1 SECONDS, 3.5 SECONDS)
+	if(length(GLOB.rockhill_time_tips))
+		to_chat(src, span_notice("<b>[pick(GLOB.rockhill_time_tips)]</b>"))
 
 /mob/living/proc/rockhill_flash_screen(atom/movable/screen/shown, fade_in, shown_for)
 	client.screen += shown

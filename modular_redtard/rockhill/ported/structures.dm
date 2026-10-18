@@ -16,13 +16,7 @@
 /obj/structure/drape
 	parent_type = /obj/structure/rockhill
 
-/obj/structure/dungeon_entry
-	parent_type = /obj/structure/rockhill
-
 /obj/structure/fireaxecabinet/unforgotten
-	parent_type = /obj/structure/rockhill
-
-/obj/structure/flora/ausbushes
 	parent_type = /obj/structure/rockhill
 
 /obj/structure/flora/maple
@@ -992,17 +986,6 @@
 	plane = ABOVE_GAME_PLANE
 	layer = BELOW_OBJ_LAYER
 
-/obj/structure/dungeon_entry/center
-	name = "The Tomb of Alotheos"
-	desc = "Greedy fool, will you emerge rich and victorious, or be entombed forever?"
-	icon = 'modular_redtard/rockhill/icons/roguetown/misc/portal.dmi'
-	icon_state = "portal"
-	density = TRUE
-	opacity = TRUE
-	pixel_x = -48
-	obj_flags = INDESTRUCTIBLE
-	layer = BELOW_OBJ_LAYER
-
 /obj/structure/eoran_pomegranate_tree
 	parent_type = /obj/structure/rockhill
 	name = "pomegranate tree"
@@ -1206,6 +1189,19 @@
 	delay2open = 30
 	delay2close = 10
 
+/obj/structure/flora/ausbushes
+	parent_type = /obj/structure/rockhill
+	name = "bush"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/obj/flora/ausflora.dmi'
+	icon_state = "firstbush_1"
+	obj_flags = CAN_BE_HIT
+	rockhill_variant = "firstbush_#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 4
+	plane = ABOVE_GAME_PLANE
+	layer = BELOW_OBJ_LAYER
+
 /obj/structure/flora/ausbushes/brflowers
 	name = "bush"
 	desc = ""
@@ -1230,6 +1226,30 @@
 	plane = ABOVE_GAME_PLANE
 	layer = BELOW_OBJ_LAYER
 
+/obj/structure/flora/ausbushes/fullgrass
+	name = "bush"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/obj/flora/ausflora.dmi'
+	icon_state = "fullgrass_1"
+	obj_flags = CAN_BE_HIT
+	rockhill_variant = "fullgrass_#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 3
+	plane = ABOVE_GAME_PLANE
+	layer = BELOW_OBJ_LAYER
+
+/obj/structure/flora/ausbushes/grassybush
+	name = "bush"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/obj/flora/ausflora.dmi'
+	icon_state = "grassybush_1"
+	obj_flags = CAN_BE_HIT
+	rockhill_variant = "grassybush_#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 4
+	plane = ABOVE_GAME_PLANE
+	layer = BELOW_OBJ_LAYER
+
 /obj/structure/flora/ausbushes/lavendergrass
 	name = "bush"
 	desc = ""
@@ -1237,6 +1257,42 @@
 	icon_state = "lavendergrass_1"
 	obj_flags = CAN_BE_HIT
 	rockhill_variant = "lavendergrass_#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 4
+	plane = ABOVE_GAME_PLANE
+	layer = BELOW_OBJ_LAYER
+
+/obj/structure/flora/ausbushes/leafybush
+	name = "bush"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/obj/flora/ausflora.dmi'
+	icon_state = "leafybush_1"
+	obj_flags = CAN_BE_HIT
+	rockhill_variant = "leafybush_#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 3
+	plane = ABOVE_GAME_PLANE
+	layer = BELOW_OBJ_LAYER
+
+/obj/structure/flora/ausbushes/palebush
+	name = "bush"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/obj/flora/ausflora.dmi'
+	icon_state = "palebush_1"
+	obj_flags = CAN_BE_HIT
+	rockhill_variant = "palebush_#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 4
+	plane = ABOVE_GAME_PLANE
+	layer = BELOW_OBJ_LAYER
+
+/obj/structure/flora/ausbushes/pointybush
+	name = "bush"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/obj/flora/ausflora.dmi'
+	icon_state = "pointybush_1"
+	obj_flags = CAN_BE_HIT
+	rockhill_variant = "pointybush_#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 4
 	plane = ABOVE_GAME_PLANE
@@ -1254,6 +1310,18 @@
 	plane = ABOVE_GAME_PLANE
 	layer = BELOW_OBJ_LAYER
 
+/obj/structure/flora/ausbushes/sparsegrass
+	name = "bush"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/obj/flora/ausflora.dmi'
+	icon_state = "sparsegrass_1"
+	obj_flags = CAN_BE_HIT
+	rockhill_variant = "sparsegrass_#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 3
+	plane = ABOVE_GAME_PLANE
+	layer = BELOW_OBJ_LAYER
+
 /obj/structure/flora/ausbushes/stalkybush
 	name = "bush"
 	desc = ""
@@ -1261,6 +1329,18 @@
 	icon_state = "stalkybush_1"
 	obj_flags = CAN_BE_HIT
 	rockhill_variant = "stalkybush_#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 3
+	plane = ABOVE_GAME_PLANE
+	layer = BELOW_OBJ_LAYER
+
+/obj/structure/flora/ausbushes/sunnybush
+	name = "bush"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/obj/flora/ausflora.dmi'
+	icon_state = "sunnybush_1"
+	obj_flags = CAN_BE_HIT
+	rockhill_variant = "sunnybush_#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 3
 	plane = ABOVE_GAME_PLANE
@@ -2112,6 +2192,21 @@
 	rockhill_variant_max = 2
 	layer = TABLE_LAYER
 
+/obj/structure/flora/roguetree/stump/pine
+	name = "pine stump"
+	desc = "Someone cut this tree down."
+	icon = 'modular_redtard/rockhill/icons/obj/flora/pines.dmi'
+	icon_state = "dead4"
+	density = 1
+	opacity = 0
+	pixel_x = -32
+	alpha = 255
+	obj_flags = CAN_BE_HIT
+	rockhill_variant = "dead#"
+	rockhill_variant_min = 4
+	rockhill_variant_max = 5
+	layer = TABLE_LAYER
+
 /obj/structure/flora/roguetree/underworld
 	name = "screaming tree"
 	desc = "Human faces everywhere."
@@ -2172,6 +2267,20 @@
 	plane = ABOVE_GAME_PLANE
 	layer = BELOW_OBJ_LAYER
 
+/obj/structure/flora/tree/evil
+	parent_type = /obj/structure/rockhill
+	name = "tree"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/obj/structures.dmi'
+	density = TRUE
+	pixel_x = -16
+	obj_flags = CAN_BE_HIT
+	rockhill_variant = "wv#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 2
+	plane = ABOVE_GAME_PLANE
+	layer = FLY_LAYER
+
 /obj/structure/fluff/alch
 	parent_type = /obj/structure/rockhill
 	name = "alchemical lab"
@@ -2179,6 +2288,17 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "alch"
 	density = TRUE
+	opacity = 0
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_OBJ_LAYER
+
+/obj/structure/fluff/buysign
+	parent_type = /obj/structure/rockhill
+	name = "sign"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
+	icon_state = "signwrote"
+	density = FALSE
 	opacity = 0
 	obj_flags = CAN_BE_HIT
 	layer = BELOW_OBJ_LAYER
@@ -2727,6 +2847,17 @@
 	obj_flags = CAN_BE_HIT
 	layer = BELOW_MOB_LAYER
 
+/obj/structure/fluff/sellsign
+	parent_type = /obj/structure/rockhill
+	name = "sign"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
+	icon_state = "signwrote"
+	density = FALSE
+	opacity = 0
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_OBJ_LAYER
+
 /obj/structure/fluff/signage
 	parent_type = /obj/structure/rockhill
 	name = "sign"
@@ -3191,6 +3322,80 @@
 	obj_flags = CAN_BE_HIT
 	layer = BELOW_MOB_LAYER
 
+/obj/structure/fluff/walldeco/bath
+	name = "suggestive stonework"
+	desc = "Tasteful and inviting artwork depicting the female form, its as close as you'll get without any coin."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/decoration.dmi'
+	icon_state = "bath1"
+	density = FALSE
+	opacity = 0
+	pixel_x = -32
+	alpha = 210
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_MOB_LAYER
+
+/obj/structure/fluff/walldeco/bath/five
+	name = "raunchy stonework"
+	desc = "Detailed and suggestive artwork depicting the female form, the figure is posed in an excited fashion, frozen in a moment of ecstasy."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/decoration.dmi'
+	icon_state = "bath5"
+	density = FALSE
+	opacity = 0
+	pixel_x = -29
+	alpha = 210
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_MOB_LAYER
+
+/obj/structure/fluff/walldeco/bath/four
+	name = "detailed stonework"
+	desc = "Impressive and sensual artwork depicting the female form, the figure invites yet rewards nothing to your touch, tempting one towards spending their coin elsewhere."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/decoration.dmi'
+	icon_state = "bath4"
+	density = FALSE
+	opacity = 0
+	pixel_x = 0
+	pixel_y = 32
+	alpha = 210
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_MOB_LAYER
+
+/obj/structure/fluff/walldeco/bath/ladies
+	name = "ladies bath sign"
+	desc = "Ladies only, please."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/decoration.dmi'
+	icon_state = "ladies"
+	density = FALSE
+	opacity = 0
+	pixel_x = 0
+	pixel_y = 32
+	alpha = 210
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_MOB_LAYER
+
+/obj/structure/fluff/walldeco/bath/seven
+	name = "coy stonework"
+	desc = "A playful and inviting artwork depicting the female form, the figure tempts those watching with a finger, to an act of passion that will never begin."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/decoration.dmi'
+	icon_state = "bath7"
+	density = FALSE
+	opacity = 0
+	pixel_x = 32
+	alpha = 210
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_MOB_LAYER
+
+/obj/structure/fluff/walldeco/bath/six
+	name = "generous stonework"
+	desc = "Tempting and luridly gifted artwork depicting the female form, the figure waits for the action of the audience, ever unable to reciprocate."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/decoration.dmi'
+	icon_state = "bath6"
+	density = FALSE
+	opacity = 0
+	pixel_x = -29
+	alpha = 210
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_MOB_LAYER
+
 /obj/structure/fluff/walldeco/bath/wallrope
 	name = "rope"
 	desc = "A good rope can solve most problems."
@@ -3611,6 +3816,19 @@
 	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER + 0.1
 
+/obj/structure/fluff/walldeco/sign/saiga
+	name = "The Drunken Saiga"
+	desc = "A stumbling beast is depicted on this sign, promising heavy inebriation at least, if not quality food or service."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/decoration.dmi'
+	icon_state = "shopsign_inn_saiga_right"
+	density = FALSE
+	opacity = 0
+	pixel_x = 3
+	pixel_y = 16
+	obj_flags = CAN_BE_HIT
+	plane = ABOVE_GAME_PLANE
+	layer = ABOVE_MOB_LAYER + 0.1
+
 /obj/structure/fluff/walldeco/sign/trophy
 	name = "saiga trophy"
 	desc = "A mounted trophy of curved saiga horns, a hunter's pride."
@@ -3676,6 +3894,17 @@
 	icon_state = "vinez_blue"
 	density = FALSE
 	opacity = 0
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_MOB_LAYER
+
+/obj/structure/fluff/walldeco/vinez/l
+	name = "vines"
+	desc = "Nature begins to retake this place, slowly but surely."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/decoration.dmi'
+	icon_state = "vinez"
+	density = FALSE
+	opacity = 0
+	pixel_x = -32
 	obj_flags = CAN_BE_HIT
 	layer = BELOW_MOB_LAYER
 
@@ -3751,6 +3980,17 @@
 	rockhill_variant_max = 3
 	rockhill_random_dir = TRUE
 	layer = BELOW_MOB_LAYER
+
+/obj/structure/forcefield_weak
+	parent_type = /obj/structure/rockhill
+	name = "Arcyne Wall"
+	desc = "A wall of pure arcyne force."
+	icon = 'modular_redtard/rockhill/icons/effects/effects.dmi'
+	icon_state = "arcynewall"
+	density = TRUE
+	opacity = 0
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/foxpelt
 	parent_type = /obj/structure/rockhill
@@ -3958,6 +4198,16 @@
 	layer = BELOW_OBJ_LAYER
 	toggled = FALSE
 
+/obj/structure/lever/hidden
+	name = "lever"
+	desc = "I want to pull it."
+	icon = null
+	icon_state = "leverfloor0"
+	density = FALSE
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_OBJ_LAYER
+	toggled = FALSE
+
 /obj/structure/lever/wall
 	name = "lever"
 	desc = "I want to pull it."
@@ -4090,6 +4340,16 @@
 	icon = 'modular_redtard/rockhill/icons/obj/structures/plough.dmi'
 	icon_state = "plough"
 	density = TRUE
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_OBJ_LAYER
+
+/obj/structure/pressure_plate
+	parent_type = /obj/structure/rockhill
+	name = "pressure plate"
+	desc = "Be careful. Stepping on this could either mean a bomb exploding or a door closing on you."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/traps.dmi'
+	icon_state = "pressureplate"
+	density = FALSE
 	obj_flags = CAN_BE_HIT
 	layer = BELOW_OBJ_LAYER
 
@@ -4743,6 +5003,16 @@
 	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
+/obj/structure/soil
+	parent_type = /obj/structure/rockhill
+	name = "soil"
+	desc = "Dirt, ready to give life like a womb."
+	icon = 'modular_redtard/rockhill/icons/obj/structures/soil.dmi'
+	icon_state = "soil"
+	density = FALSE
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_OBJ_LAYER
+
 /obj/structure/spider/stickyweb/solo
 	parent_type = /obj/structure/rockhill
 	name = "web"
@@ -5020,6 +5290,15 @@
 	icon_state = "dormantobelisk"
 	density = TRUE
 	obj_flags = CAN_BE_HIT
+	layer = BELOW_OBJ_LAYER
+
+/obj/structure/wallladder
+	parent_type = /obj/structure/rockhill
+	name = "wall ladder"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
+	icon_state = "ladderwall"
+	obj_flags = BLOCK_Z_OUT_DOWN
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/waterwheel

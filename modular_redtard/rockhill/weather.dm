@@ -1,3 +1,5 @@
+GLOBAL_LIST_EMPTY(rockhill_weather_sounds)
+
 /particles/weather/rockhill
 	icon = 'modular_redtard/rockhill/icons/effects/particles/particle.dmi'
 	count = 3000
@@ -119,23 +121,36 @@
 	weather_duration_lower = 1 MINUTES
 	weather_duration_upper = 3 MINUTES
 	area_type = /area/rogue
-	weather_flags = WEATHER_INDOORS
+	target_trait = ZTRAIT_ROCKHILL_WEATHER
+	weather_flags = WEATHER_INDOORS | WEATHER_STRICT_ALERT
 	overlay_planes = list()
 	use_glow = FALSE
 	var/severity_steps = 5
 	var/lightning_strikes = 0
+	var/rockhill_warning
+	var/datum/looping_sound/outdoor_sound
+	var/datum/looping_sound/indoor_sound
 	COOLDOWN_DECLARE(lightning_cooldown)
 
 /datum/weather/particle/rockhill/setup_weather_areas(list/forced_areas)
 	return ..(forced_areas || rockhill_sky_areas())
 
+/datum/weather/particle/rockhill/get_playlist_ref()
+	return GLOB.rockhill_weather_sounds
+
 /datum/weather/particle/rockhill/telegraph(list/weather_data)
+	GLOB.rockhill_weather_sounds.Cut()
+	for(var/area/rogue/area in GLOB.areas)
+		var/loop_type = (area in impacted_areas) ? outdoor_sound : indoor_sound
+		if(loop_type)
+			GLOB.rockhill_weather_sounds[area] = loop_type
 	. = ..()
 	severity_cooldown = max(initial(severity_cooldown), weather_duration / severity_steps)
 
 /datum/weather/particle/rockhill/end()
 	. = ..()
 	if(.)
+		GLOB.rockhill_weather_sounds.Cut()
 		qdel(src)
 
 /datum/weather/particle/rockhill/proc/rockhill_tick()
@@ -153,6 +168,33 @@
 		if(length(candidates))
 			new /obj/effect/temp_visual/rockhill_lightning(pick(candidates))
 
+/datum/weather/particle/rockhill/proc/rockhill_visuals()
+	return
+
+/datum/weather/particle/rockhill/heat_wave/rockhill_visuals()
+	if(stage != MAIN_STAGE || !length(GLOB.alive_player_list) || !COOLDOWN_FINISHED(src, ripple_cooldown))
+		return
+	COOLDOWN_START(src, ripple_cooldown, rand(ROCKHILL_RIPPLE_MIN_DELAY, ROCKHILL_RIPPLE_MAX_DELAY))
+	for(var/i in 1 to clamp(round(severity / ROCKHILL_RIPPLE_SEVERITY_STEP), 1, ROCKHILL_RIPPLE_MAX))
+		var/mob/living/watcher = pick(GLOB.alive_player_list)
+		if(!istype(watcher) || !(watcher.z in impacted_z_levels))
+			continue
+		var/list/candidates = rockhill_turfs_near(watcher, ROCKHILL_RIPPLE_RANGE)
+		if(length(candidates))
+			new /obj/effect/temp_visual/rockhill_heat_ripple(pick(candidates))
+
+/datum/weather/particle/rockhill/fog/New(list/z_levels, list/weather_data)
+	. = ..()
+	for(var/z_level, holder_list in weather_objects)
+		for(var/obj/effect/abstract/weather_holder/holder as anything in holder_list)
+			holder.add_filter("rockhill_fog_light", 1, alpha_mask_filter(render_source = OFFSET_RENDER_TARGET(get_plane_master_render_base(ROCKHILL_OVERLAY_LIGHT_PLATE), GET_Z_PLANE_OFFSET(z_level)), flags = MASK_INVERSE))
+
+/datum/weather/particle/rockhill/proc/rockhill_turfs_near(mob/living/watcher, range)
+	. = list()
+	for(var/turf/open/nearby in RANGE_TURFS(range, watcher))
+		if(nearby.loc in impacted_areas)
+			. += nearby
+
 /obj/effect/temp_visual/rockhill_lightning
 	icon = 'modular_redtard/rockhill/icons/effects/32x200.dmi'
 	icon_state = "lightning"
@@ -166,6 +208,81 @@
 	light_color = COLOR_PALE_BLUE_GRAY
 	light_on = TRUE
 
+/obj/effect/temp_visual/rockhill_lightning/Initialize(mapload)
+	. = ..()
+	playsound(src, 'modular_redtard/rockhill/sound/weather/rain/thunder_1.ogg', 80, TRUE)
+
+/obj/effect/temp_visual/rockhill_heat_ripple
+	icon = 'modular_redtard/rockhill/icons/effects/effects.dmi'
+	icon_state = "heatwave"
+	layer = ABOVE_MOB_LAYER
+	plane = GAME_PLANE
+	alpha = 0
+	randomdir = FALSE
+	duration = 2 SECONDS
+
+/obj/effect/temp_visual/rockhill_heat_ripple/Initialize(mapload)
+	. = ..()
+	animate(src, alpha = rand(20, 40), time = 0.5 SECONDS)
+	animate(src, transform = matrix(1.02, 0, rand(-0.3, 0.3), 0, 0.98, rand(0, 0.6)), time = rand(6, 10), easing = SINE_EASING, loop = -1, flags = ANIMATION_PARALLEL)
+	animate(transform = matrix(0.98, 0, rand(-0.3, 0.3), 0, 1.02, rand(0, 0.6)), time = rand(6, 10), easing = SINE_EASING)
+
+/datum/looping_sound/rockhill_weather
+	sound_channel = CHANNEL_WEATHER
+	direct = TRUE
+
+/datum/looping_sound/rockhill_weather/rain
+	mid_sounds = 'modular_redtard/rockhill/sound/weather/rain/weather_rain.ogg'
+	mid_length = 40 SECONDS
+	volume = 100
+
+/datum/looping_sound/rockhill_weather/indoor_rain
+	mid_sounds = 'modular_redtard/rockhill/sound/weather/rain/weather_rain_indoors.ogg'
+	mid_length = 15 SECONDS
+	volume = 100
+
+/datum/looping_sound/rockhill_weather/storm
+	mid_sounds = 'modular_redtard/rockhill/sound/weather/rain/weather_storm.ogg'
+	mid_length = 30 SECONDS
+	volume = 100
+
+/datum/looping_sound/rockhill_weather/snow
+	mid_sounds = 'modular_redtard/rockhill/sound/weather/snow/weather_snow.ogg'
+	mid_length = 50 SECONDS
+	volume = 100
+
+/datum/looping_sound/rockhill_weather/sandstorm
+	mid_sounds = 'modular_redtard/rockhill/sound/weather/sand/weather_sandstorm.ogg'
+	mid_length = 14 SECONDS
+	volume = 100
+
+/datum/looping_sound/rockhill_weather/wind
+	mid_sounds = list(
+		'modular_redtard/rockhill/sound/weather/rain/wind_1.ogg' = 1,
+		'modular_redtard/rockhill/sound/weather/rain/wind_2.ogg' = 1,
+		'modular_redtard/rockhill/sound/weather/rain/wind_3.ogg' = 1,
+		'modular_redtard/rockhill/sound/weather/rain/wind_4.ogg' = 1,
+		'modular_redtard/rockhill/sound/weather/rain/wind_5.ogg' = 1,
+		'modular_redtard/rockhill/sound/weather/rain/wind_6.ogg' = 1,
+	)
+	mid_length = 30 SECONDS
+	volume = 100
+
+/datum/looping_sound/rockhill_weather/drythunder
+	mid_sounds = list(
+		'modular_redtard/rockhill/sound/weather/rain/thunder_1.ogg' = 1,
+		'modular_redtard/rockhill/sound/weather/rain/thunder_2.ogg' = 1,
+		'modular_redtard/rockhill/sound/weather/rain/thunder_3.ogg' = 1,
+		'modular_redtard/rockhill/sound/weather/rain/thunder_4.ogg' = 1,
+		'modular_redtard/rockhill/sound/weather/rain/thunder_5.ogg' = 1,
+		'modular_redtard/rockhill/sound/weather/rain/thunder_6.ogg' = 1,
+	)
+	mid_length = 30 SECONDS
+	volume = 100
+
+/datum/looping_sound/rockhill_weather/drythunder/indoors
+	volume = 50
+
 /datum/weather/particle/rockhill/rain_gentle
 	name = "Rain"
 	desc = "Gentle rain falls over the realm."
@@ -173,6 +290,10 @@
 	min_severity = 7
 	optimal_severity = 53
 	severity_variation = 13
+	rockhill_warning = span_greenannounce("Grey clouds gather up above the realm, beholding the gift of life.")
+	telegraph_message = span_greenannounce("Heavy drops begin to fall in rapid succession.")
+	outdoor_sound = /datum/looping_sound/rockhill_weather/rain
+	indoor_sound = /datum/looping_sound/rockhill_weather/indoor_rain
 
 /datum/weather/particle/rockhill/rain_storm
 	name = "Rain Storm"
@@ -183,6 +304,10 @@
 	severity_variation = 50
 	severity_steps = 50
 	lightning_strikes = 6
+	rockhill_warning = span_greenannounce("Dark clouds gather up above the realm, sparks arcing between heavenly reaches.")
+	telegraph_message = span_greenannounce("The wind shifts and the storm breaks.")
+	outdoor_sound = /datum/looping_sound/rockhill_weather/storm
+	indoor_sound = /datum/looping_sound/rockhill_weather/indoor_rain
 
 /datum/weather/particle/rockhill/snow_gentle
 	name = "Snowfall"
@@ -191,6 +316,9 @@
 	min_severity = 25
 	optimal_severity = 62
 	severity_variation = 25
+	rockhill_warning = span_greenannounce("The air chills across the realm, soft white specs appearing near warm breaths.")
+	telegraph_message = span_greenannounce("Flakes swirl as snow starts to drift down from the sky.")
+	outdoor_sound = /datum/looping_sound/rockhill_weather/snow
 
 /datum/weather/particle/rockhill/snow_storm
 	name = "Snow storm"
@@ -202,6 +330,9 @@
 	optimal_severity = 70
 	severity_variation = 50
 	severity_steps = 50
+	rockhill_warning = span_greenannounce("Heavy clouds build in the sky as the air chills across the realm, soft white specs appearing near warm breaths.")
+	telegraph_message = span_greenannounce("Heavy snow begins to fall thick and fast.")
+	outdoor_sound = /datum/looping_sound/rockhill_weather/snow
 
 /datum/weather/particle/rockhill/leaves_gentle
 	name = "Strong Winds"
@@ -210,6 +341,8 @@
 	min_severity = 7
 	optimal_severity = 53
 	severity_variation = 13
+	rockhill_warning = span_greenannounce("Light winds blow in through the forests across the realm.")
+	telegraph_message = span_greenannounce("A sudden gust scatters leaves wildly through the air.")
 
 /datum/weather/particle/rockhill/fog
 	name = "Fog"
@@ -219,6 +352,8 @@
 	min_severity = 33
 	optimal_severity = 67
 	severity_variation = 13
+	rockhill_warning = span_greenannounce("The air is thick and damp, and a rush of cool dry air foretells what approachs.")
+	telegraph_message = span_greenannounce("A cold mist rolls in, swallowing the horizon.")
 
 /datum/weather/particle/rockhill/fireflies
 	name = "Fireflies"
@@ -227,6 +362,8 @@
 	min_severity = 20
 	optimal_severity = 60
 	severity_variation = 100
+	rockhill_warning = span_greenannounce("Faint glows appear in the distance across the realm.")
+	telegraph_message = span_greenannounce("Tiny lights begin to flicker in and out nearby.")
 
 /datum/weather/particle/rockhill/heat_wave
 	name = "Heatwave"
@@ -236,6 +373,11 @@
 	optimal_severity = 70
 	severity_variation = 50
 	severity_steps = 50
+	rockhill_warning = span_greenannounce("A brutal heatwave rolls across the realm, warping the very air.")
+	telegraph_message = span_greenannounce("The air becomes stifling and unbearably still.")
+	outdoor_sound = /datum/looping_sound/rockhill_weather/sandstorm
+	indoor_sound = /datum/looping_sound/rockhill_weather/wind
+	COOLDOWN_DECLARE(ripple_cooldown)
 
 /datum/weather/particle/rockhill/dry_thunderstorm
 	name = "Dry Thunderstorm"
@@ -246,6 +388,10 @@
 	severity_variation = 50
 	severity_steps = 50
 	lightning_strikes = 10
+	rockhill_warning = span_greenannounce("Dark clouds roll across the sky, echo's of thunder rumbling across the dry realm.")
+	telegraph_message = span_greenannounce("Thunder cracks overhead, but no rain follows.")
+	outdoor_sound = /datum/looping_sound/rockhill_weather/drythunder
+	indoor_sound = /datum/looping_sound/rockhill_weather/drythunder/indoors
 
 /datum/rockhill_clock_step/phase
 	var/weather_chance = 0
@@ -316,6 +462,7 @@ SUBSYSTEM_DEF(rockhill_weather)
 	runlevels = RUNLEVEL_GAME
 	var/list/sky_levels
 	var/queued_timer
+	var/datum/weather/particle/rockhill/queued_type
 
 /datum/controller/subsystem/rockhill_weather/Initialize()
 	sky_levels = list()
@@ -338,19 +485,35 @@ SUBSYSTEM_DEF(rockhill_weather)
 	for(var/datum/weather/particle/rockhill/weather in SSweather.processing)
 		weather.process_particles()
 		weather.rockhill_tick()
+		weather.rockhill_visuals()
 
 /datum/controller/subsystem/rockhill_weather/proc/roll_forecast(datum/source, datum/rockhill_clock_step/phase/old_phase, datum/rockhill_clock_step/phase/new_phase)
 	SIGNAL_HANDLER
 	if(GLOB.rockhill_time_override || queued_timer || active_weather() || !prob(new_phase.weather_chance))
 		return
-	var/datum/weather/weather_type = pick_weight(new_phase.weathers)
+	var/datum/weather/particle/rockhill/weather_type = pick_weight(new_phase.weathers)
+	queued_type = weather_type
 	queued_timer = addtimer(CALLBACK(src, PROC_REF(start_weather), weather_type), rand(0, ROCKHILL_WEATHER_MAX_DELAY) + initial(weather_type.weather_duration_upper), TIMER_STOPPABLE)
+	var/warning = initial(weather_type.rockhill_warning)
+	if(!warning)
+		return
+	for(var/mob/living/player as anything in GLOB.alive_player_list)
+		var/area/rogue/sky = get_area(player)
+		if(istype(sky) && sky.rockhill_sunlit)
+			to_chat(player, warning)
+
+/datum/controller/subsystem/rockhill_weather/proc/sky_message()
+	var/datum/weather/particle/rockhill/active = active_weather()
+	if(active)
+		return active.rockhill_warning
+	return queued_type ? initial(queued_type.rockhill_warning) : null
 
 /datum/controller/subsystem/rockhill_weather/proc/active_weather()
 	return locate(/datum/weather/particle/rockhill) in SSweather.processing
 
 /datum/controller/subsystem/rockhill_weather/proc/start_weather(weather_type)
 	queued_timer = null
+	queued_type = null
 	SSweather.run_weather(weather_type, sky_levels)
 
 ADMIN_VERB(rockhill_run_weather, R_ADMIN|R_FUN, "Weather - Particle", "Start a Rockhill weather right now on every level under the sky.", ADMIN_CATEGORY_EVENTS)

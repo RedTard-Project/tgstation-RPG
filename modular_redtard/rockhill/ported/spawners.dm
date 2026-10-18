@@ -88,6 +88,20 @@
 		)
 	spawn_loot_count = 1
 
+/obj/effect/spawner/lootdrop/cheap_tableware_spawner
+	name = "cheap tableware spawner"
+	loot = list(
+		/obj/item/kitchen/fork/iron = 1,
+		/obj/item/kitchen/fork = 1,
+		/obj/item/kitchen/fork/tin = 1,
+		/obj/item/kitchen/spoon = 1,
+		/obj/item/kitchen/spoon/iron = 1,
+		/obj/item/kitchen/spoon/tin = 1,
+		/obj/item/reagent_containers/glass/bowl = 1,
+		/obj/item/reagent_containers/glass/bowl/iron = 1,
+		)
+	spawn_loot_count = 1
+
 /obj/effect/spawner/lootdrop/contraband
 	name = "confiscated item spawner"
 	loot = list(
@@ -1033,6 +1047,21 @@
 		/obj/item/clothing/under/roguetown/chainlegs/iron = 6,
 		/obj/item/clothing/under/roguetown/chainlegs/kilt = 3,
 		/obj/item/clothing/under/roguetown/chainlegs/iron/kilt = 6,
+		)
+	spawn_loot_count = 1
+
+/obj/effect/spawner/lootdrop/peasant_weapon_spawner
+	name = "peasant weapon spawner"
+	loot = list(
+		/obj/item/rogueweapon/flail/peasantwarflail = 3,
+		/obj/item/rogueweapon/flail/militia = 2,
+		/obj/item/rogueweapon/woodstaff/militia = 2,
+		/obj/item/rogueweapon/greataxe/militia = 2,
+		/obj/item/rogueweapon/spear/militia = 2,
+		/obj/item/rogueweapon/scythe = 3,
+		/obj/item/rogueweapon/pick/militia = 2,
+		/obj/item/rogueweapon/pick/militia/steel = 1,
+		/obj/item/rogueweapon/sword/falchion/militia = 2,
 		)
 	spawn_loot_count = 1
 

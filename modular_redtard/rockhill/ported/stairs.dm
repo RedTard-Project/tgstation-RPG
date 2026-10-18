@@ -33,6 +33,11 @@
 	icon = 'modular_redtard/rockhill/icons/obj/stairs.dmi'
 	icon_state = "desc"
 
+/obj/structure/rockhill/stairs/fancy
+	name = "stairs"
+	icon = 'modular_redtard/rockhill/icons/obj/stairs.dmi'
+	icon_state = "fancy_stairs"
+
 /obj/structure/rockhill/stairs/fancy/c
 	name = "stairs"
 	icon = 'modular_redtard/rockhill/icons/obj/stairs.dmi'

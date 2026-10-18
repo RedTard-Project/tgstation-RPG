@@ -17,6 +17,7 @@
 #include "maps\world_size.dm"
 #include "maps\other_z.dm"
 #include "maps\centcom.dm"
+#include "maps\z_depth.dm"
 #include "maps\era_limits.dm"
 #include "rockhill\_rockhill.dm"
 
@@ -53,6 +54,7 @@
 #include "maps\other_z.dm"
 #include "maps\pool.dm"
 #include "maps\world_size.dm"
+#include "maps\z_depth.dm"
 #include "rockhill\_rockhill.dm"
 #include "storage\_defines.dm"
 #include "storage\grid.dm"

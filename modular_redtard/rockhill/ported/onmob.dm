@@ -102,6 +102,14 @@
 			return list("shrink" = 0.4, "sx" = -2, "sy" = -4, "nx" = 9, "ny" = -4, "wx" = -3, "wy" = -4, "ex" = 2, "ey" = -4, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "sturn" = 0, "wturn" = 0, "eturn" = 0, "nflip" = 0, "sflip" = 0, "wflip" = 0, "eflip" = 0)
 	return ..()
 
+/obj/item/flashlight/flare/torch/lantern/copper/rogue_onmob_prop(tag)
+	switch(tag)
+		if(ROGUE_ONMOB_HIP)
+			return list("shrink" = 0.3, "sx" = -2, "sy" = -5, "nx" = 4, "ny" = -5, "wx" = 0, "wy" = -5, "ex" = 2, "ey" = -5, "nturn" = 0, "sturn" = 0, "wturn" = 0, "eturn" = 0, "nflip" = 0, "sflip" = 0, "wflip" = 0, "eflip" = 0, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0)
+		if(ROGUE_ONMOB_HAND)
+			return list("shrink" = 0.4, "sx" = -2, "sy" = -4, "nx" = 9, "ny" = -4, "wx" = -3, "wy" = -4, "ex" = 2, "ey" = -4, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "sturn" = 0, "wturn" = 0, "eturn" = 0, "nflip" = 0, "sflip" = 0, "wflip" = 0, "eflip" = 0)
+	return ..()
+
 /obj/item/flashlight/flare/torch/lantern/psycenser/rogue_onmob_prop(tag)
 	switch(tag)
 		if(ROGUE_ONMOB_HIP)
@@ -832,6 +840,14 @@
 			return list("shrink" = 0.6, "sx" = -6, "sy" = 2, "nx" = 8, "ny" = 2, "wx" = -4, "wy" = 2, "ex" = 1, "ey" = 2, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = -38, "sturn" = 300, "wturn" = 32, "eturn" = -23, "nflip" = 0, "sflip" = 100, "wflip" = 8, "eflip" = 0)
 		if(ROGUE_ONMOB_WIELDED)
 			return list("shrink" = 0.6, "sx" = 4, "sy" = -2, "nx" = -3, "ny" = -2, "wx" = -5, "wy" = -1, "ex" = 3, "ey" = -2, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = 7, "sturn" = -7, "wturn" = 16, "eturn" = -22, "nflip" = 8, "sflip" = 0, "wflip" = 8, "eflip" = 0)
+	return ..()
+
+/obj/item/rogueweapon/woodstaff/militia/rogue_onmob_prop(tag)
+	switch(tag)
+		if(ROGUE_ONMOB_HAND)
+			return list("shrink" = 0.8, "sx" = -9, "sy" = 5, "nx" = 9, "ny" = 5, "wx" = -4, "wy" = 4, "ex" = 4, "ey" = 4, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = -38, "sturn" = 37, "wturn" = 32, "eturn" = -23, "nflip" = 0, "sflip" = 8, "wflip" = 8, "eflip" = 0)
+		if(ROGUE_ONMOB_WIELDED)
+			return list("shrink" = 0.8, "sx" = 8, "sy" = 0, "nx" = -1, "ny" = 0, "wx" = -5, "wy" = -1, "ex" = 3, "ey" = 0, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = 7, "sturn" = -7, "wturn" = 16, "eturn" = -22, "nflip" = 8, "sflip" = 0, "wflip" = 8, "eflip" = 0)
 	return ..()
 
 /obj/item/rope/inqarticles/inquirycord/rogue_onmob_prop(tag)

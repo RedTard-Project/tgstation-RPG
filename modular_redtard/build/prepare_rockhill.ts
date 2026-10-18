@@ -23,6 +23,8 @@ const DECAL_PREFIX = '/obj/effect/decal';
 const SPAWN_ROOT = '/obj/effect/landmark/start';
 const LATEJOIN_TARGET = '/obj/effect/landmark/latejoin';
 const AREA_FLAGS = 'modular_redtard/rockhill/ported/areas.json';
+const TEMPLATE_DIR = 'dungeon_generator';
+const NO_SKY_TRAIT = 'NoDayorWeather';
 const TRANSPARENT_TURFS = ['/turf/open/transparent', '/turf/closed/transparent'];
 const KEY_ALPHABET = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
@@ -31,7 +33,7 @@ type Rule = { prefix: string; to?: string; rebase?: string; drop?: boolean; exac
 type TitleSource = { file: string; name: string; kind: 'png' | 'dmi'; origin: string };
 
 type Config = {
-  source: { name: string; project: string; url: string; repository: string; branch: string; map: string; map_json?: string };
+  source: { name: string; project: string; url: string; repository: string; branch: string; map: string; map_json?: string; always_other_z?: string[]; templates?: string };
   title: { prefix: string; sources: TitleSource[] };
   output: { map: string; map_json: string; title_dir: string };
   replacements: Rule[];
@@ -46,7 +48,7 @@ type Sunlight = { levels: string[]; tiles: number; models: number };
 
 type Traits = Record<string, unknown>;
 
-type MapSource = { label: string; name: string; url: string; output: string; traits: Traits[] };
+type MapSource = { label: string; name: string; url: string; output: string; traits: Traits[]; template?: boolean };
 
 type Converted = { source: MapSource; header: string[]; models: Model[]; levels: string[] };
 
@@ -74,7 +76,7 @@ export async function prepareRockhill(): Promise<void> {
   fs.mkdirSync(TMP_DIR, { recursive: true });
   const mapJson = JSON.parse(fs.readFileSync(path.join(SHARED_DIR, 'rockhill.json'), 'utf-8'));
   const station: MapSource = { label: 'map', name: config.source.name, url: config.source.url, output: config.output.map, traits: mapJson.traits };
-  const sources = [station, ...(await extraMaps(config, mapJson.traits))];
+  const sources = [station, ...(await extraMaps(config, mapJson.traits)), ...templateMaps(config)];
 
   const declarations = declaredTypes();
   const declared = declarations.types;
@@ -110,12 +112,13 @@ export async function prepareRockhill(): Promise<void> {
 
   const extraDir = path.posix.join(path.posix.dirname(config.output.map), 'otherz');
   fs.rmSync(extraDir, { recursive: true, force: true });
+  fs.rmSync(path.posix.join(path.posix.dirname(config.output.map), TEMPLATE_DIR), { recursive: true, force: true });
   const written: Written[] = converted.map((map) => {
     const zLevels = levelCount(map.levels);
-    if (map.source !== station && map.source.traits.length !== zLevels) {
+    if (map.source !== station && !map.source.template && map.source.traits.length !== zLevels) {
       throw new Error(`${map.source.url} has ${zLevels} z-level(s) but its Ratwood map config lists ${map.source.traits.length} trait set(s)`);
     }
-    const sunlight = applySunlight(map.models, map.levels, declared);
+    const sunlight = map.source.template || map.source.traits.some((level) => level[NO_SKY_TRAIT]) ? { levels: map.levels, tiles: 0, models: 0 } : applySunlight(map.models, map.levels, declared);
     writeMap(map.source.output, map.header, map.models, sunlight.levels);
     return { source: map.source, sunlight, size: mapSize(sunlight.levels), levels: zLevels, usage: tileUsage(map.models, sunlight.levels) };
   });
@@ -129,7 +132,7 @@ export async function prepareRockhill(): Promise<void> {
 
   const size = written[0].size;
   mapJson.world_size = [size.width, size.height];
-  mapJson.other_z = written.slice(1).map((map) => ({
+  mapJson.other_z = written.slice(1).filter((map) => !map.source.template).map((map) => ({
     name: map.source.name,
     map_path: path.posix.relative('_maps', path.posix.dirname(map.source.output)),
     map_file: path.posix.basename(map.source.output),
@@ -154,6 +157,7 @@ async function extraMaps(config: Config, stationTraits: Traits[]): Promise<MapSo
   }
   const raw = config.source.url.slice(0, config.source.url.length - config.source.map.length);
   const world = JSON.parse(await downloadText(raw + config.source.map_json, 'map list')) as { other_z?: string[] };
+  world.other_z = [...(world.other_z || []), ...(config.source.always_other_z || [])];
   const level = (index: number): Traits => {
     const template = stationTraits[index === 0 ? 0 : Math.min(1, stationTraits.length - 1)] || {};
     return Object.fromEntries(Object.entries(template).filter(([key]) => key !== 'Up' && key !== 'Down'));
@@ -172,6 +176,22 @@ async function extraMaps(config: Config, stationTraits: Traits[]): Promise<MapSo
     });
   }
   return out;
+}
+
+function templateMaps(config: Config): MapSource[] {
+  if (!config.source.templates || !fs.existsSync(config.source.templates)) {
+    return [];
+  }
+  const raw = config.source.url.slice(0, config.source.url.length - config.source.map.length);
+  const manifest = JSON.parse(fs.readFileSync(config.source.templates, 'utf-8')) as Array<{ source: string; output: string }>;
+  return manifest.map((entry) => ({
+    label: path.posix.basename(entry.source, '.dmm'),
+    name: path.posix.basename(entry.source, '.dmm'),
+    url: raw + entry.source.split('/').map(encodeURIComponent).join('/'),
+    output: entry.output,
+    traits: [],
+    template: true,
+  }));
 }
 
 function writeMap(output: string, header: string[], models: Model[], levels: string[]): void {
@@ -518,7 +538,8 @@ function withoutStacking(objects: Pop[], problems: Problems): Pop[] {
 
 export function runBootstrapPython(args: string[]): { status: number | null; output: string } {
   const python = process.platform === 'win32' ? 'tools\\bootstrap\\python.bat' : 'tools/bootstrap/python';
-  const result = spawnSync(python, args, { encoding: 'utf-8', shell: process.platform === 'win32' });
+  const quoted = process.platform === 'win32' ? args.map((arg) => (/\s/.test(arg) ? `"${arg}"` : arg)) : args;
+  const result = spawnSync(python, quoted, { encoding: 'utf-8', shell: process.platform === 'win32' });
   return { status: result.status, output: `${result.stdout || ''}${result.stderr || ''}`.trim() };
 }
 
@@ -718,8 +739,9 @@ function writeReport(config: Config, tally: Record<string, Tally>, problems: Pro
   const report = path.join(path.dirname(config.output.map), 'report.md');
   fs.writeFileSync(report, `${lines.join('\n')}\n`);
   const sum = (field: keyof Tally) => Object.values(tally).reduce((total, t) => total + t[field], 0);
-  const extras = maps.slice(1).map((map) => `${map.source.name} ${map.size.width}x${map.size.height}x${map.levels}`).join(', ');
-  console.log(`modular_redtard: ${config.source.name} ready (${station.size.width}x${station.size.height}${extras ? `; other z: ${extras}` : ''}): ${sum('kept')} kept, ${sum('replaced')} replaced, ${sum('dropped')} dropped, ${sum('missing')} missing, ${problems.stacked} stacked duplicates removed; ${spawns} spawn and ${latejoins} latejoin tiles. Report: ${report}`);
+  const extras = maps.slice(1).filter((map) => !map.source.template).map((map) => `${map.source.name} ${map.size.width}x${map.size.height}x${map.levels}`).join(', ');
+  const templates = maps.filter((map) => map.source.template).length;
+  console.log(`modular_redtard: ${config.source.name} ready (${station.size.width}x${station.size.height}${extras ? `; other z: ${extras}` : ''}${templates ? `; ${templates} dungeon templates` : ''}):${sum('kept')} kept, ${sum('replaced')} replaced, ${sum('dropped')} dropped, ${sum('missing')} missing, ${problems.stacked} stacked duplicates removed; ${spawns} spawn and ${latejoins} latejoin tiles. Report: ${report}`);
 }
 
 if (import.meta.main) {

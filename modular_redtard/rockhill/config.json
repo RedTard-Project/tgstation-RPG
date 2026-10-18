@@ -20,8 +20,16 @@
 			"/sound/foley/",
 			"/sound/items/",
 			"/_maps/rockhill.json",
-			"/_maps/map_files/otherz/"
-		]
+			"/_maps/map_files/otherz/",
+			"/sound/weather/rain/",
+			"/sound/weather/snow/",
+			"/sound/weather/sand/",
+			"/_maps/dungeon_generator/"
+		],
+		"always_other_z": [
+			"_maps/map_files/otherz/dungeon.json"
+		],
+		"templates": "modular_redtard/rockhill/ported/dungeon_templates.json"
 	},
 	"replacements": [
 		{
@@ -384,6 +392,49 @@
 					"icon_state"
 				]
 			}
+		},
+		{
+			"prefix": "/obj/structure/dungeon_entry",
+			"rebase": "/obj/structure/rockhill/dungeon_entry",
+			"port": {
+				"file": "dungeon_links.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"pixel_x",
+					"dungeon_id",
+					"target_exit_id",
+					"claim_free_exit"
+				]
+			}
+		},
+		{
+			"prefix": "/obj/structure/dungeon_exit",
+			"rebase": "/obj/structure/rockhill/dungeon_exit",
+			"port": {
+				"file": "dungeon_links.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"dungeon_id",
+					"target_exit_id"
+				]
+			}
+		},
+		{
+			"prefix": "/obj/effect/dungeon_directional_helper",
+			"rebase": "/obj/effect/rockhill/dungeon_helper",
+			"port": {
+				"file": "dungeon_links.dm",
+				"vars": [
+					"dir",
+					"top"
+				]
+			}
 		}
 	],
 	"port": {
@@ -395,12 +446,35 @@
 				],
 				"vars": [
 					"name",
-					"outdoors"
+					"outdoors",
+					"sound_environment",
+					"min_ambience_cooldown",
+					"max_ambience_cooldown",
+					"rockhill_area_text",
+					"rockhill_music_enabled",
+					"rockhill_loops_enabled"
 				],
 				"true_only": [
 					"outdoors"
 				],
-				"sunlit": true
+				"sunlit": true,
+				"rename": {
+					"sound_environment": "soundenv",
+					"rockhill_area_text": "first_time_text",
+					"rockhill_music_enabled": "we_droning_here",
+					"rockhill_loops_enabled": "we_looping_here"
+				},
+				"sound_vars": {
+					"rockhill_music": "droning_sound",
+					"rockhill_music_dawn": "droning_sound_dawn",
+					"rockhill_music_dusk": "droning_sound_dusk",
+					"rockhill_music_night": "droning_sound_night",
+					"rockhill_loop_day": "ambientsounds",
+					"rockhill_loop_night": "ambientnight",
+					"rockhill_oneshot_day": "spookysounds",
+					"rockhill_oneshot_night": "spookynight"
+				},
+				"runtime_sounds": "modular_redtard/rockhill/sound/area"
 			},
 			{
 				"file": "turfs_open.dm",
@@ -574,7 +648,8 @@
 					"light_color": "bulb_colour"
 				},
 				"runtime_look": true,
-				"placement": true
+				"placement": true,
+				"sprite_checks": true
 			},
 			{
 				"file": "decals.dm",
@@ -818,8 +893,41 @@
 		"extra_sounds": [
 			"sound/misc/newday.ogg",
 			"sound/misc/midday.ogg",
-			"sound/misc/nightfall.ogg"
+			"sound/misc/nightfall.ogg",
+			"sound/misc/area.ogg",
+			"sound/weather/rain/weather_rain.ogg",
+			"sound/weather/rain/weather_rain_indoors.ogg",
+			"sound/weather/rain/weather_storm.ogg",
+			"sound/weather/snow/weather_snow.ogg",
+			"sound/weather/sand/weather_sandstorm.ogg",
+			"sound/weather/rain/wind_1.ogg",
+			"sound/weather/rain/wind_2.ogg",
+			"sound/weather/rain/wind_3.ogg",
+			"sound/weather/rain/wind_4.ogg",
+			"sound/weather/rain/wind_5.ogg",
+			"sound/weather/rain/wind_6.ogg",
+			"sound/weather/rain/thunder_1.ogg",
+			"sound/weather/rain/thunder_2.ogg",
+			"sound/weather/rain/thunder_3.ogg",
+			"sound/weather/rain/thunder_4.ogg",
+			"sound/weather/rain/thunder_5.ogg",
+			"sound/weather/rain/thunder_6.ogg",
+			"sound/foley/ladder.ogg"
 		],
+		"extra_files": {
+			"strings/calendar_events.json": "modular_redtard/rockhill/strings/calendar_events.json",
+			"strings/rt/timechangetips.txt": "modular_redtard/rockhill/strings/timechangetips.txt",
+			"tgui/packages/tgui/interfaces/Calendar.tsx": "tgui/packages/tgui/interfaces/Calendar.tsx",
+			"tgui/packages/tgui/interfaces/common/parchment.tsx": "tgui/packages/tgui/interfaces/common/parchment.tsx",
+			"tgui/packages/tgui/interfaces/Calendar/DayCell.tsx": "tgui/packages/tgui/interfaces/Calendar/DayCell.tsx",
+			"tgui/packages/tgui/interfaces/Calendar/DayDetail.tsx": "tgui/packages/tgui/interfaces/Calendar/DayDetail.tsx",
+			"tgui/packages/tgui/interfaces/Calendar/EventBar.tsx": "tgui/packages/tgui/interfaces/Calendar/EventBar.tsx",
+			"tgui/packages/tgui/interfaces/Calendar/MonthGrid.tsx": "tgui/packages/tgui/interfaces/Calendar/MonthGrid.tsx",
+			"tgui/packages/tgui/interfaces/Calendar/Nav.tsx": "tgui/packages/tgui/interfaces/Calendar/Nav.tsx",
+			"tgui/packages/tgui/interfaces/Calendar/WeekdayHeader.tsx": "tgui/packages/tgui/interfaces/Calendar/WeekdayHeader.tsx",
+			"tgui/packages/tgui/interfaces/Calendar/parchment_calendar.ts": "tgui/packages/tgui/interfaces/Calendar/parchment_calendar.ts",
+			"tgui/packages/tgui/interfaces/Calendar/shared.ts": "tgui/packages/tgui/interfaces/Calendar/shared.ts"
+		},
 		"female_worn_slots": [
 			"ITEM_SLOT_PANTS",
 			"ITEM_SLOT_SHIRT",
@@ -846,6 +954,23 @@
 				"attack_hand_interact": "attack_hand_interact",
 				"rogue_not_while_equipped": "not_while_equipped"
 			}
+		},
+		"dungeon_templates": {
+			"prefix": "/datum/map_template/dungeon",
+			"output_dir": "_maps/map_files/rockhill/dungeon_generator",
+			"file": "dungeon_templates.dm",
+			"manifest": "modular_redtard/rockhill/ported/dungeon_templates.json",
+			"vars": [
+				"name",
+				"width",
+				"height",
+				"rarity",
+				"type_weight",
+				"north_offset",
+				"south_offset",
+				"east_offset",
+				"west_offset"
+			]
 		},
 		"reskin_vars": {
 			"initial_gas_mix": "OPENTURF_DEFAULT_ATMOS",

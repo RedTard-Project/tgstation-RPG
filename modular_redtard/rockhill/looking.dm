@@ -59,6 +59,6 @@
 		to_chat(src, span_warning("A ceiling above my head."))
 		return
 	changeNext_move(CLICK_CD_LOOK_UP)
-	var/datum/weather/active = SSrockhill_weather.initialized ? SSrockhill_weather.active_weather() : null
-	to_chat(src, span_warning(active ? active.desc : "There is nothing special to say about this weather."))
+	var/sky_message = SSrockhill_weather.initialized ? SSrockhill_weather.sky_message() : null
+	to_chat(src, sky_message || span_warning("There is nothing special to say about this weather."))
 	rockhill_time_change()

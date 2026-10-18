@@ -93,6 +93,13 @@
 	plane = ABOVE_GAME_PLANE
 	layer = WALL_OBJ_LAYER
 
+/obj/effect/decal/cleanable/food/mess
+	name = "mess"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/effects/tomatodecal.dmi'
+	icon_state = "tomato_floor1"
+	color = "#ab9d9d"
+
 /obj/effect/decal/cleanable/roguerune/arcyne/enchantment
 	name = "Imbuement Array"
 	desc = "arcane symbols pulse upon the ground..."
@@ -255,6 +262,11 @@
 	icon_state = "ratbones"
 	pixel_x = -16
 	pixel_y = -8
+
+/obj/effect/decal/remains/cabbit
+	name = "remains"
+	icon = 'modular_redtard/rockhill/icons/roguetown/mob/cabbit.dmi'
+	icon_state = "cabbit_remains"
 
 /obj/effect/decal/remains/fox
 	name = "remains"

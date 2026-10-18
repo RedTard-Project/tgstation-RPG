@@ -260,6 +260,13 @@
 	health = 600
 	maxHealth = 600
 
+/mob/living/simple_animal/hostile/retaliate/rogue/mimic
+	name = "chest"
+	icon = 'modular_redtard/rockhill/icons/roguetown/mob/monster/mimic.dmi'
+	icon_state = "mimicopen"
+	icon_living = "mimicopen"
+	icon_dead = "mimicdead"
+
 /mob/living/simple_animal/hostile/retaliate/rogue/minotaur
 	name = "Minotaur"
 	icon = 'modular_redtard/rockhill/icons/modular_hearthstone/icons/mob/newminotaur.dmi'
@@ -330,6 +337,17 @@
 	icon_dead = "saiga_dead"
 	health = 156
 	maxHealth = 156
+	pixel_x = -8
+
+/mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigabuck
+	name = "saiga buck"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/mob/monster/saiga.dmi'
+	icon_state = "buck"
+	icon_living = "buck"
+	icon_dead = "buck_dead"
+	health = 400
+	maxHealth = 400
 	pixel_x = -8
 
 /mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigabuck/tame

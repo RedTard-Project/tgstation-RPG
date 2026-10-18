@@ -22,7 +22,7 @@
 
 /area/rogue/Initialize(mapload)
 	. = ..()
-	ambientsounds = null
+	rockhill_refresh_oneshots()
 
 /turf/open/floor/rockhill
 	name = "ground"

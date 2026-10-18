@@ -79,6 +79,18 @@
 	light_color = "#da5e21"
 	layer = 2.8
 
+/obj/machinery/light/rogue/campfire/pyre
+	name = "pyre"
+	desc = "Oily smoke curls from a weak sputtering flame."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tallstructure.dmi'
+	icon_state = "pyre1"
+	density = FALSE
+	light_range = 10
+	light_power = 1
+	light_color = "#da5e21"
+	dir = NORTH
+	layer = BELOW_MOB_LAYER
+
 /obj/machinery/light/rogue/candle
 	name = "candles"
 	desc = "Tiny flames flicker to the slightest breeze and offer enough light to see."
@@ -300,6 +312,17 @@
 	light_color = "#f02929"
 	layer = BELOW_MOB_LAYER
 
+/obj/machinery/light/rogue/candle/weak
+	name = "candles"
+	desc = "Tiny flames flicker to the slightest breeze and offer enough light to see."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi'
+	icon_state = "wallcandle1"
+	pixel_y = 32
+	light_range = 8
+	light_power = 1
+	light_color = "#f9ad80"
+	layer = BELOW_MOB_LAYER
+
 /obj/machinery/light/rogue/candle/weak/l
 	name = "candles"
 	desc = "Tiny flames flicker to the slightest breeze and offer enough light to see."
@@ -490,6 +513,17 @@
 	light_color = "#f9ad80"
 	plane = ABOVE_GAME_PLANE
 	layer = WALL_OBJ_LAYER
+
+/obj/machinery/light/rogue/oven
+	name = "oven"
+	desc = "With enough room for up to five whole pies, this humble yet wondrous invention has fed civilization since time immemorial."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi'
+	icon_state = "oven1"
+	density = FALSE
+	light_range = 8
+	light_power = 1
+	light_color = "#f9ad80"
+	layer = BELOW_MOB_LAYER
 
 /obj/machinery/light/rogue/oven/east
 	name = "oven"

@@ -13,6 +13,9 @@
 /mob/living/carbon/human/species/goblin/moon
 	name = "moon goblin"
 
+/mob/living/carbon/human/species/goblin/npc
+	name = "goblin"
+
 /mob/living/carbon/human/species/goblin/npc/ambush
 	name = "goblin"
 
@@ -82,10 +85,28 @@
 /mob/living/carbon/human/species/skeleton/npc/hard
 	name = "skeleton"
 
+/mob/living/carbon/human/species/skeleton/npc/hard/noequip
+	name = "skeleton"
+
+/mob/living/carbon/human/species/skeleton/npc/hardspread
+	name = "skeleton"
+
+/mob/living/carbon/human/species/skeleton/npc/hardspread/lich
+	name = "skeleton"
+
 /mob/living/carbon/human/species/skeleton/npc/medium
 	name = "skeleton"
 
+/mob/living/carbon/human/species/skeleton/npc/medium/noequip
+	name = "skeleton"
+
+/mob/living/carbon/human/species/skeleton/npc/mediumspread
+	name = "skeleton"
+
 /mob/living/carbon/human/species/skeleton/npc/miner
+	name = "skeleton"
+
+/mob/living/carbon/human/species/skeleton/npc/no_equipment
 	name = "skeleton"
 
 /mob/living/carbon/human/species/skeleton/npc/pirate
