@@ -984,7 +984,7 @@ Ratwood revision: `eafb26b3220a6d1985625c0d79b5ba1edf2002bc` (2026-10-17).
 | `/obj/effect/lily_petal` | 1 |
 | `/obj/effect/lily_petal/three` | 1 |
 
-## items.dm (1730 types)
+## items.dm (2039 types)
 
 | Type | Tiles |
 |---|---|
@@ -2256,9 +2256,13 @@ Ratwood revision: `eafb26b3220a6d1985625c0d79b5ba1edf2002bc` (2026-10-17).
 | `/obj/item/alch/taraxacum` | 0 |
 | `/obj/item/alch/urtica` | 0 |
 | `/obj/item/alch/valeriana` | 0 |
+| `/obj/item/ammo_casing/caseless/rogue/bolt/water` | 0 |
+| `/obj/item/ammo_casing/caseless/rogue/heavy_bolt/tempest` | 0 |
 | `/obj/item/bait/leech` | 0 |
 | `/obj/item/barometer` | 0 |
 | `/obj/item/bmbstrap` | 0 |
+| `/obj/item/bmbstrap/firebomb` | 0 |
+| `/obj/item/bomb/smoke` | 0 |
 | `/obj/item/book/granter/spell/blackstone/bonechill` | 0 |
 | `/obj/item/book/granter/spell/blackstone/enlarge` | 0 |
 | `/obj/item/book/granter/spell/blackstone/ensnare` | 0 |
@@ -2278,81 +2282,167 @@ Ratwood revision: `eafb26b3220a6d1985625c0d79b5ba1edf2002bc` (2026-10-17).
 | `/obj/item/book/granter/spell/blackstone/skeleton` | 0 |
 | `/obj/item/book/granter/spell/blackstone/skeleton/lesser` | 0 |
 | `/obj/item/book/granter/spell/blackstone/spitfire` | 0 |
+| `/obj/item/book/rogue/secret/oathmarked` | 0 |
 | `/obj/item/book/rogue/swatchbook` | 0 |
 | `/obj/item/book/spellbook` | 0 |
 | `/obj/item/bouquet/rosa` | 0 |
 | `/obj/item/bouquet/salvia` | 0 |
 | `/obj/item/carvedgem/onyxa/snake` | 0 |
 | `/obj/item/carvedgem/onyxa/spider` | 0 |
+| `/obj/item/carvedgem/rose/rawrose` | 0 |
 | `/obj/item/carvedgem/rose/statue/baotha` | 0 |
 | `/obj/item/clothing/armor/gambeson/tailcoat` | 0 |
+| `/obj/item/clothing/armor/leather/jacket/leathercoat/duelcoat` | 0 |
 | `/obj/item/clothing/cloak/absolutionistrobe` | 0 |
 | `/obj/item/clothing/cloak/apron` | 0 |
 | `/obj/item/clothing/cloak/apron/waist/brown` | 0 |
 | `/obj/item/clothing/cloak/black_cloak` | 0 |
 | `/obj/item/clothing/cloak/cape` | 0 |
+| `/obj/item/clothing/cloak/cape/inquisitor` | 0 |
+| `/obj/item/clothing/cloak/cape/nomad` | 0 |
+| `/obj/item/clothing/cloak/cape/oathmarked` | 0 |
+| `/obj/item/clothing/cloak/cape/puritan` | 0 |
+| `/obj/item/clothing/cloak/cape/purple` | 0 |
 | `/obj/item/clothing/cloak/captain` | 0 |
 | `/obj/item/clothing/cloak/citywatchcaptain` | 0 |
 | `/obj/item/clothing/cloak/darkcloak/bear/wardenmaster` | 0 |
+| `/obj/item/clothing/cloak/darkcloak/minotaur/red` | 0 |
+| `/obj/item/clothing/cloak/eastcloak1` | 0 |
+| `/obj/item/clothing/cloak/forrestercloak` | 0 |
+| `/obj/item/clothing/cloak/forrestercloak/snow` | 0 |
+| `/obj/item/clothing/cloak/half/brown` | 0 |
+| `/obj/item/clothing/cloak/half/rider/red` | 0 |
 | `/obj/item/clothing/cloak/half/vet` | 0 |
 | `/obj/item/clothing/cloak/holysee` | 0 |
 | `/obj/item/clothing/cloak/lordcloak/baronycloak` | 0 |
+| `/obj/item/clothing/cloak/ordinatorcape` | 0 |
+| `/obj/item/clothing/cloak/psyaltrist` | 0 |
+| `/obj/item/clothing/cloak/psydontabard/alt` | 0 |
+| `/obj/item/clothing/cloak/raincloak/furcloak/brown` | 0 |
 | `/obj/item/clothing/cloak/raincloak/green` | 0 |
 | `/obj/item/clothing/cloak/stabard` | 0 |
 | `/obj/item/clothing/cloak/stabard/black` | 0 |
+| `/obj/item/clothing/cloak/stabard/dungeon` | 0 |
+| `/obj/item/clothing/cloak/stabard/grenzelmage` | 0 |
 | `/obj/item/clothing/cloak/stabard/surcoat/bailiff` | 0 |
 | `/obj/item/clothing/cloak/stabard/surcoat/councillor` | 0 |
 | `/obj/item/clothing/cloak/tabard/knight` | 0 |
 | `/obj/item/clothing/cloak/tabard/knight/guard` | 0 |
 | `/obj/item/clothing/cloak/tabard/retinue/baronycloak` | 0 |
+| `/obj/item/clothing/cloak/templar/psydon` | 0 |
+| `/obj/item/clothing/cloak/thief_cloak/yoruku` | 0 |
+| `/obj/item/clothing/cloak/volfmantle` | 0 |
 | `/obj/item/clothing/gloves/roguetown/angle/atgervi` | 0 |
 | `/obj/item/clothing/gloves/roguetown/angle/grenzelgloves/blacksmith` | 0 |
+| `/obj/item/clothing/gloves/roguetown/angle/grenzelgloves/freifechter` | 0 |
+| `/obj/item/clothing/gloves/roguetown/angle/pontifex` | 0 |
+| `/obj/item/clothing/gloves/roguetown/bandages` | 0 |
 | `/obj/item/clothing/gloves/roguetown/bandages/pugilist` | 0 |
 | `/obj/item/clothing/gloves/roguetown/chain/ancient` | 0 |
+| `/obj/item/clothing/gloves/roguetown/eastgloves1` | 0 |
+| `/obj/item/clothing/gloves/roguetown/eastgloves2` | 0 |
 | `/obj/item/clothing/gloves/roguetown/fingerless` | 0 |
+| `/obj/item/clothing/gloves/roguetown/fingerless/shadowgloves/elflock` | 0 |
+| `/obj/item/clothing/gloves/roguetown/otavan` | 0 |
+| `/obj/item/clothing/gloves/roguetown/plate/atgervi` | 0 |
 | `/obj/item/clothing/gloves/roguetown/plate/graggar` | 0 |
 | `/obj/item/clothing/gloves/roguetown/plate/holysee` | 0 |
+| `/obj/item/clothing/gloves/roguetown/plate/iron/gronn` | 0 |
 | `/obj/item/clothing/gloves/roguetown/plate/matthios` | 0 |
+| `/obj/item/clothing/gloves/roguetown/plate/oathmarked` | 0 |
+| `/obj/item/clothing/gloves/roguetown/plate/shadowgauntlets` | 0 |
 | `/obj/item/clothing/head/inqarticles/blackbag` | 0 |
 | `/obj/item/clothing/head/roguetown/archercap` | 0 |
 | `/obj/item/clothing/head/roguetown/armingcap` | 0 |
 | `/obj/item/clothing/head/roguetown/bardhat` | 0 |
 | `/obj/item/clothing/head/roguetown/brimmed` | 0 |
+| `/obj/item/clothing/head/roguetown/bucklehat` | 0 |
 | `/obj/item/clothing/head/roguetown/chaperon/brown` | 0 |
+| `/obj/item/clothing/head/roguetown/chaperon/greyscale/shepherd` | 0 |
 | `/obj/item/clothing/head/roguetown/chaperon/noble/bailiff` | 0 |
 | `/obj/item/clothing/head/roguetown/chaperon/noble/guildmaster` | 0 |
 | `/obj/item/clothing/head/roguetown/chaperon/noble/hand` | 0 |
+| `/obj/item/clothing/head/roguetown/chef` | 0 |
 | `/obj/item/clothing/head/roguetown/fedora` | 0 |
+| `/obj/item/clothing/head/roguetown/grenzelhofthat` | 0 |
+| `/obj/item/clothing/head/roguetown/headband` | 0 |
+| `/obj/item/clothing/head/roguetown/headband/bloodied` | 0 |
 | `/obj/item/clothing/head/roguetown/headband/monk` | 0 |
+| `/obj/item/clothing/head/roguetown/headband/red` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/bascinet` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/bascinet/antler` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/bascinet/atgervi` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/bascinet/etruscan` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/bascinet/pigface` | 0 |
+| `/obj/item/clothing/head/roguetown/helmet/blacksteel/psychains` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/blacksteel/psythorns` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/citywatch/captain` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/heavy` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/heavy/absolver` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/heavy/bucket` | 0 |
+| `/obj/item/clothing/head/roguetown/helmet/heavy/bucket/gronn` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/heavy/captain` | 0 |
+| `/obj/item/clothing/head/roguetown/helmet/heavy/dwarven/smith` | 0 |
+| `/obj/item/clothing/head/roguetown/helmet/heavy/elven_helm/light` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/heavy/graggar` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/heavy/guard` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/heavy/guard/ancient` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/heavy/holysee` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/heavy/matthios` | 0 |
+| `/obj/item/clothing/head/roguetown/helmet/heavy/oathmarked` | 0 |
+| `/obj/item/clothing/head/roguetown/helmet/heavy/ordinatorhelm` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/heavy/pestran` | 0 |
+| `/obj/item/clothing/head/roguetown/helmet/heavy/psydonbarbute` | 0 |
+| `/obj/item/clothing/head/roguetown/helmet/heavy/sheriff` | 0 |
+| `/obj/item/clothing/head/roguetown/helmet/heavy/volfplate` | 0 |
+| `/obj/item/clothing/head/roguetown/helmet/heavy/volfplate/berserker` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/horned` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/kettle/` | 0 |
+| `/obj/item/clothing/head/roguetown/helmet/kettle/minershelm` | 0 |
+| `/obj/item/clothing/head/roguetown/helmet/leather/chapeau` | 0 |
+| `/obj/item/clothing/head/roguetown/helmet/leather/shaman_hood` | 0 |
+| `/obj/item/clothing/head/roguetown/helmet/nomadhelmet` | 0 |
+| `/obj/item/clothing/head/roguetown/helmet/otavan` | 0 |
+| `/obj/item/clothing/head/roguetown/helmet/sallet/beastskull` | 0 |
+| `/obj/item/clothing/head/roguetown/helmet/sallet/iron` | 0 |
+| `/obj/item/clothing/head/roguetown/helmet/sallet/shishak` | 0 |
+| `/obj/item/clothing/head/roguetown/helmet/sallet/warden/bear` | 0 |
+| `/obj/item/clothing/head/roguetown/helmet/tricorn` | 0 |
 | `/obj/item/clothing/head/roguetown/inqhat` | 0 |
 | `/obj/item/clothing/head/roguetown/knitcap` | 0 |
+| `/obj/item/clothing/head/roguetown/mentorhat` | 0 |
+| `/obj/item/clothing/head/roguetown/necromhood` | 0 |
 | `/obj/item/clothing/head/roguetown/nightman` | 0 |
+| `/obj/item/clothing/head/roguetown/paddedcap` | 0 |
+| `/obj/item/clothing/head/roguetown/papakha` | 0 |
+| `/obj/item/clothing/head/roguetown/puritan/armored` | 0 |
 | `/obj/item/clothing/head/roguetown/roguehood/black` | 0 |
+| `/obj/item/clothing/head/roguetown/roguehood/hierophant` | 0 |
+| `/obj/item/clothing/head/roguetown/roguehood/pontifex` | 0 |
+| `/obj/item/clothing/head/roguetown/roguehood/psydon/confessor` | 0 |
 | `/obj/item/clothing/head/roguetown/roguehood/random` | 0 |
+| `/obj/item/clothing/head/roguetown/roguehood/red` | 0 |
+| `/obj/item/clothing/head/roguetown/roguehood/reinforced` | 0 |
+| `/obj/item/clothing/head/roguetown/roguehood/reinforced/newmoon` | 0 |
+| `/obj/item/clothing/head/roguetown/roguehood/shalal/hijab/black` | 0 |
+| `/obj/item/clothing/head/roguetown/roguehood/shalal/hijab/yoruku` | 0 |
+| `/obj/item/clothing/head/roguetown/roguehood/shalal/hijab/zyb` | 0 |
+| `/obj/item/clothing/head/roguetown/roguehood/shalal/nomad` | 0 |
+| `/obj/item/clothing/head/roguetown/roguehood/shalal/purple` | 0 |
+| `/obj/item/clothing/head/roguetown/roguehood/sojourner` | 0 |
+| `/obj/item/clothing/head/roguetown/roguehood/warden` | 0 |
 | `/obj/item/clothing/head/roguetown/shawl` | 0 |
+| `/obj/item/clothing/head/roguetown/spellcasterhat` | 0 |
 | `/obj/item/clothing/head/roguetown/strawhat` | 0 |
 | `/obj/item/clothing/head/roguetown/witchhat/old` | 0 |
 | `/obj/item/clothing/head/roguetown/wizhat/black` | 0 |
 | `/obj/item/clothing/mask/cigarette/rollie` | 0 |
+| `/obj/item/clothing/mask/cigarette/rollie/nicotine/cheroot` | 0 |
+| `/obj/item/clothing/mask/rogue/eyepatch` | 0 |
+| `/obj/item/clothing/mask/rogue/facemask/` | 0 |
+| `/obj/item/clothing/mask/rogue/facemask/ancient` | 0 |
+| `/obj/item/clothing/mask/rogue/facemask/ancient/mad_touched` | 0 |
+| `/obj/item/clothing/mask/rogue/facemask/bronze` | 0 |
 | `/obj/item/clothing/mask/rogue/facemask/carved/ambermask` | 0 |
 | `/obj/item/clothing/mask/rogue/facemask/carved/coralmask` | 0 |
 | `/obj/item/clothing/mask/rogue/facemask/carved/jademask` | 0 |
@@ -2362,14 +2452,37 @@ Ratwood revision: `eafb26b3220a6d1985625c0d79b5ba1edf2002bc` (2026-10-17).
 | `/obj/item/clothing/mask/rogue/facemask/carved/rosemask` | 0 |
 | `/obj/item/clothing/mask/rogue/facemask/carved/turqmask` | 0 |
 | `/obj/item/clothing/mask/rogue/facemask/shadowfacemask` | 0 |
+| `/obj/item/clothing/mask/rogue/facemask/steel` | 0 |
+| `/obj/item/clothing/mask/rogue/facemask/steel/confessor` | 0 |
+| `/obj/item/clothing/mask/rogue/facemask/steel/kazengun` | 0 |
 | `/obj/item/clothing/mask/rogue/facemask/yoruku_oni` | 0 |
 | `/obj/item/clothing/mask/rogue/goblin_mask` | 0 |
+| `/obj/item/clothing/mask/rogue/lordmask` | 0 |
+| `/obj/item/clothing/mask/rogue/lordmask/naledi` | 0 |
+| `/obj/item/clothing/mask/rogue/lordmask/naledi/sojourner` | 0 |
+| `/obj/item/clothing/mask/rogue/lordmask/zizite` | 0 |
+| `/obj/item/clothing/mask/rogue/ragmask` | 0 |
+| `/obj/item/clothing/mask/rogue/ragmask/nomad` | 0 |
+| `/obj/item/clothing/mask/rogue/sack/psy/arbiter` | 0 |
+| `/obj/item/clothing/mask/rogue/shepherd/shadowmask/delf` | 0 |
 | `/obj/item/clothing/mask/rogue/spectacles` | 0 |
+| `/obj/item/clothing/mask/rogue/spectacles/duelist` | 0 |
 | `/obj/item/clothing/mask/rogue/spectacles/inq/spawnpair` | 0 |
+| `/obj/item/clothing/mask/rogue/wildguard` | 0 |
 | `/obj/item/clothing/neck/roguetown/bevor` | 0 |
+| `/obj/item/clothing/neck/roguetown/bevor/iron` | 0 |
+| `/obj/item/clothing/neck/roguetown/bevor/zizo` | 0 |
+| `/obj/item/clothing/neck/roguetown/chaincoif/` | 0 |
 | `/obj/item/clothing/neck/roguetown/chaincoif/ancient/decrepit` | 0 |
+| `/obj/item/clothing/neck/roguetown/chaincoif/full` | 0 |
+| `/obj/item/clothing/neck/roguetown/chaincoif/full/black` | 0 |
 | `/obj/item/clothing/neck/roguetown/coif` | 0 |
+| `/obj/item/clothing/neck/roguetown/coif/heavypadding` | 0 |
+| `/obj/item/clothing/neck/roguetown/coif/padded/nomad` | 0 |
+| `/obj/item/clothing/neck/roguetown/fencerguard` | 0 |
+| `/obj/item/clothing/neck/roguetown/fencerguard/generic` | 0 |
 | `/obj/item/clothing/neck/roguetown/gorget/steel/ancient` | 0 |
+| `/obj/item/clothing/neck/roguetown/gorget/steel/kazengun` | 0 |
 | `/obj/item/clothing/neck/roguetown/horus` | 0 |
 | `/obj/item/clothing/neck/roguetown/leather` | 0 |
 | `/obj/item/clothing/neck/roguetown/luckcharm` | 0 |
@@ -2377,14 +2490,19 @@ Ratwood revision: `eafb26b3220a6d1985625c0d79b5ba1edf2002bc` (2026-10-17).
 | `/obj/item/clothing/neck/roguetown/psicross/bpearl` | 0 |
 | `/obj/item/clothing/neck/roguetown/psicross/decrepit` | 0 |
 | `/obj/item/clothing/neck/roguetown/psicross/malum/secret` | 0 |
+| `/obj/item/clothing/neck/roguetown/psicross/naledi` | 0 |
+| `/obj/item/clothing/neck/roguetown/psicross/reform` | 0 |
 | `/obj/item/clothing/neck/roguetown/psicross/shell` | 0 |
 | `/obj/item/clothing/neck/roguetown/psicross/shell/bracelet` | 0 |
+| `/obj/item/clothing/neck/roguetown/psicross/silver/astrata/oathmarked` | 0 |
 | `/obj/item/clothing/neck/roguetown/psicross/silver/undivided` | 0 |
 | `/obj/item/clothing/neck/roguetown/psicross/weeping` | 0 |
+| `/obj/item/clothing/neck/roguetown/skullamulet/alchemist` | 0 |
 | `/obj/item/clothing/neck/roguetown/skullamulet/gemerald` | 0 |
 | `/obj/item/clothing/neck/roguetown/talkstone` | 0 |
 | `/obj/item/clothing/ring/diamond` | 0 |
 | `/obj/item/clothing/ring/diamonds` | 0 |
+| `/obj/item/clothing/ring/duelist` | 0 |
 | `/obj/item/clothing/ring/quartzs` | 0 |
 | `/obj/item/clothing/ring/ruby` | 0 |
 | `/obj/item/clothing/ring/rubys` | 0 |
@@ -2395,57 +2513,124 @@ Ratwood revision: `eafb26b3220a6d1985625c0d79b5ba1edf2002bc` (2026-10-17).
 | `/obj/item/clothing/ring/statonyx` | 0 |
 | `/obj/item/clothing/ring/statrontz` | 0 |
 | `/obj/item/clothing/ring/topazs` | 0 |
+| `/obj/item/clothing/shoes/roguetown/armor/rumaclan` | 0 |
 | `/obj/item/clothing/shoes/roguetown/boots/armor` | 0 |
 | `/obj/item/clothing/shoes/roguetown/boots/armor/ancient` | 0 |
+| `/obj/item/clothing/shoes/roguetown/boots/armor/bronze` | 0 |
 | `/obj/item/clothing/shoes/roguetown/boots/armor/graggar` | 0 |
 | `/obj/item/clothing/shoes/roguetown/boots/armor/holysee` | 0 |
+| `/obj/item/clothing/shoes/roguetown/boots/armor/iron/gronn` | 0 |
 | `/obj/item/clothing/shoes/roguetown/boots/armor/matthios` | 0 |
+| `/obj/item/clothing/shoes/roguetown/boots/armor/oathmarked` | 0 |
+| `/obj/item/clothing/shoes/roguetown/boots/elven_boots` | 0 |
 | `/obj/item/clothing/shoes/roguetown/boots/footwraps/padded` | 0 |
+| `/obj/item/clothing/shoes/roguetown/boots/furlinedboots` | 0 |
+| `/obj/item/clothing/shoes/roguetown/boots/grenzelhoft` | 0 |
+| `/obj/item/clothing/shoes/roguetown/boots/grenzelhoft/freifechter` | 0 |
 | `/obj/item/clothing/shoes/roguetown/boots/leather/atgervi` | 0 |
+| `/obj/item/clothing/shoes/roguetown/boots/leather/reinforced/short` | 0 |
+| `/obj/item/clothing/shoes/roguetown/boots/maille` | 0 |
+| `/obj/item/clothing/shoes/roguetown/boots/nobleboot/steppesman` | 0 |
+| `/obj/item/clothing/shoes/roguetown/boots/otavan` | 0 |
 | `/obj/item/clothing/shoes/roguetown/boots/otavan/inqboots` | 0 |
 | `/obj/item/clothing/shoes/roguetown/gladiator` | 0 |
 | `/obj/item/clothing/shoes/roguetown/sandals/ancient` | 0 |
+| `/obj/item/clothing/shoes/roguetown/shalal` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/armordress` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/basiceast/mentorsuit` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/brigandine/captain` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/brigandine/gronn` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/brigandine/heartfelt` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/brigandine/light` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/brigandine/light/retinue` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/brigandine/retinue` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/brigandine/retinue/coat` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/chainmail/ancient/decrepit` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/chainmail/bikini` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/ancient` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/atgervi` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/zizo` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/gambeson/councillor` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/black` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/chargah` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/grenzelhoft` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/hatanga` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/hierophant` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/hierophant/civilian` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/hierophant/nomad` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/pontifex` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/shadowrobe` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/zyb` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/gambeson/lord` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/heartfelt` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/heartfelt/hand` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/leather/heavy/atgervi` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/confessor` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/elven` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/shadowvest` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/steppe` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/zyb` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/leather/heavy/freifechter` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/leather/heavy/jacket` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/leather/heavy/shepherd` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/leather/hide` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/leather/hide/bikini` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/leather/newmoon_jacket` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/leather/studded` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/leather/studded/cuirbouilli` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/leather/studded/psyaltrist` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/leather/studded/warden` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/leather/studded/warden/melee` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/leather/studded/warden/upgraded` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/leather/vest` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/leather/vest/white` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/longcoat` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/plate` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/plate/` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/plate/ancient` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/plate/bikini` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/plate/blacksteel_half_plate` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/plate/bronze/light` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/plate/citywatch/captain` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/plate/elven_plate` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/plate/fluted/graggar` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/plate/fluted/shadowplate` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/plate/full/dwarven` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/plate/full/dwarven/smith` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/plate/full/fluted/ornate/ordinator` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/plate/full/holysee` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/plate/full/matthios` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/plate/full/oathmarked` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/plate/half/fencer` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/plate/half/fencer/psydon` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/plate/half/fluted` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/plate/iron/gronn` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/plate/otavan` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/plate/scale/inqcoat` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/plate/scale/steppe` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/regenerating/skin/disciple` | 0 |
 | `/obj/item/clothing/suit/roguetown/shirt/apothshirt` | 0 |
 | `/obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy/random` | 0 |
 | `/obj/item/clothing/suit/roguetown/shirt/dress/royal/hand_m` | 0 |
 | `/obj/item/clothing/suit/roguetown/shirt/dress/silkydress/random` | 0 |
+| `/obj/item/clothing/suit/roguetown/shirt/freifechter` | 0 |
+| `/obj/item/clothing/suit/roguetown/shirt/freifechter/shepherd` | 0 |
 | `/obj/item/clothing/suit/roguetown/shirt/robe/black` | 0 |
+| `/obj/item/clothing/suit/roguetown/shirt/robe/mageorange` | 0 |
 | `/obj/item/clothing/suit/roguetown/shirt/robe/monk` | 0 |
+| `/obj/item/clothing/suit/roguetown/shirt/robe/necromancer` | 0 |
+| `/obj/item/clothing/suit/roguetown/shirt/robe/pointfex` | 0 |
+| `/obj/item/clothing/suit/roguetown/shirt/robe/spellcasterrobe` | 0 |
 | `/obj/item/clothing/suit/roguetown/shirt/tunic/black` | 0 |
+| `/obj/item/clothing/suit/roguetown/shirt/tunic/newmoon` | 0 |
+| `/obj/item/clothing/suit/roguetown/shirt/undershirt/arbiter` | 0 |
+| `/obj/item/clothing/suit/roguetown/shirt/undershirt/eastshirt1` | 0 |
+| `/obj/item/clothing/suit/roguetown/shirt/undershirt/eastshirt2` | 0 |
+| `/obj/item/clothing/suit/roguetown/shirt/undershirt/easttats` | 0 |
 | `/obj/item/clothing/suit/roguetown/shirt/undershirt/guard` | 0 |
+| `/obj/item/clothing/suit/roguetown/shirt/undershirt/nomad` | 0 |
+| `/obj/item/clothing/suit/roguetown/shirt/undershirt/purple` | 0 |
 | `/obj/item/clothing/suit/roguetown/shirt/undershirt/random` | 0 |
 | `/obj/item/clothing/suit/roguetown/shirt/undershirt/sailor` | 0 |
 | `/obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant` | 0 |
@@ -2453,30 +2638,58 @@ Ratwood revision: `eafb26b3220a6d1985625c0d79b5ba1edf2002bc` (2026-10-17).
 | `/obj/item/clothing/under/roguetown/chainlegs/captain` | 0 |
 | `/obj/item/clothing/under/roguetown/chainlegs/kilt/ancient` | 0 |
 | `/obj/item/clothing/under/roguetown/chainlegs/skirt` | 0 |
+| `/obj/item/clothing/under/roguetown/chainlegs/skirt/bronze` | 0 |
+| `/obj/item/clothing/under/roguetown/heavy_leather_pants/arbiter` | 0 |
+| `/obj/item/clothing/under/roguetown/heavy_leather_pants/eastpants1` | 0 |
+| `/obj/item/clothing/under/roguetown/heavy_leather_pants/eastpants2` | 0 |
+| `/obj/item/clothing/under/roguetown/heavy_leather_pants/grenzelpants` | 0 |
+| `/obj/item/clothing/under/roguetown/heavy_leather_pants/nomadpants` | 0 |
+| `/obj/item/clothing/under/roguetown/heavy_leather_pants/otavan/generic` | 0 |
+| `/obj/item/clothing/under/roguetown/heavy_leather_pants/otavan/shepherd` | 0 |
+| `/obj/item/clothing/under/roguetown/heavy_leather_pants/shadowpants` | 0 |
+| `/obj/item/clothing/under/roguetown/heavy_leather_pants/shadowpants/maille` | 0 |
 | `/obj/item/clothing/under/roguetown/heavy_leather_pants/shorts` | 0 |
 | `/obj/item/clothing/under/roguetown/platelegs` | 0 |
 | `/obj/item/clothing/under/roguetown/platelegs/graggar` | 0 |
 | `/obj/item/clothing/under/roguetown/platelegs/holysee` | 0 |
+| `/obj/item/clothing/under/roguetown/platelegs/iron/gronn` | 0 |
 | `/obj/item/clothing/under/roguetown/platelegs/matthios` | 0 |
+| `/obj/item/clothing/under/roguetown/platelegs/oathmarked` | 0 |
 | `/obj/item/clothing/under/roguetown/platelegs/skirt` | 0 |
+| `/obj/item/clothing/under/roguetown/skirt/black` | 0 |
 | `/obj/item/clothing/under/roguetown/splintlegs` | 0 |
+| `/obj/item/clothing/under/roguetown/tights/puritan` | 0 |
 | `/obj/item/clothing/under/roguetown/tights/vagrant` | 0 |
 | `/obj/item/clothing/under/roguetown/tights/vagrant/l` | 0 |
 | `/obj/item/clothing/under/roguetown/trou/apothecary` | 0 |
 | `/obj/item/clothing/under/roguetown/trou/leather/atgervi` | 0 |
+| `/obj/item/clothing/under/roguetown/trou/leather/pontifex` | 0 |
 | `/obj/item/clothing/under/roguetown/trou/leather/pontifex/zyb` | 0 |
+| `/obj/item/clothing/wrists/roguetown/allwrappings` | 0 |
 | `/obj/item/clothing/wrists/roguetown/bracers` | 0 |
 | `/obj/item/clothing/wrists/roguetown/bracers/ancient` | 0 |
+| `/obj/item/clothing/wrists/roguetown/bracers/black` | 0 |
+| `/obj/item/clothing/wrists/roguetown/bracers/bronze` | 0 |
 | `/obj/item/clothing/wrists/roguetown/bracers/cloth/monk` | 0 |
+| `/obj/item/clothing/wrists/roguetown/bracers/cloth/naledi` | 0 |
+| `/obj/item/clothing/wrists/roguetown/bracers/jackchain` | 0 |
+| `/obj/item/clothing/wrists/roguetown/bracers/leather/heavy` | 0 |
 | `/obj/item/clothing/wrists/roguetown/bracers/psythorns` | 0 |
+| `/obj/item/clothing/wrists/roguetown/bracers/zizo` | 0 |
 | `/obj/item/clothing/wrists/roguetown/splintarms/iron` | 0 |
 | `/obj/item/contraption/linker` | 0 |
 | `/obj/item/contraption/linker/master` | 0 |
+| `/obj/item/flashlight/flare/torch/lantern/prelit` | 0 |
 | `/obj/item/flashlight/flare/torch/lantern/psycenser` | 0 |
 | `/obj/item/flashlight/flare/torch/lantern/pumpkin/zizo` | 0 |
 | `/obj/item/grapplinghook` | 0 |
 | `/obj/item/gun/ballistic/firearm/arquebus_pistol` | 0 |
+| `/obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve/blackoak` | 0 |
+| `/obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve/steppesman` | 0 |
+| `/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/arbalest` | 0 |
 | `/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow` | 0 |
+| `/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow/stalker` | 0 |
+| `/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow/stalker/lesser` | 0 |
 | `/obj/item/herbseed/artemisia` | 0 |
 | `/obj/item/herbseed/atropa` | 0 |
 | `/obj/item/herbseed/benedictus` | 0 |
@@ -2508,15 +2721,23 @@ Ratwood revision: `eafb26b3220a6d1985625c0d79b5ba1edf2002bc` (2026-10-17).
 | `/obj/item/mini_flagpole/tailor` | 0 |
 | `/obj/item/mundane/puzzlebox/impossible` | 0 |
 | `/obj/item/mundane/puzzlebox/medium` | 0 |
+| `/obj/item/natural/clay/glassbatch` | 0 |
 | `/obj/item/natural/hide/cured` | 0 |
 | `/obj/item/necro_relics/necro_crystal` | 0 |
 | `/obj/item/paper/inqslip/arrival/abso` | 0 |
 | `/obj/item/paper/inqslip/arrival/adju` | 0 |
 | `/obj/item/paper/inqslip/arrival/inq` | 0 |
+| `/obj/item/paper/inqslip/arrival/ortho` | 0 |
+| `/obj/item/paper/scroll/grudge` | 0 |
 | `/obj/item/powderflask` | 0 |
 | `/obj/item/quiver/Warrows` | 0 |
 | `/obj/item/quiver/Wbolts` | 0 |
 | `/obj/item/quiver/bodkin` | 0 |
+| `/obj/item/quiver/bolts/` | 0 |
+| `/obj/item/quiver/heavybolts` | 0 |
+| `/obj/item/quiver/javelin/bronze` | 0 |
+| `/obj/item/quiver/poisonarrows` | 0 |
+| `/obj/item/quiver/pyroarrows` | 0 |
 | `/obj/item/quiver/sling` | 0 |
 | `/obj/item/reagent_containers/food/snacks/butterslice` | 0 |
 | `/obj/item/reagent_containers/food/snacks/fat/salo` | 0 |
@@ -2528,8 +2749,10 @@ Ratwood revision: `eafb26b3220a6d1985625c0d79b5ba1edf2002bc` (2026-10-17).
 | `/obj/item/reagent_containers/glass/bottle/alchemical/lucpot` | 0 |
 | `/obj/item/reagent_containers/glass/bottle/alchemical/perpot` | 0 |
 | `/obj/item/reagent_containers/glass/bottle/alchemical/spdpot` | 0 |
+| `/obj/item/reagent_containers/glass/bottle/alchemical/strongmanapot` | 0 |
 | `/obj/item/reagent_containers/glass/bottle/alchemical/strpot` | 0 |
 | `/obj/item/reagent_containers/glass/bottle/clayvase` | 0 |
+| `/obj/item/reagent_containers/glass/bottle/rogue/beer/blackgoat` | 0 |
 | `/obj/item/reagent_containers/glass/bottle/rogue/berrypoison` | 0 |
 | `/obj/item/reagent_containers/glass/bottle/rogue/stampoison` | 0 |
 | `/obj/item/reagent_containers/glass/bottle/rogue/stampot` | 0 |
@@ -2540,6 +2763,15 @@ Ratwood revision: `eafb26b3220a6d1985625c0d79b5ba1edf2002bc` (2026-10-17).
 | `/obj/item/repair_kit/bad` | 0 |
 | `/obj/item/repair_kit/metal` | 0 |
 | `/obj/item/repair_kit/metal/bad` | 0 |
+| `/obj/item/rogue/instrument/ztratocaster` | 0 |
+| `/obj/item/roguegear` | 0 |
+| `/obj/item/roguegem/amber` | 0 |
+| `/obj/item/roguegem/amethyst/naledi` | 0 |
+| `/obj/item/roguegem/coral` | 0 |
+| `/obj/item/roguegem/jade` | 0 |
+| `/obj/item/roguegem/onyxa` | 0 |
+| `/obj/item/roguegem/opal` | 0 |
+| `/obj/item/roguegem/turq` | 0 |
 | `/obj/item/roguekey/bath` | 0 |
 | `/obj/item/roguekey/craftermaster` | 0 |
 | `/obj/item/roguekey/fancyroomiv` | 0 |
@@ -2570,6 +2802,7 @@ Ratwood revision: `eafb26b3220a6d1985625c0d79b5ba1edf2002bc` (2026-10-17).
 | `/obj/item/roguestatue/clay` | 0 |
 | `/obj/item/rogueweapon/blowrod` | 0 |
 | `/obj/item/rogueweapon/chisel` | 0 |
+| `/obj/item/rogueweapon/eaglebeak/oathmarked` | 0 |
 | `/obj/item/rogueweapon/flail/militia` | 0 |
 | `/obj/item/rogueweapon/flail/peasantwarflail` | 0 |
 | `/obj/item/rogueweapon/flail/peasantwarflail/matthios` | 0 |
@@ -2583,24 +2816,38 @@ Ratwood revision: `eafb26b3220a6d1985625c0d79b5ba1edf2002bc` (2026-10-17).
 | `/obj/item/rogueweapon/greataxe/steel/doublehead` | 0 |
 | `/obj/item/rogueweapon/greataxe/steel/doublehead/graggar` | 0 |
 | `/obj/item/rogueweapon/greatsword/ancient` | 0 |
+| `/obj/item/rogueweapon/greatsword/grenz/oathmarked` | 0 |
+| `/obj/item/rogueweapon/greatsword/zizo` | 0 |
 | `/obj/item/rogueweapon/greatsword/zwei` | 0 |
 | `/obj/item/rogueweapon/halberd/bardiche` | 0 |
 | `/obj/item/rogueweapon/halberd/bardiche/ancient` | 0 |
 | `/obj/item/rogueweapon/halberd/bardiche/ancient/decrepit` | 0 |
 | `/obj/item/rogueweapon/halberd/glaive` | 0 |
+| `/obj/item/rogueweapon/handclaw/gronn` | 0 |
 | `/obj/item/rogueweapon/huntingknife/combat` | 0 |
+| `/obj/item/rogueweapon/huntingknife/combat/bronze` | 0 |
+| `/obj/item/rogueweapon/huntingknife/combat/messer` | 0 |
 | `/obj/item/rogueweapon/huntingknife/idagger/dtace` | 0 |
+| `/obj/item/rogueweapon/huntingknife/idagger/navaja/freifechter` | 0 |
 | `/obj/item/rogueweapon/huntingknife/idagger/silver/psydagger` | 0 |
+| `/obj/item/rogueweapon/huntingknife/idagger/silver/stake/preblessed/psy` | 0 |
+| `/obj/item/rogueweapon/huntingknife/idagger/steel/dirk` | 0 |
+| `/obj/item/rogueweapon/huntingknife/idagger/steel/elvish` | 0 |
 | `/obj/item/rogueweapon/huntingknife/idagger/steel/holysee` | 0 |
+| `/obj/item/rogueweapon/huntingknife/idagger/steel/kazengun` | 0 |
+| `/obj/item/rogueweapon/huntingknife/idagger/steel/kris` | 0 |
+| `/obj/item/rogueweapon/huntingknife/idagger/steel/kukri` | 0 |
 | `/obj/item/rogueweapon/huntingknife/idagger/steel/parrying` | 0 |
 | `/obj/item/rogueweapon/huntingknife/idagger/steel/parrying/vaquero` | 0 |
 | `/obj/item/rogueweapon/huntingknife/idagger/steel/pestrasickle` | 0 |
+| `/obj/item/rogueweapon/huntingknife/idagger/steel/rondel` | 0 |
 | `/obj/item/rogueweapon/huntingknife/idagger/steel/special` | 0 |
 | `/obj/item/rogueweapon/huntingknife/idagger/warden_machete` | 0 |
 | `/obj/item/rogueweapon/huntingknife/throwingknife` | 0 |
 | `/obj/item/rogueweapon/huntingknife/throwingknife/steel` | 0 |
 | `/obj/item/rogueweapon/huntingknife/throwingknife/steel/ancient` | 0 |
 | `/obj/item/rogueweapon/katar` | 0 |
+| `/obj/item/rogueweapon/katar/bronze` | 0 |
 | `/obj/item/rogueweapon/katar/punchdagger` | 0 |
 | `/obj/item/rogueweapon/knuckles` | 0 |
 | `/obj/item/rogueweapon/knuckles/ancient/decrepit` | 0 |
@@ -2608,6 +2855,7 @@ Ratwood revision: `eafb26b3220a6d1985625c0d79b5ba1edf2002bc` (2026-10-17).
 | `/obj/item/rogueweapon/mace/cudgel/justice` | 0 |
 | `/obj/item/rogueweapon/mace/goden/steel/ancient` | 0 |
 | `/obj/item/rogueweapon/mace/goden/steel/ancient/decrepit` | 0 |
+| `/obj/item/rogueweapon/mace/maul` | 0 |
 | `/obj/item/rogueweapon/mace/oar` | 0 |
 | `/obj/item/rogueweapon/mace/steel/ancient/decrepit` | 0 |
 | `/obj/item/rogueweapon/mace/steel/silver` | 0 |
@@ -2615,39 +2863,73 @@ Ratwood revision: `eafb26b3220a6d1985625c0d79b5ba1edf2002bc` (2026-10-17).
 | `/obj/item/rogueweapon/mace/warhammer/steel/silver` | 0 |
 | `/obj/item/rogueweapon/mace/woodclub/crafted` | 0 |
 | `/obj/item/rogueweapon/pick/militia/steel` | 0 |
+| `/obj/item/rogueweapon/scabbard/sheath/aavnik` | 0 |
 | `/obj/item/rogueweapon/scabbard/sheath/courtphysician` | 0 |
+| `/obj/item/rogueweapon/scabbard/sheath/courtphysician/hand` | 0 |
+| `/obj/item/rogueweapon/scabbard/sheath/kazengun` | 0 |
 | `/obj/item/rogueweapon/scabbard/sheath/noble` | 0 |
 | `/obj/item/rogueweapon/scabbard/sheath/royal` | 0 |
+| `/obj/item/rogueweapon/scabbard/sword/kazengun/noparry` | 0 |
+| `/obj/item/rogueweapon/scabbard/sword/kazengun/steel` | 0 |
 | `/obj/item/rogueweapon/scabbard/sword/noble` | 0 |
 | `/obj/item/rogueweapon/scabbard/sword/royal` | 0 |
 | `/obj/item/rogueweapon/scythe` | 0 |
 | `/obj/item/rogueweapon/shield/atgervi` | 0 |
 | `/obj/item/rogueweapon/shield/capbuckler` | 0 |
+| `/obj/item/rogueweapon/shield/iron/nomad` | 0 |
+| `/obj/item/rogueweapon/shield/iron/steppesman` | 0 |
 | `/obj/item/rogueweapon/shield/tower/holysee` | 0 |
+| `/obj/item/rogueweapon/shield/tower/zyb` | 0 |
 | `/obj/item/rogueweapon/shovel/silver` | 0 |
 | `/obj/item/rogueweapon/spear/ancient` | 0 |
 | `/obj/item/rogueweapon/spear/ancient/decrepit` | 0 |
+| `/obj/item/rogueweapon/spear/assegai` | 0 |
+| `/obj/item/rogueweapon/spear/boar/frei` | 0 |
 | `/obj/item/rogueweapon/spear/bronze` | 0 |
 | `/obj/item/rogueweapon/spear/improvisedbillhook` | 0 |
+| `/obj/item/rogueweapon/spear/keep_standard` | 0 |
+| `/obj/item/rogueweapon/spear/naginata` | 0 |
+| `/obj/item/rogueweapon/spear/naginata/elf` | 0 |
+| `/obj/item/rogueweapon/spear/nomad` | 0 |
 | `/obj/item/rogueweapon/spear/silver` | 0 |
+| `/obj/item/rogueweapon/stoneaxe/battle/steppesman/chupa` | 0 |
 | `/obj/item/rogueweapon/stoneaxe/handaxe/copper` | 0 |
+| `/obj/item/rogueweapon/stoneaxe/hurlbat` | 0 |
 | `/obj/item/rogueweapon/stoneaxe/oath` | 0 |
+| `/obj/item/rogueweapon/stoneaxe/woodcut/` | 0 |
+| `/obj/item/rogueweapon/stoneaxe/woodcut/pick` | 0 |
 | `/obj/item/rogueweapon/stoneaxe/woodcut/silver` | 0 |
 | `/obj/item/rogueweapon/stoneaxe/woodcut/steel` | 0 |
 | `/obj/item/rogueweapon/stoneaxe/woodcut/steel/atgervi` | 0 |
 | `/obj/item/rogueweapon/sword/capsabre` | 0 |
 | `/obj/item/rogueweapon/sword/falchion/militia` | 0 |
 | `/obj/item/rogueweapon/sword/falx` | 0 |
+| `/obj/item/rogueweapon/sword/falx/stalker` | 0 |
+| `/obj/item/rogueweapon/sword/long/broadsword/bronze` | 0 |
 | `/obj/item/rogueweapon/sword/long/dec` | 0 |
+| `/obj/item/rogueweapon/sword/long/elf` | 0 |
+| `/obj/item/rogueweapon/sword/long/etruscan` | 0 |
+| `/obj/item/rogueweapon/sword/long/fencerguy` | 0 |
 | `/obj/item/rogueweapon/sword/long/kriegmesser/silver` | 0 |
+| `/obj/item/rogueweapon/sword/long/kriegmesser/ssangsudo` | 0 |
 | `/obj/item/rogueweapon/sword/long/marlin` | 0 |
+| `/obj/item/rogueweapon/sword/long/oathkeeper` | 0 |
 | `/obj/item/rogueweapon/sword/long/rhomphaia` | 0 |
+| `/obj/item/rogueweapon/sword/long/shotel` | 0 |
 | `/obj/item/rogueweapon/sword/long/silver` | 0 |
 | `/obj/item/rogueweapon/sword/rapier/courtphysician` | 0 |
+| `/obj/item/rogueweapon/sword/rapier/hand` | 0 |
 | `/obj/item/rogueweapon/sword/rapier/silver` | 0 |
+| `/obj/item/rogueweapon/sword/rapier/vaquero` | 0 |
 | `/obj/item/rogueweapon/sword/sabre` | 0 |
 | `/obj/item/rogueweapon/sword/sabre/ancient/decrepit` | 0 |
+| `/obj/item/rogueweapon/sword/sabre/dec` | 0 |
 | `/obj/item/rogueweapon/sword/sabre/elf` | 0 |
+| `/obj/item/rogueweapon/sword/sabre/freifechter` | 0 |
+| `/obj/item/rogueweapon/sword/sabre/mulyeog/rumahench` | 0 |
+| `/obj/item/rogueweapon/sword/sabre/newmoon` | 0 |
+| `/obj/item/rogueweapon/sword/sabre/shamshir` | 0 |
+| `/obj/item/rogueweapon/sword/sabre/steppesman` | 0 |
 | `/obj/item/rogueweapon/sword/short` | 0 |
 | `/obj/item/rogueweapon/sword/short/ancient` | 0 |
 | `/obj/item/rogueweapon/sword/short/ancient/decrepit` | 0 |
@@ -2659,13 +2941,19 @@ Ratwood revision: `eafb26b3220a6d1985625c0d79b5ba1edf2002bc` (2026-10-17).
 | `/obj/item/rogueweapon/sword/short/silver` | 0 |
 | `/obj/item/rogueweapon/sword/silver` | 0 |
 | `/obj/item/rogueweapon/whip/bronze` | 0 |
+| `/obj/item/rogueweapon/whip/nagaika` | 0 |
 | `/obj/item/rogueweapon/whip/silver` | 0 |
 | `/obj/item/rogueweapon/woodstaff/` | 0 |
+| `/obj/item/rogueweapon/woodstaff/diamond` | 0 |
+| `/obj/item/rogueweapon/woodstaff/emerald/blacksteelstaff/royal` | 0 |
+| `/obj/item/rogueweapon/woodstaff/gefechtsgelehrter` | 0 |
 | `/obj/item/rogueweapon/woodstaff/militia` | 0 |
+| `/obj/item/rogueweapon/woodstaff/naledi` | 0 |
 | `/obj/item/rogueweapon/woodstaff/quarterstaff/iron` | 0 |
 | `/obj/item/rogueweapon/woodstaff/quarterstaff/silver` | 0 |
 | `/obj/item/rogueweapon/woodstaff/riddle_of_steel/magos` | 0 |
 | `/obj/item/rogueweapon/woodstaff/ruby` | 0 |
+| `/obj/item/rogueweapon/woodstaff/sojourner` | 0 |
 | `/obj/item/seal/crown` | 0 |
 | `/obj/item/seal/guildmaster` | 0 |
 | `/obj/item/seal/hand` | 0 |
@@ -2679,17 +2967,33 @@ Ratwood revision: `eafb26b3220a6d1985625c0d79b5ba1edf2002bc` (2026-10-17).
 | `/obj/item/seal/watchcaptain` | 0 |
 | `/obj/item/seeds/treesap` | 0 |
 | `/obj/item/storage/backpack/rogue/backpack/bagpack` | 0 |
+| `/obj/item/storage/backpack/rogue/satchel/beltpack` | 0 |
 | `/obj/item/storage/backpack/rogue/satchel/black` | 0 |
 | `/obj/item/storage/backpack/rogue/satchel/otavan` | 0 |
 | `/obj/item/storage/belt/rogue/leather/` | 0 |
+| `/obj/item/storage/belt/rogue/leather/arbiter` | 0 |
+| `/obj/item/storage/belt/rogue/leather/battleskirt` | 0 |
+| `/obj/item/storage/belt/rogue/leather/battleskirt/barbarian` | 0 |
+| `/obj/item/storage/belt/rogue/leather/battleskirt/black` | 0 |
+| `/obj/item/storage/belt/rogue/leather/battleskirt/faulds` | 0 |
 | `/obj/item/storage/belt/rogue/leather/cloth` | 0 |
+| `/obj/item/storage/belt/rogue/leather/cloth/lady` | 0 |
 | `/obj/item/storage/belt/rogue/leather/knifebelt` | 0 |
+| `/obj/item/storage/belt/rogue/leather/knifebelt/black/iron` | 0 |
+| `/obj/item/storage/belt/rogue/leather/knifebelt/black/kazengun` | 0 |
 | `/obj/item/storage/belt/rogue/leather/knifebelt/black/psydon` | 0 |
 | `/obj/item/storage/belt/rogue/leather/knifebelt/black/steel` | 0 |
 | `/obj/item/storage/belt/rogue/leather/knifebelt/iron` | 0 |
 | `/obj/item/storage/belt/rogue/leather/plaquegold/steward` | 0 |
 | `/obj/item/storage/belt/rogue/leather/rope` | 0 |
+| `/obj/item/storage/belt/rogue/leather/rope/dark` | 0 |
+| `/obj/item/storage/belt/rogue/leather/sash` | 0 |
 | `/obj/item/storage/belt/rogue/leather/shalal` | 0 |
+| `/obj/item/storage/belt/rogue/leather/shalal/purple` | 0 |
+| `/obj/item/storage/belt/rogue/leather/stakebelt` | 0 |
+| `/obj/item/storage/belt/rogue/pouch/medicine` | 0 |
+| `/obj/item/storage/detpack` | 0 |
+| `/obj/item/storage/hip/headhook` | 0 |
 | `/obj/item/storage/keyring/archivist` | 0 |
 | `/obj/item/storage/keyring/chaplain` | 0 |
 | `/obj/item/storage/keyring/churchie` | 0 |
@@ -2716,7 +3020,12 @@ Ratwood revision: `eafb26b3220a6d1985625c0d79b5ba1edf2002bc` (2026-10-17).
 | `/obj/item/storage/keyring/tailor` | 0 |
 | `/obj/item/storage/keyring/wardenmaster` | 0 |
 | `/obj/item/storage/keyring/watchcaptain` | 0 |
+| `/obj/item/storage/magebag` | 0 |
+| `/obj/item/storage/magebag/alchemist` | 0 |
 | `/obj/item/storage/magebag/associate` | 0 |
+| `/obj/item/storage/magebag/witch` | 0 |
+| `/obj/item/storage/meatbag` | 0 |
+| `/obj/item/tent_kit/ger` | 0 |
 | `/obj/item/underworld/coin` | 0 |
 
 ## humans.dm (40 types)
@@ -3005,6 +3314,7 @@ Ratwood revision: `eafb26b3220a6d1985625c0d79b5ba1edf2002bc` (2026-10-17).
 - `modular_redtard/rockhill/icons/modular_azurepeak/icons/obj/items/bombdolier.dmi` from Ratwood `modular_azurepeak/icons/obj/items/bombdolier.dmi`
 - `modular_redtard/rockhill/icons/modular_azurepeak/icons/obj/items/cosmetics.dmi` from Ratwood `modular_azurepeak/icons/obj/items/cosmetics.dmi`
 - `modular_redtard/rockhill/icons/modular_azurepeak/icons/obj/items/eora_tree.dmi` from Ratwood `modular_azurepeak/icons/obj/items/eora_tree.dmi`
+- `modular_redtard/rockhill/icons/modular_azurepeak/icons/obj/items/grenzstaff.dmi` from Ratwood `modular_azurepeak/icons/obj/items/grenzstaff.dmi`
 - `modular_redtard/rockhill/icons/modular_azurepeak/icons/obj/items/gwstrap.dmi` from Ratwood `modular_azurepeak/icons/obj/items/gwstrap.dmi`
 - `modular_redtard/rockhill/icons/modular_azurepeak/icons/obj/items/mundanities.dmi` from Ratwood `modular_azurepeak/icons/obj/items/mundanities.dmi`
 - `modular_redtard/rockhill/icons/modular_azurepeak/icons/obj/items/quicksilver.dmi` from Ratwood `modular_azurepeak/icons/obj/items/quicksilver.dmi`
@@ -3097,6 +3407,8 @@ Ratwood revision: `eafb26b3220a6d1985625c0d79b5ba1edf2002bc` (2026-10-17).
 - `modular_redtard/rockhill/icons/roguetown/clothing/masks.dmi` from Ratwood `icons/roguetown/clothing/masks.dmi`
 - `modular_redtard/rockhill/icons/roguetown/clothing/neck.dmi` from Ratwood `icons/roguetown/clothing/neck.dmi`
 - `modular_redtard/rockhill/icons/roguetown/clothing/onmob/32x48/atgervi.dmi` from Ratwood `icons/roguetown/clothing/onmob/32x48/atgervi.dmi`
+- `modular_redtard/rockhill/icons/roguetown/clothing/onmob/32x48/gronn.dmi` from Ratwood `icons/roguetown/clothing/onmob/32x48/gronn.dmi`
+- `modular_redtard/rockhill/icons/roguetown/clothing/onmob/64x64/gronn.dmi` from Ratwood `icons/roguetown/clothing/onmob/64x64/gronn.dmi`
 - `modular_redtard/rockhill/icons/roguetown/clothing/onmob/64x64/head.dmi` from Ratwood `icons/roguetown/clothing/onmob/64x64/head.dmi`
 - `modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi` from Ratwood `icons/roguetown/clothing/onmob/armor.dmi`
 - `modular_redtard/rockhill/icons/roguetown/clothing/onmob/back_l.dmi` from Ratwood `icons/roguetown/clothing/onmob/back_l.dmi`
@@ -3144,14 +3456,19 @@ Ratwood revision: `eafb26b3220a6d1985625c0d79b5ba1edf2002bc` (2026-10-17).
 - `modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/race_armor.dmi` from Ratwood `icons/roguetown/clothing/special/onmob/race_armor.dmi`
 - `modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/warden.dmi` from Ratwood `icons/roguetown/clothing/special/onmob/warden.dmi`
 - `modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/warden64.dmi` from Ratwood `icons/roguetown/clothing/special/onmob/warden64.dmi`
+- `modular_redtard/rockhill/icons/roguetown/clothing/special/overseer/onmob/overseer.dmi` from Ratwood `icons/roguetown/clothing/special/overseer/onmob/overseer.dmi`
+- `modular_redtard/rockhill/icons/roguetown/clothing/special/overseer/overseer.dmi` from Ratwood `icons/roguetown/clothing/special/overseer/overseer.dmi`
 - `modular_redtard/rockhill/icons/roguetown/clothing/special/race_armor.dmi` from Ratwood `icons/roguetown/clothing/special/race_armor.dmi`
 - `modular_redtard/rockhill/icons/roguetown/clothing/special/warden.dmi` from Ratwood `icons/roguetown/clothing/special/warden.dmi`
 - `modular_redtard/rockhill/icons/roguetown/clothing/storage.dmi` from Ratwood `icons/roguetown/clothing/storage.dmi`
 - `modular_redtard/rockhill/icons/roguetown/clothing/wrists.dmi` from Ratwood `icons/roguetown/clothing/wrists.dmi`
+- `modular_redtard/rockhill/icons/roguetown/gems/gem_amber.dmi` from Ratwood `icons/roguetown/gems/gem_amber.dmi`
+- `modular_redtard/rockhill/icons/roguetown/gems/gem_coral.dmi` from Ratwood `icons/roguetown/gems/gem_coral.dmi`
 - `modular_redtard/rockhill/icons/roguetown/gems/gem_jade.dmi` from Ratwood `icons/roguetown/gems/gem_jade.dmi`
 - `modular_redtard/rockhill/icons/roguetown/gems/gem_onyxa.dmi` from Ratwood `icons/roguetown/gems/gem_onyxa.dmi`
 - `modular_redtard/rockhill/icons/roguetown/gems/gem_opal.dmi` from Ratwood `icons/roguetown/gems/gem_opal.dmi`
 - `modular_redtard/rockhill/icons/roguetown/gems/gem_rose.dmi` from Ratwood `icons/roguetown/gems/gem_rose.dmi`
+- `modular_redtard/rockhill/icons/roguetown/gems/gem_turq.dmi` from Ratwood `icons/roguetown/gems/gem_turq.dmi`
 - `modular_redtard/rockhill/icons/roguetown/helpers/spawnerhelpers.dmi` from Ratwood `icons/roguetown/helpers/spawnerhelpers.dmi`
 - `modular_redtard/rockhill/icons/roguetown/items/artefactsten.dmi` from Ratwood `icons/roguetown/items/artefactsten.dmi`
 - `modular_redtard/rockhill/icons/roguetown/items/books.dmi` from Ratwood `icons/roguetown/items/books.dmi`
@@ -3266,6 +3583,9 @@ Ratwood revision: `eafb26b3220a6d1985625c0d79b5ba1edf2002bc` (2026-10-17).
 - `modular_redtard/rockhill/icons/roguetown/weapons/polearms64.dmi` from Ratwood `icons/roguetown/weapons/polearms64.dmi`
 - `modular_redtard/rockhill/icons/roguetown/weapons/shields32.dmi` from Ratwood `icons/roguetown/weapons/shields32.dmi`
 - `modular_redtard/rockhill/icons/roguetown/weapons/special/captain.dmi` from Ratwood `icons/roguetown/weapons/special/captain.dmi`
+- `modular_redtard/rockhill/icons/roguetown/weapons/special/freifechter.dmi` from Ratwood `icons/roguetown/weapons/special/freifechter.dmi`
+- `modular_redtard/rockhill/icons/roguetown/weapons/special/freifechter32.dmi` from Ratwood `icons/roguetown/weapons/special/freifechter32.dmi`
+- `modular_redtard/rockhill/icons/roguetown/weapons/special/hand32.dmi` from Ratwood `icons/roguetown/weapons/special/hand32.dmi`
 - `modular_redtard/rockhill/icons/roguetown/weapons/swords32.dmi` from Ratwood `icons/roguetown/weapons/swords32.dmi`
 - `modular_redtard/rockhill/icons/roguetown/weapons/swords64.dmi` from Ratwood `icons/roguetown/weapons/swords64.dmi`
 - `modular_redtard/rockhill/icons/roguetown/weapons/tools.dmi` from Ratwood `icons/roguetown/weapons/tools.dmi`
@@ -3291,7 +3611,7 @@ Their folder carries a proprietary licence that forbids redistribution and use o
 - `icons/roguetown/clothing/licensed-infraredbaron/LICENSE.md`: `/obj/item/clothing/cloak/citywatch`, `/obj/item/clothing/head/roguetown/duchess_hood`, `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/duchess`, `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/duke`, `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/hand`, `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/heir`, `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/heiress`, `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/magos`, `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/steward`
 - `modular_deserttown/icons/clothing/LICENSE.md`: `/obj/item/clothing/mask/rogue/exoticsilkmask/green`, `/obj/item/clothing/mask/rogue/exoticsilkmask/red`, `/obj/item/clothing/suit/roguetown/shirt/exoticsilkbra/green`, `/obj/item/clothing/suit/roguetown/shirt/exoticsilkbra/red`, `/obj/item/storage/belt/rogue/leather/exoticsilkbelt/skirtgreen`, `/obj/item/storage/belt/rogue/leather/exoticsilkbelt/skirtred`
 
-## Items without a world sprite (24)
+## Items without a world sprite (25)
 
 Ratwood names an `icon_state` its sheet does not have (a sprite chosen at runtime, or a broken one). The port writes `icon_state = null`, as TG does for an item with no sprite, so the TG icon tests pass and the item stays listed here.
 
@@ -3311,6 +3631,7 @@ Ratwood names an `icon_state` its sheet does not have (a sprite chosen at runtim
 | `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/steward` | `restricted licence` | `steward` |
 | `/obj/item/clothing/suit/roguetown/shirt/exoticsilkbra/green` | `restricted licence` | `exoticsilkbrag` |
 | `/obj/item/clothing/suit/roguetown/shirt/exoticsilkbra/red` | `restricted licence` | `exoticsilkbrar` |
+| `/obj/item/clothing/suit/roguetown/shirt/undershirt/easttats` | `modular_redtard/rockhill/icons/roguetown/clothing/shirts.dmi` | `easttats` |
 | `/obj/item/natural/rock/random_ore` | `modular_redtard/rockhill/icons/roguetown/items/natural.dmi` | `stonerandom` |
 | `/obj/item/reagent_containers/food/snacks/fish` | `modular_redtard/rockhill/icons/modular/Neu_Food/icons/raw/raw_fish.dmi` | `carp` |
 | `/obj/item/reagent_containers/food/snacks/fish/crab` | `modular_redtard/rockhill/icons/modular/Neu_Food/icons/raw/raw_fish.dmi` | `crab` |
@@ -3322,7 +3643,7 @@ Ratwood names an `icon_state` its sheet does not have (a sprite chosen at runtim
 | `/obj/item/storage/belt/rogue/leather/exoticsilkbelt/skirtred` | `restricted licence` | `exoticsilkskirt` |
 | `/obj/machinery/light/rogue/campfire/pyre` | `modular_redtard/rockhill/icons/roguetown/misc/tallstructure.dmi` | `pyre1` |
 
-## Wearables without a worn sprite (116)
+## Wearables without a worn sprite (147)
 
 No sheet holds their worn state: `worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'` (one empty state) and `worn_icon_state = null`, the TG way to say "no worn sprite".
 
@@ -3333,23 +3654,37 @@ No sheet holds their worn state: `worn_icon = 'modular_redtard/rockhill/icons/bl
 - `/obj/item/ammo_casing/caseless/rogue/bolt`
 - `/obj/item/ammo_casing/caseless/rogue/bolt/decrepit`
 - `/obj/item/ammo_casing/caseless/rogue/bolt/pyro`
+- `/obj/item/ammo_casing/caseless/rogue/bolt/water`
+- `/obj/item/ammo_casing/caseless/rogue/heavy_bolt/tempest`
 - `/obj/item/ammo_casing/caseless/rogue/javelin/steel/ancient/decrepit`
 - `/obj/item/artifact/ravox_lens`
 - `/obj/item/bmbstrap`
+- `/obj/item/bmbstrap/firebomb`
 - `/obj/item/broom`
 - `/obj/item/clothing/cloak/cape/blkknight`
+- `/obj/item/clothing/cloak/cape/oathmarked`
 - `/obj/item/clothing/cloak/cape/rogue`
 - `/obj/item/clothing/cloak/citywatch`
+- `/obj/item/clothing/cloak/psyaltrist`
 - `/obj/item/clothing/cloak/undivided`
 - `/obj/item/clothing/gloves/roguetown/chain/psydon`
 - `/obj/item/clothing/gloves/roguetown/nomagic`
+- `/obj/item/clothing/gloves/roguetown/plate/atgervi`
 - `/obj/item/clothing/gloves/roguetown/plate/dwarven`
+- `/obj/item/clothing/gloves/roguetown/plate/shadowgauntlets`
 - `/obj/item/clothing/gloves/xylix`
 - `/obj/item/clothing/head/roguetown/antlerhood`
 - `/obj/item/clothing/head/roguetown/duchess_hood`
+- `/obj/item/clothing/head/roguetown/grenzelhofthat`
 - `/obj/item/clothing/head/roguetown/helmet/bandana`
+- `/obj/item/clothing/head/roguetown/helmet/blacksteel/psychains`
+- `/obj/item/clothing/head/roguetown/helmet/tricorn`
 - `/obj/item/clothing/head/roguetown/horsey`
 - `/obj/item/clothing/head/roguetown/nyle/consortcrown`
+- `/obj/item/clothing/head/roguetown/paddedcap`
+- `/obj/item/clothing/head/roguetown/roguehood/shalal/hijab/black`
+- `/obj/item/clothing/head/roguetown/roguehood/shalal/hijab/yoruku`
+- `/obj/item/clothing/head/roguetown/roguehood/shalal/hijab/zyb`
 - `/obj/item/clothing/head/roguetown/veiled/loudmouth`
 - `/obj/item/clothing/mask/rogue/exoticsilkmask/green`
 - `/obj/item/clothing/mask/rogue/exoticsilkmask/red`
@@ -3357,6 +3692,7 @@ No sheet holds their worn state: `worn_icon = 'modular_redtard/rockhill/icons/bl
 - `/obj/item/clothing/ring/decrepit`
 - `/obj/item/clothing/ring/diamond`
 - `/obj/item/clothing/ring/diamonds`
+- `/obj/item/clothing/ring/duelist`
 - `/obj/item/clothing/ring/emerald`
 - `/obj/item/clothing/ring/emeralds`
 - `/obj/item/clothing/ring/quartz`
@@ -3375,6 +3711,7 @@ No sheet holds their worn state: `worn_icon = 'modular_redtard/rockhill/icons/bl
 - `/obj/item/clothing/ring/topazs`
 - `/obj/item/clothing/shoes/roguetown/boots/armor/dwarven`
 - `/obj/item/clothing/shoes/roguetown/boots/armor/iron`
+- `/obj/item/clothing/suit/roguetown/armor/armordress`
 - `/obj/item/clothing/suit/roguetown/armor/leather/goblin`
 - `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/duchess`
 - `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/duke`
@@ -3384,8 +3721,13 @@ No sheet holds their worn state: `worn_icon = 'modular_redtard/rockhill/icons/bl
 - `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/magos`
 - `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/steward`
 - `/obj/item/clothing/suit/roguetown/armor/leather/studded/warden`
+- `/obj/item/clothing/suit/roguetown/armor/leather/studded/warden/melee`
 - `/obj/item/clothing/suit/roguetown/armor/leather/studded/warden/upgraded`
+- `/obj/item/clothing/suit/roguetown/armor/plate/fluted/shadowplate`
+- `/obj/item/clothing/suit/roguetown/armor/plate/full/dwarven`
+- `/obj/item/clothing/suit/roguetown/armor/plate/full/dwarven/smith`
 - `/obj/item/clothing/suit/roguetown/armor/plate/half/iron/goblin`
+- `/obj/item/clothing/suit/roguetown/armor/regenerating/skin/disciple`
 - `/obj/item/clothing/suit/roguetown/shirt/dress/gen/strapless/random`
 - `/obj/item/clothing/suit/roguetown/shirt/dress/gen/strapless/red`
 - `/obj/item/clothing/suit/roguetown/shirt/dress/gown`
@@ -3398,12 +3740,14 @@ No sheet holds their worn state: `worn_icon = 'modular_redtard/rockhill/icons/bl
 - `/obj/item/clothing/suit/roguetown/shirt/dress/royal/princess`
 - `/obj/item/clothing/suit/roguetown/shirt/exoticsilkbra/green`
 - `/obj/item/clothing/suit/roguetown/shirt/exoticsilkbra/red`
+- `/obj/item/clothing/suit/roguetown/shirt/undershirt/arbiter`
 - `/obj/item/clothing/suit/roguetown/shirt/undershirt/blouse`
 - `/obj/item/clothing/under/roguetown/tights/formal`
 - `/obj/item/fishingcage`
 - `/obj/item/gun/ballistic/firearm/arquebus`
 - `/obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow`
 - `/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow`
+- `/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/arbalest`
 - `/obj/item/natural/saddle`
 - `/obj/item/rogueweapon/flail/peasantwarflail/matthios`
 - `/obj/item/rogueweapon/hoe`
@@ -3417,12 +3761,15 @@ No sheet holds their worn state: `worn_icon = 'modular_redtard/rockhill/icons/bl
 - `/obj/item/rogueweapon/shield/atgervi`
 - `/obj/item/rogueweapon/shield/heater`
 - `/obj/item/rogueweapon/shield/iron`
+- `/obj/item/rogueweapon/shield/iron/nomad`
+- `/obj/item/rogueweapon/shield/iron/steppesman`
 - `/obj/item/rogueweapon/shield/tower`
 - `/obj/item/rogueweapon/shield/tower/holysee`
 - `/obj/item/rogueweapon/shield/tower/metal`
 - `/obj/item/rogueweapon/shield/tower/metal/ancient`
 - `/obj/item/rogueweapon/shield/tower/metal/ancient/decrepit`
 - `/obj/item/rogueweapon/shield/tower/spidershield`
+- `/obj/item/rogueweapon/shield/tower/zyb`
 - `/obj/item/rogueweapon/shield/wood`
 - `/obj/item/rogueweapon/stoneaxe/oath`
 - `/obj/item/rogueweapon/stoneaxe/woodcut/steel/woodcutter`
@@ -3432,7 +3779,11 @@ No sheet holds their worn state: `worn_icon = 'modular_redtard/rockhill/icons/bl
 - `/obj/item/rogueweapon/woodstaff`
 - `/obj/item/rogueweapon/woodstaff/`
 - `/obj/item/rogueweapon/woodstaff/aries`
+- `/obj/item/rogueweapon/woodstaff/diamond`
+- `/obj/item/rogueweapon/woodstaff/emerald/blacksteelstaff/royal`
+- `/obj/item/rogueweapon/woodstaff/gefechtsgelehrter`
 - `/obj/item/rogueweapon/woodstaff/militia`
+- `/obj/item/rogueweapon/woodstaff/naledi`
 - `/obj/item/rogueweapon/woodstaff/quarterstaff`
 - `/obj/item/rogueweapon/woodstaff/quarterstaff/iron`
 - `/obj/item/rogueweapon/woodstaff/quarterstaff/silver`
@@ -3440,6 +3791,7 @@ No sheet holds their worn state: `worn_icon = 'modular_redtard/rockhill/icons/bl
 - `/obj/item/rogueweapon/woodstaff/quartz`
 - `/obj/item/rogueweapon/woodstaff/riddle_of_steel/magos`
 - `/obj/item/rogueweapon/woodstaff/ruby`
+- `/obj/item/rogueweapon/woodstaff/sojourner`
 - `/obj/item/storage/belt/rogue/leather/exoticsilkbelt/skirtgreen`
 - `/obj/item/storage/belt/rogue/leather/exoticsilkbelt/skirtred`
 
@@ -3569,6 +3921,7 @@ Area music and ambience are copied into a folder git ignores and are read from d
 ## Sounds
 
 - `modular_redtard/rockhill/sound/combat/dodge.ogg` from Ratwood `sound/combat/dodge.ogg`
+- `modular_redtard/rockhill/sound/combat/feint.ogg` from Ratwood `sound/combat/feint.ogg`
 - `modular_redtard/rockhill/sound/combat/hits/armor/chain_blunt (1).ogg` from Ratwood `sound/combat/hits/armor/chain_blunt (1).ogg`
 - `modular_redtard/rockhill/sound/combat/hits/armor/chain_blunt (2).ogg` from Ratwood `sound/combat/hits/armor/chain_blunt (2).ogg`
 - `modular_redtard/rockhill/sound/combat/hits/armor/chain_blunt (3).ogg` from Ratwood `sound/combat/hits/armor/chain_blunt (3).ogg`
@@ -3651,13 +4004,18 @@ Area music and ambience are copied into a folder git ignores and are read from d
 - `modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg` from Ratwood `sound/combat/parry/wood/parrywood (1).ogg`
 - `modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg` from Ratwood `sound/combat/parry/wood/parrywood (2).ogg`
 - `modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg` from Ratwood `sound/combat/parry/wood/parrywood (3).ogg`
+- `modular_redtard/rockhill/sound/combat/riposte.ogg` from Ratwood `sound/combat/riposte.ogg`
 - `modular_redtard/rockhill/sound/combat/shieldbash_wood.ogg` from Ratwood `sound/combat/shieldbash_wood.ogg`
 - `modular_redtard/rockhill/sound/foley/doors/creak.ogg` from Ratwood `sound/foley/doors/creak.ogg`
 - `modular_redtard/rockhill/sound/foley/ladder.ogg` from Ratwood `sound/foley/ladder.ogg`
 - `modular_redtard/rockhill/sound/foley/latch.ogg` from Ratwood `sound/foley/latch.ogg`
 - `modular_redtard/rockhill/sound/foley/slap.ogg` from Ratwood `sound/foley/slap.ogg`
+- `modular_redtard/rockhill/sound/foley/torchfixtureput.ogg` from Ratwood `sound/foley/torchfixtureput.ogg`
+- `modular_redtard/rockhill/sound/foley/torchfixturetake.ogg` from Ratwood `sound/foley/torchfixturetake.ogg`
 - `modular_redtard/rockhill/sound/items/beartrap2.ogg` from Ratwood `sound/items/beartrap2.ogg`
 - `modular_redtard/rockhill/sound/items/book_close.ogg` from Ratwood `sound/items/book_close.ogg`
+- `modular_redtard/rockhill/sound/items/firelight.ogg` from Ratwood `sound/items/firelight.ogg`
+- `modular_redtard/rockhill/sound/items/firesnuff.ogg` from Ratwood `sound/items/firesnuff.ogg`
 - `modular_redtard/rockhill/sound/misc/area.ogg` from Ratwood `sound/misc/area.ogg`
 - `modular_redtard/rockhill/sound/misc/chestclose.ogg` from Ratwood `sound/misc/chestclose.ogg`
 - `modular_redtard/rockhill/sound/misc/chestopen.ogg` from Ratwood `sound/misc/chestopen.ogg`
@@ -3684,7 +4042,7 @@ Area music and ambience are copied into a folder git ignores and are read from d
 - `modular_redtard/rockhill/sound/weather/sand/weather_sandstorm.ogg` from Ratwood `sound/weather/sand/weather_sandstorm.ogg`
 - `modular_redtard/rockhill/sound/weather/snow/weather_snow.ogg` from Ratwood `sound/weather/snow/weather_snow.ogg`
 
-## Jobs (69 roles, 61 of 79 start landmarks bound to a role)
+## Jobs (69 roles, 64 of 79 start landmarks bound to a role)
 
 | Role | Title | Department |
 |---|---|---|

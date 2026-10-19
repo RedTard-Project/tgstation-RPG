@@ -97,9 +97,6 @@
 /obj/item/roguecoin
 	parent_type = /obj/item/rockhill
 
-/obj/item/roguegear
-	parent_type = /obj/item/rockhill
-
 /obj/item/roguegem
 	parent_type = /obj/item/rockhill
 
@@ -128,6 +125,9 @@
 	parent_type = /obj/item/rockhill
 
 /obj/item/tablecloth
+	parent_type = /obj/item/rockhill
+
+/obj/item/tent_kit
 	parent_type = /obj/item/rockhill
 
 /obj/item/underworld
@@ -947,6 +947,50 @@
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 
+/obj/item/ammo_casing/caseless/rogue/bolt/water
+	name = "water bolt"
+	desc = "A bolt with its tip containing a glass ampule filled with water. It will shatter on impact, useful for taking out pesky lights."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
+	icon_state = "bolt_water"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	possible_item_intents = list(/datum/intent/mace/strike)
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+
+/obj/item/ammo_casing/caseless/rogue/heavy_bolt/tempest
+	name = "tempest bolt"
+	desc = "The warding around this feels <b>heavy</b>. A payload of some sort in the nose. What exactly is this meant for?"
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
+	icon_state = "tempest_bolt"
+	w_class = WEIGHT_CLASS_TINY
+	force = 12
+	throwforce = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+
 /obj/item/ammo_casing/caseless/rogue/javelin/steel/ancient/decrepit
 	name = "decrepit javelin"
 	desc = "A missile of frayed bronze. Before you is your weapon; that which rose Man out of the mud, and brought the Beasts of Old Syon to heel. When were you last aware of any other part of you? Do you recall seeing the world in any other way?"
@@ -1409,6 +1453,27 @@
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 
+/obj/item/bmbstrap/firebomb
+	name = "Bombdolier"
+	desc = "A strap for carrying grenades. A lunatic's invention, surely."
+	icon = 'modular_redtard/rockhill/icons/modular_azurepeak/icons/obj/items/bombdolier.dmi'
+	icon_state = "bombdolier1"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
+	slot_flags = ITEM_SLOT_BACK
+	rogue_inhand = TRUE
+	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+
 /obj/item/bodypart/r_arm
 	parent_type = /obj/item/rockhill
 	name = "right arm"
@@ -1479,6 +1544,28 @@
 	desc = "A fiery explosion waiting to be coaxed from its glass prison."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
 	icon_state = "bbomb"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	throwforce = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	inhand_icon_state = null
+
+/obj/item/bomb/smoke
+	name = "smoke bomb"
+	desc = "A soft sphere with an alchemical mixture and a dispersion mechanism hidden inside. Any pressure will detonate it."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
+	icon_state = "smokebomb"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	throwforce = 0
@@ -1956,6 +2043,7 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/book/rogue/arcyne
@@ -1978,6 +2066,7 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/book/rogue/beardling
@@ -2000,6 +2089,7 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/book/rogue/bibble
@@ -2023,6 +2113,7 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	possible_item_intents = list(/datum/intent/use, /datum/intent/bless)
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/book/rogue/bibble/psy
@@ -2046,6 +2137,7 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	possible_item_intents = list(/datum/intent/use, /datum/intent/bless)
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/book/rogue/bibble/zizo
@@ -2069,6 +2161,7 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	possible_item_intents = list(/datum/intent/use, /datum/intent/bless)
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/book/rogue/cardgame
@@ -2091,6 +2184,7 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/book/rogue/cooking
@@ -2113,6 +2207,7 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/book/rogue/fishing
@@ -2135,6 +2230,7 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/book/rogue/law
@@ -2157,6 +2253,7 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/book/rogue/necra
@@ -2179,6 +2276,7 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/book/rogue/nitebeast
@@ -2201,6 +2299,7 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/book/rogue/noc
@@ -2223,6 +2322,7 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/book/rogue/playerbook
@@ -2245,6 +2345,30 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
+	firefuel = 5 MINUTES
+	inhand_icon_state = null
+
+/obj/item/book/rogue/secret/oathmarked
+	name = "Oathmarked Tome"
+	desc = "An odd tome. The verbage hurts to look at, while the pages sit covered in dust."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/books.dmi'
+	icon_state = "ledger_0"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 5
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/reading
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/book/rogue/swatchbook
@@ -2267,6 +2391,7 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/book/rogue/sword
@@ -2289,6 +2414,7 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/book/rogue/tales1
@@ -2311,6 +2437,7 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/book/rogue/tales3
@@ -2333,6 +2460,7 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/book/rogue/xylix
@@ -2355,6 +2483,7 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/book/rogue/yeoldecookingmanual
@@ -2377,6 +2506,7 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/book/spellbook
@@ -2401,6 +2531,7 @@
 	rogue_grid_height = 64
 	associated_skill = /datum/attribute/skill/misc/reading
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
+	firefuel = 2 MINUTES
 	inhand_icon_state = null
 
 /obj/item/book_crafting_kit
@@ -2547,6 +2678,7 @@
 	inhand_y_dimension = 64
 	rogue_force_wielded = 4
 	gripped_intents = list(/datum/intent/use, /datum/intent/mace/strike/wood)
+	firefuel = 10 MINUTES
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -3083,6 +3215,26 @@
 	rogue_grid_height = 32
 	inhand_icon_state = null
 
+/obj/item/carvedgem/rose/rawrose
+	name = "rosestone"
+	desc = "Pink and lustrous, these pearls produced by fossilized clamshells are valued by Eorans: and are usually gifted to expecting mothers and newlyweds."
+	icon = 'modular_redtard/rockhill/icons/roguetown/gems/gem_rose.dmi'
+	icon_state = "raw_rose"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	inhand_icon_state = null
+
 /obj/item/carvedgem/rose/statue/baotha
 	name = "baothan statuette"
 	desc = "A statue carved out of filthy, filthy rosestone."
@@ -3582,6 +3734,30 @@
 	worn_icon_state = "butlercoat"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/armor/leather/jacket/leathercoat/duelcoat
+	name = "leather coat"
+	desc = "A stylish coat worn by Duelists of Valoria. Light and flexible, it does not impede the complex movements they are known for. Well padded."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "bwleathercoat"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_armor = /datum/rogue_armor/leather_good
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "chopping", "smashing")
+	inhand_icon_state = null
+	worn_icon_state = "bwleathercoat"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/cloak/absolutionistrobe
 	name = "absolver's robe"
 	desc = "Absolve them of their pain. Absolve them of their longing. Lyve, as PSYDON lyves."
@@ -3877,6 +4053,125 @@
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 
+/obj/item/clothing/cloak/cape/inquisitor
+	name = "arbiter cloak"
+	desc = "The cloak of an Otavii arbiter, a class of warrior-priests within the Inquisition. Just as with the owner, the cloak has likely weathered some horrid sights."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/cloaks.dmi'
+	icon_state = "inquisitor_cloak"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
+	alternate_worn_layer = BODY_BEHIND_LAYER
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	inhand_icon_state = null
+	worn_icon_state = "cape"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/cloak/cape/nomad
+	name = "cape"
+	desc = "A beautiful, flowing cape. Too bad it tangles too much on the vegetation."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/cloaks.dmi'
+	icon_state = "cape"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
+	alternate_worn_layer = BODY_BEHIND_LAYER
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	inhand_icon_state = null
+	worn_icon_state = "cape"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/cloak/cape/oathmarked
+	name = "oathmarked cape"
+	desc = "A cape fit for an enormous frame."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/blkknight.dmi'
+	icon_state = "bkcape"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
+	alternate_worn_layer = BODY_BEHIND_LAYER
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/blkknight.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+
+/obj/item/clothing/cloak/cape/puritan
+	name = "cape"
+	desc = "A beautiful, flowing cape. Too bad it tangles too much on the vegetation."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/cloaks.dmi'
+	icon_state = "puritan_cape"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
+	alternate_worn_layer = BODY_BEHIND_LAYER
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	inhand_icon_state = null
+	worn_icon_state = "cape"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/cloak/cape/purple
+	name = "cape"
+	desc = "A beautiful, flowing cape. Too bad it tangles too much on the vegetation."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/cloaks.dmi'
+	icon_state = "cape"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
+	alternate_worn_layer = BODY_BEHIND_LAYER
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	inhand_icon_state = null
+	worn_icon_state = "cape"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/cloak/cape/rogue
 	name = "cape"
 	desc = "A beautiful, flowing cape. Too bad it tangles too much on the vegetation."
@@ -4040,6 +4335,30 @@
 	worn_icon_state = "bear_cloak"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/cloak/darkcloak/minotaur/red
+	name = "minotaur cloak"
+	desc = "Minotaur fur and straw roughly sewn into a long mantle."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/cloaks.dmi'
+	icon_state = "mino"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
+	alternate_worn_layer = BODY_BEHIND_LAYER
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	inhand_icon_state = null
+	worn_icon_state = "mino"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/cloak/duelistcape
 	name = "duelist cape"
 	desc = "A short cape favored by duelists."
@@ -4063,7 +4382,103 @@
 	inhand_icon_state = null
 	worn_icon_state = "duelistcape"
 
+/obj/item/clothing/cloak/eastcloak1
+	name = "cloud-cutter's cloak"
+	desc = "A brown cloak with white swirls. Some Kazengites may recognize it as an old militaristic symbol."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/cloaks.dmi'
+	icon_state = "eastcloak1"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
+	alternate_worn_layer = BODY_BEHIND_LAYER
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	inhand_icon_state = null
+	worn_icon_state = "eastcloak1"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/cloak/forrestercloak
+	name = "forrester cloak"
+	desc = "A cloak worn by the Black Oaks of the vale."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/cloaks.dmi'
+	icon_state = "forestcloak"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
+	alternate_worn_layer = BODY_BEHIND_LAYER
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	inhand_icon_state = null
+	worn_icon_state = "forestcloak"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/cloak/forrestercloak/snow
+	name = "snow cloak"
+	desc = "A cloak meant to keep one's body warm in the cold of the mountains as well as the dampness of the vale."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/cloaks.dmi'
+	icon_state = "snowcloak"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
+	alternate_worn_layer = BODY_BEHIND_LAYER
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	inhand_icon_state = null
+	worn_icon_state = "snowcloak"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/cloak/half
+	name = "halfcloak"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/cloaks.dmi'
+	icon_state = "halfcloak"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
+	alternate_worn_layer = BODY_BEHIND_LAYER
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	inhand_icon_state = null
+	worn_icon_state = "halfcloak"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/cloak/half/brown
 	name = "halfcloak"
 	desc = ""
 	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/cloaks.dmi'
@@ -4109,6 +4524,30 @@
 	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "halfcloak"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/cloak/half/rider/red
+	name = "rider cloak"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/cloaks.dmi'
+	icon_state = "guardcloak"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
+	alternate_worn_layer = BODY_BEHIND_LAYER
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	inhand_icon_state = null
+	worn_icon_state = "guardcloak"
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/half/vet
@@ -4327,6 +4766,51 @@
 	worn_icon_state = "matroncloak"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/cloak/ordinatorcape
+	name = "ordinator cape"
+	desc = "A flowing red cape complete with an ornately patterned steel shoulderguard. Made to last. Made to ENDURE. Made to LYVE."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/cloaks.dmi'
+	icon_state = "ordinatorcape"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	inhand_icon_state = null
+	worn_icon_state = "ordinatorcape"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/cloak/psyaltrist
+	name = "psyalter's stole"
+	desc = "A silk stole embroidered with silver fillagree and with concealed pockets in its back worn over a hymnal-scroll. It is worn as the traditional garb of a graduate of the choir leaders of the cathedrals of Otava and is a symbol of their station."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/cloaks.dmi'
+	icon_state = "psaltertabard"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+
 /obj/item/clothing/cloak/psydontabard
 	name = "psydonian tabard"
 	desc = "A tabard worn by Psydon's disciples. Delicate stitchwork professes the psycross with pride."
@@ -4350,6 +4834,31 @@
 	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "psydontabard"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/cloak/psydontabard/alt
+	name = "opened psydonian tabard"
+	desc = "A tabard worn by Psydon's disciples, peeled back to reveal its enduring innards."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/cloaks.dmi'
+	icon_state = "psydontabardalt"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = GROIN
+	rogue_inhand = FALSE
+	alternate_worn_layer = ROGUE_TABARD_LAYER
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	inhand_icon_state = null
+	worn_icon_state = "psydontabardalt"
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/raincloak
@@ -4425,6 +4934,30 @@
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/raincloak/furcloak
+	name = "fur cloak"
+	desc = "This glorious cloak is made of animal fur. Very soft and warm."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/cloaks.dmi'
+	icon_state = "furgrey"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
+	alternate_worn_layer = BODY_BEHIND_LAYER
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	inhand_icon_state = null
+	worn_icon_state = "rain_cloak"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/cloak/raincloak/furcloak/brown
 	name = "fur cloak"
 	desc = "This glorious cloak is made of animal fur. Very soft and warm."
 	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/cloaks.dmi'
@@ -4689,6 +5222,56 @@
 	rogue_grid_height = 64
 	inhand_icon_state = null
 	worn_icon_state = "stabard"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/cloak/stabard/dungeon
+	name = "surcoat"
+	desc = "An outer garment commonly worn by soldiers."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/cloaks.dmi'
+	icon_state = "stabard"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
+	body_parts_covered = CHEST|GROIN
+	rogue_inhand = FALSE
+	alternate_worn_layer = ROGUE_TABARD_LAYER
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	inhand_icon_state = null
+	worn_icon_state = "stabard"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/cloak/stabard/grenzelmage
+	name = "grenzelhoftian magos mantle"
+	desc = "A fashionable Mantle often worn by Celestial Academy Magos."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/cloaks.dmi'
+	icon_state = "guard_hood"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
+	body_parts_covered = CHEST
+	rogue_inhand = FALSE
+	alternate_worn_layer = ROGUE_TABARD_LAYER
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	inhand_icon_state = null
+	worn_icon_state = "guard_hood"
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/stabard/guard
@@ -5230,6 +5813,31 @@
 	worn_icon_state = "pestratabard"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/cloak/templar/psydon
+	name = "psydon tabard"
+	desc = "An outer garment commonly worn by soldiers. This one has the symbol of Psydon on it."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/cloaks.dmi'
+	icon_state = "tabard_weeping"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK
+	body_parts_covered = CHEST|GROIN
+	rogue_inhand = FALSE
+	alternate_worn_layer = ROGUE_TABARD_LAYER
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	inhand_icon_state = null
+	worn_icon_state = "tabard_weeping"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/cloak/templar/ravox
 	name = "justice tabard"
 	desc = "An underarmor vestments with a neck cover, worn by templars of Ravox."
@@ -5302,6 +5910,29 @@
 	worn_icon_state = "xylixcloak"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/cloak/thief_cloak/yoruku
+	name = "rapscallion's shawl"
+	desc = "A simple shawl clasped with an ersatz fastener. Practical and functional, though the fabric is rough and wearing bare."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/cloaks.dmi'
+	icon_state = "thiefcloak"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	inhand_icon_state = null
+	worn_icon_state = "thiefcloak"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/cloak/undivided
 	name = "see cloak"
 	desc = "A symbol of the See. The last daes are upon us, lamb. Do you yet cling to hope?"
@@ -5324,6 +5955,30 @@
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
+
+/obj/item/clothing/cloak/volfmantle
+	name = "volf mantle"
+	desc = "A warm cloak made using the hide and head of a slain volf. A status symbol if ever there was one."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/cloaks.dmi'
+	icon_state = "volfpelt"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
+	alternate_worn_layer = BODY_BEHIND_LAYER
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	inhand_icon_state = null
+	worn_icon_state = "volfpelt"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/wardencloak
 	name = "warden cloak"
@@ -5479,6 +6134,87 @@
 	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "grenzelgloves"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/gloves/roguetown/angle/grenzelgloves/freifechter
+	name = "fencing gloves"
+	desc = "A pair of hardened leather gloves used by fencers who aren't exactly convinced of losing a finger to a particularly strong feder cut. The inside is padded for extra durability."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/gloves.dmi'
+	icon_state = "freigloves"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
+	slot_flags = ITEM_SLOT_GLOVES
+	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather_good
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "twist")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "freigloves"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/gloves/roguetown/angle/pontifex
+	name = "rune-scrybed wrappings"
+	desc = "Paper and cloth bandages enscrybed with powerful naledian runes. They do an ample job of protecting their user's hands in combat."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/gloves.dmi'
+	icon_state = "clothwraps"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
+	slot_flags = ITEM_SLOT_GLOVES
+	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather_good
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "twist")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "clothwraps"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/gloves/roguetown/bandages
+	name = "bandages"
+	desc = "Thickly-woven bandages that've been wrapped around the hands. It soaks up the sweat from your palm, strengthens your fists, and protects your knuckles from dislodged teeth."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/gloves.dmi'
+	icon_state = "clothwraps"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
+	slot_flags = ITEM_SLOT_GLOVES
+	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather
+	rogue_prevent_crits = list("slash", "stabbing", "blunt")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "clothwraps"
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/gloves/roguetown/bandages/pugilist
@@ -5669,6 +6405,60 @@
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 
+/obj/item/clothing/gloves/roguetown/eastgloves1
+	name = "black gloves"
+	desc = "Sleek gloves typically used by swordsmen."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/gloves.dmi'
+	icon_state = "eastgloves1"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
+	slot_flags = ITEM_SLOT_GLOVES
+	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather
+	rogue_prevent_crits = list("slash", "blunt")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "eastgloves1"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/gloves/roguetown/eastgloves2
+	name = "stylish gloves"
+	desc = "Unusual gloves worn by foreign gangs."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/gloves.dmi'
+	icon_state = "eastgloves2"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
+	slot_flags = ITEM_SLOT_GLOVES
+	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather
+	rogue_prevent_crits = list("slash", "blunt")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "eastgloves2"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/gloves/roguetown/elven_gloves
 	name = "woad elven gloves"
 	desc = "The insides are lined with soft, living leaves and soil. They wick away moisture easily."
@@ -5719,6 +6509,32 @@
 	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "fingerless_gloves"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/gloves/roguetown/fingerless/shadowgloves/elflock
+	name = "fingerless gloves"
+	desc = "Cloth gloves to absorb palm sweat while leaving the fingers free for fine manipulation."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/gloves.dmi'
+	icon_state = "shadowgloves"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
+	slot_flags = ITEM_SLOT_GLOVES
+	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/maille
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "shadowgloves"
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/gloves/roguetown/fingerless_leather
@@ -5850,6 +6666,33 @@
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
+
+/obj/item/clothing/gloves/roguetown/otavan
+	name = "otavan leather gloves"
+	desc = "A pair of heavy Otavan leather gloves, commonly used by fencers, renowned for their quality."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/gloves.dmi'
+	icon_state = "fencergloves"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
+	slot_flags = ITEM_SLOT_GLOVES
+	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/maille
+	rogue_prevent_crits = list("chopping", "slash", "blunt", "twist")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "fencergloves"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/gloves/roguetown/otavan/inqgloves
 	name = "inquisitorial leather gloves"
@@ -5986,6 +6829,32 @@
 	worn_icon_state = "agauntlets"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/gloves/roguetown/plate/atgervi
+	name = "beast claws"
+	desc = "A menacing pair of plated claws, A closely protected tradition of the Shamans. Decorated with symbols of the gods they praise and the Gods they reject."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/gloves.dmi'
+	icon_state = "atgervi_shaman_gloves"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	slot_flags = ITEM_SLOT_GLOVES
+	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("chopping", "slash", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+
 /obj/item/clothing/gloves/roguetown/plate/dwarven
 	name = "grudgebearer dwarven gauntlets"
 	desc = "Forged to fit the stubbiest of fingers. It is covered in protective layers."
@@ -6093,6 +6962,33 @@
 	worn_icon_state = "igauntlets"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/gloves/roguetown/plate/iron/gronn
+	name = "kheshig iron gauntlets"
+	desc = "Iron gauntlets, Simple and protective in design. A single punch leaves a nasty mark."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/gronn.dmi'
+	icon_state = "gronnplategloves"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/gronn.dmi'
+	slot_flags = ITEM_SLOT_GLOVES
+	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("chopping", "slash", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+	worn_icon_state = "gronnplategloves"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/gloves/roguetown/plate/matthios
 	name = "gilded gauntlets"
 	desc = "Many a man his life hath sold,"
@@ -6119,6 +7015,59 @@
 	inhand_icon_state = null
 	worn_icon_state = "matthiosgloves"
 	rogue_female_worn = TRUE
+
+/obj/item/clothing/gloves/roguetown/plate/oathmarked
+	name = "oathmarked gauntlets"
+	desc = "Plate gauntlets made out of blackened steel."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/blkknight.dmi'
+	icon_state = "bplategloves"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/blkknight.dmi'
+	slot_flags = ITEM_SLOT_GLOVES
+	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/blkknight.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("chopping", "slash", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+	worn_icon_state = "bplategloves"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/gloves/roguetown/plate/shadowgauntlets
+	name = "darkplate gauntlets"
+	desc = "Gauntlets with gilded fingers fashioned into talons. The tips are all too dull to be of harm."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/gloves.dmi'
+	icon_state = "shadowgauntlets"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	slot_flags = ITEM_SLOT_GLOVES
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("chopping", "slash", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/gloves/roguetown/plate/zizo
 	name = "avantyne plate gauntlets"
@@ -6358,6 +7307,28 @@
 	rogue_grid_height = 32
 	inhand_icon_state = "that"
 
+/obj/item/clothing/head/roguetown/bucklehat
+	name = "folded hat"
+	desc = "A plain leather hat with decorative buckle. Made popular by the ne'er-do-wells of Etrusca."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "bucklehat"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon_state = "that"
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	inhand_icon_state = "that"
+
 /obj/item/clothing/head/roguetown/chaperon
 	name = "chaperon hat"
 	desc = "A utilitarian yet fashionable hat traditionally made from a hood. Usually worn as a status symbol."
@@ -6400,6 +7371,29 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	inhand_icon_state = null
+
+/obj/item/clothing/head/roguetown/chaperon/greyscale/shepherd
+	name = "mountaineer's chaperon"
+	desc = "A fashionable citygoer's chaperon worn around an insconspicuous iron skullcap. It has a cute little Mamük brooch on the tip of the hood. Szöréndnížine shepherds spend plenty of time in the city and have taken a liking to the chaperon's exaggerated swagger."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "chap_alt"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon_state = "chap_alt"
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather_studded
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/chaperon/noble
@@ -6491,6 +7485,28 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	inhand_icon_state = null
+
+/obj/item/clothing/head/roguetown/chef
+	name = "chef's hat"
+	desc = "A hat which designates one as well-versed in the arts of cooking."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "chef"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon_state = "that"
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/circlet
 	name = "golden circlet"
@@ -6737,6 +7753,31 @@
 	rogue_grid_height = 32
 	inhand_icon_state = null
 
+/obj/item/clothing/head/roguetown/grenzelhofthat
+	name = "grenzelhoft plume hat"
+	desc = "Whether it's monsters or fair maidens, a true Grenzelhoftian slays both. This hat contains a hidden metallic cap underneath to protect the head from blows."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "grenzelhat"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	slot_flags = ITEM_SLOT_HEAD
+	body_parts_covered = HEAD
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/spellsinger
+	rogue_prevent_crits = list("slash", "blunt", "twist")
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+
 /obj/item/clothing/head/roguetown/hatblu
 	name = "fur hat"
 	desc = "A blue hat lined with fur."
@@ -6781,6 +7822,52 @@
 	rogue_grid_height = 32
 	inhand_icon_state = "that"
 
+/obj/item/clothing/head/roguetown/headband
+	name = "headband"
+	desc = "A simple headband to keep sweat out of your eyes."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "headband"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon_state = "headband"
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	inhand_icon_state = null
+
+/obj/item/clothing/head/roguetown/headband/bloodied
+	name = "bloodied headband"
+	desc = "A headband that's been soaked in the blood of a terrible nitebeast. The coagulative properties of cursed blood has stiffened the cloth, gifting it a texture not unlike spongy leather. Wearing it emboldens you with determination."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "headband"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon_state = "headband"
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather_good
+	rogue_prevent_crits = list("slash", "chopping", "twist")
+	inhand_icon_state = null
+
 /obj/item/clothing/head/roguetown/headband/monk
 	name = "monk's headband"
 	desc = "A winding length of cloth, meticulously lined with heavy leather strips. Errant impacts are thwarted, yet not a degree of vision is impaired; valuable traits, for the Monk who must enlighten their villains with a white-knuckled sermon. </br>'..I kick ass for the Lord!'"
@@ -6804,6 +7891,28 @@
 	rogue_armor = /datum/rogue_armor/spellsinger
 	rogue_prevent_crits = list("slash", "stabbing", "blunt", "twist")
 	rogue_blocksound = "soft"
+	inhand_icon_state = null
+
+/obj/item/clothing/head/roguetown/headband/red
+	name = "headband"
+	desc = "A simple headband to keep sweat out of your eyes."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "headband"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon_state = "headband"
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
 	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/headdress
@@ -7091,6 +8200,34 @@
 	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
 	rogue_blocksound = "plate"
 	inhand_icon_state = null
+
+/obj/item/clothing/head/roguetown/helmet/blacksteel/psychains
+	name = "length of psydonian chains"
+	desc = "Chains fashioned from blacksteel, ritualistically worn atop helmets to testify one's unshatterable bond to Him."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "psychains"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
+	body_parts_covered = HEAD
+	rogue_onhip = TRUE
+	rogue_inhand = TRUE
+	alternate_worn_layer = (HANDS_LAYER - 0.1)
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate_bsteel
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = "that"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/blacksteel/psythorns
 	name = "crown of psydonian thorns"
@@ -7397,6 +8534,34 @@
 	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
+/obj/item/clothing/head/roguetown/helmet/heavy/bucket/gronn
+	name = "kheshig horned helmet"
+	desc = "A horned iron helmet, An exotic foreign design. Styled after the appearance of invading knights of legends from a distant land. Brutal and plain."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/gronn.dmi'
+	icon_state = "gronnplatehelm"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/64x64/gronn.dmi'
+	worn_icon_state = "gronnplatehelm"
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_onhip = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+
 /obj/item/clothing/head/roguetown/helmet/heavy/bucket/iron
 	name = "iron bucket helm"
 	desc = "A helmet that covers your entire head, offering good protection while making breathing a difficult ordeal."
@@ -7480,6 +8645,33 @@
 	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
+/obj/item/clothing/head/roguetown/helmet/heavy/dwarven/smith
+	name = "grudgebearer smith helm"
+	desc = "A hardy, layered helmet. It lets one's dwarvenly beard to poke out. This one is intended for the smiths of the clan. No less protective. All the more stylish."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/race_armor.dmi'
+	icon_state = "dsmithhead"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/race_armor.dmi'
+	worn_icon_state = "dsmithhead"
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/grudgebearer
+	armor_class = 2
+	rogue_prevent_crits = list("twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+
 /obj/item/clothing/head/roguetown/helmet/heavy/elven_helm
 	name = "woad elven helm"
 	desc = "An assembly of woven trunk, kept alive by ancient song, now twisted and warped for battle and scorn."
@@ -7503,6 +8695,33 @@
 	rogue_grid_height = 64
 	rogue_armor = /datum/rogue_armor/blackoak
 	armor_class = 2
+	rogue_prevent_crits = list("blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+
+/obj/item/clothing/head/roguetown/helmet/heavy/elven_helm/light
+	name = "woad elven barbute"
+	desc = "A helm of woven trunk, kept alive by ancient song and crowned with living leaves of endless verdure. Lighter and more pliant than it's fuller counterpart, it bends with the will of it's bearer, never truly severed from the living grove."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/race_armor.dmi'
+	icon_state = "welfheadalt"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/race_armor.dmi'
+	worn_icon_state = "welfheadalt"
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/blackoak
+	armor_class = 1
 	rogue_prevent_crits = list("blunt", "smashing", "twist", "stab")
 	rogue_blocksound = "soft"
 	inhand_icon_state = null
@@ -7814,6 +9033,62 @@
 	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
+/obj/item/clothing/head/roguetown/helmet/heavy/oathmarked
+	name = "oathmarked helmet"
+	desc = "An ancient helm, similar in design to a modern blacksteel armet. Albeit without the visor. Expensive looking, but certainly not blacksteel..."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/blkknight.dmi'
+	icon_state = "bplatehelm_nv"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/blkknight.dmi'
+	worn_icon_state = "bplatehelm_nv"
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_onhip = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 3
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+
+/obj/item/clothing/head/roguetown/helmet/heavy/ordinatorhelm
+	name = "inquisitorial ordinator's helmet"
+	desc = "A design suggested by a Grenzelhoftian smith, an avid follower of Saint Abyssor - implying to base it on the templar's greathelm design, and it was proved worthy of usage: A steel casket with thin slits that allow for deceptively clear vision. The tainted will drown on the blood you will bring their way."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "ordinatorhelm"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_icon_state = "ordinatorhelm"
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_onhip = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+
 /obj/item/clothing/head/roguetown/helmet/heavy/pestran
 	name = "pestran helmet"
 	desc = "A hooded helmet worn by Her Templars, perfect for times of disease and for the heat of battle."
@@ -7838,6 +9113,117 @@
 	rogue_grid_height = 64
 	rogue_armor = /datum/rogue_armor/plate
 	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+
+/obj/item/clothing/head/roguetown/helmet/heavy/psydonbarbute
+	name = "psydonic barbute"
+	desc = "A ceremonial barbute, masterfully forged to represent Psydon's divine authority. The Order of Saint Malum's artisans have chiseled this pronged visage into more statues than you could possibly imagine."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "psydonbarbute"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
+	worn_icon_state = "psydonbarbute"
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_onhip = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+
+/obj/item/clothing/head/roguetown/helmet/heavy/sheriff
+	name = "barred helmet"
+	desc = "A helmet which offers good protection to the face at the expense of vision."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "gatehelm"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
+	worn_icon_state = "barbute"
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_onhip = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+
+/obj/item/clothing/head/roguetown/helmet/heavy/volfplate
+	name = "volf-face helm"
+	desc = "A steel bascinet helmet with a volfish visor protecting the head, ears, eyes, nose and mouth."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "volfplate"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
+	worn_icon_state = "volfplate"
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_onhip = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+
+/obj/item/clothing/head/roguetown/helmet/heavy/volfplate/berserker
+	name = "volfskulle bascinet"
+	desc = "A steel bascinet helmet with a snarling visor that protects the entire head and face. Just like the nitebeasts it mimics, so too does the helmet's teeth glisten with flesh-sundering sharpness."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "volfplate"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
+	worn_icon_state = "volfplate"
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_onhip = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 1
 	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "smashing", "twist", "stab")
 	rogue_blocksound = "plate"
 	inhand_icon_state = null
@@ -7978,6 +9364,33 @@
 	rogue_blocksound = "plate"
 	inhand_icon_state = "that"
 
+/obj/item/clothing/head/roguetown/helmet/kettle/minershelm
+	name = "reinforced miners helmet"
+	desc = "A rimmed miners helmet reinforced with leather atop its flimsy thin inner steel, its glowing lamp fueled by magiks from the depths."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "minerslamp"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
+	worn_icon_state = "that"
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_onhip = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = "that"
+
 /obj/item/clothing/head/roguetown/helmet/leather
 	name = "leather helmet"
 	desc = "A helmet made of leather."
@@ -8059,6 +9472,33 @@
 	inhand_icon_state = null
 	worn_icon_state = "studhood"
 
+/obj/item/clothing/head/roguetown/helmet/leather/chapeau
+	name = "Chapeau a Naled"
+	desc = "A leather cap, armored with layers of especially crafted armored coins each baring wards against supernatural forces. The heavy closeable, face-obscuring flaps are both practical, to protect from sand and dust and frigid nights--and to ensure the Otavan aids were not violating Naledi customs with their uncovered faces.</br>They are heavily associated with the Poet-Historian Aalis Petit and her writings and songs about the campaign into Naledi and through her, adventurous bards of Otava. "
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "chapnaled"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
+	worn_icon_state = "that"
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_onhip = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_studded
+	rogue_prevent_crits = list("blunt", "twist")
+	rogue_blocksound = "soft"
+	inhand_icon_state = "that"
+
 /obj/item/clothing/head/roguetown/helmet/leather/goblin
 	name = "goblin helmet"
 	desc = "A helmet made of leather."
@@ -8082,6 +9522,33 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	rogue_armor = /datum/rogue_armor/leather
+	rogue_prevent_crits = list("blunt", "twist")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+
+/obj/item/clothing/head/roguetown/helmet/leather/shaman_hood
+	name = "moose hood"
+	desc = "A deceptively strong hood of hide with a pair of large heavy antlers. It is the reward of the fourth trial of the Zayran Shamans, To slay a Grinning moose in the final hunt alone and fashion a hood from it's head."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/gronn.dmi'
+	icon_state = "gronnfurhood"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/32x48/gronn.dmi'
+	worn_icon_state = "gronnfurhood"
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_onhip = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 48
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_good
 	rogue_prevent_crits = list("blunt", "twist")
 	rogue_blocksound = "soft"
 	inhand_icon_state = null
@@ -8113,6 +9580,60 @@
 	rogue_blocksound = "soft"
 	inhand_icon_state = null
 
+/obj/item/clothing/head/roguetown/helmet/nomadhelmet
+	name = "nomad helmet"
+	desc = "An iron helmet with leather to help protect the neck."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "nomadhelmet"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
+	worn_icon_state = "nomadhelmet"
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD|NECK
+	rogue_onhip = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "blunt", "twist", "stabbing")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+
+/obj/item/clothing/head/roguetown/helmet/otavan
+	name = "otavan helmet"
+	desc = "A helmet of Otavan make, similar in structure to a Psydonian Armet but fitted with an angular klappvisier."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "otavahelm"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
+	worn_icon_state = "otavahelm"
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_onhip = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+
 /obj/item/clothing/head/roguetown/helmet/sallet
 	name = "sallet"
 	desc = "A steel helmet which protects the ears."
@@ -8140,6 +9661,87 @@
 	rogue_blocksound = "plate"
 	inhand_icon_state = "that"
 
+/obj/item/clothing/head/roguetown/helmet/sallet/beastskull
+	name = "beast skull"
+	desc = "The skull of a horned beast, carved and fashioned into a helmet. An steel skull cap has been inserted on the inside."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "marauder_head"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_icon_state = "that"
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_onhip = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = "that"
+
+/obj/item/clothing/head/roguetown/helmet/sallet/iron
+	name = "iron sallet"
+	desc = "A iron helmet which protects the ears."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "isallet"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
+	worn_icon_state = "that"
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_onhip = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = "that"
+
+/obj/item/clothing/head/roguetown/helmet/sallet/shishak
+	name = "steel shishak"
+	desc = "A flat decorated steel helmet of Aavnic make with a spike at the top end. A hanging layer of chainmail protects the sides of the head and even the neck."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "shishak"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
+	worn_icon_state = "that"
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD|NECK
+	rogue_onhip = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = "that"
+
 /obj/item/clothing/head/roguetown/helmet/sallet/visored
 	name = "visored sallet"
 	desc = "A steel helmet which protects the ears, nose, and eyes."
@@ -8150,6 +9752,33 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
+	worn_icon_state = "that"
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_onhip = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = "that"
+
+/obj/item/clothing/head/roguetown/helmet/sallet/warden/bear
+	name = "warden's bearskull helm"
+	desc = "The large, intimidating skull of a common direbear, plated with steel on its inner side and given padding - paired together with a steel maille mask and worn with a linen shroud. Such trophies are associated with life-long hunters and their descendants."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/warden.dmi'
+	icon_state = "skullmet_bear"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/warden.dmi'
 	worn_icon_state = "that"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
@@ -8220,6 +9849,33 @@
 	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
 	rogue_blocksound = "plate"
 	inhand_icon_state = "that"
+
+/obj/item/clothing/head/roguetown/helmet/tricorn
+	name = "tricorn"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "tricorn"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	slot_flags = ITEM_SLOT_HEAD
+	body_parts_covered = HEAD
+	rogue_onhip = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/clothing
+	rogue_prevent_crits = list("blunt", "twist")
+	rogue_blocksound = "soft"
+	inhand_icon_state = "that"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/head/roguetown/helmet/winged
 	name = "winged cap"
@@ -8405,6 +10061,30 @@
 	rogue_grid_height = 32
 	inhand_icon_state = null
 
+/obj/item/clothing/head/roguetown/mentorhat
+	name = "worn bamboo hat"
+	desc = "A reinforced bamboo hat."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "easthat"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon_state = "easthat"
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/spellsinger
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+
 /obj/item/clothing/head/roguetown/necrahood
 	name = "death shroud"
 	desc = "Wisps of dark fabric that cover your entire head and flutter gently in the breeze. Often worn by those who usher the dead to the afterlife."
@@ -8417,6 +10097,28 @@
 	worn_icon_state = "necrahood"
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
 	body_parts_covered = HEAD
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	inhand_icon_state = null
+
+/obj/item/clothing/head/roguetown/necromhood
+	name = "necromancers hood"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "necromhood"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon_state = "necromhood"
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	body_parts_covered = NECK
 	rogue_inhand = FALSE
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -8515,6 +10217,56 @@
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 
+/obj/item/clothing/head/roguetown/paddedcap
+	name = "padded cap"
+	desc = "A modest arming cap."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "armingcap"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK|ITEM_SLOT_NECK
+	body_parts_covered = HEAD
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/padded_bad
+	rogue_prevent_crits = list("slash", "blunt")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+
+/obj/item/clothing/head/roguetown/papakha
+	name = "papakha"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "papakha"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon_state = "papakha"
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/clothing
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+
 /obj/item/clothing/head/roguetown/physician
 	name = "doctor's hat"
 	desc = "My cure is most effective."
@@ -8581,6 +10333,31 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	inhand_icon_state = null
+
+/obj/item/clothing/head/roguetown/puritan/armored
+	name = "puritan's hat"
+	desc = "A buckled capotain, woven atop a steel skull cap. Discrete enough to wear for a diplomatic affair, but durable enough to thwart a heathen's blade."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "puritan_hat"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon_state = "that"
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = "that"
 
 /obj/item/clothing/head/roguetown/roguehood
 	name = "hood"
@@ -8707,6 +10484,32 @@
 	inhand_icon_state = null
 	worn_icon_state = "feldhood"
 
+/obj/item/clothing/head/roguetown/roguehood/hierophant
+	name = "hierophant's pashmina"
+	desc = "A thick hood that covers one's entire head, should they desire, or merely acts as a scarf otherwise. Made with spell-laced fabric to provide some protection against daemons and mortals alike."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "deserthood"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
+	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
+	alternate_worn_layer = (HANDS_LAYER - 0.1)
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/spellsinger
+	rogue_prevent_crits = list("slash", "blunt", "twist")
+	inhand_icon_state = null
+	worn_icon_state = "deserthood"
+
 /obj/item/clothing/head/roguetown/roguehood/mage
 	name = "hood"
 	desc = ""
@@ -8731,6 +10534,32 @@
 	rogue_armor = /datum/rogue_armor/clothing
 	inhand_icon_state = null
 	worn_icon_state = "basichood"
+
+/obj/item/clothing/head/roguetown/roguehood/pontifex
+	name = "pontifex's pashmina"
+	desc = "A slim hood with thin, yet dense fabric. Stretchy and malleable, allowing for full flexibility and mobility. Made with spell-laced fabric to provide some protection against daemons and mortals alike."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "monkhood"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
+	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
+	alternate_worn_layer = (HANDS_LAYER - 0.1)
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/spellsinger
+	rogue_prevent_crits = list("slash", "blunt", "twist")
+	inhand_icon_state = null
+	worn_icon_state = "monkhood"
 
 /obj/item/clothing/head/roguetown/roguehood/psydon
 	name = "psydonian hood"
@@ -8759,6 +10588,33 @@
 	inhand_icon_state = null
 	worn_icon_state = "psydonhood"
 
+/obj/item/clothing/head/roguetown/roguehood/psydon/confessor
+	name = "confessional hood"
+	desc = "A loose-fitting piece of leatherwear that can be tightened on the move. Keeps rain, blood, and the tears of the sullied away."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "confessorhood"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
+	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
+	alternate_worn_layer = (HANDS_LAYER - 0.1)
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/spellsinger
+	rogue_prevent_crits = list("slash", "blunt", "twist")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "confessorhood"
+
 /obj/item/clothing/head/roguetown/roguehood/random
 	name = "hood"
 	desc = ""
@@ -8781,6 +10637,85 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	rogue_armor = /datum/rogue_armor/clothing
+	inhand_icon_state = null
+	worn_icon_state = "basichood"
+
+/obj/item/clothing/head/roguetown/roguehood/red
+	name = "hood"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "basichood"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
+	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
+	alternate_worn_layer = (HANDS_LAYER - 0.1)
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/clothing
+	inhand_icon_state = null
+	worn_icon_state = "basichood"
+
+/obj/item/clothing/head/roguetown/roguehood/reinforced
+	name = "reinforced hood"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "basichood"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
+	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
+	alternate_worn_layer = (HANDS_LAYER - 0.1)
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/reinforced_hood
+	rogue_prevent_crits = list("slash", "blunt", "twist")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "basichood"
+
+/obj/item/clothing/head/roguetown/roguehood/reinforced/newmoon
+	name = "reinforced hood"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "basichood"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
+	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
+	alternate_worn_layer = (HANDS_LAYER - 0.1)
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/reinforced_hood
+	rogue_prevent_crits = list("slash", "blunt", "twist")
+	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "basichood"
 
@@ -8810,6 +10745,189 @@
 	inhand_icon_state = null
 	worn_icon_state = "heavyhood"
 
+/obj/item/clothing/head/roguetown/roguehood/shalal/hijab/black
+	name = "hijab"
+	desc = "Flowing like blood from a wound, this tithe of cloth-and-silk spills out to the shoulders. It carries the telltale mark of Naledian stitcheries."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "deserthood"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK|ITEM_SLOT_NECK
+	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
+	alternate_worn_layer = (HANDS_LAYER - 0.1)
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/clothing
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+
+/obj/item/clothing/head/roguetown/roguehood/shalal/hijab/yoruku
+	name = "shadowed hood"
+	desc = "It sits just so, obscuring the face just enough to spoil recognition."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "deserthood"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK|ITEM_SLOT_NECK
+	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
+	alternate_worn_layer = (HANDS_LAYER - 0.1)
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/clothing
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+
+/obj/item/clothing/head/roguetown/roguehood/shalal/hijab/zyb
+	name = "padded headscarf"
+	desc = "A common sight amongst those travelling the long desert routes, it offers protection from the heat and a modicum of it against the beasts that prowl its more comfortable nites."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "deserthood"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK|ITEM_SLOT_NECK
+	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
+	alternate_worn_layer = (HANDS_LAYER - 0.1)
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/spellsinger
+	rogue_prevent_crits = list("slash", "blunt", "twist")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+
+/obj/item/clothing/head/roguetown/roguehood/shalal/nomad
+	name = "keffiyeh"
+	desc = "A protective covering worn by those native to the desert."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "shalal"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
+	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
+	alternate_worn_layer = (HANDS_LAYER - 0.1)
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/clothing
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "shalal"
+
+/obj/item/clothing/head/roguetown/roguehood/shalal/purple
+	name = "keffiyeh"
+	desc = "A protective covering worn by those native to the desert."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "shalal"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
+	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
+	alternate_worn_layer = (HANDS_LAYER - 0.1)
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/clothing
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "shalal"
+
+/obj/item/clothing/head/roguetown/roguehood/sojourner
+	name = "sojourner's shroud"
+	desc = "A traditional garment, carried by those who survived the lonesome pilgrimage through Naledi's cursed dunes. Like a helmet, it will ward off killing blows; but unlike a helmet, it will keep the mistakes out of your incantations. </br> '..We had our tests; we had our places of sin and vice. We were to look out for brother and sister, arm-in-arm, to ensure none of us fell. And yet we all did. We all allowed that to become what is. The daemons that roam our streets, that snatch our children from our bed, that eat our wives and break our husbands. They are us, our own creations and perversions. They are humanity as humanity sees itself, made manifest through our own twisted arcyne magicks..'"
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "surghood"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
+	body_parts_covered = HEAD
+	rogue_inhand = FALSE
+	alternate_worn_layer = (HANDS_LAYER - 0.1)
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/spellsinger
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "twist")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "surghood"
+
+/obj/item/clothing/head/roguetown/roguehood/warden
+	name = "warden's hood"
+	desc = "A hunter's leather hood with two linen layers, sewn larger than usual to accommodate a helmet - or an animal's skull."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/warden.dmi'
+	icon_state = "wardenhood"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/warden.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
+	body_parts_covered = NECK
+	rogue_inhand = FALSE
+	alternate_worn_layer = (HANDS_LAYER - 0.1)
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/clothing
+	inhand_icon_state = null
+	worn_icon_state = "wardenhood"
+
 /obj/item/clothing/head/roguetown/shawl
 	name = "shawl"
 	desc = "Keeps the hair in check, and looks proper."
@@ -8831,6 +10949,31 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	inhand_icon_state = "that"
+
+/obj/item/clothing/head/roguetown/spellcasterhat
+	name = "spellsinger hat"
+	desc = "An oddly shaped hat made of tightly-sewn leather, commonly worn by spellswords."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "spellcasterhat"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_icon_state = "spellcasterhat"
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/spellsinger
+	rogue_prevent_crits = list("slash", "blunt", "twist")
+	inhand_icon_state = null
 
 /obj/item/clothing/head/roguetown/strawhat
 	name = "straw hat"
@@ -9146,6 +11289,28 @@
 	inhand_icon_state = null
 	worn_icon_state = "spliffoff"
 
+/obj/item/clothing/mask/cigarette/rollie/nicotine/cheroot
+	name = "cheroot"
+	desc = "Rich smokeleaf self-rolled into an open-clipped cigarillo. Envigorating for the enthusiast, nauseating for the laymen."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/lighting.dmi'
+	icon_state = "spliffoff"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/mouth_items.dmi'
+	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	inhand_icon_state = null
+	worn_icon_state = "spliffoff"
+
 /obj/item/clothing/mask/cigarette/rollie/trippy
 	name = "trippy zig"
 	desc = "A paper wrapped cartridge of... What?"
@@ -9278,10 +11443,86 @@
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 
+/obj/item/clothing/mask/rogue/eyepatch
+	name = "eyepatch"
+	desc = "An eyepatch, fitted for the right eye."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/masks.dmi'
+	icon_state = "eyepatch"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
+	slot_flags = ITEM_SLOT_MASK
+	body_parts_covered = HEAD
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	inhand_icon_state = null
+	worn_icon_state = "eyepatch"
+
 /obj/item/clothing/mask/rogue/facemask
 	name = "iron mask"
 	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/masks.dmi'
 	icon_state = "imask"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+
+/obj/item/clothing/mask/rogue/facemask/
+	name = "iron mask"
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/masks.dmi'
+	icon_state = "imask"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+
+/obj/item/clothing/mask/rogue/facemask/ancient
+	name = "ancient mask"
+	desc = "Polished gilbranze, molded into an intimidating visage. Touch the cheek; it is warm, like flesh. But it is not flesh. Not yet."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/masks.dmi'
+	icon_state = "ancientmask"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
@@ -9327,6 +11568,62 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+
+/obj/item/clothing/mask/rogue/facemask/ancient/mad_touched
+	name = "eerie ancient mask"
+	desc = "Polished gilbranze, molded into an intimidating visage. Touch the cheek; it is warm, like flesh. But it is not flesh. Not yet."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/masks.dmi'
+	icon_state = "ancientmask"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+
+/obj/item/clothing/mask/rogue/facemask/bronze
+	name = "bronze mask"
+	desc = "Glimmering bronze, curved to veil its wearer's face from both judgement and harm."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/masks.dmi'
+	icon_state = "bronzemask"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
+	worn_icon_state = "bronzemask"
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
+	armor_type = /datum/armor/rockhill_bronze
+	body_parts_covered = HEAD
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/bronze
+	armor_class = 1
 	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
 	rogue_blocksound = "plate"
 	inhand_icon_state = null
@@ -9681,6 +11978,86 @@
 	rogue_blocksound = "plate"
 	inhand_icon_state = null
 
+/obj/item/clothing/mask/rogue/facemask/steel
+	name = "steel mask"
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/masks.dmi'
+	icon_state = "smask"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+
+/obj/item/clothing/mask/rogue/facemask/steel/confessor
+	name = "strange mask"
+	desc = "It is said that the original version of this mask was used for obscure rituals prior to the fall of the Empire of the Holy Celestia, and now it has been repurposed as a veil for the cunning hand of the Otavan Orthodoxy.<br> <br>Others say it is a piece of heresy, a necessary evil, capable of keeping its user safe from left-handed magicks. You can taste copper whenever you draw breath."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/masks.dmi'
+	icon_state = "confessormask"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
+	slot_flags = ITEM_SLOT_MASK
+	body_parts_covered = HEAD
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+	worn_icon_state = "confessormask"
+
+/obj/item/clothing/mask/rogue/facemask/steel/kazengun
+	name = "soldier's half-mask"
+	desc = "\"The first lesson of war is that it would be better to live in peace.\""
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/masks.dmi'
+	icon_state = "kazengunmouthguard"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
+	worn_icon_state = "kazengunmouthguard"
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+
 /obj/item/clothing/mask/rogue/facemask/yoruku_oni
 	name = "oni mask"
 	desc = "A wood mask carved in the visage of demons said to stalk the mountains of Kazengun."
@@ -9755,6 +12132,104 @@
 	inhand_icon_state = null
 	worn_icon_state = "hblinders"
 
+/obj/item/clothing/mask/rogue/lordmask
+	name = "golden halfmask"
+	desc = "Half of your face turned gold."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/masks.dmi'
+	icon_state = "lmask"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
+	slot_flags = ITEM_SLOT_MASK
+	body_parts_covered = HEAD
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	inhand_icon_state = null
+	worn_icon_state = "lmask"
+
+/obj/item/clothing/mask/rogue/lordmask/naledi
+	name = "war scholar's mask"
+	desc = "Runes and wards, meant for daemons; the gold has somehow rusted in unnatural, impossible agony. The most prominent of these etchings is in the shape of the Naledian psycross. Armored to protect the wearer's face."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/masks.dmi'
+	icon_state = "naledimask"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
+	worn_icon_state = "naledimask"
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	inhand_icon_state = null
+
+/obj/item/clothing/mask/rogue/lordmask/naledi/sojourner
+	name = "sojourner's mask"
+	desc = "A golden mask, gnarled by the sustained agonies of djinnic corruption; yet as long as its Naledian hexes endure, so too will its wearer. Hand-fitted shingles flank the sides to repel incoming strikes. </br>'..Clad with the stereotype of abruptly disappearing without any forewarning, the typical Sojourner is in constant pursuit of diversifying their erudition. One might arrive to learn the local witch's recipe of sanctifying atropa extract and spend yils in the community trying to master it, while another might work alongside the region's Orthodoxic chapter to slay a lycker lord in exchange for his archive, only to vanish the very next day..'"
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/masks.dmi'
+	icon_state = "naledimask"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
+	worn_icon_state = "naledimask"
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	inhand_icon_state = null
+
+/obj/item/clothing/mask/rogue/lordmask/zizite
+	name = "fateful visage"
+	desc = "To advance, at any cost."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/masks.dmi'
+	icon_state = "zizomask"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
+	slot_flags = ITEM_SLOT_MASK
+	body_parts_covered = HEAD
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	inhand_icon_state = null
+	worn_icon_state = "zizomask"
+
 /obj/item/clothing/mask/rogue/physician
 	name = "plague mask"
 	desc = "What better laboratory than the blood-soaked battlefield?"
@@ -9778,7 +12253,53 @@
 	rogue_grid_height = 32
 	inhand_icon_state = null
 
+/obj/item/clothing/mask/rogue/ragmask
+	name = "rag mask"
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/masks.dmi'
+	icon_state = "ragmask"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	inhand_icon_state = null
+
 /obj/item/clothing/mask/rogue/ragmask/black
+	name = "rag mask"
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/masks.dmi'
+	icon_state = "ragmask"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	inhand_icon_state = null
+
+/obj/item/clothing/mask/rogue/ragmask/nomad
 	name = "rag mask"
 	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/masks.dmi'
 	icon_state = "ragmask"
@@ -9876,6 +12397,56 @@
 	rogue_blocksound = "soft"
 	inhand_icon_state = null
 
+/obj/item/clothing/mask/rogue/sack/psy/arbiter
+	name = "arbiter hood"
+	desc = "You wouldn't hide your face if there was another way. It's not as if you've no reason for it. Would they ever understand? Truly?"
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/overseer/overseer.dmi'
+	icon_state = "overseerhood"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/overseer/onmob/overseer.dmi'
+	slot_flags = ITEM_SLOT_MASK
+	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/padded
+	rogue_prevent_crits = list("blunt")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "overseerhood"
+
+/obj/item/clothing/mask/rogue/shepherd/shadowmask/delf
+	name = "purple halfmask"
+	desc = "Tiny drops of white dye mark its front, not unlike teeth. A smile that leers from shadow."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/masks.dmi'
+	icon_state = "shadowmask"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	inhand_icon_state = null
+
 /obj/item/clothing/mask/rogue/skullmask
 	name = "skull mask"
 	desc = "A mask in the shape of a skull, designed to terrify."
@@ -9924,6 +12495,31 @@
 	inhand_icon_state = null
 	worn_icon_state = "glasses"
 
+/obj/item/clothing/mask/rogue/spectacles/duelist
+	name = "iron duelist goggles"
+	desc = "A rigid pair of protective goggles made for fencing bouts, shielding the eyes without concealing the face."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/masks.dmi'
+	icon_state = "iduelist"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
+	body_parts_covered = HEAD
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+	worn_icon_state = "iduelist"
+
 /obj/item/clothing/mask/rogue/spectacles/golden
 	name = "golden spectacles"
 	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/masks.dmi'
@@ -9968,6 +12564,32 @@
 	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "bglasses"
+
+/obj/item/clothing/mask/rogue/wildguard
+	name = "wild guard"
+	desc = "A mask shaped after the snarling beasts of Dendor."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/masks.dmi'
+	icon_state = "wildguard"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
+	body_parts_covered = HEAD
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
 
 /obj/item/clothing/mask/rogue/xylixmask
 	name = "jester mask"
@@ -10019,7 +12641,88 @@
 	inhand_icon_state = null
 	worn_icon_state = "bevor"
 
+/obj/item/clothing/neck/roguetown/bevor/iron
+	name = "iron bevor"
+	desc = "A series of iron plates designed to protect the neck."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/neck.dmi'
+	icon_state = "ibevor"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
+	slot_flags = ITEM_SLOT_NECK
+	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
+	alternate_worn_layer = NECK_LAYER
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+	worn_icon_state = "ibevor"
+
+/obj/item/clothing/neck/roguetown/bevor/zizo
+	name = "avantyne bevor"
+	desc = "<font color='A50021'>Near them, on the sand, half sunk, a shattered visage lies.</font>"
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/neck.dmi'
+	icon_state = "zizobevor"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
+	slot_flags = ITEM_SLOT_NECK
+	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
+	alternate_worn_layer = NECK_LAYER
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/ascendant
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+	worn_icon_state = "zizobevor"
+
 /obj/item/clothing/neck/roguetown/chaincoif
+	name = "chain coif"
+	desc = "Offers superior coverage to a simple gorget, though it sacrifices some protection in return."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/neck.dmi'
+	icon_state = "chaincoif"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_NECK
+	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
+	alternate_worn_layer = NECK_LAYER
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/maille
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "chain"
+	inhand_icon_state = null
+	worn_icon_state = "chaincoif"
+
+/obj/item/clothing/neck/roguetown/chaincoif/
 	name = "chain coif"
 	desc = "Offers superior coverage to a simple gorget, though it sacrifices some protection in return."
 	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/neck.dmi'
@@ -10100,6 +12803,60 @@
 	inhand_icon_state = null
 	worn_icon_state = "chaincoif"
 
+/obj/item/clothing/neck/roguetown/chaincoif/full
+	name = "full chain coif"
+	desc = "Offers superior coverage to a simple gorget, though it sacrifices some protection in return."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/neck.dmi'
+	icon_state = "fchaincoif"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_NECK
+	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
+	alternate_worn_layer = NECK_LAYER
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/maille
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "chain"
+	inhand_icon_state = null
+	worn_icon_state = "chaincoif"
+
+/obj/item/clothing/neck/roguetown/chaincoif/full/black
+	name = "full chain coif"
+	desc = "Offers superior coverage to a simple gorget, though it sacrifices some protection in return."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/neck.dmi'
+	icon_state = "fchaincoif"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_NECK
+	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
+	alternate_worn_layer = NECK_LAYER
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/maille
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "chain"
+	inhand_icon_state = null
+	worn_icon_state = "chaincoif"
+
 /obj/item/clothing/neck/roguetown/chaincoif/iron
 	name = "iron chain coif"
 	desc = "A coif of meticulously crafted iron rings. It isn't steel, but metal is metal, and it might just save your life."
@@ -10154,7 +12911,61 @@
 	inhand_icon_state = null
 	worn_icon_state = "coif"
 
+/obj/item/clothing/neck/roguetown/coif/heavypadding
+	name = "heavy padded coif"
+	desc = "A heavier padded coif meant to be worn on its own or under a helmet. Layered properly, it can last through even the busiest of daes."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/neck.dmi'
+	icon_state = "fullpadded"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_NECK
+	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
+	alternate_worn_layer = NECK_LAYER
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/padded_good
+	rogue_prevent_crits = list("slash", "blunt", "chopping")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "fullpadded"
+
 /obj/item/clothing/neck/roguetown/coif/padded
+	name = "padded coif"
+	desc = "A cheap and simple gambeson coif meant to be worn on its own or under a helmet. It's better than nothing."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/neck.dmi'
+	icon_state = "ccoif"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_NECK
+	body_parts_covered = HEAD|NECK
+	rogue_inhand = FALSE
+	alternate_worn_layer = NECK_LAYER
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/padded
+	rogue_prevent_crits = list("slash", "blunt")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "ccoif"
+
+/obj/item/clothing/neck/roguetown/coif/padded/nomad
 	name = "padded coif"
 	desc = "A cheap and simple gambeson coif meant to be worn on its own or under a helmet. It's better than nothing."
 	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/neck.dmi'
@@ -10300,6 +13111,60 @@
 	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "cursed_collar"
+
+/obj/item/clothing/neck/roguetown/fencerguard
+	name = "fencing guard"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/neck.dmi'
+	icon_state = "fencercollar"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
+	slot_flags = ITEM_SLOT_NECK
+	body_parts_covered = NECK
+	rogue_inhand = FALSE
+	alternate_worn_layer = NECK_LAYER
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+	worn_icon_state = "fencercollar"
+
+/obj/item/clothing/neck/roguetown/fencerguard/generic
+	name = "fencing guard"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/neck.dmi'
+	icon_state = "fencercollar"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
+	slot_flags = ITEM_SLOT_NECK
+	body_parts_covered = NECK
+	rogue_inhand = FALSE
+	alternate_worn_layer = NECK_LAYER
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+	worn_icon_state = "fencercollar"
 
 /obj/item/clothing/neck/roguetown/gorget
 	name = "gorget"
@@ -10488,6 +13353,33 @@
 	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "ancientgorget"
+
+/obj/item/clothing/neck/roguetown/gorget/steel/kazengun
+	name = "kazengunite gorget"
+	desc = "A series of interlocking rings of metal set around the throat. Used by the kouken of Kazengun for precisely the same reason as the knights of Psydonia."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/neck.dmi'
+	icon_state = "kazengunneckguard"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
+	slot_flags = ITEM_SLOT_NECK
+	body_parts_covered = NECK
+	rogue_inhand = FALSE
+	alternate_worn_layer = NECK_LAYER
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+	worn_icon_state = "kazengunneckguard"
 
 /obj/item/clothing/neck/roguetown/horus
 	name = "amulet of appraisal"
@@ -10914,6 +13806,31 @@
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	inhand_icon_state = null
 
+/obj/item/clothing/neck/roguetown/psicross/naledi
+	name = "naledian psy-bracelet"
+	desc = "A peculiar icon of worship from a foreign land. Forming the three-progned Psydonite cross in a circular ring, this bracelet embodies the Naledian belief of Psydon's eternity."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/neck.dmi'
+	icon_state = "psybracelet"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
+	body_parts_covered = NECK
+	rogue_inhand = FALSE
+	alternate_worn_layer = NECK_LAYER
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
+	inhand_icon_state = null
+
 /obj/item/clothing/neck/roguetown/psicross/necra
 	name = "amulet of Necra"
 	desc = "The certainty of death is a reminder to enjoy the time you have."
@@ -11039,6 +13956,31 @@
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	inhand_icon_state = null
 
+/obj/item/clothing/neck/roguetown/psicross/reform
+	name = "reformist psycross"
+	desc = "'It occured to me that our God had left us, but not our ability to endure hardship. We shall make something out of this world, I said, before we pass onto the next.'"
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/neck.dmi'
+	icon_state = "psycross_reform"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
+	body_parts_covered = NECK
+	rogue_inhand = FALSE
+	alternate_worn_layer = NECK_LAYER
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
+	inhand_icon_state = null
+
 /obj/item/clothing/neck/roguetown/psicross/shell
 	name = "oyster shell necklace"
 	desc = "A necklace of strung-up sea shells, the calming noise they make when they clack together is reminiscent of a shellfish's claws. They remind you that while men no longer live in water, Abyssor will always remember our origins."
@@ -11094,6 +14036,31 @@
 	desc = "'The horrors persist, but so do I!'"
 	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/neck.dmi'
 	icon_state = "psycross_s"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
+	worn_icon_state = "psycross_s"
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_WRISTS
+	body_parts_covered = NECK
+	rogue_inhand = FALSE
+	alternate_worn_layer = NECK_LAYER
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
+	inhand_icon_state = null
+
+/obj/item/clothing/neck/roguetown/psicross/silver/astrata/oathmarked
+	name = "oathmarked amulet of Astrata"
+	desc = "An amulet of the Tyrant. Whether or not the bearer believes in the creed, the Oathmarked serve in Her name all the same. This specific amulet bears the blessing of silver."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/neck.dmi'
+	icon_state = "astrata"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
@@ -11264,6 +14231,30 @@
 	inhand_icon_state = null
 	worn_icon_state = "skullamulet"
 
+/obj/item/clothing/neck/roguetown/skullamulet/alchemist
+	name = "sulphur amulet"
+	desc = "This yellow skull is the sigil of alchemists across Ferentia.<br>It reeks with a rotten odor."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/neck.dmi'
+	icon_state = "skullamulet"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
+	slot_flags = ITEM_SLOT_NECK
+	body_parts_covered = NECK
+	rogue_inhand = FALSE
+	alternate_worn_layer = NECK_LAYER
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	inhand_icon_state = null
+	worn_icon_state = "skullamulet"
+
 /obj/item/clothing/neck/roguetown/skullamulet/gemerald
 	name = "gemerald skull amulet"
 	desc = "A massive gemerald, meticulously chiseled into a skull and affixed to a chain. </br>It's mocking me, isn't it?"
@@ -11377,6 +14368,26 @@
 	desc = ""
 	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/rings.dmi'
 	icon_state = "s_ring_diamond"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	slot_flags = ITEM_SLOT_GLOVES|ITEM_SLOT_ROGUE_RING
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/rings.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+
+/obj/item/clothing/ring/duelist
+	name = "duelist's ring"
+	desc = "Born out of duelists desire for theatrics, this ring denotes a proposal — an honorable duel, with stakes set ahigh.\nIf both duelists wear this ring, successful baits will off balance them, and clashing disarms will never be unlikely.\n<i>'You shall know his name. You shall know his purpose. You shall die.'</i>"
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/rings.dmi'
+	icon_state = "ring_duel"
 	w_class = WEIGHT_CLASS_TINY
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
@@ -11777,6 +14788,31 @@
 	worn_icon_state = "anklets"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/shoes/roguetown/armor/rumaclan
+	name = "raised sandals"
+	desc = "A pair of strange sandals that push you off the ground."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/feet.dmi'
+	icon_state = "eastsandals"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
+	slot_flags = ITEM_SLOT_FEET
+	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_good
+	inhand_icon_state = null
+	worn_icon_state = "eastsandals"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/shoes/roguetown/boots
 	name = "dark boots"
 	desc = ""
@@ -11877,6 +14913,34 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+	worn_icon_state = "armorboots"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/shoes/roguetown/boots/armor/bronze
+	name = "bronze greaves"
+	desc = "Padded sabatons of bronze, tightly strapped together and padded with hide from a fearsome beaste. The sandals clack about, yet they do not feel obstructive; if anything, you've never felt more agile while beplated."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/feet.dmi'
+	icon_state = "bronzegreaves"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
+	slot_flags = ITEM_SLOT_FEET
+	armor_type = /datum/armor/rockhill_bronze
+	body_parts_covered = FOOT_LEFT|FOOT_RIGHT|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/bronze
 	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
 	rogue_blocksound = "plate"
 	inhand_icon_state = null
@@ -11989,6 +15053,33 @@
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 
+/obj/item/clothing/shoes/roguetown/boots/armor/iron/gronn
+	name = "kheshig iron boots"
+	desc = "Iron boots, tied with leather strapping. Protective, an ancient legend tells of a great warrior who fought for aeons until a hero speared him in the foot. Many follow this example by protecting their feet heavily."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/gronn.dmi'
+	icon_state = "gronnplateboots"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/gronn.dmi'
+	slot_flags = ITEM_SLOT_FEET
+	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+	worn_icon_state = "gronnplateboots"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/shoes/roguetown/boots/armor/matthios
 	name = "gilded boots"
 	desc = "Gilded tombs do worm enfold."
@@ -12014,6 +15105,33 @@
 	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "armorboots"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/shoes/roguetown/boots/armor/oathmarked
+	name = "oathmarked boots"
+	desc = "Boots forged of a set of blackened steel plates to protect your fragile toes."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/blkknight.dmi'
+	icon_state = "bplateboots"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/blkknight.dmi'
+	slot_flags = ITEM_SLOT_FEET
+	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+	worn_icon_state = "bplateboots"
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/boots/armor/zizo
@@ -12070,6 +15188,33 @@
 	worn_icon_state = "bplateboots"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/shoes/roguetown/boots/elven_boots
+	name = "woad elven boots"
+	desc = "The living trunks still blossom in the spring. They let water through, but it is never cold."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/race_armor.dmi'
+	icon_state = "welfshoes"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/race_armor.dmi'
+	slot_flags = ITEM_SLOT_FEET
+	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/blackoak
+	rogue_prevent_crits = list("blunt", "smashing", "twist", "stab")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "welfshoes"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/shoes/roguetown/boots/footwraps/padded
 	name = "padded cloth footwraps"
 	desc = "Thickly-woven padded bandages wrapped about one's ankles to maintain mobility for climbing and kicking."
@@ -12093,6 +15238,83 @@
 	rogue_armor = /datum/rogue_armor/padded
 	inhand_icon_state = null
 	worn_icon_state = "blackboots"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/shoes/roguetown/boots/furlinedboots
+	name = "fur lined boots"
+	desc = "Leather boots lined with fur."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/feet.dmi'
+	icon_state = "furlinedboots"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
+	slot_flags = ITEM_SLOT_FEET
+	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/clothing
+	inhand_icon_state = null
+	worn_icon_state = "furlinedboots"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/shoes/roguetown/boots/grenzelhoft
+	name = "grenzelhoft boots"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/feet.dmi'
+	icon_state = "grenzelboots"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
+	slot_flags = ITEM_SLOT_FEET
+	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_good
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	inhand_icon_state = null
+	worn_icon_state = "grenzelboots"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/shoes/roguetown/boots/grenzelhoft/freifechter
+	name = "fencing boots"
+	desc = "A pair of lightweight snugly fitting boots. They're reinforced along the toes and ankles and offer a measure of protection against missteps and glancing blows during close exchanges, often favoured by duelists and other itinerant swordsmen."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/feet.dmi'
+	icon_state = "freiboots"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
+	slot_flags = ITEM_SLOT_FEET
+	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_good
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	inhand_icon_state = null
+	worn_icon_state = "freiboots"
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/boots/horsey
@@ -12196,6 +15418,58 @@
 	worn_icon_state = "alboots"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/shoes/roguetown/boots/leather/reinforced/short
+	name = "dress boots"
+	desc = "A pair of sturdy boots stitched together from cured leather. These are shorter than usual, made for casual wear and dueling."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/feet.dmi'
+	icon_state = "albootsb"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
+	slot_flags = ITEM_SLOT_FEET
+	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_good
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "twist")
+	inhand_icon_state = null
+	worn_icon_state = "albootsb"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/shoes/roguetown/boots/maille
+	name = "maille boots"
+	desc = "A pair of leather boots, reinforced with smaller steel plates along the feet and ankles. Woven into the top of each boot's cuff is a thick layer of chainmail, which further protects the wearer's lower legs from harm. A favorite amongst men-at-arms and clerics, alongside the occassional plucky squire that's a few sizes too short to properly wade in them."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/feet.dmi'
+	icon_state = "shalfplateboots"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
+	slot_flags = ITEM_SLOT_FEET
+	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/maille
+	rogue_blocksound = "chain"
+	inhand_icon_state = null
+	worn_icon_state = "shalfplateboots"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/shoes/roguetown/boots/nobleboot
 	name = "noble boots"
 	desc = "Fine dark leather boots."
@@ -12219,6 +15493,59 @@
 	rogue_armor = /datum/rogue_armor/clothing
 	inhand_icon_state = null
 	worn_icon_state = "nobleboots"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/shoes/roguetown/boots/nobleboot/steppesman
+	name = "aavnic riding boots"
+	desc = "A pair of sturdy riding boots with an iron heel and brass spurs."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/feet.dmi'
+	icon_state = "nobleboots"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
+	slot_flags = ITEM_SLOT_FEET
+	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_good
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "twist")
+	inhand_icon_state = null
+	worn_icon_state = "nobleboots"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/shoes/roguetown/boots/otavan
+	name = "otavan leather boots"
+	desc = "Boots of outstanding craft, your fragile feet have never felt so protected and comfortable before."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/feet.dmi'
+	icon_state = "fencerboots"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
+	slot_flags = ITEM_SLOT_FEET
+	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_good
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "fencerboots"
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/boots/otavan/inqboots
@@ -12444,6 +15771,31 @@
 	worn_icon_state = "toga_sandals"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/shoes/roguetown/shalal
+	name = "babouche"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/feet.dmi'
+	icon_state = "shalal"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
+	slot_flags = ITEM_SLOT_FEET
+	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/b25_s20_t25_p0_f0_a0
+	inhand_icon_state = null
+	worn_icon_state = "shalal"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/shoes/roguetown/shortboots
 	name = "shortboots"
 	desc = ""
@@ -12516,6 +15868,34 @@
 	worn_icon_state = "simpleshoe"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/suit/roguetown/armor/armordress
+	name = "padded dress"
+	desc = "This dress has been padded with leather for extra protection. Bolts and arrows punch right through it."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "armordress"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "blunt")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+
 /obj/item/clothing/suit/roguetown/armor/armordress/winterdress
 	name = "winter dress"
 	desc = "A thick, padded, and comfortable dress popular amongst nobility during winter."
@@ -12543,6 +15923,35 @@
 	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "winterdress"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/basiceast/mentorsuit
+	name = "old dopo robe"
+	desc = "The scars on your body were once stories of strength and bravado."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "eastsuit1"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_studded
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "chopping", "smashing")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "eastsuit1"
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/brigandine
@@ -12632,6 +16041,35 @@
 	worn_icon_state = "gronnchain"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/suit/roguetown/armor/brigandine/heartfelt
+	name = "heartfelt brigandine"
+	desc = "Composite armour made according to a Heartfelt tradition. It's a high-quality arched plate cuirass sewn with dyed leather and fitted with a wide skirt at the bottom to cover the groin."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "brigandine2"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/brigandine
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "brigandine2"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/suit/roguetown/armor/brigandine/light
 	name = "lightweight brigandine"
 	desc = "A light riveted coat with plates concealed inside an exterior fabric. Susceptible to daggers being shoved into your ribs."
@@ -12717,6 +16155,35 @@
 	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "brigandine"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/brigandine/retinue/coat
+	name = "coat of the commander"
+	desc = "A thick boiled leather surcoat with enough plates concealed within the folds to offer superior protection. It weighs a ton and takes a great man to wear."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "leathercoat"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/brigandine
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "leathercoat"
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/chainmail
@@ -12980,6 +16447,35 @@
 	worn_icon_state = "ihauberk"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/zizo
+	name = "avantyne hauberk"
+	desc = "<font color='A50021'>And on the pedestal these words appear: <i>\"My name is ZIZO, Queen of Queens:\"</i></font>"
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "zizohauberk"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/ascendant
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "chain"
+	inhand_icon_state = null
+	worn_icon_state = "zizohauberk"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 	name = "iron haubergeon"
 	desc = "A chain vest made of heavy iron rings. Better than nothing."
@@ -13123,6 +16619,209 @@
 	worn_icon_state = "gambesonp"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/black
+	name = "padded gambeson"
+	desc = "A gambeson with additional padding layers, hardened to make it more durable. It still does not compare to leather or metal, but it will probably stop a crossbow bolt, so it's typically worn to complement proper armor."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "gambesonp"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/padded_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt", "chopping")
+	rogue_blocksound = "softunder"
+	inhand_icon_state = null
+	worn_icon_state = "gambesonp"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/chargah
+	name = "padded caftan"
+	desc = "A long overcoat commonly worn in Naledi, Kazengun, and Aavnr - but mostly associated with steppesmen. This specific kind rivals a padded gambeson in protection."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "chargah"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/padded_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt", "chopping")
+	rogue_blocksound = "softunder"
+	inhand_icon_state = null
+	worn_icon_state = "chargah"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/grenzelhoft
+	name = "grenzelhoftian hip-shirt"
+	desc = "Padded shirt for extra comfort and protection, adorned in vibrant colors."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "grenzelshirt"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/padded_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt", "chopping")
+	rogue_blocksound = "softunder"
+	inhand_icon_state = null
+	worn_icon_state = "grenzelshirt"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/hatanga
+	name = "beast-hide coat"
+	desc = "Layered robes reinforced with quilted padding and stitched hides from formidable beasts."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "hatanga"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/padded_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt", "chopping")
+	rogue_blocksound = "softunder"
+	inhand_icon_state = null
+	worn_icon_state = "hatanga"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/hierophant
+	name = "hierophant's shawl"
+	desc = "A thick robe intervowen with spell-laced fabrics. Thick and protective while remaining light and breezy; the perfect gear for protecting one from the threats of the sun, the desert and the daemons, yet still allowing one to cast spells aptly."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "desertrobe"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/padded_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt", "chopping")
+	rogue_blocksound = "softunder"
+	inhand_icon_state = null
+	worn_icon_state = "desertrobe"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/hierophant/civilian
+	name = "shawl"
+	desc = "Thick and protective while remaining light and breezy; the perfect garb for protecting one from the hot sun and the harsh sands of Naledi."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "desertrobe"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/padded_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt", "chopping")
+	rogue_blocksound = "softunder"
+	inhand_icon_state = null
+	worn_icon_state = "desertrobe"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/hierophant/nomad
+	name = "nomad shawl"
+	desc = "Thick and protective while remaining light and breezy. A staple of Zybantu nomads. Distinctly Dunewell..."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "desertrobe"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/padded_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt", "chopping")
+	rogue_blocksound = "softunder"
+	inhand_icon_state = null
+	worn_icon_state = "desertrobe"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/inq
 	name = "inquisitorial leather tunic"
 	desc = "The finest leather tunic. Made to ENDURE, Made to Inquire, come heretic or hellfire."
@@ -13181,6 +16880,35 @@
 	worn_icon_state = "fancygamb"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/pontifex
+	name = "pontifex's kaftan"
+	desc = "Tight boiled leathers that stretch and fit to one's frame perfectly."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "monkleather"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/padded_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt", "chopping")
+	rogue_blocksound = "softunder"
+	inhand_icon_state = null
+	worn_icon_state = "monkleather"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/royal
 	name = "royal gambeson"
 	desc = "A fancy gambeson for royalty. Adorned with extra details and padded for extra protection."
@@ -13208,6 +16936,35 @@
 	rogue_blocksound = "softunder"
 	inhand_icon_state = null
 	worn_icon_state = "royalgamb"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/shadowrobe
+	name = "stalker robe"
+	desc = "A robe-like gambeson of moth-eaten cloth and cheap purple dye. No self-respecting elf would be seen wearing this."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "shadowrobe"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/padded_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt", "chopping")
+	rogue_blocksound = "softunder"
+	inhand_icon_state = null
+	worn_icon_state = "shadowrobe"
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/zyb
@@ -13265,6 +17022,35 @@
 	rogue_blocksound = "softunder"
 	inhand_icon_state = null
 	worn_icon_state = "gambeson"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/gambeson/lord
+	name = "arming jacket"
+	desc = "A large shirt meant to be worn below armor."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "dgamb"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/padded
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt")
+	rogue_blocksound = "softunder"
+	inhand_icon_state = null
+	worn_icon_state = "dgamb"
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/shadowrobe
@@ -13498,6 +17284,35 @@
 	worn_icon_state = "roguearmor_belt"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/suit/roguetown/armor/leather/heavy/atgervi
+	name = "shamanic coat"
+	desc = "A furred protective coat, Often made by hand it embodies the second trial of the Zayran Shamans. To honor the leopard is too desire for more."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "atgervi_shaman_coat"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	body_parts_covered = CHEST|GROIN
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "chopping", "smashing")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "atgervi_shaman_coat"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/suit/roguetown/armor/leather/heavy/coat
 	name = "hardened leather coat"
 	desc = "A heavy steerhide jerkin that reaches past the hips and better protects the vitals."
@@ -13527,6 +17342,180 @@
 	worn_icon_state = "roguearmor_coat"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/confessor
+	name = "confessional coat"
+	desc = "A sturdy raincoat draped atop of a tightly-fastened boiled leather cuirass. Saint Astratan youths often fashion little pieces of memorabilia and stitch it on the inner pockets of the coat to remind the confessors that their cause is virtuous, and that they mustn't lose sight of what matters."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "confessorcoat"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_studded
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "chopping", "smashing")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "confessorcoat"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/elven
+	name = "treated trophy fur robes"
+	desc = "A heavy set of hardened robes, lined with fur. The leather is composed of several creatures that were notably difficult to fell by arrow. A proof or rangership among many."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "hatangafur"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "chopping", "smashing")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "hatangafur"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/shadowvest
+	name = "drowcraft vest"
+	desc = "Traditional Drow armour made from the hide of one of the Underdark's many beasts, underlayered with the chitin plates of a drider. Durable yet still flexible, perfect for skirmishers."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "shadowvest"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_studded
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "chopping", "smashing")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "shadowvest"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/steppe
+	name = "fur-woven chargah coat"
+	desc = "A finely woven chargah coat, replacing much of its scaled armor with fine furs and reinforced padding for lighter rides."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "chargahfur"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "chopping", "smashing")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "chargahfur"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/zyb
+	name = "megarmach scale coat"
+	desc = "A set of lightweight armor fashioned from the scales of the Zybantine \'megarmach\', an armored reptilian creacher that ambushes prey by the riverside, and drags them deep into Abyssor's domain."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "pangolin"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "chopping", "smashing")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "pangolin"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/leather/heavy/freifechter
+	name = "fencing jacket"
+	desc = "A light, flexible button-up leather jacket that will keep your vitals out of harm's way."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "freijacket"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	body_parts_covered = CHEST|GROIN
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "chopping", "smashing")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "freijacket"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/suit/roguetown/armor/leather/heavy/jacket
 	name = "hardened leather jacket"
 	desc = "A heavy leather jacket that covers the arms and protects the vitals."
@@ -13554,6 +17543,35 @@
 	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "leatherjacketo"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/leather/heavy/shepherd
+	name = "shepherd's vest"
+	desc = "A light, flexible leather vest worn by shepherds in the forested peaks of Aavnr."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "freijacket"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	body_parts_covered = CHEST|GROIN
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "chopping", "smashing")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "freijacket"
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/leather/hide
@@ -13859,6 +17877,35 @@
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 
+/obj/item/clothing/suit/roguetown/armor/leather/newmoon_jacket
+	name = "New Moon coat"
+	desc = "Light, fancy, yet still fairly protective. This teal coat is a signature of the New Moon Holy Order with a noc amulet upon the middle of the chestpiece."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "newmoon_jacket"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	body_parts_covered = CHEST|GROIN
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/spellsinger
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt", "twist")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "newmoon_jacket"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/suit/roguetown/armor/leather/studded
 	name = "studded leather armor"
 	desc = "Studded leather is the most durable of all hides and leathers and about as light."
@@ -13946,6 +17993,64 @@
 	worn_icon_state = "hcorset"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/suit/roguetown/armor/leather/studded/cuirbouilli
+	name = "cuir-bouilli vest"
+	desc = "A padded vest that's been reinforced with 'cuir-bouilli' - leather that's been treated, water-boiled, and composite-layered together. It is traditionally worn beneath a heavier cuirass to protect against bludgeons-and-thrusts, but can be confidently worn on its own without qualm."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "cuirbouilli"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = CHEST
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_studded
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "chopping", "smashing")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "cuirbouilli"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/leather/studded/psyaltrist
+	name = "cuir-bouilli armor"
+	desc = "Treated, water-boiled and composite-layered leather armor of fine Otavan make."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "cuirbouilli"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	body_parts_covered = CHEST|GROIN
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_studded
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "chopping", "smashing")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "cuirbouilli"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/suit/roguetown/armor/leather/studded/warden
 	name = "forester's armor"
 	desc = "A hardened leather harness with a large pauldron worn over a maille coat, associated with the wardens."
@@ -13968,6 +18073,34 @@
 	rogue_grid_height = 64
 	rogue_armor = /datum/rogue_armor/leather_studded
 	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "chopping", "smashing")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+
+/obj/item/clothing/suit/roguetown/armor/leather/studded/warden/melee
+	name = "forester's cuirass"
+	desc = "A hardened leather harness with a reinforced pauldron worn over a maille coat. Imbued with Dendor's essence, it is built sturdier for front-line fighting."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/warden.dmi'
+	icon_state = "forestleather"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/cuirass
+	armor_class = 2
 	rogue_prevent_crits = list("slash", "stabbing", "blunt", "chopping", "smashing")
 	rogue_blocksound = "soft"
 	inhand_icon_state = null
@@ -14147,6 +18280,35 @@
 	worn_icon_state = "vest"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/suit/roguetown/armor/leather/vest/white
+	name = "leather vest"
+	desc = "A leather vest. Not very protective, but fashionable."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "vest"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = CHEST|GROIN
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_bad
+	armor_class = 1
+	rogue_prevent_crits = list("slash")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "vest"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/suit/roguetown/armor/longcoat
 	name = "longcoat"
 	desc = "A padded longcoat meant to keep you warm in the frigid winters"
@@ -14174,6 +18336,35 @@
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate
+	name = "steel half-plate"
+	desc = "\'Adventurer-fit\' plate armor with pauldrons. The poor fitting leaves many small gaps for daggers and bolts to pierce something vital, so a gambeson is recommended."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "halfplate"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	body_parts_covered = CHEST|GROIN
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 3
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+	worn_icon_state = "halfplate"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/plate/
 	name = "steel half-plate"
 	desc = "\'Adventurer-fit\' plate armor with pauldrons. The poor fitting leaves many small gaps for daggers and bolts to pierce something vital, so a gambeson is recommended."
 	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
@@ -14318,6 +18509,36 @@
 	worn_icon_state = "grenzelcuirass"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/suit/roguetown/armor/plate/bronze/light
+	name = "bronze cardiophylax"
+	desc = "A thick bronze plate, meticulously sculpted to fit its wearer's physique and guard their heart from all that'd seek to strike it. Unfortunately, it does little to riposte more emotional blows."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "bronzeprotector"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	armor_type = /datum/armor/rockhill_bronze
+	body_parts_covered = CHEST
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/bronze
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+	worn_icon_state = "bronzeprotector"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/suit/roguetown/armor/plate/citywatch
 	name = "citywatch armor"
 	desc = "Heavy, well worn armour. Resilient to damage. Issued to the Citywatch."
@@ -14405,6 +18626,35 @@
 	worn_icon_state = "halfplate"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/suit/roguetown/armor/plate/elven_plate
+	name = "woad elven plate"
+	desc = "An assembly of thickly woven trunk, bound together by ancient song and tool of the oldest elven druids. It still creaks and weeps with forlorn reminiscence of a bygone era. It looks like only Elves can fit in it."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/race_armor.dmi'
+	icon_state = "welfchest"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/race_armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/blackoak
+	armor_class = 2
+	rogue_prevent_crits = list("blunt", "twist", "stab", "smashing")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "welfchest"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/suit/roguetown/armor/plate/fluted/graggar
 	name = "vicious half-plate"
 	desc = "A fluted half-plate armour-set which stirs with the same violence driving our world. This inner motive makes it far less restrictive."
@@ -14428,6 +18678,119 @@
 	rogue_grid_height = 64
 	rogue_armor = /datum/rogue_armor/ascendant
 	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+	worn_icon_state = "halfplate"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/plate/fluted/shadowplate
+	name = "scourge breastplate"
+	desc = "More form over function, this armor is fit for demonstration of might rather than open combat. The aged gilding slowly tarnishes away."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "shadowplate"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+
+/obj/item/clothing/suit/roguetown/armor/plate/full/dwarven
+	name = "grudgebearer dwarven plate"
+	desc = "A standard, layered plate worn by many dwarven troops. It cannot be worked on without intrinsic dwarven knowledge."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/race_armor.dmi'
+	icon_state = "dwarfchest"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/grudgebearer
+	armor_class = 3
+	rogue_prevent_crits = list("twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+
+/obj/item/clothing/suit/roguetown/armor/plate/full/dwarven/smith
+	name = "grudgebearer splint apron"
+	desc = "A standard, layered mixture of plate and maille, worn by many dwarven smiths. It cannot be worked on without intrinsic dwarven knowledge."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/race_armor.dmi'
+	icon_state = "dsmithchest"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/grudgebearer
+	armor_class = 2
+	rogue_prevent_crits = list("twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+
+/obj/item/clothing/suit/roguetown/armor/plate/full/fluted/ornate/ordinator
+	name = "inquisitorial ordinator's plate"
+	desc = "A relic that is said to have survived the Grenzelhoft-Otavan war, refurbished and repurposed to slay the arch-enemy in the name of Psydon. <br> A fluted cuirass that has been reinforced with thick padding and an additional shoulder piece. You will endure."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "ordinatorplate"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 3
 	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
 	rogue_blocksound = "plate"
 	inhand_icon_state = null
@@ -14519,6 +18882,35 @@
 	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "halfplate"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/plate/full/oathmarked
+	name = "oathmarked armor"
+	desc = "Weathered, blackened steel plate armor. Fit for a noble. Weaker as a result of the smithing process, though no less protective."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/blkknight.dmi'
+	icon_state = "bplate"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/blkknight.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/blkknight.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 3
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+	worn_icon_state = "bplate"
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate/full/zizo
@@ -14664,6 +19056,35 @@
 	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "cuirass"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/plate/half/fencer
+	name = "fencer's cuirass"
+	desc = "An expertly smithed form-fitting steel cuirass that is much lighter and agile. Backed with supple leather and silk, it's not only protective but luxurious to wear."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "fencercuirass"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	body_parts_covered = CHEST
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/cuirass
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+	worn_icon_state = "fencercuirass"
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/fencer/psydon
@@ -14839,6 +19260,35 @@
 	worn_icon_state = "ihalfplate"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/suit/roguetown/armor/plate/iron/gronn
+	name = "kheshig iron plate"
+	desc = "A strange iron chestplate adorned with tassets and roundels. It is said to be a sight to shake armies."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/gronn.dmi'
+	icon_state = "gronnplate"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/gronn.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 3
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+	worn_icon_state = "gronnplate"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/suit/roguetown/armor/plate/modern/blacksteel_full_plate
 	name = "blacksteel plate armor"
 	desc = "A suit of Full Plate smithed from durable blacksteel. Using a modern design, the piercing and blunt protection still remain unmatched among its heavy-plated peers."
@@ -14866,6 +19316,35 @@
 	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "bplate"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/plate/otavan
+	name = "otavan half-plate"
+	desc = "Half-plate armor with pauldrons. Recommended to layer with the otavan gambeson."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "corsethalfplate"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	body_parts_covered = CHEST|GROIN
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 3
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+	worn_icon_state = "corsethalfplate"
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/plate/scale
@@ -14925,6 +19404,63 @@
 	inhand_icon_state = null
 	worn_icon_state = "inqcoat"
 	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/plate/scale/steppe
+	name = "steel heavy lamellar"
+	desc = "A chestpiece of Aavnic make composed of easily-replaced small rectangular plates of layered steel laced together in rows with wire. Malleable and protective, perfect for cavalrymen."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "hudesutu"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+	worn_icon_state = "halfplate"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/armor/regenerating/skin/disciple
+	name = "disciple's skin"
+	desc = "It's far more than just an oath. </br>'AEON, PSYDON, ADONAI - ENTROPY, HUMENITY, DIVINITY. A TRINITY THAT IS ONE, YET THREE; KNOWN BY ALL, YET FORGOTTEN TO TYME.' </br>'A CORPSE. I AM LIVING ON A FUCKING CORPSE. HE IS THE WORLD, AND THE WORLD IS ROTTING AWAY. HEAVEN CLOSED ITS GATES TO US, LONG AGO.' </br>'YET, HIS CHILDREN PERSIST; AND AS LONG AS THEY DO, SO MUST I. HAPPINESS MUST BE FOUGHT FOR.'"
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = null
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_onhip = TRUE
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_studded
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt")
+	rogue_blocksound = "softunder"
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
 
 /obj/item/clothing/suit/roguetown/armor/workervest
 	name = "striped tunic"
@@ -15848,6 +20384,60 @@
 	inhand_icon_state = null
 	worn_icon_state = "shirt"
 
+/obj/item/clothing/suit/roguetown/shirt/freifechter
+	name = "padded fencing shirt"
+	desc = "A strong loosely worn quilted shirt that places little weight on the arms, usually worn underneath a flexible leather vest. It won't cover your legs."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "fencingshirt"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/padded_good
+	rogue_prevent_crits = list("slash", "blunt", "chopping")
+	rogue_blocksound = "softunder"
+	inhand_icon_state = null
+	worn_icon_state = "fencingshirt"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/shirt/freifechter/shepherd
+	name = "shepherd's shirt"
+	desc = "A strong loosely worn quilted shirt that places little weight on the arms."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "fencingshirt"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/padded_good
+	rogue_prevent_crits = list("slash", "blunt", "chopping")
+	rogue_blocksound = "softunder"
+	inhand_icon_state = null
+	worn_icon_state = "fencingshirt"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/suit/roguetown/shirt/jester
 	name = "jester's tunick"
 	desc = "Whether it's standup, slapstick, or wrestling nobles to the floor, this tunick can take it all."
@@ -16210,6 +20800,30 @@
 	worn_icon_state = "white_robe"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/suit/roguetown/shirt/robe/mageorange
+	name = "robe"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "white_robe"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	inhand_icon_state = null
+	worn_icon_state = "white_robe"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/suit/roguetown/shirt/robe/magered
 	name = "robe"
 	desc = ""
@@ -16309,6 +20923,30 @@
 	worn_icon_state = "necrarobe"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/suit/roguetown/shirt/robe/necromancer
+	name = "necromancer robes"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "necromrobe"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	inhand_icon_state = null
+	worn_icon_state = "necromrobe"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/suit/roguetown/shirt/robe/noc
 	name = "moon robe"
 	desc = ""
@@ -16405,6 +21043,33 @@
 	worn_icon_state = "physcoat"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/suit/roguetown/shirt/robe/pointfex
+	name = "pointfex's qaba"
+	desc = "A slimmed down, tighter fitting robe made of fine silks and fabrics. Somehow you feel more mobile in it than in the nude. Despite the light fabric, it offers decent protection."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "monkcloth"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/padded_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt", "chopping")
+	inhand_icon_state = null
+	worn_icon_state = "monkcloth"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/suit/roguetown/shirt/robe/priest
 	name = "solar vestments"
 	desc = "Holy vestments sanctified by divine hands. Caution is advised if not a faithful."
@@ -16428,6 +21093,33 @@
 	rogue_armor = /datum/rogue_armor/padded
 	inhand_icon_state = null
 	worn_icon_state = "priestrobe"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/shirt/robe/spellcasterrobe
+	name = "spellsinger robes"
+	desc = "A set of reinforced, leather-padded robes worn by spellblades."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "spellcasterrobe"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/spellsinger
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "blunt", "chopping", "smashing")
+	inhand_icon_state = null
+	worn_icon_state = "spellcasterrobe"
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/robe/wizard
@@ -16574,6 +21266,30 @@
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/tunic/green
+	name = "tunic"
+	desc = "Modest and fashionable, with the right colors."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/shirts.dmi'
+	icon_state = "tunic"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	inhand_icon_state = null
+	worn_icon_state = "tunic"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/shirt/tunic/newmoon
 	name = "tunic"
 	desc = "Modest and fashionable, with the right colors."
 	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/shirts.dmi'
@@ -16765,6 +21481,29 @@
 	worn_icon_state = "undershirt"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/suit/roguetown/shirt/undershirt/arbiter
+	name = "shirt"
+	desc = "Modest and humble. It lets you walk around in public with your dignity intact."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/overseer/overseer.dmi'
+	icon_state = "overseershirt"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/special/overseer/onmob/overseer.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+
 /obj/item/clothing/suit/roguetown/shirt/undershirt/artificer
 	name = "tinker suit"
 	desc = "Typical fashion of the best engineers."
@@ -16835,6 +21574,80 @@
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
+
+/obj/item/clothing/suit/roguetown/shirt/undershirt/eastshirt1
+	name = "black foreign shirt"
+	desc = "A shirt typically used by thugs."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/shirts.dmi'
+	icon_state = "eastshirt1"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	inhand_icon_state = null
+	worn_icon_state = "undershirt"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/shirt/undershirt/eastshirt2
+	name = "white foreign shirt"
+	desc = "A shirt typically used by foreign gangs."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/shirts.dmi'
+	icon_state = "eastshirt2"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	inhand_icon_state = null
+	worn_icon_state = "undershirt"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/shirt/undershirt/easttats
+	name = "bouhoi bujeog tattoos"
+	desc = "A mystic style of tattoos adopted by the Ruma Clan, emulating a practice performed by warrior monks of the Xinyi Dynasty. They are your way of identifying fellow clan members, an sign of companionship and secretive brotherhood. These are styled into the shape of clouds, created by a mystical ink which shifts and moves in ripples like a pond to harden where your skin is struck. It's movement causes you to shudder."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/shirts.dmi'
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/b30_s50_t50_p20_f0_a0
+	rogue_prevent_crits = list("slash", "blunt")
+	icon_state = null
+	inhand_icon_state = null
+	worn_icon_state = "undershirt"
+	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/formal
 	name = "formal shirt"
@@ -16908,6 +21721,30 @@
 	worn_icon_state = "undershirt"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/suit/roguetown/shirt/undershirt/nomad
+	name = "shirt"
+	desc = "Modest and humble. It lets you walk around in public with your dignity intact."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/shirts.dmi'
+	icon_state = "undershirt"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	inhand_icon_state = null
+	worn_icon_state = "undershirt"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/suit/roguetown/shirt/undershirt/priest
 	name = "undervestments"
 	desc = "A soft garment designed to prevent chafing from wearing heavy robes all dae and night."
@@ -16946,6 +21783,30 @@
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST
 	rogue_inhand = FALSE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	inhand_icon_state = null
+	worn_icon_state = "undershirt"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/suit/roguetown/shirt/undershirt/purple
+	name = "shirt"
+	desc = "Modest and humble. It lets you walk around in public with your dignity intact."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/shirts.dmi'
+	icon_state = "undershirt"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
@@ -17352,6 +22213,35 @@
 	worn_icon_state = "chain_skirt"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/under/roguetown/chainlegs/skirt/bronze
+	name = "bronze chain skirt"
+	desc = "A knee-length maille skirt, made with hundreds of small bronze rings. It wards cuts against the thighs without slowing the feet."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/pants.dmi'
+	icon_state = "chain_skirt"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
+	slot_flags = ITEM_SLOT_ICLOTHING
+	armor_type = /datum/armor/clothing_under/rockhill_bronze
+	body_parts_covered = LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/bronze
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "chain"
+	inhand_icon_state = null
+	worn_icon_state = "chain_skirt"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/under/roguetown/heavy_leather_pants
 	name = "hardened leather trousers"
 	desc = "Thick hide cut and sewn into a pair of very protective trousers. The dense leather can turn away errant chops."
@@ -17373,6 +22263,146 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	rogue_armor = /datum/rogue_armor/leather_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "chopping", "blunt", "twist")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "roguepants"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/under/roguetown/heavy_leather_pants/arbiter
+	name = "heavy trousers"
+	desc = "A pair of heavy, washed-out trousers in grey colors."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/overseer/overseer.dmi'
+	icon_state = "overseerpants"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/overseer/onmob/overseer.dmi'
+	slot_flags = ITEM_SLOT_ICLOTHING
+	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/special/overseer/onmob/overseer.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "chopping", "blunt", "twist")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "overseerpants"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/under/roguetown/heavy_leather_pants/eastpants1
+	name = "cut-throat's pants"
+	desc = "Foreign pants, with leather insewns."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/pants.dmi'
+	icon_state = "eastpants1"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
+	slot_flags = ITEM_SLOT_ICLOTHING
+	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "chopping", "blunt", "twist")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "roguepants"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/under/roguetown/heavy_leather_pants/eastpants2
+	name = "strange ripped pants"
+	desc = "Weird pants typically worn by the destitute in Kazengun. Or, those looking to make a fashion statement."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/pants.dmi'
+	icon_state = "eastpants2"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
+	slot_flags = ITEM_SLOT_ICLOTHING
+	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "chopping", "blunt", "twist")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "roguepants"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/under/roguetown/heavy_leather_pants/grenzelpants
+	name = "grenzelhoftian paumpers"
+	desc = "Padded pants for extra comfort and protection, adorned in vibrant colors."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/pants.dmi'
+	icon_state = "grenzelpants"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
+	slot_flags = ITEM_SLOT_ICLOTHING
+	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "chopping", "blunt", "twist")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "grenzelpants"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/under/roguetown/heavy_leather_pants/nomadpants
+	name = "nomad pants"
+	desc = "Tight fitting leather pants worn under clothing of the steppes."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/pants.dmi'
+	icon_state = "nomadpants"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
+	slot_flags = ITEM_SLOT_ICLOTHING
+	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather
 	armor_class = 1
 	rogue_prevent_crits = list("slash", "chopping", "blunt", "twist")
 	rogue_blocksound = "soft"
@@ -17404,6 +22434,118 @@
 	armor_class = 1
 	rogue_prevent_crits = list("slash", "chopping", "blunt", "twist")
 	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "roguepants"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/under/roguetown/heavy_leather_pants/otavan/generic
+	name = "fencing breeches"
+	desc = "A pair of loose breeches with leather reinforcements on the waist and legs. Worn with a cup."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/pants.dmi'
+	icon_state = "fencingbreeches"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
+	slot_flags = ITEM_SLOT_ICLOTHING
+	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "chopping", "blunt", "twist")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "roguepants"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/under/roguetown/heavy_leather_pants/otavan/shepherd
+	name = "shepherd's pants"
+	desc = "A pair of white pants decorated with red stripes and traditional patterning."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/pants.dmi'
+	icon_state = "shepherdpants"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
+	slot_flags = ITEM_SLOT_ICLOTHING
+	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "chopping", "blunt", "twist")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "roguepants"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/under/roguetown/heavy_leather_pants/shadowpants
+	name = "silk tights"
+	desc = "Form-fitting legwear. Almost too form-fitting."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/pants.dmi'
+	icon_state = "shadowpants"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
+	slot_flags = ITEM_SLOT_ICLOTHING
+	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather_good
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "chopping", "blunt", "twist")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "roguepants"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/under/roguetown/heavy_leather_pants/shadowpants/maille
+	name = "silk-wreathed maille tights"
+	desc = "Form-fitting silk tights layered over fine drowsmithed maille."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/pants.dmi'
+	icon_state = "shadowpants"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
+	slot_flags = ITEM_SLOT_ICLOTHING
+	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/maille
+	armor_class = 2
+	rogue_prevent_crits = list("slash", "chopping", "blunt", "twist")
+	rogue_blocksound = "chain"
 	inhand_icon_state = null
 	worn_icon_state = "roguepants"
 	rogue_female_worn = TRUE
@@ -17680,6 +22822,34 @@
 	worn_icon_state = "iplate_legs"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/under/roguetown/platelegs/iron/gronn
+	name = "kheshig iron chausses"
+	desc = "Iron chausses with an added set of leather for comfort and padding, The knees are adorned with a skull like shape and that of the moon."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/gronn.dmi'
+	icon_state = "gronnplatepants"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/gronn.dmi'
+	slot_flags = ITEM_SLOT_ICLOTHING
+	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 3
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+	worn_icon_state = "gronnplatepants"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/under/roguetown/platelegs/matthios
 	name = "gilded leggings"
 	desc = "But my outside to behold:"
@@ -17706,6 +22876,34 @@
 	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "plate_legs"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/under/roguetown/platelegs/oathmarked
+	name = "oathmarked chausses"
+	desc = "Reinforced armor to protect the legs, fashioned out of blackened steel plate."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/blkknight.dmi'
+	icon_state = "bplatelegs"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/blkknight.dmi'
+	slot_flags = ITEM_SLOT_ICLOTHING
+	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 3
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+	worn_icon_state = "bplatelegs"
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/platelegs/skirt
@@ -17765,6 +22963,31 @@
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/skirt
+	name = "skirt"
+	desc = "Long, flowing, and modest."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/pants.dmi'
+	icon_state = "skirt"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
+	slot_flags = ITEM_SLOT_ICLOTHING
+	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
+	alternate_worn_layer = ROGUE_SHIRT_LAYER
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	inhand_icon_state = null
+	worn_icon_state = "skirt"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/under/roguetown/skirt/black
 	name = "skirt"
 	desc = "Long, flowing, and modest."
 	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/pants.dmi'
@@ -18037,6 +23260,30 @@
 	rogue_grid_height = 32
 	inhand_icon_state = null
 	worn_icon_state = "tights"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/under/roguetown/tights/puritan
+	name = "formal breeches"
+	desc = "A pair of form-fitting tights."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/pants.dmi'
+	icon_state = "monkpants"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
+	slot_flags = ITEM_SLOT_ICLOTHING
+	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	inhand_icon_state = null
+	worn_icon_state = "monkpants"
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/tights/random
@@ -18387,6 +23634,34 @@
 	worn_icon_state = "trou"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/under/roguetown/trou/leather/pontifex
+	name = "pontifex's chaqchur"
+	desc = "A handmade pair of baggy, thin leather pants. They end in a tight stocking around the calf, ballooning out around the thigh."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/pants.dmi'
+	icon_state = "monkpants"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/pants.dmi'
+	slot_flags = ITEM_SLOT_ICLOTHING
+	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/leather
+	armor_class = 1
+	rogue_prevent_crits = list("slash", "blunt", "twist")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "monkpants"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/under/roguetown/trou/leather/pontifex/zyb
 	name = "baggy desert pants"
 	desc = "A handmade pair of baggy, thin leather pants. Keeps sand out of your boots, sun off your legs, and a creacher's fangs from piercing your ankles."
@@ -18495,6 +23770,29 @@
 	worn_icon_state = "webs"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/wrists/roguetown/allwrappings
+	name = "wrappings"
+	desc = "Strips of cloth, snuggly winding around your arms."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/wrists.dmi'
+	icon_state = "nocwrappings"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
+	slot_flags = ITEM_SLOT_ROGUE_WRISTS
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	inhand_icon_state = null
+	worn_icon_state = "nocwrappings"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/wrists/roguetown/bracers
 	name = "bracers"
 	desc = "Steel bracers that protect the arms."
@@ -18576,9 +23874,91 @@
 	worn_icon_state = "bracers"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/wrists/roguetown/bracers/black
+	name = "bracers"
+	desc = "Steel bracers that protect the arms."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/wrists.dmi'
+	icon_state = "bracers"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
+	slot_flags = ITEM_SLOT_ROGUE_WRISTS
+	body_parts_covered = ARM_LEFT|ARM_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+	worn_icon_state = "bracers"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/wrists/roguetown/bracers/bronze
+	name = "bronze wristguards"
+	desc = "Padded with hide and cuffed to comfort the joints, these bronze plates fit perfectly around both forearms. Your fingers tingle with an unspoken purpose, as the bracers clasp into place; primordial, yet everclear."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/wrists.dmi'
+	icon_state = "bronzebracers"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
+	slot_flags = ITEM_SLOT_ROGUE_WRISTS
+	armor_type = /datum/armor/rockhill_bronze
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|HAND_LEFT|HAND_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/bronze
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+	worn_icon_state = "bracers"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/wrists/roguetown/bracers/cloth/monk
 	name = "monk's wrappings"
 	desc = "Sheared burlap and cloth, meticulously fashioned around the forearms. Taut fibers turn weeping gashes into mere tears along the cloth, allowing for Monks to more confidently parry blades with their bare hands."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/wrists.dmi'
+	icon_state = "nocwrappings"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
+	slot_flags = ITEM_SLOT_ROGUE_WRISTS
+	body_parts_covered = ARM_LEFT|ARM_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/padded_good
+	rogue_prevent_crits = list("slash", "chopping", "stabbing", "blunt", "twist")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "nocwrappings"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/wrists/roguetown/bracers/cloth/naledi
+	name = "sojourner's wrappings"
+	desc = "Sheared burlap and cloth, meticulously fashioned around the forearms. Naledian-trained monks rarely share the same fatalistic mindset as their Otavan cousins, and - consequency - tend to be averse with binding their wrists in jagged thorns. Unbloodied fingers tend to work far better with the arcyne, too. </br>'..And so, the great tears that they wept when it took it's last breath, the rain of the Weeper, is what marked this era of silence. Fools would tell you that Psydon has died, that they splintered into ‘ten smaller fragments', but that does not make sense. They are everything within and without, they are beyond size and shape. How can everything become something? No, they have merely turned their ear from us. They mourn, for their greatest child and their worst..'"
 	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/wrists.dmi'
 	icon_state = "nocwrappings"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -18658,6 +24038,33 @@
 	worn_icon_state = "ibracers"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/wrists/roguetown/bracers/jackchain
+	name = "jack chains"
+	desc = "Thin strips of steel attached to small shoulder and elbow plates, worn on the outside of the arms to protect against slashes."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/wrists.dmi'
+	icon_state = "jackchain"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
+	slot_flags = ITEM_SLOT_ROGUE_WRISTS
+	body_parts_covered = ARM_LEFT|ARM_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/brigandine
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+	worn_icon_state = "jackchain"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/wrists/roguetown/bracers/leather
 	name = "leather bracers"
 	desc = "Standard leather bracers that offer some meager protection for the arms."
@@ -18680,6 +24087,33 @@
 	rogue_grid_height = 64
 	rogue_armor = /datum/rogue_armor/leather
 	rogue_prevent_crits = list("slash", "stabbing", "blunt", "twist")
+	rogue_blocksound = "soft"
+	inhand_icon_state = null
+	worn_icon_state = "lbracers"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/wrists/roguetown/bracers/leather/heavy
+	name = "hardened leather bracers"
+	desc = "Hardened leather braces that will keep your wrists safe from bludgeoning."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/wrists.dmi'
+	icon_state = "albracers"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
+	slot_flags = ITEM_SLOT_ROGUE_WRISTS
+	body_parts_covered = ARM_LEFT|ARM_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/leather_good
+	rogue_prevent_crits = list("slash", "blunt", "twist", "chopping", "smashing")
 	rogue_blocksound = "soft"
 	inhand_icon_state = null
 	worn_icon_state = "lbracers"
@@ -18711,6 +24145,33 @@
 	rogue_blocksound = "plate"
 	inhand_icon_state = null
 	worn_icon_state = "psybarbs"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/wrists/roguetown/bracers/zizo
+	name = "avantyne bracers"
+	desc = "<font color='A50021'>Which yet survive, stamped on these lifeless things, the hand that mocked them and the heart that fed:</font>"
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/wrists.dmi'
+	icon_state = "zizobracers"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
+	slot_flags = ITEM_SLOT_ROGUE_WRISTS
+	body_parts_covered = ARM_LEFT|ARM_RIGHT
+	rogue_inhand = FALSE
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/ascendant
+	rogue_prevent_crits = list("slash", "stabbing", "chopping", "blunt", "twist")
+	rogue_blocksound = "plate"
+	inhand_icon_state = null
+	worn_icon_state = "zizobracers"
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/wrists/roguetown/nocwrappings
@@ -19513,6 +24974,28 @@
 	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
 	inhand_icon_state = "torch"
 
+/obj/item/flashlight/flare/torch/lantern/prelit
+	name = "iron lamptern"
+	desc = "A light to guide the way."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/lighting.dmi'
+	icon_state = "lamp"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 1
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = "torch"
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
+	inhand_icon_state = "torch"
+
 /obj/item/flashlight/flare/torch/lantern/psycenser
 	name = "Golgatha"
 	desc = "A masterfully-crafted thurible that, when opened, emits a ghastly perfume that reinvigorates the flesh-and-steel of Psydonites. It is said to contain a volatile fragment of the Comet Syon, which - if mishandled - can lead to unforeseen consequences."
@@ -19714,6 +25197,7 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 96
 	possible_item_intents = list(/datum/intent/hit)
+	firefuel = 20 MINUTES
 	inhand_icon_state = null
 
 /obj/item/grown/log/tree/stake
@@ -19738,6 +25222,7 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/stab, /datum/intent/pick)
+	firefuel = 1 MINUTES
 	inhand_icon_state = null
 
 /obj/item/grown/log/tree/stick
@@ -19761,6 +25246,7 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/gun/ballistic/firearm/arquebus
@@ -19904,6 +25390,58 @@
 	possible_item_intents = list(/datum/intent/shoot/bow, /datum/intent/arc/bow, /datum/intent/hit)
 	inhand_icon_state = null
 
+/obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve/blackoak
+	name = "woad recurve bow"
+	desc = "A medium length composite bow of glued horn, wood, and sinew with fine shooting characteristics. Hewn from a living Black Oak branch, it carries the quiet strength of untouched groves; unyielding, unbroken, and fiercely guarded from the hands of Man."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/64.dmi'
+	icon_state = "blackoakrecurve_bow"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 10
+	throwforce = 5
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = "bow"
+	pixel_x = -16
+	pixel_y = -16
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	can_parry = TRUE
+	possible_item_intents = list(/datum/intent/shoot/bow, /datum/intent/arc/bow, /datum/intent/hit)
+	inhand_icon_state = null
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve/steppesman
+	name = "aavnic riding bow"
+	desc = "A short recurve warbow made for the express purpose of shooting on saigaback, a skill every archer in Aavnr takes much more seriously than their Northern counterparts. Every seasoned Druzhina is themselves a good bowyer and usually makes their own bow, this one is made with the purpure-ish crimson wood of a Vörötslevé tree."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/64.dmi'
+	icon_state = "recurve_riding"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 10
+	throwforce = 5
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = "bow"
+	pixel_x = -16
+	pixel_y = -16
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	can_parry = TRUE
+	possible_item_intents = list(/datum/intent/shoot/bow, /datum/intent/arc/bow, /datum/intent/hit)
+	inhand_icon_state = null
+
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve/warden
 	name = "blackhorn bow"
 	desc = "When a northern black-horned saiga is old enough, it will shed its two-metre long antlers. As time passes, they harden progressively more but keep a degree of flexibility that can outdo even yew. Wardens often collect such antlers in the rare occasion they are found and send them to be filed, strung and treated by a master bowyer. Such tradition carries merit even todae, and thus one can see the realm's wardens carrying their endemic blackhorn bows with pride."
@@ -19956,6 +25494,31 @@
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 
+/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/arbalest
+	name = "sauterelle"
+	desc = "An incredibly heavy crossbow, designed for a dedicated arbalist to wield. Modified to be loaded by hand. A tedious affair."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/misc32.dmi'
+	icon_state = "psyheavycrossbow0"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 10
+	throwforce = 5
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	slot_flags = ITEM_SLOT_BACK
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	can_parry = TRUE
+	possible_item_intents = list(/datum/intent/shoot/crossbow, /datum/intent/arc/crossbow, /datum/intent/hit)
+	inhand_icon_state = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow
 	name = "slurbow"
 	desc = "A lighter weight crossbow with a distinct barrel shroud holding the bolt in place. Light enough to arm by hand. <br>They're popular among among highwaymen and the patrolling lamplighters of Otava."
@@ -19967,6 +25530,54 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
 	worn_icon_state = "slurbow"
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	can_parry = TRUE
+	possible_item_intents = list(/datum/intent/shoot/crossbow/slurbow, /datum/intent/arc/crossbow/slurbow, /datum/intent/hit)
+	inhand_icon_state = null
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow/stalker
+	name = "gilded drow crossbow"
+	desc = "A stripped-down crossbow specifically made for the small engagement ranges of the Underdark and caverns. A practical tool of the Drow assassin - a lady's friend is a man's end. The machining is finely tuned, and the whole of the bow is ornamented in gold - a symbol of rank among drow markswomen."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/misc32.dmi'
+	icon_state = "drowcrossbowgilded0"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 10
+	throwforce = 5
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = "drowcrossbowgilded"
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	can_parry = TRUE
+	possible_item_intents = list(/datum/intent/shoot/crossbow/slurbow, /datum/intent/arc/crossbow/slurbow, /datum/intent/hit)
+	inhand_icon_state = null
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow/stalker/lesser
+	name = "drow crossbow"
+	desc = "A stripped-down crossbow specifically made for the small engagement ranges of the Underdark and caverns. The body is well worn and lacks the gilding one commonly sees on the equipment of established Drow warriors."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/misc32.dmi'
+	icon_state = "drowcrossbow0"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 10
+	throwforce = 5
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = "drowcrossbow"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_onhip = TRUE
 	rogue_onback = TRUE
@@ -21783,6 +27394,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/natural/bundle/cloth/bandage
@@ -21804,6 +27416,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/natural/bundle/cloth/bandage/full
@@ -21825,6 +27438,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/natural/bundle/cloth/roll
@@ -21846,6 +27460,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/natural/bundle/curred_hide
@@ -21867,6 +27482,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/natural/bundle/fibers
@@ -21889,6 +27505,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/natural/bundle/fibers/full
@@ -21911,6 +27528,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	firefuel = 30 MINUTES
 	inhand_icon_state = null
 
 /obj/item/natural/bundle/plank
@@ -21932,6 +27550,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 128
 	rogue_grid_height = 224
+	firefuel = 10 MINUTES
 	inhand_icon_state = null
 
 /obj/item/natural/bundle/silk
@@ -21954,6 +27573,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/natural/bundle/stick
@@ -21975,6 +27595,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/natural/bundle/worms
@@ -21996,6 +27617,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/natural/chaff/oat
@@ -22060,6 +27682,28 @@
 	possible_item_intents = list(/datum/intent/hit)
 	inhand_icon_state = null
 
+/obj/item/natural/clay/glassbatch
+	name = "glass batch"
+	desc = "A precisely weighed mixture of ground silica (clay), flux (ash), and stabilizer (stone powder), prepared by grinding all components together with a mortar and pestle. Requires: 2x clay, 2x ash, 1x stone powder. Heat in a smelter to yield heated glass, then shape with a blowing rod."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/natural.dmi'
+	icon_state = "glassBatch"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	worn_icon_state = null
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	inhand_icon_state = null
+
 /obj/item/natural/cloth
 	name = "cloth"
 	desc = "A bolt of woven fibers. Useful as bandages and in dozens upon dozens of crafts."
@@ -22081,6 +27725,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/natural/dirtclod
@@ -22170,6 +27815,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/natural/fur
@@ -22735,6 +28381,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 224
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/natural/worms
@@ -23078,6 +28725,27 @@
 	inhand_y_dimension = 64
 	inhand_icon_state = null
 
+/obj/item/paper/inqslip/arrival/ortho
+	name = "arrival slip"
+	desc = "A writ of arrival, printed on Otavan parchment: one signed not in ink, but blood. Intended for one person and one person only. Press the slip against one's own weeping wounds in order to obtain a fitting signature. Once done, it is ready to be mailed back to Otava."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
+	icon_state = "slip"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_HEAD
+	body_parts_covered = HEAD
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+
 /obj/item/paper/inqslip/confession
 	name = "confession"
 	desc = "A writ of religious guilt, printed on Otavan parchment: one signed not in ink, but blood. Press the confession against a suspect's bleeding wound, in order to obtain their signature. Once done, it is ready to be mailed back to Otava. Fold and seal it, it's only proper."
@@ -23139,6 +28807,31 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	firefuel = 30 SECONDS
+	inhand_icon_state = null
+
+/obj/item/paper/scroll/grudge
+	name = "Book of Grudges"
+	desc = "A copy you've taken with you. Unfortunately the dampness of your travels made it unreadable. You can still add new entries, however. It looks bulky enough to act as a mild blunt weapon."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
+	icon_state = "grudge_closed"
+	w_class = WEIGHT_CLASS_TINY
+	force = 10
+	throwforce = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	body_parts_covered = HEAD
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/mace/strike)
+	firefuel = 30 SECONDS
 	inhand_icon_state = null
 
 /obj/item/perfume/random
@@ -23321,6 +29014,26 @@
 	inhand_y_dimension = 64
 	inhand_icon_state = null
 
+/obj/item/quiver/bolts/
+	name = "quiver"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
+	icon_state = "quiver0"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
+	worn_icon_state = "quiver"
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
+	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+
 /obj/item/quiver/bullet/lead
 	name = "lead ball pouch"
 	desc = "This pouch can hold a handful of musket balls, or, perhaps, grapeshot."
@@ -23363,7 +29076,47 @@
 	inhand_y_dimension = 64
 	inhand_icon_state = null
 
+/obj/item/quiver/heavybolts
+	name = "quiver"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
+	icon_state = "quiver0"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
+	worn_icon_state = "quiver"
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
+	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+
 /obj/item/quiver/javelin
+	name = "javelinbag"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
+	icon_state = "javelinbag0"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
+	worn_icon_state = "javelinbag"
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
+	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+
+/obj/item/quiver/javelin/bronze
 	name = "javelinbag"
 	desc = ""
 	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
@@ -23413,6 +29166,46 @@
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
 	worn_icon_state = "javelinbag"
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
+	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+
+/obj/item/quiver/poisonarrows
+	name = "quiver"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
+	icon_state = "quiver0"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
+	worn_icon_state = "quiver"
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
+	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+
+/obj/item/quiver/pyroarrows
+	name = "quiver"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
+	icon_state = "quiver0"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
+	worn_icon_state = "quiver"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
 	rogue_inhand = TRUE
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
@@ -25419,6 +31212,28 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
 
+/obj/item/reagent_containers/glass/bottle/alchemical/strongmanapot
+	name = "alchemical vial"
+	desc = "A cute bottle that can hold three swigs of liquid, which is useful for both miserly business practices and preventing accidental overdosing. This one lacks a cork."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/alchemy.dmi'
+	icon_state = "vial_bottle"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
+	inhand_icon_state = null
+
 /obj/item/reagent_containers/glass/bottle/alchemical/strpot
 	name = "alchemical vial"
 	desc = "A cute bottle that can hold three swigs of liquid, which is useful for both miserly business practices and preventing accidental overdosing. This one lacks a cork."
@@ -25745,6 +31560,29 @@
 	desc = "A bottle with a simple cork-seal. A murky, white wine made from rice grown in the steppes of Avar."
 	icon = 'modular_redtard/rockhill/icons/obj/alcohol.dmi'
 	icon_state = "white_wine"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_onhip = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
+	inhand_icon_state = null
+
+/obj/item/reagent_containers/glass/bottle/rogue/beer/blackgoat
+	name = "Bottle of Blackgoat"
+	desc = "A bottle with the black goat kriek cork-seal. A fruit-sour beer brewed with jackberries for a tangy taste."
+	icon = 'modular_redtard/rockhill/icons/obj/alcohol.dmi'
+	icon_state = "beer"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
@@ -27632,6 +33470,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/recipe_book/blacksmithing
@@ -27651,6 +33490,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/recipe_book/builder
@@ -27670,6 +33510,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/recipe_book/ceramics
@@ -27689,6 +33530,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/recipe_book/cooking
@@ -27709,6 +33551,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/recipe_book/engineering
@@ -27728,6 +33571,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/recipe_book/leatherworking
@@ -27747,6 +33591,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/recipe_book/magic
@@ -27766,6 +33611,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/recipe_book/sewing
@@ -27785,6 +33631,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/recipe_book/survival
@@ -27805,6 +33652,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/repair_kit
@@ -27897,7 +33745,6 @@
 	inhand_icon_state = null
 
 /obj/item/restraints/legcuffs/beartrap/armed
-	parent_type = /obj/item/rockhill
 	name = "mantrap"
 	desc = "A crude and rusty spring trap, used to snare interlopers, or prey on a hunt. Looks almost like falling apart."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
@@ -27917,6 +33764,9 @@
 	rogue_grid_width = 256
 	rogue_grid_height = 256
 	inhand_icon_state = null
+	armed = TRUE
+	trap_damage = 90
+	anchored = TRUE
 
 /obj/item/restraints/legcuffs/beartrap/armed/camouflage
 	name = "mantrap"
@@ -27938,6 +33788,10 @@
 	rogue_grid_width = 256
 	rogue_grid_height = 256
 	inhand_icon_state = null
+	armed = TRUE
+	trap_damage = 90
+	anchored = TRUE
+	alpha = 80
 
 /obj/item/riddleofsteel
 	parent_type = /obj/item/rockhill
@@ -28254,6 +34108,36 @@
 	can_parry = TRUE
 	inhand_icon_state = null
 
+/obj/item/rogue/instrument/ztratocaster
+	name = "ztratocaster"
+	desc = "A strange guitar-like instrument with two necks, and a body sharp enough to shred."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/music.dmi'
+	icon_state = "ztratocaster"
+	w_class = WEIGHT_CLASS_HUGE
+	force = 15
+	throwforce = 7
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_force_wielded = 35
+	wdefense = 6
+	wbalance = -1
+	minstr = 8
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/axes
+	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/spear/bash)
+	gripped_intents = list(/datum/intent/axe/cut/battle/greataxe, /datum/intent/axe/chop/battle/greataxe, /datum/intent/spear/bash)
+	inhand_icon_state = null
+
 /obj/item/rogue/painting/queen
 	name = "queen alexia painting"
 	desc = "It's Queen Alexia I 'the Righteous' Valmont of Ferentia. Twenty years ago she rebelled against her father, King Mattimeo, and had him burned on a cross for heresy after he was seduced by a Baothan succubus. These mass-reproduced paintings are devalued."
@@ -28538,6 +34422,27 @@
 	inhand_y_dimension = 64
 	inhand_icon_state = null
 
+/obj/item/roguegear
+	parent_type = /obj/item/rockhill
+	name = "example cog"
+	desc = "You should not be seeing this."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
+	icon_state = "gear"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	inhand_icon_state = null
+
 /obj/item/roguegear/bronze
 	name = "cog"
 	desc = "A cog with teeth meticulously crafted for tight interlocking."
@@ -28578,9 +34483,47 @@
 	rogue_grid_height = 32
 	inhand_icon_state = null
 
+/obj/item/roguegem/amber
+	name = "amber"
+	desc = "A chunk of fossilized sunlight. Believed to have been shed during the shattering of the First Sun, its remnants are prized among Astratans. Raaneshi sometimes use fragments as currency, instead of mammon."
+	icon = 'modular_redtard/rockhill/icons/roguetown/gems/gem_amber.dmi'
+	icon_state = "raw_amber"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+
 /obj/item/roguegem/amethyst
 	name = "amythortz"
 	desc = "A deep lavender crystal, it surges with magical energy, yet it's artificial nature means it is worth little."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/gems.dmi'
+	icon_state = "amethyst"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+
+/obj/item/roguegem/amethyst/naledi
+	name = "naledic amythortz"
+	desc = "A deep lavender crystal, crackling with magical energy. To a Disciple, it might simply be a keepsake from pilgrimages abroad: but to a Sojourner, it is the leyline to their arcyne-enchanted form of martial combat. </br>This gemstone can be applied to a yet-unfinished spelltome by those with arcyne potential, in order to recall more spells."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/gems.dmi'
 	icon_state = "amethyst"
 	w_class = WEIGHT_CLASS_TINY
@@ -28602,6 +34545,25 @@
 	desc = "Pale blue, like a frozen tear."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/gems.dmi'
 	icon_state = "quartz_cut"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+
+/obj/item/roguegem/coral
+	name = "heartstone"
+	desc = "Jagged like a hound's tooth. Heartstone is speculated to be the crystallized blood of fallen sailors. It is sacred to Abyssorites and is used in numerous Abyssorite rituals."
+	icon = 'modular_redtard/rockhill/icons/roguetown/gems/gem_coral.dmi'
+	icon_state = "raw_coral"
 	w_class = WEIGHT_CLASS_TINY
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
@@ -28654,6 +34616,63 @@
 	inhand_y_dimension = 64
 	inhand_icon_state = null
 
+/obj/item/roguegem/jade
+	name = "jade"
+	desc = "A dull green gem prized in Kazengun. Xinyi tradition holds that jade is the essence of Psydon, protecting both soul and flesh from decay and corruption."
+	icon = 'modular_redtard/rockhill/icons/roguetown/gems/gem_jade.dmi'
+	icon_state = "raw_jade"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+
+/obj/item/roguegem/onyxa
+	name = "onyxa"
+	desc = "A sinister, glimmering stone. Valuable to the drow, it is sometimes used in necromantic rituals. Mirrors made of this are said to never show your own face."
+	icon = 'modular_redtard/rockhill/icons/roguetown/gems/gem_onyxa.dmi'
+	icon_state = "raw_onyxa"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+
+/obj/item/roguegem/opal
+	name = "opal"
+	desc = "A dazzling gem of great value. Opal is widely speculated to be the crystallized essence left behind by rainbows."
+	icon = 'modular_redtard/rockhill/icons/roguetown/gems/gem_opal.dmi'
+	icon_state = "raw_opal"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+
 /obj/item/roguegem/random
 	name = "random gem"
 	desc = "You shouldn't be seeing this."
@@ -28678,6 +34697,25 @@
 	desc = "Its facets shine so brightly..."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/gems.dmi'
 	icon_state = "ruby_cut"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_righthand.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+
+/obj/item/roguegem/turq
+	name = "cerulite"
+	desc = "A beautiful teal gem that carves easily. Beloved by mages, its remarkable clarity makes it a favored tool of Naledi's astrologer-mages in divination."
+	icon = 'modular_redtard/rockhill/icons/roguetown/gems/gem_turq.dmi'
+	icon_state = "raw_turq"
 	w_class = WEIGHT_CLASS_TINY
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/misc/food_lefthand.dmi'
@@ -30734,6 +36772,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	firefuel = 30 MINUTES
 	inhand_icon_state = null
 
 /obj/item/rogueore/copper
@@ -31123,6 +37162,41 @@
 	associated_skill = /datum/attribute/skill/combat/polearms
 	possible_item_intents = list(/datum/intent/spear/thrust/eaglebeak/oneh)
 	gripped_intents = list(/datum/intent/spear/bash/eaglebeak, /datum/intent/mace/smash/eaglebeak, /datum/intent/spear/thrust/eaglebeak, /datum/intent/mace/warhammer/pick/ranged)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	inhand_icon_state = "sabre"
+
+/obj/item/rogueweapon/eaglebeak/oathmarked
+	name = "oathmarked's lucerne"
+	desc = "A reinforced pole affixed with a head of steel. On the opposite side, a pick, intended to punch through plate. Above? A thrusting head. A weapon to kill more noble foes, evidently."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/64.dmi'
+	icon_state = "polehammerb"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 12
+	throwforce = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	worn_icon_state = "sabre"
+	pixel_x = -16
+	pixel_y = -16
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_force_wielded = 32
+	wdefense = 5
+	wdefense_wbonus = 3
+	wlength = 4
+	wbalance = -1
+	minstr = 12
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/thrust/eaglebeak/oneh)
+	gripped_intents = list(/datum/intent/spear/thrust/eaglebeak, /datum/intent/spear/bash/eaglebeak, /datum/intent/mace/smash/eaglebeak, /datum/intent/mace/warhammer/pick/ranged)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
@@ -31831,6 +37905,74 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	inhand_icon_state = "sabre"
 
+/obj/item/rogueweapon/greatsword/grenz/oathmarked
+	name = "oathmarked's flamberge"
+	desc = "An incredibly well balanced blade, designed for a rather large frame. Heavy beyond any reasonable measure. The work of a master smith, or one with far too much time to spare. The blade of a noble, surely."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/swords64.dmi'
+	icon_state = "oathflamberge"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 14
+	throwforce = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	worn_icon_state = "sabre"
+	pixel_x = -16
+	pixel_y = -16
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_force_wielded = 35
+	wdefense = 6
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 11
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/chop, /datum/intent/sword/strike)
+	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/peel/big, /datum/intent/sword/strike/bad)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
+	inhand_icon_state = "sabre"
+
+/obj/item/rogueweapon/greatsword/zizo
+	name = "avantyne greatsword"
+	desc = "Malediction made manifest; the greatweapon of an otherworldly champion, unfazed by the thickest plates and the toughest flesh. Let no one stop the march of Her disciples, towards the filament's sputtering wound. Take thine birthright and ascend to the heavens beyond, or die trying."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/64.dmi'
+	icon_state = "zizogsw"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 20
+	throwforce = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	worn_icon_state = "sabre"
+	pixel_x = -16
+	pixel_y = -16
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_force_wielded = 40
+	wdefense = 5
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 9
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/chop, /datum/intent/sword/strike)
+	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
+	inhand_icon_state = "sabre"
+
 /obj/item/rogueweapon/greatsword/zwei
 	name = "claymore"
 	desc = "This is much longer than a common greatsword, and well balanced too!"
@@ -32291,6 +38433,38 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
+/obj/item/rogueweapon/handclaw/gronn
+	name = "Gronn Beast Claws"
+	desc = "A pair of uniquely reinforced iron claws forged with the addition of bone by the Zayran shamans of the Northern Empty. Their unique design aids them in slipping between the plates in armor and their light weight supports rapid aggressive slashes. 'To see the claws of the four, Is to see the true danger of the north. Not man, Not land but beast. We are all prey in their eyes.'"
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/unarmed32.dmi'
+	icon_state = "gronnclaws"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 25
+	throwforce = 12
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	worn_icon_state = "sabre"
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
+	wdefense = 3
+	wdefense_wbonus = 3
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/unarmed
+	possible_item_intents = list(/datum/intent/claw/cut/gronn, /datum/intent/claw/lunge/gronn, /datum/intent/claw/rend)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
+	inhand_icon_state = "sabre"
+
 /obj/item/rogueweapon/handsaw
 	name = "handsaw"
 	desc = "Iron tool for woodworking."
@@ -32615,6 +38789,76 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = null
 
+/obj/item/rogueweapon/huntingknife/combat/bronze
+	name = "sydearmme"
+	desc = "Wedged bronze and whittled rockwood, handfitted into the dagger's most ancient-of-ancestors. It bears marks of flintknapping along its middlewidth; a customary tradition that's purported to atune its edge to the forces of nature."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/daggers32.dmi'
+	icon_state = "bronzedagger"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 20
+	throwforce = 20
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	worn_icon_state = "bone_dagger"
+	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	picklvl = 1.1
+	rogue_sleeved = null
+	sheathe_icon = "bronzedagger"
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	minstr = 9
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/bronze, /datum/intent/dagger/sucker_punch, /datum/intent/dagger/thrust/bronze)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
+	inhand_icon_state = null
+
+/obj/item/rogueweapon/huntingknife/combat/messer
+	name = "kampfmesser"
+	desc = "An undersized steel messer that barely fits into a conventional dagger sheath, the saving grace of any hunter. It lacks a tip for stabbing - yet the edge alone is sharp enough to hack most issues right away. While it was brought over by Grenzelhoftian migrants, it is considered an Ferentian staple these daes - the right tool for the right job."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/daggers32.dmi'
+	icon_state = "minimesser"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 22
+	throwforce = 16
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	worn_icon_state = "bone_dagger"
+	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	picklvl = 1.1
+	rogue_sleeved = null
+	sheathe_icon = "minimesser"
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	wdefense = 4
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	minstr = 9
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/cut/rend, /datum/intent/dagger/chop/cleaver, /datum/intent/dagger/cut/heavy, /datum/intent/dagger/sucker_punch)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
+	inhand_icon_state = null
+
 /obj/item/rogueweapon/huntingknife/copper
 	name = "copper knife"
 	desc = "A knife made of copper. Lacking in durability."
@@ -32748,6 +38992,40 @@
 	can_parry = TRUE
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
+	inhand_icon_state = "elfdag"
+
+/obj/item/rogueweapon/huntingknife/idagger/navaja/freifechter
+	name = "mountaineer's navaja"
+	desc = "A folding Etruscan knife valued by merchants, mercenaries and peasants for its convenience. This specific kind of ornate navaja is endemic to Szöréndnížina."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/special/freifechter32.dmi'
+	icon_state = "mtnavaja_c"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 5
+	throwforce = 12
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	worn_icon_state = "elfdag"
+	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	picklvl = 1.0
+	rogue_sleeved = null
+	sheathe_icon = "idagger"
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	wdefense = 2
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/chop, /datum/intent/dagger/thrust/pick)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = "elfdag"
 
@@ -32921,6 +39199,39 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
+/obj/item/rogueweapon/huntingknife/idagger/silver/stake/preblessed/psy
+	name = "silver-tipped stake"
+	desc = "A branch that has been broken off of a boswellia tree, sharpened to a fine point and tipped with blessed silver. It can lay most unholy creechers to rest, but only by piercing their hearts."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/daggers32.dmi'
+	icon_state = "stake_silver"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 20
+	throwforce = 20
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	worn_icon_state = "bone_dagger"
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	picklvl = 1.1
+	rogue_sleeved = null
+	sheathe_icon = "sildagger"
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
+	inhand_icon_state = null
+
 /obj/item/rogueweapon/huntingknife/idagger/steel
 	name = "steel dagger"
 	desc = "This is a dagger made of solid steel, more durable."
@@ -33023,6 +39334,74 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
+/obj/item/rogueweapon/huntingknife/idagger/steel/dirk
+	name = "fanged dagger"
+	desc = "A vicious dagger of drow make with a cruel, curved, fanglike blade."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/daggers32.dmi'
+	icon_state = "spiderdagger"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 22
+	throwforce = 12
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	worn_icon_state = "bone_dagger"
+	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	picklvl = 1.1
+	rogue_sleeved = null
+	sheathe_icon = "spiderdagger"
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
+	inhand_icon_state = null
+
+/obj/item/rogueweapon/huntingknife/idagger/steel/elvish
+	name = "elvish dirk"
+	desc = "A wave-bladed dagger of Elven design, whose elegant steel craftsmanship is only rivaled by its deceptive lethality."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/daggers32.dmi'
+	icon_state = "elfsdagger"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 20
+	throwforce = 12
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	worn_icon_state = "bone_dagger"
+	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	picklvl = 1.1
+	rogue_sleeved = null
+	sheathe_icon = "elfdagger"
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
+	inhand_icon_state = null
+
 /obj/item/rogueweapon/huntingknife/idagger/steel/holysee
 	name = "eclipsum dagger"
 	desc = "A sliver of heaven, shaped into an elegant dagger. The alloy radiates with magnificence: a reminder that no matter how dark the nites grow, there will always be a dawn to follow. Such a dagger is reserved for the Holy See's bishops and priests - both as a symbol of their divine authority, and as a means of ritualistic bloodletting. </br>'..come forth, child o' myne, and be anointed in the Pantheon's light once more..'"
@@ -33055,6 +39434,108 @@
 	armour_penetration = 50
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
+	inhand_icon_state = null
+
+/obj/item/rogueweapon/huntingknife/idagger/steel/kazengun
+	name = "steel tanto"
+	desc = "A steel dagger imported from the Kazengunese archipelago. A sturdy blade bears a subtle curve, set into a decorated circular crossguard. A waxed wrapping of twisted cordage provides a secure grip."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/daggers32.dmi'
+	icon_state = "eastdagger"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 20
+	throwforce = 12
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	worn_icon_state = "bone_dagger"
+	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	picklvl = 1.2
+	rogue_sleeved = null
+	sheathe_icon = "tanto"
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
+	inhand_icon_state = null
+
+/obj/item/rogueweapon/huntingknife/idagger/steel/kris
+	name = "kris dagger"
+	desc = "A large steel dagger with a unique, flame-shaped blade. It is coveted as a ceremonial tool by Astratan priests and clerics, especially during rites of sacrifice; symbolically, of course."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/daggers32.dmi'
+	icon_state = "kris"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 20
+	throwforce = 12
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	worn_icon_state = "bone_dagger"
+	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	picklvl = 1.1
+	rogue_sleeved = null
+	sheathe_icon = "dagger_trainer"
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	wdefense = 4
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/cut/light, /datum/intent/dagger/thrust, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
+	inhand_icon_state = null
+
+/obj/item/rogueweapon/huntingknife/idagger/steel/kukri
+	name = "kukri dagger"
+	desc = "The Zybantian evolution to developing an extension to the traditional dagger. The curvature is specifically designed to fit around a victim's throat."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/daggers32.dmi'
+	icon_state = "kukri"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 20
+	throwforce = 12
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	worn_icon_state = "bone_dagger"
+	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	picklvl = 1.1
+	rogue_sleeved = null
+	sheathe_icon = "dagger_trainer"
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	wdefense = 5
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/cut/rend, /datum/intent/dagger/chop/cleaver, /datum/intent/dagger/cut/heavy, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
@@ -33157,6 +39638,40 @@
 	can_parry = TRUE
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
+	inhand_icon_state = null
+
+/obj/item/rogueweapon/huntingknife/idagger/steel/rondel
+	name = "rondel dagger"
+	desc = "This is the traditional sidearm of a knight: a lightweight dagger of solid steel, well-balanced for delivering rapid thrusts that can shuck grapplers like oysters."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/daggers32.dmi'
+	icon_state = "rondel"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 20
+	throwforce = 12
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	worn_icon_state = "bone_dagger"
+	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	picklvl = 1.1
+	rogue_sleeved = null
+	sheathe_icon = "dagger_trainer"
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	wdefense = 4
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/dagger/thrust/quick, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch, /datum/intent/dagger/cut)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	inhand_icon_state = null
 
@@ -33511,6 +40026,37 @@
 	icon_state = "katar"
 	w_class = WEIGHT_CLASS_SMALL
 	force = 24
+	throwforce = 12
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	worn_icon_state = "sabre"
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/unarmed
+	possible_item_intents = list(/datum/intent/katar/cut, /datum/intent/katar/thrust)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
+	inhand_icon_state = "sabre"
+
+/obj/item/rogueweapon/katar/bronze
+	name = "bronze pata"
+	desc = "A fusion of gauntlet and dagger that sits above the user's fist. Commonly used by those proficient at unarmed fighting."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/unarmed32.dmi'
+	icon_state = "pata_bronze"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 21
 	throwforce = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
@@ -33977,6 +40523,41 @@
 	associated_skill = /datum/attribute/skill/combat/maces
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/strike/goden, /datum/intent/mace/smash/goden, /datum/intent/mace/rangedthrust, /datum/intent/effect/daze)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	inhand_icon_state = "mace_greyscale"
+
+/obj/item/rogueweapon/mace/maul
+	name = "maul"
+	desc = "Who would need something this large? It looks like it was made for tearing down walls, rather than men."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/blunt64.dmi'
+	icon_state = "sledge"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 12
+	throwforce = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/melee_righthand.dmi'
+	worn_icon_state = "mace_greyscale"
+	pixel_x = -16
+	pixel_y = -16
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_force_wielded = 32
+	wdefense = 4
+	wdefense_wbonus = 2
+	wlength = 3
+	wbalance = -1
+	minstr = 14
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike)
+	gripped_intents = list(/datum/intent/maul, /datum/intent/maul/crush, /datum/intent/mace/sweep, /datum/intent/effect/hobble)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "mace_greyscale"
 
@@ -35009,6 +41590,39 @@
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
 	rogue_sleeved = null
 	valid_blade = /obj/item/rogueweapon/huntingknife
+	invalid_blades = list(/obj/item/rogueweapon/huntingknife/idagger/silver/stake)
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	possible_item_intents = list(/datum/intent/shield/bash)
+	inhand_icon_state = null
+
+/obj/item/rogueweapon/scabbard/sheath/aavnik
+	name = "dagger sheath"
+	desc = "A slingable sheath made of leather, meant to host surprises in smaller sizes."
+	icon = 'modular_redtard/rockhill/icons/modular_azurepeak/icons/obj/items/scabbard.dmi'
+	icon_state = "sheath"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 3
+	throwforce = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
+	worn_icon_state = "sheath"
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
+	rogue_sleeved = null
+	valid_blade = /obj/item/rogueweapon/huntingknife
+	invalid_blades = list(/obj/item/rogueweapon/huntingknife/idagger/silver/stake)
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -35040,6 +41654,7 @@
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
 	rogue_sleeved = null
 	valid_blade = /obj/item/rogueweapon/sword/rapier/courtphysician
+	invalid_blades = list(/obj/item/rogueweapon/huntingknife/idagger/silver/stake)
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -35051,6 +41666,73 @@
 	wdefense_wbonus = 3
 	wlength = 1
 	possible_item_intents = list(/datum/intent/shield/bash)
+	inhand_icon_state = null
+
+/obj/item/rogueweapon/scabbard/sheath/courtphysician/hand
+	name = "velvet sister"
+	desc = "Sleek, fashionable and deadly. Traits shared by both staff and the one holding it. Never let yourself be outdone, never rely on merely one trick. The rontz embedded in the handle serves as focus for arcyne arts."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/special/hand32.dmi'
+	icon_state = "staffsheath"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 3
+	throwforce = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
+	worn_icon_state = "staffsheath"
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
+	rogue_sleeved = null
+	valid_blade = /obj/item/rogueweapon/sword/rapier/hand
+	invalid_blades = list(/obj/item/rogueweapon/huntingknife/idagger/silver/stake)
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	possible_item_intents = list(/datum/intent/shield/bash)
+	inhand_icon_state = null
+
+/obj/item/rogueweapon/scabbard/sheath/kazengun
+	name = "plain lacquer sheath"
+	desc = "A simple lacquered sheath, for shorter eastern-styled blades."
+	icon = 'modular_redtard/rockhill/icons/modular_azurepeak/icons/obj/items/scabbard.dmi'
+	icon_state = "kazscabdagger"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 3
+	throwforce = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
+	worn_icon_state = "kazscabdagger"
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
+	rogue_sleeved = null
+	valid_blade = /obj/item/rogueweapon/huntingknife
+	valid_blades = list(/obj/item/rogueweapon/huntingknife/idagger/steel/kazengun)
+	invalid_blades = list(/obj/item/rogueweapon/huntingknife/idagger/silver/stake)
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/knives
+	possible_item_intents = list(/datum/intent/shield/bash, /datum/intent/shield/block)
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/scabbard/sheath/noble
@@ -35071,6 +41753,7 @@
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
 	rogue_sleeved = null
 	valid_blade = /obj/item/rogueweapon/huntingknife
+	invalid_blades = list(/obj/item/rogueweapon/huntingknife/idagger/silver/stake)
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -35104,6 +41787,7 @@
 	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
 	rogue_sleeved = null
 	valid_blade = /obj/item/rogueweapon/huntingknife
+	invalid_blades = list(/obj/item/rogueweapon/huntingknife/idagger/silver/stake)
 	sheathe_icon = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -35147,6 +41831,71 @@
 	wdefense_wbonus = 3
 	wlength = 1
 	possible_item_intents = list(/datum/intent/shield/bash)
+	inhand_icon_state = null
+
+/obj/item/rogueweapon/scabbard/sword/kazengun/noparry
+	name = "ceremonial kazengun scabbard"
+	desc = "A simple wooden scabbard, trimmed with bronze. Unlike its steel cousins, this one cannot parry."
+	icon = 'modular_redtard/rockhill/icons/modular_azurepeak/icons/obj/items/scabbard.dmi'
+	icon_state = "kazscab"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 7
+	throwforce = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
+	worn_icon_state = "kazscab"
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
+	rogue_sleeved = null
+	valid_blade = /obj/item/rogueweapon/sword
+	valid_blades = list(/obj/item/rogueweapon/sword/sabre/mulyeog, /obj/item/rogueweapon/sword/sabre/mulyeog/rumahench, /obj/item/rogueweapon/sword/long/kriegmesser/ssangsudo)
+	invalid_blades = list(/obj/item/rogueweapon/sword/long/exe, /obj/item/rogueweapon/sword/long/martyr)
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	wdefense = 8
+	wdefense_wbonus = 3
+	wlength = 1
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/shield/bash, /datum/intent/shield/block, /datum/intent/mace/smash/shield)
+	inhand_icon_state = null
+
+/obj/item/rogueweapon/scabbard/sword/kazengun/steel
+	name = "hwang scabbard"
+	desc = "A cloud-patterned scabbard with a cloth sash. Used for blocking."
+	icon = 'modular_redtard/rockhill/icons/modular_azurepeak/icons/obj/items/scabbard.dmi'
+	icon_state = "kazscab_steel"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 7
+	throwforce = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/equipment/backpack_righthand.dmi'
+	worn_icon_state = "kazscab_steel"
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
+	rogue_sleeved = null
+	valid_blade = /obj/item/rogueweapon/sword
+	valid_blades = list(/obj/item/rogueweapon/sword/sabre/mulyeog, /obj/item/rogueweapon/sword/sabre/mulyeog/rumahench)
+	invalid_blades = list(/obj/item/rogueweapon/sword/long/exe, /obj/item/rogueweapon/sword/long/martyr)
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	wdefense = 8
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/shield/bash, /datum/intent/shield/block, /datum/intent/mace/smash/shield)
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/scabbard/sword/noble
@@ -35436,6 +42185,68 @@
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 
+/obj/item/rogueweapon/shield/iron/nomad
+	name = "nomad shield"
+	desc = "A slim shield, likely wrought of gilbranze and iron alike. An unholy combination. The work is of another lyfe, not yet seen since the first era."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/shields32.dmi'
+	icon_state = "ironsh_nomad"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 20
+	throwforce = 25
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	slot_flags = ITEM_SLOT_BACK
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	wdefense = 10
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/shields
+	possible_item_intents = list(/datum/intent/mace/smash/shield/metal, /datum/intent/shield/block)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
+	inhand_icon_state = "sabre"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+
+/obj/item/rogueweapon/shield/iron/steppesman
+	name = "steppesman shield"
+	desc = "A banded iron shield decorated with traditional Aavnic colours, often seen in the hands of the Steppesmen."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/shields32.dmi'
+	icon_state = "ironsh_steppeman"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 20
+	throwforce = 25
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	slot_flags = ITEM_SLOT_BACK
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	wdefense = 10
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/shields
+	possible_item_intents = list(/datum/intent/mace/smash/shield/metal, /datum/intent/shield/block)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
+	inhand_icon_state = "sabre"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+
 /obj/item/rogueweapon/shield/tower
 	name = "tower shield"
 	desc = "A gigantic, iron reinforced shield that covers the entire body, a design-copy of the Aasimar shields of an era gone by."
@@ -35611,6 +42422,36 @@
 	can_parry = TRUE
 	associated_skill = /datum/attribute/skill/combat/shields
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/towershield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (3).ogg')
+	inhand_icon_state = "sabre"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+
+/obj/item/rogueweapon/shield/tower/zyb
+	name = "rider shield"
+	desc = "A shield of Zybantine design. Clever usage of wood, iron, and leather make an impressive match for any weapon."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/shields32.dmi'
+	icon_state = "desert_rider"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 25
+	throwforce = 25
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	slot_flags = ITEM_SLOT_BACK
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	wdefense = 11
+	wdefense_wbonus = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/shields
+	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/towershield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (3).ogg')
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -35942,6 +42783,40 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
+/obj/item/rogueweapon/spear/assegai
+	name = "steel assegai"
+	desc = "A long spear originating from the southern regions of Naledi. Commoners living along the great river Bilomari are taught to use assegai so they can defend themselves against the Djinn."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/64.dmi'
+	icon_state = "assegai_steel"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 20
+	throwforce = 25
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	worn_icon_state = "sabre"
+	pixel_x = -16
+	pixel_y = -16
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_force_wielded = 30
+	wdefense = 5
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 8
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
+	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	inhand_icon_state = "sabre"
+
 /obj/item/rogueweapon/spear/billhook
 	name = "billhook"
 	desc = "A neat hook. Used to pull riders from horses, as well as defend against said horses when used in a proper formation. The reinforcements along it's shaft grant it higher durability against attacks."
@@ -35965,6 +42840,40 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_force_wielded = 30
+	wdefense = 6
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 8
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
+	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	inhand_icon_state = "sabre"
+
+/obj/item/rogueweapon/spear/boar/frei
+	name = "Czwarteki lándzsa"
+	desc = "A regional earspoon lance with a carved handle, adorned with the colours of the Freifechters. These are smithed by the legendary armourers of Vyšvou and given to distinguished lancers upon their graduation."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/special/freifechter.dmi'
+	icon_state = "cityspear"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 20
+	throwforce = 25
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	worn_icon_state = "sabre"
+	pixel_x = -16
+	pixel_y = -16
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_force_wielded = 33
 	wdefense = 6
 	wdefense_wbonus = 3
 	wlength = 4
@@ -36045,6 +42954,40 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
+/obj/item/rogueweapon/spear/keep_standard
+	name = "ducal standard"
+	desc = "The local lord's banner, fashioned to a blacksteel pike and turned into a deadly instrument of war. The man who wields this is said to bring great fortune to his house, and those who keep him safe. <small>Runes glow near the head of the pike. A sure sign of the arcyne.</small>"
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/polearms64.dmi'
+	icon_state = "standard_old"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 12
+	throwforce = 32
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	worn_icon_state = "sabre"
+	pixel_x = -16
+	pixel_y = -16
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_force_wielded = 34
+	wdefense = 5
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 8
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/bash)
+	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/bash/ranged, /datum/intent/mace/smash/eaglebeak)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	inhand_icon_state = "sabre"
+
 /obj/item/rogueweapon/spear/militia
 	name = "militia spear"
 	desc = "Pitchforks and hoes traditionally till the soil. In tymes of peril, however, it isn't uncommon for a militiaman to pound them into polearms."
@@ -36076,6 +43019,107 @@
 	associated_skill = /datum/attribute/skill/combat/polearms
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	inhand_icon_state = "sabre"
+
+/obj/item/rogueweapon/spear/naginata
+	name = "naginata"
+	desc = "A traditional Kazengunese polearm, combining the reach of a spear with the cutting power of a curved blade. Due to the brittle quality of Kazengunese bladesmithing, weaponsmiths have adapted its blade to be easily replaceable when broken by a peg upon the end of the shaft."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/64.dmi'
+	icon_state = "naginata"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 16
+	throwforce = 12
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	worn_icon_state = "sabre"
+	pixel_x = -16
+	pixel_y = -16
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_force_wielded = 30
+	wdefense = 5
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/cut/naginata, /datum/intent/spear/bash)
+	gripped_intents = list(/datum/intent/rend/reach, /datum/intent/spear/cut/naginata, /datum/intent/spear/cut/naginata/sweep, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	inhand_icon_state = "sabre"
+
+/obj/item/rogueweapon/spear/naginata/elf
+	name = "elven swordspear"
+	desc = "An elven weapon that combines the elegant sweeping blade typical of elven design with a lengthy handle. The true guardian of the forest realm."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/64.dmi'
+	icon_state = "elfglaive"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 16
+	throwforce = 12
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	worn_icon_state = "sabre"
+	pixel_x = -16
+	pixel_y = -16
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_force_wielded = 30
+	wdefense = 5
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/cut/naginata, /datum/intent/spear/bash)
+	gripped_intents = list(/datum/intent/rend/reach, /datum/intent/spear/cut/naginata, /datum/intent/partizan/peel, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	inhand_icon_state = "sabre"
+
+/obj/item/rogueweapon/spear/nomad
+	name = "nomad spear"
+	desc = "An odd sort of spear. No amount of further leverage will help, for you've all you need in one hand. Weighted poorly to a mind yet untrained in the use of it. All the same, it's a reinforcement for the fighting style of Dunewell's nomads. A shield over the arm, a spear in the hand."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/64.dmi'
+	icon_state = "nomadspear"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 25
+	throwforce = 25
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	worn_icon_state = "sabre"
+	pixel_x = -16
+	pixel_y = -16
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_force_wielded = 30
+	wdefense = 5
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 6
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
@@ -36282,6 +43326,41 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	inhand_icon_state = null
 
+/obj/item/rogueweapon/stoneaxe/battle/steppesman/chupa
+	name = "Czwarteki ćiupaga"
+	desc = "A steel axe of Czwarteki make that combines a deadly weapon with a walking stick - hence its pointed end. It has a flat head that fits the hand comfortably, and it's usable for chopping and smashing. It can hook an opponent's weapon in a pinch. It carries the colours of Szöréndnížina."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/special/freifechter.dmi'
+	icon_state = "ciupaga"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 22
+	throwforce = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
+	worn_icon_state = "axe"
+	pixel_x = 0
+	pixel_y = -10
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_force_wielded = 25
+	wdefense = 4
+	wdefense_wbonus = 3
+	wlength = 3
+	minstr = 9
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/axes
+	possible_item_intents = list(/datum/intent/axe/cut/battle, /datum/intent/axe/cut/battle/lunge, /datum/intent/sword/disarm)
+	gripped_intents = list(/datum/intent/axe/cut/battle, /datum/intent/axe/chop/battle, /datum/intent/mace/smash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
+	inhand_icon_state = null
+
 /obj/item/rogueweapon/stoneaxe/handaxe
 	name = "hatchet"
 	desc = "An iron hand axe."
@@ -36347,6 +43426,42 @@
 	can_parry = TRUE
 	associated_skill = /datum/attribute/skill/combat/axes
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
+	inhand_icon_state = null
+
+/obj/item/rogueweapon/stoneaxe/hurlbat
+	name = "hurlbat"
+	desc = "With the sleek, lightweight design of a tossblade, and the stopping power of a battleaxe, the hurlbat's tricky design allows it to strike its targets with deadly efficiency. Although its historic origin is disputed, it is often-seen amongst Varangian Bounty-Hunters and ruthless Steppesmen."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/axes32.dmi'
+	icon_state = "hurlbat"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 20
+	throwforce = 32
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
+	worn_icon_state = "axe"
+	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_force_wielded = 20
+	wdefense = 1
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = 1
+	minstr = 13
+	can_parry = TRUE
+	armour_penetration = 40
+	associated_skill = /datum/attribute/skill/combat/axes
+	possible_item_intents = list(/datum/intent/axe/chop/stone)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	inhand_icon_state = null
 
@@ -36416,6 +43531,71 @@
 	associated_skill = /datum/attribute/skill/combat/axes
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/sword/peel)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
+	inhand_icon_state = null
+
+/obj/item/rogueweapon/stoneaxe/woodcut/
+	name = "axe"
+	desc = "A regular iron woodcutting axe."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/axes32.dmi'
+	icon_state = "axe"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 20
+	throwforce = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
+	worn_icon_state = "axe"
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_force_wielded = 26
+	wdefense = 2
+	wdefense_wbonus = 3
+	wlength = 1
+	minstr = 8
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/axes
+	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/sword/peel)
+	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
+	inhand_icon_state = null
+
+/obj/item/rogueweapon/stoneaxe/woodcut/pick
+	name = "Pulaski axe"
+	desc = "An odd mix of a pickaxe front and a hatchet blade back, capable of being switched between."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/axes32.dmi'
+	icon_state = "paxe"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 20
+	throwforce = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
+	worn_icon_state = "axe"
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_force_wielded = 26
+	wdefense = 2
+	wdefense_wbonus = 3
+	minstr = 8
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/axes
+	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/mace/warhammer/pick, /datum/intent/axe/bash)
+	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/mace/warhammer/pick, /datum/intent/axe/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	inhand_icon_state = null
 
@@ -37274,6 +44454,40 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = null
 
+/obj/item/rogueweapon/sword/falx/stalker
+	name = "stalker falx"
+	desc = "A jagged blade with an inward edge. A popular choice for drow warriors, the falx is adept at slicing through the armor of men and the flesh of lessers."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/swords32.dmi'
+	icon_state = "spiderfalx"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 25
+	throwforce = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
+	worn_icon_state = "sabre"
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = "spidersaber"
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_force_wielded = 25
+	wdefense = 5
+	wdefense_wbonus = 3
+	wbalance = 1
+	minstr = 4
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/falx, /datum/intent/sword/chop/falx, /datum/intent/dagger/sucker_punch, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
+	inhand_icon_state = null
+
 /obj/item/rogueweapon/sword/iron
 	name = "iron arming sword"
 	desc = "A long iron blade attached to a hilt, separated by a crossguard. The arming sword has been Psydonia's implement of war by excellence for generations, this one is cheaper than its steel brother."
@@ -37343,6 +44557,43 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = "longsword"
 
+/obj/item/rogueweapon/sword/long/broadsword/bronze
+	name = "spatha"
+	desc = "A hero needn't speak - for when they are gone, the world will speak for them."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/swords64.dmi'
+	icon_state = "spatha"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 25
+	throwforce = 15
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_righthand.dmi'
+	worn_icon_state = "longsword"
+	pixel_x = -16
+	pixel_y = -16
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = "gladius"
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_force_wielded = 30
+	wdefense = 3
+	wdefense_wbonus = 3
+	wlength = 3
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/chop/heavy, /datum/intent/sword/thrust/heavy, /datum/intent/sword/cut/light, /datum/intent/sword/strike)
+	gripped_intents = list(/datum/intent/sword/chop/heavy, /datum/intent/sword/thrust/heavy, /datum/intent/sword/cut/light, /datum/intent/sword/strike)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
+	inhand_icon_state = "longsword"
+
 /obj/item/rogueweapon/sword/long/dec
 	name = "decorated longsword"
 	desc = "A valuable ornate longsword made for the purpose of ceremonial fashion, with a fine leather grip and a carefully engraved golden crossguard. Its blade bears twin inscriptions on either side. One reads, \"THY KINGDOM COME\" while the obverse reads, \"THY WILL BE DONE\"."
@@ -37362,6 +44613,76 @@
 	rogue_inhand = TRUE
 	rogue_sleeved = null
 	sheathe_icon = "longsword"
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_force_wielded = 30
+	wdefense = 4
+	wdefense_wbonus = 4
+	wlength = 3
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
+	inhand_icon_state = "longsword"
+
+/obj/item/rogueweapon/sword/long/elf
+	name = "elven longsword"
+	desc = "This mighty flowing sword is of classic elven design."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/64.dmi'
+	icon_state = "elflongsword"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 25
+	throwforce = 15
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_righthand.dmi'
+	worn_icon_state = "longsword"
+	pixel_x = -16
+	pixel_y = -16
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = "elfsword"
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_force_wielded = 30
+	wdefense = 4
+	wdefense_wbonus = 4
+	wlength = 3
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
+	inhand_icon_state = "longsword"
+
+/obj/item/rogueweapon/sword/long/etruscan
+	name = "basket-hilted longsword"
+	desc = "An uncommon and elaborate type of longsword with a compound hilt like those seen on rapiers and smallswords. It has a marked unsharpened section for safe unarmoured half-swording. The quality of the steel speaks for itself; this is a weapon made by masters, for masters."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/special/freifechter.dmi'
+	icon_state = "elongsword"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 25
+	throwforce = 15
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_righthand.dmi'
+	worn_icon_state = "longsword"
+	pixel_x = -16
+	pixel_y = -16
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = "elongsword"
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
@@ -37416,6 +44737,43 @@
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 
+/obj/item/rogueweapon/sword/long/fencerguy
+	name = "grenzelhoftian longsword"
+	desc = "A masterfully smithed, perfectly-balanced longsword that makes it easy for even a beginner to perform basic fencing maneuvers."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/swords64.dmi'
+	icon_state = "germanlong"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 25
+	throwforce = 15
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_righthand.dmi'
+	worn_icon_state = "longsword"
+	pixel_x = -16
+	pixel_y = -16
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = "longsword"
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_force_wielded = 30
+	wdefense = 4
+	wdefense_wbonus = 4
+	wlength = 3
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust/long, /datum/intent/dagger/sucker_punch, /datum/intent/sword/bash)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust/long, /datum/intent/sword/thrust/long/halfsword/lesser, /datum/intent/sword/chop)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
+	inhand_icon_state = "longsword"
+
 /obj/item/rogueweapon/sword/long/kriegmesser/silver
 	name = "silver broadsword"
 	desc = "A two-handed broadsword, fitted with a blade of pure silver. Each swing commands more effort than the last, but not without purpose. One blow to crack the deadite's leg in twain; and a heartbeat later, another to splatter the soil with bile and teeth."
@@ -37450,6 +44808,43 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/krieg, /datum/intent/sword/chop/falx, /datum/intent/rend/krieg, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut/krieg, /datum/intent/sword/thrust/krieg, /datum/intent/rend/krieg, /datum/intent/sword/strike)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
+	inhand_icon_state = "longsword"
+
+/obj/item/rogueweapon/sword/long/kriegmesser/ssangsudo
+	name = "ssangsudo"
+	desc = "A style of long blade used by the kouken of Kazengun. A weapon supremely skilled in the art of cutting."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/swords64.dmi'
+	icon_state = "ssangsudo"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 25
+	throwforce = 15
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_righthand.dmi'
+	worn_icon_state = "longsword"
+	pixel_x = -16
+	pixel_y = -16
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = "ssangsudo"
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_force_wielded = 30
+	wdefense = 4
+	wdefense_wbonus = 4
+	wlength = 3
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/krieg, /datum/intent/sword/chop/falx, /datum/intent/rend/krieg, /datum/intent/sword/strike)
+	gripped_intents = list(/datum/intent/sword/cut/krieg, /datum/intent/rend, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	inhand_icon_state = "longsword"
 
@@ -37526,6 +44921,42 @@
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/peel, /datum/intent/sword/chop)
 	inhand_icon_state = "martyrsword"
 
+/obj/item/rogueweapon/sword/long/oathkeeper
+	name = "Oathkeeper"
+	desc = "An ornate golden longsword with a ruby embedded in the hilt, given to the Knight Commander for their valiant service to the crown."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/64.dmi'
+	icon_state = "kingslayer"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 25
+	throwforce = 15
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_righthand.dmi'
+	worn_icon_state = "longsword"
+	pixel_x = -16
+	pixel_y = -16
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = "kingslayer"
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_force_wielded = 30
+	wdefense = 4
+	wdefense_wbonus = 4
+	wlength = 3
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust, /datum/intent/sword/strike)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
+	inhand_icon_state = "longsword"
+
 /obj/item/rogueweapon/sword/long/oldpsysword
 	name = "enduring longsword"
 	desc = "A steel longsword with an angled crossguard. The lesser clerics of the Psydonic Orders oft-carry these blades, and - though it may not carry the bite of silver - it still humbles men and monsters alike with a well-poised strike."
@@ -37596,6 +45027,42 @@
 	possible_item_intents = list(/datum/intent/sword/cut/falx, /datum/intent/sword/strike, /datum/intent/sword/chop/falx, /datum/intent/sword/peel)
 	gripped_intents = list(/datum/intent/sword/cut/falx, /datum/intent/sword/strike, /datum/intent/sword/chop/falx, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
+	inhand_icon_state = "longsword"
+
+/obj/item/rogueweapon/sword/long/shotel
+	name = "steel shotel"
+	desc = "A long curved blade of Zybantine Design."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/swords64.dmi'
+	icon_state = "shotel_steel"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 25
+	throwforce = 15
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/roguebig_righthand.dmi'
+	worn_icon_state = "longsword"
+	pixel_x = -16
+	pixel_y = -16
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = "longsword"
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_force_wielded = 30
+	wdefense = 4
+	wdefense_wbonus = 4
+	wlength = 3
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/chop/long)
+	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/chop/long)
 	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/silver
@@ -37812,6 +45279,42 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	inhand_icon_state = null
 
+/obj/item/rogueweapon/sword/rapier/hand
+	name = "dark sister"
+	desc = "A tool made for nobler tasks than shedding blood, discreet and ever ready, as you should be too."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/special/hand32.dmi'
+	icon_state = "staffblade"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 22
+	throwforce = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
+	worn_icon_state = "staffblade"
+	pixel_x = 0
+	pixel_y = 0
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = "staffblade"
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_force_wielded = 25
+	wdefense = 7
+	wdefense_wbonus = 3
+	wbalance = 1
+	minstr = 6
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
+	inhand_icon_state = null
+
 /obj/item/rogueweapon/sword/rapier/lord
 	name = "sword of the Mad Duke"
 	desc = "A royal heirloom whose spiraling basket hilt is inlaid with fine cut gems. It bears the burnish of time, where once sharply defined features have been worn down by so many hands. An old rumor ties this implement to the siege that smashed the Mad Duke's keep to rubble, and burnt the Duke himself to cinders."
@@ -37878,6 +45381,42 @@
 	wdefense_wbonus = 3
 	wbalance = 1
 	minstr = 8
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier, /datum/intent/sword/peel)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
+	inhand_icon_state = null
+
+/obj/item/rogueweapon/sword/rapier/vaquero
+	name = "cup-hilt rapier"
+	desc = "A special variant of an Etruscan rapier. The cup hilt of this weapon is both simpler to produce and more protective than the type of traditional design of current rapiers."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/64.dmi'
+	icon_state = "cup_hilt_rapier"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 25
+	throwforce = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
+	worn_icon_state = "sabre"
+	pixel_x = -16
+	pixel_y = -16
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = "rapier"
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_force_wielded = 25
+	wdefense = 8
+	wdefense_wbonus = 3
+	wbalance = 1
+	minstr = 6
 	can_parry = TRUE
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier, /datum/intent/sword/peel)
@@ -37986,6 +45525,40 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	inhand_icon_state = null
 
+/obj/item/rogueweapon/sword/sabre/dec
+	name = "sabre"
+	desc = "A very popular backsword made for cavalrymen that originated in Naledi and spread its influence further north, reaching Aavnr as a \"Szablya\" and notoriously cementing itself as the preferred weapon of the Potentate's Hussars."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/swords32.dmi'
+	icon_state = "decsaber"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 22
+	throwforce = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
+	worn_icon_state = "sabre"
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = "decsaber"
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_force_wielded = 25
+	wdefense = 7
+	wdefense_wbonus = 3
+	wbalance = 1
+	minstr = 5
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust/sabre, /datum/intent/sword/peel, /datum/intent/sword/strike)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
+	inhand_icon_state = null
+
 /obj/item/rogueweapon/sword/sabre/elf
 	name = "elvish saber"
 	desc = "This finely crafted saber is of elven design."
@@ -38019,6 +45592,40 @@
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust/sabre, /datum/intent/sword/peel, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	inhand_icon_state = "esaber"
+
+/obj/item/rogueweapon/sword/sabre/freifechter
+	name = "szöréndnížine sabre"
+	desc = "A rare, specialty-made sabre domestic to Szöréndnížina, made similarly to those of the Czwarteki Potentate's Hussars. It has a large, open hilt with a cross-shaped guard formed from quillons and langets and a heavy curved blade. A chain is attached to the crossguard and into the pommel, protecting the hand. Unlike shorter and lighter sabres, it's large enough to reach the feet."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/special/freifechter.dmi'
+	icon_state = "szabla"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 22
+	throwforce = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
+	worn_icon_state = "sabre"
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = "szabla"
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_force_wielded = 25
+	wdefense = 7
+	wdefense_wbonus = 3
+	wlength = 3
+	minstr = 8
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/sabre/master, /datum/intent/sword/thrust/sabre, /datum/intent/effect/daze/freisabre, /datum/intent/rend)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
+	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/sabre/iron
 	name = "iron sabre"
@@ -38054,6 +45661,110 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	inhand_icon_state = null
 
+/obj/item/rogueweapon/sword/sabre/mulyeog/rumahench
+	name = "ruma hwando"
+	desc = "A foreign steel single-edged sword with cloud patterns on the groove. The Ruma Clan's insignia is engraved on the blade."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/swords32.dmi'
+	icon_state = "eastsword2"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 27
+	throwforce = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
+	worn_icon_state = "sabre"
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = "mulyeog"
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_force_wielded = 25
+	wdefense = 3
+	wdefense_wbonus = 3
+	wbalance = 1
+	minstr = 5
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust/sabre, /datum/intent/sword/peel, /datum/intent/sword/strike)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
+	inhand_icon_state = null
+
+/obj/item/rogueweapon/sword/sabre/newmoon
+	name = "freezing saber"
+	desc = "A fragile sabre adorned with a bright blue freezing mist. Holding the blade feels like it might give you frostbite."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/32.dmi'
+	icon_state = "nm_saber"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 22
+	throwforce = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
+	worn_icon_state = "sabre"
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = "saber"
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_force_wielded = 25
+	wdefense = 7
+	wdefense_wbonus = 3
+	wbalance = 1
+	minstr = 5
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust, /datum/intent/sword/peel, /datum/intent/sword/strike)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
+	inhand_icon_state = null
+
+/obj/item/rogueweapon/sword/sabre/shamshir
+	name = "shamshir"
+	desc = "A curved one-handed longsword. This type of scimitar is the quintessential armament of Zybantine horsemen, its name derived from Sama'glos for \"Tiger's claw\"."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/64.dmi'
+	icon_state = "tabi"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 24
+	throwforce = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
+	worn_icon_state = "sabre"
+	pixel_x = -16
+	pixel_y = -16
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = "saber"
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_force_wielded = 25
+	wdefense = 6
+	wdefense_wbonus = 3
+	wbalance = 1
+	minstr = 5
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust, /datum/intent/sword/peel, /datum/intent/sword/strike)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
+	inhand_icon_state = null
+
 /obj/item/rogueweapon/sword/sabre/stalker
 	name = "stalker sabre"
 	desc = "A once elegant blade of mythril, diminishing under the suns gaze"
@@ -38085,6 +45796,40 @@
 	can_parry = TRUE
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust/sabre, /datum/intent/sword/peel, /datum/intent/dagger/sucker_punch)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
+	inhand_icon_state = null
+
+/obj/item/rogueweapon/sword/sabre/steppesman
+	name = "aavnic shashka"
+	desc = "A single-edged, single-handed, and guardless blade of northern Aavnic make with a brass pommel in the shape of a zad's head. The gentle curve of its blade puts it midway between a radically curved sabre and a straight sword, effective for both cutting and thrusting but lacking raw defense potential."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/swords32.dmi'
+	icon_state = "shashka"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 22
+	throwforce = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/rogue_righthand.dmi'
+	worn_icon_state = "sabre"
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = "shashka"
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_force_wielded = 25
+	wdefense = 5
+	wdefense_wbonus = 3
+	wbalance = 1
+	minstr = 6
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust/sabre, /datum/intent/rend, /datum/intent/sword/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	inhand_icon_state = null
 
@@ -38863,6 +46608,40 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 
+/obj/item/rogueweapon/whip/nagaika
+	name = "nagaika whip"
+	desc = "A short but heavy leather whip, sporting a blunt reinforced tip and a longer handle."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/whips32.dmi'
+	icon_state = "nagaika"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 25
+	throwforce = 5
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	worn_icon_state = "sabre"
+	slot_flags = ITEM_SLOT_BELT|ITEM_SLOT_POCKETS
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	wdefense = 1
+	wdefense_wbonus = 3
+	wlength = 4
+	wbalance = 1
+	minstr = 6
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/crack/blunt, /datum/intent/whip/lash, /datum/intent/sword/strike)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	inhand_icon_state = "sabre"
+
 /obj/item/rogueweapon/whip/silver
 	name = "silver whip"
 	desc = "A hefty, silver whip. The uncoiled leather is tipped with a silver barb, which can sunder the blighted from a remarkable distance. </br>'Die, monster! You don't belong in this world!'"
@@ -39033,6 +46812,111 @@
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 
+/obj/item/rogueweapon/woodstaff/diamond
+	name = "dorpel-focused staff"
+	desc = "A beautifully faceted focus-gem hewn by pressure immense sits nestled in crown of this staff."
+	icon = 'modular_redtard/rockhill/icons/modular_azurepeak/icons/obj/items/staffs.dmi'
+	icon_state = "diamondstaff"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 10
+	throwforce = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	pixel_x = -16
+	pixel_y = -16
+	slot_flags = ITEM_SLOT_BACK
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_force_wielded = 15
+	wdefense = 5
+	wdefense_wbonus = 8
+	wlength = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/bash, /datum/intent/special/magicarc)
+	gripped_intents = list(/datum/intent/spear/bash, /datum/intent/special/magicarc, /datum/intent/mace/smash/wood)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	inhand_icon_state = "sabre"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+
+/obj/item/rogueweapon/woodstaff/emerald/blacksteelstaff/royal
+	name = "ducal blacksteel staff"
+	desc = "A mage's staff that has been reinforced with blacksteel rivets and plating. An extravagent gift for a precocious heir that serves as both casting implement and mark of station. The alchemical Dorpel it uses, however, leaves it as a generally sub-par channeling tool. Perhaps it could be improved with a true Dorpel?"
+	icon = 'modular_redtard/rockhill/icons/modular_azurepeak/icons/obj/items/staffs.dmi'
+	icon_state = "blacksteelstaff"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 10
+	throwforce = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	pixel_x = -16
+	pixel_y = -16
+	slot_flags = ITEM_SLOT_BACK
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_force_wielded = 15
+	wdefense = 5
+	wdefense_wbonus = 8
+	wlength = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/bash, /datum/intent/special/magicarc)
+	gripped_intents = list(/datum/intent/spear/bash, /datum/intent/special/magicarc, /datum/intent/mace/smash/wood)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	inhand_icon_state = "sabre"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+
+/obj/item/rogueweapon/woodstaff/gefechtsgelehrter
+	name = "Celestial Zauberer Staff"
+	desc = "A Blacksteel wrought wooden staff granted to the Mages whomst have graduated from the Celestial Academy, with a shining Dorpel at its head that reminds the caster; There is nothing that cannot be solved with time & innovation."
+	icon = 'modular_redtard/rockhill/icons/modular_azurepeak/icons/obj/items/grenzstaff.dmi'
+	icon_state = "celestialstaffbase"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 10
+	throwforce = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	pixel_x = -16
+	pixel_y = -16
+	slot_flags = ITEM_SLOT_BACK
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_force_wielded = 15
+	wdefense = 5
+	wdefense_wbonus = 8
+	wlength = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/bash, /datum/intent/special/magicarc)
+	gripped_intents = list(/datum/intent/spear/bash, /datum/intent/special/magicarc, /datum/intent/mace/smash/wood)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	inhand_icon_state = "sabre"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+
 /obj/item/rogueweapon/woodstaff/militia
 	name = "militia goedendag"
 	desc = "Clubs - and their spiked descendants - are older than most languages and civilizations. Tyme hasn't made them any less deadly, however. "
@@ -39063,6 +46947,41 @@
 	associated_skill = /datum/attribute/skill/combat/polearms
 	possible_item_intents = list(/datum/intent/spear/bash, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/pick/ranged, /datum/intent/spear/thrust, /datum/intent/spear/bash)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	inhand_icon_state = "sabre"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+
+/obj/item/rogueweapon/woodstaff/naledi
+	name = "naledian warstaff"
+	desc = "A staff carrying the crescent moon of Psydon's knowledge, as well as the black and gold insignia of the war scholars."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/64.dmi'
+	icon_state = "naledistaff"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 18
+	throwforce = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	pixel_x = -16
+	pixel_y = -16
+	slot_flags = ITEM_SLOT_BACK
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_force_wielded = 22
+	wdefense = 5
+	wdefense_wbonus = 8
+	wlength = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/bash, /datum/intent/special/magicarc)
+	gripped_intents = list(/datum/intent/spear/bash/ranged, /datum/intent/special/magicarc, /datum/intent/mace/smash/wood/ranged)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -39313,6 +47232,41 @@
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 
+/obj/item/rogueweapon/woodstaff/sojourner
+	name = "sojourner staff"
+	desc = "What remains of an old psydonic spear. The tip is blunted, with both barbs and trident-like head removed. It serves a more noble purpose, now, as a sojourner's casting implement. Though, with enough force, one may still drive the tip forward."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/64.dmi'
+	icon_state = "psystaff"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 18
+	throwforce = 20
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/weapons/swords_righthand.dmi'
+	pixel_x = -16
+	pixel_y = -16
+	slot_flags = ITEM_SLOT_BACK
+	rogue_onhip = TRUE
+	rogue_onback = TRUE
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_force_wielded = 20
+	wdefense = 5
+	wdefense_wbonus = 8
+	wlength = 3
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/spear/bash, /datum/intent/special/magicarc)
+	gripped_intents = list(/datum/intent/spear/thrust/blunted, /datum/intent/special/magicarc, /datum/intent/mace/smash/wood/ranged)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	inhand_icon_state = "sabre"
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+
 /obj/item/rope
 	parent_type = /obj/item/rockhill
 	name = "rope"
@@ -39335,6 +47289,7 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/tie)
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/rope/chain
@@ -39381,6 +47336,7 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/tie)
+	firefuel = 5 MINUTES
 	inhand_icon_state = null
 
 /obj/item/rotation_contraption/cog
@@ -40276,6 +48232,29 @@
 	worn_icon_state = "satchel"
 	storage_type = /datum/storage/rogue_grid/roguetown/satchel
 
+/obj/item/storage/backpack/rogue/satchel/beltpack
+	name = "beltpack"
+	desc = "A lighter satchel that rests against the rump, freeing the shoulders from any weight. It's traditionally worn in place of a belt or cloak."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/storage.dmi'
+	icon_state = "gamesatchel"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
+	slot_flags = ITEM_SLOT_BELT|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = TRUE
+	alternate_worn_layer = ROGUE_UNDER_CLOAK_LAYER
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+	worn_icon_state = "satchel"
+	rogue_female_worn = TRUE
+	storage_type = /datum/storage/rogue_grid/roguetown/satchel
+
 /obj/item/storage/backpack/rogue/satchel/black
 	name = "satchel"
 	desc = "Modest, easy on the shoulders, and holds a respectable amount."
@@ -40399,6 +48378,141 @@
 	rogue_female_worn = TRUE
 	storage_type = /datum/storage/rogue_grid/roguetown/belt
 
+/obj/item/storage/belt/rogue/leather/arbiter
+	name = "webbing"
+	desc = "A leather belt, paired with some Otavan style webbing and pouches. <br> A style pioneered by an arbiters, a century or two ago. Maintained by those who require much of the same."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/overseer/overseer.dmi'
+	icon_state = "overseerbelt"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/overseer/onmob/overseer.dmi'
+	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	wbalance = 1
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
+	inhand_icon_state = null
+	worn_icon_state = "overseerbelt"
+	rogue_female_worn = TRUE
+	storage_type = /datum/storage/rogue_grid/roguetown/belt
+
+/obj/item/storage/belt/rogue/leather/battleskirt
+	name = "cloth military skirt"
+	desc = "A fine leather strap notched with holes for a buckle to secure itself."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/belts.dmi'
+	icon_state = "battleskirt"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
+	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	wbalance = 1
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
+	inhand_icon_state = null
+	worn_icon_state = "leather"
+	rogue_female_worn = TRUE
+	storage_type = /datum/storage/rogue_grid/roguetown/belt
+
+/obj/item/storage/belt/rogue/leather/battleskirt/barbarian
+	name = "cloth military skirt"
+	desc = "A fine leather strap notched with holes for a buckle to secure itself."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/belts.dmi'
+	icon_state = "battleskirt"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
+	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	wbalance = 1
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
+	inhand_icon_state = null
+	worn_icon_state = "leather"
+	rogue_female_worn = TRUE
+	storage_type = /datum/storage/rogue_grid/roguetown/belt
+
+/obj/item/storage/belt/rogue/leather/battleskirt/black
+	name = "cloth military skirt"
+	desc = "A fine leather strap notched with holes for a buckle to secure itself."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/belts.dmi'
+	icon_state = "battleskirt"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
+	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	wbalance = 1
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
+	inhand_icon_state = null
+	worn_icon_state = "leather"
+	rogue_female_worn = TRUE
+	storage_type = /datum/storage/rogue_grid/roguetown/belt
+
+/obj/item/storage/belt/rogue/leather/battleskirt/faulds
+	name = "belt with faulds"
+	desc = "A fine leather strap notched with holes for a buckle to secure itself."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/belts.dmi'
+	icon_state = "faulds"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
+	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	wbalance = 1
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
+	inhand_icon_state = null
+	worn_icon_state = "leather"
+	rogue_female_worn = TRUE
+	storage_type = /datum/storage/rogue_grid/roguetown/belt
+
 /obj/item/storage/belt/rogue/leather/black
 	name = "black belt"
 	desc = "A fine leather strap notched with holes for a buckle to secure itself."
@@ -40427,6 +48541,33 @@
 	storage_type = /datum/storage/rogue_grid/roguetown/belt
 
 /obj/item/storage/belt/rogue/leather/cloth
+	name = "cloth sash"
+	desc = "A strip of cloth tied together at the ends into a makeshift belt. It's better than nothing."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/belts.dmi'
+	icon_state = "cloth"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
+	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	wbalance = 1
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
+	inhand_icon_state = null
+	worn_icon_state = "leather"
+	rogue_female_worn = TRUE
+	storage_type = /datum/storage/rogue_grid/roguetown/belt/cloth
+
+/obj/item/storage/belt/rogue/leather/cloth/lady
 	name = "cloth sash"
 	desc = "A strip of cloth tied together at the ends into a makeshift belt. It's better than nothing."
 	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/belts.dmi'
@@ -40555,6 +48696,58 @@
 	inhand_icon_state = null
 	worn_icon_state = "knife"
 	rogue_female_worn = TRUE
+	storage_type = /datum/storage/rogue_grid/roguetown/belt/knife_belt
+
+/obj/item/storage/belt/rogue/leather/knifebelt/black/iron
+	name = "tossblade belt"
+	desc = "A five-slotted belt meant for tossblades. Little room left over."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/belts.dmi'
+	icon_state = "blackknife"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
+	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	wbalance = 1
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
+	inhand_icon_state = null
+	worn_icon_state = "blackknife"
+	storage_type = /datum/storage/rogue_grid/roguetown/belt/knife_belt
+
+/obj/item/storage/belt/rogue/leather/knifebelt/black/kazengun
+	name = "tossblade belt"
+	desc = "A five-slotted belt meant for tossblades. Little room left over."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/belts.dmi'
+	icon_state = "blackknife"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
+	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	wbalance = 1
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
+	inhand_icon_state = null
+	worn_icon_state = "blackknife"
 	storage_type = /datum/storage/rogue_grid/roguetown/belt/knife_belt
 
 /obj/item/storage/belt/rogue/leather/knifebelt/black/psydon
@@ -40744,6 +48937,60 @@
 	rogue_female_worn = TRUE
 	storage_type = /datum/storage/rogue_grid/roguetown/belt/cloth
 
+/obj/item/storage/belt/rogue/leather/rope/dark
+	name = "rope belt"
+	desc = "A length of strong rope repurposed into a belt. Better than nothing."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/belts.dmi'
+	icon_state = "rope"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
+	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	wbalance = 1
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
+	inhand_icon_state = null
+	worn_icon_state = "rope"
+	rogue_female_worn = TRUE
+	storage_type = /datum/storage/rogue_grid/roguetown/belt/cloth
+
+/obj/item/storage/belt/rogue/leather/sash
+	name = "fine sash"
+	desc = "A pliable sash made of wool meant to wrap tightly around the waist, especially popular with travellers who wear loose shirts."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/belts.dmi'
+	icon_state = "clothsash"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
+	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	wbalance = 1
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
+	inhand_icon_state = null
+	worn_icon_state = "clothsash"
+	rogue_female_worn = TRUE
+	storage_type = /datum/storage/rogue_grid/roguetown/belt
+
 /obj/item/storage/belt/rogue/leather/shalal
 	name = "shalal belt"
 	desc = "A fine leather strap notched with holes for a buckle to secure itself."
@@ -40770,6 +49017,59 @@
 	worn_icon_state = "leather"
 	rogue_female_worn = TRUE
 	storage_type = /datum/storage/rogue_grid/roguetown/belt
+
+/obj/item/storage/belt/rogue/leather/shalal/purple
+	name = "purple shalal belt"
+	desc = "A fine leather strap notched with holes for a buckle to secure itself."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/belts.dmi'
+	icon_state = "shalal"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
+	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	wbalance = 1
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
+	inhand_icon_state = null
+	worn_icon_state = "leather"
+	rogue_female_worn = TRUE
+	storage_type = /datum/storage/rogue_grid/roguetown/belt
+
+/obj/item/storage/belt/rogue/leather/stakebelt
+	name = "stake bolt belt"
+	desc = "A five-slotted belt meant for stake bolts. Little room left over."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/belts.dmi'
+	icon_state = "blackknife"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 10
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belts.dmi'
+	slot_flags = ITEM_SLOT_BELT
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	wbalance = 1
+	associated_skill = /datum/attribute/skill/combat/whipsflails
+	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
+	inhand_icon_state = null
+	worn_icon_state = "blackknife"
+	storage_type = /datum/storage/rogue_grid/roguetown/belt/knife_belt
 
 /obj/item/storage/belt/rogue/leather/steel
 	name = "steel belt"
@@ -40977,6 +49277,31 @@
 	inhand_icon_state = null
 	storage_type = /datum/storage/rogue_grid/roguetown/coin_pouch
 
+/obj/item/storage/belt/rogue/pouch/medicine
+	name = "pouch"
+	desc = "A small sack with a drawstring that allows it to be worn around the neck. Or at the hips, provided you have a belt."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/storage.dmi'
+	icon_state = "pouch"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon = null
+	worn_icon_state = "pouch"
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_CLOAK
+	rogue_inhand = FALSE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	worn_icon_hipl = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_l.dmi'
+	worn_icon_hipr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_r.dmi'
+	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/roguetown/coin_pouch
+
 /obj/item/storage/belt/rogue/surgery_bag
 	name = "surgeon's bag"
 	desc = "Made to hold everything a people-butcher will need. Contains a list of implements... what even IS a Sisrat?"
@@ -41045,6 +49370,48 @@
 	rogue_grid_height = 64
 	inhand_icon_state = null
 	storage_type = /datum/storage/rogue_grid/roguetown/surgery_bag
+
+/obj/item/storage/detpack
+	name = "detpack"
+	desc = "A pouch to carry sticks of blasting powder. What sort of lunatic would do that?"
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/storage.dmi'
+	icon_state = "strapbag"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = "strapbag"
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	worn_icon_hipl = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_l.dmi'
+	worn_icon_hipr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_r.dmi'
+	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/grid/detpack
+
+/obj/item/storage/hip/headhook
+	name = "head hook"
+	desc = "an iron hook for storing 6 heads"
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/belts.dmi'
+	icon_state = "ironheadhook"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = "ironheadhook"
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/grid/headhook
 
 /obj/item/storage/hip/orestore/bronze
 	name = "mechanized ore bag"
@@ -41989,6 +50356,46 @@
 	inhand_icon_state = null
 	storage_type = /datum/storage/rogue_grid/roguetown/keyring
 
+/obj/item/storage/magebag
+	name = "scholar's pouch"
+	desc = "A pouch to carry handfuls of ingredients for summoning and alchemy."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/storage.dmi'
+	icon_state = "summoning"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = "summoning"
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/grid/magebag
+
+/obj/item/storage/magebag/alchemist
+	name = "alchemist's pouch"
+	desc = "A pouch for carrying handfuls of alchemical ingredients."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/storage.dmi'
+	icon_state = "summoning"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = "summoning"
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/grid/magebag
+
 /obj/item/storage/magebag/associate
 	name = "scholar's pouch"
 	desc = "A pouch to carry handfuls of ingredients for summoning and alchemy."
@@ -42008,6 +50415,46 @@
 	inhand_y_dimension = 64
 	inhand_icon_state = null
 	storage_type = /datum/storage/rogue_grid/grid/magebag
+
+/obj/item/storage/magebag/witch
+	name = "witch pouch"
+	desc = "A pouch for carrying handfuls of alchemical ingredients."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/storage.dmi'
+	icon_state = "summoning"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = "summoning"
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/grid/magebag
+
+/obj/item/storage/meatbag
+	name = "game satchel"
+	desc = "A cloth and leather satchel for storing the fruit of one's hunt."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/storage.dmi'
+	icon_state = "gamesatchel"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+	storage_type = /datum/storage/rogue_grid/grid/meatsack
 
 /obj/item/storage/pill_bottle/dice
 	name = "bag of gaming dice"
@@ -42262,6 +50709,26 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
+	inhand_icon_state = null
+
+/obj/item/tent_kit/ger
+	name = "ger kit"
+	desc = "A large circular tent kit bundled together. Very durable and often used by nomadic travellers of the steppes."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
+	icon_state = "tent_kit"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	rogue_inhand = TRUE
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 96
 	inhand_icon_state = null
 
 /obj/item/tntstick

@@ -7,3 +7,7 @@
 		return
 	AddElement(/datum/element/rogue_armor_wearer)
 	AddElement(/datum/element/rogue_defender)
+	AddElement(/datum/element/rogue_energy)
+	AddElement(/datum/element/rogue_mmb)
+	AddElement(/datum/element/rogue_rmb)
+	add_fov_trait(ROGUE_FOV_SOURCE, FOV_90_DEGREES)

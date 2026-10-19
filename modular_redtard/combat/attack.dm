@@ -1,17 +1,8 @@
 /proc/rogue_strength_factor(obj/item/weapon, mob/living/user)
-	var/strength = user.rogue_stat(ROGUE_STAT_STRENGTH)
-	. = 1
-	if(strength > STRENGTH_SOFTCAP)
-		. += (STRENGTH_SOFTCAP - ROGUE_ATTRIBUTE_MIDDLING) * STRENGTH_MULT + (strength - STRENGTH_SOFTCAP) * STRENGTH_CAPPEDMULT
-	else if(strength > ROGUE_ATTRIBUTE_MIDDLING)
-		. += (strength - ROGUE_ATTRIBUTE_MIDDLING) * STRENGTH_MULT
-	else if(strength < ROGUE_ATTRIBUTE_MIDDLING)
-		. -= (ROGUE_ATTRIBUTE_MIDDLING - strength) * STRENGTH_MULT
-	if(!weapon?.minstr)
-		return
-	var/needed = weapon.rogue_wielded ? max(weapon.minstr / 2, 1) : weapon.minstr
-	if(needed > strength)
-		. *= ROGUE_MINSTR_PENALTY
+	var/needed = 0
+	if(weapon?.minstr)
+		needed = weapon.rogue_wielded ? max(weapon.minstr / 2, 1) : weapon.minstr
+	return rogue_formula_value(ROGUE_FORMULA_STRENGTH_FACTOR, list("strength" = user.rogue_stat(ROGUE_STAT_STRENGTH), "min_strength" = needed))
 
 /mob/living/proc/rogue_weapon_skill(obj/item/weapon)
 	if(!weapon?.associated_skill)
@@ -66,7 +57,8 @@
 	if(intent.no_attack)
 		return COMPONENT_SKIP_ATTACK
 	source.rogue_apply_intent(intent)
-	MODIFY_ATTACK_FORCE_MULTIPLIER(attack_modifiers, intent.damfactor * rogue_strength_factor(source, user))
-	user.changeNext_move(intent.clickcd)
+	MODIFY_ATTACK_FORCE_MULTIPLIER(attack_modifiers, intent.damfactor * rogue_strength_factor(source, user) * user.rogue_rmb_factor("damage_factor"))
+	user.changeNext_move(intent.clickcd * user.rogue_rmb_factor("click_factor"))
+	user.rogue_mark_in_combat()
 	if(intent.releasedrain)
-		user.adjust_stamina_loss(intent.releasedrain)
+		user.adjust_stamina_loss(intent.releasedrain * user.rogue_rmb_factor("stamina_factor"))

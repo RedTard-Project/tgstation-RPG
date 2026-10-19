@@ -76,3 +76,89 @@
 	surprise.aim_projectile(victim, home_wall)
 	INVOKE_ASYNC(surprise, TYPE_PROC_REF(/obj/projectile, fire))
 	to_chat(victim, span_danger("\The [surprise] erupts from a hidden slit in \the [home_wall]!"))
+
+/obj/structure/trap
+	var/rockhill_armed = TRUE
+
+/obj/structure/trap/on_entered(datum/source, atom/movable/victim)
+	SIGNAL_HANDLER
+	if(!rockhill_armed || HAS_TRAIT(victim, TRAIT_LIGHT_STEP))
+		return
+	return ..()
+
+/obj/structure/trap/attack_hand(mob/living/user, list/modifiers)
+	. = ..()
+	if(. || !rogue_combat_enabled() || !iscarbon(user) || !isturf(loc))
+		return
+	var/action = rockhill_armed ? "disarm" : "arm"
+	var/crafting = user.rogue_skill_rank(/datum/attribute/skill/craft/crafting)
+	if(crafting < ROCKHILL_TRAP_MIN_CRAFTING)
+		to_chat(user, span_notice("I don't know how to [action] [src]."))
+		return TRUE
+	var/work_time = rogue_formula_value(rockhill_armed ? ROGUE_FORMULA_TRAP_DISARM_TIME : ROGUE_FORMULA_TRAP_SET_TIME, list("crafting" = crafting))
+	user.visible_message(span_notice("[user] begins to [action] [src]."), span_notice("I start to [action] [src]."))
+	if(!do_after(user, work_time, target = src))
+		return TRUE
+	rockhill_armed = !rockhill_armed
+	animate(src, alpha = rockhill_armed ? initial(alpha) : ROCKHILL_TRAP_DISARMED_ALPHA, time = ROCKHILL_TRAP_FADE)
+	user.visible_message(span_notice("[user] [action]s [src]."), span_notice("I [action] [src]."))
+	user.log_message("[action]ed [src] at [AREACOORD(src)]", LOG_GAME)
+	return TRUE
+
+/obj/item/restraints/legcuffs/beartrap/armed/attack_self(mob/living/user)
+	if(!ishuman(user) || IS_UNCONSCIOUS_OR_CRIT(user) || HAS_TRAIT(user, TRAIT_HANDS_BLOCKED) || DOING_INTERACTION(user, src))
+		return
+	var/list/inputs = list("strength" = user.rogue_stat(ROGUE_STAT_STRENGTH), "crafting" = user.rogue_skill_rank(/datum/attribute/skill/craft/crafting))
+	if(!do_after(user, rogue_formula_value(ROGUE_FORMULA_MANTRAP_SET_TIME, inputs), target = user))
+		return
+	if(!prob(rogue_formula_value(ROGUE_FORMULA_MANTRAP_SET_CHANCE, inputs)))
+		user.visible_message(span_warning("[user] couldn't get the shoddy [name] [armed ? "shut close" : "to open up"]!"))
+		return
+	armed = !armed
+	playsound(src, 'sound/items/weapons/handcuffs.ogg', 30, TRUE, -3)
+	update_appearance()
+	to_chat(user, span_notice("[src] is now [armed ? "armed" : "disarmed"]."))
+
+/obj/item/restraints/legcuffs/beartrap/armed/attempt_pickup(mob/living/user, skip_grav = FALSE)
+	if(!armed || !isturf(loc) || !iscarbon(user))
+		return ..()
+	var/hand_zone = user.held_index_to_dir(user.active_hand_index) == "r" ? BODY_ZONE_PRECISE_R_HAND : BODY_ZONE_PRECISE_L_HAND
+	if(user.rogue_badluck(ROCKHILL_MANTRAP_BADLUCK))
+		spring_trap(user, ignore_movetypes = TRUE, def_zone = hand_zone)
+		return TRUE
+	user.visible_message(span_notice("[user] starts to disarm [src]."), span_notice("I start to disarm [src]."))
+	var/work_time = rogue_formula_value(ROGUE_FORMULA_MANTRAP_DISARM_TIME, list("crafting" = user.rogue_skill_rank(/datum/attribute/skill/craft/crafting)))
+	if(!do_after(user, work_time, target = src))
+		if(armed)
+			spring_trap(user, ignore_movetypes = TRUE, def_zone = hand_zone)
+		return TRUE
+	if(!armed)
+		return TRUE
+	armed = FALSE
+	anchored = FALSE
+	animate(src, alpha = 255, time = ROCKHILL_TRAP_FADE)
+	update_appearance()
+	user.visible_message(span_notice("[user] disarms [src]."), span_notice("I disarm [src]."))
+	return TRUE
+
+/obj/item/restraints/legcuffs/beartrap/armed/close_trap()
+	. = ..()
+	anchored = FALSE
+	alpha = 255
+
+/obj/item/restraints/legcuffs/beartrap/armed/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
+	if(!armed || !isturf(loc))
+		return ..()
+	if(istype(tool, /obj/item/natural/dirtclod))
+		if(!user.temporarilyRemoveItemFromInventory(tool))
+			return ITEM_INTERACT_BLOCKING
+		qdel(tool)
+		alpha = max(ROCKHILL_MANTRAP_HIDDEN_ALPHA - user.rogue_skill_rank(/datum/attribute/skill/craft/crafting) * ROCKHILL_MANTRAP_HIDDEN_PER_CRAFTING, 0)
+		to_chat(user, span_notice("I hide [src] under the dirt."))
+		return ITEM_INTERACT_SUCCESS
+	if(tool.force)
+		user.visible_message(span_warning("[user] triggers [src] with [tool]."), span_danger("I trigger [src] with [tool]!"))
+		tool.take_damage(ROCKHILL_MANTRAP_TOOL_DAMAGE, BRUTE, MELEE)
+		close_trap()
+		return ITEM_INTERACT_SUCCESS
+	return ..()

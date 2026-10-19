@@ -11,6 +11,11 @@
 	light_power = 1
 	light_color = "#da5e21"
 	layer = 2.8
+	base_state = "badfire"
+	fueluse = 15 MINUTES
+	no_refuel = FALSE
+	crossfire = TRUE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/campfire/densefire
 	name = "campfire"
@@ -22,6 +27,11 @@
 	light_power = 1
 	light_color = "#eea96a"
 	layer = 2.8
+	base_state = "densefire"
+	fueluse = 30 MINUTES
+	no_refuel = FALSE
+	crossfire = TRUE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/campfire/fireplace
 	name = "fireplace"
@@ -33,6 +43,11 @@
 	light_power = 1
 	light_color = "#ffa35c"
 	layer = 2.8
+	base_state = "wallfire"
+	fueluse = 0
+	no_refuel = TRUE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/campfire/fireplace/blue
 	name = "fireplace"
@@ -44,6 +59,11 @@
 	light_power = 1
 	light_color = "#6e90ff"
 	layer = 2.8
+	base_state = "wallfire"
+	fueluse = 0
+	no_refuel = TRUE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/campfire/fireplace/crafted
 	name = "fireplace"
@@ -56,6 +76,11 @@
 	light_power = 1
 	light_color = "#ffa35c"
 	layer = 2.8
+	base_state = "wallfire"
+	fueluse = 0
+	no_refuel = TRUE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/campfire/fireplace/inn
 	name = "grand fireplace"
@@ -67,6 +92,11 @@
 	light_power = 1
 	light_color = "#ffa35c"
 	layer = 2.8
+	base_state = "wallfire"
+	fueluse = 0
+	no_refuel = TRUE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/campfire/longlived
 	name = "campfire"
@@ -78,6 +108,11 @@
 	light_power = 1
 	light_color = "#da5e21"
 	layer = 2.8
+	base_state = "badfire"
+	fueluse = 180 MINUTES
+	no_refuel = FALSE
+	crossfire = TRUE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/campfire/pyre
 	name = "pyre"
@@ -90,6 +125,11 @@
 	dir = NORTH
 	icon_state = null
 	layer = BELOW_MOB_LAYER
+	base_state = "pyre"
+	fueluse = 30 MINUTES
+	no_refuel = FALSE
+	crossfire = TRUE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/candle
 	name = "candles"
@@ -101,6 +141,11 @@
 	light_power = 1
 	light_color = "#f9ad80"
 	layer = BELOW_MOB_LAYER
+	base_state = "wallcandle"
+	fueluse = 0
+	no_refuel = FALSE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/candle/blue
 	name = "candles"
@@ -112,6 +157,11 @@
 	light_power = 1
 	light_color = "#7b60f3"
 	layer = BELOW_MOB_LAYER
+	base_state = "wallcandleb"
+	fueluse = 0
+	no_refuel = FALSE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/candle/blue/l
 	name = "candles"
@@ -124,6 +174,11 @@
 	light_power = 1
 	light_color = "#7b60f3"
 	layer = BELOW_MOB_LAYER
+	base_state = "wallcandleb"
+	fueluse = 0
+	no_refuel = FALSE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/candle/blue/r
 	name = "candles"
@@ -136,6 +191,11 @@
 	light_power = 1
 	light_color = "#7b60f3"
 	layer = BELOW_MOB_LAYER
+	base_state = "wallcandleb"
+	fueluse = 0
+	no_refuel = FALSE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/candle/floorcandle
 	name = "candles"
@@ -147,6 +207,11 @@
 	light_power = 1
 	light_color = "#f9ad80"
 	layer = TABLE_LAYER
+	base_state = "floorcandle"
+	fueluse = 0
+	no_refuel = FALSE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/candle/floorcandle/alt
 	name = "candles"
@@ -158,6 +223,11 @@
 	light_power = 1
 	light_color = "#f9ad80"
 	layer = TABLE_LAYER
+	base_state = "floorcandlee"
+	fueluse = 0
+	no_refuel = FALSE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/candle/floorcandle/alt/pink
 	name = "candles"
@@ -170,6 +240,11 @@
 	light_color = "#ff13d8ff"
 	color = "#f858b5ff"
 	layer = TABLE_LAYER
+	base_state = "floorcandlee"
+	fueluse = 0
+	no_refuel = FALSE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/candle/floorcandle/pink
 	name = "candles"
@@ -182,6 +257,11 @@
 	light_color = "#ff13d8ff"
 	color = "#f858b5ff"
 	layer = TABLE_LAYER
+	base_state = "floorcandle"
+	fueluse = 0
+	no_refuel = FALSE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/candle/green
 	name = "candles"
@@ -193,6 +273,11 @@
 	light_power = 1
 	light_color = "#60f382"
 	layer = BELOW_MOB_LAYER
+	base_state = "wallcandleg"
+	fueluse = 0
+	no_refuel = FALSE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/candle/green/l
 	name = "candles"
@@ -205,6 +290,11 @@
 	light_power = 1
 	light_color = "#60f382"
 	layer = BELOW_MOB_LAYER
+	base_state = "wallcandleg"
+	fueluse = 0
+	no_refuel = FALSE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/candle/green/r
 	name = "candles"
@@ -217,6 +307,11 @@
 	light_power = 1
 	light_color = "#60f382"
 	layer = BELOW_MOB_LAYER
+	base_state = "wallcandleg"
+	fueluse = 0
+	no_refuel = FALSE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/candle/l
 	name = "candles"
@@ -229,6 +324,11 @@
 	light_power = 1
 	light_color = "#f9ad80"
 	layer = BELOW_MOB_LAYER
+	base_state = "wallcandle"
+	fueluse = 0
+	no_refuel = FALSE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/candle/off
 	name = "candles"
@@ -240,6 +340,11 @@
 	light_power = 1
 	light_color = "#f9ad80"
 	layer = BELOW_MOB_LAYER
+	base_state = "wallcandle"
+	fueluse = 0
+	no_refuel = FALSE
+	crossfire = FALSE
+	status = LIGHT_BURNED
 
 /obj/machinery/light/rogue/candle/off/l
 	name = "candles"
@@ -252,6 +357,11 @@
 	light_power = 1
 	light_color = "#f9ad80"
 	layer = BELOW_MOB_LAYER
+	base_state = "wallcandle"
+	fueluse = 0
+	no_refuel = FALSE
+	crossfire = FALSE
+	status = LIGHT_BURNED
 
 /obj/machinery/light/rogue/candle/off/r
 	name = "candles"
@@ -264,6 +374,11 @@
 	light_power = 1
 	light_color = "#f9ad80"
 	layer = BELOW_MOB_LAYER
+	base_state = "wallcandle"
+	fueluse = 0
+	no_refuel = FALSE
+	crossfire = FALSE
+	status = LIGHT_BURNED
 
 /obj/machinery/light/rogue/candle/r
 	name = "candles"
@@ -276,6 +391,11 @@
 	light_power = 1
 	light_color = "#f9ad80"
 	layer = BELOW_MOB_LAYER
+	base_state = "wallcandle"
+	fueluse = 0
+	no_refuel = FALSE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/candle/red
 	name = "candles"
@@ -287,6 +407,11 @@
 	light_power = 1
 	light_color = "#f02929"
 	layer = BELOW_MOB_LAYER
+	base_state = "wallcandler"
+	fueluse = 0
+	no_refuel = FALSE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/candle/red/l
 	name = "candles"
@@ -299,6 +424,11 @@
 	light_power = 1
 	light_color = "#f02929"
 	layer = BELOW_MOB_LAYER
+	base_state = "wallcandler"
+	fueluse = 0
+	no_refuel = FALSE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/candle/red/r
 	name = "candles"
@@ -311,6 +441,11 @@
 	light_power = 1
 	light_color = "#f02929"
 	layer = BELOW_MOB_LAYER
+	base_state = "wallcandler"
+	fueluse = 0
+	no_refuel = FALSE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/candle/weak
 	name = "candles"
@@ -322,6 +457,11 @@
 	light_power = 1
 	light_color = "#f9ad80"
 	layer = BELOW_MOB_LAYER
+	base_state = "wallcandle"
+	fueluse = 0
+	no_refuel = FALSE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/candle/weak/l
 	name = "candles"
@@ -334,6 +474,11 @@
 	light_power = 1
 	light_color = "#f9ad80"
 	layer = BELOW_MOB_LAYER
+	base_state = "wallcandle"
+	fueluse = 0
+	no_refuel = FALSE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/candle/weak/r
 	name = "candles"
@@ -346,6 +491,11 @@
 	light_power = 1
 	light_color = "#f9ad80"
 	layer = BELOW_MOB_LAYER
+	base_state = "wallcandle"
+	fueluse = 0
+	no_refuel = FALSE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/cauldron
 	name = "cauldron"
@@ -358,6 +508,11 @@
 	light_power = 1
 	light_color = "#f9ad80"
 	layer = BELOW_MOB_LAYER
+	base_state = "cauldron"
+	fueluse = 20 MINUTES
+	no_refuel = FALSE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/chand
 	name = "chandelier"
@@ -371,6 +526,11 @@
 	light_power = 1
 	light_color = "#f9ad80"
 	layer = 2
+	base_state = "chand"
+	fueluse = 0
+	no_refuel = TRUE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/firebowl
 	name = "brazier"
@@ -383,6 +543,11 @@
 	light_color = "#ffa35c"
 	dir = SOUTH
 	layer = BELOW_MOB_LAYER
+	base_state = "stonefire"
+	fueluse = 0
+	no_refuel = TRUE
+	crossfire = TRUE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/firebowl/church
 	name = "brazier"
@@ -395,6 +560,11 @@
 	light_color = "#ffa35c"
 	dir = SOUTH
 	layer = BELOW_MOB_LAYER
+	base_state = "churchfire"
+	fueluse = 0
+	no_refuel = TRUE
+	crossfire = TRUE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/firebowl/church/off
 	name = "brazier"
@@ -407,6 +577,11 @@
 	light_color = "#ffa35c"
 	dir = SOUTH
 	layer = BELOW_MOB_LAYER
+	base_state = "churchfire"
+	fueluse = 0
+	no_refuel = TRUE
+	crossfire = TRUE
+	status = LIGHT_BURNED
 
 /obj/machinery/light/rogue/firebowl/off
 	name = "brazier"
@@ -419,6 +594,11 @@
 	light_color = "#ffa35c"
 	dir = SOUTH
 	layer = BELOW_MOB_LAYER
+	base_state = "stonefire"
+	fueluse = 0
+	no_refuel = TRUE
+	crossfire = TRUE
+	status = LIGHT_BURNED
 
 /obj/machinery/light/rogue/firebowl/standing
 	name = "standing fire"
@@ -431,6 +611,11 @@
 	light_color = "#ff9648"
 	dir = SOUTH
 	layer = BELOW_MOB_LAYER
+	base_state = "standing"
+	fueluse = 0
+	no_refuel = TRUE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/firebowl/standing/blue
 	name = "standing fire"
@@ -443,6 +628,11 @@
 	light_color = "#7b60f3"
 	dir = SOUTH
 	layer = BELOW_MOB_LAYER
+	base_state = "standingb"
+	fueluse = 0
+	no_refuel = TRUE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/firebowl/standing/green
 	name = "standing fire"
@@ -455,6 +645,11 @@
 	light_color = "#8ee2a7"
 	dir = SOUTH
 	layer = BELOW_MOB_LAYER
+	base_state = "standingg"
+	fueluse = 0
+	no_refuel = TRUE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/firebowl/standing/red
 	name = "standing fire"
@@ -467,6 +662,11 @@
 	light_color = "#f02929"
 	dir = SOUTH
 	layer = BELOW_MOB_LAYER
+	base_state = "standingr"
+	fueluse = 0
+	no_refuel = TRUE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/firebowl/stump
 	name = "brazier"
@@ -479,6 +679,11 @@
 	light_color = "#ffa35c"
 	dir = SOUTH
 	layer = BELOW_MOB_LAYER
+	base_state = "stumpfire"
+	fueluse = 0
+	no_refuel = TRUE
+	crossfire = TRUE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/forge
 	name = "stone forge"
@@ -490,6 +695,11 @@
 	light_power = 1
 	light_color = "#f9ad80"
 	layer = BELOW_MOB_LAYER
+	base_state = "forge"
+	fueluse = 60 MINUTES
+	no_refuel = FALSE
+	crossfire = TRUE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/hearth
 	name = "hearth"
@@ -501,6 +711,11 @@
 	light_power = 1
 	light_color = "#f9ad80"
 	layer = TABLE_LAYER
+	base_state = "hearth"
+	fueluse = 60 MINUTES
+	no_refuel = FALSE
+	crossfire = TRUE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/lanternpost
 	name = "lantern post"
@@ -513,6 +728,11 @@
 	light_color = "#f9ad80"
 	plane = ABOVE_GAME_PLANE
 	layer = WALL_OBJ_LAYER
+	base_state = "streetlantern"
+	fueluse = 0
+	no_refuel = TRUE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/oven
 	name = "oven"
@@ -524,6 +744,11 @@
 	light_power = 1
 	light_color = "#f9ad80"
 	layer = BELOW_MOB_LAYER
+	base_state = "oven"
+	fueluse = 60 MINUTES
+	no_refuel = FALSE
+	crossfire = TRUE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/oven/east
 	name = "oven"
@@ -537,6 +762,11 @@
 	light_color = "#f9ad80"
 	dir = EAST
 	layer = BELOW_MOB_LAYER
+	base_state = "oven"
+	fueluse = 60 MINUTES
+	no_refuel = FALSE
+	crossfire = TRUE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/oven/north
 	name = "oven"
@@ -550,6 +780,11 @@
 	light_color = "#f9ad80"
 	dir = NORTH
 	layer = BELOW_MOB_LAYER
+	base_state = "oven"
+	fueluse = 60 MINUTES
+	no_refuel = FALSE
+	crossfire = TRUE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/oven/south
 	name = "oven"
@@ -563,6 +798,11 @@
 	light_color = "#f9ad80"
 	dir = SOUTH
 	layer = BELOW_MOB_LAYER
+	base_state = "oven"
+	fueluse = 60 MINUTES
+	no_refuel = FALSE
+	crossfire = TRUE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/oven/west
 	name = "oven"
@@ -576,6 +816,11 @@
 	light_color = "#f9ad80"
 	dir = WEST
 	layer = BELOW_MOB_LAYER
+	base_state = "oven"
+	fueluse = 60 MINUTES
+	no_refuel = FALSE
+	crossfire = TRUE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/smelter
 	name = "stone furnace"
@@ -587,6 +832,11 @@
 	light_power = 1
 	light_color = "#f9ad80"
 	layer = BELOW_MOB_LAYER
+	base_state = "cavesmelter"
+	fueluse = 30 MINUTES
+	no_refuel = FALSE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/smelter/bronze
 	name = "bronze melter"
@@ -598,6 +848,11 @@
 	light_power = 1
 	light_color = "#f9ad80"
 	layer = BELOW_MOB_LAYER
+	base_state = "brosmelter"
+	fueluse = 30 MINUTES
+	no_refuel = FALSE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/smelter/great
 	name = "great furnace"
@@ -609,6 +864,11 @@
 	light_power = 1
 	light_color = "#f9ad80"
 	layer = BELOW_MOB_LAYER
+	base_state = "smelter"
+	fueluse = 30 MINUTES
+	no_refuel = FALSE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/smelter/hiron
 	name = "iron bloomery"
@@ -620,6 +880,11 @@
 	light_power = 1
 	light_color = "#f9ad80"
 	layer = BELOW_MOB_LAYER
+	base_state = "hironsmelter"
+	fueluse = 30 MINUTES
+	no_refuel = FALSE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/torchholder
 	name = "sconce"
@@ -632,6 +897,11 @@
 	light_color = "#f9ad80"
 	plane = ABOVE_GAME_PLANE
 	layer = WALL_OBJ_LAYER
+	base_state = "torchwall"
+	fueluse = FALSE
+	no_refuel = TRUE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/torchholder/c
 	name = "sconce"
@@ -645,6 +915,11 @@
 	light_color = "#f9ad80"
 	plane = ABOVE_GAME_PLANE
 	layer = WALL_OBJ_LAYER
+	base_state = "torchwall"
+	fueluse = FALSE
+	no_refuel = TRUE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/torchholder/hotspring
 	name = "stone lantern"
@@ -657,6 +932,11 @@
 	light_color = "#f9ad80"
 	plane = ABOVE_GAME_PLANE
 	layer = WALL_OBJ_LAYER
+	base_state = "stonelantern"
+	fueluse = FALSE
+	no_refuel = TRUE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/torchholder/hotspring/standing
 	name = "standing stone lantern"
@@ -669,6 +949,11 @@
 	light_color = "#f9ad80"
 	plane = ABOVE_GAME_PLANE
 	layer = WALL_OBJ_LAYER
+	base_state = "stonelantern_standing"
+	fueluse = FALSE
+	no_refuel = TRUE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/torchholder/l
 	name = "sconce"
@@ -682,6 +967,11 @@
 	dir = EAST
 	plane = ABOVE_GAME_PLANE
 	layer = WALL_OBJ_LAYER
+	base_state = "torchwall"
+	fueluse = FALSE
+	no_refuel = TRUE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/torchholder/r
 	name = "sconce"
@@ -695,6 +985,11 @@
 	dir = WEST
 	plane = ABOVE_GAME_PLANE
 	layer = WALL_OBJ_LAYER
+	base_state = "torchwall"
+	fueluse = FALSE
+	no_refuel = TRUE
+	crossfire = FALSE
+	status = LIGHT_OK
 
 /obj/machinery/light/roguestreet
 	parent_type = /obj/structure/rockhill/light

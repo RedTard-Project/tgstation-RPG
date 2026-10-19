@@ -59,7 +59,7 @@
 /turf/recalculate_directional_opacity()
 	. = ..()
 	if(SSrogue_light.native && SSlighting.initialized)
-		SSrogue_light.turf_changed(src, SSrogue_light.carrier_mode == ROGUE_LIGHT_CARRIER_TENT)
+		SSrogue_light.turf_changed(src, SSrogue_light.uses_tents())
 
 /turf/get_static_lumcount(minlum = 0, maxlum = 1)
 	if(!SSrogue_light.native)

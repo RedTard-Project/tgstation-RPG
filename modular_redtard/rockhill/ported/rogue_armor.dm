@@ -4,6 +4,17 @@
 	stab = 80
 	piercing = 80
 
+/datum/rogue_armor/b25_s20_t25_p0_f0_a0
+	blunt = 25
+	slash = 20
+	stab = 25
+
+/datum/rogue_armor/b30_s50_t50_p20_f0_a0
+	blunt = 30
+	slash = 50
+	stab = 50
+	piercing = 20
+
 /datum/rogue_armor/b70_s65_t60_p20_f0_a0
 	blunt = 70
 	slash = 65
@@ -126,6 +137,12 @@
 	slash = 100
 	stab = 90
 	piercing = 80
+
+/datum/rogue_armor/reinforced_hood
+	blunt = 50
+	slash = 30
+	stab = 40
+	piercing = 40
 
 /datum/rogue_armor/spellsinger
 	blunt = 70

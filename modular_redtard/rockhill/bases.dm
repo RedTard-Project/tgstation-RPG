@@ -39,6 +39,11 @@
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	init_air = FALSE
 
+/turf/open/openspace/rockhill/zfall_if_on_turf(atom/movable/movable)
+	if(!(movable.flags_1 & INITIALIZED_1))
+		return
+	return ..()
+
 /turf/open/water/rockhill
 	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
 	icon_state = "together"

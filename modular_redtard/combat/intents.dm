@@ -165,4 +165,5 @@ GLOBAL_LIST_EMPTY(rogue_intents)
 	rogue_def_intent = rogue_def_intent == ROGUE_INTENT_PARRY ? ROGUE_INTENT_DODGE : ROGUE_INTENT_PARRY
 	playsound_local(src, 'sound/machines/click.ogg', 50, FALSE)
 	SEND_SIGNAL(src, COMSIG_MOB_ROGUE_INTENT_CHANGED)
+	SEND_SIGNAL(src, COMSIG_MOB_ROGUE_DEFENSE_CHANGED)
 	to_chat(src, span_info("I will [rogue_def_intent == ROGUE_INTENT_PARRY ? "parry" : "dodge"] incoming blows."))

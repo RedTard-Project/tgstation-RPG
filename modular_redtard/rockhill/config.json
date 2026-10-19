@@ -146,7 +146,8 @@
 					"dir",
 					"alpha",
 					"color",
-					"item_chair"
+					"item_chair",
+					"sleepy"
 				],
 				"runtime_look": true,
 				"ported_paths": [
@@ -171,7 +172,8 @@
 					"layer",
 					"dir",
 					"alpha",
-					"color"
+					"color",
+					"sleepy"
 				],
 				"runtime_look": true,
 				"placement": true
@@ -198,6 +200,10 @@
 				"runtime_look": true,
 				"placement": true
 			}
+		},
+		{
+			"prefix": "/obj/structure/glowshroom",
+			"rebase": "/obj/structure/rockhill/kneestinger"
 		},
 		{
 			"prefix": "/obj/structure/closet",
@@ -653,6 +659,15 @@
 					"light_power": "bulb_power",
 					"light_color": "bulb_colour"
 				},
+				"type_vars": {
+					"/obj/machinery/light/rogue": [
+						"base_state",
+						"fueluse",
+						"no_refuel",
+						"crossfire",
+						"status"
+					]
+				},
 				"runtime_look": true,
 				"placement": true,
 				"sprite_checks": true
@@ -720,8 +735,17 @@
 					"/obj/item/clothing",
 					"/obj/item/reagent_containers",
 					"/obj/item/storage",
-					"/obj/item/chair"
+					"/obj/item/chair",
+					"/obj/item/restraints/legcuffs/beartrap"
 				],
+				"type_vars": {
+					"/obj/item/restraints/legcuffs/beartrap": [
+						"armed",
+						"trap_damage",
+						"anchored",
+						"alpha"
+					]
+				},
 				"vars": [
 					"name",
 					"desc",
@@ -774,7 +798,8 @@
 					"rogue_armor",
 					"armor_class",
 					"rogue_prevent_crits",
-					"rogue_blocksound"
+					"rogue_blocksound",
+					"firefuel"
 				],
 				"rename": {
 					"inhand_icon_state": "item_state",
@@ -816,6 +841,7 @@
 				},
 				"skip_default": [
 					"armor_class",
+					"firefuel",
 					"armour_penetration",
 					"can_parry",
 					"lockid",
@@ -962,6 +988,10 @@
 			"icons/effects/particles/smoke.dmi"
 		],
 		"extra_sounds": [
+			"sound/items/firelight.ogg",
+			"sound/items/firesnuff.ogg",
+			"sound/foley/torchfixturetake.ogg",
+			"sound/foley/torchfixtureput.ogg",
 			"sound/misc/newday.ogg",
 			"sound/misc/midday.ogg",
 			"sound/misc/nightfall.ogg",
@@ -984,6 +1014,8 @@
 			"sound/weather/rain/thunder_5.ogg",
 			"sound/weather/rain/thunder_6.ogg",
 			"sound/foley/ladder.ogg",
+			"sound/combat/feint.ogg",
+			"sound/combat/riposte.ogg",
 			"sound/combat/parry/parrygen.ogg",
 			"sound/combat/dodge.ogg",
 			"sound/combat/hits/armor/plate_slashed (1).ogg",
@@ -1155,6 +1187,11 @@
 		"retitle": {
 			"/datum/job/roguetown/cook": "Manor Cook",
 			"/datum/job/roguetown/warden": "Forest Warden"
+		},
+		"landmark_roles": {
+			"/obj/effect/landmark/start/rockhillslaver": "/datum/job/roguetown/slaver",
+			"/obj/effect/landmark/start/hostage": "/datum/job/roguetown/dungeoneer",
+			"/obj/effect/landmark/start/vagrant": "/datum/job/roguetown/lunatic"
 		},
 		"access_traits": {
 			"/obj/structure/fluff/traveltile": "required_trait"

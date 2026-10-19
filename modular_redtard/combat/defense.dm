@@ -13,7 +13,7 @@ GLOBAL_LIST_INIT(rogue_default_parry_sounds, list('modular_redtard/rockhill/soun
 /mob/living/proc/rogue_can_defend(mob/living/attacker)
 	if(stat != STABLE || !combat_mode || attacker == src)
 		return FALSE
-	if(HAS_TRAIT(src, TRAIT_INCAPACITATED) || HAS_TRAIT(src, TRAIT_IMMOBILIZED))
+	if(HAS_TRAIT(src, TRAIT_INCAPACITATED) || HAS_TRAIT(src, TRAIT_IMMOBILIZED) || has_status_effect(/datum/status_effect/rogue_vulnerable))
 		return FALSE
 	return is_source_facing_target(src, attacker) || get_dist(src, attacker) == 0
 
@@ -29,51 +29,55 @@ GLOBAL_LIST_INIT(rogue_default_parry_sounds, list('modular_redtard/rockhill/soun
 	var/obj/item/gloves_worn = get_item_by_slot(ITEM_SLOT_GLOVES)
 	var/equipped = (istype(wrists, /obj/item/clothing) && wrists.name) || istype(gloves_worn, /obj/item/clothing/gloves)
 	var/wdef = (equipped && HAS_TRAIT(src, TRAIT_CIVILIZEDBARBARIAN)) ? UNARMED_BASE_WDEF_EQUIPPED : UNARMED_BASE_WDEF_BARE
-	return rogue_skill_rank(/datum/attribute/skill/combat/unarmed) * PARRY_PER_SKILL_LEVEL + wdef * PARRY_PER_WDEF_POINT
+	return rogue_weapon_defense_value(rogue_skill_rank(/datum/attribute/skill/combat/unarmed), wdef)
+
+/proc/rogue_weapon_defense_value(skill_rank, defense)
+	return rogue_formula_value(ROGUE_FORMULA_WEAPON_DEFENSE, list("skill" = skill_rank, "defense" = defense))
 
 /mob/living/carbon/human/proc/rogue_attempt_parry(mob/living/attacker, obj/item/attacker_weapon, datum/intent/attack_intent)
-	if(world.time < rogue_last_parry + ROGUE_PARRY_DELAY)
+	if(world.time < rogue_last_parry + ROGUE_PARRY_DELAY && !rogue_rmb_is(/datum/rogue_rmb_intent/defend))
 		return FALSE
 	if(attack_intent && !attack_intent.canparry)
 		return FALSE
 	if(pulledby || pulling)
 		return FALSE
 	rogue_last_parry = world.time
-	var/prob2defend = 0
+	rogue_mark_in_combat()
 	var/obj/item/mainhand = get_active_held_item()
 	var/obj/item/offhand = get_inactive_held_item()
-	var/mainhand_defense = mainhand?.can_parry ? rogue_weapon_rank(mainhand) * PARRY_PER_SKILL_LEVEL + mainhand.rogue_wdefense() * PARRY_PER_WDEF_POINT : 0
-	var/offhand_defense = offhand?.can_parry ? rogue_weapon_rank(offhand) * PARRY_PER_SKILL_LEVEL + offhand.rogue_wdefense() * PARRY_PER_WDEF_POINT : 0
+	var/mainhand_defense = mainhand?.can_parry ? rogue_weapon_defense_value(rogue_weapon_rank(mainhand), mainhand.rogue_wdefense()) : 0
+	var/offhand_defense = offhand?.can_parry ? rogue_weapon_defense_value(rogue_weapon_rank(offhand), offhand.rogue_wdefense()) : 0
 	var/obj/item/used_weapon = mainhand_defense >= offhand_defense ? mainhand : offhand
 	var/highest_defense = max(mainhand_defense, offhand_defense)
 	var/unarmed_defense = rogue_unarmed_defense()
 	var/unarmed_fallback = !used_weapon || used_weapon.associated_skill == /datum/attribute/skill/combat/unarmed
 	var/weapon_parry = highest_defense > 0 && (!unarmed_fallback || highest_defense >= unarmed_defense)
 	var/defender_skill_type = weapon_parry ? used_weapon.associated_skill : /datum/attribute/skill/combat/unarmed
-	prob2defend += weapon_parry ? highest_defense : unarmed_defense
-	if(move_intent == MOVE_INTENT_RUN)
-		prob2defend -= ROGUE_PARRY_RUNNING_PENALTY
-	if(weapon_parry && used_weapon.wbalance == WBALANCE_SWIFT && mainhand && !offhand && rogue_highest_armor_class() <= ARMOR_CLASS_LIGHT)
-		prob2defend += ROGUE_PARRY_SWIFT_BONUS
 	var/attacker_skill_type = attacker_weapon ? attacker.rogue_weapon_skill(attacker_weapon) : /datum/attribute/skill/combat/unarmed
 	var/attacker_rank = attacker_skill_type ? attacker.rogue_skill_rank(attacker_skill_type) : 0
-	prob2defend -= attacker_rank * PARRY_PER_SKILL_LEVEL
-	var/attacker_speed = attacker.rogue_stat(ROGUE_STAT_SPEED)
-	var/defender_speed = rogue_stat(ROGUE_STAT_SPEED)
-	if(attacker_speed > defender_speed && (!attacker_weapon || attacker_weapon.wbalance == WBALANCE_SWIFT))
-		var/swift = (attacker_speed - defender_speed) * 10
-		swift -= max(0, (rogue_stat(ROGUE_STAT_PERCEPTION) - attacker.rogue_stat(ROGUE_STAT_PERCEPTION)) * (attacker_weapon ? 5 : 10))
-		swift -= max(0, (rogue_stat(ROGUE_STAT_INTELLIGENCE) - attacker.rogue_stat(ROGUE_STAT_INTELLIGENCE)) * 3)
-		prob2defend -= clamp(swift, 0, 30)
-	if(body_position == LYING_DOWN)
-		prob2defend *= ROGUE_PARRY_PRONE_FACTOR
-	if(HAS_TRAIT(src, TRAIT_DUALWIELDER) && mainhand && offhand && mainhand.associated_skill == offhand.associated_skill)
-		prob2defend -= 5
-	prob2defend = clamp(prob2defend, ROGUE_PARRY_MIN, ROGUE_PARRY_MAX)
-	var/drained = BASE_PARRY_STAMINA_DRAIN
+	var/speed_pressure = rogue_formula_value(ROGUE_FORMULA_SPEED_PRESSURE, list(
+		"swift_attack" = !attacker_weapon || attacker_weapon.wbalance == WBALANCE_SWIFT,
+		"attacker_armed" = !!attacker_weapon,
+		"attacker_speed" = attacker.rogue_stat(ROGUE_STAT_SPEED),
+		"defender_speed" = rogue_stat(ROGUE_STAT_SPEED),
+		"attacker_perception" = attacker.rogue_stat(ROGUE_STAT_PERCEPTION),
+		"defender_perception" = rogue_stat(ROGUE_STAT_PERCEPTION),
+		"attacker_intelligence" = attacker.rogue_stat(ROGUE_STAT_INTELLIGENCE),
+		"defender_intelligence" = rogue_stat(ROGUE_STAT_INTELLIGENCE),
+	))
 	var/untrained = !rogue_armor_trained()
+	var/prob2defend = rogue_formula_value(ROGUE_FORMULA_PARRY_CHANCE, list(
+		"defense" = weapon_parry ? highest_defense : unarmed_defense,
+		"attacker_skill" = attacker_rank,
+		"running" = move_intent == MOVE_INTENT_RUN,
+		"swift_guard" = weapon_parry && used_weapon.wbalance == WBALANCE_SWIFT && mainhand && !offhand && rogue_highest_armor_class() <= ARMOR_CLASS_LIGHT,
+		"speed_pressure" = speed_pressure,
+		"prone" = body_position == LYING_DOWN,
+		"dual_wield" = HAS_TRAIT(src, TRAIT_DUALWIELDER) && mainhand && offhand && mainhand.associated_skill == offhand.associated_skill,
+		"untrained_armor" = untrained,
+	))
+	var/drained = BASE_PARRY_STAMINA_DRAIN
 	if(untrained)
-		prob2defend = min(prob2defend, ROGUE_PARRY_MAX_UNTRAINED)
 		drained += ROGUE_PARRY_UNTRAINED_DRAIN
 	if(!prob(prob2defend))
 		return FALSE
@@ -109,13 +113,14 @@ GLOBAL_LIST_INIT(rogue_default_parry_sounds, list('modular_redtard/rockhill/soun
 			return candidate
 
 /mob/living/carbon/human/proc/rogue_attempt_dodge(mob/living/attacker, obj/item/attacker_weapon, datum/intent/attack_intent)
-	if(world.time < rogue_last_dodge + ROGUE_DODGE_DELAY)
+	if(world.time < rogue_last_dodge + ROGUE_DODGE_DELAY && !rogue_rmb_is(/datum/rogue_rmb_intent/defend))
 		return FALSE
 	if(attack_intent && !attack_intent.candodge)
 		return FALSE
 	if(pulledby || pulling || loc == attacker.loc)
 		return FALSE
 	rogue_last_dodge = world.time
+	rogue_mark_in_combat()
 	var/turf/dodge_turf = rogue_dodge_turf(attacker)
 	if(!dodge_turf)
 		to_chat(src, span_boldwarning("There's nowhere to dodge to!"))
@@ -127,33 +132,20 @@ GLOBAL_LIST_INIT(rogue_default_parry_sounds, list('modular_redtard/rockhill/soun
 		return FALSE
 	var/defender_speed = rogue_stat(ROGUE_STAT_SPEED)
 	var/attacker_speed = attacker.rogue_stat(ROGUE_STAT_SPEED)
-	var/prob2defend = ROGUE_DODGE_BASE + defender_speed * ROGUE_DODGE_PER_SPEED - attacker_speed * ROGUE_DODGE_PER_SPEED
-	var/attacker_rank = 0
-	if(attacker_weapon)
-		if(attacker_weapon.wbalance == WBALANCE_SWIFT && attacker_speed > defender_speed)
-			prob2defend -= (attacker_speed - defender_speed) * 10
-		if(attacker_weapon.wbalance == WBALANCE_HEAVY && defender_speed > attacker_speed)
-			prob2defend += (defender_speed - attacker_speed) * 10
-		var/attacker_skill = attacker.rogue_weapon_skill(attacker_weapon)
-		if(attacker_skill)
-			attacker_rank = attacker.rogue_skill_rank(attacker_skill)
-			prob2defend -= attacker_rank * ROGUE_DODGE_PER_SKILL
-			prob2defend += rogue_skill_rank(attacker_skill) * ROGUE_DODGE_PER_SKILL
-		else
-			prob2defend += ROGUE_DODGE_IMPROVISED_BONUS
-	else
-		attacker_rank = attacker.rogue_skill_rank(/datum/attribute/skill/combat/unarmed)
-		prob2defend -= attacker_rank * ROGUE_DODGE_PER_SKILL
-		prob2defend += rogue_skill_rank(/datum/attribute/skill/combat/unarmed) * ROGUE_DODGE_PER_SKILL
-		if(attacker_speed > defender_speed)
-			prob2defend -= (attacker_speed - defender_speed) * 10
-	if(body_position == LYING_DOWN)
-		prob2defend *= ROGUE_DODGE_PRONE_FACTOR
-	else if(mind && rogue_dodge_expert() && defender_speed > ROGUE_ATTRIBUTE_MIDDLING - 1)
-		prob2defend = ROGUE_DODGE_EXPERT_CAP
-	if(HAS_TRAIT(src, TRAIT_DUALWIELDER) && get_active_held_item() && get_inactive_held_item())
-		prob2defend -= 5
-	prob2defend = clamp(prob2defend, ROGUE_DODGE_MIN, ROGUE_DODGE_MAX)
+	var/attacker_skill = attacker_weapon ? attacker.rogue_weapon_skill(attacker_weapon) : /datum/attribute/skill/combat/unarmed
+	var/attacker_rank = attacker_skill ? attacker.rogue_skill_rank(attacker_skill) : 0
+	var/prob2defend = rogue_formula_value(ROGUE_FORMULA_DODGE_CHANCE, list(
+		"defender_speed" = defender_speed,
+		"attacker_speed" = attacker_speed,
+		"swift_attack" = !attacker_weapon || attacker_weapon.wbalance == WBALANCE_SWIFT,
+		"heavy_attack" = attacker_weapon?.wbalance == WBALANCE_HEAVY,
+		"improvised" = attacker_weapon && !attacker_skill,
+		"defender_skill" = attacker_skill ? rogue_skill_rank(attacker_skill) : 0,
+		"attacker_skill" = attacker_rank,
+		"prone" = body_position == LYING_DOWN,
+		"dodge_expert" = mind && rogue_dodge_expert() && defender_speed > ROGUE_ATTRIBUTE_MIDDLING - 1,
+		"dual_wield" = HAS_TRAIT(src, TRAIT_DUALWIELDER) && get_active_held_item() && get_inactive_held_item(),
+	))
 	if(!prob(prob2defend))
 		return FALSE
 	var/drained = ROGUE_DODGE_STAMINA_DRAIN
@@ -190,7 +182,11 @@ GLOBAL_LIST_INIT(rogue_default_parry_sounds, list('modular_redtard/rockhill/soun
 	if(attack_type != MELEE_ATTACK && attack_type != UNARMED_ATTACK)
 		return NONE
 	var/mob/living/attacker = isliving(hitby) ? hitby : get(hitby, /mob/living)
-	if(!isliving(attacker) || !source.rogue_can_defend(attacker))
+	if(!isliving(attacker))
+		return NONE
+	source.rogue_mark_in_combat()
+	attacker.rogue_mark_in_combat()
+	if(!source.rogue_can_defend(attacker))
 		return NONE
 	var/obj/item/attacker_weapon = isitem(hitby) ? hitby : null
 	var/datum/intent/attack_intent = attacker_weapon ? attacker.rogue_hand_intent(attacker.get_held_index_of_item(attacker_weapon)) : null

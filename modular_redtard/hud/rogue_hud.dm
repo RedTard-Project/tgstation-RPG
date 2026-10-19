@@ -58,9 +58,9 @@
 	add_screen_object(/atom/movable/screen/rogue/placeholder/readtext, HUD_ROGUE_READ_TEXT_LEFT, group_key = FALSE)
 	add_screen_object(/atom/movable/screen/rogue/weapon_intents, HUD_ROGUE_WEAPON_INTENTS, HUD_GROUP_ROGUE_PANEL)
 	add_screen_object(/atom/movable/screen/mood/rogue, HUD_MOB_MOOD, HUD_GROUP_ROGUE_PANEL)
-	add_screen_object(/atom/movable/screen/rogue/stub/rmb_intent, HUD_ROGUE_RMB_INTENT, HUD_GROUP_ROGUE_PANEL)
+	add_screen_object(/atom/movable/screen/rogue/rmb_intent, HUD_ROGUE_RMB_INTENT, HUD_GROUP_ROGUE_PANEL)
 	add_screen_object(/atom/movable/screen/healths/rogue, HUD_MOB_HEALTH, HUD_GROUP_ROGUE_PANEL)
-	add_screen_object(/atom/movable/screen/rogue/stub/quad_intents, HUD_ROGUE_QUAD_INTENTS, HUD_GROUP_ROGUE_PANEL)
+	add_screen_object(/atom/movable/screen/rogue/quad_intents, HUD_ROGUE_QUAD_INTENTS, HUD_GROUP_ROGUE_PANEL)
 	add_screen_object(/atom/movable/screen/rogue/def_intent, HUD_ROGUE_DEF_INTENT, HUD_GROUP_ROGUE_PANEL)
 	add_screen_object(/atom/movable/screen/combattoggle/rogue, HUD_MOB_INTENTS, HUD_GROUP_ROGUE_PANEL)
 	add_screen_object(/atom/movable/screen/rogue/give, HUD_ROGUE_GIVE, HUD_GROUP_STATIC)
@@ -70,7 +70,7 @@
 	add_screen_object(/atom/movable/screen/rogue/clickdelay/left, HUD_ROGUE_CLICKDELAY_LEFT, HUD_GROUP_STATIC)
 	add_screen_object(/atom/movable/screen/rogue/clickdelay/right, HUD_ROGUE_CLICKDELAY_RIGHT, HUD_GROUP_STATIC)
 	add_screen_object(/atom/movable/screen/rogue/clickdelay/next_move, HUD_ROGUE_CLICKDELAY_MID, HUD_GROUP_STATIC)
-	add_screen_object(/atom/movable/screen/rogue/stub/defdelay, HUD_ROGUE_DEFDELAY, HUD_GROUP_ROGUE_PANEL)
+	add_screen_object(/atom/movable/screen/rogue/defdelay, HUD_ROGUE_DEFDELAY, HUD_GROUP_ROGUE_PANEL)
 
 	build_hand_slots()
 
@@ -82,23 +82,28 @@
 	add_screen_object(/atom/movable/screen/rest/rogue, HUD_MOB_REST, HUD_GROUP_ROGUE_PANEL)
 	add_screen_object(/atom/movable/screen/rogue/skills, HUD_ROGUE_SKILLS, HUD_GROUP_ROGUE_PANEL)
 	add_screen_object(/atom/movable/screen/craft/rogue, HUD_MOB_CRAFTING_MENU, HUD_GROUP_ROGUE_PANEL)
-	add_screen_object(/atom/movable/screen/rogue/stub/sneak, HUD_ROGUE_SNEAK, HUD_GROUP_ROGUE_PANEL)
+	add_screen_object(/atom/movable/screen/rogue/sneak, HUD_ROGUE_SNEAK, HUD_GROUP_ROGUE_PANEL)
 	add_screen_object(/atom/movable/screen/mov_intent/rogue, HUD_MOB_MOVE_INTENT, HUD_GROUP_ROGUE_PANEL)
 	add_screen_object(/atom/movable/screen/rogue/eye, HUD_ROGUE_EYE, HUD_GROUP_ROGUE_PANEL)
-	add_screen_object(/atom/movable/screen/rogue/placeholder/advsetup, HUD_ROGUE_ADVSETUP, group_key = FALSE)
+	add_screen_object(/atom/movable/screen/rogue/advsetup, HUD_ROGUE_ADVSETUP, group_key = FALSE)
 	add_screen_object(/atom/movable/screen/zone_sel/rogue, HUD_MOB_ZONE_SELECTOR, HUD_GROUP_ROGUE_PANEL)
 
 	add_screen_object(/atom/movable/screen/stamina/rogue, HUD_MOB_STAMINA, HUD_GROUP_ROGUE_PANEL)
-	add_screen_object(/atom/movable/screen/rogue/stub/energy, HUD_ROGUE_ENERGY, HUD_GROUP_ROGUE_PANEL)
-	add_screen_object(/atom/movable/screen/rogue/stub/feint, HUD_ROGUE_FEINT, HUD_GROUP_ROGUE_PANEL)
+	add_screen_object(/atom/movable/screen/rogue/energy, HUD_ROGUE_ENERGY, HUD_GROUP_ROGUE_PANEL)
+	add_screen_object(/atom/movable/screen/rogue/feint, HUD_ROGUE_FEINT, HUD_GROUP_ROGUE_PANEL)
 
 /datum/hud/rogue/human/show_hud(version = 0, mob/viewmob)
 	var/atom/movable/screen/intents = screen_objects[HUD_ROGUE_WEAPON_INTENTS]
 	intents?.screen_loc = initial(intents.screen_loc)
 	. = ..()
-	if(!. || hud_version != HUD_STYLE_REDUCED || !intents)
+	if(!.)
 		return
 	var/mob/screenmob = viewmob || mymob
+	var/atom/movable/screen/rogue/advsetup/setup = screen_objects[HUD_ROGUE_ADVSETUP]
+	if(setup?.showing && hud_version != HUD_STYLE_NOHUD)
+		screenmob.client.screen |= setup
+	if(hud_version != HUD_STYLE_REDUCED || !intents)
+		return
 	intents.screen_loc = rogueui_intents_alt
 	screenmob.client.screen += intents
 

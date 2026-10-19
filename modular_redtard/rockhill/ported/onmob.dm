@@ -62,6 +62,22 @@
 			return list("shrink" = 0.5, "sx" = -5, "sy" = -3, "nx" = 0, "ny" = 0, "wx" = 0, "wy" = -3, "ex" = 2, "ey" = -3, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = 0, "sturn" = 0, "wturn" = 0, "eturn" = 0, "nflip" = 0, "sflip" = 0, "wflip" = 0, "eflip" = 8)
 	return null
 
+/obj/item/clothing/head/roguetown/helmet/heavy/psydonbarbute/rogue_onmob_prop(tag)
+	switch(tag)
+		if(ROGUE_ONMOB_HIP)
+			return list("shrink" = 0.32, "sx" = -3, "sy" = -8, "nx" = 6, "ny" = -8, "wx" = -1, "wy" = -8, "ex" = 3, "ey" = -8, "nturn" = 180, "sturn" = 0, "wturn" = 0, "eturn" = 0, "nflip" = 1, "sflip" = 0, "wflip" = 0, "eflip" = 8, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0)
+		if(ROGUE_ONMOB_HAND)
+			return list("shrink" = 0.4, "sx" = -5, "sy" = -3, "nx" = 0, "ny" = 0, "wx" = 0, "wy" = -3, "ex" = 2, "ey" = -3, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = 0, "sturn" = 0, "wturn" = 0, "eturn" = 0, "nflip" = 0, "sflip" = 0, "wflip" = 0, "eflip" = 8)
+	return null
+
+/obj/item/clothing/head/roguetown/helmet/otavan/rogue_onmob_prop(tag)
+	switch(tag)
+		if(ROGUE_ONMOB_HIP)
+			return list("shrink" = 0.32, "sx" = -3, "sy" = -8, "nx" = 6, "ny" = -8, "wx" = -1, "wy" = -8, "ex" = 3, "ey" = -8, "nturn" = 180, "sturn" = 0, "wturn" = 0, "eturn" = 0, "nflip" = 1, "sflip" = 0, "wflip" = 0, "eflip" = 8, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0)
+		if(ROGUE_ONMOB_HAND)
+			return list("shrink" = 0.4, "sx" = -5, "sy" = -3, "nx" = 0, "ny" = 0, "wx" = 0, "wy" = -3, "ex" = 2, "ey" = -3, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = 0, "sturn" = 0, "wturn" = 0, "eturn" = 0, "nflip" = 0, "sflip" = 0, "wflip" = 0, "eflip" = 8)
+	return null
+
 /obj/item/contraption/rogue_onmob_prop(tag)
 	switch(tag)
 		if(ROGUE_ONMOB_HAND)
@@ -394,6 +410,14 @@
 			return list("shrink" = 0.7, "sx" = 5, "sy" = -4, "nx" = -5, "ny" = -4, "wx" = -5, "wy" = -3, "ex" = 7, "ey" = -4, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = -45, "sturn" = 45, "wturn" = -45, "eturn" = 45, "nflip" = 8, "sflip" = 0, "wflip" = 8, "eflip" = 0)
 	return ..()
 
+/obj/item/rogueweapon/handclaw/rogue_onmob_prop(tag)
+	switch(tag)
+		if(ROGUE_ONMOB_HIP)
+			return list("shrink" = 0.3, "sx" = -2, "sy" = -5, "nx" = 4, "ny" = -5, "wx" = 0, "wy" = -5, "ex" = 2, "ey" = -5, "nturn" = 0, "sturn" = 0, "wturn" = 0, "eturn" = 0, "nflip" = 0, "sflip" = 0, "wflip" = 0, "eflip" = 0, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0)
+		if(ROGUE_ONMOB_HAND)
+			return list("shrink" = 0.4, "sx" = -7, "sy" = -4, "nx" = 7, "ny" = -4, "wx" = -3, "wy" = -4, "ex" = 1, "ey" = -4, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = 110, "sturn" = -110, "wturn" = -110, "eturn" = 110, "nflip" = 0, "sflip" = 8, "wflip" = 8, "eflip" = 0)
+	return ..()
+
 /obj/item/rogueweapon/hoe/rogue_onmob_prop(tag)
 	switch(tag)
 		if(ROGUE_ONMOB_HAND)
@@ -415,6 +439,14 @@
 	return ..()
 
 /obj/item/rogueweapon/huntingknife/combat/rogue_onmob_prop(tag)
+	switch(tag)
+		if(ROGUE_ONMOB_HIP)
+			return list("shrink" = 0.3, "sx" = -2, "sy" = -5, "nx" = 4, "ny" = -5, "wx" = 0, "wy" = -5, "ex" = 2, "ey" = -5, "nturn" = 0, "sturn" = 0, "wturn" = 0, "eturn" = 0, "nflip" = 0, "sflip" = 0, "wflip" = 0, "eflip" = 0, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0)
+		if(ROGUE_ONMOB_HAND)
+			return list("shrink" = 0.5, "sx" = -10, "sy" = -8, "nx" = 13, "ny" = -8, "wx" = -8, "wy" = -7, "ex" = 7, "ey" = -8, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = 90, "sturn" = -90, "wturn" = -80, "eturn" = 81, "nflip" = 0, "sflip" = 8, "wflip" = 8, "eflip" = 0)
+	return ..()
+
+/obj/item/rogueweapon/huntingknife/combat/bronze/rogue_onmob_prop(tag)
 	switch(tag)
 		if(ROGUE_ONMOB_HIP)
 			return list("shrink" = 0.3, "sx" = -2, "sy" = -5, "nx" = 4, "ny" = -5, "wx" = 0, "wy" = -5, "ex" = 2, "ey" = -5, "nturn" = 0, "sturn" = 0, "wturn" = 0, "eturn" = 0, "nflip" = 0, "sflip" = 0, "wflip" = 0, "eflip" = 0, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0)
@@ -478,6 +510,14 @@
 	switch(tag)
 		if(ROGUE_ONMOB_HIP)
 			return list("shrink" = 0.3, "sx" = -2, "sy" = -5, "nx" = 4, "ny" = -5, "wx" = 0, "wy" = -5, "ex" = 2, "ey" = -5, "nturn" = 0, "sturn" = 0, "wturn" = 0, "eturn" = 0, "nflip" = 0, "sflip" = 0, "wflip" = 0, "eflip" = 0, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0)
+		if(ROGUE_ONMOB_HAND)
+			return list("shrink" = 0.6, "sx" = -7, "sy" = 2, "nx" = 7, "ny" = 3, "wx" = -2, "wy" = 1, "ex" = 1, "ey" = 1, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = -38, "sturn" = 37, "wturn" = 30, "eturn" = -30, "nflip" = 0, "sflip" = 8, "wflip" = 8, "eflip" = 0)
+		if(ROGUE_ONMOB_WIELDED)
+			return list("shrink" = 0.6, "sx" = 5, "sy" = -3, "nx" = -5, "ny" = -2, "wx" = -5, "wy" = -1, "ex" = 3, "ey" = -2, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = 7, "sturn" = -7, "wturn" = 16, "eturn" = -22, "nflip" = 8, "sflip" = 0, "wflip" = 8, "eflip" = 0)
+	return ..()
+
+/obj/item/rogueweapon/mace/maul/rogue_onmob_prop(tag)
+	switch(tag)
 		if(ROGUE_ONMOB_HAND)
 			return list("shrink" = 0.6, "sx" = -7, "sy" = 2, "nx" = 7, "ny" = 3, "wx" = -2, "wy" = 1, "ex" = 1, "ey" = 1, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = -38, "sturn" = 37, "wturn" = 30, "eturn" = -30, "nflip" = 0, "sflip" = 8, "wflip" = 8, "eflip" = 0)
 		if(ROGUE_ONMOB_WIELDED)
@@ -646,6 +686,14 @@
 			return list("shrink" = 0.8, "sx" = -5, "sy" = -1, "nx" = 6, "ny" = -1, "wx" = 0, "wy" = -2, "ex" = 0, "ey" = -2, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = 0, "sturn" = 0, "wturn" = 0, "eturn" = 0, "nflip" = 0, "sflip" = 0, "wflip" = 0, "eflip" = 0)
 	return ..()
 
+/obj/item/rogueweapon/shield/tower/zyb/rogue_onmob_prop(tag)
+	switch(tag)
+		if(ROGUE_ONMOB_BACK)
+			return list("shrink" = 0.6, "sx" = 1, "sy" = 4, "nx" = 1, "ny" = 2, "wx" = 3, "wy" = 3, "ex" = 0, "ey" = 2, "nturn" = 0, "sturn" = 0, "wturn" = 0, "eturn" = 0, "nflip" = 8, "sflip" = 0, "wflip" = 0, "eflip" = 0, "northabove" = 1, "southabove" = 0, "eastabove" = 0, "westabove" = 0)
+		if(ROGUE_ONMOB_HAND)
+			return list("shrink" = 0.6, "sx" = -5, "sy" = -1, "nx" = 6, "ny" = -1, "wx" = 0, "wy" = -2, "ex" = 0, "ey" = -2, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = 0, "sturn" = 0, "wturn" = 0, "eturn" = 0, "nflip" = 0, "sflip" = 0, "wflip" = 1, "eflip" = 0)
+	return ..()
+
 /obj/item/rogueweapon/shield/wood/rogue_onmob_prop(tag)
 	switch(tag)
 		if(ROGUE_ONMOB_BACK)
@@ -676,6 +724,14 @@
 			return list("shrink" = 0.6, "sx" = 5, "sy" = -3, "nx" = -5, "ny" = -2, "wx" = -5, "wy" = -1, "ex" = 3, "ey" = -2, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = 7, "sturn" = -7, "wturn" = 16, "eturn" = -22, "nflip" = 8, "sflip" = 0, "wflip" = 8, "eflip" = 0)
 	return ..()
 
+/obj/item/rogueweapon/spear/naginata/rogue_onmob_prop(tag)
+	switch(tag)
+		if(ROGUE_ONMOB_HAND)
+			return list("shrink" = 0.6, "sx" = -6, "sy" = 2, "nx" = 8, "ny" = 2, "wx" = -4, "wy" = 2, "ex" = 1, "ey" = 2, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = -38, "sturn" = 300, "wturn" = 32, "eturn" = -23, "nflip" = 0, "sflip" = 100, "wflip" = 8, "eflip" = 0)
+		if(ROGUE_ONMOB_WIELDED)
+			return list("shrink" = 0.6, "sx" = 4, "sy" = -2, "nx" = -3, "ny" = -2, "wx" = -5, "wy" = -1, "ex" = 3, "ey" = -2, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = 7, "sturn" = -7, "wturn" = 16, "eturn" = -22, "nflip" = 8, "sflip" = 0, "wflip" = 8, "eflip" = 0)
+	return ..()
+
 /obj/item/rogueweapon/spear/partizan/rogue_onmob_prop(tag)
 	switch(tag)
 		if(ROGUE_ONMOB_HAND)
@@ -692,6 +748,24 @@
 			return list("shrink" = 0.6, "sx" = -11, "sy" = -8, "nx" = 12, "ny" = -8, "wx" = -5, "wy" = -8, "ex" = 6, "ey" = -8, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = 90, "sturn" = -90, "wturn" = -90, "eturn" = 90, "nflip" = 0, "sflip" = 8, "wflip" = 8, "eflip" = 0)
 		if(ROGUE_ONMOB_WIELDED)
 			return list("shrink" = 0.7, "sx" = 5, "sy" = -4, "nx" = -5, "ny" = -4, "wx" = -5, "wy" = -3, "ex" = 7, "ey" = -4, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = -45, "sturn" = 45, "wturn" = -45, "eturn" = 45, "nflip" = 8, "sflip" = 0, "wflip" = 8, "eflip" = 0)
+	return ..()
+
+/obj/item/rogueweapon/stoneaxe/battle/steppesman/chupa/rogue_onmob_prop(tag)
+	switch(tag)
+		if(ROGUE_ONMOB_HIP)
+			return list("shrink" = 0.3, "sx" = -2, "sy" = -5, "nx" = 4, "ny" = -5, "wx" = 0, "wy" = -5, "ex" = 2, "ey" = -5, "nturn" = 0, "sturn" = 0, "wturn" = 0, "eturn" = 0, "nflip" = 0, "sflip" = 0, "wflip" = 0, "eflip" = 0, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0)
+		if(ROGUE_ONMOB_HAND)
+			return list("shrink" = 0.6, "sx" = -7, "sy" = 9, "nx" = 9, "ny" = 6, "wx" = -2, "wy" = 7, "ex" = 1, "ey" = 7, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = -38, "sturn" = 37, "wturn" = 30, "eturn" = -30, "nflip" = 0, "sflip" = 8, "wflip" = 8, "eflip" = 0)
+		if(ROGUE_ONMOB_WIELDED)
+			return list("shrink" = 0.6, "sx" = 8, "sy" = -4, "nx" = -8, "ny" = -4, "wx" = -10, "wy" = -5, "ex" = 10, "ey" = -5, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = -45, "sturn" = 45, "wturn" = -45, "eturn" = 45, "nflip" = 8, "sflip" = 0, "wflip" = 8, "eflip" = 0)
+	return ..()
+
+/obj/item/rogueweapon/stoneaxe/hurlbat/rogue_onmob_prop(tag)
+	switch(tag)
+		if(ROGUE_ONMOB_HIP)
+			return list("shrink" = 0.3, "sx" = -2, "sy" = -5, "nx" = 4, "ny" = -5, "wx" = 0, "wy" = -5, "ex" = 2, "ey" = -5, "nturn" = 0, "sturn" = 0, "wturn" = 0, "eturn" = 0, "nflip" = 0, "sflip" = 0, "wflip" = 0, "eflip" = 0, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0)
+		if(ROGUE_ONMOB_HAND)
+			return list("shrink" = 0.5, "sx" = -10, "sy" = -6, "nx" = 11, "ny" = -3, "wx" = -4, "wy" = -3, "ex" = 5, "ey" = -6, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = 0, "sturn" = 0, "wturn" = 0, "eturn" = 0, "nflip" = 0, "sflip" = 8, "wflip" = 8, "eflip" = 0)
 	return ..()
 
 /obj/item/rogueweapon/stoneaxe/oath/rogue_onmob_prop(tag)
@@ -774,6 +848,14 @@
 			return list("shrink" = 0.7, "sx" = 6, "sy" = -2, "nx" = -4, "ny" = 2, "wx" = -8, "wy" = -1, "ex" = 7, "ey" = 0, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = 15, "sturn" = -200, "wturn" = -160, "eturn" = -25, "nflip" = 8, "sflip" = 8, "wflip" = 0, "eflip" = 0)
 	return ..()
 
+/obj/item/rogueweapon/sword/long/oathkeeper/rogue_onmob_prop(tag)
+	switch(tag)
+		if(ROGUE_ONMOB_HIP)
+			return list("shrink" = 0.4, "sx" = -4, "sy" = -6, "nx" = 5, "ny" = -6, "wx" = 0, "wy" = -6, "ex" = -1, "ey" = -6, "nturn" = 100, "sturn" = 156, "wturn" = 90, "eturn" = 180, "nflip" = 0, "sflip" = 0, "wflip" = 0, "eflip" = 0, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0)
+		if(ROGUE_ONMOB_HAND)
+			return list("shrink" = 0.5, "sx" = -14, "sy" = -8, "nx" = 15, "ny" = -7, "wx" = -10, "wy" = -5, "ex" = 7, "ey" = -6, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = -13, "sturn" = 110, "wturn" = -60, "eturn" = -30, "nflip" = 1, "sflip" = 1, "wflip" = 8, "eflip" = 1)
+	return ..()
+
 /obj/item/rogueweapon/sword/long/rhomphaia/rogue_onmob_prop(tag)
 	switch(tag)
 		if(ROGUE_ONMOB_BACK)
@@ -786,6 +868,18 @@
 			return list("shrink" = 0.6, "sx" = 3, "sy" = 5, "nx" = -3, "ny" = 5, "wx" = -9, "wy" = 4, "ex" = 9, "ey" = 1, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = 0, "sturn" = 0, "wturn" = 0, "eturn" = 15, "nflip" = 8, "sflip" = 0, "wflip" = 8, "eflip" = 0)
 	return ..()
 
+/obj/item/rogueweapon/sword/long/shotel/rogue_onmob_prop(tag)
+	switch(tag)
+		if(ROGUE_ONMOB_BACK)
+			return list("shrink" = 0.5, "sx" = -1, "sy" = 2, "nx" = 0, "ny" = 2, "wx" = 2, "wy" = 1, "ex" = 0, "ey" = 1, "nturn" = 0, "sturn" = 0, "wturn" = 70, "eturn" = 15, "nflip" = 1, "sflip" = 1, "wflip" = 1, "eflip" = 1, "northabove" = 1, "southabove" = 0, "eastabove" = 0, "westabove" = 0)
+		if(ROGUE_ONMOB_HIP)
+			return list("shrink" = 0.4, "sx" = -4, "sy" = -6, "nx" = 5, "ny" = -6, "wx" = 0, "wy" = -6, "ex" = -1, "ey" = -6, "nturn" = 100, "sturn" = 156, "wturn" = 90, "eturn" = 180, "nflip" = 0, "sflip" = 0, "wflip" = 0, "eflip" = 0, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0)
+		if(ROGUE_ONMOB_HAND)
+			return list("shrink" = 0.5, "sx" = -14, "sy" = -8, "nx" = 15, "ny" = -7, "wx" = -10, "wy" = -5, "ex" = 7, "ey" = -6, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = -13, "sturn" = 110, "wturn" = -60, "eturn" = -30, "nflip" = 1, "sflip" = 1, "wflip" = 8, "eflip" = 1)
+		if(ROGUE_ONMOB_WIELDED)
+			return list("shrink" = 0.4, "sx" = 3, "sy" = 4, "nx" = -1, "ny" = 4, "wx" = -8, "wy" = 3, "ex" = 7, "ey" = 0, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = 0, "sturn" = 0, "wturn" = 0, "eturn" = 15, "nflip" = 8, "sflip" = 0, "wflip" = 8, "eflip" = 0)
+	return ..()
+
 /obj/item/rogueweapon/sword/rapier/rogue_onmob_prop(tag)
 	switch(tag)
 		if(ROGUE_ONMOB_BACK)
@@ -794,6 +888,16 @@
 			return list("shrink" = 0.4, "sx" = -4, "sy" = -6, "nx" = 5, "ny" = -6, "wx" = 0, "wy" = -6, "ex" = -1, "ey" = -6, "nturn" = 100, "sturn" = 156, "wturn" = 90, "eturn" = 180, "nflip" = 0, "sflip" = 0, "wflip" = 0, "eflip" = 0, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0)
 		if(ROGUE_ONMOB_HAND)
 			return list("shrink" = 0.5, "sx" = -14, "sy" = -8, "nx" = 15, "ny" = -7, "wx" = -10, "wy" = -5, "ex" = 7, "ey" = -6, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = -13, "sturn" = 110, "wturn" = -60, "eturn" = -30, "nflip" = 1, "sflip" = 1, "wflip" = 8, "eflip" = 1)
+	return ..()
+
+/obj/item/rogueweapon/sword/sabre/shamshir/rogue_onmob_prop(tag)
+	switch(tag)
+		if(ROGUE_ONMOB_HIP)
+			return list("shrink" = 0.5, "sx" = -4, "sy" = -6, "nx" = 5, "ny" = -6, "wx" = 0, "wy" = -6, "ex" = -1, "ey" = -6, "nturn" = 100, "sturn" = 156, "wturn" = 90, "eturn" = 180, "nflip" = 0, "sflip" = 0, "wflip" = 0, "eflip" = 0, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0)
+		if(ROGUE_ONMOB_HAND)
+			return list("shrink" = 0.6, "sx" = -10, "sy" = -8, "nx" = 13, "ny" = -8, "wx" = -8, "wy" = -7, "ex" = 7, "ey" = -8, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = 90, "sturn" = -90, "wturn" = -80, "eturn" = 81, "nflip" = 0, "sflip" = 8, "wflip" = 8, "eflip" = 0)
+		if(ROGUE_ONMOB_WIELDED)
+			return list("shrink" = 0.6, "sx" = 3, "sy" = 4, "nx" = -1, "ny" = 4, "wx" = -8, "wy" = 3, "ex" = 7, "ey" = 0, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = 0, "sturn" = 0, "wturn" = 0, "eturn" = 15, "nflip" = 8, "sflip" = 0, "wflip" = 8, "eflip" = 0)
 	return ..()
 
 /obj/item/rogueweapon/thresher/rogue_onmob_prop(tag)
@@ -850,6 +954,14 @@
 			return list("shrink" = 0.8, "sx" = 8, "sy" = 0, "nx" = -1, "ny" = 0, "wx" = -5, "wy" = -1, "ex" = 3, "ey" = 0, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = 7, "sturn" = -7, "wturn" = 16, "eturn" = -22, "nflip" = 8, "sflip" = 0, "wflip" = 8, "eflip" = 0)
 	return ..()
 
+/obj/item/rogueweapon/woodstaff/naledi/rogue_onmob_prop(tag)
+	switch(tag)
+		if(ROGUE_ONMOB_HAND)
+			return list("shrink" = 0.8, "sx" = -9, "sy" = 5, "nx" = 9, "ny" = 5, "wx" = -4, "wy" = 4, "ex" = 4, "ey" = 4, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = -38, "sturn" = 37, "wturn" = 32, "eturn" = -23, "nflip" = 0, "sflip" = 8, "wflip" = 8, "eflip" = 0)
+		if(ROGUE_ONMOB_WIELDED)
+			return list("shrink" = 0.8, "sx" = 8, "sy" = 0, "nx" = -1, "ny" = 0, "wx" = -5, "wy" = -1, "ex" = 3, "ey" = 0, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = 7, "sturn" = -7, "wturn" = 16, "eturn" = -22, "nflip" = 8, "sflip" = 0, "wflip" = 8, "eflip" = 0)
+	return ..()
+
 /obj/item/rope/inqarticles/inquirycord/rogue_onmob_prop(tag)
 	switch(tag)
 		if(ROGUE_ONMOB_HIP)
@@ -864,6 +976,12 @@
 	switch(tag)
 		if(ROGUE_ONMOB_HAND)
 			return list("shrink" = 0.4)
+	return ..()
+
+/obj/item/storage/meatbag/rogue_onmob_prop(tag)
+	switch(tag)
+		if(ROGUE_ONMOB_HAND)
+			return list("shrink" = 0.4, "sx" = -4, "sy" = -7, "nx" = 6, "ny" = -6, "wx" = -2, "wy" = -7, "ex" = -1, "ey" = -7, "northabove" = 0, "southabove" = 1, "eastabove" = 1, "westabove" = 0, "nturn" = 0, "sturn" = 0, "wturn" = 0, "eturn" = 0, "nflip" = 0, "sflip" = 0, "wflip" = 0, "eflip" = 8)
 	return ..()
 
 /obj/item/storage/roguebag/rogue_onmob_prop(tag)

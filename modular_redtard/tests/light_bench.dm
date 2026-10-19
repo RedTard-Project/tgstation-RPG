@@ -22,7 +22,7 @@ GLOBAL_VAR_INIT(rogue_bench_serial, 0)
 	. = ..()
 	GLOB.rogue_bench_rogue_ms += (TICK_USAGE_REAL - started) * world.tick_lag
 
-#ifndef REDTARD_LIGHT_BENCH_CLIENT
+#if !defined(REDTARD_LIGHT_BENCH_CLIENT) && !defined(REDTARD_LIGHT_SHOTS) && !defined(REDTARD_LIGHT_LOAD)
 /datum/controller/subsystem/rogue_light/Initialize()
 	Master.sleep_offline_after_initializations = FALSE
 	. = ..()

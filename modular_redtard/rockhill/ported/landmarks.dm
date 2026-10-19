@@ -86,7 +86,7 @@
 	name = JOB_ROCKHILL_HAND
 
 /obj/effect/landmark/start/rockhill/hostage
-	name = JOB_ASSISTANT
+	name = JOB_ROCKHILL_DUNGEONEER
 
 /obj/effect/landmark/start/rockhill/jester
 	name = JOB_ROCKHILL_JESTER
@@ -166,7 +166,7 @@
 	name = JOB_ROCKHILL_SLAVE
 
 /obj/effect/landmark/start/rockhill/rockhillslaver
-	name = JOB_ASSISTANT
+	name = JOB_ROCKHILL_SLAVER
 
 /obj/effect/landmark/start/rockhill/rookie
 	name = JOB_ROCKHILL_ROOKIE
@@ -202,7 +202,7 @@
 	name = JOB_ROCKHILL_TEMPLAR
 
 /obj/effect/landmark/start/rockhill/vagrant
-	name = JOB_ASSISTANT
+	name = JOB_ROCKHILL_LUNATIC
 
 /obj/effect/landmark/start/rockhill/vampireknight
 

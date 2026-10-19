@@ -1,0 +1,3742 @@
+# Attack intents. The id is the path after /datum/intent/; items list them with intents = id, id.
+# Fields: name, desc, strike_class, armor_type, damage_factor, penetration_factor, click_delay, stamina_cost, miss_cost, reach, charge_time, swing_delay, can_parry, can_dodge, no_attack
+
+[arc]
+name = intent
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[arc/bow]
+name = arc
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 1
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[arc/bow/short]
+name = arc
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0.75
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[arc/crossbow]
+name = arc
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 1
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[arc/crossbow/slurbow]
+name = arc
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 1
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[arc/firearm]
+name = arc
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 1
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[arc/sling]
+name = arc
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 1
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[attach]
+name = attach
+desc = Used to attach an entity to the hook for reeling. Must not be heavy, large, or anchored.
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = yes
+
+[axe]
+name = intent
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[axe/bash]
+name = bash
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 0.8
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 5
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[axe/chop]
+name = chop
+desc = 
+strike_class = chopping
+armor_type = slash
+damage_factor = 1
+penetration_factor = 35
+click_delay = 14
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 10
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[axe/chop/battle]
+name = chop
+desc = 
+strike_class = chopping
+armor_type = slash
+damage_factor = 1.2
+penetration_factor = 40
+click_delay = 14
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 10
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[axe/chop/battle/greataxe]
+name = chop
+desc = 
+strike_class = chopping
+armor_type = slash
+damage_factor = 1.2
+penetration_factor = 40
+click_delay = 14
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 10
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[axe/chop/long]
+name = chop
+desc = 
+strike_class = chopping
+armor_type = slash
+damage_factor = 1
+penetration_factor = 35
+click_delay = 14
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 10
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[axe/chop/stone]
+name = chop
+desc = 
+strike_class = chopping
+armor_type = slash
+damage_factor = 1
+penetration_factor = 5
+click_delay = 14
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 10
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[axe/cut]
+name = cut
+desc = 
+strike_class = slash
+armor_type = slash
+damage_factor = 1
+penetration_factor = 20
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[axe/cut/battle]
+name = cut
+desc = 
+strike_class = slash
+armor_type = slash
+damage_factor = 1
+penetration_factor = 25
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[axe/cut/battle/greataxe]
+name = cut
+desc = 
+strike_class = slash
+armor_type = slash
+damage_factor = 1
+penetration_factor = 25
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[axe/cut/battle/lunge]
+name = ćiupaga lunge
+desc = Grip your ćiupaga by the tail-end of the handle and swing in a circular motion to reach further ahead. It will deal extra damage if perfectly positioned, otherwise you'll just hit them with the handle.
+strike_class = chopping
+armor_type = slash
+damage_factor = 1.75
+penetration_factor = 42
+click_delay = 14
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 2
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[axe/cut/long]
+name = cut
+desc = 
+strike_class = slash
+armor_type = slash
+damage_factor = 1
+penetration_factor = 20
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[axe/sweep]
+name = sweeping cut
+desc = A heavy sweep that cuts through targets to the sides and front.
+strike_class = slash
+armor_type = slash
+damage_factor = 1.1
+penetration_factor = -100
+click_delay = 18
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[bless]
+name = bless
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = yes
+
+[cast]
+name = cast
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 0
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = yes
+
+[claw]
+name = intent
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[claw/cut]
+name = intent
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[claw/cut/gronn]
+name = cut
+desc = 
+strike_class = slash
+armor_type = slash
+damage_factor = 1.1
+penetration_factor = 30
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[claw/lunge]
+name = intent
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[claw/lunge/gronn]
+name = lunge
+desc = 
+strike_class = stabbing
+armor_type = blunt
+damage_factor = 1.1
+penetration_factor = 45
+click_delay = 10
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 5
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[claw/rend]
+name = rend
+desc = 
+strike_class = chopping
+armor_type = slash
+damage_factor = 2.5
+penetration_factor = -100
+click_delay = 16
+stamina_cost = 1
+miss_cost = 10
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[dagger]
+name = intent
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[dagger/chop]
+name = chop
+desc = 
+strike_class = chopping
+armor_type = slash
+damage_factor = 1.5
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 5
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[dagger/chop/bronze]
+name = wedged chop
+desc = 
+strike_class = chopping
+armor_type = slash
+damage_factor = 1.3
+penetration_factor = 15
+click_delay = 10
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 5
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[dagger/chop/cleaver]
+name = chop
+desc = 
+strike_class = chopping
+armor_type = slash
+damage_factor = 1.5
+penetration_factor = 30
+click_delay = 10
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 5
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[dagger/cut]
+name = cut
+desc = 
+strike_class = slash
+armor_type = slash
+damage_factor = 1
+penetration_factor = 0
+click_delay = 10
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[dagger/cut/heavy]
+name = heavy cut
+desc = 
+strike_class = slash
+armor_type = slash
+damage_factor = 1.2
+penetration_factor = 20
+click_delay = 11
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[dagger/cut/light]
+name = light cut
+desc = 
+strike_class = slash
+armor_type = slash
+damage_factor = 0.8
+penetration_factor = 0
+click_delay = 5
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[dagger/cut/rend]
+name = wicked slice
+desc = 
+strike_class = chopping
+armor_type = slash
+damage_factor = 2
+penetration_factor = -100
+click_delay = 14
+stamina_cost = 1
+miss_cost = 5
+reach = 1
+charge_time = 0
+swing_delay = 10
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[dagger/sucker_punch]
+name = unevadable punch
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 0.6
+penetration_factor = -100
+click_delay = 14
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = no
+can_dodge = no
+no_attack = no
+
+[dagger/thrust]
+name = thrust
+desc = 
+strike_class = stabbing
+armor_type = stab
+damage_factor = 1
+penetration_factor = 40
+click_delay = 8
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[dagger/thrust/bronze]
+name = piercing thrust
+desc = 
+strike_class = stab
+armor_type = stab
+damage_factor = 1.05
+penetration_factor = 55
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 6
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[dagger/thrust/combat]
+name = wedged thrust
+desc = 
+strike_class = stabbing
+armor_type = stab
+damage_factor = 0.9
+penetration_factor = 20
+click_delay = 8
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[dagger/thrust/fork]
+name = thrust
+desc = 
+strike_class = stabbing
+armor_type = stab
+damage_factor = 1
+penetration_factor = 20
+click_delay = 8
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[dagger/thrust/pick]
+name = icepick stab
+desc = 
+strike_class = stab
+armor_type = stab
+damage_factor = 1.1
+penetration_factor = 80
+click_delay = 14
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 12
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[dagger/thrust/pick/wood]
+name = icepick stab
+desc = 
+strike_class = blunt
+armor_type = stab
+damage_factor = 1.1
+penetration_factor = 35
+click_delay = 14
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 12
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[dagger/thrust/quick]
+name = quick thrust
+desc = 
+strike_class = stabbing
+armor_type = stab
+damage_factor = 1
+penetration_factor = 10
+click_delay = 4
+stamina_cost = 1
+miss_cost = 10
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[dagger/thrust/weak]
+name = lopsided thrust
+desc = 
+strike_class = stabbing
+armor_type = stab
+damage_factor = 0.8
+penetration_factor = 40
+click_delay = 8
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[dagger/thrust/wood]
+name = thrust
+desc = 
+strike_class = blunt
+armor_type = stab
+damage_factor = 1
+penetration_factor = 15
+click_delay = 8
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[effect]
+name = intent
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[effect/daze]
+name = dazing strike
+desc = 
+strike_class = effect
+armor_type = blunt
+damage_factor = 1
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 6
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[effect/daze/freisabre]
+name = uszkodzić
+desc = After a few misleading strikes, suddenly slash at your opponent's wrist to affect their speed and strength, preventing them from using their weapon effectively. This move can be parried, but not dodged.
+strike_class = slash
+armor_type = blunt
+damage_factor = 1.25
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 3
+can_parry = yes
+can_dodge = no
+no_attack = no
+
+[effect/daze/unarmed]
+name = dazing strike
+desc = 
+strike_class = effect
+armor_type = blunt
+damage_factor = 0.8
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 8
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[effect/hobble]
+name = hobbling strike
+desc = 
+strike_class = effect
+armor_type = blunt
+damage_factor = 0.8
+penetration_factor = -200
+click_delay = 16
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 6
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[fill]
+name = fill
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 0
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = no
+no_attack = no
+
+[flail]
+name = intent
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[flail/strike]
+name = strike
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[flail/strike/matthiosflail]
+name = strike
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1.3
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[flail/strikerange]
+name = ranged strike
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1.2
+penetration_factor = -100
+click_delay = 14
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[flail/sweep]
+name = sweeping strike
+desc = A charged sweep that smashes through targets to the front.
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1.5
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[flailthresh]
+name = thresh
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 0
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = no
+no_attack = yes
+
+[food]
+name = feed
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = yes
+
+[forge]
+name = forge
+desc = 
+strike_class = punch
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 0
+miss_cost = 0
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = no
+can_dodge = no
+no_attack = yes
+
+[garrote]
+name = intent
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[garrote/choke]
+name = choke
+desc = Used to begin choking the target out.
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = yes
+
+[garrote/grab]
+name = grab
+desc = Used to wrap around the target.
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = yes
+
+[grapple]
+name = grapple
+desc = Used to grapple onto an open, unobstructed tile.
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = yes
+
+[hit]
+name = hit
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[katar]
+name = intent
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[katar/cut]
+name = cut
+desc = 
+strike_class = slash
+armor_type = slash
+damage_factor = 1.3
+penetration_factor = 20
+click_delay = 8
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[katar/thrust]
+name = thrust
+desc = 
+strike_class = stabbing
+armor_type = stab
+damage_factor = 1
+penetration_factor = 25
+click_delay = 8
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[knuckles]
+name = intent
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[knuckles/smash]
+name = smash
+desc = 
+strike_class = smashing
+armor_type = blunt
+damage_factor = 1
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 8
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[knuckles/strike]
+name = punch
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = -100
+click_delay = 8
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[knuckles/strike/wallop]
+name = wallop
+desc = 
+strike_class = twist
+armor_type = blunt
+damage_factor = 1.1
+penetration_factor = -100
+click_delay = 8
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[lord_electrocute]
+name = electrocute
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[lord_silence]
+name = silence
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[lordbash]
+name = bash
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[mace]
+name = intent
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[mace/rangedthrust]
+name = thrust
+desc = 
+strike_class = stabbing
+armor_type = stab
+damage_factor = 0.9
+penetration_factor = 25
+click_delay = 14
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[mace/slap]
+name = slap
+desc = 
+strike_class = punch
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 1
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[mace/smash]
+name = smash
+desc = A powerful, charged up strike that deals normal damage but can throw a standing opponent back and slow them down, based on your strength. Ineffective below 10 strength. Slowdown & Knockback scales to your Strength up to 14 (1 - 4 tiles). Cannot be used consecutively more than every 5 seconds on the same target. Prone targets halve the knockback distance. Not fully charging the attack limits knockback to 1 tile.
+strike_class = smashing
+armor_type = blunt
+damage_factor = 1
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 5
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[mace/smash/eaglebeak]
+name = smash
+desc = A powerful, charged up strike that deals normal damage but can throw a standing opponent back and slow them down, based on your strength. Ineffective below 10 strength. Slowdown & Knockback scales to your Strength up to 14 (1 - 4 tiles). Cannot be used consecutively more than every 5 seconds on the same target. Prone targets halve the knockback distance. Not fully charging the attack limits knockback to 1 tile.
+strike_class = smashing
+armor_type = blunt
+damage_factor = 1
+penetration_factor = -100
+click_delay = 16
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 5
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[mace/smash/flail]
+name = flail smash
+desc = A powerful, charged up strike that deals normal damage but can throw a standing opponent back and slow them down, based on your strength. Ineffective below 10 strength. Slowdown & Knockback scales to your Strength up to 14 (1 - 4 tiles). Cannot be used consecutively more than every 5 seconds on the same target. Prone targets halve the knockback distance. Not fully charging the attack limits knockback to 1 tile.
+strike_class = smashing
+armor_type = blunt
+damage_factor = 1.4
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 5
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[mace/smash/flail/golgotha]
+name = flail smash
+desc = A powerful, charged up strike that deals normal damage but can throw a standing opponent back and slow them down, based on your strength. Ineffective below 10 strength. Slowdown & Knockback scales to your Strength up to 14 (1 - 4 tiles). Cannot be used consecutively more than every 5 seconds on the same target. Prone targets halve the knockback distance. Not fully charging the attack limits knockback to 1 tile.
+strike_class = smashing
+armor_type = blunt
+damage_factor = 1.4
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 5
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[mace/smash/flail/matthiosflail]
+name = flail smash
+desc = A powerful, charged up strike that deals normal damage but can throw a standing opponent back and slow them down, based on your strength. Ineffective below 10 strength. Slowdown & Knockback scales to your Strength up to 14 (1 - 4 tiles). Cannot be used consecutively more than every 5 seconds on the same target. Prone targets halve the knockback distance. Not fully charging the attack limits knockback to 1 tile.
+strike_class = smashing
+armor_type = blunt
+damage_factor = 1.6
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 5
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[mace/smash/flail/militia]
+name = flail smash
+desc = A powerful, charged up strike that deals normal damage but can throw a standing opponent back and slow them down, based on your strength. Ineffective below 10 strength. Slowdown & Knockback scales to your Strength up to 14 (1 - 4 tiles). Cannot be used consecutively more than every 5 seconds on the same target. Prone targets halve the knockback distance. Not fully charging the attack limits knockback to 1 tile.
+strike_class = smashing
+armor_type = blunt
+damage_factor = 0.9
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 5
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[mace/smash/flailrange]
+name = ranged smash
+desc = A powerful, charged up strike that deals normal damage but can throw a standing opponent back and slow them down, based on your strength. Ineffective below 10 strength. Slowdown & Knockback scales to your Strength up to 14 (1 - 4 tiles). Cannot be used consecutively more than every 5 seconds on the same target. Prone targets halve the knockback distance. Not fully charging the attack limits knockback to 1 tile.
+strike_class = smashing
+armor_type = blunt
+damage_factor = 1.5
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 5
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[mace/smash/goden]
+name = smash
+desc = A powerful, charged up strike that deals normal damage but can throw a standing opponent back and slow them down, based on your strength. Ineffective below 10 strength. Slowdown & Knockback scales to your Strength up to 14 (1 - 4 tiles). Cannot be used consecutively more than every 5 seconds on the same target. Prone targets halve the knockback distance. Not fully charging the attack limits knockback to 1 tile.
+strike_class = smashing
+armor_type = blunt
+damage_factor = 1
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 5
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[mace/smash/shield]
+name = smash
+desc = A powerful, charged up strike that deals normal damage but can throw a standing opponent back and slow them down, based on your strength. Ineffective below 10 strength. Slowdown & Knockback scales to your Strength up to 14 (1 - 4 tiles). Cannot be used consecutively more than every 5 seconds on the same target. Prone targets halve the knockback distance. Not fully charging the attack limits knockback to 1 tile.
+strike_class = smashing
+armor_type = blunt
+damage_factor = 1
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 5
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[mace/smash/shield/metal]
+name = smash
+desc = A powerful, charged up strike that deals normal damage but can throw a standing opponent back and slow them down, based on your strength. Ineffective below 10 strength. Slowdown & Knockback scales to your Strength up to 14 (1 - 4 tiles). Cannot be used consecutively more than every 5 seconds on the same target. Prone targets halve the knockback distance. Not fully charging the attack limits knockback to 1 tile.
+strike_class = smashing
+armor_type = blunt
+damage_factor = 1
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 5
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[mace/smash/wood]
+name = smash
+desc = A powerful, charged up strike that deals normal damage but can throw a standing opponent back and slow them down, based on your strength. Ineffective below 10 strength. Slowdown & Knockback scales to your Strength up to 14 (1 - 4 tiles). Cannot be used consecutively more than every 5 seconds on the same target. Prone targets halve the knockback distance. Not fully charging the attack limits knockback to 1 tile.
+strike_class = smashing
+armor_type = blunt
+damage_factor = 1
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 5
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[mace/smash/wood/ranged]
+name = smash
+desc = A powerful, charged up strike that deals normal damage but can throw a standing opponent back and slow them down, based on your strength. Ineffective below 10 strength. Slowdown & Knockback scales to your Strength up to 14 (1 - 4 tiles). Cannot be used consecutively more than every 5 seconds on the same target. Prone targets halve the knockback distance. Not fully charging the attack limits knockback to 1 tile.
+strike_class = smashing
+armor_type = blunt
+damage_factor = 1
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 5
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[mace/strike]
+name = strike
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1.1
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[mace/strike/goden]
+name = strike
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1.1
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[mace/strike/pan]
+name = strike
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1.1
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[mace/strike/shovel]
+name = strike
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1.1
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[mace/strike/wallop]
+name = wallop
+desc = 
+strike_class = twist
+armor_type = blunt
+damage_factor = 1.3
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[mace/strike/wood]
+name = strike
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1.1
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[mace/sweep]
+name = sweeping strike
+desc = A heavy sweep that smashes through targets to the sides and front.
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1.2
+penetration_factor = -100
+click_delay = 20
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[mace/warhammer]
+name = intent
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[mace/warhammer/pick]
+name = pick
+desc = 
+strike_class = stab
+armor_type = stab
+damage_factor = 0.9
+penetration_factor = 80
+click_delay = 15
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 15
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[mace/warhammer/pick/ranged]
+name = pick
+desc = 
+strike_class = stab
+armor_type = stab
+damage_factor = 0.8
+penetration_factor = 40
+click_delay = 16
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 15
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[mace/warhammer/stab]
+name = thrust
+desc = 
+strike_class = stabbing
+armor_type = stab
+damage_factor = 0.8
+penetration_factor = 20
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[maul]
+name = strike
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = -200
+click_delay = 16
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[maul/crush]
+name = crush
+desc = This can throw a standing opponent and slow them down. 5 second cooldown on consecutive targets. Prone targets halve the knockback distance. Not fully charging the attack limits knockback to 1 tile.
+strike_class = smashing
+armor_type = blunt
+damage_factor = 1.7
+penetration_factor = -200
+click_delay = 16
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 5
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[partizan]
+name = intent
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[partizan/peel]
+name = armor peel
+desc = 
+strike_class = peel
+armor_type = slash
+damage_factor = 0.01
+penetration_factor = -100
+click_delay = 14
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[pforkdump]
+name = scoop
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 0
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = no
+no_attack = yes
+
+[pick]
+name = pick
+desc = 
+strike_class = stab
+armor_type = stab
+damage_factor = 1
+penetration_factor = 80
+click_delay = 14
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 12
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[pick/bad]
+name = sluggish pick
+desc = 
+strike_class = stab
+armor_type = stab
+damage_factor = 1
+penetration_factor = 60
+click_delay = 16
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 16
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[pick/ranged]
+name = ranged pick
+desc = 
+strike_class = stab
+armor_type = stab
+damage_factor = 1.1
+penetration_factor = 60
+click_delay = 14
+stamina_cost = 4
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 12
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[pour]
+name = feed
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 0
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = no
+no_attack = no
+
+[priest_silence]
+name = silence
+desc = Sometimes desperate measures are required for intelligent conversation.
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[priest_smite]
+name = electrocute
+desc = Shock a target. Only works inside the Church.
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[reel]
+name = reel
+desc = Used to reel the attached entity to the grappled tile.
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = yes
+
+[rend]
+name = rend
+desc = Devastate exposed flesh. Barely damages armor, and ruins your weapon's sharpness.
+strike_class = chopping
+armor_type = slash
+damage_factor = 2.5
+penetration_factor = -100
+click_delay = 14
+stamina_cost = 1
+miss_cost = 10
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[rend/krieg]
+name = rend
+desc = Devastate exposed flesh. Barely damages armor, and ruins your weapon's sharpness.
+strike_class = chopping
+armor_type = slash
+damage_factor = 2.5
+penetration_factor = -100
+click_delay = 14
+stamina_cost = 1
+miss_cost = 10
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[rend/krieg/short]
+name = rend
+desc = Devastate exposed flesh. Barely damages armor, and ruins your weapon's sharpness.
+strike_class = chopping
+armor_type = slash
+damage_factor = 1.8
+penetration_factor = -100
+click_delay = 14
+stamina_cost = 1
+miss_cost = 10
+reach = 1
+charge_time = 0
+swing_delay = 2
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[rend/reach]
+name = long rend
+desc = Rip apart exposed flesh at range. Only effective at exactly two tiles.
+strike_class = chopping
+armor_type = slash
+damage_factor = 2
+penetration_factor = -100
+click_delay = 16
+stamina_cost = 1
+miss_cost = 5
+reach = 2
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[rend/reach/partizan]
+name = rending thrust
+desc = Impale exposed flesh. Useless against armor.
+strike_class = stabbing
+armor_type = stab
+damage_factor = 1.8
+penetration_factor = -100
+click_delay = 16
+stamina_cost = 1
+miss_cost = 5
+reach = 2
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[shield]
+name = intent
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[shield/bash]
+name = bash
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[shield/bash/metal]
+name = bash
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[shield/block]
+name = block
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 1
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[shoot]
+name = intent
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[shoot/bow]
+name = shoot
+desc = 
+strike_class = blunt
+armor_type = stab
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 1
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[shoot/bow/short]
+name = shoot
+desc = 
+strike_class = blunt
+armor_type = stab
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0.75
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[shoot/crossbow]
+name = shoot
+desc = 
+strike_class = blunt
+armor_type = stab
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0.1
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[shoot/crossbow/slurbow]
+name = shoot
+desc = 
+strike_class = blunt
+armor_type = stab
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0.1
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[shoot/firearm]
+name = shoot
+desc = 
+strike_class = blunt
+armor_type = stab
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0.1
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[shovelscoop]
+name = scoop
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 0
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = no
+no_attack = yes
+
+[smelt]
+name = smelt
+desc = 
+strike_class = punch
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 0
+miss_cost = 0
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = no
+can_dodge = no
+no_attack = yes
+
+[snip]
+name = snip
+desc = 
+strike_class = punch
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 0
+miss_cost = 0
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = no
+can_dodge = no
+no_attack = yes
+
+[spear]
+name = intent
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[spear/bash]
+name = bash
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 0.8
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[spear/bash/eaglebeak]
+name = lucerne bash
+desc = Smash someone over the head. Effective at two tiles.
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[spear/bash/ranged]
+name = bash
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 0.8
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[spear/bash/ranged/quarterstaff]
+name = bash
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[spear/cast]
+name = cast
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 0
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = yes
+
+[spear/cut]
+name = cut
+desc = Poorly hack at someone with your speartip. Works at two-tile range without penalty.
+strike_class = slash
+armor_type = slash
+damage_factor = 0.8
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[spear/cut/bardiche]
+name = cut
+desc = Poorly hack at someone with your speartip. Works at two-tile range without penalty.
+strike_class = slash
+armor_type = slash
+damage_factor = 0.8
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[spear/cut/bardiche/cleave]
+name = cleaving cut
+desc = A cleave that cuts through a second target behind the first.
+strike_class = slash
+armor_type = slash
+damage_factor = 1
+penetration_factor = 0
+click_delay = 18
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[spear/cut/glaive]
+name = cut
+desc = Poorly hack at someone with your speartip. Works at two-tile range without penalty.
+strike_class = slash
+armor_type = slash
+damage_factor = 1.2
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[spear/cut/glaive/sweep]
+name = sweeping cut
+desc = A sweep that cuts through targets to the front.
+strike_class = slash
+armor_type = slash
+damage_factor = 1.2
+penetration_factor = 0
+click_delay = 20
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[spear/cut/halberd]
+name = cut
+desc = Use the awe-inspiring power of a combined sharp thing and pointy thing to cut someone. Two tile range. Hurts more than a normal cut.
+strike_class = slash
+armor_type = slash
+damage_factor = 1.2
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[spear/cut/naginata]
+name = cut
+desc = Poorly hack at someone with your speartip. Works at two-tile range without penalty.
+strike_class = slash
+armor_type = slash
+damage_factor = 1.2
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[spear/cut/naginata/sweep]
+name = sweeping cut
+desc = A sweep that cuts through targets to the front.
+strike_class = slash
+armor_type = slash
+damage_factor = 1.2
+penetration_factor = 0
+click_delay = 20
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[spear/cut/oneh]
+name = one-handed cut
+desc = Poorly hack at someone with your speartip. Works at two-tile range without penalty.
+strike_class = slash
+armor_type = slash
+damage_factor = 0.8
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 4
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[spear/cut/scythe]
+name = cut
+desc = Reap. Effective at two tiles or above.
+strike_class = slash
+armor_type = slash
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 3
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[spear/thrust]
+name = thrust
+desc = Stab someone. Must be at a range of two tiles to penetrate properly.
+strike_class = stabbing
+armor_type = stab
+damage_factor = 1
+penetration_factor = 50
+click_delay = 14
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[spear/thrust/blunted]
+name = thrust
+desc = Stab someone. Must be at a range of two tiles to penetrate properly.
+strike_class = stabbing
+armor_type = stab
+damage_factor = 1
+penetration_factor = -100
+click_delay = 14
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[spear/thrust/eaglebeak]
+name = thrust
+desc = Stab someone. Must be at a range of two tiles to penetrate properly.
+strike_class = stabbing
+armor_type = stab
+damage_factor = 0.9
+penetration_factor = 20
+click_delay = 14
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[spear/thrust/eaglebeak/oneh]
+name = one-handed thrust
+desc = Stab someone. Must be at a range of two tiles to penetrate properly.
+strike_class = stabbing
+armor_type = stab
+damage_factor = 0.9
+penetration_factor = 20
+click_delay = 20
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 4
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[spear/thrust/glaive]
+name = thrust
+desc = Stab someone. Must be at a range of two tiles to penetrate properly.
+strike_class = stabbing
+armor_type = stab
+damage_factor = 1.1
+penetration_factor = 50
+click_delay = 14
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[spear/thrust/oneh]
+name = one-handed thrust
+desc = Stab a target. With only one hand, you aren't using the spear to its full power.
+strike_class = stabbing
+armor_type = stab
+damage_factor = 1
+penetration_factor = 45
+click_delay = 20
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 4
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[spear/thrust/quarterstaff]
+name = thrust
+desc = Stab someone. Must be at a range of two tiles to penetrate properly.
+strike_class = blunt
+armor_type = stab
+damage_factor = 1.3
+penetration_factor = -100
+click_delay = 14
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[special]
+name = intent
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[special/magicarc]
+name = Magic Arcing
+desc = With this intent active, certain spells will fire in an arc (Over anyone in between) toward the target
+strike_class = blunt
+armor_type = blunt
+damage_factor = 0
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[splash]
+name = splash
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 0
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = no
+no_attack = no
+
+[stab]
+name = stab
+desc = 
+strike_class = stabbing
+armor_type = stab
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[stab/militia]
+name = militia stab
+desc = 
+strike_class = stabbing
+armor_type = stab
+damage_factor = 1.1
+penetration_factor = 50
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[swing]
+name = intent
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[swing/sling]
+name = swing
+desc = 
+strike_class = blunt
+armor_type = stab
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 1
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword]
+name = intent
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/bash]
+name = crossguard bash
+desc = Smash someone with the crossguard of your sword.
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1.1
+penetration_factor = -100
+click_delay = 15
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 2
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/chop]
+name = chop
+desc = 
+strike_class = chopping
+armor_type = slash
+damage_factor = 1.15
+penetration_factor = 40
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 8
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/chop/falx]
+name = chop
+desc = 
+strike_class = chopping
+armor_type = slash
+damage_factor = 1.15
+penetration_factor = 40
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 8
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/chop/heavy]
+name = chop
+desc = 
+strike_class = chopping
+armor_type = slash
+damage_factor = 1.3
+penetration_factor = 50
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 10
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/chop/long]
+name = chop
+desc = 
+strike_class = chopping
+armor_type = slash
+damage_factor = 1.2
+penetration_factor = 40
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 8
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/chop/militia]
+name = chop
+desc = 
+strike_class = chopping
+armor_type = slash
+damage_factor = 1
+penetration_factor = 50
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0.5
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/cut]
+name = strike
+desc = 
+strike_class = slash
+armor_type = slash
+damage_factor = 1.1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/cut/arming]
+name = strike
+desc = 
+strike_class = slash
+armor_type = slash
+damage_factor = 1.2
+penetration_factor = 0
+click_delay = 10
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/cut/exe]
+name = strike
+desc = 
+strike_class = slash
+armor_type = slash
+damage_factor = 1.1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/cut/exe/cleave]
+name = cleaving cut
+desc = A heavy cleave that cuts through a second target behind the first.
+strike_class = slash
+armor_type = slash
+damage_factor = 1.2
+penetration_factor = 0
+click_delay = 18
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/cut/exe/sweep]
+name = sweeping cut
+desc = A heavy sweep that cuts through targets to the front.
+strike_class = slash
+armor_type = slash
+damage_factor = 1.2
+penetration_factor = 0
+click_delay = 20
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/cut/falx]
+name = strike
+desc = 
+strike_class = slash
+armor_type = slash
+damage_factor = 1.1
+penetration_factor = 20
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/cut/krieg]
+name = strike
+desc = 
+strike_class = slash
+armor_type = slash
+damage_factor = 1.2
+penetration_factor = 0
+click_delay = 10
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/cut/light]
+name = strike
+desc = 
+strike_class = slash
+armor_type = slash
+damage_factor = 0.9
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/cut/rapier]
+name = strike
+desc = 
+strike_class = slash
+armor_type = slash
+damage_factor = 0.75
+penetration_factor = 0
+click_delay = 10
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/cut/sabre]
+name = strike
+desc = 
+strike_class = slash
+armor_type = slash
+damage_factor = 1.25
+penetration_factor = 10
+click_delay = 8
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/cut/sabre/master]
+name = pokrajać
+desc = Perform a masterful wide-arc cut that's strong enough to penetrate light armour.
+strike_class = slash
+armor_type = slash
+damage_factor = 1.25
+penetration_factor = 55
+click_delay = 7
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/cut/short]
+name = strike
+desc = 
+strike_class = slash
+armor_type = slash
+damage_factor = 1
+penetration_factor = 0
+click_delay = 9
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/cut/zwei]
+name = strike
+desc = It's like cutting, but your sword is huge.
+strike_class = slash
+armor_type = slash
+damage_factor = 1.1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/cut/zwei/cleave]
+name = rending cleave
+desc = A vicious cut that rends through a second target behind the first. Does enormous damage, but nothing to armor.
+strike_class = slash
+armor_type = slash
+damage_factor = 2.5
+penetration_factor = -100
+click_delay = 16
+stamina_cost = 1
+miss_cost = 10
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/cut/zwei/sweep]
+name = sweeping cut
+desc = A heavy sweep that cuts through targets to the front.
+strike_class = slash
+armor_type = slash
+damage_factor = 1.1
+penetration_factor = 0
+click_delay = 18
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/disarm]
+name = disarm
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 0.1
+penetration_factor = -100
+click_delay = 22
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 2
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/lunge]
+name = intent
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/lunge/estoc]
+name = lunge
+desc = Stab at range. You'll rip through leather, but not metal.
+strike_class = stabbing
+armor_type = blunt
+damage_factor = 1.2
+penetration_factor = 37
+click_delay = 14
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/peel]
+name = armor peel
+desc = 
+strike_class = peel
+armor_type = slash
+damage_factor = 0.01
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/peel/big]
+name = big sword armor peel
+desc = 
+strike_class = peel
+armor_type = slash
+damage_factor = 0.01
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/peel/weak]
+name = weak armor peel
+desc = 
+strike_class = peel
+armor_type = slash
+damage_factor = 0.01
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/strike]
+name = pommel strike
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 0.8
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/strike/bad]
+name = pommel strike
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 0.7
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/thrust]
+name = stab
+desc = 
+strike_class = stabbing
+armor_type = stab
+damage_factor = 1
+penetration_factor = 20
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/thrust/arming]
+name = stab
+desc = 
+strike_class = stabbing
+armor_type = stab
+damage_factor = 1
+penetration_factor = 35
+click_delay = 10
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/thrust/blunt]
+name = stab
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/thrust/estoc]
+name = thrust
+desc = Stab precisely. You'll penetrate anything that isn't made of blacksteel like this.
+strike_class = stabbing
+armor_type = stab
+damage_factor = 1
+penetration_factor = 57
+click_delay = 14
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/thrust/exe]
+name = stab
+desc = 
+strike_class = stabbing
+armor_type = stab
+damage_factor = 1
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 4
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/thrust/heavy]
+name = heavy thrust
+desc = 
+strike_class = stabbing
+armor_type = stab
+damage_factor = 1.3
+penetration_factor = 50
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/thrust/krieg]
+name = stab
+desc = 
+strike_class = stabbing
+armor_type = stab
+damage_factor = 0.8
+penetration_factor = 20
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/thrust/long]
+name = stab
+desc = 
+strike_class = stabbing
+armor_type = stab
+damage_factor = 1
+penetration_factor = 30
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/thrust/long/halfsword]
+name = stab
+desc = 
+strike_class = stabbing
+armor_type = stab
+damage_factor = 1
+penetration_factor = 30
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/thrust/long/halfsword/lesser]
+name = halbschwert
+desc = Grip the dull portion of your longsword with either hand and use it as leverage to deliver precise, powerful strikes that can dig into gaps in plate and push past maille.
+strike_class = stab
+armor_type = stab
+damage_factor = 0.9
+penetration_factor = 80
+click_delay = 22
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 16
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/thrust/rapier]
+name = stab
+desc = 
+strike_class = stabbing
+armor_type = stab
+damage_factor = 1.1
+penetration_factor = 30
+click_delay = 8
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/thrust/sabre]
+name = stab
+desc = 
+strike_class = stabbing
+armor_type = stab
+damage_factor = 0.9
+penetration_factor = 20
+click_delay = 9
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/thrust/short]
+name = stab
+desc = 
+strike_class = stabbing
+armor_type = stab
+damage_factor = 1.1
+penetration_factor = 30
+click_delay = 8
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[sword/thrust/zwei]
+name = stab
+desc = Stab, but with range.
+strike_class = stabbing
+armor_type = stab
+damage_factor = 1
+penetration_factor = 20
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[tie]
+name = tie
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 0
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = no
+can_dodge = no
+no_attack = no
+
+[till]
+name = hoe
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 0
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = no
+no_attack = no
+
+[use]
+name = use
+desc = 
+strike_class = punch
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 0
+miss_cost = 0
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = no
+can_dodge = no
+no_attack = yes
+
+[use/flaregun]
+name = aim
+desc = 
+strike_class = punch
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 0
+miss_cost = 0
+reach = 1
+charge_time = 8
+swing_delay = 0
+can_parry = no
+can_dodge = no
+no_attack = yes
+
+[whip]
+name = intent
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[whip/belt]
+name = intent
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[whip/belt/buckle]
+name = buckle strike
+desc = 
+strike_class = blunt
+armor_type = slash
+damage_factor = 1
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[whip/belt/tip]
+name = belt lash
+desc = 
+strike_class = blunt
+armor_type = slash
+damage_factor = 0.5
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[whip/crack]
+name = crack
+desc = 
+strike_class = slash
+armor_type = slash
+damage_factor = 1.1
+penetration_factor = 20
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[whip/crack/blunt]
+name = bludgen
+desc = 
+strike_class = blunt
+armor_type = blunt
+damage_factor = 1.1
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 2
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[whip/lash]
+name = lash
+desc = 
+strike_class = lashing
+armor_type = slash
+damage_factor = 1
+penetration_factor = 30
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 3
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[whip/lash/holy]
+name = holy lash
+desc = 
+strike_class = slash
+armor_type = slash
+damage_factor = 1
+penetration_factor = 30
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 3
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[whip/punish]
+name = punish
+desc = 
+strike_class = punish
+armor_type = slash
+damage_factor = 1.2
+penetration_factor = -100
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 0
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no
+
+[whips]
+name = strike
+desc = 
+strike_class = blunt
+armor_type = slash
+damage_factor = 1
+penetration_factor = 0
+click_delay = 12
+stamina_cost = 1
+miss_cost = 1
+reach = 1
+charge_time = 5
+swing_delay = 0
+can_parry = yes
+can_dodge = yes
+no_attack = no

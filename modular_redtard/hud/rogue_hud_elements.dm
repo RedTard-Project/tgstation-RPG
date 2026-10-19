@@ -86,10 +86,11 @@
 		user.emote("surrender")
 		return
 	if(LAZYACCESS(modifiers, MIDDLE_CLICK))
-		rogue_hud_not_implemented(user)
+		user.playsound_local(user, 'sound/machines/click.ogg', 50, FALSE)
+		user.rogue_toggle_compliance()
 		return
 	if(LAZYACCESS(modifiers, SHIFT_CLICK))
-		to_chat(user, span_info("* --- *<br>Combat mode button.<br><b>Left click:</b> toggles combat mode.<br><b>Right click:</b> surrender.<br><b>Middle click:</b> compliance mode, [ROGUE_HUD_STUB_TEXT]."))
+		to_chat(user, span_info("* --- *<br>Combat mode button.<br><b>Left click:</b> toggles combat mode.<br><b>Right click:</b> surrender.<br><b>Middle click:</b> toggles compliance mode, removing your defense against grapples and tackles."))
 		return
 	return ..()
 
@@ -364,7 +365,7 @@
 	if(!isliving(user) || user != get_mob())
 		return
 	if(!user.get_active_held_item())
-		rogue_hud_not_implemented(user)
+		user.rogue_take_offered()
 		return
 	user.give()
 	update_appearance(UPDATE_ICON_STATE)
@@ -465,12 +466,31 @@
 
 /atom/movable/screen/rogue/eye/Initialize(mapload, datum/hud/hud_owner)
 	. = ..()
-	update_appearance(UPDATE_OVERLAYS)
+	var/mob/owner = hud_owner?.mymob
+	if(owner)
+		RegisterSignal(owner, COMSIG_MOB_ROGUE_EYE_CHANGED, PROC_REF(refresh))
+	update_appearance()
+
+/atom/movable/screen/rogue/eye/proc/refresh()
+	SIGNAL_HANDLER
+	update_appearance()
+
+/atom/movable/screen/rogue/eye/update_icon_state()
+	var/mob/living/owner = get_mob()
+	if(!isliving(owner))
+		icon_state = "eye"
+	else if(owner.rogue_eyes_closed)
+		icon_state = "eye_closed"
+	else if(owner.rogue_fixed_eye)
+		icon_state = "eye_fixed"
+	else
+		icon_state = "eye"
+	return ..()
 
 /atom/movable/screen/rogue/eye/update_overlays()
 	. = ..()
 	var/mob/living/carbon/human/owner = get_mob()
-	if(!istype(owner))
+	if(!istype(owner) || owner.rogue_eyes_closed)
 		return
 	var/mutable_appearance/iris = mutable_appearance(icon, "o[icon_state]")
 	iris.color = owner.eye_color_left
@@ -481,13 +501,25 @@
 	var/mob/living/user = usr
 	if(!isliving(user) || user != get_mob())
 		return
-	if(!LAZYACCESS(params2list(params), MIDDLE_CLICK))
-		rogue_hud_not_implemented(user)
+	var/list/modifiers = params2list(params)
+	user.playsound_local(user, 'sound/machines/click.ogg', 50, FALSE)
+	var/was_closed = user.rogue_eyes_closed
+	user.rogue_set_eyes_closed(FALSE)
+	if(LAZYACCESS(modifiers, MIDDLE_CLICK))
+		if(user.looking_vertically == UP)
+			user.end_look()
+		else
+			user.look_up()
 		return
-	if(user.looking_vertically == UP)
-		user.end_look()
-	else
-		user.look_up()
+	if(LAZYACCESS(modifiers, RIGHT_CLICK))
+		INVOKE_ASYNC(user, TYPE_PROC_REF(/mob/living, rogue_look_around))
+		return
+	var/icon_y = text2num(LAZYACCESS(modifiers, ICON_Y))
+	if(icon_y >= ROGUE_EYELID_TOP || icon_y <= ROGUE_EYELID_BOTTOM)
+		if(!was_closed)
+			user.rogue_set_eyes_closed(TRUE)
+		return
+	user.rogue_toggle_fixed_eye()
 
 /atom/movable/screen/rogue/clickdelay
 	name = "click delay"

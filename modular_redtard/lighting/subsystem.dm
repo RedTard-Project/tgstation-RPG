@@ -1,4 +1,7 @@
 GLOBAL_DATUM_INIT(rogue_light_sentinel, /datum/rogue_light_sentinel, new)
+GLOBAL_LIST_INIT(rogue_light_quarter_states, list("ne", "nw", "se", "sw"))
+GLOBAL_LIST_INIT(rogue_light_quarter_holders, list(list(0, 0, ROGUE_LIGHT_QUARTER_NE), list(1, 0, ROGUE_LIGHT_QUARTER_NW), list(0, 1, ROGUE_LIGHT_QUARTER_SE), list(1, 1, ROGUE_LIGHT_QUARTER_SW)))
+GLOBAL_LIST_INIT(rogue_light_quarter_reapply, list(WEST, SOUTH, SOUTHWEST))
 
 SUBSYSTEM_DEF(rogue_light)
 	name = "Rogue Lighting"
@@ -24,6 +27,8 @@ SUBSYSTEM_DEF(rogue_light)
 	var/list/pending = list()
 	var/list/tents = list()
 	var/list/tents_by_z = list()
+	var/list/quarters = list()
+	var/list/quarters_by_z = list()
 	var/list/templates = list()
 	var/list/source_by_id = list()
 	var/list/free_ids = list()
@@ -73,21 +78,21 @@ SUBSYSTEM_DEF(rogue_light)
 	if(!rogue_light_map_enabled())
 		return
 	var/requested = lowertext(CONFIG_GET(string/rogue_lighting_carrier))
-	if(requested in list(ROGUE_LIGHT_CARRIER_OBJECT, ROGUE_LIGHT_CARRIER_UNDERLAY, ROGUE_LIGHT_CARRIER_TENT))
+	if(requested in list(ROGUE_LIGHT_CARRIER_OBJECT, ROGUE_LIGHT_CARRIER_UNDERLAY, ROGUE_LIGHT_CARRIER_TENT, ROGUE_LIGHT_CARRIER_QUARTER))
 		carrier_mode = requested
 	else
 		log_config("Unknown ROGUE_LIGHTING_CARRIER [requested], using [ROGUE_LIGHT_CARRIER_OBJECT].")
 	want_native = lowertext(CONFIG_GET(string/rogue_lighting_backend)) == ROGUE_LIGHT_BACKEND_NATIVE
-	if(carrier_mode == ROGUE_LIGHT_CARRIER_TENT && !want_native)
-		log_config("ROGUE_LIGHTING_CARRIER tent needs ROGUE_LIGHTING_BACKEND native, using [ROGUE_LIGHT_CARRIER_OBJECT].")
+	if(rogue_light_shared_carrier(carrier_mode) && !want_native)
+		log_config("ROGUE_LIGHTING_CARRIER [carrier_mode] needs ROGUE_LIGHTING_BACKEND native, using [ROGUE_LIGHT_CARRIER_OBJECT].")
 		carrier_mode = ROGUE_LIGHT_CARRIER_OBJECT
 
 /datum/controller/subsystem/rogue_light/proc/configure()
 	resolve_modes()
 	if(want_native)
 		native = start_native(TRUE)
-	if(!native && carrier_mode == ROGUE_LIGHT_CARRIER_TENT)
-		log_world("Rogue lighting: tents need the library, falling back to [ROGUE_LIGHT_CARRIER_OBJECT].")
+	if(!native && rogue_light_shared_carrier(carrier_mode))
+		log_world("Rogue lighting: [carrier_mode] needs the library, falling back to [ROGUE_LIGHT_CARRIER_OBJECT].")
 		for(var/turf/lit as anything in static_turfs())
 			if(lit.lighting_object == GLOB.rogue_light_sentinel)
 				lit.lighting_object = null
@@ -101,10 +106,10 @@ SUBSYSTEM_DEF(rogue_light)
 /datum/controller/subsystem/rogue_light/proc/uses_tents()
 	if(!modes_resolved)
 		resolve_modes()
-	return carrier_mode == ROGUE_LIGHT_CARRIER_TENT
+	return rogue_light_shared_carrier(carrier_mode)
 
 /datum/controller/subsystem/rogue_light/proc/output_mode()
-	return carrier_mode == ROGUE_LIGHT_CARRIER_TENT ? ROGUE_LIGHT_MODE_TENTS : ROGUE_LIGHT_MODE_LOOKS
+	return rogue_light_shared_carrier(carrier_mode) ? ROGUE_LIGHT_MODE_TENTS : ROGUE_LIGHT_MODE_LOOKS
 
 /datum/controller/subsystem/rogue_light/proc/light_template(z)
 	if(length(templates) < z)
@@ -225,8 +230,15 @@ SUBSYSTEM_DEF(rogue_light)
 	INVOKE_ASYNC(src, PROC_REF(set_backend), native_failures >= 3 ? ROGUE_LIGHT_BACKEND_DM : ROGUE_LIGHT_BACKEND_NATIVE)
 
 /datum/controller/subsystem/rogue_light/proc/turf_changed(turf/target, reapply = FALSE)
-	if(native_ready && !rebuilding)
-		pending.Add(ROGUE_LIGHT_CMD_TURF, target.x, target.y, target.z, rogue_light_turf_flags(target) | (reapply ? ROGUE_LIGHT_TURF_REAPPLY : NONE))
+	if(!native_ready || rebuilding)
+		return
+	pending.Add(ROGUE_LIGHT_CMD_TURF, target.x, target.y, target.z, rogue_light_turf_flags(target) | (reapply ? ROGUE_LIGHT_TURF_REAPPLY : NONE))
+	if(!reapply || carrier_mode != ROGUE_LIGHT_CARRIER_QUARTER)
+		return
+	for(var/direction in GLOB.rogue_light_quarter_reapply)
+		var/turf/neighbour = get_step(target, direction)
+		if(neighbour)
+			pending.Add(ROGUE_LIGHT_CMD_TURF, neighbour.x, neighbour.y, neighbour.z, rogue_light_turf_flags(neighbour) | ROGUE_LIGHT_TURF_REAPPLY)
 
 /datum/controller/subsystem/rogue_light/proc/turf_lum(turf/target)
 	if(!native_ready)
@@ -279,9 +291,13 @@ SUBSYSTEM_DEF(rogue_light)
 			return TRUE
 		var/index = 1
 		var/applied = 0
+		var/quartered = carrier_mode == ROGUE_LIGHT_CARRIER_QUARTER
 		while(index <= batch_length)
 			var/record = batch[index]
-			if(record == ROGUE_LIGHT_RECORD_TENT && index + ROGUE_LIGHT_TENT_SIZE - 1 <= batch_length)
+			if(quartered && record == ROGUE_LIGHT_RECORD_TENT && index + ROGUE_LIGHT_TENT_SIZE - 1 <= batch_length)
+				apply_quarters(batch[index + 1], batch[index + 2], batch[index + 3], batch[index + 4], batch[index + 5])
+				index += ROGUE_LIGHT_TENT_SIZE
+			else if(record == ROGUE_LIGHT_RECORD_TENT && index + ROGUE_LIGHT_TENT_SIZE - 1 <= batch_length)
 				var/turf/owner = locate(batch[index + 1], batch[index + 2], batch[index + 3])
 				if(owner)
 					var/owner_z = owner.z
@@ -313,6 +329,47 @@ SUBSYSTEM_DEF(rogue_light)
 		else if(MC_TICK_CHECK)
 			return FALSE
 	return TRUE
+
+/datum/controller/subsystem/rogue_light/proc/apply_quarters(corner_x, corner_y, z, old_id, new_id)
+	var/list/by_corner = z <= length(quarters_by_z) ? quarters_by_z[z] : null
+	if(!by_corner)
+		by_corner = quarters_for_z(z)
+	for(var/list/holder_offset as anything in GLOB.rogue_light_quarter_holders)
+		var/turf/holder = locate(corner_x + holder_offset[1], corner_y + holder_offset[2], z)
+		if(!holder)
+			continue
+		var/corner = holder_offset[3]
+		var/list/by_id = by_corner[corner]
+		if(old_id)
+			var/shown = by_id[old_id]
+			if(shown)
+				holder.vis_contents -= shown
+		if(!new_id)
+			continue
+		var/next = by_id[new_id]
+		if(!next)
+			next = new /atom/movable/rogue_light_tent/quarter(null, new_id, SSmapping.max_plane_offset ? GET_Z_PLANE_OFFSET(z) : 0, corner)
+			by_id[new_id] = next
+			tent_count++
+		if(old_id)
+			holder.vis_contents += next
+		else
+			holder.vis_contents |= next
+
+/datum/controller/subsystem/rogue_light/proc/quarters_for_z(z)
+	var/offset = SSmapping.max_plane_offset ? GET_Z_PLANE_OFFSET(z) : 0
+	if(length(quarters) <= offset)
+		quarters.len = offset + 1
+	var/list/by_corner = quarters[offset + 1]
+	if(!by_corner)
+		by_corner = list()
+		for(var/corner in 1 to length(GLOB.rogue_light_quarter_states))
+			by_corner += list(new /list(ROGUE_LIGHT_TENT_MAX))
+		quarters[offset + 1] = by_corner
+	if(length(quarters_by_z) < z)
+		quarters_by_z.len = z
+	quarters_by_z[z] = by_corner
+	return by_corner
 
 /datum/controller/subsystem/rogue_light/proc/tents_for_z(z)
 	var/offset = SSmapping.max_plane_offset ? GET_Z_PLANE_OFFSET(z) : 0
@@ -351,11 +408,11 @@ SUBSYSTEM_DEF(rogue_light)
 /datum/controller/subsystem/rogue_light/proc/set_carrier_mode(new_mode)
 	if(new_mode == carrier_mode)
 		return
-	if(new_mode == ROGUE_LIGHT_CARRIER_TENT && !native_ready)
-		message_admins("Rogue lighting: tents need the native backend.")
+	if(rogue_light_shared_carrier(new_mode) && !native_ready)
+		message_admins("Rogue lighting: [new_mode] needs the native backend.")
 		return
 	var/list/turfs = static_turfs()
-	if(carrier_mode == ROGUE_LIGHT_CARRIER_TENT)
+	if(rogue_light_shared_carrier(carrier_mode))
 		clear_tents()
 	rebuilding = TRUE
 	for(var/turf/lit as anything in turfs)
@@ -371,7 +428,11 @@ SUBSYSTEM_DEF(rogue_light)
 		pending.Add(ROGUE_LIGHT_CMD_MODE, output_mode(), ROGUE_LIGHT_CMD_RESEND)
 
 /datum/controller/subsystem/rogue_light/proc/clear_tents()
-	for(var/list/by_id as anything in tents)
+	var/list/piece_lists = tents.Copy()
+	for(var/list/by_corner as anything in quarters)
+		if(by_corner)
+			piece_lists += by_corner
+	for(var/list/by_id as anything in piece_lists)
 		if(!by_id)
 			continue
 		for(var/index in 1 to length(by_id))
@@ -383,7 +444,7 @@ SUBSYSTEM_DEF(rogue_light)
 				CHECK_TICK
 
 /datum/controller/subsystem/rogue_light/proc/set_backend(new_backend)
-	if(carrier_mode == ROGUE_LIGHT_CARRIER_TENT)
+	if(rogue_light_shared_carrier(carrier_mode))
 		clear_tents()
 		if(new_backend != ROGUE_LIGHT_BACKEND_NATIVE)
 			set_carrier_mode(ROGUE_LIGHT_CARRIER_OBJECT)
@@ -404,16 +465,19 @@ SUBSYSTEM_DEF(rogue_light)
 		native = start_native(FALSE)
 		if(!native)
 			message_admins("Rogue lighting: the native backend did not start, DM lighting stays in charge.")
-			if(carrier_mode == ROGUE_LIGHT_CARRIER_TENT)
+			if(rogue_light_shared_carrier(carrier_mode))
 				set_carrier_mode(ROGUE_LIGHT_CARRIER_OBJECT)
 	if(native)
 		native_failures = 0
-		if(carrier_mode == ROGUE_LIGHT_CARRIER_TENT)
+		if(rogue_light_shared_carrier(carrier_mode))
 			pending.Add(ROGUE_LIGHT_CMD_RESEND)
 	can_fire = TRUE
 	for(var/datum/light_source/light as anything in lights)
 		if(!QDELETED(light))
 			light.force_update()
+
+/proc/rogue_light_shared_carrier(mode)
+	return mode == ROGUE_LIGHT_CARRIER_TENT || mode == ROGUE_LIGHT_CARRIER_QUARTER
 
 /proc/rogue_light_map_enabled()
 	return SSmapping.current_map?.map_era == MAP_ERA_MEDIEVAL
@@ -446,6 +510,7 @@ ADMIN_VERB(rogue_lighting_panel, R_DEBUG, "Rogue Lighting", "Switch the lighting
 		"Carrier: [ROGUE_LIGHT_CARRIER_OBJECT]" = list(ROGUE_LIGHT_CARRIER_OBJECT, null),
 		"Carrier: [ROGUE_LIGHT_CARRIER_UNDERLAY]" = list(ROGUE_LIGHT_CARRIER_UNDERLAY, null),
 		"Carrier: [ROGUE_LIGHT_CARRIER_TENT]" = list(ROGUE_LIGHT_CARRIER_TENT, null),
+		"Carrier: [ROGUE_LIGHT_CARRIER_QUARTER]" = list(ROGUE_LIGHT_CARRIER_QUARTER, null),
 		"Backend: [ROGUE_LIGHT_BACKEND_DM]" = list(null, ROGUE_LIGHT_BACKEND_DM),
 		"Backend: [ROGUE_LIGHT_BACKEND_NATIVE]" = list(null, ROGUE_LIGHT_BACKEND_NATIVE),
 	)

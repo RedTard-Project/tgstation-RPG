@@ -10,6 +10,7 @@
 	desc = "A soft warm bed complete with sheets and pillows."
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/beds.dmi'
 	icon_state = "bed"
+	sleepy = 3
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/bed/rockhill/rogue/bedroll
@@ -17,6 +18,7 @@
 	desc = "So you can sleep on the ground in relative peace."
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/beds.dmi'
 	icon_state = "bedroll"
+	sleepy = 2
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/bed/rockhill/rogue/inn
@@ -24,6 +26,7 @@
 	desc = "A soft warm bed complete with sheets and pillows."
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/beds.dmi'
 	icon_state = "inn_bed"
+	sleepy = 3
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/bed/rockhill/rogue/inn/double
@@ -32,6 +35,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/beds.dmi'
 	icon_state = "double"
 	pixel_y = 0
+	sleepy = 3
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/bed/rockhill/rogue/inn/hay
@@ -39,6 +43,7 @@
 	desc = "A soft warm bed complete with sheets and pillows."
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/beds.dmi'
 	icon_state = "haybed"
+	sleepy = 3
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/bed/rockhill/rogue/inn/wool
@@ -46,6 +51,7 @@
 	desc = "A soft warm bed complete with sheets and pillows."
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/beds.dmi'
 	icon_state = "woolbed"
+	sleepy = 3
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/bed/rockhill/rogue/inn/wooldouble
@@ -54,6 +60,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/beds.dmi'
 	icon_state = "double_wool"
 	pixel_y = 0
+	sleepy = 3
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/bed/rockhill/rogue/shit
@@ -61,6 +68,7 @@
 	desc = "A rough bed of straw. It's scratchy, and probably hides lots of bugs, but at least it's dry and warm."
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/beds.dmi'
 	icon_state = "shitbed"
+	sleepy = 1
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/arrestchair
@@ -77,6 +85,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "bench"
 	item_chair = null
+	sleepy = 0.5
 	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/bench/church
@@ -85,6 +94,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "church_benchleft"
 	item_chair = null
+	sleepy = 0.5
 	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/bench/church/mid
@@ -93,6 +103,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "church_benchmid"
 	item_chair = null
+	sleepy = 0.5
 	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/bench/church/r
@@ -101,6 +112,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "church_benchright"
 	item_chair = null
+	sleepy = 0.5
 	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/bench/church/smallbench
@@ -109,6 +121,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "benchsmall"
 	item_chair = null
+	sleepy = 0.5
 	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/bench/couch
@@ -117,6 +130,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "redcouch"
 	item_chair = null
+	sleepy = 0.5
 	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/bench/couch/r
@@ -125,6 +139,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "redcouch2"
 	item_chair = null
+	sleepy = 0.5
 	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/bench/coucha
@@ -133,6 +148,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "couchaleft"
 	item_chair = null
+	sleepy = 0.5
 	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/bench/coucha/r
@@ -141,6 +157,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "coucharight"
 	item_chair = null
+	sleepy = 0.5
 	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/bench/couchablack
@@ -149,6 +166,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "couchablackaleft"
 	item_chair = null
+	sleepy = 0.5
 	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/bench/couchablack/r
@@ -157,6 +175,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "couchablackaright"
 	item_chair = null
+	sleepy = 0.5
 	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/bench/couchamagenta
@@ -165,6 +184,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "couchamagentaleft"
 	item_chair = null
+	sleepy = 0.5
 	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/bench/couchamagenta/r
@@ -173,6 +193,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "couchamagentaright"
 	item_chair = null
+	sleepy = 0.5
 	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/bench/ultimacouch
@@ -181,6 +202,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "ultimacouchleft"
 	item_chair = null
+	sleepy = 0.5
 	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/bench/ultimacouch/r
@@ -189,6 +211,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "ultimacouchright"
 	item_chair = null
+	sleepy = 0.5
 	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/frankenstein
@@ -259,6 +282,7 @@
 	icon_state = "benchsmall"
 	density = FALSE
 	item_chair = null
+	sleepy = 0.5
 	layer = OBJ_LAYER
 
 /obj/structure/chair/wood/rockhill/stool/rogue

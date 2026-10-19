@@ -13,6 +13,27 @@
 
 /datum/storage/rogue_grid/roguetown
 
+/datum/storage/rogue_grid/grid/detpack
+	screen_max_columns = 4
+	screen_max_rows = 4
+	max_specific_storage = WEIGHT_CLASS_BULKY
+
+/datum/storage/rogue_grid/grid/detpack/New()
+	. = ..()
+	set_holdable(list(/obj/item/satchel_bomb, /obj/item/tntstick))
+
+/datum/storage/rogue_grid/grid/headhook
+	screen_max_columns = 4
+	screen_max_rows = 6
+	max_specific_storage = WEIGHT_CLASS_NORMAL
+	allow_quick_gather = TRUE
+	allow_quick_empty = TRUE
+	insert_preposition = "in"
+
+/datum/storage/rogue_grid/grid/headhook/New()
+	. = ..()
+	set_holdable(list(/obj/item/bodypart/head, /obj/item/natural/head))
+
 /datum/storage/rogue_grid/grid/magebag
 	screen_max_columns = 5
 	screen_max_rows = 8
@@ -23,6 +44,18 @@
 /datum/storage/rogue_grid/grid/magebag/New()
 	. = ..()
 	set_holdable(list(/obj/item/alch, /obj/item/ash, /obj/item/herbseed, /obj/item/magic, /obj/item/reagent_containers/food/snacks/grown/berries/rogue))
+
+/datum/storage/rogue_grid/grid/meatsack
+	screen_max_columns = 4
+	screen_max_rows = 5
+	max_specific_storage = WEIGHT_CLASS_NORMAL
+	allow_quick_gather = TRUE
+	allow_quick_empty = TRUE
+	insert_preposition = "in"
+
+/datum/storage/rogue_grid/grid/meatsack/New()
+	. = ..()
+	set_holdable(list(/obj/item/alch/bone, /obj/item/alch/viscera, /obj/item/natural/fur, /obj/item/natural/head, /obj/item/natural/hide, /obj/item/reagent_containers/food/snacks/fat, /obj/item/reagent_containers/food/snacks/rogue/meat))
 
 /datum/storage/rogue_grid/grid/orestore
 	screen_max_columns = 8

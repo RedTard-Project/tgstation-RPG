@@ -334,6 +334,27 @@
 	unarmed = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (3).ogg')
 
+/datum/intent/axe/cut/battle/lunge
+	name = "ćiupaga lunge"
+	desc = "Grip your ćiupaga by the tail-end of the handle and swing in a circular motion to reach further ahead. It will deal extra damage if perfectly positioned, otherwise you'll just hit them with the handle."
+	icon_state = "inchop"
+	blade_class = "chopping"
+	item_d_type = "slash"
+	attack_verb = list("lunges and chops", "lunges and hacks")
+	damfactor = 1.75
+	penfactor = 42
+	clickcd = 14
+	releasedrain = 1
+	misscost = 1
+	reach = 2
+	chargetime = 0
+	swingdelay = 2
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genchop (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (3).ogg')
+
 /datum/intent/axe/cut/long
 	name = "cut"
 	desc = ""
@@ -417,6 +438,69 @@
 	no_attack = TRUE
 	unarmed = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
+
+/datum/intent/claw/cut/gronn
+	name = "cut"
+	desc = ""
+	icon_state = "incut"
+	blade_class = "slash"
+	item_d_type = "slash"
+	attack_verb = list("cuts", "slashes")
+	damfactor = 1.1
+	penfactor = 30
+	clickcd = 12
+	releasedrain = 1
+	misscost = 1
+	reach = 1
+	chargetime = 0
+	swingdelay = 0
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (3).ogg')
+
+/datum/intent/claw/lunge/gronn
+	name = "lunge"
+	desc = ""
+	icon_state = "inimpale"
+	blade_class = "stabbing"
+	item_d_type = "blunt"
+	attack_verb = list("lunges")
+	damfactor = 1.1
+	penfactor = 45
+	clickcd = 10
+	releasedrain = 1
+	misscost = 1
+	reach = 1
+	chargetime = 0
+	swingdelay = 5
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
+
+/datum/intent/claw/rend
+	name = "rend"
+	desc = ""
+	icon_state = "inrend"
+	blade_class = "chopping"
+	item_d_type = "slash"
+	attack_verb = list("rends")
+	damfactor = 2.5
+	penfactor = -100
+	clickcd = 16
+	releasedrain = 1
+	misscost = 10
+	reach = 1
+	chargetime = 0
+	swingdelay = 0
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
 /datum/intent/dagger/chop
 	name = "chop"
@@ -522,6 +606,48 @@
 	no_attack = FALSE
 	unarmed = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (3).ogg')
+
+/datum/intent/dagger/cut/light
+	name = "light cut"
+	desc = ""
+	icon_state = "incut"
+	blade_class = "slash"
+	item_d_type = "slash"
+	attack_verb = list("cuts", "slashes")
+	damfactor = 0.8
+	penfactor = 0
+	clickcd = 5
+	releasedrain = 1
+	misscost = 1
+	reach = 1
+	chargetime = 0
+	swingdelay = 0
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (3).ogg')
+
+/datum/intent/dagger/cut/rend
+	name = "wicked slice"
+	desc = ""
+	icon_state = "inrend"
+	blade_class = "chopping"
+	item_d_type = "slash"
+	attack_verb = list("slices", "dices")
+	damfactor = 2
+	penfactor = -100
+	clickcd = 14
+	releasedrain = 1
+	misscost = 5
+	reach = 1
+	chargetime = 0
+	swingdelay = 10
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
 /datum/intent/dagger/sucker_punch
 	name = "unevadable punch"
@@ -670,6 +796,27 @@
 	unarmed = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg')
 
+/datum/intent/dagger/thrust/quick
+	name = "quick thrust"
+	desc = ""
+	icon_state = "instab"
+	blade_class = "stabbing"
+	item_d_type = "stab"
+	attack_verb = list("thrusts", "shanks")
+	damfactor = 1
+	penfactor = 10
+	clickcd = 4
+	releasedrain = 1
+	misscost = 10
+	reach = 1
+	chargetime = 0
+	swingdelay = 0
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
+
 /datum/intent/dagger/thrust/weak
 	name = "lopsided thrust"
 	desc = ""
@@ -733,6 +880,27 @@
 	unarmed = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/daze_hit.ogg')
 
+/datum/intent/effect/daze/freisabre
+	name = "uszkodzić"
+	desc = "After a few misleading strikes, suddenly slash at your opponent's wrist to affect their speed and strength, preventing them from using their weapon effectively. This move can be parried, but not dodged."
+	icon_state = "indaze"
+	blade_class = "slash"
+	item_d_type = "blunt"
+	attack_verb = list("deftly wrist-slits")
+	damfactor = 1.25
+	penfactor = -100
+	clickcd = 12
+	releasedrain = 1
+	misscost = 1
+	reach = 1
+	chargetime = 0
+	swingdelay = 3
+	canparry = TRUE
+	candodge = FALSE
+	no_attack = FALSE
+	unarmed = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/daze_hit.ogg')
+
 /datum/intent/effect/daze/unarmed
 	name = "dazing strike"
 	desc = ""
@@ -753,6 +921,27 @@
 	no_attack = FALSE
 	unarmed = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/daze_hit.ogg')
+
+/datum/intent/effect/hobble
+	name = "hobbling strike"
+	desc = ""
+	icon_state = "incrack"
+	blade_class = "effect"
+	item_d_type = "blunt"
+	attack_verb = list("hobbles")
+	damfactor = 0.8
+	penfactor = -200
+	clickcd = 16
+	releasedrain = 1
+	misscost = 1
+	reach = 1
+	chargetime = 0
+	swingdelay = 6
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/shovel_hit3.ogg')
 
 /datum/intent/fill
 	name = "fill"
@@ -1439,6 +1628,27 @@
 	unarmed = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/woodblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/woodblunt (2).ogg')
 
+/datum/intent/mace/smash/wood/ranged
+	name = "smash"
+	desc = "A powerful, charged up strike that deals normal damage but can throw a standing opponent back and slow them down, based on your strength. Ineffective below 10 strength. Slowdown & Knockback scales to your Strength up to 14 (1 - 4 tiles). Cannot be used consecutively more than every 5 seconds on the same target. Prone targets halve the knockback distance. Not fully charging the attack limits knockback to 1 tile."
+	icon_state = "insmash"
+	blade_class = "smashing"
+	item_d_type = "blunt"
+	attack_verb = list("smashes")
+	damfactor = 1
+	penfactor = -100
+	clickcd = 12
+	releasedrain = 1
+	misscost = 1
+	reach = 2
+	chargetime = 5
+	swingdelay = 0
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/woodblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/woodblunt (2).ogg')
+
 /datum/intent/mace/strike
 	name = "strike"
 	desc = ""
@@ -1565,6 +1775,27 @@
 	unarmed = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/woodblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/woodblunt (2).ogg')
 
+/datum/intent/mace/sweep
+	name = "sweeping strike"
+	desc = "A heavy sweep that smashes through targets to the sides and front."
+	icon_state = "insweep"
+	blade_class = "blunt"
+	item_d_type = "blunt"
+	attack_verb = list("sweeps through", "smashes across")
+	damfactor = 1.2
+	penfactor = -100
+	clickcd = 20
+	releasedrain = 1
+	misscost = 1
+	reach = 1
+	chargetime = 0
+	swingdelay = 0
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg')
+
 /datum/intent/mace/warhammer/pick
 	name = "pick"
 	desc = ""
@@ -1627,6 +1858,48 @@
 	no_attack = FALSE
 	unarmed = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
+
+/datum/intent/maul
+	name = "strike"
+	desc = ""
+	icon_state = "instrike"
+	blade_class = "blunt"
+	item_d_type = "blunt"
+	attack_verb = list("strikes", "hammers", "wallops")
+	damfactor = 1
+	penfactor = -200
+	clickcd = 16
+	releasedrain = 1
+	misscost = 1
+	reach = 1
+	chargetime = 0
+	swingdelay = 0
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg')
+
+/datum/intent/maul/crush
+	name = "crush"
+	desc = "This can throw a standing opponent and slow them down. 5 second cooldown on consecutive targets. Prone targets halve the knockback distance. Not fully charging the attack limits knockback to 1 tile."
+	icon_state = "incrush"
+	blade_class = "smashing"
+	item_d_type = "blunt"
+	attack_verb = list("crushes")
+	damfactor = 1.7
+	penfactor = -200
+	clickcd = 16
+	releasedrain = 1
+	misscost = 1
+	reach = 1
+	chargetime = 5
+	swingdelay = 0
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg')
 
 /datum/intent/partizan/peel
 	name = "armor peel"
@@ -2193,6 +2466,27 @@
 	unarmed = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
+/datum/intent/spear/bash/ranged
+	name = "bash"
+	desc = ""
+	icon_state = "inbash"
+	blade_class = "blunt"
+	item_d_type = "blunt"
+	attack_verb = list("bashes", "strikes")
+	damfactor = 0.8
+	penfactor = -100
+	clickcd = 12
+	releasedrain = 1
+	misscost = 1
+	reach = 2
+	chargetime = 0
+	swingdelay = 0
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
+
 /datum/intent/spear/bash/ranged/quarterstaff
 	name = "bash"
 	desc = ""
@@ -2340,6 +2634,48 @@
 	unarmed = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
+/datum/intent/spear/cut/naginata
+	name = "cut"
+	desc = "Poorly hack at someone with your speartip. Works at two-tile range without penalty."
+	icon_state = "incut"
+	blade_class = "slash"
+	item_d_type = "slash"
+	attack_verb = list("cuts", "slashes")
+	damfactor = 1.2
+	penfactor = 0
+	clickcd = 12
+	releasedrain = 1
+	misscost = 1
+	reach = 2
+	chargetime = 0
+	swingdelay = 0
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
+
+/datum/intent/spear/cut/naginata/sweep
+	name = "sweeping cut"
+	desc = "A sweep that cuts through targets to the front."
+	icon_state = "insweep"
+	blade_class = "slash"
+	item_d_type = "slash"
+	attack_verb = list("sweeps through", "cuts across")
+	damfactor = 1.2
+	penfactor = 0
+	clickcd = 20
+	releasedrain = 1
+	misscost = 1
+	reach = 2
+	chargetime = 0
+	swingdelay = 0
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
+
 /datum/intent/spear/cut/oneh
 	name = "one-handed cut"
 	desc = "Poorly hack at someone with your speartip. Works at two-tile range without penalty."
@@ -2391,6 +2727,27 @@
 	attack_verb = list("thrusts")
 	damfactor = 1
 	penfactor = 50
+	clickcd = 14
+	releasedrain = 1
+	misscost = 1
+	reach = 2
+	chargetime = 0
+	swingdelay = 0
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
+
+/datum/intent/spear/thrust/blunted
+	name = "thrust"
+	desc = "Stab someone. Must be at a range of two tiles to penetrate properly."
+	icon_state = "instab"
+	blade_class = "stabbing"
+	item_d_type = "stab"
+	attack_verb = list("thrusts")
+	damfactor = 1
+	penfactor = -100
 	clickcd = 14
 	releasedrain = 1
 	misscost = 1
@@ -2613,6 +2970,27 @@
 	unarmed = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
+/datum/intent/sword/bash
+	name = "crossguard bash"
+	desc = "Smash someone with the crossguard of your sword."
+	icon_state = "inbash"
+	blade_class = "blunt"
+	item_d_type = "blunt"
+	attack_verb = list("bashes", "strikes")
+	damfactor = 1.1
+	penfactor = -100
+	clickcd = 15
+	releasedrain = 1
+	misscost = 1
+	reach = 1
+	chargetime = 0
+	swingdelay = 2
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
+
 /datum/intent/sword/chop
 	name = "chop"
 	desc = ""
@@ -2670,6 +3048,27 @@
 	reach = 1
 	chargetime = 0
 	swingdelay = 10
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genchop (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (3).ogg')
+
+/datum/intent/sword/chop/long
+	name = "chop"
+	desc = ""
+	icon_state = "inchop"
+	blade_class = "chopping"
+	item_d_type = "slash"
+	attack_verb = list("chops", "hacks")
+	damfactor = 1.2
+	penfactor = 40
+	clickcd = 12
+	releasedrain = 1
+	misscost = 1
+	reach = 1
+	chargetime = 0
+	swingdelay = 8
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -2823,6 +3222,27 @@
 	unarmed = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
+/datum/intent/sword/cut/light
+	name = "strike"
+	desc = ""
+	icon_state = "incut"
+	blade_class = "slash"
+	item_d_type = "slash"
+	attack_verb = list("cuts", "slashes")
+	damfactor = 0.9
+	penfactor = 0
+	clickcd = 12
+	releasedrain = 1
+	misscost = 1
+	reach = 1
+	chargetime = 0
+	swingdelay = 0
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
+
 /datum/intent/sword/cut/rapier
 	name = "strike"
 	desc = ""
@@ -2854,6 +3274,27 @@
 	damfactor = 1.25
 	penfactor = 10
 	clickcd = 8
+	releasedrain = 1
+	misscost = 1
+	reach = 1
+	chargetime = 0
+	swingdelay = 0
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
+
+/datum/intent/sword/cut/sabre/master
+	name = "pokrajać"
+	desc = "Perform a masterful wide-arc cut that's strong enough to penetrate light armour."
+	icon_state = "incut"
+	blade_class = "slash"
+	item_d_type = "slash"
+	attack_verb = list("masterfully cuts", "deftly slits", "quarts")
+	damfactor = 1.25
+	penfactor = 55
+	clickcd = 7
 	releasedrain = 1
 	misscost = 1
 	reach = 1
@@ -2949,6 +3390,26 @@
 	unarmed = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
+/datum/intent/sword/disarm
+	name = "disarm"
+	desc = ""
+	icon_state = "intake"
+	item_d_type = "blunt"
+	attack_verb = list("hits", "strikes")
+	damfactor = 0.1
+	penfactor = -100
+	clickcd = 22
+	releasedrain = 1
+	misscost = 1
+	reach = 1
+	chargetime = 0
+	swingdelay = 2
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg')
+
 /datum/intent/sword/lunge/estoc
 	name = "lunge"
 	desc = "Stab at range. You'll rip through leather, but not metal."
@@ -3041,6 +3502,27 @@
 	item_d_type = "blunt"
 	attack_verb = list("bashes", "clubs")
 	damfactor = 0.8
+	penfactor = -100
+	clickcd = 12
+	releasedrain = 1
+	misscost = 1
+	reach = 1
+	chargetime = 0
+	swingdelay = 0
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg')
+
+/datum/intent/sword/strike/bad
+	name = "pommel strike"
+	desc = ""
+	icon_state = "instrike"
+	blade_class = "blunt"
+	item_d_type = "blunt"
+	attack_verb = list("bashes", "clubs")
+	damfactor = 0.7
 	penfactor = -100
 	clickcd = 12
 	releasedrain = 1
@@ -3159,6 +3641,26 @@
 	unarmed = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
+/datum/intent/sword/thrust/heavy
+	name = "heavy thrust"
+	desc = ""
+	icon_state = "inlunge"
+	blade_class = "stabbing"
+	item_d_type = "stab"
+	attack_verb = list("stabs")
+	damfactor = 1.3
+	penfactor = 50
+	clickcd = 12
+	releasedrain = 1
+	misscost = 1
+	reach = 1
+	chargetime = 0
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
+
 /datum/intent/sword/thrust/krieg
 	name = "stab"
 	desc = ""
@@ -3174,6 +3676,48 @@
 	reach = 1
 	chargetime = 0
 	swingdelay = 0
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
+
+/datum/intent/sword/thrust/long
+	name = "stab"
+	desc = ""
+	icon_state = "instab"
+	blade_class = "stabbing"
+	item_d_type = "stab"
+	attack_verb = list("stabs")
+	damfactor = 1
+	penfactor = 30
+	clickcd = 12
+	releasedrain = 1
+	misscost = 1
+	reach = 1
+	chargetime = 0
+	swingdelay = 0
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
+
+/datum/intent/sword/thrust/long/halfsword/lesser
+	name = "halbschwert"
+	desc = "Grip the dull portion of your longsword with either hand and use it as leverage to deliver precise, powerful strikes that can dig into gaps in plate and push past maille."
+	icon_state = "inimpale"
+	blade_class = "stab"
+	item_d_type = "stab"
+	attack_verb = list("goes into a half-sword stance and skewers", "enters a half-sword stance and impales")
+	damfactor = 0.9
+	penfactor = 80
+	clickcd = 22
+	releasedrain = 1
+	misscost = 1
+	reach = 1
+	chargetime = 0
+	swingdelay = 16
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -3399,6 +3943,27 @@
 	attack_verb = list("cracks", "strikes")
 	damfactor = 1.1
 	penfactor = 20
+	clickcd = 12
+	releasedrain = 1
+	misscost = 1
+	reach = 2
+	chargetime = 0
+	swingdelay = 0
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/flailhit.ogg')
+
+/datum/intent/whip/crack/blunt
+	name = "bludgen"
+	desc = ""
+	icon_state = "instrike"
+	blade_class = "blunt"
+	item_d_type = "blunt"
+	attack_verb = list("cracks", "strikes")
+	damfactor = 1.1
+	penfactor = -100
 	clickcd = 12
 	releasedrain = 1
 	misscost = 1

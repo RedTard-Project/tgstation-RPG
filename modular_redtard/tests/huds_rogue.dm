@@ -64,9 +64,9 @@
 		HUD_ROGUE_READ_TEXT_LEFT = list(/atom/movable/screen/rogue/placeholder/readtext, "5,5", null, "", 24.02, HUD_PLANE, no_group),
 		HUD_ROGUE_WEAPON_INTENTS = list(/atom/movable/screen/rogue/weapon_intents, "WEST,SOUTH+8", 'modular_redtard/icons/mob/rogueintentbase.dmi', "intentbase", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 		HUD_MOB_MOOD = list(/atom/movable/screen/mood/rogue, "WEST+2:16,CENTER+3", hud_icon, null, 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
-		HUD_ROGUE_RMB_INTENT = list(/atom/movable/screen/rogue/stub/rmb_intent, "WEST+1,CENTER+1", hud_icon, "rmbintent", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_RMB_INTENT = list(/atom/movable/screen/rogue/rmb_intent, "WEST+1,CENTER+1", hud_icon, "rmbintent", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 		HUD_MOB_HEALTH = list(/atom/movable/screen/healths/rogue, "WEST+4:22,CENTER+4:17", heat_icon, "dam0", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
-		HUD_ROGUE_QUAD_INTENTS = list(/atom/movable/screen/rogue/stub/quad_intents, "WEST+1,SOUTH+7", hud_icon, "mmbintents0", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_QUAD_INTENTS = list(/atom/movable/screen/rogue/quad_intents, "WEST+1,SOUTH+7", hud_icon, "mmbintents0", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 		HUD_ROGUE_DEF_INTENT = list(/atom/movable/screen/rogue/def_intent, "WEST+3:16,NORTH-5", hud_icon, "def2n", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 		HUD_MOB_INTENTS = list(/atom/movable/screen/combattoggle/rogue, "WEST+4,CENTER+1", hud_icon, "combat0", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 		HUD_ROGUE_GIVE = list(/atom/movable/screen/rogue/give, "WEST+4,SOUTH+7", hud_icon, "take0", 24, HUD_PLANE, HUD_GROUP_STATIC),
@@ -76,7 +76,7 @@
 		HUD_ROGUE_CLICKDELAY_LEFT = list(/atom/movable/screen/rogue/clickdelay/left, "WEST+2,SOUTH+7", hud_icon, "", 25, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_ROGUE_CLICKDELAY_RIGHT = list(/atom/movable/screen/rogue/clickdelay/right, "WEST+3,SOUTH+7", hud_icon, "", 25, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_ROGUE_CLICKDELAY_MID = list(/atom/movable/screen/rogue/clickdelay/next_move, "WEST+2:16,SOUTH+7", hud_icon, "", 25, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_ROGUE_DEFDELAY = list(/atom/movable/screen/rogue/stub/defdelay, "WEST+4:11,SOUTH+10:15", hud_icon, "defdelay0", 25, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_DEFDELAY = list(/atom/movable/screen/rogue/defdelay, "WEST+4:11,SOUTH+10:15", hud_icon, "defdelay0", 25, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 		HUD_KEY_HAND_SLOT(1) = list(/atom/movable/screen/inventory/hand/rogue, "WEST+2,SOUTH+7", hud_icon, "hand_l", 24, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_KEY_HAND_SLOT(2) = list(/atom/movable/screen/inventory/hand/rogue, "WEST+3,SOUTH+7", hud_icon, "hand_r", 24, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_ROGUE_RING_SLOT(1) = list(/atom/movable/screen/inventory/rogue/indexed/ring, "WEST:8,SOUTH+2:8", hud_icon, "ring", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
@@ -105,14 +105,14 @@
 		HUD_MOB_REST = list(/atom/movable/screen/rest/rogue, "WEST+1:16,CENTER+2", hud_icon, "act_rest_down", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 		HUD_ROGUE_SKILLS = list(/atom/movable/screen/rogue/skills, "WEST+1:16,CENTER+3", hud_icon, "skills", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 		HUD_MOB_CRAFTING_MENU = list(/atom/movable/screen/craft/rogue, "WEST+1:16,CENTER+3", hud_icon, "craft", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
-		HUD_ROGUE_SNEAK = list(/atom/movable/screen/rogue/stub/sneak, "WEST+2:16,CENTER+2", hud_icon, "sneak0", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_SNEAK = list(/atom/movable/screen/rogue/sneak, "WEST+2:16,CENTER+2", hud_icon, "sneak0", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 		HUD_MOB_MOVE_INTENT = list(/atom/movable/screen/mov_intent/rogue, "WEST+2:16,CENTER+2", hud_icon, null, 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 		HUD_ROGUE_EYE = list(/atom/movable/screen/rogue/eye, "WEST+3:16,CENTER+3", hud_icon, "eye", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
-		HUD_ROGUE_ADVSETUP = list(/atom/movable/screen/rogue/placeholder/advsetup, "CENTER-1,CENTER-1:16", null, "", 24, HUD_PLANE, no_group),
+		HUD_ROGUE_ADVSETUP = list(/atom/movable/screen/rogue/advsetup, "CENTER-1,CENTER-1:16", null, "", 24, HUD_PLANE, no_group),
 		HUD_MOB_ZONE_SELECTOR = list(/atom/movable/screen/zone_sel/rogue, "WEST+2,CENTER+4:6", 'modular_redtard/icons/mob/roguehud64.dmi', null, 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 		HUD_MOB_STAMINA = list(/atom/movable/screen/stamina/rogue, "WEST+4:16,CENTER+2", heat_icon, "stam100", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
-		HUD_ROGUE_ENERGY = list(/atom/movable/screen/rogue/stub/energy, "WEST+4:16,CENTER+2", heat_icon, "energy100", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
-		HUD_ROGUE_FEINT = list(/atom/movable/screen/rogue/stub/feint, "WEST+4:10,SOUTH+10:15", 'modular_redtard/icons/mob/roguefeint.dmi', "feintbar0", 24.1, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_ENERGY = list(/atom/movable/screen/rogue/energy, "WEST+4:16,CENTER+2", heat_icon, "energy100", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_FEINT = list(/atom/movable/screen/rogue/feint, "WEST+4:10,SOUTH+10:15", 'modular_redtard/icons/mob/roguefeint.dmi', "feintbar100", 24.1, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 	)
 	for(var/hud_key in expected)
 		var/list/row = expected[hud_key]
@@ -175,21 +175,6 @@
 	var/atom/movable/screen/readded = hud.add_screen_object(/atom/movable/screen/craft, HUD_MOB_CRAFTING_MENU, HUD_GROUP_STATIC, hud.ui_style, ui_human_crafting)
 	TEST_ASSERT(istype(readded, /atom/movable/screen/craft/rogue), "Re-adding the crafting button made [readded.type]")
 	TEST_ASSERT_EQUAL(readded.screen_loc, "WEST+1:16,CENTER+3", "Re-added crafting button left Azure's place")
-
-/datum/unit_test/rogue_hud/stub_clicks
-
-/datum/unit_test/rogue_hud/stub_clicks/Run()
-	var/mob/living/carbon/human/dummy = make_hud_user()
-	var/datum/hud/hud = dummy.hud_used
-	var/stubs = 0
-	for(var/hud_key in hud.screen_objects)
-		var/atom/movable/screen/element = hud.screen_objects[hud_key]
-		if(!istype(element, /atom/movable/screen/rogue/stub))
-			continue
-		stubs++
-		click_as(dummy, element)
-		click_as(dummy, element, "right=1")
-	TEST_ASSERT_EQUAL(stubs, 7, "Stub count changed; update the stub table in modular_redtard/README.md")
 
 /datum/unit_test/rogue_hud/all_clicks
 

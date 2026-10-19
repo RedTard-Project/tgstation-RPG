@@ -1,0 +1,67 @@
+# Formulas: name = expression. Functions: min, max, clamp, abs, round, floor, ceil, sqrt, if. Operators: + - * / % ^ < <= > >= == != and or not.
+
+# Damage multiplier from the attacker's strength (Ratwood). min_strength is the weapon's need, halved when wielded, 0 if none. Inputs: strength, min_strength.
+strength_factor = if(strength > 14, 1.4 + (strength - 14) * 0.034, 1 + (strength - 10) * 0.1) * if(min_strength > strength, 0.3, 1)
+
+# Parry value of one weapon or of bare hands (Azure Peak): weapon skill rank and weapon defense. Inputs: skill, defense.
+weapon_defense = skill * 20 + defense * 10
+
+# Parry penalty when a faster attacker uses a swift weapon or bare hands (Azure Peak); perception and intelligence offset it. Inputs: swift_attack, attacker_armed, attacker_speed, defender_speed, attacker_perception, defender_perception, attacker_intelligence, defender_intelligence.
+parry_speed_pressure = if(swift_attack and attacker_speed > defender_speed, clamp((attacker_speed - defender_speed) * 10 - max(0, (defender_perception - attacker_perception) * if(attacker_armed, 5, 10)) - max(0, (defender_intelligence - attacker_intelligence) * 3), 0, 30), 0)
+
+# Parry chance in percent (Azure Peak). defense is the best weapon_defense; swift_guard is a lone swift weapon in light armor. Inputs: defense, attacker_skill, running, swift_guard, speed_pressure, prone, dual_wield, untrained_armor.
+parry_chance = clamp((defense - attacker_skill * 20 - running * 15 + swift_guard * 10 - speed_pressure) * if(prone, 0.65, 1) - dual_wield * 5, 5, if(untrained_armor, 75, 90))
+
+# Dodge chance in percent (Azure Peak). defender_skill is the defender's rank in the attacker's skill; improvised is a weapon without a skill. Inputs: defender_speed, attacker_speed, swift_attack, heavy_attack, improvised, defender_skill, attacker_skill, prone, dodge_expert, dual_wield.
+dodge_chance = clamp(if(prone, 0.25, 1) * if(dodge_expert and not prone, 90, 50 + (defender_speed - attacker_speed) * 10 - if(swift_attack and attacker_speed > defender_speed, (attacker_speed - defender_speed) * 10, 0) + if(heavy_attack and defender_speed > attacker_speed, (defender_speed - attacker_speed) * 10, 0) + if(improvised, 10, (defender_skill - attacker_skill) * 10)) - dual_wield * 5, 5, 90)
+
+# Percent of damage the best covering armor stops (Ratwood). Inputs: rating, penetration.
+armor_protection = clamp(rating - penetration, 0, 100)
+
+# Integrity the armor loses from one hit (Ratwood). incoming is the damage before armor. Inputs: incoming, rating, penetration, blunt_attack, blunt_rating.
+armor_wear = if(blunt_attack, incoming - incoming * max(blunt_rating, 0) / 200, if(incoming + penetration > rating, if(penetration >= rating, incoming / 2, max(rating - penetration, incoming * 0.4)), incoming))
+
+# Wound chance multiplier from constitution. Inputs: constitution.
+wound_constitution = clamp(1 - (constitution - 10) * 0.03, 0.5, 1.5)
+
+# Feint success chance in percent (Azure Peak): weapon skill ranks and intelligence of both sides. A target that is already open cannot be feinted again. Inputs: skill, target_skill, intelligence, target_intelligence, target_vulnerable.
+feint_chance = if(target_vulnerable, 0, clamp(50 + (skill - target_skill) * 15 + (intelligence - target_intelligence) * 10, 10, 90))
+
+# How long looking around takes, in deciseconds (Azure Peak). Inputs: perception, tracking.
+look_around_time = clamp(50 - perception * 2 - tracking * 5, 7, 50)
+
+# Chance in percent that looking around finds a hidden creature (Azure Peak). target_stealth is the best of its sneaking, holy and arcane ranks, 0 without a mind. Inputs: perception, tracking, target_stealth, target_perception.
+look_around_chance = max(perception * 2 + tracking * 5 - target_stealth * 5 - if(target_perception > 10, target_perception / 2, 0), 5)
+
+# Maximum energy (blue stamina) from willpower and the athletics rank (Azure Peak). Inputs: willpower, athletics.
+energy_max = (willpower + athletics / 2) * 100
+
+# Pick swings needed to break a rock wall (Ratwood): wall integrity, the pick's force and the mining rank. One swing takes a melee click delay. Inputs: integrity, force, mining.
+mining_swings = ceil(integrity / max(force * (8 + mining * 1.5), 1))
+
+# Time of one attempt to pry a window with a knife, in deciseconds (Ratwood). Inputs: lockpicking, perception, speed, picklvl, open.
+window_pry_time = clamp(100 - (lockpicking * 8 + perception / 4 * 5 + speed / 4 * 5 + picklvl * 2), 20, 70)
+
+# Progress of one successful attempt; the window gives at 100 (reinforced 150) (Ratwood). Inputs: lockpicking, perception, speed, picklvl, open.
+window_pry_progress = clamp(10 + lockpicking * 6 + perception / 4 + speed / 8 + picklvl * 2, 10, 100)
+
+# Chance in percent that one attempt succeeds; a failure breaks the window (Ratwood). picklvl is the knife's lockpicking level. Inputs: lockpicking, perception, speed, picklvl, open.
+window_pry_chance = clamp((10 + lockpicking * 11 + perception / 4 * 4 + speed / 4 * 3) * picklvl * if(open, 1.1, 1), 1, 96)
+
+# Time to arm a floor trap by hand, in deciseconds (Ratwood). Needs crafting 1 or more. Inputs: crafting.
+trap_set_time = max((8 - max(crafting * 2, 2)) * 10, 0)
+
+# Time to disarm a floor trap by hand, in deciseconds (Ratwood). Needs crafting 1 or more. Inputs: crafting.
+trap_disarm_time = max((14 - max(crafting * 2, 2)) * 10, 0)
+
+# Time to spring open or shut a mantrap held in hand, in deciseconds (Ratwood). Inputs: strength, crafting.
+mantrap_set_time = max(50 - strength * 2, 0)
+
+# Chance in percent to arm or shut a mantrap held in hand (Ratwood). Inputs: strength, crafting.
+mantrap_set_chance = clamp(10 + crafting * 15, 0, 100)
+
+# Time to disarm an armed mantrap on the ground, in deciseconds (Ratwood); an interruption springs it on the hand. Inputs: crafting.
+mantrap_disarm_time = max(100 - max(crafting * 20, 20), 0)
+
+# Whether looking around marks a hiding place with someone tucked inside (Azure Peak): non-zero means found. Inputs: perception, target_sneaking.
+look_around_spot = perception >= 8 + target_sneaking * 2

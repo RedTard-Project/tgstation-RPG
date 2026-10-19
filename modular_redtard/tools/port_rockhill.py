@@ -924,8 +924,14 @@ def main():
 
     jobs = select_jobs(cfg, rw)
     role_outfits = {job: role_outfit(rw, job) for job in jobs}
+    class_jobs = collections.defaultdict(list)
+    for job in jobs:
+        if len(role_outfits[job]['subclasses']) > 1:
+            for advclass in role_outfits[job]['subclasses']:
+                class_jobs[advclass].append(job)
+    class_outfits = {advclass: outfit_slots(rw, rw.resolve(advclass, 'outfit')) for advclass in class_jobs}
     outfit_items = set()
-    for dressed in role_outfits.values():
+    for dressed in list(role_outfits.values()) + list(class_outfits.values()):
         outfit_items |= set(dressed['slots'].values())
         outfit_items |= {item for item, _ in dressed['contents'] or []}
     mapgen = mapgen_spec(rw, usage)
@@ -945,10 +951,13 @@ def main():
     for job in jobs:
         dressed = role_outfits.get(job, {})
         role_traits |= set(role_attributes(rw, job, dressed.get('advclass'), dressed.get('source'), cfg['attributes'])['traits'])
+    for advclass, owners in class_jobs.items():
+        role_traits |= set(role_attributes(rw, owners[0], advclass, class_outfits[advclass]['source'], cfg['attributes'])['traits'])
     known_traits = generate_traits(cfg, tg_names, role_traits)
     generate_skills(cfg, rw)
     role_attrs = generate_attribute_sheets(cfg, rw, jobs, role_outfits, known_traits)
     generate_jobs(cfg, rw, usage, role_outfits, declared | generated, station_usage, role_attrs)
+    generate_advclasses(cfg, rw, class_jobs, class_outfits, declared | generated, known_traits)
 
 
 MAPGEN_LANDMARK = '/obj/effect/landmark/mapGenerator'
@@ -2002,6 +2011,11 @@ def icon_dest(rel):
 
 
 JOB_ROOT = '/datum/job/roguetown'
+ADVCLASS_ROOT = '/datum/advclass'
+ADVCLASS_TARGET = '/datum/rockhill_advclass'
+ADVCLASS_OUTFIT = '/datum/outfit/job/roguetown/rockhill_class'
+ADVCLASS_SHEET = '/datum/attribute_holder/sheet/job/rockhill_class'
+ADVCLASS_FILE = 'advclasses.dm'
 LANDMARK_ROOT = '/obj/effect/landmark/start'
 LANDMARK_REBASE = '/obj/effect/landmark/start/rockhill'
 
@@ -2301,14 +2315,26 @@ def parse_pre_equip(body):
     return slots, contents
 
 
-def role_outfit(rw, job):
+def job_subclasses(rw, job):
     subclasses = re.findall(r'(/datum/advclass/[A-Za-z0-9_/]+)', rw.resolve(job, 'job_subclasses') or '')
     if not subclasses:
         tags = set(re.findall(r'(CTAG_[A-Z0-9_]+)', rw.resolve(job, 'advclass_cat_rolls') or ''))
         if tags:
             subclasses = sorted(p for p in rw.types if p.startswith('/datum/advclass/') and tags & set(re.findall(r'(CTAG_[A-Z0-9_]+)', rw.resolve(p, 'category_tags') or '')) and rw.resolve(p, 'outfit'))
+    return [p for p in dict.fromkeys(subclasses) if p in rw.types]
+
+
+def role_outfit(rw, job):
+    subclasses = job_subclasses(rw, job)
     source = (rw.resolve(subclasses[0], 'outfit') if subclasses else None) or rw.resolve(job, 'outfit') or ''
-    source = source.strip()
+    dressed = outfit_slots(rw, source)
+    dressed['advclass'] = subclasses[0] if subclasses else None
+    dressed['subclasses'] = subclasses
+    return dressed
+
+
+def outfit_slots(rw, source):
+    source = (source or '').strip()
     chain = []
     parts = source.split('/')
     for k in range(3, len(parts) + 1):
@@ -2331,7 +2357,51 @@ def role_outfit(rw, job):
     backs = [ratwood_slots[slot] for slot in ('backl', 'backr') if slot in ratwood_slots]
     backs.sort(key=lambda path: not path.startswith('/obj/item/storage'))
     tg.update(zip(('back', 'backr'), backs))
-    return {'source': source, 'slots': tg, 'contents': contents, 'advclass': subclasses[0] if subclasses else None}
+    return {'source': source, 'slots': tg, 'contents': contents}
+
+
+def generate_advclasses(cfg, rw, class_jobs, class_outfits, valid, known_traits):
+    spec = cfg['attributes']
+    blocks = []
+    for advclass in sorted(class_jobs):
+        suffix = advclass[len(ADVCLASS_ROOT):]
+        owners = class_jobs[advclass]
+        name = string_value(rw.resolve(advclass, 'name')) or '"' + suffix.rsplit('/', 1)[1] + '"'
+        dressed = class_outfits[advclass]
+        outfit = ADVCLASS_OUTFIT + suffix
+        block = [outfit, f'\tname = {name}', f'\tjobtype = {owners[0]}']
+        for var in ('uniform', 'shirt', 'suit', 'cloak', 'head', 'mask', 'mouth', 'neck', 'gloves', 'wrists', 'ring', 'shoes', 'belt', 'back', 'backr', 'l_pocket', 'r_pocket', 'l_hand', 'r_hand'):
+            item = dressed['slots'].get(var)
+            if item and item in valid:
+                block.append(f'\t{var} = {item}')
+        contents = [(item, count) for item, count in (dressed['contents'] or []) if item in valid]
+        if contents and dressed['slots'].get('back') in valid:
+            block += ['\tbackpack_contents = list('] + [f'\t\t{item} = {count},' for item, count in contents] + ['\t\t)']
+        blocks.append(block)
+        data = role_attributes(rw, owners[0], advclass, dressed['source'], spec)
+        entries = [f'\t\t{stat} = {amount},' for stat, amount in sorted(data['stats'].items())]
+        for path, value in sorted(data['skills'].items()):
+            if path in spec['meta']:
+                entries.append(f"\t\t{spec['skill_target'] + path[len(spec['skill_root']):]} = {min(value, 60)},")
+        sheet = None
+        if entries:
+            sheet = ADVCLASS_SHEET + suffix
+            blocks.append([sheet, '\traw_attribute_list = list('] + entries + ['\t\t)'])
+        block = [ADVCLASS_TARGET + suffix, f'\tname = {name}', f'\toutfit = {outfit}']
+        tutorial = string_value(rw.resolve(advclass, 'tutorial'))
+        if tutorial and '[' not in tutorial:
+            block.append(f'\tdesc = {tutorial}')
+        if sheet:
+            block.append(f'\tattribute_sheet = {sheet}')
+        traits = [trait for trait in data['traits'] if trait in known_traits]
+        if traits:
+            block += ['\trockhill_traits = list('] + [f'\t\t{trait},' for trait in traits] + ['\t\t)']
+        slots = number_value(rw.resolve(advclass, 'maximum_possible_slots'))
+        if slots is not None and slots >= 0:
+            block.append(f'\tmaximum_slots = {slots}')
+        blocks.append(block)
+    open(f'{OUT_DIR}/{ADVCLASS_FILE}', 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    print(f'{ADVCLASS_FILE}: {len(class_jobs)} subclasses for {len({job for owners in class_jobs.values() for job in owners})} roles')
 
 
 def select_jobs(cfg, rw):
@@ -2420,6 +2490,9 @@ def generate_jobs(cfg, rw, usage, role_outfits, valid, station_usage, role_attrs
             block += ['\tmind_traits = list('] + [f'\t\t{trait},' for trait in traits] + ['\t\t)']
         if role_outfits.get(p, {}).get('advclass'):
             block.append(f'\trockhill_advclass = "{role_outfits[p]["advclass"]}"')
+        subclasses = role_outfits.get(p, {}).get('subclasses', [])
+        if len(subclasses) > 1:
+            block += ['\trockhill_advclasses = list('] + [f'\t\t{ADVCLASS_TARGET}{advclass[len(ADVCLASS_ROOT):]},' for advclass in subclasses] + ['\t\t)']
         attrs = (role_attrs or {}).get(p, {})
         if attrs.get('sheet'):
             block.append(f"\tattribute_sheet = {attrs['sheet']}")
@@ -2460,6 +2533,7 @@ def generate_jobs(cfg, rw, usage, role_outfits, valid, station_usage, role_attrs
             by_title.setdefault(extra, p)
     title_map = {source: titles[p].strip('"') for source, p in by_title.items()}
     open(f'{OUT_DIR}/titles.json', 'w', encoding='utf-8', newline='\n').write(json.dumps(title_map, indent='\t', ensure_ascii=False, sort_keys=True) + '\n')
+    landmark_roles = {lm: role for lm, role in jobs_cfg.get('landmark_roles', {}).items() if role in ported}
     marks = []
     matched = 0
     late = {r['prefix'] for r in cfg['replacements'] if r.get('to') == '/obj/effect/landmark/latejoin'}
@@ -2468,7 +2542,7 @@ def generate_jobs(cfg, rw, usage, role_outfits, valid, station_usage, role_attrs
             continue
         target = LANDMARK_REBASE + lm[len(LANDMARK_ROOT):]
         source_name = (string_value(rw.resolve(lm, 'name')) or '').strip('"')
-        job = by_title.get(source_name) or by_suffix.get(lm.rsplit('/', 1)[1])
+        job = by_title.get(source_name) or by_suffix.get(lm.rsplit('/', 1)[1]) or landmark_roles.get(lm)
         roles = [title_map[role.strip('"')] for role in re.findall(r'"[^"]*"', rw.resolve(lm, 'jobspawn_override') or '') if role.strip('"') in title_map]
         block = [target]
         if job:

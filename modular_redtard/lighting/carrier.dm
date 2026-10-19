@@ -45,6 +45,14 @@
 	SHOULD_CALL_PARENT(FALSE)
 	return
 
+/atom/movable/rogue_light_tent/quarter
+	icon = 'modular_redtard/icons/effects/rogue_light_quarter.dmi'
+	icon_state = "ne"
+
+/atom/movable/rogue_light_tent/quarter/Initialize(mapload, tent_id, plane_offset, corner)
+	. = ..()
+	icon_state = GLOB.rogue_light_quarter_states[corner]
+
 /datum/rogue_light_sentinel
 	var/turf/affected_turf
 	var/needs_update = FALSE

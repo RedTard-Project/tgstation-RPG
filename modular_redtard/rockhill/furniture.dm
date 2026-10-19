@@ -204,3 +204,9 @@
 		return
 	if(rockhill_pick_lock(user, lockpick, src, lockdifficulty, lock_strength))
 		toggle_key_lock(user)
+
+/obj/structure/chair/wood/rockhill
+	var/sleepy = 0
+
+/obj/structure/bed/rockhill
+	var/sleepy = 0

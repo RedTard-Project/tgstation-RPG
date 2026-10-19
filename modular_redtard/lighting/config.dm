@@ -1,5 +1,5 @@
 /datum/config_entry/string/rogue_lighting_carrier
-	default = ROGUE_LIGHT_CARRIER_TENT
+	default = ROGUE_LIGHT_CARRIER_QUARTER
 
 /datum/config_entry/string/rogue_lighting_backend
 	default = ROGUE_LIGHT_BACKEND_NATIVE

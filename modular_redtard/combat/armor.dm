@@ -192,7 +192,7 @@ GLOBAL_LIST_INIT(rogue_light_blunt_sounds, list('modular_redtard/rockhill/sound/
 	var/obj/item/clothing/used = rogue_best_armor(zone, armor_type)
 	if(!used)
 		return 0
-	return clamp(used.get_rogue_armor().get_rating(armor_type) - armour_penetration, 0, 100)
+	return rogue_formula_value(ROGUE_FORMULA_ARMOR_PROTECTION, list("rating" = used.get_rogue_armor().get_rating(armor_type), "penetration" = armour_penetration))
 
 /mob/living/carbon/human/proc/rogue_highest_armor_class()
 	. = ARMOR_CLASS_NONE
@@ -259,13 +259,9 @@ GLOBAL_LIST_INIT(rogue_light_blunt_sounds, list('modular_redtard/rockhill/sound/
 	var/datum/rogue_armor/armor = used.get_rogue_armor()
 	var/rating = armor.get_rating(armor_type)
 	var/penetration = attack_penetration(attacking_item)
-	var/protection = clamp(rating - penetration, 0, 100)
+	var/protection = rogue_formula_value(ROGUE_FORMULA_ARMOR_PROTECTION, list("rating" = rating, "penetration" = penetration))
 	var/incoming = protection < 100 ? damage * 100 / (100 - protection) : damage
-	var/integrity_damage = incoming
-	if(armor_type != ROGUE_ARMOR_BLUNT && (incoming + penetration) > rating)
-		integrity_damage = penetration >= rating ? incoming / 2 : max(rating - penetration, incoming * ROGUE_ARMOR_INTEGRITY_FLOOR)
-	if(armor_type == ROGUE_ARMOR_BLUNT && armor.blunt > 0)
-		integrity_damage -= integrity_damage * (armor.blunt / 2) / 100
+	var/integrity_damage = rogue_formula_value(ROGUE_FORMULA_ARMOR_WEAR, list("incoming" = incoming, "rating" = rating, "penetration" = penetration, "blunt_attack" = armor_type == ROGUE_ARMOR_BLUNT, "blunt_rating" = armor.blunt))
 	var/obj/item/weapon = attacking_item
 	if(used.rogue_blocksound)
 		var/block_sound = rogue_armor_sound(used.rogue_blocksound, istype(weapon) ? weapon.rogue_current_bclass : null)
@@ -285,5 +281,4 @@ GLOBAL_LIST_INIT(rogue_light_blunt_sounds, list('modular_redtard/rockhill/sound/
 		for(var/bclass in worn.rogue_prevent_crits)
 			if(rogue_bclass_to_wound(bclass) == wounding_type)
 				return 0
-	var/constitution = human_owner.rogue_stat(ROGUE_STAT_CONSTITUTION)
-	. *= clamp(1 - (constitution - ROGUE_ATTRIBUTE_MIDDLING) * ROGUE_CON_WOUND_STEP, 0.5, 1.5)
+	. *= rogue_formula_value(ROGUE_FORMULA_WOUND_CONSTITUTION, list("constitution" = human_owner.rogue_stat(ROGUE_STAT_CONSTITUTION)))

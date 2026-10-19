@@ -130,6 +130,11 @@ GLOBAL_LIST_EMPTY(rockhill_weather_sounds)
 	var/rockhill_warning
 	var/datum/looping_sound/outdoor_sound
 	var/datum/looping_sound/indoor_sound
+	var/rockhill_temperature_shift = 0
+	var/rockhill_wet_stacks = 0
+	var/rockhill_clean = NONE
+	var/rockhill_douses_fires = FALSE
+	var/datum/mood_event/rockhill_mood
 	COOLDOWN_DECLARE(lightning_cooldown)
 
 /datum/weather/particle/rockhill/setup_weather_areas(list/forced_areas)
@@ -153,7 +158,32 @@ GLOBAL_LIST_EMPTY(rockhill_weather_sounds)
 		GLOB.rockhill_weather_sounds.Cut()
 		qdel(src)
 
+/datum/weather/particle/rockhill/weather_act_mob(mob/living/living)
+	if(rockhill_temperature_shift)
+		var/delta = BODYTEMP_NORMAL + rockhill_temperature_shift - living.bodytemperature
+		if(delta * rockhill_temperature_shift > 0)
+			if(iscarbon(living))
+				var/mob/living/carbon/carbon_living = living
+				carbon_living.adjust_bodytemperature(delta, use_insulation = TRUE, use_steps = TRUE)
+			else
+				living.adjust_bodytemperature(delta > 0 ? min(delta / BODYTEMP_HEAT_DIVISOR, BODYTEMP_HEATING_MAX) : max(delta / BODYTEMP_COLD_DIVISOR, BODYTEMP_COOLING_MAX))
+	if(rockhill_wet_stacks)
+		living.extinguish_mob()
+		living.adjust_wet_stacks(rockhill_wet_stacks)
+	if(rockhill_clean && prob(ROCKHILL_RAIN_WASH_CHANCE))
+		living.wash(rockhill_clean)
+	if(rockhill_mood && living.client)
+		living.add_mood_event("rockhill_weather", rockhill_mood)
+
+/datum/weather/particle/rockhill/proc/rockhill_douse_fires()
+	if(!rockhill_douses_fires || stage != MAIN_STAGE)
+		return
+	for(var/obj/machinery/light/rogue/campfire/fire as anything in GLOB.rockhill_lit_fires)
+		if(istype(fire) && fire.crossfire && (get_area(fire) in impacted_areas))
+			fire.extinguish()
+
 /datum/weather/particle/rockhill/proc/rockhill_tick()
+	rockhill_douse_fires()
 	if(!lightning_strikes || stage != MAIN_STAGE || !length(GLOB.alive_player_list) || !COOLDOWN_FINISHED(src, lightning_cooldown))
 		return
 	COOLDOWN_START(src, lightning_cooldown, rand(ROCKHILL_LIGHTNING_MIN_DELAY, ROCKHILL_LIGHTNING_MAX_DELAY))
@@ -161,12 +191,21 @@ GLOBAL_LIST_EMPTY(rockhill_weather_sounds)
 		var/mob/living/watcher = pick(GLOB.alive_player_list)
 		if(!istype(watcher) || !(watcher.z in impacted_z_levels))
 			continue
+		if((get_area(watcher) in impacted_areas) && watcher.rogue_badluck(ROCKHILL_LIGHTNING_BADLUCK))
+			rockhill_strike(watcher)
 		var/list/candidates = list()
 		for(var/turf/open/nearby in RANGE_TURFS(ROCKHILL_LIGHTNING_RANGE, watcher))
 			if(nearby.loc in impacted_areas)
 				candidates += nearby
 		if(length(candidates))
 			new /obj/effect/temp_visual/rockhill_lightning(pick(candidates))
+
+/datum/weather/particle/rockhill/proc/rockhill_strike(mob/living/victim)
+	new /obj/effect/temp_visual/rockhill_lightning(get_turf(victim))
+	victim.electrocute_act(ROCKHILL_LIGHTNING_DAMAGE, "lightning", 1, SHOCK_NOSTUN)
+	victim.Immobilize(ROCKHILL_LIGHTNING_IMMOBILIZE)
+	victim.changeNext_move(ROCKHILL_LIGHTNING_CLICK_DELAY)
+	victim.log_message("was struck by lightning", LOG_GAME)
 
 /datum/weather/particle/rockhill/proc/rockhill_visuals()
 	return
@@ -290,6 +329,11 @@ GLOBAL_LIST_EMPTY(rockhill_weather_sounds)
 	min_severity = 7
 	optimal_severity = 53
 	severity_variation = 13
+	weather_flags = WEATHER_INDOORS | WEATHER_STRICT_ALERT | WEATHER_MOBS
+	rockhill_temperature_shift = ROCKHILL_RAIN_TEMPERATURE_SHIFT
+	rockhill_wet_stacks = ROCKHILL_RAIN_WET_STACKS
+	rockhill_clean = CLEAN_WASH
+	rockhill_douses_fires = TRUE
 	rockhill_warning = span_greenannounce("Grey clouds gather up above the realm, beholding the gift of life.")
 	telegraph_message = span_greenannounce("Heavy drops begin to fall in rapid succession.")
 	outdoor_sound = /datum/looping_sound/rockhill_weather/rain
@@ -304,6 +348,11 @@ GLOBAL_LIST_EMPTY(rockhill_weather_sounds)
 	severity_variation = 50
 	severity_steps = 50
 	lightning_strikes = 6
+	weather_flags = WEATHER_INDOORS | WEATHER_STRICT_ALERT | WEATHER_MOBS
+	rockhill_temperature_shift = ROCKHILL_STORM_TEMPERATURE_SHIFT
+	rockhill_wet_stacks = ROCKHILL_STORM_WET_STACKS
+	rockhill_clean = CLEAN_SCRUB
+	rockhill_douses_fires = TRUE
 	rockhill_warning = span_greenannounce("Dark clouds gather up above the realm, sparks arcing between heavenly reaches.")
 	telegraph_message = span_greenannounce("The wind shifts and the storm breaks.")
 	outdoor_sound = /datum/looping_sound/rockhill_weather/storm
@@ -316,6 +365,8 @@ GLOBAL_LIST_EMPTY(rockhill_weather_sounds)
 	min_severity = 25
 	optimal_severity = 62
 	severity_variation = 25
+	weather_flags = WEATHER_INDOORS | WEATHER_STRICT_ALERT | WEATHER_MOBS
+	rockhill_temperature_shift = ROCKHILL_SNOW_TEMPERATURE_SHIFT
 	rockhill_warning = span_greenannounce("The air chills across the realm, soft white specs appearing near warm breaths.")
 	telegraph_message = span_greenannounce("Flakes swirl as snow starts to drift down from the sky.")
 	outdoor_sound = /datum/looping_sound/rockhill_weather/snow
@@ -330,6 +381,8 @@ GLOBAL_LIST_EMPTY(rockhill_weather_sounds)
 	optimal_severity = 70
 	severity_variation = 50
 	severity_steps = 50
+	weather_flags = WEATHER_INDOORS | WEATHER_STRICT_ALERT | WEATHER_MOBS
+	rockhill_temperature_shift = ROCKHILL_BLIZZARD_TEMPERATURE_SHIFT
 	rockhill_warning = span_greenannounce("Heavy clouds build in the sky as the air chills across the realm, soft white specs appearing near warm breaths.")
 	telegraph_message = span_greenannounce("Heavy snow begins to fall thick and fast.")
 	outdoor_sound = /datum/looping_sound/rockhill_weather/snow
@@ -362,6 +415,8 @@ GLOBAL_LIST_EMPTY(rockhill_weather_sounds)
 	min_severity = 20
 	optimal_severity = 60
 	severity_variation = 100
+	weather_flags = WEATHER_INDOORS | WEATHER_STRICT_ALERT | WEATHER_MOBS
+	rockhill_mood = /datum/mood_event/rockhill_fireflies
 	rockhill_warning = span_greenannounce("Faint glows appear in the distance across the realm.")
 	telegraph_message = span_greenannounce("Tiny lights begin to flicker in and out nearby.")
 
@@ -373,6 +428,8 @@ GLOBAL_LIST_EMPTY(rockhill_weather_sounds)
 	optimal_severity = 70
 	severity_variation = 50
 	severity_steps = 50
+	weather_flags = WEATHER_INDOORS | WEATHER_STRICT_ALERT | WEATHER_MOBS
+	rockhill_temperature_shift = ROCKHILL_HEAT_TEMPERATURE_SHIFT
 	rockhill_warning = span_greenannounce("A brutal heatwave rolls across the realm, warping the very air.")
 	telegraph_message = span_greenannounce("The air becomes stifling and unbearably still.")
 	outdoor_sound = /datum/looping_sound/rockhill_weather/sandstorm
@@ -538,3 +595,8 @@ ADMIN_VERB(rockhill_run_weather, R_ADMIN|R_FUN, "Weather - Particle", "Start a R
 	var/datum/weather/active = active_weather()
 	active?.end()
 	start_weather(weather_type)
+
+/datum/mood_event/rockhill_fireflies
+	description = "What wonderous fireflies..."
+	mood_change = ROCKHILL_FIREFLIES_MOOD
+	timeout = ROCKHILL_FIREFLIES_MOOD_TIME
