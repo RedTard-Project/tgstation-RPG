@@ -10,3 +10,8 @@
 		/obj/structure/rockhill,
 		/obj/structure/table/wood/rockhill,
 	))
+
+/turf/open/lava/rockhill/burn_stuff(atom/movable/to_burn, seconds_per_tick = 1)
+	if(to_burn && SSatoms.initialized == INITIALIZATION_INNEW_MAPLOAD)
+		return FALSE
+	return ..()

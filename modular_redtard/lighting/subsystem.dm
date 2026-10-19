@@ -1,3 +1,5 @@
+GLOBAL_DATUM_INIT(rogue_light_sentinel, /datum/rogue_light_sentinel, new)
+
 SUBSYSTEM_DEF(rogue_light)
 	name = "Rogue Lighting"
 	dependencies = list(
@@ -5,7 +7,9 @@ SUBSYSTEM_DEF(rogue_light)
 	)
 	wait = 1
 	ss_flags = SS_TICKER
+	var/modes_resolved = FALSE
 	var/carrier_mode = ROGUE_LIGHT_CARRIER_OBJECT
+	var/want_native = FALSE
 	var/native = FALSE
 	var/native_ready = FALSE
 	var/native_failures = 0
@@ -16,64 +20,110 @@ SUBSYSTEM_DEF(rogue_light)
 	var/fn_submit
 	var/fn_collect
 	var/fn_status
+	var/fn_lum
 	var/list/pending = list()
-	var/list/looks = list()
-	var/list/look_lums = list()
-	var/list/key_carriers = list()
-	var/list/look_carriers = list()
-	var/list/idle_carriers = list()
+	var/list/tents = list()
+	var/list/tents_by_z = list()
+	var/list/templates = list()
 	var/list/source_by_id = list()
 	var/list/free_ids = list()
 	var/list/status = list()
 	var/mutable_appearance/dark_appearance
-	var/carrier_count = 0
+	var/tent_count = 0
 	var/applied_records = 0
-	var/next_prune = 0
 
 /datum/controller/subsystem/rogue_light/stat_entry(msg)
-	msg = "\n  [carrier_mode]|[native ? ROGUE_LIGHT_BACKEND_NATIVE : ROGUE_LIGHT_BACKEND_DM]|Carriers:[carrier_count]|Idle:[length(idle_carriers)]"
+	msg = "\n  [carrier_mode]|[native ? ROGUE_LIGHT_BACKEND_NATIVE : ROGUE_LIGHT_BACKEND_DM]|Tents:[tent_count]"
 	if(native_ready && length(status) >= ROGUE_LIGHT_STATUS_SIZE)
-		msg += "|Queue:[length(pending)]|Jobs:[status[ROGUE_LIGHT_STATUS_JOBS]]|Sources:[status[ROGUE_LIGHT_STATUS_SOURCES]]|Looks:[status[ROGUE_LIGHT_STATUS_LOOKS]]|Job:[status[ROGUE_LIGHT_STATUS_LAST_JOB_US]]us|Applied:[applied_records]"
+		msg += "|Queue:[length(pending)]|Jobs:[status[ROGUE_LIGHT_STATUS_JOBS]]|Sources:[status[ROGUE_LIGHT_STATUS_SOURCES]]|Job:[status[ROGUE_LIGHT_STATUS_LAST_JOB_US]]us|Worker:[status[ROGUE_LIGHT_STATUS_TOTAL_JOB_MS]]ms|Applied:[applied_records]"
 	return ..()
 
 /datum/controller/subsystem/rogue_light/Initialize()
 	if(native_ready)
-		submit()
-		var/deadline = REALTIMEOFDAY + ROGUE_LIGHT_INIT_TIMEOUT
-		UNTIL(native_idle() || REALTIMEOFDAY > deadline)
-		apply_results(TRUE)
-	RegisterSignal(SSdcs, COMSIG_GLOB_NEW_Z, PROC_REF(on_new_z))
+		var/wait_started = REALTIMEOFDAY
+		var/applied_before = applied_records
+		drain()
+		poll_status()
+		log_world("Rogue lighting: [carrier_mode], library [length(status) >= ROGUE_LIGHT_STATUS_SIZE ? status[ROGUE_LIGHT_STATUS_TOTAL_JOB_MS] : "?"] ms, drew [applied_records - applied_before] changes, [(REALTIMEOFDAY - wait_started) / 10] s in all")
 	if(carrier_mode == ROGUE_LIGHT_CARRIER_OBJECT && !native_ready)
 		can_fire = FALSE
 		return SS_INIT_NO_NEED
 	return SS_INIT_SUCCESS
 
 /datum/controller/subsystem/rogue_light/fire(resumed)
-	if(native_ready)
-		submit()
-		if(!apply_results(FALSE))
-			return
-		poll_status()
-	if(world.time >= next_prune && length(idle_carriers))
-		prune()
+	if(!native_ready)
+		return
+	submit()
+	if(!apply_results(FALSE))
+		return
+	poll_status()
 
-/datum/controller/subsystem/rogue_light/proc/configure()
-	carrier_mode = ROGUE_LIGHT_CARRIER_OBJECT
-	native = FALSE
-	native_ready = FALSE
-	dark_appearance = mutable_appearance(LIGHTING_ICON, "lighting_dark", plane = LIGHTING_PLANE)
+/datum/controller/subsystem/rogue_light/proc/drain()
+	submit()
+	var/deadline = REALTIMEOFDAY + ROGUE_LIGHT_INIT_TIMEOUT
+	UNTIL(native_idle() || REALTIMEOFDAY > deadline)
+	apply_results(TRUE)
+
+/datum/controller/subsystem/rogue_light/proc/resolve_modes()
+	if(modes_resolved || !SSmapping.current_map)
+		return
+	modes_resolved = TRUE
+	dark_appearance = mutable_appearance(LIGHTING_ICON, "lighting_dark", plane = LIGHTING_PLANE, offset_const = 0)
+	GLOB.rogue_light_sentinel.appearance = dark_appearance
 	if(!rogue_light_map_enabled())
 		return
 	var/requested = lowertext(CONFIG_GET(string/rogue_lighting_carrier))
-	if(requested in list(ROGUE_LIGHT_CARRIER_OBJECT, ROGUE_LIGHT_CARRIER_UNDERLAY, ROGUE_LIGHT_CARRIER_SHARED))
+	if(requested in list(ROGUE_LIGHT_CARRIER_OBJECT, ROGUE_LIGHT_CARRIER_UNDERLAY, ROGUE_LIGHT_CARRIER_TENT))
 		carrier_mode = requested
 	else
 		log_config("Unknown ROGUE_LIGHTING_CARRIER [requested], using [ROGUE_LIGHT_CARRIER_OBJECT].")
-	if(lowertext(CONFIG_GET(string/rogue_lighting_backend)) == ROGUE_LIGHT_BACKEND_NATIVE)
+	want_native = lowertext(CONFIG_GET(string/rogue_lighting_backend)) == ROGUE_LIGHT_BACKEND_NATIVE
+	if(carrier_mode == ROGUE_LIGHT_CARRIER_TENT && !want_native)
+		log_config("ROGUE_LIGHTING_CARRIER tent needs ROGUE_LIGHTING_BACKEND native, using [ROGUE_LIGHT_CARRIER_OBJECT].")
+		carrier_mode = ROGUE_LIGHT_CARRIER_OBJECT
+
+/datum/controller/subsystem/rogue_light/proc/configure()
+	resolve_modes()
+	if(want_native)
 		native = start_native(TRUE)
+	if(!native && carrier_mode == ROGUE_LIGHT_CARRIER_TENT)
+		log_world("Rogue lighting: tents need the library, falling back to [ROGUE_LIGHT_CARRIER_OBJECT].")
+		for(var/turf/lit as anything in static_turfs())
+			if(lit.lighting_object == GLOB.rogue_light_sentinel)
+				lit.lighting_object = null
+		carrier_mode = ROGUE_LIGHT_CARRIER_OBJECT
 
 /datum/controller/subsystem/rogue_light/proc/uses_cells()
-	return carrier_mode != ROGUE_LIGHT_CARRIER_OBJECT
+	if(!modes_resolved)
+		resolve_modes()
+	return carrier_mode == ROGUE_LIGHT_CARRIER_UNDERLAY
+
+/datum/controller/subsystem/rogue_light/proc/uses_tents()
+	if(!modes_resolved)
+		resolve_modes()
+	return carrier_mode == ROGUE_LIGHT_CARRIER_TENT
+
+/datum/controller/subsystem/rogue_light/proc/output_mode()
+	return carrier_mode == ROGUE_LIGHT_CARRIER_TENT ? ROGUE_LIGHT_MODE_TENTS : ROGUE_LIGHT_MODE_LOOKS
+
+/datum/controller/subsystem/rogue_light/proc/light_template(z)
+	if(length(templates) < z)
+		templates.len = z
+	var/mutable_appearance/template = templates[z]
+	if(template)
+		return template
+	template = new
+	template.icon = LIGHTING_ICON
+	template.icon_state = null
+	template.layer = z * 0.01
+	template.plane = LIGHTING_PLANE
+	if(SSmapping.max_plane_offset)
+		template.plane = LIGHTING_PLANE - (PLANE_RANGE * GET_Z_PLANE_OFFSET(z))
+	template.appearance_flags = RESET_COLOR | RESET_ALPHA | RESET_TRANSFORM
+	template.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	template.invisibility = INVISIBILITY_LIGHTING
+	templates[z] = template
+	return template
 
 /datum/controller/subsystem/rogue_light/proc/load_library()
 	if(library)
@@ -93,6 +143,7 @@ SUBSYSTEM_DEF(rogue_light)
 		fn_submit = load_ext(path, "byond:rlight_submit")
 		fn_collect = load_ext(path, "byond:rlight_collect")
 		fn_status = load_ext(path, "byond:rlight_status")
+		fn_lum = load_ext(path, "byond:rlight_lum")
 	catch(var/exception/error)
 		log_world("Rogue lighting: [path] could not be loaded: [error]")
 		return FALSE
@@ -112,16 +163,25 @@ SUBSYSTEM_DEF(rogue_light)
 	if(result != 1)
 		log_world("Rogue lighting: [library] refused to start ([result]).")
 		return FALSE
-	looks.Cut()
-	look_lums.Cut()
-	look_carriers.Cut()
 	pending.Cut()
-	for(var/z in 1 to world.maxz)
+	for(var/z in static_zlevels())
 		if(!upload_zlevel(z, from_areas))
 			return FALSE
 		CHECK_TICK
+	pending.Add(ROGUE_LIGHT_CMD_MODE, output_mode())
+	index_tents()
 	native_ready = TRUE
 	return TRUE
+
+/datum/controller/subsystem/rogue_light/proc/static_zlevels()
+	var/list/levels = list()
+	for(var/area/lit_area as anything in GLOB.areas)
+		if(!lit_area.static_lighting)
+			continue
+		for(var/z in 1 to lit_area.get_highest_zlevel())
+			if(!(z in levels) && length(lit_area.get_turfs_by_zlevel(z)))
+				levels += z
+	return sortTim(levels, GLOBAL_PROC_REF(cmp_numeric_asc))
 
 /datum/controller/subsystem/rogue_light/proc/upload_zlevel(z, from_areas)
 	var/list/flags = new /list(world.maxx * world.maxy)
@@ -140,11 +200,6 @@ SUBSYSTEM_DEF(rogue_light)
 	log_world("Rogue lighting: z-level [z] upload was refused.")
 	return FALSE
 
-/datum/controller/subsystem/rogue_light/proc/on_new_z(datum/source, datum/space_level/level)
-	SIGNAL_HANDLER
-	if(native_ready && !upload_zlevel(level.z_value, FALSE))
-		native_failed("new z-level [level.z_value]")
-
 /datum/controller/subsystem/rogue_light/proc/native_idle()
 	poll_status()
 	return !native_ready || (length(status) >= ROGUE_LIGHT_STATUS_SIZE && !status[ROGUE_LIGHT_STATUS_JOBS])
@@ -160,7 +215,7 @@ SUBSYSTEM_DEF(rogue_light)
 		return
 	status = result
 	if(result[ROGUE_LIGHT_STATUS_FAILED])
-		native_failed("worker panic")
+		native_failed("worker failure")
 
 /datum/controller/subsystem/rogue_light/proc/native_failed(reason)
 	native_ready = FALSE
@@ -169,9 +224,14 @@ SUBSYSTEM_DEF(rogue_light)
 	message_admins("Rogue lighting: the native backend failed ([reason]), [native_failures >= 3 ? "falling back to DM lighting" : "rebuilding it"].")
 	INVOKE_ASYNC(src, PROC_REF(set_backend), native_failures >= 3 ? ROGUE_LIGHT_BACKEND_DM : ROGUE_LIGHT_BACKEND_NATIVE)
 
-/datum/controller/subsystem/rogue_light/proc/turf_changed(turf/target)
+/datum/controller/subsystem/rogue_light/proc/turf_changed(turf/target, reapply = FALSE)
 	if(native_ready && !rebuilding)
-		pending.Add(ROGUE_LIGHT_CMD_TURF, target.x, target.y, target.z, rogue_light_turf_flags(target))
+		pending.Add(ROGUE_LIGHT_CMD_TURF, target.x, target.y, target.z, rogue_light_turf_flags(target) | (reapply ? ROGUE_LIGHT_TURF_REAPPLY : NONE))
+
+/datum/controller/subsystem/rogue_light/proc/turf_lum(turf/target)
+	if(!native_ready)
+		return 0
+	return call_ext(fn_lum)(target.x, target.y, target.z)
 
 /datum/controller/subsystem/rogue_light/proc/light_set(datum/light_source/light)
 	var/turf/source = light.source_turf
@@ -218,114 +278,65 @@ SUBSYSTEM_DEF(rogue_light)
 		if(!batch_length)
 			return TRUE
 		var/index = 1
+		var/applied = 0
 		while(index <= batch_length)
 			var/record = batch[index]
-			if(record == ROGUE_LIGHT_RECORD_LOOK)
-				define_look(batch, index)
-				index += ROGUE_LIGHT_LOOK_SIZE
-			else if(record == ROGUE_LIGHT_RECORD_CHANGE)
+			if(record == ROGUE_LIGHT_RECORD_TENT && index + ROGUE_LIGHT_TENT_SIZE - 1 <= batch_length)
+				var/turf/owner = locate(batch[index + 1], batch[index + 2], batch[index + 3])
+				if(owner)
+					var/owner_z = owner.z
+					var/list/by_id = owner_z <= length(tents_by_z) ? tents_by_z[owner_z] : tents_for_z(owner_z)
+					var/old_tent = batch[index + 4]
+					if(old_tent)
+						var/shown = by_id[old_tent]
+						if(shown)
+							owner.vis_contents -= shown
+					var/new_tent = batch[index + 5]
+					if(new_tent)
+						var/next = by_id[new_tent] || make_tent(by_id, owner_z, new_tent)
+						if(old_tent)
+							owner.vis_contents += next
+						else
+							owner.vis_contents |= next
+				index += ROGUE_LIGHT_TENT_SIZE
+			else if(record == ROGUE_LIGHT_RECORD_LOOK && index + ROGUE_LIGHT_LOOK_SIZE - 1 <= batch_length)
 				var/turf/lit = locate(batch[index + 1], batch[index + 2], batch[index + 3])
-				lit?.lighting_object?.rogue_show_look(batch[index + 4])
-				index += ROGUE_LIGHT_CHANGE_SIZE
+				lit?.lighting_object?.rogue_show_record(batch, index)
+				index += ROGUE_LIGHT_LOOK_SIZE
 			else
 				native_failed("bad record [record]")
 				return TRUE
-		applied_records += batch_length
+			applied++
+		applied_records += applied
 		if(init_tick_checks)
 			CHECK_TICK
 		else if(MC_TICK_CHECK)
 			return FALSE
 	return TRUE
 
-/datum/controller/subsystem/rogue_light/proc/define_look(list/batch, index)
-	var/look = batch[index + 1]
-	if(look > length(looks))
-		looks.len = look
-		look_lums.len = look
-	var/base = index + 1
-	looks[look] = ROGUE_LIGHT_MATRIX(batch[base + 1], batch[base + 2], batch[base + 3], batch[base + 4], batch[base + 5], batch[base + 6], batch[base + 7], batch[base + 8], batch[base + 9], batch[base + 10], batch[base + 11], batch[base + 12])
-	var/total = 0
-	for(var/offset in 1 to ROGUE_LIGHT_LOOK_VALUES)
-		total += batch[base + offset]
-	look_lums[look] = total / ROGUE_LIGHT_LOOK_VALUES
+/datum/controller/subsystem/rogue_light/proc/tents_for_z(z)
+	var/offset = SSmapping.max_plane_offset ? GET_Z_PLANE_OFFSET(z) : 0
+	if(length(tents) <= offset)
+		tents.len = offset + 1
+	var/list/by_id = tents[offset + 1]
+	if(!by_id)
+		by_id = new /list(ROGUE_LIGHT_TENT_MAX)
+		tents[offset + 1] = by_id
+	if(length(tents_by_z) < z)
+		tents_by_z.len = z
+	tents_by_z[z] = by_id
+	return by_id
 
-/datum/controller/subsystem/rogue_light/proc/zlevel_list(list/holder, z)
-	if(length(holder) < z)
-		holder.len = z
-	var/list/level = holder[z]
-	if(!level)
-		level = list()
-		holder[z] = level
-	return level
+/datum/controller/subsystem/rogue_light/proc/index_tents()
+	tents_by_z.Cut()
+	for(var/z in 1 to world.maxz)
+		tents_for_z(z)
 
-/datum/controller/subsystem/rogue_light/proc/carrier_for_corners(z, datum/lighting_corner/red, datum/lighting_corner/green, datum/lighting_corner/blue, datum/lighting_corner/alpha)
-	var/key = "[ROGUE_LIGHT_PACK(red)]|[ROGUE_LIGHT_PACK(green)]|[ROGUE_LIGHT_PACK(blue)]|[ROGUE_LIGHT_PACK(alpha)]"
-	var/list/by_key = zlevel_list(key_carriers, z)
-	var/atom/movable/rogue_light_carrier/found = by_key[key]
-	if(found)
-		return found
-	var/lum = (red.cache_r + red.cache_g + red.cache_b + green.cache_r + green.cache_g + green.cache_b + blue.cache_r + blue.cache_g + blue.cache_b + alpha.cache_r + alpha.cache_g + alpha.cache_b) / ROGUE_LIGHT_LOOK_VALUES
-	found = new(null, key, z, ROGUE_LIGHT_MATRIX(red.cache_r, red.cache_g, red.cache_b, green.cache_r, green.cache_g, green.cache_b, blue.cache_r, blue.cache_g, blue.cache_b, alpha.cache_r, alpha.cache_g, alpha.cache_b), lum)
-	by_key[key] = found
-	carrier_count++
-	return found
-
-/datum/controller/subsystem/rogue_light/proc/carrier_for_look(z, look)
-	if(!look || look > length(looks) || !looks[look])
-		return null
-	var/list/by_look = zlevel_list(look_carriers, z)
-	if(length(by_look) < look)
-		by_look.len = look
-	var/atom/movable/rogue_light_carrier/found = by_look[look]
-	if(found)
-		return found
-	found = new(null, look, z, looks[look], look_lums[look])
-	by_look[look] = found
-	carrier_count++
-	return found
-
-/datum/controller/subsystem/rogue_light/proc/forget_carrier(atom/movable/rogue_light_carrier/carrier)
-	idle_carriers -= carrier
-	carrier_count--
-	var/z = carrier.z_level
-	var/look = carrier.look
-	if(istext(look))
-		var/list/by_key = length(key_carriers) >= z ? key_carriers[z] : null
-		if(by_key?[look] == carrier)
-			by_key -= look
-		return
-	var/list/by_look = length(look_carriers) >= z ? look_carriers[z] : null
-	if(length(by_look) >= look && by_look[look] == carrier)
-		by_look[look] = null
-
-/datum/controller/subsystem/rogue_light/proc/attach(turf/lit, atom/movable/rogue_light_carrier/carrier)
-	if(carrier_mode == ROGUE_LIGHT_CARRIER_SHARED)
-		lit.vis_contents += carrier
-	else
-		lit.underlays += carrier
-
-/datum/controller/subsystem/rogue_light/proc/detach(turf/lit, atom/movable/rogue_light_carrier/carrier)
-	if(carrier_mode == ROGUE_LIGHT_CARRIER_SHARED)
-		lit.vis_contents -= carrier
-	else
-		lit.underlays -= carrier
-
-/datum/controller/subsystem/rogue_light/proc/reattach(turf/lit, atom/movable/rogue_light_carrier/carrier)
-	if(carrier_mode == ROGUE_LIGHT_CARRIER_SHARED)
-		if(!(carrier in lit.vis_contents))
-			lit.vis_contents += carrier
-		return
-	lit.underlays -= carrier
-	lit.underlays += carrier
-
-/datum/controller/subsystem/rogue_light/proc/prune()
-	next_prune = world.time + ROGUE_LIGHT_PRUNE_INTERVAL
-	var/deadline = world.time - ROGUE_LIGHT_IDLE_TIME
-	for(var/atom/movable/rogue_light_carrier/carrier as anything in idle_carriers)
-		if(carrier.users <= 0 && carrier.idle_since <= deadline)
-			qdel(carrier)
-		if(MC_TICK_CHECK)
-			return
+/datum/controller/subsystem/rogue_light/proc/make_tent(list/by_id, z, tent_id)
+	var/atom/movable/rogue_light_tent/made = new(null, tent_id, SSmapping.max_plane_offset ? GET_Z_PLANE_OFFSET(z) : 0)
+	by_id[tent_id] = made
+	tent_count++
+	return made
 
 /datum/controller/subsystem/rogue_light/proc/static_turfs()
 	. = list()
@@ -340,7 +351,12 @@ SUBSYSTEM_DEF(rogue_light)
 /datum/controller/subsystem/rogue_light/proc/set_carrier_mode(new_mode)
 	if(new_mode == carrier_mode)
 		return
+	if(new_mode == ROGUE_LIGHT_CARRIER_TENT && !native_ready)
+		message_admins("Rogue lighting: tents need the native backend.")
+		return
 	var/list/turfs = static_turfs()
+	if(carrier_mode == ROGUE_LIGHT_CARRIER_TENT)
+		clear_tents()
 	rebuilding = TRUE
 	for(var/turf/lit as anything in turfs)
 		lit.lighting_clear_overlay()
@@ -352,9 +368,25 @@ SUBSYSTEM_DEF(rogue_light)
 	rebuilding = FALSE
 	can_fire = TRUE
 	if(native_ready)
-		pending += ROGUE_LIGHT_CMD_RESEND
+		pending.Add(ROGUE_LIGHT_CMD_MODE, output_mode(), ROGUE_LIGHT_CMD_RESEND)
+
+/datum/controller/subsystem/rogue_light/proc/clear_tents()
+	for(var/list/by_id as anything in tents)
+		if(!by_id)
+			continue
+		for(var/index in 1 to length(by_id))
+			var/atom/movable/rogue_light_tent/shown = by_id[index]
+			if(shown)
+				for(var/turf/holder as anything in shown.vis_locs)
+					holder.vis_contents -= shown
+			if(!(index % 4096))
+				CHECK_TICK
 
 /datum/controller/subsystem/rogue_light/proc/set_backend(new_backend)
+	if(carrier_mode == ROGUE_LIGHT_CARRIER_TENT)
+		clear_tents()
+		if(new_backend != ROGUE_LIGHT_BACKEND_NATIVE)
+			set_carrier_mode(ROGUE_LIGHT_CARRIER_OBJECT)
 	var/list/lights = list()
 	for(var/datum/light_source/light)
 		lights += light
@@ -366,14 +398,18 @@ SUBSYSTEM_DEF(rogue_light)
 	source_by_id.Cut()
 	free_ids.Cut()
 	for(var/turf/lit as anything in static_turfs())
-		lit.lighting_object?.rogue_show_look(ROGUE_LIGHT_DARK)
+		lit.lighting_object?.rogue_show_dark()
 		CHECK_TICK
 	if(new_backend == ROGUE_LIGHT_BACKEND_NATIVE)
 		native = start_native(FALSE)
 		if(!native)
 			message_admins("Rogue lighting: the native backend did not start, DM lighting stays in charge.")
+			if(carrier_mode == ROGUE_LIGHT_CARRIER_TENT)
+				set_carrier_mode(ROGUE_LIGHT_CARRIER_OBJECT)
 	if(native)
 		native_failures = 0
+		if(carrier_mode == ROGUE_LIGHT_CARRIER_TENT)
+			pending.Add(ROGUE_LIGHT_CMD_RESEND)
 	can_fire = TRUE
 	for(var/datum/light_source/light as anything in lights)
 		if(!QDELETED(light))
@@ -409,7 +445,7 @@ ADMIN_VERB(rogue_lighting_panel, R_DEBUG, "Rogue Lighting", "Switch the lighting
 	var/list/choices = list(
 		"Carrier: [ROGUE_LIGHT_CARRIER_OBJECT]" = list(ROGUE_LIGHT_CARRIER_OBJECT, null),
 		"Carrier: [ROGUE_LIGHT_CARRIER_UNDERLAY]" = list(ROGUE_LIGHT_CARRIER_UNDERLAY, null),
-		"Carrier: [ROGUE_LIGHT_CARRIER_SHARED]" = list(ROGUE_LIGHT_CARRIER_SHARED, null),
+		"Carrier: [ROGUE_LIGHT_CARRIER_TENT]" = list(ROGUE_LIGHT_CARRIER_TENT, null),
 		"Backend: [ROGUE_LIGHT_BACKEND_DM]" = list(null, ROGUE_LIGHT_BACKEND_DM),
 		"Backend: [ROGUE_LIGHT_BACKEND_NATIVE]" = list(null, ROGUE_LIGHT_BACKEND_NATIVE),
 	)

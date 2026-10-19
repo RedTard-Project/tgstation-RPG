@@ -33,6 +33,8 @@
 	var/list/areas = allowed_areas && typecacheof(allowed_areas, only_root_path = !include_subtypes)
 	for(var/turf/place_on as anything in mother.map)
 		CHECK_TICK
+		if(place_on.x == 1 || place_on.y == 1 || place_on.x == world.maxx || place_on.y == world.maxy)
+			continue
 		if(excluded?[place_on.type] || (allowed && !allowed[place_on.type]))
 			continue
 		var/area/place_area = place_on.loc

@@ -126,8 +126,8 @@
 /obj/structure/rack/rockhill/Initialize(mapload)
 	. = ..()
 	apply_rockhill_look()
-	if(density)
-		AddElement(/datum/element/climbable)
+	if(!density)
+		RemoveElement(/datum/element/climbable)
 
 /obj/structure/closet/crate/wooden/rockhill
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'

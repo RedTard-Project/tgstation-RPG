@@ -1,66 +1,73 @@
-/atom/movable/rogue_light_carrier
+/atom/movable/rogue_light_tent
 	name = ""
 	anchored = TRUE
-	icon = LIGHTING_ICON
+	icon = 'modular_redtard/icons/effects/rogue_light_tent.dmi'
+	icon_state = "tent"
 	plane = LIGHTING_PLANE
+	blend_mode = BLEND_ADD
 	appearance_flags = RESET_COLOR | RESET_ALPHA | RESET_TRANSFORM
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	invisibility = INVISIBILITY_LIGHTING
 	move_resist = INFINITY
-	var/look
-	var/z_level
-	var/users = 0
-	var/idle_since = 0
-	var/lum = 0
+	var/tent_id = 0
 
-/atom/movable/rogue_light_carrier/Initialize(mapload, look, z_level, list/color_matrix, lum)
+/atom/movable/rogue_light_tent/Initialize(mapload, tent_id, plane_offset)
 	. = ..()
-	verbs.Cut()
-	src.look = look
-	src.z_level = z_level
-	src.lum = lum
-	layer = z_level * 0.01
-	if(SSmapping.max_plane_offset)
-		plane = LIGHTING_PLANE - (PLANE_RANGE * GET_Z_PLANE_OFFSET(z_level))
-	color = color_matrix
+	src.tent_id = tent_id
+	var/index = tent_id - 1
+	var/red = index % ROGUE_LIGHT_TENT_LEVELS
+	var/green = round(index / ROGUE_LIGHT_TENT_LEVELS) % ROGUE_LIGHT_TENT_LEVELS
+	var/blue = round(index / (ROGUE_LIGHT_TENT_LEVELS * ROGUE_LIGHT_TENT_LEVELS))
+	var/scale = 255 / (ROGUE_LIGHT_TENT_LEVELS - 1)
+	color = rgb(round(red * scale), round(green * scale), round(blue * scale))
+	if(plane_offset)
+		plane = LIGHTING_PLANE - (PLANE_RANGE * plane_offset)
 
-/atom/movable/rogue_light_carrier/Destroy(force)
-	SSrogue_light.forget_carrier(src)
+/atom/movable/rogue_light_tent/Destroy(force)
+	if(!force)
+		return QDEL_HINT_LETMELIVE
 	return ..()
 
-/atom/movable/rogue_light_carrier/proc/acquire()
-	if(users++ <= 0)
-		SSrogue_light.idle_carriers -= src
-
-/atom/movable/rogue_light_carrier/proc/release()
-	if(--users > 0)
-		return
-	users = 0
-	idle_since = world.time
-	SSrogue_light.idle_carriers[src] = TRUE
-
-/atom/movable/rogue_light_carrier/forceMove(atom/destination, no_tp = FALSE, harderforce = FALSE)
+/atom/movable/rogue_light_tent/forceMove(atom/destination, no_tp = FALSE, harderforce = FALSE)
 	if(harderforce)
 		return ..()
 
-/atom/movable/rogue_light_carrier/ex_act(severity)
+/atom/movable/rogue_light_tent/ex_act(severity)
 	return FALSE
 
-/atom/movable/rogue_light_carrier/singularity_act()
+/atom/movable/rogue_light_tent/singularity_act()
 	return
 
-/atom/movable/rogue_light_carrier/singularity_pull()
+/atom/movable/rogue_light_tent/singularity_pull()
 	return
 
-/atom/movable/rogue_light_carrier/wash(clean_types)
+/atom/movable/rogue_light_tent/wash(clean_types)
 	SHOULD_CALL_PARENT(FALSE)
+	return
+
+/datum/rogue_light_sentinel
+	var/turf/affected_turf
+	var/needs_update = FALSE
+	var/rogue_lum = 0
+	var/appearance
+
+/datum/rogue_light_sentinel/Destroy(force)
+	return QDEL_HINT_LETMELIVE
+
+/datum/rogue_light_sentinel/proc/update()
+	return
+
+/datum/rogue_light_sentinel/proc/rogue_show_record(list/batch, index)
+	return
+
+/datum/rogue_light_sentinel/proc/rogue_show_dark()
 	return
 
 /datum/rogue_light_cell
 	var/turf/affected_turf
 	var/needs_update = FALSE
-	var/atom/movable/rogue_light_carrier/carrier
-	var/look = ROGUE_LIGHT_DARK
+	var/mutable_appearance/underlay
+	var/underlay_shown = FALSE
 	var/rogue_lum = 0
 	var/appearance
 
@@ -84,13 +91,14 @@
 	SSlighting.objects_queue -= src
 	var/turf/lit = affected_turf
 	if(lit)
-		set_carrier(null)
+		rogue_show_dark()
 		if(lit.lighting_object == src)
 			lit.lighting_object = null
 		lit.luminosity = 1
 		if(SSrogue_light.native)
 			SSrogue_light.turf_changed(lit)
 	affected_turf = null
+	underlay = null
 	return ..()
 
 /datum/rogue_light_cell/proc/update()
@@ -98,7 +106,7 @@
 	if(!lit)
 		return
 	if(SSrogue_light.native)
-		set_carrier(SSrogue_light.carrier_for_look(lit.z, look))
+		reapply()
 		return
 	var/static/datum/lighting_corner/dummy/dummy_corner = new
 	var/datum/lighting_corner/red = lit.lighting_corner_SW || dummy_corner
@@ -106,33 +114,42 @@
 	var/datum/lighting_corner/blue = lit.lighting_corner_NW || dummy_corner
 	var/datum/lighting_corner/alpha = lit.lighting_corner_NE || dummy_corner
 	if(max(red.largest_color_luminosity, green.largest_color_luminosity, blue.largest_color_luminosity, alpha.largest_color_luminosity) <= ROGUE_LIGHT_LUM_EPSILON)
-		set_carrier(null)
+		rogue_show_dark()
 		return
-	set_carrier(SSrogue_light.carrier_for_corners(lit.z, red, green, blue, alpha))
+	show_underlay(ROGUE_LIGHT_CORNERS_MATRIX(red, green, blue, alpha), ROGUE_LIGHT_CORNERS_LUM(red, green, blue, alpha))
 
-/datum/rogue_light_cell/proc/rogue_show_look(new_look)
-	look = new_look
-	set_carrier(SSrogue_light.carrier_for_look(affected_turf.z, new_look))
-
-/datum/rogue_light_cell/proc/set_carrier(atom/movable/rogue_light_carrier/new_carrier)
+/datum/rogue_light_cell/proc/reapply()
+	if(!underlay_shown)
+		return
 	var/turf/lit = affected_turf
-	var/atom/movable/rogue_light_carrier/old_carrier = carrier
-	if(old_carrier == new_carrier)
-		if(new_carrier)
-			SSrogue_light.reattach(lit, new_carrier)
+	lit.underlays -= underlay
+	lit.underlays += underlay
+
+/datum/rogue_light_cell/proc/rogue_show_record(list/batch, index)
+	if(batch[index + 4] == ROGUE_LIGHT_DARK)
+		rogue_show_dark()
 		return
-	if(old_carrier)
-		SSrogue_light.detach(lit, old_carrier)
-		old_carrier.release()
-	carrier = new_carrier
-	if(!new_carrier)
-		appearance = SSrogue_light.dark_appearance
-		rogue_lum = 0
-		return
-	new_carrier.acquire()
-	SSrogue_light.attach(lit, new_carrier)
-	appearance = new_carrier.appearance
-	rogue_lum = new_carrier.lum
+	var/values_at = index + 5
+	show_underlay(ROGUE_LIGHT_RECORD_MATRIX(batch, values_at), ROGUE_LIGHT_RECORD_LUM(batch, values_at))
+
+/datum/rogue_light_cell/proc/rogue_show_dark()
+	rogue_lum = 0
+	appearance = SSrogue_light.dark_appearance
+	if(underlay_shown)
+		affected_turf.underlays -= underlay
+		underlay_shown = FALSE
+
+/datum/rogue_light_cell/proc/show_underlay(list/color_matrix, lum)
+	var/turf/lit = affected_turf
+	if(underlay_shown)
+		lit.underlays -= underlay
+	else if(!underlay)
+		underlay = new(SSrogue_light.light_template(lit.z))
+	underlay.color = color_matrix
+	lit.underlays += underlay
+	underlay_shown = TRUE
+	appearance = underlay
+	rogue_lum = lum
 
 /datum/rogue_light_cell/ref_search_details()
-	return "[text_ref(src)] (turf: [affected_turf ? "[affected_turf.type] @ [AREACOORD(affected_turf)]" : "null"] carrier: [carrier ? text_ref(carrier) : "none"])"
+	return "[text_ref(src)] (turf: [affected_turf ? "[affected_turf.type] @ [AREACOORD(affected_turf)]" : "null"])"

@@ -5,16 +5,16 @@ GLOBAL_LIST_EMPTY(rockhill_redstone)
 
 /obj/structure/rockhill/proc/register_redstone()
 	if(redstone_id)
-		LAZYADDASSOCLIST(GLOB.rockhill_redstone, redstone_id, src)
+		LAZYADDASSOCLIST(GLOB.rockhill_redstone, "[redstone_id]", src)
 
 /obj/structure/rockhill/proc/unregister_redstone()
 	if(redstone_id)
-		LAZYREMOVEASSOC(GLOB.rockhill_redstone, redstone_id, src)
+		LAZYREMOVEASSOC(GLOB.rockhill_redstone, "[redstone_id]", src)
 
 /obj/structure/rockhill/proc/send_redstone(mob/user)
 	if(!redstone_id)
 		return
-	for(var/obj/structure/linked as anything in GLOB.rockhill_redstone[redstone_id])
+	for(var/obj/structure/linked as anything in GLOB.rockhill_redstone["[redstone_id]"])
 		if(linked != src)
 			INVOKE_ASYNC(linked, PROC_REF(redstone_triggered), user)
 

@@ -87,11 +87,11 @@ GLOBAL_LIST_INIT(rockhill_secret_magic_words, list("sesame", "abyss", "fire", "w
 	open_phrase = "[pick(GLOB.rockhill_secret_open_words)] [pick(GLOB.rockhill_secret_magic_words)]"
 	become_hearing_sensitive()
 	if(redstone_id)
-		LAZYADDASSOCLIST(GLOB.rockhill_redstone, redstone_id, src)
+		LAZYADDASSOCLIST(GLOB.rockhill_redstone, "[redstone_id]", src)
 
 /obj/structure/mineral_door/rockhill/secret/Destroy()
 	if(redstone_id)
-		LAZYREMOVEASSOC(GLOB.rockhill_redstone, redstone_id, src)
+		LAZYREMOVEASSOC(GLOB.rockhill_redstone, "[redstone_id]", src)
 	return ..()
 
 /obj/structure/mineral_door/rockhill/secret/proc/disguise_as(turf/closed/wall, new_redstone_id)
@@ -107,7 +107,7 @@ GLOBAL_LIST_INIT(rockhill_secret_magic_words, list("sesame", "abyss", "fire", "w
 		QUEUE_SMOOTH(src)
 	if(new_redstone_id && !redstone_id)
 		redstone_id = new_redstone_id
-		LAZYADDASSOCLIST(GLOB.rockhill_redstone, redstone_id, src)
+		LAZYADDASSOCLIST(GLOB.rockhill_redstone, "[redstone_id]", src)
 	update_appearance()
 
 /obj/structure/mineral_door/rockhill/secret/update_icon_state()

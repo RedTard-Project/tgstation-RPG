@@ -49,6 +49,12 @@
 #ifdef REDTARD_TEST_FOCUS
 #include "tests\focus.dm"
 #endif
+
+#ifdef REDTARD_LIGHT_BENCH
+#include "tests\light_bench.dm"
+#include "tests\light_bench_client.dm"
+#endif
+
 // BEGIN_INTERNALS
 // END_INTERNALS
 // BEGIN_FILE_DIR
@@ -102,4 +108,6 @@
 #include "storage\grid.dm"
 #include "tests\focus.dm"
 #include "tests\huds_rogue.dm"
+#include "tests\light_bench.dm"
+#include "tests\light_bench_client.dm"
 // END_INCLUDE
