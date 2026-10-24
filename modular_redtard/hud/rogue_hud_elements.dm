@@ -6,11 +6,12 @@
 	icon_state = "template_small"
 	screen_loc = rogueui_panel_toggle
 	mouse_over_pointer = MOUSE_HAND_POINTER
+	var/group_key = HUD_GROUP_ROGUE_PANEL
 
 /atom/movable/screen/rogue/panel_toggle/update_overlays()
 	. = ..()
 	var/datum/hud/rogue/viewer_hud = hud
-	if(!istype(viewer_hud) || viewer_hud.panel_shown)
+	if(!istype(viewer_hud) || viewer_hud.group_shown(group_key))
 		. += "corner"
 
 /atom/movable/screen/rogue/panel_toggle/Click(location, control, params)
@@ -21,14 +22,39 @@
 	if(isobserver(usr) && ishuman(usr.client?.eye) && usr.client.eye != usr)
 		target = usr.client.eye
 	var/datum/hud/rogue/target_hud = target.hud_used
-	var/list/panel = istype(target_hud) ? target_hud.screen_groups[HUD_GROUP_ROGUE_PANEL] : null
-	viewer_hud.panel_shown = !viewer_hud.panel_shown
-	if(usr.client && panel)
-		if(viewer_hud.panel_shown)
-			usr.client.screen |= panel
+	var/list/pieces = istype(target_hud) ? target_hud.screen_groups[group_key] : null
+	var/shown = !viewer_hud.group_shown(group_key)
+	viewer_hud.folded_groups ^= list(group_key)
+	if(usr.client && pieces)
+		if(shown)
+			usr.client.screen |= pieces
 		else
-			usr.client.screen -= panel
+			usr.client.screen -= pieces
 	update_appearance()
+
+/atom/movable/screen/rogue/panel_toggle/doll
+	name = "body"
+	screen_loc = rogueui_doll_toggle
+	group_key = HUD_GROUP_ROGUE_DOLL
+
+/atom/movable/screen/rogue/panel_strip
+	name = ""
+	icon = ROGUE_HUD_ICON_STRIP
+	icon_state = "strip"
+	screen_loc = rogueui_panel_strip
+	layer = ROGUE_HUD_LAYER - 1
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+
+/atom/movable/screen/rogue/build
+	name = "build"
+	icon = ROGUE_HUD_ICON_STRIP
+	icon_state = "build"
+	screen_loc = rogueui_build
+	layer = ROGUE_HUD_LAYER
+	mouse_over_pointer = MOUSE_HAND_POINTER
+
+/atom/movable/screen/rogue/build/Click(location, control, params)
+	rogue_hud_not_implemented(usr)
 
 /atom/movable/screen/human/toggle/rogue
 	name = "inventory"

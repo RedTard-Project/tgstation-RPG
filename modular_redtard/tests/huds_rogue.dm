@@ -55,64 +55,67 @@
 	var/no_group = "none"
 	var/list/states_missing_in_azure = list(HUD_ROGUE_GIVE)
 	var/list/expected = list(
-		HUD_ROGUE_PANEL_TOGGLE = list(/atom/movable/screen/rogue/panel_toggle, "WEST:16,NORTH", hud_icon, "template_small", 24, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_HUMAN_TOGGLE_INVENTORY = list(/atom/movable/screen/human/toggle/rogue, "WEST:16,SOUTH", hud_icon, "back", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_PANEL_TOGGLE = list(/atom/movable/screen/rogue/panel_toggle, rogueui_panel_toggle, hud_icon, "template_small", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_HUMAN_TOGGLE_INVENTORY = list(/atom/movable/screen/human/toggle/rogue, rogueui_inventory_toggle, hud_icon, "back", 24, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_ROGUE_GRAIN = list(/atom/movable/screen/rogue/placeholder/grain, "1,1", 'modular_redtard/icons/hud/grain.dmi', "grain", 13, HUD_PLANE, no_group),
 		HUD_ROGUE_SCANNIES = list(/atom/movable/screen/rogue/placeholder/scannies, "WEST:16,SOUTH:0", 'modular_redtard/icons/mob/roguehudback2.dmi', "crt", CURSE_LAYER + 0.2, FULLSCREEN_PLANE, no_group),
 		HUD_ROGUE_READ = list(/atom/movable/screen/rogue/placeholder/read, "1,1", 'modular_redtard/icons/hud/read.dmi', "", 24, HUD_PLANE, no_group),
 		HUD_ROGUE_READ_TEXT_RIGHT = list(/atom/movable/screen/rogue/placeholder/readtext, "5,5", null, "", 24.02, HUD_PLANE, no_group),
 		HUD_ROGUE_READ_TEXT_LEFT = list(/atom/movable/screen/rogue/placeholder/readtext, "5,5", null, "", 24.02, HUD_PLANE, no_group),
-		HUD_ROGUE_WEAPON_INTENTS = list(/atom/movable/screen/rogue/weapon_intents, "WEST,SOUTH+8", 'modular_redtard/icons/mob/rogueintentbase.dmi', "intentbase", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
-		HUD_MOB_MOOD = list(/atom/movable/screen/mood/rogue, "EAST-2:27,CENTER+2", hud_icon, null, 24, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_ROGUE_RMB_INTENT = list(/atom/movable/screen/rogue/rmb_intent, "WEST+1,CENTER+1", hud_icon, "rmbintent", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
-		HUD_MOB_HEALTH = list(/atom/movable/screen/healths/rogue, "EAST-1,CENTER+1", heat_icon, "dam0", 24, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_ROGUE_QUAD_INTENTS = list(/atom/movable/screen/rogue/quad_intents, "WEST+1,SOUTH+7", hud_icon, "mmbintents0", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
-		HUD_ROGUE_DEF_INTENT = list(/atom/movable/screen/rogue/def_intent, "WEST+3:16,NORTH-5", hud_icon, "def2n", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
-		HUD_MOB_INTENTS = list(/atom/movable/screen/combattoggle/rogue, "WEST+4,CENTER+1", hud_icon, "combat0", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
-		HUD_ROGUE_GIVE = list(/atom/movable/screen/rogue/give, "WEST+4,SOUTH+7", hud_icon, "take0", 24, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_ROGUE_HEATSTAM_OVERLAY = list(/atom/movable/screen/rogue/heatstam_overlay, "EAST-2:11,CENTER-1:-8", heat_icon, "heatstamover", 24.1, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_WEAPON_INTENTS = list(/atom/movable/screen/rogue/weapon_intents, rogueui_intents, 'modular_redtard/icons/mob/rogueintentbase.dmi', "intentbase", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_MOB_MOOD = list(/atom/movable/screen/mood/rogue, rogueui_stress, hud_icon, null, 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_RMB_INTENT = list(/atom/movable/screen/rogue/rmb_intent, rogueui_rmbintents, hud_icon, "rmbintent", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_MOB_HEALTH = list(/atom/movable/screen/healths/rogue, rogueui_blood, heat_icon, "dam0", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_QUAD_INTENTS = list(/atom/movable/screen/rogue/quad_intents, rogueui_quad, hud_icon, "mmbintents0", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_DEF_INTENT = list(/atom/movable/screen/rogue/def_intent, rogueui_def, hud_icon, "def2n", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_MOB_INTENTS = list(/atom/movable/screen/combattoggle/rogue, rogueui_cmode, hud_icon, "combat0", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_GIVE = list(/atom/movable/screen/rogue/give, rogueui_give, hud_icon, "take0", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_HEATSTAM_OVERLAY = list(/atom/movable/screen/rogue/heatstam_overlay, rogueui_fat, heat_icon, "heatstamover", 24.1, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_ROGUE_FOV = list(/atom/movable/screen/rogue/placeholder/fov, "1,1", 'modular_redtard/icons/mob/vision_cone.dmi', "combat", FLASH_LAYER - 0.5, FULLSCREEN_PLANE, no_group),
 		HUD_ROGUE_FOV_BLOCKER = list(/atom/movable/screen/rogue/placeholder/fov_blocker, "1,1", 'modular_redtard/icons/mob/vision_cone.dmi', "combat_v", 24, FIELD_OF_VISION_BLOCKER_PLANE, no_group),
-		HUD_ROGUE_CLICKDELAY_LEFT = list(/atom/movable/screen/rogue/clickdelay/left, "WEST+2,SOUTH+7", hud_icon, "", 25, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_ROGUE_CLICKDELAY_RIGHT = list(/atom/movable/screen/rogue/clickdelay/right, "WEST+3,SOUTH+7", hud_icon, "", 25, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_ROGUE_CLICKDELAY_MID = list(/atom/movable/screen/rogue/clickdelay/next_move, "WEST+2:16,SOUTH+7", hud_icon, "", 25, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_ROGUE_DEFDELAY = list(/atom/movable/screen/rogue/defdelay, "WEST+4:11,SOUTH+10:15", hud_icon, "defdelay0", 25, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
-		HUD_KEY_HAND_SLOT(1) = list(/atom/movable/screen/inventory/hand/rogue, "WEST+2,SOUTH+7", hud_icon, "hand_l", 24, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_KEY_HAND_SLOT(2) = list(/atom/movable/screen/inventory/hand/rogue, "WEST+3,SOUTH+7", hud_icon, "hand_r", 24, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_ROGUE_RING_SLOT(1) = list(/atom/movable/screen/inventory/rogue/indexed/ring, "WEST:8,SOUTH+2:8", hud_icon, "ring", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
-		HUD_ROGUE_RING_SLOT(2) = list(/atom/movable/screen/inventory/rogue/indexed/ring, "WEST:24,SOUTH+2:8", hud_icon, "ring", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
-		HUD_ROGUE_RING_SLOT(3) = list(/atom/movable/screen/inventory/rogue/indexed/ring, "WEST:8,SOUTH+2:-8", hud_icon, "ring", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
-		HUD_ROGUE_RING_SLOT(4) = list(/atom/movable/screen/inventory/rogue/indexed/ring, "WEST:24,SOUTH+2:-8", hud_icon, "ring", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
-		HUD_KEY_ITEM_SLOT(ITEM_SLOT_ROGUE_WRISTS) = list(/atom/movable/screen/inventory/rogue, "WEST+2:16,SOUTH+3", hud_icon, "wrist", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
-		HUD_KEY_ITEM_SLOT(ITEM_SLOT_MASK) = list(/atom/movable/screen/inventory/rogue, "WEST:16,SOUTH+5", hud_icon, "mask", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
-		HUD_KEY_ITEM_SLOT(ITEM_SLOT_NECK) = list(/atom/movable/screen/inventory/rogue, "WEST:16,SOUTH+3", hud_icon, "neck", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
-		HUD_KEY_ITEM_SLOT(ITEM_SLOT_BACK) = list(/atom/movable/screen/inventory/rogue, "WEST+2:16,SOUTH+4", hud_icon, "back", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
-		HUD_ROGUE_BACKR = list(/atom/movable/screen/inventory/rogue/indexed, "WEST:16,SOUTH+4", hud_icon, "back", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
-		HUD_KEY_ITEM_SLOT(ITEM_SLOT_GLOVES) = list(/atom/movable/screen/inventory/rogue, "WEST+2:16,SOUTH+2", hud_icon, "gloves", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
-		HUD_KEY_ITEM_SLOT(ITEM_SLOT_HEAD) = list(/atom/movable/screen/inventory/rogue, "WEST+1:16,SOUTH+5", hud_icon, "head", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
-		HUD_KEY_ITEM_SLOT(ITEM_SLOT_FEET) = list(/atom/movable/screen/inventory/rogue, "WEST+2:16,SOUTH", hud_icon, "shoes", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
-		HUD_KEY_ITEM_SLOT(ITEM_SLOT_BELT) = list(/atom/movable/screen/inventory/rogue, "WEST+1:16,SOUTH+1", hud_icon, "belt", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
-		HUD_KEY_ITEM_SLOT(ITEM_SLOT_RPOCKET) = list(/atom/movable/screen/inventory/rogue, "WEST:16,SOUTH+1", hud_icon, "hip", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
-		HUD_KEY_ITEM_SLOT(ITEM_SLOT_LPOCKET) = list(/atom/movable/screen/inventory/rogue, "WEST+2:16,SOUTH+1", hud_icon, "hip", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
-		HUD_KEY_ITEM_SLOT(ITEM_SLOT_ROGUE_SHIRT) = list(/atom/movable/screen/inventory/rogue, "WEST+1:16,SOUTH+2", hud_icon, "shirt", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
-		HUD_KEY_ITEM_SLOT(ITEM_SLOT_ICLOTHING) = list(/atom/movable/screen/inventory/rogue, "WEST+1:16,SOUTH", hud_icon, "pants", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
-		HUD_KEY_ITEM_SLOT(ITEM_SLOT_OCLOTHING) = list(/atom/movable/screen/inventory/rogue, "WEST+1:16,SOUTH+3", hud_icon, "armor", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
-		HUD_KEY_ITEM_SLOT(ITEM_SLOT_ROGUE_CLOAK) = list(/atom/movable/screen/inventory/rogue, "WEST+1:16,SOUTH+4", hud_icon, "cloak", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
-		HUD_KEY_ITEM_SLOT(ITEM_SLOT_ROGUE_MOUTH) = list(/atom/movable/screen/inventory/rogue, "WEST+2:16,SOUTH+5", hud_icon, "mouth", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
-		HUD_MOB_DROP = list(/atom/movable/screen/drop/rogue, "WEST+4,SOUTH+7", hud_icon, "act_drop", 24, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_MOB_THROW = list(/atom/movable/screen/throw_catch/rogue, "WEST+4,SOUTH+7", hud_icon, "catch0", 24, HUD_PLANE, HUD_GROUP_HOTKEYS),
-		HUD_ROGUE_STAND_UP = list(/atom/movable/screen/rogue/stand_up, "WEST+1:16,CENTER+2", hud_icon, "act_rest_up", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
-		HUD_MOB_REST = list(/atom/movable/screen/rest/rogue, "WEST+1:16,CENTER+2", hud_icon, "act_rest_down", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
-		HUD_ROGUE_SKILLS = list(/atom/movable/screen/rogue/skills, "WEST+1:16,CENTER+3", hud_icon, "skills", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
-		HUD_MOB_CRAFTING_MENU = list(/atom/movable/screen/craft/rogue, "WEST+1:16,CENTER+3", hud_icon, "craft", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
-		HUD_ROGUE_SNEAK = list(/atom/movable/screen/rogue/sneak, "WEST+2:16,CENTER+2", hud_icon, "sneak0", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
-		HUD_MOB_MOVE_INTENT = list(/atom/movable/screen/mov_intent/rogue, "WEST+2:16,CENTER+2", hud_icon, null, 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
-		HUD_ROGUE_EYE = list(/atom/movable/screen/rogue/eye, "WEST+3:16,CENTER+3", hud_icon, "eye", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_CLICKDELAY_LEFT = list(/atom/movable/screen/rogue/clickdelay/left, rogueui_clickdelay_left, hud_icon, "", 25, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_CLICKDELAY_RIGHT = list(/atom/movable/screen/rogue/clickdelay/right, rogueui_clickdelay_right, hud_icon, "", 25, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_CLICKDELAY_MID = list(/atom/movable/screen/rogue/clickdelay/next_move, rogueui_clickdelay_mid, hud_icon, "", 25, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_DEFDELAY = list(/atom/movable/screen/rogue/defdelay, rogueui_defdelay, hud_icon, "defdelay0", 25, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_KEY_HAND_SLOT(1) = list(/atom/movable/screen/inventory/hand/rogue, rogueui_hand_left, hud_icon, "hand_l", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_KEY_HAND_SLOT(2) = list(/atom/movable/screen/inventory/hand/rogue, rogueui_hand_right, hud_icon, "hand_r", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_RING_SLOT(1) = list(/atom/movable/screen/inventory/rogue/indexed/ring, rogueui_ring1, hud_icon, "ring", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_ROGUE_RING_SLOT(2) = list(/atom/movable/screen/inventory/rogue/indexed/ring, rogueui_ring2, hud_icon, "ring", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_ROGUE_RING_SLOT(3) = list(/atom/movable/screen/inventory/rogue/indexed/ring, rogueui_ring3, hud_icon, "ring", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_ROGUE_RING_SLOT(4) = list(/atom/movable/screen/inventory/rogue/indexed/ring, rogueui_ring4, hud_icon, "ring", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_ROGUE_WRISTS) = list(/atom/movable/screen/inventory/rogue, rogueui_wrists, hud_icon, "wrist", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_MASK) = list(/atom/movable/screen/inventory/rogue, rogueui_mask, hud_icon, "mask", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_NECK) = list(/atom/movable/screen/inventory/rogue, rogueui_neck, hud_icon, "neck", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_BACK) = list(/atom/movable/screen/inventory/rogue, rogueui_backl, hud_icon, "back", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_ROGUE_BACKR = list(/atom/movable/screen/inventory/rogue/indexed, rogueui_backr, hud_icon, "back", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_GLOVES) = list(/atom/movable/screen/inventory/rogue, rogueui_gloves, hud_icon, "gloves", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_HEAD) = list(/atom/movable/screen/inventory/rogue, rogueui_head, hud_icon, "head", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_FEET) = list(/atom/movable/screen/inventory/rogue, rogueui_shoes, hud_icon, "shoes", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_BELT) = list(/atom/movable/screen/inventory/rogue, rogueui_belt, hud_icon, "belt", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_RPOCKET) = list(/atom/movable/screen/inventory/rogue, rogueui_beltr, hud_icon, "hip", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_LPOCKET) = list(/atom/movable/screen/inventory/rogue, rogueui_beltl, hud_icon, "hip", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_ROGUE_SHIRT) = list(/atom/movable/screen/inventory/rogue, rogueui_shirt, hud_icon, "shirt", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_ICLOTHING) = list(/atom/movable/screen/inventory/rogue, rogueui_pants, hud_icon, "pants", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_OCLOTHING) = list(/atom/movable/screen/inventory/rogue, rogueui_armor, hud_icon, "armor", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_ROGUE_CLOAK) = list(/atom/movable/screen/inventory/rogue, rogueui_cloak, hud_icon, "cloak", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_KEY_ITEM_SLOT(ITEM_SLOT_ROGUE_MOUTH) = list(/atom/movable/screen/inventory/rogue, rogueui_mouth, hud_icon, "mouth", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
+		HUD_MOB_DROP = list(/atom/movable/screen/drop/rogue, rogueui_drop, hud_icon, "act_drop", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_MOB_THROW = list(/atom/movable/screen/throw_catch/rogue, rogueui_throw, hud_icon, "catch0", 24, HUD_PLANE, HUD_GROUP_HOTKEYS),
+		HUD_ROGUE_STAND_UP = list(/atom/movable/screen/rogue/stand_up, rogueui_stance, hud_icon, "act_rest_up", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_MOB_REST = list(/atom/movable/screen/rest/rogue, rogueui_stance, hud_icon, "act_rest_down", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_SKILLS = list(/atom/movable/screen/rogue/skills, rogueui_skills, hud_icon, "skills", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_MOB_CRAFTING_MENU = list(/atom/movable/screen/craft/rogue, rogueui_craft, hud_icon, "craft", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_SNEAK = list(/atom/movable/screen/rogue/sneak, rogueui_moves, hud_icon, "sneak0", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_MOB_MOVE_INTENT = list(/atom/movable/screen/mov_intent/rogue, rogueui_moves, hud_icon, null, 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_EYE = list(/atom/movable/screen/rogue/eye, rogueui_eye, hud_icon, "eye", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 		HUD_ROGUE_ADVSETUP = list(/atom/movable/screen/rogue/advsetup, "CENTER-1,CENTER-1:16", null, "", 24, HUD_PLANE, no_group),
-		HUD_MOB_ZONE_SELECTOR = list(/atom/movable/screen/zone_sel/rogue, "WEST+2,CENTER+4:6", 'modular_redtard/icons/mob/roguehud64.dmi', null, 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
-		HUD_MOB_STAMINA = list(/atom/movable/screen/stamina/rogue, "EAST-2:11,CENTER-1:-8", heat_icon, "stam100", 24, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_ROGUE_ENERGY = list(/atom/movable/screen/rogue/energy, "EAST-2:11,CENTER-1:-8", heat_icon, "energy100", 24, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_ROGUE_FEINT = list(/atom/movable/screen/rogue/feint, "WEST+4:10,SOUTH+10:15", 'modular_redtard/icons/mob/roguefeint.dmi', "feintbar100", 24.1, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_MOB_ZONE_SELECTOR = list(/atom/movable/screen/zone_sel/rogue, rogueui_targetdoll, 'modular_redtard/icons/mob/roguehud64.dmi', null, 24, HUD_PLANE, HUD_GROUP_ROGUE_DOLL),
+		HUD_ROGUE_DOLL_TOGGLE = list(/atom/movable/screen/rogue/panel_toggle/doll, rogueui_doll_toggle, hud_icon, "template_small", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_PANEL_STRIP = list(/atom/movable/screen/rogue/panel_strip, rogueui_panel_strip, 'modular_redtard/icons/hud/rogue_panel.dmi', "strip", 23, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_BUILD = list(/atom/movable/screen/rogue/build, rogueui_build, 'modular_redtard/icons/hud/rogue_panel.dmi', "build", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_MOB_STAMINA = list(/atom/movable/screen/stamina/rogue, rogueui_fat, heat_icon, "stam100", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_ENERGY = list(/atom/movable/screen/rogue/energy, rogueui_fat, heat_icon, "energy100", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_FEINT = list(/atom/movable/screen/rogue/feint, rogueui_feint, 'modular_redtard/icons/mob/roguefeint.dmi', "feintbar100", 24.1, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 	)
 	for(var/hud_key in expected)
 		var/list/row = expected[hud_key]
@@ -174,7 +177,7 @@
 	hud.remove_screen_object(HUD_MOB_CRAFTING_MENU, FALSE)
 	var/atom/movable/screen/readded = hud.add_screen_object(/atom/movable/screen/craft, HUD_MOB_CRAFTING_MENU, HUD_GROUP_STATIC, hud.ui_style, ui_human_crafting)
 	TEST_ASSERT(istype(readded, /atom/movable/screen/craft/rogue), "Re-adding the crafting button made [readded.type]")
-	TEST_ASSERT_EQUAL(readded.screen_loc, "WEST+1:16,CENTER+3", "Re-added crafting button left Azure's place")
+	TEST_ASSERT_EQUAL(readded.screen_loc, rogueui_craft, "Re-added crafting button left its place")
 
 /datum/unit_test/rogue_hud/all_clicks
 
@@ -290,7 +293,7 @@
 	dummy.change_number_of_hands(4)
 	TEST_ASSERT_NOTNULL(hud.screen_objects[HUD_KEY_HAND_SLOT(4)], "Fourth hand has no slot")
 	TEST_ASSERT_NULL(hud.screen_objects[HUD_KEY_HAND_SLOT(4)].screen_loc, "Azure has no place for a fourth hand")
-	TEST_ASSERT_EQUAL(hud.screen_objects[HUD_KEY_HAND_SLOT(2)].screen_loc, "WEST+3,SOUTH+7", "Right hand moved")
+	TEST_ASSERT_EQUAL(hud.screen_objects[HUD_KEY_HAND_SLOT(2)].screen_loc, rogueui_hand_right, "Right hand moved")
 
 /datum/unit_test/rogue_hud/inventory_toggle
 
@@ -327,8 +330,10 @@
 	for(var/group_key in list(HUD_GROUP_STATIC, HUD_GROUP_HOTKEYS, HUD_GROUP_INFO, HUD_GROUP_SCREEN_OVERLAYS))
 		. += length(hud.screen_groups[group_key])
 	var/datum/hud/rogue/rogue_hud = hud
-	if(istype(rogue_hud) && rogue_hud.panel_shown)
-		. += length(rogue_hud.screen_groups[HUD_GROUP_ROGUE_PANEL])
+	if(istype(rogue_hud))
+		for(var/group_key in list(HUD_GROUP_ROGUE_PANEL, HUD_GROUP_ROGUE_DOLL))
+			if(rogue_hud.group_shown(group_key))
+				. += length(rogue_hud.screen_groups[group_key])
 	if(hud.inventory_shown)
 		. += length(hud.screen_groups[HUD_GROUP_TOGGLEABLE_INVENTORY])
 

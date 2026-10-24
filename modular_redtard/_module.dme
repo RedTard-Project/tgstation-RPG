@@ -153,6 +153,6 @@
 #include "tests\light_bench.dm"
 #include "tests\light_bench_client.dm"
 #include "tests\light_load.dm"
-#include "tests\mechanics_export.dm"
 #include "tests\light_shots.dm"
+#include "tests\mechanics_export.dm"
 // END_INCLUDE

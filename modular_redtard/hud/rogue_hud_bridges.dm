@@ -33,3 +33,24 @@
 	. = ..()
 	if(istype(mob_parent.hud_used, /datum/hud/rogue))
 		update_mood_icon()
+
+/proc/rogueui_shift_west(screen_loc, pixels = rogueui_panel_width)
+	var/static/regex/west = regex(@"^WEST(?:\+(\d+))?(?::(-?\d+))?(,.*)$")
+	if(!screen_loc || !west.Find(screen_loc))
+		return screen_loc
+	var/total = text2num(west.group[1] || "0") * ICON_SIZE_X + text2num(west.group[2] || "0") + pixels
+	return "WEST+[round(total / ICON_SIZE_X)]:[total % ICON_SIZE_X][west.group[3]]"
+
+/datum/action_group/ButtonNumberToScreenCoords(number, landing = FALSE)
+	. = ..()
+	if(istype(owner, /datum/hud/rogue))
+		. = rogueui_shift_west(.)
+
+/datum/action_group/palette/refresh_actions()
+	. = ..()
+	if(!istype(owner, /datum/hud/rogue))
+		return
+	for(var/hud_key in list(HUD_MOB_TOGGLE_PALETTE, HUD_MOB_PALETTE_DOWN, HUD_MOB_PALETTE_UP))
+		var/atom/movable/screen/piece = owner.screen_objects[hud_key]
+		if(piece?.screen_loc)
+			piece.screen_loc = rogueui_shift_west(piece.screen_loc)

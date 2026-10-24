@@ -1,5 +1,5 @@
-#define ROGUE_HUD_MAX_SCREEN_OBJECTS 62
-#define ROGUE_HUD_MAX_SHOWN_OBJECTS 34
+#define ROGUE_HUD_MAX_SCREEN_OBJECTS 65
+#define ROGUE_HUD_MAX_SHOWN_OBJECTS 37
 
 #define ROGUE_HUD_STUB_TEXT "не реализовано"
 
@@ -7,6 +7,7 @@
 #define ROGUE_HUD_ICON_64 'modular_redtard/icons/mob/roguehud64.dmi'
 #define ROGUE_HUD_ICON_BACK 'modular_redtard/icons/mob/roguehudback2.dmi'
 #define ROGUE_HUD_ICON_PANEL 'modular_redtard/icons/mob/roguehud_panel.dmi'
+#define ROGUE_HUD_ICON_STRIP 'modular_redtard/icons/hud/rogue_panel.dmi'
 #define ROGUE_HUD_ICON_INTENT_BASE 'modular_redtard/icons/mob/rogueintentbase.dmi'
 #define ROGUE_HUD_ICON_INTENTS 'modular_redtard/icons/mob/rogueintents.dmi'
 #define ROGUE_HUD_ICON_HEAT 'modular_redtard/icons/mob/rogueheat.dmi'
@@ -22,54 +23,61 @@
 #define ROGUE_SCANNIES_LAYER (CURSE_LAYER + 0.2)
 
 #define rogueui_backhudl "WEST:16,SOUTH:0"
-#define rogueui_panel_toggle "WEST:16,NORTH"
+#define rogueui_panel_strip "WEST,SOUTH to WEST,NORTH"
+#define rogueui_panel_toggle "WEST:2,NORTH"
+#define rogueui_panel_width 36
 
-#define rogueui_inventory_toggle "WEST:16,SOUTH"
-#define rogueui_mask "WEST:16,SOUTH+5"
-#define rogueui_head "WEST+1:16,SOUTH+5"
-#define rogueui_mouth "WEST+2:16,SOUTH+5"
-#define rogueui_backr "WEST:16,SOUTH+4"
-#define rogueui_cloak "WEST+1:16,SOUTH+4"
-#define rogueui_backl "WEST+2:16,SOUTH+4"
-#define rogueui_neck "WEST:16,SOUTH+3"
-#define rogueui_armor "WEST+1:16,SOUTH+3"
-#define rogueui_wrists "WEST+2:16,SOUTH+3"
-#define rogueui_ring1 "WEST:8,SOUTH+2:8"
-#define rogueui_ring2 "WEST:24,SOUTH+2:8"
-#define rogueui_ring3 "WEST:8,SOUTH+2:-8"
-#define rogueui_ring4 "WEST:24,SOUTH+2:-8"
-#define rogueui_shirt "WEST+1:16,SOUTH+2"
-#define rogueui_gloves "WEST+2:16,SOUTH+2"
-#define rogueui_beltr "WEST:16,SOUTH+1"
-#define rogueui_belt "WEST+1:16,SOUTH+1"
-#define rogueui_beltl "WEST+2:16,SOUTH+1"
-#define rogueui_pants "WEST+1:16,SOUTH"
-#define rogueui_shoes "WEST+2:16,SOUTH"
+#define rogueui_inventory_toggle "WEST+1:8,SOUTH"
+#define rogueui_mask "WEST+1:8,SOUTH+5"
+#define rogueui_head "WEST+2:8,SOUTH+5"
+#define rogueui_mouth "WEST+3:8,SOUTH+5"
+#define rogueui_backr "WEST+1:8,SOUTH+4"
+#define rogueui_cloak "WEST+2:8,SOUTH+4"
+#define rogueui_backl "WEST+3:8,SOUTH+4"
+#define rogueui_neck "WEST+1:8,SOUTH+3"
+#define rogueui_armor "WEST+2:8,SOUTH+3"
+#define rogueui_wrists "WEST+3:8,SOUTH+3"
+#define rogueui_ring1 "WEST+1,SOUTH+2:8"
+#define rogueui_ring2 "WEST+1:16,SOUTH+2:8"
+#define rogueui_ring3 "WEST+1,SOUTH+2:-8"
+#define rogueui_ring4 "WEST+1:16,SOUTH+2:-8"
+#define rogueui_shirt "WEST+2:8,SOUTH+2"
+#define rogueui_gloves "WEST+3:8,SOUTH+2"
+#define rogueui_beltr "WEST+1:8,SOUTH+1"
+#define rogueui_belt "WEST+2:8,SOUTH+1"
+#define rogueui_beltl "WEST+3:8,SOUTH+1"
+#define rogueui_pants "WEST+2:8,SOUTH"
+#define rogueui_shoes "WEST+3:8,SOUTH"
 
-#define rogueui_drop "WEST+4,SOUTH+7"
-#define rogueui_throw "WEST+4,SOUTH+7"
-#define rogueui_give "WEST+4,SOUTH+7"
-#define rogueui_quad "WEST+1,SOUTH+7"
-#define rogueui_stance "WEST+1:16,CENTER+2"
-#define rogueui_moves "WEST+2:16,CENTER+2"
-#define rogueui_eye "WEST+3:16,CENTER+3"
+#define rogueui_stress "WEST:2,NORTH-1"
+#define rogueui_blood "WEST:7,NORTH-2:15"
+#define rogueui_fat "WEST:5,NORTH-4:13"
+#define rogueui_craft "WEST:2,NORTH-5:11"
+#define rogueui_skills "WEST:2,NORTH-5:11"
+#define rogueui_build "WEST,NORTH-6:9"
+#define rogueui_def "WEST:2,NORTH-7:23"
+#define rogueui_cmode "WEST:2,NORTH-8:21"
+#define rogueui_drop "WEST:2,NORTH-9:19"
+#define rogueui_throw "WEST:2,NORTH-9:19"
+#define rogueui_give "WEST:2,NORTH-9:19"
+#define rogueui_eye "WEST:2,NORTH-10:17"
+#define rogueui_moves "WEST:2,NORTH-11:15"
+#define rogueui_quad "WEST:2,NORTH-12:13"
+#define rogueui_stance "WEST:2,NORTH-13:11"
+
+#define rogueui_hand_left "WEST+1:24,SOUTH+6"
+#define rogueui_hand_right "WEST+2:24,SOUTH+6"
+#define rogueui_clickdelay_left "WEST+1:24,SOUTH+6"
+#define rogueui_clickdelay_right "WEST+2:24,SOUTH+6"
+#define rogueui_clickdelay_mid "WEST+2:8,SOUTH+6"
+#define rogueui_intents "WEST:7,SOUTH+7"
+#define rogueui_rmbintents "WEST+4:10,SOUTH+7"
+#define rogueui_feint "WEST+4:10,SOUTH+6"
+#define rogueui_defdelay "WEST+4:11,SOUTH+6"
+
+#define rogueui_targetdoll "EAST-1,SOUTH"
+#define rogueui_doll_toggle "EAST,SOUTH+2"
 #define rogueui_advsetup "CENTER-1,CENTER-1:16"
-#define rogueui_craft "WEST+1:16,CENTER+3"
-#define rogueui_skills "WEST+1:16,CENTER+3"
-#define rogueui_targetdoll "WEST+2,CENTER+4:6"
-#define rogueui_intents "WEST,SOUTH+8"
-#define rogueui_stress "EAST-2:27,CENTER+2"
-#define rogueui_fat "EAST-2:11,CENTER-1:-8"
-#define rogueui_blood "EAST-1,CENTER+1"
-#define rogueui_feint "WEST+4:10,SOUTH+10:15"
-#define rogueui_cmode "WEST+4,CENTER+1"
-#define rogueui_def "WEST+3:16,NORTH-5"
-#define rogueui_rmbintents "WEST+1,CENTER+1"
-
-#define rogueui_clickdelay_left "WEST+2,SOUTH+7"
-#define rogueui_clickdelay_right "WEST+3,SOUTH+7"
-#define rogueui_clickdelay_mid "WEST+2:16,SOUTH+7"
-#define rogueui_defdelay "WEST+4:11,SOUTH+10:15"
 
 #define rogueui_screen_origin "1,1"
 #define rogueui_readtext "5,5"
@@ -77,10 +85,14 @@
 #define rogueui_intents_alt "EAST-1:28,SOUTH:5"
 
 #define rogueui_ring_position(index) (index == 1 ? rogueui_ring1 : (index == 2 ? rogueui_ring2 : (index == 3 ? rogueui_ring3 : rogueui_ring4)))
-#define rogueui_hand_position(index) (index == 1 ? "WEST+2,SOUTH+7" : (index == 2 ? "WEST+3,SOUTH+7" : null))
+#define rogueui_hand_position(index) (index == 1 ? rogueui_hand_left : (index == 2 ? rogueui_hand_right : null))
 
 #define HUD_ROGUE_PANEL_TOGGLE "rogue_panel_toggle"
+#define HUD_ROGUE_PANEL_STRIP "rogue_panel_strip"
+#define HUD_ROGUE_BUILD "rogue_build"
+#define HUD_ROGUE_DOLL_TOGGLE "rogue_doll_toggle"
 #define HUD_GROUP_ROGUE_PANEL (SCREEN_GROUP_AMT + 1)
+#define HUD_GROUP_ROGUE_DOLL (SCREEN_GROUP_AMT + 2)
 #define HUD_ROGUE_GRAIN "rogue_grain"
 #define HUD_ROGUE_SCANNIES "rogue_scannies"
 #define HUD_ROGUE_READ "rogue_read"
