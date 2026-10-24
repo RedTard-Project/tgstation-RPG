@@ -25,3 +25,10 @@ ROGUE_LIGHTING_BACKEND native
 
 ## Имя библиотеки без расширения: rogue_light.dll на Windows, librogue_light.so на Linux.
 ROGUE_LIGHTING_LIBRARY rogue_light
+
+## Тени по линии взгляда (medieval-карты): тыльные грани непрозрачных клеток вокруг игрока
+## отбрасывают чёрные клинья, пересчёт при шаге и раз в 2 с. ROGUE_SIGHT_SHADOWS 0 — выключить.
+ROGUE_SIGHT_SHADOWS
+## Прозрачность теней 0–255. 255 — чёрные и самые дешёвые; меньше — тени собираются в одну
+## группу KEEP_TOGETHER на клиента (один дополнительный проход отрисовки).
+ROGUE_SIGHT_SHADOW_ALPHA 255

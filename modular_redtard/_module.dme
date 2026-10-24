@@ -52,6 +52,7 @@
 #include "lighting\carrier.dm"
 #include "lighting\subsystem.dm"
 #include "lighting\overrides.dm"
+#include "lighting\sight_shadows.dm"
 #include "rockhill\_rockhill.dm"
 
 #ifdef UNIT_TESTS
@@ -115,6 +116,7 @@
 #include "lighting\carrier.dm"
 #include "lighting\config.dm"
 #include "lighting\overrides.dm"
+#include "lighting\sight_shadows.dm"
 #include "lighting\subsystem.dm"
 #include "maps\centcom.dm"
 #include "maps\era.dm"

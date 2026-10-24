@@ -59,3 +59,12 @@
 #define ROGUE_LIGHT_RECORD_LUM(batch, at) ((batch[at] + batch[at + 1] + batch[at + 2] + batch[at + 3] + batch[at + 4] + batch[at + 5] + batch[at + 6] + batch[at + 7] + batch[at + 8] + batch[at + 9] + batch[at + 10] + batch[at + 11]) / ROGUE_LIGHT_LOOK_VALUES)
 #define ROGUE_LIGHT_CORNERS_LUM(red, green, blue, alpha) ((red.cache_r + red.cache_g + red.cache_b + green.cache_r + green.cache_g + green.cache_b + blue.cache_r + blue.cache_g + blue.cache_b + alpha.cache_r + alpha.cache_g + alpha.cache_b) / ROGUE_LIGHT_LOOK_VALUES)
 #define ROGUE_LIGHT_CORNERS_MATRIX(red, green, blue, alpha) ROGUE_LIGHT_MATRIX(red.cache_r, red.cache_g, red.cache_b, green.cache_r, green.cache_g, green.cache_b, blue.cache_r, blue.cache_g, blue.cache_b, alpha.cache_r, alpha.cache_g, alpha.cache_b)
+#define ROGUE_SIGHT_ICON 'modular_redtard/icons/effects/rogue_sight_shadow.dmi'
+#define ROGUE_SIGHT_STATE "triangle"
+#define ROGUE_SIGHT_RANGE 10
+#define ROGUE_SIGHT_REACH 24
+#define ROGUE_SIGHT_EYE 0.5
+#define ROGUE_SIGHT_HALF_TILE 16
+#define ROGUE_SIGHT_MAX_TRIANGLES 300
+#define ROGUE_SIGHT_REFRESH (2 SECONDS)
+#define ROGUE_SIGHT_ALPHA 255
