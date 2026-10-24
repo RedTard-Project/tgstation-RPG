@@ -1,0 +1,3 @@
+#define ROGUE_GRID_ICON 'modular_redtard/icons/hud/storage.dmi'
+#define ROGUE_GRID_FITS_COLOR COLOR_ASSEMBLY_GOLD
+#define ROGUE_GRID_BLOCKED_COLOR COLOR_RED_LIGHT

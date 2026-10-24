@@ -1,0 +1,366 @@
+[
+	{
+		"source": "_maps/dungeon_generator/entry/Northernentrance.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/entry/Northernentrance.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/entry/eastentrance.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/entry/eastentrance.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/entry/Tented Entrance.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/entry/Tented Entrance.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/CaveTEast.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/CaveTEast.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/CaveTWest.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/CaveTWest.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/Crossjunction.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/Crossjunction.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/Floortransition2.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/Floortransition2.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/Hallwayeastwestplane.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/Hallwayeastwestplane.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/HolyGrailHall.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/HolyGrailHall.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/LongHallStone.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/LongHallStone.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/LongHallStone2.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/LongHallStone2.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/LongSliverStone.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/LongSliverStone.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/LongSliverStone2.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/LongSliverStone2.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/LturnNorthEast.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/LturnNorthEast.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/LturnSouthEast.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/LturnSouthEast.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/LturnWestSouth.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/LturnWestSouth.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/LturnWestnorth.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/LturnWestnorth.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/Malphpiece2.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/Malphpiece2.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/Malphpiece3.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/Malphpiece3.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/Malphpiece5.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/Malphpiece5.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/Malphpiece9.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/Malphpiece9.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/MowPiece2.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/MowPiece2.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/NormalHallway.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/NormalHallway.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/North Hallway.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/North Hallway.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/SliceStone.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/SliceStone.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/SliceStone2.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/SliceStone2.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/SmallCubeStone.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/SmallCubeStone.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/SmallCubeStone2.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/SmallCubeStone2.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/SmallSliceStone.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/SmallSliceStone.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/SmallSliceStone2.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/SmallSliceStone2.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/TinySliverStone.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/TinySliverStone.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/TinySliverStone2.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/TinySliverStone2.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/TjunctionNorthSouthEast.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/TjunctionNorthSouthEast.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/TjunctionNorthWestEast.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/TjunctionNorthWestEast.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/TjunctionWestNorthSouth.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/TjunctionWestNorthSouth.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/hallwesteastshort.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/hallwesteastshort.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/lampternhallway.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/lampternhallway.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/longhall.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/longhall.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/northminedhall.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/northminedhall.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/Puzzle Trap Large.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/Puzzle Trap Large.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/Puzzle Trap Medium.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/Puzzle Trap Medium.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/Puzzle Trap Small.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/Puzzle Trap Small.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/right left floor transition.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/right left floor transition.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/smallhallns.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/smallhallns.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/Wild Dungeon Large.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/Wild Dungeon Large.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/Wild Dungeon Medium.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/Wild Dungeon Medium.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/hallway/Wild Dungeon Small.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/hallway/Wild Dungeon Small.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/rest/Malphpiece1.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/rest/Malphpiece1.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/rest/farm.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/rest/farm.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/rest/largehallway.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/rest/largehallway.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/rest/snackplatter.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/rest/snackplatter.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/rest/stingerpatch.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/rest/stingerpatch.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/AcidMageTower.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/AcidMageTower.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/Allbutwesthall.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/Allbutwesthall.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/Bathhouse Dungeon.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/Bathhouse Dungeon.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/DarkCorridors.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/DarkCorridors.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/ForgottenInn.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/ForgottenInn.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/GoblinInfestedJoint.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/GoblinInfestedJoint.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/Goonies.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/Goonies.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/Malphpiece4.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/Malphpiece4.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/SmallChurch.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/SmallChurch.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/SmithRest.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/SmithRest.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/SteamCastle.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/SteamCastle.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/TheatherOfSadism.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/TheatherOfSadism.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/Thelastbreath.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/Thelastbreath.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/TownRuins.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/TownRuins.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/acidfight.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/acidfight.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/campnotherthing.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/campnotherthing.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/cavecamp.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/cavecamp.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/drugden.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/drugden.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/dwelfhome.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/dwelfhome.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/fightingpit.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/fightingpit.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/fightpit.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/fightpit.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/goblincamp.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/goblincamp.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/graveend.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/graveend.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/hctomb1.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/hctomb1.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/hctomb2.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/hctomb2.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/hctomb3.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/hctomb3.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/hctomb4.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/hctomb4.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/hctomb5.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/hctomb5.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/Lava Large.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/Lava Large.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/Lava Medium.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/Lava Medium.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/Lava Small.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/Lava Small.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/lavafort.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/lavafort.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/magicanvil.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/magicanvil.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/queensretreat.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/queensretreat.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/rousecamp.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/rousecamp.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/Sewers2.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/Sewers2.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/sewers.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/sewers.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/skeletonroom.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/skeletonroom.dmm"
+	},
+	{
+		"source": "_maps/dungeon_generator/room/small lab.dmm",
+		"output": "_maps/map_files/rockhill/dungeon_generator/room/small lab.dmm"
+	}
+]
