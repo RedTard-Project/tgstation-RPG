@@ -24,11 +24,23 @@ SUBSYSTEM_DEF(rogue_light)
 	var/fn_collect
 	var/fn_status
 	var/fn_lum
+	var/fn_sky
+	var/fn_shadow
+	var/fn_shadow_quad
 	var/list/pending = list()
 	var/list/tents = list()
 	var/list/tents_by_z = list()
 	var/list/quarters = list()
 	var/list/quarters_by_z = list()
+	var/list/sun_tents = list()
+	var/list/sun_tents_by_z = list()
+	var/list/sun_quarters = list()
+	var/list/sun_quarters_by_z = list()
+	var/list/palettes = list()
+	var/palette_active = FALSE
+	var/palette_size = 0
+	var/palette_hits = 0
+	var/palette_misses = 0
 	var/list/templates = list()
 	var/list/source_by_id = list()
 	var/list/free_ids = list()
@@ -36,14 +48,18 @@ SUBSYSTEM_DEF(rogue_light)
 	var/mutable_appearance/dark_appearance
 	var/tent_count = 0
 	var/applied_records = 0
+	var/sky_level = 1
 
 /datum/controller/subsystem/rogue_light/stat_entry(msg)
 	msg = "\n  [carrier_mode]|[native ? ROGUE_LIGHT_BACKEND_NATIVE : ROGUE_LIGHT_BACKEND_DM]|Tents:[tent_count]"
 	if(native_ready && length(status) >= ROGUE_LIGHT_STATUS_SIZE)
 		msg += "|Queue:[length(pending)]|Jobs:[status[ROGUE_LIGHT_STATUS_JOBS]]|Sources:[status[ROGUE_LIGHT_STATUS_SOURCES]]|Job:[status[ROGUE_LIGHT_STATUS_LAST_JOB_US]]us|Worker:[status[ROGUE_LIGHT_STATUS_TOTAL_JOB_MS]]ms|Applied:[applied_records]"
+	if(palette_size)
+		msg += "|Palette:[palette_size] [palette_hits]/[palette_hits + palette_misses]"
 	return ..()
 
 /datum/controller/subsystem/rogue_light/Initialize()
+	RegisterSignal(SSdcs, COMSIG_STARLIGHT_COLOR_CHANGED, PROC_REF(sky_changed))
 	if(native_ready)
 		var/wait_started = REALTIMEOFDAY
 		var/applied_before = applied_records
@@ -97,6 +113,7 @@ SUBSYSTEM_DEF(rogue_light)
 			if(lit.lighting_object == GLOB.rogue_light_sentinel)
 				lit.lighting_object = null
 		carrier_mode = ROGUE_LIGHT_CARRIER_OBJECT
+		carrier_changed()
 
 /datum/controller/subsystem/rogue_light/proc/uses_cells()
 	if(!modes_resolved)
@@ -108,8 +125,42 @@ SUBSYSTEM_DEF(rogue_light)
 		resolve_modes()
 	return rogue_light_shared_carrier(carrier_mode)
 
+/datum/controller/subsystem/rogue_light/proc/splits_sun()
+	return uses_tents()
+
 /datum/controller/subsystem/rogue_light/proc/output_mode()
-	return rogue_light_shared_carrier(carrier_mode) ? ROGUE_LIGHT_MODE_TENTS : ROGUE_LIGHT_MODE_LOOKS
+	if(rogue_light_shared_carrier(carrier_mode))
+		return ROGUE_LIGHT_MODE_TENTS
+	if(carrier_mode == ROGUE_LIGHT_CARRIER_OBJECT && CONFIG_GET(flag/rogue_lighting_palette))
+		return ROGUE_LIGHT_MODE_PALETTE
+	return ROGUE_LIGHT_MODE_LOOKS
+
+/datum/controller/subsystem/rogue_light/proc/sky_changed(datum/source, old_color, new_color)
+	SIGNAL_HANDLER
+	set_sky(new_color)
+
+/datum/controller/subsystem/rogue_light/proc/set_sky(sky_color)
+	sky_level = rogue_light_sky_level(sky_color)
+	if(!native_ready)
+		return
+	try
+		call_ext(fn_sky)(sky_level)
+	catch(var/exception/error)
+		native_failed("sky: [error]")
+
+/datum/controller/subsystem/rogue_light/proc/palette_for(z)
+	if(length(palettes) < z)
+		palettes.len = z
+	var/alist/looks = palettes[z]
+	if(!looks)
+		looks = alist()
+		palettes[z] = looks
+	return looks
+
+/datum/controller/subsystem/rogue_light/proc/clear_palettes()
+	palettes = list()
+	palette_size = 0
+	palette_active = output_mode() == ROGUE_LIGHT_MODE_PALETTE
 
 /datum/controller/subsystem/rogue_light/proc/light_template(z)
 	if(length(templates) < z)
@@ -149,6 +200,9 @@ SUBSYSTEM_DEF(rogue_light)
 		fn_collect = load_ext(path, "byond:rlight_collect")
 		fn_status = load_ext(path, "byond:rlight_status")
 		fn_lum = load_ext(path, "byond:rlight_lum")
+		fn_sky = load_ext(path, "byond:rlight_sky")
+		fn_shadow = load_ext(path, "byond:rlight_shadow")
+		fn_shadow_quad = load_ext(path, "byond:rlight_shadow_quad")
 	catch(var/exception/error)
 		log_world("Rogue lighting: [path] could not be loaded: [error]")
 		return FALSE
@@ -169,6 +223,7 @@ SUBSYSTEM_DEF(rogue_light)
 		log_world("Rogue lighting: [library] refused to start ([result]).")
 		return FALSE
 	pending.Cut()
+	clear_palettes()
 	for(var/z in static_zlevels())
 		if(!upload_zlevel(z, from_areas))
 			return FALSE
@@ -176,6 +231,7 @@ SUBSYSTEM_DEF(rogue_light)
 	pending.Add(ROGUE_LIGHT_CMD_MODE, output_mode())
 	index_tents()
 	native_ready = TRUE
+	set_sky(GLOB.starlight_color)
 	return TRUE
 
 /datum/controller/subsystem/rogue_light/proc/static_zlevels()
@@ -256,7 +312,8 @@ SUBSYSTEM_DEF(rogue_light)
 			source_by_id.len = id
 		source_by_id[id] = light
 		light.rogue_light_id = id
-	pending.Add(ROGUE_LIGHT_CMD_SET, id, source.x, source.y, source.z, light.light_range, light.light_power, light.lum_r, light.lum_g, light.lum_b, light.light_dir, light.light_angle, light.light_height, light.offset_x, light.offset_y, light.visual_offset)
+	var/turf/owner = light.source_atom
+	pending.Add(ROGUE_LIGHT_CMD_SET, id, source.x, source.y, source.z, light.light_range, light.light_power, light.lum_r, light.lum_g, light.lum_b, light.light_dir, light.light_angle, light.light_height, light.offset_x, light.offset_y, light.visual_offset, isturf(owner) ? owner.rogue_light_channel : ROGUE_LIGHT_CHANNEL_LAMP)
 
 /datum/controller/subsystem/rogue_light/proc/light_remove(datum/light_source/light)
 	var/id = light.rogue_light_id
@@ -294,31 +351,16 @@ SUBSYSTEM_DEF(rogue_light)
 		var/quartered = carrier_mode == ROGUE_LIGHT_CARRIER_QUARTER
 		while(index <= batch_length)
 			var/record = batch[index]
-			if(quartered && record == ROGUE_LIGHT_RECORD_TENT && index + ROGUE_LIGHT_TENT_SIZE - 1 <= batch_length)
-				apply_quarters(batch[index + 1], batch[index + 2], batch[index + 3], batch[index + 4], batch[index + 5])
-				index += ROGUE_LIGHT_TENT_SIZE
-			else if(record == ROGUE_LIGHT_RECORD_TENT && index + ROGUE_LIGHT_TENT_SIZE - 1 <= batch_length)
-				var/turf/owner = locate(batch[index + 1], batch[index + 2], batch[index + 3])
-				if(owner)
-					var/owner_z = owner.z
-					var/list/by_id = owner_z <= length(tents_by_z) ? tents_by_z[owner_z] : tents_for_z(owner_z)
-					var/old_tent = batch[index + 4]
-					if(old_tent)
-						var/shown = by_id[old_tent]
-						if(shown)
-							owner.vis_contents -= shown
-					var/new_tent = batch[index + 5]
-					if(new_tent)
-						var/next = by_id[new_tent] || make_tent(by_id, owner_z, new_tent)
-						if(old_tent)
-							owner.vis_contents += next
-						else
-							owner.vis_contents |= next
-				index += ROGUE_LIGHT_TENT_SIZE
-			else if(record == ROGUE_LIGHT_RECORD_LOOK && index + ROGUE_LIGHT_LOOK_SIZE - 1 <= batch_length)
+			if(record == ROGUE_LIGHT_RECORD_LOOK && index + ROGUE_LIGHT_LOOK_SIZE - 1 <= batch_length)
 				var/turf/lit = locate(batch[index + 1], batch[index + 2], batch[index + 3])
 				lit?.lighting_object?.rogue_show_record(batch, index)
 				index += ROGUE_LIGHT_LOOK_SIZE
+			else if((record == ROGUE_LIGHT_RECORD_TENT || record == ROGUE_LIGHT_RECORD_SUN) && index + ROGUE_LIGHT_TENT_SIZE - 1 <= batch_length)
+				if(quartered)
+					apply_quarters(batch[index + 1], batch[index + 2], batch[index + 3], batch[index + 4], batch[index + 5], record == ROGUE_LIGHT_RECORD_SUN)
+				else
+					apply_tent(batch[index + 1], batch[index + 2], batch[index + 3], batch[index + 4], batch[index + 5], record == ROGUE_LIGHT_RECORD_SUN)
+				index += ROGUE_LIGHT_TENT_SIZE
 			else
 				native_failed("bad record [record]")
 				return TRUE
@@ -330,10 +372,35 @@ SUBSYSTEM_DEF(rogue_light)
 			return FALSE
 	return TRUE
 
-/datum/controller/subsystem/rogue_light/proc/apply_quarters(corner_x, corner_y, z, old_id, new_id)
-	var/list/by_corner = z <= length(quarters_by_z) ? quarters_by_z[z] : null
+/datum/controller/subsystem/rogue_light/proc/apply_tent(x, y, z, old_tent, new_tent, sun)
+	var/turf/owner = locate(x, y, z)
+	if(!owner)
+		return
+	var/list/index = sun ? sun_tents_by_z : tents_by_z
+	var/list/by_id = z <= length(index) ? index[z] : null
+	if(!by_id)
+		by_id = tents_for_z(z, sun)
+	if(old_tent)
+		var/shown = by_id[old_tent]
+		if(shown)
+			owner.vis_contents -= shown
+	if(!new_tent)
+		return
+	var/next = by_id[new_tent]
+	if(!next)
+		next = new /atom/movable/rogue_light_tent(null, new_tent, SSmapping.max_plane_offset ? GET_Z_PLANE_OFFSET(z) : 0, sun)
+		by_id[new_tent] = next
+		tent_count++
+	if(old_tent)
+		owner.vis_contents += next
+	else
+		owner.vis_contents |= next
+
+/datum/controller/subsystem/rogue_light/proc/apply_quarters(corner_x, corner_y, z, old_id, new_id, sun)
+	var/list/index = sun ? sun_quarters_by_z : quarters_by_z
+	var/list/by_corner = z <= length(index) ? index[z] : null
 	if(!by_corner)
-		by_corner = quarters_for_z(z)
+		by_corner = quarters_for_z(z, sun)
 	for(var/list/holder_offset as anything in GLOB.rogue_light_quarter_holders)
 		var/turf/holder = locate(corner_x + holder_offset[1], corner_y + holder_offset[2], z)
 		if(!holder)
@@ -348,7 +415,7 @@ SUBSYSTEM_DEF(rogue_light)
 			continue
 		var/next = by_id[new_id]
 		if(!next)
-			next = new /atom/movable/rogue_light_tent/quarter(null, new_id, SSmapping.max_plane_offset ? GET_Z_PLANE_OFFSET(z) : 0, corner)
+			next = new /atom/movable/rogue_light_tent/quarter(null, new_id, SSmapping.max_plane_offset ? GET_Z_PLANE_OFFSET(z) : 0, sun, corner)
 			by_id[new_id] = next
 			tent_count++
 		if(old_id)
@@ -356,44 +423,44 @@ SUBSYSTEM_DEF(rogue_light)
 		else
 			holder.vis_contents |= next
 
-/datum/controller/subsystem/rogue_light/proc/quarters_for_z(z)
+/datum/controller/subsystem/rogue_light/proc/quarters_for_z(z, sun)
+	var/list/pool = sun ? sun_quarters : quarters
+	var/list/index = sun ? sun_quarters_by_z : quarters_by_z
 	var/offset = SSmapping.max_plane_offset ? GET_Z_PLANE_OFFSET(z) : 0
-	if(length(quarters) <= offset)
-		quarters.len = offset + 1
-	var/list/by_corner = quarters[offset + 1]
+	if(length(pool) <= offset)
+		pool.len = offset + 1
+	var/list/by_corner = pool[offset + 1]
 	if(!by_corner)
 		by_corner = list()
 		for(var/corner in 1 to length(GLOB.rogue_light_quarter_states))
 			by_corner += list(new /list(ROGUE_LIGHT_TENT_MAX))
-		quarters[offset + 1] = by_corner
-	if(length(quarters_by_z) < z)
-		quarters_by_z.len = z
-	quarters_by_z[z] = by_corner
+		pool[offset + 1] = by_corner
+	if(length(index) < z)
+		index.len = z
+	index[z] = by_corner
 	return by_corner
 
-/datum/controller/subsystem/rogue_light/proc/tents_for_z(z)
+/datum/controller/subsystem/rogue_light/proc/tents_for_z(z, sun)
+	var/list/pool = sun ? sun_tents : tents
+	var/list/index = sun ? sun_tents_by_z : tents_by_z
 	var/offset = SSmapping.max_plane_offset ? GET_Z_PLANE_OFFSET(z) : 0
-	if(length(tents) <= offset)
-		tents.len = offset + 1
-	var/list/by_id = tents[offset + 1]
+	if(length(pool) <= offset)
+		pool.len = offset + 1
+	var/list/by_id = pool[offset + 1]
 	if(!by_id)
 		by_id = new /list(ROGUE_LIGHT_TENT_MAX)
-		tents[offset + 1] = by_id
-	if(length(tents_by_z) < z)
-		tents_by_z.len = z
-	tents_by_z[z] = by_id
+		pool[offset + 1] = by_id
+	if(length(index) < z)
+		index.len = z
+	index[z] = by_id
 	return by_id
 
 /datum/controller/subsystem/rogue_light/proc/index_tents()
 	tents_by_z.Cut()
+	sun_tents_by_z.Cut()
 	for(var/z in 1 to world.maxz)
-		tents_for_z(z)
-
-/datum/controller/subsystem/rogue_light/proc/make_tent(list/by_id, z, tent_id)
-	var/atom/movable/rogue_light_tent/made = new(null, tent_id, SSmapping.max_plane_offset ? GET_Z_PLANE_OFFSET(z) : 0)
-	by_id[tent_id] = made
-	tent_count++
-	return made
+		tents_for_z(z, FALSE)
+		tents_for_z(z, TRUE)
 
 /datum/controller/subsystem/rogue_light/proc/static_turfs()
 	. = list()
@@ -419,6 +486,7 @@ SUBSYSTEM_DEF(rogue_light)
 		lit.lighting_clear_overlay()
 		CHECK_TICK
 	carrier_mode = new_mode
+	clear_palettes()
 	for(var/turf/lit as anything in turfs)
 		lit.lighting_build_overlay()
 		CHECK_TICK
@@ -426,10 +494,15 @@ SUBSYSTEM_DEF(rogue_light)
 	can_fire = TRUE
 	if(native_ready)
 		pending.Add(ROGUE_LIGHT_CMD_MODE, output_mode(), ROGUE_LIGHT_CMD_RESEND)
+	carrier_changed()
+
+/datum/controller/subsystem/rogue_light/proc/carrier_changed()
+	rogue_light_refresh_sun_planes()
+	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_ROGUE_LIGHT_CARRIER, carrier_mode)
 
 /datum/controller/subsystem/rogue_light/proc/clear_tents()
-	var/list/piece_lists = tents.Copy()
-	for(var/list/by_corner as anything in quarters)
+	var/list/piece_lists = tents + sun_tents
+	for(var/list/by_corner as anything in quarters + sun_quarters)
 		if(by_corner)
 			piece_lists += by_corner
 	for(var/list/by_id as anything in piece_lists)

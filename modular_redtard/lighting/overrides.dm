@@ -60,15 +60,19 @@
 	. = ..()
 	if(SSrogue_light.native && SSlighting.initialized)
 		SSrogue_light.turf_changed(src, SSrogue_light.uses_tents())
+	if(length(GLOB.rogue_sight_viewers) && (. == ALL_CARDINALS) != (directional_opacity == ALL_CARDINALS))
+		rogue_sight_opacity_changed(src)
 
 /turf/get_static_lumcount(minlum = 0, maxlum = 1)
 	if(!SSrogue_light.native)
 		return ..()
 	return (SSrogue_light.turf_lum(src) - minlum) / (maxlum - minlum)
 
+/turf
+	var/rogue_light_channel = ROGUE_LIGHT_CHANNEL_LAMP
+
 /atom/movable/lighting_object
 	var/rogue_look = ROGUE_LIGHT_DARK
-	var/rogue_lum = 0
 
 /atom/movable/lighting_object/Initialize(mapload)
 	. = ..()
@@ -108,16 +112,29 @@
 	if(new_look == ROGUE_LIGHT_DARK)
 		rogue_show_dark()
 		return
-	var/values_at = index + 5
 	rogue_look = new_look
-	rogue_lum = ROGUE_LIGHT_RECORD_LUM(batch, values_at)
+	var/list/palettes = SSrogue_light.palettes
+	var/alist/looks = z <= length(palettes) ? palettes[z] : null
+	if(looks)
+		var/cached = looks[new_look]
+		if(cached)
+			appearance = cached
+			if(!luminosity)
+				luminosity = TRUE
+			SSrogue_light.palette_hits++
+			return
 	icon_state = null
-	color = ROGUE_LIGHT_RECORD_MATRIX(batch, values_at)
+	color = ROGUE_LIGHT_RECORD_MATRIX(batch, index + 5)
 	luminosity = TRUE
+	if(!SSrogue_light.palette_active || SSrogue_light.palette_size >= ROGUE_LIGHT_PALETTE_MAX)
+		return
+	looks = looks || SSrogue_light.palette_for(z)
+	looks[new_look] = appearance
+	SSrogue_light.palette_size++
+	SSrogue_light.palette_misses++
 
 /atom/movable/lighting_object/proc/rogue_show_dark()
 	rogue_look = ROGUE_LIGHT_DARK
-	rogue_lum = 0
 	icon_state = "lighting_dark"
 	color = null
 	luminosity = FALSE

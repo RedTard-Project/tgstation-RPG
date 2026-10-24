@@ -127,6 +127,7 @@ SUBSYSTEM_DEF(rockhill_daynight)
 	shown_color = target_color = from_color = pick(current.colors)
 	apply_sky(shown_color)
 	update_emitters(shown_color)
+	RegisterSignal(SSdcs, COMSIG_GLOB_ROGUE_LIGHT_CARRIER, PROC_REF(carrier_changed))
 	return SS_INIT_SUCCESS
 
 /datum/controller/subsystem/rockhill_daynight/stat_entry(msg)
@@ -183,10 +184,15 @@ SUBSYSTEM_DEF(rockhill_daynight)
 		light.color = new_color
 	SEND_GLOBAL_SIGNAL(COMSIG_STARLIGHT_COLOR_CHANGED, old_color, new_color)
 
-/datum/controller/subsystem/rockhill_daynight/proc/update_emitters(new_color)
-	var/lit = new_color != COLOR_BLACK
+/datum/controller/subsystem/rockhill_daynight/proc/update_emitters(new_color, force = FALSE)
+	if(!force && SSrogue_light.splits_sun())
+		return
 	for(var/turf/emitter as anything in GLOB.rockhill_sun_emitters)
-		emitter.set_light(l_color = new_color, l_on = lit)
+		rockhill_light_emitter(emitter, new_color)
+
+/datum/controller/subsystem/rockhill_daynight/proc/carrier_changed(datum/source, carrier)
+	SIGNAL_HANDLER
+	INVOKE_ASYNC(src, PROC_REF(update_emitters), target_color, TRUE)
 
 /mob/get_status_tab_items()
 	. = ..()

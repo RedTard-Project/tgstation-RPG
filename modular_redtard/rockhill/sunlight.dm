@@ -10,5 +10,12 @@ GLOBAL_LIST_EMPTY(rockhill_sun_emitters)
 				var/area/rogue/neighbor_area = neighbor.loc
 				if(istype(neighbor_area) && !neighbor_area.rockhill_sunlit)
 					GLOB.rockhill_sun_emitters += sunlit
-					sunlit.set_light(l_range = ROCKHILL_SUNLIGHT_RANGE, l_power = ROCKHILL_SUNLIGHT_POWER, l_color = GLOB.starlight_color, l_on = GLOB.starlight_color != COLOR_BLACK)
+					sunlit.rogue_light_channel = ROGUE_LIGHT_CHANNEL_SUN
+					rockhill_light_emitter(sunlit, GLOB.starlight_color)
 					break
+
+/proc/rockhill_light_emitter(turf/emitter, sky_color)
+	if(SSrogue_light.splits_sun())
+		emitter.set_light(l_range = ROCKHILL_SUNLIGHT_RANGE, l_power = ROCKHILL_SUNLIGHT_POWER, l_color = COLOR_WHITE, l_on = TRUE)
+		return
+	emitter.set_light(l_range = ROCKHILL_SUNLIGHT_RANGE, l_power = ROCKHILL_SUNLIGHT_POWER, l_color = sky_color, l_on = sky_color != COLOR_BLACK)

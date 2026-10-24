@@ -7,6 +7,15 @@
 	min_val = 0
 	max_val = 255
 
+/datum/config_entry/number/rogue_sight_clear
+	default = ROGUE_SIGHT_CLEAR
+	integer = TRUE
+	min_val = 0
+	max_val = ROGUE_SIGHT_RANGE
+
+GLOBAL_LIST_EMPTY(rogue_sight_quads)
+GLOBAL_LIST_EMPTY(rogue_sight_viewers)
+
 /proc/rogue_sight_shadows_enabled()
 	return CONFIG_GET(flag/rogue_sight_shadows) && SSmapping.current_map?.map_era == MAP_ERA_MEDIEVAL
 
@@ -21,30 +30,85 @@
 	triangle.transform = matrix(a, b, px1 + ROGUE_SIGHT_HALF_TILE * (a + b), d, e, py1 + ROGUE_SIGHT_HALF_TILE * (d + e))
 	return triangle
 
-GLOBAL_LIST_EMPTY(rogue_sight_quads)
+/proc/rogue_sight_triangles(list/points)
+	. = list()
+	for(var/at in 1 to length(points) step 6)
+		. += rogue_sight_triangle(points[at], points[at + 1], points[at + 2], points[at + 3], points[at + 4], points[at + 5])
 
-/proc/rogue_sight_quad(list/into, x1, y1, x2, y2)
-	var/key = "[x1],[y1],[x2],[y2]"
-	var/list/cached = GLOB.rogue_sight_quads[key]
-	if(!cached)
-		cached = rogue_sight_make_quad(x1, y1, x2, y2)
-		GLOB.rogue_sight_quads[key] = cached
-	into += cached
+/proc/rogue_sight_band(list/into, ax, ay, bx, by)
+	var/adx = ax - ROGUE_SIGHT_EYE
+	var/ady = ay - ROGUE_SIGHT_EYE
+	var/bdx = bx - ROGUE_SIGHT_EYE
+	var/bdy = by - ROGUE_SIGHT_EYE
+	var/a_length = sqrt(adx * adx + ady * ady)
+	var/b_length = sqrt(bdx * bdx + bdy * bdy)
+	var/afx = ax + adx / a_length * ROGUE_SIGHT_REACH
+	var/afy = ay + ady / a_length * ROGUE_SIGHT_REACH
+	var/bfx = bx + bdx / b_length * ROGUE_SIGHT_REACH
+	var/bfy = by + bdy / b_length * ROGUE_SIGHT_REACH
+	into.Add(ax, ay, bx, by, bfx, bfy, ax, ay, bfx, bfy, afx, afy)
 
-/proc/rogue_sight_make_quad(x1, y1, x2, y2)
-	var/d1x = x1 - ROGUE_SIGHT_EYE
-	var/d1y = y1 - ROGUE_SIGHT_EYE
-	var/d2x = x2 - ROGUE_SIGHT_EYE
-	var/d2y = y2 - ROGUE_SIGHT_EYE
-	var/l1 = sqrt(d1x * d1x + d1y * d1y)
-	var/l2 = sqrt(d2x * d2x + d2y * d2y)
-	var/f1x = x1 + d1x / l1 * ROGUE_SIGHT_REACH
-	var/f1y = y1 + d1y / l1 * ROGUE_SIGHT_REACH
-	var/f2x = x2 + d2x / l2 * ROGUE_SIGHT_REACH
-	var/f2y = y2 + d2y / l2 * ROGUE_SIGHT_REACH
-	return list(rogue_sight_triangle(x1, y1, x2, y2, f2x, f2y), rogue_sight_triangle(x1, y1, f2x, f2y, f1x, f1y))
+/proc/rogue_sight_exit(tx, ty, low, high)
+	var/dx = tx - ROGUE_SIGHT_EYE
+	var/dy = ty - ROGUE_SIGHT_EYE
+	var/best = ROGUE_SIGHT_REACH
+	if(dx > 0)
+		best = min(best, (high - ROGUE_SIGHT_EYE) / dx)
+	else if(dx < 0)
+		best = min(best, (low - ROGUE_SIGHT_EYE) / dx)
+	if(dy > 0)
+		best = min(best, (high - ROGUE_SIGHT_EYE) / dy)
+	else if(dy < 0)
+		best = min(best, (low - ROGUE_SIGHT_EYE) / dy)
+	return list(ROGUE_SIGHT_EYE + dx * best, ROGUE_SIGHT_EYE + dy * best)
 
-/proc/rogue_sight_shadow_overlays(turf/eye, range = ROGUE_SIGHT_RANGE)
+/proc/rogue_sight_quad_points(x1, y1, x2, y2, clear, inside)
+	. = list()
+	if(!inside)
+		rogue_sight_band(., x1, y1, x2, y2)
+		return
+	var/low = -clear
+	var/high = clear + 1
+	var/fx = x1 - ROGUE_SIGHT_EYE
+	var/fy = y1 - ROGUE_SIGHT_EYE
+	var/sx = x2 - ROGUE_SIGHT_EYE
+	var/sy = y2 - ROGUE_SIGHT_EYE
+	var/turn = fx * sy - fy * sx
+	var/list/boundary = list(rogue_sight_exit(x1, y1, low, high))
+	var/list/between = list()
+	for(var/list/corner as anything in list(list(low, low), list(high, low), list(high, high), list(low, high)))
+		var/cx = corner[1] - ROGUE_SIGHT_EYE
+		var/cy = corner[2] - ROGUE_SIGHT_EYE
+		var/first_side = fx * cy - fy * cx
+		if(first_side * turn <= 0 || (cx * sy - cy * sx) * turn <= 0)
+			continue
+		between[corner] = abs(arctan(fx * cx + fy * cy, first_side))
+	sortTim(between, GLOBAL_PROC_REF(cmp_numeric_asc), associative = TRUE)
+	for(var/corner in between)
+		boundary += list(corner)
+	boundary += list(rogue_sight_exit(x2, y2, low, high))
+	for(var/at in 1 to length(boundary) - 1)
+		var/list/near = boundary[at]
+		var/list/next = boundary[at + 1]
+		rogue_sight_band(., near[1], near[2], next[1], next[2])
+
+/proc/rogue_sight_segment(list/into, horizontal, low, high, line, clear)
+	var/crosses = clear > 0 && line > -clear && line < clear + 1
+	var/list/cuts = crosses ? list(low, clamp(-clear, low, high), clamp(clear + 1, low, high), high) : list(low, high)
+	for(var/piece in 1 to length(cuts) - 1)
+		var/start = cuts[piece]
+		var/finish = cuts[piece + 1]
+		if(finish <= start)
+			continue
+		var/inside = crosses && piece == 2
+		var/key = horizontal ? "[start],[line],[finish],[line],[clear],[inside]" : "[line],[start],[line],[finish],[clear],[inside]"
+		var/list/cached = GLOB.rogue_sight_quads[key]
+		if(!cached)
+			cached = horizontal ? rogue_sight_triangles(rogue_sight_quad_points(start, line, finish, line, clear, inside)) : rogue_sight_triangles(rogue_sight_quad_points(line, start, line, finish, clear, inside))
+			GLOB.rogue_sight_quads[key] = cached
+		into += cached
+
+/proc/rogue_sight_shadow_overlays(turf/eye, range = ROGUE_SIGHT_RANGE, clear = 0)
 	. = list()
 	var/size = range * 2 + 1
 	var/min_x = eye.x - range
@@ -85,12 +149,12 @@ GLOBAL_LIST_EMPTY(rogue_sight_quads)
 			if(north && isnull(run_north))
 				run_north = column
 			else if(!north && !isnull(run_north))
-				rogue_sight_quad(., run_north - range, dy + 1, column - range, dy + 1)
+				rogue_sight_segment(., TRUE, run_north - range, column - range, dy + 1, clear)
 				run_north = null
 			if(south && isnull(run_south))
 				run_south = column
 			else if(!south && !isnull(run_south))
-				rogue_sight_quad(., column - range, dy, run_south - range, dy)
+				rogue_sight_segment(., TRUE, run_south - range, column - range, dy, clear)
 				run_south = null
 		if(length(.) >= ROGUE_SIGHT_MAX_TRIANGLES)
 			return
@@ -107,22 +171,137 @@ GLOBAL_LIST_EMPTY(rogue_sight_quads)
 			if(east && isnull(run_east))
 				run_east = row
 			else if(!east && !isnull(run_east))
-				rogue_sight_quad(., dx + 1, row - range, dx + 1, run_east - range)
+				rogue_sight_segment(., FALSE, run_east - range, row - range, dx + 1, clear)
 				run_east = null
 			if(west && isnull(run_west))
 				run_west = row
 			else if(!west && !isnull(run_west))
-				rogue_sight_quad(., dx, run_west - range, dx, row - range)
+				rogue_sight_segment(., FALSE, run_west - range, row - range, dx, clear)
 				run_west = null
 		if(length(.) >= ROGUE_SIGHT_MAX_TRIANGLES)
 			return
 
-/datum/component/rogue_sight_shadows
+/proc/rogue_sight_opacity_changed(turf/changed)
+	for(var/datum/rogue_sight/sight as anything in GLOB.rogue_sight_viewers)
+		var/turf/eye = sight.last_turf
+		if(eye && eye.z == changed.z && abs(eye.x - changed.x) <= sight.range && abs(eye.y - changed.y) <= sight.range)
+			SSrogue_sight.queue(sight)
+
+SUBSYSTEM_DEF(rogue_sight)
+	name = "Rogue Sight"
+	ss_flags = SS_TICKER | SS_NO_INIT
+	wait = 1
+	var/list/waiting = list()
+	var/alist/quads = alist()
+	var/rebuilds = 0
+	var/redraws = 0
+	var/native_casts = 0
+	var/quad_fetches = 0
+
+/datum/controller/subsystem/rogue_sight/stat_entry(msg)
+	msg = "Viewers:[length(GLOB.rogue_sight_viewers)]|Rebuilds:[rebuilds]|Redraws:[redraws]|Native:[native_casts]|Quads:[length(quads)]"
+	return ..()
+
+/datum/controller/subsystem/rogue_sight/fire(resumed)
+	if(!length(waiting))
+		return
+	if(SSrogue_light.native_ready)
+		SSrogue_light.submit()
+	while(length(waiting))
+		var/datum/rogue_sight/sight = waiting[length(waiting)]
+		waiting.len--
+		sight.queued = FALSE
+		sight.rebuild(TRUE)
+		if(MC_TICK_CHECK)
+			return
+
+/datum/controller/subsystem/rogue_sight/proc/queue(datum/rogue_sight/sight)
+	if(sight.queued)
+		return
+	sight.queued = TRUE
+	waiting += sight
+
+/datum/controller/subsystem/rogue_sight/proc/native_shape(turf/eye, range, clear)
+	if(!SSrogue_light.native_ready || !SSrogue_light.fn_shadow)
+		return null
+	try
+		. = call_ext(SSrogue_light.fn_shadow)(eye.x, eye.y, eye.z, range, clear)
+	catch(var/exception/error)
+		SSrogue_light.native_failed("shadow: [error]")
+		return null
+	native_casts++
+
+/datum/controller/subsystem/rogue_sight/proc/native_overlays(list/ids)
+	. = list()
+	for(var/id in ids)
+		var/list/cached = quads[id]
+		if(!cached)
+			var/list/points
+			try
+				points = call_ext(SSrogue_light.fn_shadow_quad)(id)
+			catch(var/exception/error)
+				SSrogue_light.native_failed("shadow quad: [error]")
+				return
+			cached = rogue_sight_triangles(points)
+			quads[id] = cached
+			quad_fetches++
+		. += cached
+
+/datum/rogue_sight
 	var/image/shadows
-	var/client/shown_to
 	var/turf/last_turf
-	var/list/last_overlays
-	var/refresh_timer
+	var/list/last_shape
+	var/range = ROGUE_SIGHT_RANGE
+	var/clear = ROGUE_SIGHT_CLEAR
+	var/queued = FALSE
+
+/datum/rogue_sight/New(atom/anchor)
+	shadows = image(loc = anchor)
+	shadows.alpha = CONFIG_GET(number/rogue_sight_shadow_alpha)
+	shadows.appearance_flags = RESET_COLOR | RESET_ALPHA | RESET_TRANSFORM | KEEP_APART | (shadows.alpha < 255 ? KEEP_TOGETHER : NONE)
+	shadows.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	clear = CONFIG_GET(number/rogue_sight_clear)
+	GLOB.rogue_sight_viewers += src
+
+/datum/rogue_sight/Destroy(force)
+	GLOB.rogue_sight_viewers -= src
+	SSrogue_sight.waiting -= src
+	shadows = null
+	last_turf = null
+	last_shape = null
+	return ..()
+
+/datum/rogue_sight/proc/rebuild(force = FALSE)
+	var/turf/eye = get_turf(shadows.loc)
+	if(!eye)
+		shadows.overlays.Cut()
+		last_turf = null
+		last_shape = null
+		return
+	if(!force && eye == last_turf)
+		return
+	if(eye.z != last_turf?.z)
+		SET_PLANE_EXPLICIT(shadows, ABOVE_LIGHTING_PLANE, eye)
+	last_turf = eye
+	SSrogue_sight.rebuilds++
+	var/list/shape = SSrogue_sight.native_shape(eye, range, clear)
+	if(shape)
+		if(shape ~= last_shape)
+			return
+		last_shape = shape
+		shadows.overlays = SSrogue_sight.native_overlays(shape)
+		SSrogue_sight.redraws++
+		return
+	shape = rogue_sight_shadow_overlays(eye, range, clear)
+	if(shape ~= last_shape)
+		return
+	last_shape = shape
+	shadows.overlays = shape
+	SSrogue_sight.redraws++
+
+/datum/component/rogue_sight_shadows
+	var/datum/rogue_sight/sight
+	var/client/shown_to
 
 /datum/component/rogue_sight_shadows/Initialize()
 	if(!ismob(parent))
@@ -142,7 +321,6 @@ GLOBAL_LIST_EMPTY(rogue_sight_quads)
 
 /datum/component/rogue_sight_shadows/Destroy()
 	hide()
-	shadows = null
 	return ..()
 
 /datum/component/rogue_sight_shadows/proc/on_login(datum/source, client/new_client)
@@ -155,45 +333,19 @@ GLOBAL_LIST_EMPTY(rogue_sight_quads)
 
 /datum/component/rogue_sight_shadows/proc/on_moved(datum/source)
 	SIGNAL_HANDLER
-	if(shown_to)
-		rebuild()
+	sight?.rebuild()
 
 /datum/component/rogue_sight_shadows/proc/show(client/new_client)
 	if(!new_client || shown_to == new_client)
 		return
 	hide()
-	if(!shadows)
-		shadows = image(loc = parent)
-		shadows.alpha = CONFIG_GET(number/rogue_sight_shadow_alpha)
-		shadows.appearance_flags = RESET_COLOR | RESET_ALPHA | RESET_TRANSFORM | KEEP_APART | (shadows.alpha < 255 ? KEEP_TOGETHER : NONE)
-		shadows.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	sight = new(parent)
 	shown_to = new_client
-	new_client.images += shadows
-	rebuild(TRUE)
-	refresh_timer = addtimer(CALLBACK(src, PROC_REF(rebuild), TRUE), ROGUE_SIGHT_REFRESH, TIMER_STOPPABLE | TIMER_LOOP | TIMER_DELETE_ME)
+	new_client.images += sight.shadows
+	sight.rebuild(TRUE)
 
 /datum/component/rogue_sight_shadows/proc/hide()
-	deltimer(refresh_timer)
-	refresh_timer = null
-	last_turf = null
-	last_overlays = null
-	if(shown_to)
-		shown_to.images -= shadows
+	if(shown_to && sight)
+		shown_to.images -= sight.shadows
 	shown_to = null
-
-/datum/component/rogue_sight_shadows/proc/rebuild(force = FALSE)
-	var/turf/eye = get_turf(parent)
-	if(!eye)
-		shadows.overlays.Cut()
-		last_turf = null
-		last_overlays = null
-		return
-	if(!force && eye == last_turf)
-		return
-	last_turf = eye
-	SET_PLANE_EXPLICIT(shadows, ABOVE_LIGHTING_PLANE, eye)
-	var/list/made = rogue_sight_shadow_overlays(eye)
-	if(made ~= last_overlays)
-		return
-	last_overlays = made
-	shadows.overlays = made
+	QDEL_NULL(sight)
