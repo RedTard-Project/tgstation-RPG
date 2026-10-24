@@ -575,7 +575,7 @@ SUBSYSTEM_DEF(rogue_light)
 	else if(target.lighting_object)
 		. |= ROGUE_LIGHT_TURF_STATIC
 
-ADMIN_VERB(rogue_lighting_panel, R_DEBUG, "Rogue Lighting", "Switch the lighting carrier or backend to compare them in one round.", ADMIN_CATEGORY_DEBUG)
+ADMIN_VERB(rogue_lighting_panel, R_DEBUG, "Rogue Lighting", "Switch the lighting carrier or backend to compare them in one round.", ADMIN_CATEGORY_ROGUE)
 	if(!rogue_light_map_enabled())
 		to_chat(user, span_warning("This map keeps the stock lighting."))
 		return

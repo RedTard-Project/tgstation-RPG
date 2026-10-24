@@ -1,6 +1,8 @@
 GLOBAL_VAR(rockhill_time_of_day)
 GLOBAL_VAR(rockhill_time_override)
 GLOBAL_VAR_INIT(rockhill_days_passed, 0)
+GLOBAL_VAR_INIT(rockhill_clock_shift, 0)
+GLOBAL_VAR(rockhill_clock_frozen)
 GLOBAL_LIST_INIT(rockhill_day_names, list("MOON'S DAE", "TIW'S DAE", "WEDDING'S DAE", "THULE'S DAE", "FREYJA'S DAE", "SATURN'S DAE", "SUN'S DAE"))
 
 /datum/rockhill_clock_step
@@ -64,7 +66,18 @@ GLOBAL_LIST_INIT(rockhill_day_names, list("MOON'S DAE", "TIW'S DAE", "WEDDING'S 
 	start = 16 HOURS
 
 /proc/rockhill_time()
-	return ((world.time - SSticker.round_start_time) * ROCKHILL_DAY_RATE + ROCKHILL_DAY_START) % MIDNIGHT_ROLLOVER
+	if(!isnull(GLOB.rockhill_clock_frozen))
+		return GLOB.rockhill_clock_frozen
+	return rockhill_running_time(GLOB.rockhill_clock_shift)
+
+/proc/rockhill_running_time(shift)
+	return MODULUS((world.time - SSticker.round_start_time) * ROCKHILL_DAY_RATE + ROCKHILL_DAY_START + shift, MIDNIGHT_ROLLOVER)
+
+/proc/rockhill_set_clock(time, frozen)
+	GLOB.rockhill_clock_shift = MODULUS(GLOB.rockhill_clock_shift + time - rockhill_running_time(GLOB.rockhill_clock_shift), MIDNIGHT_ROLLOVER)
+	GLOB.rockhill_clock_frozen = frozen ? time : null
+	if(SSticker.HasRoundStarted())
+		SSrockhill_daynight.update_phase(rockhill_time())
 
 /proc/rockhill_timestamp(format = "hh:mm")
 	return time2text(rockhill_time(), format, NO_TIMEZONE)
@@ -200,7 +213,33 @@ SUBSYSTEM_DEF(rockhill_daynight)
 		. += "Time of day: [rockhill_day_name()] ᛉ [uppertext(GLOB.rockhill_time_of_day)] ᛉ [rockhill_timestamp()]"
 		. += "IC Date: [rockhill_date_short()]"
 
-ADMIN_VERB(rockhill_set_time_of_day, R_DEBUG, "SetTODOverride", "Force the Rockhill time of day, or hand it back to the clock.", ADMIN_CATEGORY_DEBUG)
+ADMIN_VERB(rockhill_set_clock, R_ADMIN, "Set Clock", "Set the Rockhill clock to any hour, freeze it or let it run again.", ADMIN_CATEGORY_ROGUE)
+	if(!SSrockhill_daynight.initialized || !SSrockhill_daynight.can_fire)
+		to_chat(user, span_warning("This map has no Rockhill sky."))
+		return
+	var/frozen = !isnull(GLOB.rockhill_clock_frozen)
+	var/list/choices = list("Set the hour", frozen ? "Let the clock run" : "Freeze the clock")
+	var/choice = tgui_input_list(user, "It is [rockhill_timestamp()][frozen ? ", the clock is frozen" : ""].", "Rockhill clock", choices)
+	if(!choice)
+		return
+	switch(choice)
+		if("Set the hour")
+			var/hour = tgui_input_number(user, "Hour (0-23)", "Rockhill clock", text2num(rockhill_timestamp("hh")), 23, 0)
+			if(isnull(hour))
+				return
+			var/minute = tgui_input_number(user, "Minute (0-59)", "Rockhill clock", 0, 59, 0)
+			if(isnull(minute))
+				return
+			rockhill_set_clock(hour HOURS + minute MINUTES, frozen)
+		if("Freeze the clock")
+			rockhill_set_clock(rockhill_time(), TRUE)
+		if("Let the clock run")
+			rockhill_set_clock(rockhill_time(), FALSE)
+	message_admins("[key_name_admin(user)] set the Rockhill clock: [choice], now [rockhill_timestamp()].")
+	log_admin("[key_name(user)] set the Rockhill clock: [choice], now [rockhill_timestamp()].")
+	BLACKBOX_LOG_ADMIN_VERB("Set Rockhill Clock")
+
+ADMIN_VERB(rockhill_set_time_of_day, R_DEBUG, "SetTODOverride", "Force the Rockhill time of day, or hand it back to the clock.", ADMIN_CATEGORY_ROGUE)
 	if(!SSrockhill_daynight.initialized || !SSrockhill_daynight.can_fire)
 		to_chat(user, span_warning("This map has no Rockhill sky."))
 		return

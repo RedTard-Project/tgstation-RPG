@@ -1,62 +1,66 @@
-/datum/keybinding/living/rockhill_look
-	hotkey_keys = list("ShiftF")
-	name = "rockhill_look"
-	full_name = "Look up or down"
-	description = "Look at what's above you through an open space. If there is none, look down through an open space at your feet or next to you. Press again to stop looking."
-	keybind_signal = COMSIG_KB_LIVING_ROCKHILL_LOOK_DOWN
+/mob/living
+	var/rogue_look_locked = FALSE
 
-/datum/keybinding/living/rockhill_look/down(client/user, turf/target, mousepos_x, mousepos_y)
+/datum/keybinding/living/look_up/up(client/user, turf/target)
+	var/mob/living/looker = user.mob
+	if(istype(looker) && looker.rogue_look_locked)
+		return TRUE
+	return ..()
+
+/datum/keybinding/living/look_down/up(client/user, turf/target)
+	var/mob/living/looker = user.mob
+	if(istype(looker) && looker.rogue_look_locked)
+		return TRUE
+	return ..()
+
+/datum/keybinding/living/rogue_look_lock
+	hotkey_keys = list("ShiftL")
+	name = "rogue_look_lock"
+	full_name = "Lock looking up or down"
+	description = "Keep looking up or down after the look key is released. Press again to stop looking."
+	keybind_signal = COMSIG_KB_LIVING_ROGUE_LOOK_LOCK_DOWN
+
+/datum/keybinding/living/rogue_look_lock/down(client/user, turf/target, mousepos_x, mousepos_y)
 	. = ..()
 	if(.)
 		return
 	var/mob/living/looker = user.mob
-	INVOKE_ASYNC(looker, TYPE_PROC_REF(/mob/living, rockhill_look))
+	looker.toggle_look_lock()
 	return TRUE
 
-/mob/living/proc/rockhill_look()
-	if(looking_vertically)
+/mob/living/proc/toggle_look_lock()
+	if(rogue_look_locked)
+		rogue_look_locked = FALSE
 		end_look()
+		balloon_alert(src, "stopped looking")
 		return
-	if(!client || !can_look_up())
+	if(!looking_vertically)
+		balloon_alert(src, "look up or down first")
 		return
-	var/direction = rockhill_look_turf(UP) ? UP : (rockhill_look_turf(DOWN) ? DOWN : NONE)
-	if(!direction)
+	rogue_look_locked = TRUE
+	balloon_alert(src, "view locked")
+
+/mob/living/end_look()
+	rogue_look_locked = FALSE
+	return ..()
+
+/mob/living/look_up()
+	if(!looking_vertically && rockhill_under_sky())
 		rockhill_look_at_sky()
 		return
-	if(move_intent != MOVE_INTENT_WALK)
-		visible_message(span_info("[src] looks [direction == UP ? "up" : "down"]."))
-	if(!do_after(src, ROCKHILL_LOOK_TIME, target = src))
+	. = ..()
+	if(looking_vertically != UP)
 		return
-	if(direction == UP)
-		look_up()
-		var/area/rogue/sky = get_area(looking_holder)
-		if(istype(sky) && sky.rockhill_sunlit)
-			rockhill_time_change()
-	else
-		look_down()
+	var/area/rogue/sky = get_area(looking_holder)
+	if(istype(sky) && sky.rockhill_sunlit)
+		rockhill_time_change()
 
-/mob/living/proc/rockhill_look_turf(direction)
-	var/turf/start = get_step_multiz(src, direction == DOWN ? NONE : direction)
-	if(!start || !get_step_multiz(src, direction))
-		return null
-	var/turf/hole = istransparentturf(start) ? start : null
-	if(!hole)
-		var/turf/front = get_step(start, dir)
-		if(istransparentturf(front))
-			hole = front
-	if(!hole)
-		for(var/turf/neighbor in TURF_NEIGHBORS(start))
-			if(istransparentturf(neighbor))
-				hole = neighbor
-				break
-	if(!hole)
-		return null
-	return direction == DOWN ? get_step_multiz(hole, DOWN) : hole
+/mob/living/proc/rockhill_under_sky()
+	var/area/rogue/here = get_area(src)
+	return istype(here) && here.rockhill_sunlit && !get_step_multiz(src, UP)
 
 /mob/living/proc/rockhill_look_at_sky()
-	var/area/rogue/here = get_area(src)
-	if(get_step_multiz(src, UP) || !istype(here) || !here.rockhill_sunlit)
-		to_chat(src, span_warning("A ceiling above my head."))
+	if(!can_look_up())
 		return
 	changeNext_move(CLICK_CD_LOOK_UP)
 	var/sky_message = SSrockhill_weather.initialized ? SSrockhill_weather.sky_message() : null

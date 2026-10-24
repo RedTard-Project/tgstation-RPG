@@ -1,3 +1,4 @@
+#include "admin\_defines.dm"
 #include "clothing\_defines.dm"
 #include "clothing\slots.dm"
 #include "clothing\onmob.dm"
@@ -32,6 +33,8 @@
 #include "maps\centcom.dm"
 #include "maps\z_depth.dm"
 #include "maps\era_limits.dm"
+#include "maps\no_shuttles.dm"
+#include "maps\medieval_round.dm"
 #include "combat\armor.dm"
 #include "combat\intents.dm"
 #include "combat\attack.dm"
@@ -84,6 +87,7 @@
 // BEGIN_PREFERENCES
 // END_PREFERENCES
 // BEGIN_INCLUDE
+#include "admin\_defines.dm"
 #include "attributes\_defines.dm"
 #include "attributes\attribute.dm"
 #include "attributes\experience.dm"
@@ -125,6 +129,8 @@
 #include "maps\centcom.dm"
 #include "maps\era.dm"
 #include "maps\era_limits.dm"
+#include "maps\medieval_round.dm"
+#include "maps\no_shuttles.dm"
 #include "maps\other_z.dm"
 #include "maps\pool.dm"
 #include "maps\world_size.dm"

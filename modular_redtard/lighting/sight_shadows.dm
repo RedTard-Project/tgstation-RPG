@@ -1,5 +1,5 @@
 /datum/config_entry/flag/rogue_sight_shadows
-	default = TRUE
+	default = FALSE
 
 /datum/config_entry/number/rogue_sight_shadow_alpha
 	default = ROGUE_SIGHT_ALPHA

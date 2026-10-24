@@ -573,7 +573,7 @@ SUBSYSTEM_DEF(rockhill_weather)
 	queued_type = null
 	SSweather.run_weather(weather_type, sky_levels)
 
-ADMIN_VERB(rockhill_run_weather, R_ADMIN|R_FUN, "Weather - Particle", "Start a Rockhill weather right now on every level under the sky.", ADMIN_CATEGORY_EVENTS)
+ADMIN_VERB(rockhill_run_weather, R_ADMIN|R_FUN, "Weather - Particle", "Start a Rockhill weather right now on every level under the sky.", ADMIN_CATEGORY_ROGUE)
 	if(!SSrockhill_weather.initialized || !SSrockhill_weather.can_fire)
 		to_chat(user, span_warning("This map has no Rockhill sky."))
 		return

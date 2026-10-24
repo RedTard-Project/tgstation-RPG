@@ -69,8 +69,8 @@
 #define ROCKHILL_ACID_COLOR "#5eff00"
 #define ROCKHILL_WATERFALL_MIST_ALPHA 175
 #define COMSIG_GLOB_ROCKHILL_TIME_OF_DAY "!rockhill_time_of_day"
-#define ROCKHILL_LOOK_TIME (1 SECONDS)
-#define COMSIG_KB_LIVING_ROCKHILL_LOOK_DOWN "keybinding_living_rockhill_look_down"
+
+#define COMSIG_KB_LIVING_ROGUE_LOOK_LOCK_DOWN "keybinding_living_rogue_look_lock_down"
 #define ROCKHILL_WEATHER_MIN_STRENGTH 0.3
 #define ROCKHILL_WEATHER_MAX_DELAY (10 MINUTES)
 #define ROCKHILL_LIGHTNING_RANGE 7

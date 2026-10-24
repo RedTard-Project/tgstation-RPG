@@ -1,9 +1,9 @@
-ADMIN_VERB(rogue_mechanics_panel, R_DEBUG, "Rogue Mechanics", "Formulas and numbers read from config/redtard/mechanics.", ADMIN_CATEGORY_DEBUG)
+ADMIN_VERB(rogue_mechanics_panel, R_DEBUG, "Rogue Mechanics", "Formulas and numbers read from config/redtard/mechanics.", ADMIN_CATEGORY_ROGUE)
 	var/datum/rogue_mechanics_panel/panel = new
 	panel.ui_interact(user.mob)
 	BLACKBOX_LOG_ADMIN_VERB("Rogue Mechanics")
 
-ADMIN_VERB(rogue_armor_compare, R_DEBUG, "View Armor Comparison", "Browse and compare every rogue armor datum.", ADMIN_CATEGORY_DEBUG)
+ADMIN_VERB(rogue_armor_compare, R_DEBUG, "View Armor Comparison", "Browse and compare every rogue armor datum.", ADMIN_CATEGORY_ROGUE)
 	var/datum/rogue_armor_compare/menu = new
 	menu.ui_interact(user.mob)
 	BLACKBOX_LOG_ADMIN_VERB("View Armor Comparison")

@@ -238,7 +238,7 @@ GLOBAL_LIST_INIT(rockhill_event_ordinals, list("first", "second", "third", "four
 	var/datum/rockhill_calendar_ui/calendar = new
 	calendar.ui_interact(mob)
 
-ADMIN_VERB(rockhill_set_ic_date, R_ADMIN, "Set IC Date", "Set or clear the IC calendar date override.", ADMIN_CATEGORY_GAME)
+ADMIN_VERB(rockhill_set_ic_date, R_ADMIN, "Set IC Date", "Set or clear the IC calendar date override.", ADMIN_CATEGORY_ROGUE)
 	var/choice = tgui_alert(user, "What would you like to do?", "IC Date Override", list("Set Custom Date", "Clear Override"))
 	if(choice == "Clear Override")
 		if(GLOB.rockhill_date_overridden)
