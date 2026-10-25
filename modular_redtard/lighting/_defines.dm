@@ -7,6 +7,7 @@
 
 #define ROGUE_LIGHT_BACKEND_DM "dm"
 #define ROGUE_LIGHT_BACKEND_NATIVE "native"
+#define ROGUE_LIGHT_NATIVE_DIR "modular_redtard/native"
 
 #define ROGUE_LIGHT_ABI 4
 

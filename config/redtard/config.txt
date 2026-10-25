@@ -23,7 +23,8 @@ ROGUE_LIGHTING_CARRIER quarter
 ##            с миром или она не той версии, сервер сам вернётся к dm.
 ROGUE_LIGHTING_BACKEND native
 
-## Имя библиотеки без расширения: rogue_light.dll на Windows, librogue_light.so на Linux.
+## Имя библиотеки без расширения: rogue_light.dll на Windows (в корне), librogue_light.so на Linux
+## (сначала ./librogue_light.so, потом modular_redtard/native/librogue_light.so).
 ROGUE_LIGHTING_LIBRARY rogue_light
 
 ## Сколько процентов тика основной поток может тратить на применение готового света из библиотеки.

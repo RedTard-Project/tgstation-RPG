@@ -586,7 +586,10 @@ SUBSYSTEM_DEF(rogue_light)
 
 /proc/rogue_light_library_path(name)
 	if(world.system_type == UNIX)
-		return fexists("./lib[name].so") ? "./lib[name].so" : null
+		for(var/path in list("./lib[name].so", "./[ROGUE_LIGHT_NATIVE_DIR]/lib[name].so"))
+			if(fexists(path))
+				return path
+		return null
 	return fexists("[name].dll") ? name : null
 
 /proc/rogue_light_turf_flags(turf/target, from_areas = FALSE)

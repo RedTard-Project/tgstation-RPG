@@ -1,0 +1,35 @@
+name: Rogue light native library
+
+on:
+  push:
+    paths:
+      - "modular_redtard/native/**"
+      - "modular_redtard/tests/native/**"
+      - ".github/workflows/rogue_light_native.yml"
+  pull_request:
+    paths:
+      - "modular_redtard/native/**"
+      - "modular_redtard/tests/native/**"
+      - ".github/workflows/rogue_light_native.yml"
+  workflow_dispatch:
+
+jobs:
+  linux:
+    name: librogue_light.so in DreamDaemon on Linux
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Restore or install BYOND
+        uses: ./.github/actions/restore_or_install_byond
+
+      - name: Load the library in a test world
+        run: |
+          source $HOME/BYOND/byond/bin/byondsetup
+          cd modular_redtard/tests/native
+          cp ../../native/librogue_light.so .
+          ldd ./librogue_light.so || true
+          DreamMaker rogue_light_native.dme
+          timeout 180 DreamDaemon rogue_light_native.dmb -trusted -close 2>&1 | tee dreamdaemon.log || true
+          grep -q "ROGUE_LIGHT_NATIVE: PASS" dreamdaemon.log

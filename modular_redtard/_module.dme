@@ -58,6 +58,7 @@
 #include "lighting\sight_shadows.dm"
 #include "lighting\sun.dm"
 #include "lighting\darkness.dm"
+#include "lighting\host.dm"
 #include "rockhill\_rockhill.dm"
 
 #ifdef UNIT_TESTS
@@ -122,6 +123,7 @@
 #include "lighting\carrier.dm"
 #include "lighting\config.dm"
 #include "lighting\darkness.dm"
+#include "lighting\host.dm"
 #include "lighting\overrides.dm"
 #include "lighting\sight_shadows.dm"
 #include "lighting\subsystem.dm"
