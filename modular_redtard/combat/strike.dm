@@ -155,6 +155,7 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 	do_attack_animation(target, weapon ? null : ATTACK_EFFECT_PUNCH, weapon)
 	target.lastattacker = real_name
 	target.lastattackerckey = ckey
+	target.rogue_tempo_hit(src)
 	var/incoming = target != src ? strike.incoming() : NONE
 	if(incoming & ROGUE_STRIKE_CANCEL)
 		return FALSE

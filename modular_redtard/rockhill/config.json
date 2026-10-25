@@ -803,7 +803,8 @@
 					"max_blade_int",
 					"sharpening_factor",
 					"spark_chance",
-					"special"
+					"special",
+					"coverage"
 				],
 				"rename": {
 					"inhand_icon_state": "item_state",
@@ -857,7 +858,8 @@
 					"wdefense_wbonus",
 					"max_blade_int",
 					"sharpening_factor",
-					"spark_chance"
+					"spark_chance",
+					"coverage"
 				],
 				"path_lists": [
 					"rockhill_keys",
@@ -893,7 +895,8 @@
 					"armour_penetration",
 					"max_blade_int",
 					"sharpening_factor",
-					"spark_chance"
+					"spark_chance",
+					"coverage"
 				],
 				"intent_lists": [
 					"possible_item_intents",
@@ -950,8 +953,46 @@
 					"health",
 					"maxHealth",
 					"pixel_x",
-					"pixel_y"
-				]
+					"pixel_y",
+					"melee_damage_lower",
+					"melee_damage_upper",
+					"rogue_defprob",
+					"rogue_can_dodge",
+					"rogue_mob_stats"
+				],
+				"rename": {
+					"rogue_defprob": "defprob",
+					"rogue_can_dodge": "mob_can_dodge"
+				},
+				"numeric_vars": [
+					"melee_damage_lower",
+					"melee_damage_upper",
+					"rogue_defprob"
+				],
+				"skip_default": [
+					"melee_damage_lower",
+					"melee_damage_upper"
+				],
+				"numeric_defaults": {
+					"rogue_defprob": 50
+				},
+				"true_only": [
+					"rogue_can_dodge"
+				],
+				"stat_lists": {
+					"rogue_mob_stats": {
+						"default": 10,
+						"stats": {
+							"STASTR": "ROGUE_STAT_STRENGTH",
+							"STAPER": "ROGUE_STAT_PERCEPTION",
+							"STAINT": "ROGUE_STAT_INTELLIGENCE",
+							"STACON": "ROGUE_STAT_CONSTITUTION",
+							"STAEND": "ROGUE_STAT_WILLPOWER",
+							"STASPD": "ROGUE_STAT_SPEED",
+							"STALUC": "ROGUE_STAT_FORTUNE"
+						}
+					}
+				}
 			},
 			{
 				"file": "spawners.dm",
@@ -1178,7 +1219,9 @@
 				"canparry",
 				"candodge",
 				"no_attack",
-				"unarmed"
+				"unarmed",
+				"tranged",
+				"tshield"
 			],
 			"paths": [
 				"cleave"
@@ -1704,9 +1747,32 @@
 				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
 				"governing": "ROGUE_STAT_PERCEPTION"
 			}
+		},
+		"extra_traits": {
+			"/datum/job/roguetown/jester": [
+				"TRAIT_TEMPO"
+			],
+			"/datum/job/roguetown/martyr": [
+				"TRAIT_TEMPO"
+			]
 		}
 	},
 	"traits": {
-		"output": "modular_redtard/rockhill/ported/_traits.dm"
+		"output": "modular_redtard/rockhill/ported/_traits.dm",
+		"extra": {
+			"TRAIT_TEMPO": {
+				"value": "Tempo Capable",
+				"span": "span_greentext",
+				"text": "I can keep up with multiple opponents at once.",
+				"source": "Azure Peak, code/__DEFINES/traits.dm"
+			}
+		},
+		"descriptions": {
+			"TRAIT_DUALWIELDER": {
+				"span": "span_info",
+				"text": "While wielding two one-hand weapons with at least Journeyman skill on each, I alternate attacks between them. After 4 strikes, I'll attack with both at once. My parry and dodge are reduced by 5% while holding two weapons.",
+				"source": "Azure Peak, code/__DEFINES/traits.dm"
+			}
+		}
 	}
 }

@@ -144,10 +144,14 @@ GLOBAL_LIST_INIT(rogue_rmb_intents, rogue_init_rmb_intents())
 		"target_intelligence" = target.rogue_stat(ROGUE_STAT_INTELLIGENCE),
 		"target_vulnerable" = target.rogue_is_open() || target.has_status_effect(/datum/status_effect/rogue/bind),
 	))
-	var/cooldown = ROGUE_FEINT_COOLDOWN
+	var/cooldown = ROGUE_FEINT_COOLDOWN - rogue_tempo_bonus("rmb_cooldown")
+	if(target.mind && !target.rogue_sees(src) && target.rogue_tempo_reaches("aware"))
+		chance = 0
+		cooldown = ROGUE_TEMPO_UNSEEN_COOLDOWN
+		to_chat(src, span_warning("They need to see me for me to feint them!"))
 	if(target.remove_status_effect(/datum/status_effect/rogue/guard))
 		to_chat(src, span_notice("[target.p_their(TRUE)] guard is disrupted!"))
-		cooldown += ROGUE_FEINT_GUARD_COOLDOWN
+		cooldown = ROGUE_FEINT_COOLDOWN + ROGUE_FEINT_GUARD_COOLDOWN - rogue_tempo_bonus("rmb_cooldown")
 		chance = 100
 	rogue_feint_ready_at = world.time + cooldown
 	SEND_SIGNAL(src, COMSIG_MOB_ROGUE_FEINT_USED)

@@ -735,6 +735,7 @@
 		TRAIT_NOFALLDAMAGE1,
 		TRAIT_LEAPER,
 		TRAIT_NUTCRACKER,
+		TRAIT_TEMPO,
 		)
 
 /datum/job/roguetown/keeper
@@ -940,6 +941,7 @@
 		TRAIT_DUALWIELDER,
 		TRAIT_VOTARY,
 		TRAIT_CONVICTION,
+		TRAIT_TEMPO,
 		)
 
 /datum/job/roguetown/mercenary

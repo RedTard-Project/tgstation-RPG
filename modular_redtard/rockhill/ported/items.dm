@@ -42160,6 +42160,7 @@
 	associated_skill = /datum/attribute/skill/combat/shields
 	possible_item_intents = list(/datum/intent/shield/bash, /datum/intent/shield/block, /datum/intent/mace/smash/shield)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/towershield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (3).ogg')
+	coverage = 80
 	inhand_icon_state = "atgervi_shield"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -42194,6 +42195,7 @@
 	associated_skill = /datum/attribute/skill/combat/shields
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
+	coverage = 10
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/shield/buckler/ancient
@@ -42226,6 +42228,7 @@
 	associated_skill = /datum/attribute/skill/combat/shields
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
+	coverage = 10
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/shield/capbuckler
@@ -42258,6 +42261,7 @@
 	associated_skill = /datum/attribute/skill/combat/shields
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
+	coverage = 10
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/shield/heater
@@ -42287,6 +42291,7 @@
 	associated_skill = /datum/attribute/skill/combat/shields
 	possible_item_intents = list(/datum/intent/shield/bash, /datum/intent/shield/block, /datum/intent/mace/smash/shield)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/towershield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (3).ogg')
+	coverage = 30
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -42318,6 +42323,7 @@
 	associated_skill = /datum/attribute/skill/combat/shields
 	possible_item_intents = list(/datum/intent/mace/smash/shield/metal, /datum/intent/shield/block)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
+	coverage = 30
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -42349,6 +42355,7 @@
 	associated_skill = /datum/attribute/skill/combat/shields
 	possible_item_intents = list(/datum/intent/mace/smash/shield/metal, /datum/intent/shield/block)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
+	coverage = 40
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -42380,6 +42387,7 @@
 	associated_skill = /datum/attribute/skill/combat/shields
 	possible_item_intents = list(/datum/intent/mace/smash/shield/metal, /datum/intent/shield/block)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
+	coverage = 30
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -42410,6 +42418,7 @@
 	associated_skill = /datum/attribute/skill/combat/shields
 	possible_item_intents = list(/datum/intent/shield/bash, /datum/intent/shield/block, /datum/intent/mace/smash/shield)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/towershield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (3).ogg')
+	coverage = 40
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -42440,6 +42449,7 @@
 	associated_skill = /datum/attribute/skill/combat/shields
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
+	coverage = 50
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -42470,6 +42480,7 @@
 	associated_skill = /datum/attribute/skill/combat/shields
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
+	coverage = 60
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -42500,6 +42511,7 @@
 	associated_skill = /datum/attribute/skill/combat/shields
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
+	coverage = 60
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -42530,6 +42542,7 @@
 	associated_skill = /datum/attribute/skill/combat/shields
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
+	coverage = 60
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -42560,6 +42573,7 @@
 	associated_skill = /datum/attribute/skill/combat/shields
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/towershield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (3).ogg')
+	coverage = 55
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -42590,6 +42604,7 @@
 	associated_skill = /datum/attribute/skill/combat/shields
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/towershield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (3).ogg')
+	coverage = 40
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -42621,6 +42636,7 @@
 	associated_skill = /datum/attribute/skill/combat/shields
 	possible_item_intents = list(/datum/intent/shield/bash, /datum/intent/shield/block, /datum/intent/mace/smash/shield)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/towershield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (3).ogg')
+	coverage = 30
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null

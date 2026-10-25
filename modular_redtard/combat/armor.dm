@@ -247,7 +247,7 @@ GLOBAL_LIST_INIT(rogue_light_blunt_sounds, list('modular_redtard/rockhill/sound/
 	var/penetration = attack_penetration(attacking_item)
 	var/protection = rogue_formula_value(ROGUE_FORMULA_ARMOR_PROTECTION, list("rating" = rating, "penetration" = penetration))
 	var/incoming = protection < 100 ? damage * 100 / (100 - protection) : damage
-	var/integrity_damage = rogue_formula_value(ROGUE_FORMULA_ARMOR_WEAR, list("incoming" = incoming, "rating" = rating, "penetration" = penetration, "blunt_attack" = armor_type == ROGUE_ARMOR_BLUNT, "blunt_rating" = armor.blunt))
+	var/integrity_damage = rogue_formula_value(ROGUE_FORMULA_ARMOR_WEAR, list("incoming" = incoming, "rating" = rating, "penetration" = penetration, "blunt_attack" = armor_type == ROGUE_ARMOR_BLUNT, "blunt_rating" = armor.blunt)) * source.rogue_tempo_factor("armor_wear")
 	var/obj/item/weapon = attacking_item
 	if(used.rogue_blocksound)
 		var/block_sound = rogue_armor_sound(used.rogue_blocksound, istype(weapon) ? weapon.rogue_current_bclass : null)

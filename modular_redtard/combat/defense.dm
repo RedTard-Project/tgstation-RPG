@@ -54,6 +54,7 @@ GLOBAL_LIST_INIT(rogue_bind_catches, list(
 
 /mob/living/proc/rogue_left_combat_mode()
 	addtimer(CALLBACK(src, PROC_REF(rogue_rest_defense)), ROGUE_DODGE_RESET_TIME, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_DELETE_ME)
+	addtimer(CALLBACK(src, PROC_REF(rogue_clear_tempo)), ROGUE_TEMPO_CLEAR_DELAY, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_DELETE_ME)
 
 /mob/living/proc/rogue_rest_defense()
 	if(combat_mode)
@@ -100,6 +101,8 @@ GLOBAL_LIST_INIT(rogue_bind_catches, list(
 		return FALSE
 	if(rogue_weapon_rank(used_weapon) < ROGUE_BIND_RANK || has_status_effect(/datum/status_effect/rogue/bind_cooldown) || has_status_effect(/datum/status_effect/rogue/bind))
 		return FALSE
+	if(attacker.rogue_tempo_reaches("unbindable"))
+		return FALSE
 	var/our_zone = rogue_precise_zone()
 	var/their_zone = attacker.rogue_precise_zone()
 	var/list/catches = GLOB.rogue_bind_catches[our_zone]
@@ -125,10 +128,10 @@ GLOBAL_LIST_INIT(rogue_bind_catches, list(
 	return TRUE
 
 /mob/living/carbon/human/proc/rogue_attempt_parry(mob/living/attacker, obj/item/attacker_weapon, datum/intent/attack_intent)
-	if(!rogue_sees(attacker))
+	if(!rogue_sees(attacker) && !rogue_tempo_reaches("blind_defense"))
 		return FALSE
 	var/riposting = rogue_rmb_is(/datum/rogue_rmb_intent/defend)
-	if(world.time < rogue_last_parry + ROGUE_PARRY_DELAY && !riposting)
+	if(world.time < rogue_last_parry + ROGUE_PARRY_DELAY - rogue_tempo_bonus("parry_delay") && !riposting)
 		return FALSE
 	if(attack_intent && !attack_intent.canparry)
 		return FALSE
@@ -186,7 +189,7 @@ GLOBAL_LIST_INIT(rogue_bind_catches, list(
 	var/strength_gap = attacker.rogue_stat(ROGUE_STAT_STRENGTH) - rogue_stat(ROGUE_STAT_STRENGTH)
 	if(attacker_weapon?.wbalance == WBALANCE_HEAVY && strength_gap > 0 && !has_status_effect(/datum/status_effect/rogue/bind))
 		drained += strength_gap * ROGUE_PARRY_HEAVY_DRAIN
-	if(!rogue_spend_defense_stamina(drained, "I'm too tired to parry!"))
+	if(!rogue_spend_defense_stamina(max(drained - rogue_tempo_bonus("parry_stamina"), 0), "I'm too tired to parry!"))
 		return FALSE
 	var/list/sounds = (weapon_parry && length(used_weapon.parrysound)) ? used_weapon.parrysound : GLOB.rogue_default_parry_sounds
 	playsound(get_turf(src), pick(sounds), 100, FALSE)
@@ -196,7 +199,7 @@ GLOBAL_LIST_INIT(rogue_bind_catches, list(
 	to_chat(attacker, span_boldwarning(message))
 	log_combat(src, attacker, "parried")
 	if(weapon_parry)
-		used_weapon.take_damage(ROGUE_PARRY_INTEGRITY_DAMAGE + (strong_attack ? ROGUE_STRONG_INTEGRITY_WEAR : 0), BRUTE, "", FALSE)
+		used_weapon.take_damage((ROGUE_PARRY_INTEGRITY_DAMAGE + (strong_attack ? ROGUE_STRONG_INTEGRITY_WEAR : 0)) * rogue_tempo_factor("parry_wear"), BRUTE, "", FALSE)
 		if(used_weapon.get_sharpness())
 			used_weapon.rogue_dull(ROGUE_BLADE_PARRY_WEAR + (strong_attack ? ROGUE_BLADE_STRONG_WEAR : 0), src)
 	else
@@ -248,7 +251,7 @@ GLOBAL_LIST_INIT(rogue_bind_catches, list(
 		drop_all_held_items()
 		to_chat(src, span_warning("I can't dodge in such unfitting armor! I'm knocked down!"))
 		return FALSE
-	var/seen = rogue_sees(attacker)
+	var/seen = rogue_sees(attacker) || rogue_tempo_reaches("blind_defense")
 	if(!seen)
 		rogue_change_dodge_cooldown(ROGUE_BLIND_DODGE_PENALTY)
 		rogue_change_dodge_fatigue(-ROGUE_BLIND_DODGE_PENALTY)
@@ -282,14 +285,15 @@ GLOBAL_LIST_INIT(rogue_bind_catches, list(
 		drained += attacker_speed - defender_speed
 	if(!attacker.mind)
 		drained = ROGUE_DODGE_MIN_DRAIN
-	if(!rogue_spend_defense_stamina(max(drained, ROGUE_DODGE_MIN_DRAIN), "I'm too tired to dodge!"))
+	if(!rogue_spend_defense_stamina(max(max(drained, ROGUE_DODGE_MIN_DRAIN) - rogue_tempo_bonus("dodge_stamina"), 0), "I'm too tired to dodge!"))
 		return FALSE
 	playsound(src, 'modular_redtard/rockhill/sound/combat/dodge.ogg', 100, FALSE)
 	throw_at(dodge_turf, 1, 2, src, FALSE)
 	visible_message(span_warning("<b>[src]</b> [drained > 0 ? "dodges" : "easily dodges"] [attacker]'s attack!"))
 	log_combat(src, attacker, "dodged against")
 	rogue_dodge_clip(attacker, attack_intent)
-	if(expert && !(rogue_fixed_eye && rogue_goodluck(ROGUE_DODGE_FIXED_LUCK)))
+	var/keeps_dodge = rogue_tempo_reaches("dodge_keep") || (rogue_tempo_level() && !prob(ROGUE_TEMPO_DODGE_LOSS_CHANCE))
+	if(expert && !keeps_dodge && !(rogue_fixed_eye && rogue_goodluck(ROGUE_DODGE_FIXED_LUCK)))
 		var/rank_gap = (mainhand ? rogue_weapon_rank(mainhand) : rogue_skill_rank(/datum/attribute/skill/combat/unarmed)) - attacker_rank
 		rogue_change_dodge_cooldown(1)
 		rogue_change_dodge_fatigue(-1 + min(rank_gap, 0))

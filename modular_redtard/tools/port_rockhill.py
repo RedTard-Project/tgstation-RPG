@@ -579,13 +579,16 @@ def rogue_trait_table():
 def generate_traits(cfg, tg_names, needed):
     spec = cfg['traits']
     table = rogue_trait_table()
+    extra = spec.get('extra', {})
+    for name, entry in {**extra, **spec.get('descriptions', {})}.items():
+        table[name] = (entry['span'], json.dumps(entry['text']))
     wanted = sorted(set(table) | set(needed))
     defines = []
     skipped = []
     for name in wanted:
         if name in tg_names:
             continue
-        value = DEFINE_VALUES.get(name, '').strip()
+        value = json.dumps(extra[name]['value']) if name in extra else DEFINE_VALUES.get(name, '').strip()
         if not STRING_LITERAL.match(value):
             skipped.append(name)
             continue
@@ -639,6 +642,7 @@ def role_attributes(rw, job, advclass, outfit_source, attr_cfg):
                 if stat_key(token):
                     stats[stat_key(token)] += int(amount)
             traits += TRAIT_CALL.findall(text)
+    traits += attr_cfg.get('extra_traits', {}).get(job, [])
     return {'stats': {k: v for k, v in stats.items() if v}, 'skills': skills, 'traits': list(dict.fromkeys(traits))}
 
 
@@ -1558,6 +1562,16 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                     target = skill_target(cfg, value)
                     if target:
                         block.append(f'\t{name} = {target}')
+                    continue
+                if name in cat.get('stat_lists', {}):
+                    stat_map = cat['stat_lists'][name]
+                    entries = []
+                    for source_var, stat in stat_map['stats'].items():
+                        number = define_value_number(rw.resolve(path, source_var))
+                        if number is not None and number != stat_map['default']:
+                            entries.append(f'{stat} = {number}')
+                    if entries:
+                        block.append(f'\t{name} = list(' + ', '.join(entries) + ')')
                     continue
                 if name in cat.get('string_lists', []):
                     entries = string_list(value)

@@ -46,9 +46,9 @@ jobs:
       - name: Compile the server build
         run: |
           source $HOME/BYOND/byond/bin/byondsetup
-          modular_redtard/build/build.sh dm
+          sh modular_redtard/build/build.sh dm
 
       - name: Compile the unit test build
         run: |
           source $HOME/BYOND/byond/bin/byondsetup
-          modular_redtard/build/build.sh dm-test --no-run
+          sh modular_redtard/build/build.sh dm-test --no-run

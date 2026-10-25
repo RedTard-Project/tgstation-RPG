@@ -17,6 +17,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = TRUE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/arc/bow/short
@@ -38,6 +40,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = TRUE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/arc/crossbow
@@ -59,6 +63,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = TRUE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/arc/crossbow/slurbow
@@ -80,6 +86,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = TRUE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/arc/firearm
@@ -101,6 +109,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = TRUE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/arc/sling
@@ -122,6 +132,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = TRUE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/attach
@@ -143,6 +155,8 @@
 	candodge = TRUE
 	no_attack = TRUE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/axe/bash
@@ -164,6 +178,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg')
 
 /datum/intent/axe/chop
@@ -185,6 +201,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genchop (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (3).ogg')
 
 /datum/intent/axe/chop/battle
@@ -206,6 +224,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genchop (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (3).ogg')
 
 /datum/intent/axe/chop/battle/greataxe
@@ -227,6 +247,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genchop (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (3).ogg')
 
 /datum/intent/axe/chop/long
@@ -248,6 +270,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genchop (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (3).ogg')
 
 /datum/intent/axe/chop/stone
@@ -269,6 +293,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genchop (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (3).ogg')
 
 /datum/intent/axe/cut
@@ -290,6 +316,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (3).ogg')
 
 /datum/intent/axe/cut/battle
@@ -311,6 +339,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (3).ogg')
 
 /datum/intent/axe/cut/battle/greataxe
@@ -332,6 +362,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (3).ogg')
 
 /datum/intent/axe/cut/battle/lunge
@@ -353,6 +385,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genchop (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (3).ogg')
 
 /datum/intent/axe/cut/long
@@ -374,6 +408,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (3).ogg')
 
 /datum/intent/axe/sweep
@@ -395,6 +431,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	cleave = /datum/cleave_pattern/frontal_arc
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (3).ogg')
 
@@ -417,6 +455,8 @@
 	candodge = TRUE
 	no_attack = TRUE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/cast
@@ -438,6 +478,8 @@
 	candodge = TRUE
 	no_attack = TRUE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/claw/cut/gronn
@@ -459,6 +501,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (3).ogg')
 
 /datum/intent/claw/lunge/gronn
@@ -480,6 +524,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/claw/rend
@@ -501,6 +547,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
 /datum/intent/dagger/chop
@@ -522,6 +570,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (3).ogg')
 
 /datum/intent/dagger/chop/bronze
@@ -543,6 +593,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (3).ogg')
 
 /datum/intent/dagger/chop/cleaver
@@ -564,6 +616,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genchop (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (3).ogg')
 
 /datum/intent/dagger/cut
@@ -585,6 +639,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (3).ogg')
 
 /datum/intent/dagger/cut/heavy
@@ -606,6 +662,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (3).ogg')
 
 /datum/intent/dagger/cut/light
@@ -627,6 +685,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (3).ogg')
 
 /datum/intent/dagger/cut/rend
@@ -648,6 +708,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
 /datum/intent/dagger/sucker_punch
@@ -669,6 +731,8 @@
 	candodge = FALSE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/kick/kick.ogg')
 
 /datum/intent/dagger/thrust
@@ -690,6 +754,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/dagger/thrust/bronze
@@ -711,6 +777,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/dagger/thrust/combat
@@ -732,6 +800,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/dagger/thrust/fork
@@ -753,6 +823,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/dagger/thrust/pick
@@ -774,6 +846,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/dagger/thrust/pick/wood
@@ -795,6 +869,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg')
 
 /datum/intent/dagger/thrust/quick
@@ -816,6 +892,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/dagger/thrust/weak
@@ -837,6 +915,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/dagger/thrust/wood
@@ -858,6 +938,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg')
 
 /datum/intent/effect/daze
@@ -879,6 +961,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/daze_hit.ogg')
 
 /datum/intent/effect/daze/freisabre
@@ -900,6 +984,8 @@
 	candodge = FALSE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/daze_hit.ogg')
 
 /datum/intent/effect/daze/unarmed
@@ -921,6 +1007,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/daze_hit.ogg')
 
 /datum/intent/effect/hobble
@@ -942,6 +1030,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/shovel_hit3.ogg')
 
 /datum/intent/fill
@@ -963,6 +1053,8 @@
 	candodge = FALSE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/flail/strike
@@ -984,6 +1076,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/flailhit.ogg')
 
 /datum/intent/flail/strike/matthiosflail
@@ -1005,6 +1099,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/flailhit.ogg')
 
 /datum/intent/flail/strikerange
@@ -1026,6 +1122,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/flailhit.ogg')
 
 /datum/intent/flail/sweep
@@ -1046,6 +1144,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	cleave = /datum/cleave_pattern/horizontal_sweep
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/flailhit.ogg')
 
@@ -1068,6 +1168,8 @@
 	candodge = FALSE
 	no_attack = TRUE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/food
@@ -1089,6 +1191,8 @@
 	candodge = TRUE
 	no_attack = TRUE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/forge
@@ -1110,6 +1214,8 @@
 	candodge = FALSE
 	no_attack = TRUE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/garrote/choke
@@ -1131,6 +1237,8 @@
 	candodge = TRUE
 	no_attack = TRUE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/garrote/grab
@@ -1152,6 +1260,8 @@
 	candodge = TRUE
 	no_attack = TRUE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/grapple
@@ -1173,6 +1283,8 @@
 	candodge = TRUE
 	no_attack = TRUE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/hit
@@ -1194,6 +1306,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/katar/cut
@@ -1215,6 +1329,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (3).ogg')
 
 /datum/intent/katar/thrust
@@ -1236,6 +1352,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/knuckles/smash
@@ -1257,6 +1375,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/punch/punch_hard (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/punch/punch_hard (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/punch/punch_hard (3).ogg')
 
 /datum/intent/knuckles/strike
@@ -1278,6 +1398,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/punch/punch_hard (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/punch/punch_hard (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/punch/punch_hard (3).ogg')
 
 /datum/intent/knuckles/strike/wallop
@@ -1299,6 +1421,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/punch/punch_hard (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/punch/punch_hard (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/punch/punch_hard (3).ogg')
 
 /datum/intent/lord_electrocute
@@ -1319,6 +1443,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = TRUE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/lord_silence
@@ -1339,6 +1465,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = TRUE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/lordbash
@@ -1360,6 +1488,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/mace/rangedthrust
@@ -1381,6 +1511,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/mace/slap
@@ -1402,6 +1534,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/foley/slap.ogg')
 
 /datum/intent/mace/smash
@@ -1423,6 +1557,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg')
 
 /datum/intent/mace/smash/eaglebeak
@@ -1444,6 +1580,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg')
 
 /datum/intent/mace/smash/flail
@@ -1464,6 +1602,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/flailhit.ogg')
 
 /datum/intent/mace/smash/flail/golgotha
@@ -1484,6 +1624,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/items/beartrap2.ogg')
 
 /datum/intent/mace/smash/flail/matthiosflail
@@ -1504,6 +1646,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/flailhit.ogg')
 
 /datum/intent/mace/smash/flail/militia
@@ -1524,6 +1668,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/flailhit.ogg')
 
 /datum/intent/mace/smash/flailrange
@@ -1544,6 +1690,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/flailhit.ogg')
 
 /datum/intent/mace/smash/goden
@@ -1565,6 +1713,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg')
 
 /datum/intent/mace/smash/shield
@@ -1586,6 +1736,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/shieldbash_wood.ogg')
 
 /datum/intent/mace/smash/shield/metal
@@ -1607,6 +1759,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg')
 
 /datum/intent/mace/smash/wood
@@ -1628,6 +1782,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/woodblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/woodblunt (2).ogg')
 
 /datum/intent/mace/smash/wood/ranged
@@ -1649,6 +1805,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/woodblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/woodblunt (2).ogg')
 
 /datum/intent/mace/strike
@@ -1670,6 +1828,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg')
 
 /datum/intent/mace/strike/goden
@@ -1691,6 +1851,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg')
 
 /datum/intent/mace/strike/pan
@@ -1712,6 +1874,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/frying_pan(1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/frying_pan(2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/frying_pan(3).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/frying_pan(4).ogg')
 
 /datum/intent/mace/strike/shovel
@@ -1733,6 +1897,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/shovel_hit.ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/shovel_hit2.ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/shovel_hit3.ogg')
 
 /datum/intent/mace/strike/wallop
@@ -1754,6 +1920,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg')
 
 /datum/intent/mace/strike/wood
@@ -1775,6 +1943,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/woodblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/woodblunt (2).ogg')
 
 /datum/intent/mace/sweep
@@ -1796,6 +1966,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	cleave = /datum/cleave_pattern/frontal_arc
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg')
 
@@ -1818,6 +1990,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg')
 
 /datum/intent/mace/warhammer/pick/ranged
@@ -1839,6 +2013,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg')
 
 /datum/intent/mace/warhammer/stab
@@ -1860,6 +2036,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/maul
@@ -1881,6 +2059,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg')
 
 /datum/intent/maul/crush
@@ -1902,6 +2082,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg')
 
 /datum/intent/partizan/peel
@@ -1923,6 +2105,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg')
 
 /datum/intent/pforkdump
@@ -1944,6 +2128,8 @@
 	candodge = FALSE
 	no_attack = TRUE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/pick
@@ -1965,6 +2151,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/pick/genpick (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/pick/genpick (2).ogg')
 
 /datum/intent/pick/bad
@@ -1986,6 +2174,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/pick/genpick (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/pick/genpick (2).ogg')
 
 /datum/intent/pick/ranged
@@ -2007,6 +2197,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/pour
@@ -2028,6 +2220,8 @@
 	candodge = FALSE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/priest_silence
@@ -2048,6 +2242,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = TRUE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/priest_smite
@@ -2068,6 +2264,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = TRUE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/reel
@@ -2089,6 +2287,8 @@
 	candodge = TRUE
 	no_attack = TRUE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/rend
@@ -2110,6 +2310,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
 /datum/intent/rend/krieg
@@ -2131,6 +2333,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
 /datum/intent/rend/krieg/short
@@ -2152,6 +2356,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
 /datum/intent/rend/reach
@@ -2173,6 +2379,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
 /datum/intent/rend/reach/partizan
@@ -2194,6 +2402,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/shield/bash
@@ -2215,6 +2425,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/shieldbash_wood.ogg')
 
 /datum/intent/shield/bash/metal
@@ -2236,6 +2448,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg')
 
 /datum/intent/shield/block
@@ -2257,6 +2471,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = TRUE
+	tshield = TRUE
 	hitsound = list('modular_redtard/rockhill/sound/combat/shieldbash_wood.ogg')
 
 /datum/intent/shoot/bow
@@ -2278,6 +2494,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = TRUE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/shoot/bow/short
@@ -2299,6 +2517,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = TRUE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/shoot/crossbow
@@ -2320,6 +2540,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = TRUE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/shoot/crossbow/slurbow
@@ -2341,6 +2563,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = TRUE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/shoot/firearm
@@ -2362,6 +2586,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = TRUE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/shovelscoop
@@ -2383,6 +2609,8 @@
 	candodge = FALSE
 	no_attack = TRUE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/smelt
@@ -2404,6 +2632,8 @@
 	candodge = FALSE
 	no_attack = TRUE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/snip
@@ -2425,6 +2655,8 @@
 	candodge = FALSE
 	no_attack = TRUE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/spear/bash
@@ -2446,6 +2678,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/spear/bash/eaglebeak
@@ -2467,6 +2701,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/spear/bash/ranged
@@ -2488,6 +2724,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/spear/bash/ranged/quarterstaff
@@ -2509,6 +2747,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/spear/cast
@@ -2530,6 +2770,8 @@
 	candodge = TRUE
 	no_attack = TRUE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/spear/cut
@@ -2551,6 +2793,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
 /datum/intent/spear/cut/bardiche/cleave
@@ -2572,6 +2816,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	cleave = /datum/cleave_pattern/forward_cleave
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
@@ -2594,6 +2840,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
 /datum/intent/spear/cut/glaive/sweep
@@ -2615,6 +2863,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	cleave = /datum/cleave_pattern/horizontal_sweep
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
@@ -2637,6 +2887,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
 /datum/intent/spear/cut/naginata
@@ -2658,6 +2910,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
 /datum/intent/spear/cut/naginata/sweep
@@ -2679,6 +2933,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	cleave = /datum/cleave_pattern/horizontal_sweep
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
@@ -2701,6 +2957,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
 /datum/intent/spear/cut/scythe
@@ -2722,6 +2980,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
 /datum/intent/spear/thrust
@@ -2743,6 +3003,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/spear/thrust/blunted
@@ -2764,6 +3026,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/spear/thrust/eaglebeak
@@ -2785,6 +3049,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/spear/thrust/eaglebeak/oneh
@@ -2806,6 +3072,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/spear/thrust/glaive
@@ -2827,6 +3095,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/spear/thrust/oneh
@@ -2848,6 +3118,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/spear/thrust/quarterstaff
@@ -2869,6 +3141,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/special/magicarc
@@ -2890,6 +3164,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/splash
@@ -2911,6 +3187,8 @@
 	candodge = FALSE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/stab
@@ -2932,6 +3210,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/stab/militia
@@ -2953,6 +3233,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/swing/sling
@@ -2974,6 +3256,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = TRUE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/sword/bash
@@ -2995,6 +3279,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/sword/chop
@@ -3016,6 +3302,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genchop (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (3).ogg')
 
 /datum/intent/sword/chop/falx
@@ -3037,6 +3325,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genchop (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (3).ogg')
 
 /datum/intent/sword/chop/heavy
@@ -3058,6 +3348,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genchop (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (3).ogg')
 
 /datum/intent/sword/chop/long
@@ -3079,6 +3371,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genchop (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (3).ogg')
 
 /datum/intent/sword/chop/militia
@@ -3100,6 +3394,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genchop (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (3).ogg')
 
 /datum/intent/sword/cut
@@ -3121,6 +3417,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
 /datum/intent/sword/cut/arming
@@ -3142,6 +3440,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
 /datum/intent/sword/cut/exe/cleave
@@ -3163,6 +3463,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	cleave = /datum/cleave_pattern/forward_cleave
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
@@ -3185,6 +3487,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	cleave = /datum/cleave_pattern/horizontal_sweep
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
@@ -3207,6 +3511,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
 /datum/intent/sword/cut/krieg
@@ -3228,6 +3534,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
 /datum/intent/sword/cut/light
@@ -3249,6 +3557,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
 /datum/intent/sword/cut/rapier
@@ -3270,6 +3580,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
 /datum/intent/sword/cut/sabre
@@ -3291,6 +3603,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
 /datum/intent/sword/cut/sabre/master
@@ -3312,6 +3626,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
 /datum/intent/sword/cut/short
@@ -3333,6 +3649,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
 /datum/intent/sword/cut/zwei
@@ -3354,6 +3672,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
 /datum/intent/sword/cut/zwei/cleave
@@ -3375,6 +3695,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	cleave = /datum/cleave_pattern/forward_cleave
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
@@ -3397,6 +3719,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	cleave = /datum/cleave_pattern/horizontal_sweep
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genslash (3).ogg')
 
@@ -3418,6 +3742,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg')
 
 /datum/intent/sword/lunge/estoc
@@ -3439,6 +3765,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/sword/peel
@@ -3460,6 +3788,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg')
 
 /datum/intent/sword/peel/big
@@ -3481,6 +3811,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg')
 
 /datum/intent/sword/peel/weak
@@ -3502,6 +3834,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg')
 
 /datum/intent/sword/strike
@@ -3523,6 +3857,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg')
 
 /datum/intent/sword/strike/bad
@@ -3544,6 +3880,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg')
 
 /datum/intent/sword/thrust
@@ -3565,6 +3903,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/sword/thrust/arming
@@ -3586,6 +3926,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/sword/thrust/blunt
@@ -3607,6 +3949,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg')
 
 /datum/intent/sword/thrust/estoc
@@ -3628,6 +3972,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/sword/thrust/exe
@@ -3649,6 +3995,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/sword/thrust/heavy
@@ -3669,6 +4017,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/sword/thrust/krieg
@@ -3690,6 +4040,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/sword/thrust/long
@@ -3711,6 +4063,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/sword/thrust/long/halfsword/lesser
@@ -3732,6 +4086,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/sword/thrust/rapier
@@ -3753,6 +4109,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/sword/thrust/sabre
@@ -3774,6 +4132,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/sword/thrust/short
@@ -3795,6 +4155,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/sword/thrust/zwei
@@ -3816,6 +4178,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
 /datum/intent/tie
@@ -3837,6 +4201,8 @@
 	candodge = FALSE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/till
@@ -3858,6 +4224,8 @@
 	candodge = FALSE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/use
@@ -3879,6 +4247,8 @@
 	candodge = FALSE
 	no_attack = TRUE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/use/flaregun
@@ -3900,6 +4270,8 @@
 	candodge = FALSE
 	no_attack = TRUE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/whip/belt/buckle
@@ -3921,6 +4293,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/flailhit.ogg')
 
 /datum/intent/whip/belt/tip
@@ -3942,6 +4316,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/flailhit.ogg')
 
 /datum/intent/whip/crack
@@ -3963,6 +4339,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/flailhit.ogg')
 
 /datum/intent/whip/crack/blunt
@@ -3984,6 +4362,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/flailhit.ogg')
 
 /datum/intent/whip/lash
@@ -4005,6 +4385,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/flailhit.ogg')
 
 /datum/intent/whip/lash/holy
@@ -4026,6 +4408,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/flailhit.ogg')
 
 /datum/intent/whip/punish
@@ -4047,6 +4431,8 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/flailhit.ogg')
 
 /datum/intent/whips
@@ -4068,4 +4454,6 @@
 	candodge = TRUE
 	no_attack = FALSE
 	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/flailhit.ogg')

@@ -17,6 +17,8 @@ GLOBAL_LIST_INIT(rogue_sharpen_sounds, list('modular_redtard/rockhill/sound/item
 	return max_blade_int ? blade_int / max_blade_int : 1
 
 /obj/item/proc/rogue_dull(amount, mob/living/holder)
+	if(holder)
+		amount -= holder.rogue_tempo_bonus("edge_wear")
 	if(!max_blade_int || amount <= 0)
 		return FALSE
 	var/before = rogue_edge_ratio()

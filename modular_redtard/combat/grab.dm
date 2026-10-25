@@ -303,6 +303,9 @@ GLOBAL_LIST_INIT(rogue_zone_names, list(
 	if(!(target.status_flags & CANPUSH) || HAS_TRAIT(target, TRAIT_PUSHIMMUNE))
 		to_chat(src, span_warning("I can't get a grip!"))
 		return FALSE
+	if(HAS_TRAIT(target, TRAIT_GRABIMMUNE) && target.combat_mode)
+		to_chat(src, span_warning("Can't get a grip on this one!"))
+		return FALSE
 	adjust_stamina_loss(rand(ROGUE_GRAB_UPGRADE_COST_MIN, ROGUE_GRAB_UPGRADE_COST_MAX))
 	var/certain = target.stat != STABLE || HAS_TRAIT(target, TRAIT_RESTRAINED) || target.has_status_effect(/datum/status_effect/rogue_compliance)
 	if(!certain)

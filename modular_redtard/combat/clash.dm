@@ -147,8 +147,12 @@
 	face_atom(target)
 	rogue_mark_in_combat()
 	target.rogue_mark_in_combat()
+	if(target.mind && !target.rogue_sees(src) && target.rogue_tempo_reaches("aware"))
+		to_chat(src, span_notice("[target.p_they(TRUE)] didn't see me! Nothing happened!"))
+		apply_status_effect(/datum/status_effect/rogue/bait_cooldown, ROGUE_TEMPO_UNSEEN_COOLDOWN)
+		return FALSE
 	visible_message(span_danger("[src] baits an attack from [target]!"))
-	apply_status_effect(/datum/status_effect/rogue/bait_cooldown)
+	apply_status_effect(/datum/status_effect/rogue/bait_cooldown, max(ROGUE_BAIT_COOLDOWN - rogue_tempo_bonus("rmb_cooldown"), 1))
 	var/our_zone = rogue_precise_zone()
 	var/their_zone = target.rogue_precise_zone()
 	var/face_pair = (our_zone in GLOB.rogue_face_zones) && (their_zone in GLOB.rogue_face_zones)

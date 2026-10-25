@@ -46,6 +46,8 @@
 	icon_dead = "bat_dead"
 	health = 50
 	maxHealth = 50
+	melee_damage_lower = 6
+	melee_damage_upper = 5
 
 /mob/living/simple_animal/hostile/retaliate/frog
 	name = "frog"
@@ -56,6 +58,8 @@
 	icon_dead = "frog_dead"
 	health = 15
 	maxHealth = 15
+	melee_damage_lower = 5
+	melee_damage_upper = 5
 
 /mob/living/simple_animal/hostile/retaliate/goose
 	name = "goose"
@@ -66,6 +70,8 @@
 	icon_dead = "goose_dead"
 	health = 25
 	maxHealth = 25
+	melee_damage_lower = 5
+	melee_damage_upper = 5
 
 /mob/living/simple_animal/hostile/retaliate/rogue/beetle
 	name = "giant woolly chafer beetle"
@@ -78,6 +84,10 @@
 	maxHealth = 300
 	pixel_x = -8
 	pixel_y = 0
+	melee_damage_lower = 20
+	melee_damage_upper = 35
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 14, ROGUE_STAT_CONSTITUTION = 15)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/beetle/tame/saddled
 	name = "giant woolly chafer beetle"
@@ -90,6 +100,10 @@
 	maxHealth = 300
 	pixel_x = -8
 	pixel_y = 0
+	melee_damage_lower = 20
+	melee_damage_upper = 35
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 14, ROGUE_STAT_CONSTITUTION = 15)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/bigrat
 	name = "rous"
@@ -102,6 +116,11 @@
 	maxHealth = 65
 	pixel_x = -16
 	pixel_y = -8
+	melee_damage_lower = 17
+	melee_damage_upper = 21
+	rogue_defprob = 40
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 9, ROGUE_STAT_CONSTITUTION = 6)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/bull
 	name = "cow"
@@ -111,6 +130,10 @@
 	icon_dead = "bull_dead"
 	health = 150
 	maxHealth = 150
+	melee_damage_lower = 25
+	melee_damage_upper = 50
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 12, ROGUE_STAT_CONSTITUTION = 20, ROGUE_STAT_SPEED = 2)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/chicken
 	name = "\improper chicken"
@@ -121,6 +144,10 @@
 	icon_dead = "chicken_brown_dead"
 	health = 15
 	maxHealth = 15
+	melee_damage_lower = 1
+	melee_damage_upper = 8
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 6, ROGUE_STAT_CONSTITUTION = 6, ROGUE_STAT_SPEED = 1)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/cow
 	name = "cow"
@@ -131,6 +158,10 @@
 	icon_dead = "cow_dead"
 	health = 80
 	maxHealth = 80
+	melee_damage_lower = 10
+	melee_damage_upper = 25
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 12, ROGUE_STAT_CONSTITUTION = 20, ROGUE_STAT_SPEED = 2)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/direbear
 	name = "direbear"
@@ -139,6 +170,11 @@
 	icon_living = "direbear"
 	icon_dead = "direbear_dead"
 	pixel_x = -16
+	melee_damage_lower = 50
+	melee_damage_upper = 60
+	rogue_defprob = 40
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 13, ROGUE_STAT_CONSTITUTION = 12, ROGUE_STAT_SPEED = 9)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/elemental/behemoth
 	name = "earthen behemoth"
@@ -148,6 +184,11 @@
 	icon_dead = "vvd"
 	health = 800
 	maxHealth = 800
+	melee_damage_lower = 55
+	melee_damage_upper = 80
+	rogue_defprob = 40
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 13, ROGUE_STAT_CONSTITUTION = 17, ROGUE_STAT_SPEED = 5)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/elemental/colossus
 	name = "earthen colossus"
@@ -158,6 +199,10 @@
 	health = 1500
 	maxHealth = 1500
 	pixel_x = -32
+	melee_damage_lower = 40
+	melee_damage_upper = 70
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 16, ROGUE_STAT_CONSTITUTION = 20, ROGUE_STAT_SPEED = 3)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/elemental/warden
 	name = "earthen Warden"
@@ -167,6 +212,11 @@
 	icon_dead = "vvd"
 	health = 340
 	maxHealth = 340
+	melee_damage_lower = 15
+	melee_damage_upper = 17
+	rogue_defprob = 30
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_CONSTITUTION = 15, ROGUE_STAT_SPEED = 6)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/fae/dryad
 	name = "dryad"
@@ -176,6 +226,11 @@
 	icon_dead = "vvd"
 	health = 650
 	maxHealth = 650
+	melee_damage_lower = 20
+	melee_damage_upper = 30
+	rogue_defprob = 40
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 14, ROGUE_STAT_CONSTITUTION = 18, ROGUE_STAT_SPEED = 4)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/fae/glimmerwing
 	name = "glimmerwing"
@@ -185,6 +240,11 @@
 	icon_dead = "vvd"
 	health = 270
 	maxHealth = 270
+	melee_damage_lower = 15
+	melee_damage_upper = 17
+	rogue_defprob = 40
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 9, ROGUE_STAT_CONSTITUTION = 7, ROGUE_STAT_SPEED = 15)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/fae/sprite
 	name = "sprite"
@@ -194,6 +254,11 @@
 	icon_dead = "vvd"
 	health = 50
 	maxHealth = 50
+	melee_damage_lower = 10
+	melee_damage_upper = 20
+	rogue_defprob = 40
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 2, ROGUE_STAT_CONSTITUTION = 6, ROGUE_STAT_SPEED = 17)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/goat
 	name = "goat"
@@ -204,6 +269,10 @@
 	icon_dead = "goat_dead"
 	health = 80
 	maxHealth = 80
+	melee_damage_lower = 10
+	melee_damage_upper = 25
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 12, ROGUE_STAT_CONSTITUTION = 8)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/goatmale
 	name = "goat"
@@ -213,6 +282,10 @@
 	icon_dead = "goatmale_dead"
 	health = 150
 	maxHealth = 150
+	melee_damage_lower = 25
+	melee_damage_upper = 50
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 12, ROGUE_STAT_CONSTITUTION = 7, ROGUE_STAT_SPEED = 14)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/headless
 	name = "headless"
@@ -223,6 +296,11 @@
 	icon_dead = "headless_dead"
 	health = 350
 	maxHealth = 350
+	melee_damage_lower = 25
+	melee_damage_upper = 35
+	rogue_defprob = 10
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 13, ROGUE_STAT_CONSTITUTION = 6)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/infernal/fiend
 	name = "fiend"
@@ -232,6 +310,10 @@
 	icon_dead = "vvd"
 	health = 700
 	maxHealth = 700
+	melee_damage_lower = 20
+	melee_damage_upper = 30
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 12, ROGUE_STAT_CONSTITUTION = 13, ROGUE_STAT_SPEED = 8)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/infernal/hellhound
 	name = "hell hound"
@@ -241,6 +323,11 @@
 	icon_dead = "vvd"
 	health = 270
 	maxHealth = 270
+	melee_damage_lower = 15
+	melee_damage_upper = 17
+	rogue_defprob = 40
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 9, ROGUE_STAT_CONSTITUTION = 7, ROGUE_STAT_SPEED = 13)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/infernal/imp
 	name = "infernal imp"
@@ -250,6 +337,11 @@
 	icon_dead = "vvd"
 	health = 70
 	maxHealth = 70
+	melee_damage_lower = 15
+	melee_damage_upper = 17
+	rogue_defprob = 40
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 6, ROGUE_STAT_CONSTITUTION = 7, ROGUE_STAT_SPEED = 12)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/infernal/watcher
 	name = "infernal watcher"
@@ -259,6 +351,11 @@
 	icon_dead = "vvd"
 	health = 600
 	maxHealth = 600
+	melee_damage_lower = 20
+	melee_damage_upper = 30
+	rogue_defprob = 35
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 12, ROGUE_STAT_CONSTITUTION = 13, ROGUE_STAT_SPEED = 8)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/mimic
 	name = "chest"
@@ -266,6 +363,10 @@
 	icon_state = "mimicopen"
 	icon_living = "mimicopen"
 	icon_dead = "mimicdead"
+	melee_damage_lower = 30
+	melee_damage_upper = 40
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 15, ROGUE_STAT_CONSTITUTION = 15, ROGUE_STAT_SPEED = 5)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/minotaur
 	name = "Minotaur"
@@ -274,6 +375,11 @@
 	icon_living = "MinotaurMale"
 	icon_dead = "MinotaurMale_dead"
 	pixel_x = -16
+	melee_damage_lower = 55
+	melee_damage_upper = 80
+	rogue_defprob = 40
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 16, ROGUE_STAT_CONSTITUTION = 19, ROGUE_STAT_SPEED = 5)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/minotaur/axe
 	name = "Minotaur"
@@ -282,6 +388,11 @@
 	icon_living = "MinotaurMale_Axe"
 	icon_dead = "MinotaurMale_dead"
 	pixel_x = -16
+	melee_damage_lower = 65
+	melee_damage_upper = 85
+	rogue_defprob = 40
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 16, ROGUE_STAT_CONSTITUTION = 19, ROGUE_STAT_SPEED = 5)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/minotaur/axe/female
 	name = "Minotaur"
@@ -290,6 +401,11 @@
 	icon_living = "MinotaurFem_Axe"
 	icon_dead = "MinotaurFem_dead"
 	pixel_x = -16
+	melee_damage_lower = 65
+	melee_damage_upper = 85
+	rogue_defprob = 40
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 16, ROGUE_STAT_CONSTITUTION = 19, ROGUE_STAT_SPEED = 5)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/mirespider
 	name = "mire crawler"
@@ -297,6 +413,11 @@
 	icon_state = "crawler"
 	icon_living = "crawler"
 	icon_dead = "crawler_dead"
+	melee_damage_lower = 17
+	melee_damage_upper = 26
+	rogue_defprob = 40
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 7, ROGUE_STAT_CONSTITUTION = 7, ROGUE_STAT_SPEED = 13)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/mirespider/angry
 	name = "mire crawler"
@@ -304,6 +425,11 @@
 	icon_state = "crawler"
 	icon_living = "crawler"
 	icon_dead = "crawler_dead"
+	melee_damage_lower = 17
+	melee_damage_upper = 26
+	rogue_defprob = 40
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 7, ROGUE_STAT_CONSTITUTION = 7, ROGUE_STAT_SPEED = 13)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/mole
 	name = "mole"
@@ -311,6 +437,11 @@
 	icon_state = "mole"
 	icon_living = "mole"
 	icon_dead = "mole_dead"
+	melee_damage_lower = 19
+	melee_damage_upper = 29
+	rogue_defprob = 40
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 20, ROGUE_STAT_CONSTITUTION = 7, ROGUE_STAT_SPEED = 13)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/mudcrab
 	name = "mudcrab"
@@ -319,6 +450,7 @@
 	icon_state = "mudcrab"
 	icon_living = "mudcrab"
 	icon_dead = "mudcrab_dead"
+	rogue_can_dodge = TRUE
 
 /mob/living/simple_animal/hostile/retaliate/rogue/mudcrab/cabbit
 	name = "cabbit"
@@ -327,6 +459,7 @@
 	icon_state = "cabbit"
 	icon_living = "cabbit"
 	icon_dead = "cabbit_dead"
+	rogue_can_dodge = TRUE
 
 /mob/living/simple_animal/hostile/retaliate/rogue/saiga
 	name = "saiga doe"
@@ -338,6 +471,10 @@
 	health = 156
 	maxHealth = 156
 	pixel_x = -8
+	melee_damage_lower = 10
+	melee_damage_upper = 25
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 12, ROGUE_STAT_CONSTITUTION = 8, ROGUE_STAT_SPEED = 15)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigabuck
 	name = "saiga buck"
@@ -349,6 +486,10 @@
 	health = 400
 	maxHealth = 400
 	pixel_x = -8
+	melee_damage_lower = 60
+	melee_damage_upper = 90
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 12, ROGUE_STAT_CONSTITUTION = 15, ROGUE_STAT_SPEED = 18)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigabuck/tame
 	name = "saiga buck"
@@ -360,6 +501,10 @@
 	health = 400
 	maxHealth = 400
 	pixel_x = -8
+	melee_damage_lower = 60
+	melee_damage_upper = 90
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 12, ROGUE_STAT_CONSTITUTION = 15, ROGUE_STAT_SPEED = 18)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigabuck/tame/saddled
 	name = "saiga buck"
@@ -371,6 +516,10 @@
 	health = 400
 	maxHealth = 400
 	pixel_x = -8
+	melee_damage_lower = 60
+	melee_damage_upper = 90
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 12, ROGUE_STAT_CONSTITUTION = 15, ROGUE_STAT_SPEED = 18)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/saiga/undead
 	name = "deadite saiga"
@@ -380,6 +529,10 @@
 	icon_living = "saiga"
 	icon_dead = "saiga_dead"
 	pixel_x = -8
+	melee_damage_lower = 60
+	melee_damage_upper = 90
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 12, ROGUE_STAT_CONSTITUTION = 8, ROGUE_STAT_SPEED = 15)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/spider
 	name = "beespider"
@@ -387,6 +540,11 @@
 	icon_state = "honeys"
 	icon_living = "honeys"
 	icon_dead = "honeys-dead"
+	melee_damage_lower = 17
+	melee_damage_upper = 21
+	rogue_defprob = 40
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 9, ROGUE_STAT_CONSTITUTION = 6)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated
 	name = "skallax spider"
@@ -396,6 +554,11 @@
 	icon_dead = "skallax-dead"
 	health = 130
 	maxHealth = 130
+	melee_damage_lower = 17
+	melee_damage_upper = 21
+	rogue_defprob = 40
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 9, ROGUE_STAT_CONSTITUTION = 6)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/spider/rock
 	name = "rockspider"
@@ -404,6 +567,11 @@
 	icon_state = "spiderrock"
 	icon_living = "spiderrock"
 	icon_dead = "spiderrock-dead"
+	melee_damage_lower = 17
+	melee_damage_upper = 21
+	rogue_defprob = 40
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 9, ROGUE_STAT_CONSTITUTION = 6)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/swine
 	name = "swine sow"
@@ -414,6 +582,10 @@
 	icon_dead = "piggie_dead"
 	health = 140
 	maxHealth = 140
+	melee_damage_lower = 15
+	melee_damage_upper = 40
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 12, ROGUE_STAT_CONSTITUTION = 15, ROGUE_STAT_SPEED = 8)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/swine/hog
 	name = "swine hog"
@@ -424,6 +596,10 @@
 	icon_dead = "piggie_dead"
 	health = 250
 	maxHealth = 250
+	melee_damage_lower = 35
+	melee_damage_upper = 60
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 12, ROGUE_STAT_CONSTITUTION = 15, ROGUE_STAT_SPEED = 6)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll
 	name = "troll"
@@ -433,6 +609,11 @@
 	icon_living = "troll"
 	icon_dead = "troll_dead"
 	pixel_x = -16
+	melee_damage_lower = 40
+	melee_damage_upper = 60
+	rogue_defprob = 20
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 16, ROGUE_STAT_CONSTITUTION = 16, ROGUE_STAT_SPEED = 2)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/axe
 	name = "troll skull-splitter"
@@ -442,6 +623,11 @@
 	icon_living = "troll"
 	icon_dead = "troll_dead"
 	pixel_x = -16
+	melee_damage_lower = 55
+	melee_damage_upper = 70
+	rogue_defprob = 20
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 16, ROGUE_STAT_CONSTITUTION = 16, ROGUE_STAT_SPEED = 2)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/bog
 	name = "bog troll"
@@ -451,6 +637,11 @@
 	icon_living = "troll"
 	icon_dead = "troll_dead"
 	pixel_x = -16
+	melee_damage_lower = 30
+	melee_damage_upper = 50
+	rogue_defprob = 30
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 16, ROGUE_STAT_CONSTITUTION = 16, ROGUE_STAT_SPEED = 3)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/cave
 	name = "cave troll"
@@ -460,6 +651,11 @@
 	icon_living = "troll"
 	icon_dead = "troll_dead"
 	pixel_x = -16
+	melee_damage_lower = 40
+	melee_damage_upper = 60
+	rogue_defprob = 15
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 16, ROGUE_STAT_CONSTITUTION = 16, ROGUE_STAT_SPEED = 2)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/trufflepig
 	name = "truffle pig"
@@ -470,6 +666,10 @@
 	icon_dead = "piggie_dead"
 	health = 80
 	maxHealth = 80
+	melee_damage_lower = 8
+	melee_damage_upper = 14
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 12, ROGUE_STAT_CONSTITUTION = 8, ROGUE_STAT_SPEED = 2)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf
 	name = "volf"
@@ -478,6 +678,11 @@
 	icon_state = "vv"
 	icon_living = "vv"
 	icon_dead = "vvd"
+	melee_damage_lower = 19
+	melee_damage_upper = 29
+	rogue_defprob = 40
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 7, ROGUE_STAT_CONSTITUTION = 7, ROGUE_STAT_SPEED = 12)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf_undead
 	name = "deadite volf"
@@ -486,6 +691,11 @@
 	icon_state = "wolf"
 	icon_living = "wolf"
 	icon_dead = "wolf_dead"
+	melee_damage_lower = 24
+	melee_damage_upper = 34
+	rogue_defprob = 40
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 7, ROGUE_STAT_CONSTITUTION = 7, ROGUE_STAT_SPEED = 12)
 
 /mob/living/simple_animal/hostile/rogue/deepone
 	name = "Deep One"
@@ -494,6 +704,9 @@
 	icon_state = "deep1"
 	icon_living = "deep1"
 	icon_dead = "deep1_d"
+	melee_damage_lower = 10
+	melee_damage_upper = 25
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 13, ROGUE_STAT_CONSTITUTION = 11, ROGUE_STAT_SPEED = 9)
 
 /mob/living/simple_animal/hostile/rogue/deepone/arm
 	name = "Deep One"
@@ -502,6 +715,9 @@
 	icon_state = "deep1_arm"
 	icon_living = "deep1"
 	icon_dead = "deep1_d"
+	melee_damage_lower = 15
+	melee_damage_upper = 30
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 13, ROGUE_STAT_CONSTITUTION = 11, ROGUE_STAT_SPEED = 9)
 
 /mob/living/simple_animal/hostile/rogue/deepone/spit
 	name = "Deep One"
@@ -510,6 +726,9 @@
 	icon_state = "deep1_spit"
 	icon_living = "deep1_spit"
 	icon_dead = "deep1_d"
+	melee_damage_lower = 10
+	melee_damage_upper = 25
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 13, ROGUE_STAT_CONSTITUTION = 11, ROGUE_STAT_SPEED = 9)
 
 /mob/living/simple_animal/hostile/rogue/deepone/wiz
 	name = "Deep One Devout"
@@ -518,6 +737,9 @@
 	icon_state = "deep1_wiz"
 	icon_living = "deep1_wiz"
 	icon_dead = "deep1_d"
+	melee_damage_lower = 10
+	melee_damage_upper = 25
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 13, ROGUE_STAT_CONSTITUTION = 11, ROGUE_STAT_SPEED = 9)
 
 /mob/living/simple_animal/hostile/rogue/deepone/wiz/boss
 	name = "Deep One Devout"
@@ -526,6 +748,9 @@
 	icon_state = "deep1_wiz"
 	icon_living = "deep1_wiz"
 	icon_dead = "deep1_d"
+	melee_damage_lower = 10
+	melee_damage_upper = 25
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 13, ROGUE_STAT_CONSTITUTION = 11, ROGUE_STAT_SPEED = 9)
 
 /mob/living/simple_animal/hostile/rogue/dreamfiend/ancient/unbound
 	name = "ancient dream fiend"
@@ -535,6 +760,9 @@
 	icon_living = "dreamfiend"
 	icon_dead = "dreamfiend"
 	pixel_x = -16
+	melee_damage_lower = 40
+	melee_damage_upper = 120
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 20, ROGUE_STAT_PERCEPTION = 20, ROGUE_STAT_CONSTITUTION = 20)
 
 /mob/living/simple_animal/hostile/rogue/dreamfiend/unbound
 	name = "minor dream fiend"
@@ -542,6 +770,8 @@
 	icon_state = "dreamfiend"
 	icon_living = "dreamfiend"
 	icon_dead = "dreamfiend"
+	melee_damage_lower = 25
+	melee_damage_upper = 40
 
 /mob/living/simple_animal/hostile/rogue/haunt
 	name = "haunt"
@@ -550,6 +780,9 @@
 	icon_state = "haunt"
 	icon_living = "haunt"
 	icon_dead = null
+	melee_damage_lower = 15
+	melee_damage_upper = 25
+	rogue_mob_stats = list(ROGUE_STAT_FORTUNE = 11)
 
 /mob/living/simple_animal/hostile/rogue/mirespider_lurker
 	name = "mire lurker"
@@ -558,6 +791,9 @@
 	icon_living = "lurker"
 	icon_dead = "lurker_dead"
 	pixel_x = -4
+	melee_damage_lower = 35
+	melee_damage_upper = 70
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 9, ROGUE_STAT_PERCEPTION = 15, ROGUE_STAT_CONSTITUTION = 9, ROGUE_STAT_SPEED = 14)
 
 /mob/living/simple_animal/hostile/rogue/mirespider_lurker/angry
 	name = "mire lurker"
@@ -566,6 +802,9 @@
 	icon_living = "lurker"
 	icon_dead = "lurker_dead"
 	pixel_x = -4
+	melee_damage_lower = 35
+	melee_damage_upper = 70
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 9, ROGUE_STAT_PERCEPTION = 15, ROGUE_STAT_CONSTITUTION = 9, ROGUE_STAT_SPEED = 14)
 
 /mob/living/simple_animal/hostile/rogue/mirespider_paralytic
 	name = "aragn"
@@ -573,6 +812,9 @@
 	icon_state = "aragn"
 	icon_living = "aragn"
 	icon_dead = "aragn_dead"
+	melee_damage_lower = 21
+	melee_damage_upper = 42
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 9, ROGUE_STAT_PERCEPTION = 7, ROGUE_STAT_CONSTITUTION = 9, ROGUE_STAT_SPEED = 12)
 
 /mob/living/simple_animal/hostile/rogue/mirespider_paralytic/angry
 	name = "aragn"
@@ -580,6 +822,9 @@
 	icon_state = "aragn"
 	icon_living = "aragn"
 	icon_dead = "aragn_dead"
+	melee_damage_lower = 21
+	melee_damage_upper = 42
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 9, ROGUE_STAT_PERCEPTION = 7, ROGUE_STAT_CONSTITUTION = 9, ROGUE_STAT_SPEED = 12)
 
 /mob/living/simple_animal/hostile/rogue/skeleton/bow
 	name = "Skeleton"
@@ -588,6 +833,9 @@
 	icon_state = "skeleton_bow"
 	icon_living = "skeleton_bow"
 	icon_dead = ""
+	melee_damage_lower = 10
+	melee_damage_upper = 25
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 9, ROGUE_STAT_CONSTITUTION = 9, ROGUE_STAT_SPEED = 8)
 
 /mob/living/simple_animal/hostile/rogue/skeleton/spear
 	name = "Skeleton"
@@ -596,6 +844,9 @@
 	icon_state = "skeleton_spear"
 	icon_living = "skeleton_spear"
 	icon_dead = ""
+	melee_damage_lower = 10
+	melee_damage_upper = 25
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 9, ROGUE_STAT_CONSTITUTION = 9, ROGUE_STAT_SPEED = 8)
 
 /mob/living/simple_animal/pet/cat
 	name = "cat"
@@ -606,6 +857,7 @@
 	icon_dead = "cat2_dead"
 	health = 20
 	maxHealth = 20
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 3, ROGUE_STAT_CONSTITUTION = 3, ROGUE_STAT_SPEED = 3)
 
 /mob/living/simple_animal/pet/cat/rogue/black
 	name = "black cat"
@@ -616,6 +868,7 @@
 	icon_dead = "cat_dead"
 	health = 20
 	maxHealth = 20
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 3, ROGUE_STAT_CONSTITUTION = 3, ROGUE_STAT_SPEED = 3)
 
 /mob/living/simple_animal/pet/cat/rogue/rat
 	name = "Boris"
@@ -626,3 +879,4 @@
 	icon_dead = "rat1"
 	health = 20
 	maxHealth = 20
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 3, ROGUE_STAT_CONSTITUTION = 3, ROGUE_STAT_SPEED = 3)

@@ -61,7 +61,7 @@
 
 /datum/status_effect/rogue/guard/on_remove()
 	UnregisterSignal(owner, list(COMSIG_ROGUE_STRIKE_INCOMING, COMSIG_ROGUE_STRIKE_SWING, COMSIG_ROGUE_MANOEUVRE))
-	owner.apply_status_effect(/datum/status_effect/rogue/guard_cooldown)
+	owner.apply_status_effect(/datum/status_effect/rogue/guard_cooldown, max(ROGUE_GUARD_COOLDOWN - owner.rogue_tempo_bonus("rmb_cooldown"), 1))
 	return ..()
 
 /datum/status_effect/rogue/guard/tick(seconds_between_ticks)

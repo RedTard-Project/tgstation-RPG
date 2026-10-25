@@ -247,6 +247,7 @@
 #define TRAIT_STUDENT "Student"
 #define TRAIT_SURVIVAL_EXPERT "Expert Survivalist"
 #define TRAIT_TAVERN_FIGHTER "Tavern Fighter"
+#define TRAIT_TEMPO "Tempo Capable"
 #define TRAIT_TOLERANT "Tolerant"
 #define TRAIT_TRAINED_SMITH "Trained Smith"
 #define TRAIT_TRIBAL "Island Tribe-member"
@@ -365,7 +366,7 @@ GLOBAL_LIST_INIT(rogue_trait_descriptions, list(
 	TRAIT_DREAMWALKER = span_warning("I walk the dream and reality at the same time. My mind frays, but my vision shall be reality."),
 	TRAIT_DRUG_SUPPLY = span_greentext("I've a supplier of drugs. I can request one delivered to my mailbox once a day."),
 	TRAIT_DRUNK_HEALING = span_info("A little drinking never hurt!"),
-	TRAIT_DUALWIELDER = span_info("If I wield two weapons of the same type, I attack with them both simultaneously. I suffer a disadvantage when attempting to parry. I do not suffer penalties from using my off-hand in combat."),
+	TRAIT_DUALWIELDER = span_info("While wielding two one-hand weapons with at least Journeyman skill on each, I alternate attacks between them. After 4 strikes, I'll attack with both at once. My parry and dodge are reduced by 5% while holding two weapons."),
 	TRAIT_DUSTRUNNER = span_greentext("I run dust for the Guild. Other runners and their patrons can recognize me by the signs."),
 	TRAIT_DWARF_REPAIR = span_info("Never again will there be a people like ours. Repairs come easy to me."),
 	TRAIT_DWARVEN_CHEF = span_info("I know the dwarven trick to cutting a proper pretzel."),
@@ -505,6 +506,7 @@ GLOBAL_LIST_INIT(rogue_trait_descriptions, list(
 	TRAIT_STUDENT = span_info("I am overwhelmed by all this knowledge!"),
 	TRAIT_SURVIVAL_EXPERT = span_greentext("I'm experienced with the arts of survival in the wild. Cooking, Fishing, Butchering and Skincrafting can progress to Legendary levels. Sewing can progress to Journeyman levels."),
 	TRAIT_TAVERN_FIGHTER = span_info("I am vigilant in my duties. The Tavern is my home, none shall dare oppose me or skip out on payment."),
+	TRAIT_TEMPO = span_greentext("I can keep up with multiple opponents at once."),
 	TRAIT_THROWINGARM = span_info("I throw items slightly faster, farther, and harder."),
 	TRAIT_TOLERANT = span_info("I dream of an ideal future, one with peace between all races"),
 	TRAIT_TOXIMMUNE = span_info("Poisons do nothing to me."),
