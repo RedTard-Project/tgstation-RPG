@@ -11,6 +11,11 @@
 /datum/config_entry/flag/rogue_lighting_palette
 	default = TRUE
 
+/datum/config_entry/number/rogue_lighting_tick_budget
+	default = ROGUE_LIGHT_TICK_BUDGET
+	min_val = 5
+	max_val = 100
+
 /datum/config_entry/number/rogue_lower_level_shade
 	default = ROGUE_LOWER_LEVEL_SHADE
 	min_val = 0.5

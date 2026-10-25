@@ -27,7 +27,11 @@ SUBSYSTEM_DEF(rogue_light)
 	var/fn_sky
 	var/fn_shadow
 	var/fn_shadow_quad
+	var/fn_stats
 	var/list/pending = list()
+	var/list/carry
+	var/carry_index = 0
+	var/tick_budget = ROGUE_LIGHT_TICK_BUDGET
 	var/list/tents = list()
 	var/list/tents_by_z = list()
 	var/list/quarters = list()
@@ -206,6 +210,10 @@ SUBSYSTEM_DEF(rogue_light)
 	catch(var/exception/error)
 		log_world("Rogue lighting: [path] could not be loaded: [error]")
 		return FALSE
+	try
+		fn_stats = load_ext(path, "byond:rlight_stats")
+	catch
+		fn_stats = null
 	library = path
 	return TRUE
 
@@ -223,7 +231,9 @@ SUBSYSTEM_DEF(rogue_light)
 		log_world("Rogue lighting: [library] refused to start ([result]).")
 		return FALSE
 	pending.Cut()
+	drop_carry()
 	clear_palettes()
+	tick_budget = CONFIG_GET(number/rogue_lighting_tick_budget)
 	for(var/z in static_zlevels())
 		if(!upload_zlevel(z, from_areas))
 			return FALSE
@@ -280,6 +290,7 @@ SUBSYSTEM_DEF(rogue_light)
 
 /datum/controller/subsystem/rogue_light/proc/native_failed(reason)
 	native_ready = FALSE
+	drop_carry()
 	native_failures++
 	log_world("Rogue lighting: native backend failed ([reason]).")
 	message_admins("Rogue lighting: the native backend failed ([reason]), [native_failures >= 3 ? "falling back to DM lighting" : "rebuilding it"].")
@@ -335,21 +346,37 @@ SUBSYSTEM_DEF(rogue_light)
 	catch(var/exception/error)
 		native_failed("submit: [error]")
 
+/datum/controller/subsystem/rogue_light/proc/drop_carry()
+	carry = null
+	carry_index = 0
+
 /datum/controller/subsystem/rogue_light/proc/apply_results(init_tick_checks)
+	var/budget_end = TICK_USAGE + tick_budget
 	while(native_ready)
-		var/list/batch
-		try
-			batch = call_ext(fn_collect)(ROGUE_LIGHT_COLLECT_CHUNK)
-		catch(var/exception/error)
-			native_failed("collect: [error]")
-			return TRUE
+		var/list/batch = carry
+		var/index = carry_index
+		if(!batch)
+			try
+				batch = call_ext(fn_collect)(ROGUE_LIGHT_COLLECT_CHUNK)
+			catch(var/exception/error)
+				native_failed("collect: [error]")
+				return TRUE
+			index = 1
 		var/batch_length = length(batch)
 		if(!batch_length)
 			return TRUE
-		var/index = 1
+		drop_carry()
 		var/applied = 0
 		var/quartered = carrier_mode == ROGUE_LIGHT_CARRIER_QUARTER
 		while(index <= batch_length)
+			if(applied && !(applied % ROGUE_LIGHT_APPLY_CHECK))
+				if(init_tick_checks)
+					CHECK_TICK
+				else if(TICK_USAGE > budget_end || MC_TICK_CHECK)
+					carry = batch
+					carry_index = index
+					applied_records += applied
+					return FALSE
 			var/record = batch[index]
 			if(record == ROGUE_LIGHT_RECORD_LOOK && index + ROGUE_LIGHT_LOOK_SIZE - 1 <= batch_length)
 				var/turf/lit = locate(batch[index + 1], batch[index + 2], batch[index + 3])
@@ -368,7 +395,7 @@ SUBSYSTEM_DEF(rogue_light)
 		applied_records += applied
 		if(init_tick_checks)
 			CHECK_TICK
-		else if(MC_TICK_CHECK)
+		else if(TICK_USAGE > budget_end || MC_TICK_CHECK)
 			return FALSE
 	return TRUE
 
@@ -486,6 +513,7 @@ SUBSYSTEM_DEF(rogue_light)
 		lit.lighting_clear_overlay()
 		CHECK_TICK
 	carrier_mode = new_mode
+	drop_carry()
 	clear_palettes()
 	for(var/turf/lit as anything in turfs)
 		lit.lighting_build_overlay()
@@ -529,6 +557,7 @@ SUBSYSTEM_DEF(rogue_light)
 	native = FALSE
 	native_ready = FALSE
 	pending.Cut()
+	drop_carry()
 	source_by_id.Cut()
 	free_ids.Cut()
 	for(var/turf/lit as anything in static_turfs())

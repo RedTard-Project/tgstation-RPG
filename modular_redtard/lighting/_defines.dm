@@ -59,6 +59,8 @@
 #define ROGUE_LIGHT_LUM_EPSILON 1e-6
 
 #define ROGUE_LIGHT_COLLECT_CHUNK 512
+#define ROGUE_LIGHT_APPLY_CHECK 8
+#define ROGUE_LIGHT_TICK_BUDGET 30
 #define ROGUE_LIGHT_INIT_TIMEOUT (60 SECONDS)
 
 #define ROGUE_LIGHT_MATRIX(r1, g1, b1, r2, g2, b2, r3, g3, b3, r4, g4, b4) list(r1, g1, b1, 0, r2, g2, b2, 0, r3, g3, b3, 0, r4, g4, b4, 0, 0, 0, 0, 1)
