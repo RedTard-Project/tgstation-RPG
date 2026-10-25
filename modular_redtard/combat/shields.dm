@@ -40,6 +40,7 @@
 
 /datum/status_effect/rogue/limbguard
 	id = "rogue_limbguard"
+	status_type = STATUS_EFFECT_UNIQUE
 	alert_type = /atom/movable/screen/alert/status_effect/rogue/limbguard
 	var/zone
 	var/obj/item/shield

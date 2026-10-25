@@ -1,5 +1,6 @@
 /datum/status_effect/rogue/tempo
 	id = "rogue_tempo"
+	status_type = STATUS_EFFECT_UNIQUE
 	var/list/attackers = list()
 	var/level = 0
 
