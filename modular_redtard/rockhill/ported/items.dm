@@ -37247,6 +37247,7 @@
 	gripped_intents = list(/datum/intent/sword/thrust/estoc, /datum/intent/sword/lunge/estoc, /datum/intent/sword/peel/big, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	max_blade_int = 400
+	special = /datum/special_intent/piercing_lunge
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/fishspear
@@ -37311,6 +37312,7 @@
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/flail/strike, /datum/intent/mace/smash/flail)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/flail_sweep
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/flail/militia
@@ -37344,6 +37346,7 @@
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/flail/strike, /datum/intent/mace/smash/flail/militia)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/flail_sweep
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/flail/peasantwarflail
@@ -37381,6 +37384,7 @@
 	possible_item_intents = list(/datum/intent/flail/strike)
 	gripped_intents = list(/datum/intent/flail/strikerange, /datum/intent/mace/smash/flailrange, /datum/intent/flail/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/flail_sweep
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/flail/peasantwarflail/matthios
@@ -37418,6 +37422,7 @@
 	possible_item_intents = list(/datum/intent/flail/strike/matthiosflail)
 	gripped_intents = list(/datum/intent/flail/strike/matthiosflail, /datum/intent/mace/smash/flail/matthiosflail, /datum/intent/flail/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/greatflail_swing
 	inhand_icon_state = "sabre"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -37451,6 +37456,7 @@
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/flail/strike, /datum/intent/mace/smash/flail)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/flail_sweep
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/flail/sflail/ancient
@@ -37482,6 +37488,7 @@
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/flail/strike, /datum/intent/mace/smash/flail)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/flail_sweep
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/flail/sflail/ancient/decrepit
@@ -37513,6 +37520,7 @@
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/flail/strike, /datum/intent/mace/smash/flail)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/flail_sweep
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/flail/sflail/silver
@@ -37544,6 +37552,7 @@
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/flail/strike, /datum/intent/mace/smash/flailrange)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/flail_sweep
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/greataxe
@@ -37825,6 +37834,7 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	max_blade_int = 300
+	special = /datum/special_intent/greatsword_swing
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/greatsword/ancient
@@ -37860,6 +37870,7 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	max_blade_int = 300
+	special = /datum/special_intent/greatsword_swing
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/greatsword/ancient/decrepit
@@ -37895,6 +37906,7 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	max_blade_int = 300
+	special = /datum/special_intent/greatsword_swing
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/greatsword/grenz
@@ -37930,6 +37942,7 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	max_blade_int = 240
+	special = /datum/special_intent/greatsword_swing
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/greatsword/grenz/oathmarked
@@ -37965,6 +37978,7 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/peel/big, /datum/intent/sword/strike/bad)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	max_blade_int = 220
+	special = /datum/special_intent/greatsword_swing
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/greatsword/zizo
@@ -38000,6 +38014,7 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	max_blade_int = 500
+	special = /datum/special_intent/greatsword_swing
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/greatsword/zwei
@@ -38035,6 +38050,7 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	max_blade_int = 220
+	special = /datum/special_intent/greatsword_swing
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/halberd
@@ -38070,6 +38086,7 @@
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut/halberd, /datum/intent/sword/chop, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/polearm_backstep
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/halberd/bardiche
@@ -38105,6 +38122,7 @@
 	gripped_intents = list(/datum/intent/spear/cut, /datum/intent/spear/cut/bardiche/cleave, /datum/intent/spear/cut/glaive/sweep, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/polearm_backstep
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/halberd/bardiche/ancient
@@ -38140,6 +38158,7 @@
 	gripped_intents = list(/datum/intent/spear/cut, /datum/intent/spear/cut/bardiche/cleave, /datum/intent/spear/cut/glaive/sweep, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/polearm_backstep
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/halberd/bardiche/ancient/decrepit
@@ -38175,6 +38194,7 @@
 	gripped_intents = list(/datum/intent/spear/cut, /datum/intent/spear/cut/bardiche/cleave, /datum/intent/spear/cut/glaive/sweep, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/polearm_backstep
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/halberd/glaive
@@ -38210,6 +38230,7 @@
 	gripped_intents = list(/datum/intent/spear/thrust/glaive, /datum/intent/spear/cut/glaive, /datum/intent/spear/cut/glaive/sweep, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	max_blade_int = 160
+	special = /datum/special_intent/polearm_backstep
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/hammer/ancient/decrepit
@@ -38901,6 +38922,7 @@
 	possible_item_intents = list(/datum/intent/dagger/cut/rend, /datum/intent/dagger/chop/cleaver, /datum/intent/dagger/cut/heavy, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/huntingknife/copper
@@ -40224,6 +40246,7 @@
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	possible_item_intents = list(/datum/intent/knuckles/strike, /datum/intent/knuckles/smash, /datum/intent/knuckles/strike/wallop, /datum/intent/effect/daze/unarmed)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/pugilism/unarmparry (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/pugilism/unarmparry (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/pugilism/unarmparry (3).ogg')
+	special = /datum/special_intent/upper_cut
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/knuckles/ancient/decrepit
@@ -40257,6 +40280,7 @@
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	possible_item_intents = list(/datum/intent/knuckles/strike, /datum/intent/knuckles/smash, /datum/intent/knuckles/strike/wallop, /datum/intent/effect/daze/unarmed)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/pugilism/unarmparry (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/pugilism/unarmparry (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/pugilism/unarmparry (3).ogg')
+	special = /datum/special_intent/upper_cut
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/lordscepter
@@ -40324,6 +40348,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/effect/daze)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/ground_smash
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/church
@@ -40357,6 +40382,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/effect/daze)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/ground_smash
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/cudgel
@@ -40393,6 +40419,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/strike/wallop)
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/strike/wallop, /datum/intent/mace/smash, /datum/intent/effect/daze)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/ground_smash
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/cudgel/copper
@@ -40429,6 +40456,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/strike/wallop)
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/strike/wallop, /datum/intent/mace/smash, /datum/intent/effect/daze)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/ground_smash
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/cudgel/justice
@@ -40465,6 +40493,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/strike/wallop)
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/ground_smash
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/goden
@@ -40500,6 +40529,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/strike/goden, /datum/intent/mace/smash/goden, /datum/intent/mace/rangedthrust, /datum/intent/effect/daze)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/ground_smash
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/goden/steel
@@ -40535,6 +40565,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/strike/goden, /datum/intent/mace/smash/goden, /datum/intent/mace/rangedthrust, /datum/intent/effect/daze)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/ground_smash
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/goden/steel/ancient
@@ -40570,6 +40601,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/strike/goden, /datum/intent/mace/smash/goden, /datum/intent/mace/rangedthrust, /datum/intent/effect/daze)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/ground_smash
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/goden/steel/ancient/decrepit
@@ -40605,6 +40637,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/strike/goden, /datum/intent/mace/smash/goden, /datum/intent/mace/rangedthrust, /datum/intent/effect/daze)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/ground_smash
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/maul
@@ -40640,6 +40673,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/maul, /datum/intent/maul/crush, /datum/intent/mace/sweep, /datum/intent/effect/hobble)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/ground_smash
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/oar
@@ -40672,6 +40706,7 @@
 	associated_skill = /datum/attribute/skill/combat/maces
 	possible_item_intents = list(/datum/intent/mace/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/ground_smash
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/parasol
@@ -40706,6 +40741,7 @@
 	associated_skill = /datum/attribute/skill/combat/maces
 	possible_item_intents = list(/datum/intent/mace/strike/wood)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/ground_smash
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/parasol/noble
@@ -40742,6 +40778,7 @@
 	associated_skill = /datum/attribute/skill/combat/maces
 	possible_item_intents = list(/datum/intent/mace/strike/wood)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/ground_smash
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/spiked
@@ -40775,6 +40812,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/effect/daze)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/ground_smash
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/steel
@@ -40808,6 +40846,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/effect/daze)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/ground_smash
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/steel/ancient
@@ -40841,6 +40880,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/effect/daze)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/ground_smash
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/steel/ancient/decrepit
@@ -40874,6 +40914,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/effect/daze)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/ground_smash
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/steel/morningstar
@@ -40907,6 +40948,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/effect/daze)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/ground_smash
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/steel/silver
@@ -40940,6 +40982,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/effect/daze)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/ground_smash
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/stunmace
@@ -40969,6 +41012,7 @@
 	can_parry = TRUE
 	associated_skill = /datum/attribute/skill/combat/maces
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/ground_smash
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/warhammer
@@ -41001,6 +41045,7 @@
 	associated_skill = /datum/attribute/skill/combat/maces
 	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/mace/warhammer/pick)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/ground_smash
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/warhammer/steel
@@ -41033,6 +41078,7 @@
 	associated_skill = /datum/attribute/skill/combat/maces
 	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/mace/warhammer/pick, /datum/intent/mace/warhammer/stab)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/ground_smash
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/warhammer/steel/ancient
@@ -41065,6 +41111,7 @@
 	associated_skill = /datum/attribute/skill/combat/maces
 	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/mace/warhammer/pick, /datum/intent/mace/warhammer/stab)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/ground_smash
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/warhammer/steel/ancient/decrepit
@@ -41097,6 +41144,7 @@
 	associated_skill = /datum/attribute/skill/combat/maces
 	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/mace/warhammer/pick, /datum/intent/mace/warhammer/stab)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/ground_smash
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/warhammer/steel/silver
@@ -41129,6 +41177,7 @@
 	associated_skill = /datum/attribute/skill/combat/maces
 	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/mace/warhammer/pick, /datum/intent/mace/warhammer/stab)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/ground_smash
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/woodclub
@@ -41161,6 +41210,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike/wood)
 	gripped_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/ground_smash
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/woodclub/crafted
@@ -41193,6 +41243,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike/wood)
 	gripped_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/ground_smash
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/mace/wsword
@@ -41225,6 +41276,7 @@
 	possible_item_intents = list(/datum/intent/mace/strike/wood)
 	gripped_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/ground_smash
 	inhand_icon_state = "mace_greyscale"
 
 /obj/item/rogueweapon/pick
@@ -42804,6 +42856,7 @@
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	max_blade_int = 180
+	special = /datum/special_intent/polearm_backstep
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/ancient
@@ -42839,6 +42892,7 @@
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	max_blade_int = 180
+	special = /datum/special_intent/polearm_backstep
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/ancient/decrepit
@@ -42874,6 +42928,7 @@
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	max_blade_int = 180
+	special = /datum/special_intent/polearm_backstep
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/assegai
@@ -42909,6 +42964,7 @@
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/polearm_backstep
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/billhook
@@ -42979,6 +43035,7 @@
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	max_blade_int = 300
+	special = /datum/special_intent/polearm_backstep
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/bronze
@@ -43015,6 +43072,7 @@
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	max_blade_int = 225
+	special = /datum/special_intent/polearm_backstep
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/improvisedbillhook
@@ -43050,6 +43108,7 @@
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	max_blade_int = 100
+	special = /datum/special_intent/polearm_backstep
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/keep_standard
@@ -43085,6 +43144,7 @@
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/bash/ranged, /datum/intent/mace/smash/eaglebeak)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	max_blade_int = 260
+	special = /datum/special_intent/polearm_backstep
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/militia
@@ -43120,6 +43180,7 @@
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	max_blade_int = 120
+	special = /datum/special_intent/polearm_backstep
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/naginata
@@ -43155,6 +43216,7 @@
 	gripped_intents = list(/datum/intent/rend/reach, /datum/intent/spear/cut/naginata, /datum/intent/spear/cut/naginata/sweep, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	max_blade_int = 150
+	special = /datum/special_intent/polearm_backstep
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/naginata/elf
@@ -43190,6 +43252,7 @@
 	gripped_intents = list(/datum/intent/rend/reach, /datum/intent/spear/cut/naginata, /datum/intent/partizan/peel, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/polearm_backstep
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/nomad
@@ -43224,6 +43287,7 @@
 	possible_item_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	max_blade_int = 230
+	special = /datum/special_intent/polearm_backstep
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/partizan
@@ -43260,6 +43324,7 @@
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/rend/reach/partizan, /datum/intent/partizan/peel, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/polearm_backstep
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/silver
@@ -43295,6 +43360,7 @@
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	max_blade_int = 180
+	special = /datum/special_intent/polearm_backstep
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/stone
@@ -43330,6 +43396,7 @@
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	max_blade_int = 70
+	special = /datum/special_intent/polearm_backstep
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/spear/stone/copper
@@ -43365,6 +43432,7 @@
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	max_blade_int = 70
+	special = /datum/special_intent/polearm_backstep
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/stoneaxe
@@ -43399,6 +43467,7 @@
 	gripped_intents = list(/datum/intent/axe/chop/stone)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	max_blade_int = 100
+	special = /datum/special_intent/axe_swing
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/battle
@@ -43433,6 +43502,7 @@
 	gripped_intents = list(/datum/intent/axe/cut/battle, /datum/intent/axe/chop/battle, /datum/intent/axe/bash, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	max_blade_int = 300
+	special = /datum/special_intent/axe_swing
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/battle/steppesman/chupa
@@ -43469,6 +43539,7 @@
 	gripped_intents = list(/datum/intent/axe/cut/battle, /datum/intent/axe/chop/battle, /datum/intent/mace/smash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	max_blade_int = 300
+	special = /datum/special_intent/axe_swing
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/handaxe
@@ -43504,6 +43575,7 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	max_blade_int = 400
+	special = /datum/special_intent/axe_swing
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/handaxe/copper
@@ -43539,6 +43611,7 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	max_blade_int = 400
+	special = /datum/special_intent/axe_swing
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/hurlbat
@@ -43576,6 +43649,7 @@
 	possible_item_intents = list(/datum/intent/axe/chop/stone)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	max_blade_int = 100
+	special = /datum/special_intent/axe_swing
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/oath
@@ -43611,6 +43685,7 @@
 	gripped_intents = list(/datum/intent/axe/cut/battle, /datum/intent/axe/chop/battle, /datum/intent/axe/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	max_blade_int = 500
+	special = /datum/special_intent/axe_swing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -43647,6 +43722,7 @@
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	max_blade_int = 400
+	special = /datum/special_intent/axe_swing
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/woodcut/
@@ -43681,6 +43757,7 @@
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	max_blade_int = 400
+	special = /datum/special_intent/axe_swing
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/woodcut/pick
@@ -43714,6 +43791,7 @@
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/mace/warhammer/pick, /datum/intent/axe/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	max_blade_int = 400
+	special = /datum/special_intent/axe_swing
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/woodcut/silver
@@ -43747,6 +43825,7 @@
 	possible_item_intents = list(/datum/intent/axe/cut/battle, /datum/intent/axe/chop/battle, /datum/intent/axe/bash, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	max_blade_int = 400
+	special = /datum/special_intent/axe_swing
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/woodcut/steel
@@ -43781,6 +43860,7 @@
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	max_blade_int = 500
+	special = /datum/special_intent/axe_swing
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/woodcut/steel/ancient
@@ -43815,6 +43895,7 @@
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	max_blade_int = 500
+	special = /datum/special_intent/axe_swing
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/woodcut/steel/ancient/decrepit
@@ -43849,6 +43930,7 @@
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	max_blade_int = 500
+	special = /datum/special_intent/axe_swing
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/stoneaxe/woodcut/steel/atgervi
@@ -43883,6 +43965,7 @@
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	max_blade_int = 250
+	special = /datum/special_intent/axe_swing
 	inhand_icon_state = "atgervi_axe"
 
 /obj/item/rogueweapon/stoneaxe/woodcut/steel/woodcutter
@@ -43916,6 +43999,7 @@
 	gripped_intents = list(/datum/intent/axe/cut/long, /datum/intent/axe/chop/long, /datum/intent/axe/bash, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	max_blade_int = 500
+	special = /datum/special_intent/axe_swing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -43951,6 +44035,7 @@
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/mace/warhammer/pick, /datum/intent/axe/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
 	max_blade_int = 400
+	special = /datum/special_intent/axe_swing
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/surgery/bonesetter
@@ -44420,6 +44505,7 @@
 	gripped_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/capsabre
@@ -44455,6 +44541,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust/sabre, /datum/intent/sword/peel, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/cutlass
@@ -44490,6 +44577,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/chop, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/decorated
@@ -44525,6 +44613,7 @@
 	gripped_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/falchion/militia
@@ -44561,6 +44650,7 @@
 	gripped_intents = list(/datum/intent/rend, /datum/intent/sword/chop/militia, /datum/intent/sword/peel, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/falx
@@ -44595,6 +44685,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut/falx, /datum/intent/sword/chop/falx, /datum/intent/sword/strike, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 250
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/falx/stalker
@@ -44630,6 +44721,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut/falx, /datum/intent/sword/chop/falx, /datum/intent/dagger/sucker_punch, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 250
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/iron
@@ -44665,6 +44757,7 @@
 	gripped_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/long
@@ -44701,6 +44794,7 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 280
+	special = /datum/special_intent/side_sweep
 	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/broadsword/bronze
@@ -44739,6 +44833,7 @@
 	gripped_intents = list(/datum/intent/sword/chop/heavy, /datum/intent/sword/thrust/heavy, /datum/intent/sword/cut/light, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 295
+	special = /datum/special_intent/axe_swing
 	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/dec
@@ -44775,6 +44870,7 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 280
+	special = /datum/special_intent/side_sweep
 	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/elf
@@ -44811,6 +44907,7 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 330
+	special = /datum/special_intent/side_sweep
 	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/etruscan
@@ -44847,6 +44944,7 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 300
+	special = /datum/special_intent/side_sweep
 	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/exe
@@ -44884,6 +44982,7 @@
 	gripped_intents = list(/datum/intent/sword/chop/heavy, /datum/intent/sword/cut/exe/cleave, /datum/intent/sword/cut/exe/sweep, /datum/intent/rend)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 330
+	special = /datum/special_intent/side_sweep
 	inhand_icon_state = "longsword"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -44924,6 +45023,7 @@
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust/long, /datum/intent/sword/thrust/long/halfsword/lesser, /datum/intent/sword/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 275
+	special = /datum/special_intent/side_sweep
 	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/kriegmesser/silver
@@ -44962,6 +45062,7 @@
 	gripped_intents = list(/datum/intent/sword/cut/krieg, /datum/intent/sword/thrust/krieg, /datum/intent/rend/krieg, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 280
+	special = /datum/special_intent/side_sweep
 	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/kriegmesser/ssangsudo
@@ -45000,6 +45101,7 @@
 	gripped_intents = list(/datum/intent/sword/cut/krieg, /datum/intent/rend, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 280
+	special = /datum/special_intent/side_sweep
 	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/marlin
@@ -45038,6 +45140,7 @@
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike, /datum/intent/sword/chop, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	max_blade_int = 280
+	special = /datum/special_intent/side_sweep
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/long/martyr
@@ -45075,6 +45178,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike, /datum/intent/sword/peel)
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/peel, /datum/intent/sword/chop)
 	max_blade_int = 200
+	special = /datum/special_intent/martyr_blazing_sweep_sword
 	inhand_icon_state = "martyrsword"
 
 /obj/item/rogueweapon/sword/long/oathkeeper
@@ -45112,6 +45216,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 280
+	special = /datum/special_intent/side_sweep
 	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/oldpsysword
@@ -45148,6 +45253,7 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 280
+	special = /datum/special_intent/side_sweep
 	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/rhomphaia
@@ -45186,6 +45292,7 @@
 	gripped_intents = list(/datum/intent/sword/cut/falx, /datum/intent/sword/strike, /datum/intent/sword/chop/falx, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 280
+	special = /datum/special_intent/side_sweep
 	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/shotel
@@ -45223,6 +45330,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/chop/long)
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/chop/long)
 	max_blade_int = 150
+	special = /datum/special_intent/side_sweep
 	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/silver
@@ -45259,6 +45367,7 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 280
+	special = /datum/special_intent/side_sweep
 	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/training
@@ -45297,6 +45406,7 @@
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/sword/thrust/blunt, /datum/intent/sword/peel/weak)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 280
+	special = /datum/special_intent/side_sweep
 	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/long/zizo
@@ -45333,6 +45443,7 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 400
+	special = /datum/special_intent/side_sweep
 	inhand_icon_state = "longsword"
 
 /obj/item/rogueweapon/sword/rapier
@@ -45370,6 +45481,7 @@
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/piercing_lunge
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/rapier/courtphysician
@@ -45406,6 +45518,7 @@
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/piercing_lunge
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/rapier/dec
@@ -45443,6 +45556,7 @@
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/piercing_lunge
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/rapier/hand
@@ -45480,6 +45594,7 @@
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/piercing_lunge
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/rapier/lord
@@ -45517,6 +45632,7 @@
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	max_blade_int = 300
+	special = /datum/special_intent/piercing_lunge
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/rapier/silver
@@ -45554,6 +45670,7 @@
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	max_blade_int = 225
+	special = /datum/special_intent/piercing_lunge
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/rapier/vaquero
@@ -45591,6 +45708,7 @@
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/piercing_lunge
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/sabre
@@ -45626,6 +45744,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust/sabre, /datum/intent/sword/peel, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/sabre/ancient
@@ -45661,6 +45780,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust/sabre, /datum/intent/sword/peel, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/sabre/ancient/decrepit
@@ -45696,6 +45816,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust/sabre, /datum/intent/sword/peel, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/sabre/dec
@@ -45731,6 +45852,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust/sabre, /datum/intent/sword/peel, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/sabre/elf
@@ -45766,6 +45888,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust/sabre, /datum/intent/sword/peel, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = "esaber"
 
 /obj/item/rogueweapon/sword/sabre/freifechter
@@ -45801,6 +45924,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut/sabre/master, /datum/intent/sword/thrust/sabre, /datum/intent/effect/daze/freisabre, /datum/intent/rend)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	max_blade_int = 275
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/sabre/iron
@@ -45836,6 +45960,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust/sabre, /datum/intent/sword/peel, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/sabre/mulyeog/rumahench
@@ -45871,6 +45996,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust/sabre, /datum/intent/sword/peel, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/sabre/newmoon
@@ -45906,6 +46032,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust, /datum/intent/sword/peel, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	max_blade_int = 150
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/sabre/shamshir
@@ -45943,6 +46070,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust, /datum/intent/sword/peel, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/sabre/stalker
@@ -45978,6 +46106,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust/sabre, /datum/intent/sword/peel, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/sabre/steppesman
@@ -46013,6 +46142,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust/sabre, /datum/intent/rend, /datum/intent/sword/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short
@@ -46049,6 +46179,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/ancient
@@ -46085,6 +46216,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/ancient/decrepit
@@ -46121,6 +46253,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/falchion
@@ -46157,6 +46290,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 250
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/gladius
@@ -46193,6 +46327,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 300
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/gladius/ancient
@@ -46229,6 +46364,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 300
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/gladius/ancient/decrepit
@@ -46265,6 +46401,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 300
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/iron
@@ -46301,6 +46438,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/iron/chipped
@@ -46337,6 +46475,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/messer
@@ -46373,6 +46512,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/rend/krieg/short, /datum/intent/axe/chop, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 250
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/messer/copper
@@ -46409,6 +46549,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/rend/krieg/short, /datum/intent/axe/chop, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 250
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/messer/iron
@@ -46444,6 +46585,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/rend/krieg/short, /datum/intent/axe/chop, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 250
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/short/silver
@@ -46480,6 +46622,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 200
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/silver
@@ -46515,6 +46658,7 @@
 	gripped_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike, /datum/intent/sword/peel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 230
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/sword/stone
@@ -46549,6 +46693,7 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	max_blade_int = 100
+	special = /datum/special_intent/shin_swipe
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/thresher
@@ -46737,6 +46882,7 @@
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/lash, /datum/intent/whip/crack, /datum/intent/whip/punish)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/whip_coil
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/whip/antique
@@ -46770,6 +46916,7 @@
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/lash, /datum/intent/whip/crack, /datum/intent/whip/punish)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/whip_coil
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/whip/bronze
@@ -46803,6 +46950,7 @@
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/lash/holy, /datum/intent/whip/crack, /datum/intent/whip/punish)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/whip_coil
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/whip/nagaika
@@ -46837,6 +46985,7 @@
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/crack/blunt, /datum/intent/whip/lash, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/whip_coil
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/whip/silver
@@ -46870,6 +47019,7 @@
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/lash/holy, /datum/intent/whip/crack, /datum/intent/whip/punish)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/whip_coil
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/whip/spiderwhip
@@ -46903,6 +47053,7 @@
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/lash/holy, /datum/intent/whip/crack, /datum/intent/whip/punish, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/whip_coil
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/woodstaff

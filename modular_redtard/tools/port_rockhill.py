@@ -1703,7 +1703,7 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
         rogue_armor_lines += [path] + [f'\t{k} = {v}' for k, v in fields.items() if v] + ['']
     open(f'{OUT_DIR}/rogue_armor.dm', 'w', encoding='utf-8', newline='\n').write('\n'.join(rogue_armor_lines).rstrip() + '\n')
     print(f'rogue_armor.dm: {len(ROGUE_ARMOR_DATUMS)} armor datums')
-    generate_intents(rw, port.get('intents', {}), sound_ref)
+    generate_intents(rw, port.get('intents', {}), sound_ref, valid)
 
     armor_lines = []
     for path, fields in sorted(ARMOR_DATUMS.items()):
@@ -2194,7 +2194,7 @@ def string_list(raw):
     return out
 
 
-def generate_intents(rw, spec, sound_ref):
+def generate_intents(rw, spec, sound_ref, valid=frozenset()):
     renames = spec.get('rename', {})
     numeric = spec.get('numeric', [])
     flags = spec.get('flags', [])
@@ -2221,6 +2221,10 @@ def generate_intents(rw, spec, sound_ref):
             value = (rw.resolve(path, renames.get(name, name)) or '').strip()
             if value in ('TRUE', 'FALSE', '0', '1'):
                 block.append(f"\t{name} = {'TRUE' if value in ('TRUE', '1') else 'FALSE'}")
+        for name in spec.get('paths', []):
+            raw = (rw.resolve(path, name) or '').strip()
+            if raw.startswith('/') and raw in valid:
+                block.append(f'\t{name} = {raw}')
         sounds = sound_files(rw.resolve(path, 'hitsound'))
         refs = [ref for ref in (sound_ref(f"'{f}'") for f in sounds) if ref]
         if refs:

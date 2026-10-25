@@ -130,12 +130,12 @@
 	keybind_signal = COMSIG_KB_ROGUE_MMB_BITE_DOWN
 	middle_intent = ROGUE_MMB_BITE
 
-/datum/keybinding/rogue/middle_intent/steal
-	name = "rogue_mmb_steal"
-	full_name = "Middle intent: steal"
-	description = "Turn the steal middle-click intent on or off"
-	keybind_signal = COMSIG_KB_ROGUE_MMB_STEAL_DOWN
-	middle_intent = ROGUE_MMB_STEAL
+/datum/keybinding/rogue/middle_intent/special
+	name = "rogue_mmb_special"
+	full_name = "Middle intent: special"
+	description = "Turn the special middle-click intent on or off: middle click uses the held weapon's special attack"
+	keybind_signal = COMSIG_KB_ROGUE_MMB_SPECIAL_DOWN
+	middle_intent = ROGUE_MMB_SPECIAL
 
 /datum/keybinding/rogue/defense
 	name = "rogue_defense"

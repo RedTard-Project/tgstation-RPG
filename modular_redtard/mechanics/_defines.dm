@@ -59,6 +59,7 @@
 #define ROGUE_FORMULA_BITE_DAMAGE "bite_damage"
 #define ROGUE_FORMULA_STRIKE_ACCURACY "strike_accuracy"
 #define ROGUE_FORMULA_STRIKE_DAMAGE "strike_damage"
+#define ROGUE_FORMULA_CRIT_CHANCE "crit_chance"
 
 #define VV_HK_ROGUE_ATTRIBUTES "rogue_attributes"
 #define ROGUE_ATTRIBUTE_EDITOR_MODIFIER "attribute_editor"

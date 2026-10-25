@@ -142,7 +142,7 @@
 #define COMSIG_KB_ROGUE_MMB_KICK_DOWN "keybinding_rogue_mmb_kick_down"
 #define COMSIG_KB_ROGUE_MMB_JUMP_DOWN "keybinding_rogue_mmb_jump_down"
 #define COMSIG_KB_ROGUE_MMB_BITE_DOWN "keybinding_rogue_mmb_bite_down"
-#define COMSIG_KB_ROGUE_MMB_STEAL_DOWN "keybinding_rogue_mmb_steal_down"
+#define COMSIG_KB_ROGUE_MMB_SPECIAL_DOWN "keybinding_rogue_mmb_special_down"
 #define COMSIG_KB_ROGUE_DEFENSE_DOWN "keybinding_rogue_defense_down"
 #define COMSIG_KB_ROGUE_SNEAK_DOWN "keybinding_rogue_sneak_down"
 #define COMSIG_KB_ROGUE_EYES_DOWN "keybinding_rogue_eyes_down"

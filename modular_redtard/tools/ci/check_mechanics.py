@@ -2,6 +2,9 @@ import os
 import re
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import dynamic_values
+
 MODULE = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 CONFIG = os.path.normpath(os.path.join(MODULE, "..", "config", "redtard", "mechanics"))
 VALUE_DEFINITION = re.compile(r'^\t"([a-z0-9_]+)" = list\("([^"]*)"', re.MULTILINE)
@@ -37,6 +40,11 @@ def main():
     for value_id, default in sorted(values.items()):
         if value_id not in public_values:
             problems.append(f"config/redtard/mechanics/values.txt has no {value_id}")
+        elif float(public_values[value_id]) != float(default):
+            problems.append(f"config/redtard/mechanics/values.txt: {value_id} = {public_values[value_id]}, the code default is {default}")
+    for value_id, default, _ in dynamic_values.dynamic_values():
+        if value_id not in public_values:
+            problems.append(f"config/redtard/mechanics/values.txt has no {value_id} (special or cleave pattern)")
         elif float(public_values[value_id]) != float(default):
             problems.append(f"config/redtard/mechanics/values.txt: {value_id} = {public_values[value_id]}, the code default is {default}")
     public_formulas = config_entries("formulas.txt")

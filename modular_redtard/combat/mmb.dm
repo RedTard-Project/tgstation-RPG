@@ -16,20 +16,7 @@
 /mob/living/carbon/human/proc/rogue_off_balance(duration)
 	rogue_offbalance_until = max(rogue_offbalance_until, world.time + duration)
 
-/datum/element/rogue_mmb
-	element_flags = ELEMENT_DETACH_ON_HOST_DESTROY
-
-/datum/element/rogue_mmb/Attach(datum/target)
-	. = ..()
-	if(!ishuman(target))
-		return ELEMENT_INCOMPATIBLE
-	RegisterSignal(target, COMSIG_MOB_MIDDLECLICKON, PROC_REF(on_middle_click))
-
-/datum/element/rogue_mmb/Detach(datum/source)
-	UnregisterSignal(source, COMSIG_MOB_MIDDLECLICKON)
-	return ..()
-
-/datum/element/rogue_mmb/proc/on_middle_click(mob/living/carbon/human/source, atom/target, params)
+/datum/element/rogue_combat_bus/proc/on_middle_click(mob/living/carbon/human/source, atom/target, params)
 	SIGNAL_HANDLER
 	if(source.rogue_mmb_intent == ROGUE_MMB_NONE || source.incapacitated || !source.client || world.time < source.next_move)
 		return NONE
@@ -40,8 +27,8 @@
 			INVOKE_ASYNC(source, TYPE_PROC_REF(/mob/living/carbon/human, rogue_try_jump), target)
 		if(ROGUE_MMB_BITE)
 			INVOKE_ASYNC(source, TYPE_PROC_REF(/mob/living/carbon/human, rogue_try_bite), target)
-		if(ROGUE_MMB_STEAL)
-			INVOKE_ASYNC(source, TYPE_PROC_REF(/mob/living/carbon/human, rogue_try_steal), target)
+		if(ROGUE_MMB_SPECIAL)
+			INVOKE_ASYNC(source, TYPE_PROC_REF(/mob/living/carbon/human, rogue_use_special), target)
 	return COMSIG_MOB_CANCEL_CLICKON
 
 /mob/living/carbon/human/proc/rogue_try_kick(atom/target)
@@ -53,6 +40,7 @@
 	playsound(src, 'sound/items/weapons/punchmiss.ogg', 100, FALSE, -1)
 	do_attack_animation(target, ATTACK_EFFECT_KICK)
 	rogue_off_balance(ROGUE_KICK_OFFBALANCE)
+	SEND_SIGNAL(src, COMSIG_ROGUE_MANOEUVRE, ROGUE_MANOEUVRE_KICK)
 	if(!isliving(target))
 		target.rogue_onkick(src)
 		return TRUE
@@ -60,6 +48,9 @@
 	sleep(ROGUE_KICK_SWING)
 	if(QDELETED(src) || QDELETED(victim) || !victim.Adjacent(src) || incapacitated)
 		return FALSE
+	var/datum/rogue_strike/kick = new(src, victim, null, null, ROGUE_STRIKE_KICK)
+	kick.incoming()
+	qdel(kick)
 	if(victim.check_block(src, ROGUE_KICK_DAMAGE, "the kick", UNARMED_ATTACK, 0, BRUTE))
 		return FALSE
 	var/strength = rogue_stat(ROGUE_STAT_STRENGTH)
@@ -119,6 +110,7 @@
 	changeNext_move(CLICK_CD_MELEE)
 	face_atom(destination)
 	adjust_stamina_loss(running ? ROGUE_JUMP_RUN_STAMINA : ROGUE_JUMP_WALK_STAMINA)
+	SEND_SIGNAL(src, COMSIG_ROGUE_MANOEUVRE, ROGUE_MANOEUVRE_JUMP)
 	rogue_off_balance(running ? ROGUE_JUMP_RUN_OFFBALANCE : ROGUE_JUMP_WALK_OFFBALANCE)
 	visible_message(span_notice("[src] [running ? "leaps" : "jumps"]!"))
 	throw_at(destination, min(get_dist(src, destination), range), 1, src, spin = FALSE)
@@ -145,6 +137,11 @@
 	rogue_mark_in_combat()
 	rogue_reveal_sneak()
 	do_attack_animation(victim, ATTACK_EFFECT_BITE)
+	var/datum/rogue_strike/bite = new(src, victim, null, null, ROGUE_STRIKE_BITE)
+	var/caught = bite.incoming() & ROGUE_STRIKE_CANCEL
+	qdel(bite)
+	if(caught)
+		return FALSE
 	if(victim.check_block(src, ROGUE_BITE_DAMAGE, "the bite", UNARMED_ATTACK, 0, BRUTE))
 		return FALSE
 	if(!iscarbon(victim))
@@ -351,8 +348,8 @@
 	if(usr != owner || !ishuman(owner))
 		return
 	var/icon_y = text2num(params2list(params)["icon-y"])
-	if(icon_y <= ROGUE_QUAD_STEAL_TOP)
-		owner.rogue_select_mmb(ROGUE_MMB_STEAL)
+	if(icon_y <= ROGUE_QUAD_SPECIAL_TOP)
+		owner.rogue_select_mmb(ROGUE_MMB_SPECIAL)
 	else if(icon_y <= ROGUE_QUAD_KICK_TOP)
 		owner.rogue_select_mmb(ROGUE_MMB_KICK)
 	else if(icon_y <= ROGUE_QUAD_JUMP_TOP)

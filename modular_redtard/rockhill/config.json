@@ -802,7 +802,8 @@
 					"firefuel",
 					"max_blade_int",
 					"sharpening_factor",
-					"spark_chance"
+					"spark_chance",
+					"special"
 				],
 				"rename": {
 					"inhand_icon_state": "item_state",
@@ -865,7 +866,8 @@
 				],
 				"paths": [
 					"origin_type",
-					"valid_blade"
+					"valid_blade",
+					"special"
 				],
 				"sprite_checks": true,
 				"mapped_vars": {
@@ -1177,6 +1179,9 @@
 				"candodge",
 				"no_attack",
 				"unarmed"
+			],
+			"paths": [
+				"cleave"
 			]
 		}
 	},

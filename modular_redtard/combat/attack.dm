@@ -13,21 +13,6 @@
 	var/skill = rogue_weapon_skill(weapon) || (weapon ? null : fallback)
 	return skill ? rogue_skill_rank(skill) : 0
 
-/datum/element/rogue_weapon
-	element_flags = ELEMENT_DETACH_ON_HOST_DESTROY
-
-/datum/element/rogue_weapon/Attach(datum/target)
-	. = ..()
-	if(!isitem(target))
-		return ELEMENT_INCOMPATIBLE
-	RegisterSignal(target, COMSIG_ITEM_ATTACK, PROC_REF(on_attack))
-	RegisterSignal(target, COMSIG_ITEM_EQUIPPED, PROC_REF(on_equipped))
-	RegisterSignal(target, COMSIG_ATOM_EXAMINE, PROC_REF(on_examine))
-
-/datum/element/rogue_weapon/Detach(datum/source)
-	UnregisterSignal(source, list(COMSIG_ITEM_ATTACK, COMSIG_ITEM_EQUIPPED, COMSIG_ATOM_EXAMINE))
-	return ..()
-
 /datum/element/rogue_weapon/proc/on_equipped(obj/item/source, mob/equipper, slot)
 	SIGNAL_HANDLER
 	if(!isliving(equipper) || !(slot & ITEM_SLOT_HANDS))

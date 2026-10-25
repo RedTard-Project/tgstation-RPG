@@ -18,7 +18,7 @@ parry_untrained_drain = 5
 # Integrity a parrying weapon loses (Azure Peak).
 parry_integrity_damage = 5
 
-# Deciseconds between two dodge attempts (Azure Peak); the defend alt intent ignores it.
+# Longest delay between two dodges (Azure Peak CLICK_CD_DODGE); the delay itself starts at 0 and grows with dodges, feints and baits. The defend alt intent ignores it.
 dodge_delay = 16
 
 # Base stamina of a dodge (Azure Peak).
@@ -320,3 +320,609 @@ blade_sharpen_wear = 0.5
 
 # Least maximum sharpness a blade can wear down to (Azure Peak).
 blade_min_max = 10
+
+# Default deciseconds someone stays exposed: no parry or dodge, +20 to be hit precisely, the next blow pops it (Azure Peak).
+exposed_duration = 100
+
+# Deciseconds of one slowdown step (Azure Peak Slowdown counts life ticks).
+slow_tick = 20
+
+# Movement delay added while slowed (Azure Peak).
+slow_factor = 2
+
+# Lowest dodge reserve: added to the dodge chance and its cap (Azure Peak MAX_DODGE_FLOOR).
+dodge_fatigue_floor = -15
+
+# Highest dodge reserve (Azure Peak MAX_DODGE_CEIL).
+dodge_fatigue_ceil = 5
+
+# Dodge reserve that compensating gains do not raise past (Azure Peak MAX_DODGE_CLAMP).
+dodge_fatigue_soft_cap = -5
+
+# Deciseconds out of combat mode after which dodge reserve, dodge delay and bait stacks reset (Azure Peak).
+dodge_reset_time = 200
+
+# Dodge reserve gained and dodge delay lost by landing a blow or parrying (Azure Peak).
+defense_recovery = 2
+
+# Dodge delay gained and reserve lost when dodging an unseen attacker (Azure Peak).
+blind_dodge_penalty = 2
+
+# Dodge delay at or below which a swift-stance attacker drains extra stamina from the dodger (Azure Peak CLICK_CD_FAST).
+swift_dodge_window = 8
+
+# Luck multiplier for a dodge expert with a fixed gaze to keep dodge reserve after a dodge (Azure Peak).
+dodge_fixed_luck = 5
+
+# Extra parry stamina per point of strength the attacker has over the defender with a heavy weapon (Azure Peak).
+parry_heavy_drain = 2
+
+# Extra integrity a defending weapon loses against a strong-stance blow (Azure Peak STRONG_INTG_BONUS).
+strong_integrity_wear = 3
+
+# Integrity bracers or gloves lose on a bare-handed parry; also the integrity of a parry with a blunt weapon (Azure Peak INTEG_PARRY_DECAY_NOSHARP).
+unarmed_parry_wear = 5
+
+# Most parry penalty from a faster bare-handed or unseen attacker (Azure Peak).
+swift_cap_unarmed = 30
+
+# Most parry penalty from a faster swift weapon aimed at the chest (Azure Peak SWIFTCAP_CHEST).
+swift_cap_chest = 10
+
+# Most parry penalty from a faster swift weapon aimed at a limb or the head (Azure Peak SWIFTCAP_LIMBS).
+swift_cap_limb = 25
+
+# Most parry penalty from a faster swift weapon aimed at a small part (Azure Peak SWIFTCAP_PRECISE).
+swift_cap_precise = 45
+
+# Percent chance that a dodged weapon still clips the dodger's weapon while in reach (Azure Peak).
+clip_base = 50
+
+# Clip chance per step of the dodger's weapon length, per tile of spare reach and per point of fortune difference.
+clip_per_step = 10
+
+# Weapon skill rank needed to bind blades (Azure Peak: journeyman).
+bind_rank = 3
+
+# Percent chance to bind when both aim at the chest (Azure Peak).
+bind_chest_chance = 3
+
+# Deciseconds a bind lasts: +20 to parry the bound foe (Azure Peak).
+bind_duration = 100
+
+# Deciseconds between two binds (Azure Peak BIND_CD).
+bind_cooldown = 150
+
+# Deciseconds the bound attacker cannot move.
+bind_attacker_hold = 3
+
+# Deciseconds the bound attacker cannot act (Azure Peak CLICK_CD_CHARGED).
+bind_attacker_click = 14
+
+# Wear factor on the binder's weapon when binding out of a vulnerable state.
+bind_vulnerable_wear = 3
+
+# Deciseconds the defend-stance guard lasts (Azure Peak clash).
+guard_duration = 60
+
+# Deciseconds before guarding again (Azure Peak BASE_RCLICK_CD).
+guard_cooldown = 300
+
+# Unarmed rank needed to guard bare-handed (Azure Peak).
+guard_unarmed_rank = 3
+
+# Percent of stamina (and of energy for a cheesy strike) lost when the guard breaks badly (Azure Peak BAD_GUARD_FATIGUE_DRAIN).
+bad_guard_drain = 20
+
+# Deciseconds immobilized after striking a foe without guard while guarding (Azure Peak).
+bad_guard_hold = 20
+
+# Deciseconds a riposted attacker stays exposed (Azure Peak).
+riposte_exposed = 30
+
+# Deciseconds a riposted attacker cannot act (Azure Peak).
+riposte_click = 30
+
+# Slowdown steps on a riposted attacker (Azure Peak).
+riposte_slow = 3
+
+# Dodge delay a riposted attacker gains and the riposter loses (Azure Peak).
+riposte_dodge_penalty = 5
+
+# Share of current sharpness the riposted weapon loses (Azure Peak RIPOSTE_SHARPNESS_FACTOR).
+riposte_sharpness = 0.15
+
+# Extra share when riposted with a heavy weapon (Azure Peak).
+riposte_heavy_sharpness = 0.05
+
+# A riposted weapon without an edge loses its maximum integrity divided by this (Azure Peak RIPOSTE_INTEG_DIVISOR).
+riposte_integrity_divisor = 5
+
+# Times unarmed_parry_wear: the least integrity a riposted weapon without an edge loses.
+riposte_integrity_floor = 5
+
+# Attribute difference that counts in a clash (Azure Peak).
+clash_stat_gap = 2
+
+# Percent to disarm the foe per advantage in a clash (Azure Peak).
+clash_step = 10
+
+# Least bonus percent of the guard that was struck first in a clash.
+clash_initiator_min = 5
+
+# Most bonus percent of the guard that was struck first in a clash.
+clash_initiator_max = 10
+
+# Deciseconds a bare-handed loser of a clash stays vulnerable (Azure Peak).
+clash_vulnerable = 50
+
+# Slowdown steps on the loser of a clash (Azure Peak).
+clash_slow = 5
+
+# Most tiles a disarmed weapon flies to the side (Azure Peak).
+disarm_range = 5
+
+# Deciseconds a disarmed fighter cannot act (Azure Peak).
+disarm_click = 30
+
+# Deciseconds between two baits (Azure Peak BAIT_RCLICK_CD).
+bait_cooldown = 200
+
+# Deciseconds a baited fighter cannot be baited again (Azure Peak).
+baited_duration = 150
+
+# Deciseconds a baited fighter stays exposed (Azure Peak).
+bait_exposed = 100
+
+# Deciseconds a baited fighter cannot act (Azure Peak).
+bait_click = 50
+
+# Dodge delay and reserve shifted by a bait (Azure Peak).
+bait_dodge_penalty = 5
+
+# Deciseconds the first bait holds the target in place (Azure Peak).
+bait_immobilize = 5
+
+# Slowdown steps of the first bait (Azure Peak).
+bait_slow = 3
+
+# The first bait drains max stamina divided by this from an unarmored target (Azure Peak).
+bait_drain_bare = 5
+
+# Divisor for a target in light or medium armor.
+bait_drain_light = 4
+
+# Divisor for a target in heavy armor.
+bait_drain_heavy = 3
+
+# Deciseconds off balance after the second bait or a broken hold (Azure Peak).
+bait_offbalance = 20
+
+# Deciseconds the second bait holds the target in place (Azure Peak).
+bait_hold = 20
+
+# Share of max stamina a failed bait costs the baiter (Azure Peak).
+bait_fail_drain = 0.2
+
+# Extra feint cooldown after breaking a guard with a feint (Azure Peak).
+feint_guard_cooldown = 100
+
+# Share of current stamina loss a successful feint adds (Azure Peak).
+feint_stamina_share = 0.1
+
+# Slowdown steps of a successful feint (Azure Peak).
+feint_slow = 2
+
+# Dodge delay and reserve shifted by a successful feint (Azure Peak).
+feint_dodge_penalty = 3
+
+# Dodge delay and reserve shifted by a failed feint, and reserve the feinter gains (Azure Peak).
+feint_dodge_shift = 2
+
+# Weapon skill rank needed for a weapon special (Azure Peak: journeyman).
+special_rank = 3
+
+# Multiplier on every special's damage; the numbers are Azure Peak's.
+special_damage_factor = 1
+
+# Share of edge wear per extra target of a cleave (Azure Peak).
+cleave_wear_factor = 0.5
+
+# Share of a limb's damage above which blows can critically wound it (Azure Peak CRIT_DISMEMBER_DAMAGE_THRESHOLD).
+crit_limb_threshold = 0.7
+
+# Damage added to a crit roll by good luck (Azure Peak).
+crit_luck_bonus = 10
+
+# Crit chance gains damage divided by this (Azure Peak).
+crit_damage_divisor = 3
+
+# Crit divisor of artery wounds on the chest (Azure Peak).
+crit_chest_divisor = 4
+
+# Limb damage share from which a fracture crit is a compound fracture (Azure Peak).
+crit_severe_share = 0.6
+
+# Deciseconds of stun from a crushing blow to the groin (Azure Peak).
+crit_groin_stun = 10
+
+# Deciseconds unconscious after a knockout crit to the head (Azure Peak).
+crit_knockout = 50
+
+# Extra deciseconds when knocked out from behind (Azure Peak).
+crit_knockout_behind = 100
+
+# Brain damage of a skull crit.
+crit_brain_damage = 30
+
+# Eye damage of an eye stab crit.
+crit_eye_damage = 50
+
+# Ear damage of an ear stab crit.
+crit_ear_damage = 50
+
+# Tongue damage of a mouth stab crit.
+crit_tongue_damage = 50
+
+# Breaths lost from a throat crit.
+crit_throat_breath = 10
+
+# Heart damage of a heart artery crit.
+crit_heart_damage = 30
+
+# Deciseconds of critical resistance after it first triggers (Azure Peak CRIT_RESISTANCE_TIMER_CD).
+crit_resist_cooldown = 300
+
+# Crits a player with critical resistance shrugs off during it (Azure Peak).
+crit_resist_stacks = 4
+
+# Crits a creature without a mind shrugs off (Azure Peak).
+crit_resist_stacks_npc = 1
+
+# Hefty Swing: cooldown. Times are in deciseconds.
+special_axe_swing_cooldown = 250
+
+# Hefty Swing: delay. Times are in deciseconds.
+special_axe_swing_delay = 5
+
+# Hefty Swing: stamcost. Times are in deciseconds.
+special_axe_swing_stamcost = 15
+
+# Hefty Swing: immob_dur. Times are in deciseconds.
+special_axe_swing_immob_dur = 35
+
+# Hefty Swing: exposed_dur. Times are in deciseconds.
+special_axe_swing_exposed_dur = 60
+
+# Hefty Swing: bonus. Times are in deciseconds.
+special_axe_swing_bonus = 50
+
+# Flail Sweep: cooldown. Times are in deciseconds.
+special_flail_sweep_cooldown = 250
+
+# Flail Sweep: delay. Times are in deciseconds.
+special_flail_sweep_delay = 7
+
+# Flail Sweep: stamcost. Times are in deciseconds.
+special_flail_sweep_stamcost = 0
+
+# Flail Sweep: slow_init. Times are in deciseconds.
+special_flail_sweep_slow_init = 2
+
+# Flail Sweep: exposed_init. Times are in deciseconds.
+special_flail_sweep_exposed_init = 30
+
+# Flail Sweep: offbalance_init. Times are in deciseconds.
+special_flail_sweep_offbalance_init = 15
+
+# Flail Sweep: knockdown. Times are in deciseconds.
+special_flail_sweep_knockdown = 20
+
+# Flail Sweep: immobilize_init. Times are in deciseconds.
+special_flail_sweep_immobilize_init = 10
+
+# Flail Sweep: dam. Times are in deciseconds.
+special_flail_sweep_dam = 20
+
+# Greatflail Swing: cooldown. Times are in deciseconds.
+special_greatflail_swing_cooldown = 300
+
+# Greatflail Swing: delay. Times are in deciseconds.
+special_greatflail_swing_delay = 7
+
+# Greatflail Swing: stamcost. Times are in deciseconds.
+special_greatflail_swing_stamcost = 25
+
+# Greatflail Swing: dam. Times are in deciseconds.
+special_greatflail_swing_dam = 60
+
+# Greatflail Swing: slow_dur. Times are in deciseconds.
+special_greatflail_swing_slow_dur = 2
+
+# Greatflail Swing: self_immob. Times are in deciseconds.
+special_greatflail_swing_self_immob = 22
+
+# Greatflail Swing: self_clickcd. Times are in deciseconds.
+special_greatflail_swing_self_clickcd = 21
+
+# Greatflail Swing: self_vuln. Times are in deciseconds.
+special_greatflail_swing_self_vuln = 23
+
+# Great Swing: cooldown. Times are in deciseconds.
+special_greatsword_swing_cooldown = 300
+
+# Great Swing: delay. Times are in deciseconds.
+special_greatsword_swing_delay = 7
+
+# Great Swing: stamcost. Times are in deciseconds.
+special_greatsword_swing_stamcost = 25
+
+# Great Swing: dam. Times are in deciseconds.
+special_greatsword_swing_dam = 60
+
+# Great Swing: slow_dur. Times are in deciseconds.
+special_greatsword_swing_slow_dur = 2
+
+# Great Swing: self_immob. Times are in deciseconds.
+special_greatsword_swing_self_immob = 25
+
+# Great Swing: self_clickcd. Times are in deciseconds.
+special_greatsword_swing_self_clickcd = 30
+
+# Great Swing: self_vuln. Times are in deciseconds.
+special_greatsword_swing_self_vuln = 30
+
+# Great Swing: cooldown. Times are in deciseconds.
+special_greatsword_swing_white_stag_cooldown = 250
+
+# Great Swing: delay. Times are in deciseconds.
+special_greatsword_swing_white_stag_delay = 7
+
+# Great Swing: stamcost. Times are in deciseconds.
+special_greatsword_swing_white_stag_stamcost = 25
+
+# Great Swing: dam. Times are in deciseconds.
+special_greatsword_swing_white_stag_dam = 80
+
+# Great Swing: slow_dur. Times are in deciseconds.
+special_greatsword_swing_white_stag_slow_dur = 2
+
+# Great Swing: self_immob. Times are in deciseconds.
+special_greatsword_swing_white_stag_self_immob = 25
+
+# Great Swing: self_clickcd. Times are in deciseconds.
+special_greatsword_swing_white_stag_self_clickcd = 30
+
+# Great Swing: self_vuln. Times are in deciseconds.
+special_greatsword_swing_white_stag_self_vuln = 30
+
+# Ground Smash: cooldown. Times are in deciseconds.
+special_ground_smash_cooldown = 250
+
+# Ground Smash: delay. Times are in deciseconds.
+special_ground_smash_delay = 7
+
+# Ground Smash: stamcost. Times are in deciseconds.
+special_ground_smash_stamcost = 25
+
+# Ground Smash: slow_dur. Times are in deciseconds.
+special_ground_smash_slow_dur = 5
+
+# Ground Smash: knockdown_dur. Times are in deciseconds.
+special_ground_smash_knockdown_dur = 20
+
+# Ground Smash: offbalance_dur. Times are in deciseconds.
+special_ground_smash_offbalance_dur = 50
+
+# Ground Smash: self_immob_dur. Times are in deciseconds.
+special_ground_smash_self_immob_dur = 11
+
+# Ground Smash: dam. Times are in deciseconds.
+special_ground_smash_dam = 200
+
+# Ground Smash: open_dur. Times are in deciseconds.
+special_ground_smash_open_dur = 25
+
+# Martyr's Blaze: cooldown. Times are in deciseconds.
+special_martyr_cooldown = 300
+
+# Martyr's Blaze: delay. Times are in deciseconds.
+special_martyr_delay = 7
+
+# Martyr's Blaze: stamcost. Times are in deciseconds.
+special_martyr_stamcost = 25
+
+# Martyr's Blaze: fire_stacks. Times are in deciseconds.
+special_martyr_fire_stacks = 4
+
+# Martyr's Blaze: self_immob_dur. Times are in deciseconds.
+special_martyr_self_immob_dur = 10
+
+# Blazing Axe Sweep: cooldown. Times are in deciseconds.
+special_martyr_blazing_sweep_cooldown = 500
+
+# Blazing Axe Sweep: delay. Times are in deciseconds.
+special_martyr_blazing_sweep_delay = 7
+
+# Blazing Axe Sweep: stamcost. Times are in deciseconds.
+special_martyr_blazing_sweep_stamcost = 25
+
+# Blazing Axe Sweep: fire_stacks. Times are in deciseconds.
+special_martyr_blazing_sweep_fire_stacks = 4
+
+# Blazing Axe Sweep: self_immob_dur. Times are in deciseconds.
+special_martyr_blazing_sweep_self_immob_dur = 10
+
+# Blazing Sword Sweep: cooldown. Times are in deciseconds.
+special_martyr_blazing_sweep_sword_cooldown = 500
+
+# Blazing Sword Sweep: delay. Times are in deciseconds.
+special_martyr_blazing_sweep_sword_delay = 7
+
+# Blazing Sword Sweep: stamcost. Times are in deciseconds.
+special_martyr_blazing_sweep_sword_stamcost = 25
+
+# Blazing Sword Sweep: fire_stacks. Times are in deciseconds.
+special_martyr_blazing_sweep_sword_fire_stacks = 4
+
+# Blazing Sword Sweep: self_immob_dur. Times are in deciseconds.
+special_martyr_blazing_sweep_sword_self_immob_dur = 20
+
+# Blazing Trident Strike: cooldown. Times are in deciseconds.
+special_martyr_blazing_trident_cooldown = 300
+
+# Blazing Trident Strike: delay. Times are in deciseconds.
+special_martyr_blazing_trident_delay = 7
+
+# Blazing Trident Strike: stamcost. Times are in deciseconds.
+special_martyr_blazing_trident_stamcost = 25
+
+# Blazing Trident Strike: fire_stacks. Times are in deciseconds.
+special_martyr_blazing_trident_fire_stacks = 4
+
+# Blazing Trident Strike: self_immob_dur. Times are in deciseconds.
+special_martyr_blazing_trident_self_immob_dur = 5
+
+# Volcanic Blaze Slam: cooldown. Times are in deciseconds.
+special_martyr_volcano_slam_cooldown = 600
+
+# Volcanic Blaze Slam: delay. Times are in deciseconds.
+special_martyr_volcano_slam_delay = 12
+
+# Volcanic Blaze Slam: stamcost. Times are in deciseconds.
+special_martyr_volcano_slam_stamcost = 25
+
+# Volcanic Blaze Slam: fire_stacks. Times are in deciseconds.
+special_martyr_volcano_slam_fire_stacks = 5
+
+# Volcanic Blaze Slam: self_immob_dur. Times are in deciseconds.
+special_martyr_volcano_slam_self_immob_dur = 10
+
+# Piercing Lunge: cooldown. Times are in deciseconds.
+special_piercing_lunge_cooldown = 250
+
+# Piercing Lunge: delay. Times are in deciseconds.
+special_piercing_lunge_delay = 5
+
+# Piercing Lunge: stamcost. Times are in deciseconds.
+special_piercing_lunge_stamcost = 20
+
+# Piercing Lunge: winded. Times are in deciseconds.
+special_piercing_lunge_winded = 30
+
+# Piercing Lunge: open_dur. Times are in deciseconds.
+special_piercing_lunge_open_dur = 30
+
+# Backstep: cooldown. Times are in deciseconds.
+special_polearm_backstep_cooldown = 250
+
+# Backstep: delay. Times are in deciseconds.
+special_polearm_backstep_delay = 5
+
+# Backstep: stamcost. Times are in deciseconds.
+special_polearm_backstep_stamcost = 15
+
+# Backstep: dam. Times are in deciseconds.
+special_polearm_backstep_dam = 30
+
+# Backstep: slow_dur. Times are in deciseconds.
+special_polearm_backstep_slow_dur = 5
+
+# Backstep: min_dist. Times are in deciseconds.
+special_polearm_backstep_min_dist = 3
+
+# Backstep: open_dur. Times are in deciseconds.
+special_polearm_backstep_open_dur = 30
+
+# Shin Prod: cooldown. Times are in deciseconds.
+special_shin_swipe_cooldown = 200
+
+# Shin Prod: delay. Times are in deciseconds.
+special_shin_swipe_delay = 5
+
+# Shin Prod: stamcost. Times are in deciseconds.
+special_shin_swipe_stamcost = 15
+
+# Shin Prod: eff_dur. Times are in deciseconds.
+special_shin_swipe_eff_dur = 5
+
+# Shin Prod: hobble_dur. Times are in deciseconds.
+special_shin_swipe_hobble_dur = 4
+
+# Shin Prod: open_dur. Times are in deciseconds.
+special_shin_swipe_open_dur = 30
+
+# Distracting Swipe: cooldown. Times are in deciseconds.
+special_side_sweep_cooldown = 170
+
+# Distracting Swipe: delay. Times are in deciseconds.
+special_side_sweep_delay = 6
+
+# Distracting Swipe: stamcost. Times are in deciseconds.
+special_side_sweep_stamcost = 25
+
+# Distracting Swipe: eff_dur. Times are in deciseconds.
+special_side_sweep_eff_dur = 40
+
+# Upper Cut: cooldown. Times are in deciseconds.
+special_upper_cut_cooldown = 300
+
+# Upper Cut: delay. Times are in deciseconds.
+special_upper_cut_delay = 12
+
+# Upper Cut: stamcost. Times are in deciseconds.
+special_upper_cut_stamcost = 25
+
+# Upper Cut: knockdown_dur. Times are in deciseconds.
+special_upper_cut_knockdown_dur = 10
+
+# Upper Cut: self_immob_dur. Times are in deciseconds.
+special_upper_cut_self_immob_dur = 15
+
+# Upper Cut: dam. Times are in deciseconds.
+special_upper_cut_dam = 50
+
+# Upper Cut: finisher_dam. Times are in deciseconds.
+special_upper_cut_finisher_dam = 200
+
+# Whip Coil: cooldown. Times are in deciseconds.
+special_whip_coil_cooldown = 150
+
+# Whip Coil: delay. Times are in deciseconds.
+special_whip_coil_delay = 4
+
+# Whip Coil: stamcost. Times are in deciseconds.
+special_whip_coil_stamcost = 20
+
+# Whip Coil: range. Times are in deciseconds.
+special_whip_coil_range = 4
+
+# Whip Coil: immob_dur. Times are in deciseconds.
+special_whip_coil_immob_dur = 35
+
+# Whip Coil: dam. Times are in deciseconds.
+special_whip_coil_dam = 30
+
+# Whip Coil: open_dur. Times are in deciseconds.
+special_whip_coil_open_dur = 20
+
+# Most extra targets of a cleave: Cleaves into an adjacent target.
+cleave_adjacent_max_targets = 1
+
+# Most extra targets of a cleave: Cleaves forward into a second target.
+cleave_forward_cleave_max_targets = 1
+
+# Most extra targets of a cleave: Sweeps in a massive arc, hitting up to four targets to the sides and ahead.
+cleave_frontal_arc_max_targets = 4
+
+# Most extra targets of a cleave: Cleaves in a T-shaped pattern directly ahead.
+cleave_frontal_t_max_targets = 2
+
+# Most extra targets of a cleave: Sweeps horizontally, cleaving up to two additional targets.
+cleave_horizontal_sweep_max_targets = 2
+
+# Most extra targets of a cleave: Lances forward, skewering a target three tiles ahead and anyone behind them.
+cleave_lance_max_targets = 1
+
+# Most extra targets of a cleave: Sweeps wide, cleaving up to two nearby targets.
+cleave_wide_sweep_max_targets = 2

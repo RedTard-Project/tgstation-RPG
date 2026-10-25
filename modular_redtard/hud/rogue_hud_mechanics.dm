@@ -29,7 +29,7 @@
 	var/mob/living/owner = get_mob()
 	if(!isliving(owner))
 		return
-	var/ready_at = owner.rogue_def_intent == ROGUE_INTENT_DODGE ? owner.rogue_last_dodge + ROGUE_DODGE_DELAY : owner.rogue_last_parry + ROGUE_PARRY_DELAY
+	var/ready_at = owner.rogue_def_intent == ROGUE_INTENT_DODGE ? owner.rogue_last_dodge + owner.rogue_dodge_cooldown : owner.rogue_last_parry + ROGUE_PARRY_DELAY
 	var/next_change = 0
 	if(ready_at > world.time)
 		icon_state = "defdelay1"

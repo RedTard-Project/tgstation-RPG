@@ -10,19 +10,19 @@ GLOBAL_LIST_INIT(rogue_formula_definitions, list(
 		list("skill", "defense"),
 	),
 	ROGUE_FORMULA_SPEED_PRESSURE = list(
-		"if(swift_attack and attacker_speed > defender_speed, clamp((attacker_speed - defender_speed) * 10 - max(0, (defender_perception - attacker_perception) * if(attacker_armed, 5, 10)) - max(0, (defender_intelligence - attacker_intelligence) * 3), 0, 30), 0)",
+		"if(swift_attack and attacker_speed > defender_speed, clamp((attacker_speed - defender_speed) * 10 - max(0, (defender_perception - attacker_perception) * if(attacker_armed, 5, 10)) - max(0, (defender_intelligence - attacker_intelligence) * 3), 0, cap), 0)",
 		"Parry penalty when a faster attacker uses a swift weapon or bare hands (Azure Peak); perception and intelligence offset it.",
-		list("swift_attack", "attacker_armed", "attacker_speed", "defender_speed", "attacker_perception", "defender_perception", "attacker_intelligence", "defender_intelligence"),
+		list("swift_attack", "attacker_armed", "attacker_speed", "defender_speed", "attacker_perception", "defender_perception", "attacker_intelligence", "defender_intelligence", "cap"),
 	),
 	ROGUE_FORMULA_PARRY_CHANCE = list(
-		"clamp((defense - attacker_skill * 20 - running * 15 + swift_guard * 10 - speed_pressure) * if(prone, 0.65, 1) - dual_wield * 5, 5, if(untrained_armor, 75, 90))",
+		"clamp((defense - attacker_skill * 20 - running * 15 + swift_guard * 10 - speed_pressure) * if(prone, 0.65, 1) - dual_wield * 5 + bound * 20, 5, if(untrained_armor, 75, 90))",
 		"Parry chance in percent (Azure Peak). defense is the best weapon_defense; swift_guard is a lone swift weapon in light armor.",
-		list("defense", "attacker_skill", "running", "swift_guard", "speed_pressure", "prone", "dual_wield", "untrained_armor"),
+		list("defense", "attacker_skill", "running", "swift_guard", "speed_pressure", "prone", "dual_wield", "untrained_armor", "bound"),
 	),
 	ROGUE_FORMULA_DODGE_CHANCE = list(
-		"clamp(if(prone, 0.25, 1) * if(dodge_expert and not prone, 90, 50 + (defender_speed - attacker_speed) * 10 - if(swift_attack and attacker_speed > defender_speed, (attacker_speed - defender_speed) * 10, 0) + if(heavy_attack and defender_speed > attacker_speed, (defender_speed - attacker_speed) * 10, 0) + if(improvised, 10, (defender_skill - attacker_skill) * 10)) - dual_wield * 5, 5, 90)",
+		"clamp(if(prone, 0.25, 1) * if(dodge_expert and not prone, 90, 50 + (defender_speed - attacker_speed) * 10 - if(swift_attack and attacker_speed > defender_speed, (attacker_speed - defender_speed) * 10, 0) + if(heavy_attack and defender_speed > attacker_speed, (defender_speed - attacker_speed) * 10, 0) + if(improvised, 10, (defender_skill - attacker_skill) * 10)) + fatigue - dual_wield * 5, 5, 90 + fatigue)",
 		"Dodge chance in percent (Azure Peak). defender_skill is the defender's rank in the attacker's skill; improvised is a weapon without a skill.",
-		list("defender_speed", "attacker_speed", "swift_attack", "heavy_attack", "improvised", "defender_skill", "attacker_skill", "prone", "dodge_expert", "dual_wield"),
+		list("defender_speed", "attacker_speed", "swift_attack", "heavy_attack", "improvised", "defender_skill", "attacker_skill", "prone", "dodge_expert", "dual_wield", "fatigue"),
 	),
 	ROGUE_FORMULA_ARMOR_PROTECTION = list(
 		"clamp(rating - penetration, 0, 100)",
@@ -150,8 +150,13 @@ GLOBAL_LIST_INIT(rogue_formula_definitions, list(
 		list("major_zone", "face_zone", "perception", "grab_state", "target_prone", "target_open", "low_aim", "weapon_skill", "stab", "pick", "cut", "blunt_precise", "short_weapon", "aimed", "swift"),
 	),
 	ROGUE_FORMULA_STRIKE_DAMAGE = list(
-		"max(round(force * if(strength_factor > 1, 1 + (strength_factor - 1) * edge, strength_factor) * if(damage_factor > 1, 1 + (damage_factor - 1) * edge, damage_factor) * stance_factor * if(prone, 0.5, 1) * chipped), 1)",
+		"max(round(force * if(strength_factor > 1, 1 + (strength_factor - 1) * edge, strength_factor) * if(damage_factor > 1, 1 + (damage_factor - 1) * edge, damage_factor) * stance_factor * if(prone, 0.5, 1) * chipped * if(uncharged, 0.5, 1)), 1)",
 		"Damage of one blow before armor (Azure Peak get_complex_damage). force is the weapon's force or bare-handed damage, strength_factor the strength_factor formula (1 for bare hands), damage_factor the intent's, stance_factor the alt intent's; prone: the attacker lies; edge: share of the strength and intent bonuses a worn blade keeps (1 for a sharp or blunt weapon); chipped: factor of a badly chipped blade (Azure Peak sharpness tiers).",
-		list("force", "strength_factor", "damage_factor", "stance_factor", "prone", "edge", "chipped"),
+		list("force", "strength_factor", "damage_factor", "stance_factor", "prone", "edge", "chipped", "uncharged"),
+	),
+	ROGUE_FORMULA_CRIT_CHANCE = list(
+		"round(limb_damage * 20 + damage / divisor) + bonus * 10",
+		"Chance in percent of one critical wound (Azure Peak try_crit). limb_damage: share of the limb's damage; divisor: crit_damage_divisor or crit_chest_divisor; bonus: 1 for a matching alt intent (strong for fractures and chops, aimed for cuts and stabs).",
+		list("limb_damage", "damage", "divisor", "bonus"),
 	),
 ))

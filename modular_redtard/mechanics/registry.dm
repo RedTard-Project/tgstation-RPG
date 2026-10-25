@@ -38,6 +38,16 @@ GLOBAL_DATUM(rogue_mechanics, /datum/rogue_mechanics)
 	for(var/id in GLOB.rogue_value_definitions)
 		var/list/definition = GLOB.rogue_value_definitions[id]
 		formulas[id] = new /datum/rogue_formula(id, definition[1], definition[2], null, TRUE)
+	for(var/special_type in subtypesof(/datum/special_intent))
+		var/datum/special_intent/special = new special_type
+		for(var/tunable in special.tunables)
+			var/id = "[special.value_key()]_[tunable]"
+			formulas[id] = new /datum/rogue_formula(id, "[special.vars[tunable] || 0]", "[special.name]: [tunable]. Times are in deciseconds.", null, TRUE)
+		qdel(special)
+	for(var/pattern_type in subtypesof(/datum/cleave_pattern))
+		var/datum/cleave_pattern/pattern = new pattern_type
+		formulas[pattern.value_key()] = new /datum/rogue_formula(pattern.value_key(), "[pattern.max_targets]", "Most extra targets of a cleave: [pattern.desc]", null, TRUE)
+		qdel(pattern)
 	load()
 
 /datum/rogue_mechanics/proc/directory()

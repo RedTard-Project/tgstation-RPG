@@ -16,36 +16,65 @@ GLOBAL_LIST_INIT(rogue_rmb_intents, rogue_init_rmb_intents())
 	var/name = "intent"
 	var/desc = ""
 	var/icon_state = ""
+	var/has_action = FALSE
+	var/needs_adjacency = TRUE
+	var/bypasses_click_delay = FALSE
+
+/datum/rogue_rmb_intent/proc/rmb_action(mob/living/carbon/human/user, atom/target)
+	return FALSE
 
 /datum/rogue_rmb_intent/strong
 	name = "strong"
-	desc = "Your attacks deal +15% damage, but cost more stamina per hit."
+	desc = "Your attacks deal +15% damage. Your attacks will cost the enemy more sharpness and integrity to defend against. Higher critrate with brutal attacks.\nCosts more stamina per hit.\n(RMB WHILE IN COMBAT MODE) Use your weapon's special attack."
 	icon_state = "rmbstrong"
+	has_action = TRUE
+	needs_adjacency = FALSE
+
+/datum/rogue_rmb_intent/strong/rmb_action(mob/living/carbon/human/user, atom/target)
+	return user.rogue_use_special(target)
 
 /datum/rogue_rmb_intent/swift
 	name = "swift"
-	desc = "Your attacks have less recovery time."
+	desc = "Your attacks have less recovery time but are less accurate.\nDrains extra stamina from anyone dodging you, most of all while their dodge is fresh. Does not work with a HEAVY balanced weapon."
 	icon_state = "rmbswift"
 
 /datum/rogue_rmb_intent/aimed
 	name = "aimed"
-	desc = "Your attacks are more careful and have a longer recovery time."
+	desc = "Your attacks are more precise but have a longer recovery time. Higher critrate with precise attacks.\n(RMB WHILE IN COMBAT MODE) Bait out your targeted limb to the enemy. If it matches where they're aiming, they will be thrown off balance."
 	icon_state = "rmbaimed"
+	has_action = TRUE
+
+/datum/rogue_rmb_intent/aimed/rmb_action(mob/living/carbon/human/user, atom/target)
+	return ishuman(target) && user.rogue_bait(target)
 
 /datum/rogue_rmb_intent/feint
 	name = "feint"
 	desc = "(RMB WHILE IN COMBAT MODE) A deceptive half-attack with no follow-through, meant to force your opponent to open their guard. Will fail on targets that are relaxed and less alert."
 	icon_state = "rmbfeint"
+	has_action = TRUE
+
+/datum/rogue_rmb_intent/feint/rmb_action(mob/living/carbon/human/user, atom/target)
+	return isliving(target) && target != user && user.rogue_feint(target)
 
 /datum/rogue_rmb_intent/defend
 	name = "defend"
-	desc = "No delay between dodge and parry rolls."
+	desc = "No delay between dodge and parry rolls.\n(RMB WHILE IN COMBAT MODE AND NOT GRABBING ANYTHING) Enter a defensive stance, guaranteeing the next hit is defended against.\nTwo people who hit each other with the Guard up will have their weapons Clash, potentially disarming them.\nHitting someone with it who has no Guard up is tiresome."
 	icon_state = "rmbdef"
+	has_action = TRUE
+	needs_adjacency = FALSE
+	bypasses_click_delay = TRUE
+
+/datum/rogue_rmb_intent/defend/rmb_action(mob/living/carbon/human/user, atom/target)
+	return user.rogue_try_guard()
 
 /datum/rogue_rmb_intent/weak
 	name = "weak"
-	desc = "Your attacks deal 20% damage. Useful for longer punishments, play-fighting, and bloodletting."
+	desc = "Your attacks deal 20% damage and will never critically hit. Useful for longer punishments, play-fighting, and bloodletting.\n(RMB WHILE IN COMBAT MODE) Attempt to steal from the target."
 	icon_state = "rmbweak"
+	has_action = TRUE
+
+/datum/rogue_rmb_intent/weak/rmb_action(mob/living/carbon/human/user, atom/target)
+	return ishuman(target) && user.rogue_try_steal(target)
 
 /mob/living/carbon/human/var/datum/rogue_rmb_intent/rogue_rmb_intent
 /mob/living/carbon/human/var/rogue_feint_ready_at = 0
@@ -71,37 +100,26 @@ GLOBAL_LIST_INIT(rogue_rmb_intents, rogue_init_rmb_intents())
 	SEND_SIGNAL(src, COMSIG_MOB_ROGUE_RMB_CHANGED)
 
 /datum/status_effect/rogue_vulnerable
+	parent_type = /datum/status_effect/rogue
 	id = "rogue_vulnerable"
-	status_type = STATUS_EFFECT_REFRESH
-	alert_type = null
+	effect_state = "eff_vulnerable"
 
-/datum/status_effect/rogue_vulnerable/on_creation(mob/living/new_owner, ...)
-	duration = ROGUE_FEINT_DURATION
+/datum/status_effect/rogue_vulnerable/on_creation(mob/living/new_owner, set_duration)
+	base_duration = ROGUE_FEINT_DURATION
 	return ..()
 
-/datum/status_effect/rogue_vulnerable/refresh(effect, ...)
-	duration = ROGUE_FEINT_DURATION
-
-/datum/element/rogue_rmb
-	element_flags = ELEMENT_DETACH_ON_HOST_DESTROY
-
-/datum/element/rogue_rmb/Attach(datum/target)
-	. = ..()
-	if(!ishuman(target))
-		return ELEMENT_INCOMPATIBLE
-	RegisterSignal(target, COMSIG_MOB_CLICKON, PROC_REF(on_click))
-
-/datum/element/rogue_rmb/Detach(datum/source)
-	UnregisterSignal(source, COMSIG_MOB_CLICKON)
-	return ..()
-
-/datum/element/rogue_rmb/proc/on_click(mob/living/carbon/human/source, atom/target, list/modifiers)
+/datum/element/rogue_combat_bus/proc/on_click(mob/living/carbon/human/source, atom/target, list/modifiers)
 	SIGNAL_HANDLER
 	if(!LAZYACCESS(modifiers, RIGHT_CLICK) || LAZYACCESS(modifiers, SHIFT_CLICK) || LAZYACCESS(modifiers, CTRL_CLICK) || LAZYACCESS(modifiers, ALT_CLICK))
 		return NONE
-	if(!source.combat_mode || !source.rogue_rmb_is(/datum/rogue_rmb_intent/feint) || !isliving(target) || target == source || !target.Adjacent(source))
+	var/datum/rogue_rmb_intent/stance = source.rogue_rmb_intent
+	if(!source.combat_mode || !stance?.has_action || isnull(target) || istype(target, /atom/movable/screen))
 		return NONE
-	INVOKE_ASYNC(source, TYPE_PROC_REF(/mob/living/carbon/human, rogue_feint), target)
+	if(stance.needs_adjacency && !target.Adjacent(source))
+		return NONE
+	if(!stance.bypasses_click_delay && world.time < source.next_move)
+		return COMSIG_MOB_CANCEL_CLICKON
+	INVOKE_ASYNC(stance, TYPE_PROC_REF(/datum/rogue_rmb_intent, rmb_action), source, target)
 	return COMSIG_MOB_CANCEL_CLICKON
 
 /mob/living/carbon/human/proc/rogue_feint(mob/living/target)
@@ -124,18 +142,34 @@ GLOBAL_LIST_INIT(rogue_rmb_intents, rogue_init_rmb_intents())
 		"target_skill" = their_skill,
 		"intelligence" = rogue_stat(ROGUE_STAT_INTELLIGENCE),
 		"target_intelligence" = target.rogue_stat(ROGUE_STAT_INTELLIGENCE),
-		"target_vulnerable" = !!target.has_status_effect(/datum/status_effect/rogue_vulnerable),
+		"target_vulnerable" = target.rogue_is_open() || target.has_status_effect(/datum/status_effect/rogue/bind),
 	))
-	rogue_feint_ready_at = world.time + ROGUE_FEINT_COOLDOWN
+	var/cooldown = ROGUE_FEINT_COOLDOWN
+	if(target.remove_status_effect(/datum/status_effect/rogue/guard))
+		to_chat(src, span_notice("[target.p_their(TRUE)] guard is disrupted!"))
+		cooldown += ROGUE_FEINT_GUARD_COOLDOWN
+		chance = 100
+	rogue_feint_ready_at = world.time + cooldown
 	SEND_SIGNAL(src, COMSIG_MOB_ROGUE_FEINT_USED)
 	changeNext_move(CLICK_CD_MELEE)
 	if(!prob(chance))
 		playsound(src, 'modular_redtard/rockhill/sound/combat/feint.ogg', 100, TRUE)
 		to_chat(src, span_warning("[target] did not fall for my feint..."))
+		if(target.rogue_def_intent == ROGUE_INTENT_DODGE)
+			target.rogue_change_dodge_cooldown(-ROGUE_FEINT_DODGE_SHIFT)
+			target.rogue_change_dodge_fatigue(-ROGUE_FEINT_DODGE_SHIFT)
 		return FALSE
-	target.apply_status_effect(/datum/status_effect/rogue_vulnerable)
-	target.changeNext_move(max(ROGUE_FEINT_TARGET_CLICK + (our_skill - their_skill) / 2, ROGUE_FEINT_TARGET_CLICK_MIN))
+	target.rogue_open(ROGUE_FEINT_DURATION)
+	target.rogue_delay_action(max(ROGUE_FEINT_TARGET_CLICK + (our_skill - their_skill) / 2, ROGUE_FEINT_TARGET_CLICK_MIN))
 	target.Immobilize(ROGUE_FEINT_IMMOBILIZE)
+	target.adjust_stamina_loss(target.get_stamina_loss() * ROGUE_FEINT_STAMINA_SHARE)
+	target.rogue_slowdown(ROGUE_FEINT_SLOW)
+	if(target.rogue_def_intent == ROGUE_INTENT_DODGE)
+		target.rogue_change_dodge_cooldown(ROGUE_FEINT_DODGE_PENALTY)
+		target.rogue_change_dodge_fatigue(-ROGUE_FEINT_DODGE_PENALTY)
+	if(rogue_def_intent == ROGUE_INTENT_DODGE)
+		rogue_change_dodge_cooldown(-ROGUE_FEINT_DODGE_PENALTY)
+		rogue_change_dodge_fatigue(ROGUE_FEINT_DODGE_SHIFT)
 	to_chat(src, span_notice("[target] fell for my feint attack!"))
 	to_chat(target, span_danger("I fall for [src]'s feint attack!"))
 	playsound(src, 'modular_redtard/rockhill/sound/combat/riposte.ogg', 100, TRUE)

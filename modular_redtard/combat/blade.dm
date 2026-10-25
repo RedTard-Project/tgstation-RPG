@@ -73,19 +73,6 @@ GLOBAL_LIST_INIT(rogue_sharpen_sounds, list('modular_redtard/rockhill/sound/item
 	if(blade.blade_int >= blade.max_blade_int)
 		to_chat(src, span_info("Fully sharpened."))
 
-/datum/element/rogue_whetstone
-	element_flags = ELEMENT_DETACH_ON_HOST_DESTROY
-
-/datum/element/rogue_whetstone/Attach(datum/target)
-	. = ..()
-	if(!isitem(target))
-		return ELEMENT_INCOMPATIBLE
-	RegisterSignal(target, COMSIG_ITEM_INTERACTING_WITH_ATOM, PROC_REF(on_interact))
-
-/datum/element/rogue_whetstone/Detach(datum/source)
-	UnregisterSignal(source, COMSIG_ITEM_INTERACTING_WITH_ATOM)
-	return ..()
-
 /datum/element/rogue_whetstone/proc/on_interact(obj/item/source, mob/living/user, atom/interacting_with, list/modifiers)
 	SIGNAL_HANDLER
 	var/obj/item/blade = interacting_with

@@ -128,12 +128,23 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 	if(damtype != STAMINA && HAS_TRAIT(src, TRAIT_PACIFISM))
 		to_chat(src, span_warning("I don't want to harm other living beings!"))
 		return FALSE
+	var/charge = rogue_take_charge(intent)
+	var/datum/rogue_strike/strike = new(src, target, weapon, intent, ROGUE_STRIKE_MELEE, attack_modifiers)
+	. = rogue_resolve_strike(strike, charge)
+	qdel(strike)
+
+/mob/living/carbon/human/proc/rogue_resolve_strike(datum/rogue_strike/strike, charge)
+	var/mob/living/target = strike.target
+	var/obj/item/weapon = strike.weapon
+	var/datum/intent/intent = strike.intent
 	if(weapon && length(weapon.rogue_intents()))
 		weapon.rogue_apply_intent(intent)
 	face_atom(target)
 	changeNext_move(max(round(intent.clickcd * rogue_rmb_factor("click_factor")), ROGUE_STRIKE_MIN_CLICK))
 	rogue_mark_in_combat()
 	target.rogue_mark_in_combat()
+	if(SEND_SIGNAL(src, COMSIG_ROGUE_STRIKE_SWING, strike) & ROGUE_STRIKE_CANCEL)
+		return FALSE
 	playsound(src, rogue_swing_sound(weapon, intent), 100, FALSE, -1)
 	if(intent.swingdelay > 0)
 		sleep(intent.swingdelay)
@@ -144,18 +155,24 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 	do_attack_animation(target, weapon ? null : ATTACK_EFFECT_PUNCH, weapon)
 	target.lastattacker = real_name
 	target.lastattackerckey = ckey
+	var/incoming = target != src ? strike.incoming() : NONE
+	if(incoming & ROGUE_STRIKE_CANCEL)
+		return FALSE
 	if(target != src && target.rogue_strike_missed(src))
 		log_combat(src, target, "missed", weapon || intent.name)
 		return FALSE
-	var/force = weapon ? CALCULATE_FORCE(weapon, attack_modifiers) : rogue_unarmed_damage()
-	if(target != src && target.check_block(weapon || src, force, weapon ? "\the [weapon]" : "the [intent.name]", weapon ? MELEE_ATTACK : UNARMED_ATTACK, weapon ? weapon.armour_penetration : 0, damtype))
+	var/damtype = weapon ? weapon.damtype : BRUTE
+	var/force = weapon ? CALCULATE_FORCE(weapon, strike.attack_modifiers) : rogue_unarmed_damage()
+	if(target != src && !(incoming & ROGUE_STRIKE_UNDEFENDABLE) && target.check_block(weapon || src, force, weapon ? "\the [weapon]" : "the [intent.name]", weapon ? MELEE_ATTACK : UNARMED_ATTACK, weapon ? weapon.armour_penetration : 0, damtype))
+		strike.defended = TRUE
+		SEND_SIGNAL(target, COMSIG_ROGUE_STRIKE_DEFENDED, strike)
 		return FALSE
-	var/zone = rogue_strike_zone(target, weapon, intent)
+	strike.zone = rogue_strike_zone(target, weapon, intent)
 	var/edged = weapon?.max_blade_int && intent.get_sharpness()
 	var/sharp_ratio = edged ? weapon.rogue_edge_ratio() : 1
 	if(edged && sharp_ratio < ROGUE_BLADE_CHIP_START && prob(33))
 		to_chat(src, span_info("The blade is dull..."))
-	var/damage = rogue_formula_value(ROGUE_FORMULA_STRIKE_DAMAGE, list(
+	strike.damage = rogue_formula_value(ROGUE_FORMULA_STRIKE_DAMAGE, list(
 		"force" = force,
 		"strength_factor" = weapon ? rogue_strength_factor(weapon, src) : 1,
 		"damage_factor" = intent.damfactor,
@@ -163,13 +180,24 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 		"prone" = body_position == LYING_DOWN,
 		"edge" = clamp((sharp_ratio - ROGUE_BLADE_DULL_FLOOR) / (ROGUE_BLADE_DULL_START - ROGUE_BLADE_DULL_FLOOR), 0, 1),
 		"chipped" = sharp_ratio < ROGUE_BLADE_CHIP_START ? sharp_ratio * 2 : 1,
+		"uncharged" = intent.chargetime > 0 && charge < 1,
 	))
-	target.rogue_take_strike(src, weapon, intent, zone, damage, attack_modifiers)
+	target.rogue_take_strike(strike)
 	if(edged && !QDELETED(weapon))
 		weapon.rogue_dull(ROGUE_BLADE_HIT_WEAR, src)
+	if(mind)
+		rogue_change_dodge_fatigue(ROGUE_DEFENSE_RECOVERY)
+		rogue_change_dodge_cooldown(-ROGUE_DEFENSE_RECOVERY)
+	if(intent.cleave && weapon)
+		rogue_cleave(strike)
 	return TRUE
 
-/mob/living/proc/rogue_take_strike(mob/living/attacker, obj/item/weapon, datum/intent/intent, zone, damage, list/attack_modifiers)
+/mob/living/proc/rogue_take_strike(datum/rogue_strike/strike)
+	var/mob/living/attacker = strike.attacker
+	var/obj/item/weapon = strike.weapon
+	var/datum/intent/intent = strike.intent
+	var/zone = strike.zone
+	var/damage = strike.damage
 	var/def_zone = rogue_zone_target(zone)
 	var/damtype = weapon ? weapon.damtype : BRUTE
 	var/blocked = run_armor_check(def_zone, MELEE, armour_penetration = weapon?.armour_penetration, silent = TRUE, weak_against_armour = weapon?.weak_against_armour)
@@ -192,7 +220,8 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 		attack_direction = get_dir(attacker, src),
 		attacking_item = weapon,
 	)
-	LAZYSET(attack_modifiers, DAMAGE_DONE, damage_done)
+	strike.damage_done = damage_done
+	LAZYSET(strike.attack_modifiers, DAMAGE_DONE, damage_done)
 	rogue_strike_message(attacker, weapon, intent, zone, damage_done)
 	var/hit_sound = pick(GLOB.rogue_no_damage_sounds)
 	if(damage_done > 0)
@@ -204,8 +233,12 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 		add_splatter_floor(get_turf(src))
 		if(get_dist(attacker, src) <= 1)
 			attacker.add_mob_blood(src)
-	weapon?.rogue_after_strike(src, attacker, attack_modifiers)
-	log_combat(attacker, src, "struck", weapon || intent.name, "(INTENT: [uppertext(intent.name)]) (ZONE: [zone]) (DAMAGE: [damage_done]) (DAMTYPE: [uppertext(damtype)])")
+	if(damage_done > 0)
+		rogue_try_crit(intent.blade_class, damage_done, attacker, zone)
+		rogue_pop_open()
+	SEND_SIGNAL(src, COMSIG_ROGUE_STRIKE_LANDED, strike)
+	weapon?.rogue_after_strike(src, attacker, strike.attack_modifiers)
+	log_combat(attacker, src, strike.kind == ROGUE_STRIKE_CLEAVE ? "cleaved" : "struck", weapon || intent.name, "(INTENT: [uppertext(intent.name)]) (ZONE: [zone]) (DAMAGE: [damage_done]) (DAMTYPE: [uppertext(damtype)])")
 	return damage_done
 
 /mob/living/proc/rogue_strike_message(mob/living/attacker, obj/item/weapon, datum/intent/intent, zone, damage_done)
@@ -228,20 +261,7 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 	afterattack(target, user, null, attack_modifiers)
 	add_fingerprint(user)
 
-/datum/element/rogue_striker
-	element_flags = ELEMENT_DETACH_ON_HOST_DESTROY
-
-/datum/element/rogue_striker/Attach(datum/target)
-	. = ..()
-	if(!ishuman(target))
-		return ELEMENT_INCOMPATIBLE
-	RegisterSignal(target, COMSIG_USER_PRE_ITEM_ATTACK, PROC_REF(on_pre_item_attack))
-
-/datum/element/rogue_striker/Detach(datum/source)
-	UnregisterSignal(source, COMSIG_USER_PRE_ITEM_ATTACK)
-	return ..()
-
-/datum/element/rogue_striker/proc/on_pre_item_attack(mob/living/carbon/human/source, obj/item/weapon, atom/target, list/modifiers, list/attack_modifiers)
+/datum/element/rogue_combat_bus/proc/on_pre_item_attack(mob/living/carbon/human/source, obj/item/weapon, atom/target, list/modifiers, list/attack_modifiers)
 	SIGNAL_HANDLER
 	if(!isliving(target) || (weapon.item_flags & NOBLUDGEON) || !source.is_holding(weapon) || CALCULATE_FORCE(weapon, attack_modifiers) <= 0)
 		return NONE
