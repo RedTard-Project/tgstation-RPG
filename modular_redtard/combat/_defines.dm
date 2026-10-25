@@ -56,50 +56,54 @@
 #define ROGUE_UNARMED_HARM "harm"
 
 #define ROGUE_CLICK_CD_MELEE 12
+#define ROGUE_STRIKE_MIN_CLICK rogue_value("strike_min_click")
+#define ROGUE_STRIKE_MISS_LUCK rogue_value("strike_miss_luck")
+#define ROGUE_STRIKE_BLOOD_DAMAGE rogue_value("strike_blood_damage")
+#define ROGUE_STRIKE_BLUNT_BLOOD_DAMAGE rogue_value("strike_blunt_blood_damage")
 
 
-#define BASE_PARRY_STAMINA_DRAIN 5
-#define UNARMED_BASE_WDEF_BARE 2
-#define UNARMED_BASE_WDEF_EQUIPPED 8
-#define ROGUE_PARRY_DELAY (1.6 SECONDS)
-#define ROGUE_PARRY_UNTRAINED_DRAIN 5
-#define ROGUE_PARRY_INTEGRITY_DAMAGE 5
+#define BASE_PARRY_STAMINA_DRAIN rogue_value("base_parry_stamina_drain")
+#define UNARMED_BASE_WDEF_BARE rogue_value("unarmed_base_wdef_bare")
+#define UNARMED_BASE_WDEF_EQUIPPED rogue_value("unarmed_base_wdef_equipped")
+#define ROGUE_PARRY_DELAY rogue_value("parry_delay")
+#define ROGUE_PARRY_UNTRAINED_DRAIN rogue_value("parry_untrained_drain")
+#define ROGUE_PARRY_INTEGRITY_DAMAGE rogue_value("parry_integrity_damage")
 
-#define ROGUE_DODGE_DELAY (1.6 SECONDS)
-#define ROGUE_DODGE_STAMINA_DRAIN 8
-#define ROGUE_DODGE_MIN_DRAIN 5
+#define ROGUE_DODGE_DELAY rogue_value("dodge_delay")
+#define ROGUE_DODGE_STAMINA_DRAIN rogue_value("dodge_stamina_drain")
+#define ROGUE_DODGE_MIN_DRAIN rogue_value("dodge_min_drain")
 
 
-#define ROGUE_XP_PER_INT 1
-#define ROGUE_XP_NPC_FACTOR 0.5
+#define ROGUE_XP_PER_INT rogue_value("xp_per_int")
+#define ROGUE_XP_NPC_FACTOR rogue_value("xp_npc_factor")
 
 #define COMSIG_MOB_ROGUE_INTENT_CHANGED "mob_rogue_intent_changed"
 
 #define COMSIG_MOB_ROGUE_DEFENSE_CHANGED "mob_rogue_defense_changed"
 #define COMSIG_MOB_ROGUE_ENERGY_CHANGED "mob_rogue_energy_changed"
 #define COMSIG_MOB_ROGUE_ADVSETUP_CLICKED "mob_rogue_advsetup_clicked"
-#define ROGUE_IN_COMBAT_TIME (10 SECONDS)
-#define ROGUE_ENERGY_RUN_COST 2
+#define ROGUE_IN_COMBAT_TIME rogue_value("in_combat_time")
+#define ROGUE_ENERGY_RUN_COST rogue_value("energy_run_cost")
 #define ROGUE_ENERGY_TICK_SECONDS 2
-#define ROGUE_ENERGY_COMBAT_DRAIN 2
-#define ROGUE_ENERGY_SLEEP_GAIN 15
-#define ROGUE_ENERGY_REST_GAIN 10
-#define ROGUE_ENERGY_BED_FACTOR 2
-#define ROGUE_ENERGY_GROUND_FACTOR 0.5
+#define ROGUE_ENERGY_COMBAT_DRAIN rogue_value("energy_combat_drain")
+#define ROGUE_ENERGY_SLEEP_GAIN rogue_value("energy_sleep_gain")
+#define ROGUE_ENERGY_REST_GAIN rogue_value("energy_rest_gain")
+#define ROGUE_ENERGY_BED_FACTOR rogue_value("energy_bed_factor")
+#define ROGUE_ENERGY_GROUND_FACTOR rogue_value("energy_ground_factor")
 #define ROGUE_ENERGY_HUD_STEP 5
 #define ROGUE_ADVSETUP_FADE (3 SECONDS)
 #define ROGUE_FOV_SOURCE "rogue_fov"
 #define COMSIG_MOB_ROGUE_SNEAK_CHANGED "mob_rogue_sneak_changed"
 #define ROGUE_SNEAK_SOURCE "rogue_sneak"
-#define ROGUE_SNEAK_LIGHT 0.15
-#define ROGUE_SNEAK_LIGHT_PER_RANK 20
-#define ROGUE_SNEAK_SLOW_BASE 0.6
-#define ROGUE_SNEAK_SLOW_PER_RANK 0.1
-#define ROGUE_SNEAK_FADE 50
-#define ROGUE_SNEAK_FADE_PER_RANK 8
-#define ROGUE_SNEAK_MIN_REVEAL 5
-#define ROGUE_SNEAK_INVIS_PER_RANK 0.55
-#define ROGUE_SNEAK_ATTACK_REVEAL (4 SECONDS)
+#define ROGUE_SNEAK_LIGHT rogue_value("sneak_light")
+#define ROGUE_SNEAK_LIGHT_PER_RANK rogue_value("sneak_light_per_rank")
+#define ROGUE_SNEAK_SLOW_BASE rogue_value("sneak_slow_base")
+#define ROGUE_SNEAK_SLOW_PER_RANK rogue_value("sneak_slow_per_rank")
+#define ROGUE_SNEAK_FADE rogue_value("sneak_fade")
+#define ROGUE_SNEAK_FADE_PER_RANK rogue_value("sneak_fade_per_rank")
+#define ROGUE_SNEAK_MIN_REVEAL rogue_value("sneak_min_reveal")
+#define ROGUE_SNEAK_INVIS_PER_RANK rogue_value("sneak_invis_per_rank")
+#define ROGUE_SNEAK_ATTACK_REVEAL rogue_value("sneak_attack_reveal")
 #define COMSIG_MOB_ROGUE_MMB_CHANGED "mob_rogue_mmb_changed"
 #define ROGUE_MMB_NONE 0
 #define ROGUE_MMB_BITE 1
@@ -111,41 +115,41 @@
 #define ROGUE_QUAD_JUMP_TOP 24
 #define ROGUE_ZONE_NECK "neck"
 #define ROGUE_KICK_LEGS 2
-#define ROGUE_KICK_SWING 4
-#define ROGUE_KICK_DAMAGE 10
-#define ROGUE_KICK_OFFBALANCE (3 SECONDS)
-#define ROGUE_KICK_SHOVE_PER_STRENGTH 4
-#define ROGUE_KICK_ITEM_RANGE 2
-#define ROGUE_KICK_LEVER_PER_STRENGTH 4
-#define ROGUE_JUMP_WALK_RANGE 2
-#define ROGUE_JUMP_RUN_RANGE 3
-#define ROGUE_JUMP_WALK_STAMINA 20
-#define ROGUE_JUMP_RUN_STAMINA 45
-#define ROGUE_JUMP_WALK_OFFBALANCE (2 SECONDS)
-#define ROGUE_JUMP_RUN_OFFBALANCE (3 SECONDS)
-#define ROGUE_BITE_DAMAGE 5
-#define ROGUE_STEAL_TIME (1 SECONDS)
-#define ROGUE_STEAL_UNAWARE_FACTOR 0.35
-#define ROGUE_STEAL_FUMBLE -6
-#define ROGUE_STEAL_RING_BASE 8
-#define ROGUE_STEAL_RING_PER_RANK 7
-#define ROGUE_STEAL_RING_MIN 3
-#define ROGUE_STEAL_RING_MAX 90
+#define ROGUE_KICK_SWING rogue_value("kick_swing")
+#define ROGUE_KICK_DAMAGE rogue_value("kick_damage")
+#define ROGUE_KICK_OFFBALANCE rogue_value("kick_offbalance")
+#define ROGUE_KICK_SHOVE_PER_STRENGTH rogue_value("kick_shove_per_strength")
+#define ROGUE_KICK_ITEM_RANGE rogue_value("kick_item_range")
+#define ROGUE_KICK_LEVER_PER_STRENGTH rogue_value("kick_lever_per_strength")
+#define ROGUE_JUMP_WALK_RANGE rogue_value("jump_walk_range")
+#define ROGUE_JUMP_RUN_RANGE rogue_value("jump_run_range")
+#define ROGUE_JUMP_WALK_STAMINA rogue_value("jump_walk_stamina")
+#define ROGUE_JUMP_RUN_STAMINA rogue_value("jump_run_stamina")
+#define ROGUE_JUMP_WALK_OFFBALANCE rogue_value("jump_walk_offbalance")
+#define ROGUE_JUMP_RUN_OFFBALANCE rogue_value("jump_run_offbalance")
+#define ROGUE_BITE_DAMAGE rogue_value("bite_damage")
+#define ROGUE_STEAL_TIME rogue_value("steal_time")
+#define ROGUE_STEAL_UNAWARE_FACTOR rogue_value("steal_unaware_factor")
+#define ROGUE_STEAL_FUMBLE rogue_value("steal_fumble")
+#define ROGUE_STEAL_RING_BASE rogue_value("steal_ring_base")
+#define ROGUE_STEAL_RING_PER_RANK rogue_value("steal_ring_per_rank")
+#define ROGUE_STEAL_RING_MIN rogue_value("steal_ring_min")
+#define ROGUE_STEAL_RING_MAX rogue_value("steal_ring_max")
 #define COMSIG_MOB_ROGUE_RMB_CHANGED "mob_rogue_rmb_changed"
 #define COMSIG_MOB_ROGUE_FEINT_USED "mob_rogue_feint_used"
-#define ROGUE_FEINT_DURATION (7.5 SECONDS)
-#define ROGUE_FEINT_COOLDOWN (20 SECONDS)
-#define ROGUE_FEINT_TARGET_CLICK (1.5 SECONDS)
-#define ROGUE_FEINT_TARGET_CLICK_MIN (2.5 SECONDS)
-#define ROGUE_FEINT_IMMOBILIZE (0.5 SECONDS)
+#define ROGUE_FEINT_DURATION rogue_value("feint_duration")
+#define ROGUE_FEINT_COOLDOWN rogue_value("feint_cooldown")
+#define ROGUE_FEINT_TARGET_CLICK rogue_value("feint_target_click")
+#define ROGUE_FEINT_TARGET_CLICK_MIN rogue_value("feint_target_click_min")
+#define ROGUE_FEINT_IMMOBILIZE rogue_value("feint_immobilize")
 #define ROGUE_FEINT_BAR_TICK (1 SECONDS)
 #define COMSIG_MOB_ROGUE_EYE_CHANGED "mob_rogue_eye_changed"
 #define ROGUE_EYELIDS_SOURCE "rogue_eyelids"
 #define ROGUE_EYELID_TOP 29
 #define ROGUE_EYELID_BOTTOM 4
-#define ROGUE_LOOK_AROUND_CLICK (3 SECONDS)
-#define ROGUE_LOOK_AROUND_RANGE 7
-#define ROGUE_LOOK_AROUND_REVEAL (10 SECONDS)
+#define ROGUE_LOOK_AROUND_CLICK rogue_value("look_around_click")
+#define ROGUE_LOOK_AROUND_RANGE rogue_value("look_around_range")
+#define ROGUE_LOOK_AROUND_REVEAL rogue_value("look_around_reveal")
 #define ROGUE_PING_ICON 'modular_redtard/icons/effects/rogue_ping.dmi'
 #define ROGUE_PING_HIDDEN "hidden"
 #define ROGUE_PING_TRAP "trap"
@@ -153,39 +157,39 @@
 #define ROGUE_COMPLIANCE_SOURCE "rogue_compliance"
 #define ROGUE_ALERT_ICON 'modular_redtard/icons/hud/rogue_alerts.dmi'
 
-#define ROGUE_GRAB_ACTION_DELAY 24
-#define ROGUE_GRAB_COMPLIANT_MODIFIER 2
-#define ROGUE_GRAB_RESTRAINED_BONUS 0.25
-#define ROGUE_GRAB_PRONE_BONUS 0.05
-#define ROGUE_GRAB_COMBAT_BONUS 0.3
-#define ROGUE_GRAB_CHOKEHOLD_BONUS 0.15
-#define ROGUE_GRAB_UPGRADE_COST_MIN 7
-#define ROGUE_GRAB_UPGRADE_COST_MAX 15
-#define ROGUE_GRAB_CHOKE_COST_MIN 1
-#define ROGUE_GRAB_CHOKE_COST_MAX 3
-#define ROGUE_GRAB_TWIST_COST_MIN 3
-#define ROGUE_GRAB_TWIST_COST_MAX 8
-#define ROGUE_GRAB_SHOVE_COST_MIN 5
-#define ROGUE_GRAB_SHOVE_COST_MAX 15
-#define ROGUE_GRAB_PIN_COST_MIN 1
-#define ROGUE_GRAB_PIN_COST_MAX 3
-#define ROGUE_GRAB_PIN_COST_TIME_FACTOR 0.66
-#define ROGUE_GRAB_PIN_FIRST_CUT 10
-#define ROGUE_GRAB_PIN_DECAY 2
-#define ROGUE_GRAB_DISARM_COST_MIN 3
-#define ROGUE_GRAB_DISARM_COST_MAX 8
-#define ROGUE_GRAB_DISARM_DROP_BONUS 20
-#define ROGUE_GRAB_DISARM_STUN 6
-#define ROGUE_GRAB_DISARM_CLICK 12
-#define ROGUE_GRAB_STRUGGLE_USER (2 SECONDS)
-#define ROGUE_GRAB_STRUGGLE_TARGET (1 SECONDS)
-#define ROGUE_GRAB_KNOCKDOWN_BASE 10
-#define ROGUE_GRAB_KNOCKDOWN_PER_SKILL 2
-#define ROGUE_GRAB_CHOKE_EMOTE_CHANCE 25
-#define ROGUE_GRAB_HEADBUTT_TARGET_FACTOR 1.5
-#define ROGUE_GRAB_HEADBUTT_TARGET_HOLD (1 SECONDS)
-#define ROGUE_GRAB_HEADBUTT_USER_HOLD (0.5 SECONDS)
+#define ROGUE_GRAB_ACTION_DELAY rogue_value("grab_action_delay")
+#define ROGUE_GRAB_COMPLIANT_MODIFIER rogue_value("grab_compliant_modifier")
+#define ROGUE_GRAB_RESTRAINED_BONUS rogue_value("grab_restrained_bonus")
+#define ROGUE_GRAB_PRONE_BONUS rogue_value("grab_prone_bonus")
+#define ROGUE_GRAB_COMBAT_BONUS rogue_value("grab_combat_bonus")
+#define ROGUE_GRAB_CHOKEHOLD_BONUS rogue_value("grab_chokehold_bonus")
+#define ROGUE_GRAB_UPGRADE_COST_MIN rogue_value("grab_upgrade_cost_min")
+#define ROGUE_GRAB_UPGRADE_COST_MAX rogue_value("grab_upgrade_cost_max")
+#define ROGUE_GRAB_CHOKE_COST_MIN rogue_value("grab_choke_cost_min")
+#define ROGUE_GRAB_CHOKE_COST_MAX rogue_value("grab_choke_cost_max")
+#define ROGUE_GRAB_TWIST_COST_MIN rogue_value("grab_twist_cost_min")
+#define ROGUE_GRAB_TWIST_COST_MAX rogue_value("grab_twist_cost_max")
+#define ROGUE_GRAB_SHOVE_COST_MIN rogue_value("grab_shove_cost_min")
+#define ROGUE_GRAB_SHOVE_COST_MAX rogue_value("grab_shove_cost_max")
+#define ROGUE_GRAB_PIN_COST_MIN rogue_value("grab_pin_cost_min")
+#define ROGUE_GRAB_PIN_COST_MAX rogue_value("grab_pin_cost_max")
+#define ROGUE_GRAB_PIN_COST_TIME_FACTOR rogue_value("grab_pin_cost_time_factor")
+#define ROGUE_GRAB_PIN_FIRST_CUT rogue_value("grab_pin_first_cut")
+#define ROGUE_GRAB_PIN_DECAY rogue_value("grab_pin_decay")
+#define ROGUE_GRAB_DISARM_COST_MIN rogue_value("grab_disarm_cost_min")
+#define ROGUE_GRAB_DISARM_COST_MAX rogue_value("grab_disarm_cost_max")
+#define ROGUE_GRAB_DISARM_DROP_BONUS rogue_value("grab_disarm_drop_bonus")
+#define ROGUE_GRAB_DISARM_STUN rogue_value("grab_disarm_stun")
+#define ROGUE_GRAB_DISARM_CLICK rogue_value("grab_disarm_click")
+#define ROGUE_GRAB_STRUGGLE_USER rogue_value("grab_struggle_user")
+#define ROGUE_GRAB_STRUGGLE_TARGET rogue_value("grab_struggle_target")
+#define ROGUE_GRAB_KNOCKDOWN_BASE rogue_value("grab_knockdown_base")
+#define ROGUE_GRAB_KNOCKDOWN_PER_SKILL rogue_value("grab_knockdown_per_skill")
+#define ROGUE_GRAB_CHOKE_EMOTE_CHANCE rogue_value("grab_choke_emote_chance")
+#define ROGUE_GRAB_HEADBUTT_TARGET_FACTOR rogue_value("grab_headbutt_target_factor")
+#define ROGUE_GRAB_HEADBUTT_TARGET_HOLD rogue_value("grab_headbutt_target_hold")
+#define ROGUE_GRAB_HEADBUTT_USER_HOLD rogue_value("grab_headbutt_user_hold")
 #define ROGUE_BITE_CHEW_LINE 17
-#define ROGUE_BITE_STRONG_FACTOR 2
+#define ROGUE_BITE_STRONG_FACTOR rogue_value("bite_strong_factor")
 #define ROGUE_GRAB_SOUND 'modular_redtard/rockhill/sound/foley/grab.ogg'
 #define ROGUE_GRAB_STRUGGLE_SOUND 'modular_redtard/rockhill/sound/foley/struggle.ogg'

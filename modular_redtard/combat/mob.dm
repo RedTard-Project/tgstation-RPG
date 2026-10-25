@@ -11,6 +11,7 @@
 	AddElement(/datum/element/rogue_mmb)
 	AddElement(/datum/element/rogue_rmb)
 	AddElement(/datum/element/rogue_grabber)
+	AddElement(/datum/element/rogue_striker)
 	add_fov_trait(ROGUE_FOV_SOURCE, FOV_90_DEGREES)
 	if(rogue_sight_shadows_enabled())
 		AddComponent(/datum/component/rogue_sight_shadows)

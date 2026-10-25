@@ -16,28 +16,21 @@ GLOBAL_LIST_INIT(rogue_rmb_intents, rogue_init_rmb_intents())
 	var/name = "intent"
 	var/desc = ""
 	var/icon_state = ""
-	var/damage_factor = 1
-	var/click_factor = 1
-	var/stamina_factor = 1
 
 /datum/rogue_rmb_intent/strong
 	name = "strong"
 	desc = "Your attacks deal +15% damage, but cost more stamina per hit."
 	icon_state = "rmbstrong"
-	damage_factor = 1.15
-	stamina_factor = 1.5
 
 /datum/rogue_rmb_intent/swift
 	name = "swift"
 	desc = "Your attacks have less recovery time."
 	icon_state = "rmbswift"
-	click_factor = 0.75
 
 /datum/rogue_rmb_intent/aimed
 	name = "aimed"
 	desc = "Your attacks are more careful and have a longer recovery time."
 	icon_state = "rmbaimed"
-	click_factor = 1.25
 
 /datum/rogue_rmb_intent/feint
 	name = "feint"
@@ -53,7 +46,6 @@ GLOBAL_LIST_INIT(rogue_rmb_intents, rogue_init_rmb_intents())
 	name = "weak"
 	desc = "Your attacks deal 20% damage. Useful for longer punishments, play-fighting, and bloodletting."
 	icon_state = "rmbweak"
-	damage_factor = 0.2
 
 /mob/living/carbon/human/var/datum/rogue_rmb_intent/rogue_rmb_intent
 /mob/living/carbon/human/var/rogue_feint_ready_at = 0
@@ -68,7 +60,7 @@ GLOBAL_LIST_INIT(rogue_rmb_intents, rogue_init_rmb_intents())
 	return 1
 
 /mob/living/carbon/human/rogue_rmb_factor(factor_name)
-	return rogue_rmb_intent ? rogue_rmb_intent.vars[factor_name] : 1
+	return rogue_rmb_intent ? rogue_value_or("rmb_[rogue_rmb_intent.name]_[factor_name]", 1) : 1
 
 /mob/living/carbon/human/proc/rogue_toggle_rmb_intent(intent_type)
 	var/datum/rogue_rmb_intent/picked = GLOB.rogue_rmb_intents[intent_type]
@@ -80,9 +72,15 @@ GLOBAL_LIST_INIT(rogue_rmb_intents, rogue_init_rmb_intents())
 
 /datum/status_effect/rogue_vulnerable
 	id = "rogue_vulnerable"
-	duration = ROGUE_FEINT_DURATION
 	status_type = STATUS_EFFECT_REFRESH
 	alert_type = null
+
+/datum/status_effect/rogue_vulnerable/on_creation(mob/living/new_owner, ...)
+	duration = ROGUE_FEINT_DURATION
+	return ..()
+
+/datum/status_effect/rogue_vulnerable/refresh(effect, ...)
+	duration = ROGUE_FEINT_DURATION
 
 /datum/element/rogue_rmb
 	element_flags = ELEMENT_DETACH_ON_HOST_DESTROY

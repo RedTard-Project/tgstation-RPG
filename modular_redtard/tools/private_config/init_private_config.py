@@ -14,12 +14,12 @@ Private balance for modular_redtard. The server repository mounts this repositor
 
 What the module reads from here, before the public defaults in `config/redtard/`:
 
-- `mechanics/armor.txt`, `intents.txt`, `items.txt`, `formulas.txt`: a file here replaces the public file of the
+- `mechanics/armor.txt`, `intents.txt`, `items.txt`, `formulas.txt`, `values.txt`: a file here replaces the public file of the
   same name as a whole; a file that is missing here falls back to `config/redtard/mechanics/`.
 - `config.txt`: loaded after `config/redtard/config.txt`; only the keys written here change, the rest keep the
   public values.
 
-The Rogue Mechanics admin panel saves formulas here when this folder exists.
+The Rogue Mechanics admin panel saves formulas and values here when this folder exists.
 
 Without access to this repository (CI, public clones) the server builds and runs on the public defaults.
 """

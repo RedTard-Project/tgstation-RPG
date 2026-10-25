@@ -11,6 +11,16 @@ GLOBAL_DATUM(rogue_mechanics, /datum/rogue_mechanics)
 		CRASH("Unknown rogue formula [id]")
 	return formula.evaluate(values)
 
+/proc/rogue_value(id)
+	var/datum/rogue_formula/value = rogue_mechanics().formulas[id]
+	if(!value?.is_value)
+		CRASH("Unknown rogue value [id]")
+	return value.number
+
+/proc/rogue_value_or(id, fallback)
+	var/datum/rogue_formula/value = rogue_mechanics().formulas[id]
+	return value?.is_value ? value.number : fallback
+
 /datum/rogue_mechanics
 	var/list/categories = list()
 	var/list/tables = list()
@@ -25,6 +35,9 @@ GLOBAL_DATUM(rogue_mechanics, /datum/rogue_mechanics)
 	for(var/id in GLOB.rogue_formula_definitions)
 		var/list/definition = GLOB.rogue_formula_definitions[id]
 		formulas[id] = new /datum/rogue_formula(id, definition[1], definition[2], definition[3])
+	for(var/id in GLOB.rogue_value_definitions)
+		var/list/definition = GLOB.rogue_value_definitions[id]
+		formulas[id] = new /datum/rogue_formula(id, definition[1], definition[2], null, TRUE)
 	load()
 
 /datum/rogue_mechanics/proc/directory()
@@ -107,14 +120,29 @@ GLOBAL_DATUM(rogue_mechanics, /datum/rogue_mechanics)
 	for(var/id in formulas)
 		var/datum/rogue_formula/formula = formulas[id]
 		formula.reset()
-	var/list/lines = read_lines(ROGUE_MECHANICS_FORMULAS_FILE)
+	read_formula_file(ROGUE_MECHANICS_FORMULAS_FILE)
+	read_formula_file(ROGUE_MECHANICS_VALUES_FILE)
+
+/datum/rogue_mechanics/proc/formula_lines(values, header)
+	var/list/lines = list(header, "")
+	for(var/id in formulas)
+		var/datum/rogue_formula/formula = formulas[id]
+		if(formula.is_value != values)
+			continue
+		lines += values ? "# [formula.desc]" : "# [formula.desc] Inputs: [jointext(formula.known_inputs, ", ")]."
+		lines += "[id] = [formula.text]"
+		lines += ""
+	return lines
+
+/datum/rogue_mechanics/proc/read_formula_file(file_name)
+	var/list/lines = read_lines(file_name)
 	if(isnull(lines))
 		return
 	for(var/line_number in 1 to length(lines))
 		var/line = trim(lines[line_number])
 		if(!length(line) || line[1] == ROGUE_MECHANICS_COMMENT)
 			continue
-		var/where = "[ROGUE_MECHANICS_FORMULAS_FILE]:[line_number]"
+		var/where = "[file_name]:[line_number]"
 		var/split_at = findtext(line, "=")
 		if(!split_at)
 			problems += "[where]: expected \"name = expression\""
@@ -172,14 +200,10 @@ GLOBAL_DATUM(rogue_mechanics, /datum/rogue_mechanics)
 			CHECK_TICK
 		rustg_file_write(jointext(lines, "\n"), "[target_directory]/[category.file]")
 		written += category.file
-	var/list/formula_lines = list("# Formulas: name = expression. Functions: [jointext(GLOB.rogue_formula_functions, ", ")]. Operators: + - * / % ^ < <= > >= == != and or not.", "")
-	for(var/id in formulas)
-		var/datum/rogue_formula/formula = formulas[id]
-		formula_lines += "# [formula.desc] Inputs: [jointext(formula.known_inputs, ", ")]."
-		formula_lines += "[id] = [formula.text]"
-		formula_lines += ""
-	rustg_file_write(jointext(formula_lines, "\n"), "[target_directory]/[ROGUE_MECHANICS_FORMULAS_FILE]")
+	rustg_file_write(jointext(formula_lines(FALSE, ROGUE_MECHANICS_FORMULAS_HEADER), "\n"), "[target_directory]/[ROGUE_MECHANICS_FORMULAS_FILE]")
 	written += ROGUE_MECHANICS_FORMULAS_FILE
+	rustg_file_write(jointext(formula_lines(TRUE, ROGUE_MECHANICS_VALUES_HEADER), "\n"), "[target_directory]/[ROGUE_MECHANICS_VALUES_FILE]")
+	written += ROGUE_MECHANICS_VALUES_FILE
 	return written
 
 /proc/rogue_mechanics_is_item_path(path)

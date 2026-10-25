@@ -53,6 +53,28 @@
 	qdel(held_bite)
 	TEST_ASSERT_NULL(biter.wear_mouth, "The bite stayed in the mouth after letting go")
 
+/datum/unit_test/rogue_strike
+
+/datum/unit_test/rogue_strike/Run()
+	var/mob/living/carbon/human/consistent/attacker = allocate(__IMPLIED_TYPE__)
+	var/mob/living/carbon/human/consistent/victim = allocate(__IMPLIED_TYPE__)
+	var/obj/item/knife/kitchen/knife = allocate(__IMPLIED_TYPE__)
+	attacker.AddElement(/datum/element/rogue_striker)
+	attacker.put_in_active_hand(knife)
+	attacker.zone_selected = BODY_ZONE_CHEST
+	TEST_ASSERT(istype(attacker.rogue_strike_intent(knife), /datum/intent/rogue_fallback/cut), "An edged item without intents did not get the cut fallback")
+	attacker.next_move = 0
+	knife.melee_attack_chain(attacker, victim)
+	TEST_ASSERT(victim.get_brute_loss() > 0, "The strike pipeline did no damage")
+	TEST_ASSERT(attacker.next_move > world.time, "The strike did not set a click delay")
+	var/brute_after_knife = victim.get_brute_loss()
+	attacker.dropItemToGround(knife)
+	attacker.combat_mode = TRUE
+	TEST_ASSERT(attacker.rogue_select_intent(4), "Could not pick the punch intent")
+	attacker.next_move = 0
+	TEST_ASSERT(attacker.rogue_strike(victim, null, attacker.rogue_active_intent()), "A punch did not go through")
+	TEST_ASSERT(victim.get_brute_loss() > brute_after_knife, "A punch did no damage")
+
 #undef TEST_ASSERT
 #undef TEST_ASSERT_EQUAL
 #endif

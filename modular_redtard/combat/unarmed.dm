@@ -70,6 +70,9 @@ GLOBAL_LIST_INIT(rogue_fist_intents, list(
 			if(right_click_attack_chain(attack_target, shove_modifiers))
 				return TRUE
 			return ..(attack_target, shove_modifiers)
+	if(fist.unarmed_action == ROGUE_UNARMED_HARM && combat_mode && isliving(attack_target) && rogue_combat_enabled())
+		rogue_strike(attack_target, null, fist)
+		return TRUE
 	if(fist.unarmed_action != ROGUE_UNARMED_HELP || !combat_mode || !isliving(attack_target))
 		return ..()
 	combat_mode = FALSE

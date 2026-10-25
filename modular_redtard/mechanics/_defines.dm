@@ -7,6 +7,9 @@
 #define ROGUE_MECHANICS_SUBDIR "redtard/mechanics"
 #define ROGUE_PRIVATE_MECHANICS_SUBDIR "redtard_private/mechanics"
 #define ROGUE_MECHANICS_FORMULAS_FILE "formulas.txt"
+#define ROGUE_MECHANICS_VALUES_FILE "values.txt"
+#define ROGUE_MECHANICS_FORMULAS_HEADER "# Formulas: name = expression. Functions: [jointext(GLOB.rogue_formula_functions, ", ")]. Operators: + - * / % ^ < <= > >= == != and or not."
+#define ROGUE_MECHANICS_VALUES_HEADER "# Combat numbers: name = value. Times are in deciseconds. A private config/redtard_private/mechanics/values.txt replaces this file."
 #define ROGUE_MECHANICS_COMMENT "#"
 #define ROGUE_MECHANICS_NONE "none"
 #define ROGUE_MECHANICS_EXPORT_DIR "data/mechanics_export"
@@ -54,6 +57,8 @@
 #define ROGUE_FORMULA_GRAB_SMASH_DAMAGE "grab_smash_damage"
 #define ROGUE_FORMULA_CHOKE_DAMAGE "choke_damage"
 #define ROGUE_FORMULA_BITE_DAMAGE "bite_damage"
+#define ROGUE_FORMULA_STRIKE_ACCURACY "strike_accuracy"
+#define ROGUE_FORMULA_STRIKE_DAMAGE "strike_damage"
 
 #define VV_HK_ROGUE_ATTRIBUTES "rogue_attributes"
 #define ROGUE_ATTRIBUTE_EDITOR_MODIFIER "attribute_editor"

@@ -34,6 +34,7 @@ ADMIN_VERB(rogue_armor_compare, R_DEBUG, "View Armor Comparison", "Browse and co
 			"default" = formula.default_text,
 			"inputs" = formula.known_inputs,
 			"error" = formula.error,
+			"value" = formula.is_value,
 		))
 	var/list/category_data = list()
 	for(var/name in mechanics.categories)
@@ -109,15 +110,12 @@ ADMIN_VERB(rogue_armor_compare, R_DEBUG, "View Armor Comparison", "Browse and co
 		if("save_formulas")
 			if(!check_rights(R_SERVER))
 				return
-			var/list/lines = list("# Saved from the Rogue Mechanics panel by [user.ckey] at [time2text(world.realtime, "YYYY-MM-DD hh:mm")].", "")
-			for(var/id in mechanics.formulas)
-				var/datum/rogue_formula/formula = mechanics.formulas[id]
-				lines += "# [formula.desc] Inputs: [jointext(formula.known_inputs, ", ")]."
-				lines += "[id] = [formula.text]"
-				lines += ""
+			var/stamp = "# Saved from the Rogue Mechanics panel by [user.ckey] at [time2text(world.realtime, "YYYY-MM-DD hh:mm")]."
 			var/save_to = mechanics.save_path(ROGUE_MECHANICS_FORMULAS_FILE)
-			rustg_file_write(jointext(lines, "\n"), save_to)
-			message_admins("[key_name_admin(user)] saved the rogue formulas to [save_to].")
+			rustg_file_write(jointext(mechanics.formula_lines(FALSE, stamp), "\n"), save_to)
+			var/values_to = mechanics.save_path(ROGUE_MECHANICS_VALUES_FILE)
+			rustg_file_write(jointext(mechanics.formula_lines(TRUE, stamp), "\n"), values_to)
+			message_admins("[key_name_admin(user)] saved the rogue formulas to [save_to] and the values to [values_to].")
 			log_admin("[key_name(user)] saved the rogue formulas to the config.")
 			return TRUE
 		if("armor_compare")

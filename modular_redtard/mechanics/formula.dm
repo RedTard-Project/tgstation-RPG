@@ -42,9 +42,12 @@ GLOBAL_LIST_INIT(rogue_formula_functions, list(
 	var/list/inputs
 	var/list/known_inputs
 	var/error
+	var/is_value = FALSE
+	var/number = 0
 
-/datum/rogue_formula/New(id, default_text, desc, list/known_inputs)
+/datum/rogue_formula/New(id, default_text, desc, list/known_inputs, is_value = FALSE)
 	src.id = id
+	src.is_value = is_value
 	src.desc = desc
 	src.default_text = default_text
 	src.known_inputs = known_inputs
@@ -60,6 +63,8 @@ GLOBAL_LIST_INIT(rogue_formula_functions, list(
 	for(var/step in compiled)
 		if(islist(step) && length(step) == 1)
 			used |= step[1]
+	if(is_value && length(used))
+		return "a value takes no inputs, got \"[used[1]]\""
 	if(length(known_inputs))
 		for(var/name in used)
 			if(!(name in known_inputs))
@@ -68,6 +73,8 @@ GLOBAL_LIST_INIT(rogue_formula_functions, list(
 	program = compiled
 	inputs = used
 	error = null
+	if(is_value)
+		number = evaluate()
 	return null
 
 /datum/rogue_formula/proc/reset()

@@ -111,7 +111,7 @@ GLOBAL_LIST_INIT(rogue_formula_definitions, list(
 	),
 	ROGUE_FORMULA_UNARMED_DAMAGE = list(
 		"(17 + civilized * 5) * if(strength > 14, 1.4 + (strength - 14) * 0.034, 1 + (strength - 10) * 0.1)",
-		"Damage of a bare-handed grab action: twisting, chewing, headbutting (Ratwood get_punch_dmg). civilized is the civilized barbarian trait.",
+		"Bare-handed damage before the strike formula: a punch, twisting, chewing, headbutting (Ratwood get_punch_dmg). civilized is the civilized barbarian trait.",
 		list("strength", "civilized"),
 	),
 	ROGUE_FORMULA_GRAB_CHANCE = list(
@@ -143,5 +143,15 @@ GLOBAL_LIST_INIT(rogue_formula_definitions, list(
 		"strength / 2 * if(strong_bite, 2, 1)",
 		"Damage of the first bite (Ratwood); it only hurts a limb that is already wounded unless the biter has a strong bite.",
 		list("strength", "strong_bite"),
+	),
+	ROGUE_FORMULA_STRIKE_ACCURACY = list(
+		"clamp(major_zone * 10 - face_zone * 24 + if(perception > 10, min((perception - 10) * 8, 40), 0) - if(perception < 10, (10 - perception) * 10, 0) + if(grab_state >= 2, 20, if(grab_state >= 1, 10, 0)) + target_prone * 30 + target_open * 20 + low_aim * 5 + weapon_skill * 8 + stab * 10 + pick * 15 + cut * 6 - blunt_precise * 10 + short_weapon * 10 + aimed * 20 - swift * 20, 5, 95)",
+		"Chance in percent that a blow lands on the aimed body part (Azure Peak resolve_aimed_zone). major_zone: a whole limb, head or chest; face_zone: head or face against someone with a mind; grab_state: 1 held, 2 held aggressively; low_aim: the attacker lies and aims at legs or feet; blunt_precise: a blunt blow at a small part; short_weapon: short weapon or bare hands. A miss falls on the whole limb or the chest.",
+		list("major_zone", "face_zone", "perception", "grab_state", "target_prone", "target_open", "low_aim", "weapon_skill", "stab", "pick", "cut", "blunt_precise", "short_weapon", "aimed", "swift"),
+	),
+	ROGUE_FORMULA_STRIKE_DAMAGE = list(
+		"max(round(force * strength_factor * damage_factor * stance_factor * if(prone, 0.5, 1)), 1)",
+		"Damage of one blow before armor (Azure Peak get_complex_damage). force is the weapon's force or bare-handed damage, strength_factor the strength_factor formula (1 for bare hands), damage_factor the intent's, stance_factor the alt intent's; prone: the attacker lies.",
+		list("force", "strength_factor", "damage_factor", "stance_factor", "prone"),
 	),
 ))
