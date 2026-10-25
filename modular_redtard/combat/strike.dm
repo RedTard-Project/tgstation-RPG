@@ -134,9 +134,13 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 	changeNext_move(max(round(intent.clickcd * rogue_rmb_factor("click_factor")), ROGUE_STRIKE_MIN_CLICK))
 	rogue_mark_in_combat()
 	target.rogue_mark_in_combat()
+	playsound(src, rogue_swing_sound(weapon, intent), 100, FALSE, -1)
+	if(intent.swingdelay > 0)
+		sleep(intent.swingdelay)
+		if(QDELETED(target) || incapacitated || !target.IsReachableBy(src, weapon ? weapon.reach : 1) || (weapon && (QDELETED(weapon) || !is_holding(weapon))) || rogue_strike_intent(weapon) != intent)
+			return FALSE
 	if(intent.releasedrain)
 		adjust_stamina_loss(intent.releasedrain * rogue_rmb_factor("stamina_factor"))
-	playsound(src, rogue_swing_sound(weapon, intent), 100, FALSE, -1)
 	do_attack_animation(target, weapon ? null : ATTACK_EFFECT_PUNCH, weapon)
 	target.lastattacker = real_name
 	target.lastattackerckey = ckey
@@ -147,14 +151,22 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 	if(target != src && target.check_block(weapon || src, force, weapon ? "\the [weapon]" : "the [intent.name]", weapon ? MELEE_ATTACK : UNARMED_ATTACK, weapon ? weapon.armour_penetration : 0, damtype))
 		return FALSE
 	var/zone = rogue_strike_zone(target, weapon, intent)
+	var/edged = weapon?.max_blade_int && intent.get_sharpness()
+	var/sharp_ratio = edged ? weapon.rogue_edge_ratio() : 1
+	if(edged && sharp_ratio < ROGUE_BLADE_CHIP_START && prob(33))
+		to_chat(src, span_info("The blade is dull..."))
 	var/damage = rogue_formula_value(ROGUE_FORMULA_STRIKE_DAMAGE, list(
 		"force" = force,
 		"strength_factor" = weapon ? rogue_strength_factor(weapon, src) : 1,
 		"damage_factor" = intent.damfactor,
 		"stance_factor" = rogue_rmb_factor("damage_factor"),
 		"prone" = body_position == LYING_DOWN,
+		"edge" = clamp((sharp_ratio - ROGUE_BLADE_DULL_FLOOR) / (ROGUE_BLADE_DULL_START - ROGUE_BLADE_DULL_FLOOR), 0, 1),
+		"chipped" = sharp_ratio < ROGUE_BLADE_CHIP_START ? sharp_ratio * 2 : 1,
 	))
 	target.rogue_take_strike(src, weapon, intent, zone, damage, attack_modifiers)
+	if(edged && !QDELETED(weapon))
+		weapon.rogue_dull(ROGUE_BLADE_HIT_WEAR, src)
 	return TRUE
 
 /mob/living/proc/rogue_take_strike(mob/living/attacker, obj/item/weapon, datum/intent/intent, zone, damage, list/attack_modifiers)

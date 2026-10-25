@@ -63,10 +63,18 @@
 	attacker.put_in_active_hand(knife)
 	attacker.zone_selected = BODY_ZONE_CHEST
 	TEST_ASSERT(istype(attacker.rogue_strike_intent(knife), /datum/intent/rogue_fallback/cut), "An edged item without intents did not get the cut fallback")
+	knife.max_blade_int = 100
+	knife.blade_int = 100
 	attacker.next_move = 0
 	knife.melee_attack_chain(attacker, victim)
 	TEST_ASSERT(victim.get_brute_loss() > 0, "The strike pipeline did no damage")
 	TEST_ASSERT(attacker.next_move > world.time, "The strike did not set a click delay")
+	TEST_ASSERT(knife.blade_int < 100, "An edged blow did not wear the blade")
+	var/obj/item/natural/whetstone/stone = allocate(__IMPLIED_TYPE__)
+	TEST_ASSERT(stone.sharpening_factor > 0, "The whetstone lost its sharpening factor")
+	knife.blade_int = 50
+	knife.rogue_sharpen(stone, attacker)
+	TEST_ASSERT(knife.blade_int > 50, "Sharpening did not restore the edge")
 	var/brute_after_knife = victim.get_brute_loss()
 	attacker.dropItemToGround(knife)
 	attacker.combat_mode = TRUE

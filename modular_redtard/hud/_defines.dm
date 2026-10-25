@@ -1,5 +1,5 @@
-#define ROGUE_HUD_MAX_SCREEN_OBJECTS 71
-#define ROGUE_HUD_MAX_SHOWN_OBJECTS 43
+#define ROGUE_HUD_MAX_SCREEN_OBJECTS 72
+#define ROGUE_HUD_MAX_SHOWN_OBJECTS 38
 
 #define ROGUE_HUD_STUB_TEXT "не реализовано"
 
@@ -72,15 +72,17 @@
 #define rogueui_clickdelay_right "CENTER:16,SOUTH"
 #define rogueui_clickdelay_mid "CENTER,SOUTH"
 #define rogueui_intents "CENTER-3:12,SOUTH"
-#define rogueui_rmb_columns 3
-#define rogueui_rmb_row_offset 20
-#define rogueui_feint "CENTER+3:20,SOUTH:8"
-#define rogueui_defdelay "CENTER+3:20,SOUTH:8"
+#define rogueui_rmb_button "CENTER+1:20,SOUTH"
+#define rogueui_rmb_menu_base 25
+#define rogueui_rmb_menu_step 20
+#define rogueui_feint "WEST:2,NORTH"
+#define rogueui_defdelay "WEST:2,NORTH"
 
 #define rogueui_targetdoll "EAST-1,NORTH-1"
 #define rogueui_doll_back "EAST-1,NORTH-1"
 #define rogueui_doll_toggle "EAST:-2,NORTH-2"
 #define rogueui_alert_drop 72
+#define rogueui_fov_blocker "SOUTH,WEST"
 #define rogueui_advsetup "CENTER-1,CENTER-1:16"
 
 #define rogueui_screen_origin "1,1"
@@ -96,6 +98,7 @@
 #define HUD_ROGUE_DOLL_BACK "rogue_doll_back"
 #define HUD_GROUP_ROGUE_PANEL (SCREEN_GROUP_AMT + 1)
 #define HUD_GROUP_ROGUE_DOLL (SCREEN_GROUP_AMT + 2)
+#define HUD_GROUP_ROGUE_RMB (SCREEN_GROUP_AMT + 3)
 #define HUD_ROGUE_GRAIN "rogue_grain"
 #define HUD_ROGUE_SCANNIES "rogue_scannies"
 #define HUD_ROGUE_READ "rogue_read"
@@ -103,6 +106,7 @@
 #define HUD_ROGUE_READ_TEXT_RIGHT "rogue_read_text_right"
 #define HUD_ROGUE_WEAPON_INTENTS "rogue_weapon_intents"
 #define HUD_ROGUE_RMB_SLOT(index) "rogue_rmb_[index]"
+#define HUD_ROGUE_RMB_BUTTON "rogue_rmb_button"
 #define HUD_ROGUE_QUAD_INTENTS "rogue_quad_intents"
 #define HUD_ROGUE_DEF_INTENT "rogue_def_intent"
 #define HUD_ROGUE_GIVE "rogue_give"

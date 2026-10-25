@@ -44,6 +44,8 @@
 			examine_list += span_notice("It is used with the [skill.name] skill.")
 	if(source.can_parry)
 		examine_list += span_notice("Defense: [source.rogue_wdefense()][source.wdefense_wbonus ? " ([source.wdefense] one-handed, [source.wdefense + source.wdefense_wbonus] wielded)" : ""].")
+	if(source.max_blade_int)
+		examine_list += span_notice("[source.rogue_edge_text()] Sharpness: [round(source.rogue_edge_ratio() * 100)]%.")
 	if(source.minstr)
 		examine_list += span_notice("It needs [source.minstr] strength to use properly[length(source.gripped_intents) ? " ([max(source.minstr / 2, 1)] wielded)" : ""].")
 

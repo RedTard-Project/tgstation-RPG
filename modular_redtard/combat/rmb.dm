@@ -181,6 +181,46 @@ GLOBAL_LIST_INIT(rogue_rmb_intents, rogue_init_rmb_intents())
 		to_chat(owner, span_info("[intent.name]: [intent.desc]"))
 		return
 	owner.rogue_toggle_rmb_intent(intent_type)
+	var/datum/hud/rogue/rogue_hud = hud
+	if(istype(rogue_hud) && rogue_hud.group_shown(HUD_GROUP_ROGUE_RMB))
+		rogue_hud.toggle_group(HUD_GROUP_ROGUE_RMB, usr)
+
+/atom/movable/screen/rogue/rmb_intent
+	name = "alt intents"
+	desc = "Pick an alt intent."
+	icon_state = "rmbintent"
+	screen_loc = rogueui_rmb_button
+	layer = ROGUE_HUD_LAYER
+	mouse_over_pointer = MOUSE_HAND_POINTER
+
+/atom/movable/screen/rogue/rmb_intent/Initialize(mapload, datum/hud/hud_owner)
+	. = ..()
+	var/mob/owner = hud_owner?.mymob
+	if(owner)
+		RegisterSignal(owner, COMSIG_MOB_ROGUE_RMB_CHANGED, PROC_REF(refresh))
+
+/atom/movable/screen/rogue/rmb_intent/proc/refresh()
+	SIGNAL_HANDLER
+	update_appearance()
+
+/atom/movable/screen/rogue/rmb_intent/update_overlays()
+	. = ..()
+	var/mob/living/carbon/human/owner = get_mob()
+	if(ishuman(owner) && owner.rogue_rmb_intent)
+		. += "[owner.rogue_rmb_intent.icon_state]_x"
+
+/atom/movable/screen/rogue/rmb_intent/Click(location, control, params)
+	var/mob/living/carbon/human/owner = get_mob()
+	if(usr != owner || !ishuman(owner))
+		return
+	var/list/modifiers = params2list(params)
+	if(LAZYACCESS(modifiers, RIGHT_CLICK) || LAZYACCESS(modifiers, SHIFT_CLICK))
+		var/datum/rogue_rmb_intent/intent = owner.rogue_rmb_intent
+		to_chat(owner, span_info(intent ? "[intent.name]: [intent.desc]" : "No alt intent picked."))
+		return
+	var/datum/hud/rogue/rogue_hud = hud
+	if(istype(rogue_hud))
+		rogue_hud.toggle_group(HUD_GROUP_ROGUE_RMB, usr)
 
 /atom/movable/screen/rogue/feint
 	name = "feint"

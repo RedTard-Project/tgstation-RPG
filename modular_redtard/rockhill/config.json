@@ -799,7 +799,10 @@
 					"armor_class",
 					"rogue_prevent_crits",
 					"rogue_blocksound",
-					"firefuel"
+					"firefuel",
+					"max_blade_int",
+					"sharpening_factor",
+					"spark_chance"
 				],
 				"rename": {
 					"inhand_icon_state": "item_state",
@@ -850,7 +853,10 @@
 					"rogue_force_wielded",
 					"wbalance",
 					"wdefense",
-					"wdefense_wbonus"
+					"wdefense_wbonus",
+					"max_blade_int",
+					"sharpening_factor",
+					"spark_chance"
 				],
 				"path_lists": [
 					"rockhill_keys",
@@ -882,7 +888,10 @@
 					"wbalance",
 					"minstr",
 					"armor_class",
-					"armour_penetration"
+					"armour_penetration",
+					"max_blade_int",
+					"sharpening_factor",
+					"spark_chance"
 				],
 				"intent_lists": [
 					"possible_item_intents",

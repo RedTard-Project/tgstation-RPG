@@ -1,6 +1,9 @@
 /datum/plane_master_group/main
 	relay_loc = "SCREEN_SOUTHWEST"
 
+/atom/movable/screen/fov_blocker
+	screen_loc = rogueui_fov_blocker
+
 /atom/movable/screen/plane_master/generate_relay_to(target_plane, relay_loc, client/show_to, blend_override, relay_layer)
 	if(!relay_loc && home?.relay_loc)
 		relay_loc = home.map ? "[home.map]:[home.relay_loc]" : home.relay_loc

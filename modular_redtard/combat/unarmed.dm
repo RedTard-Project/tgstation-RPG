@@ -71,7 +71,7 @@ GLOBAL_LIST_INIT(rogue_fist_intents, list(
 				return TRUE
 			return ..(attack_target, shove_modifiers)
 	if(fist.unarmed_action == ROGUE_UNARMED_HARM && combat_mode && isliving(attack_target) && rogue_combat_enabled())
-		rogue_strike(attack_target, null, fist)
+		INVOKE_ASYNC(src, PROC_REF(rogue_strike), attack_target, null, fist)
 		return TRUE
 	if(fist.unarmed_action != ROGUE_UNARMED_HELP || !combat_mode || !isliving(attack_target))
 		return ..()

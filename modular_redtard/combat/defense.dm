@@ -91,6 +91,8 @@ GLOBAL_LIST_INIT(rogue_default_parry_sounds, list('modular_redtard/rockhill/soun
 	log_combat(src, attacker, "parried")
 	if(weapon_parry)
 		used_weapon.take_damage(ROGUE_PARRY_INTEGRITY_DAMAGE, BRUTE, "", FALSE)
+		if(used_weapon.get_sharpness())
+			used_weapon.rogue_dull(ROGUE_BLADE_PARRY_WEAR + (attacker.rogue_rmb_is(/datum/rogue_rmb_intent/strong) ? ROGUE_BLADE_STRONG_WEAR : 0), src)
 	if(body_position != LYING_DOWN && !isanimal_or_basicmob(attacker))
 		var/factor = attacker.mind ? 1 : ROGUE_XP_NPC_FACTOR
 		if(rogue_can_train(src, defender_skill_type, attacker_rank))

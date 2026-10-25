@@ -290,3 +290,33 @@ strike_blood_damage = 5
 
 # Damage above which a blunt blow spills blood (Azure Peak).
 strike_blunt_blood_damage = 15
+
+# Sharpness a blade loses per landed edged blow (Azure Peak).
+blade_hit_wear = 1
+
+# Sharpness a parrying blade loses (Azure Peak SHARPNESS_ONHIT_DECAY).
+blade_parry_wear = 3
+
+# Extra sharpness a parrying blade loses against a blow in the strong alt intent (Azure Peak).
+blade_strong_wear = 3
+
+# Share of sharpness below which the strength and intent bonuses of an edged blow start to fade (Azure Peak SHARPNESS_TIER1_THRESHOLD).
+blade_dull_start = 0.8
+
+# Share of sharpness at which those bonuses are gone (Azure Peak SHARPNESS_TIER1_FLOOR).
+blade_dull_floor = 0.45
+
+# Share of sharpness below which the whole blow weakens to twice the share (Azure Peak SHARPNESS_TIER2_THRESHOLD).
+blade_chip_start = 0.2
+
+# Share of a whetstone's sharpening the first stroke gives (Azure Peak).
+blade_sharpen_first = 0.3
+
+# Deciseconds of one sharpening stroke (Azure Peak).
+blade_sharpen_time = 15
+
+# Maximum sharpness a blade loses per sharpening stroke (Azure Peak).
+blade_sharpen_wear = 0.5
+
+# Least maximum sharpness a blade can wear down to (Azure Peak).
+blade_min_max = 10

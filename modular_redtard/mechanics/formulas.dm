@@ -150,8 +150,8 @@ GLOBAL_LIST_INIT(rogue_formula_definitions, list(
 		list("major_zone", "face_zone", "perception", "grab_state", "target_prone", "target_open", "low_aim", "weapon_skill", "stab", "pick", "cut", "blunt_precise", "short_weapon", "aimed", "swift"),
 	),
 	ROGUE_FORMULA_STRIKE_DAMAGE = list(
-		"max(round(force * strength_factor * damage_factor * stance_factor * if(prone, 0.5, 1)), 1)",
-		"Damage of one blow before armor (Azure Peak get_complex_damage). force is the weapon's force or bare-handed damage, strength_factor the strength_factor formula (1 for bare hands), damage_factor the intent's, stance_factor the alt intent's; prone: the attacker lies.",
-		list("force", "strength_factor", "damage_factor", "stance_factor", "prone"),
+		"max(round(force * if(strength_factor > 1, 1 + (strength_factor - 1) * edge, strength_factor) * if(damage_factor > 1, 1 + (damage_factor - 1) * edge, damage_factor) * stance_factor * if(prone, 0.5, 1) * chipped), 1)",
+		"Damage of one blow before armor (Azure Peak get_complex_damage). force is the weapon's force or bare-handed damage, strength_factor the strength_factor formula (1 for bare hands), damage_factor the intent's, stance_factor the alt intent's; prone: the attacker lies; edge: share of the strength and intent bonuses a worn blade keeps (1 for a sharp or blunt weapon); chipped: factor of a badly chipped blade (Azure Peak sharpness tiers).",
+		list("force", "strength_factor", "damage_factor", "stance_factor", "prone", "edge", "chipped"),
 	),
 ))

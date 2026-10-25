@@ -60,6 +60,16 @@
 #define ROGUE_STRIKE_MISS_LUCK rogue_value("strike_miss_luck")
 #define ROGUE_STRIKE_BLOOD_DAMAGE rogue_value("strike_blood_damage")
 #define ROGUE_STRIKE_BLUNT_BLOOD_DAMAGE rogue_value("strike_blunt_blood_damage")
+#define ROGUE_BLADE_HIT_WEAR rogue_value("blade_hit_wear")
+#define ROGUE_BLADE_PARRY_WEAR rogue_value("blade_parry_wear")
+#define ROGUE_BLADE_STRONG_WEAR rogue_value("blade_strong_wear")
+#define ROGUE_BLADE_DULL_START rogue_value("blade_dull_start")
+#define ROGUE_BLADE_DULL_FLOOR rogue_value("blade_dull_floor")
+#define ROGUE_BLADE_CHIP_START rogue_value("blade_chip_start")
+#define ROGUE_BLADE_SHARPEN_FIRST rogue_value("blade_sharpen_first")
+#define ROGUE_BLADE_SHARPEN_TIME rogue_value("blade_sharpen_time")
+#define ROGUE_BLADE_SHARPEN_WEAR rogue_value("blade_sharpen_wear")
+#define ROGUE_BLADE_MIN_MAX rogue_value("blade_min_max")
 
 
 #define BASE_PARRY_STAMINA_DRAIN rogue_value("base_parry_stamina_drain")
