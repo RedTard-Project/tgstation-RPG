@@ -94,8 +94,5 @@ GLOBAL_LIST_EMPTY(rogue_attribute_static_data)
 		return
 	attributes.ui_interact(viewer)
 
-/mob/living/verb/rogue_check_attributes()
-	set name = "Attributes"
-	set category = "IC"
-	set desc = "Look over your stats and skills."
+GAME_VERB_DESC(/mob/living, rogue_check_attributes, "Attributes", "Look over your stats and skills.", "IC")
 	rogue_open_attributes(src)

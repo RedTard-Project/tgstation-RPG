@@ -1,7 +1,3 @@
-#define MAP_ERA_MODERN "modern"
-#define MAP_ERA_MEDIEVAL "medieval"
-#define JOB_ERA_ANY "any"
-
 /datum/map_config/var/map_era = MAP_ERA_MODERN
 
 /datum/map_config/LoadConfig(filename, error_if_missing)

@@ -231,10 +231,7 @@ GLOBAL_LIST_INIT(rockhill_event_ordinals, list("first", "second", "third", "four
 /datum/rockhill_calendar_ui/ui_close(mob/user)
 	qdel(src)
 
-/client/verb/rockhill_view_calendar()
-	set category = "IC"
-	set name = "View Calendar"
-	set desc = "View the Vale Calendar - the month, season, and upcoming feast daes."
+GAME_VERB_DESC(/client, rockhill_view_calendar, "View Calendar", "View the Vale Calendar - the month, season, and upcoming feast daes.", "IC")
 	var/datum/rockhill_calendar_ui/calendar = new
 	calendar.ui_interact(mob)
 

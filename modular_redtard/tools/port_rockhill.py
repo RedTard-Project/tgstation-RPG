@@ -116,7 +116,7 @@ SLOT_FLAG_MAP = {
 SMOOTH_DIR = 'modular_redtard/rockhill/icons/smooth'
 SOUND_DIR = 'modular_redtard/rockhill/sound'
 EDGES_FILE = 'turf_edges.dm'
-SMOOTHING_FILE = 'smoothing.dm'
+SMOOTHING_FILE = '_smoothing.dm'
 AREAS_JSON = 'areas.json'
 SUNLIT_LEAF = 'sunlit'
 TG_LAYERS = 'code/__DEFINES/layers.dm'
@@ -798,6 +798,10 @@ def runtime_path(path, rules):
     return rule['to']
 
 
+def tg_spelling(text):
+    return re.sub(r'eciev', lambda m: m.group(0)[:2] + m.group(0)[3] + m.group(0)[2] + m.group(0)[4], text, flags=re.IGNORECASE)
+
+
 def literal(value, tg_names):
     if value is None:
         return None
@@ -805,7 +809,7 @@ def literal(value, tg_names):
     if v in ('TRUE', 'FALSE', 'null') or NUMBER.match(v):
         return v
     if STRING_LITERAL.match(v) or (v.startswith('{"') and v.endswith('"}')):
-        return v
+        return tg_spelling(v)
     if ICON_LITERAL.match(v):
         return v
     if re.match(r'^[A-Z_][A-Z0-9_]*$', v) and (v in tg_names or v in BYOND_DIRECTIONS):
@@ -2025,7 +2029,7 @@ def string_value(raw):
         return None
     v = raw.strip()
     if STRING_LITERAL.match(v):
-        return v
+        return tg_spelling(v)
     return None
 
 
@@ -2454,7 +2458,7 @@ def generate_jobs(cfg, rw, usage, role_outfits, valid, station_usage, role_attrs
                     access_traits.add(expanded)
 
     lines = [f'#define {defines[p]} {titles[p]}' for p in ported]
-    open(f'{OUT_DIR}/job_titles.dm', 'w', encoding='utf-8', newline='\n').write('\n'.join(lines) + '\n')
+    open(f'{OUT_DIR}/_job_titles.dm', 'w', encoding='utf-8', newline='\n').write('\n'.join(lines) + '\n')
 
     blocks = []
     abstract = set()

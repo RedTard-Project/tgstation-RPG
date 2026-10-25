@@ -4792,7 +4792,7 @@
 /datum/rockhill_advclass/mercenary/ferentia/crossbowman
 	name = "Light Crossbowman"
 	outfit = /datum/outfit/job/roguetown/rockhill_class/mercenary/ferentia/crossbowman
-	desc = "Once a member of a guard mayhaps - you recieved training in bludgeons and crossbows, serving as a ferentia yet numerous and effective ranged service to the mercenary guild."
+	desc = "Once a member of a guard mayhaps - you received training in bludgeons and crossbows, serving as a ferentia yet numerous and effective ranged service to the mercenary guild."
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/mercenary/ferentia/crossbowman
 	rockhill_traits = list(
 		TRAIT_KEENEARS,

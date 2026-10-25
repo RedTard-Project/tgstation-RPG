@@ -11,3 +11,7 @@
 	LoadGroup(failed, REDTARD_FULL_CENTCOM_NAME, REDTARD_FULL_CENTCOM_PATH, REDTARD_FULL_CENTCOM_FILE, default_traits = ZTRAITS_CENTCOM)
 	for(var/failure in failed)
 		stack_trace("CentCom failed to load: [failure]")
+
+#undef REDTARD_FULL_CENTCOM_NAME
+#undef REDTARD_FULL_CENTCOM_PATH
+#undef REDTARD_FULL_CENTCOM_FILE

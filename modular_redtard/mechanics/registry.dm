@@ -77,7 +77,7 @@ GLOBAL_DATUM(rogue_mechanics, /datum/rogue_mechanics)
 			continue
 		if(isnull(current))
 			continue
-		var/field = lowertext(trim(copytext(line, 1, split_at)))
+		var/field = LOWER_TEXT(trim(copytext(line, 1, split_at)))
 		var/list/spec = category.fields[field]
 		if(!spec)
 			problems += "[where]: [current_id] has no field \"[field]\" (fields: [jointext(category.fields, ", ")])"
@@ -106,7 +106,7 @@ GLOBAL_DATUM(rogue_mechanics, /datum/rogue_mechanics)
 		if(!split_at)
 			problems += "[where]: expected \"name = expression\""
 			continue
-		var/id = lowertext(trim(copytext(line, 1, split_at)))
+		var/id = LOWER_TEXT(trim(copytext(line, 1, split_at)))
 		var/datum/rogue_formula/formula = formulas[id]
 		if(!formula)
 			problems += "[where]: no formula \"[id]\" (formulas: [jointext(formulas, ", ")])"

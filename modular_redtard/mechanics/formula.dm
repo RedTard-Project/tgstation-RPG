@@ -175,7 +175,7 @@ GLOBAL_LIST_INIT(rogue_formula_functions, list(
 			var/start = index
 			while(index <= length && findtext(ROGUE_FORMULA_NAME_CHARS, expression[index]))
 				index++
-			var/name = lowertext(copytext(expression, start, index))
+			var/name = LOWER_TEXT(copytext(expression, start, index))
 			switch(name)
 				if("and", "or", "not")
 					tokens += name

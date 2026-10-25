@@ -97,12 +97,12 @@ SUBSYSTEM_DEF(rogue_light)
 	GLOB.rogue_light_sentinel.appearance = dark_appearance
 	if(!rogue_light_map_enabled())
 		return
-	var/requested = lowertext(CONFIG_GET(string/rogue_lighting_carrier))
+	var/requested = LOWER_TEXT(CONFIG_GET(string/rogue_lighting_carrier))
 	if(requested in list(ROGUE_LIGHT_CARRIER_OBJECT, ROGUE_LIGHT_CARRIER_UNDERLAY, ROGUE_LIGHT_CARRIER_TENT, ROGUE_LIGHT_CARRIER_QUARTER))
 		carrier_mode = requested
 	else
 		log_config("Unknown ROGUE_LIGHTING_CARRIER [requested], using [ROGUE_LIGHT_CARRIER_OBJECT].")
-	want_native = lowertext(CONFIG_GET(string/rogue_lighting_backend)) == ROGUE_LIGHT_BACKEND_NATIVE
+	want_native = LOWER_TEXT(CONFIG_GET(string/rogue_lighting_backend)) == ROGUE_LIGHT_BACKEND_NATIVE
 	if(rogue_light_shared_carrier(carrier_mode) && !want_native)
 		log_config("ROGUE_LIGHTING_CARRIER [carrier_mode] needs ROGUE_LIGHTING_BACKEND native, using [ROGUE_LIGHT_CARRIER_OBJECT].")
 		carrier_mode = ROGUE_LIGHT_CARRIER_OBJECT

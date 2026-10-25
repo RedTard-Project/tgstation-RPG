@@ -129,7 +129,7 @@
 		if(ROGUE_KIND_TEXT)
 			return list(text)
 		if(ROGUE_KIND_BOOL)
-			switch(lowertext(text))
+			switch(LOWER_TEXT(text))
 				if("yes", "true", "1", "on")
 					return list(TRUE)
 				if("no", "false", "0", "off")
@@ -154,18 +154,18 @@
 				intents += path
 			return list(intents)
 		if(ROGUE_KIND_ARMOR)
-			if(!length(text) || lowertext(text) == ROGUE_MECHANICS_NONE)
+			if(!length(text) || LOWER_TEXT(text) == ROGUE_MECHANICS_NONE)
 				return list(null)
 			var/path = text2path("/datum/rogue_armor/[text]")
 			return ispath(path, /datum/rogue_armor) ? list(path) : "unknown armor: [text]"
 		if(ROGUE_KIND_SKILL)
-			if(!length(text) || lowertext(text) == ROGUE_MECHANICS_NONE)
+			if(!length(text) || LOWER_TEXT(text) == ROGUE_MECHANICS_NONE)
 				return list(null)
 			var/path = text2path("/datum/attribute/skill/[text]")
 			return ispath(path, /datum/attribute/skill) ? list(path) : "unknown skill: [text]"
 		if(ROGUE_KIND_ARMOR_CLASS, ROGUE_KIND_LENGTH, ROGUE_KIND_BALANCE)
 			var/list/names = rogue_mechanics_enum(kind)
-			var/value = names[lowertext(text)]
+			var/value = names[LOWER_TEXT(text)]
 			if(isnull(value))
 				value = text2num(text)
 			return isnull(value) ? "expected a number or one of [jointext(names, ", ")]: [text]" : list(value)
