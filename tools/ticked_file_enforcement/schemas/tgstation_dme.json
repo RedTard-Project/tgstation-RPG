@@ -6,6 +6,7 @@
 	"forbidden_includes": [
 		"code/modules/tgs/**/*.dm",
 		"code/modules/unit_tests/[!_]*.dm",
+		"modular_redtard/**/*.dm",
 		"DMCompiler_linux-x64/*.dm",
 		"tools/ci/od_lints.dm",
 		"tools/HubMigrator/HubMigrator.dm",

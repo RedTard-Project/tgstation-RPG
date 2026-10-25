@@ -70,11 +70,9 @@ GLOBAL_LIST_INIT(rogue_fist_intents, list(
 			if(right_click_attack_chain(attack_target, shove_modifiers))
 				return TRUE
 			return ..(attack_target, shove_modifiers)
-	var/wanted_mode = fist.unarmed_action == ROGUE_UNARMED_HARM
-	if(!isliving(attack_target) || combat_mode == wanted_mode)
+	if(fist.unarmed_action != ROGUE_UNARMED_HELP || !combat_mode || !isliving(attack_target))
 		return ..()
-	var/previous_mode = combat_mode
-	combat_mode = wanted_mode
+	combat_mode = FALSE
 	. = ..()
-	if(combat_mode == wanted_mode)
-		combat_mode = previous_mode
+	if(!combat_mode)
+		combat_mode = TRUE

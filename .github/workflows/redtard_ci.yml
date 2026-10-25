@@ -1,0 +1,51 @@
+name: modular_redtard
+
+on:
+  push:
+    paths:
+      - "modular_redtard/**"
+      - "config/redtard/**"
+      - "tools/ticked_file_enforcement/schemas/tgstation_dme.json"
+      - ".github/workflows/redtard_ci.yml"
+  pull_request:
+    paths:
+      - "modular_redtard/**"
+      - "config/redtard/**"
+      - "tools/ticked_file_enforcement/schemas/tgstation_dme.json"
+      - ".github/workflows/redtard_ci.yml"
+  workflow_dispatch:
+
+jobs:
+  includes:
+    name: Module includes
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Every module .dm is included from _module.dme
+        run: python3 modular_redtard/tools/ci/check_includes.py
+
+  build:
+    name: Compile with the module
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+
+      - parallel:
+        - name: Setup Bun
+          uses: ./.github/actions/setup_bun
+
+        - name: Restore or install BYOND
+          uses: ./.github/actions/restore_or_install_byond
+
+      - name: Compile the server build
+        run: |
+          source $HOME/BYOND/byond/bin/byondsetup
+          modular_redtard/build/build.sh dm
+
+      - name: Compile the unit test build
+        run: |
+          source $HOME/BYOND/byond/bin/byondsetup
+          modular_redtard/build/build.sh dm-test --no-run

@@ -32,3 +32,5 @@
 		return
 	if(fexists("[directory]/[ROGUE_LIGHT_CONFIG_FILE]"))
 		LoadEntries(ROGUE_LIGHT_CONFIG_FILE)
+	if(fexists("[directory]/[ROGUE_PRIVATE_CONFIG_FILE]"))
+		LoadEntries(ROGUE_PRIVATE_CONFIG_FILE)

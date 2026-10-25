@@ -1,4 +1,4 @@
-ADMIN_VERB(rogue_mechanics_panel, R_DEBUG, "Rogue Mechanics", "Formulas and numbers read from config/redtard/mechanics.", ADMIN_CATEGORY_ROGUE)
+ADMIN_VERB(rogue_mechanics_panel, R_DEBUG, "Rogue Mechanics", "Formulas and numbers read from config/redtard_private/mechanics, then config/redtard/mechanics.", ADMIN_CATEGORY_ROGUE)
 	var/datum/rogue_mechanics_panel/panel = new
 	panel.ui_interact(user.mob)
 	BLACKBOX_LOG_ADMIN_VERB("Rogue Mechanics")
@@ -50,7 +50,7 @@ ADMIN_VERB(rogue_armor_compare, R_DEBUG, "View Armor Comparison", "Browse and co
 			"fields" = field_names,
 		))
 	return list(
-		"directory" = mechanics.directory(),
+		"directory" = mechanics.has_private_directory() ? "[mechanics.private_directory()] (then [mechanics.directory()])" : mechanics.directory(),
 		"export_directory" = ROGUE_MECHANICS_EXPORT_DIR,
 		"loaded_ago" = DisplayTimeText(world.time - mechanics.loaded_at),
 		"problems" = mechanics.problems,
@@ -115,8 +115,9 @@ ADMIN_VERB(rogue_armor_compare, R_DEBUG, "View Armor Comparison", "Browse and co
 				lines += "# [formula.desc] Inputs: [jointext(formula.known_inputs, ", ")]."
 				lines += "[id] = [formula.text]"
 				lines += ""
-			rustg_file_write(jointext(lines, "\n"), "[mechanics.directory()]/[ROGUE_MECHANICS_FORMULAS_FILE]")
-			message_admins("[key_name_admin(user)] saved the rogue formulas to [mechanics.directory()]/[ROGUE_MECHANICS_FORMULAS_FILE].")
+			var/save_to = mechanics.save_path(ROGUE_MECHANICS_FORMULAS_FILE)
+			rustg_file_write(jointext(lines, "\n"), save_to)
+			message_admins("[key_name_admin(user)] saved the rogue formulas to [save_to].")
 			log_admin("[key_name(user)] saved the rogue formulas to the config.")
 			return TRUE
 		if("armor_compare")

@@ -125,23 +125,128 @@
 	return TRUE
 
 /mob/living/carbon/human/proc/rogue_try_bite(atom/target)
+	var/obj/item/rogue_bite/held_bite = wear_mouth
+	if(istype(held_bite))
+		return rogue_bite_chew(held_bite)
 	if(!isliving(target) || target == src || !target.Adjacent(src))
 		return FALSE
 	if(is_mouth_covered())
 		to_chat(src, span_warning("My mouth is covered."))
 		return FALSE
+	if(wear_mouth)
+		to_chat(src, span_warning("My mouth has something in it."))
+		return FALSE
+	if(HAS_TRAIT(src, TRAIT_PACIFISM))
+		to_chat(src, span_warning("I don't want to harm [target]!"))
+		return FALSE
 	var/mob/living/victim = target
 	changeNext_move(CLICK_CD_MELEE)
 	face_atom(victim)
 	rogue_mark_in_combat()
+	rogue_reveal_sneak()
 	do_attack_animation(victim, ATTACK_EFFECT_BITE)
 	if(victim.check_block(src, ROGUE_BITE_DAMAGE, "the bite", UNARMED_ATTACK, 0, BRUTE))
 		return FALSE
-	victim.apply_damage(ROGUE_BITE_DAMAGE, BRUTE, zone_selected, sharpness = SHARP_POINTY)
-	victim.visible_message(span_danger("[src] bites [victim]!"), span_userdanger("[src] bites me!"), ignored_mobs = src)
-	to_chat(src, span_danger("I bite [victim]!"))
-	playsound(victim, 'sound/items/weapons/bite.ogg', 50, TRUE, -1)
-	log_combat(src, victim, "bit")
+	if(!iscarbon(victim))
+		victim.apply_damage(ROGUE_BITE_DAMAGE, BRUTE, zone_selected, sharpness = SHARP_POINTY)
+		victim.visible_message(span_danger("[src] bites [victim]!"), span_userdanger("[src] bites me!"), ignored_mobs = src)
+		to_chat(src, span_danger("I bite [victim]!"))
+		playsound(victim, 'sound/items/weapons/bite.ogg', 50, TRUE, -1)
+		log_combat(src, victim, "bit")
+		return TRUE
+	var/mob/living/carbon/bitten = victim
+	var/zone = rogue_precise_zone()
+	var/obj/item/bodypart/limb = bitten.get_bodypart(rogue_zone_target(zone))
+	if(!limb)
+		to_chat(src, span_warning("Nothing to bite."))
+		return FALSE
+	var/strong = HAS_TRAIT(src, TRAIT_STRONGBITE)
+	if(strong || LAZYLEN(limb.wounds))
+		bitten.apply_damage(rogue_formula_value(ROGUE_FORMULA_BITE_DAMAGE, list("strength" = rogue_stat(ROGUE_STAT_STRENGTH), "strong_bite" = strong)), BRUTE, limb.body_zone, sharpness = SHARP_POINTY)
+		playsound(bitten, pick('modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (3).ogg'), 100, TRUE, -1)
+	playsound(bitten, 'sound/items/weapons/bite.ogg', 50, TRUE, -1)
+	var/part = rogue_zone_name(zone)
+	bitten.visible_message(span_danger("[src] bites [bitten]'s [part]!"), span_userdanger("[src] bites my [part]!"), ignored_mobs = src)
+	to_chat(src, span_danger("I bite [bitten]'s [part]!"))
+	log_combat(src, bitten, "bit")
+	var/obj/item/rogue_bite/new_bite = new(src, src, bitten, zone)
+	if(!equip_to_slot_if_possible(new_bite, ITEM_SLOT_ROGUE_MOUTH, disable_warning = TRUE))
+		qdel(new_bite)
+	return TRUE
+
+/mob/living/carbon/human/proc/rogue_bite_chew(obj/item/rogue_bite/held_bite)
+	var/mob/living/carbon/bitten = held_bite.bitten
+	if(QDELETED(bitten) || !bitten.Adjacent(src) || incapacitated)
+		qdel(held_bite)
+		return FALSE
+	if(world.time < next_move)
+		return FALSE
+	changeNext_move(CLICK_CD_GRABBING)
+	rogue_mark_in_combat()
+	rogue_reveal_sneak()
+	var/damage = rogue_unarmed_damage() * (HAS_TRAIT(src, TRAIT_STRONGBITE) ? ROGUE_BITE_STRONG_FACTOR : 1)
+	do_attack_animation(bitten, ATTACK_EFFECT_BITE)
+	bitten.apply_damage(damage, BRUTE, rogue_zone_target(held_bite.zone), sharpness = SHARP_POINTY)
+	playsound(bitten, pick('modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (3).ogg'), 100, FALSE, -1)
+	var/part = rogue_zone_name(held_bite.zone)
+	bitten.visible_message(span_danger("[src] bites [bitten]'s [part]!"), span_userdanger("[src] bites my [part]!"), span_hear("I hear a sickening sound of chewing!"), COMBAT_MESSAGE_RANGE, src)
+	to_chat(src, span_danger("I bite [bitten]'s [part]."))
+	log_combat(src, bitten, "chewed the [part] of")
+	return TRUE
+
+/obj/item/rogue_bite
+	name = "bite"
+	desc = "Teeth sunk into someone."
+	icon = ROGUE_HUD_ICON_GRABS
+	icon_state = "bite"
+	item_flags = ABSTRACT | DROPDEL
+	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	w_class = WEIGHT_CLASS_HUGE
+	var/mob/living/carbon/human/biter
+	var/mob/living/carbon/bitten
+	var/zone
+
+/obj/item/rogue_bite/Initialize(mapload, mob/living/carbon/human/new_biter, mob/living/carbon/new_bitten, bite_zone)
+	. = ..()
+	if(!istype(new_biter) || !istype(new_bitten))
+		return INITIALIZE_HINT_QDEL
+	biter = new_biter
+	bitten = new_bitten
+	zone = bite_zone
+	name = "[bitten.name]'s [rogue_zone_name(zone)]"
+	ADD_TRAIT(src, TRAIT_NO_STORAGE_INSERT, TRAIT_GENERIC)
+	RegisterSignal(bitten, COMSIG_QDELETING, PROC_REF(release))
+	RegisterSignals(bitten, list(COMSIG_MOVABLE_MOVED), PROC_REF(check_reach))
+	RegisterSignals(biter, list(COMSIG_MOVABLE_MOVED, COMSIG_MOB_STATCHANGE), PROC_REF(check_reach))
+
+/obj/item/rogue_bite/Destroy()
+	if(bitten)
+		UnregisterSignal(bitten, list(COMSIG_QDELETING, COMSIG_MOVABLE_MOVED))
+	if(biter)
+		UnregisterSignal(biter, list(COMSIG_MOVABLE_MOVED, COMSIG_MOB_STATCHANGE))
+	biter = null
+	bitten = null
+	return ..()
+
+/obj/item/rogue_bite/proc/release(datum/source)
+	SIGNAL_HANDLER
+	qdel(src)
+
+/obj/item/rogue_bite/proc/check_reach(datum/source)
+	SIGNAL_HANDLER
+	if(QDELETED(biter) || QDELETED(bitten) || biter.stat != STABLE || !biter.Adjacent(bitten))
+		qdel(src)
+
+/obj/item/rogue_bite/attack_hand(mob/user, list/modifiers)
+	if(user != biter)
+		return ..()
+	if(LAZYACCESS(modifiers, RIGHT_CLICK))
+		qdel(src)
+		return TRUE
+	if(text2num(LAZYACCESS(modifiers, ICON_Y)) >= ROGUE_BITE_CHEW_LINE)
+		biter.rogue_bite_chew(src)
+	else
+		to_chat(user, span_warning("I can't drink from [bitten]."))
 	return TRUE
 
 /mob/living/carbon/human/proc/rogue_steal_targets(mob/living/carbon/human/victim, zone)

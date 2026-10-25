@@ -5,6 +5,7 @@
 #define ROGUE_FORMULA_NAME_CHARS "abcdefghijklmnopqrstuvwxyz0123456789_"
 
 #define ROGUE_MECHANICS_SUBDIR "redtard/mechanics"
+#define ROGUE_PRIVATE_MECHANICS_SUBDIR "redtard_private/mechanics"
 #define ROGUE_MECHANICS_FORMULAS_FILE "formulas.txt"
 #define ROGUE_MECHANICS_COMMENT "#"
 #define ROGUE_MECHANICS_NONE "none"
@@ -46,6 +47,13 @@
 #define ROGUE_FORMULA_MANTRAP_SET_TIME "mantrap_set_time"
 #define ROGUE_FORMULA_MANTRAP_SET_CHANCE "mantrap_set_chance"
 #define ROGUE_FORMULA_MANTRAP_DISARM_TIME "mantrap_disarm_time"
+#define ROGUE_FORMULA_UNARMED_DAMAGE "unarmed_damage"
+#define ROGUE_FORMULA_GRAB_CHANCE "grab_chance"
+#define ROGUE_FORMULA_GRAB_DISARM_CHANCE "grab_disarm_chance"
+#define ROGUE_FORMULA_GRAB_PIN_TIME "grab_pin_time"
+#define ROGUE_FORMULA_GRAB_SMASH_DAMAGE "grab_smash_damage"
+#define ROGUE_FORMULA_CHOKE_DAMAGE "choke_damage"
+#define ROGUE_FORMULA_BITE_DAMAGE "bite_damage"
 
 #define VV_HK_ROGUE_ATTRIBUTES "rogue_attributes"
 #define ROGUE_ATTRIBUTE_EDITOR_MODIFIER "attribute_editor"

@@ -2,8 +2,15 @@ GLOBAL_LIST_INIT(rogue_rmb_intents, rogue_init_rmb_intents())
 
 /proc/rogue_init_rmb_intents()
 	. = list()
-	for(var/datum/rogue_rmb_intent/intent as anything in subtypesof(/datum/rogue_rmb_intent))
-		.[intent] = new intent
+	for(var/intent_type in list(
+		/datum/rogue_rmb_intent/strong,
+		/datum/rogue_rmb_intent/swift,
+		/datum/rogue_rmb_intent/aimed,
+		/datum/rogue_rmb_intent/feint,
+		/datum/rogue_rmb_intent/defend,
+		/datum/rogue_rmb_intent/weak,
+	))
+		.[intent_type] = new intent_type
 
 /datum/rogue_rmb_intent
 	var/name = "intent"
@@ -63,18 +70,11 @@ GLOBAL_LIST_INIT(rogue_rmb_intents, rogue_init_rmb_intents())
 /mob/living/carbon/human/rogue_rmb_factor(factor_name)
 	return rogue_rmb_intent ? rogue_rmb_intent.vars[factor_name] : 1
 
-/mob/living/carbon/human/proc/rogue_choose_rmb_intent()
-	var/list/choices = list()
-	var/list/by_name = list()
-	for(var/path in GLOB.rogue_rmb_intents)
-		var/datum/rogue_rmb_intent/intent = GLOB.rogue_rmb_intents[path]
-		choices[intent.name] = image(icon = ROGUE_HUD_ICON, icon_state = intent.icon_state)
-		by_name[intent.name] = intent
-	choices[ROGUE_RMB_NONE_NAME] = image(icon = ROGUE_HUD_ICON, icon_state = "rmbintent")
-	var/picked = show_radial_menu(src, src, choices, require_near = FALSE, tooltips = TRUE)
-	if(!picked || QDELETED(src))
+/mob/living/carbon/human/proc/rogue_toggle_rmb_intent(intent_type)
+	var/datum/rogue_rmb_intent/picked = GLOB.rogue_rmb_intents[intent_type]
+	if(!picked)
 		return
-	rogue_rmb_intent = by_name[picked]
+	rogue_rmb_intent = rogue_rmb_intent == picked ? null : picked
 	playsound_local(src, 'sound/machines/click.ogg', 50, FALSE)
 	SEND_SIGNAL(src, COMSIG_MOB_ROGUE_RMB_CHANGED)
 
@@ -144,38 +144,45 @@ GLOBAL_LIST_INIT(rogue_rmb_intents, rogue_init_rmb_intents())
 	log_combat(src, target, "feinted")
 	return TRUE
 
-/atom/movable/screen/rogue/rmb_intent
-	name = "alt intents"
-	icon_state = "rmbintent"
-	screen_loc = rogueui_rmbintents
+/atom/movable/screen/rogue/rmb_choice
+	name = "alt intent"
 	layer = ROGUE_HUD_LAYER
 	mouse_over_pointer = MOUSE_HAND_POINTER
+	var/intent_type
 
-/atom/movable/screen/rogue/rmb_intent/Initialize(mapload, datum/hud/hud_owner)
+/atom/movable/screen/rogue/rmb_choice/Initialize(mapload, datum/hud/hud_owner)
 	. = ..()
 	var/mob/owner = hud_owner?.mymob
 	if(owner)
 		RegisterSignal(owner, COMSIG_MOB_ROGUE_RMB_CHANGED, PROC_REF(refresh))
 
-/atom/movable/screen/rogue/rmb_intent/proc/refresh()
+/atom/movable/screen/rogue/rmb_choice/proc/set_intent(new_type)
+	intent_type = new_type
+	var/datum/rogue_rmb_intent/intent = GLOB.rogue_rmb_intents[intent_type]
+	name = intent.name
+	icon_state = intent.icon_state
+	update_appearance()
+
+/atom/movable/screen/rogue/rmb_choice/proc/refresh()
 	SIGNAL_HANDLER
 	update_appearance()
 
-/atom/movable/screen/rogue/rmb_intent/update_overlays()
+/atom/movable/screen/rogue/rmb_choice/update_overlays()
 	. = ..()
 	var/mob/living/carbon/human/owner = get_mob()
-	if(ishuman(owner) && owner.rogue_rmb_intent)
-		. += "[owner.rogue_rmb_intent.icon_state]_x"
+	if(ishuman(owner) && owner.rogue_rmb_intent && owner.rogue_rmb_intent == GLOB.rogue_rmb_intents[intent_type])
+		. += "[icon_state]_x"
 
-/atom/movable/screen/rogue/rmb_intent/Click(location, control, params)
+/atom/movable/screen/rogue/rmb_choice/Click(location, control, params)
 	var/mob/living/carbon/human/owner = get_mob()
-	if(usr != owner || !ishuman(owner))
+	if(usr != owner || !ishuman(owner) || !intent_type)
 		return
-	if(LAZYACCESS(params2list(params), RIGHT_CLICK))
-		if(owner.rogue_rmb_intent)
-			to_chat(owner, span_info("[owner.rogue_rmb_intent.name]: [owner.rogue_rmb_intent.desc]"))
+	var/list/modifiers = params2list(params)
+	if(LAZYACCESS(modifiers, RIGHT_CLICK) || LAZYACCESS(modifiers, SHIFT_CLICK))
+		var/datum/rogue_rmb_intent/intent = GLOB.rogue_rmb_intents[intent_type]
+		to_chat(owner, span_info("[intent.name]: [intent.desc]"))
 		return
-	INVOKE_ASYNC(owner, TYPE_PROC_REF(/mob/living/carbon/human, rogue_choose_rmb_intent))
+	owner.rogue_toggle_rmb_intent(intent_type)
 
 /atom/movable/screen/rogue/feint
 	name = "feint"

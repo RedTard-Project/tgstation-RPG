@@ -29,6 +29,38 @@
 /datum/hud/rogue/proc/group_shown(group_key)
 	return !(group_key in folded_groups)
 
+/datum/hud/rogue/proc/watched_mob(mob/viewer)
+	if(isobserver(viewer) && ishuman(viewer.client?.eye) && viewer.client.eye != viewer)
+		return viewer.client.eye
+	return viewer
+
+/datum/hud/rogue/proc/toggle_group(group_key, mob/viewer)
+	var/mob/watched = watched_mob(viewer)
+	var/datum/hud/rogue/watched_hud = watched.hud_used
+	var/list/pieces = istype(watched_hud) ? watched_hud.screen_groups[group_key] : null
+	var/shown = !group_shown(group_key)
+	folded_groups ^= list(group_key)
+	if(viewer.client && pieces)
+		if(shown)
+			viewer.client.screen |= pieces
+		else
+			viewer.client.screen -= pieces
+	var/atom/movable/screen/toggle = screen_objects[group_key == HUD_GROUP_ROGUE_DOLL ? HUD_ROGUE_DOLL_TOGGLE : HUD_ROGUE_PANEL_TOGGLE]
+	toggle?.update_appearance()
+	return shown
+
+/datum/hud/rogue/proc/toggle_inventory(mob/viewer)
+	var/mob/watched = watched_mob(viewer)
+	var/list/inventory = watched.hud_used?.screen_groups[HUD_GROUP_TOGGLEABLE_INVENTORY]
+	inventory_shown = !inventory_shown
+	if(viewer.client && inventory)
+		if(inventory_shown)
+			viewer.client.screen |= inventory
+		else
+			viewer.client.screen -= inventory
+	screen_objects[HUD_HUMAN_TOGGLE_INVENTORY]?.update_appearance()
+	return inventory_shown
+
 /datum/hud/rogue/get_ui_alert_placement(index)
 	if(index > 5)
 		return ""
@@ -70,7 +102,11 @@
 	add_screen_object(/atom/movable/screen/rogue/placeholder/readtext, HUD_ROGUE_READ_TEXT_LEFT, group_key = FALSE)
 	add_screen_object(/atom/movable/screen/rogue/weapon_intents, HUD_ROGUE_WEAPON_INTENTS, HUD_GROUP_STATIC)
 	add_screen_object(/atom/movable/screen/mood/rogue, HUD_MOB_MOOD, HUD_GROUP_STATIC)
-	add_screen_object(/atom/movable/screen/rogue/rmb_intent, HUD_ROGUE_RMB_INTENT, HUD_GROUP_STATIC)
+	var/rmb_index = 0
+	for(var/intent_type in GLOB.rogue_rmb_intents)
+		rmb_index++
+		var/atom/movable/screen/rogue/rmb_choice/choice = add_screen_object(/atom/movable/screen/rogue/rmb_choice, HUD_ROGUE_RMB_SLOT(rmb_index), HUD_GROUP_STATIC, ui_loc = rmb_screen_loc(rmb_index))
+		choice.set_intent(intent_type)
 	add_screen_object(/atom/movable/screen/healths/rogue, HUD_MOB_HEALTH, HUD_GROUP_STATIC)
 	add_screen_object(/atom/movable/screen/rogue/quad_intents, HUD_ROGUE_QUAD_INTENTS, HUD_GROUP_ROGUE_PANEL)
 	add_screen_object(/atom/movable/screen/rogue/def_intent, HUD_ROGUE_DEF_INTENT, HUD_GROUP_ROGUE_PANEL)
@@ -106,6 +142,11 @@
 	add_screen_object(/atom/movable/screen/stamina/rogue, HUD_MOB_STAMINA, HUD_GROUP_STATIC)
 	add_screen_object(/atom/movable/screen/rogue/energy, HUD_ROGUE_ENERGY, HUD_GROUP_STATIC)
 	add_screen_object(/atom/movable/screen/rogue/feint, HUD_ROGUE_FEINT, HUD_GROUP_STATIC)
+
+/datum/hud/rogue/human/proc/rmb_screen_loc(index)
+	var/column = (index - 1) % rogueui_rmb_columns
+	var/row_offset = index <= rogueui_rmb_columns ? ":[rogueui_rmb_row_offset]" : ""
+	return "CENTER+[column]:20,SOUTH[row_offset]"
 
 /datum/hud/rogue/human/show_hud(version = 0, mob/viewmob)
 	. = ..()

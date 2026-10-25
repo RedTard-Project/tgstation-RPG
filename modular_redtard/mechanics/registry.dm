@@ -30,6 +30,19 @@ GLOBAL_DATUM(rogue_mechanics, /datum/rogue_mechanics)
 /datum/rogue_mechanics/proc/directory()
 	return "[config?.directory || "config"]/[ROGUE_MECHANICS_SUBDIR]"
 
+/datum/rogue_mechanics/proc/private_directory()
+	return "[config?.directory || "config"]/[ROGUE_PRIVATE_MECHANICS_SUBDIR]"
+
+/datum/rogue_mechanics/proc/has_private_directory()
+	return fexists("[private_directory()]/")
+
+/datum/rogue_mechanics/proc/file_path(file_name)
+	var/private_path = "[private_directory()]/[file_name]"
+	return fexists(private_path) ? private_path : "[directory()]/[file_name]"
+
+/datum/rogue_mechanics/proc/save_path(file_name)
+	return "[has_private_directory() ? private_directory() : directory()]/[file_name]"
+
 /datum/rogue_mechanics/proc/load()
 	problems = list()
 	tables = list()
@@ -42,7 +55,7 @@ GLOBAL_DATUM(rogue_mechanics, /datum/rogue_mechanics)
 		log_config("Rogue mechanics: [problem]")
 
 /datum/rogue_mechanics/proc/read_lines(file_name)
-	var/path = "[directory()]/[file_name]"
+	var/path = file_path(file_name)
 	if(!fexists(path))
 		return null
 	return splittext(replacetext(file2text(path), ascii2text(ROGUE_MECHANICS_CARRIAGE_RETURN), ""), "\n")

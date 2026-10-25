@@ -109,4 +109,39 @@ GLOBAL_LIST_INIT(rogue_formula_definitions, list(
 		"Whether looking around marks a hiding place with someone tucked inside (Azure Peak): non-zero means found.",
 		list("perception", "target_sneaking"),
 	),
+	ROGUE_FORMULA_UNARMED_DAMAGE = list(
+		"(17 + civilized * 5) * if(strength > 14, 1.4 + (strength - 14) * 0.034, 1 + (strength - 10) * 0.1)",
+		"Damage of a bare-handed grab action: twisting, chewing, headbutting (Ratwood get_punch_dmg). civilized is the civilized barbarian trait.",
+		list("strength", "civilized"),
+	),
+	ROGUE_FORMULA_GRAB_CHANCE = list(
+		"clamp(((4 + strength_diff / 2 + skill_diff) * 10 + noise) * modifier, 5, 95)",
+		"Chance in percent to tighten a grab, or to shove a grabbed foe down (Ratwood). Strength and wrestling are grabber minus target; noise is -5 to 5; modifier is 2 for a compliant target, +0.25 restrained, +0.05 lying, +-0.3 for combat readiness, +0.15 chokehold.",
+		list("strength_diff", "skill_diff", "noise", "modifier"),
+	),
+	ROGUE_FORMULA_GRAB_DISARM_CHANCE = list(
+		"clamp((3 + strength_diff / 4 + skill_diff) * 10 * modifier, 5, 95) - weapon_skill * 5 - wielded * 20",
+		"Chance in percent to take the item from a grabbed hand (Ratwood); 20 more to knock it to the floor instead. weapon_skill is the holder's rank in the item's skill.",
+		list("strength_diff", "skill_diff", "modifier", "weapon_skill", "wielded"),
+	),
+	ROGUE_FORMULA_GRAB_PIN_TIME = list(
+		"max((65 + skill_diff * 10 + strength_diff * 5) * modifier, 20)",
+		"How long one pin holds a grabbed foe on the ground, in deciseconds (Ratwood).",
+		list("strength_diff", "skill_diff", "modifier"),
+	),
+	ROGUE_FORMULA_GRAB_SMASH_DAMAGE = list(
+		"punch * (1 + unarmed / 10)",
+		"Damage of smashing a grabbed limb into a wall, floor or table (Ratwood). punch is unarmed_damage, unarmed the unarmed skill rank.",
+		list("punch", "unarmed"),
+	),
+	ROGUE_FORMULA_CHOKE_DAMAGE = list(
+		"if(strength > 14, 14, strength * 0.75) * if(chokehold, 1.2, 1) * if(held_back, 0.95, 1)",
+		"Suffocation per choke of a neck grab (Ratwood). chokehold: grabbed from behind; held_back: the victim holds the choker aggressively.",
+		list("strength", "chokehold", "held_back"),
+	),
+	ROGUE_FORMULA_BITE_DAMAGE = list(
+		"strength / 2 * if(strong_bite, 2, 1)",
+		"Damage of the first bite (Ratwood); it only hurts a limb that is already wounded unless the biter has a strong bite.",
+		list("strength", "strong_bite"),
+	),
 ))

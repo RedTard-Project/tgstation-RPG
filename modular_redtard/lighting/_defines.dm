@@ -1,4 +1,5 @@
 #define ROGUE_LIGHT_CONFIG_FILE "redtard/config.txt"
+#define ROGUE_PRIVATE_CONFIG_FILE "redtard_private/config.txt"
 
 #define ROGUE_LIGHT_CARRIER_OBJECT "object"
 #define ROGUE_LIGHT_CARRIER_UNDERLAY "underlay"

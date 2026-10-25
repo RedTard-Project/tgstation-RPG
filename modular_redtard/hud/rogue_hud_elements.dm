@@ -16,21 +16,8 @@
 
 /atom/movable/screen/rogue/panel_toggle/Click(location, control, params)
 	var/datum/hud/rogue/viewer_hud = usr.hud_used
-	if(!istype(viewer_hud))
-		return
-	var/mob/target = usr
-	if(isobserver(usr) && ishuman(usr.client?.eye) && usr.client.eye != usr)
-		target = usr.client.eye
-	var/datum/hud/rogue/target_hud = target.hud_used
-	var/list/pieces = istype(target_hud) ? target_hud.screen_groups[group_key] : null
-	var/shown = !viewer_hud.group_shown(group_key)
-	viewer_hud.folded_groups ^= list(group_key)
-	if(usr.client && pieces)
-		if(shown)
-			usr.client.screen |= pieces
-		else
-			usr.client.screen -= pieces
-	update_appearance()
+	if(istype(viewer_hud))
+		viewer_hud.toggle_group(group_key, usr)
 
 /atom/movable/screen/rogue/panel_toggle/doll
 	name = "body"
@@ -77,20 +64,9 @@
 	icon_state = base_icon_state
 
 /atom/movable/screen/human/toggle/rogue/Click(location, control, params)
-	var/datum/hud/viewer_hud = usr.hud_used
-	if(!viewer_hud)
-		return
-	var/mob/target = usr
-	if(isobserver(usr) && ishuman(usr.client?.eye) && usr.client.eye != usr)
-		target = usr.client.eye
-	var/list/inventory = target.hud_used?.screen_groups[HUD_GROUP_TOGGLEABLE_INVENTORY]
-	viewer_hud.inventory_shown = !viewer_hud.inventory_shown
-	if(usr.client && inventory)
-		if(viewer_hud.inventory_shown)
-			usr.client.screen |= inventory
-		else
-			usr.client.screen -= inventory
-	update_appearance()
+	var/datum/hud/rogue/viewer_hud = usr.hud_used
+	if(istype(viewer_hud))
+		viewer_hud.toggle_inventory(usr)
 
 /atom/movable/screen/rogue/heatstam_overlay
 	icon = ROGUE_HUD_ICON_HEAT
@@ -130,8 +106,8 @@
 
 /atom/movable/screen/rogue/weapon_intents
 	name = "intent"
-	icon = ROGUE_HUD_ICON_INTENT_BASE
-	icon_state = "intentbase"
+	icon = ROGUE_HUD_ICON_INTENT_GRID
+	icon_state = "grid"
 	screen_loc = rogueui_intents
 	mouse_over_pointer = MOUSE_HAND_POINTER
 
@@ -155,19 +131,19 @@
 	var/shown = min(length(intents), ROGUE_INTENT_SLOTS)
 	if(!shown)
 		return
-	var/static/list/offsets_x = list(64, 96, 64, 96)
+	var/static/list/offsets_x = list(0, 32, 0, 32)
 	var/static/list/offsets_y = list(16, 16, 0, 0)
+	var/selected = clamp(owner.rogue_intent_slot(), 1, shown)
+	var/mutable_appearance/glow = mutable_appearance(ROGUE_HUD_ICON, "intentselected")
+	glow.pixel_x = offsets_x[selected]
+	glow.pixel_y = offsets_y[selected]
+	. += glow
 	for(var/slot in 1 to shown)
 		var/datum/intent/intent = rogue_intent(intents[slot])
 		var/mutable_appearance/intent_icon = mutable_appearance(intent.icon, intent.icon_state)
 		intent_icon.pixel_x = offsets_x[slot]
 		intent_icon.pixel_y = offsets_y[slot]
 		. += intent_icon
-	var/selected = clamp(owner.rogue_intent_slot(), 1, shown)
-	var/mutable_appearance/border = mutable_appearance(ROGUE_HUD_ICON, "intentselected")
-	border.pixel_x = offsets_x[selected]
-	border.pixel_y = offsets_y[selected]
-	. += border
 
 /atom/movable/screen/rogue/weapon_intents/Click(location, control, params)
 	. = ..()
@@ -218,9 +194,9 @@
 	user.rogue_toggle_def_intent()
 
 /atom/movable/screen/rogue/weapon_intents/proc/get_index_at_loc(icon_x, icon_y)
-	if(icon_x <= 64)
+	if(!icon_x || !icon_y)
 		return null
-	if(icon_x < 96)
+	if(icon_x <= 32)
 		return icon_y > 16 ? 1 : 3
 	return icon_y > 16 ? 2 : 4
 
@@ -656,8 +632,35 @@
 /atom/movable/screen/inventory/rogue/indexed/ring
 	transform = matrix(0.5, 0, 0, 0, 0.5, 0)
 
+GLOBAL_LIST_INIT(rogue_precise_zone_map, list(
+	"head" = BODY_ZONE_HEAD,
+	"skull" = BODY_ZONE_HEAD,
+	"nose" = BODY_ZONE_HEAD,
+	"ears" = BODY_ZONE_HEAD,
+	"neck" = BODY_ZONE_HEAD,
+	"r_eye" = BODY_ZONE_PRECISE_EYES,
+	"l_eye" = BODY_ZONE_PRECISE_EYES,
+	"mouth" = BODY_ZONE_PRECISE_MOUTH,
+	"chest" = BODY_ZONE_CHEST,
+	"stomach" = BODY_ZONE_CHEST,
+	"groin" = BODY_ZONE_PRECISE_GROIN,
+	"r_arm" = BODY_ZONE_R_ARM,
+	"r_hand" = BODY_ZONE_R_ARM,
+	"l_arm" = BODY_ZONE_L_ARM,
+	"l_hand" = BODY_ZONE_L_ARM,
+	"r_leg" = BODY_ZONE_R_LEG,
+	"r_foot" = BODY_ZONE_R_LEG,
+	"l_leg" = BODY_ZONE_L_LEG,
+	"l_foot" = BODY_ZONE_L_LEG,
+))
+
 /mob
 	var/rogue_zone_precise
+
+/mob/proc/rogue_precise_zone()
+	if(rogue_zone_precise && GLOB.rogue_precise_zone_map[rogue_zone_precise] == zone_selected)
+		return rogue_zone_precise
+	return zone_selected
 
 /atom/movable/screen/zone_sel/rogue
 	icon = ROGUE_HUD_ICON_64
@@ -666,27 +669,6 @@
 	layer = ROGUE_HUD_LAYER
 	overlay_icon = null
 	var/static/list/rogue_hover_cache = list()
-	var/static/list/rogue_to_tg = list(
-		"head" = BODY_ZONE_HEAD,
-		"skull" = BODY_ZONE_HEAD,
-		"nose" = BODY_ZONE_HEAD,
-		"ears" = BODY_ZONE_HEAD,
-		"neck" = BODY_ZONE_HEAD,
-		"r_eye" = BODY_ZONE_PRECISE_EYES,
-		"l_eye" = BODY_ZONE_PRECISE_EYES,
-		"mouth" = BODY_ZONE_PRECISE_MOUTH,
-		"chest" = BODY_ZONE_CHEST,
-		"stomach" = BODY_ZONE_CHEST,
-		"groin" = BODY_ZONE_PRECISE_GROIN,
-		"r_arm" = BODY_ZONE_R_ARM,
-		"r_hand" = BODY_ZONE_R_ARM,
-		"l_arm" = BODY_ZONE_L_ARM,
-		"l_hand" = BODY_ZONE_L_ARM,
-		"r_leg" = BODY_ZONE_R_LEG,
-		"r_foot" = BODY_ZONE_R_LEG,
-		"l_leg" = BODY_ZONE_L_LEG,
-		"l_foot" = BODY_ZONE_L_LEG,
-	)
 	var/static/list/zone_parts
 	var/limb_state_key
 
@@ -704,7 +686,7 @@
 	if(!part || usr != owner)
 		return TRUE
 	owner.rogue_zone_precise = part
-	set_selected_zone(rogue_to_tg[part], usr)
+	set_selected_zone(GLOB.rogue_precise_zone_map[part], usr)
 	update_appearance()
 	return TRUE
 
@@ -733,13 +715,13 @@
 		hovering = null
 
 /atom/movable/screen/zone_sel/rogue/get_zone_at(icon_x, icon_y)
-	return rogue_to_tg[get_rogue_zone_at(icon_x, icon_y)]
+	return GLOB.rogue_precise_zone_map[get_rogue_zone_at(icon_x, icon_y)]
 
 /atom/movable/screen/zone_sel/rogue/proc/get_zone_parts(zone)
 	if(!zone_parts)
 		zone_parts = list()
-		for(var/part in rogue_to_tg)
-			LAZYADDASSOCLIST(zone_parts, rogue_to_tg[part], part)
+		for(var/part in GLOB.rogue_precise_zone_map)
+			LAZYADDASSOCLIST(zone_parts, GLOB.rogue_precise_zone_map[part], part)
 	return zone_parts[zone] || list(zone)
 
 /atom/movable/screen/zone_sel/rogue/proc/body_prefix()
@@ -761,7 +743,7 @@
 		return
 	var/prefix = body_prefix()
 	. += limb_overlays(owner, prefix)
-	var/list/selected_parts = rogue_to_tg[owner.rogue_zone_precise] == owner.zone_selected ? list(owner.rogue_zone_precise) : get_zone_parts(owner.zone_selected)
+	var/list/selected_parts = GLOB.rogue_precise_zone_map[owner.rogue_zone_precise] == owner.zone_selected ? list(owner.rogue_zone_precise) : get_zone_parts(owner.zone_selected)
 	for(var/part in selected_parts)
 		var/mutable_appearance/selection = mutable_appearance(icon, "[prefix]_[part]")
 		selection.layer = layer + 0.2

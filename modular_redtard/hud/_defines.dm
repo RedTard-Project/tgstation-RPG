@@ -1,5 +1,5 @@
-#define ROGUE_HUD_MAX_SCREEN_OBJECTS 66
-#define ROGUE_HUD_MAX_SHOWN_OBJECTS 38
+#define ROGUE_HUD_MAX_SCREEN_OBJECTS 71
+#define ROGUE_HUD_MAX_SHOWN_OBJECTS 43
 
 #define ROGUE_HUD_STUB_TEXT "не реализовано"
 
@@ -9,7 +9,7 @@
 #define ROGUE_HUD_ICON_PANEL 'modular_redtard/icons/mob/roguehud_panel.dmi'
 #define ROGUE_HUD_ICON_STRIP 'modular_redtard/icons/hud/rogue_panel.dmi'
 #define ROGUE_HUD_ICON_DOLL_BACK 'modular_redtard/icons/hud/rogue_doll_back.dmi'
-#define ROGUE_HUD_ICON_INTENT_BASE 'modular_redtard/icons/mob/rogueintentbase.dmi'
+#define ROGUE_HUD_ICON_INTENT_GRID 'modular_redtard/icons/hud/rogue_intent_grid.dmi'
 #define ROGUE_HUD_ICON_INTENTS 'modular_redtard/icons/mob/rogueintents.dmi'
 #define ROGUE_HUD_ICON_HEAT 'modular_redtard/icons/mob/rogueheat.dmi'
 #define ROGUE_HUD_ICON_FEINT 'modular_redtard/icons/mob/roguefeint.dmi'
@@ -71,14 +71,15 @@
 #define rogueui_clickdelay_left "CENTER-1:16,SOUTH"
 #define rogueui_clickdelay_right "CENTER:16,SOUTH"
 #define rogueui_clickdelay_mid "CENTER,SOUTH"
-#define rogueui_intents "CENTER-3:31,SOUTH+1"
-#define rogueui_rmbintents "CENTER+2:2,SOUTH+1"
-#define rogueui_feint "CENTER+2:2,SOUTH"
-#define rogueui_defdelay "CENTER+2:3,SOUTH"
+#define rogueui_intents "CENTER-3:12,SOUTH"
+#define rogueui_rmb_columns 3
+#define rogueui_rmb_row_offset 20
+#define rogueui_feint "CENTER+3:20,SOUTH:8"
+#define rogueui_defdelay "CENTER+3:20,SOUTH:8"
 
-#define rogueui_targetdoll "EAST-1:-4,NORTH-1:-4"
-#define rogueui_doll_back "EAST-1:-8,NORTH-1:-8"
-#define rogueui_doll_toggle "EAST:-2,NORTH-2:-8"
+#define rogueui_targetdoll "EAST-1,NORTH-1"
+#define rogueui_doll_back "EAST-1,NORTH-1"
+#define rogueui_doll_toggle "EAST:-2,NORTH-2"
 #define rogueui_alert_drop 72
 #define rogueui_advsetup "CENTER-1,CENTER-1:16"
 
@@ -101,7 +102,7 @@
 #define HUD_ROGUE_READ_TEXT_LEFT "rogue_read_text_left"
 #define HUD_ROGUE_READ_TEXT_RIGHT "rogue_read_text_right"
 #define HUD_ROGUE_WEAPON_INTENTS "rogue_weapon_intents"
-#define HUD_ROGUE_RMB_INTENT "rogue_rmb_intent"
+#define HUD_ROGUE_RMB_SLOT(index) "rogue_rmb_[index]"
 #define HUD_ROGUE_QUAD_INTENTS "rogue_quad_intents"
 #define HUD_ROGUE_DEF_INTENT "rogue_def_intent"
 #define HUD_ROGUE_GIVE "rogue_give"
@@ -122,3 +123,31 @@
 
 #define COMSIG_MOB_ROGUE_HUD_INTENT_CLICK "mob_rogue_hud_intent_click"
 	#define COMPONENT_ROGUE_INTENT_HANDLED (1<<0)
+
+#define CATEGORY_ROGUE "ROGUE"
+#define COMSIG_KB_ROGUE_INTENT_1_DOWN "keybinding_rogue_intent_1_down"
+#define COMSIG_KB_ROGUE_INTENT_2_DOWN "keybinding_rogue_intent_2_down"
+#define COMSIG_KB_ROGUE_INTENT_3_DOWN "keybinding_rogue_intent_3_down"
+#define COMSIG_KB_ROGUE_INTENT_4_DOWN "keybinding_rogue_intent_4_down"
+#define COMSIG_KB_ROGUE_ALT_STRONG_DOWN "keybinding_rogue_alt_strong_down"
+#define COMSIG_KB_ROGUE_ALT_SWIFT_DOWN "keybinding_rogue_alt_swift_down"
+#define COMSIG_KB_ROGUE_ALT_AIMED_DOWN "keybinding_rogue_alt_aimed_down"
+#define COMSIG_KB_ROGUE_ALT_FEINT_DOWN "keybinding_rogue_alt_feint_down"
+#define COMSIG_KB_ROGUE_ALT_DEFEND_DOWN "keybinding_rogue_alt_defend_down"
+#define COMSIG_KB_ROGUE_ALT_WEAK_DOWN "keybinding_rogue_alt_weak_down"
+#define COMSIG_KB_ROGUE_MMB_KICK_DOWN "keybinding_rogue_mmb_kick_down"
+#define COMSIG_KB_ROGUE_MMB_JUMP_DOWN "keybinding_rogue_mmb_jump_down"
+#define COMSIG_KB_ROGUE_MMB_BITE_DOWN "keybinding_rogue_mmb_bite_down"
+#define COMSIG_KB_ROGUE_MMB_STEAL_DOWN "keybinding_rogue_mmb_steal_down"
+#define COMSIG_KB_ROGUE_DEFENSE_DOWN "keybinding_rogue_defense_down"
+#define COMSIG_KB_ROGUE_SNEAK_DOWN "keybinding_rogue_sneak_down"
+#define COMSIG_KB_ROGUE_EYES_DOWN "keybinding_rogue_eyes_down"
+#define COMSIG_KB_ROGUE_FIXED_EYE_DOWN "keybinding_rogue_fixed_eye_down"
+#define COMSIG_KB_ROGUE_LOOK_AROUND_DOWN "keybinding_rogue_look_around_down"
+#define COMSIG_KB_ROGUE_GIVE_DOWN "keybinding_rogue_give_down"
+#define COMSIG_KB_ROGUE_COMPLIANCE_DOWN "keybinding_rogue_compliance_down"
+#define COMSIG_KB_ROGUE_ATTRIBUTES_DOWN "keybinding_rogue_attributes_down"
+#define COMSIG_KB_ROGUE_PANEL_DOWN "keybinding_rogue_panel_down"
+#define COMSIG_KB_ROGUE_DOLL_DOWN "keybinding_rogue_doll_down"
+#define COMSIG_KB_ROGUE_INVENTORY_DOWN "keybinding_rogue_inventory_down"
+#define ROGUE_HUD_ICON_GRABS 'modular_redtard/icons/mob/roguehudgrabs.dmi'

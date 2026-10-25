@@ -62,9 +62,14 @@
 		HUD_ROGUE_READ = list(/atom/movable/screen/rogue/placeholder/read, "1,1", 'modular_redtard/icons/hud/read.dmi', "", 24, HUD_PLANE, no_group),
 		HUD_ROGUE_READ_TEXT_RIGHT = list(/atom/movable/screen/rogue/placeholder/readtext, "5,5", null, "", 24.02, HUD_PLANE, no_group),
 		HUD_ROGUE_READ_TEXT_LEFT = list(/atom/movable/screen/rogue/placeholder/readtext, "5,5", null, "", 24.02, HUD_PLANE, no_group),
-		HUD_ROGUE_WEAPON_INTENTS = list(/atom/movable/screen/rogue/weapon_intents, rogueui_intents, 'modular_redtard/icons/mob/rogueintentbase.dmi', "intentbase", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_WEAPON_INTENTS = list(/atom/movable/screen/rogue/weapon_intents, rogueui_intents, 'modular_redtard/icons/hud/rogue_intent_grid.dmi', "grid", 24, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_MOB_MOOD = list(/atom/movable/screen/mood/rogue, rogueui_stress, hud_icon, null, 24, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_ROGUE_RMB_INTENT = list(/atom/movable/screen/rogue/rmb_intent, rogueui_rmbintents, hud_icon, "rmbintent", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_RMB_SLOT(1) = list(/atom/movable/screen/rogue/rmb_choice, "CENTER+0:20,SOUTH:20", hud_icon, "rmbstrong", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_RMB_SLOT(2) = list(/atom/movable/screen/rogue/rmb_choice, "CENTER+1:20,SOUTH:20", hud_icon, "rmbswift", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_RMB_SLOT(3) = list(/atom/movable/screen/rogue/rmb_choice, "CENTER+2:20,SOUTH:20", hud_icon, "rmbaimed", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_RMB_SLOT(4) = list(/atom/movable/screen/rogue/rmb_choice, "CENTER+0:20,SOUTH", hud_icon, "rmbfeint", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_RMB_SLOT(5) = list(/atom/movable/screen/rogue/rmb_choice, "CENTER+1:20,SOUTH", hud_icon, "rmbdef", 24, HUD_PLANE, HUD_GROUP_STATIC),
+		HUD_ROGUE_RMB_SLOT(6) = list(/atom/movable/screen/rogue/rmb_choice, "CENTER+2:20,SOUTH", hud_icon, "rmbweak", 24, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_MOB_HEALTH = list(/atom/movable/screen/healths/rogue, rogueui_blood, heat_icon, "dam0", 24, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_ROGUE_QUAD_INTENTS = list(/atom/movable/screen/rogue/quad_intents, rogueui_quad, hud_icon, "mmbintents0", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 		HUD_ROGUE_DEF_INTENT = list(/atom/movable/screen/rogue/def_intent, rogueui_def, hud_icon, "def2n", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
@@ -203,16 +208,21 @@
 	var/atom/movable/screen/rogue/weapon_intents/intents = hud.screen_objects[HUD_ROGUE_WEAPON_INTENTS]
 	var/datum/rogue_hud_intent_probe/probe = new
 	probe.RegisterSignal(dummy, COMSIG_MOB_ROGUE_HUD_INTENT_CLICK, TYPE_PROC_REF(/datum/rogue_hud_intent_probe, on_intent_click))
-	var/list/cells = list("icon-x=80;icon-y=24" = 1, "icon-x=100;icon-y=24" = 2, "icon-x=80;icon-y=8" = 3, "icon-x=100;icon-y=8" = 4)
+	var/list/cells = list("icon-x=16;icon-y=24" = 1, "icon-x=48;icon-y=24" = 2, "icon-x=16;icon-y=8" = 3, "icon-x=48;icon-y=8" = 4)
 	for(var/cell in cells)
 		click_as(dummy, intents, "left=1;[cell]")
 		TEST_ASSERT_EQUAL(probe.last_index, cells[cell], "Clicking [cell] picked the wrong intent")
-	probe.last_index = null
-	click_as(dummy, intents, "left=1;icon-x=10;icon-y=10")
-	TEST_ASSERT_NULL(probe.last_index, "The left half of the intent base is not a cell in Azure")
 	probe.UnregisterSignal(dummy, COMSIG_MOB_ROGUE_HUD_INTENT_CLICK)
 	qdel(probe)
-	click_as(dummy, intents, "left=1;icon-x=80;icon-y=24")
+	click_as(dummy, intents, "left=1;icon-x=16;icon-y=24")
+
+	var/atom/movable/screen/rogue/rmb_choice/strong = hud.screen_objects[HUD_ROGUE_RMB_SLOT(1)]
+	click_as(dummy, strong)
+	TEST_ASSERT(dummy.rogue_rmb_is(/datum/rogue_rmb_intent/strong), "Clicking the strong button did not pick it")
+	TEST_ASSERT_EQUAL(length(strong.overlays), 1, "The picked alt intent is not highlighted")
+	click_as(dummy, strong)
+	TEST_ASSERT_NULL(dummy.rogue_rmb_intent, "Clicking the picked alt intent again did not clear it")
+	TEST_ASSERT_EQUAL(length(strong.overlays), 0, "The cleared alt intent stayed highlighted")
 
 	var/atom/movable/screen/combattoggle/rogue/combat = hud.screen_objects[HUD_MOB_INTENTS]
 	TEST_ASSERT(!dummy.combat_mode, "Dummy starts in combat mode")
@@ -249,8 +259,11 @@
 	dummy.set_combat_mode(FALSE)
 	TEST_ASSERT(dummy.rogue_select_intent(4), "Could not pick punch")
 	dummy.UnarmedAttack(target, TRUE, list())
-	TEST_ASSERT(target.get_brute_loss() > 0, "Punch did not hurt the target outside combat mode")
-	TEST_ASSERT(!dummy.combat_mode, "Punch left combat mode switched on")
+	TEST_ASSERT_EQUAL(target.get_brute_loss(), 0, "Punch hurt the target outside combat mode; combat mode decides whether one strikes")
+	dummy.set_combat_mode(TRUE)
+	dummy.UnarmedAttack(target, TRUE, list())
+	TEST_ASSERT(target.get_brute_loss() > 0, "Punch did not hurt the target in combat mode")
+	dummy.set_combat_mode(FALSE)
 
 	TEST_ASSERT(dummy.rogue_select_intent(3), "Could not pick grab")
 	dummy.UnarmedAttack(target, TRUE, list())

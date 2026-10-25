@@ -25,6 +25,7 @@
 #include "hud\rogue_hud_mechanics.dm"
 #include "hud\rogue_hud.dm"
 #include "hud\rogue_hud_bridges.dm"
+#include "hud\rogue_keybindings.dm"
 #include "hud\human_hud_switch.dm"
 #include "maps\_defines.dm"
 #include "maps\era.dm"
@@ -39,6 +40,7 @@
 #include "combat\armor.dm"
 #include "combat\intents.dm"
 #include "combat\unarmed.dm"
+#include "combat\grab.dm"
 #include "combat\attack.dm"
 #include "combat\defense.dm"
 #include "combat\mmb.dm"
@@ -64,6 +66,7 @@
 #include "rockhill\_rockhill.dm"
 
 #ifdef UNIT_TESTS
+#include "tests\combat_rogue.dm"
 #include "tests\huds_rogue.dm"
 #endif
 
@@ -110,6 +113,7 @@
 #include "combat\armor.dm"
 #include "combat\attack.dm"
 #include "combat\defense.dm"
+#include "combat\grab.dm"
 #include "combat\intents.dm"
 #include "combat\mmb.dm"
 #include "combat\mob.dm"
@@ -122,6 +126,7 @@
 #include "hud\_defines.dm"
 #include "hud\rogue_hud_mechanics.dm"
 #include "hud\rogue_hud_stubs.dm"
+#include "hud\rogue_keybindings.dm"
 #include "lighting\_defines.dm"
 #include "lighting\carrier.dm"
 #include "lighting\config.dm"
@@ -154,6 +159,7 @@
 #include "rockhill\ported\_traits.dm"
 #include "storage\_defines.dm"
 #include "storage\grid.dm"
+#include "tests\combat_rogue.dm"
 #include "tests\focus.dm"
 #include "tests\huds_rogue.dm"
 #include "tests\light_bench.dm"
