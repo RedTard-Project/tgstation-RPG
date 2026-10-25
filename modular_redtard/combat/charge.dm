@@ -7,6 +7,9 @@
 	rogue_charge_started = world.time
 	rogue_charge_released = 0
 	rogue_set_charge_overlay("eff_aimed_charge")
+	if(intent.tshield)
+		visible_message(span_warning("[src] raises [get_active_held_item()]!"))
+		playsound(src, 'modular_redtard/rockhill/sound/combat/shieldraise.ogg', 100, FALSE)
 	addtimer(CALLBACK(src, PROC_REF(rogue_charge_full), rogue_charge_started), intent.chargetime, TIMER_DELETE_ME)
 
 /mob/living/carbon/human/proc/rogue_charge_full(started)

@@ -131,13 +131,15 @@ GLOBAL_LIST_INIT(rogue_bind_catches, list(
 	if(!rogue_sees(attacker) && !rogue_tempo_reaches("blind_defense"))
 		return FALSE
 	var/riposting = rogue_rmb_is(/datum/rogue_rmb_intent/defend)
-	if(world.time < rogue_last_parry + ROGUE_PARRY_DELAY - rogue_tempo_bonus("parry_delay") && !riposting)
+	var/paired = attacker.rogue_dual_paired
+	if(world.time < rogue_last_parry + ROGUE_PARRY_DELAY - rogue_tempo_bonus("parry_delay") && !riposting && !paired)
 		return FALSE
 	if(attack_intent && !attack_intent.canparry)
 		return FALSE
 	if(pulledby || pulling || HAS_TRAIT(src, TRAIT_CHUNKYFINGERS))
 		return FALSE
-	rogue_last_parry = world.time
+	if(!paired)
+		rogue_last_parry = world.time
 	rogue_mark_in_combat()
 	SEND_SIGNAL(src, COMSIG_MOB_ROGUE_DEFENSE_CHANGED)
 	var/obj/item/mainhand = get_active_held_item()
@@ -177,7 +179,7 @@ GLOBAL_LIST_INIT(rogue_bind_catches, list(
 		"swift_guard" = weapon_parry && used_weapon.wbalance == WBALANCE_SWIFT && mainhand && !offhand && rogue_highest_armor_class() <= ARMOR_CLASS_LIGHT,
 		"speed_pressure" = speed_pressure,
 		"prone" = body_position == LYING_DOWN,
-		"dual_wield" = HAS_TRAIT(src, TRAIT_DUALWIELDER) && mainhand && offhand && mainhand.associated_skill == offhand.associated_skill,
+		"dual_wield" = HAS_TRAIT(src, TRAIT_DUALWIELDER) && rogue_can_dual_wield(mainhand, offhand),
 		"untrained_armor" = untrained,
 		"bound" = !!has_status_effect(/datum/status_effect/rogue/bind),
 	))
@@ -234,13 +236,15 @@ GLOBAL_LIST_INIT(rogue_bind_catches, list(
 
 /mob/living/carbon/human/proc/rogue_attempt_dodge(mob/living/attacker, obj/item/attacker_weapon, datum/intent/attack_intent)
 	var/riposting = rogue_rmb_is(/datum/rogue_rmb_intent/defend)
-	if(world.time < rogue_last_dodge + rogue_dodge_cooldown && !riposting)
+	var/paired = attacker.rogue_dual_paired
+	if(world.time < rogue_last_dodge + rogue_dodge_cooldown && !riposting && !paired)
 		return FALSE
 	if(attack_intent && !attack_intent.candodge)
 		return FALSE
 	if(pulledby || pulling || loc == attacker.loc)
 		return FALSE
-	rogue_last_dodge = world.time
+	if(!paired)
+		rogue_last_dodge = world.time
 	rogue_mark_in_combat()
 	var/turf/dodge_turf = rogue_dodge_turf(attacker)
 	if(!dodge_turf)
@@ -270,7 +274,8 @@ GLOBAL_LIST_INIT(rogue_bind_catches, list(
 		"attacker_skill" = attacker_rank,
 		"prone" = body_position == LYING_DOWN,
 		"dodge_expert" = expert,
-		"dual_wield" = HAS_TRAIT(src, TRAIT_DUALWIELDER) && get_active_held_item() && get_inactive_held_item(),
+		"dual_wield" = HAS_TRAIT(src, TRAIT_DUALWIELDER) && rogue_can_dual_wield(get_active_held_item(), get_inactive_held_item()),
+		"base" = attacker.rogue_defense_base(),
 		"fatigue" = rogue_dodge_fatigue,
 	))
 	if(!prob(prob2defend))
@@ -330,6 +335,12 @@ GLOBAL_LIST_INIT(rogue_bind_catches, list(
 	if(!source.rogue_can_defend(attacker))
 		return NONE
 	var/obj/item/attacker_weapon = isitem(hitby) ? hitby : null
+	if(!ishuman(attacker) && source.has_status_effect(/datum/status_effect/rogue/guard))
+		var/datum/rogue_strike/beast_strike = new(attacker, source, null, null, ROGUE_STRIKE_MELEE)
+		var/caught = beast_strike.incoming() & ROGUE_STRIKE_CANCEL
+		qdel(beast_strike)
+		if(caught)
+			return SUCCESSFUL_BLOCK
 	var/datum/intent/attack_intent
 	if(ishuman(attacker))
 		var/mob/living/carbon/human/human_attacker = attacker

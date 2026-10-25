@@ -579,6 +579,219 @@ crit_resist_stacks = 4
 # Crits a creature without a mind shrugs off (Azure Peak).
 crit_resist_stacks_npc = 1
 
+# Most attackers tempo remembers (Azure Peak TEMPO_CAP).
+tempo_cap = 7
+
+# Distinct attackers for tempo level 1 (Azure Peak TEMPO_ONE).
+tempo_one = 2
+
+# Distinct attackers for tempo level 2 (Azure Peak TEMPO_TWO).
+tempo_two = 3
+
+# Distinct attackers for tempo level 3, full tempo (Azure Peak TEMPO_MAX).
+tempo_max = 4
+
+# Deciseconds an attacker stays remembered while there are at most tempo_one of them (Azure Peak TEMPO_DELAY_ONE).
+tempo_memory_one = 300
+
+# Deciseconds an attacker stays remembered at tempo_two attackers (Azure Peak TEMPO_DELAY_TWO).
+tempo_memory_two = 150
+
+# Deciseconds an attacker stays remembered from tempo_max attackers (Azure Peak TEMPO_DELAY_MAX).
+tempo_memory_max = 80
+
+# Deciseconds between checks that forget old attackers (Azure Peak TEMPO_CULL_DELAY).
+tempo_cull_delay = 120
+
+# Deciseconds out of combat mode before tempo is lost (Azure Peak).
+tempo_clear_delay = 300
+
+# Share of max stamina restored on reaching tempo level 1 (Azure Peak).
+tempo_stamina_one = 0.333
+
+# Share of max stamina restored on reaching tempo level 2 (Azure Peak); level 3 restores all of it.
+tempo_stamina_two = 0.5
+
+# Percent chance a dodge expert still loses dodge reserve at tempo level 1 (Azure Peak TEMPO_DODGE_LOSS_LESS).
+tempo_dodge_loss_chance = 33
+
+# Deciseconds of bait or feint cooldown after trying it on someone in tempo who does not see you (Azure Peak).
+tempo_unseen_cooldown = 50
+
+# Tempo level from which one parries and dodges attackers out of sight (Azure Peak TEMPO_TAG_NOLOS_PARRY, TEMPO_TAG_NOLOS_DODGE).
+tempo_blind_defense_level = 2
+
+# Tempo level from which baits and feints need to be seen to work (Azure Peak TEMPO_TAG_FEINTBAIT_FOV).
+tempo_aware_level = 2
+
+# Tempo level from which a dodge expert keeps dodge reserve after a dodge (Azure Peak TEMPO_DODGE_LOSS_NONE).
+tempo_dodge_keep_level = 2
+
+# Tempo level from which the weapon cannot be bound (Azure Peak TEMPO_TAG_BINDABLE).
+tempo_unbindable_level = 1
+
+# A shield loses the damage of a blocked missile divided by this (Azure Peak).
+shield_block_wear_divisor = 4
+
+# Deciseconds between two bangs of a weapon on one's shield (Azure Peak SHIELD_BANG_COOLDOWN).
+shield_bang_cooldown = 30
+
+# Deciseconds before a raised limb guard starts catching blows (Azure Peak start_delay).
+limbguard_start = 5
+
+# Stamina a limb guard costs every second; it also stops stamina from regenerating (Azure Peak).
+limbguard_drain = 1
+
+# Deciseconds a fighter caught by a limb guard is held in place (Azure Peak).
+limbguard_immobilize = 30
+
+# Deciseconds of action delay for a fighter caught by a limb guard (Azure Peak).
+limbguard_click = 50
+
+# Deciseconds a fighter caught by a limb guard stays exposed (Azure Peak).
+limbguard_exposed = 100
+
+# Integrity gloves lose when their wearer punches a guarded limb (Azure Peak).
+limbguard_glove_damage = 201
+
+# Edge a weapon loses when it strikes a guarded limb (Azure Peak LGUARD_SHARPNESS_LOSS).
+limbguard_edge_loss = 150
+
+# Integrity a blunt weapon loses when it strikes a guarded limb; a weapon with an edge loses half (Azure Peak LGUARD_INTEG_LOSS).
+limbguard_integrity_loss = 100
+
+# Integrity a weapon keeps after striking a guarded limb (Azure Peak).
+limbguard_integrity_floor = 10
+
+# Weapon skill rank needed in each hand to fight with two weapons (Azure Peak: journeyman).
+dual_wield_rank = 3
+
+# Least force of each weapon for dual wielding (Azure Peak).
+dual_wield_min_force = 10
+
+# Alternating blows before the next one is followed by a blow of the other weapon (Azure Peak).
+dual_wield_combo = 3
+
+# Deciseconds without a blow that reset the dual wield combo (Azure Peak).
+dual_wield_reset = 30
+
+# Stamina of the paired blow (Azure Peak).
+dual_wield_stamina = 3
+
+# Least blow damage that can sever a limb (Azure Peak).
+dismember_min_force = 10
+
+# Share of its damage a limb needs before it can be severed (Azure Peak CRIT_DISMEMBER_DAMAGE_THRESHOLD).
+dismember_damage_share = 0.7
+
+# Edge share at or below which a blade severs nothing (Azure Peak).
+dismember_dull_share = 0.15
+
+# Edge share from which a blade counts as pristine (Azure Peak).
+dismember_pristine_share = 0.95
+
+# Share of its damage a limb needs before a cut from a worn blade can sever it (Azure Peak).
+dismember_dull_cut_share = 0.8
+
+# Severing force factor of the strong stance (Azure Peak).
+dismember_strong_factor = 1.1
+
+# Severing force factor of a chop (Azure Peak).
+dismember_chop_factor = 1.1
+
+# Severing chance factor for easy dismemberment and for easy decapitation at the neck (Azure Peak).
+dismember_easy_factor = 1.5
+
+# Highest severing chance against hard dismemberment (Azure Peak).
+dismember_hard_cap = 5
+
+# Slowdown of a disembowelled victim, in slowdown ticks (Azure Peak).
+disembowel_slow = 20
+
+# Base dodge chance against a person; a creature uses its own defprob (Azure Peak defprob).
+dodge_base = 50
+
+# Deciseconds between two dodges of a creature (Azure Peak dodgetime of most creatures).
+beast_dodge_delay = 30
+
+# Dodge fatigue a creature gains per dodge (Azure Peak SIMPLEMOB_DODGE_FATIGUE_PER_DODGE).
+beast_fatigue_per_dodge = 5
+
+# Dodge fatigue at which a creature is winded (Azure Peak SIMPLEMOB_DODGE_FATIGUE_MAX).
+beast_fatigue_max = 20
+
+# Deciseconds without dodging before a creature's dodge fatigue recovers (Azure Peak SIMPLEMOB_DODGE_RECOVERY_DELAY).
+beast_fatigue_recovery = 60
+
+# Dodge fatigue a creature recovers per second (Azure Peak SIMPLEMOB_DODGE_FATIGUE_REGEN).
+beast_fatigue_regen = 5
+
+# Deciseconds a winded creature cannot dodge (Azure Peak SIMPLEMOB_WINDED_DURATION).
+beast_winded = 40
+
+# Deciseconds taken off the guard, bait and feint cooldowns at tempo level 1 (Azure Peak TEMPO_TAG_RCLICK_CD_BONUS).
+tempo_rmb_cooldown_1 = 50
+
+# Deciseconds taken off the guard, bait and feint cooldowns at tempo level 2 (Azure Peak TEMPO_TAG_RCLICK_CD_BONUS).
+tempo_rmb_cooldown_2 = 100
+
+# Deciseconds taken off the guard, bait and feint cooldowns at tempo level 3 (Azure Peak TEMPO_TAG_RCLICK_CD_BONUS).
+tempo_rmb_cooldown_3 = 150
+
+# Deciseconds taken off the delay between parries at tempo level 1 (Azure Peak TEMPO_TAG_PARRYCD_BONUS).
+tempo_parry_delay_1 = 2
+
+# Deciseconds taken off the delay between parries at tempo level 2 (Azure Peak TEMPO_TAG_PARRYCD_BONUS).
+tempo_parry_delay_2 = 4
+
+# Deciseconds taken off the delay between parries at tempo level 3 (Azure Peak TEMPO_TAG_PARRYCD_BONUS).
+tempo_parry_delay_3 = 6
+
+# Factor of the integrity a parrying weapon loses at tempo level 1 (Azure Peak TEMPO_TAG_DEF_INTEGFACTOR).
+tempo_parry_wear_1 = 0.75
+
+# Factor of the integrity a parrying weapon loses at tempo level 2 (Azure Peak TEMPO_TAG_DEF_INTEGFACTOR).
+tempo_parry_wear_2 = 0.5
+
+# Factor of the integrity a parrying weapon loses at tempo level 3 (Azure Peak TEMPO_TAG_DEF_INTEGFACTOR).
+tempo_parry_wear_3 = 0.25
+
+# Edge points taken off every loss of sharpness of a held weapon at tempo level 1 (Azure Peak TEMPO_TAG_DEF_SHARPNESSFACTOR).
+tempo_edge_wear_1 = 1
+
+# Edge points taken off every loss of sharpness of a held weapon at tempo level 2 (Azure Peak TEMPO_TAG_DEF_SHARPNESSFACTOR).
+tempo_edge_wear_2 = 2
+
+# Edge points taken off every loss of sharpness of a held weapon at tempo level 3 (Azure Peak TEMPO_TAG_DEF_SHARPNESSFACTOR).
+tempo_edge_wear_3 = 3
+
+# Factor of the integrity armor loses from a hit at tempo level 1 (Azure Peak TEMPO_TAG_ARMOR_INTEGFACTOR).
+tempo_armor_wear_1 = 0.8
+
+# Factor of the integrity armor loses from a hit at tempo level 2 (Azure Peak TEMPO_TAG_ARMOR_INTEGFACTOR).
+tempo_armor_wear_2 = 0.7
+
+# Factor of the integrity armor loses from a hit at tempo level 3 (Azure Peak TEMPO_TAG_ARMOR_INTEGFACTOR).
+tempo_armor_wear_3 = 0.6
+
+# Stamina taken off a dodge at tempo level 1 (Azure Peak TEMPO_TAG_STAMLOSS_DODGE).
+tempo_dodge_stamina_1 = 4
+
+# Stamina taken off a dodge at tempo level 2 (Azure Peak TEMPO_TAG_STAMLOSS_DODGE).
+tempo_dodge_stamina_2 = 6
+
+# Stamina taken off a dodge at tempo level 3 (Azure Peak TEMPO_TAG_STAMLOSS_DODGE).
+tempo_dodge_stamina_3 = 8
+
+# Stamina taken off a parry at tempo level 1 (Azure Peak TEMPO_TAG_STAMLOSS_PARRY).
+tempo_parry_stamina_1 = 1
+
+# Stamina taken off a parry at tempo level 2 (Azure Peak TEMPO_TAG_STAMLOSS_PARRY).
+tempo_parry_stamina_2 = 2
+
+# Stamina taken off a parry at tempo level 3 (Azure Peak TEMPO_TAG_STAMLOSS_PARRY).
+tempo_parry_stamina_3 = 3
+
 # Hefty Swing: cooldown. Times are in deciseconds.
 special_axe_swing_cooldown = 250
 
@@ -926,3 +1139,12 @@ cleave_lance_max_targets = 1
 
 # Most extra targets of a cleave: Sweeps wide, cleaving up to two nearby targets.
 cleave_wide_sweep_max_targets = 2
+
+# Limb Guard: cooldown. Times are in deciseconds.
+special_limbguard_cooldown = 600
+
+# Limb Guard: delay. Times are in deciseconds.
+special_limbguard_delay = 10
+
+# Limb Guard: stamcost. Times are in deciseconds.
+special_limbguard_stamcost = 25

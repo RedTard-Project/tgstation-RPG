@@ -125,7 +125,7 @@
 	knife.associated_skill = /datum/attribute/skill/combat/knives
 	attacker.put_in_active_hand(knife)
 	TEST_ASSERT(!attacker.rogue_use_special(get_step(attacker, attacker.dir)), "A special worked without the needed skill")
-	attacker.rogue_set_skill(/datum/attribute/skill/combat/knives, ROGUE_SPECIAL_RANK)
+	attacker.rogue_set_skill(/datum/attribute/skill/combat/knives, ROGUE_SPECIAL_RANK * ROGUE_SKILL_PER_RANK)
 	TEST_ASSERT(attacker.rogue_use_special(get_step(attacker, attacker.dir)), "A skilled fighter could not use the weapon special")
 	TEST_ASSERT(attacker.has_status_effect(/datum/status_effect/rogue/special_cooldown), "The special did not go on cooldown")
 	TEST_ASSERT(!attacker.rogue_use_special(get_step(attacker, attacker.dir)), "The special ignored its cooldown")
@@ -149,6 +149,124 @@
 	cut.cleave = null
 	TEST_ASSERT(victim.get_brute_loss() > 0, "The main target was not hit")
 	TEST_ASSERT(bystander.get_brute_loss() > 0, "The cleave did not reach the target beside")
+
+/datum/unit_test/rogue_fist_special
+
+/datum/unit_test/rogue_fist_special/Run()
+	var/mob/living/carbon/human/consistent/fighter = allocate(__IMPLIED_TYPE__)
+	TEST_ASSERT(!fighter.rogue_use_special(get_step(fighter, fighter.dir)), "An unskilled brawler used the fist special")
+	fighter.rogue_set_skill(/datum/attribute/skill/combat/unarmed, ROGUE_SPECIAL_RANK * ROGUE_SKILL_PER_RANK)
+	TEST_ASSERT(fighter.rogue_use_special(get_step(fighter, fighter.dir)), "A skilled brawler could not use the fist special")
+	TEST_ASSERT(istype(fighter.rogue_unarmed_special, /datum/special_intent/upper_cut), "Bare hands did not use the upper cut")
+
+/datum/unit_test/rogue_tempo
+
+/datum/unit_test/rogue_tempo/Run()
+	var/mob/living/carbon/human/consistent/defender = allocate(__IMPLIED_TYPE__)
+	ADD_TRAIT(defender, TRAIT_TEMPO, TRAIT_SOURCE_UNIT_TESTS)
+	var/list/attackers = list()
+	for(var/count in 1 to 4)
+		var/mob/living/carbon/human/consistent/attacker = allocate(__IMPLIED_TYPE__)
+		attacker.mind_initialize()
+		attackers += attacker
+	defender.rogue_tempo_hit(attackers[1])
+	TEST_ASSERT_EQUAL(defender.rogue_tempo_level(), 0, "One attacker gave tempo")
+	defender.rogue_tempo_hit(attackers[2])
+	TEST_ASSERT_EQUAL(defender.rogue_tempo_level(), 1, "Two attackers did not give tempo one")
+	defender.rogue_tempo_hit(attackers[3])
+	defender.rogue_tempo_hit(attackers[4])
+	TEST_ASSERT_EQUAL(defender.rogue_tempo_level(), 3, "Four attackers did not give full tempo")
+	TEST_ASSERT(HAS_TRAIT(defender, TRAIT_GRABIMMUNE), "Full tempo did not make the fighter hard to grab")
+	TEST_ASSERT(defender.rogue_tempo_bonus("parry_stamina") > 0, "Full tempo gave no parry bonus")
+	defender.combat_mode = FALSE
+	defender.rogue_clear_tempo()
+	TEST_ASSERT_EQUAL(defender.rogue_tempo_level(), 0, "Tempo stayed after leaving combat")
+	TEST_ASSERT(!HAS_TRAIT(defender, TRAIT_GRABIMMUNE), "Grab immunity stayed after tempo was lost")
+
+/datum/unit_test/rogue_shield
+
+/datum/unit_test/rogue_shield/Run()
+	var/mob/living/carbon/human/consistent/archer = allocate(__IMPLIED_TYPE__)
+	var/mob/living/carbon/human/consistent/defender = allocate(__IMPLIED_TYPE__)
+	var/obj/item/rogueweapon/shield/wood/shield = allocate(__IMPLIED_TYPE__)
+	var/obj/projectile/bullet/arrow = allocate(/obj/projectile/bullet)
+	arrow.firer = archer
+	defender.put_in_active_hand(shield)
+	shield.coverage = 100
+	TEST_ASSERT(shield.hit_reaction(defender, arrow, "the arrow", 0, 20, PROJECTILE_ATTACK), "A shield with full coverage did not block a seen arrow")
+	shield.coverage = 0
+	TEST_ASSERT(!shield.hit_reaction(defender, arrow, "the arrow", 0, 20, PROJECTILE_ATTACK), "A shield without coverage blocked an arrow")
+	TEST_ASSERT(!shield.hit_reaction(defender, archer, "the punch", 0, 20, UNARMED_ATTACK), "Shield coverage blocked a melee blow")
+
+/datum/unit_test/rogue_limbguard
+
+/datum/unit_test/rogue_limbguard/Run()
+	var/mob/living/carbon/human/consistent/attacker = allocate(__IMPLIED_TYPE__)
+	var/mob/living/carbon/human/consistent/defender = allocate(__IMPLIED_TYPE__)
+	var/obj/item/knife/kitchen/knife = allocate(__IMPLIED_TYPE__)
+	var/obj/item/rogueweapon/shield/wood/shield = allocate(__IMPLIED_TYPE__)
+	attacker.mind_initialize()
+	attacker.put_in_active_hand(knife)
+	defender.put_in_active_hand(shield)
+	defender.combat_mode = TRUE
+	defender.zone_selected = BODY_ZONE_L_ARM
+	defender.rogue_zone_precise = "l_arm"
+	defender.rogue_set_skill(/datum/attribute/skill/combat/shields, ROGUE_SPECIAL_RANK * ROGUE_SKILL_PER_RANK)
+	TEST_ASSERT(defender.rogue_use_special(get_step(defender, defender.dir)), "Could not raise a limb guard")
+	var/datum/status_effect/rogue/limbguard/guard = defender.has_status_effect(/datum/status_effect/rogue/limbguard)
+	TEST_ASSERT(guard, "The shield special did not raise a limb guard")
+	guard.activate()
+	attacker.zone_selected = BODY_ZONE_L_ARM
+	attacker.rogue_zone_precise = "l_arm"
+	attacker.next_move = 0
+	attacker.rogue_strike(defender, knife, attacker.rogue_strike_intent(knife))
+	TEST_ASSERT_EQUAL(defender.get_brute_loss(), 0, "A blow to the guarded limb landed")
+	TEST_ASSERT(!attacker.is_holding(knife), "The limb guard did not disarm the attacker")
+	TEST_ASSERT(attacker.has_status_effect(/datum/status_effect/rogue/exposed), "The caught attacker is not exposed")
+	TEST_ASSERT(!defender.has_status_effect(/datum/status_effect/rogue/limbguard), "The limb guard stayed up after catching a blow")
+	TEST_ASSERT(defender.has_status_effect(/datum/status_effect/rogue/special_cooldown), "The limb guard did not go on cooldown")
+
+/datum/unit_test/rogue_dual_wield
+
+/datum/unit_test/rogue_dual_wield/Run()
+	var/mob/living/carbon/human/consistent/attacker = allocate(__IMPLIED_TYPE__)
+	var/obj/item/knife/kitchen/first = allocate(__IMPLIED_TYPE__)
+	var/obj/item/knife/kitchen/second = allocate(__IMPLIED_TYPE__)
+	ADD_TRAIT(attacker, TRAIT_DUALWIELDER, TRAIT_SOURCE_UNIT_TESTS)
+	attacker.put_in_active_hand(first)
+	attacker.put_in_inactive_hand(second)
+	TEST_ASSERT(attacker.rogue_can_dual_wield(first, second), "Two knives cannot be dual wielded")
+	TEST_ASSERT(!attacker.rogue_dual_wield_step(first), "The first blow already paired")
+	TEST_ASSERT_EQUAL(attacker.get_active_held_item(), second, "Dual wielding did not switch to the other weapon")
+	attacker.rogue_dual_wield_step(second)
+	attacker.rogue_dual_wield_step(first)
+	TEST_ASSERT(attacker.rogue_dual_finisher, "Three alternating blows did not arm the paired blow")
+	TEST_ASSERT(attacker.rogue_dual_wield_step(second), "The fourth blow was not paired")
+
+/datum/unit_test/rogue_dismember
+
+/datum/unit_test/rogue_dismember/Run()
+	var/mob/living/carbon/human/consistent/attacker = allocate(__IMPLIED_TYPE__)
+	var/mob/living/carbon/human/consistent/victim = allocate(__IMPLIED_TYPE__)
+	var/obj/item/knife/kitchen/knife = allocate(__IMPLIED_TYPE__)
+	var/obj/item/bodypart/arm = victim.get_bodypart(BODY_ZONE_L_ARM)
+	TEST_ASSERT(victim.rogue_dismember(arm, knife, attacker, "l_arm"), "A bare arm was not severed")
+	TEST_ASSERT_NULL(victim.get_bodypart(BODY_ZONE_L_ARM), "The severed arm is still attached")
+	TEST_ASSERT(!victim.rogue_dismember(victim.get_bodypart(BODY_ZONE_HEAD), knife, attacker, "neck"), "A standing victim was beheaded")
+	TEST_ASSERT(victim.rogue_disembowel(attacker), "Disembowelling failed")
+	TEST_ASSERT_NULL(victim.get_organ_slot(ORGAN_SLOT_STOMACH), "The stomach stayed inside")
+
+/datum/unit_test/rogue_beast
+
+/datum/unit_test/rogue_beast/Run()
+	var/mob/living/basic/rockhill/beast = allocate(__IMPLIED_TYPE__)
+	beast.rogue_defprob = 40
+	TEST_ASSERT_EQUAL(beast.rogue_defense_base(), 40, "A creature does not use its defprob as the dodge base")
+	for(var/count in 1 to 4)
+		beast.rogue_beast_spend_dodge()
+	TEST_ASSERT(beast.rogue_winded_until > world.time, "Four dodges did not wind the creature")
+	var/mob/living/carbon/human/consistent/attacker = allocate(__IMPLIED_TYPE__)
+	TEST_ASSERT(!beast.rogue_beast_dodge(attacker, null), "A winded creature dodged")
 
 #undef TEST_ASSERT
 #undef TEST_ASSERT_EQUAL

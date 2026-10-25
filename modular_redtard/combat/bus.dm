@@ -9,6 +9,7 @@
 	var/damage = 0
 	var/damage_done = 0
 	var/defended = FALSE
+	var/paired = FALSE
 
 /datum/rogue_strike/New(mob/living/attacker, mob/living/target, obj/item/weapon, datum/intent/intent, kind = ROGUE_STRIKE_MELEE, list/attack_modifiers)
 	src.attacker = attacker

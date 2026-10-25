@@ -131,7 +131,10 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 	var/charge = rogue_take_charge(intent)
 	var/datum/rogue_strike/strike = new(src, target, weapon, intent, ROGUE_STRIKE_MELEE, attack_modifiers)
 	. = rogue_resolve_strike(strike, charge)
+	var/paired = strike.paired
 	qdel(strike)
+	if(paired)
+		rogue_paired_strike(target)
 
 /mob/living/carbon/human/proc/rogue_resolve_strike(datum/rogue_strike/strike, charge)
 	var/mob/living/target = strike.target
@@ -150,6 +153,7 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 		sleep(intent.swingdelay)
 		if(QDELETED(target) || incapacitated || !target.IsReachableBy(src, weapon ? weapon.reach : 1) || (weapon && (QDELETED(weapon) || !is_holding(weapon))) || rogue_strike_intent(weapon) != intent)
 			return FALSE
+	strike.paired = rogue_dual_wield_step(weapon)
 	if(intent.releasedrain)
 		adjust_stamina_loss(intent.releasedrain * rogue_rmb_factor("stamina_factor"))
 	do_attack_animation(target, weapon ? null : ATTACK_EFFECT_PUNCH, weapon)
@@ -237,6 +241,7 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 	if(damage_done > 0)
 		rogue_try_crit(intent.blade_class, damage_done, attacker, zone)
 		rogue_pop_open()
+		rogue_try_dismember(weapon, intent, attacker, zone, damage)
 	SEND_SIGNAL(src, COMSIG_ROGUE_STRIKE_LANDED, strike)
 	weapon?.rogue_after_strike(src, attacker, strike.attack_modifiers)
 	log_combat(attacker, src, strike.kind == ROGUE_STRIKE_CLEAVE ? "cleaved" : "struck", weapon || intent.name, "(INTENT: [uppertext(intent.name)]) (ZONE: [zone]) (DAMAGE: [damage_done]) (DAMTYPE: [uppertext(damtype)])")
@@ -269,5 +274,7 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 	var/datum/intent/intent = source.rogue_strike_intent(weapon)
 	if(intent.no_attack)
 		return NONE
+	if(intent.tranged)
+		return COMPONENT_CANCEL_ATTACK_CHAIN
 	INVOKE_ASYNC(source, TYPE_PROC_REF(/mob/living/carbon/human, rogue_strike), target, weapon, intent, attack_modifiers)
 	return COMPONENT_CANCEL_ATTACK_CHAIN

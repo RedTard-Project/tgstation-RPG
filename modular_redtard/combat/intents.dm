@@ -28,6 +28,8 @@ GLOBAL_LIST_EMPTY(rogue_intents)
 	var/unarmed = FALSE
 	var/chargetime = 0
 	var/swingdelay = 0
+	var/tranged = FALSE
+	var/tshield = FALSE
 
 /datum/intent/proc/get_sharpness()
 	switch(blade_class)

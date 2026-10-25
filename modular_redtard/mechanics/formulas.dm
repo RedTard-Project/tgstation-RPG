@@ -20,9 +20,9 @@ GLOBAL_LIST_INIT(rogue_formula_definitions, list(
 		list("defense", "attacker_skill", "running", "swift_guard", "speed_pressure", "prone", "dual_wield", "untrained_armor", "bound"),
 	),
 	ROGUE_FORMULA_DODGE_CHANCE = list(
-		"clamp(if(prone, 0.25, 1) * if(dodge_expert and not prone, 90, 50 + (defender_speed - attacker_speed) * 10 - if(swift_attack and attacker_speed > defender_speed, (attacker_speed - defender_speed) * 10, 0) + if(heavy_attack and defender_speed > attacker_speed, (defender_speed - attacker_speed) * 10, 0) + if(improvised, 10, (defender_skill - attacker_skill) * 10)) + fatigue - dual_wield * 5, 5, 90 + fatigue)",
-		"Dodge chance in percent (Azure Peak). defender_skill is the defender's rank in the attacker's skill; improvised is a weapon without a skill.",
-		list("defender_speed", "attacker_speed", "swift_attack", "heavy_attack", "improvised", "defender_skill", "attacker_skill", "prone", "dodge_expert", "dual_wield", "fatigue"),
+		"clamp(if(prone, 0.25, 1) * if(dodge_expert and not prone, 90, base + (defender_speed - attacker_speed) * 10 - if(swift_attack and attacker_speed > defender_speed, (attacker_speed - defender_speed) * 10, 0) + if(heavy_attack and defender_speed > attacker_speed, (defender_speed - attacker_speed) * 10, 0) + if(improvised, 10, (defender_skill - attacker_skill) * 10)) + fatigue - dual_wield * 5, 5, 90 + fatigue)",
+		"Dodge chance in percent (Azure Peak). base is the attacker's defprob (dodge_base for a person); defender_skill is the defender's rank in the attacker's skill; improvised is a weapon without a skill.",
+		list("defender_speed", "attacker_speed", "swift_attack", "heavy_attack", "improvised", "defender_skill", "attacker_skill", "prone", "dodge_expert", "dual_wield", "fatigue", "base"),
 	),
 	ROGUE_FORMULA_ARMOR_PROTECTION = list(
 		"clamp(rating - penetration, 0, 100)",
@@ -158,5 +158,10 @@ GLOBAL_LIST_INIT(rogue_formula_definitions, list(
 		"round(limb_damage * 20 + damage / divisor) + bonus * 10",
 		"Chance in percent of one critical wound (Azure Peak try_crit). limb_damage: share of the limb's damage; divisor: crit_damage_divisor or crit_chest_divisor; bonus: 1 for a matching alt intent (strong for fractures and chops, aimed for cuts and stabs).",
 		list("limb_damage", "damage", "divisor", "bonus"),
+	),
+	ROGUE_FORMULA_BEAST_DODGE_CHANCE = list(
+		"clamp(20 + (defender_speed - attacker_speed) * 3 - weapon_skill * 4 - fatigue, 5, 45)",
+		"Dodge chance in percent of a creature (Azure Peak SIMPLEMOB_DODGE_*). weapon_skill is the attacker's rank with the weapon, fatigue the creature's dodge fatigue.",
+		list("defender_speed", "attacker_speed", "weapon_skill", "fatigue"),
 	),
 ))

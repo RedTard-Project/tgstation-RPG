@@ -16,6 +16,18 @@
 		special_instance = new special
 	return special_instance
 
+/mob/living/carbon/human
+	var/datum/special_intent/rogue_unarmed_special
+
+/mob/living/carbon/human/Destroy()
+	QDEL_NULL(rogue_unarmed_special)
+	return ..()
+
+/mob/living/carbon/human/proc/rogue_fist_special()
+	if(!rogue_unarmed_special)
+		rogue_unarmed_special = new /datum/special_intent/upper_cut
+	return rogue_unarmed_special
+
 /obj/effect/temp_visual/rogue_special
 	icon = ROGUE_SPECIAL_FX_ICON
 	icon_state = "blip"
@@ -32,18 +44,18 @@
 	if(incapacitated || has_status_effect(/datum/status_effect/rogue/special_cooldown))
 		return FALSE
 	var/obj/item/weapon = get_active_held_item()
-	var/datum/special_intent/active = weapon?.rogue_special()
+	var/datum/special_intent/active = weapon ? weapon.rogue_special() : rogue_fist_special()
 	if(!active)
 		return FALSE
-	if(rogue_weapon_rank(weapon) < ROGUE_SPECIAL_RANK)
+	if((weapon ? rogue_weapon_rank(weapon) : rogue_skill_rank(/datum/attribute/skill/combat/unarmed)) < ROGUE_SPECIAL_RANK)
 		to_chat(src, span_info("I'm not knowledgeable enough in the arts of this weapon to use this."))
 		return FALSE
 	face_atom(target)
-	if(!active.check_range(src, target) || !active.check_reqs(src, weapon) || !active.apply_cost(src))
+	if(!active.check_range(src, target) || (weapon && !active.check_reqs(src, weapon)) || !active.apply_cost(src))
 		return FALSE
 	rogue_mark_in_combat()
 	SEND_SIGNAL(src, COMSIG_ROGUE_MANOEUVRE, ROGUE_MANOEUVRE_SPECIAL)
-	active.deploy(src, weapon, target)
+	active.deploy(src, weapon || src, target)
 	return TRUE
 
 /datum/special_intent
@@ -224,14 +236,15 @@
 			. += victim
 
 /datum/special_intent/proc/aimed_zone(mob/living/target)
-	return howner.rogue_strike_zone(target, iparent, howner.rogue_strike_intent(iparent))
+	var/obj/item/weapon = isitem(iparent) ? iparent : null
+	return howner.rogue_strike_zone(target, weapon, howner.rogue_strike_intent(weapon))
 
 /datum/special_intent/proc/stat_share(stat_type)
 	return howner.rogue_stat(stat_type) / ROGUE_ATTRIBUTE_MIDDLING
 
 /datum/special_intent/proc/weapon_damage(mob/living/target, damage, zone, blade_class, no_pen = FALSE, full_pen = FALSE)
-	var/obj/item/weapon = iparent
-	if(!istype(weapon) || QDELETED(target))
+	var/obj/item/weapon = isitem(iparent) ? iparent : null
+	if((!weapon && iparent != howner) || QDELETED(target))
 		return 0
 	damage *= ROGUE_SPECIAL_DAMAGE_FACTOR
 	var/def_zone = rogue_zone_target(zone)
@@ -242,18 +255,26 @@
 			worn.take_damage(damage, BRUTE, "", FALSE)
 			howner.visible_message(span_warning("[name] strikes [target]'s [rogue_zone_name(zone)], but [worn] takes the blow!"))
 			return 0
-	var/old_class = weapon.rogue_current_bclass
-	weapon.rogue_current_bclass = blade_class
-	var/blocked = full_pen ? 0 : min(target.run_armor_check(def_zone, MELEE, armour_penetration = weapon.armour_penetration, silent = TRUE), ARMOR_MAX_BLOCK)
-	var/damage_done = target.apply_damage(damage, weapon.damtype, def_zone, blocked, sharpness = rogue_bclass_sharpness(blade_class), attack_direction = get_dir(howner, target), attacking_item = full_pen ? null : weapon)
-	weapon.rogue_current_bclass = old_class
+	var/old_class
+	if(weapon)
+		old_class = weapon.rogue_current_bclass
+		weapon.rogue_current_bclass = blade_class
+	var/blocked = full_pen ? 0 : target.run_armor_check(def_zone, MELEE, armour_penetration = weapon?.armour_penetration, silent = TRUE)
+	if(!weapon && !full_pen && ishuman(target))
+		var/mob/living/carbon/human/armored = target
+		blocked += armored.rogue_armor_protection(def_zone, rogue_bclass_to_armor(blade_class), 0)
+	blocked = min(blocked, ARMOR_MAX_BLOCK)
+	var/damage_done = target.apply_damage(damage, weapon ? weapon.damtype : BRUTE, def_zone, blocked, sharpness = rogue_bclass_sharpness(blade_class), attack_direction = get_dir(howner, target), attacking_item = full_pen ? null : weapon)
+	if(weapon)
+		weapon.rogue_current_bclass = old_class
 	howner.visible_message(span_danger("<font color='#c2663c'>[name] strikes [target] in the [rogue_zone_name(zone)]![damage_done > 0 && full_pen ? " <b>It pierces through to their flesh!</b>" : ""]</font>"))
-	if(damage_done > 0 && weapon.hitsound)
-		playsound(target, weapon.hitsound, 80, TRUE)
+	var/hit_sound = weapon ? weapon.hitsound : pick(GLOB.rogue_punch_hit_sounds)
+	if(damage_done > 0 && hit_sound)
+		playsound(target, hit_sound, 80, TRUE)
 	if(damage_done > 0)
 		target.rogue_try_crit(blade_class, damage_done, howner, zone)
 	target.rogue_pop_open()
-	log_combat(howner, target, "struck with the special [name]", weapon, "(DAMAGE: [damage_done])")
+	log_combat(howner, target, "struck with the special [name]", weapon || "fists", "(DAMAGE: [damage_done])")
 	return damage_done
 
 /datum/special_intent/proc/fling(mob/living/victim, turf/destination, distance)
@@ -663,6 +684,23 @@
 		playsound(howner, 'modular_redtard/rockhill/sound/combat/hits/punch/punch_hard (2).ogg', 100, TRUE)
 		victim.remove_status_effect(/datum/status_effect/rogue/exposed)
 		victim.remove_status_effect(/datum/status_effect/rogue_vulnerable)
+
+/datum/special_intent/limbguard
+	name = "Limb Guard"
+	desc = "Raise your shield to protect a limb. You will deflect projectiles and anyone striking that limb will be severely penalized. You cannot regain stamina while this is active. It can be cancelled by jumping, kicking or by using the special again with the same shield out."
+	respect_adjacency = FALSE
+	cooldown = 60 SECONDS
+	stamcost = 25
+
+/datum/special_intent/limbguard/apply_cost(mob/living/user)
+	if(user.remove_status_effect(/datum/status_effect/rogue/limbguard) || user.has_status_effect(/datum/status_effect/rogue/guard))
+		return FALSE
+	return ..()
+
+/datum/special_intent/limbguard/process_attack()
+	SHOULD_CALL_PARENT(FALSE)
+	log_combat(howner, howner, "raised a limb guard with", iparent)
+	howner.apply_status_effect(/datum/status_effect/rogue/limbguard, GLOB.rogue_major_zones[howner.rogue_precise_zone()] || BODY_ZONE_CHEST, iparent, tune("cooldown"))
 
 /datum/special_intent/polearm_backstep
 	name = "Backstep"
