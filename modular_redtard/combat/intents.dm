@@ -124,12 +124,21 @@ GLOBAL_LIST_EMPTY(rogue_intents)
 	var/rogue_last_parry = 0
 	var/rogue_last_dodge = 0
 
+/mob/living/proc/rogue_fist_intents()
+	return null
+
+/mob/living/proc/rogue_hand_intents(hand_index = active_hand_index)
+	var/obj/item/held = get_item_for_held_index(hand_index)
+	return held ? held.rogue_intents() : rogue_fist_intents()
+
+/mob/living/proc/rogue_intent_key(hand_index)
+	return get_item_for_held_index(hand_index) ? "[hand_index]" : "fist[hand_index]"
+
 /mob/living/proc/rogue_intent_slot(hand_index = active_hand_index)
-	return LAZYACCESS(rogue_intent_index, "[hand_index]") || 1
+	return LAZYACCESS(rogue_intent_index, rogue_intent_key(hand_index)) || 1
 
 /mob/living/proc/rogue_hand_intent(hand_index = active_hand_index)
-	var/obj/item/held = get_item_for_held_index(hand_index)
-	var/list/intents = held?.rogue_intents()
+	var/list/intents = rogue_hand_intents(hand_index)
 	if(!length(intents))
 		return null
 	return rogue_intent(intents[clamp(rogue_intent_slot(hand_index), 1, length(intents))])
@@ -138,12 +147,11 @@ GLOBAL_LIST_EMPTY(rogue_intents)
 	return rogue_hand_intent(active_hand_index)
 
 /mob/living/proc/rogue_select_intent(slot)
-	var/obj/item/held = get_active_held_item()
-	var/list/intents = held?.rogue_intents()
+	var/list/intents = rogue_hand_intents()
 	if(!length(intents) || slot < 1 || slot > min(length(intents), ROGUE_INTENT_SLOTS))
 		return FALSE
-	LAZYSET(rogue_intent_index, "[active_hand_index]", slot)
-	held.rogue_apply_intent(rogue_active_intent())
+	LAZYSET(rogue_intent_index, rogue_intent_key(active_hand_index), slot)
+	get_active_held_item()?.rogue_apply_intent(rogue_active_intent())
 	playsound_local(src, 'sound/machines/click.ogg', 50, FALSE)
 	SEND_SIGNAL(src, COMSIG_MOB_ROGUE_INTENT_CHANGED)
 	return TRUE
@@ -154,8 +162,7 @@ GLOBAL_LIST_EMPTY(rogue_intents)
 	SEND_SIGNAL(src, COMSIG_MOB_ROGUE_INTENT_CHANGED)
 
 /mob/living/proc/rogue_examine_intent(slot)
-	var/obj/item/held = get_active_held_item()
-	var/list/intents = held?.rogue_intents()
+	var/list/intents = rogue_hand_intents()
 	if(!length(intents) || slot < 1 || slot > length(intents))
 		return
 	var/datum/intent/intent = rogue_intent(intents[slot])

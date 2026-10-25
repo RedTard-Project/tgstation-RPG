@@ -62,9 +62,9 @@
 		HUD_ROGUE_READ = list(/atom/movable/screen/rogue/placeholder/read, "1,1", 'modular_redtard/icons/hud/read.dmi', "", 24, HUD_PLANE, no_group),
 		HUD_ROGUE_READ_TEXT_RIGHT = list(/atom/movable/screen/rogue/placeholder/readtext, "5,5", null, "", 24.02, HUD_PLANE, no_group),
 		HUD_ROGUE_READ_TEXT_LEFT = list(/atom/movable/screen/rogue/placeholder/readtext, "5,5", null, "", 24.02, HUD_PLANE, no_group),
-		HUD_ROGUE_WEAPON_INTENTS = list(/atom/movable/screen/rogue/weapon_intents, rogueui_intents, 'modular_redtard/icons/mob/rogueintentbase.dmi', "intentbase", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_WEAPON_INTENTS = list(/atom/movable/screen/rogue/weapon_intents, rogueui_intents, 'modular_redtard/icons/mob/rogueintentbase.dmi', "intentbase", 24, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_MOB_MOOD = list(/atom/movable/screen/mood/rogue, rogueui_stress, hud_icon, null, 24, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_ROGUE_RMB_INTENT = list(/atom/movable/screen/rogue/rmb_intent, rogueui_rmbintents, hud_icon, "rmbintent", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_RMB_INTENT = list(/atom/movable/screen/rogue/rmb_intent, rogueui_rmbintents, hud_icon, "rmbintent", 24, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_MOB_HEALTH = list(/atom/movable/screen/healths/rogue, rogueui_blood, heat_icon, "dam0", 24, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_ROGUE_QUAD_INTENTS = list(/atom/movable/screen/rogue/quad_intents, rogueui_quad, hud_icon, "mmbintents0", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 		HUD_ROGUE_DEF_INTENT = list(/atom/movable/screen/rogue/def_intent, rogueui_def, hud_icon, "def2n", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
@@ -76,7 +76,7 @@
 		HUD_ROGUE_CLICKDELAY_LEFT = list(/atom/movable/screen/rogue/clickdelay/left, rogueui_clickdelay_left, hud_icon, "", 25, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_ROGUE_CLICKDELAY_RIGHT = list(/atom/movable/screen/rogue/clickdelay/right, rogueui_clickdelay_right, hud_icon, "", 25, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_ROGUE_CLICKDELAY_MID = list(/atom/movable/screen/rogue/clickdelay/next_move, rogueui_clickdelay_mid, hud_icon, "", 25, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_ROGUE_DEFDELAY = list(/atom/movable/screen/rogue/defdelay, rogueui_defdelay, hud_icon, "defdelay0", 25, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_DEFDELAY = list(/atom/movable/screen/rogue/defdelay, rogueui_defdelay, hud_icon, "defdelay0", 25, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_KEY_HAND_SLOT(1) = list(/atom/movable/screen/inventory/hand/rogue, rogueui_hand_left, hud_icon, "hand_l", 24, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_KEY_HAND_SLOT(2) = list(/atom/movable/screen/inventory/hand/rogue, rogueui_hand_right, hud_icon, "hand_r", 24, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_ROGUE_RING_SLOT(1) = list(/atom/movable/screen/inventory/rogue/indexed/ring, rogueui_ring1, hud_icon, "ring", 24, HUD_PLANE, HUD_GROUP_TOGGLEABLE_INVENTORY),
@@ -110,12 +110,13 @@
 		HUD_ROGUE_EYE = list(/atom/movable/screen/rogue/eye, rogueui_eye, hud_icon, "eye", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 		HUD_ROGUE_ADVSETUP = list(/atom/movable/screen/rogue/advsetup, "CENTER-1,CENTER-1:16", null, "", 24, HUD_PLANE, no_group),
 		HUD_MOB_ZONE_SELECTOR = list(/atom/movable/screen/zone_sel/rogue, rogueui_targetdoll, 'modular_redtard/icons/mob/roguehud64.dmi', null, 24, HUD_PLANE, HUD_GROUP_ROGUE_DOLL),
+		HUD_ROGUE_DOLL_BACK = list(/atom/movable/screen/rogue/doll_back, rogueui_doll_back, 'modular_redtard/icons/hud/rogue_doll_back.dmi', "doll_back", 23, HUD_PLANE, HUD_GROUP_ROGUE_DOLL),
 		HUD_ROGUE_DOLL_TOGGLE = list(/atom/movable/screen/rogue/panel_toggle/doll, rogueui_doll_toggle, hud_icon, "template_small", 24, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_ROGUE_PANEL_STRIP = list(/atom/movable/screen/rogue/panel_strip, rogueui_panel_strip, 'modular_redtard/icons/hud/rogue_panel.dmi', "strip", 23, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 		HUD_ROGUE_BUILD = list(/atom/movable/screen/rogue/build, rogueui_build, 'modular_redtard/icons/hud/rogue_panel.dmi', "build", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 		HUD_MOB_STAMINA = list(/atom/movable/screen/stamina/rogue, rogueui_fat, heat_icon, "stam100", 24, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_ROGUE_ENERGY = list(/atom/movable/screen/rogue/energy, rogueui_fat, heat_icon, "energy100", 24, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_ROGUE_FEINT = list(/atom/movable/screen/rogue/feint, rogueui_feint, 'modular_redtard/icons/mob/roguefeint.dmi', "feintbar100", 24.1, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_FEINT = list(/atom/movable/screen/rogue/feint, rogueui_feint, 'modular_redtard/icons/mob/roguefeint.dmi', "feintbar100", 24.1, HUD_PLANE, HUD_GROUP_STATIC),
 	)
 	for(var/hud_key in expected)
 		var/list/row = expected[hud_key]
@@ -221,6 +222,46 @@
 	click_as(dummy, combat)
 	TEST_ASSERT(!dummy.combat_mode, "The combat button did not turn combat mode off")
 	TEST_ASSERT_EQUAL(combat.icon_state, "combat0", "The combat button did not show combat mode off")
+
+/datum/unit_test/rogue_hud/fist_intents
+
+/datum/unit_test/rogue_hud/fist_intents/Run()
+	var/mob/living/carbon/human/dummy = make_hud_user()
+	var/list/fists = dummy.rogue_hand_intents()
+	TEST_ASSERT_EQUAL(length(fists), 4, "An empty hand should offer Ratwood's four fist intents")
+	var/list/buttons = list("intouch", "inshove", "ingrab", "inpunch")
+	for(var/slot in 1 to length(buttons))
+		var/datum/intent/fist = rogue_intent(fists[slot])
+		TEST_ASSERT_EQUAL(fist.icon_state, buttons[slot], "Fist intent [slot]")
+		TEST_ASSERT(icon_exists(fist.icon, fist.icon_state), "[fist.name] has no labelled button in [fist.icon]")
+	var/atom/movable/screen/rogue/weapon_intents/intents = dummy.hud_used.screen_objects[HUD_ROGUE_WEAPON_INTENTS]
+	intents.update_appearance(UPDATE_OVERLAYS)
+	TEST_ASSERT_EQUAL(length(intents.overlays), 5, "The intent panel should draw four fist buttons and the selection")
+
+	var/mob/living/carbon/human/target = allocate(/mob/living/carbon/human/consistent)
+	ADD_TRAIT(dummy, TRAIT_PERFECT_ATTACKER, TRAIT_SOURCE_UNIT_TESTS)
+	dummy.set_combat_mode(TRUE)
+	TEST_ASSERT(dummy.rogue_select_intent(1), "Could not pick touch")
+	dummy.UnarmedAttack(target, TRUE, list())
+	TEST_ASSERT_EQUAL(target.get_brute_loss(), 0, "Touch hurt the target in combat mode")
+	TEST_ASSERT(dummy.combat_mode, "Touch left combat mode switched off")
+
+	dummy.set_combat_mode(FALSE)
+	TEST_ASSERT(dummy.rogue_select_intent(4), "Could not pick punch")
+	dummy.UnarmedAttack(target, TRUE, list())
+	TEST_ASSERT(target.get_brute_loss() > 0, "Punch did not hurt the target outside combat mode")
+	TEST_ASSERT(!dummy.combat_mode, "Punch left combat mode switched on")
+
+	TEST_ASSERT(dummy.rogue_select_intent(3), "Could not pick grab")
+	dummy.UnarmedAttack(target, TRUE, list())
+	TEST_ASSERT_EQUAL(dummy.pulling, target, "Grab did not take hold of the target")
+	dummy.stop_pulling()
+
+	var/obj/item/toy/plush/held = allocate(__IMPLIED_TYPE__)
+	dummy.put_in_active_hand(held)
+	TEST_ASSERT_NULL(dummy.rogue_active_intent(), "An item without rogue intents still uses the fist intents")
+	dummy.dropItemToGround(held)
+	TEST_ASSERT(istype(dummy.rogue_active_intent(), /datum/intent/unarmed/grab), "The fist intent was not kept apart from the item")
 
 /datum/rogue_hud_intent_probe
 	var/last_index

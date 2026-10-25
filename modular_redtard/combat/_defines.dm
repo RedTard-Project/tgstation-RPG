@@ -50,6 +50,11 @@
 #define ROGUE_INTENT_PARRY 2
 #define ROGUE_INTENT_SLOTS 4
 
+#define ROGUE_UNARMED_HELP "help"
+#define ROGUE_UNARMED_SHOVE "shove"
+#define ROGUE_UNARMED_GRAB "grab"
+#define ROGUE_UNARMED_HARM "harm"
+
 #define ROGUE_CLICK_CD_MELEE 12
 
 

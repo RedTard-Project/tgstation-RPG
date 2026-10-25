@@ -45,6 +45,14 @@
 	layer = ROGUE_HUD_LAYER - 1
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
+/atom/movable/screen/rogue/doll_back
+	name = ""
+	icon = ROGUE_HUD_ICON_DOLL_BACK
+	icon_state = "doll_back"
+	screen_loc = rogueui_doll_back
+	layer = ROGUE_HUD_LAYER - 1
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+
 /atom/movable/screen/rogue/build
 	name = "build"
 	icon = ROGUE_HUD_ICON_STRIP
@@ -143,8 +151,7 @@
 	var/mob/living/owner = get_mob()
 	if(!isliving(owner))
 		return
-	var/obj/item/held = owner.get_active_held_item()
-	var/list/intents = held?.rogue_intents()
+	var/list/intents = owner.rogue_hand_intents()
 	var/shown = min(length(intents), ROGUE_INTENT_SLOTS)
 	if(!shown)
 		return

@@ -1,5 +1,5 @@
-#define ROGUE_HUD_MAX_SCREEN_OBJECTS 65
-#define ROGUE_HUD_MAX_SHOWN_OBJECTS 37
+#define ROGUE_HUD_MAX_SCREEN_OBJECTS 66
+#define ROGUE_HUD_MAX_SHOWN_OBJECTS 38
 
 #define ROGUE_HUD_STUB_TEXT "не реализовано"
 
@@ -8,6 +8,7 @@
 #define ROGUE_HUD_ICON_BACK 'modular_redtard/icons/mob/roguehudback2.dmi'
 #define ROGUE_HUD_ICON_PANEL 'modular_redtard/icons/mob/roguehud_panel.dmi'
 #define ROGUE_HUD_ICON_STRIP 'modular_redtard/icons/hud/rogue_panel.dmi'
+#define ROGUE_HUD_ICON_DOLL_BACK 'modular_redtard/icons/hud/rogue_doll_back.dmi'
 #define ROGUE_HUD_ICON_INTENT_BASE 'modular_redtard/icons/mob/rogueintentbase.dmi'
 #define ROGUE_HUD_ICON_INTENTS 'modular_redtard/icons/mob/rogueintents.dmi'
 #define ROGUE_HUD_ICON_HEAT 'modular_redtard/icons/mob/rogueheat.dmi'
@@ -24,7 +25,7 @@
 
 #define rogueui_backhudl "WEST:16,SOUTH:0"
 #define rogueui_panel_strip "WEST,SOUTH to WEST,NORTH"
-#define rogueui_panel_toggle "WEST:2,NORTH"
+#define rogueui_panel_toggle "WEST:2,SOUTH"
 #define rogueui_panel_width 36
 
 #define rogueui_inventory_toggle "WEST+1:8,SOUTH"
@@ -65,24 +66,24 @@
 #define rogueui_quad "WEST:2,NORTH-12:13"
 #define rogueui_stance "WEST:2,NORTH-13:11"
 
-#define rogueui_hand_left "WEST+1:24,SOUTH+6"
-#define rogueui_hand_right "WEST+2:24,SOUTH+6"
-#define rogueui_clickdelay_left "WEST+1:24,SOUTH+6"
-#define rogueui_clickdelay_right "WEST+2:24,SOUTH+6"
-#define rogueui_clickdelay_mid "WEST+2:8,SOUTH+6"
-#define rogueui_intents "WEST:7,SOUTH+7"
-#define rogueui_rmbintents "WEST+4:10,SOUTH+7"
-#define rogueui_feint "WEST+4:10,SOUTH+6"
-#define rogueui_defdelay "WEST+4:11,SOUTH+6"
+#define rogueui_hand_left "CENTER-1:16,SOUTH"
+#define rogueui_hand_right "CENTER:16,SOUTH"
+#define rogueui_clickdelay_left "CENTER-1:16,SOUTH"
+#define rogueui_clickdelay_right "CENTER:16,SOUTH"
+#define rogueui_clickdelay_mid "CENTER,SOUTH"
+#define rogueui_intents "CENTER-3:31,SOUTH+1"
+#define rogueui_rmbintents "CENTER+2:2,SOUTH+1"
+#define rogueui_feint "CENTER+2:2,SOUTH"
+#define rogueui_defdelay "CENTER+2:3,SOUTH"
 
-#define rogueui_targetdoll "EAST-1,SOUTH"
-#define rogueui_doll_toggle "EAST,SOUTH+2"
+#define rogueui_targetdoll "EAST-1:-4,NORTH-1:-4"
+#define rogueui_doll_back "EAST-1:-8,NORTH-1:-8"
+#define rogueui_doll_toggle "EAST:-2,NORTH-2:-8"
+#define rogueui_alert_drop 72
 #define rogueui_advsetup "CENTER-1,CENTER-1:16"
 
 #define rogueui_screen_origin "1,1"
 #define rogueui_readtext "5,5"
-
-#define rogueui_intents_alt "EAST-1:28,SOUTH:5"
 
 #define rogueui_ring_position(index) (index == 1 ? rogueui_ring1 : (index == 2 ? rogueui_ring2 : (index == 3 ? rogueui_ring3 : rogueui_ring4)))
 #define rogueui_hand_position(index) (index == 1 ? rogueui_hand_left : (index == 2 ? rogueui_hand_right : null))
@@ -91,6 +92,7 @@
 #define HUD_ROGUE_PANEL_STRIP "rogue_panel_strip"
 #define HUD_ROGUE_BUILD "rogue_build"
 #define HUD_ROGUE_DOLL_TOGGLE "rogue_doll_toggle"
+#define HUD_ROGUE_DOLL_BACK "rogue_doll_back"
 #define HUD_GROUP_ROGUE_PANEL (SCREEN_GROUP_AMT + 1)
 #define HUD_GROUP_ROGUE_DOLL (SCREEN_GROUP_AMT + 2)
 #define HUD_ROGUE_GRAIN "rogue_grain"
