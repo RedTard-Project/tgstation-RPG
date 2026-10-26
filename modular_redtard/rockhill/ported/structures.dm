@@ -1,6 +1,3 @@
-/obj/structure/apiary
-	parent_type = /obj/structure/rockhill
-
 /obj/structure/bondage
 	parent_type = /obj/structure/rockhill
 
@@ -31,6 +28,9 @@
 /obj/structure/fluff/walldeco
 	parent_type = /obj/structure/rockhill
 
+/obj/structure/pillar
+	parent_type = /obj/structure/rockhill
+
 /obj/structure/ritualcircle
 	parent_type = /obj/structure/rockhill
 
@@ -50,9 +50,6 @@
 	parent_type = /obj/structure/rockhill
 
 /obj/structure/wild_plant
-	parent_type = /obj/structure/rockhill
-
-/obj/structure/wooden_horse
 	parent_type = /obj/structure/rockhill
 
 /obj/machinery/anvil
@@ -124,6 +121,15 @@
 	obj_flags = CAN_BE_HIT
 	layer = BELOW_OBJ_LAYER
 
+/obj/structure/apiary
+	parent_type = /obj/structure/rockhill
+	name = "apiary"
+	desc = "A structure housing bees that produce honey and pollinate plants."
+	icon = 'modular_redtard/rockhill/icons/obj/structures/apiary.dmi'
+	icon_state = "beebox-empty"
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_OBJ_LAYER
+
 /obj/structure/apiary/starter
 	name = "apiary"
 	desc = "A structure housing bees that produce honey and pollinate plants."
@@ -140,6 +146,33 @@
 	icon_state = "arcynewall"
 	density = TRUE
 	opacity = 0
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_OBJ_LAYER
+
+/obj/structure/ascendant_altar
+	parent_type = /obj/structure/rockhill
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
+	icon_state = "alch"
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_OBJ_LAYER
+
+/obj/structure/autogrinder
+	parent_type = /obj/structure/rockhill
+	name = "autogrinder"
+	desc = "A stout millstone lashed into a rotational drivetrain, grinding whatever it is fed without a miller's hand."
+	icon = 'modular_redtard/rockhill/icons/obj/autogrinder.dmi'
+	icon_state = "mill_off"
+	density = TRUE
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_OBJ_LAYER
+
+/obj/structure/autosmither
+	parent_type = /obj/structure/rockhill
+	name = "auto anvil"
+	desc = "A holy amalgamation of buttons and levers built purposely to fulfill Malum's will."
+	icon = 'modular_redtard/rockhill/icons/obj/autosmithy.dmi'
+	icon_state = "1"
+	density = TRUE
 	obj_flags = CAN_BE_HIT
 	layer = BELOW_OBJ_LAYER
 
@@ -403,6 +436,16 @@
 	obj_flags = CAN_BE_HIT
 	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
+
+/obj/structure/bombard
+	parent_type = /obj/structure/rockhill
+	name = "portable bombard"
+	desc = "A light, portable bombard. Looks as if only a trained hand can aim it..."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/stationary/bombard.dmi'
+	icon_state = "smallmortar"
+	density = 1
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/bondage/chains
 	name = "chains"
@@ -1027,6 +1070,16 @@
 	plane = ABOVE_GAME_PLANE
 	layer = BELOW_OBJ_LAYER
 
+/obj/structure/englauncher
+	parent_type = /obj/structure/rockhill
+	name = "Engineer's Launcher"
+	desc = "A engineering contraption made to launch various objects in the direction its pointed."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/engineering_structure.dmi'
+	icon_state = "activator"
+	density = TRUE
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_OBJ_LAYER
+
 /obj/structure/eoran_pomegranate_tree
 	parent_type = /obj/structure/rockhill
 	name = "pomegranate tree"
@@ -1078,6 +1131,15 @@
 	obj_flags = CAN_BE_HIT
 	layer = BELOW_OBJ_LAYER
 
+/obj/structure/fermentation_keg/crafted
+	name = "fermentation keg"
+	desc = "A simple keg that is meant for making booze."
+	icon = 'modular_redtard/rockhill/icons/obj/brewing.dmi'
+	icon_state = "barrel_tapless"
+	density = TRUE
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_OBJ_LAYER
+
 /obj/structure/fermentation_keg/distiller
 	name = "copper distiller"
 	desc = "A simple keg that is meant for making booze."
@@ -1085,6 +1147,18 @@
 	icon_state = "distillery"
 	density = TRUE
 	obj_flags = CAN_BE_HIT
+	layer = BELOW_OBJ_LAYER
+
+/obj/structure/fermentation_keg/fancypot
+	name = "fancy pot"
+	desc = "Decorative and Practical!"
+	icon = 'modular_redtard/rockhill/icons/modular_deserttown/icons/pots.dmi'
+	icon_state = "fancypot1"
+	density = TRUE
+	obj_flags = CAN_BE_HIT
+	rockhill_variant = "fancypot#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 2
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/fermentation_keg/gronmead
@@ -1130,6 +1204,18 @@
 	icon_state = "barrel_tapless"
 	density = TRUE
 	obj_flags = CAN_BE_HIT
+	layer = BELOW_OBJ_LAYER
+
+/obj/structure/fermentation_keg/sandpot
+	name = "sand pot"
+	desc = "A common clay pot used for storing and sometimes fermenting fluids. Favoured over wooden barrels in the desert of Zybantium due to the relative scarcity of wood."
+	icon = 'modular_redtard/rockhill/icons/modular_deserttown/icons/pots.dmi'
+	icon_state = "sandpot1"
+	density = TRUE
+	obj_flags = CAN_BE_HIT
+	rockhill_variant = "sandpot#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 2
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/fermentation_keg/sourwine
@@ -2357,6 +2443,54 @@
 	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
+/obj/structure/fluff/canopy/booth
+	name = "Canopy"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/modular_hearthstone/icons/obj/decor.dmi'
+	icon_state = "canopyr-booth"
+	density = FALSE
+	opacity = 0
+	dir = SOUTH
+	obj_flags = CAN_BE_HIT
+	plane = ABOVE_GAME_PLANE
+	layer = ABOVE_MOB_LAYER
+
+/obj/structure/fluff/canopy/booth/booth02
+	name = "Canopy"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/modular_hearthstone/icons/obj/decor.dmi'
+	icon_state = "canopyr-booth-2"
+	density = FALSE
+	opacity = 0
+	dir = SOUTH
+	obj_flags = CAN_BE_HIT
+	plane = ABOVE_GAME_PLANE
+	layer = ABOVE_MOB_LAYER
+
+/obj/structure/fluff/canopy/booth/booth_green
+	name = "Canopy"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/modular_hearthstone/icons/obj/decor.dmi'
+	icon_state = "canopyg-booth"
+	density = FALSE
+	opacity = 0
+	dir = SOUTH
+	obj_flags = CAN_BE_HIT
+	plane = ABOVE_GAME_PLANE
+	layer = ABOVE_MOB_LAYER
+
+/obj/structure/fluff/canopy/booth/booth_green02
+	name = "Canopy"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/modular_hearthstone/icons/obj/decor.dmi'
+	icon_state = "canopyg-booth-2"
+	density = FALSE
+	opacity = 0
+	dir = SOUTH
+	obj_flags = CAN_BE_HIT
+	plane = ABOVE_GAME_PLANE
+	layer = ABOVE_MOB_LAYER
+
 /obj/structure/fluff/canopy/green
 	name = "Canopy"
 	desc = ""
@@ -2485,6 +2619,76 @@
 	obj_flags = CAN_BE_HIT
 	layer = BELOW_OBJ_LAYER
 
+/obj/structure/fluff/iconsign/elksign
+	name = "elk sign"
+	desc = "A sign with an elk on it."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/signs.dmi'
+	icon_state = "signelk"
+	density = FALSE
+	opacity = 0
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_OBJ_LAYER
+
+/obj/structure/fluff/iconsign/innsign
+	name = "mug sign"
+	desc = "A sign with a cup on it."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/signs.dmi'
+	icon_state = "signmug"
+	density = FALSE
+	opacity = 0
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_OBJ_LAYER
+
+/obj/structure/fluff/iconsign/psycrosssign
+	name = "psycross sign"
+	desc = "A sign with a psycross."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/signs.dmi'
+	icon_state = "signlife"
+	density = FALSE
+	opacity = 0
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_OBJ_LAYER
+
+/obj/structure/fluff/iconsign/skullsign
+	name = "skull sign"
+	desc = "A sign with a skull on it."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/signs.dmi'
+	icon_state = "signskull"
+	density = FALSE
+	opacity = 0
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_OBJ_LAYER
+
+/obj/structure/fluff/iconsign/smithsign
+	name = "hammer sign"
+	desc = "A sign with a hammer on it."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/signs.dmi'
+	icon_state = "signdwarf"
+	density = FALSE
+	opacity = 0
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_OBJ_LAYER
+
+/obj/structure/fluff/iconsign/spidersign
+	name = "spider sign"
+	desc = "A sign with a spider on it."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/signs.dmi'
+	icon_state = "signspider"
+	density = FALSE
+	opacity = 0
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_OBJ_LAYER
+
+/obj/structure/fluff/iconsign/zizosign
+	name = "inverted psycross sign"
+	desc = "A sign with a inverted psycross."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/signs.dmi'
+	icon_state = "signdeath"
+	density = FALSE
+	opacity = 0
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_OBJ_LAYER
+
 /obj/structure/fluff/littlebanners
 	parent_type = /obj/structure/rockhill
 	name = "hanging little banners"
@@ -2498,11 +2702,59 @@
 	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
+/obj/structure/fluff/littlebanners/bluered
+	name = "hanging little banners"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/modular_hearthstone/icons/obj/decor.dmi'
+	icon_state = "hangingbanners_br"
+	density = FALSE
+	opacity = 0
+	dir = SOUTH
+	obj_flags = CAN_BE_HIT
+	plane = ABOVE_GAME_PLANE
+	layer = ABOVE_MOB_LAYER
+
 /obj/structure/fluff/littlebanners/bluewhite
 	name = "hanging little banners"
 	desc = ""
 	icon = 'modular_redtard/rockhill/icons/modular_hearthstone/icons/obj/decor.dmi'
 	icon_state = "hangingbanners_bw"
+	density = FALSE
+	opacity = 0
+	dir = SOUTH
+	obj_flags = CAN_BE_HIT
+	plane = ABOVE_GAME_PLANE
+	layer = ABOVE_MOB_LAYER
+
+/obj/structure/fluff/littlebanners/greenblue
+	name = "hanging little banners"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/modular_hearthstone/icons/obj/decor.dmi'
+	icon_state = "hangingbanners_gb"
+	density = FALSE
+	opacity = 0
+	dir = SOUTH
+	obj_flags = CAN_BE_HIT
+	plane = ABOVE_GAME_PLANE
+	layer = ABOVE_MOB_LAYER
+
+/obj/structure/fluff/littlebanners/greenred
+	name = "hanging little banners"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/modular_hearthstone/icons/obj/decor.dmi'
+	icon_state = "hangingbanners_gr"
+	density = FALSE
+	opacity = 0
+	dir = SOUTH
+	obj_flags = CAN_BE_HIT
+	plane = ABOVE_GAME_PLANE
+	layer = ABOVE_MOB_LAYER
+
+/obj/structure/fluff/littlebanners/greenwhite
+	name = "hanging little banners"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/modular_hearthstone/icons/obj/decor.dmi'
+	icon_state = "hangingbanners_gw"
 	density = FALSE
 	opacity = 0
 	dir = SOUTH
@@ -2523,6 +2775,16 @@
 
 /obj/structure/fluff/pillow
 	parent_type = /obj/structure/rockhill
+	name = "pillows"
+	desc = "Soft plush pillows. Resting your head on one is so relaxing."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
+	icon_state = "pillow"
+	density = FALSE
+	opacity = 0
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_OBJ_LAYER
+
+/obj/structure/fluff/pillow/black
 	name = "pillows"
 	desc = "Soft plush pillows. Resting your head on one is so relaxing."
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
@@ -2648,6 +2910,17 @@
 	obj_flags = UNIQUE_RENAME | CAN_BE_HIT
 	layer = BELOW_MOB_LAYER
 
+/obj/structure/fluff/psycross/crafted/necra
+	name = "necran pantheon cross"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tallstructure.dmi'
+	icon_state = "cross_necra"
+	density = FALSE
+	opacity = 0
+	dir = NORTH
+	obj_flags = UNIQUE_RENAME | CAN_BE_HIT
+	layer = BELOW_MOB_LAYER
+
 /obj/structure/fluff/psycross/graggar
 	name = "vicious cross"
 	desc = "An unholy symbol wrought from stone. It promises glory to the conqueror and chains to the conquered."
@@ -2686,6 +2959,17 @@
 	desc = "Golden scales dangle from rags and balance the scales. A monument to wealth."
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tallstructure.dmi'
 	icon_state = "cross_matthios_u"
+	density = FALSE
+	opacity = 0
+	dir = NORTH
+	obj_flags = UNIQUE_RENAME | CAN_BE_HIT
+	layer = BELOW_MOB_LAYER
+
+/obj/structure/fluff/psycross/psycrucifix
+	name = "wooden psydonic crucifix"
+	desc = "A rarely seen symbol of absolute and devoted certainty, more common in Otava: HE yet lyves. HE yet breathes."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tallstructure.dmi'
+	icon_state = "psycruci"
 	density = FALSE
 	opacity = 0
 	dir = NORTH
@@ -2934,11 +3218,36 @@
 	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
+/obj/structure/fluff/statue/aasimar
+	name = "crumbling statue"
+	desc = "Carvings of heroes from before your time in this world, the faces and names have become lost, they will likely be naught but dust soon enough."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tallstructure.dmi'
+	icon_state = "aasimar"
+	density = FALSE
+	opacity = 0
+	dir = SOUTH
+	obj_flags = CAN_BE_HIT
+	plane = ABOVE_GAME_PLANE
+	layer = ABOVE_MOB_LAYER
+
 /obj/structure/fluff/statue/abyssor
 	name = "abyssor statue"
 	desc = "An ephemeral cerulean dream, carved by those who seek to understand unspoken truths."
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tallandwide.dmi'
 	icon_state = "abyssor"
+	density = FALSE
+	opacity = 0
+	pixel_x = -16
+	dir = SOUTH
+	obj_flags = CAN_BE_HIT
+	plane = ABOVE_GAME_PLANE
+	layer = ABOVE_MOB_LAYER
+
+/obj/structure/fluff/statue/abyssor/dolomite
+	name = "abyssor statue"
+	desc = "An ephemeral cerulean dream, carved by those who seek to understand unspoken truths."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/tallandwide.dmi'
+	icon_state = "abyssor_dolomite"
 	density = FALSE
 	opacity = 0
 	pixel_x = -16
@@ -4227,6 +4536,16 @@
 	obj_flags = CAN_BE_HIT
 	layer = BELOW_OBJ_LAYER
 
+/obj/structure/infernalengine
+	parent_type = /obj/structure/rockhill
+	name = "infernal engine"
+	desc = "This engine uses cycling magma from an internal core to rotate large machinery."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/forge.dmi'
+	icon_state = "infernal0"
+	density = TRUE
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_MOB_LAYER
+
 /obj/structure/kybraxor
 	parent_type = /obj/structure/rockhill
 	name = "Kybraxor the Devourer"
@@ -4353,6 +4672,19 @@
 	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
+/obj/structure/pillar/sand1
+	name = "pillar"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/modular_deserttown/icons/sandpillar.dmi'
+	icon_state = "sandpillar1"
+	density = TRUE
+	opacity = 0
+	pixel_x = -16
+	alpha = 255
+	obj_flags = CAN_BE_HIT
+	plane = ABOVE_GAME_PLANE
+	layer = 4.82
+
 /obj/structure/pillory
 	parent_type = /obj/structure/rockhill
 	name = "pillory"
@@ -4403,6 +4735,18 @@
 	density = FALSE
 	obj_flags = CAN_BE_HIT
 	layer = BELOW_OBJ_LAYER
+
+/obj/structure/quicksand
+	parent_type = /obj/structure/rockhill
+	name = "quicksand"
+	desc = "The sand shifts unnaturally beneath your feet."
+	icon = 'modular_redtard/rockhill/icons/modular_deserttown/icons/quicksand.dmi'
+	icon_state = "quicksand"
+	density = FALSE
+	alpha = 175
+	obj_flags = CAN_BE_HIT
+	plane = FLOOR_PLANE
+	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/ritualcircle/abyssor
 	name = "Rune of Storm"
@@ -4759,6 +5103,15 @@
 	obj_flags = CAN_BE_HIT
 	layer = BELOW_OBJ_LAYER
 
+/obj/structure/roguemachine/potionseller/crafted
+	name = "POTION SELLER"
+	desc = "The stomach of this thing can been stuffed with fluids for you to buy."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/machines.dmi'
+	icon_state = "streetvendor1"
+	density = TRUE
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_OBJ_LAYER
+
 /obj/structure/roguemachine/rosewall
 	name = "The Rosewall"
 	desc = "A rosewood board scented with bath-oils, hung with perfumed slips of parchment. The bathhouse's workers pin their offerings here for any passerby to peruse."
@@ -5074,6 +5427,16 @@
 	obj_flags = CAN_BE_HIT
 	rockhill_random_dir = TRUE
 	layer = BELOW_OBJ_LAYER
+
+/obj/structure/spike_pit
+	parent_type = /obj/structure/rockhill
+	name = "spike pit"
+	desc = "A hole filled with sharp wooden ends that protrude upwards."
+	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
+	icon_state = "spike_pit"
+	density = FALSE
+	obj_flags = CAN_BE_HIT
+	layer = 2.8
 
 /obj/structure/standingbell
 	parent_type = /obj/structure/rockhill
@@ -5427,6 +5790,38 @@
 	obj_flags = CAN_BE_HIT
 	layer = BELOW_OBJ_LAYER
 
+/obj/structure/windmill
+	parent_type = /obj/structure/rockhill
+	name = "windmill"
+	desc = "A squat wooden mill crowned with broad canvas sails. Given open sky and a steady wind, it turns the machinery linked below it."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/windmill.dmi'
+	icon_state = "1"
+	density = TRUE
+	obj_flags = CAN_BE_HIT
+	plane = ABOVE_GAME_PLANE
+	layer = 4.5
+
+/obj/structure/wonder
+	parent_type = /obj/structure/rockhill
+	name = "wonder"
+	desc = "What a disgusting thing, what type of maniac would make this!?"
+	icon = 'modular_redtard/rockhill/icons/roguetown/maniac/creations.dmi'
+	icon_state = "creation1"
+	density = TRUE
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_OBJ_LAYER
+
+/obj/structure/wooden_horse
+	parent_type = /obj/structure/rockhill
+	name = "wooden saiga"
+	desc = "This tireless steed promises a less than pleasant journey, should you dare to ride it."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
+	icon_state = "wooden_horse"
+	density = TRUE
+	pixel_x = 0
+	obj_flags = CAN_BE_HIT
+	layer = OBJ_LAYER
+
 /obj/structure/wooden_horse/iron
 	name = "wooden saiga"
 	desc = "This tireless steed promises a less than pleasant journey, should you dare to ride it."
@@ -5442,6 +5837,16 @@
 	desc = "An affordable means of transportation for all walks of life, though few wish to ride. Watching the galloping of unlucky riders is one of the favorite pastimes of local nobility."
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
 	icon_state = "wooden_horse2"
+	density = TRUE
+	pixel_x = 0
+	obj_flags = CAN_BE_HIT
+	layer = OBJ_LAYER
+
+/obj/structure/wooden_horse/small
+	name = "wooden saiga"
+	desc = "This tireless steed promises a less than pleasant journey, should you dare to ride it."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
+	icon_state = "wooden_horse_small"
 	density = TRUE
 	pixel_x = 0
 	obj_flags = CAN_BE_HIT

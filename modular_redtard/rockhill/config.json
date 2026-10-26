@@ -1326,6 +1326,17 @@
 			"file": "modular_redtard/crafting/ported/anvil_recipes.dm",
 			"default_skill": "/datum/attribute/skill/craft/blacksmithing"
 		},
+		"craft_recipes": {
+			"root": "/datum/crafting_recipe/roguetown",
+			"file": "modular_redtard/crafting/ported/craft_recipes.dm",
+			"extra_sources": [
+				{
+					"name": "Azure Peak",
+					"root": "../Azure-Peak-Fork"
+				}
+			],
+			"max_blacklist": 40
+		},
 		"trade": {
 			"supply_packs": {
 				"root": "/datum/supply_pack/rogue",

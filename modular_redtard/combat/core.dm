@@ -59,6 +59,8 @@
 	if(fighter.client)
 		on_client_login(fighter, fighter.client)
 	fighter.rogue_enable_cursors(TRUE)
+	// Ratwood's living start with the first alt intent picked (swap_rmb_intent(num = 1)), feint, and always keep one.
+	fighter.rogue_rmb_intent ||= GLOB.rogue_rmb_intents[/datum/rogue_rmb_intent/feint]
 
 /datum/element/rogue_combat/Detach(mob/living/carbon/human/source)
 	UnregisterSignal(source, list(

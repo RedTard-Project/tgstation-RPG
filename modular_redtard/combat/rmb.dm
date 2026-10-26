@@ -91,11 +91,12 @@ GLOBAL_LIST_INIT(rogue_rmb_intents, rogue_init_rmb_intents())
 /mob/living/carbon/human/rogue_rmb_factor(factor_name)
 	return rogue_rmb_intent ? rogue_value_or("rmb_[rogue_rmb_intent.name]_[factor_name]", 1) : 1
 
-/mob/living/carbon/human/proc/rogue_toggle_rmb_intent(intent_type)
+/// Picks an alt intent. As in Ratwood (swap_rmb_intent()) one is always picked: picking it again keeps it.
+/mob/living/carbon/human/proc/rogue_select_rmb_intent(intent_type)
 	var/datum/rogue_rmb_intent/picked = GLOB.rogue_rmb_intents[intent_type]
 	if(!picked)
 		return
-	rogue_rmb_intent = rogue_rmb_intent == picked ? null : picked
+	rogue_rmb_intent = picked
 	playsound_local(src, 'sound/machines/click.ogg', 50, FALSE)
 	SEND_SIGNAL(src, COMSIG_MOB_ROGUE_RMB_CHANGED)
 
@@ -103,7 +104,7 @@ GLOBAL_LIST_INIT(rogue_rmb_intents, rogue_init_rmb_intents())
 /mob/living/carbon/human/proc/rogue_cycle_rmb_intent()
 	var/list/order = GLOB.rogue_rmb_intents
 	var/index = rogue_rmb_intent ? order.Find(rogue_rmb_intent.type) : 0
-	rogue_toggle_rmb_intent(order[(index % length(order)) + 1])
+	rogue_select_rmb_intent(order[(index % length(order)) + 1])
 
 /datum/status_effect/rogue_vulnerable
 	parent_type = /datum/status_effect/rogue
@@ -228,7 +229,7 @@ GLOBAL_LIST_INIT(rogue_rmb_intents, rogue_init_rmb_intents())
 		var/datum/rogue_rmb_intent/intent = GLOB.rogue_rmb_intents[intent_type]
 		to_chat(owner, span_info("[intent.name]: [intent.desc]"))
 		return
-	owner.rogue_toggle_rmb_intent(intent_type)
+	owner.rogue_select_rmb_intent(intent_type)
 	var/datum/hud/rogue/rogue_hud = hud
 	if(istype(rogue_hud) && rogue_hud.group_shown(HUD_GROUP_ROGUE_RMB))
 		rogue_hud.toggle_group(HUD_GROUP_ROGUE_RMB, usr)

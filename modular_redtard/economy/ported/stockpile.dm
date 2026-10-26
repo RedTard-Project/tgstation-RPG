@@ -230,6 +230,18 @@
 	passive_generation = 2
 	generation_price = 2
 
+/datum/roguestock/stockpile/pear
+	name = "Pear"
+	desc = "Too sweet for many, a favored treat for little ones. Dwarves do love them."
+	item_type = /obj/item/reagent_containers/food/snacks/grown/fruit/pear
+	category = "Fruit"
+	base_price = 3
+	stockpile_amount = 5
+	stockpile_limit = 40
+	importexport_amt = 5
+	passive_generation = 0
+	generation_price = 2
+
 /datum/roguestock/stockpile/jacksberry
 	name = "Jacksberries"
 	desc = "Sweet berries, prime for winemaking."
@@ -240,6 +252,102 @@
 	stockpile_limit = 50
 	importexport_amt = 10
 	passive_generation = 2
+	generation_price = 2
+
+/datum/roguestock/stockpile/blackberry
+	name = "Blackberry"
+	desc = "A small, dark fruit with a sweet and slightly tart taste. It is often used in desserts."
+	item_type = /obj/item/reagent_containers/food/snacks/grown/fruit/blackberry
+	category = "Fruit"
+	base_price = 4
+	stockpile_amount = 5
+	stockpile_limit = 40
+	importexport_amt = 5
+	passive_generation = 0
+	generation_price = 2
+
+/datum/roguestock/stockpile/raspberry
+	name = "Raspberry"
+	desc = "A small, red fruit with a sweet and slightly tart taste. It is often used in desserts."
+	item_type = /obj/item/reagent_containers/food/snacks/grown/fruit/raspberry
+	category = "Fruit"
+	base_price = 4
+	stockpile_amount = 5
+	stockpile_limit = 40
+	importexport_amt = 5
+	passive_generation = 0
+	generation_price = 2
+
+/datum/roguestock/stockpile/strawberry
+	name = "Strawberry"
+	desc = "A small, red fruit with a sweet taste. It is often used in desserts."
+	item_type = /obj/item/reagent_containers/food/snacks/grown/fruit/strawberry
+	category = "Fruit"
+	base_price = 4
+	stockpile_amount = 5
+	stockpile_limit = 40
+	importexport_amt = 5
+	passive_generation = 1
+	generation_price = 2
+
+/datum/roguestock/stockpile/lemon
+	name = "Lemon"
+	desc = "Too sweet for many, a favored treat for little ones. Dwarves do love them."
+	item_type = /obj/item/reagent_containers/food/snacks/grown/fruit/lemon
+	category = "Fruit"
+	base_price = 4
+	stockpile_amount = 5
+	stockpile_limit = 40
+	importexport_amt = 5
+	passive_generation = 0
+	generation_price = 2
+
+/datum/roguestock/stockpile/lime
+	name = "Lime"
+	desc = "Too sweet for many, a favored treat for little ones. Dwarves do love them."
+	item_type = /obj/item/reagent_containers/food/snacks/grown/fruit/lime
+	category = "Fruit"
+	base_price = 4
+	stockpile_amount = 5
+	stockpile_limit = 40
+	importexport_amt = 5
+	passive_generation = 0
+	generation_price = 2
+
+/datum/roguestock/stockpile/tangerine
+	name = "Tangerine"
+	desc = "Too sweet for many, a favored treat for little ones. Dwarves do love them."
+	item_type = /obj/item/reagent_containers/food/snacks/grown/fruit/tangerine
+	category = "Fruit"
+	base_price = 4
+	stockpile_amount = 5
+	stockpile_limit = 40
+	importexport_amt = 5
+	passive_generation = 0
+	generation_price = 2
+
+/datum/roguestock/stockpile/plum
+	name = "Plum"
+	desc = "Too sweet for many, a favored treat for little ones. Dwarves do love them."
+	item_type = /obj/item/reagent_containers/food/snacks/grown/fruit/plum
+	category = "Fruit"
+	base_price = 4
+	stockpile_amount = 5
+	stockpile_limit = 40
+	importexport_amt = 5
+	passive_generation = 0
+	generation_price = 2
+
+/datum/roguestock/stockpile/tomato
+	name = "Tomato"
+	desc = "A red fruit that is often mistaken for a vegetable. It is commonly used in salads and sauces."
+	item_type = /obj/item/reagent_containers/food/snacks/grown/fruit/tomato
+	category = "Fruit"
+	base_price = 3
+	stockpile_amount = 5
+	stockpile_limit = 40
+	importexport_amt = 5
+	passive_generation = 0
 	generation_price = 2
 
 /datum/roguestock/stockpile/iron_ingot
@@ -556,6 +664,18 @@
 	passive_generation = 1
 	generation_price = 4
 
+/datum/roguestock/stockpile/dried_fish
+	name = "Dried Fish Filet"
+	desc = "Salt-cured fish, fit for the fleet's long voyages."
+	item_type = /obj/item/reagent_containers/food/snacks/rogue/meat/driedfishfilet
+	category = "Seafood"
+	base_price = 7
+	stockpile_amount = 0
+	stockpile_limit = 30
+	importexport_amt = 5
+	passive_generation = 0
+	generation_price = 1
+
 /datum/roguestock/stockpile/sole
 	name = "Sole"
 	desc = "Whole slab of sole."
@@ -608,6 +728,18 @@
 	name = "Oats"
 	desc = "A cereal grain."
 	item_type = /obj/item/reagent_containers/food/snacks/grown/oat
+	category = "Vegetable"
+	base_price = 3
+	stockpile_amount = 15
+	stockpile_limit = 50
+	importexport_amt = 10
+	passive_generation = 0
+	generation_price = 1
+
+/datum/roguestock/stockpile/rice
+	name = "Rice"
+	desc = "A grain used for cooking."
+	item_type = /obj/item/reagent_containers/food/snacks/grown/rice
 	category = "Vegetable"
 	base_price = 3
 	stockpile_amount = 15
@@ -688,6 +820,18 @@
 	passive_generation = 0
 	generation_price = 1
 
+/datum/roguestock/stockpile/coffee
+	name = "Coffee Beans"
+	desc = "The seed of the coffee plant, used to make a stimulating drink."
+	item_type = /obj/item/reagent_containers/food/snacks/grown/coffeebeans
+	category = "Vegetable"
+	base_price = 5
+	stockpile_amount = 10
+	stockpile_limit = 50
+	importexport_amt = 10
+	passive_generation = 0
+	generation_price = 1
+
 /datum/roguestock/stockpile/tea
 	name = "Dried Tea Leaves"
 	desc = "Dried tea leaves from the tea plant. Can be grounded and brewed to make tea."
@@ -707,6 +851,18 @@
 	category = "Vegetable"
 	base_price = 3
 	stockpile_amount = 10
+	stockpile_limit = 50
+	importexport_amt = 10
+	passive_generation = 0
+	generation_price = 1
+
+/datum/roguestock/stockpile/rocknut
+	name = "Rocknut"
+	desc = "A nut with mild stimulant properties."
+	item_type = /obj/item/reagent_containers/food/snacks/grown/nut
+	category = "Vegetable"
+	base_price = 4
+	stockpile_amount = 5
 	stockpile_limit = 50
 	importexport_amt = 10
 	passive_generation = 0

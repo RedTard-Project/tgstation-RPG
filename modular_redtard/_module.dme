@@ -95,6 +95,9 @@
 #include "rockhill\_rockhill.dm"
 #include "migrants\migrants.dm"
 #include "lobby\rogue_join_rules.dm"
+#include "admin\player_quality.dm"
+#include "admin\triumphs.dm"
+#include "admin\rogue_admin.dm"
 // Stage 1: money and trade (economy/)
 #include "economy\_defines.dm"
 #include "economy\config.dm"
@@ -141,6 +144,15 @@
 #include "crafting\repair.dm"
 #include "crafting\grindwheel.dm"
 #include "crafting\stations.dm"
+#include "crafting\rogue_recipes.dm"
+#include "crafting\ported\craft_recipes.dm"
+// Stage 4: husbandry and taming (husbandry/)
+// Stage 6: PvE depth (pve/)
+// Stage 7: library and persistence (library/)
+// Stage 8: triumphs (triumphs/)
+// Stage 9: race polish (races/)
+// Stage 10: clothing and FOV polish (clothing/)
+// Character setup menu (charsetup/)
 #include "ai\human_npc.dm"
 #include "ai\rockhill_ai.dm"
 #include "ai\vibelin_beasts.dm"
@@ -177,6 +189,9 @@
 // END_PREFERENCES
 // BEGIN_INCLUDE
 #include "admin\_defines.dm"
+#include "admin\player_quality.dm"
+#include "admin\rogue_admin.dm"
+#include "admin\triumphs.dm"
 #include "ai\human_npc.dm"
 #include "ai\rockhill_ai.dm"
 #include "ai\sleep.dm"

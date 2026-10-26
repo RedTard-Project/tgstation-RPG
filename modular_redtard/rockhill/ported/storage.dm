@@ -43,7 +43,7 @@
 
 /datum/storage/rogue_grid/grid/magebag/New()
 	. = ..()
-	set_holdable(list(/obj/item/alch, /obj/item/ash, /obj/item/herbseed, /obj/item/magic, /obj/item/reagent_containers/food/snacks/grown/berries/rogue))
+	set_holdable(list(/obj/item/alch, /obj/item/ash, /obj/item/herbseed, /obj/item/magic, /obj/item/reagent_containers/food/snacks/grown/berries/rogue, /obj/item/reagent_containers/food/snacks/grown/manabloom))
 
 /datum/storage/rogue_grid/grid/meatsack
 	screen_max_columns = 4
@@ -67,7 +67,17 @@
 
 /datum/storage/rogue_grid/grid/orestore/New()
 	. = ..()
-	set_holdable(list(/obj/item/ingot, /obj/item/ingot/aaslag, /obj/item/ingot/blacksteel, /obj/item/ingot/bronze, /obj/item/ingot/copper, /obj/item/ingot/decrepit, /obj/item/ingot/gilbranze, /obj/item/ingot/gold, /obj/item/ingot/iron, /obj/item/ingot/silver, /obj/item/ingot/silverblessed, /obj/item/ingot/steel, /obj/item/ingot/steelholy, /obj/item/ingot/tin, /obj/item/riddleofsteel, /obj/item/roguegem, /obj/item/roguegem/amethyst, /obj/item/roguegem/blue, /obj/item/roguegem/diamond, /obj/item/roguegem/green, /obj/item/roguegem/ruby, /obj/item/roguegem/violet, /obj/item/roguegem/yellow, /obj/item/rogueore, /obj/item/rogueore/cinnabar, /obj/item/rogueore/coal, /obj/item/rogueore/coal/charcoal, /obj/item/rogueore/copper, /obj/item/rogueore/gold, /obj/item/rogueore/iron, /obj/item/rogueore/silver, /obj/item/rogueore/tin))
+	set_holdable(list(/obj/item/ingot, /obj/item/ingot/aaslag, /obj/item/ingot/blacksteel, /obj/item/ingot/bronze, /obj/item/ingot/copper, /obj/item/ingot/decrepit, /obj/item/ingot/gilbranze, /obj/item/ingot/gold, /obj/item/ingot/iron, /obj/item/ingot/silver, /obj/item/ingot/silverblessed, /obj/item/ingot/steel, /obj/item/ingot/steelholy, /obj/item/ingot/tin, /obj/item/pearl, /obj/item/pearl/blue, /obj/item/riddleofsteel, /obj/item/roguegem, /obj/item/roguegem/amethyst, /obj/item/roguegem/blue, /obj/item/roguegem/diamond, /obj/item/roguegem/green, /obj/item/roguegem/ruby, /obj/item/roguegem/violet, /obj/item/roguegem/yellow, /obj/item/rogueore, /obj/item/rogueore/cinnabar, /obj/item/rogueore/coal, /obj/item/rogueore/coal/charcoal, /obj/item/rogueore/copper, /obj/item/rogueore/gold, /obj/item/rogueore/iron, /obj/item/rogueore/silver, /obj/item/rogueore/tin))
+
+/datum/storage/rogue_grid/grid/zigbox
+	screen_max_columns = 3
+	screen_max_rows = 2
+	max_specific_storage = WEIGHT_CLASS_TINY
+	max_slots = 6
+
+/datum/storage/rogue_grid/grid/zigbox/New()
+	. = ..()
+	set_holdable(list(/obj/item/clothing/mask/cigarette/rollie))
 
 /datum/storage/rogue_grid/roguetown/backpack
 	screen_max_columns = 5
@@ -135,7 +145,7 @@
 
 /datum/storage/rogue_grid/roguetown/surgery_bag/New()
 	. = ..()
-	set_holdable(list(/obj/item/natural/bundle/cloth/bandage, /obj/item/natural/cloth, /obj/item/natural/worms/leech, /obj/item/needle, /obj/item/reagent_containers/lux, /obj/item/reagent_containers/lux_impure, /obj/item/rogueweapon/surgery))
+	set_holdable(list(/obj/item/leechtick_bloated, /obj/item/natural/bundle/cloth/bandage, /obj/item/natural/cloth, /obj/item/natural/worms/leech, /obj/item/needle, /obj/item/reagent_containers/lux, /obj/item/reagent_containers/lux_impure, /obj/item/rogueweapon/surgery))
 
 /datum/storage/rogue_grid/grid/orestore/bronze
 	screen_max_columns = 8

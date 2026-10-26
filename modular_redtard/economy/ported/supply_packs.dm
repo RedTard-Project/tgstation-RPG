@@ -88,11 +88,23 @@
 	cost = 75
 	contains = list(/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow)
 
+/datum/rogue_supply_pack/blackmarket_diplomacy/quiver
+	name = "Quiver"
+	group = "Diplomacy and Persuasion"
+	cost = 5
+	contains = list(/obj/item/quiver)
+
 /datum/rogue_supply_pack/blackmarket_diplomacy/arrows
 	name = "Broadhead Arrows, Bundle of V"
 	group = "Diplomacy and Persuasion"
 	cost = 8
 	contains = list(/obj/item/ammo_casing/caseless/rogue/arrow/iron, /obj/item/ammo_casing/caseless/rogue/arrow/iron, /obj/item/ammo_casing/caseless/rogue/arrow/iron, /obj/item/ammo_casing/caseless/rogue/arrow/iron, /obj/item/ammo_casing/caseless/rogue/arrow/iron)
+
+/datum/rogue_supply_pack/blackmarket_diplomacy/waterarrows
+	name = "Water Arrows, Bundle of V"
+	group = "Diplomacy and Persuasion"
+	cost = 5
+	contains = list(/obj/item/ammo_casing/caseless/rogue/arrow/water, /obj/item/ammo_casing/caseless/rogue/arrow/water, /obj/item/ammo_casing/caseless/rogue/arrow/water, /obj/item/ammo_casing/caseless/rogue/arrow/water, /obj/item/ammo_casing/caseless/rogue/arrow/water)
 
 /datum/rogue_supply_pack/blackmarket_diplomacy/bolts
 	name = "Bolts, Bundle of V"
@@ -280,6 +292,30 @@
 	cost = 30
 	contains = list(/obj/item/storage/backpack/rogue/backpack)
 
+/datum/rogue_supply_pack/blackmarket_tools/prarml
+	name = "Prosthetic Wood Arm (L)"
+	group = "General Labour"
+	cost = 40
+	contains = list(/obj/item/bodypart/l_arm/prosthetic/woodleft)
+
+/datum/rogue_supply_pack/blackmarket_tools/prarmr
+	name = "Prosthetic Wood Arm (R)"
+	group = "General Labour"
+	cost = 40
+	contains = list(/obj/item/bodypart/r_arm/prosthetic/woodright)
+
+/datum/rogue_supply_pack/blackmarket_tools/prlegl
+	name = "Prosthetic Wood Leg (L)"
+	group = "General Labour"
+	cost = 15
+	contains = list(/obj/item/bodypart/l_leg/prosthetic)
+
+/datum/rogue_supply_pack/blackmarket_tools/prlegr
+	name = "Prosthetic Wood Leg (R)"
+	group = "General Labour"
+	cost = 15
+	contains = list(/obj/item/bodypart/r_leg/prosthetic)
+
 /datum/rogue_supply_pack/blackmarket_tools/grapplinghook
 	name = "Climbing Machine"
 	group = "General Labour"
@@ -406,11 +442,23 @@
 	cost = 25
 	contains = list(/obj/item/natural/bundle/cloth/bandage/full)
 
+/datum/rogue_supply_pack/adventure_supplies/small_tent
+	name = "Small Tent Kit"
+	group = "Adventuring Supplies"
+	cost = 50
+	contains = list(/obj/item/tent_kit)
+
 /datum/rogue_supply_pack/adventure_supplies/ger
 	name = "Ger Kit"
 	group = "Adventuring Supplies"
 	cost = 100
 	contains = list(/obj/item/tent_kit/ger)
+
+/datum/rogue_supply_pack/adventure_supplies/yurt
+	name = "Yurt Kit"
+	group = "Adventuring Supplies"
+	cost = 200
+	contains = list(/obj/item/tent_kit/yurt)
 
 /datum/rogue_supply_pack/adventure_supplies/boar_map
 	name = "Boars Map"
@@ -718,17 +766,53 @@
 	cost = 20
 	contains = list(/obj/item/reagent_containers/food/snacks/egg, /obj/item/reagent_containers/food/snacks/egg, /obj/item/reagent_containers/food/snacks/egg, /obj/item/reagent_containers/food/snacks/egg, /obj/item/reagent_containers/food/snacks/egg, /obj/item/reagent_containers/food/snacks/egg, /obj/item/reagent_containers/food/snacks/egg, /obj/item/reagent_containers/food/snacks/egg)
 
+/datum/rogue_supply_pack/food/coffee
+	name = "Coffee Beans"
+	group = "Food"
+	cost = 25
+	contains = list(/obj/item/reagent_containers/food/snacks/grown/coffeebeans, /obj/item/reagent_containers/food/snacks/grown/coffeebeans, /obj/item/reagent_containers/food/snacks/grown/coffeebeans, /obj/item/reagent_containers/food/snacks/grown/coffeebeans, /obj/item/reagent_containers/food/snacks/grown/coffeebeans, /obj/item/reagent_containers/food/snacks/grown/coffeebeans, /obj/item/reagent_containers/food/snacks/grown/coffeebeans, /obj/item/reagent_containers/food/snacks/grown/coffeebeans)
+
 /datum/rogue_supply_pack/food/tea
 	name = "Tea Leaves"
 	group = "Food"
 	cost = 25
 	contains = list(/obj/item/reagent_containers/food/snacks/grown/rogue/tealeaves_dry, /obj/item/reagent_containers/food/snacks/grown/rogue/tealeaves_dry, /obj/item/reagent_containers/food/snacks/grown/rogue/tealeaves_dry, /obj/item/reagent_containers/food/snacks/grown/rogue/tealeaves_dry, /obj/item/reagent_containers/food/snacks/grown/rogue/tealeaves_dry, /obj/item/reagent_containers/food/snacks/grown/rogue/tealeaves_dry, /obj/item/reagent_containers/food/snacks/grown/rogue/tealeaves_dry, /obj/item/reagent_containers/food/snacks/grown/rogue/tealeaves_dry)
 
+/datum/rogue_supply_pack/food/rosa
+	name = "Dried Rosa Petals"
+	group = "Food"
+	cost = 20
+	contains = list(/obj/item/reagent_containers/food/snacks/grown/rogue/rosa_petals_dried, /obj/item/reagent_containers/food/snacks/grown/rogue/rosa_petals_dried, /obj/item/reagent_containers/food/snacks/grown/rogue/rosa_petals_dried, /obj/item/reagent_containers/food/snacks/grown/rogue/rosa_petals_dried, /obj/item/reagent_containers/food/snacks/grown/rogue/rosa_petals_dried, /obj/item/reagent_containers/food/snacks/grown/rogue/rosa_petals_dried, /obj/item/reagent_containers/food/snacks/grown/rogue/rosa_petals_dried, /obj/item/reagent_containers/food/snacks/grown/rogue/rosa_petals_dried)
+
 /datum/rogue_supply_pack/food/poppies
 	name = "Poppies"
 	group = "Food"
 	cost = 20
 	contains = list(/obj/item/reagent_containers/food/snacks/grown/rogue/poppy, /obj/item/reagent_containers/food/snacks/grown/rogue/poppy, /obj/item/reagent_containers/food/snacks/grown/rogue/poppy)
+
+/datum/rogue_supply_pack/food/sugarcane
+	name = "Sugarcane"
+	group = "Food"
+	cost = 15
+	contains = list(/obj/item/reagent_containers/food/snacks/grown/sugarcane, /obj/item/reagent_containers/food/snacks/grown/sugarcane, /obj/item/reagent_containers/food/snacks/grown/sugarcane)
+
+/datum/rogue_supply_pack/food/rocknut
+	name = "Rocknut"
+	group = "Food"
+	cost = 15
+	contains = list(/obj/item/reagent_containers/food/snacks/grown/nut, /obj/item/reagent_containers/food/snacks/grown/nut, /obj/item/reagent_containers/food/snacks/grown/nut)
+
+/datum/rogue_supply_pack/food/rare_grain
+	name = "Sorted Imported Grains"
+	group = "Food"
+	cost = 25
+	contains = list(/obj/item/reagent_containers/food/snacks/grown/oat, /obj/item/reagent_containers/food/snacks/grown/oat, /obj/item/reagent_containers/food/snacks/grown/oat, /obj/item/reagent_containers/food/snacks/grown/rice, /obj/item/reagent_containers/food/snacks/grown/rice, /obj/item/reagent_containers/food/snacks/grown/rice)
+
+/datum/rogue_supply_pack/food/rare_berry
+	name = "Sorted Imported Berries"
+	group = "Food"
+	cost = 35
+	contains = list(/obj/item/reagent_containers/food/snacks/grown/fruit/strawberry, /obj/item/reagent_containers/food/snacks/grown/fruit/strawberry, /obj/item/reagent_containers/food/snacks/grown/fruit/strawberry, /obj/item/reagent_containers/food/snacks/grown/fruit/blackberry, /obj/item/reagent_containers/food/snacks/grown/fruit/blackberry, /obj/item/reagent_containers/food/snacks/grown/fruit/blackberry, /obj/item/reagent_containers/food/snacks/grown/fruit/raspberry, /obj/item/reagent_containers/food/snacks/grown/fruit/raspberry, /obj/item/reagent_containers/food/snacks/grown/fruit/raspberry)
 
 /datum/rogue_supply_pack/food/pepper
 	name = "Pepper"
@@ -748,11 +832,29 @@
 	cost = 30
 	contains = list(/obj/item/reagent_containers/food/snacks/rogue/honey, /obj/item/reagent_containers/food/snacks/rogue/honey, /obj/item/reagent_containers/food/snacks/rogue/honey)
 
+/datum/rogue_supply_pack/food/spiderhoney
+	name = "Spider Honey"
+	group = "Food"
+	cost = 40
+	contains = list(/obj/item/reagent_containers/food/snacks/rogue/honey/spider, /obj/item/reagent_containers/food/snacks/rogue/honey/spider, /obj/item/reagent_containers/food/snacks/rogue/honey/spider)
+
 /datum/rogue_supply_pack/food/sugar
 	name = "Sugar"
 	group = "Food"
 	cost = 45
 	contains = list(/obj/item/reagent_containers/food/snacks/sugar, /obj/item/reagent_containers/food/snacks/sugar, /obj/item/reagent_containers/food/snacks/sugar, /obj/item/reagent_containers/food/snacks/sugar, /obj/item/reagent_containers/food/snacks/sugar)
+
+/datum/rogue_supply_pack/food/allspice
+	name = "Allspice"
+	group = "Food"
+	cost = 50
+	contains = list(/obj/item/reagent_containers/food/snacks/allspice)
+
+/datum/rogue_supply_pack/food/chocolate
+	name = "Chocolate"
+	group = "Food"
+	cost = 30
+	contains = list(/obj/item/reagent_containers/food/snacks/chocolate, /obj/item/reagent_containers/food/snacks/chocolate)
 
 /datum/rogue_supply_pack/games/deck_of_cards
 	name = "Deck of Cards"
@@ -1092,6 +1194,18 @@
 	group = "Magic"
 	cost = 100
 	contains = list(/obj/item/clothing/neck/roguetown/talkstone)
+
+/datum/rogue_supply_pack/magic/obsidianfragment
+	name = "Obsidian Fragments"
+	group = "Magic"
+	cost = 55
+	contains = list(/obj/item/magic/obsidian, /obj/item/magic/obsidian, /obj/item/magic/obsidian)
+
+/datum/rogue_supply_pack/magic/manaflower
+	name = "Manabloom Flowers"
+	group = "Magic"
+	cost = 55
+	contains = list(/obj/item/reagent_containers/food/snacks/grown/manabloom, /obj/item/reagent_containers/food/snacks/grown/manabloom, /obj/item/reagent_containers/food/snacks/grown/manabloom)
 
 /datum/rogue_supply_pack/magic/manacrystal
 	name = "Mana Crystals"
@@ -1471,6 +1585,12 @@
 	cost = 3
 	contains = list(/obj/item/clothing/mask/cigarette/rollie/nicotine)
 
+/datum/rogue_supply_pack/substances/msigs
+	name = "Mentha Zig"
+	group = "Substances"
+	cost = 5
+	contains = list(/obj/item/clothing/mask/cigarette/rollie/mentha)
+
 /datum/rogue_supply_pack/substances/swampzig
 	name = "Swampleaf Zig"
 	group = "Substances"
@@ -1500,6 +1620,12 @@
 	group = "Substances"
 	cost = 135
 	contains = list(/obj/item/alch/transisdust)
+
+/datum/rogue_supply_pack/tools/soft_tallow
+	name = "Soft Tallow"
+	group = "Tools"
+	cost = 20
+	contains = list(/obj/item/reagent_containers/food/snacks/tallow/soft)
 
 /datum/rogue_supply_pack/tools/scomst
 	name = "Scomstone"
@@ -1554,6 +1680,30 @@
 	group = "Tools"
 	cost = 15
 	contains = list(/obj/item/natural/worms/grubs, /obj/item/natural/worms/grubs, /obj/item/natural/worms/leech, /obj/item/natural/worms/leech, /obj/item/natural/worms/leech)
+
+/datum/rogue_supply_pack/tools/prarml
+	name = "Prosthetic Wood Arm (L)"
+	group = "Tools"
+	cost = 40
+	contains = list(/obj/item/bodypart/l_arm/prosthetic/woodleft)
+
+/datum/rogue_supply_pack/tools/prarmr
+	name = "Prosthetic Wood Arm (R)"
+	group = "Tools"
+	cost = 40
+	contains = list(/obj/item/bodypart/r_arm/prosthetic/woodright)
+
+/datum/rogue_supply_pack/tools/prlegl
+	name = "Prosthetic Wood Leg (L)"
+	group = "Tools"
+	cost = 15
+	contains = list(/obj/item/bodypart/l_leg/prosthetic)
+
+/datum/rogue_supply_pack/tools/prlegr
+	name = "Prosthetic Wood Leg (R)"
+	group = "Tools"
+	cost = 15
+	contains = list(/obj/item/bodypart/r_leg/prosthetic)
 
 /datum/rogue_supply_pack/tools/hoe
 	name = "Hoe"
@@ -1712,6 +1862,12 @@
 	cost = 30
 	contains = list(/obj/item/rogueweapon/huntingknife/scissors)
 
+/datum/rogue_supply_pack/wardrobe/hat/witchhat
+	name = "Witch-Hunter's Hat"
+	group = "Wardrobe"
+	cost = 10
+	contains = list(/obj/item/clothing/head/roguetown/puritan)
+
 /datum/rogue_supply_pack/wardrobe/hat/physicianhat
 	name = "Physician's Hat"
 	group = "Wardrobe"
@@ -1765,6 +1921,12 @@
 	group = "Wardrobe"
 	cost = 15
 	contains = list(/obj/item/clothing/cloak/raincloak/blue)
+
+/datum/rogue_supply_pack/wardrobe/suits/dressgen
+	name = "Simple Dress"
+	group = "Wardrobe"
+	cost = 15
+	contains = list(/obj/item/clothing/suit/roguetown/shirt/dress/gen)
 
 /datum/rogue_supply_pack/wardrobe/suits/robes
 	name = "Robes"
@@ -1831,6 +1993,36 @@
 	group = "Wardrobe"
 	cost = 30
 	contains = list(/obj/item/clothing/mask/rogue/exoticsilkmask)
+
+/datum/rogue_supply_pack/wardrobe/caparison/caparison
+	name = "Caparison"
+	group = "Wardrobe"
+	cost = 25
+	contains = list(/obj/item/caparison)
+
+/datum/rogue_supply_pack/wardrobe/caparison/caparison_psy
+	name = "Psydonic Caparison"
+	group = "Wardrobe"
+	cost = 25
+	contains = list(/obj/item/caparison/psy)
+
+/datum/rogue_supply_pack/wardrobe/caparison/caparison_astrata
+	name = "Astratan Caparison"
+	group = "Wardrobe"
+	cost = 25
+	contains = list(/obj/item/caparison/astrata)
+
+/datum/rogue_supply_pack/wardrobe/caparison/caparison_eora
+	name = "Eoran Caparison"
+	group = "Wardrobe"
+	cost = 25
+	contains = list(/obj/item/caparison/eora)
+
+/datum/rogue_supply_pack/wardrobe/caparison/caparison_fogbeast
+	name = "Fogbeast Caparison"
+	group = "Wardrobe"
+	cost = 25
+	contains = list(/obj/item/caparison/fogbeast)
 
 /datum/rogue_supply_pack/zadpack/cheap_bombs
 	name = "Bottle Bomb (Bulk)"
@@ -3102,6 +3294,12 @@
 	cost = 45
 	contains = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow)
 
+/datum/rogue_supply_pack/ranged_weapons/quiver
+	name = "Quiver"
+	group = "Weapons (Ranged)"
+	cost = 5
+	contains = list(/obj/item/quiver)
+
 /datum/rogue_supply_pack/ranged_weapons/quivers/arrows
 	name = "Quiver of Arrows"
 	group = "Weapons (Ranged)"
@@ -3162,6 +3360,42 @@
 	group = "Weapons (Ranged)"
 	cost = 20
 	contains = list(/obj/item/net)
+
+/datum/rogue_supply_pack/wardrobe/suits/stockings_white
+	name = "White Stockings"
+	group = "Wardrobe"
+	cost = 10
+	contains = list(/obj/item/legwears/white)
+
+/datum/rogue_supply_pack/wardrobe/suits/stockings_thigh_white
+	name = "White Thigh-High Stockings"
+	group = "Wardrobe"
+	cost = 10
+	contains = list(/obj/item/legwears/thigh_high/white)
+
+/datum/rogue_supply_pack/wardrobe/suits/stockings_white_silk
+	name = "White Silk Stockings"
+	group = "Wardrobe"
+	cost = 30
+	contains = list(/obj/item/legwears/silk/white)
+
+/datum/rogue_supply_pack/wardrobe/suits/stockings_white_fishnet
+	name = "White Fishnet Stockings"
+	group = "Wardrobe"
+	cost = 5
+	contains = list(/obj/item/legwears/fishnet/white)
+
+/datum/rogue_supply_pack/wardrobe/suits/strapless_dress
+	name = "Strapless Dresses"
+	group = "Wardrobe"
+	cost = 10
+	contains = list(/obj/item/clothing/suit/roguetown/shirt/dress/gen/strapless)
+
+/datum/rogue_supply_pack/wardrobe/suits/strapless_dress_alt
+	name = "Alternative Strapless Dresses"
+	group = "Wardrobe"
+	cost = 10
+	contains = list(/obj/item/clothing/suit/roguetown/shirt/dress/gen/strapless/alt)
 
 /datum/rogue_supply_pack/wardrobe/suits/skyrim_dress
 	name = "Light Blue Dress"

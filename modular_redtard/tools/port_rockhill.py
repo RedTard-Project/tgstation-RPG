@@ -987,10 +987,12 @@ def main():
     npcs = npc_candidates(rw, rules, usage)
     npc_items = npc_outfit_items(rw, rules, npcs)
     fill_items |= anvil_recipe_items(cfg, rw, rules)
+    fill_items |= craft_recipe_items(cfg, rw, rules)
     fill_items |= food_chain_items(cfg, rw, set(usage) | outfit_items | mapgen_types | fill_items | npc_items)
     generated = generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, outfit_items | mapgen_types | fill_items | npc_items, set(jobs))
     generate_mapgen(mapgen, rules, declared | generated, tg_names)
     generate_anvil_recipes(cfg, rw, rules, declared | generated)
+    generate_craft_recipes(cfg, rw, rules, declared | generated)
     generate_trade(cfg, rw, rules, declared | generated)
     generate_food(cfg, rw, generated, tg_declared, tg_names)
     npcs = [p for p in npcs if p in generated]
@@ -4012,6 +4014,215 @@ def generate_anvil_recipes(cfg, rw, rules, valid):
     os.makedirs(os.path.dirname(spec['file']), exist_ok=True)
     open(spec['file'], 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
     print(f"{spec['file']}: {len(blocks)} anvil recipes, {dropped} dropped for unported items")
+
+
+CRAFT_FLAGS = {
+    'req_table': 'rogue_on_table', 'ontile': 'rogue_on_tile', 'wallcraft': 'rogue_on_wall', 'buildsame': 'rogue_build_same',
+    'ignoredensity': 'rogue_ignore_density',
+}
+_CRAFT_SOURCES = []
+
+
+def craft_recipe_sources(cfg, rw):
+    """Ratwood, then the other codebases whose recipes fill what Ratwood lacks (Azure Peak), each parsed once.
+
+    Parsing another codebase must not leave its defines and procs in the porter's tables, which describe Ratwood."""
+    if _CRAFT_SOURCES:
+        return _CRAFT_SOURCES
+    import copy
+    _CRAFT_SOURCES.append(('Ratwood', rw))
+    spec = cfg['port'].get('craft_recipes') or {}
+    for extra in spec.get('extra_sources', []):
+        root = extra['root']
+        if not os.path.isdir(root):
+            print(f"craft recipes: {extra['name']} not found at {root}, its recipes are skipped")
+            continue
+        tables = {name: value for name, value in globals().items()
+                  if name.isupper() and isinstance(value, (dict, set, list)) and not name.startswith('_')}
+        saved = copy.deepcopy(tables)
+        try:
+            types, _ = parse_codebase(root)
+        finally:
+            for name, value in saved.items():
+                tables[name].clear()
+                if isinstance(value, list):
+                    tables[name].extend(value)
+                else:
+                    tables[name].update(value)
+        _CRAFT_SOURCES.append((extra['name'], Codebase(types)))
+    return _CRAFT_SOURCES
+
+
+def read_craft_recipe(cfg, base, path, rules):
+    # One Ratwood-style crafting recipe (datums/components/crafting/recipes.dm) with everything it inherits, or None when it
+    # does not appear in the crafting menu: abstract, unnamed, without a result, hidden, or waiting for a tech node.
+    if (base.types[path].get('abstract_type') or '').strip().rstrip('/') == path:
+        return None
+    name = string_value(base.resolve(path, 'name'))
+    if not name or name == '""':
+        return None
+    if (base.resolve(path, 'hides_from_crafting_menu') or 'FALSE').strip() in ('TRUE', '1'):
+        return None
+    if (base.resolve(path, 'required_tech_node') or 'null').strip() != 'null':
+        return None
+    results = [runtime_path(p.rstrip('/'), rules) for p, _ in list_paths(base.resolve(path, 'result'))]
+    if not results or not all(results) or not all(r.startswith(('/obj/', '/turf/', '/mob/')) for r in results):
+        return None
+    def paths(var):
+        found = [(runtime_path(p.rstrip('/'), rules), float(w) if w else 1) for p, w in list_paths(base.resolve(path, var))]
+        return None if any(p is None for p, _ in found) else found
+    reqs, tools, parts = paths('reqs'), paths('tools'), paths('parts')
+    if reqs is None or tools is None or parts is None or not reqs:
+        return None
+    skill_raw = (base.resolve(path, 'skillcraft') or 'null').strip()
+    skill = None
+    category = '"Other"'
+    if skill_raw != 'null':
+        skill = skill_target(cfg, skill_raw)
+        if not skill:
+            return None
+        category = string_value(base.resolve(skill_raw, 'name')) or '"Other"'
+    structure = (base.resolve(path, 'structurecraft') or 'null').strip().rstrip('/')
+    if structure != 'null':
+        structure = runtime_path(structure, rules)
+        if not structure:
+            return None
+    else:
+        structure = None
+    recipe = {
+        'path': path,
+        'name': name,
+        'results': results,
+        'reqs': reqs,
+        'tools': [p for p, _ in tools],
+        'parts': parts,
+        'skill': skill,
+        'category': category,
+        'difficulty': define_value_number(base.resolve(path, 'craftdiff')),
+        'structure': structure,
+        'flags': [var for raw, var in CRAFT_FLAGS.items() if (base.resolve(path, raw) or 'FALSE').strip() in ('TRUE', '1')],
+        'subtypes': (base.resolve(path, 'subtype_reqs') or 'FALSE').strip() in ('TRUE', '1'),
+        'learned': (base.resolve(path, 'always_availible') or 'FALSE').strip() not in ('TRUE', '1'),
+        'verb': string_value(base.resolve(path, 'verbage')),
+        'verb_simple': string_value(base.resolve(path, 'verbage_simple')),
+        'sounds': sound_files(base.resolve(path, 'craftsound')),
+        'xp': define_value_number(base.resolve(path, 'craft_xp_override')),
+    }
+    if recipe['difficulty'] is None:
+        recipe['difficulty'] = 1
+    return recipe
+
+
+def craft_recipe_specs(cfg, rw, rules):
+    # Ratwood's crafting recipes (code/modules/roguetown/roguecrafting and the items that carry their own), then those of
+    # Azure Peak that Ratwood has not: another path that makes something no Ratwood recipe makes from the same things.
+    spec = cfg['port'].get('craft_recipes')
+    if not spec:
+        return []
+    recipes = []
+    made = set()
+    for source, base in craft_recipe_sources(cfg, rw):
+        for path in sorted(p for p in base.types if p.startswith(spec['root'] + '/')):
+            if source != 'Ratwood' and path in rw.types:
+                continue
+            recipe = read_craft_recipe(cfg, base, path, rules)
+            if not recipe:
+                continue
+            key = (recipe['results'][0], tuple(sorted(p for p, _ in recipe['reqs'])))
+            if source != 'Ratwood' and key in made:
+                continue
+            made.add(key)
+            recipe['source'] = source
+            recipes.append(recipe)
+    return recipes
+
+
+def craft_recipe_items(cfg, rw, rules):
+    # Everything a crafting recipe takes, needs or makes is ported with the map's items, when Ratwood has it.
+    items = set()
+    for recipe in craft_recipe_specs(cfg, rw, rules):
+        for path in recipe['results'] + [p for p, _ in recipe['reqs'] + recipe['parts']] + recipe['tools'] + [recipe['structure']]:
+            if path and path.startswith('/obj/') and path in rw.types:
+                items.add(path)
+    return items
+
+
+def generate_craft_recipes(cfg, rw, rules, valid):
+    spec = cfg['port'].get('craft_recipes')
+    if not spec:
+        return
+    import bisect
+    ordered = sorted(valid)
+    def subtypes(path):
+        out = []
+        start = bisect.bisect_left(ordered, path + '/')
+        while start < len(ordered) and ordered[start].startswith(path + '/'):
+            out.append(ordered[start])
+            start += 1
+        return out
+    dropped = collections.Counter()
+    kept = []
+    for recipe in craft_recipe_specs(cfg, rw, rules):
+        needed = recipe['results'] + [p for p, _ in recipe['reqs'] + recipe['parts']] + recipe['tools'] + ([recipe['structure']] if recipe['structure'] else [])
+        if any(p not in valid for p in needed):
+            dropped[recipe['source']] += 1
+            continue
+        kept.append(recipe)
+    written = {recipe['path'] for recipe in kept}
+    blocks = []
+    sounds_used = set()
+    for recipe in kept:
+        # A recipe below another written recipe would inherit its values in DM, so it states all of them.
+        parts_of_path = recipe['path'].split('/')
+        full = any('/'.join(parts_of_path[:k]) in written for k in range(3, len(parts_of_path)))
+        def optional(var, value, default='null'):
+            if value is not None:
+                block.append(f'\t{var} = {value}')
+            elif full:
+                block.append(f'\t{var} = {default}')
+        reqs = ', '.join(f"{p} = {int(n) if n == int(n) else n}" for p, n in recipe['reqs'])
+        block = [recipe['path'], f"\tname = {recipe['name']}", f"\tresult = {recipe['results'][0]}", f'\treqs = list({reqs})']
+        optional('rogue_results', 'list(' + ', '.join(recipe['results'][1:]) + ')' if len(recipe['results']) > 1 else None)
+        optional('tool_paths', 'list(' + ', '.join(recipe['tools']) + ')' if recipe['tools'] else None)
+        optional('parts', 'list(' + ', '.join(f"{p} = {int(n)}" for p, n in recipe['parts']) + ')' if recipe['parts'] else None)
+        excluded = []
+        if not recipe['subtypes']:
+            # Ratwood takes the very type it asks for unless subtype_reqs; TG takes subtypes unless they are blacklisted.
+            for path, _ in recipe['reqs']:
+                if path.startswith('/obj/'):
+                    below = subtypes(path)
+                    if len(below) <= spec['max_blacklist']:
+                        excluded += below
+        optional('blacklist', 'list(' + ', '.join(sorted(set(excluded))) + ')' if excluded else None)
+        block.append(f"\tcategory = {recipe['category']}")
+        block.append(f"\trogue_skill = {recipe['skill'] or 'null'}")
+        optional('rogue_difficulty', recipe['difficulty'] if recipe['difficulty'] != 1 else None, '1')
+        optional('rogue_structure', recipe['structure'])
+        for flag in CRAFT_FLAGS.values():
+            optional(flag, 'TRUE' if flag in recipe['flags'] else None, 'FALSE')
+        optional('rogue_verb', recipe['verb'] if recipe['verb'] and recipe['verb'] != '"crafts"' else None, '"crafts"')
+        optional('rogue_verb_simple', recipe['verb_simple'] if recipe['verb_simple'] and recipe['verb_simple'] != '"craft"' else None, '"craft"')
+        sound = next((s for s in recipe['sounds'] if recipe['source'] == 'Ratwood'), None)
+        if sound:
+            sounds_used.add(sound)
+        optional('rogue_sound', repr_sound(sound) if sound else None)
+        optional('rogue_xp', recipe['xp'] if recipe['xp'] is not None and recipe['xp'] >= 0 else None, '-1')
+        optional('crafting_flags', 'CRAFT_MUST_BE_LEARNED' if recipe['learned'] else None, 'NONE')
+        if recipe['source'] != 'Ratwood':
+            block.insert(1, f"\t// {recipe['source']}")
+        blocks.append(block)
+    fetch_sources(sorted(sounds_used))
+    for rel in sorted(sounds_used):
+        src = os.path.join(CHECKOUT, rel)
+        if os.path.exists(src):
+            dest = os.path.join(SOUND_DIR, rel[len('sound/'):])
+            os.makedirs(os.path.dirname(dest), exist_ok=True)
+            shutil.copyfile(src, dest)
+    os.makedirs(os.path.dirname(spec['file']), exist_ok=True)
+    open(spec['file'], 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    by_source = collections.Counter(b[1].strip().lstrip('/ ') if b[1].strip().startswith('//') else 'Ratwood' for b in blocks)
+    print(f"{spec['file']}: {len(blocks)} crafting recipes ({', '.join(f'{n} {s}' for s, n in by_source.items())}), "
+          f"dropped for unported items: {', '.join(f'{n} {s}' for s, n in dropped.items()) or 'none'}")
 
 
 def generate_trade(cfg, rw, rules, valid):

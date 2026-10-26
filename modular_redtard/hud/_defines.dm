@@ -162,4 +162,11 @@
 #define COMSIG_KB_ROGUE_PANEL_DOWN "keybinding_rogue_panel_down"
 #define COMSIG_KB_ROGUE_DOLL_DOWN "keybinding_rogue_doll_down"
 #define COMSIG_KB_ROGUE_INVENTORY_DOWN "keybinding_rogue_inventory_down"
+#define COMSIG_KB_ROGUE_HAND_LEFT_DOWN "keybinding_rogue_hand_left_down"
+#define COMSIG_KB_ROGUE_HAND_RIGHT_DOWN "keybinding_rogue_hand_right_down"
+#define COMSIG_KB_ROGUE_DROP_DOWN "keybinding_rogue_drop_down"
+#define COMSIG_KB_ROGUE_RESIST_DOWN "keybinding_rogue_resist_down"
+#define COMSIG_KB_ROGUE_HOLD_STILL_DOWN "keybinding_rogue_hold_still_down"
+#define COMSIG_KB_ROGUE_QUICK_EQUIP_DOWN "keybinding_rogue_quick_equip_down"
+#define COMSIG_KB_ROGUE_ACTION_DOWN "keybinding_rogue_action_down"
 #define ROGUE_HUD_ICON_GRABS 'modular_redtard/icons/mob/roguehudgrabs.dmi'

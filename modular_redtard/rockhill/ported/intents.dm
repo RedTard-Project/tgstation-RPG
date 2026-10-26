@@ -78,6 +78,33 @@
 	noaa = TRUE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
+/datum/intent/arc/crossbow/heavy
+	name = "arc"
+	desc = ""
+	icon_state = "inarc"
+	blade_class = "blunt"
+	item_d_type = "blunt"
+	warnie = "aimwarn"
+	attack_verb = list("hits", "strikes")
+	damfactor = 1
+	penfactor = 0
+	clickcd = 12
+	releasedrain = 1
+	misscost = 1
+	reach = 1
+	chargetime = 1.5
+	swingdelay = 0
+	chargedrain = 1
+	charging_slowdown = 2.5
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	tranged = TRUE
+	tshield = FALSE
+	noaa = TRUE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
+
 /datum/intent/arc/crossbow/slurbow
 	name = "arc"
 	desc = ""
@@ -526,6 +553,29 @@
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = TRUE
+	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
+
+/datum/intent/buttstroke/heavy
+	name = "heavy buttstroke"
+	desc = ""
+	icon_state = "instrike"
+	blade_class = "blunt"
+	item_d_type = "blunt"
+	attack_verb = list("hits", "strikes")
+	damfactor = 1.15
+	penfactor = 0
+	clickcd = 12
+	releasedrain = 1
+	misscost = 1
+	reach = 1
+	chargetime = 0
+	swingdelay = 6
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
 	unarmed = FALSE
 	tranged = FALSE
 	tshield = FALSE
@@ -2860,6 +2910,33 @@
 	noaa = TRUE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
+/datum/intent/shoot/crossbow/heavy
+	name = "shoot"
+	desc = ""
+	icon_state = "inshoot"
+	blade_class = "blunt"
+	item_d_type = "stab"
+	warnie = "aimwarn"
+	attack_verb = list("hits", "strikes")
+	damfactor = 1
+	penfactor = 0
+	clickcd = 12
+	releasedrain = 1
+	misscost = 1
+	reach = 1
+	chargetime = 1
+	swingdelay = 0
+	chargedrain = 1
+	charging_slowdown = 2
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	tranged = TRUE
+	tshield = FALSE
+	noaa = TRUE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
+
 /datum/intent/shoot/crossbow/slurbow
 	name = "shoot"
 	desc = ""
@@ -3427,6 +3504,30 @@
 	chargetime = 0
 	swingdelay = 0
 	canparry = FALSE
+	candodge = FALSE
+	no_attack = TRUE
+	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
+	noaa = TRUE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
+
+/datum/intent/smoke
+	name = "smoke"
+	desc = ""
+	icon_state = "insmoke"
+	blade_class = "blunt"
+	item_d_type = "blunt"
+	attack_verb = list("hits", "strikes")
+	damfactor = 1
+	penfactor = 0
+	clickcd = 12
+	releasedrain = 1
+	misscost = 0
+	reach = 1
+	chargetime = 0
+	swingdelay = 0
+	canparry = TRUE
 	candodge = FALSE
 	no_attack = TRUE
 	unarmed = FALSE

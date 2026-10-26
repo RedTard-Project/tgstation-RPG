@@ -65,6 +65,16 @@
 	base_state = "reinforcedwindow"
 	smoothing_groups = SMOOTH_GROUP_ROCKHILL_STRUCTURE_ROGUEWINDOW_OPENCLOSE_REINFORCED
 
+/obj/structure/roguewindow/openclose/reinforced/brick
+	name = "window"
+	desc = "A glass window reinforced with a metal frame, it should keep you safe from the outside world."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/roguewindow.dmi'
+	density = TRUE
+	opacity = TRUE
+	icon_state = "brickwindow"
+	layer = TABLE_LAYER
+	base_state = "brickwindow"
+
 /obj/structure/roguewindow/stained/silver
 	name = "psydonite window"
 	desc = "A glass window stained in the silver of the Otavan Orthodoxy, it represents a time of hope long past which refuses to die."

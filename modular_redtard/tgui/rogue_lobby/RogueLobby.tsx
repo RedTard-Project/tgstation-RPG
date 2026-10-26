@@ -55,6 +55,9 @@ export function RogueLobby() {
 
 /** Class on the root while the title plays, so TG's still first frame gives way to it. */
 const ANIMATED_CLASS = 'rogue-lobby-title-animated';
+/** How long the menu waits for the title sheet to arrive: a minute, once a second. */
+const TITLE_FETCH_ATTEMPTS = 60;
+const TITLE_FETCH_RETRY_MS = 1000;
 
 /**
  * The title screen as BYOND plays it on the map: TG's lobby shows a still picture of its first frame, so the menu
@@ -70,9 +73,26 @@ function TitleAnimation({ url }: { url: string }) {
     let paint = () => {};
 
     (async () => {
-      const data = await fetch(url).then((response) => response.arrayBuffer());
-      const animation = await readDmiAnimation(data);
-      if (!animation || stopped) {
+      // The sheet is megabytes and comes with the menu's other assets, so the menu is often up before it is: ask again
+      // until the whole DMI is there, as TG's fetchRetry does for its assets.
+      let data: ArrayBuffer | undefined;
+      let animation: Awaited<ReturnType<typeof readDmiAnimation>> = null;
+      for (let attempt = 0; attempt < TITLE_FETCH_ATTEMPTS && !stopped; attempt++) {
+        try {
+          const response = await fetch(url, { cache: 'no-store' });
+          if (response.ok) {
+            data = await response.arrayBuffer();
+            animation = await readDmiAnimation(data);
+            if (animation) {
+              break;
+            }
+          }
+        } catch {
+          // Not there yet.
+        }
+        await new Promise((resolve) => setTimeout(resolve, TITLE_FETCH_RETRY_MS));
+      }
+      if (!data || !animation || stopped) {
         return;
       }
       // The sheet from the bytes already fetched: no second download, and the canvas stays readable.

@@ -1,7 +1,21 @@
+/obj/item/reagent_containers/food/snacks/allspice
+	tastes = list("fragrant spices" = 1, "a pleasantly complex aroma" = 1)
+
 /obj/item/reagent_containers/food/snacks/badrecipe
 	food_reagents = list(/datum/reagent/toxin/bad_food = 30)
 	foodtypes = GROSS
 	burntime = 0
+
+/obj/item/reagent_containers/food/snacks/balefire
+	food_reagents = list(/datum/reagent/consumable/nutriment = 24)
+	bitesize = 4
+	slice_path = /obj/item/reagent_containers/food/snacks/balefire/slice
+	slices_num = 4
+	slice_batch = FALSE
+
+/obj/item/reagent_containers/food/snacks/balefire/slice
+	food_reagents = list(/datum/reagent/consumable/nutriment = 12)
+	bitesize = 2
 
 /obj/item/reagent_containers/food/snacks/butter
 	food_reagents = list(/datum/reagent/consumable/nutriment = 12)
@@ -14,6 +28,19 @@
 /obj/item/reagent_containers/food/snacks/butterslice
 	food_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	foodtypes = DAIRY
+
+/obj/item/reagent_containers/food/snacks/chocolate
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("sugary richness" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	bitesize = 4
+	slice_path = /obj/item/reagent_containers/food/snacks/chocolate/slice
+	slices_num = 2
+
+/obj/item/reagent_containers/food/snacks/chocolate/slice
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("sugary richness" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
 
 /obj/item/reagent_containers/food/snacks/crow
 	food_reagents = list(/datum/reagent/consumable/nutriment = 4)
@@ -30,6 +57,10 @@
 	foodtypes = MEAT
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/friedegg/fried
 	rotprocess = 9000
+
+/obj/item/reagent_containers/food/snacks/eoran_aril/auric
+	food_reagents = list(/datum/reagent/consumable/nutriment = 1)
+	bitesize = 1
 
 /obj/item/reagent_containers/food/snacks/fat
 	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
@@ -144,12 +175,140 @@
 	tastes = list("carrot" = 1)
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/preserved/carrot_baked
 
+/obj/item/reagent_containers/food/snacks/grown/coffee
+	food_reagents = list(/datum/reagent/consumable/nutriment = 1)
+	tastes = list("hibicus sweetness" = 1)
+	bitesize = 1
+
+/obj/item/reagent_containers/food/snacks/grown/coffeebeans
+	food_reagents = list(/datum/reagent/consumable/nutriment = 1)
+	tastes = list("unpleasant bitterness" = 1)
+	cooked_type = /obj/item/reagent_containers/food/snacks/grown/coffeebeansroasted
+	bitesize = 1
+
+/obj/item/reagent_containers/food/snacks/grown/coffeebeans_spiced
+	food_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	tastes = list("rich caramel smoothness" = 1, "a mouthful of cough-inducing powderiness" = 1)
+	bitesize = 1
+
+/obj/item/reagent_containers/food/snacks/grown/coffeebeansroasted
+	food_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	tastes = list("rich caramel smoothness" = 1)
+	bitesize = 1
+
+/obj/item/reagent_containers/food/snacks/grown/fruit/blackberry
+	food_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	foodtypes = FRUIT
+	tastes = list("blackberry" = 1)
+	bitesize = 2
+	rotprocess = 18000
+
+/obj/item/reagent_containers/food/snacks/grown/fruit/blackberry/skysugarbase
+	food_reagents = list(/datum/reagent/water = 7, /datum/reagent/consumable/nutriment = 3)
+	foodtypes = FRUIT
+	tastes = list("a horrifically bad idea" = 1, "slightly fruity aftertaste" = 1)
+	eat_effect = /datum/status_effect/rogue_food/uncooked
+	bitesize = 2
+	rotprocess = 18000
+
+/obj/item/reagent_containers/food/snacks/grown/fruit/blackberry_sugared
+	food_reagents = list(/datum/reagent/consumable/nutriment = 9)
+	foodtypes = FRUIT
+	tastes = list("overpoweringly sweet" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	bitesize = 2
+	rotprocess = 18000
+
+/obj/item/reagent_containers/food/snacks/grown/fruit/lemon
+	food_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	foodtypes = FRUIT
+	tastes = list("lemon" = 1)
+	bitesize = 2
+	rotprocess = 18000
+
+/obj/item/reagent_containers/food/snacks/grown/fruit/lime
+	food_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	foodtypes = FRUIT
+	tastes = list("lime" = 1)
+	bitesize = 2
+	rotprocess = 18000
+
+/obj/item/reagent_containers/food/snacks/grown/fruit/pear
+	food_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	foodtypes = FRUIT
+	tastes = list("pear" = 1)
+	bitesize = 2
+	rotprocess = 18000
+
+/obj/item/reagent_containers/food/snacks/grown/fruit/plum
+	food_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	foodtypes = FRUIT
+	tastes = list("plum" = 1)
+	bitesize = 2
+	rotprocess = 18000
+
+/obj/item/reagent_containers/food/snacks/grown/fruit/raspberry
+	food_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	foodtypes = FRUIT
+	tastes = list("raspberry" = 1)
+	bitesize = 2
+	rotprocess = 18000
+
+/obj/item/reagent_containers/food/snacks/grown/fruit/strawberry
+	food_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	foodtypes = FRUIT
+	tastes = list("strawberry" = 1)
+	bitesize = 2
+	rotprocess = 18000
+
+/obj/item/reagent_containers/food/snacks/grown/fruit/tangerine
+	food_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	foodtypes = FRUIT
+	tastes = list("tangerine" = 1)
+	bitesize = 2
+	rotprocess = 18000
+
+/obj/item/reagent_containers/food/snacks/grown/fruit/tangerine_sugared
+	food_reagents = list(/datum/reagent/consumable/nutriment = 9)
+	foodtypes = FRUIT
+	tastes = list("overpoweringly sweet" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	bitesize = 2
+	rotprocess = 18000
+
+/obj/item/reagent_containers/food/snacks/grown/fruit/tomato
+	food_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	foodtypes = FRUIT
+	tastes = list("tomato" = 1)
+	bitesize = 2
+	rotprocess = 18000
+	slice_path = /obj/item/reagent_containers/food/snacks/grown/fruit/tomato_sliced
+	slices_num = 1
+
+/obj/item/reagent_containers/food/snacks/grown/fruit/tomato_sliced
+	food_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	foodtypes = FRUIT
+	tastes = list("to" = 1, "mato" = 1)
+	bitesize = 2
+	rotprocess = 18000
+
 /obj/item/reagent_containers/food/snacks/grown/garlick/rogue
 	food_reagents = list(/datum/reagent/consumable/nutriment = 1)
 	tastes = list("pungent savoriness" = 1)
 	bitesize = 2
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/veg/garlick_clove
 	slices_num = 5
+
+/obj/item/reagent_containers/food/snacks/grown/nut
+	food_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/drug/nicotine = 1)
+	foodtypes = FRUIT
+	tastes = list("nutty" = 1)
+	bitesize = 1
+
+/obj/item/reagent_containers/food/snacks/grown/nut_sugared
+	food_reagents = list(/datum/reagent/consumable/nutriment = 9)
+	tastes = list("overpoweringly sweet and nutty" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
 
 /obj/item/reagent_containers/food/snacks/grown/oat
 	foodtypes = GRAIN
@@ -170,10 +329,26 @@
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/veg/potato_sliced
 	slices_num = 2
 
+/obj/item/reagent_containers/food/snacks/grown/rice
+	foodtypes = GRAIN
+	tastes = list("rice" = 1)
+
+/obj/item/reagent_containers/food/snacks/grown/rogue/chocolate_spiced
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("sugary richness" = 1, "a mouthful of cough-inducing powderiness" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/snack
+	bitesize = 2
+
 /obj/item/reagent_containers/food/snacks/grown/rogue/fyritius
 	food_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	tastes = list("tastes like a burning coal and fire" = 1)
 	bitesize = 1
+
+/obj/item/reagent_containers/food/snacks/grown/rogue/fyritius/bloodied
+	food_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	tastes = list("tastes like a burning coal and fire and blood" = 1)
+	bitesize = 1
+	rotprocess = 9000
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed
 	food_reagents = list(/datum/reagent/drug/nicotine = 2, /datum/reagent/consumable/nutriment = 1)
@@ -189,6 +364,16 @@
 /obj/item/reagent_containers/food/snacks/grown/rogue/rosa_petals
 	food_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	tastes = list("mild sweetness" = 1)
+	bitesize = 1
+
+/obj/item/reagent_containers/food/snacks/grown/rogue/rosa_petals_dried
+	food_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	tastes = list("mild sweetness" = 1)
+	bitesize = 1
+
+/obj/item/reagent_containers/food/snacks/grown/rogue/rosa_petals_spiced
+	food_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	tastes = list("mild sweetness" = 1, "a mouthful of cough-inducing powderiness" = 1)
 	bitesize = 1
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/swampweed
@@ -207,9 +392,167 @@
 	tastes = list("bitterness" = 1)
 	bitesize = 1
 
+/obj/item/reagent_containers/food/snacks/grown/rogue/tealeaves_ground
+	food_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	tastes = list("bitterness" = 1)
+	bitesize = 1
+
+/obj/item/reagent_containers/food/snacks/grown/rogue/tealeaves_spiced
+	food_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	tastes = list("bitterness" = 1, "a mouthful of cough-inducing powderiness" = 1)
+	bitesize = 1
+
+/obj/item/reagent_containers/food/snacks/grown/skysugarslab
+	food_reagents = list(/datum/reagent/water = 6, /datum/reagent/consumable/nutriment = 6)
+	tastes = list("a slightly less bad idea" = 1, "shards of fruit-tinged glass" = 1)
+	bitesize = 7
+
+/obj/item/reagent_containers/food/snacks/grown/sugarcane
+	food_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/sugar = 5)
+
+/obj/item/reagent_containers/food/snacks/grown/sugarshape/amark
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("a mouthful of sugar" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	cooked_type = /obj/item/reagent_containers/food/snacks/sugarstatue/amark
+	bitesize = 2
+
+/obj/item/reagent_containers/food/snacks/grown/sugarshape/arch
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("a mouthful of sugar" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	cooked_type = /obj/item/reagent_containers/food/snacks/sugarstatue/arch
+	bitesize = 2
+
+/obj/item/reagent_containers/food/snacks/grown/sugarshape/archway
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("a mouthful of sugar" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	cooked_type = /obj/item/reagent_containers/food/snacks/sugarstatue/archway
+	bitesize = 2
+
+/obj/item/reagent_containers/food/snacks/grown/sugarshape/castle
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("a mouthful of sugar" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	cooked_type = /obj/item/reagent_containers/food/snacks/sugarstatue/castle
+	bitesize = 2
+
+/obj/item/reagent_containers/food/snacks/grown/sugarshape/dmark
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("a mouthful of sugar" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	cooked_type = /obj/item/reagent_containers/food/snacks/sugarstatue/dmark
+	bitesize = 2
+
+/obj/item/reagent_containers/food/snacks/grown/sugarshape/flag
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("a mouthful of sugar" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	cooked_type = /obj/item/reagent_containers/food/snacks/sugarstatue/flag
+	bitesize = 2
+
+/obj/item/reagent_containers/food/snacks/grown/sugarshape/hmark
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("a mouthful of sugar" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	cooked_type = /obj/item/reagent_containers/food/snacks/sugarstatue/hmark
+	bitesize = 2
+
+/obj/item/reagent_containers/food/snacks/grown/sugarshape/house
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("a mouthful of sugar" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	cooked_type = /obj/item/reagent_containers/food/snacks/sugarstatue/house
+	bitesize = 2
+
+/obj/item/reagent_containers/food/snacks/grown/sugarshape/pmark
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("a mouthful of sugar" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	cooked_type = /obj/item/reagent_containers/food/snacks/sugarstatue/pmark
+	bitesize = 2
+
+/obj/item/reagent_containers/food/snacks/grown/sugarshape/smark
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("a mouthful of sugar" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	cooked_type = /obj/item/reagent_containers/food/snacks/sugarstatue/smark
+	bitesize = 2
+
+/obj/item/reagent_containers/food/snacks/grown/sugarshape/statuek
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("a mouthful of sugar" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	cooked_type = /obj/item/reagent_containers/food/snacks/sugarstatue/statuek
+	bitesize = 2
+
+/obj/item/reagent_containers/food/snacks/grown/sugarshape/statuel
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("a mouthful of sugar" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	cooked_type = /obj/item/reagent_containers/food/snacks/sugarstatue/statuel
+	bitesize = 2
+
+/obj/item/reagent_containers/food/snacks/grown/sugarshape/statuer
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("a mouthful of sugar" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	cooked_type = /obj/item/reagent_containers/food/snacks/sugarstatue/statuer
+	bitesize = 2
+
+/obj/item/reagent_containers/food/snacks/grown/sugarshape/statuey
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("a mouthful of sugar" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	cooked_type = /obj/item/reagent_containers/food/snacks/sugarstatue/statuey
+	bitesize = 2
+
+/obj/item/reagent_containers/food/snacks/grown/sugarshape/tower
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("a mouthful of sugar" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	cooked_type = /obj/item/reagent_containers/food/snacks/sugarstatue/tower
+	bitesize = 2
+
+/obj/item/reagent_containers/food/snacks/grown/sugarshape/towers
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("a mouthful of sugar" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	cooked_type = /obj/item/reagent_containers/food/snacks/sugarstatue/towers
+	bitesize = 2
+
+/obj/item/reagent_containers/food/snacks/grown/sugarshape/tree
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("a mouthful of sugar" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	cooked_type = /obj/item/reagent_containers/food/snacks/sugarstatue/tree
+	bitesize = 2
+
+/obj/item/reagent_containers/food/snacks/grown/sugarshape/zmark
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("a mouthful of sugar" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	cooked_type = /obj/item/reagent_containers/food/snacks/sugarstatue/zmark
+	bitesize = 2
+
+/obj/item/reagent_containers/food/snacks/grown/tea
+	food_reagents = list(/datum/reagent/consumable/nutriment = 1)
+	tastes = list("grass" = 1)
+	bitesize = 1
+
 /obj/item/reagent_containers/food/snacks/grown/wheat
 	foodtypes = GRAIN
 	tastes = list("wheat" = 1)
+
+/obj/item/reagent_containers/food/snacks/pepper
+	food_reagents = list(/datum/reagent/consumable/blackpepper = 1)
+	tastes = list("tingling spiciness" = 1, "a subtle hint of bitterness" = 1)
+
+/obj/item/reagent_containers/food/snacks/roastseeds
+	food_reagents = list(/datum/reagent/consumable/nutriment = 1)
+	foodtypes = VEGETABLES
+	tastes = list("toasted seeds" = 1)
 
 /obj/item/reagent_containers/food/snacks/rogue/biscuit
 	food_reagents = list(/datum/reagent/consumable/nutriment = 11.5)
@@ -357,6 +700,17 @@
 	cooktime = 300
 	rotprocess = 18000
 
+/obj/item/reagent_containers/food/snacks/rogue/cookie
+	food_reagents = list(/datum/reagent/consumable/nutriment = 12)
+	foodtypes = GRAIN | DAIRY
+	tastes = list("rich and gooey chocolate" = 1, "crispy dough with a hint of butteriness" = 1)
+	cooktime = 300
+	bitesize = 8
+	rotprocess = 27000
+	slice_path = /obj/item/reagent_containers/food/snacks/rogue/cookieslice
+	slices_num = 6
+	slice_batch = FALSE
+
 /obj/item/reagent_containers/food/snacks/rogue/cookier
 	food_reagents = list(/datum/reagent/consumable/nutriment = 12)
 	foodtypes = GRAIN | DAIRY | FRUIT
@@ -367,6 +721,14 @@
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/cookieslicer
 	slices_num = 6
 	slice_batch = FALSE
+
+/obj/item/reagent_containers/food/snacks/rogue/cookieslice
+	food_reagents = list(/datum/reagent/consumable/nutriment = 15)
+	foodtypes = GRAIN | DAIRY
+	tastes = list("rich and gooey chocolate" = 1, "crispy dough with a hint of butteriness" = 1)
+	cooktime = 300
+	bitesize = 2
+	rotprocess = 27000
 
 /obj/item/reagent_containers/food/snacks/rogue/cookieslicer
 	food_reagents = list(/datum/reagent/consumable/nutriment = 15)
@@ -397,10 +759,21 @@
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/bun
 	cooktime = 300
 
+/obj/item/reagent_containers/food/snacks/rogue/foodbase/cookie_raw
+	food_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	foodtypes = GRAIN | DAIRY
+	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/cookie
+	cooktime = 300
+
 /obj/item/reagent_containers/food/snacks/rogue/foodbase/cookier_raw
 	food_reagents = list(/datum/reagent/consumable/nutriment = 3)
 	foodtypes = GRAIN | DAIRY | FRUIT
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/cookier
+	cooktime = 300
+
+/obj/item/reagent_containers/food/snacks/rogue/foodbase/halfcookie_raw
+	food_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	foodtypes = GRAIN | DAIRY
 	cooktime = 300
 
 /obj/item/reagent_containers/food/snacks/rogue/foodbase/halfcookier_raw
@@ -491,6 +864,24 @@
 	tastes = list("airy apple" = 1)
 	cooktime = 300
 
+/obj/item/reagent_containers/food/snacks/rogue/fruit/pumpkin_sliced
+	food_reagents = list(/datum/reagent/consumable/nutriment = 1)
+	foodtypes = GRAIN
+	tastes = list("pumpkin" = 1)
+	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/preserved/pumpkin_mashed
+	fried_type = /obj/item/reagent_containers/food/snacks/rogue/preserved/pumpkin_mashed
+	cooktime = 300
+	rotprocess = 27000
+
+/obj/item/reagent_containers/food/snacks/rogue/frybirdbucket
+	food_reagents = list(/datum/reagent/consumable/nutriment = 45)
+	foodtypes = VEGETABLES | MEAT
+	tastes = list("frybird" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/meal
+	cooktime = 300
+	rotprocess = 18000
+	warming = 1800
+
 /obj/item/reagent_containers/food/snacks/rogue/frybirdtato
 	food_reagents = list(/datum/reagent/consumable/nutriment = 15)
 	foodtypes = VEGETABLES | MEAT
@@ -568,6 +959,19 @@
 	tastes = list("sweetness" = 1)
 	cooktime = 300
 
+/obj/item/reagent_containers/food/snacks/rogue/honey/spider
+	food_reagents = list(/datum/reagent/consumable/honey = 5, /datum/reagent/consumable/nutriment = 6)
+	foodtypes = GRAIN
+	tastes = list("sweetness and spiderwebs" = 1)
+	cooktime = 300
+
+/obj/item/reagent_containers/food/snacks/rogue/lemoncoppiette
+	food_reagents = list(/datum/reagent/consumable/nutriment = 9)
+	foodtypes = GRAIN
+	tastes = list("lip-puckering sweetness" = 1, "an unfortunate aftertaste of burnt wood" = 1)
+	cooktime = 300
+	bitesize = 5
+
 /obj/item/reagent_containers/food/snacks/rogue/meat
 	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
 	foodtypes = MEAT
@@ -594,6 +998,22 @@
 	rotprocess = 18000
 	become_rot_type = /obj/item/reagent_containers/food/snacks/rogue/meat_rotten
 
+/obj/item/reagent_containers/food/snacks/rogue/meat/brothbrique
+	food_reagents = list(/datum/reagent/consumable/nutriment = 24)
+	foodtypes = MEAT
+	tastes = list("salted meat" = 1, "dried berries" = 1, "a slightly greasy aftertaste" = 1)
+	cooktime = 300
+	bitesize = 6
+	slice_path = /obj/item/reagent_containers/food/snacks/rogue/meat/brothbrique/slice
+	slices_num = 4
+	slice_batch = FALSE
+
+/obj/item/reagent_containers/food/snacks/rogue/meat/brothbrique/slice
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	foodtypes = MEAT
+	tastes = list("salted meat" = 1, "dried berries" = 1, "a slightly greasy aftertaste" = 1)
+	cooktime = 300
+
 /obj/item/reagent_containers/food/snacks/rogue/meat/coppiette
 	food_reagents = list(/datum/reagent/consumable/nutriment = 9)
 	foodtypes = MEAT
@@ -618,6 +1038,12 @@
 	cooktime = 300
 	rotprocess = 18000
 	become_rot_type = /obj/item/reagent_containers/food/snacks/rogue/meat_rotten
+
+/obj/item/reagent_containers/food/snacks/rogue/meat/driedfishfilet
+	food_reagents = list(/datum/reagent/consumable/nutriment = 9)
+	foodtypes = MEAT
+	tastes = list("salted fish" = 1)
+	cooktime = 300
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/fatty
 	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
@@ -888,6 +1314,33 @@
 	rotprocess = 18000
 	become_rot_type = /obj/item/reagent_containers/food/snacks/rogue/meat_rotten
 
+/obj/item/reagent_containers/food/snacks/rogue/meat/steak/gnoll
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	foodtypes = MEAT
+	eat_effect = /datum/status_effect/rogue_food/uncooked
+	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/steak/gnoll/seared
+	fried_type = /obj/item/reagent_containers/food/snacks/rogue/meat/steak/gnoll/seared
+	cooktime = 300
+	rotprocess = 54000
+	become_rot_type = /obj/item/reagent_containers/food/snacks/rogue/meat_rotten
+	slice_path = /obj/item/reagent_containers/food/snacks/rogue/meat/mince/beef
+	slices_num = 2
+	slice_bclass = BCLASS_CHOP
+
+/obj/item/reagent_containers/food/snacks/rogue/meat/steak/gnoll/seared
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 12)
+	foodtypes = MEAT
+	cooktime = 300
+	rotprocess = 54000
+	become_rot_type = /obj/item/reagent_containers/food/snacks/rogue/meat_rotten
+
+/obj/item/reagent_containers/food/snacks/rogue/meat/steak/vilespawn
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	foodtypes = MEAT
+	eat_effect = /datum/status_effect/rogue_food/uncooked
+	cooktime = 300
+
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak/wolf
 	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
 	foodtypes = MEAT
@@ -1051,6 +1504,12 @@
 	cooktime = 300
 	rotprocess = 27000
 
+/obj/item/reagent_containers/food/snacks/rogue/preserved/pumpkin_mashed
+	food_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	foodtypes = GRAIN
+	cooktime = 300
+	rotprocess = 27000
+
 /obj/item/reagent_containers/food/snacks/rogue/prezzel
 	food_reagents = list(/datum/reagent/consumable/nutriment = 7.5)
 	foodtypes = GRAIN
@@ -1082,6 +1541,62 @@
 	food_reagents = list(/datum/reagent/consumable/nutriment = 3)
 	foodtypes = FRUIT
 	tastes = list("dried jackberries" = 1, "shriveled bursts of sweetness" = 1)
+	cooktime = 300
+	bitesize = 5
+
+/obj/item/reagent_containers/food/snacks/rogue/raisins/blackberry
+	food_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	foodtypes = FRUIT
+	tastes = list("dried blackberries" = 1, "shriveled bursts of sour-sweetness" = 1)
+	cooktime = 300
+	bitesize = 5
+
+/obj/item/reagent_containers/food/snacks/rogue/raisins/lemon
+	food_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	foodtypes = FRUIT
+	tastes = list("dried lemons" = 1, "shriveled bursts of tarty-sourness" = 1)
+	cooktime = 300
+	bitesize = 5
+
+/obj/item/reagent_containers/food/snacks/rogue/raisins/lime
+	food_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	foodtypes = FRUIT
+	tastes = list("dried limes" = 1, "shriveled bursts of sour-tartiness" = 1)
+	cooktime = 300
+	bitesize = 5
+
+/obj/item/reagent_containers/food/snacks/rogue/raisins/pear
+	food_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	foodtypes = FRUIT
+	tastes = list("dried pears" = 1, "shriveled bursts of tarty-honeyiness" = 1)
+	cooktime = 300
+	bitesize = 5
+
+/obj/item/reagent_containers/food/snacks/rogue/raisins/plum
+	food_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	foodtypes = FRUIT
+	tastes = list("dried plums" = 1, "shriveled bursts of honey-sweetness" = 1)
+	cooktime = 300
+	bitesize = 5
+
+/obj/item/reagent_containers/food/snacks/rogue/raisins/raspberry
+	food_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	foodtypes = FRUIT
+	tastes = list("dried raspberries" = 1, "shriveled bursts of tartness" = 1)
+	cooktime = 300
+	bitesize = 5
+
+/obj/item/reagent_containers/food/snacks/rogue/raisins/strawberry
+	food_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	foodtypes = FRUIT
+	tastes = list("dried strawberries" = 1, "shriveled bursts of sweetness" = 1)
+	cooktime = 300
+	bitesize = 5
+
+/obj/item/reagent_containers/food/snacks/rogue/raisins/tangerine
+	food_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	foodtypes = FRUIT
+	tastes = list("dried tangerines" = 1, "shriveled bursts of tarty-sweetness" = 1)
 	cooktime = 300
 	bitesize = 5
 
@@ -1138,6 +1653,21 @@
 	cooktime = 300
 	rotprocess = 18000
 	warming = 1800
+
+/obj/item/reagent_containers/food/snacks/rogue/toastcrumbs
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	foodtypes = GRAIN
+	tastes = list("crunch" = 1)
+	cooktime = 300
+	bitesize = 1
+	rotprocess = 18000
+
+/obj/item/reagent_containers/food/snacks/rogue/trailmix
+	food_reagents = list(/datum/reagent/consumable/nutriment = 27)
+	foodtypes = GRAIN
+	tastes = list("raisin" = 1, "pumpkin" = 1, "dry paper" = 1)
+	cooktime = 300
+	bitesize = 7
 
 /obj/item/reagent_containers/food/snacks/rogue/truffles
 	food_reagents = list(/datum/reagent/consumable/nutriment = 5)
@@ -1236,6 +1766,107 @@
 	food_reagents = list(/datum/reagent/consumable/sugar = 15)
 	tastes = list("sweet" = 1)
 
+/obj/item/reagent_containers/food/snacks/sugarstatue/amark
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("crispy sugarglass" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	bitesize = 2
+
+/obj/item/reagent_containers/food/snacks/sugarstatue/arch
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("crispy sugarglass" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+
+/obj/item/reagent_containers/food/snacks/sugarstatue/archway
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("crispy sugarglass" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	bitesize = 4
+
+/obj/item/reagent_containers/food/snacks/sugarstatue/castle
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("crispy sugarglass" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	bitesize = 4
+
+/obj/item/reagent_containers/food/snacks/sugarstatue/dmark
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("crispy sugarglass" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	bitesize = 2
+
+/obj/item/reagent_containers/food/snacks/sugarstatue/flag
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("crispy sugarglass" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	bitesize = 2
+
+/obj/item/reagent_containers/food/snacks/sugarstatue/hmark
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("crispy sugarglass" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	bitesize = 2
+
+/obj/item/reagent_containers/food/snacks/sugarstatue/house
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("crispy sugarglass" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	bitesize = 2
+
+/obj/item/reagent_containers/food/snacks/sugarstatue/pmark
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("crispy sugarglass" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	bitesize = 2
+
+/obj/item/reagent_containers/food/snacks/sugarstatue/smark
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("crispy sugarglass" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	bitesize = 2
+
+/obj/item/reagent_containers/food/snacks/sugarstatue/statuek
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("crispy sugarglass" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+
+/obj/item/reagent_containers/food/snacks/sugarstatue/statuel
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("crispy sugarglass" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+
+/obj/item/reagent_containers/food/snacks/sugarstatue/statuer
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("crispy sugarglass" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+
+/obj/item/reagent_containers/food/snacks/sugarstatue/statuey
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("crispy sugarglass" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+
+/obj/item/reagent_containers/food/snacks/sugarstatue/tower
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("crispy sugarglass" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+
+/obj/item/reagent_containers/food/snacks/sugarstatue/towers
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("crispy sugarglass" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	bitesize = 2
+
+/obj/item/reagent_containers/food/snacks/sugarstatue/tree
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("crispy sugarglass" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+
+/obj/item/reagent_containers/food/snacks/sugarstatue/zmark
+	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	tastes = list("crispy sugarglass" = 1)
+	eat_effect = /datum/status_effect/rogue_food_buff/sweet
+	bitesize = 2
+
 /obj/item/reagent_containers/food/snacks/tallow
 	food_reagents = list(/datum/reagent/consumable/nutriment = 3)
 	tastes = list("grease" = 1, "oil" = 1, "regret" = 1)
@@ -1245,6 +1876,12 @@
 /obj/item/reagent_containers/food/snacks/tallow/red
 	food_reagents = list(/datum/reagent/consumable/nutriment = 3)
 	tastes = list("grease" = 1, "oil" = 1, "regret" = 1, "blood" = 1)
+	eat_effect = /datum/status_effect/rogue_food/uncooked
+	bitesize = 1
+
+/obj/item/reagent_containers/food/snacks/tallow/soft
+	food_reagents = list(/datum/reagent/consumable/nutriment = 3)
+	tastes = list("grease" = 1, "oil" = 1, "regret" = 1)
 	eat_effect = /datum/status_effect/rogue_food/uncooked
 	bitesize = 1
 
@@ -1267,11 +1904,23 @@
 	ingredients = list(/obj/item/reagent_containers/food/snacks/rogue/friedegg/sausage)
 	result_type = /obj/item/reagent_containers/food/snacks/rogue/friedegg/sausagebacon
 
+/datum/rogue_food_recipe/baked/cookie_dough_chocolate
+	name = "Chocolate Cookie Dough"
+	base_item = /obj/item/reagent_containers/food/snacks/rogue/foodbase/halfcookie_raw
+	ingredients = list(/obj/item/reagent_containers/food/snacks/chocolate/slice)
+	result_type = /obj/item/reagent_containers/food/snacks/rogue/foodbase/cookie_raw
+
 /datum/rogue_food_recipe/baked/cookie_dough_raisin
 	name = "Raisin Cookie Dough"
 	base_item = /obj/item/reagent_containers/food/snacks/rogue/foodbase/halfcookier_raw
 	ingredients = list(/obj/item/reagent_containers/food/snacks/rogue/raisins)
 	result_type = /obj/item/reagent_containers/food/snacks/rogue/foodbase/cookier_raw
+
+/datum/rogue_food_recipe/baked/half_cookie_chocolate
+	name = "Chocolate Cookie Dough"
+	base_item = /obj/item/reagent_containers/food/snacks/rogue/foodbase/hardtack_raw
+	ingredients = list(/obj/item/reagent_containers/food/snacks/chocolate/slice)
+	result_type = /obj/item/reagent_containers/food/snacks/rogue/foodbase/halfcookie_raw
 
 /datum/rogue_food_recipe/baked/half_cookie_raisin
 	name = "Raisin Cookie Dough"

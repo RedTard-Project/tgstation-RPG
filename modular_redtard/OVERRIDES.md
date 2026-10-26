@@ -144,7 +144,7 @@
 | `/obj/item/Initialize(mapload)` (четвёртое) | `clothing/mouth.dm` | `code/game/objects/items.dm` | `..()`, затем вещам со слотом рта и `muteinmouth` — элемент `/datum/element/muffles_speech/rogue_mouth` | — |
 | `/datum/element/muffles_speech/rogue_mouth/equipped()` | `clothing/mouth.dm` | `code/datums/elements/muffles_speech.dm` | `..()` только при надевании в слот рта | Что `equipped()` элемента ТГ по-прежнему регистрирует сигналы речи и эмоутов |
 | `/obj/item/clothing/Initialize(mapload)`, `update_overlays()` | `clothing/details.dm` | `code/modules/clothing/clothing.dm`, `code/game/objects/items.dm` | `Initialize`: `..()`, затем у вещей с `detail_tag` — `update_appearance(UPDATE_OVERLAYS)`. `update_overlays`: `..()`, затем слои деталей `"[icon_state][detail_tag]"` своим цветом (`RESET_COLOR`) | Что `update_overlays()` одежды ТГ по-прежнему возвращает список оверлеев (повреждения) |
-| `/datum/keybinding/living/enable_combat_mode`, `disable_combat_mode`, `toggle_combat_mode`, `toggle_move_intent`, `give`, `look_up`; `/datum/keybinding/mob/stop_pulling`, `prevent_movement` — `can_use(client/user)` | `hud/rogue_keybindings.dm` | `code/datums/keybinding/living.dm`, `mob.dm` | `FALSE` при средневековом HUD (`rogue_layout_active()`), иначе `..()`: их клавиши раскладка Twilight отдаёт своим привязкам | Что ТГ по-прежнему проверяет `can_use()` и в `keyDown`, и в `keyUp` |
+| `/datum/keybinding/living/enable_combat_mode`, `disable_combat_mode`, `toggle_combat_mode`, `toggle_move_intent`, `give`, `look_up`, `resist`, `rest`; `/datum/keybinding/mob/stop_pulling`, `prevent_movement`; `/datum/keybinding/dextrous/drop_item`, `activate_inhand`, `swap_hands`; `/datum/keybinding/human/quick_equip`, `quick_equip_belt` (и его подтипы) — `can_use(client/user)` | `hud/rogue_keybindings.dm` | `code/datums/keybinding/living.dm`, `mob.dm`, `dextrous.dm`, `human.dm` | `FALSE` при средневековом HUD (`rogue_layout_active()`), иначе `..()`: их клавиши раскладка Ратвуда отдаёт своим привязкам | Что ТГ по-прежнему проверяет `can_use()` и в `keyDown`, и в `keyUp` |
 | `/mob/living/carbon/human/get_shove_flags(shover, weapon)` | `combat/unarmed.dm` | `code/modules/mob/living/carbon/carbon_defense.dm` (`/mob/living/carbon`) | `..()`; на средневековой карте человек сдвигает человека без оружия только с шансом `shove_chance` + разница силы и телосложения, иначе снимает `SHOVE_CAN_MOVE` | Что `disarm()` по-прежнему двигает цель только при `SHOVE_CAN_MOVE` |
 
 | `/mob/living/restore_initial_sight()` | `rockhill/races.dm` | `code/modules/mob/living/living.dm` | После `..()`: с чертой `TRAIT_DARKVISION` порог освещения не ниже `LIGHTING_CUTOFF_HIGH` (тёмное зрение Ратвуда) | Что процедура по-прежнему зовётся из `update_sight()` до проверок черт зрения и что `lighting_cutoff` — тот же процентный порог |
@@ -240,6 +240,7 @@
 | Процедура | Файл модуля | Назначение |
 |---|---|---|
 | `/atom/movable/screen/proc/rogue_hud_not_implemented(mob/user)` | `hud/rogue_hud_stubs.dm` | `balloon_alert` «не реализовано» |
+| `/mob/living/carbon/human/proc/rogue_smart_equip_backr()` | `hud/rogue_keybindings.dm` | `smart_equip_targeted()` ТГ для второй ячейки спины (`wear_backr`), которая не слот ТГ |
 | `/mob/living/carbon/human/proc/rogue_strike()`, `rogue_strike_intent()`, `rogue_strike_zone()`; `/mob/living/proc/rogue_strike_missed()`, `rogue_take_strike()`, `rogue_strike_message()`; `/obj/item/proc/rogue_after_strike()`; `/proc/rogue_fallback_intent()`, `rogue_swing_sound()` | `combat/strike.dm` | Свой удар вместо удара ТГ (Азур): интент, задержка, выносливость, промах по удаче, `check_block()` ТГ, точность по зоне, урон по формуле, броня ТГ и своя, `apply_damage()` ТГ, сообщения, кровь. `rogue_after_strike()` шлёт `COMSIG_ITEM_AFTERATTACK`, `COMSIG_ATOM_AFTER_ATTACKEDBY` и зовёт `afterattack()` (защищённая процедура ТГ, вызывается с самой вещи). При мерже проверить сигнатуры `apply_damage()`, `run_armor_check()`, `check_block()`, `afterattack()` и порядок `melee_attack_chain()` (что `pre_attack()` по-прежнему до `attackby()`) |
 | `/obj/item/proc/rogue_edge_ratio()`, `rogue_dull()`, `rogue_sharpen()`, `rogue_edge_text()`; `/mob/living/proc/rogue_sharpen_blade()` | `combat/blade.dm` | Острота клинка Азура: износ, пороги урона, заточка камнем (`do_after`, `do_sparks`) |
 | `/proc/rogue_station_events_enabled()` | `maps/medieval_quiet.dm` | Эпоха карты не medieval |
@@ -274,7 +275,7 @@
 | `/atom/movable/lighting_object/proc/rogue_show_record(batch, index)`, `rogue_show_dark()`; `/proc/rogue_light_attach_sentinel()`, `rogue_light_map_enabled()`, `rogue_light_library_path()`, `rogue_light_turf_flags()` | `lighting/overrides.dm`, `lighting/subsystem.dm` | Вид из записи библиотеки на объекте света ТГ; заглушка шатров на турфе; эпоха карты, поиск библиотеки рядом с миром, флаги турфа для библиотеки |
 | `/atom/movable/screen/proc/rogue_has_click_listener()` | `hud/rogue_hud_elements.dm` | Есть ли подписчик на `COMSIG_SCREEN_ELEMENT_CLICK`. Опирается на внутреннюю `_listen_lookup` из `code/datums/signals.dm` (один подписчик хранится как датум, несколько — как список) |
 | `/mob/living/proc/rogue_mark_in_combat()`, `rogue_rmb_is()`, `rogue_rmb_factor()`, `rogue_set_eyes_closed()`, `rogue_toggle_fixed_eye()`, `rogue_stealth_rank()`, `rogue_is_hidden()`, `rogue_look_around()`, `rogue_toggle_compliance()`, `rogue_take_offered()`; `/mob/proc/rogue_found_ping()` | `hud/rogue_hud_mechanics.dm`, `combat/rmb.dm` | Механики HUD: «в бою», ПКМ-интент, глаза, осмотр вокруг, покорность, «взять». `rogue_toggle_fixed_eye()` пишет переменную ТГ `set_dir_on_move` моба (у мобов ТГ её никто не меняет — только окна, шлюзы, термомашины и `infrared`); `rogue_take_offered()` зовёт `handle_transfer()` алерта `/atom/movable/screen/alert/give` ТГ |
-| `/mob/living/carbon/human/proc/rogue_update_max_energy()`, `rogue_energy_add()`, `rogue_toggle_sneak()`, `rogue_stop_sneaking()`, `rogue_update_sneak()`, `rogue_reveal_sneak()`, `rogue_sneak_reveal()`, `rogue_sneak_alpha()` и обработчики скрытности; `rogue_select_mmb()`, `rogue_try_kick()`, `rogue_try_jump()`, `rogue_try_bite()`, `rogue_try_steal()`, `rogue_steal_targets()`, `rogue_off_balance()`, `rogue_offbalanced()`; `rogue_toggle_rmb_intent()`, `rogue_feint()` | `hud/rogue_hud_mechanics.dm`, `combat/mmb.dm`, `combat/rmb.dm` | Энергия, скрытность (`SetInvisibility()` с источником `rogue_sneak`, модификатор скорости), СКМ-интенты Ратвуда/Азура, ПКМ-интенты и финт |
+| `/mob/living/carbon/human/proc/rogue_update_max_energy()`, `rogue_energy_add()`, `rogue_toggle_sneak()`, `rogue_stop_sneaking()`, `rogue_update_sneak()`, `rogue_reveal_sneak()`, `rogue_sneak_reveal()`, `rogue_sneak_alpha()` и обработчики скрытности; `rogue_select_mmb()`, `rogue_try_kick()`, `rogue_try_jump()`, `rogue_try_bite()`, `rogue_try_steal()`, `rogue_steal_targets()`, `rogue_off_balance()`, `rogue_offbalanced()`; `rogue_select_rmb_intent()`, `rogue_feint()` | `hud/rogue_hud_mechanics.dm`, `combat/mmb.dm`, `combat/rmb.dm` | Энергия, скрытность (`SetInvisibility()` с источником `rogue_sneak`, модификатор скорости), СКМ-интенты Ратвуда/Азура, ПКМ-интенты и финт |
 | `/atom/proc/rogue_onkick()`; переопределения у `/obj/item`, `/obj/structure/mineral_door/rockhill`, `/obj/structure/chair/wood/rockhill`, `/obj/structure/lever` (и `lever/hidden`) | `combat/mmb.dm` | Что делает пинок по предмету или конструкции: вещь отлетает, дверь выбивается (`kick()`), стул опрокидывается, рычаг переключается и шлёт сигнал редстоуна |
 | Новые переменные: `/mob/living/var/rogue_in_combat_until`, `rogue_eyes_closed`, `rogue_fixed_eye`; `/mob/living/carbon/human/var/rogue_energy`, `rogue_max_energy`, `rogue_sneaking`, `rogue_sneak_hidden`, `rogue_sneak_revealed_until`, `rogue_mmb_intent`, `rogue_offbalance_until`, `rogue_rmb_intent`, `rogue_feint_ready_at` | `hud/rogue_hud_mechanics.dm`, `combat/mmb.dm`, `combat/rmb.dm` | Состояние механик HUD на мобе |
 | `/obj/item/var/firefuel` | `rockhill/fires.dm` | Топливо Ратвуда: сколько горит огонь от предмета (портер переносит для 55 типов) |
@@ -388,6 +389,9 @@
 | `/obj/structure/chair/wood/rockhill`, `/obj/structure/bed/rockhill` | `/obj/structure/chair`, `/obj/structure/bed` | новая переменная `sleepy` (портер переносит значения Ратвуда) |
 | `/datum/config_entry/string/rogue_lighting_carrier`, `rogue_lighting_backend`, `rogue_lighting_library`; `flag/rogue_lighting_palette`, `flag/rogue_sight_shadows`; `number/rogue_lighting_tick_budget`, `rogue_lower_level_shade`, `rogue_darkness_floor`, `rogue_sight_shadow_alpha`, `rogue_sight_clear`, `rogue_round_minutes`, `rogue_round_extension_minutes`, `rogue_round_end_minutes` | `/datum/config_entry/*` | только значения; имя библиотеки `CONFIG_ENTRY_LOCKED` |
 | Админ-кнопка `Rogue Lighting` | `ADMIN_VERB` ТГ | новый верб в категории `Rogue Systems` (`lighting/subsystem.dm`), права `R_DEBUG` |
+| Админ-кнопки `PQ - Check`, `PQ - Adjust`, `Adjust Triumphs`, `Back to Lobby`, `Toggle Sleeping` (и в меню моба), `Sleep In View`, `Wake In View`, пункт меню моба `Rogue Player Panel` | `ADMIN_VERB`, `ADMIN_VERB_AND_CONTEXT_MENU`, `ADMIN_VERB_ONLY_CONTEXT_MENU` ТГ | новые верби в категории `Rogue Systems` (`admin/rogue_admin.dm`), право `R_ADMIN`; PQ и триумфы — файлы Ратвуда в папке игрока (`admin/player_quality.dm`, `admin/triumphs.dm`) |
+| `/datum/rogue_admin_panel` (`GLOB.rogue_admin_panel`) | `/datum` | `Topic()`: ссылки панели игрока; проверяет `CheckAdminHref()` и `R_ADMIN` |
+| `/datum/keybinding/rogue/hand`, `drop`, `resist`, `hold_still`, `quick_equip/*`, `action/*` | `/datum/keybinding` | бинды раскладки Ратвуда (`hud/rogue_keybindings.dm`): `Q`/`E`, `Z`, `X`, `Ctrl`, `Shift+Q/E/B`, `Alt+Q/E`, `Alt+1–9` |
 | `/obj/item/organ/tongue/rogue_race` и портированные языки-органы рас (`rockhill/races.dm`, `rockhill/ported/races.dm`) | `/obj/item/organ/tongue` | `get_possible_languages()` (к `..()` добавляет языки расы); значения `emote_sounds` (голоса Ратвуда по полу) |
 | `/datum/emote/living/rogue_vocal` и портированные эмоции Ратвуда | `/datum/emote/living` | `run_emote()`: без текста только звук (`get_sound()`, `should_play_sound()`, `playsound()`), с текстом — `..()`. Абстрактный (`abstract_type`) |
 | `/datum/language/rogue_orcish`, `rogue_elvish`, `/datum/language_holder/rogue_*` | `/datum/language`, `/datum/language_holder` | только значения (ключи `r` и `e` свободны в ТГ — при мерже проверить, что ТГ их не занял) |
@@ -459,6 +463,60 @@
 | `/datum/component/rogue_forging` | 2 | `crafting/forging.dm` | там же | Состояние бруска на наковальне: рецепт, прогресс, прочность бруска, качество | `AddComponent()` с аргументом, `COMPONENT_DUPE_UNIQUE` |
 | `SSrogue_dreams` (`SUBSYSTEM_DEF`, `SS_NO_FIRE`) | 2 | `crafting/experience.dm` | `code/controllers/subsystem.dm` | В `Initialize()` подписывается на `COMSIG_GLOB_JOB_AFTER_SPAWN` (банк снов людям medieval-карт) и `COMSIG_GLOB_ROCKHILL_TIME_OF_DAY` модуля (ночь — усталость) | Аргументы `COMSIG_GLOB_JOB_AFTER_SPAWN` (`job, spawned, player_client`), что подсистеме без `fire()` хватает `SS_NO_FIRE` |
 | Типы Ратвуда со своими механиками: `/obj/machinery/light/rogue/smelter` (и `bronze`, `great`, `hiron`), `/forge`, `/obj/machinery/anvil`, `/obj/machinery/tanningrack`, `/obj/machinery/loom`, `/obj/structure/fluff/grindwheel`, `/obj/item/rogueweapon/tongs`, `/obj/item/rogueweapon/hammer`, `/obj/item/repair_kit`, `/obj/item/needle`, `/obj/item/ingot` | 2 | `crafting/*.dm` | `item_interaction()`, `item_interaction_secondary()`, `interact_with_atom()`, `attack_hand()`, `attack_hand_secondary()`, `attack_self()`, `dropped()`, `Exited()`, `examine()`, `update_icon_state()`, `update_overlays()`, `get_temperature()`, `process()`, `ui_*` ТГ (`code/game/atom/atom_tool_acts.dm`, `code/_onclick/`, `code/game/objects/items.dm`) | Заглушки портера (`parent_type` на `/obj/structure/rockhill`, `/obj/item/rockhill`) получают поведение Ратвуда через эти процедуры с `..()`; у наковальни, рамы и станка `interaction_flags_atom = NONE`, чтобы рука не открывала окно; печи — в `SSobj` (`START_PROCESSING`), не `SSmachines`; `max_integrity` наковальни, рамы, станка, круга — Ратвуда | Порядок `base_item_interaction()` (сигналы → `item_interaction()` цели → `interact_with_atom()` инструмента → хранилище), коды `ITEM_INTERACT_*`, `SECONDARY_ATTACK_*`, `INTERACT_ATOM_ATTACK_HAND` у `/obj/structure`, что `SSobj` по-прежнему зовёт `process(seconds_per_tick)` и снимает по `PROCESS_KILL` |
+| `/datum/component/personal_crafting/construct_item(atom/crafter, datum/crafting_recipe/recipe)` | 5 | `crafting/rogue_recipes.dm` | `code/datums/components/crafting/_crafting.dm` | Для `/datum/crafting_recipe/roguetown` у живого — крафт Ратвуда: место (перед собой, на своей клетке, у стены, на столе, у нужной структуры), попытки по 1 с с шансом по навыку, сложности и интеллекту, результат через `rogue_make()`; иначе `..()` | Сигнатуру `construct_item()`, `perform_all_checks()`, `get_used_reqs()`, `get_surroundings()`, переменную `ignored_flags` |
+| `/datum/component/personal_crafting/make_action(datum/crafting_recipe/recipe, mob/user)` | 5 | `crafting/rogue_recipes.dm` | там же | Для рецептов Ратвуда структура остаётся там, где её поставил `rogue_make()` (ТГ перенёс бы её под ноги), предмет — в руки; иначе `..()` | Что ТГ не добавил в `make_action()` новых шагов |
+| `/datum/component/personal_crafting/get_visible_recipes(mob/user)` | 5 | `crafting/rogue_recipes.dm` | там же | На medieval-картах (`rogue_combat_enabled()`) только рецепты Ратвуда, на остальных — только ТГ | Что список рецептов по-прежнему строится здесь |
+| `/datum/component/personal_crafting/proc/rogue_make()` | 3 | `crafting/rogue_recipes.dm` | — | Конец `construct_item()` ТГ на клетке Ратвуда: тратит нужное, ставит результат и добавочные (`rogue_results`), опыт навыка (`rogue_craft_experience()`) | — |
+| `/datum/crafting_recipe/roguetown` и 1380 рецептов (`crafting/ported/craft_recipes.dm`, портер) | 2 | `crafting/rogue_recipes.dm` | `/datum/crafting_recipe` | Свои `rogue_*`; `crafting_flags = NONE`, `blacklist` — подтипы требуемого, если у Ратвуда нет `subtype_reqs` | — |
+
+## Этап 4 — скотоводство и приручение (`husbandry/`)
+
+Всё, чем этап меняет ТГ, в любой ступени (1–6), одной таблицей.
+
+| Что (тип, процедура, файл) | Ступень | Файл модуля | Оригинал ТГ | Поведение | При мерже проверить |
+|---|---|---|---|---|---|
+
+## Этап 6 — глубина pve (`pve/`)
+
+Всё, чем этап меняет ТГ, в любой ступени (1–6), одной таблицей.
+
+| Что (тип, процедура, файл) | Ступень | Файл модуля | Оригинал ТГ | Поведение | При мерже проверить |
+|---|---|---|---|---|---|
+
+## Этап 7 — библиотека и постоянный мир (`library/`)
+
+Всё, чем этап меняет ТГ, в любой ступени (1–6), одной таблицей.
+
+| Что (тип, процедура, файл) | Ступень | Файл модуля | Оригинал ТГ | Поведение | При мерже проверить |
+|---|---|---|---|---|---|
+
+## Этап 8 — триумфы (`triumphs/`)
+
+Всё, чем этап меняет ТГ, в любой ступени (1–6), одной таблицей.
+
+| Что (тип, процедура, файл) | Ступень | Файл модуля | Оригинал ТГ | Поведение | При мерже проверить |
+|---|---|---|---|---|---|
+
+## Этап 9 — отделка рас (`races/`)
+
+Всё, чем этап меняет ТГ, в любой ступени (1–6), одной таблицей.
+
+| Что (тип, процедура, файл) | Ступень | Файл модуля | Оригинал ТГ | Поведение | При мерже проверить |
+|---|---|---|---|---|---|
+
+## Этап 10 — отделка одежды и обзора (`clothing/`)
+
+Всё, чем этап меняет ТГ, в любой ступени (1–6), одной таблицей.
+
+| Что (тип, процедура, файл) | Ступень | Файл модуля | Оригинал ТГ | Поведение | При мерже проверить |
+|---|---|---|---|---|---|
+
+## Меню создания персонажа (`charsetup/`)
+
+Всё, чем меню меняет ТГ, в любой ступени (1–6), одной таблицей.
+
+| Что (тип, процедура, файл) | Ступень | Файл модуля | Оригинал ТГ | Поведение | При мерже проверить |
+|---|---|---|---|---|---|
 
 ## Тесты
 
