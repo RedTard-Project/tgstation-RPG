@@ -44,16 +44,16 @@
 		children += secondaries
 	var/list/watch = list(
 		BT_DESC_TYPE = watcher,
-		"target_key" = BB_BASIC_MOB_CURRENT_TARGET,
+		"target_key" = BB_CURRENT_TARGET,
 		"targeting_strategy" = BB_TARGETING_STRATEGY,
-		"hiding_location_key" = BB_BASIC_MOB_CURRENT_TARGET_HIDING_LOCATION,
+		"hiding_location_key" = BB_CURRENT_TARGET_HIDING_LOCATION,
 	)
 	if(vision_range)
 		watch["vision_range"] = vision_range
 	children += list(watch)
 	return list(
 		BT_DESC_TYPE = /datum/bt_node/decorator/bb_key_set,
-		"key" = BB_BASIC_MOB_CURRENT_TARGET,
+		"key" = BB_CURRENT_TARGET,
 		"invert" = TRUE,
 		"observer_abort" = BT_ABORT_BOTH,
 		BT_DESC_CHILDREN = list(list(
@@ -155,7 +155,7 @@
 	return isliving(corpse) && !QDELETED(corpse) && corpse.stat == DEAD
 
 /datum/bt_node/ai_behavior/rogue_eat_corpse/perform(seconds_per_tick, datum/ai_controller/controller)
-	var/mob/living/beast = controller.pawn
+	var/mob/living/basic/beast = controller.pawn
 	var/mob/living/corpse = controller.blackboard[target_key]
 	if(QDELETED(corpse))
 		return AI_BEHAVIOR_SUCCEEDED
