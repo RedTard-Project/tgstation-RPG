@@ -1,0 +1,22 @@
+#ifdef REDTARD_TEST_FOCUS
+TEST_FOCUS(/datum/unit_test/rogue_hud/basics)
+TEST_FOCUS(/datum/unit_test/rogue_hud/replaces_human_hud)
+TEST_FOCUS(/datum/unit_test/rogue_hud/layout)
+TEST_FOCUS(/datum/unit_test/rogue_hud/tg_keys)
+TEST_FOCUS(/datum/unit_test/rogue_hud/stub_clicks)
+TEST_FOCUS(/datum/unit_test/rogue_hud/all_clicks)
+TEST_FOCUS(/datum/unit_test/rogue_hud/intents)
+TEST_FOCUS(/datum/unit_test/rogue_hud/state_mapping)
+TEST_FOCUS(/datum/unit_test/rogue_hud/screen_object_count)
+
+TEST_FOCUS(/datum/unit_test/huds)
+TEST_FOCUS(/datum/unit_test/verify_basic_huds)
+TEST_FOCUS(/datum/unit_test/unequip_defib)
+TEST_FOCUS(/datum/unit_test/style_hotswapping)
+TEST_FOCUS(/datum/unit_test/alerts)
+TEST_FOCUS(/datum/unit_test/spawn_humans)
+TEST_FOCUS(/datum/unit_test/strip_menu_ui_status)
+TEST_FOCUS(/datum/unit_test/many_armed_humans)
+TEST_FOCUS(/datum/unit_test/rogue_hud/many_hands)
+TEST_FOCUS(/datum/unit_test/rogue_hud/inventory_toggle)
+#endif

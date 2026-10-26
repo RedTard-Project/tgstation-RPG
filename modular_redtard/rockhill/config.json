@@ -1,0 +1,1778 @@
+{
+	"source": {
+		"name": "Rockhill",
+		"project": "Ratwood-2.0",
+		"repository": "https://github.com/Rotwood-Vale/Ratwood-2.0.git",
+		"branch": "main",
+		"map": "_maps/map_files/rockhill/rockhill.dmm",
+		"map_json": "_maps/rockhill.json",
+		"map_adjustment": "_maps/map_files/rockhill/map_adjustment_rockhill.dm",
+		"pack": [
+			"/_maps/*.json",
+			"/_maps/map_files/rockhill/*.dmm",
+			"/_maps/map_files/otherz/",
+			"/_maps/dungeon_generator/"
+		],
+		"sparse": [
+			"/code/",
+			"/icons/",
+			"/interface/",
+			"/modular*/",
+			"/roguetown.dme",
+			"/_maps/*.dm",
+			"/_maps/map_files/rockhill/",
+			"/sound/misc/",
+			"/sound/foley/",
+			"/sound/items/",
+			"/_maps/rockhill.json",
+			"/_maps/map_files/otherz/",
+			"/sound/weather/rain/",
+			"/sound/weather/snow/",
+			"/sound/weather/sand/",
+			"/_maps/dungeon_generator/",
+			"/sound/combat/"
+		],
+		"always_other_z": [
+			"_maps/map_files/otherz/dungeon.json"
+		],
+		"templates": "modular_redtard/rockhill/ported/dungeon_templates.json"
+	},
+	"replacements": [
+		{
+			"prefix": "/turf/open/transparent/openspace",
+			"to": "/turf/open/openspace/rockhill"
+		},
+		{
+			"prefix": "/obj/effect/landmark",
+			"drop": true
+		},
+		{
+			"prefix": "/obj/effect/landmark/mapGenerator",
+			"rebase": "/obj/effect/landmark/mapGenerator"
+		},
+		{
+			"prefix": "/obj/structure/stairs",
+			"rebase": "/obj/structure/rockhill/stairs",
+			"port": {
+				"file": "stairs.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state"
+				]
+			}
+		},
+		{
+			"prefix": "/obj/structure/mineral_door",
+			"rebase": "/obj/structure/mineral_door/rockhill",
+			"port": {
+				"file": "doors.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"base_state",
+					"over_state",
+					"opacity",
+					"density",
+					"windowed",
+					"keylock",
+					"locked",
+					"lockid",
+					"lockdifficulty",
+					"lock_strength",
+					"masterkey",
+					"swing_closed",
+					"grant_resident_key",
+					"resident_key_amount",
+					"resident_key_type",
+					"resident_role",
+					"max_integrity",
+					"kickthresh",
+					"repairable",
+					"repair_cost_first",
+					"repair_cost_second",
+					"resident_advclass"
+				],
+				"paths": [
+					"resident_key_type",
+					"resident_role",
+					"repair_cost_first",
+					"repair_cost_second"
+				],
+				"path_strings": [
+					"resident_advclass"
+				]
+			}
+		},
+		{
+			"prefix": "/obj/structure/table",
+			"rebase": "/obj/structure/table/wood/rockhill",
+			"port": {
+				"file": "furniture.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"density",
+					"pixel_x",
+					"pixel_y",
+					"layer",
+					"dir",
+					"alpha",
+					"color"
+				],
+				"runtime_look": true,
+				"placement": true
+			}
+		},
+		{
+			"prefix": "/obj/structure/chair",
+			"rebase": "/obj/structure/chair/wood/rockhill",
+			"port": {
+				"file": "furniture.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"density",
+					"pixel_x",
+					"pixel_y",
+					"layer",
+					"dir",
+					"alpha",
+					"color",
+					"item_chair",
+					"sleepy"
+				],
+				"runtime_look": true,
+				"ported_paths": [
+					"item_chair"
+				],
+				"placement": true
+			}
+		},
+		{
+			"prefix": "/obj/structure/bed",
+			"rebase": "/obj/structure/bed/rockhill",
+			"port": {
+				"file": "furniture.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"density",
+					"pixel_x",
+					"pixel_y",
+					"layer",
+					"dir",
+					"alpha",
+					"color",
+					"sleepy"
+				],
+				"runtime_look": true,
+				"placement": true
+			}
+		},
+		{
+			"prefix": "/obj/structure/rack",
+			"rebase": "/obj/structure/rack/rockhill",
+			"port": {
+				"file": "furniture.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"density",
+					"pixel_x",
+					"pixel_y",
+					"layer",
+					"dir",
+					"alpha",
+					"color"
+				],
+				"runtime_look": true,
+				"placement": true
+			}
+		},
+		{
+			"prefix": "/obj/structure/glowshroom",
+			"rebase": "/obj/structure/rockhill/kneestinger"
+		},
+		{
+			"prefix": "/obj/structure/closet",
+			"rebase": "/obj/structure/closet/crate/wooden/rockhill",
+			"port": {
+				"file": "furniture.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"density",
+					"pixel_x",
+					"pixel_y",
+					"layer",
+					"dir",
+					"alpha",
+					"color",
+					"base_icon_state",
+					"keylock",
+					"locked",
+					"lockid",
+					"lockdifficulty",
+					"lock_strength",
+					"open_sound",
+					"close_sound"
+				],
+				"runtime_look": true,
+				"sounds": [
+					"open_sound",
+					"close_sound"
+				],
+				"fill": true,
+				"placement": true
+			}
+		},
+		{
+			"prefix": "/obj/effect/landmark/latejoin",
+			"to": "/obj/effect/landmark/latejoin"
+		},
+		{
+			"prefix": "/obj/effect/landmark/observer_start",
+			"to": "/obj/effect/landmark/observer_start"
+		},
+		{
+			"prefix": "/obj/effect/landmark/start/baronlate",
+			"to": "/obj/effect/landmark/latejoin"
+		},
+		{
+			"prefix": "/obj/effect/landmark/start/retainerlate",
+			"to": "/obj/effect/landmark/latejoin"
+		},
+		{
+			"prefix": "/obj/effect/landmark/start/rockhillslavelate",
+			"to": "/obj/effect/landmark/latejoin"
+		},
+		{
+			"prefix": "/obj/effect/landmark/start",
+			"rebase": "/obj/effect/landmark/start/rockhill"
+		},
+		{
+			"prefix": "/turf/open/floor/carpet",
+			"rebase": "/turf/open/floor/carpet/rockhill",
+			"reskin": true
+		},
+		{
+			"prefix": "/turf/open/lava",
+			"rebase": "/turf/open/lava/rockhill",
+			"reskin": true
+		},
+		{
+			"prefix": "/turf/closed",
+			"to": "/turf/closed/rockhill",
+			"exact": true
+		},
+		{
+			"prefix": "/turf/open/water",
+			"to": "/turf/open/water/rockhill",
+			"exact": true
+		},
+		{
+			"prefix": "/obj/effect",
+			"exact": true,
+			"drop": true
+		},
+		{
+			"prefix": "/obj/structure/plasticflaps",
+			"rebase": "/obj/structure/rockhill/flaps",
+			"port": {
+				"file": "flaps.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"density",
+					"opacity",
+					"dir",
+					"pixel_x",
+					"pixel_y"
+				]
+			}
+		},
+		{
+			"prefix": "/obj/structure/gate",
+			"rebase": "/obj/structure/rockhill/gate",
+			"port": {
+				"file": "gates.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"base_state",
+					"density",
+					"opacity",
+					"max_integrity"
+				]
+			}
+		},
+		{
+			"prefix": "/obj/structure/winch",
+			"rebase": "/obj/structure/rockhill/winch",
+			"port": {
+				"file": "gates.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"density"
+				]
+			}
+		},
+		{
+			"prefix": "/obj/structure/ladder",
+			"rebase": "/obj/structure/ladder/rockhill",
+			"port": {
+				"file": "ladders.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state"
+				]
+			}
+		},
+		{
+			"prefix": "/obj/structure/fluff/traveltile",
+			"rebase": "/obj/structure/rockhill/traveltile",
+			"port": {
+				"file": "traveltiles.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"color",
+					"layer",
+					"aportalid",
+					"aportalgoesto",
+					"required_trait",
+					"required_jobs",
+					"travel_time",
+					"travel_message",
+					"travel_deny_message",
+					"travel_access_hint",
+					"watchable"
+				],
+				"define_strings": [
+					"required_trait"
+				],
+				"string_lists": [
+					"required_jobs"
+				],
+				"placement": true
+			}
+		},
+		{
+			"prefix": "/obj/effect/spawner/trap",
+			"to": "/obj/effect/spawner/random/rockhill/trap",
+			"exact": true
+		},
+		{
+			"prefix": "/obj/random/spider",
+			"to": "/obj/effect/spawner/random/rockhill/mirespider",
+			"exact": true
+		},
+		{
+			"prefix": "/obj/vehicle/ridden/dinghy",
+			"rebase": "/obj/vehicle/ridden/rockhill/dinghy",
+			"port": {
+				"file": "vehicles.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state"
+				]
+			}
+		},
+		{
+			"prefix": "/obj/structure/dungeon_entry",
+			"rebase": "/obj/structure/rockhill/dungeon_entry",
+			"port": {
+				"file": "dungeon_links.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"pixel_x",
+					"dungeon_id",
+					"target_exit_id",
+					"claim_free_exit"
+				]
+			}
+		},
+		{
+			"prefix": "/obj/structure/dungeon_exit",
+			"rebase": "/obj/structure/rockhill/dungeon_exit",
+			"port": {
+				"file": "dungeon_links.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"dungeon_id",
+					"target_exit_id"
+				]
+			}
+		},
+		{
+			"prefix": "/obj/effect/dungeon_directional_helper",
+			"rebase": "/obj/effect/rockhill/dungeon_helper",
+			"port": {
+				"file": "dungeon_links.dm",
+				"vars": [
+					"dir",
+					"top"
+				]
+			}
+		}
+	],
+	"port": {
+		"categories": [
+			{
+				"file": "areas.dm",
+				"prefixes": [
+					"/area"
+				],
+				"vars": [
+					"name",
+					"outdoors",
+					"sound_environment",
+					"min_ambience_cooldown",
+					"max_ambience_cooldown",
+					"rockhill_area_text",
+					"rockhill_music_enabled",
+					"rockhill_loops_enabled"
+				],
+				"true_only": [
+					"outdoors"
+				],
+				"sunlit": true,
+				"rename": {
+					"sound_environment": "soundenv",
+					"rockhill_area_text": "first_time_text",
+					"rockhill_music_enabled": "we_droning_here",
+					"rockhill_loops_enabled": "we_looping_here"
+				},
+				"sound_vars": {
+					"rockhill_music": "droning_sound",
+					"rockhill_music_dawn": "droning_sound_dawn",
+					"rockhill_music_dusk": "droning_sound_dusk",
+					"rockhill_music_night": "droning_sound_night",
+					"rockhill_loop_day": "ambientsounds",
+					"rockhill_loop_night": "ambientnight",
+					"rockhill_oneshot_day": "spookysounds",
+					"rockhill_oneshot_night": "spookynight"
+				},
+				"runtime_sounds": "modular_redtard/rockhill/sound/area"
+			},
+			{
+				"file": "turfs_open.dm",
+				"prefixes": [
+					"/turf/open"
+				],
+				"graft": "/turf/open/floor/rockhill",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"dir"
+				],
+				"smoothing": true,
+				"runtime_look": true,
+				"init_overlays": true
+			},
+			{
+				"file": "turfs_water.dm",
+				"prefixes": [
+					"/turf/open/water"
+				],
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"rockhill_water_level",
+					"rockhill_water_color",
+					"dir",
+					"rockhill_flow"
+				],
+				"graft": "/turf/open/water/rockhill",
+				"rename": {
+					"rockhill_water_level": "water_level",
+					"rockhill_water_color": "water_color",
+					"rockhill_flow": "swimdir"
+				},
+				"smoothing": true,
+				"runtime_look": true,
+				"true_only": [
+					"rockhill_flow"
+				]
+			},
+			{
+				"file": "turfs_closed.dm",
+				"prefixes": [
+					"/turf/closed"
+				],
+				"graft": "/turf/closed/rockhill",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"opacity",
+					"dir"
+				],
+				"smoothing": true,
+				"runtime_look": true,
+				"init_overlays": true
+			},
+			{
+				"file": "structures.dm",
+				"prefixes": [
+					"/obj/structure",
+					"/obj/machinery"
+				],
+				"graft": "/obj/structure/rockhill",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"density",
+					"opacity",
+					"pixel_x",
+					"pixel_y",
+					"layer",
+					"dir",
+					"alpha",
+					"color",
+					"obj_flags",
+					"time_between_triggers"
+				],
+				"runtime_look": true,
+				"flag_vars": [
+					"obj_flags"
+				],
+				"random_pick": true,
+				"placement": true,
+				"natural": [
+					"/obj/structure/trap"
+				],
+				"type_vars": {
+					"/obj/structure/lever": [
+						"redstone_id",
+						"toggled"
+					],
+					"/obj/structure/bars": [
+						"redstone_id"
+					],
+					"/obj/structure/floordoor": [
+						"redstone_id",
+						"togg",
+						"base_state",
+						"delay2open",
+						"delay2close"
+					],
+					"/obj/structure/kybraxor": [
+						"redstone_id"
+					]
+				}
+			},
+			{
+				"file": "windows.dm",
+				"prefixes": [
+					"/obj/structure/roguewindow"
+				],
+				"graft": "/obj/structure/rockhill/window",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"density",
+					"opacity",
+					"pixel_x",
+					"pixel_y",
+					"layer",
+					"dir",
+					"alpha",
+					"color"
+				],
+				"runtime_look": true,
+				"placement": true,
+				"type_vars": {
+					"/obj/structure/roguewindow": [
+						"base_state"
+					]
+				}
+			},
+			{
+				"file": "lights.dm",
+				"prefixes": [
+					"/obj/machinery/light/rogue",
+					"/obj/machinery/light/roguestreet"
+				],
+				"graft": "/obj/structure/rockhill/light",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"density",
+					"opacity",
+					"pixel_x",
+					"pixel_y",
+					"layer",
+					"light_range",
+					"light_power",
+					"light_color",
+					"dir",
+					"alpha",
+					"color"
+				],
+				"rename": {
+					"light_range": "brightness",
+					"light_power": "bulb_power",
+					"light_color": "bulb_colour"
+				},
+				"type_vars": {
+					"/obj/machinery/light/rogue": [
+						"base_state",
+						"fueluse",
+						"no_refuel",
+						"crossfire",
+						"status"
+					]
+				},
+				"runtime_look": true,
+				"placement": true,
+				"sprite_checks": true
+			},
+			{
+				"file": "decals.dm",
+				"prefixes": [
+					"/obj/effect/decal",
+					"/obj/effect/turf_decal"
+				],
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"pixel_x",
+					"pixel_y",
+					"layer",
+					"dir",
+					"alpha",
+					"color"
+				],
+				"placement": true
+			},
+			{
+				"file": "effects.dm",
+				"prefixes": [
+					"/obj/effect/wisp",
+					"/obj/effect/lily_petal",
+					"/obj/effect/particle_effect/smoke",
+					"/obj/effect/falling_sakura",
+					"/obj/effect/falling_maple",
+					"/obj/effect/oneway"
+				],
+				"graft": "/obj/effect/rockhill",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"color",
+					"alpha",
+					"pixel_x",
+					"pixel_y",
+					"opacity",
+					"invisibility",
+					"light_range",
+					"light_power",
+					"light_color",
+					"dir",
+					"layer"
+				],
+				"rename": {
+					"light_range": "light_outer_range"
+				},
+				"placement": true
+			},
+			{
+				"file": "items.dm",
+				"prefixes": [
+					"/obj/item"
+				],
+				"graft": "/obj/item/rockhill",
+				"natural": [
+					"/obj/item/clothing",
+					"/obj/item/reagent_containers",
+					"/obj/item/storage",
+					"/obj/item/chair",
+					"/obj/item/restraints/legcuffs/beartrap"
+				],
+				"type_vars": {
+					"/obj/item/restraints/legcuffs/beartrap": [
+						"armed",
+						"trap_damage",
+						"anchored",
+						"alpha"
+					]
+				},
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"w_class",
+					"force",
+					"throwforce",
+					"lefthand_file",
+					"righthand_file",
+					"inhand_icon_state",
+					"worn_icon",
+					"worn_icon_state",
+					"pixel_x",
+					"pixel_y",
+					"slot_flags",
+					"armor_type",
+					"body_parts_covered",
+					"rogue_onhip",
+					"rogue_onback",
+					"rogue_inhand",
+					"lockid",
+					"picklvl",
+					"rockhill_keys",
+					"origin_type",
+					"alternate_worn_layer",
+					"rogue_sleeved",
+					"valid_blade",
+					"valid_blades",
+					"invalid_blades",
+					"sheathe_icon",
+					"worn_x_dimension",
+					"worn_y_dimension",
+					"inhand_x_dimension",
+					"inhand_y_dimension",
+					"rogue_grid_width",
+					"rogue_grid_height",
+					"rogue_force_wielded",
+					"wdefense",
+					"wdefense_wbonus",
+					"wlength",
+					"wbalance",
+					"minstr",
+					"can_parry",
+					"armour_penetration",
+					"associated_skill",
+					"possible_item_intents",
+					"gripped_intents",
+					"parrysound",
+					"rogue_armor",
+					"armor_class",
+					"rogue_prevent_crits",
+					"rogue_blocksound",
+					"firefuel",
+					"max_blade_int",
+					"sharpening_factor",
+					"spark_chance",
+					"special",
+					"coverage"
+				],
+				"rename": {
+					"inhand_icon_state": "item_state",
+					"worn_icon": "mob_overlay_icon",
+					"worn_icon_state": "item_state",
+					"rogue_onhip": "experimental_onhip",
+					"rogue_onback": "experimental_onback",
+					"rogue_inhand": "experimental_inhand",
+					"rockhill_keys": "keys",
+					"rogue_sleeved": "sleeved",
+					"rogue_grid_width": "grid_width",
+					"rogue_grid_height": "grid_height",
+					"armour_penetration": "armor_penetration",
+					"rogue_prevent_crits": "prevent_crits",
+					"rogue_blocksound": "blocksound",
+					"rogue_force_wielded": "force_wielded"
+				},
+				"true_only": [
+					"rogue_onhip",
+					"rogue_onback"
+				],
+				"slot_worn_icons": {
+					"worn_icon": {
+						"ITEM_SLOT_MOUTH": "icons/roguetown/clothing/onmob/mouth_items.dmi",
+						"ITEM_SLOT_BACK_L": "icons/roguetown/clothing/onmob/back_l.dmi",
+						"ITEM_SLOT_BACK": "icons/roguetown/clothing/onmob/back_l.dmi",
+						"ITEM_SLOT_BACK_R": "icons/roguetown/clothing/onmob/back_r.dmi"
+					},
+					"worn_icon_backr": {
+						"ITEM_SLOT_BACK_R": "icons/roguetown/clothing/onmob/back_r.dmi",
+						"ITEM_SLOT_BACK": "icons/roguetown/clothing/onmob/back_r.dmi"
+					},
+					"worn_icon_hipl": {
+						"ITEM_SLOT_HIP": "icons/roguetown/clothing/onmob/belt_l.dmi"
+					},
+					"worn_icon_hipr": {
+						"ITEM_SLOT_HIP": "icons/roguetown/clothing/onmob/belt_r.dmi"
+					}
+				},
+				"skip_default": [
+					"armor_class",
+					"firefuel",
+					"armour_penetration",
+					"can_parry",
+					"lockid",
+					"minstr",
+					"picklvl",
+					"rogue_force_wielded",
+					"wbalance",
+					"wdefense",
+					"wdefense_wbonus",
+					"max_blade_int",
+					"sharpening_factor",
+					"spark_chance",
+					"coverage"
+				],
+				"path_lists": [
+					"rockhill_keys",
+					"valid_blades",
+					"invalid_blades"
+				],
+				"paths": [
+					"origin_type",
+					"valid_blade",
+					"special"
+				],
+				"sprite_checks": true,
+				"mapped_vars": {
+					"alternate_worn_layer": {
+						"CLOAK_BEHIND_LAYER": "BODY_BEHIND_LAYER",
+						"TABARD_LAYER": "ROGUE_TABARD_LAYER",
+						"UNDER_CLOAK_LAYER": "ROGUE_UNDER_CLOAK_LAYER",
+						"NECK_LAYER": "NECK_LAYER",
+						"SHIRT_LAYER": "ROGUE_SHIRT_LAYER",
+						"WRISTS_LAYER": "ROGUE_WRISTS_LAYER",
+						"8.9": "(HANDS_LAYER - 0.1)"
+					}
+				},
+				"grid_storage": true,
+				"numeric_vars": [
+					"rogue_force_wielded",
+					"wdefense",
+					"wdefense_wbonus",
+					"wlength",
+					"wbalance",
+					"minstr",
+					"armor_class",
+					"armour_penetration",
+					"max_blade_int",
+					"sharpening_factor",
+					"spark_chance",
+					"coverage"
+				],
+				"intent_lists": [
+					"possible_item_intents",
+					"gripped_intents"
+				],
+				"numeric_defaults": {
+					"wlength": 2
+				},
+				"skill_vars": [
+					"associated_skill"
+				],
+				"string_lists": [
+					"rogue_prevent_crits"
+				],
+				"string_define_vars": [
+					"rogue_blocksound"
+				],
+				"sound_lists": [
+					"parrysound"
+				],
+				"clothing_only": [
+					"rogue_armor",
+					"armor_class",
+					"rogue_prevent_crits",
+					"rogue_blocksound"
+				]
+			},
+			{
+				"file": "humans.dm",
+				"prefixes": [
+					"/mob/living/carbon/human"
+				],
+				"natural": [
+					"/mob/living/carbon/human"
+				],
+				"vars": [
+					"name",
+					"desc"
+				]
+			},
+			{
+				"file": "mobs.dm",
+				"prefixes": [
+					"/mob/living"
+				],
+				"graft": "/mob/living/basic/rockhill",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"icon_living",
+					"icon_dead",
+					"health",
+					"maxHealth",
+					"pixel_x",
+					"pixel_y",
+					"melee_damage_lower",
+					"melee_damage_upper",
+					"rogue_defprob",
+					"rogue_can_dodge",
+					"rogue_mob_stats"
+				],
+				"rename": {
+					"rogue_defprob": "defprob",
+					"rogue_can_dodge": "mob_can_dodge"
+				},
+				"numeric_vars": [
+					"melee_damage_lower",
+					"melee_damage_upper",
+					"rogue_defprob"
+				],
+				"skip_default": [
+					"melee_damage_lower",
+					"melee_damage_upper"
+				],
+				"numeric_defaults": {
+					"rogue_defprob": 50
+				},
+				"true_only": [
+					"rogue_can_dodge"
+				],
+				"stat_lists": {
+					"rogue_mob_stats": {
+						"default": 10,
+						"stats": {
+							"STASTR": "ROGUE_STAT_STRENGTH",
+							"STAPER": "ROGUE_STAT_PERCEPTION",
+							"STAINT": "ROGUE_STAT_INTELLIGENCE",
+							"STACON": "ROGUE_STAT_CONSTITUTION",
+							"STAEND": "ROGUE_STAT_WILLPOWER",
+							"STASPD": "ROGUE_STAT_SPEED",
+							"STALUC": "ROGUE_STAT_FORTUNE"
+						}
+					}
+				}
+			},
+			{
+				"file": "spawners.dm",
+				"prefixes": [
+					"/obj/effect/spawner/lootdrop"
+				],
+				"graft": "/obj/effect/spawner/random/rockhill",
+				"vars": [
+					"name",
+					"loot",
+					"spawn_loot_count"
+				],
+				"rename": {
+					"spawn_loot_count": "lootcount"
+				}
+			},
+			{
+				"file": "map_spawners.dm",
+				"prefixes": [
+					"/obj/effect/spawner/roguemap"
+				],
+				"graft": "/obj/effect/spawner/random/rockhill",
+				"vars": [
+					"name",
+					"loot",
+					"spawn_loot_chance"
+				],
+				"rename": {
+					"loot": "spawned",
+					"spawn_loot_chance": "probby"
+				},
+				"path_lists": [
+					"loot"
+				]
+			}
+		],
+		"extra_icons": [
+			"icons/turf/newwater.dmi",
+			"icons/effects/particles/particle.dmi",
+			"icons/effects/96x96.dmi",
+			"icons/effects/effects.dmi",
+			"icons/effects/32x200.dmi",
+			"icons/time.dmi",
+			"icons/effects/waterfall.dmi",
+			"icons/effects/particles/smoke.dmi"
+		],
+		"extra_sounds": [
+			"sound/items/firelight.ogg",
+			"sound/items/firesnuff.ogg",
+			"sound/foley/torchfixturetake.ogg",
+			"sound/foley/torchfixtureput.ogg",
+			"sound/misc/newday.ogg",
+			"sound/misc/midday.ogg",
+			"sound/misc/nightfall.ogg",
+			"sound/misc/area.ogg",
+			"sound/weather/rain/weather_rain.ogg",
+			"sound/weather/rain/weather_rain_indoors.ogg",
+			"sound/weather/rain/weather_storm.ogg",
+			"sound/weather/snow/weather_snow.ogg",
+			"sound/weather/sand/weather_sandstorm.ogg",
+			"sound/weather/rain/wind_1.ogg",
+			"sound/weather/rain/wind_2.ogg",
+			"sound/weather/rain/wind_3.ogg",
+			"sound/weather/rain/wind_4.ogg",
+			"sound/weather/rain/wind_5.ogg",
+			"sound/weather/rain/wind_6.ogg",
+			"sound/weather/rain/thunder_1.ogg",
+			"sound/weather/rain/thunder_2.ogg",
+			"sound/weather/rain/thunder_3.ogg",
+			"sound/weather/rain/thunder_4.ogg",
+			"sound/weather/rain/thunder_5.ogg",
+			"sound/weather/rain/thunder_6.ogg",
+			"sound/foley/ladder.ogg",
+			"sound/combat/feint.ogg",
+			"sound/combat/riposte.ogg",
+			"sound/combat/parry/parrygen.ogg",
+			"sound/combat/dodge.ogg",
+			"sound/combat/hits/armor/plate_slashed (1).ogg",
+			"sound/combat/hits/armor/plate_slashed (2).ogg",
+			"sound/combat/hits/armor/plate_slashed (3).ogg",
+			"sound/combat/hits/armor/plate_slashed (4).ogg",
+			"sound/combat/hits/armor/plate_stabbed (1).ogg",
+			"sound/combat/hits/armor/plate_stabbed (2).ogg",
+			"sound/combat/hits/armor/plate_stabbed (3).ogg",
+			"sound/combat/hits/armor/plate_blunt (1).ogg",
+			"sound/combat/hits/armor/plate_blunt (2).ogg",
+			"sound/combat/hits/armor/plate_blunt (3).ogg",
+			"sound/combat/hits/armor/chain_slashed (1).ogg",
+			"sound/combat/hits/armor/chain_slashed (2).ogg",
+			"sound/combat/hits/armor/chain_slashed (3).ogg",
+			"sound/combat/hits/armor/chain_slashed (4).ogg",
+			"sound/combat/hits/armor/chain_blunt (1).ogg",
+			"sound/combat/hits/armor/chain_blunt (2).ogg",
+			"sound/combat/hits/armor/chain_blunt (3).ogg",
+			"sound/combat/hits/armor/light_stabbed (1).ogg",
+			"sound/combat/hits/armor/light_stabbed (2).ogg",
+			"sound/combat/hits/armor/light_stabbed (3).ogg",
+			"sound/combat/hits/armor/light_blunt (1).ogg",
+			"sound/combat/hits/armor/light_blunt (2).ogg",
+			"sound/combat/hits/armor/light_blunt (3).ogg"
+		],
+		"extra_files": {
+			"strings/calendar_events.json": "modular_redtard/rockhill/strings/calendar_events.json",
+			"strings/rt/timechangetips.txt": "modular_redtard/rockhill/strings/timechangetips.txt",
+			"tgui/packages/tgui/interfaces/Calendar.tsx": "tgui/packages/tgui/interfaces/Calendar.tsx",
+			"tgui/packages/tgui/interfaces/common/parchment.tsx": "tgui/packages/tgui/interfaces/common/parchment.tsx",
+			"tgui/packages/tgui/interfaces/Calendar/DayCell.tsx": "tgui/packages/tgui/interfaces/Calendar/DayCell.tsx",
+			"tgui/packages/tgui/interfaces/Calendar/DayDetail.tsx": "tgui/packages/tgui/interfaces/Calendar/DayDetail.tsx",
+			"tgui/packages/tgui/interfaces/Calendar/EventBar.tsx": "tgui/packages/tgui/interfaces/Calendar/EventBar.tsx",
+			"tgui/packages/tgui/interfaces/Calendar/MonthGrid.tsx": "tgui/packages/tgui/interfaces/Calendar/MonthGrid.tsx",
+			"tgui/packages/tgui/interfaces/Calendar/Nav.tsx": "tgui/packages/tgui/interfaces/Calendar/Nav.tsx",
+			"tgui/packages/tgui/interfaces/Calendar/WeekdayHeader.tsx": "tgui/packages/tgui/interfaces/Calendar/WeekdayHeader.tsx",
+			"tgui/packages/tgui/interfaces/Calendar/parchment_calendar.ts": "tgui/packages/tgui/interfaces/Calendar/parchment_calendar.ts",
+			"tgui/packages/tgui/interfaces/Calendar/shared.ts": "tgui/packages/tgui/interfaces/Calendar/shared.ts"
+		},
+		"female_worn_slots": [
+			"ITEM_SLOT_PANTS",
+			"ITEM_SLOT_SHIRT",
+			"ITEM_SLOT_ARMOR",
+			"ITEM_SLOT_SHOES",
+			"ITEM_SLOT_GLOVES",
+			"ITEM_SLOT_RING",
+			"ITEM_SLOT_CLOAK",
+			"ITEM_SLOT_BELT",
+			"ITEM_SLOT_WRISTS"
+		],
+		"grid_storage": {
+			"from": "/datum/component/storage/concrete",
+			"to": "/datum/storage/rogue_grid",
+			"file": "storage.dm",
+			"vars": {
+				"screen_max_columns": "screen_max_columns",
+				"screen_max_rows": "screen_max_rows",
+				"max_specific_storage": "max_w_class",
+				"max_slots": "max_items",
+				"allow_quick_gather": "allow_quick_gather",
+				"allow_quick_empty": "allow_quick_empty",
+				"insert_preposition": "insert_preposition",
+				"attack_hand_interact": "attack_hand_interact",
+				"rogue_not_while_equipped": "not_while_equipped"
+			}
+		},
+		"dungeon_templates": {
+			"prefix": "/datum/map_template/dungeon",
+			"output_dir": "_maps/map_files/rockhill/dungeon_generator",
+			"file": "dungeon_templates.dm",
+			"manifest": "modular_redtard/rockhill/ported/dungeon_templates.json",
+			"vars": [
+				"name",
+				"width",
+				"height",
+				"rarity",
+				"type_weight",
+				"north_offset",
+				"south_offset",
+				"east_offset",
+				"west_offset"
+			]
+		},
+		"reskin_vars": {
+			"initial_gas_mix": "OPENTURF_DEFAULT_ATMOS",
+			"init_air": "FALSE"
+		},
+		"armor": {
+			"scale": 0.7,
+			"cap": 70
+		},
+		"linked_types": [
+			"keys",
+			"resident_key_type",
+			"repair_cost_first",
+			"repair_cost_second",
+			"item_chair",
+			"spawned"
+		],
+		"assets": {
+			"restricted_licenses": [
+				"icons/roguetown/clothing/licensed-infraredbaron/LICENSE.md",
+				"modular_deserttown/icons/clothing/LICENSE.md"
+			],
+			"reviewed_licenses": []
+		},
+		"extra_types": [
+			"/obj/structure/trap/curse",
+			"/obj/structure/trap/curse/hidden",
+			"/obj/structure/trap/flame",
+			"/obj/structure/trap/shock",
+			"/obj/structure/trap/bomb",
+			"/obj/structure/trap/rock_fall",
+			"/obj/structure/trap/saw_blades",
+			"/obj/structure/trap/wall_projectile",
+			"/obj/structure/trap/wall_projectile/acidsplash",
+			"/obj/structure/trap/wall_projectile/frostbolt",
+			"/obj/structure/trap/water",
+			"/obj/structure/sawblade_trap",
+			"/mob/living/simple_animal/hostile/rogue/mirespider_paralytic",
+			"/mob/living/simple_animal/hostile/retaliate/rogue/mirespider",
+			"/obj/item/rogueweapon/mace/oar"
+		],
+		"intents": {
+			"file": "intents.dm",
+			"rename": {
+				"canparry": "parriable_intent",
+				"candodge": "dodgeable_intent"
+			},
+			"strings": [
+				"name",
+				"desc",
+				"icon_state",
+				"blade_class",
+				"item_d_type"
+			],
+			"numeric": [
+				"damfactor",
+				"penfactor",
+				"clickcd",
+				"releasedrain",
+				"misscost",
+				"reach",
+				"chargetime",
+				"swingdelay"
+			],
+			"flags": [
+				"canparry",
+				"candodge",
+				"no_attack",
+				"unarmed",
+				"tranged",
+				"tshield"
+			],
+			"paths": [
+				"cleave"
+			]
+		}
+	},
+	"jobs": {
+		"departments": {
+			"NOBLEMEN": "/datum/job_department/rockhill_nobles",
+			"COURTIERS": "/datum/job_department/rockhill_courtiers",
+			"GARRISON": "/datum/job_department/rockhill_garrison",
+			"CHURCHMEN": "/datum/job_department/rockhill_church",
+			"INQUISITION": "/datum/job_department/rockhill_inquisition",
+			"YEOMEN": "/datum/job_department/rockhill_yeomen",
+			"PEASANTS": "/datum/job_department/rockhill_peasants",
+			"YOUNGFOLK": "/datum/job_department/rockhill_youngfolk",
+			"WANDERERS": "/datum/job_department/rockhill_wanderers",
+			"NONE": "/datum/job_department/rockhill_wanderers"
+		},
+		"retitle": {
+			"/datum/job/roguetown/cook": "Manor Cook",
+			"/datum/job/roguetown/warden": "Forest Warden"
+		},
+		"landmark_roles": {
+			"/obj/effect/landmark/start/rockhillslaver": "/datum/job/roguetown/slaver",
+			"/obj/effect/landmark/start/hostage": "/datum/job/roguetown/dungeoneer",
+			"/obj/effect/landmark/start/vagrant": "/datum/job/roguetown/lunatic"
+		},
+		"access_traits": {
+			"/obj/structure/fluff/traveltile": "required_trait"
+		}
+	},
+	"title": {
+		"prefix": "Rockhill+redtard-",
+		"sources": [
+			{
+				"file": "redtard_logo.dmi",
+				"name": "logo",
+				"kind": "dmi",
+				"origin": "RedTard logo, Logo_480x480_.gif supplied by the project owner (2026-10-13), converted by modular_redtard/tools/gif_to_dmi.py --every 9"
+			}
+		]
+	},
+	"output": {
+		"map": "_maps/map_files/rockhill/rockhill_new.dmm",
+		"map_json": "_maps/map_jsons/rockhill.json",
+		"title_dir": "config/title_screens/images"
+	},
+	"map_vars": {
+		"/obj/structure/mineral_door": [
+			"lockid",
+			"locked",
+			"name",
+			"keylock",
+			"masterkey",
+			"lockdifficulty",
+			"swing_closed",
+			"icon_state",
+			"door_opened"
+		],
+		"/obj/item/roguekey": [
+			"lockid"
+		],
+		"/obj/structure/closet": [
+			"lockid",
+			"locked",
+			"keylock",
+			"lockdifficulty",
+			"name"
+		],
+		"/obj/effect/landmark/start": [
+			"name",
+			"jobspawn_override"
+		],
+		"/obj/structure/gate": [
+			"gid"
+		],
+		"/obj/structure/winch": [
+			"gid"
+		],
+		"/obj/structure/fluff/traveltile": [
+			"aportalid",
+			"aportalgoesto",
+			"alpha"
+		],
+		"/obj/structure/lever": [
+			"redstone_id"
+		],
+		"/obj/structure/bars": [
+			"redstone_id"
+		],
+		"/obj/structure/floordoor": [
+			"redstone_id"
+		],
+		"/obj/structure/kybraxor": [
+			"redstone_id"
+		],
+		"/obj/effect/mapping_helpers/secret_door_creator": [
+			"redstone_id",
+			"floor_turf",
+			"override_floor"
+		]
+	},
+	"attributes": {
+		"skills_file": "skills.dm",
+		"sheets_file": "attribute_sheets.dm",
+		"skill_root": "/datum/skill",
+		"skill_target": "/datum/attribute/skill",
+		"sheet_root": "/datum/attribute_holder/sheet/job/rockhill",
+		"level_scale": 10,
+		"stats": {
+			"strength": "ROGUE_STAT_STRENGTH",
+			"perception": "ROGUE_STAT_PERCEPTION",
+			"intelligence": "ROGUE_STAT_INTELLIGENCE",
+			"constitution": "ROGUE_STAT_CONSTITUTION",
+			"willpower": "ROGUE_STAT_WILLPOWER",
+			"endurance": "ROGUE_STAT_WILLPOWER",
+			"speed": "ROGUE_STAT_SPEED",
+			"fortune": "ROGUE_STAT_FORTUNE"
+		},
+		"meta": {
+			"/datum/skill/combat/knives": {
+				"category": "ROGUE_SKILL_CATEGORY_MELEE",
+				"defaults": {
+					"ROGUE_STAT_SPEED": -5,
+					"ROGUE_STAT_PERCEPTION": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_SPEED"
+			},
+			"/datum/skill/combat/swords": {
+				"category": "ROGUE_SKILL_CATEGORY_MELEE",
+				"defaults": {
+					"ROGUE_STAT_STRENGTH": -5,
+					"ROGUE_STAT_SPEED": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/combat/polearms": {
+				"category": "ROGUE_SKILL_CATEGORY_MELEE",
+				"defaults": {
+					"ROGUE_STAT_STRENGTH": -5,
+					"ROGUE_STAT_WILLPOWER": -7
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/combat/maces": {
+				"category": "ROGUE_SKILL_CATEGORY_MELEE",
+				"defaults": {
+					"ROGUE_STAT_STRENGTH": -5,
+					"ROGUE_STAT_WILLPOWER": -7
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/combat/axes": {
+				"category": "ROGUE_SKILL_CATEGORY_MELEE",
+				"defaults": {
+					"ROGUE_STAT_STRENGTH": -5,
+					"ROGUE_STAT_WILLPOWER": -7
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/combat/whipsflails": {
+				"category": "ROGUE_SKILL_CATEGORY_MELEE",
+				"defaults": {
+					"ROGUE_STAT_SPEED": -7,
+					"ROGUE_STAT_PERCEPTION": -8
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_HARD",
+				"governing": "ROGUE_STAT_SPEED"
+			},
+			"/datum/skill/combat/bows": {
+				"category": "ROGUE_SKILL_CATEGORY_RANGED",
+				"defaults": {
+					"ROGUE_STAT_PERCEPTION": -5,
+					"ROGUE_STAT_STRENGTH": -7
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_PERCEPTION"
+			},
+			"/datum/skill/combat/crossbows": {
+				"category": "ROGUE_SKILL_CATEGORY_RANGED",
+				"defaults": {
+					"ROGUE_STAT_PERCEPTION": -5,
+					"ROGUE_STAT_INTELLIGENCE": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_PERCEPTION"
+			},
+			"/datum/skill/combat/wrestling": {
+				"category": "ROGUE_SKILL_CATEGORY_MELEE",
+				"defaults": {
+					"ROGUE_STAT_STRENGTH": -5,
+					"ROGUE_STAT_WILLPOWER": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/combat/unarmed": {
+				"category": "ROGUE_SKILL_CATEGORY_MELEE",
+				"defaults": {
+					"ROGUE_STAT_STRENGTH": -4,
+					"ROGUE_STAT_WILLPOWER": -5
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/combat/shields": {
+				"category": "ROGUE_SKILL_CATEGORY_BLOCKING",
+				"defaults": {
+					"ROGUE_STAT_WILLPOWER": -4,
+					"ROGUE_STAT_STRENGTH": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_WILLPOWER"
+			},
+			"/datum/skill/combat/slings": {
+				"category": "ROGUE_SKILL_CATEGORY_RANGED",
+				"defaults": {
+					"ROGUE_STAT_PERCEPTION": -5,
+					"ROGUE_STAT_STRENGTH": -7
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_PERCEPTION"
+			},
+			"/datum/skill/combat/firearms": {
+				"category": "ROGUE_SKILL_CATEGORY_RANGED",
+				"defaults": {
+					"ROGUE_STAT_PERCEPTION": -5,
+					"ROGUE_STAT_INTELLIGENCE": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_PERCEPTION"
+			},
+			"/datum/skill/craft/crafting": {
+				"category": "ROGUE_SKILL_CATEGORY_TRADE",
+				"defaults": {
+					"ROGUE_STAT_INTELLIGENCE": -4
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_INTELLIGENCE"
+			},
+			"/datum/skill/craft/weaponsmithing": {
+				"category": "ROGUE_SKILL_CATEGORY_TRADE",
+				"defaults": {
+					"/datum/attribute/skill/craft/blacksmithing": -5
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_HARD",
+				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/craft/armorsmithing": {
+				"category": "ROGUE_SKILL_CATEGORY_TRADE",
+				"defaults": {
+					"/datum/attribute/skill/craft/blacksmithing": -5
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_HARD",
+				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/craft/blacksmithing": {
+				"category": "ROGUE_SKILL_CATEGORY_TRADE",
+				"defaults": {
+					"ROGUE_STAT_STRENGTH": -5,
+					"ROGUE_STAT_INTELLIGENCE": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/craft/smelting": {
+				"category": "ROGUE_SKILL_CATEGORY_TRADE",
+				"defaults": {
+					"/datum/attribute/skill/craft/blacksmithing": -5
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_WILLPOWER"
+			},
+			"/datum/skill/craft/carpentry": {
+				"category": "ROGUE_SKILL_CATEGORY_TRADE",
+				"defaults": {
+					"ROGUE_STAT_STRENGTH": -4,
+					"ROGUE_STAT_INTELLIGENCE": -5
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/craft/masonry": {
+				"category": "ROGUE_SKILL_CATEGORY_TRADE",
+				"defaults": {
+					"ROGUE_STAT_STRENGTH": -4,
+					"ROGUE_STAT_WILLPOWER": -5
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/craft/engineering": {
+				"category": "ROGUE_SKILL_CATEGORY_TRADE",
+				"defaults": {
+					"ROGUE_STAT_INTELLIGENCE": -7
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_VERY_HARD",
+				"governing": "ROGUE_STAT_INTELLIGENCE"
+			},
+			"/datum/skill/craft/cooking": {
+				"category": "ROGUE_SKILL_CATEGORY_DOMESTIC",
+				"defaults": {
+					"ROGUE_STAT_INTELLIGENCE": -4
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_INTELLIGENCE"
+			},
+			"/datum/skill/craft/sewing": {
+				"category": "ROGUE_SKILL_CATEGORY_DOMESTIC",
+				"defaults": {
+					"ROGUE_STAT_PERCEPTION": -5,
+					"ROGUE_STAT_INTELLIGENCE": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_PERCEPTION"
+			},
+			"/datum/skill/craft/tanning": {
+				"category": "ROGUE_SKILL_CATEGORY_TRADE",
+				"defaults": {
+					"ROGUE_STAT_PERCEPTION": -5,
+					"ROGUE_STAT_STRENGTH": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_PERCEPTION"
+			},
+			"/datum/skill/craft/ceramics": {
+				"category": "ROGUE_SKILL_CATEGORY_TRADE",
+				"defaults": {
+					"ROGUE_STAT_INTELLIGENCE": -4,
+					"ROGUE_STAT_PERCEPTION": -5
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_INTELLIGENCE"
+			},
+			"/datum/skill/craft/alchemy": {
+				"category": "ROGUE_SKILL_CATEGORY_RESEARCH",
+				"defaults": {
+					"ROGUE_STAT_INTELLIGENCE": -7
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_VERY_HARD",
+				"governing": "ROGUE_STAT_INTELLIGENCE"
+			},
+			"/datum/skill/labor/farming": {
+				"category": "ROGUE_SKILL_CATEGORY_DOMESTIC",
+				"defaults": {
+					"ROGUE_STAT_INTELLIGENCE": -4
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_INTELLIGENCE"
+			},
+			"/datum/skill/labor/mining": {
+				"category": "ROGUE_SKILL_CATEGORY_DOMESTIC",
+				"defaults": {
+					"ROGUE_STAT_STRENGTH": -4,
+					"ROGUE_STAT_WILLPOWER": -5
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/labor/fishing": {
+				"category": "ROGUE_SKILL_CATEGORY_DOMESTIC",
+				"defaults": {
+					"ROGUE_STAT_PERCEPTION": -4
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_PERCEPTION"
+			},
+			"/datum/skill/labor/butchering": {
+				"category": "ROGUE_SKILL_CATEGORY_DOMESTIC",
+				"defaults": {
+					"ROGUE_STAT_STRENGTH": -4,
+					"ROGUE_STAT_PERCEPTION": -5
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/labor/lumberjacking": {
+				"category": "ROGUE_SKILL_CATEGORY_DOMESTIC",
+				"defaults": {
+					"ROGUE_STAT_STRENGTH": -4,
+					"ROGUE_STAT_WILLPOWER": -5
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/magic/holy": {
+				"category": "ROGUE_SKILL_CATEGORY_MAGIC",
+				"defaults": {
+					"ROGUE_STAT_FORTUNE": -8
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_VERY_HARD",
+				"governing": "ROGUE_STAT_FORTUNE"
+			},
+			"/datum/skill/magic/blood": {
+				"category": "ROGUE_SKILL_CATEGORY_MAGIC",
+				"defaults": {
+					"ROGUE_STAT_CONSTITUTION": -8
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_VERY_HARD",
+				"governing": "ROGUE_STAT_CONSTITUTION"
+			},
+			"/datum/skill/magic/arcane": {
+				"category": "ROGUE_SKILL_CATEGORY_MAGIC",
+				"defaults": {
+					"ROGUE_STAT_INTELLIGENCE": -8
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_VERY_HARD",
+				"governing": "ROGUE_STAT_INTELLIGENCE"
+			},
+			"/datum/skill/magic/druidic": {
+				"category": "ROGUE_SKILL_CATEGORY_MAGIC",
+				"defaults": {
+					"ROGUE_STAT_PERCEPTION": -8,
+					"ROGUE_STAT_FORTUNE": -9
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_VERY_HARD",
+				"governing": "ROGUE_STAT_PERCEPTION"
+			},
+			"/datum/skill/misc/athletics": {
+				"category": "ROGUE_SKILL_CATEGORY_GENERAL",
+				"defaults": {
+					"ROGUE_STAT_WILLPOWER": -4
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_WILLPOWER"
+			},
+			"/datum/skill/misc/climbing": {
+				"category": "ROGUE_SKILL_CATEGORY_GENERAL",
+				"defaults": {
+					"ROGUE_STAT_STRENGTH": -5,
+					"ROGUE_STAT_WILLPOWER": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/misc/reading": {
+				"category": "ROGUE_SKILL_CATEGORY_GENERAL",
+				"defaults": {
+					"ROGUE_STAT_INTELLIGENCE": -8
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_INTELLIGENCE"
+			},
+			"/datum/skill/misc/swimming": {
+				"category": "ROGUE_SKILL_CATEGORY_GENERAL",
+				"defaults": {
+					"ROGUE_STAT_WILLPOWER": -5,
+					"ROGUE_STAT_STRENGTH": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_WILLPOWER"
+			},
+			"/datum/skill/misc/stealing": {
+				"category": "ROGUE_SKILL_CATEGORY_SKULDUGGERY",
+				"defaults": {
+					"ROGUE_STAT_PERCEPTION": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_HARD",
+				"governing": "ROGUE_STAT_PERCEPTION"
+			},
+			"/datum/skill/misc/sneaking": {
+				"category": "ROGUE_SKILL_CATEGORY_SKULDUGGERY",
+				"defaults": {
+					"ROGUE_STAT_SPEED": -5
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_SPEED"
+			},
+			"/datum/skill/misc/lockpicking": {
+				"category": "ROGUE_SKILL_CATEGORY_SKULDUGGERY",
+				"defaults": {
+					"ROGUE_STAT_PERCEPTION": -7,
+					"ROGUE_STAT_INTELLIGENCE": -7
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_HARD",
+				"governing": "ROGUE_STAT_PERCEPTION"
+			},
+			"/datum/skill/misc/riding": {
+				"category": "ROGUE_SKILL_CATEGORY_GENERAL",
+				"defaults": {
+					"ROGUE_STAT_WILLPOWER": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_WILLPOWER"
+			},
+			"/datum/skill/misc/music": {
+				"category": "ROGUE_SKILL_CATEGORY_GENERAL",
+				"defaults": {
+					"ROGUE_STAT_INTELLIGENCE": -7,
+					"ROGUE_STAT_PERCEPTION": -8
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_HARD",
+				"governing": "ROGUE_STAT_INTELLIGENCE"
+			},
+			"/datum/skill/misc/medicine": {
+				"category": "ROGUE_SKILL_CATEGORY_MEDICAL",
+				"defaults": {
+					"ROGUE_STAT_INTELLIGENCE": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_EASY",
+				"governing": "ROGUE_STAT_INTELLIGENCE"
+			},
+			"/datum/skill/misc/tracking": {
+				"category": "ROGUE_SKILL_CATEGORY_GENERAL",
+				"defaults": {
+					"ROGUE_STAT_PERCEPTION": -5
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_PERCEPTION"
+			},
+			"/datum/skill/misc/hunting": {
+				"category": "ROGUE_SKILL_CATEGORY_DOMESTIC",
+				"defaults": {
+					"ROGUE_STAT_PERCEPTION": -5,
+					"ROGUE_STAT_STRENGTH": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_PERCEPTION"
+			}
+		},
+		"extra_traits": {
+			"/datum/job/roguetown/jester": [
+				"TRAIT_TEMPO"
+			],
+			"/datum/job/roguetown/martyr": [
+				"TRAIT_TEMPO"
+			]
+		}
+	},
+	"traits": {
+		"output": "modular_redtard/rockhill/ported/_traits.dm",
+		"extra": {
+			"TRAIT_TEMPO": {
+				"value": "Tempo Capable",
+				"span": "span_greentext",
+				"text": "I can keep up with multiple opponents at once.",
+				"source": "Azure Peak, code/__DEFINES/traits.dm"
+			}
+		},
+		"descriptions": {
+			"TRAIT_DUALWIELDER": {
+				"span": "span_info",
+				"text": "While wielding two one-hand weapons with at least Journeyman skill on each, I alternate attacks between them. After 4 strikes, I'll attack with both at once. My parry and dodge are reduced by 5% while holding two weapons.",
+				"source": "Azure Peak, code/__DEFINES/traits.dm"
+			}
+		}
+	}
+}
