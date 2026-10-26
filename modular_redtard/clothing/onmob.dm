@@ -8,7 +8,7 @@
 	var/rogue_onmob_state
 
 /obj/item/proc/rogue_baked_looks(prefix, front_layer)
-	if(!rogue_onmob_sheet)
+	if(!rogue_onmob_sheet || (ismob(loc) && HAS_TRAIT(loc, TRAIT_ROGUE_GOBLIN_BODY)))
 		return null
 	var/base = rogue_onmob_state || icon_state
 	if(!icon_exists(rogue_onmob_sheet, "[prefix][base]") && !icon_exists(rogue_onmob_sheet, "[prefix][base]_behind"))
@@ -31,6 +31,9 @@
 		looks = back.rogue_baked_looks("back_", BACK_LAYER)
 	if(looks)
 		remove_overlay(BACK_LAYER)
+		var/obj/item/bodypart/chest/my_chest = get_bodypart(BODY_ZONE_CHEST)
+		for(var/mutable_appearance/look as anything in looks)
+			my_chest?.worn_back_offset?.apply_offset(look)
 	set_rogue_overlay(ROGUE_OVERLAY_BACK_LEFT, looks)
 
 /mob/living/carbon/human/update_pockets()
@@ -44,4 +47,8 @@
 		looks = worn.rogue_baked_looks(prefix, BELT_LAYER)
 		if(!looks && (sheet || worn.worn_icon))
 			looks = worn.build_worn_icon(default_layer = BELT_LAYER, override_file = sheet)
+		var/obj/item/bodypart/chest/my_chest = get_bodypart(BODY_ZONE_CHEST)
+		if(looks && my_chest?.worn_belt_offset)
+			for(var/mutable_appearance/look as anything in islist(looks) ? looks : list(looks))
+				my_chest.worn_belt_offset.apply_offset(look)
 	set_rogue_overlay(key, looks)

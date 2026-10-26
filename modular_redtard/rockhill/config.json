@@ -1391,6 +1391,136 @@
 				"/mob/living/carbon/human/species/npc/deadite": "/datum/species/zombie",
 				"/mob/living/carbon/human/species/dwarfskeleton": "/datum/species/skeleton"
 			}
+		},
+		"bodies": {
+			"file": "modular_redtard/rockhill/icons/bodies.dmi",
+			"dm_file": "species.dm",
+			"sheets": {
+				"rogue_orc": {
+					"m": "icons/roguetown/mob/bodies/m/mt_muscular.dmi",
+					"f": "icons/roguetown/mob/bodies/f/ft_muscular.dmi"
+				},
+				"rogue_drow": {
+					"m": "icons/roguetown/mob/bodies/m/mem.dmi",
+					"f": "icons/roguetown/mob/bodies/f/fm.dmi"
+				}
+			},
+			"zones": [
+				"head",
+				"chest",
+				"l_arm",
+				"r_arm",
+				"l_hand",
+				"r_hand",
+				"l_leg",
+				"r_leg"
+			],
+			"merge": {
+				"l_leg": "l_leg_above",
+				"r_leg": "r_leg_above"
+			},
+			"goblin": {
+				"source": "icons/roguetown/mob/monster/goblins.dmi",
+				"kinds": [
+					"goblin",
+					"goblin_cave",
+					"goblin_hell",
+					"goblin_sea",
+					"goblin_moon"
+				],
+				"worn": [
+					"plate_helm",
+					"leather_helm",
+					"plate_armor",
+					"leather_armor",
+					"cloth_armor"
+				],
+				"limb_id": "rogue_goblin"
+			},
+			"features": {
+				"rogue_ears_halforc": [
+					"icons/mob/sprite_accessory/halforc.dmi",
+					"halforc",
+					[
+						"ADJ",
+						"FRONT"
+					]
+				],
+				"rogue_tusks_halforc": [
+					"icons/mob/sprite_accessory/halforc.dmi",
+					"orctusk",
+					[
+						"FRONT"
+					]
+				],
+				"rogue_ears_elf": [
+					"icons/mob/sprite_accessory/elf.dmi",
+					"elf",
+					[
+						"ADJ",
+						"FRONT"
+					]
+				]
+			},
+			"species_map": {
+				"/datum/species/orc": "/datum/species/rogue_orc",
+				"/datum/species/elf/dark": "/datum/species/rogue_drow",
+				"/datum/species/goblin": "/datum/species/rogue_goblin",
+				"/datum/species/goblin/cave": "/datum/species/rogue_goblin/cave",
+				"/datum/species/goblin/hell": "/datum/species/rogue_goblin/hell",
+				"/datum/species/goblin/sea": "/datum/species/rogue_goblin/sea",
+				"/datum/species/goblin/moon": "/datum/species/rogue_goblin/moon"
+			},
+			"offset_keys": {
+				"OFFSET_ID": [
+					"ROGUE_OFFSET_RING"
+				],
+				"OFFSET_GLOVES": [
+					"OFFSET_GLOVES"
+				],
+				"OFFSET_WRISTS": [
+					"ROGUE_OFFSET_WRISTS"
+				],
+				"OFFSET_CLOAK": [
+					"ROGUE_OFFSET_CLOAK"
+				],
+				"OFFSET_FACEMASK": [
+					"OFFSET_FACEMASK",
+					"OFFSET_GLASSES"
+				],
+				"OFFSET_HEAD": [
+					"OFFSET_HEAD",
+					"OFFSET_EARS"
+				],
+				"OFFSET_FACE": [
+					"OFFSET_FACE"
+				],
+				"OFFSET_BELT": [
+					"OFFSET_BELT"
+				],
+				"OFFSET_BACK": [
+					"OFFSET_BACK"
+				],
+				"OFFSET_NECK": [
+					"OFFSET_NECK"
+				],
+				"OFFSET_MOUTH": [
+					"ROGUE_OFFSET_MOUTH"
+				],
+				"OFFSET_PANTS": [
+					"OFFSET_UNIFORM"
+				],
+				"OFFSET_SHIRT": [
+					"ROGUE_OFFSET_SHIRT"
+				],
+				"OFFSET_ARMOR": [
+					"OFFSET_SUIT",
+					"OFFSET_S_STORE"
+				],
+				"OFFSET_HANDS": [
+					"OFFSET_HELD"
+				]
+			}
 		}
 	},
 	"jobs": {

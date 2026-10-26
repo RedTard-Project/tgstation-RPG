@@ -991,7 +991,8 @@ def main():
     role_attrs = generate_attribute_sheets(cfg, rw, jobs, role_outfits, known_traits)
     role_outfit_paths = generate_jobs(cfg, rw, usage, role_outfits, declared | generated, station_usage, role_attrs)
     generate_advclasses(cfg, rw, class_jobs, class_outfits, declared | generated, known_traits)
-    generate_npcs(cfg, rw, rules, npcs, declared | generated, known_traits, role_outfit_paths)
+    hair_names = generate_bodies(cfg, rw, declared | generated, npcs)
+    generate_npcs(cfg, rw, rules, npcs, declared | generated, known_traits, role_outfit_paths, hair_names)
 
 
 MAPGEN_LANDMARK = '/obj/effect/landmark/mapGenerator'
@@ -3295,7 +3296,166 @@ def npc_trait_names(rw, npcs, attr_cfg):
     return traits
 
 
-def generate_npcs(cfg, rw, rules, npcs, valid, known_traits, taken_outfits):
+HAIR_ROOT = '/datum/sprite_accessory/hair'
+HAIR_TYPES = re.compile(r'/datum/sprite_accessory/hair/(?:head|facial)/\w+')
+COLOR_HEX = re.compile(r'"#?([0-9A-Fa-f]{6})"')
+
+
+def npc_creation_text(rw, path):
+    return '\n'.join(line for owner in npc_chain(rw, path) for proc in NPC_PROCS for line in HUMAN_PROCS.get((owner, proc), []))
+
+
+def npc_look(rw, path, hair_names):
+    """How Ratwood's after_creation dresses the NPC's body: a random sex, skin, eye and hair colours, the hairstyles and
+    beards it picks from, and the name lists (by the file's m/f ending)."""
+    text = npc_creation_text(rw, path)
+    look = {}
+    if re.search(r'\bgender\s*=\s*pick\(\s*MALE\s*,\s*FEMALE\s*\)', text):
+        look['random_sex'] = 'TRUE'
+    for key, pattern in (('skin', r'\bskin_tone\s*=\s*'), ('eyes', r'\beye_color\s*=\s*'), ('hair_color', r'\bhair_color\s*=\s*')):
+        found = re.search(pattern + COLOR_HEX.pattern, text)
+        if found:
+            look[key] = f'"#{found.group(1).upper()}"'
+    for key, name in (('hair_m', 'hairm'), ('hair_f', 'hairf'), ('beards', 'beard')):
+        found = re.search(rf'\bvar/{name}\s*=\s*pick\(\s*list\(([^)]*)\)', text)
+        styles = [hair_names[p] for p in HAIR_TYPES.findall(found.group(1)) if p in hair_names] if found else []
+        if styles:
+            look[key] = 'list(' + ', '.join(json.dumps(s) for s in styles) + ')'
+    for rel in dict.fromkeys(re.findall(r'\breal_name\s*=\s*pick\(\s*world\.file2list\(\s*"([^"]+)"', text)):
+        key = 'names_f' if rel.endswith('f.txt') else 'names_m'
+        look[key] = f'"{NPC_NAMES_DIR}/{os.path.basename(rel)}"'
+    return look
+
+
+NPC_NAMES_DIR = 'modular_redtard/rockhill/strings/names'
+
+
+def npc_name_files(rw, npcs):
+    files = set()
+    for path in npcs:
+        files |= set(re.findall(r'\breal_name\s*=\s*pick\(\s*world\.file2list\(\s*"([^"]+)"', npc_creation_text(rw, path)))
+    return sorted(files)
+
+
+def npc_hair_types(rw, npcs):
+    return sorted({p for path in npcs for p in HAIR_TYPES.findall(npc_creation_text(rw, path)) if p in rw.types})
+
+
+def ratwood_offsets(rw, species, keys):
+    """Ratwood's offset_features of a species (where worn things, hair and held items sit on its body) in the module's
+    offset keys, per sex: {"m": {key: (x, y)}, "f": {...}}."""
+    out = {'m': {}, 'f': {}}
+    for name, x, y in re.findall(r'\b(OFFSET_[A-Z_]+)\s*=\s*list\(\s*(-?\d+)\s*,\s*(-?\d+)\s*\)', rw.resolve(species, 'offset_features') or ''):
+        sex = 'f' if name.endswith('_F') else 'm'
+        for key in keys.get(name[:-2] if sex == 'f' else name, []):
+            if int(x) or int(y):
+                out[sex][key] = (int(x), int(y))
+    return out
+
+
+def over(base, top):
+    """top drawn over base, one 32x32 RGBA cell each (a pixel of top wins where it is not transparent)."""
+    out = bytearray(base)
+    for i in range(0, len(top), 4):
+        if top[i + 3]:
+            out[i:i + 4] = top[i:i + 4]
+    return bytes(out)
+
+
+def generate_bodies(cfg, rw, valid, npcs):
+    """Ratwood bodies as TG body parts (rockhill/species.dm): the per-zone body sheets of the orc and the dark elf for both
+    sexes (TG's dimorphic state <body>_<zone>_<m|f>, each leg with its "_above" part drawn over it), the goblins'
+    whole-body sprites (rogue_goblin_<zone>: the body on the chest, the other parts empty; per kind <kind>_chest,
+    <kind>_decap_chest and the severed head <kind>_severed) with their own armor and helmet looks (goblin_worn_<state>),
+    ears and tusks (<feature>_ADJ/_FRONT) and the hairstyles Ratwood's NPCs pick
+    (rogue_hair_<style>, rogue_facial_<style>), all in one sheet; and the data that goes with them: Ratwood's
+    offset_features per species, the hairstyles as TG sprite accessories and the goblin look of goblin gear."""
+    spec = cfg['port']['bodies']
+    sources = {}
+
+    def cells_of(rel):
+        if rel not in sources:
+            if not asset_allowed(rel, cfg['port'].get('assets', {})):
+                raise SystemExit(f'{rel}: the body sprites sit under a licence the port may not copy ({asset_license(rel)})')
+            sources[rel] = dmi.read(os.path.join(CHECKOUT, rel)).state_cells()
+        return sources[rel]
+
+    def first_frame(entry):
+        dirs, _, cells = entry
+        return dirs, cells[:dirs]
+
+    empty = bytes(32 * 32 * 4)
+    states = []
+    for body, entry in spec['sheets'].items():
+        for sex in ('m', 'f'):
+            source = cells_of(entry[sex])
+            for zone in spec['zones']:
+                dirs, cells = first_frame(source[zone]) if zone in source else (1, [empty])
+                above = spec['merge'].get(zone)
+                if above in source:
+                    above_dirs, above_cells = first_frame(source[above])
+                    if above_dirs == dirs:
+                        cells = [over(cell, top) for cell, top in zip(cells, above_cells)]
+                states.append((f'{body}_{zone}_{sex}', dirs, cells))
+    goblin = spec['goblin']
+    source = cells_of(goblin['source'])
+    for zone in spec['zones']:
+        states.append((f"{goblin['limb_id']}_{zone}", *(first_frame(source[goblin['kinds'][0]]) if zone == 'chest' else (1, [empty]))))
+    for kind in goblin['kinds']:
+        states.append((f'{kind}_chest', *first_frame(source[kind])))
+        states.append((f'{kind}_decap_chest', *first_frame(source[f'{kind}_decap'])))
+        states.append((f'{kind}_severed', 1, source[f'{kind}_head'][2][:1]))
+    for state in goblin['worn']:
+        states.append((f'goblin_worn_{state}', *first_frame(source[state])))
+    for name, (rel, state, layers) in spec['features'].items():
+        source = cells_of(rel)
+        for layer in layers:
+            states.append((f'{name}_{layer}', *first_frame(source[f'{state}_{layer}'])))
+    hair_names = {}
+    hair_blocks = []
+    tg_hair_names = set(re.findall(r'^\tname = "([^"]+)"', '\n'.join(open(f, encoding='utf-8', errors='ignore').read() for f in glob.glob('code/datums/sprite_accessories/*.dm')), re.M))
+    for path in npc_hair_types(rw, npcs):
+        facial = '/facial/' in path
+        leaf = path.rsplit('/', 1)[1]
+        icon = (rw.resolve(path, 'icon') or '').strip().strip("'")
+        state = (string_value(rw.resolve(path, 'icon_state')) or '""').strip('"')
+        name = (string_value(rw.resolve(path, 'name')) or f'"{leaf}"').strip('"')
+        source = cells_of(icon) if icon else {}
+        if state not in source:
+            continue
+        sheet_state = f"rogue_{'facial' if facial else 'hair'}_{leaf}"
+        states.append((sheet_state, *first_frame(source[state])))
+        shown = name if name not in tg_hair_names else f'{name} (Ratwood)'
+        hair_names[path] = shown
+        hair_blocks.append([f"/datum/sprite_accessory/{'facial_hair' if facial else 'hair'}/rogue_{leaf}", f'\tname = {json.dumps(shown)}', f"\ticon = '{spec['file']}'", f'\ticon_state = "{sheet_state}"', '\tlocked = TRUE', '\tnatural_spawn = FALSE'])
+    dmi.write_states(spec['file'], 32, 32, states)
+
+    blocks = []
+    for species, target in spec['species_map'].items():
+        offsets = ratwood_offsets(rw, species, spec['offset_keys'])
+        lines = []
+        for sex in ('m', 'f'):
+            entries = [f'{key} = list({x}, {y})' for key, (x, y) in sorted(offsets[sex].items())]
+            if entries:
+                lines.append(f'\t\t"{sex}" = list(' + ', '.join(entries) + '),')
+        if lines:
+            blocks.append([target, '\trogue_offsets = list('] + lines + ['\t\t)'])
+    for path in sorted(p for p in valid if p.startswith('/obj/item/') and p in rw.types):
+        state = (string_value(rw.resolve(path, 'item_state')) or '""').strip('"')
+        if state in goblin['worn']:
+            blocks.append([path, f'\trogue_goblin_state = "goblin_worn_{state}"'])
+    open(f"{OUT_DIR}/{spec['dm_file']}", 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks + hair_blocks) + '\n')
+    files = npc_name_files(rw, npcs)
+    fetch_sources(files)
+    os.makedirs(NPC_NAMES_DIR, exist_ok=True)
+    for rel in files:
+        if os.path.exists(os.path.join(CHECKOUT, rel)):
+            shutil.copyfile(os.path.join(CHECKOUT, rel), os.path.join(NPC_NAMES_DIR, os.path.basename(rel)))
+    print(f"{spec['file']}: {len(states)} states; {spec['dm_file']}: {len(blocks)} offset and gear blocks, {len(hair_blocks)} hairstyles; {len(files)} name lists")
+    return hair_names
+
+
+def generate_npcs(cfg, rw, rules, npcs, valid, known_traits, taken_outfits, hair_names=None):
     """Ratwood's NPC people for ai/human_npc.dm: whether each has a mind (mode), hunts (aggressive) or flees in pain, how it
     defends, its faction, race and traits, and the outfits it is dressed in; the outfits themselves with their random
     loadouts, and the stats and skills their pre_equip sets as attribute sheets."""
@@ -3321,8 +3481,14 @@ def generate_npcs(cfg, rw, rules, npcs, valid, known_traits, taken_outfits):
         if faction and faction != ['"neutral"']:
             block.append(f"\tfaction = list({', '.join(faction)})")
         race = next((species for prefix, species in spec.get('race', {}).items() if boundary_match(path, prefix)), None)
+        race = race or cfg['port']['bodies']['species_map'].get((rw.resolve(path, 'race') or '').strip())
         if race:
             block.append(f'\trace = {race}')
+        if (string_value(rw.resolve(path, 'name')) or '"Unknown"') != '"Unknown"':
+            block.append('\tuse_random_name = FALSE')
+        look = npc_look(rw, path, hair_names or {})
+        if look:
+            block.append('\trogue_npc_look = list(' + ', '.join(f'"{key}" = {value}' for key, value in look.items()) + ')')
         worn = npc_outfits(rw, path)
         if worn:
             block.append(f"\trogue_npc_outfits = list({', '.join(worn)})")

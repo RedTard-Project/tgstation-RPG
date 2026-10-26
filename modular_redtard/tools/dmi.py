@@ -36,6 +36,19 @@ class Dmi:
             index += state['dirs'] * state['frames']
         return out
 
+    def state_cells(self):
+        """Every cell of every state in sheet order (frame by frame, each frame's directions south, north, east, west, ...),
+        as {name: (dirs, frames, [cells])}; the first state of a repeated name wins, as BYOND picks it."""
+        columns = self.width // self.frame_width
+        out = {}
+        index = 0
+        for state in self.states:
+            count = state['dirs'] * state['frames']
+            if state['name'] not in out:
+                out[state['name']] = (state['dirs'], state['frames'], [self.crop(index + k, columns) for k in range(count)])
+            index += count
+        return out
+
     def crop(self, index, columns):
         row, col = divmod(index, columns)
         x0, y0 = col * self.frame_width, row * self.frame_height
@@ -178,6 +191,18 @@ def write(path, frame_width, frame_height, named_cells):
     for name, _ in named_cells:
         states += [f'state = "{name}"', '\tdirs = 1', '\tframes = 1']
     _sheet(path, frame_width, frame_height, [cell for _, cell in named_cells], states)
+
+
+def write_states(path, frame_width, frame_height, states):
+    """A sheet of (name, dirs, cells) states, one frame each: cells hold the directions in sheet order."""
+    lines = []
+    cells = []
+    for name, dirs, state_cells in states:
+        if len(state_cells) != dirs:
+            raise ValueError(f'{path}: state {name} has {len(state_cells)} cells for {dirs} directions')
+        lines += [f'state = "{name}"', f'\tdirs = {dirs}', '\tframes = 1']
+        cells += state_cells
+    _sheet(path, frame_width, frame_height, cells, lines)
 
 
 def write_animated(path, frame_width, frame_height, cells, delays):

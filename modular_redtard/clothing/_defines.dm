@@ -46,6 +46,18 @@
 #define ROGUE_MOUTH_LAYER (FACEMASK_LAYER - 0.5)
 #define ROGUE_BACKR_LAYER (BACK_LAYER + 0.5)
 
+/// One sheet for Ratwood's goblin, orc and dark elf bodies, their ears, tusks and the hairstyles of Ratwood's NPCs
+/// (rockhill/species.dm; the porter makes it).
+#define ROGUE_BODIES_ICON 'modular_redtard/rockhill/icons/bodies.dmi'
+/// Offset keys of the module's own worn layers beside TG's OFFSET_*: Ratwood shifts them by species and sex as well.
+#define ROGUE_OFFSET_SHIRT "rogue_shirt"
+#define ROGUE_OFFSET_CLOAK "rogue_cloak"
+#define ROGUE_OFFSET_WRISTS "rogue_wrists"
+#define ROGUE_OFFSET_MOUTH "rogue_mouth"
+#define ROGUE_OFFSET_RING "rogue_ring"
+/// A goblin's body: worn things show only as the goblin's own armor and helmet (rockhill/species.dm).
+#define TRAIT_ROGUE_GOBLIN_BODY "rogue_goblin_body"
+
 /// Percent chance per step that something which can be spat out slips out of the mouth (clothing/mouth.dm).
 #define ROGUE_MOUTH_SLIP_CHANCE rogue_value("mouth_slip_chance")
 /// Ratwood burns a smoke down by one every object tick of two seconds (clothing/smoking.dm).

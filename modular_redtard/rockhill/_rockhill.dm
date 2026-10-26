@@ -3,6 +3,7 @@
 #include "edges.dm"
 #include "jobs.dm"
 #include "advclasses.dm"
+#include "species.dm"
 #include "stairs.dm"
 #include "mapgen.dm"
 #include "locks.dm"
@@ -75,4 +76,5 @@
 #include "ported\jobs.dm"
 #include "ported\advclasses.dm"
 #include "ported\npcs.dm"
+#include "ported\species.dm"
 #include "ported\landmarks.dm"

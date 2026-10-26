@@ -1,0 +1,426 @@
+/// Ratwood's goblins, orcs and dark elves as TG species (Ratwood species_types/roguetown/goblin/goblinp.dm, other/orc.dm,
+/// elf/elfd.dm; npc/goblin.dm draws the goblin). Their bodies are Ratwood's sprites as TG body parts, all in one sheet the
+/// porter makes (ROGUE_BODIES_ICON): the orc's muscular body and the dark elf's slender one, a state per zone and sex,
+/// greyscale and coloured by the skin as Ratwood colours it (the TG mutant colour); the goblin's whole-body sprite of
+/// its kind, drawn by the chest. Ears and tusks are Ratwood's sprites too, and worn things, hair and held items sit where
+/// Ratwood puts them on that body: its offset_features per species and sex, ported as rogue_offsets.
+
+/datum/species
+	/// Ratwood's offset_features: per sex ("m", "f") the offset keys (TG's OFFSET_* and the module's ROGUE_OFFSET_*) and
+	/// their list(x, y) shift (rockhill/ported/species.dm).
+	var/list/rogue_offsets
+	/// The skin a body of this species gets when nothing else sets it (an orc spawned by hand is green).
+	var/rogue_default_skin
+	/// Which goblin's sprite the goblin body parts draw (Ratwood raceicon).
+	var/rogue_goblin_kind
+
+/datum/species/on_species_gain(mob/living/carbon/human/human_who_gained_species, datum/species/old_species, pref_load, regenerate_icons = TRUE, replace_missing = TRUE)
+	if(rogue_default_skin && !pref_load)
+		human_who_gained_species.dna.features[FEATURE_MUTANT_COLOR] = rogue_default_skin
+	return ..()
+
+/datum/species/rogue_orc
+	name = "Orc"
+	id = "rogue_orc"
+	inherent_traits = list(
+		TRAIT_MUTANT_COLORS,
+	)
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
+	rogue_default_skin = "#50715C"
+	bodypart_overrides = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/rogue_orc,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/rogue_orc,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/rogue_orc,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/rogue_orc,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/rogue_orc,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/rogue_orc,
+	)
+
+/datum/species/rogue_drow
+	name = "Dark Elf"
+	id = "rogue_drow"
+	inherent_traits = list(
+		TRAIT_MUTANT_COLORS,
+	)
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
+	rogue_default_skin = "#5F5F70"
+	bodypart_overrides = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/rogue_drow,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/rogue_drow,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/rogue_drow,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/rogue_drow,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/rogue_drow,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/rogue_drow,
+	)
+
+/// Ratwood's goblin: one sprite for the whole body, no hair, eyes or underwear drawn, a male voice and build only, and
+/// no shirt, trousers, mask, gloves or shoes (no_equip); worn armor and helmets show as the goblin's own.
+/datum/species/rogue_goblin
+	name = "Goblin"
+	id = "rogue_goblin"
+	sexes = FALSE
+	inherent_traits = list(
+		TRAIT_NO_UNDERWEAR,
+		TRAIT_RADIMMUNE,
+		TRAIT_RESISTCOLD,
+		TRAIT_RESISTHIGHPRESSURE,
+		TRAIT_RESISTLOWPRESSURE,
+		TRAIT_ROGUE_GOBLIN_BODY,
+	)
+	no_equip_flags = ITEM_SLOT_MASK | ITEM_SLOT_GLOVES | ITEM_SLOT_FEET | ITEM_SLOT_ICLOTHING | ITEM_SLOT_SUITSTORE | ITEM_SLOT_ROGUE_SHIRT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
+	rogue_goblin_kind = "goblin"
+	bodypart_overrides = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/rogue_goblin,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/rogue_goblin,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/rogue_goblin,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/rogue_goblin,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/rogue_goblin,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/rogue_goblin,
+	)
+
+/datum/species/rogue_goblin/cave
+	name = "Cave Goblin"
+	id = "rogue_goblin_cave"
+	rogue_goblin_kind = "goblin_cave"
+
+/datum/species/rogue_goblin/hell
+	name = "Hell Goblin"
+	id = "rogue_goblin_hell"
+	rogue_goblin_kind = "goblin_hell"
+
+/datum/species/rogue_goblin/sea
+	name = "Sea Goblin"
+	id = "rogue_goblin_sea"
+	rogue_goblin_kind = "goblin_sea"
+
+/datum/species/rogue_goblin/moon
+	name = "Moon Goblin"
+	id = "rogue_goblin_moon"
+	rogue_goblin_kind = "goblin_moon"
+
+/// Where each offset key goes: the body zone ("arm" and "leg" for both) and the TG variable that holds it, if TG reads
+/// one (the module's own layers read feature_offsets).
+GLOBAL_LIST_INIT(rogue_offset_parts, list(
+	OFFSET_HEAD = list(BODY_ZONE_HEAD, "worn_head_offset"),
+	OFFSET_FACE = list(BODY_ZONE_HEAD, "worn_face_offset"),
+	OFFSET_FACEMASK = list(BODY_ZONE_HEAD, "worn_mask_offset"),
+	OFFSET_GLASSES = list(BODY_ZONE_HEAD, "worn_glasses_offset"),
+	OFFSET_EARS = list(BODY_ZONE_HEAD, "worn_ears_offset"),
+	ROGUE_OFFSET_MOUTH = list(BODY_ZONE_HEAD, null),
+	OFFSET_UNIFORM = list(BODY_ZONE_CHEST, "worn_uniform_offset"),
+	OFFSET_SUIT = list(BODY_ZONE_CHEST, "worn_suit_offset"),
+	OFFSET_S_STORE = list(BODY_ZONE_CHEST, "worn_suit_storage_offset"),
+	OFFSET_BELT = list(BODY_ZONE_CHEST, "worn_belt_offset"),
+	OFFSET_BACK = list(BODY_ZONE_CHEST, "worn_back_offset"),
+	OFFSET_NECK = list(BODY_ZONE_CHEST, "worn_neck_offset"),
+	OFFSET_ID = list(BODY_ZONE_CHEST, "worn_id_offset"),
+	ROGUE_OFFSET_SHIRT = list(BODY_ZONE_CHEST, null),
+	ROGUE_OFFSET_CLOAK = list(BODY_ZONE_CHEST, null),
+	ROGUE_OFFSET_WRISTS = list(BODY_ZONE_CHEST, null),
+	ROGUE_OFFSET_RING = list(BODY_ZONE_CHEST, null),
+	OFFSET_GLOVES = list("arm", "worn_glove_offset"),
+	OFFSET_HELD = list("arm", "held_hand_offset"),
+	OFFSET_SHOES = list("leg", "worn_foot_offset"),
+))
+
+/obj/item/bodypart
+	/// Offset keys this part took from its owner's rogue_offsets, so a change of sex can clear them.
+	var/list/rogue_offset_keys
+	/// The goblin's kind the part was last on (goblin parts draw that sprite, also once cut off).
+	var/rogue_kind = "goblin"
+
+/obj/item/bodypart/update_limb(dropping_limb = FALSE, is_creating = FALSE)
+	. = ..()
+	if(!. || !owner?.dna?.species)
+		return
+	var/datum/species/owner_species = owner.dna.species
+	if(owner_species.rogue_goblin_kind)
+		rogue_kind = owner_species.rogue_goblin_kind
+	if(owner_species.rogue_offsets || rogue_offset_keys)
+		rogue_apply_offsets(owner_species.rogue_offsets?[limb_gender])
+
+/// Shifts where worn things sit on this part as Ratwood does for the owner's species and sex; keys the part no longer
+/// gets go back to no shift.
+/obj/item/bodypart/proc/rogue_apply_offsets(list/offsets)
+	for(var/key in GLOB.rogue_offset_parts)
+		var/list/where = GLOB.rogue_offset_parts[key]
+		if(!rogue_offset_fits(where[1]))
+			continue
+		var/list/shift = offsets?[key]
+		var/datum/worn_feature_offset/offset = feature_offsets[key]
+		if(!shift)
+			if(offset && (key in rogue_offset_keys))
+				offset.offset_x = list("south" = 0)
+				offset.offset_y = list("south" = 0)
+			continue
+		if(!offset)
+			offset = new(src, key)
+			if(where[2])
+				vars[where[2]] = offset
+		offset.offset_x = list("south" = shift[1])
+		offset.offset_y = list("south" = shift[2])
+		LAZYOR(rogue_offset_keys, key)
+
+/obj/item/bodypart/proc/rogue_offset_fits(zone)
+	switch(zone)
+		if("arm")
+			return istype(src, /obj/item/bodypart/arm)
+		if("leg")
+			return istype(src, /obj/item/bodypart/leg)
+	return body_zone == zone
+
+/obj/item/bodypart/arm
+	/// The hand has its own state per sex (<limb_id>_<hand>_<m|f>): TG names the hand without it.
+	var/rogue_sexed_hand = FALSE
+
+/obj/item/bodypart/arm/get_limb_icon(dropped)
+	. = ..()
+	if(!rogue_sexed_hand || !aux_zone)
+		return
+	var/state = "[limb_id]_[aux_zone]"
+	for(var/image/part as anything in .)
+		if(part.icon_state == state)
+			part.icon_state = "[state]_[limb_gender]"
+
+/// Ratwood's ears and tusks on the head, its sprite accessories: ADJ and FRONT layers, moved with the face as Ratwood
+/// moves them (OFFSET_FACE), hidden under what covers them.
+/datum/bodypart_overlay/simple/rogue_feature
+	icon = ROGUE_BODIES_ICON
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	offset_location = UPPER_BODY
+	/// Takes the colour of the skin under it, as Ratwood's ears do (KEY_SKIN_COLOR).
+	var/skin_coloured = FALSE
+	/// Worn flags that hide it.
+	var/hidden_by = HIDEEARS
+
+/datum/bodypart_overlay/simple/rogue_feature/get_image(obj/item/bodypart/limb, layer_index, layer_real)
+	. = ..()
+	var/obj/item/bodypart/head/head = limb
+	if(istype(head))
+		head.worn_face_offset?.apply_offset(.)
+
+/datum/bodypart_overlay/simple/rogue_feature/color_image(image/overlay, obj/item/bodypart/limb, layer_index)
+	overlay.color = skin_coloured ? limb.draw_color : draw_color
+
+/datum/bodypart_overlay/simple/rogue_feature/can_draw_on_bodypart(obj/item/bodypart/bodypart_owner, mob/living/carbon/owner)
+	. = ..()
+	var/mob/living/carbon/human/wearer = owner
+	if(. && istype(wearer) && (wearer.obscured_slots & hidden_by))
+		return FALSE
+
+/datum/bodypart_overlay/simple/rogue_feature/halforc_ears
+	icon_state = "rogue_ears_halforc"
+	skin_coloured = TRUE
+
+/datum/bodypart_overlay/simple/rogue_feature/halforc_tusks
+	icon_state = "rogue_tusks_halforc"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	draw_color = "#F4F4BE"
+	hidden_by = HIDESNOUT
+
+/datum/bodypart_overlay/simple/rogue_feature/elf_ears
+	icon_state = "rogue_ears_elf"
+	skin_coloured = TRUE
+
+// The orc: Ratwood's muscular body (mt_muscular/ft_muscular, the woman wears the man's, use_m), half-orc ears and tusks.
+
+/obj/item/bodypart/head/rogue_orc
+	icon = ROGUE_BODIES_ICON
+	icon_static = ROGUE_BODIES_ICON
+	icon_greyscale = ROGUE_BODIES_ICON
+	icon_state = "rogue_orc_head_m"
+	limb_id = "rogue_orc"
+	is_dimorphic = TRUE
+
+/obj/item/bodypart/head/rogue_orc/Initialize(mapload)
+	. = ..()
+	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/halforc_ears, update = FALSE)
+	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/halforc_tusks, update = FALSE)
+
+/obj/item/bodypart/chest/rogue_orc
+	icon = ROGUE_BODIES_ICON
+	icon_static = ROGUE_BODIES_ICON
+	icon_greyscale = ROGUE_BODIES_ICON
+	icon_state = "rogue_orc_chest_m"
+	limb_id = "rogue_orc"
+	is_dimorphic = TRUE
+
+/obj/item/bodypart/arm/left/rogue_orc
+	icon = ROGUE_BODIES_ICON
+	icon_static = ROGUE_BODIES_ICON
+	icon_greyscale = ROGUE_BODIES_ICON
+	icon_state = "rogue_orc_l_arm_m"
+	limb_id = "rogue_orc"
+	is_dimorphic = TRUE
+	rogue_sexed_hand = TRUE
+
+/obj/item/bodypart/arm/right/rogue_orc
+	icon = ROGUE_BODIES_ICON
+	icon_static = ROGUE_BODIES_ICON
+	icon_greyscale = ROGUE_BODIES_ICON
+	icon_state = "rogue_orc_r_arm_m"
+	limb_id = "rogue_orc"
+	is_dimorphic = TRUE
+	rogue_sexed_hand = TRUE
+
+/obj/item/bodypart/leg/left/rogue_orc
+	icon = ROGUE_BODIES_ICON
+	icon_static = ROGUE_BODIES_ICON
+	icon_greyscale = ROGUE_BODIES_ICON
+	icon_state = "rogue_orc_l_leg_m"
+	limb_id = "rogue_orc"
+	is_dimorphic = TRUE
+
+/obj/item/bodypart/leg/right/rogue_orc
+	icon = ROGUE_BODIES_ICON
+	icon_static = ROGUE_BODIES_ICON
+	icon_greyscale = ROGUE_BODIES_ICON
+	icon_state = "rogue_orc_r_leg_m"
+	limb_id = "rogue_orc"
+	is_dimorphic = TRUE
+
+// The dark elf: Ratwood's elf body (mem/fm) and elf ears.
+
+/obj/item/bodypart/head/rogue_drow
+	icon = ROGUE_BODIES_ICON
+	icon_static = ROGUE_BODIES_ICON
+	icon_greyscale = ROGUE_BODIES_ICON
+	icon_state = "rogue_drow_head_m"
+	limb_id = "rogue_drow"
+	is_dimorphic = TRUE
+
+/obj/item/bodypart/head/rogue_drow/Initialize(mapload)
+	. = ..()
+	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/elf_ears, update = FALSE)
+
+/obj/item/bodypart/chest/rogue_drow
+	icon = ROGUE_BODIES_ICON
+	icon_static = ROGUE_BODIES_ICON
+	icon_greyscale = ROGUE_BODIES_ICON
+	icon_state = "rogue_drow_chest_m"
+	limb_id = "rogue_drow"
+	is_dimorphic = TRUE
+
+/obj/item/bodypart/arm/left/rogue_drow
+	icon = ROGUE_BODIES_ICON
+	icon_static = ROGUE_BODIES_ICON
+	icon_greyscale = ROGUE_BODIES_ICON
+	icon_state = "rogue_drow_l_arm_m"
+	limb_id = "rogue_drow"
+	is_dimorphic = TRUE
+	rogue_sexed_hand = TRUE
+
+/obj/item/bodypart/arm/right/rogue_drow
+	icon = ROGUE_BODIES_ICON
+	icon_static = ROGUE_BODIES_ICON
+	icon_greyscale = ROGUE_BODIES_ICON
+	icon_state = "rogue_drow_r_arm_m"
+	limb_id = "rogue_drow"
+	is_dimorphic = TRUE
+	rogue_sexed_hand = TRUE
+
+/obj/item/bodypart/leg/left/rogue_drow
+	icon = ROGUE_BODIES_ICON
+	icon_static = ROGUE_BODIES_ICON
+	icon_greyscale = ROGUE_BODIES_ICON
+	icon_state = "rogue_drow_l_leg_m"
+	limb_id = "rogue_drow"
+	is_dimorphic = TRUE
+
+/obj/item/bodypart/leg/right/rogue_drow
+	icon = ROGUE_BODIES_ICON
+	icon_static = ROGUE_BODIES_ICON
+	icon_greyscale = ROGUE_BODIES_ICON
+	icon_state = "rogue_drow_r_leg_m"
+	limb_id = "rogue_drow"
+	is_dimorphic = TRUE
+
+// The goblin: the chest draws the whole body of the goblin's kind (headless once the head is off, as Ratwood's _decap),
+// the other parts draw nothing; the severed head is Ratwood's head sprite. Only the head comes off, as at Ratwood
+// (dismemberable = 0 on the other parts). No wound overlays, as Ratwood's goblin has none.
+
+/obj/item/bodypart/head/rogue_goblin
+	icon = ROGUE_BODIES_ICON
+	icon_static = ROGUE_BODIES_ICON
+	icon_state = "rogue_goblin_head"
+	limb_id = "rogue_goblin"
+	is_dimorphic = FALSE
+	should_draw_greyscale = FALSE
+	head_flags = NONE
+	dmg_overlay_type = null
+
+/obj/item/bodypart/head/rogue_goblin/get_limb_icon(dropped)
+	. = ..()
+	if(dropped)
+		. += image(ROGUE_BODIES_ICON, "[rogue_kind]_severed", dir = SOUTH)
+
+/obj/item/bodypart/head/rogue_goblin/generate_icon_key()
+	. = ..()
+	. += rogue_kind
+
+/obj/item/bodypart/chest/rogue_goblin
+	icon = ROGUE_BODIES_ICON
+	icon_static = ROGUE_BODIES_ICON
+	icon_state = "rogue_goblin_chest"
+	limb_id = "rogue_goblin"
+	is_dimorphic = FALSE
+	should_draw_greyscale = FALSE
+	dmg_overlay_type = null
+	bodypart_flags = BODYPART_UNREMOVABLE
+
+/obj/item/bodypart/chest/rogue_goblin/get_limb_icon(dropped)
+	. = ..()
+	var/plain = "[limb_id]_[body_zone]"
+	var/state = rogue_body_state()
+	for(var/image/part as anything in .)
+		if(part.icon_state == plain)
+			part.icon_state = state
+
+/obj/item/bodypart/chest/rogue_goblin/generate_icon_key()
+	. = ..()
+	. += rogue_body_state()
+
+/obj/item/bodypart/chest/rogue_goblin/proc/rogue_body_state()
+	return "[rogue_kind][owner && !owner.get_bodypart(BODY_ZONE_HEAD) ? "_decap" : ""]_chest"
+
+/obj/item/bodypart/arm/left/rogue_goblin
+	icon = ROGUE_BODIES_ICON
+	icon_static = ROGUE_BODIES_ICON
+	icon_state = "rogue_goblin_l_arm"
+	limb_id = "rogue_goblin"
+	should_draw_greyscale = FALSE
+	dmg_overlay_type = null
+	bodypart_flags = BODYPART_UNREMOVABLE
+
+/obj/item/bodypart/arm/right/rogue_goblin
+	icon = ROGUE_BODIES_ICON
+	icon_static = ROGUE_BODIES_ICON
+	icon_state = "rogue_goblin_r_arm"
+	limb_id = "rogue_goblin"
+	should_draw_greyscale = FALSE
+	dmg_overlay_type = null
+	bodypart_flags = BODYPART_UNREMOVABLE
+
+/obj/item/bodypart/leg/left/rogue_goblin
+	icon = ROGUE_BODIES_ICON
+	icon_static = ROGUE_BODIES_ICON
+	icon_state = "rogue_goblin_l_leg"
+	limb_id = "rogue_goblin"
+	should_draw_greyscale = FALSE
+	dmg_overlay_type = null
+	bodypart_flags = BODYPART_UNREMOVABLE
+
+/obj/item/bodypart/leg/right/rogue_goblin
+	icon = ROGUE_BODIES_ICON
+	icon_static = ROGUE_BODIES_ICON
+	icon_state = "rogue_goblin_r_leg"
+	limb_id = "rogue_goblin"
+	should_draw_greyscale = FALSE
+	dmg_overlay_type = null
+	bodypart_flags = BODYPART_UNREMOVABLE
+
+/obj/item
+	/// How a goblin wears this armor or helmet: its state in ROGUE_BODIES_ICON (Ratwood draws the goblin's suit and head
+	/// from goblins.dmi by item_state; the porter writes it for the goblin gear).
+	var/rogue_goblin_state

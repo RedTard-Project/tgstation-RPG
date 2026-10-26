@@ -65,6 +65,9 @@
 	var/list/rogue_npc_outfits
 	/// Traits Ratwood gives the NPC in after_creation.
 	var/list/rogue_npc_traits
+	/// How Ratwood's after_creation shapes the NPC: "random_sex", "skin", "eyes", "hair_color", the hairstyles and beards
+	/// it picks from ("hair_m", "hair_f", "beards") and the name lists ("names_m", "names_f").
+	var/list/rogue_npc_look
 
 /mob/living/carbon/human/Initialize(mapload)
 	if(rogue_npc && !ai_controller)
@@ -82,6 +85,8 @@
 /mob/living/carbon/human/proc/rogue_npc_setup()
 	if(real_name == initial(real_name))
 		real_name = name
+	if(length(rogue_npc_look))
+		rogue_npc_shape()
 	for(var/trait in rogue_npc_traits)
 		ADD_TRAIT(src, trait, ROGUE_NPC_TRAIT)
 	if(length(rogue_npc_outfits))
@@ -91,6 +96,32 @@
 	AddElement(/datum/element/ai_retaliate)
 	if(rogue_flee_in_pain)
 		AddElement(/datum/element/ai_flee_while_injured, ROGUE_NPC_FLEE_STOP, ROGUE_NPC_FLEE_HEALTH)
+
+/// The NPC's sex, skin, eyes, hair, beard and name, as Ratwood's after_creation picks them (orcs: green skin, red eyes,
+/// dark braids and beards; dark elves: grey skin, amber eyes, white hair).
+/mob/living/carbon/human/proc/rogue_npc_shape()
+	var/list/look = rogue_npc_look
+	if(look["random_sex"])
+		gender = pick(MALE, FEMALE)
+		physique = gender
+	if(look["skin"])
+		dna.features[FEATURE_MUTANT_COLOR] = look["skin"]
+	if(look["eyes"])
+		set_eye_color(look["eyes"])
+	var/list/styles = look[gender == FEMALE ? "hair_f" : "hair_m"]
+	if(length(styles))
+		set_hairstyle(pick(styles), update = FALSE)
+	var/list/beards = look["beards"]
+	if(gender != FEMALE && length(beards))
+		set_facial_hairstyle(pick(beards), update = FALSE)
+	if(look["hair_color"])
+		set_haircolor(look["hair_color"], update = FALSE)
+		set_facial_haircolor(look["hair_color"], update = FALSE)
+	var/names = look[gender == FEMALE ? "names_f" : "names_m"]
+	var/list/picked = names && (world.file2list(names) - "")
+	if(length(picked))
+		fully_replace_character_name(real_name, pick(picked))
+	update_body(is_creating = TRUE)
 
 /// Hunts on sight. The trees tick their roots in order: breaking free first, then running when ai_flee_while_injured says so
 /// (only the fleeing kinds), then the fight.

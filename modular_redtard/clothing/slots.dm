@@ -189,6 +189,17 @@
 				sleeves = rogue_sleeves(worn, ROGUE_CLOAK_LAYER, whole = TRUE)
 		if(sleeves)
 			looks += sleeves
+		var/static/list/offset_keys = list(
+			"[ITEM_SLOT_ROGUE_SHIRT]" = list(BODY_ZONE_CHEST, ROGUE_OFFSET_SHIRT),
+			"[ITEM_SLOT_ROGUE_CLOAK]" = list(BODY_ZONE_CHEST, ROGUE_OFFSET_CLOAK),
+			"[ITEM_SLOT_ROGUE_WRISTS]" = list(BODY_ZONE_CHEST, ROGUE_OFFSET_WRISTS),
+			"[ITEM_SLOT_ROGUE_MOUTH]" = list(BODY_ZONE_HEAD, ROGUE_OFFSET_MOUTH),
+		)
+		var/list/where = offset_keys["[slot]"]
+		var/obj/item/bodypart/part = where && get_bodypart(where[1])
+		var/datum/worn_feature_offset/offset = part ? part.feature_offsets[where[2]] : null
+		for(var/mutable_appearance/look as anything in looks)
+			offset?.apply_offset(look)
 	set_rogue_overlay("[slot]", looks)
 
 /mob/living/carbon/human/proc/update_rogue_ring(index)
@@ -197,6 +208,9 @@
 	var/mutable_appearance/look
 	if(ring)
 		look = ring.build_worn_icon(default_layer = ROGUE_RING_LAYER, default_icon_file = ring.icon)
+		var/obj/item/bodypart/chest/my_chest = get_bodypart(BODY_ZONE_CHEST)
+		var/datum/worn_feature_offset/offset = my_chest ? my_chest.feature_offsets[ROGUE_OFFSET_RING] : null
+		offset?.apply_offset(look)
 	set_rogue_overlay(ROGUE_RING_ID(index), look)
 
 /mob/living/carbon/human/proc/update_rogue_backr()

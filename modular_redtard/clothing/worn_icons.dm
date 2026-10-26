@@ -10,6 +10,11 @@
 		if(rogue_baked_inhand && !override_state)
 			override_state = rogue_held_state(override_file || default_icon_file)
 		return ..(default_layer, default_icon_file, isinhands, female_uniform, override_state, override_file, bodyshape)
+	var/mob/living/carbon/human/goblin = loc
+	if(istype(goblin) && HAS_TRAIT(goblin, TRAIT_ROGUE_GOBLIN_BODY))
+		if(rogue_goblin_state && (default_layer == SUIT_LAYER || default_layer == HEAD_LAYER))
+			return mutable_appearance(ROGUE_BODIES_ICON, rogue_goblin_state, -default_layer)
+		return mutable_appearance(layer = -default_layer)
 	var/plain_state = override_state || worn_icon_state || icon_state
 	var/file = override_file || worn_icon || default_icon_file
 	if(rogue_female_worn && rogue_worn_by_female())
