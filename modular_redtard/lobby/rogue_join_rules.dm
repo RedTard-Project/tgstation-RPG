@@ -129,9 +129,7 @@
 /// Azure's ready-up pouch: twenty mammons in silver.
 /mob/living/carbon/human/proc/rogue_give_ready_pouch()
 	rogue_ready_pouch_pending = FALSE
-	var/obj/item/pouch = new /obj/item/storage/belt/rogue/pouch/coins/mid(drop_location())
-	for(var/i in 1 to 4)
-		new /obj/item/roguecoin/silver(pouch)
+	var/obj/item/pouch = new /obj/item/storage/belt/rogue/pouch/coins/readyuppouch(drop_location())
 	if(!equip_in_one_of_slots(pouch, list(LOCATION_BACKPACK, LOCATION_HANDS), qdel_on_fail = FALSE))
 		to_chat(src, span_notice("Your pouch of coins is at your feet."))
 

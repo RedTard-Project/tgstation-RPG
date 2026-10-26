@@ -986,8 +986,13 @@ def main():
             fill_items |= set(contents) | {item for item, _ in loot}
     npcs = npc_candidates(rw, rules, usage)
     npc_items = npc_outfit_items(rw, rules, npcs)
+    fill_items |= anvil_recipe_items(cfg, rw, rules)
+    fill_items |= food_chain_items(cfg, rw, set(usage) | outfit_items | mapgen_types | fill_items | npc_items)
     generated = generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, outfit_items | mapgen_types | fill_items | npc_items, set(jobs))
     generate_mapgen(mapgen, rules, declared | generated, tg_names)
+    generate_anvil_recipes(cfg, rw, rules, declared | generated)
+    generate_trade(cfg, rw, rules, declared | generated)
+    generate_food(cfg, rw, generated, tg_declared, tg_names)
     npcs = [p for p in npcs if p in generated]
     role_traits = npc_trait_names(rw, npcs, cfg['attributes'])
     for species in cfg['port']['bodies']['species_map']:
@@ -1288,7 +1293,7 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
     for path in list(port_usage):
         for name in port.get('linked_types', []):
             for item, _ in list_paths(rw.resolve(path, name)):
-                port_usage[item] += 0
+                port_usage[item.rstrip('/')] += 0
     for path, count in sorted(port_usage.items()):
         if replacement_for(path, rules) or path in tg_declared:
             continue
@@ -1662,7 +1667,7 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                 continue
             if g and g not in grafted and cat.get('graft'):
                 grafted.add(g)
-                block = [g, f"\tparent_type = {cat['graft']}"]
+                block = [g, f"\tparent_type = {cat.get('graft_overrides', {}).get(g, cat['graft'])}"]
                 for name, value in cat.get('graft_vars', {}).items():
                     block.append(f'\t{name} = {value}')
                 if g not in paths:
@@ -1753,7 +1758,7 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                         block.append(f'\t{name} = ' + (' | '.join(kept) if kept else 'NONE'))
                     continue
                 if name in cat.get('paths', []):
-                    target = runtime_path(value.strip(), rules) if value and value.strip().startswith('/') else None
+                    target = runtime_path(value.strip().rstrip('/'), rules) if value and value.strip().startswith('/') else None
                     if target in valid:
                         block.append(f'\t{name} = {target}')
                     continue
@@ -3932,6 +3937,366 @@ def generate_npcs(cfg, rw, rules, npcs, valid, known_traits, taken_outfits, hair
         for path, mind, faction, worn in rows:
             out.write(f'| `{path}` | {mind} | {faction} | {worn} |\n')
     print(f"{spec['file']}: {len(npcs)} NPC types, {len(worn_by)} outfits, {len(procs)} procs, {len(sheets)} sheets")
+
+
+def anvil_recipe_specs(cfg, rw, rules):
+    # Ratwood anvil recipes (code/modules/roguetown/roguejobs/*/anvil_recipes): a recipe exists when it has a name and an i_type
+    # (init_anvil_recipes()); casting recipes (req_blade) and trait-locked ones (req_trait) stay in Ratwood.
+    spec = cfg['port'].get('anvil_recipes')
+    if not spec:
+        return []
+    recipes = []
+    for path in sorted(p for p in rw.types if p.startswith(spec['root'] + '/')):
+        if (rw.types[path].get('abstract_type') or '').strip().rstrip('/') == path:
+            continue
+        name = string_value(rw.resolve(path, 'name'))
+        category = string_value(rw.resolve(path, 'i_type'))
+        if not name or name == '""' or not category or category == '""':
+            continue
+        if (rw.resolve(path, 'req_blade') or 'null').strip() != 'null' or (rw.resolve(path, 'req_trait') or 'null').strip() != 'null':
+            continue
+        made = runtime_path((rw.resolve(path, 'created_item') or '').strip().rstrip('/'), rules)
+        bar = runtime_path((rw.resolve(path, 'req_bar') or '').strip().rstrip('/'), rules)
+        if not made or not made.startswith('/obj/') or not bar or not bar.startswith('/obj/'):
+            continue
+        extras = [runtime_path(p.rstrip('/'), rules) for p, _ in list_paths(rw.resolve(path, 'additional_items'))]
+        if not all(extras):
+            continue
+        display = expand_define(rw.resolve(path, 'display_category') or '')
+        recipes.append({
+            'path': path,
+            'name': name,
+            'category': category,
+            'display': display if STRING_LITERAL.match(display) else None,
+            'made': made,
+            'bar': bar,
+            'extras': extras,
+            'count': define_value_number(rw.resolve(path, 'createditem_num')) or 1,
+            'craftdiff': define_value_number(rw.resolve(path, 'craftdiff')) or 0,
+            'skill': skill_target(cfg, rw.resolve(path, 'appro_skill')) or spec['default_skill'],
+        })
+    return recipes
+
+
+def anvil_recipe_items(cfg, rw, rules):
+    # Everything an anvil recipe takes or makes is ported with the map's items.
+    items = set()
+    for recipe in anvil_recipe_specs(cfg, rw, rules):
+        items |= {recipe['made'], recipe['bar']} | set(recipe['extras'])
+    return items
+
+
+def generate_anvil_recipes(cfg, rw, rules, valid):
+    spec = cfg['port'].get('anvil_recipes')
+    if not spec:
+        return
+    blocks = []
+    dropped = 0
+    for recipe in anvil_recipe_specs(cfg, rw, rules):
+        if any(p not in valid for p in [recipe['made'], recipe['bar']] + recipe['extras']):
+            dropped += 1
+            continue
+        block = [recipe['path'], f"\tname = {recipe['name']}", f"\tcategory = {recipe['category']}"]
+        if recipe['display']:
+            block.append(f"\tdisplay_category = {recipe['display']}")
+        block += [f"\treq_bar = {recipe['bar']}", f"\tcreated_item = {recipe['made']}"]
+        if recipe['count'] != 1:
+            block.append(f"\tcreateditem_num = {recipe['count']}")
+        if recipe['craftdiff']:
+            block.append(f"\tcraftdiff = {recipe['craftdiff']}")
+        if recipe['skill'] != spec['default_skill']:
+            block.append(f"\tappro_skill = {recipe['skill']}")
+        if recipe['extras']:
+            block.append('\tadditional_items = list(' + ', '.join(recipe['extras']) + ')')
+        blocks.append(block)
+    os.makedirs(os.path.dirname(spec['file']), exist_ok=True)
+    open(spec['file'], 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    print(f"{spec['file']}: {len(blocks)} anvil recipes, {dropped} dropped for unported items")
+
+
+def generate_trade(cfg, rw, rules, valid):
+    # Ratwood's trade data for the economy module (modular_redtard/economy): the merchant's import packs
+    # (/datum/supply_pack/rogue, sold by the GOLDFACE) and the Crown's stockpile (/datum/roguestock/stockpile, priced from
+    # their /datum/trade_good). A pack or a stockpile entry comes along only when everything it hands out is ported or TG's.
+    spec = cfg['port'].get('trade')
+    if not spec:
+        return
+    packs = spec['supply_packs']
+    groups = set(packs['groups'])
+    blocks = []
+    dropped = 0
+    for path in [p for p in rw.types if p.startswith(packs['root'] + '/')]:
+        contains = [runtime_path(p.rstrip('/'), rules) for p, _ in list_paths(rw.resolve(path, 'contains'))]
+        group = string_value(rw.resolve(path, 'group'))
+        if not contains or not group or group.strip('"') not in groups:
+            continue
+        if not all(p in valid for p in contains):
+            dropped += 1
+            continue
+        name = string_value(rw.resolve(path, 'name')) or '"Crate"'
+        block = [packs['rename'] + path[len(packs['root']):], f'\tname = {name}', f'\tgroup = {group}']
+        block.append(f"\tcost = {define_value_number(rw.resolve(path, 'cost')) or 1}")
+        for flag in ('not_in_public', 'no_name_quantity', 'static_cost'):
+            if (rw.resolve(path, flag) or 'FALSE').strip() in ('TRUE', '1'):
+                block.append(f'\t{flag} = TRUE')
+        block.append('\tcontains = list(' + ', '.join(contains) + ')')
+        blocks.append(block)
+    os.makedirs(os.path.dirname(packs['file']), exist_ok=True)
+    open(packs['file'], 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    print(f"{packs['file']}: {len(blocks)} supply packs, {dropped} dropped for unported items")
+
+    stock = spec['stockpile']
+    prices = {}
+    for path in [p for p in rw.types if p.startswith(stock['trade_goods'] + '/')]:
+        good = expand_define(rw.resolve(path, 'id') or '')
+        base = define_value_number(rw.resolve(path, 'base_price'))
+        if STRING_LITERAL.match(good) and base:
+            prices[good] = base * (define_value_number(rw.resolve(path, 'global_price_mod')) or 1)
+    blocks = []
+    dropped = 0
+    for path in [p for p in rw.types if p.startswith(stock['root'] + '/')]:
+        item = runtime_path((rw.resolve(path, 'item_type') or '').strip().rstrip('/'), rules)
+        if not item or not item.startswith('/obj/'):
+            continue
+        if item not in valid:
+            dropped += 1
+            continue
+        block = [path, f"\tname = {string_value(rw.resolve(path, 'name')) or chr(34) * 2}"]
+        desc = string_value(rw.resolve(path, 'desc'))
+        if desc:
+            block.append(f'\tdesc = {desc}')
+        block += [f'\titem_type = {item}', f"\tcategory = {string_value(rw.resolve(path, 'category')) or chr(34) + 'Raw Materials' + chr(34)}"]
+        good = expand_define(rw.resolve(path, 'trade_good_id') or '')
+        if good in prices:
+            block.append(f'\tbase_price = {round(prices[good], 2)}')
+        else:
+            for name in ('payout_price', 'withdraw_price'):
+                block.append(f'\t{name} = {define_value_number(rw.resolve(path, name)) or 1}')
+        for name in ('stockpile_amount', 'stockpile_limit', 'importexport_amt', 'passive_generation', 'generation_price'):
+            number = define_value_number(rw.resolve(path, name))
+            if number is not None:
+                block.append(f'\t{name} = {number}')
+        for flag, default in (('accept_toggle_enabled', 'TRUE'), ('withdraw_disabled', 'FALSE'), ('import_only', 'FALSE'), ('export_only', 'FALSE')):
+            value = (rw.resolve(path, flag) or default).strip()
+            if value != default:
+                block.append(f'\t{flag} = {value}')
+        blocks.append(block)
+    os.makedirs(os.path.dirname(stock['file']), exist_ok=True)
+    open(stock['file'], 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    print(f"{stock['file']}: {len(blocks)} stockpile entries, {dropped} dropped for unported items")
+
+    # Roles that open a NERVELOCK account on arrival (give_bank_account: TRUE, or the mammons deposited) and draw an estate income.
+    blocks = []
+    for path in select_jobs(cfg, rw):
+        raw = (rw.resolve(path, 'give_bank_account') or 'FALSE').strip()
+        deposit = 0 if raw == 'TRUE' else define_value_number(raw)
+        if deposit is None or (raw != 'TRUE' and deposit <= 0):
+            continue
+        block = [path, f'\trogue_bank_account = {deposit if deposit > 1 else 0}']
+        income = define_value_number(rw.resolve(path, 'noble_income'))
+        if income:
+            block.append(f'\trogue_estate_income = {income}')
+        blocks.append(block)
+    jobs_file = spec['jobs']['file']
+    open(jobs_file, 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    print(f'{jobs_file}: {len(blocks)} roles with a NERVELOCK account')
+
+
+FOOD_TIME_UNITS = {'SECONDS': 10, 'MINUTES': 600, 'DECISECONDS': 1}
+FOOD_LINKS = ('cooked_type', 'fried_type', 'slice_path', 'become_rot_type')
+
+
+def food_number(raw):
+    # A Ratwood numeric expression of food data (defines, SECONDS/MINUTES, + - * /) as a number; None if it is not one.
+    text = (raw or '').strip()
+    if not text or text == 'null':
+        return None
+    for _ in range(10):
+        expanded = re.sub(r'\b[A-Z_][A-Z0-9_]*\b', lambda m: f'({DEFINE_VALUES[m.group(0)].strip()})' if m.group(0) in DEFINE_VALUES and m.group(0) not in FOOD_TIME_UNITS else m.group(0), text)
+        if expanded == text:
+            break
+        text = expanded
+    text = re.sub(r'\b(SECONDS|MINUTES|DECISECONDS)\b', lambda m: f'*{FOOD_TIME_UNITS[m.group(1)]}', text)
+    text = re.sub(r'\bTRUE\b', '1', re.sub(r'\bFALSE\b', '0', text))
+    if not re.fullmatch(r'[\d\s.+\-*/()]+', text):
+        return None
+    try:
+        value = eval(text, {'__builtins__': {}})
+    except Exception:
+        return None
+    return int(value) if value == int(value) else round(value, 2)
+
+
+def food_entries(raw):
+    # Entries of a Ratwood list(...): (key, value) with value None for plain entries.
+    text = (raw or '').strip()
+    if not text.startswith('list(') or not text.endswith(')'):
+        return []
+    entries, depth, current, quoted = [], 0, '', False
+    for ch in text[5:-1]:
+        if ch == '"':
+            quoted = not quoted
+        if not quoted:
+            depth += {'(': 1, ')': -1}.get(ch, 0)
+            if ch == ',' and depth == 0:
+                entries.append(current)
+                current = ''
+                continue
+        current += ch
+    entries.append(current)
+    out = []
+    for entry in (e.strip() for e in entries):
+        if not entry:
+            continue
+        key, _, value = entry.partition('=')
+        out.append((key.strip(), value.strip() or None))
+    return out
+
+
+def food_chain_items(cfg, rw, seeds):
+    # Ratwood food the port needs for cooking (survival module): everything a ported food cooks, fries, slices or rots into,
+    # and the results of the slapcraft recipes (/datum/food_recipe) whose base and item ingredients are all at hand.
+    spec = cfg['port'].get('food')
+    if not spec:
+        return set()
+    seeds = set(seeds)
+    for spawner in [p for p in seeds if p.startswith('/obj/effect/spawner/')]:
+        seeds |= {item for item, _ in loot_entries(rw.resolve(spawner, 'loot'))}
+    reach = {p for p in seeds if boundary_match(p, spec['root']) and p in rw.types} | set(spec.get('always', []))
+    recipes = []
+    for path in sorted(p for p in rw.types if p.startswith(spec['recipe_root'] + '/')):
+        base = (rw.resolve(path, 'base_item') or '').strip().rstrip('/')
+        result = (rw.resolve(path, 'result_type') or '').strip().rstrip('/')
+        items = [key.rstrip('/') for key, _ in food_entries(rw.resolve(path, 'ingredients')) if key.startswith('/obj/')]
+        if base in rw.types and result in rw.types:
+            recipes.append((base, result, items))
+    changed = True
+    while changed:
+        changed = False
+        for path in list(reach):
+            for name in FOOD_LINKS:
+                target = (rw.resolve(path, name) or '').strip().rstrip('/')
+                if target in rw.types and target not in reach:
+                    reach.add(target)
+                    changed = True
+        for base, result, items in recipes:
+            if base in reach and result not in reach and all(any(boundary_match(have, need) for have in reach | seeds) for need in items):
+                reach.add(result)
+                changed = True
+    return reach
+
+
+def generate_food(cfg, rw, generated, tg_declared, tg_names):
+    # Ratwood food data for the survival module (modular_redtard/survival): reagents, food types, tastes, bites, the eat effect,
+    # what it cooks (oven), fries (pan, fire) or slices into, its cooking and burning time, shelf life and rotten form, and the
+    # slapcraft recipes. Everything referenced is ported or TG's, otherwise left out.
+    spec = cfg['port'].get('food')
+    if not spec:
+        return
+    valid = set(generated) | set(tg_declared)
+    foods = sorted(p for p in generated if boundary_match(p, spec['root']))
+    defaults = spec['defaults']
+
+    def path_of(raw):
+        target = (raw or '').strip().rstrip('/')
+        return target if target in valid else None
+
+    def reagents_of(raw):
+        pairs = []
+        for key, value in food_entries(raw):
+            number = food_number(value)
+            if key in tg_declared and key.startswith('/datum/reagent/') and number:
+                pairs.append(f'{key} = {number}')
+        return pairs
+
+    blocks = []
+    for path in foods:
+        block = [path]
+        reagents = reagents_of(rw.resolve(path, 'list_reagents'))
+        if reagents:
+            block.append('\tfood_reagents = list(' + ', '.join(reagents) + ')')
+        bonus = reagents_of(rw.resolve(path, 'bonus_reagents'))
+        if bonus:
+            block.append('\tbonus_reagents = list(' + ', '.join(bonus) + ')')
+        flags = [token for token in re.findall(r'[A-Z_][A-Z0-9_]*', rw.resolve(path, 'foodtype') or '') if token in tg_names and token != 'NONE']
+        if flags:
+            block.append('\tfoodtypes = ' + ' | '.join(flags))
+        tastes = [f'{key} = {food_number(value) or 1}' for key, value in food_entries(rw.resolve(path, 'tastes')) if STRING_LITERAL.match(key)]
+        if tastes:
+            block.append('\ttastes = list(' + ', '.join(tastes) + ')')
+        effect = spec['eat_effects'].get((rw.resolve(path, 'eat_effect') or '').strip())
+        if effect:
+            block.append(f'\teat_effect = {effect}')
+        cooked = path_of(rw.resolve(path, 'cooked_type'))
+        fried = path_of(rw.resolve(path, 'fried_type'))
+        for name, target in (('cooked_type', cooked), ('fried_type', fried)):
+            if target:
+                block.append(f'\t{name} = {target}')
+        cooktime = food_number(rw.resolve(path, 'cooktime')) or 0
+        if (cooked or fried) and not cooktime:
+            cooktime = defaults['cooktime']
+        numbers = {
+            'cooktime': cooktime,
+            'burntime': food_number(rw.resolve(path, 'burntime')),
+            'bitesize': food_number(rw.resolve(path, 'bitesize')),
+            'rotprocess': food_number(rw.resolve(path, 'rotprocess')) or 0,
+            'warming': food_number(rw.resolve(path, 'warming')),
+        }
+        for name, number in numbers.items():
+            if number is not None and number != defaults[name]:
+                block.append(f'\t{name} = {number}')
+        rotten = path_of(rw.resolve(path, 'become_rot_type'))
+        if rotten and numbers['rotprocess']:
+            block.append(f'\tbecome_rot_type = {rotten}')
+        slice_path = path_of(rw.resolve(path, 'slice_path'))
+        slices = food_number(rw.resolve(path, 'slices_num')) or 0
+        if slice_path and slices > 0:
+            block += [f'\tslice_path = {slice_path}', f'\tslices_num = {slices}']
+            bclass = (rw.resolve(path, 'slice_bclass') or '').strip()
+            if re.fullmatch(r'BCLASS_[A-Z]+', bclass) and bclass != defaults['slice_bclass']:
+                block.append(f'\tslice_bclass = {bclass}')
+            if (rw.resolve(path, 'slice_batch') or 'TRUE').strip() == 'FALSE':
+                block.append('\tslice_batch = FALSE')
+        if len(block) > 1:
+            blocks.append(block)
+    recipes = 0
+    dropped = 0
+    implicit = {'/'.join(p.split('/')[:k]) for p in generated for k in range(3, p.count('/') + 2)}
+    for path in sorted(p for p in rw.types if p.startswith(spec['recipe_root'] + '/')):
+        base = path_of(rw.resolve(path, 'base_item'))
+        result = path_of(rw.resolve(path, 'result_type'))
+        entries = food_entries(rw.resolve(path, 'ingredients'))
+        if not base or not result or not entries:
+            dropped += bool(rw.resolve(path, 'base_item'))
+            continue
+        ingredients = []
+        for key, value in entries:
+            key = key.rstrip('/')
+            if key.startswith('/datum/reagent/') and key in tg_declared and food_number(value):
+                ingredients.append(f'{key} = {food_number(value)}')
+            elif key.startswith('/obj/') and value is None and (key in implicit or key in tg_declared):
+                ingredients.append(key)
+            else:
+                ingredients = None
+                break
+        if not ingredients:
+            dropped += 1
+            continue
+        block = [spec['recipe_target'] + path[len(spec['recipe_root']):]]
+        name = string_value(rw.resolve(path, 'name'))
+        if name:
+            block.append(f'\tname = {name}')
+        block += [f'\tbase_item = {base}', '\tingredients = list(' + ', '.join(ingredients) + ')', f'\tresult_type = {result}']
+        if (rw.resolve(path, 'needs_cooking') or '').strip() == 'TRUE':
+            block.append('\tneeds_cooking = TRUE')
+        step = food_number(rw.resolve(path, 'time_per_step'))
+        if step and step != defaults['time_per_step']:
+            block.append(f'\ttime_per_step = {step}')
+        blocks.append(block)
+        recipes += 1
+    os.makedirs(os.path.dirname(spec['file']), exist_ok=True)
+    open(spec['file'], 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    print(f"{spec['file']}: {len(foods)} foods, {recipes} recipes, {dropped} recipes dropped for unported items or reagents")
 
 
 if __name__ == '__main__':

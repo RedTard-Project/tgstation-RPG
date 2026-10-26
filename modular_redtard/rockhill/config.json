@@ -731,6 +731,9 @@
 					"/obj/item"
 				],
 				"graft": "/obj/item/rockhill",
+				"graft_overrides": {
+					"/obj/item/roguecoin": "/obj/item/stack"
+				},
 				"natural": [
 					"/obj/item/clothing",
 					"/obj/item/reagent_containers",
@@ -818,12 +821,20 @@
 					"boobed_detail",
 					"sleeved_detail",
 					"firefuel",
+					"sellprice",
+					"static_price",
 					"max_blade_int",
 					"sharpening_factor",
 					"spark_chance",
 					"special",
 					"coverage",
-					"intdamage_factor"
+					"intdamage_factor",
+					"smeltresult",
+					"anvilrepair",
+					"sewrepair"
+				],
+				"true_only": [
+					"sewrepair"
 				],
 				"rename": {
 					"inhand_icon_state": "item_state",
@@ -860,6 +871,8 @@
 				"skip_default": [
 					"armor_class",
 					"firefuel",
+					"sellprice",
+					"static_price",
 					"armour_penetration",
 					"can_parry",
 					"lockid",
@@ -885,7 +898,8 @@
 				"paths": [
 					"origin_type",
 					"valid_blade",
-					"special"
+					"special",
+					"smeltresult"
 				],
 				"sprite_checks": true,
 				"bake": true,
@@ -911,6 +925,7 @@
 				"grid_storage": true,
 				"numeric_vars": [
 					"rogue_force_wielded",
+					"sellprice",
 					"wdefense",
 					"wdefense_wbonus",
 					"wlength",
@@ -949,7 +964,8 @@
 					"flags_inv"
 				],
 				"skill_vars": [
-					"associated_skill"
+					"associated_skill",
+					"anvilrepair"
 				],
 				"string_lists": [],
 				"string_define_vars": [
@@ -1113,6 +1129,45 @@
 			"icons/effects/mousemice/swang/*.dmi"
 		],
 		"extra_sounds": [
+			"sound/items/bsmith1.ogg",
+			"sound/items/bsmith2.ogg",
+			"sound/items/bsmith3.ogg",
+			"sound/items/bsmith4.ogg",
+			"sound/items/bsmithfail.ogg",
+			"sound/misc/smelter_sound.ogg",
+			"sound/misc/smelter_fin.ogg",
+			"sound/items/quench_barrel1.ogg",
+			"sound/items/quench_barrel2.ogg",
+			"sound/foley/grindblade.ogg",
+			"sound/misc/slide_wood (1).ogg",
+			"sound/misc/slide_wood (2).ogg",
+			"sound/combat/hits/onwood/destroyfurniture.ogg",
+			"sound/foley/sewflesh.ogg",
+			"sound/foley/cloth_rip.ogg",
+			"sound/items/book_open.ogg",
+			"sound/items/book_page.ogg",
+			"sound/items/gem.ogg",
+			"sound/foley/woodclimb.ogg",
+			"sound/misc/levelup1.ogg",
+			"sound/misc/levelup2.ogg",
+			"sound/misc/levelup3.ogg",
+			"sound/foley/coins1.ogg",
+			"sound/foley/coinphy (1).ogg",
+			"sound/foley/coinphy (2).ogg",
+			"sound/misc/machinevomit.ogg",
+			"sound/misc/coininsert.ogg",
+			"sound/misc/coindispense.ogg",
+			"sound/misc/hiss.ogg",
+			"sound/misc/beep.ogg",
+			"sound/misc/machineyes.ogg",
+			"sound/misc/machineno.ogg",
+			"sound/misc/machinetalk.ogg",
+			"sound/misc/gold_misc.ogg",
+			"sound/misc/gold_menu.ogg",
+			"sound/misc/keyboard_enter.ogg",
+			"sound/misc/disposalflush.ogg",
+			"sound/misc/royal_decree.ogg",
+			"sound/misc/royal_decree2.ogg",
 			"sound/combat/shove.ogg",
 			"sound/items/firelight.ogg",
 			"sound/items/firesnuff.ogg",
@@ -1263,8 +1318,95 @@
 			"repair_cost_first",
 			"repair_cost_second",
 			"item_chair",
-			"spawned"
+			"spawned",
+			"smeltresult"
 		],
+		"anvil_recipes": {
+			"root": "/datum/anvil_recipe",
+			"file": "modular_redtard/crafting/ported/anvil_recipes.dm",
+			"default_skill": "/datum/attribute/skill/craft/blacksmithing"
+		},
+		"trade": {
+			"supply_packs": {
+				"root": "/datum/supply_pack/rogue",
+				"rename": "/datum/rogue_supply_pack",
+				"file": "modular_redtard/economy/ported/supply_packs.dm",
+				"groups": [
+					"Adventuring Supplies",
+					"Alcohols",
+					"Apparel",
+					"Armor (Bronze)",
+					"Armor (Exotic)",
+					"Armor (Iron)",
+					"Armor (Light)",
+					"Armor (Steel)",
+					"Beverages",
+					"Consumable",
+					"Cosmetics",
+					"Diplomacy and Persuasion",
+					"Exotic Import",
+					"Food",
+					"Games",
+					"Gems",
+					"General Labour",
+					"Health and Hygiene",
+					"Instruments",
+					"Livestock",
+					"Luxury",
+					"Magic",
+					"Perfumes",
+					"Potions",
+					"Seeds",
+					"Self Defense",
+					"Substances",
+					"Tools",
+					"Wardrobe",
+					"Weapons (Bronze)",
+					"Weapons (Foreign)",
+					"Weapons (Iron and Shields)",
+					"Weapons (Ranged)",
+					"Weapons (Steel)",
+					"Zadpacks"
+				]
+			},
+			"stockpile": {
+				"root": "/datum/roguestock/stockpile",
+				"trade_goods": "/datum/trade_good",
+				"file": "modular_redtard/economy/ported/stockpile.dm"
+			},
+			"jobs": {
+				"file": "modular_redtard/economy/ported/job_accounts.dm"
+			}
+		},
+		"food": {
+			"root": "/obj/item/reagent_containers/food/snacks",
+			"recipe_root": "/datum/food_recipe",
+			"recipe_target": "/datum/rogue_food_recipe",
+			"file": "modular_redtard/survival/ported/food.dm",
+			"always": [
+				"/obj/item/reagent_containers/food/snacks/badrecipe"
+			],
+			"defaults": {
+				"cooktime": 0,
+				"burntime": 3000,
+				"bitesize": 3,
+				"rotprocess": 0,
+				"warming": 3000,
+				"slice_bclass": "BCLASS_CUT",
+				"time_per_step": 20
+			},
+			"eat_effects": {
+				"/datum/status_effect/debuff/uncookedfood": "/datum/status_effect/rogue_food/uncooked",
+				"/datum/status_effect/debuff/burnedfood": "/datum/status_effect/rogue_food/burned",
+				"/datum/status_effect/debuff/rotfood": "/datum/status_effect/rogue_food/rotten",
+				"/datum/status_effect/debuff/badmeal": "/datum/status_effect/rogue_food/bad_meal",
+				"/datum/status_effect/buff/snackbuff": "/datum/status_effect/rogue_food_buff/snack",
+				"/datum/status_effect/buff/greatsnackbuff": "/datum/status_effect/rogue_food_buff/great_snack",
+				"/datum/status_effect/buff/mealbuff": "/datum/status_effect/rogue_food_buff/meal",
+				"/datum/status_effect/buff/greatmealbuff": "/datum/status_effect/rogue_food_buff/great_meal",
+				"/datum/status_effect/buff/sweet": "/datum/status_effect/rogue_food_buff/sweet"
+			}
+		},
 		"assets": {
 			"restricted_licenses": [
 				"icons/roguetown/clothing/licensed-infraredbaron/LICENSE.md",
@@ -1287,7 +1429,8 @@
 			"/obj/structure/sawblade_trap",
 			"/mob/living/simple_animal/hostile/rogue/mirespider_paralytic",
 			"/mob/living/simple_animal/hostile/retaliate/rogue/mirespider",
-			"/obj/item/rogueweapon/mace/oar"
+			"/obj/item/rogueweapon/mace/oar",
+			"/obj/item/natural/cured/essence"
 		],
 		"bake": {
 			"manifest": "modular_redtard/rockhill/onmob_bake.json",
@@ -1648,6 +1791,12 @@
 		],
 		"/obj/structure/gate": [
 			"gid"
+		],
+		"/obj/structure/roguemachine/vendor": [
+			"keycontrol"
+		],
+		"/obj/structure/roguemachine/atm": [
+			"location_tag"
 		],
 		"/obj/structure/winch": [
 			"gid"

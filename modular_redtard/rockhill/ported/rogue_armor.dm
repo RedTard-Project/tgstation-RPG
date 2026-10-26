@@ -32,6 +32,14 @@
 	fire = 2
 	acid = 2
 
+/datum/rogue_armor/indestructible
+	blunt = 5
+	slash = 4
+	stab = 4
+	piercing = 4
+	fire = 5
+	acid = 5
+
 /datum/rogue_armor/leather
 	blunt = 3
 	slash = 3

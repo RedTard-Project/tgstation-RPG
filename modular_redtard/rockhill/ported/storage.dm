@@ -67,7 +67,7 @@
 
 /datum/storage/rogue_grid/grid/orestore/New()
 	. = ..()
-	set_holdable(list(/obj/item/ingot, /obj/item/ingot/bronze, /obj/item/ingot/copper, /obj/item/ingot/decrepit, /obj/item/ingot/gold, /obj/item/ingot/iron, /obj/item/ingot/silver, /obj/item/ingot/steel, /obj/item/ingot/tin, /obj/item/riddleofsteel, /obj/item/roguegem, /obj/item/roguegem/amethyst, /obj/item/roguegem/blue, /obj/item/roguegem/diamond, /obj/item/roguegem/green, /obj/item/roguegem/ruby, /obj/item/roguegem/violet, /obj/item/roguegem/yellow, /obj/item/rogueore, /obj/item/rogueore/cinnabar, /obj/item/rogueore/coal, /obj/item/rogueore/copper, /obj/item/rogueore/gold, /obj/item/rogueore/iron, /obj/item/rogueore/silver, /obj/item/rogueore/tin))
+	set_holdable(list(/obj/item/ingot, /obj/item/ingot/aaslag, /obj/item/ingot/blacksteel, /obj/item/ingot/bronze, /obj/item/ingot/copper, /obj/item/ingot/decrepit, /obj/item/ingot/gilbranze, /obj/item/ingot/gold, /obj/item/ingot/iron, /obj/item/ingot/silver, /obj/item/ingot/silverblessed, /obj/item/ingot/steel, /obj/item/ingot/steelholy, /obj/item/ingot/tin, /obj/item/riddleofsteel, /obj/item/roguegem, /obj/item/roguegem/amethyst, /obj/item/roguegem/blue, /obj/item/roguegem/diamond, /obj/item/roguegem/green, /obj/item/roguegem/ruby, /obj/item/roguegem/violet, /obj/item/roguegem/yellow, /obj/item/rogueore, /obj/item/rogueore/cinnabar, /obj/item/rogueore/coal, /obj/item/rogueore/coal/charcoal, /obj/item/rogueore/copper, /obj/item/rogueore/gold, /obj/item/rogueore/iron, /obj/item/rogueore/silver, /obj/item/rogueore/tin))
 
 /datum/storage/rogue_grid/roguetown/backpack
 	screen_max_columns = 5

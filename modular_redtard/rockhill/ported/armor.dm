@@ -32,9 +32,21 @@
 	fire = 29
 	acid = 29
 
+/datum/armor/rockhill_bronze_feet
+	fire = 29
+	acid = 29
+
+/datum/armor/rockhill_bronze_hands
+	fire = 29
+	acid = 29
+
 /datum/armor/rockhill_bucket
 	fire = 38
 	acid = 44
+
+/datum/armor/rockhill_indestructible
+	fire = 50
+	acid = 50
 
 /datum/armor/rockhill_leather
 	fire = 44
