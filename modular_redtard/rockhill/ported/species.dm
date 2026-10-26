@@ -3,11 +3,25 @@
 		"m" = list(OFFSET_BACK = list(0, 1), OFFSET_BELT = list(0, 1), OFFSET_EARS = list(0, 1), OFFSET_FACE = list(0, 1), OFFSET_FACEMASK = list(0, 1), OFFSET_GLASSES = list(0, 1), OFFSET_GLOVES = list(0, 1), OFFSET_HEAD = list(0, 1), OFFSET_HELD = list(0, 1), OFFSET_NECK = list(0, 1), OFFSET_SUIT = list(0, 1), OFFSET_S_STORE = list(0, 1), ROGUE_OFFSET_CLOAK = list(0, 1), ROGUE_OFFSET_MOUTH = list(0, 1), ROGUE_OFFSET_RING = list(0, 1), ROGUE_OFFSET_SHIRT = list(0, 1), ROGUE_OFFSET_WRISTS = list(0, 1)),
 		"f" = list(OFFSET_BACK = list(0, 1), OFFSET_BELT = list(0, 1), OFFSET_EARS = list(0, 1), OFFSET_FACE = list(0, 1), OFFSET_FACEMASK = list(0, 1), OFFSET_GLASSES = list(0, 1), OFFSET_GLOVES = list(0, 1), OFFSET_HEAD = list(0, 1), OFFSET_HELD = list(0, 1), OFFSET_NECK = list(0, 1), OFFSET_SUIT = list(0, 1), OFFSET_S_STORE = list(0, 1), OFFSET_UNIFORM = list(0, 1), ROGUE_OFFSET_CLOAK = list(0, 1), ROGUE_OFFSET_MOUTH = list(0, 1), ROGUE_OFFSET_RING = list(0, 1), ROGUE_OFFSET_SHIRT = list(0, 1), ROGUE_OFFSET_WRISTS = list(0, 1)),
 		)
+	rogue_race_sheet = /datum/attribute_holder/sheet/rockhill_race/rogue_orc
+	rogue_worn_sex = "m"
+	rogue_description = "This is made for events. You shouldn't be able to use this as a normal person, For courtesies sake however, I've tried to half-assedly balance it for use by players (+1 Strength, +1 Constitution, -1 Intelligence, -1 Speed)"
+	rogue_lore = list(
+		"This is made for events. You shouldn't be able to use this as a normal person, For courtesies sake however, I've tried to half-assedly balance it for use by players (+1 Strength, +1 Constitution, -1 Intelligence, -1 Speed)",
+		)
 
 /datum/species/rogue_drow
 	rogue_offsets = list(
 		"m" = list(OFFSET_GLOVES = list(0, 1), OFFSET_SUIT = list(0, 1), OFFSET_S_STORE = list(0, 1), ROGUE_OFFSET_CLOAK = list(0, 1), ROGUE_OFFSET_SHIRT = list(0, 1), ROGUE_OFFSET_WRISTS = list(0, 1)),
 		"f" = list(OFFSET_BACK = list(0, -1), OFFSET_BELT = list(0, -1), OFFSET_EARS = list(0, -1), OFFSET_FACE = list(0, -1), OFFSET_FACEMASK = list(0, -1), OFFSET_GLASSES = list(0, -1), OFFSET_HEAD = list(0, -1), OFFSET_NECK = list(0, -1), ROGUE_OFFSET_MOUTH = list(0, -1), ROGUE_OFFSET_RING = list(0, -1)),
+		)
+	rogue_race_sheet = /datum/attribute_holder/sheet/rockhill_race/rogue_drow
+	rogue_race_traits = list(TRAIT_WEBWALK, TRAIT_DARKVISION)
+	rogue_worn_sex = "f"
+	rogue_description = "\"Elf\" is a catch-all term used for tall, pointy-eared humanoids who can trace their heritage to the ancient and mysterious Snow Elves. This species of elf, less frequently seen, are also referred to by some as \"drow,\" and have several key differences that set them apart from their more well-known and surface-dwelling kin. Chief among these differences are their dark complexions and origins from the Underdark; a massive subterranean landscape made up of a vast network of interconnected caves, caverns and tunnels. In this world hidden deep beneath the soil are several dark elven cities who exist and function far from the reaches of the rest of the surface-dwelling societies. These are a large part of what has earned the dark elves their notoriety, for in these cities the worship of the ascendant pantheon is normalized, and their cruel and bloodthirsty culture reflects this. It was rare to see dark elves outside of their underground homes, but in recent years, more and more of them have fled to the surface. The reasons for each dark elf fleeing the Underdark vary depending on the individual, such as a kinder heart fleeing from a brutal society that scorns them for their less cruel nature. However, not every dark elf seen on the surface can be safely assumed as kind, for some leave the Underdark simply to find their own greater heights of power. (+1 Intellect, +1 Perception, Webwalker and Dark Vision Traits)"
+	rogue_lore = list(
+		"\"Elf\" is a catch-all term used for tall, pointy-eared humanoids who can trace their heritage to the ancient and mysterious Snow Elves. This species of elf, less frequently seen, are also referred to by some as \"drow,\" and have several key differences that set them apart from their more well-known and surface-dwelling kin. Chief among these differences are their dark complexions and origins from the Underdark; a massive subterranean landscape made up of a vast network of interconnected caves, caverns and tunnels. In this world hidden deep beneath the soil are several dark elven cities who exist and function far from the reaches of the rest of the surface-dwelling societies. These are a large part of what has earned the dark elves their notoriety, for in these cities the worship of the ascendant pantheon is normalized, and their cruel and bloodthirsty culture reflects this. It was rare to see dark elves outside of their underground homes, but in recent years, more and more of them have fled to the surface. The reasons for each dark elf fleeing the Underdark vary depending on the individual, such as a kinder heart fleeing from a brutal society that scorns them for their less cruel nature. However, not every dark elf seen on the surface can be safely assumed as kind, for some leave the Underdark simply to find their own greater heights of power.",
+		"(+1 Intellect, +1 Perception, Webwalker and Dark Vision Traits)",
 		)
 
 /datum/species/rogue_goblin
@@ -15,29 +29,67 @@
 		"m" = list(OFFSET_HELD = list(0, -4)),
 		"f" = list(OFFSET_HELD = list(0, -4)),
 		)
+	rogue_race_traits = list(TRAIT_RESISTCOLD, TRAIT_RESISTHIGHPRESSURE, TRAIT_RESISTLOWPRESSURE, TRAIT_RADIMMUNE, TRAIT_CRITICAL_WEAKNESS, TRAIT_NASTY_EATER, TRAIT_LEECHIMMUNE)
 
 /datum/species/rogue_goblin/cave
 	rogue_offsets = list(
 		"m" = list(OFFSET_HELD = list(0, -4)),
 		"f" = list(OFFSET_HELD = list(0, -4)),
 		)
+	rogue_race_traits = list(TRAIT_RESISTCOLD, TRAIT_RESISTHIGHPRESSURE, TRAIT_RESISTLOWPRESSURE, TRAIT_RADIMMUNE, TRAIT_CRITICAL_WEAKNESS, TRAIT_NASTY_EATER, TRAIT_LEECHIMMUNE)
 
 /datum/species/rogue_goblin/hell
 	rogue_offsets = list(
 		"m" = list(OFFSET_HELD = list(0, -4)),
 		"f" = list(OFFSET_HELD = list(0, -4)),
 		)
+	rogue_race_traits = list(TRAIT_RESISTCOLD, TRAIT_RESISTHIGHPRESSURE, TRAIT_RESISTLOWPRESSURE, TRAIT_RADIMMUNE, TRAIT_CRITICAL_WEAKNESS, TRAIT_NASTY_EATER, TRAIT_LEECHIMMUNE)
 
 /datum/species/rogue_goblin/sea
 	rogue_offsets = list(
 		"m" = list(OFFSET_HELD = list(0, -4)),
 		"f" = list(OFFSET_HELD = list(0, -4)),
 		)
+	rogue_race_traits = list(TRAIT_RESISTCOLD, TRAIT_RESISTHIGHPRESSURE, TRAIT_RESISTLOWPRESSURE, TRAIT_RADIMMUNE, TRAIT_CRITICAL_WEAKNESS, TRAIT_NASTY_EATER, TRAIT_LEECHIMMUNE)
 
 /datum/species/rogue_goblin/moon
 	rogue_offsets = list(
 		"m" = list(OFFSET_HELD = list(0, -4)),
 		"f" = list(OFFSET_HELD = list(0, -4)),
+		)
+	rogue_race_traits = list(TRAIT_RESISTCOLD, TRAIT_RESISTHIGHPRESSURE, TRAIT_RESISTLOWPRESSURE, TRAIT_RADIMMUNE, TRAIT_CRITICAL_WEAKNESS, TRAIT_NASTY_EATER, TRAIT_LEECHIMMUNE)
+
+/datum/species/rogue_goblinp
+	rogue_offsets = list(
+		"m" = list(OFFSET_BACK = list(0, -4), OFFSET_BELT = list(0, -4), OFFSET_EARS = list(0, -4), OFFSET_FACE = list(0, -5), OFFSET_FACEMASK = list(0, -5), OFFSET_GLASSES = list(0, -5), OFFSET_GLOVES = list(0, -4), OFFSET_HEAD = list(0, -4), OFFSET_HELD = list(0, -3), OFFSET_NECK = list(0, -4), ROGUE_OFFSET_MOUTH = list(0, -4), ROGUE_OFFSET_RING = list(0, -4), ROGUE_OFFSET_WRISTS = list(0, -4)),
+		"f" = list(OFFSET_BACK = list(0, -5), OFFSET_BELT = list(0, -4), OFFSET_EARS = list(0, -5), OFFSET_FACE = list(0, -5), OFFSET_FACEMASK = list(0, -5), OFFSET_GLASSES = list(0, -5), OFFSET_GLOVES = list(0, -4), OFFSET_HEAD = list(0, -5), OFFSET_HELD = list(0, -4), OFFSET_NECK = list(0, -5), ROGUE_OFFSET_MOUTH = list(0, -5), ROGUE_OFFSET_RING = list(0, -5), ROGUE_OFFSET_WRISTS = list(0, -4)),
+		)
+	rogue_race_sheet = /datum/attribute_holder/sheet/rockhill_race/rogue_goblinp
+	rogue_race_traits = list(TRAIT_DARKVISION)
+	rogue_worn_sex = "f"
+	rogue_description = "A clever and stubborn nature are two charitable qualities of a goblin - scheming and selfish are less so. The Fell Gods use them as an avatar of malice, sending out mindless, enthralled waves of the creatures to attack civilization from lunar portals. It leaves the typical goblinoid to cloister in their hidden away tribes, stealing from the scraps out of fear of reprisal while shooing away outsiders. The cities of Man typically shun them, but it's not unheard of to see one pushing their luck in a town square or out on a well-traveled road, as even the most backwater peasant can tell the difference between a sapient one and portal-spawn. Usually. (+1 Speed, Dark Vision Trait)"
+	rogue_lore = list(
+		"A clever and stubborn nature are two charitable qualities of a goblin - scheming and selfish are less so. The Fell Gods use them as an avatar of malice, sending out mindless, enthralled waves of the creatures to attack civilization from lunar portals. It leaves the typical goblinoid to cloister in their hidden away tribes, stealing from the scraps out of fear of reprisal while shooing away outsiders. The cities of Man typically shun them, but it's not unheard of to see one pushing their luck in a town square or out on a well-traveled road, as even the most backwater peasant can tell the difference between a sapient one and portal-spawn. Usually.",
+		"(+1 Speed, Dark Vision Trait)",
+		)
+
+/datum/attribute_holder/sheet/rockhill_race/rogue_orc
+	raw_attribute_list = list(
+		ROGUE_STAT_CONSTITUTION = 1,
+		ROGUE_STAT_INTELLIGENCE = -1,
+		ROGUE_STAT_SPEED = -1,
+		ROGUE_STAT_STRENGTH = 1,
+		)
+
+/datum/attribute_holder/sheet/rockhill_race/rogue_drow
+	raw_attribute_list = list(
+		ROGUE_STAT_INTELLIGENCE = 1,
+		ROGUE_STAT_PERCEPTION = 1,
+		)
+
+/datum/attribute_holder/sheet/rockhill_race/rogue_goblinp
+	raw_attribute_list = list(
+		ROGUE_STAT_SPEED = 1,
 		)
 
 /obj/item/clothing/head/roguetown/helmet/goblin

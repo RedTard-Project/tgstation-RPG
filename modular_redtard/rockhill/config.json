@@ -1403,6 +1403,10 @@
 				"rogue_drow": {
 					"m": "icons/roguetown/mob/bodies/m/mem.dmi",
 					"f": "icons/roguetown/mob/bodies/f/fm.dmi"
+				},
+				"rogue_goblinp": {
+					"m": "icons/mob/species/anthro_small_male.dmi",
+					"f": "icons/roguetown/mob/bodies/f/fd.dmi"
 				}
 			},
 			"zones": [
@@ -1460,6 +1464,14 @@
 						"ADJ",
 						"FRONT"
 					]
+				],
+				"rogue_ears_goblin": [
+					"icons/mob/sprite_accessory/halforc.dmi",
+					"goblin",
+					[
+						"ADJ",
+						"FRONT"
+					]
 				]
 			},
 			"species_map": {
@@ -1469,7 +1481,8 @@
 				"/datum/species/goblin/cave": "/datum/species/rogue_goblin/cave",
 				"/datum/species/goblin/hell": "/datum/species/rogue_goblin/hell",
 				"/datum/species/goblin/sea": "/datum/species/rogue_goblin/sea",
-				"/datum/species/goblin/moon": "/datum/species/rogue_goblin/moon"
+				"/datum/species/goblin/moon": "/datum/species/rogue_goblin/moon",
+				"/datum/species/goblinp": "/datum/species/rogue_goblinp"
 			},
 			"offset_keys": {
 				"OFFSET_ID": [
@@ -1520,7 +1533,8 @@
 				"OFFSET_HANDS": [
 					"OFFSET_HELD"
 				]
-			}
+			},
+			"race_sheet_root": "/datum/attribute_holder/sheet/rockhill_race"
 		}
 	},
 	"jobs": {

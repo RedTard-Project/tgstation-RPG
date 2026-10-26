@@ -8,7 +8,7 @@
 	for(var/side in list("r", "l"))
 		var/zone = legs ? (side == "r" ? BODY_ZONE_R_LEG : BODY_ZONE_L_LEG) : (side == "r" ? BODY_ZONE_R_ARM : BODY_ZONE_L_ARM)
 		var/state = "[side]_[worn.icon_state]"
-		if(physique == FEMALE && icon_exists(worn.rogue_sleeved, "[state][ROGUE_FEMALE_SUFFIX]"))
+		if(rogue_wears_female() && icon_exists(worn.rogue_sleeved, "[state][ROGUE_FEMALE_SUFFIX]"))
 			state += ROGUE_FEMALE_SUFFIX
 		if((!whole && !get_bodypart(zone)) || !icon_exists(worn.rogue_sleeved, state))
 			continue

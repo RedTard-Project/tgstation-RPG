@@ -13,11 +13,75 @@
 	var/rogue_default_skin
 	/// Which goblin's sprite the goblin body parts draw (Ratwood raceicon).
 	var/rogue_goblin_kind
+	/// Players pick it on medieval maps (Ratwood's playable races).
+	var/rogue_playable = FALSE
+	/// Ratwood's race_bonus as an attribute sheet (rockhill/ported/species.dm).
+	var/rogue_race_sheet
+	/// Ratwood's inherent_traits of the race.
+	var/list/rogue_race_traits
+	/// Whose clothes the race wears, "m" or "f" (Ratwood use_m: the women wear the men's, use_f: the men the women's).
+	var/rogue_worn_sex
+	/// Ratwood's desc of the race, without its markup: the description and, by paragraph, the lore of the preferences.
+	var/rogue_description
+	var/list/rogue_lore
 
 /datum/species/on_species_gain(mob/living/carbon/human/human_who_gained_species, datum/species/old_species, pref_load, regenerate_icons = TRUE, replace_missing = TRUE)
 	if(rogue_default_skin && !pref_load)
 		human_who_gained_species.dna.features[FEATURE_MUTANT_COLOR] = rogue_default_skin
+	. = ..()
+	for(var/trait in rogue_race_traits)
+		ADD_TRAIT(human_who_gained_species, trait, SPECIES_TRAIT)
+	human_who_gained_species.rogue_update_race_sheet()
+
+/datum/species/on_species_loss(mob/living/carbon/human/human, datum/species/new_species, pref_load)
+	for(var/trait in rogue_race_traits)
+		REMOVE_TRAIT(human, trait, SPECIES_TRAIT)
 	return ..()
+
+/// Ratwood's playable races are picked by players on medieval maps, beside what the config allows.
+/datum/species/check_roundstart_eligible()
+	if(rogue_playable && rogue_combat_enabled())
+		return TRUE
+	return ..()
+
+/// The race's stat bonuses on its page of the preferences.
+/datum/species/create_pref_unique_perks()
+	. = ..()
+	if(!rogue_race_sheet)
+		return
+	if(!GLOB.rogue_attribute_sheets[rogue_race_sheet])
+		GLOB.rogue_attribute_sheets[rogue_race_sheet] = new rogue_race_sheet
+	var/datum/attribute_holder/sheet/sheet = GLOB.rogue_attribute_sheets[rogue_race_sheet]
+	for(var/datum/attribute/stat as anything in sheet.raw_attribute_list)
+		var/amount = sheet.raw_attribute_list[stat]
+		if(!amount)
+			continue
+		LAZYADD(., list(list(
+			SPECIES_PERK_TYPE = amount > 0 ? SPECIES_POSITIVE_PERK : SPECIES_NEGATIVE_PERK,
+			SPECIES_PERK_ICON = amount > 0 ? FA_ICON_ARROW_UP : FA_ICON_ARROW_DOWN,
+			SPECIES_PERK_NAME = "[initial(stat.name)] [amount > 0 ? "+" : ""][amount]",
+			SPECIES_PERK_DESC = "Ratwood's racial bonus to [lowertext(initial(stat.name))].",
+		)))
+
+/mob/living/carbon/human
+	/// The race sheet of attributes this body has now (it moves with the species).
+	var/rogue_race_sheet
+
+/mob/living/carbon/human/Initialize(mapload)
+	. = ..()
+	rogue_update_race_sheet()
+
+/// Swaps the race's stat bonuses for the current species'; before the attributes exist (species set early in
+/// Initialize) it waits for them. Ratwood's NPCs go without: their outfits set the stats outright (H.STASTR = 16).
+/mob/living/carbon/human/proc/rogue_update_race_sheet()
+	var/wanted = rogue_npc ? null : dna?.species?.rogue_race_sheet
+	if(wanted == rogue_race_sheet || !istype(attributes, /datum/attribute_holder))
+		return
+	if(rogue_race_sheet)
+		attributes.subtract_sheet(rogue_race_sheet)
+	rogue_race_sheet = wanted
+	if(wanted)
+		attributes.add_sheet(wanted)
 
 /datum/species/rogue_orc
 	name = "Orc"
@@ -27,6 +91,7 @@
 	)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
 	rogue_default_skin = "#50715C"
+	rogue_playable = TRUE
 	bodypart_overrides = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/rogue_orc,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/rogue_orc,
@@ -36,6 +101,12 @@
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/rogue_orc,
 	)
 
+/datum/species/rogue_orc/get_species_description()
+	return rogue_description
+
+/datum/species/rogue_orc/get_species_lore()
+	return rogue_lore
+
 /datum/species/rogue_drow
 	name = "Dark Elf"
 	id = "rogue_drow"
@@ -44,6 +115,7 @@
 	)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
 	rogue_default_skin = "#5F5F70"
+	rogue_playable = TRUE
 	bodypart_overrides = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/rogue_drow,
 		BODY_ZONE_CHEST = /obj/item/bodypart/chest/rogue_drow,
@@ -52,6 +124,39 @@
 		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/rogue_drow,
 		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/rogue_drow,
 	)
+
+/datum/species/rogue_drow/get_species_description()
+	return rogue_description
+
+/datum/species/rogue_drow/get_species_lore()
+	return rogue_lore
+
+/// Ratwood's playable goblin (goblinp): a small body (anthro_small_male, the woman's fd) wearing the women's clothes
+/// lower down, goblin ears, no underwear drawn (TG's would not fit the small body).
+/datum/species/rogue_goblinp
+	name = "Goblin"
+	id = "rogue_goblinp"
+	inherent_traits = list(
+		TRAIT_MUTANT_COLORS,
+		TRAIT_NO_UNDERWEAR,
+	)
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
+	rogue_default_skin = "#4C6835"
+	rogue_playable = TRUE
+	bodypart_overrides = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/rogue_goblinp,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/rogue_goblinp,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/rogue_goblinp,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/rogue_goblinp,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/rogue_goblinp,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/rogue_goblinp,
+	)
+
+/datum/species/rogue_goblinp/get_species_description()
+	return rogue_description
+
+/datum/species/rogue_goblinp/get_species_lore()
+	return rogue_lore
 
 /// Ratwood's goblin: one sprite for the whole body, no hair, eyes or underwear drawn, a male voice and build only, and
 /// no shirt, trousers, mask, gloves or shoes (no_equip); worn armor and helmets show as the goblin's own.
@@ -223,6 +328,10 @@ GLOBAL_LIST_INIT(rogue_offset_parts, list(
 	icon_state = "rogue_ears_elf"
 	skin_coloured = TRUE
 
+/datum/bodypart_overlay/simple/rogue_feature/goblin_ears
+	icon_state = "rogue_ears_goblin"
+	skin_coloured = TRUE
+
 // The orc: Ratwood's muscular body (mt_muscular/ft_muscular, the woman wears the man's, use_m), half-orc ears and tusks.
 
 /obj/item/bodypart/head/rogue_orc
@@ -334,6 +443,62 @@ GLOBAL_LIST_INIT(rogue_offset_parts, list(
 	icon_greyscale = ROGUE_BODIES_ICON
 	icon_state = "rogue_drow_r_leg_m"
 	limb_id = "rogue_drow"
+	is_dimorphic = TRUE
+
+// The playable goblin: Ratwood's small body (anthro_small_male, the woman's fd) and goblin ears.
+
+/obj/item/bodypart/head/rogue_goblinp
+	icon = ROGUE_BODIES_ICON
+	icon_static = ROGUE_BODIES_ICON
+	icon_greyscale = ROGUE_BODIES_ICON
+	icon_state = "rogue_goblinp_head_m"
+	limb_id = "rogue_goblinp"
+	is_dimorphic = TRUE
+
+/obj/item/bodypart/head/rogue_goblinp/Initialize(mapload)
+	. = ..()
+	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/goblin_ears, update = FALSE)
+
+/obj/item/bodypart/chest/rogue_goblinp
+	icon = ROGUE_BODIES_ICON
+	icon_static = ROGUE_BODIES_ICON
+	icon_greyscale = ROGUE_BODIES_ICON
+	icon_state = "rogue_goblinp_chest_m"
+	limb_id = "rogue_goblinp"
+	is_dimorphic = TRUE
+
+/obj/item/bodypart/arm/left/rogue_goblinp
+	icon = ROGUE_BODIES_ICON
+	icon_static = ROGUE_BODIES_ICON
+	icon_greyscale = ROGUE_BODIES_ICON
+	icon_state = "rogue_goblinp_l_arm_m"
+	limb_id = "rogue_goblinp"
+	is_dimorphic = TRUE
+	rogue_sexed_hand = TRUE
+
+/obj/item/bodypart/arm/right/rogue_goblinp
+	icon = ROGUE_BODIES_ICON
+	icon_static = ROGUE_BODIES_ICON
+	icon_greyscale = ROGUE_BODIES_ICON
+	icon_state = "rogue_goblinp_r_arm_m"
+	limb_id = "rogue_goblinp"
+	is_dimorphic = TRUE
+	rogue_sexed_hand = TRUE
+
+/obj/item/bodypart/leg/left/rogue_goblinp
+	icon = ROGUE_BODIES_ICON
+	icon_static = ROGUE_BODIES_ICON
+	icon_greyscale = ROGUE_BODIES_ICON
+	icon_state = "rogue_goblinp_l_leg_m"
+	limb_id = "rogue_goblinp"
+	is_dimorphic = TRUE
+
+/obj/item/bodypart/leg/right/rogue_goblinp
+	icon = ROGUE_BODIES_ICON
+	icon_static = ROGUE_BODIES_ICON
+	icon_greyscale = ROGUE_BODIES_ICON
+	icon_state = "rogue_goblinp_r_leg_m"
+	limb_id = "rogue_goblinp"
 	is_dimorphic = TRUE
 
 // The goblin: the chest draws the whole body of the goblin's kind (headless once the head is off, as Ratwood's _decap),

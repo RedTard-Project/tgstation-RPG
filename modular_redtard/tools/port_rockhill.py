@@ -981,6 +981,8 @@ def main():
     generate_mapgen(mapgen, rules, declared | generated, tg_names)
     npcs = [p for p in npcs if p in generated]
     role_traits = npc_trait_names(rw, npcs, cfg['attributes'])
+    for species in cfg['port']['bodies']['species_map']:
+        role_traits |= set(re.findall(r'TRAIT_[A-Z0-9_]+', rw.resolve(species, 'inherent_traits') or ''))
     for job in jobs:
         dressed = role_outfits.get(job, {})
         role_traits |= set(role_attributes(rw, job, dressed.get('advclass'), dressed.get('source'), cfg['attributes'])['traits'])
@@ -991,7 +993,7 @@ def main():
     role_attrs = generate_attribute_sheets(cfg, rw, jobs, role_outfits, known_traits)
     role_outfit_paths = generate_jobs(cfg, rw, usage, role_outfits, declared | generated, station_usage, role_attrs)
     generate_advclasses(cfg, rw, class_jobs, class_outfits, declared | generated, known_traits)
-    hair_names = generate_bodies(cfg, rw, declared | generated, npcs)
+    hair_names = generate_bodies(cfg, rw, declared | generated, npcs, known_traits)
     generate_npcs(cfg, rw, rules, npcs, declared | generated, known_traits, role_outfit_paths, hair_names)
 
 
@@ -3362,7 +3364,7 @@ def over(base, top):
     return bytes(out)
 
 
-def generate_bodies(cfg, rw, valid, npcs):
+def generate_bodies(cfg, rw, valid, npcs, known_traits):
     """Ratwood bodies as TG body parts (rockhill/species.dm): the per-zone body sheets of the orc and the dark elf for both
     sexes (TG's dimorphic state <body>_<zone>_<m|f>, each leg with its "_above" part drawn over it), the goblins'
     whole-body sprites (rogue_goblin_<zone>: the body on the chest, the other parts empty; per kind <kind>_chest,
@@ -3431,7 +3433,10 @@ def generate_bodies(cfg, rw, valid, npcs):
     dmi.write_states(spec['file'], 32, 32, states)
 
     blocks = []
+    race_sheets = []
+    attr_cfg = cfg['attributes']
     for species, target in spec['species_map'].items():
+        block = [target]
         offsets = ratwood_offsets(rw, species, spec['offset_keys'])
         lines = []
         for sex in ('m', 'f'):
@@ -3439,7 +3444,33 @@ def generate_bodies(cfg, rw, valid, npcs):
             if entries:
                 lines.append(f'\t\t"{sex}" = list(' + ', '.join(entries) + '),')
         if lines:
-            blocks.append([target, '\trogue_offsets = list('] + lines + ['\t\t)'])
+            block += ['\trogue_offsets = list('] + lines + ['\t\t)']
+        bonus = collections.Counter()
+        for token, amount in re.findall(r'\b(STAT_[A-Z]+)\s*=\s*(-?\d+)', rw.resolve(species, 'race_bonus') or ''):
+            stat = attr_cfg['stats'].get(expand_define(token).strip('"'))
+            if stat:
+                bonus[stat] += int(amount)
+        if any(bonus.values()):
+            sheet = spec['race_sheet_root'] + target[len('/datum/species'):]
+            race_sheets.append([sheet, '\traw_attribute_list = list('] + [f'\t\t{stat} = {amount},' for stat, amount in sorted(bonus.items()) if amount] + ['\t\t)'])
+            block.append(f'\trogue_race_sheet = {sheet}')
+        traits = [t for t in dict.fromkeys(re.findall(r'TRAIT_[A-Z0-9_]+', rw.resolve(species, 'inherent_traits') or '')) if t in known_traits]
+        if traits:
+            block.append(f"\trogue_race_traits = list({', '.join(traits)})")
+        for var, sex in (('use_f', 'f'), ('use_m', 'm')):
+            if (rw.resolve(species, var) or '').strip() in ('1', 'TRUE'):
+                block.append(f'\trogue_worn_sex = "{sex}"')
+        desc = string_value(rw.resolve(species, 'desc'))
+        if desc:
+            paragraphs = [re.sub(r'<[^>]+>', '', part).strip() for part in re.split(r'<br\s*/?>', desc[1:-1])]
+            paragraphs = [p for p in paragraphs if p]
+            if len(paragraphs) > 1:
+                paragraphs = paragraphs[1:]
+            block.append(f'\trogue_description = "{" ".join(paragraphs)}"')
+            block += ['\trogue_lore = list('] + [f'\t\t"{p}",' for p in paragraphs] + ['\t\t)']
+        if len(block) > 1:
+            blocks.append(block)
+    blocks += race_sheets
     for path in sorted(p for p in valid if p.startswith('/obj/item/') and p in rw.types):
         state = (string_value(rw.resolve(path, 'item_state')) or '""').strip('"')
         if state in goblin['worn']:

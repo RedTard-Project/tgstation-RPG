@@ -17,7 +17,10 @@
 		return mutable_appearance(layer = -default_layer)
 	var/plain_state = override_state || worn_icon_state || icon_state
 	var/file = override_file || worn_icon || default_icon_file
-	if(rogue_female_worn && rogue_worn_by_female())
+	var/wears_female = rogue_worn_by_female()
+	if(!wears_female)
+		female_uniform = NO_FEMALE_UNIFORM
+	if(rogue_female_worn && wears_female)
 		var/state = "[plain_state][ROGUE_FEMALE_SUFFIX]"
 		if(icon_exists(file, state))
 			override_state = state
@@ -27,7 +30,12 @@
 
 /obj/item/proc/rogue_worn_by_female()
 	var/mob/living/carbon/human/wearer = loc
-	return istype(wearer) && wearer.physique == FEMALE
+	return istype(wearer) && wearer.rogue_wears_female()
+
+/// Whether the body wears women's clothes: its sex, unless its race wears the other's (Ratwood use_m, use_f).
+/mob/living/carbon/human/proc/rogue_wears_female()
+	var/forced = dna?.species?.rogue_worn_sex
+	return forced ? forced == "f" : physique == FEMALE
 
 /// The baked held state for the current sprite: the alternate grip's or the wielded one when the sheet has it. A sprite
 /// the bake never saw (a state set at runtime) falls back to the one it was baked from.
