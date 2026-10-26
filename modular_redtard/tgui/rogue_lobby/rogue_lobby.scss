@@ -30,6 +30,17 @@
     font-size: s(14px);
     text-align: center;
     animation: rogue-lobby-fade-in 5s;
+
+    // Written out stroke by stroke instead of fading in.
+    &--handwritten {
+      font-size: s(18px);
+      animation: none;
+    }
+  }
+
+  // Holds the welcome's place while its font loads.
+  &__welcome-space {
+    height: s(20px);
   }
 
   &__line {

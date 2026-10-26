@@ -1012,15 +1012,20 @@
 					"rogue_mob_stats",
 					"rogue_mob_intents",
 					"rogue_aggressive",
-					"rogue_retreat_health"
+					"rogue_retreat_health",
+					"rogue_food_types"
 				],
 				"rename": {
 					"rogue_defprob": "defprob",
 					"rogue_can_dodge": "mob_can_dodge",
 					"rogue_mob_intents": "base_intents",
 					"rogue_aggressive": "aggressive",
-					"rogue_retreat_health": "retreat_health"
+					"rogue_retreat_health": "retreat_health",
+					"rogue_food_types": "food_type"
 				},
+				"path_lists": [
+					"rogue_food_types"
+				],
 				"numeric_vars": [
 					"melee_damage_lower",
 					"melee_damage_upper",
@@ -1535,6 +1540,41 @@
 				]
 			},
 			"race_sheet_root": "/datum/attribute_holder/sheet/rockhill_race"
+		},
+		"races": {
+			"dm_file": "races.dm",
+			"language_icon": "modular_redtard/rockhill/icons/languages.dmi",
+			"language_icon_source": "icons/misc/language.dmi",
+			"languages": {
+				"/datum/language/common": "/datum/language/common",
+				"/datum/language/orcish": {"type": "/datum/language/rogue_orcish", "key": "r"},
+				"/datum/language/elvish": {"type": "/datum/language/rogue_elvish", "key": "e"}
+			},
+			"species_languages": {
+				"/datum/species/goblin": ["/datum/language/common", "/datum/language/orcish"]
+			},
+			"generic_voicepacks": ["/datum/voicepack/male", "/datum/voicepack/female"],
+			"species_voices": {
+				"/datum/species/goblin": {"m": "/datum/voicepack/other/goblin", "f": "/datum/voicepack/other/goblin"}
+			},
+			"emote_keys": {
+				"deathgurgle": "deathgasp"
+			},
+			"eyes": {
+				"/obj/item/organ/eyes/goblin": "/obj/item/organ/eyes/rogue_goblin",
+				"/obj/item/organ/eyes/night_vision/wild_goblin": "/obj/item/organ/eyes/night_vision/rogue_wild_goblin"
+			},
+			"night_vision_steps": ["LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE", "LIGHTING_PLANE_ALPHA_INVISIBLE"],
+			"tongue_root": "/obj/item/organ/tongue/rogue_race",
+			"vocal_emote_root": "/datum/emote/living/rogue_vocal"
+		},
+		"migrants": {
+			"dm_file": "migrants.dm",
+			"wave_root": "/datum/rogue_migrant_wave",
+			"role_root": "/datum/rogue_migrant_role",
+			"outfit_root": "/datum/outfit/job/roguetown/rockhill_migrant",
+			"job": "/datum/job/roguetown/rockhill_migrant",
+			"skip_antagonists": true
 		}
 	},
 	"jobs": {

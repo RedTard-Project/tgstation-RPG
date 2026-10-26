@@ -104,6 +104,16 @@
 	obj_flags = CAN_BE_HIT
 	layer = BELOW_OBJ_LAYER
 
+/obj/machinery/printingpress
+	parent_type = /obj/structure/rockhill
+	name = "printing press"
+	desc = "The Archivist's wonder. Gears, ink, and wood blocks can turn the written word to the printed word."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/machines.dmi'
+	icon_state = "Ppress_Clean"
+	density = TRUE
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_OBJ_LAYER
+
 /obj/machinery/tanningrack
 	parent_type = /obj/structure/rockhill
 	name = "drying rack"
@@ -454,7 +464,29 @@
 	obj_flags = CAN_BE_HIT
 	layer = BELOW_OBJ_LAYER
 
+/obj/structure/bookcase/player_archive
+	parent_type = /obj/structure/rockhill
+	name = "bookcase (Archive)"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/bookshelf.dmi'
+	icon_state = "bookcase"
+	density = TRUE
+	opacity = 1
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_OBJ_LAYER
+
 /obj/structure/bookcase/random/archive
+	parent_type = /obj/structure/rockhill
+	name = "bookcase"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/bookshelf.dmi'
+	icon_state = "bookcase"
+	density = TRUE
+	opacity = 1
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_OBJ_LAYER
+
+/obj/structure/bookcase/random/misc
 	parent_type = /obj/structure/rockhill
 	name = "bookcase"
 	desc = ""

@@ -960,9 +960,15 @@ def main():
         if len(role_outfits[job]['subclasses']) > 1:
             for advclass in role_outfits[job]['subclasses']:
                 class_jobs[advclass].append(job)
+    migrants = select_migrants(cfg, rw)
+    for info in migrants['roles'].values():
+        for advclass in info['classes']:
+            if cfg['port']['migrants']['job'] not in class_jobs[advclass]:
+                class_jobs[advclass].append(cfg['port']['migrants']['job'])
     class_outfits = {advclass: outfit_slots(rw, rw.resolve(advclass, 'outfit')) for advclass in class_jobs}
     outfit_items = set()
-    for dressed in list(role_outfits.values()) + list(class_outfits.values()):
+    migrant_outfits = [info['outfit'] for info in migrants['roles'].values() if info['outfit']]
+    for dressed in list(role_outfits.values()) + list(class_outfits.values()) + migrant_outfits:
         outfit_items |= set(dressed['slots'].values())
         outfit_items |= {item for item, _ in dressed['contents'] or []}
     mapgen = mapgen_spec(rw, usage)
@@ -972,6 +978,9 @@ def main():
         if path.startswith('/obj/structure'):
             fill_items |= set(random_pick(rw, path))
     for path in usage:
+        if path.startswith('/mob/living'):
+            # What the beasts eat comes along, so they find it on the map (Ratwood food_type).
+            fill_items |= set(ITEM_PATH.findall(rw.resolve(path, 'food_type') or ''))
         if (replacement_for(path, rules) or {}).get('port', {}).get('fill'):
             contents, loot, _ = closet_fill(rw, path)
             fill_items |= set(contents) | {item for item, _ in loot}
@@ -993,7 +1002,9 @@ def main():
     role_attrs = generate_attribute_sheets(cfg, rw, jobs, role_outfits, known_traits)
     role_outfit_paths = generate_jobs(cfg, rw, usage, role_outfits, declared | generated, station_usage, role_attrs)
     generate_advclasses(cfg, rw, class_jobs, class_outfits, declared | generated, known_traits)
+    generate_migrants(cfg, rw, migrants, declared | generated)
     hair_names = generate_bodies(cfg, rw, declared | generated, npcs, known_traits)
+    generate_races(cfg, rw)
     generate_npcs(cfg, rw, rules, npcs, declared | generated, known_traits, role_outfit_paths, hair_names)
 
 
@@ -2835,6 +2846,9 @@ def generate_jobs(cfg, rw, usage, role_outfits, valid, station_usage, role_attrs
             block.append('\tname = JOB_ASSISTANT')
         if roles:
             block.append('\trockhill_latejoin_roles = list(' + ', '.join(f'"{role}"' for role in roles) + ')')
+        arrivals = [name.strip('"') for name in re.findall(r'"[^"]*"', rw.resolve(lm, 'jobspawn_override') or '') if name.strip('"') in MIGRANT_SPAWNS]
+        if arrivals:
+            block.append('\trockhill_migrant_spawns = list(' + ', '.join(f'"{name}"' for name in arrivals) + ')')
         marks.append(block)
     open(f'{OUT_DIR}/landmarks.dm', 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in marks) + '\n')
 
@@ -3484,6 +3498,338 @@ def generate_bodies(cfg, rw, valid, npcs, known_traits):
             shutil.copyfile(os.path.join(CHECKOUT, rel), os.path.join(NPC_NAMES_DIR, os.path.basename(rel)))
     print(f"{spec['file']}: {len(states)} states; {spec['dm_file']}: {len(blocks)} offset and gear blocks, {len(hair_blocks)} hairstyles; {len(files)} name lists")
     return hair_names
+
+
+def proc_body(owner, name):
+    """The body of a Ratwood proc the parser does not keep, read from its file: the indented lines after its header."""
+    header = re.compile(rf'^{re.escape(owner)}/(?:proc/)?{re.escape(name)}\(')
+    for path in included_files(CHECKOUT):
+        if not os.path.exists(path):
+            continue
+        lines = strip_comments(open(path, encoding='utf-8', errors='ignore').read()).split('\n')
+        for i, line in enumerate(lines):
+            if header.match(line):
+                body = []
+                for rest in lines[i + 1:]:
+                    if rest.strip() and not rest.startswith(('\t', ' ')):
+                        break
+                    body.append(rest.rstrip())
+                return body
+    return []
+
+
+def voicepack_sounds(pack):
+    """Ratwood's voicepack as {sound key: [sound files]}: the race's own sounds of its get_sound(), without the generic
+    pack it falls back to (TG's humans keep TG's voices) and without the old, young and silenced variants."""
+    sounds = {}
+    key = None
+    for line in proc_body(pack, 'get_sound'):
+        found = re.match(r'^\s*if\s*\(\s*"([^"]+)"\s*\)', line)
+        if found:
+            key = found.group(1)
+            continue
+        files = SOUND_LITERAL.findall(line)
+        if key and files:
+            sounds.setdefault(key, []).extend(files)
+    return sounds
+
+
+def tg_emote_keys():
+    keys = set()
+    for path in glob.glob('code/**/*.dm', recursive=True):
+        current = None
+        for line in open(path, encoding='utf-8', errors='ignore'):
+            if not line.startswith(('\t', ' ')):
+                current = line.strip()
+                continue
+            found = re.match(r'^\tkey = "([^"]+)"', line)
+            if found and current and current.startswith('/datum/emote'):
+                keys.add(found.group(1))
+    return keys
+
+
+def ratwood_emote(rw, key):
+    for path, values in rw.types.items():
+        if path.startswith('/datum/emote/') and values.get('key', '').strip() == f'"{key}"':
+            return path
+    return None
+
+
+def alpha_cutoff(raw):
+    """Ratwood's lighting plane alpha (255 sees nothing in the dark, 0 everything) as TG's lighting cutoff in percent."""
+    try:
+        alpha = define_number(expand_define(raw), DEFINE_VALUES)
+    except ValueError:
+        return None
+    return round((255 - alpha) * 100 / 255)
+
+
+def generate_races(cfg, rw):
+    """Ratwood's races as TG speaks, voices and sees them (ported/races.dm): their languages as TG languages and the
+    species' language holders, their voicepacks as tongues with TG's emote_sounds by sex (the sound files copied, the
+    emotes TG lacks ported as voice emotes), and their eyes as TG eyes with Ratwood's sight in the dark."""
+    spec = cfg['port']['races']
+    bodies = cfg['port']['bodies']
+    blocks = []
+    lang_icons = []
+
+    def module_language(rw_type):
+        target = spec['languages'].get(rw_type)
+        return target if isinstance(target, str) else (target or {}).get('type')
+
+    for rw_type, target in spec['languages'].items():
+        if isinstance(target, str):
+            continue
+        old_key = (string_value(rw.resolve(rw_type, 'key')) or '""').strip('"')
+        block = [target['type']]
+        for var in ('name', 'desc'):
+            value = string_value(rw.resolve(rw_type, var))
+            if value:
+                if var == 'desc' and old_key:
+                    value = value.replace(f',{old_key})', f",{target['key']})")
+                block.append(f'\t{var} = {value}')
+        block.append(f'\tkey = "{target["key"]}"')
+        for var in ('space_chance', 'default_priority'):
+            value = number_value(rw.resolve(rw_type, var))
+            if value is not None:
+                block.append(f'\t{var} = {value}')
+        syllables = re.findall(r'"((?:[^"\\]|\\.)*)"', rw.resolve(rw_type, 'syllables') or '')
+        if syllables:
+            block.append('\tsyllables = list(' + ', '.join(json.dumps(s, ensure_ascii=False) for s in syllables) + ')')
+        state = (string_value(rw.resolve(rw_type, 'icon_state')) or '""').strip('"')
+        if state:
+            lang_icons.append((state, target['type']))
+            block += [f"\ticon = '{spec['language_icon']}'", f'\ticon_state = "{state}"']
+        blocks.append(block)
+    if lang_icons:
+        source = dmi.read(os.path.join(CHECKOUT, spec['language_icon_source']))
+        cells = source.state_cells()
+        dmi.write_states(spec['language_icon'], source.frame_width, source.frame_height, [(state, 1, cells[state][2][:1]) for state, _ in lang_icons if state in cells])
+
+    tg_keys = tg_emote_keys()
+    sound_files_used = set()
+    vocal_keys = set()
+    eyes_used = {}
+    species_lines = collections.defaultdict(list)
+    seen = {}
+    def configured(table, species):
+        # A setting for a Ratwood species holds for its subtypes too, as the species' own vars would.
+        p = species
+        while p:
+            if p in table:
+                return table[p]
+            p = rw.parent(p)
+        return None
+
+    for species, target in bodies['species_map'].items():
+        leaf = target[len('/datum/species/'):].replace('/', '_')
+        languages = configured(spec['species_languages'], species) or re.findall(r'/datum/language/[A-Za-z0-9_/]+', rw.resolve(species, 'languages') or '')
+        languages = [module_language(lang) for lang in languages if module_language(lang)]
+        packs = configured(spec['species_voices'], species) or {sex: (rw.resolve(species, f'soundpack_{sex}') or '').strip() for sex in ('m', 'f')}
+        voices = {}
+        for sex, pack in packs.items():
+            if not pack.startswith('/datum/voicepack') or pack in spec['generic_voicepacks']:
+                continue
+            for key, files in voicepack_sounds(pack).items():
+                key = spec['emote_keys'].get(key, key)
+                files = [f for f in dict.fromkeys(files) if asset_allowed(f, cfg['port'].get('assets', {}))]
+                if files:
+                    voices.setdefault(key, {})['MALE' if sex == 'm' else 'FEMALE'] = files
+        eyes = re.search(r'ORGAN_SLOT_EYES\s*=\s*(/obj/item/organ/eyes[A-Za-z0-9_/]*)', rw.resolve(species, 'organs') or '')
+        eyes = spec['eyes'].get(eyes.group(1)) if eyes else None
+        signature = json.dumps([languages, voices, eyes], sort_keys=True)
+        parent = target.rsplit('/', 1)[0]
+        seen[target] = signature
+        if seen.get(parent) == signature:
+            continue
+        if languages:
+            holder = f'/datum/language_holder/{leaf}'
+            entries = ', '.join(f'{lang} = list(LANGUAGE_ATOM)' for lang in languages)
+            blocks.append([holder, f'\tunderstood_languages = list({entries})', f'\tspoken_languages = list({entries})'])
+            species_lines[target].append(f'\tspecies_language_holder = {holder}')
+        if languages or voices:
+            tongue = f"{spec['tongue_root']}/{leaf}"
+            block = [tongue]
+            extra = [lang for lang in languages if lang != '/datum/language/common']
+            if extra:
+                block.append(f"\trogue_languages = list({', '.join(extra)})")
+            if voices:
+                block.append('\temote_sounds = list(')
+                for key in sorted(voices):
+                    by_sex = ', '.join(f"{sex} = list({', '.join(repr_sound(f) for f in files)})" for sex, files in sorted(voices[key].items()))
+                    block.append(f'\t\t"{key}" = list({by_sex}),')
+                    sound_files_used |= {f for files in voices[key].values() for f in files}
+                    if key not in tg_keys:
+                        vocal_keys.add(key)
+                block.append('\t)')
+            blocks.append(block)
+            species_lines[target].append(f'\tmutanttongue = {tongue}')
+        if eyes:
+            species_lines[target].append(f'\tmutanteyes = {eyes}')
+            eyes_used[eyes] = next(rw_eyes for rw_eyes, ours in spec['eyes'].items() if ours == eyes)
+    for target, lines in species_lines.items():
+        blocks.append([target] + lines)
+
+    for ours, rw_eyes in sorted(eyes_used.items()):
+        block = [ours]
+        for var in ('name', 'desc'):
+            value = string_value(rw.resolve(rw_eyes, var))
+            if value and value != '""':
+                block.append(f'\t{var} = {value}')
+        if '/night_vision' in rw_eyes:
+            steps = [alpha_cutoff(rw.resolve(rw_eyes, 'lighting_alpha'))] + [alpha_cutoff(define) for define in spec['night_vision_steps']]
+            for var, cutoff in zip(('low_light_cutoff', 'medium_light_cutoff', 'high_light_cutoff'), steps):
+                block.append(f'\t{var} = list({cutoff}, {cutoff}, {cutoff})')
+        else:
+            cutoff = alpha_cutoff(rw.resolve(rw_eyes, 'lighting_alpha'))
+            if cutoff:
+                block.append(f'\tlighting_cutoff = {cutoff}')
+        blocks.append(block)
+
+    for key in sorted(vocal_keys):
+        block = [f"{spec['vocal_emote_root']}/{key}", f'\tkey = "{key}"']
+        source = ratwood_emote(rw, key)
+        message = string_value(rw.resolve(source, 'message')) if source else None
+        if source and message and message != '""' and (rw.resolve(source, 'nomsg') or '').strip() not in ('1', 'TRUE'):
+            block.append(f'\tmessage = {message}')
+        blocks.append(block)
+
+    fetch_sources(sorted(sound_files_used))
+    for rel in sorted(sound_files_used):
+        src = os.path.join(CHECKOUT, rel)
+        if os.path.exists(src):
+            dest = os.path.join(SOUND_DIR, rel[len('sound/'):])
+            os.makedirs(os.path.dirname(dest), exist_ok=True)
+            shutil.copyfile(src, dest)
+    open(f"{OUT_DIR}/{spec['dm_file']}", 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    print(f"{spec['dm_file']}: {len(spec['languages'])} languages, {len(species_lines)} species, {len(sound_files_used)} voice sounds, {len(vocal_keys)} voice emotes, {len(eyes_used)} eyes")
+
+
+def repr_sound(rel):
+    return f"'{SOUND_DIR}/{rel[len('sound/'):]}'"
+
+
+MIGRANT_WAVE_ROOT = '/datum/migrant_wave'
+MIGRANT_ROLE_ROOT = '/datum/migrant_role'
+# Ratwood's names of the landmarks migrant waves arrive at (spawn_landmark), kept on the ported start landmarks.
+MIGRANT_SPAWNS = set()
+TIME_EXPRESSION = re.compile(r'^\d+(?:\.\d+)?(?:\s*(?:SECONDS|MINUTES|HOURS))?$')
+
+
+def migrant_leaf(path, root):
+    return path[len(root) + 1:].replace('/', '_')
+
+
+def wave_role_counts(rw, wave, var):
+    return [(role, int(count)) for role, count in re.findall(r'(/datum/migrant_role/[A-Za-z0-9_/]+)\s*=\s*(\d+)', rw.resolve(wave, var) or '')]
+
+
+def select_migrants(cfg, rw):
+    """Ratwood's migrant waves the port can bring and their roles: a role dresses someone (its own outfit, or the
+    classes of its advclass_cat_rolls, as Ratwood rolls them) and, unless the config allows it, makes no antagonist (no
+    antagonist is ported); a wave comes when all its required roles do, with the optional roles that do."""
+    spec = cfg['port']['migrants']
+    roles = {}
+
+    def role_info(role):
+        if role not in roles:
+            roles[role] = None
+            if role in rw.types:
+                antag = (rw.resolve(role, 'antag_datum') or '').strip()
+                source = (rw.resolve(role, 'outfit') or '').strip()
+                outfit = outfit_slots(rw, source) if source.startswith('/datum/outfit') else None
+                classes = job_subclasses(rw, role)
+                dresses = bool(classes) or bool(outfit and outfit['slots'])
+                if dresses and not (antag.startswith('/') and spec['skip_antagonists']):
+                    roles[role] = {'classes': classes, 'outfit': outfit if outfit and outfit['slots'] else None}
+        return roles[role]
+
+    waves = []
+    for wave in sorted(p for p in rw.types if p.startswith(MIGRANT_WAVE_ROOT + '/')):
+        if (rw.resolve(wave, 'abstract_type') or '').strip() == wave:
+            continue
+        required = wave_role_counts(rw, wave, 'required_roles')
+        optional = [(role, count) for role, count in wave_role_counts(rw, wave, 'optional_roles') if role_info(role)]
+        if not required and not optional:
+            continue
+        if any(role_info(role) is None for role, _ in required):
+            continue
+        waves.append((wave, required, optional))
+        MIGRANT_SPAWNS.add((string_value(rw.resolve(wave, 'spawn_landmark')) or '"Pilgrim"').strip('"'))
+    used = {role for _, required, optional in waves for role, _ in required + optional}
+    return {'waves': waves, 'roles': {role: roles[role] for role in sorted(used)}}
+
+
+def generate_migrants(cfg, rw, migrants, valid):
+    """Ratwood's migrant waves for migrants/migrants.dm (ported/migrants.dm): each wave's roles, track, timing, weight,
+    limits and greeting; each role's name, greeting, sexes, torch, own outfit and the classes it picks from."""
+    spec = cfg['port']['migrants']
+    blocks = []
+    waves = {wave for wave, _, _ in migrants['waves']}
+
+    def flag(raw):
+        value = (raw or '').strip()
+        return 'TRUE' if value in ('1', 'TRUE') else 'FALSE' if value in ('0', 'FALSE') else None
+
+    for wave, required, optional in migrants['waves']:
+        block = [f"{spec['wave_root']}/{migrant_leaf(wave, MIGRANT_WAVE_ROOT)}"]
+        for var in ('name', 'greet_text', 'spawn_landmark'):
+            value = string_value(rw.resolve(wave, var))
+            if value:
+                block.append(f'\t{var} = {value}')
+        track = expand_define(rw.resolve(wave, 'track'))
+        if STRING_LITERAL.match(track or ''):
+            block.append(f'\ttrack = {track}')
+        for var, listed in (('required_roles', required), ('optional_roles', optional)):
+            if listed:
+                block += [f'\t{var} = list('] + [f"\t\t{spec['role_root']}/{migrant_leaf(role, MIGRANT_ROLE_ROOT)} = {count}," for role, count in listed] + ['\t\t)']
+        for var in ('min_optional_fills', 'min_active', 'max_active', 'min_pop', 'max_pop', 'max_spawns', 'weight'):
+            value = number_value(rw.resolve(wave, var))
+            if value is not None:
+                block.append(f'\t{var} = {value}')
+        timing = (rw.resolve(wave, 'min_round_time') or '').strip()
+        if timing and TIME_EXPRESSION.match(timing):
+            block.append(f'\tmin_round_time = {timing}')
+        for var in ('hidden', 'is_raid', 'can_roll', 'spawn_on_location'):
+            value = flag(rw.resolve(wave, var))
+            if value:
+                block.append(f'\t{var} = {value}')
+        shared = (rw.resolve(wave, 'shared_wave_type') or '').strip()
+        if shared in waves:
+            block.append(f"\tshared_wave_type = {spec['wave_root']}/{migrant_leaf(shared, MIGRANT_WAVE_ROOT)}")
+        blocks.append(block)
+
+    for role, info in migrants['roles'].items():
+        target = f"{spec['role_root']}/{migrant_leaf(role, MIGRANT_ROLE_ROOT)}"
+        block = [target]
+        for var in ('name', 'greet_text'):
+            value = string_value(rw.resolve(role, var))
+            if value:
+                block.append(f'\t{var} = {value}')
+        sexes = rw.resolve(role, 'allowed_sexes') or ''
+        if re.fullmatch(r'\s*list\(\s*(?:(?:MALE|FEMALE)\s*,?\s*)+\)\s*', sexes):
+            block.append(f'\tallowed_sexes = {sexes.strip()}')
+        if flag(rw.resolve(role, 'grant_lit_torch')) == 'TRUE':
+            block.append('\tgrant_lit_torch = TRUE')
+        if info['classes']:
+            block += ['\trockhill_advclasses = list('] + [f'\t\t{ADVCLASS_TARGET}{advclass[len(ADVCLASS_ROOT):]},' for advclass in info['classes']] + ['\t\t)']
+        dressed = info['outfit']
+        if dressed:
+            outfit = f"{spec['outfit_root']}/{migrant_leaf(role, MIGRANT_ROLE_ROOT)}"
+            block.append(f'\toutfit = {outfit}')
+            name = string_value(rw.resolve(role, 'name')) or '"Migrant"'
+            worn = [outfit, f'\tname = {name}', f"\tjobtype = {spec['job']}"]
+            for var in ('uniform', 'shirt', 'suit', 'cloak', 'head', 'mask', 'mouth', 'neck', 'gloves', 'wrists', 'ring', 'shoes', 'belt', 'back', 'backr', 'l_pocket', 'r_pocket', 'l_hand', 'r_hand'):
+                item = dressed['slots'].get(var)
+                if item and item in valid:
+                    worn.append(f'\t{var} = {item}')
+            contents = [(item, count) for item, count in (dressed['contents'] or []) if item in valid]
+            if contents and dressed['slots'].get('back') in valid:
+                worn += ['\tbackpack_contents = list('] + [f'\t\t{item} = {count},' for item, count in contents] + ['\t\t)']
+            blocks.append(worn)
+        blocks.append(block)
+    open(f"{OUT_DIR}/{spec['dm_file']}", 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    print(f"{spec['dm_file']}: {len(migrants['waves'])} waves, {len(migrants['roles'])} roles")
 
 
 def generate_npcs(cfg, rw, rules, npcs, valid, known_traits, taken_outfits, hair_names=None):

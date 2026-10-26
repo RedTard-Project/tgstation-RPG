@@ -1,5 +1,7 @@
-import { useEffect, useReducer, useRef } from 'react';
+import { useEffect, useReducer, useRef, useState } from 'react';
+import { createBundle, type TegakiBundle, TegakiRenderer } from 'tegaki/react';
 import { toTitleCase } from 'tgui-core/string';
+import { assetMap } from 'tgui-lobby/assets';
 import { playSelectSound } from 'tgui-lobby/audio';
 import { LobbyMenu, type ServerState } from 'tgui-lobby/LobbyMenu';
 import { readDmiAnimation } from './dmi';
@@ -16,6 +18,7 @@ type RogueState = Partial<ServerState> & {
   activeCharacter?: string | null;
   readyJobs?: ReadyJob[];
   titleSheetUrl?: string;
+  migrantQueued?: boolean;
 };
 
 function mergeState(state: RogueState, update: RogueState): RogueState {
@@ -144,6 +147,65 @@ function TitleAnimation({ url }: { url: string }) {
   return <canvas ref={canvasRef} className="rogue-lobby-title" />;
 }
 
+/** Parisienne with its stroke data, sent as the rogue_lobby_font asset; null when it cannot be loaded. */
+async function loadHandwriting(): Promise<TegakiBundle | null> {
+  const fontUrl = assetMap['parisienne.ttf'];
+  const dataUrl = assetMap['parisienne_data.json'];
+  if (!fontUrl || !dataUrl) {
+    return null;
+  }
+  try {
+    const glyphData = await fetch(dataUrl).then((response) => response.json());
+    return createBundle({
+      family: 'Parisienne',
+      fontUrl,
+      glyphData,
+      unitsPerEm: 2048,
+      ascender: 1875,
+      descender: -915,
+    });
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Azure's welcome written out by hand, stroke after stroke (tegaki, Azure's TegakiAnimation); without the font it
+ * fades in in MedievalSharp, as Azure falls back.
+ */
+function HandwrittenWelcome({ text }: { text: string }) {
+  const [font, setFont] = useState<TegakiBundle | null | undefined>(undefined);
+
+  useEffect(() => {
+    let stopped = false;
+    loadHandwriting().then((bundle) => {
+      if (!stopped) {
+        setFont(bundle);
+      }
+    });
+    return () => {
+      stopped = true;
+    };
+  }, []);
+
+  if (font === undefined) {
+    return <div className="rogue-lobby__welcome-space" />;
+  }
+  if (font === null) {
+    return <div className="rogue-lobby__welcome">{text}</div>;
+  }
+  return (
+    <div className="rogue-lobby__welcome rogue-lobby__welcome--handwritten">
+      <TegakiRenderer
+        font={font}
+        time={{ mode: 'uncontrolled', speed: 10, loop: false }}
+      >
+        {text}
+      </TegakiRenderer>
+    </div>
+  );
+}
+
 /**
  * Azure Peak's lobby (NewPlayerPanel.tsx) for what TG's menu lacks: the welcome, the character one plays as, the
  * classes the ready players took, keybindings.
@@ -153,9 +215,9 @@ function AzurePanel({ state }: { state: RogueState }) {
 
   return (
     <div className="rogue-lobby">
-      <div className="rogue-lobby__welcome">
-        Welcome To {toTitleCase(state.serverName || '')}
-      </div>
+      <HandwrittenWelcome
+        text={`Welcome To ${toTitleCase(state.serverName || '')}`}
+      />
       {!!state.activeCharacter && (
         <div className="rogue-lobby__line">
           Playing As: {state.activeCharacter}
@@ -166,6 +228,22 @@ function AzurePanel({ state }: { state: RogueState }) {
       )}
       {phase === 'setting_up' && (
         <div className="rogue-lobby__notice">Round Is Starting...</div>
+      )}
+      {phase === 'playing' && (
+        <>
+          {!!state.migrantQueued && (
+            <div className="rogue-lobby__line rogue-lobby__good">
+              In the migrant queue
+            </div>
+          )}
+          <button
+            type="button"
+            className="rogue-lobby__button"
+            onClick={() => sendAction('migrants')}
+          >
+            Migration
+          </button>
+        </>
       )}
       {phase === 'postgame' && (
         <div className="rogue-lobby__notice">
@@ -197,6 +275,12 @@ function PreGame({ state }: { state: RogueState }) {
         className={`rogue-lobby__line ${state.isReady ? 'rogue-lobby__good' : 'rogue-lobby__bad'}`}
       >
         {state.isReady ? 'Ready' : 'Not Ready'}
+      </div>
+      <div
+        className={`rogue-lobby__line ${state.isReady ? 'rogue-lobby__good' : 'rogue-lobby__bad'}`}
+        title="Ready up for a pouch of twenty mammons, a full belly and a good meal!"
+      >
+        {state.isReady ? 'Ready Bonus!' : 'No bonus! Ready up!'}
       </div>
       <div className="rogue-lobby__header">Classes</div>
       <div className="rogue-lobby__classes">

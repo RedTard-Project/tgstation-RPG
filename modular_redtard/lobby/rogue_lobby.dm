@@ -40,9 +40,12 @@
 	UNTIL(SStitle.file_path)
 	SSassets.transport.register_asset(ROGUE_LOBBY_TITLE_SHEET, file(SStitle.file_path))
 
+/// Azure's lobby fonts: MedievalSharp for the panel, Parisienne and its stroke data for the handwritten welcome (tegaki).
 /datum/asset/simple/namespaced/rogue_lobby_font
 	assets = list(
 		"medievalsharp.ttf" = file("modular_redtard/lobby/medievalsharp.ttf"),
+		"parisienne.ttf" = file("modular_redtard/lobby/parisienne.ttf"),
+		"parisienne_data.json" = file("modular_redtard/lobby/parisienne_data.json"),
 	)
 	parents = list(
 		"rogue_lobby_fonts.css" = file("modular_redtard/tgui/rogue_lobby/rogue_lobby_fonts.css"),
@@ -76,6 +79,7 @@
 	. = list(
 		"activeCharacter" = client?.prefs?.read_preference(/datum/preference/name/real_name),
 		"readyJobs" = rogue_ready_jobs(),
+		"migrantQueued" = !!client?.prefs?.rogue_migrant?.queued_wave,
 	)
 	if(full)
 		.["serverName"] = CONFIG_GET(string/servername) || world.name
@@ -93,8 +97,19 @@
 				prefs.update_static_data(player)
 				prefs.ui_interact(player)
 			return TRUE
+		if("migrants")
+			if(istype(player))
+				client.prefs.rogue_migrant().ui_interact(player)
+			return TRUE
+		if("ready_toggle")
+			if(istype(player) && player.ready == PLAYER_NOT_READY && rogue_ready_blocked(player))
+				send_update(list("isReady" = FALSE))
+				return TRUE
 		if("join")
-			if(istype(player) && rogue_latejoin_wait(player))
+			if(client?.prefs?.rogue_migrant?.queued_wave)
+				to_chat(player, span_boldwarning("You are in the migrant queue."))
+				return TRUE
+			if(istype(player) && (rogue_latejoin_wait(player) || rogue_patron_join(player)))
 				return TRUE
 	return ..()
 

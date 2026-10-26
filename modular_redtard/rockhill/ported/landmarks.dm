@@ -3,6 +3,7 @@
 
 /obj/effect/landmark/start/rockhill/adventurerlate
 	rockhill_latejoin_roles = list("Adventurer", "Refugee")
+	rockhill_migrant_spawns = list("Pilgrim")
 
 /obj/effect/landmark/start/rockhill/apothecary
 	name = JOB_ROCKHILL_APOTHECARY

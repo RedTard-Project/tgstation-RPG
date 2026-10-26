@@ -1386,6 +1386,51 @@
 	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
+/datum/intent/lance
+	name = "lance"
+	desc = ""
+	icon_state = "inlance"
+	blade_class = "blunt"
+	item_d_type = "stab"
+	attack_verb = list("lances", "runs through", "skewers")
+	damfactor = 4
+	penfactor = 0
+	clickcd = 12
+	releasedrain = 1
+	misscost = 1
+	reach = 2
+	swingdelay = 0
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
+	cleave = /datum/cleave_pattern/lance
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
+
+/datum/intent/lance/onehand
+	name = "lance"
+	desc = ""
+	icon_state = "inlance"
+	blade_class = "blunt"
+	item_d_type = "stab"
+	attack_verb = list("lances", "runs through", "skewers")
+	damfactor = 4
+	penfactor = 0
+	clickcd = 12
+	releasedrain = 1
+	misscost = 1
+	reach = 2
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
+	cleave = /datum/cleave_pattern/lance
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
+
 /datum/intent/lord_electrocute
 	name = "electrocute"
 	desc = ""
@@ -3603,6 +3648,32 @@
 	effective_range = 2
 	effective_range_type = 1
 	intent_intdamage_factor = 1.4
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
+
+/datum/intent/spear/thrust/lance
+	name = "thrust"
+	desc = "Stab someone. Must be at a range of two tiles to penetrate properly."
+	icon_state = "instab"
+	blade_class = "stabbing"
+	item_d_type = "stab"
+	warnie = "mobwarning"
+	attack_verb = list("thrusts")
+	damfactor = 1.25
+	penfactor = 3
+	clickcd = 14
+	releasedrain = 1
+	misscost = 1
+	reach = 2
+	chargetime = 0
+	swingdelay = 0
+	effective_range = 2
+	effective_range_type = 1
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
