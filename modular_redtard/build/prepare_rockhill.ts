@@ -146,8 +146,13 @@ export async function prepareRockhill(): Promise<void> {
 
   const titles = await installTitles(config);
   writeReport(config, tally, problems, targets, titles, written, spawns, latejoins);
+  const lintGroups = new Map<string, string[]>();
   for (const map of written) {
-    runMaplint(map.source.output);
+    const label = map.source.template ? `Dungeon Generator - ${path.posix.basename(path.posix.dirname(map.source.output))}` : `Map - ${config.source.name}`;
+    lintGroups.set(label, [...(lintGroups.get(label) || []), map.source.output]);
+  }
+  for (const [label, maps] of lintGroups) {
+    runMaplint(label, maps);
   }
 }
 
@@ -541,13 +546,20 @@ export function runBootstrapPython(args: string[]): { status: number | null; out
   return { status: result.status, output: `${result.stdout || ''}${result.stderr || ''}`.trim() };
 }
 
-function runMaplint(mapPath: string): void {
-  const { status, output } = runBootstrapPython([MAPLINT_SCRIPT, mapPath]);
+function runMaplint(label: string, maps: string[]): void {
+  const list = path.posix.join(TMP_DIR, 'maplint.txt');
+  fs.writeFileSync(list, `${maps.join('\n')}\n`);
+  const { status, output } = runBootstrapPython([MAPLINT_SCRIPT, '--list', list]);
+  const summaryLine = /^maplint: (\d+)\/(\d+)$/;
+  const lines = output.split(/\r?\n/);
+  const summary = lines.map((line) => summaryLine.exec(line.trim())).find(Boolean);
+  const counts = summary ? `${summary[1]}/${summary[2]}` : `?/${maps.length}`;
   if (status === 0) {
-    console.log(`modular_redtard: maplint: ${mapPath} OK`);
-  } else {
-    console.warn(`modular_redtard: WARNING - maplint (tools/maplint, the TG map rules) on ${mapPath}:\n${output}`);
+    console.log(`modular_redtard: maplint: ${label} - [${counts}]`);
+    return;
   }
+  const details = lines.filter((line) => !summaryLine.test(line.trim())).join('\n').trim();
+  console.warn(`modular_redtard: WARNING - maplint (tools/maplint, the TG map rules): ${label} - [${counts}]\n${details}`);
 }
 
 function emitPops(pops: Pop[]): string[] {

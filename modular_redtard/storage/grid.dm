@@ -207,6 +207,9 @@
 		. += hover
 
 /datum/storage_interface/rogue_grid/update_position(screen_start_x, screen_pixel_x, screen_start_y, screen_pixel_y, columns, rows, mob/user_looking, atom/real_location, list/datum/numbered_display/numbered_contents)
+	if(istype(user_looking.hud_used, /datum/hud/rogue))
+		screen_start_x = ROGUE_GRID_SCREEN_START_X
+		screen_pixel_x = ROGUE_GRID_SCREEN_PIXEL_X
 	return ..(screen_start_x, screen_pixel_x, screen_start_y, screen_pixel_y, parent_storage.screen_max_columns, parent_storage.screen_max_rows, user_looking, real_location, numbered_contents)
 
 /datum/storage_interface/rogue_grid/add_items(screen_start_x, screen_pixel_x, screen_start_y, screen_pixel_y, columns, rows, mob/user_looking, atom/real_location, list/datum/numbered_display/numbered_contents)
