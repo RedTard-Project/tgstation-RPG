@@ -204,8 +204,9 @@
 	if(!wear_backr || HAS_TRAIT(wear_backr, TRAIT_NO_WORN_ICON))
 		set_rogue_overlay(HUD_ROGUE_BACKR, null)
 		return
-	if(wear_backr.rogue_onback)
-		set_rogue_overlay(HUD_ROGUE_BACKR, wear_backr.rogue_onmob_overlays(ROGUE_ONMOB_BACK, FALSE, ROGUE_BACKR_LAYER))
+	var/list/baked = wear_backr.rogue_baked_looks("backr_", ROGUE_BACKR_LAYER)
+	if(baked)
+		set_rogue_overlay(HUD_ROGUE_BACKR, baked)
 		return
 	var/mutable_appearance/look = wear_backr.build_worn_icon(default_layer = ROGUE_BACKR_LAYER, default_icon_file = 'icons/mob/clothing/back.dmi', override_file = wear_backr.worn_icon_backr, bodyshape = bodyshape)
 	apply_height(look, ENTIRE_BODY)

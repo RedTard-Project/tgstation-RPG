@@ -22,10 +22,33 @@
 #define ROGUE_ARMOR_FIRE "fire"
 #define ROGUE_ARMOR_ACID "acid"
 #define ROGUE_ARMOR_MAGIC "magic"
-#define ROGUE_ARMOR_WOUND "wound"
 #define ROGUE_ARMOR_DAMAGE_TYPES list(ROGUE_ARMOR_BLUNT, ROGUE_ARMOR_SLASH, ROGUE_ARMOR_STAB, ROGUE_ARMOR_PIERCING)
-#define ROGUE_ARMOR_ALL_TYPES list(ROGUE_ARMOR_BLUNT, ROGUE_ARMOR_SLASH, ROGUE_ARMOR_STAB, ROGUE_ARMOR_PIERCING, ROGUE_ARMOR_FIRE, ROGUE_ARMOR_ACID, ROGUE_ARMOR_MAGIC, ROGUE_ARMOR_WOUND)
-#define ROGUE_ARMOR_EDGE_TYPES list(ROGUE_ARMOR_SLASH, ROGUE_ARMOR_STAB, ROGUE_ARMOR_PIERCING)
+#define ROGUE_ARMOR_ALL_TYPES list(ROGUE_ARMOR_BLUNT, ROGUE_ARMOR_SLASH, ROGUE_ARMOR_STAB, ROGUE_ARMOR_PIERCING, ROGUE_ARMOR_FIRE, ROGUE_ARMOR_ACID, ROGUE_ARMOR_MAGIC)
+
+// Penetration tiers of intents against block tiers of armor (Azure Peak, Ratwood PEN_* and DBLOCK_*).
+#define ROGUE_PEN_NONE 0
+#define ROGUE_PEN_LIGHT 1
+#define ROGUE_PEN_MEDIUM 2
+#define ROGUE_PEN_HEAVY 3
+#define ROGUE_PEN_BSTEEL 4
+// Damage reduction tiers of blunt, fire and acid armor (Ratwood DR_*).
+#define ROGUE_DR_ULTRA 5
+
+#define ROGUE_ARMOR_MAT_PLATE 1
+#define ROGUE_ARMOR_MAT_LEATHER 2
+#define ROGUE_ARMOR_MAT_CHAINMAIL 3
+
+// Swing delay kinds of an intent (Ratwood SWINGDELAY_*).
+#define ROGUE_SWINGDELAY_NORMAL 1
+#define ROGUE_SWINGDELAY_PENALTY 2
+#define ROGUE_SWINGDELAY_CANCEL 3
+#define ROGUE_SWINGDELAY_CANCELSLOW 4
+
+// Where an intent's penetration applies in full (Ratwood EFF_RANGE_*).
+#define ROGUE_EFF_RANGE_NONE 0
+#define ROGUE_EFF_RANGE_EXACT 1
+#define ROGUE_EFF_RANGE_ABOVE 2
+#define ROGUE_EFF_RANGE_BELOW 3
 
 #define ARMOR_CLASS_NONE 0
 #define ARMOR_CLASS_LIGHT 1
@@ -218,6 +241,26 @@
 #define ROGUE_ENERGY_HUD_STEP 5
 #define ROGUE_ADVSETUP_FADE (3 SECONDS)
 #define ROGUE_FOV_SOURCE "rogue_fov"
+/// Right-click gestures with an empty hand (combat/gestures.dm): what the target is told by COMSIG_LIVING_ROGUE_GESTURE.
+#define COMSIG_LIVING_ROGUE_GESTURE "living_rogue_gesture"
+#define ROGUE_GESTURE_WAVE "wave"
+#define ROGUE_GESTURE_SHOO "shoo"
+#define ROGUE_GESTURE_BECKON "beckon"
+#define ROGUE_GESTURE_TAUNT "taunt"
+#define ROGUE_GESTURE_ICON 'modular_redtard/rockhill/icons/mob/overhead_effects.dmi'
+#define ROGUE_GESTURE_TIME (1.5 SECONDS)
+#define ROGUE_GESTURE_RISE 6
+#define ROGUE_SHOVE_SOUND 'modular_redtard/rockhill/sound/combat/shove.ogg'
+#define ROGUE_SHOVE_CHANCE rogue_value("shove_chance")
+#define ROGUE_STAT_COMPARE_STEP rogue_value("stat_compare_step")
+/// Parts of the view a worn item or a scarred eye hides (Ratwood FOV_RIGHT, FOV_LEFT, FOV_BEHIND).
+#define ROGUE_FOV_RIGHT (1<<0)
+#define ROGUE_FOV_LEFT (1<<1)
+#define ROGUE_FOV_BEHIND (1<<2)
+/// How far the view reaches to one side of the facing, in degrees: open, with the back hidden, with that side hidden.
+#define ROGUE_FOV_SIDE 135
+#define ROGUE_FOV_SIDE_BEHIND 90
+#define ROGUE_FOV_SIDE_BLOCKED 45
 #define COMSIG_MOB_ROGUE_SNEAK_CHANGED "mob_rogue_sneak_changed"
 #define ROGUE_SNEAK_SOURCE "rogue_sneak"
 #define ROGUE_SNEAK_LIGHT rogue_value("sneak_light")
@@ -365,6 +408,42 @@
 #define ROGUE_BEAST_DODGE_DELAY rogue_value("beast_dodge_delay")
 #define ROGUE_BEAST_FATIGUE_PER_DODGE rogue_value("beast_fatigue_per_dodge")
 #define ROGUE_BEAST_FATIGUE_MAX rogue_value("beast_fatigue_max")
+#define ROGUE_BEAST_FLEE_STOP rogue_value("beast_flee_stop")
 #define ROGUE_BEAST_FATIGUE_RECOVERY rogue_value("beast_fatigue_recovery")
 #define ROGUE_BEAST_FATIGUE_REGEN rogue_value("beast_fatigue_regen")
 #define ROGUE_BEAST_WINDED rogue_value("beast_winded")
+#define ROGUE_PEN_PASSTHROUGH_MIN rogue_value("pen_passthrough_min")
+#define ROGUE_PEN_PASSTHROUGH_PER_TIER rogue_value("pen_passthrough_per_tier")
+#define ROGUE_PEN_PROJECTILE_PASSTHROUGH rogue_value("pen_projectile_passthrough")
+#define ROGUE_PEN_PERCENT_PER_TIER rogue_value("pen_percent_per_tier")
+#define ROGUE_ARMOR_BLUNT_DR rogue_value("armor_blunt_dr")
+#define ROGUE_ARMOR_EXPOSED_WEAR rogue_value("armor_exposed_wear")
+#define ROGUE_ARMOR_VULNERABLE_WEAR rogue_value("armor_vulnerable_wear")
+#define ROGUE_ARMOR_FAILURE_SHARE rogue_value("armor_failure_share")
+#define ROGUE_EFFECTIVE_RANGE_DAMAGE rogue_value("effective_range_damage")
+#define ROGUE_EFFECTS_ICON 'modular_redtard/rockhill/icons/effects/effects.dmi'
+#define ROGUE_COMBAT_DEBUFFS_ICON 'modular_redtard/rockhill/icons/mob/combat_debuffs.dmi'
+#define ROGUE_CURSOR_DEFAULT 'modular_redtard/rockhill/icons/effects/mousemice/human.dmi'
+#define ROGUE_CURSOR_ATTACK 'modular_redtard/rockhill/icons/effects/mousemice/human_attack.dmi'
+#define ROGUE_CURSOR_LOOKING 'modular_redtard/rockhill/icons/effects/mousemice/human_looking.dmi'
+#define ROGUE_CURSOR_KICK 'modular_redtard/rockhill/icons/effects/mousemice/human_kick.dmi'
+#define ROGUE_CURSOR_JUMP 'modular_redtard/rockhill/icons/effects/mousemice/human_jump.dmi'
+#define ROGUE_CURSOR_GIVE 'modular_redtard/rockhill/icons/effects/mousemice/human_give.dmi'
+#define ROGUE_CURSOR_CHARGED 'modular_redtard/rockhill/icons/effects/mousemice/swang/acharged.dmi'
+#define ROGUE_CHARGE_DRAIN_TICKS_PER_SECOND rogue_value("charge_drain_ticks_per_second")
+#define ROGUE_SWINGDELAY_OVERHEAD rogue_value("swingdelay_overhead")
+#define ROGUE_SWINGDELAY_DEFENSE_PENALTY rogue_value("swingdelay_defense_penalty")
+#define ROGUE_YIELD_CLICK rogue_value("yield_click")
+#define ROGUE_YIELD_STUN rogue_value("yield_stun")
+#define ROGUE_YIELD_DURATION rogue_value("yield_duration")
+#define ROGUE_YIELD_SLOWDOWN rogue_value("yield_slowdown")
+#define ROGUE_CONCEDED_DURATION rogue_value("conceded_duration")
+#define ROGUE_CONCEDED_PENALTY rogue_value("conceded_penalty")
+#define ROGUE_DEFLECT_WINDOW rogue_value("deflect_window")
+#define ROGUE_DEFLECT_PER_RANK rogue_value("deflect_per_rank")
+#define ROGUE_DEFLECT_MAX rogue_value("deflect_max")
+#define ROGUE_DEFLECT_BACK_CHANCE rogue_value("deflect_back_chance")
+#define ROGUE_DEFLECT_MIN_RANGE rogue_value("deflect_min_range")
+#define ROGUE_DEFLECT_MAX_RANGE rogue_value("deflect_max_range")
+#define ROGUE_MEEKNESS_HINT_CHANCE rogue_value("meekness_hint_chance")
+#define ROGUE_ALT_GRIP_KNOW_RANK rogue_value("alt_grip_know_rank")

@@ -319,7 +319,7 @@
 
 /mob/living/proc/rogue_toggle_fixed_eye()
 	rogue_fixed_eye = !rogue_fixed_eye
-	set_dir_on_move = !rogue_fixed_eye
+	set_dir_on_move = !(rogue_fixed_eye || rogue_facing_held)
 	SEND_SIGNAL(src, COMSIG_MOB_ROGUE_EYE_CHANGED)
 
 /mob/living/proc/rogue_stealth_rank()

@@ -33,10 +33,10 @@
 	return ITEM_INTERACT_SUCCESS
 
 /mob/living/carbon/human/proc/rogue_shield_raised(obj/item/shield)
-	if(!rogue_charge_started || rogue_charge_released || get_active_held_item() != shield)
+	if(get_active_held_item() != shield)
 		return FALSE
 	var/datum/intent/intent = rogue_strike_intent(shield)
-	return intent?.tshield && world.time >= rogue_charge_started + intent.chargetime
+	return intent?.tshield && rogue_charge_full(intent)
 
 /datum/status_effect/rogue/limbguard
 	id = "rogue_limbguard"

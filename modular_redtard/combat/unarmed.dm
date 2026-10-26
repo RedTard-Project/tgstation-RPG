@@ -42,6 +42,7 @@ GLOBAL_LIST_INIT(rogue_fist_intents, list(
 	icon_state = "inpunch"
 	attack_verb = list("punches", "jabs", "clocks", "strikes")
 	misscost = 4
+	miss_text = "swing a fist at the air"
 	unarmed_action = ROGUE_UNARMED_HARM
 
 /mob/living/carbon/human/rogue_fist_intents()
@@ -65,6 +66,12 @@ GLOBAL_LIST_INIT(rogue_fist_intents, list(
 		if(ROGUE_UNARMED_SHOVE)
 			if(!isliving(attack_target))
 				return ..()
+			var/mob/living/shoved = attack_target
+			if(rogue_combat_enabled() && shoved.check_block(src, 0, "[src]'s shove", UNARMED_ATTACK))
+				do_attack_animation(shoved, ATTACK_EFFECT_DISARM)
+				to_chat(src, span_warning("My shove at [shoved] was blocked!"))
+				changeNext_move(CLICK_CD_MELEE)
+				return TRUE
 			var/list/shove_modifiers = modifiers ? modifiers.Copy() : list()
 			shove_modifiers[RIGHT_CLICK] = TRUE
 			if(right_click_attack_chain(attack_target, shove_modifiers))
@@ -79,3 +86,17 @@ GLOBAL_LIST_INIT(rogue_fist_intents, list(
 	. = ..()
 	if(!combat_mode)
 		combat_mode = TRUE
+
+/// Ratwood's shove (species.dm disarm): it moves its target only on a roll of strength against their constitution;
+/// held in place, TG's disarm goes on to stagger them and loosen their grip.
+/mob/living/carbon/human/get_shove_flags(mob/living/shover, obj/item/weapon)
+	. = ..()
+	if(!(. & SHOVE_CAN_MOVE) || weapon || !ishuman(shover) || !rogue_combat_enabled())
+		return
+	if(!prob(ROGUE_SHOVE_CHANCE + rogue_stat_comparison(shover.rogue_stat(ROGUE_STAT_STRENGTH), rogue_stat(ROGUE_STAT_CONSTITUTION))))
+		. &= ~SHOVE_CAN_MOVE
+
+/// Ratwood generic_stat_comparison: the difference counts once it is more than one point.
+/proc/rogue_stat_comparison(user_stat, target_stat)
+	var/difference = user_stat - target_stat
+	return abs(difference) > 1 ? difference * ROGUE_STAT_COMPARE_STEP : 0

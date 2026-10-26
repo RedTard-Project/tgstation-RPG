@@ -13,10 +13,8 @@
 
 #define ROGUE_FEMALE_SUFFIX "_f"
 
-#define ROGUE_ONMOB_HIP "onbelt"
-#define ROGUE_ONMOB_BACK "onback"
-#define ROGUE_ONMOB_HAND "gen"
-#define ROGUE_ONMOB_WIELDED "wielded"
+/// Frame size of the baked held, back and hip sheets (rockhill/icons/baked).
+#define ROGUE_BAKED_SIZE 64
 #define ROGUE_OVERLAY_HANDS_BEHIND "hands_behind"
 #define ROGUE_OVERLAY_BACK_LEFT "backl"
 #define ROGUE_OVERLAY_HIP_LEFT "hipl"
@@ -47,3 +45,8 @@
 #define ROGUE_SHOES_SLEEVE_LAYER (SHOES_LAYER - 0.3)
 #define ROGUE_MOUTH_LAYER (FACEMASK_LAYER - 0.5)
 #define ROGUE_BACKR_LAYER (BACK_LAYER + 0.5)
+
+/// Percent chance per step that something which can be spat out slips out of the mouth (clothing/mouth.dm).
+#define ROGUE_MOUTH_SLIP_CHANCE rogue_value("mouth_slip_chance")
+/// Ratwood burns a smoke down by one every object tick of two seconds (clothing/smoking.dm).
+#define ROGUE_SMOKE_TICK_SECONDS 2

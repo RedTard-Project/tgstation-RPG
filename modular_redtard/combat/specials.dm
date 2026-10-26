@@ -252,21 +252,15 @@
 		var/mob/living/carbon/human/armored = target
 		var/obj/item/clothing/worn = armored.rogue_best_armor(def_zone, rogue_bclass_to_armor(blade_class))
 		if(worn)
-			worn.take_damage(damage, BRUTE, "", FALSE)
+			worn.rogue_armor_wear(damage)
 			howner.visible_message(span_warning("[name] strikes [target]'s [rogue_zone_name(zone)], but [worn] takes the blow!"))
 			return 0
-	var/old_class
-	if(weapon)
-		old_class = weapon.rogue_current_bclass
-		weapon.rogue_current_bclass = blade_class
 	var/blocked = full_pen ? 0 : target.run_armor_check(def_zone, MELEE, armour_penetration = weapon?.armour_penetration, silent = TRUE)
-	if(!weapon && !full_pen && ishuman(target))
+	if(!full_pen && ishuman(target))
 		var/mob/living/carbon/human/armored = target
-		blocked += armored.rogue_armor_protection(def_zone, rogue_bclass_to_armor(blade_class), 0)
-	blocked = min(blocked, ARMOR_MAX_BLOCK)
-	var/damage_done = target.apply_damage(damage, weapon ? weapon.damtype : BRUTE, def_zone, blocked, sharpness = rogue_bclass_sharpness(blade_class), attack_direction = get_dir(howner, target), attacking_item = full_pen ? null : weapon)
-	if(weapon)
-		weapon.rogue_current_bclass = old_class
+		var/datum/intent/intent = howner.rogue_strike_intent(weapon)
+		damage *= armored.rogue_armor_hit(def_zone, rogue_bclass_to_armor(blade_class), damage, intent ? intent.penfactor : ROGUE_PEN_NONE, rogue_wear_factor(weapon, intent), weapon, blade_class)
+	var/damage_done = target.rogue_apply_armored_damage(damage, weapon ? weapon.damtype : BRUTE, def_zone, blocked, sharpness = rogue_bclass_sharpness(blade_class), attack_direction = get_dir(howner, target), attacking_item = weapon)
 	howner.visible_message(span_danger("<font color='#c2663c'>[name] strikes [target] in the [rogue_zone_name(zone)]![damage_done > 0 && full_pen ? " <b>It pierces through to their flesh!</b>" : ""]</font>"))
 	var/hit_sound = weapon ? weapon.hitsound : pick(GLOB.rogue_punch_hit_sounds)
 	if(damage_done > 0 && hit_sound)
@@ -825,6 +819,114 @@
 	self_immob_dur = 0.5 SECONDS
 	blade_class = BCLASS_STAB
 	start_text = "I thrust my trident forward and bring down the power stored in it."
+
+/datum/special_intent/quarterstaff_sweep
+	name = "Quarterstaff Sweep"
+	desc = "Sweep a five-tile frontal arc, knocking foes back and leaving them vulnerable. Aims for the targeted zone."
+	tile_coordinates = list(list(-1,-1), list(1,-1), list(-1,0), list(0,0), list(1,0))
+	post_icon_state = "sweep_fx"
+	pre_icon = ROGUE_TELEGRAPH_ICON
+	pre_icon_state = "warning"
+	sfx_pre_delay = 'modular_redtard/rockhill/sound/combat/wooshes/blunt/wooshmed (1).ogg'
+	sfx_post_delay = 'modular_redtard/rockhill/sound/combat/hits/blunt/genblunt (1).ogg'
+	delay = 0.6 SECONDS
+	cooldown = 25 SECONDS
+	requires_wielding = TRUE
+	stamcost = 20
+	tunables = list("cooldown", "delay", "stamcost", "open_dur")
+	var/open_dur = 3 SECONDS
+	var/dam
+
+/datum/special_intent/quarterstaff_sweep/process_attack()
+	dam = iparent.force * max(max(howner.rogue_stat(ROGUE_STAT_STRENGTH), howner.rogue_stat(ROGUE_STAT_PERCEPTION)) / ROGUE_ATTRIBUTE_MIDDLING, 0.5)
+	return ..()
+
+/datum/special_intent/quarterstaff_sweep/apply_hit(turf/marked)
+	for(var/mob/living/victim as anything in victims(marked))
+		fling(victim, get_ranged_target_turf(get_turf(victim), get_dir(howner, victim), 1), 1)
+		weapon_damage(victim, dam, aimed_zone(victim), BCLASS_BLUNT, no_pen = TRUE)
+		victim.apply_status_effect(/datum/status_effect/rogue_vulnerable, tune("open_dur"))
+
+/datum/special_intent/dagger_dash
+	name = "Dagger Dash"
+	desc = "Become quicker on your feet and pass through other beings for a short time. Boost scales with worn armor."
+	respect_adjacency = FALSE
+	cooldown = 90 SECONDS
+	stamcost = 25
+
+/datum/special_intent/dagger_dash/process_attack()
+	SHOULD_CALL_PARENT(FALSE)
+	log_combat(howner, howner, "used the special [name] of", iparent)
+	howner.apply_status_effect(/datum/status_effect/rogue/dagger_dash)
+	playsound(howner, 'modular_redtard/rockhill/sound/combat/dagger_boost.ogg', 100, TRUE)
+	howner.apply_status_effect(/datum/status_effect/rogue/special_cooldown, tune("cooldown"))
+
+/// Dagger Dash (Azure Peak, Ratwood): the lighter the armor, the longer one passes through people unhindered and cannot be grabbed,
+/// and the faster one runs for half a minute while the same dagger stays in hand.
+/datum/status_effect/rogue/dagger_dash
+	id = "rogue_dagger_dash"
+	status_type = STATUS_EFFECT_UNIQUE
+	effect_state = "eff_daggerboost"
+	alert_type = /atom/movable/screen/alert/status_effect/rogue/dagger_dash
+	var/added_passmob = FALSE
+
+/datum/status_effect/rogue/dagger_dash/on_creation(mob/living/new_owner, set_duration)
+	var/armor_class = ARMOR_CLASS_NONE
+	if(ishuman(new_owner))
+		var/mob/living/carbon/human/dasher = new_owner
+		armor_class = dasher.rogue_highest_armor_class()
+	base_duration = (ARMOR_CLASS_HEAVY + 2 - armor_class) SECONDS
+	. = ..()
+	new_owner.apply_status_effect(/datum/status_effect/rogue/dagger_boost, ARMOR_CLASS_HEAVY + 1 - armor_class)
+
+/datum/status_effect/rogue/dagger_dash/on_apply()
+	. = ..()
+	added_passmob = !(owner.pass_flags & PASSMOB)
+	owner.pass_flags |= PASSMOB
+	ADD_TRAIT(owner, TRAIT_GRABIMMUNE, id)
+
+/datum/status_effect/rogue/dagger_dash/on_remove()
+	if(added_passmob)
+		owner.pass_flags &= ~PASSMOB
+	REMOVE_TRAIT(owner, TRAIT_GRABIMMUNE, id)
+	return ..()
+
+/atom/movable/screen/alert/status_effect/rogue/dagger_dash
+	name = "Dagger Dash"
+	desc = "I slip between people and none can catch me!"
+	icon_state = "daggerdash"
+
+/datum/status_effect/rogue/dagger_boost
+	id = "rogue_dagger_boost"
+	status_type = STATUS_EFFECT_UNIQUE
+	alert_type = /atom/movable/screen/alert/status_effect/rogue/dagger_boost
+	tick_interval = 1 SECONDS
+	var/speed_bonus = 1
+	var/obj/item/held_dagger
+
+/datum/status_effect/rogue/dagger_boost/on_creation(mob/living/new_owner, speed_bonus)
+	base_duration = 30 SECONDS
+	src.speed_bonus = speed_bonus || 1
+	held_dagger = new_owner.get_active_held_item()
+	return ..(new_owner)
+
+/datum/status_effect/rogue/dagger_boost/on_apply()
+	. = ..()
+	owner.attributes?.set_variable_attribute_modifier(id, list(ROGUE_STAT_SPEED = speed_bonus))
+
+/datum/status_effect/rogue/dagger_boost/tick(seconds_between_ticks)
+	if(owner.get_active_held_item() != held_dagger)
+		qdel(src)
+
+/datum/status_effect/rogue/dagger_boost/on_remove()
+	owner.attributes?.remove_attribute_modifier(id)
+	held_dagger = null
+	return ..()
+
+/atom/movable/screen/alert/status_effect/rogue/dagger_boost
+	name = "Dagger Boost"
+	desc = "My dagger makes me light on my feet."
+	icon_state = "daggerboost"
 
 #undef ROGUE_SPECIAL_TIMER_INDEX
 #undef ROGUE_SPECIAL_RING

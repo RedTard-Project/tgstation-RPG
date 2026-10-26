@@ -113,7 +113,6 @@
 	rockhill_traits = list(
 		TRAIT_TRAINED_SMITH,
 		TRAIT_SMITHING_EXPERT,
-		TRAIT_ARCYNE_T1,
 		)
 	maximum_slots = 5
 
@@ -855,6 +854,7 @@
 	jobtype = /datum/job/roguetown/adventurer
 	uniform = /obj/item/clothing/under/roguetown/chainlegs
 	shirt = /obj/item/clothing/suit/roguetown/shirt/tunic
+	suit = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 	cloak = /obj/item/clothing/cloak/psydontabard
 	head = /obj/item/clothing/head/roguetown/helmet/heavy/psydonbarbute
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
@@ -1976,88 +1976,66 @@
 		)
 
 /datum/outfit/job/roguetown/rockhill_class/guildsman/artificer
-	name = "Guild Engineer"
+	name = "Artificer"
 	jobtype = /datum/job/roguetown/guildsman
 	uniform = /obj/item/clothing/under/roguetown/trou/artipants
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/artificer
 	suit = /obj/item/clothing/suit/roguetown/armor/leather/jacket/artijacket
 	cloak = /obj/item/clothing/cloak/apron/waist/brown
 	head = /obj/item/clothing/head/roguetown/articap
-	mask = /obj/item/clothing/mask/rogue/spectacles/golden
 	gloves = /obj/item/clothing/gloves/roguetown/angle/grenzelgloves/blacksmith
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	belt = /obj/item/storage/belt/rogue/leather
 	back = /obj/item/storage/backpack/rogue/backpack
-	backr = /obj/item/rogueweapon/stoneaxe/woodcut/steel/woodcutter
-	l_pocket = /obj/item/flashlight/flare/torch/lantern
-	r_pocket = /obj/item/rogueweapon/pick/steel
+	l_pocket = /obj/item/roguekey/crafterguild
+	r_pocket = /obj/item/storage/belt/rogue/pouch/coins/mid
 	backpack_contents = list(
 		/obj/item/rogueweapon/hammer/steel = 1,
-		/obj/item/rogueweapon/chisel = 1,
-		/obj/item/rogueweapon/handsaw = 1,
 		/obj/item/lockpickring/mundane = 1,
 		/obj/item/recipe_book/blacksmithing = 1,
 		/obj/item/recipe_book/engineering = 1,
 		/obj/item/recipe_book/ceramics = 1,
 		/obj/item/recipe_book/builder = 1,
-		/obj/item/recipe_book/survival = 1,
-		/obj/item/contraption/linker = 1,
+		/obj/item/clothing/mask/rogue/spectacles/golden = 1,
 		/obj/item/mini_flagpole/artificer = 1,
-		/obj/item/storage/belt/rogue/pouch/coins/mid = 1,
-		/obj/item/mini_flagpole/blacksmith = 1,
-		/obj/item/rogueweapon/blowrod = 1,
-		/obj/item/dye_brush = 1,
-		/obj/item/roguekey/crafterguild = 1,
-		/obj/item/rogueweapon/huntingknife = 1,
-		/obj/item/flint = 1,
+		/obj/item/rogueweapon/spellbook = 1,
 		)
 
 /datum/attribute_holder/sheet/job/rockhill_class/guildsman/artificer
 	raw_attribute_list = list(
 		ROGUE_STAT_CONSTITUTION = 1,
-		ROGUE_STAT_FORTUNE = 2,
 		ROGUE_STAT_INTELLIGENCE = 3,
 		ROGUE_STAT_PERCEPTION = 1,
 		ROGUE_STAT_STRENGTH = 1,
 		ROGUE_STAT_WILLPOWER = 2,
-		/datum/attribute/skill/combat/axes = 30,
-		/datum/attribute/skill/combat/firearms = 30,
+		/datum/attribute/skill/combat/axes = 20,
 		/datum/attribute/skill/combat/maces = 20,
 		/datum/attribute/skill/combat/unarmed = 20,
-		/datum/attribute/skill/combat/wrestling = 30,
+		/datum/attribute/skill/combat/wrestling = 20,
 		/datum/attribute/skill/craft/alchemy = 20,
-		/datum/attribute/skill/craft/armorsmithing = 30,
-		/datum/attribute/skill/craft/blacksmithing = 30,
-		/datum/attribute/skill/craft/carpentry = 40,
-		/datum/attribute/skill/craft/ceramics = 40,
-		/datum/attribute/skill/craft/crafting = 40,
+		/datum/attribute/skill/craft/armorsmithing = 20,
+		/datum/attribute/skill/craft/blacksmithing = 20,
+		/datum/attribute/skill/craft/carpentry = 20,
+		/datum/attribute/skill/craft/ceramics = 30,
+		/datum/attribute/skill/craft/crafting = 20,
 		/datum/attribute/skill/craft/engineering = 50,
-		/datum/attribute/skill/craft/masonry = 40,
+		/datum/attribute/skill/craft/masonry = 20,
 		/datum/attribute/skill/craft/smelting = 40,
-		/datum/attribute/skill/craft/weaponsmithing = 30,
-		/datum/attribute/skill/labor/lumberjacking = 30,
-		/datum/attribute/skill/labor/mining = 30,
+		/datum/attribute/skill/craft/weaponsmithing = 20,
 		/datum/attribute/skill/magic/arcane = 20,
-		/datum/attribute/skill/misc/athletics = 40,
 		/datum/attribute/skill/misc/climbing = 30,
 		/datum/attribute/skill/misc/lockpicking = 40,
 		/datum/attribute/skill/misc/reading = 20,
-		/datum/attribute/skill/misc/swimming = 20,
 		)
 
 /datum/rockhill_advclass/guildsman/artificer
-	name = "Guild Engineer"
+	name = "Artificer"
 	outfit = /datum/outfit/job/roguetown/rockhill_class/guildsman/artificer
-	desc = "You are an engineer, Once trained under architects and artificers you now have the experience to surpass them both. Your calling is the works of artificing and architecture, be it smithing, constructing or the arcane machinery you do it all, your experience demands respect."
+	desc = "You are an Artificer, oft known by the longer name of Artificer-Enchanter. You have basic training in the arts of smithing, and can substitute for a blacksmith's work if needed. But your true calling is the creation and enchantment of magical items, alongside feats of engineering, creating mechanical and magical wonders whose art of creation has been passed down from a certain elven Artificer..."
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/guildsman/artificer
 	rockhill_traits = list(
-		TRAIT_ARCYNE_T1,
-		TRAIT_MASTER_CARPENTER,
-		TRAIT_MASTER_MASON,
-		TRAIT_HOMESTEAD_EXPERT,
+		TRAIT_ARCYNE,
 		TRAIT_ALCHEMY_EXPERT,
-		TRAIT_FUSILIER,
-		TRAIT_LEGENDARY_MINER,
 		TRAIT_TRAINED_SMITH,
 		TRAIT_SMITHING_EXPERT,
 		)
@@ -2112,24 +2090,108 @@
 		TRAIT_SMITHING_EXPERT,
 		)
 
+/datum/outfit/job/roguetown/rockhill_class/guildsman/engineer
+	name = "Guild Engineer"
+	jobtype = /datum/job/roguetown/guildsman
+	uniform = /obj/item/clothing/under/roguetown/trou/artipants
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/artificer
+	suit = /obj/item/clothing/suit/roguetown/armor/leather/jacket/artijacket
+	cloak = /obj/item/clothing/cloak/apron/waist/brown
+	head = /obj/item/clothing/head/roguetown/articap
+	mask = /obj/item/clothing/mask/rogue/spectacles/golden
+	gloves = /obj/item/clothing/gloves/roguetown/angle/grenzelgloves/blacksmith
+	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
+	belt = /obj/item/storage/belt/rogue/leather
+	back = /obj/item/storage/backpack/rogue/backpack
+	backr = /obj/item/rogueweapon/stoneaxe/woodcut/steel/woodcutter
+	l_pocket = /obj/item/flashlight/flare/torch/lantern
+	r_pocket = /obj/item/rogueweapon/pick/steel
+	backpack_contents = list(
+		/obj/item/rogueweapon/hammer/steel = 1,
+		/obj/item/rogueweapon/chisel = 1,
+		/obj/item/rogueweapon/handsaw = 1,
+		/obj/item/lockpickring/mundane = 1,
+		/obj/item/recipe_book/blacksmithing = 1,
+		/obj/item/recipe_book/engineering = 1,
+		/obj/item/recipe_book/ceramics = 1,
+		/obj/item/recipe_book/builder = 1,
+		/obj/item/recipe_book/survival = 1,
+		/obj/item/contraption/linker = 1,
+		/obj/item/mini_flagpole/artificer = 1,
+		/obj/item/storage/belt/rogue/pouch/coins/mid = 1,
+		/obj/item/mini_flagpole/blacksmith = 1,
+		/obj/item/rogueweapon/blowrod = 1,
+		/obj/item/dye_brush = 1,
+		/obj/item/roguekey/crafterguild = 1,
+		/obj/item/rogueweapon/huntingknife = 1,
+		/obj/item/flint = 1,
+		)
+
+/datum/attribute_holder/sheet/job/rockhill_class/guildsman/engineer
+	raw_attribute_list = list(
+		ROGUE_STAT_CONSTITUTION = 1,
+		ROGUE_STAT_FORTUNE = 2,
+		ROGUE_STAT_INTELLIGENCE = 3,
+		ROGUE_STAT_PERCEPTION = 1,
+		ROGUE_STAT_STRENGTH = 1,
+		ROGUE_STAT_WILLPOWER = 2,
+		/datum/attribute/skill/combat/axes = 30,
+		/datum/attribute/skill/combat/firearms = 30,
+		/datum/attribute/skill/combat/maces = 20,
+		/datum/attribute/skill/combat/unarmed = 20,
+		/datum/attribute/skill/combat/wrestling = 30,
+		/datum/attribute/skill/craft/alchemy = 20,
+		/datum/attribute/skill/craft/armorsmithing = 30,
+		/datum/attribute/skill/craft/blacksmithing = 30,
+		/datum/attribute/skill/craft/carpentry = 40,
+		/datum/attribute/skill/craft/ceramics = 40,
+		/datum/attribute/skill/craft/crafting = 40,
+		/datum/attribute/skill/craft/engineering = 50,
+		/datum/attribute/skill/craft/masonry = 40,
+		/datum/attribute/skill/craft/smelting = 40,
+		/datum/attribute/skill/craft/weaponsmithing = 30,
+		/datum/attribute/skill/labor/lumberjacking = 30,
+		/datum/attribute/skill/labor/mining = 30,
+		/datum/attribute/skill/misc/athletics = 40,
+		/datum/attribute/skill/misc/climbing = 30,
+		/datum/attribute/skill/misc/lockpicking = 40,
+		/datum/attribute/skill/misc/reading = 20,
+		/datum/attribute/skill/misc/swimming = 20,
+		)
+
+/datum/rockhill_advclass/guildsman/engineer
+	name = "Guild Engineer"
+	outfit = /datum/outfit/job/roguetown/rockhill_class/guildsman/engineer
+	desc = "You are an engineer, Once trained under architects and artificers you now have the experience to surpass them both. Your calling is the works of artificing and architecture, be it smithing, constructing or the arcane machinery you do it all, your experience demands respect."
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/guildsman/engineer
+	rockhill_traits = list(
+		TRAIT_MASTER_CARPENTER,
+		TRAIT_MASTER_MASON,
+		TRAIT_HOMESTEAD_EXPERT,
+		TRAIT_ALCHEMY_EXPERT,
+		TRAIT_FUSILIER,
+		TRAIT_LEGENDARY_MINER,
+		TRAIT_TRAINED_SMITH,
+		TRAIT_SMITHING_EXPERT,
+		)
+
 /datum/outfit/job/roguetown/rockhill_class/hand/advisor
 	name = "Advisor"
 	jobtype = /datum/job/roguetown/hand
 	uniform = /obj/item/clothing/under/roguetown/tights/black
-	shirt = /obj/item/clothing/suit/roguetown/shirt/dress/royal/hand_m
-	suit = /obj/item/clothing/suit/roguetown/armor/leather/vest/hand
 	head = /obj/item/clothing/head/roguetown/chaperon/noble/hand
 	shoes = /obj/item/clothing/shoes/roguetown/boots/nobleboot
-	belt = /obj/item/storage/belt/rogue/leather/steel
+	belt = /obj/item/storage/belt/rogue/leather/plaquegold
 	back = /obj/item/storage/backpack/rogue/satchel/short
+	l_pocket = /obj/item/rogueweapon/huntingknife/idagger/dtace
 	r_pocket = /obj/item/rogueweapon/scabbard/sheath/courtphysician/hand
 	r_hand = /obj/item/rogueweapon/sword/rapier/hand
 	backpack_contents = list(
-		/obj/item/rogueweapon/huntingknife/idagger/dtace = 1,
-		/obj/item/rogueweapon/scabbard/sheath/royal = 1,
-		/obj/item/storage/keyring/hand = 1,
+		/obj/item/rogueweapon/scabbard/sheath/noble = 1,
+		/obj/item/storage/keyring/lord = 1,
 		/obj/item/lockpickring/mundane = 1,
 		/obj/item/reagent_containers/glass/bottle/rogue/poison = 1,
+		/obj/item/rogueweapon/spellbook = 1,
 		)
 
 /datum/attribute_holder/sheet/job/rockhill_class/hand/advisor
@@ -2137,14 +2199,16 @@
 		ROGUE_STAT_FORTUNE = 2,
 		ROGUE_STAT_INTELLIGENCE = 4,
 		ROGUE_STAT_PERCEPTION = 3,
-		ROGUE_STAT_WILLPOWER = 2,
+		ROGUE_STAT_SPEED = 1,
+		ROGUE_STAT_WILLPOWER = 1,
+		/datum/attribute/skill/combat/arcyne = 30,
 		/datum/attribute/skill/combat/crossbows = 30,
-		/datum/attribute/skill/combat/knives = 20,
-		/datum/attribute/skill/combat/polearms = 30,
-		/datum/attribute/skill/combat/swords = 20,
+		/datum/attribute/skill/combat/knives = 30,
+		/datum/attribute/skill/combat/staves = 30,
+		/datum/attribute/skill/combat/swords = 30,
 		/datum/attribute/skill/combat/wrestling = 20,
 		/datum/attribute/skill/craft/alchemy = 40,
-		/datum/attribute/skill/magic/arcane = 40,
+		/datum/attribute/skill/magic/arcane = 20,
 		/datum/attribute/skill/misc/athletics = 30,
 		/datum/attribute/skill/misc/climbing = 30,
 		/datum/attribute/skill/misc/hunting = 20,
@@ -2159,13 +2223,11 @@
 /datum/rockhill_advclass/hand/advisor
 	name = "Advisor"
 	outfit = /datum/outfit/job/roguetown/rockhill_class/hand/advisor
-	desc = "You serve as both scholar and advisor to the Noble-Family, wielding knowledge and magicks with potent ability. Let no man forget whose ear you whisper into, your sage advice has saved more lives than any strategist's orders or spymaster's schemes could ever claim to."
+	desc = " You have played researcher and confidant to the Noble-Family for so long that you are a vault of knowledge, something you exploit with potent conviction. Let no man ever forget the knowledge you wield. You've read more books than any blademaster or spymaster could ever claim to."
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/hand/advisor
 	rockhill_traits = list(
 		TRAIT_ALCHEMY_EXPERT,
-		TRAIT_MAGEARMOR,
-		TRAIT_ARCYNE_T3,
-		TRAIT_MAGEDEXTERITY,
+		TRAIT_ARCYNE,
 		TRAIT_NOBLE,
 		TRAIT_EXPERT_HUNTER,
 		)
@@ -2283,9 +2345,7 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots/nobleboot
 	belt = /obj/item/storage/belt/rogue/leather/black
 	back = /obj/item/storage/backpack/rogue/satchel
-	l_pocket = /obj/item/rogueweapon/scabbard/sword/noble
 	r_pocket = /obj/item/flashlight/flare/torch/lantern
-	r_hand = /obj/item/rogueweapon/sword/sabre/dec
 	backpack_contents = list(
 		/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1,
 		/obj/item/rogueweapon/scabbard/sheath/noble = 1,
@@ -2295,15 +2355,16 @@
 		/obj/item/reagent_containers/glass/bottle/rogue/poison = 1,
 		/obj/item/natural/feather = 1,
 		/obj/item/paper/scroll = 1,
+		/obj/item/rogueweapon/spellbook = 1,
 		)
 
 /datum/attribute_holder/sheet/job/rockhill_class/heartfelt/hand/advisor
 	raw_attribute_list = list(
-		ROGUE_STAT_INTELLIGENCE = 4,
+		ROGUE_STAT_INTELLIGENCE = 3,
 		ROGUE_STAT_PERCEPTION = 3,
 		ROGUE_STAT_SPEED = 1,
-		/datum/attribute/skill/combat/crossbows = 30,
-		/datum/attribute/skill/combat/swords = 20,
+		/datum/attribute/skill/combat/arcyne = 30,
+		/datum/attribute/skill/combat/staves = 30,
 		/datum/attribute/skill/combat/wrestling = 20,
 		/datum/attribute/skill/craft/alchemy = 40,
 		/datum/attribute/skill/magic/arcane = 20,
@@ -2324,12 +2385,12 @@
 	desc = "You are the Advisor of Heartfelt, trusted for your measured counsel and keen insight into matters of state. Bound once more to serve in the wake of ruin, you climb towards these lands."
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/heartfelt/hand/advisor
 	rockhill_traits = list(
-		TRAIT_MAGEARMOR,
-		TRAIT_NOBLE,
-		TRAIT_ARCYNE_T2,
+		TRAIT_ARCYNE,
 		TRAIT_INTELLECTUAL,
 		TRAIT_SEEPRICES_SHITTY,
 		TRAIT_HEARTFELT,
+		TRAIT_ALCHEMY_EXPERT,
+		TRAIT_NOBLE,
 		)
 
 /datum/outfit/job/roguetown/rockhill_class/heartfelt/hand/marshal
@@ -2462,11 +2523,11 @@
 	l_pocket = /obj/item/storage/magebag/associate
 	r_pocket = /obj/item/rogueweapon/huntingknife
 	l_hand = /obj/item/flashlight/flare/torch/lantern
-	r_hand = /obj/item/rogueweapon/woodstaff/diamond
+	r_hand = /obj/item/rogueweapon/woodstaff/implement/grand
 	backpack_contents = list(
 		/obj/item/recipe_book/alchemy = 1,
 		/obj/item/roguegem/amethyst = 1,
-		/obj/item/spellbook_unfinished/pre_arcyne = 1,
+		/obj/item/rogueweapon/spellbook/grand = 1,
 		/obj/item/rogueweapon/huntingknife/idagger/silver/arcyne = 1,
 		/obj/item/reagent_containers/glass/bottle/alchemical/healthpotnew = 1,
 		/obj/item/reagent_containers/glass/bottle/alchemical/strongmanapot = 1,
@@ -2504,8 +2565,6 @@
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/heartfelt/lord/archmage
 	rockhill_traits = list(
 		TRAIT_NOBLE,
-		TRAIT_MAGEARMOR,
-		TRAIT_ARCYNE_T3,
 		TRAIT_INTELLECTUAL,
 		TRAIT_HEARTFELT,
 		TRAIT_ALCHEMY_EXPERT,
@@ -2704,12 +2763,12 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots/nobleboot
 	belt = /obj/item/storage/belt/rogue/leather/cloth/lady
 	back = /obj/item/storage/backpack/rogue/satchel
-	backr = /obj/item/rogueweapon/woodstaff/emerald/blacksteelstaff/royal
+	backr = /obj/item/rogueweapon/woodstaff/implement/greater/blacksteel
 	l_pocket = /obj/item/rogueweapon/huntingknife/idagger/steel/special
 	r_pocket = /obj/item/storage/keyring/heir
 	backpack_contents = list(
 		/obj/item/roguegem/amethyst = 1,
-		/obj/item/spellbook_unfinished/pre_arcyne = 1,
+		/obj/item/rogueweapon/spellbook = 1,
 		/obj/item/recipe_book/alchemy = 1,
 		/obj/item/recipe_book/magic = 1,
 		/obj/item/chalk = 1,
@@ -2736,8 +2795,6 @@
 	desc = "Despite your standing, sociability is not your strong suit, and you have kept mostly to yourself and your books. This hardly makes you a favourite among the lords and ladies of the court, and an exit from your room is often met with amusement from nobility and servants alike. At least you're always welcome in the mage's tower."
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/heir/bookworm
 	rockhill_traits = list(
-		TRAIT_ARCYNE_T2,
-		TRAIT_MAGEARMOR,
 		TRAIT_GOODWRITER,
 		TRAIT_MAGEDEXTERITY,
 		TRAIT_NOBLE,
@@ -3465,7 +3522,7 @@
 	backpack_contents = list(
 		/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1,
 		/obj/item/roguegem/amethyst = 1,
-		/obj/item/spellbook_unfinished/pre_arcyne = 1,
+		/obj/item/rogueweapon/spellbook = 1,
 		)
 
 /datum/attribute_holder/sheet/job/rockhill_class/lord/wizard
@@ -3493,10 +3550,9 @@
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/lord/wizard
 	rockhill_traits = list(
 		TRAIT_NOBLE,
-		TRAIT_MAGEARMOR,
 		TRAIT_DNR,
-		TRAIT_ARCYNE_T3,
 		TRAIT_INTELLECTUAL,
+		TRAIT_ARCYNE,
 		)
 
 /datum/outfit/job/roguetown/rockhill_class/mage
@@ -3510,33 +3566,28 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	belt = /obj/item/storage/belt/rogue/leather
 	back = /obj/item/storage/backpack/rogue/satchel
-	backr = /obj/item/rogueweapon/woodstaff
 	l_pocket = /obj/item/rogueweapon/huntingknife
-	r_pocket = /obj/item/reagent_containers/glass/bottle/rogue/manapot
+	r_pocket = /obj/item/storage/magebag
 	backpack_contents = list(
-		/obj/item/flashlight/flare/torch = 1,
-		/obj/item/spellbook_unfinished/pre_arcyne = 1,
-		/obj/item/roguegem/amethyst = 1,
-		/obj/item/rogueweapon/scabbard/sheath = 1,
-		/obj/item/recipe_book/magic = 1,
+		/obj/item/rogueweapon/spellbook = 1,
 		/obj/item/chalk = 1,
+		/obj/item/reagent_containers/glass/bottle/rogue/manapot = 1,
 		)
 
 /datum/attribute_holder/sheet/job/rockhill_class/mage
 	raw_attribute_list = list(
 		ROGUE_STAT_INTELLIGENCE = 3,
+		ROGUE_STAT_PERCEPTION = 2,
 		ROGUE_STAT_SPEED = 1,
-		/datum/attribute/skill/combat/knives = 20,
+		/datum/attribute/skill/combat/arcyne = 30,
 		/datum/attribute/skill/combat/polearms = 20,
+		/datum/attribute/skill/combat/staves = 30,
+		/datum/attribute/skill/combat/unarmed = 10,
 		/datum/attribute/skill/combat/wrestling = 10,
-		/datum/attribute/skill/craft/alchemy = 30,
-		/datum/attribute/skill/craft/cooking = 10,
-		/datum/attribute/skill/craft/sewing = 10,
-		/datum/attribute/skill/labor/butchering = 10,
+		/datum/attribute/skill/craft/alchemy = 20,
 		/datum/attribute/skill/magic/arcane = 30,
-		/datum/attribute/skill/misc/athletics = 20,
+		/datum/attribute/skill/misc/athletics = 10,
 		/datum/attribute/skill/misc/climbing = 20,
-		/datum/attribute/skill/misc/medicine = 10,
 		/datum/attribute/skill/misc/reading = 40,
 		/datum/attribute/skill/misc/swimming = 10,
 		)
@@ -3544,11 +3595,12 @@
 /datum/rockhill_advclass/mage
 	name = "Sorcerer"
 	outfit = /datum/outfit/job/roguetown/rockhill_class/mage
-	desc = "Spellslingers are mages that focus on more potent spells, greater athleticism, and the art of the staff. Arcane Alchemists instead turned their studies to mixing magic and alchemy, the basics of medicine, and rely on creativity instead of arcane might."
+	desc = "You are a learned mage and a scholar, having spent your life studying the arcane and its ways."
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/mage
 	rockhill_traits = list(
-		TRAIT_MAGEARMOR,
-		TRAIT_ARCYNE_T2,
+		TRAIT_ARCYNE,
+		TRAIT_ALCHEMY_EXPERT,
+		TRAIT_MAGEDEXTERITY,
 		TRAIT_OUTLANDER,
 		)
 
@@ -3565,20 +3617,23 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	belt = /obj/item/storage/belt/rogue/leather
 	back = /obj/item/storage/backpack/rogue/satchel
+	backr = /obj/item/rogueweapon/shield/wood
 	l_pocket = /obj/item/storage/belt/rogue/pouch/coins/poor
 	r_pocket = /obj/item/rogueweapon/scabbard/sword
 	r_hand = /obj/item/rogueweapon/sword/long
 	backpack_contents = list(
 		/obj/item/flashlight/flare/torch = 1,
+		/obj/item/chalk = 1,
+		/obj/item/rogueweapon/spellbook = 1,
 		)
 
 /datum/attribute_holder/sheet/job/rockhill_class/mage/spellblade
 	raw_attribute_list = list(
 		ROGUE_STAT_CONSTITUTION = 1,
 		ROGUE_STAT_INTELLIGENCE = 1,
-		ROGUE_STAT_STRENGTH = 2,
+		ROGUE_STAT_PERCEPTION = 1,
 		ROGUE_STAT_WILLPOWER = 1,
-		/datum/attribute/skill/combat/shields = 10,
+		/datum/attribute/skill/combat/shields = 20,
 		/datum/attribute/skill/combat/unarmed = 20,
 		/datum/attribute/skill/combat/wrestling = 20,
 		/datum/attribute/skill/magic/arcane = 20,
@@ -3594,8 +3649,7 @@
 	desc = "You are skilled in both the arcyne art and the art of the blade. But you are not a master of either nor could you channel your magick in armor."
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/mage/spellblade
 	rockhill_traits = list(
-		TRAIT_MAGEARMOR,
-		TRAIT_ARCYNE_T2,
+		TRAIT_ARCYNE,
 		TRAIT_OUTLANDER,
 		)
 
@@ -3603,7 +3657,6 @@
 	name = "Spellsinger"
 	jobtype = /datum/job/roguetown/adventurer
 	uniform = /obj/item/clothing/under/roguetown/trou/leather
-	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/councillor
 	suit = /obj/item/clothing/suit/roguetown/shirt/robe/spellcasterrobe
 	head = /obj/item/clothing/head/roguetown/spellcasterhat
 	neck = /obj/item/clothing/neck/roguetown/gorget/steel
@@ -3612,12 +3665,13 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	belt = /obj/item/storage/belt/rogue/leather
 	back = /obj/item/storage/backpack/rogue/satchel
-	backr = /obj/item/rogue/instrument/accord
 	l_pocket = /obj/item/storage/belt/rogue/pouch/coins/poor
 	r_pocket = /obj/item/rogueweapon/scabbard/sword
 	r_hand = /obj/item/rogueweapon/sword/sabre
 	backpack_contents = list(
 		/obj/item/flashlight/flare/torch = 1,
+		/obj/item/chalk = 1,
+		/obj/item/rogueweapon/spellbook = 1,
 		)
 
 /datum/attribute_holder/sheet/job/rockhill_class/mage/spellsinger
@@ -3642,8 +3696,7 @@
 	desc = "You belong to a school of bards renowned for their study of both the arcane and the arts."
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/mage/spellsinger
 	rockhill_traits = list(
-		TRAIT_MAGEARMOR,
-		TRAIT_ARCYNE_T2,
+		TRAIT_ARCYNE,
 		TRAIT_EMPATH,
 		TRAIT_GOODLOVER,
 		TRAIT_OUTLANDER,
@@ -4595,7 +4648,7 @@
 		/obj/item/roguekey/mercenary = 1,
 		/obj/item/rogueweapon/huntingknife/idagger/steel/kukri = 1,
 		/obj/item/rogueweapon/scabbard/sheath = 1,
-		/obj/item/spellbook_unfinished/pre_arcyne = 1,
+		/obj/item/rogueweapon/spellbook = 1,
 		/obj/item/flashlight/flare/torch = 1,
 		/obj/item/storage/belt/rogue/pouch/coins/poor = 1,
 		)
@@ -4627,8 +4680,7 @@
 	desc = "Almah are those skilled in both magyck and swordsmanship, but excelling in nothing."
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/mercenary/desert_rider/almah
 	rockhill_traits = list(
-		TRAIT_ARCYNE_T2,
-		TRAIT_MAGEARMOR,
+		TRAIT_MEDIUMARMOR,
 		TRAIT_STEELHEARTED,
 		TRAIT_OUTLANDER,
 		)
@@ -5418,15 +5470,15 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots/grenzelhoft
 	belt = /obj/item/storage/belt/rogue/leather/battleskirt
 	back = /obj/item/storage/backpack/rogue/satchel
-	backr = /obj/item/rogueweapon/woodstaff/gefechtsgelehrter
+	backr = /obj/item/rogueweapon/woodstaff/implement/greater/gefechtsgelehrter
 	backpack_contents = list(
 		/obj/item/roguekey/mercenary = 1,
-		/obj/item/storage/belt/rogue/pouch/coins/mid = 1,
+		/obj/item/storage/belt/rogue/pouch/coins/poor = 1,
 		/obj/item/flashlight/flare/torch = 1,
 		/obj/item/rogueweapon/huntingknife = 1,
 		/obj/item/rogueweapon/scabbard/sheath = 1,
-		/obj/item/spellbook_unfinished/pre_arcyne = 1,
-		/obj/item/roguegem/amethyst = 1,
+		/obj/item/rogueweapon/spellbook/greater = 1,
+		/obj/item/chalk = 1,
 		)
 
 /datum/attribute_holder/sheet/job/rockhill_class/mercenary/grenzelhoft/mage
@@ -5436,12 +5488,14 @@
 		ROGUE_STAT_SPEED = 1,
 		ROGUE_STAT_STRENGTH = -1,
 		ROGUE_STAT_WILLPOWER = 3,
+		/datum/attribute/skill/combat/arcyne = 40,
 		/datum/attribute/skill/combat/polearms = 30,
+		/datum/attribute/skill/combat/staves = 40,
 		/datum/attribute/skill/combat/unarmed = 20,
 		/datum/attribute/skill/combat/wrestling = 20,
 		/datum/attribute/skill/craft/alchemy = 20,
 		/datum/attribute/skill/craft/crafting = 10,
-		/datum/attribute/skill/magic/arcane = 40,
+		/datum/attribute/skill/magic/arcane = 30,
 		/datum/attribute/skill/misc/athletics = 20,
 		/datum/attribute/skill/misc/climbing = 30,
 		/datum/attribute/skill/misc/medicine = 10,
@@ -5457,12 +5511,12 @@
 	desc = "You are a Gefechtsgelehrter - \"Combat Scholar\" - An experienced Zauberer hailing from the prestigious Celestial Academy, your fellow alumni may have pursued summoning, enchantments or similar academical ventures. But you? You studied siegecraft. And you got damn good at it too."
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/mercenary/grenzelhoft/mage
 	rockhill_traits = list(
-		TRAIT_MAGEARMOR,
 		TRAIT_INTELLECTUAL,
 		TRAIT_STEELHEARTED,
 		TRAIT_ALCHEMY_EXPERT,
 		TRAIT_MAGEDEXTERITY,
 		TRAIT_OUTLANDER,
+		TRAIT_ARCYNE,
 		)
 
 /datum/outfit/job/roguetown/rockhill_class/mercenary/gronnheavy
@@ -5651,7 +5705,7 @@
 		/obj/item/roguekey/mercenary = 1,
 		/obj/item/rogueweapon/huntingknife = 1,
 		/obj/item/rogueweapon/scabbard/sheath = 1,
-		/obj/item/spellbook_unfinished/pre_arcyne = 1,
+		/obj/item/rogueweapon/spellbook = 1,
 		/obj/item/roguegem/amethyst = 1,
 		/obj/item/lockpick = 1,
 		)
@@ -5679,13 +5733,11 @@
 /datum/rockhill_advclass/mercenary/newmoon
 	name = "New Moon Spellblade"
 	outfit = /datum/outfit/job/roguetown/rockhill_class/mercenary/newmoon
-	desc = "The New Moon Spellblades of Zybantia are the remnants of a fallen Nocite monastery in an unknown region of Lalvestine, the last major stronghold of the Ten in the Zybantian Empire. Their monastic lyfestyle and devotion collapsed quickly under the weight of the Rot, and they were forced from a lyfe of devout solitude into that of a common sellsword; Noc’s blessings proving rather useful when slaying monsters and men alike. For whatever reason, you find yourself in the region, offering your skills to the highest bidder. Knowledge is power."
+	desc = "The New Moon Spellblades of Zybantia are the remnants of a fallen Nocite monastery in an unknown region of Lalvestine, the last major stronghold of the Ten in the Zybantian Empire. Their monastic lyfestyle and devotion collapsed quickly under the weight of the Rot, and they were forced from a lyfe of devout solitude into that of a common sellsword; Noc�s blessings proving rather useful when slaying monsters and men alike. For whatever reason, you find yourself in the region, offering your skills to the highest bidder. Knowledge is power."
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/mercenary/newmoon
 	rockhill_traits = list(
 		TRAIT_DODGEEXPERT,
-		TRAIT_MAGEARMOR,
-		TRAIT_ARCYNE_T2,
-		TRAIT_MAGEDEXTERITY,
+		TRAIT_ARCYNE,
 		TRAIT_STEELHEARTED,
 		TRAIT_OUTLANDER,
 		)
@@ -6022,7 +6074,7 @@
 	name = "Vaquero"
 	jobtype = /datum/job/roguetown/mercenary
 	uniform = /obj/item/clothing/under/roguetown/heavy_leather_pants
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
+	shirt = /obj/item/clothing/suit/roguetown/shirt/freifechter
 	suit = /obj/item/clothing/suit/roguetown/armor/leather/heavy/coat
 	cloak = /obj/item/clothing/cloak/half/rider/red
 	head = /obj/item/clothing/head/roguetown/bardhat
@@ -6078,6 +6130,7 @@
 		TRAIT_DODGEEXPERT,
 		TRAIT_DECEIVING_MEEKNESS,
 		TRAIT_MEDIUMARMOR,
+		TRAIT_EQUESTRIAN,
 		TRAIT_STEELHEARTED,
 		TRAIT_OUTLANDER,
 		)
@@ -6097,14 +6150,13 @@
 	back = /obj/item/storage/backpack/rogue/satchel/black
 	l_pocket = /obj/item/flashlight/flare/torch
 	r_pocket = /obj/item/storage/belt/rogue/pouch/coins/poor
-	r_hand = /obj/item/rogueweapon/woodstaff/naledi
+	r_hand = /obj/item/rogueweapon/woodstaff/implement/grand/naledi
 	backpack_contents = list(
+		/obj/item/chalk = 1,
 		/obj/item/roguekey/mercenary = 1,
 		/obj/item/rogueweapon/huntingknife/idagger = 1,
-		/obj/item/spellbook_unfinished/pre_arcyne = 1,
+		/obj/item/rogueweapon/spellbook/greater = 1,
 		/obj/item/rogueweapon/scabbard/sheath = 1,
-		/obj/item/roguegem/amethyst/naledi = 1,
-		/obj/item/spellbook_unfinished/pre_arcyne = 1,
 		)
 
 /datum/attribute_holder/sheet/job/rockhill_class/mercenary/warscholar
@@ -6114,8 +6166,10 @@
 		ROGUE_STAT_PERCEPTION = 1,
 		ROGUE_STAT_SPEED = 2,
 		ROGUE_STAT_WILLPOWER = 2,
+		/datum/attribute/skill/combat/arcyne = 40,
 		/datum/attribute/skill/combat/knives = 30,
 		/datum/attribute/skill/combat/polearms = 30,
+		/datum/attribute/skill/combat/staves = 40,
 		/datum/attribute/skill/craft/alchemy = 30,
 		/datum/attribute/skill/craft/crafting = 20,
 		/datum/attribute/skill/craft/sewing = 20,
@@ -6124,18 +6178,16 @@
 		/datum/attribute/skill/misc/climbing = 20,
 		/datum/attribute/skill/misc/medicine = 30,
 		/datum/attribute/skill/misc/reading = 40,
-		/datum/attribute/skill/misc/riding = 20,
 		/datum/attribute/skill/misc/swimming = 10,
 		)
 
 /datum/rockhill_advclass/mercenary/warscholar
 	name = "Naledi Hierophant"
 	outfit = /datum/outfit/job/roguetown/rockhill_class/mercenary/warscholar
-	desc = "You are a Naledi Hierophant, a magician who studied under cloistered sages, well-versed in all manners of arcyne. You prioritize enhancing your teammates and distracting foes while staying in the backline."
+	desc = "You are a Naledi Hierophant, the most orthodox of all Naledian Magi to an outsider. You practice the art of Exomagic - channeling mana outward for both destructive and constructive purposes. Many of your kinds prioritize enhancing the potential of their teammates from behind, believing in the superiority and potent of the humen body. Some however, may take a more direct approach to the question of how to lay low Psydon's foes - incineration and annihilation."
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/mercenary/warscholar
 	rockhill_traits = list(
-		TRAIT_MAGEARMOR,
-		TRAIT_ARCYNE_T3,
+		TRAIT_ARCYNE,
 		TRAIT_ALCHEMY_EXPERT,
 		TRAIT_NALEDI,
 		TRAIT_MAGEDEXTERITY,
@@ -6159,21 +6211,22 @@
 	l_pocket = /obj/item/flashlight/flare/torch
 	r_pocket = /obj/item/storage/belt/rogue/pouch/coins/poor
 	backpack_contents = list(
+		/obj/item/chalk = 1,
 		/obj/item/roguekey/mercenary = 1,
 		/obj/item/lockpick = 1,
 		/obj/item/rogueweapon/huntingknife = 1,
 		/obj/item/rogueweapon/scabbard/sheath = 1,
+		/obj/item/rogueweapon/spellbook/greater = 1,
 		)
 
 /datum/attribute_holder/sheet/job/rockhill_class/mercenary/warscholar/pontifex
 	raw_attribute_list = list(
-		ROGUE_STAT_CONSTITUTION = -1,
-		ROGUE_STAT_PERCEPTION = -1,
-		ROGUE_STAT_SPEED = 2,
-		ROGUE_STAT_STRENGTH = 3,
-		ROGUE_STAT_WILLPOWER = 1,
+		ROGUE_STAT_CONSTITUTION = 3,
+		ROGUE_STAT_STRENGTH = 2,
+		ROGUE_STAT_WILLPOWER = 2,
+		/datum/attribute/skill/combat/arcyne = 40,
 		/datum/attribute/skill/combat/unarmed = 40,
-		/datum/attribute/skill/combat/wrestling = 40,
+		/datum/attribute/skill/combat/wrestling = 20,
 		/datum/attribute/skill/magic/arcane = 20,
 		/datum/attribute/skill/misc/athletics = 30,
 		/datum/attribute/skill/misc/climbing = 30,
@@ -6188,12 +6241,11 @@
 /datum/rockhill_advclass/mercenary/warscholar/pontifex
 	name = "Naledi Pontifex"
 	outfit = /datum/outfit/job/roguetown/rockhill_class/mercenary/warscholar/pontifex
-	desc = "You are a Naledi Pontifex, a warrior trained into a hybridized style of movement-controlling magic and hand-to-hand combat. Your chosen Path determines your specialization, though you'll never match another mage in pure magical power. Instead, you manifest an imitation of a shard of PSYDON's blade and rely on trickery and battlefield control."
+	desc = "A Naledi Pontifex, trained in the discipline of Automagic - enhancement of one's own body through Arcyne Magick. Your fists and your will are the one thing that cannot be deprived from you, handy tools when your homeland is rife with treacherous djinns and humens alike. Where your fists fall short, your wits prevail. Where your magyck falters, your fists answer. And when both are found wanting, the Naledian art of blade conjuration will lend you a Katar to cut demons and humens alike to ribbons."
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/mercenary/warscholar/pontifex
 	rockhill_traits = list(
-		TRAIT_DODGEEXPERT,
 		TRAIT_CIVILIZEDBARBARIAN,
-		TRAIT_ARCYNE_T1,
+		TRAIT_ARCYNE,
 		TRAIT_NALEDI,
 		TRAIT_STEELHEARTED,
 		TRAIT_OUTLANDER,
@@ -6214,7 +6266,7 @@
 	back = /obj/item/storage/backpack/rogue/satchel/black
 	l_pocket = /obj/item/flashlight/flare/torch
 	r_pocket = /obj/item/storage/belt/rogue/pouch/coins/poor
-	r_hand = /obj/item/rogueweapon/woodstaff/naledi
+	r_hand = /obj/item/rogueweapon/woodstaff/implement/grand/naledi
 	backpack_contents = list(
 		/obj/item/roguekey/mercenary = 1,
 		/obj/item/rogueweapon/huntingknife = 1,
@@ -6245,15 +6297,14 @@
 /datum/rockhill_advclass/mercenary/warscholar/vizier
 	name = "Naledi Vizier"
 	outfit = /datum/outfit/job/roguetown/rockhill_class/mercenary/warscholar/vizier
-	desc = "You are a Naledi Vizier. Your research into miracles and holy incantations has lead you to esoteric magycks. Though psydonians have long struggled to channel their all-father's divinity, The Great City of Naledi came the closest with it's Origin Magic."
+	desc = "You are a Naledi Vizier. Your research into miracles and holy incantations has lead you to esoteric magycks. Though psydonians have long struggled to channel their all-father's divinity, The Great City of Naledi came the closest with its Origin Magic."
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/mercenary/warscholar/vizier
 	rockhill_traits = list(
-		TRAIT_MAGEARMOR,
-		TRAIT_ARCYNE_T3,
 		TRAIT_ALCHEMY_EXPERT,
 		TRAIT_NALEDI,
 		TRAIT_MEDICINE_EXPERT,
 		TRAIT_MAGEDEXTERITY,
+		TRAIT_ARCYNE,
 		TRAIT_STEELHEARTED,
 		TRAIT_OUTLANDER,
 		)
@@ -7245,7 +7296,6 @@
 		TRAIT_RITUALIST,
 		TRAIT_DEATHSIGHT,
 		TRAIT_WITCH,
-		TRAIT_ARCYNE_T1,
 		)
 
 /datum/outfit/job/roguetown/rockhill_class/prisoner_woodcutter
@@ -8963,12 +9013,12 @@
 	back = /obj/item/storage/backpack/rogue/satchel/otavan
 	backr = /obj/item/rogueweapon/scabbard/gwstrap
 	l_pocket = /obj/item/storage/belt/rogue/pouch/coins/mid
-	r_hand = /obj/item/rogueweapon/woodstaff/sojourner
+	r_hand = /obj/item/rogueweapon/woodstaff/implement/greater/sojourner
 	backpack_contents = list(
 		/obj/item/roguekey/inquisition = 1,
 		/obj/item/paper/inqslip/arrival/ortho = 1,
 		/obj/item/roguegem/amethyst/naledi = 1,
-		/obj/item/spellbook_unfinished/pre_arcyne = 1,
+		/obj/item/rogueweapon/spellbook = 1,
 		)
 
 /datum/attribute_holder/sheet/job/rockhill_class/sojourner
@@ -8995,9 +9045,7 @@
 	desc = "Naledi scholars, bereft of their home, were sent around Grimoria searching for purpose. They'd found it in Otava, within the hallowed halls that honed their gifts and refined the knowledge they'd held. Attached to the Inquisitor, you've one purpose. Show them that the fall wasn't pointless."
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/sojourner
 	rockhill_traits = list(
-		TRAIT_MAGEARMOR,
 		TRAIT_ALCHEMY_EXPERT,
-		TRAIT_ARCYNE_T1,
 		TRAIT_NALEDI,
 		TRAIT_MAGEDEXTERITY,
 		TRAIT_OUTLANDER,
@@ -9619,8 +9667,6 @@
 	desc = "You are a scholar traveling the world in order to write a book about your ventures. Although not quite as dedicated to your studies as some, you trade in stories and tales of your travels."
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/trader/scholar
 	rockhill_traits = list(
-		TRAIT_MAGEARMOR,
-		TRAIT_ARCYNE_T2,
 		TRAIT_INTELLECTUAL,
 		TRAIT_SEEPRICES_SHITTY,
 		TRAIT_GOODWRITER,
@@ -9803,18 +9849,24 @@
 	jobtype = /datum/job/roguetown/orphan
 	uniform = /obj/item/clothing/under/roguetown/tights/vagrant/l
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant/l
-	cloak = /obj/item/clothing/cloak/raincloak/brown
+	cloak = /obj/item/clothing/cloak/half/brown
 	gloves = /obj/item/clothing/gloves/roguetown/fingerless
+	back = /obj/item/storage/backpack/rogue/satchel
+	l_hand = /obj/item/rogueweapon/spellbook
 	r_hand = /obj/item/rogueweapon/woodstaff
+	backpack_contents = list(
+		/obj/item/chalk = 1,
+		)
 
 /datum/attribute_holder/sheet/job/rockhill_class/vagabond_mage
 	raw_attribute_list = list(
-		ROGUE_STAT_CONSTITUTION = -1,
+		ROGUE_STAT_CONSTITUTION = -2,
 		ROGUE_STAT_INTELLIGENCE = 2,
-		ROGUE_STAT_WILLPOWER = -1,
-		/datum/attribute/skill/craft/alchemy = 10,
+		ROGUE_STAT_SPEED = -1,
+		ROGUE_STAT_WILLPOWER = -2,
+		/datum/attribute/skill/combat/arcyne = 30,
+		/datum/attribute/skill/combat/staves = 30,
 		/datum/attribute/skill/craft/crafting = 20,
-		/datum/attribute/skill/magic/arcane = 10,
 		/datum/attribute/skill/misc/reading = 40,
 		)
 
@@ -9824,8 +9876,7 @@
 	desc = "Your master found you talentless, and cast you from their tower with nothing but your staff and dreams of what could've been."
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/vagabond_mage
 	rockhill_traits = list(
-		TRAIT_MAGEARMOR,
-		TRAIT_ARCYNE_T2,
+		TRAIT_ARCYNE,
 		TRAIT_ALCHEMY_EXPERT,
 		)
 
@@ -10453,67 +10504,6 @@
 		TRAIT_COMBAT_AWARE,
 		)
 
-/datum/outfit/job/roguetown/rockhill_class/wapprentice/alchemist
-	name = "Alchemist Associate"
-	jobtype = /datum/job/roguetown/wapprentice
-	uniform = /obj/item/clothing/under/roguetown/tights/random
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
-	suit = /obj/item/clothing/suit/roguetown/shirt/robe/magegreen
-	head = /obj/item/clothing/head/roguetown/roguehood/mage
-	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
-	shoes = /obj/item/clothing/shoes/roguetown/gladiator
-	belt = /obj/item/storage/belt/rogue/leather
-	back = /obj/item/storage/backpack/rogue/satchel
-	backr = /obj/item/rogueweapon/woodstaff
-	l_pocket = /obj/item/storage/magebag/alchemist
-	r_pocket = /obj/item/storage/keyring/mageapprentice
-	l_hand = /obj/item/clothing/neck/roguetown/skullamulet/alchemist
-	backpack_contents = list(
-		/obj/item/roguegem/amethyst = 1,
-		/obj/item/seeds/swampweed = 1,
-		/obj/item/seeds/pipeweed = 1,
-		/obj/item/recipe_book/alchemy = 1,
-		/obj/item/recipe_book/magic = 1,
-		/obj/item/chalk = 1,
-		/obj/item/spellbook_unfinished/pre_arcyne = 1,
-		/obj/item/rogueweapon/sickle = 1,
-		)
-
-/datum/attribute_holder/sheet/job/rockhill_class/wapprentice/alchemist
-	raw_attribute_list = list(
-		ROGUE_STAT_INTELLIGENCE = 4,
-		ROGUE_STAT_PERCEPTION = 2,
-		ROGUE_STAT_WILLPOWER = 1,
-		/datum/attribute/skill/combat/knives = 20,
-		/datum/attribute/skill/combat/polearms = 30,
-		/datum/attribute/skill/combat/wrestling = 10,
-		/datum/attribute/skill/craft/alchemy = 30,
-		/datum/attribute/skill/craft/cooking = 20,
-		/datum/attribute/skill/craft/sewing = 10,
-		/datum/attribute/skill/labor/butchering = 20,
-		/datum/attribute/skill/labor/farming = 30,
-		/datum/attribute/skill/labor/fishing = 10,
-		/datum/attribute/skill/labor/mining = 20,
-		/datum/attribute/skill/magic/arcane = 20,
-		/datum/attribute/skill/misc/athletics = 20,
-		/datum/attribute/skill/misc/climbing = 10,
-		/datum/attribute/skill/misc/medicine = 20,
-		/datum/attribute/skill/misc/reading = 50,
-		/datum/attribute/skill/misc/swimming = 10,
-		)
-
-/datum/rockhill_advclass/wapprentice/alchemist
-	name = "Alchemist Associate"
-	outfit = /datum/outfit/job/roguetown/rockhill_class/wapprentice/alchemist
-	desc = "During your studies, you became less focused on the arcyne and instead turned yourself to your true passion, alchemy. Through the art of transmutation, you have learned that the elements (much like the arcyne) can be maniupulated and bent to your will."
-	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/wapprentice/alchemist
-	rockhill_traits = list(
-		TRAIT_SEEDKNOW,
-		TRAIT_ALCHEMY_EXPERT,
-		TRAIT_MAGEARMOR,
-		TRAIT_ARCYNE_T2,
-		)
-
 /datum/outfit/job/roguetown/rockhill_class/wapprentice/apprentice
 	name = "Magician Apprentice"
 	jobtype = /datum/job/roguetown/wapprentice
@@ -10523,14 +10513,13 @@
 	shoes = /obj/item/clothing/shoes/roguetown/gladiator
 	belt = /obj/item/storage/belt/rogue/leather
 	back = /obj/item/storage/backpack/rogue/satchel
-	backr = /obj/item/rogueweapon/woodstaff
 	l_pocket = /obj/item/storage/magebag/associate
 	r_pocket = /obj/item/storage/keyring/mageapprentice
 	backpack_contents = list(
 		/obj/item/roguegem/amethyst = 1,
 		/obj/item/recipe_book/alchemy = 1,
 		/obj/item/recipe_book/magic = 1,
-		/obj/item/spellbook_unfinished/pre_arcyne = 1,
+		/obj/item/rogueweapon/spellbook = 1,
 		/obj/item/chalk = 1,
 		)
 
@@ -10560,12 +10549,12 @@
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/wapprentice/apprentice
 	rockhill_traits = list(
 		TRAIT_HOMESTEAD_EXPERT,
-		TRAIT_MAGEARMOR,
-		TRAIT_ARCYNE_T2,
+		TRAIT_ALCHEMY_EXPERT,
+		TRAIT_MAGEDEXTERITY,
 		)
 
 /datum/outfit/job/roguetown/rockhill_class/wapprentice/associate
-	name = "Magician Associate"
+	name = "Magician's Associate"
 	jobtype = /datum/job/roguetown/wapprentice
 	uniform = /obj/item/clothing/under/roguetown/tights/random
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
@@ -10575,48 +10564,43 @@
 	shoes = /obj/item/clothing/shoes/roguetown/gladiator
 	belt = /obj/item/storage/belt/rogue/leather
 	back = /obj/item/storage/backpack/rogue/satchel
-	backr = /obj/item/rogueweapon/woodstaff
 	l_pocket = /obj/item/storage/magebag/associate
 	r_pocket = /obj/item/storage/keyring/mageapprentice
 	backpack_contents = list(
-		/obj/item/roguegem/amethyst = 1,
-		/obj/item/spellbook_unfinished/pre_arcyne = 1,
-		/obj/item/recipe_book/alchemy = 1,
-		/obj/item/recipe_book/magic = 1,
+		/obj/item/rogueweapon/spellbook = 1,
 		/obj/item/chalk = 1,
 		)
 
 /datum/attribute_holder/sheet/job/rockhill_class/wapprentice/associate
 	raw_attribute_list = list(
-		ROGUE_STAT_CONSTITUTION = 1,
 		ROGUE_STAT_INTELLIGENCE = 3,
+		ROGUE_STAT_PERCEPTION = 2,
 		ROGUE_STAT_SPEED = 1,
-		ROGUE_STAT_WILLPOWER = 1,
-		/datum/attribute/skill/combat/knives = 20,
-		/datum/attribute/skill/combat/polearms = 30,
+		/datum/attribute/skill/combat/arcyne = 30,
+		/datum/attribute/skill/combat/polearms = 20,
+		/datum/attribute/skill/combat/staves = 30,
+		/datum/attribute/skill/combat/unarmed = 10,
 		/datum/attribute/skill/combat/wrestling = 10,
 		/datum/attribute/skill/craft/alchemy = 30,
 		/datum/attribute/skill/craft/cooking = 10,
 		/datum/attribute/skill/craft/crafting = 20,
 		/datum/attribute/skill/magic/arcane = 30,
-		/datum/attribute/skill/misc/athletics = 30,
+		/datum/attribute/skill/misc/athletics = 10,
 		/datum/attribute/skill/misc/climbing = 20,
-		/datum/attribute/skill/misc/medicine = 20,
+		/datum/attribute/skill/misc/medicine = 10,
 		/datum/attribute/skill/misc/reading = 50,
-		/datum/attribute/skill/misc/riding = 10,
 		/datum/attribute/skill/misc/swimming = 10,
 		)
 
 /datum/rockhill_advclass/wapprentice/associate
-	name = "Magician Associate"
+	name = "Magician's Associate"
 	outfit = /datum/outfit/job/roguetown/rockhill_class/wapprentice/associate
-	desc = "You were once an apprentice, though through your studies and practice you've mastered the basics of the arcyne. You now spend your days working under your master, honing your skills so that you might one day be considered a true master yourself."
+	desc = "No one could truly master the entirety of the arcyne arts. But commanding the fundamentals is quite achievable. Deemed competent by your peers and mentor, you have become an Associate, paid a stipend to wield your power in the name of the Crown, or at least not against them. The Crown might want a bolt of lightning turned against their enemies - after all, what else is the arcyne good for but war and destruction? But as many mages know, wisdom and whimsy are the true calling of the Magos who has mastered the arts. The choice is yours."
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/wapprentice/associate
 	rockhill_traits = list(
-		TRAIT_ARCYNE_T3,
+		TRAIT_ARCYNE,
+		TRAIT_ALCHEMY_EXPERT,
 		TRAIT_MAGEDEXTERITY,
-		TRAIT_MAGEARMOR,
-		TRAIT_ARCYNE_T2,
 		)
 
 /datum/outfit/job/roguetown/rockhill_class/warden/forester
@@ -10758,19 +10742,18 @@
 	uniform = /obj/item/clothing/under/roguetown/trou
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/priest
 	suit = /obj/item/clothing/suit/roguetown/shirt/robe/phys
+	head = /obj/item/clothing/head/roguetown/witchhat
 	mask = /obj/item/clothing/head/roguetown/roguehood/black
 	gloves = /obj/item/clothing/gloves/roguetown/leather/black
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	belt = /obj/item/storage/belt/rogue/leather/black
 	back = /obj/item/storage/backpack/rogue/satchel
 	l_pocket = /obj/item/storage/magebag/witch
-	r_pocket = /obj/item/storage/belt/rogue/pouch/coins/poor
 	backpack_contents = list(
+		/obj/item/rogueweapon/spellbook = 1,
 		/obj/item/reagent_containers/glass/mortar = 1,
 		/obj/item/pestle = 1,
 		/obj/item/candle/yellow = 2,
-		/obj/item/recipe_book/alchemy = 1,
-		/obj/item/recipe_book/magic = 1,
 		/obj/item/chalk = 1,
 		)
 
@@ -10781,10 +10764,7 @@
 		ROGUE_STAT_SPEED = 2,
 		/datum/attribute/skill/craft/alchemy = 40,
 		/datum/attribute/skill/craft/carpentry = 20,
-		/datum/attribute/skill/craft/cooking = 10,
 		/datum/attribute/skill/craft/crafting = 20,
-		/datum/attribute/skill/craft/sewing = 10,
-		/datum/attribute/skill/labor/farming = 10,
 		/datum/attribute/skill/misc/medicine = 20,
 		/datum/attribute/skill/misc/reading = 40,
 		)
@@ -10797,10 +10777,9 @@
 	rockhill_traits = list(
 		TRAIT_DEATHSIGHT,
 		TRAIT_WITCH,
-		TRAIT_ARCYNE_T1,
 		TRAIT_ALCHEMY_EXPERT,
 		)
-	maximum_slots = 5
+	maximum_slots = 20
 
 /datum/outfit/job/roguetown/rockhill_class/woodworker
 	name = "Woodcutter"
@@ -10874,7 +10853,7 @@
 	back = /obj/item/storage/backpack/rogue/satchel
 	l_pocket = /obj/item/rogueweapon/scabbard/sword
 	l_hand = /obj/item/rogueweapon/scabbard/gwstrap
-	r_hand = /obj/item/rogueweapon/greatsword/zizo
+	r_hand = /obj/item/rogueweapon/greatsword/avantyne
 	backpack_contents = list(
 		/obj/item/flashlight/flare/torch/lantern/prelit = 1,
 		/obj/item/rope/chain = 1,
@@ -10912,12 +10891,12 @@
 	rockhill_traits = list(
 		TRAIT_HEAVYARMOR,
 		TRAIT_OVERTHERETIC,
-		TRAIT_ARCYNE_T2,
 		TRAIT_STEELHEARTED,
 		TRAIT_OUTLAW,
 		TRAIT_HERESIARCH,
 		TRAIT_SELF_SUSTENANCE,
 		TRAIT_ZURCH,
+		TRAIT_ARCYNE,
 		)
 	maximum_slots = 1
 
@@ -11057,14 +11036,17 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots/elven_boots
 	belt = /obj/item/storage/belt/rogue/leather/black
 	back = /obj/item/storage/backpack/rogue/satchel/black
-	backr = /obj/item/rogueweapon/scabbard/gwstrap
+	backr = /obj/item/rogueweapon/shield/wood
 	l_pocket = /obj/item/rogueweapon/huntingknife/idagger/steel/elvish
-	l_hand = /obj/item/rogueweapon/sword/long/elf
-	r_hand = /obj/item/rogueweapon/spear/naginata/elf
+	r_pocket = /obj/item/rogueweapon/scabbard/sword
+	r_hand = /obj/item/rogueweapon/sword/long/elf
 	backpack_contents = list(
 		/obj/item/storage/belt/rogue/pouch/coins/poor = 1,
+		/obj/item/flashlight/flare/torch/lantern/prelit = 1,
 		/obj/item/rogueweapon/scabbard/sheath = 1,
-		/obj/item/flashlight/flare/torch = 1,
+		/obj/item/reagent_containers/glass/bottle/alchemical/healthpot = 1,
+		/obj/item/rogueweapon/spellbook = 1,
+		/obj/item/chalk = 1,
 		)
 
 /datum/attribute_holder/sheet/job/rockhill_class/wretch/blackoakwyrm
@@ -11074,11 +11056,11 @@
 		ROGUE_STAT_PERCEPTION = 1,
 		ROGUE_STAT_SPEED = 2,
 		ROGUE_STAT_WILLPOWER = 1,
-		/datum/attribute/skill/combat/knives = 30,
-		/datum/attribute/skill/combat/swords = 30,
+		/datum/attribute/skill/combat/knives = 20,
+		/datum/attribute/skill/combat/shields = 30,
 		/datum/attribute/skill/combat/unarmed = 30,
 		/datum/attribute/skill/combat/wrestling = 30,
-		/datum/attribute/skill/craft/carpentry = 30,
+		/datum/attribute/skill/craft/carpentry = 20,
 		/datum/attribute/skill/craft/crafting = 20,
 		/datum/attribute/skill/craft/sewing = 20,
 		/datum/attribute/skill/craft/tanning = 20,
@@ -11086,32 +11068,34 @@
 		/datum/attribute/skill/magic/arcane = 20,
 		/datum/attribute/skill/misc/athletics = 40,
 		/datum/attribute/skill/misc/climbing = 40,
+		/datum/attribute/skill/misc/hunting = 10,
 		/datum/attribute/skill/misc/medicine = 10,
 		/datum/attribute/skill/misc/reading = 30,
 		/datum/attribute/skill/misc/sneaking = 30,
 		/datum/attribute/skill/misc/swimming = 30,
-		/datum/attribute/skill/misc/tracking = 40,
+		/datum/attribute/skill/misc/tracking = 20,
 		)
 
 /datum/rockhill_advclass/wretch/blackoakwyrm
 	name = "Black Oak Pariah"
 	outfit = /datum/outfit/job/roguetown/rockhill_class/wretch/blackoakwyrm
-	desc = "Carrying extreme beliefs not even befit of the Black Oaks, you have found yourself seceded from the group. They come in waves. Your people were the ones that settled these lands, and now you find them trampled by monster and outside alike. The foreign-backed Crown, deceitful and arrogant, has denied your people the harvest they so dutifully sowed. Your extensive training in the Black Oaks has given you skill in elven weaponry and an arcane acuity. Whether you fight openly with a blade, or stalk in the trees above with a bow, a bounty from the crown follows, and the condemned scorn of those that were once your comrades."
+	desc = "Carrying extreme beliefs not even befit of the Black Oaks, you have decided to secede yourself from the group and everyone else. This land was once great...and now, wave after wave of monsters and outsiders trample your home. Your people were the ones that settled these lands, and the foreign-backed Crown, deceitful and arrogant, has denied your people the rewards they deserve! Your extensive training in the Black Oaks has given you skill in both blades and magycks. A bounty from the crown follows you, as you had already done enough to be officially condemned by the group that was not committed to the cause due to the lure of coin."
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/wretch/blackoakwyrm
 	rockhill_traits = list(
 		TRAIT_AZURENATIVE,
 		TRAIT_OUTDOORSMAN,
 		TRAIT_BLACKOAK,
 		TRAIT_DODGEEXPERT,
-		TRAIT_ARCYNE_T2,
+		TRAIT_ARCYNE,
 		TRAIT_WOODWALKER,
+		TRAIT_EXPERT_HUNTER,
 		TRAIT_STEELHEARTED,
 		TRAIT_OUTLAW,
 		TRAIT_HERESIARCH,
 		TRAIT_SELF_SUSTENANCE,
 		TRAIT_ZURCH,
 		)
-	maximum_slots = 2
+	maximum_slots = 1
 
 /datum/outfit/job/roguetown/rockhill_class/wretch/deserter
 	name = "Disgraced Knight"
@@ -11239,69 +11223,6 @@
 		)
 	maximum_slots = 2
 
-/datum/outfit/job/roguetown/rockhill_class/wretch/hedgemage
-	name = "Hedge Mage"
-	jobtype = /datum/job/roguetown/wretch
-	uniform = /obj/item/clothing/under/roguetown/trou/leather
-	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
-	suit = /obj/item/clothing/suit/roguetown/armor/leather
-	cloak = /obj/item/clothing/suit/roguetown/shirt/robe/black
-	head = /obj/item/clothing/head/roguetown/roguehood/black
-	mask = /obj/item/clothing/mask/rogue/eyepatch
-	neck = /obj/item/clothing/neck/roguetown/leather
-	gloves = /obj/item/clothing/gloves/roguetown/fingerless_leather
-	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
-	belt = /obj/item/storage/belt/rogue/leather
-	back = /obj/item/storage/backpack/rogue/backpack
-	backr = /obj/item/rogueweapon/woodstaff/ruby
-	l_pocket = /obj/item/storage/magebag
-	r_pocket = /obj/item/reagent_containers/glass/bottle/rogue/manapot
-	backpack_contents = list(
-		/obj/item/spellbook_unfinished/pre_arcyne = 1,
-		/obj/item/roguegem/amethyst = 1,
-		/obj/item/storage/belt/rogue/pouch/coins/poor = 1,
-		/obj/item/flashlight/flare/torch/lantern/prelit = 1,
-		/obj/item/rope/chain = 1,
-		/obj/item/chalk = 1,
-		/obj/item/rogueweapon/huntingknife = 1,
-		/obj/item/rogueweapon/scabbard/sheath = 1,
-		/obj/item/reagent_containers/glass/bottle/alchemical/healthpot = 1,
-		)
-
-/datum/attribute_holder/sheet/job/rockhill_class/wretch/hedgemage
-	raw_attribute_list = list(
-		ROGUE_STAT_INTELLIGENCE = 4,
-		ROGUE_STAT_PERCEPTION = 2,
-		ROGUE_STAT_SPEED = 1,
-		ROGUE_STAT_WILLPOWER = 1,
-		/datum/attribute/skill/combat/polearms = 30,
-		/datum/attribute/skill/combat/unarmed = 30,
-		/datum/attribute/skill/combat/wrestling = 30,
-		/datum/attribute/skill/craft/alchemy = 40,
-		/datum/attribute/skill/magic/arcane = 40,
-		/datum/attribute/skill/misc/athletics = 30,
-		/datum/attribute/skill/misc/climbing = 30,
-		/datum/attribute/skill/misc/reading = 50,
-		)
-
-/datum/rockhill_advclass/wretch/hedgemage
-	name = "Hedge Mage"
-	outfit = /datum/outfit/job/roguetown/rockhill_class/wretch/hedgemage
-	desc = "They reject your genius, they cast you out, they call you unethical. They do not understand the SACRIFICES you must make. But it does not matter anymore, your power eclipse any of those fools, save for the Court Magos themselves. Show them true magic. Why do I have an eyepatch?"
-	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/wretch/hedgemage
-	rockhill_traits = list(
-		TRAIT_MAGEARMOR,
-		TRAIT_ARCYNE_T3,
-		TRAIT_ALCHEMY_EXPERT,
-		TRAIT_MAGEDEXTERITY,
-		TRAIT_STEELHEARTED,
-		TRAIT_OUTLAW,
-		TRAIT_HERESIARCH,
-		TRAIT_SELF_SUSTENANCE,
-		TRAIT_ZURCH,
-		)
-
 /datum/outfit/job/roguetown/rockhill_class/wretch/herald_of_progress
 	name = "Herald of Progress"
 	jobtype = /datum/job/roguetown/wretch
@@ -11339,6 +11260,7 @@
 		/datum/attribute/skill/combat/wrestling = 30,
 		/datum/attribute/skill/craft/crafting = 20,
 		/datum/attribute/skill/craft/sewing = 20,
+		/datum/attribute/skill/magic/arcane = 20,
 		/datum/attribute/skill/magic/holy = 40,
 		/datum/attribute/skill/misc/athletics = 40,
 		/datum/attribute/skill/misc/climbing = 30,
@@ -11359,6 +11281,7 @@
 		TRAIT_DODGEEXPERT,
 		TRAIT_DECEIVING_MEEKNESS,
 		TRAIT_OVERTHERETIC,
+		TRAIT_ARCYNE,
 		TRAIT_STEELHEARTED,
 		TRAIT_OUTLAW,
 		TRAIT_HERESIARCH,
@@ -11677,11 +11600,11 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
 	belt = /obj/item/storage/belt/rogue/leather
 	back = /obj/item/storage/backpack/rogue/satchel
-	backr = /obj/item/rogueweapon/woodstaff/ruby
+	backr = /obj/item/rogueweapon/woodstaff/implement/greater/ruby
 	l_pocket = /obj/item/rogueweapon/huntingknife
 	r_pocket = /obj/item/reagent_containers/glass/bottle/rogue/manapot
 	backpack_contents = list(
-		/obj/item/spellbook_unfinished/pre_arcyne = 1,
+		/obj/item/rogueweapon/spellbook/greater = 1,
 		/obj/item/roguegem/amethyst = 1,
 		/obj/item/storage/belt/rogue/pouch/coins/poor = 1,
 		/obj/item/flashlight/flare/torch/lantern/prelit = 1,
@@ -11714,14 +11637,13 @@
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/wretch/necromancer
 	rockhill_traits = list(
 		TRAIT_ZOMBIE_IMMUNE,
-		TRAIT_MAGEARMOR,
 		TRAIT_GRAVEROBBER,
-		TRAIT_ARCYNE_T3,
 		TRAIT_ALCHEMY_EXPERT,
 		TRAIT_MEDICINE_EXPERT,
 		TRAIT_RITUALIST,
 		TRAIT_OUTLANDER,
 		TRAIT_MAGEDEXTERITY,
+		TRAIT_ARCYNE,
 		TRAIT_STEELHEARTED,
 		TRAIT_OUTLAW,
 		TRAIT_HERESIARCH,
@@ -12064,6 +11986,72 @@
 		TRAIT_ZURCH,
 		)
 
+/datum/outfit/job/roguetown/rockhill_class/wretch/roguemage
+	name = "Rogue Mage"
+	jobtype = /datum/job/roguetown/wretch
+	uniform = /obj/item/clothing/under/roguetown/heavy_leather_pants
+	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
+	suit = /obj/item/clothing/suit/roguetown/armor/leather/studded
+	cloak = /obj/item/clothing/suit/roguetown/shirt/robe/black
+	head = /obj/item/clothing/head/roguetown/roguehood/black
+	mask = /obj/item/clothing/mask/rogue/eyepatch
+	neck = /obj/item/clothing/neck/roguetown/leather
+	gloves = /obj/item/clothing/gloves/roguetown/angle
+	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/heavy
+	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
+	belt = /obj/item/storage/belt/rogue/leather
+	back = /obj/item/storage/backpack/rogue/backpack
+	l_pocket = /obj/item/storage/magebag
+	r_pocket = /obj/item/reagent_containers/glass/bottle/rogue/manapot
+	backpack_contents = list(
+		/obj/item/rogueweapon/spellbook/greater = 1,
+		/obj/item/storage/belt/rogue/pouch/coins/poor = 1,
+		/obj/item/flashlight/flare/torch/lantern/prelit = 1,
+		/obj/item/rope/chain = 1,
+		/obj/item/chalk = 1,
+		/obj/item/rogueweapon/huntingknife = 1,
+		/obj/item/rogueweapon/scabbard/sheath = 1,
+		/obj/item/reagent_containers/glass/bottle/alchemical/healthpot = 1,
+		)
+
+/datum/attribute_holder/sheet/job/rockhill_class/wretch/roguemage
+	raw_attribute_list = list(
+		ROGUE_STAT_INTELLIGENCE = 4,
+		ROGUE_STAT_PERCEPTION = 2,
+		ROGUE_STAT_SPEED = 1,
+		ROGUE_STAT_WILLPOWER = 1,
+		/datum/attribute/skill/combat/arcyne = 40,
+		/datum/attribute/skill/combat/knives = 30,
+		/datum/attribute/skill/combat/polearms = 30,
+		/datum/attribute/skill/combat/staves = 40,
+		/datum/attribute/skill/combat/unarmed = 30,
+		/datum/attribute/skill/combat/wrestling = 30,
+		/datum/attribute/skill/craft/alchemy = 40,
+		/datum/attribute/skill/craft/crafting = 20,
+		/datum/attribute/skill/magic/arcane = 40,
+		/datum/attribute/skill/misc/athletics = 30,
+		/datum/attribute/skill/misc/climbing = 30,
+		/datum/attribute/skill/misc/medicine = 20,
+		/datum/attribute/skill/misc/reading = 50,
+		/datum/attribute/skill/misc/sneaking = 20,
+		/datum/attribute/skill/misc/swimming = 20,
+		)
+
+/datum/rockhill_advclass/wretch/roguemage
+	name = "Rogue Mage"
+	outfit = /datum/outfit/job/roguetown/rockhill_class/wretch/roguemage
+	desc = "They reject your genius, they cast you out, they call you unethical. They do not understand the SACRIFICES you must make. But it does not matter anymore, your power eclipse any of those fools, save for the Court Magos themselves. Show them true magic. Why do I have an eyepatch?"
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/wretch/roguemage
+	rockhill_traits = list(
+		TRAIT_ARCYNE,
+		TRAIT_ALCHEMY_EXPERT,
+		TRAIT_STEELHEARTED,
+		TRAIT_OUTLAW,
+		TRAIT_HERESIARCH,
+		TRAIT_SELF_SUSTENANCE,
+		TRAIT_ZURCH,
+		)
+
 /datum/outfit/job/roguetown/rockhill_class/wretch/vigilante
 	name = "Masked Lunatic"
 	jobtype = /datum/job/roguetown/wretch
@@ -12126,7 +12114,7 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
 	belt = /obj/item/storage/belt/rogue/leather
 	back = /obj/item/storage/backpack/rogue/satchel
-	backr = /obj/item/rogueweapon/woodstaff/ruby
+	backr = /obj/item/rogueweapon/woodstaff/implement/greater/ruby
 	l_pocket = /obj/item/storage/magebag/associate
 	r_pocket = /obj/item/reagent_containers/glass/bottle/rogue/manapot
 	r_hand = /obj/item/scrying
@@ -12176,7 +12164,6 @@
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/wretch/wretchedtoiler
 	rockhill_traits = list(
 		TRAIT_RITUALIST,
-		TRAIT_ARCYNE_T2,
 		TRAIT_ALCHEMY_EXPERT,
 		TRAIT_MEDICINE_EXPERT,
 		TRAIT_SMITHING_EXPERT,

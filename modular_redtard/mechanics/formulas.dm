@@ -1,7 +1,7 @@
 GLOBAL_LIST_INIT(rogue_formula_definitions, list(
 	ROGUE_FORMULA_STRENGTH_FACTOR = list(
-		"if(strength > 14, 1.4 + (strength - 14) * 0.034, 1 + (strength - 10) * 0.1) * if(min_strength > strength, 0.3, 1)",
-		"Damage multiplier from the attacker's strength (Ratwood). min_strength is the weapon's need, halved when wielded, 0 if none.",
+		"if(strength > 14, 1.4 + (strength - 14) * 0.05, 1 + (strength - 10) * 0.1) * if(min_strength > strength, 0.3, 1)",
+		"Damage multiplier from the attacker's strength (Ratwood STRENGTH_MULT up to STRENGTH_SOFTCAP 14, STRENGTH_CAPPEDMULT past it). min_strength is the weapon's need, halved when wielded, 0 if none.",
 		list("strength", "min_strength"),
 	),
 	ROGUE_FORMULA_WEAPON_DEFENSE = list(
@@ -23,16 +23,6 @@ GLOBAL_LIST_INIT(rogue_formula_definitions, list(
 		"clamp(if(prone, 0.25, 1) * if(dodge_expert and not prone, 90, base + (defender_speed - attacker_speed) * 10 - if(swift_attack and attacker_speed > defender_speed, (attacker_speed - defender_speed) * 10, 0) + if(heavy_attack and defender_speed > attacker_speed, (defender_speed - attacker_speed) * 10, 0) + if(improvised, 10, (defender_skill - attacker_skill) * 10)) + fatigue - dual_wield * 5, 5, 90 + fatigue)",
 		"Dodge chance in percent (Azure Peak). base is the attacker's defprob (dodge_base for a person); defender_skill is the defender's rank in the attacker's skill; improvised is a weapon without a skill.",
 		list("defender_speed", "attacker_speed", "swift_attack", "heavy_attack", "improvised", "defender_skill", "attacker_skill", "prone", "dodge_expert", "dual_wield", "fatigue", "base"),
-	),
-	ROGUE_FORMULA_ARMOR_PROTECTION = list(
-		"clamp(rating - penetration, 0, 100)",
-		"Percent of damage the best covering armor stops (Ratwood).",
-		list("rating", "penetration"),
-	),
-	ROGUE_FORMULA_ARMOR_WEAR = list(
-		"if(blunt_attack, incoming - incoming * max(blunt_rating, 0) / 200, if(incoming + penetration > rating, if(penetration >= rating, incoming / 2, max(rating - penetration, incoming * 0.4)), incoming))",
-		"Integrity the armor loses from one hit (Ratwood). incoming is the damage before armor.",
-		list("incoming", "rating", "penetration", "blunt_attack", "blunt_rating"),
 	),
 	ROGUE_FORMULA_WOUND_CONSTITUTION = list(
 		"clamp(1 - (constitution - 10) * 0.03, 0.5, 1.5)",
@@ -110,9 +100,9 @@ GLOBAL_LIST_INIT(rogue_formula_definitions, list(
 		list("perception", "target_sneaking"),
 	),
 	ROGUE_FORMULA_UNARMED_DAMAGE = list(
-		"(17 + civilized * 5) * if(strength > 14, 1.4 + (strength - 14) * 0.034, 1 + (strength - 10) * 0.1)",
-		"Bare-handed damage before the strike formula: a punch, twisting, chewing, headbutting (Ratwood get_punch_dmg). civilized is the civilized barbarian trait.",
-		list("strength", "civilized"),
+		"(17 + civilized * 5) * if(strength > 14, 1.4 + (strength - 14) * 0.05, 1 + (strength - 10) * 0.1) + gloves",
+		"Bare-handed damage before the strike formula: a punch, twisting, chewing, headbutting (Ratwood get_punch_dmg after the Azure Peak unarmed rework). civilized is the Expert Pugilist trait, gloves the flat unarmed bonus of the worn gloves or knuckles, added after strength.",
+		list("strength", "civilized", "gloves"),
 	),
 	ROGUE_FORMULA_GRAB_CHANCE = list(
 		"clamp(((4 + strength_diff / 2 + skill_diff) * 10 + noise) * modifier, 5, 95)",

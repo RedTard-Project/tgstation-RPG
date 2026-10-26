@@ -15,6 +15,9 @@
 		var/mutable_appearance/sleeve = mutable_appearance(worn.rogue_sleeved, state, -sleeve_layer)
 		sleeve.color = worn.color
 		sleeve.alpha = worn.alpha
+		var/obj/item/clothing/garment = worn
+		if(istype(garment) && garment.sleeved_detail)
+			sleeve.overlays += garment.rogue_detail_layers(worn.rogue_sleeved, state, "[side]_[worn.icon_state]")
 		sleeves += sleeve
 	return length(sleeves) ? sleeves : null
 

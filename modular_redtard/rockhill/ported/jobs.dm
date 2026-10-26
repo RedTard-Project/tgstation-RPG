@@ -233,8 +233,6 @@
 	rockhill_advclass = "/datum/advclass/archivist"
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/archivist
 	rockhill_traits = list(
-		TRAIT_ARCYNE_T2,
-		TRAIT_MAGEARMOR,
 		TRAIT_INTELLECTUAL,
 		TRAIT_SEEPRICES_SHITTY,
 		TRAIT_GOODWRITER,
@@ -464,8 +462,6 @@
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/crier
 	rockhill_traits = list(
 		TRAIT_INTELLECTUAL,
-		TRAIT_ARCYNE_T1,
-		TRAIT_MAGEARMOR,
 		TRAIT_SEEPRICES_SHITTY,
 		TRAIT_HOMESTEAD_EXPERT,
 		)
@@ -614,16 +610,12 @@
 	rockhill_advclasses = list(
 		/datum/rockhill_advclass/guildsman/artificer,
 		/datum/rockhill_advclass/guildsman/blacksmith,
+		/datum/rockhill_advclass/guildsman/engineer,
 		)
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/guildsman
 	rockhill_traits = list(
-		TRAIT_ARCYNE_T1,
-		TRAIT_MASTER_CARPENTER,
-		TRAIT_MASTER_MASON,
-		TRAIT_HOMESTEAD_EXPERT,
+		TRAIT_ARCYNE,
 		TRAIT_ALCHEMY_EXPERT,
-		TRAIT_FUSILIER,
-		TRAIT_LEGENDARY_MINER,
 		TRAIT_TRAINED_SMITH,
 		TRAIT_SMITHING_EXPERT,
 		)
@@ -863,8 +855,8 @@
 	rockhill_advclass = "/datum/advclass/courtmage"
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/magician
 	rockhill_traits = list(
-		TRAIT_MAGEARMOR,
-		TRAIT_ARCYNE_T4,
+		TRAIT_BADTRAINER,
+		TRAIT_ARCYNE,
 		TRAIT_SEEPRICES,
 		TRAIT_INTELLECTUAL,
 		TRAIT_ALCHEMY_EXPERT,
@@ -1210,7 +1202,6 @@
 	rockhill_traits = list(
 		TRAIT_TRAINED_SMITH,
 		TRAIT_SMITHING_EXPERT,
-		TRAIT_ARCYNE_T1,
 		)
 
 /datum/job/roguetown/priest
@@ -1272,7 +1263,7 @@
 	departments_list = list(
 		/datum/job_department/rockhill_peasants,
 		)
-	rockhill_advclass = "/datum/advclass/prisoner_blacksmith"
+	rockhill_advclass = "/datum/advclass/prisoner_woodcutter"
 	rockhill_advclasses = list(
 		/datum/rockhill_advclass/prisoner_blacksmith,
 		/datum/rockhill_advclass/prisoner_butcher,
@@ -1292,7 +1283,7 @@
 		)
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/prisonerr
 	rockhill_traits = list(
-		TRAIT_TRAINED_SMITH,
+		TRAIT_BANDITCAMP,
 		)
 
 /datum/job/roguetown/puritan
@@ -1618,15 +1609,13 @@
 	rockhill_advclass = "/datum/advclass/wapprentice/associate"
 	rockhill_advclasses = list(
 		/datum/rockhill_advclass/wapprentice/associate,
-		/datum/rockhill_advclass/wapprentice/alchemist,
 		/datum/rockhill_advclass/wapprentice/apprentice,
 		)
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/wapprentice
 	rockhill_traits = list(
-		TRAIT_ARCYNE_T3,
+		TRAIT_ARCYNE,
+		TRAIT_ALCHEMY_EXPERT,
 		TRAIT_MAGEDEXTERITY,
-		TRAIT_MAGEARMOR,
-		TRAIT_ARCYNE_T2,
 		)
 
 /datum/job/roguetown/warden
@@ -1710,13 +1699,13 @@
 	mind_traits = list(
 		"Hidden Domiciles",
 		)
-	rockhill_advclass = "/datum/advclass/wretch/licker"
+	rockhill_advclass = "/datum/advclass/wretch/deserter"
 	rockhill_advclasses = list(
 		/datum/rockhill_advclass/wretch/licker,
 		/datum/rockhill_advclass/wretch/deserter,
 		/datum/rockhill_advclass/wretch/deserter/maa,
 		/datum/rockhill_advclass/wretch/berserker,
-		/datum/rockhill_advclass/wretch/hedgemage,
+		/datum/rockhill_advclass/wretch/roguemage,
 		/datum/rockhill_advclass/wretch/necromancer,
 		/datum/rockhill_advclass/wretch/heretic,
 		/datum/rockhill_advclass/wretch/heretic/spy,
@@ -1737,8 +1726,10 @@
 		)
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/wretch
 	rockhill_traits = list(
+		TRAIT_HEAVYARMOR,
+		TRAIT_EQUESTRIAN,
+		TRAIT_DISGRACED_NOBLE,
 		TRAIT_STEELHEARTED,
-		TRAIT_SILVER_WEAK,
 		TRAIT_OUTLAW,
 		TRAIT_HERESIARCH,
 		TRAIT_SELF_SUSTENANCE,
@@ -1873,11 +1864,10 @@
 	suit = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/nightman
 	head = /obj/item/clothing/head/roguetown/nightman
 	mask = /obj/item/clothing/mask/rogue/spectacles
-	wrists = /obj/item/storage/keyring/archivist
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
 	back = /obj/item/storage/backpack/rogue/satchel
-	l_pocket = /obj/item/rogueweapon/huntingknife
+	l_pocket = /obj/item/storage/keyring/archivist
 	r_pocket = /obj/item/storage/belt/rogue/pouch/coins/mid
 	backpack_contents = list(
 		/obj/item/recipe_book/alchemy = 1,
@@ -1886,7 +1876,7 @@
 		/obj/item/paper = 1,
 		/obj/item/paper = 1,
 		/obj/item/paper = 1,
-		/obj/item/rogueweapon/scabbard/sheath = 1,
+		/obj/item/rogueweapon/spellbook = 1,
 		)
 
 /datum/outfit/job/roguetown/barkeep
@@ -2207,33 +2197,22 @@
 	suit = /obj/item/clothing/suit/roguetown/armor/leather/jacket/artijacket
 	cloak = /obj/item/clothing/cloak/apron/waist/brown
 	head = /obj/item/clothing/head/roguetown/articap
-	mask = /obj/item/clothing/mask/rogue/spectacles/golden
 	gloves = /obj/item/clothing/gloves/roguetown/angle/grenzelgloves/blacksmith
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	belt = /obj/item/storage/belt/rogue/leather
 	back = /obj/item/storage/backpack/rogue/backpack
-	backr = /obj/item/rogueweapon/stoneaxe/woodcut/steel/woodcutter
-	l_pocket = /obj/item/flashlight/flare/torch/lantern
-	r_pocket = /obj/item/rogueweapon/pick/steel
+	l_pocket = /obj/item/roguekey/crafterguild
+	r_pocket = /obj/item/storage/belt/rogue/pouch/coins/mid
 	backpack_contents = list(
 		/obj/item/rogueweapon/hammer/steel = 1,
-		/obj/item/rogueweapon/chisel = 1,
-		/obj/item/rogueweapon/handsaw = 1,
 		/obj/item/lockpickring/mundane = 1,
 		/obj/item/recipe_book/blacksmithing = 1,
 		/obj/item/recipe_book/engineering = 1,
 		/obj/item/recipe_book/ceramics = 1,
 		/obj/item/recipe_book/builder = 1,
-		/obj/item/recipe_book/survival = 1,
-		/obj/item/contraption/linker = 1,
+		/obj/item/clothing/mask/rogue/spectacles/golden = 1,
 		/obj/item/mini_flagpole/artificer = 1,
-		/obj/item/storage/belt/rogue/pouch/coins/mid = 1,
-		/obj/item/mini_flagpole/blacksmith = 1,
-		/obj/item/rogueweapon/blowrod = 1,
-		/obj/item/dye_brush = 1,
-		/obj/item/roguekey/crafterguild = 1,
-		/obj/item/rogueweapon/huntingknife = 1,
-		/obj/item/flint = 1,
+		/obj/item/rogueweapon/spellbook = 1,
 		)
 
 /datum/outfit/job/roguetown/hand
@@ -2448,14 +2427,13 @@
 	back = /obj/item/storage/backpack/rogue/satchel
 	l_pocket = /obj/item/storage/magebag/associate
 	r_pocket = /obj/item/storage/keyring/mage
-	r_hand = /obj/item/rogueweapon/woodstaff/riddle_of_steel/magos
+	r_hand = /obj/item/rogueweapon/woodstaff/implement/grand/magos
 	backpack_contents = list(
 		/obj/item/reagent_containers/glass/bottle/rogue/poison = 1,
 		/obj/item/reagent_containers/glass/bottle/rogue/healthpot = 1,
-		/obj/item/recipe_book/alchemy = 1,
-		/obj/item/recipe_book/magic = 1,
-		/obj/item/book/spellbook = 1,
+		/obj/item/rogueweapon/spellbook/grand = 1,
 		/obj/item/rogueweapon/huntingknife/idagger/silver/arcyne = 1,
+		/obj/item/chalk = 1,
 		)
 
 /datum/outfit/job/roguetown/manorguard
@@ -2742,6 +2720,10 @@
 /datum/outfit/job/roguetown/prisonerr
 	name = JOB_ROCKHILL_PRISONER_TOWN
 	jobtype = /datum/job/roguetown/prisonerr
+	uniform = /obj/item/clothing/under/roguetown/tights/random
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
+	suit = /obj/item/clothing/suit/roguetown/shirt/tunic/random
+	neck = /obj/item/clothing/neck/roguetown/collar/leather
 
 /datum/outfit/job/roguetown/puritan
 	name = JOB_ROCKHILL_INQUISITOR
@@ -2852,6 +2834,16 @@
 /datum/outfit/job/roguetown/shophand
 	name = JOB_ROCKHILL_SHOPHAND
 	jobtype = /datum/job/roguetown/shophand
+	uniform = /obj/item/clothing/under/roguetown/tights
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
+	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
+	belt = /obj/item/storage/belt/rogue/leather
+	back = /obj/item/storage/backpack/rogue/satchel
+	l_pocket = /obj/item/storage/keyring/merchant
+	r_pocket = /obj/item/storage/belt/rogue/pouch/coins/poor
+	backpack_contents = list(
+		/obj/item/mini_flagpole/merchant = 1,
+		)
 
 /datum/outfit/job/roguetown/slaver
 	name = JOB_ROCKHILL_SLAVER
@@ -3035,14 +3027,10 @@
 	shoes = /obj/item/clothing/shoes/roguetown/gladiator
 	belt = /obj/item/storage/belt/rogue/leather
 	back = /obj/item/storage/backpack/rogue/satchel
-	backr = /obj/item/rogueweapon/woodstaff
 	l_pocket = /obj/item/storage/magebag/associate
 	r_pocket = /obj/item/storage/keyring/mageapprentice
 	backpack_contents = list(
-		/obj/item/roguegem/amethyst = 1,
-		/obj/item/spellbook_unfinished/pre_arcyne = 1,
-		/obj/item/recipe_book/alchemy = 1,
-		/obj/item/recipe_book/magic = 1,
+		/obj/item/rogueweapon/spellbook = 1,
 		/obj/item/chalk = 1,
 		)
 
@@ -3126,3 +3114,22 @@
 /datum/outfit/job/roguetown/wretch
 	name = JOB_ROCKHILL_WRETCH
 	jobtype = /datum/job/roguetown/wretch
+	uniform = /obj/item/clothing/under/roguetown/chainlegs
+	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
+	suit = /obj/item/clothing/suit/roguetown/armor/brigandine
+	neck = /obj/item/clothing/neck/roguetown/bevor
+	gloves = /obj/item/clothing/gloves/roguetown/plate
+	wrists = /obj/item/clothing/wrists/roguetown/bracers
+	shoes = /obj/item/clothing/shoes/roguetown/boots/armor
+	belt = /obj/item/storage/belt/rogue/leather/steel
+	back = /obj/item/storage/backpack/rogue/satchel
+	backr = /obj/item/rogueweapon/scabbard/gwstrap
+	l_pocket = /obj/item/storage/belt/rogue/pouch/coins/poor
+	r_hand = /obj/item/rogueweapon/estoc
+	backpack_contents = list(
+		/obj/item/rogueweapon/huntingknife/combat/messer = 1,
+		/obj/item/flashlight/flare/torch/lantern/prelit = 1,
+		/obj/item/rope/chain = 1,
+		/obj/item/rogueweapon/scabbard/sheath = 1,
+		/obj/item/reagent_containers/glass/bottle/alchemical/healthpot = 1,
+		)

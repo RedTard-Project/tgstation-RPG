@@ -33,6 +33,12 @@
 		examine_list += span_notice("[source.rogue_edge_text()] Sharpness: [round(source.rogue_edge_ratio() * 100)]%.")
 	if(source.minstr)
 		examine_list += span_notice("It needs [source.minstr] strength to use properly[length(source.gripped_intents) ? " ([max(source.minstr / 2, 1)] wielded)" : ""].")
+	if(length(source.alt_grips) && isliving(user))
+		var/list/grip_names = list()
+		for(var/grip_type in source.alt_grips)
+			var/datum/alt_grip/grip = rogue_alt_grip(grip_type)
+			grip_names += grip.describe(source, user)
+		examine_list += span_notice("Alternate grips: [jointext(grip_names, ", ")]. Right-click it in hand or press Alt Grip to switch.")
 
 /datum/element/rogue_weapon/proc/on_attack(obj/item/source, mob/living/target, mob/living/user, list/modifiers, list/attack_modifiers)
 	SIGNAL_HANDLER

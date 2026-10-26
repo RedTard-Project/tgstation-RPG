@@ -33,8 +33,6 @@
 #define ROGUE_FORMULA_SPEED_PRESSURE "parry_speed_pressure"
 #define ROGUE_FORMULA_PARRY_CHANCE "parry_chance"
 #define ROGUE_FORMULA_DODGE_CHANCE "dodge_chance"
-#define ROGUE_FORMULA_ARMOR_PROTECTION "armor_protection"
-#define ROGUE_FORMULA_ARMOR_WEAR "armor_wear"
 #define ROGUE_FORMULA_WOUND_CONSTITUTION "wound_constitution"
 #define ROGUE_FORMULA_FEINT_CHANCE "feint_chance"
 #define ROGUE_FORMULA_LOOK_AROUND_TIME "look_around_time"

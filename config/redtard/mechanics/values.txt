@@ -321,6 +321,96 @@ blade_sharpen_wear = 0.5
 # Least maximum sharpness a blade can wear down to (Azure Peak).
 blade_min_max = 10
 
+# Share of a blow that passes armor whose block tier the intent's penetration tier reaches, before the per-tier part (Ratwood PEN_PASSTHROUGH_MINIMUM).
+pen_passthrough_min = 0.4
+
+# Share of a blow added per penetration tier when it passes the armor (Ratwood PEN_PASSTHROUGH_RATIO).
+pen_passthrough_per_tier = 0.1
+
+# Share of a projectile that passes armor whose block tier its penetration reaches (Ratwood PEN_PASSTHROUGH_PROJ_EQUAL).
+pen_projectile_passthrough = 0.2
+
+# Percent of TG armour penetration counted as one penetration tier for projectiles that do not carry a tier.
+pen_percent_per_tier = 20
+
+# Blunt damage reduction per absorption tier when a blow wears the armor: the armor takes damage / (1 + this * tier) (Ratwood BLUNT_DR_COEFFICIENT).
+armor_blunt_dr = 0.3
+
+# Armor wear factor of a stopped blow against an exposed defender (Ratwood EXPOSED_INTEG_MOD).
+armor_exposed_wear = 2.5
+
+# Armor wear factor of a stopped blow against a vulnerable defender (Ratwood VULN_INTEG_MOD).
+armor_vulnerable_wear = 1.5
+
+# Share of its integrity at which armor stops protecting (Ratwood clothing integrity_failure).
+armor_failure_share = 0.1
+
+# Damage factor of a reach intent used outside its effective range against a standing target; its penetration drops to none (Ratwood).
+effective_range_damage = 0.5
+
+# Times per second a held full charge drains the intent's chargedrain in stamina (Ratwood mousecharge runs every decisecond).
+charge_drain_ticks_per_second = 10
+
+# Deciseconds a swing status outlasts the swing delay, so a hit at its very end still counts (Ratwood).
+swingdelay_overhead = 2
+
+# Parry and dodge chance lost while winding up an intent with a difficult swing delay (Ratwood SWINGDELAY_PENALTY).
+swingdelay_defense_penalty = 50
+
+# Deciseconds of action delay after yielding (Ratwood CLICK_CD_EXHAUSTED).
+yield_click = 60
+
+# Deciseconds a yielder lies stunned on the ground (Ratwood).
+yield_stun = 300
+
+# Deciseconds a yielder flies the white flag and is slowed (Ratwood).
+yield_duration = 600
+
+# Movement slowdown of a yielder (Ratwood submissive).
+yield_slowdown = 4
+
+# Deciseconds a yielder stays too weak to fight (Ratwood conceded, more punishing yield).
+conceded_duration = 3000
+
+# Strength, perception, speed and fortune a yielder loses for that time (Ratwood conceded).
+conceded_penalty = 15
+
+# Deciseconds after one's own swing during which a thrown item is deflected at double chance (Ratwood PROJ_PARRY_TIMER).
+deflect_window = 6.5
+
+# Percent chance per weapon skill rank to deflect a thrown item one faces in combat mode (Ratwood).
+deflect_per_rank = 10
+
+# Highest chance to deflect a thrown item (Ratwood).
+deflect_max = 90
+
+# Percent chance a deflected item flies straight back; otherwise it goes off to a side (Ratwood).
+deflect_back_chance = 10
+
+# Least tiles a deflected item flies (Ratwood).
+deflect_min_range = 3
+
+# Most tiles a deflected item flies (Ratwood).
+deflect_max_range = 7
+
+# Percent chance that Combat Aware onlookers see a vague hint of where someone with Deceiving Meekness aims (Ratwood).
+meekness_hint_chance = 10
+
+# Weapon skill rank from which an onlooker recognises the alternate grip someone shifts into (Ratwood SKILL_LEVEL_JOURNEYMAN).
+alt_grip_know_rank = 3
+
+# Percent chance a shove moves its target a tile, before strength against constitution (Ratwood disarm).
+shove_chance = 30
+
+# Share of health at which a beast that fled from its wounds turns back to fight (Ratwood volf, ai_flee_while_injured 0.75).
+beast_flee_stop = 0.75
+
+# Percent chance per step that something which can be spat out slips out of the mouth (Ratwood human_movement.dm).
+mouth_slip_chance = 5
+
+# Percent a stat comparison adds or takes per point of difference, once the stats differ by more than one (Ratwood generic_stat_comparison).
+stat_compare_step = 10
+
 # Default deciseconds someone stays exposed: no parry or dodge, +20 to be hit precisely, the next blow pops it (Azure Peak).
 exposed_duration = 100
 
@@ -528,8 +618,8 @@ special_damage_factor = 1
 # Share of edge wear per extra target of a cleave (Azure Peak).
 cleave_wear_factor = 0.5
 
-# Share of a limb's damage above which blows can critically wound it (Azure Peak CRIT_DISMEMBER_DAMAGE_THRESHOLD).
-crit_limb_threshold = 0.7
+# Share of a limb's damage above which blows can critically wound it (Ratwood CRIT_DISMEMBER_DAMAGE_THRESHOLD after the Azure Peak armor rework).
+crit_limb_threshold = 0.9
 
 # Damage added to a crit roll by good luck (Azure Peak).
 crit_luck_bonus = 10
@@ -573,11 +663,11 @@ crit_heart_damage = 30
 # Deciseconds of critical resistance after it first triggers (Azure Peak CRIT_RESISTANCE_TIMER_CD).
 crit_resist_cooldown = 300
 
-# Crits a player with critical resistance shrugs off during it (Azure Peak).
-crit_resist_stacks = 4
+# Crits a player with critical resistance shrugs off during it (Ratwood CRIT_RESISTANCE_STACKS_PLAYER).
+crit_resist_stacks = 3
 
-# Crits a creature without a mind shrugs off (Azure Peak).
-crit_resist_stacks_npc = 1
+# Crits a creature without a mind shrugs off (Ratwood CRIT_RESISTANCE_STACKS_NPC).
+crit_resist_stacks_npc = 2
 
 # Most attackers tempo remembers (Azure Peak TEMPO_CAP).
 tempo_cap = 7
@@ -681,8 +771,8 @@ dual_wield_stamina = 3
 # Least blow damage that can sever a limb (Azure Peak).
 dismember_min_force = 10
 
-# Share of its damage a limb needs before it can be severed (Azure Peak CRIT_DISMEMBER_DAMAGE_THRESHOLD).
-dismember_damage_share = 0.7
+# Share of its damage a limb needs before it can be severed (Ratwood CRIT_DISMEMBER_DAMAGE_THRESHOLD after the Azure Peak armor rework).
+dismember_damage_share = 0.9
 
 # Edge share at or below which a blade severs nothing (Azure Peak).
 dismember_dull_share = 0.15
@@ -1148,3 +1238,24 @@ special_limbguard_delay = 10
 
 # Limb Guard: stamcost. Times are in deciseconds.
 special_limbguard_stamcost = 25
+
+# Dagger Dash: cooldown. Times are in deciseconds.
+special_dagger_dash_cooldown = 900
+
+# Dagger Dash: delay. Times are in deciseconds.
+special_dagger_dash_delay = 10
+
+# Dagger Dash: stamcost. Times are in deciseconds.
+special_dagger_dash_stamcost = 25
+
+# Quarterstaff Sweep: cooldown. Times are in deciseconds.
+special_quarterstaff_sweep_cooldown = 250
+
+# Quarterstaff Sweep: delay. Times are in deciseconds.
+special_quarterstaff_sweep_delay = 6
+
+# Quarterstaff Sweep: stamcost. Times are in deciseconds.
+special_quarterstaff_sweep_stamcost = 20
+
+# Quarterstaff Sweep: open_dur. Times are in deciseconds.
+special_quarterstaff_sweep_open_dur = 30

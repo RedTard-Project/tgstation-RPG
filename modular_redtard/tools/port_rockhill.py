@@ -1,5 +1,6 @@
 import collections
 from collections import OrderedDict
+import glob
 import json
 import os
 import re
@@ -39,12 +40,16 @@ HOLD_LIST = re.compile(r'(?:typecacheof|set_holdable)\(\s*list\(')
 NEW_IN_SRC = re.compile(r'new\s+(/obj/item/[A-Za-z0-9_/]+)\s*\(\s*src\s*\)')
 LOOT_LIST = re.compile(r'\bloot\s*=\s*list\(([^)]*)\)')
 PROB_CALL = re.compile(r'\bprob\((\d+)\)')
-ONMOB_TAGS = {'onback': 'ROGUE_ONMOB_BACK', 'onbelt': 'ROGUE_ONMOB_HIP', 'gen': 'ROGUE_ONMOB_HAND', 'wielded': 'ROGUE_ONMOB_WIELDED'}
+ONMOB_TAGS = ('onback', 'onbelt', 'gen', 'wielded')
 DEFINE_VALUES = {}
 SOURCE_REVISION = []
 ARMOR_DATUMS = {}
 ROGUE_ARMOR_DATUMS = {}
 USED_INTENTS = set()
+BAKE_JOBS = collections.defaultdict(dict)
+BAKE_NAMES = {}
+ABOVE_KEYS = ('northabove', 'southabove', 'eastabove', 'westabove')
+ALT_GRIP_ROOT = '/datum/alt_grip'
 DEFAULT_INTENTS = ('/datum/intent/use',)
 BLANK_USERS = set()
 FEMALE_USERS = set()
@@ -953,7 +958,6 @@ def main():
             contents, loot, _ = closet_fill(rw, path)
             fill_items |= set(contents) | {item for item, _ in loot}
     generated = generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, outfit_items | mapgen_types | fill_items, set(jobs))
-    generate_onmob(generated)
     generate_mapgen(mapgen, rules, declared | generated, tg_names)
     role_traits = set()
     for job in jobs:
@@ -1157,32 +1161,62 @@ def parse_onmob(body):
     return found
 
 
-def generate_onmob(generated):
-    owners = set()
-    for path in generated:
-        if not path.startswith('/obj/item/'):
-            continue
-        parts = path.split('/')
-        for k in range(4, len(parts) + 1):
-            prefix = '/'.join(parts[:k])
-            if prefix in ONMOB:
-                owners.add(prefix)
-    blocks = []
-    for owner in sorted(owners):
-        body = ONMOB[owner]
-        found = parse_onmob(body)
-        inherits = any('..()' in line for line in body)
-        if not found and inherits:
-            continue
-        block = [f'{owner}/rogue_onmob_prop(tag)']
-        if found:
-            block.append('\tswitch(tag)')
-            for tag, value in found.items():
-                block += [f'\t\tif({ONMOB_TAGS[tag]})', f'\t\t\treturn {value}']
-        block.append('\treturn ..()' if inherits else '\treturn null')
-        blocks.append(block)
-    open(f'{OUT_DIR}/onmob.dm', 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
-    print(f'onmob.dm: {len(blocks)} on-body prop overrides')
+def onmob_numbers(raw):
+    """A getonmobprop list literal as {key: number}."""
+    return {key: float(value) if '.' in value else int(value) for key, value in re.findall(r'"(\w+)"\s*=\s*(-?\d+(?:\.\d+)?)', raw or '')}
+
+
+def onmob_prop(rw, path, tag):
+    """The getonmobprop table an item answers for a tag ("gen", "wielded", "onbelt", "onback"), walking its
+    parents as Ratwood's `return ..()` does; None when a type stops the walk without one."""
+    p = path
+    while p and p.startswith('/obj/item'):
+        body = ONMOB.get(p)
+        if body is not None:
+            found = parse_onmob(body)
+            if tag in found:
+                return None if found[tag] == 'null' else onmob_numbers(found[tag])
+            if not any('..()' in line for line in body):
+                return None
+        p = rw.parent(p)
+    return None
+
+
+def onmob_parts(prop, behind):
+    """Whether the table draws anything in front of the body (above = 1) or behind it (above = 0)."""
+    return any(prop.get(key) == (0 if behind else 1) for key in ABOVE_KEYS)
+
+
+def bake_name(group, base, signature):
+    """A state name in a baked sheet group: the sprite's own state, or "<state>~<n>" when another item with the
+    same sprite holds it differently."""
+    name = base
+    n = 1
+    while BAKE_NAMES.get((group, name), signature) != signature:
+        n += 1
+        name = f'{base}~{n}'
+    BAKE_NAMES[(group, name)] = signature
+    return name
+
+
+def bake_jobs(out, name, icon, state, prop, mirrored):
+    """Queues the front and behind states a table draws; returns how many it queued (none when no side is drawn)."""
+    queued = 0
+    for behind in (False, True):
+        if onmob_parts(prop, behind):
+            job_name = f'{name}_behind' if behind else name
+            BAKE_JOBS[out][job_name] = {'name': job_name, 'icon': icon, 'state': state, 'prop': prop, 'mirrored': mirrored, 'behind': behind}
+            queued += 1
+    return queued
+
+
+def write_bake_manifest(spec):
+    sheets = [{'out': out, 'states': [jobs[name] for name in sorted(jobs)]} for out, jobs in sorted(BAKE_JOBS.items())]
+    manifest = {'mask32': spec['mask32'], 'mask64': spec['mask64'], 'canvas': 64, 'sheets': sheets}
+    with open(spec['manifest'], 'w', encoding='utf-8', newline='\n') as handle:
+        json.dump(manifest, handle, indent='\t', sort_keys=True)
+        handle.write('\n')
+    print(f"{spec['manifest']}: {len(sheets)} sheets, {sum(len(s['states']) for s in sheets)} states to bake")
 
 
 def graft_point(path, declared):
@@ -1340,11 +1374,14 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
 
         flags = values.get('slot_flags', '')
         wearable = bool(flags) or boundary_match(path, '/obj/item/clothing')
-        if not wearable or any(pocket in flags for pocket in ('ITEM_SLOT_POCKETS', 'ITEM_SLOT_LPOCKET', 'ITEM_SLOT_RPOCKET')):
+        pockets = ('ITEM_SLOT_POCKETS', 'ITEM_SLOT_LPOCKET', 'ITEM_SLOT_RPOCKET')
+        carried = pockets + ('ITEM_SLOT_BACK', 'ITEM_SLOT_BELT')
+        if not wearable or (any(pocket in flags for pocket in pockets) and all(slot in carried for slot in re.findall(r'ITEM_SLOT_[A-Z_]+', flags))):
             return
-        look = text('worn_icon_state') or text('icon_state')
         sheet = values.get('worn_icon')
-        if sheet and ICON_LITERAL.match(sheet) and look and look in sheet_states_of(sheet):
+        sheet_states_here = sheet_states_of(sheet) if sheet and ICON_LITERAL.match(sheet) else set()
+        look = next((state for state in (text('icon_state'), text('worn_icon_state')) if state and state in sheet_states_here), None)
+        if look:
             put('worn_icon_state', f'"{look}"')
             ratwood_slots = set(re.findall(r'ITEM_SLOT_[A-Z_]+', rw.resolve(path, 'slot_flags') or ''))
             if look + FEMALE_WORN_SUFFIX in sheet_states_of(sheet) and ratwood_slots & set(port.get('female_worn_slots', [])):
@@ -1356,20 +1393,94 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
             put('worn_icon', f"'{BLANK_WORN}'")
             put('worn_icon_state', 'null')
 
+    def bake_onmob(path, block, spec):
+        """Held, belted and slung sprites of Ratwood's experimental_* items as jobs for ai-skills
+        bake_onmob_sheets.py: TG lefthand/righthand sheets (inhand_icon_state = the sprite's state, "_wielded" and
+        the alternate grips' suffixes beside it) and one sheet of back/hip states, "_behind" for the parts under
+        the body. The item then draws with TG's own inhand code and no icon() at runtime."""
+        values = {}
+        for line in block[1:]:
+            name, sep, value = line.strip().partition(' = ')
+            if sep:
+                values[name] = value
+
+        def put(name, value):
+            block[:] = [line for line in block if not line.startswith(f'\t{name} = ')]
+            block.append(f'\t{name} = {value}')
+
+        icon = (values.get('icon') or '').strip("'")
+        state = (values.get('icon_state') or '').strip('"')
+        if not icon.startswith(ICON_DIR + '/') or not state or state == 'null':
+            return
+        states = sheet_states_of(f"'{icon}'")
+        sheets = f"{spec['dir']}/{icon[len(ICON_DIR) + 1:-len('.dmi')]}"
+        flag = lambda name: (rw.resolve(path, name) or '').strip() in ('TRUE', '1')
+        if flag('experimental_inhand') and onmob_prop(rw, path, 'gen'):
+            hands = {'': onmob_prop(rw, path, 'gen')}
+            wielded = onmob_prop(rw, path, 'wielded')
+            if wielded:
+                hands['_wielded'] = wielded
+            for grip in alt_grip_paths(rw, rw.resolve(path, 'alt_grips')):
+                prop = re.search(r'"altgrip"\s*=\s*list\((.*?)\)', rw.resolve(grip, 'onmobprop_overrides') or '', re.S)
+                if prop and onmob_numbers(prop.group(1)):
+                    hands['_' + grip.rsplit('/', 1)[1]] = onmob_numbers(prop.group(1))
+            name = bake_name((icon, 'hands'), state, json.dumps(hands, sort_keys=True))
+            queued = 0
+            sprites = [(name, state)]
+            if name == state:
+                sprites += [(state + suffix, state + suffix) for suffix in spec.get('variants', []) if state + suffix in states]
+                sprites += [(state.replace(old, new), state.replace(old, new)) for old, new in spec.get('swaps', []) if old in state and state.replace(old, new) in states]
+            for baked, sprite in sprites:
+                if baked != name and bake_name((icon, 'hands'), baked, json.dumps(hands, sort_keys=True)) != baked:
+                    continue
+                for suffix, prop in hands.items():
+                    queued += bake_jobs(f'{sheets}_righthand.dmi', baked + suffix, icon, sprite, prop, False)
+                    queued += bake_jobs(f'{sheets}_lefthand.dmi', baked + suffix, icon, sprite, prop, True)
+            if queued:
+                put('lefthand_file', f"'{sheets}_lefthand.dmi'")
+                put('righthand_file', f"'{sheets}_righthand.dmi'")
+                put('inhand_icon_state', 'null' if name == state else f'"{name}"')
+                put('inhand_x_dimension', '64')
+                put('inhand_y_dimension', '64')
+                put('rogue_baked_inhand', 'TRUE')
+        worn = {}
+        if flag('experimental_onback') and onmob_prop(rw, path, 'onback'):
+            worn['back'] = onmob_prop(rw, path, 'onback')
+        if flag('experimental_onhip') and onmob_prop(rw, path, 'onbelt'):
+            worn['hip'] = onmob_prop(rw, path, 'onbelt')
+        if worn:
+            name = bake_name((icon, 'worn'), state, json.dumps(worn, sort_keys=True))
+            out = f'{sheets}_onmob.dmi'
+            queued = 0
+            if 'back' in worn:
+                queued += bake_jobs(out, f'back_{name}', icon, state, worn['back'], True)
+                queued += bake_jobs(out, f'backr_{name}', icon, state, worn['back'], False)
+            if 'hip' in worn:
+                queued += bake_jobs(out, f'hipl_{name}', icon, state, worn['hip'], True)
+                queued += bake_jobs(out, f'hipr_{name}', icon, state, worn['hip'], False)
+            if queued:
+                put('rogue_onmob_sheet', f"'{out}'")
+                if name != state:
+                    put('rogue_onmob_state', f'"{name}"')
+
     def slot_worn_icon(path, sheets):
+        """The slot's default sheet of Ratwood's update_inv_* when it holds the worn state; Ratwood draws worn
+        sprites by icon_state (item_state is for hands), so that is tried first."""
         flags = rw.resolve(path, 'slot_flags') or ''
-        state = next((v.strip().strip('"') for v in (rw.resolve(path, 'item_state'), rw.resolve(path, 'icon_state')) if v and v.strip() != 'null'), '')
+        states = [v.strip().strip('"') for v in (rw.resolve(path, 'icon_state'), rw.resolve(path, 'item_state')) if v and v.strip() != 'null']
         for flag, sheet in sheets.items():
             if flag not in re.findall(r'ITEM_SLOT_[A-Z_]+', flags):
                 continue
             src = os.path.join(CHECKOUT, sheet)
             if src not in sheet_states:
                 sheet_states[src] = {s['name'] for s in dmi.read(src).states} if os.path.exists(src) else set()
-            if state in sheet_states[src]:
+            if any(state in sheet_states[src] for state in states):
                 return f"'{sheet}'"
         return None
 
     generated = {p for paths in chosen.values() for p in paths}
+    grip_paths = {g for paths in chosen.values() for p in paths if p.startswith('/obj/item') for g in alt_grip_paths(rw, rw.resolve(p, 'alt_grips'))}
+    generated |= grip_paths
     used_turfs = sorted(p for p in usage if p.startswith('/turf/'))
     runtime = {p: runtime_path(p, rules) for p in used_turfs}
     reskins = [p for p in used_turfs if (replacement_for(p, rules) or {}).get('reskin')]
@@ -1552,6 +1663,13 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                     if number is not None and not (number == 0 and name in cat.get('skip_default', [])) and number != cat.get('numeric_defaults', {}).get(name):
                         block.append(f'\t{name} = {number}')
                     continue
+                if name in cat.get('grip_lists', []):
+                    entries = [p for p in alt_grip_paths(rw, value) if p in valid]
+                    if entries:
+                        block.append(f'\t{name} = list(' + ', '.join(entries) + ')')
+                    elif (value or '').strip() == 'null' and alt_grip_paths(rw, rw.resolve(rw.parent(path), name)):
+                        block.append(f'\t{name} = null')
+                    continue
                 if name in cat.get('intent_lists', []):
                     entries = intent_paths(rw, value)
                     if entries and tuple(entries) != DEFAULT_INTENTS:
@@ -1639,7 +1757,7 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                     value = icon_ref(value)
                 else:
                     value = literal(value, tg_names)
-                if value is None:
+                if value is None or cat.get('value_defaults', {}).get(name) == value:
                     continue
                 block.append(f'\t{name} = {value}')
             own_worn = rw.resolve(path, cat.get('rename', {}).get('worn_icon', 'worn_icon'))
@@ -1651,6 +1769,8 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                     block.append(f'\t{name} = {icon_ref(sheet)}')
             if cat.get('sprite_checks'):
                 fix_sprites(path, block)
+            if cat.get('bake') and port.get('bake'):
+                bake_onmob(path, block, port['bake'])
             if cat.get('runtime_look') and not smooth:
                 look = runtime_look(rw, path)
                 kind, data = look.get('icon', (None, None))
@@ -1681,7 +1801,11 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
             for prefix, names in cat.get('type_vars', {}).items():
                 if boundary_match(path, prefix):
                     for name in names:
-                        value = literal(rw.resolve(path, name), tg_names)
+                        raw = rw.resolve(path, name)
+                        value = literal(raw, tg_names)
+                        if value is None and (raw or '').strip().startswith('list('):
+                            pairs = [(p, n) for p, n in re.findall(r'(/[a-z][A-Za-z0-9_/]+)\s*=\s*(-?\d+(?:\.\d+)?)', raw) if p in valid]
+                            value = 'list(' + ', '.join(f'{p} = {n}' for p, n in pairs) + ')' if pairs else None
                         if value is not None:
                             block.append(f'\t{name} = {value}')
             if cat.get('init_overlays'):
@@ -1717,6 +1841,7 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
         rogue_armor_lines += [path] + [f'\t{k} = {v}' for k, v in fields.items() if v] + ['']
     open(f'{OUT_DIR}/rogue_armor.dm', 'w', encoding='utf-8', newline='\n').write('\n'.join(rogue_armor_lines).rstrip() + '\n')
     print(f'rogue_armor.dm: {len(ROGUE_ARMOR_DATUMS)} armor datums')
+    generate_alt_grips(rw, port.get('alt_grips', {}), sorted(grip_paths))
     generate_intents(rw, port.get('intents', {}), sound_ref, valid)
 
     armor_lines = []
@@ -1850,7 +1975,9 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
     open(f'{OUT_DIR}/{AREAS_JSON}', 'w', encoding='utf-8', newline='\n').write(json.dumps({'sunlit': SUNLIT_LEAF, 'outdoors': sorted(outdoor_areas)}, indent='\t') + '\n')
 
     for rel in port.get('extra_icons', []):
-        icons[os.path.join(CHECKOUT, rel)] = icon_dest(rel)
+        found = sorted(glob.glob(os.path.join(CHECKOUT, rel))) if any(c in rel for c in '*?[') else [os.path.join(CHECKOUT, rel)]
+        for source in found:
+            icons[source] = icon_dest(os.path.relpath(source, CHECKOUT).replace(os.sep, '/'))
 
     edge_lines = []
     for name in ('rockhill_turf_edges', 'rockhill_turf_edge_overrides', 'rockhill_turf_edge_sources'):
@@ -1955,6 +2082,8 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
             for src, dest in sorted(sounds.items(), key=lambda kv: kv[1]):
                 rel = os.path.relpath(src, CHECKOUT).replace('\\', '/')
                 out.write(f'- `{dest}` from Ratwood `{rel}`\n')
+    if port.get('bake'):
+        write_bake_manifest(port['bake'])
     print('report:', REPORT, 'skipped types:', len(skipped))
     return generated
 
@@ -2123,13 +2252,27 @@ def armor_wear(path, coverage):
     return None
 
 
-def armor_type_value(raw, armor_cfg, wear=None):
+def armor_numbers(raw):
+    """Ratings of a Ratwood armor list; values may be numbers or tier defines (ARMOR_PLATE -> list("blunt" = DR_LIGHT, ...))."""
     value = expand_define(raw)
-    numbers = {k: float(n) for k, n in re.findall(r'"(\w+)"\s*=\s*(-?\d+(?:\.\d+)?)', value)}
+    numbers = {}
+    for key, token in re.findall(r'"(\w+)"\s*=\s*([A-Za-z0-9_.\-]+)', value or ''):
+        number = define_value_number(token)
+        if number is not None:
+            numbers[key] = float(number)
+    return numbers
+
+
+def armor_type_value(raw, armor_cfg, wear=None):
+    numbers = armor_numbers(raw)
     if not numbers:
         return None
+    tiers = max(numbers.values()) <= armor_cfg.get('max_tier', 5)
     scale, cap = armor_cfg['scale'], armor_cfg['cap']
     def scaled(n):
+        if tiers:
+            # Ratwood DR tiers: damage * 1 / (1 + coefficient * tier) reaches the body; TG armor is the percent stopped.
+            return int(round(100 * (1 - 1 / (1 + armor_cfg['dr_coefficient'] * max(n, 0)))))
         return int(round(min(max(n, 0) * scale, cap)))
     fields = {
         'fire': scaled(numbers.get('fire', 0)),
@@ -2150,8 +2293,7 @@ def armor_type_value(raw, armor_cfg, wear=None):
 
 
 def rogue_armor_value(raw):
-    value = expand_define(raw)
-    numbers = {k: int(float(n)) for k, n in re.findall(r'"(\w+)"\s*=\s*(-?\d+(?:\.\d+)?)', value)}
+    numbers = {k: int(n) for k, n in armor_numbers(raw).items()}
     fields = OrderedDict((k, max(0, numbers.get(k, 0))) for k in ('blunt', 'slash', 'stab', 'piercing', 'fire', 'acid', 'magic'))
     if not any(fields.values()):
         return None
@@ -2182,6 +2324,57 @@ def define_value_number(raw):
     return int(number) if number == int(number) else number
 
 
+def alt_grip_paths(rw, raw):
+    """Grip datums of a Ratwood item's alt_grips, a list or a define such as LONGSWORD_STOCK_ALT_GRIPS."""
+    out = []
+    for path in re.findall(r'/datum/alt_grip[A-Za-z0-9_/]*', expand_define(raw or '')):
+        path = path.rstrip('/')
+        if path in rw.types and path not in out:
+            out.append(path)
+    return out
+
+
+def assigned_numbers(raw):
+    """"key" = value pairs of a list literal, values turned into numbers through the defines."""
+    out = OrderedDict()
+    for key, token in re.findall(r'"(\w+)"\s*=\s*([A-Za-z0-9_.\-]+)', raw or ''):
+        number = define_value_number(token)
+        if number is not None:
+            out[key] = number
+    return out
+
+
+def generate_alt_grips(rw, spec, grips):
+    """Alternate grips of Azure Peak as Ratwood has them (alt_grip.dm): name, two hands, skill rank, traits, intents, on-hand pose, stat changes."""
+    blocks = []
+    for path in grips:
+        block = [path]
+        name = string_value(rw.resolve(path, 'name'))
+        if name:
+            block.append(f'\tname = {name}')
+        if (rw.resolve(path, 'two_handed') or '').strip() in ('TRUE', '1'):
+            block.append('\ttwo_handed = TRUE')
+        rank = define_value_number(rw.resolve(path, 'skill_req'))
+        if rank:
+            block.append(f'\tskill_rank = {rank}')
+        traits = [t for t in re.findall(r'TRAIT_[A-Z0-9_]+', rw.resolve(path, 'trait_applied') or '') if t in DEFINE_VALUES]
+        if traits:
+            block.append('\ttrait_applied = list(' + ', '.join(traits) + ')')
+        intents = intent_paths(rw, rw.resolve(path, 'grip_intents'))
+        if intents:
+            USED_INTENTS.update(intents)
+            block.append('\tgrip_intents = list(' + ', '.join(intents) + ')')
+        if re.search(r'"altgrip"\s*=\s*list\(', rw.resolve(path, 'onmobprop_overrides') or ''):
+            block.append(f'\tinhand_suffix = "_{path.rsplit("/", 1)[1]}"')
+        for source_name in spec.get('stat_vars', ['var_overrides', 'additive_var_overrides']):
+            numbers = assigned_numbers(rw.resolve(path, source_name))
+            if numbers:
+                block.append(f'\t{source_name} = list(' + ', '.join(f'"{k}" = {v}' for k, v in numbers.items()) + ')')
+        blocks.append(block)
+    open(f"{OUT_DIR}/{spec.get('file', 'alt_grips.dm')}", 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    print(f"{spec.get('file', 'alt_grips.dm')}: {len(blocks)} alternate grips")
+
+
 def intent_paths(rw, raw):
     out = []
     for token in re.findall(r'(/datum/intent[A-Za-z0-9_/]*|[A-Z_][A-Z0-9_]*)', raw or ''):
@@ -2208,6 +2401,31 @@ def string_list(raw):
     return out
 
 
+def intent_effect_lines(rw, path, spec):
+    """The status effect a Ratwood effect intent puts on a hit (intent_effect, target_parts) as data: name, stat changes, duration, zones."""
+    effect = (rw.resolve(path, 'intent_effect') or '').strip()
+    if not effect.startswith('/datum/status_effect') or effect not in rw.types:
+        return []
+    stats = [f"{spec['stats'][key]} = {value}" for key, value in re.findall(r'(STATKEY_[A-Z]+)\s*=\s*(-?[\d.]+)', rw.resolve(effect, 'effectedstats') or '') if key in spec['stats']]
+    if not stats:
+        return []
+    lines = ['\teffect_stats = list(' + ', '.join(stats) + ')']
+    raw_duration = (rw.resolve(effect, 'duration') or '').strip()
+    seconds = re.fullmatch(r'([\d.]+)\s*SECONDS', raw_duration)
+    duration = float(seconds.group(1)) * 10 if seconds else define_value_number(raw_duration)
+    if duration:
+        lines.append(f'\teffect_duration = {int(duration) if duration == int(duration) else duration}')
+    alert = (rw.resolve(effect, 'alert_type') or '').strip()
+    name = string_value(rw.resolve(alert, 'name')) if alert in rw.types else None
+    if name:
+        lines.append(f'\teffect_name = {name}')
+    zones = [expand_define(token) for token in re.findall(r'BODY_ZONE_[A-Z_]+', rw.resolve(path, 'target_parts') or '')]
+    zones = [zone for zone in zones if STRING_LITERAL.match(zone)]
+    if zones:
+        lines.append('\teffect_zones = list(' + ', '.join(zones) + ')')
+    return lines
+
+
 def generate_intents(rw, spec, sound_ref, valid=frozenset()):
     renames = spec.get('rename', {})
     numeric = spec.get('numeric', [])
@@ -2222,23 +2440,29 @@ def generate_intents(rw, spec, sound_ref, valid=frozenset()):
             if value is None:
                 value = expand_define(rw.resolve(path, renames.get(name, name)) or '')
                 value = value if STRING_LITERAL.match(value) else None
-            if value is not None:
+            if value is not None and not (value == '""' and name in spec.get('strings_skip_empty', [])):
                 block.append(f'\t{name} = {value}')
         verbs = string_list(rw.resolve(path, 'attack_verb'))
         if verbs:
             block.append('\tattack_verb = list(' + ', '.join(verbs) + ')')
+        defaults = spec.get('numeric_defaults', {})
         for name in numeric:
             number = define_value_number(rw.resolve(path, renames.get(name, name)))
-            if number is not None:
+            if number is not None and (name not in defaults or number != defaults[name]):
                 block.append(f'\t{name} = {number}')
+        true_only = spec.get('flags_true_only', [])
         for name in flags:
             value = (rw.resolve(path, renames.get(name, name)) or '').strip()
             if value in ('TRUE', 'FALSE', '0', '1'):
+                if name in true_only and value not in ('TRUE', '1'):
+                    continue
                 block.append(f"\t{name} = {'TRUE' if value in ('TRUE', '1') else 'FALSE'}")
         for name in spec.get('paths', []):
             raw = (rw.resolve(path, name) or '').strip()
             if raw.startswith('/') and raw in valid:
                 block.append(f'\t{name} = {raw}')
+        if spec.get('effects'):
+            block += intent_effect_lines(rw, path, spec['effects'])
         sounds = sound_files(rw.resolve(path, 'hitsound'))
         refs = [ref for ref in (sound_ref(f"'{f}'") for f in sounds) if ref]
         if refs:
@@ -2304,6 +2528,9 @@ def parse_pre_equip(body):
             elif 'prob(' in text:
                 accepted = True
                 chains[indent] = 'taken'
+            elif 'map_name' in text or 'current_map' in text:
+                accepted = False
+                chains[indent] = 'else'
             else:
                 accepted = masculine(text) or re.match(r'^if\s*\(\s*H\.mind\s*\)$', text) is not None
                 chains[indent] = 'else' if feminine(text) else 'masc'
@@ -2347,10 +2574,19 @@ def job_subclasses(rw, job):
 
 
 def role_outfit(rw, job):
+    """What a role wears at roundstart: Ratwood equips the job's own outfit at spawn and the subclass outfit over it
+    once a class is picked. The first subclass that dresses the role is taken (a Wretch's first class, the licker,
+    brings no clothes); a map branch of pre_equip (`map_name == "Desert Town"`) falls through to its else."""
     subclasses = job_subclasses(rw, job)
-    source = (rw.resolve(subclasses[0], 'outfit') if subclasses else None) or rw.resolve(job, 'outfit') or ''
-    dressed = outfit_slots(rw, source)
-    dressed['advclass'] = subclasses[0] if subclasses else None
+    base = outfit_slots(rw, rw.resolve(job, 'outfit') or '')
+
+    def over_base(worn):
+        contents = worn['contents'] if worn['contents'] is not None else base['contents']
+        return {'source': worn['source'] or base['source'], 'slots': {**base['slots'], **worn['slots']}, 'contents': contents}
+
+    chosen = next((advclass for advclass in subclasses if outfit_slots(rw, rw.resolve(advclass, 'outfit') or '')['slots']), subclasses[0] if subclasses else None)
+    dressed = over_base(outfit_slots(rw, rw.resolve(chosen, 'outfit') or '')) if chosen else base
+    dressed['advclass'] = chosen
     dressed['subclasses'] = subclasses
     return dressed
 

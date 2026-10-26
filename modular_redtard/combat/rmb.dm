@@ -99,6 +99,12 @@ GLOBAL_LIST_INIT(rogue_rmb_intents, rogue_init_rmb_intents())
 	playsound_local(src, 'sound/machines/click.ogg', 50, FALSE)
 	SEND_SIGNAL(src, COMSIG_MOB_ROGUE_RMB_CHANGED)
 
+/// Twilight's stance cycle (N): the next alt intent, round to the first after the last.
+/mob/living/carbon/human/proc/rogue_cycle_rmb_intent()
+	var/list/order = GLOB.rogue_rmb_intents
+	var/index = rogue_rmb_intent ? order.Find(rogue_rmb_intent.type) : 0
+	rogue_toggle_rmb_intent(order[(index % length(order)) + 1])
+
 /datum/status_effect/rogue_vulnerable
 	parent_type = /datum/status_effect/rogue
 	id = "rogue_vulnerable"
@@ -110,12 +116,16 @@ GLOBAL_LIST_INIT(rogue_rmb_intents, rogue_init_rmb_intents())
 
 /datum/element/rogue_combat/proc/on_click(mob/living/carbon/human/source, atom/target, list/modifiers)
 	SIGNAL_HANDLER
-	if(!LAZYACCESS(modifiers, RIGHT_CLICK) || LAZYACCESS(modifiers, SHIFT_CLICK) || LAZYACCESS(modifiers, CTRL_CLICK) || LAZYACCESS(modifiers, ALT_CLICK))
+	if(LAZYACCESS(modifiers, SHIFT_CLICK) || LAZYACCESS(modifiers, CTRL_CLICK) || LAZYACCESS(modifiers, ALT_CLICK) || LAZYACCESS(modifiers, MIDDLE_CLICK))
 		return NONE
+	if(!LAZYACCESS(modifiers, RIGHT_CLICK))
+		return isopenturf(target) ? source.rogue_tile_click(target, modifiers) : NONE
 	var/datum/rogue_rmb_intent/stance = source.rogue_rmb_intent
-	if(!source.combat_mode || !stance?.has_action || isnull(target) || istype(target, /atom/movable/screen))
+	if(isnull(target) || istype(target, /atom/movable/screen))
 		return NONE
-	if(stance.needs_adjacency && !target.Adjacent(source))
+	if(!source.combat_mode || !stance?.has_action || (stance.needs_adjacency && !target.Adjacent(source)))
+		if(world.time >= source.next_move && source.rogue_try_gesture(target))
+			return COMSIG_MOB_CANCEL_CLICKON
 		return NONE
 	if(!stance.bypasses_click_delay && world.time < source.next_move)
 		return COMSIG_MOB_CANCEL_CLICKON

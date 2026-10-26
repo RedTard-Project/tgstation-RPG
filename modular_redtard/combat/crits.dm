@@ -36,18 +36,6 @@ GLOBAL_LIST_INIT(rogue_chest_zones, list("chest", "stomach", "groin"))
 		return FALSE
 	return resistance.stacks <= (mind ? ROGUE_CRIT_RESIST_STACKS : ROGUE_CRIT_RESIST_STACKS_NPC)
 
-/mob/living/proc/rogue_crit_blocked(zone, blade_class)
-	return FALSE
-
-/mob/living/carbon/human/rogue_crit_blocked(zone, blade_class)
-	var/obj/item/bodypart/limb = get_bodypart(rogue_zone_target(zone))
-	if(!limb)
-		return FALSE
-	for(var/obj/item/clothing/worn as anything in get_clothing_on_part(limb))
-		if(worn.atom_integrity > 0 && (blade_class in worn.rogue_prevent_crits))
-			return TRUE
-	return FALSE
-
 /mob/living/proc/rogue_crit_chance(share, damage, divisor, bonus)
 	return rogue_formula_value(ROGUE_FORMULA_CRIT_CHANCE, list("limb_damage" = share, "damage" = damage, "divisor" = divisor, "bonus" = bonus))
 
@@ -63,7 +51,7 @@ GLOBAL_LIST_INIT(rogue_chest_zones, list("chest", "stomach", "groin"))
 	if(!limb)
 		return FALSE
 	var/share = limb.get_damage() / limb.max_damage
-	if(share <= ROGUE_CRIT_LIMB_THRESHOLD || rogue_crit_blocked(zone, blade_class))
+	if(share <= ROGUE_CRIT_LIMB_THRESHOLD)
 		return FALSE
 	if(attacker?.rogue_goodluck(2))
 		damage += ROGUE_CRIT_LUCK_BONUS

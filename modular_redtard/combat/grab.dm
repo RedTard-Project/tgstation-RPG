@@ -258,7 +258,17 @@ GLOBAL_LIST_INIT(rogue_zone_names, list(
 	source.rogue_refresh_intents()
 
 /mob/living/carbon/human/proc/rogue_unarmed_damage()
-	return rogue_formula_value(ROGUE_FORMULA_UNARMED_DAMAGE, list("strength" = rogue_stat(ROGUE_STAT_STRENGTH), "civilized" = HAS_TRAIT(src, TRAIT_CIVILIZEDBARBARIAN)))
+	var/obj/item/clothing/gloves/worn_gloves = gloves
+	return rogue_formula_value(ROGUE_FORMULA_UNARMED_DAMAGE, list("strength" = rogue_stat(ROGUE_STAT_STRENGTH), "civilized" = HAS_TRAIT(src, TRAIT_CIVILIZEDBARBARIAN), "gloves" = istype(worn_gloves) ? worn_gloves.unarmed_bonus : 0))
+
+/obj/item/clothing/gloves
+	/// Flat bare-handed damage added after strength (Ratwood gloves, bandages and knuckles after the Azure Peak unarmed rework).
+	var/unarmed_bonus = 0
+
+/obj/item/clothing/gloves/examine(mob/user)
+	. = ..()
+	if(unarmed_bonus > 0)
+		. += span_notice("Unarmed damage bonus: +[unarmed_bonus] (flat, applied after strength scaling).")
 
 /mob/living/carbon/human/proc/rogue_grab_modifier(mob/living/target, obj/item/hand_item/rogue_grab/grip)
 	var/modifier = target.has_status_effect(/datum/status_effect/rogue_compliance) ? ROGUE_GRAB_COMPLIANT_MODIFIER : 1

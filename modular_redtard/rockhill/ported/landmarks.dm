@@ -24,7 +24,7 @@
 	name = JOB_ROCKHILL_BARON
 
 /obj/effect/landmark/start/rockhill/bogguardsman
-	name = JOB_ASSISTANT
+	name = JOB_ROCKHILL_FOREST_WARDEN
 	rockhill_latejoin_roles = list("Vanguard")
 
 /obj/effect/landmark/start/rockhill/bogmaster

@@ -744,6 +744,13 @@
 						"trap_damage",
 						"anchored",
 						"alpha"
+					],
+					"/obj/item/clothing/mask/cigarette": [
+						"icon_on",
+						"icon_off",
+						"smoketime",
+						"chem_volume",
+						"list_reagents"
 					]
 				},
 				"vars": [
@@ -764,9 +771,6 @@
 					"slot_flags",
 					"armor_type",
 					"body_parts_covered",
-					"rogue_onhip",
-					"rogue_onback",
-					"rogue_inhand",
 					"lockid",
 					"picklvl",
 					"rockhill_keys",
@@ -797,37 +801,46 @@
 					"parrysound",
 					"rogue_armor",
 					"armor_class",
-					"rogue_prevent_crits",
 					"rogue_blocksound",
+					"material_category",
+					"chunkcolor",
+					"unarmed_bonus",
+					"alt_grips",
+					"block2add",
+					"muteinmouth",
+					"spitoutmouth",
+					"flags_inv",
+					"detail_tag",
+					"detail_color",
+					"altdetail_tag",
+					"altdetail_color",
+					"boobed",
+					"boobed_detail",
+					"sleeved_detail",
 					"firefuel",
 					"max_blade_int",
 					"sharpening_factor",
 					"spark_chance",
 					"special",
-					"coverage"
+					"coverage",
+					"intdamage_factor"
 				],
 				"rename": {
 					"inhand_icon_state": "item_state",
 					"worn_icon": "mob_overlay_icon",
 					"worn_icon_state": "item_state",
-					"rogue_onhip": "experimental_onhip",
-					"rogue_onback": "experimental_onback",
-					"rogue_inhand": "experimental_inhand",
 					"rockhill_keys": "keys",
 					"rogue_sleeved": "sleeved",
 					"rogue_grid_width": "grid_width",
 					"rogue_grid_height": "grid_height",
 					"armour_penetration": "armor_penetration",
-					"rogue_prevent_crits": "prevent_crits",
 					"rogue_blocksound": "blocksound",
 					"rogue_force_wielded": "force_wielded"
 				},
-				"true_only": [
-					"rogue_onhip",
-					"rogue_onback"
-				],
 				"slot_worn_icons": {
 					"worn_icon": {
+						"ITEM_SLOT_HEAD": "icons/roguetown/clothing/onmob/head.dmi",
+						"ITEM_SLOT_NECK": "icons/roguetown/clothing/onmob/neck.dmi",
 						"ITEM_SLOT_MOUTH": "icons/roguetown/clothing/onmob/mouth_items.dmi",
 						"ITEM_SLOT_BACK_L": "icons/roguetown/clothing/onmob/back_l.dmi",
 						"ITEM_SLOT_BACK": "icons/roguetown/clothing/onmob/back_l.dmi",
@@ -859,7 +872,10 @@
 					"max_blade_int",
 					"sharpening_factor",
 					"spark_chance",
-					"coverage"
+					"coverage",
+					"intdamage_factor",
+					"material_category",
+					"unarmed_bonus"
 				],
 				"path_lists": [
 					"rockhill_keys",
@@ -872,7 +888,16 @@
 					"special"
 				],
 				"sprite_checks": true,
+				"bake": true,
 				"mapped_vars": {
+					"block2add": {
+						"FOV_BEHIND": "ROGUE_FOV_BEHIND",
+						"FOV_RIGHT": "ROGUE_FOV_RIGHT",
+						"FOV_LEFT": "ROGUE_FOV_LEFT",
+						"FOV_RIGHT|FOV_LEFT": "ROGUE_FOV_RIGHT | ROGUE_FOV_LEFT",
+						"FOV_LEFT|FOV_RIGHT": "ROGUE_FOV_RIGHT | ROGUE_FOV_LEFT",
+						"null": "NONE"
+					},
 					"alternate_worn_layer": {
 						"CLOAK_BEHIND_LAYER": "BODY_BEHIND_LAYER",
 						"TABARD_LAYER": "ROGUE_TABARD_LAYER",
@@ -896,32 +921,58 @@
 					"max_blade_int",
 					"sharpening_factor",
 					"spark_chance",
-					"coverage"
+					"coverage",
+					"intdamage_factor",
+					"material_category",
+					"unarmed_bonus"
 				],
 				"intent_lists": [
 					"possible_item_intents",
 					"gripped_intents"
 				],
+				"grip_lists": [
+					"alt_grips"
+				],
 				"numeric_defaults": {
-					"wlength": 2
+					"wlength": 2,
+					"intdamage_factor": 1
 				},
+				"value_defaults": {
+					"chunkcolor": "\"#5e5e5e\"",
+					"boobed": "FALSE",
+					"muteinmouth": "TRUE",
+					"spitoutmouth": "TRUE",
+					"boobed_detail": "TRUE",
+					"sleeved_detail": "TRUE"
+				},
+				"flag_vars": [
+					"flags_inv"
+				],
 				"skill_vars": [
 					"associated_skill"
 				],
-				"string_lists": [
-					"rogue_prevent_crits"
-				],
+				"string_lists": [],
 				"string_define_vars": [
-					"rogue_blocksound"
+					"rogue_blocksound",
+					"detail_color",
+					"altdetail_color"
 				],
 				"sound_lists": [
 					"parrysound"
 				],
 				"clothing_only": [
+					"block2add",
+					"detail_tag",
+					"detail_color",
+					"altdetail_tag",
+					"altdetail_color",
+					"boobed_detail",
+					"sleeved_detail",
 					"rogue_armor",
 					"armor_class",
-					"rogue_prevent_crits",
-					"rogue_blocksound"
+					"rogue_blocksound",
+					"material_category",
+					"chunkcolor"
 				]
 			},
 			{
@@ -958,20 +1009,30 @@
 					"melee_damage_upper",
 					"rogue_defprob",
 					"rogue_can_dodge",
-					"rogue_mob_stats"
+					"rogue_mob_stats",
+					"rogue_mob_intents",
+					"rogue_aggressive",
+					"rogue_retreat_health"
 				],
 				"rename": {
 					"rogue_defprob": "defprob",
-					"rogue_can_dodge": "mob_can_dodge"
+					"rogue_can_dodge": "mob_can_dodge",
+					"rogue_mob_intents": "base_intents",
+					"rogue_aggressive": "aggressive",
+					"rogue_retreat_health": "retreat_health"
 				},
 				"numeric_vars": [
 					"melee_damage_lower",
 					"melee_damage_upper",
-					"rogue_defprob"
+					"rogue_defprob",
+					"rogue_aggressive",
+					"rogue_retreat_health"
 				],
 				"skip_default": [
 					"melee_damage_lower",
-					"melee_damage_upper"
+					"melee_damage_upper",
+					"rogue_aggressive",
+					"rogue_retreat_health"
 				],
 				"numeric_defaults": {
 					"rogue_defprob": 50
@@ -992,7 +1053,10 @@
 							"STALUC": "ROGUE_STAT_FORTUNE"
 						}
 					}
-				}
+				},
+				"intent_lists": [
+					"rogue_mob_intents"
+				]
 			},
 			{
 				"file": "spawners.dm",
@@ -1030,6 +1094,7 @@
 			}
 		],
 		"extra_icons": [
+			"icons/mob/overhead_effects.dmi",
 			"icons/turf/newwater.dmi",
 			"icons/effects/particles/particle.dmi",
 			"icons/effects/96x96.dmi",
@@ -1037,9 +1102,13 @@
 			"icons/effects/32x200.dmi",
 			"icons/time.dmi",
 			"icons/effects/waterfall.dmi",
-			"icons/effects/particles/smoke.dmi"
+			"icons/effects/particles/smoke.dmi",
+			"icons/mob/combat_debuffs.dmi",
+			"icons/effects/mousemice/*.dmi",
+			"icons/effects/mousemice/swang/*.dmi"
 		],
 		"extra_sounds": [
+			"sound/combat/shove.ogg",
 			"sound/items/firelight.ogg",
 			"sound/items/firesnuff.ogg",
 			"sound/foley/torchfixturetake.ogg",
@@ -1070,6 +1139,27 @@
 			"sound/combat/riposte.ogg",
 			"sound/combat/parry/parrygen.ogg",
 			"sound/combat/dodge.ogg",
+			"sound/combat/armor_degrade1.ogg",
+			"sound/combat/armor_degrade2.ogg",
+			"sound/combat/armor_degrade3.ogg",
+			"sound/combat/armor_degrade_chain1.ogg",
+			"sound/combat/armor_degrade_chain2.ogg",
+			"sound/combat/armor_degrade_chain3.ogg",
+			"sound/combat/armor_degrade_leather1.ogg",
+			"sound/combat/armor_degrade_leather2.ogg",
+			"sound/combat/armor_degrade_leather3.ogg",
+			"sound/combat/armor_degrade_plate1.ogg",
+			"sound/combat/armor_degrade_plate2.ogg",
+			"sound/combat/armor_degrade_plate3.ogg",
+			"sound/combat/swingdelay_disrupted.ogg",
+			"sound/combat/dagger_boost.ogg",
+			"sound/combat/parry/deflect_1.ogg",
+			"sound/combat/parry/deflect_2.ogg",
+			"sound/combat/parry/deflect_3.ogg",
+			"sound/combat/parry/deflect_4.ogg",
+			"sound/combat/parry/deflect_5.ogg",
+			"sound/combat/parry/deflect_6.ogg",
+			"sound/misc/surrender.ogg",
 			"sound/combat/hits/armor/plate_slashed (1).ogg",
 			"sound/combat/hits/armor/plate_slashed (2).ogg",
 			"sound/combat/hits/armor/plate_slashed (3).ogg",
@@ -1158,7 +1248,9 @@
 		},
 		"armor": {
 			"scale": 0.7,
-			"cap": 70
+			"cap": 70,
+			"max_tier": 5,
+			"dr_coefficient": 0.2
 		},
 		"linked_types": [
 			"keys",
@@ -1192,6 +1284,32 @@
 			"/mob/living/simple_animal/hostile/retaliate/rogue/mirespider",
 			"/obj/item/rogueweapon/mace/oar"
 		],
+		"bake": {
+			"manifest": "modular_redtard/rockhill/onmob_bake.json",
+			"dir": "modular_redtard/rockhill/icons/baked",
+			"mask32": "modular_redtard/icons/mob/onmob_mask.dmi",
+			"mask64": "modular_redtard/icons/mob/onmob_mask_64.dmi",
+			"variants": [
+				"-on",
+				"_on",
+				"-lit",
+				"_lit",
+				"1"
+			],
+			"swaps": [
+				[
+					"off",
+					"on"
+				]
+			]
+		},
+		"alt_grips": {
+			"file": "alt_grips.dm",
+			"stat_vars": [
+				"var_overrides",
+				"additive_var_overrides"
+			]
+		},
 		"intents": {
 			"file": "intents.dm",
 			"rename": {
@@ -1203,7 +1321,11 @@
 				"desc",
 				"icon_state",
 				"blade_class",
-				"item_d_type"
+				"item_d_type",
+				"warnie"
+			],
+			"strings_skip_empty": [
+				"warnie"
 			],
 			"numeric": [
 				"damfactor",
@@ -1213,19 +1335,54 @@
 				"misscost",
 				"reach",
 				"chargetime",
-				"swingdelay"
+				"swingdelay",
+				"swingdelay_type",
+				"chargedrain",
+				"charging_slowdown",
+				"effective_range",
+				"effective_range_type",
+				"sharpness_penalty",
+				"intent_intdamage_factor"
 			],
+			"numeric_defaults": {
+				"swingdelay_type": 1,
+				"chargedrain": 0,
+				"charging_slowdown": 0,
+				"effective_range": 0,
+				"effective_range_type": 0,
+				"sharpness_penalty": 0,
+				"intent_intdamage_factor": 1
+			},
 			"flags": [
 				"canparry",
 				"candodge",
 				"no_attack",
 				"unarmed",
 				"tranged",
-				"tshield"
+				"tshield",
+				"movement_interrupt",
+				"no_early_release",
+				"noaa"
+			],
+			"flags_true_only": [
+				"movement_interrupt",
+				"no_early_release",
+				"noaa"
 			],
 			"paths": [
 				"cleave"
-			]
+			],
+			"effects": {
+				"stats": {
+					"STATKEY_STR": "ROGUE_STAT_STRENGTH",
+					"STATKEY_PER": "ROGUE_STAT_PERCEPTION",
+					"STATKEY_INT": "ROGUE_STAT_INTELLIGENCE",
+					"STATKEY_CON": "ROGUE_STAT_CONSTITUTION",
+					"STATKEY_WIL": "ROGUE_STAT_WILLPOWER",
+					"STATKEY_SPD": "ROGUE_STAT_SPEED",
+					"STATKEY_LCK": "ROGUE_STAT_FORTUNE"
+				}
+			}
 		}
 	},
 	"jobs": {
@@ -1248,7 +1405,8 @@
 		"landmark_roles": {
 			"/obj/effect/landmark/start/rockhillslaver": "/datum/job/roguetown/slaver",
 			"/obj/effect/landmark/start/hostage": "/datum/job/roguetown/dungeoneer",
-			"/obj/effect/landmark/start/vagrant": "/datum/job/roguetown/lunatic"
+			"/obj/effect/landmark/start/vagrant": "/datum/job/roguetown/lunatic",
+			"/obj/effect/landmark/start/bogguardsman": "/datum/job/roguetown/warden"
 		},
 		"access_traits": {
 			"/obj/structure/fluff/traveltile": "required_trait"
@@ -1369,6 +1527,23 @@
 				},
 				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
 				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/combat/staves": {
+				"category": "ROGUE_SKILL_CATEGORY_MELEE",
+				"defaults": {
+					"ROGUE_STAT_SPEED": -5,
+					"ROGUE_STAT_STRENGTH": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_SPEED"
+			},
+			"/datum/skill/combat/arcyne": {
+				"category": "ROGUE_SKILL_CATEGORY_MELEE",
+				"defaults": {
+					"ROGUE_STAT_INTELLIGENCE": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_HARD",
+				"governing": "ROGUE_STAT_INTELLIGENCE"
 			},
 			"/datum/skill/combat/maces": {
 				"category": "ROGUE_SKILL_CATEGORY_MELEE",

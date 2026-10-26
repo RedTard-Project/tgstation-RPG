@@ -1,0 +1,246 @@
+{
+	"source": "../Vibelin",
+	"dme": "vanderlin.dme",
+	"port": [
+		"modular_abel/azure_wardrobe/**/*.dm",
+		"modular_abel/twilight_wardrobe/**/*.dm",
+		"modular_abel/desert_wardrobe/**/*.dm",
+		"modular_abel/rmh_wardrobe/**/*.dm",
+		"modular_abel/garments/**/*.dm",
+		"modular_abel/facemasks/**/*.dm",
+		"modular_abel/neck_amulets/**/*.dm",
+		"modular_abel/sundries/**/*.dm",
+		"modular_abel/gear/clothing/*.dm",
+		"modular_abel/gear/items/rmh_loadout.dm"
+	],
+	"only": [
+		"/obj/item/clothing",
+		"/datum/loadout_item"
+	],
+	"rebase": [
+		{
+			"prefix": "/obj/item/clothing/head",
+			"to": "/obj/item/clothing/head/roguetown/wardrobe",
+			"abstract": true
+		},
+		{
+			"prefix": "/obj/item/clothing/face",
+			"to": "/obj/item/clothing/mask/rogue/wardrobe",
+			"abstract": true
+		},
+		{
+			"prefix": "/obj/item/clothing/neck",
+			"to": "/obj/item/clothing/neck/roguetown/wardrobe",
+			"abstract": true
+		},
+		{
+			"prefix": "/obj/item/clothing/cloak",
+			"to": "/obj/item/clothing/cloak/wardrobe",
+			"abstract": true
+		},
+		{
+			"prefix": "/obj/item/clothing/shirt",
+			"to": "/obj/item/clothing/suit/roguetown/shirt/wardrobe",
+			"abstract": true
+		},
+		{
+			"prefix": "/obj/item/clothing/armor",
+			"to": "/obj/item/clothing/suit/roguetown/armor/wardrobe",
+			"abstract": true
+		},
+		{
+			"prefix": "/obj/item/clothing/pants",
+			"to": "/obj/item/clothing/under/roguetown/wardrobe",
+			"abstract": true
+		},
+		{
+			"prefix": "/obj/item/clothing/gloves",
+			"to": "/obj/item/clothing/gloves/roguetown/wardrobe",
+			"abstract": true
+		},
+		{
+			"prefix": "/obj/item/clothing/shoes",
+			"to": "/obj/item/clothing/shoes/roguetown/wardrobe",
+			"abstract": true
+		},
+		{
+			"prefix": "/obj/item/clothing/wrists",
+			"to": "/obj/item/clothing/wrists/roguetown/wardrobe",
+			"abstract": true
+		},
+		{
+			"prefix": "/obj/item/clothing/ring",
+			"to": "/obj/item/clothing/ring/wardrobe",
+			"abstract": true
+		},
+		{
+			"prefix": "/datum/loadout_item",
+			"to": "/datum/loadout_item/rogue_wardrobe"
+		}
+	],
+	"vars": [
+		"name",
+		"desc",
+		"icon",
+		"icon_state",
+		"mob_overlay_icon",
+		"worn_x_dimension",
+		"worn_y_dimension",
+		"color",
+		"slot_flags",
+		"body_parts_covered",
+		"flags_inv",
+		"block2add",
+		"alternate_worn_layer",
+		"sleeved",
+		"detail_tag",
+		"detail_color",
+		"altdetail_tag",
+		"altdetail_color",
+		"boobed",
+		"boobed_detail",
+		"sleeved_detail",
+		"armor_type",
+		"max_integrity",
+		"w_class",
+		"item_path"
+	],
+	"rename": {
+		"mob_overlay_icon": "worn_icon",
+		"sleeved": "rogue_sleeved",
+		"armor_type": "rogue_armor"
+	},
+	"kinds": {
+		"slot_flags": "flags",
+		"body_parts_covered": "flags",
+		"flags_inv": "flags",
+		"block2add": "flags",
+		"alternate_worn_layer": "mapped",
+		"rogue_armor": "mapped",
+		"detail_color": "string",
+		"altdetail_color": "string",
+		"color": "string",
+		"item_path": "path"
+	},
+	"maps": {
+		"slot_flags": {
+			"ITEM_SLOT_PANTS": "ITEM_SLOT_ICLOTHING",
+			"ITEM_SLOT_SHIRT": "ITEM_SLOT_ROGUE_SHIRT",
+			"ITEM_SLOT_ARMOR": "ITEM_SLOT_OCLOTHING",
+			"ITEM_SLOT_SHOES": "ITEM_SLOT_FEET",
+			"ITEM_SLOT_RING": "ITEM_SLOT_ROGUE_RING",
+			"ITEM_SLOT_MOUTH": "ITEM_SLOT_ROGUE_MOUTH",
+			"ITEM_SLOT_CLOAK": "ITEM_SLOT_ROGUE_CLOAK",
+			"ITEM_SLOT_BACK_R": "ITEM_SLOT_BACK",
+			"ITEM_SLOT_BACK_L": "ITEM_SLOT_BACK",
+			"ITEM_SLOT_HIP": "ITEM_SLOT_POCKETS",
+			"ITEM_SLOT_WRISTS": "ITEM_SLOT_ROGUE_WRISTS"
+		},
+		"body_parts_covered": {
+			"MOUTH": "HEAD",
+			"NOSE": "HEAD",
+			"EARS": "HEAD",
+			"HAIR": "HEAD",
+			"EYES": "HEAD",
+			"LEFT_EYE": "HEAD",
+			"RIGHT_EYE": "HEAD",
+			"VITALS": "CHEST"
+		},
+		"block2add": {
+			"FOV_DEFAULT": "",
+			"FOV_RIGHT": "ROGUE_FOV_RIGHT",
+			"FOV_LEFT": "ROGUE_FOV_LEFT",
+			"FOV_BEHIND": "ROGUE_FOV_BEHIND"
+		},
+		"alternate_worn_layer": {
+			"CLOAK_BEHIND_LAYER": "BODY_BEHIND_LAYER",
+			"BACK_LAYER": "BACK_LAYER",
+			"TABARD_LAYER": "ROGUE_TABARD_LAYER",
+			"UNDER_CLOAK_LAYER": "ROGUE_UNDER_CLOAK_LAYER",
+			"NECK_LAYER": "NECK_LAYER",
+			"SHIRT_LAYER": "ROGUE_SHIRT_LAYER",
+			"WRISTS_LAYER": "ROGUE_WRISTS_LAYER",
+			"HALO_LAYER": "HEAD_LAYER",
+			"8.9": "(HANDS_LAYER - 0.1)"
+		},
+		"rogue_armor": {
+			"/datum/armor/none": "null",
+			"/datum/armor/leather": "/datum/rogue_armor/leather",
+			"/datum/armor/leather/bad": "/datum/rogue_armor/leather_npc",
+			"/datum/armor/pants/leather": "/datum/rogue_armor/leather",
+			"/datum/armor/pants/padded/bad": "/datum/rogue_armor/padded_bad",
+			"/datum/armor/gloves/padded/bad": "/datum/rogue_armor/padded_bad",
+			"/datum/armor/plate": "/datum/rogue_armor/plate",
+			"/datum/armor/plate/bad": "/datum/rogue_armor/brigandine",
+			"/datum/armor/wrist/plate": "/datum/rogue_armor/plate",
+			"/datum/armor/padded": "/datum/rogue_armor/padded",
+			"/datum/armor/minimal": "null",
+			"/datum/armor/maille": "/datum/rogue_armor/maille",
+			"/datum/armor/maille/iron": "/datum/rogue_armor/maille",
+			"/datum/armor/maille/bronze": "/datum/rogue_armor/bronze",
+			"/datum/armor/boots/maille": "/datum/rogue_armor/maille",
+			"/datum/armor/mask/padded": "/datum/rogue_armor/padded",
+			"/datum/armor/mask/padded/good": "/datum/rogue_armor/padded",
+			"/datum/armor/mask/metal/iron": "/datum/rogue_armor/maille",
+			"/datum/armor/mask/metal/steel": "/datum/rogue_armor/plate"
+		}
+	},
+	"defaults": {
+		"color": "null",
+		"rogue_sleeved": "null",
+		"rogue_armor": "null",
+		"boobed": "FALSE",
+		"boobed_detail": "TRUE",
+		"sleeved_detail": "TRUE",
+		"worn_x_dimension": "32",
+		"worn_y_dimension": "32"
+	},
+	"require": {
+		"/datum/loadout_item": [
+			"item_path"
+		]
+	},
+	"companions": [
+		{
+			"files": [
+				"modular_abel/facemasks/**/*.dm"
+			],
+			"only": [
+				"/obj/item/clothing"
+			],
+			"type": "/datum/loadout_item/rogue_wardrobe/facemask/{tail}",
+			"vars": {
+				"item_path": "{path}"
+			}
+		}
+	],
+	"target_defines": [
+		"code/__DEFINES",
+		"modular_redtard"
+	],
+	"target_types": [
+		"code",
+		"modular_redtard"
+	],
+	"assets": "modular_redtard/wardrobe/icons",
+	"state_flags": [
+		{
+			"var": "rogue_female_worn",
+			"icon_var": "worn_icon",
+			"suffix": "_f"
+		}
+	],
+	"icon_size_vars": [
+		{
+			"icon_var": "worn_icon",
+			"x": "worn_x_dimension",
+			"y": "worn_y_dimension"
+		}
+	],
+	"out": "modular_redtard/wardrobe/ported.dm",
+	"header": [
+		"Written by ai-skills scripts/dm_type_port.py from modular_redtard/wardrobe/port.json; do not edit by hand.",
+		"The wardrobe of Vibelin (modular_abel): Azure, Twilight, Desert and Rivermist clothes, garments, amulets, masks and gear,",
+		"with the loadout entries Vibelin gives them."
+	]
+}

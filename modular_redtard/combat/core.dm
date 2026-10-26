@@ -41,7 +41,6 @@
 	RegisterSignal(fighter, COMSIG_USER_PRE_ITEM_ATTACK, PROC_REF(on_pre_item_attack))
 	RegisterSignal(fighter, COMSIG_LIVING_CHECK_BLOCK, PROC_REF(on_check_block))
 	RegisterSignal(fighter, COMSIG_MOB_APPLY_DAMAGE_MODIFIERS, PROC_REF(on_damage_modifiers))
-	RegisterSignal(fighter, COMSIG_MOB_APPLY_DAMAGE, PROC_REF(on_damage_applied))
 	RegisterSignal(fighter, COMSIG_MOB_CLICKON, PROC_REF(on_click))
 	RegisterSignal(fighter, COMSIG_MOB_MIDDLECLICKON, PROC_REF(on_middle_click))
 	RegisterSignal(fighter, COMSIG_LIVING_START_PULL, PROC_REF(on_start_pull))
@@ -53,15 +52,19 @@
 	RegisterSignal(fighter, COMSIG_MOB_CLIENT_LOGIN, PROC_REF(on_client_login))
 	RegisterSignal(fighter, COMSIG_MOB_LOGOUT, PROC_REF(on_logout))
 	RegisterSignal(fighter, COMSIG_COMBAT_MODE_TOGGLED, PROC_REF(on_combat_mode))
+	RegisterSignal(fighter, COMSIG_ATOM_PREHITBY, PROC_REF(on_pre_hitby))
+	RegisterSignal(fighter, COMSIG_MOB_EQUIPPED_ITEM, PROC_REF(on_gear_equipped))
+	RegisterSignal(fighter, COMSIG_MOB_UNEQUIPPED_ITEM, PROC_REF(on_gear_unequipped))
+	RegisterSignals(fighter, list(COMSIG_CARBON_GAIN_ORGAN, COMSIG_CARBON_LOSE_ORGAN), PROC_REF(on_organ_change))
 	if(fighter.client)
 		on_client_login(fighter, fighter.client)
+	fighter.rogue_enable_cursors(TRUE)
 
 /datum/element/rogue_combat/Detach(mob/living/carbon/human/source)
 	UnregisterSignal(source, list(
 		COMSIG_USER_PRE_ITEM_ATTACK,
 		COMSIG_LIVING_CHECK_BLOCK,
 		COMSIG_MOB_APPLY_DAMAGE_MODIFIERS,
-		COMSIG_MOB_APPLY_DAMAGE,
 		COMSIG_MOB_CLICKON,
 		COMSIG_MOB_MIDDLECLICKON,
 		COMSIG_LIVING_START_PULL,
@@ -73,10 +76,36 @@
 		COMSIG_MOB_CLIENT_LOGIN,
 		COMSIG_MOB_LOGOUT,
 		COMSIG_COMBAT_MODE_TOGGLED,
+		COMSIG_ATOM_PREHITBY,
+		COMSIG_MOB_EQUIPPED_ITEM,
+		COMSIG_MOB_UNEQUIPPED_ITEM,
+		COMSIG_CARBON_GAIN_ORGAN,
+		COMSIG_CARBON_LOSE_ORGAN,
+		COMSIG_MOVABLE_MOVED,
 	))
 	if(source.canon_client)
 		UnregisterSignal(source.canon_client, list(COMSIG_CLIENT_MOUSEDOWN, COMSIG_CLIENT_MOUSEUP))
+	source.rogue_enable_cursors(FALSE)
 	return ..()
+
+/// Headgear and masks change the field of view (combat/fov.dm); something that can slip out of the mouth starts the
+/// per-step check while it is there (clothing/mouth.dm).
+/datum/element/rogue_combat/proc/on_gear_equipped(mob/living/carbon/human/source, obj/item/worn, slot)
+	SIGNAL_HANDLER
+	var/obj/item/clothing/garment = worn
+	if(istype(garment) && garment.block2add)
+		source.rogue_update_fov()
+	if((slot & ITEM_SLOT_ROGUE_MOUTH) && worn.spitoutmouth)
+		RegisterSignal(source, COMSIG_MOVABLE_MOVED, PROC_REF(on_mouth_step), override = TRUE)
+
+/// The item being taken off still sits in its slot while this runs.
+/datum/element/rogue_combat/proc/on_gear_unequipped(mob/living/carbon/human/source, obj/item/worn)
+	SIGNAL_HANDLER
+	var/obj/item/clothing/garment = worn
+	if(istype(garment) && garment.block2add)
+		source.rogue_update_fov(garment)
+	if(worn == source.wear_mouth)
+		UnregisterSignal(source, COMSIG_MOVABLE_MOVED)
 
 /datum/element/rogue_combat/proc/on_swap_hands(mob/living/carbon/human/source)
 	SIGNAL_HANDLER
@@ -90,6 +119,8 @@
 	SIGNAL_HANDLER
 	if(new_position == LYING_DOWN)
 		SEND_SIGNAL(source, COMSIG_ROGUE_MANOEUVRE, ROGUE_MANOEUVRE_FALL)
+		if(!source.resting)
+			source.rogue_spit_out()
 
 /datum/element/rogue_combat/proc/on_combat_mode(mob/living/carbon/human/source)
 	SIGNAL_HANDLER
@@ -116,9 +147,11 @@
 	RegisterSignal(target, COMSIG_ITEM_ATTACK, PROC_REF(on_attack))
 	RegisterSignal(target, COMSIG_ITEM_EQUIPPED, PROC_REF(on_equipped))
 	RegisterSignal(target, COMSIG_ATOM_EXAMINE, PROC_REF(on_examine))
+	RegisterSignal(target, COMSIG_ITEM_ATTACK_SELF_SECONDARY, PROC_REF(on_attack_self_secondary))
+	RegisterSignal(target, COMSIG_ITEM_DROPPED, PROC_REF(on_dropped))
 
 /datum/element/rogue_weapon/Detach(datum/source)
-	UnregisterSignal(source, list(COMSIG_ITEM_ATTACK, COMSIG_ITEM_EQUIPPED, COMSIG_ATOM_EXAMINE))
+	UnregisterSignal(source, list(COMSIG_ITEM_ATTACK, COMSIG_ITEM_EQUIPPED, COMSIG_ATOM_EXAMINE, COMSIG_ITEM_ATTACK_SELF_SECONDARY, COMSIG_ITEM_DROPPED))
 	return ..()
 
 /datum/element/rogue_whetstone

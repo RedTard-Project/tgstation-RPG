@@ -25,9 +25,6 @@
 /obj/structure/fluff/iconsign
 	parent_type = /obj/structure/rockhill
 
-/obj/structure/fluff/pillow
-	parent_type = /obj/structure/rockhill
-
 /obj/structure/fluff/railing
 	parent_type = /obj/structure/rockhill
 
@@ -634,6 +631,18 @@
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/curtain/directional/drab
+	name = "curtain"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
+	icon_state = "curtaindir"
+	density = FALSE
+	opacity = 0
+	alpha = 255
+	obj_flags = CAN_BE_HIT
+	plane = ABOVE_GAME_PLANE
+	layer = ABOVE_MOB_LAYER
+
+/obj/structure/curtain/directional/green
 	name = "curtain"
 	desc = ""
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
@@ -2316,18 +2325,6 @@
 	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
-/obj/structure/fluff/canopy/booth/booth02
-	name = "Canopy"
-	desc = ""
-	icon = 'modular_redtard/rockhill/icons/modular_hearthstone/icons/obj/decor.dmi'
-	icon_state = "canopyr-booth-2"
-	density = FALSE
-	opacity = 0
-	dir = SOUTH
-	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
-	layer = ABOVE_MOB_LAYER
-
 /obj/structure/fluff/canopy/green
 	name = "Canopy"
 	desc = ""
@@ -2363,6 +2360,17 @@
 	obj_flags = CAN_BE_HIT
 	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
+
+/obj/structure/fluff/ceramicswheel
+	parent_type = /obj/structure/rockhill
+	name = "Potter's Wheel"
+	desc = "A rotating platform used by skilled artisans to mold and shape clay."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
+	icon_state = "potwheel"
+	density = TRUE
+	opacity = 0
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/fluff/clock
 	parent_type = /obj/structure/rockhill
@@ -2480,6 +2488,17 @@
 	opacity = 0
 	obj_flags = CAN_BE_HIT
 	layer = 2.8
+
+/obj/structure/fluff/pillow
+	parent_type = /obj/structure/rockhill
+	name = "pillows"
+	desc = "Soft plush pillows. Resting your head on one is so relaxing."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
+	icon_state = "pillow"
+	density = FALSE
+	opacity = 0
+	obj_flags = CAN_BE_HIT
+	layer = BELOW_OBJ_LAYER
 
 /obj/structure/fluff/pillow/blue
 	name = "pillows"

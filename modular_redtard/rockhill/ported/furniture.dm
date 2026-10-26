@@ -1080,6 +1080,14 @@
 	density = TRUE
 	layer = TABLE_LAYER
 
+/obj/structure/table/wood/rockhill/templestoneslab/slab2
+	name = "stone slab"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/modular_deserttown/icons/temple_objects.dmi'
+	icon_state = "slab_2"
+	density = TRUE
+	layer = TABLE_LAYER
+
 /obj/structure/table/wood/rockhill/vtable
 	name = "ancient wooden table"
 	desc = ""
