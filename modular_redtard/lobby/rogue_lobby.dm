@@ -13,7 +13,7 @@
 
 /// Minutes after the round starts before anyone may join late (Azure timetojoin); 0 lets them join at once.
 /datum/config_entry/number/rogue_latejoin_delay
-	default = 5
+	default = 0
 	integer = TRUE
 	min_val = 0
 
