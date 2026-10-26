@@ -1,0 +1,15 @@
+author: "trueroguan"
+delete-after: True
+changes:
+  - rscadd: "Medieval map Rockhill from Ratwood-2.0 with jobs and subclasses, items, mobs, dungeons, weather, day/night cycle, calendar and area sounds."
+  - rscadd: "Maps are now medieval or modern; medieval maps have no shuttles, station events or Dynamic."
+  - rscadd: "Azure Peak HUD: left column, gargoyle doll, collapsible inventory with Ratwood slots, grid storage, intent and stance buttons."
+  - rscadd: "Ratwood stats, skills and traits with an attributes window."
+  - rscadd: "Azure Peak combat: custom strikes, parry and dodge, riposte, clash, feint, bait, specials, charging, cleave, crits, tempo, shields, dual wielding, dismemberment, grabs and bites."
+  - rscadd: "Armor by damage type with wear and crit protection."
+  - sound: "Combat, weather, area and item sounds from Ratwood-2.0 and Azure Peak."
+  - image: "Roguetown HUD sprites and Rockhill sprites from Ratwood-2.0."
+  - map: "Rockhill and its dungeon templates; modern maps removed from the map vote."
+  - config: "Combat values and formulas in config/redtard/mechanics/, lighting settings in config/redtard/config.txt."
+  - admin: "Mechanics panel, armor comparison and stat editor."
+  - server: "Build with the module through modular_redtard/build; native rogue_light lighting library for Windows and Linux."
