@@ -13,7 +13,7 @@
 /datum/unit_test/rogue_grab/Run()
 	var/mob/living/carbon/human/consistent/grabber = allocate(__IMPLIED_TYPE__)
 	var/mob/living/carbon/human/consistent/victim = allocate(__IMPLIED_TYPE__)
-	grabber.AddElement(/datum/element/rogue_combat_bus)
+	grabber.AddElement(/datum/element/rogue_combat)
 	victim.apply_status_effect(/datum/status_effect/rogue_compliance)
 	grabber.zone_selected = BODY_ZONE_L_ARM
 	grabber.rogue_zone_precise = "l_arm"
@@ -59,7 +59,7 @@
 	var/mob/living/carbon/human/consistent/attacker = allocate(__IMPLIED_TYPE__)
 	var/mob/living/carbon/human/consistent/victim = allocate(__IMPLIED_TYPE__)
 	var/obj/item/knife/kitchen/knife = allocate(__IMPLIED_TYPE__)
-	attacker.AddElement(/datum/element/rogue_combat_bus)
+	attacker.AddElement(/datum/element/rogue_combat)
 	attacker.put_in_active_hand(knife)
 	attacker.zone_selected = BODY_ZONE_CHEST
 	TEST_ASSERT(istype(attacker.rogue_strike_intent(knife), /datum/intent/rogue_fallback/cut), "An edged item without intents did not get the cut fallback")
@@ -88,8 +88,8 @@
 /datum/unit_test/rogue_guard/Run()
 	var/mob/living/carbon/human/consistent/attacker = allocate(__IMPLIED_TYPE__)
 	var/mob/living/carbon/human/consistent/defender = allocate(__IMPLIED_TYPE__)
-	attacker.AddElement(/datum/element/rogue_combat_bus)
-	defender.AddElement(/datum/element/rogue_combat_bus)
+	attacker.AddElement(/datum/element/rogue_combat)
+	defender.AddElement(/datum/element/rogue_combat)
 	var/obj/item/knife/kitchen/knife = allocate(__IMPLIED_TYPE__)
 	var/obj/item/knife/kitchen/guard_knife = allocate(__IMPLIED_TYPE__)
 	attacker.put_in_active_hand(knife)

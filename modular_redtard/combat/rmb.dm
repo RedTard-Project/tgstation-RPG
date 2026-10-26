@@ -108,7 +108,7 @@ GLOBAL_LIST_INIT(rogue_rmb_intents, rogue_init_rmb_intents())
 	base_duration = ROGUE_FEINT_DURATION
 	return ..()
 
-/datum/element/rogue_combat_bus/proc/on_click(mob/living/carbon/human/source, atom/target, list/modifiers)
+/datum/element/rogue_combat/proc/on_click(mob/living/carbon/human/source, atom/target, list/modifiers)
 	SIGNAL_HANDLER
 	if(!LAZYACCESS(modifiers, RIGHT_CLICK) || LAZYACCESS(modifiers, SHIFT_CLICK) || LAZYACCESS(modifiers, CTRL_CLICK) || LAZYACCESS(modifiers, ALT_CLICK))
 		return NONE

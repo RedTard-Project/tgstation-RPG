@@ -5,7 +5,7 @@
 	. = ..()
 	if(!rogue_combat_enabled())
 		return
-	AddElement(/datum/element/rogue_combat_bus)
+	AddElement(/datum/element/rogue_combat)
 	AddElement(/datum/element/rogue_energy)
 	add_fov_trait(ROGUE_FOV_SOURCE, FOV_90_DEGREES)
 	if(rogue_sight_shadows_enabled())

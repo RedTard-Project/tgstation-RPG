@@ -267,7 +267,7 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 	afterattack(target, user, null, attack_modifiers)
 	add_fingerprint(user)
 
-/datum/element/rogue_combat_bus/proc/on_pre_item_attack(mob/living/carbon/human/source, obj/item/weapon, atom/target, list/modifiers, list/attack_modifiers)
+/datum/element/rogue_combat/proc/on_pre_item_attack(mob/living/carbon/human/source, obj/item/weapon, atom/target, list/modifiers, list/attack_modifiers)
 	SIGNAL_HANDLER
 	if(!isliving(target) || (weapon.item_flags & NOBLUDGEON) || !source.is_holding(weapon) || CALCULATE_FORCE(weapon, attack_modifiers) <= 0)
 		return NONE

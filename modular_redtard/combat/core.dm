@@ -30,10 +30,10 @@
 /datum/rogue_strike/proc/incoming()
 	return SEND_SIGNAL(target, COMSIG_ROGUE_STRIKE_INCOMING, src)
 
-/datum/element/rogue_combat_bus
+/datum/element/rogue_combat
 	element_flags = ELEMENT_DETACH_ON_HOST_DESTROY
 
-/datum/element/rogue_combat_bus/Attach(datum/target)
+/datum/element/rogue_combat/Attach(datum/target)
 	. = ..()
 	if(!ishuman(target))
 		return ELEMENT_INCOMPATIBLE
@@ -56,7 +56,7 @@
 	if(fighter.client)
 		on_client_login(fighter, fighter.client)
 
-/datum/element/rogue_combat_bus/Detach(mob/living/carbon/human/source)
+/datum/element/rogue_combat/Detach(mob/living/carbon/human/source)
 	UnregisterSignal(source, list(
 		COMSIG_USER_PRE_ITEM_ATTACK,
 		COMSIG_LIVING_CHECK_BLOCK,
@@ -78,30 +78,30 @@
 		UnregisterSignal(source.canon_client, list(COMSIG_CLIENT_MOUSEDOWN, COMSIG_CLIENT_MOUSEUP))
 	return ..()
 
-/datum/element/rogue_combat_bus/proc/on_swap_hands(mob/living/carbon/human/source)
+/datum/element/rogue_combat/proc/on_swap_hands(mob/living/carbon/human/source)
 	SIGNAL_HANDLER
 	SEND_SIGNAL(source, COMSIG_ROGUE_MANOEUVRE, ROGUE_MANOEUVRE_SWAP_HANDS)
 
-/datum/element/rogue_combat_bus/proc/on_shot(mob/living/carbon/human/source, obj/projectile/shot)
+/datum/element/rogue_combat/proc/on_shot(mob/living/carbon/human/source, obj/projectile/shot)
 	SIGNAL_HANDLER
 	SEND_SIGNAL(source, COMSIG_ROGUE_MANOEUVRE, ROGUE_MANOEUVRE_SHOT)
 
-/datum/element/rogue_combat_bus/proc/on_body_position(mob/living/carbon/human/source, new_position, old_position)
+/datum/element/rogue_combat/proc/on_body_position(mob/living/carbon/human/source, new_position, old_position)
 	SIGNAL_HANDLER
 	if(new_position == LYING_DOWN)
 		SEND_SIGNAL(source, COMSIG_ROGUE_MANOEUVRE, ROGUE_MANOEUVRE_FALL)
 
-/datum/element/rogue_combat_bus/proc/on_combat_mode(mob/living/carbon/human/source)
+/datum/element/rogue_combat/proc/on_combat_mode(mob/living/carbon/human/source)
 	SIGNAL_HANDLER
 	if(!source.combat_mode)
 		source.rogue_left_combat_mode()
 
-/datum/element/rogue_combat_bus/proc/on_client_login(mob/living/carbon/human/source, client/new_client)
+/datum/element/rogue_combat/proc/on_client_login(mob/living/carbon/human/source, client/new_client)
 	SIGNAL_HANDLER
 	RegisterSignal(new_client, COMSIG_CLIENT_MOUSEDOWN, PROC_REF(on_mouse_down), override = TRUE)
 	RegisterSignal(new_client, COMSIG_CLIENT_MOUSEUP, PROC_REF(on_mouse_up), override = TRUE)
 
-/datum/element/rogue_combat_bus/proc/on_logout(mob/living/carbon/human/source)
+/datum/element/rogue_combat/proc/on_logout(mob/living/carbon/human/source)
 	SIGNAL_HANDLER
 	if(source.canon_client)
 		UnregisterSignal(source.canon_client, list(COMSIG_CLIENT_MOUSEDOWN, COMSIG_CLIENT_MOUSEUP))

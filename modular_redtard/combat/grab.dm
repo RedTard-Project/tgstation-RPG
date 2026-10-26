@@ -233,7 +233,7 @@ GLOBAL_LIST_INIT(rogue_zone_names, list(
 	set_hostage(FALSE)
 	to_chat(source, span_danger("I need to stand still to keep my hostage!"))
 
-/datum/element/rogue_combat_bus/proc/on_start_pull(mob/living/carbon/human/source, atom/movable/pulled, state, force)
+/datum/element/rogue_combat/proc/on_start_pull(mob/living/carbon/human/source, atom/movable/pulled, state, force)
 	SIGNAL_HANDLER
 	if(!isliving(pulled) || pulled == source)
 		return
@@ -246,14 +246,14 @@ GLOBAL_LIST_INIT(rogue_zone_names, list(
 		return
 	source.rogue_refresh_intents()
 
-/datum/element/rogue_combat_bus/proc/on_stop_pull(mob/living/carbon/human/source, atom/movable/old_pulling)
+/datum/element/rogue_combat/proc/on_stop_pull(mob/living/carbon/human/source, atom/movable/old_pulling)
 	SIGNAL_HANDLER
 	for(var/obj/item/hand_item/rogue_grab/grip in source.held_items)
 		if(!QDELETED(grip))
 			qdel(grip)
 	source.rogue_refresh_intents()
 
-/datum/element/rogue_combat_bus/proc/on_grab_state(mob/living/carbon/human/source, new_state)
+/datum/element/rogue_combat/proc/on_grab_state(mob/living/carbon/human/source, new_state)
 	SIGNAL_HANDLER
 	source.rogue_refresh_intents()
 

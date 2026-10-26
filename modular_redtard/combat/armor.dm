@@ -216,7 +216,7 @@ GLOBAL_LIST_INIT(rogue_light_blunt_sounds, list('modular_redtard/rockhill/sound/
 		return part.body_zone
 	return check_zone(def_zone || BODY_ZONE_CHEST)
 
-/datum/element/rogue_combat_bus/proc/attack_penetration(atom/attacking_item)
+/datum/element/rogue_combat/proc/attack_penetration(atom/attacking_item)
 	if(istype(attacking_item, /obj/projectile))
 		var/obj/projectile/bullet = attacking_item
 		return bullet.armour_penetration
@@ -225,7 +225,7 @@ GLOBAL_LIST_INIT(rogue_light_blunt_sounds, list('modular_redtard/rockhill/sound/
 		return weapon.armour_penetration
 	return 0
 
-/datum/element/rogue_combat_bus/proc/on_damage_modifiers(mob/living/carbon/human/source, list/damage_mods, damage, damagetype, def_zone, sharpness, attack_direction, attacking_item)
+/datum/element/rogue_combat/proc/on_damage_modifiers(mob/living/carbon/human/source, list/damage_mods, damage, damagetype, def_zone, sharpness, attack_direction, attacking_item)
 	SIGNAL_HANDLER
 	var/armor_type = rogue_damage_armor_type(damagetype, sharpness, attacking_item)
 	if(!armor_type || !attacking_item)
@@ -234,7 +234,7 @@ GLOBAL_LIST_INIT(rogue_light_blunt_sounds, list('modular_redtard/rockhill/sound/
 	if(protection)
 		damage_mods += (100 - protection) / 100
 
-/datum/element/rogue_combat_bus/proc/on_damage_applied(mob/living/carbon/human/source, damage, damagetype, def_zone, blocked, wound_bonus, exposed_wound_bonus, sharpness, attack_direction, attacking_item, wound_clothing)
+/datum/element/rogue_combat/proc/on_damage_applied(mob/living/carbon/human/source, damage, damagetype, def_zone, blocked, wound_bonus, exposed_wound_bonus, sharpness, attack_direction, attacking_item, wound_clothing)
 	SIGNAL_HANDLER
 	var/armor_type = rogue_damage_armor_type(damagetype, sharpness, attacking_item)
 	if(!armor_type || !attacking_item)

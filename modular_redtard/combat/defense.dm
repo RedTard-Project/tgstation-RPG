@@ -323,7 +323,7 @@ GLOBAL_LIST_INIT(rogue_bind_catches, list(
 	attacker.visible_message(span_warning("<b>[attacker]</b> clips [src]'s weapon!"))
 	playsound(attacker, 'modular_redtard/rockhill/sound/misc/weapon_clip.ogg', 100)
 
-/datum/element/rogue_combat_bus/proc/on_check_block(mob/living/carbon/human/source, atom/movable/hitby, damage, attack_text, attack_type, armour_penetration, damage_type, attack_flag)
+/datum/element/rogue_combat/proc/on_check_block(mob/living/carbon/human/source, atom/movable/hitby, damage, attack_text, attack_type, armour_penetration, damage_type, attack_flag)
 	SIGNAL_HANDLER
 	if(attack_type != MELEE_ATTACK && attack_type != UNARMED_ATTACK)
 		return NONE

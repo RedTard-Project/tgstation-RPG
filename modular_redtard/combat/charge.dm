@@ -43,7 +43,7 @@
 	rogue_charge_released = 0
 	rogue_set_charge_overlay(null)
 
-/datum/element/rogue_combat_bus/proc/on_mouse_down(client/source, atom/object, location, control, params)
+/datum/element/rogue_combat/proc/on_mouse_down(client/source, atom/object, location, control, params)
 	SIGNAL_HANDLER
 	var/mob/living/carbon/human/fighter = source.mob
 	if(!ishuman(fighter) || !fighter.combat_mode || istype(object, /atom/movable/screen))
@@ -55,7 +55,7 @@
 	if(intent?.chargetime > 0)
 		fighter.rogue_start_charge(intent)
 
-/datum/element/rogue_combat_bus/proc/on_mouse_up(client/source, atom/object, location, control, params)
+/datum/element/rogue_combat/proc/on_mouse_up(client/source, atom/object, location, control, params)
 	SIGNAL_HANDLER
 	var/mob/living/carbon/human/fighter = source.mob
 	if(ishuman(fighter))
