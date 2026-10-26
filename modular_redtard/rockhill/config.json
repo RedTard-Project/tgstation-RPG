@@ -1383,6 +1383,14 @@
 					"STATKEY_LCK": "ROGUE_STAT_FORTUNE"
 				}
 			}
+		},
+		"npcs": {
+			"file": "npcs.dm",
+			"sheet_root": "/datum/attribute_holder/sheet/rockhill_npc",
+			"race": {
+				"/mob/living/carbon/human/species/npc/deadite": "/datum/species/zombie",
+				"/mob/living/carbon/human/species/dwarfskeleton": "/datum/species/skeleton"
+			}
 		}
 	},
 	"jobs": {

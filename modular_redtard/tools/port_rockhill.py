@@ -36,7 +36,16 @@ ONMOB = {}
 INIT_BODIES = {}
 FILL_BODIES = {}
 STORAGE_NEW = {}
-HOLD_LIST = re.compile(r'(?:typecacheof|set_holdable)\(\s*list\(')
+OUTFIT_PROCS = {}
+HUMAN_PROCS = {}
+NPC_ROOT = '/mob/living/carbon/human'
+NPC_PROCS = ('Initialize', 'after_creation')
+NPC_OUTFIT_ROOT = '/datum/outfit/job/roguetown'
+NPC_SLOTS = {'id': 'ring'}
+NPC_STATS = {'STR': 'strength', 'PER': 'perception', 'INT': 'intelligence', 'CON': 'constitution', 'WIL': 'willpower', 'END': 'endurance', 'SPD': 'speed', 'LUC': 'fortune'}
+STAT_ASSIGN = re.compile(r'\b(?:H|human|user)\.STA([A-Z]{3})\s*(=|\+=|-=)\s*(-?\d+)\b')
+ITEM_PATH = re.compile(r'/obj/item/[A-Za-z0-9_/]*[A-Za-z0-9_]')
+HOLD_LIST =re.compile(r'(?:typecacheof|set_holdable)\(\s*list\(')
 NEW_IN_SRC = re.compile(r'new\s+(/obj/item/[A-Za-z0-9_/]+)\s*\(\s*src\s*\)')
 LOOT_LIST = re.compile(r'\bloot\s*=\s*list\(([^)]*)\)')
 PROB_CALL = re.compile(r'\bprob\((\d+)\)')
@@ -244,20 +253,29 @@ def parse_codebase(code_root):
                     current = None
                     pm = PROC_LINE.match(line)
                     if pm:
-                        PROCS[pm.group(1)].add(pm.group(2))
+                        owner, name = pm.group(1), pm.group(2)
+                        PROCS[owner].add(name)
                         bodies = {
                             'pre_equip': ('/datum/outfit/', PRE_EQUIP),
                             'getonmobprop': ('/obj/item', ONMOB),
                             'Initialize': (('/turf/', '/obj/structure', '/obj/machinery', '/obj/item'), INIT_BODIES),
                             'PopulateContents': ('/obj/structure/closet', FILL_BODIES),
                             'New': ('/datum/component/storage', STORAGE_NEW),
-                        }.get(pm.group(2))
-                        if bodies and pm.group(1).startswith(bodies[0]):
+                        }.get(name)
+                        stores = []
+                        if bodies and owner.startswith(bodies[0]):
+                            stores.append((bodies[1], owner))
+                        if owner.startswith('/datum/outfit/'):
+                            stores.append((OUTFIT_PROCS, (owner, name)))
+                        if boundary_match(owner, NPC_ROOT) and name in NPC_PROCS:
+                            stores.append((HUMAN_PROCS, (owner, name)))
+                        if stores:
                             body = []
                             while i < len(lines) and (not lines[i].strip() or lines[i].startswith(('\t', ' '))):
                                 body.append(lines[i].rstrip())
                                 i += 1
-                            bodies[1][pm.group(1)] = body
+                            for store, key in stores:
+                                store[key] = body
                 continue
             if current is None:
                 continue
@@ -957,9 +975,12 @@ def main():
         if (replacement_for(path, rules) or {}).get('port', {}).get('fill'):
             contents, loot, _ = closet_fill(rw, path)
             fill_items |= set(contents) | {item for item, _ in loot}
-    generated = generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, outfit_items | mapgen_types | fill_items, set(jobs))
+    npcs = npc_candidates(rw, rules, usage)
+    npc_items = npc_outfit_items(rw, rules, npcs)
+    generated = generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, outfit_items | mapgen_types | fill_items | npc_items, set(jobs))
     generate_mapgen(mapgen, rules, declared | generated, tg_names)
-    role_traits = set()
+    npcs = [p for p in npcs if p in generated]
+    role_traits = npc_trait_names(rw, npcs, cfg['attributes'])
     for job in jobs:
         dressed = role_outfits.get(job, {})
         role_traits |= set(role_attributes(rw, job, dressed.get('advclass'), dressed.get('source'), cfg['attributes'])['traits'])
@@ -968,8 +989,9 @@ def main():
     known_traits = generate_traits(cfg, tg_names, role_traits)
     generate_skills(cfg, rw)
     role_attrs = generate_attribute_sheets(cfg, rw, jobs, role_outfits, known_traits)
-    generate_jobs(cfg, rw, usage, role_outfits, declared | generated, station_usage, role_attrs)
+    role_outfit_paths = generate_jobs(cfg, rw, usage, role_outfits, declared | generated, station_usage, role_attrs)
     generate_advclasses(cfg, rw, class_jobs, class_outfits, declared | generated, known_traits)
+    generate_npcs(cfg, rw, rules, npcs, declared | generated, known_traits, role_outfit_paths)
 
 
 MAPGEN_LANDMARK = '/obj/effect/landmark/mapGenerator'
@@ -2827,6 +2849,546 @@ def generate_jobs(cfg, rw, usage, role_outfits, valid, station_usage, role_attrs
         for p in ported:
             out.write(f"| `{p}` | {titles[p].strip(chr(34))} | {departments[rw.resolve(p, 'department_flag').strip()]} |\n")
     print(f'jobs: {len(ported)} roles, {len(abstract)} abstract parents, landmarks {matched}/{len(marks)} bound, job_changes {len(changes)}')
+    return set(outfits.values())
+
+
+NPC_STAT_BASE = 10
+LOCAL_VAR = re.compile(r'^\t*var/(?:list/)?(\w+) = ')
+LOCAL_VALUE = re.compile(r'-?\d+(?:\.\d+)?|rand\(\s*-?\d+\s*,\s*-?\d+\s*\)|pick\(\s*(?:-?\d+|"[^"]*")(?:\s*,\s*(?:-?\d+|"[^"]*"))*\s*\)')
+SUPER_CALL = re.compile(r'(?:\.\s*=\s*)?\.\.\(\)')
+
+
+def code_lines(body):
+    """A proc body's lines, a statement split over lines (an open parenthesis, a trailing backslash) joined into one."""
+    out = []
+    i = 0
+    while i < len(body):
+        line = body[i].rstrip()
+        i += 1
+        if not line.strip():
+            continue
+        while (line.count('(') > line.count(')') or line.endswith('\\')) and i < len(body):
+            line = line.rstrip('\\').rstrip() + ' ' + body[i].strip()
+            i += 1
+        out.append(line)
+    return out
+
+
+def code_tree(body):
+    """A proc body as [text, children] nodes by indentation."""
+    root = []
+    stack = [(-1, root)]
+    for line in code_lines(body):
+        lead = line[:len(line) - len(line.lstrip())]
+        indent = lead.count('\t') + lead.count(' ') // 4
+        while stack[-1][0] >= indent:
+            stack.pop()
+        node = [line.strip(), []]
+        stack[-1][1].append(node)
+        stack.append((indent, node[1]))
+    return root
+
+
+def split_condition(text):
+    """'(condition) rest' as (condition, rest) with the parentheses balanced; None without a leading parenthesis."""
+    text = text.strip()
+    if not text.startswith('('):
+        return None
+    depth = 0
+    quoted = False
+    for index, char in enumerate(text):
+        if char == '"' and text[index - 1:index] != '\\':
+            quoted = not quoted
+        if quoted:
+            continue
+        if char == '(':
+            depth += 1
+        elif char == ')':
+            depth -= 1
+            if depth == 0:
+                return text[1:index].strip(), text[index + 1:].strip()
+    return None
+
+
+def control_parts(text):
+    """(keyword, condition, statement on the same line) of a control line; (None, None, text) for a statement."""
+    m = re.match(r'^(else\s+if|if|switch|for|while)\s*(\(.*)$', text)
+    if m:
+        keyword = 'else if' if m.group(1).startswith('else') else m.group(1)
+        split = split_condition(m.group(2))
+        return (keyword, split[0], split[1]) if split else (keyword, m.group(2), '')
+    if re.match(r'^else\b', text):
+        return 'else', None, text[4:].strip()
+    if re.match(r'^do\b', text):
+        return 'do', None, ''
+    return None, None, text
+
+
+def branch_body(tail, children):
+    return ([[tail, []]] if tail else []) + children
+
+
+def if_chain(nodes, i, first):
+    """The branches of an if chain starting at nodes[i - 1] (whose parts are first), and the index after it."""
+    keyword, cond, tail = first
+    branches = [(keyword, cond, branch_body(tail, nodes[i - 1][1]))]
+    while i < len(nodes) and control_parts(nodes[i][0])[0] in ('else if', 'else'):
+        keyword, cond, tail = control_parts(nodes[i][0])
+        branches.append((keyword, cond, branch_body(tail, nodes[i][1])))
+        i += 1
+    return branches, i
+
+
+def npc_condition(cond, scope):
+    """How an NPC outfit takes a branch: 'prob' for a chance kept as it is, True or False for one decided now. An NPC has no
+    mind and is dressed as a man; whatever else the port cannot know (species, map, patron) takes the else branch."""
+    c = (cond or '').strip()
+    m = re.fullmatch(r'prob\(\s*([\w.]+)\s*\)', c)
+    if m and (NUMBER.match(m.group(1)) or scope.get(m.group(1)) == 'value'):
+        return 'prob'
+    if re.fullmatch(r'!\s*\(?\s*H\.mind\s*\)?', c):
+        return True
+    if 'H.mind' in c:
+        return False
+    return masculine(c) and not feminine(c)
+
+
+def static_statements(nodes):
+    """The statements an NPC outfit surely runs: the unconditional ones and the branches decided now. A chance and a
+    random switch are skipped, so a stat set in only one loadout is not counted."""
+    out = []
+    i = 0
+    while i < len(nodes):
+        parts = control_parts(nodes[i][0])
+        i += 1
+        if parts[0] == 'if':
+            branches, i = if_chain(nodes, i, parts)
+            for keyword, cond, kids in branches:
+                verdict = True if keyword == 'else' else npc_condition(cond, {})
+                if verdict == 'prob':
+                    break
+                if verdict:
+                    out += static_statements(kids)
+                    break
+        elif parts[0] is None:
+            out.append(parts[2])
+    return out
+
+
+def useful_lines(lines):
+    return any(not LOCAL_VAR.match(line) for line in lines)
+
+
+def prune_locals(lines):
+    """Drops local variables nothing left in the proc reads (their switch or chance went with the items it chose)."""
+    while True:
+        unused = next((index for index, line in enumerate(lines) if LOCAL_VAR.match(line) and not any(re.search(rf'\b{LOCAL_VAR.match(line).group(1)}\b', other) for k, other in enumerate(lines) if k != index)), None)
+        if unused is None:
+            return lines
+        lines = lines[:unused] + lines[unused + 1:]
+
+
+class NpcOutfits:
+    """Ratwood NPC outfits as TG outfits: the slots they set on the type, and pre_equip (with the helper procs it calls)
+    rewritten to keep only what dresses the NPC: slot assignments, the chances and random switches that choose between
+    loadouts, and the local numbers and lists they pick from. Items the port does not have are left out; without valid,
+    every item is kept and only gathered (the first pass, before the items are ported)."""
+
+    def __init__(self, rw, rules, valid=None):
+        self.rw = rw
+        self.rules = rules
+        self.valid = valid
+        self.items = set()
+        self.helpers = {}
+
+    def item(self, raw):
+        path = raw.strip().rstrip('/')
+        self.items.add(path)
+        target = runtime_path(path, self.rules)
+        if target and (self.valid is None or target in self.valid):
+            return target
+        return None
+
+    def slot_value(self, value, scope):
+        value = value.strip()
+        if value == 'null':
+            return 'null'
+        if ITEM_PATH.fullmatch(value.rstrip('/')):
+            return self.item(value)
+        m = re.fullmatch(r'(pick|pick_n_take)\((.*)\)', value)
+        if m:
+            inner = m.group(2).strip()
+            if scope.get(inner) == 'list':
+                return f'{m.group(1)}({inner})'
+            kept = [p for p in (self.item(p) for p in ITEM_PATH.findall(inner)) if p]
+            return f"pick({', '.join(kept)})" if kept else None
+        return value if scope.get(value) == 'path' else None
+
+    def statics(self, outfit):
+        lines = []
+        for var, value in self.rw.types.get(outfit, {}).items():
+            if var == 'name' and STRING_LITERAL.match(value.strip()):
+                lines.append(f'\tname = {value.strip()}')
+            elif var in OUTFIT_SLOTS or var in NPC_SLOTS:
+                target = self.slot_value(value, {})
+                if target:
+                    lines.append(f'\t{NPC_SLOTS.get(var) or OUTFIT_SLOTS[var]} = {target}')
+            elif var == 'backpack_contents':
+                entries = [(self.item(p), n or '1') for p, n in re.findall(r'(/obj/item/[A-Za-z0-9_/]*[A-Za-z0-9_])/?\s*(?:=\s*(\d+))?', value)]
+                entries = [f'{p} = {n}' for p, n in entries if p]
+                if entries:
+                    lines.append(f"\tbackpack_contents = list({', '.join(entries)})")
+        return lines
+
+    def statement(self, text, depth, scope, outfit):
+        pad = '\t' * depth
+        if SUPER_CALL.fullmatch(text):
+            return [pad + '..()']
+        if text == 'return':
+            return [pad + 'return']
+        m = re.fullmatch(r'var/(?:list/)?(\w+)\s*=\s*(.+)', text)
+        if m:
+            name, value = m.group(1), m.group(2).strip()
+            if LOCAL_VALUE.fullmatch(value):
+                scope[name] = 'value'
+                return [pad + f'var/{name} = {value}']
+            kept = [p for p in (self.item(p) for p in ITEM_PATH.findall(value)) if p]
+            if kept and value.startswith('list('):
+                scope[name] = 'list'
+                return [pad + f"var/list/{name} = list({', '.join(kept)})"]
+            if kept and value.startswith('pick('):
+                scope[name] = 'path'
+                return [pad + f"var/{name} = pick({', '.join(kept)})"]
+            return []
+        m = re.fullmatch(r'(\w+)\s*=\s*(.+)', text)
+        if m and (m.group(1) in OUTFIT_SLOTS or m.group(1) in NPC_SLOTS):
+            value = self.slot_value(m.group(2), scope)
+            return [pad + f'{NPC_SLOTS.get(m.group(1)) or OUTFIT_SLOTS[m.group(1)]} = {value}'] if value else []
+        m = re.fullmatch(r'backpack_contents\s*(=|\+=)\s*list\((.*)\)', text)
+        if m:
+            entries = [(self.item(p), n or '1') for p, n in re.findall(r'(/obj/item/[A-Za-z0-9_/]*[A-Za-z0-9_])/?\s*(?:=\s*(\d+))?', m.group(2))]
+            entries = [f'{p} = {n}' for p, n in entries if p]
+            return [pad + f"backpack_contents {m.group(1)} list({', '.join(entries)})"] if entries else []
+        m = re.fullmatch(r'(\w+)\(\s*(?:H|human|user)\s*\)', text)
+        if m and self.helper(outfit, m.group(1)):
+            return [pad + f'{m.group(1)}(H)']
+        return []
+
+    def emit(self, nodes, depth, scope, outfit):
+        out = []
+        i = 0
+        while i < len(nodes):
+            parts = control_parts(nodes[i][0])
+            children = nodes[i][1]
+            i += 1
+            if parts[0] == 'if':
+                branches, i = if_chain(nodes, i, parts)
+                out += self.chain(branches, depth, scope, outfit)
+            elif parts[0] == 'switch':
+                out += self.switch(parts[1], branch_body(parts[2], children), depth, scope, outfit)
+            elif parts[0] is None:
+                out += self.statement(parts[2], depth, scope, outfit)
+        return out
+
+    def chain(self, branches, depth, scope, outfit):
+        """An if chain: chances stay as they are, a branch decided now is taken whole (or becomes the else of the chances
+        before it), a branch decided against is dropped."""
+        pad = '\t' * depth
+        out = []
+        useful = False
+        for keyword, cond, kids in branches:
+            verdict = True if keyword == 'else' else npc_condition(cond, scope)
+            if verdict == 'prob':
+                body = self.emit(kids, depth + 1, dict(scope), outfit)
+                useful = useful or useful_lines(body)
+                out.append(pad + ('else if' if out else 'if') + f'({cond.strip()})')
+                out += body if useful_lines(body) else [pad + '\tEMPTY_BLOCK_GUARD']
+            elif verdict:
+                if not out:
+                    return self.emit(kids, depth, scope, outfit)
+                body = self.emit(kids, depth + 1, dict(scope), outfit)
+                useful = useful or useful_lines(body)
+                out += [pad + 'else'] + (body if useful_lines(body) else [pad + '\tEMPTY_BLOCK_GUARD'])
+                break
+        return out if useful else []
+
+    def switch(self, expr, cases, depth, scope, outfit):
+        """A switch on a random number keeps its cases; a switch on anything else takes its first case."""
+        pad = '\t' * depth
+        expr = (expr or '').strip()
+        parsed = []
+        for text, children in cases:
+            keyword, cond, tail = control_parts(text)
+            if keyword in ('if', 'else'):
+                parsed.append((cond if keyword == 'if' else None, branch_body(tail, children)))
+        if not parsed:
+            return []
+        if not (re.fullmatch(r'rand\(\s*-?\d+\s*,\s*-?\d+\s*\)', expr) or LOCAL_VALUE.fullmatch(expr) or scope.get(expr) == 'value'):
+            return self.emit(parsed[0][1], depth, scope, outfit)
+        out = [pad + f'switch({expr})']
+        useful = False
+        for cond, kids in parsed:
+            body = self.emit(kids, depth + 2, dict(scope), outfit)
+            useful = useful or useful_lines(body)
+            out.append(pad + '\t' + (f'if({cond.strip()})' if cond is not None else 'else'))
+            out += body if useful_lines(body) else [pad + '\t\tEMPTY_BLOCK_GUARD']
+        return out if useful else []
+
+    def helper(self, outfit, name):
+        """A helper proc the outfit calls (Ratwood's add_random_deserter_weapon), written once for the outfit that owns it."""
+        owner = outfit
+        while owner and owner.startswith(NPC_OUTFIT_ROOT + '/'):
+            key = (owner, name)
+            if key in OUTFIT_PROCS:
+                if key not in self.helpers:
+                    self.helpers[key] = []
+                    lines = prune_locals(self.emit(code_tree(OUTFIT_PROCS[key]), 1, {}, owner))
+                    self.helpers[key] = lines if useful_lines(lines) else []
+                return self.helpers[key]
+            owner = self.rw.parent(owner)
+        return []
+
+    def pre_equip(self, outfit):
+        body = PRE_EQUIP.get(outfit)
+        return None if body is None else prune_locals(self.emit(code_tree(body), 1, {}, outfit))
+
+
+def npc_chain(rw, path):
+    chain = []
+    while path and boundary_match(path, NPC_ROOT):
+        chain.append(path)
+        path = rw.parent(path)
+    return chain
+
+
+def npc_outfits(rw, path):
+    """The Ratwood outfits an NPC wears, nearest code first: an outfit var its Initialize sets (several, as the spread
+    skeletons pick one at random), an outfit after_creation equips by path, or the outfit var after_creation equips."""
+    for owner in npc_chain(rw, path):
+        for proc in NPC_PROCS:
+            text = '\n'.join(HUMAN_PROCS.get((owner, proc), []))
+            assigned = re.findall(r'\b\w+_outfit\s*=\s*(/datum/outfit/[A-Za-z0-9_/]*[A-Za-z0-9_])', text)
+            if assigned:
+                return [o for o in assigned if o.startswith(NPC_OUTFIT_ROOT + '/')]
+            direct = re.search(r'equipOutfit\(\s*new\s+(/datum/outfit/[A-Za-z0-9_/]*[A-Za-z0-9_])', text)
+            if direct:
+                return [direct.group(1)] if direct.group(1).startswith(NPC_OUTFIT_ROOT + '/') else []
+            named = re.search(r'\bnew\s+(\w+_outfit)\b', text)
+            if named:
+                value = (rw.resolve(path, named.group(1)) or '').strip().rstrip('/')
+                return [value] if value.startswith(NPC_OUTFIT_ROOT + '/') else []
+    return []
+
+
+def npc_outfit_chain(outfit):
+    parts = outfit.split('/')
+    return ['/'.join(parts[:k]) for k in range(len(NPC_OUTFIT_ROOT.split('/')) + 1, len(parts) + 1)]
+
+
+def npc_faction(rw, path):
+    """Ratwood's faction of the NPC: the faction var, or the list after_creation sets when it sets it on the type or nearer
+    to it than the var, with what after_creation adds (faction |= list("undead"))."""
+    var_depth = None
+    depth = 0
+    p = path
+    while p:
+        if 'faction' in rw.types.get(p, {}):
+            var_depth = depth
+            break
+        p = rw.parent(p)
+        depth += 1
+    faction = string_list(rw.resolve(path, 'faction'))
+    added = []
+    assigned = False
+    for depth, owner in enumerate(npc_chain(rw, path)):
+        text = '\n'.join(line for proc in NPC_PROCS for line in HUMAN_PROCS.get((owner, proc), []))
+        found = re.search(r'\bfaction\s*=\s*list\(([^)]*)\)', text)
+        if found and not assigned:
+            assigned = True
+            if var_depth is None or depth <= var_depth:
+                faction = string_list(found.group(1))
+        for listed, single in re.findall(r'\bfaction\s*(?:\|=|\+=)\s*(?:list\(([^)]*)\)|("[^"]*"))', text):
+            added += string_list(listed or single)
+    return list(dict.fromkeys(faction + added))
+
+
+def npc_traits(rw, path):
+    """Traits after_creation and Initialize give the NPC outside any condition."""
+    traits = []
+    for owner in npc_chain(rw, path):
+        for proc in NPC_PROCS:
+            for text in unconditional_lines(HUMAN_PROCS.get((owner, proc), [])):
+                traits += re.findall(r'\bADD_TRAIT\(\s*src\s*,\s*(TRAIT_[A-Z0-9_]+)\s*,', text)
+    return traits
+
+
+def npc_outfit_attributes(rw, outfit, attr_cfg):
+    """Stats, skills and traits a Ratwood NPC outfit gives in what its pre_equip surely runs (H.STASTR = 8, change_stat,
+    adjust_skillrank, ADD_TRAIT), over its parent's when it calls ..(). A stat set outright counts from Ratwood's 10."""
+    data = {'set': {}, 'add': collections.Counter(), 'skills': {}, 'traits': []}
+    if not outfit or not outfit.startswith(NPC_OUTFIT_ROOT + '/'):
+        return data
+    body = PRE_EQUIP.get(outfit)
+    if body is None:
+        return npc_outfit_attributes(rw, rw.parent(outfit), attr_cfg)
+    lines = static_statements(code_tree(body))
+    if any(SUPER_CALL.fullmatch(text) for text in lines):
+        data = npc_outfit_attributes(rw, rw.parent(outfit), attr_cfg)
+    for text in lines:
+        for short, op, amount in STAT_ASSIGN.findall(text):
+            stat = attr_cfg['stats'].get(NPC_STATS.get(short, ''))
+            if not stat:
+                continue
+            if op == '=':
+                data['set'][stat] = int(amount)
+                data['add'][stat] = 0
+            else:
+                data['add'][stat] += int(amount) if op == '+=' else -int(amount)
+        for token, amount in STAT_CALL.findall(text):
+            stat = attr_cfg['stats'].get(expand_define(token).strip('"'))
+            if stat:
+                data['add'][stat] += int(amount)
+        for call, path, token in SKILL_CALL.findall(text):
+            value = expand_define(token)
+            if not NUMBER.match(value):
+                continue
+            level = int(float(value)) * attr_cfg['level_scale']
+            data['skills'][path] = data['skills'].get(path, 0) + level if call == 'adjust_skillrank' else max(data['skills'].get(path, 0), level)
+        data['traits'] += TRAIT_CALL.findall(text)
+    return data
+
+
+def npc_sheet_entries(data, attr_cfg):
+    entries = []
+    for stat in sorted(set(data['set']) | set(data['add'])):
+        amount = (data['set'][stat] - NPC_STAT_BASE if stat in data['set'] else 0) + data['add'][stat]
+        if amount:
+            entries.append(f'\t\t{stat} = {amount},')
+    for path, value in sorted(data['skills'].items()):
+        if path in attr_cfg['meta'] and value:
+            entries.append(f"\t\t{attr_cfg['skill_target'] + path[len(attr_cfg['skill_root']):]} = {min(value, 60)},")
+    return entries
+
+
+def npc_candidates(rw, rules, usage):
+    return sorted(p for p in usage if boundary_match(p, NPC_ROOT) and p != NPC_ROOT and not replacement_for(p, rules))
+
+
+def npc_outfit_items(rw, rules, npcs):
+    """Every item the NPC outfits may hand out, so the port brings them over."""
+    writer = NpcOutfits(rw, rules)
+    for path in npcs:
+        for outfit in npc_outfits(rw, path):
+            for link in npc_outfit_chain(outfit):
+                writer.statics(link)
+                writer.pre_equip(link)
+    return writer.items
+
+
+def npc_trait_names(rw, npcs, attr_cfg):
+    traits = set()
+    for path in npcs:
+        traits |= set(npc_traits(rw, path))
+        for outfit in npc_outfits(rw, path):
+            for link in npc_outfit_chain(outfit):
+                traits |= set(npc_outfit_attributes(rw, link, attr_cfg)['traits'])
+    return traits
+
+
+def generate_npcs(cfg, rw, rules, npcs, valid, known_traits, taken_outfits):
+    """Ratwood's NPC people for ai/human_npc.dm: whether each has a mind (mode), hunts (aggressive) or flees in pain, how it
+    defends, its faction, race and traits, and the outfits it is dressed in; the outfits themselves with their random
+    loadouts, and the stats and skills their pre_equip sets as attribute sheets."""
+    spec = cfg['port']['npcs']
+    attr_cfg = cfg['attributes']
+    writer = NpcOutfits(rw, rules, valid)
+    mobs = []
+    worn_by = collections.defaultdict(list)
+    rows = []
+    for path in npcs:
+        block = [path]
+        mind = (rw.resolve(path, 'mode') or 'NPC_AI_OFF').strip() != 'NPC_AI_OFF'
+        if mind:
+            block.append('\trogue_npc = TRUE')
+        aggressive = (rw.resolve(path, 'aggressive') or '').strip() in ('1', 'TRUE')
+        if aggressive:
+            block.append('\trogue_aggressive = TRUE')
+        if (rw.resolve(path, 'flee_in_pain') or '').strip() in ('1', 'TRUE'):
+            block.append('\trogue_flee_in_pain = TRUE')
+        if (rw.resolve(path, 'd_intent') or '').strip() == 'INTENT_DODGE':
+            block.append('\trogue_def_intent = ROGUE_INTENT_DODGE')
+        faction = npc_faction(rw, path)
+        if faction and faction != ['"neutral"']:
+            block.append(f"\tfaction = list({', '.join(faction)})")
+        race = next((species for prefix, species in spec.get('race', {}).items() if boundary_match(path, prefix)), None)
+        if race:
+            block.append(f'\trace = {race}')
+        worn = npc_outfits(rw, path)
+        if worn:
+            block.append(f"\trogue_npc_outfits = list({', '.join(worn)})")
+            for outfit in worn:
+                worn_by[outfit].append(path)
+        traits = [t for t in dict.fromkeys(npc_traits(rw, path)) if t in known_traits]
+        if traits:
+            block.append(f"\trogue_npc_traits = list({', '.join(traits)})")
+        if len(block) > 1:
+            mobs.append(block)
+        rows.append((path, 'hunts' if mind and aggressive else 'fights back' if mind else 'none', ', '.join(f.strip('"') for f in faction), ', '.join(f'`{o}`' for o in dict.fromkeys(worn))))
+
+    outfits = []
+    procs = []
+    sheets = []
+    done = set()
+    sheet_of = {}
+    with_pre_equip = set()
+    for outfit in sorted(worn_by):
+        for link in npc_outfit_chain(outfit):
+            if link in done:
+                continue
+            done.add(link)
+            parent = rw.parent(link)
+            if link in taken_outfits:
+                continue
+            block = [link] + writer.statics(link)
+            data = npc_outfit_attributes(rw, link, attr_cfg)
+            entries = npc_sheet_entries(data, attr_cfg)
+            if entries:
+                sheet = spec['sheet_root'] + link[len(NPC_OUTFIT_ROOT):]
+                sheets.append([sheet, '\traw_attribute_list = list('] + entries + ['\t\t)'])
+                block.append(f'\trogue_sheet = {sheet}')
+                sheet_of[link] = sheet
+            elif sheet_of.get(parent) and link in PRE_EQUIP:
+                block.append('\trogue_sheet = null')
+            else:
+                sheet_of[link] = sheet_of.get(parent)
+            traits = [t for t in dict.fromkeys(data['traits']) if t in known_traits]
+            if traits:
+                block.append(f"\trogue_traits = list({', '.join(traits)})")
+            if len(block) > 1 or link in worn_by:
+                outfits.append(block)
+            lines = writer.pre_equip(link)
+            if lines is None:
+                if parent in with_pre_equip:
+                    with_pre_equip.add(link)
+                continue
+            calls_parent = any(line.strip() == '..()' for line in lines)
+            if any(line.strip() != '..()' for line in lines) and useful_lines(lines):
+                procs.append([f'{link}/pre_equip(mob/living/carbon/human/H, visuals_only = FALSE)'] + lines)
+                with_pre_equip.add(link)
+            elif not calls_parent and parent in with_pre_equip:
+                procs.append([f'{link}/pre_equip(mob/living/carbon/human/H, visuals_only = FALSE)', '\treturn'])
+            elif calls_parent and parent in with_pre_equip:
+                with_pre_equip.add(link)
+    for (owner, name), lines in sorted(writer.helpers.items()):
+        if lines:
+            procs.append([f'{owner}/proc/{name}(mob/living/carbon/human/H)'] + lines)
+    blocks = mobs + outfits + procs + sheets
+    open(f"{OUT_DIR}/{spec['file']}", 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    with open(REPORT, 'a', encoding='utf-8', newline='\n') as out:
+        out.write(f'\n## NPC people ({len(npcs)} types, {sum(1 for r in rows if r[1] != "none")} with a mind, {len(worn_by)} outfits)\n\n| Type | Mind | Faction | Outfits |\n|---|---|---|---|\n')
+        for path, mind, faction, worn in rows:
+            out.write(f'| `{path}` | {mind} | {faction} | {worn} |\n')
+    print(f"{spec['file']}: {len(npcs)} NPC types, {len(worn_by)} outfits, {len(procs)} procs, {len(sheets)} sheets")
 
 
 if __name__ == '__main__':

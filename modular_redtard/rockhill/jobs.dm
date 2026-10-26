@@ -47,6 +47,11 @@
 	var/ring
 	var/mouth
 	var/backr
+	/// Attribute sheet the outfit gives its wearer: a Ratwood NPC outfit sets stats and skills in pre_equip, a role takes them
+	/// from its job instead.
+	var/rogue_sheet
+	/// Traits the outfit gives its wearer (ADD_TRAIT in a Ratwood NPC outfit's pre_equip).
+	var/list/rogue_traits
 
 /datum/outfit/job/roguetown/pre_equip(mob/living/carbon/human/H, visuals_only = FALSE)
 	return
@@ -66,6 +71,12 @@
 			user.equip_to_slot_or_del(new path(user), text2num(slot), TRUE)
 	if(backr)
 		user.equip_to_rogue_cell(new backr(user), ITEM_SLOT_BACK, ROGUE_BACK_RIGHT, qdel_on_fail = TRUE, bypass_equip_delay_self = TRUE, initial = TRUE)
+	if(visuals_only)
+		return
+	if(rogue_sheet)
+		user.attributes?.add_sheet(rogue_sheet)
+	for(var/trait in rogue_traits)
+		ADD_TRAIT(user, trait, "[type]")
 
 /datum/job_department/rockhill_nobles
 	department_name = DEPARTMENT_ROCKHILL_NOBLES

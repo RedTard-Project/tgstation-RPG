@@ -92,7 +92,9 @@
 #include "lighting\darkness.dm"
 #include "lighting\host.dm"
 #include "rockhill\_rockhill.dm"
+#include "ai\human_npc.dm"
 #include "ai\rockhill_ai.dm"
+#include "ai\sleep.dm"
 #include "wardrobe\ported.dm"
 #include "wardrobe\loadout.dm"
 
@@ -125,7 +127,9 @@
 // END_PREFERENCES
 // BEGIN_INCLUDE
 #include "admin\_defines.dm"
+#include "ai\human_npc.dm"
 #include "ai\rockhill_ai.dm"
+#include "ai\sleep.dm"
 #include "attributes\_defines.dm"
 #include "attributes\attribute.dm"
 #include "attributes\experience.dm"

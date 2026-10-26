@@ -74,4 +74,5 @@
 #include "ported\attribute_sheets.dm"
 #include "ported\jobs.dm"
 #include "ported\advclasses.dm"
+#include "ported\npcs.dm"
 #include "ported\landmarks.dm"

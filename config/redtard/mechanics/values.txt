@@ -405,6 +405,51 @@ shove_chance = 30
 # Share of health at which a beast that fled from its wounds turns back to fight (Ratwood volf, ai_flee_while_injured 0.75).
 beast_flee_stop = 0.75
 
+# Share of health below which a Ratwood NPC that flees in pain runs from its foe (Ratwood flee_in_pain: pain at 90% of ten times willpower).
+npc_flee_health = 0.35
+
+# Share of health at which such an NPC turns back to fight.
+npc_flee_stop = 0.6
+
+# Percent chance per blow that an NPC done with its stance picks a new one: strong, swift or feint (Vibelin HUMAN_NPC_INTENT_SWITCH_CHANCE).
+npc_stance_chance = 25
+
+# Fewest blows an NPC keeps a stance it picked (Vibelin).
+npc_stance_min = 3
+
+# Most blows an NPC keeps a stance it picked (Vibelin).
+npc_stance_max = 6
+
+# Percent chance per blow that an NPC in the feint stance feints with the right button instead of striking (Vibelin HUMAN_NPC_RMB_ATTEMPT_CHANCE).
+npc_rmb_chance = 25
+
+# Percent chance per blow that an NPC uses its weapon's special when it can (Vibelin HUMAN_NPC_WEAPON_SPECIAL_CHANCE).
+npc_special_chance = 35
+
+# Percent chance before and after each blow that an NPC looks its foe over for a weak point (Vibelin HUMAN_NPC_WEAKPOINT_SCAN_CHANCE).
+npc_weakpoint_chance = 20
+
+# Deciseconds a journeyman NPC keeps aiming at a weak point it found; less skill shortens it, more skill and reach lengthen it (Vibelin).
+npc_weakpoint_time = 60
+
+# Blows an NPC aims at the same zone before it chooses another (Vibelin; Ratwood ATTACKS_UNTIL_SWITCHING_UP).
+npc_zone_blows = 4
+
+# Percent chance an NPC steps back to a side tile after a blow (Vibelin HUMAN_NPC_BASE_JUKE_CHANCE; Ratwood 5).
+npc_juke_chance = 15
+
+# Percent added to that chance per point of speed over 10 (Vibelin, Ratwood).
+npc_juke_per_speed = 5
+
+# Deciseconds before an NPC can step back again (Vibelin).
+npc_juke_cooldown = 15
+
+# Least percent an NPC adds to its click delay after a blow: it answers slower than its weapon allows (Vibelin).
+npc_reaction_min = 20
+
+# Most percent an NPC adds to its click delay after a blow (Vibelin).
+npc_reaction_max = 40
+
 # Percent chance per step that something which can be spat out slips out of the mouth (Ratwood human_movement.dm).
 mouth_slip_chance = 5
 

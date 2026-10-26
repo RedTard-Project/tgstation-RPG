@@ -986,7 +986,7 @@ Ratwood revision: `bc98da5c9c8d0b49e05893484e505224abb449d3` (2026-10-26).
 | `/obj/effect/lily_petal` | 1 |
 | `/obj/effect/lily_petal/three` | 1 |
 
-## items.dm (2028 types)
+## items.dm (2038 types)
 
 | Type | Tiles |
 |---|---|
@@ -2310,6 +2310,7 @@ Ratwood revision: `bc98da5c9c8d0b49e05893484e505224abb449d3` (2026-10-26).
 | `/obj/item/clothing/cloak/ordinatorcape` | 0 |
 | `/obj/item/clothing/cloak/psyaltrist` | 0 |
 | `/obj/item/clothing/cloak/psydontabard/alt` | 0 |
+| `/obj/item/clothing/cloak/raincloak/furcloak/black` | 0 |
 | `/obj/item/clothing/cloak/raincloak/furcloak/brown` | 0 |
 | `/obj/item/clothing/cloak/raincloak/green` | 0 |
 | `/obj/item/clothing/cloak/stabard` | 0 |
@@ -2318,6 +2319,7 @@ Ratwood revision: `bc98da5c9c8d0b49e05893484e505224abb449d3` (2026-10-26).
 | `/obj/item/clothing/cloak/stabard/grenzelmage` | 0 |
 | `/obj/item/clothing/cloak/stabard/surcoat/bailiff` | 0 |
 | `/obj/item/clothing/cloak/stabard/surcoat/councillor` | 0 |
+| `/obj/item/clothing/cloak/tabard/blkknight` | 0 |
 | `/obj/item/clothing/cloak/tabard/knight` | 0 |
 | `/obj/item/clothing/cloak/tabard/knight/guard` | 0 |
 | `/obj/item/clothing/cloak/tabard/retinue/baronycloak` | 0 |
@@ -2336,6 +2338,7 @@ Ratwood revision: `bc98da5c9c8d0b49e05893484e505224abb449d3` (2026-10-26).
 | `/obj/item/clothing/gloves/roguetown/fingerless` | 0 |
 | `/obj/item/clothing/gloves/roguetown/fingerless/shadowgloves/elflock` | 0 |
 | `/obj/item/clothing/gloves/roguetown/knuckles` | 0 |
+| `/obj/item/clothing/gloves/roguetown/knuckles/bronze` | 0 |
 | `/obj/item/clothing/gloves/roguetown/knuckles/decrepit` | 0 |
 | `/obj/item/clothing/gloves/roguetown/otavan` | 0 |
 | `/obj/item/clothing/gloves/roguetown/plate/atgervi` | 0 |
@@ -2400,6 +2403,7 @@ Ratwood revision: `bc98da5c9c8d0b49e05893484e505224abb449d3` (2026-10-26).
 | `/obj/item/clothing/head/roguetown/helmet/sallet/beastskull` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/sallet/iron` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/sallet/shishak` | 0 |
+| `/obj/item/clothing/head/roguetown/helmet/sallet/visored/iron` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/sallet/warden/bear` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/tricorn` | 0 |
 | `/obj/item/clothing/head/roguetown/inqhat` | 0 |
@@ -2579,6 +2583,7 @@ Ratwood revision: `bc98da5c9c8d0b49e05893484e505224abb449d3` (2026-10-26).
 | `/obj/item/clothing/suit/roguetown/armor/leather/vest` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/leather/vest/white` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/longcoat` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/longcoat/brown` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/plate` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/plate/` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/plate/ancient` | 0 |
@@ -2875,6 +2880,7 @@ Ratwood revision: `bc98da5c9c8d0b49e05893484e505224abb449d3` (2026-10-26).
 | `/obj/item/rogueweapon/spear/ancient/decrepit` | 0 |
 | `/obj/item/rogueweapon/spear/assegai` | 0 |
 | `/obj/item/rogueweapon/spear/boar/frei` | 0 |
+| `/obj/item/rogueweapon/spear/bonespear` | 0 |
 | `/obj/item/rogueweapon/spear/bronze` | 0 |
 | `/obj/item/rogueweapon/spear/improvisedbillhook` | 0 |
 | `/obj/item/rogueweapon/spear/keep_standard` | 0 |
@@ -2885,6 +2891,7 @@ Ratwood revision: `bc98da5c9c8d0b49e05893484e505224abb449d3` (2026-10-26).
 | `/obj/item/rogueweapon/spellbook/grand` | 0 |
 | `/obj/item/rogueweapon/spellbook/greater` | 0 |
 | `/obj/item/rogueweapon/stoneaxe/battle/steppesman/chupa` | 0 |
+| `/obj/item/rogueweapon/stoneaxe/boneaxe` | 0 |
 | `/obj/item/rogueweapon/stoneaxe/handaxe/copper` | 0 |
 | `/obj/item/rogueweapon/stoneaxe/hurlbat` | 0 |
 | `/obj/item/rogueweapon/stoneaxe/oath` | 0 |
@@ -2983,7 +2990,10 @@ Ratwood revision: `bc98da5c9c8d0b49e05893484e505224abb449d3` (2026-10-26).
 | `/obj/item/storage/belt/rogue/leather/shalal` | 0 |
 | `/obj/item/storage/belt/rogue/leather/shalal/purple` | 0 |
 | `/obj/item/storage/belt/rogue/leather/stakebelt` | 0 |
+| `/obj/item/storage/belt/rogue/pouch/food` | 0 |
 | `/obj/item/storage/belt/rogue/pouch/medicine` | 0 |
+| `/obj/item/storage/belt/rogue/pouch/treasure` | 0 |
+| `/obj/item/storage/belt/rogue/pouch/treasure/lucky` | 0 |
 | `/obj/item/storage/detpack` | 0 |
 | `/obj/item/storage/hip/headhook` | 0 |
 | `/obj/item/storage/keyring/archivist` | 0 |
@@ -3668,7 +3678,7 @@ Ratwood names an `icon_state` its sheet does not have (a sprite chosen at runtim
 | `/obj/item/storage/belt/rogue/leather/exoticsilkbelt/skirtred` | `restricted licence` | `exoticsilkskirt` |
 | `/obj/machinery/light/rogue/campfire/pyre` | `modular_redtard/rockhill/icons/roguetown/misc/tallstructure.dmi` | `pyre1` |
 
-## Wearables without a worn sprite (250)
+## Wearables without a worn sprite (251)
 
 No sheet holds their worn state: `worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'` (one empty state) and `worn_icon_state = null`, the TG way to say "no worn sprite".
 
@@ -3689,6 +3699,7 @@ No sheet holds their worn state: `worn_icon = 'modular_redtard/rockhill/icons/bl
 - `/obj/item/clothing/cloak/psyaltrist`
 - `/obj/item/clothing/cloak/undivided`
 - `/obj/item/clothing/gloves/roguetown/knuckles`
+- `/obj/item/clothing/gloves/roguetown/knuckles/bronze`
 - `/obj/item/clothing/gloves/roguetown/knuckles/decrepit`
 - `/obj/item/clothing/gloves/roguetown/nomagic`
 - `/obj/item/clothing/gloves/roguetown/plate/dwarven`
@@ -4262,3 +4273,48 @@ Area music and ambience are copied into a folder git ignores and are read from d
 | `/datum/job/roguetown/wardenmaster` | Master Warden | /datum/job_department/rockhill_garrison |
 | `/datum/job/roguetown/watchcaptain` | Watch Captain | /datum/job_department/rockhill_garrison |
 | `/datum/job/roguetown/wretch` | Wretch | /datum/job_department/rockhill_wanderers |
+
+## NPC people (40 types, 38 with a mind, 25 outfits)
+
+| Type | Mind | Faction | Outfits |
+|---|---|---|---|
+| `/mob/living/carbon/human/species/dwarfskeleton/ambush` | hunts | dundead | `/datum/outfit/job/roguetown/dwarfskeleton` |
+| `/mob/living/carbon/human/species/dwarfskeleton/ambush/knight` | hunts | dundead | `/datum/outfit/job/roguetown/dwarfskeleton/ambush/knight` |
+| `/mob/living/carbon/human/species/elf/dark/drowraider` | hunts | drow | `/datum/outfit/job/roguetown/human/species/elf/dark/drowraider` |
+| `/mob/living/carbon/human/species/goblin/cave` | none | orcs | `/datum/outfit/job/roguetown/npc/goblin` |
+| `/mob/living/carbon/human/species/goblin/moon` | none | orcs | `/datum/outfit/job/roguetown/npc/goblin` |
+| `/mob/living/carbon/human/species/goblin/npc` | hunts | orcs | `/datum/outfit/job/roguetown/npc/goblin` |
+| `/mob/living/carbon/human/species/goblin/npc/ambush` | hunts | orcs | `/datum/outfit/job/roguetown/npc/goblin` |
+| `/mob/living/carbon/human/species/goblin/npc/ambush/cave` | hunts | orcs | `/datum/outfit/job/roguetown/npc/goblin` |
+| `/mob/living/carbon/human/species/goblin/npc/ambush/hell` | hunts | orcs | `/datum/outfit/job/roguetown/npc/goblin` |
+| `/mob/living/carbon/human/species/goblin/npc/ambush/moon` | hunts | orcs | `/datum/outfit/job/roguetown/npc/goblin` |
+| `/mob/living/carbon/human/species/goblin/npc/ambush/sea` | hunts | orcs | `/datum/outfit/job/roguetown/npc/goblin` |
+| `/mob/living/carbon/human/species/goblin/npc/cave` | hunts | orcs | `/datum/outfit/job/roguetown/npc/goblin` |
+| `/mob/living/carbon/human/species/goblin/npc/hell` | hunts | orcs | `/datum/outfit/job/roguetown/npc/goblin` |
+| `/mob/living/carbon/human/species/goblin/npc/moon` | hunts | orcs | `/datum/outfit/job/roguetown/npc/goblin` |
+| `/mob/living/carbon/human/species/human/northern/bog_deserters` | hunts | viking, station | `/datum/outfit/job/roguetown/human/northern/bog_deserters` |
+| `/mob/living/carbon/human/species/human/northern/bum` | fights back | bums, station | `/datum/outfit/job/roguetown/vagrantnpc` |
+| `/mob/living/carbon/human/species/human/northern/bum/ambush` | hunts | bums, station | `/datum/outfit/job/roguetown/vagrantnpc` |
+| `/mob/living/carbon/human/species/human/northern/highwayman` | hunts | viking, station | `/datum/outfit/job/roguetown/human/species/human/northern/highwayman` |
+| `/mob/living/carbon/human/species/npc/deadite` | hunts | neutral | `/datum/outfit/job/roguetown/deadite` |
+| `/mob/living/carbon/human/species/orc/npc/berserker` | hunts | orcs, station | `/datum/outfit/job/roguetown/orc/npc/berserker` |
+| `/mob/living/carbon/human/species/orc/npc/footsoldier` | hunts | orcs, station | `/datum/outfit/job/roguetown/orc/npc/footsoldier` |
+| `/mob/living/carbon/human/species/orc/npc/marauder` | hunts | orcs, station | `/datum/outfit/job/roguetown/orc/npc/marauder` |
+| `/mob/living/carbon/human/species/orc/npc/warlord` | hunts | orcs, station | `/datum/outfit/job/roguetown/orc/npc/warlord` |
+| `/mob/living/carbon/human/species/skeleton/npc/bogguard` | hunts | undead | `/datum/outfit/job/roguetown/npc/skeleton/npc/bogguard` |
+| `/mob/living/carbon/human/species/skeleton/npc/bogguard/master` | hunts | undead | `/datum/outfit/job/roguetown/npc/skeleton/npc/bogguard/master` |
+| `/mob/living/carbon/human/species/skeleton/npc/cultist` | hunts | undead | `/datum/outfit/job/roguetown/skeleton/npc/cultist` |
+| `/mob/living/carbon/human/species/skeleton/npc/dungeon` | hunts | undead | `/datum/outfit/job/roguetown/npc/skeleton` |
+| `/mob/living/carbon/human/species/skeleton/npc/easy` | hunts | undead | `/datum/outfit/job/roguetown/skeleton/npc/easy` |
+| `/mob/living/carbon/human/species/skeleton/npc/hard` | hunts | undead | `/datum/outfit/job/roguetown/skeleton/npc/hard` |
+| `/mob/living/carbon/human/species/skeleton/npc/hard/noequip` | hunts | undead | `/datum/outfit/job/roguetown/skeleton/npc/hard_skills_only` |
+| `/mob/living/carbon/human/species/skeleton/npc/hardspread` | hunts | undead | `/datum/outfit/job/roguetown/skeleton/npc/hard`, `/datum/outfit/job/roguetown/skeleton/npc/medium`, `/datum/outfit/job/roguetown/skeleton/npc/pirate` |
+| `/mob/living/carbon/human/species/skeleton/npc/hardspread/lich` | hunts | lich, undead | `/datum/outfit/job/roguetown/skeleton/npc/hard`, `/datum/outfit/job/roguetown/skeleton/npc/medium`, `/datum/outfit/job/roguetown/skeleton/npc/pirate` |
+| `/mob/living/carbon/human/species/skeleton/npc/medium` | hunts | undead | `/datum/outfit/job/roguetown/skeleton/npc/medium` |
+| `/mob/living/carbon/human/species/skeleton/npc/medium/noequip` | hunts | undead | `/datum/outfit/job/roguetown/skeleton/npc/medium_skills_only` |
+| `/mob/living/carbon/human/species/skeleton/npc/mediumspread` | hunts | undead | `/datum/outfit/job/roguetown/skeleton/npc/supereasy`, `/datum/outfit/job/roguetown/skeleton/npc/easy`, `/datum/outfit/job/roguetown/skeleton/npc/medium`, `/datum/outfit/job/roguetown/skeleton/npc/hard` |
+| `/mob/living/carbon/human/species/skeleton/npc/miner` | hunts | undead | `/datum/outfit/job/roguetown/skeleton/npc/miner` |
+| `/mob/living/carbon/human/species/skeleton/npc/no_equipment` | hunts | undead |  |
+| `/mob/living/carbon/human/species/skeleton/npc/pirate` | hunts | undead | `/datum/outfit/job/roguetown/skeleton/npc/pirate` |
+| `/mob/living/carbon/human/species/skeleton/npc/rockhill` | hunts | undead | `/datum/outfit/job/roguetown/skeleton/npc/rockhill` |
+| `/mob/living/carbon/human/species/skeleton/npc/supereasy` | hunts | undead | `/datum/outfit/job/roguetown/skeleton/npc/supereasy` |
