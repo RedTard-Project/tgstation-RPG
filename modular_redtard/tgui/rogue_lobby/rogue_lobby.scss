@@ -1,0 +1,112 @@
+// Azure Peak's lobby panel beside TG's menu, in Azure's parchment look and its MedievalSharp font
+// (rogue_lobby_fonts.css, sent as the rogue_lobby_font asset). Sizes follow TG's lobby scale.
+
+@function s($px) {
+  @return calc(#{$px} * var(--lobby-scale, 1));
+}
+
+.rogue-lobby {
+  position: absolute;
+  left: s(8px);
+  bottom: s(8px);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: s(2px);
+  box-sizing: border-box;
+  width: s(180px);
+  max-height: calc(100% - #{s(16px)});
+  padding: s(6px) s(8px);
+  font-family: 'MedievalSharp', serif;
+  font-size: s(9px);
+  line-height: 1.3;
+  color: #2b1d0e;
+  background-color: #e7d3a1;
+  border: s(2px) solid #5a3e1f;
+  box-shadow: 0 0 s(6px) rgba(0, 0, 0, 0.6);
+
+  &__welcome {
+    margin-bottom: s(2px);
+    font-size: s(14px);
+    text-align: center;
+    animation: rogue-lobby-fade-in 5s;
+  }
+
+  &__line {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &__good {
+    color: #2e6b1f;
+  }
+
+  &__bad {
+    color: #8b1c1c;
+  }
+
+  &__header {
+    margin-top: s(2px);
+    padding-bottom: s(1px);
+    font-size: s(11px);
+    border-bottom: s(1px) solid #5a3e1f;
+  }
+
+  &__classes {
+    max-height: s(110px);
+    overflow-y: auto;
+  }
+
+  &__notice {
+    padding: s(6px) 0;
+    font-size: s(12px);
+    text-align: center;
+  }
+
+  &__small {
+    font-size: s(8px);
+  }
+
+  &__button {
+    margin-top: s(4px);
+    padding: s(2px) s(4px);
+    font-family: inherit;
+    font-size: s(9px);
+    color: #2b1d0e;
+    cursor: pointer;
+    background-color: #d4b97c;
+    border: s(1px) solid #5a3e1f;
+
+    &:hover {
+      background-color: #e9cf93;
+    }
+  }
+}
+
+// The title screen played frame by frame (RogueLobby.tsx, TitleAnimation) under TG's menu, filling the window as
+// TG's background does. While it plays, TG's still first frame gives way to it.
+.rogue-lobby-title {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  image-rendering: pixelated;
+}
+
+.rogue-lobby-title-animated .lobby:not(.lobby--transparent) {
+  background-image: none !important;
+  background-color: transparent !important;
+}
+
+@keyframes rogue-lobby-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

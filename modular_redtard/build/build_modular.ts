@@ -16,6 +16,9 @@ const LOWMEM_MARKER = 'redtard_lowmem';
 const PREREQUISITES = ['icon-cutter', 'behavior-tree-compiler', 'tgui', 'tg-font'];
 const CONTENT_CHECK = 'modular_redtard/tools/check_modular_content.py';
 const MODULE_DEFINES = ['MINIMAL_CENTCOM'];
+const ROGUE_LOBBY_CONFIG = '../modular_redtard/tgui/rspack.rogue_lobby.ts';
+const ROGUE_LOBBY_INPUTS = ['modular_redtard/tgui', 'tgui/packages/tgui-lobby', 'tgui/rspack.config.ts'];
+const ROGUE_LOBBY_OUTPUTS = ['tgui/public/tgui-rogue-lobby.bundle.js', 'tgui/public/tgui-rogue-lobby.bundle.css'];
 
 type BuildOptions = {
   target: string;
@@ -37,12 +40,12 @@ async function main() {
   switch (options.target) {
     case 'dm':
     case 'build':
-      await runUpstream(PREREQUISITES);
+      await runPrerequisites();
       await compileModular(BUILD_BASE, ['CBT', ...options.defines], options);
       promoteArtifacts();
       break;
     case 'server':
-      await runUpstream(PREREQUISITES);
+      await runPrerequisites();
       await compileModular(BUILD_BASE, ['CBT', ...options.defines], options);
       promoteArtifacts();
       resetNextMapForNormalStart();
@@ -50,14 +53,14 @@ async function main() {
       break;
     case 'lowmem':
       if (!options.noBuild) {
-        await runUpstream(PREREQUISITES);
+        await runPrerequisites();
         await compileModular(BUILD_BASE, ['CBT', ...options.defines], options);
         promoteArtifacts();
       }
       await runLowMemory(options);
       break;
     case 'dm-test':
-      await runUpstream(PREREQUISITES);
+      await runPrerequisites();
       await runTests(options);
       break;
     case 'clean':
@@ -271,6 +274,49 @@ function restoreNextMap() {
   if (fs.existsSync(NEXT_MAP_BACKUP)) {
     fs.renameSync(NEXT_MAP_BACKUP, NEXT_MAP);
   }
+}
+
+async function runPrerequisites() {
+  await runUpstream(PREREQUISITES);
+  await buildRogueLobby();
+}
+
+/// The medieval main menu's bundle (modular_redtard/lobby/rogue_lobby.dm), built with its own rspack config over TG's
+/// after TG's tgui, and only when its sources (or TG's lobby it draws) are newer than the bundle.
+async function buildRogueLobby() {
+  const newest = Math.max(...ROGUE_LOBBY_INPUTS.map(newestMtime));
+  const built = Math.min(...ROGUE_LOBBY_OUTPUTS.map((file) => (fs.existsSync(file) ? fs.statSync(file).mtimeMs : 0)));
+  if (built > newest) {
+    console.log('modular_redtard: tgui-rogue-lobby is up to date');
+    return;
+  }
+  const proc = Bun.spawn(['bun', 'run', 'rspack', 'build', '--config', ROGUE_LOBBY_CONFIG], {
+    cwd: 'tgui',
+    stdin: 'inherit',
+    stdout: 'inherit',
+    stderr: 'inherit',
+  });
+  const code = await proc.exited;
+  if (code !== 0) {
+    throw new Error(`tgui-rogue-lobby build exited with code ${code}`);
+  }
+}
+
+function newestMtime(path: string): number {
+  if (!fs.existsSync(path)) {
+    return 0;
+  }
+  const stat = fs.statSync(path);
+  if (!stat.isDirectory()) {
+    return stat.mtimeMs;
+  }
+  let newest = stat.mtimeMs;
+  for (const entry of fs.readdirSync(path)) {
+    if (entry !== 'node_modules') {
+      newest = Math.max(newest, newestMtime(`${path}/${entry}`));
+    }
+  }
+  return newest;
 }
 
 async function runUpstream(args: string[]) {
