@@ -1,3 +1,12 @@
+/datum/map_config/var/rogue_lowmem = FALSE
+
+/datum/map_config/LoadConfig(filename, error_if_missing)
+	. = ..()
+	var/list/map_json = .
+	if(islist(map_json))
+		rogue_lowmem = !!map_json[ROGUE_LOWMEM_MARKER]
+	return .
+
 /mob/living/proc/rogue_max_attributes()
 	if(!attributes)
 		return
@@ -8,5 +17,5 @@
 
 /datum/job/assistant/after_spawn(mob/living/spawned, client/player_client)
 	. = ..()
-	if(rogue_combat_enabled())
+	if(rogue_combat_enabled() || SSmapping.current_map?.rogue_lowmem)
 		spawned.rogue_max_attributes()
