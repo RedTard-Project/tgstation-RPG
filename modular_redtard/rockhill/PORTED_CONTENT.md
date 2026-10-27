@@ -5652,3 +5652,48 @@ Area music and ambience are kept in the repository, as Ratwood keeps them, and r
 | `/datum/job/roguetown/wardenmaster` | Master Warden | /datum/job_department/rockhill_garrison |
 | `/datum/job/roguetown/watchcaptain` | Watch Captain | /datum/job_department/rockhill_garrison |
 | `/datum/job/roguetown/wretch` | Wretch | /datum/job_department/rockhill_wanderers |
+
+## NPC people (40 types, 38 with a mind, 25 outfits)
+
+| Type | Mind | Faction | Outfits |
+|---|---|---|---|
+| `/mob/living/carbon/human/species/dwarfskeleton/ambush` | hunts | dundead | `/datum/outfit/job/roguetown/dwarfskeleton` |
+| `/mob/living/carbon/human/species/dwarfskeleton/ambush/knight` | hunts | dundead | `/datum/outfit/job/roguetown/dwarfskeleton/ambush/knight` |
+| `/mob/living/carbon/human/species/elf/dark/drowraider` | hunts | drow | `/datum/outfit/job/roguetown/human/species/elf/dark/drowraider` |
+| `/mob/living/carbon/human/species/goblin/cave` | none | orcs | `/datum/outfit/job/roguetown/npc/goblin` |
+| `/mob/living/carbon/human/species/goblin/moon` | none | orcs | `/datum/outfit/job/roguetown/npc/goblin` |
+| `/mob/living/carbon/human/species/goblin/npc` | hunts | orcs | `/datum/outfit/job/roguetown/npc/goblin` |
+| `/mob/living/carbon/human/species/goblin/npc/ambush` | hunts | orcs | `/datum/outfit/job/roguetown/npc/goblin` |
+| `/mob/living/carbon/human/species/goblin/npc/ambush/cave` | hunts | orcs | `/datum/outfit/job/roguetown/npc/goblin` |
+| `/mob/living/carbon/human/species/goblin/npc/ambush/hell` | hunts | orcs | `/datum/outfit/job/roguetown/npc/goblin` |
+| `/mob/living/carbon/human/species/goblin/npc/ambush/moon` | hunts | orcs | `/datum/outfit/job/roguetown/npc/goblin` |
+| `/mob/living/carbon/human/species/goblin/npc/ambush/sea` | hunts | orcs | `/datum/outfit/job/roguetown/npc/goblin` |
+| `/mob/living/carbon/human/species/goblin/npc/cave` | hunts | orcs | `/datum/outfit/job/roguetown/npc/goblin` |
+| `/mob/living/carbon/human/species/goblin/npc/hell` | hunts | orcs | `/datum/outfit/job/roguetown/npc/goblin` |
+| `/mob/living/carbon/human/species/goblin/npc/moon` | hunts | orcs | `/datum/outfit/job/roguetown/npc/goblin` |
+| `/mob/living/carbon/human/species/human/northern/bog_deserters` | hunts | viking, station | `/datum/outfit/job/roguetown/human/northern/bog_deserters` |
+| `/mob/living/carbon/human/species/human/northern/bum` | fights back | bums, station | `/datum/outfit/job/roguetown/vagrantnpc` |
+| `/mob/living/carbon/human/species/human/northern/bum/ambush` | hunts | bums, station | `/datum/outfit/job/roguetown/vagrantnpc` |
+| `/mob/living/carbon/human/species/human/northern/highwayman` | hunts | viking, station | `/datum/outfit/job/roguetown/human/species/human/northern/highwayman` |
+| `/mob/living/carbon/human/species/npc/deadite` | hunts | neutral | `/datum/outfit/job/roguetown/deadite` |
+| `/mob/living/carbon/human/species/orc/npc/berserker` | hunts | orcs, station | `/datum/outfit/job/roguetown/orc/npc/berserker` |
+| `/mob/living/carbon/human/species/orc/npc/footsoldier` | hunts | orcs, station | `/datum/outfit/job/roguetown/orc/npc/footsoldier` |
+| `/mob/living/carbon/human/species/orc/npc/marauder` | hunts | orcs, station | `/datum/outfit/job/roguetown/orc/npc/marauder` |
+| `/mob/living/carbon/human/species/orc/npc/warlord` | hunts | orcs, station | `/datum/outfit/job/roguetown/orc/npc/warlord` |
+| `/mob/living/carbon/human/species/skeleton/npc/bogguard` | hunts | undead | `/datum/outfit/job/roguetown/npc/skeleton/npc/bogguard` |
+| `/mob/living/carbon/human/species/skeleton/npc/bogguard/master` | hunts | undead | `/datum/outfit/job/roguetown/npc/skeleton/npc/bogguard/master` |
+| `/mob/living/carbon/human/species/skeleton/npc/cultist` | hunts | undead | `/datum/outfit/job/roguetown/skeleton/npc/cultist` |
+| `/mob/living/carbon/human/species/skeleton/npc/dungeon` | hunts | undead | `/datum/outfit/job/roguetown/npc/skeleton` |
+| `/mob/living/carbon/human/species/skeleton/npc/easy` | hunts | undead | `/datum/outfit/job/roguetown/skeleton/npc/easy` |
+| `/mob/living/carbon/human/species/skeleton/npc/hard` | hunts | undead | `/datum/outfit/job/roguetown/skeleton/npc/hard` |
+| `/mob/living/carbon/human/species/skeleton/npc/hard/noequip` | hunts | undead | `/datum/outfit/job/roguetown/skeleton/npc/hard_skills_only` |
+| `/mob/living/carbon/human/species/skeleton/npc/hardspread` | hunts | undead | `/datum/outfit/job/roguetown/skeleton/npc/hard`, `/datum/outfit/job/roguetown/skeleton/npc/medium`, `/datum/outfit/job/roguetown/skeleton/npc/pirate` |
+| `/mob/living/carbon/human/species/skeleton/npc/hardspread/lich` | hunts | lich, undead | `/datum/outfit/job/roguetown/skeleton/npc/hard`, `/datum/outfit/job/roguetown/skeleton/npc/medium`, `/datum/outfit/job/roguetown/skeleton/npc/pirate` |
+| `/mob/living/carbon/human/species/skeleton/npc/medium` | hunts | undead | `/datum/outfit/job/roguetown/skeleton/npc/medium` |
+| `/mob/living/carbon/human/species/skeleton/npc/medium/noequip` | hunts | undead | `/datum/outfit/job/roguetown/skeleton/npc/medium_skills_only` |
+| `/mob/living/carbon/human/species/skeleton/npc/mediumspread` | hunts | undead | `/datum/outfit/job/roguetown/skeleton/npc/supereasy`, `/datum/outfit/job/roguetown/skeleton/npc/easy`, `/datum/outfit/job/roguetown/skeleton/npc/medium`, `/datum/outfit/job/roguetown/skeleton/npc/hard` |
+| `/mob/living/carbon/human/species/skeleton/npc/miner` | hunts | undead | `/datum/outfit/job/roguetown/skeleton/npc/miner` |
+| `/mob/living/carbon/human/species/skeleton/npc/no_equipment` | hunts | undead |  |
+| `/mob/living/carbon/human/species/skeleton/npc/pirate` | hunts | undead | `/datum/outfit/job/roguetown/skeleton/npc/pirate` |
+| `/mob/living/carbon/human/species/skeleton/npc/rockhill` | hunts | undead | `/datum/outfit/job/roguetown/skeleton/npc/rockhill` |
+| `/mob/living/carbon/human/species/skeleton/npc/supereasy` | hunts | undead | `/datum/outfit/job/roguetown/skeleton/npc/supereasy` |

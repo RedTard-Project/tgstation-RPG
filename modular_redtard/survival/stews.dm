@@ -153,15 +153,6 @@ GLOBAL_LIST_INIT(rogue_stew_recipes, init_rogue_stew_recipes())
 	/// What this deep fries into in a pot of tallow (Ratwood deep_fried_type).
 	var/rogue_deep_fried_type
 
-/obj/item/reagent_containers/food/snacks/fat
-	rogue_fat_yield = 20
-
-/obj/item/reagent_containers/food/snacks/tallow
-	rogue_fat_yield = 5
-
-/obj/item/reagent_containers/food/snacks/grown/fruit/blackberry/skysugarbase
-	rogue_deep_fried_type = /obj/item/reagent_containers/food/snacks/grown/skysugarslab
-
 /// Examine lines of the pot: what this fries into, or that it melts into tallow.
 /obj/item/reagent_containers/food/proc/rogue_fryer_examine()
 	. = list()

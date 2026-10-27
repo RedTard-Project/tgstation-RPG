@@ -1811,6 +1811,8 @@
 	foodtypes = GRAIN
 	tastes = list("succulent truffles" = 1)
 	eat_effect = /datum/status_effect/rogue_food_buff/snack
+	cooked_type = null
+	fried_type = null
 
 /obj/item/reagent_containers/food/snacks/rogue/veg/cabbage_sliced
 	food_reagents = list(/datum/reagent/consumable/nutriment = 1)
@@ -1998,6 +2000,7 @@
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 6)
 	foodtypes = MEAT
 	eat_effect = null
+	cooked_type = null
 	fried_type = null
 	rotprocess = 54000
 	rogue_faretype = ROGUE_FARE_NEUTRAL
@@ -2164,6 +2167,7 @@
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 6)
 	foodtypes = MEAT
 	eat_effect = null
+	cooked_type = null
 	fried_type = null
 	slice_path = null
 	slices_num = 0

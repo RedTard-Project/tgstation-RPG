@@ -109,8 +109,11 @@ GLOBAL_LIST_EMPTY(rockhill_sound_exists)
 		SEND_SOUND(src, sound(null, channel = channel))
 		return
 	var/sound/loop = sound(new_file, repeat = TRUE, wait = 0, channel = channel, volume = volume)
+	// Streamed, as cmss13 plays its area ambience: without it DreamSeeker decodes the whole track into memory on its main
+	// thread when the track starts (a freeze on each change of zone); streamed, the track is decoded as it plays.
+	loop.status = SOUND_STREAM
 	if(new_file == current)
-		loop.status = SOUND_UPDATE
+		loop.status |= SOUND_UPDATE
 	SEND_SOUND(src, loop)
 
 /proc/rockhill_refresh_all_area_sounds()

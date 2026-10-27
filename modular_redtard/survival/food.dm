@@ -49,12 +49,6 @@
 	abstract_type = /obj/item/reagent_containers/food/snacks
 
 /obj/item/reagent_containers/food/Initialize(mapload)
-	// The porter drops Ratwood's explicit "cooked_type = null" of cooked food, which then inherits the raw parent's form of
-	// itself (a fried steak would fry into a fried steak forever); a food never cooks into its own type.
-	if(cooked_type == type)
-		cooked_type = null
-	if(fried_type == type)
-		fried_type = null
 	. = ..()
 	RegisterSignal(src, COMSIG_FOOD_EATEN, PROC_REF(on_bite))
 	RegisterSignals(src, list(COMSIG_ITEM_GRILLED_RESULT, COMSIG_ITEM_BAKED_RESULT), PROC_REF(on_cooked_into))
@@ -111,10 +105,6 @@
 	SIGNAL_HANDLER
 	if(length(bonus_reagents))
 		reagents?.add_reagent_list(bonus_reagents)
-	// What came out of the fire is not raw, whatever the porter let it inherit (Ratwood "eat_effect = null" of cooked food);
-	// only Ratwood's foodbase (a baked pie bottom) stays unfit to eat as it is.
-	if(eat_effect == /datum/status_effect/rogue_food/uncooked && !istype(src, /obj/item/reagent_containers/food/snacks/rogue/foodbase))
-		eat_effect = null
 	var/obj/item/reagent_containers/food/raw = original
 	if(istype(raw))
 		raw.cooked_into = WEAKREF(src)

@@ -1957,6 +1957,12 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                             value = target if target in valid else None
                         if value is not None:
                             block.append(f'\t{name} = {value}')
+            transfer = {line.split(' = ', 1)[0].strip(): line.split(' = ', 1)[1] for line in block[1:] if line.startswith(('\tamount_per_transfer_from_this = ', '\tpossible_transfer_amounts = '))}
+            if len(transfer) == 2 and transfer['amount_per_transfer_from_this'] not in re.findall(r'-?\d+(?:\.\d+)?', transfer['possible_transfer_amounts']):
+                # TG's reagent_container_defaults test wants the default among the choices; Ratwood's mortar pours 9 from
+                # choices of 5 to 50, so it keeps its 9 alone (as survival/vessels.dm has it).
+                block = [line for line in block if not line.startswith('\tpossible_transfer_amounts = ')]
+                block.append(f"\tpossible_transfer_amounts = list({transfer['amount_per_transfer_from_this']})")
             if cat.get('init_overlays'):
                 overlay = init_overlay(rw, path)
                 if overlay:
@@ -3830,24 +3836,34 @@ def generate_races(cfg, rw):
         blocks.append([target] + lines)
 
     # Ratwood's generic human voice (voicepacks/genmale.dm, genfemale.dm) for the bodies with a plain human tongue on
-    # medieval maps (rockhill/races.dm gives it them); the old, young and silenced variants stay out.
+    # medieval maps (rockhill/races.dm gives it them): the voice of the pack's own folder (human_voice_files), without the
+    # old, young and silenced variants, the beasts' calls the pack lends to Ratwood's beastfolk and its lewd sounds
+    # (human_voice_skip). A sound file missing from the Ratwood cache (--offline does not fetch) is left out.
+    voice_files = re.compile(spec.get('human_voice_files', '.'))
     human = {}
     for sex, pack in spec.get('human_voices', {}).items():
         for key, files in voicepack_sounds(pack).items():
             key = spec['emote_keys'].get(key, key)
-            files = [f for f in dict.fromkeys(files) if asset_allowed(f, cfg['port'].get('assets', {}))]
-            if files:
+            files = [f for f in dict.fromkeys(files) if voice_files.search(f) and asset_allowed(f, cfg['port'].get('assets', {}))]
+            if files and key not in spec.get('human_voice_skip', []):
                 human.setdefault(key, {})['MALE' if sex == 'm' else 'FEMALE'] = files
-    if human:
-        lines = ['GLOBAL_LIST_INIT(rogue_human_voices, rogue_human_voices())', '', '/proc/rogue_human_voices()', '\treturn list(']
-        for key in sorted(human):
-            by_sex = ', '.join(f"{sex} = list({', '.join(repr_sound(f) for f in files)})" for sex, files in sorted(human[key].items()))
-            lines.append(f'\t\t"{key}" = list({by_sex}),')
-            sound_files_used |= {f for files in human[key].values() for f in files}
-            if key not in tg_keys:
-                vocal_keys.add(key)
-        lines.append('\t\t)')
-        blocks.append(lines)
+    fetch_sources(sorted({f for by_sex in human.values() for files in by_sex.values() for f in files}))
+    for key in list(human):
+        for sex in list(human[key]):
+            human[key][sex] = [f for f in human[key][sex] if os.path.exists(os.path.join(CHECKOUT, f))]
+            if not human[key][sex]:
+                del human[key][sex]
+        if not human[key]:
+            del human[key]
+    lines = ['GLOBAL_LIST_INIT(rogue_human_voices, rogue_human_voices())', '', '/proc/rogue_human_voices()', '\treturn list(']
+    for key in sorted(human):
+        by_sex = ', '.join(f"{sex} = list({', '.join(repr_sound(f) for f in files)})" for sex, files in sorted(human[key].items()))
+        lines.append(f'\t\t"{key}" = list({by_sex}),')
+        sound_files_used |= {f for files in human[key].values() for f in files}
+        if key not in tg_keys:
+            vocal_keys.add(key)
+    lines.append('\t\t)')
+    blocks.append(lines)
 
     for ours, rw_eyes in sorted(eyes_used.items()):
         block = [ours]
@@ -4791,8 +4807,11 @@ def generate_food(cfg, rw, generated, tg_declared, tg_names, declared=frozenset(
     def values_of(path):
         # The food's Ratwood data as DM values. A null, an unported path or an effect without a module twin is a null: Ratwood's
         # explicit "cooked_type = null" of cooked food has to reach the port, or the type inherits its raw parent's form.
+        # A food that would cook into its own type (Ratwood's cooked sausage inherits the raw one's cooked_type) does not cook.
         cooked = path_of(rw.resolve(path, 'cooked_type'))
+        cooked = None if cooked == path else cooked
         fried = path_of(rw.resolve(path, 'fried_type'))
+        fried = None if fried == path else fried
         cooktime = food_number(rw.resolve(path, 'cooktime')) or 0
         rotprocess = food_number(rw.resolve(path, 'rotprocess')) or 0
         rotten = path_of(rw.resolve(path, 'become_rot_type'))
@@ -4866,7 +4885,7 @@ def generate_food(cfg, rw, generated, tg_declared, tg_names, declared=frozenset(
         if len(block) > 1:
             blocks.append(block)
     if own_type_forms:
-        print('  foods that cook into their own type (survival/food.dm drops it):', ', '.join(own_type_forms))
+        raise SystemExit('foods that would cook into their own type: ' + ', '.join(own_type_forms))
     recipes = 0
     dropped = 0
     implicit = {'/'.join(p.split('/')[:k]) for p in generated for k in range(3, p.count('/') + 2)}

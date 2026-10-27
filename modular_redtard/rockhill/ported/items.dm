@@ -47560,6 +47560,7 @@
 /obj/item/paper/scroll
 	parent_type = /obj/item/paper
 	show_written_words = FALSE
+	slot_flags = NONE
 	name = "scroll"
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
 	icon_state = "scroll"
@@ -58592,7 +58593,7 @@
 	inhand_icon_state = null
 	volume = 100
 	amount_per_transfer_from_this = 9
-	possible_transfer_amounts = list(5, 10, 15, 20, 25, 30, 50)
+	possible_transfer_amounts = list(9)
 
 /obj/item/reagent_containers/lux
 	name = "lux"
@@ -58677,7 +58678,7 @@
 	rogue_baked_inhand = TRUE
 	volume = 1
 	amount_per_transfer_from_this = 5
-	possible_transfer_amounts = list()
+	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/herozium
 	name = "herozium"
@@ -58701,7 +58702,7 @@
 	rogue_baked_inhand = TRUE
 	volume = 15
 	amount_per_transfer_from_this = 5
-	possible_transfer_amounts = list()
+	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/mineral
 	name = "coarse minerals"
@@ -58724,7 +58725,7 @@
 	rogue_baked_inhand = TRUE
 	volume = 1
 	amount_per_transfer_from_this = 5
-	possible_transfer_amounts = list()
+	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/moondust
 	name = "moondust"
@@ -58748,7 +58749,7 @@
 	rogue_baked_inhand = TRUE
 	volume = 15
 	amount_per_transfer_from_this = 5
-	possible_transfer_amounts = list()
+	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/moondust_purest
 	name = "moondust"
@@ -58772,7 +58773,7 @@
 	rogue_baked_inhand = TRUE
 	volume = 18
 	amount_per_transfer_from_this = 5
-	possible_transfer_amounts = list()
+	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/ozium
 	name = "ozium"
@@ -58796,7 +58797,7 @@
 	rogue_baked_inhand = TRUE
 	volume = 15
 	amount_per_transfer_from_this = 5
-	possible_transfer_amounts = list()
+	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/rocknut
 	name = "rocknut powder"
@@ -58819,7 +58820,7 @@
 	rogue_baked_inhand = TRUE
 	volume = 1
 	amount_per_transfer_from_this = 5
-	possible_transfer_amounts = list()
+	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/salt
 	name = "salt"
@@ -58842,7 +58843,7 @@
 	rogue_baked_inhand = TRUE
 	volume = 1
 	amount_per_transfer_from_this = 5
-	possible_transfer_amounts = list()
+	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/sleep_powder
 	name = "powder"
@@ -58866,7 +58867,7 @@
 	rogue_baked_inhand = TRUE
 	volume = 10
 	amount_per_transfer_from_this = 5
-	possible_transfer_amounts = list()
+	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/spice
 	name = "spice"
@@ -58890,7 +58891,7 @@
 	rogue_baked_inhand = TRUE
 	volume = 15
 	amount_per_transfer_from_this = 5
-	possible_transfer_amounts = list()
+	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/starsugar
 	name = "starsugar"
@@ -58914,7 +58915,7 @@
 	rogue_baked_inhand = TRUE
 	volume = 15
 	amount_per_transfer_from_this = 5
-	possible_transfer_amounts = list()
+	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/starsugar/skysugar
 	name = "skysugar"
@@ -58938,7 +58939,7 @@
 	rogue_baked_inhand = TRUE
 	volume = 38
 	amount_per_transfer_from_this = 5
-	possible_transfer_amounts = list()
+	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/spidervenom_inert
 	name = "Pale spider gland"

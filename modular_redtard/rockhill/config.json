@@ -738,7 +738,8 @@
 				},
 				"graft_override_vars": {
 					"/obj/item/paper/scroll": {
-						"show_written_words": "FALSE"
+						"show_written_words": "FALSE",
+						"slot_flags": "NONE"
 					}
 				},
 				"natural": [
@@ -1849,6 +1850,8 @@
 			},
 			"generic_voicepacks": ["/datum/voicepack/male", "/datum/voicepack/female"],
 			"human_voices": {"m": "/datum/voicepack/male", "f": "/datum/voicepack/female"},
+			"human_voice_files": "^sound/vo/(?:male|female)/(?:gen/(?!se/)[^/]+|(?:male|female)_sneeze[.]ogg)$",
+			"human_voice_skip": ["moan", "sexmoanhvy", "sexmoanlight"],
 			"species_voices": {
 				"/datum/species/goblin": {"m": "/datum/voicepack/other/goblin", "f": "/datum/voicepack/other/goblin"}
 			},
