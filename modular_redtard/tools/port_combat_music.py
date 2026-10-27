@@ -149,9 +149,6 @@ def main():
             wanted.update(track[3])
 
     os.makedirs(SOUND_DIR, exist_ok=True)
-    ignore = os.path.join(SOUND_DIR, '.gitignore')
-    if not os.path.exists(ignore):
-        open(ignore, 'w', encoding='utf-8', newline='\n').write('*\n!.gitignore\n')
     copied = {}
     missing = []
     size = 0

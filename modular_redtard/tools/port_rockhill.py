@@ -345,10 +345,17 @@ def declared_paths(roots, exclude):
                 if not f.endswith('.dm'):
                     continue
                 for line in open(os.path.join(dp, f), encoding='utf-8', errors='ignore'):
-                    m = re.match(r'^(/[A-Za-z0-9_/]+)', line)
+                    m = re.match(r'^(/[A-Za-z0-9_/]+)(\()?', line)
                     if not m:
                         continue
-                    parts = m.group(1).split('/')
+                    # A proc defined by its full path (/obj/item/x/proc/y(), /obj/item/x/y()) or a var by
+                    # /obj/item/x/var/y declares /obj/item/x, not a type named after the proc or var.
+                    parts = m.group(1).rstrip('/').split('/')
+                    if m.group(2):
+                        parts = parts[:-1]
+                    for keyword in ('proc', 'verb', 'var'):
+                        if keyword in parts:
+                            parts = parts[:parts.index(keyword)]
                     for k in range(2, len(parts) + 1):
                         declared.add('/'.join(parts[:k]))
     if len(declared) < 10000:
@@ -2090,9 +2097,6 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
         os.makedirs(os.path.dirname(dest), exist_ok=True)
         shutil.copyfile(src, dest)
     print('extra files copied:', len(extra_files))
-    for root in {cat['runtime_sounds'] for cat in categories if cat.get('runtime_sounds')}:
-        os.makedirs(root, exist_ok=True)
-        open(f'{root}/.gitignore', 'w', encoding='utf-8', newline='\n').write('*\n!.gitignore\n')
     print('icons copied:', len(icons), 'bytes:', sum(os.path.getsize(d) for d in icons.values()))
     print('runtime sounds copied:', len(runtime_sounds), 'bytes:', sum(os.path.getsize(d) for d in runtime_sounds.values()))
     print('sounds copied:', len(sounds))
@@ -2139,8 +2143,8 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
             for rel, dest in sorted(extra_files.items(), key=lambda kv: kv[1]):
                 out.write(f'- `{dest}` from Ratwood `{rel}`\n')
         if runtime_sounds:
-            out.write('\n## Runtime sounds (not committed)\n\n')
-            out.write('Area music and ambience are copied into a folder git ignores and are read from disk at runtime; part of the music is third-party commercial tracks (see Ratwood `sound/music/credits.txt`), so the repository does not redistribute them. A missing file is skipped.\n\n')
+            out.write('\n## Runtime sounds\n\n')
+            out.write('Area music and ambience are kept in the repository, as Ratwood keeps them, and read from disk at runtime by path (credits of the third-party tracks: Ratwood `sound/music/credits.txt`). A missing file is skipped.\n\n')
             for src, dest in sorted(runtime_sounds.items(), key=lambda kv: kv[1]):
                 rel = os.path.relpath(src, CHECKOUT).replace('\\', '/')
                 out.write(f'- `{dest}` from Ratwood `{rel}`\n')
