@@ -7,6 +7,7 @@
 /// archer spread). What a muscle-powered launcher shoots (rogue_per_damage: TG bows; Azure Peak per_scales_damage) hits
 /// harder with perception: by ranged_per_damage_step per point from ranged_per_baseline up to ranged_per_softcap and by
 /// ranged_per_damage_capped_step past it, never under ranged_per_damage_floor (Azure Peak get_per_damage_scaling()).
+/// Ratwood's own bows, crossbows and slings and what they shoot follow Ratwood's numbers instead (combat/launchers.dm).
 #define ROGUE_RANGED_PER_BASELINE rogue_value("ranged_per_baseline")
 #define ROGUE_RANGED_PER_SOFTCAP rogue_value("ranged_per_softcap")
 #define ROGUE_RANGED_PER_DAMAGE_STEP rogue_value("ranged_per_damage_step")
@@ -33,6 +34,8 @@
 
 /datum/element/rogue_combat/proc/on_fire_projectile(mob/living/carbon/human/source, obj/projectile/shot, atom/fired_from, atom/original_target)
 	SIGNAL_HANDLER
+	if(istype(shot, /obj/projectile/rogue_ammo))
+		return
 	var/perception = source.rogue_stat(ROGUE_STAT_PERCEPTION)
 	var/obj/item/launcher = isitem(fired_from) ? fired_from : null
 	if(launcher?.rogue_per_damage)
@@ -44,6 +47,8 @@
 
 /datum/element/rogue_combat/proc/on_fired_gun(mob/living/carbon/human/source, obj/item/gun/gun_fired, atom/target, params, zone_override, list/bonus_spread_values)
 	SIGNAL_HANDLER
+	if(istype(gun_fired, /obj/item/gun/ballistic/rogue_launcher))
+		return
 	var/shortfall = ROGUE_RANGED_PER_BASELINE - source.rogue_stat(ROGUE_STAT_PERCEPTION)
 	if(shortfall > 0)
 		bonus_spread_values[MAX_BONUS_SPREAD_INDEX] += shortfall * ROGUE_RANGED_PER_SPREAD_STEP

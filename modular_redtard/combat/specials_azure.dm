@@ -9,16 +9,8 @@
 /// special machinery of combat/specials.dm. No Ratwood item carries the first five: Azure Peak gives Hefty Flourish to
 /// hatchets, Dazing Swing to warhammers and flanged cudgels, Vicious Swing to the Graggarite greataxe, Hoardbite to the
 /// lirvan talon and Aureate Drakkyrcoil to the golden quarterstaff, but Ratwood's hatchets, warhammers and greataxe keep
-/// their own specials and the other items are not in Ratwood. Arcyne Descent is Ratwood's too (its tomes); the port
-/// dropped it while the module lacked it, so rogue_item_special_fallbacks hands it to the tomes until the next porter
-/// run writes it on them. Their numbers are in values.txt like every special's (special_<name>_<field>).
-
-/// Specials of items the port left without one, by exact item type (rogue_special() takes them when special is unset).
-GLOBAL_LIST_INIT(rogue_item_special_fallbacks, list(
-	"/obj/item/rogueweapon/spellbook" = /datum/special_intent/arcyne_descent,
-	"/obj/item/rogueweapon/spellbook/greater" = /datum/special_intent/arcyne_descent,
-	"/obj/item/rogueweapon/spellbook/grand" = /datum/special_intent/arcyne_descent,
-))
+/// their own specials and the other items are not in Ratwood. Arcyne Descent is Ratwood's too: the porter writes it on
+/// Ratwood's tomes. Their numbers are in values.txt like every special's (special_<name>_<field>).
 
 /datum/special_intent/hatchet_twirl
 	name = "Hefty Flourish"

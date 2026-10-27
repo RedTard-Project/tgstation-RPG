@@ -224,6 +224,7 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
 	icon_state = "arrow"
 	worn_icon_state = null
+	slot_flags = NONE
 	obj_flags = NONE
 	custom_materials = null
 	firing_effect_type = null
@@ -363,8 +364,9 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 	rogue_land(target, blocked)
 
 /obj/projectile/rogue_ammo/proc/rogue_hit_effects(atom/target)
-	if(rogue_extinguishes)
-		for(var/obj/burning in get_turf(target))
+	var/turf/spot = get_turf(target)
+	if(rogue_extinguishes && spot)
+		for(var/obj/burning in spot)
 			burning.extinguish()
 		if(isliving(target))
 			for(var/obj/carried in target)
@@ -474,6 +476,7 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 	worn_icon_state = null
 	lefthand_file = null
 	righthand_file = null
+	slot_flags = NONE
 	obj_flags = NONE
 	item_flags = NONE
 	custom_materials = null
@@ -483,7 +486,6 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL
 	can_hold_up = FALSE
 	can_muzzle_flash = FALSE
-	light_range = 0
 	internal_magazine = TRUE
 	bolt_type = BOLT_TYPE_NO_BOLT
 	casing_ejector = FALSE
@@ -637,14 +639,21 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 	if(!(slot & ITEM_SLOT_HANDS))
 		rogue_drop_arrow()
 
+/// Moved from the hands to a slot, the bow is out of every inventory for a moment (TG's own bow waits the same way).
 /obj/item/gun/ballistic/rogue_launcher/bow/dropped(mob/user, silent)
 	. = ..()
-	rogue_drop_arrow()
+	if(chambered)
+		addtimer(CALLBACK(src, PROC_REF(rogue_drop_loose_arrow)), 0.1 SECONDS)
+
+/obj/item/gun/ballistic/rogue_launcher/bow/proc/rogue_drop_loose_arrow()
+	if(!ismob(loc))
+		rogue_drop_arrow()
 
 /obj/item/gun/ballistic/rogue_launcher/bow/proc/rogue_drop_arrow()
-	if(!chambered)
+	var/atom/spot = drop_location()
+	if(!chambered || !spot)
 		return
-	chambered.forceMove(drop_location())
+	chambered.forceMove(spot)
 	update_appearance()
 
 // Crossbows (Ratwood crossbows.dm): cocked in hand with all one's strength (reload time less strength), loaded with a bolt only

@@ -1753,7 +1753,8 @@
 				"effective_range",
 				"effective_range_type",
 				"sharpness_penalty",
-				"intent_intdamage_factor"
+				"intent_intdamage_factor",
+				"basetime"
 			],
 			"numeric_defaults": {
 				"swingdelay_type": 1,

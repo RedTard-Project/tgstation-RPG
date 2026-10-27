@@ -189,6 +189,7 @@
 	budget -= price
 	if(pays_tariff())
 		SSrogue_treasury.mint(SSrogue_treasury.crown_purse, tariff, "[ROGUE_TAX_IMPORT] ([name])")
+		SSrogue_treasury.apply_concordat_tithe(pack.cost, ROGUE_TAX_IMPORT)
 		SSrogue_treasury.total_tariff += tariff
 		tariff_paid += tariff
 	else if(!bypass_tax)

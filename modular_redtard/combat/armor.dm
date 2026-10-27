@@ -252,6 +252,15 @@ GLOBAL_LIST_INIT(rogue_armor_degrade_sounds, list(
 	if(weapon?.max_blade_int && weapon.get_sharpness() && weapon.rogue_edge_ratio() <= ROGUE_BLADE_CHIP_START)
 		return 0
 
+/// Share of a projectile's damage the armor on a body part lets through, without wearing it or making a sound: the piercing
+/// branch of rogue_armor_hit(), for what happens after the hit (Ratwood: an arrow sticks only if damage got through).
+/mob/living/carbon/human/proc/rogue_projectile_share(zone, obj/projectile/shot)
+	var/obj/item/clothing/used = rogue_best_armor(rogue_zone_of(zone), ROGUE_ARMOR_PIERCING)
+	var/tier = used ? used.get_rogue_armor().get_rating(ROGUE_ARMOR_PIERCING) : 0
+	if(tier <= 0)
+		return 1
+	return rogue_attack_penetration(shot) >= tier ? ROGUE_PEN_PROJECTILE_PASSTHROUGH : 0
+
 /mob/living/carbon/human/proc/rogue_blunt_armor_hit(zone, damage, wear_factor, bclass)
 	var/list/layers = rogue_armor_layers(zone)
 	var/tier = 0

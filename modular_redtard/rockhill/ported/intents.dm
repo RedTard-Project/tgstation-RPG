@@ -69,6 +69,7 @@
 	chargetime = 1
 	swingdelay = 0
 	charging_slowdown = 3
+	basetime = 40
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -96,6 +97,7 @@
 	swingdelay = 0
 	chargedrain = 1
 	charging_slowdown = 2.5
+	basetime = 60
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -122,6 +124,7 @@
 	chargetime = 1
 	swingdelay = 0
 	charging_slowdown = 3
+	basetime = 20
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -148,6 +151,7 @@
 	chargetime = 1
 	swingdelay = 0
 	charging_slowdown = 3
+	basetime = 140
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -2901,6 +2905,7 @@
 	chargetime = 0.1
 	swingdelay = 0
 	charging_slowdown = 3
+	basetime = 40
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -2928,6 +2933,7 @@
 	swingdelay = 0
 	chargedrain = 1
 	charging_slowdown = 2
+	basetime = 60
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -2954,6 +2960,7 @@
 	chargetime = 0.1
 	swingdelay = 0
 	charging_slowdown = 3
+	basetime = 20
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -2980,6 +2987,7 @@
 	chargetime = 0.1
 	swingdelay = 0
 	charging_slowdown = 3
+	basetime = 120
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE

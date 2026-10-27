@@ -10,8 +10,6 @@
 	return ..()
 
 /obj/item/proc/rogue_special()
-	if(!special)
-		special = GLOB.rogue_item_special_fallbacks["[type]"]
 	if(!ispath(special, /datum/special_intent))
 		return null
 	if(!special_instance)

@@ -28,15 +28,18 @@ GLOBAL_LIST_INIT(rogue_charge_cursors, list(
 /datum/component/rogue_charge
 	dupe_mode = COMPONENT_DUPE_UNIQUE
 	var/datum/intent/intent
+	/// Deciseconds to the full charge: the intent's, or the draw of a launcher by the fighter's skill and stats (Ratwood get_chargetime()).
+	var/goal = 1
 	var/started = 0
 	var/released = 0
 	var/full = FALSE
 	var/mutable_appearance/marker
 
-/datum/component/rogue_charge/Initialize(datum/intent/intent)
+/datum/component/rogue_charge/Initialize(datum/intent/intent, obj/item/held)
 	if(!ishuman(parent) || !intent?.chargetime)
 		return COMPONENT_INCOMPATIBLE
 	src.intent = intent
+	goal = max(intent.rogue_chargetime(parent, held), 0.1)
 	started = world.time
 	var/mob/living/carbon/human/charger = parent
 	if(intent.charging_slowdown)
@@ -78,7 +81,7 @@ GLOBAL_LIST_INIT(rogue_charge_cursors, list(
 	charger.add_overlay(marker)
 
 /datum/component/rogue_charge/proc/progress()
-	return min(((released || world.time) - started) / intent.chargetime, 1)
+	return min(((released || world.time) - started) / goal, 1)
 
 /datum/component/rogue_charge/process(seconds_per_tick)
 	var/mob/living/carbon/human/charger = parent
@@ -131,9 +134,9 @@ GLOBAL_LIST_INIT(rogue_charge_cursors, list(
 /datum/movespeed_modifier/rogue_charging
 	variable = TRUE
 
-/mob/living/carbon/human/proc/rogue_start_charge(datum/intent/intent)
+/mob/living/carbon/human/proc/rogue_start_charge(datum/intent/intent, obj/item/held)
 	qdel(GetComponent(/datum/component/rogue_charge))
-	AddComponent(/datum/component/rogue_charge, intent)
+	AddComponent(/datum/component/rogue_charge, intent, held)
 
 /mob/living/carbon/human/proc/rogue_release_charge()
 	var/datum/component/rogue_charge/charge = GetComponent(/datum/component/rogue_charge)
@@ -186,11 +189,20 @@ GLOBAL_LIST_INIT(rogue_charge_cursors, list(
 	if(LAZYACCESS(modifiers, RIGHT_CLICK))
 		fighter.rogue_set_cursor(fighter.combat_mode && fighter.rogue_rmb_intent?.has_action ? ROGUE_CURSOR_ATTACK : ROGUE_CURSOR_LOOKING)
 		return
+	var/obj/item/held = fighter.get_active_held_item()
+	// A bow, crossbow or sling is drawn in or out of combat mode (Ratwood), but not by a click on one's own gear (a quiver).
+	if(istype(held, /obj/item/gun/ballistic/rogue_launcher))
+		var/datum/intent/shot = fighter.rogue_strike_intent(held)
+		if(shot?.tranged)
+			if(shot.chargetime > 0 && fighter.throw_mode == THROW_MODE_DISABLED && get(object, /mob) != fighter && shot.rogue_can_charge(fighter, held))
+				fighter.rogue_start_charge(shot, held)
+				shot.rogue_prewarning(fighter, held)
+			return
 	if(!fighter.combat_mode)
 		return
-	var/datum/intent/intent = fighter.rogue_strike_intent(fighter.get_active_held_item())
+	var/datum/intent/intent = fighter.rogue_strike_intent(held)
 	if(intent?.chargetime > 0 && fighter.throw_mode == THROW_MODE_DISABLED)
-		fighter.rogue_start_charge(intent)
+		fighter.rogue_start_charge(intent, held)
 	else
 		fighter.rogue_set_cursor(ROGUE_CURSOR_ATTACK)
 
