@@ -62,8 +62,40 @@
 	if(istype(owner) && owner.rogue_fov_mask && new_angle == LAZYACCESS(owner.fov_traits, ROGUE_FOV_SOURCE))
 		blocker_mask.icon = ROGUE_HUD_ICON_VISION_CONE
 		blocker_mask.icon_state = owner.rogue_fov_mask
+		// The edge of the cone fades out instead of cutting the view in two.
+		var/edge = ROGUE_FOV_EDGE_BLUR
+		if(edge > 0)
+			blocker_mask.add_filter("rogue_fov_edge", 1, gauss_blur_filter(edge))
+		else
+			blocker_mask.remove_filter("rogue_fov_edge")
 	else
 		blocker_mask.icon = initial(blocker_mask.icon)
+		blocker_mask.remove_filter("rogue_fov_edge")
+
+/// TG draws what is behind one's back through its own plate: blurred, greyed out and dimmed to about a fifth of its brightness.
+/// Roguetown shades it far lighter (Ratwood's cone is a black shadow at most 35% opaque), so on medieval maps the plate's filters
+/// are replaced under TG's own names by gentler ones, set by the fov_behind_* values.
+/atom/movable/screen/plane_master/rendering_plate/masked_game_plate/Initialize(mapload, datum/hud/hud_owner, datum/plane_master_group/home, offset)
+	. = ..()
+	if(!rogue_combat_enabled())
+		return
+	var/blur = ROGUE_FOV_BEHIND_BLUR
+	if(blur > 0)
+		add_filter("fov_blur", 1, gauss_blur_filter(blur))
+	else
+		remove_filter("fov_blur")
+	add_filter("fov_matrix", 3, color_matrix_filter(rogue_fov_behind_matrix(ROGUE_FOV_BEHIND_BRIGHTNESS / 100, ROGUE_FOV_BEHIND_SATURATION / 100)))
+
+/// A colour matrix that keeps `saturation` of the colour (the rest goes to grey by Rec. 601 luma) and `brightness` of the light.
+/proc/rogue_fov_behind_matrix(brightness, saturation)
+	var/grey = 1 - saturation
+	var/list/luma = list(0.299, 0.587, 0.114)
+	. = list()
+	for(var/channel in 1 to 3)
+		for(var/output in 1 to 3)
+			. += brightness * (luma[channel] * grey + (channel == output ? saturation : 0))
+		. += 0
+	. += list(0, 0, 0, 1, 0, 0, 0, 0)
 
 /// TG's cone is even on both sides; with one side cut, what it lets through is checked against that side.
 /mob/living/carbon/human/in_fov(atom/observed_atom, ignore_self = FALSE)

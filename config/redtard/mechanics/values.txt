@@ -462,6 +462,18 @@ sleeve_tear_time = 20
 # Perception the sun takes from light-sensitive eyes under the open sky by day (Ratwood sun_blinded).
 sun_blind_perception = 5
 
+# Percent of brightness left to what is behind one's back. Ratwood's cone shades it with black at most 35% opaque; TG's plate leaves about a fifth.
+fov_behind_brightness = 65
+
+# Percent of colour left to what is behind one's back; 100 keeps it all (Ratwood), TG greys it out.
+fov_behind_saturation = 70
+
+# Blur of what is behind one's back, in pixels; 0 turns it off (Ratwood none, TG 1.8).
+fov_behind_blur = 1
+
+# Pixels over which the edge of the cone fades: a blur of the cone's mask itself; 0 keeps the mask's own edge.
+fov_edge_blur = 4
+
 # Percent a stat comparison adds or takes per point of difference, once the stats differ by more than one (Ratwood generic_stat_comparison).
 stat_compare_step = 10
 
