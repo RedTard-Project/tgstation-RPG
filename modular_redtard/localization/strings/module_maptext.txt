@@ -1,0 +1,164 @@
+# Надписи над картой (maptext), которых панель чата не видит: шарики
+# balloon_alert и заголовки областей Рокхилла (rockhill_area_text). Их переводит
+# сервер для каждого зрителя (localization/maptext.dm) тем же движком, что и
+# панель (localization/translate.dm): точная строка из этого файла или из общих
+# файлов фрагментов, затем шаблоны этого файла, module_patterns.txt и
+# patterns.txt. Строка внутри тегов (<font>, <i>) переводится по кускам между
+# тегами. Не нашлось — остаётся английской. Строже, чем в чате: шаблон, после
+# которого в строке остался бы английский (захват $N|падеж, которого нет в
+# таблице существительных, или английский захват $N), строку не берёт —
+# «В the box пусто!» на карте не будет, будет «the box is empty!».
+#
+# Формат:  английское = русское
+# Строка, которая начинается с "^", — шаблон: регулярное выражение, как в
+# patterns.txt, $N|падеж склоняет захват N по таблице существительных.
+# Шарики короткие и пишутся со строчной — так и переводить; лицо — безличное
+# или первое, как в строках чата модуля.
+
+# --- шарики модуля ---
+winded! = одышка!
+dual hit!! = двойной удар!!
+thief! = вор!
+nothing offered = ничего не предложено
+won't light! = не разгорается!
+fully fueled = топлива доверху
+burned out! = прогорело!
+stopped looking = больше не смотрю
+look up or down first = сначала взглянуть вверх или вниз
+view locked = взгляд закреплён
+halfsword! = полумеч!
+mordhau! = мордхау!
+normal grip = обычный хват
+I can't tell... = не разобрать...
+# Combat Aware (combat/strike.dm): часть тела, куда пришёлся или нацелен удар.
+^((?:left |right )?[a-z]+)\.\.\.$ = $1|nom...
+
+# --- частые шарики ТГ ---
+interrupted! = прервано!
+interrupted = прервано
+on cooldown! = ещё рано!
+too far! = слишком далеко!
+too far away! = слишком далеко!
+out of range! = слишком далеко!
+too close! = слишком близко!
+can't reach! = не дотянуться!
+busy! = занято!
+blocked! = мешает преграда!
+no room! = нет места!
+no space! = нет места!
+storage full! = нет места!
+it's full! = полно!
+it is full! = полно!
+already full! = уже полно!
+empty! = пусто!
+it's empty! = пусто!
+too big! = не влезает!
+doesn't fit! = не влезает!
+won't fit! = не влезает!
+won't fit here! = сюда не влезет!
+slot occupied! = место занято!
+locked! = заперто!
+it's locked! = заперто!
+locked = заперто
+unlocked = отперто
+unlock first! = сначала отпереть!
+lock destroyed = замок разрушен
+lock broken open = замок взломан
+closed! = закрыто!
+open it first! = сначала открыть!
+open the door first! = сначала открыть дверь!
+it's stuck! = застряло!
+won't budge! = не поддаётся!
+can't move! = не сдвинуть!
+something in the way! = что-то мешает!
+tile is blocked! = место занято!
+something is blocking the tile! = что-то мешает!
+anchor it first! = сначала закрепить!
+unanchor first! = сначала открепить!
+nothing to anchor to! = не к чему крепить!
+secured = закреплено
+unsecured = откреплено
+still secured! = ещё закреплено!
+not secured! = не закреплено!
+repairing... = чиню...
+repaired = починено
+it's not damaged! = цело!
+it doesn't need repairs! = чинить нечего!
+you're already repairing it! = уже чиню!
+its broken! = сломано!
+it's broken! = сломано!
+deconstructing... = разбираю...
+nothing happens! = ничего не происходит!
+can't do that! = так нельзя!
+can't use! = не выходит!
+failed! = не вышло!
+cancelled! = отменено!
+not ready! = не готово!
+use both hands! = нужны обе руки!
+offhand busy! = вторая рука занята!
+stuck to your hand! = прилипло к руке!
+it's stuck to your hand! = прилипло к руке!
+stuck to your hands! = прилипло к рукам!
+stuck in hand! = прилипло к руке!
+can't hold! = не удержать!
+unconscious! = без сознания!
+on fire! = горит!
+items inside! = внутри что-то есть!
+not enough material! = мало материала!
+not enough ingredients! = мало ингредиентов!
+not enough fuel! = мало топлива!
+no fuel! = нет топлива!
+not enough paper! = мало бумаги!
+need a pen! = нужно перо!
+already loaded! = уже заряжено!
+invalid target! = не та цель!
+not hurt! = ран нет!
+fully treated = раны обработаны
+the hat falls to the floor! = шапка падает на пол!
+you slip and fall off! = соскальзываю и падаю!
+you fall off! = падаю!
+you're too weak! = сил не хватает!
+your tenacity kicks in = упорство берёт своё
+your tenacity wears off = упорство иссякает
+you refuse to give up! = я не сдамся!
+^(.+?) is in the way!$ = мешает $1|nom!
+
+# --- заголовки областей Рокхилла (rockhill/ported/areas.dm, rockhill_area_text) ---
+# Имя, которого здесь нет, ищется ещё в таблице существительных (module_nouns.txt).
+THE TOMB OF ALOTHEOS = ГРОБНИЦА АЛОТЕОСА
+THE OTAVAN INQUISITION = ОТАВСКАЯ ИНКВИЗИЦИЯ
+THE VALE = ДОЛИНА
+The UnderDeep = Подглубь
+The Murderwood = Лес душегубов
+The Grove = Роща
+THE TERRORBOG = ЖУТКАЯ ТОПЬ
+Rockhill Basin = Котловина Рокхилла
+WRETCHED GHROTTO = ГРОТ ОТВЕРЖЕННЫХ
+VALE TAILOR'S SHOP = МАСТЕРСКАЯ ПОРТНОГО ДОЛИНЫ
+VALE ENGINEERS WORKSHOP = МАСТЕРСКАЯ МЕХАНИКОВ ДОЛИНЫ
+Tower of the Magos = Башня магоса
+The Undergrove = Подземная роща
+The Town of Rockhill = Город Рокхилл
+The Terrormarsh = Жуткая трясина
+The House of Blood = Дом крови
+The Garden of the Dead = Сад мёртвых
+The Dread-Deep = Страшная глубь
+THE HOUSE OF THE TEN = ДОМ ДЕСЯТИ
+THE CURSED MIRE = ПРОКЛЯТАЯ ТРЯСИНА
+Somewhere high... = Где-то в вышине...
+Rockhill Keep = Замок Рокхилла
+Rockhill Harbor = Гавань Рокхилла
+Rockhill Guild of Crafts = Гильдия ремёсел Рокхилла
+Old Church District = Старый церковный квартал
+Lost Encampment = Затерянный лагерь
+LABOR CAMP = КАТОРЖНЫЙ ЛАГЕРЬ
+GOBLIN FORTRESS = КРЕПОСТЬ ГОБЛИНОВ
+GNOLL CAVERN = ПЕЩЕРА ГНОЛЛОВ
+FORSAKEN CATHEDRAL = ПОКИНУТЫЙ СОБОР
+FORGOTTEN KEEP = ЗАБЫТЫЙ ЗАМОК
+EORAN SHRINE = СВЯТИЛИЩЕ ЭОРЫ
+Crumbling Magician's Tower = Осыпающаяся башня чародея
+Another Place = Иное место
+A Wayfarer's Dream = Сон странника
+A MISTAKE = ОШИБКА
+A Gathering of Thieves = Воровской сход

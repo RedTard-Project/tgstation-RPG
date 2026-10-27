@@ -2941,3 +2941,30 @@
 /obj/structure/wooden_horse/iron = Этот неутомимый скакун сулит не самую приятную поездку — если осмелишься на него сесть.
 /obj/structure/wooden_horse/mobile = Доступное средство передвижения для всех сословий, хотя прокатиться желают немногие. Смотреть, как скачут незадачливые наездники, — одна из любимых забав местной знати.
 /obj/structure/wooden_horse/small = Этот неутомимый скакун сулит не самую приятную поездку — если осмелишься на него сесть.
+
+# --- вещи первой волны (2026-10-27) ---
+/obj/item/blade = Литой клинок, который ещё предстоит довести до ума.
+/obj/item/blade/iron_plate = Литая пластина, которую ещё предстоит довести до ума.
+/obj/item/blade/steel_plate = Литая пластина, которую ещё предстоит довести до ума.
+/obj/item/book/rogue/naledi1 = Сочинение Джатолемью фон Риттенсквоттера, эсквайра
+/obj/item/book/rogue/naledi2 = Сочинение Джатолемью фон Риттенсквоттера, эсквайра
+/obj/item/book/rogue/naledi3 = Сочинение Джатолемью фон Риттенсквоттера, эсквайра
+/obj/item/book/rogue/naledi4 = Сочинение Джатолемью фон Риттенсквоттера, эсквайра
+/obj/item/manuscript = Исписанные 2 листа, что мечтают однажды стать книгой.
+/obj/item/reagent_containers/food/snacks/rogue/flatdough = Раскатанное тесто, открытое всем взорам. Если прочертить на нём линии острым краем, выйдет лист теста для сухарей.
+/obj/item/reagent_containers/food/snacks/rogue/foodbase/chickentender = Отбитое мясо ждёт сухарной крошки и купания в горячем масле.
+/obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw = В печь тебя!
+/obj/item/reagent_containers/food/snacks/rogue/foodbase/nitzel = Отбитое мясо ждёт сухарной крошки и купания в горячем масле.
+/obj/item/reagent_containers/food/snacks/rogue/foodbase/piebottom = Основа основ чудесного.
+/obj/item/reagent_containers/food/snacks/rogue/foodbase/schnitzel = Отбитое паучье мясо ждёт сухарной крошки и купания в горячем масле.
+/obj/item/reagent_containers/food/snacks/rogue/foodbase/squires_delight = Брусок масла, на который разбили яйцо. Ждёт сухарной крошки и купания в горячем масле.
+/obj/item/reagent_containers/food/snacks/rogue/foodbase/wienernitzel = Отбитое мясо ждёт сухарной крошки и купания в горячем масле.
+/obj/item/reagent_containers/food/snacks/rogue/meat/chickentender = Птица, обжаренная во фритюре, в сухарной панировке и готовая к столу.
+/obj/item/reagent_containers/food/snacks/rogue/meat/nitzel = Ницель, обжаренный во фритюре, в сухарной панировке и готовый к столу.
+/obj/item/reagent_containers/food/snacks/rogue/meat/nitzel/schnitzel = Шницель, обжаренный во фритюре, в сухарной панировке и готовый к столу.
+/obj/item/reagent_containers/food/snacks/rogue/meat/nitzel/wiener = Колбаска, обжаренная во фритюре, в сухарной панировке и готовая к столу.
+/obj/item/reagent_containers/food/snacks/rogue/pie/cooked/berry = Вкусный домашний пирог с лесными ягодами. Его ещё нужно нарезать.
+/obj/item/reagent_containers/food/snacks/rogue/pie/cooked/crab = Вкусный домашний пирог с крабьим нутром. Его ещё нужно нарезать.
+/obj/item/reagent_containers/food/snacks/rogue/pie/cooked/meat/fish = Вкусный домашний пирог со свежей рыбой. Его ещё нужно нарезать.
+/obj/item/reagent_containers/food/snacks/rogue/pie/cooked/pot = Вкусный домашний пирог. Его ещё нужно нарезать.
+/obj/item/reagent_containers/food/snacks/squiresdelight = Брусок масла, обжаренный во фритюре. Оруженосцы его обожают, а рыцари частенько отбирают.

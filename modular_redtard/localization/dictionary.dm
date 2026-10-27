@@ -17,6 +17,8 @@ GLOBAL_LIST_INIT(rogue_noun_cases, list("nom", "gen", "dat", "acc", "ins", "pre"
 	nouns |= rogue_strings_nouns("module_items.txt")
 	nouns |= rogue_strings_nouns("nouns.txt")
 	nouns |= rogue_strings_nouns("module_nouns.txt")
+	// Names of roles, classes, migrant waves and calendar events (titles.dm): declined where a pattern asks for a case.
+	nouns |= rogue_strings_nouns("module_titles.txt")
 	var/list/fragments = rogue_strings_table("fragments.txt")
 	for(var/filename in list("speech.txt", "medical.txt", "world.txt", "status.txt", "module_fragments.txt"))
 		fragments |= rogue_strings_table(filename)

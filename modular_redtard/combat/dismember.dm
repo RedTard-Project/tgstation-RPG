@@ -52,6 +52,8 @@ GLOBAL_LIST_INIT(rogue_disembowel_slots, list(ORGAN_SLOT_STOMACH, ORGAN_SLOT_APP
 		return FALSE
 	return rogue_dismember(limb, weapon, attacker, zone)
 
+/// Severs a limb (the chest is disembowelled). What it did goes on the line of the strike that did it, as a note
+/// (combat/chat.dm), or on a line of its own outside a strike.
 /mob/living/carbon/proc/rogue_dismember(obj/item/bodypart/limb, obj/item/weapon, mob/living/attacker, zone)
 	if(limb.body_zone == BODY_ZONE_CHEST)
 		return rogue_disembowel(attacker)
@@ -70,16 +72,14 @@ GLOBAL_LIST_INIT(rogue_disembowel_slots, list(ORGAN_SLOT_STOMACH, ORGAN_SLOT_APP
 				to_chat(src, span_warning("My armour just saved me from losing my [limb.plaintext_zone]!"))
 				return FALSE
 	if(rogue_resist_crit())
-		visible_message(span_danger("Critical resistance! [src]'s [limb.plaintext_zone] hangs on by a thread!"))
+		rogue_strike_note(span_danger("Critical resistance! [src]'s [limb.plaintext_zone] hangs on by a thread!"))
 		return FALSE
-	var/limb_name = limb.plaintext_zone
+	// Written before the cut: a headless body is no longer known by its face.
+	var/severed_text = head ? "<B>\The [src] is [pick("BRUTALLY", "VIOLENTLY", "BLOODILY", "MESSILY")] DECAPITATED!</B>" : "<B>The [limb.plaintext_zone] is [pick("torn off", "sundered", "severed", "separated", "unsewn")]!</B>"
 	if(!limb.dismember(BRUTE, TRUE, WOUND_SLASH))
 		return FALSE
 	playsound(src, pick(GLOB.rogue_dismember_sounds), 80, TRUE)
-	if(head)
-		visible_message(span_danger("<B>[src] is [pick("BRUTALLY", "VIOLENTLY", "BLOODILY", "MESSILY")] DECAPITATED!</B>"))
-	else
-		visible_message(span_danger("<B>The [limb_name] is [pick("torn off", "sundered", "severed", "separated", "unsewn")]!</B>"))
+	rogue_strike_note(span_danger(severed_text))
 	weapon?.add_mob_blood(src)
 	log_combat(attacker, src, "dismembered", weapon, "(ZONE: [zone])")
 	return TRUE
@@ -96,11 +96,12 @@ GLOBAL_LIST_INIT(rogue_disembowel_slots, list(ORGAN_SLOT_STOMACH, ORGAN_SLOT_APP
 	if(chest.cavity_item)
 		chest.cavity_item.forceMove(spill)
 		chest.cavity_item = null
+	// Ratwood's disembowelment is a critical wound: "Critical hit!", then the wound it leaves.
+	rogue_strike_note(rogue_crit_text("[src] spills [p_their()] [pick("organs", "entrails")]!"))
 	cause_wound_of_type_and_severity(WOUND_SLASH, chest, WOUND_SEVERITY_CRITICAL, WOUND_SEVERITY_CRITICAL, wound_source = "disembowelment")
 	if(isturf(spill) && can_bleed())
 		add_splatter_floor(spill)
 	playsound(src, 'modular_redtard/rockhill/sound/combat/crit2.ogg', 100, TRUE)
-	visible_message(span_userdanger("[src] spills [p_their()] [pick("organs", "entrails")]!"))
 	INVOKE_ASYNC(src, TYPE_PROC_REF(/mob, emote), "scream")
 	rogue_slowdown(ROGUE_DISEMBOWEL_SLOW)
 	shake_camera(src, 2, 2)

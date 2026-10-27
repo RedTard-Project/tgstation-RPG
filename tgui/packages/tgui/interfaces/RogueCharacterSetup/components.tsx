@@ -51,14 +51,11 @@ export function Panel(props: PanelProps) {
     <Section
       mb={1}
       title={
-        <Stack align="center">
-          {!!icon && (
-            <Stack.Item>
-              <Icon name={icon} />
-            </Stack.Item>
-          )}
-          <Stack.Item>{title}</Stack.Item>
-        </Stack>
+        // Inline, not a Stack: a block title takes the whole bar and pushes the buttons onto the line below.
+        <>
+          {!!icon && <Icon name={icon} mr={1} />}
+          {title}
+        </>
       }
       buttons={buttons}
     >

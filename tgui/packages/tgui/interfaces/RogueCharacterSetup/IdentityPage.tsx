@@ -365,14 +365,15 @@ function SpeciesDetails(props: SpeciesDetailsProps) {
     <Section
       fill
       title={
-        <Stack align="center">
-          <Stack.Item>{species.name}</Stack.Item>
+        // Inline, not a Stack: a block title takes the whole bar and pushes the buttons onto the line below.
+        <>
+          {species.name}
           {current && (
-            <Stack.Item>
-              <Box color="good">{tr('Current')}</Box>
-            </Stack.Item>
+            <Box inline ml={1} color="good">
+              {tr('Current')}
+            </Box>
           )}
-        </Stack>
+        </>
       }
       buttons={
         <Button

@@ -245,7 +245,24 @@ GLOBAL_LIST_INIT(rogue_offset_parts, list(
 	if(owner_species.rogue_goblin_kind)
 		rogue_kind = owner_species.rogue_goblin_kind
 	if(owner_species.rogue_offsets || rogue_offset_keys)
-		rogue_apply_offsets(owner_species.rogue_offsets?[limb_gender])
+		rogue_apply_offsets(owner_species.rogue_offsets?[rogue_offset_sex()])
+
+/// Vibelin picks a race's offsets by the sprites it wears, not by its body: a race that wears the other sex's clothes
+/// (swap_male_clothes: a male kobold) shifts by that sex's offsets, which are the only ones it has.
+/obj/item/bodypart/proc/rogue_offset_sex()
+	var/mob/living/carbon/human/human_owner = owner
+	if(istype(human_owner))
+		return human_owner.rogue_wears_female() ? "f" : "m"
+	return limb_gender
+
+/// TG caches a limb's icon by this key, and the worn offsets move the hair and features drawn with it: without them in the
+/// key, a head first drawn before its race's offsets were set (on a species change) keeps its unshifted hair from the cache.
+/obj/item/bodypart/generate_icon_key()
+	. = ..()
+	for(var/key in rogue_offset_keys)
+		var/datum/worn_feature_offset/offset = feature_offsets[key]
+		if(offset)
+			. += "[key]:[offset.offset_x?["south"]],[offset.offset_y?["south"]]"
 
 /// Shifts where worn things sit on this part as Ratwood does for the owner's species and sex; keys the part no longer
 /// gets go back to no shift.

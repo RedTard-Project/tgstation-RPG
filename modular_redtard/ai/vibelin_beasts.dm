@@ -5,9 +5,10 @@
 /// comes near, the frog swims, the bog troll lies in wait (no_target_hide) and springs out on whoever comes close.
 /// Every pastime gives way the moment the beast has someone to fight.
 ///
-/// Ratwood's hunger meter, breeding, taming, pet commands and the truffle pig's sniffing are in husbandry/. Not ported:
-/// spider nests and webs, the mirespider's cocoons, ranged attacks and the special abilities (troll throws and slams,
-/// fiend, behemoth, colossus, glimmerwing, dryad), the minotaur's rage.
+/// Ratwood's hunger meter, breeding, taming, pet commands and the truffle pig's sniffing are in husbandry/. Shooting, the special
+/// abilities, the minotaur's rage, spider webs, nests and cocoons are in pve/ (stage 6): this mind takes its fight and the
+/// spiders' pastimes from there (rogue_pve_combat(), rogue_pve_urgent_roots(), rogue_pve_idle_roots()). Not ported: the
+/// dryad's vines.
 
 /// A hunter eats the dead; herd beasts graze and fight back; shy ones graze and run when attacked; prey runs from all.
 #define ROGUE_BEAST_HUNTER "hunter"
@@ -234,10 +235,10 @@
 		behavior_nodes = beast.rogue_beast_roots()
 	return ..()
 
-/// A beast with a way of life gets the mind that has it; what it eats goes to TG's eating and grazing, and Ratwood's
-/// retreat_health to TG's fleeing when hurt.
+/// A beast with a way of life gets the mind that has it, as does one that shoots, has special abilities or a spider's ways
+/// (pve/); what it eats goes to TG's eating and grazing, and Ratwood's retreat_health to TG's fleeing when hurt.
 /mob/living/basic/rockhill/Initialize(mapload)
-	if(rogue_beast_kind)
+	if(rogue_beast_kind || (ai_controller && rogue_pve_needs_mind()))
 		rogue_hunts = rogue_aggressive || (ai_controller in list(/datum/ai_controller/basic_controller/simple/simple_hostile, /datum/ai_controller/basic_controller/simple/rogue_hostile_fleeing))
 		ai_controller = /datum/ai_controller/basic_controller/simple/rogue_beast
 	. = ..()
@@ -249,20 +250,21 @@
 		AddElement(/datum/element/basic_eating, food_types = rogue_food_types)
 		ai_controller.set_blackboard_key(BB_BASIC_FOODS, typecacheof(rogue_food_types))
 
-/// The beast's mind, highest priority first: break free, run when badly hurt, its pastime, then fighting as it fights
-/// (hunting, fighting back, or running from whoever hurt it or from anything near).
+/// The beast's mind, highest priority first: break free, run when badly hurt, its pastimes (pve/ urgent ones, those of its way
+/// of life, pve/ idle ones), then fighting as it fights (hunting, fighting back, or running from whoever hurt it or from
+/// anything near; shots and abilities from pve/mind.dm).
 /mob/living/basic/rockhill/proc/rogue_beast_roots()
-	var/hunts = rogue_hunts
+	var/hunts = rogue_hunts || rogue_beast_kind == ROGUE_BEAST_AMBUSHER
 	. = list(/datum/bt_node/subtree/escape_captivity)
 	if(rogue_retreat_health > 0)
 		. += /datum/bt_node/subtree/run_away_from_target
+	. += rogue_pve_urgent_roots(hunts)
 	switch(rogue_beast_kind)
 		if(ROGUE_BEAST_HUNTER)
 			. += hunts ? /datum/bt_node/subtree/rogue_eat_corpse : /datum/bt_node/subtree/rogue_eat_corpse/retaliate
 		if(ROGUE_BEAST_AMBUSHER)
 			. += /datum/bt_node/subtree/rogue_eat_corpse
 			. += /datum/bt_node/subtree/rogue_lie_in_wait
-			hunts = TRUE
 		if(ROGUE_BEAST_HERD)
 			. += hunts ? /datum/bt_node/subtree/rogue_graze/hunting : /datum/bt_node/subtree/rogue_graze
 		if(ROGUE_BEAST_SHY)
@@ -273,7 +275,8 @@
 			return . + /datum/bt_node/subtree/simple_fearful_combat
 		if(ROGUE_BEAST_PREY)
 			return . + /datum/bt_node/subtree/simple_fearful_combat
-	. += hunts ? /datum/bt_node/subtree/simple_hostile_combat : /datum/bt_node/subtree/simple_retaliate_combat
+	. += rogue_pve_idle_roots(hunts)
+	. += list(rogue_pve_combat(hunts))
 
 /// The Ratwood beasts by Vibelin's kin of theirs.
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf

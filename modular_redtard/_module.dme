@@ -50,6 +50,7 @@
 #include "combat\status.dm"
 #include "combat\clash.dm"
 #include "combat\specials.dm"
+#include "combat\specials_azure.dm"
 #include "combat\cleave.dm"
 #include "combat\charge.dm"
 #include "combat\cursor.dm"
@@ -74,6 +75,9 @@
 #include "combat\dual_wield.dm"
 #include "combat\dismember.dm"
 #include "combat\beasts.dm"
+#include "combat\ranged.dm"
+#include "combat\music.dm"
+#include "combat\ported_music.dm"
 #include "combat\mob.dm"
 #include "mechanics\formula.dm"
 #include "mechanics\formulas.dm"
@@ -108,6 +112,11 @@
 #include "localization\examine.dm"
 #include "localization\chargen.dm"
 #include "localization\traits.dm"
+#include "localization\translate.dm"
+#include "localization\maptext.dm"
+#include "localization\screentips.dm"
+#include "localization\titles.dm"
+#include "tests\localization_rogue.dm"
 // Heritage (heritage/): Vibelin's faiths, patrons, cultures and races
 #include "heritage\_defines.dm"
 #include "heritage\heritage.dm"
@@ -190,6 +199,13 @@
 #include "husbandry\beasts.dm"
 #include "husbandry\ported\husbandry.dm"
 // Stage 6: PvE depth (pve/)
+#include "pve\_defines.dm"
+#include "pve\mind.dm"
+#include "pve\projectiles.dm"
+#include "pve\abilities.dm"
+#include "pve\minotaur.dm"
+#include "pve\spiders.dm"
+#include "pve\mobs.dm"
 // Stage 7: library and the persistent world (library/)
 #include "library\_defines.dm"
 #include "library\config.dm"
@@ -201,6 +217,7 @@
 #include "library\admin.dm"
 // Stage 8: triumphs (triumphs/)
 // Stage 9: race polish (races/)
+#include "races\speech_fonts.dm"
 // Stage 10: clothing and FOV polish (clothing/)
 #include "clothing\sleeve_status.dm"
 #include "clothing\adjustable.dm"
@@ -210,6 +227,7 @@
 #include "charsetup\character_menu.dm"
 #include "charsetup\entry_points.dm"
 #include "ai\human_npc.dm"
+#include "ai\npc_specials.dm"
 #include "ai\rockhill_ai.dm"
 #include "ai\vibelin_beasts.dm"
 #include "ai\sleep.dm"

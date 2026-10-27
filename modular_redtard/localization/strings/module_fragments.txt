@@ -522,3 +522,146 @@ An unlucky slave, captured from their home, moved to the Zybantines and trained 
 You are the Emir's advisor and loyal protector. = Ты — советник и верный защитник эмира.
 You are an envoy from the zybantine Empire, traveling with bodyguards and your personal advisor to represent your homeland. What exactly you have been sent here to speak about- only you know. = Ты — посланник Зибантинской империи и едешь с телохранителями и личным советником, чтобы представлять родину. О чём именно тебе поручено здесь говорить — знаешь только ты.
 You are a dilligent soldier in employ of the Emir for protection and to assure that their mission goes as planned. = Ты — исправный воин на службе эмира: охраняешь его и следишь, чтобы миссия шла как задумано.
+
+# === Строки первой волны агентов: производство, быт, библиотека, одежда ===
+# (вторая волна, 2026-10-27)
+
+# --- одежда (clothing/adjustable.dm, sleeve_status.dm) ---
+Right-click it while wearing it to adjust it. = Правый щелчок по надетой вещи — поправить её.
+Middle-click it with a leg targeted to tear that trouser leg off, Alt+middle-click to roll it up or down. = Средний щелчок по вещи при выбранной ноге — оторвать штанину; Alt + средний щелчок — закатать или раскатать её.
+Middle-click it with an arm targeted to tear that sleeve off, Alt+middle-click to roll it up or down. = Средний щелчок по вещи при выбранной руке — оторвать рукав; Alt + средний щелчок — закатать или раскатать его.
+
+# --- производство: стол артифика, литьё, красильня (crafting/artificer.dm, casting.dm, dyeing.dm) ---
+Ah yes, my incompetence bears fruit. = Ну конечно, моё неумение приносит плоды.
+Set a plank, a bar, ore or a satchel on it, then strike it with a hammer to choose what to make. = Положи на него доску, слиток, руду или сумку, затем ударь молотом, чтобы выбрать, что делать.
+Only iron and steel can be cast. = Отливать можно только железо и сталь.
+The crucible is too hot to add ingots! Wait for it to cool down. = Тигель слишком горячий, слитки не добавить! Подожди, пока остынет.
+The crucible is full. = Тигель полон.
+As you add the ingot, it seems to multiply in the crucible! = Слиток в тигле будто множится!
+The ingot starts to multiply but the crucible is almost full! = Слиток начинает множиться, но тигель почти полон!
+This mold already has a sprue and funnel attached. = К этой форме уже приделан литник с воронкой.
+This mold needs a sprue and funnel to pour metal into. = Чтобы залить в эту форму металл, нужен литник с воронкой.
+This mold is already being used. = Эта форма уже занята.
+The metal in the crucible isn't hot enough to pour. = Металл в тигле ещё недостаточно горяч, чтобы его лить.
+The crucible is empty. = Тигель пуст.
+Couldn't find the appropriate metal in the crucible. = В тигле нет подходящего металла.
+The metal in the mold has cooled and solidified. The sprue pops off! = Металл в форме остывает и твердеет. Литник отскакивает!
+It's empty. Set it on a hearth and add iron or steel bars to melt them. = Пусто. Поставь на очаг и добавь железные или стальные слитки, чтобы расплавить.
+It's glowing hot with molten metal! = Внутри раскалённый расплавленный металл!
+The metal has solidified. = Металл уже твёрдый.
+The metal inside is still cooling. = Металл внутри ещё остывает.
+It has a sprue and funnel attached and is currently being poured. = К ней приделан литник с воронкой, сейчас в неё льют металл.
+It has a sprue and funnel attached, ready for pouring. = К ней приделан литник с воронкой, можно лить.
+It needs a sprue and funnel to be used. = Чтобы ею пользоваться, нужен литник с воронкой.
+Something is already inside! = Внутри уже что-то есть!
+No item inserted. = Внутри ничего нет.
+Put clothing, a bag or glazed pottery in to dye it. = Положи внутрь одежду, сумку или глазурованную посуду, чтобы покрасить.
+
+# --- производство: полировка (crafting/polishing.dm) ---
+I flip the brush to the coarse side. = Я переворачиваю щётку жёсткой стороной.
+I flip the brush to the fine side. = Я переворачиваю щётку мягкой стороной.
+It has some polishing compound on it. = На вещи немного полировального крема.
+It's been thoroughly brushed. = Вещь как следует отчищена щёткой.
+It's been nicely polished. = Вещь хорошо отполирована.
+To polish a weapon or a piece of armor, you must have the knowledge of a squire or how to repair the item. Follow the following steps: = Чтобы отполировать оружие или доспех, нужно знать дело оруженосца или уметь чинить эту вещь. Порядок такой:
+I. Apply polishing cream to the item. = 1. Нанеси на вещь полировальный крем.
+II. Use the coarse side (use the item to flip it) to scrub the item roughly. = 2. Жёсткой стороной щётки (перевернуть — использовать щётку в руке) как следует натри вещь.
+III. Use the fine side to gently polish the item. = 3. Мягкой стороной бережно отполируй вещь.
+IV. Wash the item in a wooden bin with water to polish it. = 4. Промой вещь в деревянной бадье с водой — полировка готова.
+A fully polished item will be slightly stronger and or more durable. = Полностью отполированная вещь становится чуть крепче или долговечнее.
+
+# --- производство: гончарный круг (crafting/pottery.dm) ---
+The clay does not need more water yet. = Глине пока хватает воды.
+Needs more water to keep shaping. = Чтобы лепить дальше, нужно больше воды.
+I moisten the clay on the wheel. = Я смачиваю глину на круге.
+There is already clay on the wheel. = На круге уже есть глина.
+This is too rough for wheel work. I need kneaded clay first. = Это слишком грубо для гончарного круга. Сначала нужна промятая глина.
+Only kneaded or refined clay can be worked on the wheel. = На круге можно работать только с промятой или очищенной глиной.
+I can't remove the clay while I'm in the middle of shaping it! = Нельзя снять глину посреди лепки!
+This clay cannot be shaped into anything useful. = Из этой глины ничего путного не вылепить.
+I need to place clay on the wheel first. = Сначала нужно положить глину на круг.
+The clay is drying out. I should add water before spinning again. = Глина подсыхает. Прежде чем снова крутить круг, стоит добавить воды.
+This clay is no longer suitable for the selected shape. = Эта глина больше не годится для выбранного изделия.
+The clay is no longer suitable. = Глина больше не годится.
+I lose control of the spinning clay - it collapses and is ruined! = Глина вырывается из-под рук — она оседает, работа испорчена!
+Set kneaded clay on it, then right-click with an empty hand to shape it. = Положи на круг промятую глину, затем лепи правым щелчком пустой рукой.
+The clay is drying out and needs water. = Глина подсыхает, нужна вода.
+
+# --- производство: правила рецептов, починка, техно-узлы (crafting/recipe_rules.dm, repair.dm, tech_nodes.dm) ---
+I need a dirt floor to do this. = Для этого нужен земляной пол.
+There's already a pit of spikes here. = Здесь уже есть яма с кольями.
+The grave isn't covered. = Могила не засыпана.
+There is no grave here. = Здесь нет могилы.
+This grave is already hallowed. = Эта могила уже освящена.
+I don't know how to repair this.. = Я не знаю, как это починить..
+No crafting recipe waits for a tech node. = Ни один рецепт не ждёт техно-узла.
+
+# --- библиотека (library/) ---
+The server keeps no book archive (ROGUE_BOOK_ARCHIVE). = Сервер не ведёт архива книг (ROGUE_BOOK_ARCHIVE).
+That book is gone. = Этой книги больше нет.
+The book could not be deleted. = Книгу не удалось удалить.
+The book could not be amended (an empty or taken title?). = Книгу не удалось исправить (название пустое или уже занято?).
+This book is completely blank. = Эта книга совсем пустая.
+I can't see the pages! = Мне не видно страниц!
+It lies open. Use it to read, right-click it in hand to shut it. = Книга раскрыта. Используй её, чтобы читать; правый щелчок в руке — закрыть.
+Use it to open it. = Используй, чтобы раскрыть.
+It can be added to the archive at a printing press. = Книгу можно сдать в архив у печатного станка.
+Finish this manuscript with a book crafting kit and give it a title before uploading it. = Прежде чем сдавать рукопись в архив, доделай её книжным ремесленным набором и дай ей название.
+Retrieve the printed item before inserting new items. = Сначала забери отпечатанное, потом клади новое.
+The archive holds no books yet. = В архиве пока нет книг.
+This book is no longer in the archive. = Этой книги больше нет в архиве.
+This book has yet to be authored and titled. You'll need to do so before uploading it. = У этой книги ещё нет автора и названия. Их нужно задать, прежде чем сдавать её в архив.
+Only newly bound books can be added to the archive. = В архив принимают только свежепереплетённые книги.
+You decide not to upload the book. = Я передумываю сдавать книгу в архив.
+Insert blank paper, then right-click to select what to print. Use an empty hand to retrieve the loaded paper or a finished print. Apply a newly bound player book to archive it. = Положи чистую бумагу, затем правым щелчком выбери, что печатать. Пустой рукой можно забрать заложенную бумагу или готовый оттиск. Приложи свежепереплетённую книгу, чтобы сдать её в архив.
+It is currently printing. = Сейчас идёт печать.
+It is empty and has nothing loaded. = Пусто, ничего не заложено.
+It is currently recalibrating and cannot print yet. = Станок настраивается и пока не может печатать.
+The paper needs to contain text to be added to a manuscript! = Чтобы добавить лист в рукопись, на нём должен быть текст!
+Write the manuscript before binding it. = Сначала напиши рукопись, потом переплетай.
+Right-click it in hand to take the last page off. = Правый щелчок в руке — снять последний лист.
+
+# --- быт: вкус и манеры (survival/appetite.dm) ---
+I should really eat this at a table... = Это и правда стоит есть за столом...
+This is rather bland. I deserve better food than this... = Пресновато. Я заслуживаю еды получше...
+I've got better manners than this... = Манеры не позволяют мне такого...
+It is food fit for the desperate. = Это еда для отчаявшихся.
+It is food fit for the poor. = Это еда для бедняков.
+It is decent food. = Это сносная еда.
+It is fine food. = Это хорошая еда.
+It is lavish food. = Это роскошная еда.
+It can be eaten without a table. = Это можно есть и не за столом.
+Eating this without a table would be disgraceful for a noble. = Есть это не за столом — позор для знатного.
+Yuck! My hated food! = Фу! Моя ненавистная еда!
+Yum! My favorite drink! = Ммм! Мой любимый напиток!
+Yuck! My hated drink! = Фу! Мой ненавистный напиток!
+
+# --- быт: замес, фритюр, котелок, сосуды (survival/kneading.dm, stews.dm, vessels.dm) ---
+Kneading in more powder... = Вмешиваю ещё муки...
+Kneading butter into the dough... = Вмешиваю масло в тесто...
+Rolling the dough flat and thin... = Раскатываю тесто тонким пластом...
+Combining dough... = Соединяю тесто...
+Tenderizing the meat into a nitzel... = Отбиваю мясо на шницель...
+Tenderizing the spidermeat into a schnitzel... = Отбиваю паучье мясо на шницель...
+Tenderizing the bird meat... = Отбиваю птичье мясо...
+Tenderizing the sausage... = Отбиваю колбасу...
+Stuffing a wiener... = Начиняю сосиску...
+Cracking an egg over the butter... = Разбиваю яйцо над маслом...
+Need a table... = Нужен стол...
+Not enough milk. = Молока не хватает.
+Adding salt to the milk. = Добавляю соль в молоко.
+I churn butter... = Я сбиваю масло...
+I strain fresh cheese... = Я отцеживаю свежий сыр...
+Knead it by hand into dough. = Вымеси руками в тесто.
+Add ten units of water on a table to make dough. = Добавь на столе десять мер воды — выйдет тесто.
+I can't render fat in a pot with water! = В котелке с водой жир не перетопить!
+Not enough tallow. = Не хватает сала.
+I can't deep fry in a pot with water! = В котелке с водой во фритюре не пожаришь!
+Not enough water. = Не хватает воды.
+It can be melted into tallow in a dry pot on a hearth. = Это можно перетопить на сало в сухом котелке на очаге.
+deep fried = зажарить во фритюре
+Filling the bowl... = Наполняю миску...
+I need a bucket. = Нужно ведро.
+Fill it with water and put it on a hearth: once it boils, drop ingredients in to brew a stew, a porridge or a hot drink. Melt fat in a dry pot for tallow to deep fry in. = Налей воды и поставь на очаг: когда закипит, бросай продукты — выйдет похлёбка, каша или горячее питьё. В сухом котелке можно перетопить жир на сало для фритюра.
+It is corked. Use it in hand to uncork it. = Закупорено. Используй в руке, чтобы откупорить.
+It is uncorked. = Откупорено.

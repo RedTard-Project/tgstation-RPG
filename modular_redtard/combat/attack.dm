@@ -39,6 +39,9 @@
 			var/datum/alt_grip/grip = rogue_alt_grip(grip_type)
 			grip_names += grip.describe(source, user)
 		examine_list += span_notice("Alternate grips: [jointext(grip_names, ", ")]. Right-click it in hand or press Alt Grip to switch.")
+	var/datum/special_intent/weapon_special = source.rogue_special()
+	if(weapon_special)
+		examine_list += weapon_special.get_examine()
 
 /datum/element/rogue_weapon/proc/on_attack(obj/item/source, mob/living/target, mob/living/user, list/modifiers, list/attack_modifiers)
 	SIGNAL_HANDLER

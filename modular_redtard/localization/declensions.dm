@@ -52,6 +52,8 @@ GLOBAL_LIST_EMPTY(rogue_chat_declensions)
 	if(!name || !length(cases) || (GLOB.rogue_chat_declensions[name] ~= cases))
 		return
 	GLOB.rogue_chat_declensions[name] = cases
+	// The server's dictionaries (translate.dm) decline names too.
+	rogue_dictionaries_forget()
 	var/list/delta = list("[name]" = cases)
 	for(var/client/target as anything in GLOB.clients)
 		target.tgui_panel?.rogue_send_declensions(delta)

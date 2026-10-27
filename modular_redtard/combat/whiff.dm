@@ -33,7 +33,7 @@
 	if(intent.misscost)
 		adjust_stamina_loss(intent.misscost)
 	if(intent.miss_text)
-		visible_message(span_warning("[src] [intent.miss_text]!"), span_warning("I [intent.miss_text]!"))
+		visible_message(span_warning("[src] [intent.miss_text_others || intent.miss_text]!"), span_warning("I [intent.miss_text]!"))
 	return COMSIG_MOB_CANCEL_CLICKON
 
 /mob/living/carbon/human/proc/rogue_strike_tile_victim(mob/living/victim, obj/item/weapon, list/modifiers)

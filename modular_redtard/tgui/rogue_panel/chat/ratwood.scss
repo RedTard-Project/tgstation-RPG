@@ -1,30 +1,116 @@
 // Ratwood's chat (tgui-panel/styles: main.scss, tgchat/chat-dark.scss, components/roguefont.scss): black backing,
-// outlined parchment text, Pterra, and its palette, with the combat classes the module's crits and wounds print
-// (crit, artery, bone and the rest). Only the dark theme takes it; TG's light theme stays as it is.
+// outlined parchment text, Pterra, and its palette, with the combat classes the module's crits, wounds and armor
+// print (crit, artery, bone, armoralert and the rest). The races' speech fonts are in speech_fonts.scss.
 //
-// Pterra has no Cyrillic, so a Russian chat reads in a book face that has it; English reads in Pterra as on
-// Ratwood. Pterra is drawn small for its size: size-adjust brings it to the panel's own font size setting.
+// Both of TG's themes take it. The dark one is Ratwood's own; the light one sets the same look on a parchment backing
+// in dark ink, without the outline, each Ratwood colour keeping its hue and darkened until it reads on the parchment
+// at 4.5:1 or better; a few are pushed further or toned down to stay apart from their neighbours (necrosis from
+// infection, dead from deadsay, bone from yellow).
+//
+// Pterra has no Cyrillic, so a Russian chat reads in a book face that has it; English reads in Pterra as on Ratwood.
+@use 'sass:map';
+@use 'faces' as *;
+@use 'speech_fonts';
 
 @font-face {
   font-family: 'Pterra';
   src: url('../fonts/pterra.ttf') format('truetype');
-  size-adjust: 145%;
+  size-adjust: $pterra-scale;
 }
 
-$book: 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+$dark: (
+  backing: hsl(0, 0%, 0%),
+  text: #c9c1ba,
+  link: #ae83cb,
+  motd: #638500,
+  ooc: #c5c5c5,
+  deadsay: #e2c1ff,
+  emote: #b1bb9f,
+  alert: #d82020,
+  userdanger: #c71d76,
+  danger: #b9322b,
+  warning: #bb4e28,
+  announce: #c51e1e,
+  greenannounce: #059223,
+  info: #a9a5b6,
+  notice: #f1d669,
+  hear: #6685f5,
+  suicide: #ff5050,
+  green: #80b077,
+  red: #b84d47,
+  blue: #6a8cb7,
+  purple: #5e2d79,
+  nicegreen: #9bccd0,
+  rose: #e7bed8,
+  cult: #960000,
+  phobia: #dd0000,
+  greentext: #00ff00,
+  redtext: #ff0000,
+  yellow: #c0ad58,
+  crit: #c71d76,
+  taunt: #e78718,
+  dead: #b280df,
+  bloody: #cc0f0f,
+  artery: #9b5455,
+  infection: #77c72b,
+  necrosis: #558d20,
+  bone: #e3dac9,
+  torture: #42ff20,
+  armoralert: #bb4e28,
+  pulsedeath: #dd0000,
+  pulse: rogue-deathcolor,
+);
 
-:root:not(.theme-light) {
-  --chat-text-color: #c9c1ba;
-  --color-base: hsl(0, 0%, 0%);
+$light: (
+  backing: #efe5cf,
+  text: #2b2016,
+  link: #884bb2,
+  motd: #526e00,
+  ooc: #676767,
+  deadsay: #8a44c3,
+  emote: #606b4c,
+  alert: #c81e1e,
+  userdanger: #c01c72,
+  danger: #b9322b,
+  warning: #ac4825,
+  announce: #c51e1e,
+  greenannounce: #04771c,
+  info: #69637b,
+  notice: #7b650b,
+  hear: #2a55f1,
+  suicide: #cf0000,
+  green: #497041,
+  red: #a94741,
+  blue: #476893,
+  purple: #5e2d79,
+  nicegreen: #366e73,
+  rose: #a83e81,
+  cult: #960000,
+  phobia: #d00000,
+  greentext: #007800,
+  redtext: #d10000,
+  yellow: #74672c,
+  crit: #c01c72,
+  taunt: #965810,
+  dead: #6d2aa8,
+  bloody: #cc0f0f,
+  artery: #995354,
+  infection: #457319,
+  necrosis: #325313,
+  bone: #6e6455,
+  torture: #127700,
+  armoralert: #ac4825,
+  pulsedeath: #d00000,
+  pulse: rogue-deathcolor-light,
+);
+
+@mixin ratwood-chat($c) {
+  --chat-text-color: #{map.get($c, text)};
+  --color-base: #{map.get($c, backing)};
 
   body {
-    color: #c9c1ba;
+    color: map.get($c, text);
     font-family: $book;
-    text-shadow:
-      -1px -1px 0 #000,
-      1px -1px 0 #000,
-      -1px 1px 0 #000,
-      1px 1px 0 #000;
   }
 
   body.rogue-lang-en {
@@ -32,7 +118,7 @@ $book: 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
   }
 
   a:link {
-    color: #ae83cb;
+    color: map.get($c, link);
     font-weight: bold;
   }
 
@@ -45,7 +131,7 @@ $book: 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
   h1.alert,
   h2.alert,
   .unconscious {
-    color: #c9c1ba;
+    color: map.get($c, text);
   }
 
   .motd,
@@ -57,109 +143,109 @@ $book: 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
   .motd a:visited,
   .motd a:hover,
   .memo {
-    color: #638500;
+    color: map.get($c, motd);
   }
 
   .ooc {
-    color: #c5c5c5;
+    color: map.get($c, ooc);
   }
 
   .deadsay {
-    color: #e2c1ff;
+    color: map.get($c, deadsay);
   }
 
   .emote {
-    color: #b1bb9f;
+    color: map.get($c, emote);
     font-size: 75%;
   }
 
   .alert {
-    color: #d82020;
+    color: map.get($c, alert);
   }
 
   .userdanger {
-    color: #c71d76;
+    color: map.get($c, userdanger);
     font-size: 120%;
   }
 
   .danger {
-    color: #b9322b;
+    color: map.get($c, danger);
     font-weight: bold;
   }
 
   .warning {
-    color: #bb4e28;
+    color: map.get($c, warning);
     font-size: 75%;
     font-style: normal;
   }
 
   .boldwarning {
-    color: #bb4e28;
+    color: map.get($c, warning);
     font-style: normal;
   }
 
   .announce,
   .boldannounce {
-    color: #c51e1e;
+    color: map.get($c, announce);
   }
 
   .greenannounce {
-    color: #059223;
+    color: map.get($c, greenannounce);
   }
 
   .info {
-    color: #a9a5b6;
+    color: map.get($c, info);
     font-size: 75%;
   }
 
   .notice,
   .boldnotice {
-    color: #f1d669;
+    color: map.get($c, notice);
   }
 
   .smallnotice {
-    color: #f1d669;
+    color: map.get($c, notice);
     font-size: 75%;
   }
 
   .hear {
-    color: #6685f5;
+    color: map.get($c, hear);
   }
 
   .suicide {
-    color: #ff5050;
+    color: map.get($c, suicide);
   }
 
   .green {
-    color: #80b077;
+    color: map.get($c, green);
   }
 
   .red {
-    color: #b84d47;
+    color: map.get($c, red);
   }
 
   .blue {
-    color: #6a8cb7;
+    color: map.get($c, blue);
   }
 
   .purple {
-    color: #5e2d79;
+    color: map.get($c, purple);
   }
 
   .nicegreen {
-    color: #9bccd0;
+    color: map.get($c, nicegreen);
   }
 
   .rose {
-    color: #e7bed8;
+    color: map.get($c, rose);
   }
 
   .cult {
-    color: #960000;
+    color: map.get($c, cult);
   }
 
   .phobia {
-    color: #dd0000;
+    color: map.get($c, phobia);
   }
 
   .small {
@@ -179,78 +265,85 @@ $book: 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
   }
 
   .greentext {
-    color: #00ff00;
+    color: map.get($c, greentext);
     font-size: 100%;
   }
 
   .redtext {
-    color: #ff0000;
+    color: map.get($c, redtext);
     font-size: 100%;
   }
 
   // Ratwood's own classes.
   .yellow {
-    color: #c0ad58;
+    color: map.get($c, yellow);
   }
 
   .crit {
-    color: #c71d76;
+    color: map.get($c, crit);
   }
 
   .taunt {
-    color: #e78718;
+    color: map.get($c, taunt);
   }
 
   .biginfo {
-    color: #a9a5b6;
+    color: map.get($c, info);
   }
 
   .smallgreen {
-    color: #80b077;
+    color: map.get($c, green);
     font-size: 75%;
   }
 
   .boldgreen {
-    color: #80b077;
+    color: map.get($c, green);
     font-weight: bold;
   }
 
   .smallred {
-    color: #b84d47;
+    color: map.get($c, red);
     font-size: 75%;
   }
 
   .boldred {
-    color: #b84d47;
+    color: map.get($c, red);
     font-weight: bold;
   }
 
   .dead {
-    color: #b280df;
+    color: map.get($c, dead);
   }
 
+  // Wounds by kind (combat/chat.dm).
   .bloody {
-    color: #cc0f0f;
+    color: map.get($c, bloody);
   }
 
   .artery {
-    color: #9b5455;
+    color: map.get($c, artery);
   }
 
   .infection {
-    color: #77c72b;
+    color: map.get($c, infection);
   }
 
   .necrosis {
-    color: #558d20;
+    color: map.get($c, necrosis);
   }
 
   .bone {
-    color: #e3dac9;
+    color: map.get($c, bone);
+  }
+
+  // Armor that took a blow, and its state (Ratwood's VISMSG_ARMOR_BLOCKED, combat/armor.dm).
+  .armoralert {
+    color: map.get($c, armoralert);
+    font-size: 75%;
   }
 
   .torture {
-    color: #42ff20;
+    color: map.get($c, torture);
   }
 
   .smallyell {
@@ -258,8 +351,29 @@ $book: 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
   }
 
   .pulsedeath {
-    color: #dd0000;
-    animation: rogue-deathcolor 1500ms infinite;
+    color: map.get($c, pulsedeath);
+    animation: map.get($c, pulse) 1500ms infinite;
+  }
+}
+
+:root:not(.theme-light) {
+  @include ratwood-chat($dark);
+
+  body {
+    text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+  }
+}
+
+// html puts these over TG's own light rules (.theme-light:root ...) whatever order the stylesheets load in.
+html:root.theme-light {
+  @include ratwood-chat($light);
+
+  body {
+    background: map.get($light, backing);
   }
 }
 
@@ -273,5 +387,19 @@ $book: 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
   25%,
   75% {
     color: #ff0000;
+  }
+}
+
+// On parchment the pulse darkens instead of flaring.
+@keyframes rogue-deathcolor-light {
+  0%,
+  50%,
+  100% {
+    color: #d10000;
+  }
+
+  25%,
+  75% {
+    color: #8e0a0a;
   }
 }

@@ -19,5 +19,14 @@ GLOBAL_LIST(rogue_trait_sheet)
 				continue
 			var/split_at = findtext(pair[2], " | ")
 			if(split_at)
-				GLOB.rogue_trait_sheet[key_text] = list(copytext(pair[2], 1, split_at), copytext(pair[2], split_at + 3))
+				GLOB.rogue_trait_sheet[key_text] = list(copytext(pair[2], 1, split_at), rogue_trait_span(key_text, copytext(pair[2], split_at + 3)))
 	return GLOB.rogue_trait_sheet[key]
+
+/// The Russian description in the span the English one is written in (rockhill/ported/_traits.dm: span_info,
+/// span_warning, span_greentext...), so "My traits" colours a trait alike in both languages.
+/proc/rogue_trait_span(trait, text)
+	var/english = GLOB.rogue_trait_descriptions[trait]
+	var/static/regex/opening = regex(@"^<span class='([^']+)'>")
+	if(!istext(english) || !opening.Find(english))
+		return text
+	return "<span class='[opening.group[1]]'>[text]</span>"

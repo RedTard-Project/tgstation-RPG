@@ -590,3 +590,147 @@
 ^I (?:craft|carve|sculpt|smooth|twist|braid|weave|sew|tie|tied|tie together|untie|string together|re-string|arranged|render|char|blend|mix|mixes together|roll|dry|pick apart|transmute) (an? .+?)!$ = Я делаю $1|acc!
 ^(.+?) (?:constructs|builds|puts together|assembles|sets up|engineers|hammers out|forges) (an? .+?)!$ = $1|nom сооружает $2|acc!
 ^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:crafts|crafted|carves|sculpts|smooths|twists|braids|weaves|sews|ties|tie|ties together|unties|strings together|re-strings|arranges|renders|chars|blends|mixes|mixes together|rolls|dries|picks apart) (an? (?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)!$ = $1|nom делает $2|acc!
+
+# === Строки первой волны агентов: производство, быт, библиотека, одежда ===
+# (вторая волна, 2026-10-27). Шаблоны с общими оборотами ("is full", "is empty",
+# "fills ... with", "pours ... into", "tears") записаны с длинными захватами из
+# шапки этого файла: с простым (.+?) они ловили строки ТГ.
+
+# --- одежда: «It has …» при осмотре (clothing/slots.dm). Строка приходит нодами
+# "It has " <img> " " <em>имя</em> " on its back." Фрагмент "It has" не годится:
+# та же нода "It has" стоит в 91 строке ТГ (гидропоника, заряды, патроны), и они
+# выходят наполовину русскими. Частный шаблон ловит строку целиком, но
+# translateRun() в translate.ts сейчас сдаётся на элементе без текста (<img>),
+# поэтому шаблоны ниже заработают, когда движок начнёт брать такой элемент
+# слотом. Сейчас они ловят только строку без значка.
+^It has (.+?) on its back\.$ = У него $1 на спине.
+^It has (.+?) on its wrists\.$ = У него $1 на запястьях.
+^It has (.+?) in its mouth\.$ = У него $1 во рту.
+
+# --- одежда (clothing/sleeve_status.dm) ---
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) tries to tear ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = $1|nom пытается порвать $2|acc.
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) tears ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = $1|nom рвёт $2|acc.
+
+# --- производство: стол артифика (crafting/artificer.dm) ---
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) adds ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = $1|nom добавляет $2|acc.
+^There is nothing I know to make from (.+?)\.$ = Я не знаю, что можно сделать из $1|gen.
+# "creates a strange circle" — строка ТГ (cult_ritual_item.dm).
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) creates (?!a strange circle\.$)((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = $1|nom мастерит $2|acc.
+^It is being made into (.+?)\.$ = Здесь сейчас делается: $1|nom.
+
+# --- производство: литьё (crafting/casting.dm) ---
+^There is already something on ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = На $1|pre уже что-то стоит.
+^(.+?) places an ingot into the crucible\.$ = $1|nom кладёт слиток в тигель.
+^The crucible overflows! An extra (.+?) falls to the ground\.$ = Тигель переполняется! Лишнее падает на землю: $1|nom.
+^(.+?) attaches the sprue and funnel to the mold\.$ = $1|nom приделывает к форме литник с воронкой.
+^(.+?) begins pouring molten metal into the mold\.$ = $1|nom начинает лить расплавленный металл в форму.
+^(.+?) pours the molten metal into the mold\. It will need time to cool and solidify\.$ = $1|nom заливает расплавленный металл в форму. Ему нужно время, чтобы остыть и затвердеть.
+^(.+?) removes the sprue and funnel from the mold\.$ = $1|nom снимает с формы литник с воронкой.
+^It's (\d+)% heated\.$ = Нагрето на $1%.
+
+# --- производство: красильня (crafting/dyeing.dm) ---
+^(.+?) cannot be dyed!$ = Покрасить $1|acc нельзя!
+# Тот же оборот у Вайблина ("$1 прилип"): здесь — с падежом и без рода; строку
+# ТГ "What the... X is stuck" жёсткий захват оставляет шаблону Вайблина.
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) is stuck to your hand!$ = От моей руки не отлипает $1|nom!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) inserts ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) into (.+?)'s receptable\.$ = $1|nom кладёт $2|acc в приёмник $3|gen.
+^(.+?) soaks in it\.$ = Внутри мокнет $1|nom.
+
+# --- производство: полировка (crafting/polishing.dm) ---
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) washes ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = $1|nom промывает $2|acc в $3|pre.
+# Подлежащие из списка — надписи ТГ, а не вещи (disposal, hydroponics, toilet и др.).
+^(?!(?:The dock|The cistern|- grounds cartridge|The tray|Song|The destination tagger mount) is empty\.$)((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) is empty\.$ = В $1|pre пусто.
+^I don't know how to care for (.+?)\.$ = Я не знаю, как ухаживать за $1|ins.
+^(.+?) is already being polished\.$ = Уже идёт полировка: $1|nom.
+^I start applying some compound to (.+?)\.\.\.$ = Я начинаю наносить полировальный крем на $1|acc...
+^I start roughly scrubbing the compound on (.+?)\.\.\.$ = Я начинаю с силой втирать крем в $1|acc...
+^I start gently scrubbing the edges of (.+?)\.\.\.$ = Я начинаю бережно натирать края $1|gen...
+
+# --- производство: гончарный круг (crafting/pottery.dm). "I need X pottery skill
+# for this." берёт общий шаблон "I need (.+?) for this" выше; ступени гончарства —
+# существительными в module_nouns.txt.
+^I place (.+?) on the wheel\.$ = Я кладу $1|acc на круг.
+^I take (.+?) off the wheel\.$ = Я снимаю $1|acc с круга.
+^I spin the wheel and shape (.+?) \((\d+)/(\d+)\)\.\.\.$ = Я кручу круг и леплю $1|acc ($2/$3)...
+^The clay needs more water before I can continue \((\d+)/(\d+)\)\.$ = Прежде чем продолжить, глину надо смочить ($1/$2).
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) loses control of the clay on the wheel - it collapses!$ = $1|nom не удерживает глину на круге — она оседает!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) shapes ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) into ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = $1|nom лепит из $2|gen $3|acc.
+^I shape ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) into ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = Я леплю из $1|gen $2|acc.
+^(.+?) sits on the wheel\.$ = На круге лежит $1|nom.
+^It is being shaped into (.+?)\.$ = На круге сейчас лепится: $1|nom.
+
+# --- производство: рецепты Ратвуда с глаголами make и grow (crafting/rogue_recipes.dm).
+# Имена рецептов перечислены: "makes a <звук>!" — частая строка ТГ (боты, машины).
+^I make (an? (?:wooden bin|wooden barrel|dye station|sand pot \(fancy\)|sand pot|small clay pot))!$ = Я делаю $1|acc!
+^I grow (an? (?:cold |purple |red |yellow )?grass)!$ = Я выращиваю $1|acc!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) makes (an? (?:wooden bin|wooden barrel|dye station|sand pot \(fancy\)|sand pot|small clay pot))!$ = $1|nom делает $2|acc!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) grows (an? (?:cold |purple |red |yellow )?grass)!$ = $1|nom выращивает $2|acc!
+^(.+?) unlocked the tech node (.+?)\.$ = $1 открывает техно-узел $2.
+
+# --- библиотека: админка и архив (library/admin.dm, archive.dm) ---
+^(.+?) has deleted the player made book '(.+)'\.$ = $1 удаляет книгу игроков «$2».
+^(.+?) is already barred from adding books\.$ = $1 и так не может добавлять книги.
+^(.+?) could not be barred\.$ = $1: запретить не удалось.
+^(.+?) has barred (.+?) from adding books to the archive\.$ = $1 запрещает $2 добавлять книги в архив.
+^(.+?) could not be let back\.$ = $1: снять запрет не удалось.
+^(.+?) has let (.+?) add books to the archive again\.$ = $1 снова разрешает $2 добавлять книги в архив.
+^(.+?) has amended the player made book '(.+?)': title is now '(.*)'\.$ = $1 меняет название книги игроков «$2» на «$3».
+^(.+?) has amended the player made book '(.+?)': author is now '(.*)'\.$ = $1 меняет автора книги игроков «$2» на «$3».
+^(.+?) has amended the player made book '(.+?)': cover is now '(.*)'\.$ = $1 меняет обложку книги игроков «$2» на «$3».
+^(.+?) has amended the player made book '(.+?)': category is now '(.*)'\.$ = $1 переносит книгу игроков «$2» в раздел «$3».
+^(.+?) has amended the player made book '(.+?)': (.+?) is now '(.*)'\.$ = $1 правит книгу игроков «$2»: $3 — теперь «$4».
+^Book archive: unable to save (.+?)\.$ = Архив книг: не удалось сохранить $1.
+^Book archive: unable to delete (.+?)\.$ = Архив книг: не удалось удалить $1.
+^Book (.+?) has been saved to the player book archive by (.+?)\.$ = $2 сохраняет книгу $1 в архив книг игроков.
+
+# --- библиотека: печатный станок, рукописи (library/press.dm, writing.dm) ---
+^(.+?) is currently printing\. Please wait\.$ = Сейчас печатает $1|nom. Подожди.
+^The paper needs to be blank to be put into (.+?)\.$ = В $1|acc кладут только чистую бумагу.
+^It already has ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) loaded\.$ = Внутри уже заложено: $1|nom.
+^(?!.* while )You can't insert ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) into ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = Нельзя положить $1|acc в $2|acc.
+^You insert the blank (.+?) into (.+?)\.$ = Я закладываю $1|acc в $2|acc.
+^There is a finished product in (.+?)\. Use an empty hand to retrieve it\.$ = В $1|pre лежит готовый оттиск. Забери его пустой рукой.
+^(.+?) requires a blank piece of paper to print\.$ = Для печати $1|dat нужен чистый лист бумаги.
+^(.+?) is still recalibrating\.$ = Ещё настраивается $1|nom.
+^(.+?) starts printing\.\.\.$ = Начинается печать...
+^(.+?) hums as it produces (.+?)\.$ = С гудением $1|nom выдаёт $2|acc.
+^(.+?) keeps no archive\.$ = У $1|gen нет архива.
+^It has (.+?) ready\. Use an empty hand to retrieve it\.$ = Готово: $1|nom. Забери пустой рукой.
+^It has a blank (.+?) loaded\.$ = Заложено: $1|nom, пока без текста.
+^The manuscript pile cannot surpass (.+?) pages!$ = В рукописи не может быть больше $1 листов!
+^Choose a nonempty title of at most (\d+) characters that does not begin with an underscore\.$ = Выбери название: не пустое, не длиннее $1 знаков, без подчёркивания в начале.
+^(.+?) has bound the player book: (.+)$ = $1 переплетает книгу игрока: $2
+^It has (\d+) pages\. Use paper to add more\. Finish the book with a book crafting kit, then choose its title, category and cover before archiving it\.$ = Листов: $1. Чтобы добавить ещё, приложи бумагу. Перед сдачей в архив доделай книгу книжным ремесленным набором, затем выбери название, раздел и обложку.
+
+# --- быт: запахи готовки (survival/appetite.dm); запахи — в module_nouns.txt ---
+^The unmistakable smell of (.+?) bombards your nostrils\.$ = В нос бьёт ни с чем не сравнимый запах $1|gen.
+^The smell of (.+?) fills the air\.$ = В воздухе разносится запах $1|gen.
+^The subtle smell of (.+?) tickles your nose\.\.\.$ = Нос щекочет лёгкий запах $1|gen...
+
+# --- быт: замес, фритюр, котелок (survival/food.dm, kneading.dm, stews.dm) ---
+^(.+?) is ready to be deep fried\.$ = Можно жарить во фритюре: $1|nom.
+^I need to put (.+?) on a table to work it\.$ = Сначала нужно положить $1|acc на стол.
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) melts ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the pot\.$ = $1|nom растапливает $2|acc в котелке.
+^I melt (.+?) in the pot\.$ = Я растапливаю $1|acc в котелке.
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) deep fries ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the pot\.$ = $1|nom жарит $2|acc во фритюре.
+^I deep fry (.+?) in the pot\.$ = Я жарю $1|acc во фритюре.
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) isn't boiling!$ = В $1|pre ещё не кипит!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) places ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) into the pot\.$ = $1|nom кладёт $2|acc в котелок.
+^I place (.+?) into the pot\.$ = Я кладу $1|acc в котелок.
+# "...ready to be <b>deep fried</b> into ...": глагол — слот строки, его переводит фрагмент "deep fried".
+^It is prepared and ready to be (.+?) into (.+?) in a pot of tallow\.$ = Это можно $1 в котелке с салом — выйдет $2|nom.
+
+# --- быт: сосуды (survival/vessels.dm) ---
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) is corked!$ = Горлышко $1|gen заткнуто пробкой!
+# Подлежащие из списка — надписи ТГ (dna_console, xenobio, mecha, plasmamen).
+^(?!(?:Disk storage|Advanced injector mutation storage|Slime storage|Unit|The inbuilt extinguisher) is full\.$)((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) is full\.$ = В $1|pre больше не поместится.
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) fills (?!(?:you|me|him|her|them|us|it)\b)((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) with ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = $1|nom наполняет $2|acc из $3|gen.
+^I fill ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) with ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = Я наполняю $1|acc из $2|gen.
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) pours ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) into ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = $1|nom переливает из $2|gen в $3|acc.
+^I pour ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) into ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = Я переливаю из $1|gen в $2|acc.
+^I break ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = Я разбиваю $1|acc в $2|acc.
+^I eat from ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = Я ем из $1|gen.
+^I carefully press the cork back into the mouth of (.+?)\.$ = Я аккуратно вдавливаю пробку обратно в горлышко $1|gen.
+^I thumb off the cork from (.+?)\.$ = Я сковыриваю пальцем пробку с $1|gen.
+^I fill ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) from ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = Я наполняю $1|acc из $2|gen.
+^A vessel could be filled with (.+?) here\.$ = Здесь можно набрать в сосуд $1|acc.

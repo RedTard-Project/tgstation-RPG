@@ -2944,3 +2944,30 @@
 /obj/structure/wooden_horse/iron = This tireless steed promises a less than pleasant journey, should you dare to ride it.
 /obj/structure/wooden_horse/mobile = An affordable means of transportation for all walks of life, though few wish to ride. Watching the galloping of unlucky riders is one of the favorite pastimes of local nobility.
 /obj/structure/wooden_horse/small = This tireless steed promises a less than pleasant journey, should you dare to ride it.
+
+# --- вещи первой волны (2026-10-27) ---
+/obj/item/blade = A cast blade waiting to be finished.
+/obj/item/blade/iron_plate = A cast plate waiting to be finished.
+/obj/item/blade/steel_plate = A cast plate waiting to be finished.
+/obj/item/book/rogue/naledi1 = By Jatholemew von Rittensquatter, Esq
+/obj/item/book/rogue/naledi2 = By Jatholemew von Rittensquatter, Esq
+/obj/item/book/rogue/naledi3 = By Jatholemew von Rittensquatter, Esq
+/obj/item/book/rogue/naledi4 = By Jatholemew von Rittensquatter, Esq
+/obj/item/manuscript = A 2 page written piece aspiring to one dae become a book.
+/obj/item/reagent_containers/food/snacks/rogue/flatdough = Flattened dough, bare for all to see. A sharp edge can prepare the lines for a sheet of crackerdough.
+/obj/item/reagent_containers/food/snacks/rogue/foodbase/chickentender = Tenderized meat, awaiting a coating of toastcrumbs and a hot oil bath.
+/obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw = To the oven with you!
+/obj/item/reagent_containers/food/snacks/rogue/foodbase/nitzel = Tenderized meat, awaiting a coating of toastcrumbs and a hot oil bath.
+/obj/item/reagent_containers/food/snacks/rogue/foodbase/piebottom = The foundation of the fantastical..
+/obj/item/reagent_containers/food/snacks/rogue/foodbase/schnitzel = Tenderized spider meat, awaiting a coating of toastcrumbs and a hot oil bath.
+/obj/item/reagent_containers/food/snacks/rogue/foodbase/squires_delight = A butter stick with an egg cracked over it. It awaits toastcrumbs and a hot oil bath.
+/obj/item/reagent_containers/food/snacks/rogue/foodbase/wienernitzel = Tenderized meat, awaiting a coating of toastcrumbs and a hot oil bath.
+/obj/item/reagent_containers/food/snacks/rogue/meat/chickentender = A deep-fried frybird, coated in toastcrumbs and ready to eat.
+/obj/item/reagent_containers/food/snacks/rogue/meat/nitzel = A deep-fried nitzel, coated in toastcrumbs and ready to eat.
+/obj/item/reagent_containers/food/snacks/rogue/meat/nitzel/schnitzel = A deep-fried schnitzel, coated in toastcrumbs and ready to eat.
+/obj/item/reagent_containers/food/snacks/rogue/meat/nitzel/wiener = A deep-fried wiener, coated in toastcrumbs and ready to eat.
+/obj/item/reagent_containers/food/snacks/rogue/pie/cooked/berry = A delicious, homemade pie made with wild berries. Still needs to be sliced.
+/obj/item/reagent_containers/food/snacks/rogue/pie/cooked/crab = A delicious, homemade pie made with the inside of a crustacean. Still needs to be sliced.
+/obj/item/reagent_containers/food/snacks/rogue/pie/cooked/meat/fish = A delicious, homemade pie made with fresh fish. Still needs to be sliced.
+/obj/item/reagent_containers/food/snacks/rogue/pie/cooked/pot = A delicious, homemade pie. Still needs to be sliced.
+/obj/item/reagent_containers/food/snacks/squiresdelight = A deep-fried butter stick. Beloved by squires, often stolen by knights.
