@@ -5,27 +5,29 @@ import { useBackend } from 'tgui/backend';
 
 import { ActionButton, Panel } from './components';
 import { FeatureList } from './features';
+import { useTr } from './strings';
 import type { SetupData } from './types';
 
 export function SettingsPage() {
   const { act, data } = useBackend<SetupData>();
+  const tr = useTr();
   const values = data.character_preferences.game_preferences ?? {};
   return (
     <>
       {data.settings.map((group) => (
-        <Panel key={group.title} title={group.title} icon="cog">
+        <Panel key={group.title} title={tr(group.title)} icon="cog">
           <FeatureList values={values} keys={group.keys} />
         </Panel>
       ))}
-      <Panel title="More" icon="sliders-h">
+      <Panel title={tr('More')} icon="sliders-h">
         <ActionButton
           icon="keyboard"
-          label="Keybindings"
+          label={tr('Keybindings')}
           onClick={() => act('open_tg', { page: 'keybindings' })}
         />
         <ActionButton
           icon="cogs"
-          label="All Game Preferences"
+          label={tr('All Game Preferences')}
           onClick={() => act('open_tg', { page: 'game' })}
         />
       </Panel>

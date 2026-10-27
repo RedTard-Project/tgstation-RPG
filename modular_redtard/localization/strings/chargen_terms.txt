@@ -1,0 +1,295 @@
+# Короткие замкнутые словари экрана создания персонажа: родные языки, формулировки
+# происхождения, возрастные категории и вычисляемые теги рас.
+#
+# Формат:  <английский термин> = <русский термин>
+#
+# Здесь ключ — английский текст, а не тип, в отличие от chargen.txt. Так
+# приходится делать потому, что DM отдаёт эти значения именно строками
+# (species.native_language, species.skin_tone_wording, possible_ages, вычисленные
+# теги), и типа за ними нет. Юнит-тест modular_chargen_terms сверяет каждый ключ
+# с тем, что игра реально порождает, и валит сборку, если ключ осиротел.
+#
+# Термины переведены по вики Сумеречной Оси:
+# https://wiki.twilight-fortress-axis.ru
+
+# --- Родные языки -------------------------------------------------------
+
+Celestial = Небесный
+Deepspeak = Глубинная речь
+Dwarfish = Дворфийский
+Elfish = Эльфийский
+Halfling = Гномий
+Imperial = Имперский
+Infernal = Инфернальный
+Orcish = Орочий
+Utterances = Возгласы
+Zalad = Заладский
+
+# --- Формулировки происхождения -----------------------------------------
+
+Ancestry = Происхождение
+Bloodline = Родословная
+Craft = Работа
+Heritage = Наследие
+Ore Attunement = Созвучие с рудой
+Parent House = Родительский дом
+Progenitor = Прародитель
+Scale Color = Цвет чешуи
+Spawn = Порождение
+
+# --- Возрастные категории -----------------------------------------------
+
+Youngling = Юнец
+Adult = Взрослый
+Middle-Aged = Средних лет
+Old = Старый
+Immortal = Бессмертный
+Any = Любой
+
+# --- Вычисляемые теги ---------------------------------------------------
+
+Discriminated = Дискриминируемая
+Exotic = Экзотическая
+Taur = Таур
+Locked = Заблокирована
+
+# --- Подсказки тегов ----------------------------------------------------
+# %TERM% подставляется уже переведённым термином из словарей выше.
+
+tag:Discriminated = Эту расу притесняют; начало раунда будет заметно тяжелее.
+tag:Exotic = В большинстве местных культур эта раса считается редкой или чужеземной.
+tag:Taur = Таврическое сложение; часть снаряжения и одежды сидит иначе.
+tag:Available = Доступна.
+tag:Language = Родной язык или культурная группа: %TERM%.
+tag:Ancestry = Эта раса использует «%TERM%» как выбор происхождения или цвета.
+tag:Age = Доступная возрастная категория: %TERM%.
+tag:Generic = Расовый тег «%TERM%».
+
+# --- Предупреждения о расе ----------------------------------------------
+# Выносятся из описания и показываются отдельной красной плашкой, если у расы
+# есть тег Discriminated. Уровень определяется по тексту английского оригинала.
+
+warn:Discriminated = ЭТО ДИСКРИМИНИРУЕМЫЙ ВИД. БУДЕТ ТЯЖЕЛЕЕ. ИГРАЕШЬ НА СВОЙ СТРАХ И РИСК.
+warn:Nobles = ЭТО ДИСКРИМИНИРУЕМЫЙ ВИД. БУДЕТ ТЯЖЕЛЕЕ. ДЛЯ ЗНАТИ — ТЕМ БОЛЕЕ. ИГРАЕШЬ НА СВОЙ СТРАХ И РИСК.
+warn:Extreme = ЭТО КРАЙНЕ ДИСКРИМИНИРУЕМЫЙ ВИД. БУДЕТ ТЯЖЕЛЕЕ. ДЛЯ ЗНАТИ — ТЕМ БОЛЕЕ. ИГРАЕШЬ НА СВОЙ СТРАХ И РИСК.
+warn:Challenge = ВНИМАНИЕ: ЭТО ЖЁСТКО ДИСКРИМИНИРУЕМЫЙ ВИД-ИСПЫТАНИЕ С ДЕЙСТВУЮЩИМИ ШТРАФАМИ. ТЫ БУДЕШЬ УМИРАТЬ, И ЧАСТО; ИГРАЕШЬ НА СВОЙ СТРАХ И РИСК!
+
+# Характеристики этой сборки (attributes/attribute.dm): имя и сокращение, как
+# у Вайблина в fragments.txt; Воля здесь вместо его Выносливости.
+Strength = Сила
+Perception = Восприятие
+Intelligence = Разум
+Constitution = Телосложение
+Willpower = Воля
+Speed = Ловкость
+Fortune = Удача
+STR = СИЛ
+PER = ВОС
+INT = РАЗ
+CON = ТЕЛ
+WIL = ВОЛ
+SPD = ЛОВ
+FOR = УДЧ
+
+# Происхождения рас Вайблина (get_skin_list): названия цветов кожи. У Вайблина
+# они не переведены; перевод этой сборки. Составные («sun - amber») переводятся
+# по частям и соединяются тире.
+Abrasion = Ссадина
+Abscess = Нарыв
+Abyssium = Абиссий
+Algae Borne = Из водорослей
+Amazonite = Амазонит
+Amber Murk = Янтарная муть
+Arctic = Арктика
+Arlenneth = Арленнет
+Ash = Пепел
+Asturias = Астурия
+Aurum = Аурум
+Basalt = Базальт
+Beach = Побережье
+Bogfoot = Болотоход
+Bogwater = Болотная вода
+Brass = Латунь
+Brimstone = Сера
+Bruised Violet = Фиолетовый синяк
+Castillian = Кастилия
+Cauterized = Прижжённый
+Cave = Пещера
+Cave-Attuned = Пещерный
+Cavern Grey = Пещерная серость
+Cerargyrite = Кераргирит
+City = Город
+Coastal = Прибрежье
+Continental = Материк
+Copper = Медь
+Coral = Коралл
+Crimson Land = Багровый край
+Crimson Lands = Багровые земли
+Crude = Сырец
+Cyanosis = Синюшность
+Deep Borne = Из глубин
+Deep Desert = Глубокая пустыня
+Deep Tide = Глубинный прилив
+Depth-Departed = Ушедший в глубь
+Desert = Пустыня
+Emberhide = Угольная шкура
+Exsanguinated = Обескровленный
+Flayer = Свежеватель
+Fungus-Stained = Тронутый грибком
+Gold = Золото
+Ice Cap = Ледник
+Icepack = Паковый лёд
+Iron = Железо
+Island = Остров
+Jarosite = Ярозит
+Jellyfish Borne = Из медуз
+Lapis = Лазурит
+Larimar = Ларимар
+Limestone = Известняк
+Malachite = Малахит
+Marble = Мрамор
+Mire = Трясина
+Moon = Луна
+Moonshade = Лунная тень
+Mountain = Гора
+Mountains = Горы
+Mushroom-Minded = Грибной разум
+Necrosis = Некроз
+Oasis = Оазис
+Oasis Shade = Тень оазиса
+Obsidian = Обсидиан
+Onyx = Оникс
+Parasite-Taineted = Порченный паразитами
+Pitch = Смола
+Platinum = Платина
+Pustule = Пустула
+Quicksand = Зыбучие пески
+Quicksilver = Ртуть
+Reef Borne = С рифов
+Rust = Ржавчина
+Rust Sludge = Ржавая жижа
+Sand Borne = Из песков
+Sandswept = Занесённый песком
+Scrap = Лом
+Sea = Море
+Shallow Borne = С отмелей
+Silt = Ил
+Silver = Серебро
+Smoke = Дым
+Soapstone = Мыльный камень
+Staph = Гнойник
+Steppe = Степь
+Stonepaw = Каменная лапа
+Subtropical = Субтропики
+Sun Stained = Опалённый солнцем
+Sundered = Расколотый
+Sunstreak = Солнечный блик
+Swamp = Болото
+Taiga = Тайга
+Temperate = Умеренный пояс
+Toxin = Яд
+Tropical Dry = Сухие тропики
+Tropical Wet = Влажные тропики
+Tundra = Тундра
+Urchin Borne = Из морских ежей
+Vaquero = Вакеро
+Volcanic = Вулканический край
+Waste = Пустошь
+Zanguine = Зангвин
+Zarconum = Зарконум
+Zarkana = Заркана
+Zinc = Цинк
+Zizo Descendant = Потомок Зизо
+Zizo-Cursed = Проклятый Зизо
+kelp Borne = Из ламинарии
+sun = солнце
+amber = янтарь
+bronze = бронза
+dawn = рассвет
+dusk = сумерки
+gilded = позолота
+morning = утро
+noon = полдень
+
+# Цвета волос рас Вайблина (get_hairc_list), по частям: «black - oil» =
+# «чёрный — дёготь».
+Abyss = бездна
+Clown = клоун
+Hydrothermal = гидротерма
+Inky = чернила
+Poison = яд
+Sea Foam = морская пена
+Slick = лоск
+Smog = смог
+Steam = пар
+abyss = бездна
+alabaster = алебастр
+arcane = магия
+bark = кора
+berry = ягода
+black = чёрный
+blond = светлый
+blood = кровь
+blue = синий
+brown = каштановый
+cardinal = кардинал
+cave = пещера
+cavedew = пещерная роса
+charcoal = уголь
+cockatoo = какаду
+demonic = демонический
+dirty = грязный
+drywheat = сухая пшеница
+egret = цапля
+falcon = сокол
+flame = пламя
+goldfinch = щегол
+grain = зерно
+grass = трава
+green = зелёный
+grey = серый
+hawk = ястреб
+ice = лёд
+impish = бесовской
+jay = сойка
+leaf = лист
+magpie = сорока
+maneater = людоед
+maroon = бордовый
+midnight = полночь
+minotaur = минотавр
+moss = мох
+mud = грязь
+oats = овёс
+oil = дёготь
+orange = рыжий
+oriole = иволга
+osprey = скопа
+owl = сова
+pale = бледный
+parakeet = попугай
+pink = розовый
+purple = пурпурный
+raven = ворон
+red = красный
+robin = малиновка
+rogue = плут
+rubescent = румяный
+rust = ржавчина
+silver = серебро
+skies = небеса
+snow = снег
+soil = почва
+sparrow = воробей
+spiderweb = паутина
+strawberry = клубника
+sunlight = солнечный свет
+sunset = закат
+swamp = болото
+swampgrass = болотная трава
+swan = лебедь
+volf = волк
+white = белый
+wine = вино
+withered = увядший
+yellow = жёлтый

@@ -260,13 +260,18 @@
 		var/mob/living/carbon/human/armored = target
 		var/datum/intent/intent = howner.rogue_strike_intent(weapon)
 		damage *= armored.rogue_armor_hit(def_zone, rogue_bclass_to_armor(blade_class), damage, intent ? intent.penfactor : ROGUE_PEN_NONE, rogue_wear_factor(weapon, intent), weapon, blade_class)
+	target.rogue_strike_notes = list()
 	var/damage_done = target.rogue_apply_armored_damage(damage, weapon ? weapon.damtype : BRUTE, def_zone, blocked, sharpness = rogue_bclass_sharpness(blade_class), attack_direction = get_dir(howner, target), attacking_item = weapon)
-	howner.visible_message(span_danger("<font color='#c2663c'>[name] strikes [target] in the [rogue_zone_name(zone)]![damage_done > 0 && full_pen ? " <b>It pierces through to their flesh!</b>" : ""]</font>"))
 	var/hit_sound = weapon ? weapon.hitsound : pick(GLOB.rogue_punch_hit_sounds)
 	if(damage_done > 0 && hit_sound)
 		playsound(target, hit_sound, 80, TRUE)
 	if(damage_done > 0)
 		target.rogue_try_crit(blade_class, damage_done, howner, zone)
+	if(damage_done > 0 && full_pen)
+		target.rogue_strike_notes.Insert(1, "<b>It pierces through to their flesh!</b>")
+	var/notes = length(target.rogue_strike_notes) ? " [jointext(target.rogue_strike_notes, " ")]" : ""
+	target.rogue_strike_notes = null
+	howner.visible_message(span_danger("<font color='#c2663c'>[name] strikes [target] in the [span_userdanger(rogue_zone_name(zone))]!</font>[notes]"))
 	target.rogue_pop_open()
 	log_combat(howner, target, "struck with the special [name]", weapon || "fists", "(DAMAGE: [damage_done])")
 	return damage_done

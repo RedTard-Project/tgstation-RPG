@@ -14,6 +14,15 @@ export type Perk = {
   description: string;
 };
 
+/** A named colour: one of a race's origins (skin) or hair colours (Vibelin's get_skin_list, get_hairc_list). */
+export type NamedColor = {
+  /** The origin's key, the value of the rogue_origin preference; for hair, its name. */
+  name: string;
+  /** The name in the player's language. */
+  label?: string;
+  color: string;
+};
+
 export type SpeciesEntry = {
   id: string;
   name: string;
@@ -32,6 +41,11 @@ export type SpeciesEntry = {
     negative: Perk[];
     neutral: Perk[];
   };
+  /** Vibelin's races: the skin colours to pick from, in place of a free colour. */
+  origins: NamedColor[];
+  /** What the race calls its origin ("Ancestry", "Progenitor"...). */
+  origin_wording: string | null;
+  hair_colors: NamedColor[];
 };
 
 export type JobClass = {
@@ -63,6 +77,44 @@ export type AgeBand = {
 export type SettingsGroup = {
   title: string;
   keys: string[];
+};
+
+export type PatronEntry = {
+  /** Type path, the value of the rogue_patron preference. */
+  id: string;
+  name: string;
+  desc: string;
+  domain: string | null;
+  worshippers: string | null;
+  flaws: string | null;
+  sins: string | null;
+  boons: string | null;
+  /** Species ids that may worship it; empty is anyone. */
+  races: string[];
+};
+
+export type FaithEntry = {
+  /** Type path, the value of the rogue_faith preference. */
+  id: string;
+  name: string;
+  desc: string;
+  godhead: string;
+  patrons: PatronEntry[];
+};
+
+export type CultureEntry = {
+  /** Type path, the value of the rogue_culture preference. */
+  id: string;
+  name: string;
+  desc: string;
+  /** Species ids it belongs to; empty is a culture anyone may have. */
+  races: string[];
+};
+
+/** Vibelin's faiths, patrons and cultures (modular_redtard/heritage), in the player's language. */
+export type HeritageCatalog = {
+  faiths: FaithEntry[];
+  cultures: CultureEntry[];
 };
 
 export type RoundPhase = 'pregame' | 'setting_up' | 'playing' | 'postgame';
@@ -108,8 +160,13 @@ export type SetupData = {
   pq_rank: string;
   pq_color: string | null;
   triumphs: number;
+  heritage: HeritageCatalog;
 
   // Dynamic: sent after each change.
+  /** The player's language (the rogue_ui_language preference). */
+  lang: 'ru' | 'en';
+  /** The character's species id as the heritage data knows it (a patron's or culture's races). */
+  heritage_species: string;
   active_slot: number;
   profiles: (string | null)[];
   character_preferences: PreferenceValues;

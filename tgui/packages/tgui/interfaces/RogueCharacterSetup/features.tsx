@@ -11,6 +11,7 @@ import {
   FeatureValueInput,
 } from '../PreferencesMenu/preferences/features/base';
 import type { ServerData } from '../PreferencesMenu/types';
+import { type Translate, useTr } from './strings';
 import type { SetupData } from './types';
 
 /** What TG's menu keeps in ServerPrefs besides the feature catalogs; nothing here reads it. */
@@ -39,10 +40,14 @@ export type MainFeatureCatalog = FeatureChoicedServerData & {
   supplemental_feature?: string;
 };
 
-/** The display name of a preference: TG's feature name, the catalog's, or its key. */
-export function featureName(key: string, catalog: Record<string, unknown>) {
+/** The display name of a preference: TG's feature name, the catalog's, or its key, in the player's language. */
+export function featureName(
+  key: string,
+  catalog: Record<string, unknown>,
+  tr: Translate,
+) {
   const entry = catalog[key] as MainFeatureCatalog | undefined;
-  return features[key]?.name ?? entry?.name ?? key;
+  return tr(features[key]?.name ?? entry?.name ?? key);
 }
 
 type FeatureRowProps = {
@@ -54,10 +59,11 @@ type FeatureRowProps = {
 export function FeatureRow(props: FeatureRowProps) {
   const { featureKey, value } = props;
   const { data } = useBackend<SetupData>();
+  const tr = useTr();
   const feature = features[featureKey];
   return (
     <LabeledList.Item
-      label={featureName(featureKey, data.features)}
+      label={featureName(featureKey, data.features, tr)}
       tooltip={feature?.description}
       verticalAlign="middle"
     >
@@ -106,15 +112,16 @@ type FeatureListProps = {
 export function FeatureList(props: FeatureListProps) {
   const { values } = props;
   const { data } = useBackend<SetupData>();
+  const tr = useTr();
   const keys = (props.keys ?? Object.keys(values))
     .filter((key) => key in values)
     .sort((left, right) =>
-      featureName(left, data.features).localeCompare(
-        featureName(right, data.features),
+      featureName(left, data.features, tr).localeCompare(
+        featureName(right, data.features, tr),
       ),
     );
   if (!keys.length) {
-    return <Box color="label">Nothing to set here.</Box>;
+    return <Box color="label">{tr('Nothing to set here.')}</Box>;
   }
   return (
     <LabeledList>

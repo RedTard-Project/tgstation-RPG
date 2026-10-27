@@ -10,6 +10,7 @@ import { features } from '../PreferencesMenu/preferences/features';
 import { FeatureValueInput } from '../PreferencesMenu/preferences/features/base';
 import { IconGrid, Panel } from './components';
 import { FeatureList, featureName, type MainFeatureCatalog } from './features';
+import { useTr } from './strings';
 import type { SetupData } from './types';
 
 const UNDERWEAR_TAB = '__underwear__';
@@ -43,6 +44,7 @@ function mainFeatures(
 
 export function AppearancePage() {
   const { data } = useBackend<SetupData>();
+  const tr = useTr();
   const prefs = data.character_preferences;
   const supplemental = prefs.supplemental_features ?? {};
   const clothing = mainFeatures(prefs.clothing ?? {}, data.features);
@@ -74,12 +76,12 @@ export function AppearancePage() {
   }
 
   const tabs = [
-    ...(clothing.length ? [{ key: UNDERWEAR_TAB, name: 'Underwear' }] : []),
+    ...(clothing.length ? [{ key: UNDERWEAR_TAB, name: tr('Underwear') }] : []),
     ...body.map((feature) => ({
       key: feature.key,
-      name: featureName(feature.key, data.features),
+      name: featureName(feature.key, data.features, tr),
     })),
-    { key: DETAILS_TAB, name: 'Details' },
+    { key: DETAILS_TAB, name: tr('Details') },
   ];
   const current = tabs.some((tab) => tab.key === activeTab)
     ? activeTab
@@ -104,7 +106,7 @@ export function AppearancePage() {
   }
 
   return (
-    <Panel title="Appearance" icon="palette">
+    <Panel title={tr('Appearance')} icon="palette">
       <Box style={{ display: 'flex', flexWrap: 'wrap' }} mb={1}>
         {tabs.map((tab) => (
           <Button
@@ -132,19 +134,20 @@ type FeatureEditorProps = {
 function FeatureEditor(props: FeatureEditorProps) {
   const { feature, supplemental } = props;
   const { data } = useBackend<SetupData>();
+  const tr = useTr();
   const colorKey = feature.catalog.supplemental_feature;
   const colorFeature = colorKey ? features[colorKey] : undefined;
 
   return (
     <Section
-      title={featureName(feature.key, data.features)}
+      title={featureName(feature.key, data.features, tr)}
       buttons={
         colorKey &&
         colorFeature &&
         colorKey in supplemental && (
           <Stack align="center">
             <Stack.Item>
-              <Box color="label">{colorFeature.name}</Box>
+              <Box color="label">{tr(colorFeature.name)}</Box>
             </Stack.Item>
             <Stack.Item>
               <FeatureValueInput
@@ -163,6 +166,7 @@ function FeatureEditor(props: FeatureEditorProps) {
         icons={feature.catalog.icons}
         names={feature.catalog.display_names}
         selected={feature.value}
+        searchText={tr('Search...')}
       />
     </Section>
   );

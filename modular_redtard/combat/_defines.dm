@@ -108,6 +108,12 @@
 #define ROGUE_CRIT_THROAT "throat"
 #define ROGUE_CRIT_HEART "heart"
 #define ROGUE_CRIT_SOURCE "rogue_crit"
+/// The wound_source of a wound a crit dealt: the chat tells it as a crit (combat/chat.dm).
+#define ROGUE_CRIT_WOUND_SOURCE "critical hit"
+/// Ratwood's crit colour in the chat (modular_redtard/tgui/rogue_panel/chat/ratwood.scss).
+#define span_crit(str) ("<span class='crit'>" + str + "</span>")
+/// Ratwood's note on a strike its armor stopped (VISMSG_ARMOR_BLOCKED), followed by the armor's state.
+#define ROGUE_ARMOR_BLOCKED_TEXT "<span class='armoralert'>Armor stops the damage.</span>"
 #define ROGUE_EXPOSED_DURATION rogue_value("exposed_duration")
 #define ROGUE_SLOW_TICK rogue_value("slow_tick")
 #define ROGUE_SLOW_FACTOR rogue_value("slow_factor")

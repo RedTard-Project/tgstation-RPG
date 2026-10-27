@@ -71,10 +71,12 @@
 	. = ..()
 	rogue_update_race_sheet()
 
-/// Swaps the race's stat bonuses for the current species'; before the attributes exist (species set early in
-/// Initialize) it waits for them. Ratwood's NPCs go without: their outfits set the stats outright (H.STASTR = 16).
+/// Swaps the race's stat bonuses for the current species' (a woman's sheet, if the race has one); before the attributes
+/// exist (species set early in Initialize) it waits for them. Ratwood's NPCs go without: their outfits set the stats
+/// outright (H.STASTR = 16).
 /mob/living/carbon/human/proc/rogue_update_race_sheet()
-	var/wanted = rogue_npc ? null : dna?.species?.rogue_race_sheet
+	var/datum/species/species = dna?.species
+	var/wanted = rogue_npc ? null : ((gender == FEMALE && species?.rogue_race_sheet_female) || species?.rogue_race_sheet)
 	if(wanted == rogue_race_sheet || !istype(attributes, /datum/attribute_holder))
 		return
 	if(rogue_race_sheet)
@@ -296,17 +298,38 @@ GLOBAL_LIST_INIT(rogue_offset_parts, list(
 	offset_location = UPPER_BODY
 	/// Takes the colour of the skin under it, as Ratwood's ears do (KEY_SKIN_COLOR).
 	var/skin_coloured = FALSE
+	/// Takes the owner's hair colour (Vibelin's KEY_HAIR_COLOR: a harpy's feathers).
+	var/rogue_hair_coloured = FALSE
 	/// Worn flags that hide it.
 	var/hidden_by = HIDEEARS
+	/// Sideways shift of the sprite: Vibelin's 64-pixel-wide wings sit centred on the body.
+	var/rogue_pixel_x = 0
 
 /datum/bodypart_overlay/simple/rogue_feature/get_image(obj/item/bodypart/limb, layer_index, layer_real)
 	. = ..()
+	var/mutable_appearance/appearance = .
+	appearance.pixel_x += rogue_pixel_x
 	var/obj/item/bodypart/head/head = limb
 	if(istype(head))
 		head.worn_face_offset?.apply_offset(.)
 
 /datum/bodypart_overlay/simple/rogue_feature/color_image(image/overlay, obj/item/bodypart/limb, layer_index)
-	overlay.color = skin_coloured ? limb.draw_color : draw_color
+	if(skin_coloured)
+		overlay.color = limb.draw_color
+	else if(rogue_hair_coloured)
+		overlay.color = rogue_hair_colour(limb)
+	else
+		overlay.color = draw_color
+
+/// The limb's icon is cached by this key, so a hair-coloured feature redraws when the hair colour changes.
+/datum/bodypart_overlay/simple/rogue_feature/icon_render_key(obj/item/bodypart/limb)
+	. = ..()
+	if(rogue_hair_coloured)
+		. += "-[rogue_hair_colour(limb)]"
+
+/datum/bodypart_overlay/simple/rogue_feature/proc/rogue_hair_colour(obj/item/bodypart/limb)
+	var/mob/living/carbon/human/owner = limb?.owner
+	return istype(owner) ? owner.hair_color : null
 
 /datum/bodypart_overlay/simple/rogue_feature/can_draw_on_bodypart(obj/item/bodypart/bodypart_owner, mob/living/carbon/owner)
 	. = ..()

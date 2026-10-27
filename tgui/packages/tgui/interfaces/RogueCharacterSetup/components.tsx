@@ -21,6 +21,7 @@ import {
 } from 'tgui-core/components';
 import { classes } from 'tgui-core/react';
 
+import { useTr } from './strings';
 import type { StatChip } from './types';
 
 export const display = (value: unknown, fallback = 'None') => {
@@ -149,8 +150,9 @@ export function FieldBlock(props: FieldBlockProps) {
 /** Stat modifiers as coloured chips (Vibelin's species stat modifiers). */
 export function StatChips(props: { stats: StatChip[]; empty?: string }) {
   const { stats, empty } = props;
+  const tr = useTr();
   if (!stats.length) {
-    return <Box color="label">{empty ?? 'No stat modifiers.'}</Box>;
+    return <Box color="label">{empty ?? tr('No stat modifiers.')}</Box>;
   }
   return (
     <Box style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
@@ -177,6 +179,8 @@ type IconGridProps = {
   /** Value -> display name, when TG gives one. */
   names?: Record<string, string>;
   selected: string;
+  /** The search box's placeholder, in the player's language. */
+  searchText: string;
 };
 
 const ICON_GRID_SEARCH_FROM = 12;
@@ -187,7 +191,7 @@ const ICON_GRID_SEARCH_FROM = 12;
  * skipped when an update changes something else.
  */
 export const IconGrid = memo(function IconGrid(props: IconGridProps) {
-  const { featureKey, icons, names, selected } = props;
+  const { featureKey, icons, names, selected, searchText } = props;
   const [search, setSearch] = useState('');
   const entries = useMemo(() => Object.entries(icons), [icons]);
   const needle = search.trim().toLowerCase();
@@ -203,7 +207,7 @@ export const IconGrid = memo(function IconGrid(props: IconGridProps) {
         <Input
           fluid
           mb={0.5}
-          placeholder="Search..."
+          placeholder={searchText}
           value={search}
           onChange={setSearch}
         />
@@ -265,6 +269,7 @@ export const IconGrid = memo(function IconGrid(props: IconGridProps) {
  */
 export function Countdown(props: { seconds: number }) {
   const { seconds } = props;
+  const tr = useTr();
   const [start, setStart] = useState(() => ({ seconds, at: Date.now() }));
   if (start.seconds !== seconds) {
     setStart({ seconds, at: Date.now() });
@@ -276,7 +281,7 @@ export function Countdown(props: { seconds: number }) {
   }, []);
 
   if (seconds < 0) {
-    return <>DELAYED</>;
+    return <>{tr('DELAYED')}</>;
   }
   const left = Math.max(
     0,

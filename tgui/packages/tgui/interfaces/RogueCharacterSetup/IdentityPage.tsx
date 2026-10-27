@@ -1,5 +1,5 @@
-// Vibelin's Identity page: name, body, age and standing, then the species or ancestry picker. Vibelin's faiths and
-// patrons, pronouns, dominant hand, quirks and name declensions have no system here.
+// Vibelin's Identity page: name, body, age and standing, then the species, faith, ancestry or culture picker. Vibelin's
+// pronouns, dominant hand and quirks have no system here; the name declensions are on the profile page.
 import { useState } from 'react';
 import { useBackend } from 'tgui/backend';
 import {
@@ -25,7 +25,11 @@ import {
   StatChips,
   swatchColor,
 } from './components';
+import { CulturePicker, FaithPicker, useHeritage } from './heritage';
+import { useTr } from './strings';
 import type { AgeBand, SetupData, SpeciesEntry } from './types';
+
+type PickerMode = 'species' | 'faith' | 'ancestry' | 'culture';
 
 export function ageBand(bands: AgeBand[], age: number): AgeBand | undefined {
   let found: AgeBand | undefined;
@@ -39,6 +43,8 @@ export function ageBand(bands: AgeBand[], age: number): AgeBand | undefined {
 
 export function IdentityPage() {
   const { act, data } = useBackend<SetupData>();
+  const tr = useTr();
+  const heritage = useHeritage();
   const prefs = data.character_preferences;
   const name = String(prefs.names?.real_name ?? '');
   const gender = String(prefs.misc?.gender ?? Gender.Male) as Gender;
@@ -46,7 +52,18 @@ export function IdentityPage() {
   const species = data.species.find((entry) => entry.id === speciesId);
   const age = Number(prefs.non_contextual?.age ?? data.ages.min);
   const band = ageBand(data.ages.bands, age);
-  const [mode, setMode] = useState<'species' | 'ancestry'>('species');
+  const [mode, setMode] = useState<PickerMode>('species');
+  const modes: { id: PickerMode; label: string; icon: string }[] = [
+    { id: 'species', label: tr('Species'), icon: 'users' },
+    ...(heritage.shown
+      ? [{ id: 'faith' as const, label: tr('Faith'), icon: 'asterisk' }]
+      : []),
+    { id: 'ancestry', label: tr('Ancestry'), icon: 'leaf' },
+    ...(heritage.shown
+      ? [{ id: 'culture' as const, label: tr('Culture'), icon: 'landmark' }]
+      : []),
+  ];
+  const shownMode = modes.some((entry) => entry.id === mode) ? mode : 'species';
 
   const setName = (value: string) => {
     if (value.trim() && value !== name) {
@@ -58,8 +75,8 @@ export function IdentityPage() {
     <>
       <Stack>
         <Stack.Item grow basis={0}>
-          <Panel title="Identity" icon="id-card">
-            <FieldBlock label="Name">
+          <Panel title={tr('Identity')} icon="id-card">
+            <FieldBlock label={tr('Name')}>
               <Stack>
                 <Stack.Item grow>
                   <Input
@@ -72,14 +89,14 @@ export function IdentityPage() {
                 <Stack.Item>
                   <Button
                     icon="dice"
-                    tooltip="Random name"
+                    tooltip={tr('Random name')}
                     onClick={() => act('randomize_name')}
                   />
                 </Stack.Item>
               </Stack>
             </FieldBlock>
             {(!species || !!species.sexes) && (
-              <FieldBlock label="Body Type">
+              <FieldBlock label={tr('Body Type')}>
                 {[Gender.Male, Gender.Female, Gender.Other, Gender.Other2].map(
                   (option) => (
                     <Button
@@ -100,18 +117,21 @@ export function IdentityPage() {
                 )}
               </FieldBlock>
             )}
-            <FieldBlock label="Age">
+            <FieldBlock label={tr('Age')}>
               <Tooltip
                 content={
                   band
-                    ? `${band.name} from ${band.from}: ${
+                    ? tr(
+                        '{0} from {1}: {2}',
+                        band.name,
+                        band.from,
                         band.stats
                           .map(
                             (stat) =>
                               `${stat.label} ${stat.value > 0 ? '+' : ''}${stat.value}`,
                           )
-                          .join(', ') || 'no stat modifiers'
-                      }`
+                          .join(', ') || tr('no stat modifiers'),
+                      )
                     : ''
                 }
                 position="bottom"
@@ -136,47 +156,64 @@ export function IdentityPage() {
               </Tooltip>
             </FieldBlock>
             <Box>
-              <Button
-                compact
-                icon="users"
-                selected={mode === 'species'}
-                onClick={() => setMode('species')}
-              >
-                Species
-              </Button>
-              <Button
-                compact
-                icon="leaf"
-                selected={mode === 'ancestry'}
-                onClick={() => setMode('ancestry')}
-              >
-                Ancestry
-              </Button>
+              {modes.map((entry) => (
+                <Button
+                  key={entry.id}
+                  compact
+                  icon={entry.icon}
+                  selected={shownMode === entry.id}
+                  onClick={() => setMode(entry.id)}
+                >
+                  {entry.label}
+                </Button>
+              ))}
             </Box>
           </Panel>
         </Stack.Item>
         <Stack.Item grow basis={0}>
-          <Panel title="Standing" icon="sun">
+          <Panel title={tr('Standing')} icon="sun">
             <InfoRow
               icon="award"
-              label="Player Quality"
+              label={tr('Player Quality')}
               value={`${data.pq_rank} (${data.pq})`}
               valueColor={data.pq_color || undefined}
             />
-            <InfoRow icon="trophy" label="Triumphs" value={data.triumphs} />
+            <InfoRow
+              icon="trophy"
+              label={tr('Triumphs')}
+              value={data.triumphs}
+            />
+            {heritage.shown && (
+              <>
+                <InfoRow
+                  icon="asterisk"
+                  label={tr('Faith')}
+                  value={display(heritage.faith?.name, tr('None'))}
+                />
+                <InfoRow
+                  icon="sun"
+                  label={tr('Patron')}
+                  value={display(heritage.patron?.name, tr('None'))}
+                />
+                <InfoRow
+                  icon="landmark"
+                  label={tr('Culture')}
+                  value={display(heritage.culture?.name, tr('None'))}
+                />
+              </>
+            )}
             {!!band && (
-              <FieldBlock label={`Age: ${band.name}`}>
-                <StatChips stats={band.stats} empty="No age modifiers." />
+              <FieldBlock label={tr('Age: {0}', band.name)}>
+                <StatChips stats={band.stats} empty={tr('No age modifiers.')} />
               </FieldBlock>
             )}
           </Panel>
         </Stack.Item>
       </Stack>
-      {mode === 'species' ? (
-        <SpeciesPicker currentId={speciesId} />
-      ) : (
-        <AncestryPicker species={species} />
-      )}
+      {shownMode === 'species' && <SpeciesPicker currentId={speciesId} />}
+      {shownMode === 'faith' && <FaithPicker />}
+      {shownMode === 'ancestry' && <AncestryPicker species={species} />}
+      {shownMode === 'culture' && <CulturePicker />}
     </>
   );
 }
@@ -187,6 +224,7 @@ type SpeciesFilter = 'all' | 'medieval' | 'other';
 function SpeciesPicker(props: { currentId: string }) {
   const { currentId } = props;
   const { act, data } = useBackend<SetupData>();
+  const tr = useTr();
   const [search, setSearch] = useState('');
   const [filter, setFilter] = useState<SpeciesFilter>('all');
   const [inspectedId, setInspectedId] = useState<string | null>(null);
@@ -208,12 +246,12 @@ function SpeciesPicker(props: { currentId: string }) {
     data.species[0];
 
   return (
-    <Panel title="Choose Species" icon="users">
+    <Panel title={tr('Choose Species')} icon="users">
       <Stack>
         <Stack.Item basis="230px">
           <Input
             fluid
-            placeholder="Search species..."
+            placeholder={tr('Search species...')}
             value={search}
             onChange={setSearch}
           />
@@ -223,22 +261,22 @@ function SpeciesPicker(props: { currentId: string }) {
               selected={filter === 'all'}
               onClick={() => setFilter('all')}
             >
-              All
+              {tr('All')}
             </Button>
             <Button
               icon="chess-rook"
               selected={filter === 'medieval'}
-              tooltip="Ratwood's races"
+              tooltip={tr("Ratwood's races")}
               onClick={() => setFilter('medieval')}
             >
-              Medieval
+              {tr('Medieval')}
             </Button>
             <Button
               icon="globe"
               selected={filter === 'other'}
               onClick={() => setFilter('other')}
             >
-              Other
+              {tr('Other')}
             </Button>
           </Box>
           <Box style={{ maxHeight: '360px', overflowY: 'auto' }}>
@@ -273,7 +311,8 @@ function SpeciesPicker(props: { currentId: string }) {
                             (stat) =>
                               `${stat.label} ${stat.value > 0 ? '+' : ''}${stat.value}`,
                           )
-                          .join(' / ') || (entry.medieval ? 'Medieval' : '')}
+                          .join(' / ') ||
+                          (entry.medieval ? tr('Medieval') : '')}
                       </Box>
                     </Stack.Item>
                   </Stack>
@@ -281,7 +320,7 @@ function SpeciesPicker(props: { currentId: string }) {
               ))
             ) : (
               <Box color="label" py={2} textAlign="center">
-                No species match.
+                {tr('No species match.')}
               </Box>
             )}
           </Box>
@@ -299,7 +338,7 @@ function SpeciesPicker(props: { currentId: string }) {
               }
             />
           ) : (
-            <Box color="label">No species available.</Box>
+            <Box color="label">{tr('No species available.')}</Box>
           )}
         </Stack.Item>
       </Stack>
@@ -321,6 +360,7 @@ const PERK_COLORS = {
 
 function SpeciesDetails(props: SpeciesDetailsProps) {
   const { species, current, onApply } = props;
+  const tr = useTr();
   return (
     <Section
       fill
@@ -329,7 +369,7 @@ function SpeciesDetails(props: SpeciesDetailsProps) {
           <Stack.Item>{species.name}</Stack.Item>
           {current && (
             <Stack.Item>
-              <Box color="good">Current</Box>
+              <Box color="good">{tr('Current')}</Box>
             </Stack.Item>
           )}
         </Stack>
@@ -341,7 +381,7 @@ function SpeciesDetails(props: SpeciesDetailsProps) {
           disabled={current}
           onClick={onApply}
         >
-          {current ? 'Current Species' : 'Apply Species'}
+          {current ? tr('Current Species') : tr('Apply Species')}
         </Button>
       }
     >
@@ -360,14 +400,14 @@ function SpeciesDetails(props: SpeciesDetailsProps) {
               whiteSpace: 'pre-line',
             }}
           >
-            {display(species.desc, 'No description.')}
+            {display(species.desc, tr('No description.'))}
           </Box>
         </Stack.Item>
       </Stack>
-      <FieldBlock label="Stat modifiers">
-        <StatChips stats={species.stats} />
+      <FieldBlock label={tr('Stat modifiers')}>
+        <StatChips stats={species.stats} empty={tr('No stat modifiers.')} />
       </FieldBlock>
-      <FieldBlock label="Traits">
+      <FieldBlock label={tr('Traits')}>
         <Box style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
           {(['positive', 'neutral', 'negative'] as const).flatMap((kind) =>
             (species.perks[kind] ?? []).map((perk) => (
@@ -385,7 +425,7 @@ function SpeciesDetails(props: SpeciesDetailsProps) {
         </Box>
       </FieldBlock>
       {!!species.lore?.length && (
-        <FieldBlock label="Lore">
+        <FieldBlock label={tr('Lore')}>
           <Box style={{ maxHeight: '160px', overflowY: 'auto' }}>
             {species.lore.map((paragraph, index) => (
               <Box key={index} mb={0.5}>
@@ -406,62 +446,86 @@ type ToneCatalog = {
 };
 
 /**
- * Vibelin's ancestry picker on what TG has: the skin tones of a species that uses them, as swatches, and the body
- * colour of one with mutant colours.
+ * Vibelin's ancestry picker: the origins of one of Vibelin's races (its named skin colours, rogue_origin) and its hair
+ * colours; for the other races what TG has, the skin tones of a species that uses them and the body colour of one with
+ * mutant colours.
  */
 function AncestryPicker(props: { species?: SpeciesEntry }) {
   const { species } = props;
   const { act, data } = useBackend<SetupData>();
-  const secondary = data.character_preferences.secondary_features ?? {};
+  const tr = useTr();
+  const prefs = data.character_preferences;
+  const secondary = prefs.secondary_features ?? {};
   const tones = data.features.skin_tone as ToneCatalog | undefined;
+  const origins = species?.origins ?? [];
+  const hasOrigins =
+    origins.length > 0 && 'rogue_origin' in (prefs.non_contextual ?? {});
+  const origin = origins.some(
+    (entry) => entry.name === prefs.non_contextual?.rogue_origin,
+  )
+    ? prefs.non_contextual?.rogue_origin
+    : origins[0]?.name;
   const hasTone = 'skin_tone' in secondary && !!tones;
-  const hasColor = 'feature_mcolor' in secondary && !!features.feature_mcolor;
+  const hasColor =
+    !hasOrigins && 'feature_mcolor' in secondary && !!features.feature_mcolor;
+  const hairColors = species?.hair_colors ?? [];
+  const hair = String(prefs.supplemental_features?.hair_color ?? '');
+  const hasHair =
+    hairColors.length > 0 &&
+    'hair_color' in (prefs.supplemental_features ?? {});
 
   return (
-    <Panel title="Choose Ancestry" icon="leaf">
-      {!hasTone && !hasColor && (
+    <Panel title={tr('Choose Ancestry')} icon="leaf">
+      {!hasOrigins && !hasTone && !hasColor && (
         <Box color="label">
-          {species?.name ?? 'This species'} has no skin or colour to choose.
+          {tr(
+            '{0} has no skin or colour to choose.',
+            species?.name ?? tr('This species'),
+          )}
         </Box>
       )}
+      {hasOrigins && (
+        <FieldBlock label={species?.origin_wording || tr('Ancestry')}>
+          <Box style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+            {origins.map((entry) => (
+              <Swatch
+                key={entry.name}
+                label={entry.label || entry.name}
+                color={entry.color}
+                selected={entry.name === origin}
+                onClick={() =>
+                  act('set_preference', {
+                    preference: 'rogue_origin',
+                    value: entry.name,
+                  })
+                }
+              />
+            ))}
+          </Box>
+        </FieldBlock>
+      )}
       {hasTone && (
-        <FieldBlock label="Skin tone">
+        <FieldBlock label={tr('Skin tone')}>
           <Box style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
             {tones.choices.map((tone) => (
-              <Button
+              <Swatch
                 key={tone}
+                label={tones.display_names?.[tone] ?? tone}
+                color={tones.to_hex?.[tone]?.value}
                 selected={tone === secondary.skin_tone}
-                tooltip={tones.display_names?.[tone] ?? tone}
                 onClick={() =>
                   act('set_preference', {
                     preference: 'skin_tone',
                     value: tone,
                   })
                 }
-                style={{ minWidth: '126px', padding: '6px' }}
-              >
-                <Stack align="center">
-                  <Stack.Item>
-                    <Box
-                      width="28px"
-                      height="16px"
-                      style={{ border: '1px solid rgba(0,0,0,0.65)' }}
-                      backgroundColor={swatchColor(tones.to_hex?.[tone]?.value)}
-                    />
-                  </Stack.Item>
-                  <Stack.Item grow>
-                    <Box bold textAlign="left">
-                      {tones.display_names?.[tone] ?? tone}
-                    </Box>
-                  </Stack.Item>
-                </Stack>
-              </Button>
+              />
             ))}
           </Box>
         </FieldBlock>
       )}
       {hasColor && (
-        <FieldBlock label="Body colour">
+        <FieldBlock label={tr('Body colour')}>
           <FeatureValueInput
             feature={features.feature_mcolor}
             featureId="feature_mcolor"
@@ -469,6 +533,64 @@ function AncestryPicker(props: { species?: SpeciesEntry }) {
           />
         </FieldBlock>
       )}
+      {hasHair && (
+        <FieldBlock label={tr('Hair color')}>
+          <Box style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+            {hairColors.map((entry) => (
+              <Swatch
+                key={entry.name}
+                label={entry.name}
+                color={entry.color}
+                selected={
+                  swatchColor(hair).toLowerCase() === entry.color.toLowerCase()
+                }
+                onClick={() =>
+                  act('set_preference', {
+                    preference: 'hair_color',
+                    value: entry.color,
+                  })
+                }
+              />
+            ))}
+          </Box>
+        </FieldBlock>
+      )}
     </Panel>
+  );
+}
+
+type SwatchProps = {
+  label: string;
+  color: unknown;
+  selected: boolean;
+  onClick: () => void;
+};
+
+/** A colour to pick, with its name. */
+function Swatch(props: SwatchProps) {
+  const { label, color, selected, onClick } = props;
+  return (
+    <Button
+      selected={selected}
+      tooltip={label}
+      onClick={onClick}
+      style={{ minWidth: '126px', padding: '6px' }}
+    >
+      <Stack align="center">
+        <Stack.Item>
+          <Box
+            width="28px"
+            height="16px"
+            style={{ border: '1px solid rgba(0,0,0,0.65)' }}
+            backgroundColor={swatchColor(color)}
+          />
+        </Stack.Item>
+        <Stack.Item grow>
+          <Box bold textAlign="left">
+            {label}
+          </Box>
+        </Stack.Item>
+      </Stack>
+    </Button>
   );
 }

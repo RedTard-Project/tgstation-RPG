@@ -7,6 +7,7 @@ import { useBackend } from 'tgui/backend';
 import { Box, Button, Input, Section, Table, Tabs } from 'tgui-core/components';
 
 import { ActionButton, InfoRow, Panel } from './components';
+import { useTr } from './strings';
 import { type JobEntry, JobPriority, type SetupData } from './types';
 
 const PRIORITIES = [
@@ -31,29 +32,31 @@ export function highestJob(prefs: SetupData['job_preferences']) {
 
 export function GameplayPage() {
   const { act, data } = useBackend<SetupData>();
+  const tr = useTr();
   return (
     <>
-      <Panel title="Class & Roles" icon="shield-alt">
+      <Panel title={tr('Class & Roles')} icon="shield-alt">
         <InfoRow
           icon="briefcase"
-          label="Wanted most"
-          value={highestJob(data.job_preferences) ?? 'None'}
+          label={tr('Wanted most')}
+          value={highestJob(data.job_preferences) ?? tr('None')}
         />
         <JobList />
       </Panel>
-      <Panel title="Loadout" icon="shopping-bag">
+      <Panel title={tr('Loadout')} icon="shopping-bag">
         <Box color="label" mb={0.5}>
-          The loadout (the wardrobe of Vibelin's clothes among it) and quirks
-          are kept in TG's preferences.
+          {tr(
+            "The loadout (the wardrobe of Vibelin's clothes among it) and quirks are kept in TG's preferences.",
+          )}
         </Box>
         <ActionButton
           icon="tshirt"
-          label="Open Loadout & Quirks"
+          label={tr('Open Loadout & Quirks')}
           onClick={() => act('open_tg', { page: 'character' })}
         />
       </Panel>
-      <Panel title="Triumphs" icon="trophy">
-        <InfoRow icon="coins" label="Balance" value={data.triumphs} />
+      <Panel title={tr('Triumphs')} icon="trophy">
+        <InfoRow icon="coins" label={tr('Balance')} value={data.triumphs} />
       </Panel>
     </>
   );
@@ -61,6 +64,7 @@ export function GameplayPage() {
 
 function JobList() {
   const { act, data } = useBackend<SetupData>();
+  const tr = useTr();
   const departments = [...data.jobs].sort(
     (left, right) => left.order - right.order,
   );
@@ -90,7 +94,7 @@ function JobList() {
     : (active?.jobs ?? []);
 
   if (!departments.length) {
-    return <Box color="label">The roles are not ready yet.</Box>;
+    return <Box color="label">{tr('The roles are not ready yet.')}</Box>;
   }
 
   return (
@@ -98,7 +102,7 @@ function JobList() {
       <Input
         fluid
         mb={0.5}
-        placeholder="Search roles..."
+        placeholder={tr('Search roles...')}
         value={search}
         onChange={setSearch}
       />
@@ -129,19 +133,19 @@ function JobList() {
         })}
       </Tabs>
       <Section
-        title={needle ? `Search Results (${jobs.length})` : active?.name}
+        title={needle ? tr('Search Results ({0})', jobs.length) : active?.name}
       >
         <Table>
           <Table.Row header>
-            <Table.Cell width="40%">Role</Table.Cell>
-            <Table.Cell width="20%">Classes</Table.Cell>
-            <Table.Cell width="40%">Priority</Table.Cell>
+            <Table.Cell width="40%">{tr('Role')}</Table.Cell>
+            <Table.Cell width="20%">{tr('Classes')}</Table.Cell>
+            <Table.Cell width="40%">{tr('Priority')}</Table.Cell>
           </Table.Row>
           {!jobs.length && (
             <Table.Row>
               <Table.Cell colSpan={3}>
                 <Box color="label" italic>
-                  No roles match.
+                  {tr('No roles match.')}
                 </Box>
               </Table.Cell>
             </Table.Row>
@@ -172,10 +176,13 @@ function JobList() {
                       style={{ fontSize: '11px' }}
                     >
                       {banned
-                        ? 'BANNED'
+                        ? tr('BANNED')
                         : job.slots > 0
-                          ? `${job.slots} slot${job.slots === 1 ? '' : 's'}`
-                          : 'Any number'}
+                          ? tr(
+                              job.slots === 1 ? '{0} slot' : '{0} slots',
+                              job.slots,
+                            )
+                          : tr('Any number')}
                     </Box>
                   </Table.Cell>
                   <Table.Cell py={0.5}>
@@ -207,7 +214,7 @@ function JobList() {
                             })
                           }
                         >
-                          {option.label}
+                          {tr(option.label)}
                         </Button>
                       ))}
                   </Table.Cell>

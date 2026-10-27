@@ -131,10 +131,10 @@ GLOBAL_LIST_INIT(rogue_armor_degrade_sounds, list(
 	if(share >= 0.75)
 		return null
 	if(share >= 0.5)
-		return "<i> Dented.</i>"
+		return "<span class='armoralert'><i>Dented.</i></span>"
 	if(share >= 0.25)
-		return " Damaged."
-	return "<b> Crumbling!</b>"
+		return "<span class='armoralert'>Damaged.</span>"
+	return "<span class='armoralert'><b>Crumbling!</b></span>"
 
 /// Wears the armor down and marks the 75/50/25% integrity steps with Ratwood's sound, chunk and balloon (Azure Peak "Pen Rework Requiem").
 /obj/item/clothing/proc/rogue_armor_wear(amount)

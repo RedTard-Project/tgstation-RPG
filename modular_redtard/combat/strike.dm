@@ -227,6 +227,7 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 		if(mob_biotypes & (MOB_ROBOTIC|MOB_MINERAL|MOB_SKELETAL))
 			damage *= weapon.get_demolition_modifier(src)
 	var/obj/item/clothing/armor_hit
+	rogue_strike_notes = list()
 	if(ishuman(src) && damtype == BRUTE)
 		var/mob/living/carbon/human/armored = src
 		armor_hit = armored.rogue_best_armor(def_zone, intent.item_d_type)
@@ -244,7 +245,9 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 	)
 	strike.damage_done = damage_done
 	LAZYSET(strike.attack_modifiers, DAMAGE_DONE, damage_done)
-	rogue_strike_message(attacker, weapon, intent, zone, damage_done, damage_done > 0 ? null : armor_hit?.rogue_integrity_text())
+	if(damage_done <= 0)
+		var/integrity = armor_hit?.rogue_integrity_text()
+		rogue_strike_notes += integrity ? "[ROGUE_ARMOR_BLOCKED_TEXT] [integrity]" : ROGUE_ARMOR_BLOCKED_TEXT
 	var/hit_sound = pick(GLOB.rogue_no_damage_sounds)
 	if(damage_done > 0)
 		hit_sound = length(intent.hitsound) ? pick(intent.hitsound) : (weapon ? weapon.hitsound : pick(GLOB.rogue_punch_hit_sounds))
@@ -257,6 +260,9 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 			attacker.add_mob_blood(src)
 	if(damage_done > 0)
 		rogue_try_crit(intent.blade_class, damage_done, attacker, zone)
+	rogue_strike_message(attacker, weapon, intent, zone)
+	rogue_strike_notes = null
+	if(damage_done > 0)
 		rogue_pop_open()
 		rogue_try_dismember(weapon, intent, attacker, zone, damage)
 	SEND_SIGNAL(src, COMSIG_ROGUE_STRIKE_LANDED, strike)
@@ -264,19 +270,18 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 	log_combat(attacker, src, strike.kind == ROGUE_STRIKE_CLEAVE ? "cleaved" : "struck", weapon || intent.name, "(INTENT: [uppertext(intent.name)]) (ZONE: [zone]) (DAMAGE: [damage_done]) (DAMTYPE: [uppertext(damtype)])")
 	return damage_done
 
-/mob/living/proc/rogue_strike_message(mob/living/attacker, obj/item/weapon, datum/intent/intent, zone, damage_done, armor_state)
+/// Ratwood's strike line (send_item_attack_message): the struck part highlighted, and the strike's notes after it
+/// (armor, crits, wounds; combat/chat.dm). The attacker reads it as everyone around does.
+/mob/living/proc/rogue_strike_message(mob/living/attacker, obj/item/weapon, datum/intent/intent, zone)
 	var/hit_verb = length(intent.attack_verb) ? pick(intent.attack_verb) : "hits"
-	var/hit_area = iscarbon(src) ? rogue_zone_name(zone) : "body"
+	var/hit_area = span_userdanger(iscarbon(src) ? rogue_zone_name(zone) : "body")
 	var/with = weapon ? " with [weapon]" : ""
-	var/stopped = damage_done > 0 ? "" : " Armor stops the damage.[armor_state]"
-	var/seen = (attacker in viewers(src, null))
-	var/spectator_text = "[seen ? "[attacker]" : "Someone"] [hit_verb] [src] in the [hit_area][with]![stopped]"
-	var/victim_text = "[seen ? "[attacker]" : "Someone"] [hit_verb] me in the [hit_area][with]![stopped]"
+	var/notes = length(rogue_strike_notes) ? " [jointext(rogue_strike_notes, " ")]" : ""
 	if(attacker == src)
-		to_chat(src, span_danger("I [hit_verb] myself in the [hit_area][with]![stopped]"))
+		to_chat(src, span_danger("I [hit_verb] myself in the [hit_area][with]![notes]"))
 		return
-	visible_message(span_danger(spectator_text), span_userdanger(victim_text), null, COMBAT_MESSAGE_RANGE, attacker)
-	to_chat(attacker, span_boldwarning("[attacker] [hit_verb] [src] in the [hit_area][with]![stopped]"))
+	var/who = (attacker in viewers(src, null)) ? "[attacker]" : "Someone"
+	visible_message(span_danger("[who] [hit_verb] [src] in the [hit_area][with]![notes]"), span_danger("[who] [hit_verb] me in the [hit_area][with]![notes]"), null, COMBAT_MESSAGE_RANGE)
 
 /obj/item/proc/rogue_after_strike(mob/living/target, mob/living/user, list/attack_modifiers)
 	SEND_SIGNAL(src, COMSIG_ITEM_AFTERATTACK, target, user, null, attack_modifiers)

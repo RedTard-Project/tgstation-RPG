@@ -56,7 +56,7 @@ GLOBAL_LIST_EMPTY(rogue_charsetup_open)
 /datum/rogue_charsetup/ui_interact(mob/user, datum/tgui/ui)
 	// TG's menu waits for IconForge and the spritesheets as well.
 	if(SSearly_assets.initialized != INITIALIZATION_INNEW_REGULAR)
-		to_chat(user, span_warning("The character menu is still being prepared, try again in a moment."))
+		to_chat(user, span_warning(rogue_ui_russian(user.client) ? "Меню персонажа ещё готовится, попробуйте через минуту." : "The character menu is still being prepared, try again in a moment."))
 		return
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(ui)
@@ -66,7 +66,7 @@ GLOBAL_LIST_EMPTY(rogue_charsetup_open)
 	preview = new(null, null, prefs)
 	preview.generate_view("rogue_charsetup_[++map_count]_map")
 	preview.update_body()
-	ui = new(user, src, "RogueCharacterSetup", "Character Setup")
+	ui = new(user, src, "RogueCharacterSetup", rogue_ui_russian(user.client) ? "Настройка персонажа" : "Character Setup")
 	ui.set_autoupdate(FALSE)
 	ui.open()
 	preview.display_to(user, ui.window)
@@ -101,13 +101,15 @@ GLOBAL_LIST_EMPTY(rogue_charsetup_open)
 	for(var/datum/job/job as anything in SSjob.joinable_occupations)
 		if(is_banned_from(user.ckey, job.title))
 			job_bans += job.title
+	var/lang = rogue_ui_lang(user.client)
 	return list(
 		"preview_view" = preview?.assigned_map,
-		"species" = rogue_charsetup_species_catalog(),
+		"species" = rogue_charsetup_species_catalog(lang),
 		"features" = rogue_charsetup_feature_catalog(),
 		"jobs" = rogue_charsetup_job_catalog(),
 		"job_bans" = job_bans,
-		"ages" = rogue_charsetup_age_catalog(),
+		"ages" = rogue_charsetup_age_catalog(lang),
+		"heritage" = rogue_charsetup_heritage_catalog(lang),
 		"settings" = rogue_charsetup_settings_catalog(),
 		"max_slots" = prefs.max_save_slots,
 		"flavor_min" = CONFIG_GET(number/rogue_minimum_flavor_text),
@@ -120,6 +122,8 @@ GLOBAL_LIST_EMPTY(rogue_charsetup_open)
 
 /datum/rogue_charsetup/ui_data(mob/user)
 	return list(
+		"lang" = rogue_ui_lang(user.client),
+		"heritage_species" = heritage_species(),
 		"active_slot" = prefs.default_slot,
 		"profiles" = prefs.create_character_profiles(),
 		"character_preferences" = compile_preferences(user),
@@ -223,7 +227,7 @@ GLOBAL_LIST_EMPTY(rogue_charsetup_open)
 			var/datum/preference/color/preference = shown[params["preference"]]
 			if(!istype(preference))
 				return FALSE
-			var/new_color = tgui_color_picker(user, "Select new color", null, prefs.read_preference(preference.type) || COLOR_WHITE)
+			var/new_color = tgui_color_picker(user, rogue_ui_russian(user.client) ? "Выберите цвет" : "Select new color", null, prefs.read_preference(preference.type) || COLOR_WHITE)
 			if(!new_color || QDELETED(src))
 				return FALSE
 			return update_preference(preference, new_color)
@@ -238,6 +242,10 @@ GLOBAL_LIST_EMPTY(rogue_charsetup_open)
 			return TRUE
 		if("set_job_preference")
 			return set_job_preference(params["job"], params["level"])
+		if("select_faith")
+			return select_faith(params["faith"])
+		if("select_patron")
+			return select_patron(params["patron"])
 		if("rotate")
 			preview?.setDir(turn(preview.dir, params["dir"] == "left" ? 90 : -90))
 			return FALSE
@@ -257,7 +265,7 @@ GLOBAL_LIST_EMPTY(rogue_charsetup_open)
 		if("save")
 			prefs.save_character()
 			prefs.save_preferences()
-			to_chat(user, span_notice("Your character is saved."))
+			to_chat(user, span_notice(rogue_ui_russian(user.client) ? "Персонаж сохранён." : "Your character is saved."))
 			return FALSE
 		if("done")
 			ui.close()

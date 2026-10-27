@@ -25,6 +25,7 @@ import { GameplayPage, highestJob } from './GameplayPage';
 import { IdentityPage } from './IdentityPage';
 import { ProfilePage } from './ProfilePage';
 import { SettingsPage } from './SettingsPage';
+import { useTr } from './strings';
 import type { RoundState, SetupData } from './types';
 
 const SECTIONS = [
@@ -47,6 +48,7 @@ const PAGES: Record<SectionId, () => JSX.Element> = {
 
 export function RogueCharacterSetup() {
   const { data } = useBackend<SetupData>();
+  const tr = useTr();
   const [section, setSection] = useState<SectionId>('identity');
   // The catalogs are static data: their reference holds between updates, so this is built once per window.
   const serverData = useMemo(
@@ -56,7 +58,7 @@ export function RogueCharacterSetup() {
   const Page = PAGES[section];
 
   return (
-    <Window title="Character Setup" width={1180} height={760}>
+    <Window title={tr('Character Setup')} width={1180} height={760}>
       <Window.Content>
         <ServerPrefs.Provider value={serverData}>
           <Stack vertical fill>
@@ -82,7 +84,7 @@ export function RogueCharacterSetup() {
                               selected={section === entry.id}
                               onClick={() => setSection(entry.id)}
                             >
-                              {entry.label}
+                              {tr(entry.label)}
                             </Tabs.Tab>
                           ))}
                         </Tabs>
@@ -112,15 +114,20 @@ export function RogueCharacterSetup() {
 
 function Header() {
   const { act, data } = useBackend<SetupData>();
+  const tr = useTr();
   const prefs = data.character_preferences;
   const species = data.species.find(
     (entry) => entry.id === prefs.misc?.species,
   );
-  const meta = [species?.name, prefs.misc?.gender, `Slot ${data.active_slot}`]
+  const meta = [
+    species?.name,
+    prefs.misc?.gender,
+    tr('Slot {0}', data.active_slot),
+  ]
     .filter(Boolean)
     .join('  /  ');
   const slots = Array.from({ length: data.max_slots }, (_, index) => ({
-    displayText: data.profiles[index] || `Empty slot ${index + 1}`,
+    displayText: data.profiles[index] || tr('Empty slot {0}', index + 1),
     value: index + 1,
   }));
 
@@ -129,7 +136,7 @@ function Header() {
       <Stack align="center">
         <Stack.Item grow>
           <Box bold fontSize="18px">
-            {display(prefs.names?.real_name, 'Unnamed')}
+            {display(prefs.names?.real_name, tr('Unnamed'))}
           </Box>
           <Box color="label">{meta}</Box>
         </Stack.Item>
@@ -137,7 +144,7 @@ function Header() {
           <Dropdown
             width="220px"
             icon="exchange-alt"
-            displayText="Change Character"
+            displayText={tr('Change Character')}
             selected={slots[data.active_slot - 1]}
             options={slots}
             onSelected={(slot) => act('change_slot', { slot })}
@@ -159,6 +166,7 @@ const ROUND_TEXT = {
 function RoundBox(props: { round: RoundState }) {
   const { round } = props;
   const { act } = useBackend<SetupData>();
+  const tr = useTr();
   let label = 'Unavailable';
   let color: string | undefined;
   let icon = 'ban';
@@ -185,7 +193,7 @@ function RoundBox(props: { round: RoundState }) {
   }
 
   return (
-    <Section title="Round Start" mb={1}>
+    <Section title={tr('Round Start')} mb={1}>
       <Box
         bold
         fontSize="22px"
@@ -200,13 +208,13 @@ function RoundBox(props: { round: RoundState }) {
         {round.phase === 'pregame' ? (
           <Countdown seconds={round.seconds} />
         ) : (
-          ROUND_TEXT[round.phase]
+          tr(ROUND_TEXT[round.phase])
         )}
       </Box>
       <Box color="label" mb={0.5}>
         {round.phase === 'pregame' && round.seconds < 0
-          ? 'Delayed'
-          : ROUND_TEXT[round.phase]}
+          ? tr('Delayed')
+          : tr(ROUND_TEXT[round.phase])}
       </Box>
       <Button
         fluid
@@ -216,14 +224,14 @@ function RoundBox(props: { round: RoundState }) {
         disabled={disabled}
         onClick={() => act('round_action')}
       >
-        {label}
+        {tr(label)}
       </Button>
       <Stack align="center">
         <Stack.Item>
           <Icon name="user-check" />
         </Stack.Item>
         <Stack.Item grow>
-          <Box color="label">Ready</Box>
+          <Box color="label">{tr('Ready')}</Box>
         </Stack.Item>
         <Stack.Item>
           <Box bold>
@@ -238,8 +246,9 @@ function RoundBox(props: { round: RoundState }) {
 /** Vibelin's "Looking Glass": the character as the game draws it, in a map view (TG's character preview). */
 function LookingGlass() {
   const { act, data } = useBackend<SetupData>();
+  const tr = useTr();
   return (
-    <Section fill title="Looking Glass">
+    <Section fill title={tr('Looking Glass')}>
       <Stack vertical fill>
         <Stack.Item grow>
           {data.preview_view ? (
@@ -262,13 +271,13 @@ function LookingGlass() {
                 fluid
                 textAlign="center"
                 icon="arrow-left"
-                tooltip="Rotate left"
+                tooltip={tr('Rotate left')}
                 onClick={() => act('rotate', { dir: 'left' })}
               />
             </Stack.Item>
             <Stack.Item>
               <Box color="label" style={{ lineHeight: '24px' }}>
-                Rotate
+                {tr('Rotate')}
               </Box>
             </Stack.Item>
             <Stack.Item grow>
@@ -276,7 +285,7 @@ function LookingGlass() {
                 fluid
                 textAlign="center"
                 icon="arrow-right"
-                tooltip="Rotate right"
+                tooltip={tr('Rotate right')}
                 onClick={() => act('rotate', { dir: 'right' })}
               />
             </Stack.Item>
@@ -288,10 +297,10 @@ function LookingGlass() {
             selected={!!data.job_clothes}
             onClick={() => act('toggle_job_clothes')}
           >
-            Work Clothes Layer
+            {tr('Work Clothes Layer')}
           </Button>
           <Button fluid icon="dice" onClick={() => act('randomize_appearance')}>
-            Randomise Appearance
+            {tr('Randomise Appearance')}
           </Button>
         </Stack.Item>
       </Stack>
@@ -301,6 +310,7 @@ function LookingGlass() {
 
 function Footer(props: { onOpenSection: (section: SectionId) => void }) {
   const { act, data } = useBackend<SetupData>();
+  const tr = useTr();
   return (
     <Section>
       <Stack align="center">
@@ -309,15 +319,15 @@ function Footer(props: { onOpenSection: (section: SectionId) => void }) {
             <Stack.Item>
               <FooterSummary
                 icon="shield-alt"
-                label="Class"
-                value={highestJob(data.job_preferences) ?? 'None'}
+                label={tr('Class')}
+                value={highestJob(data.job_preferences) ?? tr('None')}
                 onClick={() => props.onOpenSection('gameplay')}
               />
             </Stack.Item>
             <Stack.Item>
               <FooterSummary
                 icon="trophy"
-                label="Triumphs"
+                label={tr('Triumphs')}
                 value={data.triumphs}
                 onClick={() => props.onOpenSection('gameplay')}
               />
@@ -327,29 +337,29 @@ function Footer(props: { onOpenSection: (section: SectionId) => void }) {
         <Stack.Item>
           <Button
             icon="dice"
-            tooltip="Randomise Appearance"
+            tooltip={tr('Randomise Appearance')}
             onClick={() => act('randomize_appearance')}
           >
-            Randomise
+            {tr('Randomise')}
           </Button>
         </Stack.Item>
         <Stack.Item>
           <Button
             icon="undo"
-            tooltip="Undo the changes since the last save"
+            tooltip={tr('Undo the changes since the last save')}
             onClick={() => act('undo')}
           >
-            Undo
+            {tr('Undo')}
           </Button>
         </Stack.Item>
         <Stack.Item>
           <Button icon="save" color="blue" onClick={() => act('save')}>
-            Save
+            {tr('Save')}
           </Button>
         </Stack.Item>
         <Stack.Item>
           <Button icon="check" color="green" onClick={() => act('done')}>
-            Done
+            {tr('Done')}
           </Button>
         </Stack.Item>
       </Stack>

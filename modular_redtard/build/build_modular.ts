@@ -22,6 +22,9 @@ const MODULE_DEFINES = ['MINIMAL_CENTCOM'];
 const ROGUE_LOBBY_CONFIG = '../modular_redtard/tgui/rspack.rogue_lobby.ts';
 const ROGUE_LOBBY_INPUTS = ['modular_redtard/tgui', 'tgui/packages/tgui-lobby', 'tgui/rspack.config.ts'];
 const ROGUE_LOBBY_OUTPUTS = ['tgui/public/tgui-rogue-lobby.bundle.js', 'tgui/public/tgui-rogue-lobby.bundle.css'];
+const ROGUE_PANEL_CONFIG = '../modular_redtard/tgui/rspack.rogue_panel.ts';
+const ROGUE_PANEL_INPUTS = ['modular_redtard/tgui/rogue_panel', 'modular_redtard/tgui/rspack.rogue_panel.ts', 'tgui/packages/tgui-panel', 'tgui/packages/tgui', 'tgui/rspack.config.ts'];
+const ROGUE_PANEL_OUTPUTS = ['tgui/public/tgui-rogue-panel.bundle.js', 'tgui/public/tgui-rogue-panel.bundle.css'];
 
 type BuildOptions = {
   target: string;
@@ -287,19 +290,22 @@ function restoreNextMap() {
 
 async function runPrerequisites() {
   await runUpstream(PREREQUISITES);
-  await buildRogueLobby();
+  // The medieval main menu (modular_redtard/lobby/rogue_lobby.dm) and the chat panel with the translation
+  // (modular_redtard/localization/panel.dm).
+  await buildModuleBundle('tgui-rogue-lobby', ROGUE_LOBBY_CONFIG, ROGUE_LOBBY_INPUTS, ROGUE_LOBBY_OUTPUTS);
+  await buildModuleBundle('tgui-rogue-panel', ROGUE_PANEL_CONFIG, ROGUE_PANEL_INPUTS, ROGUE_PANEL_OUTPUTS);
 }
 
-/// The medieval main menu's bundle (modular_redtard/lobby/rogue_lobby.dm), built with its own rspack config over TG's
-/// after TG's tgui, and only when its sources (or TG's lobby it draws) are newer than the bundle.
-async function buildRogueLobby() {
-  const newest = Math.max(...ROGUE_LOBBY_INPUTS.map(newestMtime));
-  const built = Math.min(...ROGUE_LOBBY_OUTPUTS.map((file) => (fs.existsSync(file) ? fs.statSync(file).mtimeMs : 0)));
+/// A bundle of the module, built with its own rspack config over TG's after TG's tgui, and only when its sources
+/// (or the TG packages it draws on) are newer than the bundle.
+async function buildModuleBundle(name: string, config: string, inputs: string[], outputs: string[]) {
+  const newest = Math.max(...inputs.map(newestMtime));
+  const built = Math.min(...outputs.map((file) => (fs.existsSync(file) ? fs.statSync(file).mtimeMs : 0)));
   if (built > newest) {
-    console.log('modular_redtard: tgui-rogue-lobby is up to date');
+    console.log(`modular_redtard: ${name} is up to date`);
     return;
   }
-  const proc = Bun.spawn(['bun', 'run', 'rspack', 'build', '--config', ROGUE_LOBBY_CONFIG], {
+  const proc = Bun.spawn(['bun', 'run', 'rspack', 'build', '--config', config], {
     cwd: 'tgui',
     stdin: 'inherit',
     stdout: 'inherit',
@@ -307,7 +313,7 @@ async function buildRogueLobby() {
   });
   const code = await proc.exited;
   if (code !== 0) {
-    throw new Error(`tgui-rogue-lobby build exited with code ${code}`);
+    throw new Error(`${name} build exited with code ${code}`);
   }
 }
 
