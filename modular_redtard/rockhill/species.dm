@@ -60,7 +60,7 @@
 			SPECIES_PERK_TYPE = amount > 0 ? SPECIES_POSITIVE_PERK : SPECIES_NEGATIVE_PERK,
 			SPECIES_PERK_ICON = amount > 0 ? FA_ICON_ARROW_UP : FA_ICON_ARROW_DOWN,
 			SPECIES_PERK_NAME = "[initial(stat.name)] [amount > 0 ? "+" : ""][amount]",
-			SPECIES_PERK_DESC = "Ratwood's racial bonus to [lowertext(initial(stat.name))].",
+			SPECIES_PERK_DESC = "Ratwood's racial bonus to [LOWER_TEXT(initial(stat.name))].",
 		)))
 
 /mob/living/carbon/human
