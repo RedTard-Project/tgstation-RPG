@@ -989,12 +989,14 @@ def main():
     fill_items |= anvil_recipe_items(cfg, rw, rules)
     fill_items |= craft_recipe_items(cfg, rw, rules)
     fill_items |= food_chain_items(cfg, rw, set(usage) | outfit_items | mapgen_types | fill_items | npc_items)
+    fill_items |= husbandry_types(cfg, rw, set(usage) | fill_items)
     generated = generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, outfit_items | mapgen_types | fill_items | npc_items, set(jobs))
     generate_mapgen(mapgen, rules, declared | generated, tg_names)
     generate_anvil_recipes(cfg, rw, rules, declared | generated)
     generate_craft_recipes(cfg, rw, rules, declared | generated)
     generate_trade(cfg, rw, rules, declared | generated)
     generate_food(cfg, rw, generated, tg_declared, tg_names)
+    generate_husbandry(cfg, rw, generated, tg_declared)
     npcs = [p for p in npcs if p in generated]
     role_traits = npc_trait_names(rw, npcs, cfg['attributes'])
     for species in cfg['port']['bodies']['species_map']:
@@ -4508,6 +4510,103 @@ def generate_food(cfg, rw, generated, tg_declared, tg_names):
     os.makedirs(os.path.dirname(spec['file']), exist_ok=True)
     open(spec['file'], 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
     print(f"{spec['file']}: {len(foods)} foods, {recipes} recipes, {dropped} recipes dropped for unported items or reagents")
+
+
+# Ratwood husbandry vars of a beast (simple_animal.dm, rogue/farm/*.dm, game/saiga.dm): Ratwood name, module var, kind, module default.
+HUSBANDRY_VARS = (
+    ('gender', 'gender', 'gender', None),
+    ('tame_chance', 'rogue_tame_chance', 'number', 0),
+    ('bonus_tame_chance', 'rogue_tame_bonus', 'number', 0),
+    ('tame', 'rogue_start_tame', 'flag', 'FALSE'),
+    ('childtype', 'rogue_childtype', 'weights', None),
+    ('animal_species', 'rogue_partner_type', 'path', None),
+    ('adult_growth', 'rogue_adult_type', 'path', None),
+    ('breedcd', 'rogue_breed_cooldown', 'number', 3000),
+    ('egg_type', 'rogue_egg_type', 'path', None),
+    ('eggsFertile', 'rogue_eggs_fertile', 'flag', 'TRUE'),
+)
+# Vars that name other beasts the port needs: the young, the partner, what the young grow into.
+HUSBANDRY_LINKS = ('childtype', 'animal_species', 'adult_growth')
+
+
+def husbandry_entries(raw):
+    # A Ratwood beast reference as (path, weight) pairs: a weighted list(...) or a single path; nothing for null.
+    text = (raw or '').strip()
+    if text.startswith('list('):
+        return [(key.rstrip('/'), food_number(value) or 1) for key, value in food_entries(text) if key.startswith('/')]
+    if text.startswith('/'):
+        return [(text.rstrip('/'), 1)]
+    return []
+
+
+def husbandry_types(cfg, rw, seeds):
+    # Ratwood livestock for the husbandry module (modular_redtard/husbandry): the young a ported beast gives birth to (childtype),
+    # its partner (animal_species) and what the young grow into (adult_growth), round until nothing new comes, plus the types
+    # Ratwood names only in code (the chick a fertile egg hatches into).
+    spec = cfg['port'].get('husbandry')
+    if not spec:
+        return set()
+    reach = {p for p in spec.get('extra_types', []) if p in rw.types}
+    todo = [p for p in seeds if p.startswith('/mob/living/') and p in rw.types] + sorted(reach)
+    seen = set(todo)
+    while todo:
+        path = todo.pop()
+        for name in HUSBANDRY_LINKS:
+            for target, _ in husbandry_entries(rw.resolve(path, name)):
+                if target in rw.types and target not in seen:
+                    seen.add(target)
+                    reach.add(target)
+                    todo.append(target)
+    return reach
+
+
+def generate_husbandry(cfg, rw, generated, tg_declared):
+    # Ratwood husbandry data of the ported beasts for the husbandry module: sex, taming chances, born tame, the young and how
+    # likely each is, the partner, what the young grow into, the breeding cooldown, the egg. A var is written where its
+    # Ratwood value differs from what the type inherits in the port (the nearest ported parent path, else the module default).
+    spec = cfg['port'].get('husbandry')
+    if not spec:
+        return
+    valid = set(generated) | set(tg_declared)
+
+    def value_of(raw, kind):
+        text = (raw or '').strip()
+        if kind == 'gender':
+            return text if text in ('MALE', 'FEMALE') else None
+        if kind == 'number':
+            return food_number(text)
+        if kind == 'flag':
+            number = food_number(text)
+            return None if number is None else ('TRUE' if number else 'FALSE')
+        if kind == 'path':
+            target = text.rstrip('/')
+            return target if target in valid else None
+        pairs = [f'{path} = {weight}' for path, weight in husbandry_entries(text) if path in valid]
+        return 'list(' + ', '.join(pairs) + ')' if pairs else None
+
+    defaults = {target: default for _, target, _, default in HUSBANDRY_VARS}
+    mobs = sorted((p for p in generated if p.startswith('/mob/living/') and not boundary_match(p, NPC_ROOT)), key=lambda p: (p.count('/'), p))
+    effective = {}
+    blocks = []
+    for path in mobs:
+        parent = next((path.rsplit('/', k)[0] for k in range(1, path.count('/')) if path.rsplit('/', k)[0] in effective), None)
+        inherited = effective.get(parent, defaults)
+        values = dict(inherited)
+        block = [path]
+        for source, target, kind, default in HUSBANDRY_VARS:
+            value = value_of(rw.resolve(path, source), kind)
+            if value is None:
+                value = default
+            values[target] = value
+            if value != inherited[target]:
+                shown = value if value is not None else ('PLURAL' if kind == 'gender' else 'null')
+                block.append(f'\t{target} = {shown}')
+        effective[path] = values
+        if len(block) > 1:
+            blocks.append(block)
+    os.makedirs(os.path.dirname(spec['file']), exist_ok=True)
+    open(spec['file'], 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    print(f"{spec['file']}: husbandry data for {len(blocks)} of {len(mobs)} beasts")
 
 
 if __name__ == '__main__':

@@ -153,6 +153,9 @@
 // Stage 9: race polish (races/)
 // Stage 10: clothing and FOV polish (clothing/)
 // Character setup menu (charsetup/)
+#include "charsetup\catalog.dm"
+#include "charsetup\character_menu.dm"
+#include "charsetup\entry_points.dm"
 #include "ai\human_npc.dm"
 #include "ai\rockhill_ai.dm"
 #include "ai\vibelin_beasts.dm"

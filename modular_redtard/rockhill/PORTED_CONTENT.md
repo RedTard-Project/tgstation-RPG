@@ -4047,7 +4047,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/mob/living/carbon/human/species/goblin/npc` | 1 |
 | `/mob/living/carbon/human/species/skeleton/npc/bogguard/master` | 1 |
 
-## mobs.dm (69 types)
+## mobs.dm (79 types)
 
 | Type | Tiles |
 |---|---|
@@ -4118,8 +4118,18 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/mob/living/simple_animal/hostile/rogue/dreamfiend/ancient/unbound` | 1 |
 | `/mob/living/simple_animal/pet/cat` | 1 |
 | `/mob/living/simple_animal/pet/cat/rogue/rat` | 1 |
+| `/mob/living/simple_animal/chick` | 0 |
+| `/mob/living/simple_animal/hostile/retaliate/rogue/cow/bullet` | 0 |
+| `/mob/living/simple_animal/hostile/retaliate/rogue/cow/cowlet` | 0 |
+| `/mob/living/simple_animal/hostile/retaliate/rogue/goat/goatlet` | 0 |
+| `/mob/living/simple_animal/hostile/retaliate/rogue/goat/goatletboy` | 0 |
 | `/mob/living/simple_animal/hostile/retaliate/rogue/mirespider` | 0 |
+| `/mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigaboy` | 0 |
+| `/mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigakid` | 0 |
+| `/mob/living/simple_animal/hostile/retaliate/rogue/swine/hog/piglet` | 0 |
+| `/mob/living/simple_animal/hostile/retaliate/rogue/swine/piglet` | 0 |
 | `/mob/living/simple_animal/hostile/rogue/mirespider_paralytic` | 0 |
+| `/mob/living/simple_animal/pet/cat/kitten` | 0 |
 
 ## spawners.dm (41 types)
 
