@@ -10,7 +10,10 @@ const tgui = path.resolve();
 export default {
   ...base,
   entry: {
-    'tgui-rogue-panel': path.resolve(tgui, '../modular_redtard/tgui/rogue_panel'),
+    'tgui-rogue-panel': path.resolve(
+      tgui,
+      '../modular_redtard/tgui/rogue_panel',
+    ),
   },
   module: {
     ...base.module,

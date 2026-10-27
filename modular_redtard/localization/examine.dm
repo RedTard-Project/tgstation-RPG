@@ -15,6 +15,34 @@ GLOBAL_LIST(rogue_examine_descriptions)
 				GLOB.rogue_examine_descriptions[path] = pair[2]
 	return GLOB.rogue_examine_descriptions[type]
 
+/// Object names in Russian, nominative, by English name: the chat's noun dictionary (strings/items.txt and
+/// module_items.txt), which declines the same names in chat lines. Read on the first examine.
+GLOBAL_LIST(rogue_examine_names)
+
+/proc/rogue_examine_russian_name(english)
+	if(isnull(GLOB.rogue_examine_names))
+		GLOB.rogue_examine_names = list()
+		for(var/filename in list("items.txt", "module_items.txt"))
+			var/list/nouns = rogue_strings_nouns(filename)
+			for(var/key in nouns)
+				var/list/cases = nouns[key]
+				if(cases["nom"])
+					GLOB.rogue_examine_names[LOWER_TEXT(key)] = cases["nom"]
+	return GLOB.rogue_examine_names[LOWER_TEXT(english)]
+
+/// The examine title ("That's a longsword.") names the object in Russian for a Russian player, without the article,
+/// unless it was renamed in the round. "That's" itself the chat translates.
+/obj/get_examine_name(mob/user)
+	. = ..()
+	if(name != initial(name) || !rogue_ui_russian(user?.client))
+		return
+	var/english = replacetext(replacetext(name, "\proper", ""), "\improper", "")
+	var/russian = rogue_examine_russian_name(english)
+	if(!russian)
+		return
+	var/static/regex/article = regex(@"^(?:an?|the|some) ", "i")
+	. = article.Replace(replacetext(., english, russian), "")
+
 /// TG puts the description in as "<i>[desc]</i>"; a Russian player gets its translation in its place, unless the desc
 /// was changed in the round (an engraving, a label), which only the English can say.
 /atom/examine(mob/user)

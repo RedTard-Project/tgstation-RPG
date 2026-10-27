@@ -30,7 +30,10 @@ async function fetchDictionary(url: string): Promise<void> {
     loadDictionary((await response.json()) as Dictionary);
   } catch (error) {
     fetchedUrl = null;
-    logger.error('failed to load the chat dictionary, staying in English', error);
+    logger.error(
+      'failed to load the chat dictionary, staying in English',
+      error,
+    );
   }
 }
 
@@ -43,7 +46,9 @@ function translateAdded(node: Node): void {
     return;
   }
   // A whole batch of messages added at once (a tab switch, history replay).
-  for (const message of Array.from(node.getElementsByClassName(MESSAGE_CLASS))) {
+  for (const message of Array.from(
+    node.getElementsByClassName(MESSAGE_CLASS),
+  )) {
     translateNode(message);
   }
 }

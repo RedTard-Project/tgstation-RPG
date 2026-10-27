@@ -11,3 +11,7 @@ Dented. = Вмятина.
 Damaged. = Повреждена.
 Crumbling! = Разваливается!
 It pierces through to their flesh! = Пробивает до самой плоти!
+
+# --- заголовок осмотра ТГ: "That's <em>имя</em>." (имя переводит localization/examine.dm) ---
+That's = Это
+This is = Это

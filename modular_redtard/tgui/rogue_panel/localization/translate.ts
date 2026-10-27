@@ -3,7 +3,13 @@
 // the patterns in file order, otherwise the text stays English. $N|case in a pattern's Russian declines capture N:
 // body parts and items from the dictionary, character names from what their players wrote. A line with highlighted
 // words inside it (Ratwood's chat) is tried whole first, see translateRun.
-import type { Cases, CaseKey, CompiledPattern, Dictionary, Lang } from './types';
+import type {
+  CaseKey,
+  Cases,
+  CompiledPattern,
+  Dictionary,
+  Lang,
+} from './types';
 
 const EDGES_REGEX = /^(\s*)([\s\S]*?)(\s*)$/;
 const TOKEN_REGEX = /\$(\d+)(?:\|(nom|gen|dat|acc|ins|pre))?/g;
@@ -88,7 +94,8 @@ function decline(value: string, caseKey: CaseKey): string {
   let entry = lookup(value);
   if (!entry) {
     const bare = value.replace(ARTICLE_REGEX, '');
-    entry = lookup(bare) ?? lookup(bare.charAt(0).toLowerCase() + bare.slice(1));
+    entry =
+      lookup(bare) ?? lookup(bare.charAt(0).toLowerCase() + bare.slice(1));
   }
   if (!entry) {
     return declineTitled(value, caseKey) ?? value;
