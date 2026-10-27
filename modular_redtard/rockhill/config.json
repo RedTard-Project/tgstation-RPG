@@ -1771,7 +1771,7 @@
 				"file": "redtard_logo.dmi",
 				"name": "logo",
 				"kind": "dmi",
-				"origin": "RedTard logo, Logo_480x480_.gif supplied by the project owner (2026-10-13), converted by modular_redtard/tools/gif_to_dmi.py --every 9"
+				"origin": "RedTard logo, Logo_480x480_.gif supplied by the project owner (2026-10-13), converted by gif_to_dmi.py of ai-skills (scripts/gif_to_dmi.py) --every 4"
 			}
 		]
 	},

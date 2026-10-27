@@ -10,8 +10,8 @@
 		if(rogue_baked_inhand && !override_state)
 			override_state = rogue_held_state(override_file || default_icon_file)
 		return ..(default_layer, default_icon_file, isinhands, female_uniform, override_state, override_file, bodyshape)
-	var/mob/living/carbon/human/goblin = loc
-	if(istype(goblin) && HAS_TRAIT(goblin, TRAIT_ROGUE_GOBLIN_BODY))
+	var/mob/living/carbon/human/wearer = loc
+	if(istype(wearer) && HAS_TRAIT(wearer, TRAIT_ROGUE_GOBLIN_BODY))
 		if(rogue_goblin_state && (default_layer == SUIT_LAYER || default_layer == HEAD_LAYER))
 			return mutable_appearance(ROGUE_BODIES_ICON, rogue_goblin_state, -default_layer)
 		return mutable_appearance(layer = -default_layer)
@@ -25,8 +25,13 @@
 		if(icon_exists(file, state))
 			override_state = state
 			female_uniform = NO_FEMALE_UNIFORM
+	var/worn_state = override_state || plain_state
+	var/cut_file = rogue_cut_sprite(wearer, file, worn_state, female_uniform, bodyshape)
+	if(cut_file)
+		override_file = cut_file
+		override_state = worn_state
 	. = ..(default_layer, default_icon_file, isinhands, female_uniform, override_state, override_file, bodyshape)
-	rogue_worn_layers(., file, override_state || plain_state, plain_state)
+	rogue_worn_layers(., file, worn_state, plain_state)
 
 /obj/item/proc/rogue_worn_by_female()
 	var/mob/living/carbon/human/wearer = loc

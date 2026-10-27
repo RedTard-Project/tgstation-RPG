@@ -1,6 +1,8 @@
-# Шаблоны модуля — то, чего нет у Вайблина: бой Ратвуда в этой сборке и раны
-# ТГ. Лежат отдельно от копий файлов Вайблина и пробуются ПЕРЕД patterns.txt:
-# они частнее его общих правил. Формат и падежи — как в patterns.txt.
+# Шаблоны модуля — то, чего нет у Вайблина: строки чата модуля (бой Ратвуда,
+# Рокхилл, ремёсла, быт, деньги и прочее) и раны ТГ. Лежат отдельно от копий
+# файлов Вайблина и пробуются ПЕРЕД patterns.txt: они частнее его общих правил.
+# Формат и падежи — как в patterns.txt. Покрытие и перехваты чужих строк
+# проверяет tools/chat_check.ts (см. его шапку).
 
 # --- крит (combat/crits.dm) ---
 ^Critical resistance! (.+?) resists a knockout!$ = Стойкость к увечьям! $1 не теряет сознания!
@@ -46,3 +48,545 @@
 ^(.+?)'s (.+?) spurts out a thin stream of blood!$ = У $1|gen из $2|gen бьёт тонкая струйка крови!
 ^(.+?)'s (.+?) tears a hole open!$ = У $1|gen в $2|pre разверзается рана!
 ^(.+?)'s (.+?) vaporizes as flesh, bone, and fat melt together in a horrifying mess!$ = У $1|gen $2|nom испаряется: плоть, кости и жир сплавляются в жуткое месиво!
+
+# ======================================================================
+# Строки чата модуля по папкам. Проверка — tools/chat_check.ts (движок
+# панели под bun на строках из кода). Подлежащее — $1|nom: имя персонажа
+# остаётся именем, вещь встаёт в именительный падеж, "Someone" — «кто-то»
+# (module_nouns.txt). Местоимения ловятся альтернативой (?:his|her|their|its);
+# p_they(TRUE) в коде Ратвуда даёт строчное "it", поэтому и оно в альтернативах.
+# Прошедшего времени с родом нет: настоящее время или безличный оборот.
+#
+# Шаблоны, которые ловили и чужие строки ТГ (прогон chat_check.ts --root=code
+# --diff), записаны с длинными захватами. Подлежащее:
+#   ((?!(?:Your|You|It|...) )(?:(?! (?:[Tt]he|an?|...|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?)
+# — имя или вещь: не начинается с местоимения или союза, не содержит внутри
+# артикля, предлога, связки, "'s" и знаков конца фразы. Дополнение — то же без
+# связок, и ещё не начинается с предлога или "itself". Зона удара и оружие —
+# просто без знаков конца фразы: ([^.!?;:,]+?). Глаголы lights/opens/closes/
+# pulls не берут дополнения на -ed/-ly ("Camera lights activated."). Шаблоны,
+# которые чужого не ловят, оставлены с простым (.+?).
+# ======================================================================
+
+# --- строка удара (combat/strike.dm, rogue_strike_message; та же форма у ТГ
+# в item_attack.dm): "[кто] [глагол] [кого] in the [часть][ with оружие]!".
+# Часть тела приходит своим элементом и склоняется на месте. Глаголы — все
+# attack_verb приёмов модуля и Ратвуда, по группам русского глагола. Вариант
+# с "with" стоит выше варианта без него. Удар по себе Ратвуд пишет глаголом
+# третьего лица ("I hits myself") — ловится как есть.
+^I (?:strikes|strike|hits|hit|slashes|clean-slashes|cuts across|cuts|stabs|stab|thrusts|chops at|chops|smashes across|smashes|hacks at|hacks|impales|viciously bites|bites|bashes|cracks|cleaves|skewers|sweeps through|sweeps|rends|punches|lashes|crushes|claws|picks|lunges and hacks|lunges and chops|lunges|jabs|clocks|carves through|wallops|steps on|slices|runs through|pecks|clubs|smacks|shiskebabs|rams|perforates|lances|kicks|headbutts|eviscerates|whips|twamps|thwacks|throttles|thrashes through|tears through|tears at|tears|swings past|splits|slaps|shoves|shanks|scratches|rolls on|quarts|pushes|pummels|pulverizes|prods|pounds|pokes|mauls|masterfully cuts|hobbles|hammers|grabs|gouges|dices|deftly wrist-slits|deftly slits|dazes|clangs|chastises|gnashes|precision-cuts|lacerates|canes|grasps|touches|taps|arcs|stings) myself in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = Я раню себя в $1|acc $2|ins!
+^I (?:strikes|strike|hits|hit|slashes|clean-slashes|cuts across|cuts|stabs|stab|thrusts|chops at|chops|smashes across|smashes|hacks at|hacks|impales|viciously bites|bites|bashes|cracks|cleaves|skewers|sweeps through|sweeps|rends|punches|lashes|crushes|claws|picks|lunges and hacks|lunges and chops|lunges|jabs|clocks|carves through|wallops|steps on|slices|runs through|pecks|clubs|smacks|shiskebabs|rams|perforates|lances|kicks|headbutts|eviscerates|whips|twamps|thwacks|throttles|thrashes through|tears through|tears at|tears|swings past|splits|slaps|shoves|shanks|scratches|rolls on|quarts|pushes|pummels|pulverizes|prods|pounds|pokes|mauls|masterfully cuts|hobbles|hammers|grabs|gouges|dices|deftly wrist-slits|deftly slits|dazes|clangs|chastises|gnashes|precision-cuts|lacerates|canes|grasps|touches|taps|arcs|stings) myself in the ([^.!?;:,]+?)!$ = Я раню себя в $1|acc!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:lunges and hacks|lunges and chops|slashes|clean-slashes|chops at|chops|hacks at|hacks|cleaves|slices|carves through|splits|quarts) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom рубит $2|dat $3|acc $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:lunges and hacks|lunges and chops|slashes|clean-slashes|chops at|chops|hacks at|hacks|cleaves|slices|carves through|splits|quarts) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom рубит $2|dat $3|acc!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) masterfully cuts ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom мастерски режет $2|dat $3|acc $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) masterfully cuts ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom мастерски режет $2|dat $3|acc!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) deftly (?:wrist-slits|slits) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom ловко вспарывает $2|dat $3|acc $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) deftly (?:wrist-slits|slits) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom ловко вспарывает $2|dat $3|acc!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:precision-cuts|cuts across|cuts|lacerates) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom режет $2|dat $3|acc $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:precision-cuts|cuts across|cuts|lacerates) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom режет $2|dat $3|acc!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) dices ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom кромсает $2|dat $3|acc $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) dices ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom кромсает $2|dat $3|acc!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:stabs|stab|thrusts|skewers|impales|picks|lances|perforates|shiskebabs|runs through) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom пронзает $2|dat $3|acc $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:stabs|stab|thrusts|skewers|impales|picks|lances|perforates|shiskebabs|runs through) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom пронзает $2|dat $3|acc!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) shanks ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom пыряет $2|acc в $3|acc $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) shanks ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom пыряет $2|acc в $3|acc!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:pokes|prods) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom тычет $2|acc в $3|acc $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:pokes|prods) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom тычет $2|acc в $3|acc!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:claws|scratches|rends|tears at|tears through|tears|mauls|eviscerates|gouges) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom раздирает $2|dat $3|acc $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:claws|scratches|rends|tears at|tears through|tears|mauls|eviscerates|gouges) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom раздирает $2|dat $3|acc!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:punches|jabs|clocks) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom бьёт $2|acc кулаком в $3|acc $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:punches|jabs|clocks) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom бьёт $2|acc кулаком в $3|acc!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) headbutts ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom бьёт $2|acc головой в $3|acc $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) headbutts ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom бьёт $2|acc головой в $3|acc!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:strikes|strike|hits|hit) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom бьёт $2|acc в $3|acc $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:strikes|strike|hits|hit) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom бьёт $2|acc в $3|acc!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) swings past ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom задевает $2|acc по $3|dat $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) swings past ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom задевает $2|acc по $3|dat!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) smashes across ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom наотмашь бьёт $2|acc по $3|dat $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) smashes across ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom наотмашь бьёт $2|acc по $3|dat!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:bashes|smashes|clubs) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom дубасит $2|acc в $3|acc $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:bashes|smashes|clubs) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom дубасит $2|acc в $3|acc!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:smacks|wallops|thwacks|twamps) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom лупит $2|acc по $3|dat $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:smacks|wallops|thwacks|twamps) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom лупит $2|acc по $3|dat!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) slaps ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom шлёпает $2|acc по $3|dat $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) slaps ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom шлёпает $2|acc по $3|dat!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) chastises ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom карает $2|acc ударом в $3|acc $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) chastises ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom карает $2|acc ударом в $3|acc!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:hammers|pounds|pummels) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom молотит $2|acc по $3|dat $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:hammers|pounds|pummels) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom молотит $2|acc по $3|dat!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:crushes|pulverizes) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom дробит $2|dat $3|acc $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:crushes|pulverizes) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom дробит $2|dat $3|acc!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) clangs ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom со звоном бьёт $2|acc по $3|dat $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) clangs ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom со звоном бьёт $2|acc по $3|dat!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:whips|lashes|canes|cracks|thrashes through) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom хлещет $2|acc по $3|dat $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:whips|lashes|canes|cracks|thrashes through) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom хлещет $2|acc по $3|dat!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) kicks ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom пинает $2|acc в $3|acc $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) kicks ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom пинает $2|acc в $3|acc!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) steps on ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom наступает $2|dat на $3|acc $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) steps on ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom наступает $2|dat на $3|acc!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) rolls on ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom наваливается $2|dat на $3|acc $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) rolls on ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom наваливается $2|dat на $3|acc!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) hobbles ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom калечит $2|dat $3|acc $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) hobbles ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom калечит $2|dat $3|acc!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:viciously bites|bites|gnashes) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom кусает $2|acc за $3|acc $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:viciously bites|bites|gnashes) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom кусает $2|acc за $3|acc!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) pecks ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom клюёт $2|acc в $3|acc $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) pecks ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom клюёт $2|acc в $3|acc!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) rams ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom таранит $2|acc в $3|acc $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) rams ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom таранит $2|acc в $3|acc!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:grabs|throttles) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom хватает $2|acc за $3|acc $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:grabs|throttles) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom хватает $2|acc за $3|acc!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:grasps|touches|taps) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom касается $3|gen $2|gen $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:grasps|touches|taps) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom касается $3|gen $2|gen!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:sweeps through|sweeps|arcs) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom рубит $2|acc с размаху по $3|dat $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:sweeps through|sweeps|arcs) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom рубит $2|acc с размаху по $3|dat!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) lunges ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom делает выпад $2|dat в $3|acc $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) lunges ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom делает выпад $2|dat в $3|acc!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:shoves|pushes) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom толкает $2|acc в $3|acc $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:shoves|pushes) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom толкает $2|acc в $3|acc!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) dazes ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom оглушает $2|acc ударом в $3|acc $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) dazes ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom оглушает $2|acc ударом в $3|acc!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) stings ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?) with ([^.!?;:,]+?)!$ = $1|nom жалит $2|acc в $3|acc $4|ins!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) stings ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in the ([^.!?;:,]+?)!$ = $1|nom жалит $2|acc в $3|acc!
+
+# --- защита (combat/defense.dm, shields.dm, clash.dm) ---
+# Парирование: имя защитника приходит своим <b>, нода начинается с глагола.
+# "expertly"/"deftly" — случайные синонимы контратаки, "hefty"/"strong" —
+# синонимы сильной атаки. Хвост " Untrained Armor Penalty!" ловится пустым
+# или полным захватом и склоняется существительным (module_nouns.txt).
+^(?:expertly|deftly) parries (.+?)'s (?:hefty|strong) attack with (.+?)! ?(Untrained Armor Penalty!|)$ = ловко парирует мощную атаку $1|gen $2|ins! $3|nom
+^(?:expertly|deftly) parries (.+?)'s (?:hefty|strong) attack! ?(Untrained Armor Penalty!|)$ = ловко парирует мощную атаку $1|gen! $2|nom
+^(?:expertly|deftly) parries (.+?) with (.+?)! ?(Untrained Armor Penalty!|)$ = ловко парирует удар $1|gen $2|ins! $3|nom
+^(?:expertly|deftly) parries (.+?)! ?(Untrained Armor Penalty!|)$ = ловко парирует удар $1|gen! $2|nom
+^parries (.+?)'s (?:hefty|strong) attack with (.+?)! ?(Untrained Armor Penalty!|)$ = парирует мощную атаку $1|gen $2|ins! $3|nom
+^parries (.+?)'s (?:hefty|strong) attack! ?(Untrained Armor Penalty!|)$ = парирует мощную атаку $1|gen! $2|nom
+^parries (.+?) with (.+?)! ?(Untrained Armor Penalty!|)$ = парирует удар $1|gen $2|ins! $3|nom
+^parries (.+?)! ?(Untrained Armor Penalty!|)$ = парирует удар $1|gen! $2|nom
+^clips (.+?)'s weapon!$ = задевает оружие $1|gen!
+^(.+?) binds (?:his|her|their|its) weapon with (.+?)'s! (?:[Hh]e|[Ss]he|[Tt]hey|[Ii]t) saw that attack coming!$ = $1|nom сцепляет своё оружие с оружием $2|gen — эту атаку предвидели!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) deflects ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)!$ = $1|nom отбивает $2|acc!
+^(.+?) expertly blocks (.+?) with (.+?)!$ = $1|nom умело принимает $2|acc на $3|acc!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) blocks (?!.*'s attack!$)(?!.* with )((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)!$ = $1|nom блокирует $2|acc!
+^(.+?) bangs (.+?) with (.+?)!$ = $1|nom стучит $3|ins по $2|dat!
+^(.+?) catches (.+?)'s bare-handed strike and SNAPS (?:his|her|their|its) (.+?)!$ = $1|nom перехватывает безоружный удар $2|gen и ЛОМАЕТ $2|dat $3|acc!
+^(.+?) anticipated the strike, disarming (.+?) in a decisive guard!$ = $1|nom предугадывает удар и решительной защитой обезоруживает $2|acc!
+^(.+?) deftly counters (.+?)'s bite with a THUNDEROUS bash, SHATTERING (?:his|her|their|its) jaw!$ = $1|nom ловко отвечает на укус $2|gen ГРОМОВЫМ ударом и КРОШИТ $2|dat челюсть!
+^(.+?) ripostes (.+?)'s strike with (?:his|her|their|its) bare hands!$ = $1|nom голыми руками отвечает на удар $2|gen!
+^(.+?) ripostes (.+?) with (.+?)!$ = $1|nom контратакует $2|acc $3|ins!
+^(.+?) catches (.+?)'s bite and bashes (.+?) into (?:his|her|their|its) mouth!$ = $1|nom перехватывает укус $2|gen и вбивает $3|acc $2|dat в пасть!
+^(.+?) catches (.+?)'s bite and smashes (?:his|her|their|its) fist into (?:his|her|their|its) mouth!$ = $1|nom перехватывает укус $2|gen и бьёт $2|acc кулаком в пасть!
+^(.+?) and (.+?) clash!$ = $1|nom и $2|nom скрещивают оружие!
+^Draw! The opponent's chances were\.\.\. (.+?)%$ = Ничья! Шансы противника были... $1%
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:is|are) exposed!$ = $1|nom раскрывается!
+^(.+?) is disarmed!$ = $1|acc обезоруживают!
+^(?:[Hh]e|[Ss]he|[Tt]hey|[Ii]t) didn't see me! Nothing happened!$ = Меня не заметили! Ничего не вышло!
+^(.+?) baits an attack from (.+?)!$ = $1|nom провоцирует $2|acc на атаку!
+^It didn't work! (?:[Hh]is|[Hh]er|[Tt]heir|[Ii]ts) footing returned!$ = Не вышло! Противник снова твёрдо стоит на ногах!
+^I fooled (?:him|her|them|it)! I've regained my footing!$ = Обманка удалась! Я снова твёрдо стою на ногах!
+^(?:[Hh]e|[Ss]he|[Tt]hey|[Ii]t) fell for my bait (.+?)! One more!$ = Противник $1 попадается на мою уловку! Ещё раз!
+^(?:[Hh]e|[Ss]he|[Tt]hey|[Ii]t) fell for it again and is off-balanced! NOW!$ = Противник снова попадается и теряет равновесие! СЕЙЧАС!
+^(?:[Hh]e|[Ss]he|[Tt]hey|[Ii]t) fell for my dirty trick! I am loose!$ = Противник попадается на мой грязный приём! Я вырываюсь!
+^I fall for (.+?)'s bait (.+?)! I'm losing my footing!$ = Я $2 попадаюсь на уловку $1|gen! Я теряю опору!
+^I fall for (.+?)'s bait (.+?)! My balance is GONE!$ = Я $2 попадаюсь на уловку $1|gen! Равновесие ПОТЕРЯНО!
+^I fall for (.+?)'s dirty trick! My hold is broken!$ = Я попадаюсь на грязный приём $1|gen! Мой захват сорван!
+^My shove at (.+?) was blocked!$ = $1|nom блокирует мой толчок!
+^(.+?) yields!$ = $1|nom сдаётся!
+
+# --- финты (combat/rmb.dm) ---
+^(.+?) feints an attack at (.+?)!$ = $1|nom делает ложный выпад в сторону $2|gen!
+^(?:[Hh]is|[Hh]er|[Tt]heir|[Ii]ts) guard is disrupted!$ = Защита противника сбита!
+^(.+?) did not fall for my feint\.\.\.$ = $1|nom не ведётся на мой финт...
+^(.+?) fell for my feint attack!$ = $1|nom попадается на мой финт!
+^I fall for (.+?)'s feint attack!$ = Я попадаюсь на финт $1|gen!
+
+# --- броня и раны (combat/armor.dm, status.dm, dismember.dm, blade.dm) ---
+^(.+?) suffers a savage hit to (?:his|her|their|its) armor while exposed, sending (?:him|her|them|it) reeling!$ = $1|nom пропускает свирепый удар по броне в открытой стойке и шатается!
+^(.+?) is struck while vulnerable, leaving a dent in (?:his|her|their|its) armor!$ = $1|nom получает удар в уязвимый миг — на броне остаётся вмятина!
+^(.+?) suffers a savage hit while exposed!$ = $1|nom пропускает свирепый удар в открытой стойке!
+^(.+?) is struck while vulnerable!$ = $1|nom получает удар в уязвимый миг!
+^My armour just saved me from losing my (.+?)!$ = Броня спасает $1|acc от отсечения!
+^Critical resistance! (.+?)'s (.+?) hangs on by a thread!$ = Стойкость к увечьям! У $1|gen $2|nom держится на волоске!
+^(.+?) is BRUTALLY DECAPITATED!$ = $1|dat ЖЕСТОКО СНОСЯТ ГОЛОВУ!
+^(.+?) is VIOLENTLY DECAPITATED!$ = $1|dat СВИРЕПО СНОСЯТ ГОЛОВУ!
+^(.+?) is BLOODILY DECAPITATED!$ = $1|dat КРОВАВО СНОСЯТ ГОЛОВУ!
+^(.+?) is MESSILY DECAPITATED!$ = $1|dat ГРЯЗНО СНОСЯТ ГОЛОВУ!
+^The (.+?) is torn off!$ = Отрывает $1|acc!
+^The (.+?) is sundered!$ = Отрубает $1|acc!
+^The (.+?) is severed!$ = Отсекает $1|acc!
+^The (.+?) is separated!$ = Отделяет $1|acc!
+^The (.+?) is unsewn!$ = Распарывает по швам $1|acc!
+^The edge chips! (.+?)'s damage will start to slowly wane, now\.$ = Лезвие щербится! Урон $1|gen теперь понемногу падает.
+^A chunk snapped off! (.+?)'s damage will decay much quicker now\.$ = Откололся кусок! Урон $1|gen теперь падает куда быстрее.
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) sharpens ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)!$ = $1|nom точит $2|acc!
+
+# --- осмотр оружия и брони (combat/attack.dm, armor.dm, grab.dm) ---
+^It is used with the (.+?) skill\.$ = Навык владения: $1|nom.
+^Defense: (.+?) \((.+?) one-handed, (.+?) wielded\)\.$ = Защита: $1 ($2 одной рукой, $3 двумя).
+^Defense: (.+?)\.$ = Защита: $1.
+^The edge is chipped and blunt\. Sharpness: (.+?)%\.$ = Лезвие в щербинах и затуплено. Острота: $1%.
+^The edge is chipped\. Sharpness: (.+?)%\.$ = Лезвие в щербинах. Острота: $1%.
+^The edge is sharp\. Sharpness: (.+?)%\.$ = Лезвие острое. Острота: $1%.
+^It needs (.+?) strength to use properly \((.+?) wielded\)\.$ = Чтобы владеть им как следует, нужна сила $1 ($2 — двумя руками).
+^It needs (.+?) strength to use properly\.$ = Чтобы владеть им как следует, нужна сила $1.
+^Alternate grips: (.+?)\. Right-click it in hand or press Alt Grip to switch\.$ = Другие хваты: $1. Сменить — правым щелчком по оружию в руке или кнопкой «Перехват».
+^Unarmed damage bonus: \+(.+?) \(flat, applied after strength scaling\)\.$ = Прибавка к урону без оружия: +$1 (ровная, после поправки на силу).
+
+# --- хваты (combat/alt_grip.dm) ---
+^I need a free hand to hold (.+?) like that\.$ = Чтобы так держать $1|acc, нужна свободная рука.
+^I shift (.+?) into a halfsword grip with both hands\.$ = Я беру $1|acc в полумеч обеими руками.
+^I shift (.+?) into a halfsword grip\.$ = Я беру $1|acc в полумеч.
+^I shift (.+?) into a mordhau grip with both hands\.$ = Я перехватываю $1|acc за клинок для мордхау обеими руками.
+^I shift (.+?) into a mordhau grip\.$ = Я перехватываю $1|acc за клинок для мордхау.
+^I return to a normal grip on (.+?)\.$ = Я снова держу $1|acc обычным хватом.
+
+# --- захваты и борьба (combat/grab.dm, unarmed.dm, mmb.dm) ---
+^(.+?) attacks (.+?) reflexively!$ = $1|nom рефлекторно бьёт $2|acc!
+^(.+?) struggles to restrain me!$ = $1|nom силится меня скрутить!
+^(.+?) struggles with (.+?)!$ = $1|nom борется с $2|ins!
+^I struggle with (.+?)!$ = Я борюсь с $1|ins!
+^I can't reach (.+?)'s throat!$ = Мне не дотянуться до горла $1|gen!
+^(.+?) (?:chokes|strangles) (.+?) with a chokehold!$ = $1|nom душит $2|acc удушающим захватом!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:chokes|strangles) ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)!$ = $1|nom душит $2|acc!
+^I (?:choke|strangle) (.+?) with a chokehold!$ = Я душу $1|acc удушающим захватом!
+^I (?:choke|strangle) (.+?)!$ = Я душу $1|acc!
+^(.+?) twists my (.+?)!$ = $1|nom выкручивает мне $2|acc!
+^I twist (.+?)'s (.+?)\.$ = Я выкручиваю $1|dat $2|acc.
+^(.+?) smashes my (.+?) into (.+?)!$ = $1|nom впечатывает мне $2|acc в $3|acc!
+^I smash (.+?)'s (.+?) against (.+?)\.$ = Я впечатываю $1|dat $2|acc в $3|acc.
+^(.+?) shoves (.+?) to the ground!$ = $1|nom валит $2|acc на землю!
+^(.+?) tries to shove (.+?)!$ = $1|nom пытается повалить $2|acc!
+^(.+?) pins (.+?) to the ground!$ = $1|nom прижимает $2|acc к земле!
+^(.+?) keeps (.+?) pinned to the ground!$ = $1|nom не даёт $2|dat подняться с земли!
+^(.+?) takes (.+?) from my hand!$ = $1|nom забирает у меня $2|acc!
+^(.+?) takes (.+?) from (.+?)'s hand!$ = $1|nom забирает $2|acc из руки $3|gen!
+^(.+?) is too prepared for combat to be taken hostage\.$ = Взять $1|acc в заложники не выйдет: слишком настороже.
+^I take (.+?) hostage\.$ = Я беру $1|acc в заложники.
+^(.+?) takes me hostage!$ = $1|nom берёт меня в заложники!
+^I headbutt (.+?)\.$ = Я бью $1|acc головой.
+^(.+?) kicks the lever!$ = $1|nom пинает рычаг!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:leaps|jumps)!$ = $1|nom прыгает!
+^(.+?) bites my (.+?)!$ = $1|nom кусает меня за $2|acc!
+^I bite (.+?)'s (.+?)!$ = Я кусаю $1|acc за $2|acc!
+^I bite (.+?)'s (.+?)\.$ = Я кусаю $1|acc за $2|acc.
+^I can't drink from (.+?)\.$ = Из $1|gen не напиться.
+^(.+?) is too far away\.$ = $1|nom слишком далеко.
+^(.+?) is alert\. I can't pickpocket them like this\.$ = $1|nom настороже. Так в карман не залезть.
+^I try to steal from (.+?)\.\.\.$ = Я пытаюсь обчистить $1|acc...
+^(.+?) is caught rummaging through (.+?)'s belongings!$ = $1|nom попадается на том, что роется в вещах $2|gen!
+^(.+?) tried to rob me!$ = $1|nom пытается меня обокрасть!
+^I can't work (.+?) loose without them noticing\.$ = Незаметно $1|acc не вытащить.
+^I stole (.+?)!$ = Я краду $1|acc!
+^(.+?) swing a fist at the air!$ = $1|nom бьёт кулаком воздух!
+^(.+?) is winded!$ = $1|nom выдыхается!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) raises ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)!$ = $1|nom заносит $2|acc!
+
+# --- особые приёмы (combat/specials.dm) ---
+^(.+?) strikes (.+?)'s (.+?), but (.+?) takes the blow!$ = Приём «$1|nom» бьёт $2|acc в $3|acc, но удар принимает $4|nom!
+
+# --- жесты (combat/gestures.dm) ---
+^(.+?) waves friendly at (.+?)\.$ = $1|nom приветливо машет $2|dat.
+^I wave friendly at (.+?)\.$ = Я приветливо машу $1|dat.
+^(.+?) shoos (.+?) away\.$ = $1|nom прогоняет $2|acc прочь.
+^I shoo (.+?) away\.$ = Я прогоняю $1|acc прочь.
+^(.+?) beckons (.+?) to come closer\.$ = $1|nom подзывает $2|acc ближе.
+^I beckon (.+?) to come closer\.$ = Я подзываю $1|acc ближе.
+^(.+?) berates (.+?) disapprovingly!$ = $1|nom неодобрительно отчитывает $2|acc!
+^(.+?) flips (.+?) off!$ = $1|nom показывает $2|dat неприличный жест!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) taunts ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)!$ = $1|nom дразнит $2|acc!
+
+# --- Рокхилл (rockhill/): двери, замки, ловушки, проходы, огонь ---
+^(.+?) is already taken\.$ = Роль «$1» уже занята.
+^I am the (.+?)\.$ = Я — $1.
+^You enter (?!.* mode\.$)((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = Я вхожу в $1|acc.
+^(.+?) bashes into (.+?)!$ = $1|nom с размаху врезается в $2|acc!
+^(.+?) has no lock\.$ = У $1|gen нет замка.
+^This is not the key to (.+?)\.$ = Это не ключ от $1|gen.
+^I don't have the right key for (.+?)\.$ = У меня нет ключа от $1|gen.
+^I lock (.+?)\.$ = Я запираю $1|acc.
+^I unlock (.+?)\.$ = Я отпираю $1|acc.
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) locks ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = $1|nom запирает $2|acc.
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) unlocks ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = $1|nom отпирает $2|acc.
+^I knock on (.+?)\.$ = Я стучу в $1|acc.
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) knocks on ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = $1|nom стучит в $2|acc.
+^I kick (.+?) shut!$ = Я пинком захлопываю $1|acc!
+^(.+?) kicks (.+?) shut!$ = $1|nom пинком захлопывает $2|acc!
+^I kick open (.+?)!$ = Я пинком распахиваю $1|acc!
+^(.+?) kicks open (.+?)!$ = $1|nom пинком распахивает $2|acc!
+^I kick (.+?) over!$ = Я пинком опрокидываю $1|acc!
+^(.+?) kicks (.+?) over!$ = $1|nom пинком опрокидывает $2|acc!
+^(.+?) kicks over (.+?)!$ = $1|nom пинком опрокидывает $2|acc!
+^I need (.+?) for this\.$ = Для этого нужно: $1|nom.
+^I start repairing (.+?)\.$ = Я начинаю чинить $1|acc.
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) starts repairing ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = $1|nom начинает чинить $2|acc.
+^I repair (.+?)\.$ = Я чиню $1|acc.
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) repairs ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = $1|nom чинит $2|acc.
+^An additional (.+?) is needed to finish the job\.$ = Чтобы закончить, нужно ещё: $1|nom.
+^(.+?) can be used to repair it\.$ = Для починки подойдёт $1|nom.
+^The exit seems to hum with a faint magical energy, pulling you toward the (.+?)\.$ = Выход едва слышно гудит магией и тянет на $1|acc.
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) lights (?![^.]*\b\w+(?:ed|ly)\.$)((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) in ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = $1|nom зажигает $2|acc от $3|gen.
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) lights (?![^.]*\b\w+(?:ed|ly)\.$)((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = $1|nom зажигает $2|acc.
+^(.+?) feeds (.+?) to (.+?)\.$ = $1|nom подкладывает $2|acc в $3|acc.
+^(.+?) starts to pick up (.+?)\.\.\.$ = $1|nom начинает поднимать $2|acc...
+^The fire will last for less than a minute\.$ = Огня хватит меньше чем на минуту.
+^The fire will last for (\d+) minutes\.$ = Огня хватит ещё минут на $1.
+^(.+?) comes crashing down on (.+?)'s (.+?)!$ = $1|nom с грохотом обрушивается $2|dat на $3|acc!
+^(.+?) crushes my (.+?)!$ = $1|nom обрушивается мне на $2|acc!
+^(.+?) cranks (.+?)\.$ = $1|nom крутит ворот $2|gen.
+^Someone is already hiding under (.+?)!$ = Под $1|ins уже кто-то прячется!
+^I hide under (.+?)!$ = Я прячусь под $1|ins!
+^I come out from under (.+?)!$ = Я вылезаю из-под $1|gen!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) catches fire!$ = $1|nom загорается!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) melts away!$ = $1|nom тает!
+^I start mining (.+?)\.$ = Я начинаю долбить $1|acc.
+^(.+?) starts mining (.+?)\.$ = $1|nom начинает долбить $2|acc.
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) pulls (?![^.]*\b\w+(?:ed|ly)\.$)((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = $1|nom тянет $2|acc.
+^I cannot sheath (.+?) while it is bound\.$ = Не вложить $1|acc в ножны, пока клинок связан.
+^(.+?) won't fit in there\.$ = $1|nom туда не влезает.
+^I sheathe (.+?) into (.+?)\.$ = Я вкладываю $1|acc в $2|acc.
+^(.+?) sheathes (.+?) into (.+?)\.$ = $1|nom вкладывает $2|acc в $3|acc.
+^I draw (.+?) out of (.+?)\.$ = Я достаю $1|acc из $2|gen.
+^(.+?) draws (.+?) out of (.+?)!$ = $1|nom выхватывает $2|acc из $3|gen!
+^(.+?) is sheathed in it\. Click it with an empty hand to draw\.$ = В ножнах — $1|nom. Щёлкни пустой рукой, чтобы достать.
+^(.+?) erupts from a hidden slit in (.+?)!$ = Из потайной щели в $2|pre вылетает $1|nom!
+^I don't know how to disarm (.+?)\.$ = Я не знаю, как обезвредить $1|acc.
+^I don't know how to arm (.+?)\.$ = Я не знаю, как взвести $1|acc.
+^I start to disarm (.+?)\.$ = Я начинаю обезвреживать $1|acc.
+^I start to arm (.+?)\.$ = Я начинаю взводить $1|acc.
+^(.+?) (?:begins|starts) to disarm (.+?)\.$ = $1|nom начинает обезвреживать $2|acc.
+^(.+?) begins to arm (.+?)\.$ = $1|nom начинает взводить $2|acc.
+^I disarm (.+?)\.$ = Я обезвреживаю $1|acc.
+^I arm (.+?)\.$ = Я взвожу $1|acc.
+^(.+?) disarms (.+?)\.$ = $1|nom обезвреживает $2|acc.
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) arms ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = $1|nom взводит $2|acc.
+^(.+?) couldn't get the shoddy (.+?) shut close!$ = У $1|gen не выходит захлопнуть $2|acc — дрянная работа!
+^(.+?) couldn't get the shoddy (.+?) to open up!$ = У $1|gen не выходит раскрыть $2|acc — дрянная работа!
+^(.+?) is now armed\.$ = Теперь $1|nom на взводе.
+^(.+?) is now disarmed\.$ = $1|nom больше не на взводе.
+^I hide (.+?) under the dirt\.$ = Я прячу $1|acc под землёй.
+^I trigger (.+?) with (.+?)!$ = Я привожу в действие $1|acc с помощью $2|gen!
+^(.+?) triggers (.+?) with (.+?)\.$ = $1|nom приводит в действие $2|acc с помощью $3|gen.
+^I watch (.+?) go through a well-hidden entrance\.$ = Я вижу, как $1|nom проходит через хорошо спрятанный вход.
+^(.+?) watches me pass through the entrance\.$ = $1|nom видит, как я прохожу через вход.
+^(.+?) peers through (.+?)\.$ = $1|nom заглядывает в $2|acc.
+^I start to climb (.+?)\.\.\.$ = Я начинаю взбираться на $1|acc...
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) starts to climb ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = $1|nom начинает взбираться на $2|acc.
+^There's already an oar secured to (.+?)\.$ = К $1|dat уже прикреплено весло.
+^I can't secure (.+?) to (.+?)\.$ = Не получается закрепить $1|acc на $2|pre.
+^I secure (.+?) to (.+?)\.$ = Я закрепляю $1|acc на $2|pre.
+^There isn't an oar stored on (.+?)\.$ = На $1|pre нет весла.
+^I retrieve the oar from (.+?)\.$ = Я снимаю весло с $1|gen.
+^I'll need an oar in one of my hands to row (.+?)\.$ = Чтобы грести, нужно весло в руке.
+^(.+?) closes the window!$ = $1|nom захлопывает окно!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) closes (?![^.]*\b\w+(?:ed|ly)\.$)((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = $1|nom закрывает $2|acc.
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) opens (?![^.]*\b\w+(?:ed|ly)\.$)((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = $1|nom открывает $2|acc.
+^I slide (.+?) through (.+?) seal\.\.\.$ = Я просовываю $1|acc в щель $2|gen...
+^Click\.\.\. (.+?)% chance to succeed\.\.\.$ = Щёлк... Шанс на успех: $1%...
+^Clack\. (.+?)% chance to fail\.$ = Клац. Шанс неудачи: $1%.
+^(.+?) pries open (.+?) with (.+?)!$ = $1|nom вскрывает $2|acc $3|ins!
+^I pry (.+?) open!$ = Я вскрываю $1|acc!
+^(.+?) fails! The window is broken!$ = У $1|gen не выходит! Окно разбито!
+^IC Date set to: (.+?)\. This date will advance naturally as days pass\.$ = Дата в игре: $1. Дальше она пойдёт своим чередом.
+
+# --- производство (crafting/) ---
+^(.+?) places (.+?) on the anvil\.$ = $1|nom кладёт $2|acc на наковальню.
+^(.+?) lies on it\.$ = На ней лежит $1|nom.
+^It needs (.+?) to continue\.$ = Чтобы продолжить, нужно: $1|nom.
+^I'm getting a better grasp at (.+?)\.\.\.$ = Я всё лучше понимаю $1|acc...
+^With some rest, I feel like I can get better at (.+?)\.\.\.$ = Кажется, после отдыха $1|nom пойдёт у меня лучше...
+^(.+?) starts making more sense to me\.\.\.$ = $1|nom становится мне понятнее...
+^My (.+?) can no longer improve without some rest and meditation\.\.\.$ = Навык «$1|nom» больше не растёт без отдыха и раздумий...
+^I feel inspired about (.+?)\.\.\.$ = Меня вдохновляет $1|nom...
+^(.+?) heats the bar\.$ = $1|nom раскаляет заготовку.
+^You add ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) to ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = Я добавляю $1|acc к $2|dat.
+^Now it's time to add (.+?)\.$ = Пора добавить $1|acc.
+^(.+?) deftly strikes the bar!$ = $1|nom ловко бьёт по заготовке!
+^(.+?) strikes the bar!$ = $1|nom бьёт по заготовке!
+^(.+?) fumbles the bar!$ = $1|nom промахивается по заготовке!
+^(.+?) ruins the bar!$ = $1|nom губит заготовку!
+^(.+?) destroys the bar!$ = $1|nom разбивает заготовку!
+^(.+?) needs (.+?) to continue\.$ = Для $1|gen нужно ещё: $2|nom.
+^(.+?) is ready to be quenched in a water bin\.$ = Можно закаливать $1|acc в бадье с водой.
+^I grind (.+?) to a fresh edge\.$ = Я заново оттачиваю $1|acc на точиле.
+^(.+?) grinds (.+?) to a fresh edge\.$ = $1|nom заново оттачивает $2|acc на точиле.
+^This object can be repaired using (.+?)\.$ = Это можно починить с помощью: $1|nom.
+^It is currently being worked on to become (.+?)\.$ = Над этим сейчас работают, выйдет: $1|nom.
+^(.+?) finishes field-repairing (.+?)\.$ = $1|nom заканчивает латать $2|acc на скорую руку.
+^You fumble your way into slightly repairing (.+?)\.$ = Кое-как мне удаётся слегка подлатать $1|acc.
+^I replenish the needle's thread by (.+?) uses!$ = Нити в игле прибавляется: ещё $1 применений!
+^(.+?) makes a little progress towards repairing (.+?)\.\.\.$ = $1|nom понемногу продвигается в починке $2|gen...
+^I've failed to craft (.+?)\.$ = Мне не удаётся сделать $1|acc.
+^Construction failed, it needs an? (.+?)!$ = Не выходит: нужно, чтобы рядом было $1|nom!
+^(.+?) should be used at an anvil, not (.+?)!$ = $1|acc нужно нести на наковальню, а не в $2|acc!
+^(.+?) cannot be smelted\.$ = $1|acc не переплавить.
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) is already full!$ = В $1|pre уже нет места!
+^(.+?) is currently smelting\. Wait for it to finish, or douse it with water to retrieve items from it\.$ = В $1|pre идёт плавка. Дождись конца или залей водой, чтобы достать содержимое.
+^You retrieve ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) from ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = Я достаю $1|acc из $2|gen.
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) retrieves ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) from ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = $1|nom достаёт $2|acc из $3|gen.
+^(.+?) can be smelted, but (.+?) is full\.$ = $1|acc можно переплавить, но в $2|pre нет места.
+^(.+?) puts something in (.+?)\.$ = $1|nom что-то кладёт в $2|acc.
+^(.+?) finished smelting\.$ = Плавка в $1|pre окончена.
+^It can hold up to (.+?) ores at a time\.$ = Вмещает до $1 кусков руды за раз.
+^You anchor (.+?)\.$ = Я закрепляю $1|acc.
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) can now be moved\.$ = $1|acc теперь можно двигать.
+^You string some fiber onto (.+?)\.$ = Я натягиваю немного волокна на $1|acc.
+^You string a fiber onto (.+?)\.$ = Я натягиваю волокно на $1|acc.
+^There's nothing to take from (.+?)\.$ = С $1|gen нечего снять.
+^You remove a strand from (.+?)\.$ = Я снимаю нить с $1|gen.
+^There are (.+?) strands of fiber strung on (.+?)\.$ = На $2|pre натянуто нитей: $1.
+^It holds (.+?)\.$ = В клещах: $1|nom.
+
+
+# --- быт (survival/) ---
+^(.+?) won't cook any further\.$ = $1|acc дальше не приготовить.
+^(.+?) starts to cook (.+?) over (.+?)\.$ = $1|nom начинает готовить $2|acc на $3|pre.
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) burns (?!out\.$)((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = $1|nom сжигает $2|acc.
+^I fan the flame on (.+?)\.$ = Я раздуваю огонь в $1|pre.
+^You smell a burnt smell coming from ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)!$ = От $1|gen тянет гарью!
+^There's an? (.+?) on it with an? (.+?) in it\.$ = На нём: $1|nom, внутри — $2|nom.
+^There's an? (.+?) on it, it is boiling\.$ = На нём: $1|nom, внутри кипит.
+^There's an? (.+?) on it\. It is not boiling\.$ = На нём: $1|nom. Не кипит.
+^There's an? (.+?) on it\.$ = На нём: $1|nom.
+^Put food in through the top; it bakes while the oven burns\. (.+?) of (.+?) places are taken\.$ = Еду кладут сверху; она печётся, пока печь горит. Занято мест: $1 из $2.
+^I need at least (.+?) units of (.+?)!$ = Нужно хотя бы $1 мер: $2|nom!
+^I need a table to prepare (.+?)\.$ = Чтобы приготовить $1|acc, нужен стол.
+^(.+?) is ready to be cooked\.$ = $1|acc можно готовить.
+^I clear the preparation progress for (.+?) from (.+?)\.$ = Я бросаю готовить $1|acc из $2|gen.
+^Recipe: (.+?)\. Next step: add (.+?)\. Alt-click to start over\.$ = Рецепт: $1|nom. Дальше: добавить $2|acc. Alt + щелчок — начать заново.
+^This could be used to prepare: (.+?)\.$ = Из этого можно приготовить: $1.
+# "It can be <b>chopped</b> into ...": глагол приходит своим <b>, он слот строки и переводится фрагментом.
+^It can be (.+?) into (.+?) on a table with a short blade\.$ = На столе коротким клинком это можно $1: $2|nom.
+^The (.+?) gives a violent snap\. It looks broken!$ = $1|nom громко трещит. Похоже, сломано!
+^(.+?) begins rolling up the (.+?)\.$ = $1|nom начинает сворачивать $2|acc.
+^(.+?) begins placing the (.+?) down on the ground\.$ = $1|nom начинает расстилать $2|acc на земле.
+^I need some free space to deploy the (.+?) here!$ = Чтобы расстелить здесь $1|acc, нужно свободное место!
+^I warm my hands over (.+?)\.$ = Я грею руки над $1|ins.
+^(.+?) warms (?:his|her|their|its) hands over (.+?)\.$ = $1|nom греет руки над $2|ins.
+^(.+?) warms (?:his|her|their|its) hands near the fire\.$ = $1|nom греет руки у огня.
+
+# --- деньги (economy/) ---
+^NERVELOCK: (.+)$ = НЕРВОЗАМОК: $1
+^(.+?) flips the coin\. Heads!$ = $1|nom подбрасывает монету. Орёл!
+^(.+?) flips the coin\. Tails!$ = $1|nom подбрасывает монету. Решка!
+^(.+?) will not take (.+?)\.$ = $1|nom не принимает $2|acc.
+^Maximum (.+?) coins per withdrawal\.$ = Не больше $1 монет за раз.
+^Crown levies - Import: (.+?)%\.$ = Пошлины короны — ввоз: $1%.
+^My account holds (.+?) mammons\.$ = На моём счету $1 маммон.
+^(.+?) does not fit\.$ = $1|nom не влезает.
+^(.+?) for sale! (.+?) mammons!$ = $1|nom на продажу! $2 маммон!
+^Value: ~(.+?) mammon \(uncertain\)\.$ = Цена: около $1 маммон (неточно).
+^Value: (.+?) mammon\.$ = Цена: $1 маммон.
+^Exported (.+?) for (.+?) mammons\.$ = Вывезено: $1|nom за $2 маммон.
+^Crown's (.+?) stockpile is full - shipped abroad on your behalf\.$ = Запас короны ($1|nom) полон — отправлено за море от вашего имени.
+^(.+?) has been stockpiled\.$ = $1|nom — на склад.
+^No account found for (.+?)\. Submit your fingers to a Nervelock for inspection\.$ = Счёт на имя $1|gen не найден. Предъявите пальцы нервозамку для проверки.
+^(.+?) is not accepted here\.$ = $1|acc здесь не принимают.
+^The Crown has no interest in (.+?) at this time\.$ = Сейчас корона не берёт $1|acc.
+^The Crown's (.+?) stockpile is full, take it elsewhere\.$ = Запас короны ($1|nom) полон, неси в другое место.
+
+# --- скотоводство (husbandry/) ---
+^(.+?) gives birth to (.+?)\.$ = $1|nom приносит потомство: $2|nom.
+^(.+?) builds a nest\.$ = $1|nom вьёт гнездо.
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) calms down\.$ = $1|nom успокаивается.
+^(?:He|She|They|It) looks? starved\.$ = Похоже, оно умирает с голоду.
+^(.+?) looks starved\.$ = $1|nom, похоже, умирает с голоду.
+^(?:He|She|They|It) looks? hungry\.$ = Похоже, оно голодно.
+^I beckon (.+?) with (.+?)\.$ = Я подманиваю $1|acc $2|ins.
+^(.+?) beckons (.+?) with (.+?)\.$ = $1|nom подманивает $2|acc $3|ins.
+^(.+?) lowers (?:his|her|their|its) head to (.+?)\.$ = $1|nom склоняет голову перед $2|ins.
+^It is tamed to (.+?)\.$ = Оно приручено, хозяин — $1|nom.
+
+# --- одежда (clothing/) ---
+# Осмотр человека: "He is wearing <img> <em>вещь</em> over his shoulders." —
+# имя вещи сервер уже пишет по-русски в своём <em>, а подпись вокруг приходит
+# отдельными нодами (начало — фрагментом в module_fragments.txt, хвост — тут).
+^over (?:his|her|their|its) shoulders\.$ = на плечах.
+^on (?:his|her|their|its) back\.$ = на спине.
+^on (?:his|her|their|its) wrists\.$ = на запястьях.
+^in (?:his|her|their|its) mouth\.$ = во рту.
+^on (?:his|her|their|its) fingers\.$ = на пальцах.
+^I spit out (.+?)\.$ = Я выплёвываю $1|acc.
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) spits out ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = $1|nom выплёвывает $2|acc.
+^You need a belt before you can hang (.+?) on it!$ = Чтобы повесить $1|acc, нужен пояс!
+^I put out (.+?)\.$ = Я гашу $1|acc.
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) puts out ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = $1|nom гасит $2|acc.
+^(.+?) burns out\.$ = $1|nom догорает.
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) goes out\.$ = $1|nom гаснет.
+^I stuff (.+?) into (.+?)\.$ = Я набиваю $2|acc: $1|nom.
+
+# --- лобби и мигранты (lobby/, migrants/) ---
+^You need a minimum of (.+?) characters in your flavor text in order to play\.$ = Чтобы играть, в описании персонажа нужно хотя бы $1 знаков.
+^You can examine (?:him|her|them|it) closer to read more about (?:him|her|them|it)\.$ = Осмотри внимательнее, чтобы узнать больше.
+^OOC notes: (.+)$ = OOC-заметки: $1
+^Not yet\. \((.+?)\)\.$ = Ещё нет. ($1).
+^You cannot join yet\. \((.+?)\)\.$ = Войти пока нельзя. ($1).
+^It won't work yet\. \((.+?)\)\.$ = Пока не выйдет. ($1).
+^Please be patient\. \((.+?)\)\.$ = Наберись терпения. ($1).
+^Try again later\. \((.+?)\)\.$ = Попробуй позже. ($1).
+^Late-joining is not yet possible\. \((.+?)\)\.$ = Позднее вступление пока невозможно. ($1).
+^The wave you queued for, (.+?), failed to gather enough people and scattered into the mist\. You have left the queue\.$ = Волна «$1» не набрала людей и рассеялась в тумане. Очередь покинута.
+^I am the (.+?)!$ = Я — $1!
+^A wave is forming: (.+)$ = Собирается волна: $1
+^Needs: (.+?)\.$ = Нужны: $1.
+^Slots open for (.+?)\.$ = Свободные места: $1.
+^([\d.]+)s remaining\.$ = Осталось $1 с.
+^You are queued for (.+?) as the (.+?)\. This does not guarantee a slot\.$ = Я в очереди на волну «$1», роль — $2. Место не гарантировано.
+^You are queued for (.+?)\. This does not guarantee a slot\.$ = Я в очереди на волну «$1». Место не гарантировано.
+
+# --- интерфейс (hud/, attributes/, maps/) ---
+^Stamina: (.+?) / (.+?)$ = Выносливость: $1 / $2
+^Energy: (.+?) / (.+?)$ = Энергия: $1 / $2
+^(.+?) begins looking around\.$ = $1|nom начинает озираться.
+^(.+?) didn't find me\.$ = $1|nom меня не находит.
+^(.+?) sees me! I'm found!$ = $1|nom видит меня! Меня нашли!
+^You can't fit ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) into your ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)!$ = $1|nom не влезает в $2|acc!
+^((?!(?:The|the|Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) is locked!$ = На $1|pre замок!
+^There's nothing in your ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) to take out!$ = В $1|pre нечего доставать!
+^My proficiency in (.+?) grows to (.+?)!$ = Навык «$1|nom» растёт до ступени «$2|nom»!
+^My (.+?) has weakened to (.+?)!$ = Навык «$1|nom» слабеет до ступени «$2|nom»!
+^(.+?) has no attributes\.$ = У $1|gen нет характеристик.
+^The story is drawing to a close\. The round ends in (.+?) minutes\.$ = История близится к концу. Раунд закончится через $1 мин.
+^The round end is already more than (.+?) extensions away\.$ = Конец раунда уже отложен больше чем на $1 продлений.
+
+# --- админка (admin/ и сообщения администраторам из других папок) ---
+^(.+?) adjusted (.+?)'s PQ by (.+?) for reason: (.+)$ = $1 меняет PQ игрока $2 на $3. Причина: $4
+^Your PQ has been adjusted by (.+?) by (.+?) for reason: (.+)$ = Мой PQ изменён на $1, администратор: $2. Причина: $3
+^(.+?) has never played here\.$ = $1: ни одной игры на этом сервере.
+^(.+?): Modified (.+?)'s Triumphs by (.+?), from (.+?) to (.+?)$ = $1: триумфы игрока $2 изменены на $3, было $4, стало $5
+^(.+?) has no player to send back\.$ = У $1|gen нет игрока, чтобы вернуть его в лобби.
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) has sent ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?) back to the Lobby\.$ = $1 возвращает $2 в лобби.
+^(.+?) has no player\.$ = У $1|gen нет игрока.
+^(.+?) is in the lobby already\.$ = $1 уже в лобби.
+^Admin (.+?) toggled (.+?)'s sleeping state!$ = Администратор $1 переключает сон $2|gen!
+^(.+?) used Sleep In View\.$ = $1 усыпляет всех в поле зрения.
+^(.+?) used Wake In View\.$ = $1 будит всех в поле зрения.
+^(.+?) TRIUMPH\(S\) awarded\.$ = Триумфов получено: $1.
+^(.+?) TRIUMPH\(S\) lost\.$ = Триумфов потеряно: $1.
+^(.+?) cleared the IC date override\. Date is now: (.+)$ = $1 снимает подмену игровой даты. Сейчас: $2
+^(.+?) set the IC date override\. New date: (.+?), time: (.+)$ = $1 подменяет игровую дату. Новая дата: $2, время: $3
+^(.+?) set the Rockhill clock: (.+?), now (.+?)\.$ = $1 переводит часы Рокхилла: $2, теперь $3.
+^(.+?) set the time of day override to (.+?)\.$ = $1 задаёт время суток: $2.
+^(.+?) disabled the time of day override\.$ = $1 отключает подмену времени суток.
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) started weather of type ((?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)\.$ = $1 запускает погоду: $2.
+^MIGRANTS: Wave '(.+?)' failed to assemble on the (.+?) track\.$ = МИГРАНТЫ: волна «$1» не собралась на дорожке $2.
+^MIGRANTS: Spawned wave: (.+?) \(players: (.+?)\) at the latejoin points$ = МИГРАНТЫ: волна $1 (игроков: $2) появилась на точках позднего входа
+^MIGRANTS: Spawned wave: (.+?) \(players: (.+?)\) at (.+)$ = МИГРАНТЫ: волна $1 (игроков: $2) появилась: $3
+^(.+?) forced the migrant wave (.+?)\.$ = $1 запускает волну мигрантов $2.
+^(.+?) extended the round by (.+?)\.$ = $1 продлевает раунд на $2.
+^(.+?) started the end round vote\.$ = $1 запускает голосование за конец раунда.
+^(.+?) reloaded the rogue mechanics config \((.+?) items updated, (.+?) problems\)\.$ = $1 перечитывает конфиг механик (обновлено: $2, ошибок: $3).
+^Wrote (.+?) to data/mechanics_export\.$ = Записано в data/mechanics_export: $1.
+^(.+?) did not change: (.+)$ = $1 не изменена: $2
+^(.+?) set the rogue formula (.+?) to: (.+)$ = $1 задаёт формулу $2: $3
+^(.+?) saved the rogue formulas to (.+?) and the values to (.+?)\.$ = $1 сохраняет формулы в $2, а значения — в $3.
+^Rogue lighting: the native backend failed \((.+?)\), falling back to DM lighting\.$ = Свет модуля: родная библиотека отказала ($1), свет переходит на DM.
+^Rogue lighting: the native backend failed \((.+?)\), rebuilding it\.$ = Свет модуля: родная библиотека отказала ($1), её пересобирают.
+^Rogue lighting: (.+?) needs the native backend\.$ = Свет модуля: режиму $1 нужна родная библиотека.
+^(.+?) switched rogue lighting to (.+?)\.$ = $1 переключает свет модуля на $2.
+
+# Рецепты Ратвуда (crafting/rogue_recipes.dm): "[кто] [rogue_verb] \a [рецепт]!"
+# и "I [rogue_verb_simple] \a [рецепт]!". Имя рецепта склоняется как вещь; артикль
+# в шаблоне обязателен — без него глаголы вроде "twists" ловили бы чужие строки.
+^I (?:construct|build|put together|assemble|assembles|set up|engineer|hammer out|forge|constructs|builds) (an? .+?)!$ = Я сооружаю $1|acc!
+^I (?:craft|carve|sculpt|smooth|twist|braid|weave|sew|tie|tied|tie together|untie|string together|re-string|arranged|render|char|blend|mix|mixes together|roll|dry|pick apart|transmute) (an? .+?)!$ = Я делаю $1|acc!
+^(.+?) (?:constructs|builds|puts together|assembles|sets up|engineers|hammers out|forges) (an? .+?)!$ = $1|nom сооружает $2|acc!
+^((?!(?:Your|You|It|Its|This|That|These|There|Here|And|As|If|When|Then) )(?:(?! (?:[Tt]he|an?|his|her|their|its|your|my|on|with|to|from|into|in|at|for|up|out|off|and|is|are|was|has)(?: |$))(?!'s )[^.!?;:,])+?) (?:crafts|crafted|carves|sculpts|smooths|twists|braids|weaves|sews|ties|tie|ties together|unties|strings together|re-strings|arranges|renders|chars|blends|mixes|mixes together|rolls|dries|picks apart) (an? (?!(?:and|up|on|in|out|off|with|to|from|for|his|her|their|its|your|my|itself|himself|herself|themselves|yourself|myself)\b)(?:(?! (?:on|with|to|from|into|in|at|for|up|out|off|and)(?: |$))(?!'s )[^.!?;:,])+?)!$ = $1|nom делает $2|acc!

@@ -82,9 +82,12 @@
 	var/obj/item/reagent_containers/food/food
 	/// Whose skill speeds the cooking (Ratwood lastuser).
 	var/datum/weakref/cook
+	/// Bubbling of a boiling pot (Ratwood boilloop), made when first needed.
+	var/datum/looping_sound/boiling/boilloop
 
 /obj/machinery/light/rogue/hearth/Destroy()
 	STOP_PROCESSING(SSobj, src)
+	QDEL_NULL(boilloop)
 	clear_heat()
 	var/atom/spot = drop_location()
 	food?.forceMove(spot)
@@ -107,6 +110,7 @@
 	if(.)
 		clear_heat()
 		STOP_PROCESSING(SSobj, src)
+		update_boiling()
 		if(food)
 			SEND_SIGNAL(food, COMSIG_ITEM_GRILL_TURNED_OFF)
 			update_appearance(UPDATE_OVERLAYS)
@@ -125,8 +129,9 @@
 			var/obj/item/reagent_containers/food/fried = frying.cooked_into?.resolve()
 			if(istype(fried) && fried.loc == src)
 				put_in_pan(fried)
-	else if(attachment?.reagents)
-		attachment.reagents.expose_temperature(400, 0.033 * seconds / 2)
+	else if(istype(attachment, /obj/item/reagent_containers/glass/bucket/pot) && attachment.reagents)
+		attachment.reagents.expose_temperature(ROGUE_HEARTH_HEAT, ROGUE_HEARTH_HEAT_COEFF * seconds / ROGUE_REAGENT_TICK)
+		update_boiling()
 
 /obj/machinery/light/rogue/hearth/update_overlays()
 	. = ..()
@@ -146,9 +151,11 @@
 		return
 	if(istype(attachment, /obj/item/cooking/pan))
 		. += food ? "There's \a [attachment] on it with \a [food] in it." : "There's \a [attachment] on it."
-	else
-		var/boiling = attachment.reagents?.chem_temp > WATER_BOILING_POINT
+	else if(istype(attachment, /obj/item/reagent_containers/glass/bucket/pot))
+		var/boiling = attachment.reagents?.chem_temp > ROGUE_STEW_TEMPERATURE
 		. += "There's \a [attachment] on it[boiling ? ", it is boiling" : ". It is not boiling"]."
+	else
+		. += "There's \a [attachment] on it."
 	. += span_notice("Right click to start fanning the flame and make it cook faster.")
 
 /obj/machinery/light/rogue/hearth/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
@@ -162,6 +169,10 @@
 	if(istype(attachment, /obj/item/reagent_containers/glass/bucket/pot) && istype(tool, /obj/item/reagent_containers/glass/bowl))
 		to_chat(user, span_notice("Remove the pot from the hearth first."))
 		return ITEM_INTERACT_BLOCKING
+	if(istype(attachment, /obj/item/reagent_containers/glass/bucket/pot))
+		. = pot_interaction(user, tool)
+		if(.)
+			return .
 	if(istype(attachment, /obj/item/cooking/pan) && !food && istype(tool, /obj/item/reagent_containers/food))
 		if(!user.transferItemToLoc(tool, src))
 			return ITEM_INTERACT_BLOCKING
@@ -192,6 +203,7 @@
 		update_appearance(UPDATE_OVERLAYS)
 	else if(gone == attachment)
 		attachment = null
+		update_boiling()
 		update_appearance(UPDATE_OVERLAYS)
 
 /// Ratwood hearth attack_hand(): take the food out of the pan, then the pan or the pot; with nothing on it, warm the hands.

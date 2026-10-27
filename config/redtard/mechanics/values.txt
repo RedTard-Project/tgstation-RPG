@@ -453,6 +453,15 @@ npc_reaction_max = 40
 # Percent chance per step that something which can be spat out slips out of the mouth (Ratwood human_movement.dm).
 mouth_slip_chance = 5
 
+# Percent chance per point of strength that a sleeve or trouser leg tears off by hand (Ratwood clothing.dm MiddleClick()).
+sleeve_tear_per_strength = 8
+
+# Deciseconds of pulling at a sleeve before it tears or holds (Ratwood clothing.dm MiddleClick()).
+sleeve_tear_time = 20
+
+# Perception the sun takes from light-sensitive eyes under the open sky by day (Ratwood sun_blinded).
+sun_blind_perception = 5
+
 # Percent a stat comparison adds or takes per point of difference, once the stats differ by more than one (Ratwood generic_stat_comparison).
 stat_compare_step = 10
 
@@ -926,6 +935,33 @@ tempo_parry_stamina_2 = 2
 
 # Stamina taken off a parry at tempo level 3 (Azure Peak TEMPO_TAG_STAMLOSS_PARRY).
 tempo_parry_stamina_3 = 3
+
+# Deciseconds the printing press takes to print (Ratwood PRINTING_TIME).
+library_print_time = 250
+
+# Deciseconds the printing press recalibrates after a print (Ratwood PRINTER_COOLDOWN).
+library_print_cooldown = 600
+
+# Books a random bookcase is stocked with before Ratwood's random cut of 0 to 5 (Ratwood book_count).
+library_shelf_books = 10
+
+# Most extra books of an archive bookcase, 0 to this many (Ratwood bookcase/random/archive).
+library_shelf_extra_books = 10
+
+# Archived player books an archive-only bookcase holds (Ratwood bookcase/player_archive).
+library_archive_shelf_books = 15
+
+# Most pages of a manuscript (Ratwood).
+library_manuscript_pages = 8
+
+# Least percent chance that a book of a sorted bookcase is an archived player book; between the least and the most the chance is the number of archived books of that section not yet shelved this round (Ratwood clamp(n, 10, 90)).
+library_player_book_chance_min = 10
+
+# Most percent chance that a book of a sorted bookcase is an archived player book.
+library_player_book_chance_max = 90
+
+# Percent chance that a book of a random bookcase is a book crafting kit instead (Ratwood).
+library_book_kit_chance = 0.1
 
 # Hefty Swing: cooldown. Times are in deciseconds.
 special_axe_swing_cooldown = 250

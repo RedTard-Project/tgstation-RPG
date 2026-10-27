@@ -12,6 +12,8 @@
 #define FIELD_REPAIR_SHARE 0.6
 #define REPAIR_CLOTH 0
 #define REPAIR_METAL 1
+/// Ratwood: a hammer mends 2.5% of a structure's integrity per strike and rank of its skill.
+#define STRUCTURE_REPAIR_SHARE 0.025
 
 /// Broken in Ratwood's sense: worn down to where armor stops protecting (ROGUE_ARMOR_FAILURE_SHARE).
 /obj/item/proc/rogue_is_broken()
@@ -64,6 +66,8 @@
 /// Ratwood hammer attack_obj(): out of combat mode, a hammer repairs an item with anvilrepair lying on a table or an anvil,
 /// 2.5% of its integrity per strike and skill rank, doubled on an anvil; untrained hands manage a little.
 /obj/item/rogueweapon/hammer/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
+	if(isstructure(interacting_with))
+		return structure_interaction(interacting_with, user)
 	if(!isitem(interacting_with))
 		return NONE
 	var/obj/item/broken = interacting_with
@@ -106,6 +110,60 @@
 		user.visible_message(span_info("[user] repairs [broken]!"))
 	user.rogue_craft_experience(broken.anvilrepair, restored / 2)
 	return !(broken.shoddy_repair && user.rogue_unskilled_repair(rank))
+
+/// Ratwood hammer_repair (game/objects/structures.dm): the skill a hammer mends the structure with. Ratwood declares it and
+/// gives it to no structure; here a structure takes the skill of the crafting recipe that builds its type
+/// (rogue_structure_repair_skill()), unless the type names its own.
+/obj/structure/var/hammer_repair
+
+/// Built structure type to the skill of the medieval crafting recipe that builds it, gathered on first use.
+GLOBAL_LIST(rogue_structure_repair_skills)
+
+/proc/rogue_structure_repair_skill(structure_type)
+	if(!GLOB.rogue_structure_repair_skills)
+		GLOB.rogue_structure_repair_skills = list()
+		for(var/datum/crafting_recipe/roguetown/recipe in GLOB.crafting_recipes)
+			if(!recipe.rogue_skill)
+				continue
+			var/list/results = list(recipe.result)
+			if(LAZYLEN(recipe.rogue_results))
+				results += recipe.rogue_results
+			for(var/result in results)
+				if(ispath(result, /obj/structure) && !GLOB.rogue_structure_repair_skills[result])
+					GLOB.rogue_structure_repair_skills[result] = recipe.rogue_skill
+	return GLOB.rogue_structure_repair_skills[structure_type]
+
+/obj/structure/proc/rogue_hammer_repair_skill()
+	return hammer_repair || rogue_structure_repair_skill(type)
+
+/// Doors mend with the planks or stone of their own repair (rockhill/doors.dm), as in Ratwood, not with a hammer.
+/obj/structure/mineral_door/rockhill/rogue_hammer_repair_skill()
+	return null
+
+/// Ratwood hammer attack_obj() on a structure: out of combat mode, 2.5% of its integrity per strike and rank of its skill,
+/// the restored integrity as experience; the unskilled do not know how.
+/obj/item/rogueweapon/hammer/proc/structure_interaction(obj/structure/target, mob/living/user)
+	if(user.combat_mode || !target.max_integrity || target.get_integrity() >= target.max_integrity)
+		return NONE
+	var/skill = target.rogue_hammer_repair_skill()
+	if(!skill)
+		return NONE
+	if(user.rogue_skill_rank(skill) <= ROGUE_RANK_NONE)
+		to_chat(user, span_warning("I don't know how to repair this.."))
+		return ITEM_INTERACT_BLOCKING
+	if(DOING_INTERACTION_WITH_TARGET(user, target))
+		return ITEM_INTERACT_BLOCKING
+	INVOKE_ASYNC(src, PROC_REF(structure_repair_loop), target, user, skill)
+	return ITEM_INTERACT_SUCCESS
+
+/obj/item/rogueweapon/hammer/proc/structure_repair_loop(obj/structure/target, mob/living/user, skill)
+	while(!QDELETED(target) && target.get_integrity() < target.max_integrity && user.is_holding(src))
+		var/restored = target.repair_damage(STRUCTURE_REPAIR_SHARE * user.rogue_skill_rank(skill) * target.max_integrity)
+		user.rogue_craft_experience(skill, restored)
+		playsound(src, ROGUE_SMITH_FAIL_SOUND, 100, FALSE)
+		user.visible_message(span_info("[user] repairs [target]!"))
+		if(!do_after(user, CLICK_CD_MELEE, target = target))
+			return
 
 /// Ratwood repair kits (game/objects/items/rogueitems/repair_kits.dm): a sewing kit mends sewn things, metal plates smithed
 /// ones (on a table); each use restores a tenth of the kit's charge and spends 10 of it. Ratwood lets a sewing kit mend
@@ -289,3 +347,4 @@
 #undef FIELD_REPAIR_SHARE
 #undef REPAIR_CLOTH
 #undef REPAIR_METAL
+#undef STRUCTURE_REPAIR_SHARE

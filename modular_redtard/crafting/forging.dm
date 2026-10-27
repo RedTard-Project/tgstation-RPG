@@ -8,6 +8,9 @@
 	var/display_category
 	/// The bar the work starts from.
 	var/obj/item/req_bar
+	/// A cast blade the work can start from instead (Ratwood req_blade): it replaces the bar and one bar of the materials,
+	/// needs no heat and is finished on the anvil without quenching (casting.dm).
+	var/obj/item/req_blade
 	var/obj/item/created_item
 	var/createditem_num = 1
 	/// Materials added on the anvil after each finished stage, in any order.
@@ -24,9 +27,17 @@ GLOBAL_LIST_INIT(rogue_anvil_recipes, init_rogue_anvil_recipes())
 /proc/init_rogue_anvil_recipes()
 	. = list()
 	for(var/datum/anvil_recipe/recipe_type as anything in subtypesof(/datum/anvil_recipe))
-		if(!initial(recipe_type.name) || !initial(recipe_type.created_item) || !initial(recipe_type.req_bar))
+		if(!initial(recipe_type.name) || !initial(recipe_type.created_item))
+			continue
+		if(!initial(recipe_type.req_bar) && !initial(recipe_type.req_blade))
 			continue
 		. += new recipe_type
+
+/// The work on the anvil can follow this recipe: the recipe's bar or its cast blade (Ratwood anvil ui_act()).
+/datum/anvil_recipe/proc/accepts(obj/item/work)
+	if(!work)
+		return FALSE
+	return (req_bar && istype(work, req_bar)) || (req_blade && istype(work, req_blade))
 
 /datum/anvil_recipe/proc/get_ui_entry()
 	if(ui_entry)
@@ -43,7 +54,9 @@ GLOBAL_LIST_INIT(rogue_anvil_recipes, init_rogue_anvil_recipes())
 		"name" = name,
 		"category" = category,
 		"group" = display_category || category,
-		"bar" = initial(req_bar.name),
+		"icon" = sanitize_css_class_name("[created_item]"),
+		"bar" = req_bar ? initial(req_bar.name) : null,
+		"blade" = req_blade ? initial(req_blade.name) : null,
 		"materials" = extra,
 		"count" = createditem_num,
 		"skill" = skill?.name,
@@ -53,6 +66,8 @@ GLOBAL_LIST_INIT(rogue_anvil_recipes, init_rogue_anvil_recipes())
 	return ui_entry
 
 #define FORGING_HEALTH_PER_QUALITY 50
+/// Ratwood advance_recipe(): a good strike on a cast blade starts from 1.2 progress instead of 1.
+#define FORGING_BLADE_BREAKTHROUGH 1.2
 
 /// Ratwood /datum/component/forging (roguejobs/blacksmith/smith_components.dm) on the bar being worked: progress,
 /// bar health, accumulated skill and material quality; finished work is quenched into the recipe's goods.
@@ -74,12 +89,21 @@ GLOBAL_LIST_INIT(rogue_anvil_recipes, init_rogue_anvil_recipes())
 	var/list/remaining
 	/// Quality of the last bar added, given to non-bar materials (Ratwood previous_material_quality).
 	var/last_quality = ROGUE_QUALITY_STANDARD
+	/// The work started from a cast blade (Ratwood using_blade): one bar fewer and no quench.
+	var/from_blade = FALSE
 
 /datum/component/rogue_forging/Initialize(datum/anvil_recipe/chosen)
 	if(!isitem(parent) || !istype(chosen))
 		return COMPONENT_INCOMPATIBLE
 	recipe = chosen
 	remaining = chosen.additional_items.Copy()
+	// Ratwood set_recipe(): a cast blade already holds the metal of one of the bars the recipe adds.
+	if(istype(parent, /obj/item/blade))
+		from_blade = TRUE
+		for(var/material in remaining)
+			if(ispath(material, /obj/item/ingot))
+				remaining -= material
+				break
 	var/obj/item/bar = parent
 	last_quality = bar.rogue_material_quality()
 	material_quality = last_quality
@@ -146,7 +170,7 @@ GLOBAL_LIST_INIT(rogue_anvil_recipes, init_rogue_anvil_recipes())
 			user.visible_message(span_danger("[user] destroys the bar!"))
 			qdel(parent)
 		return FALSE
-	var/moveup = 1 + round(rank * 6 * user.rogue_stat(ROGUE_STAT_STRENGTH) / 10 * (breakthrough ? 1.5 : 1)) - recipe.craftdiff
+	var/moveup = ((from_blade && breakthrough) ? FORGING_BLADE_BREAKTHROUGH : 1) + round(rank * 6 * user.rogue_stat(ROGUE_STAT_STRENGTH) / 10 * (breakthrough ? 1.5 : 1)) - recipe.craftdiff
 	progress = clamp(progress + moveup, 0, recipe.max_progress)
 	skill_quality += rand(rank * 12, rank * 14) * moveup
 	user.rogue_craft_experience(recipe.appro_skill, intelligence / (recipe.craftdiff + 1))
@@ -164,6 +188,10 @@ GLOBAL_LIST_INIT(rogue_anvil_recipes, init_rogue_anvil_recipes())
 		to_chat(user, span_notice("\The [parent] needs \a [initial(needed_item.name)] to continue."))
 		return FALSE
 	stage = ROGUE_FORGING_COMPLETE
+	// Ratwood complete_forging(): work begun from a cast blade is finished on the anvil, without a quench.
+	if(from_blade)
+		create_goods(get_turf(parent), user)
+		return TRUE
 	to_chat(user, span_notice("\The [parent] is ready to be quenched in a water bin."))
 	return TRUE
 
@@ -205,7 +233,8 @@ GLOBAL_LIST_INIT(rogue_anvil_recipes, init_rogue_anvil_recipes())
 		user?.log_message("forged [made.name] ([recipe.type]) (QUALITY: [tier]) (HITS: [hits_per_material])", LOG_GAME)
 	qdel(parent)
 
-/// The tier of forged goods: the name prefix, and integrity cut below standard (Ratwood handle_creation()).
+/// The tier of forged goods: the name prefix, integrity cut below standard, and a masterwork comes out shining
+/// (Ratwood handle_creation(): polished 4 and the metal glint).
 /obj/item/proc/rogue_apply_forged_quality(quality, modifier)
 	rogue_quality = quality
 	var/prefix = rogue_quality_prefix(quality)
@@ -213,5 +242,8 @@ GLOBAL_LIST_INIT(rogue_anvil_recipes, init_rogue_anvil_recipes())
 		name = "[prefix] [initial(name)]"
 	if(modifier < 1 && uses_integrity)
 		modify_max_integrity(max_integrity * modifier, FALSE)
+	if(quality == ROGUE_QUALITY_MASTERWORK)
+		rogue_shine()
 
 #undef FORGING_HEALTH_PER_QUALITY
+#undef FORGING_BLADE_BREAKTHROUGH

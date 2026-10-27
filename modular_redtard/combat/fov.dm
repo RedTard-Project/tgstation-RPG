@@ -1,6 +1,8 @@
 /// Field of view of Roguetown as Ratwood and Vibelin have it: a human sees ahead and to the sides, and a helmet's visor or a hood
-/// (block2add), an eyepatch or a scarred eye takes away the back or one side. The cone is TG's fov_handler; its mask is a state of
-/// Ratwood's vision_cone sheet, which cuts each side on its own, and in_fov checks the same uneven arc.
+/// (block2add), an eyepatch or a scarred eye takes away the back or one side. A raised visor or a lowered hood blocks nothing
+/// (clothing/adjustable.dm), and the sun in light-sensitive eyes closes both sides (clothing/sun_glare.dm). The cone is TG's
+/// fov_handler; its mask is a state of Ratwood's vision_cone sheet, which cuts each side on its own, and in_fov checks the same
+/// uneven arc.
 
 /obj/item/clothing
 	/// Parts of the wearer's view this headgear or mask hides, ROGUE_FOV_* flags (Ratwood block2add).
@@ -13,8 +15,8 @@
 	/// State of the cone in the vision_cone sheet; null leaves TG's own mask.
 	var/rogue_fov_mask
 
-/// What narrows the view now: worn head and mask, and scarred eyes. The item being taken off still sits in its slot while the
-/// unequip signal runs, so it is passed in to be left out.
+/// What narrows the view now: worn head and mask, scarred eyes and the sun's glare. The item being taken off still sits in its slot
+/// while the unequip signal runs, so it is passed in to be left out.
 /mob/living/carbon/human/proc/rogue_fov_flags(obj/item/removed)
 	. = NONE
 	for(var/obj/item/clothing/worn in list(head, wear_mask))
@@ -25,6 +27,8 @@
 		. |= ROGUE_FOV_RIGHT
 	if(scars & LEFT_EYE_SCAR)
 		. |= ROGUE_FOV_LEFT
+	if(HAS_TRAIT(src, TRAIT_ROGUE_SUN_BLINDED))
+		. |= ROGUE_FOV_RIGHT | ROGUE_FOV_LEFT
 
 /proc/rogue_fov_mask_state(flags)
 	switch(flags & (ROGUE_FOV_RIGHT | ROGUE_FOV_LEFT | ROGUE_FOV_BEHIND))

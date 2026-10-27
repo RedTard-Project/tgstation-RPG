@@ -15,7 +15,7 @@
 	broken = TRUE
 	AddElement(/datum/element/climbable)
 	set_opacity(FALSE)
-	playsound(src, SFX_SHATTER, 100, TRUE)
+	playsound(src, /datum/sound_effect/shatter, 100, TRUE)
 	new /obj/item/natural/glass_shard(drop_location())
 	new /obj/effect/decal/cleanable/debris/glassy(drop_location())
 	update_appearance(UPDATE_ICON_STATE)

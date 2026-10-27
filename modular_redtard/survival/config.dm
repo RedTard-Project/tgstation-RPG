@@ -23,9 +23,22 @@
 	min_val = 0.1
 	max_val = 10
 
+/// Ratwood cooking smells: freshly cooked food smells to the people around it for a while. Off - nothing smells.
+/datum/config_entry/flag/rogue_food_smells
+	default = TRUE
+
+/// Ratwood noble palate: nobles mind poor fare, eating without a table and drinking soup without a spoon. Off - they eat as anyone.
+/datum/config_entry/flag/rogue_noble_palate
+	default = TRUE
+
 /// Whether the Ratwood survival mechanics run: on medieval maps, as the rest of the rogue mechanics.
 /proc/rogue_survival_enabled()
 	return rogue_combat_enabled()
+
+/// Ratwood add_sleep_experience(user, cooking, STAINT * share) after a cooking step: cooking experience by intelligence
+/// (dreamt from Apprentice on, crafting/experience.dm).
+/mob/living/proc/rogue_cooking_experience(share = 1)
+	return rogue_craft_experience(/datum/attribute/skill/craft/cooking, rogue_stat(ROGUE_STAT_INTELLIGENCE) * share)
 
 /// Ratwood get_cooktime_divisor(): how many times faster this cook works, by cooking rank, times the server's cooking speed.
 /proc/rogue_cook_divisor(mob/living/cook)

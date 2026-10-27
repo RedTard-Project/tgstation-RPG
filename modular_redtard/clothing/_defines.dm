@@ -62,3 +62,40 @@
 #define ROGUE_MOUTH_SLIP_CHANCE rogue_value("mouth_slip_chance")
 /// Ratwood burns a smoke down by one every object tick of two seconds (clothing/smoking.dm).
 #define ROGUE_SMOKE_TICK_SECONDS 2
+
+/// State of one sleeve or trouser leg (clothing/sleeve_status.dm; Ratwood SLEEVE_*, the porter maps them): whole, torn off, rolled
+/// up, or one that can be neither torn nor rolled.
+#define ROGUE_SLEEVE_NORMAL 0
+#define ROGUE_SLEEVE_TORN 1
+#define ROGUE_SLEEVE_ROLLED 2
+#define ROGUE_SLEEVE_NOMOD 3
+/// Slots whose worn sprite and sleeves follow the arms, and the ones that follow the legs (Ratwood armsindex, legsindex, footindex).
+#define ROGUE_SLEEVE_ARM_SLOTS (ITEM_SLOT_OCLOTHING | ITEM_SLOT_GLOVES | ITEM_SLOT_ROGUE_SHIRT | ITEM_SLOT_ROGUE_WRISTS)
+#define ROGUE_SLEEVE_LEG_SLOTS (ITEM_SLOT_ICLOTHING | ITEM_SLOT_FEET)
+/// Masks that cut one side out of a worn sprite, "<r|l>_<sleevetype>" with "_f" for women (Ratwood helpers/dismemberment.dmi).
+#define ROGUE_SLEEVE_MASK_ICON 'modular_redtard/clothing/icons/sleeve_masks.dmi'
+/// Percent chance per point of strength that a sleeve tears off (Ratwood STR * 8).
+#define ROGUE_SLEEVE_TEAR_PER_STRENGTH rogue_value("sleeve_tear_per_strength")
+/// Deciseconds of pulling at a sleeve before it tears or holds.
+#define ROGUE_SLEEVE_TEAR_TIME rogue_value("sleeve_tear_time")
+#define ROGUE_CLOTH_RIP_SOUND 'modular_redtard/rockhill/sound/foley/cloth_rip.ogg'
+
+/// Sprite suffix of a raised visor, a lowered hood or a pulled-down mask (clothing/adjustable.dm; Ratwood "<icon_state>_t").
+#define ROGUE_ADJUSTED_SUFFIX "_t"
+/// Slots an adjustable item is adjusted in.
+#define ROGUE_ADJUST_SLOTS (ITEM_SLOT_HEAD | ITEM_SLOT_MASK | ITEM_SLOT_NECK)
+#define ROGUE_ADJUST_VISOR_SOUND 'modular_redtard/clothing/sound/visor.ogg'
+#define ROGUE_ADJUST_CLOAK_SOUND 'modular_redtard/clothing/sound/cloak (3).ogg'
+#define ROGUE_ADJUST_MASK_SOUND 'modular_redtard/clothing/sound/rummaging-03.ogg'
+#define ROGUE_ADJUST_CHAIN_SOUND 'modular_redtard/clothing/sound/chain_equip.ogg'
+#define ROGUE_ADJUST_MANTLE_SOUND 'modular_redtard/clothing/sound/equip_armor_chain.ogg'
+
+/// The sun blinds these eyes now (clothing/sun_glare.dm): combat/fov.dm closes both sides of the view.
+#define TRAIT_ROGUE_SUN_BLINDED "rogue_sun_blinded"
+#define ROGUE_SUN_GLARE_ICON 'modular_redtard/clothing/icons/sun_glare.dmi'
+/// Perception the sun takes from light-sensitive eyes (Ratwood sun_blinded: -5).
+#define ROGUE_SUN_BLIND_PERCEPTION rogue_value("sun_blind_perception")
+#define ROGUE_SUN_GLARE_TICK (2 SECONDS)
+/// Ratwood stressevent/sunlit: +2 stress for a minute, renewed while the sky is overhead.
+#define ROGUE_SUNLIT_MOOD (-2 * ROGUE_STRESS_TO_MOOD)
+#define ROGUE_SUNLIT_MOOD_TIME (1 MINUTES)
