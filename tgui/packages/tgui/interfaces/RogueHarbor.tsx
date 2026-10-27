@@ -133,7 +133,10 @@ const ShipSection = (props: { ship: Ship; data: Data }) => {
       buttons={
         !!data.manager &&
         (ship.docked ? (
-          <Button icon="anchor" onClick={() => act('send_away', { id: ship.id })}>
+          <Button
+            icon="anchor"
+            onClick={() => act('send_away', { id: ship.id })}
+          >
             Send away
           </Button>
         ) : (
@@ -151,8 +154,8 @@ const ShipSection = (props: { ship: Ship; data: Data }) => {
     >
       <Box color="label">
         {ship.realm}
-        {ship.port && ` (${ship.port})`}, captain {ship.captain},{' '}
-        {ship.tonnage} tons.
+        {ship.port && ` (${ship.port})`}, captain {ship.captain}, {ship.tonnage}{' '}
+        tons.
         {!!ship.docked &&
           ` At the pier for ${ship.minutes_left} more minutes. Traded ${ship.traded} of the ${ship.expected}m the captain hopes for.`}
       </Box>
@@ -200,8 +203,7 @@ export const RogueHarbor = () => {
               </Box>
               {!data.has_account && (
                 <NoticeBox mt={1}>
-                  No account: submit your fingers to a NERVELOCK before
-                  selling.
+                  No account: submit your fingers to a NERVELOCK before selling.
                 </NoticeBox>
               )}
               {!!data.manager && (

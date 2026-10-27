@@ -93,6 +93,11 @@
 		"block2add",
 		"alternate_worn_layer",
 		"sleeved",
+		"sleevetype",
+		"nodismemsleeves",
+		"r_sleeve_status",
+		"l_sleeve_status",
+		"salvage_result",
 		"detail_tag",
 		"detail_color",
 		"altdetail_tag",
@@ -108,6 +113,7 @@
 	"rename": {
 		"mob_overlay_icon": "worn_icon",
 		"sleeved": "rogue_sleeved",
+		"salvage_result": "rogue_sleeve_scrap",
 		"armor_type": "rogue_armor"
 	},
 	"kinds": {
@@ -120,6 +126,10 @@
 		"detail_color": "string",
 		"altdetail_color": "string",
 		"color": "string",
+		"sleevetype": "string",
+		"r_sleeve_status": "mapped",
+		"l_sleeve_status": "mapped",
+		"rogue_sleeve_scrap": "path",
 		"item_path": "path"
 	},
 	"maps": {
@@ -163,6 +173,18 @@
 			"HALO_LAYER": "HEAD_LAYER",
 			"8.9": "(HANDS_LAYER - 0.1)"
 		},
+		"r_sleeve_status": {
+			"SLEEVE_NORMAL": "ROGUE_SLEEVE_NORMAL",
+			"SLEEVE_TORN": "ROGUE_SLEEVE_TORN",
+			"SLEEVE_ROLLED": "ROGUE_SLEEVE_ROLLED",
+			"SLEEVE_NOMOD": "ROGUE_SLEEVE_NOMOD"
+		},
+		"l_sleeve_status": {
+			"SLEEVE_NORMAL": "ROGUE_SLEEVE_NORMAL",
+			"SLEEVE_TORN": "ROGUE_SLEEVE_TORN",
+			"SLEEVE_ROLLED": "ROGUE_SLEEVE_ROLLED",
+			"SLEEVE_NOMOD": "ROGUE_SLEEVE_NOMOD"
+		},
 		"rogue_armor": {
 			"/datum/armor/none": "null",
 			"/datum/armor/leather": "/datum/rogue_armor/leather",
@@ -188,6 +210,11 @@
 	"defaults": {
 		"color": "null",
 		"rogue_sleeved": "null",
+		"sleevetype": "null",
+		"nodismemsleeves": "FALSE",
+		"r_sleeve_status": "ROGUE_SLEEVE_NOMOD",
+		"l_sleeve_status": "ROGUE_SLEEVE_NOMOD",
+		"rogue_sleeve_scrap": "/obj/item/natural/cloth",
 		"rogue_armor": "null",
 		"boobed": "FALSE",
 		"boobed_detail": "TRUE",

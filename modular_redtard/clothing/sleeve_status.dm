@@ -45,8 +45,9 @@
 	return null
 
 /// Masks that cut a missing limb's or a bare limb's side out of the worn sprite (Ratwood sleeveindex below 4); null - nothing to cut.
-/// Only the slots Ratwood cuts, and only sprites of the mask's size.
-/obj/item/proc/rogue_sleeve_cut_masks(mob/living/carbon/human/wearer)
+/// Only the slots Ratwood cuts, and only sprites of the mask's size. A sprite in a race's own cut (race_cut, "_dwarf") takes that
+/// cut's masks, "<side>_<sleevetype>[_f]_<id>" as Ratwood's sleevejazz; a side without one is not cut.
+/obj/item/proc/rogue_sleeve_cut_masks(mob/living/carbon/human/wearer, race_cut = "")
 	if(!sleevetype || !rogue_sleeved || nodismemsleeves || worn_x_dimension != ICON_SIZE_X || worn_y_dimension != ICON_SIZE_Y)
 		return null
 	var/slot = wearer.get_slot_by_item(src)
@@ -61,8 +62,9 @@
 		if(wearer.get_bodypart(rogue_sleeve_zone(side, legs)) && !rogue_sleeve_bare(side))
 			continue
 		var/mask = "[side]_[sleevetype]"
-		if(female && icon_exists(ROGUE_SLEEVE_MASK_ICON, "[mask][ROGUE_FEMALE_SUFFIX]"))
+		if(female && icon_exists(ROGUE_SLEEVE_MASK_ICON, "[mask][ROGUE_FEMALE_SUFFIX][race_cut]"))
 			mask += ROGUE_FEMALE_SUFFIX
+		mask += race_cut
 		if(icon_exists(ROGUE_SLEEVE_MASK_ICON, mask))
 			LAZYADD(masks, mask)
 	return masks
@@ -72,7 +74,12 @@
 /obj/item/proc/rogue_cut_sprite(mob/living/carbon/human/wearer, file, state, female_uniform, bodyshape)
 	if(!istype(wearer) || female_uniform || (bodyshapes_with_variations & bodyshape))
 		return null
-	var/list/masks = rogue_sleeve_cut_masks(wearer)
+	// The race's cut (rockhill/species.dm rogue_custom_worn_state()) ends the state with "_<clothes_id>".
+	var/race_cut = ""
+	var/clothes_id = wearer.dna?.species?.rogue_clothes_id
+	if(clothes_id && length(state) > length(clothes_id) + 1 && copytext(state, -(length(clothes_id) + 1)) == "_[clothes_id]")
+		race_cut = "_[clothes_id]"
+	var/list/masks = rogue_sleeve_cut_masks(wearer, race_cut)
 	return masks ? rogue_cut_worn_icon(file, state, masks) : null
 
 /// A worn sprite with sides cut out by masks, made once per file, state and masks (as TG's wear_female_version()). The result keeps the

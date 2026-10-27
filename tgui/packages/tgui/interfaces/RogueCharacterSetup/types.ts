@@ -59,6 +59,8 @@ export type JobEntry = {
   slots: number;
   /** The subclasses a Rockhill role picks from when it spawns. */
   classes: JobClass[];
+  /** Ratwood's least PQ to take the role; null for none. */
+  min_pq: number | null;
 };
 
 export type Department = {

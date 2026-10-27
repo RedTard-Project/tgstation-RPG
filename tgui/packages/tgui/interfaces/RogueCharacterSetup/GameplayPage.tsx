@@ -1,7 +1,7 @@
 // Vibelin's Gameplay page: the class and roles (its JobPreferences window, folded into the page: departments, search,
-// a priority per role, and in place of Vibelin's alternate titles the subclasses a Rockhill role picks from), Ratwood's
-// combat music, the triumphs and the loadout, which stays in TG's menu. Vibelin's ready order, special roles, triumph
-// shop and donor loadout have no system here.
+// a priority per role, the least PQ a role asks for, and in place of Vibelin's alternate titles the subclasses a
+// Rockhill role picks from), Ratwood's combat music, the triumphs with a button to the triumph shop (triumphs/shop.dm)
+// and the loadout, which stays in TG's menu. Vibelin's ready order, special roles and donor loadout have no system here.
 import { Fragment, useState } from 'react';
 import { useBackend } from 'tgui/backend';
 import { Box, Button, Input, Section, Table, Tabs } from 'tgui-core/components';
@@ -59,6 +59,11 @@ export function GameplayPage() {
       </Panel>
       <Panel title={tr('Triumphs')} icon="trophy">
         <InfoRow icon="coins" label={tr('Balance')} value={data.triumphs} />
+        <ActionButton
+          icon="store"
+          label={tr('Triumph Shop')}
+          onClick={() => act('open_triumph_shop')}
+        />
       </Panel>
     </>
   );
@@ -186,6 +191,14 @@ function JobList() {
                             )
                           : tr('Any number')}
                     </Box>
+                    {job.min_pq !== null && job.min_pq !== undefined && (
+                      <Box
+                        color={data.pq < job.min_pq ? 'bad' : 'label'}
+                        style={{ fontSize: '11px' }}
+                      >
+                        {tr('Min PQ {0}', job.min_pq)}
+                      </Box>
+                    )}
                   </Table.Cell>
                   <Table.Cell py={0.5}>
                     {job.classes.length > 0 && (

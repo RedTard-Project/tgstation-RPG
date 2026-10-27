@@ -822,6 +822,8 @@
 	slot_flags = ITEM_SLOT_OCLOTHING | ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST | GROIN | ARMS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/bronze
 	max_integrity = 375
@@ -836,6 +838,8 @@
 	slot_flags = ITEM_SLOT_OCLOTHING | ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST | GROIN | ARMS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/bronze
 	max_integrity = 375
@@ -850,6 +854,8 @@
 	slot_flags = ITEM_SLOT_OCLOTHING | ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST | GROIN | ARMS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/maille
 	max_integrity = 300
@@ -864,6 +870,8 @@
 	slot_flags = ITEM_SLOT_OCLOTHING | ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST | GROIN | ARMS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/maille
 	max_integrity = 300
@@ -878,6 +886,8 @@
 	slot_flags = ITEM_SLOT_OCLOTHING | ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST | GROIN | LEGS | ARMS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/bronze
 	max_integrity = 375
@@ -892,6 +902,8 @@
 	slot_flags = ITEM_SLOT_OCLOTHING | ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST | GROIN | LEGS | ARMS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/bronze
 	max_integrity = 375
@@ -906,6 +918,8 @@
 	slot_flags = ITEM_SLOT_OCLOTHING | ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST | GROIN | LEGS | ARMS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/maille
 	max_integrity = 300
@@ -920,6 +934,8 @@
 	slot_flags = ITEM_SLOT_OCLOTHING | ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST | GROIN | LEGS | ARMS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/maille
 	max_integrity = 300
@@ -934,6 +950,8 @@
 	slot_flags = ITEM_SLOT_OCLOTHING | ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST | GROIN | ARMS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/maille
 	max_integrity = 300
@@ -948,6 +966,8 @@
 	slot_flags = ITEM_SLOT_OCLOTHING | ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST | GROIN | ARMS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/maille
 	max_integrity = 300
@@ -962,6 +982,8 @@
 	slot_flags = ITEM_SLOT_OCLOTHING | ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST | GROIN
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/maille
 	max_integrity = 180
@@ -976,6 +998,8 @@
 	slot_flags = ITEM_SLOT_OCLOTHING | ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST | GROIN
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/bronze
 	max_integrity = 135
@@ -990,6 +1014,8 @@
 	slot_flags = ITEM_SLOT_OCLOTHING | ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST | GROIN
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/maille
 	max_integrity = 108
@@ -1004,6 +1030,8 @@
 	slot_flags = ITEM_SLOT_OCLOTHING | ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = CHEST | GROIN | LEGS | ARMS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/gear/icons/onmob/armor_sleeves.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/padded
 	max_integrity = 200
@@ -1019,6 +1047,8 @@
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT | ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST | GROIN | LEGS | ARMS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/gear/icons/onmob/armor_sleeves.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/padded
 	max_integrity = 200
@@ -1034,6 +1064,8 @@
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT | ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST | GROIN | LEGS | ARMS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/gear/icons/onmob/armor_sleeves.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/leather
 	max_integrity = 200
@@ -1049,6 +1081,9 @@
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT | ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST | GROIN | LEGS | ARMS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/gear/icons/onmob/armor_sleeves.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/fur
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/padded
 	max_integrity = 200
@@ -1064,6 +1099,9 @@
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST | GROIN
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/leather_npc
 	max_integrity = 200
@@ -1078,6 +1116,9 @@
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST | GROIN
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/leather_npc
 	max_integrity = 200
@@ -1092,6 +1133,9 @@
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT | ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST | GROIN
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/gear/icons/onmob/armor_sleeves.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/leather_npc
 	max_integrity = 200
@@ -1107,6 +1151,9 @@
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST | GROIN | LEGS | ARMS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	boobed = TRUE
 	max_integrity = 300
 	w_class = 3
@@ -1120,6 +1167,9 @@
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST | GROIN
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/leather_npc
 	max_integrity = 200
@@ -1134,6 +1184,8 @@
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST | GROIN | LEGS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/bronze
 	max_integrity = 275
@@ -1148,6 +1200,8 @@
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST | GROIN | LEGS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/maille
 	max_integrity = 250
@@ -1163,6 +1217,8 @@
 	slot_flags = ITEM_SLOT_OCLOTHING | ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST | GROIN | ARMS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/special/onmob/decorated_armor.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/plate
 	max_integrity = 500
@@ -1178,6 +1234,8 @@
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST | GROIN | ARMS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/plate
 	max_integrity = 500
@@ -1192,6 +1250,8 @@
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST | GROIN | LEGS | ARMS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/plate
 	max_integrity = 500
@@ -1206,6 +1266,8 @@
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST | GROIN | LEGS | ARMS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/plate
 	max_integrity = 500
@@ -1220,6 +1282,8 @@
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST | GROIN | LEGS | ARMS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/brigandine
 	max_integrity = 375
@@ -1234,6 +1298,8 @@
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST | GROIN | ARMS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/brigandine
 	max_integrity = 375
@@ -1274,6 +1340,7 @@
 	worn_icon = 'modular_redtard/wardrobe/icons/modular_abel/twilight_wardrobe/icons/twilight_wardrobe_onmob.dmi'
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_ROGUE_SHIRT | ITEM_SLOT_OCLOTHING | ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = NONE
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	max_integrity = 200
 	w_class = 4
 	rogue_female_worn = TRUE
@@ -1335,6 +1402,8 @@
 	body_parts_covered = NONE
 	alternate_worn_layer = BODY_BEHIND_LAYER
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/gear/icons/onmob/cloak.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -1348,6 +1417,7 @@
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/azure_wardrobe/icons/azure_wardrobe_sleeves.dmi'
+	sleevetype = "shirt"
 	max_integrity = 200
 	w_class = 3
 	rogue_female_worn = TRUE
@@ -1399,6 +1469,9 @@
 	body_parts_covered = NONE
 	alternate_worn_layer = BODY_BEHIND_LAYER
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/azure_wardrobe/icons/azure_wardrobe_sleeves.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	max_integrity = 200
 	w_class = 3
 	rogue_female_worn = TRUE
@@ -1428,6 +1501,9 @@
 	body_parts_covered = NONE
 	alternate_worn_layer = BODY_BEHIND_LAYER
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/azure_wardrobe/icons/azure_wardrobe_sleeves.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/silk
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -1465,6 +1541,8 @@
 	worn_icon = 'modular_redtard/wardrobe/icons/modular_abel/azure_wardrobe/icons/azure_wardrobe_onmob.dmi'
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = NONE
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	max_integrity = 200
 	w_class = 3
 	rogue_female_worn = TRUE
@@ -1480,6 +1558,9 @@
 	body_parts_covered = NONE
 	alternate_worn_layer = BODY_BEHIND_LAYER
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/gear/icons/onmob/cloak.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/silk
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -1495,6 +1576,9 @@
 	body_parts_covered = NONE
 	alternate_worn_layer = BODY_BEHIND_LAYER
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/azure_wardrobe/icons/azure_wardrobe_sleeves.dmi'
+	sleevetype = "feather_cloak"
+	nodismemsleeves = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -1511,6 +1595,9 @@
 	body_parts_covered = NONE
 	alternate_worn_layer = BODY_BEHIND_LAYER
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/cloaks.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/fur
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -1525,6 +1612,7 @@
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/azure_wardrobe/icons/azure_wardrobe_sleeves.dmi'
+	sleevetype = "shirt"
 	max_integrity = 200
 	w_class = 3
 	rogue_female_worn = TRUE
@@ -1538,6 +1626,7 @@
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/azure_wardrobe/icons/azure_wardrobe_sleeves.dmi'
+	sleevetype = "shirt"
 	max_integrity = 200
 	w_class = 3
 	rogue_female_worn = TRUE
@@ -1551,6 +1640,7 @@
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/azure_wardrobe/icons/azure_wardrobe_sleeves.dmi'
+	sleevetype = "shirt"
 	max_integrity = 200
 	w_class = 3
 	rogue_female_worn = TRUE
@@ -1626,6 +1716,7 @@
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/azure_wardrobe/icons/azure_wardrobe_sleeves.dmi'
+	sleevetype = "shirt"
 	max_integrity = 200
 	w_class = 3
 	rogue_female_worn = TRUE
@@ -1653,6 +1744,7 @@
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/azure_wardrobe/icons/azure_wardrobe_sleeves.dmi'
+	sleevetype = "shirt"
 	max_integrity = 200
 	w_class = 3
 	rogue_female_worn = TRUE
@@ -1666,6 +1758,7 @@
 	slot_flags = ITEM_SLOT_ROGUE_CLOAK
 	body_parts_covered = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/azure_wardrobe/icons/azure_wardrobe_sleeves.dmi'
+	sleevetype = "shirt"
 	max_integrity = 200
 	w_class = 3
 	rogue_female_worn = TRUE
@@ -1798,6 +1891,7 @@
 	body_parts_covered = HEAD
 	flags_inv = HIDEFACE
 	block2add = ROGUE_FOV_BEHIND
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	rogue_armor = /datum/rogue_armor/padded
 	max_integrity = 70
 	w_class = 3
@@ -2074,6 +2168,7 @@
 	body_parts_covered = HANDS
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/gloves.dmi'
+	sleevetype = "shirt"
 	rogue_armor = /datum/rogue_armor/bronze
 	max_integrity = 375
 	w_class = 2
@@ -2088,6 +2183,8 @@
 	body_parts_covered = HANDS
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/gloves.dmi'
+	sleevetype = "shirt"
+	rogue_sleeve_scrap = null
 	rogue_armor = /datum/rogue_armor/padded_bad
 	max_integrity = 150
 	w_class = 2
@@ -2668,6 +2765,7 @@
 	worn_icon = 'modular_redtard/wardrobe/icons/modular_abel/gear/icons/onmob/head_32.dmi'
 	slot_flags = ITEM_SLOT_HEAD
 	body_parts_covered = HEAD
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	rogue_armor = /datum/rogue_armor/leather
 	max_integrity = 100
 	w_class = 3
@@ -2969,6 +3067,7 @@
 	worn_icon = 'modular_redtard/wardrobe/icons/modular_abel/neck_amulets/icons/amulets_onmob.dmi'
 	slot_flags = ITEM_SLOT_NECK
 	body_parts_covered = NECK
+	rogue_sleeve_scrap = /obj/item/natural/fur
 	max_integrity = 200
 	w_class = 3
 	rogue_female_worn = TRUE
@@ -3251,6 +3350,7 @@
 	worn_icon = 'modular_redtard/wardrobe/icons/modular_abel/gear/icons/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN | LEGS
+	nodismemsleeves = TRUE
 	max_integrity = 100
 	w_class = 3
 	rogue_female_worn = TRUE
@@ -3264,6 +3364,9 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN | LEGS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
+	sleevetype = "leg"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	max_integrity = 100
 	w_class = 3
 	rogue_female_worn = TRUE
@@ -3277,6 +3380,9 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN | LEGS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
+	sleevetype = "leg"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	max_integrity = 100
 	w_class = 3
 	rogue_female_worn = TRUE
@@ -3290,6 +3396,9 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN | LEGS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
+	sleevetype = "leg"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	max_integrity = 100
 	w_class = 3
 
@@ -3301,6 +3410,9 @@
 	worn_icon = 'modular_redtard/wardrobe/icons/modular_abel/gear/icons/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN | LEGS
+	nodismemsleeves = TRUE
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	max_integrity = 100
 	w_class = 3
 	rogue_female_worn = TRUE
@@ -3313,6 +3425,9 @@
 	worn_icon = 'modular_redtard/wardrobe/icons/modular_abel/gear/icons/onmob/pants.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN | LEGS
+	nodismemsleeves = TRUE
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	max_integrity = 100
 	w_class = 3
 	rogue_female_worn = TRUE
@@ -3326,6 +3441,10 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN | LEGS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
+	sleevetype = "leg"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	rogue_armor = /datum/rogue_armor/padded_bad
 	max_integrity = 100
 	w_class = 3
@@ -3340,6 +3459,10 @@
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN | LEGS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/gear/icons/onmob/pants_sleeves.dmi'
+	sleevetype = "leg"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	rogue_armor = /datum/rogue_armor/leather
 	max_integrity = 150
 	w_class = 3
@@ -3354,6 +3477,7 @@
 	slot_flags = ITEM_SLOT_ROGUE_RING
 	body_parts_covered = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/rings.dmi'
+	sleevetype = "shirt"
 	max_integrity = 200
 	w_class = 1
 
@@ -3366,6 +3490,7 @@
 	slot_flags = ITEM_SLOT_ROGUE_RING
 	body_parts_covered = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/rings.dmi'
+	sleevetype = "shirt"
 	max_integrity = 200
 	w_class = 1
 
@@ -3378,6 +3503,7 @@
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT | ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
+	sleevetype = "shirt"
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -3390,6 +3516,7 @@
 	worn_icon = 'modular_redtard/wardrobe/icons/modular_abel/gear/icons/onmob/shirt.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT | ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST
+	nodismemsleeves = TRUE
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -3405,6 +3532,8 @@
 	body_parts_covered = CHEST
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
+	sleevetype = "shirt"
+	rogue_sleeve_scrap = /obj/item/natural/fibers
 	max_integrity = 200
 	w_class = 3
 
@@ -3417,6 +3546,7 @@
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/azure_wardrobe/icons/azure_wardrobe_sleeves.dmi'
+	sleevetype = "shirt"
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -3431,6 +3561,9 @@
 	slot_flags = ITEM_SLOT_OCLOTHING | ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST | GROIN | LEGS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -3444,6 +3577,9 @@
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST | GROIN | LEGS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -3458,6 +3594,9 @@
 	body_parts_covered = CHEST | GROIN | ARMS
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/gear/icons/onmob/shirt_sleeves.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -3473,6 +3612,9 @@
 	body_parts_covered = CHEST | GROIN | ARMS
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	detail_tag = "_detail"
 	detail_color = "#ffffff"
 	max_integrity = 200
@@ -3488,6 +3630,8 @@
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT | ITEM_SLOT_OCLOTHING
 	body_parts_covered = NONE
 	flags_inv = NONE
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -3503,6 +3647,9 @@
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT | ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST | GROIN | ARMS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_shirts_gown.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	detail_tag = "_detail"
 	detail_color = "#1f1818"
 	boobed = TRUE
@@ -3519,6 +3666,9 @@
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST | GROIN | LEGS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -3532,6 +3682,9 @@
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST | GROIN
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -3545,6 +3698,9 @@
 	worn_icon = 'modular_redtard/wardrobe/icons/modular_abel/gear/icons/onmob/shirt.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST | GROIN
+	nodismemsleeves = TRUE
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -3559,6 +3715,9 @@
 	slot_flags = ITEM_SLOT_OCLOTHING | ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST | GROIN | ARMS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	detail_tag = "_detail"
 	detail_color = "#676262"
 	boobed = TRUE
@@ -3574,6 +3733,9 @@
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT | ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST | GROIN | ARMS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_shirts_royalty.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	detail_tag = "_detail"
 	detail_color = "#3a75c4"
 	boobed = TRUE
@@ -3590,6 +3752,9 @@
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT | ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST | GROIN | ARMS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_shirts_royalty.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	detail_tag = "_detail"
 	detail_color = "#3a75c4"
 	boobed = TRUE
@@ -3605,6 +3770,9 @@
 	worn_icon = 'modular_redtard/wardrobe/icons/modular_abel/gear/icons/onmob/shirt.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST | GROIN
+	nodismemsleeves = TRUE
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -3618,6 +3786,9 @@
 	worn_icon = 'modular_redtard/wardrobe/icons/modular_abel/gear/icons/onmob/shirt.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING | ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST | GROIN
+	nodismemsleeves = TRUE
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -3632,6 +3803,9 @@
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST | GROIN | LEGS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -3645,6 +3819,9 @@
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST | GROIN | LEGS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -3659,6 +3836,9 @@
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST | GROIN | LEGS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -3672,6 +3852,9 @@
 	worn_icon = 'modular_redtard/wardrobe/icons/modular_abel/gear/icons/onmob/shirt.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST | GROIN
+	nodismemsleeves = TRUE
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -3686,6 +3869,7 @@
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
+	sleevetype = "shirt"
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -3699,6 +3883,7 @@
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/twilight_wardrobe/icons/twilight_wardrobe_sleeves.dmi'
+	sleevetype = "shirt"
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -3714,6 +3899,7 @@
 	body_parts_covered = CHEST
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
+	sleevetype = "shirt"
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -3729,6 +3915,7 @@
 	body_parts_covered = CHEST
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
+	sleevetype = "shirt"
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -3743,6 +3930,7 @@
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/twilight_wardrobe/icons/twilight_wardrobe_sleeves.dmi'
+	sleevetype = "shirt"
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -3757,6 +3945,7 @@
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/twilight_wardrobe/icons/twilight_wardrobe_sleeves.dmi'
+	sleevetype = "shirt"
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -3771,6 +3960,7 @@
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/twilight_wardrobe/icons/twilight_wardrobe_sleeves.dmi'
+	sleevetype = "shirt"
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -3785,6 +3975,7 @@
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/twilight_wardrobe/icons/twilight_wardrobe_sleeves.dmi'
+	sleevetype = "shirt"
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -3798,6 +3989,8 @@
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT | ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST | GROIN
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/gear/icons/onmob/shirt_sleeves.dmi'
+	sleevetype = "armor"
+	nodismemsleeves = TRUE
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -3813,6 +4006,8 @@
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT | ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST | GROIN
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/gear/icons/onmob/shirt_sleeves.dmi'
+	sleevetype = "armor"
+	nodismemsleeves = TRUE
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -3827,6 +4022,7 @@
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/rmh_wardrobe/icons/rmh_wardrobe_sleeves.dmi'
+	sleevetype = "shirt"
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -3842,6 +4038,9 @@
 	body_parts_covered = CHEST | GROIN
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/gear/icons/onmob/shirt.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/padded
 	max_integrity = 150
@@ -3857,6 +4056,9 @@
 	body_parts_covered = CHEST | GROIN | ARMS | LEGS
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
@@ -3872,6 +4074,9 @@
 	body_parts_covered = CHEST | GROIN | ARMS | LEGS
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
@@ -3887,6 +4092,9 @@
 	body_parts_covered = CHEST | GROIN | ARMS | LEGS
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
@@ -3902,6 +4110,9 @@
 	body_parts_covered = CHEST | GROIN | ARMS | LEGS
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
@@ -3917,6 +4128,9 @@
 	body_parts_covered = CHEST | GROIN | ARMS | LEGS
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/twilight_wardrobe/icons/twilight_wardrobe_sleeves.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
@@ -3932,6 +4146,9 @@
 	body_parts_covered = CHEST | GROIN | ARMS | LEGS
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/twilight_wardrobe/icons/twilight_wardrobe_sleeves.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
@@ -3947,6 +4164,9 @@
 	body_parts_covered = CHEST | GROIN | ARMS | LEGS
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/padded
 	max_integrity = 150
@@ -3963,6 +4183,9 @@
 	body_parts_covered = CHEST | GROIN | ARMS | LEGS
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/garments/icons/garments_sleeves.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
@@ -3977,6 +4200,9 @@
 	body_parts_covered = CHEST | GROIN | ARMS | LEGS
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/garments/icons/garments_sleeves.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
@@ -3991,6 +4217,9 @@
 	body_parts_covered = CHEST | GROIN | ARMS | LEGS
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/garments/icons/garments_sleeves.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
@@ -4005,6 +4234,9 @@
 	body_parts_covered = CHEST | GROIN | ARMS | LEGS
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/garments/icons/garments_sleeves.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
@@ -4019,6 +4251,9 @@
 	body_parts_covered = CHEST | GROIN | ARMS | LEGS
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/padded
 	max_integrity = 300
@@ -4035,6 +4270,9 @@
 	body_parts_covered = CHEST | GROIN | ARMS | LEGS
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/padded
 	max_integrity = 300
@@ -4051,6 +4289,9 @@
 	body_parts_covered = CHEST | GROIN | ARMS | LEGS
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
@@ -4065,6 +4306,9 @@
 	body_parts_covered = CHEST | GROIN | ARMS | LEGS
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	rogue_armor = /datum/rogue_armor/padded
 	max_integrity = 150
@@ -4081,6 +4325,9 @@
 	body_parts_covered = CHEST | GROIN | ARMS | LEGS
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
@@ -4095,6 +4342,9 @@
 	body_parts_covered = CHEST | GROIN | ARMS | LEGS
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/gear/icons/onmob/shirt_sleeves.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
@@ -4110,6 +4360,9 @@
 	body_parts_covered = CHEST | GROIN | ARMS | LEGS
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/gear/icons/onmob/shirt_sleeves.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
@@ -4125,6 +4378,9 @@
 	body_parts_covered = CHEST | GROIN | ARMS | LEGS
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
@@ -4140,6 +4396,9 @@
 	body_parts_covered = CHEST | GROIN | ARMS | LEGS
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
@@ -4155,6 +4414,9 @@
 	body_parts_covered = CHEST | GROIN | ARMS | LEGS
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
@@ -4170,6 +4432,9 @@
 	body_parts_covered = CHEST | GROIN | ARMS | LEGS
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
@@ -4184,6 +4449,9 @@
 	body_parts_covered = CHEST | GROIN | ARMS | LEGS
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
@@ -4198,6 +4466,9 @@
 	body_parts_covered = CHEST | GROIN | ARMS | LEGS
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
@@ -4212,6 +4483,9 @@
 	body_parts_covered = CHEST | GROIN | ARMS | LEGS
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = null
 	rogue_armor = /datum/rogue_armor/padded
 	max_integrity = 200
@@ -4228,6 +4502,9 @@
 	body_parts_covered = CHEST | GROIN | ARMS | LEGS
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = null
 	rogue_armor = /datum/rogue_armor/leather
 	max_integrity = 200
@@ -4244,6 +4521,9 @@
 	body_parts_covered = CHEST | GROIN | ARMS | LEGS
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = null
 	rogue_armor = /datum/rogue_armor/padded
 	max_integrity = 700
@@ -4260,6 +4540,8 @@
 	body_parts_covered = CHEST
 	flags_inv = NONE
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
+	sleevetype = "shirt"
+	rogue_sleeve_scrap = /obj/item/natural/silk
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -4273,6 +4555,9 @@
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT | ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST | GROIN | LEGS | ARMS
 	flags_inv = NONE
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	rogue_armor = /datum/rogue_armor/padded
 	max_integrity = 200
 	w_class = 3
@@ -4287,6 +4572,9 @@
 	slot_flags = ITEM_SLOT_OCLOTHING | ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST | GROIN
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/garments/icons/garments_sleeves.dmi'
+	sleevetype = "tunic"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	max_integrity = 200
 	w_class = 3
 
@@ -4299,6 +4587,9 @@
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT | ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST | ARMS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/gear/icons/onmob/shirt_sleeves.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -4313,6 +4604,9 @@
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST | ARMS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/twilight_wardrobe/icons/twilight_wardrobe_sleeves.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -4326,6 +4620,9 @@
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST | ARMS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/rmh_wardrobe/icons/rmh_wardrobe_sleeves.dmi'
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -4340,6 +4637,7 @@
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/modular_abel/twilight_wardrobe/icons/twilight_wardrobe_sleeves.dmi'
+	sleevetype = "shirt"
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
@@ -4354,6 +4652,8 @@
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FEET
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/feet.dmi'
+	sleevetype = "leg"
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	rogue_armor = /datum/rogue_armor/bronze
 	max_integrity = 250
 	w_class = 3
@@ -4367,6 +4667,8 @@
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FEET
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/feet.dmi'
+	sleevetype = "leg"
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	rogue_armor = /datum/rogue_armor/maille
 	max_integrity = 300
 	w_class = 3
@@ -4380,6 +4682,7 @@
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FEET
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/feet.dmi'
+	sleevetype = "leg"
 	max_integrity = 200
 	w_class = 3
 	rogue_female_worn = TRUE
@@ -4394,6 +4697,7 @@
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FEET
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/feet.dmi'
+	sleevetype = "leg"
 	detail_tag = "_detail"
 	detail_color = "#FFFFFF"
 	max_integrity = 200
@@ -4410,6 +4714,7 @@
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FEET
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/feet.dmi'
+	sleevetype = "leg"
 	detail_tag = "_detail"
 	detail_color = "#FFFFFF"
 	max_integrity = 200
@@ -4426,6 +4731,7 @@
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FEET
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/feet.dmi'
+	sleevetype = "leg"
 	detail_tag = "_detail"
 	detail_color = "#FFFFFF"
 	max_integrity = 200
@@ -4441,6 +4747,8 @@
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FEET
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/feet.dmi'
+	sleevetype = "leg"
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	max_integrity = 200
 	w_class = 3
 	rogue_female_worn = TRUE
@@ -4454,6 +4762,7 @@
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = ARMS
 	rogue_sleeved = 'modular_redtard/wardrobe/icons/icons/roguetown/clothing/onmob/wrists.dmi'
+	sleevetype = "shirt"
 	rogue_armor = /datum/rogue_armor/plate
 	max_integrity = 300
 	w_class = 3

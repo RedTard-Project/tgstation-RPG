@@ -72,8 +72,7 @@ export const RogueStockpile = () => {
               </Box>
               {!!data.buys && !data.has_account && (
                 <NoticeBox mt={1}>
-                  No account: submit your fingers to a NERVELOCK before
-                  selling.
+                  No account: submit your fingers to a NERVELOCK before selling.
                 </NoticeBox>
               )}
               {!!data.buys && !!data.below_floor && (

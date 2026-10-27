@@ -1304,7 +1304,7 @@ def write_bake_manifest(spec):
     print(f"{spec['manifest']}: {len(sheets)} sheets, {sum(len(s['states']) for s in sheets)} states to bake")
 
 
-TYPED_NEW = re.compile(r'\bvar/(/obj/item/[A-Za-z0-9_/]*[A-Za-z0-9_])/[A-Za-z_][A-Za-z0-9_]*\s*=\s*new\b')
+TYPED_NEW = re.compile(r'\bvar(/obj/item/[A-Za-z0-9_/]*[A-Za-z0-9_])/[A-Za-z_][A-Za-z0-9_]*\s*=\s*new\b')
 
 
 def typed_fill(path):

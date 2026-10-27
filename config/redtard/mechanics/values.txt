@@ -1,5 +1,159 @@
 # Combat numbers: name = value. Times are in deciseconds. Read like formulas.txt; a private config/redtard_private/mechanics/values.txt replaces this file.
 
+# --- Treasury (economy/, block 7a): funds, loans, poll tax, charters, the Crown's solvency.
+
+# Mammons in the Church Fund at round start (Ratwood CHURCH_FUND_SEED).
+treasury_church_seed = 1000
+
+# Mammons in the Merchant Fund at round start (Ratwood MERCHANT_FUND_SEED).
+treasury_merchant_seed = 500
+
+# Mammons in the Bathhouse Fund at round start (Ratwood BATHHOUSE_FUND_SEED).
+treasury_bathhouse_seed = 500
+
+# Mammons in the Tavern Earnings at round start (Ratwood INNKEEPER_FUND_SEED).
+treasury_tavern_seed = 0
+
+# Last day (dawns since round start) on which loans and indentures may be drafted (Ratwood loan_max_issuance_day).
+treasury_loan_last_day = 5
+
+# Smallest personal loan a JAWBANK writes.
+treasury_loan_personal_min = 50
+
+# Largest personal loan a JAWBANK writes.
+treasury_loan_personal_max = 500
+
+# Smallest indenture between two institutions.
+treasury_indenture_min = 501
+
+# Largest indenture between two institutions.
+treasury_indenture_max = 2000
+
+# Longest term of a loan or indenture, in dawns.
+treasury_loan_term_max = 3
+
+# Deciseconds an unsigned loan writ, indenture or patronage writ lasts before it crumbles (Ratwood 2 minutes).
+treasury_writ_lifetime = 1200
+
+# Mammons the Church keeps for charity, less the principal it has out in loans (Ratwood CHURCH_RESERVE_FLOOR).
+treasury_church_reserve = 1000
+
+# The Crown's JAWBANK spills no coin below this balance when struck (Ratwood bash_floor).
+treasury_crown_bash_floor = 1500
+
+# The Church's, merchants' and bathhouse JAWBANKs spill no coin below this balance.
+treasury_fund_bash_floor = 500
+
+# The tavern's JAWBANK spills no coin below this balance (Ratwood INNKEEPER_BASH_FLOOR).
+treasury_tavern_bash_floor = 300
+
+# Blows that spill coin before a JAWBANK coughs up a lump sum (Ratwood lump_hit_threshold).
+treasury_bash_lump_hits = 10
+
+# Lump sum the Crown's JAWBANK spills.
+treasury_crown_lump = 200
+
+# Lump sum the Church's, merchants' and bathhouse JAWBANKs spill.
+treasury_fund_lump = 100
+
+# Lump sum the tavern's JAWBANK spills (Ratwood INNKEEPER_LUMP_PAYOUT).
+treasury_tavern_lump = 50
+
+# Deciseconds without a blow after which a JAWBANK forgets the blows counted toward a lump sum (Ratwood 1 minute).
+treasury_bash_reset = 600
+
+# Mammons a bathhouse attendant may draw from its fund each day until the Bathmaster changes it.
+treasury_bathhouse_worker_limit = 50
+
+# Mammons an agent of the bathhouse may draw from its fund each day until the Bathmaster changes it.
+treasury_bathhouse_agent_limit = 50
+
+# Most Benefactors of the Church at once (Ratwood PATRON_CAP_CHURCH).
+treasury_patron_cap_church = 20
+
+# Most agents of the trading company at once (Ratwood PATRON_CAP_MERCHANT).
+treasury_patron_cap_merchant = 5
+
+# Most agents of the bathhouse at once (Ratwood PATRON_CAP_BATHHOUSE).
+treasury_patron_cap_bathhouse = 5
+
+# Deciseconds between two patronage writs of one JAWBANK.
+treasury_patron_writ_cooldown = 300
+
+# Highest poll tax a head per dawn (Ratwood POLL_TAX_MAX_RATE).
+treasury_poll_max_rate = 40
+
+# Highest Crown subsidy a head per dawn (Ratwood POLL_TAX_MAX_SUBSIDY).
+treasury_poll_max_subsidy = 60
+
+# Dawns of unpaid poll tax after which a subject is marked in arrears.
+treasury_poll_arrears_days = 2
+
+# Most dawns of poll tax a subject may pay ahead.
+treasury_poll_advance_max = 7
+
+# Poll tax a dawn paid ahead by a class the Crown does not tax yet.
+treasury_poll_advance_fallback = 10
+
+# Deciseconds after round start before poll tax may be paid ahead.
+treasury_poll_advance_lockout = 6000
+
+# Share of a subject's balance one fine may take (Ratwood GENERIC_RATE_CAP); outlaws are uncapped.
+treasury_fine_cap = 0.75
+
+# Share of the balance one levy or fine may take from those the Golden Bull shields.
+treasury_bull_cap = 0.25
+
+# Most mammons a day the Golden Bull lets the Crown fine one it shields.
+treasury_bull_fine_cap = 50
+
+# Most poll tax a dawn of a burgher under the Golden Bull.
+treasury_bull_poll_cap = 20
+
+# Most poll tax a dawn of scholars and healers under the Covenant of Noc & Pestra.
+treasury_covenant_poll_cap = 10
+
+# Most poll tax a dawn of mercenaries under the Guild Charter of Arms.
+treasury_arms_poll_cap = 15
+
+# Share of every taxed sale the Zenitstadt Concordat tithes from the Crown's Purse to the Church, and the lowest levy it allows.
+treasury_concordat_tithe = 0.05
+
+# Deciseconds before a charter can change again (Ratwood DECREE_COOLDOWN, 30 minutes).
+treasury_decree_cooldown = 18000
+
+# Least the Burghers advance when the Crown cannot meet its payroll (Ratwood TREASURY_ARREARS_LOAN).
+treasury_arrears_advance = 1000
+
+# Operating reserve the Crown's Purse is reset to under sequestration; income below it is not taken for the debt.
+treasury_sequestration_floor = 2500
+
+# Debt a sequestration adds (Ratwood BANKRUPTCY_DEBT_FLAT).
+treasury_sequestration_debt = 5000
+
+# Share of a stockpile good's limit kept before export under sequestration.
+treasury_sequestration_export_share = 0.25
+
+# Suspended charters the ruler may restore at once after a sequestration.
+treasury_concession_picks = 3
+
+# The Crown's Purse is topped up to this when a sequestration lifts.
+treasury_recovery_purse = 1500
+
+# Smallest emergency loan of the trading company to the Crown.
+treasury_ftc_loan_min = 500
+
+# Largest emergency loan of the trading company to the Crown.
+treasury_ftc_loan_max = 1500
+
+# From this day (dawns since round start) on the trading company lends the Crown nothing.
+treasury_ftc_loan_closed_day = 5
+
+# Interest of the trading company's emergency loan, added to the debt at once.
+treasury_ftc_loan_interest = 0.25
+
+# --- Combat and the rest.
+
 # Stamina spent on a successful parry (Azure Peak).
 base_parry_stamina_drain = 5
 
@@ -978,6 +1132,165 @@ ranged_skill_accuracy_step = 5
 # Degrees a gun's shots may stray more per point of perception below the baseline (Azure Peak ARCHER_NPC_SPREAD_PER_POINT).
 ranged_per_spread_step = 6
 
+# Deciseconds of a bow's draw before skill (Ratwood bows.dm get_chargetime(): 10 minus the skill steps).
+launcher_bow_draw_base = 10
+
+# Deciseconds of a bow's draw taken off per rank of bows (Ratwood).
+launcher_bow_draw_skill_step = 2
+
+# Deciseconds a heavy bow adds to the draw before strength (Ratwood heavy_bow: 10 minus strength / 2).
+launcher_bow_heavy_draw_base = 10
+
+# Points of strength per decisecond a heavy bow's draw gets shorter (Ratwood STASTR / 2).
+launcher_bow_heavy_strength_divisor = 2
+
+# Deciseconds of a bow's draw before perception; each point of perception takes one off (Ratwood 20 - STAPER).
+launcher_bow_draw_perception_base = 20
+
+# Shortest draw of a bow shot, deciseconds (Ratwood).
+launcher_bow_draw_min = 1
+
+# Shortest draw of a bow's arcing shot, deciseconds (Ratwood).
+launcher_bow_arc_draw_min = 3
+
+# Deciseconds of a crossbow's aim taken off its basetime per rank of crossbows (Ratwood crossbows.dm).
+launcher_crossbow_draw_skill_step = 4.25
+
+# Deciseconds of a crossbow's aim taken off per point of perception (Ratwood).
+launcher_crossbow_draw_perception_step = 1
+
+# Shortest aim of a crossbow shot, deciseconds (Ratwood).
+launcher_crossbow_draw_min = 1
+
+# Deciseconds of a crossbow's arcing aim taken off per rank of crossbows (Ratwood).
+launcher_crossbow_arc_skill_step = 20
+
+# Deciseconds an arcing crossbow shot adds before perception (Ratwood).
+launcher_crossbow_arc_perception_base = 20
+
+# Deciseconds of a crossbow's arcing aim taken off per point of perception (Ratwood).
+launcher_crossbow_arc_perception_step = 1.5
+
+# Aim of an arcing crossbow shot whose formula falls to zero or below, deciseconds (Ratwood).
+launcher_crossbow_arc_fallback = 10
+
+# Deciseconds of a sling's swing before skill and stats (Ratwood slings.dm).
+launcher_sling_draw_base = 20
+
+# Deciseconds of a sling's arcing swing before skill and stats (Ratwood).
+launcher_sling_arc_draw_base = 22
+
+# Deciseconds of a sling's swing taken off per rank of slings (Ratwood).
+launcher_sling_draw_skill_step = 1.5
+
+# Points of perception per decisecond a sling's swing gets shorter (Ratwood STAPER / 2).
+launcher_sling_draw_perception_divisor = 2
+
+# Points of strength per decisecond a sling's swing gets shorter (Ratwood STASTR / 5).
+launcher_sling_draw_strength_divisor = 5
+
+# Shortest swing of a sling, deciseconds (Ratwood).
+launcher_sling_draw_min = 0.5
+
+# Perception past which a bow's or sling's shot gains less damage per point (Ratwood RANGED_STAT_SOFTCAP).
+launcher_per_softcap = 15
+
+# Damage factor a bow's or sling's shot gains per point of perception up to the softcap, counted from zero (Ratwood RANGED_STAT_MULT: 2 at perception 10).
+launcher_per_damage_step = 0.1
+
+# Damage factor a bow's or sling's shot gains per point of perception past the softcap (Ratwood RANGED_STAT_CAPPEDMULT).
+launcher_per_damage_capped_step = 0.05
+
+# Least perception a perception crossbow (slurbows) counts for damage (Ratwood).
+launcher_crossbow_per_min = 10
+
+# Most perception a perception crossbow counts for damage (Ratwood).
+launcher_crossbow_per_max = 15
+
+# Divisor of that perception: the bolt's damage factor (Ratwood perception / 10).
+launcher_crossbow_per_divisor = 10
+
+# Force of a plain stone; a sling's stone adds its force above this to the shot (Ratwood).
+launcher_sling_stone_force = 10
+
+# Perception above which a bow's shot keeps to the aimed part longer (Ratwood bows: (PER - 9) * 4 that falls off with range).
+launcher_bow_accuracy_base = 9
+
+# Accuracy of a bow's shot per point of perception from that base, times the bow's accfactor; falls off with range (Ratwood).
+launcher_bow_accuracy_step = 4
+
+# Perception above which a bow's shot gains accuracy that does not fall off (Ratwood).
+launcher_bow_bonus_base = 8
+
+# Accuracy that does not fall off per point of perception from that base, bows (Ratwood).
+launcher_bow_bonus_step = 3
+
+# Perception above which a crossbow's or sling's shot keeps to the aimed part longer (Ratwood).
+launcher_accuracy_base = 8
+
+# Accuracy of a crossbow's or sling's shot per point of perception from that base, times accfactor; falls off with range (Ratwood).
+launcher_accuracy_step = 3
+
+# Perception above which a crossbow's or sling's shot gains accuracy that does not fall off (Ratwood).
+launcher_bonus_base = 8
+
+# Accuracy that does not fall off per point of perception from that base, crossbows and slings (Ratwood).
+launcher_bonus_step = 1
+
+# Accuracy that does not fall off per rank of the launcher's skill (Ratwood).
+launcher_skill_accuracy_step = 5
+
+# Accuracy a shot loses per tile flown while above the floor (Ratwood projectile Range()).
+launcher_accuracy_falloff = 10
+
+# Accuracy at which a shot stops losing it with range (Ratwood).
+launcher_accuracy_floor = 20
+
+# Factor of a shot's accuracy when the shooter is buckled or mounted (Ratwood BUCKLE_PENALTY).
+launcher_mounted_accuracy_factor = 0.5
+
+# Chance to hit the aimed part taken off a shot at the head, neck, arms or legs (Ratwood RANGED_PRECISE_HIT_PENALTY).
+launcher_precise_penalty = 10
+
+# Highest chance to hit the head, neck, arms or legs (Ratwood RANGED_MAX_PRECISE_HIT_CHANCE).
+launcher_precise_max = 75
+
+# Chance to hit the aimed part taken off a shot at a hand or foot (Ratwood RANGED_ULTRA_PRECISE_HIT_PENALTY); the face takes both penalties.
+launcher_ultra_precise_penalty = 25
+
+# Highest chance to hit a hand or foot, or the face of a creature without a mind (Ratwood).
+launcher_ultra_precise_max = 50
+
+# Highest chance to hit the face, eyes, ears, nose, mouth or skull of a creature with a mind (Ratwood RANGED_MAX_FACE_HIT_CHANCE).
+launcher_face_max = 30
+
+# Least chance to hit the aimed part (Ratwood).
+launcher_zone_min = 5
+
+# Degrees a shot let go at no draw at all may stray; less the further the draw (Ratwood 150 - 150 * charge).
+launcher_uncharged_spread = 150
+
+# Accuracy a bow's shot loses when let go before the full draw (Ratwood).
+launcher_uncharged_accuracy_penalty = 15
+
+# Factor of the chance to stick of a bow's shot let go before the full draw (Ratwood).
+launcher_uncharged_embed_factor = 0.5
+
+# Damage a shot must deal through armor to stick in the body part (Ratwood check_projectile_embed).
+launcher_embed_min_damage = 8
+
+# Experience of the launcher's skill per point of intelligence for a shot that hits a living target, below the skill's training cap (Ratwood STAINT * 4).
+launcher_hit_xp_per_int = 4
+
+# Deciseconds of a crossbow's cocking taken off its reload time per point of strength (Ratwood reloadtime - STASTR).
+launcher_crossbow_cock_strength_step = 1
+
+# Tiles an arcing shot may fly past the clicked tile before it lands (the module: TG stops a projectile on the tile its range runs out).
+launcher_arc_extra_range = 1
+
+# Deciseconds to take one round out of a quiver or to pick one up from the floor into it (Ratwood do_after 5).
+launcher_quiver_time = 5
+
 # Deciseconds the printing press takes to print (Ratwood PRINTING_TIME).
 library_print_time = 250
 
@@ -1376,6 +1689,155 @@ clay_crack_delay = 600
 
 # Percent chance every two seconds that fired pottery left in a burning oven past that time shatters (Ratwood: every oven tick).
 clay_crack_chance = 30
+
+# --- Trade (economy/, block 7b): price by quality, regions, standing orders, ships and the harbor, coin machines.
+
+# Price factor of a ruined item (Ratwood ITEM_QUALITY_MULT_RUINED).
+trade_quality_ruined = 0.2
+
+# Price factor of an awful item (Ratwood ITEM_QUALITY_MULT_AWFUL).
+trade_quality_awful = 0.35
+
+# Price factor of a crude item (Ratwood ITEM_QUALITY_MULT_CRUDE).
+trade_quality_crude = 0.65
+
+# Price factor of a rough item (Ratwood ITEM_QUALITY_MULT_ROUGH).
+trade_quality_rough = 0.85
+
+# Price factor of a fine item (Ratwood ITEM_QUALITY_MULT_FINE).
+trade_quality_fine = 1.15
+
+# Price factor of a flawless item (Ratwood ITEM_QUALITY_MULT_FLAWLESS).
+trade_quality_flawless = 1.3
+
+# Price factor of a masterwork item (Ratwood ITEM_QUALITY_MULT_MASTERWORK).
+trade_quality_masterwork = 1.5
+
+# Share of a good's quality difference from standard the seller bears again at the stockpile; the Crown's Purse keeps it on shoddy goods and adds it on fine ones (Ratwood STOCKPILE_QUALITY_LOSS_SELLER_SHARE).
+trade_quality_seller_share = 0.5
+
+# Percent of a HEADEATER bounty the Crown takes at round start; the Steward changes it with the other levies (Ratwood TAX_CATEGORY_HEADEATER_LEVY).
+trade_headeater_levy = 15
+
+# Percent of a sale to a foreign ship the Crown takes at round start; the Steward changes it with the other levies (Ratwood TAX_CATEGORY_EXPORT_DUTY).
+trade_export_duty = 15
+
+# Percent of a sale to a foreign ship the merchant takes as middleman at round start (Ratwood TRADE_MERCHANT_LEVY_DEFAULT_PERCENT).
+trade_middleman_cut = 15
+
+# Highest middleman cut the merchant may set, percent (Ratwood TRADE_MERCHANT_LEVY_CAP_PERCENT).
+trade_middleman_cut_max = 50
+
+# Carriers' margin, percent, on a good the vomitorium imports from a region (Ratwood ROYAL_CUSTOM_DEFAULT_MARGIN).
+trade_import_margin = 50
+
+# How fast a region's price climbs once it has sold past its daily pace (Ratwood TRADE_ESCALATION_SLOPE).
+trade_escalation_slope = 1
+
+# Share a region's daily produce grows per living player (Ratwood REGION_POP_SCALE_PER_PLAYER).
+trade_region_pop_per_player = 0.025
+
+# Most a region's daily produce grows with the population, as a factor (Ratwood REGION_POP_SCALE_MAX).
+trade_region_pop_max = 3
+
+# Standing orders the regions post every dawn (Ratwood STANDING_ORDERS_BASE_PER_DAY).
+trade_orders_per_day = 4
+
+# Extra standing orders posted every dawn per living player (Ratwood STANDING_ORDERS_PER_ACTIVE_PLAYER).
+trade_orders_per_player = 0.05
+
+# Most standing orders posted in one dawn (Ratwood STANDING_ORDERS_MAX_PER_DAY).
+trade_orders_max_per_day = 13
+
+# Most standing orders open at once (Ratwood STANDING_ORDERS_POOL_CAP).
+trade_orders_cap = 13
+
+# Most standing orders one region has open at once (Ratwood STANDING_ORDERS_MAX_PER_REGION).
+trade_orders_per_region = 3
+
+# Dawns a standing order stays open (Ratwood STANDING_ORDER_DURATION).
+trade_order_days = 2
+
+# Premium a standing order pays over the trade price of its goods (Ratwood STANDING_ORDER_BASE_BONUS).
+trade_order_bonus = 0.75
+
+# Share of a standing order's value the stockpile must hold to settle it partially (Ratwood STANDING_ORDER_PARTIAL_THRESHOLD).
+trade_order_partial_threshold = 0.5
+
+# Share of the delivered value a partially settled standing order pays (Ratwood STANDING_ORDER_PARTIAL_PAYOUT_MULT).
+trade_order_partial_payout = 0.85
+
+# Foreign ships waiting offshore every dawn (Ratwood TRADE_SHIPS_PER_DAY_ROLL).
+trade_ships_per_day = 8
+
+# Ships the merchant may hail into port a day (Ratwood TRADE_SHIPS_HAIL_PER_DAY).
+trade_hails_per_day = 2
+
+# Piers: ships at port at once (Ratwood TRADE_SHIP_DOCK_SPOTS_BASE).
+trade_dock_spots = 2
+
+# Deciseconds a hailed ship stays at the pier (Ratwood TRADE_SHIP_DOCK_DURATION, 60 minutes).
+trade_dock_time = 36000
+
+# Deciseconds before a captain lets himself be sent away without the trade he hoped for (Ratwood TRADE_SHIP_SEND_AWAY_GRACE, 20 minutes).
+trade_send_away_grace = 12000
+
+# Deciseconds of an idle harbor after which a ship comes into port unbidden, once a day (Ratwood AUTO_HAIL_IDLE_THRESHOLD, 15 minutes).
+trade_auto_hail_idle = 9000
+
+# Mammons of trade a ship of the default size hopes for; a ship that gets it gives the merchant back a hail (Ratwood TRADE_SHIP_EXPECTED_FAVOR).
+trade_ship_expected_trade = 450
+
+# Share of a ship's cargo count that it sells, against what it buys (Ratwood TRADE_SHIP_SUPPLY_QTY_FRACTION).
+trade_supply_share = 0.5
+
+# Most units of a ship's cargo the merchant buys at once (Ratwood TRADE_MAX_BULK_UNITS).
+trade_bulk_buy_max = 50
+
+# HEADEATER bounty on the head of a goblin NPC (Ratwood npc/goblin.dm).
+trade_head_bounty_goblin = 30
+
+# HEADEATER bounty on the head of an orc NPC (Ratwood npc/orc/orc.dm).
+trade_head_bounty_orc = 40
+
+# HEADEATER bounty on the head of a drow raider (Ratwood npc/drow.dm).
+trade_head_bounty_drow = 40
+
+# HEADEATER bounty on the head of a highwayman (Ratwood soldiers/highwayman.dm).
+trade_head_bounty_highwayman = 30
+
+# HEADEATER bounty on the head of a bog deserter (Ratwood soldiers/bog_deserters.dm).
+trade_head_bounty_deserter = 50
+
+# Least tithe XYLIX'S FORTUNE takes (Ratwood mintithing).
+trade_lottery_min_tithe = 5
+
+# Most tithe XYLIX'S FORTUNE takes in coins (Ratwood maxtithing).
+trade_lottery_max_tithe = 100
+
+# Percent chance a spin wins before the gambler's fortune is added (Ratwood gamblingbaseprob).
+trade_lottery_base_chance = 60
+
+# Percent taken off a spin's chance (Ratwood probpenalty).
+trade_lottery_house_penalty = 2
+
+# Deciseconds the wheel spins (Ratwood).
+trade_lottery_spin_time = 50
+
+# Least mammons of a bounty at the EXCIDIUM (Ratwood).
+trade_bounty_min = 100
+
+# Most mammons of a bounty at the EXCIDIUM (Ratwood).
+trade_bounty_max = 500
+
+# Mammons a printed list of bounties costs (Ratwood).
+trade_bounty_print_cost = 50
+
+# Coin value a HERMES takes for a sheet of parchment (Ratwood: a zenny).
+trade_mail_paper_price = 1
+
+# Coin value a HERMES takes for a quill (Ratwood: a ziliqua).
+trade_mail_quill_price = 5
 
 # Hefty Swing: cooldown. Times are in deciseconds.
 special_axe_swing_cooldown = 250

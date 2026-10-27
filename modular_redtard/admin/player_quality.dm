@@ -69,15 +69,15 @@ GLOBAL_LIST_INIT(rogue_pq_ranks, list(
 
 /// The step of PQ a number falls on: list(least PQ, name, colour).
 /proc/rogue_pq_rank_step(pq)
-	for(var/list/step as anything in GLOB.rogue_pq_ranks)
-		if(pq >= step[1])
-			return step
+	for(var/list/rank as anything in GLOB.rogue_pq_ranks)
+		if(pq >= rank[1])
+			return rank
 	return GLOB.rogue_pq_ranks[length(GLOB.rogue_pq_ranks)]
 
 /// Ratwood's names for the steps of PQ, as the admin panels show them.
 /proc/rogue_pq_rank(pq)
-	var/list/step = rogue_pq_rank_step(pq)
-	return step[3] ? "<span style='color: [step[3]];'>[step[2]]</span>" : step[2]
+	var/list/rank = rogue_pq_rank_step(pq)
+	return rank[3] ? "<span style='color: [rank[3]];'>[rank[2]]</span>" : rank[2]
 
 /// Changes a player's PQ and writes the change into their log; an amount of 0 with a reason is a note. The player is told
 /// when an admin changed it and they are online. A change with neither admin nor reason (commendations, round points) is

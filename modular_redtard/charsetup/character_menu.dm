@@ -283,6 +283,9 @@ GLOBAL_LIST_EMPTY(rogue_charsetup_open)
 			return round_action(user)
 		if("open_tg")
 			return open_tg_menu(user, params["page"])
+		if("open_triumph_shop")
+			GLOB.rogue_triumph_shop.ui_interact(user)
+			return FALSE
 	return FALSE
 
 /// TG's set_preference action: the middlewares first (the quirks one asks before a species change drops quirks), then

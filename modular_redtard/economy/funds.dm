@@ -200,11 +200,11 @@
 		SSrogue_treasury.jawbanks -= fund_id
 	return ..()
 
-/obj/structure/roguemachine/vaultbank/proc/fund()
+/obj/structure/roguemachine/vaultbank/proc/linked_fund()
 	return SSrogue_treasury.get_fund(fund_id)
 
 /obj/structure/roguemachine/vaultbank/update_icon_state()
-	var/datum/bank_account/rogue/fund = fund()
+	var/datum/bank_account/rogue/fund = linked_fund()
 	icon_state = fund?.account_balance ? initial(icon_state) : "[initial(icon_state)]_empty"
 	return ..()
 
@@ -218,7 +218,7 @@
 
 /obj/structure/roguemachine/vaultbank/examine(mob/user)
 	. = ..()
-	var/datum/bank_account/rogue/fund = fund()
+	var/datum/bank_account/rogue/fund = linked_fund()
 	if(!fund)
 		return
 	if(Adjacent(user))
@@ -229,14 +229,14 @@
 	. += span_info("Strike it with a blunt weapon to throttle coins loose.")
 
 /obj/structure/roguemachine/vaultbank/interact(mob/user)
-	if(!ishuman(user) || !fund())
+	if(!ishuman(user) || !linked_fund())
 		return FALSE
 	return ..()
 
 /obj/structure/roguemachine/vaultbank/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
 	if(user.combat_mode || !istype(tool, /obj/item/roguecoin))
 		return NONE
-	var/datum/bank_account/rogue/fund = fund()
+	var/datum/bank_account/rogue/fund = linked_fund()
 	if(!fund || !rogue_coin_accepted(tool))
 		return ITEM_INTERACT_BLOCKING
 	var/value = tool.get_real_price()
@@ -267,7 +267,7 @@
 
 /// The blow spills coins by its force while the fund is above its floor; every tenth blow a lump sum (Ratwood attackby()).
 /obj/structure/roguemachine/vaultbank/proc/knock_coins_loose(obj/item/weapon, mob/living/user)
-	var/datum/bank_account/rogue/fund = fund()
+	var/datum/bank_account/rogue/fund = linked_fund()
 	if(!fund)
 		return
 	addtimer(CALLBACK(src, PROC_REF(forget_blows)), ROGUE_BASH_RESET, TIMER_UNIQUE | TIMER_OVERRIDE)
@@ -325,7 +325,7 @@
 
 /obj/structure/roguemachine/vaultbank/ui_data(mob/user)
 	var/datum/controller/subsystem/rogue_treasury/treasury = SSrogue_treasury
-	var/datum/bank_account/rogue/fund = fund()
+	var/datum/bank_account/rogue/fund = linked_fund()
 	var/can_view = treasury.fund_can_view(user, fund_id)
 	var/can_lend = treasury.fund_can_lend(user, fund_id)
 	var/list/data = list()
@@ -423,7 +423,7 @@
 /// Coin out of the fund to the user, within what they may draw (Ratwood disburse()).
 /obj/structure/roguemachine/vaultbank/proc/withdraw_coins(mob/living/carbon/human/user, amount)
 	var/datum/controller/subsystem/rogue_treasury/treasury = SSrogue_treasury
-	var/datum/bank_account/rogue/fund = fund()
+	var/datum/bank_account/rogue/fund = linked_fund()
 	amount = round(amount)
 	if(!amount || amount <= 0)
 		return
@@ -441,7 +441,7 @@
 /// Coin from the user's NERVELOCK account into the bathhouse fund, for its people (Ratwood deposit_to_fund()).
 /obj/structure/roguemachine/vaultbank/proc/deposit_from_account(mob/living/carbon/human/user, amount)
 	var/datum/controller/subsystem/rogue_treasury/treasury = SSrogue_treasury
-	var/datum/bank_account/rogue/fund = fund()
+	var/datum/bank_account/rogue/fund = linked_fund()
 	var/datum/bank_account/rogue/account = treasury.get_account(user)
 	amount = round(amount)
 	if(fund_id != ROGUE_FUND_BATHHOUSE || !treasury.fund_can_view(user, fund_id) || !account || !amount || amount <= 0)
@@ -458,7 +458,7 @@
  */
 /obj/structure/roguemachine/vaultbank/proc/draft_loan(mob/living/carbon/human/user, list/params, target_id)
 	var/datum/controller/subsystem/rogue_treasury/treasury = SSrogue_treasury
-	var/datum/bank_account/rogue/fund = fund()
+	var/datum/bank_account/rogue/fund = linked_fund()
 	if(!treasury.fund_lends(fund_id) || !treasury.fund_can_lend(user, fund_id))
 		return
 	if(ROGUE_TREASURY_DAY > ROGUE_LOAN_LAST_DAY)
@@ -506,7 +506,7 @@
 /// The officer pays the institution's indenture early from its fund (Ratwood handle_repay_indenture()).
 /obj/structure/roguemachine/vaultbank/proc/repay_indenture(mob/living/carbon/human/user, amount)
 	var/datum/controller/subsystem/rogue_treasury/treasury = SSrogue_treasury
-	var/datum/rogue_loan/indenture = treasury.indenture_of(fund())
+	var/datum/rogue_loan/indenture = treasury.indenture_of(linked_fund())
 	if(!indenture || !treasury.fund_can_lend(user, fund_id))
 		return
 	var/paid = treasury.repay_loan(indenture, amount)

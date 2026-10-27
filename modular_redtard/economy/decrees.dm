@@ -16,7 +16,7 @@
 	var/mob/living/ruler = rogue_ruler()
 	var/text = replacetext(template, "%RULER%", JOB_ROCKHILL_GRAND_DUKE)
 	text = replacetext(text, "%RULER_NAME%", ruler ? ruler.real_name : "the Lord")
-	return replacetext(text, "%REGION_ROCKHILL%", "Rockhill")
+	return trim(replacetext(text, "%REGION_ROCKHILL%", "Rockhill"))
 
 /**
  * A charter of the realm (Ratwood code/modules/politics/decree.dm, port of Azure Peak #6849): an ancient or new compact that
@@ -305,7 +305,8 @@ Yeven under the seal of the Crown."}
 	category = ROGUE_DECREE_NEW
 	active = FALSE
 	mechanical_text = "Zeroes every Crown levy and poll tax while it stands; revoking it brings the old rates back. Fines remain. The Crown collects only voluntary tribute."
-	flavor_text = {"%RULER_NAME%, by the grace of Astrata, %RULER% of the Vale, Count of Kingsfield, Blackholt, and Saltwick, Overlord of Rosawood, %REGION_ROCKHILL%, and Daftsmarch, Protector of Bleakcoast, Northfort, and Heartfelt, Defender of the Ten, to his archbishops, priests, templars, inquisitors, dukes, princes, consorts, hands, stewards, councillors, clerks, marshals, knights, sergeants, men-at-arms, wardens, squires, court magicians, archivists, apothecaries, head physicians, merchants, innkeepers, bathmasters, guildsmen, burghers, residents, peasants, farmers, cooks, tapsters, bathmaids, servants, soilsons, mercenaries, adventurers, pilgrims, and to all his officials and loyal subjects, Greeting.
+	flavor_text = {"
+%RULER_NAME%, by the grace of Astrata, %RULER% of the Vale, Count of Kingsfield, Blackholt, and Saltwick, Overlord of Rosawood, %REGION_ROCKHILL%, and Daftsmarch, Protector of Bleakcoast, Northfort, and Heartfelt, Defender of the Ten, to his archbishops, priests, templars, inquisitors, dukes, princes, consorts, hands, stewards, councillors, clerks, marshals, knights, sergeants, men-at-arms, wardens, squires, court magicians, archivists, apothecaries, head physicians, merchants, innkeepers, bathmasters, guildsmen, burghers, residents, peasants, farmers, cooks, tapsters, bathmaids, servants, soilsons, mercenaries, adventurers, pilgrims, and to all his officials and loyal subjects, Greeting.
 
 Know ye, that for the health of our soul, for the common benefit of the Realm, to the honour of the Ten, the exaltation of the holy Church, and the better ordering of our kingdom, we have granted unto every subject of the Vale, of whatsoever rank, station, or origin, that they shall bear no tax, no levy, no tariff, no duty, nor any fiscal imposition whatsoever upon their persons, estates, goods, labours, or callings, nor upon the instruments thereof, neither in coin nor in kind.
 

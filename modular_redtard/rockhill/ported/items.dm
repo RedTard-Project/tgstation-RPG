@@ -48137,6 +48137,7 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	max_storage = 20
+	rogue_quiver_fill = /obj/item/ammo_casing/caseless/rogue/arrow/water
 
 /obj/item/quiver/Wbolts
 	name = "quiver"
@@ -48159,6 +48160,7 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	max_storage = 20
+	rogue_quiver_fill = /obj/item/ammo_casing/caseless/rogue/bolt/water
 
 /obj/item/quiver/arrows
 	name = "quiver"
@@ -48181,6 +48183,7 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	max_storage = 20
+	rogue_quiver_fill = /obj/item/ammo_casing/caseless/rogue/arrow/iron
 
 /obj/item/quiver/bodkin
 	name = "quiver"
@@ -48203,6 +48206,7 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	max_storage = 20
+	rogue_quiver_fill = /obj/item/ammo_casing/caseless/rogue/arrow/steel
 
 /obj/item/quiver/bolts
 	name = "quiver"
@@ -48225,6 +48229,7 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	max_storage = 20
+	rogue_quiver_fill = /obj/item/ammo_casing/caseless/rogue/bolt
 
 /obj/item/quiver/bolts/
 	name = "quiver"
@@ -48272,6 +48277,7 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	max_storage = 8
+	rogue_quiver_fill = /obj/item/ammo_casing/caseless/bullet/lead
 
 /obj/item/quiver/heavybluntbolts
 	name = "quiver"
@@ -48294,6 +48300,7 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	max_storage = 20
+	rogue_quiver_fill = /obj/item/ammo_casing/caseless/rogue/bolt/heavyblunt
 
 /obj/item/quiver/heavybolts
 	name = "quiver"
@@ -48316,6 +48323,7 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	max_storage = 20
+	rogue_quiver_fill = /obj/item/ammo_casing/caseless/rogue/heavy_bolt
 
 /obj/item/quiver/javelin
 	name = "javelinbag"
@@ -48360,6 +48368,7 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	max_storage = 4
+	rogue_quiver_fill = /obj/item/ammo_casing/caseless/rogue/javelin/bronze
 
 /obj/item/quiver/javelin/iron
 	name = "javelinbag"
@@ -48382,6 +48391,7 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	max_storage = 4
+	rogue_quiver_fill = /obj/item/ammo_casing/caseless/rogue/javelin
 
 /obj/item/quiver/javelin/steel
 	name = "javelinbag"
@@ -48404,6 +48414,7 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	max_storage = 4
+	rogue_quiver_fill = /obj/item/ammo_casing/caseless/rogue/javelin/steel
 
 /obj/item/quiver/poisonarrows
 	name = "quiver"
@@ -48426,6 +48437,7 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	max_storage = 20
+	rogue_quiver_fill = /obj/item/ammo_casing/caseless/rogue/arrow/poison
 
 /obj/item/quiver/pyroarrows
 	name = "quiver"
@@ -48448,6 +48460,7 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	max_storage = 20
+	rogue_quiver_fill = /obj/item/ammo_casing/caseless/rogue/arrow/pyro
 
 /obj/item/quiver/sling
 	name = "sling bullet pouch"
@@ -48498,6 +48511,7 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	max_storage = 20
+	rogue_quiver_fill = /obj/item/ammo_casing/caseless/rogue/sling_bullet/iron
 
 /obj/item/quiver/zigs
 	name = "zig box"

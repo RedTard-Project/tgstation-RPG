@@ -147,8 +147,8 @@
 		))
 
 /// The roles a player can ask for (TG's jobs middleware: joinable, not late-join only), by department in their order,
-/// with the subclasses a Rockhill role picks from when it spawns (Vibelin shows alternate titles in their place).
-/// Built once the jobs exist.
+/// with the subclasses a Rockhill role picks from when it spawns (Vibelin shows alternate titles in their place) and
+/// the least PQ it asks for (null for none). Built once the jobs exist.
 /proc/rogue_charsetup_job_catalog()
 	var/static/list/catalog
 	if(catalog)
@@ -173,18 +173,23 @@
 			)
 			departments[department_name] = department
 		var/list/classes = list()
+		var/min_pq
 		var/datum/job/roguetown/rogue_job = job
 		if(istype(rogue_job))
 			for(var/class_path in rogue_job.rockhill_advclasses)
 				var/datum/rockhill_advclass/advclass = rockhill_advclass(class_path)
 				if(advclass)
 					classes += list(list("name" = advclass.name, "desc" = advclass.desc))
+			// Ratwood's least PQ of the role (triumphs/roles.dm), when the roles ask for it.
+			if(CONFIG_GET(flag/rogue_role_pq))
+				min_pq = rogue_job.rogue_min_pq
 		var/list/jobs = department["jobs"]
 		jobs += list(list(
 			"title" = job.title,
 			"description" = job.description,
 			"slots" = job.spawn_positions,
 			"classes" = classes,
+			"min_pq" = min_pq,
 		))
 	catalog = list()
 	for(var/department_name in departments)

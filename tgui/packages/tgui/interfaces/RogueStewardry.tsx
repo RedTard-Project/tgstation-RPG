@@ -3,6 +3,8 @@ import {
   Box,
   Button,
   LabeledList,
+  NoticeBox,
+  NumberInput,
   Section,
   Stack,
   Table,
@@ -28,6 +30,7 @@ type Levy = {
 type Wage = {
   title: string;
   wage: number;
+  floor: number;
 };
 
 type Account = {
@@ -37,7 +40,51 @@ type Account = {
   balance: number;
   estate: number;
   suspended: BooleanLike;
-  fined: BooleanLike;
+  max_fine: number;
+  poll_owed: number;
+  poll_overdue: number;
+  defaulter: BooleanLike;
+};
+
+type PollClass = {
+  id: string;
+  name: string;
+  rate: number;
+  heads: number;
+  taxable: number;
+  flow: number;
+};
+
+type Solvency = {
+  state: string;
+  sequestered: BooleanLike;
+  debt: number;
+  wage_outlay: number;
+  ftc_blocker: string | null;
+  ftc_min: number;
+  ftc_max: number;
+  ftc_interest: number;
+};
+
+export type RogueLoan = {
+  ref: string;
+  debtor: string;
+  lender: string;
+  lender_id: string;
+  borrower_id: string | null;
+  principal: number;
+  interest: number;
+  due_day: number;
+  days_left: number;
+  remaining: number;
+  defaulted: BooleanLike;
+};
+
+type Fund = {
+  id: string;
+  holder: string;
+  balance: number;
+  lent: number;
 };
 
 type Data = {
@@ -45,28 +92,40 @@ type Data = {
   floor: number;
   ledger: LedgerEntry[];
   totals: Record<string, number>;
+  solvency: Solvency;
   levies: Levy[];
   levy_locked: BooleanLike;
+  poll: { classes: PollClass[]; income: number; subsidy: number };
+  poll_locked: BooleanLike;
+  poll_min: number;
+  poll_max: number;
+  carta: BooleanLike;
   wages: Wage[];
   accounts: Account[];
+  loans: RogueLoan[];
+  funds: Fund[];
   stocks: RogueStock[];
 };
 
 const TOTALS: [string, string][] = [
   ['rural_tax', 'Rural tax'],
   ['tariff', 'Import tariff'],
+  ['poll_tax', 'Poll tax'],
+  ['poll_subsidy', 'Poll subsidies'],
+  ['fines', 'Fines'],
+  ['tithe', 'Concordat tithe'],
   ['wages', 'Wages paid'],
   ['export', 'Exports'],
   ['import', 'Imports'],
   ['trade', 'Stockpile trade'],
 ];
 
-/** Nerve master: the Steward's treasury desk (Ratwood steward.dm and StewardTrade.tsx, cut to the money loop). */
+/** Nerve master: the Steward's treasury desk (Ratwood steward.dm, StewardTrade.tsx and TaxSetter.tsx, cut to the money loop). */
 export const RogueStewardry = () => {
   const { data } = useBackend<Data>();
   const [tab, setTab] = useState('treasury');
   return (
-    <Window title="Nerve Master" width={720} height={620}>
+    <Window title="Nerve Master" width={760} height={640}>
       <Window.Content>
         <Stack fill vertical>
           <Stack.Item>
@@ -76,6 +135,12 @@ export const RogueStewardry = () => {
                 onClick={() => setTab('treasury')}
               >
                 Crown&apos;s Purse: {data.purse}m
+              </Tabs.Tab>
+              <Tabs.Tab
+                selected={tab === 'poll'}
+                onClick={() => setTab('poll')}
+              >
+                Poll tax
               </Tabs.Tab>
               <Tabs.Tab
                 selected={tab === 'wages'}
@@ -90,6 +155,12 @@ export const RogueStewardry = () => {
                 Accounts
               </Tabs.Tab>
               <Tabs.Tab
+                selected={tab === 'loans'}
+                onClick={() => setTab('loans')}
+              >
+                Loans
+              </Tabs.Tab>
+              <Tabs.Tab
                 selected={tab === 'stockpile'}
                 onClick={() => setTab('stockpile')}
               >
@@ -99,8 +170,10 @@ export const RogueStewardry = () => {
           </Stack.Item>
           <Stack.Item grow>
             {tab === 'treasury' && <Treasury />}
+            {tab === 'poll' && <PollTax />}
             {tab === 'wages' && <Wages />}
             {tab === 'accounts' && <Accounts />}
+            {tab === 'loans' && <Loans />}
             {tab === 'stockpile' && <Stockpile />}
           </Stack.Item>
         </Stack>
@@ -111,19 +184,58 @@ export const RogueStewardry = () => {
 
 const Treasury = () => {
   const { act, data } = useBackend<Data>();
+  const solvency = data.solvency;
   return (
     <Stack fill vertical>
+      {!!solvency?.sequestered && (
+        <Stack.Item>
+          <NoticeBox danger>
+            The realm is sequestered: wages stand suspended and the Company
+            takes the Purse&apos;s income above its reserve.
+          </NoticeBox>
+        </Stack.Item>
+      )}
       <Stack.Item>
         <Section
           title="Crown's Purse"
           buttons={
-            <Button icon="coins" onClick={() => act('withdraw')}>
-              Withdraw coins
-            </Button>
+            <>
+              <Button icon="scroll" onClick={() => act('charters')}>
+                Charters
+              </Button>
+              <Button icon="coins" onClick={() => act('withdraw')}>
+                Withdraw coins
+              </Button>
+            </>
           }
         >
           <LabeledList>
-            <LabeledList.Item label="Balance">{data.purse} mammons</LabeledList.Item>
+            <LabeledList.Item label="Balance">
+              {data.purse} mammons
+            </LabeledList.Item>
+            <LabeledList.Item label="Solvency">
+              {solvency?.state}
+            </LabeledList.Item>
+            <LabeledList.Item label="Wages due at dawn">
+              {solvency?.wage_outlay}m
+            </LabeledList.Item>
+            <LabeledList.Item
+              label="Debt to the Company"
+              buttons={
+                <Button
+                  disabled={!!solvency?.ftc_blocker}
+                  tooltip={
+                    solvency?.ftc_blocker ||
+                    `${solvency?.ftc_min}-${solvency?.ftc_max}m at ${solvency?.ftc_interest}% interest. The next payroll the Purse cannot meet means sequestration.`
+                  }
+                  onClick={() => act('ftc_loan')}
+                >
+                  Borrow
+                </Button>
+              }
+            >
+              {solvency?.debt || 0}m
+            </LabeledList.Item>
             <LabeledList.Item
               label="Purchase floor"
               buttons={<Button onClick={() => act('set_floor')}>Set</Button>}
@@ -165,7 +277,10 @@ const Treasury = () => {
           <Table>
             {(data.ledger || []).map((entry, i) => (
               <Table.Row key={i}>
-                <Table.Cell collapsing color={entry.amount < 0 ? 'bad' : 'good'}>
+                <Table.Cell
+                  collapsing
+                  color={entry.amount < 0 ? 'bad' : 'good'}
+                >
                   {entry.amount > 0 ? `+${entry.amount}` : entry.amount}
                 </Table.Cell>
                 <Table.Cell>{entry.reason}</Table.Cell>
@@ -178,6 +293,80 @@ const Treasury = () => {
   );
 };
 
+/** Ratwood TaxSetter: every class's rate is drafted here and proclaimed at once, once a day. */
+const PollTax = () => {
+  const { act, data } = useBackend<Data>();
+  const classes = data.poll?.classes || [];
+  const [draft, setDraft] = useState<Record<string, number>>({});
+  const rateOf = (entry: PollClass) => draft[entry.id] ?? entry.rate;
+  const changed = classes.some((entry) => rateOf(entry) !== entry.rate);
+  return (
+    <Section
+      fill
+      scrollable
+      title="Poll tax, a head at every dawn"
+      buttons={
+        <Button
+          icon="bullhorn"
+          disabled={!!data.poll_locked || !changed}
+          tooltip={
+            data.poll_locked ? 'The poll tax changes once a day.' : undefined
+          }
+          onClick={() => {
+            act('set_poll', { rates: draft });
+            setDraft({});
+          }}
+        >
+          Proclaim
+        </Button>
+      }
+    >
+      {!!data.carta && (
+        <NoticeBox>
+          The Magna Carta stands: the Crown may tax no head, only grant
+          subsidies.
+        </NoticeBox>
+      )}
+      <Table>
+        <Table.Row header>
+          <Table.Cell>Class</Table.Cell>
+          <Table.Cell collapsing>Heads</Table.Cell>
+          <Table.Cell collapsing>Taxable</Table.Cell>
+          <Table.Cell collapsing>Rate</Table.Cell>
+          <Table.Cell collapsing>Per dawn</Table.Cell>
+        </Table.Row>
+        {classes.map((entry) => (
+          <Table.Row key={entry.id} className="candystripe">
+            <Table.Cell>{entry.name}</Table.Cell>
+            <Table.Cell collapsing>{entry.heads}</Table.Cell>
+            <Table.Cell collapsing>{entry.taxable}</Table.Cell>
+            <Table.Cell collapsing>
+              <NumberInput
+                value={rateOf(entry)}
+                minValue={data.poll_min}
+                maxValue={data.poll_max}
+                step={1}
+                width="60px"
+                onChange={(value) =>
+                  setDraft((old) => ({ ...old, [entry.id]: value }))
+                }
+              />
+            </Table.Cell>
+            <Table.Cell collapsing color={entry.flow < 0 ? 'bad' : 'good'}>
+              {entry.flow}m
+            </Table.Cell>
+          </Table.Row>
+        ))}
+      </Table>
+      <Box mt={1} color="label">
+        Below zero the Crown pays the class a subsidy. Charters exempt or cap
+        some classes. Income {data.poll?.income || 0}m, subsidies{' '}
+        {data.poll?.subsidy || 0}m a dawn.
+      </Box>
+    </Section>
+  );
+};
+
 const Wages = () => {
   const { act, data } = useBackend<Data>();
   return (
@@ -186,7 +375,14 @@ const Wages = () => {
         {(data.wages || []).map((entry) => (
           <Table.Row key={entry.title} className="candystripe">
             <Table.Cell>{entry.title}</Table.Cell>
-            <Table.Cell collapsing>{entry.wage}m</Table.Cell>
+            <Table.Cell collapsing>
+              {entry.wage}m
+              {entry.floor > 0 && (
+                <Box inline color="label">
+                  &nbsp;(charter: {entry.floor}m)
+                </Box>
+              )}
+            </Table.Cell>
             <Table.Cell collapsing>
               <Button onClick={() => act('set_wage', { title: entry.title })}>
                 Set
@@ -212,7 +408,19 @@ const Accounts = () => {
         </Table.Row>
         {(data.accounts || []).map((account) => (
           <Table.Row key={account.ref} className="candystripe">
-            <Table.Cell>{account.holder}</Table.Cell>
+            <Table.Cell>
+              {account.holder}
+              {!!account.defaulter && (
+                <Box inline color="bad">
+                  &nbsp;[DEFAULTER]
+                </Box>
+              )}
+              {account.poll_owed > 0 && (
+                <Box inline color="average">
+                  &nbsp;[ARREARS: {account.poll_owed}m, {account.poll_overdue}d]
+                </Box>
+              )}
+            </Table.Cell>
             <Table.Cell>
               {account.job}
               {account.estate > 0 && (
@@ -231,12 +439,24 @@ const Accounts = () => {
               </Button>
               <Button
                 compact
-                disabled={!!account.fined}
-                tooltip={account.fined ? 'Fined today.' : undefined}
+                disabled={account.max_fine <= 0}
+                tooltip={
+                  account.max_fine > 0
+                    ? `At most ${account.max_fine}m.`
+                    : 'Fined today, shielded by a charter, or nothing to take.'
+                }
                 onClick={() => act('fine', { ref: account.ref })}
               >
                 Fine
               </Button>
+              {account.poll_owed > 0 && (
+                <Button
+                  compact
+                  onClick={() => act('clear_arrears', { ref: account.ref })}
+                >
+                  Clear arrears
+                </Button>
+              )}
               <Button.Checkbox
                 compact
                 checked={!!account.suspended}
@@ -249,6 +469,75 @@ const Accounts = () => {
         ))}
       </Table>
     </Section>
+  );
+};
+
+const Loans = () => {
+  const { act, data } = useBackend<Data>();
+  return (
+    <Stack fill vertical>
+      <Stack.Item>
+        <Section title="Funds of the realm">
+          <Table>
+            {(data.funds || []).map((fund) => (
+              <Table.Row key={fund.id}>
+                <Table.Cell>{fund.holder}</Table.Cell>
+                <Table.Cell collapsing>{fund.balance}m</Table.Cell>
+                <Table.Cell collapsing color="label">
+                  lent {fund.lent}m
+                </Table.Cell>
+              </Table.Row>
+            ))}
+          </Table>
+        </Section>
+      </Stack.Item>
+      <Stack.Item grow>
+        <Section fill scrollable title="Loans and indentures">
+          {(data.loans || []).length === 0 ? (
+            <Box color="label">No active loans.</Box>
+          ) : (
+            <Table>
+              <Table.Row header>
+                <Table.Cell>Debtor</Table.Cell>
+                <Table.Cell>Lender</Table.Cell>
+                <Table.Cell collapsing>Principal</Table.Cell>
+                <Table.Cell collapsing>Due</Table.Cell>
+                <Table.Cell collapsing>Owed</Table.Cell>
+                <Table.Cell collapsing />
+              </Table.Row>
+              {data.loans.map((loan) => (
+                <Table.Row
+                  key={loan.ref}
+                  className="candystripe"
+                  color={loan.defaulted ? 'bad' : undefined}
+                >
+                  <Table.Cell>{loan.debtor}</Table.Cell>
+                  <Table.Cell>{loan.lender}</Table.Cell>
+                  <Table.Cell collapsing>
+                    {loan.principal}m @ {loan.interest}%
+                  </Table.Cell>
+                  <Table.Cell collapsing>
+                    {loan.defaulted ? 'DEFAULTED' : `day ${loan.due_day}`}
+                  </Table.Cell>
+                  <Table.Cell collapsing>{loan.remaining}m</Table.Cell>
+                  <Table.Cell collapsing>
+                    {loan.lender_id === 'crown' && !loan.borrower_id && (
+                      <Button
+                        compact
+                        tooltip="Write off the debt and lift the defaulter's mark."
+                        onClick={() => act('forgive', { ref: loan.ref })}
+                      >
+                        Forgive
+                      </Button>
+                    )}
+                  </Table.Cell>
+                </Table.Row>
+              ))}
+            </Table>
+          )}
+        </Section>
+      </Stack.Item>
+    </Stack>
   );
 };
 
