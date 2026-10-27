@@ -75,6 +75,7 @@ SUBSYSTEM_DEF(rogue_treasury)
 	init_decrees()
 	setup_default_payments()
 	enforce_wage_floors()
+	update_jawbanks()
 	RegisterSignal(SSdcs, COMSIG_GLOB_ROCKHILL_TIME_OF_DAY, PROC_REF(on_time_of_day))
 	return SS_INIT_SUCCESS
 
@@ -92,6 +93,7 @@ SUBSYSTEM_DEF(rogue_treasury)
 		pay_wages()
 	passive_import()
 	auto_export()
+	update_jawbanks()
 
 /// Ratwood's Rockhill wages (setup_default_payments() of the nerve master), mammons per dawn.
 /datum/controller/subsystem/rogue_treasury/proc/setup_default_payments()

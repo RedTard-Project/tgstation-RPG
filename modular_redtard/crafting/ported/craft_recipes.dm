@@ -1794,6 +1794,15 @@
 	rogue_verb_simple = "engineer"
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
+/datum/crafting_recipe/roguetown/engineering/heavyboltsten
+	name = "Heavy Bolts 10x"
+	result = /obj/projectile/bullet/reusable/heavy_bolt
+	reqs = list(/obj/item/natural/wood/plank = 4, /obj/item/ingot/iron = 2)
+	rogue_results = list(/obj/projectile/bullet/reusable/heavy_bolt, /obj/projectile/bullet/reusable/heavy_bolt, /obj/projectile/bullet/reusable/heavy_bolt, /obj/projectile/bullet/reusable/heavy_bolt, /obj/projectile/bullet/reusable/heavy_bolt, /obj/projectile/bullet/reusable/heavy_bolt, /obj/projectile/bullet/reusable/heavy_bolt, /obj/projectile/bullet/reusable/heavy_bolt, /obj/projectile/bullet/reusable/heavy_bolt)
+	category = "Crafting"
+	rogue_skill = /datum/attribute/skill/craft/crafting
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
 /datum/crafting_recipe/roguetown/engineering/highexplosiveimpact
 	name = "high explosive impact, bombard charge"
 	result = /obj/item/cannonball/explosive

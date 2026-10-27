@@ -1033,7 +1033,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/effect/lily_petal` | 1 |
 | `/obj/effect/lily_petal/three` | 1 |
 
-## items.dm (3125 types)
+## items.dm (3130 types)
 
 | Type | Tiles |
 |---|---|
@@ -2335,6 +2335,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/ammo_casing/caseless/rogue/javelin/silver` | 0 |
 | `/obj/item/ammo_casing/caseless/rogue/javelin/steel` | 0 |
 | `/obj/item/ammo_casing/caseless/rogue/javelin/steel/ancient` | 0 |
+| `/obj/item/ammo_casing/caseless/rogue/sling_bullet` | 0 |
 | `/obj/item/ammo_casing/caseless/rogue/sling_bullet/ancient` | 0 |
 | `/obj/item/ammo_casing/caseless/rogue/sling_bullet/blacksteel` | 0 |
 | `/obj/item/ammo_casing/caseless/rogue/sling_bullet/bronze` | 0 |
@@ -3658,7 +3659,10 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/reagent_containers/glass/bottle/alchemical/spdpot` | 0 |
 | `/obj/item/reagent_containers/glass/bottle/alchemical/strongmanapot` | 0 |
 | `/obj/item/reagent_containers/glass/bottle/alchemical/strpot` | 0 |
+| `/obj/item/reagent_containers/glass/bottle/claybottleclassic` | 0 |
+| `/obj/item/reagent_containers/glass/bottle/clayfancyvaseclassic` | 0 |
 | `/obj/item/reagent_containers/glass/bottle/clayvase` | 0 |
+| `/obj/item/reagent_containers/glass/bottle/clayvaseclassic` | 0 |
 | `/obj/item/reagent_containers/glass/bottle/frankenbrew/third` | 0 |
 | `/obj/item/reagent_containers/glass/bottle/revival` | 0 |
 | `/obj/item/reagent_containers/glass/bottle/rogue/beer/blackgoat` | 0 |
@@ -3708,6 +3712,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/reagent_containers/glass/cup/carved/turq` | 0 |
 | `/obj/item/reagent_containers/glass/cup/carved/turqfancy` | 0 |
 | `/obj/item/reagent_containers/glass/cup/ceramic` | 0 |
+| `/obj/item/reagent_containers/glass/cup/claycupclassic` | 0 |
 | `/obj/item/reagent_containers/glass/cup/porcelain` | 0 |
 | `/obj/item/reagent_containers/powder/mineral` | 0 |
 | `/obj/item/reagent_containers/powder/starsugar` | 0 |
@@ -4163,6 +4168,49 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/undies/loinclothunder` | 0 |
 | `/obj/item/undies/panties` | 0 |
 
+## projectiles.dm (38 types)
+
+| Type | Tiles |
+|---|---|
+| `/obj/projectile/bullet/arrow/pyro` | 0 |
+| `/obj/projectile/bullet/arrow/water` | 0 |
+| `/obj/projectile/bullet/bolt/pyro` | 0 |
+| `/obj/projectile/bullet/bolt/water` | 0 |
+| `/obj/projectile/bullet/firearm/grapeshot` | 0 |
+| `/obj/projectile/bullet/firearm/lead` | 0 |
+| `/obj/projectile/bullet/reusable/arrow` | 0 |
+| `/obj/projectile/bullet/reusable/arrow/blacksteel` | 0 |
+| `/obj/projectile/bullet/reusable/arrow/blunt` | 0 |
+| `/obj/projectile/bullet/reusable/arrow/bronze` | 0 |
+| `/obj/projectile/bullet/reusable/arrow/iron` | 0 |
+| `/obj/projectile/bullet/reusable/arrow/iron/decrepit` | 0 |
+| `/obj/projectile/bullet/reusable/arrow/poison` | 0 |
+| `/obj/projectile/bullet/reusable/arrow/poison/stone` | 0 |
+| `/obj/projectile/bullet/reusable/arrow/steel` | 0 |
+| `/obj/projectile/bullet/reusable/arrow/steel/ancient` | 0 |
+| `/obj/projectile/bullet/reusable/arrow/stone` | 0 |
+| `/obj/projectile/bullet/reusable/bolt` | 0 |
+| `/obj/projectile/bullet/reusable/bolt/ancient` | 0 |
+| `/obj/projectile/bullet/reusable/bolt/blacksteel` | 0 |
+| `/obj/projectile/bullet/reusable/bolt/blunt` | 0 |
+| `/obj/projectile/bullet/reusable/bolt/bronze` | 0 |
+| `/obj/projectile/bullet/reusable/bolt/decrepit` | 0 |
+| `/obj/projectile/bullet/reusable/bolt/heavyblunt` | 0 |
+| `/obj/projectile/bullet/reusable/bolt/holy` | 0 |
+| `/obj/projectile/bullet/reusable/heavy_bolt` | 0 |
+| `/obj/projectile/bullet/reusable/heavy_bolt/tempest` | 0 |
+| `/obj/projectile/bullet/reusable/sling_bullet/ancient` | 0 |
+| `/obj/projectile/bullet/reusable/sling_bullet/blacksteel` | 0 |
+| `/obj/projectile/bullet/reusable/sling_bullet/bronze` | 0 |
+| `/obj/projectile/bullet/reusable/sling_bullet/decrepit` | 0 |
+| `/obj/projectile/bullet/reusable/sling_bullet/iron` | 0 |
+| `/obj/projectile/bullet/reusable/sling_bullet/silver` | 0 |
+| `/obj/projectile/bullet/reusable/sling_bullet/silverblessed` | 0 |
+| `/obj/projectile/bullet/reusable/sling_bullet/steel` | 0 |
+| `/obj/projectile/bullet/reusable/sling_bullet/steelblessed` | 0 |
+| `/obj/projectile/bullet/reusable/sling_bullet/stone` | 0 |
+| `/obj/projectile/bullet/sling_bullet` | 0 |
+
 ## humans.dm (40 types)
 
 | Type | Tiles |
@@ -4360,7 +4408,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/turf/open/floor/carpet/purple` | 170 |
 | `/turf/open/floor/carpet/stellar` | 160 |
 
-## Not ported (6 types, dropped from the map)
+## Not ported (5 types, dropped from the map)
 
 | Type | Tiles |
 |---|---|
@@ -4369,7 +4417,6 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/effect/mapping_helpers/floor_clothing_equipper` | 36 |
 | `/obj/effect/waterfall/acid` | 17 |
 | `/obj/effect/mapping_helpers/secret_door_creator` | 15 |
-| `/obj/projectile/bullet/reusable/heavy_bolt` | 0 |
 
 ## Icons
 
@@ -4919,7 +4966,7 @@ Ratwood names an `icon_state` its sheet does not have (a sprite chosen at runtim
 | `/obj/machinery/light/rogue` | `modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi` | `tube` |
 | `/obj/machinery/light/rogue/campfire/pyre` | `modular_redtard/rockhill/icons/roguetown/misc/tallstructure.dmi` | `pyre1` |
 
-## Wearables without a worn sprite (350)
+## Wearables without a worn sprite (351)
 
 No sheet holds their worn state: `worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'` (one empty state) and `worn_icon_state = null`, the TG way to say "no worn sprite".
 
@@ -4957,6 +5004,7 @@ No sheet holds their worn state: `worn_icon = 'modular_redtard/rockhill/icons/bl
 - `/obj/item/ammo_casing/caseless/rogue/javelin/steel`
 - `/obj/item/ammo_casing/caseless/rogue/javelin/steel/ancient`
 - `/obj/item/ammo_casing/caseless/rogue/javelin/steel/ancient/decrepit`
+- `/obj/item/ammo_casing/caseless/rogue/sling_bullet`
 - `/obj/item/ammo_casing/caseless/rogue/sling_bullet/ancient`
 - `/obj/item/ammo_casing/caseless/rogue/sling_bullet/blacksteel`
 - `/obj/item/ammo_casing/caseless/rogue/sling_bullet/bronze`
@@ -5399,6 +5447,15 @@ Area music and ambience are kept in the repository, as Ratwood keeps them, and r
 
 ## Sounds
 
+- `modular_redtard/rockhill/sound/combat/Ranged/bow-draw-01.ogg` from Ratwood `sound/combat/Ranged/bow-draw-01.ogg`
+- `modular_redtard/rockhill/sound/combat/Ranged/crossbow-small-shot-02.ogg` from Ratwood `sound/combat/Ranged/crossbow-small-shot-02.ogg`
+- `modular_redtard/rockhill/sound/combat/Ranged/crossbow_big_shot.ogg` from Ratwood `sound/combat/Ranged/crossbow_big_shot.ogg`
+- `modular_redtard/rockhill/sound/combat/Ranged/crossbow_medium_reload-01.ogg` from Ratwood `sound/combat/Ranged/crossbow_medium_reload-01.ogg`
+- `modular_redtard/rockhill/sound/combat/Ranged/crossbow_medium_reload-02.ogg` from Ratwood `sound/combat/Ranged/crossbow_medium_reload-02.ogg`
+- `modular_redtard/rockhill/sound/combat/Ranged/firebow-shot-02.ogg` from Ratwood `sound/combat/Ranged/firebow-shot-02.ogg`
+- `modular_redtard/rockhill/sound/combat/Ranged/flatbow-shot-01.ogg` from Ratwood `sound/combat/Ranged/flatbow-shot-01.ogg`
+- `modular_redtard/rockhill/sound/combat/Ranged/sling-draw-01.ogg` from Ratwood `sound/combat/Ranged/sling-draw-01.ogg`
+- `modular_redtard/rockhill/sound/combat/Ranged/sling-shot-01.ogg` from Ratwood `sound/combat/Ranged/sling-shot-01.ogg`
 - `modular_redtard/rockhill/sound/combat/armor_degrade1.ogg` from Ratwood `sound/combat/armor_degrade1.ogg`
 - `modular_redtard/rockhill/sound/combat/armor_degrade2.ogg` from Ratwood `sound/combat/armor_degrade2.ogg`
 - `modular_redtard/rockhill/sound/combat/armor_degrade3.ogg` from Ratwood `sound/combat/armor_degrade3.ogg`
@@ -5465,6 +5522,9 @@ Area music and ambience are kept in the repository, as Ratwood keeps them, and r
 - `modular_redtard/rockhill/sound/combat/hits/blunt/shovel_hit3.ogg` from Ratwood `sound/combat/hits/blunt/shovel_hit3.ogg`
 - `modular_redtard/rockhill/sound/combat/hits/blunt/woodblunt (1).ogg` from Ratwood `sound/combat/hits/blunt/woodblunt (1).ogg`
 - `modular_redtard/rockhill/sound/combat/hits/blunt/woodblunt (2).ogg` from Ratwood `sound/combat/hits/blunt/woodblunt (2).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/hi_arrow2.ogg` from Ratwood `sound/combat/hits/hi_arrow2.ogg`
+- `modular_redtard/rockhill/sound/combat/hits/hi_bolt (1).ogg` from Ratwood `sound/combat/hits/hi_bolt (1).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/hi_bolt (2).ogg` from Ratwood `sound/combat/hits/hi_bolt (2).ogg`
 - `modular_redtard/rockhill/sound/combat/hits/kick/kick.ogg` from Ratwood `sound/combat/hits/kick/kick.ogg`
 - `modular_redtard/rockhill/sound/combat/hits/onwood/destroyfurniture.ogg` from Ratwood `sound/combat/hits/onwood/destroyfurniture.ogg`
 - `modular_redtard/rockhill/sound/combat/hits/pick/genpick (1).ogg` from Ratwood `sound/combat/hits/pick/genpick (1).ogg`
@@ -5509,11 +5569,14 @@ Area music and ambience are kept in the repository, as Ratwood keeps them, and r
 - `modular_redtard/rockhill/sound/foley/coinphy (2).ogg` from Ratwood `sound/foley/coinphy (2).ogg`
 - `modular_redtard/rockhill/sound/foley/coins1.ogg` from Ratwood `sound/foley/coins1.ogg`
 - `modular_redtard/rockhill/sound/foley/doors/creak.ogg` from Ratwood `sound/foley/doors/creak.ogg`
+- `modular_redtard/rockhill/sound/foley/doors/lockmetal.ogg` from Ratwood `sound/foley/doors/lockmetal.ogg`
 - `modular_redtard/rockhill/sound/foley/grindblade.ogg` from Ratwood `sound/foley/grindblade.ogg`
 - `modular_redtard/rockhill/sound/foley/ladder.ogg` from Ratwood `sound/foley/ladder.ogg`
 - `modular_redtard/rockhill/sound/foley/latch.ogg` from Ratwood `sound/foley/latch.ogg`
+- `modular_redtard/rockhill/sound/foley/nockarrow.ogg` from Ratwood `sound/foley/nockarrow.ogg`
 - `modular_redtard/rockhill/sound/foley/sewflesh.ogg` from Ratwood `sound/foley/sewflesh.ogg`
 - `modular_redtard/rockhill/sound/foley/slap.ogg` from Ratwood `sound/foley/slap.ogg`
+- `modular_redtard/rockhill/sound/foley/slingload.ogg` from Ratwood `sound/foley/slingload.ogg`
 - `modular_redtard/rockhill/sound/foley/torchfixtureput.ogg` from Ratwood `sound/foley/torchfixtureput.ogg`
 - `modular_redtard/rockhill/sound/foley/torchfixturetake.ogg` from Ratwood `sound/foley/torchfixturetake.ogg`
 - `modular_redtard/rockhill/sound/foley/woodclimb.ogg` from Ratwood `sound/foley/woodclimb.ogg`

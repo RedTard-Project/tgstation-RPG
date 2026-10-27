@@ -15,7 +15,9 @@ export function useHomeland() {
   const values = data.character_preferences.non_contextual ?? {};
   return {
     shown: 'rogue_homeland' in values,
-    homeland: data.homelands?.find((entry) => entry.id === values.rogue_homeland),
+    homeland: data.homelands?.find(
+      (entry) => entry.id === values.rogue_homeland,
+    ),
   };
 }
 
@@ -134,7 +136,11 @@ function HomelandDetails(props: HomelandDetailsProps) {
     >
       <Box
         mb={1}
-        style={{ maxHeight: '140px', overflowY: 'auto', whiteSpace: 'pre-line' }}
+        style={{
+          maxHeight: '140px',
+          overflowY: 'auto',
+          whiteSpace: 'pre-line',
+        }}
       >
         {display(homeland.desc, tr('No description.'))}
       </Box>

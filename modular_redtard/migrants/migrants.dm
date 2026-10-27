@@ -107,8 +107,6 @@ GLOBAL_LIST_EMPTY(rogue_migrant_spawns)
 	config_tag = "ROCKHILL_MIGRANT"
 	outfit = /datum/outfit/job/roguetown/rockhill_migrant
 	job_flags = ROCKHILL_JOB_FLAGS & ~JOB_NEW_PLAYER_JOINABLE
-	/// Anyone may come with a wave (Ratwood's migrant job: min_pq -999).
-	rogue_min_pq = null
 	departments_list = list(
 		/datum/job_department/rockhill_wanderers,
 		)

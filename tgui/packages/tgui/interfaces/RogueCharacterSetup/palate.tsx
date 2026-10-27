@@ -48,19 +48,28 @@ const SLOTS: Slot[] = [
 ];
 
 /** Ratwood's fares (ROGUE_FARE_*) and drink qualities, worst first. */
-const FARES = ['', 'Desperate fare', 'Poor fare', 'Decent fare', 'Fine fare', 'Lavish fare'];
+const FARES = [
+  '',
+  'Desperate fare',
+  'Poor fare',
+  'Decent fare',
+  'Fine fare',
+  'Lavish fare',
+];
 const QUALITIES = ['Plain', 'Nice', 'Good', 'Very good', 'Fantastic'];
 
 const EMPTY_CATALOG: CulinaryCatalog = { foods: [], drinks: [], none: 'none' };
 
 function rankName(tr: Translate, drink: boolean, rank: number) {
-  return tr((drink ? QUALITIES[rank] : FARES[rank]) ?? String(rank));
+  return tr((drink ? QUALITIES[rank] : FARES[rank]) || String(rank));
 }
 
 /** Whether this map has culinary preferences at all. */
 export function usePalateShown() {
   const { data } = useBackend<SetupData>();
-  return 'rogue_favourite_food' in (data.character_preferences.non_contextual ?? {});
+  return (
+    'rogue_favourite_food' in (data.character_preferences.non_contextual ?? {})
+  );
 }
 
 export function CulinaryPicker() {
@@ -97,7 +106,11 @@ export function CulinaryPicker() {
                   <Thumbnail icon={picked?.icon} />
                 </Stack.Item>
                 <Stack.Item grow>
-                  <Box color="label" textAlign="left" style={{ fontSize: '10px' }}>
+                  <Box
+                    color="label"
+                    textAlign="left"
+                    style={{ fontSize: '10px' }}
+                  >
                     {tr(entry.label)}
                   </Box>
                   <Box bold textAlign="left">
@@ -130,7 +143,9 @@ function Thumbnail(props: { icon?: string | null }) {
     <Box
       width="32px"
       height="32px"
-      className={props.icon ? classes(['rogue_culinary32x32', props.icon]) : undefined}
+      className={
+        props.icon ? classes(['rogue_culinary32x32', props.icon]) : undefined
+      }
       style={{ imageRendering: 'pixelated' }}
     />
   );

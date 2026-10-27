@@ -69,7 +69,7 @@
 /datum/rogue_triumph_buy/grenzelhoft/on_spawn(mob/living/carbon/human/human)
 	if(QDELETED(human))
 		return
-	if(!istype(human.dna?.species, /datum/species/human))
+	if(human.dna?.species?.type != /datum/species/human)
 		human.set_species(/datum/species/human)
 	human.skin_tone = "caucasian1"
 	human.update_body(is_creating = TRUE)

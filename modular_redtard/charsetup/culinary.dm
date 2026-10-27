@@ -193,8 +193,8 @@ GLOBAL_LIST_INIT(rogue_culinary_vessels, list(
 	if(foods)
 		return foods
 	var/list/excluded = list()
-	for(var/text in GLOB.rogue_culinary_food_blacklist)
-		var/path = text2path(text)
+	for(var/path_text in GLOB.rogue_culinary_food_blacklist)
+		var/path = text2path(path_text)
 		if(path)
 			excluded[path] = TRUE
 	var/static/list/excluded_trees = list(
@@ -205,8 +205,8 @@ GLOBAL_LIST_INIT(rogue_culinary_vessels, list(
 		"/obj/item/reagent_containers/food/snacks/crow/dead",
 		"/obj/item/reagent_containers/food/snacks/smallrat",
 	)
-	for(var/text in excluded_trees)
-		var/path = text2path(text)
+	for(var/path_text in excluded_trees)
+		var/path = text2path(path_text)
 		if(path)
 			for(var/subtype in typesof(path))
 				excluded[subtype] = TRUE
@@ -235,8 +235,8 @@ GLOBAL_LIST_INIT(rogue_culinary_vessels, list(
 	if(drinks)
 		return drinks
 	var/list/names_by_type = list()
-	for(var/text in GLOB.rogue_culinary_drink_paths)
-		var/datum/reagent/consumable/drink_type = text2path(text)
+	for(var/path_text in GLOB.rogue_culinary_drink_paths)
+		var/datum/reagent/consumable/drink_type = text2path(path_text)
 		if(ispath(drink_type, /datum/reagent/consumable))
 			names_by_type[drink_type] = initial(drink_type.name)
 	drinks = list()

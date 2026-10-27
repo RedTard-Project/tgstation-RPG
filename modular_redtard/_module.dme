@@ -222,6 +222,10 @@
 #include "library\press.dm"
 #include "library\admin.dm"
 // Stage 8: triumphs (triumphs/)
+#include "triumphs\ported\roles.dm"
+#include "triumphs\roles.dm"
+#include "triumphs\round.dm"
+#include "triumphs\shop.dm"
 // Stage 9: race polish (races/)
 #include "races\speech_fonts.dm"
 // Stage 10: clothing and FOV polish (clothing/)

@@ -14,6 +14,10 @@
 	/// Round contributor points of a round played through in the role (Ratwood round_contrib_points).
 	var/rogue_round_contrib_points = 0
 
+/// Anyone may come with a migrant wave (Ratwood's migrant job: min_pq -999).
+/datum/job/roguetown/rockhill_migrant
+	rogue_min_pq = null
+
 /datum/job/roguetown/New()
 	. = ..()
 	var/list/quality = GLOB.rogue_role_quality[type]

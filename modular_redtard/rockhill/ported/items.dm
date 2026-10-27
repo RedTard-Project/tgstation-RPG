@@ -2,7 +2,7 @@
 	parent_type = /obj/item/rockhill
 
 /obj/item/ammo_casing/caseless
-	parent_type = /obj/item/rockhill
+	parent_type = /obj/item/ammo_casing/rogue
 
 /obj/item/artefact
 	parent_type = /obj/item/rockhill
@@ -856,6 +856,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "grapeshot"
+	projectile_type = /obj/projectile/bullet/firearm/grapeshot
 
 /obj/item/ammo_casing/caseless/bullet/lead
 	name = "lead sphere"
@@ -877,6 +879,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "lead_sphere"
+	projectile_type = /obj/projectile/bullet/firearm/lead
 
 /obj/item/ammo_casing/caseless/rogue/arrow
 	name = "arrow"
@@ -899,6 +903,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "arrow"
+	projectile_type = /obj/projectile/bullet/reusable/arrow
 
 /obj/item/ammo_casing/caseless/rogue/arrow/blacksteel
 	name = "blacksteel arrow"
@@ -921,6 +927,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "arrow"
+	projectile_type = /obj/projectile/bullet/reusable/arrow/blacksteel
 
 /obj/item/ammo_casing/caseless/rogue/arrow/blunt
 	name = "blunt arrow"
@@ -943,6 +951,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "arrow"
+	projectile_type = /obj/projectile/bullet/reusable/arrow/blunt
 
 /obj/item/ammo_casing/caseless/rogue/arrow/bronze
 	name = "bronze flight arrow"
@@ -965,6 +975,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "arrow"
+	projectile_type = /obj/projectile/bullet/reusable/arrow/bronze
 
 /obj/item/ammo_casing/caseless/rogue/arrow/iron
 	name = "iron broadhead arrow"
@@ -987,6 +999,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "arrow"
+	projectile_type = /obj/projectile/bullet/reusable/arrow/iron
 
 /obj/item/ammo_casing/caseless/rogue/arrow/iron/decrepit
 	name = "decrepit broadhead arrow"
@@ -1009,6 +1023,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "arrow"
+	projectile_type = /obj/projectile/bullet/reusable/arrow/iron/decrepit
 
 /obj/item/ammo_casing/caseless/rogue/arrow/poison
 	name = "poisoned arrow"
@@ -1031,6 +1047,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "arrow"
+	projectile_type = /obj/projectile/bullet/reusable/arrow/poison
 
 /obj/item/ammo_casing/caseless/rogue/arrow/pyro
 	name = "pyroclastic arrow"
@@ -1053,6 +1071,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "arrow"
+	projectile_type = /obj/projectile/bullet/arrow/pyro
 
 /obj/item/ammo_casing/caseless/rogue/arrow/steel
 	name = "steel bodkin arrow"
@@ -1075,6 +1095,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "arrow"
+	projectile_type = /obj/projectile/bullet/reusable/arrow/steel
 
 /obj/item/ammo_casing/caseless/rogue/arrow/steel/ancient
 	name = "ancient bodkin arrow"
@@ -1097,6 +1119,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "arrow"
+	projectile_type = /obj/projectile/bullet/reusable/arrow/steel/ancient
 
 /obj/item/ammo_casing/caseless/rogue/arrow/stone
 	name = "stone arrow"
@@ -1119,6 +1143,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "arrow"
+	projectile_type = /obj/projectile/bullet/reusable/arrow/stone
 
 /obj/item/ammo_casing/caseless/rogue/arrow/stone/poison
 	name = "poisoned stone arrow"
@@ -1141,6 +1167,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "arrow"
+	projectile_type = /obj/projectile/bullet/reusable/arrow/poison/stone
 
 /obj/item/ammo_casing/caseless/rogue/arrow/water
 	name = "water arrow"
@@ -1163,6 +1191,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "arrow"
+	projectile_type = /obj/projectile/bullet/arrow/water
 
 /obj/item/ammo_casing/caseless/rogue/bolt
 	name = "bolt"
@@ -1185,6 +1215,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "regbolt"
+	projectile_type = /obj/projectile/bullet/reusable/bolt
 
 /obj/item/ammo_casing/caseless/rogue/bolt/ancient
 	name = "ancient bolt"
@@ -1207,6 +1239,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "regbolt"
+	projectile_type = /obj/projectile/bullet/reusable/bolt/ancient
 
 /obj/item/ammo_casing/caseless/rogue/bolt/blacksteel
 	name = "blacksteel bolt"
@@ -1229,6 +1263,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "regbolt"
+	projectile_type = /obj/projectile/bullet/reusable/bolt/blacksteel
 
 /obj/item/ammo_casing/caseless/rogue/bolt/blunt
 	name = "practice bolt"
@@ -1251,6 +1287,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "regbolt"
+	projectile_type = /obj/projectile/bullet/reusable/bolt/blunt
 
 /obj/item/ammo_casing/caseless/rogue/bolt/bronze
 	name = "bronze bolt"
@@ -1273,6 +1311,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "regbolt"
+	projectile_type = /obj/projectile/bullet/reusable/bolt/bronze
 
 /obj/item/ammo_casing/caseless/rogue/bolt/decrepit
 	name = "decrepit bolt"
@@ -1295,6 +1335,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "regbolt"
+	projectile_type = /obj/projectile/bullet/reusable/bolt/decrepit
 
 /obj/item/ammo_casing/caseless/rogue/bolt/heavyblunt
 	name = "heavy blunt bolt"
@@ -1317,6 +1359,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "regbolt"
+	projectile_type = /obj/projectile/bullet/reusable/bolt/heavyblunt
 
 /obj/item/ammo_casing/caseless/rogue/bolt/holy
 	name = "sunderbolt"
@@ -1339,6 +1383,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "regbolt"
+	projectile_type = /obj/projectile/bullet/reusable/bolt/holy
 
 /obj/item/ammo_casing/caseless/rogue/bolt/pyro
 	name = "pyroclastic bolt"
@@ -1361,6 +1407,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "regbolt"
+	projectile_type = /obj/projectile/bullet/bolt/pyro
 
 /obj/item/ammo_casing/caseless/rogue/bolt/water
 	name = "water bolt"
@@ -1383,6 +1431,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "regbolt"
+	projectile_type = /obj/projectile/bullet/bolt/water
 
 /obj/item/ammo_casing/caseless/rogue/heavy_bolt
 	name = "heavy bolt"
@@ -1405,6 +1455,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "heabolt"
+	projectile_type = /obj/projectile/bullet/reusable/heavy_bolt
 
 /obj/item/ammo_casing/caseless/rogue/heavy_bolt/tempest
 	name = "tempest bolt"
@@ -1427,6 +1479,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "heabolt"
+	projectile_type = /obj/projectile/bullet/reusable/heavy_bolt/tempest
 
 /obj/item/ammo_casing/caseless/rogue/javelin
 	name = "iron javelin"
@@ -1453,6 +1507,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = null
+	projectile_type = null
 
 /obj/item/ammo_casing/caseless/rogue/javelin/blacksteel
 	name = "blacksteel javelin"
@@ -1479,6 +1535,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = null
+	projectile_type = null
 
 /obj/item/ammo_casing/caseless/rogue/javelin/bronze
 	name = "bronze javelin"
@@ -1505,6 +1563,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = null
+	projectile_type = null
 
 /obj/item/ammo_casing/caseless/rogue/javelin/silver
 	name = "silver javelin"
@@ -1532,6 +1592,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = null
+	projectile_type = null
 
 /obj/item/ammo_casing/caseless/rogue/javelin/steel
 	name = "steel javelin"
@@ -1558,6 +1620,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = null
+	projectile_type = null
 
 /obj/item/ammo_casing/caseless/rogue/javelin/steel/ancient
 	name = "ancient javelin"
@@ -1584,6 +1648,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = null
+	projectile_type = null
 
 /obj/item/ammo_casing/caseless/rogue/javelin/steel/ancient/decrepit
 	name = "decrepit javelin"
@@ -1609,6 +1675,32 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = null
+	projectile_type = null
+
+/obj/item/ammo_casing/caseless/rogue/sling_bullet
+	name = "soaring stone"
+	desc = "You shouldn't be seeing this."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
+	icon_state = "arrow"
+	w_class = WEIGHT_CLASS_TINY
+	force = 5
+	throwforce = 20
+	slot_flags = ITEM_SLOT_BELT
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	possible_item_intents = list(/datum/intent/hit)
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/ammo_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/ammo_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	caliber = "slingbullet"
+	projectile_type = /obj/projectile/bullet/sling_bullet
 
 /obj/item/ammo_casing/caseless/rogue/sling_bullet/ancient
 	name = "ancient sling bullet"
@@ -1631,6 +1723,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "slingbullet"
+	projectile_type = /obj/projectile/bullet/reusable/sling_bullet/ancient
 
 /obj/item/ammo_casing/caseless/rogue/sling_bullet/blacksteel
 	name = "blacksteel sling bullet"
@@ -1653,6 +1747,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "slingbullet"
+	projectile_type = /obj/projectile/bullet/reusable/sling_bullet/blacksteel
 
 /obj/item/ammo_casing/caseless/rogue/sling_bullet/bronze
 	name = "bronze sling bullet"
@@ -1675,6 +1771,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "slingbullet"
+	projectile_type = /obj/projectile/bullet/reusable/sling_bullet/bronze
 
 /obj/item/ammo_casing/caseless/rogue/sling_bullet/decrepit
 	name = "decrepit sling bullet"
@@ -1697,6 +1795,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "slingbullet"
+	projectile_type = /obj/projectile/bullet/reusable/sling_bullet/decrepit
 
 /obj/item/ammo_casing/caseless/rogue/sling_bullet/iron
 	name = "iron sling bullet"
@@ -1719,6 +1819,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "slingbullet"
+	projectile_type = /obj/projectile/bullet/reusable/sling_bullet/iron
 
 /obj/item/ammo_casing/caseless/rogue/sling_bullet/silver
 	name = "silver sling bullet"
@@ -1741,6 +1843,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "slingbullet"
+	projectile_type = /obj/projectile/bullet/reusable/sling_bullet/silver
 
 /obj/item/ammo_casing/caseless/rogue/sling_bullet/silverblessed
 	name = "blessed silver sling bullet"
@@ -1763,6 +1867,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "slingbullet"
+	projectile_type = /obj/projectile/bullet/reusable/sling_bullet/silverblessed
 
 /obj/item/ammo_casing/caseless/rogue/sling_bullet/steel
 	name = "steel sling bullet"
@@ -1785,6 +1891,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "slingbullet"
+	projectile_type = /obj/projectile/bullet/reusable/sling_bullet/steel
 
 /obj/item/ammo_casing/caseless/rogue/sling_bullet/steelblessed
 	name = "holy steel sling bullet"
@@ -1807,6 +1915,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "slingbullet"
+	projectile_type = /obj/projectile/bullet/reusable/sling_bullet/steelblessed
 
 /obj/item/ammo_casing/caseless/rogue/sling_bullet/stone
 	name = "stone sling bullet"
@@ -1829,6 +1939,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "slingbullet"
+	projectile_type = /obj/projectile/bullet/reusable/sling_bullet/stone
 
 /obj/item/armor_brush
 	parent_type = /obj/item/rockhill
@@ -41069,7 +41181,7 @@
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/guns32_onmob.dmi'
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow
-	parent_type = /obj/item/rockhill
+	parent_type = /obj/item/gun/ballistic/rogue_launcher/bow
 	name = "shortbow"
 	desc = "This simply hewn shortbow is functional enough. What it lacks in poundage or accuracy, it makes up for with a decently swift draw."
 	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/32.dmi'
@@ -41084,6 +41196,7 @@
 	worn_y_dimension = 32
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/shoot/bow/short, /datum/intent/arc/bow/short, /datum/intent/hit)
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/arrow
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/32_righthand.dmi'
 	inhand_icon_state = null
@@ -41091,6 +41204,13 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/32_onmob.dmi'
+	damfactor = 0.9
+	accfactor = 1
+	penfactor = 0
+	damage_from_perception = FALSE
+	heavy_bow = FALSE
+	fire_sound = 'modular_redtard/rockhill/sound/combat/Ranged/flatbow-shot-01.ogg'
+	load_sound = 'modular_redtard/rockhill/sound/foley/nockarrow.ogg'
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow
 	name = "yew longbow"
@@ -41108,6 +41228,7 @@
 	worn_y_dimension = 32
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/shoot/bow, /datum/intent/arc/bow, /datum/intent/hit)
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/arrow
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_lefthand.dmi'
@@ -41117,6 +41238,13 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_onmob.dmi'
+	damfactor = 1.3
+	accfactor = 0.9
+	penfactor = 0
+	damage_from_perception = FALSE
+	heavy_bow = TRUE
+	fire_sound = 'modular_redtard/rockhill/sound/combat/Ranged/flatbow-shot-01.ogg'
+	load_sound = 'modular_redtard/rockhill/sound/foley/nockarrow.ogg'
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow/warden
 	name = "blackhorn longbow"
@@ -41134,6 +41262,7 @@
 	worn_y_dimension = 32
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/shoot/bow, /datum/intent/arc/bow, /datum/intent/hit)
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/arrow
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_lefthand.dmi'
@@ -41143,6 +41272,13 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_onmob.dmi'
+	damfactor = 1.3
+	accfactor = 0.9
+	penfactor = 0
+	damage_from_perception = FALSE
+	heavy_bow = TRUE
+	fire_sound = 'modular_redtard/rockhill/sound/combat/Ranged/flatbow-shot-01.ogg'
+	load_sound = 'modular_redtard/rockhill/sound/foley/nockarrow.ogg'
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
 	name = "recurve bow"
@@ -41161,6 +41297,7 @@
 	worn_y_dimension = 32
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/shoot/bow, /datum/intent/arc/bow, /datum/intent/hit)
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/arrow
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_righthand.dmi'
 	inhand_icon_state = null
@@ -41168,6 +41305,13 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_onmob.dmi'
+	damfactor = 1
+	accfactor = 1
+	penfactor = 0
+	damage_from_perception = FALSE
+	heavy_bow = FALSE
+	fire_sound = 'modular_redtard/rockhill/sound/combat/Ranged/flatbow-shot-01.ogg'
+	load_sound = 'modular_redtard/rockhill/sound/foley/nockarrow.ogg'
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve/blackoak
 	name = "woad recurve bow"
@@ -41186,6 +41330,7 @@
 	worn_y_dimension = 32
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/shoot/bow, /datum/intent/arc/bow, /datum/intent/hit)
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/arrow
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_righthand.dmi'
 	inhand_icon_state = null
@@ -41193,6 +41338,13 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_onmob.dmi'
+	damfactor = 1
+	accfactor = 1
+	penfactor = 0
+	damage_from_perception = FALSE
+	heavy_bow = FALSE
+	fire_sound = 'modular_redtard/rockhill/sound/combat/Ranged/flatbow-shot-01.ogg'
+	load_sound = 'modular_redtard/rockhill/sound/foley/nockarrow.ogg'
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve/steppesman
 	name = "aavnic riding bow"
@@ -41211,6 +41363,7 @@
 	worn_y_dimension = 32
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/shoot/bow, /datum/intent/arc/bow, /datum/intent/hit)
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/arrow
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_righthand.dmi'
 	inhand_icon_state = null
@@ -41218,6 +41371,13 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_onmob.dmi'
+	damfactor = 1
+	accfactor = 1
+	penfactor = 0
+	damage_from_perception = FALSE
+	heavy_bow = FALSE
+	fire_sound = 'modular_redtard/rockhill/sound/combat/Ranged/flatbow-shot-01.ogg'
+	load_sound = 'modular_redtard/rockhill/sound/foley/nockarrow.ogg'
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve/warden
 	name = "blackhorn bow"
@@ -41236,6 +41396,7 @@
 	worn_y_dimension = 32
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/shoot/bow, /datum/intent/arc/bow, /datum/intent/hit)
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/arrow
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_righthand.dmi'
 	inhand_icon_state = null
@@ -41243,9 +41404,16 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_onmob.dmi'
+	damfactor = 1
+	accfactor = 1
+	penfactor = 0
+	damage_from_perception = FALSE
+	heavy_bow = FALSE
+	fire_sound = 'modular_redtard/rockhill/sound/combat/Ranged/flatbow-shot-01.ogg'
+	load_sound = 'modular_redtard/rockhill/sound/foley/nockarrow.ogg'
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
-	parent_type = /obj/item/rockhill
+	parent_type = /obj/item/gun/ballistic/rogue_launcher/crossbow
 	name = "crossbow"
 	desc = "A deadly weapon that shoots a bolt with terrific power."
 	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/misc32.dmi'
@@ -41261,6 +41429,7 @@
 	possible_item_intents = list(/datum/intent/shoot/crossbow, /datum/intent/arc/crossbow, /datum/intent/hit)
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/bolt
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_lefthand.dmi'
@@ -41270,6 +41439,15 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_onmob.dmi'
+	damfactor = 1.2
+	accfactor = 1.1
+	penfactor = 0
+	damage_from_perception = FALSE
+	reloadtime = 40
+	movingreload = FALSE
+	hasloadedsprite = FALSE
+	fire_sound = 'modular_redtard/rockhill/sound/combat/Ranged/crossbow-small-shot-02.ogg'
+	load_sound = 'modular_redtard/rockhill/sound/foley/nockarrow.ogg'
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/arbalest
 	name = "sauterelle"
@@ -41287,6 +41465,7 @@
 	possible_item_intents = list(/datum/intent/shoot/crossbow, /datum/intent/arc/crossbow, /datum/intent/hit)
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/heavy_bolt
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_lefthand.dmi'
@@ -41296,6 +41475,15 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_onmob.dmi'
+	damfactor = 1.2
+	accfactor = 1.1
+	penfactor = 0
+	damage_from_perception = FALSE
+	reloadtime = 6 SECONDS
+	movingreload = FALSE
+	hasloadedsprite = FALSE
+	fire_sound = 'modular_redtard/rockhill/sound/combat/Ranged/firebow-shot-02.ogg'
+	load_sound = 'modular_redtard/rockhill/sound/foley/nockarrow.ogg'
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/heavy
 	name = "siegebow"
@@ -41315,6 +41503,7 @@
 	possible_item_intents = list(/datum/intent/shoot/crossbow/heavy, /datum/intent/arc/crossbow/heavy, /datum/intent/buttstroke/heavy, /datum/intent/effect/daze)
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/heavy_bolt
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_lefthand.dmi'
@@ -41324,6 +41513,15 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_onmob.dmi'
+	damfactor = 1.2
+	accfactor = 0.5
+	penfactor = 0
+	damage_from_perception = FALSE
+	reloadtime = 160
+	movingreload = FALSE
+	hasloadedsprite = FALSE
+	fire_sound = 'modular_redtard/rockhill/sound/combat/Ranged/crossbow_big_shot.ogg'
+	load_sound = 'modular_redtard/rockhill/sound/foley/doors/lockmetal.ogg'
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow
 	name = "slurbow"
@@ -41342,6 +41540,7 @@
 	possible_item_intents = list(/datum/intent/shoot/crossbow/slurbow, /datum/intent/arc/crossbow/slurbow, /datum/intent/hit)
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/bolt
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_righthand.dmi'
 	inhand_icon_state = null
@@ -41349,6 +41548,15 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_onmob.dmi'
+	damfactor = 0.6
+	accfactor = 1.3
+	penfactor = -1
+	damage_from_perception = TRUE
+	reloadtime = 20
+	movingreload = TRUE
+	hasloadedsprite = TRUE
+	fire_sound = 'modular_redtard/rockhill/sound/combat/Ranged/crossbow-small-shot-02.ogg'
+	load_sound = 'modular_redtard/rockhill/sound/foley/nockarrow.ogg'
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow/stalker
 	name = "gilded drow crossbow"
@@ -41367,6 +41575,7 @@
 	possible_item_intents = list(/datum/intent/shoot/crossbow/slurbow, /datum/intent/arc/crossbow/slurbow, /datum/intent/hit)
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/bolt
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_righthand.dmi'
 	inhand_icon_state = null
@@ -41374,6 +41583,15 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_onmob.dmi'
+	damfactor = 0.7
+	accfactor = 1.3
+	penfactor = -1
+	damage_from_perception = TRUE
+	reloadtime = 20
+	movingreload = TRUE
+	hasloadedsprite = TRUE
+	fire_sound = 'modular_redtard/rockhill/sound/combat/Ranged/crossbow-small-shot-02.ogg'
+	load_sound = 'modular_redtard/rockhill/sound/foley/nockarrow.ogg'
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow/stalker/lesser
 	name = "drow crossbow"
@@ -41392,6 +41610,7 @@
 	possible_item_intents = list(/datum/intent/shoot/crossbow/slurbow, /datum/intent/arc/crossbow/slurbow, /datum/intent/hit)
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/bolt
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_righthand.dmi'
 	inhand_icon_state = null
@@ -41399,9 +41618,18 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_onmob.dmi'
+	damfactor = 0.6
+	accfactor = 1.3
+	penfactor = -2
+	damage_from_perception = TRUE
+	reloadtime = 20
+	movingreload = TRUE
+	hasloadedsprite = TRUE
+	fire_sound = 'modular_redtard/rockhill/sound/combat/Ranged/crossbow-small-shot-02.ogg'
+	load_sound = 'modular_redtard/rockhill/sound/foley/nockarrow.ogg'
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/sling
-	parent_type = /obj/item/rockhill
+	parent_type = /obj/item/gun/ballistic/rogue_launcher/sling
 	name = "sling"
 	desc = "Twisted fibers manifest into a strung pouch capable of hurling stones afar."
 	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/misc32.dmi'
@@ -41418,6 +41646,7 @@
 	rogue_grid_height = 64
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/swing/sling, /datum/intent/arc/sling, /datum/intent/hit)
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/sling
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_righthand.dmi'
 	inhand_icon_state = null
@@ -41425,6 +41654,12 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_onmob.dmi'
+	damfactor = 1
+	accfactor = 1
+	penfactor = 0
+	damage_from_perception = FALSE
+	fire_sound = 'modular_redtard/rockhill/sound/combat/Ranged/sling-shot-01.ogg'
+	load_sound = 'modular_redtard/rockhill/sound/foley/slingload.ogg'
 
 /obj/item/hair_dye_cream
 	parent_type = /obj/item/rockhill
@@ -45079,6 +45314,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/reagent_containers/glass/bottle/claybottleclassic
 
 /obj/item/natural/clay/claybrick
 	name = "uncooked clay brick"
@@ -45147,6 +45383,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/reagent_containers/glass/cup/claycupclassic
 
 /obj/item/natural/clay/clayfancyvase
 	name = "unglazed fancy clay vase"
@@ -45192,6 +45429,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/reagent_containers/glass/bottle/clayfancyvaseclassic
 
 /obj/item/natural/clay/claystatue
 	name = "uncooked clay statue"
@@ -45375,6 +45613,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/reagent_containers/glass/bottle/clayvaseclassic
 
 /obj/item/natural/clay/glassbatch
 	name = "glass batch"
@@ -47855,7 +48094,7 @@
 	rogue_baked_inhand = TRUE
 
 /obj/item/quiver
-	parent_type = /obj/item/rockhill
+	parent_type = /obj/item/rogue_quiver
 	name = "quiver"
 	desc = ""
 	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
@@ -47875,6 +48114,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 20
 
 /obj/item/quiver/Warrows
 	name = "quiver"
@@ -47896,6 +48136,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 20
 
 /obj/item/quiver/Wbolts
 	name = "quiver"
@@ -47917,6 +48158,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 20
 
 /obj/item/quiver/arrows
 	name = "quiver"
@@ -47938,6 +48180,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 20
 
 /obj/item/quiver/bodkin
 	name = "quiver"
@@ -47959,6 +48202,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 20
 
 /obj/item/quiver/bolts
 	name = "quiver"
@@ -47980,6 +48224,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 20
 
 /obj/item/quiver/bolts/
 	name = "quiver"
@@ -48001,6 +48246,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 20
 
 /obj/item/quiver/bullet/lead
 	name = "lead ball pouch"
@@ -48025,6 +48271,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 8
 
 /obj/item/quiver/heavybluntbolts
 	name = "quiver"
@@ -48046,6 +48293,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 20
 
 /obj/item/quiver/heavybolts
 	name = "quiver"
@@ -48067,6 +48315,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 20
 
 /obj/item/quiver/javelin
 	name = "javelinbag"
@@ -48088,6 +48337,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 4
 
 /obj/item/quiver/javelin/bronze
 	name = "javelinbag"
@@ -48109,6 +48359,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 4
 
 /obj/item/quiver/javelin/iron
 	name = "javelinbag"
@@ -48130,6 +48381,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 4
 
 /obj/item/quiver/javelin/steel
 	name = "javelinbag"
@@ -48151,6 +48403,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 4
 
 /obj/item/quiver/poisonarrows
 	name = "quiver"
@@ -48172,6 +48425,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 20
 
 /obj/item/quiver/pyroarrows
 	name = "quiver"
@@ -48193,6 +48447,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 20
 
 /obj/item/quiver/sling
 	name = "sling bullet pouch"
@@ -48217,6 +48472,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 20
 
 /obj/item/quiver/sling/iron
 	name = "sling bullet pouch"
@@ -48241,6 +48497,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 20
 
 /obj/item/quiver/zigs
 	name = "zig box"
@@ -48264,6 +48521,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 10
 
 /obj/item/ration
 	parent_type = /obj/item/rockhill
@@ -55226,6 +55484,33 @@
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
 
+/obj/item/reagent_containers/glass/bottle/claybottleclassic
+	name = "clay bottle"
+	desc = "A ceramic bottle. Tyme caresses its curves and cracks with a faint, ethereal glimmer."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "claybottlebaked"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
+	sellprice = 5
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 75
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
+
 /obj/item/reagent_containers/glass/bottle/clayfancyvase
 	name = "fancy ceramic vase"
 	desc = "A large sized fancy ceramic vase."
@@ -55253,11 +55538,65 @@
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
 
+/obj/item/reagent_containers/glass/bottle/clayfancyvaseclassic
+	name = "fancy ceramic vase"
+	desc = "A large sized fancy ceramic vase. Tyme caresses its curves and cracks with a faint, ethereal glimmer."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayfancyvasebaked"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
+	sellprice = 15
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 65
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
+
 /obj/item/reagent_containers/glass/bottle/clayvase
 	name = "ceramic vase"
 	desc = "A large sized ceramic vase."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
 	icon_state = "clayvasecook"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
+	sellprice = 7
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 65
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
+
+/obj/item/reagent_containers/glass/bottle/clayvaseclassic
+	name = "ceramic vase"
+	desc = "A large sized ceramic vase. Tyme caresses its curves and cracks with a faint, ethereal glimmer."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayvasebaked"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	worn_icon_state = null
@@ -58121,6 +58460,33 @@
 	desc = "A small ceramic canister."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
 	icon_state = "claycupcook"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 5
+	throwforce = 10
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
+	sellprice = 2
+	anvilrepair = /datum/attribute/skill/craft/blacksmithing
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
+
+/obj/item/reagent_containers/glass/cup/claycupclassic
+	name = "clay canister"
+	desc = "A small ceramic canister. Tyme caresses its curves and cracks with a faint, ethereal glimmer."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "claycupbaked"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 5
 	throwforce = 10
