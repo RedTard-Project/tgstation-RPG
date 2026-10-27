@@ -79,38 +79,43 @@ function FeatureButton(props: FeatureProps) {
   const { feature, supplemental } = props;
   const { data } = useBackend<SetupData>();
   const tr = useTr();
+  // Floating anchors the grid by a ref on its child, and a Button with a tooltip does not pass one on (it wraps itself in
+  // the Tooltip): the grid then had no anchor and opened at the window's corner, under the doll. A plain div takes the ref,
+  // as around TG's gender button. The grid opens to the right of the button, downwards.
   return (
     <Floating
       stopChildPropagation
       placement="right-start"
       content={<FeatureChooser feature={feature} supplemental={supplemental} />}
     >
-      <Button
-        tooltip={featureName(feature.key, data.features, tr)}
-        tooltipPosition="bottom"
-        style={{
-          width: `${CELL_SIZE}px`,
-          height: `${CELL_SIZE}px`,
-          padding: 0,
-        }}
-      >
-        <Box
+      <div>
+        <Button
+          tooltip={featureName(feature.key, data.features, tr)}
+          tooltipPosition="bottom"
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
+            width: `${CELL_SIZE}px`,
             height: `${CELL_SIZE}px`,
+            padding: 0,
           }}
         >
           <Box
-            className={classes([
-              'preferences32x32',
-              feature.catalog.icons[feature.value],
-            ])}
-            style={{ transform: 'scale(1.3)', imageRendering: 'pixelated' }}
-          />
-        </Box>
-      </Button>
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              height: `${CELL_SIZE}px`,
+            }}
+          >
+            <Box
+              className={classes([
+                'preferences32x32',
+                feature.catalog.icons[feature.value],
+              ])}
+              style={{ transform: 'scale(1.3)', imageRendering: 'pixelated' }}
+            />
+          </Box>
+        </Button>
+      </div>
     </Floating>
   );
 }
