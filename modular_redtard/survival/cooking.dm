@@ -241,7 +241,7 @@
 
 /// Ratwood oven (code/modules/roguetown/roguejobs/cook/tools/oven.dm): up to five items go in through the top of the sprite and
 /// bake while it burns, at half the speed of a pan (sped up by the skill of whoever last used it). The food sits on a TG oven
-/// tray inside, so it bakes with TG's /datum/component/bakeable.
+/// tray inside, so it bakes with TG's /datum/component/bakeable. Raw clay fires in it the same way (crafting/pottery.dm).
 /obj/machinery/light/rogue/oven
 	var/obj/item/plate/oven_tray/tray
 	var/max_food = 5
@@ -283,6 +283,8 @@
 	var/burning = FALSE
 	var/list/before = tray.contents.Copy()
 	for(var/obj/item/baked as anything in before)
+		if(rogue_crack_pottery(baked, seconds_per_tick))
+			continue
 		var/result = SEND_SIGNAL(baked, COMSIG_ITEM_OVEN_PROCESS, src, seconds_per_tick * 0.5 * (HAS_TRAIT(baked, TRAIT_BAKEABLE) ? divisor : 1))
 		if(result & COMPONENT_BAKING_BAD_RESULT)
 			burning = TRUE

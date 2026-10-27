@@ -112,6 +112,51 @@ export type HeritageCatalog = {
   cultures: CultureEntry[];
 };
 
+export type HomelandTrait = {
+  name: string;
+  desc: string | null;
+};
+
+/** Ratwood's origins (modular_redtard/homelands), in the player's language. */
+export type HomelandEntry = {
+  /** Ratwood's name of the land, the value of the rogue_homeland preference. */
+  id: string;
+  name: string;
+  desc: string;
+  traits: HomelandTrait[];
+  /** Whether people from elsewhere may resent it on sight. */
+  prejudice: BooleanLike;
+  /** Who resents it; empty with prejudice is everyone from elsewhere. */
+  resented_by: string[];
+};
+
+/** A food or drink of Ratwood's culinary preferences (modular_redtard/charsetup/culinary.dm). */
+export type CulinaryEntry = {
+  /** Type path, the value of the culinary preferences. */
+  id: string;
+  name: string;
+  /** Ratwood's fare of a food (1 desperate to 5 lavish) or quality of a drink (0 plain to 4 fantastic). */
+  rank: number;
+  /** Class of the rogue_culinary spritesheet, when the thing has a sprite. */
+  icon: string | null;
+};
+
+export type CulinaryCatalog = {
+  foods: CulinaryEntry[];
+  drinks: CulinaryEntry[];
+  /** The hated drink's "nothing". */
+  none: string;
+};
+
+/** A track of the combat music (modular_redtard/combat/music.dm). */
+export type CombatTrack = {
+  name: string;
+  desc: string | null;
+  credits: string | null;
+  /** Whether the server has the files, so it can be listened to. */
+  playable: BooleanLike;
+};
+
 export type RoundPhase = 'pregame' | 'setting_up' | 'playing' | 'postgame';
 
 export type RoundState = {
@@ -155,6 +200,9 @@ export type SetupData = {
   pq_color: string | null;
   triumphs: number;
   heritage: HeritageCatalog;
+  homelands: HomelandEntry[];
+  culinary: CulinaryCatalog;
+  combat_music: CombatTrack[];
 
   // Dynamic: sent after each change.
   /** The player's language (the rogue_ui_language preference). */

@@ -25,6 +25,7 @@ export type RogueStock = {
   payout_price: number;
   export_price: number;
   import_price: number;
+  import_region?: string;
   withdraw_disabled: BooleanLike;
   accept_enabled: BooleanLike;
   autoexport_disabled: BooleanLike;
@@ -126,7 +127,7 @@ export const RogueStockpile = () => {
                     <Table.Cell collapsing>
                       {stock.amount > 0
                         ? stock.withdraw_price
-                        : stock.import_price}
+                        : stock.import_price || '-'}
                     </Table.Cell>
                     <Table.Cell collapsing>
                       {stock.amount > 0 ? (
@@ -141,9 +142,14 @@ export const RogueStockpile = () => {
                         </Button>
                       ) : (
                         <Button
-                          tooltip="None in stock: import one at the carriers' price."
+                          tooltip={
+                            stock.import_price
+                              ? `None in stock: import one from ${stock.import_region} at the carriers' price.`
+                              : 'No region supplies it today.'
+                          }
                           disabled={
                             (!!stock.withdraw_disabled && !data.fiscal) ||
+                            !stock.import_price ||
                             stock.import_price > data.budget
                           }
                           onClick={() => act('import', { ref: stock.ref })}

@@ -1,8 +1,8 @@
 // Vibelin's Character Profile page on the module's texts: the flavor text and OOC notes the medieval lobby asks for
 // before readying up (rogue_join_rules.dm), edited by their own TG feature (rogue_character_notes.tsx), the name in
 // Russian cases the chat translation declines it by (localization/declensions.dm), and any other rogue_* text a
-// character gets. Vibelin's voice, descriptors, food preferences, relations, OOC extra and headshot have no system here;
-// the faith, patron and culture are on the identity page.
+// character gets. Vibelin's voice, descriptors, relations, OOC extra and headshot have no system here; the faith,
+// patron, culture, homeland and food and drink are on the identity page, the combat music on the gameplay page.
 import { useBackend } from 'tgui/backend';
 import { Box, LabeledList } from 'tgui-core/components';
 
@@ -20,12 +20,21 @@ const DECLENSION_KEYS = [
   'rogue_declension_instrumental',
   'rogue_declension_prepositional',
 ];
-/** Edited on the identity page (the origin in the ancestry picker). */
+/**
+ * Edited by pickers of their own: on the identity page (the origin in the ancestry picker, the homeland, the food and
+ * drink) and on the gameplay page (the combat music).
+ */
 const HERITAGE_KEYS = [
   'rogue_faith',
   'rogue_patron',
   'rogue_culture',
   'rogue_origin',
+  'rogue_homeland',
+  'rogue_favourite_food',
+  'rogue_hated_food',
+  'rogue_favourite_drink',
+  'rogue_hated_drink',
+  'rogue_combat_music',
 ];
 
 function LengthHint(props: { text: unknown; minimum: number }) {

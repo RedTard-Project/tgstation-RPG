@@ -65,6 +65,77 @@ GLOBAL_LIST_INIT(rogue_pottery_ruin_chance, list(50, 30, 20, 10, 5))
 	if(tier >= ROGUE_POTTERY_SHINE_TIER)
 		rogue_shine()
 
+// Ratwood kiln firing (ceramicist/clay.dm cooking(), heating_act(); cook/tools/oven.dm process()): a raw clay piece put in a
+// burning oven fires into its cooked_type, and the fired piece takes the pottery tier the wheel or the crafting gave the raw
+// clay. Fired pottery left in the oven long after cracks from the heat. The heat is TG baking (/datum/component/bakeable), as
+// for bread: the oven bakes at half speed, faster with the cooking skill of whoever last used it (survival/cooking.dm).
+
+/// Ratwood cooktime of clay: 30 seconds, a minute for refined clay, 45 seconds for porcelain.
+#define KILN_FIRE_TIME rogue_value("clay_fire_time")
+#define KILN_FIRE_TIME_REFINED rogue_value("clay_fire_time_refined")
+#define KILN_FIRE_TIME_PORCELAIN rogue_value("clay_fire_time_porcelain")
+/// Ratwood: fired pottery may crack a minute after its firing, at a chance every oven tick of two seconds.
+#define KILN_CRACK_DELAY rogue_value("clay_crack_delay")
+#define KILN_CRACK_CHANCE rogue_value("clay_crack_chance")
+#define KILN_TICK 2
+#define KILN_CRACK_SOUND /datum/sound_effect/shatter
+
+/obj/item
+	/// When the item came out of a kiln (Ratwood pottery_baked_at): left in a burning oven long after, it cracks.
+	var/rogue_fired_at
+
+/obj/item/natural/clay/Initialize(mapload)
+	. = ..()
+	if(!cooked_type || !rogue_survival_enabled())
+		return
+	var/fire_time = rogue_fire_time()
+	if(fire_time <= 0)
+		return
+	AddComponent(/datum/component/bakeable, cooked_type, fire_time, TRUE)
+	RegisterSignal(src, COMSIG_ITEM_BAKED, PROC_REF(on_fired))
+
+/// Deciseconds of baking that fire this clay (Ratwood cooktime); 0 - an oven does nothing to it.
+/obj/item/natural/clay/proc/rogue_fire_time()
+	return KILN_FIRE_TIME
+
+/obj/item/natural/clay/refined/rogue_fire_time()
+	return KILN_FIRE_TIME_REFINED
+
+/obj/item/natural/clay/porcelain/rogue_fire_time()
+	return KILN_FIRE_TIME_PORCELAIN
+
+/// Ratwood's glass batch keeps cooktime 0: it goes to a smelter, not to an oven.
+/obj/item/natural/clay/glassbatch/rogue_fire_time()
+	return 0
+
+/// Ratwood heating_act() in an oven: the fired piece takes the pottery tier of the raw clay (crude when nobody shaped it).
+/obj/item/natural/clay/proc/on_fired(datum/source, obj/item/fired)
+	SIGNAL_HANDLER
+	if(!isitem(fired))
+		return
+	var/tier = isnull(rogue_quality) ? 0 : clamp(rogue_quality - ROGUE_QUALITY_CRUDE, 0, ROGUE_QUALITY_MASTERWORK - ROGUE_QUALITY_CRUDE)
+	fired.rogue_apply_pottery_quality(tier)
+	fired.rogue_fired_at = world.time
+
+/// Ratwood oven process(): fired pottery left in the burning oven past its time cracks from the heat and shatters.
+/obj/machinery/light/rogue/oven/proc/rogue_crack_pottery(obj/item/fired, seconds_per_tick)
+	if(!fired.rogue_fired_at || world.time < fired.rogue_fired_at + KILN_CRACK_DELAY)
+		return FALSE
+	if(!SPT_PROB(KILN_CRACK_CHANCE, seconds_per_tick / KILN_TICK))
+		return FALSE
+	visible_message(span_warning("[fired] starts to crack from the prolonged heat and shatters!"))
+	playsound(src, KILN_CRACK_SOUND, 75, TRUE)
+	qdel(fired)
+	return TRUE
+
+#undef KILN_FIRE_TIME
+#undef KILN_FIRE_TIME_REFINED
+#undef KILN_FIRE_TIME_PORCELAIN
+#undef KILN_CRACK_DELAY
+#undef KILN_CRACK_CHANCE
+#undef KILN_TICK
+#undef KILN_CRACK_SOUND
+
 /// Ratwood /datum/pottery_wheel_recipe. Ratwood's vases, teaware, statues, the jar helmet and all the porcelain shape into
 /// items the port does not have yet, so only the brick, the canister and the bottle are here.
 /datum/pottery_wheel_recipe

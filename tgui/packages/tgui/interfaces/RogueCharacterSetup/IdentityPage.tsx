@@ -1,5 +1,7 @@
-// Vibelin's Identity page: name, body, age and standing, then the species, faith, ancestry or culture picker. Vibelin's
-// pronouns, dominant hand and quirks have no system here; the name declensions are on the profile page.
+// Vibelin's Identity page: name, pronouns and body, age and standing, then the species, faith, ancestry, culture,
+// homeland (Ratwood's origin) or food and drink picker. Pronouns are TG's gender and the body TG's body type (Vibelin
+// keeps the body as its gender and the pronouns apart); Vibelin's dominant hand and quirks have no system here; the
+// name declensions are on the profile page.
 import { useState } from 'react';
 import { useBackend } from 'tgui/backend';
 import {
@@ -26,10 +28,18 @@ import {
   swatchColor,
 } from './components';
 import { CulturePicker, FaithPicker, useHeritage } from './heritage';
+import { HomelandPicker, useHomeland } from './homeland';
+import { CulinaryPicker, usePalateShown } from './palate';
 import { useTr } from './strings';
 import type { AgeBand, SetupData, SpeciesEntry } from './types';
 
-type PickerMode = 'species' | 'faith' | 'ancestry' | 'culture';
+type PickerMode =
+  | 'species'
+  | 'faith'
+  | 'ancestry'
+  | 'culture'
+  | 'homeland'
+  | 'palate';
 
 export function ageBand(bands: AgeBand[], age: number): AgeBand | undefined {
   let found: AgeBand | undefined;
@@ -45,6 +55,8 @@ export function IdentityPage() {
   const { act, data } = useBackend<SetupData>();
   const tr = useTr();
   const heritage = useHeritage();
+  const homeland = useHomeland();
+  const palateShown = usePalateShown();
   const prefs = data.character_preferences;
   const name = String(prefs.names?.real_name ?? '');
   const gender = String(prefs.misc?.gender ?? Gender.Male) as Gender;
@@ -61,6 +73,18 @@ export function IdentityPage() {
     { id: 'ancestry', label: tr('Ancestry'), icon: 'leaf' },
     ...(heritage.shown
       ? [{ id: 'culture' as const, label: tr('Culture'), icon: 'landmark' }]
+      : []),
+    ...(homeland.shown
+      ? [
+          {
+            id: 'homeland' as const,
+            label: tr('Homeland'),
+            icon: 'map-marked-alt',
+          },
+        ]
+      : []),
+    ...(palateShown
+      ? [{ id: 'palate' as const, label: tr('Food & Drink'), icon: 'utensils' }]
       : []),
   ];
   const shownMode = modes.some((entry) => entry.id === mode) ? mode : 'species';
@@ -96,7 +120,7 @@ export function IdentityPage() {
               </Stack>
             </FieldBlock>
             {(!species || !!species.sexes) && (
-              <FieldBlock label={tr('Body Type')}>
+              <FieldBlock label={tr('Pronouns')}>
                 {[Gender.Male, Gender.Female, Gender.Other, Gender.Other2].map(
                   (option) => (
                     <Button
@@ -117,6 +141,16 @@ export function IdentityPage() {
                 )}
               </FieldBlock>
             )}
+            {'body_type' in (prefs.secondary_features ?? {}) &&
+              !!features.body_type && (
+                <FieldBlock label={tr('Body type')}>
+                  <FeatureValueInput
+                    feature={features.body_type}
+                    featureId="body_type"
+                    value={prefs.secondary_features?.body_type}
+                  />
+                </FieldBlock>
+              )}
             <FieldBlock label={tr('Age')}>
               <Tooltip
                 content={
@@ -202,6 +236,13 @@ export function IdentityPage() {
                 />
               </>
             )}
+            {homeland.shown && (
+              <InfoRow
+                icon="map-marked-alt"
+                label={tr('Homeland')}
+                value={display(homeland.homeland?.name, tr('None'))}
+              />
+            )}
             {!!band && (
               <FieldBlock label={tr('Age: {0}', band.name)}>
                 <StatChips stats={band.stats} empty={tr('No age modifiers.')} />
@@ -214,6 +255,8 @@ export function IdentityPage() {
       {shownMode === 'faith' && <FaithPicker />}
       {shownMode === 'ancestry' && <AncestryPicker species={species} />}
       {shownMode === 'culture' && <CulturePicker />}
+      {shownMode === 'homeland' && <HomelandPicker />}
+      {shownMode === 'palate' && <CulinaryPicker />}
     </>
   );
 }

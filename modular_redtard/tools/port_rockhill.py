@@ -1304,6 +1304,16 @@ def write_bake_manifest(spec):
     print(f"{spec['manifest']}: {len(sheets)} sheets, {sum(len(s['states']) for s in sheets)} states to bake")
 
 
+TYPED_NEW = re.compile(r'\bvar/(/obj/item/[A-Za-z0-9_/]*[A-Za-z0-9_])/[A-Za-z_][A-Za-z0-9_]*\s*=\s*new\b')
+
+
+def typed_fill(path):
+    """What an item creates in its own Initialize() to fill itself: Ratwood's quivers loop
+    "var/obj/item/ammo_casing/caseless/rogue/arrow/iron/A = new()" up to max_storage."""
+    found = TYPED_NEW.search('\n'.join(INIT_BODIES.get(path, [])))
+    return found.group(1) if found else None
+
+
 def graft_point(path, declared):
     parts = path.split('/')
     for k in range(3, len(parts) + 1):
@@ -1338,6 +1348,19 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
         for name in port.get('linked_types', []):
             for item, _ in list_paths(rw.resolve(path, name)):
                 port_usage[item.rstrip('/')] += 0
+    # Links that only one branch has: what an arrow shoots (projectile_type), what a raw clay piece fires into
+    # (cooked_type: without its port the piece would inherit plain clay's and fire into a stone).
+    for prefix, names in port.get('linked_types_by_prefix', {}).items():
+        for path in [p for p in port_usage if boundary_match(p, prefix)]:
+            for name in names:
+                for item, _ in list_paths(rw.resolve(path, name)):
+                    port_usage[item.rstrip('/')] += 0
+    # What a quiver fills itself with in its Initialize() comes along with the quiver.
+    for prefix in port.get('typed_fills', {}):
+        for path in [p for p in port_usage if boundary_match(p, prefix)]:
+            fill = typed_fill(path)
+            if fill:
+                port_usage[fill] += 0
     for path, count in sorted(port_usage.items()):
         if replacement_for(path, rules) or path in tg_declared:
             continue
@@ -1802,6 +1825,12 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                     if number is not None and not (number == 0 and name in cat.get('skip_default', [])) and number != cat.get('numeric_defaults', {}).get(name):
                         block.append(f'\t{name} = {number}')
                     continue
+                if name in cat.get('sounds', []):
+                    # One sound file (a projectile's hitsound), copied like the rest of the sounds.
+                    ref = sound_ref(value) if value and ICON_LITERAL.match(value.strip()) else None
+                    if ref:
+                        block.append(f'\t{name} = {ref}')
+                    continue
                 if name in cat.get('grip_lists', []):
                     entries = [p for p in alt_grip_paths(rw, value) if p in valid]
                     if entries:
@@ -1952,11 +1981,23 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                             if value is None and numbers:
                                 value = 'list(' + ', '.join(re.findall(r'-?\d+(?:\.\d+)?', numbers.group(1))) + ')'
                         if value is None and text.startswith('/'):
-                            # A path (raw clay's cooked_type): its port, when there is one.
+                            # A path (raw clay's cooked_type): its port, or null when there is none, so that the type
+                            # does not inherit its parent's value (a clay vase that fires into the plain clay's stone).
                             target = runtime_path(text.rstrip('/'), rules)
-                            value = target if target in valid else None
+                            value = target if target in valid else 'null'
                         if value is not None:
                             block.append(f'\t{name} = {value}')
+            for prefix, names in cat.get('type_sounds', {}).items():
+                if boundary_match(path, prefix):
+                    for name in names:
+                        raw = (rw.resolve(path, name) or '').strip()
+                        ref = sound_ref(raw) if ICON_LITERAL.match(raw) else None
+                        if ref:
+                            block.append(f'\t{name} = {ref}')
+            for prefix, name in port.get('typed_fills', {}).items():
+                fill = typed_fill(path) if boundary_match(path, prefix) else None
+                if fill and runtime_path(fill, rules) in valid:
+                    block.append(f'\t{name} = {runtime_path(fill, rules)}')
             transfer = {line.split(' = ', 1)[0].strip(): line.split(' = ', 1)[1] for line in block[1:] if line.startswith(('\tamount_per_transfer_from_this = ', '\tpossible_transfer_amounts = '))}
             if len(transfer) == 2 and transfer['amount_per_transfer_from_this'] not in re.findall(r'-?\d+(?:\.\d+)?', transfer['possible_transfer_amounts']):
                 # TG's reagent_container_defaults test wants the default among the choices; Ratwood's mortar pours 9 from

@@ -38,6 +38,16 @@
 #define ROGUE_QUILL_FONT FOUNTAIN_PEN_FONT
 #define ROGUE_QUILL_INK "black"
 
+/// The skill a person reads and writes by on medieval maps (Ratwood /datum/skill/misc/reading).
+#define ROGUE_READING_SKILL /datum/attribute/skill/misc/reading
+/// The timer cooldown of an illiterate reader's experience (literacy.dm).
+#define ROGUE_READING_XP_COOLDOWN "rogue_reading_xp"
+
+/// Tag of TG's persistent paintings added to the archive at a printing press; the press prints only these.
+#define ROGUE_PAINTING_TAG "rogue_archive"
+/// TG's folder of persistent painting images (/datum/painting get_icon()).
+#define ROGUE_PAINTING_IMAGES_DIR "data/paintings/images/"
+
 // Numbers of the mechanics registry (config/redtard/mechanics/values.txt).
 #define ROGUE_PRESS_PRINT_TIME rogue_value("library_print_time")
 #define ROGUE_PRESS_COOLDOWN rogue_value("library_print_cooldown")
@@ -48,3 +58,5 @@
 #define ROGUE_PLAYER_BOOK_CHANCE_MIN rogue_value("library_player_book_chance_min")
 #define ROGUE_PLAYER_BOOK_CHANCE_MAX rogue_value("library_player_book_chance_max")
 #define ROGUE_BOOK_KIT_CHANCE rogue_value("library_book_kit_chance")
+#define ROGUE_READ_XP_BOOK rogue_value("library_read_xp_book")
+#define ROGUE_READ_XP_PAPER rogue_value("library_read_xp_paper")

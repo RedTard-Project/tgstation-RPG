@@ -1,7 +1,7 @@
 /// Azure Peak's rules for joining a medieval round (Azure new_player_panel.dm, jobs/_job.dm, admin/patreon.dm): a
 /// character needs a description (flavor text) and OOC notes of some length before readying up; whoever readied up
-/// before the round gets the ready bonus (a pouch of coins, a hearty breakfast; Azure's triumph is not ported); the
-/// server's patrons skip the queue of a full server.
+/// before the round gets the ready bonus (a pouch of coins, a hearty breakfast, a triumph); the server's patrons skip
+/// the queue of a full server.
 
 /datum/config_entry/number/rogue_minimum_flavor_text
 	default = 200
@@ -107,8 +107,8 @@
 	owner.AttemptLateSpawn(job)
 	return TRUE
 
-/// The ready bonus of those who readied up before the round (Azure's _job.dm: a stashed pouch of coins, full belly,
-/// the good meal); a late joiner does not get it.
+/// The ready bonus of those who readied up before the round (Azure's and Ratwood's _job.dm: a stashed pouch of coins,
+/// full belly, the good meal, a triumph); a late joiner does not get it.
 /datum/job/roguetown/after_spawn(mob/living/spawned, client/player_client)
 	. = ..()
 	var/mob/living/carbon/human/human = spawned
@@ -117,6 +117,7 @@
 	human.set_nutrition(NUTRITION_LEVEL_FULL)
 	human.apply_status_effect(/datum/status_effect/rogue/good_meal)
 	to_chat(human, span_notice("Rising early, you made sure to pack a pouch of coins and eat a hearty breakfast before starting your day."))
+	rogue_adjust_triumphs(player_client.ckey, rogue_value("triumph_ready_bonus"))
 	human.rogue_ready_pouch_pending = TRUE
 	if(!HAS_TRAIT_FROM(human, TRAIT_IMMOBILIZED, ROCKHILL_ADVCLASS_TRAIT))
 		human.rogue_give_ready_pouch()

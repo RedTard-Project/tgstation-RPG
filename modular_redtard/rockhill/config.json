@@ -734,7 +734,12 @@
 				"graft": "/obj/item/rockhill",
 				"graft_overrides": {
 					"/obj/item/roguecoin": "/obj/item/stack",
-					"/obj/item/paper/scroll": "/obj/item/paper"
+					"/obj/item/paper/scroll": "/obj/item/paper",
+					"/obj/item/ammo_casing/caseless": "/obj/item/ammo_casing/rogue",
+					"/obj/item/gun/ballistic/revolver/grenadelauncher/bow": "/obj/item/gun/ballistic/rogue_launcher/bow",
+					"/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow": "/obj/item/gun/ballistic/rogue_launcher/crossbow",
+					"/obj/item/gun/ballistic/revolver/grenadelauncher/sling": "/obj/item/gun/ballistic/rogue_launcher/sling",
+					"/obj/item/quiver": "/obj/item/rogue_quiver"
 				},
 				"graft_override_vars": {
 					"/obj/item/paper/scroll": {
@@ -779,6 +784,29 @@
 					],
 					"/obj/item/natural/clay": [
 						"cooked_type"
+					],
+					"/obj/item/ammo_casing": [
+						"caliber",
+						"projectile_type"
+					],
+					"/obj/item/gun/ballistic/revolver/grenadelauncher": [
+						"damfactor",
+						"accfactor",
+						"penfactor",
+						"damage_from_perception",
+						"heavy_bow",
+						"reloadtime",
+						"movingreload",
+						"hasloadedsprite"
+					],
+					"/obj/item/quiver": [
+						"max_storage"
+					]
+				},
+				"type_sounds": {
+					"/obj/item/gun/ballistic/revolver/grenadelauncher": [
+						"fire_sound",
+						"load_sound"
 					]
 				},
 				"inherited_vars": {
@@ -867,7 +895,8 @@
 					"intdamage_factor",
 					"smeltresult",
 					"anvilrepair",
-					"sewrepair"
+					"sewrepair",
+					"accepted_magazine_type"
 				],
 				"true_only": [
 					"sewrepair"
@@ -884,7 +913,8 @@
 					"rogue_blocksound": "blocksound",
 					"rogue_force_wielded": "force_wielded",
 					"rogue_sleeve_scrap": "salvage_result",
-					"rogue_face_coverage": "body_parts_covered"
+					"rogue_face_coverage": "body_parts_covered",
+					"accepted_magazine_type": "mag_type"
 				},
 				"slot_worn_icons": {
 					"worn_icon": {
@@ -971,6 +1001,12 @@
 						"SLEEVE_TORN": "ROGUE_SLEEVE_TORN",
 						"SLEEVE_ROLLED": "ROGUE_SLEEVE_ROLLED",
 						"SLEEVE_NOMOD": "ROGUE_SLEEVE_NOMOD"
+					},
+					"accepted_magazine_type": {
+						"/obj/item/ammo_box/magazine/internal/shot/bow": "/obj/item/ammo_box/magazine/internal/rogue_launcher/arrow",
+						"/obj/item/ammo_box/magazine/internal/shot/xbow": "/obj/item/ammo_box/magazine/internal/rogue_launcher/bolt",
+						"/obj/item/ammo_box/magazine/internal/shot/heavy_xbow": "/obj/item/ammo_box/magazine/internal/rogue_launcher/heavy_bolt",
+						"/obj/item/ammo_box/magazine/internal/shot/sling": "/obj/item/ammo_box/magazine/internal/rogue_launcher/sling"
 					}
 				},
 				"grid_storage": true,
@@ -1042,6 +1078,65 @@
 					"chunkcolor",
 					"rogue_sleeve_scrap"
 				]
+			},
+			{
+				"file": "projectiles.dm",
+				"prefixes": [
+					"/obj/projectile"
+				],
+				"graft": "/obj/projectile/rogue_ammo",
+				"graft_overrides": {
+					"/obj/projectile/bullet/reusable": "/obj/projectile/rogue_ammo/reusable"
+				},
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"color",
+					"damage",
+					"armour_penetration",
+					"range",
+					"rogue_tile_time",
+					"rogue_embed_chance",
+					"rogue_bclass",
+					"rogue_npc_damage_mult",
+					"rogue_accuracy",
+					"hitsound",
+					"rogue_drop_type"
+				],
+				"rename": {
+					"armour_penetration": "armor_penetration",
+					"rogue_tile_time": "speed",
+					"rogue_embed_chance": "embedchance",
+					"rogue_bclass": "woundclass",
+					"rogue_npc_damage_mult": "npc_simple_damage_mult",
+					"rogue_accuracy": "accuracy",
+					"rogue_drop_type": "ammo_type"
+				},
+				"numeric_vars": [
+					"damage",
+					"armour_penetration",
+					"range",
+					"rogue_tile_time",
+					"rogue_embed_chance",
+					"rogue_npc_damage_mult",
+					"rogue_accuracy"
+				],
+				"numeric_defaults": {
+					"rogue_accuracy": 65,
+					"rogue_npc_damage_mult": 1
+				},
+				"string_define_vars": [
+					"rogue_bclass"
+				],
+				"paths": [
+					"rogue_drop_type"
+				],
+				"sounds": [
+					"hitsound"
+				],
+				"sprite_checks": true
 			},
 			{
 				"file": "humans.dm",
@@ -1181,6 +1276,11 @@
 			"icons/effects/mousemice/swang/*.dmi"
 		],
 		"extra_sounds": [
+			"sound/combat/Ranged/bow-draw-01.ogg",
+			"sound/combat/Ranged/sling-draw-01.ogg",
+			"sound/combat/Ranged/crossbow_medium_reload-01.ogg",
+			"sound/combat/Ranged/crossbow_medium_reload-02.ogg",
+			"sound/combat/Ranged/crossbow-small-shot-02.ogg",
 			"sound/items/bsmith1.ogg",
 			"sound/items/bsmith2.ogg",
 			"sound/items/bsmith3.ogg",
@@ -1374,6 +1474,17 @@
 			"smeltresult",
 			"salvage_result"
 		],
+		"linked_types_by_prefix": {
+			"/obj/item/ammo_casing": [
+				"projectile_type"
+			],
+			"/obj/item/natural/clay": [
+				"cooked_type"
+			]
+		},
+		"typed_fills": {
+			"/obj/item/quiver": "rogue_quiver_fill"
+		},
 		"anvil_recipes": {
 			"root": "/datum/anvil_recipe",
 			"file": "modular_redtard/crafting/ported/anvil_recipes.dm",
@@ -1581,7 +1692,8 @@
 			"/obj/item/book/rogue/naledi1",
 			"/obj/item/book/rogue/naledi2",
 			"/obj/item/book/rogue/naledi3",
-			"/obj/item/book/rogue/naledi4"
+			"/obj/item/book/rogue/naledi4",
+			"/obj/item/ammo_casing/caseless/rogue/sling_bullet"
 		],
 		"bake": {
 			"manifest": "modular_redtard/rockhill/onmob_bake.json",

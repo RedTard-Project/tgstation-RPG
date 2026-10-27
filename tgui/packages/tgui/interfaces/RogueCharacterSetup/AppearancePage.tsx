@@ -12,8 +12,8 @@ import { ProfilePage } from './ProfilePage';
 import { useTr } from './strings';
 import type { SetupData } from './types';
 
-/** Shown on the Ancestry picker of the Identity page instead. */
-const ANCESTRY_KEYS = ['skin_tone', 'feature_mcolor'];
+/** Shown on the Identity page instead: the skin and body colour on its Ancestry picker, the body type by the pronouns. */
+const ANCESTRY_KEYS = ['skin_tone', 'feature_mcolor', 'body_type'];
 
 export function AppearancePage() {
   const { data } = useBackend<SetupData>();

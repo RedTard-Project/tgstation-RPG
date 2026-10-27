@@ -7,8 +7,9 @@
 
 /// The preferences the menu shows, by savefile key, in TG's priority order (species before the features that follow
 /// it). Character preferences: the appearance categories, the name, species, gender, age and the module's own
-/// non-contextual texts (rogue_*), if some playable species has them; player preferences: all of them, the settings page
-/// (it groups them by the category of TG's game preferences page).
+/// non-contextual preferences (rogue_*: texts, heritage, homeland, food and drink, combat music), if some playable
+/// species has them; player preferences: all of them, the settings page (it groups them by the category of TG's game
+/// preferences page).
 /proc/rogue_charsetup_shown_preferences()
 	var/static/list/shown
 	if(shown)
@@ -50,16 +51,23 @@
 	return FALSE
 
 /// TG's constant data of the shown preferences, by savefile key: choices, icon classes of TG's preferences spritesheet,
-/// names, limits. TG's feature components read it as their serverData.
+/// names, limits. TG's feature components read it as their serverData. The species, the homeland, the food and drink
+/// and the combat music have catalogs of their own (the culinary choices are hundreds of foods twice over).
 /proc/rogue_charsetup_feature_catalog()
 	var/static/list/catalog
 	if(catalog)
 		return catalog
 	catalog = list()
+	var/static/list/own_catalogs = typecacheof(list(
+		/datum/preference/choiced/species,
+		/datum/preference/choiced/rogue_homeland,
+		/datum/preference/choiced/rogue_culinary,
+		/datum/preference/choiced/rogue_combat_music,
+	))
 	var/list/shown = rogue_charsetup_shown_preferences()
 	for(var/key in shown)
 		var/datum/preference/preference = shown[key]
-		if(istype(preference, /datum/preference/choiced/species))
+		if(is_type_in_typecache(preference, own_catalogs))
 			continue
 		var/data = preference.compile_constant_data()
 		if(!isnull(data))

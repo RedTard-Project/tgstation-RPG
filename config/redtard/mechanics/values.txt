@@ -1005,6 +1005,12 @@ library_player_book_chance_max = 90
 # Percent chance that a book of a random bookcase is a book crafting kit instead (Ratwood).
 library_book_kit_chance = 0.1
 
+# Reading skill experience an illiterate person gains trying to read a book, at most once a second (Ratwood book read()).
+library_read_xp_book = 4
+
+# Reading skill experience an illiterate person gains trying to read a written sheet or a manuscript (Ratwood paper read()).
+library_read_xp_paper = 2
+
 # Damage of a skeleton archer's arrow (Ratwood /obj/projectile/bullet/reusable/arrow/ancient).
 pve_arrow_damage = 10
 
@@ -1304,6 +1310,21 @@ npc_special_opener = 1
 
 # Least intelligence for an NPC to use its weapon's special (Azure Peak HUMAN_NPC_MIN_INT_FOR_TACTICS).
 npc_special_min_int = 8
+
+# Deciseconds of baking that fire a raw clay piece in an oven (Ratwood cooktime 30 SECONDS); an oven bakes at half speed, faster with the cooking skill of whoever last used it.
+clay_fire_time = 300
+
+# Deciseconds of baking that fire refined clay (Ratwood 1 MINUTES).
+clay_fire_time_refined = 600
+
+# Deciseconds of baking that fire a raw porcelain piece (Ratwood 45 SECONDS).
+clay_fire_time_porcelain = 450
+
+# Deciseconds after its firing that fired pottery may stay in a burning oven before the heat cracks it (Ratwood 1 MINUTES).
+clay_crack_delay = 600
+
+# Percent chance every two seconds that fired pottery left in a burning oven past that time shatters (Ratwood: every oven tick).
+clay_crack_chance = 30
 
 # Hefty Swing: cooldown. Times are in deciseconds.
 special_axe_swing_cooldown = 250

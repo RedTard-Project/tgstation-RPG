@@ -3,11 +3,14 @@
 /// players in the lobby queue for it, and for a role in it, from the migrant panel (the Migrants button of the menu);
 /// once it has formed, the queued players arrive together at its landmark, each as their role, dressed and picking the
 /// role's class. A wave whose required roles stay empty scatters and cools down. The waves and roles are Ratwood's,
-/// ported (rockhill/ported/migrants.dm). Not ported: triumphs (pledging to a wave, the triumph track), antagonist
-/// roles, the event track, races and ages of roles, roles' own after_spawn.
+/// ported (rockhill/ported/migrants.dm). Players in the lobby pledge triumphs to a wave (Ratwood
+/// contribute_triumph_to_wave()): each pledged triumph makes it roll likelier, its pledgers take their roles first, and a
+/// wave pledged up to its threshold forms on the triumph track at once; when a wave of the triumph track scatters, its
+/// pledges come back. Not ported: antagonist roles, the event track, races and ages of roles, roles' own after_spawn.
 
 #define ROGUE_MIGRANT_TRACK_REGULAR "regular"
 #define ROGUE_MIGRANT_TRACK_SPECIAL "special"
+#define ROGUE_MIGRANT_TRACK_TRIUMPH "triumph"
 #define ROGUE_MIGRANT_ROLE(role_type) GLOB.rogue_migrant_roles[role_type]
 #define ROGUE_MIGRANT_WAVE(wave_type) GLOB.rogue_migrant_waves[wave_type]
 
@@ -65,6 +68,20 @@ GLOBAL_LIST_EMPTY(rogue_migrant_spawns)
 	/// The wave whose spawn count this one shares for max_spawns.
 	var/shared_wave_type
 	var/spawn_on_location = TRUE
+	/// Triumphs pledged to the wave, by ckey.
+	var/list/triumph_contributions = list()
+	var/triumph_total = 0
+	/// Pledged up to this, the wave forms next on the triumph track.
+	var/triumph_threshold = 25
+	/// Whether the pledges are spent once the wave arrives.
+	var/reset_contributions_on_spawn = TRUE
+
+/// Ratwood's thresholds of the two default waves.
+/datum/rogue_migrant_wave/pilgrim
+	triumph_threshold = 10
+
+/datum/rogue_migrant_wave/adventurer
+	triumph_threshold = 15
 
 /datum/rogue_migrant_wave/proc/role_types()
 	. = list()
@@ -90,6 +107,8 @@ GLOBAL_LIST_EMPTY(rogue_migrant_spawns)
 	config_tag = "ROCKHILL_MIGRANT"
 	outfit = /datum/outfit/job/roguetown/rockhill_migrant
 	job_flags = ROCKHILL_JOB_FLAGS & ~JOB_NEW_PLAYER_JOINABLE
+	/// Anyone may come with a wave (Ratwood's migrant job: min_pq -999).
+	rogue_min_pq = null
 	departments_list = list(
 		/datum/job_department/rockhill_wanderers,
 		)
@@ -138,11 +157,15 @@ SUBSYSTEM_DEF(rogue_migrants)
 	var/list/wave_cooldown = list()
 	/// Wave type -> how many times it arrived.
 	var/list/spawned_waves = list()
+	/// Ckey -> wave type -> triumphs that player pledged to the wave (Ratwood global_triumph_contributions).
+	var/list/pledges = list()
 
 /datum/controller/subsystem/rogue_migrants/Initialize()
 	if(!rogue_lobby_enabled())
 		can_fire = FALSE
 		return SS_INIT_NO_NEED
+	// The round's triumphs and PQ (triumphs/round.dm) live on medieval maps, as this subsystem does.
+	GLOB.rogue_round_rewards.start()
 	return SS_INIT_SUCCESS
 
 /datum/controller/subsystem/rogue_migrants/fire(resumed)
@@ -151,7 +174,35 @@ SUBSYSTEM_DEF(rogue_migrants)
 		track_next_roll[ROGUE_MIGRANT_TRACK_SPECIAL] = world.time + special_roll_interval
 	process_track(ROGUE_MIGRANT_TRACK_REGULAR, regular_roll_interval, FALSE)
 	process_track(ROGUE_MIGRANT_TRACK_SPECIAL, special_roll_interval, TRUE)
+	process_triumph_track()
 	update_panels()
+
+/// A wave pledged up to its threshold forms at once on a track of its own (Ratwood process_triumph_track()).
+/datum/controller/subsystem/rogue_migrants/proc/process_triumph_track()
+	if(track_forming[ROGUE_MIGRANT_TRACK_TRIUMPH])
+		if(world.time >= track_arrival[ROGUE_MIGRANT_TRACK_TRIUMPH])
+			resolve_forming_wave(ROGUE_MIGRANT_TRACK_TRIUMPH)
+		return
+	var/wave_type = pledged_wave()
+	if(wave_type)
+		begin_forming(ROGUE_MIGRANT_TRACK_TRIUMPH, wave_type)
+		announce_wave(wave_type)
+
+/// The eligible wave pledged furthest past its threshold, if any (Ratwood get_maxed_wave()).
+/datum/controller/subsystem/rogue_migrants/proc/pledged_wave()
+	var/best_total = 0
+	for(var/wave_type in GLOB.rogue_migrant_waves)
+		var/datum/rogue_migrant_wave/wave = ROGUE_MIGRANT_WAVE(wave_type)
+		if(wave.triumph_total < wave.triumph_threshold || wave.triumph_total <= best_total || !wave_eligible(wave) || is_forming(wave_type))
+			continue
+		best_total = wave.triumph_total
+		. = wave_type
+
+/datum/controller/subsystem/rogue_migrants/proc/is_forming(wave_type)
+	for(var/track in track_forming)
+		if(track_forming[track] == wave_type)
+			return TRUE
+	return FALSE
 
 /datum/controller/subsystem/rogue_migrants/proc/process_track(track, roll_interval, announce)
 	if(track_forming[track])
@@ -198,6 +249,8 @@ SUBSYSTEM_DEF(rogue_migrants)
 	for(var/client/client as anything in wave_candidates(wave_type))
 		to_chat(client, span_boldwarning("The wave you queued for, [wave.name], failed to gather enough people and scattered into the mist. You have left the queue."))
 		client.prefs.rogue_migrant().clear_queue(silent = TRUE)
+	if(track == ROGUE_MIGRANT_TRACK_TRIUMPH)
+		refund_pledges(wave)
 
 /datum/controller/subsystem/rogue_migrants/proc/try_spawn_wave(datum/rogue_migrant_wave/wave, forced = FALSE)
 	var/list/candidates = shuffle(wave_candidates(wave.type))
@@ -223,6 +276,8 @@ SUBSYSTEM_DEF(rogue_migrants)
 
 	var/counted_type = wave.shared_wave_type || wave.type
 	spawned_waves[counted_type] += 1
+	if(wave.reset_contributions_on_spawn)
+		clear_pledges(wave)
 	message_admins("MIGRANTS: Spawned wave: [wave.name] (players: [length(assignments)]) at [arrival ? ADMIN_VERBOSEJMP(arrival) : "the latejoin points"]")
 	return TRUE
 
@@ -234,7 +289,7 @@ SUBSYSTEM_DEF(rogue_migrants)
 		for(var/i in 1 to wave.required_roles[role_type])
 			required += new /datum/rogue_migrant_assignment(role_type)
 	for(var/datum/rogue_migrant_assignment/assignment as anything in shuffle(required))
-		fill_assignment(assignment, candidates, picked, prefer = TRUE)
+		fill_assignment(assignment, candidates, picked, prefer = TRUE, wave_type = wave.type)
 		if(!assignment.client)
 			fill_assignment(assignment, candidates, picked, prefer = FALSE)
 		if(!assignment.client)
@@ -246,7 +301,7 @@ SUBSYSTEM_DEF(rogue_migrants)
 			optional += new /datum/rogue_migrant_assignment(role_type)
 	optional = shuffle(optional)
 	for(var/datum/rogue_migrant_assignment/assignment as anything in optional)
-		fill_assignment(assignment, candidates, picked, prefer = TRUE)
+		fill_assignment(assignment, candidates, picked, prefer = TRUE, wave_type = wave.type)
 	var/list/filled = list()
 	for(var/datum/rogue_migrant_assignment/assignment as anything in optional)
 		if(!assignment.client)
@@ -257,16 +312,35 @@ SUBSYSTEM_DEF(rogue_migrants)
 		return null
 	return required + filled
 
-/datum/controller/subsystem/rogue_migrants/proc/fill_assignment(datum/rogue_migrant_assignment/assignment, list/candidates, list/picked, prefer)
-	for(var/client/client as anything in candidates)
-		if(prefer && client.prefs.rogue_migrant().queued_role != assignment.role_type)
-			continue
+/// Gives the slot to the first candidate who can take it; preferring, only to those who chose the role, the ones who
+/// pledged most triumphs to the wave first (Ratwood get_priority_players()).
+/datum/controller/subsystem/rogue_migrants/proc/fill_assignment(datum/rogue_migrant_assignment/assignment, list/candidates, list/picked, prefer, wave_type)
+	var/list/order = prefer ? pledge_order(candidates, assignment.role_type, wave_type) : candidates.Copy()
+	for(var/client/client as anything in order)
 		if(!can_be_role(client, assignment.role_type))
 			continue
 		assignment.client = client
 		candidates -= client
 		picked += client
 		return
+
+/// The candidates who chose the role: those who pledged to the wave, most first, then the rest in their shuffled order.
+/datum/controller/subsystem/rogue_migrants/proc/pledge_order(list/candidates, role_type, wave_type)
+	var/list/pledged = list()
+	var/list/unpledged = list()
+	for(var/client/client as anything in candidates)
+		if(client.prefs.rogue_migrant().queued_role != role_type)
+			continue
+		var/amount = pledged_by(client.ckey, wave_type)
+		if(amount > 0)
+			pledged[client] = amount
+		else
+			unpledged += client
+	sortTim(pledged, GLOBAL_PROC_REF(cmp_numeric_dsc), associative = TRUE)
+	. = list()
+	for(var/client/client as anything in pledged)
+		. += client
+	. += unpledged
 
 /datum/controller/subsystem/rogue_migrants/proc/can_be_role(client/player, role_type)
 	var/datum/rogue_migrant_role/role = ROGUE_MIGRANT_ROLE(role_type)
@@ -355,10 +429,61 @@ SUBSYSTEM_DEF(rogue_migrants)
 			continue
 		if(wave_cooldown[wave_type] && world.time < wave_cooldown[wave_type])
 			continue
-		weighted[wave_type] = max(wave.weight, 1)
+		weighted[wave_type] = triumph_weight(wave)
 	if(!length(weighted))
 		return null
 	return pick_weight(weighted)
+
+/// A wave's roll weight with its pledged triumphs (Ratwood calculate_triumph_weight()).
+/datum/controller/subsystem/rogue_migrants/proc/triumph_weight(datum/rogue_migrant_wave/wave)
+	return max(round(wave.weight + wave.triumph_total * rogue_value("triumph_wave_weight")), 1)
+
+/datum/controller/subsystem/rogue_migrants/proc/pledged_by(ckey, wave_type)
+	var/list/by_wave = pledges[ckey]
+	return by_wave ? (by_wave[wave_type] || 0) : 0
+
+/// A lobby player pledges triumphs to a wave (Ratwood contribute_triumph_to_wave()).
+/datum/controller/subsystem/rogue_migrants/proc/pledge(client/player, wave_type, amount)
+	var/datum/rogue_migrant_wave/wave = ROGUE_MIGRANT_WAVE(wave_type)
+	if(!player?.ckey || !wave || wave.hidden || !wave.can_roll || wave.is_raid || amount < 1)
+		return FALSE
+	var/have = rogue_get_triumphs(player.ckey)
+	if(have < amount)
+		to_chat(player, span_warning("You don't have enough triumph! You have [have], need [amount]."))
+		return FALSE
+	rogue_adjust_triumphs(player.ckey, -amount)
+	wave.triumph_contributions[player.ckey] += amount
+	wave.triumph_total += amount
+	var/list/by_wave = pledges[player.ckey] || list()
+	by_wave[wave_type] += amount
+	pledges[player.ckey] = by_wave
+	to_chat(player, span_notice("You've contributed [amount] triumph to '[wave.name]'. Total: [wave.triumph_total]/[wave.triumph_threshold]"))
+	log_game("Migrants: [key_name(player)] pledged [amount] triumph to [wave_type].")
+	if(wave.triumph_total >= wave.triumph_threshold)
+		message_admins("TRIUMPH: Wave '[wave.name]' has reached its triumph threshold ([wave.triumph_total]/[wave.triumph_threshold]) and will be prioritized!")
+		log_game("Migrants: wave [wave_type] reached its triumph threshold.")
+	update_panels()
+	return TRUE
+
+/// The wave arrived: its pledges are spent (Ratwood reset_wave_contributions()).
+/datum/controller/subsystem/rogue_migrants/proc/clear_pledges(datum/rogue_migrant_wave/wave)
+	wave.triumph_contributions = list()
+	wave.triumph_total = 0
+	for(var/ckey in pledges)
+		var/list/by_wave = pledges[ckey]
+		by_wave -= wave.type
+
+/// The wave of the triumph track scattered: its pledges go back (Ratwood refund_wave_contributions()).
+/datum/controller/subsystem/rogue_migrants/proc/refund_pledges(datum/rogue_migrant_wave/wave)
+	for(var/ckey in wave.triumph_contributions)
+		var/amount = wave.triumph_contributions[ckey]
+		if(amount <= 0)
+			continue
+		rogue_adjust_triumphs(ckey, amount)
+		var/client/player = GLOB.directory[ckey]
+		if(player)
+			to_chat(player, span_nicegreen("[wave.name] failed to arrive - your [amount] pledged triumph has been refunded."))
+	clear_pledges(wave)
 
 /// Tells the lobby that a special wave is forming, with a link to the panel.
 /datum/controller/subsystem/rogue_migrants/proc/announce_wave(wave_type)
@@ -501,9 +626,10 @@ ADMIN_VERB(rogue_force_migrant_wave, R_ADMIN, "Force Migrant Wave", "Start a mig
 		"queued_role" = queued_role ? "[queued_role]" : null,
 		"next_regular_at" = SSrogue_migrants.track_next_roll[ROGUE_MIGRANT_TRACK_REGULAR],
 		"next_special_at" = SSrogue_migrants.track_next_roll[ROGUE_MIGRANT_TRACK_SPECIAL],
+		"player_triumph" = rogue_get_triumphs(prefs.parent?.ckey),
 	)
 	var/list/forming = list()
-	for(var/track in list(ROGUE_MIGRANT_TRACK_REGULAR, ROGUE_MIGRANT_TRACK_SPECIAL))
+	for(var/track in list(ROGUE_MIGRANT_TRACK_REGULAR, ROGUE_MIGRANT_TRACK_SPECIAL, ROGUE_MIGRANT_TRACK_TRIUMPH))
 		var/wave_type = SSrogue_migrants.track_forming[track]
 		if(!wave_type)
 			continue
@@ -525,7 +651,8 @@ ADMIN_VERB(rogue_force_migrant_wave, R_ADMIN, "Force Migrant Wave", "Start a mig
 	for(var/wave_type in GLOB.rogue_migrant_waves)
 		var/datum/rogue_migrant_wave/wave = ROGUE_MIGRANT_WAVE(wave_type)
 		if(!wave.hidden && wave.can_roll && !wave.is_raid)
-			track_weight[wave.track] += max(wave.weight, 1)
+			track_weight[wave.track] += SSrogue_migrants.triumph_weight(wave)
+	var/ckey = prefs.parent?.ckey
 	var/list/waves = list()
 	for(var/wave_type in GLOB.rogue_migrant_waves)
 		var/datum/rogue_migrant_wave/wave = ROGUE_MIGRANT_WAVE(wave_type)
@@ -538,11 +665,14 @@ ADMIN_VERB(rogue_force_migrant_wave, R_ADMIN, "Force Migrant Wave", "Start a mig
 			"ref" = "[wave_type]",
 			"name" = wave.name,
 			"track" = wave.track,
-			"roll_chance" = track_weight[wave.track] ? round(max(wave.weight, 1) / track_weight[wave.track] * 100, 0.1) : 0,
+			"roll_chance" = track_weight[wave.track] ? round(SSrogue_migrants.triumph_weight(wave) / track_weight[wave.track] * 100, 0.1) : 0,
 			"maxed" = SSrogue_migrants.wave_maxed(wave),
 			"locked_until" = locked_until,
 			"min_optional_fills" = wave.min_optional_fills,
 			"roles" = role_rows(wave),
+			"triumph_total" = wave.triumph_total,
+			"triumph_threshold" = wave.triumph_threshold,
+			"my_contribution" = (ckey && wave.triumph_contributions[ckey]) || 0,
 		))
 	data["waves"] = waves
 	return data
@@ -591,8 +721,30 @@ ADMIN_VERB(rogue_force_migrant_wave, R_ADMIN, "Force Migrant Wave", "Start a mig
 		if("clear_queue")
 			clear_queue()
 			return TRUE
+		if("pledge")
+			var/wave_type = text2path(params["wave"])
+			if(wave_type in GLOB.rogue_migrant_waves)
+				pledge_prompt(wave_type)
+			return TRUE
+
+/// Asks how many triumphs to pledge to the wave (Ratwood handle_triumph_contribution()).
+/datum/rogue_migrant_pref/proc/pledge_prompt(wave_type)
+	var/client/player = prefs.parent
+	var/datum/rogue_migrant_wave/wave = ROGUE_MIGRANT_WAVE(wave_type)
+	if(!player || !wave || wave.hidden || !wave.can_roll || wave.is_raid)
+		return
+	var/have = rogue_get_triumphs(player.ckey)
+	if(have <= 0)
+		to_chat(player, span_warning("You don't have any triumph to contribute!"))
+		return
+	var/most = min(have, rogue_value("triumph_wave_max_pledge"))
+	var/amount = tgui_input_number(player.mob, "Contribute triumph to '[wave.name]'?\n\nYour triumph: [have]\nYour contribution: [wave.triumph_contributions[player.ckey] || 0]\nWave total: [wave.triumph_total]/[wave.triumph_threshold]", "Triumph Contribution", 1, most, 1)
+	if(!amount || QDELETED(src) || !prefs.parent)
+		return
+	SSrogue_migrants.pledge(prefs.parent, wave_type, min(amount, most))
 
 #undef ROGUE_MIGRANT_TRACK_REGULAR
 #undef ROGUE_MIGRANT_TRACK_SPECIAL
+#undef ROGUE_MIGRANT_TRACK_TRIUMPH
 #undef ROGUE_MIGRANT_ROLE
 #undef ROGUE_MIGRANT_WAVE

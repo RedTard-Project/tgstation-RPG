@@ -30,12 +30,13 @@
 	/// What the dish ready to cook will smell of once cooked (Ratwood pies set cooked_smell when roofed).
 	var/ready_smell
 
-/// What to add at a step, for messages.
+/// What to add at a step, for messages: the name alone, as Ratwood shows it ("Next step: Add water."); a reagent's amount
+/// goes into the message that needs it, so the name stays a plain noun the translation can decline.
 /datum/rogue_food_recipe/proc/step_name(step)
 	var/requirement = ingredients[step]
 	if(ispath(requirement, /datum/reagent))
 		var/datum/reagent/reagent = requirement
-		return "[ingredients[requirement]] units of [initial(reagent.name)]"
+		return initial(reagent.name)
 	var/list/names = list()
 	for(var/atom/option as anything in (islist(requirement) ? requirement : list(requirement)))
 		names |= initial(option.name)

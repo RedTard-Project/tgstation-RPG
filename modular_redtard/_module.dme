@@ -216,6 +216,9 @@
 #include "library\books.dm"
 #include "library\writing.dm"
 #include "library\bookcases.dm"
+#include "library\literacy.dm"
+#include "library\manuals.dm"
+#include "library\paintings.dm"
 #include "library\press.dm"
 #include "library\admin.dm"
 // Stage 8: triumphs (triumphs/)
@@ -229,6 +232,11 @@
 #include "charsetup\catalog.dm"
 #include "charsetup\character_menu.dm"
 #include "charsetup\entry_points.dm"
+#include "charsetup\combat_music.dm"
+#include "charsetup\culinary.dm"
+// Homelands (homelands/): Ratwood's origins
+#include "homelands\homelands.dm"
+#include "homelands\charsetup.dm"
 #include "ai\human_npc.dm"
 #include "ai\npc_specials.dm"
 #include "ai\rockhill_ai.dm"
