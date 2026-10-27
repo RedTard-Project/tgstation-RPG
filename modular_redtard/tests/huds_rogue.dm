@@ -229,8 +229,8 @@
 	TEST_ASSERT_EQUAL(length(strong.overlays), 1, "The picked alt intent is not highlighted")
 	TEST_ASSERT_EQUAL(length(alt_button.overlays), 1, "The alt intent button does not show the picked intent")
 	click_as(dummy, strong)
-	TEST_ASSERT_NULL(dummy.rogue_rmb_intent, "Clicking the picked alt intent again did not clear it")
-	TEST_ASSERT_EQUAL(length(strong.overlays), 0, "The cleared alt intent stayed highlighted")
+	TEST_ASSERT(dummy.rogue_rmb_is(/datum/rogue_rmb_intent/strong), "Clicking the picked alt intent again cleared it; one is always picked")
+	TEST_ASSERT_EQUAL(length(strong.overlays), 1, "The kept alt intent lost its highlight")
 
 	var/atom/movable/screen/combattoggle/rogue/combat = hud.screen_objects[HUD_MOB_INTENTS]
 	TEST_ASSERT(!dummy.combat_mode, "Dummy starts in combat mode")

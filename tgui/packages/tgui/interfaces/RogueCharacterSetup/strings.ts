@@ -29,6 +29,9 @@ const RU: Record<string, string> = {
   Appearance: 'Внешность',
   Gameplay: 'Геймплей',
   'Character Profile': 'Профиль персонажа',
+  'Appearance & Profile': 'Внешность и профиль',
+  'Hair, underwear and the rest of the look are on the buttons beside the looking glass.':
+    'Причёска, бельё и прочий облик — на кнопках справа от зеркала.',
   Settings: 'Настройки',
   'Looking Glass': 'Зеркало',
   Rotate: 'Поворот',

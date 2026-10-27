@@ -59,8 +59,11 @@
 	if(fighter.client)
 		on_client_login(fighter, fighter.client)
 	fighter.rogue_enable_cursors(TRUE)
-	// Ratwood's living start with the first alt intent picked (swap_rmb_intent(num = 1)), feint, and always keep one.
-	fighter.rogue_rmb_intent ||= GLOB.rogue_rmb_intents[/datum/rogue_rmb_intent/feint]
+	// As in Ratwood one alt intent is always picked; ours start on aimed (Ratwood's first, swap_rmb_intent(num = 1), is feint).
+	// The signal redraws a HUD built before this, which would otherwise show an empty alt intent window.
+	if(!fighter.rogue_rmb_intent)
+		fighter.rogue_rmb_intent = GLOB.rogue_rmb_intents[/datum/rogue_rmb_intent/aimed]
+		SEND_SIGNAL(fighter, COMSIG_MOB_ROGUE_RMB_CHANGED)
 
 /datum/element/rogue_combat/Detach(mob/living/carbon/human/source)
 	UnregisterSignal(source, list(

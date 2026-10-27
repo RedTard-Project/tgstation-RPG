@@ -247,6 +247,8 @@ GLOBAL_LIST_INIT(rogue_rmb_intents, rogue_init_rmb_intents())
 	var/mob/owner = hud_owner?.mymob
 	if(owner)
 		RegisterSignal(owner, COMSIG_MOB_ROGUE_RMB_CHANGED, PROC_REF(refresh))
+		// A HUD built after the alt intent was picked shows it from the start.
+		update_appearance()
 
 /atom/movable/screen/rogue/rmb_intent/proc/refresh()
 	SIGNAL_HANDLER
