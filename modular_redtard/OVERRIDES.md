@@ -17,6 +17,8 @@
 
 Сборка модуля (`build/build_modular.ts`, `MODULE_DEFINES`) передаёт компилятору `MINIMAL_CENTCOM`: `_maps/_basemap.dm` ТГ тогда компилирует `CentCom_minimal.dmm` вместо полного CentCom. Полный CentCom для modern-карт грузится в рантайме (`maps/centcom.dm`, ступень 5). При мерже проверить, что define по-прежнему называется так и что `CentCom_minimal.dmm` не удалён.
 
+Сборка модуля подключает `modular_redtard/maps/z_depth.dm` во временной копии `tgstation.dme` сразу после строки `#include "code\__DEFINES\layers.dm"` (`EARLY_DEFINES_INCLUDE` в `build/build_modular.ts`): файл переопределяет `MAX_EXPECTED_Z_DEPTH` до того, как его читает код ТГ. Если строки нет, сборка останавливается с ошибкой. Подключение того же файла из `_module.dme` идёт позже, DM пропускает его как повтор. При мерже проверить, что `layers.dm` по-прежнему подключается этой строкой.
+
 ## Ступень 1 — новый файл вне папки модуля
 
 | Файл | Зачем | При мерже проверить |
@@ -49,6 +51,8 @@
 | `/mob/living/update_stamina_hud(shown_stamina_loss)` | `hud/rogue_hud_bridges.dm` | `code/modules/mob/living/living.dm` | Если под `HUD_MOB_STAMINA` лежит `/atom/movable/screen/stamina/rogue`: шкала Азура. Иначе `..()`. | Формулу порога (`maxHealth - crit_threshold`) |
 | `/datum/controller/subsystem/processing/station/Initialize()` | `maps/medieval_quiet.dm` | `code/controllers/subsystem/processing/station.dm` | На medieval-карте до `..()` ставит диктора `/datum/centcom_announcer/rogue` (оригинал создаёт `new announcer()` после черт) | Что `announcer` по-прежнему тип до `Initialize()` и что черты станции могут его подменить только в `SetupTraits()` |
 | `/datum/controller/subsystem/processing/station/SetupTraits()` | `maps/medieval_quiet.dm` | там же | На medieval-карте — без черт станции, иначе `..()` | Что черты выбираются только здесь |
+| `/area/space/add_base_lighting()` | `maps/medieval_quiet.dm` | `code/modules/lighting/lighting_area.dm` | На medieval-карте ставит флаг `rogue_starlight_centcom_only` на время `..()`: звёздный свет космоса раздаётся только на уровнях ЦентКома (там титульная плитка), остальные сотни тысяч клеток пустого космоса на служебных уровнях остаются без света; иначе `..()` | Что `add_base_lighting()` по-прежнему перебирает клетки через `get_turfs_by_zlevel()` |
+| `/area/space/get_turfs_by_zlevel(zlevel)` | `maps/medieval_quiet.dm` | `code/game/area/areas.dm` | Пока стоит флаг выше и уровень не ЦентКома — пустой список, иначе `..()` | — |
 | `/datum/controller/subsystem/events/Initialize()` | `maps/medieval_quiet.dm` | `code/controllers/subsystem/events.dm` | `..()`, затем на medieval-карте `can_fire = FALSE` (случайные события не планируются) | Что события запускает только `fire()` → `checkEvent()` |
 | `/datum/controller/subsystem/dynamic/select_roundstart_antagonists()` | `maps/medieval_quiet.dm` | `code/controllers/subsystem/dynamic/dynamic.dm` | На medieval-карте: `load_config()`, тир Greenshift (`set_tier()`), `force_extended()`, `antag_events_enabled = FALSE`, `can_fire = FALSE`, `TRUE` — без пробного распределения ролей и антагонистов. Иначе `..()` | Что `SSticker.setup()` по-прежнему зовёт эту процедуру, что `set_tier()` не приватная и что латджойн смотрит `rulesets_to_spawn[LATEJOIN]` |
 | `/datum/communciations_controller/queue_roundstart_report()` | `maps/medieval_quiet.dm` | `code/datums/communications.dm` | На medieval-карте доклад ЦентКома не ставится в очередь | Имя типа (`communciations`, опечатка ТГ) |
@@ -159,7 +163,7 @@
 | `/mob/living/carbon/human/hud_type` | `hud/human_hud_switch.dm` | `/datum/hud/human` (`human_defines.dm`) | `/datum/hud/rogue/human` |
 | `/atom/movable/screen/fov_blocker/screen_loc` | `hud/rogue_hud_bridges.dm` | `"BOTTOM,LEFT"` (`living_fov.dm`) | `"SOUTH,WEST"` (`rogueui_fov_blocker`): маска FOV масштабируется под вид (`fov_handler.update_fov_size()`), поэтому якорится к углу вида, а не всего экрана; при расширении экрана с `BOTTOM,LEFT` она съезжала от персонажа. При мерже проверить, что `update_fov_size()` по-прежнему считает сдвиг от размера вида |
 | `/datum/plane_master_group/main/relay_loc` | `hud/rogue_hud_bridges.dm` | `"1,1"` (`plane_master_group.dm`) | `"SCREEN_SOUTHWEST"`: копии плейнов якорятся в угол плейна, а не вида; без бордюра это тот же тайл. Без этого левый HUD сдвигает весь мир вправо |
-| `/datum/preference/numeric/multiz_performance/maximum` | `maps/z_depth.dm` | `MAX_EXPECTED_Z_DEPTH - 1` = 2 (`multiz_performance.dm`) | `REDTARD_MAX_Z_DEPTH - 1` = 4: настройка глубины отрисовки покрывает все 5 уровней Рокхилла. Сама отрисовка от неё не зависит (смещения плейнов считаются по картам); при мерже проверить, что значение по-прежнему читает `plane_master_group.dm` как предел видимых уровней |
+| `MAX_EXPECTED_Z_DEPTH` (дефайн ТГ) | `maps/z_depth.dm` | `3` (`code/__DEFINES/layers.dm`) | `5`: обёртка сборки подключает файл сразу после `layers.dm` (см. «Сборка»), поэтому код ТГ компилируется с пятью уровнями — нет `stack_trace` о глубине при загрузке Рокхилла, а настройка «Multi-Z Performance» (`MAX_EXPECTED_Z_DEPTH - 1`) сама доходит до всех пяти уровней. При мерже проверить, что дефайн по-прежнему называется так и что его читают только `mapping.dm` и `multiz_performance.dm` |
 
 ## Ступень 4 — дополнение (пул карт)
 

@@ -295,7 +295,7 @@
 #define ROGUE_JUMP_RUN_STAMINA rogue_value("jump_run_stamina")
 #define ROGUE_JUMP_WALK_OFFBALANCE rogue_value("jump_walk_offbalance")
 #define ROGUE_JUMP_RUN_OFFBALANCE rogue_value("jump_run_offbalance")
-#define ROGUE_BITE_DAMAGE rogue_value("bite_damage")
+#define ROGUE_BITE_DAMAGE rogue_value("beast_bite_damage")
 #define ROGUE_STEAL_TIME rogue_value("steal_time")
 #define ROGUE_STEAL_UNAWARE_FACTOR rogue_value("steal_unaware_factor")
 #define ROGUE_STEAL_FUMBLE rogue_value("steal_fumble")

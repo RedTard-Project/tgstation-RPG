@@ -117,8 +117,8 @@ jump_walk_offbalance = 20
 # Deciseconds off balance after a jump at a run.
 jump_run_offbalance = 30
 
-# Damage of a bite on something that is not a humanoid.
-bite_damage = 5
+# Damage of a bite on something that is not a humanoid (a humanoid's bite is the bite_damage formula).
+beast_bite_damage = 5
 
 # Deciseconds a pickpocketing attempt takes.
 steal_time = 10

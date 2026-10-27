@@ -5,6 +5,9 @@ import { prepareRockhill, printMapFailure, runBootstrapPython } from './prepare_
 const UPSTREAM_DME = 'tgstation.dme';
 const MODULE_INCLUDE = '#include "modular_redtard\\_module.dme"';
 const END_INCLUDE = '// END_INCLUDE';
+/// TG's defines the module changes before TG's code reads them (modular_redtard/maps/z_depth.dm): included right after them.
+const LAYERS_INCLUDE = '#include "code\\__DEFINES\\layers.dm"';
+const EARLY_DEFINES_INCLUDE = '#include "modular_redtard\\maps\\z_depth.dm"';
 const FINAL_DMB = 'tgstation.dmb';
 const FINAL_RSC = 'tgstation.rsc';
 const BUILD_BASE = 'tgstation.redtard.m';
@@ -155,9 +158,15 @@ async function compileModular(baseName: string, defines: string[], options: Buil
   if (!dme.includes(END_INCLUDE)) {
     throw new Error(`${UPSTREAM_DME} has no ${END_INCLUDE} marker`);
   }
-  const withModule = dme.includes(MODULE_INCLUDE)
+  if (!dme.includes(LAYERS_INCLUDE)) {
+    throw new Error(`${UPSTREAM_DME} has no ${LAYERS_INCLUDE}`);
+  }
+  const withEarlyDefines = dme.includes(EARLY_DEFINES_INCLUDE)
     ? dme
-    : dme.replace(END_INCLUDE, `${MODULE_INCLUDE}\n${END_INCLUDE}`);
+    : dme.replace(LAYERS_INCLUDE, `${LAYERS_INCLUDE}\n${EARLY_DEFINES_INCLUDE}`);
+  const withModule = withEarlyDefines.includes(MODULE_INCLUDE)
+    ? withEarlyDefines
+    : withEarlyDefines.replace(END_INCLUDE, `${MODULE_INCLUDE}\n${END_INCLUDE}`);
   fs.writeFileSync(`${baseName}.dme`, withModule);
   try {
     await DreamMaker(`${baseName}.dme`, {

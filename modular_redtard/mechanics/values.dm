@@ -38,7 +38,7 @@ GLOBAL_LIST_INIT(rogue_value_definitions, list(
 	"jump_run_stamina" = list("45", "Stamina of a jump at a run."),
 	"jump_walk_offbalance" = list("20", "Deciseconds off balance after a jump at a walk."),
 	"jump_run_offbalance" = list("30", "Deciseconds off balance after a jump at a run."),
-	"bite_damage" = list("5", "Damage of a bite on something that is not a humanoid."),
+	"beast_bite_damage" = list("5", "Damage of a bite on something that is not a humanoid (a humanoid's bite is the bite_damage formula)."),
 	"steal_time" = list("10", "Deciseconds a pickpocketing attempt takes."),
 	"steal_unaware_factor" = list("0.35", "Share of perception an unaware victim rolls against a thief."),
 	"steal_fumble" = list("-6", "Margin below which a failed theft is noticed by everyone around."),

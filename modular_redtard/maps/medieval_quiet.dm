@@ -54,3 +54,23 @@
 	if(!rogue_station_events_enabled())
 		return
 	return ..()
+
+/area/space
+	/// Set while TG's add_base_lighting() runs on a medieval map: the turf walk then sees only CentCom's levels.
+	var/rogue_starlight_centcom_only = FALSE
+
+/// On medieval maps space keeps its starlight only on CentCom's levels, where the title screen stands. Elsewhere space
+/// only fills what the other levels leave empty: the world is 255×430 on every level and the dungeons and camps take a
+/// corner of theirs, hundreds of thousands of tiles nobody plays on. TG gives every one of them light while the area
+/// initialises, one loop long enough for BYOND to report an infinite one at every start.
+/area/space/add_base_lighting()
+	if(rogue_station_events_enabled())
+		return ..()
+	rogue_starlight_centcom_only = TRUE
+	. = ..()
+	rogue_starlight_centcom_only = FALSE
+
+/area/space/get_turfs_by_zlevel(zlevel)
+	if(rogue_starlight_centcom_only && !is_centcom_level(zlevel))
+		return list()
+	return ..()
