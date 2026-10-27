@@ -44,6 +44,9 @@
 	fire = 38
 	acid = 44
 
+/datum/armor/rockhill_f70_a0
+	fire = 70
+
 /datum/armor/rockhill_indestructible
 	fire = 50
 	acid = 50

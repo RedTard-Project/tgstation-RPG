@@ -3652,7 +3652,7 @@ def skin_tones(rw, species):
     while p and p not in SKIN_LISTS:
         p = rw.parent(p)
     tones = []
-    for name, token in re.findall(r'("(?:[^"\]|\.)*")\s*=\s*([A-Za-z0-9_"#]+)', '\n'.join(SKIN_LISTS.get(p, []))):
+    for name, token in re.findall(r'("[^"]*")\s*=\s*([A-Za-z0-9_"#]+)', '\n'.join(SKIN_LISTS.get(p, []))):
         colour = expand_define(token).strip('"').lstrip('#')
         if re.fullmatch(r'[0-9A-Fa-f]{6}', colour):
             tones.append((name, colour.upper()))
