@@ -5,9 +5,9 @@
 /// comes near, the frog swims, the bog troll lies in wait (no_target_hide) and springs out on whoever comes close.
 /// Every pastime gives way the moment the beast has someone to fight.
 ///
-/// Not ported: Vibelin's hunger meter (a meal sates for ROGUE_BEAST_MEAL_COOLDOWN instead), breeding, taming and pet
-/// commands, spider nests and webs, the mirespider's cocoons, ranged attacks and the special abilities (troll throws and
-/// slams, fiend, behemoth, colossus, glimmerwing, dryad), the minotaur's rage, the truffle pig's sniffing.
+/// Ratwood's hunger meter, breeding, taming, pet commands and the truffle pig's sniffing are in husbandry/. Not ported:
+/// spider nests and webs, the mirespider's cocoons, ranged attacks and the special abilities (troll throws and slams,
+/// fiend, behemoth, colossus, glimmerwing, dryad), the minotaur's rage.
 
 /// A hunter eats the dead; herd beasts graze and fight back; shy ones graze and run when attacked; prey runs from all.
 #define ROGUE_BEAST_HUNTER "hunter"
