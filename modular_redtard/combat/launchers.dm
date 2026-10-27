@@ -76,14 +76,6 @@ GLOBAL_LIST_INIT(rogue_ranged_ultra_precise_zones, list(BODY_ZONE_PRECISE_L_HAND
 GLOBAL_LIST_INIT(rogue_ranged_precise_zones, list(BODY_ZONE_HEAD, "neck", BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
 GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECISE_EYES, "skull", "ears", "nose", BODY_ZONE_PRECISE_MOUTH))
 
-/proc/rogue_bclass_sharpness(bclass)
-	switch(bclass)
-		if(BCLASS_CUT, BCLASS_CHOP, BCLASS_LASHING)
-			return SHARP_EDGED
-		if(BCLASS_STAB, BCLASS_PICK, BCLASS_PIERCE, BCLASS_BITE)
-			return SHARP_POINTY
-	return NONE
-
 /// Damage factor of a muscle-powered shot by perception (Ratwood per_scaling in bows.dm and slings.dm: 2 at perception 10).
 /proc/rogue_launcher_per_scaling(perception)
 	var/softcap = ROGUE_LAUNCHER_PER_SOFTCAP

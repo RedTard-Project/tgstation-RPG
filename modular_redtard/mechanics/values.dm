@@ -1,4 +1,9 @@
-GLOBAL_LIST_INIT(rogue_value_definitions, list(
+GLOBAL_LIST_INIT(rogue_value_definitions, rogue_value_definition_list())
+
+/// The registry's entries, name = list(default, description). Built by a proc, not passed as the macro's argument: DM
+/// cuts a macro argument at 64 KB, and the list outgrew that in October 2026.
+/proc/rogue_value_definition_list()
+	return list(
 	// Treasury (economy/, block 7a): funds, loans, poll tax, charters, the Crown's solvency.
 	"treasury_church_seed" = list("1000", "Mammons in the Church Fund at round start (Ratwood CHURCH_FUND_SEED)."),
 	"treasury_merchant_seed" = list("500", "Mammons in the Merchant Fund at round start (Ratwood MERCHANT_FUND_SEED)."),
@@ -618,4 +623,4 @@ GLOBAL_LIST_INIT(rogue_value_definitions, list(
 	"trade_bounty_print_cost" = list("50", "Mammons a printed list of bounties costs (Ratwood)."),
 	"trade_mail_paper_price" = list("1", "Coin value a HERMES takes for a sheet of parchment (Ratwood: a zenny)."),
 	"trade_mail_quill_price" = list("5", "Coin value a HERMES takes for a quill (Ratwood: a ziliqua)."),
-))
+	)

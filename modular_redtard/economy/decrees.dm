@@ -1,6 +1,6 @@
 /// The realm's ruler on Rockhill: the Grand Duke (Ratwood SSticker.rulermob; the regent is not ported).
 /proc/rogue_is_ruler(mob/living/user)
-	return istype(user) && user.stat == CONSCIOUS && user.mind?.assigned_role?.title == JOB_ROCKHILL_GRAND_DUKE
+	return istype(user) && user.stat == STABLE && user.mind?.assigned_role?.title == JOB_ROCKHILL_GRAND_DUKE
 
 /// The living ruler, if any.
 /proc/rogue_ruler()

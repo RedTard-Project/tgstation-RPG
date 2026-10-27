@@ -651,6 +651,82 @@
 | Флаг `MOB_HAS_SCREENTIPS_NAME_OVERRIDE`, сигналы `COMSIG_MOB_REQUESTING_SCREENTIP_NAME_FROM_USER`, `COMSIG_GLOB_MOB_LOGGED_IN`; `/datum/rogue_screentip_names` | 1, 3 | `localization/screentips.dm` | `/atom/proc/on_mouse_enter()` | Русское имя в подсказке ТГ | Что ТГ шлёт сигнал при флаге и не сбрасывает `mob_flags` |
 | `/datum/rogue_dictionary` и процедуры движка; `ADMIN_VERB(rogue_chargen_missing_keys)`; тесты `rogue_chargen_sheet`, `rogue_trait_sheet`, `rogue_localization_strings` | 1, 2 | `localization/translate.dm`, `chargen.dm`, `tests/localization_rogue.dm` | — | Серверный движок перевода, глагол недостающих ключей, тесты | — |
 
+## Волна 2 (2026-10-28): бой, деньги, быт, меню, триумфы, библиотека, одежда
+
+### Стрелковое оружие (`combat/launchers.dm`, `combat/quivers.dm`, `rockhill/ported/projectiles.dm`)
+| Что (тип, процедура, файл) | Ступень | Файл модуля | Оригинал ТГ | Поведение | При мерже проверить |
+|---|---|---|---|---|---|
+| `/obj/item/gun/ballistic/rogue_launcher` (`bow`, `crossbow`, `sling`): `try_fire_gun`, `process_fire`, `shoot_live_shot`, `shoot_with_empty_chamber`, `interact_with_atom_secondary`, `ranged_interact_with_atom_secondary`, `add_weapon_description`, `item_interaction`, `attack_self`, `update_icon_state`, `update_overlays`, `equipped`, `dropped`, `Exited`, `Destroy` | 2 | `combat/launchers.dm` | `code/modules/projectiles/gun.dm`, `guns/ballistic.dm` | Натяжение по PER, навыку и силе, взвод арбалета, навес, разброс при недоборе | Внутренний магазин с `BOLT_TYPE_NO_BOLT` держит патрон в магазине; `process_fire` берёт разброс из `spread`; `ready_proj` после `process_fire` |
+| `/obj/item/ammo_casing/rogue`: `Initialize`, `update_icon_state`, `update_desc`, `add_weapon_description`; `/obj/item/ammo_box/magazine/internal/rogue_launcher` | 2 | `combat/launchers.dm` | `code/modules/projectiles/ammunition/` | Стрелы, болты, камни Ратвуда | Элемент `caseless` обнуляет `chambered` и удаляет гильзу |
+| `/obj/projectile/rogue_ammo` (и `reusable`): `Initialize`, `prehit_pierce`, `on_hit`, `on_range`; `/datum/embedding/rogue_projectile` | 2 | `combat/launchers.dm`, `rockhill/ported/projectiles.dm` | `code/modules/projectiles/projectile.dm` | Урон по PER, точность и промах в родительскую часть тела, застревание, падение многоразовых | `prehit_pierce` до `projectile_hit(def_zone)`; `on_hit` до `apply_projectile_effects`; `impact()` при `accuracy_falloff = 0` не меняет зону |
+| `/obj/item/rogue_quiver` | 1 | `combat/quivers.dm` | — | Колчан: заряжание, ПКМ — достать, высыпать, собрать | — |
+| Правки `charge.dm`, `ranged.dm`, `armor.dm`; удалён `rogue_item_special_fallbacks` (спецудар томов пишет портер) | 3 | `combat/` | — | Время заряда от стрелка и оружия; старая формула Азура не трогает оружие Ратвуда; доля урона снаряда сквозь броню | — |
+
+### Казна (`economy/`, блок 7а)
+| Что (тип, процедура, файл) | Ступень | Файл модуля | Оригинал ТГ | Поведение | При мерже проверить |
+|---|---|---|---|---|---|
+| `/obj/structure/roguemachine/vaultbank` (тип порта): `attacked_by()` с `..()`, `item_interaction`, `interact`, `ui_*`, `examine`, `update_icon_state`; `resistance_flags = INDESTRUCTIBLE` | 2 | `economy/funds.dm` | — | JAWBANK фондов: снятие, займы, договоры, грамоты, выбивание монет | — |
+| `/obj/structure/roguemachine/atm`: `attack_hand_secondary()`, `Destroy()` с `..()` | 2 | `economy/debts_panel.dm` | — | ПКМ — окно долгов | — |
+| `/datum/bank_account/rogue/fund/*`: `bank_card_talk()` **без** `..()` | 2 | `economy/funds.dm` | `code/modules/economy/account.dm` | Фонды не пишут в чат держателям карт | Сигнатуру `bank_card_talk()` |
+| Метки должника и недоимки: подписка на `COMSIG_ATOM_EXAMINE` людей с меткой | 1 | `economy/loans.dm`, `poll_tax.dm` | — | Строка при осмотре нужным ролям | Аргументы `COMSIG_ATOM_EXAMINE` |
+| `goldface.dm`: после пошлины `apply_concordat_tithe(pack.cost, ROGUE_TAX_IMPORT)` | 3 | `economy/goldface.dm` | — | Десятина Конкордата с ввоза | — |
+
+### Торговля (`economy/`, блок 7б)
+| Что (тип, процедура, файл) | Ступень | Файл модуля | Оригинал ТГ | Поведение | При мерже проверить |
+|---|---|---|---|---|---|
+| `/obj/item/get_real_price()` | 5 | `economy/quality.dm` | `code/game/objects/items.dm` | `..()`, затем множитель качества (0,2–1,5) | Что цена по-прежнему считается в `get_real_price()` |
+| `/obj/item/bodypart/head/drop_limb()` | 5 | `economy/headeater.dm` | `code/modules/surgery/bodyparts/dismemberment.dm` | До `..()` запоминает награду за голову NPC | Сигнатуру `drop_limb()` |
+| `/obj/item/paper/examine()`; переменные `rogue_mail_from`, `rogue_mail_to` | 5, 3 | `economy/mail.dm` | `code/modules/paperwork/paper.dm` | `..()`, затем адрес письма | — |
+| `/obj/item/rogue_value_examine()` (строка «Value» вынесена из `examine()`); `/obj/item/bodypart/head/var/rogue_head_bounty` | 3 | `economy/prices.dm`, `headeater.dm` | — | — | — |
+| `SSrogue_trade` | 1 | `economy/trade.dm` | — | Регионы, рассветы, заказы, корабли | — |
+| Машины Ратвуда `ship_fulfillment`, `steward_export`, `headeater`, `bounty`, `lottery_roguetown`, `blackmarket`, `mail`, `mastermail`: `interact`, `item_interaction`, `attack_hand_secondary`, `ui_*`, `examine`, `update_*`; у `mastermail` ещё `anchored = TRUE` и `attack_hand` **без** `..()` | 2 | `economy/harbor.dm` и др. | — | Гавань, заказы, автоматы | — |
+| Окна `RogueHarbor.tsx`, `RogueStandingOrders.tsx`, `RogueJawbank.tsx`, `RogueDebts.tsx`, `RogueCharters.tsx` | 1 | `tgui/packages/tgui/interfaces/` | — | — | Что у ТГ нет интерфейсов с теми же именами |
+
+### Быт (блок 8)
+| Что (тип, процедура, файл) | Ступень | Файл модуля | Оригинал ТГ | Поведение | При мерже проверить |
+|---|---|---|---|---|---|
+| `/obj/item/var/rogue_fired_at`; компонент `bakeable` ТГ на сырой глине с `cooked_type` | 3 | `crafting/pottery.dm`, `survival/cooking.dm` | `code/datums/components/bakeable.dm` | Обжиг глины в печи по времени Ратвуда, качество, растрескивание при передержке | Аргументы `/datum/component/bakeable` |
+
+### Меню персонажа и родины (блок 13)
+| Что (тип, процедура, файл) | Ступень | Файл модуля | Оригинал ТГ | Поведение | При мерже проверить |
+|---|---|---|---|---|---|
+| `/mob/living/carbon/human/examine()` | 5 | `homelands/homelands.dm` | `code/modules/mob/living/carbon/human/examine.dm` | `..()` (цепочка после `heritage/examine.dm`), затем строка о родине и предубеждение | — |
+| `rogue_homeland`, `rogue_set_homeland()`, `rogue_set_combat_music()`; `/client/proc/rogue_preview_combat_music()`, `rogue_stop_combat_music_preview()` | 3 | `homelands/`, `charsetup/combat_music.dm` | — | — | — |
+| Подтипы `/datum/preference/choiced`: `rogue_homeland`, `rogue_culinary/*`, `rogue_combat_music`; `/datum/mood_event/rogue_prejudice/*`; `/datum/asset/spritesheet_batched/rogue_culinary` | 2 | `homelands/`, `charsetup/` | — | — | Ключи спрайтшита (`get_spritesheet_key()`) |
+| `PreferencesMenu/preferences/features/character_preferences/rogue_character_extras.tsx` | 1 | `tgui/` | — | Выпадающие списки новых настроек в меню ТГ | — |
+
+### Триумфы и PQ (блок 14)
+| Что (тип, процедура, файл) | Ступень | Файл модуля | Оригинал ТГ | Поведение | При мерже проверить |
+|---|---|---|---|---|---|
+| `/datum/controller/subsystem/job/check_job_eligibility()` | 5 | `triumphs/roles.dm` | `code/controllers/subsystem/job.dm` | После `..()` закрывает роль при PQ ниже нужного | Сигнатуру и коды `JOB_*` |
+| `/datum/latejoin_menu/ui_data()` | 5 | `triumphs/roles.dm` | `code/modules/mob/dead/new_player/latejoin_menu.dm` | После `..()` пишет причину отказа по PQ | Структуру `departments → jobs → title` |
+| `/mob/dead/new_player/AttemptLateSpawn()` | 5 | `triumphs/roles.dm` | `code/modules/mob/dead/new_player/new_player.dm` | Проверяет PQ раньше `..()` и объясняет отказ | Сигнатуру |
+| `/mob/living/carbon/human/var/rogue_nights_survived`; окно `RogueTriumphShop.tsx`; вклады триумфов в окне `RogueMigrantPanel.tsx` | 3, 1 | `triumphs/`, `tgui/` | — | — | — |
+
+### Библиотека (блок 15)
+| Что (тип, процедура, файл) | Ступень | Файл модуля | Оригинал ТГ | Поведение | При мерже проверить |
+|---|---|---|---|---|---|
+| `/obj/structure/bookcase/random/Initialize(mapload)` | 5 | `library/bookcases.dm` | `code/modules/library/random_books.dm` | На medieval после `..()` обнуляет `books_to_load` | Что `random/reference/Initialize()` читает `books_to_load` после `..()` |
+| `/mob/living/carbon/human/is_literate()`, `can_read()`, `rogue_try_reading()` | 5, 3 | `library/literacy.dm` | `code/modules/mob/mob.dm` | На medieval нужен навык чтения ≥ Novice; неудачное чтение даёт опыт | Что `can_read()`/`can_write()` спрашивают `is_literate()`; флаги `READING_CHECK_*` |
+| `/obj/item/canvas/examine()`, `rogue_is_blank()`, `rogue_can_archive()`, `rogue_archive()` | 5, 3 | `library/paintings.dm` | `code/modules/art/paintings.dm`, `code/controllers/subsystem/persistent_paintings.dm` | Архив картин в `SSpersistent_paintings` с тегом модуля | Имена `used`, `finalized`, `painting_metadata`, `get_paintings_with_tag()`, путь `data/paintings/images/<md5>.png` |
+| `/obj/item/recipe_book` (заглушка порта): `ui_interact()`, `ui_assets()`, `ui_static_data()`, `examine()`; окно `RogueRecipeBook.tsx` | 2, 1 | `library/manuals.dm` | `code/datums/components/crafting/_crafting.dm` | Руководства ремёсел | Что `GLOB.crafting_recipes_by_typepath` и спрайты листа `crafting` не сменились |
+| Шкафы-заглушки Ратвуда: `random/archive` (`rogue_extra_stock`), `random/misc`, `player_archive/rogue_stock()`, `random_recipes/rogue_stock()` (вместо прежних четырёх `Initialize()` с заменой) | 2–3 | `library/bookcases.dm` | — | — | — |
+| `rockhill/art.dm`: случайная картина — только из `rogue_archived_paintings()` | 3 | `rockhill/art.dm` | — | Картины modern-карт не попадают на medieval | — |
+
+### Одежда и обзор (блок 16)
+| Что (тип, процедура, файл) | Ступень | Файл модуля | Оригинал ТГ | Поведение | При мерже проверить |
+|---|---|---|---|---|---|
+| `/atom/movable/screen/plane_master/rogue_mobs` (-42) и служебные `field_of_vision_blocker/rogue_self` (-44), `rogue_mob_mask` (-43): `Initialize`, `show_to`, `hide_from`, `Destroy` с `..()` | 1–2 | `combat/fov.dm` | `code/_onclick/hud/rendering/plane_master.dm` | Мобы за спиной не рисуются, своя клетка не режется | Блокер ТГ прячется по `TRAIT_FOV_APPLIED`; `FIELD_OF_VISION_BLOCKER_RENDER_TARGET` не переименована; формула слоя в `generate_relay_to()`; номера -44…-42 у ТГ свободны |
+| `/mob/living/Initialize(mapload)` | 5 | `combat/fov.dm` | `code/modules/mob/living/living.dm` | `..()`, затем на medieval моб переходит на плоскость мобов (кроме манекенов предпросмотра) | Что ТГ не сбрасывает мобам плоскость |
+| `/obj/effect/temp_visual/dir_setting/bloodsplatter/Initialize(...)` | 5 | `combat/fov.dm` | `code/game/objects/effects/temporary_visuals/` | Брызги крови на плоскости мобов | Сигнатуру |
+| `/datum/element/immerse/on_init_or_entered(source, movable)` | 5 | `combat/fov.dm` | `code/datums/elements/immerse.dm` | Моб на время `..()` на игровой плоскости — погружение в воду работает | Проверку `ISINRANGE(... FLOOR_PLANE, GAME_PLANE)` |
+| `/mob/living/carbon/human/is_mouth_covered()`, `is_eyes_covered()` | 5 | `clothing/adjustable.dm` | `code/modules/mob/living/carbon/human/human_helpers.dm` | `..()`, затем на medieval шлем по `rogue_face_coverage` | Сигнатуру `check_flags` |
+
+### Реестр чисел
+| Что (тип, процедура, файл) | Ступень | Файл модуля | Оригинал ТГ | Поведение | При мерже проверить |
+|---|---|---|---|---|---|
+| `GLOBAL_LIST_INIT(rogue_value_definitions, rogue_value_definition_list())` | 1 | `mechanics/values.dm` | — | Список строит процедура: аргумент макроса DM ограничен 64 КБ, реестр вырос до 75 КБ (2026-10-28) | — |
+
 ## Тесты
 
 Тестовые файлы обёрнуты в собственные `#ifdef` (`UNIT_TESTS`, `REDTARD_TEST_FOCUS`, `REDTARD_LIGHT_BENCH`, `REDTARD_LIGHT_BENCH_CLIENT`), потому что Dream Maker дописывает их в блок `BEGIN_INCLUDE` модуля без условий.
