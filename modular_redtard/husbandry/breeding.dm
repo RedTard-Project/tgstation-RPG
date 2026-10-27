@@ -40,7 +40,7 @@
 	var/young = 0
 	var/mob/living/father
 	for(var/mob/living/other in view(ROGUE_BREED_RANGE, mother))
-		if(other.stat != CONSCIOUS)
+		if(other.stat != STABLE)
 			continue
 		if(is_type_in_list(other, mother.rogue_childtype))
 			young++

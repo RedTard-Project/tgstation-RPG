@@ -95,6 +95,10 @@ GLOBAL_LIST_EMPTY(rogue_hens)
 		if(beast.stat != DEAD)
 			.++
 
+/// Tamed and someone's: it has a friend (TG befriend()) to keep it.
+/mob/living/basic/rockhill/proc/rogue_is_kept()
+	return HAS_TRAIT(src, TRAIT_TAMED) && length(ai_controller?.blackboard[BB_FRIENDS_LIST])
+
 /// Has someone to fight or flee: a target or anyone it holds a grudge against (Ratwood enemies).
 /mob/living/basic/rockhill/proc/rogue_is_angry()
 	if(!ai_controller)
@@ -122,7 +126,7 @@ GLOBAL_LIST_EMPTY(rogue_hens)
 		return FALSE
 	rogue_ensure_chores()
 	ai_controller.set_blackboard_key(key, target)
-	addtimer(CALLBACK(src, PROC_REF(rogue_drop_chore), key, WEAKREF(target)), duration)
+	addtimer(CALLBACK(src, PROC_REF(rogue_drop_chore), key, WEAKREF(target)), duration, TIMER_UNIQUE | TIMER_OVERRIDE)
 	return TRUE
 
 /// The walk is over: the key still names the same target, so the beast gave up on it.
@@ -239,7 +243,7 @@ GLOBAL_LIST_EMPTY(rogue_hens)
 /// Ratwood simple_animal Life(): the meter empties a point every 2 seconds and production grows as long as there is food in it.
 /datum/component/rogue_livestock/proc/on_life(mob/living/basic/rockhill/beast, seconds_per_tick)
 	SIGNAL_HANDLER
-	if(beast.stat != CONSCIOUS)
+	if(beast.stat != STABLE)
 		return
 	var/drain = ROGUE_BEAST_FOOD_PER_SECOND * seconds_per_tick * CONFIG_GET(number/rogue_beast_hunger_rate)
 	if(food > 0)
@@ -249,7 +253,7 @@ GLOBAL_LIST_EMPTY(rogue_hens)
 		starving = FALSE
 	else if(drain > 0)
 		starve(beast, seconds_per_tick)
-	if(QDELETED(beast) || beast.stat != CONSCIOUS)
+	if(QDELETED(beast) || beast.stat != STABLE)
 		return
 	if(beast.rogue_eats_vines && food <= ROGUE_BEAST_HUNGRY)
 		graze_vines(beast)
@@ -258,9 +262,10 @@ GLOBAL_LIST_EMPTY(rogue_hens)
 	if(beast.rogue_egg_type && beast.rogue_lays_in_nest)
 		try_nest(beast)
 
-/// Not in Ratwood: a tamed beast its keepers leave hungry long enough wastes away, a wild one only stays hungry.
+/// Not in Ratwood: a kept beast its keepers leave hungry long enough wastes away; a wild one, or one born tame that nobody has
+/// taken in, only stays hungry.
 /datum/component/rogue_livestock/proc/starve(mob/living/basic/rockhill/beast, seconds_per_tick)
-	if(!HAS_TRAIT(beast, TRAIT_TAMED) || !CONFIG_GET(flag/rogue_beast_starvation))
+	if(!beast.rogue_is_kept() || !CONFIG_GET(flag/rogue_beast_starvation))
 		return
 	starved_for += seconds_per_tick SECONDS
 	if(starved_for < ROGUE_BEAST_STARVE_DELAY)
@@ -307,7 +312,7 @@ GLOBAL_LIST_EMPTY(rogue_hens)
 
 /datum/component/rogue_livestock/proc/on_examine(mob/living/basic/rockhill/beast, mob/user, list/examine_list)
 	SIGNAL_HANDLER
-	if(beast.stat == DEAD)
+	if(beast.stat == DEAD || !beast.rogue_is_kept())
 		return
 	if(starving)
 		examine_list += span_warning("[beast.p_They()] look[beast.p_s()] starved.")
@@ -322,6 +327,6 @@ GLOBAL_LIST_EMPTY(rogue_hens)
 		return NONE
 	user.visible_message(span_green("[user] beckons [beast] with [tool]."), span_green("I beckon [beast] with [tool]."))
 	user.changeNext_move(CLICK_CD_MELEE)
-	if(beast.stat == CONSCIOUS)
+	if(beast.stat == STABLE)
 		beast.rogue_seek(BB_ROGUE_LURE_TARGET, user, ROGUE_LURE_TIME)
 	return ITEM_INTERACT_SUCCESS

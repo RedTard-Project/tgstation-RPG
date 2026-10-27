@@ -5,8 +5,8 @@
 	min_val = 0
 	max_val = 10
 
-/// Whether a tamed beast left with an empty food meter for ROGUE_BEAST_STARVE_DELAY wastes away (not in Ratwood). Off - it only
-/// stays hungry and does not breed or lay.
+/// Whether a kept beast (tamed, with a friend) left with an empty food meter for ROGUE_BEAST_STARVE_DELAY wastes away (not in
+/// Ratwood). Off - it only stays hungry and does not breed or lay.
 /datum/config_entry/flag/rogue_beast_starvation
 	default = TRUE
 

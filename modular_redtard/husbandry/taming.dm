@@ -62,7 +62,7 @@
 /// its friends; some beasts take a taunt as a challenge.
 /mob/living/basic/rockhill/proc/rogue_on_gesture(datum/source, mob/living/gesturer, gesture)
 	SIGNAL_HANDLER
-	if(stat != CONSCIOUS)
+	if(stat != STABLE)
 		return
 	switch(gesture)
 		if(ROGUE_GESTURE_BECKON)
@@ -84,13 +84,14 @@
 
 /// A young beast grows up only on the ground and not in the middle of a fight (Ratwood rogue Life(): adult_growth, no enemies).
 /mob/living/basic/rockhill/proc/rogue_can_grow()
-	return isturf(loc) && stat == CONSCIOUS && !rogue_is_angry()
+	return isturf(loc) && stat == STABLE && !rogue_is_angry()
 
 /// Grown up (TG's growth_and_differentiation): a tamed young makes a tamed adult that keeps its friends (Ratwood: tame = TRUE).
 /mob/living/basic/rockhill/proc/rogue_on_grown(datum/source, mob/living/basic/rockhill/adult)
 	SIGNAL_HANDLER
 	if(!istype(adult) || !HAS_TRAIT(src, TRAIT_TAMED))
 		return
-	adult.tamed(rogue_owner?.resolve())
+	adult.tamed(null)
+	adult.rogue_owner = rogue_owner
 	for(var/mob/living/friend in ai_controller?.blackboard[BB_FRIENDS_LIST])
 		INVOKE_ASYNC(adult, TYPE_PROC_REF(/mob/living, befriend), friend)

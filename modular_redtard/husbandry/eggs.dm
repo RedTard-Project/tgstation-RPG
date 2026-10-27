@@ -16,7 +16,7 @@
 	if(hen.ai_controller?.blackboard_key_exists(BB_ROGUE_NEST_TARGET))
 		return
 	var/list/nests = list()
-	for(var/obj/structure/fluff/nest/nest in oview(hen))
+	for(var/obj/structure/fluff/nest/nest in oview(ROGUE_NEST_SIGHT, hen))
 		nests += nest
 	if(length(nests))
 		hen.rogue_seek(BB_ROGUE_NEST_TARGET, pick(nests), ROGUE_NEST_SEEK_TIME)
@@ -30,10 +30,10 @@
 		hen.visible_message(span_notice("[hen] builds a nest."))
 		return
 	var/list/chaff = list()
-	for(var/obj/item/natural/fibers/fibers in oview(hen))
+	for(var/obj/item/natural/fibers/fibers in oview(ROGUE_NEST_SIGHT, hen))
 		chaff += fibers
 	if(!length(chaff))
-		for(var/obj/item/grown/log/tree/stick/stick in oview(hen))
+		for(var/obj/item/grown/log/tree/stick/stick in oview(ROGUE_NEST_SIGHT, hen))
 			chaff += stick
 	if(length(chaff))
 		hen.rogue_seek(BB_ROGUE_NEST_TARGET, pick(chaff), ROGUE_NEST_SEEK_TIME)

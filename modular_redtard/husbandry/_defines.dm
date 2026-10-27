@@ -11,7 +11,7 @@
 /// Hand-feeding heals (Ratwood adjustHealth(-rand(10, 20))).
 #define ROGUE_FEED_HEAL_MIN 10
 #define ROGUE_FEED_HEAL_MAX 20
-/// Starvation (not in Ratwood): a tamed beast with an empty meter this long starts losing this share of its health a second.
+/// Starvation (not in Ratwood): a kept beast with an empty meter this long starts losing this share of its health a second.
 #define ROGUE_BEAST_STARVE_DELAY (10 MINUTES)
 #define ROGUE_BEAST_STARVE_DAMAGE 0.005
 
@@ -31,6 +31,8 @@
 /// Chance an egg is fertile: a nesting hen (Ratwood rogue chicken) and a fed one (Ratwood friendly chicken).
 #define ROGUE_EGG_FERTILE_CHANCE 50
 #define ROGUE_FED_EGG_FERTILE_CHANCE 25
+/// How far a hen looks for a nest or nesting stuff (Ratwood oview() at its world.view, 15x15).
+#define ROGUE_NEST_SIGHT 7
 /// No fertile eggs while this many chickens live (Ratwood MAX_CHICKENS).
 #define ROGUE_MAX_CHICKENS 50
 /// A fed hen lays from a store of eggs: 1-4 a meal, at most 8 (Ratwood friendly chicken attackby()).
