@@ -87,6 +87,16 @@
 	rogue_verb_simple = "transmute"
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
+/datum/crafting_recipe/roguetown/alchemy/distill
+	name = "distill water"
+	result = /obj/item/reagent_containers/glass/bottle/rogue/water
+	reqs = list(/obj/item/reagent_containers/glass/bottle = 1, /datum/reagent/water/gross = 48)
+	category = "Alchemy"
+	rogue_skill = /datum/attribute/skill/craft/alchemy
+	rogue_structure = /obj/structure/fluff/alch
+	rogue_verb_simple = "mix"
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
 /datum/crafting_recipe/roguetown/alchemy/f2gra
 	name = "fiber to grain"
 	result = /obj/item/reagent_containers/food/snacks/grown/wheat
@@ -979,7 +989,7 @@
 	name = "frybird bucket"
 	result = /obj/item/reagent_containers/food/snacks/rogue/frybirdbucket
 	reqs = list(/obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet/fried = 3, /obj/item/reagent_containers/glass/bucket = 1, /obj/item/reagent_containers/powder/salt = 1)
-	blacklist = list(/obj/item/reagent_containers/glass/bucket/pot, /obj/item/reagent_containers/glass/bucket/pot/bronze, /obj/item/reagent_containers/glass/bucket/pot/carved/teapotamber, /obj/item/reagent_containers/glass/bucket/pot/carved/teapotcoral, /obj/item/reagent_containers/glass/bucket/pot/carved/teapotjade, /obj/item/reagent_containers/glass/bucket/pot/carved/teapotonyxa, /obj/item/reagent_containers/glass/bucket/pot/carved/teapotopal, /obj/item/reagent_containers/glass/bucket/pot/carved/teapotrose, /obj/item/reagent_containers/glass/bucket/pot/carved/teapotshell, /obj/item/reagent_containers/glass/bucket/pot/copper, /obj/item/reagent_containers/glass/bucket/pot/decrepit, /obj/item/reagent_containers/glass/bucket/pot/kettle, /obj/item/reagent_containers/glass/bucket/pot/kettle/tankard, /obj/item/reagent_containers/glass/bucket/pot/kettle/tankard/blacksteel, /obj/item/reagent_containers/glass/bucket/pot/kettle/tankard/silver, /obj/item/reagent_containers/glass/bucket/pot/stone, /obj/item/reagent_containers/glass/bucket/pot/teapot/fancy, /obj/item/reagent_containers/glass/bucket/pot/teapot/porcelain, /obj/item/reagent_containers/glass/bucket/tinypot)
+	blacklist = list(/obj/item/reagent_containers/glass/bucket/item_interaction, /obj/item/reagent_containers/glass/bucket/pot, /obj/item/reagent_containers/glass/bucket/pot/bronze, /obj/item/reagent_containers/glass/bucket/pot/carved, /obj/item/reagent_containers/glass/bucket/pot/carved/rogue_fill_state, /obj/item/reagent_containers/glass/bucket/pot/carved/teapotamber, /obj/item/reagent_containers/glass/bucket/pot/carved/teapotcoral, /obj/item/reagent_containers/glass/bucket/pot/carved/teapotjade, /obj/item/reagent_containers/glass/bucket/pot/carved/teapotonyxa, /obj/item/reagent_containers/glass/bucket/pot/carved/teapotopal, /obj/item/reagent_containers/glass/bucket/pot/carved/teapotrose, /obj/item/reagent_containers/glass/bucket/pot/carved/teapotshell, /obj/item/reagent_containers/glass/bucket/pot/copper, /obj/item/reagent_containers/glass/bucket/pot/decrepit, /obj/item/reagent_containers/glass/bucket/pot/examine, /obj/item/reagent_containers/glass/bucket/pot/item_interaction, /obj/item/reagent_containers/glass/bucket/pot/kettle, /obj/item/reagent_containers/glass/bucket/pot/kettle/rogue_fill_state, /obj/item/reagent_containers/glass/bucket/pot/kettle/tankard, /obj/item/reagent_containers/glass/bucket/pot/kettle/tankard/blacksteel, /obj/item/reagent_containers/glass/bucket/pot/kettle/tankard/silver, /obj/item/reagent_containers/glass/bucket/pot/proc, /obj/item/reagent_containers/glass/bucket/pot/proc/fill_bowl, /obj/item/reagent_containers/glass/bucket/pot/proc/finish_stew, /obj/item/reagent_containers/glass/bucket/pot/rogue_fill_state, /obj/item/reagent_containers/glass/bucket/pot/stone, /obj/item/reagent_containers/glass/bucket/pot/teapot, /obj/item/reagent_containers/glass/bucket/pot/teapot/fancy, /obj/item/reagent_containers/glass/bucket/pot/teapot/porcelain, /obj/item/reagent_containers/glass/bucket/pot/teapot/rogue_fill_state, /obj/item/reagent_containers/glass/bucket/proc, /obj/item/reagent_containers/glass/bucket/proc/churn_butter, /obj/item/reagent_containers/glass/bucket/proc/strain_cheese, /obj/item/reagent_containers/glass/bucket/rogue_fill_state, /obj/item/reagent_containers/glass/bucket/tinypot)
 	category = "Cooking"
 	rogue_skill = /datum/attribute/skill/craft/cooking
 	rogue_difficulty = 3

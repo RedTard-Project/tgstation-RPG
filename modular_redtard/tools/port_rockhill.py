@@ -67,6 +67,8 @@ NO_SPRITE = []
 LISTINGS = {}
 LICENSE_FILE = re.compile(r'(?i)^(licen[cs]e|copying)([-_.][\w.-]*)?$')
 CURRENT = [None]
+# --offline: no git in the Ratwood cache (no sync, no sparse-checkout of missing files); the cache is read as it stands.
+OFFLINE = '--offline' in sys.argv
 RESTRICTED = collections.defaultdict(set)
 UNREVIEWED = collections.defaultdict(set)
 
@@ -207,6 +209,11 @@ def strip_comments(text):
 
 def included_files(code_root):
     dme = [f for f in os.listdir(code_root) if f.endswith('.dme')]
+    if len(dme) > 1:
+        # The module build leaves a temporary copy beside the upstream one while it compiles
+        # (tgstation.redtard.m.dme, build/build_modular.ts); the upstream tgstation.dme is the one to read.
+        upstream = [f for f in dme if f.count('.') == 1]
+        dme = ['tgstation.dme'] if 'tgstation.dme' in dme else upstream
     if len(dme) != 1:
         raise SystemExit(f'expected one .dme in {code_root}, found {dme}')
     files = []
@@ -911,12 +918,27 @@ def sync_source(source):
     print('ratwood revision:', ' '.join(SOURCE_REVISION))
 
 
+def offline_source():
+    # --offline: the Ratwood cache is used as it stands and no git runs in it; the revision for the report is the one the
+    # last synced run wrote into PORTED_CONTENT.md.
+    if not os.path.isdir(CHECKOUT) or not any(f.endswith('.dme') for f in os.listdir(CHECKOUT)):
+        raise SystemExit(f'--offline needs the Ratwood cache at {CHECKOUT}; run the porter once without --offline')
+    if os.path.exists(REPORT):
+        found = re.search(r'^Ratwood revision: `([0-9a-f]+)` \(([^)]+)\)\.', open(REPORT, encoding='utf-8').read(), re.M)
+        if found:
+            SOURCE_REVISION[:] = [found.group(1), found.group(2)]
+    print('offline: the Ratwood cache is used as it is, revision', ' '.join(SOURCE_REVISION) or 'unknown')
+
+
 def main():
     if not os.path.exists(CONFIG):
         raise SystemExit('run from the repository root')
     cfg = json.load(open(CONFIG, encoding='utf-8'))
     code_root = CHECKOUT
-    sync_source(cfg['source'])
+    if OFFLINE:
+        offline_source()
+    else:
+        sync_source(cfg['source'])
     port = cfg['port']
     rules = cfg['replacements']
     print('parsing', code_root)
@@ -2149,7 +2171,7 @@ def sound_files(raw):
 
 def fetch_sources(paths):
     absent = sorted({p for p in paths if not os.path.exists(os.path.join(CHECKOUT, p))})
-    if absent:
+    if absent and not OFFLINE:
         git('sparse-checkout', 'add', *('/' + p for p in absent))
         git('read-tree', '-mu', 'HEAD')
     missing = [p for p in absent if not os.path.exists(os.path.join(CHECKOUT, p))]

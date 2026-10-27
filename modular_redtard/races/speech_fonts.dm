@@ -11,10 +11,15 @@
 /datum/language/rogue_orcish
 	spans = list("orc")
 
-// TG's Draconic is Ratwood's too (the same type there), in its reptile face. The chat panel is the same on every map,
-// so the lizards of the modern maps speak in it as well.
-/datum/language/draconic
-	spans = list("reptile")
+// TG's Draconic is Ratwood's too (the same type there), in its reptile face, on the medieval maps only: the lizards of
+// the modern maps speak as on TG. The language is one shared datum, so its face is set once the round's map is loaded.
+/datum/controller/subsystem/mapping/loadWorld()
+	. = ..()
+	if(current_map?.map_era != MAP_ERA_MEDIEVAL)
+		return
+	var/datum/language/draconic = GLOB.language_datum_instances[/datum/language/draconic]
+	if(draconic)
+		draconic.spans = list("reptile")
 
 // Vibelin's languages: Ratwood's face where Ratwood speaks the same tongue.
 /datum/language/rogue_dwarvish

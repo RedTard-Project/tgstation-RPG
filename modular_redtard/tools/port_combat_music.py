@@ -9,8 +9,7 @@ is not in the Ratwood cache (its checkout leaves sound/music/cmode out), so each
 there, else from Azure Peak at the same path, and copied to modular_redtard/combat/sound/music/ under its path below
 sound/music/. A track found in neither is left out and listed. The DM names the tracks by text path, so the server
 loads one only when somebody hears it (as the area music does) instead of packing them all into the resource file
-every client downloads. Like the area music (rockhill/sound/area/), the folder is closed by its own .gitignore: on a
-new machine this tool brings the files.
+every client downloads. The tracks are kept in git, as on Ratwood; re-run this tool when the list of tracks changes.
 
 Selectable tracks are kept only when all their files are copied; by default only the role tracks are copied, and
 --all-tracks copies the rest of the selectable ones too. Patron-dependent music (a cleric's pre_equip switch) is not

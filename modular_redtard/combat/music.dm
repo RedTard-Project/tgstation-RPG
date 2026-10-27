@@ -9,8 +9,8 @@
 /// The track is the one picked with the Combat Mode Music verb, else the subclass's, else the job's (Ratwood's
 /// cmode_music, combat/ported_music.dm), else the towner's. It plays on the area music's channel at its volume
 /// preference times cmode_music_volume, loops, and keeps playing across areas; a deaf or dead person hears none. The
-/// tracks are read from disk when played, like the area music (combat/sound/music/, which tools/port_combat_music.py
-/// fills); a track the server lacks is skipped for the next choice.
+/// tracks are read from disk when played, like the area music (combat/sound/music/, kept in git as on Ratwood;
+/// tools/port_combat_music.py re-ports it); a track the server lacks is skipped for the next choice.
 /mob/living/carbon/human
 	/// Tracks picked with the Combat Mode Music verb (Ratwood cmode_music_override); none means the role's.
 	var/list/rogue_cmode_music_override

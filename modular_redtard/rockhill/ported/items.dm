@@ -67238,6 +67238,7 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	firefuel = 2 MINUTES
 	sellprice = 34
+	special = /datum/special_intent/arcyne_descent
 	sewrepair = TRUE
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
@@ -67271,6 +67272,7 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	firefuel = 2 MINUTES
 	sellprice = 121
+	special = /datum/special_intent/arcyne_descent
 	sewrepair = TRUE
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
@@ -67304,6 +67306,7 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	firefuel = 2 MINUTES
 	sellprice = 42
+	special = /datum/special_intent/arcyne_descent
 	sewrepair = TRUE
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
