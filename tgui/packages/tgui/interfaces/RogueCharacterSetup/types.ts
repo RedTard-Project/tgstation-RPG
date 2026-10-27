@@ -74,11 +74,6 @@ export type AgeBand = {
   stats: StatChip[];
 };
 
-export type SettingsGroup = {
-  title: string;
-  keys: string[];
-};
-
 export type PatronEntry = {
   /** Type path, the value of the rogue_patron preference. */
   id: string;
@@ -151,7 +146,6 @@ export type SetupData = {
     max: number;
     bands: AgeBand[];
   };
-  settings: SettingsGroup[];
   max_slots: number;
   /** The medieval lobby's minimum lengths of the flavor text and OOC notes before readying up. */
   flavor_min: number;

@@ -580,7 +580,8 @@
 				"random_pick": true,
 				"placement": true,
 				"natural": [
-					"/obj/structure/trap"
+					"/obj/structure/trap",
+					"/obj/structure/bookcase"
 				],
 				"type_vars": {
 					"/obj/structure/lever": [
@@ -732,7 +733,13 @@
 				],
 				"graft": "/obj/item/rockhill",
 				"graft_overrides": {
-					"/obj/item/roguecoin": "/obj/item/stack"
+					"/obj/item/roguecoin": "/obj/item/stack",
+					"/obj/item/paper/scroll": "/obj/item/paper"
+				},
+				"graft_override_vars": {
+					"/obj/item/paper/scroll": {
+						"show_written_words": "FALSE"
+					}
 				},
 				"natural": [
 					"/obj/item/clothing",
@@ -754,8 +761,36 @@
 						"smoketime",
 						"chem_volume",
 						"list_reagents"
+					],
+					"/obj/item/reagent_containers/glass": [
+						"volume",
+						"amount_per_transfer_from_this",
+						"possible_transfer_amounts"
+					],
+					"/obj/item/reagent_containers/powder": [
+						"volume",
+						"amount_per_transfer_from_this",
+						"possible_transfer_amounts"
+					],
+					"/obj/item/book/rogue": [
+						"bookfile",
+						"category"
+					],
+					"/obj/item/natural/clay": [
+						"cooked_type"
 					]
 				},
+				"inherited_vars": {
+					"sleevetype": "null",
+					"nodismemsleeves": "FALSE",
+					"r_sleeve_status": "ROGUE_SLEEVE_NOMOD",
+					"l_sleeve_status": "ROGUE_SLEEVE_NOMOD",
+					"rogue_sleeve_scrap": "/obj/item/natural/cloth",
+					"rogue_face_coverage": "NONE"
+				},
+				"face_coverage_vars": [
+					"rogue_face_coverage"
+				],
 				"vars": [
 					"name",
 					"desc",
@@ -846,7 +881,9 @@
 					"rogue_grid_height": "grid_height",
 					"armour_penetration": "armor_penetration",
 					"rogue_blocksound": "blocksound",
-					"rogue_force_wielded": "force_wielded"
+					"rogue_force_wielded": "force_wielded",
+					"rogue_sleeve_scrap": "salvage_result",
+					"rogue_face_coverage": "body_parts_covered"
 				},
 				"slot_worn_icons": {
 					"worn_icon": {
@@ -899,7 +936,8 @@
 					"origin_type",
 					"valid_blade",
 					"special",
-					"smeltresult"
+					"smeltresult",
+					"rogue_sleeve_scrap"
 				],
 				"sprite_checks": true,
 				"bake": true,
@@ -920,6 +958,18 @@
 						"SHIRT_LAYER": "ROGUE_SHIRT_LAYER",
 						"WRISTS_LAYER": "ROGUE_WRISTS_LAYER",
 						"8.9": "(HANDS_LAYER - 0.1)"
+					},
+					"r_sleeve_status": {
+						"SLEEVE_NORMAL": "ROGUE_SLEEVE_NORMAL",
+						"SLEEVE_TORN": "ROGUE_SLEEVE_TORN",
+						"SLEEVE_ROLLED": "ROGUE_SLEEVE_ROLLED",
+						"SLEEVE_NOMOD": "ROGUE_SLEEVE_NOMOD"
+					},
+					"l_sleeve_status": {
+						"SLEEVE_NORMAL": "ROGUE_SLEEVE_NORMAL",
+						"SLEEVE_TORN": "ROGUE_SLEEVE_TORN",
+						"SLEEVE_ROLLED": "ROGUE_SLEEVE_ROLLED",
+						"SLEEVE_NOMOD": "ROGUE_SLEEVE_NOMOD"
 					}
 				},
 				"grid_storage": true,
@@ -988,7 +1038,8 @@
 					"armor_class",
 					"rogue_blocksound",
 					"material_category",
-					"chunkcolor"
+					"chunkcolor",
+					"rogue_sleeve_scrap"
 				]
 			},
 			{
@@ -1319,12 +1370,30 @@
 			"repair_cost_second",
 			"item_chair",
 			"spawned",
-			"smeltresult"
+			"smeltresult",
+			"salvage_result"
 		],
 		"anvil_recipes": {
 			"root": "/datum/anvil_recipe",
 			"file": "modular_redtard/crafting/ported/anvil_recipes.dm",
 			"default_skill": "/datum/attribute/skill/craft/blacksmithing"
+		},
+		"artificer_recipes": {
+			"root": "/datum/artificer_recipe",
+			"file": "modular_redtard/crafting/ported/artificer_recipes.dm",
+			"default_skill": "/datum/attribute/skill/craft/engineering"
+		},
+		"pottery_recipes": {
+			"root": "/datum/pottery_wheel_recipe",
+			"file": "modular_redtard/crafting/ported/pottery_recipes.dm",
+			"defaults": {
+				"craftdiff": 0,
+				"base_time": 40,
+				"result_type": null,
+				"result_count": 1,
+				"required_clay_type": "/obj/item/natural/clay/kneaded",
+				"spins_required": 2
+			}
 		},
 		"craft_recipes": {
 			"root": "/datum/crafting_recipe/roguetown",
@@ -1395,7 +1464,30 @@
 			"recipe_target": "/datum/rogue_food_recipe",
 			"file": "modular_redtard/survival/ported/food.dm",
 			"always": [
-				"/obj/item/reagent_containers/food/snacks/badrecipe"
+				"/obj/item/reagent_containers/food/snacks/badrecipe",
+				"/obj/item/reagent_containers/food/snacks/rogue/dough_base",
+				"/obj/item/reagent_containers/food/snacks/rogue/butterdough",
+				"/obj/item/reagent_containers/food/snacks/rogue/butterdoughslice",
+				"/obj/item/reagent_containers/food/snacks/rogue/piedough",
+				"/obj/item/reagent_containers/food/snacks/rogue/flatdough",
+				"/obj/item/reagent_containers/food/snacks/rogue/foodbase/piebottom",
+				"/obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw",
+				"/obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw/fish",
+				"/obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw/meat",
+				"/obj/item/reagent_containers/food/snacks/rogue/foodbase/nitzel",
+				"/obj/item/reagent_containers/food/snacks/rogue/foodbase/schnitzel",
+				"/obj/item/reagent_containers/food/snacks/rogue/foodbase/chickentender",
+				"/obj/item/reagent_containers/food/snacks/rogue/foodbase/wienernitzel",
+				"/obj/item/reagent_containers/food/snacks/rogue/foodbase/squires_delight",
+				"/obj/item/reagent_containers/food/snacks/rogue/meat/nitzel",
+				"/obj/item/reagent_containers/food/snacks/rogue/meat/nitzel/schnitzel",
+				"/obj/item/reagent_containers/food/snacks/rogue/meat/nitzel/wiener",
+				"/obj/item/reagent_containers/food/snacks/rogue/meat/chickentender",
+				"/obj/item/reagent_containers/food/snacks/squiresdelight",
+				"/obj/item/reagent_containers/food/snacks/rogue/pie/cooked/meat/fish",
+				"/obj/item/reagent_containers/food/snacks/rogue/pie/cooked/berry",
+				"/obj/item/reagent_containers/food/snacks/rogue/pie/cooked/pot",
+				"/obj/item/reagent_containers/food/snacks/rogue/pie/cooked/crab"
 			],
 			"defaults": {
 				"cooktime": 0,
@@ -1405,6 +1497,38 @@
 				"warming": 3000,
 				"slice_bclass": "BCLASS_CUT",
 				"time_per_step": 20
+			},
+			"root_block": "/obj/item/reagent_containers/food",
+			"root_values": {
+				"rogue_faretype": "ROGUE_FARE_IMPOVERISHED",
+				"rogue_portable": "TRUE"
+			},
+			"module_defaults": {
+				"eat_effect": "null",
+				"cooked_type": "null",
+				"fried_type": "null",
+				"cooktime": 0,
+				"burntime": 3000,
+				"bitesize": 3,
+				"rotprocess": 0,
+				"warming": 3000,
+				"become_rot_type": "null",
+				"slice_path": "null",
+				"slices_num": 0,
+				"slice_bclass": "BCLASS_CUT",
+				"slice_batch": "TRUE",
+				"rogue_faretype": "ROGUE_FARE_IMPOVERISHED",
+				"rogue_portable": "TRUE",
+				"rogue_cooked_smell": "null",
+				"rogue_fat_yield": 0,
+				"rogue_deep_fried_type": "null"
+			},
+			"fare": {
+				"1": "ROGUE_FARE_IMPOVERISHED",
+				"2": "ROGUE_FARE_POOR",
+				"3": "ROGUE_FARE_NEUTRAL",
+				"4": "ROGUE_FARE_FINE",
+				"5": "ROGUE_FARE_LAVISH"
 			},
 			"eat_effects": {
 				"/datum/status_effect/debuff/uncookedfood": "/datum/status_effect/rogue_food/uncooked",
@@ -1447,7 +1571,16 @@
 			"/mob/living/simple_animal/hostile/rogue/mirespider_paralytic",
 			"/mob/living/simple_animal/hostile/retaliate/rogue/mirespider",
 			"/obj/item/rogueweapon/mace/oar",
-			"/obj/item/natural/cured/essence"
+			"/obj/item/natural/cured/essence",
+			"/obj/item/book/rogue/festus",
+			"/obj/item/book/rogue/bookofpriests",
+			"/obj/item/book/rogue/robber",
+			"/obj/item/book/rogue/beardling",
+			"/obj/item/book/rogue/knowledge1",
+			"/obj/item/book/rogue/naledi1",
+			"/obj/item/book/rogue/naledi2",
+			"/obj/item/book/rogue/naledi3",
+			"/obj/item/book/rogue/naledi4"
 		],
 		"bake": {
 			"manifest": "modular_redtard/rockhill/onmob_bake.json",
@@ -1595,7 +1728,8 @@
 					"goblin_cave",
 					"goblin_hell",
 					"goblin_sea",
-					"goblin_moon"
+					"goblin_moon",
+					"goblin_skel"
 				],
 				"worn": [
 					"plate_helm",
@@ -1714,6 +1848,7 @@
 				"/datum/species/goblin": ["/datum/language/common", "/datum/language/orcish"]
 			},
 			"generic_voicepacks": ["/datum/voicepack/male", "/datum/voicepack/female"],
+			"human_voices": {"m": "/datum/voicepack/male", "f": "/datum/voicepack/female"},
 			"species_voices": {
 				"/datum/species/goblin": {"m": "/datum/voicepack/other/goblin", "f": "/datum/voicepack/other/goblin"}
 			},

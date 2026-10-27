@@ -110,7 +110,6 @@ GLOBAL_LIST_EMPTY(rogue_charsetup_open)
 		"job_bans" = job_bans,
 		"ages" = rogue_charsetup_age_catalog(lang),
 		"heritage" = rogue_charsetup_heritage_catalog(lang),
-		"settings" = rogue_charsetup_settings_catalog(),
 		"max_slots" = prefs.max_save_slots,
 		"flavor_min" = CONFIG_GET(number/rogue_minimum_flavor_text),
 		"ooc_min" = CONFIG_GET(number/rogue_minimum_ooc_notes),
@@ -359,14 +358,11 @@ GLOBAL_LIST_EMPTY(rogue_charsetup_open)
 	lobby.on_message("action", list("action" = lobby_action))
 	return TRUE
 
-/// TG's menu for what this one leaves to it: the loadout and quirks (its character page), the game preferences and
-/// the keybindings.
+/// TG's menu for what this one leaves to it: the loadout and quirks (its character page) and the keybindings.
 /datum/rogue_charsetup/proc/open_tg_menu(mob/user, page)
 	switch(page)
 		if("character")
 			prefs.current_window = PREFERENCE_TAB_CHARACTER_PREFERENCES
-		if("game")
-			prefs.current_window = PREFERENCE_TAB_GAME_PREFERENCES
 		if("keybindings")
 			prefs.current_window = PREFERENCE_TAB_KEYBINDINGS
 		else

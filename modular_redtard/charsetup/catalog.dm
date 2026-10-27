@@ -1,13 +1,14 @@
 /// The parts of Vibelin's character menu (modular_abel/character_setup, PreferencesMenu.tsx) that are the same for every
 /// player, built once: the playable species with their descriptions, perks and race stats, TG's catalogs of the
 /// appearance choices (compile_constant_data, the data TG's own menu fetches as preferences.json), the joinable roles by
-/// department with their subclasses, the age bands with their stats and the rows of the settings page. The menu sends
+/// department with their subclasses and the age bands with their stats. The menu sends
 /// them as its static data through the tgui window, so none of it is fetched over HTTP: Vibelin fetched its catalog
 /// (chargen_catalog.json) with fetch(), which a CDN answers only with CORS headers, and gave up after one failure.
 
 /// The preferences the menu shows, by savefile key, in TG's priority order (species before the features that follow
 /// it). Character preferences: the appearance categories, the name, species, gender, age and the module's own
-/// non-contextual texts (rogue_*), if some playable species has them; player preferences: the settings page.
+/// non-contextual texts (rogue_*), if some playable species has them; player preferences: all of them, the settings page
+/// (it groups them by the category of TG's game preferences page).
 /proc/rogue_charsetup_shown_preferences()
 	var/static/list/shown
 	if(shown)
@@ -20,9 +21,6 @@
 	)
 	// Station things a medieval character never uses: the job's backpack and jumpsuit.
 	var/static/list/hidden = list("backpack", "jumpsuit_style")
-	var/list/settings = list()
-	for(var/list/group as anything in rogue_charsetup_settings_catalog())
-		settings |= group["keys"]
 	var/list/species_types = list()
 	for(var/species_id in get_selectable_species())
 		species_types += GLOB.species_list[species_id]
@@ -32,8 +30,7 @@
 		if(key in hidden)
 			continue
 		if(preference.savefile_identifier == PREFERENCE_PLAYER)
-			if(key in settings)
-				shown[key] = preference
+			shown[key] = preference
 			continue
 		var/wanted = (preference.category in appearance) || (key in list("real_name", "species", "gender", "age"))
 		if(!wanted && preference.category == PREFERENCE_CATEGORY_NON_CONTEXTUAL && findtext(key, "rogue_") == 1)
@@ -203,24 +200,3 @@
 		),
 	)
 	return catalogs[lang]
-
-/// Vibelin's settings page on TG's player preferences: the groups and the keys that exist here.
-/proc/rogue_charsetup_settings_catalog()
-	var/static/list/catalog
-	if(catalog)
-		return catalog
-	var/static/list/groups = list(
-		"Interface" = list("rogue_ui_language", "hotkeys", "buttons_locked", "tgui_lock", "tgui_input", "windowflashing", "ui_scale"),
-		"Display" = list("ambientocclusion", "auto_fit_viewport", "widescreenpref", "fullscreen_mode", "pixel_size", "scaling_method", "see_chat_non_mob"),
-		"Audio" = list("sound_lobby_volume", "sound_midi", "sound_ambience_volume", "sound_instruments"),
-	)
-	catalog = list()
-	for(var/title in groups)
-		var/list/keys = list()
-		for(var/key in groups[title])
-			var/datum/preference/preference = GLOB.preference_entries_by_key[key]
-			if(preference?.savefile_identifier == PREFERENCE_PLAYER)
-				keys += key
-		if(length(keys))
-			catalog += list(list("title" = title, "keys" = keys))
-	return catalog

@@ -24,10 +24,21 @@
 	/// Ratwood's desc of the race, without its markup: the description and, by paragraph, the lore of the preferences.
 	var/rogue_description
 	var/list/rogue_lore
+	/// Ratwood's get_skin_list(): the skins the race comes in, by the name of the clan, city or tone ("Bloodaxe" = "#hex").
+	var/list/rogue_skin_tones
+	/// What Ratwood calls the choice of rogue_skin_tones (skin_tone_wording): "Clan", "Origin City-State".
+	var/rogue_skin_wording
+	/// Ratwood's clothes_id of a race with its own cut of clothes (custom_clothes; the playable goblin wears the dwarves'
+	/// "dwarf" cut): its worn sprites are "<state>_<id>", "_f_<id>" for women's, where the sheet has them.
+	var/rogue_clothes_id
 
 /datum/species/on_species_gain(mob/living/carbon/human/human_who_gained_species, datum/species/old_species, pref_load, regenerate_icons = TRUE, replace_missing = TRUE)
-	if(rogue_default_skin && !pref_load)
-		human_who_gained_species.dna.features[FEATURE_MUTANT_COLOR] = rogue_default_skin
+	if(!pref_load)
+		// A body not made from preferences takes one of the race's skins at random (Ratwood random_character()), else its
+		// default skin.
+		var/skin = length(rogue_skin_tones) ? rogue_skin_tones[pick(rogue_skin_tones)] : rogue_default_skin
+		if(skin)
+			human_who_gained_species.dna.features[FEATURE_MUTANT_COLOR] = skin
 	. = ..()
 	for(var/trait in rogue_race_traits)
 		ADD_TRAIT(human_who_gained_species, trait, SPECIES_TRAIT)
@@ -206,6 +217,48 @@
 	id = "rogue_goblin_moon"
 	rogue_goblin_kind = "goblin_moon"
 
+/// Ratwood's /datum/component/rot/corpse/goblin: a goblin left dead this long rots down to bones, drawn as the goblin
+/// skeleton of goblins.dmi whatever its kind; brought back to life, it stays bones.
+#define ROGUE_GOBLIN_SKELETON_TIME (20 MINUTES)
+/// The sprite kind of a goblin's bones in ROGUE_BODIES_ICON (the porter writes goblin_skel_chest, _decap_chest, _severed).
+#define ROGUE_GOBLIN_SKELETON_KIND "goblin_skel"
+
+/datum/species/rogue_goblin
+	/// The rot of the dead body under way.
+	var/rogue_rot_timer
+
+/datum/species/rogue_goblin/on_species_gain(mob/living/carbon/human/human_who_gained_species, datum/species/old_species, pref_load, regenerate_icons = TRUE, replace_missing = TRUE)
+	. = ..()
+	RegisterSignal(human_who_gained_species, COMSIG_LIVING_DEATH, PROC_REF(rogue_goblin_died))
+	RegisterSignal(human_who_gained_species, COMSIG_LIVING_REVIVE, PROC_REF(rogue_goblin_revived))
+	if(human_who_gained_species.stat == DEAD)
+		rogue_goblin_died(human_who_gained_species, FALSE)
+
+/datum/species/rogue_goblin/on_species_loss(mob/living/carbon/human/human, datum/species/new_species, pref_load)
+	UnregisterSignal(human, list(COMSIG_LIVING_DEATH, COMSIG_LIVING_REVIVE))
+	deltimer(rogue_rot_timer)
+	rogue_rot_timer = null
+	return ..()
+
+/datum/species/rogue_goblin/proc/rogue_goblin_died(mob/living/carbon/human/goblin, gibbed)
+	SIGNAL_HANDLER
+	if(gibbed || rogue_rot_timer)
+		return
+	rogue_rot_timer = addtimer(CALLBACK(src, PROC_REF(rogue_goblin_skeletonize), goblin), ROGUE_GOBLIN_SKELETON_TIME, TIMER_STOPPABLE)
+
+/datum/species/rogue_goblin/proc/rogue_goblin_revived(mob/living/carbon/human/goblin, full_heal_flags)
+	SIGNAL_HANDLER
+	deltimer(rogue_rot_timer)
+	rogue_rot_timer = null
+
+/datum/species/rogue_goblin/proc/rogue_goblin_skeletonize(mob/living/carbon/human/goblin)
+	rogue_rot_timer = null
+	if(QDELETED(goblin) || goblin.stat != DEAD || goblin.dna?.species != src)
+		return
+	for(var/obj/item/bodypart/part as anything in goblin.bodyparts)
+		part.rogue_skeleton = TRUE
+	goblin.update_body_parts(TRUE)
+
 /// Where each offset key goes: the body zone ("arm" and "leg" for both) and the TG variable that holds it, if TG reads
 /// one (the module's own layers read feature_offsets).
 GLOBAL_LIST_INIT(rogue_offset_parts, list(
@@ -236,6 +289,8 @@ GLOBAL_LIST_INIT(rogue_offset_parts, list(
 	var/list/rogue_offset_keys
 	/// The goblin's kind the part was last on (goblin parts draw that sprite, also once cut off).
 	var/rogue_kind = "goblin"
+	/// Rotted down to bones (Ratwood skeletonized): a goblin part draws the goblin skeleton.
+	var/rogue_skeleton = FALSE
 
 /obj/item/bodypart/update_limb(dropping_limb = FALSE, is_creating = FALSE)
 	. = ..()
@@ -558,11 +613,11 @@ GLOBAL_LIST_INIT(rogue_offset_parts, list(
 /obj/item/bodypart/head/rogue_goblin/get_limb_icon(dropped)
 	. = ..()
 	if(dropped)
-		. += image(ROGUE_BODIES_ICON, "[rogue_kind]_severed", dir = SOUTH)
+		. += image(ROGUE_BODIES_ICON, "[rogue_skeleton ? ROGUE_GOBLIN_SKELETON_KIND : rogue_kind]_severed", dir = SOUTH)
 
 /obj/item/bodypart/head/rogue_goblin/generate_icon_key()
 	. = ..()
-	. += rogue_kind
+	. += rogue_skeleton ? ROGUE_GOBLIN_SKELETON_KIND : rogue_kind
 
 /obj/item/bodypart/chest/rogue_goblin
 	icon = ROGUE_BODIES_ICON
@@ -587,7 +642,7 @@ GLOBAL_LIST_INIT(rogue_offset_parts, list(
 	. += rogue_body_state()
 
 /obj/item/bodypart/chest/rogue_goblin/proc/rogue_body_state()
-	return "[rogue_kind][owner && !owner.get_bodypart(BODY_ZONE_HEAD) ? "_decap" : ""]_chest"
+	return "[rogue_skeleton ? ROGUE_GOBLIN_SKELETON_KIND : rogue_kind][owner && !owner.get_bodypart(BODY_ZONE_HEAD) ? "_decap" : ""]_chest"
 
 /obj/item/bodypart/arm/left/rogue_goblin
 	icon = ROGUE_BODIES_ICON
@@ -629,3 +684,26 @@ GLOBAL_LIST_INIT(rogue_offset_parts, list(
 	/// How a goblin wears this armor or helmet: its state in ROGUE_BODIES_ICON (Ratwood draws the goblin's suit and head
 	/// from goblins.dmi by item_state; the porter writes it for the goblin gear).
 	var/rogue_goblin_state
+
+/// Ratwood's custom_clothes: a race with its own cut of clothes (rogue_clothes_id) wears "<state>_<id>" from the same
+/// sheet, "<state>_f_<id>" when it wears women's clothes, where the sheet has the state; the module's worn sprite code
+/// (clothing/worn_icons.dm) takes it from there.
+/obj/item/build_worn_icon(default_layer = 0, default_icon_file = null, isinhands = FALSE, female_uniform = NO_FEMALE_UNIFORM, override_state = null, override_file = null, bodyshape = NONE)
+	if(!isinhands && !override_state)
+		override_state = rogue_custom_worn_state(default_layer, override_file || worn_icon || default_icon_file)
+	return ..(default_layer, default_icon_file, isinhands, female_uniform, override_state, override_file, bodyshape)
+
+/// The worn state of the wearer's race cut, or null for the plain one.
+/obj/item/proc/rogue_custom_worn_state(layer, file)
+	var/mob/living/carbon/human/wearer = loc
+	if(!istype(wearer) || !file)
+		return null
+	var/clothes_id = wearer.dna?.species?.rogue_clothes_id
+	if(!clothes_id)
+		return null
+	var/female = wearer.rogue_wears_female()
+	// Ratwood's women's gloves and bracers keep the plain cut (update_icons.dm passes them no customi).
+	if(female && (layer == GLOVES_LAYER || layer == ROGUE_WRISTS_LAYER))
+		return null
+	var/state = "[worn_icon_state || icon_state][female ? ROGUE_FEMALE_SUFFIX : ""]_[clothes_id]"
+	return icon_exists(file, state) ? state : null
