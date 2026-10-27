@@ -6,11 +6,9 @@
 #define TRAIT_ALCHEMY_EXPERT "Expert Alchemist"
 #define TRAIT_ALDERMAN "Alderman of the Assembly"
 #define TRAIT_ALDERMAN_CENSURED "Assembly Censure"
+#define TRAIT_ANCESTOR_GUARDIAN "Ancestor Guardian"
 #define TRAIT_APRICITY "Apricity"
-#define TRAIT_ARCYNE_T1 "Arcyne Training (Novice)"
-#define TRAIT_ARCYNE_T2 "Arcyne Training (Apprentice)"
-#define TRAIT_ARCYNE_T3 "Arcyne Training (Expert)"
-#define TRAIT_ARCYNE_T4 "Arcyne Training (Master)"
+#define TRAIT_ARCYNE "Arcyne Training"
 #define TRAIT_ARMOUR_DISLIKED "Misfitting Armour"
 #define TRAIT_ARMOUR_LIKED "Fitting Armour"
 #define TRAIT_ASSASSIN "Assassin"
@@ -21,8 +19,10 @@
 #define TRAIT_BANDITCAMP "banditcamp"
 #define TRAIT_BAOTHA_FERTILITY_BOON "Marked and shaped by Baotha"
 #define TRAIT_BATHHOUSE_DANCER "Bathhouse Dancer"
+#define TRAIT_BATTLE_CRY "Battle Cry"
 #define TRAIT_BEAUTIFUL "Beautiful"
 #define TRAIT_BETTER_SLEEP "Better Sleep"
+#define TRAIT_BEWINGED "Bewinged"
 #define TRAIT_BIGGUY "Big Guy"
 #define TRAIT_BLACKBAGGER "Apprehension Techniques"
 #define TRAIT_BLACKLEG "Blackleg"
@@ -46,6 +46,7 @@
 #define TRAIT_CICERONE "Cicerone"
 #define TRAIT_CIVILIZEDBARBARIAN "Expert Pugilist"
 #define TRAIT_CLERGYRADICAL "Radical member of Clergy"
+#define TRAIT_COLD_RESISTANCE "Cold Resistance"
 #define TRAIT_COMBAT_AWARE "Combat Aware"
 #define TRAIT_COMICSANS "Annoying Face"
 #define TRAIT_COMMIE "Blessing of Matthios"
@@ -72,6 +73,7 @@
 #define TRAIT_CYCLOPS_LEFT "Cyclops (Left)"
 #define TRAIT_CYCLOPS_RIGHT "Cyclops (Right)"
 #define TRAIT_DARKVISION "Darksight"
+#define TRAIT_DEADITE_RESISTANCE "Deadite Resistance"
 #define TRAIT_DEATHBARGAIN "Death Bargain"
 #define TRAIT_DEATHBYSNUSNU "Bed Breaker"
 #define TRAIT_DEATHLESS "Deathless"
@@ -117,6 +119,7 @@
 #define TRAIT_GANG_A "Gang Rontz Ratz"
 #define TRAIT_GANG_B "Gang Blortz Volves"
 #define TRAIT_GNOLL_HUNTED "Marked by Gnolls"
+#define TRAIT_GOLD_AFFINITY "Gold Affinity"
 #define TRAIT_GOODLOVER "Fabled Lover"
 #define TRAIT_GOODTRAINER "Good Trainer"
 #define TRAIT_GOODWRITER "Great Writer"
@@ -128,6 +131,8 @@
 #define TRAIT_HARDDISMEMBER "Hard Dismemberment"
 #define TRAIT_HARDSHELL "Hardshell"
 #define TRAIT_HEARTFELT "Heartfelt"
+#define TRAIT_HEARTY_DRINKER "Hearty Drinker"
+#define TRAIT_HEAT_RESISTANCE "Heat Resistance"
 #define TRAIT_HEAVYARMOR "Plate Training"
 #define TRAIT_HELLSPAWN "Hellspawn"
 #define TRAIT_HEMOPHAGE "Hemophage"
@@ -145,13 +150,17 @@
 #define TRAIT_JUSTICARSIGHT "Blessing of Ravox"
 #define TRAIT_KAZENGUNITE_SMITH "Kazengunite Knowledge"
 #define TRAIT_KEENEARS "Keen Ears"
+#define TRAIT_KNEESTINGER_IMMUNITY "Blessing of Dendor"
 #define TRAIT_KNOWNCRIMINAL "Known Criminal"
 #define TRAIT_LEAPER "Leaper"
+#define TRAIT_LEECHIMMUNE "Unleechable"
 #define TRAIT_LEGENDARY_ALCHEMIST "Expert Herb Finder"
 #define TRAIT_LEGENDARY_MINER "Trained Miner"
 #define TRAIT_LEPROSY "Leprosy"
 #define TRAIT_LEYLINE_HASTE "Leyline's Clarity"
+#define TRAIT_LIGHT_SENSITIVITY "Light Sensitivity"
 #define TRAIT_LIMPDICK "Limp Dick"
+#define TRAIT_LOCAL_KNOWLEDGE "Local Knowledge"
 #define TRAIT_LONGSTRIDER "Longstrider"
 #define TRAIT_LONGSWORDSMAN "Master Longswordman"
 #define TRAIT_LOOSE_STRAPS "Loose Straps"
@@ -166,6 +175,7 @@
 #define TRAIT_MATTHIOS_EYES "Eyes of Matthios"
 #define TRAIT_MEDICINE_EXPERT "Expert Physicker"
 #define TRAIT_MEDIUMARMOR "Maille Training"
+#define TRAIT_METICULOUS "Meticulous"
 #define TRAIT_MIRROR_MAGIC "Mirror Magic"
 #define TRAIT_MISSING_NOSE "Missing Nose"
 #define TRAIT_MONK_ROBE "Holy Vestatures"
@@ -186,6 +196,8 @@
 #define TRAIT_NORUN "Decayed Flesh"
 #define TRAIT_NOSLEEP "Fatal Insomnia"
 #define TRAIT_NOSTINK "Dead Nose"
+#define TRAIT_NOWW "Werevolf Immunity"
+#define TRAIT_NO_VOICEPACK_OVERRIDE "DisablePrefVoicepacks"
 #define TRAIT_NUDE_SLEEPER "Nude Sleeper"
 #define TRAIT_NUDIST "Nudist"
 #define TRAIT_NUMBED_LIMBS "Numbed Limbs"
@@ -233,7 +245,9 @@
 #define TRAIT_SIMPLESPEECH "Simple Speech"
 #define TRAIT_SKILLBLESSED "Skill Blessed"
 #define TRAIT_SLEUTH "Sleuth"
+#define TRAIT_SLOW_METABOLISM "Slow Metabolism"
 #define TRAIT_SMITHING_EXPERT "Expert Forgehand"
+#define TRAIT_SOFT_FOOTED "Soft Footed"
 #define TRAIT_SOUL_EXAMINE "Blessing of Necra"
 #define TRAIT_SPELLCOCKBLOCK "Bewitched"
 #define TRAIT_SPELL_DISPERSION "Barrier Dispersion"
@@ -241,6 +255,7 @@
 #define TRAIT_SQUIRE_REPAIR "Squire Knowledge"
 #define TRAIT_STANDARD_BEARER "Standard Bearer"
 #define TRAIT_STEELHEARTED "Steelhearted"
+#define TRAIT_STEPPE_RIDER "Steppe Rider"
 #define TRAIT_STRENGTH_UNCAPPED "Strength Unbound"
 #define TRAIT_STRONGBITE "Strong Bite"
 #define TRAIT_STRONGKICK "Strong Kick"
@@ -260,6 +275,7 @@
 #define TRAIT_VENOMOUS "Venomous"
 #define TRAIT_VOTARY "Votary"
 #define TRAIT_WAGES_SUSPENDED "Wages Suspended"
+#define TRAIT_WATCHFUL "Watchful"
 #define TRAIT_WATERBREATHING "Water Breathing"
 #define TRAIT_WEAPONLESS "Abboteer's Vow"
 #define TRAIT_WEBWALK "Webwalker"
@@ -287,11 +303,8 @@ GLOBAL_LIST_INIT(rogue_trait_descriptions, list(
 	TRAIT_ALCHEMY_EXPERT = span_greentext("I've deep, intricate knowledge of the alchemical arts. This skill can progress to Expert and above levels."),
 	TRAIT_ALDERMAN = span_info("Alderman of the Assembly, voice of the respectable citizenry of Rotwood Vale. Upon my charter I may spend the Crown's Purse and commission the realm's defense within the bounds the Commons have set me."),
 	TRAIT_ALDERMAN_CENSURED = span_warning("The Assembly has censured my name. No seat, no warrant shall be mine until the week ends."),
+	TRAIT_ANCESTOR_GUARDIAN = span_info("In Avar, we venerate our ancestors, and they ward us from danger. From time to time, they shall guide my hand in battle."),
 	TRAIT_APRICITY = span_info("Astrata's light blesses and rejuvenates me, allowing me to regain my stamina quicker."),
-	TRAIT_ARCYNE_T1 = span_notice("I have received basic training in the Arcyne arts, allowing me access to a small variety of spells useful outside of combat."),
-	TRAIT_ARCYNE_T2 = span_notice("I have received advanced training in the Arcyne arts, allowing me to learn basic combat spells"),
-	TRAIT_ARCYNE_T3 = span_notice("I am a full-fledged mage, and have access to devastating spells that affects a wide area."),
-	TRAIT_ARCYNE_T4 = span_notice("I'm a master of the Arcyne arts, and has access to some of the most powerful spells ever devised."),
 	TRAIT_ARMOUR_DISLIKED = span_warning("I'm wearing something that burdens me."),
 	TRAIT_ARMOUR_LIKED = span_greentext("I'm wearing something more suited to my style."),
 	TRAIT_ASSASSIN = span_warning("My soul has been tainted by foul spirits, through them I honor my pact."),
@@ -301,8 +314,10 @@ GLOBAL_LIST_INIT(rogue_trait_descriptions, list(
 	TRAIT_BAD_MOOD = span_warning("Everything just seems to piss me off"),
 	TRAIT_BAOTHA_FERTILITY_BOON = span_info("I have been marked by Baotha. I am branded visibly on my groin and am able to be impregnated regardless of physical states that would usually prevent this"),
 	TRAIT_BATHHOUSE_DANCER = span_info("I am trained in the bathhouse arts. Within its walls I can dance and shake for a patron all night without tiring."),
+	TRAIT_BATTLE_CRY = span_info("In the land of Gronn, no battle begins without a battle cry. A warcry is sure to give me favor in a fight!"),
 	TRAIT_BEAUTIFUL = span_info("People love looking at my face"),
 	TRAIT_BETTER_SLEEP = span_info("I recover more energy when sleeping."),
+	TRAIT_BEWINGED = span_notice("I flutter my wings during a leap, allowing me to jump farther!"),
 	TRAIT_BIGGUY = span_info("My immense frame and size allows me to smash through wooden doors, and throw people more easily."),
 	TRAIT_BLACKBAGGER = span_info("I've been trained to properly abduct individuals through the use of seizing garrotes and blackbags."),
 	TRAIT_BLACKLEG = span_warning("My people have an inherent connection to Xylix. This grants me the ability to rig coin flips and dice rolls in my favour."),
@@ -321,8 +336,9 @@ GLOBAL_LIST_INIT(rogue_trait_descriptions, list(
 	TRAIT_CHASTITY_SPIKED = span_info("My chastity device is equipped with spikes constantly pressing against my nethers."),
 	TRAIT_CHASTITY_VAGINA_BLOCKED = span_info("My chastity device blocks access to my vagina."),
 	TRAIT_CICERONE = span_info("I am well-versed in the differences of brews and spirits, and can tell them apart at a glance."),
-	TRAIT_CIVILIZEDBARBARIAN = span_info("My rigorous training in the martial arts has turned me into a living weapon. No limb is out of reach for my fists and feet, and my unarmed strikes now have a higher chance to inflict critical damage."),
+	TRAIT_CIVILIZEDBARBARIAN = span_info("My rigorous training in the martial arts has turned me into a living weapon. No limb is out of reach for my fists and feet, and my unarmed strikes are now stronger (+5 Unarmed Damage)."),
 	TRAIT_CLERGYRADICAL = span_info("I follow the radical path of the clergy, abandoning the old road of devotion in favor of self-guided miracle study."),
+	TRAIT_COLD_RESISTANCE = span_info("I've grown a tolerance to the cold, due to the climate of my homeland."),
 	TRAIT_COMBAT_AWARE = span_notice("My honed senses and intuition allow me to spot notable things in the midst of battle with ease."),
 	TRAIT_COMICSANS = span_sans("I am cursed with a odd voice."),
 	TRAIT_COMPLIANT = span_info("No matter how hard I try, I can't put up a fight against others."),
@@ -347,6 +363,7 @@ GLOBAL_LIST_INIT(rogue_trait_descriptions, list(
 	TRAIT_CYCLOPS_LEFT = span_warning("My left eye has been poked out..."),
 	TRAIT_CYCLOPS_RIGHT = span_warning("My right eye has been poked out..."),
 	TRAIT_DARKVISION = span_info("I can see better in the dark."),
+	TRAIT_DEADITE_RESISTANCE = span_info("I was raised in rot-infested lands. My body is more resistant to the infection."),
 	TRAIT_DEATHBARGAIN = span_info("A horrible deal has been prepared in your name. May you never see it fulfilled..."),
 	TRAIT_DEATHLESS = span_info("I cannot truly die by ordinary means."),
 	TRAIT_DEATHSIGHT = span_info("I can feel when someone nearby draws the Undermaiden's attention."),
@@ -390,6 +407,7 @@ GLOBAL_LIST_INIT(rogue_trait_descriptions, list(
 	TRAIT_FUSILIER = span_suppradio("I've been trained in the safe use of smokepowder. Additionally, knowledge above <b><u>journeyman</u></b> status is attainable."),
 	TRAIT_GANG_A = span_info("I belong to the Rontz Ratz gang"),
 	TRAIT_GANG_B = span_info("I belong to the Blortz Volves gang"),
+	TRAIT_GOLD_AFFINITY = span_info("Hailing from the land of Naledi, I am invigorated by wearing gold. The sheen reminds me of grander times."),
 	TRAIT_GOODTRAINER = span_info("I am a good teacher, and when it comes to weaponry I can train others to be just as skilled as I am."),
 	TRAIT_GOODWRITER = span_notice("I'm proficient at writing. Any skillbooks made by me will allow the reader to learn the subject more quickly."),
 	TRAIT_GOSSIPER = span_info("I have an ear for gossip, even amongst those with blue blood."),
@@ -400,6 +418,8 @@ GLOBAL_LIST_INIT(rogue_trait_descriptions, list(
 	TRAIT_HARDDISMEMBER = span_info("My body is strong and endurant. My limbs are not easily dismembered."),
 	TRAIT_HARDSHELL = span_info("The bulk of this armor prevents me from parrying effectively, but I can still move out of the way."),
 	TRAIT_HEARTFELT = span_info("I serve the interests of the Lord of Heartfelt."),
+	TRAIT_HEARTY_DRINKER = span_info("The blood of dwarves runs in my veins! I enjoy a hearty brew!"),
+	TRAIT_HEAT_RESISTANCE = span_info("I've grown a tolerance to heat, due to the climate of my homeland."),
 	TRAIT_HEAVYARMOR = span_info("I can move freely in heavy armor."),
 	TRAIT_HELLSPAWN = span_warning("My bloodline affords me an inherent resistance to catching ablaze."),
 	TRAIT_HERESIARCH = span_warning("I've been touched by the truth of Psydonia. Lyfe as we understand cannot persist under the Ten or the pretense of Psydon. Something must change."),
@@ -418,7 +438,9 @@ GLOBAL_LIST_INIT(rogue_trait_descriptions, list(
 	TRAIT_LEGENDARY_ALCHEMIST = span_info("An expert in the art of finding herbs in the wild."),
 	TRAIT_LEGENDARY_MINER = span_greentext("I been trained in proper mining techniques. My mining skill can advance to Legendary."),
 	TRAIT_LEYLINE_HASTE = span_warning("I can fully see and use the threads which bind the world together! Spell casting time and cooldowns are 25% faster now."),
+	TRAIT_LIGHT_SENSITIVITY = span_info("Living in the dim caverns of the underdark has caused my eyes to adjust. Though I can see well in the dark, bright lights are anathema to me!"),
 	TRAIT_LIGHT_STEP = span_info("My steps are light and swift. I make less noise while sneaking, and can sneak much quicker."),
+	TRAIT_LOCAL_KNOWLEDGE = span_info("I've lived in Ferentia long enough to avoid its dangers."),
 	TRAIT_LONGSTRIDER = span_info("Each of my steps finds it's footing no matter how treacherous the terrain is."),
 	TRAIT_LONGSWORDSMAN = span_info("\"I will crush anyone who opposes me. I am of royal blood. I dispense justice, advance the cause of good and destroy evil. To those who learn my crossings I will grant great fame and renown in the art of armed fighting.\" - I fight like a Master when I wield a traditional longsword and I know how to perform master strikes with them."),
 	TRAIT_LOOSE_STRAPS = span_warning("My armor's straps are delicate, and may break easily. It's liable to be flung off if it takes too much damage."),
@@ -433,6 +455,7 @@ GLOBAL_LIST_INIT(rogue_trait_descriptions, list(
 	TRAIT_MATTHIOS_EYES = span_notice("I have a sense for what the most valuable item someone has is."),
 	TRAIT_MEDICINE_EXPERT = span_greentext("I've deep, intricate knowledge of my craft. I can learn to become a Master or above."),
 	TRAIT_MEDIUMARMOR = span_info("I can move freely in medium armor."),
+	TRAIT_METICULOUS = span_info("In Grenzelhoft, I was taught to be meticulous with what spare resources we had. Crafting is easier for me."),
 	TRAIT_MIRROR_MAGIC = span_info("Mirror, mirror on the wall, who's the fairest of them all?"),
 	TRAIT_MISSING_NOSE = span_warning("I struggle to breathe."),
 	TRAIT_MONK_ROBE = span_notice("I feel closer to the gods in my meager robes.. I feel vigorous, empowered by their light!"),
@@ -453,6 +476,7 @@ GLOBAL_LIST_INIT(rogue_trait_descriptions, list(
 	TRAIT_NOPAINSTUN = span_info("Pain does not impair me."),
 	TRAIT_NORUN = span_warning("My body has atrophied in my state of decay; my leg joints just don't have the strength or durability for running anymore"),
 	TRAIT_NOSLEEP = span_warning("I can't sleep."),
+	TRAIT_NOWW = span_info("Dendor's madness shall find no hold in me."),
 	TRAIT_NUDE_SLEEPER = span_warning("I can't fall asleep unless I'm nude and in bed."),
 	TRAIT_NUMBED_LIMBS = span_info("Yils of repeated trauma dealt to my body has left my limbs feeling numb and my sense of pain dulled. I won't crumple from pain if I lose any limbs."),
 	TRAIT_OUTDOORSMAN = span_info("My experience in the wilds allows me to fall asleep on surfaces like treebranches as if they were beds."),
@@ -493,13 +517,16 @@ GLOBAL_LIST_INIT(rogue_trait_descriptions, list(
 	TRAIT_SIMPLESPEECH = span_info("I can not say hard words."),
 	TRAIT_SKILLBLESSED = span_greentext("I've reunited with an old friend of mine. All is well."),
 	TRAIT_SLEUTH = span_info("I can track more frequently, and the act is not impaired by movement. I can examine tracks right away."),
+	TRAIT_SLOW_METABOLISM = span_info("Every child in Otava has suffered through at least one famine. The frigid alpines are notoriously infertile. I eat less than others."),
 	TRAIT_SMITHING_EXPERT = span_greentext("I'm experienced with the arts of smithing and engineering. Smithing, Smelting, Engineering, Mining, Masonry and Pottery can progress to Legendary levels."),
+	TRAIT_SOFT_FOOTED = span_info("In the far-off land of Kazengun, it's considered impolite to walk noisily. My steps are soft and light."),
 	TRAIT_SOUL_EXAMINE = span_deadsay("I know when someone's soul has departed."),
 	TRAIT_SPELLCOCKBLOCK = span_warning("I cannot cast any spells."),
 	TRAIT_SPIDERBORN = span_warning("I am a spider rider, my darleeng pet is et extension of moi."),
 	TRAIT_SQUIRE_REPAIR = span_info("Trained at my Master's side, I can restore any kind of gears with time and polish them until they gleam like new."),
 	TRAIT_STANDARD_BEARER = span_info("The banner is my lifeline. Just as I am to it. The retinue know to rally around me, so long as I keep it safe."),
 	TRAIT_STEELHEARTED = span_info("I have hardened nerves, and do not waiver from the sight of violence in battle."),
+	TRAIT_STEPPE_RIDER = span_info("During my childhood, I was often around horses and taught to ride them from a young age. "),
 	TRAIT_STRENGTH_UNCAPPED = span_warning("MY STRENGTH IS UNBOUND!"),
 	TRAIT_STRONGBITE = span_info("Stronger bites, critical bite attacks."),
 	TRAIT_STRONGKICK = span_info("My kicks knock people down and back a step, consistently. There's no need for obstacles."),
@@ -520,6 +547,7 @@ GLOBAL_LIST_INIT(rogue_trait_descriptions, list(
 	TRAIT_VAMPBITE = span_info("Your bite's victims going to feel very, VERY good."),
 	TRAIT_VOTARY = span_info("I'm of the Holy See's own. I feel most comfortable on hallowed ground."),
 	TRAIT_WAGES_SUSPENDED = span_warning("The Stewardry has halted my daily wages!"),
+	TRAIT_WATCHFUL = span_info("Zybantine is known for its pickpockets and thieves, and not without cause. I am wary of slippery hands."),
 	TRAIT_WATERBREATHING = span_info("I do not drown in bodies of water."),
 	TRAIT_WEAPONLESS = span_info("My vows forbid me from using weaponry... but they did not forbid me from using my fists!"),
 	TRAIT_WHITE_STAG = span_info("The power of the white stag lives on inside of me!"),

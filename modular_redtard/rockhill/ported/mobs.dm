@@ -14,6 +14,7 @@
 	icon_state = "hollow"
 	health = 100
 	maxHealth = 100
+	rogue_mob_intents = list(/datum/intent/unarmed/help, /datum/intent/unarmed/punch)
 
 /mob/living/simple_animal/butterfly
 	parent_type = /mob/living/basic/rockhill
@@ -26,6 +27,18 @@
 	health = 2
 	maxHealth = 2
 
+/mob/living/simple_animal/chick
+	parent_type = /mob/living/basic/rockhill
+	name = "\improper chick"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/mob/animal.dmi'
+	icon_state = "chick"
+	icon_living = "chick"
+	icon_dead = "chick_dead"
+	health = 3
+	maxHealth = 3
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/grown/wheat)
+
 /mob/living/simple_animal/chicken
 	parent_type = /mob/living/basic/rockhill
 	name = "\improper chicken"
@@ -36,6 +49,7 @@
 	icon_dead = "chicken_brown_dead"
 	health = 15
 	maxHealth = 15
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/grown/wheat, /obj/item/reagent_containers/food/snacks/grown/oat)
 
 /mob/living/simple_animal/hostile/retaliate/bat
 	name = "bat"
@@ -48,6 +62,7 @@
 	maxHealth = 50
 	melee_damage_lower = 6
 	melee_damage_upper = 5
+	rogue_mob_intents = list(/datum/intent/bite)
 
 /mob/living/simple_animal/hostile/retaliate/frog
 	name = "frog"
@@ -88,6 +103,8 @@
 	melee_damage_upper = 35
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 14, ROGUE_STAT_CONSTITUTION = 15)
+	rogue_mob_intents = list(/datum/intent/simple/headbutt)
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/grown/apple, /obj/item/reagent_containers/food/snacks/grown/berries)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/beetle/tame/saddled
 	name = "giant woolly chafer beetle"
@@ -104,6 +121,8 @@
 	melee_damage_upper = 35
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 14, ROGUE_STAT_CONSTITUTION = 15)
+	rogue_mob_intents = list(/datum/intent/simple/headbutt)
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/grown/apple, /obj/item/reagent_containers/food/snacks/grown/berries)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/bigrat
 	name = "rous"
@@ -121,6 +140,10 @@
 	rogue_defprob = 40
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 9, ROGUE_STAT_CONSTITUTION = 6)
+	rogue_mob_intents = list(/datum/intent/simple/bite/bigrat)
+	rogue_aggressive = 1
+	rogue_retreat_health = 0.3
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks, /obj/item/natural/bone, /obj/item/natural/hide)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/bull
 	name = "cow"
@@ -134,6 +157,8 @@
 	melee_damage_upper = 50
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 12, ROGUE_STAT_CONSTITUTION = 20, ROGUE_STAT_SPEED = 2)
+	rogue_mob_intents = list(/datum/intent/simple/headbutt)
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/grown/wheat, /obj/item/reagent_containers/food/snacks/grown/oat)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/chicken
 	name = "\improper chicken"
@@ -148,6 +173,8 @@
 	melee_damage_upper = 8
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 6, ROGUE_STAT_CONSTITUTION = 6, ROGUE_STAT_SPEED = 1)
+	rogue_mob_intents = list(/datum/intent/simple/claw)
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/grown/berries/rogue, /obj/item/natural/worms, /obj/item/reagent_containers/food/snacks/grown/wheat, /obj/item/reagent_containers/food/snacks/grown/oat)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/cow
 	name = "cow"
@@ -162,6 +189,40 @@
 	melee_damage_upper = 25
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 12, ROGUE_STAT_CONSTITUTION = 20, ROGUE_STAT_SPEED = 2)
+	rogue_mob_intents = list(/datum/intent/simple/headbutt)
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/grown/wheat, /obj/item/reagent_containers/food/snacks/grown/oat)
+
+/mob/living/simple_animal/hostile/retaliate/rogue/cow/bullet
+	name = "calf"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/mob/monster/cow.dmi'
+	icon_state = "bullet"
+	icon_living = "bullet"
+	icon_dead = "bullet_dead"
+	health = 20
+	maxHealth = 20
+	melee_damage_lower = 1
+	melee_damage_upper = 6
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 5, ROGUE_STAT_CONSTITUTION = 5, ROGUE_STAT_SPEED = 5)
+	rogue_mob_intents = list(/datum/intent/simple/headbutt)
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/grown/wheat, /obj/item/reagent_containers/food/snacks/grown/oat)
+
+/mob/living/simple_animal/hostile/retaliate/rogue/cow/cowlet
+	name = "calf"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/mob/monster/cow.dmi'
+	icon_state = "cowlet"
+	icon_living = "cowlet"
+	icon_dead = "cowlet_dead"
+	health = 20
+	maxHealth = 20
+	melee_damage_lower = 1
+	melee_damage_upper = 6
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 5, ROGUE_STAT_CONSTITUTION = 5, ROGUE_STAT_SPEED = 5)
+	rogue_mob_intents = list(/datum/intent/simple/headbutt)
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/grown/wheat, /obj/item/reagent_containers/food/snacks/grown/oat)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/direbear
 	name = "direbear"
@@ -175,6 +236,9 @@
 	rogue_defprob = 40
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 13, ROGUE_STAT_CONSTITUTION = 12, ROGUE_STAT_SPEED = 9)
+	rogue_mob_intents = list(/datum/intent/simple/bite/bear)
+	rogue_aggressive = 1
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks, /obj/item/bodypart, /obj/item/organ, /obj/effect/decal/remains)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/elemental/behemoth
 	name = "earthen behemoth"
@@ -189,6 +253,9 @@
 	rogue_defprob = 40
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 13, ROGUE_STAT_CONSTITUTION = 17, ROGUE_STAT_SPEED = 5)
+	rogue_mob_intents = list(/datum/intent/simple/elementalt2_unarmed)
+	rogue_aggressive = 1
+	rogue_retreat_health = 0.3
 
 /mob/living/simple_animal/hostile/retaliate/rogue/elemental/colossus
 	name = "earthen colossus"
@@ -203,6 +270,9 @@
 	melee_damage_upper = 70
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 16, ROGUE_STAT_CONSTITUTION = 20, ROGUE_STAT_SPEED = 3)
+	rogue_mob_intents = list(/datum/intent/simple/elementalt2_unarmed)
+	rogue_aggressive = 1
+	rogue_retreat_health = 0.3
 
 /mob/living/simple_animal/hostile/retaliate/rogue/elemental/warden
 	name = "earthen Warden"
@@ -217,6 +287,9 @@
 	rogue_defprob = 30
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_CONSTITUTION = 15, ROGUE_STAT_SPEED = 6)
+	rogue_mob_intents = list(/datum/intent/simple/elemental_unarmed)
+	rogue_aggressive = 1
+	rogue_retreat_health = 0.3
 
 /mob/living/simple_animal/hostile/retaliate/rogue/fae/dryad
 	name = "dryad"
@@ -231,6 +304,9 @@
 	rogue_defprob = 40
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 14, ROGUE_STAT_CONSTITUTION = 18, ROGUE_STAT_SPEED = 4)
+	rogue_mob_intents = list(/datum/intent/simple/elementalt2_unarmed)
+	rogue_aggressive = 1
+	rogue_retreat_health = 0.3
 
 /mob/living/simple_animal/hostile/retaliate/rogue/fae/glimmerwing
 	name = "glimmerwing"
@@ -245,6 +321,9 @@
 	rogue_defprob = 40
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 9, ROGUE_STAT_CONSTITUTION = 7, ROGUE_STAT_SPEED = 15)
+	rogue_mob_intents = list(/datum/intent/simple/bite)
+	rogue_aggressive = 1
+	rogue_retreat_health = 0.3
 
 /mob/living/simple_animal/hostile/retaliate/rogue/fae/sprite
 	name = "sprite"
@@ -259,6 +338,9 @@
 	rogue_defprob = 40
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 2, ROGUE_STAT_CONSTITUTION = 6, ROGUE_STAT_SPEED = 17)
+	rogue_mob_intents = list(/datum/intent/unarmed/claw)
+	rogue_aggressive = 1
+	rogue_retreat_health = 0.3
 
 /mob/living/simple_animal/hostile/retaliate/rogue/goat
 	name = "goat"
@@ -273,6 +355,40 @@
 	melee_damage_upper = 25
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 12, ROGUE_STAT_CONSTITUTION = 8)
+	rogue_mob_intents = list(/datum/intent/simple/headbutt)
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/grown/wheat, /obj/item/reagent_containers/food/snacks/grown/oat, /obj/item/reagent_containers/food/snacks/grown/apple, /obj/item/reagent_containers/food/snacks/grown/berries/rogue)
+
+/mob/living/simple_animal/hostile/retaliate/rogue/goat/goatlet
+	name = "goatlet"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/mob/monster/gote.dmi'
+	icon_state = "goatlet"
+	icon_living = "goatlet"
+	icon_dead = "goatlet_dead"
+	health = 20
+	maxHealth = 20
+	melee_damage_lower = 1
+	melee_damage_upper = 6
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 5, ROGUE_STAT_CONSTITUTION = 5, ROGUE_STAT_SPEED = 5)
+	rogue_mob_intents = list(/datum/intent/simple/headbutt)
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/grown/wheat, /obj/item/reagent_containers/food/snacks/grown/oat, /obj/item/reagent_containers/food/snacks/grown/apple, /obj/item/reagent_containers/food/snacks/grown/berries/rogue)
+
+/mob/living/simple_animal/hostile/retaliate/rogue/goat/goatletboy
+	name = "goatlet"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/mob/monster/gote.dmi'
+	icon_state = "goatletboy"
+	icon_living = "goatletboy"
+	icon_dead = "goatletboy_dead"
+	health = 20
+	maxHealth = 20
+	melee_damage_lower = 1
+	melee_damage_upper = 6
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 5, ROGUE_STAT_CONSTITUTION = 5, ROGUE_STAT_SPEED = 5)
+	rogue_mob_intents = list(/datum/intent/simple/headbutt)
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/grown/wheat, /obj/item/reagent_containers/food/snacks/grown/oat, /obj/item/reagent_containers/food/snacks/grown/apple, /obj/item/reagent_containers/food/snacks/grown/berries/rogue)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/goatmale
 	name = "goat"
@@ -286,6 +402,8 @@
 	melee_damage_upper = 50
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 12, ROGUE_STAT_CONSTITUTION = 7, ROGUE_STAT_SPEED = 14)
+	rogue_mob_intents = list(/datum/intent/simple/headbutt)
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/grown/wheat, /obj/item/reagent_containers/food/snacks/grown/oat, /obj/item/reagent_containers/food/snacks/grown/apple, /obj/item/reagent_containers/food/snacks/grown/berries/rogue)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/headless
 	name = "headless"
@@ -301,6 +419,9 @@
 	rogue_defprob = 10
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 13, ROGUE_STAT_CONSTITUTION = 6)
+	rogue_mob_intents = list(/datum/intent/simple/bite, /datum/intent/simple/claw)
+	rogue_aggressive = 1
+	rogue_retreat_health = 0.1
 
 /mob/living/simple_animal/hostile/retaliate/rogue/infernal/fiend
 	name = "fiend"
@@ -314,6 +435,9 @@
 	melee_damage_upper = 30
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 12, ROGUE_STAT_CONSTITUTION = 13, ROGUE_STAT_SPEED = 8)
+	rogue_mob_intents = list(/datum/intent/simple/bite)
+	rogue_aggressive = 1
+	rogue_retreat_health = 0.3
 
 /mob/living/simple_animal/hostile/retaliate/rogue/infernal/hellhound
 	name = "hell hound"
@@ -328,6 +452,9 @@
 	rogue_defprob = 40
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 9, ROGUE_STAT_CONSTITUTION = 7, ROGUE_STAT_SPEED = 13)
+	rogue_mob_intents = list(/datum/intent/simple/bite)
+	rogue_aggressive = 1
+	rogue_retreat_health = 0.3
 
 /mob/living/simple_animal/hostile/retaliate/rogue/infernal/imp
 	name = "infernal imp"
@@ -342,6 +469,9 @@
 	rogue_defprob = 40
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 6, ROGUE_STAT_CONSTITUTION = 7, ROGUE_STAT_SPEED = 12)
+	rogue_mob_intents = list(/datum/intent/unarmed/claw)
+	rogue_aggressive = 1
+	rogue_retreat_health = 0.3
 
 /mob/living/simple_animal/hostile/retaliate/rogue/infernal/watcher
 	name = "infernal watcher"
@@ -356,6 +486,9 @@
 	rogue_defprob = 35
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 12, ROGUE_STAT_CONSTITUTION = 13, ROGUE_STAT_SPEED = 8)
+	rogue_mob_intents = list(/datum/intent/simple/bite)
+	rogue_aggressive = 1
+	rogue_retreat_health = 0.3
 
 /mob/living/simple_animal/hostile/retaliate/rogue/mimic
 	name = "chest"
@@ -367,6 +500,8 @@
 	melee_damage_upper = 40
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 15, ROGUE_STAT_CONSTITUTION = 15, ROGUE_STAT_SPEED = 5)
+	rogue_mob_intents = list(/datum/intent/simple/bite)
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/minotaur
 	name = "Minotaur"
@@ -380,6 +515,9 @@
 	rogue_defprob = 40
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 16, ROGUE_STAT_CONSTITUTION = 19, ROGUE_STAT_SPEED = 5)
+	rogue_mob_intents = list(/datum/intent/simple/minotaur_unarmed)
+	rogue_aggressive = 1
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/rogue/meat)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/minotaur/axe
 	name = "Minotaur"
@@ -393,6 +531,9 @@
 	rogue_defprob = 40
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 16, ROGUE_STAT_CONSTITUTION = 19, ROGUE_STAT_SPEED = 5)
+	rogue_mob_intents = list(/datum/intent/simple/minotaur_axe)
+	rogue_aggressive = 1
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/rogue/meat)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/minotaur/axe/female
 	name = "Minotaur"
@@ -406,6 +547,9 @@
 	rogue_defprob = 40
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 16, ROGUE_STAT_CONSTITUTION = 19, ROGUE_STAT_SPEED = 5)
+	rogue_mob_intents = list(/datum/intent/simple/minotaur_axe)
+	rogue_aggressive = 1
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/rogue/meat)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/mirespider
 	name = "mire crawler"
@@ -418,6 +562,8 @@
 	rogue_defprob = 40
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 7, ROGUE_STAT_CONSTITUTION = 7, ROGUE_STAT_SPEED = 13)
+	rogue_mob_intents = list(/datum/intent/simple/bite/mirespider)
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/grown)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/mirespider/angry
 	name = "mire crawler"
@@ -430,6 +576,8 @@
 	rogue_defprob = 40
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 7, ROGUE_STAT_CONSTITUTION = 7, ROGUE_STAT_SPEED = 13)
+	rogue_mob_intents = list(/datum/intent/simple/bite/mirespider)
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/grown)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/mole
 	name = "mole"
@@ -442,6 +590,10 @@
 	rogue_defprob = 40
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 20, ROGUE_STAT_CONSTITUTION = 7, ROGUE_STAT_SPEED = 13)
+	rogue_mob_intents = list(/datum/intent/simple/claw/mole)
+	rogue_aggressive = 1
+	rogue_retreat_health = 0.3
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/rogue/meat)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/mudcrab
 	name = "mudcrab"
@@ -451,6 +603,7 @@
 	icon_living = "mudcrab"
 	icon_dead = "mudcrab_dead"
 	rogue_can_dodge = TRUE
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/mudcrab/cabbit
 	name = "cabbit"
@@ -460,6 +613,7 @@
 	icon_living = "cabbit"
 	icon_dead = "cabbit_dead"
 	rogue_can_dodge = TRUE
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/saiga
 	name = "saiga doe"
@@ -475,6 +629,27 @@
 	melee_damage_upper = 25
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 12, ROGUE_STAT_CONSTITUTION = 8, ROGUE_STAT_SPEED = 15)
+	rogue_mob_intents = list(/datum/intent/simple/headbutt/saiga)
+	rogue_aggressive = 1
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/grown/wheat, /obj/item/reagent_containers/food/snacks/grown/oat, /obj/item/reagent_containers/food/snacks/grown/apple)
+
+/mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigaboy
+	name = "saiga"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/mob/monster/saiga.dmi'
+	icon_state = "saigaboy"
+	icon_living = "saigaboy"
+	icon_dead = "saigaboy_dead"
+	health = 20
+	maxHealth = 20
+	pixel_x = -8
+	melee_damage_lower = 1
+	melee_damage_upper = 6
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 5, ROGUE_STAT_CONSTITUTION = 5, ROGUE_STAT_SPEED = 5)
+	rogue_mob_intents = list(/datum/intent/simple/headbutt/saiga)
+	rogue_aggressive = 1
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/grown/wheat, /obj/item/reagent_containers/food/snacks/grown/oat, /obj/item/reagent_containers/food/snacks/grown/apple)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigabuck
 	name = "saiga buck"
@@ -490,6 +665,10 @@
 	melee_damage_upper = 90
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 12, ROGUE_STAT_CONSTITUTION = 15, ROGUE_STAT_SPEED = 18)
+	rogue_mob_intents = list(/datum/intent/simple/headbutt/saiga)
+	rogue_aggressive = 1
+	rogue_retreat_health = 0.3
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/grown/wheat, /obj/item/reagent_containers/food/snacks/grown/oat, /obj/item/reagent_containers/food/snacks/grown/apple)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigabuck/tame
 	name = "saiga buck"
@@ -505,6 +684,10 @@
 	melee_damage_upper = 90
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 12, ROGUE_STAT_CONSTITUTION = 15, ROGUE_STAT_SPEED = 18)
+	rogue_mob_intents = list(/datum/intent/simple/headbutt/saiga)
+	rogue_aggressive = 1
+	rogue_retreat_health = 0.3
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/grown/wheat, /obj/item/reagent_containers/food/snacks/grown/oat, /obj/item/reagent_containers/food/snacks/grown/apple)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigabuck/tame/saddled
 	name = "saiga buck"
@@ -520,6 +703,28 @@
 	melee_damage_upper = 90
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 12, ROGUE_STAT_CONSTITUTION = 15, ROGUE_STAT_SPEED = 18)
+	rogue_mob_intents = list(/datum/intent/simple/headbutt/saiga)
+	rogue_aggressive = 1
+	rogue_retreat_health = 0.3
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/grown/wheat, /obj/item/reagent_containers/food/snacks/grown/oat, /obj/item/reagent_containers/food/snacks/grown/apple)
+
+/mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigakid
+	name = "saiga calf"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/mob/monster/saiga.dmi'
+	icon_state = "saigakid"
+	icon_living = "saigakid"
+	icon_dead = "saigakid_dead"
+	health = 20
+	maxHealth = 20
+	pixel_x = -16
+	melee_damage_lower = 1
+	melee_damage_upper = 6
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 5, ROGUE_STAT_CONSTITUTION = 5, ROGUE_STAT_SPEED = 5)
+	rogue_mob_intents = list(/datum/intent/simple/headbutt/saiga)
+	rogue_aggressive = 1
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/grown/wheat, /obj/item/reagent_containers/food/snacks/grown/oat, /obj/item/reagent_containers/food/snacks/grown/apple)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/saiga/undead
 	name = "deadite saiga"
@@ -533,6 +738,9 @@
 	melee_damage_upper = 90
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 12, ROGUE_STAT_CONSTITUTION = 8, ROGUE_STAT_SPEED = 15)
+	rogue_mob_intents = list(/datum/intent/simple/headbutt/saiga)
+	rogue_aggressive = 1
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/grown/wheat, /obj/item/reagent_containers/food/snacks/grown/oat, /obj/item/reagent_containers/food/snacks/grown/apple)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/spider
 	name = "beespider"
@@ -545,6 +753,10 @@
 	rogue_defprob = 40
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 9, ROGUE_STAT_CONSTITUTION = 6)
+	rogue_mob_intents = list(/datum/intent/simple/bite/honeyspider)
+	rogue_aggressive = 1
+	rogue_retreat_health = 0.3
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/organ)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated
 	name = "skallax spider"
@@ -559,6 +771,10 @@
 	rogue_defprob = 40
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 9, ROGUE_STAT_CONSTITUTION = 6)
+	rogue_mob_intents = list(/datum/intent/simple/bite)
+	rogue_aggressive = 1
+	rogue_retreat_health = 0.3
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/organ)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/spider/rock
 	name = "rockspider"
@@ -572,6 +788,10 @@
 	rogue_defprob = 40
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 9, ROGUE_STAT_CONSTITUTION = 6)
+	rogue_mob_intents = list(/datum/intent/simple/bite/honeyspider)
+	rogue_aggressive = 1
+	rogue_retreat_health = 0.3
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/organ)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/swine
 	name = "swine sow"
@@ -586,6 +806,8 @@
 	melee_damage_upper = 40
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 12, ROGUE_STAT_CONSTITUTION = 15, ROGUE_STAT_SPEED = 8)
+	rogue_mob_intents = list(/datum/intent/simple/headbutt/saiga)
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/grown/oat, /obj/item/reagent_containers/food/snacks/grown/potato/rogue, /obj/item/reagent_containers/food/snacks/rogue/meat)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/swine/hog
 	name = "swine hog"
@@ -600,6 +822,40 @@
 	melee_damage_upper = 60
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 12, ROGUE_STAT_CONSTITUTION = 15, ROGUE_STAT_SPEED = 6)
+	rogue_mob_intents = list(/datum/intent/simple/headbutt/saiga)
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/grown/oat, /obj/item/reagent_containers/food/snacks/grown/potato/rogue, /obj/item/reagent_containers/food/snacks/rogue/meat)
+
+/mob/living/simple_animal/hostile/retaliate/rogue/swine/hog/piglet
+	name = "piglet"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/modular/Creechers/icons/piggie.dmi'
+	icon_state = "piggie_piglin"
+	icon_living = "piggie_piglin"
+	icon_dead = "piggie_piglin_dead"
+	health = 20
+	maxHealth = 20
+	melee_damage_lower = 1
+	melee_damage_upper = 6
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 5, ROGUE_STAT_CONSTITUTION = 5, ROGUE_STAT_SPEED = 2)
+	rogue_mob_intents = list(/datum/intent/simple/headbutt)
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/grown/oat, /obj/item/reagent_containers/food/snacks/grown/potato/rogue, /obj/item/reagent_containers/food/snacks/rogue/meat)
+
+/mob/living/simple_animal/hostile/retaliate/rogue/swine/piglet
+	name = "piglet"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/modular/Creechers/icons/piggie.dmi'
+	icon_state = "piggie_piglin"
+	icon_living = "piggie_piglin"
+	icon_dead = "piggie_piglin_dead"
+	health = 20
+	maxHealth = 20
+	melee_damage_lower = 1
+	melee_damage_upper = 6
+	rogue_can_dodge = TRUE
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 5, ROGUE_STAT_CONSTITUTION = 5, ROGUE_STAT_SPEED = 2)
+	rogue_mob_intents = list(/datum/intent/simple/headbutt)
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/grown/oat, /obj/item/reagent_containers/food/snacks/grown/potato/rogue, /obj/item/reagent_containers/food/snacks/rogue/meat)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll
 	name = "troll"
@@ -614,6 +870,8 @@
 	rogue_defprob = 20
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 16, ROGUE_STAT_CONSTITUTION = 16, ROGUE_STAT_SPEED = 2)
+	rogue_mob_intents = list(/datum/intent/unarmed/claw, /datum/intent/simple/bite)
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/axe
 	name = "troll skull-splitter"
@@ -628,6 +886,8 @@
 	rogue_defprob = 20
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 16, ROGUE_STAT_CONSTITUTION = 16, ROGUE_STAT_SPEED = 2)
+	rogue_mob_intents = list(/datum/intent/simple/troll_axe)
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/bog
 	name = "bog troll"
@@ -642,6 +902,8 @@
 	rogue_defprob = 30
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 16, ROGUE_STAT_CONSTITUTION = 16, ROGUE_STAT_SPEED = 3)
+	rogue_mob_intents = list(/datum/intent/unarmed/claw, /datum/intent/simple/bite)
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/cave
 	name = "cave troll"
@@ -656,6 +918,8 @@
 	rogue_defprob = 15
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 16, ROGUE_STAT_CONSTITUTION = 16, ROGUE_STAT_SPEED = 2)
+	rogue_mob_intents = list(/datum/intent/unarmed/claw, /datum/intent/simple/bite)
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/rogue/meat, /obj/item/bodypart, /obj/item/organ)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/trufflepig
 	name = "truffle pig"
@@ -670,6 +934,8 @@
 	melee_damage_upper = 14
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 12, ROGUE_STAT_CONSTITUTION = 8, ROGUE_STAT_SPEED = 2)
+	rogue_mob_intents = list(/datum/intent/simple/headbutt)
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/rogue/truffles)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf
 	name = "volf"
@@ -683,6 +949,10 @@
 	rogue_defprob = 40
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 7, ROGUE_STAT_CONSTITUTION = 7, ROGUE_STAT_SPEED = 12)
+	rogue_mob_intents = list(/datum/intent/simple/bite/volf)
+	rogue_aggressive = 1
+	rogue_retreat_health = 0.3
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks, /obj/item/natural/bone, /obj/item/natural/hide)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf_undead
 	name = "deadite volf"
@@ -696,6 +966,9 @@
 	rogue_defprob = 40
 	rogue_can_dodge = TRUE
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 7, ROGUE_STAT_CONSTITUTION = 7, ROGUE_STAT_SPEED = 12)
+	rogue_mob_intents = list(/datum/intent/simple/bite/volf)
+	rogue_aggressive = 1
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/grown)
 
 /mob/living/simple_animal/hostile/rogue/deepone
 	name = "Deep One"
@@ -707,6 +980,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 25
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 13, ROGUE_STAT_CONSTITUTION = 11, ROGUE_STAT_SPEED = 9)
+	rogue_mob_intents = list(/datum/intent/simple/claw/deepone_unarmed)
 
 /mob/living/simple_animal/hostile/rogue/deepone/arm
 	name = "Deep One"
@@ -718,6 +992,7 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 30
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 13, ROGUE_STAT_CONSTITUTION = 11, ROGUE_STAT_SPEED = 9)
+	rogue_mob_intents = list(/datum/intent/simple/claw/deepone_unarmed)
 
 /mob/living/simple_animal/hostile/rogue/deepone/spit
 	name = "Deep One"
@@ -729,6 +1004,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 25
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 13, ROGUE_STAT_CONSTITUTION = 11, ROGUE_STAT_SPEED = 9)
+	rogue_mob_intents = list(/datum/intent/simple/claw/deepone_unarmed)
 
 /mob/living/simple_animal/hostile/rogue/deepone/wiz
 	name = "Deep One Devout"
@@ -740,6 +1016,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 25
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 13, ROGUE_STAT_CONSTITUTION = 11, ROGUE_STAT_SPEED = 9)
+	rogue_mob_intents = list(/datum/intent/simple/claw/deepone_unarmed)
 
 /mob/living/simple_animal/hostile/rogue/deepone/wiz/boss
 	name = "Deep One Devout"
@@ -751,6 +1028,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 25
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 13, ROGUE_STAT_CONSTITUTION = 11, ROGUE_STAT_SPEED = 9)
+	rogue_mob_intents = list(/datum/intent/simple/claw/deepone_unarmed)
 
 /mob/living/simple_animal/hostile/rogue/dreamfiend/ancient/unbound
 	name = "ancient dream fiend"
@@ -763,6 +1041,7 @@
 	melee_damage_lower = 40
 	melee_damage_upper = 120
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 20, ROGUE_STAT_PERCEPTION = 20, ROGUE_STAT_CONSTITUTION = 20)
+	rogue_mob_intents = list(/datum/intent/simple/dreamfiend_ancient)
 
 /mob/living/simple_animal/hostile/rogue/dreamfiend/unbound
 	name = "minor dream fiend"
@@ -772,6 +1051,7 @@
 	icon_dead = "dreamfiend"
 	melee_damage_lower = 25
 	melee_damage_upper = 40
+	rogue_mob_intents = list(/datum/intent/simple/bite)
 
 /mob/living/simple_animal/hostile/rogue/haunt
 	name = "haunt"
@@ -783,6 +1063,8 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 25
 	rogue_mob_stats = list(ROGUE_STAT_FORTUNE = 11)
+	rogue_mob_intents = list(/datum/intent/simple/slash)
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks, /obj/item/bodypart)
 
 /mob/living/simple_animal/hostile/rogue/mirespider_lurker
 	name = "mire lurker"
@@ -794,6 +1076,7 @@
 	melee_damage_lower = 35
 	melee_damage_upper = 70
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 9, ROGUE_STAT_PERCEPTION = 15, ROGUE_STAT_CONSTITUTION = 9, ROGUE_STAT_SPEED = 14)
+	rogue_mob_intents = list(/datum/intent/simple/bite/mirespider_lurker)
 
 /mob/living/simple_animal/hostile/rogue/mirespider_lurker/angry
 	name = "mire lurker"
@@ -805,6 +1088,7 @@
 	melee_damage_lower = 35
 	melee_damage_upper = 70
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 9, ROGUE_STAT_PERCEPTION = 15, ROGUE_STAT_CONSTITUTION = 9, ROGUE_STAT_SPEED = 14)
+	rogue_mob_intents = list(/datum/intent/simple/bite/mirespider_lurker)
 
 /mob/living/simple_animal/hostile/rogue/mirespider_paralytic
 	name = "aragn"
@@ -815,6 +1099,7 @@
 	melee_damage_lower = 21
 	melee_damage_upper = 42
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 9, ROGUE_STAT_PERCEPTION = 7, ROGUE_STAT_CONSTITUTION = 9, ROGUE_STAT_SPEED = 12)
+	rogue_mob_intents = list(/datum/intent/simple/bite/mirespider_paralytic)
 
 /mob/living/simple_animal/hostile/rogue/mirespider_paralytic/angry
 	name = "aragn"
@@ -825,6 +1110,7 @@
 	melee_damage_lower = 21
 	melee_damage_upper = 42
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 9, ROGUE_STAT_PERCEPTION = 7, ROGUE_STAT_CONSTITUTION = 9, ROGUE_STAT_SPEED = 12)
+	rogue_mob_intents = list(/datum/intent/simple/bite/mirespider_paralytic)
 
 /mob/living/simple_animal/hostile/rogue/skeleton/bow
 	name = "Skeleton"
@@ -836,6 +1122,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 25
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 9, ROGUE_STAT_CONSTITUTION = 9, ROGUE_STAT_SPEED = 8)
+	rogue_mob_intents = list(/datum/intent/simple/claw/skeleton)
 
 /mob/living/simple_animal/hostile/rogue/skeleton/spear
 	name = "Skeleton"
@@ -847,6 +1134,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 25
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 9, ROGUE_STAT_CONSTITUTION = 9, ROGUE_STAT_SPEED = 8)
+	rogue_mob_intents = list(/datum/intent/simple/spear/skeleton)
 
 /mob/living/simple_animal/pet/cat
 	name = "cat"
@@ -855,6 +1143,17 @@
 	icon_state = "cat2"
 	icon_living = "cat2"
 	icon_dead = "cat2_dead"
+	health = 20
+	maxHealth = 20
+	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 3, ROGUE_STAT_CONSTITUTION = 3, ROGUE_STAT_SPEED = 3)
+
+/mob/living/simple_animal/pet/cat/kitten
+	name = "kitten"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/mob/pets.dmi'
+	icon_state = "kitten"
+	icon_living = "kitten"
+	icon_dead = "kitten_dead"
 	health = 20
 	maxHealth = 20
 	rogue_mob_stats = list(ROGUE_STAT_STRENGTH = 3, ROGUE_STAT_CONSTITUTION = 3, ROGUE_STAT_SPEED = 3)

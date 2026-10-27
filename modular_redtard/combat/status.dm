@@ -193,3 +193,32 @@
 		visible_message(span_danger("[src] is struck while vulnerable!"))
 		return TRUE
 	return FALSE
+
+/// The debuff of a Ratwood effect intent (dazing strike, hobbling cut): its stat changes for its time; a newer one replaces it.
+/datum/status_effect/rogue/intent_debuff
+	id = "rogue_intent_debuff"
+	status_type = STATUS_EFFECT_REPLACE
+	alert_type = /atom/movable/screen/alert/status_effect/rogue/intent_debuff
+	var/list/stats
+	var/effect_name
+
+/datum/status_effect/rogue/intent_debuff/on_creation(mob/living/new_owner, datum/intent/intent)
+	stats = intent.effect_stats
+	effect_name = intent.effect_name
+	base_duration = intent.effect_duration
+	. = ..(new_owner)
+	if(linked_alert && effect_name)
+		linked_alert.name = effect_name
+
+/datum/status_effect/rogue/intent_debuff/on_apply()
+	. = ..()
+	owner.attributes?.set_variable_attribute_modifier(id, stats.Copy())
+
+/datum/status_effect/rogue/intent_debuff/on_remove()
+	owner.attributes?.remove_attribute_modifier(id)
+	return ..()
+
+/atom/movable/screen/alert/status_effect/rogue/intent_debuff
+	name = "Dazed"
+	desc = "A hard blow left me reeling."
+	icon_state = "dazed"

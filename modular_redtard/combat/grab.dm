@@ -233,7 +233,7 @@ GLOBAL_LIST_INIT(rogue_zone_names, list(
 	set_hostage(FALSE)
 	to_chat(source, span_danger("I need to stand still to keep my hostage!"))
 
-/datum/element/rogue_combat_bus/proc/on_start_pull(mob/living/carbon/human/source, atom/movable/pulled, state, force)
+/datum/element/rogue_combat/proc/on_start_pull(mob/living/carbon/human/source, atom/movable/pulled, state, force)
 	SIGNAL_HANDLER
 	if(!isliving(pulled) || pulled == source)
 		return
@@ -246,19 +246,29 @@ GLOBAL_LIST_INIT(rogue_zone_names, list(
 		return
 	source.rogue_refresh_intents()
 
-/datum/element/rogue_combat_bus/proc/on_stop_pull(mob/living/carbon/human/source, atom/movable/old_pulling)
+/datum/element/rogue_combat/proc/on_stop_pull(mob/living/carbon/human/source, atom/movable/old_pulling)
 	SIGNAL_HANDLER
 	for(var/obj/item/hand_item/rogue_grab/grip in source.held_items)
 		if(!QDELETED(grip))
 			qdel(grip)
 	source.rogue_refresh_intents()
 
-/datum/element/rogue_combat_bus/proc/on_grab_state(mob/living/carbon/human/source, new_state)
+/datum/element/rogue_combat/proc/on_grab_state(mob/living/carbon/human/source, new_state)
 	SIGNAL_HANDLER
 	source.rogue_refresh_intents()
 
 /mob/living/carbon/human/proc/rogue_unarmed_damage()
-	return rogue_formula_value(ROGUE_FORMULA_UNARMED_DAMAGE, list("strength" = rogue_stat(ROGUE_STAT_STRENGTH), "civilized" = HAS_TRAIT(src, TRAIT_CIVILIZEDBARBARIAN)))
+	var/obj/item/clothing/gloves/worn_gloves = gloves
+	return rogue_formula_value(ROGUE_FORMULA_UNARMED_DAMAGE, list("strength" = rogue_stat(ROGUE_STAT_STRENGTH), "civilized" = HAS_TRAIT(src, TRAIT_CIVILIZEDBARBARIAN), "gloves" = istype(worn_gloves) ? worn_gloves.unarmed_bonus : 0))
+
+/obj/item/clothing/gloves
+	/// Flat bare-handed damage added after strength (Ratwood gloves, bandages and knuckles after the Azure Peak unarmed rework).
+	var/unarmed_bonus = 0
+
+/obj/item/clothing/gloves/examine(mob/user)
+	. = ..()
+	if(unarmed_bonus > 0)
+		. += span_notice("Unarmed damage bonus: +[unarmed_bonus] (flat, applied after strength scaling).")
 
 /mob/living/carbon/human/proc/rogue_grab_modifier(mob/living/target, obj/item/hand_item/rogue_grab/grip)
 	var/modifier = target.has_status_effect(/datum/status_effect/rogue_compliance) ? ROGUE_GRAB_COMPLIANT_MODIFIER : 1

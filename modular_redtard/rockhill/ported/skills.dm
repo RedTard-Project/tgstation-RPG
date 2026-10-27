@@ -46,6 +46,38 @@
 		"...the billhook hums through the air, its hooked blade striking with chilling precision. It rends through chain and leather. With each twist, your strikes become inevitable, seamless. A relentless dance of destruction, merciless and fluid...",
 		)
 
+/datum/attribute/skill/combat/staves
+	name = "Staves"
+	desc = "Increases your chance to successfully parry and bypass your opponent's parry by 20% with staves, and your chance to bypass dodge by 10%."
+	category = ROGUE_SKILL_CATEGORY_MELEE
+	difficulty = ROGUE_SKILL_DIFFICULTY_AVERAGE
+	governing_attribute = ROGUE_STAT_SPEED
+	default_attributes = list(
+		ROGUE_STAT_SPEED = -5,
+		ROGUE_STAT_STRENGTH = -6,
+		)
+	dreams = list(
+		"...your reflection in the stream ripples as you train. Each motion a part of an ancient pattern, half-forgotten. Each strike, each parry, each feint, makes the water's surface split like silk. Psydonia listens...",
+		"...you walk the forgotten road, your staff tapping against stone. When the brigands step forth, grinning, you do not break stride. The staff spins, a flicker of old instinct, and one falls. The others hesitate, seeing not an old, weary traveler, but a lesson long unlearned...",
+		"...a dying monk presses a bloodied quarterstaff into your grasp. 'The world is not stone,' he rasps, 'but water.' You strike, and the staff seems to flow, finding paths you did not see before...",
+		"...amidst flickering torchlight, you spar with a silent figure. Their staff moves like a serpent, coiling, striking, vanishing - before it all goes dark. You wake, trying to recall the shape of their final blow...",
+		"...cattle thieves descend upon the homestead. You have no sword, only a sturdy branch. One by one they fall, the staff cracking through bone and flesh alike. Violence, you realize, is a language spoken in every tongue...",
+		)
+
+/datum/attribute/skill/combat/arcyne
+	name = "Arcyne Armament"
+	desc = "Increases your chance to successfully parry and bypass your opponent's parry by 20% with conjured or arcyne-bound weapons, and your chance to bypass dodge by 10%."
+	category = ROGUE_SKILL_CATEGORY_MELEE
+	difficulty = ROGUE_SKILL_DIFFICULTY_HARD
+	governing_attribute = ROGUE_STAT_INTELLIGENCE
+	default_attributes = list(
+		ROGUE_STAT_INTELLIGENCE = -6,
+		)
+	dreams = list(
+		"...you form your conduits into the shape of blades, your blood flows with the feelings of iron, and you have created over a thousand blades, knowing the weight and edge of everyone of them. You have not practiced their forms, yet they flows like water in your hand...",
+		"...no weapon is a stranger to your hand, a slash with a khopesh, a thrust with a spear, a figure eight with a greatsword, the squires in the yard flow from one strike to another, you, from one weapon to another...7",
+		)
+
 /datum/attribute/skill/combat/maces
 	name = "Maces"
 	desc = "Increases your chance to successfully parry and bypass your opponent's parry by 20% with maces, and your chance to bypass dodge by 10%."
@@ -144,7 +176,7 @@
 
 /datum/attribute/skill/combat/unarmed
 	name = "Unarmed"
-	desc = "Increases your chance to bypass your opponent's parry by 20% with unarmed or unarmed weapons such as katars, and your chance to bypass dodge by 10%. Parrying while unarmed does not work currently."
+	desc = "Increases your chance to bypass your opponent's parry by 20% with unarmed or unarmed weapons such as katars, and your chance to bypass dodge by 10%. Unarmed attacks are swift-balanced, making them harder to parry and dodge when you are faster than your opponent. Wearing knuckles or bracers enables unarmed parrying."
 	category = ROGUE_SKILL_CATEGORY_MELEE
 	difficulty = ROGUE_SKILL_DIFFICULTY_EASY
 	governing_attribute = ROGUE_STAT_STRENGTH

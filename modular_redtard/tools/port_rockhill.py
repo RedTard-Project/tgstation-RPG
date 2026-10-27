@@ -1,5 +1,6 @@
 import collections
 from collections import OrderedDict
+import glob
 import json
 import os
 import re
@@ -35,16 +36,29 @@ ONMOB = {}
 INIT_BODIES = {}
 FILL_BODIES = {}
 STORAGE_NEW = {}
-HOLD_LIST = re.compile(r'(?:typecacheof|set_holdable)\(\s*list\(')
+OUTFIT_PROCS = {}
+HUMAN_PROCS = {}
+NPC_ROOT = '/mob/living/carbon/human'
+NPC_PROCS = ('Initialize', 'after_creation')
+NPC_OUTFIT_ROOT = '/datum/outfit/job/roguetown'
+NPC_SLOTS = {'id': 'ring'}
+NPC_STATS = {'STR': 'strength', 'PER': 'perception', 'INT': 'intelligence', 'CON': 'constitution', 'WIL': 'willpower', 'END': 'endurance', 'SPD': 'speed', 'LUC': 'fortune'}
+STAT_ASSIGN = re.compile(r'\b(?:H|human|user)\.STA([A-Z]{3})\s*(=|\+=|-=)\s*(-?\d+)\b')
+ITEM_PATH = re.compile(r'/obj/item/[A-Za-z0-9_/]*[A-Za-z0-9_]')
+HOLD_LIST =re.compile(r'(?:typecacheof|set_holdable)\(\s*list\(')
 NEW_IN_SRC = re.compile(r'new\s+(/obj/item/[A-Za-z0-9_/]+)\s*\(\s*src\s*\)')
 LOOT_LIST = re.compile(r'\bloot\s*=\s*list\(([^)]*)\)')
 PROB_CALL = re.compile(r'\bprob\((\d+)\)')
-ONMOB_TAGS = {'onback': 'ROGUE_ONMOB_BACK', 'onbelt': 'ROGUE_ONMOB_HIP', 'gen': 'ROGUE_ONMOB_HAND', 'wielded': 'ROGUE_ONMOB_WIELDED'}
+ONMOB_TAGS = ('onback', 'onbelt', 'gen', 'wielded')
 DEFINE_VALUES = {}
 SOURCE_REVISION = []
 ARMOR_DATUMS = {}
 ROGUE_ARMOR_DATUMS = {}
 USED_INTENTS = set()
+BAKE_JOBS = collections.defaultdict(dict)
+BAKE_NAMES = {}
+ABOVE_KEYS = ('northabove', 'southabove', 'eastabove', 'westabove')
+ALT_GRIP_ROOT = '/datum/alt_grip'
 DEFAULT_INTENTS = ('/datum/intent/use',)
 BLANK_USERS = set()
 FEMALE_USERS = set()
@@ -239,20 +253,29 @@ def parse_codebase(code_root):
                     current = None
                     pm = PROC_LINE.match(line)
                     if pm:
-                        PROCS[pm.group(1)].add(pm.group(2))
+                        owner, name = pm.group(1), pm.group(2)
+                        PROCS[owner].add(name)
                         bodies = {
                             'pre_equip': ('/datum/outfit/', PRE_EQUIP),
                             'getonmobprop': ('/obj/item', ONMOB),
                             'Initialize': (('/turf/', '/obj/structure', '/obj/machinery', '/obj/item'), INIT_BODIES),
                             'PopulateContents': ('/obj/structure/closet', FILL_BODIES),
                             'New': ('/datum/component/storage', STORAGE_NEW),
-                        }.get(pm.group(2))
-                        if bodies and pm.group(1).startswith(bodies[0]):
+                        }.get(name)
+                        stores = []
+                        if bodies and owner.startswith(bodies[0]):
+                            stores.append((bodies[1], owner))
+                        if owner.startswith('/datum/outfit/'):
+                            stores.append((OUTFIT_PROCS, (owner, name)))
+                        if boundary_match(owner, NPC_ROOT) and name in NPC_PROCS:
+                            stores.append((HUMAN_PROCS, (owner, name)))
+                        if stores:
                             body = []
                             while i < len(lines) and (not lines[i].strip() or lines[i].startswith(('\t', ' '))):
                                 body.append(lines[i].rstrip())
                                 i += 1
-                            bodies[1][pm.group(1)] = body
+                            for store, key in stores:
+                                store[key] = body
                 continue
             if current is None:
                 continue
@@ -937,9 +960,15 @@ def main():
         if len(role_outfits[job]['subclasses']) > 1:
             for advclass in role_outfits[job]['subclasses']:
                 class_jobs[advclass].append(job)
+    migrants = select_migrants(cfg, rw)
+    for info in migrants['roles'].values():
+        for advclass in info['classes']:
+            if cfg['port']['migrants']['job'] not in class_jobs[advclass]:
+                class_jobs[advclass].append(cfg['port']['migrants']['job'])
     class_outfits = {advclass: outfit_slots(rw, rw.resolve(advclass, 'outfit')) for advclass in class_jobs}
     outfit_items = set()
-    for dressed in list(role_outfits.values()) + list(class_outfits.values()):
+    migrant_outfits = [info['outfit'] for info in migrants['roles'].values() if info['outfit']]
+    for dressed in list(role_outfits.values()) + list(class_outfits.values()) + migrant_outfits:
         outfit_items |= set(dressed['slots'].values())
         outfit_items |= {item for item, _ in dressed['contents'] or []}
     mapgen = mapgen_spec(rw, usage)
@@ -949,13 +978,29 @@ def main():
         if path.startswith('/obj/structure'):
             fill_items |= set(random_pick(rw, path))
     for path in usage:
+        if path.startswith('/mob/living'):
+            # What the beasts eat comes along, so they find it on the map (Ratwood food_type).
+            fill_items |= set(ITEM_PATH.findall(rw.resolve(path, 'food_type') or ''))
         if (replacement_for(path, rules) or {}).get('port', {}).get('fill'):
             contents, loot, _ = closet_fill(rw, path)
             fill_items |= set(contents) | {item for item, _ in loot}
-    generated = generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, outfit_items | mapgen_types | fill_items, set(jobs))
-    generate_onmob(generated)
+    npcs = npc_candidates(rw, rules, usage)
+    npc_items = npc_outfit_items(rw, rules, npcs)
+    fill_items |= anvil_recipe_items(cfg, rw, rules)
+    fill_items |= craft_recipe_items(cfg, rw, rules)
+    fill_items |= food_chain_items(cfg, rw, set(usage) | outfit_items | mapgen_types | fill_items | npc_items)
+    fill_items |= husbandry_types(cfg, rw, set(usage) | fill_items)
+    generated = generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, outfit_items | mapgen_types | fill_items | npc_items, set(jobs))
     generate_mapgen(mapgen, rules, declared | generated, tg_names)
-    role_traits = set()
+    generate_anvil_recipes(cfg, rw, rules, declared | generated)
+    generate_craft_recipes(cfg, rw, rules, declared | generated)
+    generate_trade(cfg, rw, rules, declared | generated)
+    generate_food(cfg, rw, generated, tg_declared, tg_names)
+    generate_husbandry(cfg, rw, generated, tg_declared)
+    npcs = [p for p in npcs if p in generated]
+    role_traits = npc_trait_names(rw, npcs, cfg['attributes'])
+    for species in cfg['port']['bodies']['species_map']:
+        role_traits |= set(re.findall(r'TRAIT_[A-Z0-9_]+', rw.resolve(species, 'inherent_traits') or ''))
     for job in jobs:
         dressed = role_outfits.get(job, {})
         role_traits |= set(role_attributes(rw, job, dressed.get('advclass'), dressed.get('source'), cfg['attributes'])['traits'])
@@ -964,8 +1009,12 @@ def main():
     known_traits = generate_traits(cfg, tg_names, role_traits)
     generate_skills(cfg, rw)
     role_attrs = generate_attribute_sheets(cfg, rw, jobs, role_outfits, known_traits)
-    generate_jobs(cfg, rw, usage, role_outfits, declared | generated, station_usage, role_attrs)
+    role_outfit_paths = generate_jobs(cfg, rw, usage, role_outfits, declared | generated, station_usage, role_attrs)
     generate_advclasses(cfg, rw, class_jobs, class_outfits, declared | generated, known_traits)
+    generate_migrants(cfg, rw, migrants, declared | generated)
+    hair_names = generate_bodies(cfg, rw, declared | generated, npcs, known_traits)
+    generate_races(cfg, rw)
+    generate_npcs(cfg, rw, rules, npcs, declared | generated, known_traits, role_outfit_paths, hair_names)
 
 
 MAPGEN_LANDMARK = '/obj/effect/landmark/mapGenerator'
@@ -1157,32 +1206,62 @@ def parse_onmob(body):
     return found
 
 
-def generate_onmob(generated):
-    owners = set()
-    for path in generated:
-        if not path.startswith('/obj/item/'):
-            continue
-        parts = path.split('/')
-        for k in range(4, len(parts) + 1):
-            prefix = '/'.join(parts[:k])
-            if prefix in ONMOB:
-                owners.add(prefix)
-    blocks = []
-    for owner in sorted(owners):
-        body = ONMOB[owner]
-        found = parse_onmob(body)
-        inherits = any('..()' in line for line in body)
-        if not found and inherits:
-            continue
-        block = [f'{owner}/rogue_onmob_prop(tag)']
-        if found:
-            block.append('\tswitch(tag)')
-            for tag, value in found.items():
-                block += [f'\t\tif({ONMOB_TAGS[tag]})', f'\t\t\treturn {value}']
-        block.append('\treturn ..()' if inherits else '\treturn null')
-        blocks.append(block)
-    open(f'{OUT_DIR}/onmob.dm', 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
-    print(f'onmob.dm: {len(blocks)} on-body prop overrides')
+def onmob_numbers(raw):
+    """A getonmobprop list literal as {key: number}."""
+    return {key: float(value) if '.' in value else int(value) for key, value in re.findall(r'"(\w+)"\s*=\s*(-?\d+(?:\.\d+)?)', raw or '')}
+
+
+def onmob_prop(rw, path, tag):
+    """The getonmobprop table an item answers for a tag ("gen", "wielded", "onbelt", "onback"), walking its
+    parents as Ratwood's `return ..()` does; None when a type stops the walk without one."""
+    p = path
+    while p and p.startswith('/obj/item'):
+        body = ONMOB.get(p)
+        if body is not None:
+            found = parse_onmob(body)
+            if tag in found:
+                return None if found[tag] == 'null' else onmob_numbers(found[tag])
+            if not any('..()' in line for line in body):
+                return None
+        p = rw.parent(p)
+    return None
+
+
+def onmob_parts(prop, behind):
+    """Whether the table draws anything in front of the body (above = 1) or behind it (above = 0)."""
+    return any(prop.get(key) == (0 if behind else 1) for key in ABOVE_KEYS)
+
+
+def bake_name(group, base, signature):
+    """A state name in a baked sheet group: the sprite's own state, or "<state>~<n>" when another item with the
+    same sprite holds it differently."""
+    name = base
+    n = 1
+    while BAKE_NAMES.get((group, name), signature) != signature:
+        n += 1
+        name = f'{base}~{n}'
+    BAKE_NAMES[(group, name)] = signature
+    return name
+
+
+def bake_jobs(out, name, icon, state, prop, mirrored):
+    """Queues the front and behind states a table draws; returns how many it queued (none when no side is drawn)."""
+    queued = 0
+    for behind in (False, True):
+        if onmob_parts(prop, behind):
+            job_name = f'{name}_behind' if behind else name
+            BAKE_JOBS[out][job_name] = {'name': job_name, 'icon': icon, 'state': state, 'prop': prop, 'mirrored': mirrored, 'behind': behind}
+            queued += 1
+    return queued
+
+
+def write_bake_manifest(spec):
+    sheets = [{'out': out, 'states': [jobs[name] for name in sorted(jobs)]} for out, jobs in sorted(BAKE_JOBS.items())]
+    manifest = {'mask32': spec['mask32'], 'mask64': spec['mask64'], 'canvas': 64, 'sheets': sheets}
+    with open(spec['manifest'], 'w', encoding='utf-8', newline='\n') as handle:
+        json.dump(manifest, handle, indent='\t', sort_keys=True)
+        handle.write('\n')
+    print(f"{spec['manifest']}: {len(sheets)} sheets, {sum(len(s['states']) for s in sheets)} states to bake")
 
 
 def graft_point(path, declared):
@@ -1218,7 +1297,7 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
     for path in list(port_usage):
         for name in port.get('linked_types', []):
             for item, _ in list_paths(rw.resolve(path, name)):
-                port_usage[item] += 0
+                port_usage[item.rstrip('/')] += 0
     for path, count in sorted(port_usage.items()):
         if replacement_for(path, rules) or path in tg_declared:
             continue
@@ -1340,11 +1419,14 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
 
         flags = values.get('slot_flags', '')
         wearable = bool(flags) or boundary_match(path, '/obj/item/clothing')
-        if not wearable or any(pocket in flags for pocket in ('ITEM_SLOT_POCKETS', 'ITEM_SLOT_LPOCKET', 'ITEM_SLOT_RPOCKET')):
+        pockets = ('ITEM_SLOT_POCKETS', 'ITEM_SLOT_LPOCKET', 'ITEM_SLOT_RPOCKET')
+        carried = pockets + ('ITEM_SLOT_BACK', 'ITEM_SLOT_BELT')
+        if not wearable or (any(pocket in flags for pocket in pockets) and all(slot in carried for slot in re.findall(r'ITEM_SLOT_[A-Z_]+', flags))):
             return
-        look = text('worn_icon_state') or text('icon_state')
         sheet = values.get('worn_icon')
-        if sheet and ICON_LITERAL.match(sheet) and look and look in sheet_states_of(sheet):
+        sheet_states_here = sheet_states_of(sheet) if sheet and ICON_LITERAL.match(sheet) else set()
+        look = next((state for state in (text('icon_state'), text('worn_icon_state')) if state and state in sheet_states_here), None)
+        if look:
             put('worn_icon_state', f'"{look}"')
             ratwood_slots = set(re.findall(r'ITEM_SLOT_[A-Z_]+', rw.resolve(path, 'slot_flags') or ''))
             if look + FEMALE_WORN_SUFFIX in sheet_states_of(sheet) and ratwood_slots & set(port.get('female_worn_slots', [])):
@@ -1356,20 +1438,94 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
             put('worn_icon', f"'{BLANK_WORN}'")
             put('worn_icon_state', 'null')
 
+    def bake_onmob(path, block, spec):
+        """Held, belted and slung sprites of Ratwood's experimental_* items as jobs for ai-skills
+        bake_onmob_sheets.py: TG lefthand/righthand sheets (inhand_icon_state = the sprite's state, "_wielded" and
+        the alternate grips' suffixes beside it) and one sheet of back/hip states, "_behind" for the parts under
+        the body. The item then draws with TG's own inhand code and no icon() at runtime."""
+        values = {}
+        for line in block[1:]:
+            name, sep, value = line.strip().partition(' = ')
+            if sep:
+                values[name] = value
+
+        def put(name, value):
+            block[:] = [line for line in block if not line.startswith(f'\t{name} = ')]
+            block.append(f'\t{name} = {value}')
+
+        icon = (values.get('icon') or '').strip("'")
+        state = (values.get('icon_state') or '').strip('"')
+        if not icon.startswith(ICON_DIR + '/') or not state or state == 'null':
+            return
+        states = sheet_states_of(f"'{icon}'")
+        sheets = f"{spec['dir']}/{icon[len(ICON_DIR) + 1:-len('.dmi')]}"
+        flag = lambda name: (rw.resolve(path, name) or '').strip() in ('TRUE', '1')
+        if flag('experimental_inhand') and onmob_prop(rw, path, 'gen'):
+            hands = {'': onmob_prop(rw, path, 'gen')}
+            wielded = onmob_prop(rw, path, 'wielded')
+            if wielded:
+                hands['_wielded'] = wielded
+            for grip in alt_grip_paths(rw, rw.resolve(path, 'alt_grips')):
+                prop = re.search(r'"altgrip"\s*=\s*list\((.*?)\)', rw.resolve(grip, 'onmobprop_overrides') or '', re.S)
+                if prop and onmob_numbers(prop.group(1)):
+                    hands['_' + grip.rsplit('/', 1)[1]] = onmob_numbers(prop.group(1))
+            name = bake_name((icon, 'hands'), state, json.dumps(hands, sort_keys=True))
+            queued = 0
+            sprites = [(name, state)]
+            if name == state:
+                sprites += [(state + suffix, state + suffix) for suffix in spec.get('variants', []) if state + suffix in states]
+                sprites += [(state.replace(old, new), state.replace(old, new)) for old, new in spec.get('swaps', []) if old in state and state.replace(old, new) in states]
+            for baked, sprite in sprites:
+                if baked != name and bake_name((icon, 'hands'), baked, json.dumps(hands, sort_keys=True)) != baked:
+                    continue
+                for suffix, prop in hands.items():
+                    queued += bake_jobs(f'{sheets}_righthand.dmi', baked + suffix, icon, sprite, prop, False)
+                    queued += bake_jobs(f'{sheets}_lefthand.dmi', baked + suffix, icon, sprite, prop, True)
+            if queued:
+                put('lefthand_file', f"'{sheets}_lefthand.dmi'")
+                put('righthand_file', f"'{sheets}_righthand.dmi'")
+                put('inhand_icon_state', 'null' if name == state else f'"{name}"')
+                put('inhand_x_dimension', '64')
+                put('inhand_y_dimension', '64')
+                put('rogue_baked_inhand', 'TRUE')
+        worn = {}
+        if flag('experimental_onback') and onmob_prop(rw, path, 'onback'):
+            worn['back'] = onmob_prop(rw, path, 'onback')
+        if flag('experimental_onhip') and onmob_prop(rw, path, 'onbelt'):
+            worn['hip'] = onmob_prop(rw, path, 'onbelt')
+        if worn:
+            name = bake_name((icon, 'worn'), state, json.dumps(worn, sort_keys=True))
+            out = f'{sheets}_onmob.dmi'
+            queued = 0
+            if 'back' in worn:
+                queued += bake_jobs(out, f'back_{name}', icon, state, worn['back'], True)
+                queued += bake_jobs(out, f'backr_{name}', icon, state, worn['back'], False)
+            if 'hip' in worn:
+                queued += bake_jobs(out, f'hipl_{name}', icon, state, worn['hip'], True)
+                queued += bake_jobs(out, f'hipr_{name}', icon, state, worn['hip'], False)
+            if queued:
+                put('rogue_onmob_sheet', f"'{out}'")
+                if name != state:
+                    put('rogue_onmob_state', f'"{name}"')
+
     def slot_worn_icon(path, sheets):
+        """The slot's default sheet of Ratwood's update_inv_* when it holds the worn state; Ratwood draws worn
+        sprites by icon_state (item_state is for hands), so that is tried first."""
         flags = rw.resolve(path, 'slot_flags') or ''
-        state = next((v.strip().strip('"') for v in (rw.resolve(path, 'item_state'), rw.resolve(path, 'icon_state')) if v and v.strip() != 'null'), '')
+        states = [v.strip().strip('"') for v in (rw.resolve(path, 'icon_state'), rw.resolve(path, 'item_state')) if v and v.strip() != 'null']
         for flag, sheet in sheets.items():
             if flag not in re.findall(r'ITEM_SLOT_[A-Z_]+', flags):
                 continue
             src = os.path.join(CHECKOUT, sheet)
             if src not in sheet_states:
                 sheet_states[src] = {s['name'] for s in dmi.read(src).states} if os.path.exists(src) else set()
-            if state in sheet_states[src]:
+            if any(state in sheet_states[src] for state in states):
                 return f"'{sheet}'"
         return None
 
     generated = {p for paths in chosen.values() for p in paths}
+    grip_paths = {g for paths in chosen.values() for p in paths if p.startswith('/obj/item') for g in alt_grip_paths(rw, rw.resolve(p, 'alt_grips'))}
+    generated |= grip_paths
     used_turfs = sorted(p for p in usage if p.startswith('/turf/'))
     runtime = {p: runtime_path(p, rules) for p in used_turfs}
     reskins = [p for p in used_turfs if (replacement_for(p, rules) or {}).get('reskin')]
@@ -1515,7 +1671,7 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                 continue
             if g and g not in grafted and cat.get('graft'):
                 grafted.add(g)
-                block = [g, f"\tparent_type = {cat['graft']}"]
+                block = [g, f"\tparent_type = {cat.get('graft_overrides', {}).get(g, cat['graft'])}"]
                 for name, value in cat.get('graft_vars', {}).items():
                     block.append(f'\t{name} = {value}')
                 if g not in paths:
@@ -1551,6 +1707,13 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                     number = define_value_number(value)
                     if number is not None and not (number == 0 and name in cat.get('skip_default', [])) and number != cat.get('numeric_defaults', {}).get(name):
                         block.append(f'\t{name} = {number}')
+                    continue
+                if name in cat.get('grip_lists', []):
+                    entries = [p for p in alt_grip_paths(rw, value) if p in valid]
+                    if entries:
+                        block.append(f'\t{name} = list(' + ', '.join(entries) + ')')
+                    elif (value or '').strip() == 'null' and alt_grip_paths(rw, rw.resolve(rw.parent(path), name)):
+                        block.append(f'\t{name} = null')
                     continue
                 if name in cat.get('intent_lists', []):
                     entries = intent_paths(rw, value)
@@ -1599,7 +1762,7 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                         block.append(f'\t{name} = ' + (' | '.join(kept) if kept else 'NONE'))
                     continue
                 if name in cat.get('paths', []):
-                    target = runtime_path(value.strip(), rules) if value and value.strip().startswith('/') else None
+                    target = runtime_path(value.strip().rstrip('/'), rules) if value and value.strip().startswith('/') else None
                     if target in valid:
                         block.append(f'\t{name} = {target}')
                     continue
@@ -1639,7 +1802,7 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                     value = icon_ref(value)
                 else:
                     value = literal(value, tg_names)
-                if value is None:
+                if value is None or cat.get('value_defaults', {}).get(name) == value:
                     continue
                 block.append(f'\t{name} = {value}')
             own_worn = rw.resolve(path, cat.get('rename', {}).get('worn_icon', 'worn_icon'))
@@ -1651,6 +1814,8 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                     block.append(f'\t{name} = {icon_ref(sheet)}')
             if cat.get('sprite_checks'):
                 fix_sprites(path, block)
+            if cat.get('bake') and port.get('bake'):
+                bake_onmob(path, block, port['bake'])
             if cat.get('runtime_look') and not smooth:
                 look = runtime_look(rw, path)
                 kind, data = look.get('icon', (None, None))
@@ -1681,7 +1846,11 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
             for prefix, names in cat.get('type_vars', {}).items():
                 if boundary_match(path, prefix):
                     for name in names:
-                        value = literal(rw.resolve(path, name), tg_names)
+                        raw = rw.resolve(path, name)
+                        value = literal(raw, tg_names)
+                        if value is None and (raw or '').strip().startswith('list('):
+                            pairs = [(p, n) for p, n in re.findall(r'(/[a-z][A-Za-z0-9_/]+)\s*=\s*(-?\d+(?:\.\d+)?)', raw) if p in valid]
+                            value = 'list(' + ', '.join(f'{p} = {n}' for p, n in pairs) + ')' if pairs else None
                         if value is not None:
                             block.append(f'\t{name} = {value}')
             if cat.get('init_overlays'):
@@ -1717,6 +1886,7 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
         rogue_armor_lines += [path] + [f'\t{k} = {v}' for k, v in fields.items() if v] + ['']
     open(f'{OUT_DIR}/rogue_armor.dm', 'w', encoding='utf-8', newline='\n').write('\n'.join(rogue_armor_lines).rstrip() + '\n')
     print(f'rogue_armor.dm: {len(ROGUE_ARMOR_DATUMS)} armor datums')
+    generate_alt_grips(rw, port.get('alt_grips', {}), sorted(grip_paths))
     generate_intents(rw, port.get('intents', {}), sound_ref, valid)
 
     armor_lines = []
@@ -1850,7 +2020,9 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
     open(f'{OUT_DIR}/{AREAS_JSON}', 'w', encoding='utf-8', newline='\n').write(json.dumps({'sunlit': SUNLIT_LEAF, 'outdoors': sorted(outdoor_areas)}, indent='\t') + '\n')
 
     for rel in port.get('extra_icons', []):
-        icons[os.path.join(CHECKOUT, rel)] = icon_dest(rel)
+        found = sorted(glob.glob(os.path.join(CHECKOUT, rel))) if any(c in rel for c in '*?[') else [os.path.join(CHECKOUT, rel)]
+        for source in found:
+            icons[source] = icon_dest(os.path.relpath(source, CHECKOUT).replace(os.sep, '/'))
 
     edge_lines = []
     for name in ('rockhill_turf_edges', 'rockhill_turf_edge_overrides', 'rockhill_turf_edge_sources'):
@@ -1955,6 +2127,8 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
             for src, dest in sorted(sounds.items(), key=lambda kv: kv[1]):
                 rel = os.path.relpath(src, CHECKOUT).replace('\\', '/')
                 out.write(f'- `{dest}` from Ratwood `{rel}`\n')
+    if port.get('bake'):
+        write_bake_manifest(port['bake'])
     print('report:', REPORT, 'skipped types:', len(skipped))
     return generated
 
@@ -2123,13 +2297,27 @@ def armor_wear(path, coverage):
     return None
 
 
-def armor_type_value(raw, armor_cfg, wear=None):
+def armor_numbers(raw):
+    """Ratings of a Ratwood armor list; values may be numbers or tier defines (ARMOR_PLATE -> list("blunt" = DR_LIGHT, ...))."""
     value = expand_define(raw)
-    numbers = {k: float(n) for k, n in re.findall(r'"(\w+)"\s*=\s*(-?\d+(?:\.\d+)?)', value)}
+    numbers = {}
+    for key, token in re.findall(r'"(\w+)"\s*=\s*([A-Za-z0-9_.\-]+)', value or ''):
+        number = define_value_number(token)
+        if number is not None:
+            numbers[key] = float(number)
+    return numbers
+
+
+def armor_type_value(raw, armor_cfg, wear=None):
+    numbers = armor_numbers(raw)
     if not numbers:
         return None
+    tiers = max(numbers.values()) <= armor_cfg.get('max_tier', 5)
     scale, cap = armor_cfg['scale'], armor_cfg['cap']
     def scaled(n):
+        if tiers:
+            # Ratwood DR tiers: damage * 1 / (1 + coefficient * tier) reaches the body; TG armor is the percent stopped.
+            return int(round(100 * (1 - 1 / (1 + armor_cfg['dr_coefficient'] * max(n, 0)))))
         return int(round(min(max(n, 0) * scale, cap)))
     fields = {
         'fire': scaled(numbers.get('fire', 0)),
@@ -2150,8 +2338,7 @@ def armor_type_value(raw, armor_cfg, wear=None):
 
 
 def rogue_armor_value(raw):
-    value = expand_define(raw)
-    numbers = {k: int(float(n)) for k, n in re.findall(r'"(\w+)"\s*=\s*(-?\d+(?:\.\d+)?)', value)}
+    numbers = {k: int(n) for k, n in armor_numbers(raw).items()}
     fields = OrderedDict((k, max(0, numbers.get(k, 0))) for k in ('blunt', 'slash', 'stab', 'piercing', 'fire', 'acid', 'magic'))
     if not any(fields.values()):
         return None
@@ -2182,6 +2369,57 @@ def define_value_number(raw):
     return int(number) if number == int(number) else number
 
 
+def alt_grip_paths(rw, raw):
+    """Grip datums of a Ratwood item's alt_grips, a list or a define such as LONGSWORD_STOCK_ALT_GRIPS."""
+    out = []
+    for path in re.findall(r'/datum/alt_grip[A-Za-z0-9_/]*', expand_define(raw or '')):
+        path = path.rstrip('/')
+        if path in rw.types and path not in out:
+            out.append(path)
+    return out
+
+
+def assigned_numbers(raw):
+    """"key" = value pairs of a list literal, values turned into numbers through the defines."""
+    out = OrderedDict()
+    for key, token in re.findall(r'"(\w+)"\s*=\s*([A-Za-z0-9_.\-]+)', raw or ''):
+        number = define_value_number(token)
+        if number is not None:
+            out[key] = number
+    return out
+
+
+def generate_alt_grips(rw, spec, grips):
+    """Alternate grips of Azure Peak as Ratwood has them (alt_grip.dm): name, two hands, skill rank, traits, intents, on-hand pose, stat changes."""
+    blocks = []
+    for path in grips:
+        block = [path]
+        name = string_value(rw.resolve(path, 'name'))
+        if name:
+            block.append(f'\tname = {name}')
+        if (rw.resolve(path, 'two_handed') or '').strip() in ('TRUE', '1'):
+            block.append('\ttwo_handed = TRUE')
+        rank = define_value_number(rw.resolve(path, 'skill_req'))
+        if rank:
+            block.append(f'\tskill_rank = {rank}')
+        traits = [t for t in re.findall(r'TRAIT_[A-Z0-9_]+', rw.resolve(path, 'trait_applied') or '') if t in DEFINE_VALUES]
+        if traits:
+            block.append('\ttrait_applied = list(' + ', '.join(traits) + ')')
+        intents = intent_paths(rw, rw.resolve(path, 'grip_intents'))
+        if intents:
+            USED_INTENTS.update(intents)
+            block.append('\tgrip_intents = list(' + ', '.join(intents) + ')')
+        if re.search(r'"altgrip"\s*=\s*list\(', rw.resolve(path, 'onmobprop_overrides') or ''):
+            block.append(f'\tinhand_suffix = "_{path.rsplit("/", 1)[1]}"')
+        for source_name in spec.get('stat_vars', ['var_overrides', 'additive_var_overrides']):
+            numbers = assigned_numbers(rw.resolve(path, source_name))
+            if numbers:
+                block.append(f'\t{source_name} = list(' + ', '.join(f'"{k}" = {v}' for k, v in numbers.items()) + ')')
+        blocks.append(block)
+    open(f"{OUT_DIR}/{spec.get('file', 'alt_grips.dm')}", 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    print(f"{spec.get('file', 'alt_grips.dm')}: {len(blocks)} alternate grips")
+
+
 def intent_paths(rw, raw):
     out = []
     for token in re.findall(r'(/datum/intent[A-Za-z0-9_/]*|[A-Z_][A-Z0-9_]*)', raw or ''):
@@ -2208,6 +2446,31 @@ def string_list(raw):
     return out
 
 
+def intent_effect_lines(rw, path, spec):
+    """The status effect a Ratwood effect intent puts on a hit (intent_effect, target_parts) as data: name, stat changes, duration, zones."""
+    effect = (rw.resolve(path, 'intent_effect') or '').strip()
+    if not effect.startswith('/datum/status_effect') or effect not in rw.types:
+        return []
+    stats = [f"{spec['stats'][key]} = {value}" for key, value in re.findall(r'(STATKEY_[A-Z]+)\s*=\s*(-?[\d.]+)', rw.resolve(effect, 'effectedstats') or '') if key in spec['stats']]
+    if not stats:
+        return []
+    lines = ['\teffect_stats = list(' + ', '.join(stats) + ')']
+    raw_duration = (rw.resolve(effect, 'duration') or '').strip()
+    seconds = re.fullmatch(r'([\d.]+)\s*SECONDS', raw_duration)
+    duration = float(seconds.group(1)) * 10 if seconds else define_value_number(raw_duration)
+    if duration:
+        lines.append(f'\teffect_duration = {int(duration) if duration == int(duration) else duration}')
+    alert = (rw.resolve(effect, 'alert_type') or '').strip()
+    name = string_value(rw.resolve(alert, 'name')) if alert in rw.types else None
+    if name:
+        lines.append(f'\teffect_name = {name}')
+    zones = [expand_define(token) for token in re.findall(r'BODY_ZONE_[A-Z_]+', rw.resolve(path, 'target_parts') or '')]
+    zones = [zone for zone in zones if STRING_LITERAL.match(zone)]
+    if zones:
+        lines.append('\teffect_zones = list(' + ', '.join(zones) + ')')
+    return lines
+
+
 def generate_intents(rw, spec, sound_ref, valid=frozenset()):
     renames = spec.get('rename', {})
     numeric = spec.get('numeric', [])
@@ -2222,23 +2485,29 @@ def generate_intents(rw, spec, sound_ref, valid=frozenset()):
             if value is None:
                 value = expand_define(rw.resolve(path, renames.get(name, name)) or '')
                 value = value if STRING_LITERAL.match(value) else None
-            if value is not None:
+            if value is not None and not (value == '""' and name in spec.get('strings_skip_empty', [])):
                 block.append(f'\t{name} = {value}')
         verbs = string_list(rw.resolve(path, 'attack_verb'))
         if verbs:
             block.append('\tattack_verb = list(' + ', '.join(verbs) + ')')
+        defaults = spec.get('numeric_defaults', {})
         for name in numeric:
             number = define_value_number(rw.resolve(path, renames.get(name, name)))
-            if number is not None:
+            if number is not None and (name not in defaults or number != defaults[name]):
                 block.append(f'\t{name} = {number}')
+        true_only = spec.get('flags_true_only', [])
         for name in flags:
             value = (rw.resolve(path, renames.get(name, name)) or '').strip()
             if value in ('TRUE', 'FALSE', '0', '1'):
+                if name in true_only and value not in ('TRUE', '1'):
+                    continue
                 block.append(f"\t{name} = {'TRUE' if value in ('TRUE', '1') else 'FALSE'}")
         for name in spec.get('paths', []):
             raw = (rw.resolve(path, name) or '').strip()
             if raw.startswith('/') and raw in valid:
                 block.append(f'\t{name} = {raw}')
+        if spec.get('effects'):
+            block += intent_effect_lines(rw, path, spec['effects'])
         sounds = sound_files(rw.resolve(path, 'hitsound'))
         refs = [ref for ref in (sound_ref(f"'{f}'") for f in sounds) if ref]
         if refs:
@@ -2304,6 +2573,9 @@ def parse_pre_equip(body):
             elif 'prob(' in text:
                 accepted = True
                 chains[indent] = 'taken'
+            elif 'map_name' in text or 'current_map' in text:
+                accepted = False
+                chains[indent] = 'else'
             else:
                 accepted = masculine(text) or re.match(r'^if\s*\(\s*H\.mind\s*\)$', text) is not None
                 chains[indent] = 'else' if feminine(text) else 'masc'
@@ -2347,10 +2619,19 @@ def job_subclasses(rw, job):
 
 
 def role_outfit(rw, job):
+    """What a role wears at roundstart: Ratwood equips the job's own outfit at spawn and the subclass outfit over it
+    once a class is picked. The first subclass that dresses the role is taken (a Wretch's first class, the licker,
+    brings no clothes); a map branch of pre_equip (`map_name == "Desert Town"`) falls through to its else."""
     subclasses = job_subclasses(rw, job)
-    source = (rw.resolve(subclasses[0], 'outfit') if subclasses else None) or rw.resolve(job, 'outfit') or ''
-    dressed = outfit_slots(rw, source)
-    dressed['advclass'] = subclasses[0] if subclasses else None
+    base = outfit_slots(rw, rw.resolve(job, 'outfit') or '')
+
+    def over_base(worn):
+        contents = worn['contents'] if worn['contents'] is not None else base['contents']
+        return {'source': worn['source'] or base['source'], 'slots': {**base['slots'], **worn['slots']}, 'contents': contents}
+
+    chosen = next((advclass for advclass in subclasses if outfit_slots(rw, rw.resolve(advclass, 'outfit') or '')['slots']), subclasses[0] if subclasses else None)
+    dressed = over_base(outfit_slots(rw, rw.resolve(chosen, 'outfit') or '')) if chosen else base
+    dressed['advclass'] = chosen
     dressed['subclasses'] = subclasses
     return dressed
 
@@ -2574,6 +2855,9 @@ def generate_jobs(cfg, rw, usage, role_outfits, valid, station_usage, role_attrs
             block.append('\tname = JOB_ASSISTANT')
         if roles:
             block.append('\trockhill_latejoin_roles = list(' + ', '.join(f'"{role}"' for role in roles) + ')')
+        arrivals = [name.strip('"') for name in re.findall(r'"[^"]*"', rw.resolve(lm, 'jobspawn_override') or '') if name.strip('"') in MIGRANT_SPAWNS]
+        if arrivals:
+            block.append('\trockhill_migrant_spawns = list(' + ', '.join(f'"{name}"' for name in arrivals) + ')')
         marks.append(block)
     open(f'{OUT_DIR}/landmarks.dm', 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in marks) + '\n')
 
@@ -2591,6 +2875,1738 @@ def generate_jobs(cfg, rw, usage, role_outfits, valid, station_usage, role_attrs
         for p in ported:
             out.write(f"| `{p}` | {titles[p].strip(chr(34))} | {departments[rw.resolve(p, 'department_flag').strip()]} |\n")
     print(f'jobs: {len(ported)} roles, {len(abstract)} abstract parents, landmarks {matched}/{len(marks)} bound, job_changes {len(changes)}')
+    return set(outfits.values())
+
+
+NPC_STAT_BASE = 10
+LOCAL_VAR = re.compile(r'^\t*var/(?:list/)?(\w+) = ')
+LOCAL_VALUE = re.compile(r'-?\d+(?:\.\d+)?|rand\(\s*-?\d+\s*,\s*-?\d+\s*\)|pick\(\s*(?:-?\d+|"[^"]*")(?:\s*,\s*(?:-?\d+|"[^"]*"))*\s*\)')
+SUPER_CALL = re.compile(r'(?:\.\s*=\s*)?\.\.\(\)')
+
+
+def code_lines(body):
+    """A proc body's lines, a statement split over lines (an open parenthesis, a trailing backslash) joined into one."""
+    out = []
+    i = 0
+    while i < len(body):
+        line = body[i].rstrip()
+        i += 1
+        if not line.strip():
+            continue
+        while (line.count('(') > line.count(')') or line.endswith('\\')) and i < len(body):
+            line = line.rstrip('\\').rstrip() + ' ' + body[i].strip()
+            i += 1
+        out.append(line)
+    return out
+
+
+def code_tree(body):
+    """A proc body as [text, children] nodes by indentation."""
+    root = []
+    stack = [(-1, root)]
+    for line in code_lines(body):
+        lead = line[:len(line) - len(line.lstrip())]
+        indent = lead.count('\t') + lead.count(' ') // 4
+        while stack[-1][0] >= indent:
+            stack.pop()
+        node = [line.strip(), []]
+        stack[-1][1].append(node)
+        stack.append((indent, node[1]))
+    return root
+
+
+def split_condition(text):
+    """'(condition) rest' as (condition, rest) with the parentheses balanced; None without a leading parenthesis."""
+    text = text.strip()
+    if not text.startswith('('):
+        return None
+    depth = 0
+    quoted = False
+    for index, char in enumerate(text):
+        if char == '"' and text[index - 1:index] != '\\':
+            quoted = not quoted
+        if quoted:
+            continue
+        if char == '(':
+            depth += 1
+        elif char == ')':
+            depth -= 1
+            if depth == 0:
+                return text[1:index].strip(), text[index + 1:].strip()
+    return None
+
+
+def control_parts(text):
+    """(keyword, condition, statement on the same line) of a control line; (None, None, text) for a statement."""
+    m = re.match(r'^(else\s+if|if|switch|for|while)\s*(\(.*)$', text)
+    if m:
+        keyword = 'else if' if m.group(1).startswith('else') else m.group(1)
+        split = split_condition(m.group(2))
+        return (keyword, split[0], split[1]) if split else (keyword, m.group(2), '')
+    if re.match(r'^else\b', text):
+        return 'else', None, text[4:].strip()
+    if re.match(r'^do\b', text):
+        return 'do', None, ''
+    return None, None, text
+
+
+def branch_body(tail, children):
+    return ([[tail, []]] if tail else []) + children
+
+
+def if_chain(nodes, i, first):
+    """The branches of an if chain starting at nodes[i - 1] (whose parts are first), and the index after it."""
+    keyword, cond, tail = first
+    branches = [(keyword, cond, branch_body(tail, nodes[i - 1][1]))]
+    while i < len(nodes) and control_parts(nodes[i][0])[0] in ('else if', 'else'):
+        keyword, cond, tail = control_parts(nodes[i][0])
+        branches.append((keyword, cond, branch_body(tail, nodes[i][1])))
+        i += 1
+    return branches, i
+
+
+def npc_condition(cond, scope):
+    """How an NPC outfit takes a branch: 'prob' for a chance kept as it is, True or False for one decided now. An NPC has no
+    mind and is dressed as a man; whatever else the port cannot know (species, map, patron) takes the else branch."""
+    c = (cond or '').strip()
+    m = re.fullmatch(r'prob\(\s*([\w.]+)\s*\)', c)
+    if m and (NUMBER.match(m.group(1)) or scope.get(m.group(1)) == 'value'):
+        return 'prob'
+    if re.fullmatch(r'!\s*\(?\s*H\.mind\s*\)?', c):
+        return True
+    if 'H.mind' in c:
+        return False
+    return masculine(c) and not feminine(c)
+
+
+def static_statements(nodes):
+    """The statements an NPC outfit surely runs: the unconditional ones and the branches decided now. A chance and a
+    random switch are skipped, so a stat set in only one loadout is not counted."""
+    out = []
+    i = 0
+    while i < len(nodes):
+        parts = control_parts(nodes[i][0])
+        i += 1
+        if parts[0] == 'if':
+            branches, i = if_chain(nodes, i, parts)
+            for keyword, cond, kids in branches:
+                verdict = True if keyword == 'else' else npc_condition(cond, {})
+                if verdict == 'prob':
+                    break
+                if verdict:
+                    out += static_statements(kids)
+                    break
+        elif parts[0] is None:
+            out.append(parts[2])
+    return out
+
+
+def useful_lines(lines):
+    return any(not LOCAL_VAR.match(line) for line in lines)
+
+
+def prune_locals(lines):
+    """Drops local variables nothing left in the proc reads (their switch or chance went with the items it chose)."""
+    while True:
+        unused = next((index for index, line in enumerate(lines) if LOCAL_VAR.match(line) and not any(re.search(rf'\b{LOCAL_VAR.match(line).group(1)}\b', other) for k, other in enumerate(lines) if k != index)), None)
+        if unused is None:
+            return lines
+        lines = lines[:unused] + lines[unused + 1:]
+
+
+class NpcOutfits:
+    """Ratwood NPC outfits as TG outfits: the slots they set on the type, and pre_equip (with the helper procs it calls)
+    rewritten to keep only what dresses the NPC: slot assignments, the chances and random switches that choose between
+    loadouts, and the local numbers and lists they pick from. Items the port does not have are left out; without valid,
+    every item is kept and only gathered (the first pass, before the items are ported)."""
+
+    def __init__(self, rw, rules, valid=None):
+        self.rw = rw
+        self.rules = rules
+        self.valid = valid
+        self.items = set()
+        self.helpers = {}
+
+    def item(self, raw):
+        path = raw.strip().rstrip('/')
+        self.items.add(path)
+        target = runtime_path(path, self.rules)
+        if target and (self.valid is None or target in self.valid):
+            return target
+        return None
+
+    def slot_value(self, value, scope):
+        value = value.strip()
+        if value == 'null':
+            return 'null'
+        if ITEM_PATH.fullmatch(value.rstrip('/')):
+            return self.item(value)
+        m = re.fullmatch(r'(pick|pick_n_take)\((.*)\)', value)
+        if m:
+            inner = m.group(2).strip()
+            if scope.get(inner) == 'list':
+                return f'{m.group(1)}({inner})'
+            kept = [p for p in (self.item(p) for p in ITEM_PATH.findall(inner)) if p]
+            return f"pick({', '.join(kept)})" if kept else None
+        return value if scope.get(value) == 'path' else None
+
+    def statics(self, outfit):
+        lines = []
+        for var, value in self.rw.types.get(outfit, {}).items():
+            if var == 'name' and STRING_LITERAL.match(value.strip()):
+                lines.append(f'\tname = {value.strip()}')
+            elif var in OUTFIT_SLOTS or var in NPC_SLOTS:
+                target = self.slot_value(value, {})
+                if target:
+                    lines.append(f'\t{NPC_SLOTS.get(var) or OUTFIT_SLOTS[var]} = {target}')
+            elif var == 'backpack_contents':
+                entries = [(self.item(p), n or '1') for p, n in re.findall(r'(/obj/item/[A-Za-z0-9_/]*[A-Za-z0-9_])/?\s*(?:=\s*(\d+))?', value)]
+                entries = [f'{p} = {n}' for p, n in entries if p]
+                if entries:
+                    lines.append(f"\tbackpack_contents = list({', '.join(entries)})")
+        return lines
+
+    def statement(self, text, depth, scope, outfit):
+        pad = '\t' * depth
+        if SUPER_CALL.fullmatch(text):
+            return [pad + '..()']
+        if text == 'return':
+            return [pad + 'return']
+        m = re.fullmatch(r'var/(?:list/)?(\w+)\s*=\s*(.+)', text)
+        if m:
+            name, value = m.group(1), m.group(2).strip()
+            if LOCAL_VALUE.fullmatch(value):
+                scope[name] = 'value'
+                return [pad + f'var/{name} = {value}']
+            kept = [p for p in (self.item(p) for p in ITEM_PATH.findall(value)) if p]
+            if kept and value.startswith('list('):
+                scope[name] = 'list'
+                return [pad + f"var/list/{name} = list({', '.join(kept)})"]
+            if kept and value.startswith('pick('):
+                scope[name] = 'path'
+                return [pad + f"var/{name} = pick({', '.join(kept)})"]
+            return []
+        m = re.fullmatch(r'(\w+)\s*=\s*(.+)', text)
+        if m and (m.group(1) in OUTFIT_SLOTS or m.group(1) in NPC_SLOTS):
+            value = self.slot_value(m.group(2), scope)
+            return [pad + f'{NPC_SLOTS.get(m.group(1)) or OUTFIT_SLOTS[m.group(1)]} = {value}'] if value else []
+        m = re.fullmatch(r'backpack_contents\s*(=|\+=)\s*list\((.*)\)', text)
+        if m:
+            entries = [(self.item(p), n or '1') for p, n in re.findall(r'(/obj/item/[A-Za-z0-9_/]*[A-Za-z0-9_])/?\s*(?:=\s*(\d+))?', m.group(2))]
+            entries = [f'{p} = {n}' for p, n in entries if p]
+            return [pad + f"backpack_contents {m.group(1)} list({', '.join(entries)})"] if entries else []
+        m = re.fullmatch(r'(\w+)\(\s*(?:H|human|user)\s*\)', text)
+        if m and self.helper(outfit, m.group(1)):
+            return [pad + f'{m.group(1)}(H)']
+        return []
+
+    def emit(self, nodes, depth, scope, outfit):
+        out = []
+        i = 0
+        while i < len(nodes):
+            parts = control_parts(nodes[i][0])
+            children = nodes[i][1]
+            i += 1
+            if parts[0] == 'if':
+                branches, i = if_chain(nodes, i, parts)
+                out += self.chain(branches, depth, scope, outfit)
+            elif parts[0] == 'switch':
+                out += self.switch(parts[1], branch_body(parts[2], children), depth, scope, outfit)
+            elif parts[0] is None:
+                out += self.statement(parts[2], depth, scope, outfit)
+        return out
+
+    def chain(self, branches, depth, scope, outfit):
+        """An if chain: chances stay as they are, a branch decided now is taken whole (or becomes the else of the chances
+        before it), a branch decided against is dropped."""
+        pad = '\t' * depth
+        out = []
+        useful = False
+        for keyword, cond, kids in branches:
+            verdict = True if keyword == 'else' else npc_condition(cond, scope)
+            if verdict == 'prob':
+                body = self.emit(kids, depth + 1, dict(scope), outfit)
+                useful = useful or useful_lines(body)
+                out.append(pad + ('else if' if out else 'if') + f'({cond.strip()})')
+                out += body if useful_lines(body) else [pad + '\tEMPTY_BLOCK_GUARD']
+            elif verdict:
+                if not out:
+                    return self.emit(kids, depth, scope, outfit)
+                body = self.emit(kids, depth + 1, dict(scope), outfit)
+                useful = useful or useful_lines(body)
+                out += [pad + 'else'] + (body if useful_lines(body) else [pad + '\tEMPTY_BLOCK_GUARD'])
+                break
+        return out if useful else []
+
+    def switch(self, expr, cases, depth, scope, outfit):
+        """A switch on a random number keeps its cases; a switch on anything else takes its first case."""
+        pad = '\t' * depth
+        expr = (expr or '').strip()
+        parsed = []
+        for text, children in cases:
+            keyword, cond, tail = control_parts(text)
+            if keyword in ('if', 'else'):
+                parsed.append((cond if keyword == 'if' else None, branch_body(tail, children)))
+        if not parsed:
+            return []
+        if not (re.fullmatch(r'rand\(\s*-?\d+\s*,\s*-?\d+\s*\)', expr) or LOCAL_VALUE.fullmatch(expr) or scope.get(expr) == 'value'):
+            return self.emit(parsed[0][1], depth, scope, outfit)
+        out = [pad + f'switch({expr})']
+        useful = False
+        for cond, kids in parsed:
+            body = self.emit(kids, depth + 2, dict(scope), outfit)
+            useful = useful or useful_lines(body)
+            out.append(pad + '\t' + (f'if({cond.strip()})' if cond is not None else 'else'))
+            out += body if useful_lines(body) else [pad + '\t\tEMPTY_BLOCK_GUARD']
+        return out if useful else []
+
+    def helper(self, outfit, name):
+        """A helper proc the outfit calls (Ratwood's add_random_deserter_weapon), written once for the outfit that owns it."""
+        owner = outfit
+        while owner and owner.startswith(NPC_OUTFIT_ROOT + '/'):
+            key = (owner, name)
+            if key in OUTFIT_PROCS:
+                if key not in self.helpers:
+                    self.helpers[key] = []
+                    lines = prune_locals(self.emit(code_tree(OUTFIT_PROCS[key]), 1, {}, owner))
+                    self.helpers[key] = lines if useful_lines(lines) else []
+                return self.helpers[key]
+            owner = self.rw.parent(owner)
+        return []
+
+    def pre_equip(self, outfit):
+        body = PRE_EQUIP.get(outfit)
+        return None if body is None else prune_locals(self.emit(code_tree(body), 1, {}, outfit))
+
+
+def npc_chain(rw, path):
+    chain = []
+    while path and boundary_match(path, NPC_ROOT):
+        chain.append(path)
+        path = rw.parent(path)
+    return chain
+
+
+def npc_outfits(rw, path):
+    """The Ratwood outfits an NPC wears, nearest code first: an outfit var its Initialize sets (several, as the spread
+    skeletons pick one at random), an outfit after_creation equips by path, or the outfit var after_creation equips."""
+    for owner in npc_chain(rw, path):
+        for proc in NPC_PROCS:
+            text = '\n'.join(HUMAN_PROCS.get((owner, proc), []))
+            assigned = re.findall(r'\b\w+_outfit\s*=\s*(/datum/outfit/[A-Za-z0-9_/]*[A-Za-z0-9_])', text)
+            if assigned:
+                return [o for o in assigned if o.startswith(NPC_OUTFIT_ROOT + '/')]
+            direct = re.search(r'equipOutfit\(\s*new\s+(/datum/outfit/[A-Za-z0-9_/]*[A-Za-z0-9_])', text)
+            if direct:
+                return [direct.group(1)] if direct.group(1).startswith(NPC_OUTFIT_ROOT + '/') else []
+            named = re.search(r'\bnew\s+(\w+_outfit)\b', text)
+            if named:
+                value = (rw.resolve(path, named.group(1)) or '').strip().rstrip('/')
+                return [value] if value.startswith(NPC_OUTFIT_ROOT + '/') else []
+    return []
+
+
+def npc_outfit_chain(outfit):
+    parts = outfit.split('/')
+    return ['/'.join(parts[:k]) for k in range(len(NPC_OUTFIT_ROOT.split('/')) + 1, len(parts) + 1)]
+
+
+def npc_faction(rw, path):
+    """Ratwood's faction of the NPC: the faction var, or the list after_creation sets when it sets it on the type or nearer
+    to it than the var, with what after_creation adds (faction |= list("undead"))."""
+    var_depth = None
+    depth = 0
+    p = path
+    while p:
+        if 'faction' in rw.types.get(p, {}):
+            var_depth = depth
+            break
+        p = rw.parent(p)
+        depth += 1
+    faction = string_list(rw.resolve(path, 'faction'))
+    added = []
+    assigned = False
+    for depth, owner in enumerate(npc_chain(rw, path)):
+        text = '\n'.join(line for proc in NPC_PROCS for line in HUMAN_PROCS.get((owner, proc), []))
+        found = re.search(r'\bfaction\s*=\s*list\(([^)]*)\)', text)
+        if found and not assigned:
+            assigned = True
+            if var_depth is None or depth <= var_depth:
+                faction = string_list(found.group(1))
+        for listed, single in re.findall(r'\bfaction\s*(?:\|=|\+=)\s*(?:list\(([^)]*)\)|("[^"]*"))', text):
+            added += string_list(listed or single)
+    return list(dict.fromkeys(faction + added))
+
+
+def npc_traits(rw, path):
+    """Traits after_creation and Initialize give the NPC outside any condition."""
+    traits = []
+    for owner in npc_chain(rw, path):
+        for proc in NPC_PROCS:
+            for text in unconditional_lines(HUMAN_PROCS.get((owner, proc), [])):
+                traits += re.findall(r'\bADD_TRAIT\(\s*src\s*,\s*(TRAIT_[A-Z0-9_]+)\s*,', text)
+    return traits
+
+
+def npc_outfit_attributes(rw, outfit, attr_cfg):
+    """Stats, skills and traits a Ratwood NPC outfit gives in what its pre_equip surely runs (H.STASTR = 8, change_stat,
+    adjust_skillrank, ADD_TRAIT), over its parent's when it calls ..(). A stat set outright counts from Ratwood's 10."""
+    data = {'set': {}, 'add': collections.Counter(), 'skills': {}, 'traits': []}
+    if not outfit or not outfit.startswith(NPC_OUTFIT_ROOT + '/'):
+        return data
+    body = PRE_EQUIP.get(outfit)
+    if body is None:
+        return npc_outfit_attributes(rw, rw.parent(outfit), attr_cfg)
+    lines = static_statements(code_tree(body))
+    if any(SUPER_CALL.fullmatch(text) for text in lines):
+        data = npc_outfit_attributes(rw, rw.parent(outfit), attr_cfg)
+    for text in lines:
+        for short, op, amount in STAT_ASSIGN.findall(text):
+            stat = attr_cfg['stats'].get(NPC_STATS.get(short, ''))
+            if not stat:
+                continue
+            if op == '=':
+                data['set'][stat] = int(amount)
+                data['add'][stat] = 0
+            else:
+                data['add'][stat] += int(amount) if op == '+=' else -int(amount)
+        for token, amount in STAT_CALL.findall(text):
+            stat = attr_cfg['stats'].get(expand_define(token).strip('"'))
+            if stat:
+                data['add'][stat] += int(amount)
+        for call, path, token in SKILL_CALL.findall(text):
+            value = expand_define(token)
+            if not NUMBER.match(value):
+                continue
+            level = int(float(value)) * attr_cfg['level_scale']
+            data['skills'][path] = data['skills'].get(path, 0) + level if call == 'adjust_skillrank' else max(data['skills'].get(path, 0), level)
+        data['traits'] += TRAIT_CALL.findall(text)
+    return data
+
+
+def npc_sheet_entries(data, attr_cfg):
+    entries = []
+    for stat in sorted(set(data['set']) | set(data['add'])):
+        amount = (data['set'][stat] - NPC_STAT_BASE if stat in data['set'] else 0) + data['add'][stat]
+        if amount:
+            entries.append(f'\t\t{stat} = {amount},')
+    for path, value in sorted(data['skills'].items()):
+        if path in attr_cfg['meta'] and value:
+            entries.append(f"\t\t{attr_cfg['skill_target'] + path[len(attr_cfg['skill_root']):]} = {min(value, 60)},")
+    return entries
+
+
+def npc_candidates(rw, rules, usage):
+    return sorted(p for p in usage if boundary_match(p, NPC_ROOT) and p != NPC_ROOT and not replacement_for(p, rules))
+
+
+def npc_outfit_items(rw, rules, npcs):
+    """Every item the NPC outfits may hand out, so the port brings them over."""
+    writer = NpcOutfits(rw, rules)
+    for path in npcs:
+        for outfit in npc_outfits(rw, path):
+            for link in npc_outfit_chain(outfit):
+                writer.statics(link)
+                writer.pre_equip(link)
+    return writer.items
+
+
+def npc_trait_names(rw, npcs, attr_cfg):
+    traits = set()
+    for path in npcs:
+        traits |= set(npc_traits(rw, path))
+        for outfit in npc_outfits(rw, path):
+            for link in npc_outfit_chain(outfit):
+                traits |= set(npc_outfit_attributes(rw, link, attr_cfg)['traits'])
+    return traits
+
+
+HAIR_ROOT = '/datum/sprite_accessory/hair'
+HAIR_TYPES = re.compile(r'/datum/sprite_accessory/hair/(?:head|facial)/\w+')
+COLOR_HEX = re.compile(r'"#?([0-9A-Fa-f]{6})"')
+
+
+def npc_creation_text(rw, path):
+    return '\n'.join(line for owner in npc_chain(rw, path) for proc in NPC_PROCS for line in HUMAN_PROCS.get((owner, proc), []))
+
+
+def npc_look(rw, path, hair_names):
+    """How Ratwood's after_creation dresses the NPC's body: a random sex, skin, eye and hair colours, the hairstyles and
+    beards it picks from, and the name lists (by the file's m/f ending)."""
+    text = npc_creation_text(rw, path)
+    look = {}
+    if re.search(r'\bgender\s*=\s*pick\(\s*MALE\s*,\s*FEMALE\s*\)', text):
+        look['random_sex'] = 'TRUE'
+    for key, pattern in (('skin', r'\bskin_tone\s*=\s*'), ('eyes', r'\beye_color\s*=\s*'), ('hair_color', r'\bhair_color\s*=\s*')):
+        found = re.search(pattern + COLOR_HEX.pattern, text)
+        if found:
+            look[key] = f'"#{found.group(1).upper()}"'
+    for key, name in (('hair_m', 'hairm'), ('hair_f', 'hairf'), ('beards', 'beard')):
+        found = re.search(rf'\bvar/{name}\s*=\s*pick\(\s*list\(([^)]*)\)', text)
+        styles = [hair_names[p] for p in HAIR_TYPES.findall(found.group(1)) if p in hair_names] if found else []
+        if styles:
+            look[key] = 'list(' + ', '.join(json.dumps(s) for s in styles) + ')'
+    for rel in dict.fromkeys(re.findall(r'\breal_name\s*=\s*pick\(\s*world\.file2list\(\s*"([^"]+)"', text)):
+        key = 'names_f' if rel.endswith('f.txt') else 'names_m'
+        look[key] = f'"{NPC_NAMES_DIR}/{os.path.basename(rel)}"'
+    return look
+
+
+NPC_NAMES_DIR = 'modular_redtard/rockhill/strings/names'
+
+
+def npc_name_files(rw, npcs):
+    files = set()
+    for path in npcs:
+        files |= set(re.findall(r'\breal_name\s*=\s*pick\(\s*world\.file2list\(\s*"([^"]+)"', npc_creation_text(rw, path)))
+    return sorted(files)
+
+
+def npc_hair_types(rw, npcs):
+    return sorted({p for path in npcs for p in HAIR_TYPES.findall(npc_creation_text(rw, path)) if p in rw.types})
+
+
+def ratwood_offsets(rw, species, keys):
+    """Ratwood's offset_features of a species (where worn things, hair and held items sit on its body) in the module's
+    offset keys, per sex: {"m": {key: (x, y)}, "f": {...}}."""
+    out = {'m': {}, 'f': {}}
+    for name, x, y in re.findall(r'\b(OFFSET_[A-Z_]+)\s*=\s*list\(\s*(-?\d+)\s*,\s*(-?\d+)\s*\)', rw.resolve(species, 'offset_features') or ''):
+        sex = 'f' if name.endswith('_F') else 'm'
+        for key in keys.get(name[:-2] if sex == 'f' else name, []):
+            if int(x) or int(y):
+                out[sex][key] = (int(x), int(y))
+    return out
+
+
+def over(base, top):
+    """top drawn over base, one 32x32 RGBA cell each (a pixel of top wins where it is not transparent)."""
+    out = bytearray(base)
+    for i in range(0, len(top), 4):
+        if top[i + 3]:
+            out[i:i + 4] = top[i:i + 4]
+    return bytes(out)
+
+
+def generate_bodies(cfg, rw, valid, npcs, known_traits):
+    """Ratwood bodies as TG body parts (rockhill/species.dm): the per-zone body sheets of the orc and the dark elf for both
+    sexes (TG's dimorphic state <body>_<zone>_<m|f>, each leg with its "_above" part drawn over it), the goblins'
+    whole-body sprites (rogue_goblin_<zone>: the body on the chest, the other parts empty; per kind <kind>_chest,
+    <kind>_decap_chest and the severed head <kind>_severed) with their own armor and helmet looks (goblin_worn_<state>),
+    ears and tusks (<feature>_ADJ/_FRONT) and the hairstyles Ratwood's NPCs pick
+    (rogue_hair_<style>, rogue_facial_<style>), all in one sheet; and the data that goes with them: Ratwood's
+    offset_features per species, the hairstyles as TG sprite accessories and the goblin look of goblin gear."""
+    spec = cfg['port']['bodies']
+    sources = {}
+
+    def cells_of(rel):
+        if rel not in sources:
+            if not asset_allowed(rel, cfg['port'].get('assets', {})):
+                raise SystemExit(f'{rel}: the body sprites sit under a licence the port may not copy ({asset_license(rel)})')
+            sources[rel] = dmi.read(os.path.join(CHECKOUT, rel)).state_cells()
+        return sources[rel]
+
+    def first_frame(entry):
+        dirs, _, cells = entry
+        return dirs, cells[:dirs]
+
+    empty = bytes(32 * 32 * 4)
+    states = []
+    for body, entry in spec['sheets'].items():
+        for sex in ('m', 'f'):
+            source = cells_of(entry[sex])
+            for zone in spec['zones']:
+                dirs, cells = first_frame(source[zone]) if zone in source else (1, [empty])
+                above = spec['merge'].get(zone)
+                if above in source:
+                    above_dirs, above_cells = first_frame(source[above])
+                    if above_dirs == dirs:
+                        cells = [over(cell, top) for cell, top in zip(cells, above_cells)]
+                states.append((f'{body}_{zone}_{sex}', dirs, cells))
+    goblin = spec['goblin']
+    source = cells_of(goblin['source'])
+    for zone in spec['zones']:
+        states.append((f"{goblin['limb_id']}_{zone}", *(first_frame(source[goblin['kinds'][0]]) if zone == 'chest' else (1, [empty]))))
+    for kind in goblin['kinds']:
+        states.append((f'{kind}_chest', *first_frame(source[kind])))
+        states.append((f'{kind}_decap_chest', *first_frame(source[f'{kind}_decap'])))
+        states.append((f'{kind}_severed', 1, source[f'{kind}_head'][2][:1]))
+    for state in goblin['worn']:
+        states.append((f'goblin_worn_{state}', *first_frame(source[state])))
+    for name, (rel, state, layers) in spec['features'].items():
+        source = cells_of(rel)
+        for layer in layers:
+            states.append((f'{name}_{layer}', *first_frame(source[f'{state}_{layer}'])))
+    hair_names = {}
+    hair_blocks = []
+    tg_hair_names = set(re.findall(r'^\tname = "([^"]+)"', '\n'.join(open(f, encoding='utf-8', errors='ignore').read() for f in glob.glob('code/datums/sprite_accessories/*.dm')), re.M))
+    for path in npc_hair_types(rw, npcs):
+        facial = '/facial/' in path
+        leaf = path.rsplit('/', 1)[1]
+        icon = (rw.resolve(path, 'icon') or '').strip().strip("'")
+        state = (string_value(rw.resolve(path, 'icon_state')) or '""').strip('"')
+        name = (string_value(rw.resolve(path, 'name')) or f'"{leaf}"').strip('"')
+        source = cells_of(icon) if icon else {}
+        if state not in source:
+            continue
+        sheet_state = f"rogue_{'facial' if facial else 'hair'}_{leaf}"
+        states.append((sheet_state, *first_frame(source[state])))
+        shown = name if name not in tg_hair_names else f'{name} (Ratwood)'
+        hair_names[path] = shown
+        hair_blocks.append([f"/datum/sprite_accessory/{'facial_hair' if facial else 'hair'}/rogue_{leaf}", f'\tname = {json.dumps(shown)}', f"\ticon = '{spec['file']}'", f'\ticon_state = "{sheet_state}"', '\tlocked = TRUE', '\tnatural_spawn = FALSE'])
+    dmi.write_states(spec['file'], 32, 32, states)
+
+    blocks = []
+    race_sheets = []
+    attr_cfg = cfg['attributes']
+    for species, target in spec['species_map'].items():
+        block = [target]
+        offsets = ratwood_offsets(rw, species, spec['offset_keys'])
+        lines = []
+        for sex in ('m', 'f'):
+            entries = [f'{key} = list({x}, {y})' for key, (x, y) in sorted(offsets[sex].items())]
+            if entries:
+                lines.append(f'\t\t"{sex}" = list(' + ', '.join(entries) + '),')
+        if lines:
+            block += ['\trogue_offsets = list('] + lines + ['\t\t)']
+        bonus = collections.Counter()
+        for token, amount in re.findall(r'\b(STAT_[A-Z]+)\s*=\s*(-?\d+)', rw.resolve(species, 'race_bonus') or ''):
+            stat = attr_cfg['stats'].get(expand_define(token).strip('"'))
+            if stat:
+                bonus[stat] += int(amount)
+        if any(bonus.values()):
+            sheet = spec['race_sheet_root'] + target[len('/datum/species'):]
+            race_sheets.append([sheet, '\traw_attribute_list = list('] + [f'\t\t{stat} = {amount},' for stat, amount in sorted(bonus.items()) if amount] + ['\t\t)'])
+            block.append(f'\trogue_race_sheet = {sheet}')
+        traits = [t for t in dict.fromkeys(re.findall(r'TRAIT_[A-Z0-9_]+', rw.resolve(species, 'inherent_traits') or '')) if t in known_traits]
+        if traits:
+            block.append(f"\trogue_race_traits = list({', '.join(traits)})")
+        for var, sex in (('use_f', 'f'), ('use_m', 'm')):
+            if (rw.resolve(species, var) or '').strip() in ('1', 'TRUE'):
+                block.append(f'\trogue_worn_sex = "{sex}"')
+        desc = string_value(rw.resolve(species, 'desc'))
+        if desc:
+            paragraphs = [re.sub(r'<[^>]+>', '', part).strip() for part in re.split(r'<br\s*/?>', desc[1:-1])]
+            paragraphs = [p for p in paragraphs if p]
+            if len(paragraphs) > 1:
+                paragraphs = paragraphs[1:]
+            block.append(f'\trogue_description = "{" ".join(paragraphs)}"')
+            block += ['\trogue_lore = list('] + [f'\t\t"{p}",' for p in paragraphs] + ['\t\t)']
+        if len(block) > 1:
+            blocks.append(block)
+    blocks += race_sheets
+    for path in sorted(p for p in valid if p.startswith('/obj/item/') and p in rw.types):
+        state = (string_value(rw.resolve(path, 'item_state')) or '""').strip('"')
+        if state in goblin['worn']:
+            blocks.append([path, f'\trogue_goblin_state = "goblin_worn_{state}"'])
+    open(f"{OUT_DIR}/{spec['dm_file']}", 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks + hair_blocks) + '\n')
+    files = npc_name_files(rw, npcs)
+    fetch_sources(files)
+    os.makedirs(NPC_NAMES_DIR, exist_ok=True)
+    for rel in files:
+        if os.path.exists(os.path.join(CHECKOUT, rel)):
+            shutil.copyfile(os.path.join(CHECKOUT, rel), os.path.join(NPC_NAMES_DIR, os.path.basename(rel)))
+    print(f"{spec['file']}: {len(states)} states; {spec['dm_file']}: {len(blocks)} offset and gear blocks, {len(hair_blocks)} hairstyles; {len(files)} name lists")
+    return hair_names
+
+
+def proc_body(owner, name):
+    """The body of a Ratwood proc the parser does not keep, read from its file: the indented lines after its header."""
+    header = re.compile(rf'^{re.escape(owner)}/(?:proc/)?{re.escape(name)}\(')
+    for path in included_files(CHECKOUT):
+        if not os.path.exists(path):
+            continue
+        lines = strip_comments(open(path, encoding='utf-8', errors='ignore').read()).split('\n')
+        for i, line in enumerate(lines):
+            if header.match(line):
+                body = []
+                for rest in lines[i + 1:]:
+                    if rest.strip() and not rest.startswith(('\t', ' ')):
+                        break
+                    body.append(rest.rstrip())
+                return body
+    return []
+
+
+def voicepack_sounds(pack):
+    """Ratwood's voicepack as {sound key: [sound files]}: the race's own sounds of its get_sound(), without the generic
+    pack it falls back to (TG's humans keep TG's voices) and without the old, young and silenced variants."""
+    sounds = {}
+    key = None
+    for line in proc_body(pack, 'get_sound'):
+        found = re.match(r'^\s*if\s*\(\s*"([^"]+)"\s*\)', line)
+        if found:
+            key = found.group(1)
+            continue
+        files = SOUND_LITERAL.findall(line)
+        if key and files:
+            sounds.setdefault(key, []).extend(files)
+    return sounds
+
+
+def tg_emote_keys():
+    keys = set()
+    for path in glob.glob('code/**/*.dm', recursive=True):
+        current = None
+        for line in open(path, encoding='utf-8', errors='ignore'):
+            if not line.startswith(('\t', ' ')):
+                current = line.strip()
+                continue
+            found = re.match(r'^\tkey = "([^"]+)"', line)
+            if found and current and current.startswith('/datum/emote'):
+                keys.add(found.group(1))
+    return keys
+
+
+def ratwood_emote(rw, key):
+    for path, values in rw.types.items():
+        if path.startswith('/datum/emote/') and values.get('key', '').strip() == f'"{key}"':
+            return path
+    return None
+
+
+def alpha_cutoff(raw):
+    """Ratwood's lighting plane alpha (255 sees nothing in the dark, 0 everything) as TG's lighting cutoff in percent."""
+    try:
+        alpha = define_number(expand_define(raw), DEFINE_VALUES)
+    except ValueError:
+        return None
+    return round((255 - alpha) * 100 / 255)
+
+
+def generate_races(cfg, rw):
+    """Ratwood's races as TG speaks, voices and sees them (ported/races.dm): their languages as TG languages and the
+    species' language holders, their voicepacks as tongues with TG's emote_sounds by sex (the sound files copied, the
+    emotes TG lacks ported as voice emotes), and their eyes as TG eyes with Ratwood's sight in the dark."""
+    spec = cfg['port']['races']
+    bodies = cfg['port']['bodies']
+    blocks = []
+    lang_icons = []
+
+    def module_language(rw_type):
+        target = spec['languages'].get(rw_type)
+        return target if isinstance(target, str) else (target or {}).get('type')
+
+    for rw_type, target in spec['languages'].items():
+        if isinstance(target, str):
+            continue
+        old_key = (string_value(rw.resolve(rw_type, 'key')) or '""').strip('"')
+        block = [target['type']]
+        for var in ('name', 'desc'):
+            value = string_value(rw.resolve(rw_type, var))
+            if value:
+                if var == 'desc' and old_key:
+                    value = value.replace(f',{old_key})', f",{target['key']})")
+                block.append(f'\t{var} = {value}')
+        block.append(f'\tkey = "{target["key"]}"')
+        for var in ('space_chance', 'default_priority'):
+            value = number_value(rw.resolve(rw_type, var))
+            if value is not None:
+                block.append(f'\t{var} = {value}')
+        syllables = re.findall(r'"((?:[^"\\]|\\.)*)"', rw.resolve(rw_type, 'syllables') or '')
+        if syllables:
+            block.append('\tsyllables = list(' + ', '.join(json.dumps(s, ensure_ascii=False) for s in syllables) + ')')
+        state = (string_value(rw.resolve(rw_type, 'icon_state')) or '""').strip('"')
+        if state:
+            lang_icons.append((state, target['type']))
+            block += [f"\ticon = '{spec['language_icon']}'", f'\ticon_state = "{state}"']
+        blocks.append(block)
+    if lang_icons:
+        source = dmi.read(os.path.join(CHECKOUT, spec['language_icon_source']))
+        cells = source.state_cells()
+        dmi.write_states(spec['language_icon'], source.frame_width, source.frame_height, [(state, 1, cells[state][2][:1]) for state, _ in lang_icons if state in cells])
+
+    tg_keys = tg_emote_keys()
+    sound_files_used = set()
+    vocal_keys = set()
+    eyes_used = {}
+    species_lines = collections.defaultdict(list)
+    seen = {}
+    def configured(table, species):
+        # A setting for a Ratwood species holds for its subtypes too, as the species' own vars would.
+        p = species
+        while p:
+            if p in table:
+                return table[p]
+            p = rw.parent(p)
+        return None
+
+    for species, target in bodies['species_map'].items():
+        leaf = target[len('/datum/species/'):].replace('/', '_')
+        languages = configured(spec['species_languages'], species) or re.findall(r'/datum/language/[A-Za-z0-9_/]+', rw.resolve(species, 'languages') or '')
+        languages = [module_language(lang) for lang in languages if module_language(lang)]
+        packs = configured(spec['species_voices'], species) or {sex: (rw.resolve(species, f'soundpack_{sex}') or '').strip() for sex in ('m', 'f')}
+        voices = {}
+        for sex, pack in packs.items():
+            if not pack.startswith('/datum/voicepack') or pack in spec['generic_voicepacks']:
+                continue
+            for key, files in voicepack_sounds(pack).items():
+                key = spec['emote_keys'].get(key, key)
+                files = [f for f in dict.fromkeys(files) if asset_allowed(f, cfg['port'].get('assets', {}))]
+                if files:
+                    voices.setdefault(key, {})['MALE' if sex == 'm' else 'FEMALE'] = files
+        eyes = re.search(r'ORGAN_SLOT_EYES\s*=\s*(/obj/item/organ/eyes[A-Za-z0-9_/]*)', rw.resolve(species, 'organs') or '')
+        eyes = spec['eyes'].get(eyes.group(1)) if eyes else None
+        signature = json.dumps([languages, voices, eyes], sort_keys=True)
+        parent = target.rsplit('/', 1)[0]
+        seen[target] = signature
+        if seen.get(parent) == signature:
+            continue
+        if languages:
+            holder = f'/datum/language_holder/{leaf}'
+            entries = ', '.join(f'{lang} = list(LANGUAGE_ATOM)' for lang in languages)
+            blocks.append([holder, f'\tunderstood_languages = list({entries})', f'\tspoken_languages = list({entries})'])
+            species_lines[target].append(f'\tspecies_language_holder = {holder}')
+        if languages or voices:
+            tongue = f"{spec['tongue_root']}/{leaf}"
+            block = [tongue]
+            extra = [lang for lang in languages if lang != '/datum/language/common']
+            if extra:
+                block.append(f"\trogue_languages = list({', '.join(extra)})")
+            if voices:
+                block.append('\temote_sounds = list(')
+                for key in sorted(voices):
+                    by_sex = ', '.join(f"{sex} = list({', '.join(repr_sound(f) for f in files)})" for sex, files in sorted(voices[key].items()))
+                    block.append(f'\t\t"{key}" = list({by_sex}),')
+                    sound_files_used |= {f for files in voices[key].values() for f in files}
+                    if key not in tg_keys:
+                        vocal_keys.add(key)
+                block.append('\t)')
+            blocks.append(block)
+            species_lines[target].append(f'\tmutanttongue = {tongue}')
+        if eyes:
+            species_lines[target].append(f'\tmutanteyes = {eyes}')
+            eyes_used[eyes] = next(rw_eyes for rw_eyes, ours in spec['eyes'].items() if ours == eyes)
+    for target, lines in species_lines.items():
+        blocks.append([target] + lines)
+
+    for ours, rw_eyes in sorted(eyes_used.items()):
+        block = [ours]
+        for var in ('name', 'desc'):
+            value = string_value(rw.resolve(rw_eyes, var))
+            if value and value != '""':
+                block.append(f'\t{var} = {value}')
+        if '/night_vision' in rw_eyes:
+            steps = [alpha_cutoff(rw.resolve(rw_eyes, 'lighting_alpha'))] + [alpha_cutoff(define) for define in spec['night_vision_steps']]
+            for var, cutoff in zip(('low_light_cutoff', 'medium_light_cutoff', 'high_light_cutoff'), steps):
+                block.append(f'\t{var} = list({cutoff}, {cutoff}, {cutoff})')
+        else:
+            cutoff = alpha_cutoff(rw.resolve(rw_eyes, 'lighting_alpha'))
+            if cutoff:
+                block.append(f'\tlighting_cutoff = {cutoff}')
+        blocks.append(block)
+
+    for key in sorted(vocal_keys):
+        block = [f"{spec['vocal_emote_root']}/{key}", f'\tkey = "{key}"']
+        source = ratwood_emote(rw, key)
+        message = string_value(rw.resolve(source, 'message')) if source else None
+        if source and message and message != '""' and (rw.resolve(source, 'nomsg') or '').strip() not in ('1', 'TRUE'):
+            block.append(f'\tmessage = {message}')
+        blocks.append(block)
+
+    fetch_sources(sorted(sound_files_used))
+    for rel in sorted(sound_files_used):
+        src = os.path.join(CHECKOUT, rel)
+        if os.path.exists(src):
+            dest = os.path.join(SOUND_DIR, rel[len('sound/'):])
+            os.makedirs(os.path.dirname(dest), exist_ok=True)
+            shutil.copyfile(src, dest)
+    open(f"{OUT_DIR}/{spec['dm_file']}", 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    print(f"{spec['dm_file']}: {len(spec['languages'])} languages, {len(species_lines)} species, {len(sound_files_used)} voice sounds, {len(vocal_keys)} voice emotes, {len(eyes_used)} eyes")
+
+
+def repr_sound(rel):
+    return f"'{SOUND_DIR}/{rel[len('sound/'):]}'"
+
+
+MIGRANT_WAVE_ROOT = '/datum/migrant_wave'
+MIGRANT_ROLE_ROOT = '/datum/migrant_role'
+# Ratwood's names of the landmarks migrant waves arrive at (spawn_landmark), kept on the ported start landmarks.
+MIGRANT_SPAWNS = set()
+TIME_EXPRESSION = re.compile(r'^\d+(?:\.\d+)?(?:\s*(?:SECONDS|MINUTES|HOURS))?$')
+
+
+def migrant_leaf(path, root):
+    return path[len(root) + 1:].replace('/', '_')
+
+
+def wave_role_counts(rw, wave, var):
+    return [(role, int(count)) for role, count in re.findall(r'(/datum/migrant_role/[A-Za-z0-9_/]+)\s*=\s*(\d+)', rw.resolve(wave, var) or '')]
+
+
+def select_migrants(cfg, rw):
+    """Ratwood's migrant waves the port can bring and their roles: a role dresses someone (its own outfit, or the
+    classes of its advclass_cat_rolls, as Ratwood rolls them) and, unless the config allows it, makes no antagonist (no
+    antagonist is ported); a wave comes when all its required roles do, with the optional roles that do."""
+    spec = cfg['port']['migrants']
+    roles = {}
+
+    def role_info(role):
+        if role not in roles:
+            roles[role] = None
+            if role in rw.types:
+                antag = (rw.resolve(role, 'antag_datum') or '').strip()
+                source = (rw.resolve(role, 'outfit') or '').strip()
+                outfit = outfit_slots(rw, source) if source.startswith('/datum/outfit') else None
+                classes = job_subclasses(rw, role)
+                dresses = bool(classes) or bool(outfit and outfit['slots'])
+                if dresses and not (antag.startswith('/') and spec['skip_antagonists']):
+                    roles[role] = {'classes': classes, 'outfit': outfit if outfit and outfit['slots'] else None}
+        return roles[role]
+
+    waves = []
+    for wave in sorted(p for p in rw.types if p.startswith(MIGRANT_WAVE_ROOT + '/')):
+        if (rw.resolve(wave, 'abstract_type') or '').strip() == wave:
+            continue
+        required = wave_role_counts(rw, wave, 'required_roles')
+        optional = [(role, count) for role, count in wave_role_counts(rw, wave, 'optional_roles') if role_info(role)]
+        if not required and not optional:
+            continue
+        if any(role_info(role) is None for role, _ in required):
+            continue
+        waves.append((wave, required, optional))
+        MIGRANT_SPAWNS.add((string_value(rw.resolve(wave, 'spawn_landmark')) or '"Pilgrim"').strip('"'))
+    used = {role for _, required, optional in waves for role, _ in required + optional}
+    return {'waves': waves, 'roles': {role: roles[role] for role in sorted(used)}}
+
+
+def generate_migrants(cfg, rw, migrants, valid):
+    """Ratwood's migrant waves for migrants/migrants.dm (ported/migrants.dm): each wave's roles, track, timing, weight,
+    limits and greeting; each role's name, greeting, sexes, torch, own outfit and the classes it picks from."""
+    spec = cfg['port']['migrants']
+    blocks = []
+    waves = {wave for wave, _, _ in migrants['waves']}
+
+    def flag(raw):
+        value = (raw or '').strip()
+        return 'TRUE' if value in ('1', 'TRUE') else 'FALSE' if value in ('0', 'FALSE') else None
+
+    for wave, required, optional in migrants['waves']:
+        block = [f"{spec['wave_root']}/{migrant_leaf(wave, MIGRANT_WAVE_ROOT)}"]
+        for var in ('name', 'greet_text', 'spawn_landmark'):
+            value = string_value(rw.resolve(wave, var))
+            if value:
+                block.append(f'\t{var} = {value}')
+        track = expand_define(rw.resolve(wave, 'track'))
+        if STRING_LITERAL.match(track or ''):
+            block.append(f'\ttrack = {track}')
+        for var, listed in (('required_roles', required), ('optional_roles', optional)):
+            if listed:
+                block += [f'\t{var} = list('] + [f"\t\t{spec['role_root']}/{migrant_leaf(role, MIGRANT_ROLE_ROOT)} = {count}," for role, count in listed] + ['\t\t)']
+        for var in ('min_optional_fills', 'min_active', 'max_active', 'min_pop', 'max_pop', 'max_spawns', 'weight'):
+            value = number_value(rw.resolve(wave, var))
+            if value is not None:
+                block.append(f'\t{var} = {value}')
+        timing = (rw.resolve(wave, 'min_round_time') or '').strip()
+        if timing and TIME_EXPRESSION.match(timing):
+            block.append(f'\tmin_round_time = {timing}')
+        for var in ('hidden', 'is_raid', 'can_roll', 'spawn_on_location'):
+            value = flag(rw.resolve(wave, var))
+            if value:
+                block.append(f'\t{var} = {value}')
+        shared = (rw.resolve(wave, 'shared_wave_type') or '').strip()
+        if shared in waves:
+            block.append(f"\tshared_wave_type = {spec['wave_root']}/{migrant_leaf(shared, MIGRANT_WAVE_ROOT)}")
+        blocks.append(block)
+
+    for role, info in migrants['roles'].items():
+        target = f"{spec['role_root']}/{migrant_leaf(role, MIGRANT_ROLE_ROOT)}"
+        block = [target]
+        for var in ('name', 'greet_text'):
+            value = string_value(rw.resolve(role, var))
+            if value:
+                block.append(f'\t{var} = {value}')
+        sexes = rw.resolve(role, 'allowed_sexes') or ''
+        if re.fullmatch(r'\s*list\(\s*(?:(?:MALE|FEMALE)\s*,?\s*)+\)\s*', sexes):
+            block.append(f'\tallowed_sexes = {sexes.strip()}')
+        if flag(rw.resolve(role, 'grant_lit_torch')) == 'TRUE':
+            block.append('\tgrant_lit_torch = TRUE')
+        if info['classes']:
+            block += ['\trockhill_advclasses = list('] + [f'\t\t{ADVCLASS_TARGET}{advclass[len(ADVCLASS_ROOT):]},' for advclass in info['classes']] + ['\t\t)']
+        dressed = info['outfit']
+        if dressed:
+            outfit = f"{spec['outfit_root']}/{migrant_leaf(role, MIGRANT_ROLE_ROOT)}"
+            block.append(f'\toutfit = {outfit}')
+            name = string_value(rw.resolve(role, 'name')) or '"Migrant"'
+            worn = [outfit, f'\tname = {name}', f"\tjobtype = {spec['job']}"]
+            for var in ('uniform', 'shirt', 'suit', 'cloak', 'head', 'mask', 'mouth', 'neck', 'gloves', 'wrists', 'ring', 'shoes', 'belt', 'back', 'backr', 'l_pocket', 'r_pocket', 'l_hand', 'r_hand'):
+                item = dressed['slots'].get(var)
+                if item and item in valid:
+                    worn.append(f'\t{var} = {item}')
+            contents = [(item, count) for item, count in (dressed['contents'] or []) if item in valid]
+            if contents and dressed['slots'].get('back') in valid:
+                worn += ['\tbackpack_contents = list('] + [f'\t\t{item} = {count},' for item, count in contents] + ['\t\t)']
+            blocks.append(worn)
+        blocks.append(block)
+    open(f"{OUT_DIR}/{spec['dm_file']}", 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    print(f"{spec['dm_file']}: {len(migrants['waves'])} waves, {len(migrants['roles'])} roles")
+
+
+def generate_npcs(cfg, rw, rules, npcs, valid, known_traits, taken_outfits, hair_names=None):
+    """Ratwood's NPC people for ai/human_npc.dm: whether each has a mind (mode), hunts (aggressive) or flees in pain, how it
+    defends, its faction, race and traits, and the outfits it is dressed in; the outfits themselves with their random
+    loadouts, and the stats and skills their pre_equip sets as attribute sheets."""
+    spec = cfg['port']['npcs']
+    attr_cfg = cfg['attributes']
+    writer = NpcOutfits(rw, rules, valid)
+    mobs = []
+    worn_by = collections.defaultdict(list)
+    rows = []
+    for path in npcs:
+        block = [path]
+        mind = (rw.resolve(path, 'mode') or 'NPC_AI_OFF').strip() != 'NPC_AI_OFF'
+        if mind:
+            block.append('\trogue_npc = TRUE')
+        aggressive = (rw.resolve(path, 'aggressive') or '').strip() in ('1', 'TRUE')
+        if aggressive:
+            block.append('\trogue_aggressive = TRUE')
+        if (rw.resolve(path, 'flee_in_pain') or '').strip() in ('1', 'TRUE'):
+            block.append('\trogue_flee_in_pain = TRUE')
+        if (rw.resolve(path, 'd_intent') or '').strip() == 'INTENT_DODGE':
+            block.append('\trogue_def_intent = ROGUE_INTENT_DODGE')
+        faction = npc_faction(rw, path)
+        if faction and faction != ['"neutral"']:
+            block.append(f"\tfaction = list({', '.join(faction)})")
+        race = next((species for prefix, species in spec.get('race', {}).items() if boundary_match(path, prefix)), None)
+        race = race or cfg['port']['bodies']['species_map'].get((rw.resolve(path, 'race') or '').strip())
+        if race:
+            block.append(f'\trace = {race}')
+        if (string_value(rw.resolve(path, 'name')) or '"Unknown"') != '"Unknown"':
+            block.append('\tuse_random_name = FALSE')
+        look = npc_look(rw, path, hair_names or {})
+        if look:
+            block.append('\trogue_npc_look = list(' + ', '.join(f'"{key}" = {value}' for key, value in look.items()) + ')')
+        worn = npc_outfits(rw, path)
+        if worn:
+            block.append(f"\trogue_npc_outfits = list({', '.join(worn)})")
+            for outfit in worn:
+                worn_by[outfit].append(path)
+        traits = [t for t in dict.fromkeys(npc_traits(rw, path)) if t in known_traits]
+        if traits:
+            block.append(f"\trogue_npc_traits = list({', '.join(traits)})")
+        if len(block) > 1:
+            mobs.append(block)
+        rows.append((path, 'hunts' if mind and aggressive else 'fights back' if mind else 'none', ', '.join(f.strip('"') for f in faction), ', '.join(f'`{o}`' for o in dict.fromkeys(worn))))
+
+    outfits = []
+    procs = []
+    sheets = []
+    done = set()
+    sheet_of = {}
+    with_pre_equip = set()
+    for outfit in sorted(worn_by):
+        for link in npc_outfit_chain(outfit):
+            if link in done:
+                continue
+            done.add(link)
+            parent = rw.parent(link)
+            if link in taken_outfits:
+                continue
+            block = [link] + writer.statics(link)
+            data = npc_outfit_attributes(rw, link, attr_cfg)
+            entries = npc_sheet_entries(data, attr_cfg)
+            if entries:
+                sheet = spec['sheet_root'] + link[len(NPC_OUTFIT_ROOT):]
+                sheets.append([sheet, '\traw_attribute_list = list('] + entries + ['\t\t)'])
+                block.append(f'\trogue_sheet = {sheet}')
+                sheet_of[link] = sheet
+            elif sheet_of.get(parent) and link in PRE_EQUIP:
+                block.append('\trogue_sheet = null')
+            else:
+                sheet_of[link] = sheet_of.get(parent)
+            traits = [t for t in dict.fromkeys(data['traits']) if t in known_traits]
+            if traits:
+                block.append(f"\trogue_traits = list({', '.join(traits)})")
+            if len(block) > 1 or link in worn_by:
+                outfits.append(block)
+            lines = writer.pre_equip(link)
+            if lines is None:
+                if parent in with_pre_equip:
+                    with_pre_equip.add(link)
+                continue
+            calls_parent = any(line.strip() == '..()' for line in lines)
+            if any(line.strip() != '..()' for line in lines) and useful_lines(lines):
+                procs.append([f'{link}/pre_equip(mob/living/carbon/human/H, visuals_only = FALSE)'] + lines)
+                with_pre_equip.add(link)
+            elif not calls_parent and parent in with_pre_equip:
+                procs.append([f'{link}/pre_equip(mob/living/carbon/human/H, visuals_only = FALSE)', '\treturn'])
+            elif calls_parent and parent in with_pre_equip:
+                with_pre_equip.add(link)
+    for (owner, name), lines in sorted(writer.helpers.items()):
+        if lines:
+            procs.append([f'{owner}/proc/{name}(mob/living/carbon/human/H)'] + lines)
+    blocks = mobs + outfits + procs + sheets
+    open(f"{OUT_DIR}/{spec['file']}", 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    with open(REPORT, 'a', encoding='utf-8', newline='\n') as out:
+        out.write(f'\n## NPC people ({len(npcs)} types, {sum(1 for r in rows if r[1] != "none")} with a mind, {len(worn_by)} outfits)\n\n| Type | Mind | Faction | Outfits |\n|---|---|---|---|\n')
+        for path, mind, faction, worn in rows:
+            out.write(f'| `{path}` | {mind} | {faction} | {worn} |\n')
+    print(f"{spec['file']}: {len(npcs)} NPC types, {len(worn_by)} outfits, {len(procs)} procs, {len(sheets)} sheets")
+
+
+def anvil_recipe_specs(cfg, rw, rules):
+    # Ratwood anvil recipes (code/modules/roguetown/roguejobs/*/anvil_recipes): a recipe exists when it has a name and an i_type
+    # (init_anvil_recipes()); casting recipes (req_blade) and trait-locked ones (req_trait) stay in Ratwood.
+    spec = cfg['port'].get('anvil_recipes')
+    if not spec:
+        return []
+    recipes = []
+    for path in sorted(p for p in rw.types if p.startswith(spec['root'] + '/')):
+        if (rw.types[path].get('abstract_type') or '').strip().rstrip('/') == path:
+            continue
+        name = string_value(rw.resolve(path, 'name'))
+        category = string_value(rw.resolve(path, 'i_type'))
+        if not name or name == '""' or not category or category == '""':
+            continue
+        if (rw.resolve(path, 'req_blade') or 'null').strip() != 'null' or (rw.resolve(path, 'req_trait') or 'null').strip() != 'null':
+            continue
+        made = runtime_path((rw.resolve(path, 'created_item') or '').strip().rstrip('/'), rules)
+        bar = runtime_path((rw.resolve(path, 'req_bar') or '').strip().rstrip('/'), rules)
+        if not made or not made.startswith('/obj/') or not bar or not bar.startswith('/obj/'):
+            continue
+        extras = [runtime_path(p.rstrip('/'), rules) for p, _ in list_paths(rw.resolve(path, 'additional_items'))]
+        if not all(extras):
+            continue
+        display = expand_define(rw.resolve(path, 'display_category') or '')
+        recipes.append({
+            'path': path,
+            'name': name,
+            'category': category,
+            'display': display if STRING_LITERAL.match(display) else None,
+            'made': made,
+            'bar': bar,
+            'extras': extras,
+            'count': define_value_number(rw.resolve(path, 'createditem_num')) or 1,
+            'craftdiff': define_value_number(rw.resolve(path, 'craftdiff')) or 0,
+            'skill': skill_target(cfg, rw.resolve(path, 'appro_skill')) or spec['default_skill'],
+        })
+    return recipes
+
+
+def anvil_recipe_items(cfg, rw, rules):
+    # Everything an anvil recipe takes or makes is ported with the map's items.
+    items = set()
+    for recipe in anvil_recipe_specs(cfg, rw, rules):
+        items |= {recipe['made'], recipe['bar']} | set(recipe['extras'])
+    return items
+
+
+def generate_anvil_recipes(cfg, rw, rules, valid):
+    spec = cfg['port'].get('anvil_recipes')
+    if not spec:
+        return
+    blocks = []
+    dropped = 0
+    for recipe in anvil_recipe_specs(cfg, rw, rules):
+        if any(p not in valid for p in [recipe['made'], recipe['bar']] + recipe['extras']):
+            dropped += 1
+            continue
+        block = [recipe['path'], f"\tname = {recipe['name']}", f"\tcategory = {recipe['category']}"]
+        if recipe['display']:
+            block.append(f"\tdisplay_category = {recipe['display']}")
+        block += [f"\treq_bar = {recipe['bar']}", f"\tcreated_item = {recipe['made']}"]
+        if recipe['count'] != 1:
+            block.append(f"\tcreateditem_num = {recipe['count']}")
+        if recipe['craftdiff']:
+            block.append(f"\tcraftdiff = {recipe['craftdiff']}")
+        if recipe['skill'] != spec['default_skill']:
+            block.append(f"\tappro_skill = {recipe['skill']}")
+        if recipe['extras']:
+            block.append('\tadditional_items = list(' + ', '.join(recipe['extras']) + ')')
+        blocks.append(block)
+    os.makedirs(os.path.dirname(spec['file']), exist_ok=True)
+    open(spec['file'], 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    print(f"{spec['file']}: {len(blocks)} anvil recipes, {dropped} dropped for unported items")
+
+
+CRAFT_FLAGS = {
+    'req_table': 'rogue_on_table', 'ontile': 'rogue_on_tile', 'wallcraft': 'rogue_on_wall', 'buildsame': 'rogue_build_same',
+    'ignoredensity': 'rogue_ignore_density',
+}
+_CRAFT_SOURCES = []
+
+
+def craft_recipe_sources(cfg, rw):
+    """Ratwood, then the other codebases whose recipes fill what Ratwood lacks (Azure Peak), each parsed once.
+
+    Parsing another codebase must not leave its defines and procs in the porter's tables, which describe Ratwood."""
+    if _CRAFT_SOURCES:
+        return _CRAFT_SOURCES
+    import copy
+    _CRAFT_SOURCES.append(('Ratwood', rw))
+    spec = cfg['port'].get('craft_recipes') or {}
+    for extra in spec.get('extra_sources', []):
+        root = extra['root']
+        if not os.path.isdir(root):
+            print(f"craft recipes: {extra['name']} not found at {root}, its recipes are skipped")
+            continue
+        tables = {name: value for name, value in globals().items()
+                  if name.isupper() and isinstance(value, (dict, set, list)) and not name.startswith('_')}
+        saved = copy.deepcopy(tables)
+        try:
+            types, _ = parse_codebase(root)
+        finally:
+            for name, value in saved.items():
+                tables[name].clear()
+                if isinstance(value, list):
+                    tables[name].extend(value)
+                else:
+                    tables[name].update(value)
+        _CRAFT_SOURCES.append((extra['name'], Codebase(types)))
+    return _CRAFT_SOURCES
+
+
+def read_craft_recipe(cfg, base, path, rules):
+    # One Ratwood-style crafting recipe (datums/components/crafting/recipes.dm) with everything it inherits, or None when it
+    # does not appear in the crafting menu: abstract, unnamed, without a result, hidden, or waiting for a tech node.
+    if (base.types[path].get('abstract_type') or '').strip().rstrip('/') == path:
+        return None
+    name = string_value(base.resolve(path, 'name'))
+    if not name or name == '""':
+        return None
+    if (base.resolve(path, 'hides_from_crafting_menu') or 'FALSE').strip() in ('TRUE', '1'):
+        return None
+    if (base.resolve(path, 'required_tech_node') or 'null').strip() != 'null':
+        return None
+    results = [runtime_path(p.rstrip('/'), rules) for p, _ in list_paths(base.resolve(path, 'result'))]
+    if not results or not all(results) or not all(r.startswith(('/obj/', '/turf/', '/mob/')) for r in results):
+        return None
+    def paths(var):
+        found = [(runtime_path(p.rstrip('/'), rules), float(w) if w else 1) for p, w in list_paths(base.resolve(path, var))]
+        return None if any(p is None for p, _ in found) else found
+    reqs, tools, parts = paths('reqs'), paths('tools'), paths('parts')
+    if reqs is None or tools is None or parts is None or not reqs:
+        return None
+    skill_raw = (base.resolve(path, 'skillcraft') or 'null').strip()
+    skill = None
+    category = '"Other"'
+    if skill_raw != 'null':
+        skill = skill_target(cfg, skill_raw)
+        if not skill:
+            return None
+        category = string_value(base.resolve(skill_raw, 'name')) or '"Other"'
+    structure = (base.resolve(path, 'structurecraft') or 'null').strip().rstrip('/')
+    if structure != 'null':
+        structure = runtime_path(structure, rules)
+        if not structure:
+            return None
+    else:
+        structure = None
+    recipe = {
+        'path': path,
+        'name': name,
+        'results': results,
+        'reqs': reqs,
+        'tools': [p for p, _ in tools],
+        'parts': parts,
+        'skill': skill,
+        'category': category,
+        'difficulty': define_value_number(base.resolve(path, 'craftdiff')),
+        'structure': structure,
+        'flags': [var for raw, var in CRAFT_FLAGS.items() if (base.resolve(path, raw) or 'FALSE').strip() in ('TRUE', '1')],
+        'subtypes': (base.resolve(path, 'subtype_reqs') or 'FALSE').strip() in ('TRUE', '1'),
+        'learned': (base.resolve(path, 'always_availible') or 'FALSE').strip() not in ('TRUE', '1'),
+        'verb': string_value(base.resolve(path, 'verbage')),
+        'verb_simple': string_value(base.resolve(path, 'verbage_simple')),
+        'sounds': sound_files(base.resolve(path, 'craftsound')),
+        'xp': define_value_number(base.resolve(path, 'craft_xp_override')),
+    }
+    if recipe['difficulty'] is None:
+        recipe['difficulty'] = 1
+    return recipe
+
+
+def craft_recipe_specs(cfg, rw, rules):
+    # Ratwood's crafting recipes (code/modules/roguetown/roguecrafting and the items that carry their own), then those of
+    # Azure Peak that Ratwood has not: another path that makes something no Ratwood recipe makes from the same things.
+    spec = cfg['port'].get('craft_recipes')
+    if not spec:
+        return []
+    recipes = []
+    made = set()
+    for source, base in craft_recipe_sources(cfg, rw):
+        for path in sorted(p for p in base.types if p.startswith(spec['root'] + '/')):
+            if source != 'Ratwood' and path in rw.types:
+                continue
+            recipe = read_craft_recipe(cfg, base, path, rules)
+            if not recipe:
+                continue
+            key = (recipe['results'][0], tuple(sorted(p for p, _ in recipe['reqs'])))
+            if source != 'Ratwood' and key in made:
+                continue
+            made.add(key)
+            recipe['source'] = source
+            recipes.append(recipe)
+    return recipes
+
+
+def craft_recipe_items(cfg, rw, rules):
+    # Everything a crafting recipe takes, needs or makes is ported with the map's items, when Ratwood has it.
+    items = set()
+    for recipe in craft_recipe_specs(cfg, rw, rules):
+        for path in recipe['results'] + [p for p, _ in recipe['reqs'] + recipe['parts']] + recipe['tools'] + [recipe['structure']]:
+            if path and path.startswith('/obj/') and path in rw.types:
+                items.add(path)
+    return items
+
+
+def generate_craft_recipes(cfg, rw, rules, valid):
+    spec = cfg['port'].get('craft_recipes')
+    if not spec:
+        return
+    import bisect
+    ordered = sorted(valid)
+    def subtypes(path):
+        out = []
+        start = bisect.bisect_left(ordered, path + '/')
+        while start < len(ordered) and ordered[start].startswith(path + '/'):
+            out.append(ordered[start])
+            start += 1
+        return out
+    dropped = collections.Counter()
+    kept = []
+    for recipe in craft_recipe_specs(cfg, rw, rules):
+        needed = recipe['results'] + [p for p, _ in recipe['reqs'] + recipe['parts']] + recipe['tools'] + ([recipe['structure']] if recipe['structure'] else [])
+        if any(p not in valid for p in needed):
+            dropped[recipe['source']] += 1
+            continue
+        kept.append(recipe)
+    written = {recipe['path'] for recipe in kept}
+    blocks = []
+    sounds_used = set()
+    for recipe in kept:
+        # A recipe below another written recipe would inherit its values in DM, so it states all of them.
+        parts_of_path = recipe['path'].split('/')
+        full = any('/'.join(parts_of_path[:k]) in written for k in range(3, len(parts_of_path)))
+        def optional(var, value, default='null'):
+            if value is not None:
+                block.append(f'\t{var} = {value}')
+            elif full:
+                block.append(f'\t{var} = {default}')
+        reqs = ', '.join(f"{p} = {int(n) if n == int(n) else n}" for p, n in recipe['reqs'])
+        block = [recipe['path'], f"\tname = {recipe['name']}", f"\tresult = {recipe['results'][0]}", f'\treqs = list({reqs})']
+        optional('rogue_results', 'list(' + ', '.join(recipe['results'][1:]) + ')' if len(recipe['results']) > 1 else None)
+        optional('tool_paths', 'list(' + ', '.join(recipe['tools']) + ')' if recipe['tools'] else None)
+        optional('parts', 'list(' + ', '.join(f"{p} = {int(n)}" for p, n in recipe['parts']) + ')' if recipe['parts'] else None)
+        excluded = []
+        if not recipe['subtypes']:
+            # Ratwood takes the very type it asks for unless subtype_reqs; TG takes subtypes unless they are blacklisted.
+            for path, _ in recipe['reqs']:
+                if path.startswith('/obj/'):
+                    below = subtypes(path)
+                    if len(below) <= spec['max_blacklist']:
+                        excluded += below
+        optional('blacklist', 'list(' + ', '.join(sorted(set(excluded))) + ')' if excluded else None)
+        block.append(f"\tcategory = {recipe['category']}")
+        block.append(f"\trogue_skill = {recipe['skill'] or 'null'}")
+        optional('rogue_difficulty', recipe['difficulty'] if recipe['difficulty'] != 1 else None, '1')
+        optional('rogue_structure', recipe['structure'])
+        for flag in CRAFT_FLAGS.values():
+            optional(flag, 'TRUE' if flag in recipe['flags'] else None, 'FALSE')
+        optional('rogue_verb', recipe['verb'] if recipe['verb'] and recipe['verb'] != '"crafts"' else None, '"crafts"')
+        optional('rogue_verb_simple', recipe['verb_simple'] if recipe['verb_simple'] and recipe['verb_simple'] != '"craft"' else None, '"craft"')
+        sound = next((s for s in recipe['sounds'] if recipe['source'] == 'Ratwood'), None)
+        if sound:
+            sounds_used.add(sound)
+        optional('rogue_sound', repr_sound(sound) if sound else None)
+        optional('rogue_xp', recipe['xp'] if recipe['xp'] is not None and recipe['xp'] >= 0 else None, '-1')
+        optional('crafting_flags', 'CRAFT_MUST_BE_LEARNED' if recipe['learned'] else None, 'NONE')
+        if recipe['source'] != 'Ratwood':
+            block.insert(1, f"\t// {recipe['source']}")
+        blocks.append(block)
+    fetch_sources(sorted(sounds_used))
+    for rel in sorted(sounds_used):
+        src = os.path.join(CHECKOUT, rel)
+        if os.path.exists(src):
+            dest = os.path.join(SOUND_DIR, rel[len('sound/'):])
+            os.makedirs(os.path.dirname(dest), exist_ok=True)
+            shutil.copyfile(src, dest)
+    os.makedirs(os.path.dirname(spec['file']), exist_ok=True)
+    open(spec['file'], 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    by_source = collections.Counter(b[1].strip().lstrip('/ ') if b[1].strip().startswith('//') else 'Ratwood' for b in blocks)
+    print(f"{spec['file']}: {len(blocks)} crafting recipes ({', '.join(f'{n} {s}' for s, n in by_source.items())}), "
+          f"dropped for unported items: {', '.join(f'{n} {s}' for s, n in dropped.items()) or 'none'}")
+
+
+def generate_trade(cfg, rw, rules, valid):
+    # Ratwood's trade data for the economy module (modular_redtard/economy): the merchant's import packs
+    # (/datum/supply_pack/rogue, sold by the GOLDFACE) and the Crown's stockpile (/datum/roguestock/stockpile, priced from
+    # their /datum/trade_good). A pack or a stockpile entry comes along only when everything it hands out is ported or TG's.
+    spec = cfg['port'].get('trade')
+    if not spec:
+        return
+    packs = spec['supply_packs']
+    groups = set(packs['groups'])
+    blocks = []
+    dropped = 0
+    for path in [p for p in rw.types if p.startswith(packs['root'] + '/')]:
+        contains = [runtime_path(p.rstrip('/'), rules) for p, _ in list_paths(rw.resolve(path, 'contains'))]
+        group = string_value(rw.resolve(path, 'group'))
+        if not contains or not group or group.strip('"') not in groups:
+            continue
+        if not all(p in valid for p in contains):
+            dropped += 1
+            continue
+        name = string_value(rw.resolve(path, 'name')) or '"Crate"'
+        block = [packs['rename'] + path[len(packs['root']):], f'\tname = {name}', f'\tgroup = {group}']
+        block.append(f"\tcost = {define_value_number(rw.resolve(path, 'cost')) or 1}")
+        for flag in ('not_in_public', 'no_name_quantity', 'static_cost'):
+            if (rw.resolve(path, flag) or 'FALSE').strip() in ('TRUE', '1'):
+                block.append(f'\t{flag} = TRUE')
+        block.append('\tcontains = list(' + ', '.join(contains) + ')')
+        blocks.append(block)
+    os.makedirs(os.path.dirname(packs['file']), exist_ok=True)
+    open(packs['file'], 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    print(f"{packs['file']}: {len(blocks)} supply packs, {dropped} dropped for unported items")
+
+    stock = spec['stockpile']
+    prices = {}
+    for path in [p for p in rw.types if p.startswith(stock['trade_goods'] + '/')]:
+        good = expand_define(rw.resolve(path, 'id') or '')
+        base = define_value_number(rw.resolve(path, 'base_price'))
+        if STRING_LITERAL.match(good) and base:
+            prices[good] = base * (define_value_number(rw.resolve(path, 'global_price_mod')) or 1)
+    blocks = []
+    dropped = 0
+    for path in [p for p in rw.types if p.startswith(stock['root'] + '/')]:
+        item = runtime_path((rw.resolve(path, 'item_type') or '').strip().rstrip('/'), rules)
+        if not item or not item.startswith('/obj/'):
+            continue
+        if item not in valid:
+            dropped += 1
+            continue
+        block = [path, f"\tname = {string_value(rw.resolve(path, 'name')) or chr(34) * 2}"]
+        desc = string_value(rw.resolve(path, 'desc'))
+        if desc:
+            block.append(f'\tdesc = {desc}')
+        block += [f'\titem_type = {item}', f"\tcategory = {string_value(rw.resolve(path, 'category')) or chr(34) + 'Raw Materials' + chr(34)}"]
+        good = expand_define(rw.resolve(path, 'trade_good_id') or '')
+        if good in prices:
+            block.append(f'\tbase_price = {round(prices[good], 2)}')
+        else:
+            for name in ('payout_price', 'withdraw_price'):
+                block.append(f'\t{name} = {define_value_number(rw.resolve(path, name)) or 1}')
+        for name in ('stockpile_amount', 'stockpile_limit', 'importexport_amt', 'passive_generation', 'generation_price'):
+            number = define_value_number(rw.resolve(path, name))
+            if number is not None:
+                block.append(f'\t{name} = {number}')
+        for flag, default in (('accept_toggle_enabled', 'TRUE'), ('withdraw_disabled', 'FALSE'), ('import_only', 'FALSE'), ('export_only', 'FALSE')):
+            value = (rw.resolve(path, flag) or default).strip()
+            if value != default:
+                block.append(f'\t{flag} = {value}')
+        blocks.append(block)
+    os.makedirs(os.path.dirname(stock['file']), exist_ok=True)
+    open(stock['file'], 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    print(f"{stock['file']}: {len(blocks)} stockpile entries, {dropped} dropped for unported items")
+
+    # Roles that open a NERVELOCK account on arrival (give_bank_account: TRUE, or the mammons deposited) and draw an estate income.
+    blocks = []
+    for path in select_jobs(cfg, rw):
+        raw = (rw.resolve(path, 'give_bank_account') or 'FALSE').strip()
+        deposit = 0 if raw == 'TRUE' else define_value_number(raw)
+        if deposit is None or (raw != 'TRUE' and deposit <= 0):
+            continue
+        block = [path, f'\trogue_bank_account = {deposit if deposit > 1 else 0}']
+        income = define_value_number(rw.resolve(path, 'noble_income'))
+        if income:
+            block.append(f'\trogue_estate_income = {income}')
+        blocks.append(block)
+    jobs_file = spec['jobs']['file']
+    open(jobs_file, 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    print(f'{jobs_file}: {len(blocks)} roles with a NERVELOCK account')
+
+
+FOOD_TIME_UNITS = {'SECONDS': 10, 'MINUTES': 600, 'DECISECONDS': 1}
+FOOD_LINKS = ('cooked_type', 'fried_type', 'slice_path', 'become_rot_type')
+
+
+def food_number(raw):
+    # A Ratwood numeric expression of food data (defines, SECONDS/MINUTES, + - * /) as a number; None if it is not one.
+    text = (raw or '').strip()
+    if not text or text == 'null':
+        return None
+    for _ in range(10):
+        expanded = re.sub(r'\b[A-Z_][A-Z0-9_]*\b', lambda m: f'({DEFINE_VALUES[m.group(0)].strip()})' if m.group(0) in DEFINE_VALUES and m.group(0) not in FOOD_TIME_UNITS else m.group(0), text)
+        if expanded == text:
+            break
+        text = expanded
+    text = re.sub(r'\b(SECONDS|MINUTES|DECISECONDS)\b', lambda m: f'*{FOOD_TIME_UNITS[m.group(1)]}', text)
+    text = re.sub(r'\bTRUE\b', '1', re.sub(r'\bFALSE\b', '0', text))
+    if not re.fullmatch(r'[\d\s.+\-*/()]+', text):
+        return None
+    try:
+        value = eval(text, {'__builtins__': {}})
+    except Exception:
+        return None
+    return int(value) if value == int(value) else round(value, 2)
+
+
+def food_entries(raw):
+    # Entries of a Ratwood list(...): (key, value) with value None for plain entries.
+    text = (raw or '').strip()
+    if not text.startswith('list(') or not text.endswith(')'):
+        return []
+    entries, depth, current, quoted = [], 0, '', False
+    for ch in text[5:-1]:
+        if ch == '"':
+            quoted = not quoted
+        if not quoted:
+            depth += {'(': 1, ')': -1}.get(ch, 0)
+            if ch == ',' and depth == 0:
+                entries.append(current)
+                current = ''
+                continue
+        current += ch
+    entries.append(current)
+    out = []
+    for entry in (e.strip() for e in entries):
+        if not entry:
+            continue
+        key, _, value = entry.partition('=')
+        out.append((key.strip(), value.strip() or None))
+    return out
+
+
+def food_chain_items(cfg, rw, seeds):
+    # Ratwood food the port needs for cooking (survival module): everything a ported food cooks, fries, slices or rots into,
+    # and the results of the slapcraft recipes (/datum/food_recipe) whose base and item ingredients are all at hand.
+    spec = cfg['port'].get('food')
+    if not spec:
+        return set()
+    seeds = set(seeds)
+    for spawner in [p for p in seeds if p.startswith('/obj/effect/spawner/')]:
+        seeds |= {item for item, _ in loot_entries(rw.resolve(spawner, 'loot'))}
+    reach = {p for p in seeds if boundary_match(p, spec['root']) and p in rw.types} | set(spec.get('always', []))
+    recipes = []
+    for path in sorted(p for p in rw.types if p.startswith(spec['recipe_root'] + '/')):
+        base = (rw.resolve(path, 'base_item') or '').strip().rstrip('/')
+        result = (rw.resolve(path, 'result_type') or '').strip().rstrip('/')
+        items = [key.rstrip('/') for key, _ in food_entries(rw.resolve(path, 'ingredients')) if key.startswith('/obj/')]
+        if base in rw.types and result in rw.types:
+            recipes.append((base, result, items))
+    changed = True
+    while changed:
+        changed = False
+        for path in list(reach):
+            for name in FOOD_LINKS:
+                target = (rw.resolve(path, name) or '').strip().rstrip('/')
+                if target in rw.types and target not in reach:
+                    reach.add(target)
+                    changed = True
+        for base, result, items in recipes:
+            if base in reach and result not in reach and all(any(boundary_match(have, need) for have in reach | seeds) for need in items):
+                reach.add(result)
+                changed = True
+    return reach
+
+
+def generate_food(cfg, rw, generated, tg_declared, tg_names):
+    # Ratwood food data for the survival module (modular_redtard/survival): reagents, food types, tastes, bites, the eat effect,
+    # what it cooks (oven), fries (pan, fire) or slices into, its cooking and burning time, shelf life and rotten form, and the
+    # slapcraft recipes. Everything referenced is ported or TG's, otherwise left out.
+    spec = cfg['port'].get('food')
+    if not spec:
+        return
+    valid = set(generated) | set(tg_declared)
+    foods = sorted(p for p in generated if boundary_match(p, spec['root']))
+    defaults = spec['defaults']
+
+    def path_of(raw):
+        target = (raw or '').strip().rstrip('/')
+        return target if target in valid else None
+
+    def reagents_of(raw):
+        pairs = []
+        for key, value in food_entries(raw):
+            number = food_number(value)
+            if key in tg_declared and key.startswith('/datum/reagent/') and number:
+                pairs.append(f'{key} = {number}')
+        return pairs
+
+    blocks = []
+    for path in foods:
+        block = [path]
+        reagents = reagents_of(rw.resolve(path, 'list_reagents'))
+        if reagents:
+            block.append('\tfood_reagents = list(' + ', '.join(reagents) + ')')
+        bonus = reagents_of(rw.resolve(path, 'bonus_reagents'))
+        if bonus:
+            block.append('\tbonus_reagents = list(' + ', '.join(bonus) + ')')
+        flags = [token for token in re.findall(r'[A-Z_][A-Z0-9_]*', rw.resolve(path, 'foodtype') or '') if token in tg_names and token != 'NONE']
+        if flags:
+            block.append('\tfoodtypes = ' + ' | '.join(flags))
+        tastes = [f'{key} = {food_number(value) or 1}' for key, value in food_entries(rw.resolve(path, 'tastes')) if STRING_LITERAL.match(key)]
+        if tastes:
+            block.append('\ttastes = list(' + ', '.join(tastes) + ')')
+        effect = spec['eat_effects'].get((rw.resolve(path, 'eat_effect') or '').strip())
+        if effect:
+            block.append(f'\teat_effect = {effect}')
+        cooked = path_of(rw.resolve(path, 'cooked_type'))
+        fried = path_of(rw.resolve(path, 'fried_type'))
+        for name, target in (('cooked_type', cooked), ('fried_type', fried)):
+            if target:
+                block.append(f'\t{name} = {target}')
+        cooktime = food_number(rw.resolve(path, 'cooktime')) or 0
+        if (cooked or fried) and not cooktime:
+            cooktime = defaults['cooktime']
+        numbers = {
+            'cooktime': cooktime,
+            'burntime': food_number(rw.resolve(path, 'burntime')),
+            'bitesize': food_number(rw.resolve(path, 'bitesize')),
+            'rotprocess': food_number(rw.resolve(path, 'rotprocess')) or 0,
+            'warming': food_number(rw.resolve(path, 'warming')),
+        }
+        for name, number in numbers.items():
+            if number is not None and number != defaults[name]:
+                block.append(f'\t{name} = {number}')
+        rotten = path_of(rw.resolve(path, 'become_rot_type'))
+        if rotten and numbers['rotprocess']:
+            block.append(f'\tbecome_rot_type = {rotten}')
+        slice_path = path_of(rw.resolve(path, 'slice_path'))
+        slices = food_number(rw.resolve(path, 'slices_num')) or 0
+        if slice_path and slices > 0:
+            block += [f'\tslice_path = {slice_path}', f'\tslices_num = {slices}']
+            bclass = (rw.resolve(path, 'slice_bclass') or '').strip()
+            if re.fullmatch(r'BCLASS_[A-Z]+', bclass) and bclass != defaults['slice_bclass']:
+                block.append(f'\tslice_bclass = {bclass}')
+            if (rw.resolve(path, 'slice_batch') or 'TRUE').strip() == 'FALSE':
+                block.append('\tslice_batch = FALSE')
+        if len(block) > 1:
+            blocks.append(block)
+    recipes = 0
+    dropped = 0
+    implicit = {'/'.join(p.split('/')[:k]) for p in generated for k in range(3, p.count('/') + 2)}
+    for path in sorted(p for p in rw.types if p.startswith(spec['recipe_root'] + '/')):
+        base = path_of(rw.resolve(path, 'base_item'))
+        result = path_of(rw.resolve(path, 'result_type'))
+        entries = food_entries(rw.resolve(path, 'ingredients'))
+        if not base or not result or not entries:
+            dropped += bool(rw.resolve(path, 'base_item'))
+            continue
+        ingredients = []
+        for key, value in entries:
+            key = key.rstrip('/')
+            if key.startswith('/datum/reagent/') and key in tg_declared and food_number(value):
+                ingredients.append(f'{key} = {food_number(value)}')
+            elif key.startswith('/obj/') and value is None and (key in implicit or key in tg_declared):
+                ingredients.append(key)
+            else:
+                ingredients = None
+                break
+        if not ingredients:
+            dropped += 1
+            continue
+        block = [spec['recipe_target'] + path[len(spec['recipe_root']):]]
+        name = string_value(rw.resolve(path, 'name'))
+        if name:
+            block.append(f'\tname = {name}')
+        block += [f'\tbase_item = {base}', '\tingredients = list(' + ', '.join(ingredients) + ')', f'\tresult_type = {result}']
+        if (rw.resolve(path, 'needs_cooking') or '').strip() == 'TRUE':
+            block.append('\tneeds_cooking = TRUE')
+        step = food_number(rw.resolve(path, 'time_per_step'))
+        if step and step != defaults['time_per_step']:
+            block.append(f'\ttime_per_step = {step}')
+        blocks.append(block)
+        recipes += 1
+    os.makedirs(os.path.dirname(spec['file']), exist_ok=True)
+    open(spec['file'], 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    print(f"{spec['file']}: {len(foods)} foods, {recipes} recipes, {dropped} recipes dropped for unported items or reagents")
+
+
+# Ratwood husbandry vars of a beast (simple_animal.dm, rogue/farm/*.dm, game/saiga.dm): Ratwood name, module var, kind, module default.
+HUSBANDRY_VARS = (
+    ('gender', 'gender', 'gender', None),
+    ('tame_chance', 'rogue_tame_chance', 'number', 0),
+    ('bonus_tame_chance', 'rogue_tame_bonus', 'number', 0),
+    ('tame', 'rogue_start_tame', 'flag', 'FALSE'),
+    ('childtype', 'rogue_childtype', 'weights', None),
+    ('animal_species', 'rogue_partner_type', 'path', None),
+    ('adult_growth', 'rogue_adult_type', 'path', None),
+    ('breedcd', 'rogue_breed_cooldown', 'number', 3000),
+    ('egg_type', 'rogue_egg_type', 'path', None),
+    ('eggsFertile', 'rogue_eggs_fertile', 'flag', 'TRUE'),
+)
+# Vars that name other beasts the port needs: the young, the partner, what the young grow into.
+HUSBANDRY_LINKS = ('childtype', 'animal_species', 'adult_growth')
+
+
+def husbandry_entries(raw):
+    # A Ratwood beast reference as (path, weight) pairs: a weighted list(...) or a single path; nothing for null.
+    text = (raw or '').strip()
+    if text.startswith('list('):
+        return [(key.rstrip('/'), food_number(value) or 1) for key, value in food_entries(text) if key.startswith('/')]
+    if text.startswith('/'):
+        return [(text.rstrip('/'), 1)]
+    return []
+
+
+def husbandry_types(cfg, rw, seeds):
+    # Ratwood livestock for the husbandry module (modular_redtard/husbandry): the young a ported beast gives birth to (childtype),
+    # its partner (animal_species) and what the young grow into (adult_growth), round until nothing new comes, plus the types
+    # Ratwood names only in code (the chick a fertile egg hatches into).
+    spec = cfg['port'].get('husbandry')
+    if not spec:
+        return set()
+    reach = {p for p in spec.get('extra_types', []) if p in rw.types}
+    todo = [p for p in seeds if p.startswith('/mob/living/') and p in rw.types] + sorted(reach)
+    seen = set(todo)
+    while todo:
+        path = todo.pop()
+        for name in HUSBANDRY_LINKS:
+            for target, _ in husbandry_entries(rw.resolve(path, name)):
+                if target in rw.types and target not in seen:
+                    seen.add(target)
+                    reach.add(target)
+                    todo.append(target)
+    return reach
+
+
+def generate_husbandry(cfg, rw, generated, tg_declared):
+    # Ratwood husbandry data of the ported beasts for the husbandry module: sex, taming chances, born tame, the young and how
+    # likely each is, the partner, what the young grow into, the breeding cooldown, the egg. A var is written where its
+    # Ratwood value differs from what the type inherits in the port (the nearest ported parent path, else the module default).
+    spec = cfg['port'].get('husbandry')
+    if not spec:
+        return
+    valid = set(generated) | set(tg_declared)
+
+    def value_of(raw, kind):
+        text = (raw or '').strip()
+        if kind == 'gender':
+            return text if text in ('MALE', 'FEMALE') else None
+        if kind == 'number':
+            return food_number(text)
+        if kind == 'flag':
+            number = food_number(text)
+            return None if number is None else ('TRUE' if number else 'FALSE')
+        if kind == 'path':
+            target = text.rstrip('/')
+            return target if target in valid else None
+        pairs = [f'{path} = {weight}' for path, weight in husbandry_entries(text) if path in valid]
+        return 'list(' + ', '.join(pairs) + ')' if pairs else None
+
+    defaults = {target: default for _, target, _, default in HUSBANDRY_VARS}
+    mobs = sorted((p for p in generated if p.startswith('/mob/living/') and not boundary_match(p, NPC_ROOT)), key=lambda p: (p.count('/'), p))
+    effective = {}
+    blocks = []
+    for path in mobs:
+        parent = next((path.rsplit('/', k)[0] for k in range(1, path.count('/')) if path.rsplit('/', k)[0] in effective), None)
+        inherited = effective.get(parent, defaults)
+        values = dict(inherited)
+        block = [path]
+        for source, target, kind, default in HUSBANDRY_VARS:
+            value = value_of(rw.resolve(path, source), kind)
+            if value is None:
+                value = default
+            values[target] = value
+            if value != inherited[target]:
+                shown = value if value is not None else ('PLURAL' if kind == 'gender' else 'null')
+                block.append(f'\t{target} = {shown}')
+        effective[path] = values
+        if len(block) > 1:
+            blocks.append(block)
+    os.makedirs(os.path.dirname(spec['file']), exist_ok=True)
+    open(spec['file'], 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    print(f"{spec['file']}: husbandry data for {len(blocks)} of {len(mobs)} beasts")
 
 
 if __name__ == '__main__':

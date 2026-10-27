@@ -87,7 +87,6 @@
 	desc = "A tiny display of arcyne power used to illuminate."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/lighting.dmi'
 	icon_state = "wisp"
-	color = "#3FBAFD"
 	pixel_x = 20
-	light_range = 4
+	light_range = 5
 	light_color = "#3FBAFD"

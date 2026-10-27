@@ -36,18 +36,6 @@ GLOBAL_LIST_INIT(rogue_chest_zones, list("chest", "stomach", "groin"))
 		return FALSE
 	return resistance.stacks <= (mind ? ROGUE_CRIT_RESIST_STACKS : ROGUE_CRIT_RESIST_STACKS_NPC)
 
-/mob/living/proc/rogue_crit_blocked(zone, blade_class)
-	return FALSE
-
-/mob/living/carbon/human/rogue_crit_blocked(zone, blade_class)
-	var/obj/item/bodypart/limb = get_bodypart(rogue_zone_target(zone))
-	if(!limb)
-		return FALSE
-	for(var/obj/item/clothing/worn as anything in get_clothing_on_part(limb))
-		if(worn.atom_integrity > 0 && (blade_class in worn.rogue_prevent_crits))
-			return TRUE
-	return FALSE
-
 /mob/living/proc/rogue_crit_chance(share, damage, divisor, bonus)
 	return rogue_formula_value(ROGUE_FORMULA_CRIT_CHANCE, list("limb_damage" = share, "damage" = damage, "divisor" = divisor, "bonus" = bonus))
 
@@ -63,7 +51,7 @@ GLOBAL_LIST_INIT(rogue_chest_zones, list("chest", "stomach", "groin"))
 	if(!limb)
 		return FALSE
 	var/share = limb.get_damage() / limb.max_damage
-	if(share <= ROGUE_CRIT_LIMB_THRESHOLD || rogue_crit_blocked(zone, blade_class))
+	if(share <= ROGUE_CRIT_LIMB_THRESHOLD)
 		return FALSE
 	if(attacker?.rogue_goodluck(2))
 		damage += ROGUE_CRIT_LUCK_BONUS
@@ -121,11 +109,11 @@ GLOBAL_LIST_INIT(rogue_chest_zones, list("chest", "stomach", "groin"))
 	if(!length(attempts) && !knockout)
 		return FALSE
 	if(rogue_resist_crit())
-		visible_message(span_warning("Critical resistance! [src] resists a [knockout ? "knockout" : "wound"]!"))
+		rogue_strike_note(span_crit("Critical resistance! [src] resists a [knockout ? "knockout" : "wound"]!"))
 		return TRUE
 	if(knockout)
 		var/from_behind = attacker && dir == get_dir(attacker, src)
-		visible_message(span_userdanger("Critical hit! [src] is knocked out[from_behind ? " FROM BEHIND" : ""]!"))
+		rogue_strike_note(rogue_crit_text("[src] is knocked out[from_behind ? " FROM BEHIND" : ""]!"))
 		Unconscious(ROGUE_CRIT_KNOCKOUT + (from_behind ? ROGUE_CRIT_KNOCKOUT_BEHIND : 0))
 	for(var/list/attempt as anything in shuffle(attempts))
 		if(rogue_apply_crit(limb, attempt[1], attempt[2], attempt[3], attacker))
@@ -136,7 +124,7 @@ GLOBAL_LIST_INIT(rogue_chest_zones, list("chest", "stomach", "groin"))
 
 /mob/living/carbon/proc/rogue_apply_crit(obj/item/bodypart/limb, wounding_type, severity, special, mob/living/attacker)
 	. = FALSE
-	if(wounding_type && cause_wound_of_type_and_severity(wounding_type, limb, severity, severity, wound_source = "critical hit"))
+	if(wounding_type && cause_wound_of_type_and_severity(wounding_type, limb, severity, severity, wound_source = ROGUE_CRIT_WOUND_SOURCE))
 		. = TRUE
 	switch(special)
 		if(ROGUE_CRIT_BRAIN)
@@ -146,27 +134,27 @@ GLOBAL_LIST_INIT(rogue_chest_zones, list("chest", "stomach", "groin"))
 			var/obj/item/organ/eyes/eyes = get_organ_slot(ORGAN_SLOT_EYES)
 			if(eyes)
 				eyes.apply_organ_damage(ROGUE_CRIT_EYE_DAMAGE)
-				visible_message(span_userdanger("Critical hit! [src]'s eye is gouged!"))
+				rogue_strike_note(rogue_crit_text(pick("The eye is poked!", "The eye is gouged!", "The eye is destroyed!")))
 				. = TRUE
 		if(ROGUE_CRIT_EARS)
 			var/obj/item/organ/ears/ears = get_organ_slot(ORGAN_SLOT_EARS)
 			if(ears)
 				ears.apply_organ_damage(ROGUE_CRIT_EAR_DAMAGE)
-				visible_message(span_userdanger("Critical hit! [src]'s ear is torn!"))
+				rogue_strike_note(rogue_crit_text(pick("The eardrums are gored!", "The eardrums are ruptured!")))
 				. = TRUE
 		if(ROGUE_CRIT_TONGUE)
 			var/obj/item/organ/tongue/tongue = get_organ_slot(ORGAN_SLOT_TONGUE)
 			if(tongue)
 				tongue.apply_organ_damage(ROGUE_CRIT_TONGUE_DAMAGE)
-				visible_message(span_userdanger("Critical hit! [src]'s tongue is pierced!"))
+				rogue_strike_note(rogue_crit_text("The tongue is cut!"))
 				. = TRUE
 		if(ROGUE_CRIT_NOSE)
 			ADD_TRAIT(src, TRAIT_DISFIGURED, ROGUE_CRIT_SOURCE)
-			visible_message(span_userdanger("Critical hit! [src]'s nose is ruined!"))
+			rogue_strike_note(rogue_crit_text(pick("The nose is mangled beyond recognition!", "The nose is destroyed!")))
 			. = TRUE
 		if(ROGUE_CRIT_THROAT)
 			losebreath += ROGUE_CRIT_THROAT_BREATH
-			visible_message(span_userdanger("Critical hit! [src]'s throat is opened!"))
+			rogue_strike_note(rogue_crit_text("Blood sprays from [src]'s throat!"))
 			. = TRUE
 		if(ROGUE_CRIT_HEART)
 			adjust_organ_loss(ORGAN_SLOT_HEART, ROGUE_CRIT_HEART_DAMAGE)

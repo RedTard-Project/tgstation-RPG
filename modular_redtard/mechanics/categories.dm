@@ -34,7 +34,7 @@
 	name = "armor"
 	file = "armor.txt"
 	root = /datum/rogue_armor
-	desc = "Armor datums. The id is the path after /datum/rogue_armor/; items point at it with armor = id. Ratings are percent, as in Ratwood."
+	desc = "Armor datums. The id is the path after /datum/rogue_armor/; items point at it with armor = id. Ratings are tiers, as in Ratwood and Azure Peak: blunt absorbs 0-5, slash, stab and piercing block 0-4 against the penetration tier of an intent, fire and acid reduce 0-5."
 	fields = list(
 		"blunt" = list("blunt", ROGUE_KIND_NUM),
 		"slash" = list("slash", ROGUE_KIND_NUM),
@@ -43,10 +43,6 @@
 		"fire" = list("fire", ROGUE_KIND_NUM),
 		"acid" = list("acid", ROGUE_KIND_NUM),
 		"magic" = list("magic", ROGUE_KIND_NUM),
-		"wound" = list("wound", ROGUE_KIND_NUM),
-		"slash_edge" = list("slash_ep", ROGUE_KIND_NUM),
-		"stab_edge" = list("stab_ep", ROGUE_KIND_NUM),
-		"piercing_edge" = list("piercing_ep", ROGUE_KIND_NUM),
 	)
 
 /datum/rogue_mechanics_category/intents
@@ -66,7 +62,14 @@
 		"miss_cost" = list("misscost", ROGUE_KIND_NUM),
 		"reach" = list("reach", ROGUE_KIND_NUM),
 		"charge_time" = list("chargetime", ROGUE_KIND_NUM),
+		"charge_drain" = list("chargedrain", ROGUE_KIND_NUM),
+		"charge_slowdown" = list("charging_slowdown", ROGUE_KIND_NUM),
 		"swing_delay" = list("swingdelay", ROGUE_KIND_NUM),
+		"swing_delay_type" = list("swingdelay_type", ROGUE_KIND_NUM),
+		"effective_range" = list("effective_range", ROGUE_KIND_NUM),
+		"effective_range_type" = list("effective_range_type", ROGUE_KIND_NUM),
+		"armor_wear_factor" = list("intent_intdamage_factor", ROGUE_KIND_NUM),
+		"sharpness_penalty" = list("sharpness_penalty", ROGUE_KIND_NUM),
 		"can_parry" = list("canparry", ROGUE_KIND_BOOL),
 		"can_dodge" = list("candodge", ROGUE_KIND_BOOL),
 		"no_attack" = list("no_attack", ROGUE_KIND_BOOL),
@@ -86,7 +89,8 @@
 		"penetration" = list("armour_penetration", ROGUE_KIND_NUM),
 		"armor" = list("rogue_armor", ROGUE_KIND_ARMOR),
 		"armor_class" = list("armor_class", ROGUE_KIND_ARMOR_CLASS),
-		"prevent_crits" = list("rogue_prevent_crits", ROGUE_KIND_TEXT_LIST),
+		"armor_wear_factor" = list("intdamage_factor", ROGUE_KIND_NUM),
+		"unarmed_bonus" = list("unarmed_bonus", ROGUE_KIND_NUM),
 		"intents" = list("possible_item_intents", ROGUE_KIND_INTENTS),
 		"wielded_intents" = list("gripped_intents", ROGUE_KIND_INTENTS),
 		"defense" = list("wdefense", ROGUE_KIND_NUM),

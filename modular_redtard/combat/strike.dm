@@ -129,6 +129,9 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 		to_chat(src, span_warning("I don't want to harm other living beings!"))
 		return FALSE
 	var/charge = rogue_take_charge(intent)
+	if(charge < 0)
+		changeNext_move(intent.clickcd)
+		return FALSE
 	var/datum/rogue_strike/strike = new(src, target, weapon, intent, ROGUE_STRIKE_MELEE, attack_modifiers)
 	. = rogue_resolve_strike(strike, charge)
 	var/paired = strike.paired
@@ -148,15 +151,20 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 	target.rogue_mark_in_combat()
 	if(SEND_SIGNAL(src, COMSIG_ROGUE_STRIKE_SWING, strike) & ROGUE_STRIKE_CANCEL)
 		return FALSE
-	playsound(src, rogue_swing_sound(weapon, intent), 100, FALSE, -1)
+	if(!intent.noaa)
+		playsound(src, rogue_swing_sound(weapon, intent), 100, FALSE, -1)
 	if(intent.swingdelay > 0)
+		var/datum/status_effect/rogue/swing/rigid/rigid = rogue_start_swing(intent)
 		sleep(intent.swingdelay)
-		if(QDELETED(target) || incapacitated || !target.IsReachableBy(src, weapon ? weapon.reach : 1) || (weapon && (QDELETED(weapon) || !is_holding(weapon))) || rogue_strike_intent(weapon) != intent)
+		var/broken = istype(rigid) && rigid.disrupted
+		rogue_end_swing()
+		if(broken || QDELETED(target) || incapacitated || !target.IsReachableBy(src, weapon ? weapon.reach : 1) || (weapon && (QDELETED(weapon) || !is_holding(weapon))) || rogue_strike_intent(weapon) != intent)
 			return FALSE
 	strike.paired = rogue_dual_wield_step(weapon)
 	if(intent.releasedrain)
 		adjust_stamina_loss(intent.releasedrain * rogue_rmb_factor("stamina_factor"))
 	do_attack_animation(target, weapon ? null : ATTACK_EFFECT_PUNCH, weapon)
+	rogue_swung()
 	target.lastattacker = real_name
 	target.lastattackerckey = ckey
 	target.rogue_tempo_hit(src)
@@ -168,11 +176,15 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 		return FALSE
 	var/damtype = weapon ? weapon.damtype : BRUTE
 	var/force = weapon ? CALCULATE_FORCE(weapon, strike.attack_modifiers) : rogue_unarmed_damage()
-	if(target != src && !(incoming & ROGUE_STRIKE_UNDEFENDABLE) && target.check_block(weapon || src, force, weapon ? "\the [weapon]" : "the [intent.name]", weapon ? MELEE_ATTACK : UNARMED_ATTACK, weapon ? weapon.armour_penetration : 0, damtype))
+	var/broke_swing = target != src && target.rogue_swing_struck()
+	if(target != src && !broke_swing && !(incoming & ROGUE_STRIKE_UNDEFENDABLE) && target.check_block(weapon || src, force, weapon ? "\the [weapon]" : "the [intent.name]", weapon ? MELEE_ATTACK : UNARMED_ATTACK, weapon ? weapon.armour_penetration : 0, damtype))
 		strike.defended = TRUE
 		SEND_SIGNAL(target, COMSIG_ROGUE_STRIKE_DEFENDED, strike)
 		return FALSE
 	strike.zone = rogue_strike_zone(target, weapon, intent)
+	rogue_combat_aware(target, strike.zone)
+	if(length(intent.effect_stats) && (!length(intent.effect_zones) || (strike.zone in intent.effect_zones)))
+		target.apply_status_effect(/datum/status_effect/rogue/intent_debuff, intent)
 	var/edged = weapon?.max_blade_int && intent.get_sharpness()
 	var/sharp_ratio = edged ? weapon.rogue_edge_ratio() : 1
 	if(edged && sharp_ratio < ROGUE_BLADE_CHIP_START && prob(33))
@@ -189,7 +201,7 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 	))
 	target.rogue_take_strike(strike)
 	if(edged && !QDELETED(weapon))
-		weapon.rogue_dull(ROGUE_BLADE_HIT_WEAR, src)
+		weapon.rogue_dull(ROGUE_BLADE_HIT_WEAR + intent.sharpness_penalty, src)
 	if(mind)
 		rogue_change_dodge_fatigue(ROGUE_DEFENSE_RECOVERY)
 		rogue_change_dodge_cooldown(-ROGUE_DEFENSE_RECOVERY)
@@ -205,16 +217,22 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 	var/damage = strike.damage
 	var/def_zone = rogue_zone_target(zone)
 	var/damtype = weapon ? weapon.damtype : BRUTE
-	var/blocked = run_armor_check(def_zone, MELEE, armour_penetration = weapon?.armour_penetration, silent = TRUE, weak_against_armour = weapon?.weak_against_armour)
-	if(!weapon && ishuman(src))
-		var/mob/living/carbon/human/human_target = src
-		blocked += human_target.rogue_armor_protection(def_zone, ROGUE_ARMOR_BLUNT, 0)
-	blocked = min(blocked, ARMOR_MAX_BLOCK)
+	var/blocked = min(run_armor_check(def_zone, MELEE, armour_penetration = weapon?.armour_penetration, silent = TRUE, weak_against_armour = weapon?.weak_against_armour), ARMOR_MAX_BLOCK)
+	var/penetration = intent.penfactor
+	if(body_position != LYING_DOWN && intent.out_of_effective_range(get_dist(attacker, src)))
+		penetration = ROGUE_PEN_NONE
+		damage *= ROGUE_EFFECTIVE_RANGE_DAMAGE
 	if(weapon)
 		SEND_SIGNAL(weapon, COMSIG_ITEM_ATTACK_ZONE, src, attacker, def_zone)
 		if(mob_biotypes & (MOB_ROBOTIC|MOB_MINERAL|MOB_SKELETAL))
 			damage *= weapon.get_demolition_modifier(src)
-	var/damage_done = apply_damage(
+	var/obj/item/clothing/armor_hit
+	rogue_strike_notes = list()
+	if(ishuman(src) && damtype == BRUTE)
+		var/mob/living/carbon/human/armored = src
+		armor_hit = armored.rogue_best_armor(def_zone, intent.item_d_type)
+		damage *= armored.rogue_armor_hit(def_zone, intent.item_d_type, damage, penetration, rogue_wear_factor(weapon, intent), weapon, intent.blade_class)
+	var/damage_done = rogue_apply_armored_damage(
 		damage = damage,
 		damagetype = damtype,
 		def_zone = def_zone,
@@ -227,7 +245,9 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 	)
 	strike.damage_done = damage_done
 	LAZYSET(strike.attack_modifiers, DAMAGE_DONE, damage_done)
-	rogue_strike_message(attacker, weapon, intent, zone, damage_done)
+	if(damage_done <= 0)
+		var/integrity = armor_hit?.rogue_integrity_text()
+		rogue_strike_notes += integrity ? "[ROGUE_ARMOR_BLOCKED_TEXT] [integrity]" : ROGUE_ARMOR_BLOCKED_TEXT
 	var/hit_sound = pick(GLOB.rogue_no_damage_sounds)
 	if(damage_done > 0)
 		hit_sound = length(intent.hitsound) ? pick(intent.hitsound) : (weapon ? weapon.hitsound : pick(GLOB.rogue_punch_hit_sounds))
@@ -240,6 +260,9 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 			attacker.add_mob_blood(src)
 	if(damage_done > 0)
 		rogue_try_crit(intent.blade_class, damage_done, attacker, zone)
+	rogue_strike_message(attacker, weapon, intent, zone)
+	rogue_strike_notes = null
+	if(damage_done > 0)
 		rogue_pop_open()
 		rogue_try_dismember(weapon, intent, attacker, zone, damage)
 	SEND_SIGNAL(src, COMSIG_ROGUE_STRIKE_LANDED, strike)
@@ -247,19 +270,18 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 	log_combat(attacker, src, strike.kind == ROGUE_STRIKE_CLEAVE ? "cleaved" : "struck", weapon || intent.name, "(INTENT: [uppertext(intent.name)]) (ZONE: [zone]) (DAMAGE: [damage_done]) (DAMTYPE: [uppertext(damtype)])")
 	return damage_done
 
-/mob/living/proc/rogue_strike_message(mob/living/attacker, obj/item/weapon, datum/intent/intent, zone, damage_done)
+/// Ratwood's strike line (send_item_attack_message): the struck part highlighted, and the strike's notes after it
+/// (armor, crits, wounds; combat/chat.dm). The attacker reads it as everyone around does.
+/mob/living/proc/rogue_strike_message(mob/living/attacker, obj/item/weapon, datum/intent/intent, zone)
 	var/hit_verb = length(intent.attack_verb) ? pick(intent.attack_verb) : "hits"
-	var/hit_area = iscarbon(src) ? rogue_zone_name(zone) : "body"
+	var/hit_area = span_userdanger(iscarbon(src) ? rogue_zone_name(zone) : "body")
 	var/with = weapon ? " with [weapon]" : ""
-	var/stopped = damage_done > 0 ? "" : " Armor stops the damage."
-	var/seen = (attacker in viewers(src, null))
-	var/spectator_text = "[seen ? "[attacker]" : "Someone"] [hit_verb] [src] in the [hit_area][with]![stopped]"
-	var/victim_text = "[seen ? "[attacker]" : "Someone"] [hit_verb] me in the [hit_area][with]![stopped]"
+	var/notes = length(rogue_strike_notes) ? " [jointext(rogue_strike_notes, " ")]" : ""
 	if(attacker == src)
-		to_chat(src, span_danger("I [hit_verb] myself in the [hit_area][with]![stopped]"))
+		to_chat(src, span_danger("I [hit_verb] myself in the [hit_area][with]![notes]"))
 		return
-	visible_message(span_danger(spectator_text), span_userdanger(victim_text), null, COMBAT_MESSAGE_RANGE, attacker)
-	to_chat(attacker, span_boldwarning("[attacker] [hit_verb] [src] in the [hit_area][with]![stopped]"))
+	var/who = (attacker in viewers(src, null)) ? "[attacker]" : "Someone"
+	visible_message(span_danger("[who] [hit_verb] [src] in the [hit_area][with]![notes]"), span_danger("[who] [hit_verb] me in the [hit_area][with]![notes]"), null, COMBAT_MESSAGE_RANGE)
 
 /obj/item/proc/rogue_after_strike(mob/living/target, mob/living/user, list/attack_modifiers)
 	SEND_SIGNAL(src, COMSIG_ITEM_AFTERATTACK, target, user, null, attack_modifiers)
@@ -267,7 +289,7 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 	afterattack(target, user, null, attack_modifiers)
 	add_fingerprint(user)
 
-/datum/element/rogue_combat_bus/proc/on_pre_item_attack(mob/living/carbon/human/source, obj/item/weapon, atom/target, list/modifiers, list/attack_modifiers)
+/datum/element/rogue_combat/proc/on_pre_item_attack(mob/living/carbon/human/source, obj/item/weapon, atom/target, list/modifiers, list/attack_modifiers)
 	SIGNAL_HANDLER
 	if(!isliving(target) || (weapon.item_flags & NOBLUDGEON) || !source.is_holding(weapon) || CALCULATE_FORCE(weapon, attack_modifiers) <= 0)
 		return NONE
@@ -278,3 +300,24 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 		return COMPONENT_CANCEL_ATTACK_CHAIN
 	INVOKE_ASYNC(source, TYPE_PROC_REF(/mob/living/carbon/human, rogue_strike), target, weapon, intent, attack_modifiers)
 	return COMPONENT_CANCEL_ATTACK_CHAIN
+
+/// A balloon only the viewers with a trait see (Ratwood filtered_balloon_alert).
+/atom/proc/rogue_trait_balloon(trait, text)
+	for(var/mob/living/viewer in viewers(DEFAULT_MESSAGE_RANGE, get_turf(src)))
+		if(viewer.client && HAS_TRAIT(viewer, trait))
+			balloon_alert(viewer, text)
+
+/// Combat Aware (Ratwood): the attacker sees where the blow landed, onlookers see where the attacker aims; Deceiving Meekness hides the aim.
+/mob/living/carbon/human/proc/rogue_combat_aware(mob/living/target, zone)
+	if(target == src)
+		return
+	if(HAS_TRAIT(src, TRAIT_COMBAT_AWARE))
+		target.balloon_alert(src, "[rogue_zone_name(zone)]...")
+	var/aim_text = "[rogue_zone_name(rogue_precise_zone())]..."
+	if(HAS_TRAIT(src, TRAIT_DECEIVING_MEEKNESS))
+		if(!prob(ROGUE_MEEKNESS_HINT_CHANCE))
+			return
+		aim_text = "<i>I can't tell...</i>"
+	for(var/mob/living/carbon/human/onlooker in viewers(DEFAULT_MESSAGE_RANGE, src))
+		if(onlooker != src && onlooker.client && HAS_TRAIT(onlooker, TRAIT_COMBAT_AWARE))
+			balloon_alert(onlooker, aim_text)

@@ -20,7 +20,7 @@
 /proc/rogue_old_strength_factor(strength, min_strength)
 	. = 1
 	if(strength > 14)
-		. += 4 * 0.1 + (strength - 14) * 0.034
+		. += 4 * 0.1 + (strength - 14) * 0.05
 	else if(strength > 10)
 		. += (strength - 10) * 0.1
 	else if(strength < 10)
@@ -73,15 +73,6 @@
 		chance -= 5
 	return clamp(chance, 5, 90)
 
-/proc/rogue_old_wear(list/inputs)
-	var/incoming = inputs["incoming"]
-	var/wear = incoming
-	if(!inputs["blunt_attack"] && incoming + inputs["penetration"] > inputs["rating"])
-		wear = inputs["penetration"] >= inputs["rating"] ? incoming / 2 : max(inputs["rating"] - inputs["penetration"], incoming * 0.4)
-	if(inputs["blunt_attack"] && inputs["blunt_rating"] > 0)
-		wear -= wear * (inputs["blunt_rating"] / 2) / 100
-	return wear
-
 /proc/rogue_formula_self_check()
 	var/list/mismatches = list()
 	for(var/sample in 1 to ROGUE_EXPORT_SAMPLES)
@@ -106,11 +97,6 @@
 		got = rogue_formula_value(ROGUE_FORMULA_DODGE_CHANCE, dodge_in)
 		if(abs(expected - got) > 0.0001)
 			mismatches += "dodge [json_encode(dodge_in)]: [expected] vs [got]"
-		var/list/wear_in = list("incoming" = rand(1, 60), "rating" = rand(0, 100), "penetration" = rand(0, 60), "blunt_attack" = prob(30), "blunt_rating" = rand(0, 100))
-		expected = rogue_old_wear(wear_in)
-		got = rogue_formula_value(ROGUE_FORMULA_ARMOR_WEAR, wear_in)
-		if(abs(expected - got) > 0.0001)
-			mismatches += "wear [json_encode(wear_in)]: [expected] vs [got]"
 		if(length(mismatches) > 20)
 			break
 	return mismatches

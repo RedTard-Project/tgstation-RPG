@@ -731,6 +731,9 @@
 					"/obj/item"
 				],
 				"graft": "/obj/item/rockhill",
+				"graft_overrides": {
+					"/obj/item/roguecoin": "/obj/item/stack"
+				},
 				"natural": [
 					"/obj/item/clothing",
 					"/obj/item/reagent_containers",
@@ -744,6 +747,13 @@
 						"trap_damage",
 						"anchored",
 						"alpha"
+					],
+					"/obj/item/clothing/mask/cigarette": [
+						"icon_on",
+						"icon_off",
+						"smoketime",
+						"chem_volume",
+						"list_reagents"
 					]
 				},
 				"vars": [
@@ -764,9 +774,6 @@
 					"slot_flags",
 					"armor_type",
 					"body_parts_covered",
-					"rogue_onhip",
-					"rogue_onback",
-					"rogue_inhand",
 					"lockid",
 					"picklvl",
 					"rockhill_keys",
@@ -797,37 +804,54 @@
 					"parrysound",
 					"rogue_armor",
 					"armor_class",
-					"rogue_prevent_crits",
 					"rogue_blocksound",
+					"material_category",
+					"chunkcolor",
+					"unarmed_bonus",
+					"alt_grips",
+					"block2add",
+					"muteinmouth",
+					"spitoutmouth",
+					"flags_inv",
+					"detail_tag",
+					"detail_color",
+					"altdetail_tag",
+					"altdetail_color",
+					"boobed",
+					"boobed_detail",
+					"sleeved_detail",
 					"firefuel",
+					"sellprice",
+					"static_price",
 					"max_blade_int",
 					"sharpening_factor",
 					"spark_chance",
 					"special",
-					"coverage"
+					"coverage",
+					"intdamage_factor",
+					"smeltresult",
+					"anvilrepair",
+					"sewrepair"
+				],
+				"true_only": [
+					"sewrepair"
 				],
 				"rename": {
 					"inhand_icon_state": "item_state",
 					"worn_icon": "mob_overlay_icon",
 					"worn_icon_state": "item_state",
-					"rogue_onhip": "experimental_onhip",
-					"rogue_onback": "experimental_onback",
-					"rogue_inhand": "experimental_inhand",
 					"rockhill_keys": "keys",
 					"rogue_sleeved": "sleeved",
 					"rogue_grid_width": "grid_width",
 					"rogue_grid_height": "grid_height",
 					"armour_penetration": "armor_penetration",
-					"rogue_prevent_crits": "prevent_crits",
 					"rogue_blocksound": "blocksound",
 					"rogue_force_wielded": "force_wielded"
 				},
-				"true_only": [
-					"rogue_onhip",
-					"rogue_onback"
-				],
 				"slot_worn_icons": {
 					"worn_icon": {
+						"ITEM_SLOT_HEAD": "icons/roguetown/clothing/onmob/head.dmi",
+						"ITEM_SLOT_NECK": "icons/roguetown/clothing/onmob/neck.dmi",
 						"ITEM_SLOT_MOUTH": "icons/roguetown/clothing/onmob/mouth_items.dmi",
 						"ITEM_SLOT_BACK_L": "icons/roguetown/clothing/onmob/back_l.dmi",
 						"ITEM_SLOT_BACK": "icons/roguetown/clothing/onmob/back_l.dmi",
@@ -847,6 +871,8 @@
 				"skip_default": [
 					"armor_class",
 					"firefuel",
+					"sellprice",
+					"static_price",
 					"armour_penetration",
 					"can_parry",
 					"lockid",
@@ -859,7 +885,10 @@
 					"max_blade_int",
 					"sharpening_factor",
 					"spark_chance",
-					"coverage"
+					"coverage",
+					"intdamage_factor",
+					"material_category",
+					"unarmed_bonus"
 				],
 				"path_lists": [
 					"rockhill_keys",
@@ -869,10 +898,20 @@
 				"paths": [
 					"origin_type",
 					"valid_blade",
-					"special"
+					"special",
+					"smeltresult"
 				],
 				"sprite_checks": true,
+				"bake": true,
 				"mapped_vars": {
+					"block2add": {
+						"FOV_BEHIND": "ROGUE_FOV_BEHIND",
+						"FOV_RIGHT": "ROGUE_FOV_RIGHT",
+						"FOV_LEFT": "ROGUE_FOV_LEFT",
+						"FOV_RIGHT|FOV_LEFT": "ROGUE_FOV_RIGHT | ROGUE_FOV_LEFT",
+						"FOV_LEFT|FOV_RIGHT": "ROGUE_FOV_RIGHT | ROGUE_FOV_LEFT",
+						"null": "NONE"
+					},
 					"alternate_worn_layer": {
 						"CLOAK_BEHIND_LAYER": "BODY_BEHIND_LAYER",
 						"TABARD_LAYER": "ROGUE_TABARD_LAYER",
@@ -886,6 +925,7 @@
 				"grid_storage": true,
 				"numeric_vars": [
 					"rogue_force_wielded",
+					"sellprice",
 					"wdefense",
 					"wdefense_wbonus",
 					"wlength",
@@ -896,32 +936,59 @@
 					"max_blade_int",
 					"sharpening_factor",
 					"spark_chance",
-					"coverage"
+					"coverage",
+					"intdamage_factor",
+					"material_category",
+					"unarmed_bonus"
 				],
 				"intent_lists": [
 					"possible_item_intents",
 					"gripped_intents"
 				],
+				"grip_lists": [
+					"alt_grips"
+				],
 				"numeric_defaults": {
-					"wlength": 2
+					"wlength": 2,
+					"intdamage_factor": 1
 				},
+				"value_defaults": {
+					"chunkcolor": "\"#5e5e5e\"",
+					"boobed": "FALSE",
+					"muteinmouth": "TRUE",
+					"spitoutmouth": "TRUE",
+					"boobed_detail": "TRUE",
+					"sleeved_detail": "TRUE"
+				},
+				"flag_vars": [
+					"flags_inv"
+				],
 				"skill_vars": [
-					"associated_skill"
+					"associated_skill",
+					"anvilrepair"
 				],
-				"string_lists": [
-					"rogue_prevent_crits"
-				],
+				"string_lists": [],
 				"string_define_vars": [
-					"rogue_blocksound"
+					"rogue_blocksound",
+					"detail_color",
+					"altdetail_color"
 				],
 				"sound_lists": [
 					"parrysound"
 				],
 				"clothing_only": [
+					"block2add",
+					"detail_tag",
+					"detail_color",
+					"altdetail_tag",
+					"altdetail_color",
+					"boobed_detail",
+					"sleeved_detail",
 					"rogue_armor",
 					"armor_class",
-					"rogue_prevent_crits",
-					"rogue_blocksound"
+					"rogue_blocksound",
+					"material_category",
+					"chunkcolor"
 				]
 			},
 			{
@@ -958,20 +1025,35 @@
 					"melee_damage_upper",
 					"rogue_defprob",
 					"rogue_can_dodge",
-					"rogue_mob_stats"
+					"rogue_mob_stats",
+					"rogue_mob_intents",
+					"rogue_aggressive",
+					"rogue_retreat_health",
+					"rogue_food_types"
 				],
 				"rename": {
 					"rogue_defprob": "defprob",
-					"rogue_can_dodge": "mob_can_dodge"
+					"rogue_can_dodge": "mob_can_dodge",
+					"rogue_mob_intents": "base_intents",
+					"rogue_aggressive": "aggressive",
+					"rogue_retreat_health": "retreat_health",
+					"rogue_food_types": "food_type"
 				},
+				"path_lists": [
+					"rogue_food_types"
+				],
 				"numeric_vars": [
 					"melee_damage_lower",
 					"melee_damage_upper",
-					"rogue_defprob"
+					"rogue_defprob",
+					"rogue_aggressive",
+					"rogue_retreat_health"
 				],
 				"skip_default": [
 					"melee_damage_lower",
-					"melee_damage_upper"
+					"melee_damage_upper",
+					"rogue_aggressive",
+					"rogue_retreat_health"
 				],
 				"numeric_defaults": {
 					"rogue_defprob": 50
@@ -992,7 +1074,10 @@
 							"STALUC": "ROGUE_STAT_FORTUNE"
 						}
 					}
-				}
+				},
+				"intent_lists": [
+					"rogue_mob_intents"
+				]
 			},
 			{
 				"file": "spawners.dm",
@@ -1030,6 +1115,7 @@
 			}
 		],
 		"extra_icons": [
+			"icons/mob/overhead_effects.dmi",
 			"icons/turf/newwater.dmi",
 			"icons/effects/particles/particle.dmi",
 			"icons/effects/96x96.dmi",
@@ -1037,9 +1123,52 @@
 			"icons/effects/32x200.dmi",
 			"icons/time.dmi",
 			"icons/effects/waterfall.dmi",
-			"icons/effects/particles/smoke.dmi"
+			"icons/effects/particles/smoke.dmi",
+			"icons/mob/combat_debuffs.dmi",
+			"icons/effects/mousemice/*.dmi",
+			"icons/effects/mousemice/swang/*.dmi"
 		],
 		"extra_sounds": [
+			"sound/items/bsmith1.ogg",
+			"sound/items/bsmith2.ogg",
+			"sound/items/bsmith3.ogg",
+			"sound/items/bsmith4.ogg",
+			"sound/items/bsmithfail.ogg",
+			"sound/misc/smelter_sound.ogg",
+			"sound/misc/smelter_fin.ogg",
+			"sound/items/quench_barrel1.ogg",
+			"sound/items/quench_barrel2.ogg",
+			"sound/foley/grindblade.ogg",
+			"sound/misc/slide_wood (1).ogg",
+			"sound/misc/slide_wood (2).ogg",
+			"sound/combat/hits/onwood/destroyfurniture.ogg",
+			"sound/foley/sewflesh.ogg",
+			"sound/foley/cloth_rip.ogg",
+			"sound/items/book_open.ogg",
+			"sound/items/book_page.ogg",
+			"sound/items/gem.ogg",
+			"sound/foley/woodclimb.ogg",
+			"sound/misc/levelup1.ogg",
+			"sound/misc/levelup2.ogg",
+			"sound/misc/levelup3.ogg",
+			"sound/foley/coins1.ogg",
+			"sound/foley/coinphy (1).ogg",
+			"sound/foley/coinphy (2).ogg",
+			"sound/misc/machinevomit.ogg",
+			"sound/misc/coininsert.ogg",
+			"sound/misc/coindispense.ogg",
+			"sound/misc/hiss.ogg",
+			"sound/misc/beep.ogg",
+			"sound/misc/machineyes.ogg",
+			"sound/misc/machineno.ogg",
+			"sound/misc/machinetalk.ogg",
+			"sound/misc/gold_misc.ogg",
+			"sound/misc/gold_menu.ogg",
+			"sound/misc/keyboard_enter.ogg",
+			"sound/misc/disposalflush.ogg",
+			"sound/misc/royal_decree.ogg",
+			"sound/misc/royal_decree2.ogg",
+			"sound/combat/shove.ogg",
 			"sound/items/firelight.ogg",
 			"sound/items/firesnuff.ogg",
 			"sound/foley/torchfixturetake.ogg",
@@ -1070,6 +1199,27 @@
 			"sound/combat/riposte.ogg",
 			"sound/combat/parry/parrygen.ogg",
 			"sound/combat/dodge.ogg",
+			"sound/combat/armor_degrade1.ogg",
+			"sound/combat/armor_degrade2.ogg",
+			"sound/combat/armor_degrade3.ogg",
+			"sound/combat/armor_degrade_chain1.ogg",
+			"sound/combat/armor_degrade_chain2.ogg",
+			"sound/combat/armor_degrade_chain3.ogg",
+			"sound/combat/armor_degrade_leather1.ogg",
+			"sound/combat/armor_degrade_leather2.ogg",
+			"sound/combat/armor_degrade_leather3.ogg",
+			"sound/combat/armor_degrade_plate1.ogg",
+			"sound/combat/armor_degrade_plate2.ogg",
+			"sound/combat/armor_degrade_plate3.ogg",
+			"sound/combat/swingdelay_disrupted.ogg",
+			"sound/combat/dagger_boost.ogg",
+			"sound/combat/parry/deflect_1.ogg",
+			"sound/combat/parry/deflect_2.ogg",
+			"sound/combat/parry/deflect_3.ogg",
+			"sound/combat/parry/deflect_4.ogg",
+			"sound/combat/parry/deflect_5.ogg",
+			"sound/combat/parry/deflect_6.ogg",
+			"sound/misc/surrender.ogg",
 			"sound/combat/hits/armor/plate_slashed (1).ogg",
 			"sound/combat/hits/armor/plate_slashed (2).ogg",
 			"sound/combat/hits/armor/plate_slashed (3).ogg",
@@ -1158,7 +1308,9 @@
 		},
 		"armor": {
 			"scale": 0.7,
-			"cap": 70
+			"cap": 70,
+			"max_tier": 5,
+			"dr_coefficient": 0.2
 		},
 		"linked_types": [
 			"keys",
@@ -1166,8 +1318,112 @@
 			"repair_cost_first",
 			"repair_cost_second",
 			"item_chair",
-			"spawned"
+			"spawned",
+			"smeltresult"
 		],
+		"anvil_recipes": {
+			"root": "/datum/anvil_recipe",
+			"file": "modular_redtard/crafting/ported/anvil_recipes.dm",
+			"default_skill": "/datum/attribute/skill/craft/blacksmithing"
+		},
+		"craft_recipes": {
+			"root": "/datum/crafting_recipe/roguetown",
+			"file": "modular_redtard/crafting/ported/craft_recipes.dm",
+			"extra_sources": [
+				{
+					"name": "Azure Peak",
+					"root": "../Azure-Peak-Fork"
+				}
+			],
+			"max_blacklist": 40
+		},
+		"trade": {
+			"supply_packs": {
+				"root": "/datum/supply_pack/rogue",
+				"rename": "/datum/rogue_supply_pack",
+				"file": "modular_redtard/economy/ported/supply_packs.dm",
+				"groups": [
+					"Adventuring Supplies",
+					"Alcohols",
+					"Apparel",
+					"Armor (Bronze)",
+					"Armor (Exotic)",
+					"Armor (Iron)",
+					"Armor (Light)",
+					"Armor (Steel)",
+					"Beverages",
+					"Consumable",
+					"Cosmetics",
+					"Diplomacy and Persuasion",
+					"Exotic Import",
+					"Food",
+					"Games",
+					"Gems",
+					"General Labour",
+					"Health and Hygiene",
+					"Instruments",
+					"Livestock",
+					"Luxury",
+					"Magic",
+					"Perfumes",
+					"Potions",
+					"Seeds",
+					"Self Defense",
+					"Substances",
+					"Tools",
+					"Wardrobe",
+					"Weapons (Bronze)",
+					"Weapons (Foreign)",
+					"Weapons (Iron and Shields)",
+					"Weapons (Ranged)",
+					"Weapons (Steel)",
+					"Zadpacks"
+				]
+			},
+			"stockpile": {
+				"root": "/datum/roguestock/stockpile",
+				"trade_goods": "/datum/trade_good",
+				"file": "modular_redtard/economy/ported/stockpile.dm"
+			},
+			"jobs": {
+				"file": "modular_redtard/economy/ported/job_accounts.dm"
+			}
+		},
+		"food": {
+			"root": "/obj/item/reagent_containers/food/snacks",
+			"recipe_root": "/datum/food_recipe",
+			"recipe_target": "/datum/rogue_food_recipe",
+			"file": "modular_redtard/survival/ported/food.dm",
+			"always": [
+				"/obj/item/reagent_containers/food/snacks/badrecipe"
+			],
+			"defaults": {
+				"cooktime": 0,
+				"burntime": 3000,
+				"bitesize": 3,
+				"rotprocess": 0,
+				"warming": 3000,
+				"slice_bclass": "BCLASS_CUT",
+				"time_per_step": 20
+			},
+			"eat_effects": {
+				"/datum/status_effect/debuff/uncookedfood": "/datum/status_effect/rogue_food/uncooked",
+				"/datum/status_effect/debuff/burnedfood": "/datum/status_effect/rogue_food/burned",
+				"/datum/status_effect/debuff/rotfood": "/datum/status_effect/rogue_food/rotten",
+				"/datum/status_effect/debuff/badmeal": "/datum/status_effect/rogue_food/bad_meal",
+				"/datum/status_effect/buff/snackbuff": "/datum/status_effect/rogue_food_buff/snack",
+				"/datum/status_effect/buff/greatsnackbuff": "/datum/status_effect/rogue_food_buff/great_snack",
+				"/datum/status_effect/buff/mealbuff": "/datum/status_effect/rogue_food_buff/meal",
+				"/datum/status_effect/buff/greatmealbuff": "/datum/status_effect/rogue_food_buff/great_meal",
+				"/datum/status_effect/buff/sweet": "/datum/status_effect/rogue_food_buff/sweet"
+			}
+		},
+		"husbandry": {
+			"file": "modular_redtard/husbandry/ported/husbandry.dm",
+			"extra_types": [
+				"/mob/living/simple_animal/chick"
+			]
+		},
 		"assets": {
 			"restricted_licenses": [
 				"icons/roguetown/clothing/licensed-infraredbaron/LICENSE.md",
@@ -1190,8 +1446,35 @@
 			"/obj/structure/sawblade_trap",
 			"/mob/living/simple_animal/hostile/rogue/mirespider_paralytic",
 			"/mob/living/simple_animal/hostile/retaliate/rogue/mirespider",
-			"/obj/item/rogueweapon/mace/oar"
+			"/obj/item/rogueweapon/mace/oar",
+			"/obj/item/natural/cured/essence"
 		],
+		"bake": {
+			"manifest": "modular_redtard/rockhill/onmob_bake.json",
+			"dir": "modular_redtard/rockhill/icons/baked",
+			"mask32": "modular_redtard/icons/mob/onmob_mask.dmi",
+			"mask64": "modular_redtard/icons/mob/onmob_mask_64.dmi",
+			"variants": [
+				"-on",
+				"_on",
+				"-lit",
+				"_lit",
+				"1"
+			],
+			"swaps": [
+				[
+					"off",
+					"on"
+				]
+			]
+		},
+		"alt_grips": {
+			"file": "alt_grips.dm",
+			"stat_vars": [
+				"var_overrides",
+				"additive_var_overrides"
+			]
+		},
 		"intents": {
 			"file": "intents.dm",
 			"rename": {
@@ -1203,7 +1486,11 @@
 				"desc",
 				"icon_state",
 				"blade_class",
-				"item_d_type"
+				"item_d_type",
+				"warnie"
+			],
+			"strings_skip_empty": [
+				"warnie"
 			],
 			"numeric": [
 				"damfactor",
@@ -1213,19 +1500,241 @@
 				"misscost",
 				"reach",
 				"chargetime",
-				"swingdelay"
+				"swingdelay",
+				"swingdelay_type",
+				"chargedrain",
+				"charging_slowdown",
+				"effective_range",
+				"effective_range_type",
+				"sharpness_penalty",
+				"intent_intdamage_factor"
 			],
+			"numeric_defaults": {
+				"swingdelay_type": 1,
+				"chargedrain": 0,
+				"charging_slowdown": 0,
+				"effective_range": 0,
+				"effective_range_type": 0,
+				"sharpness_penalty": 0,
+				"intent_intdamage_factor": 1
+			},
 			"flags": [
 				"canparry",
 				"candodge",
 				"no_attack",
 				"unarmed",
 				"tranged",
-				"tshield"
+				"tshield",
+				"movement_interrupt",
+				"no_early_release",
+				"noaa"
+			],
+			"flags_true_only": [
+				"movement_interrupt",
+				"no_early_release",
+				"noaa"
 			],
 			"paths": [
 				"cleave"
-			]
+			],
+			"effects": {
+				"stats": {
+					"STATKEY_STR": "ROGUE_STAT_STRENGTH",
+					"STATKEY_PER": "ROGUE_STAT_PERCEPTION",
+					"STATKEY_INT": "ROGUE_STAT_INTELLIGENCE",
+					"STATKEY_CON": "ROGUE_STAT_CONSTITUTION",
+					"STATKEY_WIL": "ROGUE_STAT_WILLPOWER",
+					"STATKEY_SPD": "ROGUE_STAT_SPEED",
+					"STATKEY_LCK": "ROGUE_STAT_FORTUNE"
+				}
+			}
+		},
+		"npcs": {
+			"file": "npcs.dm",
+			"sheet_root": "/datum/attribute_holder/sheet/rockhill_npc",
+			"race": {
+				"/mob/living/carbon/human/species/npc/deadite": "/datum/species/zombie",
+				"/mob/living/carbon/human/species/dwarfskeleton": "/datum/species/skeleton"
+			}
+		},
+		"bodies": {
+			"file": "modular_redtard/rockhill/icons/bodies.dmi",
+			"dm_file": "species.dm",
+			"sheets": {
+				"rogue_orc": {
+					"m": "icons/roguetown/mob/bodies/m/mt_muscular.dmi",
+					"f": "icons/roguetown/mob/bodies/f/ft_muscular.dmi"
+				},
+				"rogue_drow": {
+					"m": "icons/roguetown/mob/bodies/m/mem.dmi",
+					"f": "icons/roguetown/mob/bodies/f/fm.dmi"
+				},
+				"rogue_goblinp": {
+					"m": "icons/mob/species/anthro_small_male.dmi",
+					"f": "icons/roguetown/mob/bodies/f/fd.dmi"
+				}
+			},
+			"zones": [
+				"head",
+				"chest",
+				"l_arm",
+				"r_arm",
+				"l_hand",
+				"r_hand",
+				"l_leg",
+				"r_leg"
+			],
+			"merge": {
+				"l_leg": "l_leg_above",
+				"r_leg": "r_leg_above"
+			},
+			"goblin": {
+				"source": "icons/roguetown/mob/monster/goblins.dmi",
+				"kinds": [
+					"goblin",
+					"goblin_cave",
+					"goblin_hell",
+					"goblin_sea",
+					"goblin_moon"
+				],
+				"worn": [
+					"plate_helm",
+					"leather_helm",
+					"plate_armor",
+					"leather_armor",
+					"cloth_armor"
+				],
+				"limb_id": "rogue_goblin"
+			},
+			"features": {
+				"rogue_ears_halforc": [
+					"icons/mob/sprite_accessory/halforc.dmi",
+					"halforc",
+					[
+						"ADJ",
+						"FRONT"
+					]
+				],
+				"rogue_tusks_halforc": [
+					"icons/mob/sprite_accessory/halforc.dmi",
+					"orctusk",
+					[
+						"FRONT"
+					]
+				],
+				"rogue_ears_elf": [
+					"icons/mob/sprite_accessory/elf.dmi",
+					"elf",
+					[
+						"ADJ",
+						"FRONT"
+					]
+				],
+				"rogue_ears_goblin": [
+					"icons/mob/sprite_accessory/halforc.dmi",
+					"goblin",
+					[
+						"ADJ",
+						"FRONT"
+					]
+				]
+			},
+			"species_map": {
+				"/datum/species/orc": "/datum/species/rogue_orc",
+				"/datum/species/elf/dark": "/datum/species/rogue_drow",
+				"/datum/species/goblin": "/datum/species/rogue_goblin",
+				"/datum/species/goblin/cave": "/datum/species/rogue_goblin/cave",
+				"/datum/species/goblin/hell": "/datum/species/rogue_goblin/hell",
+				"/datum/species/goblin/sea": "/datum/species/rogue_goblin/sea",
+				"/datum/species/goblin/moon": "/datum/species/rogue_goblin/moon",
+				"/datum/species/goblinp": "/datum/species/rogue_goblinp"
+			},
+			"offset_keys": {
+				"OFFSET_ID": [
+					"ROGUE_OFFSET_RING"
+				],
+				"OFFSET_GLOVES": [
+					"OFFSET_GLOVES"
+				],
+				"OFFSET_WRISTS": [
+					"ROGUE_OFFSET_WRISTS"
+				],
+				"OFFSET_CLOAK": [
+					"ROGUE_OFFSET_CLOAK"
+				],
+				"OFFSET_FACEMASK": [
+					"OFFSET_FACEMASK",
+					"OFFSET_GLASSES"
+				],
+				"OFFSET_HEAD": [
+					"OFFSET_HEAD",
+					"OFFSET_EARS"
+				],
+				"OFFSET_FACE": [
+					"OFFSET_FACE"
+				],
+				"OFFSET_BELT": [
+					"OFFSET_BELT"
+				],
+				"OFFSET_BACK": [
+					"OFFSET_BACK"
+				],
+				"OFFSET_NECK": [
+					"OFFSET_NECK"
+				],
+				"OFFSET_MOUTH": [
+					"ROGUE_OFFSET_MOUTH"
+				],
+				"OFFSET_PANTS": [
+					"OFFSET_UNIFORM"
+				],
+				"OFFSET_SHIRT": [
+					"ROGUE_OFFSET_SHIRT"
+				],
+				"OFFSET_ARMOR": [
+					"OFFSET_SUIT",
+					"OFFSET_S_STORE"
+				],
+				"OFFSET_HANDS": [
+					"OFFSET_HELD"
+				]
+			},
+			"race_sheet_root": "/datum/attribute_holder/sheet/rockhill_race"
+		},
+		"races": {
+			"dm_file": "races.dm",
+			"language_icon": "modular_redtard/rockhill/icons/languages.dmi",
+			"language_icon_source": "icons/misc/language.dmi",
+			"languages": {
+				"/datum/language/common": "/datum/language/common",
+				"/datum/language/orcish": {"type": "/datum/language/rogue_orcish", "key": "r"},
+				"/datum/language/elvish": {"type": "/datum/language/rogue_elvish", "key": "e"}
+			},
+			"species_languages": {
+				"/datum/species/goblin": ["/datum/language/common", "/datum/language/orcish"]
+			},
+			"generic_voicepacks": ["/datum/voicepack/male", "/datum/voicepack/female"],
+			"species_voices": {
+				"/datum/species/goblin": {"m": "/datum/voicepack/other/goblin", "f": "/datum/voicepack/other/goblin"}
+			},
+			"emote_keys": {
+				"deathgurgle": "deathgasp"
+			},
+			"eyes": {
+				"/obj/item/organ/eyes/goblin": "/obj/item/organ/eyes/rogue_goblin",
+				"/obj/item/organ/eyes/night_vision/wild_goblin": "/obj/item/organ/eyes/night_vision/rogue_wild_goblin"
+			},
+			"night_vision_steps": ["LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE", "LIGHTING_PLANE_ALPHA_INVISIBLE"],
+			"tongue_root": "/obj/item/organ/tongue/rogue_race",
+			"vocal_emote_root": "/datum/emote/living/rogue_vocal"
+		},
+		"migrants": {
+			"dm_file": "migrants.dm",
+			"wave_root": "/datum/rogue_migrant_wave",
+			"role_root": "/datum/rogue_migrant_role",
+			"outfit_root": "/datum/outfit/job/roguetown/rockhill_migrant",
+			"job": "/datum/job/roguetown/rockhill_migrant",
+			"skip_antagonists": true
 		}
 	},
 	"jobs": {
@@ -1248,7 +1757,8 @@
 		"landmark_roles": {
 			"/obj/effect/landmark/start/rockhillslaver": "/datum/job/roguetown/slaver",
 			"/obj/effect/landmark/start/hostage": "/datum/job/roguetown/dungeoneer",
-			"/obj/effect/landmark/start/vagrant": "/datum/job/roguetown/lunatic"
+			"/obj/effect/landmark/start/vagrant": "/datum/job/roguetown/lunatic",
+			"/obj/effect/landmark/start/bogguardsman": "/datum/job/roguetown/warden"
 		},
 		"access_traits": {
 			"/obj/structure/fluff/traveltile": "required_trait"
@@ -1298,6 +1808,12 @@
 		],
 		"/obj/structure/gate": [
 			"gid"
+		],
+		"/obj/structure/roguemachine/vendor": [
+			"keycontrol"
+		],
+		"/obj/structure/roguemachine/atm": [
+			"location_tag"
 		],
 		"/obj/structure/winch": [
 			"gid"
@@ -1369,6 +1885,23 @@
 				},
 				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
 				"governing": "ROGUE_STAT_STRENGTH"
+			},
+			"/datum/skill/combat/staves": {
+				"category": "ROGUE_SKILL_CATEGORY_MELEE",
+				"defaults": {
+					"ROGUE_STAT_SPEED": -5,
+					"ROGUE_STAT_STRENGTH": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_AVERAGE",
+				"governing": "ROGUE_STAT_SPEED"
+			},
+			"/datum/skill/combat/arcyne": {
+				"category": "ROGUE_SKILL_CATEGORY_MELEE",
+				"defaults": {
+					"ROGUE_STAT_INTELLIGENCE": -6
+				},
+				"difficulty": "ROGUE_SKILL_DIFFICULTY_HARD",
+				"governing": "ROGUE_STAT_INTELLIGENCE"
 			},
 			"/datum/skill/combat/maces": {
 				"category": "ROGUE_SKILL_CATEGORY_MELEE",

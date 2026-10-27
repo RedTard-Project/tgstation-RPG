@@ -32,10 +32,6 @@
 			"fire" = armor.fire,
 			"acid" = armor.acid,
 			"magic" = armor.magic,
-			"wound" = armor.wound,
-			"slash_ep" = armor.slash_ep,
-			"stab_ep" = armor.stab_ep,
-			"piercing_ep" = armor.piercing_ep,
 			"items" = length(usage[key]),
 		))
 	return list("armors" = armor_list, "item_usage" = usage)

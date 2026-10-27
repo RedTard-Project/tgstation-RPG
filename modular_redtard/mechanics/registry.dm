@@ -36,6 +36,10 @@ GLOBAL_DATUM(rogue_mechanics, /datum/rogue_mechanics)
 		var/list/definition = GLOB.rogue_formula_definitions[id]
 		formulas[id] = new /datum/rogue_formula(id, definition[1], definition[2], definition[3])
 	for(var/id in GLOB.rogue_value_definitions)
+		// Formulas and values share one namespace: a value of a formula's name would replace the formula.
+		if(formulas[id])
+			stack_trace("Rogue mechanics: \"[id]\" is both a formula and a value; the value is dropped.")
+			continue
 		var/list/definition = GLOB.rogue_value_definitions[id]
 		formulas[id] = new /datum/rogue_formula(id, definition[1], definition[2], null, TRUE)
 	for(var/special_type in subtypesof(/datum/special_intent))

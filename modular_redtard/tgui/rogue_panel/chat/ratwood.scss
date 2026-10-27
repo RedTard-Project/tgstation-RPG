@@ -1,0 +1,277 @@
+// Ratwood's chat (tgui-panel/styles: main.scss, tgchat/chat-dark.scss, components/roguefont.scss): black backing,
+// outlined parchment text, Pterra, and its palette, with the combat classes the module's crits and wounds print
+// (crit, artery, bone and the rest). Only the dark theme takes it; TG's light theme stays as it is.
+//
+// Pterra has no Cyrillic, so a Russian chat reads in a book face that has it; English reads in Pterra as on
+// Ratwood. Pterra is drawn small for its size: size-adjust brings it to the panel's own font size setting.
+
+@font-face {
+  font-family: 'Pterra';
+  src: url('../fonts/pterra.ttf') format('truetype');
+  size-adjust: 145%;
+}
+
+$book: 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+
+:root:not(.theme-light) {
+  --chat-text-color: #c9c1ba;
+  --color-base: hsl(0, 0%, 0%);
+
+  body {
+    color: #c9c1ba;
+    font-family: $book;
+    text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+  }
+
+  body.rogue-lang-en {
+    font-family: 'Pterra', $book;
+  }
+
+  a:link {
+    color: #ae83cb;
+    font-weight: bold;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  h1.alert,
+  h2.alert,
+  .unconscious {
+    color: #c9c1ba;
+  }
+
+  .motd,
+  .motd h1,
+  .motd h2,
+  .motd h3,
+  .motd a,
+  .motd a:link,
+  .motd a:visited,
+  .motd a:hover,
+  .memo {
+    color: #638500;
+  }
+
+  .ooc {
+    color: #c5c5c5;
+  }
+
+  .deadsay {
+    color: #e2c1ff;
+  }
+
+  .emote {
+    color: #b1bb9f;
+    font-size: 75%;
+  }
+
+  .alert {
+    color: #d82020;
+  }
+
+  .userdanger {
+    color: #c71d76;
+    font-size: 120%;
+  }
+
+  .danger {
+    color: #b9322b;
+    font-weight: bold;
+  }
+
+  .warning {
+    color: #bb4e28;
+    font-size: 75%;
+    font-style: normal;
+  }
+
+  .boldwarning {
+    color: #bb4e28;
+    font-style: normal;
+  }
+
+  .announce,
+  .boldannounce {
+    color: #c51e1e;
+  }
+
+  .greenannounce {
+    color: #059223;
+  }
+
+  .info {
+    color: #a9a5b6;
+    font-size: 75%;
+  }
+
+  .notice,
+  .boldnotice {
+    color: #f1d669;
+  }
+
+  .smallnotice {
+    color: #f1d669;
+    font-size: 75%;
+  }
+
+  .hear {
+    color: #6685f5;
+  }
+
+  .suicide {
+    color: #ff5050;
+  }
+
+  .green {
+    color: #80b077;
+  }
+
+  .red {
+    color: #b84d47;
+  }
+
+  .blue {
+    color: #6a8cb7;
+  }
+
+  .purple {
+    color: #5e2d79;
+  }
+
+  .nicegreen {
+    color: #9bccd0;
+  }
+
+  .rose {
+    color: #e7bed8;
+  }
+
+  .cult {
+    color: #960000;
+  }
+
+  .phobia {
+    color: #dd0000;
+  }
+
+  .small {
+    font-size: 50%;
+  }
+
+  .big {
+    font-size: 120%;
+  }
+
+  .reallybig {
+    font-size: 180%;
+  }
+
+  .extremelybig {
+    font-size: 220%;
+  }
+
+  .greentext {
+    color: #00ff00;
+    font-size: 100%;
+  }
+
+  .redtext {
+    color: #ff0000;
+    font-size: 100%;
+  }
+
+  // Ratwood's own classes.
+  .yellow {
+    color: #c0ad58;
+  }
+
+  .crit {
+    color: #c71d76;
+  }
+
+  .taunt {
+    color: #e78718;
+  }
+
+  .biginfo {
+    color: #a9a5b6;
+  }
+
+  .smallgreen {
+    color: #80b077;
+    font-size: 75%;
+  }
+
+  .boldgreen {
+    color: #80b077;
+    font-weight: bold;
+  }
+
+  .smallred {
+    color: #b84d47;
+    font-size: 75%;
+  }
+
+  .boldred {
+    color: #b84d47;
+    font-weight: bold;
+  }
+
+  .dead {
+    color: #b280df;
+  }
+
+  .bloody {
+    color: #cc0f0f;
+  }
+
+  .artery {
+    color: #9b5455;
+  }
+
+  .infection {
+    color: #77c72b;
+  }
+
+  .necrosis {
+    color: #558d20;
+  }
+
+  .bone {
+    color: #e3dac9;
+  }
+
+  .torture {
+    color: #42ff20;
+  }
+
+  .smallyell {
+    font-size: 70%;
+  }
+
+  .pulsedeath {
+    color: #dd0000;
+    animation: rogue-deathcolor 1500ms infinite;
+  }
+}
+
+@keyframes rogue-deathcolor {
+  0%,
+  50%,
+  100% {
+    color: #cc0f0f;
+  }
+
+  25%,
+  75% {
+    color: #ff0000;
+  }
+}

@@ -183,6 +183,7 @@ GLOBAL_LIST_INIT(rogue_bind_catches, list(
 		"untrained_armor" = untrained,
 		"bound" = !!has_status_effect(/datum/status_effect/rogue/bind),
 	))
+	prob2defend -= rogue_swing_defense_penalty()
 	var/drained = BASE_PARRY_STAMINA_DRAIN
 	if(untrained)
 		drained += ROGUE_PARRY_UNTRAINED_DRAIN
@@ -200,6 +201,8 @@ GLOBAL_LIST_INIT(rogue_bind_catches, list(
 	visible_message(span_warning(message), span_boldwarning(message), COMBAT_MESSAGE_RANGE, list(attacker))
 	to_chat(attacker, span_boldwarning(message))
 	log_combat(src, attacker, "parried")
+	if(attack_intent?.sharpness_penalty)
+		attacker_weapon?.rogue_dull(attack_intent.sharpness_penalty, attacker)
 	if(weapon_parry)
 		used_weapon.take_damage((ROGUE_PARRY_INTEGRITY_DAMAGE + (strong_attack ? ROGUE_STRONG_INTEGRITY_WEAR : 0)) * rogue_tempo_factor("parry_wear"), BRUTE, "", FALSE)
 		if(used_weapon.get_sharpness())
@@ -278,6 +281,7 @@ GLOBAL_LIST_INIT(rogue_bind_catches, list(
 		"base" = attacker.rogue_defense_base(),
 		"fatigue" = rogue_dodge_fatigue,
 	))
+	prob2defend -= rogue_swing_defense_penalty()
 	if(!prob(prob2defend))
 		return FALSE
 	var/drained = ROGUE_DODGE_STAMINA_DRAIN
@@ -323,7 +327,7 @@ GLOBAL_LIST_INIT(rogue_bind_catches, list(
 	attacker.visible_message(span_warning("<b>[attacker]</b> clips [src]'s weapon!"))
 	playsound(attacker, 'modular_redtard/rockhill/sound/misc/weapon_clip.ogg', 100)
 
-/datum/element/rogue_combat_bus/proc/on_check_block(mob/living/carbon/human/source, atom/movable/hitby, damage, attack_text, attack_type, armour_penetration, damage_type, attack_flag)
+/datum/element/rogue_combat/proc/on_check_block(mob/living/carbon/human/source, atom/movable/hitby, damage, attack_text, attack_type, armour_penetration, damage_type, attack_flag)
 	SIGNAL_HANDLER
 	if(attack_type != MELEE_ATTACK && attack_type != UNARMED_ATTACK)
 		return NONE
@@ -332,6 +336,8 @@ GLOBAL_LIST_INIT(rogue_bind_catches, list(
 		return NONE
 	source.rogue_mark_in_combat()
 	attacker.rogue_mark_in_combat()
+	if(source.rogue_swing_struck() || source.rogue_charging_ranged())
+		return NONE
 	if(!source.rogue_can_defend(attacker))
 		return NONE
 	var/obj/item/attacker_weapon = isitem(hitby) ? hitby : null

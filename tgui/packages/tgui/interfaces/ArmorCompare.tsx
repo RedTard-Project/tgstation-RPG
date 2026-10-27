@@ -13,10 +13,6 @@ type ArmorEntry = {
   fire: number;
   acid: number;
   magic: number;
-  wound: number;
-  slash_ep: number;
-  stab_ep: number;
-  piercing_ep: number;
 };
 
 type ArmorCompareData = {
@@ -33,36 +29,29 @@ const RATINGS: (keyof Omit<ArmorEntry, 'type'>)[] = [
   'fire',
   'acid',
   'magic',
-  'wound',
-  'slash_ep',
-  'stab_ep',
-  'piercing_ep',
 ];
 
+// Ratings are tiers (Ratwood and Azure Peak): blunt, fire and acid reduce 0-5, the rest block 0-4.
 const RATING_LABELS: Record<string, string> = {
-  blunt: 'Blunt',
+  blunt: 'Blunt DR',
   slash: 'Slash',
   stab: 'Stab',
   piercing: 'Pierce',
-  fire: 'Fire',
-  acid: 'Acid',
+  fire: 'Fire DR',
+  acid: 'Acid DR',
   magic: 'Magic',
-  wound: 'Wound',
-  slash_ep: "Slash EP",
-  stab_ep: "Stab EP",
-  piercing_ep: "Piercing EP",
 };
 
 type SortDirection = 'default' | 'asc' | 'desc';
 
-// Mirrors armor_to_color() on the DM side
-function armorColor(value: number): string {
-  if (value >= 100) return '#1F3FBF';
-  if (value >= 75) return '#00FF00';
-  if (value >= 50) return '#7CFF7C';
-  if (value >= 25) return '#fffb00';
-  if (value > 0) return '#ff8800';
-  return '#FF0000';
+// Mirrors rogue_tier_color() on the DM side
+function armorColor(tier: number): string {
+  if (tier >= 5) return '#c757af';
+  if (tier >= 4) return '#339dff';
+  if (tier >= 3) return '#1a9c00';
+  if (tier >= 2) return '#e3e63c';
+  if (tier >= 1) return '#c0a739';
+  return '#808080';
 }
 
 export const ArmorCompare = (props) => {

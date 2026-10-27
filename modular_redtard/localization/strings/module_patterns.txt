@@ -1,0 +1,48 @@
+# Шаблоны модуля — то, чего нет у Вайблина: бой Ратвуда в этой сборке и раны
+# ТГ. Лежат отдельно от копий файлов Вайблина и пробуются ПЕРЕД patterns.txt:
+# они частнее его общих правил. Формат и падежи — как в patterns.txt.
+
+# --- крит (combat/crits.dm) ---
+^Critical resistance! (.+?) resists a knockout!$ = Стойкость к увечьям! $1 не теряет сознания!
+^Critical resistance! (.+?) resists a wound!$ = Стойкость к увечьям! $1 выдерживает рану!
+^(.+?) is knocked out FROM BEHIND!$ = $1 теряет сознание от удара СО СПИНЫ!
+^(.+?) is knocked out!$ = $1 теряет сознание!
+
+# --- раны ТГ: "[кто]'s [часть тела] [occur_text]!" (code/datums/wounds) ---
+# Части тела ТГ (голова, грудь, рука, нога) женского рода, так что причастия
+# согласуются с ними без разбора. Где occur_text сам кончается на "!" или ".",
+# строка выходит с двумя знаками — шаблон ловит её как есть.
+^(.+?)'s (.+?) blasts apart, sending chunks of viscera flying in all directions!$ = У $1|gen разрывается $2|nom, во все стороны летят ошмётки внутренностей!
+^(.+?)'s (.+?) breaks out with violent red burns!$ = У $1|gen $2|nom покрывается жуткими красными ожогами!
+^(.+?)'s (.+?) chars rapidly into a pattern that can only be described as an agglomeration of several financial symbols, burned into the flesh!$ = У $1|gen на $2|pre выжигается узор из груды денежных знаков!
+^(.+?)'s (.+?) chars rapidly into a strange pattern of holy symbols, burned into the flesh\.!$ = У $1|gen на $2|pre выжигается странный узор из святых символов!
+^(.+?)'s (.+?) chars rapidly, exposing ruined tissue and spreading angry red burns!$ = У $1|gen обугливается $2|nom: обнажаются сожжённые ткани, расползаются ожоги!
+^(.+?)'s (.+?) cracks apart, exposing broken bones to open air!$ = У $1|gen раскалывается $2|nom, обломки костей торчат наружу!
+^(.+?)'s (.+?) gets bruised up!$ = У $1|gen ушиблена $2|nom!
+^(.+?)'s (.+?) is (?:completely|outright) incinerated, falling to dust!!$ = У $1|gen $2|nom сгорает дотла и осыпается прахом!
+^(.+?)'s (.+?) is cut numerous times, leaving many small slashes\.!$ = У $1|gen $2|nom иссечена мелкими порезами!
+^(.+?)'s (.+?) is cut open, slowly leaking blood!$ = У $1|gen рассечена $2|nom, сочится кровь!
+^(.+?)'s (.+?) is cut open!$ = У $1|gen рассечена $2|nom!
+^(.+?)'s (.+?) is outright blasted apart, severing it completely!!$ = У $1|gen $2|nom разлетается в клочья и отрывается начисто!
+^(.+?)'s (.+?) is outright slashed off, severing it completely!!$ = У $1|gen $2|nom отсечена начисто!
+^(.+?)'s (.+?) is outright smashed to a gross pulp, severing it completely!!$ = У $1|gen $2|nom размозжена в кашу и отрывается начисто!
+^(.+?)'s (.+?) is pierced through the last (.+?) holding it together, severing it completely!!$ = У $1|gen $2|nom пробита насквозь и отрывается начисто!
+^(.+?)'s (.+?) is shattered through the last (.+?) holding it together, severing it completely!!$ = У $1|gen $2|nom раздроблена и отрывается начисто!
+^(.+?)'s (.+?) is slashed through the last (.+?) holding it together, severing it completely!!$ = У $1|gen $2|nom перерублена и отрывается начисто!
+^(.+?)'s (.+?) is ripped open, veins spurting blood!$ = У $1|gen разорвана $2|nom, из вен бьёт кровь!
+^(.+?)'s (.+?) is ripped open!$ = У $1|gen разорвана $2|nom!
+^(.+?)'s (.+?) is ruptured!$ = У $1|gen надорвана $2|nom!
+^(.+?)'s (.+?) is soaked as two spurts of black liquid spray from its ears!$ = У $1|gen из ушей брызжут две струи чёрной жидкости!
+^(.+?)'s (.+?) is split into two separated chunks!$ = У $1|gen $2|nom раскалывается надвое!
+^(.+?)'s (.+?) is split open, causing (?:his|her|their|its) internal organs to spill out!$ = У $1|gen вспорота $2|nom, наружу вываливаются внутренности!
+^(.+?)'s (.+?) is torn open, spraying blood wildly!$ = У $1|gen разодрана $2|nom, кровь хлещет во все стороны!
+^(.+?)'s (.+?) is torn open!$ = У $1|gen разодрана $2|nom!
+^(.+?)'s (.+?) janks violently and becomes unseated!$ = У $1|gen с хрустом выбита из сустава $2|nom!
+^(.+?)'s (.+?) looses a violent spray of blood, revealing a crushed eyeball!$ = У $1|gen брызжет кровь — глаз раздавлен!
+^(.+?)'s (.+?) looses a violent spray of blood, revealing a pierced wound!$ = У $1|gen брызжет кровь из колотой раны!
+^(.+?)'s (.+?) splits a small hole open!$ = У $1|gen в $2|pre открывается небольшая рана!
+^(.+?)'s (.+?) splits open, exposing a bare, cracked skull through the flesh and blood!$ = У $1|gen раскалывается $2|nom, сквозь плоть и кровь виден треснувший череп!
+^(.+?)'s (.+?) sprays chips of bone and develops a nasty looking bruise!$ = У $1|gen из $2|gen летят осколки кости, наливается страшный кровоподтёк!
+^(.+?)'s (.+?) spurts out a thin stream of blood!$ = У $1|gen из $2|gen бьёт тонкая струйка крови!
+^(.+?)'s (.+?) tears a hole open!$ = У $1|gen в $2|pre разверзается рана!
+^(.+?)'s (.+?) vaporizes as flesh, bone, and fat melt together in a horrifying mess!$ = У $1|gen $2|nom испаряется: плоть, кости и жир сплавляются в жуткое месиво!

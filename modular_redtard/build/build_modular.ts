@@ -5,6 +5,9 @@ import { prepareRockhill, printMapFailure, runBootstrapPython } from './prepare_
 const UPSTREAM_DME = 'tgstation.dme';
 const MODULE_INCLUDE = '#include "modular_redtard\\_module.dme"';
 const END_INCLUDE = '// END_INCLUDE';
+/// TG's defines the module changes before TG's code reads them (modular_redtard/maps/z_depth.dm): included right after them.
+const LAYERS_INCLUDE = '#include "code\\__DEFINES\\layers.dm"';
+const EARLY_DEFINES_INCLUDE = '#include "modular_redtard\\maps\\z_depth.dm"';
 const FINAL_DMB = 'tgstation.dmb';
 const FINAL_RSC = 'tgstation.rsc';
 const BUILD_BASE = 'tgstation.redtard.m';
@@ -16,6 +19,12 @@ const LOWMEM_MARKER = 'redtard_lowmem';
 const PREREQUISITES = ['icon-cutter', 'behavior-tree-compiler', 'tgui', 'tg-font'];
 const CONTENT_CHECK = 'modular_redtard/tools/check_modular_content.py';
 const MODULE_DEFINES = ['MINIMAL_CENTCOM'];
+const ROGUE_LOBBY_CONFIG = '../modular_redtard/tgui/rspack.rogue_lobby.ts';
+const ROGUE_LOBBY_INPUTS = ['modular_redtard/tgui', 'tgui/packages/tgui-lobby', 'tgui/rspack.config.ts'];
+const ROGUE_LOBBY_OUTPUTS = ['tgui/public/tgui-rogue-lobby.bundle.js', 'tgui/public/tgui-rogue-lobby.bundle.css'];
+const ROGUE_PANEL_CONFIG = '../modular_redtard/tgui/rspack.rogue_panel.ts';
+const ROGUE_PANEL_INPUTS = ['modular_redtard/tgui/rogue_panel', 'modular_redtard/tgui/rspack.rogue_panel.ts', 'tgui/packages/tgui-panel', 'tgui/packages/tgui', 'tgui/rspack.config.ts'];
+const ROGUE_PANEL_OUTPUTS = ['tgui/public/tgui-rogue-panel.bundle.js', 'tgui/public/tgui-rogue-panel.bundle.css'];
 
 type BuildOptions = {
   target: string;
@@ -37,12 +46,12 @@ async function main() {
   switch (options.target) {
     case 'dm':
     case 'build':
-      await runUpstream(PREREQUISITES);
+      await runPrerequisites();
       await compileModular(BUILD_BASE, ['CBT', ...options.defines], options);
       promoteArtifacts();
       break;
     case 'server':
-      await runUpstream(PREREQUISITES);
+      await runPrerequisites();
       await compileModular(BUILD_BASE, ['CBT', ...options.defines], options);
       promoteArtifacts();
       resetNextMapForNormalStart();
@@ -50,14 +59,14 @@ async function main() {
       break;
     case 'lowmem':
       if (!options.noBuild) {
-        await runUpstream(PREREQUISITES);
+        await runPrerequisites();
         await compileModular(BUILD_BASE, ['CBT', ...options.defines], options);
         promoteArtifacts();
       }
       await runLowMemory(options);
       break;
     case 'dm-test':
-      await runUpstream(PREREQUISITES);
+      await runPrerequisites();
       await runTests(options);
       break;
     case 'clean':
@@ -152,9 +161,15 @@ async function compileModular(baseName: string, defines: string[], options: Buil
   if (!dme.includes(END_INCLUDE)) {
     throw new Error(`${UPSTREAM_DME} has no ${END_INCLUDE} marker`);
   }
-  const withModule = dme.includes(MODULE_INCLUDE)
+  if (!dme.includes(LAYERS_INCLUDE)) {
+    throw new Error(`${UPSTREAM_DME} has no ${LAYERS_INCLUDE}`);
+  }
+  const withEarlyDefines = dme.includes(EARLY_DEFINES_INCLUDE)
     ? dme
-    : dme.replace(END_INCLUDE, `${MODULE_INCLUDE}\n${END_INCLUDE}`);
+    : dme.replace(LAYERS_INCLUDE, `${LAYERS_INCLUDE}\n${EARLY_DEFINES_INCLUDE}`);
+  const withModule = withEarlyDefines.includes(MODULE_INCLUDE)
+    ? withEarlyDefines
+    : withEarlyDefines.replace(END_INCLUDE, `${MODULE_INCLUDE}\n${END_INCLUDE}`);
   fs.writeFileSync(`${baseName}.dme`, withModule);
   try {
     await DreamMaker(`${baseName}.dme`, {
@@ -271,6 +286,52 @@ function restoreNextMap() {
   if (fs.existsSync(NEXT_MAP_BACKUP)) {
     fs.renameSync(NEXT_MAP_BACKUP, NEXT_MAP);
   }
+}
+
+async function runPrerequisites() {
+  await runUpstream(PREREQUISITES);
+  // The medieval main menu (modular_redtard/lobby/rogue_lobby.dm) and the chat panel with the translation
+  // (modular_redtard/localization/panel.dm).
+  await buildModuleBundle('tgui-rogue-lobby', ROGUE_LOBBY_CONFIG, ROGUE_LOBBY_INPUTS, ROGUE_LOBBY_OUTPUTS);
+  await buildModuleBundle('tgui-rogue-panel', ROGUE_PANEL_CONFIG, ROGUE_PANEL_INPUTS, ROGUE_PANEL_OUTPUTS);
+}
+
+/// A bundle of the module, built with its own rspack config over TG's after TG's tgui, and only when its sources
+/// (or the TG packages it draws on) are newer than the bundle.
+async function buildModuleBundle(name: string, config: string, inputs: string[], outputs: string[]) {
+  const newest = Math.max(...inputs.map(newestMtime));
+  const built = Math.min(...outputs.map((file) => (fs.existsSync(file) ? fs.statSync(file).mtimeMs : 0)));
+  if (built > newest) {
+    console.log(`modular_redtard: ${name} is up to date`);
+    return;
+  }
+  const proc = Bun.spawn(['bun', 'run', 'rspack', 'build', '--config', config], {
+    cwd: 'tgui',
+    stdin: 'inherit',
+    stdout: 'inherit',
+    stderr: 'inherit',
+  });
+  const code = await proc.exited;
+  if (code !== 0) {
+    throw new Error(`${name} build exited with code ${code}`);
+  }
+}
+
+function newestMtime(path: string): number {
+  if (!fs.existsSync(path)) {
+    return 0;
+  }
+  const stat = fs.statSync(path);
+  if (!stat.isDirectory()) {
+    return stat.mtimeMs;
+  }
+  let newest = stat.mtimeMs;
+  for (const entry of fs.readdirSync(path)) {
+    if (entry !== 'node_modules') {
+      newest = Math.max(newest, newestMtime(`${path}/${entry}`));
+    }
+  }
+  return newest;
 }
 
 async function runUpstream(args: string[]) {

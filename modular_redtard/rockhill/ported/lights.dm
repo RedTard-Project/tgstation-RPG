@@ -1,5 +1,18 @@
 /obj/machinery/light/rogue
 	parent_type = /obj/structure/rockhill/light
+	name = "light fixture"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi'
+	light_range = 8
+	light_power = 1
+	light_color = "#f9ad80"
+	icon_state = null
+	layer = BELOW_MOB_LAYER
+	base_state = "tube"
+	fueluse = 60 MINUTES
+	no_refuel = FALSE
+	crossfire = TRUE
+	status = LIGHT_OK
 
 /obj/machinery/light/rogue/campfire
 	name = "campfire"
@@ -77,6 +90,39 @@
 	light_color = "#ffa35c"
 	layer = 2.8
 	base_state = "wallfire"
+	fueluse = 0
+	no_refuel = TRUE
+	crossfire = FALSE
+	status = LIGHT_OK
+
+/obj/machinery/light/rogue/campfire/fireplace/crafted/blue
+	name = "fireplace"
+	desc = "A curious cool fire dances upon a bed of mysteriously glowing embers."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/wallfireblue.dmi'
+	icon_state = "wallfire1"
+	density = FALSE
+	pixel_y = 32
+	light_range = 5
+	light_power = 1
+	light_color = "#6e90ff"
+	layer = 2.8
+	base_state = "wallfire"
+	fueluse = 0
+	no_refuel = TRUE
+	crossfire = FALSE
+	status = LIGHT_OK
+
+/obj/machinery/light/rogue/campfire/fireplace/desert
+	name = "desert fireplace"
+	desc = "A warm fire dances between a pile of half-burnt logs upon a bed of glowing embers."
+	icon = 'modular_redtard/rockhill/icons/modular_deserttown/icons/fireplace.dmi'
+	icon_state = "fireplace1"
+	density = FALSE
+	light_range = 5
+	light_power = 1
+	light_color = "#ffa35c"
+	layer = 2.8
+	base_state = "fireplace"
 	fueluse = 0
 	no_refuel = TRUE
 	crossfire = FALSE
@@ -701,6 +747,22 @@
 	crossfire = TRUE
 	status = LIGHT_OK
 
+/obj/machinery/light/rogue/forge/arcane
+	name = "infernal forge"
+	desc = "This forge uses cycling magma from an internal core to heat things."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/forge.dmi'
+	icon_state = "infernal0"
+	density = TRUE
+	light_range = 8
+	light_power = 1
+	light_color = "#f9ad80"
+	layer = BELOW_MOB_LAYER
+	base_state = "infernal"
+	fueluse = 60 MINUTES
+	no_refuel = FALSE
+	crossfire = TRUE
+	status = LIGHT_OK
+
 /obj/machinery/light/rogue/hearth
 	name = "hearth"
 	desc = "A hearth of stones carefully arranged to support a pan or a pot above a steady bed of embers."
@@ -716,6 +778,22 @@
 	no_refuel = FALSE
 	crossfire = TRUE
 	status = LIGHT_OK
+
+/obj/machinery/light/rogue/hearth/mobilestove
+	name = "mobile stove"
+	desc = "A portable bronze stovetop. The underside is covered in an esoteric pattern of small tubes. Whatever heats the hob is hidden inside the body of the device"
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi'
+	icon_state = "hobostove1"
+	density = FALSE
+	light_range = 4
+	light_power = 1
+	light_color = "#4ac77e"
+	layer = TABLE_LAYER
+	base_state = "hobostove"
+	fueluse = 60 MINUTES
+	no_refuel = TRUE
+	crossfire = FALSE
+	status = LIGHT_BURNED
 
 /obj/machinery/light/rogue/lanternpost
 	name = "lantern post"

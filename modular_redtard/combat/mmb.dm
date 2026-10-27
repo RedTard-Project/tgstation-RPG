@@ -16,7 +16,7 @@
 /mob/living/carbon/human/proc/rogue_off_balance(duration)
 	rogue_offbalance_until = max(rogue_offbalance_until, world.time + duration)
 
-/datum/element/rogue_combat_bus/proc/on_middle_click(mob/living/carbon/human/source, atom/target, params)
+/datum/element/rogue_combat/proc/on_middle_click(mob/living/carbon/human/source, atom/target, params)
 	SIGNAL_HANDLER
 	if(source.rogue_mmb_intent == ROGUE_MMB_NONE || source.incapacitated || !source.client || world.time < source.next_move)
 		return NONE

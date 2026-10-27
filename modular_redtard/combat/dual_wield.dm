@@ -12,7 +12,7 @@
 	for(var/obj/item/held as anything in list(mainhand, offhand))
 		if(istype(held, /obj/item/rogueweapon/shield) || istype(held, /obj/item/flashlight))
 			return FALSE
-		if(held.w_class >= WEIGHT_CLASS_HUGE || held.wlength >= WLENGTH_GREAT || held.force < ROGUE_DUAL_WIELD_MIN_FORCE)
+		if(held.rogue_wielded || held.w_class >= WEIGHT_CLASS_HUGE || held.wlength >= WLENGTH_GREAT || held.force < ROGUE_DUAL_WIELD_MIN_FORCE)
 			return FALSE
 		if(held.associated_skill && rogue_weapon_rank(held) < ROGUE_DUAL_WIELD_RANK)
 			return FALSE

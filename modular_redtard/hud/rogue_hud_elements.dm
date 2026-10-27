@@ -93,7 +93,10 @@
 		return
 	var/list/modifiers = params2list(params)
 	if(LAZYACCESS(modifiers, RIGHT_CLICK))
-		user.emote("surrender")
+		if(rogue_combat_enabled())
+			INVOKE_ASYNC(user, TYPE_PROC_REF(/mob/living, rogue_yield))
+		else
+			user.emote("surrender")
 		return
 	if(LAZYACCESS(modifiers, MIDDLE_CLICK))
 		user.playsound_local(user, 'sound/machines/click.ogg', 50, FALSE)

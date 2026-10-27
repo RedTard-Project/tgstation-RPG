@@ -33,10 +33,10 @@
 	return ITEM_INTERACT_SUCCESS
 
 /mob/living/carbon/human/proc/rogue_shield_raised(obj/item/shield)
-	if(!rogue_charge_started || rogue_charge_released || get_active_held_item() != shield)
+	if(get_active_held_item() != shield)
 		return FALSE
 	var/datum/intent/intent = rogue_strike_intent(shield)
-	return intent?.tshield && world.time >= rogue_charge_started + intent.chargetime
+	return intent?.tshield && rogue_charge_full(intent)
 
 /datum/status_effect/rogue/limbguard
 	id = "rogue_limbguard"
@@ -171,7 +171,7 @@
 			var/obj/item/bodypart/arm = attacker.get_active_hand()
 			if(arm)
 				attacker.cause_wound_of_type_and_severity(WOUND_BLUNT, arm, WOUND_SEVERITY_SEVERE, WOUND_SEVERITY_SEVERE, wound_source = "limb guard")
-				guardian.visible_message(span_userdanger("Critical hit! [guardian] catches [attacker]'s bare-handed strike and SNAPS [attacker.p_their()] [arm.plaintext_zone]!"))
+				guardian.visible_message(rogue_crit_text("[guardian] catches [attacker]'s bare-handed strike and SNAPS [attacker.p_their()] [arm.plaintext_zone]!"))
 		guardian.rogue_riposte(attacker)
 		playsound(guardian, 'modular_redtard/rockhill/sound/combat/limbguard_struck.ogg', 100, TRUE)
 		qdel(src)
@@ -187,7 +187,7 @@
 
 /datum/status_effect/rogue/limbguard/proc/counter_bite(mob/living/carbon/human/biter)
 	punish(biter)
-	owner.visible_message(span_userdanger("Critical hit! [owner] deftly counters [biter]'s bite with a THUNDEROUS bash, SHATTERING [biter.p_their()] jaw!"))
+	owner.visible_message(rogue_crit_text("[owner] deftly counters [biter]'s bite with a THUNDEROUS bash, SHATTERING [biter.p_their()] jaw!"))
 	var/obj/item/bodypart/head = biter.get_bodypart(BODY_ZONE_HEAD)
 	if(head)
 		biter.cause_wound_of_type_and_severity(WOUND_BLUNT, head, WOUND_SEVERITY_SEVERE, WOUND_SEVERITY_SEVERE, wound_source = "limb guard")
