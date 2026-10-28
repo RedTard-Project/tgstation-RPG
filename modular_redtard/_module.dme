@@ -45,6 +45,7 @@
 #include "maps\medieval_round.dm"
 #include "lobby\rogue_lobby.dm"
 #include "combat\armor.dm"
+#include "combat\inspect.dm"
 #include "combat\intents.dm"
 #include "combat\alt_grip.dm"
 #include "combat\core.dm"

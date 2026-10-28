@@ -155,6 +155,7 @@
 #define COMSIG_KB_ROGUE_COMBAT_MODE_DOWN "keybinding_rogue_combat_mode_down"
 #define COMSIG_KB_ROGUE_RUN_DOWN "keybinding_rogue_run_down"
 #define COMSIG_KB_ROGUE_LOOK_UP_DOWN "keybinding_rogue_look_up_down"
+#define COMSIG_KB_ROGUE_LOOK_DOWN_DOWN "keybinding_rogue_look_down_down"
 #define COMSIG_KB_ROGUE_REST_DOWN "keybinding_rogue_rest_down"
 #define COMSIG_KB_ROGUE_YIELD_DOWN "keybinding_rogue_yield_down"
 #define COMSIG_KB_ROGUE_STOP_PULLING_DOWN "keybinding_rogue_stop_pulling_down"

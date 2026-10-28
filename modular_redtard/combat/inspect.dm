@@ -1,0 +1,115 @@
+// Ratwood's and Azure Peak's inspection of an item (game/objects/items.dm: get_inspect_button(), Topic "inspect",
+// get_force_string()): the examine text ends with {?}, and clicking it prints the item's properties in one block - force in
+// words, wielded force, balance, length, defense, sharpness, skill, special, coverage and durability. Medieval maps only.
+
+/obj/item/examine(mob/user)
+	. = ..()
+	if(rogue_combat_enabled() && (force || max_integrity))
+		. += span_info("<a href='byond://?src=[REF(src)];rogue_inspect=1'>Inspect {?}</a>")
+
+/obj/item/Topic(href, list/href_list)
+	. = ..()
+	if(!href_list["rogue_inspect"] || !rogue_combat_enabled())
+		return
+	var/mob/viewer = usr
+	if(!viewer?.client || (!isobserver(viewer) && get_dist(get_turf(viewer), get_turf(src)) > 1))
+		return
+	to_chat(viewer, boxed_message(jointext(rogue_inspect_lines(), "\n")))
+
+/// The inspection block (Ratwood's inspec list), without the links that explain each line.
+/obj/item/proc/rogue_inspect_lines()
+	. = list(span_notice("Properties of [src]"))
+	if(minstr)
+		. += "<b>MIN.STR:</b> [minstr]"
+	if(force)
+		. += "<b>FORCE:</b> [rogue_force_word(force)]"
+	if(rogue_force_wielded)
+		. += "<b>WIELDED FORCE:</b> [rogue_force_word(rogue_force_wielded)]"
+	switch(wbalance)
+		if(WBALANCE_HEAVY)
+			. += "<b>BALANCE:</b> Heavy"
+		if(WBALANCE_SWIFT)
+			. += "<b>BALANCE:</b> Swift"
+	switch(wlength)
+		if(WLENGTH_SHORT)
+			. += "<b>LENGTH:</b> Short"
+		if(WLENGTH_LONG)
+			. += "<b>LENGTH:</b> Long"
+		if(WLENGTH_GREAT)
+			. += "<b>LENGTH:</b> Great"
+	if(rogue_force_wielded)
+		. += "<b>TWO-HANDED</b>"
+	if(can_parry)
+		. += "<b>DEFENSE:</b> [wdefense][wdefense_wbonus ? " (+[wdefense_wbonus] wielded)" : ""]"
+	if(max_blade_int)
+		. += "<b>SHARPNESS:</b> [round(blade_int / max_blade_int * 100)]% ([round(blade_int)])"
+	if(associated_skill)
+		var/datum/attribute/skill/skill = GET_ROGUE_ATTRIBUTE(associated_skill)
+		if(skill)
+			. += "<b>SKILL:</b> [skill.name]"
+	var/datum/special_intent/special_type = special_instance || special
+	if(special_type)
+		. += "<b>SPECIAL:</b> [ispath(special_type) ? initial(special_type.name) : special_type.name]"
+	if(intdamage_factor != 1 && force >= 5)
+		. += "<b>INTEGRITY DAMAGE:</b> [intdamage_factor * 100]%"
+	if(isclothing(src))
+		. += rogue_coverage_lines()
+	if(max_integrity)
+		// Ratwood counts durability down to where the item is broken, not down to zero; worn armor breaks at the module's share.
+		var/failure = max_integrity * (isclothing(src) ? ROGUE_ARMOR_FAILURE_SHARE : integrity_failure)
+		var/whole = max_integrity - failure
+		var/left = max(get_integrity() - failure, 0)
+		. += "<b>DURABILITY:</b> [whole > 0 ? round(left / whole * 100) : 0]% ([floor(left)])"
+
+/// What the garment covers: TG's body parts, and Ratwood's parts of the face the porter keeps apart (rogue_face_coverage).
+/obj/item/proc/rogue_coverage_lines()
+	var/static/list/part_names = list(
+		"Head" = HEAD,
+		"Neck" = NECK,
+		"Chest" = CHEST,
+		"Groin" = GROIN,
+		"Right arm" = ARM_RIGHT,
+		"Left arm" = ARM_LEFT,
+		"Right hand" = HAND_RIGHT,
+		"Left hand" = HAND_LEFT,
+		"Right leg" = LEG_RIGHT,
+		"Left leg" = LEG_LEFT,
+		"Right foot" = FOOT_RIGHT,
+		"Left foot" = FOOT_LEFT,
+	)
+	var/static/list/face_names = list(
+		"Eyes" = ROGUE_FACE_EYES,
+		"Nose" = ROGUE_FACE_NOSE,
+		"Mouth" = ROGUE_FACE_MOUTH,
+		"Ears" = ROGUE_FACE_EARS,
+		"Hair" = ROGUE_FACE_HAIR,
+	)
+	. = list()
+	var/list/parts = list()
+	for(var/part in part_names)
+		if(body_parts_covered & part_names[part])
+			parts += part
+	if(length(parts))
+		. += "<b>COVERAGE:</b> [jointext(parts, " | ")]"
+	var/list/face = list()
+	for(var/part in face_names)
+		if(rogue_face_coverage & face_names[part])
+			face += part
+	if(length(face))
+		. += "<b>FACE:</b> [jointext(face, " | ")]"
+
+/// Ratwood's get_force_string(): force in words.
+/proc/rogue_force_word(force)
+	if(force < 10)
+		return "Puny"
+	if(force < 15)
+		return "Weak"
+	if(force < 20)
+		return "Modest"
+	if(force < 25)
+		return "Fine"
+	if(force < 30)
+		return "Great"
+	if(force <= 35)
+		return "Grand"
+	return "Mighty"
