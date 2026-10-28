@@ -150,7 +150,8 @@
 
 /datum/keybinding/rogue/middle_intent/special
 	name = "rogue_mmb_special"
-	hotkey_keys = list("L")
+	// Unbound: L looks up, as in TG; the special is picked on the HUD's middle-click quad and used with the middle button.
+	hotkey_keys = list(UNBOUND_KEY)
 	full_name = "Middle intent: special"
 	description = "Turn the special middle-click intent on or off: middle click uses the held weapon's special attack"
 	keybind_signal = COMSIG_KB_ROGUE_MMB_SPECIAL_DOWN
@@ -722,9 +723,6 @@
 	return !rogue_layout_active(user) && ..()
 
 /datum/keybinding/living/give/can_use(client/user)
-	return !rogue_layout_active(user) && ..()
-
-/datum/keybinding/living/look_up/can_use(client/user)
 	return !rogue_layout_active(user) && ..()
 
 /datum/keybinding/mob/stop_pulling/can_use(client/user)

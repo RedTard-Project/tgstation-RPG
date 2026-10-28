@@ -1,6 +1,13 @@
 #define OTHER_Z_MARGIN 20
+/// The other z-level the dungeon generator builds on (Ratwood _maps/map_files/otherz/dungeon.json).
+#define OTHER_Z_DUNGEON_MAP "dungeon.dmm"
+
+/// No dungeon level, like Ratwood's and Vanderlin's NO_DUNGEON: a faster load for testing.
+/datum/config_entry/flag/rogue_no_dungeon
 
 /datum/map_config/var/list/other_z
+/// Set by the lowmem launch with --no-dungeon: this load skips the dungeon level.
+/datum/map_config/var/no_dungeon = FALSE
 
 /datum/map_config/LoadConfig(filename, error_if_missing)
 	. = ..()
@@ -10,6 +17,7 @@
 	var/list/levels = map_json?["other_z"]
 	if(islist(levels))
 		other_z = levels.Copy()
+	no_dungeon = !!map_json?["no_dungeon"]
 	return .
 
 /datum/other_z_stack
@@ -35,7 +43,11 @@
 
 /datum/controller/subsystem/mapping/proc/load_other_z()
 	var/list/stacks = list()
+	var/skip_dungeon = current_map?.no_dungeon || CONFIG_GET(flag/rogue_no_dungeon)
 	for(var/list/entry as anything in current_map?.other_z)
+		if(skip_dungeon && entry["map_file"] == OTHER_Z_DUNGEON_MAP)
+			log_world("Skipped [entry["name"]]: no dungeon (ROGUE_NO_DUNGEON or lowmem --no-dungeon)")
+			continue
 		var/map_path = "_maps/[entry["map_path"]]/[entry["map_file"]]"
 		var/datum/parsed_map/parsed = fexists(map_path) ? new(file(map_path)) : null
 		var/list/bounds = parsed?.bounds
@@ -78,3 +90,4 @@
 	return "[length(traits)]z|[jointext(parts, "|")]"
 
 #undef OTHER_Z_MARGIN
+#undef OTHER_Z_DUNGEON_MAP
