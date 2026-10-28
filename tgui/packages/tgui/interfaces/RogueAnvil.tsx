@@ -9,6 +9,7 @@ import {
   Table,
   Tabs,
 } from 'tgui-core/components';
+import { classes } from 'tgui-core/react';
 
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
@@ -18,7 +19,9 @@ type Recipe = {
   name: string;
   category: string;
   group: string;
-  bar: string;
+  icon: string;
+  bar: string | null;
+  blade: string | null;
   materials: string[];
   count: number;
   skill: string | null;
@@ -31,6 +34,10 @@ type Data = {
   current: string | null;
   recipes: Recipe[];
 };
+
+// What the work starts from: the bar, a cast blade, or either.
+const startText = (recipe: Recipe) =>
+  [recipe.bar, recipe.blade].filter(Boolean).join(' or ');
 
 // Ratwood anvil window: recipes for the bar on the anvil, by tab and group.
 export const RogueAnvil = () => {
@@ -102,6 +109,14 @@ export const RogueAnvil = () => {
                       .filter((recipe) => recipe.group === group)
                       .map((recipe) => (
                         <Table.Row key={recipe.ref} className="candystripe">
+                          <Table.Cell collapsing>
+                            <Box
+                              className={classes([
+                                'rogue_anvil32x32',
+                                recipe.icon,
+                              ])}
+                            />
+                          </Table.Cell>
                           <Table.Cell>
                             <Button
                               fluid
@@ -117,7 +132,7 @@ export const RogueAnvil = () => {
                             </Button>
                           </Table.Cell>
                           <Table.Cell collapsing color="label">
-                            {recipe.bar}
+                            {startText(recipe)}
                             {recipe.materials.length > 0 &&
                               `, ${recipe.materials.join(', ')}`}
                           </Table.Cell>

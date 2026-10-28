@@ -122,6 +122,12 @@
 	mutanttongue = /obj/item/organ/tongue/rogue_race/rogue_goblinp
 	mutanteyes = /obj/item/organ/eyes/night_vision/rogue_wild_goblin
 
+GLOBAL_LIST_INIT(rogue_human_voices, rogue_human_voices())
+
+/proc/rogue_human_voices()
+	return list(
+		)
+
 /obj/item/organ/eyes/night_vision/rogue_wild_goblin
 	name = "wild goblin eyes"
 	desc = "What manner of madness have these reddened orbs espied in the darker places of the realm?"

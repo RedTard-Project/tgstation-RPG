@@ -38,3 +38,5 @@
 	window.send_asset(get_asset_datum(/datum/asset/json/rogue_chat_localization))
 	rogue_send_language()
 	rogue_send_declensions(GLOB.rogue_chat_declensions)
+	// Russian names under the cursor (screentips.dm) for the mob the player is in now; later mobs follow on login.
+	GLOB.rogue_screentip_names?.follow(client?.mob)

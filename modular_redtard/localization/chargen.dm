@@ -13,6 +13,8 @@ GLOBAL_LIST_INIT(rogue_chargen_aliases, list(
 	"/datum/species/elf/dark" = /datum/species/rogue_drow,
 ))
 GLOBAL_VAR_INIT(rogue_chargen_loaded, FALSE)
+/// The fields of chargen.txt a patron's card shows (heritage/charsetup.dm).
+GLOBAL_LIST_INIT(rogue_chargen_patron_fields, list("domain", "boons", "sins", "flaws", "worshippers"))
 
 /proc/rogue_chargen_path(key)
 	return GLOB.rogue_chargen_aliases[key] || GLOB.rogue_vibelin_species[key] || text2path(key)
@@ -85,3 +87,35 @@ GLOBAL_VAR_INIT(rogue_chargen_loaded, FALSE)
 			. = translated
 	if(!isnull(term))
 		. = replacetext(., "%TERM%", "[term]")
+
+/// Every species, faith, patron and culture the menu shows that chargen.txt leaves in English, written to
+/// chargen_sheet.log already in the file's line format with the English on the right, so filling the file is copy-paste
+/// (Vibelin's chargen_sheet_report()). A key is this build's type path, which chargen.txt takes as it takes Vibelin's.
+ADMIN_VERB(rogue_chargen_missing_keys, R_DEBUG, "Chargen Sheet: Missing Keys", "Write the species, faiths, patrons and cultures chargen.txt leaves in English to chargen_sheet.log, in its line format.", ADMIN_CATEGORY_ROGUE)
+	rogue_chargen_load()
+	var/list/lines = list()
+	for(var/species_id in get_selectable_species())
+		var/species_type = GLOB.species_list[species_id]
+		var/datum/species/species = GLOB.species_prototypes[species_type]
+		if(species && !GLOB.rogue_chargen_entries[species_type])
+			lines += "[species_type] = [species.name] | [species.get_species_description()]"
+	for(var/path in GLOB.rogue_faiths)
+		var/datum/faith/faith = GLOB.rogue_faiths[path]
+		if(!GLOB.rogue_chargen_entries[path])
+			lines += "[path] = [faith.name] | [faith.desc]"
+	for(var/path in GLOB.rogue_patrons)
+		var/datum/patron/patron = GLOB.rogue_patrons[path]
+		if(!GLOB.rogue_chargen_entries[path])
+			lines += "[path] = [patron.display_title()] | [patron.desc]"
+		for(var/field in GLOB.rogue_chargen_patron_fields)
+			var/text = patron.vars[field]
+			if(length(text) && !GLOB.rogue_chargen_fields["[path]:[field]"])
+				lines += "[path]:[field] = [text]"
+	for(var/path in GLOB.rogue_cultures)
+		var/datum/culture/culture = GLOB.rogue_cultures[path]
+		if(!GLOB.rogue_chargen_entries[path])
+			lines += "[path] = [culture.name] | [culture.description]"
+	var/log_path = "[GLOB.log_directory]/chargen_sheet.log"
+	for(var/line in lines)
+		WRITE_LOG(log_path, replacetext("[line]", "\n", "\\n"))
+	to_chat(user, span_notice("Chargen sheet: [length(lines)] untranslated lines written to [log_path]."))

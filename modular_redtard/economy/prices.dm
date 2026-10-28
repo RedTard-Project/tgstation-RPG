@@ -27,18 +27,27 @@
 		randomize_price()
 	return sellprice
 
+/// A crafted item is worth more or less by its quality tier (Ratwood apply_quality(): sellprice times ITEM_QUALITY_MULT).
+/obj/item/get_real_price()
+	. = ..()
+	if(. > 0 && !isnull(rogue_quality))
+		. = max(1, round(. * rogue_quality_price_mult(rogue_quality)))
+
 /// The worth of the thing with everything inside it, for appraisal (Ratwood appraise_price()).
 /atom/movable/proc/appraise_price()
 	. = get_real_price()
 	for(var/obj/item/inside in src)
 		. += inside.appraise_price()
 
-/// Ratwood's value line on examine (code/game/objects/examine.dm): an appraiser (Skilled Appraiser) and ghosts see the worth,
-/// a poor appraiser a guess within a quarter, others "Unknown"; coins show their worth to anyone. Things worth nothing say nothing.
 /obj/item/examine(mob/user)
 	. = ..()
-	if(!rogue_economy_enabled())
-		return
+	if(rogue_economy_enabled())
+		. += rogue_value_examine(user)
+
+/// Ratwood's value line on examine (code/game/objects/examine.dm): an appraiser (Skilled Appraiser) and ghosts see the worth,
+/// a poor appraiser a guess within a quarter, others "Unknown"; coins show their worth to anyone. Things worth nothing say nothing.
+/obj/item/proc/rogue_value_examine(mob/user)
+	. = list()
 	var/value = appraise_price()
 	if(value <= 0)
 		return

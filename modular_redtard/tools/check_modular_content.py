@@ -94,6 +94,8 @@ class Tree:
         self.module = set()
         self.core = set()
         self.defines = {}
+        # Function-like macros have no value to evaluate, but a var may still be set through one.
+        self.macros = set()
         for root in ROOTS:
             for path in walk_dm(root):
                 self.read(path, root == MODULE)
@@ -114,6 +116,8 @@ class Tree:
             if define:
                 if not define.group(2):
                     self.defines[define.group(1)] = strip_comment(define.group(3))
+                else:
+                    self.macros.add(define.group(1))
                 continue
             if line[:1] == '/' and not line.startswith('//'):
                 match = TYPE_RE.match(line)
@@ -375,7 +379,7 @@ def main():
         for name, value in tree.vars.get(path, {}).items():
             bare = re.sub(r'"(?:[^"\\]|\\.)*"|\'[^\']*\'', '', value)
             for token in CONSTANT_RE.findall(bare):
-                if token not in tree.defines and token not in builtins:
+                if token not in tree.defines and token not in tree.macros and token not in builtins:
                     problems['constants'].append(f'{path}: {name} = {value}, but {token} is not #defined')
 
     listings = {}

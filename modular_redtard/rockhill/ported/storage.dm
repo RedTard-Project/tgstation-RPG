@@ -122,6 +122,16 @@
 	. = ..()
 	set_holdable(list(/obj/item/roguekey, /obj/item/seal))
 
+/datum/storage/rogue_grid/roguetown/messkit
+	screen_max_columns = 3
+	screen_max_rows = 3
+	max_specific_storage = WEIGHT_CLASS_HUGE
+	rogue_not_while_equipped = TRUE
+
+/datum/storage/rogue_grid/roguetown/messkit/New()
+	. = ..()
+	set_holdable(list(/obj/item/cooking, /obj/item/kitchen, /obj/item/reagent_containers, /obj/item/reagent_containers/food/snacks))
+
 /datum/storage/rogue_grid/roguetown/sack
 	screen_max_columns = 4
 	screen_max_rows = 5
@@ -146,6 +156,10 @@
 /datum/storage/rogue_grid/roguetown/surgery_bag/New()
 	. = ..()
 	set_holdable(list(/obj/item/leechtick_bloated, /obj/item/natural/bundle/cloth/bandage, /obj/item/natural/cloth, /obj/item/natural/worms/leech, /obj/item/needle, /obj/item/reagent_containers/lux, /obj/item/reagent_containers/lux_impure, /obj/item/rogueweapon/surgery))
+
+/datum/storage/rogue_grid/grid/headhook/bronze
+	screen_max_columns = 6
+	screen_max_rows = 8
 
 /datum/storage/rogue_grid/grid/orestore/bronze
 	screen_max_columns = 8

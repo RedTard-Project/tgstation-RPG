@@ -50,6 +50,11 @@ export function featureName(
   return tr(features[key]?.name ?? entry?.name ?? key);
 }
 
+/** A description as TG writes it (indented lines in a template string) on one line: the key of its translation. */
+function plainText(text: string) {
+  return text.replace(/\s+/g, ' ').trim();
+}
+
 type FeatureRowProps = {
   featureKey: string;
   value: unknown;
@@ -64,7 +69,7 @@ export function FeatureRow(props: FeatureRowProps) {
   return (
     <LabeledList.Item
       label={featureName(featureKey, data.features, tr)}
-      tooltip={feature?.description}
+      tooltip={feature?.description && tr(plainText(feature.description))}
       verticalAlign="middle"
     >
       {feature ? (

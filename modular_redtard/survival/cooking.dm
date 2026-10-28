@@ -82,9 +82,12 @@
 	var/obj/item/reagent_containers/food/food
 	/// Whose skill speeds the cooking (Ratwood lastuser).
 	var/datum/weakref/cook
+	/// Bubbling of a boiling pot (Ratwood boilloop), made when first needed.
+	var/datum/looping_sound/boiling/boilloop
 
 /obj/machinery/light/rogue/hearth/Destroy()
 	STOP_PROCESSING(SSobj, src)
+	QDEL_NULL(boilloop)
 	clear_heat()
 	var/atom/spot = drop_location()
 	food?.forceMove(spot)
@@ -107,6 +110,7 @@
 	if(.)
 		clear_heat()
 		STOP_PROCESSING(SSobj, src)
+		update_boiling()
 		if(food)
 			SEND_SIGNAL(food, COMSIG_ITEM_GRILL_TURNED_OFF)
 			update_appearance(UPDATE_OVERLAYS)
@@ -125,8 +129,9 @@
 			var/obj/item/reagent_containers/food/fried = frying.cooked_into?.resolve()
 			if(istype(fried) && fried.loc == src)
 				put_in_pan(fried)
-	else if(attachment?.reagents)
-		attachment.reagents.expose_temperature(400, 0.033 * seconds / 2)
+	else if(istype(attachment, /obj/item/reagent_containers/glass/bucket/pot) && attachment.reagents)
+		attachment.reagents.expose_temperature(ROGUE_HEARTH_HEAT, ROGUE_HEARTH_HEAT_COEFF * seconds / ROGUE_REAGENT_TICK)
+		update_boiling()
 
 /obj/machinery/light/rogue/hearth/update_overlays()
 	. = ..()
@@ -146,9 +151,11 @@
 		return
 	if(istype(attachment, /obj/item/cooking/pan))
 		. += food ? "There's \a [attachment] on it with \a [food] in it." : "There's \a [attachment] on it."
-	else
-		var/boiling = attachment.reagents?.chem_temp > WATER_BOILING_POINT
+	else if(istype(attachment, /obj/item/reagent_containers/glass/bucket/pot))
+		var/boiling = attachment.reagents?.chem_temp > ROGUE_STEW_TEMPERATURE
 		. += "There's \a [attachment] on it[boiling ? ", it is boiling" : ". It is not boiling"]."
+	else
+		. += "There's \a [attachment] on it."
 	. += span_notice("Right click to start fanning the flame and make it cook faster.")
 
 /obj/machinery/light/rogue/hearth/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
@@ -162,6 +169,10 @@
 	if(istype(attachment, /obj/item/reagent_containers/glass/bucket/pot) && istype(tool, /obj/item/reagent_containers/glass/bowl))
 		to_chat(user, span_notice("Remove the pot from the hearth first."))
 		return ITEM_INTERACT_BLOCKING
+	if(istype(attachment, /obj/item/reagent_containers/glass/bucket/pot))
+		. = pot_interaction(user, tool)
+		if(.)
+			return .
 	if(istype(attachment, /obj/item/cooking/pan) && !food && istype(tool, /obj/item/reagent_containers/food))
 		if(!user.transferItemToLoc(tool, src))
 			return ITEM_INTERACT_BLOCKING
@@ -192,6 +203,7 @@
 		update_appearance(UPDATE_OVERLAYS)
 	else if(gone == attachment)
 		attachment = null
+		update_boiling()
 		update_appearance(UPDATE_OVERLAYS)
 
 /// Ratwood hearth attack_hand(): take the food out of the pan, then the pan or the pot; with nothing on it, warm the hands.
@@ -229,7 +241,7 @@
 
 /// Ratwood oven (code/modules/roguetown/roguejobs/cook/tools/oven.dm): up to five items go in through the top of the sprite and
 /// bake while it burns, at half the speed of a pan (sped up by the skill of whoever last used it). The food sits on a TG oven
-/// tray inside, so it bakes with TG's /datum/component/bakeable.
+/// tray inside, so it bakes with TG's /datum/component/bakeable. Raw clay fires in it the same way (crafting/pottery.dm).
 /obj/machinery/light/rogue/oven
 	var/obj/item/plate/oven_tray/tray
 	var/max_food = 5
@@ -271,6 +283,8 @@
 	var/burning = FALSE
 	var/list/before = tray.contents.Copy()
 	for(var/obj/item/baked as anything in before)
+		if(rogue_crack_pottery(baked, seconds_per_tick))
+			continue
 		var/result = SEND_SIGNAL(baked, COMSIG_ITEM_OVEN_PROCESS, src, seconds_per_tick * 0.5 * (HAS_TRAIT(baked, TRAIT_BAKEABLE) ? divisor : 1))
 		if(result & COMPONENT_BAKING_BAD_RESULT)
 			burning = TRUE

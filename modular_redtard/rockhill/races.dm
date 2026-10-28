@@ -50,3 +50,39 @@
 	owner.set_eye_blur_if_lower(6 SECONDS)
 	if(prob(50))
 		to_chat(owner, span_warning("My eyes burn and my body aches."))
+
+/// Ratwood's generic human voice (its male and female voicepacks; ported/races.dm GLOB.rogue_human_voices) for a body with
+/// a plain human tongue on medieval maps: TG's emotes of such a body sound as Ratwood's humans, as a tongue's voice does.
+/datum/element/rogue_human_voice
+	element_flags = ELEMENT_DETACH_ON_HOST_DESTROY
+
+/datum/element/rogue_human_voice/Attach(datum/target)
+	. = ..()
+	if(!ishuman(target))
+		return ELEMENT_INCOMPATIBLE
+	for(var/key in GLOB.rogue_human_voices)
+		RegisterSignal(target, COMSIG_MOB_EMOTE_SOUND(key), PROC_REF(voice))
+
+/datum/element/rogue_human_voice/Detach(datum/source, ...)
+	for(var/key in GLOB.rogue_human_voices)
+		UnregisterSignal(source, COMSIG_MOB_EMOTE_SOUND(key))
+	return ..()
+
+/datum/element/rogue_human_voice/proc/voice(mob/living/carbon/human/source, key, list/sounds)
+	SIGNAL_HANDLER
+	var/sound = get_emote_sound_from_list(GLOB.rogue_human_voices[key], source)
+	if(sound)
+		sounds[sound] = EMOTE_SOUND_TONGUE
+
+/// The species' tongue is a plain human one, without a voice of its own.
+/datum/species/proc/rogue_has_plain_voice()
+	return mutanttongue == /obj/item/organ/tongue
+
+/datum/species/on_species_gain(mob/living/carbon/human/human_who_gained_species, datum/species/old_species, pref_load, regenerate_icons = TRUE, replace_missing = TRUE)
+	. = ..()
+	if(rogue_combat_enabled() && rogue_has_plain_voice())
+		human_who_gained_species.AddElement(/datum/element/rogue_human_voice)
+
+/datum/species/on_species_loss(mob/living/carbon/human/human, datum/species/new_species, pref_load)
+	human.RemoveElement(/datum/element/rogue_human_voice)
+	return ..()

@@ -1,5 +1,6 @@
-// The migrant panel of medieval maps (modular_redtard/migrants/migrants.dm): Ratwood's and Azure Peak's MigrantPanel
-// without triumphs. The waves forming now take a queue for a role; the waves that may roll are listed with their chance.
+// The migrant panel of medieval maps (modular_redtard/migrants/migrants.dm): Ratwood's and Azure Peak's MigrantPanel.
+// The waves forming now take a queue for a role; the waves that may roll are listed with their chance, and triumphs
+// pledged to a wave make it likelier.
 import {
   Box,
   Button,
@@ -44,12 +45,16 @@ type Wave = {
   locked_until: number;
   min_optional_fills: number;
   roles: Role[];
+  triumph_total: number;
+  triumph_threshold: number;
+  my_contribution: number;
 };
 
 type Data = {
   server_time: number;
   wave_number: number;
   active_migrants: number;
+  player_triumph: number;
   queued_wave: string | null;
   queued_role: string | null;
   next_regular_at: number | null;
@@ -91,6 +96,7 @@ export const RogueMigrantPanel = () => {
         >
           <Stack vertical>
             <Stack.Item>Migrants queued: {data.active_migrants}</Stack.Item>
+            <Stack.Item>My triumphs: {data.player_triumph}</Stack.Item>
             {!!data.next_regular_at && (
               <Stack.Item>
                 Next regular wave in {clock(data.next_regular_at - server_time)}
@@ -112,8 +118,14 @@ export const RogueMigrantPanel = () => {
           {forming.map((wave) => (
             <Section
               key={wave.ref}
-              title={wave.name}
-              buttons={<Box color="good">Arrives in {clock(wave.arrival_at - server_time)}</Box>}
+              title={
+                wave.track === 'triumph' ? `${wave.name} (pledged)` : wave.name
+              }
+              buttons={
+                <Box color="good">
+                  Arrives in {clock(wave.arrival_at - server_time)}
+                </Box>
+              }
             >
               <RoleList wave={wave} />
             </Section>
@@ -136,9 +148,38 @@ export const RogueMigrantPanel = () => {
               </Stack>
               <Box color="label">
                 {wave.roles
-                  .map((role) => `${role.name}${role.amount > 1 ? ` x${role.amount}` : ''}${role.kind === 'optional' ? ' (optional)' : ''}`)
+                  .map(
+                    (role) =>
+                      `${role.name}${role.amount > 1 ? ` x${role.amount}` : ''}${role.kind === 'optional' ? ' (optional)' : ''}`,
+                  )
                   .join(', ')}
               </Box>
+              <Stack align="center">
+                <Stack.Item
+                  grow
+                  color={
+                    wave.triumph_total >= wave.triumph_threshold
+                      ? 'good'
+                      : 'label'
+                  }
+                >
+                  Triumphs pledged: {wave.triumph_total}/
+                  {wave.triumph_threshold}
+                  {wave.my_contribution > 0 &&
+                    ` (mine: ${wave.my_contribution})`}
+                </Stack.Item>
+                <Stack.Item>
+                  <Button
+                    compact
+                    icon="crown"
+                    disabled={!!wave.maxed || data.player_triumph <= 0}
+                    tooltip="Pledge triumphs: each makes the wave likelier, pledgers take their roles first, and at the threshold it forms next."
+                    onClick={() => act('pledge', { wave: wave.ref })}
+                  >
+                    Pledge
+                  </Button>
+                </Stack.Item>
+              </Stack>
             </Box>
           ))}
         </Section>
@@ -163,7 +204,9 @@ const RoleList = (props: { wave: FormingWave }) => {
             selected={claimed}
             disabled={!role.can_be}
             icon={claimed ? 'check' : undefined}
-            onClick={() => act('queue_role', { wave: wave.ref, role: role.ref })}
+            onClick={() =>
+              act('queue_role', { wave: wave.ref, role: role.ref })
+            }
           >
             {role.name} x{role.amount}
             {role.stars > 0 && ` ${'★'.repeat(Math.min(role.stars, 5))}`}

@@ -14,6 +14,13 @@
 #define BB_ROGUE_NPC_ZONE_COUNT "rogue_npc_zone_count"
 #define BB_ROGUE_NPC_WEAKPOINT "rogue_npc_weakpoint"
 #define BB_ROGUE_NPC_JUKE_AT "rogue_npc_juke_at"
+/// Azure Peak BB_HUMAN_NPC_SPECIAL_EVAL_AT: after a missed roll for its special, the NPC does not roll again before this.
+#define BB_ROGUE_NPC_SPECIAL_EVAL_AT "rogue_npc_special_eval_at"
+/// Azure Peak BB_HUMAN_NPC_TECHNIQUE_CD: after a special, the NPC does not use another before this.
+#define BB_ROGUE_NPC_TECHNIQUE_AT "rogue_npc_technique_at"
+/// Azure Peak BB_HUMAN_NPC_SWINGS_TAKEN and BB_HUMAN_NPC_SWINGS_TARGET: the blows struck at the current foe, and that foe.
+#define BB_ROGUE_NPC_BLOWS "rogue_npc_blows"
+#define BB_ROGUE_NPC_BLOWS_AT "rogue_npc_blows_at"
 
 #define ROGUE_NPC_FLEE_HEALTH rogue_value("npc_flee_health")
 #define ROGUE_NPC_FLEE_STOP rogue_value("npc_flee_stop")
@@ -30,6 +37,14 @@
 #define ROGUE_NPC_JUKE_COOLDOWN rogue_value("npc_juke_cooldown")
 #define ROGUE_NPC_REACTION_MIN rogue_value("npc_reaction_min")
 #define ROGUE_NPC_REACTION_MAX rogue_value("npc_reaction_max")
+#define ROGUE_NPC_SPECIAL_EVAL rogue_value("npc_special_eval")
+#define ROGUE_NPC_SPECIAL_COOLDOWN_FACTOR rogue_value("npc_special_cooldown_factor")
+#define ROGUE_NPC_SPECIAL_PAUSE rogue_value("npc_special_pause")
+#define ROGUE_NPC_SPECIAL_SHARE_RANGE rogue_value("npc_special_share_range")
+#define ROGUE_NPC_SPECIAL_OPENER rogue_value("npc_special_opener")
+#define ROGUE_NPC_SPECIAL_MIN_INT rogue_value("npc_special_min_int")
+/// Azure Peak: after a special the next blow waits this many times the usual click delay.
+#define ROGUE_NPC_SPECIAL_RECOVERY 1.8
 
 /// Vibelin's stance weights and their shifts.
 #define ROGUE_NPC_STRONG_WEIGHT 45
@@ -174,6 +189,8 @@
 	SIGNAL_HANDLER
 	clear_blackboard_key(BB_ROGUE_NPC_WEAKPOINT)
 	clear_blackboard_key(BB_ROGUE_NPC_STANCE_LEFT)
+	clear_blackboard_key(BB_ROGUE_NPC_BLOWS)
+	clear_blackboard_key(BB_ROGUE_NPC_BLOWS_AT)
 	if(source.combat_mode)
 		INVOKE_ASYNC(source, TYPE_PROC_REF(/mob/living, set_combat_mode), FALSE)
 
@@ -190,6 +207,7 @@
 		rogue_scan_weakpoint(fighter, foe)
 	fighter.face_atom(foe)
 	rogue_choose_zone(fighter, foe)
+	rogue_count_blow(foe)
 	if(rogue_try_special(fighter, foe))
 		return TRUE
 	rogue_choose_stance(fighter, foe)
@@ -281,15 +299,61 @@
 	SEND_SIGNAL(fighter, COMSIG_MOB_ROGUE_RMB_CHANGED)
 	set_blackboard_key(BB_ROGUE_NPC_STANCE_LEFT, rand(ROGUE_NPC_STANCE_MIN, ROGUE_NPC_STANCE_MAX))
 
-/// Sometimes the weapon's special instead of a blow, when it is off cooldown and the fighter knows the weapon well enough.
+/// Azure Peak _choose_attack_zone(): counts the blows struck at this foe, starting over for a new one.
+/datum/ai_controller/basic_controller/simple/rogue_human/proc/rogue_count_blow(mob/living/foe)
+	if(blackboard[BB_ROGUE_NPC_BLOWS_AT] != foe)
+		set_blackboard_key(BB_ROGUE_NPC_BLOWS_AT, foe)
+		set_blackboard_key(BB_ROGUE_NPC_BLOWS, 0)
+	set_blackboard_key(BB_ROGUE_NPC_BLOWS, blackboard[BB_ROGUE_NPC_BLOWS] + 1)
+
+/// Sometimes the weapon's special instead of a blow, when it is off cooldown, the fighter knows the weapon well enough and has
+/// the breath for it (Azure Peak human_basic_attack _try_weapon_special()). Not as an opener: only after npc_special_opener
+/// plain blows at this foe, and not by an NPC too dull for tactics (npc_special_min_int). The special judges the moment itself
+/// (rogue_npc_odds() of ai/npc_specials.dm: how many foes and friends its pattern would catch, whether the foe is open); one
+/// without an opinion goes by the flat npc_special_chance. A missed roll waits npc_special_eval before the next, and a dull NPC
+/// rolls lower (Azure AI_INT_SCALE_PROB). A special used puts its cooldown on the NPC npc_special_cooldown_factor times longer
+/// than on a player, and on the NPCs nearby fighting the same foe, so they don't chain specials; the next blow comes later too.
 /datum/ai_controller/basic_controller/simple/rogue_human/proc/rogue_try_special(mob/living/carbon/human/fighter, mob/living/foe)
-	if(!prob(ROGUE_NPC_SPECIAL_CHANCE) || fighter.has_status_effect(/datum/status_effect/rogue/special_cooldown))
+	if(blackboard[BB_ROGUE_NPC_BLOWS] <= ROGUE_NPC_SPECIAL_OPENER || fighter.rogue_stat(ROGUE_STAT_INTELLIGENCE) < ROGUE_NPC_SPECIAL_MIN_INT)
+		return FALSE
+	if(fighter.has_status_effect(/datum/status_effect/rogue/special_cooldown) || world.time < blackboard[BB_ROGUE_NPC_TECHNIQUE_AT])
 		return FALSE
 	var/obj/item/weapon = fighter.get_active_held_item()
-	if(!weapon?.rogue_special() || !fighter.rogue_use_special(foe))
+	var/datum/special_intent/special = weapon?.rogue_special()
+	if(!special || fighter.rogue_weapon_rank(weapon) < ROGUE_SPECIAL_RANK)
 		return FALSE
-	fighter.changeNext_move(CLICK_CD_MELEE)
+	var/cost = special.tune("stamcost")
+	if(cost && fighter.get_stamina_loss() + (cost < 1 ? fighter.max_stamina * cost : cost) >= fighter.max_stamina)
+		return FALSE
+	var/chance = special.rogue_npc_odds(fighter, foe)
+	if(isnull(chance))
+		chance = ROGUE_NPC_SPECIAL_CHANCE
+	if(chance <= 0)
+		return FALSE
+	if(chance < 100)
+		if(world.time < blackboard[BB_ROGUE_NPC_SPECIAL_EVAL_AT])
+			return FALSE
+		var/wits = fighter.rogue_stat(ROGUE_STAT_INTELLIGENCE) / ROGUE_ATTRIBUTE_MIDDLING
+		if(!prob(min(chance, chance * wits)))
+			set_blackboard_key(BB_ROGUE_NPC_SPECIAL_EVAL_AT, world.time + ROGUE_NPC_SPECIAL_EVAL)
+			return FALSE
+	if(!fighter.rogue_use_special(foe))
+		return FALSE
+	var/cooldown = special.tune("cooldown") * ROGUE_NPC_SPECIAL_COOLDOWN_FACTOR
+	fighter.apply_status_effect(/datum/status_effect/rogue/special_cooldown, cooldown)
+	rogue_share_special_cooldown(fighter, foe, cooldown)
+	set_blackboard_key(BB_ROGUE_NPC_TECHNIQUE_AT, world.time + ROGUE_NPC_SPECIAL_PAUSE)
+	fighter.changeNext_move(CLICK_CD_MELEE * ROGUE_NPC_SPECIAL_RECOVERY)
 	return TRUE
+
+/// Azure Peak propagate_technique_cd(): the other NPCs in view fighting the same foe wait out the special too.
+/datum/ai_controller/basic_controller/simple/rogue_human/proc/rogue_share_special_cooldown(mob/living/carbon/human/fighter, mob/living/foe, cooldown)
+	for(var/mob/living/carbon/human/ally in view(ROGUE_NPC_SPECIAL_SHARE_RANGE, fighter))
+		if(ally == fighter || ally.client || ally.stat == DEAD)
+			continue
+		if(!istype(ally.ai_controller, /datum/ai_controller/basic_controller/simple/rogue_human) || ally.ai_controller.blackboard[BB_CURRENT_TARGET] != foe)
+			continue
+		ally.apply_status_effect(/datum/status_effect/rogue/special_cooldown, cooldown)
 
 /// A weak point while it holds; otherwise the same zone for a few blows, then arms, chest or head (the legs when lying down,
 /// the head of a foe with no blood to spill).
@@ -388,6 +452,17 @@
 #undef BB_ROGUE_NPC_ZONE_COUNT
 #undef BB_ROGUE_NPC_WEAKPOINT
 #undef BB_ROGUE_NPC_JUKE_AT
+#undef BB_ROGUE_NPC_SPECIAL_EVAL_AT
+#undef BB_ROGUE_NPC_TECHNIQUE_AT
+#undef BB_ROGUE_NPC_BLOWS
+#undef BB_ROGUE_NPC_BLOWS_AT
+#undef ROGUE_NPC_SPECIAL_OPENER
+#undef ROGUE_NPC_SPECIAL_MIN_INT
+#undef ROGUE_NPC_SPECIAL_EVAL
+#undef ROGUE_NPC_SPECIAL_COOLDOWN_FACTOR
+#undef ROGUE_NPC_SPECIAL_PAUSE
+#undef ROGUE_NPC_SPECIAL_SHARE_RANGE
+#undef ROGUE_NPC_SPECIAL_RECOVERY
 #undef ROGUE_NPC_FLEE_HEALTH
 #undef ROGUE_NPC_FLEE_STOP
 #undef ROGUE_NPC_STANCE_CHANCE

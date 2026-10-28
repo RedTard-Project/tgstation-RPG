@@ -87,6 +87,16 @@
 	rogue_verb_simple = "transmute"
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
+/datum/crafting_recipe/roguetown/alchemy/distill
+	name = "distill water"
+	result = /obj/item/reagent_containers/glass/bottle/rogue/water
+	reqs = list(/obj/item/reagent_containers/glass/bottle = 1, /datum/reagent/water/gross = 48)
+	category = "Alchemy"
+	rogue_skill = /datum/attribute/skill/craft/alchemy
+	rogue_structure = /obj/structure/fluff/alch
+	rogue_verb_simple = "mix"
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
 /datum/crafting_recipe/roguetown/alchemy/f2gra
 	name = "fiber to grain"
 	result = /obj/item/reagent_containers/food/snacks/grown/wheat
@@ -109,6 +119,18 @@
 	rogue_structure = /obj/structure/fluff/alch
 	rogue_verb_simple = "mix"
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/alchemy/frankenbrew_small
+	name = "reanimation elixir (impure lux)"
+	result = /obj/item/reagent_containers/glass/bottle/frankenbrew/third
+	reqs = list(/obj/item/reagent_containers/glass/bottle = 1, /obj/item/reagent_containers/food/snacks/grown/manabloom = 1, /obj/item/reagent_containers/lux_impure = 1, /obj/item/alch/calendula = 1, /datum/reagent/water = 49)
+	category = "Alchemy"
+	rogue_skill = /datum/attribute/skill/craft/alchemy
+	rogue_difficulty = 4
+	rogue_structure = /obj/structure/fluff/alch
+	rogue_verb_simple = "mix"
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+	rogue_tech_node = "LUX_FILTRATION"
 
 /datum/crafting_recipe/roguetown/alchemy/g2saf
 	name = "gemerald to saffira"
@@ -979,7 +1001,7 @@
 	name = "frybird bucket"
 	result = /obj/item/reagent_containers/food/snacks/rogue/frybirdbucket
 	reqs = list(/obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet/fried = 3, /obj/item/reagent_containers/glass/bucket = 1, /obj/item/reagent_containers/powder/salt = 1)
-	blacklist = list(/obj/item/reagent_containers/glass/bucket/pot, /obj/item/reagent_containers/glass/bucket/pot/bronze, /obj/item/reagent_containers/glass/bucket/pot/carved/teapotamber, /obj/item/reagent_containers/glass/bucket/pot/carved/teapotcoral, /obj/item/reagent_containers/glass/bucket/pot/carved/teapotjade, /obj/item/reagent_containers/glass/bucket/pot/carved/teapotonyxa, /obj/item/reagent_containers/glass/bucket/pot/carved/teapotopal, /obj/item/reagent_containers/glass/bucket/pot/carved/teapotrose, /obj/item/reagent_containers/glass/bucket/pot/carved/teapotshell, /obj/item/reagent_containers/glass/bucket/pot/copper, /obj/item/reagent_containers/glass/bucket/pot/decrepit, /obj/item/reagent_containers/glass/bucket/pot/kettle, /obj/item/reagent_containers/glass/bucket/pot/kettle/tankard, /obj/item/reagent_containers/glass/bucket/pot/kettle/tankard/blacksteel, /obj/item/reagent_containers/glass/bucket/pot/kettle/tankard/silver, /obj/item/reagent_containers/glass/bucket/pot/stone, /obj/item/reagent_containers/glass/bucket/pot/teapot/fancy, /obj/item/reagent_containers/glass/bucket/pot/teapot/porcelain, /obj/item/reagent_containers/glass/bucket/tinypot)
+	blacklist = list(/obj/item/reagent_containers/glass/bucket/pot, /obj/item/reagent_containers/glass/bucket/pot/bronze, /obj/item/reagent_containers/glass/bucket/pot/carved, /obj/item/reagent_containers/glass/bucket/pot/carved/teapotamber, /obj/item/reagent_containers/glass/bucket/pot/carved/teapotcoral, /obj/item/reagent_containers/glass/bucket/pot/carved/teapotjade, /obj/item/reagent_containers/glass/bucket/pot/carved/teapotonyxa, /obj/item/reagent_containers/glass/bucket/pot/carved/teapotopal, /obj/item/reagent_containers/glass/bucket/pot/carved/teapotrose, /obj/item/reagent_containers/glass/bucket/pot/carved/teapotshell, /obj/item/reagent_containers/glass/bucket/pot/copper, /obj/item/reagent_containers/glass/bucket/pot/decrepit, /obj/item/reagent_containers/glass/bucket/pot/kettle, /obj/item/reagent_containers/glass/bucket/pot/kettle/tankard, /obj/item/reagent_containers/glass/bucket/pot/kettle/tankard/blacksteel, /obj/item/reagent_containers/glass/bucket/pot/kettle/tankard/silver, /obj/item/reagent_containers/glass/bucket/pot/stone, /obj/item/reagent_containers/glass/bucket/pot/teapot, /obj/item/reagent_containers/glass/bucket/pot/teapot/fancy, /obj/item/reagent_containers/glass/bucket/pot/teapot/porcelain, /obj/item/reagent_containers/glass/bucket/tinypot)
 	category = "Cooking"
 	rogue_skill = /datum/attribute/skill/craft/cooking
 	rogue_difficulty = 3
@@ -1237,6 +1259,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/cooking/sigsweet
 	name = "zig - swampweed"
@@ -1270,6 +1295,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/cooking/spicechocolate
 	name = "chocolate with pumpkin spice"
@@ -1665,6 +1693,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/engineering/bronzeboltstwenty
 	name = "Bronze Crossbow Bolts 20x"
@@ -1691,6 +1722,7 @@
 	reqs = list(/obj/item/grown/log/tree/small = 1, /obj/item/roguegear/wood/basic = 2, /obj/item/natural/wood/plank = 2)
 	rogue_results = list(/obj/item/rotation_contraption/cog, /obj/item/rotation_contraption/cog, /obj/item/rotation_contraption/cog, /obj/item/rotation_contraption/cog, /obj/item/rotation_contraption/cog)
 	tool_paths = list(/obj/item/rogueweapon/huntingknife)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 3
@@ -1702,6 +1734,7 @@
 	name = "cooling table"
 	result = /obj/structure/table/wood/rockhill/cooling
 	reqs = list(/obj/item/grown/log/tree/small = 1, /obj/item/ingot/iron = 1, /obj/item/roguegear/bronze = 1)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 4
@@ -1733,7 +1766,7 @@
 	name = "flame trap"
 	result = /obj/structure/trap/flame
 	reqs = list(/obj/item/roguegear/bronze = 1, /obj/item/natural/clay = 2, /obj/item/roguegem/amethyst = 2, /obj/item/alch/irondust = 1, /obj/item/alch/firedust = 1)
-	blacklist = list(/obj/item/natural/clay/claybottle, /obj/item/natural/clay/claybottleclassic, /obj/item/natural/clay/claybrick, /obj/item/natural/clay/claycup, /obj/item/natural/clay/claycupclassic, /obj/item/natural/clay/clayfancyvaseclassic, /obj/item/natural/clay/claystatue, /obj/item/natural/clay/clayvaseclassic, /obj/item/natural/clay/glassbatch, /obj/item/natural/clay/kneaded, /obj/item/natural/clay/refined, /obj/item/roguegem/amethyst/naledi)
+	blacklist = list(/obj/item/roguegem/amethyst/naledi)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 5
@@ -1761,6 +1794,15 @@
 	rogue_verb_simple = "engineer"
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
+/datum/crafting_recipe/roguetown/engineering/heavyboltsten
+	name = "Heavy Bolts 10x"
+	result = /obj/projectile/bullet/reusable/heavy_bolt
+	reqs = list(/obj/item/natural/wood/plank = 4, /obj/item/ingot/iron = 2)
+	rogue_results = list(/obj/projectile/bullet/reusable/heavy_bolt, /obj/projectile/bullet/reusable/heavy_bolt, /obj/projectile/bullet/reusable/heavy_bolt, /obj/projectile/bullet/reusable/heavy_bolt, /obj/projectile/bullet/reusable/heavy_bolt, /obj/projectile/bullet/reusable/heavy_bolt, /obj/projectile/bullet/reusable/heavy_bolt, /obj/projectile/bullet/reusable/heavy_bolt, /obj/projectile/bullet/reusable/heavy_bolt)
+	category = "Crafting"
+	rogue_skill = /datum/attribute/skill/craft/crafting
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
 /datum/crafting_recipe/roguetown/engineering/highexplosiveimpact
 	name = "high explosive impact, bombard charge"
 	result = /obj/item/cannonball/explosive
@@ -1776,6 +1818,7 @@
 	result = /obj/item/impact_grenade/smoke/blind_gas
 	reqs = list(/obj/item/smokeshell = 3, /obj/item/alch/coaldust = 1, /obj/item/ash = 1, /obj/item/reagent_containers/food/snacks/rogue/veg/onion_sliced = 1, /obj/item/natural/dirtclod = 1, /datum/reagent/water = 48)
 	rogue_results = list(/obj/item/impact_grenade/smoke/blind_gas, /obj/item/impact_grenade/smoke/blind_gas)
+	blacklist = list(/obj/item/natural/dirtclod/sand)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 4
@@ -1787,7 +1830,7 @@
 	result = /obj/item/impact_grenade/explosion
 	reqs = list(/obj/item/natural/clay = 1, /obj/item/paper = 1, /obj/item/alch/coaldust = 1, /obj/item/alch/firedust = 1, /obj/item/reagent_containers/food/snacks/grown/rogue/fyritius = 1)
 	rogue_results = list(/obj/item/impact_grenade/explosion, /obj/item/impact_grenade/explosion)
-	blacklist = list(/obj/item/natural/clay/claybottle, /obj/item/natural/clay/claybottleclassic, /obj/item/natural/clay/claybrick, /obj/item/natural/clay/claycup, /obj/item/natural/clay/claycupclassic, /obj/item/natural/clay/clayfancyvaseclassic, /obj/item/natural/clay/claystatue, /obj/item/natural/clay/clayvaseclassic, /obj/item/natural/clay/glassbatch, /obj/item/natural/clay/kneaded, /obj/item/natural/clay/refined, /obj/item/reagent_containers/food/snacks/grown/rogue/fyritius/bloodied)
+	blacklist = list(/obj/item/reagent_containers/food/snacks/grown/rogue/fyritius/bloodied)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 4
@@ -1863,6 +1906,7 @@
 	reqs = list(/obj/item/grown/log/tree/small = 1, /obj/item/roguegear/wood/basic = 2, /obj/item/natural/wood/plank = 4)
 	rogue_results = list(/obj/item/rotation_contraption/large_cog, /obj/item/rotation_contraption/large_cog)
 	tool_paths = list(/obj/item/rogueweapon/huntingknife)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 3
@@ -1884,6 +1928,7 @@
 	name = "minecart"
 	result = /obj/structure/closet/crate/wooden/rockhill/crate/miningcar
 	reqs = list(/obj/item/grown/log/tree/small = 1, /obj/item/ingot/iron = 1, /obj/item/grown/log/tree/stick = 4, /obj/item/roguegear/bronze = 2)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 3
@@ -1926,7 +1971,7 @@
 	name = "potion seller peddler"
 	result = /obj/structure/roguemachine/potionseller/crafted
 	reqs = list(/obj/item/grown/log/tree/small = 1, /obj/item/ingot/iron = 1, /obj/item/natural/glass = 1, /obj/item/roguegear/bronze = 1)
-	blacklist = list(/obj/item/natural/glass/heated)
+	blacklist = list(/obj/item/grown/log/tree/small/essence, /obj/item/natural/glass/heated)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 4
@@ -2026,7 +2071,7 @@
 	name = "saw blades trap"
 	result = /obj/structure/trap/saw_blades
 	reqs = list(/obj/item/roguegear/bronze = 3, /obj/item/natural/clay = 2, /obj/item/roguegem/amethyst = 2, /obj/item/alch/irondust = 1, /obj/item/natural/whetstone = 1)
-	blacklist = list(/obj/item/natural/clay/claybottle, /obj/item/natural/clay/claybottleclassic, /obj/item/natural/clay/claybrick, /obj/item/natural/clay/claycup, /obj/item/natural/clay/claycupclassic, /obj/item/natural/clay/clayfancyvaseclassic, /obj/item/natural/clay/claystatue, /obj/item/natural/clay/clayvaseclassic, /obj/item/natural/clay/glassbatch, /obj/item/natural/clay/kneaded, /obj/item/natural/clay/refined, /obj/item/roguegem/amethyst/naledi)
+	blacklist = list(/obj/item/roguegem/amethyst/naledi)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 5
@@ -2038,6 +2083,7 @@
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	rogue_results = list(/obj/item/rotation_contraption/shaft, /obj/item/rotation_contraption/shaft, /obj/item/rotation_contraption/shaft, /obj/item/rotation_contraption/shaft, /obj/item/rotation_contraption/shaft, /obj/item/rotation_contraption/shaft, /obj/item/rotation_contraption/shaft)
 	tool_paths = list(/obj/item/rogueweapon/huntingknife)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 4
@@ -2049,7 +2095,7 @@
 	name = "shock trap"
 	result = /obj/structure/trap/shock
 	reqs = list(/obj/item/roguegear/bronze = 1, /obj/item/natural/clay = 2, /obj/item/roguegem/amethyst = 2, /obj/item/alch/irondust = 1, /obj/item/alch/magicdust = 1)
-	blacklist = list(/obj/item/natural/clay/claybottle, /obj/item/natural/clay/claybottleclassic, /obj/item/natural/clay/claybrick, /obj/item/natural/clay/claycup, /obj/item/natural/clay/claycupclassic, /obj/item/natural/clay/clayfancyvaseclassic, /obj/item/natural/clay/claystatue, /obj/item/natural/clay/clayvaseclassic, /obj/item/natural/clay/glassbatch, /obj/item/natural/clay/kneaded, /obj/item/natural/clay/refined, /obj/item/roguegem/amethyst/naledi)
+	blacklist = list(/obj/item/roguegem/amethyst/naledi)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 6
@@ -2082,7 +2128,7 @@
 	result = /obj/item/signal_flare
 	reqs = list(/obj/item/natural/clay = 1, /obj/item/paper = 1, /obj/item/alch/coaldust = 1, /obj/item/alch/firedust = 1, /obj/item/reagent_containers/food/snacks/grown/rogue/fyritius = 1)
 	rogue_results = list(/obj/item/signal_flare, /obj/item/signal_flare, /obj/item/signal_flare)
-	blacklist = list(/obj/item/natural/clay/claybottle, /obj/item/natural/clay/claybottleclassic, /obj/item/natural/clay/claybrick, /obj/item/natural/clay/claycup, /obj/item/natural/clay/claycupclassic, /obj/item/natural/clay/clayfancyvaseclassic, /obj/item/natural/clay/claystatue, /obj/item/natural/clay/clayvaseclassic, /obj/item/natural/clay/glassbatch, /obj/item/natural/clay/kneaded, /obj/item/natural/clay/refined, /obj/item/reagent_containers/food/snacks/grown/rogue/fyritius/bloodied)
+	blacklist = list(/obj/item/reagent_containers/food/snacks/grown/rogue/fyritius/bloodied)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 3
@@ -2158,6 +2204,7 @@
 	name = "floorhatch"
 	result = /obj/structure/floordoor
 	reqs = list(/obj/item/grown/log/tree/small = 1, /obj/item/roguegear/bronze = 1)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 2
@@ -2224,6 +2271,52 @@
 	rogue_verb_simple = "mix"
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
+/datum/crafting_recipe/roguetown/fleshcrafting/black_rose
+	name = "Black Rose"
+	result = /obj/item/black_rose
+	reqs = list(/obj/item/heart_blood_canister/filled = 5, /obj/item/reagent_containers/food/snacks/rogue/meat_rotten = 15)
+	category = "Butchering"
+	rogue_skill = /datum/attribute/skill/labor/butchering
+	rogue_difficulty = 5
+	rogue_structure = /obj/structure/roguemachine/chimeric_heart_beast
+	rogue_verb_simple = "assembles"
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+	rogue_tech_node = "BLACK_ROSE"
+
+/datum/crafting_recipe/roguetown/fleshcrafting/decoy
+	name = "flesh decoy (2x fresh meat)"
+	result = /obj/item/flesh_decoy
+	reqs = list(/obj/item/reagent_containers/food/snacks/rogue/meat = 2)
+	category = "Butchering"
+	rogue_skill = /datum/attribute/skill/labor/butchering
+	rogue_difficulty = 2
+	rogue_verb_simple = "assembles"
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+	rogue_tech_node = "FLESH_DECOYS"
+
+/datum/crafting_recipe/roguetown/fleshcrafting/decoy_alt
+	name = "flesh decoy (2x viscera)"
+	result = /obj/item/flesh_decoy
+	reqs = list(/obj/item/alch/viscera = 2)
+	category = "Butchering"
+	rogue_skill = /datum/attribute/skill/labor/butchering
+	rogue_difficulty = 2
+	rogue_verb_simple = "assembles"
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+	rogue_tech_node = "VISCERA_DECOYS"
+
+/datum/crafting_recipe/roguetown/fleshcrafting/eyes
+	name = "Eyes"
+	result = /obj/item/organ/eyes
+	reqs = list(/obj/item/flesh_node = 1, /obj/item/heart_blood_vial/filled = 1)
+	category = "Butchering"
+	rogue_skill = /datum/attribute/skill/labor/butchering
+	rogue_difficulty = 4
+	rogue_structure = /obj/structure/roguemachine/chimeric_heart_beast
+	rogue_verb_simple = "assembles"
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+	rogue_tech_node = "BASIC_ORGANS"
+
 /datum/crafting_recipe/roguetown/fleshcrafting/flesh_node
 	name = "flesh node (1x rotten meat)"
 	result = /obj/item/flesh_node
@@ -2233,6 +2326,18 @@
 	rogue_structure = /obj/structure/roguemachine/chimeric_heart_beast
 	rogue_verb_simple = "assembles"
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/fleshcrafting/heart
+	name = "Heart"
+	result = /obj/item/organ/heart
+	reqs = list(/obj/item/flesh_node = 2, /obj/item/heart_blood_vial/filled = 1)
+	category = "Butchering"
+	rogue_skill = /datum/attribute/skill/labor/butchering
+	rogue_difficulty = 4
+	rogue_structure = /obj/structure/roguemachine/chimeric_heart_beast
+	rogue_verb_simple = "assembles"
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+	rogue_tech_node = "BASIC_ORGANS"
 
 /datum/crafting_recipe/roguetown/fleshcrafting/imperfect_gnoll
 	name = "vilespawn flesh"
@@ -2252,6 +2357,42 @@
 	rogue_skill = /datum/attribute/skill/labor/butchering
 	rogue_verb_simple = "assembles"
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/fleshcrafting/liver
+	name = "Liver"
+	result = /obj/item/organ/liver
+	reqs = list(/obj/item/flesh_node = 2, /obj/item/heart_blood_vial/filled = 1)
+	category = "Butchering"
+	rogue_skill = /datum/attribute/skill/labor/butchering
+	rogue_difficulty = 4
+	rogue_structure = /obj/structure/roguemachine/chimeric_heart_beast
+	rogue_verb_simple = "assembles"
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+	rogue_tech_node = "BASIC_ORGANS"
+
+/datum/crafting_recipe/roguetown/fleshcrafting/lungs
+	name = "Lungs"
+	result = /obj/item/organ/lungs
+	reqs = list(/obj/item/flesh_node = 2, /obj/item/heart_blood_vial/filled = 1)
+	category = "Butchering"
+	rogue_skill = /datum/attribute/skill/labor/butchering
+	rogue_difficulty = 4
+	rogue_structure = /obj/structure/roguemachine/chimeric_heart_beast
+	rogue_verb_simple = "assembles"
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+	rogue_tech_node = "BASIC_ORGANS"
+
+/datum/crafting_recipe/roguetown/fleshcrafting/tongue
+	name = "Tongue"
+	result = /obj/item/organ/tongue
+	reqs = list(/obj/item/flesh_node = 1, /obj/item/heart_blood_vial/filled = 1)
+	category = "Butchering"
+	rogue_skill = /datum/attribute/skill/labor/butchering
+	rogue_difficulty = 4
+	rogue_structure = /obj/structure/roguemachine/chimeric_heart_beast
+	rogue_verb_simple = "assembles"
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+	rogue_tech_node = "BASIC_ORGANS"
 
 /datum/crafting_recipe/roguetown/gemcarving/amber/amulet
 	name = "amber amulet"
@@ -4535,6 +4676,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/leather/apron/blacksmith
 	name = "leather apron"
@@ -4668,6 +4812,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/leather/armor/heavy_leather_armor/jacket
 	name = "hardened leather jacket"
@@ -4691,6 +4838,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/leather/armor/heavy_leather_pants
 	name = "hardened leather pants"
@@ -4725,6 +4875,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/leather/armor/heavybracers
 	name = "hardened leather bracers"
@@ -4770,6 +4923,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/leather/armor/hidearmor
 	name = "hide armor"
@@ -4947,6 +5103,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/leather/container/belt/double
 	name = "paired belts"
@@ -4970,6 +5129,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/leather/container/belt/knifebelt
 	name = "tossblade belt"
@@ -4993,6 +5155,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/leather/container/belt/surgicalbag
 	name = "surgeon's bag"
@@ -5016,6 +5181,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/leather/container/belt/suspenders
 	name = "suspenders"
@@ -5039,6 +5207,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/leather/container/belt/suspenders_colored
 	name = "suspenders (colorable)"
@@ -5062,6 +5233,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/leather/container/bmbstrap
 	name = "bombdolier"
@@ -5329,6 +5503,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/leather/footwear/boots/furlinedboots
 	name = "fur-lined boots"
@@ -5352,6 +5529,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/leather/footwear/boots/heels
 	name = "black heels"
@@ -5375,6 +5555,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/leather/footwear/boots/heels_color
 	name = "colorable heels"
@@ -5398,6 +5581,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/leather/footwear/boots/noble
 	name = "noble boots"
@@ -5421,6 +5607,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/leather/footwear/boots/short
 	name = "shortboots"
@@ -5444,6 +5633,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/leather/footwear/boots/thigh
 	name = "thigh boots"
@@ -5467,6 +5659,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/leather/footwear/boots_heavy
 	name = "heavy leather boots"
@@ -5899,6 +6094,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/leather/whip
 	name = "leather whip"
@@ -5946,6 +6144,7 @@
 	name = "wooden bin"
 	result = /obj/item/roguebin
 	reqs = list(/obj/item/grown/log/tree/small = 2)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
 	rogue_difficulty = 0
@@ -6191,6 +6390,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/sewing/bardress
 	name = "bar dress"
@@ -6284,6 +6486,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/sewing/blouse
 	name = "blouse"
@@ -6443,6 +6648,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/sewing/caparison/eora
 	name = "eoran caparison"
@@ -6466,6 +6674,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/sewing/caparison/fogbeast
 	name = "fogbeast caparison"
@@ -6489,6 +6700,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/sewing/caparison/psy
 	name = "psydonite caparison"
@@ -6512,6 +6726,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/sewing/cape
 	name = "cape"
@@ -6545,6 +6762,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/sewing/cape/half
 	name = "half cloak"
@@ -6568,6 +6788,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/sewing/cape/rider
 	name = "rider cloak"
@@ -6591,6 +6814,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/sewing/chaperon
 	name = "chaperon hat"
@@ -6624,6 +6850,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/sewing/clothbedsheet
 	name = "bedsheet, cloth"
@@ -7008,6 +7237,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/sewing/grenzelklapper
 	name = "grenzelhoftian hat with klappvisier"
@@ -7041,6 +7273,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/sewing/grenzelpants
 	name = "grenzelhoftian paumpers"
@@ -7184,6 +7419,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/sewing/hijab
 	name = "hijab"
@@ -8152,6 +8390,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/sewing/stabard/guard
 	name = "surcoat, guard"
@@ -8175,6 +8416,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/sewing/stabard/guardhood
 	name = "guard hood"
@@ -8198,6 +8442,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/sewing/stewarddress
 	name = "ornate dark dress"
@@ -8456,6 +8703,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/sewing/undervestments
 	name = "undervestments"
@@ -9005,6 +9255,7 @@
 	rogue_verb = "constructs"
 	rogue_verb_simple = "construct"
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
+	rogue_diagonal = TRUE
 
 /datum/crafting_recipe/roguetown/structure/brazier
 	name = "brazier"
@@ -9111,6 +9362,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/structure/chairthrone
 	name = "small throne"
@@ -9632,6 +9886,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/structure/fireplace/desert
 	name = "desert fireplace"
@@ -9655,6 +9912,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/structure/floorcandle
 	name = "floor candles (2 candles)"
@@ -9884,6 +10144,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/structure/littlebanners/bluewhite
 	name = "fair banners blue-white"
@@ -9907,6 +10170,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/structure/littlebanners/greenblue
 	name = "fair banners green-blue"
@@ -9930,6 +10196,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/structure/littlebanners/greenred
 	name = "fair banners green-red"
@@ -9953,6 +10222,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/structure/littlebanners/greenwhite
 	name = "fair banners green-white"
@@ -9976,6 +10248,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/structure/longtable
 	name = "nice long table (2 planks)"
@@ -10345,6 +10620,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/structure/sign/elksign
 	name = "wooden elk sign (1 small log)"
@@ -10368,6 +10646,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/structure/sign/innsign
 	name = "wooden inn sign (1 small log)"
@@ -10391,6 +10672,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/structure/sign/psydoniconsign
 	name = "wooden psydon sign (1 small log)"
@@ -10414,6 +10698,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/structure/sign/skullsign
 	name = "wooden skull sign (1 small log)"
@@ -10437,6 +10724,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/structure/sign/smithsign
 	name = "wooden smith sign (1 small log)"
@@ -10460,6 +10750,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/structure/sign/spidersign
 	name = "wooden spider sign (1 small log)"
@@ -10483,6 +10776,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/structure/sign/zizoiconsign
 	name = "wooden zizo sign (1 small log)"
@@ -10506,6 +10802,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/structure/silverpsycruci
 	name = "silver psydonic cross"
@@ -10654,6 +10953,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/structure/statue/grand/astrata
 	name = "statue (grand, Astrata)"
@@ -10990,6 +11292,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/structure/ultimacouchleft
 	name = "ultima couch (left)"
@@ -11117,6 +11422,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
 	rogue_xp = -1
 	crafting_flags = CRAFT_MUST_BE_LEARNED
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/structure/wonder/fourth
 	name = "fourth wonder"
@@ -11140,6 +11448,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
 	rogue_xp = -1
 	crafting_flags = CRAFT_MUST_BE_LEARNED
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/structure/wonder/second
 	name = "second wonder"
@@ -11163,6 +11474,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
 	rogue_xp = -1
 	crafting_flags = CRAFT_MUST_BE_LEARNED
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/structure/wonder/third
 	name = "third wonder"
@@ -11186,6 +11500,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
 	rogue_xp = -1
 	crafting_flags = CRAFT_MUST_BE_LEARNED
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/structure/wooden_horse
 	name = "static wooden horse"
@@ -11220,6 +11537,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/structure/wooden_horse/mobile
 	name = "mobile wooden horse"
@@ -11243,6 +11563,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/structure/wooden_horse/small
 	name = "static wooden horse (small)"
@@ -11266,6 +11589,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/structure/woolbed
 	name = "bed, wood"
@@ -11333,6 +11659,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/structure/zizo_shrine/stone
 	name = "stone inverse cross"
@@ -11356,6 +11685,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/structure/zybdrape
 	name = "desert drape"
@@ -11459,7 +11791,7 @@
 	result = /obj/item/rogueweapon/spear/improvisedbillhook
 	reqs = list(/obj/item/rogueweapon/sickle = 1, /obj/item/rope = 1, /obj/item/grown/log/tree/small = 1)
 	tool_paths = list(/obj/item/rogueweapon/hammer)
-	blacklist = list(/obj/item/rogueweapon/sickle/blacksteel, /obj/item/rogueweapon/sickle/copper, /obj/item/rogueweapon/sickle/decrepit, /obj/item/rope/chain, /obj/item/rope/chain/bindingshackles, /obj/item/rope/chain/bindingshackles/t2, /obj/item/rope/chain/bindingshackles/t3, /obj/item/rope/chain/bindingshackles/t4, /obj/item/rope/chain/bindingshackles/t5, /obj/item/rope/inqarticles/inquirycord)
+	blacklist = list(/obj/item/grown/log/tree/small/essence, /obj/item/rogueweapon/sickle/blacksteel, /obj/item/rogueweapon/sickle/copper, /obj/item/rogueweapon/sickle/decrepit, /obj/item/rope/chain, /obj/item/rope/chain/bindingshackles, /obj/item/rope/chain/bindingshackles/t2, /obj/item/rope/chain/bindingshackles/t3, /obj/item/rope/chain/bindingshackles/t4, /obj/item/rope/chain/bindingshackles/t5, /obj/item/rope/inqarticles/inquirycord)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_difficulty = 3
@@ -11488,7 +11820,7 @@
 	name = "Dinghy (4 Logs, 3 Ash, 5 Fibers)"
 	result = /obj/vehicle/ridden/rockhill/dinghy
 	reqs = list(/obj/item/grown/log/tree = 4, /obj/item/ash = 3, /obj/item/natural/fibers = 5)
-	blacklist = list(/obj/item/grown/log/tree/bowpartial, /obj/item/grown/log/tree/bowpartial/longbow, /obj/item/grown/log/tree/bowpartial/recurve, /obj/item/grown/log/tree/small, /obj/item/grown/log/tree/stake, /obj/item/grown/log/tree/stick)
+	blacklist = list(/obj/item/grown/log/tree/bowpartial, /obj/item/grown/log/tree/bowpartial/longbow, /obj/item/grown/log/tree/bowpartial/recurve, /obj/item/grown/log/tree/small, /obj/item/grown/log/tree/small/essence, /obj/item/grown/log/tree/stake, /obj/item/grown/log/tree/stick)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
@@ -11506,6 +11838,7 @@
 	name = "bone axe"
 	result = /obj/item/rogueweapon/stoneaxe/boneaxe
 	reqs = list(/obj/item/grown/log/tree/small = 1, /obj/item/natural/bone = 2, /obj/item/natural/fibers = 1)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_difficulty = 2
@@ -11597,6 +11930,7 @@
 	result = /obj/item/grown/log/tree/bowpartial
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	tool_paths = list(/obj/item/rogueweapon/huntingknife)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_verb = "carves"
@@ -11709,6 +12043,7 @@
 	name = "Blank Custom Seal (1 Small Log)"
 	result = /obj/item/seal/custom
 	reqs = list(/obj/item/grown/log/tree/small = 1)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_difficulty = 3
@@ -11778,6 +12113,7 @@
 	name = "decorative bamboo hat"
 	result = /obj/item/clothing/head/roguetown/mentorhat/decorative
 	reqs = list(/obj/item/grown/log/tree/small = 1, /obj/item/grown/log/tree/stick = 2, /obj/item/natural/fibers = 2)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
@@ -11835,6 +12171,7 @@
 	name = "fishing cage"
 	result = /obj/item/fishingcage
 	reqs = list(/obj/item/grown/log/tree/small = 1, /obj/item/grown/log/tree/stick = 2)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_difficulty = 2
@@ -11922,6 +12259,7 @@
 	result = /obj/item/kitchen/fork
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	rogue_results = list(/obj/item/kitchen/fork, /obj/item/kitchen/fork)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
@@ -11931,7 +12269,7 @@
 	result = /obj/item/rogueweapon/mace/goden
 	reqs = list(/obj/item/grown/log/tree/small = 1, /obj/item/rope = 1, /obj/item/rogueweapon/hoe = 1)
 	tool_paths = list(/obj/item/rogueweapon/hammer)
-	blacklist = list(/obj/item/rogueweapon/hoe/blacksteel, /obj/item/rogueweapon/hoe/copper, /obj/item/rogueweapon/hoe/decrepit, /obj/item/rogueweapon/hoe/stone, /obj/item/rope/chain, /obj/item/rope/chain/bindingshackles, /obj/item/rope/chain/bindingshackles/t2, /obj/item/rope/chain/bindingshackles/t3, /obj/item/rope/chain/bindingshackles/t4, /obj/item/rope/chain/bindingshackles/t5, /obj/item/rope/inqarticles/inquirycord)
+	blacklist = list(/obj/item/grown/log/tree/small/essence, /obj/item/rogueweapon/hoe/blacksteel, /obj/item/rogueweapon/hoe/copper, /obj/item/rogueweapon/hoe/decrepit, /obj/item/rogueweapon/hoe/stone, /obj/item/rope/chain, /obj/item/rope/chain/bindingshackles, /obj/item/rope/chain/bindingshackles/t2, /obj/item/rope/chain/bindingshackles/t3, /obj/item/rope/chain/bindingshackles/t4, /obj/item/rope/chain/bindingshackles/t5, /obj/item/rope/inqarticles/inquirycord)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_difficulty = 3
@@ -11960,6 +12298,7 @@
 	name = "heater shield"
 	result = /obj/item/rogueweapon/shield/heater/crafted
 	reqs = list(/obj/item/grown/log/tree/small = 2, /obj/item/natural/hide/cured = 1)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
 	rogue_difficulty = 4
@@ -12002,7 +12341,6 @@
 	name = "kneaded clay"
 	result = /obj/item/natural/clay/kneaded
 	reqs = list(/obj/item/natural/clay = 2, /datum/reagent/water = 2)
-	blacklist = list(/obj/item/natural/clay/claybottle, /obj/item/natural/clay/claybottleclassic, /obj/item/natural/clay/claybrick, /obj/item/natural/clay/claycup, /obj/item/natural/clay/claycupclassic, /obj/item/natural/clay/clayfancyvaseclassic, /obj/item/natural/clay/claystatue, /obj/item/natural/clay/clayvaseclassic, /obj/item/natural/clay/glassbatch, /obj/item/natural/clay/kneaded, /obj/item/natural/clay/refined)
 	category = "Pottery"
 	rogue_skill = /datum/attribute/skill/craft/ceramics
 	rogue_difficulty = 2
@@ -12037,7 +12375,7 @@
 	result = /obj/item/grown/log/tree/bowpartial/longbow
 	reqs = list(/obj/item/grown/log/tree = 1, /obj/item/natural/cloth = 1, /obj/item/reagent_containers/food/snacks/tallow = 1, /obj/item/natural/fibers = 2)
 	tool_paths = list(/obj/item/rogueweapon/huntingknife)
-	blacklist = list(/obj/item/grown/log/tree/bowpartial, /obj/item/grown/log/tree/bowpartial/longbow, /obj/item/grown/log/tree/bowpartial/recurve, /obj/item/grown/log/tree/small, /obj/item/grown/log/tree/stake, /obj/item/grown/log/tree/stick, /obj/item/natural/cloth/bandage, /obj/item/reagent_containers/food/snacks/tallow/red, /obj/item/reagent_containers/food/snacks/tallow/soft)
+	blacklist = list(/obj/item/grown/log/tree/bowpartial, /obj/item/grown/log/tree/bowpartial/longbow, /obj/item/grown/log/tree/bowpartial/recurve, /obj/item/grown/log/tree/small, /obj/item/grown/log/tree/small/essence, /obj/item/grown/log/tree/stake, /obj/item/grown/log/tree/stick, /obj/item/natural/cloth/bandage, /obj/item/reagent_containers/food/snacks/tallow/red, /obj/item/reagent_containers/food/snacks/tallow/soft)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_difficulty = 4
@@ -12050,6 +12388,7 @@
 	result = /obj/item/restraints/legcuffs/beartrap
 	reqs = list(/obj/item/grown/log/tree/small = 1, /obj/item/natural/fibers = 2, /obj/item/ingot/iron = 1)
 	rogue_results = list(/obj/item/restraints/legcuffs/beartrap)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_difficulty = 2
@@ -12062,6 +12401,7 @@
 	name = "worn bamboo hat"
 	result = /obj/item/clothing/head/roguetown/mentorhat
 	reqs = list(/obj/item/grown/log/tree/small = 1, /obj/item/grown/log/tree/stick = 2, /obj/item/natural/fibers = 2)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_difficulty = 3
@@ -12091,7 +12431,7 @@
 	name = "Oar (1 Log, 2 Fibers)"
 	result = /obj/item/rogueweapon/mace/oar
 	reqs = list(/obj/item/grown/log/tree = 1, /obj/item/natural/fibers = 2)
-	blacklist = list(/obj/item/grown/log/tree/bowpartial, /obj/item/grown/log/tree/bowpartial/longbow, /obj/item/grown/log/tree/bowpartial/recurve, /obj/item/grown/log/tree/small, /obj/item/grown/log/tree/stake, /obj/item/grown/log/tree/stick)
+	blacklist = list(/obj/item/grown/log/tree/bowpartial, /obj/item/grown/log/tree/bowpartial/longbow, /obj/item/grown/log/tree/bowpartial/recurve, /obj/item/grown/log/tree/small, /obj/item/grown/log/tree/small/essence, /obj/item/grown/log/tree/stake, /obj/item/grown/log/tree/stick)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
@@ -12101,6 +12441,7 @@
 	result = /obj/item/paper/scroll
 	reqs = list(/obj/item/grown/log/tree/small = 1, /datum/reagent/water = 48)
 	rogue_results = list(/obj/item/paper/scroll, /obj/item/paper/scroll)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_structure = /obj/machinery/tanningrack
@@ -12133,7 +12474,7 @@
 	result = /obj/item/rogueweapon/greataxe/militia
 	reqs = list(/obj/item/rogueweapon/shovel = 1, /obj/item/grown/log/tree/small = 2, /obj/item/rope = 1)
 	tool_paths = list(/obj/item/rogueweapon/hammer)
-	blacklist = list(/obj/item/rogueweapon/shovel/blacksteel, /obj/item/rogueweapon/shovel/decrepit, /obj/item/rogueweapon/shovel/silver, /obj/item/rogueweapon/shovel/small, /obj/item/rope/chain, /obj/item/rope/chain/bindingshackles, /obj/item/rope/chain/bindingshackles/t2, /obj/item/rope/chain/bindingshackles/t3, /obj/item/rope/chain/bindingshackles/t4, /obj/item/rope/chain/bindingshackles/t5, /obj/item/rope/inqarticles/inquirycord)
+	blacklist = list(/obj/item/grown/log/tree/small/essence, /obj/item/rogueweapon/shovel/blacksteel, /obj/item/rogueweapon/shovel/decrepit, /obj/item/rogueweapon/shovel/silver, /obj/item/rogueweapon/shovel/small, /obj/item/rope/chain, /obj/item/rope/chain/bindingshackles, /obj/item/rope/chain/bindingshackles/t2, /obj/item/rope/chain/bindingshackles/t3, /obj/item/rope/chain/bindingshackles/t4, /obj/item/rope/chain/bindingshackles/t5, /obj/item/rope/inqarticles/inquirycord)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
 	rogue_difficulty = 2
@@ -12147,7 +12488,7 @@
 	rogue_results = null
 	tool_paths = list(/obj/item/rogueweapon/hammer)
 	parts = null
-	blacklist = list(/obj/item/rope/chain, /obj/item/rope/chain/bindingshackles, /obj/item/rope/chain/bindingshackles/t2, /obj/item/rope/chain/bindingshackles/t3, /obj/item/rope/chain/bindingshackles/t4, /obj/item/rope/chain/bindingshackles/t5, /obj/item/rope/inqarticles/inquirycord)
+	blacklist = list(/obj/item/grown/log/tree/small/essence, /obj/item/rope/chain, /obj/item/rope/chain/bindingshackles, /obj/item/rope/chain/bindingshackles/t2, /obj/item/rope/chain/bindingshackles/t3, /obj/item/rope/chain/bindingshackles/t4, /obj/item/rope/chain/bindingshackles/t5, /obj/item/rope/inqarticles/inquirycord)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
 	rogue_difficulty = 2
@@ -12162,6 +12503,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/survival/peasantry/warflail
 	name = "militia flail"
@@ -12203,7 +12547,7 @@
 	result = /obj/item/rogueweapon/spear/militia
 	reqs = list(/obj/item/rogueweapon/pitchfork = 1, /obj/item/grown/log/tree/small = 2, /obj/item/rope = 1)
 	tool_paths = list(/obj/item/rogueweapon/hammer)
-	blacklist = list(/obj/item/rogueweapon/pitchfork/blacksteel, /obj/item/rogueweapon/pitchfork/copper, /obj/item/rogueweapon/pitchfork/decrepit, /obj/item/rope/chain, /obj/item/rope/chain/bindingshackles, /obj/item/rope/chain/bindingshackles/t2, /obj/item/rope/chain/bindingshackles/t3, /obj/item/rope/chain/bindingshackles/t4, /obj/item/rope/chain/bindingshackles/t5, /obj/item/rope/inqarticles/inquirycord)
+	blacklist = list(/obj/item/grown/log/tree/small/essence, /obj/item/rogueweapon/pitchfork/blacksteel, /obj/item/rogueweapon/pitchfork/copper, /obj/item/rogueweapon/pitchfork/decrepit, /obj/item/rope/chain, /obj/item/rope/chain/bindingshackles, /obj/item/rope/chain/bindingshackles/t2, /obj/item/rope/chain/bindingshackles/t3, /obj/item/rope/chain/bindingshackles/t4, /obj/item/rope/chain/bindingshackles/t5, /obj/item/rope/inqarticles/inquirycord)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
 	rogue_difficulty = 2
@@ -12222,6 +12566,7 @@
 	name = "wood pipe"
 	result = /obj/item/clothing/mask/cigarette/pipe/crafted
 	reqs = list(/obj/item/grown/log/tree/small = 1)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
@@ -12231,6 +12576,7 @@
 	result = /obj/item/cooking/platter
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	rogue_results = list(/obj/item/cooking/platter)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
@@ -12247,6 +12593,7 @@
 	name = "wood arm (L)"
 	result = /obj/item/bodypart/l_arm/prosthetic/woodleft
 	reqs = list(/obj/item/grown/log/tree/small = 1)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_difficulty = 3
@@ -12256,6 +12603,7 @@
 	name = "wood leg (L)"
 	result = /obj/item/bodypart/l_leg/prosthetic
 	reqs = list(/obj/item/grown/log/tree/small = 1)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_difficulty = 3
@@ -12265,6 +12613,7 @@
 	name = "wood arm (R)"
 	result = /obj/item/bodypart/r_arm/prosthetic/woodright
 	reqs = list(/obj/item/grown/log/tree/small = 1)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_difficulty = 3
@@ -12274,6 +12623,7 @@
 	name = "wood leg (R)"
 	result = /obj/item/bodypart/r_leg/prosthetic
 	reqs = list(/obj/item/grown/log/tree/small = 1)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_difficulty = 3
@@ -12312,7 +12662,7 @@
 	name = "quarterstaff"
 	result = /obj/item/rogueweapon/woodstaff/quarterstaff
 	reqs = list(/obj/item/grown/log/tree = 1)
-	blacklist = list(/obj/item/grown/log/tree/bowpartial, /obj/item/grown/log/tree/bowpartial/longbow, /obj/item/grown/log/tree/bowpartial/recurve, /obj/item/grown/log/tree/small, /obj/item/grown/log/tree/stake, /obj/item/grown/log/tree/stick)
+	blacklist = list(/obj/item/grown/log/tree/bowpartial, /obj/item/grown/log/tree/bowpartial/longbow, /obj/item/grown/log/tree/bowpartial/recurve, /obj/item/grown/log/tree/small, /obj/item/grown/log/tree/small/essence, /obj/item/grown/log/tree/stake, /obj/item/grown/log/tree/stick)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
@@ -12359,6 +12709,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/survival/quarterstaff_silver
 	name = "silver-reinforced quarterstaff"
@@ -12407,7 +12760,7 @@
 	result = /obj/item/grown/log/tree/bowpartial/recurve
 	reqs = list(/obj/item/grown/log/tree = 1, /obj/item/natural/bone = 2, /obj/item/reagent_containers/food/snacks/tallow = 1, /obj/item/natural/fibers = 2)
 	tool_paths = list(/obj/item/rogueweapon/huntingknife)
-	blacklist = list(/obj/item/grown/log/tree/bowpartial, /obj/item/grown/log/tree/bowpartial/longbow, /obj/item/grown/log/tree/bowpartial/recurve, /obj/item/grown/log/tree/small, /obj/item/grown/log/tree/stake, /obj/item/grown/log/tree/stick, /obj/item/reagent_containers/food/snacks/tallow/red, /obj/item/reagent_containers/food/snacks/tallow/soft)
+	blacklist = list(/obj/item/grown/log/tree/bowpartial, /obj/item/grown/log/tree/bowpartial/longbow, /obj/item/grown/log/tree/bowpartial/recurve, /obj/item/grown/log/tree/small, /obj/item/grown/log/tree/small/essence, /obj/item/grown/log/tree/stake, /obj/item/grown/log/tree/stick, /obj/item/reagent_containers/food/snacks/tallow/red, /obj/item/reagent_containers/food/snacks/tallow/soft)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_difficulty = 3
@@ -12466,6 +12819,7 @@
 	name = "fishing rod"
 	result = /obj/item/fishingrod/crafted
 	reqs = list(/obj/item/grown/log/tree/small = 1, /obj/item/natural/fibers = 2)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
@@ -12474,6 +12828,7 @@
 	name = "rollingpin (1 small log)"
 	result = /obj/item/kitchen/rollingpin
 	reqs = list(/obj/item/grown/log/tree/small = 1)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
@@ -12544,6 +12899,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/survival/shellbracelet
 	name = "shell bracelet"
@@ -12594,6 +12952,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/survival/sigsweet
 	name = "swampweed zig"
@@ -12628,6 +12989,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/survival/skullmask
 	name = "skull mask"
@@ -12674,6 +13038,7 @@
 	result = /obj/item/kitchen/spoon
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	rogue_results = list(/obj/item/kitchen/spoon, /obj/item/kitchen/spoon)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
@@ -12701,6 +13066,7 @@
 	name = "stone axe"
 	result = /obj/item/rogueweapon/stoneaxe
 	reqs = list(/obj/item/grown/log/tree/small = 1, /obj/item/natural/stone = 1)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
@@ -12733,6 +13099,7 @@
 	name = "stone hammer"
 	result = /obj/item/rogueweapon/hammer/stone
 	reqs = list(/obj/item/grown/log/tree/small = 1, /obj/item/natural/stone = 1)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
@@ -12741,6 +13108,7 @@
 	name = "stone hoe"
 	result = /obj/item/rogueweapon/hoe/stone
 	reqs = list(/obj/item/grown/log/tree/small = 2, /obj/item/natural/fibers = 1, /obj/item/natural/stone = 1)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
@@ -12758,6 +13126,7 @@
 	name = "stone pick"
 	result = /obj/item/rogueweapon/pick/stone
 	reqs = list(/obj/item/grown/log/tree/small = 1, /obj/item/natural/stone = 2)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
@@ -12776,6 +13145,7 @@
 	name = "stone sword"
 	result = /obj/item/rogueweapon/sword/stone
 	reqs = list(/obj/item/grown/log/tree/small = 1, /obj/item/natural/fibers = 1, /obj/item/natural/stone = 3)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
@@ -12802,7 +13172,7 @@
 	result = /obj/item/toy/cards/deck/tarot
 	reqs = list(/obj/item/paper/scroll = 3, /obj/item/grown/log/tree/small = 1, /obj/item/ash = 1)
 	tool_paths = list(/obj/item/natural/feather)
-	blacklist = list(/obj/item/paper/scroll/grudge, /obj/item/paper/scroll/writ_of_esteem/grenzel, /obj/item/paper/scroll/writ_of_esteem/otavan, /obj/item/paper/scroll/writ_of_esteem/zybantine)
+	blacklist = list(/obj/item/grown/log/tree/small/essence, /obj/item/paper/scroll/grudge, /obj/item/paper/scroll/writ_of_esteem/grenzel, /obj/item/paper/scroll/writ_of_esteem/otavan, /obj/item/paper/scroll/writ_of_esteem/zybantine)
 	category = "Literacy"
 	rogue_skill = /datum/attribute/skill/misc/reading
 	rogue_difficulty = 2
@@ -12814,7 +13184,7 @@
 	result = /obj/item/toy/cards/deck/tarot/majorarcana
 	reqs = list(/obj/item/paper/scroll = 3, /obj/item/grown/log/tree/small = 1, /obj/item/ash = 1)
 	tool_paths = list(/obj/item/natural/feather)
-	blacklist = list(/obj/item/paper/scroll/grudge, /obj/item/paper/scroll/writ_of_esteem/grenzel, /obj/item/paper/scroll/writ_of_esteem/otavan, /obj/item/paper/scroll/writ_of_esteem/zybantine)
+	blacklist = list(/obj/item/grown/log/tree/small/essence, /obj/item/paper/scroll/grudge, /obj/item/paper/scroll/writ_of_esteem/grenzel, /obj/item/paper/scroll/writ_of_esteem/otavan, /obj/item/paper/scroll/writ_of_esteem/zybantine)
 	category = "Literacy"
 	rogue_skill = /datum/attribute/skill/misc/reading
 	rogue_difficulty = 2
@@ -12933,6 +13303,7 @@
 	name = "wicker cloak"
 	result = /obj/item/clothing/cloak/wickercloak
 	reqs = list(/obj/item/natural/dirtclod = 1, /obj/item/grown/log/tree/stick = 5, /obj/item/natural/fibers = 3)
+	blacklist = list(/obj/item/natural/dirtclod/sand)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_difficulty = 0
@@ -12953,6 +13324,7 @@
 	result = /obj/item/reagent_containers/glass/bowl
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	rogue_results = list(/obj/item/reagent_containers/glass/bowl, /obj/item/reagent_containers/glass/bowl)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
@@ -12961,6 +13333,7 @@
 	name = "bucket (1 small log)"
 	result = /obj/item/reagent_containers/glass/bucket
 	reqs = list(/obj/item/grown/log/tree/small = 1)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
 	rogue_difficulty = 0
@@ -12970,6 +13343,7 @@
 	name = "wood club"
 	result = /obj/item/rogueweapon/mace/woodclub/crafted
 	reqs = list(/obj/item/grown/log/tree/small = 1)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
@@ -12987,6 +13361,7 @@
 	result = /obj/item/reagent_containers/glass/cup/wooden/crafted
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	rogue_results = list(/obj/item/reagent_containers/glass/cup/wooden/crafted, /obj/item/reagent_containers/glass/cup/wooden/crafted)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
@@ -12996,6 +13371,7 @@
 	result = /obj/item/rogueweapon/huntingknife/idagger/wood
 	reqs = list(/obj/item/grown/log/tree/small = 1, /obj/item/natural/fibers = 1)
 	rogue_results = list(/obj/item/rogueweapon/huntingknife/idagger/wood, /obj/item/rogueweapon/huntingknife/idagger/wood)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
 	rogue_difficulty = 0
@@ -13005,6 +13381,7 @@
 	name = "wood mallet"
 	result = /obj/item/rogueweapon/hammer/wood
 	reqs = list(/obj/item/grown/log/tree/small = 1, /obj/item/natural/fibers = 1)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
@@ -13013,7 +13390,7 @@
 	name = "wooden shield"
 	result = /obj/item/rogueweapon/shield/wood
 	reqs = list(/obj/item/grown/log/tree/small = 1, /obj/item/natural/hide = 1)
-	blacklist = list(/obj/item/natural/hide/cured)
+	blacklist = list(/obj/item/grown/log/tree/small/essence, /obj/item/natural/hide/cured)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
@@ -13022,6 +13399,7 @@
 	name = "wood spade"
 	result = /obj/item/rogueweapon/shovel/small
 	reqs = list(/obj/item/grown/log/tree/small = 1, /obj/item/grown/log/tree/stick = 1)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
@@ -13031,7 +13409,7 @@
 	result = /obj/item/rogueweapon/woodstaff
 	reqs = list(/obj/item/grown/log/tree = 1)
 	rogue_results = list(/obj/item/rogueweapon/woodstaff, /obj/item/rogueweapon/woodstaff)
-	blacklist = list(/obj/item/grown/log/tree/bowpartial, /obj/item/grown/log/tree/bowpartial/longbow, /obj/item/grown/log/tree/bowpartial/recurve, /obj/item/grown/log/tree/small, /obj/item/grown/log/tree/stake, /obj/item/grown/log/tree/stick)
+	blacklist = list(/obj/item/grown/log/tree/bowpartial, /obj/item/grown/log/tree/bowpartial/longbow, /obj/item/grown/log/tree/bowpartial/recurve, /obj/item/grown/log/tree/small, /obj/item/grown/log/tree/small/essence, /obj/item/grown/log/tree/stake, /obj/item/grown/log/tree/stick)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
 	rogue_difficulty = 0
@@ -13042,6 +13420,7 @@
 	result = /obj/item/rogueweapon/mace/wsword
 	reqs = list(/obj/item/grown/log/tree/small = 1, /obj/item/natural/fibers = 1)
 	rogue_results = list(/obj/item/rogueweapon/mace/wsword)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
 	rogue_difficulty = 0
@@ -13052,6 +13431,7 @@
 	result = /obj/item/storage/bag/tray
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	rogue_results = list(/obj/item/storage/bag/tray)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
@@ -13128,7 +13508,7 @@
 	name = "reinforced window (brick) (2 brick, 1 iron, 1 glass, 1 dirtclod)"
 	result = /obj/structure/roguewindow/openclose/reinforced/brick
 	reqs = list(/obj/item/natural/brick = 2, /obj/item/ingot/iron = 1, /obj/item/natural/glass = 1, /obj/item/natural/dirtclod = 1)
-	blacklist = list(/obj/item/natural/glass/heated)
+	blacklist = list(/obj/item/natural/dirtclod/sand, /obj/item/natural/glass/heated)
 	category = "Blacksmithing"
 	rogue_skill = /datum/attribute/skill/craft/blacksmithing
 	rogue_difficulty = 2
@@ -13200,7 +13580,7 @@
 	name = "window (fancy) (2 small logs, 1 stone, 1 glass, 1 dirtclod)"
 	result = /obj/structure/roguewindow/openclose
 	reqs = list(/obj/item/grown/log/tree/small = 2, /obj/item/natural/stone = 1, /obj/item/natural/glass = 1, /obj/item/natural/dirtclod = 1)
-	blacklist = list(/obj/item/natural/glass/heated)
+	blacklist = list(/obj/item/grown/log/tree/small/essence, /obj/item/natural/dirtclod/sand, /obj/item/natural/glass/heated)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
 	rogue_difficulty = 3
@@ -13223,7 +13603,7 @@
 	name = "window (reinforced) (2 small logs, 1 iron, 1 glass, 1 dirtclod)"
 	result = /obj/structure/roguewindow/openclose/reinforced
 	reqs = list(/obj/item/grown/log/tree/small = 2, /obj/item/ingot/iron = 1, /obj/item/natural/glass = 1, /obj/item/natural/dirtclod = 1)
-	blacklist = list(/obj/item/natural/glass/heated)
+	blacklist = list(/obj/item/grown/log/tree/small/essence, /obj/item/natural/dirtclod/sand, /obj/item/natural/glass/heated)
 	category = "Blacksmithing"
 	rogue_skill = /datum/attribute/skill/craft/blacksmithing
 	rogue_difficulty = 2
@@ -13235,6 +13615,7 @@
 	name = "static glass window (2 small logs)"
 	result = /obj/structure/roguewindow
 	reqs = list(/obj/item/grown/log/tree/small = 2)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
 	rogue_difficulty = 4
@@ -13249,7 +13630,7 @@
 	rogue_results = null
 	tool_paths = null
 	parts = null
-	blacklist = null
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
 	rogue_difficulty = 4
@@ -13264,6 +13645,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/turfs/roguewindow/reinforced
 	name = "reinforced glass window (2 small logs, 1 iron, 1 glass)"
@@ -13272,7 +13656,7 @@
 	rogue_results = null
 	tool_paths = null
 	parts = null
-	blacklist = list(/obj/item/natural/glass/heated)
+	blacklist = list(/obj/item/grown/log/tree/small/essence, /obj/item/natural/glass/heated)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
 	rogue_difficulty = 3
@@ -13287,6 +13671,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/turfs/roguewindow/stone
 	name = "static glass window (2 stone, 1 glass)"
@@ -13310,6 +13697,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/turfs/stone/block
 	name = "floor (stoneblock) (1 stone)"
@@ -13365,6 +13755,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/turfs/stone/churchredbrick
 	name = "Large Red Masonic Bricks"
@@ -13643,6 +14036,7 @@
 	name = "floor (crude wood) (1 small log)"
 	result = /turf/open/floor/rogue/ruinedwood
 	reqs = list(/obj/item/grown/log/tree/small = 1)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
 	rogue_difficulty = 0
@@ -13672,6 +14066,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/turfs/wood/darkwoodwall/horizontal
 	name = "dark wood wall horizontal (2 wood planks)"
@@ -13695,6 +14092,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/turfs/wood/darkwoodwall/vertical
 	name = "dark wood wall vertical (2 wood planks)"
@@ -13718,6 +14118,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/turfs/wood/darkwoodwindow
 	name = "dark wood murderhole (2 wood planks)"
@@ -13741,6 +14144,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/turfs/wood/fancy
 	name = "wall fancy (wood) (2 wooden planks)"
@@ -13764,6 +14170,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/turfs/wood/floor
 	name = "floor (wood) (1 wooden plank)"
@@ -13787,6 +14196,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/turfs/wood/floorhs
 	name = "floor (herringbone stamped)"
@@ -13810,6 +14222,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/turfs/wood/floorhw
 	name = "floor (herringbone weathered)"
@@ -13833,6 +14248,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/turfs/wood/floorslanted
 	name = "floor (slanted)"
@@ -13856,6 +14274,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/turfs/wood/murderhole
 	name = "murder hole (wood) (2 small logs)"
@@ -13864,7 +14285,7 @@
 	rogue_results = null
 	tool_paths = null
 	parts = null
-	blacklist = null
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
 	rogue_difficulty = 2
@@ -13879,6 +14300,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/turfs/wood/murderhole/alt
 	name = "murder hole (wood) (2 small logs)"
@@ -13902,6 +14326,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/turfs/wood/platform
 	name = "platform (wood) (2 wooden planks)"
@@ -13925,6 +14352,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/turfs/wood/wall
 	name = "wall (wood) (2 small logs)"
@@ -13933,7 +14363,7 @@
 	rogue_results = null
 	tool_paths = null
 	parts = null
-	blacklist = null
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
 	rogue_difficulty = 2
@@ -13948,6 +14378,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/turfs/wood/wall/alt
 	name = "wall (wood) (2 small logs)"
@@ -13971,6 +14404,9 @@
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/weaving/abyssorhood
 	name = "abyssor hood"
@@ -14173,6 +14609,7 @@
 	name = "wooden dildo"
 	result = /obj/item/dildo/wood
 	reqs = list(/obj/item/grown/log/tree/small = 1)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
@@ -14306,7 +14743,6 @@
 	name = "clay bottle, traditional"
 	result = /obj/item/natural/clay/claybottleclassic
 	reqs = list(/obj/item/natural/clay = 1)
-	blacklist = list(/obj/item/natural/clay/claybottle, /obj/item/natural/clay/claybottleclassic, /obj/item/natural/clay/claybrick, /obj/item/natural/clay/claycup, /obj/item/natural/clay/claycupclassic, /obj/item/natural/clay/clayfancyvaseclassic, /obj/item/natural/clay/claystatue, /obj/item/natural/clay/clayvaseclassic, /obj/item/natural/clay/glassbatch, /obj/item/natural/clay/kneaded, /obj/item/natural/clay/refined)
 	category = "Pottery"
 	rogue_skill = /datum/attribute/skill/craft/ceramics
 	rogue_structure = /obj/structure/fluff/ceramicswheel
@@ -14317,7 +14753,6 @@
 	result = /obj/item/natural/clay/claybrick
 	reqs = list(/obj/item/natural/clay = 3)
 	rogue_results = list(/obj/item/natural/clay/claybrick, /obj/item/natural/clay/claybrick)
-	blacklist = list(/obj/item/natural/clay/claybottle, /obj/item/natural/clay/claybottleclassic, /obj/item/natural/clay/claybrick, /obj/item/natural/clay/claycup, /obj/item/natural/clay/claycupclassic, /obj/item/natural/clay/clayfancyvaseclassic, /obj/item/natural/clay/claystatue, /obj/item/natural/clay/clayvaseclassic, /obj/item/natural/clay/glassbatch, /obj/item/natural/clay/kneaded, /obj/item/natural/clay/refined)
 	category = "Pottery"
 	rogue_skill = /datum/attribute/skill/craft/ceramics
 	rogue_difficulty = 0
@@ -14329,7 +14764,6 @@
 	result = /obj/item/natural/clay/claycup
 	reqs = list(/obj/item/natural/clay = 3)
 	rogue_results = list(/obj/item/natural/clay/claycup, /obj/item/natural/clay/claycup)
-	blacklist = list(/obj/item/natural/clay/claybottle, /obj/item/natural/clay/claybottleclassic, /obj/item/natural/clay/claybrick, /obj/item/natural/clay/claycup, /obj/item/natural/clay/claycupclassic, /obj/item/natural/clay/clayfancyvaseclassic, /obj/item/natural/clay/claystatue, /obj/item/natural/clay/clayvaseclassic, /obj/item/natural/clay/glassbatch, /obj/item/natural/clay/kneaded, /obj/item/natural/clay/refined)
 	category = "Pottery"
 	rogue_skill = /datum/attribute/skill/craft/ceramics
 	rogue_difficulty = 0
@@ -14341,7 +14775,6 @@
 	result = /obj/item/natural/clay/claycupclassic
 	reqs = list(/obj/item/natural/clay = 3)
 	rogue_results = list(/obj/item/natural/clay/claycupclassic, /obj/item/natural/clay/claycupclassic)
-	blacklist = list(/obj/item/natural/clay/claybottle, /obj/item/natural/clay/claybottleclassic, /obj/item/natural/clay/claybrick, /obj/item/natural/clay/claycup, /obj/item/natural/clay/claycupclassic, /obj/item/natural/clay/clayfancyvaseclassic, /obj/item/natural/clay/claystatue, /obj/item/natural/clay/clayvaseclassic, /obj/item/natural/clay/glassbatch, /obj/item/natural/clay/kneaded, /obj/item/natural/clay/refined)
 	category = "Pottery"
 	rogue_skill = /datum/attribute/skill/craft/ceramics
 	rogue_difficulty = 0
@@ -14352,7 +14785,6 @@
 	name = "fancy clay vase, traditional"
 	result = /obj/item/natural/clay/clayfancyvaseclassic
 	reqs = list(/obj/item/natural/clay = 2)
-	blacklist = list(/obj/item/natural/clay/claybottle, /obj/item/natural/clay/claybottleclassic, /obj/item/natural/clay/claybrick, /obj/item/natural/clay/claycup, /obj/item/natural/clay/claycupclassic, /obj/item/natural/clay/clayfancyvaseclassic, /obj/item/natural/clay/claystatue, /obj/item/natural/clay/clayvaseclassic, /obj/item/natural/clay/glassbatch, /obj/item/natural/clay/kneaded, /obj/item/natural/clay/refined)
 	category = "Pottery"
 	rogue_skill = /datum/attribute/skill/craft/ceramics
 	rogue_difficulty = 3
@@ -14363,7 +14795,6 @@
 	name = "clay statue"
 	result = /obj/item/natural/clay/claystatue
 	reqs = list(/obj/item/natural/clay = 3)
-	blacklist = list(/obj/item/natural/clay/claybottle, /obj/item/natural/clay/claybottleclassic, /obj/item/natural/clay/claybrick, /obj/item/natural/clay/claycup, /obj/item/natural/clay/claycupclassic, /obj/item/natural/clay/clayfancyvaseclassic, /obj/item/natural/clay/claystatue, /obj/item/natural/clay/clayvaseclassic, /obj/item/natural/clay/glassbatch, /obj/item/natural/clay/kneaded, /obj/item/natural/clay/refined)
 	category = "Pottery"
 	rogue_skill = /datum/attribute/skill/craft/ceramics
 	rogue_difficulty = 4
@@ -14374,7 +14805,6 @@
 	name = "clay vase, traditional"
 	result = /obj/item/natural/clay/clayvaseclassic
 	reqs = list(/obj/item/natural/clay = 2)
-	blacklist = list(/obj/item/natural/clay/claybottle, /obj/item/natural/clay/claybottleclassic, /obj/item/natural/clay/claybrick, /obj/item/natural/clay/claycup, /obj/item/natural/clay/claycupclassic, /obj/item/natural/clay/clayfancyvaseclassic, /obj/item/natural/clay/claystatue, /obj/item/natural/clay/clayvaseclassic, /obj/item/natural/clay/glassbatch, /obj/item/natural/clay/kneaded, /obj/item/natural/clay/refined)
 	category = "Pottery"
 	rogue_skill = /datum/attribute/skill/craft/ceramics
 	rogue_difficulty = 2
@@ -14489,7 +14919,7 @@
 	name = "engineer's launcher"
 	result = /obj/structure/englauncher
 	reqs = list(/obj/item/roguegear = 1, /obj/item/natural/wood/plank = 4, /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow = 1)
-	blacklist = list(/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/arbalest, /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/heavy, /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow, /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow/stalker, /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow/stalker/lesser, /obj/item/roguegear/bronze, /obj/item/roguegear/wood/basic)
+	blacklist = list(/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/arbalest, /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/heavy, /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow, /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow/stalker, /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow/stalker/lesser, /obj/item/roguegear/bronze, /obj/item/roguegear/wood/basic, /obj/item/roguegear/wood/reliable, /obj/item/roguegear/wood/unstable)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 4
@@ -14501,6 +14931,7 @@
 	name = "bottle bomb (clod jury rig)"
 	result = /obj/item/bomb
 	reqs = list(/obj/item/natural/dirtclod = 3, /obj/item/ash = 2, /obj/item/natural/fibers = 2)
+	blacklist = list(/obj/item/natural/dirtclod/sand)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 4
@@ -14519,7 +14950,7 @@
 	name = "bomb trap (engineered)"
 	result = /obj/structure/trap/bomb
 	reqs = list(/obj/item/roguegear = 1, /obj/item/natural/clay = 1, /obj/item/roguegem/amethyst = 1, /obj/item/impact_grenade/explosion = 1)
-	blacklist = list(/obj/item/natural/clay/claybottle, /obj/item/natural/clay/claybottleclassic, /obj/item/natural/clay/claybrick, /obj/item/natural/clay/claycup, /obj/item/natural/clay/claycupclassic, /obj/item/natural/clay/clayfancyvaseclassic, /obj/item/natural/clay/claystatue, /obj/item/natural/clay/clayvaseclassic, /obj/item/natural/clay/glassbatch, /obj/item/natural/clay/kneaded, /obj/item/natural/clay/refined, /obj/item/roguegear/bronze, /obj/item/roguegear/wood/basic, /obj/item/roguegem/amethyst/naledi)
+	blacklist = list(/obj/item/roguegear/bronze, /obj/item/roguegear/wood/basic, /obj/item/roguegear/wood/reliable, /obj/item/roguegear/wood/unstable, /obj/item/roguegem/amethyst/naledi)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 6
@@ -14529,7 +14960,7 @@
 	name = "floorgrille"
 	result = /obj/structure/bars/grille
 	reqs = list(/obj/item/ingot/iron = 1, /obj/item/roguegear = 1)
-	blacklist = list(/obj/item/roguegear/bronze, /obj/item/roguegear/wood/basic)
+	blacklist = list(/obj/item/roguegear/bronze, /obj/item/roguegear/wood/basic, /obj/item/roguegear/wood/reliable, /obj/item/roguegear/wood/unstable)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 3
@@ -14541,7 +14972,7 @@
 	name = "gate"
 	result = /obj/structure/bars/passage
 	reqs = list(/obj/item/ingot/iron = 1, /obj/item/roguegear = 1)
-	blacklist = list(/obj/item/roguegear/bronze, /obj/item/roguegear/wood/basic)
+	blacklist = list(/obj/item/roguegear/bronze, /obj/item/roguegear/wood/basic, /obj/item/roguegear/wood/reliable, /obj/item/roguegear/wood/unstable)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 2
@@ -14581,7 +15012,7 @@
 	name = "pressure plate"
 	result = /obj/structure/pressure_plate
 	reqs = list(/obj/item/roguegear = 1, /obj/item/natural/wood/plank = 2)
-	blacklist = list(/obj/item/roguegear/bronze, /obj/item/roguegear/wood/basic)
+	blacklist = list(/obj/item/roguegear/bronze, /obj/item/roguegear/wood/basic, /obj/item/roguegear/wood/reliable, /obj/item/roguegear/wood/unstable)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 2
@@ -14593,7 +15024,7 @@
 	name = "rock trap (engineered)"
 	result = /obj/structure/trap/rock_fall
 	reqs = list(/obj/item/roguegear = 1, /obj/item/natural/clay = 1, /obj/item/roguegem/amethyst = 1, /obj/item/natural/rock = 1)
-	blacklist = list(/obj/item/natural/clay/claybottle, /obj/item/natural/clay/claybottleclassic, /obj/item/natural/clay/claybrick, /obj/item/natural/clay/claycup, /obj/item/natural/clay/claycupclassic, /obj/item/natural/clay/clayfancyvaseclassic, /obj/item/natural/clay/claystatue, /obj/item/natural/clay/clayvaseclassic, /obj/item/natural/clay/glassbatch, /obj/item/natural/clay/kneaded, /obj/item/natural/clay/refined, /obj/item/natural/rock/coal, /obj/item/natural/rock/gem, /obj/item/natural/rock/iron, /obj/item/natural/rock/random, /obj/item/natural/rock/random_ore, /obj/item/natural/rock/salt, /obj/item/natural/rock/silver, /obj/item/roguegear/bronze, /obj/item/roguegear/wood/basic, /obj/item/roguegem/amethyst/naledi)
+	blacklist = list(/obj/item/natural/rock/coal, /obj/item/natural/rock/gem, /obj/item/natural/rock/iron, /obj/item/natural/rock/random, /obj/item/natural/rock/random_ore, /obj/item/natural/rock/salt, /obj/item/natural/rock/silver, /obj/item/roguegear/bronze, /obj/item/roguegear/wood/basic, /obj/item/roguegear/wood/reliable, /obj/item/roguegear/wood/unstable, /obj/item/roguegem/amethyst/naledi)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 4
@@ -14678,6 +15109,9 @@
 	rogue_sound = null
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/leather/reinforcement/studded/bikini
 	// Azure Peak
@@ -15022,6 +15456,7 @@
 	name = "tankards, blacksteel (x1)"
 	result = /obj/item/reagent_containers/glass/bucket/pot/kettle/tankard/blacksteel
 	reqs = list(/obj/item/grown/log/tree/small = 2, /obj/item/ingot/blacksteel = 1)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
 	rogue_difficulty = 6
@@ -15031,6 +15466,7 @@
 	name = "wood into charcoal"
 	result = /obj/item/rogueore/coal/charcoal
 	reqs = list(/obj/item/grown/log/tree/small = 1)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_difficulty = 0
@@ -15119,7 +15555,7 @@
 	rogue_results = null
 	tool_paths = list(/obj/item/rogueweapon/hammer)
 	parts = null
-	blacklist = list(/obj/item/rope/chain, /obj/item/rope/chain/bindingshackles, /obj/item/rope/chain/bindingshackles/t2, /obj/item/rope/chain/bindingshackles/t3, /obj/item/rope/chain/bindingshackles/t4, /obj/item/rope/chain/bindingshackles/t5, /obj/item/rope/inqarticles/inquirycord)
+	blacklist = list(/obj/item/grown/log/tree/small/essence, /obj/item/rope/chain, /obj/item/rope/chain/bindingshackles, /obj/item/rope/chain/bindingshackles/t2, /obj/item/rope/chain/bindingshackles/t3, /obj/item/rope/chain/bindingshackles/t4, /obj/item/rope/chain/bindingshackles/t5, /obj/item/rope/inqarticles/inquirycord)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
 	rogue_difficulty = 0
@@ -15134,6 +15570,9 @@
 	rogue_sound = null
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/survival/peasantry/maciejowski_knife
 	// Azure Peak
@@ -15152,6 +15591,7 @@
 	result = /obj/item/rogueweapon/sword/falchion/militia
 	reqs = list(/obj/item/rogueweapon/sword/short/messer/iron = 1, /obj/item/natural/whetstone = 1)
 	tool_paths = list(/obj/item/rogueweapon/hammer)
+	blacklist = list(/obj/item/rogueweapon/sword/short/messer/iron/virtue)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
 	rogue_difficulty = 2
@@ -15163,7 +15603,7 @@
 	result = /obj/item/rogueweapon/flail/peasantwarflail
 	reqs = list(/obj/item/grown/log/tree/small = 2, /obj/item/rope = 1, /obj/item/rogueweapon/thresher = 1)
 	tool_paths = list(/obj/item/rogueweapon/hammer)
-	blacklist = list(/obj/item/rogueweapon/thresher/blacksteel, /obj/item/rogueweapon/thresher/decrepit, /obj/item/rope/chain, /obj/item/rope/chain/bindingshackles, /obj/item/rope/chain/bindingshackles/t2, /obj/item/rope/chain/bindingshackles/t3, /obj/item/rope/chain/bindingshackles/t4, /obj/item/rope/chain/bindingshackles/t5, /obj/item/rope/inqarticles/inquirycord)
+	blacklist = list(/obj/item/grown/log/tree/small/essence, /obj/item/rogueweapon/thresher/blacksteel, /obj/item/rogueweapon/thresher/decrepit, /obj/item/rope/chain, /obj/item/rope/chain/bindingshackles, /obj/item/rope/chain/bindingshackles/t2, /obj/item/rope/chain/bindingshackles/t3, /obj/item/rope/chain/bindingshackles/t4, /obj/item/rope/chain/bindingshackles/t5, /obj/item/rope/inqarticles/inquirycord)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
 	rogue_difficulty = 2
@@ -15188,7 +15628,7 @@
 	rogue_results = null
 	tool_paths = list(/obj/item/rogueweapon/hammer)
 	parts = null
-	blacklist = list(/obj/item/rope/chain, /obj/item/rope/chain/bindingshackles, /obj/item/rope/chain/bindingshackles/t2, /obj/item/rope/chain/bindingshackles/t3, /obj/item/rope/chain/bindingshackles/t4, /obj/item/rope/chain/bindingshackles/t5, /obj/item/rope/inqarticles/inquirycord)
+	blacklist = list(/obj/item/grown/log/tree/small/essence, /obj/item/rope/chain, /obj/item/rope/chain/bindingshackles, /obj/item/rope/chain/bindingshackles/t2, /obj/item/rope/chain/bindingshackles/t3, /obj/item/rope/chain/bindingshackles/t4, /obj/item/rope/chain/bindingshackles/t5, /obj/item/rope/inqarticles/inquirycord)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
 	rogue_difficulty = 0
@@ -15203,6 +15643,9 @@
 	rogue_sound = null
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/survival/peasantry/scythe
 	// Azure Peak
@@ -15210,7 +15653,7 @@
 	result = /obj/item/rogueweapon/scythe
 	reqs = list(/obj/item/natural/whetstone = 1, /obj/item/grown/log/tree/small = 2, /obj/item/rope = 1)
 	tool_paths = list(/obj/item/rogueweapon/hammer)
-	blacklist = list(/obj/item/rope/chain, /obj/item/rope/chain/bindingshackles, /obj/item/rope/chain/bindingshackles/t2, /obj/item/rope/chain/bindingshackles/t3, /obj/item/rope/chain/bindingshackles/t4, /obj/item/rope/chain/bindingshackles/t5, /obj/item/rope/inqarticles/inquirycord)
+	blacklist = list(/obj/item/grown/log/tree/small/essence, /obj/item/rope/chain, /obj/item/rope/chain/bindingshackles, /obj/item/rope/chain/bindingshackles/t2, /obj/item/rope/chain/bindingshackles/t3, /obj/item/rope/chain/bindingshackles/t4, /obj/item/rope/chain/bindingshackles/t5, /obj/item/rope/inqarticles/inquirycord)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
 	rogue_on_table = TRUE
@@ -15234,7 +15677,7 @@
 	rogue_results = null
 	tool_paths = list(/obj/item/rogueweapon/hammer)
 	parts = null
-	blacklist = list(/obj/item/rope/chain, /obj/item/rope/chain/bindingshackles, /obj/item/rope/chain/bindingshackles/t2, /obj/item/rope/chain/bindingshackles/t3, /obj/item/rope/chain/bindingshackles/t4, /obj/item/rope/chain/bindingshackles/t5, /obj/item/rope/inqarticles/inquirycord)
+	blacklist = list(/obj/item/grown/log/tree/small/essence, /obj/item/rope/chain, /obj/item/rope/chain/bindingshackles, /obj/item/rope/chain/bindingshackles/t2, /obj/item/rope/chain/bindingshackles/t3, /obj/item/rope/chain/bindingshackles/t4, /obj/item/rope/chain/bindingshackles/t5, /obj/item/rope/inqarticles/inquirycord)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
 	rogue_difficulty = 0
@@ -15249,6 +15692,9 @@
 	rogue_sound = null
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/survival/peasantry/thresher
 	// Azure Peak
@@ -15269,7 +15715,7 @@
 	rogue_results = null
 	tool_paths = list(/obj/item/rogueweapon/hammer)
 	parts = null
-	blacklist = list(/obj/item/rope/chain, /obj/item/rope/chain/bindingshackles, /obj/item/rope/chain/bindingshackles/t2, /obj/item/rope/chain/bindingshackles/t3, /obj/item/rope/chain/bindingshackles/t4, /obj/item/rope/chain/bindingshackles/t5, /obj/item/rope/inqarticles/inquirycord)
+	blacklist = list(/obj/item/grown/log/tree/small/essence, /obj/item/rope/chain, /obj/item/rope/chain/bindingshackles, /obj/item/rope/chain/bindingshackles/t2, /obj/item/rope/chain/bindingshackles/t3, /obj/item/rope/chain/bindingshackles/t4, /obj/item/rope/chain/bindingshackles/t5, /obj/item/rope/inqarticles/inquirycord)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
 	rogue_difficulty = 0
@@ -15284,6 +15730,9 @@
 	rogue_sound = null
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/survival/peasantry/warspear_hoe
 	// Azure Peak
@@ -15291,7 +15740,7 @@
 	result = /obj/item/rogueweapon/spear/militia
 	reqs = list(/obj/item/rogueweapon/hoe = 1, /obj/item/grown/log/tree/small = 2, /obj/item/rope = 1)
 	tool_paths = list(/obj/item/rogueweapon/hammer)
-	blacklist = list(/obj/item/rogueweapon/hoe/blacksteel, /obj/item/rogueweapon/hoe/copper, /obj/item/rogueweapon/hoe/decrepit, /obj/item/rogueweapon/hoe/stone, /obj/item/rope/chain, /obj/item/rope/chain/bindingshackles, /obj/item/rope/chain/bindingshackles/t2, /obj/item/rope/chain/bindingshackles/t3, /obj/item/rope/chain/bindingshackles/t4, /obj/item/rope/chain/bindingshackles/t5, /obj/item/rope/inqarticles/inquirycord)
+	blacklist = list(/obj/item/grown/log/tree/small/essence, /obj/item/rogueweapon/hoe/blacksteel, /obj/item/rogueweapon/hoe/copper, /obj/item/rogueweapon/hoe/decrepit, /obj/item/rogueweapon/hoe/stone, /obj/item/rope/chain, /obj/item/rope/chain/bindingshackles, /obj/item/rope/chain/bindingshackles/t2, /obj/item/rope/chain/bindingshackles/t3, /obj/item/rope/chain/bindingshackles/t4, /obj/item/rope/chain/bindingshackles/t5, /obj/item/rope/inqarticles/inquirycord)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
 	rogue_difficulty = 2
@@ -15302,6 +15751,7 @@
 	name = "peppermill"
 	result = /obj/item/reagent_containers/peppermill
 	reqs = list(/obj/item/grown/log/tree/small = 1, /obj/item/reagent_containers/food/snacks/pepper = 5)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Cooking"
 	rogue_skill = /datum/attribute/skill/craft/cooking
 	rogue_difficulty = 5
@@ -15321,6 +15771,7 @@
 	name = "fishing rod, blacksteel"
 	result = /obj/item/fishingrod/blacksteel
 	reqs = list(/obj/item/grown/log/tree/small = 1, /obj/item/natural/fibers = 2, /obj/item/ingot/blacksteel = 1)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 
@@ -15330,6 +15781,7 @@
 	result = /obj/item/reagent_containers/glass/bucket/pot/kettle/tankard/silver
 	reqs = list(/obj/item/grown/log/tree/small = 2, /obj/item/ingot/silver = 1)
 	rogue_results = list(/obj/item/reagent_containers/glass/bucket/pot/kettle/tankard/silver)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
 	rogue_difficulty = 4
@@ -15350,6 +15802,7 @@
 	result = /obj/item/reagent_containers/glass/bucket/pot/kettle/tankard
 	reqs = list(/obj/item/grown/log/tree/small = 2, /obj/item/ingot/iron = 1)
 	rogue_results = list(/obj/item/reagent_containers/glass/bucket/pot/kettle/tankard, /obj/item/reagent_containers/glass/bucket/pot/kettle/tankard)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
 	rogue_difficulty = 2
@@ -15388,6 +15841,9 @@
 	rogue_sound = null
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/turfs/roguewindow/stone_zizo
 	// Azure Peak
@@ -15412,6 +15868,9 @@
 	rogue_sound = null
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/turfs/wood/floorhl
 	// Azure Peak
@@ -15436,6 +15895,9 @@
 	rogue_sound = null
 	rogue_xp = -1
 	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/weaving/openeorarobes
 	// Azure Peak

@@ -3,10 +3,11 @@
 	return user?.mind?.assigned_role?.title in list(JOB_ROCKHILL_STEWARD, JOB_ROCKHILL_CLERK, JOB_ROCKHILL_GRAND_DUKE)
 
 /**
- * The treasury of the realm on medieval maps (Ratwood code/controllers/subsystem/rogue/treasury.dm, SStreasury), cut down to the
- * money loop: the Crown's Purse, the NERVELOCK accounts of the subjects, the Crown's levies, the dawn payouts (rural tax, estate
- * incomes, wages the Steward sets) and the stockpile, which the Crown fills from afar and ships abroad every treasury tick.
- * Ratwood's loans, funds of the guilds and church, poll tax, decrees, bankruptcy and trade regions are not ported.
+ * The treasury of the realm on medieval maps (Ratwood code/controllers/subsystem/rogue/treasury.dm, SStreasury): the Crown's Purse
+ * and the funds of the Church, the merchants, the bathhouse and the tavern; the NERVELOCK accounts of the subjects; the Crown's
+ * levies and fines, the poll tax and the charters that bound them; loans and indentures; the dawn payouts (rural tax, estate
+ * incomes, wages the Steward sets) and the Crown's solvency; and the stockpile, which the Crown fills from afar and ships abroad
+ * every treasury tick. Ratwood's trade regions, Burgher Pledge, rumors and contract levies are not ported.
  */
 SUBSYSTEM_DEF(rogue_treasury)
 	name = "Treasury"
@@ -17,6 +18,8 @@ SUBSYSTEM_DEF(rogue_treasury)
 	)
 	/// The treasury of the realm (Ratwood discretionary_fund).
 	var/datum/bank_account/rogue/crown/crown_purse
+	/// Institution id -> its fund, the Crown's Purse included (Ratwood resolve_fund_by_id()).
+	var/list/funds = list()
 	/// Every NERVELOCK account opened this round.
 	var/list/datum/bank_account/rogue/accounts = list()
 	/// Levy name -> rate (Ratwood tax_rates).
@@ -31,6 +34,8 @@ SUBSYSTEM_DEF(rogue_treasury)
 	var/list/datum/roguestock/stockpile_datums = list()
 	/// Below this the Crown buys nothing at the stockpile (Ratwood stockpile_purchase_floor).
 	var/stockpile_purchase_floor = 1000
+	/// Share of a good's limit the Crown keeps before it ships the surplus abroad; sequestration lowers it (Ratwood autoexport_percentage).
+	var/autoexport_share = ROGUE_AUTOEXPORT_SHARE
 	/// Mammons of goods the realm traded through the stockpile (Ratwood economic_output).
 	var/economic_output = 0
 	var/total_export = 0
@@ -38,8 +43,16 @@ SUBSYSTEM_DEF(rogue_treasury)
 	var/total_rural_tax = 0
 	var/total_wages = 0
 	var/total_tariff = 0
+	var/total_fines = 0
+	var/total_poll_tax = 0
+	var/total_poll_subsidy = 0
+	var/total_concordat_tithe = 0
 	/// The Purse has had its share for the players present at round start.
 	var/seeded_players = FALSE
+	/// Wages were paid once at round start (Ratwood initial_payment_done).
+	var/initial_wages_paid = FALSE
+	/// Shares of mammons the Concordat owes the Church that did not yet make a whole coin (Ratwood concordat_tithe_debt).
+	var/concordat_tithe_debt = 0
 
 /datum/controller/subsystem/rogue_treasury/Initialize()
 	if(!rogue_economy_enabled())
@@ -48,24 +61,39 @@ SUBSYSTEM_DEF(rogue_treasury)
 	stockpile_purchase_floor = CONFIG_GET(number/rogue_stockpile_floor)
 	tax_rates[ROGUE_TAX_IMPORT] = CONFIG_GET(number/rogue_import_tariff) / 100
 	crown_purse = new("Crown's Purse")
+	funds[ROGUE_FUND_CROWN] = crown_purse
 	mint(crown_purse, CONFIG_GET(number/rogue_crown_purse) + rand(500, 1500), "Treasury of the realm")
+	for(var/datum/bank_account/rogue/fund/fund_type as anything in subtypesof(/datum/bank_account/rogue/fund))
+		var/datum/bank_account/rogue/fund/fund = new fund_type(initial(fund_type.account_holder))
+		funds[fund.fund_id] = fund
+		mint(fund, fund.founding_endowment(), "Founding endowment")
 	for(var/datum/roguestock/stock_type as anything in subtypesof(/datum/roguestock/stockpile))
 		if(initial(stock_type.item_type))
 			stockpile_datums += new stock_type
+	setup_poll_tax()
+	setup_funds()
+	init_decrees()
 	setup_default_payments()
+	enforce_wage_floors()
+	update_jawbanks()
 	RegisterSignal(SSdcs, COMSIG_GLOB_ROCKHILL_TIME_OF_DAY, PROC_REF(on_time_of_day))
 	return SS_INIT_SUCCESS
 
 /datum/controller/subsystem/rogue_treasury/stat_entry(msg)
-	msg = "Purse: [crown_purse?.account_balance || 0]m, accounts: [length(accounts)]"
+	msg = "Purse: [crown_purse?.account_balance || 0]m, accounts: [length(accounts)], loans: [length(loans)]"
 	return ..()
 
 /datum/controller/subsystem/rogue_treasury/fire(resumed)
 	if(!seeded_players)
 		seeded_players = TRUE
 		mint(crown_purse, length(GLOB.alive_player_list) * CONFIG_GET(number/rogue_crown_purse_per_player), "Treasury of the realm")
+	if(!initial_wages_paid)
+		initial_wages_paid = TRUE
+		evaluate_solvency()
+		pay_wages()
 	passive_import()
 	auto_export()
+	update_jawbanks()
 
 /// Ratwood's Rockhill wages (setup_default_payments() of the nerve master), mammons per dawn.
 /datum/controller/subsystem/rogue_treasury/proc/setup_default_payments()
@@ -94,6 +122,22 @@ SUBSYSTEM_DEF(rogue_treasury)
 		JOB_ROCKHILL_JESTER = 6,
 	)
 
+/// Sets a role's wage; while a charter floors it, it cannot go lower (Ratwood steward.dm, "Set daily payment"). Returns the wage set.
+/datum/controller/subsystem/rogue_treasury/proc/set_wage(title, wage)
+	wage = max(round(wage), wage_floor(title))
+	if(wage > 0)
+		daily_payments[title] = wage
+	else
+		daily_payments -= title
+	return wage
+
+/// Raises every wage a standing charter floors to that floor (Ratwood enforce_wage_floors()).
+/datum/controller/subsystem/rogue_treasury/proc/enforce_wage_floors()
+	for(var/title in wage_floored_titles())
+		var/floor_wage = wage_floor(title)
+		if(floor_wage > (daily_payments[title] || 0))
+			daily_payments[title] = floor_wage
+
 // Money. Mint creates mammons (coins melted into an account, taxes, estates), burn destroys them (coins paid out, imports),
 // transfer moves them between accounts; all go through TG's adjust_money()/transfer_money() and their ledger.
 
@@ -101,7 +145,10 @@ SUBSYSTEM_DEF(rogue_treasury)
 	amount = min(round(amount), ROGUE_TRANSFER_MAX)
 	if(!account || amount <= 0)
 		return FALSE
-	return account.adjust_money(amount, reason)
+	if(!account.adjust_money(amount, reason))
+		return FALSE
+	on_income(account, amount)
+	return TRUE
 
 /datum/controller/subsystem/rogue_treasury/proc/burn(datum/bank_account/account, amount, reason)
 	amount = round(amount)
@@ -111,9 +158,28 @@ SUBSYSTEM_DEF(rogue_treasury)
 
 /datum/controller/subsystem/rogue_treasury/proc/transfer(datum/bank_account/payer, datum/bank_account/payee, amount, reason)
 	amount = min(round(amount), ROGUE_TRANSFER_MAX)
-	if(!payer || !payee || amount <= 0)
+	if(!payer || !payee || payer == payee || amount <= 0)
 		return FALSE
-	return payee.transfer_money(payer, amount, reason)
+	if(!payee.transfer_money(payer, amount, reason))
+		return FALSE
+	on_income(payee, amount)
+	return TRUE
+
+/**
+ * Money came into an account. Income of the Crown's Purse first pays off the Crown's debt to the trading company (Ratwood
+ * skim_for_treasury_debt()); income of a subject first pays the poll tax they are behind on.
+ */
+/datum/controller/subsystem/rogue_treasury/proc/on_income(datum/bank_account/account, amount)
+	if(account == crown_purse)
+		skim_for_treasury_debt(amount)
+		return
+	var/datum/bank_account/rogue/subject = account
+	if(istype(subject) && !subject.fund_id && subject.poll_owed > 0)
+		collect_poll_arrears(subject)
+
+/// The fund of an institution (Ratwood resolve_fund_by_id()).
+/datum/controller/subsystem/rogue_treasury/proc/get_fund(fund_id)
+	return funds[fund_id]
 
 /datum/controller/subsystem/rogue_treasury/proc/get_account(mob/target)
 	return target?.mind?.rogue_account
@@ -166,35 +232,81 @@ SUBSYSTEM_DEF(rogue_treasury)
 	log_game("CROWN GRANT: [key_name(usr)] granted [amount]m to [account.account_holder] via [reason]")
 	return TRUE
 
-/// Ratwood's fine: the Crown takes up to the subject's whole balance into the Purse, once a day per subject.
+/**
+ * The most the Crown may fine a subject now (Ratwood get_max_fine_for() and get_daily_fine_remaining()): once a day, at most
+ * a share of the balance, less for those a charter shields, nothing for those a charter exempts. Outlaws have no such limits.
+ */
+/datum/controller/subsystem/rogue_treasury/proc/max_fine(datum/bank_account/rogue/account)
+	if(!account || account.account_balance <= 0)
+		return 0
+	var/mob/living/payer = account.owner()
+	if(payer && HAS_TRAIT(payer, TRAIT_OUTLAW))
+		return account.account_balance
+	if(fined_today[account] || (payer && tax_exempt(payer)))
+		return 0
+	var/cap = ROGUE_FINE_RATE_CAP
+	var/most_today = account.account_balance
+	if(payer)
+		for(var/id in decrees)
+			var/datum/rogue_decree/decree = decrees[id]
+			if(!decree.active)
+				continue
+			cap = decree.rate_cap(payer, cap)
+			most_today = decree.fine_cap(payer, most_today)
+	return max(0, min(floor(account.account_balance * cap), most_today))
+
+/// Ratwood's fine: the Crown takes what the charters allow into the Purse, once a day per subject. Returns the mammons taken.
 /datum/controller/subsystem/rogue_treasury/proc/fine(datum/bank_account/rogue/account, amount, reason)
 	if(!account || amount <= 0)
-		return FALSE
-	if(fined_today[account])
-		return FALSE
-	amount = min(amount, account.account_balance)
-	if(!transfer(account, crown_purse, amount, "Fine ([reason])"))
-		return FALSE
-	fined_today[account] = TRUE
+		return 0
+	amount = min(round(amount), max_fine(account))
+	if(amount <= 0 || !transfer(account, crown_purse, amount, "Fine ([reason])"))
+		return 0
+	var/mob/living/payer = account.owner()
+	if(!payer || !HAS_TRAIT(payer, TRAIT_OUTLAW))
+		fined_today[account] = TRUE
+	total_fines += amount
 	account.bank_card_talk("You were fined [amount]m. ([reason])")
 	log_game("FINE: [key_name(usr)] fined [account.account_holder] [amount]m via [reason]")
-	return TRUE
+	return amount
 
-/// A new day: the Crown collects the rural tax, estates and wages are paid (Ratwood's dawn in code/__HELPERS/time.dm).
+/// A new day dawns on Rockhill. The dawn's business may proclaim things, so it runs outside the signal.
 /datum/controller/subsystem/rogue_treasury/proc/on_time_of_day(datum/source, datum/rockhill_clock_step/phase/old_phase, datum/rockhill_clock_step/phase/new_phase)
 	SIGNAL_HANDLER
 	if(new_phase?.name != ROCKHILL_DAWN || !crown_purse)
 		return
+	INVOKE_ASYNC(src, PROC_REF(new_day))
+
+/**
+ * The Crown's business at dawn, in Ratwood's order (code/__HELPERS/time.dm settod()): the rural tax, the estates, the payroll
+ * after the Crown checks it can meet it, the loans that fall due, then the poll tax.
+ */
+/datum/controller/subsystem/rogue_treasury/proc/new_day()
 	fined_today.Cut()
+	bathhouse_drawn.Cut()
 	var/rural_tax = CONFIG_GET(number/rogue_rural_tax)
 	if(mint(crown_purse, rural_tax, "Rural Tax Collection"))
 		total_rural_tax += rural_tax
 	for(var/datum/bank_account/rogue/account as anything in accounts)
 		grant_estate_income(account)
+	evaluate_solvency()
 	pay_wages()
+	tick_loans()
+	tick_poll_tax()
 
-/// Ratwood distribute_daily_payments(): every subject whose role has a wage is paid from the Purse while it has the money.
+/// Mammons the day's wages will cost the Purse (Ratwood get_expected_wage_outlay()).
+/datum/controller/subsystem/rogue_treasury/proc/expected_wage_outlay()
+	var/total = 0
+	for(var/datum/bank_account/rogue/account as anything in accounts)
+		var/wage = daily_payments[account.job_title()]
+		if(wage && !account.wages_suspended && account.owner())
+			total += wage
+	return total
+
+/// Ratwood distribute_daily_payments(): every subject whose role has a wage is paid from the Purse while it has the money; under sequestration nobody is.
 /datum/controller/subsystem/rogue_treasury/proc/pay_wages()
+	if(treasury_state == ROGUE_TREASURY_SEQUESTERED)
+		return
 	for(var/datum/bank_account/rogue/account as anything in accounts)
 		var/wage = daily_payments[account.job_title()]
 		if(!wage || account.wages_suspended || !account.owner())
@@ -229,12 +341,12 @@ SUBSYSTEM_DEF(rogue_treasury)
 			stock.stockpile_amount += units
 			total_import += cost
 
-/// Ratwood auto_export(): a good kept above 60% of its limit ships a load abroad; the Crown's Purse takes the price.
+/// Ratwood auto_export(): a good kept above its share of the limit ships a load abroad; the Crown's Purse takes the price.
 /datum/controller/subsystem/rogue_treasury/proc/auto_export()
 	for(var/datum/roguestock/stock as anything in stockpile_datums)
 		if(stock.autoexport_disabled || stock.importexport_amt <= 0)
 			continue
-		if(stock.stockpile_amount <= ROGUE_AUTOEXPORT_SHARE * stock.stockpile_limit || stock.stockpile_amount < stock.importexport_amt)
+		if(stock.stockpile_amount <= autoexport_share * stock.stockpile_limit || stock.stockpile_amount < stock.importexport_amt)
 			continue
 		export_stock(stock, stock.importexport_amt)
 
@@ -250,20 +362,46 @@ SUBSYSTEM_DEF(rogue_treasury)
 	economic_output += revenue
 	return revenue
 
-/// Changes a levy, once a day, and proclaims it (Ratwood apply_rate_adjustments()).
+/// Changes a levy, once a day, and proclaims it (Ratwood apply_rate_adjustments()). The Concordat keeps every levy at its tithe or above.
 /datum/controller/subsystem/rogue_treasury/proc/set_tax_rate(levy, percent, mob/user)
 	if(!(levy in tax_rates))
 		return FALSE
-	if(levy_changed_dawn == GLOB.rockhill_dawns)
+	if(levy_changed_dawn == ROGUE_TREASURY_DAY)
 		to_chat(user, span_warning("Crown levies have already been adjusted today - come back tomorrow."))
+		return FALSE
+	if(decree_active(ROGUE_DECREE_MAGNA_CARTA))
+		to_chat(user, span_warning("The Magna Carta stands: the Crown levies nothing while it is in force."))
 		return FALSE
 	var/old_percent = round(tax_rates[levy] * 100)
 	percent = clamp(round(percent), 0, 100)
+	var/tithe_percent = round(ROGUE_CONCORDAT_TITHE * 100)
+	if(decree_active(ROGUE_DECREE_CONCORDAT) && percent < tithe_percent)
+		to_chat(user, span_warning("The Concordat of Zenitstadt forbids any levy below [tithe_percent]% while in force - the Church's tithe must be honoured."))
+		return FALSE
 	if(percent == old_percent)
 		return FALSE
 	tax_rates[levy] = percent / 100
-	levy_changed_dawn = GLOB.rockhill_dawns
+	levy_changed_dawn = ROGUE_TREASURY_DAY
 	var/raised = percent > old_percent
-	priority_announce("The [levy] has been [raised ? "raised" : "reduced"] from [old_percent]% to [percent]%.", raised ? "The Crown Demands More" : "The Crown Is Generous", pick('modular_redtard/rockhill/sound/misc/royal_decree.ogg', 'modular_redtard/rockhill/sound/misc/royal_decree2.ogg'))
+	var/text = "The [levy] has been [raised ? "raised" : "reduced"] from [old_percent]% to [percent]%."
+	if(decree_active(ROGUE_DECREE_CONCORDAT))
+		text += " By the Concordat of Zenitstadt, [tithe_percent]% of every taxed transaction is tithed to the Church of the Ten, drawn from the Crown's share."
+	priority_announce(text, raised ? "The Crown Demands More" : "The Crown Is Generous", ROGUE_SOUND_DECREE)
 	log_game("TAX RATES: [key_name(user)] changed the [levy] from [old_percent]% to [percent]%")
 	return TRUE
+
+/**
+ * Ratwood apply_concordat_tithe(): while the Zenitstadt Concordat stands, a share of every sale the Crown taxed goes from the
+ * Purse to the Church Fund; fines are never tithed. Machines that collect a levy pass the sale it was taken on. Returns the tithe.
+ */
+/datum/controller/subsystem/rogue_treasury/proc/apply_concordat_tithe(base_amount, levy)
+	var/datum/bank_account/rogue/church = funds[ROGUE_FUND_CHURCH]
+	if(base_amount <= 0 || levy == ROGUE_TAX_FINE || !church || !decree_active(ROGUE_DECREE_CONCORDAT))
+		return 0
+	concordat_tithe_debt += base_amount * ROGUE_CONCORDAT_TITHE
+	var/tithe = floor(concordat_tithe_debt)
+	if(tithe <= 0 || !transfer(crown_purse, church, tithe, "Concordat tithe ([levy])"))
+		return 0
+	concordat_tithe_debt -= tithe
+	total_concordat_tithe += tithe
+	return tithe

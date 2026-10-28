@@ -12,3 +12,9 @@
 #define ROGUE_LOCALIZATION_STRINGS "modular_redtard/localization/strings"
 /// A strings line is "key = value", split at the first " = ".
 #define ROGUE_LOCALIZATION_SEPARATOR " = "
+/// In a strings file the server's engine reads (translate.dm), a key that starts with this is a pattern.
+#define ROGUE_LOCALIZATION_PATTERN_MARK "^"
+/// Texts a dictionary of the server's engine remembers before it starts over (the panel keeps as many).
+#define ROGUE_TRANSLATE_CACHE_LIMIT 4000
+/// How deep a composed name may sit inside another ("masterwork iron sword").
+#define ROGUE_TRANSLATE_DEPTH 2

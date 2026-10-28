@@ -20,19 +20,20 @@ import { Window } from '../../layouts';
 import { ServerPrefs } from '../PreferencesMenu/useServerPrefs';
 import { AppearancePage } from './AppearancePage';
 import { Countdown, display } from './components';
+import { FeatureColumn } from './FeatureColumn';
 import { buildServerData } from './features';
 import { GameplayPage, highestJob } from './GameplayPage';
 import { IdentityPage } from './IdentityPage';
-import { ProfilePage } from './ProfilePage';
 import { SettingsPage } from './SettingsPage';
 import { useTr } from './strings';
 import type { RoundState, SetupData } from './types';
 
+// Appearance and the character profile are one section, as on TG's main page; the pickable features are the column
+// beside the looking glass.
 const SECTIONS = [
   { id: 'identity', label: 'Identity', icon: 'id-card' },
-  { id: 'appearance', label: 'Appearance', icon: 'palette' },
+  { id: 'appearance', label: 'Appearance & Profile', icon: 'palette' },
   { id: 'gameplay', label: 'Gameplay', icon: 'gamepad' },
-  { id: 'profile', label: 'Character Profile', icon: 'scroll' },
   { id: 'settings', label: 'Settings', icon: 'cog' },
 ] as const;
 
@@ -42,7 +43,6 @@ const PAGES: Record<SectionId, () => JSX.Element> = {
   identity: IdentityPage,
   appearance: AppearancePage,
   gameplay: GameplayPage,
-  profile: ProfilePage,
   settings: SettingsPage,
 };
 
@@ -94,6 +94,9 @@ export function RogueCharacterSetup() {
                 </Stack.Item>
                 <Stack.Item basis="250px">
                   <LookingGlass />
+                </Stack.Item>
+                <Stack.Item>
+                  <FeatureColumn />
                 </Stack.Item>
                 <Stack.Item grow basis={0}>
                   <Section fill scrollable>

@@ -1,9 +1,11 @@
 /**
  * Nerve master (Ratwood code/modules/roguetown/roguemachine/steward/steward.dm): the Steward's desk of the treasury. The steward's
- * key (or the lord's master key) locks it. Open, it shows the Crown's Purse and its ledger, takes coins into the Purse and pays the
- * Purse out in coin, sets the wage of every role and the Crown's levies, grants and fines the subjects' accounts, holds back a
- * subject's wages, and runs the stockpile: prices, limits, what the Crown buys and sells, shipments abroad.
- * Ratwood's trade regions, loans, decrees, poll tax and crown imports are not ported.
+ * key (or the lord's master key) locks it. Open, it shows the Crown's Purse, its ledger and its solvency, takes coins into the
+ * Purse and pays the Purse out in coin, borrows from the trading company, sets the wage of every role (no lower than the
+ * charters allow), the Crown's levies and the poll tax, grants and fines the subjects' accounts, holds back a subject's wages,
+ * forgives the Crown's debtors and clears poll tax arrears, lists every loan and fund of the realm, opens the charters, and runs
+ * the stockpile: prices, limits, what the Crown buys and sells, shipments abroad.
+ * Ratwood's trade regions and crown imports are not ported.
  */
 /obj/structure/roguemachine/steward
 	var/locked = FALSE
@@ -65,24 +67,44 @@
 	data["totals"] = list(
 		"rural_tax" = treasury.total_rural_tax,
 		"tariff" = treasury.total_tariff,
+		"poll_tax" = treasury.total_poll_tax,
+		"poll_subsidy" = treasury.total_poll_subsidy,
+		"fines" = treasury.total_fines,
+		"tithe" = treasury.total_concordat_tithe,
 		"wages" = treasury.total_wages,
 		"export" = treasury.total_export,
 		"import" = treasury.total_import,
 		"trade" = treasury.economic_output,
 	)
+	data["solvency"] = list(
+		"state" = rogue_treasury_state_label(treasury.treasury_state),
+		"sequestered" = treasury.treasury_state == ROGUE_TREASURY_SEQUESTERED,
+		"debt" = treasury.treasury_debt,
+		"wage_outlay" = treasury.expected_wage_outlay(),
+		"ftc_blocker" = treasury.ftc_loan_blocker(),
+		"ftc_min" = ROGUE_FTC_LOAN_MIN,
+		"ftc_max" = ROGUE_FTC_LOAN_MAX,
+		"ftc_interest" = round(ROGUE_FTC_LOAN_INTEREST * 100),
+	)
 	var/list/levies = list()
 	for(var/levy in treasury.tax_rates)
 		levies += list(list("name" = levy, "percent" = round(treasury.tax_rates[levy] * 100, 1)))
 	data["levies"] = levies
-	data["levy_locked"] = treasury.levy_changed_dawn == GLOB.rockhill_dawns
+	data["levy_locked"] = treasury.levy_changed_dawn == ROGUE_TREASURY_DAY
+	data["poll"] = treasury.poll_projection()
+	data["poll_locked"] = treasury.poll_changed_dawn == ROGUE_TREASURY_DAY
+	data["poll_min"] = -ROGUE_POLL_MAX_SUBSIDY
+	data["poll_max"] = ROGUE_POLL_MAX_RATE
+	data["carta"] = treasury.decree_active(ROGUE_DECREE_MAGNA_CARTA)
 	var/list/wages = list()
 	for(var/datum/job/job as anything in SSjob.all_occupations)
 		if(!istype(job, /datum/job/roguetown) || (job.title in unpaid_jobs))
 			continue
-		wages += list(list("title" = job.title, "wage" = treasury.daily_payments[job.title] || 0))
+		wages += list(list("title" = job.title, "wage" = treasury.daily_payments[job.title] || 0, "floor" = treasury.wage_floor(job.title)))
 	data["wages"] = wages
 	var/list/accounts = list()
 	for(var/datum/bank_account/rogue/account as anything in treasury.accounts)
+		var/mob/living/owner = account.owner()
 		accounts += list(list(
 			"ref" = REF(account),
 			"holder" = account.account_holder,
@@ -90,9 +112,21 @@
 			"balance" = account.account_balance,
 			"estate" = account.estate_income,
 			"suspended" = account.wages_suspended,
-			"fined" = !!treasury.fined_today[account],
+			"max_fine" = treasury.max_fine(account),
+			"poll_owed" = account.poll_owed,
+			"poll_overdue" = account.poll_overdue_days,
+			"defaulter" = owner && HAS_TRAIT(owner, TRAIT_DEBTOR),
 		))
 	data["accounts"] = accounts
+	var/list/loans = list()
+	for(var/datum/rogue_loan/loan as anything in treasury.loans)
+		loans += list(loan.ui_entry())
+	data["loans"] = loans
+	var/list/funds = list()
+	for(var/fund_id in treasury.funds)
+		var/datum/bank_account/rogue/fund = treasury.funds[fund_id]
+		funds += list(list("id" = fund_id, "holder" = fund.account_holder, "balance" = fund.account_balance, "lent" = treasury.outstanding_principal(fund)))
+	data["funds"] = funds
 	var/list/stocks = list()
 	for(var/datum/roguestock/stock as anything in treasury.stockpile_datums)
 		stocks += list(stock.ui_entry())
@@ -123,19 +157,37 @@
 			var/percent = tgui_input_number(user, "New [levy], in percent:", name, round(treasury.tax_rates[levy] * 100, 1), 100, 0)
 			if(!isnull(percent) && still_usable(user))
 				treasury.set_tax_rate(levy, percent, user)
+		if("set_poll")
+			var/list/rates = params["rates"]
+			if(islist(rates))
+				treasury.set_poll_rates(rates, user)
+		if("ftc_loan")
+			var/blocker = treasury.ftc_loan_blocker()
+			if(blocker)
+				to_chat(user, span_warning("Loan refused: [blocker]"))
+				return TRUE
+			var/amount = tgui_input_number(user, "Borrow how many mammons from the Ferentian Trading Company, at [round(ROGUE_FTC_LOAN_INTEREST * 100)]% interest? The next payroll the Purse cannot meet will put the realm under sequestration.", name, ROGUE_FTC_LOAN_MIN, ROGUE_FTC_LOAN_MAX, ROGUE_FTC_LOAN_MIN)
+			if(amount && still_usable(user))
+				treasury.take_ftc_loan(amount, user)
+		if("charters")
+			treasury.charters_panel.ui_interact(user)
 		if("set_wage")
 			var/title = params["title"]
 			var/datum/job/roguetown/job = SSjob.get_job(title)
 			if(!istype(job))
 				return TRUE
-			var/wage = tgui_input_number(user, "Daily wage of the [title]:", name, treasury.daily_payments[title] || 0, 500, 0)
+			var/floor_wage = treasury.wage_floor(title)
+			var/prompt = floor_wage ? "Daily wage of the [title] (no lower than [floor_wage]m by Charter):" : "Daily wage of the [title] (0 to remove):"
+			var/wage = tgui_input_number(user, prompt, name, treasury.daily_payments[title] || floor_wage, 500, 0)
 			if(isnull(wage) || !still_usable(user))
 				return TRUE
-			if(wage)
-				treasury.daily_payments[title] = wage
-			else
-				treasury.daily_payments -= title
-	if(action in list("grant", "fine", "toggle_wages"))
+			if(treasury.set_wage(title, wage) > wage)
+				say("By Charter, the [title]'s wage may not fall below [floor_wage]m. Payment set to the floor.")
+		if("forgive")
+			var/datum/rogue_loan/loan = locate(params["ref"]) in treasury.loans
+			if(loan && tgui_alert(user, "Forgive [loan.debtor_name] the [loan.remaining_due()]m they owe the Crown?", name, list("Forgive", "Cancel")) == "Forgive" && still_usable(user))
+				treasury.forgive_loan(loan, user)
+	if(action in list("grant", "fine", "toggle_wages", "clear_arrears"))
 		var/datum/bank_account/rogue/account = locate(params["ref"]) in treasury.accounts
 		if(!account)
 			return TRUE
@@ -145,16 +197,26 @@
 				if(amount && still_usable(user))
 					treasury.give_money(account, amount, "Crown's grant")
 			if("fine")
-				var/amount = tgui_input_number(user, "Fine [account.account_holder] how many mammons?", name, 0, account.account_balance, 0)
+				var/most = treasury.max_fine(account)
+				if(most <= 0)
+					to_chat(user, span_warning("[account.account_holder] has already been fined today, is shielded by a charter, or has nothing to take."))
+					return TRUE
+				var/amount = tgui_input_number(user, "Fine [account.account_holder] how many mammons? (at most [most]m)", name, 0, most, 0)
 				if(!amount || !still_usable(user))
 					return TRUE
 				var/reason = tgui_input_text(user, "For what?", name, "Fine", max_length = MAX_NAME_LEN)
 				if(!still_usable(user))
 					return TRUE
 				if(!treasury.fine(account, amount, reason || "Fine"))
-					to_chat(user, span_warning("[account.account_holder] has already been fined today, or has nothing to take."))
+					to_chat(user, span_warning("[account.account_holder] has already been fined today, is shielded by a charter, or has nothing to take."))
 			if("toggle_wages")
 				account.wages_suspended = !account.wages_suspended
+			if("clear_arrears")
+				if(account.poll_owed <= 0 && account.poll_overdue_days <= 0)
+					return TRUE
+				log_game("POLL TAX CLEARED: [key_name(user)] cleared [account.poll_owed]m poll tax arrears of [account.account_holder]")
+				treasury.clear_poll_arrears(account)
+				account.bank_card_talk("The Stewardry has cleared your poll tax arrears. The Crown's ledger on your head is wiped clean.")
 	if(action in list("stock_payout", "stock_withdraw", "stock_limit", "stock_accept", "stock_lock", "stock_autoexport", "stock_export"))
 		var/datum/roguestock/stock = locate(params["ref"]) in treasury.stockpile_datums
 		if(!stock)

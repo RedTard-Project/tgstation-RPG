@@ -1,0 +1,417 @@
+/// Ratwood vessels (code/modules/reagents/reagent_containers/glass.dm, bottle.dm, modular/Neu_Food/code/cookware) are TG open
+/// cups: the Ratwood root grafts onto /obj/item/reagent_containers/cup, so pouring from vessel to vessel, drinking, feeding and
+/// heating are TG's. The Ratwood intents of a vessel choose what a click does: feed pours into a vessel, drinks or feeds
+/// someone; fill draws from a vessel or open water; splash empties it over the target; hit strikes with it. Without Ratwood
+/// intents (modern maps) it is plain TG. Volumes and transfer amounts are Ratwood's.
+/obj/item/reagent_containers/glass
+	parent_type = /obj/item/reagent_containers/cup
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(5, 10, 15, 20, 25, 30, 50)
+	volume = 50
+	spillable = TRUE
+
+/// The Ratwood intent this vessel is used with, or null when it has none (TG behaviour then).
+/obj/item/reagent_containers/glass/proc/rogue_vessel_intent(mob/living/user)
+	if(!rogue_survival_enabled() || !isliving(user) || !length(rogue_intents()))
+		return null
+	return user.rogue_active_intent()
+
+/obj/item/reagent_containers/glass/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
+	var/datum/intent/intent = rogue_vessel_intent(user)
+	if(!intent)
+		return ..()
+	if(istype(intent, /datum/intent/hit))
+		return NONE
+	if(!is_open_container())
+		to_chat(user, span_warning("[src] is corked!"))
+		return ITEM_INTERACT_BLOCKING
+	if(istype(intent, /datum/intent/splash))
+		return try_splash(user, interacting_with) ? ITEM_INTERACT_SUCCESS : NONE
+	if(istype(intent, /datum/intent/fill))
+		if(interacting_with.is_drainable() && !isliving(interacting_with))
+			return rogue_pour(interacting_with, user, TRUE)
+		// Ratwood fill on a person is milking, which is not ported; it never strikes them.
+		return isliving(interacting_with) ? ITEM_INTERACT_BLOCKING : NONE
+	if(interacting_with.is_refillable() && !isliving(interacting_with))
+		return rogue_pour(interacting_with, user, FALSE)
+	return ..()
+
+/// With Ratwood intents a right click does not splash or draw: the splash and fill intents do (a stray right click in combat
+/// would empty the pot).
+/obj/item/reagent_containers/glass/interact_with_atom_secondary(atom/interacting_with, mob/living/user, list/modifiers)
+	if(rogue_vessel_intent(user))
+		return NONE
+	return ..()
+
+/// Ratwood attack_obj() with the feed or fill intent: pour into the target, or draw from it, a measure at a time while the
+/// hands stay busy (eleven measures at most).
+/obj/item/reagent_containers/glass/proc/rogue_pour(atom/target, mob/living/user, from_target)
+	var/atom/giver = from_target ? target : src
+	var/atom/taker = from_target ? src : target
+	if(!giver.reagents.total_volume)
+		to_chat(user, span_warning("[giver] is empty!"))
+		return ITEM_INTERACT_BLOCKING
+	if(taker.reagents.holder_full())
+		to_chat(user, span_warning("[taker] is full."))
+		return ITEM_INTERACT_BLOCKING
+	if(from_target)
+		user.visible_message(span_notice("[user] fills [src] with [target]."), span_notice("I fill [src] with [target]."))
+		playsound(user, 'modular_redtard/survival/sound/fillcup.ogg', 100, TRUE)
+	else
+		user.visible_message(span_notice("[user] pours [src] into [target]."), span_notice("I pour [src] into [target]."))
+		playsound(user, /datum/sound_effect/liquid_pour, 50, TRUE)
+	for(var/i in 1 to ROGUE_POUR_ROUNDS)
+		if(!do_after(user, ROGUE_POUR_TIME, target = target) || QDELETED(target))
+			break
+		if(!giver.reagents.total_volume || taker.reagents.holder_full())
+			break
+		giver.reagents.trans_to(taker, amount_per_transfer_from_this, transferred_by = user)
+		target.update_appearance()
+	return ITEM_INTERACT_SUCCESS
+
+/// Ratwood glass attackby(): an egg is broken into an open vessel, salt is worked into milk (survival/kneading.dm).
+/obj/item/reagent_containers/glass/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
+	if(istype(tool, /obj/item/reagent_containers/powder/salt) && is_open_container() && reagents.has_reagent(/datum/reagent/consumable/milk))
+		return salt_milk(user, tool)
+	if(!istype(tool, /obj/item/reagent_containers/food/snacks/egg) || !is_open_container() || !tool.reagents)
+		return ..()
+	if(reagents.holder_full())
+		to_chat(user, span_warning("[src] is full."))
+		return ITEM_INTERACT_BLOCKING
+	to_chat(user, span_notice("I break [tool] in [src]."))
+	playsound(src, 'modular_redtard/survival/sound/eggbreak.ogg', 60, TRUE)
+	tool.reagents.trans_to(src, tool.reagents.total_volume, transferred_by = user)
+	qdel(tool)
+	return ITEM_INTERACT_SUCCESS
+
+/// Ratwood drinking: favourite and hated drinks (survival/appetite.dm) count by what is most of the vessel.
+/obj/item/reagent_containers/glass/try_drink(mob/living/target_mob, mob/living/user)
+	var/datum/reagent/drunk = reagents?.get_master_reagent()
+	var/drunk_type = drunk?.type
+	. = ..()
+	if((. & ITEM_INTERACT_SUCCESS) && drunk_type)
+		rogue_drink_preference(target_mob, drunk_type)
+
+/// Ratwood vessels show their filling (update_icon()): the state of rogue_fill_state(), in the colour of what is inside.
+/obj/item/reagent_containers/glass/update_overlays()
+	. = ..()
+	if(!reagents?.total_volume)
+		return
+	var/state = rogue_fill_state()
+	if(!state || !icon_exists(icon, state))
+		return
+	var/mutable_appearance/filling = mutable_appearance(icon, state)
+	filling.color = mix_color_from_reagents(reagents.reagent_list)
+	. += filling
+
+/// The icon state of the filling for what is inside now, or null for none.
+/obj/item/reagent_containers/glass/proc/rogue_fill_state()
+	return null
+
+// Cups, bowls, buckets and pots (Ratwood cookware).
+
+/obj/item/reagent_containers/glass/cup
+	initial_reagent_flags = OPENCONTAINER
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
+	volume = 25
+
+/obj/item/reagent_containers/glass/cup/rogue_fill_state()
+	return "[icon_state]_filling"
+
+/obj/item/reagent_containers/glass/bowl
+	initial_reagent_flags = OPENCONTAINER
+	amount_per_transfer_from_this = 7
+	possible_transfer_amounts = list(7)
+	volume = 30
+	/// Ratwood bowl filling: up to these amounts the bowl looks low or half full.
+	var/rogue_fill_low = 11
+	var/rogue_fill_half = 22
+	/// A full bowl of these looks like porridge or stew (amount of the reagent it takes).
+	var/static/list/rogue_porridge_looks = list(/datum/reagent/consumable/soup/porridge/oatmeal = 10)
+	var/static/list/rogue_stew_looks = list(
+		/datum/reagent/consumable/soup/stew/chicken = 17,
+		/datum/reagent/consumable/soup/stew/meat = 17,
+		/datum/reagent/consumable/soup/stew/fish = 17,
+	)
+
+/obj/item/reagent_containers/glass/bowl/rogue_fill_state()
+	var/amount = reagents.total_volume
+	if(amount <= rogue_fill_low)
+		return "bowl_low"
+	if(amount <= rogue_fill_half)
+		return "bowl_half"
+	for(var/reagent_type in rogue_porridge_looks)
+		if(reagents.has_reagent(reagent_type, rogue_porridge_looks[reagent_type]))
+			return "bowl_oatmeal"
+	for(var/reagent_type in rogue_stew_looks)
+		if(reagents.has_reagent(reagent_type, rogue_stew_looks[reagent_type]))
+			return "bowl_stew"
+	return "bowl_full"
+
+/// Ratwood bowl attackby(): a spoon eats from the bowl.
+/obj/item/reagent_containers/glass/bowl/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
+	if(istype(tool, /obj/item/kitchen/spoon))
+		return spoon_from(user)
+	return ..()
+
+/obj/item/reagent_containers/glass/bowl/proc/spoon_from(mob/living/user)
+	if(!reagents.total_volume)
+		to_chat(user, span_warning("[src] is empty!"))
+		return ITEM_INTERACT_BLOCKING
+	if(!canconsume(user, user))
+		return ITEM_INTERACT_BLOCKING
+	if(!do_after(user, ROGUE_SPOON_TIME, target = src) || !reagents.total_volume)
+		return ITEM_INTERACT_BLOCKING
+	var/datum/reagent/eaten = reagents.get_master_reagent()
+	var/eaten_type = eaten?.type
+	playsound(src, 'modular_redtard/survival/sound/eat.ogg', rand(30, 60), TRUE)
+	user.visible_message(span_info("[user] eats from [src]."), span_info("I eat from [src]."))
+	reagents.trans_to(user, ROGUE_SPOON_SIP, transferred_by = user, methods = INGEST)
+	if(eaten_type)
+		rogue_drink_preference(user, eaten_type)
+	return ITEM_INTERACT_SUCCESS
+
+/// Ratwood: a noble drinking soup straight from the bowl, without a spoon, minds the bad manners.
+/obj/item/reagent_containers/glass/bowl/try_drink(mob/living/target_mob, mob/living/user)
+	. = ..()
+	if((. & ITEM_INTERACT_SUCCESS) && target_mob == user)
+		rogue_noble_bad_manners(user)
+
+/obj/item/reagent_containers/glass/bucket
+	initial_reagent_flags = OPENCONTAINER
+	amount_per_transfer_from_this = 25
+	possible_transfer_amounts = list(25)
+	volume = 120
+	/// Ratwood bucket filling: up to this amount it looks half full.
+	var/rogue_fill_split = 50
+
+/obj/item/reagent_containers/glass/bucket/rogue_fill_state()
+	return reagents.total_volume <= rogue_fill_split ? "bucket_half" : "bucket_full"
+
+/obj/item/reagent_containers/glass/bucket/pot
+	volume = 240
+
+/obj/item/reagent_containers/glass/bucket/pot/rogue_fill_state()
+	return reagents.total_volume <= rogue_fill_split ? "pote_half" : "pote_full"
+
+/// Ratwood pot attackby(): a bowl is filled from the pot, as much as it takes.
+/obj/item/reagent_containers/glass/bucket/pot/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
+	if(istype(tool, /obj/item/reagent_containers/glass/bowl))
+		return fill_bowl(user, tool)
+	return ..()
+
+/obj/item/reagent_containers/glass/bucket/pot/proc/fill_bowl(mob/living/user, obj/item/reagent_containers/glass/bowl/bowl)
+	if(!reagents.total_volume)
+		to_chat(user, span_warning("[src] is empty!"))
+		return ITEM_INTERACT_BLOCKING
+	if(bowl.reagents.holder_full())
+		to_chat(user, span_warning("[bowl] is full."))
+		return ITEM_INTERACT_BLOCKING
+	to_chat(user, span_notice("Filling the bowl..."))
+	playsound(user, pick('modular_redtard/survival/sound/waterwash1.ogg', 'modular_redtard/survival/sound/waterwash2.ogg'), 70, FALSE)
+	if(!do_after(user, ROGUE_BOWL_FILL_TIME, target = src))
+		return ITEM_INTERACT_BLOCKING
+	reagents.trans_to(bowl, reagents.total_volume, transferred_by = user)
+	return ITEM_INTERACT_SUCCESS
+
+/obj/item/reagent_containers/glass/bucket/pot/examine(mob/user)
+	. = ..()
+	. += span_notice("Fill it with water and put it on a hearth: once it boils, drop ingredients in to brew a stew, a porridge or a hot drink. Melt fat in a dry pot for tallow to deep fry in.")
+
+/obj/item/reagent_containers/glass/bucket/pot/stone
+	volume = 120
+
+/obj/item/reagent_containers/glass/bucket/pot/decrepit
+	volume = 120
+
+/obj/item/reagent_containers/glass/bucket/pot/kettle
+	volume = 120
+
+/obj/item/reagent_containers/glass/bucket/pot/kettle/rogue_fill_state()
+	return null
+
+/obj/item/reagent_containers/glass/bucket/pot/kettle/tankard
+	volume = 60
+
+/obj/item/reagent_containers/glass/bucket/pot/kettle/tankard/silver
+	volume = 90
+
+/obj/item/reagent_containers/glass/bucket/pot/kettle/tankard/blacksteel
+	volume = 120
+
+/obj/item/reagent_containers/glass/bucket/pot/teapot
+	volume = 120
+
+/obj/item/reagent_containers/glass/bucket/pot/teapot/rogue_fill_state()
+	return null
+
+/obj/item/reagent_containers/glass/bucket/pot/carved
+	volume = 99
+
+/obj/item/reagent_containers/glass/bucket/pot/carved/rogue_fill_state()
+	return null
+
+/obj/item/reagent_containers/glass/crucible
+	initial_reagent_flags = OPENCONTAINER
+	volume = 5
+
+/obj/item/reagent_containers/glass/mortar
+	initial_reagent_flags = OPENCONTAINER
+	amount_per_transfer_from_this = 9
+	possible_transfer_amounts = list(9)
+	volume = 100
+
+// Bottles (Ratwood bottle.dm): corked, nothing pours in or out; the hand uncorks them and corks them back.
+
+/obj/item/reagent_containers/glass/bottle
+	initial_reagent_flags = TRANSPARENT
+	spillable = FALSE
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
+	volume = 50
+	/// Corked (Ratwood closed).
+	var/corked = TRUE
+
+/obj/item/reagent_containers/glass/bottle/attack_self(mob/user, modifiers)
+	toggle_cork(user)
+	return TRUE
+
+/// Ratwood toggle_cork(): open or close the bottle.
+/obj/item/reagent_containers/glass/bottle/proc/toggle_cork(mob/user)
+	corked = !corked
+	if(corked)
+		update_container_flags((reagents.flags & ~OPENCONTAINER) | TRANSPARENT)
+		spillable = FALSE
+		playsound(src, 'modular_redtard/survival/sound/recork.ogg', 100, TRUE)
+		to_chat(user, span_smallnotice("I carefully press the cork back into the mouth of [src]."))
+	else
+		add_container_flags(OPENCONTAINER)
+		spillable = TRUE
+		playsound(src, 'modular_redtard/survival/sound/uncork.ogg', 100, TRUE)
+		to_chat(user, span_smallnotice("I thumb off the cork from [src]."))
+	update_appearance()
+
+/obj/item/reagent_containers/glass/bottle/examine(mob/user)
+	. = ..()
+	. += span_smallnotice(corked ? "It is corked. Use it in hand to uncork it." : "It is uncorked.")
+
+/obj/item/reagent_containers/glass/bottle/alchemical
+	volume = 30
+
+/obj/item/reagent_containers/glass/bottle/claybottle
+	initial_reagent_flags = OPENCONTAINER
+	spillable = TRUE
+	corked = FALSE
+	volume = 75
+
+/obj/item/reagent_containers/glass/bottle/clayvase
+	initial_reagent_flags = OPENCONTAINER
+	spillable = TRUE
+	corked = FALSE
+	volume = 65
+
+/obj/item/reagent_containers/glass/bottle/clayfancyvase
+	initial_reagent_flags = OPENCONTAINER
+	spillable = TRUE
+	corked = FALSE
+	volume = 65
+
+/obj/item/reagent_containers/glass/bottle/waterskin
+	initial_reagent_flags = OPENCONTAINER
+	spillable = TRUE
+	corked = FALSE
+	possible_transfer_amounts = list(5, 10)
+	volume = 75
+
+/obj/item/reagent_containers/glass/bottle/rogue/water
+	list_reagents = list(/datum/reagent/water = 50)
+
+// Water to fill vessels from (Ratwood turf/open/water attackby(), structures/well.dm).
+
+/// Whether this vessel is used to draw: with Ratwood intents only the fill intent draws (Ratwood), without them any click.
+/proc/rogue_vessel_draws(mob/living/user, obj/item/vessel)
+	if(!istype(vessel, /obj/item/reagent_containers/glass) || !vessel.is_open_container())
+		return FALSE
+	var/obj/item/reagent_containers/glass/glass = vessel
+	var/datum/intent/intent = glass.rogue_vessel_intent(user)
+	return !intent || istype(intent, /datum/intent/fill)
+
+/// Draws the reagents into the vessel after the wait; ITEM_INTERACT_* for the click.
+/proc/rogue_draw_into(mob/living/user, obj/item/vessel, atom/source, list/drawn, wait)
+	if(vessel.reagents.holder_full())
+		to_chat(user, span_warning("[vessel] is full."))
+		return ITEM_INTERACT_BLOCKING
+	playsound(user, 'modular_redtard/survival/sound/drawwater.ogg', 100, FALSE)
+	if(!do_after(user, wait, target = source) || QDELETED(vessel))
+		return ITEM_INTERACT_BLOCKING
+	vessel.reagents.add_reagent_list(drawn)
+	to_chat(user, span_notice("I fill [vessel] from [source]."))
+	return ITEM_INTERACT_SUCCESS
+
+/// Ratwood open water fills a vessel at once; what it gives depends on the water (Ratwood water_reagent). The TG scoop of a
+/// few units is replaced.
+/turf/open/water/rockhill
+	reagent_to_extract = null
+	/// What a vessel draws here.
+	var/datum/reagent/rogue_water_reagent = /datum/reagent/water
+
+/turf/open/water/rockhill/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
+	if(!rogue_water_reagent || !rogue_vessel_draws(user, tool))
+		return ..()
+	var/list/drawn = list()
+	drawn[rogue_water_reagent] = ROGUE_WATER_FILL
+	return rogue_draw_into(user, tool, src, drawn, ROGUE_WATER_FILL_TIME)
+
+/turf/open/water/rockhill/examine(mob/user)
+	. = ..()
+	if(rogue_water_reagent)
+		. += span_info("A vessel could be filled with <b>[initial(rogue_water_reagent.name)]</b> here.")
+
+/turf/open/water/bloody
+	rogue_water_reagent = /datum/reagent/blood
+
+/turf/open/water/swamp
+	rogue_water_reagent = /datum/reagent/water/gross
+
+/turf/open/water/sewer
+	rogue_water_reagent = /datum/reagent/water/gross
+
+/turf/open/water/river/muddy
+	rogue_water_reagent = /datum/reagent/water/gross
+
+/turf/open/water/ocean
+	rogue_water_reagent = /datum/reagent/water/salt
+
+/turf/open/water/ocean/deep/thermalwater
+	rogue_water_reagent = /datum/reagent/water
+
+/// Ratwood wells give a bucket water, fountains fill any vessel; the dubious well poisons, the swamp fountain is dirty.
+/obj/structure/well
+	/// What one draw gives.
+	var/list/rogue_well_reagents = list(/datum/reagent/water = ROGUE_WELL_WATER)
+	/// Only a bucket reaches the water (Ratwood wells; fountains take any vessel).
+	var/rogue_well_bucket_only = TRUE
+	var/rogue_well_time = ROGUE_WELL_TIME
+
+/obj/structure/well/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
+	if(!istype(tool, /obj/item/reagent_containers/glass) || !length(rogue_well_reagents))
+		return ..()
+	if(rogue_well_bucket_only && !istype(tool, /obj/item/reagent_containers/glass/bucket))
+		to_chat(user, span_warning("I need a bucket."))
+		return ITEM_INTERACT_BLOCKING
+	if(!tool.is_open_container())
+		to_chat(user, span_warning("[tool] is corked!"))
+		return ITEM_INTERACT_BLOCKING
+	return rogue_draw_into(user, tool, src, rogue_well_reagents, rogue_well_time)
+
+/obj/structure/well/poisoned
+	rogue_well_reagents = list(/datum/reagent/water = ROGUE_WELL_WATER / 5, /datum/reagent/toxin = ROGUE_WELL_WATER / 5)
+	rogue_well_time = ROGUE_WELL_TIME * 3
+
+/obj/structure/well/fountain
+	rogue_well_bucket_only = FALSE
+
+/obj/structure/well/fountainswamp
+	rogue_well_bucket_only = FALSE
+	rogue_well_reagents = list(/datum/reagent/water/gross = ROGUE_WELL_WATER)

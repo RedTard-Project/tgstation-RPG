@@ -2,7 +2,7 @@
 	parent_type = /obj/item/rockhill
 
 /obj/item/ammo_casing/caseless
-	parent_type = /obj/item/rockhill
+	parent_type = /obj/item/ammo_casing/rogue
 
 /obj/item/artefact
 	parent_type = /obj/item/rockhill
@@ -666,6 +666,23 @@
 	inhand_y_dimension = 64
 	inhand_icon_state = null
 
+/obj/item/alch/stonedust
+	name = "stone dust"
+	desc = "Finely ground mineral dust used for glass clay refinement."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/alchemy.dmi'
+	icon_state = "coaldust"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+
 /obj/item/alch/swampdust
 	name = "swampweed dust"
 	desc = ""
@@ -839,6 +856,31 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "grapeshot"
+	projectile_type = /obj/projectile/bullet/firearm/grapeshot
+
+/obj/item/ammo_casing/caseless/bullet/lead
+	name = "lead sphere"
+	desc = "A small lead sphere. This should go well with smokepowder."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
+	icon_state = "musketball"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	slot_flags = ITEM_SLOT_BELT
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/ammo_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/ammo_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	caliber = "lead_sphere"
+	projectile_type = /obj/projectile/bullet/firearm/lead
 
 /obj/item/ammo_casing/caseless/rogue/arrow
 	name = "arrow"
@@ -861,6 +903,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "arrow"
+	projectile_type = /obj/projectile/bullet/reusable/arrow
 
 /obj/item/ammo_casing/caseless/rogue/arrow/blacksteel
 	name = "blacksteel arrow"
@@ -883,6 +927,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "arrow"
+	projectile_type = /obj/projectile/bullet/reusable/arrow/blacksteel
 
 /obj/item/ammo_casing/caseless/rogue/arrow/blunt
 	name = "blunt arrow"
@@ -905,6 +951,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "arrow"
+	projectile_type = /obj/projectile/bullet/reusable/arrow/blunt
 
 /obj/item/ammo_casing/caseless/rogue/arrow/bronze
 	name = "bronze flight arrow"
@@ -927,6 +975,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "arrow"
+	projectile_type = /obj/projectile/bullet/reusable/arrow/bronze
 
 /obj/item/ammo_casing/caseless/rogue/arrow/iron
 	name = "iron broadhead arrow"
@@ -949,6 +999,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "arrow"
+	projectile_type = /obj/projectile/bullet/reusable/arrow/iron
 
 /obj/item/ammo_casing/caseless/rogue/arrow/iron/decrepit
 	name = "decrepit broadhead arrow"
@@ -971,6 +1023,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "arrow"
+	projectile_type = /obj/projectile/bullet/reusable/arrow/iron/decrepit
 
 /obj/item/ammo_casing/caseless/rogue/arrow/poison
 	name = "poisoned arrow"
@@ -993,6 +1047,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "arrow"
+	projectile_type = /obj/projectile/bullet/reusable/arrow/poison
 
 /obj/item/ammo_casing/caseless/rogue/arrow/pyro
 	name = "pyroclastic arrow"
@@ -1015,6 +1071,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "arrow"
+	projectile_type = /obj/projectile/bullet/arrow/pyro
 
 /obj/item/ammo_casing/caseless/rogue/arrow/steel
 	name = "steel bodkin arrow"
@@ -1037,6 +1095,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "arrow"
+	projectile_type = /obj/projectile/bullet/reusable/arrow/steel
 
 /obj/item/ammo_casing/caseless/rogue/arrow/steel/ancient
 	name = "ancient bodkin arrow"
@@ -1059,6 +1119,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "arrow"
+	projectile_type = /obj/projectile/bullet/reusable/arrow/steel/ancient
 
 /obj/item/ammo_casing/caseless/rogue/arrow/stone
 	name = "stone arrow"
@@ -1081,6 +1143,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "arrow"
+	projectile_type = /obj/projectile/bullet/reusable/arrow/stone
 
 /obj/item/ammo_casing/caseless/rogue/arrow/stone/poison
 	name = "poisoned stone arrow"
@@ -1103,6 +1167,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "arrow"
+	projectile_type = /obj/projectile/bullet/reusable/arrow/poison/stone
 
 /obj/item/ammo_casing/caseless/rogue/arrow/water
 	name = "water arrow"
@@ -1125,6 +1191,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "arrow"
+	projectile_type = /obj/projectile/bullet/arrow/water
 
 /obj/item/ammo_casing/caseless/rogue/bolt
 	name = "bolt"
@@ -1147,6 +1215,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "regbolt"
+	projectile_type = /obj/projectile/bullet/reusable/bolt
 
 /obj/item/ammo_casing/caseless/rogue/bolt/ancient
 	name = "ancient bolt"
@@ -1169,6 +1239,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "regbolt"
+	projectile_type = /obj/projectile/bullet/reusable/bolt/ancient
 
 /obj/item/ammo_casing/caseless/rogue/bolt/blacksteel
 	name = "blacksteel bolt"
@@ -1191,6 +1263,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "regbolt"
+	projectile_type = /obj/projectile/bullet/reusable/bolt/blacksteel
 
 /obj/item/ammo_casing/caseless/rogue/bolt/blunt
 	name = "practice bolt"
@@ -1213,6 +1287,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "regbolt"
+	projectile_type = /obj/projectile/bullet/reusable/bolt/blunt
 
 /obj/item/ammo_casing/caseless/rogue/bolt/bronze
 	name = "bronze bolt"
@@ -1235,6 +1311,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "regbolt"
+	projectile_type = /obj/projectile/bullet/reusable/bolt/bronze
 
 /obj/item/ammo_casing/caseless/rogue/bolt/decrepit
 	name = "decrepit bolt"
@@ -1257,6 +1335,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "regbolt"
+	projectile_type = /obj/projectile/bullet/reusable/bolt/decrepit
 
 /obj/item/ammo_casing/caseless/rogue/bolt/heavyblunt
 	name = "heavy blunt bolt"
@@ -1279,6 +1359,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "regbolt"
+	projectile_type = /obj/projectile/bullet/reusable/bolt/heavyblunt
 
 /obj/item/ammo_casing/caseless/rogue/bolt/holy
 	name = "sunderbolt"
@@ -1301,6 +1383,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "regbolt"
+	projectile_type = /obj/projectile/bullet/reusable/bolt/holy
 
 /obj/item/ammo_casing/caseless/rogue/bolt/pyro
 	name = "pyroclastic bolt"
@@ -1323,6 +1407,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "regbolt"
+	projectile_type = /obj/projectile/bullet/bolt/pyro
 
 /obj/item/ammo_casing/caseless/rogue/bolt/water
 	name = "water bolt"
@@ -1345,6 +1431,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "regbolt"
+	projectile_type = /obj/projectile/bullet/bolt/water
 
 /obj/item/ammo_casing/caseless/rogue/heavy_bolt
 	name = "heavy bolt"
@@ -1367,6 +1455,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "heabolt"
+	projectile_type = /obj/projectile/bullet/reusable/heavy_bolt
 
 /obj/item/ammo_casing/caseless/rogue/heavy_bolt/tempest
 	name = "tempest bolt"
@@ -1389,6 +1479,36 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "heabolt"
+	projectile_type = /obj/projectile/bullet/reusable/heavy_bolt/tempest
+
+/obj/item/ammo_casing/caseless/rogue/javelin
+	name = "iron javelin"
+	desc = "A tool used for centuries, as early as recorded history. This one is tipped with a iron head; standard among militiamen and irregulars alike."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
+	icon_state = "ijavelin"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 14
+	throwforce = 25
+	slot_flags = ITEM_SLOT_BELT
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	wdefense = 3
+	armour_penetration = 2
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/sword/thrust, /datum/intent/spear/bash, /datum/intent/spear/cut)
+	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/ammo_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/ammo_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	caliber = null
+	projectile_type = null
 
 /obj/item/ammo_casing/caseless/rogue/javelin/blacksteel
 	name = "blacksteel javelin"
@@ -1415,6 +1535,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = null
+	projectile_type = null
 
 /obj/item/ammo_casing/caseless/rogue/javelin/bronze
 	name = "bronze javelin"
@@ -1441,6 +1563,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = null
+	projectile_type = null
 
 /obj/item/ammo_casing/caseless/rogue/javelin/silver
 	name = "silver javelin"
@@ -1468,6 +1592,36 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = null
+	projectile_type = null
+
+/obj/item/ammo_casing/caseless/rogue/javelin/steel
+	name = "steel javelin"
+	desc = "A tool used for centuries, as early as recorded history. This one is tipped with a steel head; perfect for piercing armor!"
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
+	icon_state = "javelin"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 16
+	throwforce = 28
+	slot_flags = ITEM_SLOT_BELT
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	wdefense = 3
+	armour_penetration = 3
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/sword/thrust, /datum/intent/spear/bash, /datum/intent/spear/cut)
+	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/ammo_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/ammo_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	caliber = null
+	projectile_type = null
 
 /obj/item/ammo_casing/caseless/rogue/javelin/steel/ancient
 	name = "ancient javelin"
@@ -1494,6 +1648,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = null
+	projectile_type = null
 
 /obj/item/ammo_casing/caseless/rogue/javelin/steel/ancient/decrepit
 	name = "decrepit javelin"
@@ -1519,6 +1675,32 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = null
+	projectile_type = null
+
+/obj/item/ammo_casing/caseless/rogue/sling_bullet
+	name = "soaring stone"
+	desc = "You shouldn't be seeing this."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
+	icon_state = "arrow"
+	w_class = WEIGHT_CLASS_TINY
+	force = 5
+	throwforce = 20
+	slot_flags = ITEM_SLOT_BELT
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	possible_item_intents = list(/datum/intent/hit)
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/ammo_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/ammo_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	caliber = "slingbullet"
+	projectile_type = /obj/projectile/bullet/sling_bullet
 
 /obj/item/ammo_casing/caseless/rogue/sling_bullet/ancient
 	name = "ancient sling bullet"
@@ -1541,6 +1723,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "slingbullet"
+	projectile_type = /obj/projectile/bullet/reusable/sling_bullet/ancient
 
 /obj/item/ammo_casing/caseless/rogue/sling_bullet/blacksteel
 	name = "blacksteel sling bullet"
@@ -1563,6 +1747,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "slingbullet"
+	projectile_type = /obj/projectile/bullet/reusable/sling_bullet/blacksteel
 
 /obj/item/ammo_casing/caseless/rogue/sling_bullet/bronze
 	name = "bronze sling bullet"
@@ -1585,6 +1771,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "slingbullet"
+	projectile_type = /obj/projectile/bullet/reusable/sling_bullet/bronze
 
 /obj/item/ammo_casing/caseless/rogue/sling_bullet/decrepit
 	name = "decrepit sling bullet"
@@ -1607,6 +1795,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "slingbullet"
+	projectile_type = /obj/projectile/bullet/reusable/sling_bullet/decrepit
 
 /obj/item/ammo_casing/caseless/rogue/sling_bullet/iron
 	name = "iron sling bullet"
@@ -1629,6 +1819,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "slingbullet"
+	projectile_type = /obj/projectile/bullet/reusable/sling_bullet/iron
 
 /obj/item/ammo_casing/caseless/rogue/sling_bullet/silver
 	name = "silver sling bullet"
@@ -1651,6 +1843,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "slingbullet"
+	projectile_type = /obj/projectile/bullet/reusable/sling_bullet/silver
 
 /obj/item/ammo_casing/caseless/rogue/sling_bullet/silverblessed
 	name = "blessed silver sling bullet"
@@ -1673,6 +1867,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "slingbullet"
+	projectile_type = /obj/projectile/bullet/reusable/sling_bullet/silverblessed
 
 /obj/item/ammo_casing/caseless/rogue/sling_bullet/steel
 	name = "steel sling bullet"
@@ -1695,6 +1891,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "slingbullet"
+	projectile_type = /obj/projectile/bullet/reusable/sling_bullet/steel
 
 /obj/item/ammo_casing/caseless/rogue/sling_bullet/steelblessed
 	name = "holy steel sling bullet"
@@ -1717,6 +1915,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "slingbullet"
+	projectile_type = /obj/projectile/bullet/reusable/sling_bullet/steelblessed
 
 /obj/item/ammo_casing/caseless/rogue/sling_bullet/stone
 	name = "stone sling bullet"
@@ -1739,6 +1939,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	caliber = "slingbullet"
+	projectile_type = /obj/projectile/bullet/reusable/sling_bullet/stone
 
 /obj/item/armor_brush
 	parent_type = /obj/item/rockhill
@@ -2177,6 +2379,25 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 
+/obj/item/black_rose
+	parent_type = /obj/item/rockhill
+	name = "black rose"
+	desc = "A sickly-sweet scented rose. Like honeyed rotten meat. It's dim petals seem laced with a black ooze that retreats away from your fingers."
+	icon = 'modular_redtard/rockhill/icons/mob/actions/pestramiracles.dmi'
+	icon_state = "rot"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/mob/actions/pestramiracles_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/mob/actions/pestramiracles_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
 /obj/item/bmbstrap
 	parent_type = /obj/item/rockhill
 	name = "Bombdolier"
@@ -2468,6 +2689,86 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 
+/obj/item/bombard_partiallyrefinedbarrel
+	parent_type = /obj/item/rockhill
+	name = "\improper partially refined barrel"
+	desc = "An iron barrel that has gone through partial treatment yet is still rough on the inside and must be sanded down,<br> <small> you think you could bring it to an artificer table to refine it further.</small>"
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/stationary/bombard.dmi'
+	icon_state = "kit_barrel"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 5
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/stationary/bombard_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/stationary/bombard_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/bombard_roughbarrel
+	parent_type = /obj/item/rockhill
+	name = "\improper rough iron barrel"
+	desc = "A rough iron barrel that has yet to be properly treated. <br> <small> you think you could bring this to an artificer table to refine it further.</small>"
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/stationary/bombard.dmi'
+	icon_state = "kit_barrel"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 5
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/stationary/bombard_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/stationary/bombard_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/bombard_sandedbarrel
+	parent_type = /obj/item/rockhill
+	name = "\improper sanded bombard barrel"
+	desc = "An iron barrel that has gone through the sanding process yet still has chips on the inside that must be repaired,<br> <small> you think you could bring it to an artificer table to refine it further.</small>"
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/stationary/bombard.dmi'
+	icon_state = "kit_barrel"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 5
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/stationary/bombard_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/stationary/bombard_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/bombard_sandedrepairedbarrel
+	parent_type = /obj/item/rockhill
+	name = "\improper repaired sanded barrel"
+	desc = "An iron barrel that has gone through the sanding process, the inside of it is hollow and smooth,<br> <small> you think you could bring it to an artificer to refine it further.</small>"
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/stationary/bombard.dmi'
+	icon_state = "kit_barrel"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 5
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/stationary/bombard_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/stationary/bombard_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
 /obj/item/book/granter/spell/random
 	name = "book"
 	desc = ""
@@ -2510,6 +2811,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	bookfile = "tales8.json"
+	category = "Fiction"
 
 /obj/item/book/rogue/arcyne
 	name = "Latent Magicks, where does Arcyne Power come from?"
@@ -2533,6 +2836,33 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	bookfile = "tales13.json"
+	category = "Non-fiction"
+
+/obj/item/book/rogue/beardling
+	name = "Rock and Stone - ABC & Tales for Beardlings"
+	desc = "Distributed by the Dwarven Federation"
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/books.dmi'
+	icon_state = "book8_0"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 5
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/reading
+	firefuel = 5 MINUTES
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	bookfile = "tales7.json"
+	category = "Fiction"
 
 /obj/item/book/rogue/bibble
 	name = "The Verses and Acts of the Ten"
@@ -2628,6 +2958,33 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	bookfile = "tales6.json"
+	category = "Fiction"
+
+/obj/item/book/rogue/bookofpriests
+	name = "Holy Book of Saphria"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/books.dmi'
+	icon_state = "knowledge_0"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 5
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/reading
+	firefuel = 5 MINUTES
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	bookfile = "holyguide.json"
+	category = "Religion"
 
 /obj/item/book/rogue/cardgame
 	name = "Graystone's Torment Basic Rules"
@@ -2651,6 +3008,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	bookfile = "tales5.json"
+	category = "Reference"
 
 /obj/item/book/rogue/cooking
 	name = "Tastes Fit For The Lord"
@@ -2674,6 +3033,33 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	bookfile = "cooking.json"
+	category = "Reference"
+
+/obj/item/book/rogue/festus
+	name = "Book of Festus"
+	desc = "Unknown Author"
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/books.dmi'
+	icon_state = "book2_0"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 5
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/reading
+	firefuel = 5 MINUTES
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	bookfile = "tales2.json"
+	category = "Fiction"
 
 /obj/item/book/rogue/fishing
 	name = "Fontaine's Advanced Guide to Fishery"
@@ -2697,6 +3083,33 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	bookfile = "tales11.json"
+	category = "Non-fiction"
+
+/obj/item/book/rogue/knowledge1
+	name = "Book of Knowledge"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/books.dmi'
+	icon_state = "book5_0"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 5
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/reading
+	firefuel = 5 MINUTES
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	bookfile = "knowledge.json"
+	category = "Reference"
 
 /obj/item/book/rogue/law
 	name = "Tome of Justice"
@@ -2720,6 +3133,108 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	bookfile = "law_2.json"
+	category = "Reference"
+
+/obj/item/book/rogue/naledi1
+	name = "The Path of the War Scholar Volume 1"
+	desc = "By Jatholemew von Rittensquatter, Esq"
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/books.dmi'
+	icon_state = "knowledge_0"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 5
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/reading
+	firefuel = 5 MINUTES
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	bookfile = "naledi1.json"
+	category = "Non-fiction"
+
+/obj/item/book/rogue/naledi2
+	name = "The Path of the War Scholar Volume 3"
+	desc = "By Jatholemew von Rittensquatter, Esq"
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/books.dmi'
+	icon_state = "book8_0"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 5
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/reading
+	firefuel = 5 MINUTES
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	bookfile = "naledi2.json"
+	category = "Non-fiction"
+
+/obj/item/book/rogue/naledi3
+	name = "The Path of the War Scholar Volume 7"
+	desc = "By Jatholemew von Rittensquatter, Esq"
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/books.dmi'
+	icon_state = "book7_0"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 5
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/reading
+	firefuel = 5 MINUTES
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	bookfile = "naledi3.json"
+	category = "Non-fiction"
+
+/obj/item/book/rogue/naledi4
+	name = "The Path of the War Scholar Volume 20"
+	desc = "By Jatholemew von Rittensquatter, Esq"
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/books.dmi'
+	icon_state = "book6_0"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 5
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/reading
+	firefuel = 5 MINUTES
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	bookfile = "naledi4.json"
+	category = "Non-fiction"
 
 /obj/item/book/rogue/necra
 	name = "Burial Rites for Necra"
@@ -2743,6 +3258,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	bookfile = "tales9.json"
+	category = "Religion"
 
 /obj/item/book/rogue/nitebeast
 	name = "Legend of the Nitebeast"
@@ -2766,6 +3283,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	bookfile = "tales14.json"
+	category = "Fiction"
 
 /obj/item/book/rogue/noc
 	name = "Dreamseeker"
@@ -2789,6 +3308,33 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	bookfile = "tales10.json"
+	category = "Religion"
+
+/obj/item/book/rogue/robber
+	name = "Reading for Robbers"
+	desc = "By Flavius of Dendor"
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/books.dmi'
+	icon_state = "basic_book_0"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 5
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	associated_skill = /datum/attribute/skill/misc/reading
+	firefuel = 5 MINUTES
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	bookfile = "tales4.json"
+	category = "Non-fiction"
 
 /obj/item/book/rogue/secret/oathmarked
 	name = "Oathmarked Tome"
@@ -2812,6 +3358,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	bookfile = "oathmarked.json"
 
 /obj/item/book/rogue/secret/xylix
 	name = "Book of Gold"
@@ -2834,6 +3381,7 @@
 	firefuel = 5 MINUTES
 	icon_state = null
 	inhand_icon_state = null
+	bookfile = "xylix.json"
 
 /obj/item/book/rogue/swatchbook
 	name = "Tailor's Swatchbook"
@@ -2880,6 +3428,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	bookfile = "tales12.json"
+	category = "Non-fiction"
 
 /obj/item/book/rogue/tales1
 	name = "Assorted Tales From Yester Yils"
@@ -2903,6 +3453,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	bookfile = "tales1.json"
+	category = "Fiction"
 
 /obj/item/book/rogue/tales3
 	name = "Myths & Legends of the Peaks & Beyond Volume I"
@@ -2926,6 +3478,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	bookfile = "tales3.json"
+	category = "Fiction"
 
 /obj/item/book/rogue/yeoldecookingmanual
 	name = "Ye olde ways of cookinge"
@@ -2949,6 +3503,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	bookfile = "Neu_cooking.json"
 
 /obj/item/book_crafting_kit
 	parent_type = /obj/item/rockhill
@@ -5358,11 +5913,53 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 
+/obj/item/carvedgem/porcelain/cameo
+	name = "porcelain cameo"
+	desc = "A porcelain artwork fired from refined clay."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelaincameo"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	sellprice = 25
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
 /obj/item/carvedgem/porcelain/comb
 	name = "porcelain comb"
 	desc = "A porcelain artwork fired from refined clay."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
 	icon_state = "clayporcelaincomb"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	sellprice = 40
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/carvedgem/porcelain/duck
+	name = "porcelain duck"
+	desc = "A porcelain artwork fired from refined clay."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelainduck"
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 0
 	worn_icon_state = null
@@ -5400,6 +5997,27 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 
+/obj/item/carvedgem/porcelain/figurine
+	name = "porcelain figurine"
+	desc = "A porcelain artwork fired from refined clay."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelainfigurine"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	sellprice = 30
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
 /obj/item/carvedgem/porcelain/fish
 	name = "porcelain fish figurine"
 	desc = "A porcelain artwork fired from refined clay."
@@ -5414,6 +6032,111 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	sellprice = 30
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/carvedgem/porcelain/obelisk
+	name = "porcelain obelisk"
+	desc = "A porcelain artwork fired from refined clay."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelainobelisk"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	sellprice = 45
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/carvedgem/porcelain/statue
+	name = "porcelain statue"
+	desc = "A porcelain artwork fired from refined clay."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelainstatue"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	sellprice = 45
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/carvedgem/porcelain/tablet
+	name = "porcelain tablet"
+	desc = "A porcelain artwork fired from refined clay."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelaintablet"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	sellprice = 30
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/carvedgem/porcelain/turtle
+	name = "porcelain turtle carving"
+	desc = "A porcelain artwork fired from refined clay."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelainturtle"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	sellprice = 55
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/carvedgem/porcelain/urn
+	name = "porcelain urn"
+	desc = "A porcelain artwork fired from refined clay."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelainurn"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	sellprice = 45
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -6996,6 +7719,31 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 
+/obj/item/clothing/barding/chain
+	name = "chainmail barding"
+	desc = "A set of chainmail body armor for a Saiga, designed to protect your mount's vital organs. Slows down your mount by a mild degree."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
+	icon_state = "armorkit"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	armor_type = /datum/armor/rockhill_maille
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_armor = /datum/rogue_armor/maille
+	material_category = 2
+	smeltresult = /obj/item/ingot/steel
+	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_sleeve_scrap = null
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
 /obj/item/clothing/barding/fogbeast
 	name = "padded barding"
 	desc = "A set of padded body armor for a Fogbeast, designed to protect your mount's vital organs."
@@ -7010,6 +7758,31 @@
 	rogue_armor = /datum/rogue_armor/padded
 	material_category = 2
 	sewrepair = TRUE
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/clothing/barding/fogbeast/chain
+	name = "chainmail barding"
+	desc = "A set of chainmail body armor for a Fogbeast, designed to protect your mount's vital organs."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
+	icon_state = "armorkit"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	armor_type = /datum/armor/rockhill_maille
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_armor = /datum/rogue_armor/maille
+	material_category = 2
+	smeltresult = /obj/item/ingot/steel
+	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_sleeve_scrap = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
@@ -7039,6 +7812,7 @@
 	rogue_grid_height = 64
 	material_category = 2
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "absolutionistrobe"
 	rogue_female_worn = TRUE
@@ -7123,6 +7897,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	inhand_icon_state = null
 	worn_icon_state = "leather_apron"
 	rogue_female_worn = TRUE
@@ -7311,6 +8086,8 @@
 	material_category = 2
 	sellprice = 50
 	sewrepair = TRUE
+	sleevetype = "shirt"
+	rogue_sleeve_scrap = /obj/item/natural/fur
 	inhand_icon_state = null
 	worn_icon_state = "black_cloak"
 	rogue_female_worn = TRUE
@@ -7337,6 +8114,7 @@
 	material_category = 2
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "cape"
 	rogue_female_worn = TRUE
@@ -7493,6 +8271,7 @@
 	material_category = 2
 	boobed = TRUE
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/silk
 	inhand_icon_state = null
 	worn_icon_state = "puritan_cape"
 	rogue_female_worn = TRUE
@@ -7571,6 +8350,7 @@
 	detail_tag = "_detail"
 	detail_color = "#39404d"
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "capcloak"
 	rogue_female_worn = TRUE
@@ -7596,6 +8376,7 @@
 	rogue_grid_height = 64
 	material_category = 2
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "chasuble"
 
@@ -7645,6 +8426,7 @@
 	detail_color = "#2b292e"
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "sheriffcloak"
 	rogue_female_worn = TRUE
@@ -7673,6 +8455,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "tabard_ravox"
 	rogue_female_worn = TRUE
@@ -7703,6 +8486,7 @@
 	detail_color = "#36241f"
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "cotehardie"
 	inhand_icon_state = null
 	worn_icon_state = "cotehardie"
 	rogue_female_worn = TRUE
@@ -7729,6 +8513,8 @@
 	material_category = 2
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
+	rogue_sleeve_scrap = /obj/item/natural/fur
 	inhand_icon_state = null
 	worn_icon_state = "dark_cloak"
 	rogue_female_worn = TRUE
@@ -7755,6 +8541,7 @@
 	material_category = 2
 	boobed = TRUE
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	inhand_icon_state = null
 	worn_icon_state = "bear_cloak"
 	rogue_female_worn = TRUE
@@ -7834,6 +8621,7 @@
 	material_category = 2
 	boobed = TRUE
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	inhand_icon_state = null
 	worn_icon_state = "mino"
 	rogue_female_worn = TRUE
@@ -7860,6 +8648,7 @@
 	material_category = 2
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "duelistcape"
 
@@ -7884,6 +8673,7 @@
 	rogue_grid_height = 64
 	material_category = 2
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "eastcloak1"
 	rogue_female_worn = TRUE
@@ -7909,6 +8699,7 @@
 	rogue_grid_height = 64
 	material_category = 2
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "forestcloak"
 	rogue_female_worn = TRUE
@@ -7961,6 +8752,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "halfcloak"
 	rogue_female_worn = TRUE
@@ -8149,6 +8941,7 @@
 	material_category = 2
 	sellprice = 50
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "heartfelt_cloak"
 	rogue_female_worn = TRUE
@@ -8203,6 +8996,7 @@
 	boobed = TRUE
 	sellprice = 300
 	sewrepair = TRUE
+	sleevetype = "silvertabard"
 	inhand_icon_state = null
 	worn_icon_state = "silvertabard"
 	rogue_female_worn = TRUE
@@ -8227,6 +9021,7 @@
 	rogue_grid_height = 64
 	material_category = 2
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/fur
 	inhand_icon_state = null
 	worn_icon_state = "lepoardcape"
 	rogue_female_worn = TRUE
@@ -8255,6 +9050,7 @@
 	detail_color = "#007fff"
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "lord_cloak"
 	rogue_female_worn = TRUE
@@ -8363,6 +9159,7 @@
 	rogue_grid_height = 64
 	material_category = 2
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "matroncloak"
 	rogue_female_worn = TRUE
@@ -8387,6 +9184,7 @@
 	rogue_grid_height = 64
 	material_category = 2
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "ordinatorcape"
 	rogue_female_worn = TRUE
@@ -8438,6 +9236,7 @@
 	rogue_grid_height = 64
 	material_category = 2
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -8520,6 +9319,8 @@
 	material_category = 2
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	inhand_icon_state = null
 	worn_icon_state = "rain_cloak"
 	rogue_female_worn = TRUE
@@ -8599,6 +9400,7 @@
 	material_category = 2
 	boobed = TRUE
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/fur
 	inhand_icon_state = null
 	worn_icon_state = "furgrey"
 	rogue_female_worn = TRUE
@@ -8808,6 +9610,7 @@
 	material_category = 2
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "shadowcloak"
 	rogue_female_worn = TRUE
@@ -8862,6 +9665,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "stabard"
 	rogue_female_worn = TRUE
@@ -9488,6 +10292,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "tabard_abyssor"
 	rogue_female_worn = TRUE
@@ -9516,6 +10321,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "tabard_astrata_alt"
 	rogue_female_worn = TRUE
@@ -9569,6 +10375,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "tabard_dendor"
 	rogue_female_worn = TRUE
@@ -9597,6 +10404,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "tabard_eora"
 	rogue_female_worn = TRUE
@@ -9651,6 +10459,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "tabard_malum"
 	rogue_female_worn = TRUE
@@ -9704,6 +10513,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "tabard_necra"
 	rogue_female_worn = TRUE
@@ -9757,6 +10567,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "tabard_noc"
 	rogue_female_worn = TRUE
@@ -9785,6 +10596,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "tabard_pestra"
 	rogue_female_worn = TRUE
@@ -9839,6 +10651,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "tabard_weeping"
 	rogue_female_worn = TRUE
@@ -9866,6 +10679,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "justicetabard"
 	rogue_female_worn = TRUE
@@ -9920,6 +10734,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "tabard_xylix"
 	rogue_female_worn = TRUE
@@ -9946,6 +10761,7 @@
 	material_category = 2
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "xylixcloak"
 	rogue_female_worn = TRUE
@@ -10019,6 +10835,8 @@
 	rogue_grid_height = 64
 	material_category = 2
 	sewrepair = TRUE
+	sleevetype = "shirt"
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	inhand_icon_state = null
 	worn_icon_state = "volfpelt"
 	rogue_female_worn = TRUE
@@ -10044,6 +10862,7 @@
 	rogue_grid_height = 64
 	material_category = 2
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "wardencloak"
 	rogue_female_worn = TRUE
@@ -10069,6 +10888,8 @@
 	rogue_grid_height = 64
 	material_category = 2
 	sewrepair = TRUE
+	sleevetype = "shirt"
+	rogue_sleeve_scrap = /obj/item/natural/fibers
 	inhand_icon_state = null
 	worn_icon_state = "wicker_cloak"
 	rogue_female_worn = TRUE
@@ -10098,6 +10919,8 @@
 	material_category = 2
 	sellprice = 12
 	sewrepair = TRUE
+	sleevetype = "shirt"
+	rogue_sleeve_scrap = /obj/item/natural/fur
 	inhand_icon_state = null
 	worn_icon_state = "angle"
 	rogue_female_worn = TRUE
@@ -10300,6 +11123,7 @@
 	material_category = 2
 	unarmed_bonus = 3
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "clothwraps"
 	rogue_female_worn = TRUE
@@ -10386,6 +11210,7 @@
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "bplategloves"
 	rogue_female_worn = TRUE
@@ -10415,6 +11240,7 @@
 	material_category = 2
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "bkgloves"
 	rogue_female_worn = TRUE
@@ -10445,6 +11271,7 @@
 	unarmed_bonus = 2
 	smeltresult = /obj/item/alch/irondust
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "cgloves"
 	rogue_female_worn = TRUE
@@ -10630,6 +11457,32 @@
 	worn_icon_state = "psydongloveschain"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/gloves/roguetown/contraption/voltic
+	name = "voltic contraption gauntlets"
+	desc = "A gauntlet of bronze and brass, fitted with whirring machinery and etched with voltic runes. It hums with unstable energy."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/gloves.dmi'
+	icon_state = "volticgauntlets"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
+	slot_flags = ITEM_SLOT_GLOVES
+	body_parts_covered = HAND_LEFT|HAND_RIGHT
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	material_category = 2
+	sellprice = 100
+	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
+	inhand_icon_state = null
+	worn_icon_state = "volticgauntlets"
+
 /obj/item/clothing/gloves/roguetown/eastgloves1
 	name = "black gloves"
 	desc = "Sleek gloves typically used by swordsmen."
@@ -10654,6 +11507,7 @@
 	rogue_blocksound = "soft"
 	material_category = 2
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "eastgloves1"
 	rogue_female_worn = TRUE
@@ -10682,6 +11536,7 @@
 	rogue_blocksound = "soft"
 	material_category = 2
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "eastgloves2"
 	rogue_female_worn = TRUE
@@ -10710,6 +11565,7 @@
 	material_category = 2
 	smeltresult = /obj/item/rogueore/coal
 	anvilrepair = /datum/attribute/skill/craft/carpentry
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "welfhand"
 	rogue_female_worn = TRUE
@@ -10736,6 +11592,7 @@
 	rogue_blocksound = "soft"
 	material_category = 2
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "fingerless_gloves"
 	rogue_female_worn = TRUE
@@ -10790,6 +11647,8 @@
 	rogue_blocksound = "soft"
 	material_category = 2
 	sewrepair = TRUE
+	sleevetype = "shirt"
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	inhand_icon_state = null
 	worn_icon_state = "roguegloves"
 	rogue_female_worn = TRUE
@@ -10818,6 +11677,7 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -10987,6 +11847,7 @@
 	material_category = 2
 	unarmed_bonus = 1
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "leather_gloves"
 	rogue_female_worn = TRUE
@@ -11068,6 +11929,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -11096,6 +11958,7 @@
 	rogue_blocksound = "soft"
 	material_category = 2
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "fencergloves"
 	rogue_female_worn = TRUE
@@ -11124,6 +11987,7 @@
 	rogue_blocksound = "soft"
 	material_category = 2
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	inhand_icon_state = null
 	worn_icon_state = "inqgloves"
 	rogue_female_worn = TRUE
@@ -11152,6 +12016,7 @@
 	rogue_blocksound = "soft"
 	material_category = 2
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	inhand_icon_state = null
 	worn_icon_state = "psydongloves"
 	rogue_female_worn = TRUE
@@ -11182,6 +12047,7 @@
 	unarmed_bonus = 3
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "gauntlets"
 	rogue_female_worn = TRUE
@@ -11361,6 +12227,7 @@
 	material_category = 2
 	unarmed_bonus = 3
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "silvergloves"
 	inhand_icon_state = null
 	worn_icon_state = "silvergloves"
 	rogue_female_worn = TRUE
@@ -11563,6 +12430,8 @@
 	material_category = 2
 	sellprice = 12
 	sewrepair = TRUE
+	sleevetype = "shirt"
+	rogue_sleeve_scrap = /obj/item/natural/fur
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/artefactsten_lefthand.dmi'
@@ -11593,6 +12462,7 @@
 	material_category = 2
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
 	worn_icon_state = "blackbag"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -11624,6 +12494,8 @@
 	material_category = 2
 	flags_inv = HIDEEARS | HIDEHAIR
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/hide
+	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "antlerhood"
 
@@ -11648,6 +12520,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "archercap"
 
@@ -11673,6 +12546,7 @@
 	material_category = 2
 	flags_inv = HIDEEARS
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "armingcap"
 
@@ -11697,6 +12571,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "articap"
 
@@ -11721,6 +12596,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "bardhat"
 
@@ -11747,6 +12623,7 @@
 	material_category = 2
 	flags_inv = HIDEEARS | HIDEHAIR
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "beekeeper"
 
@@ -11771,6 +12648,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "brimmed"
 
@@ -11795,6 +12673,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "bucklehat"
 
@@ -11819,6 +12698,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "chaperon"
 
@@ -11999,6 +12879,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "chef"
 
@@ -12024,6 +12905,7 @@
 	material_category = 2
 	sellprice = 50
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "circlet"
 
@@ -12049,6 +12931,7 @@
 	material_category = 2
 	sellprice = 65
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "circlet_amber"
 
@@ -12074,6 +12957,7 @@
 	material_category = 2
 	sellprice = 20
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "circlet_shell"
 
@@ -12099,6 +12983,7 @@
 	material_category = 2
 	sellprice = 75
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "circlet_coral"
 
@@ -12124,6 +13009,7 @@
 	material_category = 2
 	sellprice = 65
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "circlet_jade"
 
@@ -12149,6 +13035,7 @@
 	material_category = 2
 	sellprice = 45
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "circlet_onyxa"
 
@@ -12174,6 +13061,7 @@
 	material_category = 2
 	sellprice = 95
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "circlet_opal"
 
@@ -12199,6 +13087,7 @@
 	material_category = 2
 	sellprice = 30
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "circlet_rose"
 
@@ -12224,6 +13113,7 @@
 	material_category = 2
 	sellprice = 25
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "circlet_shell"
 
@@ -12249,6 +13139,7 @@
 	material_category = 2
 	sellprice = 90
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "circlet_turq"
 
@@ -12273,6 +13164,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = "chef"
 	worn_icon_state = "chef"
 
@@ -12297,6 +13189,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "serpcrown"
 
@@ -12322,6 +13215,7 @@
 	material_category = 2
 	sellprice = 100
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "serpcrowno"
 
@@ -12347,6 +13241,7 @@
 	material_category = 2
 	flags_inv = HIDEFACE | HIDEFACIALHAIR | HIDESNOUT
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_MOUTH
 	inhand_icon_state = null
 	worn_icon_state = "dendormask"
 
@@ -12372,6 +13267,7 @@
 	material_category = 2
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "hood"
 
@@ -12395,6 +13291,7 @@
 	material_category = 2
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -12423,6 +13320,7 @@
 	detail_tag = "_detail"
 	detail_color = "#C0C0C0"
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "duelhat"
 
@@ -12449,6 +13347,7 @@
 	detail_tag = "_detail"
 	detail_color = "#C0C0C0"
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "duelisthat"
 
@@ -12474,6 +13373,8 @@
 	material_category = 2
 	flags_inv = HIDEFACE | HIDEFACIALHAIR | HIDEHAIR
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/silk
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "eoramask"
 
@@ -12500,6 +13401,8 @@
 	rogue_armor = /datum/rogue_armor/leather
 	material_category = 2
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "hat"
 
@@ -12524,6 +13427,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "fancy_hat"
 
@@ -12548,6 +13452,8 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "curator"
 
@@ -12572,6 +13478,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "fisherhat"
 
@@ -12602,6 +13509,7 @@
 	altdetail_tag = "_detailalt"
 	altdetail_color = "#9c2525"
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "grenzelhat"
 
@@ -12626,6 +13534,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "hatblu"
 
@@ -12650,6 +13559,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "hatfur"
 
@@ -12674,6 +13584,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "headband"
 
@@ -12700,6 +13611,7 @@
 	rogue_armor = /datum/rogue_armor/leather
 	material_category = 2
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "headband"
 
@@ -12727,6 +13639,7 @@
 	rogue_blocksound = "soft"
 	material_category = 2
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "headband"
 
@@ -12803,6 +13716,7 @@
 	material_category = 2
 	sellprice = 10
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "headdress"
 
@@ -12853,6 +13767,7 @@
 	chunkcolor = "#8c9599"
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_NOSE | ROGUE_FACE_HAIR
 	worn_icon_state = "nasal"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -12880,6 +13795,8 @@
 	rogue_blocksound = "soft"
 	material_category = 2
 	chunkcolor = "#8c9599"
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
+	rogue_face_coverage = ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_HAIR
 	worn_icon_state = "bandana"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -12913,6 +13830,7 @@
 	flags_inv = HIDEHAIR
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
 	worn_icon_state = "bascinet_novisor"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -12950,6 +13868,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDESNOUT
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "wardenhelm"
 
@@ -13010,6 +13929,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDESNOUT
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
 	worn_icon_state = "gronnleatherhelm"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/gronn_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/gronn_righthand.dmi'
@@ -13076,6 +13996,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDESNOUT
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
 	worn_icon_state = "klappvisier"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -13146,6 +14067,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDESNOUT
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
 	worn_icon_state = "hounskull"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -13188,6 +14110,138 @@
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_onmob.dmi'
 
+/obj/item/clothing/head/roguetown/helmet/bascinet/pigface/roundface
+	name = "roundface bascinet"
+	desc = "A bascinet with a conical visor, favored by those without snouts and whiskers. Nestle a feather or length of cloth onto the rim to display your allegiance."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "roundface"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/64x64/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	armor_type = /datum/armor/rockhill_plate
+	body_parts_covered = HEAD
+	rogue_sleeved = null
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_blocksound = "plate"
+	material_category = 2
+	chunkcolor = "#8c9599"
+	block2add = ROGUE_FOV_BEHIND
+	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDESNOUT
+	smeltresult = /obj/item/ingot/steel
+	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	worn_icon_state = "roundface"
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_onmob.dmi'
+
+/obj/item/clothing/head/roguetown/helmet/bascinet/pigface/roundface/iron
+	name = "iron roundface bascinet"
+	desc = "An iron bascinet with a conical visor, favored by those without snouts and whiskers. Nestle a feather or length of cloth onto the rim to display your allegiance."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "iroundface"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/64x64/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	armor_type = /datum/armor/rockhill_plate
+	body_parts_covered = HEAD
+	rogue_sleeved = null
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_blocksound = "plate"
+	material_category = 2
+	chunkcolor = "#8c9599"
+	block2add = ROGUE_FOV_BEHIND
+	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDESNOUT
+	smeltresult = /obj/item/ingot/iron
+	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	worn_icon_state = "iroundface"
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_onmob.dmi'
+
+/obj/item/clothing/head/roguetown/helmet/bascinet/pigface/roundface/iron/snouted
+	name = "iron snouted roundface bascinet"
+	desc = "An iron bascinet with a conical visor, drawn forward into a muzzle for those with snouts. Nestle a feather or length of cloth onto the rim to display your allegiance."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "iroundface_s"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/64x64/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	armor_type = /datum/armor/rockhill_plate
+	body_parts_covered = HEAD
+	rogue_sleeved = null
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_blocksound = "plate"
+	material_category = 2
+	chunkcolor = "#8c9599"
+	block2add = ROGUE_FOV_BEHIND
+	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDESNOUT
+	smeltresult = /obj/item/ingot/iron
+	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	worn_icon_state = "iroundface_s"
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_onmob.dmi'
+
+/obj/item/clothing/head/roguetown/helmet/bascinet/pigface/roundface/snouted
+	name = "snouted roundface bascinet"
+	desc = "A bascinet with a conical visor, drawn forward into a muzzle for those with snouts. Nestle a feather or length of cloth onto the rim to display your allegiance."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "roundface_s"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/64x64/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	armor_type = /datum/armor/rockhill_plate
+	body_parts_covered = HEAD
+	rogue_sleeved = null
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_blocksound = "plate"
+	material_category = 2
+	chunkcolor = "#8c9599"
+	block2add = ROGUE_FOV_BEHIND
+	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDESNOUT
+	smeltresult = /obj/item/ingot/steel
+	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	worn_icon_state = "roundface_s"
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_onmob.dmi'
+
 /obj/item/clothing/head/roguetown/helmet/blacksteel/bucket
 	name = "blacksteel bucket helm"
 	desc = "A bucket helmet forged of durable blacksteel. None shall pass.."
@@ -13212,6 +14266,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDESNOUT
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
 	worn_icon_state = "bkhelm"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/blkknight_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/blkknight_righthand.dmi'
@@ -13245,6 +14300,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDESNOUT
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
 	worn_icon_state = "bplatehelm"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/blkknight_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/blkknight_righthand.dmi'
@@ -13315,6 +14371,7 @@
 	flags_inv = NONE
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	worn_icon_state = "psychains"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -13347,6 +14404,7 @@
 	chunkcolor = "#8c9599"
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	worn_icon_state = "psybarbs"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/wrists_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/wrists_righthand.dmi'
@@ -13378,6 +14436,7 @@
 	chunkcolor = "#8c9599"
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
 	worn_icon_state = "bronzehelmet"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -13410,6 +14469,7 @@
 	chunkcolor = "#8c9599"
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
 	worn_icon_state = "bronzemurmillo"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -13445,6 +14505,7 @@
 	detail_tag = "_detail"
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
 	worn_icon_state = "citywatch_helmet"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -13543,6 +14604,7 @@
 	chunkcolor = "#8c9599"
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
 	worn_icon_state = "plate_helm_item"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/mob/monster/goblins_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/mob/monster/goblins_righthand.dmi'
@@ -13577,6 +14639,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDESNOUT
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
 	worn_icon_state = "barbute"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -13780,6 +14843,40 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	worn_icon_state = "astratanhelm"
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_onmob.dmi'
+
+/obj/item/clothing/head/roguetown/helmet/heavy/beakhelm
+	name = "beak helmet"
+	desc = "An odd spherical helmet with a beaklike visor."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "beakhelmet"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	armor_type = /datum/armor/rockhill_plate
+	body_parts_covered = HEAD
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_blocksound = "plate"
+	material_category = 2
+	chunkcolor = "#8c9599"
+	block2add = ROGUE_FOV_BEHIND
+	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR
+	smeltresult = /obj/item/ingot/steel
+	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	worn_icon_state = "beakhelmet"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
 	inhand_icon_state = null
@@ -14051,6 +15148,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDESNOUT
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
 	worn_icon_state = "dwarfhead"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/race_armor_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/race_armor_righthand.dmi'
@@ -14153,6 +15251,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDESNOUT
 	smeltresult = /obj/item/rogueore/coal
 	anvilrepair = /datum/attribute/skill/craft/carpentry
+	rogue_face_coverage = ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "welfheadalt"
 
@@ -14359,6 +15458,40 @@
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_onmob.dmi'
 
+/obj/item/clothing/head/roguetown/helmet/heavy/guard/bogman
+	name = "steel bogman's helmet"
+	desc = "A helmet featuring the face of a snarling goblin. Once worn by the Bogmen, now a relic of old Rotwood Vale."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "guardhelm"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	armor_type = /datum/armor/rockhill_plate
+	body_parts_covered = HEAD
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_blocksound = "plate"
+	material_category = 2
+	chunkcolor = "#8c9599"
+	block2add = ROGUE_FOV_BEHIND
+	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDESNOUT
+	smeltresult = /obj/item/ingot/steel
+	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	worn_icon_state = "guardhelm"
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_onmob.dmi'
+
 /obj/item/clothing/head/roguetown/helmet/heavy/holysee
 	name = "holy silver bascinet"
 	desc = "Branded by the Holy See, these helms are worn by it's chosen warriors. A bastion of hope in the dark nite."
@@ -14392,6 +15525,39 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/martyr_onmob.dmi'
+
+/obj/item/clothing/head/roguetown/helmet/heavy/jar
+	name = "jar"
+	desc = "Jar that fits cleanly over the head when upturned. A small hole has been knapped in the side to allow vision, if poorly."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/jar.dmi'
+	icon_state = "jar"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/jar.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	armor_type = /datum/armor/rockhill_f70_a0
+	body_parts_covered = HEAD
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/b10_s80_t100_p100_f100_a0
+	armor_class = 2
+	material_category = 2
+	chunkcolor = "#8c9599"
+	block2add = ROGUE_FOV_RIGHT | ROGUE_FOV_LEFT
+	flags_inv = HIDEEARS | HIDEFACE | HIDESNOUT | HIDEHAIR | HIDEFACIALHAIR
+	smeltresult = /obj/item/natural/brick
+	anvilrepair = /datum/attribute/skill/craft/ceramics
+	worn_icon_state = "jar"
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/jar_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/jar_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/jar_onmob.dmi'
 
 /obj/item/clothing/head/roguetown/helmet/heavy/knight
 	name = "knight's helmet"
@@ -14520,6 +15686,108 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	worn_icon_state = "armet"
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_onmob.dmi'
+
+/obj/item/clothing/head/roguetown/helmet/heavy/knight/armet/iron
+	name = "iron armet"
+	desc = "Holy lamb, sacrificial hero, blessed idiot - Psydon endures. Will you endure alongside Him, as a knight of humenity, or crumble before temptation?"
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "iarmet"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	armor_type = /datum/armor/rockhill_plate
+	body_parts_covered = HEAD
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_blocksound = "plate"
+	material_category = 2
+	chunkcolor = "#8c9599"
+	block2add = ROGUE_FOV_BEHIND
+	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDESNOUT
+	smeltresult = /obj/item/ingot/iron
+	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	worn_icon_state = "iarmet"
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_onmob.dmi'
+
+/obj/item/clothing/head/roguetown/helmet/heavy/knight/armet/iron/snouted
+	name = "iron snouted armet"
+	desc = "Holy lamb, sacrificial hero, blessed idiot - Psydon endures. Will you endure alongside Him, as a knight of humenity, or crumble before temptation?"
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "iarmet_s"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	armor_type = /datum/armor/rockhill_plate
+	body_parts_covered = HEAD
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_blocksound = "plate"
+	material_category = 2
+	chunkcolor = "#8c9599"
+	block2add = ROGUE_FOV_BEHIND
+	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDESNOUT
+	smeltresult = /obj/item/ingot/iron
+	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	worn_icon_state = "iarmet_s"
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_onmob.dmi'
+
+/obj/item/clothing/head/roguetown/helmet/heavy/knight/armet/snouted
+	name = "snouted armet"
+	desc = "Holy lamb, sacrificial hero, blessed idiot - Psydon endures. Will you endure alongside Him, as a knight of humenity, or crumble before temptation?"
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "armet_s"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	armor_type = /datum/armor/rockhill_plate
+	body_parts_covered = HEAD
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_blocksound = "plate"
+	material_category = 2
+	chunkcolor = "#8c9599"
+	block2add = ROGUE_FOV_BEHIND
+	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDESNOUT
+	smeltresult = /obj/item/ingot/steel
+	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	worn_icon_state = "armet_s"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
 	inhand_icon_state = null
@@ -14855,6 +16123,7 @@
 	flags_inv = HIDEEARS | HIDEHAIR
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
 	worn_icon_state = "nochelm"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -14923,6 +16192,7 @@
 	flags_inv = HIDEEARS | HIDEHAIR
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
 	worn_icon_state = "bplatehelm_nv"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/blkknight_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/blkknight_righthand.dmi'
@@ -15460,6 +16730,7 @@
 	chunkcolor = "#8c9599"
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	worn_icon_state = "hornedcap"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -15491,6 +16762,7 @@
 	chunkcolor = "#8c9599"
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
 	worn_icon_state = "kettle"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -15654,6 +16926,37 @@
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_onmob.dmi'
 
+/obj/item/clothing/head/roguetown/helmet/kettle/wide
+	name = "wide kettle helmet"
+	desc = "A steel helmet which protects the top and sides of the head. This one looks wider than others."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "kettlewide"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	armor_type = /datum/armor/rockhill_plate
+	body_parts_covered = HEAD
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_blocksound = "plate"
+	material_category = 2
+	chunkcolor = "#8c9599"
+	smeltresult = /obj/item/ingot/steel
+	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	worn_icon_state = "kettlewide"
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_onmob.dmi'
+
 /obj/item/clothing/head/roguetown/helmet/leather
 	name = "leather helmet"
 	desc = "A helmet made of leather."
@@ -15676,6 +16979,8 @@
 	chunkcolor = "#8c9599"
 	sellprice = 10
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
+	rogue_face_coverage = ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_HAIR
 	worn_icon_state = "leatherhelm"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -15740,6 +17045,7 @@
 	flags_inv = HIDEHAIR | HIDEEARS | HIDEFACE
 	sellprice = 10
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
 	worn_icon_state = "studhood"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_stonehedge/icons/clothing/armor/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_stonehedge/icons/clothing/armor/head_righthand.dmi'
@@ -15805,6 +17111,7 @@
 	flags_inv = HIDEHAIR
 	sellprice = 10
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
 	worn_icon_state = "chapnaled"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -15871,6 +17178,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDESNOUT
 	sellprice = 10
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "saigahead"
 
@@ -15928,6 +17236,7 @@
 	chunkcolor = "#8c9599"
 	sellprice = 10
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
 	worn_icon_state = "volfhead"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -15960,6 +17269,7 @@
 	flags_inv = HIDEHAIR
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_HAIR
 	worn_icon_state = "nomadhelmet"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -15995,6 +17305,7 @@
 	detail_color = "#e08828"
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
 	worn_icon_state = "otavahelm"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -16026,6 +17337,7 @@
 	chunkcolor = "#8c9599"
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
 	worn_icon_state = "sallet"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -16249,6 +17561,7 @@
 	flags_inv = HIDEFACE | HIDEHAIR
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
 	worn_icon_state = "sallet_visor"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -16291,6 +17604,72 @@
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_onmob.dmi'
 
+/obj/item/clothing/head/roguetown/helmet/sallet/visored/iron/snouted
+	name = "iron snouted visored sallet"
+	desc = "An iron 'sallet'-styled helmet with an adjustable visor, its bevor drawn forward into a muzzle. Favored by those with snouts. Out for a stroll, now, are we?"
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "isallet_visor_s"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	armor_type = /datum/armor/rockhill_plate
+	body_parts_covered = HEAD
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_blocksound = "plate"
+	material_category = 2
+	chunkcolor = "#8c9599"
+	block2add = ROGUE_FOV_BEHIND
+	flags_inv = HIDEFACE | HIDEHAIR
+	smeltresult = /obj/item/ingot/iron
+	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	worn_icon_state = "isallet_visor_s"
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_onmob.dmi'
+
+/obj/item/clothing/head/roguetown/helmet/sallet/visored/snouted
+	name = "snouted visored sallet"
+	desc = "A steel 'sallet'-styled helmet with an adjustable visor, its bevor drawn forward into a muzzle. Favored by those with snouts. Away with you, vile beggar!"
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/head.dmi'
+	icon_state = "sallet_visor_s"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_POCKETS
+	armor_type = /datum/armor/rockhill_plate
+	body_parts_covered = HEAD
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_blocksound = "plate"
+	material_category = 2
+	chunkcolor = "#8c9599"
+	block2add = ROGUE_FOV_BEHIND
+	flags_inv = HIDEFACE | HIDEHAIR
+	smeltresult = /obj/item/ingot/steel
+	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	worn_icon_state = "sallet_visor_s"
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_onmob.dmi'
+
 /obj/item/clothing/head/roguetown/helmet/sallet/warden/bear
 	name = "warden's bearskull helm"
 	desc = "The large, intimidating skull of a common direbear, plated with steel on its inner side and given padding - paired together with a steel maille mask and worn with a linen shroud. Such trophies are associated with life-long hunters and their descendants."
@@ -16315,6 +17694,7 @@
 	flags_inv = HIDEFACE
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
 	worn_icon_state = "skullmet_bear"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/warden_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/warden_righthand.dmi'
@@ -16377,6 +17757,7 @@
 	chunkcolor = "#8c9599"
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	worn_icon_state = "skullcap"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -16405,6 +17786,8 @@
 	material_category = 2
 	chunkcolor = "#8c9599"
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
+	rogue_face_coverage = ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_HAIR
 	worn_icon_state = "tricorn"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -16436,6 +17819,7 @@
 	chunkcolor = "#8c9599"
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	worn_icon_state = "wingedcap"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -16467,6 +17851,7 @@
 	material_category = 2
 	sellprice = 19
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "hennin"
 
@@ -16491,6 +17876,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
 	inhand_icon_state = null
 	worn_icon_state = "hbit"
 
@@ -16517,6 +17903,7 @@
 	rogue_armor = /datum/rogue_armor/leather
 	material_category = 2
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "inqhat"
 
@@ -16546,6 +17933,7 @@
 	altdetail_tag = "_detailalt"
 	altdetail_color = "#ffffff"
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "jester"
 
@@ -16570,6 +17958,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "knitcap"
 
@@ -16618,6 +18007,7 @@
 	material_category = 2
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR | HIDESNOUT
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "menacing"
 
@@ -16671,6 +18061,7 @@
 	material_category = 2
 	flags_inv = HIDEEARS
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "easthat"
 
@@ -16722,6 +18113,7 @@
 	material_category = 2
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR | HIDESNOUT
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "necrahood"
 
@@ -16747,6 +18139,7 @@
 	material_category = 2
 	flags_inv = HIDEEARS | HIDESNOUT | HIDEHAIR | HIDEFACIALHAIR
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_MOUTH
 	inhand_icon_state = null
 	worn_icon_state = "deathface"
 
@@ -16796,6 +18189,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "tophat"
 
@@ -16821,6 +18215,7 @@
 	material_category = 2
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR | HIDESNOUT
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "nochood"
 
@@ -16846,6 +18241,7 @@
 	material_category = 2
 	sellprice = 5
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "nun"
 
@@ -16920,6 +18316,8 @@
 	rogue_blocksound = "soft"
 	material_category = 2
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/fibers
+	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "armingcap"
 
@@ -16945,6 +18343,8 @@
 	rogue_blocksound = "soft"
 	material_category = 2
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/fur
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "papakha"
 
@@ -16995,6 +18395,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "physhat"
 
@@ -17020,6 +18421,7 @@
 	material_category = 2
 	sellprice = 77
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "priest"
 
@@ -17045,6 +18447,7 @@
 	material_category = 2
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR | HIDESNOUT
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "priesthead"
 
@@ -17069,6 +18472,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "puritan_hat"
 
@@ -17124,6 +18528,8 @@
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
+	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "basichood"
 
@@ -17151,6 +18557,8 @@
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/cloth
+	rogue_face_coverage = NONE
 	inhand_icon_state = null
 	worn_icon_state = "abyssorhood"
 
@@ -17178,6 +18586,8 @@
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/cloth
+	rogue_face_coverage = NONE
 	inhand_icon_state = null
 	worn_icon_state = "astratahood"
 
@@ -17232,6 +18642,8 @@
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/cloth
+	rogue_face_coverage = ROGUE_FACE_NOSE | ROGUE_FACE_EARS
 	inhand_icon_state = null
 	worn_icon_state = "feldhood"
 
@@ -17261,6 +18673,7 @@
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/cloth
 	inhand_icon_state = null
 	worn_icon_state = "deserthood"
 
@@ -17315,6 +18728,8 @@
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/cloth
+	rogue_face_coverage = ROGUE_FACE_NOSE | ROGUE_FACE_EARS
 	inhand_icon_state = null
 	worn_icon_state = "surghood"
 
@@ -17344,6 +18759,7 @@
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/cloth
 	inhand_icon_state = null
 	worn_icon_state = "monkhood"
 
@@ -17374,6 +18790,7 @@
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR | HIDESNOUT
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "psydonhood"
 
@@ -17404,6 +18821,7 @@
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/cloth
 	inhand_icon_state = null
 	worn_icon_state = "confessorhood"
 
@@ -17458,6 +18876,8 @@
 	block2add = NONE
 	flags_inv = HIDENECK
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/cloth
+	rogue_face_coverage = NONE
 	inhand_icon_state = null
 	worn_icon_state = "ravoxgorget"
 
@@ -17573,6 +18993,7 @@
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEHAIR | HIDEFACIALHAIR | HIDEFACE
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/cloth
 	inhand_icon_state = null
 	worn_icon_state = "shalal"
 
@@ -17826,6 +19247,8 @@
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/cloth
+	rogue_face_coverage = ROGUE_FACE_NOSE | ROGUE_FACE_EARS
 	inhand_icon_state = null
 	worn_icon_state = "whitehood"
 
@@ -17883,6 +19306,7 @@
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
 	sewrepair = TRUE
+	rogue_face_coverage = NONE
 	inhand_icon_state = null
 	worn_icon_state = "wardenhood"
 
@@ -17912,6 +19336,7 @@
 	spitoutmouth = FALSE
 	flags_inv = NONE
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "deserthood_t"
 
@@ -17936,6 +19361,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "shawl"
 
@@ -17962,6 +19388,7 @@
 	rogue_armor = /datum/rogue_armor/leather
 	material_category = 2
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "spellcasterhat"
 
@@ -17986,6 +19413,8 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/fibers
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "strawhat"
 
@@ -18008,6 +19437,7 @@
 	material_category = 2
 	flags_inv = HIDEHAIR | HIDEEARS
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -18062,6 +19492,7 @@
 	detail_tag = "_detail"
 	detail_color = "#ffffff"
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "veil"
 
@@ -18116,6 +19547,7 @@
 	detail_tag = "_detail"
 	detail_color = "#61462c"
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "witch"
 
@@ -18166,6 +19598,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "wizardhat"
 
@@ -18331,6 +19764,7 @@
 	muteinmouth = FALSE
 	spitoutmouth = FALSE
 	sewrepair = TRUE
+	rogue_sleeve_scrap = null
 	worn_icon_state = "pipeoff"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/lighting_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/lighting_righthand.dmi'
@@ -18425,6 +19859,7 @@
 	muteinmouth = FALSE
 	spitoutmouth = FALSE
 	sewrepair = TRUE
+	rogue_sleeve_scrap = null
 	worn_icon_state = "spliffoff"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/lighting_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/lighting_righthand.dmi'
@@ -19109,6 +20544,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
 	inhand_icon_state = "blindfold"
 	worn_icon_state = "blindfold"
 
@@ -19136,6 +20572,7 @@
 	detail_tag = "_detail"
 	detail_color = "#C0C0C0"
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
 	inhand_icon_state = null
 	worn_icon_state = "duelmask"
 
@@ -19160,6 +20597,8 @@
 	material_category = 2
 	flags_inv = HIDEFACE | HIDEFACIALHAIR
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/silk
+	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
 	inhand_icon_state = null
 	worn_icon_state = "exoticsilkmask"
 
@@ -19231,6 +20670,7 @@
 	material_category = 2
 	block2add = ROGUE_FOV_RIGHT
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
 	inhand_icon_state = null
 	worn_icon_state = "eyepatch"
 
@@ -19285,6 +20725,7 @@
 	flags_inv = HIDEFACE | HIDESNOUT
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
 	inhand_icon_state = null
 	worn_icon_state = "imask"
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/masks_onmob.dmi'
@@ -19505,6 +20946,7 @@
 	flags_inv = HIDEFACE
 	sellprice = 70
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "mask_amber"
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/masks_onmob.dmi'
@@ -19536,6 +20978,7 @@
 	flags_inv = HIDEFACE
 	sellprice = 80
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "mask_coral"
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/masks_onmob.dmi'
@@ -19567,6 +21010,7 @@
 	flags_inv = HIDEFACE
 	sellprice = 70
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "mask_jade"
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/masks_onmob.dmi'
@@ -19598,6 +21042,7 @@
 	flags_inv = HIDEFACE
 	sellprice = 50
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "mask_onyxa"
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/masks_onmob.dmi'
@@ -19629,6 +21074,7 @@
 	flags_inv = HIDEFACE
 	sellprice = 100
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "mask_opal"
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/masks_onmob.dmi'
@@ -19659,6 +21105,7 @@
 	flags_inv = HIDEFACE
 	sellprice = 45
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -19691,6 +21138,7 @@
 	flags_inv = HIDEFACE
 	sellprice = 35
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "mask_rose"
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/masks_onmob.dmi'
@@ -19722,6 +21170,7 @@
 	flags_inv = HIDEFACE
 	sellprice = 30
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "mask_shell"
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/masks_onmob.dmi'
@@ -19753,6 +21202,7 @@
 	flags_inv = HIDEFACE
 	sellprice = 95
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "mask_turq"
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/masks_onmob.dmi'
@@ -19972,6 +21422,37 @@
 	worn_icon_state = "confessormask"
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/masks_onmob.dmi'
 
+/obj/item/clothing/mask/rogue/facemask/steel/hound
+	name = "steel hound mask"
+	desc = "A steel mask, made for those who have snouts, protecting the eyes, nose and muzzle while obscuring the face."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/masks.dmi'
+	icon_state = "smask_snout"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_POCKETS
+	armor_type = /datum/armor/rockhill_plate
+	body_parts_covered = HEAD
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_blocksound = "plate"
+	material_category = 2
+	block2add = ROGUE_FOV_BEHIND
+	flags_inv = HIDEFACE | HIDESNOUT
+	smeltresult = /obj/item/ingot/steel
+	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	inhand_icon_state = null
+	worn_icon_state = "smask_snout"
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/masks_onmob.dmi'
+
 /obj/item/clothing/mask/rogue/facemask/steel/kazengun
 	name = "soldier's half-mask"
 	desc = "\"The first lesson of war is that it would be better to live in peace.\""
@@ -19999,6 +21480,7 @@
 	flags_inv = HIDEFACE | HIDESNOUT
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE
 	inhand_icon_state = null
 	worn_icon_state = "kazengunmouthguard"
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/masks_onmob.dmi'
@@ -20055,6 +21537,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "goblin"
 
@@ -20104,6 +21587,7 @@
 	material_category = 2
 	sellprice = 50
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
 	inhand_icon_state = null
 	worn_icon_state = "lmask"
 
@@ -20210,6 +21694,8 @@
 	material_category = 2
 	flags_inv = HIDEFACE | HIDEFACIALHAIR | HIDESNOUT
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
+	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
 	inhand_icon_state = null
 	worn_icon_state = "physmask"
 
@@ -20234,6 +21720,7 @@
 	material_category = 2
 	flags_inv = HIDEFACE | HIDEFACIALHAIR | HIDESNOUT
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
 	inhand_icon_state = null
 	worn_icon_state = "ragmask"
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/masks_onmob.dmi'
@@ -20339,6 +21826,7 @@
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEFACE | HIDESNOUT | HIDEHAIR | HIDEEARS
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
 	inhand_icon_state = null
 	worn_icon_state = "sackmask"
 
@@ -20422,6 +21910,7 @@
 	block2add = NONE
 	flags_inv = HIDEFACE | HIDEFACIALHAIR | HIDESNOUT
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
 	inhand_icon_state = null
 	worn_icon_state = "shepherd"
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/masks_onmob.dmi'
@@ -20478,6 +21967,8 @@
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEFACE | HIDESNOUT
 	smeltresult = /obj/item/natural/bone
+	rogue_sleeve_scrap = /obj/item/natural/bone
+	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
 	inhand_icon_state = null
 	worn_icon_state = "skullmask"
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/masks_onmob.dmi'
@@ -20502,6 +21993,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
 	inhand_icon_state = null
 	worn_icon_state = "glasses"
 
@@ -20560,6 +22052,34 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "bduelist"
+
+/obj/item/clothing/mask/rogue/spectacles/duelist/steel
+	name = "steel duelist goggles"
+	desc = "Steel duelist goggles forged for the most punishing exchanges. They guard the eyes while leaving pride and identity uncovered."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/masks.dmi'
+	icon_state = "sduelist"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/masks.dmi'
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_MASK
+	armor_type = /datum/armor/rockhill_plate
+	body_parts_covered = HEAD
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	rogue_armor = /datum/rogue_armor/plate
+	rogue_blocksound = "plate"
+	material_category = 2
+	smeltresult = /obj/item/ash
+	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	inhand_icon_state = null
+	worn_icon_state = "sduelist"
 
 /obj/item/clothing/mask/rogue/spectacles/golden
 	name = "golden spectacles"
@@ -20635,6 +22155,7 @@
 	flags_inv = HIDEFACE | HIDESNOUT
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
 	inhand_icon_state = null
 	worn_icon_state = "wildguard"
 
@@ -20661,6 +22182,7 @@
 	block2add = NONE
 	flags_inv = HIDEFACE | HIDESNOUT
 	anvilrepair = /datum/attribute/skill/craft/ceramics
+	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
 	inhand_icon_state = null
 	worn_icon_state = "xylixmask"
 
@@ -20690,6 +22212,7 @@
 	material_category = 2
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE
 	inhand_icon_state = null
 	worn_icon_state = "bevor"
 
@@ -20803,6 +22326,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sellprice = 60
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "amulet_amber"
 
@@ -20828,6 +22352,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sellprice = 20
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "amulet_shell"
 
@@ -20853,6 +22378,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sellprice = 70
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "amulet_coral"
 
@@ -20878,6 +22404,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sellprice = 60
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "amulet_jade"
 
@@ -20903,6 +22430,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sellprice = 40
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "amulet_onyxa"
 
@@ -20928,6 +22456,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sellprice = 90
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "amulet_opal"
 
@@ -20953,6 +22482,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sellprice = 25
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "amulet_rose"
 
@@ -20978,6 +22508,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sellprice = 25
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "amulet_shell"
 
@@ -21003,6 +22534,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sellprice = 85
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "amulet_turq"
 
@@ -21033,6 +22565,7 @@
 	flags_inv = HIDEHAIR
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "chaincoif"
 
@@ -21184,6 +22717,7 @@
 	flags_inv = HIDEFACE | HIDEFACIALHAIR | HIDESNOUT
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_MOUTH
 	inhand_icon_state = null
 	worn_icon_state = "chainmantle"
 
@@ -21214,6 +22748,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR | HIDESNOUT
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "fchaincoif"
 
@@ -21303,6 +22838,7 @@
 	material_category = 2
 	flags_inv = HIDEHAIR
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "coif"
 
@@ -21332,6 +22868,7 @@
 	material_category = 2
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR | HIDESNOUT
 	sewrepair = TRUE
+	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_EARS | ROGUE_FACE_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "fullpadded"
 
@@ -21414,6 +22951,7 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "collar_rope"
 
@@ -21486,6 +23024,7 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
+	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
 	inhand_icon_state = null
 	worn_icon_state = "feldcollar"
 
@@ -21534,6 +23073,7 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	inhand_icon_state = null
 	worn_icon_state = "leathercollar"
 
@@ -21558,6 +23098,7 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
+	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
 	inhand_icon_state = null
 	worn_icon_state = "surgcollar"
 
@@ -21585,6 +23126,7 @@
 	muteinmouth = FALSE
 	spitoutmouth = FALSE
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/cloth
 	inhand_icon_state = null
 	worn_icon_state = "woolencollar"
 
@@ -22015,6 +23557,7 @@
 	material_category = 2
 	sellprice = 10
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	inhand_icon_state = null
 	worn_icon_state = "lgorget"
 
@@ -22041,6 +23584,7 @@
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
 	sellprice = 15
+	rogue_sleeve_scrap = /obj/item/natural/fibers
 	inhand_icon_state = null
 	worn_icon_state = "luckcharm"
 
@@ -22121,6 +23665,7 @@
 	material_category = 2
 	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_sleeve_scrap = /obj/item/pearl/blue
 	inhand_icon_state = null
 	worn_icon_state = "abyssor"
 
@@ -22175,6 +23720,7 @@
 	material_category = 2
 	sellprice = 220
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_sleeve_scrap = /obj/item/pearl/blue
 	inhand_icon_state = null
 	worn_icon_state = "bpearlcross"
 
@@ -22529,6 +24075,7 @@
 	material_category = 2
 	sellprice = 80
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_sleeve_scrap = /obj/item/pearl
 	inhand_icon_state = null
 	worn_icon_state = "pearlcross"
 
@@ -22636,6 +24183,7 @@
 	material_category = 2
 	sellprice = 25
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_sleeve_scrap = /obj/item/oystershell
 	inhand_icon_state = null
 	worn_icon_state = "oyster_necklace"
 
@@ -22852,6 +24400,7 @@
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_sleeve_scrap = /obj/item/grown/log/tree/stick
 	inhand_icon_state = null
 	worn_icon_state = "psycross_w"
 
@@ -22953,6 +24502,7 @@
 	material_category = 2
 	sellprice = 100
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "ruby"
 
@@ -22973,6 +24523,7 @@
 	inhand_y_dimension = 64
 	material_category = 2
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -22996,6 +24547,7 @@
 	material_category = 2
 	sellprice = 20
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "ring_amber"
 
@@ -23017,6 +24569,7 @@
 	material_category = 2
 	sellprice = 70
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -23040,6 +24593,7 @@
 	material_category = 2
 	sellprice = 20
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "ring_shell"
 
@@ -23062,6 +24616,7 @@
 	material_category = 2
 	sellprice = 70
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "ring_coral"
 
@@ -23083,6 +24638,7 @@
 	material_category = 2
 	sellprice = 11
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -23106,6 +24662,7 @@
 	sellprice = 270
 	smeltresult = /obj/item/roguegem/diamond
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -23128,6 +24685,7 @@
 	material_category = 2
 	sellprice = 370
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -23151,6 +24709,7 @@
 	sellprice = 230
 	smeltresult = /obj/item/roguegem/diamond
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -23174,6 +24733,7 @@
 	sellprice = 666
 	smeltresult = /obj/item/ingot/draconic
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -23196,6 +24756,7 @@
 	material_category = 2
 	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -23219,6 +24780,7 @@
 	sellprice = 195
 	smeltresult = /obj/item/roguegem/green
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -23241,6 +24803,7 @@
 	material_category = 2
 	sellprice = 295
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -23264,6 +24827,7 @@
 	sellprice = 155
 	smeltresult = /obj/item/roguegem/green
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -23287,6 +24851,7 @@
 	material_category = 2
 	sellprice = 45
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "ring_g"
 
@@ -23309,6 +24874,7 @@
 	material_category = 2
 	sellprice = 60
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "ring_jade"
 
@@ -23331,6 +24897,7 @@
 	material_category = 2
 	sellprice = 40
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "ring_onyxa"
 
@@ -23353,6 +24920,7 @@
 	material_category = 2
 	sellprice = 90
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "ring_opal"
 
@@ -23375,6 +24943,7 @@
 	sellprice = 245
 	smeltresult = /obj/item/roguegem/blue
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -23397,6 +24966,7 @@
 	material_category = 2
 	sellprice = 345
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -23420,6 +24990,7 @@
 	sellprice = 205
 	smeltresult = /obj/item/roguegem/blue
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -23443,6 +25014,7 @@
 	material_category = 2
 	sellprice = 25
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "ring_rose"
 
@@ -23465,6 +25037,7 @@
 	sellprice = 255
 	smeltresult = /obj/item/roguegem/ruby
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -23487,6 +25060,7 @@
 	material_category = 2
 	sellprice = 355
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -23510,6 +25084,7 @@
 	sellprice = 215
 	smeltresult = /obj/item/roguegem/ruby
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -23533,6 +25108,7 @@
 	sellprice = 200
 	smeltresult = /obj/item/roguegem/violet
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -23555,6 +25131,7 @@
 	material_category = 2
 	sellprice = 300
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -23578,6 +25155,7 @@
 	sellprice = 160
 	smeltresult = /obj/item/roguegem/violet
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -23601,6 +25179,7 @@
 	material_category = 2
 	sellprice = 20
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "ring_shell"
 
@@ -23622,6 +25201,7 @@
 	material_category = 2
 	sellprice = 135
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -23689,6 +25269,7 @@
 	material_category = 2
 	sellprice = 33
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "ring_s"
 
@@ -23710,6 +25291,7 @@
 	material_category = 2
 	sellprice = 222
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -23733,6 +25315,7 @@
 	sellprice = 777
 	smeltresult = /obj/item/riddleofsteel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -23755,6 +25338,7 @@
 	material_category = 2
 	sellprice = 222
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -23777,6 +25361,7 @@
 	material_category = 2
 	sellprice = 222
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -23799,6 +25384,7 @@
 	material_category = 2
 	sellprice = 222
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -23822,6 +25408,7 @@
 	sellprice = 180
 	smeltresult = /obj/item/roguegem/yellow
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -23844,6 +25431,7 @@
 	material_category = 2
 	sellprice = 380
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -23867,6 +25455,7 @@
 	sellprice = 140
 	smeltresult = /obj/item/roguegem/yellow
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -23890,6 +25479,7 @@
 	material_category = 2
 	sellprice = 85
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "ring_turq"
 
@@ -23915,6 +25505,7 @@
 	material_category = 2
 	sleeved_detail = null
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "anklets"
 	rogue_female_worn = TRUE
@@ -23943,6 +25534,7 @@
 	material_category = 2
 	sleeved_detail = null
 	sewrepair = TRUE
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "eastsandals"
 	rogue_female_worn = TRUE
@@ -23969,6 +25561,7 @@
 	material_category = 2
 	sleeved_detail = null
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	inhand_icon_state = null
 	worn_icon_state = "blackboots"
 	rogue_female_worn = TRUE
@@ -24206,6 +25799,7 @@
 	material_category = 2
 	sleeved_detail = null
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "silverboots"
 	inhand_icon_state = null
 	worn_icon_state = "silverboots"
 	rogue_female_worn = TRUE
@@ -24532,6 +26126,7 @@
 	material_category = 2
 	sleeved_detail = null
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/cloth
 	inhand_icon_state = null
 	worn_icon_state = "footwraps"
 	rogue_female_worn = TRUE
@@ -24558,6 +26153,7 @@
 	material_category = 2
 	sleeved_detail = null
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/fur
 	inhand_icon_state = null
 	worn_icon_state = "furlinedboots"
 	rogue_female_worn = TRUE
@@ -24838,6 +26434,36 @@
 	worn_icon_state = "bsoldierboots"
 	rogue_female_worn = TRUE
 
+/obj/item/clothing/shoes/roguetown/boots/maille/iron
+	name = "iron maille boots"
+	desc = "A pair of leather boots, reinforced with smaller iron plates along the feet and ankles. A thick layer of chainmail has been woven across the cuffs of each boot, and tastefully riveted into place. Colloquially known as 'soldier's boots', due to its widespread usage amongst Psydonia's oft-conscripted levies."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/feet.dmi'
+	icon_state = "soldierboots"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/feet.dmi'
+	slot_flags = ITEM_SLOT_FEET
+	armor_type = /datum/armor/rockhill_maille_feet
+	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/maille
+	rogue_blocksound = "chain"
+	material_category = 2
+	sleeved_detail = null
+	smeltresult = /obj/item/ingot/iron
+	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	inhand_icon_state = null
+	worn_icon_state = "soldierboots"
+	rogue_female_worn = TRUE
+
 /obj/item/clothing/shoes/roguetown/boots/nobleboot
 	name = "noble boots"
 	desc = "Fine dark leather boots."
@@ -25000,6 +26626,7 @@
 	material_category = 2
 	sleeved_detail = null
 	sewrepair = TRUE
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "gladiator"
 	rogue_female_worn = TRUE
@@ -25026,6 +26653,7 @@
 	material_category = 2
 	sleeved_detail = null
 	sewrepair = TRUE
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "heels"
 	rogue_female_worn = TRUE
@@ -25080,6 +26708,7 @@
 	detail_color = "#ffffff"
 	sleeved_detail = null
 	sewrepair = TRUE
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "jestershoes"
 	rogue_female_worn = TRUE
@@ -25106,6 +26735,7 @@
 	material_category = 2
 	sleeved_detail = null
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	inhand_icon_state = null
 	worn_icon_state = "ridingboots"
 	rogue_female_worn = TRUE
@@ -25132,6 +26762,7 @@
 	material_category = 2
 	sleeved_detail = null
 	sewrepair = TRUE
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "sandals"
 	rogue_female_worn = TRUE
@@ -25215,6 +26846,7 @@
 	material_category = 2
 	sleeved_detail = null
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	inhand_icon_state = null
 	worn_icon_state = "toga_sandals"
 	rogue_female_worn = TRUE
@@ -25242,6 +26874,7 @@
 	material_category = 2
 	sleeved_detail = null
 	sewrepair = TRUE
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "shalal"
 	rogue_female_worn = TRUE
@@ -25268,6 +26901,7 @@
 	material_category = 2
 	sleeved_detail = null
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	inhand_icon_state = null
 	worn_icon_state = "shortboots"
 	rogue_female_worn = TRUE
@@ -25294,6 +26928,7 @@
 	material_category = 2
 	sleeved_detail = null
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	inhand_icon_state = null
 	worn_icon_state = "simpleshoe"
 	rogue_female_worn = TRUE
@@ -25350,6 +26985,11 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -25384,6 +27024,7 @@
 	detail_color = "#2b292e"
 	boobed = TRUE
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/silk
 	inhand_icon_state = null
 	worn_icon_state = "winterdress"
 	rogue_female_worn = TRUE
@@ -25417,6 +27058,8 @@
 	boobed = TRUE
 	sellprice = 20
 	sewrepair = TRUE
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "eastsuit3"
 	rogue_female_worn = TRUE
@@ -25581,6 +27224,8 @@
 	sleeved_detail = FALSE
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "brigandine"
 	rogue_female_worn = TRUE
@@ -25624,6 +27269,42 @@
 	worn_icon_state = "capplate"
 	rogue_female_worn = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/captain_onmob.dmi'
+
+/obj/item/clothing/suit/roguetown/armor/brigandine/coatplates
+	name = "coat of plates"
+	desc = "A leather coat with plates attached to increase protection while retaining mobility. The leather below might stop a dagger."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "coat_of_plates"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	armor_type = /datum/armor/rockhill_brigandine
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|HAND_LEFT|HAND_RIGHT
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/brigandine
+	armor_class = 3
+	rogue_blocksound = "plate"
+	material_category = 1
+	chunkcolor = "#7d9097"
+	flags_inv = NONE
+	boobed = TRUE
+	boobed_detail = FALSE
+	sleeved_detail = FALSE
+	smeltresult = /obj/item/ingot/steel
+	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	inhand_icon_state = null
+	worn_icon_state = "coat_of_plates"
+	rogue_female_worn = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/armor_onmob.dmi'
 
 /obj/item/clothing/suit/roguetown/armor/brigandine/gronn
 	name = "byrine hauberk"
@@ -25867,6 +27548,8 @@
 	boobed = TRUE
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "haubergeon"
 	rogue_female_worn = TRUE
@@ -26328,6 +28011,9 @@
 	material_category = 2
 	flags_inv = NONE
 	boobed = TRUE
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	inhand_icon_state = null
 	worn_icon_state = "corset"
 	rogue_female_worn = TRUE
@@ -26390,6 +28076,9 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	inhand_icon_state = null
 	worn_icon_state = "gambeson"
 	rogue_female_worn = TRUE
@@ -26858,6 +28547,7 @@
 	boobed = TRUE
 	boobed_detail = FALSE
 	sewrepair = TRUE
+	nodismemsleeves = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "royalgamb"
 	rogue_female_worn = TRUE
@@ -27055,6 +28745,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/fur
 	inhand_icon_state = null
 	worn_icon_state = "wintercoat"
 	rogue_female_worn = TRUE
@@ -27088,6 +28779,8 @@
 	boobed = TRUE
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "heartfelt"
 	rogue_female_worn = TRUE
@@ -27154,6 +28847,8 @@
 	boobed = TRUE
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "kurche"
 	rogue_female_worn = TRUE
@@ -27187,6 +28882,9 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	inhand_icon_state = null
 	worn_icon_state = "roguearmor"
 	rogue_female_worn = TRUE
@@ -27909,6 +29607,7 @@
 	boobed = TRUE
 	sellprice = 50
 	sewrepair = TRUE
+	sleevetype = null
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -27940,6 +29639,7 @@
 	boobed = TRUE
 	sellprice = 50
 	sewrepair = TRUE
+	sleevetype = null
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -27971,6 +29671,7 @@
 	boobed = TRUE
 	sellprice = 50
 	sewrepair = TRUE
+	sleevetype = null
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -28002,6 +29703,7 @@
 	boobed = TRUE
 	sellprice = 50
 	sewrepair = TRUE
+	sleevetype = null
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -28033,6 +29735,7 @@
 	boobed = TRUE
 	sellprice = 50
 	sewrepair = TRUE
+	sleevetype = null
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -28064,6 +29767,7 @@
 	boobed = TRUE
 	sellprice = 50
 	sewrepair = TRUE
+	sleevetype = null
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -28094,6 +29798,7 @@
 	boobed = TRUE
 	sellprice = 50
 	sewrepair = TRUE
+	sleevetype = null
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -28370,6 +30075,40 @@
 	rogue_female_worn = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/warden_onmob.dmi'
 
+/obj/item/clothing/suit/roguetown/armor/leather/studded/warden/melee/upgraded
+	name = "forester's hauberk"
+	desc = "A forester's cuirass reinforced with plates and maille rings, the result of careful smithwork."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/warden.dmi'
+	icon_state = "forestbrig"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/onmob/warden.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	armor_type = /datum/armor/rockhill_plate
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|HAND_LEFT|HAND_RIGHT
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 2
+	rogue_blocksound = "soft"
+	material_category = 2
+	chunkcolor = "#7e5d17"
+	flags_inv = NONE
+	boobed = TRUE
+	smeltresult = /obj/item/ingot/steel
+	sewrepair = TRUE
+	inhand_icon_state = null
+	worn_icon_state = "forestbrig"
+	rogue_female_worn = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/warden_onmob.dmi'
+
 /obj/item/clothing/suit/roguetown/armor/leather/studded/warden/upgraded
 	name = "forester's brigandine"
 	desc = "A hardened leather harness with a large pauldron worn over a tasseted brigandine, imbued with Dendor's essence."
@@ -28432,6 +30171,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = null
 	inhand_icon_state = null
 	worn_icon_state = "vest"
 	rogue_female_worn = TRUE
@@ -28531,6 +30271,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "sailorvest"
 	rogue_female_worn = TRUE
@@ -28660,6 +30401,10 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	inhand_icon_state = null
 	worn_icon_state = "longcoat"
 	rogue_female_worn = TRUE
@@ -28723,6 +30468,8 @@
 	boobed = TRUE
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "halfplate"
 	rogue_female_worn = TRUE
@@ -28793,6 +30540,40 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "ancientplate"
+	rogue_female_worn = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/armor_onmob.dmi'
+
+/obj/item/clothing/suit/roguetown/armor/plate/ancient/artificer
+	name = "artificed half-plate"
+	desc = "Polished gilbranze layers, magewelded into lightweight plate armor. It holds a slot for an arcyne meld to power it."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "artificerplate"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	armor_type = /datum/armor/rockhill_plate
+	body_parts_covered = CHEST|GROIN
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 1
+	rogue_blocksound = "plate"
+	material_category = 1
+	chunkcolor = "#532e25"
+	flags_inv = NONE
+	boobed = TRUE
+	smeltresult = /obj/item/ingot/aaslag
+	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	inhand_icon_state = null
+	worn_icon_state = "artificerplate"
 	rogue_female_worn = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/armor_onmob.dmi'
 
@@ -29404,6 +31185,74 @@
 	worn_icon_state = null
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/armor_onmob.dmi'
 
+/obj/item/clothing/suit/roguetown/armor/plate/full
+	name = "plate armor"
+	desc = "Full steel plate armor. Slow to don and doff without the aid of a good squire."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "plate"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	armor_type = /datum/armor/rockhill_plate
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|FOOT_LEFT|FOOT_RIGHT|GROIN|HAND_LEFT|HAND_RIGHT|LEG_LEFT|LEG_RIGHT
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 3
+	rogue_blocksound = "plate"
+	material_category = 1
+	chunkcolor = "#a9c1ca"
+	flags_inv = NONE
+	boobed = TRUE
+	smeltresult = /obj/item/ingot/steel
+	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	inhand_icon_state = null
+	worn_icon_state = "plate"
+	rogue_female_worn = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/armor_onmob.dmi'
+
+/obj/item/clothing/suit/roguetown/armor/plate/full/bikini
+	name = "full-plate corset"
+	desc = "Breastplate, pauldrons, couters, cuisses... did you forget something?"
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/armor.dmi'
+	icon_state = "platekini"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
+	slot_flags = ITEM_SLOT_OCLOTHING
+	armor_type = /datum/armor/rockhill_plate
+	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/plate
+	armor_class = 3
+	rogue_blocksound = "plate"
+	material_category = 1
+	chunkcolor = "#a9c1ca"
+	flags_inv = NONE
+	boobed = TRUE
+	smeltresult = /obj/item/ingot/steel
+	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	inhand_icon_state = null
+	worn_icon_state = "platekini"
+	rogue_female_worn = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/armor_onmob.dmi'
+
 /obj/item/clothing/suit/roguetown/armor/plate/full/bronze
 	name = "bronze panoplic armor"
 	desc = "What can only be described as an 'armored robe'; thick bronze plates, layered atop one-another and interlinked with strappings to form an assembly of segmented plate armor. While overwhelmingly heavy and cumbersome, it is certain to weather any storm poised its way. </br>Scholars oft-describe this suit as a 'panoply', purpose-made for the physiques of Psydonia's earliest Aasimari."
@@ -29669,6 +31518,7 @@
 	boobed = TRUE
 	sellprice = 1000
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "silverarmor"
 	inhand_icon_state = null
 	worn_icon_state = "silverarmor"
 	rogue_female_worn = TRUE
@@ -30477,6 +32327,10 @@
 	material_category = 2
 	flags_inv = NONE
 	boobed = TRUE
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -30507,6 +32361,8 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -30537,6 +32393,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	nodismemsleeves = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "workervest"
 	rogue_female_worn = TRUE
@@ -30565,6 +32422,9 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	inhand_icon_state = null
 	worn_icon_state = "apothshirt"
 	rogue_female_worn = TRUE
@@ -30594,6 +32454,7 @@
 	detail_color = "#2b292e"
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "handcoat"
 	rogue_female_worn = TRUE
@@ -30621,6 +32482,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "stewardtailcoat"
 	rogue_female_worn = TRUE
@@ -30648,6 +32510,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	nodismemsleeves = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "top"
 	rogue_female_worn = TRUE
@@ -30675,6 +32538,9 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	inhand_icon_state = null
 	worn_icon_state = "dress"
 	rogue_female_worn = TRUE
@@ -30809,6 +32675,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = null
 	inhand_icon_state = null
 	worn_icon_state = "dress"
 	rogue_female_worn = TRUE
@@ -30889,6 +32756,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = null
 	inhand_icon_state = null
 	worn_icon_state = "sexydress"
 	rogue_female_worn = TRUE
@@ -30968,6 +32836,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = null
 	inhand_icon_state = null
 	worn_icon_state = "strapless"
 	rogue_female_worn = TRUE
@@ -31136,6 +33005,7 @@
 	detail_color = "#e395bb"
 	boobed = TRUE
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/silk
 	inhand_icon_state = null
 	worn_icon_state = "summergown"
 	rogue_female_worn = TRUE
@@ -31165,6 +33035,7 @@
 	detail_color = "#45749d"
 	boobed = TRUE
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/silk
 	inhand_icon_state = null
 	worn_icon_state = "wintergown"
 	rogue_female_worn = TRUE
@@ -31192,6 +33063,8 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = null
+	nodismemsleeves = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "hdress"
 	rogue_female_worn = TRUE
@@ -31420,6 +33293,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/silk
 	inhand_icon_state = null
 	worn_icon_state = "silkdress"
 	rogue_female_worn = TRUE
@@ -31582,6 +33456,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = null
 	inhand_icon_state = null
 	worn_icon_state = "silkydress"
 	rogue_female_worn = TRUE
@@ -31636,6 +33511,8 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = null
+	nodismemsleeves = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "dress"
 	rogue_female_worn = TRUE
@@ -31663,6 +33540,8 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = null
+	nodismemsleeves = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "tavern"
 	rogue_female_worn = TRUE
@@ -31690,6 +33569,8 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	r_sleeve_status = ROGUE_SLEEVE_NOMOD
+	l_sleeve_status = ROGUE_SLEEVE_NOMOD
 	inhand_icon_state = null
 	worn_icon_state = "slitdress"
 	rogue_female_worn = TRUE
@@ -31769,6 +33650,8 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = null
+	nodismemsleeves = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "toga"
 	rogue_female_worn = TRUE
@@ -31852,6 +33735,8 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
+	rogue_sleeve_scrap = /obj/item/natural/silk
 	inhand_icon_state = null
 	worn_icon_state = "exoticsilkbra"
 	rogue_female_worn = TRUE
@@ -31929,6 +33814,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "shirt"
 
@@ -31963,6 +33849,7 @@
 	boobed = TRUE
 	sellprice = 25
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "fencingshirt"
 	rogue_female_worn = TRUE
@@ -32028,6 +33915,9 @@
 	altdetail_tag = "_detailalt"
 	altdetail_color = "#ffffff"
 	sewrepair = TRUE
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	inhand_icon_state = null
 	worn_icon_state = "jestershirt"
 	rogue_female_worn = TRUE
@@ -32055,6 +33945,8 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "armor"
+	nodismemsleeves = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "tig"
 	rogue_female_worn = TRUE
@@ -32082,6 +33974,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "fancyshirt"
 	rogue_female_worn = TRUE
@@ -32109,6 +34002,9 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	inhand_icon_state = null
 	worn_icon_state = "rags"
 	rogue_female_worn = TRUE
@@ -32136,6 +34032,9 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	inhand_icon_state = null
 	worn_icon_state = "white_robe"
 	rogue_female_worn = TRUE
@@ -32714,6 +34613,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	inhand_icon_state = null
 	worn_icon_state = "monkvestments"
 	rogue_female_worn = TRUE
@@ -32909,6 +34809,8 @@
 	boobed = TRUE
 	boobed_detail = FALSE
 	sewrepair = TRUE
+	r_sleeve_status = ROGUE_SLEEVE_NOMOD
+	l_sleeve_status = ROGUE_SLEEVE_NOMOD
 	inhand_icon_state = null
 	worn_icon_state = "monkcloth"
 	rogue_female_worn = TRUE
@@ -33102,6 +35004,9 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_TORN
+	l_sleeve_status = ROGUE_SLEEVE_TORN
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -33129,6 +35034,9 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	inhand_icon_state = null
 	worn_icon_state = "shortshirt"
 	rogue_female_worn = TRUE
@@ -33183,6 +35091,10 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
+	rogue_sleeve_scrap = /obj/item/natural/hide
 	inhand_icon_state = null
 	worn_icon_state = "tribalrag"
 	rogue_female_worn = TRUE
@@ -33209,6 +35121,9 @@
 	material_category = 2
 	flags_inv = NONE
 	sewrepair = TRUE
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	inhand_icon_state = null
 	worn_icon_state = "tunic"
 	rogue_female_worn = TRUE
@@ -33342,6 +35257,7 @@
 	detail_color = "#2b292e"
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "noblecoat"
 	inhand_icon_state = null
 	worn_icon_state = "noblecoat"
 	rogue_female_worn = TRUE
@@ -33499,6 +35415,9 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	inhand_icon_state = null
 	worn_icon_state = "undershirt"
 	rogue_female_worn = TRUE
@@ -33851,6 +35770,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/silk
 	inhand_icon_state = null
 	worn_icon_state = "puritan_shirt"
 	rogue_female_worn = TRUE
@@ -34016,6 +35936,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	r_sleeve_status = ROGUE_SLEEVE_TORN
 	inhand_icon_state = null
 	worn_icon_state = "undershirt"
 	rogue_female_worn = TRUE
@@ -34043,6 +35964,8 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_TORN
 	inhand_icon_state = null
 	worn_icon_state = "undershirt"
 	rogue_female_worn = TRUE
@@ -34070,6 +35993,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/silk
 	inhand_icon_state = null
 	worn_icon_state = "webs"
 	rogue_female_worn = TRUE
@@ -34097,6 +36021,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "vrobe"
 	rogue_female_worn = TRUE
@@ -34128,6 +36053,7 @@
 	flags_inv = NONE
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "leg"
 	inhand_icon_state = null
 	worn_icon_state = "chain_legs"
 	rogue_female_worn = TRUE
@@ -34222,6 +36148,7 @@
 	flags_inv = NONE
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "ichainkilt"
 	inhand_icon_state = null
 	worn_icon_state = "ichainkilt"
 	rogue_female_worn = TRUE
@@ -34254,6 +36181,7 @@
 	flags_inv = NONE
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "chainkilt"
 	inhand_icon_state = null
 	worn_icon_state = "chainkilt"
 	rogue_female_worn = TRUE
@@ -34287,6 +36215,7 @@
 	flags_inv = NONE
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "achainkilt"
 	inhand_icon_state = null
 	worn_icon_state = "achainkilt"
 	rogue_female_worn = TRUE
@@ -34351,6 +36280,7 @@
 	flags_inv = NONE
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "bchainkilt"
 	inhand_icon_state = null
 	worn_icon_state = "bchainkilt"
 	rogue_female_worn = TRUE
@@ -34444,6 +36374,8 @@
 	flags_inv = NONE
 	sellprice = 18
 	sewrepair = TRUE
+	sleevetype = "leg"
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	inhand_icon_state = null
 	worn_icon_state = "roguepants"
 	rogue_female_worn = TRUE
@@ -34815,6 +36747,7 @@
 	material_category = 2
 	flags_inv = NONE
 	sewrepair = TRUE
+	sleevetype = "leg"
 	inhand_icon_state = null
 	worn_icon_state = "loincloth"
 	rogue_female_worn = TRUE
@@ -34867,6 +36800,8 @@
 	material_category = 2
 	flags_inv = NONE
 	sewrepair = TRUE
+	sleevetype = null
+	nodismemsleeves = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "skirt"
 	rogue_female_worn = TRUE
@@ -34898,6 +36833,7 @@
 	flags_inv = NONE
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "leg"
 	inhand_icon_state = null
 	worn_icon_state = "plate_legs"
 	rogue_female_worn = TRUE
@@ -35085,6 +37021,7 @@
 	flags_inv = NONE
 	sellprice = 1000
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "silverlegs"
 	inhand_icon_state = null
 	worn_icon_state = "silverlegs"
 	rogue_female_worn = TRUE
@@ -35295,6 +37232,9 @@
 	material_category = 2
 	flags_inv = NONE
 	sewrepair = TRUE
+	sleevetype = "leg"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -35323,6 +37263,9 @@
 	material_category = 2
 	flags_inv = NONE
 	sewrepair = TRUE
+	sleevetype = "skirt"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	inhand_icon_state = null
 	worn_icon_state = "skirt"
 	rogue_female_worn = TRUE
@@ -35404,6 +37347,8 @@
 	material_category = 2
 	flags_inv = NONE
 	sewrepair = TRUE
+	sleevetype = null
+	nodismemsleeves = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "skirt"
 	rogue_female_worn = TRUE
@@ -35516,6 +37461,7 @@
 	flags_inv = NONE
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "leg"
 	inhand_icon_state = null
 	worn_icon_state = "splintlegs"
 	rogue_female_worn = TRUE
@@ -35601,6 +37547,9 @@
 	material_category = 2
 	flags_inv = NONE
 	sewrepair = TRUE
+	sleevetype = "leg"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -35628,6 +37577,9 @@
 	material_category = 2
 	flags_inv = NONE
 	sewrepair = TRUE
+	sleevetype = "leg"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	inhand_icon_state = null
 	worn_icon_state = "tights"
 	rogue_female_worn = TRUE
@@ -35835,6 +37787,7 @@
 	material_category = 2
 	flags_inv = NONE
 	sewrepair = TRUE
+	r_sleeve_status = ROGUE_SLEEVE_TORN
 	inhand_icon_state = null
 	worn_icon_state = "tights"
 	rogue_female_worn = TRUE
@@ -35861,6 +37814,8 @@
 	material_category = 2
 	flags_inv = NONE
 	sewrepair = TRUE
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_TORN
 	inhand_icon_state = null
 	worn_icon_state = "tights"
 	rogue_female_worn = TRUE
@@ -35890,6 +37845,9 @@
 	material_category = 2
 	flags_inv = NONE
 	sewrepair = TRUE
+	sleevetype = "leg"
+	r_sleeve_status = ROGUE_SLEEVE_NORMAL
+	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	inhand_icon_state = null
 	worn_icon_state = "trou"
 	rogue_female_worn = TRUE
@@ -36069,6 +38027,7 @@
 	material_category = 2
 	flags_inv = NONE
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	inhand_icon_state = null
 	worn_icon_state = "leathertrou"
 	rogue_female_worn = TRUE
@@ -36278,6 +38237,7 @@
 	material_category = 2
 	flags_inv = NONE
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	inhand_icon_state = null
 	worn_icon_state = "leathertights"
 	rogue_female_worn = TRUE
@@ -36333,6 +38293,8 @@
 	material_category = 2
 	flags_inv = NONE
 	sewrepair = TRUE
+	sleevetype = "leg"
+	rogue_sleeve_scrap = /obj/item/natural/silk
 	inhand_icon_state = null
 	worn_icon_state = "webs"
 	rogue_female_worn = TRUE
@@ -36357,6 +38319,7 @@
 	rogue_grid_height = 64
 	material_category = 2
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "nocwrappings"
 	rogue_female_worn = TRUE
@@ -36386,6 +38349,7 @@
 	material_category = 2
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "bracers"
 	rogue_female_worn = TRUE
@@ -36505,6 +38469,35 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "bronzebracers"
+	rogue_female_worn = TRUE
+
+/obj/item/clothing/wrists/roguetown/bracers/chain
+	name = "chain sleeves"
+	desc = "Coverings of steel maille, fashioned from hundreds of interlinked rings. An aura of inexplicable harlotry eminates from these sleeves. </br>I can adjust these sleeves to hang further down, rather than simply hugging my wrists."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/wrists.dmi'
+	icon_state = "chainsleevesalt"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
+	slot_flags = ITEM_SLOT_ROGUE_WRISTS
+	armor_type = /datum/armor/rockhill_maille
+	body_parts_covered = ARM_LEFT|ARM_RIGHT
+	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/wrists.dmi'
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_armor = /datum/rogue_armor/maille
+	rogue_blocksound = "chain"
+	material_category = 2
+	smeltresult = /obj/item/ingot/steel
+	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	inhand_icon_state = null
+	worn_icon_state = "chainsleevesalt"
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/wrists/roguetown/bracers/chain/ancient
@@ -36789,6 +38782,7 @@
 	rogue_blocksound = "soft"
 	material_category = 2
 	sewrepair = TRUE
+	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	inhand_icon_state = null
 	worn_icon_state = "lbracers"
 	rogue_female_worn = TRUE
@@ -36902,6 +38896,8 @@
 	rogue_grid_height = 64
 	material_category = 2
 	sellprice = 65
+	sleevetype = "shirt"
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "br_amber"
 	rogue_female_worn = TRUE
@@ -36926,6 +38922,8 @@
 	rogue_grid_height = 64
 	material_category = 2
 	sellprice = 25
+	sleevetype = "shirt"
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "br_shell"
 	rogue_female_worn = TRUE
@@ -36950,6 +38948,8 @@
 	rogue_grid_height = 64
 	material_category = 2
 	sellprice = 75
+	sleevetype = "shirt"
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "br_coral"
 	rogue_female_worn = TRUE
@@ -36974,6 +38974,8 @@
 	rogue_grid_height = 64
 	material_category = 2
 	sellprice = 65
+	sleevetype = "shirt"
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "br_jade"
 	rogue_female_worn = TRUE
@@ -36998,6 +39000,8 @@
 	rogue_grid_height = 64
 	material_category = 2
 	sellprice = 45
+	sleevetype = "shirt"
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "br_onyxa"
 	rogue_female_worn = TRUE
@@ -37022,6 +39026,8 @@
 	rogue_grid_height = 64
 	material_category = 2
 	sellprice = 95
+	sleevetype = "shirt"
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "br_opal"
 	rogue_female_worn = TRUE
@@ -37046,6 +39052,8 @@
 	rogue_grid_height = 64
 	material_category = 2
 	sellprice = 30
+	sleevetype = "shirt"
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "br_rose"
 	rogue_female_worn = TRUE
@@ -37070,6 +39078,8 @@
 	rogue_grid_height = 64
 	material_category = 2
 	sellprice = 25
+	sleevetype = "shirt"
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "br_shell"
 	rogue_female_worn = TRUE
@@ -37094,6 +39104,8 @@
 	rogue_grid_height = 64
 	material_category = 2
 	sellprice = 90
+	sleevetype = "shirt"
+	rogue_sleeve_scrap = null
 	inhand_icon_state = null
 	worn_icon_state = "br_turq"
 	rogue_female_worn = TRUE
@@ -37117,6 +39129,7 @@
 	rogue_grid_height = 64
 	material_category = 2
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "nocwrappings"
 	rogue_female_worn = TRUE
@@ -37143,6 +39156,7 @@
 	detail_tag = "_detail"
 	detail_color = "#2b292e"
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "royalsleeves"
 	rogue_female_worn = TRUE
@@ -37172,6 +39186,7 @@
 	material_category = 2
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "splintarms"
 	rogue_female_worn = TRUE
@@ -37224,6 +39239,7 @@
 	rogue_grid_height = 64
 	material_category = 2
 	sewrepair = TRUE
+	sleevetype = "shirt"
 	inhand_icon_state = null
 	worn_icon_state = "wrappings"
 	rogue_female_worn = TRUE
@@ -37313,6 +39329,84 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 
+/obj/item/contraption/bronzeprosthetic
+	name = "bronze prosthetic"
+	desc = "A prosthetic made of bronze. Use it in your hand to determine what limb it will function as."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
+	icon_state = "prb_blank"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	smeltresult = /obj/item/ingot/bronze
+	inhand_icon_state = null
+
+/obj/item/contraption/folding_table_stored
+	name = "folding table"
+	desc = "A folding table, useful for setting up a temporary workspace."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/gadgets.dmi'
+	icon_state = "foldingTableStored"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	smeltresult = /obj/item/ingot/bronze
+	inhand_icon_state = null
+
+/obj/item/contraption/goldprosthetic
+	name = "golden prosthetic"
+	desc = "A prosthetic made of gold. Use it in your hand to determine what limb it will function as."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
+	icon_state = "prc_blank"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	smeltresult = /obj/item/ingot/gold
+	inhand_icon_state = null
+
+/obj/item/contraption/ironprosthetic
+	name = "iron prosthetic"
+	desc = "A prosthetic made of iron. Use it in your hand to determine what limb it will function as."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
+	icon_state = "pri_blank"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	smeltresult = /obj/item/ingot/iron
+	inhand_icon_state = null
+
 /obj/item/contraption/linker
 	name = "engineering wrench"
 	desc = "This strange contraption is able to connect machinery through an unknown calibration method, allowing them to communicate over long distances."
@@ -37352,6 +39446,101 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
+	smeltresult = /obj/item/ingot/bronze
+	inhand_icon_state = null
+
+/obj/item/contraption/lock_imprinter
+	name = "lock imprinter"
+	desc = "A useful contraption that facilitates a locksmith's job on already installed locks."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
+	icon_state = "imprinter"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	smeltresult = /obj/item/ingot/bronze
+	inhand_icon_state = null
+
+/obj/item/contraption/shears
+	name = "amputation shears"
+	desc = "A powered shear used for achieving a clean separation between limb and patient. Keeping the patient still is imperative to aligning the blades."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
+	icon_state = "shears"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	smeltresult = /obj/item/ingot/bronze
+	inhand_icon_state = null
+
+/obj/item/contraption/smelter
+	name = "portable smelter"
+	desc = "Furnaces are a thing of the past. The future is here!"
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
+	icon_state = "smelter"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	smeltresult = /obj/item/ingot/bronze
+	inhand_icon_state = null
+
+/obj/item/contraption/steelprosthetic
+	name = "steel prosthetic"
+	desc = "A prosthetic made of steel. Use it in your hand to determine what limb it will function as."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
+	icon_state = "prs_blank"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	smeltresult = /obj/item/ingot/steel
+	inhand_icon_state = null
+
+/obj/item/contraption/wood_metalizer
+	name = "wood metalizer"
+	desc = "A creation of genious or insanity. This cursed contraption is somehow able to turn wood into metal."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
+	icon_state = "metalizer"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
 	smeltresult = /obj/item/ingot/bronze
 	inhand_icon_state = null
 
@@ -37865,6 +40054,44 @@
 	worn_y_dimension = 32
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_deserttown/icons/cushions_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_deserttown/icons/cushions_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/customblank
+	parent_type = /obj/item/rockhill
+	name = "blank custom key"
+	desc = "A key without its teeth carved in. Endless possibilities..."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
+	icon_state = "brownkey"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/keys_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/keys_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/customlock
+	parent_type = /obj/item/rockhill
+	name = "unfinished lock"
+	desc = "A lock without its pins set. Endless possibilities..."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/keys.dmi'
+	icon_state = "lock"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/keys_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/keys_righthand.dmi'
 	inhand_icon_state = null
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
@@ -38429,6 +40656,25 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 
+/obj/item/flesh_decoy
+	parent_type = /obj/item/rockhill
+	name = "flesh decoy"
+	desc = "A fleshy, immoving golem with a nasty grin. You can clearly tell it isn't alive, yet the scent of its putrid flesh is strangely alluring."
+	icon = 'modular_redtard/rockhill/icons/obj/structures/heart_items.dmi'
+	icon_state = "flesh_golem_item"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/structures/heart_items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/structures/heart_items_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
 /obj/item/flesh_node
 	parent_type = /obj/item/rockhill
 	name = "flesh node"
@@ -38642,6 +40888,46 @@
 	rogue_grid_height = 32
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/gadgets_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/gadgets_righthand.dmi'
+	inhand_icon_state = "foldingTableStored~2"
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/folding_table_stored/alchcauldron
+	name = "folding cauldron"
+	desc = "A folding table, useful for setting up a temporary workspace."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/gadgets.dmi'
+	icon_state = "FoldingCauldronStored"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/gadgets_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/gadgets_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/folding_table_stored/alchstation
+	name = "alchemical station kit"
+	desc = "A compact portable laboratory that stores everything necessary for the activities of a wandering alchemist."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/gadgets.dmi'
+	icon_state = "foldingAlchstationStored"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 64
+	rogue_grid_height = 64
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/gadgets_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/gadgets_righthand.dmi'
 	inhand_icon_state = null
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
@@ -38748,6 +41034,29 @@
 	rogue_grid_height = 96
 	possible_item_intents = list(/datum/intent/hit)
 	firefuel = 20 MINUTES
+	smeltresult = /obj/item/rogueore/coal/charcoal
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/grown/log/tree/small/essence
+	name = "essence of lumber"
+	desc = "A mystical essence embued with the power of Dendor. Very good source of fuel."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/natural.dmi'
+	icon_state = "lessence"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	firefuel = 60 MINUTES
 	smeltresult = /obj/item/rogueore/coal/charcoal
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_righthand.dmi'
@@ -38872,7 +41181,7 @@
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/guns32_onmob.dmi'
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow
-	parent_type = /obj/item/rockhill
+	parent_type = /obj/item/gun/ballistic/rogue_launcher/bow
 	name = "shortbow"
 	desc = "This simply hewn shortbow is functional enough. What it lacks in poundage or accuracy, it makes up for with a decently swift draw."
 	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/32.dmi'
@@ -38887,6 +41196,7 @@
 	worn_y_dimension = 32
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/shoot/bow/short, /datum/intent/arc/bow/short, /datum/intent/hit)
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/arrow
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/32_righthand.dmi'
 	inhand_icon_state = null
@@ -38894,6 +41204,13 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/32_onmob.dmi'
+	damfactor = 0.9
+	accfactor = 1
+	penfactor = 0
+	damage_from_perception = FALSE
+	heavy_bow = FALSE
+	fire_sound = 'modular_redtard/rockhill/sound/combat/Ranged/flatbow-shot-01.ogg'
+	load_sound = 'modular_redtard/rockhill/sound/foley/nockarrow.ogg'
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow
 	name = "yew longbow"
@@ -38911,6 +41228,7 @@
 	worn_y_dimension = 32
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/shoot/bow, /datum/intent/arc/bow, /datum/intent/hit)
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/arrow
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_lefthand.dmi'
@@ -38920,6 +41238,13 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_onmob.dmi'
+	damfactor = 1.3
+	accfactor = 0.9
+	penfactor = 0
+	damage_from_perception = FALSE
+	heavy_bow = TRUE
+	fire_sound = 'modular_redtard/rockhill/sound/combat/Ranged/flatbow-shot-01.ogg'
+	load_sound = 'modular_redtard/rockhill/sound/foley/nockarrow.ogg'
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow/warden
 	name = "blackhorn longbow"
@@ -38937,6 +41262,7 @@
 	worn_y_dimension = 32
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/shoot/bow, /datum/intent/arc/bow, /datum/intent/hit)
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/arrow
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_lefthand.dmi'
@@ -38946,6 +41272,13 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_onmob.dmi'
+	damfactor = 1.3
+	accfactor = 0.9
+	penfactor = 0
+	damage_from_perception = FALSE
+	heavy_bow = TRUE
+	fire_sound = 'modular_redtard/rockhill/sound/combat/Ranged/flatbow-shot-01.ogg'
+	load_sound = 'modular_redtard/rockhill/sound/foley/nockarrow.ogg'
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
 	name = "recurve bow"
@@ -38964,6 +41297,7 @@
 	worn_y_dimension = 32
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/shoot/bow, /datum/intent/arc/bow, /datum/intent/hit)
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/arrow
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_righthand.dmi'
 	inhand_icon_state = null
@@ -38971,6 +41305,13 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_onmob.dmi'
+	damfactor = 1
+	accfactor = 1
+	penfactor = 0
+	damage_from_perception = FALSE
+	heavy_bow = FALSE
+	fire_sound = 'modular_redtard/rockhill/sound/combat/Ranged/flatbow-shot-01.ogg'
+	load_sound = 'modular_redtard/rockhill/sound/foley/nockarrow.ogg'
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve/blackoak
 	name = "woad recurve bow"
@@ -38989,6 +41330,7 @@
 	worn_y_dimension = 32
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/shoot/bow, /datum/intent/arc/bow, /datum/intent/hit)
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/arrow
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_righthand.dmi'
 	inhand_icon_state = null
@@ -38996,6 +41338,13 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_onmob.dmi'
+	damfactor = 1
+	accfactor = 1
+	penfactor = 0
+	damage_from_perception = FALSE
+	heavy_bow = FALSE
+	fire_sound = 'modular_redtard/rockhill/sound/combat/Ranged/flatbow-shot-01.ogg'
+	load_sound = 'modular_redtard/rockhill/sound/foley/nockarrow.ogg'
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve/steppesman
 	name = "aavnic riding bow"
@@ -39014,6 +41363,7 @@
 	worn_y_dimension = 32
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/shoot/bow, /datum/intent/arc/bow, /datum/intent/hit)
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/arrow
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_righthand.dmi'
 	inhand_icon_state = null
@@ -39021,6 +41371,13 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_onmob.dmi'
+	damfactor = 1
+	accfactor = 1
+	penfactor = 0
+	damage_from_perception = FALSE
+	heavy_bow = FALSE
+	fire_sound = 'modular_redtard/rockhill/sound/combat/Ranged/flatbow-shot-01.ogg'
+	load_sound = 'modular_redtard/rockhill/sound/foley/nockarrow.ogg'
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve/warden
 	name = "blackhorn bow"
@@ -39039,6 +41396,7 @@
 	worn_y_dimension = 32
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/shoot/bow, /datum/intent/arc/bow, /datum/intent/hit)
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/arrow
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_righthand.dmi'
 	inhand_icon_state = null
@@ -39046,9 +41404,16 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_onmob.dmi'
+	damfactor = 1
+	accfactor = 1
+	penfactor = 0
+	damage_from_perception = FALSE
+	heavy_bow = FALSE
+	fire_sound = 'modular_redtard/rockhill/sound/combat/Ranged/flatbow-shot-01.ogg'
+	load_sound = 'modular_redtard/rockhill/sound/foley/nockarrow.ogg'
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
-	parent_type = /obj/item/rockhill
+	parent_type = /obj/item/gun/ballistic/rogue_launcher/crossbow
 	name = "crossbow"
 	desc = "A deadly weapon that shoots a bolt with terrific power."
 	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/misc32.dmi'
@@ -39064,6 +41429,7 @@
 	possible_item_intents = list(/datum/intent/shoot/crossbow, /datum/intent/arc/crossbow, /datum/intent/hit)
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/bolt
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_lefthand.dmi'
@@ -39073,6 +41439,15 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_onmob.dmi'
+	damfactor = 1.2
+	accfactor = 1.1
+	penfactor = 0
+	damage_from_perception = FALSE
+	reloadtime = 40
+	movingreload = FALSE
+	hasloadedsprite = FALSE
+	fire_sound = 'modular_redtard/rockhill/sound/combat/Ranged/crossbow-small-shot-02.ogg'
+	load_sound = 'modular_redtard/rockhill/sound/foley/nockarrow.ogg'
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/arbalest
 	name = "sauterelle"
@@ -39090,6 +41465,7 @@
 	possible_item_intents = list(/datum/intent/shoot/crossbow, /datum/intent/arc/crossbow, /datum/intent/hit)
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/heavy_bolt
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_lefthand.dmi'
@@ -39099,6 +41475,15 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_onmob.dmi'
+	damfactor = 1.2
+	accfactor = 1.1
+	penfactor = 0
+	damage_from_perception = FALSE
+	reloadtime = 6 SECONDS
+	movingreload = FALSE
+	hasloadedsprite = FALSE
+	fire_sound = 'modular_redtard/rockhill/sound/combat/Ranged/firebow-shot-02.ogg'
+	load_sound = 'modular_redtard/rockhill/sound/foley/nockarrow.ogg'
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/heavy
 	name = "siegebow"
@@ -39118,6 +41503,7 @@
 	possible_item_intents = list(/datum/intent/shoot/crossbow/heavy, /datum/intent/arc/crossbow/heavy, /datum/intent/buttstroke/heavy, /datum/intent/effect/daze)
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/heavy_bolt
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_lefthand.dmi'
@@ -39127,6 +41513,15 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_onmob.dmi'
+	damfactor = 1.2
+	accfactor = 0.5
+	penfactor = 0
+	damage_from_perception = FALSE
+	reloadtime = 160
+	movingreload = FALSE
+	hasloadedsprite = FALSE
+	fire_sound = 'modular_redtard/rockhill/sound/combat/Ranged/crossbow_big_shot.ogg'
+	load_sound = 'modular_redtard/rockhill/sound/foley/doors/lockmetal.ogg'
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow
 	name = "slurbow"
@@ -39145,6 +41540,7 @@
 	possible_item_intents = list(/datum/intent/shoot/crossbow/slurbow, /datum/intent/arc/crossbow/slurbow, /datum/intent/hit)
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/bolt
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_righthand.dmi'
 	inhand_icon_state = null
@@ -39152,6 +41548,15 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_onmob.dmi'
+	damfactor = 0.6
+	accfactor = 1.3
+	penfactor = -1
+	damage_from_perception = TRUE
+	reloadtime = 20
+	movingreload = TRUE
+	hasloadedsprite = TRUE
+	fire_sound = 'modular_redtard/rockhill/sound/combat/Ranged/crossbow-small-shot-02.ogg'
+	load_sound = 'modular_redtard/rockhill/sound/foley/nockarrow.ogg'
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow/stalker
 	name = "gilded drow crossbow"
@@ -39170,6 +41575,7 @@
 	possible_item_intents = list(/datum/intent/shoot/crossbow/slurbow, /datum/intent/arc/crossbow/slurbow, /datum/intent/hit)
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/bolt
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_righthand.dmi'
 	inhand_icon_state = null
@@ -39177,6 +41583,15 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_onmob.dmi'
+	damfactor = 0.7
+	accfactor = 1.3
+	penfactor = -1
+	damage_from_perception = TRUE
+	reloadtime = 20
+	movingreload = TRUE
+	hasloadedsprite = TRUE
+	fire_sound = 'modular_redtard/rockhill/sound/combat/Ranged/crossbow-small-shot-02.ogg'
+	load_sound = 'modular_redtard/rockhill/sound/foley/nockarrow.ogg'
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow/stalker/lesser
 	name = "drow crossbow"
@@ -39195,6 +41610,7 @@
 	possible_item_intents = list(/datum/intent/shoot/crossbow/slurbow, /datum/intent/arc/crossbow/slurbow, /datum/intent/hit)
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/bolt
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_righthand.dmi'
 	inhand_icon_state = null
@@ -39202,9 +41618,18 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_onmob.dmi'
+	damfactor = 0.6
+	accfactor = 1.3
+	penfactor = -2
+	damage_from_perception = TRUE
+	reloadtime = 20
+	movingreload = TRUE
+	hasloadedsprite = TRUE
+	fire_sound = 'modular_redtard/rockhill/sound/combat/Ranged/crossbow-small-shot-02.ogg'
+	load_sound = 'modular_redtard/rockhill/sound/foley/nockarrow.ogg'
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/sling
-	parent_type = /obj/item/rockhill
+	parent_type = /obj/item/gun/ballistic/rogue_launcher/sling
 	name = "sling"
 	desc = "Twisted fibers manifest into a strung pouch capable of hurling stones afar."
 	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/misc32.dmi'
@@ -39221,6 +41646,7 @@
 	rogue_grid_height = 64
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/swing/sling, /datum/intent/arc/sling, /datum/intent/hit)
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/sling
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_righthand.dmi'
 	inhand_icon_state = null
@@ -39228,6 +41654,12 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_onmob.dmi'
+	damfactor = 1
+	accfactor = 1
+	penfactor = 0
+	damage_from_perception = FALSE
+	fire_sound = 'modular_redtard/rockhill/sound/combat/Ranged/sling-shot-01.ogg'
+	load_sound = 'modular_redtard/rockhill/sound/foley/slingload.ogg'
 
 /obj/item/hair_dye_cream
 	parent_type = /obj/item/rockhill
@@ -40547,6 +42979,28 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 
+/obj/item/kitchen/fork/carved/porcelain
+	name = "porcelain fork"
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cookware/fork.dmi'
+	icon_state = "fork_porcelain"
+	w_class = WEIGHT_CLASS_TINY
+	force = 8
+	throwforce = 5
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	wbalance = 1
+	possible_item_intents = list(/datum/intent/use, /datum/intent/dagger/thrust/fork)
+	sellprice = 25
+	max_blade_int = 40
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
 /obj/item/kitchen/fork/carved/rose
 	name = "rosestone fork"
 	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cookware/fork.dmi'
@@ -40835,6 +43289,25 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sellprice = 85
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/kitchen/spoon/carved/porcelain
+	name = "porcelain spoon"
+	desc = "Traditional utensil for shoveling soup into your mouth, or to churn butter with."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cookware/spoon.dmi'
+	icon_state = "spoon_porcelain"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	sellprice = 25
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_righthand.dmi'
 	inhand_icon_state = null
@@ -41287,6 +43760,30 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	inhand_icon_state = null
+
+/obj/item/listenstone
+	parent_type = /obj/item/rockhill
+	name = "emerald choker"
+	desc = "An iron and gold choker with an emerald gem."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/neck.dmi'
+	icon_state = "listenstone"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/neck.dmi'
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH|ITEM_SLOT_ROGUE_WRISTS
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	sellprice = 200
+	inhand_icon_state = null
+	worn_icon_state = "listenstone"
 
 /obj/item/lockpick
 	parent_type = /obj/item/rockhill
@@ -42162,6 +44659,27 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 
+/obj/item/mobilestove
+	parent_type = /obj/item/rockhill
+	name = "packed stove"
+	desc = "A portable bronze stovetop. The underside is covered in an esoteric pattern of small tubes. Whatever heats the hob is hidden inside the body of the device"
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi'
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	icon_state = null
+	inhand_icon_state = null
+
 /obj/item/mold/axe
 	name = "axe blade mold"
 	desc = "A steel mold for casting axe blades."
@@ -42750,6 +45268,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/natural/stone
 
 /obj/item/natural/clay/claybottle
 	name = "unglazed clay bottle"
@@ -42772,6 +45291,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/reagent_containers/glass/bottle/claybottle
 
 /obj/item/natural/clay/claybottleclassic
 	name = "unglazed clay bottle"
@@ -42794,6 +45314,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/reagent_containers/glass/bottle/claybottleclassic
 
 /obj/item/natural/clay/claybrick
 	name = "uncooked clay brick"
@@ -42816,6 +45337,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/natural/brick
 
 /obj/item/natural/clay/claycup
 	name = "unglazed clay canister"
@@ -42838,6 +45360,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/reagent_containers/glass/cup/claycup
 
 /obj/item/natural/clay/claycupclassic
 	name = "unglazed clay canister"
@@ -42860,6 +45383,30 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/reagent_containers/glass/cup/claycupclassic
+
+/obj/item/natural/clay/clayfancyvase
+	name = "unglazed fancy clay vase"
+	desc = "A fancy vase fashioned from clay. Still needs to be glazed to be useful."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayfancyvaseraw"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/reagent_containers/glass/bottle/clayfancyvase
 
 /obj/item/natural/clay/clayfancyvaseclassic
 	name = "unglazed fancy clay vase"
@@ -42882,6 +45429,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/reagent_containers/glass/bottle/clayfancyvaseclassic
 
 /obj/item/natural/clay/claystatue
 	name = "uncooked clay statue"
@@ -42904,6 +45452,145 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/roguestatue/clay
+
+/obj/item/natural/clay/claystatue/design1
+	name = "uncooked clay statue"
+	desc = "An uncooked clay statue. It still needs to be cooked in a kiln."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "claystatueraw"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/roguestatue/clay/design1
+
+/obj/item/natural/clay/claystatue/design2
+	name = "uncooked clay statue"
+	desc = "An uncooked clay statue. It still needs to be cooked in a kiln."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "claystatueraw2"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/roguestatue/clay/design2
+
+/obj/item/natural/clay/claystatue/design3
+	name = "uncooked clay statue"
+	desc = "An uncooked clay statue. It still needs to be cooked in a kiln."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "claystatueraw3"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/roguestatue/clay/design3
+
+/obj/item/natural/clay/claystatue/design4
+	name = "uncooked clay statue"
+	desc = "An uncooked clay statue. It still needs to be cooked in a kiln."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "claystatueraw4"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/roguestatue/clay/design4
+
+/obj/item/natural/clay/claystatue/design5
+	name = "uncooked clay statue"
+	desc = "An uncooked clay statue. It still needs to be cooked in a kiln."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "claystatueraw5"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/roguestatue/clay/design5
+
+/obj/item/natural/clay/clayvase
+	name = "unglazed clay vase"
+	desc = "A vase fashioned from clay. Still needs to be glazed to be useful."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayvaseraw"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/reagent_containers/glass/bottle/clayvase
 
 /obj/item/natural/clay/clayvaseclassic
 	name = "unglazed clay vase"
@@ -42926,6 +45613,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/reagent_containers/glass/bottle/clayvaseclassic
 
 /obj/item/natural/clay/glassbatch
 	name = "glass batch"
@@ -42950,6 +45638,30 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/natural/stone
+
+/obj/item/natural/clay/jarhelm
+	name = "uncooked large jar"
+	desc = "A large, upturned, and uncooked jar. It still needs to be cooked in a kiln."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/special/jar.dmi'
+	icon_state = "rawjar"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/jar_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/jar_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/clothing/head/roguetown/helmet/heavy/jar
 
 /obj/item/natural/clay/kneaded
 	name = "kneaded clay"
@@ -42972,6 +45684,628 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/natural/stone
+
+/obj/item/natural/clay/porcelain/bauble
+	name = "raw porcelain bauble"
+	desc = "A carefully shaped porcelain piece. It needs firing in a kiln."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelainbaubleraw"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/carvedgem/porcelain/bauble
+
+/obj/item/natural/clay/porcelain/bowl
+	name = "raw porcelain bowl"
+	desc = "A carefully shaped porcelain piece. It needs firing in a kiln."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelainbowlraw"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/reagent_containers/glass/bowl/carved/porcelain
+
+/obj/item/natural/clay/porcelain/bust
+	name = "raw porcelain bust"
+	desc = "A carefully shaped porcelain piece. It needs firing in a kiln."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelainbustraw"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/carvedgem/porcelain/bust
+
+/obj/item/natural/clay/porcelain/cameo
+	name = "raw porcelain cameo"
+	desc = "A carefully shaped porcelain piece. It needs firing in a kiln."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelaincameoraw"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/carvedgem/porcelain/cameo
+
+/obj/item/natural/clay/porcelain/comb
+	name = "raw porcelain comb"
+	desc = "A carefully shaped porcelain piece. It needs firing in a kiln."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelaincombraw"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/carvedgem/porcelain/comb
+
+/obj/item/natural/clay/porcelain/cup
+	name = "raw porcelain teacup"
+	desc = "A carefully shaped porcelain piece. It needs firing in a kiln."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelaincupraw"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/reagent_containers/glass/cup/porcelain
+
+/obj/item/natural/clay/porcelain/duck
+	name = "raw porcelain duck"
+	desc = "A carefully shaped porcelain piece. It needs firing in a kiln."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelainduckraw"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/carvedgem/porcelain/duck
+
+/obj/item/natural/clay/porcelain/fancycup
+	name = "raw fancy porcelain cup"
+	desc = "A carefully shaped porcelain piece. It needs firing in a kiln."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelaincupfancyraw"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/reagent_containers/glass/cup/porcelain/fancy
+
+/obj/item/natural/clay/porcelain/fancyteacup
+	name = "raw fancy teacup"
+	desc = "A carefully shaped porcelain piece. It needs firing in a kiln."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelaincupraw"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/reagent_containers/glass/cup/ceramic/fancy
+
+/obj/item/natural/clay/porcelain/fancyteapot
+	name = "raw fancy teapot"
+	desc = "A carefully shaped porcelain piece. It needs firing in a kiln."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelainfancyteapot2"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/reagent_containers/glass/bucket/pot/teapot/fancy
+
+/obj/item/natural/clay/porcelain/fancyvase
+	name = "raw fancy porcelain vase"
+	desc = "A carefully shaped porcelain piece. It needs firing in a kiln."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelainfancyvaseraw"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/carvedgem/porcelain/fancyvase
+
+/obj/item/natural/clay/porcelain/figurine
+	name = "raw porcelain figurine"
+	desc = "A carefully shaped porcelain piece. It needs firing in a kiln."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelainfigurineraw"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/carvedgem/porcelain/figurine
+
+/obj/item/natural/clay/porcelain/fish
+	name = "raw porcelain fish figurine"
+	desc = "A carefully shaped porcelain piece. It needs firing in a kiln."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelainfishraw"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/carvedgem/porcelain/fish
+
+/obj/item/natural/clay/porcelain/fork
+	name = "raw porcelain fork"
+	desc = "A carefully shaped porcelain piece. It needs firing in a kiln."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelainforkraw"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/kitchen/fork/carved/porcelain
+
+/obj/item/natural/clay/porcelain/mask
+	name = "raw porcelain mask"
+	desc = "A carefully shaped porcelain piece. It needs firing in a kiln."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelainmaskraw"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/clothing/mask/rogue/facemask/carved/porcelainmask
+
+/obj/item/natural/clay/porcelain/obelisk
+	name = "raw porcelain obelisk"
+	desc = "A carefully shaped porcelain piece. It needs firing in a kiln."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelainobeliskraw"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/carvedgem/porcelain/obelisk
+
+/obj/item/natural/clay/porcelain/platter
+	name = "raw porcelain platter"
+	desc = "A carefully shaped porcelain piece. It needs firing in a kiln."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelainplatterraw"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/cooking/platter/carved/porcelain
+
+/obj/item/natural/clay/porcelain/rungu
+	name = "raw porcelain rungu"
+	desc = "A carefully shaped porcelain piece. It needs firing in a kiln."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelainrunguraw"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/rogueweapon/mace/cudgel/porcelainrungu
+
+/obj/item/natural/clay/porcelain/spoon
+	name = "raw porcelain spoon"
+	desc = "A carefully shaped porcelain piece. It needs firing in a kiln."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelainspoonraw"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/kitchen/spoon/carved/porcelain
+
+/obj/item/natural/clay/porcelain/statue
+	name = "raw porcelain statue"
+	desc = "A carefully shaped porcelain piece. It needs firing in a kiln."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelainstatueraw"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/carvedgem/porcelain/statue
+
+/obj/item/natural/clay/porcelain/tablet
+	name = "raw porcelain tablet"
+	desc = "A carefully shaped porcelain piece. It needs firing in a kiln."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelaintabletraw"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/carvedgem/porcelain/tablet
+
+/obj/item/natural/clay/porcelain/teapot
+	name = "raw porcelain teapot"
+	desc = "A carefully shaped porcelain piece. It needs firing in a kiln."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelainteapotraw"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/reagent_containers/glass/bucket/pot/teapot/porcelain
+
+/obj/item/natural/clay/porcelain/turtle
+	name = "raw porcelain turtle carving"
+	desc = "A carefully shaped porcelain piece. It needs firing in a kiln."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelainturtleraw"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/carvedgem/porcelain/turtle
+
+/obj/item/natural/clay/porcelain/urn
+	name = "raw porcelain urn"
+	desc = "A carefully shaped porcelain piece. It needs firing in a kiln."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelainurnraw"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/carvedgem/porcelain/urn
+
+/obj/item/natural/clay/porcelain/vase
+	name = "raw porcelain vase"
+	desc = "A carefully shaped porcelain piece. It needs firing in a kiln."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelainvaseraw"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/carvedgem/porcelain/vase
+
+/obj/item/natural/clay/rawteacup
+	name = "raw teacup"
+	desc = "A teacup fashioned from clay. Still needs to be baked to be useful."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "teacup_raw"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/reagent_containers/glass/cup/ceramic
+
+/obj/item/natural/clay/rawteapot
+	name = "raw teapot"
+	desc = "A teapot fashioned from clay. Still needs to be baked to be useful."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "teapot_raw"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/reagent_containers/glass/bucket/pot/teapot
 
 /obj/item/natural/clay/refined
 	name = "refined clay"
@@ -42994,6 +46328,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	cooked_type = /obj/item/natural/stone
 
 /obj/item/natural/cloth
 	name = "cloth"
@@ -43070,6 +46405,27 @@
 	desc = "A handful of earth."
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/natural.dmi'
 	icon_state = "clod1"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	throwforce = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/natural/dirtclod/sand
+	name = "sand"
+	desc = "A handful of loose sand."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/natural.dmi'
+	icon_state = "sand1"
 	w_class = WEIGHT_CLASS_TINY
 	force = 0
 	throwforce = 0
@@ -44441,7 +47797,9 @@
 	rogue_baked_inhand = TRUE
 
 /obj/item/paper/scroll
-	parent_type = /obj/item/rockhill
+	parent_type = /obj/item/paper
+	show_written_words = FALSE
+	slot_flags = NONE
 	name = "scroll"
 	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
 	icon_state = "scroll"
@@ -44736,7 +48094,7 @@
 	rogue_baked_inhand = TRUE
 
 /obj/item/quiver
-	parent_type = /obj/item/rockhill
+	parent_type = /obj/item/rogue_quiver
 	name = "quiver"
 	desc = ""
 	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
@@ -44756,6 +48114,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 20
 
 /obj/item/quiver/Warrows
 	name = "quiver"
@@ -44777,6 +48136,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 20
+	rogue_quiver_fill = /obj/item/ammo_casing/caseless/rogue/arrow/water
 
 /obj/item/quiver/Wbolts
 	name = "quiver"
@@ -44798,6 +48159,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 20
+	rogue_quiver_fill = /obj/item/ammo_casing/caseless/rogue/bolt/water
 
 /obj/item/quiver/arrows
 	name = "quiver"
@@ -44819,6 +48182,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 20
+	rogue_quiver_fill = /obj/item/ammo_casing/caseless/rogue/arrow/iron
 
 /obj/item/quiver/bodkin
 	name = "quiver"
@@ -44840,6 +48205,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 20
+	rogue_quiver_fill = /obj/item/ammo_casing/caseless/rogue/arrow/steel
 
 /obj/item/quiver/bolts
 	name = "quiver"
@@ -44861,6 +48228,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 20
+	rogue_quiver_fill = /obj/item/ammo_casing/caseless/rogue/bolt
 
 /obj/item/quiver/bolts/
 	name = "quiver"
@@ -44882,6 +48251,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 20
 
 /obj/item/quiver/bullet/lead
 	name = "lead ball pouch"
@@ -44906,6 +48276,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 8
+	rogue_quiver_fill = /obj/item/ammo_casing/caseless/bullet/lead
 
 /obj/item/quiver/heavybluntbolts
 	name = "quiver"
@@ -44927,6 +48299,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 20
+	rogue_quiver_fill = /obj/item/ammo_casing/caseless/rogue/bolt/heavyblunt
 
 /obj/item/quiver/heavybolts
 	name = "quiver"
@@ -44948,6 +48322,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 20
+	rogue_quiver_fill = /obj/item/ammo_casing/caseless/rogue/heavy_bolt
 
 /obj/item/quiver/javelin
 	name = "javelinbag"
@@ -44969,6 +48345,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 4
 
 /obj/item/quiver/javelin/bronze
 	name = "javelinbag"
@@ -44990,6 +48367,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 4
+	rogue_quiver_fill = /obj/item/ammo_casing/caseless/rogue/javelin/bronze
 
 /obj/item/quiver/javelin/iron
 	name = "javelinbag"
@@ -45011,6 +48390,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 4
+	rogue_quiver_fill = /obj/item/ammo_casing/caseless/rogue/javelin
 
 /obj/item/quiver/javelin/steel
 	name = "javelinbag"
@@ -45032,6 +48413,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 4
+	rogue_quiver_fill = /obj/item/ammo_casing/caseless/rogue/javelin/steel
 
 /obj/item/quiver/poisonarrows
 	name = "quiver"
@@ -45053,6 +48436,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 20
+	rogue_quiver_fill = /obj/item/ammo_casing/caseless/rogue/arrow/poison
 
 /obj/item/quiver/pyroarrows
 	name = "quiver"
@@ -45074,6 +48459,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 20
+	rogue_quiver_fill = /obj/item/ammo_casing/caseless/rogue/arrow/pyro
 
 /obj/item/quiver/sling
 	name = "sling bullet pouch"
@@ -45098,6 +48485,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 20
 
 /obj/item/quiver/sling/iron
 	name = "sling bullet pouch"
@@ -45122,6 +48510,8 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 20
+	rogue_quiver_fill = /obj/item/ammo_casing/caseless/rogue/sling_bullet/iron
 
 /obj/item/quiver/zigs
 	name = "zig box"
@@ -45145,6 +48535,7 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	max_storage = 10
 
 /obj/item/ration
 	parent_type = /obj/item/rockhill
@@ -47314,6 +50705,50 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 
+/obj/item/reagent_containers/food/snacks/rogue/bookbread
+	name = "bookbread loaf"
+	desc = "On the days when Noc's reign lengthens to its apex, all proper Pantheon-fearing folk huddle by their warm hearths, exchanging both books and pastries such as this."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_pastry.dmi'
+	icon_state = "bookbread5"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
+	smeltresult = /obj/item/ash
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_pastry_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_pastry_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/reagent_containers/food/snacks/rogue/bookbread_slice
+	name = "sliced bookbread"
+	desc = "About the same size and taste as an encyclopedia."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_pastry.dmi'
+	icon_state = "bookbread_slice"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
+	smeltresult = /obj/item/ash
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_pastry_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_pastry_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
 /obj/item/reagent_containers/food/snacks/rogue/bread
 	name = "bread loaf"
 	desc = "One of Psydonia's staple foodstuffs, made from leavened dough. From the pauper to the papal, none can deny the simplistic beauty of a freshly-baked loaf."
@@ -47463,6 +50898,50 @@
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/reagent_containers/food/snacks/rogue/butterdough
+	name = "butterdough"
+	desc = "What is a triumph, to a legacy?"
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/raw/raw_dough.dmi'
+	icon_state = "butterdough"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
+	smeltresult = /obj/item/ash
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_dough_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_dough_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/reagent_containers/food/snacks/rogue/butterdoughslice
+	name = "butterdough piece"
+	desc = "A slice of pedigree, to create lines of history."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/raw/raw_dough.dmi'
+	icon_state = "butterdoughslice"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
+	smeltresult = /obj/item/ash
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_dough_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_dough_righthand.dmi'
 	inhand_icon_state = null
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
@@ -47820,6 +51299,28 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 
+/obj/item/reagent_containers/food/snacks/rogue/dough_base
+	name = "unfinished dough"
+	desc = "With a little more ambition, you will conquer."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/raw/raw_dough.dmi'
+	icon_state = "dough_base"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
+	smeltresult = /obj/item/ash
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_dough_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_dough_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
 /obj/item/reagent_containers/food/snacks/rogue/doughslice
 	name = "smalldough"
 	desc = ""
@@ -47837,6 +51338,50 @@
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_dough_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_dough_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/reagent_containers/food/snacks/rogue/flatdough
+	name = "flatdough"
+	desc = "Flattened dough, bare for all to see. A sharp edge can prepare the lines for a sheet of crackerdough, while a smearing of tomatoes can set the stage for a peasant's feast."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/raw/raw_dough.dmi'
+	icon_state = "flatdough"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
+	smeltresult = /obj/item/ash
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_dough_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_dough_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/reagent_containers/food/snacks/rogue/foodbase/chickentender
+	name = "unfinished tender frybird"
+	desc = "Tenderized meat, awaiting a coating of toastcrumbs and a hot oil bath."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/raw/raw_deep_fried.dmi'
+	icon_state = "chickentender_step1"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
+	smeltresult = /obj/item/ash
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_deep_fried_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_deep_fried_righthand.dmi'
 	inhand_icon_state = null
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
@@ -47930,6 +51475,72 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 
+/obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw
+	name = "raw handpie"
+	desc = "To the oven with you!"
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_pastry.dmi'
+	icon_state = "handpie_raw"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
+	smeltresult = /obj/item/ash
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_pastry_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_pastry_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw/fish
+	name = "raw fish handpie"
+	desc = "To the oven with you!"
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_pastry.dmi'
+	icon_state = "handpie_raw"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
+	smeltresult = /obj/item/ash
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_pastry_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_pastry_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw/meat
+	name = "raw meat handpie"
+	desc = "To the oven with you!"
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_pastry.dmi'
+	icon_state = "handpie_raw"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
+	smeltresult = /obj/item/ash
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_pastry_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_pastry_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
 /obj/item/reagent_containers/food/snacks/rogue/foodbase/hardtack_raw
 	name = "crackerdough"
 	desc = "Doughy, soft, unacceptable - such makes it perfect for hardtack. Sprinkling in some sliced chocolate might help make it a little more palletable."
@@ -47947,6 +51558,116 @@
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/reagent_containers/food/snacks/rogue/foodbase/nitzel
+	name = "unfinished nitzel"
+	desc = "Tenderized meat, awaiting a coating of toastcrumbs and a hot oil bath."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/raw/raw_deep_fried.dmi'
+	icon_state = "nitzel_step1"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
+	smeltresult = /obj/item/ash
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_deep_fried_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_deep_fried_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/reagent_containers/food/snacks/rogue/foodbase/piebottom
+	name = "pie bottom"
+	desc = "The foundation of the fantastical.."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/raw/raw_pies.dmi'
+	icon_state = "piebottom"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
+	smeltresult = /obj/item/ash
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_pies_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_pies_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/reagent_containers/food/snacks/rogue/foodbase/schnitzel
+	name = "schnitzel"
+	desc = "Tenderized spider meat, awaiting a coating of toastcrumbs and a hot oil bath."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/raw/raw_deep_fried.dmi'
+	icon_state = "schnitzel_step1"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
+	smeltresult = /obj/item/ash
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_deep_fried_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_deep_fried_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/reagent_containers/food/snacks/rogue/foodbase/squires_delight
+	name = "unfinished squire's delight"
+	desc = "A butter stick with an egg cracked over it. It awaits toastcrumbs and a hot oil bath."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/raw/raw_deep_fried.dmi'
+	icon_state = "squiresdelight_step1"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
+	smeltresult = /obj/item/ash
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_deep_fried_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_deep_fried_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/reagent_containers/food/snacks/rogue/foodbase/wienernitzel
+	name = "unfinished wiener nitzel"
+	desc = "Tenderized meat, awaiting a coating of toastcrumbs and a hot oil bath."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/raw/raw_deep_fried.dmi'
+	icon_state = "wienernitzel_step1"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
+	smeltresult = /obj/item/ash
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_deep_fried_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_deep_fried_righthand.dmi'
 	inhand_icon_state = null
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
@@ -48238,6 +51959,28 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 
+/obj/item/reagent_containers/food/snacks/rogue/frybread
+	name = "frybread"
+	desc = "Flatbread fried with butter until crispy. A staple of the elven kitchen."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_baked.dmi'
+	icon_state = "frybread"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
+	smeltresult = /obj/item/ash
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
 /obj/item/reagent_containers/food/snacks/rogue/fryfish/crab
 	name = "cooked crab"
 	desc = "A cooked crab. With a sweet and rich flavor. Often laboriously made into crab cakes."
@@ -48387,6 +52130,28 @@
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_seafood_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_seafood_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/reagent_containers/food/snacks/rogue/handpie
+	name = "handpie"
+	desc = "The dwarves call this 'pierogi' in their dialect. It'll stay fresh for a good long while until the crust is bitten."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_pastry.dmi'
+	icon_state = "handpie"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
+	smeltresult = /obj/item/ash
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_pastry_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_pastry_righthand.dmi'
 	inhand_icon_state = null
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
@@ -48606,6 +52371,28 @@
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/preserved_meat_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/preserved_meat_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/reagent_containers/food/snacks/rogue/meat/chickentender
+	name = "tender frybird"
+	desc = "A deep-fried frybird, coated in toastcrumbs and ready to eat."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_deep_fried.dmi'
+	icon_state = "chickentender"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
+	smeltresult = /obj/item/ash
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_deep_fried_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_deep_fried_righthand.dmi'
 	inhand_icon_state = null
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
@@ -48892,6 +52679,72 @@
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_meat_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_meat_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/reagent_containers/food/snacks/rogue/meat/nitzel
+	name = "nitzel"
+	desc = "A deep-fried nitzel, coated in toastcrumbs and ready to eat."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_deep_fried.dmi'
+	icon_state = "nitzel"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
+	smeltresult = /obj/item/ash
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_deep_fried_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_deep_fried_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/reagent_containers/food/snacks/rogue/meat/nitzel/schnitzel
+	name = "schnitzel"
+	desc = "A deep-fried schnitzel, coated in toastcrumbs and ready to eat."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_deep_fried.dmi'
+	icon_state = "schnitzel"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
+	smeltresult = /obj/item/ash
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_deep_fried_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_deep_fried_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/reagent_containers/food/snacks/rogue/meat/nitzel/wiener
+	name = "wiener nitzel"
+	desc = "A deep-fried wiener, coated in toastcrumbs and ready to eat."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_deep_fried.dmi'
+	icon_state = "wienernitzel"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
+	smeltresult = /obj/item/ash
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_deep_fried_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_deep_fried_righthand.dmi'
 	inhand_icon_state = null
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
@@ -49494,6 +53347,28 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 
+/obj/item/reagent_containers/food/snacks/rogue/pastry
+	name = "pastry"
+	desc = "Crispy, buttery, and delightfully flaky. A favorite treat among children and sweetlovers."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_pastry.dmi'
+	icon_state = "pastry"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
+	smeltresult = /obj/item/ash
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_pastry_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_pastry_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
 /obj/item/reagent_containers/food/snacks/rogue/pepperfish
 	name = "pepperfilet"
 	desc = "Roasted fish flipped against itself and coated in pepper."
@@ -49604,11 +53479,77 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 
+/obj/item/reagent_containers/food/snacks/rogue/pie/cooked/berry
+	name = "berry pie"
+	desc = "A delicious, homemade pie made with wild berries. Still needs to be sliced."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_pies.dmi'
+	icon_state = "pie"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
+	smeltresult = /obj/item/ash
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_pies_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_pies_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/reagent_containers/food/snacks/rogue/pie/cooked/crab
+	name = "crab pie"
+	desc = "A delicious, homemade pie made with the inside of a crustacean. Still needs to be sliced."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_pies.dmi'
+	icon_state = "pie"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
+	smeltresult = /obj/item/ash
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_pies_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_pies_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
 /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/meat
 	name = "meat pie"
 	desc = "A delicious, homemade pie made with minced meat. Still needs to be sliced."
 	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_pies.dmi'
 	icon_state = "meatpie"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
+	smeltresult = /obj/item/ash
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_pies_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_pies_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/reagent_containers/food/snacks/rogue/pie/cooked/meat/fish
+	name = "fish pie"
+	desc = "A delicious, homemade pie made with fresh fish. Still needs to be sliced."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_pies.dmi'
+	icon_state = "fishpie"
 	w_class = WEIGHT_CLASS_TINY
 	force = 0
 	worn_icon_state = null
@@ -49643,6 +53584,50 @@
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_pies_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_pies_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/reagent_containers/food/snacks/rogue/pie/cooked/pot
+	name = "pot pie"
+	desc = "A delicious, homemade pie. Still needs to be sliced."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_pies.dmi'
+	icon_state = "pie"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
+	smeltresult = /obj/item/ash
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_pies_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_pies_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/reagent_containers/food/snacks/rogue/piedough
+	name = "piedough"
+	desc = "The beginning of greater things to come."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/raw/raw_dough.dmi'
+	icon_state = "piedough"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
+	smeltresult = /obj/item/ash
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_dough_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_dough_righthand.dmi'
 	inhand_icon_state = null
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
@@ -50508,6 +54493,28 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 
+/obj/item/reagent_containers/food/snacks/squiresdelight
+	name = "squire's delight"
+	desc = "A deep-fried butter stick. Beloved by squires, often stolen by knights."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_deep_fried.dmi'
+	icon_state = "squiresdelight"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 32
+	possible_item_intents = list(/datum/intent/food)
+	smeltresult = /obj/item/ash
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_deep_fried_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_deep_fried_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
 /obj/item/reagent_containers/food/snacks/sugar
 	name = "sugar"
 	desc = "Milled sugarcane, sweet as can be."
@@ -51054,6 +55061,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/alchemical
 	name = "alchemical vial"
@@ -51076,6 +55086,9 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	sellprice = 1
 	inhand_icon_state = null
+	volume = 30
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/alchemical/conpot
 	name = "alchemical vial"
@@ -51098,6 +55111,9 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	sellprice = 1
 	inhand_icon_state = null
+	volume = 30
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/alchemical/endpot
 	name = "alchemical vial"
@@ -51120,6 +55136,9 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	sellprice = 1
 	inhand_icon_state = null
+	volume = 30
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/alchemical/healthpot
 	name = "alchemical vial"
@@ -51142,6 +55161,9 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	sellprice = 1
 	inhand_icon_state = null
+	volume = 30
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/alchemical/healthpotnew
 	name = "alchemical vial"
@@ -51164,6 +55186,9 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	sellprice = 1
 	inhand_icon_state = null
+	volume = 30
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/alchemical/intpot
 	name = "alchemical vial"
@@ -51186,6 +55211,9 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	sellprice = 1
 	inhand_icon_state = null
+	volume = 30
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/alchemical/lucpot
 	name = "alchemical vial"
@@ -51208,6 +55236,9 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	sellprice = 1
 	inhand_icon_state = null
+	volume = 30
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/alchemical/perpot
 	name = "alchemical vial"
@@ -51230,6 +55261,9 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	sellprice = 1
 	inhand_icon_state = null
+	volume = 30
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/alchemical/rogue/rotcure
 	name = "alchemical vial"
@@ -51252,6 +55286,9 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	sellprice = 1
 	inhand_icon_state = null
+	volume = 30
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/alchemical/spdpot
 	name = "alchemical vial"
@@ -51274,6 +55311,9 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	sellprice = 1
 	inhand_icon_state = null
+	volume = 30
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/alchemical/spidervenom_paralytic
 	name = "alchemical vial"
@@ -51296,6 +55336,9 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	sellprice = 1
 	inhand_icon_state = null
+	volume = 30
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/alchemical/strongmanapot
 	name = "alchemical vial"
@@ -51318,6 +55361,9 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	sellprice = 1
 	inhand_icon_state = null
+	volume = 30
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/alchemical/strpot
 	name = "alchemical vial"
@@ -51340,6 +55386,9 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	sellprice = 1
 	inhand_icon_state = null
+	volume = 30
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/claybottle
 	name = "clay bottle"
@@ -51364,6 +55413,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 75
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/claybottle/nred
 	name = "clay bottle"
@@ -51388,6 +55440,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 75
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/claybottle/whitewine
 	name = "clay bottle"
@@ -51412,6 +55467,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 75
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/claybottle/wine
 	name = "clay bottle"
@@ -51436,6 +55494,36 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 75
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
+
+/obj/item/reagent_containers/glass/bottle/claybottleclassic
+	name = "clay bottle"
+	desc = "A ceramic bottle. Tyme caresses its curves and cracks with a faint, ethereal glimmer."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "claybottlebaked"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
+	sellprice = 5
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 75
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/clayfancyvase
 	name = "fancy ceramic vase"
@@ -51460,6 +55548,36 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 65
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
+
+/obj/item/reagent_containers/glass/bottle/clayfancyvaseclassic
+	name = "fancy ceramic vase"
+	desc = "A large sized fancy ceramic vase. Tyme caresses its curves and cracks with a faint, ethereal glimmer."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayfancyvasebaked"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
+	sellprice = 15
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 65
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/clayvase
 	name = "ceramic vase"
@@ -51484,6 +55602,36 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 65
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
+
+/obj/item/reagent_containers/glass/bottle/clayvaseclassic
+	name = "ceramic vase"
+	desc = "A large sized ceramic vase. Tyme caresses its curves and cracks with a faint, ethereal glimmer."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayvasebaked"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
+	sellprice = 7
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 65
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/frankenbrew
 	name = "bottle of Reanimation Elixir"
@@ -51507,6 +55655,35 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
+
+/obj/item/reagent_containers/glass/bottle/frankenbrew/third
+	name = "bottle of Reanimation Elixir"
+	desc = "A volatile chemical mixture that helps the deceased conduct electricity. Looks expensive..."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clear_bottle1"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS|ITEM_SLOT_ROGUE_MOUTH
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/revival
 	name = "vial of Eoran Balm"
@@ -51530,6 +55707,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue
 	name = "bottle"
@@ -51553,6 +55733,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/antidote
 	name = "bottle"
@@ -51576,6 +55759,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer
 	name = "Bottle of beer"
@@ -51599,6 +55785,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/obj/alcohol_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/apfelweinheim
 	name = "Bottle of Apfelweinheim Cider"
@@ -51622,6 +55811,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/obj/alcohol_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/aurorian
 	name = "Bottle of Aurorian Herbal Beer"
@@ -51645,6 +55837,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/obj/alcohol_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/avarmead
 	name = "Bottle of Golden Mead"
@@ -51668,6 +55863,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/obj/alcohol_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/avarrice
 	name = "Bottle of Aavnic White"
@@ -51691,6 +55889,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/obj/alcohol_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/blackgoat
 	name = "Bottle of Blackgoat"
@@ -51714,6 +55915,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/obj/alcohol_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/butterhairs
 	name = "Bottle of Butterhairs"
@@ -51737,6 +55941,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/obj/alcohol_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/fireleaf
 	name = "Bottle of Fireleaf"
@@ -51760,6 +55967,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/obj/alcohol_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/gronnmead
 	name = "Bottle of Shieldmaiden Mead"
@@ -51783,6 +55993,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/obj/alcohol_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/hagwoodbitter
 	name = "Bottle of Hagwood Bitters"
@@ -51806,6 +56019,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/obj/alcohol_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/jagdtrunk
 	name = "Bottle of Schnapps"
@@ -51829,6 +56045,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/obj/alcohol_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/kgunlager
 	name = "Bottle of Yamaguchi Tea Lager"
@@ -51852,6 +56071,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/obj/alcohol_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/kgunplum
 	name = "Bottle of Plum Wine"
@@ -51875,6 +56097,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/obj/alcohol_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/kgunsake
 	name = "Bottle of Aavnic White"
@@ -51898,6 +56123,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/obj/alcohol_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/murkwine
 	name = "Bottle of beer"
@@ -51921,6 +56149,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/obj/alcohol_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/nred
 	name = "Bottle of Norwandine Ale"
@@ -51944,6 +56175,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/obj/alcohol_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/rtoper
 	name = "Bottle Rockhill Cider"
@@ -51967,6 +56201,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/obj/alcohol_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/saigamilk
 	name = "Bottle of brewed Saiga Milk"
@@ -51990,6 +56227,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/obj/alcohol_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/stonebeardreserve
 	name = "Bottle of Stonebeards Reserve"
@@ -52013,6 +56253,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/obj/alcohol_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/voddena
 	name = "Bottle of beer"
@@ -52036,6 +56279,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/obj/alcohol_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/berrypoison
 	name = "bottle"
@@ -52059,6 +56305,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/elfblue
 	name = "Bottle of Valmora Blue"
@@ -52082,6 +56331,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/obj/alcohol_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/elfred
 	name = "Bottle of Elven Red"
@@ -52105,6 +56357,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/obj/alcohol_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/emberwine
 	name = "bottle"
@@ -52128,6 +56383,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/healthpot
 	name = "bottle"
@@ -52151,6 +56409,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/healthpotnew
 	name = "bottle"
@@ -52174,6 +56435,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/luxwine
 	name = "Bottle of Luxintenebre"
@@ -52197,6 +56461,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/obj/alcohol_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/manapot
 	name = "bottle"
@@ -52220,6 +56487,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/poison
 	name = "bottle"
@@ -52243,6 +56513,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/redwine
 	name = "Bottle of Otavan Red"
@@ -52266,6 +56539,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/obj/alcohol_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/stampoison
 	name = "bottle"
@@ -52289,6 +56565,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/stampot
 	name = "bottle"
@@ -52312,6 +56591,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/strongmanapot
 	name = "bottle"
@@ -52335,6 +56617,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/strongpoison
 	name = "bottle"
@@ -52358,6 +56643,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/strongstampoison
 	name = "bottle"
@@ -52381,6 +56669,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/strongstampot
 	name = "bottle"
@@ -52404,6 +56695,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/water
 	name = "bottle"
@@ -52427,6 +56721,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/whitewine
 	name = "Bottle of Otavan White"
@@ -52450,6 +56747,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/obj/alcohol_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/wine
 	name = "Bottle of wine"
@@ -52473,6 +56773,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/obj/alcohol_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/rogue/wine/sourwine
 	name = "Bottle of Grenzelhoft Sour"
@@ -52496,6 +56799,9 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/obj/alcohol_onmob.dmi'
+	volume = 50
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(10)
 
 /obj/item/reagent_containers/glass/bottle/waterskin
 	name = "waterskin"
@@ -52523,6 +56829,37 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 75
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(5, 10)
+
+/obj/item/reagent_containers/glass/bottle/waterskin/purifier
+	name = "purifying waterskin"
+	desc = "Bronze tubes spiral about from the mouth of this waterskin in complex, dizzying patterns."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "water-purifier"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_POCKETS
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
+	sewrepair = TRUE
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+	volume = 75
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(5, 10)
 
 /obj/item/reagent_containers/glass/bowl
 	name = "wooden bowl"
@@ -52546,6 +56883,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 30
+	amount_per_transfer_from_this = 7
+	possible_transfer_amounts = list(7)
 
 /obj/item/reagent_containers/glass/bowl/bronze
 	name = "bronze bowl"
@@ -52569,6 +56909,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 30
+	amount_per_transfer_from_this = 7
+	possible_transfer_amounts = list(7)
 
 /obj/item/reagent_containers/glass/bowl/carved/amber
 	name = "amber bowl"
@@ -52592,6 +56935,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 30
+	amount_per_transfer_from_this = 7
+	possible_transfer_amounts = list(7)
 
 /obj/item/reagent_containers/glass/bowl/carved/coral
 	name = "heartstone bowl"
@@ -52615,6 +56961,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 30
+	amount_per_transfer_from_this = 7
+	possible_transfer_amounts = list(7)
 
 /obj/item/reagent_containers/glass/bowl/carved/jade
 	name = "jade bowl"
@@ -52638,6 +56987,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 30
+	amount_per_transfer_from_this = 7
+	possible_transfer_amounts = list(7)
 
 /obj/item/reagent_containers/glass/bowl/carved/onyxa
 	name = "onyxa bowl"
@@ -52661,6 +57013,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 30
+	amount_per_transfer_from_this = 7
+	possible_transfer_amounts = list(7)
 
 /obj/item/reagent_containers/glass/bowl/carved/opal
 	name = "opal bowl"
@@ -52684,6 +57039,35 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 30
+	amount_per_transfer_from_this = 7
+	possible_transfer_amounts = list(7)
+
+/obj/item/reagent_containers/glass/bowl/carved/porcelain
+	name = "porcelain bowl"
+	desc = "A bowl fired from refined porcelain clay."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cookware/bowl.dmi'
+	icon_state = "bowl_porcelain"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 5
+	throwforce = 5
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
+	sellprice = 25
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	volume = 30
+	amount_per_transfer_from_this = 7
+	possible_transfer_amounts = list(7)
 
 /obj/item/reagent_containers/glass/bowl/carved/rose
 	name = "rosestone bowl"
@@ -52707,6 +57091,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 30
+	amount_per_transfer_from_this = 7
+	possible_transfer_amounts = list(7)
 
 /obj/item/reagent_containers/glass/bowl/carved/shell
 	name = "shell bowl"
@@ -52730,6 +57117,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 30
+	amount_per_transfer_from_this = 7
+	possible_transfer_amounts = list(7)
 
 /obj/item/reagent_containers/glass/bowl/carved/turq
 	name = "cerulite bowl"
@@ -52753,6 +57143,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 30
+	amount_per_transfer_from_this = 7
+	possible_transfer_amounts = list(7)
 
 /obj/item/reagent_containers/glass/bowl/decrepit
 	name = "decrepit bowl"
@@ -52776,6 +57169,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 30
+	amount_per_transfer_from_this = 7
+	possible_transfer_amounts = list(7)
 
 /obj/item/reagent_containers/glass/bowl/gold
 	name = "gold bowl"
@@ -52799,6 +57195,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 30
+	amount_per_transfer_from_this = 7
+	possible_transfer_amounts = list(7)
 
 /obj/item/reagent_containers/glass/bowl/iron
 	name = "iron bowl"
@@ -52822,6 +57221,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 30
+	amount_per_transfer_from_this = 7
+	possible_transfer_amounts = list(7)
 
 /obj/item/reagent_containers/glass/bowl/silver
 	name = "silver bowl"
@@ -52845,6 +57247,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 30
+	amount_per_transfer_from_this = 7
+	possible_transfer_amounts = list(7)
 
 /obj/item/reagent_containers/glass/bowl/tin
 	name = "tin bowl"
@@ -52868,6 +57273,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 30
+	amount_per_transfer_from_this = 7
+	possible_transfer_amounts = list(7)
 
 /obj/item/reagent_containers/glass/bucket
 	name = "bucket"
@@ -52893,6 +57301,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 120
+	amount_per_transfer_from_this = 25
+	possible_transfer_amounts = list(25)
 
 /obj/item/reagent_containers/glass/bucket/pot
 	name = "pot"
@@ -52918,6 +57329,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 240
+	amount_per_transfer_from_this = 25
+	possible_transfer_amounts = list(25)
 
 /obj/item/reagent_containers/glass/bucket/pot/bronze
 	name = "bronze pot"
@@ -52943,6 +57357,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 240
+	amount_per_transfer_from_this = 25
+	possible_transfer_amounts = list(25)
 
 /obj/item/reagent_containers/glass/bucket/pot/carved/teapotamber
 	name = "amber teapot"
@@ -52969,6 +57386,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 99
+	amount_per_transfer_from_this = 25
+	possible_transfer_amounts = list(25)
 
 /obj/item/reagent_containers/glass/bucket/pot/carved/teapotcoral
 	name = "heartstone teapot"
@@ -52995,6 +57415,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 99
+	amount_per_transfer_from_this = 25
+	possible_transfer_amounts = list(25)
 
 /obj/item/reagent_containers/glass/bucket/pot/carved/teapotjade
 	name = "jade teapot"
@@ -53021,6 +57444,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 99
+	amount_per_transfer_from_this = 25
+	possible_transfer_amounts = list(25)
 
 /obj/item/reagent_containers/glass/bucket/pot/carved/teapotonyxa
 	name = "onyxa teapot"
@@ -53047,6 +57473,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 99
+	amount_per_transfer_from_this = 25
+	possible_transfer_amounts = list(25)
 
 /obj/item/reagent_containers/glass/bucket/pot/carved/teapotopal
 	name = "opal teapot"
@@ -53073,6 +57502,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 99
+	amount_per_transfer_from_this = 25
+	possible_transfer_amounts = list(25)
 
 /obj/item/reagent_containers/glass/bucket/pot/carved/teapotrose
 	name = "rosestone teapot"
@@ -53099,6 +57531,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 99
+	amount_per_transfer_from_this = 25
+	possible_transfer_amounts = list(25)
 
 /obj/item/reagent_containers/glass/bucket/pot/carved/teapotshell
 	name = "shell teapot"
@@ -53125,6 +57560,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 99
+	amount_per_transfer_from_this = 25
+	possible_transfer_amounts = list(25)
 
 /obj/item/reagent_containers/glass/bucket/pot/copper
 	name = "copper pot"
@@ -53150,6 +57588,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 240
+	amount_per_transfer_from_this = 25
+	possible_transfer_amounts = list(25)
 
 /obj/item/reagent_containers/glass/bucket/pot/decrepit
 	name = "decrepit pot"
@@ -53175,6 +57616,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 120
+	amount_per_transfer_from_this = 25
+	possible_transfer_amounts = list(25)
 
 /obj/item/reagent_containers/glass/bucket/pot/kettle
 	name = "kettle"
@@ -53200,6 +57644,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 120
+	amount_per_transfer_from_this = 25
+	possible_transfer_amounts = list(25)
 
 /obj/item/reagent_containers/glass/bucket/pot/kettle/tankard
 	name = "tankard"
@@ -53226,6 +57673,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 60
+	amount_per_transfer_from_this = 25
+	possible_transfer_amounts = list(25)
 
 /obj/item/reagent_containers/glass/bucket/pot/kettle/tankard/blacksteel
 	name = "blacksteel tankard"
@@ -53253,6 +57703,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 120
+	amount_per_transfer_from_this = 25
+	possible_transfer_amounts = list(25)
 
 /obj/item/reagent_containers/glass/bucket/pot/kettle/tankard/silver
 	name = "silver tankard"
@@ -53279,6 +57732,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 90
+	amount_per_transfer_from_this = 25
+	possible_transfer_amounts = list(25)
 
 /obj/item/reagent_containers/glass/bucket/pot/stone
 	name = "stone pot"
@@ -53304,6 +57760,38 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 120
+	amount_per_transfer_from_this = 25
+	possible_transfer_amounts = list(25)
+
+/obj/item/reagent_containers/glass/bucket/pot/teapot
+	name = "teapot"
+	desc = "A teapot made out of ceramic. Used to serve tea, it can hold a lot of liquid. It can still spill, however."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cookware/pot.dmi'
+	icon_state = "teapot"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 10
+	throwforce = 10
+	worn_icon_state = "pot"
+	armor_type = /datum/armor/rockhill_bucket
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
+	gripped_intents = list(/datum/intent/pour)
+	flags_inv = HIDEHAIR
+	sellprice = 20
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/pot_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/pot_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	volume = 120
+	amount_per_transfer_from_this = 25
+	possible_transfer_amounts = list(25)
 
 /obj/item/reagent_containers/glass/bucket/pot/teapot/fancy
 	name = "teapot"
@@ -53330,6 +57818,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 120
+	amount_per_transfer_from_this = 25
+	possible_transfer_amounts = list(25)
 
 /obj/item/reagent_containers/glass/bucket/pot/teapot/porcelain
 	name = "porcelain teapot"
@@ -53355,6 +57846,9 @@
 	sellprice = 30
 	icon_state = null
 	inhand_icon_state = "pot"
+	volume = 120
+	amount_per_transfer_from_this = 25
+	possible_transfer_amounts = list(25)
 
 /obj/item/reagent_containers/glass/bucket/tinypot
 	name = "tiny pot"
@@ -53380,6 +57874,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 120
+	amount_per_transfer_from_this = 25
+	possible_transfer_amounts = list(25)
 
 /obj/item/reagent_containers/glass/crucible
 	name = "crucible"
@@ -53401,6 +57898,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 5
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(5, 10, 15, 20, 25, 30, 50)
 
 /obj/item/reagent_containers/glass/cup
 	name = "metal cup"
@@ -53425,6 +57925,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/bronzegob
 	name = "bronze goblet"
@@ -53449,6 +57952,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/bronzemug
 	name = "bronze mug"
@@ -53473,6 +57979,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/carved/amber
 	name = "amber cup"
@@ -53497,6 +58006,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/carved/amberfancy
 	name = "fancy amber cup"
@@ -53521,6 +58033,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/carved/coral
 	name = "heartstone cup"
@@ -53545,6 +58060,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/carved/coralfancy
 	name = "fancy heartstone cup"
@@ -53569,6 +58087,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/carved/jade
 	name = "jade cup"
@@ -53593,6 +58114,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/carved/jadefancy
 	name = "fancy jade cup"
@@ -53617,6 +58141,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/carved/onyxa
 	name = "onyxa cup"
@@ -53641,6 +58168,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/carved/onyxafancy
 	name = "fancy onyxa cup"
@@ -53665,6 +58195,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/carved/opal
 	name = "opal cup"
@@ -53689,6 +58222,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/carved/opalfancy
 	name = "fancy opal cup"
@@ -53713,6 +58249,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/carved/rose
 	name = "rosestone cup"
@@ -53737,6 +58276,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/carved/rosefancy
 	name = "fancy rosestone cup"
@@ -53761,6 +58303,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/carved/shell
 	name = "shell cup"
@@ -53785,6 +58330,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/carved/shellfancy
 	name = "fancy shell cup"
@@ -53809,6 +58357,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/carved/turq
 	name = "cerulite cup"
@@ -53833,6 +58384,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/carved/turqfancy
 	name = "fancy cerulite cup"
@@ -53857,6 +58411,36 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
+
+/obj/item/reagent_containers/glass/cup/ceramic
+	name = "teacup"
+	desc = "A tea cup made out of ceramic. Used to serve tea."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cookware/cup.dmi'
+	icon_state = "cup"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 5
+	throwforce = 10
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
+	sellprice = 10
+	anvilrepair = /datum/attribute/skill/craft/blacksmithing
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/ceramic/fancy
 	name = "fancy teacup"
@@ -53881,6 +58465,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/claycup
 	name = "clay canister"
@@ -53905,6 +58492,36 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
+
+/obj/item/reagent_containers/glass/cup/claycupclassic
+	name = "clay canister"
+	desc = "A small ceramic canister. Tyme caresses its curves and cracks with a faint, ethereal glimmer."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "claycupbaked"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 5
+	throwforce = 10
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
+	sellprice = 2
+	anvilrepair = /datum/attribute/skill/craft/blacksmithing
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/decrepitgob
 	name = "decrepit goblet"
@@ -53929,6 +58546,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/decrepitmug
 	name = "decrepit mug"
@@ -53953,6 +58573,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/golden
 	name = "golden goblet"
@@ -53977,6 +58600,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/golden/poison
 	name = "golden goblet"
@@ -54001,6 +58627,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/golden/psydon
 	name = "Psydon's Chalice"
@@ -54025,6 +58654,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/golden/small
 	name = "golden cup"
@@ -54049,6 +58681,36 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
+
+/obj/item/reagent_containers/glass/cup/porcelain
+	name = "porcelain teacup"
+	desc = "A fine porcelain teacup."
+	icon = 'modular_redtard/rockhill/icons/modular/Neu_Food/icons/cookware/cup.dmi'
+	icon_state = "cup_porcelain"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 5
+	throwforce = 10
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
+	sellprice = 25
+	anvilrepair = /datum/attribute/skill/craft/blacksmithing
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/porcelain/fancy
 	name = "fancy porcelain teacup"
@@ -54073,6 +58735,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/silver
 	name = "silver goblet"
@@ -54097,6 +58762,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/silver/small
 	name = "silver cup"
@@ -54121,6 +58789,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/skull
 	name = "skull goblet"
@@ -54145,6 +58816,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/steel
 	name = "goblet"
@@ -54169,6 +58843,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/tin
 	name = "tin goblet"
@@ -54193,6 +58870,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/tin/small
 	name = "tin cup"
@@ -54217,6 +58897,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/wooden
 	name = "wooden cup"
@@ -54239,6 +58922,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/cup/wooden/crafted
 	name = "wooden cup"
@@ -54262,6 +58948,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 25
+	amount_per_transfer_from_this = 6
+	possible_transfer_amounts = list(6)
 
 /obj/item/reagent_containers/glass/mortar
 	name = "alchemical mortar"
@@ -54282,6 +58971,9 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	inhand_icon_state = null
+	volume = 100
+	amount_per_transfer_from_this = 9
+	possible_transfer_amounts = list(9)
 
 /obj/item/reagent_containers/lux
 	name = "lux"
@@ -54364,6 +59056,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 1
+	amount_per_transfer_from_this = 5
+	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/herozium
 	name = "herozium"
@@ -54385,6 +59080,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 15
+	amount_per_transfer_from_this = 5
+	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/mineral
 	name = "coarse minerals"
@@ -54405,6 +59103,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 1
+	amount_per_transfer_from_this = 5
+	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/moondust
 	name = "moondust"
@@ -54426,6 +59127,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 15
+	amount_per_transfer_from_this = 5
+	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/moondust_purest
 	name = "moondust"
@@ -54447,6 +59151,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 18
+	amount_per_transfer_from_this = 5
+	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/ozium
 	name = "ozium"
@@ -54468,6 +59175,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 15
+	amount_per_transfer_from_this = 5
+	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/rocknut
 	name = "rocknut powder"
@@ -54488,6 +59198,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 1
+	amount_per_transfer_from_this = 5
+	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/salt
 	name = "salt"
@@ -54508,6 +59221,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 1
+	amount_per_transfer_from_this = 5
+	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/sleep_powder
 	name = "powder"
@@ -54529,6 +59245,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 10
+	amount_per_transfer_from_this = 5
+	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/spice
 	name = "spice"
@@ -54550,6 +59269,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 15
+	amount_per_transfer_from_this = 5
+	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/starsugar
 	name = "starsugar"
@@ -54571,6 +59293,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 15
+	amount_per_transfer_from_this = 5
+	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/starsugar/skysugar
 	name = "skysugar"
@@ -54592,6 +59317,9 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
+	volume = 38
+	amount_per_transfer_from_this = 5
+	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/spidervenom_inert
 	name = "Pale spider gland"
@@ -55632,6 +60360,46 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 
+/obj/item/roguegear/wood/reliable
+	name = "reliable wooden cog"
+	desc = "A cog imbued with a special essence, making it very reliable. Used in carts and machinery."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
+	icon_state = "wcog2"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/roguegear/wood/unstable
+	name = "unstable wooden cog"
+	desc = "A cog imbued with a special essence, making it prone to breaking at any time. Used in carts and machinery."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/misc.dmi'
+	icon_state = "wcog2"
+	w_class = WEIGHT_CLASS_SMALL
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
 /obj/item/roguegem
 	parent_type = /obj/item/rockhill
 	name = "mother of all gems"
@@ -55804,6 +60572,25 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sellprice = 42
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/gems_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/gems_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/roguegem/houndgem
+	name = "houndstone gem"
+	desc = "A component to make a Houndstone, it looks like a topaz."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/gems.dmi'
+	icon_state = "topaz_cut"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_ROGUE_MOUTH
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/gems_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/gems_righthand.dmi'
 	inhand_icon_state = null
@@ -58226,6 +63013,106 @@
 	sellprice = 25
 	inhand_icon_state = null
 
+/obj/item/roguestatue/clay/design1
+	name = "ceramic statue"
+	desc = "A ceramic statue, shining in its elegance!"
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "claystatuecooked1"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	sellprice = 25
+	inhand_icon_state = null
+
+/obj/item/roguestatue/clay/design2
+	name = "ceramic statue"
+	desc = "A ceramic statue, shining in its elegance!"
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "claystatuecooked2"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	sellprice = 25
+	inhand_icon_state = null
+
+/obj/item/roguestatue/clay/design3
+	name = "ceramic statue"
+	desc = "A ceramic statue, shining in its elegance!"
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "claystatuecooked3"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	sellprice = 25
+	inhand_icon_state = null
+
+/obj/item/roguestatue/clay/design4
+	name = "ceramic statue"
+	desc = "A ceramic statue, shining in its elegance!"
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "claystatuecooked4"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	sellprice = 25
+	inhand_icon_state = null
+
+/obj/item/roguestatue/clay/design5
+	name = "ceramic statue"
+	desc = "A ceramic statue, shining in its elegance!"
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "claystatuecooked5"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	sellprice = 25
+	inhand_icon_state = null
+
 /obj/item/roguestatue/decrepit
 	name = "decrepit statue"
 	desc = "A statue of wrought bronze, forged to venerate an ancient champion."
@@ -58977,6 +63864,45 @@
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/blunt64_onmob.dmi'
 
+/obj/item/rogueweapon/flail/peasantwarflail/steel
+	name = "greatflail"
+	desc = "The lucerne's ungaitly cousin, favoring a 'ball-and-chain' design that - once spun - can devastate anything caught in its way; a trait that makes it dearly beloved by both peasantry and knights alike."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/blunt64.dmi'
+	icon_state = "greatflail"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 10
+	throwforce = 5
+	worn_icon_state = "sabre"
+	pixel_x = -16
+	pixel_y = -16
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 96
+	rogue_force_wielded = 35
+	wdefense = 6
+	wdefense_wbonus = 3
+	wlength = 4
+	wbalance = -1
+	minstr = 12
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/polearms
+	possible_item_intents = list(/datum/intent/flail/strike)
+	gripped_intents = list(/datum/intent/flail/strikerange, /datum/intent/mace/smash/flailrange, /datum/intent/flail/sweep)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	special = /datum/special_intent/flail_sweep
+	smeltresult = /obj/item/ingot/steel
+	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/blunt64_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/blunt64_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/blunt64_onmob.dmi'
+
 /obj/item/rogueweapon/flail/sflail
 	name = "flail"
 	desc = "This is a swift, steel flail. Strikes hard and far."
@@ -59695,6 +64621,44 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
 	max_blade_int = 240
+	special = /datum/special_intent/greatsword_swing
+	smeltresult = /obj/item/ingot/steel
+	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_onmob.dmi'
+
+/obj/item/rogueweapon/greatsword/grenz/flamberge
+	name = "flamberge"
+	desc = "A close relative of the Grenzelhoftian \"zweihander\", favored by Otavan nobility. The name comes from its unique, flame-shaped blade; a labor only surmountable by Psydonia's finest weaponsmiths."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/64.dmi'
+	icon_state = "steelflamberge"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 14
+	throwforce = 10
+	worn_icon_state = "sabre"
+	pixel_x = -16
+	pixel_y = -16
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_force_wielded = 35
+	wdefense = 6
+	wdefense_wbonus = 3
+	wlength = 4
+	minstr = 9
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/chop, /datum/intent/sword/strike)
+	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
+	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
+	max_blade_int = 180
 	special = /datum/special_intent/greatsword_swing
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -62939,6 +67903,45 @@
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/blunt32_onmob.dmi'
 
+/obj/item/rogueweapon/mace/cudgel/porcelainrungu
+	name = "porcelain rungu"
+	desc = "A ceremonial rungu fired from porcelain."
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/cooking.dmi'
+	icon_state = "clayporcelainrungu"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 22
+	throwforce = 10
+	worn_icon_state = "mace_greyscale"
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 96
+	rogue_force_wielded = 25
+	wdefense = 1
+	wdefense_wbonus = 3
+	wlength = 1
+	wbalance = -1
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/maces
+	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/strike/wallop)
+	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/strike/wallop, /datum/intent/mace/smash, /datum/intent/effect/daze)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
+	sellprice = 55
+	special = /datum/special_intent/ground_smash
+	smeltresult = /obj/item/ash
+	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_onmob.dmi'
+
 /obj/item/rogueweapon/mace/cudgel/psy
 	name = "psydonic handmace"
 	desc = "A shorter variant of the flanged silver mace, rebalanced for one-handed usage. It isn't uncommon for these sidearms to mysteriously 'vanish' from an Adjudicator's belt, only to be 'rediscovered' - and subsequently kept - by a Confessor."
@@ -65552,6 +70555,39 @@
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/shields32_onmob.dmi'
 
+/obj/item/rogueweapon/shield/steam
+	name = "steam shield"
+	desc = "A sturdy wood shield that's been highly modified by an artificer. It seems to have several pipes and gears built into it."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/shields32.dmi'
+	icon_state = "artificershield"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 15
+	throwforce = 10
+	slot_flags = ITEM_SLOT_BACK
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	wdefense = 10
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/shields
+	possible_item_intents = list(/datum/intent/shield/bash, /datum/intent/shield/block, /datum/intent/mace/smash/shield)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/towershield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (3).ogg')
+	special = /datum/special_intent/limbguard
+	coverage = 60
+	anvilrepair = /datum/attribute/skill/craft/carpentry
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/shields32_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/shields32_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/shields32_onmob.dmi'
+
 /obj/item/rogueweapon/shield/tower
 	name = "tower shield"
 	desc = "A gigantic, iron reinforced shield that covers the entire body, a design-copy of the Aasimar shields of an era gone by."
@@ -65903,6 +70939,41 @@
 	associated_skill = /datum/attribute/skill/combat/shields
 	possible_item_intents = list(/datum/intent/shield/bash, /datum/intent/shield/block, /datum/intent/mace/smash/shield)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/towershield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (3).ogg')
+	special = /datum/special_intent/limbguard
+	coverage = 60
+	smeltresult = /obj/item/ash
+	anvilrepair = /datum/attribute/skill/craft/carpentry
+	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
+	worn_icon_state = null
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/shields32_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/shields32_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/shields32_onmob.dmi'
+
+/obj/item/rogueweapon/shield/wood/crafted
+	name = "wooden shield"
+	desc = "A sturdy wooden shield. Will block anything you can imagine."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/shields32.dmi'
+	icon_state = "woodsh"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 10
+	throwforce = 5
+	slot_flags = ITEM_SLOT_BACK
+	rogue_sleeved = null
+	sheathe_icon = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	wdefense = 10
+	wdefense_wbonus = 3
+	wlength = 1
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/shields
+	possible_item_intents = list(/datum/intent/shield/bash, /datum/intent/shield/block, /datum/intent/mace/smash/shield)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/towershield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (3).ogg')
+	sellprice = 6
 	special = /datum/special_intent/limbguard
 	coverage = 60
 	smeltresult = /obj/item/ash
@@ -67238,6 +72309,7 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	firefuel = 2 MINUTES
 	sellprice = 34
+	special = /datum/special_intent/arcyne_descent
 	sewrepair = TRUE
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
@@ -67271,6 +72343,7 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	firefuel = 2 MINUTES
 	sellprice = 121
+	special = /datum/special_intent/arcyne_descent
 	sewrepair = TRUE
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
@@ -67304,6 +72377,7 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	firefuel = 2 MINUTES
 	sellprice = 42
+	special = /datum/special_intent/arcyne_descent
 	sewrepair = TRUE
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
@@ -69329,6 +74403,47 @@
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_onmob.dmi'
 
+/obj/item/rogueweapon/sword/long/broadsword
+	name = "broadsword"
+	desc = "A lethal and well-balanced weapon. The broadsword - better known as a 'hand-and-a-halfer' - has dutifully served the swordsmen of Psydonia in their clashes against man-and-monster alike since time immemmorial. It is one of Rockhill's greatest cultural hallmarks, just behind the concepts of 'zenny-a-mug' happy hours and 'killing people over minor disagreements.'"
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/swords64.dmi'
+	icon_state = "broadsword"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 25
+	throwforce = 15
+	worn_icon_state = "longsword"
+	pixel_x = -16
+	pixel_y = -16
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_sleeved = null
+	sheathe_icon = "broadsword"
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_force_wielded = 30
+	wdefense = 4
+	wdefense_wbonus = 3
+	wlength = 3
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/chop/heavy, /datum/intent/sword/thrust/heavy, /datum/intent/sword/cut/light, /datum/intent/sword/strike)
+	gripped_intents = list(/datum/intent/sword/chop/heavy, /datum/intent/sword/thrust/heavy, /datum/intent/sword/cut/light, /datum/intent/sword/strike)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
+	alt_grips = list(/datum/alt_grip/mordhau/broadsword)
+	max_blade_int = 230
+	special = /datum/special_intent/axe_swing
+	smeltresult = /obj/item/ingot/iron
+	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/swords64_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/swords64_onmob.dmi'
+
 /obj/item/rogueweapon/sword/long/broadsword/bronze
 	name = "spatha"
 	desc = "A hero needn't speak - for when they are gone, the world will speak for them."
@@ -69361,6 +74476,47 @@
 	max_blade_int = 295
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/bronze
+	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/swords64_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/swords64_onmob.dmi'
+
+/obj/item/rogueweapon/sword/long/broadsword/steel
+	name = "steel broadsword"
+	desc = "A lethal and well-balanced weapon. The broadsword - better known as a 'hand-and-a-halfer' - has dutifully served the swordsmen of Psydonia in their clashes against man-and-monster alike since time immemmorial. Valoria's watchmen are renowned for their use of these steel-bladed iterations: an expensive necessity, in order to lay their undying besiegers to rest for good."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/swords64.dmi'
+	icon_state = "sbroadsword"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 25
+	throwforce = 15
+	worn_icon_state = "longsword"
+	pixel_x = -16
+	pixel_y = -16
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_sleeved = null
+	sheathe_icon = "sbroadsword"
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_force_wielded = 30
+	wdefense = 4
+	wdefense_wbonus = 3
+	wlength = 3
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/chop/heavy, /datum/intent/sword/thrust/heavy, /datum/intent/sword/cut/light, /datum/intent/sword/strike)
+	gripped_intents = list(/datum/intent/sword/chop/heavy, /datum/intent/sword/thrust/heavy, /datum/intent/sword/cut/light, /datum/intent/sword/strike)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
+	alt_grips = list(/datum/alt_grip/mordhau/broadsword)
+	max_blade_int = 330
+	special = /datum/special_intent/axe_swing
+	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/swords64_righthand.dmi'
@@ -69901,6 +75057,47 @@
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/swords64_onmob.dmi'
 
+/obj/item/rogueweapon/sword/long/kriegmesser
+	name = "kriegsmesser"
+	desc = "A large two-handed sword with a single-edged blade, a crossguard and a knife-like hilt. It is meant to be wielded with both hands and is a popular weapon amongst Grenzelhoftian mercenaries."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/swords64.dmi'
+	icon_state = "kriegmesser"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 25
+	throwforce = 15
+	worn_icon_state = "longsword"
+	pixel_x = -16
+	pixel_y = -16
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_sleeved = null
+	sheathe_icon = "longsword"
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_force_wielded = 30
+	wdefense = 4
+	wdefense_wbonus = 4
+	wlength = 3
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/krieg, /datum/intent/sword/chop/falx, /datum/intent/sword/strike, /datum/intent/rend/krieg)
+	gripped_intents = list(/datum/intent/sword/cut/krieg, /datum/intent/sword/thrust/long/deep, /datum/intent/sword/strike, /datum/intent/rend/krieg)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
+	alt_grips = null
+	max_blade_int = 330
+	special = /datum/special_intent/side_sweep
+	smeltresult = /obj/item/ingot/steel
+	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/swords64_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/swords64_onmob.dmi'
+
 /obj/item/rogueweapon/sword/long/kriegmesser/silver
 	name = "silver broadsword"
 	desc = "A two-handed broadsword, fitted with a blade of pure silver. Each swing commands more effort than the last, but not without purpose. One blow to crack the deadite's leg in twain; and a heartbeat later, another to splatter the soil with bile and teeth."
@@ -70294,6 +75491,46 @@
 	max_blade_int = 150
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
+	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/swords64_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/swords64_onmob.dmi'
+
+/obj/item/rogueweapon/sword/long/shotel/iron
+	name = "iron shotel"
+	desc = "A long curved blade of Zybantine Design."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/swords64.dmi'
+	icon_state = "shotel_iron"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 25
+	throwforce = 15
+	worn_icon_state = "longsword"
+	pixel_x = -16
+	pixel_y = -16
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_sleeved = null
+	sheathe_icon = "longsword"
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 64
+	rogue_force_wielded = 30
+	wdefense = 4
+	wdefense_wbonus = 4
+	wlength = 3
+	minstr = 7
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/chop/long)
+	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/chop/long)
+	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
+	max_blade_int = 100
+	special = /datum/special_intent/side_sweep
+	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/swords64_righthand.dmi'
@@ -71803,6 +77040,43 @@
 	rogue_grid_height = 96
 	rogue_force_wielded = 25
 	wdefense = 2
+	wdefense_wbonus = 3
+	wbalance = 1
+	minstr = 4
+	can_parry = TRUE
+	associated_skill = /datum/attribute/skill/combat/swords
+	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/axe/chop, /datum/intent/sword/strike)
+	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
+	max_blade_int = 250
+	special = /datum/special_intent/shin_swipe
+	smeltresult = /obj/item/ingot/iron
+	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/swords32_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/swords32_onmob.dmi'
+
+/obj/item/rogueweapon/sword/short/messer/iron/virtue
+	name = "dueling messer"
+	desc = "A basic single-edge iron hunting sword that has been modified for the express purpose of dueling, with an added guard and a leaner grip for comfort and speed."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/swords32.dmi'
+	icon_state = "dmesser"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 24
+	throwforce = 10
+	worn_icon_state = "sabre"
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_POCKETS
+	rogue_sleeved = null
+	sheathe_icon = "isword"
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 32
+	rogue_grid_height = 96
+	rogue_force_wielded = 25
+	wdefense = 3
 	wdefense_wbonus = 3
 	wbalance = 1
 	minstr = 4
@@ -74741,6 +80015,27 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 
+/obj/item/storage/backpack/rogue/artibackpack
+	name = "Cooling backpack"
+	desc = "A leather backpack with complex pipework coursing through it. It hums and vibrates constantly."
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/storage.dmi'
+	icon_state = "artibackpack"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 0
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/back_l.dmi'
+	slot_flags = ITEM_SLOT_BACK
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	worn_icon_state = "artibackpack"
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/storage_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/storage_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	storage_type = /datum/storage/rogue_grid/roguetown/backpack
+
 /obj/item/storage/backpack/rogue/backpack
 	name = "backpack"
 	desc = "One of the best ways to carry many things while keeping your hands free."
@@ -76324,6 +81619,28 @@
 	rogue_baked_inhand = TRUE
 	storage_type = /datum/storage/rogue_grid/grid/detpack
 
+/obj/item/storage/gadget/messkit
+	name = "mess kit"
+	desc = "A small, portable mess kit. It can be used to cook food."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/gadgets.dmi'
+	icon_state = "messkit"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	worn_icon_state = null
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	rogue_grid_width = 64
+	rogue_grid_height = 32
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/gadgets_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/gadgets_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	storage_type = /datum/storage/rogue_grid/roguetown/messkit
+
 /obj/item/storage/hip/headhook
 	name = "head hook"
 	desc = "an iron hook for storing 6 heads"
@@ -76345,6 +81662,28 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	storage_type = /datum/storage/rogue_grid/grid/headhook
+
+/obj/item/storage/hip/headhook/bronze
+	name = "bronze head hook"
+	desc = "a bronze hook for storing 12 heads"
+	icon = 'modular_redtard/rockhill/icons/roguetown/clothing/belts.dmi'
+	icon_state = "bronzeheadhook"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 0
+	worn_icon_state = "bronzeheadhook"
+	slot_flags = ITEM_SLOT_POCKETS
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	smeltresult = /obj/item/ingot/bronze
+	anvilrepair = /datum/attribute/skill/craft/blacksmithing
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/belts_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/belts_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+	storage_type = /datum/storage/rogue_grid/grid/headhook/bronze
 
 /obj/item/storage/hip/orestore/bronze
 	name = "mechanized ore bag"

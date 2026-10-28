@@ -34,6 +34,18 @@
 	passive_generation = 0
 	generation_price = 1
 
+/datum/roguestock/stockpile/lumber_essence
+	name = "Essence of Lumber"
+	desc = "Heartwood of the forest"
+	item_type = /obj/item/grown/log/tree/small/essence
+	category = "Alchemy"
+	base_price = 20
+	stockpile_amount = 0
+	stockpile_limit = 5
+	importexport_amt = 3
+	passive_generation = 0
+	generation_price = 1
+
 /datum/roguestock/stockpile/volf
 	name = "Bushmeat"
 	desc = "Barely edible flesh harvested from volfs."

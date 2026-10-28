@@ -123,7 +123,7 @@ GLOBAL_LIST_INIT(rogue_bind_catches, list(
 		used_weapon.rogue_dull(ROGUE_BLADE_PARRY_WEAR * ROGUE_BIND_VULNERABLE_WEAR, src)
 	do_sparks(4, FALSE, get_turf(src))
 	playsound(src, pick(length(used_weapon.parrysound) ? used_weapon.parrysound : GLOB.rogue_default_parry_sounds), 100, TRUE, 2)
-	visible_message(span_notice("[src] binds [p_their()] weapon with [attacker]'s! [p_they(TRUE)] saw that attack coming!"))
+	visible_message(span_notice("[src] binds [p_their()] weapon with [attacker]'s! [p_They()] saw that attack coming!"))
 	log_combat(src, attacker, "bound the weapon of")
 	return TRUE
 
@@ -198,7 +198,7 @@ GLOBAL_LIST_INIT(rogue_bind_catches, list(
 	playsound(get_turf(src), pick(sounds), 100, FALSE)
 	var/strong_attack = attacker.rogue_rmb_is(/datum/rogue_rmb_intent/strong)
 	var/message = "<b>[src]</b> [riposting ? "[pick("expertly", "deftly")] parries" : "parries"] [attacker][strong_attack ? "'s [pick("hefty", "strong")] attack" : ""][weapon_parry ? " with [used_weapon]" : ""]![untrained ? " Untrained Armor Penalty!" : ""]"
-	visible_message(span_warning(message), span_boldwarning(message), COMBAT_MESSAGE_RANGE, list(attacker))
+	visible_message(span_warning(message), span_boldwarning(message), null, COMBAT_MESSAGE_RANGE, list(attacker))
 	to_chat(attacker, span_boldwarning(message))
 	log_combat(src, attacker, "parried")
 	if(attack_intent?.sharpness_penalty)

@@ -43,6 +43,7 @@ GLOBAL_LIST_INIT(rogue_fist_intents, list(
 	attack_verb = list("punches", "jabs", "clocks", "strikes")
 	misscost = 4
 	miss_text = "swing a fist at the air"
+	miss_text_others = "swings a fist at the air"
 	unarmed_action = ROGUE_UNARMED_HARM
 
 /mob/living/carbon/human/rogue_fist_intents()

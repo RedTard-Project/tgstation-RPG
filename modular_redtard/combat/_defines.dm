@@ -267,6 +267,10 @@
 #define ROGUE_FOV_SIDE 135
 #define ROGUE_FOV_SIDE_BEHIND 90
 #define ROGUE_FOV_SIDE_BLOCKED 45
+#define ROGUE_FOV_BEHIND_BRIGHTNESS rogue_value("fov_behind_brightness")
+#define ROGUE_FOV_BEHIND_SATURATION rogue_value("fov_behind_saturation")
+#define ROGUE_FOV_BEHIND_BLUR rogue_value("fov_behind_blur")
+#define ROGUE_FOV_EDGE_BLUR rogue_value("fov_edge_blur")
 #define COMSIG_MOB_ROGUE_SNEAK_CHANGED "mob_rogue_sneak_changed"
 #define ROGUE_SNEAK_SOURCE "rogue_sneak"
 #define ROGUE_SNEAK_LIGHT rogue_value("sneak_light")

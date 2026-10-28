@@ -316,6 +316,12 @@
 	cost = 15
 	contains = list(/obj/item/bodypart/r_leg/prosthetic)
 
+/datum/rogue_supply_pack/blackmarket_tools/prarmlbrz
+	name = "Prostethic Bronze Arm (L)"
+	group = "General Labour"
+	cost = 200
+	contains = list(/obj/item/contraption/bronzeprosthetic)
+
 /datum/rogue_supply_pack/blackmarket_tools/grapplinghook
 	name = "Climbing Machine"
 	group = "General Labour"
@@ -423,6 +429,24 @@
 	group = "Adventuring Supplies"
 	cost = 35
 	contains = list(/obj/item/folding_table_stored)
+
+/datum/rogue_supply_pack/adventure_supplies/folding_alchstation
+	name = "Alchemical station kit"
+	group = "Adventuring Supplies"
+	cost = 45
+	contains = list(/obj/item/folding_table_stored/alchstation)
+
+/datum/rogue_supply_pack/adventure_supplies/folding_alchcauldron
+	name = "Folding cauldron"
+	group = "Adventuring Supplies"
+	cost = 45
+	contains = list(/obj/item/folding_table_stored/alchcauldron)
+
+/datum/rogue_supply_pack/adventure_supplies/mess_kit
+	name = "Mess Kit"
+	group = "Adventuring Supplies"
+	cost = 60
+	contains = list(/obj/item/storage/gadget/messkit)
 
 /datum/rogue_supply_pack/adventure_supplies/needles
 	name = "Needles"
@@ -1188,6 +1212,12 @@
 	group = "Magic"
 	cost = 300
 	contains = list(/obj/item/scrying)
+
+/datum/rogue_supply_pack/magic/listenst
+	name = "Emerald Choker"
+	group = "Magic"
+	cost = 250
+	contains = list(/obj/item/listenstone)
 
 /datum/rogue_supply_pack/magic/talkstone
 	name = "Talkstone"
@@ -2286,6 +2316,12 @@
 	cost = 25
 	contains = list(/obj/item/clothing/shoes/roguetown/boots/armor/iron)
 
+/datum/rogue_supply_pack/armor_iron/mailleboots_iron
+	name = "Maille Boots"
+	group = "Armor (Iron)"
+	cost = 25
+	contains = list(/obj/item/clothing/shoes/roguetown/boots/maille/iron)
+
 /datum/rogue_supply_pack/armor_iron/skullcap_helmet
 	name = "Helmet, Skullcap"
 	group = "Armor (Iron)"
@@ -2478,11 +2514,23 @@
 	cost = 155
 	contains = list(/obj/item/clothing/suit/roguetown/armor/plate/fluted)
 
+/datum/rogue_supply_pack/armor_steel/fullplate
+	name = "Full Plate"
+	group = "Armor (Steel)"
+	cost = 350
+	contains = list(/obj/item/clothing/suit/roguetown/armor/plate/full)
+
 /datum/rogue_supply_pack/armor_steel/fullplate_fluted
 	name = "Full Plate, Fluted"
 	group = "Armor (Steel)"
 	cost = 380
 	contains = list(/obj/item/clothing/suit/roguetown/armor/plate/full/fluted)
+
+/datum/rogue_supply_pack/armor_steel/coatplates
+	name = "Coat of Plates"
+	group = "Armor (Steel)"
+	cost = 95
+	contains = list(/obj/item/clothing/suit/roguetown/armor/brigandine/coatplates)
 
 /datum/rogue_supply_pack/armor_steel/cuirass_steel
 	name = "Cuirass"
@@ -2574,6 +2622,12 @@
 	cost = 50
 	contains = list(/obj/item/clothing/wrists/roguetown/bracers)
 
+/datum/rogue_supply_pack/armor_steel/bracers_chain
+	name = "Bracers, Chainmaille"
+	group = "Armor (Steel)"
+	cost = 50
+	contains = list(/obj/item/clothing/wrists/roguetown/bracers/chain)
+
 /datum/rogue_supply_pack/armor_steel/helmet_nasal
 	name = "Helmet, Nasal"
 	group = "Armor (Steel)"
@@ -2663,6 +2717,12 @@
 	group = "Armor (Steel)"
 	cost = 90
 	contains = list(/obj/item/clothing/head/roguetown/helmet/heavy/sheriff)
+
+/datum/rogue_supply_pack/armor_steel/helmet_beak
+	name = "Helmet, Beak"
+	group = "Armor (Steel)"
+	cost = 90
+	contains = list(/obj/item/clothing/head/roguetown/helmet/heavy/beakhelm)
 
 /datum/rogue_supply_pack/armor_steel/bevor
 	name = "Bevor"
@@ -2946,6 +3006,12 @@
 	cost = 25
 	contains = list(/obj/item/rogueweapon/sword/short/messer/iron)
 
+/datum/rogue_supply_pack/iron_weapons/broadsword
+	name = "Broadsword"
+	group = "Weapons (Iron and Shields)"
+	cost = 40
+	contains = list(/obj/item/rogueweapon/sword/long/broadsword)
+
 /datum/rogue_supply_pack/iron_weapons/mace
 	name = "Mace"
 	group = "Weapons (Iron and Shields)"
@@ -3138,6 +3204,18 @@
 	cost = 70
 	contains = list(/obj/item/rogueweapon/sword/long)
 
+/datum/rogue_supply_pack/steel_weapons/broadsword
+	name = "Broadsword"
+	group = "Weapons (Steel)"
+	cost = 70
+	contains = list(/obj/item/rogueweapon/sword/long/broadsword/steel)
+
+/datum/rogue_supply_pack/steel_weapons/kriegmesser
+	name = "Kriegsmesser"
+	group = "Weapons (Steel)"
+	cost = 70
+	contains = list(/obj/item/rogueweapon/sword/long/kriegmesser)
+
 /datum/rogue_supply_pack/steel_weapons/battleaxe
 	name = "Battle Axe"
 	group = "Weapons (Steel)"
@@ -3161,6 +3239,12 @@
 	group = "Weapons (Steel)"
 	cost = 105
 	contains = list(/obj/item/rogueweapon/greatsword/grenz)
+
+/datum/rogue_supply_pack/steel_weapons/flamberge
+	name = "Steel Flamberge"
+	group = "Weapons (Steel)"
+	cost = 105
+	contains = list(/obj/item/rogueweapon/greatsword/grenz/flamberge)
 
 /datum/rogue_supply_pack/steel_weapons/estoc
 	name = "Estoc"
@@ -3203,6 +3287,12 @@
 	group = "Weapons (Steel)"
 	cost = 75
 	contains = list(/obj/item/rogueweapon/mace/goden/steel)
+
+/datum/rogue_supply_pack/steel_weapons/greatflail
+	name = "Greatflail"
+	group = "Weapons (Steel)"
+	cost = 80
+	contains = list(/obj/item/rogueweapon/flail/peasantwarflail/steel)
 
 /datum/rogue_supply_pack/steel_weapons/partizan
 	name = "Partizan"

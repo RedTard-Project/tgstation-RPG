@@ -580,7 +580,8 @@
 				"random_pick": true,
 				"placement": true,
 				"natural": [
-					"/obj/structure/trap"
+					"/obj/structure/trap",
+					"/obj/structure/bookcase"
 				],
 				"type_vars": {
 					"/obj/structure/lever": [
@@ -732,7 +733,19 @@
 				],
 				"graft": "/obj/item/rockhill",
 				"graft_overrides": {
-					"/obj/item/roguecoin": "/obj/item/stack"
+					"/obj/item/roguecoin": "/obj/item/stack",
+					"/obj/item/paper/scroll": "/obj/item/paper",
+					"/obj/item/ammo_casing/caseless": "/obj/item/ammo_casing/rogue",
+					"/obj/item/gun/ballistic/revolver/grenadelauncher/bow": "/obj/item/gun/ballistic/rogue_launcher/bow",
+					"/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow": "/obj/item/gun/ballistic/rogue_launcher/crossbow",
+					"/obj/item/gun/ballistic/revolver/grenadelauncher/sling": "/obj/item/gun/ballistic/rogue_launcher/sling",
+					"/obj/item/quiver": "/obj/item/rogue_quiver"
+				},
+				"graft_override_vars": {
+					"/obj/item/paper/scroll": {
+						"show_written_words": "FALSE",
+						"slot_flags": "NONE"
+					}
 				},
 				"natural": [
 					"/obj/item/clothing",
@@ -754,8 +767,59 @@
 						"smoketime",
 						"chem_volume",
 						"list_reagents"
+					],
+					"/obj/item/reagent_containers/glass": [
+						"volume",
+						"amount_per_transfer_from_this",
+						"possible_transfer_amounts"
+					],
+					"/obj/item/reagent_containers/powder": [
+						"volume",
+						"amount_per_transfer_from_this",
+						"possible_transfer_amounts"
+					],
+					"/obj/item/book/rogue": [
+						"bookfile",
+						"category"
+					],
+					"/obj/item/natural/clay": [
+						"cooked_type"
+					],
+					"/obj/item/ammo_casing": [
+						"caliber",
+						"projectile_type"
+					],
+					"/obj/item/gun/ballistic/revolver/grenadelauncher": [
+						"damfactor",
+						"accfactor",
+						"penfactor",
+						"damage_from_perception",
+						"heavy_bow",
+						"reloadtime",
+						"movingreload",
+						"hasloadedsprite"
+					],
+					"/obj/item/quiver": [
+						"max_storage"
 					]
 				},
+				"type_sounds": {
+					"/obj/item/gun/ballistic/revolver/grenadelauncher": [
+						"fire_sound",
+						"load_sound"
+					]
+				},
+				"inherited_vars": {
+					"sleevetype": "null",
+					"nodismemsleeves": "FALSE",
+					"r_sleeve_status": "ROGUE_SLEEVE_NOMOD",
+					"l_sleeve_status": "ROGUE_SLEEVE_NOMOD",
+					"rogue_sleeve_scrap": "/obj/item/natural/cloth",
+					"rogue_face_coverage": "NONE"
+				},
+				"face_coverage_vars": [
+					"rogue_face_coverage"
+				],
 				"vars": [
 					"name",
 					"desc",
@@ -831,7 +895,8 @@
 					"intdamage_factor",
 					"smeltresult",
 					"anvilrepair",
-					"sewrepair"
+					"sewrepair",
+					"accepted_magazine_type"
 				],
 				"true_only": [
 					"sewrepair"
@@ -846,7 +911,10 @@
 					"rogue_grid_height": "grid_height",
 					"armour_penetration": "armor_penetration",
 					"rogue_blocksound": "blocksound",
-					"rogue_force_wielded": "force_wielded"
+					"rogue_force_wielded": "force_wielded",
+					"rogue_sleeve_scrap": "salvage_result",
+					"rogue_face_coverage": "body_parts_covered",
+					"accepted_magazine_type": "mag_type"
 				},
 				"slot_worn_icons": {
 					"worn_icon": {
@@ -899,7 +967,8 @@
 					"origin_type",
 					"valid_blade",
 					"special",
-					"smeltresult"
+					"smeltresult",
+					"rogue_sleeve_scrap"
 				],
 				"sprite_checks": true,
 				"bake": true,
@@ -920,6 +989,24 @@
 						"SHIRT_LAYER": "ROGUE_SHIRT_LAYER",
 						"WRISTS_LAYER": "ROGUE_WRISTS_LAYER",
 						"8.9": "(HANDS_LAYER - 0.1)"
+					},
+					"r_sleeve_status": {
+						"SLEEVE_NORMAL": "ROGUE_SLEEVE_NORMAL",
+						"SLEEVE_TORN": "ROGUE_SLEEVE_TORN",
+						"SLEEVE_ROLLED": "ROGUE_SLEEVE_ROLLED",
+						"SLEEVE_NOMOD": "ROGUE_SLEEVE_NOMOD"
+					},
+					"l_sleeve_status": {
+						"SLEEVE_NORMAL": "ROGUE_SLEEVE_NORMAL",
+						"SLEEVE_TORN": "ROGUE_SLEEVE_TORN",
+						"SLEEVE_ROLLED": "ROGUE_SLEEVE_ROLLED",
+						"SLEEVE_NOMOD": "ROGUE_SLEEVE_NOMOD"
+					},
+					"accepted_magazine_type": {
+						"/obj/item/ammo_box/magazine/internal/shot/bow": "/obj/item/ammo_box/magazine/internal/rogue_launcher/arrow",
+						"/obj/item/ammo_box/magazine/internal/shot/xbow": "/obj/item/ammo_box/magazine/internal/rogue_launcher/bolt",
+						"/obj/item/ammo_box/magazine/internal/shot/heavy_xbow": "/obj/item/ammo_box/magazine/internal/rogue_launcher/heavy_bolt",
+						"/obj/item/ammo_box/magazine/internal/shot/sling": "/obj/item/ammo_box/magazine/internal/rogue_launcher/sling"
 					}
 				},
 				"grid_storage": true,
@@ -988,8 +1075,68 @@
 					"armor_class",
 					"rogue_blocksound",
 					"material_category",
-					"chunkcolor"
+					"chunkcolor",
+					"rogue_sleeve_scrap"
 				]
+			},
+			{
+				"file": "projectiles.dm",
+				"prefixes": [
+					"/obj/projectile"
+				],
+				"graft": "/obj/projectile/rogue_ammo",
+				"graft_overrides": {
+					"/obj/projectile/bullet/reusable": "/obj/projectile/rogue_ammo/reusable"
+				},
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"color",
+					"damage",
+					"armour_penetration",
+					"range",
+					"rogue_tile_time",
+					"rogue_embed_chance",
+					"rogue_bclass",
+					"rogue_npc_damage_mult",
+					"rogue_accuracy",
+					"hitsound",
+					"rogue_drop_type"
+				],
+				"rename": {
+					"armour_penetration": "armor_penetration",
+					"rogue_tile_time": "speed",
+					"rogue_embed_chance": "embedchance",
+					"rogue_bclass": "woundclass",
+					"rogue_npc_damage_mult": "npc_simple_damage_mult",
+					"rogue_accuracy": "accuracy",
+					"rogue_drop_type": "ammo_type"
+				},
+				"numeric_vars": [
+					"damage",
+					"armour_penetration",
+					"range",
+					"rogue_tile_time",
+					"rogue_embed_chance",
+					"rogue_npc_damage_mult",
+					"rogue_accuracy"
+				],
+				"numeric_defaults": {
+					"rogue_accuracy": 65,
+					"rogue_npc_damage_mult": 1
+				},
+				"string_define_vars": [
+					"rogue_bclass"
+				],
+				"paths": [
+					"rogue_drop_type"
+				],
+				"sounds": [
+					"hitsound"
+				],
+				"sprite_checks": true
 			},
 			{
 				"file": "humans.dm",
@@ -1129,6 +1276,11 @@
 			"icons/effects/mousemice/swang/*.dmi"
 		],
 		"extra_sounds": [
+			"sound/combat/Ranged/bow-draw-01.ogg",
+			"sound/combat/Ranged/sling-draw-01.ogg",
+			"sound/combat/Ranged/crossbow_medium_reload-01.ogg",
+			"sound/combat/Ranged/crossbow_medium_reload-02.ogg",
+			"sound/combat/Ranged/crossbow-small-shot-02.ogg",
 			"sound/items/bsmith1.ogg",
 			"sound/items/bsmith2.ogg",
 			"sound/items/bsmith3.ogg",
@@ -1319,12 +1471,41 @@
 			"repair_cost_second",
 			"item_chair",
 			"spawned",
-			"smeltresult"
+			"smeltresult",
+			"salvage_result"
 		],
+		"linked_types_by_prefix": {
+			"/obj/item/ammo_casing": [
+				"projectile_type"
+			],
+			"/obj/item/natural/clay": [
+				"cooked_type"
+			]
+		},
+		"typed_fills": {
+			"/obj/item/quiver": "rogue_quiver_fill"
+		},
 		"anvil_recipes": {
 			"root": "/datum/anvil_recipe",
 			"file": "modular_redtard/crafting/ported/anvil_recipes.dm",
 			"default_skill": "/datum/attribute/skill/craft/blacksmithing"
+		},
+		"artificer_recipes": {
+			"root": "/datum/artificer_recipe",
+			"file": "modular_redtard/crafting/ported/artificer_recipes.dm",
+			"default_skill": "/datum/attribute/skill/craft/engineering"
+		},
+		"pottery_recipes": {
+			"root": "/datum/pottery_wheel_recipe",
+			"file": "modular_redtard/crafting/ported/pottery_recipes.dm",
+			"defaults": {
+				"craftdiff": 0,
+				"base_time": 40,
+				"result_type": null,
+				"result_count": 1,
+				"required_clay_type": "/obj/item/natural/clay/kneaded",
+				"spins_required": 2
+			}
 		},
 		"craft_recipes": {
 			"root": "/datum/crafting_recipe/roguetown",
@@ -1395,7 +1576,30 @@
 			"recipe_target": "/datum/rogue_food_recipe",
 			"file": "modular_redtard/survival/ported/food.dm",
 			"always": [
-				"/obj/item/reagent_containers/food/snacks/badrecipe"
+				"/obj/item/reagent_containers/food/snacks/badrecipe",
+				"/obj/item/reagent_containers/food/snacks/rogue/dough_base",
+				"/obj/item/reagent_containers/food/snacks/rogue/butterdough",
+				"/obj/item/reagent_containers/food/snacks/rogue/butterdoughslice",
+				"/obj/item/reagent_containers/food/snacks/rogue/piedough",
+				"/obj/item/reagent_containers/food/snacks/rogue/flatdough",
+				"/obj/item/reagent_containers/food/snacks/rogue/foodbase/piebottom",
+				"/obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw",
+				"/obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw/fish",
+				"/obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw/meat",
+				"/obj/item/reagent_containers/food/snacks/rogue/foodbase/nitzel",
+				"/obj/item/reagent_containers/food/snacks/rogue/foodbase/schnitzel",
+				"/obj/item/reagent_containers/food/snacks/rogue/foodbase/chickentender",
+				"/obj/item/reagent_containers/food/snacks/rogue/foodbase/wienernitzel",
+				"/obj/item/reagent_containers/food/snacks/rogue/foodbase/squires_delight",
+				"/obj/item/reagent_containers/food/snacks/rogue/meat/nitzel",
+				"/obj/item/reagent_containers/food/snacks/rogue/meat/nitzel/schnitzel",
+				"/obj/item/reagent_containers/food/snacks/rogue/meat/nitzel/wiener",
+				"/obj/item/reagent_containers/food/snacks/rogue/meat/chickentender",
+				"/obj/item/reagent_containers/food/snacks/squiresdelight",
+				"/obj/item/reagent_containers/food/snacks/rogue/pie/cooked/meat/fish",
+				"/obj/item/reagent_containers/food/snacks/rogue/pie/cooked/berry",
+				"/obj/item/reagent_containers/food/snacks/rogue/pie/cooked/pot",
+				"/obj/item/reagent_containers/food/snacks/rogue/pie/cooked/crab"
 			],
 			"defaults": {
 				"cooktime": 0,
@@ -1405,6 +1609,38 @@
 				"warming": 3000,
 				"slice_bclass": "BCLASS_CUT",
 				"time_per_step": 20
+			},
+			"root_block": "/obj/item/reagent_containers/food",
+			"root_values": {
+				"rogue_faretype": "ROGUE_FARE_IMPOVERISHED",
+				"rogue_portable": "TRUE"
+			},
+			"module_defaults": {
+				"eat_effect": "null",
+				"cooked_type": "null",
+				"fried_type": "null",
+				"cooktime": 0,
+				"burntime": 3000,
+				"bitesize": 3,
+				"rotprocess": 0,
+				"warming": 3000,
+				"become_rot_type": "null",
+				"slice_path": "null",
+				"slices_num": 0,
+				"slice_bclass": "BCLASS_CUT",
+				"slice_batch": "TRUE",
+				"rogue_faretype": "ROGUE_FARE_IMPOVERISHED",
+				"rogue_portable": "TRUE",
+				"rogue_cooked_smell": "null",
+				"rogue_fat_yield": 0,
+				"rogue_deep_fried_type": "null"
+			},
+			"fare": {
+				"1": "ROGUE_FARE_IMPOVERISHED",
+				"2": "ROGUE_FARE_POOR",
+				"3": "ROGUE_FARE_NEUTRAL",
+				"4": "ROGUE_FARE_FINE",
+				"5": "ROGUE_FARE_LAVISH"
 			},
 			"eat_effects": {
 				"/datum/status_effect/debuff/uncookedfood": "/datum/status_effect/rogue_food/uncooked",
@@ -1447,7 +1683,17 @@
 			"/mob/living/simple_animal/hostile/rogue/mirespider_paralytic",
 			"/mob/living/simple_animal/hostile/retaliate/rogue/mirespider",
 			"/obj/item/rogueweapon/mace/oar",
-			"/obj/item/natural/cured/essence"
+			"/obj/item/natural/cured/essence",
+			"/obj/item/book/rogue/festus",
+			"/obj/item/book/rogue/bookofpriests",
+			"/obj/item/book/rogue/robber",
+			"/obj/item/book/rogue/beardling",
+			"/obj/item/book/rogue/knowledge1",
+			"/obj/item/book/rogue/naledi1",
+			"/obj/item/book/rogue/naledi2",
+			"/obj/item/book/rogue/naledi3",
+			"/obj/item/book/rogue/naledi4",
+			"/obj/item/ammo_casing/caseless/rogue/sling_bullet"
 		],
 		"bake": {
 			"manifest": "modular_redtard/rockhill/onmob_bake.json",
@@ -1507,7 +1753,8 @@
 				"effective_range",
 				"effective_range_type",
 				"sharpness_penalty",
-				"intent_intdamage_factor"
+				"intent_intdamage_factor",
+				"basetime"
 			],
 			"numeric_defaults": {
 				"swingdelay_type": 1,
@@ -1595,7 +1842,8 @@
 					"goblin_cave",
 					"goblin_hell",
 					"goblin_sea",
-					"goblin_moon"
+					"goblin_moon",
+					"goblin_skel"
 				],
 				"worn": [
 					"plate_helm",
@@ -1714,6 +1962,9 @@
 				"/datum/species/goblin": ["/datum/language/common", "/datum/language/orcish"]
 			},
 			"generic_voicepacks": ["/datum/voicepack/male", "/datum/voicepack/female"],
+			"human_voices": {"m": "/datum/voicepack/male", "f": "/datum/voicepack/female"},
+			"human_voice_files": "^sound/vo/(?:male|female)/(?:gen/(?!se/)[^/]+|(?:male|female)_sneeze[.]ogg)$",
+			"human_voice_skip": ["moan", "sexmoanhvy", "sexmoanlight"],
 			"species_voices": {
 				"/datum/species/goblin": {"m": "/datum/voicepack/other/goblin", "f": "/datum/voicepack/other/goblin"}
 			},
@@ -1771,7 +2022,7 @@
 				"file": "redtard_logo.dmi",
 				"name": "logo",
 				"kind": "dmi",
-				"origin": "RedTard logo, Logo_480x480_.gif supplied by the project owner (2026-10-13), converted by modular_redtard/tools/gif_to_dmi.py --every 9"
+				"origin": "RedTard logo, Logo_480x480_.gif supplied by the project owner (2026-10-13), converted by gif_to_dmi.py of ai-skills (scripts/gif_to_dmi.py) --every 4"
 			}
 		]
 	},

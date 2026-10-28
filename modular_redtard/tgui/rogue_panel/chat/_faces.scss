@@ -1,0 +1,7 @@
+// The chat's faces, shared by its stylesheets (ratwood.scss, speech_fonts.scss).
+
+// Ratwood's Pterra has no Cyrillic, so a Russian chat reads in a book face that has it.
+$book: 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+
+// Pterra is drawn small for its size: it is scaled up to the panel's own font size setting.
+$pterra-scale: 145%;

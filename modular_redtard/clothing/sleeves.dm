@@ -1,16 +1,25 @@
 /obj/item
 	var/rogue_sleeved
 
+/// The arm or leg of a side, "r" or "l".
+/proc/rogue_sleeve_zone(side, legs)
+	if(legs)
+		return side == "r" ? BODY_ZONE_R_LEG : BODY_ZONE_L_LEG
+	return side == "r" ? BODY_ZONE_R_ARM : BODY_ZONE_L_ARM
+
+/// The sleeves of one side are drawn only over a limb that is there and only while the sleeve is not torn off or rolled up (Ratwood
+/// get_sleeves_layer() sleeveindex); a cloak's (whole) and pauldrons (nodismemsleeves) are drawn always.
 /mob/living/carbon/human/proc/rogue_sleeves(obj/item/worn, sleeve_layer, legs = FALSE, whole = FALSE)
 	if(!worn?.rogue_sleeved)
 		return null
+	var/always = whole || worn.nodismemsleeves
 	var/list/sleeves = list()
 	for(var/side in list("r", "l"))
-		var/zone = legs ? (side == "r" ? BODY_ZONE_R_LEG : BODY_ZONE_L_LEG) : (side == "r" ? BODY_ZONE_R_ARM : BODY_ZONE_L_ARM)
+		var/zone = rogue_sleeve_zone(side, legs)
 		var/state = "[side]_[worn.icon_state]"
 		if(rogue_wears_female() && icon_exists(worn.rogue_sleeved, "[state][ROGUE_FEMALE_SUFFIX]"))
 			state += ROGUE_FEMALE_SUFFIX
-		if((!whole && !get_bodypart(zone)) || !icon_exists(worn.rogue_sleeved, state))
+		if((!always && (!get_bodypart(zone) || worn.rogue_sleeve_bare(side))) || !icon_exists(worn.rogue_sleeved, state))
 			continue
 		var/mutable_appearance/sleeve = mutable_appearance(worn.rogue_sleeved, state, -sleeve_layer)
 		sleeve.color = worn.color

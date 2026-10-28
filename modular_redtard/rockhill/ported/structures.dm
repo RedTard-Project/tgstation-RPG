@@ -508,7 +508,6 @@
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/bookcase/player_archive
-	parent_type = /obj/structure/rockhill
 	name = "bookcase (Archive)"
 	desc = ""
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/bookshelf.dmi'
@@ -519,7 +518,6 @@
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/bookcase/random/archive
-	parent_type = /obj/structure/rockhill
 	name = "bookcase"
 	desc = ""
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/bookshelf.dmi'
@@ -530,7 +528,6 @@
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/bookcase/random/misc
-	parent_type = /obj/structure/rockhill
 	name = "bookcase"
 	desc = ""
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/bookshelf.dmi'
@@ -541,7 +538,6 @@
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/bookcase/random_recipes
-	parent_type = /obj/structure/rockhill
 	name = "bookcase (Recipes)"
 	desc = ""
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/bookshelf.dmi'

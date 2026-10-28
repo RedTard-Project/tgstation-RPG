@@ -77,6 +77,7 @@ GLOBAL_LIST_EMPTY(rogue_charsetup_open)
 /datum/rogue_charsetup/ui_close(mob/user)
 	GLOB.rogue_charsetup_open -= src
 	UnregisterSignal(SSticker, COMSIG_TICKER_ROUND_STARTING)
+	stop_combat_music_preview(user)
 	prefs?.save_character()
 	prefs?.save_preferences()
 	QDEL_NULL(preview)
@@ -85,11 +86,13 @@ GLOBAL_LIST_EMPTY(rogue_charsetup_open)
 	SIGNAL_HANDLER
 	SStgui.update_uis(src)
 
-/// TG's spritesheets: the preference icons (hair, underwear...) and the species portraits.
+/// TG's spritesheets: the preference icons (hair, underwear...) and the species portraits; and the foods and drinks of
+/// the culinary picker (culinary.dm).
 /datum/rogue_charsetup/ui_assets(mob/user)
 	return list(
 		get_asset_datum(/datum/asset/spritesheet_batched/preferences),
 		get_asset_datum(/datum/asset/spritesheet_batched/species),
+		get_asset_datum(/datum/asset/spritesheet_batched/rogue_culinary),
 	)
 
 /datum/rogue_charsetup/ui_static_data(mob/user)
@@ -110,7 +113,9 @@ GLOBAL_LIST_EMPTY(rogue_charsetup_open)
 		"job_bans" = job_bans,
 		"ages" = rogue_charsetup_age_catalog(lang),
 		"heritage" = rogue_charsetup_heritage_catalog(lang),
-		"settings" = rogue_charsetup_settings_catalog(),
+		"homelands" = rogue_charsetup_homeland_catalog(lang),
+		"culinary" = rogue_charsetup_culinary_catalog(lang),
+		"combat_music" = rogue_charsetup_combat_music_catalog(),
 		"max_slots" = prefs.max_save_slots,
 		"flavor_min" = CONFIG_GET(number/rogue_minimum_flavor_text),
 		"ooc_min" = CONFIG_GET(number/rogue_minimum_ooc_notes),
@@ -246,6 +251,10 @@ GLOBAL_LIST_EMPTY(rogue_charsetup_open)
 			return select_faith(params["faith"])
 		if("select_patron")
 			return select_patron(params["patron"])
+		if("listen_combat_music")
+			return preview_combat_music(user, params["track"])
+		if("stop_combat_music")
+			return stop_combat_music_preview(user)
 		if("rotate")
 			preview?.setDir(turn(preview.dir, params["dir"] == "left" ? 90 : -90))
 			return FALSE
@@ -274,6 +283,9 @@ GLOBAL_LIST_EMPTY(rogue_charsetup_open)
 			return round_action(user)
 		if("open_tg")
 			return open_tg_menu(user, params["page"])
+		if("open_triumph_shop")
+			GLOB.rogue_triumph_shop.ui_interact(user)
+			return FALSE
 	return FALSE
 
 /// TG's set_preference action: the middlewares first (the quirks one asks before a species change drops quirks), then
@@ -359,14 +371,11 @@ GLOBAL_LIST_EMPTY(rogue_charsetup_open)
 	lobby.on_message("action", list("action" = lobby_action))
 	return TRUE
 
-/// TG's menu for what this one leaves to it: the loadout and quirks (its character page), the game preferences and
-/// the keybindings.
+/// TG's menu for what this one leaves to it: the loadout and quirks (its character page) and the keybindings.
 /datum/rogue_charsetup/proc/open_tg_menu(mob/user, page)
 	switch(page)
 		if("character")
 			prefs.current_window = PREFERENCE_TAB_CHARACTER_PREFERENCES
-		if("game")
-			prefs.current_window = PREFERENCE_TAB_GAME_PREFERENCES
 		if("keybindings")
 			prefs.current_window = PREFERENCE_TAB_KEYBINDINGS
 		else

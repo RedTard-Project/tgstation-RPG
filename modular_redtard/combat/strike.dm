@@ -217,6 +217,9 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 	var/damage = strike.damage
 	var/def_zone = rogue_zone_target(zone)
 	var/damtype = weapon ? weapon.damtype : BRUTE
+	// The target's name on the strike's line: as it was known when the blow fell, before a crit disfigures its face or
+	// a blade takes its head (a human without a face is "Unknown").
+	var/struck_name = "\the [src]"
 	var/blocked = min(run_armor_check(def_zone, MELEE, armour_penetration = weapon?.armour_penetration, silent = TRUE, weak_against_armour = weapon?.weak_against_armour), ARMOR_MAX_BLOCK)
 	var/penetration = intent.penfactor
 	if(body_position != LYING_DOWN && intent.out_of_effective_range(get_dist(attacker, src)))
@@ -258,30 +261,55 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 		add_splatter_floor(get_turf(src))
 		if(get_dist(attacker, src) <= 1)
 			attacker.add_mob_blood(src)
+	// Everything the blow did lands before its line is told, so the line carries it all (combat/chat.dm): the armor,
+	// a crit and its wounds, then a severed limb.
 	if(damage_done > 0)
 		rogue_try_crit(intent.blade_class, damage_done, attacker, zone)
-	rogue_strike_message(attacker, weapon, intent, zone)
+		rogue_try_dismember(weapon, intent, attacker, zone, damage)
+	rogue_strike_message(attacker, weapon, intent, zone, struck_name)
 	rogue_strike_notes = null
 	if(damage_done > 0)
 		rogue_pop_open()
-		rogue_try_dismember(weapon, intent, attacker, zone, damage)
 	SEND_SIGNAL(src, COMSIG_ROGUE_STRIKE_LANDED, strike)
 	weapon?.rogue_after_strike(src, attacker, strike.attack_modifiers)
 	log_combat(attacker, src, strike.kind == ROGUE_STRIKE_CLEAVE ? "cleaved" : "struck", weapon || intent.name, "(INTENT: [uppertext(intent.name)]) (ZONE: [zone]) (DAMAGE: [damage_done]) (DAMTYPE: [uppertext(damtype)])")
 	return damage_done
 
 /// Ratwood's strike line (send_item_attack_message): the struck part highlighted, and the strike's notes after it
-/// (armor, crits, wounds; combat/chat.dm). The attacker reads it as everyone around does.
-/mob/living/proc/rogue_strike_message(mob/living/attacker, obj/item/weapon, datum/intent/intent, zone)
+/// (armor, crits, wounds, a severed limb; combat/chat.dm). The attacker reads it as everyone around does.
+/// struck_name: how the line names the target, when it was named before the blow changed it (rogue_take_strike).
+/mob/living/proc/rogue_strike_message(mob/living/attacker, obj/item/weapon, datum/intent/intent, zone, struck_name)
 	var/hit_verb = length(intent.attack_verb) ? pick(intent.attack_verb) : "hits"
 	var/hit_area = span_userdanger(iscarbon(src) ? rogue_zone_name(zone) : "body")
 	var/with = weapon ? " with [weapon]" : ""
 	var/notes = length(rogue_strike_notes) ? " [jointext(rogue_strike_notes, " ")]" : ""
 	if(attacker == src)
-		to_chat(src, span_danger("I [hit_verb] myself in the [hit_area][with]![notes]"))
+		to_chat(src, span_danger("I [rogue_first_person_verb(hit_verb)] myself in the [hit_area][with]![notes]"))
 		return
 	var/who = (attacker in viewers(src, null)) ? "[attacker]" : "Someone"
-	visible_message(span_danger("[who] [hit_verb] [src] in the [hit_area][with]![notes]"), span_danger("[who] [hit_verb] me in the [hit_area][with]![notes]"), null, COMBAT_MESSAGE_RANGE)
+	var/whom = struck_name || "\the [src]"
+	visible_message(span_danger("[who] [hit_verb] [whom] in the [hit_area][with]![notes]"), span_danger("[who] [hit_verb] me in the [hit_area][with]![notes]"), null, COMBAT_MESSAGE_RANGE)
+
+/// An intent's verb as said of oneself: "slashes" -> "slash", "cuts across" -> "cut across", "lunges and hacks" ->
+/// "lunge and hack", "viciously bites" -> "viciously bite". Intents name their verbs in the third person.
+/proc/rogue_first_person_verb(verb_text)
+	var/static/regex/third_person = regex(@"\b([A-Za-z\-]+?)(ies|sses|shes|ches|xes|zzes|oes|s)\b", "g")
+	return third_person.Replace(verb_text, GLOBAL_PROC_REF(rogue_verb_stem))
+
+/// One word of rogue_first_person_verb(): the verb without its third person ending; words that only end in s stay.
+/proc/rogue_verb_stem(word, stem, ending)
+	var/static/list/kept = list("this", "thus", "always", "towards", "upwards", "downwards", "backwards", "sideways", "afterwards")
+	if(length(word) <= 3 || (LOWER_TEXT(word) in kept))
+		return word
+	switch(ending)
+		if("ies")
+			return length(stem) >= 2 ? "[stem]y" : copytext(word, 1, -1)
+		if("sses", "shes", "ches", "xes", "zzes")
+			return copytext(word, 1, -2)
+		if("oes")
+			return "[stem]o"
+	// A plain -s: "across" and "kiss" end in -ss and are no third person.
+	return copytext(stem, -1) == "s" ? word : stem
 
 /obj/item/proc/rogue_after_strike(mob/living/target, mob/living/user, list/attack_modifiers)
 	SEND_SIGNAL(src, COMSIG_ITEM_AFTERATTACK, target, user, null, attack_modifiers)

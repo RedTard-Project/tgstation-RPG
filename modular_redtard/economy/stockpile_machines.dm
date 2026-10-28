@@ -62,7 +62,8 @@
  * Sells an item to the Crown (Ratwood attemptsell()): the good goes into the stockpile and its payout from the Crown's Purse
  * into the seller's account. A stack sells every unit. Refused when the seller has no account, the Crown does not want the good,
  * the Purse is below the Steward's floor, or the stockpile is full and may not ship the surplus abroad; a full stockpile that may
- * ship it sends the good abroad at once. Returns TRUE when sold.
+ * ship it sends the good abroad at once. The payout follows the item's quality (Ratwood get_quality_settlement()): the Purse
+ * keeps a share of what shoddy goods lose and adds a share of what fine goods gain. Returns TRUE when sold.
  */
 /obj/structure/roguemachine/stockpile/proc/sell_to_crown(obj/item/thing, mob/living/seller, quietly = FALSE)
 	var/datum/bank_account/rogue/account = SSrogue_treasury.get_account(seller)
@@ -93,21 +94,35 @@
 		if(!quietly)
 			refuse("The Crown's [stock.name] stockpile is full, take it elsewhere.")
 		return FALSE
-	var/payout = stock.payout_price * units
+	var/list/settlement = stock.quality_settlement(thing, units)
+	var/payout = settlement["payout"]
+	var/crown_delta = settlement["crown_delta"]
 	if(!purse.has_money(payout))
 		if(!quietly)
 			refuse("The Crown cannot afford it.")
 		return FALSE
 	var/value = thing.get_real_price()
 	var/withdrawn = thing.stockpile_withdrawn
+	var/thing_name = thing.name
+	var/remark = rogue_stockpile_quality_remark(thing.rogue_quality)
 	qdel(thing)
 	stock.stockpile_amount += units
 	if(full)
 		SSrogue_treasury.export_stock(stock, stock.stockpile_amount - stock.stockpile_limit)
 	if(!withdrawn)
 		SSrogue_treasury.economic_output += value
-	SSrogue_treasury.give_money(account, payout, "+[payout] from [stock.name] bounty")
+	if(crown_delta > 0)
+		SSrogue_treasury.mint(purse, crown_delta, "Quality premium: [thing_name] (+[crown_delta]m)")
+	else if(crown_delta < 0)
+		SSrogue_treasury.burn(purse, -crown_delta, "Quality penalty: [thing_name] ([crown_delta]m)")
+	var/reason = "+[payout] from [stock.name] bounty"
+	if(crown_delta)
+		var/seller_delta = payout - settlement["baseline"]
+		reason += " (quality: you [seller_delta > 0 ? "+" : ""][seller_delta]m, Crown [crown_delta > 0 ? "+" : ""][crown_delta]m vs. [settlement["baseline"]]m baseline)"
+	SSrogue_treasury.give_money(account, payout, reason)
 	if(!quietly)
+		if(remark)
+			say(remark)
 		say(full ? "Crown's [stock.name] stockpile is full - shipped abroad on your behalf." : "[stock.name] has been stockpiled.")
 		playsound(src, ROGUE_SOUND_HISS, 100, FALSE, -1)
 	SStgui.update_uis(src)
@@ -169,7 +184,8 @@
 
 /**
  * Buys one unit of a good with the budget (Ratwood do_withdraw() and do_direct_import()). From the stockpile the price goes to the
- * Crown's Purse; a good the stockpile lacks is imported at the carriers' price, which leaves the realm.
+ * Crown's Purse; a good the stockpile lacks is imported from the cheapest region that produces it today at the carriers' price,
+ * which leaves the realm, and that region's produce for the day shrinks.
  */
 /obj/structure/roguemachine/proc/buy_stock(datum/roguestock/stock, mob/user, import = FALSE)
 	if(!ishuman(user) || !user.Adjacent(src))
@@ -180,12 +196,18 @@
 	if(!import && stock.stockpile_amount <= 0)
 		refuse("Insufficient stock.")
 		return FALSE
-	var/price = import ? stock.import_price() : stock.withdraw_price
+	var/list/quote = import ? stock.import_quote() : null
+	if(import && !quote)
+		refuse("No region currently supplies [stock.name].")
+		return FALSE
+	var/price = import ? quote["price"] : stock.withdraw_price
 	if(price > budget)
 		refuse("Insufficient mammon.")
 		return FALSE
 	budget -= price
 	if(import)
+		var/datum/rogue_trade_region/region = quote["region"]
+		region.take_import(stock.trade_good)
 		SSrogue_treasury.total_import += price
 	else
 		stock.stockpile_amount--

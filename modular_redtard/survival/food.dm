@@ -38,6 +38,8 @@
 	var/current_step = 1
 	/// Looks of the ingredients added so far (Ratwood do_cooking_step() overlays).
 	var/list/recipe_overlays
+	/// A recipe made this ready to cook or to deep fry; it takes no other recipe (a roofed pie takes no more filling).
+	var/rogue_recipe_done = FALSE
 	/// Gone bad in place (Ratwood become_rotten() without a rotten form).
 	var/rotten = FALSE
 	/// What heat turned this food into, for whoever held it over the fire or in the pan.
@@ -93,7 +95,10 @@
 
 /obj/item/reagent_containers/food/proc/on_bite(datum/source, mob/living/eater, mob/living/feeder, bitecount, bite_size)
 	SIGNAL_HANDLER
-	if(eat_effect && isliving(eater))
+	if(!isliving(eater))
+		return
+	// Ratwood On_Consume(): favourites and the noble palate (survival/appetite.dm) may spoil the good effect of the bite.
+	if(rogue_taste_for(eater) && eat_effect)
 		eater.apply_status_effect(eat_effect)
 
 /obj/item/reagent_containers/food/proc/on_cooked_into(datum/source, atom/original)
@@ -103,6 +108,7 @@
 	var/obj/item/reagent_containers/food/raw = original
 	if(istype(raw))
 		raw.cooked_into = WEAKREF(src)
+		rogue_cooking_smell(raw)
 
 /obj/item/reagent_containers/food/update_overlays()
 	. = ..()
@@ -135,8 +141,13 @@
 			. += span_smallnotice("It looks good!")
 		if(/datum/status_effect/rogue_food_buff/great_snack, /datum/status_effect/rogue_food_buff/great_meal)
 			. += span_smallnotice("It looks great!!")
+	. += rogue_fryer_examine()
+	. += rogue_palate_examine()
 
 /obj/item/reagent_containers/food/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
+	. = rogue_combo_interaction(user, tool)
+	if(.)
+		return .
 	. = recipe_interaction(user, tool)
 	if(.)
 		return .
@@ -187,7 +198,7 @@
 /// Ratwood snacks/rogue attackby(), do_cooking_step(): an ingredient (or a reagent from a container) for the next step of a
 /// slapcraft recipe, on a table.
 /obj/item/reagent_containers/food/proc/recipe_interaction(mob/living/user, obj/item/tool)
-	if(rotten)
+	if(rotten || rogue_recipe_done)
 		return NONE
 	var/datum/rogue_food_recipe/recipe = active_recipe || rogue_food_recipe_for(src, tool)
 	if(!recipe)
@@ -196,12 +207,12 @@
 	var/amount = 0
 	if(ispath(requirement, /datum/reagent))
 		amount = recipe.ingredients[requirement]
-		if(!tool.reagents?.has_reagent(requirement, amount))
+		if(!recipe.step_accepts(current_step, tool))
 			if(active_recipe)
 				to_chat(user, span_warning("I need at least [amount] units of [recipe.step_name(current_step)]!"))
 				return ITEM_INTERACT_BLOCKING
 			return NONE
-	else if(!istype(tool, requirement))
+	else if(!recipe.step_accepts(current_step, tool))
 		return NONE
 	else if(istype(tool, /obj/item/reagent_containers/food))
 		var/obj/item/reagent_containers/food/ingredient = tool
@@ -225,9 +236,12 @@
 		if(ismob(tool.loc) && !user.temporarilyRemoveItemFromInventory(tool))
 			return ITEM_INTERACT_BLOCKING
 		if(current_step < length(recipe.ingredients) || recipe.needs_cooking)
-			add_ingredient_look(tool)
+			add_recipe_look(recipe, current_step, tool)
 		qdel(tool)
 	playsound(src, 'modular_redtard/survival/sound/gen_drop.ogg', 30, TRUE)
+	user.rogue_cooking_experience(recipe.experience_per_step)
+	if(current_step == 1 && recipe.started_name)
+		name = recipe.started_name
 	current_step++
 	if(current_step <= length(recipe.ingredients))
 		return ITEM_INTERACT_SUCCESS
@@ -237,6 +251,15 @@
 		new recipe.result_type(drop_location())
 		qdel(src)
 		return ITEM_INTERACT_SUCCESS
+	rogue_recipe_done = TRUE
+	if(recipe.ready_name)
+		name = recipe.ready_name
+	if(recipe.ready_smell)
+		rogue_cooked_smell = recipe.ready_smell
+	if(recipe.deep_fry)
+		to_chat(user, span_nicegreen("[src] is ready to be deep fried."))
+		rogue_deep_fried_type = recipe.result_type
+		return ITEM_INTERACT_SUCCESS
 	to_chat(user, span_nicegreen("[src] is ready to be cooked."))
 	cooked_type = recipe.result_type
 	fried_type = recipe.result_type
@@ -244,6 +267,18 @@
 		cooktime = 30 SECONDS
 	refresh_cooking()
 	return ITEM_INTERACT_SUCCESS
+
+/// How a step shows on the dish: Ratwood's own sprite of the step if the recipe has one, else the ingredient drawn small.
+/obj/item/reagent_containers/food/proc/add_recipe_look(datum/rogue_food_recipe/recipe, step, obj/item/ingredient)
+	if(LAZYLEN(recipe.step_icon_states) >= step && recipe.step_icon_states[step])
+		icon_state = recipe.step_icon_states[step]
+		update_appearance()
+		return
+	if(LAZYLEN(recipe.step_overlays) >= step && recipe.step_overlays[step])
+		LAZYADD(recipe_overlays, mutable_appearance(recipe.overlay_icon || icon, recipe.step_overlays[step]))
+		update_appearance(UPDATE_OVERLAYS)
+		return
+	add_ingredient_look(ingredient)
 
 /// Ratwood draws each added ingredient small in a corner of the dish.
 /obj/item/reagent_containers/food/proc/add_ingredient_look(obj/item/ingredient)
@@ -271,7 +306,9 @@
 	active_recipe = null
 	current_step = 1
 	recipe_overlays = null
-	update_appearance(UPDATE_OVERLAYS)
+	name = initial(name)
+	icon_state = initial(icon_state)
+	update_appearance()
 
 /// Ratwood become_rotten(): the food turns into its rotten form (not in someone's hands), or goes bad in place - flies,
 /// a bluish tint, the rotten bite, no slicing and no cooking but burning. FALSE when it has to wait.

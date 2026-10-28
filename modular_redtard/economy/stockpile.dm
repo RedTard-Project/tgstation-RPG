@@ -31,6 +31,8 @@
 	var/export_only = FALSE
 	/// The Crown keeps the surplus instead of shipping it abroad.
 	var/autoexport_disabled = FALSE
+	/// The trade good this entry stocks (Ratwood trade_good_id), linked by the trade subsystem; regions import it.
+	var/datum/rogue_trade_good/trade_good
 
 /datum/roguestock/New()
 	. = ..()
@@ -50,11 +52,43 @@
 /datum/roguestock/proc/accepts(obj/item/thing)
 	return !import_only && istype(thing, item_type)
 
-/// Price of buying the good in from afar when the stockpile has none: Ratwood's direct import with the carriers' 50% margin.
+/**
+ * What the Crown pays a seller for units of this good of the item's quality (Ratwood get_quality_settlement()): the price moves
+ * by the quality tier, and the seller bears a further share of the difference from standard, which the Crown's Purse gains on
+ * shoddy goods and adds on fine ones. Returns list("payout" =, "crown_delta" =, "baseline" =).
+ */
+/datum/roguestock/proc/quality_settlement(obj/item/thing, units = 1)
+	var/baseline = payout_price * units
+	var/list/settlement = list("payout" = baseline, "crown_delta" = 0, "baseline" = baseline)
+	if(isnull(thing.rogue_quality))
+		return settlement
+	var/q_mult = rogue_quality_price_mult(thing.rogue_quality)
+	if(q_mult == 1)
+		return settlement
+	var/share = rogue_value("trade_quality_seller_share")
+	var/loss = baseline - baseline * q_mult
+	settlement["payout"] = max(1, round(baseline * q_mult - loss * share))
+	settlement["crown_delta"] = round(-loss * (1 - share))
+	return settlement
+
+/**
+ * Price of buying the good in from afar when the stockpile has none (Ratwood get_direct_import_quote()): the cheapest region
+ * that produces it today, with the carriers' margin. Returns list("region" =, "unit_cost" =, "price" =), or null when no
+ * region produces it.
+ */
+/datum/roguestock/proc/import_quote()
+	var/list/quote = SSrogue_trade.import_quote(trade_good)
+	if(quote)
+		quote["price"] = max(1, round(quote["unit_cost"] * (100 + rogue_value("trade_import_margin")) / 100))
+	return quote
+
 /datum/roguestock/proc/import_price()
-	return max(1, round(withdraw_price * 1.5))
+	var/list/quote = import_quote()
+	return quote ? quote["price"] : 0
 
 /datum/roguestock/proc/ui_entry()
+	var/list/quote = import_quote()
+	var/datum/rogue_trade_region/import_region = quote ? quote["region"] : null
 	return list(
 		"ref" = REF(src),
 		"name" = name,
@@ -65,7 +99,8 @@
 		"withdraw_price" = withdraw_price,
 		"payout_price" = payout_price,
 		"export_price" = export_price,
-		"import_price" = import_price(),
+		"import_price" = quote ? quote["price"] : 0,
+		"import_region" = import_region?.name,
 		"withdraw_disabled" = withdraw_disabled,
 		"accept_enabled" = accept_toggle_enabled,
 		"autoexport_disabled" = autoexport_disabled,

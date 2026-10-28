@@ -1,6 +1,7 @@
 /// Ratwood's random painting (code/game/objects/structures/artstuff.dm): a mapped spot that hangs a random archived
 /// player painting, each at most once a round, and goes away when none are left. Ratwood's archive is its own painting
-/// subsystem; here it is TG's persistent paintings.
+/// subsystem; here it is the library's archive (library/paintings.dm: TG's persistent paintings with its tag), so
+/// the paintings of the modern maps never hang here.
 
 /// The archived paintings no spot has hung yet this round, in random order.
 GLOBAL_LIST(rockhill_unhung_paintings)
@@ -19,7 +20,7 @@ GLOBAL_LIST(rockhill_unhung_paintings)
 
 /obj/item/canvas/random_painting/LateInitialize()
 	if(isnull(GLOB.rockhill_unhung_paintings))
-		GLOB.rockhill_unhung_paintings = shuffle(SSpersistent_paintings.paintings.Copy())
+		GLOB.rockhill_unhung_paintings = shuffle(rogue_archived_paintings())
 	var/datum/painting/painting = pop(GLOB.rockhill_unhung_paintings)
 	if(!painting)
 		qdel(src)

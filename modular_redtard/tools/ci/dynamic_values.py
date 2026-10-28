@@ -54,8 +54,14 @@ def resolve(path, name, types):
     return None
 
 
+SPECIAL_FILES = ("specials.dm", "specials_azure.dm")
+
+
 def special_values():
-    types = read_types(os.path.join(MODULE, "combat", "specials.dm"))
+    types = {}
+    for name in SPECIAL_FILES:
+        for path, found in read_types(os.path.join(MODULE, "combat", name)).items():
+            types.setdefault(path, {}).update(found)
     out = []
     for path in sorted(types):
         if path == "/datum/special_intent":

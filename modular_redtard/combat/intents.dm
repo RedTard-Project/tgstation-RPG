@@ -48,7 +48,10 @@ GLOBAL_LIST_EMPTY(rogue_intents)
 	var/intent_intdamage_factor = 1
 	/// No attack animation and no swing at empty tiles (Ratwood).
 	var/noaa = FALSE
+	/// What one does on a swing at the air, said of oneself ("I swing a fist at the air!").
 	var/miss_text
+	/// The same said of someone else ("X swings a fist at the air!"); none means miss_text.
+	var/miss_text_others
 	var/miss_sound
 	/// Stat changes a landed blow of an effect intent puts on the target (Ratwood intent_effect, e.g. a mordhau's dazing strike).
 	var/list/effect_stats

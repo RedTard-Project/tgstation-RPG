@@ -1,50 +1,36 @@
-## /tg/station codebase
+<p align="center">
+  <img width="512" height="512" alt="Vibelin_logo" src="https://github.com/user-attachments/assets/4a549649-633a-4ca9-a895-6e8145fbdb14" />
+</p>
 
-[![Build Status](https://github.com/tgstation/tgstation/workflows/CI%20Suite/badge.svg)](https://github.com/tgstation/tgstation/actions?query=workflow%3A%22CI+Suite%22)
-[![Percentage of issues still open](https://isitmaintained.com/badge/open/tgstation/tgstation.svg)](https://isitmaintained.com/project/tgstation/tgstation "Percentage of issues still open")
-[![Average time to resolve an issue](https://isitmaintained.com/badge/resolution/tgstation/tgstation.svg)](https://isitmaintained.com/project/tgstation/tgstation "Average time to resolve an issue")
-![Coverage](https://img.shields.io/badge/coverage---4%25-red.svg)
+# TGSTATION-RPG
+[![modular_redtard](https://github.com/RedTard-Project/tgstation-RPG/actions/workflows/redtard_ci.yml/badge.svg)](https://github.com/RedTard-Project/tgstation-RPG/actions/workflows/redtard_ci.yml)
+[![CI Suite](https://github.com/RedTard-Project/tgstation-RPG/actions/workflows/ci_suite.yml/badge.svg)](https://github.com/RedTard-Project/tgstation-RPG/actions/workflows/ci_suite.yml)
 
-[![resentment](.github/images/badges/built-with-resentment.svg)](.github/images/comics/131-bug-free.png) [![technical debt](.github/images/badges/contains-technical-debt.svg)](.github/images/comics/106-tech-debt-modified.png) [![forinfinityandbyond](.github/images/badges/made-in-byond.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
+A vibe fork of /tg/station turned RPG: Roguetown (Ratwood, Azure Peak, Vibelin) rebuilt on top of current /tg/station.
 
-| Website             | Link                                                  |
-| ------------------- | ----------------------------------------------------- |
-| Website             | https://tgstation13.org                               |
-| Code                | https://github.com/tgstation/tgstation                |
-| Server Config       | https://github.com/tgstation-operations/server-config |
-| Wiki                | https://tgstation13.org/wiki/Main_Page                |
-| Codedocs            | https://codedocs.tgstation13.org/                     |
-| /tg/station Discord | https://tgstation13.org/phpBB/viewforum.php?f=60      |
-| Coderbus Discord    | https://discord.gg/Vh8TJp9                            |
-| Contribution Guide  | https://github.com/tgstation/tgstation/blob/master/.github/CONTRIBUTING.md |
-| Getting Started With Development | https://hackmd.io/@tgstation/HJ8OdjNBc#tgstation-Development-Guide |
-| Maintainer-Approved Design Docs | https://hackmd.io/@tgstation |
-| Common Core Lore | https://github.com/tgstation/common_core |
+| Website | Link |
+|---------|------|
+| Discord | [https://discord.gg/9DfkYJcFyF](https://discord.gg/9DfkYJcFyF) |
+| Code    | [https://github.com/RedTard-Project/tgstation-RPG](https://github.com/RedTard-Project/tgstation-RPG) |
 
+Everything of the fork lives in [`modular_redtard/`](./modular_redtard): the module, its build wrapper and its documentation (in Russian) — what is done and what is left ([TASKS.md](./modular_redtard/TASKS.md)), how each system works ([README.md](./modular_redtard/README.md)), and every place it touches /tg/station ([OVERRIDES.md](./modular_redtard/OVERRIDES.md)).
 
-This is the codebase for the /tg/station flavoured fork of SpaceStation 13.
+## BUILDING
 
-Space Station 13 is a paranoia-laden round-based roleplaying game set against the backdrop of a nonsensical, metal death trap masquerading as a space station, with charming spritework designed to represent the sci-fi setting and its dangerous undertones. Have fun, and survive!
+`modular_redtard/build/BUILD_REDTARD.cmd` builds the game with the module (Linux: `modular_redtard/build/build.sh build`). `tgstation.dme` and `bin/build.cmd` build plain /tg/station without it.
 
-_All github inquiries (such as moderation actions) may be handled via the /tg/station discord [#coding-general](https://discord.com/channels/326822144233439242/326831214667235328). Simply ping the `@Maintainer` role, following the guide on asking questions located in the channel description, with your issue!_
+## MAINTAINER POLICY
 
-## DOWNLOADING
-
-[Downloading](.github/guides/DOWNLOADING.md)
-
-[Running a server](.github/guides/RUNNING_A_SERVER.md)
-
-[Maps and Away Missions](.github/guides/MAPS_AND_AWAY_MISSIONS.md)
-
-## Compilation
-
-**The quick way**. Find `bin/server.cmd` in this folder and double click it to automatically build and host the server on port 1337.
-
-**The long way**. Find `bin/build.cmd` in this folder, and double click it to initiate the build. It consists of multiple steps and might take around 1-5 minutes to compile. If it closes, it means it has finished its job. You can then [setup the server](.github/guides/RUNNING_A_SERVER.md) normally by opening `tgstation.dmb` in DreamDaemon.
-
-**Building tgstation in DreamMaker directly is deprecated and might produce errors**, such as `'tgui.bundle.js': cannot find file`.
-
-**[How to compile in VSCode and other build options](tools/build/README.md).**
+- **AI code is welcome.** This repository mainly takes AI-written code signed by Claude Opus 5.5 or a stronger model: a `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>` trailer (or a newer model's) on the commits.
+- **We never edit upstream code.** /tg/station is merged in as it is, and every pull request that changes upstream code will be rejected: reach the behaviour from `modular_redtard/` instead. The only upstream files the fork touches are repository meta (this page, `.github/`) and one line of the CI include schema, each logged in [OVERRIDES.md](./modular_redtard/OVERRIDES.md).
+- **Subsystems and defines need a separate discussion.** Adding, changing or removing a subsystem or a define, upstream's or the module's, is discussed on Discord before the pull request.
+- **Levels of impact on code**, from the safest to the most invasive. Use the lowest level that does the job; every change from level 2 up is logged in [OVERRIDES.md](./modular_redtard/OVERRIDES.md).
+  1. A new file or type inside `modular_redtard/`.
+  2. A subtype of an upstream type.
+  3. A new var or proc on an upstream type, re-opened from a module file.
+  4. A new default value for a var of an upstream type.
+  5. An override of an upstream proc that wraps it with `..()`. Never copy a whole upstream proc to change one line: the copy silently hides every later upstream fix.
+  6. An edit of an upstream file: not accepted (see above). The same goes for upstream maps, icons and sounds; ship your own inside the module.
 
 ## LICENSE
 

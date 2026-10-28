@@ -1,0 +1,66 @@
+// Speech fonts of the races' languages, as on Ratwood (tgui-panel: components/roguefont.scss, tgchat/chat-dark.scss)
+// and, for the languages Ratwood has not, as on Vibelin: what is said in a language carries its span
+// (races/speech_fonts.dm), and the span draws it in the language's face. Both themes.
+//
+// None of these faces has Cyrillic, and a Russian line in one would come out patched from two faces. So a face covers
+// Latin letters only (unicode-range): Russian speech, digits and punctuation stay in the chat's own face, and the
+// face shows on Latin speech and on the words of a language the reader does not know, which are always Latin
+// syllables. Each face is sized to the book face's x-height (size-adjust; Xaphan, a blackletter with tiny lowercase,
+// less, so its capitals do not tower); in English the chat's own Pterra is drawn larger ($pterra-scale), and the speech
+// with it.
+@use 'sass:list';
+@use 'faces' as *;
+
+// Family: its file in ../fonts/languages and its size-adjust. Sources: Ratwood (elf, orc, dwarf, hell, draconic),
+// Azure Peak (raneshi, Vibelin's Byzantine), Vibelin (Arabolical, Underwater_Love, SyneTactile).
+$faces: (
+  'Dauphin': ('elf.ttf', 95%),
+  'Thief by The Riddler': ('orc.ttf', 85%),
+  'MasonAlternate': ('dwarf.ttf', 95%),
+  'Xaphan': ('hell.ttf', 115%),
+  'Kingthings Petrock': ('draconic.ttf', 105%),
+  'Arabolical': ('Arabolical.ttf', 100%),
+  'Byzantine': ('raneshi.ttf', 95%),
+  'Underwater Love': ('Underwater_Love.ttf', 85%),
+  'SyneTactile': ('SyneTactile.ttf', 90%),
+);
+
+// A language's span class: its face.
+$speech: (
+  'elf': 'Dauphin',
+  'orc': 'Thief by The Riddler',
+  'beast': 'Thief by The Riddler',
+  'dwarf': 'MasonAlternate',
+  'hellspeak': 'Xaphan',
+  'reptile': 'Kingthings Petrock',
+  'celestial': 'Arabolical',
+  'zalad': 'Byzantine',
+  'deepspeak': 'Underwater Love',
+  'kobold': 'SyneTactile',
+);
+
+@each $family, $face in $faces {
+  @font-face {
+    font-family: $family;
+    src: url('../fonts/languages/#{list.nth($face, 1)}') format('truetype');
+    size-adjust: list.nth($face, 2);
+    // Basic Latin and Latin-1 letters, Latin Extended-A and -B, Latin Extended Additional.
+    unicode-range:
+      U+0041-005A,
+      U+0061-007A,
+      U+00C0-00D6,
+      U+00D8-00F6,
+      U+00F8-024F,
+      U+1E00-1EFF;
+  }
+}
+
+@each $class, $family in $speech {
+  .#{$class} {
+    font-family: $family, $book;
+  }
+
+  body.rogue-lang-en .#{$class} {
+    font-size: $pterra-scale;
+  }
+}

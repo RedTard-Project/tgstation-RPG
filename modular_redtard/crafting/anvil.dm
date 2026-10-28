@@ -29,7 +29,7 @@
 /obj/machinery/anvil/examine(mob/user)
 	. = ..()
 	if(!workpiece)
-		. += span_info("Lay a bar on it with tongs, then strike it with a hammer to choose what to forge.")
+		. += span_info("Lay a bar on it with tongs, or a cast blade by hand, then strike it with a hammer to choose what to forge.")
 		return
 	. += span_info("\A [workpiece] lies on it.")
 	if(is_hot())
@@ -85,7 +85,8 @@
 		return tongs_interaction(user, tool)
 	if(istype(tool, /obj/item/rogueweapon/hammer))
 		return hammer_interaction(user, tool)
-	if(istype(tool, /obj/item/ingot) && !workpiece)
+	// Ratwood: bars and cast blades are laid on by hand; a blade is never hot.
+	if((istype(tool, /obj/item/ingot) || istype(tool, /obj/item/blade)) && !workpiece)
 		if(!user.transferItemToLoc(tool, src))
 			return ITEM_INTERACT_BLOCKING
 		lay(tool)
@@ -180,10 +181,13 @@
 		ui = new(user, src, "RogueAnvil", name)
 		ui.open()
 
+/obj/machinery/anvil/ui_assets(mob/user)
+	return list(get_asset_datum(/datum/asset/spritesheet_batched/rogue_anvil))
+
 /obj/machinery/anvil/ui_static_data(mob/user)
 	var/list/recipes = list()
 	for(var/datum/anvil_recipe/recipe as anything in GLOB.rogue_anvil_recipes)
-		if(workpiece && !istype(workpiece, recipe.req_bar))
+		if(workpiece && !recipe.accepts(workpiece))
 			continue
 		recipes += list(recipe.get_ui_entry())
 	return list("recipes" = recipes)
@@ -200,7 +204,7 @@
 	if(. || action != "choose_recipe")
 		return
 	var/datum/anvil_recipe/recipe = locate(params["ref"])
-	if(!(recipe in GLOB.rogue_anvil_recipes) || !istype(workpiece, recipe.req_bar))
+	if(!(recipe in GLOB.rogue_anvil_recipes) || !recipe.accepts(workpiece))
 		return TRUE
 	INVOKE_ASYNC(src, PROC_REF(choose_recipe), ui.user, recipe)
 	ui.close()
@@ -212,7 +216,7 @@
 		var/datum/attribute/skill/skill = GET_ROGUE_ATTRIBUTE(recipe.appro_skill)
 		if(tgui_alert(user, "This recipe needs [skill.description_from_level(recipe.craftdiff * ROGUE_SKILL_PER_RANK)] skill.", "IT'S TOO DIFFICULT!", list("CONFIRM", "CANCEL")) != "CONFIRM")
 			return
-	if(!workpiece || !istype(workpiece, recipe.req_bar) || !user.Adjacent(src))
+	if(!recipe.accepts(workpiece) || !user.Adjacent(src))
 		return
 	var/datum/component/rogue_forging/existing = workpiece.GetComponent(/datum/component/rogue_forging)
 	if(existing)
@@ -227,5 +231,29 @@
 	var/obj/item/rogueweapon/hammer/hammer = user.get_active_held_item()
 	if(istype(hammer) && user.Adjacent(src))
 		hammer_interaction(user, hammer)
+
+/// Ratwood /datum/asset/spritesheet/anvil_recipes: what each anvil recipe makes, for the anvil window. One sprite per made type
+/// (the CSS class is its sanitized path), larger sprites shrunk to 32x32 so the window has a single size class.
+/datum/asset/spritesheet_batched/rogue_anvil
+	name = "rogue_anvil"
+
+/datum/asset/spritesheet_batched/rogue_anvil/create_spritesheets()
+	var/list/added = list()
+	for(var/datum/anvil_recipe/recipe as anything in GLOB.rogue_anvil_recipes)
+		var/obj/item/made = recipe.created_item
+		var/id = sanitize_css_class_name("[made]")
+		if(added[id])
+			continue
+		added[id] = TRUE
+		var/icon_file = initial(made.icon)
+		var/icon_state = initial(made.icon_state)
+		if(!icon_file || !icon_exists(icon_file, icon_state))
+			continue
+		var/made_color = initial(made.color)
+		var/datum/universal_icon/sprite = uni_icon(icon_file, icon_state, SOUTH, null, null, istext(made_color) ? made_color : null)
+		var/list/size = get_icon_dimensions(icon_file)
+		if(size["width"] != ICON_SIZE_X || size["height"] != ICON_SIZE_Y)
+			sprite.scale(ICON_SIZE_X, ICON_SIZE_Y)
+		insert_icon(id, sprite)
 
 #undef ANVIL_HOT_FILTER

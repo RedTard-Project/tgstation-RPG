@@ -81,15 +81,10 @@
 	. = equip_to_slot_if_possible(equipping, slot, qdel_on_fail, disable_warning = TRUE, bypass_equip_delay_self = bypass_equip_delay_self, initial = initial, indirect_action = indirect_action)
 	aim_rogue_slot(slot, null)
 
-/mob/living/carbon/equip_to_slot(obj/item/equipping, slot, initial = FALSE, redraw_mob = FALSE, indirect_action = FALSE)
-	. = ..()
-	if(!. || !((slot & ITEM_SLOTS_ROGUE) || slot == ITEM_SLOT_BACK) || !ishuman(src))
-		return
-	var/mob/living/carbon/human/wearer = src
-	if(!wearer.set_rogue_slot(slot, equipping))
-		return
-	has_equipped(equipping, slot, initial)
-	return FALSE
+/mob/living/carbon/human/handle_set_item_in_slot(obj/item/equipping, slot)
+	if(!(slot & ITEM_SLOTS_ROGUE) && !(slot == ITEM_SLOT_BACK && rogue_back_target == ROGUE_BACK_RIGHT))
+		return ..()
+	return set_rogue_slot(slot, equipping)
 
 /mob/living/carbon/human/doUnEquip(obj/item/item_dropping, force, newloc, no_move, invdrop = TRUE, silent = FALSE)
 	var/slot = item_dropping ? (get_slot_by_item(item_dropping) & ITEM_SLOTS_ROGUE) : NONE

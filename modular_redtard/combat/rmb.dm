@@ -161,7 +161,7 @@ GLOBAL_LIST_INIT(rogue_rmb_intents, rogue_init_rmb_intents())
 		cooldown = ROGUE_TEMPO_UNSEEN_COOLDOWN
 		to_chat(src, span_warning("They need to see me for me to feint them!"))
 	if(target.remove_status_effect(/datum/status_effect/rogue/guard))
-		to_chat(src, span_notice("[target.p_their(TRUE)] guard is disrupted!"))
+		to_chat(src, span_notice("[target.p_Their()] guard is disrupted!"))
 		cooldown = ROGUE_FEINT_COOLDOWN + ROGUE_FEINT_GUARD_COOLDOWN - rogue_tempo_bonus("rmb_cooldown")
 		chance = 100
 	rogue_feint_ready_at = world.time + cooldown
@@ -247,6 +247,8 @@ GLOBAL_LIST_INIT(rogue_rmb_intents, rogue_init_rmb_intents())
 	var/mob/owner = hud_owner?.mymob
 	if(owner)
 		RegisterSignal(owner, COMSIG_MOB_ROGUE_RMB_CHANGED, PROC_REF(refresh))
+		// A HUD built after the alt intent was picked shows it from the start.
+		update_appearance()
 
 /atom/movable/screen/rogue/rmb_intent/proc/refresh()
 	SIGNAL_HANDLER

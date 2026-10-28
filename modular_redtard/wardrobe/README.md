@@ -47,6 +47,8 @@ tools/bootstrap/python -I C:/Axis/ai-skills/scripts/dm_type_port.py modular_redt
 - `body_parts_covered`: части лица Вайблина (`MOUTH`, `NOSE`, `EARS`, `EYES`) → `HEAD`, `VITALS` → `CHEST`.
 - `flags_inv` — только ТГ-шные флаги; `HIDEBOOB`, `HIDECROTCH`, `HIDETAIL` у нас ничего не прячут и отброшены.
 - `block2add` → флаги конуса обзора `ROGUE_FOV_*` (см. `combat/fov.dm`).
+- Рукава: `sleevetype`, `nodismemsleeves` — как есть; `r_sleeve_status`, `l_sleeve_status` — `SLEEVE_*` → `ROGUE_SLEEVE_*`;
+  `salvage_result` → `rogue_sleeve_scrap` (что остаётся в руке от оторванного рукава). Читает их `clothing/sleeve_status.dm`.
 - `armor_type` (датумы брони Vanderlin) → ближайший тир Ratwood в `rogue_armor`; `/datum/armor/none` — без брони.
 - Цвета, детали (`detail_tag`, `detail_color`), «бюст» (`boobed`) — как есть; рисует их `clothing/details.dm`.
 - `rogue_female_worn` ставится, если в листе есть женский вариант состояния (`_f`); `worn_x/y_dimension` —
