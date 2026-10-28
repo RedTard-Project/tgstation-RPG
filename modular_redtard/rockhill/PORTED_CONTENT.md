@@ -1013,7 +1013,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/effect/lily_petal` | 1 |
 | `/obj/effect/lily_petal/three` | 1 |
 
-## items.dm (3130 types)
+## items.dm (3137 types)
 
 | Type | Tiles |
 |---|---|
@@ -2273,9 +2273,11 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/storage/keyring/manor/counsilroom/iii` | 1 |
 | `/obj/item/storage/keyring/priest` | 1 |
 | `/obj/item/toy/cards/deck/tarot/majorarcana` | 1 |
+| `/obj/item/alch` | 0 |
 | `/obj/item/alch/artemisia` | 0 |
 | `/obj/item/alch/atropa` | 0 |
 | `/obj/item/alch/benedictus` | 0 |
+| `/obj/item/alch/berrypowder` | 0 |
 | `/obj/item/alch/blessedseedpowder` | 0 |
 | `/obj/item/alch/bloomstone` | 0 |
 | `/obj/item/alch/euphrasia` | 0 |
@@ -2283,7 +2285,11 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/alch/manabloompowder` | 0 |
 | `/obj/item/alch/matricaria` | 0 |
 | `/obj/item/alch/mentha` | 0 |
+| `/obj/item/alch/ozium` | 0 |
 | `/obj/item/alch/paris` | 0 |
+| `/obj/item/alch/puresalt` | 0 |
+| `/obj/item/alch/seeddust` | 0 |
+| `/obj/item/alch/sinew` | 0 |
 | `/obj/item/alch/stonedust` | 0 |
 | `/obj/item/alch/symphitum` | 0 |
 | `/obj/item/alch/taraxacum` | 0 |
@@ -3229,6 +3235,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow` | 0 |
 | `/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow/stalker` | 0 |
 | `/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow/stalker/lesser` | 0 |
+| `/obj/item/herbseed` | 0 |
 | `/obj/item/herbseed/artemisia` | 0 |
 | `/obj/item/herbseed/atropa` | 0 |
 | `/obj/item/herbseed/benedictus` | 0 |

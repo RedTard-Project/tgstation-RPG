@@ -321,6 +321,28 @@
 	TEST_ASSERT(chest.brute_dam < brute_before, "A bandage soaked in a potion did not heal the limb")
 	TEST_ASSERT_NULL(cloth.rogue_medicine, "The spent medicine stayed on the cloth")
 
+/datum/unit_test/rogue_brewing
+
+/datum/unit_test/rogue_brewing/Run()
+	var/mob/living/carbon/human/consistent/alchemist = allocate(__IMPLIED_TYPE__)
+	var/obj/machinery/light/rogue/cauldron/cauldron = allocate(__IMPLIED_TYPE__)
+	for(var/skill_rank in list(ROGUE_RANK_NONE, ROGUE_RANK_APPRENTICE))
+		alchemist.rogue_set_skill(ROGUE_ALCHEMY_SKILL, skill_rank * ROGUE_SKILL_PER_RANK)
+		cauldron.reagents.clear_reagents()
+		cauldron.reagents.add_reagent(/datum/reagent/water, 100)
+		for(var/ingredient_type in list(/obj/item/alch/coaldust, /obj/item/alch/puresalt))
+			var/obj/item/alch/ingredient = allocate(ingredient_type)
+			alchemist.put_in_active_hand(ingredient)
+			TEST_ASSERT_EQUAL(cauldron.item_interaction(alchemist, ingredient), ITEM_INTERACT_SUCCESS, "The cauldron did not take [ingredient]")
+		cauldron.rogue_finish_brew()
+		TEST_ASSERT(!cauldron.reagents.has_reagent(/datum/reagent/water), "The brew left its water")
+		if(skill_rank < ROGUE_RANK_APPRENTICE)
+			TEST_ASSERT(cauldron.reagents.has_reagent(/datum/reagent/yuck), "A brew beyond an unskilled alchemist did not turn to slurry")
+		else
+			TEST_ASSERT(cauldron.reagents.get_reagent_amount(/datum/reagent/medicine/antidote) >= 100, "Coal dust and salt did not brew an antidote")
+	var/obj/item/natural/bone/bone = allocate(__IMPLIED_TYPE__)
+	TEST_ASSERT(istype(rogue_grind_recipe(bone), /datum/alch_grind_recipe/natural_bone), "Natural bone has no mortar recipe")
+
 #undef TEST_ASSERT
 #undef TEST_ASSERT_EQUAL
 #endif

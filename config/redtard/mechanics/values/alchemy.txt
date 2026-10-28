@@ -51,3 +51,51 @@ temperature_potion_step = 5
 
 # Deciseconds the fire resistance potion keeps fire off after the last of it (Ratwood 15 minutes).
 fire_resist_time = 9000
+
+# Ratwood ticks of two seconds a cauldron boils its ingredients before the brew is done (Ratwood 20: forty seconds).
+cauldron_brew_ticks = 20
+
+# Points an ingredient gives the recipe it leans toward strongly (Ratwood major_pot 3).
+cauldron_major_points = 3
+
+# Points an ingredient gives the recipe it leans toward moderately (Ratwood med_pot 2).
+cauldron_med_points = 2
+
+# Points an ingredient gives the recipe it leans toward slightly (Ratwood minor_pot 1).
+cauldron_minor_points = 1
+
+# Least points a recipe needs from the ingredients to be brewed (Ratwood 5): two ingredients that lean toward it, or more.
+cauldron_min_points = 5
+
+# Percent chance a boiling cauldron bubbles aloud each Ratwood tick (Ratwood 10).
+cauldron_bubble_chance = 10
+
+# Alchemy experience a finished or a ruined brew gives per point of the brewer's intelligence (Ratwood INT x 2).
+cauldron_xp_per_int = 2
+
+# Deciseconds grinding a thing in the mortar takes (Ratwood 1 second).
+grind_time = 10
+
+# Alchemy experience grinding gives per point of intelligence (Ratwood INT x 1).
+grind_xp_per_int = 1
+
+# Units of blessed water in the mortar that Dendor's blessing draws from tree sap seeds (Ratwood 10).
+seed_blessing_water = 10
+
+# Druidic experience the blessing of the seeds gives (Ratwood 5).
+seed_blessing_xp = 5
+
+# Percent chance natural bone gives more bone meal to an alchemist of Apprentice or less (Ratwood 20).
+grind_bonemeal_chance_low = 20
+
+# Percent chance natural bone gives more bone meal to a better alchemist (Ratwood 50).
+grind_bonemeal_chance_high = 50
+
+# Perception and intelligence (their mean) at which one smells what an ingredient leans toward strongly without Alchemy (Ratwood 6).
+sniff_major_keen = 6
+
+# The same for what it leans toward moderately (Ratwood 10).
+sniff_med_keen = 10
+
+# The same for what it leans toward slightly (Ratwood 16).
+sniff_minor_keen = 16

@@ -1051,6 +1051,7 @@ def main():
     fill_items |= pottery_recipe_items(cfg, rw, rules)
     fill_items |= food_chain_items(cfg, rw, set(usage) | outfit_items | mapgen_types | fill_items | npc_items)
     fill_items |= husbandry_types(cfg, rw, set(usage) | fill_items)
+    fill_items |= alchemy_types(cfg, rw)
     generated = generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, outfit_items | mapgen_types | fill_items | npc_items, set(jobs))
     generate_mapgen(mapgen, rules, declared | generated, tg_names)
     generate_anvil_recipes(cfg, rw, rules, declared | generated)
@@ -1060,6 +1061,7 @@ def main():
     generate_trade(cfg, rw, rules, declared | generated)
     generate_food(cfg, rw, generated, tg_declared, tg_names, declared)
     generate_husbandry(cfg, rw, generated, tg_declared)
+    generate_alchemy(cfg, rw, declared | generated, generated)
     npcs = [p for p in npcs if p in generated]
     role_traits = npc_trait_names(rw, npcs, cfg['attributes'])
     for species in cfg['port']['bodies']['species_map']:
@@ -5166,6 +5168,120 @@ def generate_husbandry(cfg, rw, generated, tg_declared):
     os.makedirs(os.path.dirname(spec['file']), exist_ok=True)
     open(spec['file'], 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
     print(f"{spec['file']}: husbandry data for {len(blocks)} of {len(mobs)} beasts")
+
+
+ALCHEMY_LEANINGS = ('major_pot', 'med_pot', 'minor_pot')
+
+
+def alchemy_recipe_paths(rw, root):
+    """Ratwood's recipes of one kind of alchemy, the abstract root left out."""
+    return sorted(p for p in rw.types if boundary_match(p, root) and (rw.types[p].get('abstract_type') or '').strip().rstrip('/') != p)
+
+
+def alchemy_entries(raw):
+    """(path, number) of a Ratwood list(/path = n, ...); a plain path counts once."""
+    pairs = []
+    for key, value in food_entries(raw):
+        key = key.strip().rstrip('/')
+        if not key.startswith('/'):
+            continue
+        number = food_number(value) if value is not None else 1
+        pairs.append((key, number if number is not None else 1))
+    return pairs
+
+
+def alchemy_types(cfg, rw):
+    # Ratwood's alchemy for the alchemy module (modular_redtard/alchemy/brewing.dm): every ingredient (/obj/item/alch), what the
+    # mortar's recipes take and give and the items the cauldron's recipes leave, so the port has all of them.
+    spec = cfg['port'].get('alchemy')
+    if not spec:
+        return set()
+    found = {p for p in rw.types if boundary_match(p, spec['ingredient_root'])}
+    for path in alchemy_recipe_paths(rw, spec['grind_root']):
+        found.add((rw.resolve(path, 'valid_input') or '').strip().rstrip('/'))
+        for name in ('valid_outputs', 'bonus_chance_outputs'):
+            found |= {p for p, _ in alchemy_entries(rw.resolve(path, name))}
+    for path in alchemy_recipe_paths(rw, spec['cauldron_root']):
+        found |= {p for p, _ in alchemy_entries(rw.resolve(path, 'output_items'))}
+    found |= set(spec.get('extra_types', []))
+    return {p for p in found if p in rw.types}
+
+
+def generate_alchemy(cfg, rw, valid, generated):
+    # Ratwood's alchemy data for the alchemy module under Ratwood's paths: the cauldron's recipes (what they make, their smell,
+    # the skill they need), the mortar's (what it takes and gives) and what each ported ingredient leans toward in the cauldron.
+    # A recipe whose input or every output the port lacks is dropped, and the leanings toward a dropped recipe with it. A var
+    # of an ingredient is written where it differs from what the type inherits in the port.
+    spec = cfg['port'].get('alchemy')
+    if not spec:
+        return
+    default_skill = define_value_number(spec['default_skill'])
+
+    def listed(pairs):
+        return 'list(' + ', '.join(f'{p} = {n:g}' for p, n in pairs) + ')'
+
+    blocks = []
+    cauldron, cauldron_dropped = set(), 0
+    for path in alchemy_recipe_paths(rw, spec['cauldron_root']):
+        reagents = [(p, n) for p, n in alchemy_entries(rw.resolve(path, 'output_reagents')) if p in valid]
+        items = [(p, n) for p, n in alchemy_entries(rw.resolve(path, 'output_items')) if p in valid]
+        if not reagents and not items:
+            cauldron_dropped += 1
+            continue
+        cauldron.add(path)
+        block = [path, f"\tname = {string_value(rw.resolve(path, 'name')) or '\"\"'}"]
+        smell = string_value(rw.resolve(path, 'smells_like'))
+        if smell:
+            block.append(f'\tsmells_like = {smell}')
+        skill = define_value_number(rw.resolve(path, 'skill_required') or spec['default_skill'])
+        if skill is not None and skill != default_skill:
+            block.append(f'\tskill_required = {skill:g}')
+        if reagents:
+            block.append(f'\toutput_reagents = {listed(reagents)}')
+        if items:
+            block.append(f'\toutput_items = {listed(items)}')
+        blocks.append(block)
+    grind, grind_dropped = 0, 0
+    for path in alchemy_recipe_paths(rw, spec['grind_root']):
+        source = (rw.resolve(path, 'valid_input') or '').strip().rstrip('/')
+        outputs = [(p, n) for p, n in alchemy_entries(rw.resolve(path, 'valid_outputs')) if p in valid]
+        bonus = [(p, n) for p, n in alchemy_entries(rw.resolve(path, 'bonus_chance_outputs')) if p in valid]
+        if source not in valid or not (outputs or bonus):
+            grind_dropped += 1
+            continue
+        grind += 1
+        block = [path]
+        name = string_value(rw.resolve(path, 'name'))
+        if name and name != '"generic grind recipe"':
+            block.append(f'\tname = {name}')
+        block.append(f'\tvalid_input = {source}')
+        if (rw.resolve(path, 'picky') or 'TRUE').strip() in ('FALSE', '0'):
+            block.append('\tpicky = FALSE')
+        if outputs:
+            block.append(f'\tvalid_outputs = {listed(outputs)}')
+        if bonus:
+            block.append(f'\tbonus_chance_outputs = {listed(bonus)}')
+        blocks.append(block)
+    ingredients = sorted((p for p in generated if boundary_match(p, spec['ingredient_root'])), key=lambda p: (p.count('/'), p))
+    effective = {}
+    leaning = 0
+    for path in ingredients:
+        parent = next((path.rsplit('/', k)[0] for k in range(1, path.count('/')) if path.rsplit('/', k)[0] in effective), None)
+        inherited = effective.get(parent, dict.fromkeys(ALCHEMY_LEANINGS))
+        values = {}
+        block = [path]
+        for name in ALCHEMY_LEANINGS:
+            target = (rw.resolve(path, name) or '').strip().rstrip('/')
+            values[name] = target if target in cauldron else None
+            if values[name] != inherited[name]:
+                block.append(f'\t{name} = {values[name] or "null"}')
+        effective[path] = values
+        if len(block) > 1:
+            blocks.append(block)
+            leaning += 1
+    os.makedirs(os.path.dirname(spec['file']), exist_ok=True)
+    open(spec['file'], 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    print(f"{spec['file']}: {len(cauldron)} cauldron recipes ({cauldron_dropped} dropped), {grind} grind recipes ({grind_dropped} dropped), leanings of {leaning} of {len(ingredients)} ingredients")
 
 
 if __name__ == '__main__':

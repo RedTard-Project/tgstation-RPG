@@ -1,6 +1,3 @@
-/obj/item/alch
-	parent_type = /obj/item/rockhill
-
 /obj/item/ammo_casing/caseless
 	parent_type = /obj/item/ammo_casing/rogue
 
@@ -59,9 +56,6 @@
 	parent_type = /obj/item/rockhill
 
 /obj/item/gun/ballistic/firearm
-	parent_type = /obj/item/rockhill
-
-/obj/item/herbseed
 	parent_type = /obj/item/rockhill
 
 /obj/item/hunting_map
@@ -142,6 +136,24 @@
 /obj/item/underworld
 	parent_type = /obj/item/rockhill
 
+/obj/item/alch
+	parent_type = /obj/item/rockhill
+	name = "dust"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/alchemy.dmi'
+	icon_state = "irondust"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+
 /obj/item/alch/airdust
 	name = "air essentia"
 	desc = ""
@@ -198,6 +210,23 @@
 	desc = ""
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/alchemy.dmi'
 	icon_state = "benedictus"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+
+/obj/item/alch/berrypowder
+	name = "berry powder"
+	desc = "Berries ground and dried into a soft fragrant powder."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/alchemy.dmi'
+	icon_state = "berrypowder"
 	w_class = WEIGHT_CLASS_TINY
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
@@ -556,11 +585,45 @@
 	inhand_y_dimension = 64
 	inhand_icon_state = null
 
+/obj/item/alch/ozium
+	name = "alchemical ozium"
+	desc = "Alchemical processing has left it unfit for consumption."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/alchemy.dmi'
+	icon_state = "darkredpowder"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+
 /obj/item/alch/paris
 	name = "paris"
 	desc = ""
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/alchemy.dmi'
 	icon_state = "paris"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+
+/obj/item/alch/puresalt
+	name = "purified salts"
+	desc = "Salts that have been finely sifted to enhance their healing properties and to bolster their connection to the arcyne."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/alchemy.dmi'
+	icon_state = "puresalt"
 	w_class = WEIGHT_CLASS_TINY
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
@@ -632,11 +695,45 @@
 	inhand_icon_state = null
 	worn_icon_state = "salvia"
 
+/obj/item/alch/seeddust
+	name = "seed dust"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/alchemy.dmi'
+	icon_state = "seeddust"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+
 /obj/item/alch/silverdust
 	name = "silver dust"
 	desc = ""
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/alchemy.dmi'
 	icon_state = "silverdust"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_righthand.dmi'
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = null
+
+/obj/item/alch/sinew
+	name = "sinew"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/alchemy.dmi'
+	icon_state = "sinew"
 	w_class = WEIGHT_CLASS_TINY
 	force = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/items_lefthand.dmi'
@@ -41867,6 +41964,24 @@
 	worn_y_dimension = 32
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/structures/heart_items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/structures/heart_items_righthand.dmi'
+	inhand_icon_state = null
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	rogue_baked_inhand = TRUE
+
+/obj/item/herbseed
+	parent_type = /obj/item/rockhill
+	name = "herb seeds"
+	icon = 'modular_redtard/rockhill/icons/roguetown/items/produce.dmi'
+	icon_state = "seeds"
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
+	worn_icon_state = null
+	rogue_sleeved = null
+	worn_x_dimension = 32
+	worn_y_dimension = 32
+	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_lefthand.dmi'
+	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_righthand.dmi'
 	inhand_icon_state = null
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64

@@ -229,6 +229,9 @@
 #include "crafting\tech_nodes.dm"
 #include "crafting\ported\craft_recipes.dm"
 #include "crafting\recipe_rules.dm"
+// Alchemy brewing (alchemy/): the cauldron, the mortar and Ratwood's recipes, after crafting/_defines.dm for the skill ranks
+#include "alchemy\brewing.dm"
+#include "alchemy\ported\alchemy.dm"
 // Stage 1b: trade (economy/, block 7b), after crafting/_defines.dm for the item quality tiers
 #include "economy\_trade_defines.dm"
 #include "economy\quality.dm"
