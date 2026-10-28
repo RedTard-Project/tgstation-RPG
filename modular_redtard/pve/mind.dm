@@ -19,7 +19,7 @@
 	var/list/rogue_pve_shots
 	/// Ratwood projectilesound.
 	var/rogue_pve_shot_sound
-	/// Name of the value of mechanics/values.dm with the time between its shots (Ratwood ranged_cooldown_time).
+	/// Name of the value of config/redtard/mechanics/values.txt with the time between its shots (Ratwood ranged_cooldown_time).
 	var/rogue_pve_shot_cooldown
 	/// ROGUE_PVE_SHOOTER keeps its distance and only shoots; ROGUE_PVE_SKIRMISHER walks up to strike and shoots from afar.
 	var/rogue_pve_shot_style = ROGUE_PVE_SHOOTER

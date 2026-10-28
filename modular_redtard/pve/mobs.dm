@@ -1,5 +1,5 @@
 /// Which of Ratwood's creatures (rockhill/ported/mobs.dm) shoot and what with, which have special abilities, and the spiders'
-/// ways; Ratwood's choices, numbers in mechanics/values.dm.
+/// ways; Ratwood's choices, numbers in config/redtard/mechanics/values.txt.
 
 // Shooters (Ratwood projectiletype, ranged_cooldown_time, retreat_distance and minimum_distance).
 

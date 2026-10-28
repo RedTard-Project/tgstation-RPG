@@ -35,13 +35,7 @@ GLOBAL_DATUM(rogue_mechanics, /datum/rogue_mechanics)
 	for(var/id in GLOB.rogue_formula_definitions)
 		var/list/definition = GLOB.rogue_formula_definitions[id]
 		formulas[id] = new /datum/rogue_formula(id, definition[1], definition[2], definition[3])
-	for(var/id in GLOB.rogue_value_definitions)
-		// Formulas and values share one namespace: a value of a formula's name would replace the formula.
-		if(formulas[id])
-			stack_trace("Rogue mechanics: \"[id]\" is both a formula and a value; the value is dropped.")
-			continue
-		var/list/definition = GLOB.rogue_value_definitions[id]
-		formulas[id] = new /datum/rogue_formula(id, definition[1], definition[2], null, TRUE)
+	declare_values()
 	for(var/special_type in subtypesof(/datum/special_intent))
 		var/datum/special_intent/special = new special_type
 		for(var/tunable in special.tunables)
@@ -53,6 +47,31 @@ GLOBAL_DATUM(rogue_mechanics, /datum/rogue_mechanics)
 		formulas[pattern.value_key()] = new /datum/rogue_formula(pattern.value_key(), "[pattern.max_targets]", "Most extra targets of a cleave: [pattern.desc]", null, TRUE)
 		qdel(pattern)
 	load()
+
+/// Declares every value of the open values.txt, the one place a number is written. The build compiles the file in, so its
+/// numbers are the defaults even where the config folder lacks it; a private file only changes them. The `#` lines right
+/// above an entry, back to a blank line, are its description.
+/datum/rogue_mechanics/proc/declare_values()
+	var/list/description = list()
+	for(var/raw_line in splittext(replacetext(file2text('config/redtard/mechanics/values.txt'), ascii2text(ROGUE_MECHANICS_CARRIAGE_RETURN), ""), "\n"))
+		var/line = trim(raw_line)
+		if(!length(line))
+			description.Cut()
+			continue
+		if(line[1] == ROGUE_MECHANICS_COMMENT)
+			description += trim(copytext(line, 2))
+			continue
+		var/split_at = findtext(line, "=")
+		if(!split_at)
+			continue
+		var/id = LOWER_TEXT(trim(copytext(line, 1, split_at)))
+		var/datum/rogue_formula/formula = formulas[id]
+		// Formulas and values share one namespace: a value of a formula's name would replace the formula.
+		if(formula && !formula.is_value)
+			stack_trace("Rogue mechanics: \"[id]\" is both a formula and a value; the value is dropped.")
+		else
+			formulas[id] = new /datum/rogue_formula(id, trim(copytext(line, split_at + 1)), jointext(description, " "), null, TRUE)
+		description.Cut()
 
 /datum/rogue_mechanics/proc/directory()
 	return "[config?.directory || "config"]/[ROGUE_MECHANICS_SUBDIR]"

@@ -1,4 +1,4 @@
-# Combat numbers: name = value. Times are in deciseconds. Read like formulas.txt; a private config/redtard_private/mechanics/values.txt replaces this file.
+# Mechanics numbers: name = value, described by the # lines right above it. Every number is declared here and nowhere else: the build compiles this file in, so its numbers are the defaults. Times are in deciseconds. A private config/redtard_private/mechanics/values.txt is read instead of this file when present; a number it lacks keeps the one written here.
 
 # --- Treasury (economy/, block 7a): funds, loans, poll tax, charters, the Crown's solvency.
 
@@ -1102,6 +1102,8 @@ tempo_parry_stamina_2 = 2
 # Stamina taken off a parry at tempo level 3 (Azure Peak TEMPO_TAG_STAMLOSS_PARRY).
 tempo_parry_stamina_3 = 3
 
+# --- Combat: combat music and perception in ranged combat (combat/music.dm, combat/ranged.dm)
+
 # Combat music volume as a share of the area music volume preference, at most 100 (Ratwood: 1.2 of the combat music volume).
 cmode_music_volume = 1.2
 
@@ -1131,6 +1133,8 @@ ranged_skill_accuracy_step = 5
 
 # Degrees a gun's shots may stray more per point of perception below the baseline (Azure Peak ARCHER_NPC_SPREAD_PER_POINT).
 ranged_per_spread_step = 6
+
+# --- Block 5: Ratwood bows, crossbows and slings (combat/launchers.dm, combat/quivers.dm)
 
 # Deciseconds of a bow's draw before skill (Ratwood bows.dm get_chargetime(): 10 minus the skill steps).
 launcher_bow_draw_base = 10
@@ -1291,6 +1295,8 @@ launcher_arc_extra_range = 1
 # Deciseconds to take one round out of a quiver or to pick one up from the floor into it (Ratwood do_after 5).
 launcher_quiver_time = 5
 
+# --- Stage 7: library (library/)
+
 # Deciseconds the printing press takes to print (Ratwood PRINTING_TIME).
 library_print_time = 250
 
@@ -1323,6 +1329,8 @@ library_read_xp_book = 4
 
 # Reading skill experience an illiterate person gains trying to read a written sheet or a manuscript (Ratwood paper read()).
 library_read_xp_paper = 2
+
+# --- Stage 6: PvE depth (pve/, ai/)
 
 # Damage of a skeleton archer's arrow (Ratwood /obj/projectile/bullet/reusable/arrow/ancient).
 pve_arrow_damage = 10
@@ -1624,6 +1632,8 @@ npc_special_opener = 1
 # Least intelligence for an NPC to use its weapon's special (Azure Peak HUMAN_NPC_MIN_INT_FOR_TACTICS).
 npc_special_min_int = 8
 
+# --- Stage 8: triumphs and PQ (triumphs/, admin/, migrants/)
+
 # Triumphs for readying up before the round (Ratwood ready-up bonus).
 triumph_ready_bonus = 1
 
@@ -1674,6 +1684,8 @@ pq_commend_high_first = 0.5
 
 # PQ every further commendation from the same player gives from pq_commend_high on (Ratwood).
 pq_commend_high_repeat = 0.05
+
+# --- Stage 2: survival - firing clay in an oven (crafting/pottery.dm)
 
 # Deciseconds of baking that fire a raw clay piece in an oven (Ratwood cooktime 30 SECONDS); an oven bakes at half speed, faster with the cooking skill of whoever last used it.
 clay_fire_time = 300
@@ -2022,6 +2034,8 @@ trade_mail_paper_price = 1
 
 # Coin value a HERMES takes for a quill (Ratwood: a ziliqua).
 trade_mail_quill_price = 5
+
+# --- Special intents and cleave patterns (combat/specials.dm, combat/specials_azure.dm, combat/cleave.dm): their numbers are vars of the types; the lines below repeat them, and CI checks that they match.
 
 # Hefty Swing: cooldown. Times are in deciseconds.
 special_axe_swing_cooldown = 250

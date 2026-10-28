@@ -538,7 +538,7 @@
 | `/datum/status_effect/rogue_pve_fae_dust/refresh()` **без** `..()` | 2 | `pve/mobs.dm` | `/datum/status_effect/refresh()` | У ТГ refresh берёт длительность типа, здесь бесконечную | — |
 | Типы `/obj/projectile/rogue_pve/*`, `/datum/action/cooldown/mob_cooldown/rogue_pve/*`, `/obj/structure/rogue_pve_cocoon`, `/obj/structure/rogue_pve_spider_nest`, временные эффекты и статус `rogue_pve_*`; `/mob/living/basic/rockhill/Initialize()`, `Destroy()` (модульный тип) | 1–2 | `pve/*.dm` | — | Снаряды, умения, кокон, гнездо | — |
 | Сигналы и данные ТГ: `COMSIG_BASICMOB_PRE_ATTACK_RANGED`, `COMSIG_HOSTILE_POST_ATTACKINGTARGET`, `COMSIG_MOVABLE_CROSS`, `COMSIG_MOB_AI_MOVEMENT_FAILED`; компонент `ranged_attacks`; `TRAIT_WEB_SURFER`; ключи доски `BB_RANGED_SKIRMISH_MIN/MAX_DISTANCE`, свои `BB_ROGUE_PVE_*`, `BB_ROGUE_NPC_BLOWS(_AT)` | 1 | `pve/*.dm`, `ai/npc_specials.dm` | — | Стрельба, умения, спецудары NPC | Аргументы сигналов и имена ключей |
-| Числа `pve_*` (94) и `npc_special_*` (6) | 1 | `mechanics/values.dm`, `config/redtard/mechanics/values.txt` | — | Урон, откаты, дистанции, шансы | — |
+| Числа `pve_*` (94) и `npc_special_*` (6) | 1 | `config/redtard/mechanics/values.txt` | — | Урон, откаты, дистанции, шансы | — |
 
 ## Этап 7 — библиотека и постоянный мир (`library/`)
 
@@ -554,7 +554,7 @@
 | `/obj/item/natural/feather/get_writing_implement_details()` | 2 | `library/writing.dm` | `code/game/objects/items.dm` (ключи как у `pen.dm`) | Перо пишет как ручка | Ключи `interaction_mode`, `font`, `color`, `use_bold` |
 | Заглушки портера: `/obj/item/book/rogue` (`Initialize()`, `examine()`, `update_icon_state()`, `attack_self(_secondary)()`, `ui_interact()`, `ui_static_data()`), `/obj/machinery/printingpress`, `/obj/item/book_crafting_kit/item_interaction()`, `Initialize()` четырёх шкафов-заглушек | 2 | `library/books.dm`, `press.dm`, `writing.dm`, `bookcases.dm` | Окно `MarkdownViewer` ТГ | Чтение книг, печатный станок, переплёт | Ключи данных `title`, `content`, `author` у `MarkdownViewer` |
 | `/obj/item/manuscript`, `/obj/item/book/rogue/playerbook`, 9 книг Ратвуда, `SSrogue_library` (после `SSlibrary`), `/datum/rogue_book_archive`, `ADMIN_VERB(rogue_manage_books)`, `/datum/rogue_book_admin`, `/datum/rogue_book_viewer` (`ADMIN_STATE`) | 1–2 | `library/*.dm` | `code/controllers/subsystem/library.dm` | Архив книг игроков в `data/player_generated_books/` (формат Ратвуда), окно Manage Books | Что `SSlibrary` наполняет шкафы в своём `Initialize()` |
-| Конфиг `ROGUE_BOOK_ARCHIVE`; числа `library_*` в `config/redtard/mechanics/values.txt` | 1 | `library/config.dm`, `config/redtard/config.txt`, `mechanics/values.dm` | — | Архив вкл./выкл., время печати и перенастройки, книг на полке, листов в рукописи, шансы | Что ТГ не завёл ключа с тем же именем |
+| Конфиг `ROGUE_BOOK_ARCHIVE`; числа `library_*` в `config/redtard/mechanics/values.txt` | 1 | `library/config.dm`, `config/redtard/config.txt`, `config/redtard/mechanics/values.txt` | — | Архив вкл./выкл., время печати и перенастройки, книг на полке, листов в рукописи, шансы | Что ТГ не завёл ключа с тем же именем |
 | Ассеты: `library/books/*.json` (24 текста книг Azure Peak), `library/sound/ppress.ogg` (Ратвуд) | 1 | `library/` | — | Тексты книг, звук станка | — |
 | `/obj/item/paper/scroll` — подтип бумаги ТГ (`show_written_words = FALSE`, `slot_flags = NONE`); шкафы Ратвуда `bookcase/random/archive`, `random/misc`, `player_archive`, `random_recipes` — подтипы шкафов ТГ | 2 | `rockhill/ported/*` (портер) | `code/modules/paperwork/paper.dm`, `code/modules/library/bookcase.dm` | Свитки на карте — бумага ТГ, шкафы-заглушки — шкафы ТГ | Что бумага ТГ не завела своего `scroll` |
 
@@ -591,7 +591,7 @@
 | `/mob/living/carbon/human/handle_environment()` | 5 | `clothing/sun_glare.dm` | `code/modules/mob/living/carbon/human/life.dm` | После `..()` — ослепление солнцем у носителей `TRAIT_LIGHT_SENSITIVITY` | Что вызывается из `Life()` раз в тик |
 | `/obj/item`: `sleevetype`, `nodismemsleeves`, `r_sleeve_status`, `l_sleeve_status`, `torn_sleeve_number`; `/obj/item/clothing`: `rogue_sleeve_scrap`, `rogue_adjust_style`, `rogue_adjust_closed`; меняются в игре `icon_state`, `base_icon_state`, `worn_icon_state`, `flags_inv`, `body_parts_covered` | 3, 4 | `clothing/sleeve_status.dm`, `adjustable.dm` | `/obj/item`, `/obj/item/clothing` | Рукава и регулируемая одежда Ратвуда; статусы и тип рукава должен переносить портер | Что ТГ не завёл таких имён |
 | `/datum/rogue_adjust_style/*`, `/datum/status_effect/rogue/sun_blinded` и его алерт, `/atom/movable/screen/fullscreen/rogue_sun_glare`, `/datum/mood_event/rogue_sunlit`, `GLOB.rogue_adjust_styles`, `GLOB.rogue_sun_hiding_weathers`, `TRAIT_ROGUE_SUN_BLINDED` | 1–2 | `clothing/adjustable.dm`, `sun_glare.dm` | — | Стили регулировки, ослепление, дымка, настроение | — |
-| Числа `sleeve_tear_per_strength`, `sleeve_tear_time`, `sun_blind_perception` | 1 | `mechanics/values.dm`, `config/redtard/mechanics/values.txt` | — | Шанс и время порвать рукав, штраф восприятия | — |
+| Числа `sleeve_tear_per_strength`, `sleeve_tear_time`, `sun_blind_perception` | 1 | `config/redtard/mechanics/values.txt` | — | Шанс и время порвать рукав, штраф восприятия | — |
 | Ассеты Ратвуда (AGPL): `clothing/icons/sleeve_masks.dmi` (8 масок из `dismemberment.dmi`), `clothing/icons/sun_glare.dmi` (`smok`, 4,2 МБ), `clothing/sound/` (`visor.ogg`, `cloak (3).ogg`, `rummaging-03.ogg`, `chain_equip.ogg`, `equip_armor_chain.ogg`) | 1 | `clothing/` | — | Маски рукавов, дымка ослепления, звуки регулировки | — |
 
 ## Меню создания персонажа (`charsetup/`)
@@ -725,7 +725,7 @@
 ### Реестр чисел
 | Что (тип, процедура, файл) | Ступень | Файл модуля | Оригинал ТГ | Поведение | При мерже проверить |
 |---|---|---|---|---|---|
-| `GLOBAL_LIST_INIT(rogue_value_definitions, rogue_value_definition_list())` | 1 | `mechanics/values.dm` | — | Список строит процедура: аргумент макроса DM ограничен 64 КБ, реестр вырос до 75 КБ (2026-10-28) | — |
+| `/datum/rogue_mechanics/proc/declare_values()` | 1 | `mechanics/registry.dm`, `config/redtard/mechanics/values.txt` | — | Числа объявлены только в `values.txt`; файл вшит в сборку (`file2text('config/redtard/mechanics/values.txt')`), описание — строки `#` прямо над числом. Список `mechanics/values.dm` убран (2026-10-28) | — |
 
 ## Волна 3 (2026-10-28): скотоводство, веры, расы Вайблина
 
