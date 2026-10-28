@@ -1378,3 +1378,9 @@
 	icon_state = "tablewood3"
 	density = TRUE
 	layer = TABLE_LAYER
+
+/obj/structure/rockhill/toilet
+	name = "toilet"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
+	icon_state = "toilet"

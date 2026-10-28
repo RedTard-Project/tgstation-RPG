@@ -329,7 +329,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/turf/closed/wall/mineral/rogue/pipe/corners/four` | 1 |
 | `/turf/closed/wall/mineral/rogue/pipe/corners/one` | 1 |
 
-## structures.dm (539 types)
+## structures.dm (519 types)
 
 | Type | Tiles |
 |---|---|
@@ -378,17 +378,13 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/structure/fluff/walldeco/stone` | 115 |
 | `/obj/structure/fluff/nest` | 112 |
 | `/obj/structure/flora/rogueshroom` | 107 |
-| `/obj/structure/curtain/brown` | 106 |
 | `/obj/structure/flora/roguegrass/thorn_bush` | 103 |
 | `/obj/structure/underworld/barrier` | 96 |
 | `/obj/structure/fluff/statue/gargoyle/moss/candles` | 95 |
 | `/obj/structure/fluff/railing/corner` | 92 |
 | `/obj/structure/flora/newbranch/leafless` | 89 |
-| `/obj/structure/curtain/black` | 86 |
 | `/obj/structure/hotspring` | 83 |
 | `/obj/structure/roguetent` | 78 |
-| `/obj/structure/curtain/directional/black` | 77 |
-| `/obj/structure/curtain/magenta` | 76 |
 | `/obj/structure/fluff/statue/gargoyle/moss` | 76 |
 | `/obj/structure/fluff/walldeco/vinez/red` | 76 |
 | `/obj/structure/fluff/railing/corner/north_east` | 74 |
@@ -408,10 +404,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/structure/fluff/walldeco/psybanner` | 55 |
 | `/obj/structure/flora/ausbushes/grassybush` | 53 |
 | `/obj/structure/fluff/railing/wood/north` | 52 |
-| `/obj/structure/curtain/red` | 51 |
 | `/obj/structure/fermentation_keg/random/beer` | 50 |
-| `/obj/structure/curtain/directional/blue` | 49 |
-| `/obj/structure/curtain/directional/red` | 48 |
 | `/obj/structure/fluff/walldeco/maidendrape` | 48 |
 | `/obj/structure/bars/passage` | 47 |
 | `/obj/structure/fluff/statue/small` | 47 |
@@ -432,7 +425,6 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/structure/far_travel` | 39 |
 | `/obj/structure/fluff/walldeco/psybanner/red` | 39 |
 | `/obj/structure/roguemachine/scomm` | 39 |
-| `/obj/structure/curtain/directional/orange` | 38 |
 | `/obj/structure/fluff/pillow/magenta` | 38 |
 | `/obj/structure/fluff/statue/gargoyle/candles` | 38 |
 | `/obj/machinery/gear_painter` | 36 |
@@ -466,7 +458,6 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/structure/flora/roguetree/stump` | 23 |
 | `/obj/structure/fluff/statue/knight/interior` | 23 |
 | `/obj/structure/fluff/walldeco/painting/seraphina` | 23 |
-| `/obj/structure/curtain/directional/brown` | 22 |
 | `/obj/structure/fluff/clodpile` | 22 |
 | `/obj/structure/fluff/railing/wood/west` | 22 |
 | `/obj/structure/fluff/walldeco/bigpainting/lake` | 22 |
@@ -490,20 +481,17 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/structure/flora/roguegrass/bush/jungle/large` | 17 |
 | `/obj/structure/flora/roguegrass/maneater/real` | 17 |
 | `/obj/structure/fluff/walldeco/painting/queen` | 17 |
-| `/obj/structure/curtain/directional/drab` | 16 |
 | `/obj/structure/flora/roguegrass/herb/artemisia` | 16 |
 | `/obj/structure/fluff/littlebanners/bluewhite` | 16 |
 | `/obj/structure/fluff/psycross/copper` | 16 |
 | `/obj/structure/fluff/walldeco/vinez/offset` | 16 |
 | `/obj/structure/roguemachine/withdraw` | 16 |
-| `/obj/structure/curtain/directional/yellow` | 15 |
 | `/obj/structure/flora/roguegrass/herb/symphitum` | 15 |
 | `/obj/structure/fluff/alch` | 15 |
 | `/obj/structure/fluff/psycross/crafted` | 15 |
 | `/obj/structure/fluff/statue` | 15 |
 | `/obj/structure/fluff/walldeco/rpainting` | 15 |
 | `/obj/structure/roguemachine/vendor` | 15 |
-| `/obj/structure/curtain/directional/crafted` | 14 |
 | `/obj/structure/fluff/walldeco/bath/wallrope` | 14 |
 | `/obj/structure/hotspring/border/two` | 14 |
 | `/obj/structure/pillory` | 14 |
@@ -523,13 +511,11 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/structure/rogue/trophy/deer` | 13 |
 | `/obj/structure/bars/shop` | 12 |
 | `/obj/structure/bondage/x_pillory` | 12 |
-| `/obj/structure/curtain/green` | 12 |
 | `/obj/structure/flora/hotspring_rocks/grassy` | 12 |
 | `/obj/structure/flora/roguegrass/jungle/sparse` | 12 |
 | `/obj/structure/fluff/statue/knightalt/r` | 12 |
 | `/obj/structure/fluff/walldeco/fakewall` | 12 |
 | `/obj/structure/composter/halffull` | 11 |
-| `/obj/structure/curtain/directional/green` | 11 |
 | `/obj/structure/deadbody/peasant` | 11 |
 | `/obj/structure/flora/roguegrass/herb/manabloom` | 11 |
 | `/obj/structure/flora/roguegrass/herb/valeriana` | 11 |
@@ -565,7 +551,6 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/structure/roguemachine/mail/l` | 9 |
 | `/obj/structure/bonepile` | 8 |
 | `/obj/structure/bookcase/random_recipes` | 8 |
-| `/obj/structure/curtain/blue` | 8 |
 | `/obj/structure/flora/roguegrass/herb/urtica` | 8 |
 | `/obj/structure/fluff/customsign/arrow` | 8 |
 | `/obj/structure/hotspring/border/seven` | 8 |
@@ -654,8 +639,6 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/structure/bondage/torture_table` | 3 |
 | `/obj/structure/composter` | 3 |
 | `/obj/structure/composter/full` | 3 |
-| `/obj/structure/curtain/directional/magenta` | 3 |
-| `/obj/structure/curtain/yellow` | 3 |
 | `/obj/structure/deadbody/adventurer_leather` | 3 |
 | `/obj/structure/deadbody/greater_skeleton` | 3 |
 | `/obj/structure/deadbody/rogue` | 3 |
@@ -683,8 +666,6 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/structure/boatbell/fluff` | 2 |
 | `/obj/structure/bookcase/player_archive` | 2 |
 | `/obj/structure/broadcast_horn/paid` | 2 |
-| `/obj/structure/curtain/drab` | 2 |
-| `/obj/structure/curtain/orange` | 2 |
 | `/obj/structure/deadbody/old_knight` | 2 |
 | `/obj/structure/feedinghole` | 2 |
 | `/obj/structure/fermentation_keg/sourwine` | 2 |
@@ -728,7 +709,6 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/structure/broadcast_horn/loudmouth` | 1 |
 | `/obj/structure/broadcast_horn/loudmouth/guest` | 1 |
 | `/obj/structure/crabnest` | 1 |
-| `/obj/structure/curtain/purple` | 1 |
 | `/obj/structure/deadbody/necromancer` | 1 |
 | `/obj/structure/deadbody/warden` | 1 |
 | `/obj/structure/deadbody/wizard` | 1 |
@@ -5563,6 +5543,7 @@ Area music and ambience are kept in the repository, as Ratwood keeps them, and r
 - `modular_redtard/rockhill/sound/foley/coinphy (2).ogg` from Ratwood `sound/foley/coinphy (2).ogg`
 - `modular_redtard/rockhill/sound/foley/coins1.ogg` from Ratwood `sound/foley/coins1.ogg`
 - `modular_redtard/rockhill/sound/foley/doors/creak.ogg` from Ratwood `sound/foley/doors/creak.ogg`
+- `modular_redtard/rockhill/sound/foley/doors/curtain.ogg` from Ratwood `sound/foley/doors/curtain.ogg`
 - `modular_redtard/rockhill/sound/foley/doors/lockmetal.ogg` from Ratwood `sound/foley/doors/lockmetal.ogg`
 - `modular_redtard/rockhill/sound/foley/grindblade.ogg` from Ratwood `sound/foley/grindblade.ogg`
 - `modular_redtard/rockhill/sound/foley/ladder.ogg` from Ratwood `sound/foley/ladder.ogg`

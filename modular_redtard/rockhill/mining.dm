@@ -145,3 +145,21 @@ GLOBAL_LIST_INIT(rockhill_random_veins, rockhill_init_random_veins())
 
 /obj/structure/roguerock/atom_deconstruct(disassembled = TRUE)
 	new /obj/item/natural/stone(drop_location())
+
+/// Ratwood's random gem (rogueitems/gems.dm): becomes one gem by weight, or now and then a riddle of steel or silver ore.
+/obj/item/roguegem/random/Initialize(mapload)
+	..()
+	var/static/list/gems = list(
+		/obj/item/roguegem/ruby = 5,
+		/obj/item/roguegem/green = 15,
+		/obj/item/roguegem/blue = 10,
+		/obj/item/roguegem/yellow = 20,
+		/obj/item/roguegem/violet = 10,
+		/obj/item/roguegem/diamond = 5,
+		/obj/item/riddleofsteel = 1,
+		/obj/item/rogueore/silver = 3,
+		/obj/item/roguegem/blood_diamond = 1,
+	)
+	var/gem_type = pick_weight(gems)
+	new gem_type(loc)
+	return INITIALIZE_HINT_QDEL

@@ -202,3 +202,13 @@
 	var/obj/item/manuscript/manuscript = tool
 	manuscript.rogue_bind(user, src)
 	return ITEM_INTERACT_SUCCESS
+
+/// Ratwood's parchment, the plain sheet of medieval maps and crafts (the port rebases Ratwood's /obj/item/paper here, TG's
+/// stays TG's): written on, it shows its ink.
+/obj/item/paper/parchment
+	show_written_words = FALSE
+
+/obj/item/paper/parchment/update_icon_state()
+	. = ..()
+	if(rogue_is_written())
+		icon_state = "paperwrite"

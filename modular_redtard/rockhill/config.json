@@ -64,6 +64,55 @@
 			}
 		},
 		{
+			"prefix": "/obj/structure/toilet",
+			"rebase": "/obj/structure/rockhill/toilet",
+			"port": {
+				"file": "furniture.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state"
+				]
+			}
+		},
+		{
+			"prefix": "/obj/item/paper",
+			"exact": true,
+			"rebase": "/obj/item/paper/parchment",
+			"port": {
+				"file": "paper.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"w_class",
+					"throw_range",
+					"throw_speed",
+					"max_integrity"
+				]
+			}
+		},
+		{
+			"prefix": "/obj/structure/curtain",
+			"rebase": "/obj/structure/rockhill/curtain",
+			"port": {
+				"file": "curtains.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"color",
+					"alpha"
+				],
+				"define_strings": [
+					"color"
+				]
+			}
+		},
+		{
 			"prefix": "/obj/structure/mineral_door",
 			"rebase": "/obj/structure/mineral_door/rockhill",
 			"port": {
@@ -1357,6 +1406,7 @@
 			"sound/items/book_page.ogg",
 			"sound/items/gem.ogg",
 			"sound/foley/woodclimb.ogg",
+			"sound/foley/doors/curtain.ogg",
 			"sound/misc/levelup1.ogg",
 			"sound/misc/levelup2.ogg",
 			"sound/misc/levelup3.ogg",

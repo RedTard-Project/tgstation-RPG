@@ -3551,7 +3551,7 @@ def npc_creation_text(rw, path):
 
 def npc_look(rw, path, hair_names):
     """How Ratwood's after_creation dresses the NPC's body: a random sex, skin, eye and hair colours, the hairstyles and
-    beards it picks from, and the name lists (by the file's m/f ending)."""
+    beards it picks from, and the name lists (by the file's m/f ending) or the one name it gives (a goblin is "goblin")."""
     text = npc_creation_text(rw, path)
     look = {}
     if re.search(r'\bgender\s*=\s*pick\(\s*MALE\s*,\s*FEMALE\s*\)', text):
@@ -3568,6 +3568,9 @@ def npc_look(rw, path, hair_names):
     for rel in dict.fromkeys(re.findall(r'\breal_name\s*=\s*pick\(\s*world\.file2list\(\s*"([^"]+)"', text)):
         key = 'names_f' if rel.endswith('f.txt') else 'names_m'
         look[key] = f'"{NPC_NAMES_DIR}/{os.path.basename(rel)}"'
+    fixed = re.search(r'\breal_name\s*=\s*"([^"\[\]]+)"', text)
+    if fixed and 'names_m' not in look and 'names_f' not in look:
+        look['name'] = json.dumps(fixed.group(1))
     return look
 
 

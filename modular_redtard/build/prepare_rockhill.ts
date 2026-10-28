@@ -15,6 +15,7 @@ const PACK_ROOT = path.resolve(PACK_DIR);
 const PACK_GIT_DIR = path.join(PACK_ROOT, '.git');
 const STAMP_PATH = path.posix.join(CACHE_DIR, 'stamp.json');
 const SCRIPT_PATH = 'modular_redtard/build/prepare_rockhill.ts';
+const PORTED_ICONS = 'modular_redtard/rockhill/icons';
 const MAPLINT_RULES = 'tools/maplint';
 const LEVEL_LINE = /^\(\d+,\d+,\d+\) = \{"$/;
 const TILE_OPEN = /^"([^"]+)" = \($/;
@@ -71,8 +72,11 @@ type Declarations = { types: Set<string>; abstract: Set<string> };
 
 type Pack = { dir: string; files: string[] };
 
-/// Every path the conversion asked the declared types about, with the answer it got.
-type Asked = { types: Record<string, boolean>; abstract: Record<string, boolean> };
+/// Every path the conversion asked the declared types about, and every ported sheet it looked for, with the answer it got.
+type Asked = { types: Record<string, boolean>; abstract: Record<string, boolean>; files: Record<string, boolean> };
+
+/// Where withPortedIcon() writes down the sheets it looked for, while a conversion runs.
+let askedFiles: Record<string, boolean> | null = null;
 
 /// What the last clean conversion read (a hash of its files, the declared-type answers) and what it wrote (file -> hash).
 type Stamp = { inputs: string; asked: Asked; outputs: Record<string, string> };
@@ -103,7 +107,8 @@ export async function prepareRockhill(): Promise<void> {
   }
   const sources = [station, ...extraMaps(config, pack, mapJson.traits), ...templateMaps(config)];
 
-  const asked: Asked = { types: {}, abstract: {} };
+  const asked: Asked = { types: {}, abstract: {}, files: {} };
+  askedFiles = asked.files;
   const declarations = askedDeclarations(scanned, asked);
   const declared = declarations.types;
   const problems: Problems = {
@@ -228,6 +233,9 @@ function upToDate(inputs: string, scanned: Declarations): boolean {
   }
   const same = (answers: Record<string, boolean>, set: Set<string>) => Object.entries(answers).every(([value, answer]) => set.has(value) === answer);
   if (!same(stamp.asked.types, scanned.types) || !same(stamp.asked.abstract, scanned.abstract)) {
+    return false;
+  }
+  if (!Object.entries(stamp.asked.files || {}).every(([file, answer]) => fs.existsSync(file) === answer)) {
     return false;
   }
   return Object.entries(stamp.outputs).every(([file, digest]) => fs.existsSync(file) && sha1(fs.readFileSync(file)) === digest);
@@ -570,7 +578,8 @@ function convertPops(model: Model, rules: Rule[], mapVars: Record<string, string
     targets.set(placed, (targets.get(placed) || 0) + 1);
     const allowed = kind === 'area' ? new Set<string>() : kind === 'turf' ? TURF_VARS : replaced && !rule?.port ? REPLACED_VARS : KEPT_VARS;
     const extra = Object.entries(mapVars).filter(([prefix]) => under(prefix)).flatMap(([, names]) => names);
-    const vars = pop.vars.filter((entry) => allowed.has(entry.name) || extra.includes(entry.name));
+    const filtered = pop.vars.filter((entry) => allowed.has(entry.name) || extra.includes(entry.name));
+    const vars = kind === 'turf' || kind === 'area' ? filtered : withPortedIcon(pop.vars, filtered);
     kept.push({ path: placed, vars: placed === START_LANDMARK || placed.startsWith(`${START_LANDMARK}/`) ? landmarkVars(vars) : vars });
   }
   const areas = kept.filter((pop) => pop.path === '/area' || pop.path.startsWith('/area/'));
@@ -652,6 +661,26 @@ function runMaplint(label: string, maps: string[]): boolean {
   const details = lines.filter((line) => !summaryLine.test(line.trim())).join('\n').trim();
   console.warn(`modular_redtard: WARNING - maplint (tools/maplint, the TG map rules): ${label} - [${counts}]\n${details}`);
   return false;
+}
+
+/// The map's own `icon = '...'` edit on an object, pointed at the ported copy of that sheet (Ratwood's icons/X lies in
+/// modular_redtard/rockhill/icons/X, a modular path keeps its folders there). Without a ported copy the icon_state edit goes
+/// too, so the object keeps its own sprite instead of a state its sheet lacks (the curved stairs showed magenta).
+function withPortedIcon(source: Pop['vars'], vars: Pop['vars']): Pop['vars'] {
+  const iconEdit = source.find((entry) => entry.name === 'icon');
+  if (!iconEdit) {
+    return vars;
+  }
+  const file = /^\s*icon\s*=\s*'([^']+)'/.exec(iconEdit.lines.join(' '))?.[1];
+  const ported = file ? path.posix.join(PORTED_ICONS, file.startsWith('icons/') ? file.slice('icons/'.length) : file) : '';
+  const exists = !!ported && fs.existsSync(ported);
+  if (ported && askedFiles) {
+    askedFiles[ported] = exists;
+  }
+  if (exists) {
+    return [...vars.filter((entry) => entry.name !== 'icon'), { name: 'icon', lines: [`icon = '${ported}'`] }];
+  }
+  return vars.filter((entry) => entry.name !== 'icon' && entry.name !== 'icon_state');
 }
 
 function emitPops(pops: Pop[]): string[] {

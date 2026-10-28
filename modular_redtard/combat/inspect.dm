@@ -1,11 +1,18 @@
 // Ratwood's and Azure Peak's inspection of an item (game/objects/items.dm: get_inspect_button(), Topic "inspect",
 // get_force_string()): the examine text ends with {?}, and clicking it prints the item's properties in one block - force in
-// words, wielded force, balance, length, defense, sharpness, skill, special, coverage and durability. Medieval maps only.
+// words, wielded force, balance, length, defense, sharpness, skill, special, coverage and durability. Medieval maps only;
+// there it takes the place of TG's combat label (weapon_description), whose hits to take down an enemy know nothing of
+// Ratwood's combat.
 
 /obj/item/examine(mob/user)
 	. = ..()
-	if(rogue_combat_enabled() && (force || max_integrity))
+	if(rogue_combat_enabled() && (force || throwforce || max_integrity || offensive_notes))
 		. += span_info("<a href='byond://?src=[REF(src)];rogue_inspect=1'>Inspect {?}</a>")
+
+/obj/item/add_weapon_description()
+	if(rogue_combat_enabled())
+		return
+	return ..()
 
 /obj/item/Topic(href, list/href_list)
 	. = ..()
@@ -60,6 +67,10 @@
 		var/whole = max_integrity - failure
 		var/left = max(get_integrity() - failure, 0)
 		. += "<b>DURABILITY:</b> [whole > 0 ? round(left / whole * 100) : 0]% ([floor(left)])"
+	// What TG's label added past its own lines: the item's notes and what its components tell.
+	if(offensive_notes)
+		. += offensive_notes
+	SEND_SIGNAL(src, COMSIG_ITEM_WEAPON_LABEL_READOUT, .)
 
 /// What the garment covers: TG's body parts, and Ratwood's parts of the face the porter keeps apart (rogue_face_coverage).
 /obj/item/proc/rogue_coverage_lines()
