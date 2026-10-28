@@ -71,8 +71,11 @@ type Declarations = { types: Set<string>; abstract: Set<string> };
 
 type Pack = { dir: string; files: string[] };
 
-/// What the last clean conversion read (a hash of its inputs) and what it wrote (file -> hash).
-type Stamp = { inputs: string; outputs: Record<string, string> };
+/// Every path the conversion asked the declared types about, with the answer it got.
+type Asked = { types: Record<string, boolean>; abstract: Record<string, boolean> };
+
+/// What the last clean conversion read (a hash of its files, the declared-type answers) and what it wrote (file -> hash).
+type Stamp = { inputs: string; asked: Asked; outputs: Record<string, string> };
 
 type Problems = {
   fatal: Map<string, number>;
@@ -92,14 +95,16 @@ export async function prepareRockhill(): Promise<void> {
   const station: MapSource = { label: 'map', name: config.source.name, file: config.source.map, output: config.output.map, traits: mapJson.traits };
   const fetched = fetchPack(config);
   const pack = fetched.dir;
-  const declarations = declaredTypes();
-  const inputs = inputFingerprint(config, fetched, declarations);
-  if (upToDate(inputs)) {
-    console.log(`modular_redtard: ${config.source.name} maps are up to date (the ${config.source.project} map files and the module's inputs are what the last conversion read): conversion and maplint skipped`);
+  const inputs = inputFingerprint(config, fetched);
+  const scanned = declaredTypes();
+  if (upToDate(inputs, scanned)) {
+    console.log(`modular_redtard: ${config.source.name} maps are up to date (the ${config.source.project} map files, the module's inputs and every declared type they use are as the last conversion saw them): conversion and maplint skipped`);
     return;
   }
   const sources = [station, ...extraMaps(config, pack, mapJson.traits), ...templateMaps(config)];
 
+  const asked: Asked = { types: {}, abstract: {} };
+  const declarations = askedDeclarations(scanned, asked);
   const declared = declarations.types;
   const problems: Problems = {
     fatal: new Map(),
@@ -176,13 +181,24 @@ export async function prepareRockhill(): Promise<void> {
   // A clean conversion is stamped; one with maplint warnings is not, so the next build converts and lints it again.
   if (lintClean) {
     const titleFiles = config.title.sources.map((source) => path.join(config.output.title_dir, `${config.title.prefix}${source.name}.${source.kind}`));
-    writeStamp(inputs, [...written.map((map) => map.source.output), config.output.map_json, reportPath(config), ...titleFiles]);
+    writeStamp(inputs, asked, [...written.map((map) => map.source.output), config.output.map_json, reportPath(config), ...titleFiles]);
   }
 }
 
-/// Everything a conversion reads: the map files of the pack, the module's own inputs (config, map json, dungeon templates,
-/// role titles, area flags, title screens), this script, the TG maplint rules and the declared types.
-function inputFingerprint(config: Config, pack: Pack, declarations: Declarations): string {
+/// The declared types with every has() answer written down: a codebase change only matters to the maps when it changes one of
+/// those answers (a new proc or an unrelated type does not).
+function askedDeclarations(scanned: Declarations, asked: Asked): Declarations {
+  const answering = (set: Set<string>, answers: Record<string, boolean>): Set<string> => {
+    const view = new Set<string>();
+    view.has = (value: string) => (answers[value] = set.has(value));
+    return view;
+  };
+  return { types: answering(scanned.types, asked.types), abstract: answering(scanned.abstract, asked.abstract) };
+}
+
+/// The files a conversion reads: the map files of the pack, the module's own inputs (config, map json, dungeon templates, role
+/// titles, area flags, title screens), this script and the TG maplint rules. The declared types are checked by their answers.
+function inputFingerprint(config: Config, pack: Pack): string {
   const hash = crypto.createHash('sha1');
   const own = [CONFIG_PATH, path.join(SHARED_DIR, 'rockhill.json'), config.source.templates, ROLE_TITLES, AREA_FLAGS, SCRIPT_PATH, MAPLINT_SCRIPT];
   const titles = config.title.sources.map((source) => path.join(SHARED_DIR, 'title', source.file));
@@ -192,14 +208,12 @@ function inputFingerprint(config: Config, pack: Pack, declarations: Declarations
     hash.update(`${file}\n`);
     hash.update(fs.existsSync(file) ? fs.readFileSync(file) : '(missing)\n');
   }
-  hash.update([...declarations.types].sort().join('\n'));
-  hash.update('\n--\n');
-  hash.update([...declarations.abstract].sort().join('\n'));
   return hash.digest('hex');
 }
 
-/// The stamp of the last clean conversion matches these inputs, and every file it wrote is still as it was written.
-function upToDate(inputs: string): boolean {
+/// The stamp of the last clean conversion matches these inputs, the declared types answer every question it asked the same way,
+/// and every file it wrote is still as it was written.
+function upToDate(inputs: string, scanned: Declarations): boolean {
   if (!fs.existsSync(STAMP_PATH)) {
     return false;
   }
@@ -209,14 +223,18 @@ function upToDate(inputs: string): boolean {
   } catch {
     return false;
   }
-  if (stamp.inputs !== inputs || !stamp.outputs || !Object.keys(stamp.outputs).length) {
+  if (stamp.inputs !== inputs || !stamp.asked || !stamp.outputs || !Object.keys(stamp.outputs).length) {
+    return false;
+  }
+  const same = (answers: Record<string, boolean>, set: Set<string>) => Object.entries(answers).every(([value, answer]) => set.has(value) === answer);
+  if (!same(stamp.asked.types, scanned.types) || !same(stamp.asked.abstract, scanned.abstract)) {
     return false;
   }
   return Object.entries(stamp.outputs).every(([file, digest]) => fs.existsSync(file) && sha1(fs.readFileSync(file)) === digest);
 }
 
-function writeStamp(inputs: string, outputs: string[]): void {
-  const stamp: Stamp = { inputs, outputs: Object.fromEntries(outputs.map((file) => [file, sha1(fs.readFileSync(file))])) };
+function writeStamp(inputs: string, asked: Asked, outputs: string[]): void {
+  const stamp: Stamp = { inputs, asked, outputs: Object.fromEntries(outputs.map((file) => [file, sha1(fs.readFileSync(file))])) };
   fs.mkdirSync(CACHE_DIR, { recursive: true });
   fs.writeFileSync(STAMP_PATH, `${JSON.stringify(stamp, null, '\t')}\n`);
 }
