@@ -566,3 +566,20 @@
 #define ROGUE_BANDAGE_STOP rogue_value("bandage_stop")
 #define ROGUE_BANDAGE_TIME_PER_RANK rogue_value("bandage_time_per_rank")
 #define ROGUE_UNBANDAGE_TIME rogue_value("unbandage_time")
+/// Cloth soaked in a potion or blessed water heals the wounds it binds (combat/medicine.dm): the units a soaking takes, how
+/// long, and what the medicine under a bandage spends a Ratwood tick.
+#define ROGUE_SOAK_UNITS rogue_value("soak_units")
+#define ROGUE_SOAK_TIME rogue_value("soak_time")
+#define ROGUE_SOAK_SPEND rogue_value("soak_spend")
+/// What a wound takes to mend before it closes (Ratwood whp), by kind and size (combat/medicine.dm).
+#define ROGUE_WOUND_HEALTH_CUT_MODERATE rogue_value("wound_health_cut_moderate")
+#define ROGUE_WOUND_HEALTH_CUT_SEVERE rogue_value("wound_health_cut_severe")
+#define ROGUE_WOUND_HEALTH_STAB_MODERATE rogue_value("wound_health_stab_moderate")
+#define ROGUE_WOUND_HEALTH_STAB_SEVERE rogue_value("wound_health_stab_severe")
+#define ROGUE_WOUND_HEALTH_BONE rogue_value("wound_health_bone")
+#define ROGUE_WOUND_HEALTH_SKULL rogue_value("wound_health_skull")
+#define ROGUE_WOUND_HEALTH_BURN_MODERATE rogue_value("wound_health_burn_moderate")
+#define ROGUE_WOUND_HEALTH_BURN_SEVERE rogue_value("wound_health_burn_severe")
+#define ROGUE_WOUND_HEALTH_BURN_CRITICAL rogue_value("wound_health_burn_critical")
+#define ROGUE_WOUND_HEALTH_ARTERY rogue_value("wound_health_artery")
+#define ROGUE_WOUND_HEALTH_ARTERY_VITAL rogue_value("wound_health_artery_vital")

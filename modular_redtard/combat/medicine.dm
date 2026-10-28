@@ -43,6 +43,80 @@
 	rogue_stitched = 0
 	adjust_blood_flow(ROGUE_STUMP_SEWN_BLEED - ROGUE_STUMP_BLEED)
 
+/datum/wound
+	/// Ratwood whp: what is left to mend before the wound closes (potions, soaked bandages); null until it is first mended.
+	var/rogue_health
+
+/// What mending this wound takes before it closes (Ratwood whp by its kind and size); 0 when mending does not close it.
+/datum/wound/proc/rogue_health_max()
+	return 0
+
+/datum/wound/slash/flesh/rogue_health_max()
+	return rogue_cut_health(ROGUE_WOUND_HEALTH_CUT_MODERATE, ROGUE_WOUND_HEALTH_CUT_SEVERE)
+
+/datum/wound/pierce/bleed/rogue_health_max()
+	return rogue_cut_health(ROGUE_WOUND_HEALTH_STAB_MODERATE, ROGUE_WOUND_HEALTH_STAB_SEVERE)
+
+/// A cut or a stab by its size; a critical one is an opened artery (combat/blood.dm), the neck's and the heart's the longest.
+/datum/wound/proc/rogue_cut_health(moderate, severe)
+	if(severity >= WOUND_SEVERITY_CRITICAL)
+		return (rogue_artery == ROGUE_ARTERY_THROAT || rogue_artery == ROGUE_ARTERY_HEART) ? ROGUE_WOUND_HEALTH_ARTERY_VITAL : ROGUE_WOUND_HEALTH_ARTERY
+	return severity >= WOUND_SEVERITY_SEVERE ? severe : moderate
+
+/datum/wound/blunt/bone/rogue_health_max()
+	return limb?.body_zone == BODY_ZONE_HEAD && severity >= WOUND_SEVERITY_SEVERE ? ROGUE_WOUND_HEALTH_SKULL : ROGUE_WOUND_HEALTH_BONE
+
+/datum/wound/cranial_fissure/rogue_health_max()
+	return ROGUE_WOUND_HEALTH_SKULL
+
+/datum/wound/burn/flesh/rogue_health_max()
+	if(severity >= WOUND_SEVERITY_CRITICAL)
+		return ROGUE_WOUND_HEALTH_BURN_CRITICAL
+	return severity >= WOUND_SEVERITY_SEVERE ? ROGUE_WOUND_HEALTH_BURN_SEVERE : ROGUE_WOUND_HEALTH_BURN_MODERATE
+
+/// Ratwood heal_wound(): mends the wound by the amount; with nothing left to mend it closes (a cut, a stab, a burn or a broken
+/// bone of TG is gone, and scars as TG's do). Returns what it took of the amount.
+/datum/wound/proc/rogue_heal_wound(amount)
+	var/most = rogue_health_max()
+	if(!most || amount <= 0)
+		return 0
+	if(isnull(rogue_health))
+		rogue_health = most
+	var/healed = min(rogue_health, amount)
+	rogue_health -= healed
+	if(rogue_health <= 0)
+		qdel(src)
+	return healed
+
+/// A stump mends by the searing it still needs (integrity): Ratwood's potions heal a stump's whp as the searing does.
+/datum/wound/rogue_stump/rogue_heal_wound(amount)
+	if(amount <= 0 || integrity <= 0)
+		return 0
+	var/healed = min(integrity, amount)
+	integrity -= healed
+	if(integrity <= 0)
+		to_chat(victim, span_green("My [stumps > 1 ? "stumps close" : "stump closes"]."))
+		qdel(src)
+	return healed
+
+/// Ratwood heal_wounds(): mends the wounds one after another, each taking what it needs of the amount and passing the rest on.
+/// TRUE when any of them mended.
+/proc/rogue_mend_wounds(list/wounds, amount)
+	. = FALSE
+	for(var/datum/wound/wound as anything in wounds)
+		if(amount <= 0)
+			break
+		var/healed = wound.rogue_heal_wound(amount)
+		if(healed)
+			amount -= healed
+			. = TRUE
+
+/mob/living/carbon/proc/rogue_heal_wounds(amount)
+	return rogue_mend_wounds(all_wounds, amount)
+
+/obj/item/bodypart/proc/rogue_heal_wounds(amount)
+	return rogue_mend_wounds(wounds, amount)
+
 /// The wounds of this limb a needle can sew.
 /obj/item/bodypart/proc/rogue_sewable_wounds()
 	. = list()
@@ -117,6 +191,12 @@
 	var/rogue_bandage_left
 	/// Soaked through with blood: as a bandage it no longer helps, until it is washed.
 	var/rogue_soaked = FALSE
+	/// Soaked in a potion or blessed water (rogue_soak_medicines): what it heals each Ratwood tick as a bandage (Ratwood
+	/// medicine_quality), and what of it is left (medicine_amount), spent soak_spend a tick.
+	var/rogue_medicine_quality = 0
+	var/rogue_medicine_left = 0
+	/// What it was soaked in, for its look.
+	var/datum/reagent/rogue_medicine
 
 /// Ratwood's bandage: faster to put on, and soaks up twice as much.
 /obj/item/natural/cloth/bandage
@@ -129,11 +209,83 @@
 	INVOKE_ASYNC(src, PROC_REF(rogue_bandage), interacting_with, user)
 	return ITEM_INTERACT_SUCCESS
 
-/// Ratwood's wash_act(): washed, the cloth soaks up as much as new.
+/// Ratwood's wash_act(): washed, the cloth soaks up as much as new, and the medicine is washed out.
 /obj/item/natural/cloth/wash(clean_types)
 	. = ..()
 	rogue_soaked = FALSE
 	rogue_bandage_left = rogue_bandage_capacity
+	rogue_clear_medicine()
+
+/// Ratwood's soakings (clothfibersthorn.dm attackby()): what a cloth soaked in each heals a Ratwood tick under a bandage, how
+/// long it lasts and Ratwood's word for it. A health potion heals quickly, blessed water slowly and only on a bandage. Ratwood's
+/// aqua vitae comes with its drinks.
+GLOBAL_LIST_INIT(rogue_soak_medicines, list(
+	/datum/reagent/medicine/healthpot = list(1, 10, "lyfeblood"),
+	/datum/reagent/medicine/stronghealth = list(2, 10, "strong lyfeblood"),
+	/datum/reagent/water/blessed = list(0.2, 20, "blessed water"),
+))
+
+/// A vessel used on the cloth soaks it in a medicine it holds soak_units of, if the cloth is not soaked yet.
+/obj/item/natural/cloth/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
+	if(!tool.reagents || !rogue_combat_enabled())
+		return ..()
+	var/datum/reagent/medicine
+	for(var/datum/reagent/kind as anything in GLOB.rogue_soak_medicines)
+		if(tool.reagents.has_reagent(kind, ROGUE_SOAK_UNITS))
+			medicine = kind
+			break
+	if(!medicine)
+		return ..()
+	if(rogue_medicine_left > 0)
+		to_chat(user, span_warning("[src] is already soaked."))
+		return ITEM_INTERACT_BLOCKING
+	INVOKE_ASYNC(src, PROC_REF(rogue_soak_in), tool, medicine, user)
+	return ITEM_INTERACT_SUCCESS
+
+/obj/item/natural/cloth/proc/rogue_soak_in(obj/item/vessel, datum/reagent/medicine, mob/living/user)
+	var/list/data = GLOB.rogue_soak_medicines[medicine]
+	to_chat(user, span_notice("Soaking [src] in [data[3]]..."))
+	if(!do_after(user, ROGUE_SOAK_TIME, target = src) || rogue_medicine_left > 0 || !vessel.reagents?.has_reagent(medicine, ROGUE_SOAK_UNITS))
+		return
+	vessel.reagents.remove_reagent(medicine, ROGUE_SOAK_UNITS)
+	rogue_medicine = medicine
+	rogue_medicine_quality = data[1]
+	rogue_medicine_left = data[2]
+	update_appearance(UPDATE_OVERLAYS)
+
+/// The medicine is spent or washed out.
+/obj/item/natural/cloth/proc/rogue_clear_medicine()
+	if(!rogue_medicine)
+		return
+	rogue_medicine = null
+	rogue_medicine_quality = 0
+	rogue_medicine_left = 0
+	update_appearance(UPDATE_OVERLAYS)
+
+/// Ratwood's process_bandage(): a clean bandage soaked in medicine mends the wounds it binds and heals the limb a little each
+/// tick, until the medicine is spent.
+/obj/item/natural/cloth/proc/rogue_medicine_tick(obj/item/bodypart/limb, ticks)
+	if(!rogue_medicine_quality || rogue_soaked)
+		return
+	var/amount = rogue_medicine_quality * ticks
+	limb.rogue_heal_wounds(amount)
+	if(limb.brute_dam || limb.burn_dam)
+		limb.heal_damage(amount, amount)
+	rogue_medicine_left -= ROGUE_SOAK_SPEND * ticks
+	if(rogue_medicine_left <= 0)
+		rogue_clear_medicine()
+
+/obj/item/natural/cloth/update_overlays()
+	. = ..()
+	if(rogue_medicine && icon_exists(icon, "[icon_state]_soaked"))
+		var/mutable_appearance/soaked = mutable_appearance(icon, "[icon_state]_soaked")
+		soaked.color = initial(rogue_medicine.color)
+		. += soaked
+
+/obj/item/natural/cloth/examine(mob/user)
+	. = ..()
+	if(rogue_medicine)
+		. += span_notice("It has been soaked in [GLOB.rogue_soak_medicines[rogue_medicine][3]].")
 
 /// Ratwood's bandage(): on the limb aimed at, through what does not cover it thickly; the Medicine skill makes it 15% faster
 /// a rank, and one who bandages oneself may walk meanwhile.

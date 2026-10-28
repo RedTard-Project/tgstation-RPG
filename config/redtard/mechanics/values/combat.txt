@@ -1459,3 +1459,45 @@ bandage_time_per_rank = 0.15
 
 # Deciseconds taking a bandage off takes, before Medicine (Ratwood 5 SECONDS).
 unbandage_time = 50
+
+# Units of a potion or blessed water a cloth soaks up to heal the wounds it binds (Ratwood 10).
+soak_units = 10
+
+# Deciseconds soaking a cloth takes (Ratwood 3 seconds).
+soak_time = 30
+
+# Medicine a soaked bandage spends each Ratwood tick while it heals (Ratwood 0.25).
+soak_spend = 0.25
+
+# What a small cut takes to mend before it closes (Ratwood slash/small whp 15); potions and soaked bandages mend it.
+wound_health_cut_moderate = 15
+
+# What a cut takes to mend before it closes (Ratwood slash whp 30).
+wound_health_cut_severe = 30
+
+# What a small stab takes to mend before it closes (Ratwood puncture/small whp 20).
+wound_health_stab_moderate = 20
+
+# What a stab takes to mend before it closes (Ratwood puncture whp 40).
+wound_health_stab_severe = 40
+
+# What a dislocation or a broken bone of a limb or the body takes to mend (Ratwood dislocation and fracture whp 40).
+wound_health_bone = 40
+
+# What a broken skull takes to mend (Ratwood fracture/head whp 150).
+wound_health_skull = 150
+
+# What a small burn takes to mend (Ratwood small burns, whp 20).
+wound_health_burn_moderate = 20
+
+# What a burn takes to mend (Ratwood burns, whp 40).
+wound_health_burn_severe = 40
+
+# What a charred burn takes to mend (Ratwood charring whp 60).
+wound_health_burn_critical = 60
+
+# What an opened artery of a limb (a critical cut or stab) takes to mend (Ratwood artery whp 50).
+wound_health_artery = 50
+
+# What an opened artery of the neck or the heart takes to mend (Ratwood artery/neck and artery/chest whp 100).
+wound_health_artery_vital = 100

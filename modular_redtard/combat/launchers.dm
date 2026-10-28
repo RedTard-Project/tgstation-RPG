@@ -285,6 +285,14 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 	/// The precise body part the shot struck, which the armor is looked for on (rogue_armor_zone(), combat/armor.dm); the damage
 	/// goes to its body part, def_zone.
 	var/rogue_struck_zone
+	/// What the round carries into the blood when its damage gets through the armor, and how much (Ratwood poisontype,
+	/// poisonamount: poisoned arrows, holy water bolts).
+	var/datum/reagent/rogue_poison_type
+	var/rogue_poison_amount = 0
+	/// Slurred speech, blurred eyes and drowsiness it brings on then, in Ratwood Life ticks (Ratwood slur, eyeblur, drowsy).
+	var/rogue_slur = 0
+	var/rogue_eyeblur = 0
+	var/rogue_drowsy = 0
 	/// The launcher's skill that a hit trains, and the rank up to which it does.
 	var/rogue_trained_skill
 	var/rogue_trained_cap = ROGUE_LAUNCHER_TRAIN_CAP
@@ -355,9 +363,34 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 		return
 	if(. == BULLET_ACT_HIT)
 		rogue_hit_effects(target)
+		rogue_poison(target, blocked)
 		if(victim)
 			rogue_train(victim)
 	rogue_land(target, blocked)
+
+/// The damage that got through to the body: TG's armor, then the tiers of the armor on the part it struck.
+/obj/projectile/rogue_ammo/proc/rogue_dealt(mob/living/carbon/victim, blocked)
+	. = damage * (100 - blocked) / 100
+	if(ishuman(victim))
+		var/mob/living/carbon/human/person = victim
+		. *= person.rogue_projectile_share(def_zone, src)
+
+/// Ratwood's poisoned rounds (bullet_act()): when the damage got through, what the round carries gets into the blood and its
+/// slur, blur and drowsiness come on.
+/obj/projectile/rogue_ammo/proc/rogue_poison(atom/target, blocked)
+	if(!iscarbon(target) || !(rogue_poison_type || rogue_slur || rogue_eyeblur || rogue_drowsy))
+		return
+	var/mob/living/carbon/victim = target
+	if(rogue_dealt(victim, blocked) <= 0)
+		return
+	if(rogue_poison_type && rogue_poison_amount)
+		victim.reagents?.add_reagent(rogue_poison_type, rogue_poison_amount)
+	if(rogue_slur)
+		victim.adjust_slurring_up_to(rogue_slur * ROGUE_LIFE_TICK SECONDS, rogue_slur * ROGUE_LIFE_TICK SECONDS)
+	if(rogue_eyeblur)
+		victim.adjust_eye_blur_up_to(rogue_eyeblur * ROGUE_LIFE_TICK SECONDS, rogue_eyeblur * ROGUE_LIFE_TICK SECONDS)
+	if(rogue_drowsy)
+		victim.adjust_drowsiness_up_to(rogue_drowsy * ROGUE_LIFE_TICK SECONDS, rogue_drowsy * ROGUE_LIFE_TICK SECONDS)
 
 /obj/projectile/rogue_ammo/proc/rogue_hit_effects(atom/target)
 	var/turf/spot = get_turf(target)
@@ -410,11 +443,7 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 	if(!iscarbon(target) || rogue_embed_chance <= 0)
 		return
 	var/mob/living/carbon/victim = target
-	var/dealt = damage * (100 - blocked) / 100
-	if(ishuman(victim))
-		var/mob/living/carbon/human/person = victim
-		dealt *= person.rogue_projectile_share(def_zone, src)
-	if(dealt <= ROGUE_LAUNCHER_EMBED_MIN_DAMAGE || !prob(rogue_embed_chance))
+	if(rogue_dealt(victim, blocked) <= ROGUE_LAUNCHER_EMBED_MIN_DAMAGE || !prob(rogue_embed_chance))
 		return
 	round.set_embed(/datum/embedding/rogue_projectile)
 	round.force_embed(victim, def_zone)

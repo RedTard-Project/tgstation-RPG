@@ -324,9 +324,6 @@
 	possible_transfer_amounts = list(5, 10)
 	volume = 75
 
-/obj/item/reagent_containers/glass/bottle/rogue/water
-	list_reagents = list(/datum/reagent/water = 50)
-
 // Water to fill vessels from (Ratwood turf/open/water attackby(), structures/well.dm).
 
 /// Whether this vessel is used to draw: with Ratwood intents only the fill intent draws (Ratwood), without them any click.

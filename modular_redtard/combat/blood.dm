@@ -82,10 +82,12 @@
 		rogue_bleed_sound(amount / ticks)
 		if(volume > 0 && get_blood_volume() <= 0)
 			to_chat(src, span_userdanger("The last of my lyfeblood ebbs from my ravaged body and soaks the cold earth below..."))
-	// TG's handle_blood() lets the bleeding stacks of the limbs run out; it does not run now.
+	// TG's handle_blood() lets the bleeding stacks of the limbs run out; it does not run now. A bandage soaked in medicine heals
+	// the limb it binds (combat/medicine.dm).
 	for(var/obj/item/bodypart/bodypart as anything in get_bodyparts())
 		if(bodypart.generic_bleedstacks)
 			bodypart.adjustBleedStacks(-1, 0)
+		bodypart.rogue_bandage?.rogue_medicine_tick(bodypart, ticks)
 	if(changed)
 		update_health_hud()
 

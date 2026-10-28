@@ -104,7 +104,7 @@
 	rogue_fat_yield = 5
 
 /obj/item/reagent_containers/food/snacks/zizo_bane
-	food_reagents = list(/datum/reagent/consumable/nutriment = 1)
+	food_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/sleep_powder = 5)
 	foodtypes = VEGETABLES
 	tastes = list("numbing mintiness" = 1, "purpliness" = 1)
 	bitesize = 1
@@ -1023,7 +1023,7 @@
 	rogue_faretype = ROGUE_FARE_POOR
 
 /obj/item/reagent_containers/food/snacks/grown/garlick/rogue
-	food_reagents = list(/datum/reagent/consumable/nutriment = 1)
+	food_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/water/blessed = 2)
 	tastes = list("pungent savoriness" = 1)
 	bitesize = 2
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/veg/garlick_clove
@@ -1052,12 +1052,12 @@
 	rogue_faretype = ROGUE_FARE_LAVISH
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/fyritius
-	food_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	food_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/toxin/fyritiusnectar = 5)
 	tastes = list("tastes like a burning coal and fire" = 1)
 	bitesize = 1
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed
-	food_reagents = list(/datum/reagent/drug/nicotine = 2, /datum/reagent/consumable/nutriment = 1)
+	food_reagents = list(/datum/reagent/drug/nicotine = 2, /datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 5)
 	foodtypes = VEGETABLES
 	tastes = list("sweet" = 1, "bitterness" = 1)
 	eat_effect = /datum/status_effect/rogue_food/bad_meal
@@ -1068,22 +1068,22 @@
 	eat_effect = /datum/status_effect/rogue_food/bad_meal
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/rosa_petals
-	food_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	food_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/medicine/antidote = 1)
 	tastes = list("mild sweetness" = 1)
 	bitesize = 1
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/rosa_petals_dried
-	food_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	food_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/medicine/antidote = 1)
 	tastes = list("mild sweetness" = 1)
 	bitesize = 1
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/rosa_petals_spiced
-	food_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	food_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/medicine/antidote = 1)
 	tastes = list("mild sweetness" = 1, "a mouthful of cough-inducing powderiness" = 1)
 	bitesize = 1
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/swampweed
-	food_reagents = list(/datum/reagent/consumable/nutriment = 1)
+	food_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 5)
 	foodtypes = VEGETABLES
 	tastes = list("sweet" = 1, "bitterness" = 1)
 	eat_effect = /datum/status_effect/rogue_food/bad_meal
@@ -1823,7 +1823,7 @@
 	rogue_cooked_smell = "fried cabbage"
 
 /obj/item/reagent_containers/food/snacks/rogue/veg/garlick_clove
-	food_reagents = list(/datum/reagent/consumable/nutriment = 1)
+	food_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/water/blessed = 2)
 	foodtypes = GRAIN
 	tastes = list("pungent savoriness" = 1)
 	cooktime = 300
@@ -1845,11 +1845,11 @@
 	rogue_cooked_smell = "baked potatos"
 
 /obj/item/reagent_containers/food/snacks/grown/berries/rogue/poison
-	food_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/water = 5)
+	food_reagents = list(/datum/reagent/berrypoison = 5, /datum/reagent/consumable/nutriment = 3, /datum/reagent/water = 5)
 	tastes = list("berry" = 1)
 
 /obj/item/reagent_containers/food/snacks/grown/fruit/blackberry/skysugarbase
-	food_reagents = list(/datum/reagent/water = 7, /datum/reagent/consumable/nutriment = 3)
+	food_reagents = list(/datum/reagent/toxin/killersice = 1, /datum/reagent/water = 7, /datum/reagent/consumable/nutriment = 3)
 	foodtypes = FRUIT
 	tastes = list("a horrifically bad idea" = 1, "slightly fruity aftertaste" = 1)
 	eat_effect = /datum/status_effect/rogue_food/uncooked
@@ -1857,7 +1857,7 @@
 	rogue_deep_fried_type = /obj/item/reagent_containers/food/snacks/grown/skysugarslab
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/fyritius/bloodied
-	food_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	food_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/toxin/fyritiusnectar = 5)
 	tastes = list("tastes like a burning coal and fire and blood" = 1)
 	rotprocess = 9000
 
@@ -2114,7 +2114,7 @@
 	rogue_portable = FALSE
 
 /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/poison
-	food_reagents = list(/datum/reagent/consumable/nutriment = 24)
+	food_reagents = list(/datum/reagent/consumable/nutriment = 24, /datum/reagent/berrypoison = 12)
 	foodtypes = GRAIN | DAIRY
 	tastes = list("crispy butterdough" = 1, "bitter berries" = 1)
 	eat_effect = /datum/status_effect/rogue_food_buff/snack

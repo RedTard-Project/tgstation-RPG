@@ -200,6 +200,11 @@
 	rogue_npc_damage_mult = 2
 	hitsound = 'modular_redtard/rockhill/sound/combat/hits/hi_arrow2.ogg'
 	rogue_drop_type = /obj/item/ammo_casing/caseless/rogue/arrow/iron
+	rogue_poison_type = /datum/reagent/stampoison
+	rogue_poison_amount = 2
+	rogue_slur = 10
+	rogue_eyeblur = 10
+	rogue_drowsy = 5
 
 /obj/projectile/bullet/reusable/arrow/poison/stone
 	name = "stone arrow"
@@ -215,6 +220,11 @@
 	rogue_npc_damage_mult = 2
 	hitsound = 'modular_redtard/rockhill/sound/combat/hits/hi_arrow2.ogg'
 	rogue_drop_type = /obj/item/ammo_casing/caseless/rogue/arrow/stone
+	rogue_poison_type = /datum/reagent/stampoison
+	rogue_poison_amount = 2
+	rogue_slur = 10
+	rogue_eyeblur = 10
+	rogue_drowsy = 5
 
 /obj/projectile/bullet/reusable/arrow/steel
 	name = "bodkin arrow"
@@ -383,6 +393,8 @@
 	rogue_npc_damage_mult = 5
 	hitsound = 'modular_redtard/rockhill/sound/combat/hits/hi_arrow2.ogg'
 	rogue_drop_type = /obj/item/ammo_casing/caseless/rogue/bolt/holy
+	rogue_poison_type = /datum/reagent/water/blessed
+	rogue_poison_amount = 5
 
 /obj/projectile/bullet/reusable/heavy_bolt
 	name = "heavy bolt"

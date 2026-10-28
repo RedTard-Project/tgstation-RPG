@@ -2025,8 +2025,15 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                         value = literal(raw, tg_names)
                         text = (raw or '').strip()
                         if value is None and text.startswith('list('):
-                            pairs = [(p, n) for p, n in re.findall(r'(/[a-z][A-Za-z0-9_/]+)\s*=\s*(-?\d+(?:\.\d+)?)', raw) if p in valid]
+                            pairs = re.findall(r'(/[a-z][A-Za-z0-9_/]+)\s*=\s*(-?\d+(?:\.\d+)?)', raw)
+                            if name == 'list_reagents':
+                                pairs = fill_to_volume(pairs, rw.resolve(path, 'volume'))
+                            pairs = [(p, n) for p, n in pairs if p in valid]
                             value = 'list(' + ', '.join(f'{p} = {n}' for p, n in pairs) + ')' if pairs else None
+                            # A vessel with a drink of its own the port lacks (Ratwood's ales under its beer) stays empty
+                            # rather than inheriting its parent's.
+                            if value is None and name == 'list_reagents' and rw.types.get(path, {}).get(name) is not None:
+                                value = 'null'
                             # A list of plain numbers (a vessel's possible_transfer_amounts), empty included.
                             numbers = re.fullmatch(r'list\(\s*((?:-?\d+(?:\.\d+)?\s*,?\s*)*)\)', text)
                             if value is None and numbers:
@@ -2515,6 +2522,23 @@ def coverage_tokens(raw):
             continue
         tokens.add(token)
     return tokens
+
+
+def fill_to_volume(pairs, volume_raw):
+    """A container's list_reagents as it fills: each reagent in turn until the container is full, as add_reagent() does
+    (Ratwood's starsugar powder lists more than it holds, and its nutriment never gets in). Reagents the port lacks keep their
+    place, so what follows them gets what it got at Ratwood's."""
+    volume = define_value_number(volume_raw) if volume_raw else None
+    if volume is None:
+        return pairs
+    left = float(volume)
+    filled = []
+    for path, amount in pairs:
+        taken = min(float(amount), max(left, 0))
+        left -= taken
+        if taken > 0:
+            filled.append((path, f'{taken:g}'))
+    return filled
 
 
 def exact_coverage_value(raw):

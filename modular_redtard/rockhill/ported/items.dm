@@ -20216,7 +20216,7 @@
 	icon_off = "spliffoff"
 	smoketime = 240
 	chem_volume = 50
-	list_reagents = list(/datum/reagent/drug/nicotine = 45)
+	list_reagents = list(/datum/reagent/drug/nicotine = 45, /datum/reagent/berrypoison = 3)
 
 /obj/item/clothing/mask/cigarette/rollie/lime/cheroot
 	name = "lime cheroot"
@@ -55126,6 +55126,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical
 	name = "alchemical vial"
@@ -55151,6 +55152,7 @@
 	volume = 30
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/conpot
 	name = "alchemical vial"
@@ -55176,6 +55178,7 @@
 	volume = 30
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = list(/datum/reagent/buff/constitution = 30)
 
 /obj/item/reagent_containers/glass/bottle/alchemical/endpot
 	name = "alchemical vial"
@@ -55201,6 +55204,7 @@
 	volume = 30
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = list(/datum/reagent/buff/endurance = 30)
 
 /obj/item/reagent_containers/glass/bottle/alchemical/healthpot
 	name = "alchemical vial"
@@ -55226,6 +55230,7 @@
 	volume = 30
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = list(/datum/reagent/medicine/healthpot = 30)
 
 /obj/item/reagent_containers/glass/bottle/alchemical/healthpotnew
 	name = "alchemical vial"
@@ -55251,6 +55256,7 @@
 	volume = 30
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = list(/datum/reagent/medicine/stronghealth = 30)
 
 /obj/item/reagent_containers/glass/bottle/alchemical/intpot
 	name = "alchemical vial"
@@ -55276,6 +55282,7 @@
 	volume = 30
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = list(/datum/reagent/buff/intelligence = 30)
 
 /obj/item/reagent_containers/glass/bottle/alchemical/lucpot
 	name = "alchemical vial"
@@ -55301,6 +55308,7 @@
 	volume = 30
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = list(/datum/reagent/buff/fortune = 30)
 
 /obj/item/reagent_containers/glass/bottle/alchemical/perpot
 	name = "alchemical vial"
@@ -55326,6 +55334,7 @@
 	volume = 30
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = list(/datum/reagent/buff/perception = 30)
 
 /obj/item/reagent_containers/glass/bottle/alchemical/rogue/rotcure
 	name = "alchemical vial"
@@ -55351,6 +55360,7 @@
 	volume = 30
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/spdpot
 	name = "alchemical vial"
@@ -55376,6 +55386,7 @@
 	volume = 30
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = list(/datum/reagent/buff/speed = 30)
 
 /obj/item/reagent_containers/glass/bottle/alchemical/spidervenom_paralytic
 	name = "alchemical vial"
@@ -55401,6 +55412,7 @@
 	volume = 30
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/alchemical/strongmanapot
 	name = "alchemical vial"
@@ -55426,6 +55438,7 @@
 	volume = 30
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = list(/datum/reagent/medicine/strongmana = 30)
 
 /obj/item/reagent_containers/glass/bottle/alchemical/strpot
 	name = "alchemical vial"
@@ -55451,6 +55464,7 @@
 	volume = 30
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = list(/datum/reagent/buff/strength = 30)
 
 /obj/item/reagent_containers/glass/bottle/claybottle
 	name = "clay bottle"
@@ -55478,6 +55492,7 @@
 	volume = 75
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/claybottle/nred
 	name = "clay bottle"
@@ -55505,6 +55520,7 @@
 	volume = 75
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/claybottle/whitewine
 	name = "clay bottle"
@@ -55532,6 +55548,7 @@
 	volume = 75
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/claybottle/wine
 	name = "clay bottle"
@@ -55559,6 +55576,7 @@
 	volume = 75
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = list(/datum/reagent/consumable/ethanol/wine = 75)
 
 /obj/item/reagent_containers/glass/bottle/claybottleclassic
 	name = "clay bottle"
@@ -55586,6 +55604,7 @@
 	volume = 75
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/clayfancyvase
 	name = "fancy ceramic vase"
@@ -55613,6 +55632,7 @@
 	volume = 65
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/clayfancyvaseclassic
 	name = "fancy ceramic vase"
@@ -55640,6 +55660,7 @@
 	volume = 65
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/clayvase
 	name = "ceramic vase"
@@ -55667,6 +55688,7 @@
 	volume = 65
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/clayvaseclassic
 	name = "ceramic vase"
@@ -55694,6 +55716,7 @@
 	volume = 65
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/frankenbrew
 	name = "bottle of Reanimation Elixir"
@@ -55720,6 +55743,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/frankenbrew/third
 	name = "bottle of Reanimation Elixir"
@@ -55746,6 +55770,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/revival
 	name = "vial of Eoran Balm"
@@ -55772,6 +55797,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/rogue
 	name = "bottle"
@@ -55798,6 +55824,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/antidote
 	name = "bottle"
@@ -55824,6 +55851,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = list(/datum/reagent/medicine/antidote = 50)
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer
 	name = "Bottle of beer"
@@ -55850,6 +55878,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = list(/datum/reagent/consumable/ethanol/beer = 50)
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/apfelweinheim
 	name = "Bottle of Apfelweinheim Cider"
@@ -55876,6 +55905,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/aurorian
 	name = "Bottle of Aurorian Herbal Beer"
@@ -55902,6 +55932,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/avarmead
 	name = "Bottle of Golden Mead"
@@ -55928,6 +55959,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/avarrice
 	name = "Bottle of Aavnic White"
@@ -55954,6 +55986,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/blackgoat
 	name = "Bottle of Blackgoat"
@@ -55980,6 +56013,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/butterhairs
 	name = "Bottle of Butterhairs"
@@ -56006,6 +56040,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/fireleaf
 	name = "Bottle of Fireleaf"
@@ -56032,6 +56067,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/gronnmead
 	name = "Bottle of Shieldmaiden Mead"
@@ -56058,6 +56094,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/hagwoodbitter
 	name = "Bottle of Hagwood Bitters"
@@ -56084,6 +56121,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/jagdtrunk
 	name = "Bottle of Schnapps"
@@ -56110,6 +56148,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/kgunlager
 	name = "Bottle of Yamaguchi Tea Lager"
@@ -56136,6 +56175,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/kgunplum
 	name = "Bottle of Plum Wine"
@@ -56162,6 +56202,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/kgunsake
 	name = "Bottle of Aavnic White"
@@ -56188,6 +56229,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/murkwine
 	name = "Bottle of beer"
@@ -56214,6 +56256,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/nred
 	name = "Bottle of Norwandine Ale"
@@ -56240,6 +56283,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/rtoper
 	name = "Bottle Rockhill Cider"
@@ -56266,6 +56310,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/saigamilk
 	name = "Bottle of brewed Saiga Milk"
@@ -56292,6 +56337,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/stonebeardreserve
 	name = "Bottle of Stonebeards Reserve"
@@ -56318,6 +56364,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/beer/voddena
 	name = "Bottle of beer"
@@ -56344,6 +56391,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/berrypoison
 	name = "bottle"
@@ -56370,6 +56418,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = list(/datum/reagent/berrypoison = 15)
 
 /obj/item/reagent_containers/glass/bottle/rogue/elfblue
 	name = "Bottle of Valmora Blue"
@@ -56396,6 +56445,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/elfred
 	name = "Bottle of Elven Red"
@@ -56422,6 +56472,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/emberwine
 	name = "bottle"
@@ -56448,6 +56499,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/healthpot
 	name = "bottle"
@@ -56474,6 +56526,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = list(/datum/reagent/medicine/healthpot = 50)
 
 /obj/item/reagent_containers/glass/bottle/rogue/healthpotnew
 	name = "bottle"
@@ -56500,6 +56553,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = list(/datum/reagent/medicine/stronghealth = 50)
 
 /obj/item/reagent_containers/glass/bottle/rogue/luxwine
 	name = "Bottle of Luxintenebre"
@@ -56526,6 +56580,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/manapot
 	name = "bottle"
@@ -56552,6 +56607,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = list(/datum/reagent/medicine/manapot = 50)
 
 /obj/item/reagent_containers/glass/bottle/rogue/poison
 	name = "bottle"
@@ -56578,6 +56634,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = list(/datum/reagent/toxin/killersice = 1)
 
 /obj/item/reagent_containers/glass/bottle/rogue/redwine
 	name = "Bottle of Otavan Red"
@@ -56604,6 +56661,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/stampoison
 	name = "bottle"
@@ -56630,6 +56688,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = list(/datum/reagent/stampoison = 15)
 
 /obj/item/reagent_containers/glass/bottle/rogue/stampot
 	name = "bottle"
@@ -56656,6 +56715,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = list(/datum/reagent/medicine/stampot = 50)
 
 /obj/item/reagent_containers/glass/bottle/rogue/strongmanapot
 	name = "bottle"
@@ -56682,6 +56742,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = list(/datum/reagent/medicine/strongmana = 50)
 
 /obj/item/reagent_containers/glass/bottle/rogue/strongpoison
 	name = "bottle"
@@ -56708,6 +56769,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = list(/datum/reagent/strongpoison = 15)
 
 /obj/item/reagent_containers/glass/bottle/rogue/strongstampoison
 	name = "bottle"
@@ -56734,6 +56796,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = list(/datum/reagent/strongstampoison = 15)
 
 /obj/item/reagent_containers/glass/bottle/rogue/strongstampot
 	name = "bottle"
@@ -56760,6 +56823,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = list(/datum/reagent/medicine/strongstam = 50)
 
 /obj/item/reagent_containers/glass/bottle/rogue/water
 	name = "bottle"
@@ -56786,6 +56850,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = list(/datum/reagent/water = 50)
 
 /obj/item/reagent_containers/glass/bottle/rogue/whitewine
 	name = "Bottle of Otavan White"
@@ -56812,6 +56877,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/rogue/wine
 	name = "Bottle of wine"
@@ -56838,6 +56904,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = list(/datum/reagent/consumable/ethanol/wine = 50)
 
 /obj/item/reagent_containers/glass/bottle/rogue/wine/sourwine
 	name = "Bottle of Grenzelhoft Sour"
@@ -56864,6 +56931,7 @@
 	volume = 50
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/waterskin
 	name = "waterskin"
@@ -56894,6 +56962,7 @@
 	volume = 75
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5, 10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bottle/waterskin/purifier
 	name = "purifying waterskin"
@@ -56922,6 +56991,7 @@
 	volume = 75
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5, 10)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bowl
 	name = "wooden bowl"
@@ -56948,6 +57018,7 @@
 	volume = 30
 	amount_per_transfer_from_this = 7
 	possible_transfer_amounts = list(7)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bowl/bronze
 	name = "bronze bowl"
@@ -56974,6 +57045,7 @@
 	volume = 30
 	amount_per_transfer_from_this = 7
 	possible_transfer_amounts = list(7)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bowl/carved/amber
 	name = "amber bowl"
@@ -57000,6 +57072,7 @@
 	volume = 30
 	amount_per_transfer_from_this = 7
 	possible_transfer_amounts = list(7)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bowl/carved/coral
 	name = "heartstone bowl"
@@ -57026,6 +57099,7 @@
 	volume = 30
 	amount_per_transfer_from_this = 7
 	possible_transfer_amounts = list(7)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bowl/carved/jade
 	name = "jade bowl"
@@ -57052,6 +57126,7 @@
 	volume = 30
 	amount_per_transfer_from_this = 7
 	possible_transfer_amounts = list(7)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bowl/carved/onyxa
 	name = "onyxa bowl"
@@ -57078,6 +57153,7 @@
 	volume = 30
 	amount_per_transfer_from_this = 7
 	possible_transfer_amounts = list(7)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bowl/carved/opal
 	name = "opal bowl"
@@ -57104,6 +57180,7 @@
 	volume = 30
 	amount_per_transfer_from_this = 7
 	possible_transfer_amounts = list(7)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bowl/carved/porcelain
 	name = "porcelain bowl"
@@ -57130,6 +57207,7 @@
 	volume = 30
 	amount_per_transfer_from_this = 7
 	possible_transfer_amounts = list(7)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bowl/carved/rose
 	name = "rosestone bowl"
@@ -57156,6 +57234,7 @@
 	volume = 30
 	amount_per_transfer_from_this = 7
 	possible_transfer_amounts = list(7)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bowl/carved/shell
 	name = "shell bowl"
@@ -57182,6 +57261,7 @@
 	volume = 30
 	amount_per_transfer_from_this = 7
 	possible_transfer_amounts = list(7)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bowl/carved/turq
 	name = "cerulite bowl"
@@ -57208,6 +57288,7 @@
 	volume = 30
 	amount_per_transfer_from_this = 7
 	possible_transfer_amounts = list(7)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bowl/decrepit
 	name = "decrepit bowl"
@@ -57234,6 +57315,7 @@
 	volume = 30
 	amount_per_transfer_from_this = 7
 	possible_transfer_amounts = list(7)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bowl/gold
 	name = "gold bowl"
@@ -57260,6 +57342,7 @@
 	volume = 30
 	amount_per_transfer_from_this = 7
 	possible_transfer_amounts = list(7)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bowl/iron
 	name = "iron bowl"
@@ -57286,6 +57369,7 @@
 	volume = 30
 	amount_per_transfer_from_this = 7
 	possible_transfer_amounts = list(7)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bowl/silver
 	name = "silver bowl"
@@ -57312,6 +57396,7 @@
 	volume = 30
 	amount_per_transfer_from_this = 7
 	possible_transfer_amounts = list(7)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bowl/tin
 	name = "tin bowl"
@@ -57338,6 +57423,7 @@
 	volume = 30
 	amount_per_transfer_from_this = 7
 	possible_transfer_amounts = list(7)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bucket
 	name = "bucket"
@@ -57366,6 +57452,7 @@
 	volume = 120
 	amount_per_transfer_from_this = 25
 	possible_transfer_amounts = list(25)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bucket/pot
 	name = "pot"
@@ -57394,6 +57481,7 @@
 	volume = 240
 	amount_per_transfer_from_this = 25
 	possible_transfer_amounts = list(25)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bucket/pot/bronze
 	name = "bronze pot"
@@ -57422,6 +57510,7 @@
 	volume = 240
 	amount_per_transfer_from_this = 25
 	possible_transfer_amounts = list(25)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bucket/pot/carved/teapotamber
 	name = "amber teapot"
@@ -57451,6 +57540,7 @@
 	volume = 99
 	amount_per_transfer_from_this = 25
 	possible_transfer_amounts = list(25)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bucket/pot/carved/teapotcoral
 	name = "heartstone teapot"
@@ -57480,6 +57570,7 @@
 	volume = 99
 	amount_per_transfer_from_this = 25
 	possible_transfer_amounts = list(25)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bucket/pot/carved/teapotjade
 	name = "jade teapot"
@@ -57509,6 +57600,7 @@
 	volume = 99
 	amount_per_transfer_from_this = 25
 	possible_transfer_amounts = list(25)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bucket/pot/carved/teapotonyxa
 	name = "onyxa teapot"
@@ -57538,6 +57630,7 @@
 	volume = 99
 	amount_per_transfer_from_this = 25
 	possible_transfer_amounts = list(25)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bucket/pot/carved/teapotopal
 	name = "opal teapot"
@@ -57567,6 +57660,7 @@
 	volume = 99
 	amount_per_transfer_from_this = 25
 	possible_transfer_amounts = list(25)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bucket/pot/carved/teapotrose
 	name = "rosestone teapot"
@@ -57596,6 +57690,7 @@
 	volume = 99
 	amount_per_transfer_from_this = 25
 	possible_transfer_amounts = list(25)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bucket/pot/carved/teapotshell
 	name = "shell teapot"
@@ -57625,6 +57720,7 @@
 	volume = 99
 	amount_per_transfer_from_this = 25
 	possible_transfer_amounts = list(25)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bucket/pot/copper
 	name = "copper pot"
@@ -57653,6 +57749,7 @@
 	volume = 240
 	amount_per_transfer_from_this = 25
 	possible_transfer_amounts = list(25)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bucket/pot/decrepit
 	name = "decrepit pot"
@@ -57681,6 +57778,7 @@
 	volume = 120
 	amount_per_transfer_from_this = 25
 	possible_transfer_amounts = list(25)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bucket/pot/kettle
 	name = "kettle"
@@ -57709,6 +57807,7 @@
 	volume = 120
 	amount_per_transfer_from_this = 25
 	possible_transfer_amounts = list(25)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bucket/pot/kettle/tankard
 	name = "tankard"
@@ -57738,6 +57837,7 @@
 	volume = 60
 	amount_per_transfer_from_this = 25
 	possible_transfer_amounts = list(25)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bucket/pot/kettle/tankard/blacksteel
 	name = "blacksteel tankard"
@@ -57768,6 +57868,7 @@
 	volume = 120
 	amount_per_transfer_from_this = 25
 	possible_transfer_amounts = list(25)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bucket/pot/kettle/tankard/silver
 	name = "silver tankard"
@@ -57797,6 +57898,7 @@
 	volume = 90
 	amount_per_transfer_from_this = 25
 	possible_transfer_amounts = list(25)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bucket/pot/stone
 	name = "stone pot"
@@ -57825,6 +57927,7 @@
 	volume = 120
 	amount_per_transfer_from_this = 25
 	possible_transfer_amounts = list(25)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bucket/pot/teapot
 	name = "teapot"
@@ -57854,6 +57957,7 @@
 	volume = 120
 	amount_per_transfer_from_this = 25
 	possible_transfer_amounts = list(25)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bucket/pot/teapot/fancy
 	name = "teapot"
@@ -57883,6 +57987,7 @@
 	volume = 120
 	amount_per_transfer_from_this = 25
 	possible_transfer_amounts = list(25)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bucket/pot/teapot/porcelain
 	name = "porcelain teapot"
@@ -57911,6 +58016,7 @@
 	volume = 120
 	amount_per_transfer_from_this = 25
 	possible_transfer_amounts = list(25)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/bucket/tinypot
 	name = "tiny pot"
@@ -57939,6 +58045,7 @@
 	volume = 120
 	amount_per_transfer_from_this = 25
 	possible_transfer_amounts = list(25)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/crucible
 	name = "crucible"
@@ -57963,6 +58070,7 @@
 	volume = 5
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5, 10, 15, 20, 25, 30, 50)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup
 	name = "metal cup"
@@ -57990,6 +58098,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/bronzegob
 	name = "bronze goblet"
@@ -58017,6 +58126,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/bronzemug
 	name = "bronze mug"
@@ -58044,6 +58154,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/carved/amber
 	name = "amber cup"
@@ -58071,6 +58182,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/carved/amberfancy
 	name = "fancy amber cup"
@@ -58098,6 +58210,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/carved/coral
 	name = "heartstone cup"
@@ -58125,6 +58238,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/carved/coralfancy
 	name = "fancy heartstone cup"
@@ -58152,6 +58266,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/carved/jade
 	name = "jade cup"
@@ -58179,6 +58294,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/carved/jadefancy
 	name = "fancy jade cup"
@@ -58206,6 +58322,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/carved/onyxa
 	name = "onyxa cup"
@@ -58233,6 +58350,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/carved/onyxafancy
 	name = "fancy onyxa cup"
@@ -58260,6 +58378,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/carved/opal
 	name = "opal cup"
@@ -58287,6 +58406,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/carved/opalfancy
 	name = "fancy opal cup"
@@ -58314,6 +58434,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/carved/rose
 	name = "rosestone cup"
@@ -58341,6 +58462,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/carved/rosefancy
 	name = "fancy rosestone cup"
@@ -58368,6 +58490,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/carved/shell
 	name = "shell cup"
@@ -58395,6 +58518,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/carved/shellfancy
 	name = "fancy shell cup"
@@ -58422,6 +58546,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/carved/turq
 	name = "cerulite cup"
@@ -58449,6 +58574,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/carved/turqfancy
 	name = "fancy cerulite cup"
@@ -58476,6 +58602,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/ceramic
 	name = "teacup"
@@ -58503,6 +58630,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/ceramic/fancy
 	name = "fancy teacup"
@@ -58530,6 +58658,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/claycup
 	name = "clay canister"
@@ -58557,6 +58686,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/claycupclassic
 	name = "clay canister"
@@ -58584,6 +58714,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/decrepitgob
 	name = "decrepit goblet"
@@ -58611,6 +58742,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/decrepitmug
 	name = "decrepit mug"
@@ -58638,6 +58770,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/golden
 	name = "golden goblet"
@@ -58665,6 +58798,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/golden/poison
 	name = "golden goblet"
@@ -58692,6 +58826,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = list(/datum/reagent/toxin/killersice = 1)
 
 /obj/item/reagent_containers/glass/cup/golden/psydon
 	name = "Psydon's Chalice"
@@ -58719,6 +58854,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/golden/small
 	name = "golden cup"
@@ -58746,6 +58882,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/porcelain
 	name = "porcelain teacup"
@@ -58773,6 +58910,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/porcelain/fancy
 	name = "fancy porcelain teacup"
@@ -58800,6 +58938,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/silver
 	name = "silver goblet"
@@ -58827,6 +58966,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/silver/small
 	name = "silver cup"
@@ -58854,6 +58994,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/skull
 	name = "skull goblet"
@@ -58881,6 +59022,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/steel
 	name = "goblet"
@@ -58908,6 +59050,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/tin
 	name = "tin goblet"
@@ -58935,6 +59078,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/tin/small
 	name = "tin cup"
@@ -58962,6 +59106,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/wooden
 	name = "wooden cup"
@@ -58987,6 +59132,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/cup/wooden/crafted
 	name = "wooden cup"
@@ -59013,6 +59159,7 @@
 	volume = 25
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)
+	list_reagents = null
 
 /obj/item/reagent_containers/glass/mortar
 	name = "alchemical mortar"
@@ -59035,6 +59182,7 @@
 	inhand_icon_state = null
 	volume = 100
 	amount_per_transfer_from_this = 9
+	list_reagents = null
 	possible_transfer_amounts = list(9)
 
 /obj/item/reagent_containers/lux
@@ -59120,6 +59268,7 @@
 	rogue_baked_inhand = TRUE
 	volume = 1
 	amount_per_transfer_from_this = 5
+	list_reagents = null
 	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/herozium
@@ -59144,6 +59293,7 @@
 	rogue_baked_inhand = TRUE
 	volume = 15
 	amount_per_transfer_from_this = 5
+	list_reagents = null
 	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/mineral
@@ -59167,6 +59317,7 @@
 	rogue_baked_inhand = TRUE
 	volume = 1
 	amount_per_transfer_from_this = 5
+	list_reagents = null
 	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/moondust
@@ -59191,6 +59342,7 @@
 	rogue_baked_inhand = TRUE
 	volume = 15
 	amount_per_transfer_from_this = 5
+	list_reagents = null
 	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/moondust_purest
@@ -59215,6 +59367,7 @@
 	rogue_baked_inhand = TRUE
 	volume = 18
 	amount_per_transfer_from_this = 5
+	list_reagents = null
 	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/ozium
@@ -59239,6 +59392,7 @@
 	rogue_baked_inhand = TRUE
 	volume = 15
 	amount_per_transfer_from_this = 5
+	list_reagents = null
 	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/rocknut
@@ -59262,6 +59416,7 @@
 	rogue_baked_inhand = TRUE
 	volume = 1
 	amount_per_transfer_from_this = 5
+	list_reagents = null
 	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/salt
@@ -59285,6 +59440,7 @@
 	rogue_baked_inhand = TRUE
 	volume = 1
 	amount_per_transfer_from_this = 5
+	list_reagents = null
 	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/sleep_powder
@@ -59309,6 +59465,7 @@
 	rogue_baked_inhand = TRUE
 	volume = 10
 	amount_per_transfer_from_this = 5
+	list_reagents = list(/datum/reagent/sleep_powder = 5)
 	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/spice
@@ -59333,6 +59490,7 @@
 	rogue_baked_inhand = TRUE
 	volume = 15
 	amount_per_transfer_from_this = 5
+	list_reagents = null
 	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/starsugar
@@ -59357,6 +59515,7 @@
 	rogue_baked_inhand = TRUE
 	volume = 15
 	amount_per_transfer_from_this = 5
+	list_reagents = null
 	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/powder/starsugar/skysugar
@@ -59381,6 +59540,7 @@
 	rogue_baked_inhand = TRUE
 	volume = 38
 	amount_per_transfer_from_this = 5
+	list_reagents = null
 	possible_transfer_amounts = list(5)
 
 /obj/item/reagent_containers/spidervenom_inert

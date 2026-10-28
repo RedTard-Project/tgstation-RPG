@@ -52,6 +52,7 @@ GLOBAL_DATUM(rogue_mechanics, /datum/rogue_mechanics)
 /// defaults. A file literal cannot be built from a name, so a new file of the folder is listed here too (CI checks both agree).
 /proc/rogue_value_files()
 	return list(
+		"alchemy.txt" = 'config/redtard/mechanics/values/alchemy.txt',
 		"combat.txt" = 'config/redtard/mechanics/values/combat.txt',
 		"crafting.txt" = 'config/redtard/mechanics/values/crafting.txt',
 		"faith.txt" = 'config/redtard/mechanics/values/faith.txt',

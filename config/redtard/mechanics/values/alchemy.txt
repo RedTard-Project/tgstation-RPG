@@ -1,0 +1,53 @@
+# Alchemy (alchemy/): Ratwood's potions, poisons and blessed water. What each reagent does is the data of its type; these numbers are what they share.
+# Mechanics numbers: name = value, described by the # lines right above it; times are in deciseconds. The build compiles this file in, so its numbers are the defaults; a file of the same name in config/redtard_private/mechanics/values/ is read instead when present.
+
+# Units of a health potion in the blood over which the body sheds the excess: no overhealing (Ratwood 60).
+potion_overheal_volume = 60
+
+# Units of a health potion shed each Ratwood tick of two seconds while over potion_overheal_volume (Ratwood 2).
+potion_overheal_shed = 2
+
+# Least units of a potion or an antidote in the blood for its healing or cleansing to work (Ratwood volume > 0.99).
+potion_min_volume = 0.99
+
+# Least units of a poison in the blood for it to work (Ratwood volume > 0.09).
+poison_min_volume = 0.09
+
+# Units of a stamina poison in the blood over which the body sheds the excess, so the drain ends (Ratwood 30).
+stamina_poison_cap = 30
+
+# Units of a stamina poison shed each Ratwood tick while over stamina_poison_cap (Ratwood 2).
+stamina_poison_shed = 2
+
+# What a buff potion adds to its stat while it is in the blood (Ratwood +3).
+buff_potion_stat = 3
+
+# Deciseconds the stat of a buff potion lingers after the last of it is gone (Ratwood 3 seconds, renewed every tick).
+buff_potion_linger = 30
+
+# Units of every other buff potion in the blood a buff potion purges each Ratwood tick: they do not stack (Ratwood 10).
+buff_potion_purge = 10
+
+# Units of a buff potion in the blood from which it is an overdose (Ratwood 33): more than one vial at once.
+buff_potion_overdose = 33
+
+# Toxins an overdose of a buff potion deals each Ratwood tick (Ratwood 3).
+buff_overdose_toxin = 3
+
+# Deciseconds of jitters an overdose of a buff potion adds each Ratwood tick (Ratwood Jitter(2): two ticks).
+buff_overdose_jitter = 40
+
+# Deciseconds a sip of the temperature potion keeps the body's heat in bounds (Ratwood 15 seconds).
+temperature_potion_time = 150
+
+# Body heat in kelvin above which the temperature potion cools the body (Ratwood BODYTEMP_NORMAL_MAX 350).
+temperature_potion_max = 350
+
+# Body heat in kelvin below which the temperature potion warms the body (Ratwood BODYTEMP_NORMAL_MIN 250).
+temperature_potion_min = 250
+
+# Kelvin the temperature potion moves the body's heat toward its bounds each second (Ratwood 5).
+temperature_potion_step = 5
+
+# Deciseconds the fire resistance potion keeps fire off after the last of it (Ratwood 15 minutes).
+fire_resist_time = 9000

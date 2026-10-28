@@ -878,12 +878,14 @@
 					"/obj/item/reagent_containers/glass": [
 						"volume",
 						"amount_per_transfer_from_this",
-						"possible_transfer_amounts"
+						"possible_transfer_amounts",
+						"list_reagents"
 					],
 					"/obj/item/reagent_containers/powder": [
 						"volume",
 						"amount_per_transfer_from_this",
-						"possible_transfer_amounts"
+						"possible_transfer_amounts",
+						"list_reagents"
 					],
 					"/obj/item/book/rogue": [
 						"bookfile",
@@ -1210,7 +1212,12 @@
 					"rogue_npc_damage_mult",
 					"rogue_accuracy",
 					"hitsound",
-					"rogue_drop_type"
+					"rogue_drop_type",
+					"rogue_poison_type",
+					"rogue_poison_amount",
+					"rogue_slur",
+					"rogue_eyeblur",
+					"rogue_drowsy"
 				],
 				"rename": {
 					"armour_penetration": "armor_penetration",
@@ -1219,7 +1226,12 @@
 					"rogue_bclass": "woundclass",
 					"rogue_npc_damage_mult": "npc_simple_damage_mult",
 					"rogue_accuracy": "accuracy",
-					"rogue_drop_type": "ammo_type"
+					"rogue_drop_type": "ammo_type",
+					"rogue_poison_type": "poisontype",
+					"rogue_poison_amount": "poisonamount",
+					"rogue_slur": "slur",
+					"rogue_eyeblur": "eyeblur",
+					"rogue_drowsy": "drowsy"
 				},
 				"numeric_vars": [
 					"damage",
@@ -1228,17 +1240,26 @@
 					"rogue_tile_time",
 					"rogue_embed_chance",
 					"rogue_npc_damage_mult",
-					"rogue_accuracy"
+					"rogue_accuracy",
+					"rogue_poison_amount",
+					"rogue_slur",
+					"rogue_eyeblur",
+					"rogue_drowsy"
 				],
 				"numeric_defaults": {
 					"rogue_accuracy": 65,
-					"rogue_npc_damage_mult": 1
+					"rogue_npc_damage_mult": 1,
+					"rogue_poison_amount": 0,
+					"rogue_slur": 0,
+					"rogue_eyeblur": 0,
+					"rogue_drowsy": 0
 				},
 				"string_define_vars": [
 					"rogue_bclass"
 				],
 				"paths": [
-					"rogue_drop_type"
+					"rogue_drop_type",
+					"rogue_poison_type"
 				],
 				"sounds": [
 					"hitsound"

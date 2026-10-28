@@ -198,6 +198,11 @@
 #include "survival\warmth.dm"
 #include "survival\sleep.dm"
 #include "survival\ported\food.dm"
+// Alchemy (alchemy/): Ratwood's potions, poisons and blessed water, after survival/ for its reagent helpers
+#include "alchemy\_defines.dm"
+#include "alchemy\potions.dm"
+#include "alchemy\buffs.dm"
+#include "alchemy\poisons.dm"
 // Stage 3: production (crafting/)
 #include "crafting\_defines.dm"
 #include "crafting\config.dm"

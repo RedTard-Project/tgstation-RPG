@@ -292,6 +292,35 @@
 	TEST_ASSERT_EQUAL(wearer.rogue_best_armor(BODY_ZONE_PRECISE_MOUTH, ROGUE_ARMOR_SLASH), bevor, "A worn bevor does not stop a cut to the mouth")
 	TEST_ASSERT_NULL(wearer.rogue_best_armor("l_eye", ROGUE_ARMOR_SLASH), "A worn bevor stops a cut to the eye")
 
+/datum/unit_test/rogue_alchemy
+
+/datum/unit_test/rogue_alchemy/Run()
+	var/mob/living/carbon/human/consistent/drinker = allocate(__IMPLIED_TYPE__)
+	var/obj/item/bodypart/chest = drinker.get_bodypart(BODY_ZONE_CHEST)
+	drinker.apply_damage(30, BRUTE, chest, wound_bonus = CANT_WOUND)
+	var/brute_before = drinker.get_brute_loss()
+	drinker.reagents.add_reagent(/datum/reagent/medicine/healthpot, 10)
+	drinker.reagents.metabolize(drinker, SSMOBS_DT, can_overdose = TRUE)
+	TEST_ASSERT(drinker.get_brute_loss() < brute_before, "A health potion did not heal")
+	drinker.reagents.clear_reagents()
+	drinker.reagents.add_reagent(/datum/reagent/berrypoison, 5)
+	drinker.reagents.add_reagent(/datum/reagent/medicine/antidote, 5)
+	drinker.reagents.metabolize(drinker, SSMOBS_DT, can_overdose = TRUE)
+	TEST_ASSERT(drinker.reagents.get_reagent_amount(/datum/reagent/berrypoison) < 4.5, "An antidote did not purge the poison")
+	drinker.reagents.clear_reagents()
+	var/datum/wound/cut = drinker.cause_wound_of_type_and_severity(WOUND_SLASH, chest, WOUND_SEVERITY_MODERATE)
+	TEST_ASSERT(istype(cut), "Could not cut the chest")
+	TEST_ASSERT(drinker.rogue_heal_wounds(ROGUE_WOUND_HEALTH_CUT_MODERATE), "Mending did not mend the cut")
+	TEST_ASSERT(QDELETED(cut), "A cut mended whole did not close")
+	var/obj/item/natural/cloth/cloth = allocate(__IMPLIED_TYPE__)
+	cloth.rogue_medicine = /datum/reagent/medicine/healthpot
+	cloth.rogue_medicine_quality = 1
+	cloth.rogue_medicine_left = ROGUE_SOAK_SPEND
+	brute_before = chest.brute_dam
+	cloth.rogue_medicine_tick(chest, 1)
+	TEST_ASSERT(chest.brute_dam < brute_before, "A bandage soaked in a potion did not heal the limb")
+	TEST_ASSERT_NULL(cloth.rogue_medicine, "The spent medicine stayed on the cloth")
+
 #undef TEST_ASSERT
 #undef TEST_ASSERT_EQUAL
 #endif
