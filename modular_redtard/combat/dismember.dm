@@ -127,6 +127,8 @@ GLOBAL_LIST_INIT(rogue_disembowel_slots, list(ORGAN_SLOT_STOMACH, ORGAN_SLOT_APP
 	scar_keyword = "dismember"
 	/// Limbs severed from this chest.
 	var/stumps = 0
+	/// Stumps a needle has sewn (combat/medicine.dm): they bleed and hurt little.
+	var/sewn = 0
 	/// What searing still has to close (Ratwood whp, for each stump).
 	var/integrity = 0
 
@@ -142,9 +144,13 @@ GLOBAL_LIST_INIT(rogue_disembowel_slots, list(ORGAN_SLOT_STOMACH, ORGAN_SLOT_APP
 		qdel(src)
 
 /datum/wound/rogue_stump/get_wound_description(mob/user)
+	if(sewn >= stumps)
+		return span_warning("[victim.p_Their()] [stumps > 1 ? "stumps are" : "stump is"] sewn shut.")
 	return span_bolddanger("[victim.p_Their()] [stumps > 1 ? "stumps bleed" : "stump bleeds"] freely!")
 
 /datum/wound/rogue_stump/get_self_check_description(self_aware)
+	if(sewn >= stumps)
+		return span_warning("It has [stumps > 1 ? "the sewn stumps of severed limbs" : "the sewn stump of a severed limb"].")
 	return span_boldwarning("It's bleeding from [stumps > 1 ? "the stumps of severed limbs" : "the stump of a severed limb"]!!")
 
 /datum/wound/rogue_stump/check_grab_treatments(obj/item/tool, mob/user)

@@ -73,7 +73,7 @@
 		changed = !!adjust_blood_volume(ROGUE_BLOOD_REGEN * ticks, maximum = BLOOD_VOLUME_NORMAL)
 	if(stat != DEAD)
 		rogue_blood_loss_effects(ticks)
-	var/rate = rogue_bleed_rate()
+	var/rate = rogue_bleed_rate(ticks)
 	var/amount = rate > 0 ? rogue_bleed_amount(rate * seconds_per_tick) : 0
 	if(amount > 0)
 		bleed(amount)
@@ -89,15 +89,27 @@
 	if(changed)
 		update_health_hud()
 
-/// Blood per second: TG's count of the limbs (wounds, stumps, what is lodged in them), with opened arteries at Ratwood's rate.
-/mob/living/carbon/human/proc/rogue_bleed_rate()
-	. = get_bleed_rate()
-	if(!.)
+/// Blood per second, limb by limb: TG's count of the limb (wounds, stumps, what is lodged in it), opened arteries at
+/// Ratwood's rate, less what the stitches hold back (combat/medicine.dm), and under a bandage its share. With ticks the
+/// bandages soak up this tick's blood (Ratwood process_bandage()); without, they are only looked at.
+/mob/living/carbon/human/proc/rogue_bleed_rate(ticks = 0)
+	. = 0
+	if(HAS_TRAIT(src, TRAIT_GODMODE) || !can_bleed())
 		return
-	for(var/datum/wound/wound as anything in all_wounds)
-		var/artery = wound.rogue_artery_bleed()
-		if(artery > wound.blood_flow && wound.limb)
-			. += (artery - wound.blood_flow) * wound.limb.rogue_bleed_factor()
+	for(var/obj/item/bodypart/limb as anything in bodyparts)
+		var/rate = limb.cached_bleed_rate
+		for(var/datum/wound/wound as anything in limb.wounds)
+			rate += wound.rogue_bleed_delta() * limb.rogue_bleed_factor()
+		rate = max(rate, 0)
+		if(rate && limb.rogue_bandage)
+			rate = limb.rogue_bandaged_rate(rate, ticks)
+		. += rate
+	. *= GET_PHYSIOLOGY(src, PHYS_COEFF_BLEED)
+
+/// What Ratwood's counting changes in TG's for this wound: an opened artery bleeds harder, stitches hold blood back.
+/datum/wound/proc/rogue_bleed_delta()
+	var/extra = max(rogue_artery_bleed() - blood_flow, 0)
+	return extra - min(rogue_stitched, blood_flow + extra)
 
 /// Ratwood's bleed(): constitution slows or quickens the bleeding of a body with a mind, as thick blood, critical
 /// resistance and weakness do; one who yields bleeds a quarter, and adrenaline stops it.

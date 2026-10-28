@@ -67,7 +67,7 @@
 	return ROGUE_PAIN_BURN_MODERATE
 
 /datum/wound/rogue_stump/rogue_pain()
-	return ROGUE_STUMP_PAIN * stumps
+	return ROGUE_STUMP_PAIN * (stumps - sewn) + ROGUE_STUMP_SEWN_PAIN * sewn
 
 /// The most a limb can hurt, wounds included (Ratwood max_pain_damage).
 /obj/item/bodypart/proc/rogue_max_pain()

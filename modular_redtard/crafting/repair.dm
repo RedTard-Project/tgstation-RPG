@@ -295,6 +295,11 @@ GLOBAL_LIST(rogue_structure_repair_skills)
 	return ITEM_INTERACT_SUCCESS
 
 /obj/item/needle/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
+	if(iscarbon(interacting_with) && rogue_combat_enabled())
+		if(DOING_INTERACTION_WITH_TARGET(user, interacting_with))
+			return ITEM_INTERACT_BLOCKING
+		INVOKE_ASYNC(src, PROC_REF(rogue_sew), interacting_with, user)
+		return ITEM_INTERACT_SUCCESS
 	if(!istype(interacting_with, /obj/item/clothing))
 		return NONE
 	var/obj/item/clothing/cloth = interacting_with

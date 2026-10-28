@@ -1406,3 +1406,53 @@ adrenaline_blood = 30
 
 # Willpower of an adrenaline rush (Ratwood effectedstats WIL +1).
 adrenaline_willpower = 1
+
+# --- Field medicine (combat/medicine.dm; Ratwood rogueitems/needle.dm sew(), natural/clothfibersthorn.dm bandage(), bodypart_wounds.dm process_bandage()).
+
+# Blood per second a sewn stump still loses (Ratwood /datum/wound/dismemberment sewn_bleed_rate: 0.25 per Life tick).
+stump_sewn_bleed = 0.125
+
+# Pain of a sewn stump (Ratwood sewn_woundpain 20).
+stump_sewn_pain = 20
+
+# Deciseconds one stitch takes (Ratwood do_after 2 SECONDS).
+sew_stitch_time = 20
+
+# How far each stitch gets the sewing, per rank of Medicine plus one (Ratwood moveup = (skill + 1) * 5).
+sew_step_per_rank = 5
+
+# Blood a stitch holds back per Life tick, per rank of Medicine (Ratwood bleed_rate - skill / 2).
+sew_hold_per_rank = 0.5
+
+# Least blood a stitch holds back per Life tick (Ratwood max(skill / 2, 1)).
+sew_hold_min = 1
+
+# How far the stitches must get to sew a moderate cut or stab (Ratwood small slash 25).
+sew_threshold_moderate = 25
+
+# How far for a severe cut or stab (Ratwood slash 50).
+sew_threshold_severe = 50
+
+# How far for an opened artery, a critical cut or stab (Ratwood artery: the default 100).
+sew_threshold_artery = 100
+
+# How far for one stump (Ratwood dismemberment sew_threshold 100, "absolutely awful to sew up").
+sew_threshold_stump = 100
+
+# Medicine learned per stitch, times intelligence (Ratwood SEW_EXP_PER_STEP).
+sew_xp_step = 0.1
+
+# Medicine learned on finishing, times intelligence and the wound's threshold over the normalizer (Ratwood SEW_EXP_FINISH).
+sew_xp_finish = 5
+
+# The threshold that earns the full finishing experience (Ratwood SEW_HP_EXP_NORMALIZER).
+sew_xp_normalizer = 600
+
+# Bleeding a clean bandage stops outright, per Life tick, once it has held back its share (Ratwood: bleed_rate <= 1).
+bandage_stop = 1
+
+# Share of the time a rank of Medicine takes off bandaging and unbandaging (Ratwood 15% per level).
+bandage_time_per_rank = 0.15
+
+# Deciseconds taking a bandage off takes, before Medicine (Ratwood 5 SECONDS).
+unbandage_time = 50
