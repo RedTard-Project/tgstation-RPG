@@ -66,34 +66,32 @@ FEMALE_USERS = set()
 BITMASK_TURFS = set()
 NO_SPRITE = []
 LISTINGS = {}
-LICENSE_FILE = re.compile(r'(?i)^(licen[cs]e|copying)([-_.][\w.-]*)?$')
+# A folder of Ratwood's that carries a terms file of its own is never ported: the port takes only what the repository's own
+# terms cover. EXCLUDED: such a folder -> the types that wanted something from it (they get no sprite).
+TERMS_FILE = re.compile(r'(?i)^(licen[cs]e|copying)([-_.][\w.-]*)?$')
 CURRENT = [None]
 # --offline: no git in the Ratwood cache (no sync, no sparse-checkout of missing files); the cache is read as it stands.
 OFFLINE = '--offline' in sys.argv
-RESTRICTED = collections.defaultdict(set)
-UNREVIEWED = collections.defaultdict(set)
+EXCLUDED = collections.defaultdict(set)
 
 
-def asset_license(rel):
+def excluded_folder(rel):
     parts = rel.split('/')[:-1]
     for depth in range(len(parts), 0, -1):
         folder = os.path.join(CHECKOUT, *parts[:depth])
         if folder not in LISTINGS:
             LISTINGS[folder] = {name.lower(): name for name in os.listdir(folder)} if os.path.isdir(folder) else {}
         for name in LISTINGS[folder].values():
-            if LICENSE_FILE.match(name) and os.path.isfile(os.path.join(folder, name)):
-                return '/'.join(parts[:depth] + [name])
+            if TERMS_FILE.match(name) and os.path.isfile(os.path.join(folder, name)):
+                return '/'.join(parts[:depth])
     return None
 
 
-def asset_allowed(rel, assets):
-    license = asset_license(rel)
-    if license is None or license in assets.get('reviewed_licenses', []):
+def asset_allowed(rel):
+    folder = excluded_folder(rel)
+    if folder is None:
         return True
-    if license in assets.get('restricted_licenses', []):
-        RESTRICTED[license].add(CURRENT[0])
-    else:
-        UNREVIEWED[license].add(rel)
+    EXCLUDED[folder].add(CURRENT[0])
     return False
 
 
@@ -1389,7 +1387,7 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
             return None
         rel = exact_case(CHECKOUT, m.group(1))
         src = os.path.join(CHECKOUT, rel)
-        if not os.path.exists(src) or not asset_allowed(rel, port.get('assets', {})):
+        if not os.path.exists(src) or not asset_allowed(rel):
             return None
         dest_rel = rel[len('icons/'):] if rel.startswith('icons/') else rel
         dest = f'{ICON_DIR}/{dest_rel}'
@@ -1412,7 +1410,7 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
     def sound_ref(raw):
         rel = exact_case(CHECKOUT, ICON_LITERAL.match(raw.strip()).group(1))
         src = os.path.join(CHECKOUT, rel)
-        if not os.path.exists(src) or not asset_allowed(rel, port.get('assets', {})):
+        if not os.path.exists(src) or not asset_allowed(rel):
             return None
         sounds[src] = f"{SOUND_DIR}/{rel[len('sound/'):] if rel.startswith('sound/') else rel}"
         return f"'{sounds[src]}'"
@@ -1471,8 +1469,8 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
             block[:] = [line for line in block if not line.startswith(f'\t{name} = ')]
             block.append(f'\t{name} = {value}')
 
-        if any(path in users for users in RESTRICTED.values()):
-            NO_SPRITE.append((path, 'restricted licence', text('icon_state') or ''))
+        if any(path in users for users in EXCLUDED.values()):
+            NO_SPRITE.append((path, 'excluded folder', text('icon_state') or ''))
             put('icon_state', 'null')
             put('inhand_icon_state', 'null')
             put('worn_icon', f"'{BLANK_WORN}'")
@@ -1811,6 +1809,17 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
             fetch_sources([f for p in paths for source_name in cat['sound_vars'].values() for f in sound_files(rw.resolve(p, source_name))])
         if cat.get('sound_lists'):
             fetch_sources([f for p in paths for name in cat['sound_lists'] for f in sound_files(rw.resolve(p, cat.get('rename', {}).get(name, name)))])
+        # Sounds the module's own code plays (a tree falling): copied with the rest, no var names them.
+        if cat.get('code_sounds'):
+            fetch_sources(cat['code_sounds'])
+            for rel in cat['code_sounds']:
+                sound_ref(f"'{rel}'")
+        # A var of limit_vars is written only for the types under its prefixes (the destruction of what grows, not of every
+        # structure).
+        limited = {}
+        for prefix, names in cat.get('limit_vars', {}).items():
+            for name in names:
+                limited.setdefault(name, []).append(prefix)
         for path in paths:
             CURRENT[0] = path
             block = [path]
@@ -1818,6 +1827,8 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
             smooth = smoothing_lines(path) if cat.get('smoothing') else None
             for name in cat['vars']:
                 if smooth and name in ('icon', 'icon_state'):
+                    continue
+                if name in limited and not any(boundary_match(path, prefix) for prefix in limited[name]):
                     continue
                 if name == 'layer' and cat.get('placement'):
                     continue
@@ -1900,6 +1911,16 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                     target = runtime_path(value.strip().rstrip('/'), rules) if value and value.strip().startswith('/') else None
                     if target in valid:
                         block.append(f'\t{name} = {target}')
+                    # Ratwood clears a path its parent sets (a stump's stump_type = FALSE); left out, the port would inherit it.
+                    elif name in cat.get('nullable', []) and (value or 'null').strip() in ('null', 'FALSE', '0') and (rw.resolve(rw.parent(path), source_name) or '').strip().startswith('/'):
+                        block.append(f'\t{name} = null')
+                    continue
+                if name in cat.get('path_counts', []):
+                    # Types with how many of each (Ratwood debris, static_debris): list(/obj/item/natural/fibers = 1).
+                    entries = [(runtime_path(p, rules), count) for p, count in list_paths(value)]
+                    entries = [f'{p} = {count or 1}' for p, count in entries if p in valid]
+                    if entries:
+                        block.append(f'\t{name} = list(' + ', '.join(entries) + ')')
                     continue
                 if name in cat.get('path_lists', []):
                     entries = [runtime_path(p, rules) for p, _ in list_paths(value)]
@@ -2098,7 +2119,7 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
 
     for rel in port.get('extra_sounds', []):
         if not sound_ref(f"'{rel}'"):
-            raise SystemExit(f'extra_sounds: {rel} is missing from the Ratwood checkout or not licensed')
+            raise SystemExit(f'extra_sounds: {rel} is missing from the Ratwood checkout or in a folder the port does not take')
 
     ported = set(generated)
     rebased = collections.defaultdict(list)
@@ -2203,14 +2224,12 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
     open(f'{OUT_DIR}/{EDGES_FILE}', 'w', encoding='utf-8', newline='\n').write('\n'.join(edge_lines) + '\n')
     print(f"smoothing: {smoothed['bitmask']} bitmask types from {sum(1 for v in sheets.values() if v)} sheets, {smoothed['edges']} edge receivers, {len(edge_states)} edge sources")
 
-    if UNREVIEWED:
-        raise SystemExit('assets under a licence nobody has reviewed; add each licence to port.assets.reviewed_licenses or restricted_licenses in ' + CONFIG + ':\n  ' + '\n  '.join(f'{license}: {len(files)} file(s), e.g. {sorted(files)[0]}' for license, files in sorted(UNREVIEWED.items())))
-    for license in port.get('assets', {}).get('restricted_licenses', []):
-        folder = os.path.dirname(license)
+    # A copy left from an earlier run goes with the folder it came from.
+    for folder in EXCLUDED:
         copied = f"{ICON_DIR}/{folder[len('icons/'):] if folder.startswith('icons/') else folder}"
         if os.path.isdir(copied):
             shutil.rmtree(copied)
-            print('removed restricted copies:', copied)
+            print('removed copies of an excluded folder:', copied)
     if BLANK_USERS:
         os.makedirs(os.path.dirname(BLANK_WORN), exist_ok=True)
         dmi.write(BLANK_WORN, 32, 32, [('', bytes(32 * 32 * 4))])
@@ -2257,11 +2276,6 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
         for src, dest in sorted(icons.items(), key=lambda kv: kv[1]):
             rel = os.path.relpath(src, CHECKOUT).replace('\\', '/')
             out.write(f'- `{dest}` from Ratwood `{rel}`\n')
-        if RESTRICTED:
-            out.write('\n## Restricted assets (not copied)\n\n')
-            out.write('Their folder carries a proprietary licence that forbids redistribution and use outside Ratwood (`port.assets.restricted_licenses`). The port never copies them; the types that use them get no sprite.\n\n')
-            for license, users in sorted(RESTRICTED.items()):
-                out.write(f'- `{license}`: {", ".join(f"`{user}`" for user in sorted(users))}\n')
         if NO_SPRITE:
             out.write(f'\n## Items without a world sprite ({len(NO_SPRITE)})\n\n')
             out.write('Ratwood names an `icon_state` its sheet does not have (a sprite chosen at runtime, or a broken one). The port writes `icon_state = null`, as TG does for an item with no sprite, so the TG icon tests pass and the item stays listed here.\n\n| Type | Sheet | Missing state |\n|---|---|---|\n')
@@ -2296,6 +2310,21 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
 SOUND_LITERAL = re.compile(r"'(sound/[^']+?\.(?:ogg|wav|mp3))'")
 
 
+SFX_ENTRY = re.compile(r'if\s*\(\s*"([^"]+)"\s*\)\s*\n\s*soundin\s*=\s*pick\(([^)]*)\)')
+SFX_FILES = {}
+
+
+def sfx_files(key):
+    """The files of one of Ratwood's sound keys ("plantcross" and the like): its get_sfx() in code/game/sound.dm picks one."""
+    if not SFX_FILES:
+        source = os.path.join(CHECKOUT, 'code', 'game', 'sound.dm')
+        text = open(source, encoding='utf-8', errors='replace').read() if os.path.exists(source) else ''
+        for found in SFX_ENTRY.finditer(text):
+            SFX_FILES[found.group(1)] = SOUND_LITERAL.findall(found.group(2))
+        SFX_FILES.setdefault('', [])
+    return SFX_FILES.get(key, [])
+
+
 def sound_files(raw):
     text = raw or ''
     for _ in range(8):
@@ -2304,7 +2333,11 @@ def sound_files(raw):
             break
         for name in names:
             text = re.sub(rf'\b{name}\b', lambda _match, value=DEFINE_VALUES[name]: value, text)
-    return SOUND_LITERAL.findall(text)
+    files = SOUND_LITERAL.findall(text)
+    key = text.strip()
+    if not files and len(key) > 1 and key[0] == key[-1] == '"':
+        files = sfx_files(key[1:-1])
+    return files
 
 
 def fetch_sources(paths):
@@ -3586,8 +3619,8 @@ def generate_bodies(cfg, rw, valid, npcs, known_traits):
 
     def cells_of(rel):
         if rel not in sources:
-            if not asset_allowed(rel, cfg['port'].get('assets', {})):
-                raise SystemExit(f'{rel}: the body sprites sit under a licence the port may not copy ({asset_license(rel)})')
+            if not asset_allowed(rel):
+                raise SystemExit(f'{rel}: the body sprites sit in a folder the port does not take ({excluded_folder(rel)})')
             sources[rel] = dmi.read(os.path.join(CHECKOUT, rel)).state_cells()
         return sources[rel]
 
@@ -3850,7 +3883,7 @@ def generate_races(cfg, rw):
                 continue
             for key, files in voicepack_sounds(pack).items():
                 key = spec['emote_keys'].get(key, key)
-                files = [f for f in dict.fromkeys(files) if asset_allowed(f, cfg['port'].get('assets', {}))]
+                files = [f for f in dict.fromkeys(files) if asset_allowed(f)]
                 if files:
                     voices.setdefault(key, {})['MALE' if sex == 'm' else 'FEMALE'] = files
         eyes = re.search(r'ORGAN_SLOT_EYES\s*=\s*(/obj/item/organ/eyes[A-Za-z0-9_/]*)', rw.resolve(species, 'organs') or '')
@@ -3897,7 +3930,7 @@ def generate_races(cfg, rw):
     for sex, pack in spec.get('human_voices', {}).items():
         for key, files in voicepack_sounds(pack).items():
             key = spec['emote_keys'].get(key, key)
-            files = [f for f in dict.fromkeys(files) if voice_files.search(f) and asset_allowed(f, cfg['port'].get('assets', {}))]
+            files = [f for f in dict.fromkeys(files) if voice_files.search(f) and asset_allowed(f)]
             if files and key not in spec.get('human_voice_skip', []):
                 human.setdefault(key, {})['MALE' if sex == 'm' else 'FEMALE'] = files
     fetch_sources(sorted({f for by_sex in human.values() for files in by_sex.values() for f in files}))

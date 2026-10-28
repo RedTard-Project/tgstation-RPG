@@ -15,6 +15,7 @@
 #include "scabbards.dm"
 #include "railings.dm"
 #include "trees.dm"
+#include "destruction.dm"
 #include "kneestingers.dm"
 #include "fires.dm"
 #include "mining.dm"

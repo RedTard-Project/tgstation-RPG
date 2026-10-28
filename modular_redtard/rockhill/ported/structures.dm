@@ -1309,6 +1309,9 @@
 	icon = 'modular_redtard/rockhill/icons/obj/flora/ausflora.dmi'
 	icon_state = "firstbush_1"
 	obj_flags = CAN_BE_HIT
+	max_integrity = 30
+	rockhill_dulling = "bashchop"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 	rockhill_variant = "firstbush_#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 4
@@ -1321,6 +1324,10 @@
 	icon = 'modular_redtard/rockhill/icons/obj/flora/ausflora.dmi'
 	icon_state = "brflowers_1"
 	obj_flags = CAN_BE_HIT
+	max_integrity = 100
+	rockhill_dulling = "cut"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	rockhill_variant = "brflowers_#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 3
@@ -1332,6 +1339,9 @@
 	icon = 'modular_redtard/rockhill/icons/obj/flora/ausflora.dmi'
 	icon_state = "fernybush_1"
 	obj_flags = CAN_BE_HIT
+	max_integrity = 30
+	rockhill_dulling = "bashchop"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 	rockhill_variant = "fernybush_#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 3
@@ -1343,6 +1353,9 @@
 	icon = 'modular_redtard/rockhill/icons/obj/flora/ausflora.dmi'
 	icon_state = "fullgrass_1"
 	obj_flags = CAN_BE_HIT
+	max_integrity = 30
+	rockhill_dulling = "bashchop"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 	rockhill_variant = "fullgrass_#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 3
@@ -1354,6 +1367,9 @@
 	icon = 'modular_redtard/rockhill/icons/obj/flora/ausflora.dmi'
 	icon_state = "grassybush_1"
 	obj_flags = CAN_BE_HIT
+	max_integrity = 30
+	rockhill_dulling = "bashchop"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 	rockhill_variant = "grassybush_#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 4
@@ -1365,6 +1381,10 @@
 	icon = 'modular_redtard/rockhill/icons/obj/flora/ausflora.dmi'
 	icon_state = "lavendergrass_1"
 	obj_flags = CAN_BE_HIT
+	max_integrity = 100
+	rockhill_dulling = "cut"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	rockhill_variant = "lavendergrass_#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 4
@@ -1376,6 +1396,9 @@
 	icon = 'modular_redtard/rockhill/icons/obj/flora/ausflora.dmi'
 	icon_state = "leafybush_1"
 	obj_flags = CAN_BE_HIT
+	max_integrity = 30
+	rockhill_dulling = "bashchop"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 	rockhill_variant = "leafybush_#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 3
@@ -1387,6 +1410,9 @@
 	icon = 'modular_redtard/rockhill/icons/obj/flora/ausflora.dmi'
 	icon_state = "palebush_1"
 	obj_flags = CAN_BE_HIT
+	max_integrity = 30
+	rockhill_dulling = "bashchop"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 	rockhill_variant = "palebush_#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 4
@@ -1398,6 +1424,9 @@
 	icon = 'modular_redtard/rockhill/icons/obj/flora/ausflora.dmi'
 	icon_state = "pointybush_1"
 	obj_flags = CAN_BE_HIT
+	max_integrity = 30
+	rockhill_dulling = "bashchop"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 	rockhill_variant = "pointybush_#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 4
@@ -1409,6 +1438,10 @@
 	icon = 'modular_redtard/rockhill/icons/obj/flora/ausflora.dmi'
 	icon_state = "ppflowers_1"
 	obj_flags = CAN_BE_HIT
+	max_integrity = 100
+	rockhill_dulling = "cut"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	rockhill_variant = "ppflowers_#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 3
@@ -1420,6 +1453,9 @@
 	icon = 'modular_redtard/rockhill/icons/obj/flora/ausflora.dmi'
 	icon_state = "sparsegrass_1"
 	obj_flags = CAN_BE_HIT
+	max_integrity = 30
+	rockhill_dulling = "bashchop"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 	rockhill_variant = "sparsegrass_#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 3
@@ -1431,6 +1467,9 @@
 	icon = 'modular_redtard/rockhill/icons/obj/flora/ausflora.dmi'
 	icon_state = "stalkybush_1"
 	obj_flags = CAN_BE_HIT
+	max_integrity = 30
+	rockhill_dulling = "bashchop"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 	rockhill_variant = "stalkybush_#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 3
@@ -1442,6 +1481,9 @@
 	icon = 'modular_redtard/rockhill/icons/obj/flora/ausflora.dmi'
 	icon_state = "sunnybush_1"
 	obj_flags = CAN_BE_HIT
+	max_integrity = 30
+	rockhill_dulling = "bashchop"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 	rockhill_variant = "sunnybush_#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 3
@@ -1453,6 +1495,10 @@
 	icon = 'modular_redtard/rockhill/icons/obj/flora/ausflora.dmi'
 	icon_state = "ywflowers_1"
 	obj_flags = CAN_BE_HIT
+	max_integrity = 100
+	rockhill_dulling = "cut"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	rockhill_variant = "ywflowers_#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 3
@@ -1465,6 +1511,9 @@
 	icon_state = "bigrock"
 	density = TRUE
 	obj_flags = CAN_BE_HIT
+	max_integrity = 150
+	rockhill_dulling = "bashchop"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 	plane = ABOVE_GAME_PLANE
 	layer = BELOW_OBJ_LAYER
 
@@ -1474,6 +1523,9 @@
 	icon_state = "bigrock_grass"
 	density = TRUE
 	obj_flags = CAN_BE_HIT
+	max_integrity = 150
+	rockhill_dulling = "bashchop"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/hotspring_rocks/small
@@ -1482,6 +1534,9 @@
 	icon_state = "stones_1"
 	density = FALSE
 	obj_flags = CAN_BE_HIT
+	max_integrity = 150
+	rockhill_dulling = "bashchop"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/hotspring_rocks/small/four
@@ -1490,6 +1545,9 @@
 	icon_state = "stones_4"
 	density = FALSE
 	obj_flags = CAN_BE_HIT
+	max_integrity = 150
+	rockhill_dulling = "bashchop"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/hotspring_rocks/small/three
@@ -1498,6 +1556,9 @@
 	icon_state = "stones_3"
 	density = FALSE
 	obj_flags = CAN_BE_HIT
+	max_integrity = 150
+	rockhill_dulling = "bashchop"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/hotspring_rocks/small/two
@@ -1506,6 +1567,9 @@
 	icon_state = "stones_2"
 	density = FALSE
 	obj_flags = CAN_BE_HIT
+	max_integrity = 150
+	rockhill_dulling = "bashchop"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/maple/b
@@ -1514,6 +1578,9 @@
 	icon = 'modular_redtard/rockhill/icons/obj/structures/maple_tree.dmi'
 	icon_state = "maple2"
 	obj_flags = CAN_BE_HIT
+	max_integrity = 150
+	rockhill_dulling = "bashchop"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 	plane = ABOVE_GAME_PLANE
 	layer = 4.5
 
@@ -1523,6 +1590,9 @@
 	icon = 'modular_redtard/rockhill/icons/obj/structures/maple_tree.dmi'
 	icon_state = "maple3"
 	obj_flags = CAN_BE_HIT
+	max_integrity = 150
+	rockhill_dulling = "bashchop"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 	plane = ABOVE_GAME_PLANE
 	layer = 4.5
 
@@ -1532,6 +1602,9 @@
 	icon = 'modular_redtard/rockhill/icons/obj/structures/maple_tree.dmi'
 	icon_state = "maple4"
 	obj_flags = CAN_BE_HIT
+	max_integrity = 150
+	rockhill_dulling = "bashchop"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 	plane = ABOVE_GAME_PLANE
 	layer = 4.5
 
@@ -1543,6 +1616,9 @@
 	icon_state = "mushroomcluster"
 	density = TRUE
 	obj_flags = CAN_BE_HIT
+	max_integrity = 60
+	rockhill_dulling = "bashchop"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 	plane = ABOVE_GAME_PLANE
 	layer = BELOW_OBJ_LAYER
 
@@ -1553,6 +1629,9 @@
 	icon_state = "mushroomclusterunhappy"
 	density = TRUE
 	obj_flags = CAN_BE_HIT
+	max_integrity = 60
+	rockhill_dulling = "bashchop"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/newbranch
@@ -1563,6 +1642,11 @@
 	icon_state = "branch-end1"
 	density = FALSE
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN
+	max_integrity = 30
+	rockhill_dulling = "bashchop"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
+	rockhill_static_debris = list(/obj/item/grown/log/tree/stick = 1)
 	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
@@ -1573,6 +1657,11 @@
 	icon_state = "branch-extend"
 	density = FALSE
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN
+	max_integrity = 30
+	rockhill_dulling = "bashchop"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
+	rockhill_static_debris = list(/obj/item/grown/log/tree/stick = 1)
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/flora/newbranch/leafless
@@ -1582,6 +1671,11 @@
 	icon_state = "branch-end1"
 	density = FALSE
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN
+	max_integrity = 30
+	rockhill_dulling = "bashchop"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
+	rockhill_static_debris = list(/obj/item/grown/log/tree/stick = 1)
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/flora/newleaf
@@ -1591,6 +1685,9 @@
 	icon_state = "center-leaf1"
 	density = FALSE
 	obj_flags = CAN_BE_HIT
+	max_integrity = 10
+	rockhill_dulling = "bashchop"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 	rockhill_variant = "center-leaf#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 2
@@ -1603,6 +1700,9 @@
 	icon_state = "corner-leaf1"
 	density = FALSE
 	obj_flags = CAN_BE_HIT
+	max_integrity = 10
+	rockhill_dulling = "bashchop"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 	rockhill_variant = "corner-leaf#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 2
@@ -1617,6 +1717,11 @@
 	density = 1
 	opacity = 1
 	obj_flags = CAN_BE_HIT | BLOCK_Z_IN_UP | BLOCK_Z_OUT_DOWN
+	max_integrity = 400
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_static_debris = list(/obj/item/grown/log/tree = 1)
 	rockhill_random_dir = TRUE
 	plane = ABOVE_GAME_PLANE
 	layer = BELOW_OBJ_LAYER
@@ -1628,6 +1733,9 @@
 	icon_state = "rock"
 	density = FALSE
 	obj_flags = CAN_BE_HIT
+	max_integrity = 150
+	rockhill_dulling = "bashchop"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 	rockhill_variant = "rock#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 5
@@ -1641,6 +1749,11 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/foliage.dmi'
 	icon_state = "grass1"
 	obj_flags = CAN_BE_HIT
+	max_integrity = 2
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
@@ -1651,6 +1764,11 @@
 	icon_state = "bush2"
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 100
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1, /obj/item/grown/log/tree/stick = 1, /obj/item/natural/thorn = 2)
 	plane = ABOVE_GAME_PLANE
 	layer = 4.5
 
@@ -1661,6 +1779,11 @@
 	icon_state = "bushb"
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 100
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1, /obj/item/grown/log/tree/stick = 1, /obj/item/natural/thorn = 2)
 	layer = 4.5
 
 /obj/structure/flora/roguegrass/bush/jungle/large
@@ -1673,6 +1796,12 @@
 	pixel_y = -12
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 100
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 2, /obj/item/grown/log/tree/stick = 1, /obj/item/grown/log/tree/small = 1)
+	rockhill_static_debris = list(/obj/item/grown/log/tree/small = 1)
 	rockhill_variant = "bush#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 3
@@ -1687,6 +1816,11 @@
 	opacity = TRUE
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 150
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/grown/log/tree/small = 1, /obj/item/natural/fibers = 1, /obj/item/grown/log/tree/stick = 1, /obj/item/natural/thorn = 1)
 	rockhill_variant = "bushwall#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 2
@@ -1702,6 +1836,10 @@
 	pixel_x = -16
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 150
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
 	rockhill_variant = "tallbush#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 2
@@ -1717,6 +1855,11 @@
 	pixel_x = -16
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 150
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1, /obj/item/natural/thorn = 1)
 	rockhill_variant = "tallbush#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 2
@@ -1729,6 +1872,11 @@
 	icon_state = "bush1"
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 100
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1, /obj/item/grown/log/tree/stick = 1, /obj/item/natural/thorn = 2)
 	layer = 4.5
 
 /obj/structure/flora/roguegrass/bush/winter
@@ -1738,6 +1886,11 @@
 	icon_state = "bush1winter"
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 100
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1, /obj/item/grown/log/tree/stick = 1, /obj/item/natural/thorn = 2)
 	rockhill_variant = "bush#winter"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 4
@@ -1750,6 +1903,11 @@
 	icon_state = "bush5winter"
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 100
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1, /obj/item/grown/log/tree/stick = 1, /obj/item/natural/thorn = 2)
 	rockhill_variant = "bush#winter"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 4
@@ -1762,6 +1920,11 @@
 	icon_state = "artemisia"
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 10
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
@@ -1772,6 +1935,11 @@
 	icon_state = "atropa"
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 10
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
@@ -1782,6 +1950,11 @@
 	icon_state = "benedictus"
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 10
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
@@ -1792,6 +1965,11 @@
 	icon_state = "calendula"
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 10
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
@@ -1802,6 +1980,11 @@
 	icon_state = "euphrasia"
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 10
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
@@ -1812,6 +1995,11 @@
 	icon_state = "hypericum"
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 10
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
@@ -1822,6 +2010,11 @@
 	icon_state = "manabloom2"
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 10
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
@@ -1832,6 +2025,11 @@
 	icon_state = "matricaria"
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 10
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
@@ -1842,6 +2040,11 @@
 	icon_state = "mentha"
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 10
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
@@ -1852,6 +2055,11 @@
 	icon_state = "paris"
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 10
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
@@ -1862,6 +2070,11 @@
 	icon_state = "spritemeplz"
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 10
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	rockhill_random_pick = list(/obj/structure/flora/roguegrass/herb/atropa, /obj/structure/flora/roguegrass/herb/matricaria, /obj/structure/flora/roguegrass/herb/symphitum, /obj/structure/flora/roguegrass/herb/taraxacum, /obj/structure/flora/roguegrass/herb/euphrasia, /obj/structure/flora/roguegrass/herb/paris, /obj/structure/flora/roguegrass/herb/calendula, /obj/structure/flora/roguegrass/herb/mentha, /obj/structure/flora/roguegrass/herb/urtica, /obj/structure/flora/roguegrass/herb/salvia, /obj/structure/flora/roguegrass/herb/hypericum, /obj/structure/flora/roguegrass/herb/benedictus, /obj/structure/flora/roguegrass/herb/valeriana, /obj/structure/flora/roguegrass/herb/artemisia, /obj/structure/flora/roguegrass/herb/rosa, /obj/structure/flora/roguegrass/swampweed)
 	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
@@ -1873,6 +2086,11 @@
 	icon_state = "rosa"
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 10
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
@@ -1883,6 +2101,11 @@
 	icon_state = "salvia"
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 10
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
@@ -1893,6 +2116,11 @@
 	icon_state = "symphitum"
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 10
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
@@ -1903,6 +2131,11 @@
 	icon_state = "taraxacum"
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 10
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
@@ -1913,6 +2146,11 @@
 	icon_state = "urtica"
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 10
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
@@ -1923,6 +2161,11 @@
 	icon_state = "valeriana"
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 10
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
@@ -1932,6 +2175,11 @@
 	icon = 'modular_redtard/rockhill/icons/obj/flora/jungleflora.dmi'
 	icon_state = "grassa"
 	obj_flags = CAN_BE_HIT
+	max_integrity = 2
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	rockhill_variant = "grassa#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 5
@@ -1943,6 +2191,11 @@
 	icon = 'modular_redtard/rockhill/icons/obj/flora/jungleflora.dmi'
 	icon_state = "grassb"
 	obj_flags = CAN_BE_HIT
+	max_integrity = 2
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	rockhill_variant = "grassb#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 5
@@ -1954,6 +2207,11 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/mob/monster/maneater.dmi'
 	icon_state = "maneater-hidden"
 	obj_flags = CAN_BE_HIT
+	max_integrity = 5
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/flora/roguegrass/maneater/real
@@ -1962,6 +2220,10 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/mob/monster/maneater.dmi'
 	icon_state = "maneater-hidden"
 	obj_flags = CAN_BE_HIT
+	max_integrity = 100
+	rockhill_dulling = "cut"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/flora/roguegrass/maneater/real/juvenile
@@ -1970,6 +2232,10 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/mob/monster/maneater.dmi'
 	icon_state = "maneater-hidden"
 	obj_flags = CAN_BE_HIT
+	max_integrity = 50
+	rockhill_dulling = "cut"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/flora/roguegrass/pumpkin
@@ -1979,6 +2245,11 @@
 	icon_state = "pumpkin1"
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 1
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 2)
 	rockhill_variant = "pumpkin#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 2
@@ -1991,6 +2262,11 @@
 	icon_state = "pyroflower1"
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 9999
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/flora/roguegrass/reedbush
@@ -1999,6 +2275,11 @@
 	icon = 'modular_redtard/rockhill/icons/obj/flora/ausflora.dmi'
 	icon_state = "reedbush_1"
 	obj_flags = CAN_BE_HIT
+	max_integrity = 1
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	rockhill_variant = "reedbush_#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 4
@@ -2012,6 +2293,11 @@
 	icon_state = "swampweed1"
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 1
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	rockhill_variant = "swampweed#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 3
@@ -2024,6 +2310,11 @@
 	icon_state = "thornbush"
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 35
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/thorn = 3, /obj/item/grown/log/tree/stick = 1)
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/flora/roguegrass/water
@@ -2032,6 +2323,11 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/foliage.dmi'
 	icon_state = "swampgrass"
 	obj_flags = CAN_BE_HIT
+	max_integrity = 5
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/flora/roguegrass/water/reeds
@@ -2041,6 +2337,11 @@
 	icon_state = "reeds"
 	opacity = 1
 	obj_flags = CAN_BE_HIT
+	max_integrity = 10
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/plantcross1.ogg', 'modular_redtard/rockhill/sound/foley/plantcross2.ogg', 'modular_redtard/rockhill/sound/foley/plantcross3.ogg', 'modular_redtard/rockhill/sound/foley/plantcross4.ogg')
+	rockhill_debris = list(/obj/item/natural/fibers = 1)
 	plane = ABOVE_GAME_PLANE
 	layer = 4.1
 
@@ -2055,6 +2356,11 @@
 	pixel_x = -16
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 120
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/misc/treefall.ogg')
+	rockhill_static_debris = list(/obj/item/grown/log/tree/small = 1)
 	plane = ABOVE_GAME_PLANE
 	layer = 4.5
 
@@ -2068,6 +2374,11 @@
 	pixel_x = -16
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 120
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/misc/treefall.ogg')
+	rockhill_static_debris = list(/obj/item/grown/log/tree/small = 1)
 	layer = 4.5
 
 /obj/structure/flora/rogueshroom/happy/random
@@ -2080,6 +2391,11 @@
 	pixel_x = -16
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 120
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/misc/treefall.ogg')
+	rockhill_static_debris = list(/obj/item/grown/log/tree/small = 1)
 	rockhill_variant = "happymush#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 5
@@ -2095,6 +2411,10 @@
 	pixel_x = -8
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 240
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/misc/treefall.ogg')
 	plane = ABOVE_GAME_PLANE
 	layer = 4.5
 
@@ -2108,6 +2428,11 @@
 	pixel_x = -14
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 3250
+	rockhill_dulling = "pick"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/misc/treefall.ogg')
+	rockhill_static_debris = list(/obj/item/rogueore/iron = 8)
 	plane = ABOVE_GAME_PLANE
 	layer = 4.5
 
@@ -2121,6 +2446,11 @@
 	pixel_x = -8
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 240
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/misc/treefall.ogg')
+	rockhill_static_debris = list(/obj/item/reagent_containers/food/snacks/rogue/meat_rotten = 1)
 	plane = ABOVE_GAME_PLANE
 	layer = 4.5
 
@@ -2134,6 +2464,11 @@
 	pixel_x = -8
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
+	max_integrity = 240
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/misc/treefall.ogg')
+	rockhill_static_debris = list(/obj/item/natural/fibers = 1, /obj/item/grown/log/tree/small = 1)
 	plane = ABOVE_GAME_PLANE
 	layer = 4.5
 
@@ -2148,6 +2483,13 @@
 	pixel_x = -16
 	alpha = 200
 	obj_flags = CAN_BE_HIT
+	max_integrity = 200
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_debris = list(/obj/item/grown/log/tree/stick = 2)
+	rockhill_static_debris = list(/obj/item/grown/log/tree = 1)
+	rockhill_stump = /obj/structure/flora/roguetree/stump
 	rockhill_variant = "t#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 16
@@ -2164,6 +2506,13 @@
 	pixel_x = -32
 	alpha = 200
 	obj_flags = CAN_BE_HIT
+	max_integrity = 200
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_debris = list(/obj/item/grown/log/tree/stick = 2)
+	rockhill_static_debris = list(/obj/item/grown/log/tree = 1)
+	rockhill_stump = /obj/structure/flora/roguetree/stump/burnt
 	rockhill_variant = "t#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 4
@@ -2179,6 +2528,13 @@
 	pixel_x = -16
 	alpha = 200
 	obj_flags = CAN_BE_HIT
+	max_integrity = 200
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_debris = list(/obj/item/grown/log/tree/stick = 2)
+	rockhill_static_debris = list(/obj/item/grown/log/tree = 1)
+	rockhill_stump = /obj/structure/flora/roguetree/stump
 	rockhill_variant = "wv#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 2
@@ -2194,6 +2550,13 @@
 	pixel_x = -16
 	alpha = 200
 	obj_flags = CAN_BE_HIT
+	max_integrity = 200
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_debris = list(/obj/item/grown/log/tree/stick = 2)
+	rockhill_static_debris = list(/obj/item/grown/log/tree = 2)
+	rockhill_stump = null
 	rockhill_variant = "pine#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 4
@@ -2209,6 +2572,13 @@
 	pixel_x = -16
 	alpha = 200
 	obj_flags = CAN_BE_HIT
+	max_integrity = 50
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_debris = list(/obj/item/grown/log/tree/stick = 2)
+	rockhill_static_debris = list(/obj/item/rogueore/coal/charcoal = 1)
+	rockhill_stump = /obj/structure/flora/roguetree/stump/pine
 	rockhill_variant = "dead#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 3
@@ -2224,6 +2594,13 @@
 	pixel_x = -16
 	alpha = 255
 	obj_flags = CAN_BE_HIT
+	max_integrity = 100
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_debris = list(/obj/item/grown/log/tree/stick = 2)
+	rockhill_static_debris = list(/obj/item/grown/log/tree/small = 1)
+	rockhill_stump = null
 	rockhill_variant = "t#stump"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 4
@@ -2240,6 +2617,12 @@
 	pixel_x = -32
 	alpha = 255
 	obj_flags = CAN_BE_HIT
+	max_integrity = 100
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_debris = list(/obj/item/grown/log/tree/stick = 2)
+	rockhill_static_debris = list(/obj/item/grown/log/tree/small = 1)
 	rockhill_variant = "st#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 2
@@ -2255,6 +2638,12 @@
 	pixel_x = -16
 	alpha = 255
 	obj_flags = CAN_BE_HIT
+	max_integrity = 200
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_debris = list(/obj/item/grown/log/tree/stick = 2)
+	rockhill_static_debris = list(/obj/item/grown/log/tree = 1)
 	rockhill_variant = "log#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 2
@@ -2270,6 +2659,12 @@
 	pixel_x = -32
 	alpha = 255
 	obj_flags = CAN_BE_HIT
+	max_integrity = 100
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_debris = list(/obj/item/grown/log/tree/stick = 2)
+	rockhill_static_debris = list(/obj/item/rogueore/coal/charcoal = 1)
 	rockhill_variant = "dead#"
 	rockhill_variant_min = 4
 	rockhill_variant_max = 5
@@ -2285,6 +2680,13 @@
 	pixel_x = -16
 	alpha = 200
 	obj_flags = CAN_BE_HIT
+	max_integrity = 200
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_debris = list(/obj/item/grown/log/tree/stick = 2)
+	rockhill_static_debris = list(/obj/item/grown/log/tree = 1)
+	rockhill_stump = /obj/structure/flora/roguetree/stump
 	rockhill_variant = "screaming#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 3
@@ -2299,6 +2701,13 @@
 	pixel_x = -16
 	alpha = 200
 	obj_flags = CAN_BE_HIT
+	max_integrity = 400
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_debris = list(/obj/item/grown/log/tree/stick = 2)
+	rockhill_static_debris = list(/obj/item/grown/log/tree = 1)
+	rockhill_stump = /obj/structure/flora/roguetree/stump
 	icon_state = "mystical"
 	layer = 4.81
 
@@ -2311,6 +2720,11 @@
 	pixel_x = -60
 	pixel_y = -10
 	obj_flags = CAN_BE_HIT
+	max_integrity = 200
+	rockhill_dulling = "cut"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/misc/woodhit.ogg')
+	rockhill_static_debris = list(/obj/item/grown/log/tree = 1)
 	plane = ABOVE_GAME_PLANE
 	layer = 4.5
 
@@ -2321,6 +2735,9 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/foliage.dmi'
 	icon_state = "tinymushrooms"
 	obj_flags = CAN_BE_HIT
+	max_integrity = 30
+	rockhill_dulling = "bashchop"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 	plane = ABOVE_GAME_PLANE
 	layer = BELOW_OBJ_LAYER
 
@@ -2330,6 +2747,9 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/foliage.dmi'
 	icon_state = "tinymushroomsunhappy"
 	obj_flags = CAN_BE_HIT
+	max_integrity = 30
+	rockhill_dulling = "bashchop"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/tree/evil
@@ -2340,6 +2760,9 @@
 	density = TRUE
 	pixel_x = -16
 	obj_flags = CAN_BE_HIT
+	max_integrity = 150
+	rockhill_dulling = "bashchop"
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 	rockhill_variant = "wv#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 2
