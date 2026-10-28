@@ -76,6 +76,8 @@
 #include "combat\shields.dm"
 #include "combat\dual_wield.dm"
 #include "combat\dismember.dm"
+#include "combat\blood.dm"
+#include "combat\pain.dm"
 #include "combat\beasts.dm"
 #include "combat\ranged.dm"
 #include "combat\launchers.dm"

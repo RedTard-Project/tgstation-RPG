@@ -5573,8 +5573,12 @@ Area music and ambience are kept in the repository, as Ratwood keeps them, and r
 - `modular_redtard/rockhill/sound/items/gem.ogg` from Ratwood `sound/items/gem.ogg`
 - `modular_redtard/rockhill/sound/items/quench_barrel1.ogg` from Ratwood `sound/items/quench_barrel1.ogg`
 - `modular_redtard/rockhill/sound/items/quench_barrel2.ogg` from Ratwood `sound/items/quench_barrel2.ogg`
+- `modular_redtard/rockhill/sound/misc/adrenaline_rush.ogg` from Ratwood `sound/misc/adrenaline_rush.ogg`
 - `modular_redtard/rockhill/sound/misc/area.ogg` from Ratwood `sound/misc/area.ogg`
 - `modular_redtard/rockhill/sound/misc/beep.ogg` from Ratwood `sound/misc/beep.ogg`
+- `modular_redtard/rockhill/sound/misc/bleed (1).ogg` from Ratwood `sound/misc/bleed (1).ogg`
+- `modular_redtard/rockhill/sound/misc/bleed (2).ogg` from Ratwood `sound/misc/bleed (2).ogg`
+- `modular_redtard/rockhill/sound/misc/bleed (3).ogg` from Ratwood `sound/misc/bleed (3).ogg`
 - `modular_redtard/rockhill/sound/misc/chestclose.ogg` from Ratwood `sound/misc/chestclose.ogg`
 - `modular_redtard/rockhill/sound/misc/chestopen.ogg` from Ratwood `sound/misc/chestopen.ogg`
 - `modular_redtard/rockhill/sound/misc/coindispense.ogg` from Ratwood `sound/misc/coindispense.ogg`

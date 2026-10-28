@@ -7,6 +7,8 @@
 		return
 	AddElement(/datum/element/rogue_combat)
 	AddElement(/datum/element/rogue_energy)
+	AddElement(/datum/element/rogue_blood)
+	AddElement(/datum/element/rogue_pain)
 	rogue_update_fov()
 	if(rogue_sight_shadows_enabled())
 		AddComponent(/datum/component/rogue_sight_shadows)

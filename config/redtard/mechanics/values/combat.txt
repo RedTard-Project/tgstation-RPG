@@ -1143,3 +1143,266 @@ launcher_arc_extra_range = 1
 
 # Deciseconds to take one round out of a quiver or to pick one up from the floor into it (Ratwood do_after 5).
 launcher_quiver_time = 5
+
+# --- Pain and blood (combat/pain.dm, combat/blood.dm; Ratwood carbon/life.dm, living/blood.dm, wounds/types/). Ratwood counts per Life tick of 2 seconds, as TG does.
+
+# Blood from which the body feels its loss, of the normal 560 (Ratwood BLOOD_VOLUME_SAFE).
+blood_safe = 475
+
+# Blood below which the body grows faint (Ratwood BLOOD_VOLUME_OKAY).
+blood_okay = 336
+
+# Blood below which the body is drained and starts to choke (Ratwood BLOOD_VOLUME_BAD).
+blood_bad = 224
+
+# Blood below which it chokes three times as fast (Ratwood BLOOD_VOLUME_SURVIVE).
+blood_survive = 122
+
+# Blood the body makes back each Life tick while it has less than the normal 560 (Ratwood handle_blood()); it does not wait for the bleeding to stop.
+blood_regen = 0.5
+
+# Constitution at which bleeding is as it is: above it the body bleeds slower, below faster (Ratwood bleed(): STACON - 10).
+bleed_con_base = 10
+
+# Share by which bleeding slows for each point of constitution above the base, and quickens for each below; only for a body with a mind (Ratwood CONSTITUTION_BLEEDRATE_MOD).
+bleed_con_share = 0.05
+
+# Constitution past which bleeding slows no further (Ratwood CONSTITUTION_BLEEDRATE_CAP).
+bleed_con_cap = 20
+
+# Bleeding of the thick-blooded (TRAIT_BLOOD_RESISTANCE), as a share (Ratwood BLOOD_RESISTANCE_EFFECTIVE_BLEEDRATE).
+bleed_thick_blood = 0.5
+
+# Bleeding of the critically resistant (TRAIT_CRITICAL_RESISTANCE) without thick blood, as a share (Ratwood CRIT_RESISTANCE_EFFECTIVE_BLEEDRATE).
+bleed_crit_resistance = 0.8
+
+# Bleeding of the critically weak (TRAIT_CRITICAL_WEAKNESS), as a multiple (Ratwood).
+bleed_crit_weakness = 2
+
+# Bleeding of one who yields, as a share (Ratwood: a surrendering body bleeds a quarter, as if all its limbs were held).
+bleed_yield = 0.25
+
+# Chance in percent each Life tick that low blood shows: a word, blurred eyes and, when drained, a faint (Ratwood prob(3)).
+bleed_sign_chance = 3
+
+# Blurred eyes when the blood runs low (Ratwood blur_eyes(6): six Life ticks).
+bleed_blur = 120
+
+# Shortest faint of a drained body (Ratwood Unconscious(rand(5 SECONDS, 10 SECONDS))).
+bleed_faint_min = 50
+
+# Longest faint of a drained body.
+bleed_faint_max = 100
+
+# Suffocation each Life tick below the bad blood level (Ratwood adjustOxyLoss(1)).
+bleed_oxy_bad = 1
+
+# Suffocation each Life tick below the survival level (Ratwood adjustOxyLoss(3)).
+bleed_oxy_survive = 3
+
+# Suffocation that heals each Life tick while the blood is above the bad level (Ratwood adjustOxyLoss(-1.6)).
+bleed_oxy_heal = 1.6
+
+# Blood lost in a Life tick past which the bleeding is heard, softly (Ratwood bleed (1).ogg past 1); not while lying.
+bleed_sound_low = 1
+
+# Past which it is heard louder (Ratwood bleed (2).ogg past 2).
+bleed_sound_mid = 2
+
+# Past which it is heard loudest (Ratwood bleed (3).ogg past 3).
+bleed_sound_high = 3
+
+# Speed of a dizzy body, blood below the safe level (Ratwood debuff/bleeding: SPD -1).
+bleed_dizzy_speed = -1
+
+# Strength of a faint body, blood below the okay level (Ratwood debuff/bleedingworse: STR -1, SPD -2).
+bleed_faint_strength = -1
+
+# Speed of a faint body.
+bleed_faint_speed = -2
+
+# Strength of a drained body, blood below the bad level (Ratwood debuff/bleedingworst: STR -3, SPD -4).
+bleed_drained_strength = -3
+
+# Speed of a drained body.
+bleed_drained_speed = -4
+
+# Blood per second the stump of a severed limb loses, without clotting (Ratwood /datum/wound/dismemberment: 25 per Life tick).
+stump_bleed = 12.5
+
+# Pain of a stump (Ratwood woundpain 100).
+stump_pain = 100
+
+# What searing has to close of each stump before it stops bleeding (Ratwood whp 75).
+stump_integrity = 75
+
+# What one searing closes (Ratwood cauterize_wound(): heal_wound(40)).
+stump_cautery = 40
+
+# Deciseconds one searing of a stump takes (TG's slash cautery base, 3 seconds).
+stump_cautery_time = 30
+
+# How much longer searing one's own stump takes (TG's self penalty).
+stump_cautery_self = 1.5
+
+# Burn one searing deals to the chest.
+stump_cautery_burn = 5
+
+# Blood per second an opened artery of a limb loses: a critical cut or stab (Ratwood /datum/wound/artery: ARTERY_LIMB_BLEEDRATE, 20 per Life tick).
+artery_bleed = 10
+
+# Blood per second a torn carotid loses, the critical of the throat (Ratwood artery/neck: 50 per Life tick).
+artery_bleed_neck = 25
+
+# Blood per second an aortic dissection loses, the critical of the heart (Ratwood artery/chest: 50 per Life tick).
+artery_bleed_chest = 25
+
+# Slowdown on opening an artery (Ratwood artery on_mob_gain(): Slowdown(20)).
+artery_slow = 20
+
+# Pain of an opened artery of a limb (Ratwood woundpain 50).
+pain_artery = 50
+
+# Pain of a torn carotid (Ratwood 60).
+pain_artery_neck = 60
+
+# Pain of an aortic dissection (Ratwood 100).
+pain_artery_chest = 100
+
+# Pain of a moderate cut or stab of TG (Ratwood small dynamic wounds and bruises, 10).
+pain_cut_moderate = 10
+
+# Pain of a severe cut or stab of TG (Ratwood large bruise, 25).
+pain_cut_severe = 25
+
+# Pain of a dislocation (Ratwood dislocation 40).
+pain_dislocation = 40
+
+# Pain of a fracture or a split skull (Ratwood fracture 100).
+pain_fracture = 100
+
+# Pain of a moderate burn.
+pain_burn_moderate = 10
+
+# Pain of a severe burn.
+pain_burn_severe = 40
+
+# Pain of a critical burn (Ratwood worst burn, 80).
+pain_burn_critical = 80
+
+# Most pain the chest can give, wounds included (Ratwood max_pain_damage 150).
+pain_max_chest = 150
+
+# Most pain the head can give (Ratwood 125).
+pain_max_head = 125
+
+# Most pain another limb can give (Ratwood 100).
+pain_max_limb = 100
+
+# Pain one bears per point of willpower (Ratwood pain_threshold = STAWIL * 10).
+pain_per_willpower = 10
+
+# Willpower adrenaline adds to that (Ratwood (STAWIL + 5) * 10).
+pain_adrenaline_willpower = 5
+
+# Share of a limb's pain left under adrenaline (Ratwood: halved).
+pain_adrenaline_share = 0.5
+
+# Deciseconds between two weighings of the pain (Ratwood mob_timers painstun + 100).
+pain_check_interval = 100
+
+# Deciseconds until the next weighing after the pain broke one (Ratwood + 160).
+pain_crit_interval = 160
+
+# Pain, in percent of what one bears, from which one moans (Ratwood 80).
+pain_moan_share = 80
+
+# Pain from which one may break (Ratwood 100).
+pain_break_share = 100
+
+# Chance in percent to break under such pain, before willpower takes its share (Ratwood 40 - STAWIL * 2).
+pain_break_base = 40
+
+# Chance in percent each point of willpower takes from that.
+pain_break_per_willpower = 2
+
+# Least chance in percent to break (Ratwood max(probby, 10)).
+pain_break_floor = 10
+
+# Willpower from which one may endure pain that would break another, as with Psydonian grit (Ratwood STAWIL >= 15).
+pain_endure_willpower = 15
+
+# Chance in percent to endure it (Ratwood prob(25)).
+pain_endure_chance = 25
+
+# Deciseconds one is held while enduring (Ratwood Immobilize(15)).
+pain_endure_hold = 15
+
+# Deciseconds the pain holds one when it breaks one (Ratwood paincrit(): Immobilize(10)).
+paincrit_hold = 10
+
+# Deciseconds after that until the fall (Ratwood addtimer 10).
+paincrit_delay = 10
+
+# Deciseconds of the stun and the fall that follow (Ratwood Stun(110), Knockdown(110)).
+paincrit_stun = 110
+
+# Deciseconds of stuttering from pain (Ratwood stuttering += 5: five Life ticks).
+pain_stutter = 100
+
+# Chance in percent of a moan at high pain while lying (Ratwood prob(3)).
+pain_lying_moan_chance = 3
+
+# A brute hit above this wakes a sleeper and may draw a cry (Ratwood species apply_damage(): damage over 5).
+pain_cry_damage = 5
+
+# Chance in percent of the cry for each point of the hit (Ratwood prob(damage * 3)).
+pain_cry_chance = 3
+
+# The cry is a scream from a hit above constitution times this (Ratwood STACON * 10 / 3).
+pain_scream_con_factor = 3.333
+
+# A hit above constitution times this holds the struck and shakes their sight (Ratwood STACON * 3.5).
+pain_hold_con_factor = 3.5
+
+# Deciseconds of that hold (Ratwood Immobilize(5)).
+pain_hold = 5
+
+# A hit above this slows the struck by a tenth of it (Ratwood: over 10, Slowdown(clamp(damage / 10, 1, 5))).
+pain_slow_damage = 10
+
+# Least slowdown from a hit.
+pain_slow_min = 1
+
+# Most slowdown from a hit.
+pain_slow_max = 5
+
+# Deciseconds of sleep a hit takes away (Ratwood AdjustSleeping(-50)).
+pain_wake = 50
+
+# A burn above this may draw a cry, with its damage as the chance in percent (Ratwood).
+pain_burn_cry_damage = 10
+
+# Constitution and willpower together above which one may stand losing a limb (Ratwood get_delimb_survival_chance(): STACON + STAWIL - 10).
+delimb_survive_base = 10
+
+# Chance in percent to stand it per point above that (Ratwood * 2).
+delimb_survive_share = 2
+
+# Chance in percent Psydonian grit adds to that (Ratwood + 20).
+delimb_grit_bonus = 20
+
+# Willpower from which standing the loss of a limb brings an adrenaline rush (Ratwood STAWIL > 14).
+delimb_adrenaline_willpower = 15
+
+# Deciseconds of an adrenaline rush: it halves pain and stops bleeding (Ratwood buff/adrenaline_rush, 18 seconds).
+adrenaline_duration = 180
+
+# Deciseconds Psydonian grit adds to it (Ratwood rush.duration += 4 SECONDS).
+adrenaline_grit_bonus = 40
+
+# Blood an adrenaline rush gives back (Ratwood blood_restore = 30).
+adrenaline_blood = 30
+
+# Willpower of an adrenaline rush (Ratwood effectedstats WIL +1).
+adrenaline_willpower = 1
