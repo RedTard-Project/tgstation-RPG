@@ -5420,6 +5420,7 @@ Area music and ambience are kept in the repository, as Ratwood keeps them, and r
 
 ## Sounds
 
+- `modular_redtard/rockhill/sound/blank.ogg` from Ratwood `sound/blank.ogg`
 - `modular_redtard/rockhill/sound/combat/Ranged/bow-draw-01.ogg` from Ratwood `sound/combat/Ranged/bow-draw-01.ogg`
 - `modular_redtard/rockhill/sound/combat/Ranged/crossbow-small-shot-02.ogg` from Ratwood `sound/combat/Ranged/crossbow-small-shot-02.ogg`
 - `modular_redtard/rockhill/sound/combat/Ranged/crossbow_big_shot.ogg` from Ratwood `sound/combat/Ranged/crossbow_big_shot.ogg`
@@ -5609,6 +5610,10 @@ Area music and ambience are kept in the repository, as Ratwood keeps them, and r
 - `modular_redtard/rockhill/sound/misc/surrender.ogg` from Ratwood `sound/misc/surrender.ogg`
 - `modular_redtard/rockhill/sound/misc/treefall.ogg` from Ratwood `sound/misc/treefall.ogg`
 - `modular_redtard/rockhill/sound/misc/woodhit.ogg` from Ratwood `sound/misc/woodhit.ogg`
+- `modular_redtard/rockhill/sound/vo/mobs/plant/pain (1).ogg` from Ratwood `sound/vo/mobs/plant/pain (1).ogg`
+- `modular_redtard/rockhill/sound/vo/mobs/plant/pain (2).ogg` from Ratwood `sound/vo/mobs/plant/pain (2).ogg`
+- `modular_redtard/rockhill/sound/vo/mobs/plant/pain (3).ogg` from Ratwood `sound/vo/mobs/plant/pain (3).ogg`
+- `modular_redtard/rockhill/sound/vo/mobs/plant/pain (4).ogg` from Ratwood `sound/vo/mobs/plant/pain (4).ogg`
 - `modular_redtard/rockhill/sound/weather/rain/thunder_1.ogg` from Ratwood `sound/weather/rain/thunder_1.ogg`
 - `modular_redtard/rockhill/sound/weather/rain/thunder_2.ogg` from Ratwood `sound/weather/rain/thunder_2.ogg`
 - `modular_redtard/rockhill/sound/weather/rain/thunder_3.ogg` from Ratwood `sound/weather/rain/thunder_3.ogg`

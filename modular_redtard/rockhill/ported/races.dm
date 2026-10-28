@@ -126,6 +126,48 @@ GLOBAL_LIST_INIT(rogue_human_voices, rogue_human_voices())
 
 /proc/rogue_human_voices()
 	return list(
+		"agony" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/agony (1).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/agony (2).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/agony (3).ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/agony (1).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/agony (2).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/agony (4).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/agony (5).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/agony (6).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/agony (7).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/agony (8).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/agony (9).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/agony (10).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/agony (3).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/agony (11).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/agony (12).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/agony (13).ogg')),
+		"breathgasp" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/breathgasp.ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/breathgasp (1).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/breathgasp (2).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/breathgasp (3).ogg')),
+		"burp" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/burp.ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/burp.ogg')),
+		"choke" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/choke (1).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/choke (2).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/choke (3).ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/choke.ogg')),
+		"chuckle" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/chuckle (1).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/chuckle (2).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/chuckle (3).ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/chuckle.ogg')),
+		"clearthroat" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/clearthroat.ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/clearthroat (1).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/clearthroat (2).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/clearthroat (3).ogg')),
+		"cough" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/cough (1).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/cough (2).ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/cough (1).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/cough (2).ogg')),
+		"cry" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/cry (1).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/cry (2).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/cry (3).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/cry (4).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/cry (5).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/cry (6).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/cry (7).ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/cry (1).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/cry (2).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/cry (3).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/cry (4).ogg')),
+		"deathgasp" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/deathgurgle (1).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/deathgurgle (2).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/deathgurgle (3).ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/deathgurgle (1).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/deathgurgle (2).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/deathgurgle (3).ogg')),
+		"drown" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/drown (1).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/drown (2).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/drown (3).ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/drown (1).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/drown (2).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/drown (3).ogg')),
+		"embed" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/embed (1).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/embed (2).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/embed (3).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/embed (4).ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/embed (1).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/embed (2).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/embed (3).ogg')),
+		"fatigue" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/fatigue (1).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/fatigue (2).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/fatigue (3).ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/fatigue.ogg')),
+		"firescream" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/firescream (1).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/firescream (2).ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/firescream (4).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/firescream (1).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/firescream (2).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/firescream (3).ogg')),
+		"gag" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/gag (1).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/gag (2).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/gag (3).ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/gag (1).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/gag (2).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/gag (3).ogg')),
+		"gasp" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/gasp (1).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/gasp (2).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/gasp (3).ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/gasp.ogg')),
+		"giggle" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/giggle (1).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/giggle (2).ogg')),
+		"groan" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/groan (1).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/groan (2).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/groan (3).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/groan (4).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/groan (5).ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/groan (1).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/groan (2).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/groan (3).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/groan (4).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/groan (5).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/groan (6).ogg')),
+		"groin" = list(MALE = list('modular_redtard/rockhill/sound/vo/male/gen/groin (1).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/groin (2).ogg')),
+		"grumble" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/grumble.ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/grumble.ogg')),
+		"haltyell" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/haltyell (1).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/haltyell (2).ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/haltyell (1).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/haltyell (2).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/HEY.ogg')),
+		"hmm" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/hmm.ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/hmm.ogg')),
+		"hmph" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/hmph (1).ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/hmph (1).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/hmph (2).ogg')),
+		"huh" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/huh (1).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/huh (2).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/huh (3).ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/huh (1).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/huh (2).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/huh (3).ogg')),
+		"hum" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/hum (1).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/hum (2).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/hum (3).ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/hum (1).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/hum (2).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/hum (3).ogg')),
+		"jump" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/jump.ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/jump.ogg')),
+		"laugh" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/laugh (1).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/laugh (2).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/laugh (3).ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/laugh (2).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/laugh (3).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/laugh (4).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/laugh (5).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/laugh (6).ogg')),
+		"leap" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/jump.ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/leap.ogg')),
+		"pain" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/pain (1).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/pain (2).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/pain (3).ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/pain (1).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/pain (2).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/pain (3).ogg')),
+		"paincrit" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/paincrit (1).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/paincrit (2).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/paincrit (3).ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/paincrit (1).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/paincrit (2).ogg')),
+		"painmoan" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/painmoan (1).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/painmoan (2).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/painmoan (3).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/painmoan (4).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/painmoan (5).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/painmoan (6).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/painmoan (7).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/painmoan (8).ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/painmoan (1).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/painmoan (2).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/painmoan (3).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/painmoan (4).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/painmoan (5).ogg')),
+		"painscream" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/painscream (1).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/painscream (2).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/painscream (3).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/painscream (4).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/painscream (5).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/painscream (6).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/painscream (7).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/painscream (8).ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/painscream (1).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/painscream (2).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/painscream (3).ogg')),
+		"rage" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/rage (1).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/rage (2).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/rage (3).ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/rage (1).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/rage (2).ogg')),
+		"scream" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/scream (1).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/scream (2).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/scream (3).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/scream (4).ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/scream (1).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/scream (2).ogg')),
+		"shh" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/shh.ogg', 'modular_redtard/rockhill/sound/vo/female/gen/shh (2).ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/shh.ogg')),
+		"sigh" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/sigh (1).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/sigh (2).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/sigh (3).ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/sigh.ogg')),
+		"sneeze" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/female_sneeze.ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/male_sneeze.ogg')),
+		"snore" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/snore (1).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/snore (2).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/snore (3).ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/snore (1).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/snore (2).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/snore (3).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/snore (4).ogg')),
+		"strain" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/strain.ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/strain.ogg')),
+		"warcry" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/warcry_female1.ogg', 'modular_redtard/rockhill/sound/vo/female/gen/warcry_female2.ogg', 'modular_redtard/rockhill/sound/vo/female/gen/warcry_female3.ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/warcry_male1.ogg', 'modular_redtard/rockhill/sound/vo/male/gen/warcry_male2.ogg', 'modular_redtard/rockhill/sound/vo/male/gen/warcry_male3.ogg')),
+		"whimper" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/whimper (1).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/whimper (2).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/whimper (3).ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/whimper (1).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/whimper (2).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/whimper (3).ogg')),
+		"whistle" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/whistle (1).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/whistle (2).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/whistle (3).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/whistle (4).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/whistle (5).ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/whistle (1).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/whistle (2).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/whistle (3).ogg')),
+		"yawn" = list(FEMALE = list('modular_redtard/rockhill/sound/vo/female/gen/yawn (1).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/yawn (2).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/yawn (3).ogg'), MALE = list('modular_redtard/rockhill/sound/vo/male/gen/yawn (1).ogg', 'modular_redtard/rockhill/sound/vo/male/gen/yawn (2).ogg')),
 		)
 
 /obj/item/organ/eyes/night_vision/rogue_wild_goblin
@@ -150,6 +192,13 @@ GLOBAL_LIST_INIT(rogue_human_voices, rogue_human_voices())
 	key = "breathgasp"
 	message = "gasps for air!"
 
+/datum/emote/living/rogue_vocal/clearthroat
+	key = "clearthroat"
+	message = "clears their throat."
+
+/datum/emote/living/rogue_vocal/drown
+	key = "drown"
+
 /datum/emote/living/rogue_vocal/embed
 	key = "embed"
 
@@ -159,6 +208,9 @@ GLOBAL_LIST_INIT(rogue_human_voices, rogue_human_voices())
 /datum/emote/living/rogue_vocal/firescream
 	key = "firescream"
 
+/datum/emote/living/rogue_vocal/groin
+	key = "groin"
+
 /datum/emote/living/rogue_vocal/haltyell
 	key = "haltyell"
 	message = "shouts a halt!"
@@ -167,11 +219,23 @@ GLOBAL_LIST_INIT(rogue_human_voices, rogue_human_voices())
 	key = "hmm"
 	message = "hmms."
 
+/datum/emote/living/rogue_vocal/hmph
+	key = "hmph"
+	message = "hmphs."
+
 /datum/emote/living/rogue_vocal/huh
 	key = "huh"
 
+/datum/emote/living/rogue_vocal/hum
+	key = "hum"
+	message = "hums."
+
 /datum/emote/living/rogue_vocal/idle
 	key = "idle"
+
+/datum/emote/living/rogue_vocal/leap
+	key = "leap"
+	message = "leaps!"
 
 /datum/emote/living/rogue_vocal/pain
 	key = "pain"
@@ -189,3 +253,15 @@ GLOBAL_LIST_INIT(rogue_human_voices, rogue_human_voices())
 /datum/emote/living/rogue_vocal/rage
 	key = "rage"
 	message = "screams in rage!"
+
+/datum/emote/living/rogue_vocal/shh
+	key = "shh"
+	message = "shooshes."
+
+/datum/emote/living/rogue_vocal/strain
+	key = "strain"
+	message = "strains themselves!"
+
+/datum/emote/living/rogue_vocal/warcry
+	key = "warcry"
+	message = "lets out an inspiring battle cry!"

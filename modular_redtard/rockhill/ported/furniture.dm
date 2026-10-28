@@ -392,6 +392,8 @@
 	locked = FALSE
 	lockid = null
 	lock_strength = 100
+	open_sound = 'modular_redtard/rockhill/sound/blank.ogg'
+	close_sound = 'modular_redtard/rockhill/sound/blank.ogg'
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/chest
@@ -642,6 +644,8 @@
 	locked = FALSE
 	lockid = null
 	lock_strength = 100
+	open_sound = 'modular_redtard/rockhill/sound/blank.ogg'
+	close_sound = 'modular_redtard/rockhill/sound/blank.ogg'
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/coffin/royal
@@ -654,6 +658,8 @@
 	locked = FALSE
 	lockid = null
 	lock_strength = 100
+	open_sound = 'modular_redtard/rockhill/sound/blank.ogg'
+	close_sound = 'modular_redtard/rockhill/sound/blank.ogg'
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/coffin/vampire
@@ -666,6 +672,8 @@
 	locked = FALSE
 	lockid = null
 	lock_strength = 100
+	open_sound = 'modular_redtard/rockhill/sound/blank.ogg'
+	close_sound = 'modular_redtard/rockhill/sound/blank.ogg'
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/drawer
@@ -787,6 +795,8 @@
 	locked = FALSE
 	lockid = null
 	lock_strength = 100
+	open_sound = 'modular_redtard/rockhill/sound/blank.ogg'
+	close_sound = 'modular_redtard/rockhill/sound/blank.ogg'
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/closet/crate/wooden/rockhill/crate/roguecloset

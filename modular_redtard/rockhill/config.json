@@ -30,7 +30,8 @@
 			"/sound/weather/snow/",
 			"/sound/weather/sand/",
 			"/_maps/dungeon_generator/",
-			"/sound/combat/"
+			"/sound/combat/",
+			"/sound/vo/"
 		],
 		"always_other_z": [
 			"_maps/map_files/otherz/dungeon.json"

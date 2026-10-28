@@ -19,6 +19,7 @@
 	rogue_tile_time = 0.4
 	rogue_embed_chance = 0
 	rogue_bclass = "blunt"
+	hitsound = 'modular_redtard/rockhill/sound/blank.ogg'
 	rogue_drop_type = /obj/item/ammo_casing/caseless/rogue/arrow
 
 /obj/projectile/bullet/arrow/water
@@ -33,6 +34,7 @@
 	rogue_tile_time = 0.4
 	rogue_embed_chance = 0
 	rogue_bclass = "blunt"
+	hitsound = 'modular_redtard/rockhill/sound/blank.ogg'
 	rogue_drop_type = /obj/item/ammo_casing/caseless/rogue/arrow
 
 /obj/projectile/bullet/bolt/pyro
@@ -46,6 +48,7 @@
 	rogue_tile_time = 0.3
 	rogue_embed_chance = 0
 	rogue_bclass = "blunt"
+	hitsound = 'modular_redtard/rockhill/sound/blank.ogg'
 	rogue_drop_type = /obj/item/ammo_casing/caseless/rogue/bolt
 
 /obj/projectile/bullet/bolt/water
@@ -59,6 +62,7 @@
 	rogue_tile_time = 0.3
 	rogue_embed_chance = 0
 	rogue_bclass = "blunt"
+	hitsound = 'modular_redtard/rockhill/sound/blank.ogg'
 	rogue_drop_type = /obj/item/ammo_casing/caseless/rogue/bolt/water
 
 /obj/projectile/bullet/firearm/grapeshot
