@@ -2456,7 +2456,7 @@ def coverage_tokens(raw):
 
 def face_coverage_value(raw):
     """The parts of the face Ratwood's coverage names (MOUTH, NOSE, EARS, the eyes, HAIR), which TG has no flags for and
-    coverage_value() folds into HEAD, as the module's ROGUE_FACE_* flags (rockhill/port_data.dm); NONE without any."""
+    coverage_value() folds into HEAD, as the module's ROGUE_FACE_* flags (clothing/_defines.dm); NONE without any."""
     tokens = coverage_tokens(raw)
     flags = [flag for token, flag in FACE_COVERAGE.items() if token in tokens]
     return ' | '.join(flags) if flags else 'NONE'

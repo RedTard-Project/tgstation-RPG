@@ -707,3 +707,6 @@ GLOBAL_LIST_INIT(rogue_offset_parts, list(
 		return null
 	var/state = "[worn_icon_state || icon_state][female ? ROGUE_FEMALE_SUFFIX : ""]_[clothes_id]"
 	return icon_exists(file, state) ? state : null
+
+#undef ROGUE_GOBLIN_SKELETON_TIME
+#undef ROGUE_GOBLIN_SKELETON_KIND

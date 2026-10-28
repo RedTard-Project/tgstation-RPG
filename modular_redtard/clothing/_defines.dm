@@ -80,6 +80,19 @@
 #define ROGUE_SLEEVE_TEAR_TIME rogue_value("sleeve_tear_time")
 #define ROGUE_CLOTH_RIP_SOUND 'modular_redtard/rockhill/sound/foley/cloth_rip.ogg'
 
+/// Ratwood's parts of the face (code/__DEFINES/inventory.dm MOUTH, NOSE, EARS, RIGHT_EYE, LEFT_EYE, HAIR). TG has no body
+/// part flags for them, so the porter folds them into HEAD of body_parts_covered; rogue_face_coverage (rockhill/port_data.dm)
+/// keeps which of them an item covers, for what uncovers the face (a raised visor, clothing/adjustable.dm).
+#define ROGUE_FACE_MOUTH (1<<0)
+#define ROGUE_FACE_NOSE (1<<1)
+#define ROGUE_FACE_EARS (1<<2)
+#define ROGUE_FACE_RIGHT_EYE (1<<3)
+#define ROGUE_FACE_LEFT_EYE (1<<4)
+#define ROGUE_FACE_HAIR (1<<5)
+#define ROGUE_FACE_EYES (ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE)
+/// Ratwood FACE: mouth, nose, eyes and ears.
+#define ROGUE_FACE_ALL (ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EYES | ROGUE_FACE_EARS)
+
 /// Sprite suffix of a raised visor, a lowered hood or a pulled-down mask (clothing/adjustable.dm; Ratwood "<icon_state>_t").
 #define ROGUE_ADJUSTED_SUFFIX "_t"
 /// Slots an adjustable item is adjusted in.

@@ -289,3 +289,9 @@
 	movable.plane = GET_NEW_PLANE(GAME_PLANE, PLANE_TO_OFFSET(mob_plane))
 	. = ..()
 	movable.plane = mob_plane
+
+#undef ROGUE_FOV_SELF_PLANE
+#undef ROGUE_FOV_SELF_RENDER_TARGET
+#undef ROGUE_FOV_MOB_MASK_PLANE
+#undef ROGUE_FOV_MOB_MASK_RENDER_TARGET
+#undef ROGUE_MOB_PLANE

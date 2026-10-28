@@ -14,11 +14,6 @@
 /// Ratwood apply_prefs_origin(): a character without an origin hails from Ferentia.
 #define ROGUE_DEFAULT_HOMELAND "Ferentia"
 
-// Ratwood's trait of Ferentia and Etrusca, which the ported traits (rockhill/ported/_traits.dm) lack: no mechanics yet.
-#ifndef TRAIT_WATERLOVING
-#define TRAIT_WATERLOVING "Water loving"
-#endif
-
 /datum/rogue_homeland
 	/// Ratwood ORIGIN_*: the name in the menu and the value of the rogue_homeland preference.
 	var/name
