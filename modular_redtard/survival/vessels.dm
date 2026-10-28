@@ -294,7 +294,7 @@
 
 /obj/item/reagent_containers/glass/bottle/examine(mob/user)
 	. = ..()
-	. += span_smallnotice(corked ? "It is corked. Use it in hand to uncork it." : "It is uncorked.")
+	. += span_smallnotice((corked ? "It is corked. Use it in hand to uncork it." : "It is uncorked."))
 
 /obj/item/reagent_containers/glass/bottle/alchemical
 	volume = 30
@@ -323,9 +323,6 @@
 	corked = FALSE
 	possible_transfer_amounts = list(5, 10)
 	volume = 75
-
-/obj/item/reagent_containers/glass/bottle/rogue/water
-	list_reagents = list(/datum/reagent/water = 50)
 
 // Water to fill vessels from (Ratwood turf/open/water attackby(), structures/well.dm).
 

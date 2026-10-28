@@ -81,7 +81,7 @@
 	/// Traits Ratwood gives the NPC in after_creation.
 	var/list/rogue_npc_traits
 	/// How Ratwood's after_creation shapes the NPC: "random_sex", "skin", "eyes", "hair_color", the hairstyles and beards
-	/// it picks from ("hair_m", "hair_f", "beards") and the name lists ("names_m", "names_f").
+	/// it picks from ("hair_m", "hair_f", "beards") and the name lists ("names_m", "names_f") or the one name ("name").
 	var/list/rogue_npc_look
 
 /mob/living/carbon/human/Initialize(mapload)
@@ -136,6 +136,8 @@
 	var/list/picked = names && (world.file2list(names) - "")
 	if(length(picked))
 		fully_replace_character_name(real_name, pick(picked))
+	else if(look["name"])
+		fully_replace_character_name(real_name, look["name"])
 	update_body(is_creating = TRUE)
 
 /// Hunts on sight. The trees tick their roots in order: breaking free first, then running when ai_flee_while_injured says so

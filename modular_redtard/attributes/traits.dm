@@ -9,13 +9,13 @@
 		if(language)
 			var/language_name = (russian && rogue_trait_sheet_entry(language_type)) || language.name
 			spoken += span_info("[language_name] - ,[language.key]")
-	lines += length(spoken) ? spoken : list(span_warning(russian ? "Я не знаю ни одного языка." : "I don't know any languages."))
+	lines += length(spoken) ? spoken : list(span_warning((russian ? "Я не знаю ни одного языка." : "I don't know any languages.")))
 	lines += "*----*"
 	var/list/known = list()
 	for(var/trait in GLOB.rogue_trait_descriptions)
 		if(HAS_TRAIT(src, trait))
 			var/list/translated = russian ? rogue_trait_sheet_entry(trait) : null
 			known += islist(translated) ? "[translated[1]] - [translated[2]]" : "[trait] - [GLOB.rogue_trait_descriptions[trait]]"
-	lines += length(known) ? known : list(span_warning(russian ? "У меня нет особых черт." : "I have no special traits."))
+	lines += length(known) ? known : list(span_warning((russian ? "У меня нет особых черт." : "I have no special traits.")))
 	lines += "*----*"
 	to_chat(src, boxed_message(jointext(lines, "\n")))

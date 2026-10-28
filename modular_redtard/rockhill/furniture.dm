@@ -210,3 +210,56 @@
 
 /obj/structure/bed/rockhill
 	var/sleepy = 0
+
+/// Ratwood's toilet (structures/toilet.dm): small things put in outside combat mode lie hidden in it until a hand fishes
+/// one out.
+/obj/structure/rockhill/toilet
+	name = "toilet"
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/structure.dmi'
+	icon_state = "toilet"
+	/// The combined w_class of what lies inside.
+	var/w_items = 0
+
+/obj/structure/rockhill/toilet/attack_hand(mob/living/user, list/modifiers)
+	. = ..()
+	if(.)
+		return
+	if(!length(contents))
+		to_chat(user, span_notice("The toilet is empty."))
+		return TRUE
+	var/obj/item/found = pick(contents)
+	if(!user.put_in_hands(found))
+		found.forceMove(drop_location())
+	to_chat(user, span_notice("I find [found] in the toilet."))
+	return TRUE
+
+/obj/structure/rockhill/toilet/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
+	if(user.combat_mode)
+		return NONE
+	if(tool.w_class > WEIGHT_CLASS_NORMAL)
+		to_chat(user, span_warning("[tool] does not fit!"))
+		return ITEM_INTERACT_BLOCKING
+	if(w_items + tool.w_class > WEIGHT_CLASS_HUGE)
+		to_chat(user, span_warning("The toilet is full!"))
+		return ITEM_INTERACT_BLOCKING
+	if(!user.transferItemToLoc(tool, src))
+		to_chat(user, span_warning("[tool] is stuck to my hand!"))
+		return ITEM_INTERACT_BLOCKING
+	to_chat(user, span_notice("I carefully place [tool] into the toilet."))
+	return ITEM_INTERACT_SUCCESS
+
+/obj/structure/rockhill/toilet/Entered(atom/movable/arrived, atom/old_loc, list/atom/old_locs)
+	. = ..()
+	if(isitem(arrived))
+		var/obj/item/thing = arrived
+		w_items += thing.w_class
+
+/obj/structure/rockhill/toilet/Exited(atom/movable/gone, direction)
+	. = ..()
+	if(isitem(gone))
+		var/obj/item/thing = gone
+		w_items -= thing.w_class
+
+/obj/structure/rockhill/toilet/atom_deconstruct(disassembled = TRUE)
+	for(var/atom/movable/thing as anything in contents)
+		thing.forceMove(drop_location())

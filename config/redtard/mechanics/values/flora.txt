@@ -1,0 +1,59 @@
+# What grows breaks as Ratwood's (rockhill/destruction.dm, get_complex_damage()): trees, bushes, grass, stumps.
+# Mechanics numbers: name = value, described by the # lines right above it; times are in deciseconds. The build compiles this file in, so its numbers are the defaults; a file of the same name in config/redtard_private/mechanics/values/ is read instead when present.
+
+# Share of a cutting blow's force a tree, bush or grass takes (Ratwood DULLING_CUT, BCLASS_CUT 0.45).
+flora_cut_factor = 0.45
+
+# Share added to a cutting blow on what grows for each rank of lumberjacking (Ratwood 0.15).
+flora_cut_rank_factor = 0.15
+
+# Share of a cutting blow's force what grows takes when the edge is gone (Ratwood 0.2).
+flora_cut_dull_factor = 0.2
+
+# Share of a chopping blow's force a tree, bush or grass takes (Ratwood DULLING_CUT, BCLASS_CHOP 1.0).
+flora_chop_factor = 1
+
+# Share added to a chopping blow on what grows for each rank of lumberjacking (Ratwood 0.25).
+flora_chop_rank_factor = 0.25
+
+# Share of a chopping blow's force what grows takes when the edge is gone (Ratwood 0.3).
+flora_chop_dull_factor = 0.3
+
+# Lumberjacking experience of a cutting or chopping blow on what grows, times intelligence (Ratwood STAINT × 0.2).
+lumber_hit_xp = 0.2
+
+# Share of a smashing blow's force stone or wood takes, and of a pick's on stone (Ratwood 1.5).
+object_smash_factor = 1.5
+
+# Share of a cutting or chopping blow's force wood takes when the edge is gone (Ratwood DULLING_BASHCHOP 0.8).
+wood_dull_factor = 0.8
+
+# Share of a chopping blow's force wood takes (Ratwood DULLING_BASHCHOP, BCLASS_CHOP 1.5).
+wood_chop_factor = 1.5
+
+# Share of a pick's force wood takes for each rank of mining (Ratwood 1.5 × rank × 0.1).
+wood_pick_rank_factor = 0.15
+
+# Times a pick's force rock takes (Ratwood DULLING_PICK 8 + rank × 1.5).
+rock_pick_factor = 8
+
+# Times added to a pick's force on rock for each rank of mining (Ratwood 1.5).
+rock_pick_rank_factor = 1.5
+
+# Share of a blow's force a structure takes from someone lying down (Ratwood 0.5).
+object_lying_factor = 0.5
+
+# Stamina a blow that bites into a structure costs (Ratwood stamina_add(5)).
+object_hit_stamina = 5
+
+# Deciseconds an unskilled lumberjack takes to split a stump into firewood; half that to dig it out (Ratwood 120).
+stump_chop_time = 120
+
+# Deciseconds less a stump takes for each rank of lumberjacking (Ratwood 15).
+stump_chop_rank_time = 15
+
+# Chance in percent per rank of lumberjacking that a log split from a stump is an essence log (Ratwood prob(rank)).
+stump_essence_rank_chance = 1
+
+# Lumberjacking experience of splitting a stump, times intelligence (Ratwood STAINT × 0.5).
+stump_lumber_xp = 0.5

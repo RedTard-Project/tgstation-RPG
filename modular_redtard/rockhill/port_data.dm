@@ -2,8 +2,10 @@
 // only, read by the module's systems as they come to it.
 
 /obj/item
-	/// ROGUE_FACE_* (clothing/_defines.dm) the item covers (Ratwood body_parts_covered); NONE - nothing of the face.
-	var/rogue_face_coverage = NONE
+	/// Ratwood's body_parts_covered as it is: TG's flags and ROGUE_COVER_* (clothing/_defines.dm). Null - what TG's
+	/// body_parts_covered says, its HEAD the whole head and its CHEST the chest and the vitals (rogue_coverage_flags(),
+	/// combat/armor.dm). The porters write it where TG's flags would say otherwise and on everything that covers part of the head.
+	var/rogue_coverage
 
 /obj/item/natural/clay
 	/// What a kiln fires this raw piece into (Ratwood cooked_type, ceramicist/clay.dm); null - it only burns to ash.

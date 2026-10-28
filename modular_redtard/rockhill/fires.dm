@@ -311,3 +311,27 @@ GLOBAL_LIST_EMPTY(rockhill_lit_fires)
 		update_appearance(UPDATE_ICON_STATE)
 	playsound(src, ROCKHILL_TORCH_PUT_SOUND, 70, TRUE)
 	return ITEM_INTERACT_SUCCESS
+
+/// Ratwood's torch (flashlight.dm): a flame lights it - a fire, a lit torch, a spark (fire_act()) - and using it in hand
+/// only snuffs a lit one. TG's flare lights itself in hand and never goes out from it.
+/obj/item/flashlight/flare/torch/attack_self(mob/user)
+	if(!rogue_combat_enabled())
+		return ..()
+	if(!fuel)
+		to_chat(user, span_warning("[src] doesn't have any pitch left!"))
+		return
+	if(!light_on)
+		to_chat(user, span_warning("I need a flame to light [src]."))
+		return
+	turn_off()
+	playsound(src, 'modular_redtard/rockhill/sound/items/firesnuff.ogg', 100, TRUE)
+	user.visible_message(span_notice("[user] snuffs out [src]."), span_notice("I snuff out [src]."))
+
+/// Anything hot lights an unlit torch: a lit torch held to it, as Ratwood's lit torch sets what it touches alight.
+/obj/item/flashlight/flare/torch/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
+	if(!rogue_combat_enabled() || light_on || !tool.get_temperature())
+		return ..()
+	if(ignition(user) == ROCKHILL_FLARE_IGNITED)
+		playsound(src, 'modular_redtard/rockhill/sound/items/firelight.ogg', 100, TRUE)
+		user.visible_message(span_info("[user] lights [src] with [tool]."))
+	return ITEM_INTERACT_SUCCESS

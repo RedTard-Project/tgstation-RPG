@@ -5,17 +5,16 @@
 // compound comes off. A masterwork from the anvil or a fine piece of pottery shines without it, and can be polished on top.
 // Breaking the item (the module's broken: worn down to the armor failure share) takes the shine and the bonus away.
 
-#define POLISH_CREAM_USES 12
-/// Ratwood: below this many uses the tin looks low.
-#define POLISH_CREAM_LOW 8
+// Numbers of config/redtard/mechanics/values/crafting.txt.
+#define POLISH_CREAM_USES rogue_value("polish_cream_uses")
+#define POLISH_CREAM_LOW rogue_value("polish_cream_low")
 /// Ratwood do_after(50 - SPD * 2) for the cream and (50 - STR * 1.5) for the brush, in deciseconds.
-#define POLISH_TIME_BASE (5 SECONDS)
-#define POLISH_CREAM_PER_SPEED 2
-#define POLISH_BRUSH_PER_STRENGTH 1.5
-/// Ratwood polish_bonus: a tenth of the item's integrity.
-#define POLISH_INTEGRITY_SHARE 0.1
-#define POLISH_FORCE_BONUS 2
-#define POLISH_WIELDED_BONUS 3
+#define POLISH_TIME_BASE rogue_value("polish_time")
+#define POLISH_CREAM_PER_SPEED rogue_value("polish_cream_per_speed")
+#define POLISH_BRUSH_PER_STRENGTH rogue_value("polish_brush_per_strength")
+#define POLISH_INTEGRITY_SHARE rogue_value("polish_integrity_share")
+#define POLISH_FORCE_BONUS rogue_value("polish_force_bonus")
+#define POLISH_WIELDED_BONUS rogue_value("polish_wielded_bonus")
 #define POLISH_CREAM_COLOR "#635e65"
 #define POLISH_SCRUBBED_COLOR "#9e9e9e"
 #define POLISH_BRUSHED_COLOR "#cccccc"
@@ -29,6 +28,9 @@
 	var/stage = ROGUE_POLISH_NONE
 	/// Integrity the finished polish added; none for the own shine of a masterwork (Ratwood polish_bonus).
 	var/bonus = 0
+	/// Force the finished polish added in one hand and wielded, kept so a reloaded config takes back what was given.
+	var/force_bonus = 0
+	var/wielded_bonus = 0
 	/// The item shines by itself (a masterwork, fine pottery): the glint stays while it is polished anew.
 	var/masterwork = FALSE
 
@@ -112,6 +114,8 @@
 	bonus = ceil(item.max_integrity * POLISH_INTEGRITY_SHARE)
 	item.modify_max_integrity(item.max_integrity + bonus, FALSE)
 	item.repair_damage(bonus)
+	force_bonus = POLISH_FORCE_BONUS
+	wielded_bonus = POLISH_WIELDED_BONUS
 	adjust_force(1)
 	set_stage(ROGUE_POLISH_DONE)
 
@@ -120,13 +124,13 @@
 	var/obj/item/item = parent
 	var/datum/component/two_handed/grip = item.GetComponent(/datum/component/two_handed)
 	if(item.rogue_force_wielded)
-		item.rogue_force_wielded += POLISH_WIELDED_BONUS * sign
+		item.rogue_force_wielded += wielded_bonus * sign
 	if(!grip)
-		item.force += POLISH_FORCE_BONUS * sign
+		item.force += force_bonus * sign
 		return
-	grip.force_unwielded += POLISH_FORCE_BONUS * sign
-	grip.force_wielded += POLISH_WIELDED_BONUS * sign
-	item.force += (grip.wielded ? POLISH_WIELDED_BONUS : POLISH_FORCE_BONUS) * sign
+	grip.force_unwielded += force_bonus * sign
+	grip.force_wielded += wielded_bonus * sign
+	item.force += (grip.wielded ? wielded_bonus : force_bonus) * sign
 
 /// Ratwood lose_polish() when the item breaks: the bonus, the shine and the glint go.
 /datum/component/rogue_polish/proc/on_integrity_changed(datum/source, old_value, new_value)
@@ -209,9 +213,15 @@
 		return FALSE
 	return HAS_TRAIT(src, TRAIT_SQUIRE_REPAIR) || HAS_TRAIT(src, TRAIT_SELF_SUSTENANCE) || rogue_skill_rank(thing.anvilrepair) > ROGUE_RANK_NONE
 
-/// Ratwood polishing cream: twelve uses of the compound, the first step of a polish.
+/// Ratwood polishing cream: uses of the compound (twelve at Ratwood), the first step of a polish.
 /obj/item/polishing_cream
-	var/uses = POLISH_CREAM_USES
+	/// Uses left; a fresh tin gets polish_cream_uses of values/crafting.txt.
+	var/uses
+
+/obj/item/polishing_cream/Initialize(mapload)
+	. = ..()
+	if(isnull(uses))
+		uses = POLISH_CREAM_USES
 
 /obj/item/polishing_cream/examine(mob/user)
 	. = ..()
@@ -273,7 +283,7 @@
 	coarse = !coarse
 	name = coarse ? "coarse brush" : "fine brush"
 	icon_state = "brush_[coarse ? 1 : 0]"
-	to_chat(user, span_info(coarse ? "I flip the brush to the coarse side." : "I flip the brush to the fine side."))
+	to_chat(user, span_info((coarse ? "I flip the brush to the coarse side." : "I flip the brush to the fine side.")))
 	return TRUE
 
 /obj/item/armor_brush/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)

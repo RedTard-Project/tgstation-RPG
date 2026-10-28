@@ -233,8 +233,8 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 	rogue_strike_notes = list()
 	if(ishuman(src) && damtype == BRUTE)
 		var/mob/living/carbon/human/armored = src
-		armor_hit = armored.rogue_best_armor(def_zone, intent.item_d_type)
-		damage *= armored.rogue_armor_hit(def_zone, intent.item_d_type, damage, penetration, rogue_wear_factor(weapon, intent), weapon, intent.blade_class)
+		armor_hit = armored.rogue_best_armor(zone, intent.item_d_type)
+		damage *= armored.rogue_armor_hit(zone, intent.item_d_type, damage, penetration, rogue_wear_factor(weapon, intent), weapon, intent.blade_class)
 	var/damage_done = rogue_apply_armored_damage(
 		damage = damage,
 		damagetype = damtype,
@@ -280,7 +280,7 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 /// struck_name: how the line names the target, when it was named before the blow changed it (rogue_take_strike).
 /mob/living/proc/rogue_strike_message(mob/living/attacker, obj/item/weapon, datum/intent/intent, zone, struck_name)
 	var/hit_verb = length(intent.attack_verb) ? pick(intent.attack_verb) : "hits"
-	var/hit_area = span_userdanger(iscarbon(src) ? rogue_zone_name(zone) : "body")
+	var/hit_area = span_userdanger((iscarbon(src) ? rogue_zone_name(zone) : "body"))
 	var/with = weapon ? " with [weapon]" : ""
 	var/notes = length(rogue_strike_notes) ? " [jointext(rogue_strike_notes, " ")]" : ""
 	if(attacker == src)

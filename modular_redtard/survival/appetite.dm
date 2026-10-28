@@ -46,7 +46,7 @@
 			. += span_smallnotice("It is fine food.")
 		if(ROGUE_FARE_LAVISH)
 			. += span_smallnotice("It is lavish food.")
-	. += span_smallnotice(rogue_is_portable() ? "It can be eaten without a table." : "Eating this without a table would be disgraceful for a noble.")
+	. += span_smallnotice((rogue_is_portable() ? "It can be eaten without a table." : "Eating this without a table would be disgraceful for a noble."))
 
 /// Ratwood On_Consume(): what one bite means to the eater - a favourite or hated food, and for a noble, a yeoman or a courtier
 /// whether the fare befits them. FALSE when their disdain spoils the good effect of the bite.

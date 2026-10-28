@@ -1,0 +1,527 @@
+# Special intents and cleave patterns (combat/specials.dm, combat/specials_azure.dm, combat/cleave.dm): their numbers are vars of the types; the lines below repeat them, and CI checks that they match.
+# Mechanics numbers: name = value, described by the # lines right above it; times are in deciseconds. The build compiles this file in, so its numbers are the defaults; a file of the same name in config/redtard_private/mechanics/values/ is read instead when present.
+
+# Hefty Swing: cooldown. Times are in deciseconds.
+special_axe_swing_cooldown = 250
+
+# Hefty Swing: delay. Times are in deciseconds.
+special_axe_swing_delay = 5
+
+# Hefty Swing: stamcost. Times are in deciseconds.
+special_axe_swing_stamcost = 15
+
+# Hefty Swing: immob_dur. Times are in deciseconds.
+special_axe_swing_immob_dur = 35
+
+# Hefty Swing: exposed_dur. Times are in deciseconds.
+special_axe_swing_exposed_dur = 60
+
+# Hefty Swing: bonus. Times are in deciseconds.
+special_axe_swing_bonus = 50
+
+# Flail Sweep: cooldown. Times are in deciseconds.
+special_flail_sweep_cooldown = 250
+
+# Flail Sweep: delay. Times are in deciseconds.
+special_flail_sweep_delay = 7
+
+# Flail Sweep: stamcost. Times are in deciseconds.
+special_flail_sweep_stamcost = 0
+
+# Flail Sweep: slow_init. Times are in deciseconds.
+special_flail_sweep_slow_init = 2
+
+# Flail Sweep: exposed_init. Times are in deciseconds.
+special_flail_sweep_exposed_init = 30
+
+# Flail Sweep: offbalance_init. Times are in deciseconds.
+special_flail_sweep_offbalance_init = 15
+
+# Flail Sweep: knockdown. Times are in deciseconds.
+special_flail_sweep_knockdown = 20
+
+# Flail Sweep: immobilize_init. Times are in deciseconds.
+special_flail_sweep_immobilize_init = 10
+
+# Flail Sweep: dam. Times are in deciseconds.
+special_flail_sweep_dam = 20
+
+# Greatflail Swing: cooldown. Times are in deciseconds.
+special_greatflail_swing_cooldown = 300
+
+# Greatflail Swing: delay. Times are in deciseconds.
+special_greatflail_swing_delay = 7
+
+# Greatflail Swing: stamcost. Times are in deciseconds.
+special_greatflail_swing_stamcost = 25
+
+# Greatflail Swing: dam. Times are in deciseconds.
+special_greatflail_swing_dam = 60
+
+# Greatflail Swing: slow_dur. Times are in deciseconds.
+special_greatflail_swing_slow_dur = 2
+
+# Greatflail Swing: self_immob. Times are in deciseconds.
+special_greatflail_swing_self_immob = 22
+
+# Greatflail Swing: self_clickcd. Times are in deciseconds.
+special_greatflail_swing_self_clickcd = 21
+
+# Greatflail Swing: self_vuln. Times are in deciseconds.
+special_greatflail_swing_self_vuln = 23
+
+# Great Swing: cooldown. Times are in deciseconds.
+special_greatsword_swing_cooldown = 300
+
+# Great Swing: delay. Times are in deciseconds.
+special_greatsword_swing_delay = 7
+
+# Great Swing: stamcost. Times are in deciseconds.
+special_greatsword_swing_stamcost = 25
+
+# Great Swing: dam. Times are in deciseconds.
+special_greatsword_swing_dam = 60
+
+# Great Swing: slow_dur. Times are in deciseconds.
+special_greatsword_swing_slow_dur = 2
+
+# Great Swing: self_immob. Times are in deciseconds.
+special_greatsword_swing_self_immob = 25
+
+# Great Swing: self_clickcd. Times are in deciseconds.
+special_greatsword_swing_self_clickcd = 30
+
+# Great Swing: self_vuln. Times are in deciseconds.
+special_greatsword_swing_self_vuln = 30
+
+# Great Swing: cooldown. Times are in deciseconds.
+special_greatsword_swing_white_stag_cooldown = 250
+
+# Great Swing: delay. Times are in deciseconds.
+special_greatsword_swing_white_stag_delay = 7
+
+# Great Swing: stamcost. Times are in deciseconds.
+special_greatsword_swing_white_stag_stamcost = 25
+
+# Great Swing: dam. Times are in deciseconds.
+special_greatsword_swing_white_stag_dam = 80
+
+# Great Swing: slow_dur. Times are in deciseconds.
+special_greatsword_swing_white_stag_slow_dur = 2
+
+# Great Swing: self_immob. Times are in deciseconds.
+special_greatsword_swing_white_stag_self_immob = 25
+
+# Great Swing: self_clickcd. Times are in deciseconds.
+special_greatsword_swing_white_stag_self_clickcd = 30
+
+# Great Swing: self_vuln. Times are in deciseconds.
+special_greatsword_swing_white_stag_self_vuln = 30
+
+# Ground Smash: cooldown. Times are in deciseconds.
+special_ground_smash_cooldown = 250
+
+# Ground Smash: delay. Times are in deciseconds.
+special_ground_smash_delay = 7
+
+# Ground Smash: stamcost. Times are in deciseconds.
+special_ground_smash_stamcost = 25
+
+# Ground Smash: slow_dur. Times are in deciseconds.
+special_ground_smash_slow_dur = 5
+
+# Ground Smash: knockdown_dur. Times are in deciseconds.
+special_ground_smash_knockdown_dur = 20
+
+# Ground Smash: offbalance_dur. Times are in deciseconds.
+special_ground_smash_offbalance_dur = 50
+
+# Ground Smash: self_immob_dur. Times are in deciseconds.
+special_ground_smash_self_immob_dur = 11
+
+# Ground Smash: dam. Times are in deciseconds.
+special_ground_smash_dam = 200
+
+# Ground Smash: open_dur. Times are in deciseconds.
+special_ground_smash_open_dur = 25
+
+# Martyr's Blaze: cooldown. Times are in deciseconds.
+special_martyr_cooldown = 300
+
+# Martyr's Blaze: delay. Times are in deciseconds.
+special_martyr_delay = 7
+
+# Martyr's Blaze: stamcost. Times are in deciseconds.
+special_martyr_stamcost = 25
+
+# Martyr's Blaze: fire_stacks. Times are in deciseconds.
+special_martyr_fire_stacks = 4
+
+# Martyr's Blaze: self_immob_dur. Times are in deciseconds.
+special_martyr_self_immob_dur = 10
+
+# Blazing Axe Sweep: cooldown. Times are in deciseconds.
+special_martyr_blazing_sweep_cooldown = 500
+
+# Blazing Axe Sweep: delay. Times are in deciseconds.
+special_martyr_blazing_sweep_delay = 7
+
+# Blazing Axe Sweep: stamcost. Times are in deciseconds.
+special_martyr_blazing_sweep_stamcost = 25
+
+# Blazing Axe Sweep: fire_stacks. Times are in deciseconds.
+special_martyr_blazing_sweep_fire_stacks = 4
+
+# Blazing Axe Sweep: self_immob_dur. Times are in deciseconds.
+special_martyr_blazing_sweep_self_immob_dur = 10
+
+# Blazing Sword Sweep: cooldown. Times are in deciseconds.
+special_martyr_blazing_sweep_sword_cooldown = 500
+
+# Blazing Sword Sweep: delay. Times are in deciseconds.
+special_martyr_blazing_sweep_sword_delay = 7
+
+# Blazing Sword Sweep: stamcost. Times are in deciseconds.
+special_martyr_blazing_sweep_sword_stamcost = 25
+
+# Blazing Sword Sweep: fire_stacks. Times are in deciseconds.
+special_martyr_blazing_sweep_sword_fire_stacks = 4
+
+# Blazing Sword Sweep: self_immob_dur. Times are in deciseconds.
+special_martyr_blazing_sweep_sword_self_immob_dur = 20
+
+# Blazing Trident Strike: cooldown. Times are in deciseconds.
+special_martyr_blazing_trident_cooldown = 300
+
+# Blazing Trident Strike: delay. Times are in deciseconds.
+special_martyr_blazing_trident_delay = 7
+
+# Blazing Trident Strike: stamcost. Times are in deciseconds.
+special_martyr_blazing_trident_stamcost = 25
+
+# Blazing Trident Strike: fire_stacks. Times are in deciseconds.
+special_martyr_blazing_trident_fire_stacks = 4
+
+# Blazing Trident Strike: self_immob_dur. Times are in deciseconds.
+special_martyr_blazing_trident_self_immob_dur = 5
+
+# Volcanic Blaze Slam: cooldown. Times are in deciseconds.
+special_martyr_volcano_slam_cooldown = 600
+
+# Volcanic Blaze Slam: delay. Times are in deciseconds.
+special_martyr_volcano_slam_delay = 12
+
+# Volcanic Blaze Slam: stamcost. Times are in deciseconds.
+special_martyr_volcano_slam_stamcost = 25
+
+# Volcanic Blaze Slam: fire_stacks. Times are in deciseconds.
+special_martyr_volcano_slam_fire_stacks = 5
+
+# Volcanic Blaze Slam: self_immob_dur. Times are in deciseconds.
+special_martyr_volcano_slam_self_immob_dur = 10
+
+# Piercing Lunge: cooldown. Times are in deciseconds.
+special_piercing_lunge_cooldown = 250
+
+# Piercing Lunge: delay. Times are in deciseconds.
+special_piercing_lunge_delay = 5
+
+# Piercing Lunge: stamcost. Times are in deciseconds.
+special_piercing_lunge_stamcost = 20
+
+# Piercing Lunge: winded. Times are in deciseconds.
+special_piercing_lunge_winded = 30
+
+# Piercing Lunge: open_dur. Times are in deciseconds.
+special_piercing_lunge_open_dur = 30
+
+# Backstep: cooldown. Times are in deciseconds.
+special_polearm_backstep_cooldown = 250
+
+# Backstep: delay. Times are in deciseconds.
+special_polearm_backstep_delay = 5
+
+# Backstep: stamcost. Times are in deciseconds.
+special_polearm_backstep_stamcost = 15
+
+# Backstep: dam. Times are in deciseconds.
+special_polearm_backstep_dam = 30
+
+# Backstep: slow_dur. Times are in deciseconds.
+special_polearm_backstep_slow_dur = 5
+
+# Backstep: min_dist. Times are in deciseconds.
+special_polearm_backstep_min_dist = 3
+
+# Backstep: open_dur. Times are in deciseconds.
+special_polearm_backstep_open_dur = 30
+
+# Shin Prod: cooldown. Times are in deciseconds.
+special_shin_swipe_cooldown = 200
+
+# Shin Prod: delay. Times are in deciseconds.
+special_shin_swipe_delay = 5
+
+# Shin Prod: stamcost. Times are in deciseconds.
+special_shin_swipe_stamcost = 15
+
+# Shin Prod: eff_dur. Times are in deciseconds.
+special_shin_swipe_eff_dur = 5
+
+# Shin Prod: hobble_dur. Times are in deciseconds.
+special_shin_swipe_hobble_dur = 4
+
+# Shin Prod: open_dur. Times are in deciseconds.
+special_shin_swipe_open_dur = 30
+
+# Distracting Swipe: cooldown. Times are in deciseconds.
+special_side_sweep_cooldown = 170
+
+# Distracting Swipe: delay. Times are in deciseconds.
+special_side_sweep_delay = 6
+
+# Distracting Swipe: stamcost. Times are in deciseconds.
+special_side_sweep_stamcost = 25
+
+# Distracting Swipe: eff_dur. Times are in deciseconds.
+special_side_sweep_eff_dur = 40
+
+# Upper Cut: cooldown. Times are in deciseconds.
+special_upper_cut_cooldown = 300
+
+# Upper Cut: delay. Times are in deciseconds.
+special_upper_cut_delay = 12
+
+# Upper Cut: stamcost. Times are in deciseconds.
+special_upper_cut_stamcost = 25
+
+# Upper Cut: knockdown_dur. Times are in deciseconds.
+special_upper_cut_knockdown_dur = 10
+
+# Upper Cut: self_immob_dur. Times are in deciseconds.
+special_upper_cut_self_immob_dur = 15
+
+# Upper Cut: dam. Times are in deciseconds.
+special_upper_cut_dam = 50
+
+# Upper Cut: finisher_dam. Times are in deciseconds.
+special_upper_cut_finisher_dam = 200
+
+# Whip Coil: cooldown. Times are in deciseconds.
+special_whip_coil_cooldown = 150
+
+# Whip Coil: delay. Times are in deciseconds.
+special_whip_coil_delay = 4
+
+# Whip Coil: stamcost. Times are in deciseconds.
+special_whip_coil_stamcost = 20
+
+# Whip Coil: range. Times are in deciseconds.
+special_whip_coil_range = 4
+
+# Whip Coil: immob_dur. Times are in deciseconds.
+special_whip_coil_immob_dur = 35
+
+# Whip Coil: dam. Times are in deciseconds.
+special_whip_coil_dam = 30
+
+# Whip Coil: open_dur. Times are in deciseconds.
+special_whip_coil_open_dur = 20
+
+# Most extra targets of a cleave: Cleaves into an adjacent target.
+cleave_adjacent_max_targets = 1
+
+# Most extra targets of a cleave: Cleaves forward into a second target.
+cleave_forward_cleave_max_targets = 1
+
+# Most extra targets of a cleave: Sweeps in a massive arc, hitting up to four targets to the sides and ahead.
+cleave_frontal_arc_max_targets = 4
+
+# Most extra targets of a cleave: Cleaves in a T-shaped pattern directly ahead.
+cleave_frontal_t_max_targets = 2
+
+# Most extra targets of a cleave: Sweeps horizontally, cleaving up to two additional targets.
+cleave_horizontal_sweep_max_targets = 2
+
+# Most extra targets of a cleave: Lances forward, skewering a target three tiles ahead and anyone behind them.
+cleave_lance_max_targets = 1
+
+# Most extra targets of a cleave: Sweeps wide, cleaving up to two nearby targets.
+cleave_wide_sweep_max_targets = 2
+
+# Limb Guard: cooldown. Times are in deciseconds.
+special_limbguard_cooldown = 600
+
+# Limb Guard: delay. Times are in deciseconds.
+special_limbguard_delay = 10
+
+# Limb Guard: stamcost. Times are in deciseconds.
+special_limbguard_stamcost = 25
+
+# Dagger Dash: cooldown. Times are in deciseconds.
+special_dagger_dash_cooldown = 900
+
+# Dagger Dash: delay. Times are in deciseconds.
+special_dagger_dash_delay = 10
+
+# Dagger Dash: stamcost. Times are in deciseconds.
+special_dagger_dash_stamcost = 25
+
+# Quarterstaff Sweep: cooldown. Times are in deciseconds.
+special_quarterstaff_sweep_cooldown = 250
+
+# Quarterstaff Sweep: delay. Times are in deciseconds.
+special_quarterstaff_sweep_delay = 6
+
+# Quarterstaff Sweep: stamcost. Times are in deciseconds.
+special_quarterstaff_sweep_stamcost = 20
+
+# Quarterstaff Sweep: open_dur. Times are in deciseconds.
+special_quarterstaff_sweep_open_dur = 30
+
+# Arcyne Descent: cooldown. Times are in deciseconds.
+special_arcyne_descent_cooldown = 300
+
+# Arcyne Descent: delay. Times are in deciseconds.
+special_arcyne_descent_delay = 12
+
+# Arcyne Descent: stamcost. Times are in deciseconds.
+special_arcyne_descent_stamcost = 25
+
+# Arcyne Descent: knockdown_dur. Times are in deciseconds.
+special_arcyne_descent_knockdown_dur = 10
+
+# Arcyne Descent: self_immob_dur. Times are in deciseconds.
+special_arcyne_descent_self_immob_dur = 15
+
+# Arcyne Descent: dam. Times are in deciseconds.
+special_arcyne_descent_dam = 50
+
+# Arcyne Descent: finisher_dam. Times are in deciseconds.
+special_arcyne_descent_finisher_dam = 200
+
+# Drakkyrmaw: Hoardbite: cooldown. Times are in deciseconds.
+special_drakkyrmaw_bite_cooldown = 300
+
+# Drakkyrmaw: Hoardbite: delay. Times are in deciseconds.
+special_drakkyrmaw_bite_delay = 8.5
+
+# Drakkyrmaw: Hoardbite: stamcost. Times are in deciseconds.
+special_drakkyrmaw_bite_stamcost = 20
+
+# Drakkyrmaw: Hoardbite: dam. Times are in deciseconds.
+special_drakkyrmaw_bite_dam = 0
+
+# Drakkyrmaw: Hoardbite: fire_stacks. Times are in deciseconds.
+special_drakkyrmaw_bite_fire_stacks = 2
+
+# Drakkyrmaw: Hoardbite: slow_dur. Times are in deciseconds.
+special_drakkyrmaw_bite_slow_dur = 3
+
+# Drakkyrmaw: Hoardbite: exposed_dur. Times are in deciseconds.
+special_drakkyrmaw_bite_exposed_dur = 30
+
+# Drakkyrmaw: Hoardbite: self_immob_dur. Times are in deciseconds.
+special_drakkyrmaw_bite_self_immob_dur = 9
+
+# Aureate Drakkyrcoil: cooldown. Times are in deciseconds.
+special_gilded_dragon_sweep_cooldown = 300
+
+# Aureate Drakkyrcoil: delay. Times are in deciseconds.
+special_gilded_dragon_sweep_delay = 4.5
+
+# Aureate Drakkyrcoil: stamcost. Times are in deciseconds.
+special_gilded_dragon_sweep_stamcost = 25
+
+# Aureate Drakkyrcoil: fire_stacks. Times are in deciseconds.
+special_gilded_dragon_sweep_fire_stacks = 2
+
+# Aureate Drakkyrcoil: slow_dur. Times are in deciseconds.
+special_gilded_dragon_sweep_slow_dur = 2
+
+# Aureate Drakkyrcoil: exposed_dur. Times are in deciseconds.
+special_gilded_dragon_sweep_exposed_dur = 30
+
+# Aureate Drakkyrcoil: self_immob_dur. Times are in deciseconds.
+special_gilded_dragon_sweep_self_immob_dur = 12
+
+# Hefty Flourish: cooldown. Times are in deciseconds.
+special_hatchet_twirl_cooldown = 250
+
+# Hefty Flourish: delay. Times are in deciseconds.
+special_hatchet_twirl_delay = 5
+
+# Hefty Flourish: stamcost. Times are in deciseconds.
+special_hatchet_twirl_stamcost = 20
+
+# Hefty Flourish: bonus. Times are in deciseconds.
+special_hatchet_twirl_bonus = 25
+
+# Hefty Flourish: immob_dur. Times are in deciseconds.
+special_hatchet_twirl_immob_dur = 15
+
+# Hefty Flourish: exposed_dur. Times are in deciseconds.
+special_hatchet_twirl_exposed_dur = 30
+
+# Hefty Flourish: self_immob_dur. Times are in deciseconds.
+special_hatchet_twirl_self_immob_dur = 9
+
+# Vicious Swing: cooldown. Times are in deciseconds.
+special_vicious_swipe_cooldown = 200
+
+# Vicious Swing: delay. Times are in deciseconds.
+special_vicious_swipe_delay = 7
+
+# Vicious Swing: stamcost. Times are in deciseconds.
+special_vicious_swipe_stamcost = 30
+
+# Vicious Swing: dam. Times are in deciseconds.
+special_vicious_swipe_dam = 60
+
+# Vicious Swing: wave_bonus. Times are in deciseconds.
+special_vicious_swipe_wave_bonus = 0.5
+
+# Vicious Swing: last_share. Times are in deciseconds.
+special_vicious_swipe_last_share = 0.8
+
+# Vicious Swing: slow_dur. Times are in deciseconds.
+special_vicious_swipe_slow_dur = 2
+
+# Vicious Swing: exposed_dur. Times are in deciseconds.
+special_vicious_swipe_exposed_dur = 30
+
+# Vicious Swing: self_immob. Times are in deciseconds.
+special_vicious_swipe_self_immob = 25
+
+# Vicious Swing: self_clickcd. Times are in deciseconds.
+special_vicious_swipe_self_clickcd = 30
+
+# Vicious Swing: self_vuln. Times are in deciseconds.
+special_vicious_swipe_self_vuln = 30
+
+# Dazing Swing: cooldown. Times are in deciseconds.
+special_warhammer_swing_cooldown = 250
+
+# Dazing Swing: delay. Times are in deciseconds.
+special_warhammer_swing_delay = 5
+
+# Dazing Swing: stamcost. Times are in deciseconds.
+special_warhammer_swing_stamcost = 15
+
+# Dazing Swing: bonus. Times are in deciseconds.
+special_warhammer_swing_bonus = 25
+
+# Dazing Swing: slow_dur. Times are in deciseconds.
+special_warhammer_swing_slow_dur = 3
+
+# Dazing Swing: daze_dur. Times are in deciseconds.
+special_warhammer_swing_daze_dur = 50
+
+# Dazing Swing: daze_perception. Times are in deciseconds.
+special_warhammer_swing_daze_perception = -2
+
+# Dazing Swing: daze_intelligence. Times are in deciseconds.
+special_warhammer_swing_daze_intelligence = -2
+
+# Dazing Swing: self_immob_dur. Times are in deciseconds.
+special_warhammer_swing_self_immob_dur = 9

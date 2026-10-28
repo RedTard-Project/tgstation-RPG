@@ -1,23 +1,20 @@
 /// Visors, hoods, masks and coifs that adjust (Ratwood adjustable_clothing component, AdjustClothes() of the armored hood): right
 /// click on the worn item raises the visor, lowers the hood, pulls the mask or the coif down. Open, the item shows its "<state>_t"
-/// sprite, covers and hides only what its style leaves, bares the face (rogue_face_coverage, see the end of this file) and no longer
-/// narrows the wearer's view (block2add, combat/fov.dm); taken off, it closes again. Ratwood says which items adjust in their
-/// Initialize(), so the table at the end of this file names them by Ratwood's types; an item whose sheets have no "_t" sprite (the
-/// skettle, the psydonic helm, the full coifs) does not adjust.
+/// sprite, covers and hides only what its style leaves, bares the face to sight and to blows (rogue_coverage, combat/armor.dm; see
+/// the end of this file) and no longer narrows the wearer's view (block2add, combat/fov.dm); taken off, it closes again. Ratwood
+/// says which items adjust in their Initialize(), so the table at the end of this file names them by Ratwood's types; an item
+/// whose sheets have no "_t" sprite (the skettle, the psydonic helm, the full coifs) does not adjust.
 /datum/rogue_adjust_style
-	/// Body parts the open item still covers (Ratwood flags_open, in TG's parts).
+	/// What the open item still covers (Ratwood flags_open): TG's flags and ROGUE_COVER_*. Of the parts of the head it never covers
+	/// more than it does closed; TG's body_parts_covered of the open item is this folded (rogue_fold_coverage()).
 	var/open_coverage = NONE
-	/// Parts of the face the open item still covers, ROGUE_FACE_* (the face parts of Ratwood flags_open); it never covers more than
-	/// it does closed.
-	var/open_face = NONE
 	/// flags_inv of the open item (Ratwood flags_inv_open).
 	var/open_inv = NONE
 	var/toggle_sound
 
-/// A raised visor leaves the ears and the hair covered (Ratwood HEAD|EARS|HAIR); eyes, nose and mouth are bare.
+/// A raised visor leaves the ears and the skull covered (Ratwood HEAD|EARS|HAIR); eyes, nose and mouth are bare.
 /datum/rogue_adjust_style/visor
-	open_coverage = HEAD
-	open_face = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
+	open_coverage = HEAD | ROGUE_COVER_EARS | ROGUE_COVER_HAIR
 	open_inv = HIDEEARS | HIDEHAIR
 	toggle_sound = ROGUE_ADJUST_VISOR_SOUND
 
@@ -38,8 +35,7 @@
 	toggle_sound = null
 
 /datum/rogue_adjust_style/veil
-	open_coverage = NECK | HEAD
-	open_face = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
+	open_coverage = NECK | HEAD | ROGUE_COVER_EARS | ROGUE_COVER_HAIR
 	open_inv = HIDEEARS | HIDEHAIR
 	toggle_sound = ROGUE_ADJUST_CLOAK_SOUND
 
@@ -70,7 +66,7 @@ GLOBAL_LIST_INIT(rogue_adjust_styles, rogue_init_adjust_styles())
 /obj/item/clothing
 	/// How the item adjusts, a /datum/rogue_adjust_style path; null - it does not.
 	var/rogue_adjust_style
-	/// While open: what the closed item covered, hid and blocked, list(body_parts_covered, flags_inv, block2add, rogue_face_coverage);
+	/// While open: what the closed item covered, hid and blocked, list(body_parts_covered, flags_inv, block2add, rogue_coverage);
 	/// null - closed.
 	var/list/rogue_adjust_closed
 
@@ -86,9 +82,10 @@ GLOBAL_LIST_INIT(rogue_adjust_styles, rogue_init_adjust_styles())
 	var/open_state = "[initial(icon_state)][ROGUE_ADJUSTED_SUFFIX]"
 	if(open)
 		var/datum/rogue_adjust_style/style = GLOB.rogue_adjust_styles[rogue_adjust_style]
-		rogue_adjust_closed = list(body_parts_covered, flags_inv, block2add, rogue_face_coverage)
-		body_parts_covered = style.open_coverage
-		rogue_face_coverage &= style.open_face
+		rogue_adjust_closed = list(body_parts_covered, flags_inv, block2add, rogue_coverage)
+		var/head_parts = style.open_coverage & rogue_coverage_flags() & ROGUE_COVER_HEAD_PARTS
+		rogue_coverage = (style.open_coverage & ~ROGUE_COVER_HEAD_PARTS) | head_parts
+		body_parts_covered = rogue_fold_coverage(rogue_coverage)
 		flags_inv = style.open_inv
 		block2add = NONE
 		worn_icon_state = open_state
@@ -96,7 +93,7 @@ GLOBAL_LIST_INIT(rogue_adjust_styles, rogue_init_adjust_styles())
 		body_parts_covered = rogue_adjust_closed[1]
 		flags_inv = rogue_adjust_closed[2]
 		block2add = rogue_adjust_closed[3]
-		rogue_face_coverage = rogue_adjust_closed[4]
+		rogue_coverage = rogue_adjust_closed[4]
 		rogue_adjust_closed = null
 		worn_icon_state = initial(worn_icon_state)
 	var/shown_state = open && icon_exists(icon, open_state) ? open_state : initial(icon_state)
@@ -141,17 +138,18 @@ GLOBAL_LIST_INIT(rogue_adjust_styles, rogue_init_adjust_styles())
 
 // What the face is covered by. Ratwood's helmets that close over the face keep food, drink and bites out and guard the eyes
 // (flags_cover HEADCOVERSMOUTH, HEADCOVERSEYES, dropped with a raised visor); the port keeps which parts of the face an item
-// covers instead (rogue_face_coverage, rockhill/port_data.dm), so on medieval maps headgear covers the mouth or both eyes while
-// it covers them. Masks are left to TG's flags_cover, as Ratwood leaves them.
+// covers instead (rogue_coverage, rockhill/port_data.dm), so on medieval maps headgear covers the mouth or both eyes while
+// it covers them. Only an item's own rogue_coverage counts here: TG's headgear keeps its flags_cover. Masks are left to TG's
+// flags_cover, as Ratwood leaves them.
 
 /mob/living/carbon/human/is_mouth_covered(check_flags = ALL)
 	. = ..()
-	if(!. && (check_flags & ITEM_SLOT_HEAD) && head && (head.rogue_face_coverage & ROGUE_FACE_MOUTH) && rogue_combat_enabled())
+	if(!. && (check_flags & ITEM_SLOT_HEAD) && head && (head.rogue_coverage & ROGUE_COVER_MOUTH) && rogue_combat_enabled())
 		return head
 
 /mob/living/carbon/human/is_eyes_covered(check_flags = ALL)
 	. = ..()
-	if(!. && (check_flags & ITEM_SLOT_HEAD) && head && (head.rogue_face_coverage & ROGUE_FACE_EYES) == ROGUE_FACE_EYES && rogue_combat_enabled())
+	if(!. && (check_flags & ITEM_SLOT_HEAD) && head && (head.rogue_coverage & ROGUE_COVER_EYES) == ROGUE_COVER_EYES && rogue_combat_enabled())
 		return head
 
 // Ratwood's adjustable items (Initialize() of each type adds adjustable_clothing with these flags); their children adjust alike.

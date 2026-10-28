@@ -66,34 +66,32 @@ FEMALE_USERS = set()
 BITMASK_TURFS = set()
 NO_SPRITE = []
 LISTINGS = {}
-LICENSE_FILE = re.compile(r'(?i)^(licen[cs]e|copying)([-_.][\w.-]*)?$')
+# A folder of Ratwood's that carries a terms file of its own is never ported: the port takes only what the repository's own
+# terms cover. EXCLUDED: such a folder -> the types that wanted something from it (they get no sprite).
+TERMS_FILE = re.compile(r'(?i)^(licen[cs]e|copying)([-_.][\w.-]*)?$')
 CURRENT = [None]
 # --offline: no git in the Ratwood cache (no sync, no sparse-checkout of missing files); the cache is read as it stands.
 OFFLINE = '--offline' in sys.argv
-RESTRICTED = collections.defaultdict(set)
-UNREVIEWED = collections.defaultdict(set)
+EXCLUDED = collections.defaultdict(set)
 
 
-def asset_license(rel):
+def excluded_folder(rel):
     parts = rel.split('/')[:-1]
     for depth in range(len(parts), 0, -1):
         folder = os.path.join(CHECKOUT, *parts[:depth])
         if folder not in LISTINGS:
             LISTINGS[folder] = {name.lower(): name for name in os.listdir(folder)} if os.path.isdir(folder) else {}
         for name in LISTINGS[folder].values():
-            if LICENSE_FILE.match(name) and os.path.isfile(os.path.join(folder, name)):
-                return '/'.join(parts[:depth] + [name])
+            if TERMS_FILE.match(name) and os.path.isfile(os.path.join(folder, name)):
+                return '/'.join(parts[:depth])
     return None
 
 
-def asset_allowed(rel, assets):
-    license = asset_license(rel)
-    if license is None or license in assets.get('reviewed_licenses', []):
+def asset_allowed(rel):
+    folder = excluded_folder(rel)
+    if folder is None:
         return True
-    if license in assets.get('restricted_licenses', []):
-        RESTRICTED[license].add(CURRENT[0])
-    else:
-        UNREVIEWED[license].add(rel)
+    EXCLUDED[folder].add(CURRENT[0])
     return False
 
 
@@ -114,11 +112,25 @@ COVERAGE_MAP = {
     'LEG_LEFT': 'LEG_LEFT', 'LEG_RIGHT': 'LEG_RIGHT', 'FOOT_LEFT': 'FOOT_LEFT', 'FOOT_RIGHT': 'FOOT_RIGHT',
     'ARM_LEFT': 'ARM_LEFT', 'ARM_RIGHT': 'ARM_RIGHT', 'HAND_LEFT': 'HAND_LEFT', 'HAND_RIGHT': 'HAND_RIGHT',
 }
-# Ratwood's face parts (code/__DEFINES/inventory.dm) as the module's flags of rogue_face_coverage, in this order.
-FACE_COVERAGE = OrderedDict((
-    ('MOUTH', 'ROGUE_FACE_MOUTH'), ('NOSE', 'ROGUE_FACE_NOSE'), ('EARS', 'ROGUE_FACE_EARS'),
-    ('RIGHT_EYE', 'ROGUE_FACE_RIGHT_EYE'), ('LEFT_EYE', 'ROGUE_FACE_LEFT_EYE'), ('HAIR', 'ROGUE_FACE_HAIR'),
+# Ratwood's body part flags (code/__DEFINES/inventory.dm) as the flags of the module's rogue_coverage, in the order written:
+# TG's own for the parts TG has, ROGUE_COVER_* (clothing/_defines.dm) for the rest.
+EXACT_COVERAGE = OrderedDict((
+    ('HEAD', 'HEAD'), ('HAIR', 'ROGUE_COVER_HAIR'), ('EARS', 'ROGUE_COVER_EARS'),
+    ('RIGHT_EYE', 'ROGUE_COVER_RIGHT_EYE'), ('LEFT_EYE', 'ROGUE_COVER_LEFT_EYE'),
+    ('NOSE', 'ROGUE_COVER_NOSE'), ('MOUTH', 'ROGUE_COVER_MOUTH'), ('NECK', 'NECK'),
+    ('CHEST', 'CHEST'), ('VITALS', 'ROGUE_COVER_VITALS'), ('GROIN', 'GROIN'),
+    ('ARM_RIGHT', 'ARM_RIGHT'), ('ARM_LEFT', 'ARM_LEFT'), ('HAND_RIGHT', 'HAND_RIGHT'), ('HAND_LEFT', 'HAND_LEFT'),
+    ('LEG_RIGHT', 'LEG_RIGHT'), ('LEG_LEFT', 'LEG_LEFT'), ('FOOT_RIGHT', 'FOOT_RIGHT'), ('FOOT_LEFT', 'FOOT_LEFT'),
 ))
+# Pairs and groups written by one name, the largest first.
+EXACT_COVERAGE_GROUPS = (
+    ('ROGUE_COVER_HEAD_PARTS', ('HAIR', 'EARS', 'RIGHT_EYE', 'LEFT_EYE', 'NOSE', 'MOUTH')),
+    ('ROGUE_COVER_FACE', ('EARS', 'RIGHT_EYE', 'LEFT_EYE', 'NOSE', 'MOUTH')),
+    ('ROGUE_COVER_EYES', ('RIGHT_EYE', 'LEFT_EYE')),
+    ('ARMS', ('ARM_RIGHT', 'ARM_LEFT')), ('HANDS', ('HAND_RIGHT', 'HAND_LEFT')),
+    ('LEGS', ('LEG_RIGHT', 'LEG_LEFT')), ('FEET', ('FOOT_RIGHT', 'FOOT_LEFT')),
+)
+HEAD_PARTS = {'HAIR', 'EARS', 'RIGHT_EYE', 'LEFT_EYE', 'NOSE', 'MOUTH'}
 OUTFIT_SLOTS = {
     'head': 'head', 'mask': 'mask', 'mouth': 'mouth', 'neck': 'neck', 'cloak': 'cloak', 'armor': 'suit',
     'shirt': 'shirt', 'pants': 'uniform', 'wrists': 'wrists', 'gloves': 'gloves', 'shoes': 'shoes',
@@ -476,24 +488,35 @@ def layer_expression(raw, value, tg_values):
 
 
 
-def placement_lines(rw, path, runtime, tg_values):
+TG_PLANES = {'floor': 'FLOOR_PLANE', 'lower': 'GAME_PLANE', 'game': 'GAME_PLANE', 'upper': 'ABOVE_GAME_PLANE'}
+
+
+def plane_kind(rw, path, decal):
     plane = number_or_none(rw.resolve(path, 'plane') or rw.types.get('/atom', {}).get('plane'), DEFINE_VALUES)
+    if plane is None:
+        return 'floor' if decal else 'game'
+    if plane <= define_number('WALL_PLANE', DEFINE_VALUES):
+        return 'floor'
+    if plane < define_number('GAME_PLANE_FOV_HIDDEN', DEFINE_VALUES):
+        return 'lower'
+    if plane == define_number('GAME_PLANE_FOV_HIDDEN', DEFINE_VALUES):
+        return 'game'
+    return 'upper'
+
+
+def placement_lines(rw, path, runtime, tg_values, placed=frozenset()):
     raw_layer = rw.resolve(path, 'layer')
     layer = number_or_none(raw_layer, DEFINE_VALUES)
     decal = boundary_match(runtime, '/obj/effect/decal') or boundary_match(runtime, '/obj/effect/turf_decal')
     base_plane = 'FLOOR_PLANE' if decal else 'GAME_PLANE'
-    if plane is None:
-        kind = 'floor' if decal else 'game'
-    elif plane <= define_number('WALL_PLANE', DEFINE_VALUES):
-        kind = 'floor'
-    elif plane < define_number('GAME_PLANE_FOV_HIDDEN', DEFINE_VALUES):
-        kind = 'lower'
-    elif plane == define_number('GAME_PLANE_FOV_HIDDEN', DEFINE_VALUES):
-        kind = 'game'
-    else:
-        kind = 'upper'
-    tg_plane = {'floor': 'FLOOR_PLANE', 'lower': 'GAME_PLANE', 'game': 'GAME_PLANE', 'upper': 'ABOVE_GAME_PLANE'}[kind]
-    lines = [f'\tplane = {tg_plane}'] if tg_plane != base_plane else []
+    kind = plane_kind(rw, path, decal)
+    tg_plane = TG_PLANES[kind]
+    # The plane the type has without a line of its own: its placed parent's (which always ends up with its own TG plane),
+    # else the base plane of the TG type it hangs on. Comparing with the base only let a lower child (Ratwood's floor
+    # grille, GAME_PLANE_LOWER) keep its upper parent's ABOVE_GAME_PLANE (bars) and draw over the mobs on it.
+    parent = rw.parent(path)
+    inherited = TG_PLANES[plane_kind(rw, parent, decal)] if parent in placed else base_plane
+    lines = [f'\tplane = {tg_plane}'] if tg_plane != inherited else []
     if kind == 'floor':
         if not decal:
             lines.append('\tlayer = ABOVE_OPEN_TURF_LAYER')
@@ -1028,6 +1051,7 @@ def main():
     fill_items |= pottery_recipe_items(cfg, rw, rules)
     fill_items |= food_chain_items(cfg, rw, set(usage) | outfit_items | mapgen_types | fill_items | npc_items)
     fill_items |= husbandry_types(cfg, rw, set(usage) | fill_items)
+    fill_items |= alchemy_types(cfg, rw)
     generated = generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, outfit_items | mapgen_types | fill_items | npc_items, set(jobs))
     generate_mapgen(mapgen, rules, declared | generated, tg_names)
     generate_anvil_recipes(cfg, rw, rules, declared | generated)
@@ -1037,6 +1061,7 @@ def main():
     generate_trade(cfg, rw, rules, declared | generated)
     generate_food(cfg, rw, generated, tg_declared, tg_names, declared)
     generate_husbandry(cfg, rw, generated, tg_declared)
+    generate_alchemy(cfg, rw, declared | generated, generated)
     npcs = [p for p in npcs if p in generated]
     role_traits = npc_trait_names(rw, npcs, cfg['attributes'])
     for species in cfg['port']['bodies']['species_map']:
@@ -1378,7 +1403,7 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
             return None
         rel = exact_case(CHECKOUT, m.group(1))
         src = os.path.join(CHECKOUT, rel)
-        if not os.path.exists(src) or not asset_allowed(rel, port.get('assets', {})):
+        if not os.path.exists(src) or not asset_allowed(rel):
             return None
         dest_rel = rel[len('icons/'):] if rel.startswith('icons/') else rel
         dest = f'{ICON_DIR}/{dest_rel}'
@@ -1401,7 +1426,7 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
     def sound_ref(raw):
         rel = exact_case(CHECKOUT, ICON_LITERAL.match(raw.strip()).group(1))
         src = os.path.join(CHECKOUT, rel)
-        if not os.path.exists(src) or not asset_allowed(rel, port.get('assets', {})):
+        if not os.path.exists(src) or not asset_allowed(rel):
             return None
         sounds[src] = f"{SOUND_DIR}/{rel[len('sound/'):] if rel.startswith('sound/') else rel}"
         return f"'{sounds[src]}'"
@@ -1460,8 +1485,8 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
             block[:] = [line for line in block if not line.startswith(f'\t{name} = ')]
             block.append(f'\t{name} = {value}')
 
-        if any(path in users for users in RESTRICTED.values()):
-            NO_SPRITE.append((path, 'restricted licence', text('icon_state') or ''))
+        if any(path in users for users in EXCLUDED.values()):
+            NO_SPRITE.append((path, 'excluded folder', text('icon_state') or ''))
             put('icon_state', 'null')
             put('inhand_icon_state', 'null')
             put('worn_icon', f"'{BLANK_WORN}'")
@@ -1599,6 +1624,7 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
     used_objs = sorted(p for p in usage if p.startswith('/obj/'))
     smooth_candidates = set(used_turfs) | set(used_objs)
     smoothing_paths = {p for cat in categories if cat.get('smoothing') for p in chosen.get(cat['file'], [])} | set(reskins)
+    placed_paths = {p for cat in categories if cat.get('placement') for p in chosen.get(cat['file'], [])}
     if os.path.isdir(SMOOTH_DIR):
         shutil.rmtree(SMOOTH_DIR)
 
@@ -1728,8 +1754,8 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
         if raw is None:
             return None
         raw = raw.strip()
-        if name in cat.get('face_coverage_vars', []):
-            return face_coverage_value(raw)
+        if name in cat.get('coverage_vars', []):
+            return exact_coverage_value(raw)
         if name in cat.get('mapped_vars', {}):
             return cat['mapped_vars'][name].get(raw.strip('()').strip())
         if name in cat.get('paths', []):
@@ -1799,6 +1825,17 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
             fetch_sources([f for p in paths for source_name in cat['sound_vars'].values() for f in sound_files(rw.resolve(p, source_name))])
         if cat.get('sound_lists'):
             fetch_sources([f for p in paths for name in cat['sound_lists'] for f in sound_files(rw.resolve(p, cat.get('rename', {}).get(name, name)))])
+        # Sounds the module's own code plays (a tree falling): copied with the rest, no var names them.
+        if cat.get('code_sounds'):
+            fetch_sources(cat['code_sounds'])
+            for rel in cat['code_sounds']:
+                sound_ref(f"'{rel}'")
+        # A var of limit_vars is written only for the types under its prefixes (the destruction of what grows, not of every
+        # structure).
+        limited = {}
+        for prefix, names in cat.get('limit_vars', {}).items():
+            for name in names:
+                limited.setdefault(name, []).append(prefix)
         for path in paths:
             CURRENT[0] = path
             block = [path]
@@ -1806,6 +1843,8 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
             smooth = smoothing_lines(path) if cat.get('smoothing') else None
             for name in cat['vars']:
                 if smooth and name in ('icon', 'icon_state'):
+                    continue
+                if name in limited and not any(boundary_match(path, prefix) for prefix in limited[name]):
                     continue
                 if name == 'layer' and cat.get('placement'):
                     continue
@@ -1888,6 +1927,16 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                     target = runtime_path(value.strip().rstrip('/'), rules) if value and value.strip().startswith('/') else None
                     if target in valid:
                         block.append(f'\t{name} = {target}')
+                    # Ratwood clears a path its parent sets (a stump's stump_type = FALSE); left out, the port would inherit it.
+                    elif name in cat.get('nullable', []) and (value or 'null').strip() in ('null', 'FALSE', '0') and (rw.resolve(rw.parent(path), source_name) or '').strip().startswith('/'):
+                        block.append(f'\t{name} = null')
+                    continue
+                if name in cat.get('path_counts', []):
+                    # Types with how many of each (Ratwood debris, static_debris): list(/obj/item/natural/fibers = 1).
+                    entries = [(runtime_path(p, rules), count) for p, count in list_paths(value)]
+                    entries = [f'{p} = {count or 1}' for p, count in entries if p in valid]
+                    if entries:
+                        block.append(f'\t{name} = list(' + ', '.join(entries) + ')')
                     continue
                 if name in cat.get('path_lists', []):
                     entries = [runtime_path(p, rules) for p, _ in list_paths(value)]
@@ -1913,6 +1962,10 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                     covered = coverage_value(value)
                     if covered:
                         block.append(f'\tbody_parts_covered = {covered}')
+                    # Ratwood bares what the parent covers (a nightgown under a dress: body_parts_covered = null);
+                    # left out, the port would inherit the parent's coverage.
+                    elif coverage_value(rw.resolve(rw.parent(path), source_name)):
+                        block.append('\tbody_parts_covered = NONE')
                     continue
                 if name == 'loot':
                     entries = [(item, weight) for item, weight in loot_entries(value) if item in valid]
@@ -1966,7 +2019,7 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                 listed = ', '.join(f'"{runtime_sound(f, cat["runtime_sounds"])}"' for f in files)
                 block.append(f'\t{name} = ' + (f'list({listed})' if files else 'null'))
             if cat.get('placement'):
-                block += placement_lines(rw, path, path, tg_values)
+                block += placement_lines(rw, path, path, tg_values, placed_paths)
             for prefix, names in cat.get('type_vars', {}).items():
                 if boundary_match(path, prefix):
                     for name in names:
@@ -1974,8 +2027,15 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                         value = literal(raw, tg_names)
                         text = (raw or '').strip()
                         if value is None and text.startswith('list('):
-                            pairs = [(p, n) for p, n in re.findall(r'(/[a-z][A-Za-z0-9_/]+)\s*=\s*(-?\d+(?:\.\d+)?)', raw) if p in valid]
+                            pairs = re.findall(r'(/[a-z][A-Za-z0-9_/]+)\s*=\s*(-?\d+(?:\.\d+)?)', raw)
+                            if name == 'list_reagents':
+                                pairs = fill_to_volume(pairs, rw.resolve(path, 'volume'))
+                            pairs = [(p, n) for p, n in pairs if p in valid]
                             value = 'list(' + ', '.join(f'{p} = {n}' for p, n in pairs) + ')' if pairs else None
+                            # A vessel with a drink of its own the port lacks (Ratwood's ales under its beer) stays empty
+                            # rather than inheriting its parent's.
+                            if value is None and name == 'list_reagents' and rw.types.get(path, {}).get(name) is not None:
+                                value = 'null'
                             # A list of plain numbers (a vessel's possible_transfer_amounts), empty included.
                             numbers = re.fullmatch(r'list\(\s*((?:-?\d+(?:\.\d+)?\s*,?\s*)*)\)', text)
                             if value is None and numbers:
@@ -2086,7 +2146,7 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
 
     for rel in port.get('extra_sounds', []):
         if not sound_ref(f"'{rel}'"):
-            raise SystemExit(f'extra_sounds: {rel} is missing from the Ratwood checkout or not licensed')
+            raise SystemExit(f'extra_sounds: {rel} is missing from the Ratwood checkout or in a folder the port does not take')
 
     ported = set(generated)
     rebased = collections.defaultdict(list)
@@ -2191,14 +2251,12 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
     open(f'{OUT_DIR}/{EDGES_FILE}', 'w', encoding='utf-8', newline='\n').write('\n'.join(edge_lines) + '\n')
     print(f"smoothing: {smoothed['bitmask']} bitmask types from {sum(1 for v in sheets.values() if v)} sheets, {smoothed['edges']} edge receivers, {len(edge_states)} edge sources")
 
-    if UNREVIEWED:
-        raise SystemExit('assets under a licence nobody has reviewed; add each licence to port.assets.reviewed_licenses or restricted_licenses in ' + CONFIG + ':\n  ' + '\n  '.join(f'{license}: {len(files)} file(s), e.g. {sorted(files)[0]}' for license, files in sorted(UNREVIEWED.items())))
-    for license in port.get('assets', {}).get('restricted_licenses', []):
-        folder = os.path.dirname(license)
+    # A copy left from an earlier run goes with the folder it came from.
+    for folder in EXCLUDED:
         copied = f"{ICON_DIR}/{folder[len('icons/'):] if folder.startswith('icons/') else folder}"
         if os.path.isdir(copied):
             shutil.rmtree(copied)
-            print('removed restricted copies:', copied)
+            print('removed copies of an excluded folder:', copied)
     if BLANK_USERS:
         os.makedirs(os.path.dirname(BLANK_WORN), exist_ok=True)
         dmi.write(BLANK_WORN, 32, 32, [('', bytes(32 * 32 * 4))])
@@ -2245,11 +2303,6 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
         for src, dest in sorted(icons.items(), key=lambda kv: kv[1]):
             rel = os.path.relpath(src, CHECKOUT).replace('\\', '/')
             out.write(f'- `{dest}` from Ratwood `{rel}`\n')
-        if RESTRICTED:
-            out.write('\n## Restricted assets (not copied)\n\n')
-            out.write('Their folder carries a proprietary licence that forbids redistribution and use outside Ratwood (`port.assets.restricted_licenses`). The port never copies them; the types that use them get no sprite.\n\n')
-            for license, users in sorted(RESTRICTED.items()):
-                out.write(f'- `{license}`: {", ".join(f"`{user}`" for user in sorted(users))}\n')
         if NO_SPRITE:
             out.write(f'\n## Items without a world sprite ({len(NO_SPRITE)})\n\n')
             out.write('Ratwood names an `icon_state` its sheet does not have (a sprite chosen at runtime, or a broken one). The port writes `icon_state = null`, as TG does for an item with no sprite, so the TG icon tests pass and the item stays listed here.\n\n| Type | Sheet | Missing state |\n|---|---|---|\n')
@@ -2284,6 +2337,21 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
 SOUND_LITERAL = re.compile(r"'(sound/[^']+?\.(?:ogg|wav|mp3))'")
 
 
+SFX_ENTRY = re.compile(r'if\s*\(\s*"([^"]+)"\s*\)\s*\n\s*soundin\s*=\s*pick\(([^)]*)\)')
+SFX_FILES = {}
+
+
+def sfx_files(key):
+    """The files of one of Ratwood's sound keys ("plantcross" and the like): its get_sfx() in code/game/sound.dm picks one."""
+    if not SFX_FILES:
+        source = os.path.join(CHECKOUT, 'code', 'game', 'sound.dm')
+        text = open(source, encoding='utf-8', errors='replace').read() if os.path.exists(source) else ''
+        for found in SFX_ENTRY.finditer(text):
+            SFX_FILES[found.group(1)] = SOUND_LITERAL.findall(found.group(2))
+        SFX_FILES.setdefault('', [])
+    return SFX_FILES.get(key, [])
+
+
 def sound_files(raw):
     text = raw or ''
     for _ in range(8):
@@ -2292,7 +2360,11 @@ def sound_files(raw):
             break
         for name in names:
             text = re.sub(rf'\b{name}\b', lambda _match, value=DEFINE_VALUES[name]: value, text)
-    return SOUND_LITERAL.findall(text)
+    files = SOUND_LITERAL.findall(text)
+    key = text.strip()
+    if not files and len(key) > 1 and key[0] == key[-1] == '"':
+        files = sfx_files(key[1:-1])
+    return files
 
 
 def fetch_sources(paths):
@@ -2454,11 +2526,42 @@ def coverage_tokens(raw):
     return tokens
 
 
-def face_coverage_value(raw):
-    """The parts of the face Ratwood's coverage names (MOUTH, NOSE, EARS, the eyes, HAIR), which TG has no flags for and
-    coverage_value() folds into HEAD, as the module's ROGUE_FACE_* flags (clothing/_defines.dm); NONE without any."""
-    tokens = coverage_tokens(raw)
-    flags = [flag for token, flag in FACE_COVERAGE.items() if token in tokens]
+def fill_to_volume(pairs, volume_raw):
+    """A container's list_reagents as it fills: each reagent in turn until the container is full, as add_reagent() does
+    (Ratwood's starsugar powder lists more than it holds, and its nutriment never gets in). Reagents the port lacks keep their
+    place, so what follows them gets what it got at Ratwood's."""
+    volume = define_value_number(volume_raw) if volume_raw else None
+    if volume is None:
+        return pairs
+    left = float(volume)
+    filled = []
+    for path, amount in pairs:
+        taken = min(float(amount), max(left, 0))
+        left -= taken
+        if taken > 0:
+            filled.append((path, f'{taken:g}'))
+    return filled
+
+
+def exact_coverage_value(raw):
+    """Ratwood's coverage as it is, for the module's rogue_coverage (TG's flags and ROGUE_COVER_*, clothing/_defines.dm), where
+    the folded body_parts_covered (coverage_value()) would say otherwise or the item covers part of the head; 'null' elsewhere:
+    the module then reads TG's flags, HEAD as the whole head and CHEST as the chest and the vitals."""
+    tokens = coverage_tokens(raw) & set(EXACT_COVERAGE)
+    if not tokens & (HEAD_PARTS | {'HEAD'}) and ('CHEST' in tokens) == ('VITALS' in tokens):
+        return 'null'
+    left = set(tokens)
+    flags = []
+    for token, flag in EXACT_COVERAGE.items():
+        if token not in left:
+            continue
+        group = next((name for name, parts in EXACT_COVERAGE_GROUPS if token in parts and set(parts) <= left), None)
+        if group:
+            flags.append(group)
+            left -= set(dict(EXACT_COVERAGE_GROUPS)[group])
+        else:
+            flags.append(flag)
+            left.discard(token)
     return ' | '.join(flags) if flags else 'NONE'
 
 
@@ -3506,7 +3609,7 @@ def npc_creation_text(rw, path):
 
 def npc_look(rw, path, hair_names):
     """How Ratwood's after_creation dresses the NPC's body: a random sex, skin, eye and hair colours, the hairstyles and
-    beards it picks from, and the name lists (by the file's m/f ending)."""
+    beards it picks from, and the name lists (by the file's m/f ending) or the one name it gives (a goblin is "goblin")."""
     text = npc_creation_text(rw, path)
     look = {}
     if re.search(r'\bgender\s*=\s*pick\(\s*MALE\s*,\s*FEMALE\s*\)', text):
@@ -3523,6 +3626,9 @@ def npc_look(rw, path, hair_names):
     for rel in dict.fromkeys(re.findall(r'\breal_name\s*=\s*pick\(\s*world\.file2list\(\s*"([^"]+)"', text)):
         key = 'names_f' if rel.endswith('f.txt') else 'names_m'
         look[key] = f'"{NPC_NAMES_DIR}/{os.path.basename(rel)}"'
+    fixed = re.search(r'\breal_name\s*=\s*"([^"\[\]]+)"', text)
+    if fixed and 'names_m' not in look and 'names_f' not in look:
+        look['name'] = json.dumps(fixed.group(1))
     return look
 
 
@@ -3574,8 +3680,8 @@ def generate_bodies(cfg, rw, valid, npcs, known_traits):
 
     def cells_of(rel):
         if rel not in sources:
-            if not asset_allowed(rel, cfg['port'].get('assets', {})):
-                raise SystemExit(f'{rel}: the body sprites sit under a licence the port may not copy ({asset_license(rel)})')
+            if not asset_allowed(rel):
+                raise SystemExit(f'{rel}: the body sprites sit in a folder the port does not take ({excluded_folder(rel)})')
             sources[rel] = dmi.read(os.path.join(CHECKOUT, rel)).state_cells()
         return sources[rel]
 
@@ -3838,7 +3944,7 @@ def generate_races(cfg, rw):
                 continue
             for key, files in voicepack_sounds(pack).items():
                 key = spec['emote_keys'].get(key, key)
-                files = [f for f in dict.fromkeys(files) if asset_allowed(f, cfg['port'].get('assets', {}))]
+                files = [f for f in dict.fromkeys(files) if asset_allowed(f)]
                 if files:
                     voices.setdefault(key, {})['MALE' if sex == 'm' else 'FEMALE'] = files
         eyes = re.search(r'ORGAN_SLOT_EYES\s*=\s*(/obj/item/organ/eyes[A-Za-z0-9_/]*)', rw.resolve(species, 'organs') or '')
@@ -3885,7 +3991,7 @@ def generate_races(cfg, rw):
     for sex, pack in spec.get('human_voices', {}).items():
         for key, files in voicepack_sounds(pack).items():
             key = spec['emote_keys'].get(key, key)
-            files = [f for f in dict.fromkeys(files) if voice_files.search(f) and asset_allowed(f, cfg['port'].get('assets', {}))]
+            files = [f for f in dict.fromkeys(files) if voice_files.search(f) and asset_allowed(f)]
             if files and key not in spec.get('human_voice_skip', []):
                 human.setdefault(key, {})['MALE' if sex == 'm' else 'FEMALE'] = files
     fetch_sources(sorted({f for by_sex in human.values() for files in by_sex.values() for f in files}))
@@ -5062,6 +5168,120 @@ def generate_husbandry(cfg, rw, generated, tg_declared):
     os.makedirs(os.path.dirname(spec['file']), exist_ok=True)
     open(spec['file'], 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
     print(f"{spec['file']}: husbandry data for {len(blocks)} of {len(mobs)} beasts")
+
+
+ALCHEMY_LEANINGS = ('major_pot', 'med_pot', 'minor_pot')
+
+
+def alchemy_recipe_paths(rw, root):
+    """Ratwood's recipes of one kind of alchemy, the abstract root left out."""
+    return sorted(p for p in rw.types if boundary_match(p, root) and (rw.types[p].get('abstract_type') or '').strip().rstrip('/') != p)
+
+
+def alchemy_entries(raw):
+    """(path, number) of a Ratwood list(/path = n, ...); a plain path counts once."""
+    pairs = []
+    for key, value in food_entries(raw):
+        key = key.strip().rstrip('/')
+        if not key.startswith('/'):
+            continue
+        number = food_number(value) if value is not None else 1
+        pairs.append((key, number if number is not None else 1))
+    return pairs
+
+
+def alchemy_types(cfg, rw):
+    # Ratwood's alchemy for the alchemy module (modular_redtard/alchemy/brewing.dm): every ingredient (/obj/item/alch), what the
+    # mortar's recipes take and give and the items the cauldron's recipes leave, so the port has all of them.
+    spec = cfg['port'].get('alchemy')
+    if not spec:
+        return set()
+    found = {p for p in rw.types if boundary_match(p, spec['ingredient_root'])}
+    for path in alchemy_recipe_paths(rw, spec['grind_root']):
+        found.add((rw.resolve(path, 'valid_input') or '').strip().rstrip('/'))
+        for name in ('valid_outputs', 'bonus_chance_outputs'):
+            found |= {p for p, _ in alchemy_entries(rw.resolve(path, name))}
+    for path in alchemy_recipe_paths(rw, spec['cauldron_root']):
+        found |= {p for p, _ in alchemy_entries(rw.resolve(path, 'output_items'))}
+    found |= set(spec.get('extra_types', []))
+    return {p for p in found if p in rw.types}
+
+
+def generate_alchemy(cfg, rw, valid, generated):
+    # Ratwood's alchemy data for the alchemy module under Ratwood's paths: the cauldron's recipes (what they make, their smell,
+    # the skill they need), the mortar's (what it takes and gives) and what each ported ingredient leans toward in the cauldron.
+    # A recipe whose input or every output the port lacks is dropped, and the leanings toward a dropped recipe with it. A var
+    # of an ingredient is written where it differs from what the type inherits in the port.
+    spec = cfg['port'].get('alchemy')
+    if not spec:
+        return
+    default_skill = define_value_number(spec['default_skill'])
+
+    def listed(pairs):
+        return 'list(' + ', '.join(f'{p} = {n:g}' for p, n in pairs) + ')'
+
+    blocks = []
+    cauldron, cauldron_dropped = set(), 0
+    for path in alchemy_recipe_paths(rw, spec['cauldron_root']):
+        reagents = [(p, n) for p, n in alchemy_entries(rw.resolve(path, 'output_reagents')) if p in valid]
+        items = [(p, n) for p, n in alchemy_entries(rw.resolve(path, 'output_items')) if p in valid]
+        if not reagents and not items:
+            cauldron_dropped += 1
+            continue
+        cauldron.add(path)
+        block = [path, f"\tname = {string_value(rw.resolve(path, 'name')) or '\"\"'}"]
+        smell = string_value(rw.resolve(path, 'smells_like'))
+        if smell:
+            block.append(f'\tsmells_like = {smell}')
+        skill = define_value_number(rw.resolve(path, 'skill_required') or spec['default_skill'])
+        if skill is not None and skill != default_skill:
+            block.append(f'\tskill_required = {skill:g}')
+        if reagents:
+            block.append(f'\toutput_reagents = {listed(reagents)}')
+        if items:
+            block.append(f'\toutput_items = {listed(items)}')
+        blocks.append(block)
+    grind, grind_dropped = 0, 0
+    for path in alchemy_recipe_paths(rw, spec['grind_root']):
+        source = (rw.resolve(path, 'valid_input') or '').strip().rstrip('/')
+        outputs = [(p, n) for p, n in alchemy_entries(rw.resolve(path, 'valid_outputs')) if p in valid]
+        bonus = [(p, n) for p, n in alchemy_entries(rw.resolve(path, 'bonus_chance_outputs')) if p in valid]
+        if source not in valid or not (outputs or bonus):
+            grind_dropped += 1
+            continue
+        grind += 1
+        block = [path]
+        name = string_value(rw.resolve(path, 'name'))
+        if name and name != '"generic grind recipe"':
+            block.append(f'\tname = {name}')
+        block.append(f'\tvalid_input = {source}')
+        if (rw.resolve(path, 'picky') or 'TRUE').strip() in ('FALSE', '0'):
+            block.append('\tpicky = FALSE')
+        if outputs:
+            block.append(f'\tvalid_outputs = {listed(outputs)}')
+        if bonus:
+            block.append(f'\tbonus_chance_outputs = {listed(bonus)}')
+        blocks.append(block)
+    ingredients = sorted((p for p in generated if boundary_match(p, spec['ingredient_root'])), key=lambda p: (p.count('/'), p))
+    effective = {}
+    leaning = 0
+    for path in ingredients:
+        parent = next((path.rsplit('/', k)[0] for k in range(1, path.count('/')) if path.rsplit('/', k)[0] in effective), None)
+        inherited = effective.get(parent, dict.fromkeys(ALCHEMY_LEANINGS))
+        values = {}
+        block = [path]
+        for name in ALCHEMY_LEANINGS:
+            target = (rw.resolve(path, name) or '').strip().rstrip('/')
+            values[name] = target if target in cauldron else None
+            if values[name] != inherited[name]:
+                block.append(f'\t{name} = {values[name] or "null"}')
+        effective[path] = values
+        if len(block) > 1:
+            blocks.append(block)
+            leaning += 1
+    os.makedirs(os.path.dirname(spec['file']), exist_ok=True)
+    open(spec['file'], 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    print(f"{spec['file']}: {len(cauldron)} cauldron recipes ({cauldron_dropped} dropped), {grind} grind recipes ({grind_dropped} dropped), leanings of {leaning} of {len(ingredients)} ingredients")
 
 
 if __name__ == '__main__':

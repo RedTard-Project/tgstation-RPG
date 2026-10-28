@@ -301,7 +301,7 @@
 	user.received_resident_key = TRUE
 	grant_resident_key = FALSE
 	name = "[user.real_name] the [user.job]'s house"
-	to_chat(user, span_notice(amount > 1 ? "They're just where I left them..." : "It's just where I left it..."))
+	to_chat(user, span_notice((amount > 1 ? "They're just where I left them..." : "It's just where I left it...")))
 
 /obj/structure/mineral_door/rockhill/wood/Initialize(mapload)
 	if(icon_state == "woodhandle" && !base_state)

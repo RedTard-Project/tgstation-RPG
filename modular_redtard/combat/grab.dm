@@ -541,3 +541,9 @@ GLOBAL_LIST_INIT(rogue_zone_names, list(
 	log_combat(src, target, "headbutted")
 	rogue_mark_in_combat()
 	return TRUE
+
+/// Grabbing oneself (TG's self_grasp, /mob/living/carbon/grabbedby() with the grabber as the target): TG lets one grasp only a
+/// bleeding or wounded limb and says nothing otherwise, Ratwood any limb of one's own (grippedby(): instant on oneself). The
+/// grasp still staunches the bleeding when there is any.
+/obj/item/bodypart/can_be_grasped()
+	return ..() || (owner && rogue_combat_enabled())

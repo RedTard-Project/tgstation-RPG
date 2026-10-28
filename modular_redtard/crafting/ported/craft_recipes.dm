@@ -219,6 +219,52 @@
 	rogue_verb_simple = "mix"
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
+/datum/crafting_recipe/roguetown/alchemy/moon
+	name = "moondust"
+	result = /obj/item/reagent_containers/powder/moondust
+	reqs = list(/obj/item/ash = 2, /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry = 1, /datum/reagent/berrypoison = 2)
+	category = "Alchemy"
+	rogue_skill = /datum/attribute/skill/craft/alchemy
+	rogue_difficulty = 2
+	rogue_structure = /obj/structure/fluff/alch
+	rogue_verb_simple = "mix"
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/alchemy/moon_3x
+	name = "moondust (x3)"
+	result = /obj/item/reagent_containers/powder/moondust
+	reqs = list(/obj/item/ash = 3, /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry = 2, /datum/reagent/berrypoison = 3)
+	rogue_results = list(/obj/item/reagent_containers/powder/moondust, /obj/item/reagent_containers/powder/moondust)
+	category = "Alchemy"
+	rogue_skill = /datum/attribute/skill/craft/alchemy
+	rogue_difficulty = 3
+	rogue_structure = /obj/structure/fluff/alch
+	rogue_verb_simple = "mix"
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/alchemy/ozium
+	name = "ozium"
+	result = /obj/item/reagent_containers/powder/ozium
+	reqs = list(/obj/item/ash = 2, /datum/reagent/berrypoison = 2, /obj/item/reagent_containers/food/snacks/grown/rogue/swampweeddry = 1)
+	category = "Alchemy"
+	rogue_skill = /datum/attribute/skill/craft/alchemy
+	rogue_difficulty = 2
+	rogue_structure = /obj/structure/fluff/alch
+	rogue_verb_simple = "mix"
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/alchemy/ozium_3x
+	name = "ozium (x3)"
+	result = /obj/item/reagent_containers/powder/ozium
+	reqs = list(/obj/item/ash = 3, /datum/reagent/berrypoison = 3, /obj/item/reagent_containers/food/snacks/grown/rogue/swampweeddry = 2)
+	rogue_results = list(/obj/item/reagent_containers/powder/ozium, /obj/item/reagent_containers/powder/ozium)
+	category = "Alchemy"
+	rogue_skill = /datum/attribute/skill/craft/alchemy
+	rogue_difficulty = 3
+	rogue_structure = /obj/structure/fluff/alch
+	rogue_verb_simple = "mix"
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
 /datum/crafting_recipe/roguetown/alchemy/paralytic_venom
 	name = "paralytic venom activation"
 	result = /obj/item/reagent_containers/glass/bottle/alchemical/spidervenom_paralytic
@@ -226,6 +272,28 @@
 	category = "Alchemy"
 	rogue_skill = /datum/attribute/skill/craft/alchemy
 	rogue_difficulty = 5
+	rogue_structure = /obj/structure/fluff/alch
+	rogue_verb_simple = "mix"
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/alchemy/qsabsolution
+	name = "absolving silver"
+	result = /obj/item/quicksilver/luxinfused
+	reqs = list(/datum/reagent/water/blessed = 45, /obj/item/alch/silverdust = 1)
+	category = "Alchemy"
+	rogue_skill = /datum/attribute/skill/craft/alchemy
+	rogue_difficulty = 0
+	rogue_verb_simple = "transmute"
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+	crafting_flags = CRAFT_MUST_BE_LEARNED
+
+/datum/crafting_recipe/roguetown/alchemy/quicksilver
+	name = "quicksilver"
+	result = /obj/item/quicksilver
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/rogue/fyritius/bloodied = 1, /datum/reagent/water/blessed = 45, /obj/item/natural/cloth = 1, /obj/item/alch/silverdust = 1)
+	category = "Alchemy"
+	rogue_skill = /datum/attribute/skill/craft/alchemy
+	rogue_difficulty = 4
 	rogue_structure = /obj/structure/fluff/alch
 	rogue_verb_simple = "mix"
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
@@ -394,6 +462,26 @@
 	rogue_on_table = TRUE
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
+/datum/crafting_recipe/roguetown/arcana/amethyst
+	name = "amythortz"
+	result = /obj/item/roguegem/amethyst
+	reqs = list(/obj/item/natural/stone = 1, /datum/reagent/medicine/manapot = 15)
+	category = "Arcane Magic"
+	rogue_skill = /datum/attribute/skill/magic/arcane
+	rogue_difficulty = 2
+	rogue_on_table = TRUE
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/arcana/artifact
+	name = "runed artifact"
+	result = /obj/item/magic/artifact
+	reqs = list(/obj/item/natural/rock = 1, /datum/reagent/medicine/manapot = 15)
+	category = "Arcane Magic"
+	rogue_skill = /datum/attribute/skill/magic/arcane
+	rogue_difficulty = 2
+	rogue_on_table = TRUE
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
 /datum/crafting_recipe/roguetown/arcana/binding
 	name = "binding shackles"
 	result = /obj/item/rope/chain/bindingshackles
@@ -450,6 +538,16 @@
 	reqs = list(/obj/item/rogueweapon/woodstaff/implement/greater/blacksteel = 1, /obj/item/roguegem/green = 1)
 	category = "Arcane Magic"
 	rogue_skill = /datum/attribute/skill/magic/arcane
+	rogue_on_table = TRUE
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/arcana/chalk
+	name = "chalk"
+	result = /obj/item/chalk
+	reqs = list(/obj/item/rogueore/cinnabar = 1, /datum/reagent/medicine/manapot = 15)
+	category = "Arcane Magic"
+	rogue_skill = /datum/attribute/skill/magic/arcane
+	rogue_difficulty = 2
 	rogue_on_table = TRUE
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
@@ -661,6 +759,27 @@
 	rogue_difficulty = 4
 	rogue_on_table = TRUE
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/arcana/rawmana
+	name = "mana crystal"
+	result = /obj/item/magic/manacrystal
+	reqs = list(/datum/reagent/medicine/manapot = 45)
+	category = "Arcane Magic"
+	rogue_skill = /datum/attribute/skill/magic/arcane
+	rogue_difficulty = 2
+	rogue_on_table = TRUE
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/arcana/ritechalk
+	name = "ritual chalk (blessed)"
+	result = /obj/item/ritechalk
+	reqs = list(/obj/item/rogueore/cinnabar = 1, /datum/reagent/water/blessed = 15)
+	category = "Miracles"
+	rogue_skill = /datum/attribute/skill/magic/holy
+	rogue_difficulty = 2
+	rogue_on_table = TRUE
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+	rogue_xp = 0
 
 /datum/crafting_recipe/roguetown/arcana/shimmeringlens
 	name = "shimmering lens"
@@ -1172,7 +1291,7 @@
 /datum/crafting_recipe/roguetown/cooking/rocknutdry
 	name = "zig - rocknut"
 	result = /obj/item/clothing/mask/cigarette/rollie/nicotine
-	reqs = list(/obj/item/reagent_containers/powder/rocknut = 1, /obj/item/paper = 1)
+	reqs = list(/obj/item/reagent_containers/powder/rocknut = 1, /obj/item/paper/parchment = 1)
 	category = "Cooking"
 	rogue_skill = /datum/attribute/skill/craft/cooking
 	rogue_verb = "rolls"
@@ -1230,7 +1349,7 @@
 /datum/crafting_recipe/roguetown/cooking/sigdry
 	name = "zig - westleach"
 	result = /obj/item/clothing/mask/cigarette/rollie/nicotine
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry = 1, /obj/item/paper = 1)
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry = 1, /obj/item/paper/parchment = 1)
 	category = "Cooking"
 	rogue_skill = /datum/attribute/skill/craft/cooking
 	rogue_verb = "rolls"
@@ -1266,7 +1385,7 @@
 /datum/crafting_recipe/roguetown/cooking/sigsweet
 	name = "zig - swampweed"
 	result = /obj/item/clothing/mask/cigarette/rollie/cannabis
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/rogue/swampweeddry = 1, /obj/item/paper = 1)
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/rogue/swampweeddry = 1, /obj/item/paper/parchment = 1)
 	category = "Cooking"
 	rogue_skill = /datum/attribute/skill/craft/cooking
 	rogue_verb = "rolls"
@@ -1649,6 +1768,18 @@
 	rogue_skill = /datum/attribute/skill/craft/cooking
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
+/datum/crafting_recipe/roguetown/druidic/blessedseedpowder
+	name = "blessed seed powder"
+	result = /obj/item/alch/blessedseedpowder
+	reqs = list(/obj/item/seeds/treesap = 1, /datum/reagent/water/blessed = 10)
+	tool_paths = list(/obj/item/pestle)
+	category = "Druidic Trickery"
+	rogue_skill = /datum/attribute/skill/magic/druidic
+	rogue_verb = "prepares"
+	rogue_verb_simple = "prepare"
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/mortarpestle.ogg'
+	rogue_xp = 5
+
 /datum/crafting_recipe/roguetown/engineering/autogrinder
 	name = "autogrinder"
 	result = /obj/structure/autogrinder
@@ -1709,7 +1840,7 @@
 /datum/crafting_recipe/roguetown/engineering/canistershotimpact
 	name = "canister shot, bombard charge"
 	result = /obj/item/cannonball/canister
-	reqs = list(/obj/item/ammo_casing/caseless/bullet/grapeshot = 3, /obj/item/alch/coaldust = 1, /obj/item/paper = 4)
+	reqs = list(/obj/item/ammo_casing/caseless/bullet/grapeshot = 3, /obj/item/alch/coaldust = 1, /obj/item/paper/parchment = 4)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 5
@@ -1775,7 +1906,7 @@
 /datum/crafting_recipe/roguetown/engineering/flareimpact
 	name = "flare shell, bombard charge"
 	result = /obj/item/cannonball/flare
-	reqs = list(/obj/item/rogueore/cinnabar = 2, /obj/item/alch/coaldust = 1, /obj/item/paper = 4)
+	reqs = list(/obj/item/rogueore/cinnabar = 2, /obj/item/alch/coaldust = 1, /obj/item/paper/parchment = 4)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 5
@@ -1806,7 +1937,7 @@
 /datum/crafting_recipe/roguetown/engineering/highexplosiveimpact
 	name = "high explosive impact, bombard charge"
 	result = /obj/item/cannonball/explosive
-	reqs = list(/obj/item/tntstick = 2, /obj/item/alch/coaldust = 1, /obj/item/paper = 4)
+	reqs = list(/obj/item/tntstick = 2, /obj/item/alch/coaldust = 1, /obj/item/paper/parchment = 4)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 5
@@ -1828,7 +1959,7 @@
 /datum/crafting_recipe/roguetown/engineering/impactexplosive
 	name = "impact grenades (x3)"
 	result = /obj/item/impact_grenade/explosion
-	reqs = list(/obj/item/natural/clay = 1, /obj/item/paper = 1, /obj/item/alch/coaldust = 1, /obj/item/alch/firedust = 1, /obj/item/reagent_containers/food/snacks/grown/rogue/fyritius = 1)
+	reqs = list(/obj/item/natural/clay = 1, /obj/item/paper/parchment = 1, /obj/item/alch/coaldust = 1, /obj/item/alch/firedust = 1, /obj/item/reagent_containers/food/snacks/grown/rogue/fyritius = 1)
 	rogue_results = list(/obj/item/impact_grenade/explosion, /obj/item/impact_grenade/explosion)
 	blacklist = list(/obj/item/reagent_containers/food/snacks/grown/rogue/fyritius/bloodied)
 	category = "Engineering"
@@ -1870,6 +2001,17 @@
 	rogue_structure = /obj/machinery/artificer_table
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
+/datum/crafting_recipe/roguetown/engineering/impactpoisonsmoke
+	name = "smoke grenades, poisonous (x3)"
+	result = /obj/item/impact_grenade/smoke/poison_gas
+	reqs = list(/obj/item/smokeshell = 3, /obj/item/alch/coaldust = 1, /obj/item/ash = 1, /datum/reagent/berrypoison = 5, /obj/item/alch/airdust = 1, /datum/reagent/water = 48)
+	rogue_results = list(/obj/item/impact_grenade/smoke/poison_gas, /obj/item/impact_grenade/smoke/poison_gas)
+	category = "Engineering"
+	rogue_skill = /datum/attribute/skill/craft/engineering
+	rogue_difficulty = 4
+	rogue_structure = /obj/machinery/artificer_table
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
 /datum/crafting_recipe/roguetown/engineering/impactsmoke
 	name = "smoke grenades (x3)"
 	result = /obj/item/impact_grenade/smoke
@@ -1884,7 +2026,7 @@
 /datum/crafting_recipe/roguetown/engineering/incendiaryimpact
 	name = "incendiary shell, bombard charge"
 	result = /obj/item/cannonball/incendiary
-	reqs = list(/obj/item/alch/firedust = 2, /obj/item/alch/coaldust = 1, /obj/item/paper = 4)
+	reqs = list(/obj/item/alch/firedust = 2, /obj/item/alch/coaldust = 1, /obj/item/paper/parchment = 4)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 5
@@ -1949,7 +2091,7 @@
 /datum/crafting_recipe/roguetown/engineering/palantir
 	name = "bombard targeting palantir"
 	result = /obj/item/rogueweapon/palantir
-	reqs = list(/obj/item/roguegear/bronze = 2, /obj/item/ingot/bronze = 1, /obj/item/paper = 2, /obj/item/rogueore/cinnabar = 1)
+	reqs = list(/obj/item/roguegear/bronze = 2, /obj/item/ingot/bronze = 1, /obj/item/paper/parchment = 2, /obj/item/rogueore/cinnabar = 1)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 6
@@ -2126,7 +2268,7 @@
 /datum/crafting_recipe/roguetown/engineering/signalflare
 	name = "signal flare canister (x4)"
 	result = /obj/item/signal_flare
-	reqs = list(/obj/item/natural/clay = 1, /obj/item/paper = 1, /obj/item/alch/coaldust = 1, /obj/item/alch/firedust = 1, /obj/item/reagent_containers/food/snacks/grown/rogue/fyritius = 1)
+	reqs = list(/obj/item/natural/clay = 1, /obj/item/paper/parchment = 1, /obj/item/alch/coaldust = 1, /obj/item/alch/firedust = 1, /obj/item/reagent_containers/food/snacks/grown/rogue/fyritius = 1)
 	rogue_results = list(/obj/item/signal_flare, /obj/item/signal_flare, /obj/item/signal_flare)
 	blacklist = list(/obj/item/reagent_containers/food/snacks/grown/rogue/fyritius/bloodied)
 	category = "Engineering"
@@ -2159,7 +2301,7 @@
 /datum/crafting_recipe/roguetown/engineering/smokeimpact
 	name = "smoke shell, bombard charge"
 	result = /obj/item/cannonball/smoke
-	reqs = list(/obj/item/bomb/smoke = 3, /obj/item/alch/coaldust = 1, /obj/item/paper = 4)
+	reqs = list(/obj/item/bomb/smoke = 3, /obj/item/alch/coaldust = 1, /obj/item/paper/parchment = 4)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 5
@@ -2192,7 +2334,7 @@
 /datum/crafting_recipe/roguetown/engineering/tntbomb
 	name = "blastsand sticks (x3)"
 	result = /obj/item/tntstick
-	reqs = list(/obj/item/paper = 3, /obj/item/alch/coaldust = 2, /obj/item/compost = 2, /obj/item/natural/fibers = 1)
+	reqs = list(/obj/item/paper/parchment = 3, /obj/item/alch/coaldust = 2, /obj/item/compost = 2, /obj/item/natural/fibers = 1)
 	rogue_results = list(/obj/item/tntstick, /obj/item/tntstick)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
@@ -5867,7 +6009,7 @@
 /datum/crafting_recipe/roguetown/leather/skillbook
 	name = "unfinished skillbook"
 	result = /obj/item/skillbook/unfinished
-	reqs = list(/obj/item/natural/hide/cured = 1, /obj/item/paper = 1)
+	reqs = list(/obj/item/natural/hide/cured = 1, /obj/item/paper/parchment = 1)
 	tool_paths = list(/obj/item/needle)
 	category = "Skincrafting"
 	rogue_skill = /datum/attribute/skill/craft/tanning
@@ -9452,7 +9594,7 @@
 
 /datum/crafting_recipe/roguetown/structure/curtain
 	name = "curtain"
-	result = /obj/structure/curtain
+	result = /obj/structure/rockhill/curtain
 	reqs = list(/obj/item/natural/cloth = 2)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
@@ -9464,7 +9606,7 @@
 
 /datum/crafting_recipe/roguetown/structure/curtainblack
 	name = "curtain(black)"
-	result = /obj/structure/curtain/black
+	result = /obj/structure/rockhill/curtain/black
 	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/silk = 1)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
@@ -9476,7 +9618,7 @@
 
 /datum/crafting_recipe/roguetown/structure/curtainblue
 	name = "curtain(blue)"
-	result = /obj/structure/curtain/blue
+	result = /obj/structure/rockhill/curtain/blue
 	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/silk = 1)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
@@ -9488,7 +9630,7 @@
 
 /datum/crafting_recipe/roguetown/structure/curtainbrown
 	name = "curtain(brown)"
-	result = /obj/structure/curtain/brown
+	result = /obj/structure/rockhill/curtain/brown
 	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/silk = 1)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
@@ -9500,7 +9642,7 @@
 
 /datum/crafting_recipe/roguetown/structure/curtaindirectional
 	name = "curtain (directional)"
-	result = /obj/structure/curtain/directional/crafted
+	result = /obj/structure/rockhill/curtain/directional/crafted
 	reqs = list(/obj/item/natural/cloth = 2)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
@@ -9511,7 +9653,7 @@
 
 /datum/crafting_recipe/roguetown/structure/curtaingreen
 	name = "curtain(green)"
-	result = /obj/structure/curtain/green
+	result = /obj/structure/rockhill/curtain/green
 	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/silk = 1)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
@@ -9523,7 +9665,7 @@
 
 /datum/crafting_recipe/roguetown/structure/curtainmagenta
 	name = "curtain(magenta)"
-	result = /obj/structure/curtain/magenta
+	result = /obj/structure/rockhill/curtain/magenta
 	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/silk = 1)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
@@ -9535,7 +9677,7 @@
 
 /datum/crafting_recipe/roguetown/structure/curtainpurple
 	name = "curtain(purple)"
-	result = /obj/structure/curtain/purple
+	result = /obj/structure/rockhill/curtain/purple
 	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/silk = 1)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
@@ -9547,7 +9689,7 @@
 
 /datum/crafting_recipe/roguetown/structure/curtainred
 	name = "curtain(red)"
-	result = /obj/structure/curtain/red
+	result = /obj/structure/rockhill/curtain/red
 	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/silk = 1)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
@@ -11797,6 +11939,16 @@
 	rogue_difficulty = 3
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
+/datum/crafting_recipe/roguetown/survival/blessedbolt
+	name = "holy water bolt"
+	result = /obj/item/ammo_casing/caseless/rogue/bolt/holy
+	reqs = list(/obj/item/ammo_casing/caseless/rogue/bolt = 1, /datum/reagent/water/blessed = 5)
+	blacklist = list(/obj/item/ammo_casing/caseless/rogue/bolt/ancient, /obj/item/ammo_casing/caseless/rogue/bolt/blacksteel, /obj/item/ammo_casing/caseless/rogue/bolt/blunt, /obj/item/ammo_casing/caseless/rogue/bolt/bronze, /obj/item/ammo_casing/caseless/rogue/bolt/decrepit, /obj/item/ammo_casing/caseless/rogue/bolt/heavyblunt, /obj/item/ammo_casing/caseless/rogue/bolt/holy, /obj/item/ammo_casing/caseless/rogue/bolt/pyro, /obj/item/ammo_casing/caseless/rogue/bolt/water)
+	category = "Crafting"
+	rogue_skill = /datum/attribute/skill/craft/crafting
+	rogue_on_table = TRUE
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
 /datum/crafting_recipe/roguetown/survival/bluntarrow
 	name = "blunt arrow"
 	result = /obj/item/ammo_casing/caseless/rogue/arrow/blunt
@@ -11973,6 +12125,32 @@
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/survival/candle/eora
+	name = "eora's candle (x3) (1 tallow, 1 rosa, 25 blessed water)"
+	result = /obj/item/candle/eora
+	reqs = list(/obj/item/reagent_containers/food/snacks/tallow = 1, /obj/item/alch/rosa = 1, /datum/reagent/water/blessed = 25)
+	rogue_results = list(/obj/item/candle/eora, /obj/item/candle/eora)
+	tool_paths = null
+	parts = null
+	blacklist = list(/obj/item/reagent_containers/food/snacks/tallow/red, /obj/item/reagent_containers/food/snacks/tallow/soft)
+	category = "Crafting"
+	rogue_skill = /datum/attribute/skill/craft/crafting
+	rogue_difficulty = 1
+	rogue_structure = null
+	rogue_on_table = FALSE
+	rogue_on_tile = FALSE
+	rogue_on_wall = FALSE
+	rogue_build_same = FALSE
+	rogue_ignore_density = FALSE
+	rogue_verb = "crafts"
+	rogue_verb_simple = "craft"
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+	rogue_xp = -1
+	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/survival/chain_leash
 	name = "chain leash"
@@ -12581,6 +12759,48 @@
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
+/datum/crafting_recipe/roguetown/survival/poisonarrow
+	name = "poisoned arrow"
+	result = /obj/item/ammo_casing/caseless/rogue/arrow/poison
+	reqs = list(/obj/item/ammo_casing/caseless/rogue/arrow/iron = 1, /datum/reagent/stampoison = 5)
+	blacklist = list(/obj/item/ammo_casing/caseless/rogue/arrow/iron/decrepit)
+	category = "Crafting"
+	rogue_skill = /datum/attribute/skill/craft/crafting
+	rogue_on_table = TRUE
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/survival/poisonarrow_five
+	name = "poisoned arrow (x5)"
+	result = /obj/item/ammo_casing/caseless/rogue/arrow/poison
+	reqs = list(/obj/item/ammo_casing/caseless/rogue/arrow/iron = 5, /datum/reagent/stampoison = 25)
+	rogue_results = list(/obj/item/ammo_casing/caseless/rogue/arrow/poison, /obj/item/ammo_casing/caseless/rogue/arrow/poison, /obj/item/ammo_casing/caseless/rogue/arrow/poison, /obj/item/ammo_casing/caseless/rogue/arrow/poison)
+	blacklist = list(/obj/item/ammo_casing/caseless/rogue/arrow/iron/decrepit)
+	category = "Crafting"
+	rogue_skill = /datum/attribute/skill/craft/crafting
+	rogue_on_table = TRUE
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/survival/poisonarrow_five_stone
+	name = "poisoned stone arrow (x5)"
+	result = /obj/item/ammo_casing/caseless/rogue/arrow/stone/poison
+	reqs = list(/obj/item/ammo_casing/caseless/rogue/arrow/stone = 5, /datum/reagent/stampoison = 25)
+	rogue_results = list(/obj/item/ammo_casing/caseless/rogue/arrow/stone/poison, /obj/item/ammo_casing/caseless/rogue/arrow/stone/poison, /obj/item/ammo_casing/caseless/rogue/arrow/stone/poison, /obj/item/ammo_casing/caseless/rogue/arrow/stone/poison)
+	blacklist = list(/obj/item/ammo_casing/caseless/rogue/arrow/stone/poison)
+	category = "Crafting"
+	rogue_skill = /datum/attribute/skill/craft/crafting
+	rogue_on_table = TRUE
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/survival/poisonarrow_stone
+	name = "poisoned stone arrow"
+	result = /obj/item/ammo_casing/caseless/rogue/arrow/stone/poison
+	reqs = list(/obj/item/ammo_casing/caseless/rogue/arrow/stone = 1, /datum/reagent/stampoison = 5)
+	blacklist = list(/obj/item/ammo_casing/caseless/rogue/arrow/stone/poison)
+	category = "Crafting"
+	rogue_skill = /datum/attribute/skill/craft/crafting
+	rogue_on_table = TRUE
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
 /datum/crafting_recipe/roguetown/survival/pot
 	name = "stone pot (2 stones)"
 	result = /obj/item/reagent_containers/glass/bucket/pot/stone
@@ -12736,7 +12956,7 @@
 /datum/crafting_recipe/roguetown/survival/ration_wrapper
 	name = "ration wrapping paper (x2)"
 	result = /obj/item/ration
-	reqs = list(/obj/item/paper = 1, /obj/item/reagent_containers/food/snacks/tallow = 1)
+	reqs = list(/obj/item/paper/parchment = 1, /obj/item/reagent_containers/food/snacks/tallow = 1)
 	rogue_results = list(/obj/item/ration)
 	blacklist = list(/obj/item/reagent_containers/food/snacks/tallow/red, /obj/item/reagent_containers/food/snacks/tallow/soft)
 	category = "Cooking"
@@ -12807,7 +13027,7 @@
 /datum/crafting_recipe/roguetown/survival/rocknutdry
 	name = "rocknut zig"
 	result = /obj/item/clothing/mask/cigarette/rollie/nicotine
-	reqs = list(/obj/item/reagent_containers/powder/rocknut = 1, /obj/item/paper = 1)
+	reqs = list(/obj/item/reagent_containers/powder/rocknut = 1, /obj/item/paper/parchment = 1)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_difficulty = 0
@@ -12922,7 +13142,7 @@
 /datum/crafting_recipe/roguetown/survival/sigdry
 	name = "westleach zig"
 	result = /obj/item/clothing/mask/cigarette/rollie/nicotine
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry = 1, /obj/item/paper = 1)
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry = 1, /obj/item/paper/parchment = 1)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_difficulty = 0
@@ -12959,7 +13179,7 @@
 /datum/crafting_recipe/roguetown/survival/sigsweet
 	name = "swampweed zig"
 	result = /obj/item/clothing/mask/cigarette/rollie/cannabis
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/rogue/swampweeddry = 1, /obj/item/paper = 1)
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/rogue/swampweeddry = 1, /obj/item/paper/parchment = 1)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_difficulty = 0
@@ -14614,6 +14834,50 @@
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
+/datum/crafting_recipe/roguetown/alchemy/herozium
+	// Azure Peak
+	name = "herozium"
+	result = /obj/item/reagent_containers/powder/herozium
+	reqs = list(/obj/item/reagent_containers/powder/ozium = 1, /datum/reagent/buff/strength = 15, /obj/item/ash = 2)
+	category = "Alchemy"
+	rogue_skill = /datum/attribute/skill/craft/alchemy
+	rogue_difficulty = 4
+	rogue_structure = /obj/structure/fluff/alch
+	rogue_verb_simple = "mix"
+
+/datum/crafting_recipe/roguetown/alchemy/moon_purest
+	// Azure Peak
+	name = "purified moondust"
+	result = /obj/item/reagent_containers/powder/moondust_purest
+	reqs = list(/obj/item/reagent_containers/powder/moondust = 1, /datum/reagent/buff/speed = 15, /datum/reagent/buff/endurance = 15)
+	category = "Alchemy"
+	rogue_skill = /datum/attribute/skill/craft/alchemy
+	rogue_difficulty = 4
+	rogue_structure = /obj/structure/fluff/alch
+	rogue_verb_simple = "mix"
+
+/datum/crafting_recipe/roguetown/alchemy/spice_compost
+	// Azure Peak
+	name = "spice (compost)"
+	result = /obj/item/reagent_containers/powder/spice
+	reqs = list(/obj/item/ash = 2, /obj/item/compost = 2, /datum/reagent/berrypoison = 2)
+	category = "Alchemy"
+	rogue_skill = /datum/attribute/skill/craft/alchemy
+	rogue_difficulty = 3
+	rogue_structure = /obj/structure/fluff/alch
+	rogue_verb_simple = "mix"
+
+/datum/crafting_recipe/roguetown/alchemy/spice_poo
+	// Azure Peak
+	name = "spice (nightsoil)"
+	result = /obj/item/reagent_containers/powder/spice
+	reqs = list(/obj/item/ash = 2, /obj/item/natural/poo = 1, /datum/reagent/berrypoison = 2)
+	category = "Alchemy"
+	rogue_skill = /datum/attribute/skill/craft/alchemy
+	rogue_difficulty = 3
+	rogue_structure = /obj/structure/fluff/alch
+	rogue_verb_simple = "mix"
+
 /datum/crafting_recipe/roguetown/arcana/fission_elemental_grand
 	// Azure Peak
 	name = "grand arcyne fission of elemental relic"
@@ -14733,6 +14997,17 @@
 	name = "lesser arcyne fusion of infernal ashes"
 	result = /obj/item/magic/infernal/fang
 	reqs = list(/obj/item/magic/infernal/ash = 4)
+	category = "Arcana"
+	rogue_skill = /datum/attribute/skill/magic/arcane
+	rogue_difficulty = 2
+	rogue_on_table = TRUE
+
+/datum/crafting_recipe/roguetown/arcana/runed_artifact_replication
+	// Azure Peak
+	name = "arcyne replication of runed artifact"
+	result = /obj/item/magic/artifact
+	reqs = list(/obj/item/magic/artifact = 1, /datum/reagent/medicine/manapot = 45)
+	rogue_results = list(/obj/item/magic/artifact)
 	category = "Arcana"
 	rogue_skill = /datum/attribute/skill/magic/arcane
 	rogue_difficulty = 2

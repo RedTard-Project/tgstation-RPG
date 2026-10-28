@@ -44,6 +44,9 @@ GLOBAL_LIST_INIT(rogue_formula_functions, list(
 	var/error
 	var/is_value = FALSE
 	var/number = 0
+	/// File of config/redtard/mechanics/values/ the value is declared in; null for the values of special intents and cleave
+	/// patterns made from their types, which belong to ROGUE_MECHANICS_TYPE_VALUES_FILE.
+	var/source_file
 
 /datum/rogue_formula/New(id, default_text, desc, list/known_inputs, is_value = FALSE)
 	src.id = id

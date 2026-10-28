@@ -1,6 +1,6 @@
 /// What Ratwood's creatures shoot, as TG projectiles (fired by TG's ranged_attacks component, pve/mind.dm). Ratwood's damage,
 /// armor piercing (armour_penetration is the PEN tier the module's armor reads, combat/armor.dm) and side effects; damage
-/// comes from mechanics/values.dm when the projectile is made. A brute projectile hits armor as piercing.
+/// comes from config/redtard/mechanics/values/pve.txt when the projectile is made. A brute projectile hits armor as piercing.
 /obj/projectile/rogue_pve
 	name = "projectile"
 	icon = 'icons/obj/weapons/guns/projectiles.dmi'
@@ -9,7 +9,7 @@
 	armor_flag = BULLET
 	range = 15
 	speed = 1
-	/// Name of the value of mechanics/values.dm with its damage.
+	/// Name of the value of config/redtard/mechanics/values/pve.txt with its damage.
 	var/damage_value
 	/// What is left where it falls (Ratwood reusable projectiles: ammo_type).
 	var/drop_type

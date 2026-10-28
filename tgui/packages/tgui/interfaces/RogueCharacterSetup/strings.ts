@@ -169,6 +169,15 @@ const RU: Record<string, string> = {
   Ears: 'Уши',
   Tail: 'Хвост',
   Horns: 'Рога',
+  // Vibelin's customizers (customizers.tsx): the slots without a TG feature of the name, the colours of a feature.
+  Snout: 'Морда',
+  Neck: 'Шея',
+  Wings: 'Крылья',
+  Colour: 'Цвет',
+  'Reset colours': 'Сбросить цвета',
+  // Vibelin's accent (accents.tsx) and its immortal races' age.
+  Accent: 'Акцент',
+  Immortal: 'Бессмертие',
   'Body markings': 'Узоры на теле',
   'Body type': 'Тип тела',
   'Character Height': 'Рост',

@@ -23,138 +23,161 @@
 	description = "Known to humens for their faith in Malum and their endless toil in brewing alcohol. Prone to bar fights. Their beers are the best in the land."
 	pre_append = "the "
 	species = list("vib_dwarf")
+	rogue_accent = "Dwarf Accent"
 
 /datum/culture/species/dwarf/blackpowder
 	name = "Blackpowder clan"
 	description = "Known to humens as inventors of the modern firearm and explosive. They have strong ties with Grenzelhoft, especially after the rise of Zizo's hordes."
 	pre_append = "the "
 	species = list("vib_dwarf")
+	rogue_accent = "Dwarf Accent"
 
 /datum/culture/species/dwarf/brass
 	name = "Brass clan"
 	description = "Known to humens to be clever inventors, these dwarves are mostly seen around the Isle of Enigma, Vanderlin, and the newly-discovered Hearthhill."
 	pre_append = "the "
 	species = list("vib_dwarf")
+	rogue_accent = "Dwarf Accent"
 
 /datum/culture/species/dwarf/cerargyrite
 	name = "Cerargyrite clan"
 	description = "Known to humens for their unmatched skill in enchanting, these dwarves are among the most common to see outside the Federation."
 	pre_append = "the "
 	species = list("vib_dwarf")
+	rogue_accent = "Dwarf Accent"
 
 /datum/culture/species/dwarf/federation
 	name = "Dwarven Federation"
 	description = "Known to humens to be from the great dwarven clans that span the entire continent of Faience."
 	pre_append = "the "
 	species = list("vib_dwarf")
+	rogue_accent = "Dwarf Accent"
 
 /datum/culture/species/dwarf/iron
 	name = "Iron clan"
 	description = "Known to humens to be capable of incredibly skilled blacksmithing, these dwarves are mostly in the mountains of the Federation, but often travel to sell their wares and prove their skill."
 	pre_append = "the "
 	species = list("vib_dwarf")
+	rogue_accent = "Dwarf Accent"
 
 /datum/culture/species/dwarf/malachite
 	name = "Malachite clan"
 	description = "Known to humens as the premier jewelers of Psydonia, these dwarves are both the primary source of dwarven wedding gems, and the makers of crowns and royal rings."
 	pre_append = "the "
 	species = list("vib_dwarf")
+	rogue_accent = "Dwarf Accent"
 
 /datum/culture/species/dwarf/platinum
 	name = "Platinum clan"
 	description = "Known to humens for their peerless talent as clothiers. Many monarchs strive to adorn themselves in the textiles of the Platinum dwarves."
 	pre_append = "the "
 	species = list("vib_dwarf")
+	rogue_accent = "Dwarf Accent"
 
 /datum/culture/species/elven/costal
 	name = "Coastal Tribes"
 	description = "Known by humens to be haughty, wealthy, disconnected pricks. Much of the culture has since been absorbed by Wintermare. Never ask their opinions on any of the Sea Tribes."
 	pre_append = "the "
 	species = list("vib_elf", "vib_halfelf")
+	rogue_accent = "Elf Accent"
 
 /datum/culture/species/elven/crimson
 	name = "Crimson Tribes"
 	description = "Known by humens to be naive and weak. How they manage to survive the harsh steppe with roaming orc bands is anyone's guess."
 	pre_append = "the "
 	species = list("vib_elf", "vib_halfelf")
+	rogue_accent = "Elf Accent"
 
 /datum/culture/species/elven/desert
 	name = "Desert Tribes"
 	description = "Known by humens to be rebellious and unruly. Assumed to be involved with the Xylixian freemen of Zaladin."
 	pre_append = "the "
 	species = list("vib_elf", "vib_halfelf")
+	rogue_accent = "Elf Accent"
 
 /datum/culture/species/elven/obsidian
 	name = "Obsidian Tribes"
 	description = "Known by humens to be miserably devout Necrans. They worship their holy tree, \"The Waiting Wood,\" praying to its skulls for but a chance to speak to The Veiled Lady herself."
 	pre_append = "the "
 	species = list("vib_elf", "vib_aasimar")
+	rogue_accent = "Elf Accent"
 
 /datum/culture/species/elven/sea
 	name = "Sea Tribes"
 	description = "Known by humens to be cruel, relentless slavers. They say the basalt sands of their home island are stained with blood. Never ask their opinions on any of the Coastal Tribes."
 	pre_append = "the "
 	species = list("vib_elf", "vib_halfelf")
+	rogue_accent = "Elf Accent"
 
 /datum/culture/species/half_orc/blackhammer
 	name = "Blackhammer"
 	description = "Known to humens to be mostly around the borders of Grenzelhoft towards the east. These orcs are both a hazard to Grenzelhoftian troops and a helpful nuisance, smashing apart undead on other fronts. Half-orcs from this tribe exist in an uneasy stalemate with Grenzelhoft, and with the Host of Misfortune."
 	pre_append = ""
 	species = list("vib_halforc", "vib_dwarf_orc")
+	rogue_accent = "Half-Orc Accent"
 
 /datum/culture/species/half_orc/blood_axe
 	name = "Blood Axe"
 	description = "Known to humens as violent and brutal warriors in the Crimsonlands. They believe themselves to be Graggar's chosen. Humen steppesmen avoid their path. Never ask their opinion of the Splitjaw tribe."
 	pre_append = ""
 	species = list("vib_halforc", "vib_dwarf_orc")
+	rogue_accent = "Half-Orc Accent"
 
 /datum/culture/species/half_orc/crescent_fang
 	name = "Crescent Fang"
 	description = "Known to humens to live in the jungle between Grenzelhoft and Zaladin, hating both sides. They are isolationist and rarely engage in trade, preferring instead to take bounties from one of the warring nations to kill members of the other, or take payment to guide travelers across the jungle. They can also be found picking off undead that managed to get stranded in the jungle after Zizo's ascension. Don't ask their opinion on the quicksand rakshari."
 	pre_append = ""
 	species = list("vib_halforc", "vib_dwarf_orc")
+	rogue_accent = "Half-Orc Accent"
 
 /datum/culture/species/half_orc/murkwater
 	name = "Murkwater"
 	description = "Known to humens as an annoyance to both Wintermare and Grenzelhoft, these half-orcs have managed to build a floating city in the waters east of those nations. They have developed a culture of guiding small boats through shallow water using long wooden poles. Rumour has it they take bribes to ferry soldiers behind enemy lines."
 	pre_append = ""
 	species = list("vib_halforc", "vib_dwarf_orc")
+	rogue_accent = "Half-Orc Accent"
 
 /datum/culture/species/half_orc/shatterhorn
 	name = "Shatterhorn"
 	description = "Known to humens as one of the more civilised half-orc tribes, the Shatterhorn live in northern Vanderlin, at the foot of a twin peak mountain. The top of the mountain is cracked, but it still shelters the half-orcs from storms. Oddly enough, Shatterhorn half-orcs gravitate to mountains. They tend to be humble and act as guides to people traveling through the boggy outlands of the region."
 	pre_append = ""
 	species = list("vib_halforc", "vib_dwarf_orc")
+	rogue_accent = "Half-Orc Accent"
 
 /datum/culture/species/half_orc/shellcrest
 	name = "Shellcrest"
 	description = "Known to humens as vicious pirates, the Shellcrest tribe lives off the western coast of Vanderlin and the Isle of Enigma. They're famous for proving that a metal boat can float as well as a wooden one, through complete and utter blind enthusiasm."
 	pre_append = ""
 	species = list("vib_halforc", "vib_dwarf_orc")
+	rogue_accent = "Pirate Accent"
 
 /datum/culture/species/half_orc/skullseeker
 	name = "Skullseeker"
 	description = "Known to humens as one of the wilder half-orc tribes, originating from Ossland. Many of them follow the Great Hunt common in that land. The most valued trophy is a sapient being's head, ensuring reincarnation into a more powerful form."
 	pre_append = ""
 	species = list("vib_halforc", "vib_dwarf_orc")
+	rogue_accent = "Half-Orc Accent"
 
 /datum/culture/species/half_orc/spiritcrusher
 	name = "Spiritcrusher"
 	description = "Known to humens (and elves) as a danger in the darkness throughout Wintermare. These half-orcs live below ground in Subterra, raiding settlements at night and capturing mages, extracting and devouring their lux before battle to temporarily gain their magics. Many a Wintermarian household tells cautionary tales to keep young students indoors with the doors latched, lest the half-orcs come steal their lux."
 	pre_append = ""
 	species = list("vib_halforc", "vib_dwarf_orc")
+	rogue_accent = "Half-Orc Accent"
 
 /datum/culture/species/half_orc/splitjaw
 	name = "Splitjaw"
 	description = "Known to humens as brutal and violent fighters in the Crimsonlands. They believe themselves to be Graggar's chosen. Humen steppesmen avoid their path. Never ask their opinion of the Blood Axe tribe."
 	pre_append = ""
 	species = list("vib_halforc", "vib_dwarf_orc")
+	rogue_accent = "Half-Orc Accent"
 
 /datum/culture/species/halfling
 	name = "Hearthhill"
 	description = "Known by humens to be mostly coin-counting-challenged halflings. They are proud of homely crafts, and often prefer bartering over coin. Violence is a foreign concept to most."
 	pre_append = ""
 	species = list("vib_halfling")
+	rogue_accent = "No Swearing!"
 
 /datum/culture/species/halfling/jaded
 	name = "worldly halflings"
@@ -167,36 +190,42 @@
 	description = "Known by humens to be mainly found in Kruskros, serving the Great-Wyrm. Among kobold races, they're one of those more prone to burrowing, making the less-civilised ones among them a bit of a nuisance when they migrate out of their mountain home."
 	pre_append = "the "
 	species = list("vib_kobold")
+	rogue_accent = "Scale-thing!"
 
 /datum/culture/species/kobold/icepack
 	name = "Icepack tribes"
 	description = "Known to humens as sneaky little bastards, these kobolds evolved in Subterra, learning to be quick and harsher among the difficult wildlife. The Zizo-led drow often use them as miners, when they manage to actually catch the lizards. They're a bit more eccentric and suspicious of strangers compared to the other kobold races, owing to the vigilance demanded of their home."
 	pre_append = "the "
 	species = list("vib_kobold")
+	rogue_accent = "Scale-thing!"
 
 /datum/culture/species/kobold/moonshade
 	name = "Moonshade tribes"
 	description = "Known by humens to originate in the Isle of Enigma, they were often underfoot in Heartfelt and Rockhill before the fall, digging around the great chasm that held Heartfelt's main automaton controller, and living in the massive brass cooling pipes of the machine. Many of them were caught in the fall of Heartfelt, and most of the survivors fled out of the island."
 	pre_append = "the "
 	species = list("vib_kobold")
+	rogue_accent = "Scale-thing!"
 
 /datum/culture/species/kobold/sandswept
 	name = "Sandswept tribes"
 	description = "Known to humens as pests in Kingsfield, with many of them aiming to eat the fossilized tree in the grand church, much to the displeasure of the local aasimar. The tree is what's given these kobolds their pale colour."
 	pre_append = "the "
 	species = list("vib_kobold")
+	rogue_accent = "Scale-thing!"
 
 /datum/culture/species/kobold/stonepaw
 	name = "Stonepaw tribes"
 	description = "Known to humens and dwarves as proficient burrowers from the mountains of the Dwarven Federations, and tend to be hard workers, getting along well with the dwarves, though it varies between groups of kobolds. They mine and burrow as fast as the dwarves, and this habit often carries over even when they leave the mountains. Some migrated to Grenzelhoft with the dwarven population there and promptly became a pest eating the stone foundations of cellars."
 	pre_append = "the "
 	species = list("vib_kobold")
+	rogue_accent = "Scale-thing!"
 
 /datum/culture/species/kobold/sunstreak
 	name = "Sunstreak tribes"
 	description = "Known to humens to be rare and surprisingly skilled, these kobolds evolved in volcanoes, adjusting to the heat and turning the same orange as the lava for camouflage. They are crafters, specialising in glass-blowing, one of the few crafts they beat the taller races at. The leader of any given Sunstreak tribe is the kobold who can make the largest unbroken glass globe. They lose their position if it breaks - or if a jealous rival smashes it."
 	pre_append = "the "
 	species = list("vib_kobold")
+	rogue_accent = "Scale-thing!"
 
 /datum/culture/species/medicator
 	name = "Swamps of Enigma"
@@ -257,42 +286,49 @@
 	description = "Known to humens to have been born of tiefling parents. The resulting child is always a tiefling. They grow up often loved by their tiefling families and communities, and tend to be more well-adjusted emotionally as a result."
 	pre_append = ""
 	species = list("vib_tiefling")
+	rogue_accent = "Tiefling Accent"
 
 /datum/culture/species/tiefling/misfortune
 	name = "the Host of Misfortune"
 	description = "Known to humens as deserters from the war with Zizo in Grenzelhoft. These tieflings may be former soldiers or tieflings from other nations who fled to the lands occupied by the Host. Grenzelhoftians sneer as they pass. Others may look up to them as people who took their futures into their own hands."
 	pre_append = ""
 	species = list("vib_tiefling")
+	rogue_accent = "Tiefling Accent"
 
 /datum/culture/species/tiefling/surprise
 	name = "humen-born origin"
 	description = "Known to humens to have been a cursed child from two non-tiefling parents. These tieflings grow up often rejected by their peers and family as bad omens. Noble families have been cast into shame for having the bad luck to birth a tiefling child."
 	pre_append = ""
 	species = list("vib_tiefling")
+	rogue_accent = "Tiefling Accent"
 
 /datum/culture/species/triton/abyssal
 	name = "Abyssal colonies"
 	description = "Nearly entirely unknown to humens. Those deepest in the darkest depths hear Abyssor's demands for worship, and another voice whispering beneath."
 	pre_append = "the "
 	species = list("vib_triton")
+	rogue_accent = "Triton Accent"
 
 /datum/culture/species/triton/depths
 	name = "Deepwater colonies"
 	description = "Barely known to humens, these triton tend to be solitary hunters. Those who come to the surface are often paranoid, with light-sensitive eyes. This caution makes them excellent guards."
 	pre_append = "the "
 	species = list("vib_triton")
+	rogue_accent = "Triton Accent"
 
 /datum/culture/species/triton/reef
 	name = "Reef colonies"
 	description = "Known to humens to be fond of bright colours, these triton often collect shells and other trinkets to adorn themselves and impress their allies. They perform the most ritualistic traditions of the known triton cultures."
 	pre_append = "the "
 	species = list("vib_triton")
+	rogue_accent = "Triton Accent"
 
 /datum/culture/species/triton/shallows
 	name = "Shallow colonies"
 	description = "Known to humens as the most sociable of triton cultures, they tend to be much more open to trade, and often join ships on their journeys across the seas, saving the lives of many a sailor fallen overboard."
 	pre_append = "the "
 	species = list("vib_triton")
+	rogue_accent = "Triton Accent"
 
 /datum/culture/universal/amber_hollow
 	name = "Amber Hollow"
@@ -313,6 +349,7 @@
 	name = "Grenzelhoft"
 	description = "Known for their mighty weiners, meals, and talented jesters. Potentially some of the most grim, bigoted people one could ever meet. Never ask them their opinions of Wintermare."
 	pre_append = ""
+	rogue_accent = "Grenzelhoft Accent"
 
 /datum/culture/universal/heartfelt
 	name = "Heartfelt"
@@ -328,11 +365,13 @@
 	name = "Ossland"
 	description = "Known for their barbaric traditions and morbid faith, these folk are proud and strong. Never, NEVER touch their skull helms."
 	pre_append = ""
+	rogue_accent = "Ossland Accent"
 
 /datum/culture/universal/rockhill
 	name = "Rockhill"
 	description = "Once a shithole, now an even worse shithole. Located conveniently in the fetid bogs of Enigma, Rockhill has since converted into a militaristic bastion against the Brass Cataclysm. Their diet is interestingly comprised largely of whatever pies they can make."
 	pre_append = ""
+	rogue_accent = "Rockhill Accent"
 
 /datum/culture/universal/valoria
 	name = "Valoria"
@@ -348,8 +387,10 @@
 	name = "Wintermare"
 	description = "Proud, typically wealthy snow-dwellers. Known for their fashion and arcyne academia. Never ask them their opinions of Grenzelhoft."
 	pre_append = ""
+	rogue_accent = "Wintermare Accent"
 
 /datum/culture/universal/zaladin
 	name = "Zaladin"
 	description = "Both feared and respected for the sheer might of their armies, whether slaves or conscripts. Zaladinian heros may walk willingly into shackles for a chance at glory in their gladiator sports."
 	pre_append = ""
+	rogue_accent = "Zalad Accent"

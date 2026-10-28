@@ -329,7 +329,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/turf/closed/wall/mineral/rogue/pipe/corners/four` | 1 |
 | `/turf/closed/wall/mineral/rogue/pipe/corners/one` | 1 |
 
-## structures.dm (539 types)
+## structures.dm (519 types)
 
 | Type | Tiles |
 |---|---|
@@ -378,17 +378,13 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/structure/fluff/walldeco/stone` | 115 |
 | `/obj/structure/fluff/nest` | 112 |
 | `/obj/structure/flora/rogueshroom` | 107 |
-| `/obj/structure/curtain/brown` | 106 |
 | `/obj/structure/flora/roguegrass/thorn_bush` | 103 |
 | `/obj/structure/underworld/barrier` | 96 |
 | `/obj/structure/fluff/statue/gargoyle/moss/candles` | 95 |
 | `/obj/structure/fluff/railing/corner` | 92 |
 | `/obj/structure/flora/newbranch/leafless` | 89 |
-| `/obj/structure/curtain/black` | 86 |
 | `/obj/structure/hotspring` | 83 |
 | `/obj/structure/roguetent` | 78 |
-| `/obj/structure/curtain/directional/black` | 77 |
-| `/obj/structure/curtain/magenta` | 76 |
 | `/obj/structure/fluff/statue/gargoyle/moss` | 76 |
 | `/obj/structure/fluff/walldeco/vinez/red` | 76 |
 | `/obj/structure/fluff/railing/corner/north_east` | 74 |
@@ -408,10 +404,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/structure/fluff/walldeco/psybanner` | 55 |
 | `/obj/structure/flora/ausbushes/grassybush` | 53 |
 | `/obj/structure/fluff/railing/wood/north` | 52 |
-| `/obj/structure/curtain/red` | 51 |
 | `/obj/structure/fermentation_keg/random/beer` | 50 |
-| `/obj/structure/curtain/directional/blue` | 49 |
-| `/obj/structure/curtain/directional/red` | 48 |
 | `/obj/structure/fluff/walldeco/maidendrape` | 48 |
 | `/obj/structure/bars/passage` | 47 |
 | `/obj/structure/fluff/statue/small` | 47 |
@@ -432,7 +425,6 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/structure/far_travel` | 39 |
 | `/obj/structure/fluff/walldeco/psybanner/red` | 39 |
 | `/obj/structure/roguemachine/scomm` | 39 |
-| `/obj/structure/curtain/directional/orange` | 38 |
 | `/obj/structure/fluff/pillow/magenta` | 38 |
 | `/obj/structure/fluff/statue/gargoyle/candles` | 38 |
 | `/obj/machinery/gear_painter` | 36 |
@@ -466,7 +458,6 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/structure/flora/roguetree/stump` | 23 |
 | `/obj/structure/fluff/statue/knight/interior` | 23 |
 | `/obj/structure/fluff/walldeco/painting/seraphina` | 23 |
-| `/obj/structure/curtain/directional/brown` | 22 |
 | `/obj/structure/fluff/clodpile` | 22 |
 | `/obj/structure/fluff/railing/wood/west` | 22 |
 | `/obj/structure/fluff/walldeco/bigpainting/lake` | 22 |
@@ -490,20 +481,17 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/structure/flora/roguegrass/bush/jungle/large` | 17 |
 | `/obj/structure/flora/roguegrass/maneater/real` | 17 |
 | `/obj/structure/fluff/walldeco/painting/queen` | 17 |
-| `/obj/structure/curtain/directional/drab` | 16 |
 | `/obj/structure/flora/roguegrass/herb/artemisia` | 16 |
 | `/obj/structure/fluff/littlebanners/bluewhite` | 16 |
 | `/obj/structure/fluff/psycross/copper` | 16 |
 | `/obj/structure/fluff/walldeco/vinez/offset` | 16 |
 | `/obj/structure/roguemachine/withdraw` | 16 |
-| `/obj/structure/curtain/directional/yellow` | 15 |
 | `/obj/structure/flora/roguegrass/herb/symphitum` | 15 |
 | `/obj/structure/fluff/alch` | 15 |
 | `/obj/structure/fluff/psycross/crafted` | 15 |
 | `/obj/structure/fluff/statue` | 15 |
 | `/obj/structure/fluff/walldeco/rpainting` | 15 |
 | `/obj/structure/roguemachine/vendor` | 15 |
-| `/obj/structure/curtain/directional/crafted` | 14 |
 | `/obj/structure/fluff/walldeco/bath/wallrope` | 14 |
 | `/obj/structure/hotspring/border/two` | 14 |
 | `/obj/structure/pillory` | 14 |
@@ -523,13 +511,11 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/structure/rogue/trophy/deer` | 13 |
 | `/obj/structure/bars/shop` | 12 |
 | `/obj/structure/bondage/x_pillory` | 12 |
-| `/obj/structure/curtain/green` | 12 |
 | `/obj/structure/flora/hotspring_rocks/grassy` | 12 |
 | `/obj/structure/flora/roguegrass/jungle/sparse` | 12 |
 | `/obj/structure/fluff/statue/knightalt/r` | 12 |
 | `/obj/structure/fluff/walldeco/fakewall` | 12 |
 | `/obj/structure/composter/halffull` | 11 |
-| `/obj/structure/curtain/directional/green` | 11 |
 | `/obj/structure/deadbody/peasant` | 11 |
 | `/obj/structure/flora/roguegrass/herb/manabloom` | 11 |
 | `/obj/structure/flora/roguegrass/herb/valeriana` | 11 |
@@ -565,7 +551,6 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/structure/roguemachine/mail/l` | 9 |
 | `/obj/structure/bonepile` | 8 |
 | `/obj/structure/bookcase/random_recipes` | 8 |
-| `/obj/structure/curtain/blue` | 8 |
 | `/obj/structure/flora/roguegrass/herb/urtica` | 8 |
 | `/obj/structure/fluff/customsign/arrow` | 8 |
 | `/obj/structure/hotspring/border/seven` | 8 |
@@ -654,8 +639,6 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/structure/bondage/torture_table` | 3 |
 | `/obj/structure/composter` | 3 |
 | `/obj/structure/composter/full` | 3 |
-| `/obj/structure/curtain/directional/magenta` | 3 |
-| `/obj/structure/curtain/yellow` | 3 |
 | `/obj/structure/deadbody/adventurer_leather` | 3 |
 | `/obj/structure/deadbody/greater_skeleton` | 3 |
 | `/obj/structure/deadbody/rogue` | 3 |
@@ -683,8 +666,6 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/structure/boatbell/fluff` | 2 |
 | `/obj/structure/bookcase/player_archive` | 2 |
 | `/obj/structure/broadcast_horn/paid` | 2 |
-| `/obj/structure/curtain/drab` | 2 |
-| `/obj/structure/curtain/orange` | 2 |
 | `/obj/structure/deadbody/old_knight` | 2 |
 | `/obj/structure/feedinghole` | 2 |
 | `/obj/structure/fermentation_keg/sourwine` | 2 |
@@ -728,7 +709,6 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/structure/broadcast_horn/loudmouth` | 1 |
 | `/obj/structure/broadcast_horn/loudmouth/guest` | 1 |
 | `/obj/structure/crabnest` | 1 |
-| `/obj/structure/curtain/purple` | 1 |
 | `/obj/structure/deadbody/necromancer` | 1 |
 | `/obj/structure/deadbody/warden` | 1 |
 | `/obj/structure/deadbody/wizard` | 1 |
@@ -1033,7 +1013,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/effect/lily_petal` | 1 |
 | `/obj/effect/lily_petal/three` | 1 |
 
-## items.dm (3130 types)
+## items.dm (3137 types)
 
 | Type | Tiles |
 |---|---|
@@ -2293,9 +2273,11 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/storage/keyring/manor/counsilroom/iii` | 1 |
 | `/obj/item/storage/keyring/priest` | 1 |
 | `/obj/item/toy/cards/deck/tarot/majorarcana` | 1 |
+| `/obj/item/alch` | 0 |
 | `/obj/item/alch/artemisia` | 0 |
 | `/obj/item/alch/atropa` | 0 |
 | `/obj/item/alch/benedictus` | 0 |
+| `/obj/item/alch/berrypowder` | 0 |
 | `/obj/item/alch/blessedseedpowder` | 0 |
 | `/obj/item/alch/bloomstone` | 0 |
 | `/obj/item/alch/euphrasia` | 0 |
@@ -2303,7 +2285,11 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/alch/manabloompowder` | 0 |
 | `/obj/item/alch/matricaria` | 0 |
 | `/obj/item/alch/mentha` | 0 |
+| `/obj/item/alch/ozium` | 0 |
 | `/obj/item/alch/paris` | 0 |
+| `/obj/item/alch/puresalt` | 0 |
+| `/obj/item/alch/seeddust` | 0 |
+| `/obj/item/alch/sinew` | 0 |
 | `/obj/item/alch/stonedust` | 0 |
 | `/obj/item/alch/symphitum` | 0 |
 | `/obj/item/alch/taraxacum` | 0 |
@@ -3249,6 +3235,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow` | 0 |
 | `/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow/stalker` | 0 |
 | `/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow/stalker/lesser` | 0 |
+| `/obj/item/herbseed` | 0 |
 | `/obj/item/herbseed/artemisia` | 0 |
 | `/obj/item/herbseed/atropa` | 0 |
 | `/obj/item/herbseed/benedictus` | 0 |
@@ -4908,13 +4895,6 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 - `modular_redtard/rockhill/icons/turf/roguewall.dmi` from Ratwood `icons/turf/roguewall.dmi`
 - `modular_redtard/rockhill/icons/turf/walls/stone_wall.dmi` from Ratwood `icons/turf/walls/stone_wall.dmi`
 
-## Restricted assets (not copied)
-
-Their folder carries a proprietary licence that forbids redistribution and use outside Ratwood (`port.assets.restricted_licenses`). The port never copies them; the types that use them get no sprite.
-
-- `icons/roguetown/clothing/licensed-infraredbaron/LICENSE.md`: `/obj/item/clothing/cloak/citywatch`, `/obj/item/clothing/head/roguetown/duchess_hood`, `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/duchess`, `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/duke`, `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/hand`, `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/heir`, `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/heiress`, `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/magos`, `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/steward`
-- `modular_deserttown/icons/clothing/LICENSE.md`: `/obj/item/clothing/head/roguetown/turban`, `/obj/item/clothing/head/roguetown/turban/fancypurple`, `/obj/item/clothing/mask/rogue/exoticsilkmask/green`, `/obj/item/clothing/mask/rogue/exoticsilkmask/red`, `/obj/item/clothing/suit/roguetown/shirt/dress/thawb/beige`, `/obj/item/clothing/suit/roguetown/shirt/exoticsilkbra/green`, `/obj/item/clothing/suit/roguetown/shirt/exoticsilkbra/red`, `/obj/item/clothing/suit/roguetown/shirt/robe/bisht/beige`, `/obj/item/clothing/suit/roguetown/shirt/robe/bisht/bluegrey`, `/obj/item/clothing/under/roguetown/sirwal`, `/obj/item/clothing/under/roguetown/thong`, `/obj/item/storage/belt/rogue/leather/cloth/sash`, `/obj/item/storage/belt/rogue/leather/exoticsilkbelt/skirtgreen`, `/obj/item/storage/belt/rogue/leather/exoticsilkbelt/skirtred`, `/obj/item/storage/belt/rogue/leather/noblesash`
-
 ## Items without a world sprite (44)
 
 Ratwood names an `icon_state` its sheet does not have (a sprite chosen at runtime, or a broken one). The port writes `icon_state = null`, as TG does for an item with no sprite, so the TG icon tests pass and the item stays listed here.
@@ -4923,28 +4903,28 @@ Ratwood names an `icon_state` its sheet does not have (a sprite chosen at runtim
 |---|---|---|
 | `/obj/item/book/rogue/secret/xylix` | `modular_redtard/rockhill/icons/roguetown/items/books.dmi` | `xylix_0` |
 | `/obj/item/clothing/cloak/cape/rogue` | `modular_redtard/rockhill/icons/roguetown/clothing/cloaks.dmi` | `roguecape` |
-| `/obj/item/clothing/cloak/citywatch` | `restricted licence` | `citywatch_cape` |
-| `/obj/item/clothing/head/roguetown/duchess_hood` | `restricted licence` | `duchess_hood` |
-| `/obj/item/clothing/head/roguetown/turban` | `restricted licence` | `turban` |
-| `/obj/item/clothing/head/roguetown/turban/fancypurple` | `restricted licence` | `purple_hood` |
+| `/obj/item/clothing/cloak/citywatch` | `excluded folder` | `citywatch_cape` |
+| `/obj/item/clothing/head/roguetown/duchess_hood` | `excluded folder` | `duchess_hood` |
+| `/obj/item/clothing/head/roguetown/turban` | `excluded folder` | `turban` |
+| `/obj/item/clothing/head/roguetown/turban/fancypurple` | `excluded folder` | `purple_hood` |
 | `/obj/item/clothing/mask/cigarette/rollie/zigar/cheroot` | `modular_redtard/rockhill/icons/roguetown/items/lighting.dmi` | `stogieoff` |
-| `/obj/item/clothing/mask/rogue/exoticsilkmask/green` | `restricted licence` | `exoticsilkmaskg` |
-| `/obj/item/clothing/mask/rogue/exoticsilkmask/red` | `restricted licence` | `exoticsilkmaskr` |
-| `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/duchess` | `restricted licence` | `duchess` |
-| `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/duke` | `restricted licence` | `duke` |
-| `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/hand` | `restricted licence` | `hand` |
-| `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/heir` | `restricted licence` | `heir` |
-| `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/heiress` | `restricted licence` | `heiress` |
-| `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/magos` | `restricted licence` | `magos` |
-| `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/steward` | `restricted licence` | `steward` |
-| `/obj/item/clothing/suit/roguetown/shirt/dress/thawb/beige` | `restricted licence` | `thawb` |
-| `/obj/item/clothing/suit/roguetown/shirt/exoticsilkbra/green` | `restricted licence` | `exoticsilkbrag` |
-| `/obj/item/clothing/suit/roguetown/shirt/exoticsilkbra/red` | `restricted licence` | `exoticsilkbrar` |
-| `/obj/item/clothing/suit/roguetown/shirt/robe/bisht/beige` | `restricted licence` | `greythawb` |
-| `/obj/item/clothing/suit/roguetown/shirt/robe/bisht/bluegrey` | `restricted licence` | `bluethawb` |
+| `/obj/item/clothing/mask/rogue/exoticsilkmask/green` | `excluded folder` | `exoticsilkmaskg` |
+| `/obj/item/clothing/mask/rogue/exoticsilkmask/red` | `excluded folder` | `exoticsilkmaskr` |
+| `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/duchess` | `excluded folder` | `duchess` |
+| `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/duke` | `excluded folder` | `duke` |
+| `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/hand` | `excluded folder` | `hand` |
+| `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/heir` | `excluded folder` | `heir` |
+| `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/heiress` | `excluded folder` | `heiress` |
+| `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/magos` | `excluded folder` | `magos` |
+| `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/steward` | `excluded folder` | `steward` |
+| `/obj/item/clothing/suit/roguetown/shirt/dress/thawb/beige` | `excluded folder` | `thawb` |
+| `/obj/item/clothing/suit/roguetown/shirt/exoticsilkbra/green` | `excluded folder` | `exoticsilkbrag` |
+| `/obj/item/clothing/suit/roguetown/shirt/exoticsilkbra/red` | `excluded folder` | `exoticsilkbrar` |
+| `/obj/item/clothing/suit/roguetown/shirt/robe/bisht/beige` | `excluded folder` | `greythawb` |
+| `/obj/item/clothing/suit/roguetown/shirt/robe/bisht/bluegrey` | `excluded folder` | `bluethawb` |
 | `/obj/item/clothing/suit/roguetown/shirt/undershirt/easttats` | `modular_redtard/rockhill/icons/roguetown/clothing/shirts.dmi` | `easttats` |
-| `/obj/item/clothing/under/roguetown/sirwal` | `restricted licence` | `sirwal` |
-| `/obj/item/clothing/under/roguetown/thong` | `restricted licence` | `thong` |
+| `/obj/item/clothing/under/roguetown/sirwal` | `excluded folder` | `sirwal` |
+| `/obj/item/clothing/under/roguetown/thong` | `excluded folder` | `thong` |
 | `/obj/item/mobilestove` | `modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi` | `hobostovep` |
 | `/obj/item/natural/rock/random_ore` | `modular_redtard/rockhill/icons/roguetown/items/natural.dmi` | `stonerandom` |
 | `/obj/item/reagent_containers/food/snacks/fat/salo/slice` | `modular_redtard/rockhill/icons/modular/Neu_Food/icons/others/preserved_meat.dmi` | `saloslice` |
@@ -4958,10 +4938,10 @@ Ratwood names an `icon_state` its sheet does not have (a sprite chosen at runtim
 | `/obj/item/roguekey` | `modular_redtard/rockhill/icons/roguetown/items/keys.dmi` | `iron` |
 | `/obj/item/rogueweapon/hammer` | `modular_redtard/rockhill/icons/roguetown/weapons/tools.dmi` | `hammer` |
 | `/obj/item/rogueweapon/woodstaff/implement/greater/sojourner` | `modular_redtard/rockhill/icons/obj/items/staffs.dmi` | `psystaff` |
-| `/obj/item/storage/belt/rogue/leather/cloth/sash` | `restricted licence` | `sashgrey` |
-| `/obj/item/storage/belt/rogue/leather/exoticsilkbelt/skirtgreen` | `restricted licence` | `exoticsilkskirt2` |
-| `/obj/item/storage/belt/rogue/leather/exoticsilkbelt/skirtred` | `restricted licence` | `exoticsilkskirt` |
-| `/obj/item/storage/belt/rogue/leather/noblesash` | `restricted licence` | `noblesash` |
+| `/obj/item/storage/belt/rogue/leather/cloth/sash` | `excluded folder` | `sashgrey` |
+| `/obj/item/storage/belt/rogue/leather/exoticsilkbelt/skirtgreen` | `excluded folder` | `exoticsilkskirt2` |
+| `/obj/item/storage/belt/rogue/leather/exoticsilkbelt/skirtred` | `excluded folder` | `exoticsilkskirt` |
+| `/obj/item/storage/belt/rogue/leather/noblesash` | `excluded folder` | `noblesash` |
 | `/obj/item/undies/loinclothunder` | `modular_redtard/rockhill/icons/roguetown/items/misc.dmi` | `loinclothunder` |
 | `/obj/machinery/light/rogue` | `modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi` | `tube` |
 | `/obj/machinery/light/rogue/campfire/pyre` | `modular_redtard/rockhill/icons/roguetown/misc/tallstructure.dmi` | `pyre1` |
@@ -5447,6 +5427,7 @@ Area music and ambience are kept in the repository, as Ratwood keeps them, and r
 
 ## Sounds
 
+- `modular_redtard/rockhill/sound/blank.ogg` from Ratwood `sound/blank.ogg`
 - `modular_redtard/rockhill/sound/combat/Ranged/bow-draw-01.ogg` from Ratwood `sound/combat/Ranged/bow-draw-01.ogg`
 - `modular_redtard/rockhill/sound/combat/Ranged/crossbow-small-shot-02.ogg` from Ratwood `sound/combat/Ranged/crossbow-small-shot-02.ogg`
 - `modular_redtard/rockhill/sound/combat/Ranged/crossbow_big_shot.ogg` from Ratwood `sound/combat/Ranged/crossbow_big_shot.ogg`
@@ -5564,16 +5545,22 @@ Area music and ambience are kept in the repository, as Ratwood keeps them, and r
 - `modular_redtard/rockhill/sound/combat/shieldbash_wood.ogg` from Ratwood `sound/combat/shieldbash_wood.ogg`
 - `modular_redtard/rockhill/sound/combat/shove.ogg` from Ratwood `sound/combat/shove.ogg`
 - `modular_redtard/rockhill/sound/combat/swingdelay_disrupted.ogg` from Ratwood `sound/combat/swingdelay_disrupted.ogg`
+- `modular_redtard/rockhill/sound/foley/breaksound.ogg` from Ratwood `sound/foley/breaksound.ogg`
 - `modular_redtard/rockhill/sound/foley/cloth_rip.ogg` from Ratwood `sound/foley/cloth_rip.ogg`
 - `modular_redtard/rockhill/sound/foley/coinphy (1).ogg` from Ratwood `sound/foley/coinphy (1).ogg`
 - `modular_redtard/rockhill/sound/foley/coinphy (2).ogg` from Ratwood `sound/foley/coinphy (2).ogg`
 - `modular_redtard/rockhill/sound/foley/coins1.ogg` from Ratwood `sound/foley/coins1.ogg`
 - `modular_redtard/rockhill/sound/foley/doors/creak.ogg` from Ratwood `sound/foley/doors/creak.ogg`
+- `modular_redtard/rockhill/sound/foley/doors/curtain.ogg` from Ratwood `sound/foley/doors/curtain.ogg`
 - `modular_redtard/rockhill/sound/foley/doors/lockmetal.ogg` from Ratwood `sound/foley/doors/lockmetal.ogg`
 - `modular_redtard/rockhill/sound/foley/grindblade.ogg` from Ratwood `sound/foley/grindblade.ogg`
 - `modular_redtard/rockhill/sound/foley/ladder.ogg` from Ratwood `sound/foley/ladder.ogg`
 - `modular_redtard/rockhill/sound/foley/latch.ogg` from Ratwood `sound/foley/latch.ogg`
 - `modular_redtard/rockhill/sound/foley/nockarrow.ogg` from Ratwood `sound/foley/nockarrow.ogg`
+- `modular_redtard/rockhill/sound/foley/plantcross1.ogg` from Ratwood `sound/foley/plantcross1.ogg`
+- `modular_redtard/rockhill/sound/foley/plantcross2.ogg` from Ratwood `sound/foley/plantcross2.ogg`
+- `modular_redtard/rockhill/sound/foley/plantcross3.ogg` from Ratwood `sound/foley/plantcross3.ogg`
+- `modular_redtard/rockhill/sound/foley/plantcross4.ogg` from Ratwood `sound/foley/plantcross4.ogg`
 - `modular_redtard/rockhill/sound/foley/sewflesh.ogg` from Ratwood `sound/foley/sewflesh.ogg`
 - `modular_redtard/rockhill/sound/foley/slap.ogg` from Ratwood `sound/foley/slap.ogg`
 - `modular_redtard/rockhill/sound/foley/slingload.ogg` from Ratwood `sound/foley/slingload.ogg`
@@ -5594,8 +5581,12 @@ Area music and ambience are kept in the repository, as Ratwood keeps them, and r
 - `modular_redtard/rockhill/sound/items/gem.ogg` from Ratwood `sound/items/gem.ogg`
 - `modular_redtard/rockhill/sound/items/quench_barrel1.ogg` from Ratwood `sound/items/quench_barrel1.ogg`
 - `modular_redtard/rockhill/sound/items/quench_barrel2.ogg` from Ratwood `sound/items/quench_barrel2.ogg`
+- `modular_redtard/rockhill/sound/misc/adrenaline_rush.ogg` from Ratwood `sound/misc/adrenaline_rush.ogg`
 - `modular_redtard/rockhill/sound/misc/area.ogg` from Ratwood `sound/misc/area.ogg`
 - `modular_redtard/rockhill/sound/misc/beep.ogg` from Ratwood `sound/misc/beep.ogg`
+- `modular_redtard/rockhill/sound/misc/bleed (1).ogg` from Ratwood `sound/misc/bleed (1).ogg`
+- `modular_redtard/rockhill/sound/misc/bleed (2).ogg` from Ratwood `sound/misc/bleed (2).ogg`
+- `modular_redtard/rockhill/sound/misc/bleed (3).ogg` from Ratwood `sound/misc/bleed (3).ogg`
 - `modular_redtard/rockhill/sound/misc/chestclose.ogg` from Ratwood `sound/misc/chestclose.ogg`
 - `modular_redtard/rockhill/sound/misc/chestopen.ogg` from Ratwood `sound/misc/chestopen.ogg`
 - `modular_redtard/rockhill/sound/misc/coindispense.ogg` from Ratwood `sound/misc/coindispense.ogg`
@@ -5624,6 +5615,12 @@ Area music and ambience are kept in the repository, as Ratwood keeps them, and r
 - `modular_redtard/rockhill/sound/misc/smelter_fin.ogg` from Ratwood `sound/misc/smelter_fin.ogg`
 - `modular_redtard/rockhill/sound/misc/smelter_sound.ogg` from Ratwood `sound/misc/smelter_sound.ogg`
 - `modular_redtard/rockhill/sound/misc/surrender.ogg` from Ratwood `sound/misc/surrender.ogg`
+- `modular_redtard/rockhill/sound/misc/treefall.ogg` from Ratwood `sound/misc/treefall.ogg`
+- `modular_redtard/rockhill/sound/misc/woodhit.ogg` from Ratwood `sound/misc/woodhit.ogg`
+- `modular_redtard/rockhill/sound/vo/mobs/plant/pain (1).ogg` from Ratwood `sound/vo/mobs/plant/pain (1).ogg`
+- `modular_redtard/rockhill/sound/vo/mobs/plant/pain (2).ogg` from Ratwood `sound/vo/mobs/plant/pain (2).ogg`
+- `modular_redtard/rockhill/sound/vo/mobs/plant/pain (3).ogg` from Ratwood `sound/vo/mobs/plant/pain (3).ogg`
+- `modular_redtard/rockhill/sound/vo/mobs/plant/pain (4).ogg` from Ratwood `sound/vo/mobs/plant/pain (4).ogg`
 - `modular_redtard/rockhill/sound/weather/rain/thunder_1.ogg` from Ratwood `sound/weather/rain/thunder_1.ogg`
 - `modular_redtard/rockhill/sound/weather/rain/thunder_2.ogg` from Ratwood `sound/weather/rain/thunder_2.ogg`
 - `modular_redtard/rockhill/sound/weather/rain/thunder_3.ogg` from Ratwood `sound/weather/rain/thunder_3.ogg`

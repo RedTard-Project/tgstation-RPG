@@ -119,11 +119,17 @@
 	var/mob/living/owner = hud_owner?.mymob
 	if(isliving(owner))
 		RegisterSignals(owner, list(COMSIG_MOB_ROGUE_INTENT_CHANGED, COMSIG_MOB_SWAP_HANDS, COMSIG_MOB_UPDATE_HELD_ITEMS), PROC_REF(on_intents_changed))
-	update_appearance(UPDATE_OVERLAYS)
+	update_appearance(UPDATE_ICON_STATE|UPDATE_OVERLAYS)
 
 /atom/movable/screen/rogue/weapon_intents/proc/on_intents_changed(datum/source)
 	SIGNAL_HANDLER
-	update_appearance(UPDATE_OVERLAYS)
+	update_appearance(UPDATE_ICON_STATE|UPDATE_OVERLAYS)
+
+/// A hand with no intents at all shows no grid rather than its empty boxes.
+/atom/movable/screen/rogue/weapon_intents/update_icon_state()
+	var/mob/living/owner = get_mob()
+	icon_state = (isliving(owner) && length(owner.rogue_hand_intents())) ? initial(icon_state) : ""
+	return ..()
 
 /atom/movable/screen/rogue/weapon_intents/update_overlays()
 	. = ..()
@@ -265,38 +271,50 @@
 		return
 	user.check_self_for_injuries()
 
+/// The heart as Ratwood PR 2546 (trueroguan) draws it: the heart empties with the blood lost, and poison, suffocation
+/// and pain show over it, bleeding or not.
 /atom/movable/screen/healths/rogue/proc/update_for(mob/living/owner)
 	cut_overlays()
 	if(owner.stat == DEAD)
 		icon_state = "damelse"
 		return
+	icon_state = heart_state(owner)
+	for(var/layer_state in heart_layers(owner))
+		add_overlay(layer_state)
+
+/// The heart by the blood lost, in steps of ten percent.
+/atom/movable/screen/healths/rogue/proc/heart_state(mob/living/owner)
 	var/blood_loss = 0
 	if(CAN_HAVE_BLOOD(owner))
 		blood_loss = (BLOOD_VOLUME_NORMAL - owner.get_blood_volume(apply_modifiers = TRUE)) / BLOOD_VOLUME_NORMAL * 100
-	if(blood_loss > 0)
-		var/rounded_loss = round(blood_loss, 10)
-		icon_state = rounded_loss <= 80 ? "dam[rounded_loss]" : "damelse"
-		return
-	icon_state = "dam0"
-	var/tox_state = loss_overlay_state("toxloss", owner.get_tox_loss())
-	if(tox_state)
-		add_overlay(tox_state)
-	var/oxy_state = loss_overlay_state("oxyloss", owner.get_oxy_loss())
-	if(oxy_state)
-		add_overlay(oxy_state)
+	if(blood_loss <= 0)
+		return "dam0"
+	var/rounded_loss = round(blood_loss, 10)
+	return rounded_loss <= 80 ? "dam[rounded_loss]" : "damelse"
 
-/atom/movable/screen/healths/rogue/proc/loss_overlay_state(prefix, amount)
-	if(amount < 1)
+/// The poison, suffocation and pain layers over the heart (PR 2546 get_heart_indicator_state() with its steps).
+/atom/movable/screen/healths/rogue/proc/heart_layers(mob/living/owner)
+	. = list()
+	for(var/layer_state in list(
+		heart_layer_state("toxloss", owner.get_tox_loss(), 21, 50),
+		heart_layer_state("oxyloss", owner.get_oxy_loss(), 21, 50),
+		heart_layer_state("painloss", owner.rogue_heart_pain(), 30, 60),
+	))
+		if(layer_state)
+			. += layer_state
+
+/atom/movable/screen/healths/rogue/proc/heart_layer_state(prefix, value, step40, step60)
+	if(value <= 0)
 		return null
-	if(amount < 21)
-		return "[prefix]20"
-	if(amount < 50)
-		return "[prefix]40"
-	if(amount < 80)
-		return "[prefix]60"
-	if(amount < 100)
+	if(value >= 100)
+		return "[prefix]100"
+	if(value >= 80)
 		return "[prefix]80"
-	return "[prefix]100"
+	if(value >= step60)
+		return "[prefix]60"
+	if(value >= step40)
+		return "[prefix]40"
+	return "[prefix]20"
 
 /atom/movable/screen/stamina/rogue
 	icon = ROGUE_HUD_ICON_HEAT
@@ -576,6 +594,18 @@
 	. -= list("lhandactive", "rhandactive")
 	if(held_index && held_index == get_mob()?.active_hand_index)
 		. += "hand_active"
+
+/// As Ratwood, a worn thing dragged onto an empty hand goes into it: the only way to take off what a click uses instead (a
+/// scabbard draws its blade when clicked, so the sheathed sword's scabbard would never leave the belt).
+/atom/movable/screen/inventory/hand/rogue/mouse_drop_receive(atom/dropped, mob/user, params)
+	if(!isitem(dropped) || user != get_mob() || !held_index)
+		return
+	var/obj/item/worn = dropped
+	if(worn.loc != user || user.is_holding(worn) || user.get_item_for_held_index(held_index))
+		return
+	if(!user.can_perform_action(worn, FORBID_TELEKINESIS_REACH))
+		return
+	user.putItemFromInventoryInHandIfPossible(worn, held_index)
 
 /atom/movable/screen/inventory/rogue
 	layer = ROGUE_HUD_LAYER

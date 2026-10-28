@@ -1,0 +1,152 @@
+# Treasury (economy/, block 7a): funds, loans, poll tax, charters, the Crown's solvency.
+# Mechanics numbers: name = value, described by the # lines right above it; times are in deciseconds. The build compiles this file in, so its numbers are the defaults; a file of the same name in config/redtard_private/mechanics/values/ is read instead when present.
+
+# Mammons in the Church Fund at round start (Ratwood CHURCH_FUND_SEED).
+treasury_church_seed = 1000
+
+# Mammons in the Merchant Fund at round start (Ratwood MERCHANT_FUND_SEED).
+treasury_merchant_seed = 500
+
+# Mammons in the Bathhouse Fund at round start (Ratwood BATHHOUSE_FUND_SEED).
+treasury_bathhouse_seed = 500
+
+# Mammons in the Tavern Earnings at round start (Ratwood INNKEEPER_FUND_SEED).
+treasury_tavern_seed = 0
+
+# Last day (dawns since round start) on which loans and indentures may be drafted (Ratwood loan_max_issuance_day).
+treasury_loan_last_day = 5
+
+# Smallest personal loan a JAWBANK writes.
+treasury_loan_personal_min = 50
+
+# Largest personal loan a JAWBANK writes.
+treasury_loan_personal_max = 500
+
+# Smallest indenture between two institutions.
+treasury_indenture_min = 501
+
+# Largest indenture between two institutions.
+treasury_indenture_max = 2000
+
+# Longest term of a loan or indenture, in dawns.
+treasury_loan_term_max = 3
+
+# Deciseconds an unsigned loan writ, indenture or patronage writ lasts before it crumbles (Ratwood 2 minutes).
+treasury_writ_lifetime = 1200
+
+# Mammons the Church keeps for charity, less the principal it has out in loans (Ratwood CHURCH_RESERVE_FLOOR).
+treasury_church_reserve = 1000
+
+# The Crown's JAWBANK spills no coin below this balance when struck (Ratwood bash_floor).
+treasury_crown_bash_floor = 1500
+
+# The Church's, merchants' and bathhouse JAWBANKs spill no coin below this balance.
+treasury_fund_bash_floor = 500
+
+# The tavern's JAWBANK spills no coin below this balance (Ratwood INNKEEPER_BASH_FLOOR).
+treasury_tavern_bash_floor = 300
+
+# Blows that spill coin before a JAWBANK coughs up a lump sum (Ratwood lump_hit_threshold).
+treasury_bash_lump_hits = 10
+
+# Lump sum the Crown's JAWBANK spills.
+treasury_crown_lump = 200
+
+# Lump sum the Church's, merchants' and bathhouse JAWBANKs spill.
+treasury_fund_lump = 100
+
+# Lump sum the tavern's JAWBANK spills (Ratwood INNKEEPER_LUMP_PAYOUT).
+treasury_tavern_lump = 50
+
+# Deciseconds without a blow after which a JAWBANK forgets the blows counted toward a lump sum (Ratwood 1 minute).
+treasury_bash_reset = 600
+
+# Mammons a bathhouse attendant may draw from its fund each day until the Bathmaster changes it.
+treasury_bathhouse_worker_limit = 50
+
+# Mammons an agent of the bathhouse may draw from its fund each day until the Bathmaster changes it.
+treasury_bathhouse_agent_limit = 50
+
+# Most Benefactors of the Church at once (Ratwood PATRON_CAP_CHURCH).
+treasury_patron_cap_church = 20
+
+# Most agents of the trading company at once (Ratwood PATRON_CAP_MERCHANT).
+treasury_patron_cap_merchant = 5
+
+# Most agents of the bathhouse at once (Ratwood PATRON_CAP_BATHHOUSE).
+treasury_patron_cap_bathhouse = 5
+
+# Deciseconds between two patronage writs of one JAWBANK.
+treasury_patron_writ_cooldown = 300
+
+# Highest poll tax a head per dawn (Ratwood POLL_TAX_MAX_RATE).
+treasury_poll_max_rate = 40
+
+# Highest Crown subsidy a head per dawn (Ratwood POLL_TAX_MAX_SUBSIDY).
+treasury_poll_max_subsidy = 60
+
+# Dawns of unpaid poll tax after which a subject is marked in arrears.
+treasury_poll_arrears_days = 2
+
+# Most dawns of poll tax a subject may pay ahead.
+treasury_poll_advance_max = 7
+
+# Poll tax a dawn paid ahead by a class the Crown does not tax yet.
+treasury_poll_advance_fallback = 10
+
+# Deciseconds after round start before poll tax may be paid ahead.
+treasury_poll_advance_lockout = 6000
+
+# Share of a subject's balance one fine may take (Ratwood GENERIC_RATE_CAP); outlaws are uncapped.
+treasury_fine_cap = 0.75
+
+# Share of the balance one levy or fine may take from those the Golden Bull shields.
+treasury_bull_cap = 0.25
+
+# Most mammons a day the Golden Bull lets the Crown fine one it shields.
+treasury_bull_fine_cap = 50
+
+# Most poll tax a dawn of a burgher under the Golden Bull.
+treasury_bull_poll_cap = 20
+
+# Most poll tax a dawn of scholars and healers under the Covenant of Noc & Pestra.
+treasury_covenant_poll_cap = 10
+
+# Most poll tax a dawn of mercenaries under the Guild Charter of Arms.
+treasury_arms_poll_cap = 15
+
+# Share of every taxed sale the Zenitstadt Concordat tithes from the Crown's Purse to the Church, and the lowest levy it allows.
+treasury_concordat_tithe = 0.05
+
+# Deciseconds before a charter can change again (Ratwood DECREE_COOLDOWN, 30 minutes).
+treasury_decree_cooldown = 18000
+
+# Least the Burghers advance when the Crown cannot meet its payroll (Ratwood TREASURY_ARREARS_LOAN).
+treasury_arrears_advance = 1000
+
+# Operating reserve the Crown's Purse is reset to under sequestration; income below it is not taken for the debt.
+treasury_sequestration_floor = 2500
+
+# Debt a sequestration adds (Ratwood BANKRUPTCY_DEBT_FLAT).
+treasury_sequestration_debt = 5000
+
+# Share of a stockpile good's limit kept before export under sequestration.
+treasury_sequestration_export_share = 0.25
+
+# Suspended charters the ruler may restore at once after a sequestration.
+treasury_concession_picks = 3
+
+# The Crown's Purse is topped up to this when a sequestration lifts.
+treasury_recovery_purse = 1500
+
+# Smallest emergency loan of the trading company to the Crown.
+treasury_ftc_loan_min = 500
+
+# Largest emergency loan of the trading company to the Crown.
+treasury_ftc_loan_max = 1500
+
+# From this day (dawns since round start) on the trading company lends the Crown nothing.
+treasury_ftc_loan_closed_day = 5
+
+# Interest of the trading company's emergency loan, added to the debt at once.
+treasury_ftc_loan_interest = 0.25

@@ -1,5 +1,5 @@
 // Trade on medieval maps (economy/trade*.dm, harbor.dm, standing_orders.dm and the coin machines): Ratwood's Economy 3 states
-// and fixed shapes. Tuning numbers are mechanics values ("trade_*", mechanics/values.dm).
+// and fixed shapes. Tuning numbers are mechanics values ("trade_*", config/redtard/mechanics/values/trade.txt).
 
 /// Crown levies the trade code adds to the treasury's levies (Ratwood TAX_CATEGORY_HEADEATER_LEVY, TAX_CATEGORY_EXPORT_DUTY).
 #define ROGUE_TAX_HEADEATER "headeater levy"

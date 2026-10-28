@@ -1,0 +1,149 @@
+# Trade (economy/, block 7b): price by quality, regions, standing orders, ships and the harbor, coin machines.
+# Mechanics numbers: name = value, described by the # lines right above it; times are in deciseconds. The build compiles this file in, so its numbers are the defaults; a file of the same name in config/redtard_private/mechanics/values/ is read instead when present.
+
+# Price factor of a ruined item (Ratwood ITEM_QUALITY_MULT_RUINED).
+trade_quality_ruined = 0.2
+
+# Price factor of an awful item (Ratwood ITEM_QUALITY_MULT_AWFUL).
+trade_quality_awful = 0.35
+
+# Price factor of a crude item (Ratwood ITEM_QUALITY_MULT_CRUDE).
+trade_quality_crude = 0.65
+
+# Price factor of a rough item (Ratwood ITEM_QUALITY_MULT_ROUGH).
+trade_quality_rough = 0.85
+
+# Price factor of a fine item (Ratwood ITEM_QUALITY_MULT_FINE).
+trade_quality_fine = 1.15
+
+# Price factor of a flawless item (Ratwood ITEM_QUALITY_MULT_FLAWLESS).
+trade_quality_flawless = 1.3
+
+# Price factor of a masterwork item (Ratwood ITEM_QUALITY_MULT_MASTERWORK).
+trade_quality_masterwork = 1.5
+
+# Share of a good's quality difference from standard the seller bears again at the stockpile; the Crown's Purse keeps it on shoddy goods and adds it on fine ones (Ratwood STOCKPILE_QUALITY_LOSS_SELLER_SHARE).
+trade_quality_seller_share = 0.5
+
+# Percent of a HEADEATER bounty the Crown takes at round start; the Steward changes it with the other levies (Ratwood TAX_CATEGORY_HEADEATER_LEVY).
+trade_headeater_levy = 15
+
+# Percent of a sale to a foreign ship the Crown takes at round start; the Steward changes it with the other levies (Ratwood TAX_CATEGORY_EXPORT_DUTY).
+trade_export_duty = 15
+
+# Percent of a sale to a foreign ship the merchant takes as middleman at round start (Ratwood TRADE_MERCHANT_LEVY_DEFAULT_PERCENT).
+trade_middleman_cut = 15
+
+# Highest middleman cut the merchant may set, percent (Ratwood TRADE_MERCHANT_LEVY_CAP_PERCENT).
+trade_middleman_cut_max = 50
+
+# Carriers' margin, percent, on a good the vomitorium imports from a region (Ratwood ROYAL_CUSTOM_DEFAULT_MARGIN).
+trade_import_margin = 50
+
+# How fast a region's price climbs once it has sold past its daily pace (Ratwood TRADE_ESCALATION_SLOPE).
+trade_escalation_slope = 1
+
+# Share a region's daily produce grows per living player (Ratwood REGION_POP_SCALE_PER_PLAYER).
+trade_region_pop_per_player = 0.025
+
+# Most a region's daily produce grows with the population, as a factor (Ratwood REGION_POP_SCALE_MAX).
+trade_region_pop_max = 3
+
+# Standing orders the regions post every dawn (Ratwood STANDING_ORDERS_BASE_PER_DAY).
+trade_orders_per_day = 4
+
+# Extra standing orders posted every dawn per living player (Ratwood STANDING_ORDERS_PER_ACTIVE_PLAYER).
+trade_orders_per_player = 0.05
+
+# Most standing orders posted in one dawn (Ratwood STANDING_ORDERS_MAX_PER_DAY).
+trade_orders_max_per_day = 13
+
+# Most standing orders open at once (Ratwood STANDING_ORDERS_POOL_CAP).
+trade_orders_cap = 13
+
+# Most standing orders one region has open at once (Ratwood STANDING_ORDERS_MAX_PER_REGION).
+trade_orders_per_region = 3
+
+# Dawns a standing order stays open (Ratwood STANDING_ORDER_DURATION).
+trade_order_days = 2
+
+# Premium a standing order pays over the trade price of its goods (Ratwood STANDING_ORDER_BASE_BONUS).
+trade_order_bonus = 0.75
+
+# Share of a standing order's value the stockpile must hold to settle it partially (Ratwood STANDING_ORDER_PARTIAL_THRESHOLD).
+trade_order_partial_threshold = 0.5
+
+# Share of the delivered value a partially settled standing order pays (Ratwood STANDING_ORDER_PARTIAL_PAYOUT_MULT).
+trade_order_partial_payout = 0.85
+
+# Foreign ships waiting offshore every dawn (Ratwood TRADE_SHIPS_PER_DAY_ROLL).
+trade_ships_per_day = 8
+
+# Ships the merchant may hail into port a day (Ratwood TRADE_SHIPS_HAIL_PER_DAY).
+trade_hails_per_day = 2
+
+# Piers: ships at port at once (Ratwood TRADE_SHIP_DOCK_SPOTS_BASE).
+trade_dock_spots = 2
+
+# Deciseconds a hailed ship stays at the pier (Ratwood TRADE_SHIP_DOCK_DURATION, 60 minutes).
+trade_dock_time = 36000
+
+# Deciseconds before a captain lets himself be sent away without the trade he hoped for (Ratwood TRADE_SHIP_SEND_AWAY_GRACE, 20 minutes).
+trade_send_away_grace = 12000
+
+# Deciseconds of an idle harbor after which a ship comes into port unbidden, once a day (Ratwood AUTO_HAIL_IDLE_THRESHOLD, 15 minutes).
+trade_auto_hail_idle = 9000
+
+# Mammons of trade a ship of the default size hopes for; a ship that gets it gives the merchant back a hail (Ratwood TRADE_SHIP_EXPECTED_FAVOR).
+trade_ship_expected_trade = 450
+
+# Share of a ship's cargo count that it sells, against what it buys (Ratwood TRADE_SHIP_SUPPLY_QTY_FRACTION).
+trade_supply_share = 0.5
+
+# Most units of a ship's cargo the merchant buys at once (Ratwood TRADE_MAX_BULK_UNITS).
+trade_bulk_buy_max = 50
+
+# HEADEATER bounty on the head of a goblin NPC (Ratwood npc/goblin.dm).
+trade_head_bounty_goblin = 30
+
+# HEADEATER bounty on the head of an orc NPC (Ratwood npc/orc/orc.dm).
+trade_head_bounty_orc = 40
+
+# HEADEATER bounty on the head of a drow raider (Ratwood npc/drow.dm).
+trade_head_bounty_drow = 40
+
+# HEADEATER bounty on the head of a highwayman (Ratwood soldiers/highwayman.dm).
+trade_head_bounty_highwayman = 30
+
+# HEADEATER bounty on the head of a bog deserter (Ratwood soldiers/bog_deserters.dm).
+trade_head_bounty_deserter = 50
+
+# Least tithe XYLIX'S FORTUNE takes (Ratwood mintithing).
+trade_lottery_min_tithe = 5
+
+# Most tithe XYLIX'S FORTUNE takes in coins (Ratwood maxtithing).
+trade_lottery_max_tithe = 100
+
+# Percent chance a spin wins before the gambler's fortune is added (Ratwood gamblingbaseprob).
+trade_lottery_base_chance = 60
+
+# Percent taken off a spin's chance (Ratwood probpenalty).
+trade_lottery_house_penalty = 2
+
+# Deciseconds the wheel spins (Ratwood).
+trade_lottery_spin_time = 50
+
+# Least mammons of a bounty at the EXCIDIUM (Ratwood).
+trade_bounty_min = 100
+
+# Most mammons of a bounty at the EXCIDIUM (Ratwood).
+trade_bounty_max = 500
+
+# Mammons a printed list of bounties costs (Ratwood).
+trade_bounty_print_cost = 50
+
+# Coin value a HERMES takes for a sheet of parchment (Ratwood: a zenny).
+trade_mail_paper_price = 1
+
+# Coin value a HERMES takes for a quill (Ratwood: a ziliqua).
+trade_mail_quill_price = 5

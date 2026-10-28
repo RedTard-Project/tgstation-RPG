@@ -30,7 +30,8 @@
 			"/sound/weather/snow/",
 			"/sound/weather/sand/",
 			"/_maps/dungeon_generator/",
-			"/sound/combat/"
+			"/sound/combat/",
+			"/sound/vo/"
 		],
 		"always_other_z": [
 			"_maps/map_files/otherz/dungeon.json"
@@ -60,6 +61,55 @@
 					"desc",
 					"icon",
 					"icon_state"
+				]
+			}
+		},
+		{
+			"prefix": "/obj/structure/toilet",
+			"rebase": "/obj/structure/rockhill/toilet",
+			"port": {
+				"file": "furniture.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state"
+				]
+			}
+		},
+		{
+			"prefix": "/obj/item/paper",
+			"exact": true,
+			"rebase": "/obj/item/paper/parchment",
+			"port": {
+				"file": "paper.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"w_class",
+					"throw_range",
+					"throw_speed",
+					"max_integrity"
+				]
+			}
+		},
+		{
+			"prefix": "/obj/structure/curtain",
+			"rebase": "/obj/structure/rockhill/curtain",
+			"port": {
+				"file": "curtains.dm",
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"color",
+					"alpha"
+				],
+				"define_strings": [
+					"color"
 				]
 			}
 		},
@@ -571,7 +621,64 @@
 					"alpha",
 					"color",
 					"obj_flags",
-					"time_between_triggers"
+					"time_between_triggers",
+					"max_integrity",
+					"rockhill_dulling",
+					"rockhill_hit_sounds",
+					"rockhill_break_sounds",
+					"rockhill_debris",
+					"rockhill_static_debris",
+					"rockhill_stump"
+				],
+				"limit_vars": {
+					"/obj/structure/flora": [
+						"max_integrity",
+						"rockhill_dulling",
+						"rockhill_hit_sounds",
+						"rockhill_break_sounds",
+						"rockhill_debris",
+						"rockhill_static_debris",
+						"rockhill_stump"
+					]
+				},
+				"rename": {
+					"rockhill_dulling": "blade_dulling",
+					"rockhill_hit_sounds": "attacked_sound",
+					"rockhill_break_sounds": "destroy_sound",
+					"rockhill_debris": "debris",
+					"rockhill_static_debris": "static_debris",
+					"rockhill_stump": "stump_type"
+				},
+				"numeric_vars": [
+					"max_integrity"
+				],
+				"numeric_defaults": {
+					"max_integrity": 300
+				},
+				"mapped_vars": {
+					"rockhill_dulling": {
+						"DULLING_CUT": "\"cut\"",
+						"DULLING_BASH": "\"bash\"",
+						"DULLING_BASHCHOP": "\"bashchop\"",
+						"DULLING_PICK": "\"pick\""
+					}
+				},
+				"sound_lists": [
+					"rockhill_hit_sounds",
+					"rockhill_break_sounds"
+				],
+				"path_counts": [
+					"rockhill_debris",
+					"rockhill_static_debris"
+				],
+				"paths": [
+					"rockhill_stump"
+				],
+				"nullable": [
+					"rockhill_stump"
+				],
+				"code_sounds": [
+					"sound/misc/treefall.ogg"
 				],
 				"runtime_look": true,
 				"flag_vars": [
@@ -771,12 +878,14 @@
 					"/obj/item/reagent_containers/glass": [
 						"volume",
 						"amount_per_transfer_from_this",
-						"possible_transfer_amounts"
+						"possible_transfer_amounts",
+						"list_reagents"
 					],
 					"/obj/item/reagent_containers/powder": [
 						"volume",
 						"amount_per_transfer_from_this",
-						"possible_transfer_amounts"
+						"possible_transfer_amounts",
+						"list_reagents"
 					],
 					"/obj/item/book/rogue": [
 						"bookfile",
@@ -815,10 +924,10 @@
 					"r_sleeve_status": "ROGUE_SLEEVE_NOMOD",
 					"l_sleeve_status": "ROGUE_SLEEVE_NOMOD",
 					"rogue_sleeve_scrap": "/obj/item/natural/cloth",
-					"rogue_face_coverage": "NONE"
+					"rogue_coverage": "null"
 				},
-				"face_coverage_vars": [
-					"rogue_face_coverage"
+				"coverage_vars": [
+					"rogue_coverage"
 				],
 				"vars": [
 					"name",
@@ -913,7 +1022,7 @@
 					"rogue_blocksound": "blocksound",
 					"rogue_force_wielded": "force_wielded",
 					"rogue_sleeve_scrap": "salvage_result",
-					"rogue_face_coverage": "body_parts_covered",
+					"rogue_coverage": "body_parts_covered",
 					"accepted_magazine_type": "mag_type"
 				},
 				"slot_worn_icons": {
@@ -1103,7 +1212,12 @@
 					"rogue_npc_damage_mult",
 					"rogue_accuracy",
 					"hitsound",
-					"rogue_drop_type"
+					"rogue_drop_type",
+					"rogue_poison_type",
+					"rogue_poison_amount",
+					"rogue_slur",
+					"rogue_eyeblur",
+					"rogue_drowsy"
 				],
 				"rename": {
 					"armour_penetration": "armor_penetration",
@@ -1112,7 +1226,12 @@
 					"rogue_bclass": "woundclass",
 					"rogue_npc_damage_mult": "npc_simple_damage_mult",
 					"rogue_accuracy": "accuracy",
-					"rogue_drop_type": "ammo_type"
+					"rogue_drop_type": "ammo_type",
+					"rogue_poison_type": "poisontype",
+					"rogue_poison_amount": "poisonamount",
+					"rogue_slur": "slur",
+					"rogue_eyeblur": "eyeblur",
+					"rogue_drowsy": "drowsy"
 				},
 				"numeric_vars": [
 					"damage",
@@ -1121,17 +1240,26 @@
 					"rogue_tile_time",
 					"rogue_embed_chance",
 					"rogue_npc_damage_mult",
-					"rogue_accuracy"
+					"rogue_accuracy",
+					"rogue_poison_amount",
+					"rogue_slur",
+					"rogue_eyeblur",
+					"rogue_drowsy"
 				],
 				"numeric_defaults": {
 					"rogue_accuracy": 65,
-					"rogue_npc_damage_mult": 1
+					"rogue_npc_damage_mult": 1,
+					"rogue_poison_amount": 0,
+					"rogue_slur": 0,
+					"rogue_eyeblur": 0,
+					"rogue_drowsy": 0
 				},
 				"string_define_vars": [
 					"rogue_bclass"
 				],
 				"paths": [
-					"rogue_drop_type"
+					"rogue_drop_type",
+					"rogue_poison_type"
 				],
 				"sounds": [
 					"hitsound"
@@ -1300,6 +1428,11 @@
 			"sound/items/book_page.ogg",
 			"sound/items/gem.ogg",
 			"sound/foley/woodclimb.ogg",
+			"sound/foley/doors/curtain.ogg",
+			"sound/misc/bleed (1).ogg",
+			"sound/misc/bleed (2).ogg",
+			"sound/misc/bleed (3).ogg",
+			"sound/misc/adrenaline_rush.ogg",
 			"sound/misc/levelup1.ogg",
 			"sound/misc/levelup2.ogg",
 			"sound/misc/levelup3.ogg",
@@ -1660,12 +1793,15 @@
 				"/mob/living/simple_animal/chick"
 			]
 		},
-		"assets": {
-			"restricted_licenses": [
-				"icons/roguetown/clothing/licensed-infraredbaron/LICENSE.md",
-				"modular_deserttown/icons/clothing/LICENSE.md"
-			],
-			"reviewed_licenses": []
+		"alchemy": {
+			"file": "modular_redtard/alchemy/ported/alchemy.dm",
+			"ingredient_root": "/obj/item/alch",
+			"cauldron_root": "/datum/alch_cauldron_recipe",
+			"grind_root": "/datum/alch_grind_recipe",
+			"default_skill": "SKILL_LEVEL_APPRENTICE",
+			"extra_types": [
+				"/obj/item/reagent_containers/glass/mortar"
+			]
 		},
 		"extra_types": [
 			"/obj/structure/trap/curse",

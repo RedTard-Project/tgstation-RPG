@@ -10,6 +10,18 @@
 	passive_generation = 0
 	generation_price = 1
 
+/datum/roguestock/stockpile/sinew
+	name = "Sinew"
+	desc = "Tough animal tendon, of some alchemical and crafting use."
+	item_type = /obj/item/alch/sinew
+	category = "Alchemy"
+	base_price = 2
+	stockpile_amount = 0
+	stockpile_limit = 20
+	importexport_amt = 5
+	passive_generation = 0
+	generation_price = 1
+
 /datum/roguestock/stockpile/calendula
 	name = "Calendula"
 	desc = "Golden marigold flowers prized by apothecaries for healing salves."

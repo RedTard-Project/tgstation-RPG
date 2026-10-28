@@ -1,6 +1,6 @@
 #define QUENCH_SOUNDS list('modular_redtard/rockhill/sound/items/quench_barrel1.ogg', 'modular_redtard/rockhill/sound/items/quench_barrel2.ogg')
-/// Water a quench takes from a bin (Ratwood roguebin attackby()).
-#define QUENCH_WATER 5
+/// Water a quench takes from a bin (quench_water of config/redtard/mechanics/values/crafting.txt).
+#define QUENCH_WATER rogue_value("quench_water")
 
 /// Ratwood tongs (roguejobs/blacksmith/tools.dm): carry one bar from the smelter to the forge, the anvil and the water bin.
 /// A bar is hot for ROGUE_BAR_HEAT_TIME after the forge or a lit smelter; the sprite shows the bar and its glow

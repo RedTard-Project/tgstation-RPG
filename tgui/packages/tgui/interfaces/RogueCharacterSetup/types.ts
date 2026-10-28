@@ -46,6 +46,8 @@ export type SpeciesEntry = {
   /** What the race calls its origin ("Ancestry", "Progenitor"...). */
   origin_wording: string | null;
   hair_colors: NamedColor[];
+  /** Vibelin's immortal race: no age band weakens it. */
+  ageless: BooleanLike;
 };
 
 export type JobClass = {
@@ -113,6 +115,42 @@ export type HeritageCatalog = {
   faiths: FaithEntry[];
   cultures: CultureEntry[];
 };
+
+/** A colour key of a feature of Vibelin's races: Vibelin's name of it and its default. */
+export type CustomizerKey = {
+  name: string | null;
+  /** "skin", "hair", a colour, or null for the sprite as it is. */
+  default: string | null;
+};
+
+/** A feature to pick in one of Vibelin's customizers (modular_redtard/heritage/customizers.dm). */
+export type CustomizerOption = {
+  /** The value of the pick, and the class of its thumbnail. */
+  id: string;
+  name: string;
+  /** "<width>x<height>": the size class of the rogue_customizers spritesheet. */
+  size: string;
+  keys: CustomizerKey[];
+};
+
+/** One of Vibelin's customizers of a race: a slot (ears, horns, snout, neck, tail, wings) and what it offers. */
+export type CustomizerSlot = {
+  slot: string;
+  /** Vibelin's name of the choice ("Hollow-Kin Ears"). */
+  name: string;
+  /** The feature the race's body has, or "none". */
+  default: string;
+  /** The race may go without it. */
+  none: BooleanLike;
+  /** Its colours may change. */
+  colors: BooleanLike;
+  options: CustomizerOption[];
+};
+
+/** The rogue_features preference: slot -> the pick and its colours, one per key. */
+export type PickedFeatures = Partial<
+  Record<string, { id: string; colors?: string[] }>
+>;
 
 export type HomelandTrait = {
   name: string;
@@ -202,6 +240,8 @@ export type SetupData = {
   pq_color: string | null;
   triumphs: number;
   heritage: HeritageCatalog;
+  /** Species id -> its customizers. */
+  customizers: Record<string, CustomizerSlot[]>;
   homelands: HomelandEntry[];
   culinary: CulinaryCatalog;
   combat_music: CombatTrack[];
@@ -211,6 +251,8 @@ export type SetupData = {
   lang: 'ru' | 'en';
   /** The character's species id as the heritage data knows it (a patron's or culture's races). */
   heritage_species: string;
+  /** The accents the character may pick (rogue_accent), in the player's language; null without any. */
+  accents: { id: string; name: string }[] | null;
   active_slot: number;
   profiles: (string | null)[];
   character_preferences: PreferenceValues;

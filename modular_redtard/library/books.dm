@@ -45,7 +45,7 @@
 
 /obj/item/book/rogue/examine(mob/user)
 	. = ..()
-	. += span_info(open ? "It lies open. Use it to read, right-click it in hand to shut it." : "Use it to open it.")
+	. += span_info((open ? "It lies open. Use it to read, right-click it in hand to shut it." : "Use it to open it."))
 
 /obj/item/book/rogue/attack_self(mob/user, modifiers)
 	if(!open)

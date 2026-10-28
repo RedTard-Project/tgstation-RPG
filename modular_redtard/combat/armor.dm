@@ -114,12 +114,62 @@ GLOBAL_LIST_INIT(rogue_armor_degrade_sounds, list(
 	var/chunkcolor = "#5e5e5e"
 
 /obj/item/clothing/proc/get_rogue_armor()
-	if(atom_integrity <= max_integrity * ROGUE_ARMOR_FAILURE_SHARE)
+	if(!rogue_intact())
 		return null
 	return rogue_armor_datum(rogue_armor)
 
+/// Not broken: above the share of its integrity where worn armor fails.
+/obj/item/clothing/proc/rogue_intact()
+	return atom_integrity > max_integrity * ROGUE_ARMOR_FAILURE_SHARE
+
+/// The coverage a blow on each zone looks for (Ratwood zone2covered()): the precise zones of the rogue HUD and TG's own.
+GLOBAL_LIST_INIT(rogue_zone_coverage, list(
+	BODY_ZONE_HEAD = HEAD,
+	"skull" = ROGUE_COVER_HAIR,
+	"ears" = ROGUE_COVER_EARS,
+	"nose" = ROGUE_COVER_NOSE,
+	ROGUE_ZONE_NECK = NECK,
+	"r_eye" = ROGUE_COVER_RIGHT_EYE,
+	"l_eye" = ROGUE_COVER_LEFT_EYE,
+	BODY_ZONE_PRECISE_EYES = ROGUE_COVER_EYES,
+	BODY_ZONE_PRECISE_MOUTH = ROGUE_COVER_MOUTH,
+	BODY_ZONE_CHEST = CHEST,
+	"stomach" = ROGUE_COVER_VITALS,
+	BODY_ZONE_PRECISE_GROIN = GROIN,
+	BODY_ZONE_R_ARM = ARM_RIGHT,
+	BODY_ZONE_L_ARM = ARM_LEFT,
+	BODY_ZONE_PRECISE_R_HAND = HAND_RIGHT,
+	BODY_ZONE_PRECISE_L_HAND = HAND_LEFT,
+	BODY_ZONE_R_LEG = LEG_RIGHT,
+	BODY_ZONE_L_LEG = LEG_LEFT,
+	BODY_ZONE_PRECISE_R_FOOT = FOOT_RIGHT,
+	BODY_ZONE_PRECISE_L_FOOT = FOOT_LEFT,
+))
+
+/// What the item covers as Ratwood's coverage (rogue_coverage, rockhill/port_data.dm): its own, else TG's body parts, HEAD
+/// the whole head and CHEST the chest and the vitals.
+/obj/item/proc/rogue_coverage_flags()
+	if(!isnull(rogue_coverage))
+		return rogue_coverage
+	. = body_parts_covered
+	if(. & HEAD)
+		. |= ROGUE_COVER_HEAD_PARTS
+	if(. & CHEST)
+		. |= ROGUE_COVER_VITALS
+
+/// TG's body parts for a Ratwood coverage, folded as the porters fold them: the parts of the head into HEAD, the vitals into CHEST.
+/proc/rogue_fold_coverage(coverage)
+	. = coverage & ~(ROGUE_COVER_HEAD_PARTS | ROGUE_COVER_VITALS)
+	if(coverage & ROGUE_COVER_HEAD_PARTS)
+		. |= HEAD
+	if(coverage & ROGUE_COVER_VITALS)
+		. |= CHEST
+
+/// Whether the garment covers the zone a blow lands on: a precise zone looks for its own part (a bevor guards the mouth
+/// and the nose, not the eyes; gloves the hands, not the arms), a zone the table does not know for its body part.
 /obj/item/clothing/proc/rogue_covers_zone(zone)
-	return body_parts_covered & body_zone2cover_flags(zone)
+	var/needed = GLOB.rogue_zone_coverage[zone] || GLOB.rogue_zone_coverage[check_zone(zone)]
+	return rogue_coverage_flags() & needed
 
 /obj/item/clothing/proc/rogue_integrity_share()
 	var/failure = max_integrity * ROGUE_ARMOR_FAILURE_SHARE
@@ -194,15 +244,22 @@ GLOBAL_LIST_INIT(rogue_armor_degrade_sounds, list(
 		color = chunk_color
 	return ..()
 
-/// Worn clothing in Ratwood's outermost-first order; cloaks and back items are neither hit nor counted.
+/// Worn clothing in Ratwood's outermost-first order (get_ordered_coverage_layers()), the layers a blunt blow goes through;
+/// cloaks and back items are not among them.
 /mob/living/carbon/human/proc/rogue_armor_slots()
 	. = list(wear_suit, head, wear_mask, glasses, ears, wear_neck, gloves, shoes, wear_wrists, wear_shirt, w_uniform, belt, s_store)
 	if(length(wear_rings))
 		. += wear_rings
 
+/// Everything worn that can stop a cut, a stab or a shot: the layers, then the cloak and the back items, which Ratwood's
+/// get_best_worn_armor() counts as well.
+/mob/living/carbon/human/proc/rogue_guard_slots()
+	. = rogue_armor_slots()
+	. += list(wear_cloak, back, wear_backr)
+
 /mob/living/carbon/human/proc/rogue_best_armor(zone, armor_type)
 	var/best_value = 0
-	for(var/obj/item/clothing/worn in rogue_armor_slots())
+	for(var/obj/item/clothing/worn in rogue_guard_slots())
 		if(!worn.rogue_covers_zone(zone))
 			continue
 		var/datum/rogue_armor/armor = worn.get_rogue_armor()
@@ -217,18 +274,28 @@ GLOBAL_LIST_INIT(rogue_armor_degrade_sounds, list(
 	var/obj/item/clothing/used = rogue_best_armor(zone, armor_type)
 	return used ? used.get_rogue_armor().get_rating(armor_type) : 0
 
-/// Every intact item covering the zone, outermost first (Ratwood get_ordered_coverage_layers).
+/// Every intact armor piece covering the zone, outermost first.
 /mob/living/carbon/human/proc/rogue_armor_layers(zone)
 	. = list()
 	for(var/obj/item/clothing/worn in rogue_armor_slots())
 		if(worn.rogue_covers_zone(zone) && worn.get_rogue_armor())
 			. += worn
 
+/// Every unbroken garment covering the zone, armor or cloth, outermost first: what a blunt blow wears (Ratwood
+/// get_ordered_coverage_layers()).
+/mob/living/carbon/human/proc/rogue_coverage_layers(zone)
+	. = list()
+	for(var/obj/item/clothing/worn in rogue_armor_slots())
+		if(worn.rogue_covers_zone(zone) && worn.rogue_intact())
+			. += worn
+
 /// Share of a blow's damage that reaches the body under the armor tier system of Azure Peak and Ratwood, wearing the armor on the way.
-/// Slash and stab compare the intent's penetration tier with the block tier of the best covering item: a tier at or above it lets
-/// pen_passthrough_min + tier * pen_passthrough_per_tier through and spares the armor, a lower one is stopped and the armor takes the blow.
-/// Piercing (projectiles) passes a fixed share at or above the tier. Blunt is absorbed whole by any blunt tier and wears every covering layer.
-/// Burn damage is left to the TG armor of the item (see the porter: fire and acid tiers become TG armor).
+/// Slash and stab compare the intent's penetration tier with the block tier of the best covering item (the cloak and the back
+/// items count): a tier at or above it lets pen_passthrough_min + tier * pen_passthrough_per_tier through and spares the armor,
+/// a lower one is stopped and the armor takes the blow. Piercing (projectiles) passes a fixed share at or above the tier. Blunt
+/// is absorbed whole by any blunt tier among the layers and wears every garment over the zone. The zone is the precise one the
+/// blow lands on (rogue_covers_zone()). Burn damage is left to the TG armor of the item (see the porter: fire and acid tiers
+/// become TG armor).
 /mob/living/carbon/human/proc/rogue_armor_hit(zone, armor_type, damage, penetration = ROGUE_PEN_NONE, wear_factor = 1, obj/item/weapon, bclass)
 	if(!armor_type || armor_type == ROGUE_ARMOR_FIRE || armor_type == ROGUE_ARMOR_ACID || armor_type == ROGUE_ARMOR_MAGIC)
 		return 1
@@ -255,19 +322,24 @@ GLOBAL_LIST_INIT(rogue_armor_degrade_sounds, list(
 /// Share of a projectile's damage the armor on a body part lets through, without wearing it or making a sound: the piercing
 /// branch of rogue_armor_hit(), for what happens after the hit (Ratwood: an arrow sticks only if damage got through).
 /mob/living/carbon/human/proc/rogue_projectile_share(zone, obj/projectile/shot)
-	var/obj/item/clothing/used = rogue_best_armor(rogue_zone_of(zone), ROGUE_ARMOR_PIERCING)
+	var/obj/item/clothing/used = rogue_best_armor(rogue_armor_zone(zone, shot), ROGUE_ARMOR_PIERCING)
 	var/tier = used ? used.get_rogue_armor().get_rating(ROGUE_ARMOR_PIERCING) : 0
 	if(tier <= 0)
 		return 1
 	return rogue_attack_penetration(shot) >= tier ? ROGUE_PEN_PROJECTILE_PASSTHROUGH : 0
 
+/// Ratwood's blunt branch of checkarmor(): the best blunt tier among the garments over the zone takes the blow whole, and every
+/// garment wears, the outer ones the most (the wear over 1, 2, 3... by depth; what a layer cannot take goes on inward; an
+/// exposed defender's layers take it whole). Cloth without a blunt tier lets the blow through and wears all the same.
 /mob/living/carbon/human/proc/rogue_blunt_armor_hit(zone, damage, wear_factor, bclass)
-	var/list/layers = rogue_armor_layers(zone)
+	var/list/layers = rogue_coverage_layers(zone)
+	if(!length(layers))
+		return 1
 	var/tier = 0
 	for(var/obj/item/clothing/worn as anything in layers)
-		tier = max(tier, worn.get_rogue_armor().blunt)
-	if(!tier)
-		return 1
+		var/datum/rogue_armor/armor = worn.get_rogue_armor()
+		if(armor)
+			tier = max(tier, armor.blunt)
 	var/full = has_status_effect(/datum/status_effect/rogue/exposed)
 	rogue_armor_pop_factor()
 	var/wear = damage / (1 + ROGUE_ARMOR_BLUNT_DR * tier) * wear_factor
@@ -284,7 +356,7 @@ GLOBAL_LIST_INIT(rogue_armor_degrade_sounds, list(
 				playsound(src, block_sound, 100)
 				sounded = TRUE
 		depth++
-	return 0
+	return tier ? 0 : 1
 
 /// A blow the armor stopped "pops" an exposed or vulnerable defender and wears the armor harder (Ratwood EXPOSED_INTEG_MOD, VULN_INTEG_MOD).
 /mob/living/proc/rogue_armor_pop_factor()
@@ -316,11 +388,23 @@ GLOBAL_LIST_INIT(rogue_armor_degrade_sounds, list(
 /mob/living/carbon/human/proc/rogue_dodge_expert()
 	return HAS_TRAIT(src, TRAIT_DODGEEXPERT) && rogue_highest_armor_class() <= ARMOR_CLASS_LIGHT
 
+/// The zone of a hit as the armor reads it: a body part's zone, a zone the armor knows (rogue_zone_coverage: the precise
+/// zones), else the body part a zone falls on.
 /proc/rogue_zone_of(def_zone)
 	if(isbodypart(def_zone))
 		var/obj/item/bodypart/part = def_zone
 		return part.body_zone
+	if(def_zone in GLOB.rogue_zone_coverage)
+		return def_zone
 	return check_zone(def_zone || BODY_ZONE_CHEST)
+
+/// The zone the armor is looked for on: the precise part a rogue projectile struck (combat/launchers.dm), else rogue_zone_of()
+/// the zone the damage goes to.
+/proc/rogue_armor_zone(def_zone, atom/attacking_item)
+	var/obj/projectile/rogue_ammo/shot = attacking_item
+	if(istype(shot) && shot.rogue_struck_zone)
+		return shot.rogue_struck_zone
+	return rogue_zone_of(def_zone)
 
 /// Penetration tier of anything that is not our own melee blow: projectiles carry it in armour_penetration (Ratwood PEN tiers),
 /// TG projectiles with percent penetration are read on the same 0-4 scale.
@@ -347,7 +431,7 @@ GLOBAL_LIST_INIT(rogue_armor_degrade_sounds, list(
 	if(!armor_type)
 		return
 	var/obj/item/weapon = isitem(attacking_item) ? attacking_item : null
-	damage_mods += source.rogue_armor_hit(rogue_zone_of(def_zone), armor_type, damage, rogue_attack_penetration(attacking_item), weapon ? weapon.intdamage_factor : 1, weapon, weapon?.rogue_current_bclass)
+	damage_mods += source.rogue_armor_hit(rogue_armor_zone(def_zone, attacking_item), armor_type, damage, rogue_attack_penetration(attacking_item), weapon ? weapon.intdamage_factor : 1, weapon, weapon?.rogue_current_bclass)
 
 /// Set while our own blow applies damage it already ran through the armor, so the damage signal does not take armor twice.
 /mob/living/var/rogue_armor_resolved = FALSE

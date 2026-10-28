@@ -62,3 +62,50 @@
 
 /// Source of the traits the husbandry module gives.
 #define ROGUE_HUSBANDRY_TRAIT "rogue_husbandry"
+
+/// Riding and tack (husbandry/mounts.dm, husbandry/tack.dm): numbers of the mechanics registry (config/redtard/mechanics/values/husbandry.txt).
+#define ROGUE_SADDLE_TIME rogue_value("mount_saddle_time")
+#define ROGUE_UNSADDLE_TIME rogue_value("mount_unsaddle_time")
+#define ROGUE_TACK_TIME rogue_value("mount_tack_time")
+#define ROGUE_UNTACK_TIME rogue_value("mount_untack_time")
+#define ROGUE_MOUNT_TIME rogue_value("mount_time")
+#define ROGUE_MOUNT_TIME_UNSKILLED rogue_value("mount_time_unskilled")
+#define ROGUE_DISMOUNT_TIME_UNSKILLED rogue_value("dismount_time_unskilled")
+#define ROGUE_MOUNT_QUICK_RANK rogue_value("mount_quick_rank")
+#define ROGUE_MOUNT_FALL_TIME rogue_value("mount_fall_time")
+#define ROGUE_MOUNT_GALLOP_BONUS rogue_value("mount_gallop_bonus")
+#define ROGUE_MOUNT_UNSKILLED_BONUS rogue_value("mount_unskilled_bonus")
+#define ROGUE_MOUNT_SKILL_BONUS rogue_value("mount_skill_bonus")
+#define ROGUE_MOUNT_RANK_DIVISOR rogue_value("mount_rank_divisor")
+#define ROGUE_MOUNT_STEPPE_BONUS rogue_value("mount_steppe_bonus")
+#define ROGUE_MOUNT_HURT_SHARE rogue_value("mount_hurt_share")
+#define ROGUE_MOUNT_HURT_DELAY rogue_value("mount_hurt_delay")
+#define ROGUE_MOUNT_COMBAT_WALK rogue_value("mount_combat_walk")
+#define ROGUE_MOUNT_COMBAT_GALLOP rogue_value("mount_combat_gallop")
+#define ROGUE_MOUNT_FIXED_WALK rogue_value("mount_fixed_walk")
+#define ROGUE_MOUNT_FIXED_GALLOP rogue_value("mount_fixed_gallop")
+#define ROGUE_MOUNT_MIN_DELAY rogue_value("mount_min_delay")
+#define ROGUE_RIDING_XP_MOVES rogue_value("riding_xp_moves")
+#define ROGUE_RIDING_XP_PER_INTELLIGENCE rogue_value("riding_xp_per_intelligence")
+#define ROGUE_RIDING_XP_UNTRAINED rogue_value("riding_xp_untrained")
+#define ROGUE_RIDING_XP_TRAINED rogue_value("riding_xp_trained")
+#define ROGUE_MOUNT_APPLE_TIME rogue_value("mount_apple_time")
+#define ROGUE_MOUNT_APPLE_HEAL rogue_value("mount_apple_heal")
+
+/// Milking (husbandry/milking.dm): numbers of the mechanics registry.
+#define ROGUE_MILK_UDDER_SIZE rogue_value("milk_udder_size")
+#define ROGUE_MILK_START_MAX rogue_value("milk_start_max")
+#define ROGUE_MILK_PER_PRODUCTION rogue_value("milk_per_production")
+#define ROGUE_MILK_MIN rogue_value("milk_min")
+#define ROGUE_MILK_TIME rogue_value("milk_time")
+
+/// Manure (husbandry/manure.dm): numbers of the mechanics registry.
+#define ROGUE_MANURE_TIME rogue_value("manure_time")
+#define ROGUE_MANURE_TILE_CAP rogue_value("manure_tile_cap")
+
+/// Layers of a mount's tack over its rider (Ratwood update_icon(): the saddle's front and the mount's neck at 4.3, a caparison
+/// at 5 and a bard at 6, the other way round when the caparison covers the bard, each with a front part 0.69 lower).
+#define ROGUE_TACK_FRONT_LAYER (MOB_LAYER + 0.3)
+#define ROGUE_TACK_LOW_LAYER (MOB_LAYER + 1)
+#define ROGUE_TACK_HIGH_LAYER (MOB_LAYER + 2)
+#define ROGUE_TACK_FRONT_DROP 0.69

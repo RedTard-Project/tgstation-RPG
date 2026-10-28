@@ -9,6 +9,7 @@ import { classes } from 'tgui-core/react';
 import { features } from '../PreferencesMenu/preferences/features';
 import { FeatureValueInput } from '../PreferencesMenu/preferences/features/base';
 import { IconGrid } from './components';
+import { CustomizerButtons, useCustomizers } from './customizers';
 import { featureName, type MainFeatureCatalog } from './features';
 import { useTr } from './strings';
 import type { SetupData } from './types';
@@ -53,7 +54,9 @@ export function useMainFeatures(): MainFeature[] {
 export function FeatureColumn() {
   const { data } = useBackend<SetupData>();
   const shown = useMainFeatures();
-  if (!shown.length) {
+  // Vibelin's customizers of the race (ears, horns, tail...) follow TG's features.
+  const customizers = useCustomizers();
+  if (!shown.length && !customizers.slots.length) {
     return null;
   }
   const supplemental = data.character_preferences.supplemental_features ?? {};
@@ -65,6 +68,7 @@ export function FeatureColumn() {
             <FeatureButton feature={feature} supplemental={supplemental} />
           </Stack.Item>
         ))}
+        <CustomizerButtons {...customizers} />
       </Stack>
     </Section>
   );

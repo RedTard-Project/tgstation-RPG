@@ -158,7 +158,7 @@
 		// Ratwood keeps striking while a material is missing; here the run stops until it is added.
 		if(done || QDELETED(forging) || forging.needed_item)
 			return
-		if(!do_after(user, 2 SECONDS, target = src))
+		if(!do_after(user, rogue_value("anvil_strike_time"), target = src))
 			return
 		strike_multiplier = 0.5
 
