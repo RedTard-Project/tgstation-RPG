@@ -15,10 +15,16 @@
 		return ELEMENT_INCOMPATIBLE
 	RegisterSignal(target, COMSIG_LIVING_LIFE, PROC_REF(on_life))
 	RegisterSignal(target, COMSIG_MOB_AFTER_APPLY_DAMAGE, PROC_REF(on_damage))
+	RegisterSignals(target, list(SIGNAL_ADDTRAIT(TRAIT_ADRENALINE_RUSH), SIGNAL_REMOVETRAIT(TRAIT_ADRENALINE_RUSH), SIGNAL_ADDTRAIT(TRAIT_NOPAIN), SIGNAL_REMOVETRAIT(TRAIT_NOPAIN), COMSIG_ROGUE_ATTRIBUTES_UPDATED), PROC_REF(on_threshold_changed))
 
 /datum/element/rogue_pain/Detach(datum/source, ...)
-	UnregisterSignal(source, list(COMSIG_LIVING_LIFE, COMSIG_MOB_AFTER_APPLY_DAMAGE))
+	UnregisterSignal(source, list(COMSIG_LIVING_LIFE, COMSIG_MOB_AFTER_APPLY_DAMAGE, SIGNAL_ADDTRAIT(TRAIT_ADRENALINE_RUSH), SIGNAL_REMOVETRAIT(TRAIT_ADRENALINE_RUSH), SIGNAL_ADDTRAIT(TRAIT_NOPAIN), SIGNAL_REMOVETRAIT(TRAIT_NOPAIN), COMSIG_ROGUE_ATTRIBUTES_UPDATED))
 	return ..()
+
+/// What the will bears has changed (adrenaline, painlessness, willpower): the heart shows the pain against it at once (PR 2546).
+/datum/element/rogue_pain/proc/on_threshold_changed(mob/living/carbon/human/source)
+	SIGNAL_HANDLER
+	source.update_health_hud()
 
 /datum/element/rogue_pain/proc/on_life(mob/living/carbon/human/source, seconds_per_tick)
 	SIGNAL_HANDLER
@@ -95,12 +101,26 @@
 			pain *= ROGUE_PAIN_ADRENALINE_SHARE
 		. += pain
 
-/// The pain in percent of what the will bears (Ratwood painpercent; pain_threshold is willpower times ten).
-/mob/living/carbon/human/proc/rogue_pain_share()
-	var/willpower = rogue_stat(ROGUE_STAT_WILLPOWER)
+/// What pain the will bears, counted anew each time (Ratwood get_pain_threshold(), PR 2546): willpower times ten, five more
+/// willpower under adrenaline, the painless 250. The pain checks and the heart both read it.
+/mob/living/carbon/human/proc/rogue_pain_threshold()
+	if(HAS_TRAIT(src, TRAIT_NOPAIN))
+		return ROGUE_PAIN_NOPAIN_THRESHOLD
+	var/willpower = max(rogue_stat(ROGUE_STAT_WILLPOWER), 1)
 	if(HAS_TRAIT(src, TRAIT_ADRENALINE_RUSH))
 		willpower += ROGUE_PAIN_ADRENALINE_WILLPOWER
-	return rogue_complex_pain() / max(willpower * ROGUE_PAIN_PER_WILLPOWER, 1) * 100
+	return willpower * ROGUE_PAIN_PER_WILLPOWER
+
+/// The pain in percent of what the will bears (Ratwood painpercent).
+/mob/living/carbon/human/proc/rogue_pain_share()
+	return rogue_complex_pain() / rogue_pain_threshold() * 100
+
+/// The pain the heart shows, in percent of what the will bears; 0 off medieval maps and for bodies Ratwood's pain skips.
+/mob/living/proc/rogue_heart_pain()
+	return 0
+
+/mob/living/carbon/human/rogue_heart_pain()
+	return rogue_combat_enabled() ? rogue_pain_share() : 0
 
 /// Ratwood's handle_random_events(): every ten seconds the pain is weighed. Lying, one only moans now and then; standing,
 /// one moans from high pain, and pain past the will may break one, unless a strong will or Psydonian grit endures it.

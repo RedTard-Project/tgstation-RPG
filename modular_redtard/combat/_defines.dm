@@ -514,6 +514,7 @@
 #define ROGUE_PAIN_MAX_HEAD rogue_value("pain_max_head")
 #define ROGUE_PAIN_MAX_LIMB rogue_value("pain_max_limb")
 #define ROGUE_PAIN_PER_WILLPOWER rogue_value("pain_per_willpower")
+#define ROGUE_PAIN_NOPAIN_THRESHOLD rogue_value("pain_nopain_threshold")
 #define ROGUE_PAIN_ADRENALINE_WILLPOWER rogue_value("pain_adrenaline_willpower")
 #define ROGUE_PAIN_ADRENALINE_SHARE rogue_value("pain_adrenaline_share")
 #define ROGUE_PAIN_CHECK_INTERVAL rogue_value("pain_check_interval")

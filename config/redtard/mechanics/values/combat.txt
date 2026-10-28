@@ -1302,6 +1302,9 @@ pain_max_limb = 100
 # Pain one bears per point of willpower (Ratwood pain_threshold = STAWIL * 10).
 pain_per_willpower = 10
 
+# Pain the painless (TRAIT_NOPAIN) bear, for the heart: they never break under pain (Ratwood get_pain_threshold(), PR 2546).
+pain_nopain_threshold = 250
+
 # Willpower adrenaline adds to that (Ratwood (STAWIL + 5) * 10).
 pain_adrenaline_willpower = 5
 

@@ -57,3 +57,9 @@
 		var/atom/movable/screen/piece = owner.screen_objects[hud_key]
 		if(piece?.screen_loc)
 			piece.screen_loc = rogueui_shift_west(piece.screen_loc)
+
+/// TG refreshes what hangs on the blood once a Life tick after it changes (QUEUE_BLOOD_UPDATE); the heart is refreshed with
+/// it, wherever the blood changed (PR 2546's mark_blood_hud_dirty()).
+/mob/living/carbon/update_blood_effects()
+	. = ..()
+	update_health_hud()

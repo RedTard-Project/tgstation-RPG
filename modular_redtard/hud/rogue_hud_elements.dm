@@ -271,38 +271,50 @@
 		return
 	user.check_self_for_injuries()
 
+/// The heart as Ratwood PR 2546 (trueroguan) draws it: the heart empties with the blood lost, and poison, suffocation
+/// and pain show over it, bleeding or not.
 /atom/movable/screen/healths/rogue/proc/update_for(mob/living/owner)
 	cut_overlays()
 	if(owner.stat == DEAD)
 		icon_state = "damelse"
 		return
+	icon_state = heart_state(owner)
+	for(var/layer_state in heart_layers(owner))
+		add_overlay(layer_state)
+
+/// The heart by the blood lost, in steps of ten percent.
+/atom/movable/screen/healths/rogue/proc/heart_state(mob/living/owner)
 	var/blood_loss = 0
 	if(CAN_HAVE_BLOOD(owner))
 		blood_loss = (BLOOD_VOLUME_NORMAL - owner.get_blood_volume(apply_modifiers = TRUE)) / BLOOD_VOLUME_NORMAL * 100
-	if(blood_loss > 0)
-		var/rounded_loss = round(blood_loss, 10)
-		icon_state = rounded_loss <= 80 ? "dam[rounded_loss]" : "damelse"
-		return
-	icon_state = "dam0"
-	var/tox_state = loss_overlay_state("toxloss", owner.get_tox_loss())
-	if(tox_state)
-		add_overlay(tox_state)
-	var/oxy_state = loss_overlay_state("oxyloss", owner.get_oxy_loss())
-	if(oxy_state)
-		add_overlay(oxy_state)
+	if(blood_loss <= 0)
+		return "dam0"
+	var/rounded_loss = round(blood_loss, 10)
+	return rounded_loss <= 80 ? "dam[rounded_loss]" : "damelse"
 
-/atom/movable/screen/healths/rogue/proc/loss_overlay_state(prefix, amount)
-	if(amount < 1)
+/// The poison, suffocation and pain layers over the heart (PR 2546 get_heart_indicator_state() with its steps).
+/atom/movable/screen/healths/rogue/proc/heart_layers(mob/living/owner)
+	. = list()
+	for(var/layer_state in list(
+		heart_layer_state("toxloss", owner.get_tox_loss(), 21, 50),
+		heart_layer_state("oxyloss", owner.get_oxy_loss(), 21, 50),
+		heart_layer_state("painloss", owner.rogue_heart_pain(), 30, 60),
+	))
+		if(layer_state)
+			. += layer_state
+
+/atom/movable/screen/healths/rogue/proc/heart_layer_state(prefix, value, step40, step60)
+	if(value <= 0)
 		return null
-	if(amount < 21)
-		return "[prefix]20"
-	if(amount < 50)
-		return "[prefix]40"
-	if(amount < 80)
-		return "[prefix]60"
-	if(amount < 100)
+	if(value >= 100)
+		return "[prefix]100"
+	if(value >= 80)
 		return "[prefix]80"
-	return "[prefix]100"
+	if(value >= step60)
+		return "[prefix]60"
+	if(value >= step40)
+		return "[prefix]40"
+	return "[prefix]20"
 
 /atom/movable/screen/stamina/rogue
 	icon = ROGUE_HUD_ICON_HEAT
