@@ -57,7 +57,7 @@
 #define ROGUE_SOUND_JAWBANK_HIT 'modular_redtard/economy/sound/jawbankhit.ogg'
 #define ROGUE_SOUND_JAWBANK_ANGUISH 'modular_redtard/economy/sound/jawbankanguish.ogg'
 
-// Numbers of the treasury, from config/redtard/mechanics/values.txt.
+// Numbers of the treasury, from config/redtard/mechanics/values/treasury.txt.
 #define ROGUE_CHURCH_FUND_SEED rogue_value("treasury_church_seed")
 #define ROGUE_MERCHANT_FUND_SEED rogue_value("treasury_merchant_seed")
 #define ROGUE_BATHHOUSE_FUND_SEED rogue_value("treasury_bathhouse_seed")

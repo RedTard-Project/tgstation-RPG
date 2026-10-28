@@ -3,7 +3,7 @@
 // a little water; up to an expert the clay may collapse; the last spin shapes the piece, with a pottery quality by skill.
 // Azure Peak's wheel is only a station for its crafting recipes, which keep working here (the wheel stays the same type).
 
-// Numbers of config/redtard/mechanics/values.txt (section "Crafting").
+// Numbers of config/redtard/mechanics/values/crafting.txt.
 #define WHEEL_WATER rogue_value("wheel_water")
 #define WHEEL_REWETS_KNEADED rogue_value("wheel_rewets_kneaded")
 #define WHEEL_REWETS_REFINED rogue_value("wheel_rewets_refined")

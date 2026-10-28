@@ -1,0 +1,53 @@
+# Stage 8: triumphs and PQ (triumphs/, admin/, migrants/)
+# Mechanics numbers: name = value, described by the # lines right above it; times are in deciseconds. The build compiles this file in, so its numbers are the defaults; a file of the same name in config/redtard_private/mechanics/values/ is read instead when present.
+
+# Triumphs for readying up before the round (Ratwood ready-up bonus).
+triumph_ready_bonus = 1
+
+# Triumphs every living character with a player gets at nightfall (Ratwood handle_sleep_triumphs).
+triumph_night = 1
+
+# Extra triumphs at nightfall for yeomen, peasants and youngfolk (Ratwood towner jobs).
+triumph_night_towner = 1
+
+# Roll weight a migrant wave gains per triumph pledged to it (Ratwood calculate_triumph_weight).
+triumph_wave_weight = 20
+
+# Most triumphs a player pledges to a migrant wave at once (Ratwood).
+triumph_wave_max_pledge = 25
+
+# Share of a bought round effect's cost given back to its buyer when someone takes it back or a conflicting buy replaces it (Ratwood current_refund_percentage).
+triumph_refund_share = 0.5
+
+# Places on the triumph leaderboard (Ratwood triumph_leaderboard_positions_tracked).
+triumph_board_size = 21
+
+# Least triumphs to be on the leaderboard (Ratwood).
+triumph_board_min = 5
+
+# Deciseconds after spawning before a character earns their role's round contributor points at round end (Ratwood 45 minutes).
+pq_rcp_round_time = 27000
+
+# Round contributor points per point of PQ (Ratwood).
+pq_rcp_per_pq = 10
+
+# PQ from which round contributor points are no longer counted (Ratwood).
+pq_rcp_pq_ceiling = 100
+
+# Round contributor points gathered after which they stop raising PQ, unless the PQ is below pq_rcp_pq_floor (Ratwood).
+pq_rcp_total_cap = 100
+
+# PQ below which round contributor points raise it however many were gathered (Ratwood RCP_CONTRIBUTION_CAP).
+pq_rcp_pq_floor = 20
+
+# PQ the first commendation from a player gives, below pq_commend_high (Ratwood add_commend).
+pq_commend = 1
+
+# PQ from which commendations give less (Ratwood).
+pq_commend_high = 100
+
+# PQ the first commendation from a player gives from pq_commend_high on (Ratwood).
+pq_commend_high_first = 0.5
+
+# PQ every further commendation from the same player gives from pq_commend_high on (Ratwood).
+pq_commend_high_repeat = 0.05

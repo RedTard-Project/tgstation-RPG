@@ -79,9 +79,9 @@
 /obj/structure/spider/stickyweb
 	/// Looks and holds like Ratwood's web (a medieval map).
 	var/rogue_pve_ratwood = FALSE
-	/// Name of the value of config/redtard/mechanics/values.txt: percent chance it holds whoever walks in.
+	/// Name of the value of config/redtard/mechanics/values/pve.txt: percent chance it holds whoever walks in.
 	var/rogue_pve_stuck_value = "pve_web_stuck_chance"
-	/// Name of the value of config/redtard/mechanics/values.txt: percent chance a shot passes through it.
+	/// Name of the value of config/redtard/mechanics/values/pve.txt: percent chance a shot passes through it.
 	var/rogue_pve_pass_value = "pve_web_projectile_pass"
 	/// A torn web may leave silk (Ratwood static_debris).
 	var/rogue_pve_silk = TRUE

@@ -48,7 +48,7 @@
 /// TG's folder of persistent painting images (/datum/painting get_icon()).
 #define ROGUE_PAINTING_IMAGES_DIR "data/paintings/images/"
 
-// Numbers of the mechanics registry (config/redtard/mechanics/values.txt).
+// Numbers of the mechanics registry (config/redtard/mechanics/values/library.txt).
 #define ROGUE_PRESS_PRINT_TIME rogue_value("library_print_time")
 #define ROGUE_PRESS_COOLDOWN rogue_value("library_print_cooldown")
 #define ROGUE_SHELF_BOOKS rogue_value("library_shelf_books")

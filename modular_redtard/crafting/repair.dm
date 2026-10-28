@@ -1,5 +1,5 @@
 // Ratwood needle tuning (game/objects/items/rogueitems/needle.dm), repair shares and the repair kit: numbers of
-// config/redtard/mechanics/values.txt (section "Crafting").
+// config/redtard/mechanics/values/crafting.txt.
 #define SEW_BASE_FAIL_CHANCE rogue_value("sew_fail_chance")
 #define SEW_NO_FAIL_RANK rogue_value("sew_no_fail_rank")
 #define SEW_BASE_REPAIR rogue_value("sew_repair")

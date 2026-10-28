@@ -48,30 +48,52 @@ GLOBAL_DATUM(rogue_mechanics, /datum/rogue_mechanics)
 		qdel(pattern)
 	load()
 
-/// Declares every value of the open values.txt, the one place a number is written. The build compiles the file in, so its
-/// numbers are the defaults even where the config folder lacks it; a private file only changes them. The `#` lines right
-/// above an entry, back to a blank line, are its description.
+/// The open value files of config/redtard/mechanics/values/, one per block, compiled into the build: their numbers are the
+/// defaults. A file literal cannot be built from a name, so a new file of the folder is listed here too (CI checks both agree).
+/proc/rogue_value_files()
+	return list(
+		"combat.txt" = 'config/redtard/mechanics/values/combat.txt',
+		"crafting.txt" = 'config/redtard/mechanics/values/crafting.txt',
+		"faith.txt" = 'config/redtard/mechanics/values/faith.txt',
+		"flora.txt" = 'config/redtard/mechanics/values/flora.txt',
+		"husbandry.txt" = 'config/redtard/mechanics/values/husbandry.txt',
+		"library.txt" = 'config/redtard/mechanics/values/library.txt',
+		"pve.txt" = 'config/redtard/mechanics/values/pve.txt',
+		"races.txt" = 'config/redtard/mechanics/values/races.txt',
+		"specials.txt" = 'config/redtard/mechanics/values/specials.txt',
+		"trade.txt" = 'config/redtard/mechanics/values/trade.txt',
+		"treasury.txt" = 'config/redtard/mechanics/values/treasury.txt',
+		"triumphs.txt" = 'config/redtard/mechanics/values/triumphs.txt',
+	)
+
+/// Declares every value of the open value files, the one place a number is written. The build compiles the files in, so
+/// their numbers are the defaults even where the config folder lacks them; a private file only changes them. The `#` lines
+/// right above an entry, back to a blank line, are its description.
 /datum/rogue_mechanics/proc/declare_values()
-	var/list/description = list()
-	for(var/raw_line in splittext(replacetext(file2text('config/redtard/mechanics/values.txt'), ascii2text(ROGUE_MECHANICS_CARRIAGE_RETURN), ""), "\n"))
-		var/line = trim(raw_line)
-		if(!length(line))
+	var/list/files = rogue_value_files()
+	for(var/file_name in files)
+		var/list/description = list()
+		for(var/raw_line in splittext(replacetext(file2text(files[file_name]), ascii2text(ROGUE_MECHANICS_CARRIAGE_RETURN), ""), "\n"))
+			var/line = trim(raw_line)
+			if(!length(line))
+				description.Cut()
+				continue
+			if(line[1] == ROGUE_MECHANICS_COMMENT)
+				description += trim(copytext(line, 2))
+				continue
+			var/split_at = findtext(line, "=")
+			if(!split_at)
+				continue
+			var/id = LOWER_TEXT(trim(copytext(line, 1, split_at)))
+			var/datum/rogue_formula/formula = formulas[id]
+			// Formulas and values share one namespace: a value of a formula's name would replace the formula.
+			if(formula && !formula.is_value)
+				stack_trace("Rogue mechanics: \"[id]\" is both a formula and a value; the value is dropped.")
+			else
+				var/datum/rogue_formula/value = new(id, trim(copytext(line, split_at + 1)), jointext(description, " "), null, TRUE)
+				value.source_file = file_name
+				formulas[id] = value
 			description.Cut()
-			continue
-		if(line[1] == ROGUE_MECHANICS_COMMENT)
-			description += trim(copytext(line, 2))
-			continue
-		var/split_at = findtext(line, "=")
-		if(!split_at)
-			continue
-		var/id = LOWER_TEXT(trim(copytext(line, 1, split_at)))
-		var/datum/rogue_formula/formula = formulas[id]
-		// Formulas and values share one namespace: a value of a formula's name would replace the formula.
-		if(formula && !formula.is_value)
-			stack_trace("Rogue mechanics: \"[id]\" is both a formula and a value; the value is dropped.")
-		else
-			formulas[id] = new /datum/rogue_formula(id, trim(copytext(line, split_at + 1)), jointext(description, " "), null, TRUE)
-		description.Cut()
 
 /datum/rogue_mechanics/proc/directory()
 	return "[config?.directory || "config"]/[ROGUE_MECHANICS_SUBDIR]"
@@ -154,13 +176,15 @@ GLOBAL_DATUM(rogue_mechanics, /datum/rogue_mechanics)
 		var/datum/rogue_formula/formula = formulas[id]
 		formula.reset()
 	read_formula_file(ROGUE_MECHANICS_FORMULAS_FILE)
-	read_formula_file(ROGUE_MECHANICS_VALUES_FILE)
+	for(var/file_name in rogue_value_files())
+		read_formula_file("[ROGUE_MECHANICS_VALUES_DIR]/[file_name]")
 
-/datum/rogue_mechanics/proc/formula_lines(values, header)
+/// Lines of formulas.txt (values FALSE), or of the value file file_name of config/redtard/mechanics/values/ (values TRUE).
+/datum/rogue_mechanics/proc/formula_lines(values, header, file_name)
 	var/list/lines = list(header, "")
 	for(var/id in formulas)
 		var/datum/rogue_formula/formula = formulas[id]
-		if(formula.is_value != values)
+		if(formula.is_value != values || (values && (formula.source_file || ROGUE_MECHANICS_TYPE_VALUES_FILE) != file_name))
 			continue
 		lines += values ? "# [formula.desc]" : "# [formula.desc] Inputs: [jointext(formula.known_inputs, ", ")]."
 		lines += "[id] = [formula.text]"
@@ -235,8 +259,10 @@ GLOBAL_DATUM(rogue_mechanics, /datum/rogue_mechanics)
 		written += category.file
 	rustg_file_write(jointext(formula_lines(FALSE, ROGUE_MECHANICS_FORMULAS_HEADER), "\n"), "[target_directory]/[ROGUE_MECHANICS_FORMULAS_FILE]")
 	written += ROGUE_MECHANICS_FORMULAS_FILE
-	rustg_file_write(jointext(formula_lines(TRUE, ROGUE_MECHANICS_VALUES_HEADER), "\n"), "[target_directory]/[ROGUE_MECHANICS_VALUES_FILE]")
-	written += ROGUE_MECHANICS_VALUES_FILE
+	for(var/file_name in rogue_value_files())
+		var/value_file = "[ROGUE_MECHANICS_VALUES_DIR]/[file_name]"
+		rustg_file_write(jointext(formula_lines(TRUE, ROGUE_MECHANICS_VALUES_HEADER, file_name), "\n"), "[target_directory]/[value_file]")
+		written += value_file
 	return written
 
 /proc/rogue_mechanics_is_item_path(path)

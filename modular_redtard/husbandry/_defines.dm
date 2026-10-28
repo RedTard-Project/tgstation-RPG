@@ -63,7 +63,7 @@
 /// Source of the traits the husbandry module gives.
 #define ROGUE_HUSBANDRY_TRAIT "rogue_husbandry"
 
-/// Riding and tack (husbandry/mounts.dm, husbandry/tack.dm): numbers of the mechanics registry (config/redtard/mechanics/values.txt).
+/// Riding and tack (husbandry/mounts.dm, husbandry/tack.dm): numbers of the mechanics registry (config/redtard/mechanics/values/husbandry.txt).
 #define ROGUE_SADDLE_TIME rogue_value("mount_saddle_time")
 #define ROGUE_UNSADDLE_TIME rogue_value("mount_unsaddle_time")
 #define ROGUE_TACK_TIME rogue_value("mount_tack_time")

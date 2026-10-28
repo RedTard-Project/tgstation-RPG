@@ -6,7 +6,7 @@
 // anvil's; until it does the table has nothing to make.
 
 /// Ratwood: below the recipe's level a strike may ruin the material, less likely per rank and by 1% with good luck.
-/// Numbers of config/redtard/mechanics/values.txt (section "Crafting").
+/// Numbers of config/redtard/mechanics/values/crafting.txt.
 #define ARTIFICER_FAIL_BASE rogue_value("artificer_fail_chance")
 #define ARTIFICER_FAIL_PER_RANK rogue_value("artificer_fail_per_rank")
 /// Ratwood experience: intelligence × level × this for a made thing, intelligence × level for a ruined material.

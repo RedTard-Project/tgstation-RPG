@@ -3,7 +3,7 @@
 // minutes the mold gives a cast blade. A blade is laid on the anvil in place of a bar for the recipes that name it
 // (req_blade): no heat is needed, one bar fewer is added, and the work is finished on the anvil without a quench.
 
-// Numbers of config/redtard/mechanics/values.txt (section "Crafting").
+// Numbers of config/redtard/mechanics/values/crafting.txt.
 #define CRUCIBLE_MAX_INGOTS rogue_value("crucible_max_ingots")
 #define CRUCIBLE_HEAT_FULL rogue_value("crucible_heat_full")
 #define CRUCIBLE_HEAT_PER_SECOND rogue_value("crucible_heat_per_second")

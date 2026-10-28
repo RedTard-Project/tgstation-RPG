@@ -1,10 +1,10 @@
 /// The special abilities of Ratwood's monsters (and the axe troll's slam of Vibelin) as TG mob abilities: a creature gets them
 /// at spawn (rogue_pve_ability_types, pve/mind.dm), its mind uses one whenever rogue_ai_wants() says the moment calls for it, and
-/// a player in its body clicks them like any TG mob ability. Cooldowns, damage and timings are values of config/redtard/mechanics/values.txt.
+/// a player in its body clicks them like any TG mob ability. Cooldowns, damage and timings are values of config/redtard/mechanics/values/pve.txt.
 /datum/action/cooldown/mob_cooldown/rogue_pve
 	name = "Ability"
 	shared_cooldown = NONE
-	/// Name of the value of config/redtard/mechanics/values.txt with its cooldown.
+	/// Name of the value of config/redtard/mechanics/values/pve.txt with its cooldown.
 	var/cooldown_value
 
 /datum/action/cooldown/mob_cooldown/rogue_pve/New(Target, original = TRUE)

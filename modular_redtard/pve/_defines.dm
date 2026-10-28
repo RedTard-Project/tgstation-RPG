@@ -40,7 +40,7 @@
 #define ROGUE_PVE_MARK_ICON 'modular_redtard/icons/effects/rogue_telegraph.dmi'
 #define ROGUE_PVE_STRIKE_ICON 'modular_redtard/icons/effects/rogue_special_fx.dmi'
 
-// Numbers of config/redtard/mechanics/values.txt (section "Stage 6: PvE depth").
+// Numbers of config/redtard/mechanics/values/pve.txt.
 #define ROGUE_PVE_ARROW_RECOVER_CHANCE rogue_value("pve_arrow_recover_chance")
 #define ROGUE_PVE_WEB_GLOB_HOLD rogue_value("pve_web_glob_hold")
 #define ROGUE_PVE_FIREBALL_SPLASH rogue_value("pve_fireball_splash")

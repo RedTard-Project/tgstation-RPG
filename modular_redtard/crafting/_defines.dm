@@ -25,7 +25,7 @@
 #define ROGUE_FORGING_ACTIVE 1
 #define ROGUE_FORGING_COMPLETE 2
 
-/// Deciseconds a bar stays hot after the forge or the smelter (bar_heat_time of config/redtard/mechanics/values.txt;
+/// Deciseconds a bar stays hot after the forge or the smelter (bar_heat_time of config/redtard/mechanics/values/crafting.txt;
 /// Ratwood forge heat_time, smelter tongs).
 #define ROGUE_BAR_HEAT_TIME rogue_value("bar_heat_time")
 

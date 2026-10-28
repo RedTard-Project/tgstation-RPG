@@ -1,3 +1,4 @@
+import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
@@ -6,9 +7,15 @@ const CONFIG_PATH = 'modular_redtard/rockhill/config.json';
 const SHARED_DIR = 'modular_redtard/rockhill';
 const TMP_DIR = 'tmp/modular_redtard/rockhill';
 const DECLARATION_DIRS = ['code', 'modular_redtard'];
-const PACK_DIR = path.posix.join(TMP_DIR, 'pack');
+// The map pack and the stamp of the last conversion live in .cache (git-ignored): TG's SSserver_maint deletes tmp/ at every
+// world start and shutdown, so a pack kept there was cloned anew by the first build after every server run.
+const CACHE_DIR = '.cache/modular_redtard/rockhill';
+const PACK_DIR = path.posix.join(CACHE_DIR, 'pack');
 const PACK_ROOT = path.resolve(PACK_DIR);
 const PACK_GIT_DIR = path.join(PACK_ROOT, '.git');
+const STAMP_PATH = path.posix.join(CACHE_DIR, 'stamp.json');
+const SCRIPT_PATH = 'modular_redtard/build/prepare_rockhill.ts';
+const MAPLINT_RULES = 'tools/maplint';
 const LEVEL_LINE = /^\(\d+,\d+,\d+\) = \{"$/;
 const TILE_OPEN = /^"([^"]+)" = \($/;
 const TURF_VARS = new Set(['dir', 'name', 'desc', 'color']);
@@ -62,6 +69,11 @@ type Size = { width: number; height: number };
 
 type Declarations = { types: Set<string>; abstract: Set<string> };
 
+type Pack = { dir: string; files: string[] };
+
+/// What the last clean conversion read (a hash of its inputs) and what it wrote (file -> hash).
+type Stamp = { inputs: string; outputs: Record<string, string> };
+
 type Problems = {
   fatal: Map<string, number>;
   missingObjects: Map<string, number>;
@@ -78,10 +90,16 @@ export async function prepareRockhill(): Promise<void> {
   fs.mkdirSync(TMP_DIR, { recursive: true });
   const mapJson = JSON.parse(fs.readFileSync(path.join(SHARED_DIR, 'rockhill.json'), 'utf-8'));
   const station: MapSource = { label: 'map', name: config.source.name, file: config.source.map, output: config.output.map, traits: mapJson.traits };
-  const pack = fetchPack(config);
+  const fetched = fetchPack(config);
+  const pack = fetched.dir;
+  const declarations = declaredTypes();
+  const inputs = inputFingerprint(config, fetched, declarations);
+  if (upToDate(inputs)) {
+    console.log(`modular_redtard: ${config.source.name} maps are up to date (the ${config.source.project} map files and the module's inputs are what the last conversion read): conversion and maplint skipped`);
+    return;
+  }
   const sources = [station, ...extraMaps(config, pack, mapJson.traits), ...templateMaps(config)];
 
-  const declarations = declaredTypes();
   const declared = declarations.types;
   const problems: Problems = {
     fatal: new Map(),
@@ -151,9 +169,64 @@ export async function prepareRockhill(): Promise<void> {
     const label = map.source.template ? `Dungeon Generator - ${path.posix.basename(path.posix.dirname(map.source.output))}` : `Map - ${config.source.name}`;
     lintGroups.set(label, [...(lintGroups.get(label) || []), map.source.output]);
   }
+  let lintClean = true;
   for (const [label, maps] of lintGroups) {
-    runMaplint(label, maps);
+    lintClean = runMaplint(label, maps) && lintClean;
   }
+  // A clean conversion is stamped; one with maplint warnings is not, so the next build converts and lints it again.
+  if (lintClean) {
+    const titleFiles = config.title.sources.map((source) => path.join(config.output.title_dir, `${config.title.prefix}${source.name}.${source.kind}`));
+    writeStamp(inputs, [...written.map((map) => map.source.output), config.output.map_json, reportPath(config), ...titleFiles]);
+  }
+}
+
+/// Everything a conversion reads: the map files of the pack, the module's own inputs (config, map json, dungeon templates,
+/// role titles, area flags, title screens), this script, the TG maplint rules and the declared types.
+function inputFingerprint(config: Config, pack: Pack, declarations: Declarations): string {
+  const hash = crypto.createHash('sha1');
+  const own = [CONFIG_PATH, path.join(SHARED_DIR, 'rockhill.json'), config.source.templates, ROLE_TITLES, AREA_FLAGS, SCRIPT_PATH, MAPLINT_SCRIPT];
+  const titles = config.title.sources.map((source) => path.join(SHARED_DIR, 'title', source.file));
+  const rules = fs.existsSync(MAPLINT_RULES) ? walk(MAPLINT_RULES).filter((file) => !file.includes('__pycache__')).sort() : [];
+  for (const file of [...pack.files.map((file) => path.posix.join(pack.dir, file)), ...own, ...titles, ...rules]) {
+    if (!file) continue;
+    hash.update(`${file}\n`);
+    hash.update(fs.existsSync(file) ? fs.readFileSync(file) : '(missing)\n');
+  }
+  hash.update([...declarations.types].sort().join('\n'));
+  hash.update('\n--\n');
+  hash.update([...declarations.abstract].sort().join('\n'));
+  return hash.digest('hex');
+}
+
+/// The stamp of the last clean conversion matches these inputs, and every file it wrote is still as it was written.
+function upToDate(inputs: string): boolean {
+  if (!fs.existsSync(STAMP_PATH)) {
+    return false;
+  }
+  let stamp: Stamp;
+  try {
+    stamp = JSON.parse(fs.readFileSync(STAMP_PATH, 'utf-8')) as Stamp;
+  } catch {
+    return false;
+  }
+  if (stamp.inputs !== inputs || !stamp.outputs || !Object.keys(stamp.outputs).length) {
+    return false;
+  }
+  return Object.entries(stamp.outputs).every(([file, digest]) => fs.existsSync(file) && sha1(fs.readFileSync(file)) === digest);
+}
+
+function writeStamp(inputs: string, outputs: string[]): void {
+  const stamp: Stamp = { inputs, outputs: Object.fromEntries(outputs.map((file) => [file, sha1(fs.readFileSync(file))])) };
+  fs.mkdirSync(CACHE_DIR, { recursive: true });
+  fs.writeFileSync(STAMP_PATH, `${JSON.stringify(stamp, null, '\t')}\n`);
+}
+
+function sha1(data: Buffer | string): string {
+  return crypto.createHash('sha1').update(data).digest('hex');
+}
+
+function reportPath(config: Config): string {
+  return path.join(path.dirname(config.output.map), 'report.md');
 }
 
 function extraMaps(config: Config, pack: string, stationTraits: Traits[]): MapSource[] {
@@ -546,7 +619,7 @@ export function runBootstrapPython(args: string[]): { status: number | null; out
   return { status: result.status, output: `${result.stdout || ''}${result.stderr || ''}`.trim() };
 }
 
-function runMaplint(label: string, maps: string[]): void {
+function runMaplint(label: string, maps: string[]): boolean {
   const list = path.posix.join(TMP_DIR, 'maplint.txt');
   fs.writeFileSync(list, `${maps.join('\n')}\n`);
   const { status, output } = runBootstrapPython([MAPLINT_SCRIPT, '--list', list]);
@@ -556,10 +629,11 @@ function runMaplint(label: string, maps: string[]): void {
   const counts = summary ? `${summary[1]}/${summary[2]}` : `?/${maps.length}`;
   if (status === 0) {
     console.log(`modular_redtard: maplint: ${label} - [${counts}]`);
-    return;
+    return true;
   }
   const details = lines.filter((line) => !summaryLine.test(line.trim())).join('\n').trim();
   console.warn(`modular_redtard: WARNING - maplint (tools/maplint, the TG map rules): ${label} - [${counts}]\n${details}`);
+  return false;
 }
 
 function emitPops(pops: Pop[]): string[] {
@@ -658,19 +732,29 @@ function walk(root: string): string[] {
   return files;
 }
 
-function fetchPack(config: Config): string {
+function fetchPack(config: Config): Pack {
   const { repository, branch, pack } = config.source;
   const remote = `refs/remotes/origin/${branch}`;
   assertPackLocation();
+  let fetched: string;
   if (!packRepositoryValid(remote)) {
     fs.rmSync(PACK_ROOT, { recursive: true, force: true });
     runGit(['clone', '--quiet', '--depth', '1', '--filter=blob:none', '--no-checkout', '--config', 'gc.auto=0', '--config', 'maintenance.auto=false', '--branch', branch, repository, PACK_ROOT]);
     if (!packRepositoryValid(remote)) {
       throw new Error(`${PACK_DIR}: the fresh clone is not a valid git repository; refusing to run git there`);
     }
+    fetched = 'cloned anew';
   } else {
     packGit(['remote', 'set-url', 'origin', repository]);
-    packGit(['fetch', '--quiet', '--depth', '1', '--filter=blob:none', 'origin', `+refs/heads/${branch}:${remote}`]);
+    // git ls-remote asks the server for the head of the branch alone, downloading nothing: when the pack already holds that
+    // commit there is nothing to fetch.
+    const upstream = remoteHead(repository, branch);
+    if (upstream && upstream === packGit(['rev-parse', remote])) {
+      fetched = 'already current, nothing fetched';
+    } else {
+      packGit(['fetch', '--quiet', '--depth', '1', '--filter=blob:none', 'origin', `+refs/heads/${branch}:${remote}`]);
+      fetched = 'fetched the new commit';
+    }
   }
   packGit(['config', 'core.sparseCheckout', 'true']);
   packGit(['config', 'gc.auto', '0']);
@@ -681,8 +765,17 @@ function fetchPack(config: Config): string {
   const commit = packGit(['rev-parse', '--short', 'HEAD']);
   const files = packGit(['ls-files', '-t']).split('\n').filter((line) => line.startsWith('H ')).map((line) => line.slice(2));
   const bytes = files.reduce((total, file) => total + fs.statSync(path.join(PACK_ROOT, file)).size, 0);
-  console.log(`modular_redtard: ${config.source.project} ${branch} @ ${commit}: ${files.length} map file(s), ${(bytes / 1048576).toFixed(1)} MB, fetched as one git pack (source.pack in ${CONFIG_PATH})`);
-  return PACK_DIR;
+  console.log(`modular_redtard: ${config.source.project} ${branch} @ ${commit}: ${files.length} map file(s), ${(bytes / 1048576).toFixed(1)} MB, ${fetched} (source.pack in ${CONFIG_PATH})`);
+  return { dir: PACK_DIR, files };
+}
+
+/// The commit the branch points at upstream (git ls-remote, nothing downloaded), or null when the server cannot be asked.
+function remoteHead(repository: string, branch: string): string | null {
+  const result = gitResult(['ls-remote', repository, `refs/heads/${branch}`]);
+  if (result.error || result.status !== 0) {
+    return null;
+  }
+  return (result.stdout || '').trim().split(/\s+/)[0] || null;
 }
 
 function samePath(a: string, b: string): boolean {
@@ -694,9 +787,9 @@ function samePath(a: string, b: string): boolean {
 }
 
 function assertPackLocation(): void {
-  const tmpRoot = path.resolve(TMP_DIR);
-  if (!PACK_ROOT.startsWith(tmpRoot + path.sep) || samePath(PACK_GIT_DIR, path.resolve('.git'))) {
-    throw new Error(`refusing to use ${PACK_ROOT} as the map pack: it must be a folder inside ${tmpRoot}`);
+  const cacheRoot = path.resolve(CACHE_DIR);
+  if (!PACK_ROOT.startsWith(cacheRoot + path.sep) || samePath(PACK_GIT_DIR, path.resolve('.git'))) {
+    throw new Error(`refusing to use ${PACK_ROOT} as the map pack: it must be a folder inside ${cacheRoot}`);
   }
 }
 
@@ -798,7 +891,7 @@ function writeReport(config: Config, tally: Record<string, Tally>, problems: Pro
   if (problems.staleRules.length) {
     lines.push('', 'replacement rules pointing at missing types:', ...problems.staleRules.map((rule) => `- ${rule}`));
   }
-  const report = path.join(path.dirname(config.output.map), 'report.md');
+  const report = reportPath(config);
   fs.writeFileSync(report, `${lines.join('\n')}\n`);
   const sum = (field: keyof Tally) => Object.values(tally).reduce((total, t) => total + t[field], 0);
   const extras = maps.slice(1).filter((map) => !map.source.template).map((map) => `${map.source.name} ${map.size.width}x${map.size.height}x${map.levels}`).join(', ');

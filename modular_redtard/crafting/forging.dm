@@ -65,7 +65,7 @@ GLOBAL_LIST_INIT(rogue_anvil_recipes, init_rogue_anvil_recipes())
 	)
 	return ui_entry
 
-// Numbers of config/redtard/mechanics/values.txt (section "Crafting").
+// Numbers of config/redtard/mechanics/values/crafting.txt.
 #define FORGING_HEALTH_PER_QUALITY rogue_value("forging_health_per_quality")
 /// Ratwood advance_recipe(): a good strike on a cast blade starts from more progress than 1.
 #define FORGING_BLADE_BREAKTHROUGH rogue_value("forging_blade_breakthrough")

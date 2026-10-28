@@ -1,6 +1,6 @@
-/// Loads the mechanics registry (mechanics/registry.dm) while the world initializes: values.txt, formulas.txt and the armor,
-/// intent and item tables of config/redtard/mechanics are read and parsed here, in the early stage before the map and its
-/// items, so nothing in the round pays for them on first use and the init log shows what the load costs.
+/// Loads the mechanics registry (mechanics/registry.dm) while the world initializes: the number files of values/,
+/// formulas.txt and the armor, intent and item tables of config/redtard/mechanics are read and parsed here, in the early stage
+/// before the map and its items, so nothing in the round pays for them on first use and the init log shows what the load costs.
 /// rogue_mechanics() still loads the registry itself when something asks before this subsystem; the log then says so.
 SUBSYSTEM_DEF(rogue_mechanics)
 	name = "Rogue Mechanics"

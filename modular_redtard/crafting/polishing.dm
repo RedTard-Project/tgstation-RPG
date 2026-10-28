@@ -5,7 +5,7 @@
 // compound comes off. A masterwork from the anvil or a fine piece of pottery shines without it, and can be polished on top.
 // Breaking the item (the module's broken: worn down to the armor failure share) takes the shine and the bonus away.
 
-// Numbers of config/redtard/mechanics/values.txt (section "Crafting").
+// Numbers of config/redtard/mechanics/values/crafting.txt.
 #define POLISH_CREAM_USES rogue_value("polish_cream_uses")
 #define POLISH_CREAM_LOW rogue_value("polish_cream_low")
 /// Ratwood do_after(50 - SPD * 2) for the cream and (50 - STR * 1.5) for the brush, in deciseconds.
@@ -215,7 +215,7 @@
 
 /// Ratwood polishing cream: uses of the compound (twelve at Ratwood), the first step of a polish.
 /obj/item/polishing_cream
-	/// Uses left; a fresh tin gets polish_cream_uses of values.txt.
+	/// Uses left; a fresh tin gets polish_cream_uses of values/crafting.txt.
 	var/uses
 
 /obj/item/polishing_cream/Initialize(mapload)
