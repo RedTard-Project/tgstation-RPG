@@ -32,7 +32,8 @@ ADMIN_VERB(rogue_armor_compare, R_DEBUG, "View Armor Comparison", "Browse and co
 			"desc" = formula.desc,
 			"text" = formula.text,
 			"default" = formula.default_text,
-			"inputs" = formula.known_inputs,
+			// A value has no inputs (known_inputs is null); the panel maps over the list for every entry.
+			"inputs" = formula.known_inputs || list(),
 			"error" = formula.error,
 			"value" = formula.is_value,
 		))
