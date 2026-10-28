@@ -209,7 +209,7 @@
 		var/obj/item/ingot/spilled = new metal(drop_location())
 		to_chat(user, span_notice("The crucible overflows! An extra [spilled.name] falls to the ground."))
 	if(bonus)
-		to_chat(user, span_notice(fits == 2 ? "As you add the ingot, it seems to multiply in the crucible!" : "The ingot starts to multiply but the crucible is almost full!"))
+		to_chat(user, span_notice((fits == 2 ? "As you add the ingot, it seems to multiply in the crucible!" : "The ingot starts to multiply but the crucible is almost full!")))
 	else
 		to_chat(user, span_info("You add the ingot to the crucible."))
 	heat_progress = 0

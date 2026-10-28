@@ -294,7 +294,7 @@
 
 /obj/item/reagent_containers/glass/bottle/examine(mob/user)
 	. = ..()
-	. += span_smallnotice(corked ? "It is corked. Use it in hand to uncork it." : "It is uncorked.")
+	. += span_smallnotice((corked ? "It is corked. Use it in hand to uncork it." : "It is uncorked."))
 
 /obj/item/reagent_containers/glass/bottle/alchemical
 	volume = 30

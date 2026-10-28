@@ -326,7 +326,7 @@ GLOBAL_LIST(rogue_structure_repair_skills)
 			return
 		user.rogue_craft_experience(/datum/attribute/skill/craft/sewing, user.rogue_stat(ROGUE_STAT_INTELLIGENCE) * (failed ? SEW_XP_FAIL : SEW_XP_SUCCESS))
 		playsound(loc, ROGUE_SEW_SOUND, 50, TRUE, -2)
-		user.visible_message(span_info(failed ? "[user] makes a little progress towards repairing [cloth]..." : "[user] repairs [cloth]!"))
+		user.visible_message(span_info((failed ? "[user] makes a little progress towards repairing [cloth]..." : "[user] repairs [cloth]!")))
 		if(was_broken && !cloth.rogue_is_broken() && !infinite)
 			stringamt--
 			update_appearance(UPDATE_OVERLAYS)

@@ -56,7 +56,7 @@
 			told_blocked = TRUE
 		return
 	if(!falling)
-		to_chat(source, span_warning(quality ? "I'll fall asleep soon..." : "I'll fall asleep soon, although a bed would be more comfortable..."))
+		to_chat(source, span_warning((quality ? "I'll fall asleep soon..." : "I'll fall asleep soon, although a bed would be more comfortable...")))
 	falling += HAS_TRAIT(source, TRAIT_FASTSLEEP) ? 2 : 1
 	if(falling > (quality ? ROGUE_FALL_ASLEEP_BED : ROGUE_FALL_ASLEEP_GROUND))
 		falling = 0

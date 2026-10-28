@@ -161,7 +161,7 @@
 /obj/item/clothing/examine(mob/user)
 	. = ..()
 	if(torn_sleeve_number)
-		. += span_notice(torn_sleeve_number == 1 ? "It has one torn sleeve." : "Both its sleeves have been torn!")
+		. += span_notice((torn_sleeve_number == 1 ? "It has one torn sleeve." : "Both its sleeves have been torn!"))
 	if(nodismemsleeves || !(rogue_sleeve_whole("r") || rogue_sleeve_whole("l")))
 		return
 	if(rogue_sleeves_on_legs())

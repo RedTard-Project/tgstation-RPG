@@ -273,7 +273,7 @@
 	coarse = !coarse
 	name = coarse ? "coarse brush" : "fine brush"
 	icon_state = "brush_[coarse ? 1 : 0]"
-	to_chat(user, span_info(coarse ? "I flip the brush to the coarse side." : "I flip the brush to the fine side."))
+	to_chat(user, span_info((coarse ? "I flip the brush to the coarse side." : "I flip the brush to the fine side.")))
 	return TRUE
 
 /obj/item/armor_brush/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)

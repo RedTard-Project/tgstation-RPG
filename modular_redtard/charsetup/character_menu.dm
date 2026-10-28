@@ -56,7 +56,7 @@ GLOBAL_LIST_EMPTY(rogue_charsetup_open)
 /datum/rogue_charsetup/ui_interact(mob/user, datum/tgui/ui)
 	// TG's menu waits for IconForge and the spritesheets as well.
 	if(SSearly_assets.initialized != INITIALIZATION_INNEW_REGULAR)
-		to_chat(user, span_warning(rogue_ui_russian(user.client) ? "Меню персонажа ещё готовится, попробуйте через минуту." : "The character menu is still being prepared, try again in a moment."))
+		to_chat(user, span_warning((rogue_ui_russian(user.client) ? "Меню персонажа ещё готовится, попробуйте через минуту." : "The character menu is still being prepared, try again in a moment.")))
 		return
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(ui)
@@ -283,7 +283,7 @@ GLOBAL_LIST_EMPTY(rogue_charsetup_open)
 		if("save")
 			prefs.save_character()
 			prefs.save_preferences()
-			to_chat(user, span_notice(rogue_ui_russian(user.client) ? "Персонаж сохранён." : "Your character is saved."))
+			to_chat(user, span_notice((rogue_ui_russian(user.client) ? "Персонаж сохранён." : "Your character is saved.")))
 			return FALSE
 		if("done")
 			ui.close()
