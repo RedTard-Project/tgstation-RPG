@@ -922,10 +922,10 @@
 					"r_sleeve_status": "ROGUE_SLEEVE_NOMOD",
 					"l_sleeve_status": "ROGUE_SLEEVE_NOMOD",
 					"rogue_sleeve_scrap": "/obj/item/natural/cloth",
-					"rogue_face_coverage": "NONE"
+					"rogue_coverage": "null"
 				},
-				"face_coverage_vars": [
-					"rogue_face_coverage"
+				"coverage_vars": [
+					"rogue_coverage"
 				],
 				"vars": [
 					"name",
@@ -1020,7 +1020,7 @@
 					"rogue_blocksound": "blocksound",
 					"rogue_force_wielded": "force_wielded",
 					"rogue_sleeve_scrap": "salvage_result",
-					"rogue_face_coverage": "body_parts_covered",
+					"rogue_coverage": "body_parts_covered",
 					"accepted_magazine_type": "mag_type"
 				},
 				"slot_worn_icons": {

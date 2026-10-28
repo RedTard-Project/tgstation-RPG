@@ -233,8 +233,8 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 	rogue_strike_notes = list()
 	if(ishuman(src) && damtype == BRUTE)
 		var/mob/living/carbon/human/armored = src
-		armor_hit = armored.rogue_best_armor(def_zone, intent.item_d_type)
-		damage *= armored.rogue_armor_hit(def_zone, intent.item_d_type, damage, penetration, rogue_wear_factor(weapon, intent), weapon, intent.blade_class)
+		armor_hit = armored.rogue_best_armor(zone, intent.item_d_type)
+		damage *= armored.rogue_armor_hit(zone, intent.item_d_type, damage, penetration, rogue_wear_factor(weapon, intent), weapon, intent.blade_class)
 	var/damage_done = rogue_apply_armored_damage(
 		damage = damage,
 		damagetype = damtype,

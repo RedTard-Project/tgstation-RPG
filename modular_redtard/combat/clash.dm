@@ -72,7 +72,7 @@
 	var/blocked = biter.run_armor_check(BODY_ZONE_HEAD, MELEE, silent = TRUE)
 	if(ishuman(biter))
 		var/mob/living/carbon/human/human_biter = biter
-		force *= human_biter.rogue_armor_hit(BODY_ZONE_HEAD, ROGUE_ARMOR_BLUNT, force, ROGUE_PEN_NONE, rogue_wear_factor(our_weapon, null), our_weapon, BCLASS_BLUNT)
+		force *= human_biter.rogue_armor_hit(BODY_ZONE_PRECISE_MOUTH, ROGUE_ARMOR_BLUNT, force, ROGUE_PEN_NONE, rogue_wear_factor(our_weapon, null), our_weapon, BCLASS_BLUNT)
 	biter.rogue_apply_armored_damage(force, BRUTE, BODY_ZONE_HEAD, blocked, attacking_item = our_weapon)
 	rogue_riposte(biter)
 

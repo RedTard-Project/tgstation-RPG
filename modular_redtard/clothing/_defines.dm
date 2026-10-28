@@ -80,18 +80,24 @@
 #define ROGUE_SLEEVE_TEAR_TIME rogue_value("sleeve_tear_time")
 #define ROGUE_CLOTH_RIP_SOUND 'modular_redtard/rockhill/sound/foley/cloth_rip.ogg'
 
-/// Ratwood's parts of the face (code/__DEFINES/inventory.dm MOUTH, NOSE, EARS, RIGHT_EYE, LEFT_EYE, HAIR). TG has no body
-/// part flags for them, so the porter folds them into HEAD of body_parts_covered; rogue_face_coverage (rockhill/port_data.dm)
-/// keeps which of them an item covers, for what uncovers the face (a raised visor, clothing/adjustable.dm).
-#define ROGUE_FACE_MOUTH (1<<0)
-#define ROGUE_FACE_NOSE (1<<1)
-#define ROGUE_FACE_EARS (1<<2)
-#define ROGUE_FACE_RIGHT_EYE (1<<3)
-#define ROGUE_FACE_LEFT_EYE (1<<4)
-#define ROGUE_FACE_HAIR (1<<5)
-#define ROGUE_FACE_EYES (ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE)
+/// Ratwood's body parts TG has no flags for (code/__DEFINES/inventory.dm VITALS, MOUTH, NOSE, EARS, RIGHT_EYE, LEFT_EYE, HAIR),
+/// above TG's own (CHEST to NECK, 1<<0 to 1<<11). For TG the porters fold them into body_parts_covered (the face and the skull
+/// into HEAD, the vitals into CHEST) and keep Ratwood's coverage whole in rogue_coverage (rockhill/port_data.dm), with TG's
+/// flags for the parts TG has: what a blow on a precise zone looks for (combat/armor.dm) and what a raised visor bares
+/// (clothing/adjustable.dm).
+#define ROGUE_COVER_VITALS (1<<12)
+#define ROGUE_COVER_MOUTH (1<<13)
+#define ROGUE_COVER_NOSE (1<<14)
+#define ROGUE_COVER_EARS (1<<15)
+#define ROGUE_COVER_RIGHT_EYE (1<<16)
+#define ROGUE_COVER_LEFT_EYE (1<<17)
+/// Ratwood HAIR, the skull zone.
+#define ROGUE_COVER_HAIR (1<<18)
+#define ROGUE_COVER_EYES (ROGUE_COVER_RIGHT_EYE | ROGUE_COVER_LEFT_EYE)
 /// Ratwood FACE: mouth, nose, eyes and ears.
-#define ROGUE_FACE_ALL (ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EYES | ROGUE_FACE_EARS)
+#define ROGUE_COVER_FACE (ROGUE_COVER_MOUTH | ROGUE_COVER_NOSE | ROGUE_COVER_EYES | ROGUE_COVER_EARS)
+/// The parts of the head TG's HEAD stands for along with the head itself.
+#define ROGUE_COVER_HEAD_PARTS (ROGUE_COVER_FACE | ROGUE_COVER_HAIR)
 
 /// Sprite suffix of a raised visor, a lowered hood or a pulled-down mask (clothing/adjustable.dm; Ratwood "<icon_state>_t").
 #define ROGUE_ADJUSTED_SUFFIX "_t"

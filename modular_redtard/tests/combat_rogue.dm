@@ -268,6 +268,30 @@
 	var/mob/living/carbon/human/consistent/attacker = allocate(__IMPLIED_TYPE__)
 	TEST_ASSERT(!beast.rogue_beast_dodge(attacker, null), "A winded creature dodged")
 
+/datum/unit_test/rogue_armor_coverage
+
+/datum/unit_test/rogue_armor_coverage/Run()
+	var/obj/item/clothing/neck/roguetown/bevor/bevor = allocate(__IMPLIED_TYPE__)
+	TEST_ASSERT(bevor.rogue_covers_zone(BODY_ZONE_PRECISE_MOUTH) && bevor.rogue_covers_zone("nose") && bevor.rogue_covers_zone(ROGUE_ZONE_NECK), "A bevor does not guard the mouth, the nose and the neck")
+	TEST_ASSERT(!bevor.rogue_covers_zone("r_eye") && !bevor.rogue_covers_zone(BODY_ZONE_HEAD), "A bevor guards the eyes or the head")
+	var/obj/item/clothing/head/roguetown/helmet/heavy/knight/helmet = allocate(__IMPLIED_TYPE__)
+	for(var/zone in list(BODY_ZONE_HEAD, "skull", "ears", "r_eye", "l_eye", "nose", BODY_ZONE_PRECISE_MOUTH))
+		TEST_ASSERT(helmet.rogue_covers_zone(zone), "A closed knight's helmet does not guard the [zone]")
+	TEST_ASSERT(!helmet.rogue_covers_zone(ROGUE_ZONE_NECK), "A knight's helmet guards the neck")
+	TEST_ASSERT(helmet.rogue_set_adjusted(TRUE), "The visor did not open")
+	TEST_ASSERT(helmet.rogue_covers_zone("skull") && !helmet.rogue_covers_zone("r_eye") && !helmet.rogue_covers_zone(BODY_ZONE_PRECISE_MOUTH), "A raised visor still guards the face, or no longer the skull")
+	TEST_ASSERT_EQUAL(helmet.body_parts_covered, HEAD, "A raised visor changed what TG reads")
+	helmet.rogue_set_adjusted(FALSE)
+	TEST_ASSERT(helmet.rogue_covers_zone("r_eye"), "A lowered visor does not guard the eyes again")
+	var/obj/item/clothing/gloves/roguetown/chain/gloves = allocate(__IMPLIED_TYPE__)
+	TEST_ASSERT(gloves.rogue_covers_zone(BODY_ZONE_PRECISE_R_HAND) && !gloves.rogue_covers_zone(BODY_ZONE_R_ARM), "Gauntlets guard the arm, or not the hand")
+	var/obj/item/clothing/suit/roguetown/armor/plate/bikini/bikini = allocate(__IMPLIED_TYPE__)
+	TEST_ASSERT(bikini.rogue_covers_zone(BODY_ZONE_CHEST) && !bikini.rogue_covers_zone("stomach"), "A plate bikini guards the belly, or not the chest")
+	var/mob/living/carbon/human/consistent/wearer = allocate(__IMPLIED_TYPE__)
+	TEST_ASSERT(wearer.equip_to_slot_if_possible(bevor, ITEM_SLOT_NECK), "Could not put the bevor on")
+	TEST_ASSERT_EQUAL(wearer.rogue_best_armor(BODY_ZONE_PRECISE_MOUTH, ROGUE_ARMOR_SLASH), bevor, "A worn bevor does not stop a cut to the mouth")
+	TEST_ASSERT_NULL(wearer.rogue_best_armor("l_eye", ROGUE_ARMOR_SLASH), "A worn bevor stops a cut to the eye")
+
 #undef TEST_ASSERT
 #undef TEST_ASSERT_EQUAL
 #endif

@@ -7841,6 +7841,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	rogue_coverage = CHEST | GROIN
 	inhand_icon_state = null
 	worn_icon_state = "abyssortabard"
 	rogue_female_worn = TRUE
@@ -7869,6 +7870,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	rogue_coverage = CHEST | GROIN
 	inhand_icon_state = null
 	worn_icon_state = "apron"
 	rogue_female_worn = TRUE
@@ -7925,6 +7927,7 @@
 	material_category = 2
 	flags_inv = NONE
 	sewrepair = TRUE
+	rogue_coverage = null
 	inhand_icon_state = null
 	worn_icon_state = "aproncook"
 	rogue_female_worn = TRUE
@@ -7980,6 +7983,7 @@
 	material_category = 2
 	flags_inv = NONE
 	sewrepair = TRUE
+	rogue_coverage = null
 	inhand_icon_state = null
 	worn_icon_state = "waistpron"
 	rogue_female_worn = TRUE
@@ -8060,6 +8064,7 @@
 	rogue_grid_height = 64
 	material_category = 2
 	sewrepair = TRUE
+	rogue_coverage = CHEST | GROIN
 	inhand_icon_state = null
 	worn_icon_state = "battlenun"
 	rogue_female_worn = TRUE
@@ -8377,6 +8382,7 @@
 	material_category = 2
 	sewrepair = TRUE
 	sleevetype = "shirt"
+	rogue_coverage = CHEST | GROIN | ARMS
 	inhand_icon_state = null
 	worn_icon_state = "chasuble"
 
@@ -8456,6 +8462,7 @@
 	boobed = TRUE
 	sewrepair = TRUE
 	sleevetype = "shirt"
+	rogue_coverage = CHEST | GROIN
 	inhand_icon_state = null
 	worn_icon_state = "tabard_ravox"
 	rogue_female_worn = TRUE
@@ -8487,6 +8494,7 @@
 	boobed = TRUE
 	sewrepair = TRUE
 	sleevetype = "cotehardie"
+	rogue_coverage = CHEST | GROIN | ARMS
 	inhand_icon_state = null
 	worn_icon_state = "cotehardie"
 	rogue_female_worn = TRUE
@@ -8997,6 +9005,7 @@
 	sellprice = 300
 	sewrepair = TRUE
 	sleevetype = "silvertabard"
+	rogue_coverage = CHEST | GROIN
 	inhand_icon_state = null
 	worn_icon_state = "silvertabard"
 	rogue_female_worn = TRUE
@@ -9134,6 +9143,7 @@
 	flags_inv = NONE
 	sellprice = 100
 	sewrepair = TRUE
+	rogue_coverage = CHEST | GROIN
 	inhand_icon_state = null
 	worn_icon_state = "martyrcloak"
 	rogue_female_worn = TRUE
@@ -9265,6 +9275,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	rogue_coverage = CHEST | GROIN
 	inhand_icon_state = null
 	worn_icon_state = "psydontabard"
 	rogue_female_worn = TRUE
@@ -9293,6 +9304,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	rogue_coverage = null
 	inhand_icon_state = null
 	worn_icon_state = "psydontabardalt"
 	rogue_female_worn = TRUE
@@ -9666,6 +9678,7 @@
 	boobed = TRUE
 	sewrepair = TRUE
 	sleevetype = "shirt"
+	rogue_coverage = CHEST | GROIN
 	inhand_icon_state = null
 	worn_icon_state = "stabard"
 	rogue_female_worn = TRUE
@@ -9781,6 +9794,7 @@
 	detail_color = "#ffffff"
 	boobed = TRUE
 	sewrepair = TRUE
+	rogue_coverage = CHEST
 	inhand_icon_state = null
 	worn_icon_state = "guard_hood"
 	rogue_female_worn = TRUE
@@ -9841,6 +9855,7 @@
 	detail_color = "#ffffff"
 	boobed = TRUE
 	sewrepair = TRUE
+	rogue_coverage = CHEST
 	inhand_icon_state = null
 	worn_icon_state = "guard_hood"
 	rogue_female_worn = TRUE
@@ -10058,6 +10073,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	rogue_coverage = CHEST | GROIN
 	inhand_icon_state = null
 	worn_icon_state = "tabard"
 	rogue_female_worn = TRUE
@@ -10293,6 +10309,7 @@
 	boobed = TRUE
 	sewrepair = TRUE
 	sleevetype = "shirt"
+	rogue_coverage = CHEST | GROIN
 	inhand_icon_state = null
 	worn_icon_state = "tabard_abyssor"
 	rogue_female_worn = TRUE
@@ -10322,6 +10339,7 @@
 	boobed = TRUE
 	sewrepair = TRUE
 	sleevetype = "shirt"
+	rogue_coverage = CHEST | GROIN
 	inhand_icon_state = null
 	worn_icon_state = "tabard_astrata_alt"
 	rogue_female_worn = TRUE
@@ -10376,6 +10394,7 @@
 	boobed = TRUE
 	sewrepair = TRUE
 	sleevetype = "shirt"
+	rogue_coverage = CHEST | GROIN
 	inhand_icon_state = null
 	worn_icon_state = "tabard_dendor"
 	rogue_female_worn = TRUE
@@ -10405,6 +10424,7 @@
 	boobed = TRUE
 	sewrepair = TRUE
 	sleevetype = "shirt"
+	rogue_coverage = CHEST | GROIN
 	inhand_icon_state = null
 	worn_icon_state = "tabard_eora"
 	rogue_female_worn = TRUE
@@ -10460,6 +10480,7 @@
 	boobed = TRUE
 	sewrepair = TRUE
 	sleevetype = "shirt"
+	rogue_coverage = CHEST | GROIN
 	inhand_icon_state = null
 	worn_icon_state = "tabard_malum"
 	rogue_female_worn = TRUE
@@ -10514,6 +10535,7 @@
 	boobed = TRUE
 	sewrepair = TRUE
 	sleevetype = "shirt"
+	rogue_coverage = CHEST | GROIN
 	inhand_icon_state = null
 	worn_icon_state = "tabard_necra"
 	rogue_female_worn = TRUE
@@ -10568,6 +10590,7 @@
 	boobed = TRUE
 	sewrepair = TRUE
 	sleevetype = "shirt"
+	rogue_coverage = CHEST | GROIN
 	inhand_icon_state = null
 	worn_icon_state = "tabard_noc"
 	rogue_female_worn = TRUE
@@ -10597,6 +10620,7 @@
 	boobed = TRUE
 	sewrepair = TRUE
 	sleevetype = "shirt"
+	rogue_coverage = CHEST | GROIN
 	inhand_icon_state = null
 	worn_icon_state = "tabard_pestra"
 	rogue_female_worn = TRUE
@@ -10652,6 +10676,7 @@
 	boobed = TRUE
 	sewrepair = TRUE
 	sleevetype = "shirt"
+	rogue_coverage = CHEST | GROIN
 	inhand_icon_state = null
 	worn_icon_state = "tabard_weeping"
 	rogue_female_worn = TRUE
@@ -10680,6 +10705,7 @@
 	boobed = TRUE
 	sewrepair = TRUE
 	sleevetype = "shirt"
+	rogue_coverage = CHEST | GROIN
 	inhand_icon_state = null
 	worn_icon_state = "justicetabard"
 	rogue_female_worn = TRUE
@@ -10735,6 +10761,7 @@
 	boobed = TRUE
 	sewrepair = TRUE
 	sleevetype = "shirt"
+	rogue_coverage = CHEST | GROIN
 	inhand_icon_state = null
 	worn_icon_state = "tabard_xylix"
 	rogue_female_worn = TRUE
@@ -12462,7 +12489,7 @@
 	material_category = 2
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
 	worn_icon_state = "blackbag"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -12495,7 +12522,7 @@
 	flags_inv = HIDEEARS | HIDEHAIR
 	sewrepair = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide
-	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | NECK
 	inhand_icon_state = null
 	worn_icon_state = "antlerhood"
 
@@ -12520,7 +12547,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "archercap"
 
@@ -12546,7 +12573,7 @@
 	material_category = 2
 	flags_inv = HIDEEARS
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "armingcap"
 
@@ -12571,7 +12598,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "articap"
 
@@ -12596,7 +12623,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "bardhat"
 
@@ -12623,7 +12650,7 @@
 	material_category = 2
 	flags_inv = HIDEEARS | HIDEHAIR
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | NECK
 	inhand_icon_state = null
 	worn_icon_state = "beekeeper"
 
@@ -12648,7 +12675,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "brimmed"
 
@@ -12673,7 +12700,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "bucklehat"
 
@@ -12698,7 +12725,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "chaperon"
 
@@ -12879,7 +12906,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "chef"
 
@@ -12905,7 +12932,7 @@
 	material_category = 2
 	sellprice = 50
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "circlet"
 
@@ -13164,7 +13191,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = "chef"
 	worn_icon_state = "chef"
 
@@ -13189,7 +13216,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "serpcrown"
 
@@ -13215,7 +13242,7 @@
 	material_category = 2
 	sellprice = 100
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "serpcrowno"
 
@@ -13241,7 +13268,7 @@
 	material_category = 2
 	flags_inv = HIDEFACE | HIDEFACIALHAIR | HIDESNOUT
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_MOUTH
+	rogue_coverage = ROGUE_COVER_MOUTH
 	inhand_icon_state = null
 	worn_icon_state = "dendormask"
 
@@ -13267,7 +13294,7 @@
 	material_category = 2
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "hood"
 
@@ -13291,7 +13318,7 @@
 	material_category = 2
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -13320,7 +13347,7 @@
 	detail_tag = "_detail"
 	detail_color = "#C0C0C0"
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "duelhat"
 
@@ -13347,7 +13374,7 @@
 	detail_tag = "_detail"
 	detail_color = "#C0C0C0"
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "duelisthat"
 
@@ -13374,7 +13401,7 @@
 	flags_inv = HIDEFACE | HIDEFACIALHAIR | HIDEHAIR
 	sewrepair = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/silk
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "eoramask"
 
@@ -13402,7 +13429,7 @@
 	material_category = 2
 	sewrepair = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "hat"
 
@@ -13427,7 +13454,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "fancy_hat"
 
@@ -13453,7 +13480,7 @@
 	material_category = 2
 	sewrepair = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "curator"
 
@@ -13478,7 +13505,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "fisherhat"
 
@@ -13509,7 +13536,7 @@
 	altdetail_tag = "_detailalt"
 	altdetail_color = "#9c2525"
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS
 	inhand_icon_state = null
 	worn_icon_state = "grenzelhat"
 
@@ -13534,7 +13561,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "hatblu"
 
@@ -13559,7 +13586,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "hatfur"
 
@@ -13584,7 +13611,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "headband"
 
@@ -13611,7 +13638,7 @@
 	rogue_armor = /datum/rogue_armor/leather
 	material_category = 2
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS
 	inhand_icon_state = null
 	worn_icon_state = "headband"
 
@@ -13639,7 +13666,7 @@
 	rogue_blocksound = "soft"
 	material_category = 2
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS
 	inhand_icon_state = null
 	worn_icon_state = "headband"
 
@@ -13716,7 +13743,7 @@
 	material_category = 2
 	sellprice = 10
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "headdress"
 
@@ -13767,7 +13794,7 @@
 	chunkcolor = "#8c9599"
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_NOSE | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_NOSE
 	worn_icon_state = "nasal"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -13796,7 +13823,7 @@
 	material_category = 2
 	chunkcolor = "#8c9599"
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	rogue_face_coverage = ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_NOSE
 	worn_icon_state = "bandana"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -13830,7 +13857,7 @@
 	flags_inv = HIDEHAIR
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS
 	worn_icon_state = "bascinet_novisor"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -13868,7 +13895,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDESNOUT
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
 	inhand_icon_state = null
 	worn_icon_state = "wardenhelm"
 
@@ -13929,7 +13956,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDESNOUT
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_EYES | ROGUE_COVER_NOSE
 	worn_icon_state = "gronnleatherhelm"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/gronn_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/gronn_righthand.dmi'
@@ -13996,7 +14023,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDESNOUT
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
 	worn_icon_state = "klappvisier"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -14067,7 +14094,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDESNOUT
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
 	worn_icon_state = "hounskull"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -14266,7 +14293,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDESNOUT
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
 	worn_icon_state = "bkhelm"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/blkknight_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/blkknight_righthand.dmi'
@@ -14300,7 +14327,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDESNOUT
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
 	worn_icon_state = "bplatehelm"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/blkknight_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/blkknight_righthand.dmi'
@@ -14371,7 +14398,7 @@
 	flags_inv = NONE
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = ROGUE_COVER_HAIR
 	worn_icon_state = "psychains"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -14404,7 +14431,7 @@
 	chunkcolor = "#8c9599"
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	worn_icon_state = "psybarbs"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/wrists_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/wrists_righthand.dmi'
@@ -14436,7 +14463,7 @@
 	chunkcolor = "#8c9599"
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS
 	worn_icon_state = "bronzehelmet"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -14469,7 +14496,7 @@
 	chunkcolor = "#8c9599"
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
 	worn_icon_state = "bronzemurmillo"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -14505,7 +14532,7 @@
 	detail_tag = "_detail"
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
 	worn_icon_state = "citywatch_helmet"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -14604,7 +14631,7 @@
 	chunkcolor = "#8c9599"
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_EYES
 	worn_icon_state = "plate_helm_item"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/mob/monster/goblins_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/mob/monster/goblins_righthand.dmi'
@@ -14639,7 +14666,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDESNOUT
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
 	worn_icon_state = "barbute"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -14673,6 +14700,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDESNOUT
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS | NECK
 	worn_icon_state = "absolutionisthelm"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -15148,7 +15176,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDESNOUT
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
+	rogue_coverage = HEAD | ROGUE_COVER_FACE | NECK
 	worn_icon_state = "dwarfhead"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/race_armor_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/race_armor_righthand.dmi'
@@ -15220,6 +15248,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDESNOUT
 	smeltresult = /obj/item/rogueore/coal
 	anvilrepair = /datum/attribute/skill/craft/carpentry
+	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS | NECK
 	inhand_icon_state = null
 	worn_icon_state = "welfhead"
 
@@ -15251,7 +15280,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDESNOUT
 	smeltresult = /obj/item/rogueore/coal
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	rogue_face_coverage = ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_NOSE | NECK
 	inhand_icon_state = null
 	worn_icon_state = "welfheadalt"
 
@@ -15314,6 +15343,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS | NECK
 	worn_icon_state = "frogmouth"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -16123,7 +16153,7 @@
 	flags_inv = HIDEEARS | HIDEHAIR
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS
 	worn_icon_state = "nochelm"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -16192,7 +16222,7 @@
 	flags_inv = HIDEEARS | HIDEHAIR
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS
 	worn_icon_state = "bplatehelm_nv"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/blkknight_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/blkknight_righthand.dmi'
@@ -16730,7 +16760,7 @@
 	chunkcolor = "#8c9599"
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	worn_icon_state = "hornedcap"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -16762,7 +16792,7 @@
 	chunkcolor = "#8c9599"
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS
 	worn_icon_state = "kettle"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -16980,7 +17010,7 @@
 	sellprice = 10
 	sewrepair = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	rogue_face_coverage = ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_NOSE
 	worn_icon_state = "leatherhelm"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -17045,7 +17075,7 @@
 	flags_inv = HIDEHAIR | HIDEEARS | HIDEFACE
 	sellprice = 10
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_EYES | ROGUE_COVER_NOSE | NECK
 	worn_icon_state = "studhood"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_stonehedge/icons/clothing/armor/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_stonehedge/icons/clothing/armor/head_righthand.dmi'
@@ -17111,7 +17141,7 @@
 	flags_inv = HIDEHAIR
 	sellprice = 10
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS
 	worn_icon_state = "chapnaled"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -17178,7 +17208,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDESNOUT
 	sellprice = 10
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_EYES | ROGUE_COVER_NOSE
 	inhand_icon_state = null
 	worn_icon_state = "saigahead"
 
@@ -17236,7 +17266,7 @@
 	chunkcolor = "#8c9599"
 	sellprice = 10
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS
 	worn_icon_state = "volfhead"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -17269,7 +17299,7 @@
 	flags_inv = HIDEHAIR
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_NOSE | NECK
 	worn_icon_state = "nomadhelmet"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -17305,7 +17335,7 @@
 	detail_color = "#e08828"
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
 	worn_icon_state = "otavahelm"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -17337,7 +17367,7 @@
 	chunkcolor = "#8c9599"
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS
 	worn_icon_state = "sallet"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -17466,6 +17496,7 @@
 	chunkcolor = "#8c9599"
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | NECK
 	worn_icon_state = "hussarhelm"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -17528,6 +17559,7 @@
 	chunkcolor = "#8c9599"
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | NECK
 	worn_icon_state = "shishak"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -17561,7 +17593,7 @@
 	flags_inv = HIDEFACE | HIDEHAIR
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_EYES | ROGUE_COVER_NOSE
 	worn_icon_state = "sallet_visor"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -17694,7 +17726,7 @@
 	flags_inv = HIDEFACE
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
 	worn_icon_state = "skullmet_bear"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/warden_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/warden_righthand.dmi'
@@ -17757,7 +17789,7 @@
 	chunkcolor = "#8c9599"
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	worn_icon_state = "skullcap"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -17787,7 +17819,7 @@
 	chunkcolor = "#8c9599"
 	sewrepair = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	rogue_face_coverage = ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_NOSE
 	worn_icon_state = "tricorn"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -17819,7 +17851,7 @@
 	chunkcolor = "#8c9599"
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	worn_icon_state = "wingedcap"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -17851,7 +17883,7 @@
 	material_category = 2
 	sellprice = 19
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "hennin"
 
@@ -17876,7 +17908,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
+	rogue_coverage = HEAD | ROGUE_COVER_FACE
 	inhand_icon_state = null
 	worn_icon_state = "hbit"
 
@@ -17903,7 +17935,7 @@
 	rogue_armor = /datum/rogue_armor/leather
 	material_category = 2
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS
 	inhand_icon_state = null
 	worn_icon_state = "inqhat"
 
@@ -17933,7 +17965,7 @@
 	altdetail_tag = "_detailalt"
 	altdetail_color = "#ffffff"
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "jester"
 
@@ -17958,7 +17990,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "knitcap"
 
@@ -17973,6 +18005,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	slot_flags = ITEM_SLOT_HEAD
+	body_parts_covered = NONE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -18007,7 +18040,7 @@
 	material_category = 2
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR | HIDESNOUT
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "menacing"
 
@@ -18061,7 +18094,7 @@
 	material_category = 2
 	flags_inv = HIDEEARS
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_EYES | ROGUE_COVER_NOSE
 	inhand_icon_state = null
 	worn_icon_state = "easthat"
 
@@ -18113,7 +18146,7 @@
 	material_category = 2
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR | HIDESNOUT
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "necrahood"
 
@@ -18139,7 +18172,7 @@
 	material_category = 2
 	flags_inv = HIDEEARS | HIDESNOUT | HIDEHAIR | HIDEFACIALHAIR
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_MOUTH
+	rogue_coverage = ROGUE_COVER_MOUTH | NECK
 	inhand_icon_state = null
 	worn_icon_state = "deathface"
 
@@ -18189,7 +18222,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "tophat"
 
@@ -18215,7 +18248,7 @@
 	material_category = 2
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR | HIDESNOUT
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "nochood"
 
@@ -18241,7 +18274,7 @@
 	material_category = 2
 	sellprice = 5
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "nun"
 
@@ -18256,6 +18289,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/head.dmi'
 	slot_flags = ITEM_SLOT_HEAD
+	body_parts_covered = NONE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -18317,7 +18351,7 @@
 	material_category = 2
 	sewrepair = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/fibers
-	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS
 	inhand_icon_state = null
 	worn_icon_state = "armingcap"
 
@@ -18344,7 +18378,7 @@
 	material_category = 2
 	sewrepair = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/fur
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "papakha"
 
@@ -18395,7 +18429,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "physhat"
 
@@ -18421,7 +18455,7 @@
 	material_category = 2
 	sellprice = 77
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "priest"
 
@@ -18447,7 +18481,7 @@
 	material_category = 2
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR | HIDESNOUT
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "priesthead"
 
@@ -18472,7 +18506,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "puritan_hat"
 
@@ -18529,7 +18563,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
 	sewrepair = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | NECK
 	inhand_icon_state = null
 	worn_icon_state = "basichood"
 
@@ -18558,7 +18592,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
 	sewrepair = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/cloth
-	rogue_face_coverage = NONE
+	rogue_coverage = null
 	inhand_icon_state = null
 	worn_icon_state = "abyssorhood"
 
@@ -18587,7 +18621,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
 	sewrepair = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/cloth
-	rogue_face_coverage = NONE
+	rogue_coverage = null
 	inhand_icon_state = null
 	worn_icon_state = "astratahood"
 
@@ -18643,7 +18677,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
 	sewrepair = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/cloth
-	rogue_face_coverage = ROGUE_FACE_NOSE | ROGUE_FACE_EARS
+	rogue_coverage = HEAD | ROGUE_COVER_EARS | ROGUE_COVER_NOSE
 	inhand_icon_state = null
 	worn_icon_state = "feldhood"
 
@@ -18729,7 +18763,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
 	sewrepair = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/cloth
-	rogue_face_coverage = ROGUE_FACE_NOSE | ROGUE_FACE_EARS
+	rogue_coverage = HEAD | ROGUE_COVER_EARS | ROGUE_COVER_NOSE
 	inhand_icon_state = null
 	worn_icon_state = "surghood"
 
@@ -18790,7 +18824,7 @@
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR | HIDESNOUT
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | NECK
 	inhand_icon_state = null
 	worn_icon_state = "psydonhood"
 
@@ -18877,7 +18911,7 @@
 	flags_inv = HIDENECK
 	sewrepair = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/cloth
-	rogue_face_coverage = NONE
+	rogue_coverage = null
 	inhand_icon_state = null
 	worn_icon_state = "ravoxgorget"
 
@@ -19248,7 +19282,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
 	sewrepair = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/cloth
-	rogue_face_coverage = ROGUE_FACE_NOSE | ROGUE_FACE_EARS
+	rogue_coverage = HEAD | ROGUE_COVER_EARS | ROGUE_COVER_NOSE
 	inhand_icon_state = null
 	worn_icon_state = "whitehood"
 
@@ -19279,6 +19313,7 @@
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
 	sewrepair = TRUE
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS
 	inhand_icon_state = null
 	worn_icon_state = "surghood"
 
@@ -19306,7 +19341,7 @@
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
 	sewrepair = TRUE
-	rogue_face_coverage = NONE
+	rogue_coverage = null
 	inhand_icon_state = null
 	worn_icon_state = "wardenhood"
 
@@ -19336,7 +19371,7 @@
 	spitoutmouth = FALSE
 	flags_inv = NONE
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "deserthood_t"
 
@@ -19361,7 +19396,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "shawl"
 
@@ -19388,7 +19423,7 @@
 	rogue_armor = /datum/rogue_armor/leather
 	material_category = 2
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "spellcasterhat"
 
@@ -19414,7 +19449,7 @@
 	material_category = 2
 	sewrepair = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/fibers
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "strawhat"
 
@@ -19437,7 +19472,7 @@
 	material_category = 2
 	flags_inv = HIDEHAIR | HIDEEARS
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | NECK
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -19492,7 +19527,7 @@
 	detail_tag = "_detail"
 	detail_color = "#ffffff"
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS | NECK
 	inhand_icon_state = null
 	worn_icon_state = "veil"
 
@@ -19547,7 +19582,7 @@
 	detail_tag = "_detail"
 	detail_color = "#61462c"
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = null
 	worn_icon_state = "witch"
 
@@ -19598,7 +19633,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	inhand_icon_state = "that"
 	worn_icon_state = "wizardhat"
 
@@ -20544,7 +20579,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
+	rogue_coverage = ROGUE_COVER_EYES
 	inhand_icon_state = "blindfold"
 	worn_icon_state = "blindfold"
 
@@ -20572,7 +20607,7 @@
 	detail_tag = "_detail"
 	detail_color = "#C0C0C0"
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
+	rogue_coverage = ROGUE_COVER_EYES
 	inhand_icon_state = null
 	worn_icon_state = "duelmask"
 
@@ -20598,7 +20633,7 @@
 	flags_inv = HIDEFACE | HIDEFACIALHAIR
 	sewrepair = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/silk
-	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
+	rogue_coverage = ROGUE_COVER_FACE
 	inhand_icon_state = null
 	worn_icon_state = "exoticsilkmask"
 
@@ -20670,7 +20705,7 @@
 	material_category = 2
 	block2add = ROGUE_FOV_RIGHT
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
+	rogue_coverage = ROGUE_COVER_EYES
 	inhand_icon_state = null
 	worn_icon_state = "eyepatch"
 
@@ -20725,7 +20760,7 @@
 	flags_inv = HIDEFACE | HIDESNOUT
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
+	rogue_coverage = ROGUE_COVER_FACE
 	inhand_icon_state = null
 	worn_icon_state = "imask"
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/masks_onmob.dmi'
@@ -21480,7 +21515,7 @@
 	flags_inv = HIDEFACE | HIDESNOUT
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE
+	rogue_coverage = ROGUE_COVER_NOSE | ROGUE_COVER_MOUTH
 	inhand_icon_state = null
 	worn_icon_state = "kazengunmouthguard"
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/masks_onmob.dmi'
@@ -21537,7 +21572,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
 	inhand_icon_state = null
 	worn_icon_state = "goblin"
 
@@ -21562,6 +21597,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
+	rogue_coverage = HEAD
 	inhand_icon_state = null
 	worn_icon_state = "hblinders"
 
@@ -21587,7 +21623,7 @@
 	material_category = 2
 	sellprice = 50
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
+	rogue_coverage = ROGUE_COVER_FACE
 	inhand_icon_state = null
 	worn_icon_state = "lmask"
 
@@ -21695,7 +21731,7 @@
 	flags_inv = HIDEFACE | HIDEFACIALHAIR | HIDESNOUT
 	sewrepair = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
+	rogue_coverage = ROGUE_COVER_FACE
 	inhand_icon_state = null
 	worn_icon_state = "physmask"
 
@@ -21720,7 +21756,7 @@
 	material_category = 2
 	flags_inv = HIDEFACE | HIDEFACIALHAIR | HIDESNOUT
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
+	rogue_coverage = ROGUE_COVER_FACE
 	inhand_icon_state = null
 	worn_icon_state = "ragmask"
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/masks_onmob.dmi'
@@ -21826,7 +21862,7 @@
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEFACE | HIDESNOUT | HIDEHAIR | HIDEEARS
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
+	rogue_coverage = HEAD | ROGUE_COVER_FACE
 	inhand_icon_state = null
 	worn_icon_state = "sackmask"
 
@@ -21885,6 +21921,7 @@
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEFACE | HIDEHAIR | HIDEFACIALHAIR | HIDEEARS
 	sewrepair = TRUE
+	rogue_coverage = ROGUE_COVER_FACE | NECK
 	inhand_icon_state = null
 	worn_icon_state = "overseerhood"
 
@@ -21910,7 +21947,7 @@
 	block2add = NONE
 	flags_inv = HIDEFACE | HIDEFACIALHAIR | HIDESNOUT
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
+	rogue_coverage = ROGUE_COVER_FACE
 	inhand_icon_state = null
 	worn_icon_state = "shepherd"
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/masks_onmob.dmi'
@@ -21968,7 +22005,7 @@
 	flags_inv = HIDEFACE | HIDESNOUT
 	smeltresult = /obj/item/natural/bone
 	rogue_sleeve_scrap = /obj/item/natural/bone
-	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
+	rogue_coverage = ROGUE_COVER_FACE
 	inhand_icon_state = null
 	worn_icon_state = "skullmask"
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/masks_onmob.dmi'
@@ -21993,7 +22030,7 @@
 	rogue_grid_height = 32
 	material_category = 2
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
+	rogue_coverage = ROGUE_COVER_EYES
 	inhand_icon_state = null
 	worn_icon_state = "glasses"
 
@@ -22155,7 +22192,7 @@
 	flags_inv = HIDEFACE | HIDESNOUT
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
+	rogue_coverage = ROGUE_COVER_FACE
 	inhand_icon_state = null
 	worn_icon_state = "wildguard"
 
@@ -22182,7 +22219,7 @@
 	block2add = NONE
 	flags_inv = HIDEFACE | HIDESNOUT
 	anvilrepair = /datum/attribute/skill/craft/ceramics
-	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
+	rogue_coverage = ROGUE_COVER_FACE
 	inhand_icon_state = null
 	worn_icon_state = "xylixmask"
 
@@ -22212,7 +22249,7 @@
 	material_category = 2
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE
+	rogue_coverage = ROGUE_COVER_NOSE | ROGUE_COVER_MOUTH | NECK
 	inhand_icon_state = null
 	worn_icon_state = "bevor"
 
@@ -22565,7 +22602,7 @@
 	flags_inv = HIDEHAIR
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | NECK
 	inhand_icon_state = null
 	worn_icon_state = "chaincoif"
 
@@ -22717,7 +22754,7 @@
 	flags_inv = HIDEFACE | HIDEFACIALHAIR | HIDESNOUT
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_MOUTH
+	rogue_coverage = ROGUE_COVER_MOUTH | NECK
 	inhand_icon_state = null
 	worn_icon_state = "chainmantle"
 
@@ -22748,7 +22785,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR | HIDESNOUT
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_NOSE | ROGUE_COVER_MOUTH | NECK
 	inhand_icon_state = null
 	worn_icon_state = "fchaincoif"
 
@@ -22838,7 +22875,7 @@
 	material_category = 2
 	flags_inv = HIDEHAIR
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_EARS | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | NECK
 	inhand_icon_state = null
 	worn_icon_state = "coif"
 
@@ -22868,7 +22905,7 @@
 	material_category = 2
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR | HIDESNOUT
 	sewrepair = TRUE
-	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_EARS | ROGUE_FACE_HAIR
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_MOUTH | NECK
 	inhand_icon_state = null
 	worn_icon_state = "fullpadded"
 
@@ -23024,7 +23061,7 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
+	rogue_coverage = ROGUE_COVER_FACE | NECK
 	inhand_icon_state = null
 	worn_icon_state = "feldcollar"
 
@@ -23098,7 +23135,7 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	rogue_face_coverage = ROGUE_FACE_MOUTH | ROGUE_FACE_NOSE | ROGUE_FACE_EARS | ROGUE_FACE_RIGHT_EYE | ROGUE_FACE_LEFT_EYE
+	rogue_coverage = ROGUE_COVER_FACE | NECK
 	inhand_icon_state = null
 	worn_icon_state = "surgcollar"
 
@@ -27650,6 +27687,7 @@
 	boobed = TRUE
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_coverage = CHEST | GROIN
 	inhand_icon_state = null
 	worn_icon_state = "chainkini"
 	rogue_female_worn = TRUE
@@ -28014,6 +28052,7 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
+	rogue_coverage = CHEST
 	inhand_icon_state = null
 	worn_icon_state = "corset"
 	rogue_female_worn = TRUE
@@ -28951,6 +28990,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	rogue_coverage = CHEST | GROIN
 	inhand_icon_state = null
 	worn_icon_state = "leatherkini"
 	rogue_female_worn = TRUE
@@ -29513,6 +29553,7 @@
 	flags_inv = NONE
 	boobed = TRUE
 	sewrepair = TRUE
+	rogue_coverage = CHEST | GROIN
 	inhand_icon_state = null
 	worn_icon_state = "hidearmorkini"
 	rogue_female_worn = TRUE
@@ -29900,6 +29941,7 @@
 	boobed = TRUE
 	smeltresult = /obj/item/ingot/iron
 	sewrepair = TRUE
+	rogue_coverage = CHEST | GROIN
 	inhand_icon_state = null
 	worn_icon_state = "studleatherkini"
 	rogue_female_worn = TRUE
@@ -30405,6 +30447,7 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
+	rogue_coverage = CHEST
 	inhand_icon_state = null
 	worn_icon_state = "longcoat"
 	rogue_female_worn = TRUE
@@ -30639,6 +30682,7 @@
 	boobed = TRUE
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_coverage = CHEST | GROIN
 	inhand_icon_state = null
 	worn_icon_state = "halfplatekini"
 	rogue_female_worn = TRUE
@@ -31248,6 +31292,7 @@
 	boobed = TRUE
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_coverage = CHEST | GROIN | ARMS | LEGS
 	inhand_icon_state = null
 	worn_icon_state = "platekini"
 	rogue_female_worn = TRUE
@@ -31790,6 +31835,7 @@
 	boobed = TRUE
 	smeltresult = /obj/item/ingot/copper
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
+	rogue_coverage = CHEST
 	inhand_icon_state = null
 	worn_icon_state = "copperchest"
 	rogue_female_worn = TRUE
@@ -32664,6 +32710,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/modular_rmh/icons/clothing/vladegeg/onmob/nightie.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = NONE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -32745,6 +32792,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = NONE
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -32837,6 +32885,7 @@
 	boobed = TRUE
 	sewrepair = TRUE
 	sleevetype = null
+	rogue_coverage = CHEST | GROIN
 	inhand_icon_state = null
 	worn_icon_state = "strapless"
 	rogue_female_worn = TRUE
@@ -33065,6 +33114,7 @@
 	sewrepair = TRUE
 	sleevetype = null
 	nodismemsleeves = TRUE
+	rogue_coverage = CHEST | GROIN
 	inhand_icon_state = null
 	worn_icon_state = "hdress"
 	rogue_female_worn = TRUE
@@ -33513,6 +33563,7 @@
 	sewrepair = TRUE
 	sleevetype = null
 	nodismemsleeves = TRUE
+	rogue_coverage = CHEST | GROIN
 	inhand_icon_state = null
 	worn_icon_state = "dress"
 	rogue_female_worn = TRUE
@@ -33652,6 +33703,7 @@
 	sewrepair = TRUE
 	sleevetype = null
 	nodismemsleeves = TRUE
+	rogue_coverage = CHEST | GROIN
 	inhand_icon_state = null
 	worn_icon_state = "toga"
 	rogue_female_worn = TRUE
@@ -33737,6 +33789,7 @@
 	sewrepair = TRUE
 	sleevetype = "shirt"
 	rogue_sleeve_scrap = /obj/item/natural/silk
+	rogue_coverage = CHEST
 	inhand_icon_state = null
 	worn_icon_state = "exoticsilkbra"
 	rogue_female_worn = TRUE
@@ -34290,6 +34343,7 @@
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
 	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
+	body_parts_covered = NONE
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -47662,6 +47716,7 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
+	rogue_coverage = HEAD
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -47683,6 +47738,7 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
+	rogue_coverage = HEAD
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -47704,6 +47760,7 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
+	rogue_coverage = HEAD
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -47725,6 +47782,7 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
+	rogue_coverage = HEAD
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -47746,6 +47804,7 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
+	rogue_coverage = HEAD
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -47767,6 +47826,7 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
+	rogue_coverage = HEAD
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -47789,6 +47849,7 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
+	rogue_coverage = HEAD
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -47813,6 +47874,7 @@
 	worn_y_dimension = 32
 	firefuel = 30 SECONDS
 	sellprice = 2
+	rogue_coverage = HEAD
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null

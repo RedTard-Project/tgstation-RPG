@@ -72,12 +72,13 @@
 		. += offensive_notes
 	SEND_SIGNAL(src, COMSIG_ITEM_WEAPON_LABEL_READOUT, .)
 
-/// What the garment covers: TG's body parts, and Ratwood's parts of the face the porter keeps apart (rogue_face_coverage).
+/// What the garment covers, part by part as a blow looks for it (rogue_coverage_flags(), combat/armor.dm): the body, then the face.
 /obj/item/proc/rogue_coverage_lines()
 	var/static/list/part_names = list(
 		"Head" = HEAD,
 		"Neck" = NECK,
 		"Chest" = CHEST,
+		"Stomach" = ROGUE_COVER_VITALS,
 		"Groin" = GROIN,
 		"Right arm" = ARM_RIGHT,
 		"Left arm" = ARM_LEFT,
@@ -89,23 +90,28 @@
 		"Left foot" = FOOT_LEFT,
 	)
 	var/static/list/face_names = list(
-		"Eyes" = ROGUE_FACE_EYES,
-		"Nose" = ROGUE_FACE_NOSE,
-		"Mouth" = ROGUE_FACE_MOUTH,
-		"Ears" = ROGUE_FACE_EARS,
-		"Hair" = ROGUE_FACE_HAIR,
+		"Right eye" = ROGUE_COVER_RIGHT_EYE,
+		"Left eye" = ROGUE_COVER_LEFT_EYE,
+		"Nose" = ROGUE_COVER_NOSE,
+		"Mouth" = ROGUE_COVER_MOUTH,
+		"Ears" = ROGUE_COVER_EARS,
+		"Skull" = ROGUE_COVER_HAIR,
 	)
 	. = list()
+	var/coverage = rogue_coverage_flags()
 	var/list/parts = list()
 	for(var/part in part_names)
-		if(body_parts_covered & part_names[part])
+		if(coverage & part_names[part])
 			parts += part
 	if(length(parts))
 		. += "<b>COVERAGE:</b> [jointext(parts, " | ")]"
 	var/list/face = list()
 	for(var/part in face_names)
-		if(rogue_face_coverage & face_names[part])
+		if(coverage & face_names[part])
 			face += part
+	if((coverage & ROGUE_COVER_EYES) == ROGUE_COVER_EYES)
+		face -= list("Right eye", "Left eye")
+		face.Insert(1, "Eyes")
 	if(length(face))
 		. += "<b>FACE:</b> [jointext(face, " | ")]"
 

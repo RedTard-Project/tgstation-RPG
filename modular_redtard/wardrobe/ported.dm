@@ -828,6 +828,7 @@
 	rogue_armor = /datum/rogue_armor/bronze
 	max_integrity = 375
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS | ARMS
 
 /obj/item/clothing/suit/roguetown/armor/wardrobe/chainmail/bronze/donator
 	name = "cropped bronze haubergeon"
@@ -844,6 +845,7 @@
 	rogue_armor = /datum/rogue_armor/bronze
 	max_integrity = 375
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS | ARMS
 
 /obj/item/clothing/suit/roguetown/armor/wardrobe/chainmail/donator
 	name = "cropped haubergeon"
@@ -860,6 +862,7 @@
 	rogue_armor = /datum/rogue_armor/maille
 	max_integrity = 300
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS | ARMS
 
 /obj/item/clothing/suit/roguetown/armor/wardrobe/chainmail/donator_elven
 	name = "elven haubergeon"
@@ -876,6 +879,7 @@
 	rogue_armor = /datum/rogue_armor/maille
 	max_integrity = 300
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS | ARMS
 
 /obj/item/clothing/suit/roguetown/armor/wardrobe/chainmail/hauberk/bronze
 	name = "bronze hauberk"
@@ -892,6 +896,7 @@
 	rogue_armor = /datum/rogue_armor/bronze
 	max_integrity = 375
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS | LEGS | ARMS
 
 /obj/item/clothing/suit/roguetown/armor/wardrobe/chainmail/hauberk/bronze/donator
 	name = "bronze maillekini"
@@ -908,6 +913,7 @@
 	rogue_armor = /datum/rogue_armor/bronze
 	max_integrity = 375
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS | LEGS | ARMS
 
 /obj/item/clothing/suit/roguetown/armor/wardrobe/chainmail/hauberk/donator
 	name = "maillekini"
@@ -924,6 +930,7 @@
 	rogue_armor = /datum/rogue_armor/maille
 	max_integrity = 300
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS | LEGS | ARMS
 
 /obj/item/clothing/suit/roguetown/armor/wardrobe/chainmail/hauberk/iron/donator
 	name = "iron maillekini"
@@ -940,6 +947,7 @@
 	rogue_armor = /datum/rogue_armor/maille
 	max_integrity = 300
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS | LEGS | ARMS
 
 /obj/item/clothing/suit/roguetown/armor/wardrobe/chainmail/iron/donator
 	name = "cropped iron haubergeon"
@@ -956,6 +964,7 @@
 	rogue_armor = /datum/rogue_armor/maille
 	max_integrity = 300
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS | ARMS
 
 /obj/item/clothing/suit/roguetown/armor/wardrobe/chainmail/iron/donator_elven
 	name = "elven iron haubergeon"
@@ -972,6 +981,7 @@
 	rogue_armor = /datum/rogue_armor/maille
 	max_integrity = 300
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS | ARMS
 
 /obj/item/clothing/suit/roguetown/armor/wardrobe/chainmail/light
 	name = "haubyrnie"
@@ -988,6 +998,7 @@
 	rogue_armor = /datum/rogue_armor/maille
 	max_integrity = 180
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS
 
 /obj/item/clothing/suit/roguetown/armor/wardrobe/chainmail/light/bronze
 	name = "bronze haubyrnie"
@@ -1004,6 +1015,7 @@
 	rogue_armor = /datum/rogue_armor/bronze
 	max_integrity = 135
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS
 
 /obj/item/clothing/suit/roguetown/armor/wardrobe/chainmail/light/iron
 	name = "iron haubyrnie"
@@ -1020,6 +1032,7 @@
 	rogue_armor = /datum/rogue_armor/maille
 	max_integrity = 108
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS
 
 /obj/item/clothing/suit/roguetown/armor/wardrobe/gambeson/sophisticated_coat
 	name = "sophisticated coat"
@@ -1036,6 +1049,7 @@
 	rogue_armor = /datum/rogue_armor/padded
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS | LEGS | ARMS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/wardrobe/gambeson/sophisticated_jacket
@@ -1053,6 +1067,7 @@
 	rogue_armor = /datum/rogue_armor/padded
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS | LEGS | ARMS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/wardrobe/gambeson/tombraider
@@ -1070,6 +1085,7 @@
 	rogue_armor = /datum/rogue_armor/leather
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS | LEGS | ARMS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/wardrobe/gambeson/winter_coat
@@ -1088,6 +1104,7 @@
 	rogue_armor = /datum/rogue_armor/padded
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS | LEGS | ARMS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/wardrobe/leather/donator
@@ -1106,6 +1123,7 @@
 	rogue_armor = /datum/rogue_armor/leather_npc
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS
 
 /obj/item/clothing/suit/roguetown/armor/wardrobe/leather/donator_cuirass
 	name = "heroic leather cuirass"
@@ -1123,6 +1141,7 @@
 	rogue_armor = /datum/rogue_armor/leather_npc
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS
 
 /obj/item/clothing/suit/roguetown/armor/wardrobe/leather/druid
 	name = "druid armor"
@@ -1140,6 +1159,7 @@
 	rogue_armor = /datum/rogue_armor/leather_npc
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/wardrobe/leather/jacket/newmoon
@@ -1157,6 +1177,7 @@
 	boobed = TRUE
 	max_integrity = 300
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS | LEGS | ARMS
 
 /obj/item/clothing/suit/roguetown/armor/wardrobe/leather/studded/psyaltrist/donator_cuirass
 	name = "heroic leather cuirass"
@@ -1174,6 +1195,7 @@
 	rogue_armor = /datum/rogue_armor/leather_npc
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS
 
 /obj/item/clothing/suit/roguetown/armor/wardrobe/medium/scale/bronze
 	name = "bronze lamellar"
@@ -1190,6 +1212,7 @@
 	rogue_armor = /datum/rogue_armor/bronze
 	max_integrity = 275
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS | LEGS
 
 /obj/item/clothing/suit/roguetown/armor/wardrobe/medium/scale/iron
 	name = "iron lamellar"
@@ -1206,6 +1229,7 @@
 	rogue_armor = /datum/rogue_armor/maille
 	max_integrity = 250
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS | LEGS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/wardrobe/plate/decorated/corset/colored
@@ -1223,6 +1247,7 @@
 	rogue_armor = /datum/rogue_armor/plate
 	max_integrity = 500
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS | ARMS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/armor/wardrobe/plate/donator_gothic
@@ -1240,6 +1265,7 @@
 	rogue_armor = /datum/rogue_armor/plate
 	max_integrity = 500
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS | ARMS
 
 /obj/item/clothing/suit/roguetown/armor/wardrobe/plate/full/donator_gothic
 	name = "gothic plate armor"
@@ -1256,6 +1282,7 @@
 	rogue_armor = /datum/rogue_armor/plate
 	max_integrity = 500
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS | LEGS | ARMS
 
 /obj/item/clothing/suit/roguetown/armor/wardrobe/plate/full/donator_triheartfelt
 	name = "regal plate armor"
@@ -1272,6 +1299,7 @@
 	rogue_armor = /datum/rogue_armor/plate
 	max_integrity = 500
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS | LEGS | ARMS
 
 /obj/item/clothing/suit/roguetown/armor/wardrobe/plate/full/iron/donator_gothic
 	name = "gothic iron plate armor"
@@ -1288,6 +1316,7 @@
 	rogue_armor = /datum/rogue_armor/brigandine
 	max_integrity = 375
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS | LEGS | ARMS
 
 /obj/item/clothing/suit/roguetown/armor/wardrobe/plate/iron/donator_gothic
 	name = "gothic iron half-plate"
@@ -1304,6 +1333,7 @@
 	rogue_armor = /datum/rogue_armor/brigandine
 	max_integrity = 375
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS | ARMS
 
 /obj/item/clothing/cloak/wardrobe/apron/blacksmith
 	name = "leather apron"
@@ -1317,6 +1347,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/wardrobe/apron/waist/fancymaid
@@ -1330,6 +1361,7 @@
 	alternate_worn_layer = ROGUE_TABARD_LAYER
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = GROIN
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/wardrobe/bandolier/inquisitorial
@@ -1673,6 +1705,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN
 
 /obj/item/clothing/cloak/wardrobe/tabard/toga/dress
 	name = "toga"
@@ -1689,6 +1722,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN
 
 /obj/item/clothing/cloak/wardrobe/tabard/toga/dress/alt
 	name = "bared toga"
@@ -1705,6 +1739,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/cloak/wardrobe/templar/astratancleric
@@ -1785,6 +1820,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = ROGUE_COVER_MOUTH | ROGUE_COVER_NOSE | ROGUE_COVER_EYES
 
 /obj/item/clothing/mask/rogue/wardrobe/bishopmask
 	name = "bishop's mask"
@@ -1796,6 +1832,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = ROGUE_COVER_MOUTH | ROGUE_COVER_NOSE | ROGUE_COVER_EYES
 
 /obj/item/clothing/mask/rogue/wardrobe/blindfold
 	name = "blindfold"
@@ -1807,6 +1844,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = ROGUE_COVER_EYES
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/mask/rogue/wardrobe/brassbeak
@@ -1819,6 +1857,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = ROGUE_COVER_MOUTH | ROGUE_COVER_NOSE | ROGUE_COVER_EYES
 
 /obj/item/clothing/mask/rogue/wardrobe/cigarette/rollie/apple
 	name = "apple zig"
@@ -1852,6 +1891,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = ROGUE_COVER_MOUTH | ROGUE_COVER_NOSE | ROGUE_COVER_EYES
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/mask/rogue/wardrobe/exoticsilk
@@ -1867,6 +1907,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = ROGUE_COVER_MOUTH | ROGUE_COVER_NOSE | ROGUE_COVER_EYES
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/mask/rogue/wardrobe/exoticsilk/red
@@ -1879,6 +1920,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = ROGUE_COVER_MOUTH | ROGUE_COVER_NOSE | ROGUE_COVER_EYES
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/mask/rogue/wardrobe/facemask/leather
@@ -1895,6 +1937,7 @@
 	rogue_armor = /datum/rogue_armor/padded
 	max_integrity = 70
 	w_class = 3
+	rogue_coverage = ROGUE_COVER_MOUTH | ROGUE_COVER_NOSE | ROGUE_COVER_EYES
 
 /obj/item/clothing/mask/rogue/wardrobe/facemask/maille
 	name = "iron chainmaille mask"
@@ -1909,6 +1952,7 @@
 	rogue_armor = /datum/rogue_armor/maille
 	max_integrity = 110
 	w_class = 3
+	rogue_coverage = ROGUE_COVER_MOUTH | ROGUE_COVER_NOSE | ROGUE_COVER_EYES
 
 /obj/item/clothing/mask/rogue/wardrobe/facemask/maille/fluted
 	name = "iron fluted chainmaille mask"
@@ -1923,6 +1967,7 @@
 	rogue_armor = /datum/rogue_armor/maille
 	max_integrity = 110
 	w_class = 3
+	rogue_coverage = ROGUE_COVER_MOUTH | ROGUE_COVER_NOSE | ROGUE_COVER_EYES
 
 /obj/item/clothing/mask/rogue/wardrobe/facemask/padded
 	name = "padded mask"
@@ -1937,6 +1982,7 @@
 	rogue_armor = /datum/rogue_armor/padded
 	max_integrity = 50
 	w_class = 3
+	rogue_coverage = ROGUE_COVER_MOUTH | ROGUE_COVER_NOSE | ROGUE_COVER_EYES
 
 /obj/item/clothing/mask/rogue/wardrobe/facemask/steel/maille
 	name = "steel chainmaille mask"
@@ -1951,6 +1997,7 @@
 	rogue_armor = /datum/rogue_armor/plate
 	max_integrity = 140
 	w_class = 3
+	rogue_coverage = ROGUE_COVER_MOUTH | ROGUE_COVER_NOSE | ROGUE_COVER_EYES
 
 /obj/item/clothing/mask/rogue/wardrobe/facemask/steel/maille/fluted
 	name = "steel fluted chainmaille mask"
@@ -1965,6 +2012,7 @@
 	rogue_armor = /datum/rogue_armor/plate
 	max_integrity = 140
 	w_class = 3
+	rogue_coverage = ROGUE_COVER_MOUTH | ROGUE_COVER_NOSE | ROGUE_COVER_EYES
 
 /obj/item/clothing/mask/rogue/wardrobe/helmetless_visor
 	name = "helmetless visor"
@@ -1976,6 +2024,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = ROGUE_COVER_MOUTH | ROGUE_COVER_NOSE | ROGUE_COVER_EYES
 
 /obj/item/clothing/mask/rogue/wardrobe/jademask
 	name = "jade halfmask"
@@ -1990,6 +2039,7 @@
 	rogue_armor = /datum/rogue_armor/maille
 	max_integrity = 85
 	w_class = 3
+	rogue_coverage = ROGUE_COVER_MOUTH | ROGUE_COVER_NOSE | ROGUE_COVER_EYES
 
 /obj/item/clothing/mask/rogue/wardrobe/kazengun_half
 	name = "steel half-mask"
@@ -2001,6 +2051,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = ROGUE_COVER_MOUTH | ROGUE_COVER_NOSE | ROGUE_COVER_EYES
 
 /obj/item/clothing/mask/rogue/wardrobe/kazengun_kitsune
 	name = "steel kitsune mask"
@@ -2012,6 +2063,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = ROGUE_COVER_MOUTH | ROGUE_COVER_NOSE | ROGUE_COVER_EYES
 
 /obj/item/clothing/mask/rogue/wardrobe/kazengun_ogre
 	name = "steel ogre mask"
@@ -2023,6 +2075,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = ROGUE_COVER_MOUTH | ROGUE_COVER_NOSE | ROGUE_COVER_EYES
 
 /obj/item/clothing/mask/rogue/wardrobe/kazengun_oni
 	name = "steel oni mask"
@@ -2034,6 +2087,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = ROGUE_COVER_MOUTH | ROGUE_COVER_NOSE | ROGUE_COVER_EYES
 
 /obj/item/clothing/mask/rogue/wardrobe/psyblindfold
 	name = "blessed blindfold"
@@ -2045,6 +2099,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = ROGUE_COVER_MOUTH | ROGUE_COVER_NOSE | ROGUE_COVER_EYES
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/mask/rogue/wardrobe/psythorns
@@ -2057,6 +2112,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = ROGUE_COVER_MOUTH | ROGUE_COVER_NOSE | ROGUE_COVER_EYES
 
 /obj/item/clothing/mask/rogue/wardrobe/silkmask
 	name = "giltsilk mask"
@@ -2068,6 +2124,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = ROGUE_COVER_MOUTH | ROGUE_COVER_NOSE | ROGUE_COVER_EYES
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/mask/rogue/wardrobe/spectacles/bronze
@@ -2080,6 +2137,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 20
 	w_class = 2
+	rogue_coverage = ROGUE_COVER_EYES
 
 /obj/item/clothing/mask/rogue/wardrobe/spectacles/duelist
 	name = "duelist's goggles"
@@ -2091,6 +2149,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 20
 	w_class = 2
+	rogue_coverage = ROGUE_COVER_EYES
 
 /obj/item/clothing/mask/rogue/wardrobe/spectacles/duelist/steel
 	name = "steel duelist's goggles"
@@ -2102,6 +2161,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 20
 	w_class = 2
+	rogue_coverage = ROGUE_COVER_EYES
 
 /obj/item/clothing/mask/rogue/wardrobe/spectacles/fancy
 	name = "fancy spectacles"
@@ -2113,6 +2173,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 20
 	w_class = 2
+	rogue_coverage = ROGUE_COVER_EYES
 
 /obj/item/clothing/mask/rogue/wardrobe/spectacles/fancy_dark
 	name = "fancy spectacles"
@@ -2124,6 +2185,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 20
 	w_class = 2
+	rogue_coverage = ROGUE_COVER_EYES
 
 /obj/item/clothing/mask/rogue/wardrobe/spectacles/iron
 	name = "iron spectacles"
@@ -2135,6 +2197,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 20
 	w_class = 2
+	rogue_coverage = ROGUE_COVER_EYES
 
 /obj/item/clothing/mask/rogue/wardrobe/spectacles/steel
 	name = "steel spectacles"
@@ -2146,6 +2209,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 20
 	w_class = 2
+	rogue_coverage = ROGUE_COVER_EYES
 
 /obj/item/clothing/mask/rogue/wardrobe/spymaster
 	name = "hand's halfmask"
@@ -2157,6 +2221,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = ROGUE_COVER_MOUTH | ROGUE_COVER_NOSE | ROGUE_COVER_EYES
 
 /obj/item/clothing/gloves/roguetown/wardrobe/chain/bronze
 	name = "bronze maille gauntlets"
@@ -2172,6 +2237,7 @@
 	rogue_armor = /datum/rogue_armor/bronze
 	max_integrity = 375
 	w_class = 2
+	rogue_coverage = HANDS
 
 /obj/item/clothing/gloves/roguetown/wardrobe/leather/thaumgloves
 	name = "alchemist's gloves"
@@ -2188,6 +2254,7 @@
 	rogue_armor = /datum/rogue_armor/padded_bad
 	max_integrity = 150
 	w_class = 2
+	rogue_coverage = HANDS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/head/roguetown/wardrobe/antlers
@@ -2212,6 +2279,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 
 /obj/item/clothing/head/roguetown/wardrobe/crestplume
 	name = "crestplume"
@@ -2235,6 +2303,7 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/head/roguetown/wardrobe/eaststrawhat
@@ -2247,6 +2316,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 
 /obj/item/clothing/head/roguetown/wardrobe/elven_veil
 	name = "elven veil"
@@ -2258,6 +2328,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	rogue_female_worn = TRUE
 	worn_y_dimension = 48
 
@@ -2283,6 +2354,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 
@@ -2319,6 +2391,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	worn_y_dimension = 48
 
 /obj/item/clothing/head/roguetown/wardrobe/helmkleinod
@@ -2502,6 +2575,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	worn_y_dimension = 48
 
 /obj/item/clothing/head/roguetown/wardrobe/hooded/rainhood/amirhood
@@ -2516,6 +2590,7 @@
 	block2add = ROGUE_FOV_BEHIND
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = HEAD
 
 /obj/item/clothing/head/roguetown/wardrobe/hooded/rainhood/feather
 	name = "feathered hood"
@@ -2529,6 +2604,7 @@
 	block2add = ROGUE_FOV_BEHIND
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = HEAD
 
 /obj/item/clothing/head/roguetown/wardrobe/kokoshnik
 	name = "kokoshnik"
@@ -2541,6 +2617,7 @@
 	flags_inv = HIDEEARS
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	worn_y_dimension = 48
 
 /obj/item/clothing/head/roguetown/wardrobe/magoshat
@@ -2553,6 +2630,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	worn_y_dimension = 48
 
 /obj/item/clothing/head/roguetown/wardrobe/nun_hat
@@ -2565,6 +2643,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 
 /obj/item/clothing/head/roguetown/wardrobe/orle
 	name = "striped orle"
@@ -2598,6 +2677,7 @@
 	body_parts_covered = NECK
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/head/roguetown/wardrobe/roguehood/newmoon
 	name = "newmoon hood"
@@ -2609,6 +2689,7 @@
 	body_parts_covered = HEAD | NECK
 	max_integrity = 230
 	w_class = 3
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_NOSE | NECK
 
 /obj/item/clothing/head/roguetown/wardrobe/roguehood/noble
 	name = "silk hood"
@@ -2620,6 +2701,7 @@
 	body_parts_covered = NECK
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/head/roguetown/wardrobe/roguehood/warscholar
 	name = "war scholar's pashmina"
@@ -2631,6 +2713,7 @@
 	body_parts_covered = NECK
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/head/roguetown/wardrobe/roningasa
 	name = "roningasa"
@@ -2642,6 +2725,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 
@@ -2655,6 +2739,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 
 /obj/item/clothing/head/roguetown/wardrobe/sandogasa
 	name = "sandogasa"
@@ -2666,6 +2751,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 
@@ -2681,6 +2767,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 
 /obj/item/clothing/head/roguetown/wardrobe/sultan
 	name = "sultan's turban"
@@ -2693,6 +2780,7 @@
 	flags_inv = HIDEEARS
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	worn_y_dimension = 48
 
 /obj/item/clothing/head/roguetown/wardrobe/sultan/amir
@@ -2706,6 +2794,7 @@
 	flags_inv = HIDEEARS
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	worn_y_dimension = 48
 
 /obj/item/clothing/head/roguetown/wardrobe/sultan/merchant
@@ -2719,6 +2808,7 @@
 	flags_inv = HIDEEARS
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	worn_y_dimension = 48
 
 /obj/item/clothing/head/roguetown/wardrobe/sultana
@@ -2732,6 +2822,7 @@
 	flags_inv = HIDEEARS | HIDEHAIR
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 
 /obj/item/clothing/head/roguetown/wardrobe/tagelmust
 	name = "tagelmust"
@@ -2743,6 +2834,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 
 /obj/item/clothing/head/roguetown/wardrobe/tengai
 	name = "tengai"
@@ -2754,6 +2846,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 
@@ -2769,6 +2862,7 @@
 	rogue_armor = /datum/rogue_armor/leather
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 
 /obj/item/clothing/head/roguetown/wardrobe/torioigasa
 	name = "torioigasa"
@@ -2780,6 +2874,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 
@@ -2793,6 +2888,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 
 /obj/item/clothing/head/roguetown/wardrobe/wandererhat
 	name = "wanderer's hat"
@@ -2804,6 +2900,7 @@
 	body_parts_covered = HEAD
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = HEAD | ROGUE_COVER_HAIR
 
 /obj/item/clothing/head/roguetown/wardrobe/wizhat/bighat
 	name = "archwyzard's hat"
@@ -2830,6 +2927,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/carved
 	abstract_type = /obj/item/clothing/neck/roguetown/wardrobe/carved
@@ -2847,6 +2945,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/carved/gold/coral
 	name = "golden heartstone amulet"
@@ -2858,6 +2957,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/carved/gold/jade
 	name = "golden joapstone amulet"
@@ -2869,6 +2969,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/carved/gold/onyxa
 	name = "golden onyxa amulet"
@@ -2880,6 +2981,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/carved/gold/opal
 	name = "golden opal amulet"
@@ -2891,6 +2993,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/carved/gold/rose
 	name = "golden rosestone amulet"
@@ -2902,6 +3005,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/carved/gold/shell
 	name = "golden shell amulet"
@@ -2913,6 +3017,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/carved/gold/turq
 	name = "golden ceruleabaster amulet"
@@ -2924,6 +3029,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/carved/porcelainamulet
 	name = "porcelain amulet"
@@ -2935,6 +3041,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/carved/silveramber
 	name = "silver amber amulet"
@@ -2946,6 +3053,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/carved/silvercoral
 	name = "silver heartstone amulet"
@@ -2957,6 +3065,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/carved/silverjade
 	name = "silver joapstone amulet"
@@ -2968,6 +3077,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/carved/silveronyxa
 	name = "silver onyxa amulet"
@@ -2979,6 +3089,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/carved/silveropal
 	name = "silver opal amulet"
@@ -2990,6 +3101,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/carved/silverrose
 	name = "silver rosestone amulet"
@@ -3001,6 +3113,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/carved/silvershell
 	name = "silver shell amulet"
@@ -3012,6 +3125,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/carved/silverturq
 	name = "silver ceruleabaster amulet"
@@ -3023,6 +3137,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/chaincoif/bronze
 	name = "bronze chain coif"
@@ -3036,6 +3151,7 @@
 	rogue_armor = /datum/rogue_armor/bronze
 	max_integrity = 375
 	w_class = 3
+	rogue_coverage = NECK | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | HEAD
 
 /obj/item/clothing/neck/roguetown/wardrobe/choker
 	name = "choker"
@@ -3047,6 +3163,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/choker/emerald
 	name = "emerald choker"
@@ -3058,6 +3175,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/furscarf
 	name = "fur scarf"
@@ -3070,6 +3188,7 @@
 	rogue_sleeve_scrap = /obj/item/natural/fur
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/neck/roguetown/wardrobe/loveamulet
@@ -3082,6 +3201,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/mercmedal/atgervi
 	name = "northmanne's idol"
@@ -3093,6 +3213,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/mercmedal/blackoak
 	name = "guardian's seedpouch"
@@ -3104,6 +3225,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/mercmedal/desertrider
 	name = "desert rider's sash"
@@ -3115,6 +3237,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/mercmedal/forlorn
 	name = "laughing volf medal"
@@ -3126,6 +3249,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/mercmedal/underdweller
 	name = "broken compass"
@@ -3137,6 +3261,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/psycross/bronze
 	name = "bronze psycross"
@@ -3148,6 +3273,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/psycross/bronze/divine
 	abstract_type = /obj/item/clothing/neck/roguetown/wardrobe/psycross/bronze/divine
@@ -3162,6 +3288,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/psycross/bronze/divine/malum
 	name = "bronze amulet of Malum"
@@ -3173,6 +3300,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/psycross/bronze/divine/noc
 	name = "bronze amulet of Noc"
@@ -3184,6 +3312,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/psycross/gold/divine
 	abstract_type = /obj/item/clothing/neck/roguetown/wardrobe/psycross/gold/divine
@@ -3198,6 +3327,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/psycross/gold/divine/astrata
 	name = "golden amulet of Astrata"
@@ -3209,6 +3339,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/psycross/gold/divine/dendor
 	name = "golden amulet of Dendor"
@@ -3220,6 +3351,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/psycross/gold/divine/eora
 	name = "golden amulet of Eora"
@@ -3231,6 +3363,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/psycross/gold/divine/malum
 	name = "golden amulet of Malum"
@@ -3242,6 +3375,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/psycross/gold/divine/necra
 	name = "golden amulet of Necra"
@@ -3253,6 +3387,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/psycross/gold/divine/noc
 	name = "golden amulet of Noc"
@@ -3264,6 +3399,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/psycross/gold/divine/pestra
 	name = "golden amulet of Pestra"
@@ -3275,6 +3411,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/psycross/gold/divine/ravox
 	name = "golden amulet of Ravox"
@@ -3286,6 +3423,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/psycross/gold/divine/xylix
 	name = "golden amulet of Xylix"
@@ -3297,6 +3435,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/psycross/matthios/moneta
 	name = "pierced coin amulet"
@@ -3308,6 +3447,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/psycross/reform
 	name = "reformist psycross"
@@ -3319,6 +3459,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/psycross/zizo/bronze
 	name = "bronze inverted psycross"
@@ -3330,6 +3471,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/neck/roguetown/wardrobe/psycross/zizo/iron
 	name = "iron inverted psycross"
@@ -3341,6 +3483,7 @@
 	body_parts_covered = NECK
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = NECK
 
 /obj/item/clothing/under/roguetown/wardrobe/loincloth/desert_sorceress
 	name = "desert sorceress skirt"
@@ -3353,6 +3496,7 @@
 	nodismemsleeves = TRUE
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = GROIN | LEGS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/wardrobe/sirwal
@@ -3369,6 +3513,7 @@
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = GROIN | LEGS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/wardrobe/skirt/desert
@@ -3385,6 +3530,7 @@
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = GROIN | LEGS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/wardrobe/skirt/formal
@@ -3401,6 +3547,7 @@
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = GROIN | LEGS
 
 /obj/item/clothing/under/roguetown/wardrobe/skirt/knee
 	name = "knee-high skirt"
@@ -3415,6 +3562,7 @@
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = GROIN | LEGS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/wardrobe/skirt/knee/colored
@@ -3430,6 +3578,7 @@
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = GROIN | LEGS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/wardrobe/trou/hakama
@@ -3448,6 +3597,7 @@
 	rogue_armor = /datum/rogue_armor/padded_bad
 	max_integrity = 100
 	w_class = 3
+	rogue_coverage = GROIN | LEGS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/under/roguetown/wardrobe/trou/leather/tombraider
@@ -3466,6 +3616,7 @@
 	rogue_armor = /datum/rogue_armor/leather
 	max_integrity = 150
 	w_class = 3
+	rogue_coverage = GROIN | LEGS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/ring/wardrobe/baotha
@@ -3507,6 +3658,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | ROGUE_COVER_VITALS
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/desert_sorceress
 	name = "desert sorceress top"
@@ -3520,6 +3672,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/desertbra
@@ -3536,6 +3689,7 @@
 	rogue_sleeve_scrap = /obj/item/natural/fibers
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/doublet
 	name = "doublet"
@@ -3550,6 +3704,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/dress/amiradress
@@ -3567,6 +3722,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | LEGS | ROGUE_COVER_VITALS
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/dress/blue
 	name = "blue dress"
@@ -3583,6 +3739,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | LEGS | ROGUE_COVER_VITALS
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/dress/courtesan
 	name = "courtesan dress"
@@ -3600,6 +3757,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/dress/etrdress3
@@ -3619,6 +3777,7 @@
 	detail_color = "#ffffff"
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/dress/gen/nightgown
@@ -3655,6 +3814,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/dress/green
@@ -3672,6 +3832,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | LEGS | ROGUE_COVER_VITALS
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/dress/hammerhold
 	name = "hammerhold dress"
@@ -3688,6 +3849,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/dress/hw_dress
@@ -3704,6 +3866,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/dress/maidfancy
@@ -3723,6 +3886,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | ROGUE_COVER_VITALS
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/dress/royal/hand_f
 	name = "pristine dress"
@@ -3741,6 +3905,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/dress/royal/hand_m
@@ -3760,6 +3925,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/dress/skyrim_dress
@@ -3776,6 +3942,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/dress/skyrim_tavern
@@ -3792,6 +3959,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/dress/tavern
@@ -3809,6 +3977,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | LEGS | ROGUE_COVER_VITALS
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/dress/thawb
 	name = "thawb"
@@ -3825,6 +3994,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | LEGS | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/dress/thawb/gold
@@ -3842,6 +4012,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | LEGS | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/dress/toga
@@ -3858,6 +4029,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/elven_furcoat
@@ -3873,6 +4045,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | ROGUE_COVER_VITALS
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/elven_suit
 	name = "elven suit"
@@ -3887,6 +4060,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/exoticsilkbra/green
@@ -3903,6 +4077,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/exoticsilkbra/red
@@ -3919,6 +4094,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/hammerhold
@@ -3934,6 +4110,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/haori
@@ -3949,6 +4126,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/kamishimo
@@ -3964,6 +4142,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/kazengun_jacket
@@ -3979,6 +4158,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | ROGUE_COVER_VITALS
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/leo_robe
 	name = "leopard robe"
@@ -3994,6 +4174,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/leo_robe/leopard
@@ -4011,6 +4192,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/maid_dress
@@ -4026,6 +4208,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/robe/bishop
@@ -4045,6 +4228,7 @@
 	rogue_armor = /datum/rogue_armor/padded
 	max_integrity = 150
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/robe/bisht
 	name = "bisht"
@@ -4062,6 +4246,7 @@
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | LEGS | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/robe/bisht/grey
@@ -4080,6 +4265,7 @@
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | LEGS | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/robe/bisht/guild
@@ -4098,6 +4284,7 @@
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | LEGS | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/robe/bisht/purple
@@ -4116,6 +4303,7 @@
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | LEGS | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/robe/eoran
@@ -4134,6 +4322,7 @@
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | LEGS | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/robe/eoran/pink
@@ -4152,6 +4341,7 @@
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | LEGS | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/robe/hierophant
@@ -4171,6 +4361,7 @@
 	rogue_armor = /datum/rogue_armor/padded
 	max_integrity = 150
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | LEGS | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/robe/leopard
@@ -4189,6 +4380,7 @@
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | LEGS | ROGUE_COVER_VITALS
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/robe/leopard/alt
 	name = "open leopard bathrobe"
@@ -4206,6 +4398,7 @@
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | LEGS | ROGUE_COVER_VITALS
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/robe/lunar
 	name = "lunar robe"
@@ -4223,6 +4416,7 @@
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | LEGS | ROGUE_COVER_VITALS
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/robe/magician
 	name = "magician's robe"
@@ -4240,6 +4434,7 @@
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | LEGS | ROGUE_COVER_VITALS
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/robe/monk
 	name = "nomadic monk vestments"
@@ -4258,6 +4453,7 @@
 	rogue_armor = /datum/rogue_armor/padded
 	max_integrity = 300
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | LEGS | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/robe/monk/holy
@@ -4277,6 +4473,7 @@
 	rogue_armor = /datum/rogue_armor/padded
 	max_integrity = 300
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | LEGS | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/robe/physician
@@ -4295,6 +4492,7 @@
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | LEGS | ROGUE_COVER_VITALS
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/robe/pointfex
 	name = "pointfex's qaba"
@@ -4313,6 +4511,7 @@
 	rogue_armor = /datum/rogue_armor/padded
 	max_integrity = 150
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | LEGS | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/robe/ravox
@@ -4331,6 +4530,7 @@
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | LEGS | ROGUE_COVER_VITALS
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/robe/selune
 	name = "moon robe"
@@ -4348,6 +4548,7 @@
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | LEGS | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/robe/skyrim_mage
@@ -4366,6 +4567,7 @@
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | LEGS | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/robe/tabardblack
@@ -4384,6 +4586,7 @@
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | LEGS | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/robe/tabardscarlet
@@ -4402,6 +4605,7 @@
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | LEGS | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/robe/tabardwhite
@@ -4420,6 +4624,7 @@
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | LEGS | ROGUE_COVER_VITALS
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/robe/tabardwhite/evil_ah_ah
 	name = "robed tabard"
@@ -4438,6 +4643,7 @@
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | LEGS | ROGUE_COVER_VITALS
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/robe/undivided
 	name = "undivided robe"
@@ -4455,6 +4661,7 @@
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | LEGS | ROGUE_COVER_VITALS
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/robe/undividedcleric
 	name = "undivided clerical robe"
@@ -4472,6 +4679,7 @@
 	boobed = TRUE
 	max_integrity = 150
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | LEGS | ROGUE_COVER_VITALS
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/robe/unholy
 	name = "foreboding robes"
@@ -4490,6 +4698,7 @@
 	rogue_armor = /datum/rogue_armor/padded
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | LEGS | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/robe/unholy/enchanted
@@ -4509,6 +4718,7 @@
 	rogue_armor = /datum/rogue_armor/leather
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | LEGS | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/robe/unholy/lich
@@ -4528,6 +4738,7 @@
 	rogue_armor = /datum/rogue_armor/padded
 	max_integrity = 700
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ARMS | LEGS | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/silkbra
@@ -4545,6 +4756,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/sultana
 	name = "sultana's dress"
@@ -4561,6 +4773,7 @@
 	rogue_armor = /datum/rogue_armor/padded
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS | LEGS | ARMS
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/tunic/winter
 	name = "winter coat"
@@ -4577,6 +4790,7 @@
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | GROIN | ROGUE_COVER_VITALS
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/undershirt/blouse
 	name = "blouse"
@@ -4593,6 +4807,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | ARMS | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/undershirt/etruscan_doublet
@@ -4610,6 +4825,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | ARMS | ROGUE_COVER_VITALS
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/undershirt/nun_robe
 	name = "nun's habit"
@@ -4626,6 +4842,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | ARMS | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/wardrobe/yoroihitatare
@@ -4641,6 +4858,7 @@
 	boobed = TRUE
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = CHEST | ROGUE_COVER_VITALS
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/wardrobe/boots/armor/bronze_maille
@@ -4657,6 +4875,7 @@
 	rogue_armor = /datum/rogue_armor/bronze
 	max_integrity = 250
 	w_class = 3
+	rogue_coverage = FEET
 
 /obj/item/clothing/shoes/roguetown/wardrobe/boots/armor/maille_steel
 	name = "maille boots"
@@ -4672,6 +4891,7 @@
 	rogue_armor = /datum/rogue_armor/maille
 	max_integrity = 300
 	w_class = 3
+	rogue_coverage = FEET
 
 /obj/item/clothing/shoes/roguetown/wardrobe/hammerhold
 	name = "hammerhold shoes"
@@ -4685,6 +4905,7 @@
 	sleevetype = "leg"
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = FEET
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/wardrobe/heels
@@ -4702,6 +4923,7 @@
 	detail_color = "#FFFFFF"
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = FEET
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/wardrobe/heels/donator_gold
@@ -4719,6 +4941,7 @@
 	detail_color = "#FFFFFF"
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = FEET
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/wardrobe/heels/donator_silver
@@ -4736,6 +4959,7 @@
 	detail_color = "#FFFFFF"
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = FEET
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/shoes/roguetown/wardrobe/sandals/toga
@@ -4751,6 +4975,7 @@
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	max_integrity = 200
 	w_class = 3
+	rogue_coverage = FEET
 	rogue_female_worn = TRUE
 
 /obj/item/clothing/wrists/roguetown/wardrobe/bracers/elven
@@ -4766,6 +4991,7 @@
 	rogue_armor = /datum/rogue_armor/plate
 	max_integrity = 300
 	w_class = 3
+	rogue_coverage = ARMS
 
 /datum/loadout_item/rogue_wardrobe/facemask/facemask_leather
 	item_path = /obj/item/clothing/mask/rogue/wardrobe/facemask/leather

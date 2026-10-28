@@ -68,7 +68,7 @@ GLOBAL_LIST_INIT(rogue_disembowel_slots, list(ORGAN_SLOT_STOMACH, ORGAN_SLOT_APP
 			return FALSE
 		if(ishuman(src))
 			var/mob/living/carbon/human/armored = src
-			if(armored.rogue_armor_tier(limb.body_zone, ROGUE_ARMOR_SLASH) > 0)
+			if(armored.rogue_armor_tier(zone || limb.body_zone, ROGUE_ARMOR_SLASH) > 0)
 				to_chat(src, span_warning("My armour just saved me from losing my [limb.plaintext_zone]!"))
 				return FALSE
 	if(rogue_resist_crit())

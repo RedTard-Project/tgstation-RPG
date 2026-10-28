@@ -112,11 +112,25 @@ COVERAGE_MAP = {
     'LEG_LEFT': 'LEG_LEFT', 'LEG_RIGHT': 'LEG_RIGHT', 'FOOT_LEFT': 'FOOT_LEFT', 'FOOT_RIGHT': 'FOOT_RIGHT',
     'ARM_LEFT': 'ARM_LEFT', 'ARM_RIGHT': 'ARM_RIGHT', 'HAND_LEFT': 'HAND_LEFT', 'HAND_RIGHT': 'HAND_RIGHT',
 }
-# Ratwood's face parts (code/__DEFINES/inventory.dm) as the module's flags of rogue_face_coverage, in this order.
-FACE_COVERAGE = OrderedDict((
-    ('MOUTH', 'ROGUE_FACE_MOUTH'), ('NOSE', 'ROGUE_FACE_NOSE'), ('EARS', 'ROGUE_FACE_EARS'),
-    ('RIGHT_EYE', 'ROGUE_FACE_RIGHT_EYE'), ('LEFT_EYE', 'ROGUE_FACE_LEFT_EYE'), ('HAIR', 'ROGUE_FACE_HAIR'),
+# Ratwood's body part flags (code/__DEFINES/inventory.dm) as the flags of the module's rogue_coverage, in the order written:
+# TG's own for the parts TG has, ROGUE_COVER_* (clothing/_defines.dm) for the rest.
+EXACT_COVERAGE = OrderedDict((
+    ('HEAD', 'HEAD'), ('HAIR', 'ROGUE_COVER_HAIR'), ('EARS', 'ROGUE_COVER_EARS'),
+    ('RIGHT_EYE', 'ROGUE_COVER_RIGHT_EYE'), ('LEFT_EYE', 'ROGUE_COVER_LEFT_EYE'),
+    ('NOSE', 'ROGUE_COVER_NOSE'), ('MOUTH', 'ROGUE_COVER_MOUTH'), ('NECK', 'NECK'),
+    ('CHEST', 'CHEST'), ('VITALS', 'ROGUE_COVER_VITALS'), ('GROIN', 'GROIN'),
+    ('ARM_RIGHT', 'ARM_RIGHT'), ('ARM_LEFT', 'ARM_LEFT'), ('HAND_RIGHT', 'HAND_RIGHT'), ('HAND_LEFT', 'HAND_LEFT'),
+    ('LEG_RIGHT', 'LEG_RIGHT'), ('LEG_LEFT', 'LEG_LEFT'), ('FOOT_RIGHT', 'FOOT_RIGHT'), ('FOOT_LEFT', 'FOOT_LEFT'),
 ))
+# Pairs and groups written by one name, the largest first.
+EXACT_COVERAGE_GROUPS = (
+    ('ROGUE_COVER_HEAD_PARTS', ('HAIR', 'EARS', 'RIGHT_EYE', 'LEFT_EYE', 'NOSE', 'MOUTH')),
+    ('ROGUE_COVER_FACE', ('EARS', 'RIGHT_EYE', 'LEFT_EYE', 'NOSE', 'MOUTH')),
+    ('ROGUE_COVER_EYES', ('RIGHT_EYE', 'LEFT_EYE')),
+    ('ARMS', ('ARM_RIGHT', 'ARM_LEFT')), ('HANDS', ('HAND_RIGHT', 'HAND_LEFT')),
+    ('LEGS', ('LEG_RIGHT', 'LEG_LEFT')), ('FEET', ('FOOT_RIGHT', 'FOOT_LEFT')),
+)
+HEAD_PARTS = {'HAIR', 'EARS', 'RIGHT_EYE', 'LEFT_EYE', 'NOSE', 'MOUTH'}
 OUTFIT_SLOTS = {
     'head': 'head', 'mask': 'mask', 'mouth': 'mouth', 'neck': 'neck', 'cloak': 'cloak', 'armor': 'suit',
     'shirt': 'shirt', 'pants': 'uniform', 'wrists': 'wrists', 'gloves': 'gloves', 'shoes': 'shoes',
@@ -1738,8 +1752,8 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
         if raw is None:
             return None
         raw = raw.strip()
-        if name in cat.get('face_coverage_vars', []):
-            return face_coverage_value(raw)
+        if name in cat.get('coverage_vars', []):
+            return exact_coverage_value(raw)
         if name in cat.get('mapped_vars', {}):
             return cat['mapped_vars'][name].get(raw.strip('()').strip())
         if name in cat.get('paths', []):
@@ -1946,6 +1960,10 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                     covered = coverage_value(value)
                     if covered:
                         block.append(f'\tbody_parts_covered = {covered}')
+                    # Ratwood bares what the parent covers (a nightgown under a dress: body_parts_covered = null);
+                    # left out, the port would inherit the parent's coverage.
+                    elif coverage_value(rw.resolve(rw.parent(path), source_name)):
+                        block.append('\tbody_parts_covered = NONE')
                     continue
                 if name == 'loot':
                     entries = [(item, weight) for item, weight in loot_entries(value) if item in valid]
@@ -2499,11 +2517,25 @@ def coverage_tokens(raw):
     return tokens
 
 
-def face_coverage_value(raw):
-    """The parts of the face Ratwood's coverage names (MOUTH, NOSE, EARS, the eyes, HAIR), which TG has no flags for and
-    coverage_value() folds into HEAD, as the module's ROGUE_FACE_* flags (clothing/_defines.dm); NONE without any."""
-    tokens = coverage_tokens(raw)
-    flags = [flag for token, flag in FACE_COVERAGE.items() if token in tokens]
+def exact_coverage_value(raw):
+    """Ratwood's coverage as it is, for the module's rogue_coverage (TG's flags and ROGUE_COVER_*, clothing/_defines.dm), where
+    the folded body_parts_covered (coverage_value()) would say otherwise or the item covers part of the head; 'null' elsewhere:
+    the module then reads TG's flags, HEAD as the whole head and CHEST as the chest and the vitals."""
+    tokens = coverage_tokens(raw) & set(EXACT_COVERAGE)
+    if not tokens & (HEAD_PARTS | {'HEAD'}) and ('CHEST' in tokens) == ('VITALS' in tokens):
+        return 'null'
+    left = set(tokens)
+    flags = []
+    for token, flag in EXACT_COVERAGE.items():
+        if token not in left:
+            continue
+        group = next((name for name, parts in EXACT_COVERAGE_GROUPS if token in parts and set(parts) <= left), None)
+        if group:
+            flags.append(group)
+            left -= set(dict(EXACT_COVERAGE_GROUPS)[group])
+        else:
+            flags.append(flag)
+            left.discard(token)
     return ' | '.join(flags) if flags else 'NONE'
 
 

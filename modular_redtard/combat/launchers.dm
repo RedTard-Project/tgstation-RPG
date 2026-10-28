@@ -282,6 +282,9 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 	var/rogue_arc = FALSE
 	/// The precise body part aimed at.
 	var/rogue_aimed_zone
+	/// The precise body part the shot struck, which the armor is looked for on (rogue_armor_zone(), combat/armor.dm); the damage
+	/// goes to its body part, def_zone.
+	var/rogue_struck_zone
 	/// The launcher's skill that a hit trains, and the rank up to which it does.
 	var/rogue_trained_skill
 	var/rogue_trained_cap = ROGUE_LAUNCHER_TRAIN_CAP
@@ -314,6 +317,7 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 	if(rogue_arc && original && get_turf(target) != get_turf(original))
 		return PROJECTILE_PIERCE_PHASE
 	var/zone = rogue_ranged_zone(target, rogue_aimed_zone || def_zone)
+	rogue_struck_zone = zone
 	def_zone = GLOB.rogue_major_zones[zone] || check_zone(zone)
 
 /// Accuracy left after the flight: Ratwood takes 10 off per tile while it is above 20; the bonus never falls off.
