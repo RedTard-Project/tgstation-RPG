@@ -5,11 +5,12 @@
 // The recipes are Ratwood data (/datum/artificer_recipe under Ratwood's paths) that the porter is to write, as it writes the
 // anvil's; until it does the table has nothing to make.
 
-/// Ratwood: below the recipe's level a strike ruins the material at 25%, 2% less per rank and 1% less with good luck.
-#define ARTIFICER_FAIL_BASE 25
-#define ARTIFICER_FAIL_PER_RANK 2
-/// Ratwood experience: intelligence × level × 5 for a made thing, intelligence × level for a ruined material.
-#define ARTIFICER_XP_PER_LEVEL 5
+/// Ratwood: below the recipe's level a strike may ruin the material, less likely per rank and by 1% with good luck.
+/// Numbers of config/redtard/mechanics/values.txt (section "Crafting").
+#define ARTIFICER_FAIL_BASE rogue_value("artificer_fail_chance")
+#define ARTIFICER_FAIL_PER_RANK rogue_value("artificer_fail_per_rank")
+/// Ratwood experience: intelligence × level × this for a made thing, intelligence × level for a ruined material.
+#define ARTIFICER_XP_PER_LEVEL rogue_value("artificer_xp_per_level")
 #define ARTIFICER_HAMMER_SOUNDS list('modular_redtard/crafting/sound/fence_hit1.ogg', 'modular_redtard/crafting/sound/fence_hit2.ogg', 'modular_redtard/crafting/sound/fence_hit3.ogg')
 #define ARTIFICER_STAGE_SOUND 'modular_redtard/crafting/sound/metal_sheet.ogg'
 #define ARTIFICER_RUIN_SOUND 'modular_redtard/rockhill/sound/combat/hits/onwood/destroyfurniture.ogg'

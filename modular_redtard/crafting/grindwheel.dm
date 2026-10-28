@@ -24,7 +24,7 @@
 	if(DOING_INTERACTION_WITH_TARGET(user, src))
 		return
 	playsound(src, GRINDWHEEL_SHARPEN_SOUND, 100, FALSE)
-	if(!do_after(user, 4.1 SECONDS, target = src) || QDELETED(blade))
+	if(!do_after(user, rogue_value("grindwheel_sharpen_time"), target = src) || QDELETED(blade))
 		return
 	blade.rogue_restore_edge()
 	user.visible_message(span_notice("[user] grinds [blade] to a fresh edge."), span_notice("I grind [blade] to a fresh edge."))

@@ -65,9 +65,10 @@ GLOBAL_LIST_INIT(rogue_anvil_recipes, init_rogue_anvil_recipes())
 	)
 	return ui_entry
 
-#define FORGING_HEALTH_PER_QUALITY 50
-/// Ratwood advance_recipe(): a good strike on a cast blade starts from 1.2 progress instead of 1.
-#define FORGING_BLADE_BREAKTHROUGH 1.2
+// Numbers of config/redtard/mechanics/values.txt (section "Crafting").
+#define FORGING_HEALTH_PER_QUALITY rogue_value("forging_health_per_quality")
+/// Ratwood advance_recipe(): a good strike on a cast blade starts from more progress than 1.
+#define FORGING_BLADE_BREAKTHROUGH rogue_value("forging_blade_breakthrough")
 
 /// Ratwood /datum/component/forging (roguejobs/blacksmith/smith_components.dm) on the bar being worked: progress,
 /// bar health, accumulated skill and material quality; finished work is quenched into the recipe's goods.

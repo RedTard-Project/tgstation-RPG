@@ -2646,3 +2646,149 @@ stump_essence_rank_chance = 1
 
 # Lumberjacking experience of splitting a stump, times intelligence (Ratwood STAINT × 0.5).
 stump_lumber_xp = 0.5
+
+# --- Crafting (crafting/): polishing, casting, quenching, the potter's wheel, pottery tiers, the anvil and the grinding wheel, hot bars, hand crafts, sewing and repair, the artificer's table.
+
+# Uses in a fresh tin of polishing cream (Ratwood).
+polish_cream_uses = 12
+
+# Uses left at which a tin of polishing cream looks low (Ratwood).
+polish_cream_low = 8
+
+# Deciseconds of the cream and the brush steps of a polish before stats: the cream takes polish_cream_per_speed off per point of speed, the brush polish_brush_per_strength per point of strength (Ratwood).
+polish_time = 50
+
+# Deciseconds the cream step of a polish takes off per point of speed (Ratwood).
+polish_cream_per_speed = 2
+
+# Deciseconds the brush steps of a polish take off per point of strength (Ratwood).
+polish_brush_per_strength = 1.5
+
+# Share of an item's integrity a finished polish adds (Ratwood polish_bonus).
+polish_integrity_share = 0.1
+
+# Force a finished polish adds to a weapon in one hand (Ratwood).
+polish_force_bonus = 2
+
+# Force a finished polish adds to a weapon wielded in both hands (Ratwood).
+polish_wielded_bonus = 3
+
+# Bars a crucible holds (Ratwood max_ingots).
+crucible_max_ingots = 5
+
+# Heat at which the metal in a crucible is molten (Ratwood heat_capacity).
+crucible_heat_full = 100
+
+# Heat a crucible on a lit hearth gains per second (Ratwood heat_rate: 10 per two-second tick).
+crucible_heat_per_second = 5
+
+# Heat a crucible off the fire loses per second (Ratwood cool_rate: 5 per two-second tick).
+crucible_cool_per_second = 2.5
+
+# Every this-many-th bar of one metal put into a crucible counts twice (Ratwood duplication_threshold); not 0.
+crucible_bonus_every = 4
+
+# Deciseconds to set a bar into a crucible on the hearth (Ratwood).
+crucible_add_time = 10
+
+# Deciseconds to pour molten metal into a mold (Ratwood).
+mold_pour_time = 30
+
+# Deciseconds a filled mold takes to cool into a blade (Ratwood 120 one-second ticks).
+mold_cooling_time = 1200
+
+# Units of water a quench takes from a bin (Ratwood roguebin attackby()).
+quench_water = 5
+
+# Units of water a rewetting of the clay on a potter's wheel takes (Ratwood consume_wetting_water()).
+wheel_water = 2
+
+# Times kneaded clay dries out on the potter's wheel and wants water before it is shaped (Ratwood).
+wheel_rewets_kneaded = 1
+
+# Times refined clay dries out on the potter's wheel and wants water before it is shaped (Ratwood).
+wheel_rewets_refined = 2
+
+# Least deciseconds of one spin of the potter's wheel; a spin is the recipe's time split between its spins (Ratwood).
+wheel_min_spin = 6
+
+# Deciseconds a spin of the potter's wheel takes longer per ceramics rank below journeyman (Ratwood).
+wheel_spin_per_rank = 4
+
+# Ceramics experience for clay that collapses on the wheel, and the least a finished piece gives (Ratwood).
+wheel_ruin_xp = 2
+
+# Ceramics experience per rank of a finished piece's difficulty, on top of intelligence (Ratwood).
+wheel_xp_per_difficulty = 4
+
+# Pottery tier (0 crude to 5 masterwork) from which a crafted piece carries its quality in its name (Ratwood).
+pottery_named_tier = 3
+
+# Pottery tier (0 crude to 5 masterwork) from which a piece shines like a polished masterwork (Ratwood apply_pottery_quality_to_item()).
+pottery_shine_tier = 4
+
+# Health of a bar being worked on the anvil per quality step of its metal: the bar has this times (quality + 1).
+forging_health_per_quality = 50
+
+# Progress a good strike on a cast blade starts from instead of 1 (Ratwood advance_recipe()).
+forging_blade_breakthrough = 1.2
+
+# Deciseconds between two strikes of a smith working a bar on the anvil.
+anvil_strike_time = 20
+
+# Deciseconds to grind a blade to a fresh edge on a grinding wheel.
+grindwheel_sharpen_time = 41
+
+# Deciseconds a bar stays hot after the forge or a lit smelter (Ratwood forge heat_time).
+bar_heat_time = 200
+
+# Deciseconds of one try of a hand craft; a craft is tried again until it works, up to 100 tries (Ratwood construct_item()).
+craft_try_time = 10
+
+# Percent chance a sewing repair fails at sewing rank 0; it falls evenly to 0 at sew_no_fail_rank (Ratwood needle).
+sew_fail_chance = 60
+
+# Sewing rank from which a repair never fails (Ratwood: journeyman, 3); not 0.
+sew_no_fail_rank = 3
+
+# Integrity a sewing repair restores at sewing rank 0 (Ratwood).
+sew_repair = 10
+
+# Integrity a sewing repair restores more per sewing rank (Ratwood).
+sew_repair_per_rank = 10
+
+# Deciseconds of a sewing repair at sewing rank 0 (Ratwood).
+sew_time = 40
+
+# Deciseconds a sewing repair takes less per sewing rank (Ratwood).
+sew_time_per_rank = 10
+
+# Least deciseconds of a sewing repair (Ratwood).
+sew_min_time = 5
+
+# Sewing experience of a failed repair, times intelligence (Ratwood).
+sew_xp_fail = 0.25
+
+# Sewing experience of a successful repair, times intelligence (Ratwood).
+sew_xp_success = 0.5
+
+# Share of its integrity an unskilled hand can bring a broken item back to (Ratwood field repair).
+field_repair_share = 0.6
+
+# Share of a structure's integrity a hammer mends per strike and rank of its skill (Ratwood).
+structure_repair_share = 0.025
+
+# Deciseconds before the first mend of a repair kit.
+repair_kit_windup = 20
+
+# Experience of each mend of a repair kit, times intelligence.
+repair_kit_xp = 0.7
+
+# Percent chance a strike at the artificer's table below the recipe's level ruins the material at rank 0; good luck takes 1 off (Ratwood).
+artificer_fail_chance = 25
+
+# Percent the artificer's ruin chance falls per rank (Ratwood).
+artificer_fail_per_rank = 2
+
+# Artificer experience of a made thing: intelligence times the recipe's level times this; a ruined material gives intelligence times the level (Ratwood).
+artificer_xp_per_level = 5

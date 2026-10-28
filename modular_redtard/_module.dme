@@ -86,6 +86,7 @@
 #include "mechanics\formulas.dm"
 #include "mechanics\categories.dm"
 #include "mechanics\registry.dm"
+#include "mechanics\subsystem.dm"
 #include "mechanics\apply.dm"
 #include "mechanics\armor_compare.dm"
 #include "mechanics\attribute_editor.dm"

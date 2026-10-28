@@ -1,6 +1,7 @@
 /// Ratwood stone forge (roguejobs/blacksmith/forge.dm): a lit forge heats the bar in the tongs for heat_time.
 /obj/machinery/light/rogue/forge
-	var/heat_time = ROGUE_BAR_HEAT_TIME
+	/// Deciseconds a bar heated here stays hot; null takes bar_heat_time of config/redtard/mechanics/values.txt.
+	var/heat_time
 
 /obj/machinery/light/rogue/forge/examine(mob/user)
 	. = ..()
@@ -12,7 +13,7 @@
 	var/obj/item/rogueweapon/tongs/tongs = tool
 	if(!tongs.held_bar)
 		return ..()
-	tongs.heat(heat_time)
+	tongs.heat(isnull(heat_time) ? ROGUE_BAR_HEAT_TIME : heat_time)
 	user.visible_message(span_info("[user] heats the bar."))
 	if(tongs.heat_wear)
 		tongs.take_damage(tongs.heat_wear, sound_effect = FALSE)

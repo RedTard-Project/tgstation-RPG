@@ -1,19 +1,22 @@
-// Ratwood needle tuning (game/objects/items/rogueitems/needle.dm).
-#define SEW_BASE_FAIL_CHANCE 60
-#define SEW_NO_FAIL_RANK ROGUE_RANK_JOURNEYMAN
-#define SEW_BASE_REPAIR 10
-#define SEW_REPAIR_PER_RANK 10
-#define SEW_BASE_TIME (4 SECONDS)
-#define SEW_TIME_PER_RANK (1 SECONDS)
-#define SEW_MIN_TIME (0.5 SECONDS)
-#define SEW_XP_FAIL 0.25
-#define SEW_XP_SUCCESS 0.5
+// Ratwood needle tuning (game/objects/items/rogueitems/needle.dm), repair shares and the repair kit: numbers of
+// config/redtard/mechanics/values.txt (section "Crafting").
+#define SEW_BASE_FAIL_CHANCE rogue_value("sew_fail_chance")
+#define SEW_NO_FAIL_RANK rogue_value("sew_no_fail_rank")
+#define SEW_BASE_REPAIR rogue_value("sew_repair")
+#define SEW_REPAIR_PER_RANK rogue_value("sew_repair_per_rank")
+#define SEW_BASE_TIME rogue_value("sew_time")
+#define SEW_TIME_PER_RANK rogue_value("sew_time_per_rank")
+#define SEW_MIN_TIME rogue_value("sew_min_time")
+#define SEW_XP_FAIL rogue_value("sew_xp_fail")
+#define SEW_XP_SUCCESS rogue_value("sew_xp_success")
 /// An unskilled hand fixes a broken item only this far (Ratwood field repair).
-#define FIELD_REPAIR_SHARE 0.6
+#define FIELD_REPAIR_SHARE rogue_value("field_repair_share")
 #define REPAIR_CLOTH 0
 #define REPAIR_METAL 1
-/// Ratwood: a hammer mends 2.5% of a structure's integrity per strike and rank of its skill.
-#define STRUCTURE_REPAIR_SHARE 0.025
+/// Ratwood: a hammer mends a share of a structure's integrity per strike and rank of its skill.
+#define STRUCTURE_REPAIR_SHARE rogue_value("structure_repair_share")
+#define REPAIR_KIT_WINDUP rogue_value("repair_kit_windup")
+#define REPAIR_KIT_XP rogue_value("repair_kit_xp")
 
 /// Broken in Ratwood's sense: worn down to where armor stops protecting (ROGUE_ARMOR_FAILURE_SHARE).
 /obj/item/proc/rogue_is_broken()
@@ -221,7 +224,7 @@ GLOBAL_LIST(rogue_structure_repair_skills)
 
 /obj/item/repair_kit/proc/repair_loop(obj/item/broken, mob/living/user)
 	playsound(src, repair_sound(broken), 100, TRUE, -2)
-	if(!do_after(user, 2 SECONDS, target = broken))
+	if(!do_after(user, REPAIR_KIT_WINDUP, target = broken))
 		return
 	while(!QDELETED(src) && !QDELETED(broken) && broken.rogue_needs_repair() && charge_left > 0)
 		playsound(src, repair_sound(broken), 100, TRUE, -2)
@@ -229,7 +232,7 @@ GLOBAL_LIST(rogue_structure_repair_skills)
 		if(isnull(broken.rogue_repair(user, kit_charge / 10, user.rogue_unskilled_repair(rank))))
 			return
 		user.visible_message(span_info("[user] repairs [broken]!"))
-		user.rogue_craft_experience(broken.anvilrepair || /datum/attribute/skill/craft/sewing, user.rogue_stat(ROGUE_STAT_INTELLIGENCE) * 0.7)
+		user.rogue_craft_experience(broken.anvilrepair || /datum/attribute/skill/craft/sewing, user.rogue_stat(ROGUE_STAT_INTELLIGENCE) * REPAIR_KIT_XP)
 		charge_left -= 10
 		if(charge_left <= 0)
 			used_up()
@@ -348,3 +351,5 @@ GLOBAL_LIST(rogue_structure_repair_skills)
 #undef REPAIR_CLOTH
 #undef REPAIR_METAL
 #undef STRUCTURE_REPAIR_SHARE
+#undef REPAIR_KIT_WINDUP
+#undef REPAIR_KIT_XP
