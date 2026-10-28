@@ -5,6 +5,8 @@ GLOBAL_LIST_EMPTY(rockhill_dungeon_exits)
 
 /datum/map_template/dungeon
 	abstract_type = /datum/map_template/dungeon
+	// A dungeon loads each of its ~90 templates many times (659 loads in a Rockhill round): parse each .dmm once, not per load.
+	keep_cached_map = TRUE
 	var/rarity = 100
 	var/type_weight = 1
 	var/north_offset
@@ -222,6 +224,8 @@ SUBSYSTEM_DEF(rockhill_dungeon)
 	var/list/placed_types = list()
 	var/created_since = 0
 	var/unlinked_entries = 0
+	/// Z-levels templates were loaded on since their area turf lists were last rebuilt.
+	var/list/loaded_zlevels = list()
 
 /datum/controller/subsystem/rockhill_dungeon/Initialize()
 	if(!length(GLOB.rockhill_dungeon_markers))
@@ -238,7 +242,13 @@ SUBSYSTEM_DEF(rockhill_dungeon)
 	unlinked_entries = length(GLOB.rockhill_unlinked_dungeon_entries)
 	while(length(GLOB.rockhill_dungeon_markers))
 		process_marker(GLOB.rockhill_dungeon_markers[1])
+	rebuild_area_turfs()
 	return SS_INIT_SUCCESS
+
+/// The area turf lists of the levels templates were loaded on, set right in one pass (maps/area_turfs.dm).
+/datum/controller/subsystem/rockhill_dungeon/proc/rebuild_area_turfs()
+	rogue_rebuild_area_turfs(loaded_zlevels)
+	loaded_zlevels.Cut()
 
 /datum/controller/subsystem/rockhill_dungeon/fire(resumed)
 	var/processed = 0
@@ -247,6 +257,8 @@ SUBSYSTEM_DEF(rockhill_dungeon)
 		processed++
 		if(MC_TICK_CHECK)
 			return
+	if(!length(GLOB.rockhill_dungeon_markers) && length(loaded_zlevels))
+		rebuild_area_turfs()
 
 /datum/controller/subsystem/rockhill_dungeon/proc/process_marker(obj/effect/rockhill/dungeon_helper/marker)
 	GLOB.rockhill_dungeon_markers -= marker
@@ -284,6 +296,7 @@ SUBSYSTEM_DEF(rockhill_dungeon)
 			continue
 		placed_types[template.type]++
 		placed_types[/datum/map_template/dungeon/entry] += istype(template, /datum/map_template/dungeon/entry) ? 1 : 0
+		loaded_zlevels |= corner.z
 		created_since++
 		return TRUE
 	return FALSE
