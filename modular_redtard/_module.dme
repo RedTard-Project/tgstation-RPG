@@ -215,6 +215,7 @@
 #include "crafting\artificer.dm"
 #include "crafting\ported\artificer_recipes.dm"
 #include "crafting\rogue_recipes.dm"
+#include "crafting\reach.dm"
 #include "crafting\tech_nodes.dm"
 #include "crafting\ported\craft_recipes.dm"
 #include "crafting\recipe_rules.dm"

@@ -54,8 +54,9 @@
 	refresh_look()
 	return ITEM_INTERACT_SUCCESS
 
+/// A click draws the blade only from a scabbard the user wears or holds (Ratwood); one on the ground is picked up whole.
 /obj/item/rogueweapon/scabbard/attack_hand(mob/user, list/modifiers)
-	if(!sheathed)
+	if(!sheathed || loc != user)
 		return ..()
 	var/obj/item/blade = sheathed
 	if(!user.put_in_hands(blade))

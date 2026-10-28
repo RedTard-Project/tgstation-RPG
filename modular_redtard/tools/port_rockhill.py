@@ -476,24 +476,35 @@ def layer_expression(raw, value, tg_values):
 
 
 
-def placement_lines(rw, path, runtime, tg_values):
+TG_PLANES = {'floor': 'FLOOR_PLANE', 'lower': 'GAME_PLANE', 'game': 'GAME_PLANE', 'upper': 'ABOVE_GAME_PLANE'}
+
+
+def plane_kind(rw, path, decal):
     plane = number_or_none(rw.resolve(path, 'plane') or rw.types.get('/atom', {}).get('plane'), DEFINE_VALUES)
+    if plane is None:
+        return 'floor' if decal else 'game'
+    if plane <= define_number('WALL_PLANE', DEFINE_VALUES):
+        return 'floor'
+    if plane < define_number('GAME_PLANE_FOV_HIDDEN', DEFINE_VALUES):
+        return 'lower'
+    if plane == define_number('GAME_PLANE_FOV_HIDDEN', DEFINE_VALUES):
+        return 'game'
+    return 'upper'
+
+
+def placement_lines(rw, path, runtime, tg_values, placed=frozenset()):
     raw_layer = rw.resolve(path, 'layer')
     layer = number_or_none(raw_layer, DEFINE_VALUES)
     decal = boundary_match(runtime, '/obj/effect/decal') or boundary_match(runtime, '/obj/effect/turf_decal')
     base_plane = 'FLOOR_PLANE' if decal else 'GAME_PLANE'
-    if plane is None:
-        kind = 'floor' if decal else 'game'
-    elif plane <= define_number('WALL_PLANE', DEFINE_VALUES):
-        kind = 'floor'
-    elif plane < define_number('GAME_PLANE_FOV_HIDDEN', DEFINE_VALUES):
-        kind = 'lower'
-    elif plane == define_number('GAME_PLANE_FOV_HIDDEN', DEFINE_VALUES):
-        kind = 'game'
-    else:
-        kind = 'upper'
-    tg_plane = {'floor': 'FLOOR_PLANE', 'lower': 'GAME_PLANE', 'game': 'GAME_PLANE', 'upper': 'ABOVE_GAME_PLANE'}[kind]
-    lines = [f'\tplane = {tg_plane}'] if tg_plane != base_plane else []
+    kind = plane_kind(rw, path, decal)
+    tg_plane = TG_PLANES[kind]
+    # The plane the type has without a line of its own: its placed parent's (which always ends up with its own TG plane),
+    # else the base plane of the TG type it hangs on. Comparing with the base only let a lower child (Ratwood's floor
+    # grille, GAME_PLANE_LOWER) keep its upper parent's ABOVE_GAME_PLANE (bars) and draw over the mobs on it.
+    parent = rw.parent(path)
+    inherited = TG_PLANES[plane_kind(rw, parent, decal)] if parent in placed else base_plane
+    lines = [f'\tplane = {tg_plane}'] if tg_plane != inherited else []
     if kind == 'floor':
         if not decal:
             lines.append('\tlayer = ABOVE_OPEN_TURF_LAYER')
@@ -1599,6 +1610,7 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
     used_objs = sorted(p for p in usage if p.startswith('/obj/'))
     smooth_candidates = set(used_turfs) | set(used_objs)
     smoothing_paths = {p for cat in categories if cat.get('smoothing') for p in chosen.get(cat['file'], [])} | set(reskins)
+    placed_paths = {p for cat in categories if cat.get('placement') for p in chosen.get(cat['file'], [])}
     if os.path.isdir(SMOOTH_DIR):
         shutil.rmtree(SMOOTH_DIR)
 
@@ -1966,7 +1978,7 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                 listed = ', '.join(f'"{runtime_sound(f, cat["runtime_sounds"])}"' for f in files)
                 block.append(f'\t{name} = ' + (f'list({listed})' if files else 'null'))
             if cat.get('placement'):
-                block += placement_lines(rw, path, path, tg_values)
+                block += placement_lines(rw, path, path, tg_values, placed_paths)
             for prefix, names in cat.get('type_vars', {}).items():
                 if boundary_match(path, prefix):
                     for name in names:

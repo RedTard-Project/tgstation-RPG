@@ -225,7 +225,6 @@
 	density = TRUE
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/bars/grille
@@ -237,6 +236,7 @@
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN | BLOCK_Z_IN_UP
 	rockhill_random_dir = TRUE
+	plane = GAME_PLANE
 	layer = TABLE_LAYER
 
 /obj/structure/bars/grille/rusty
@@ -259,7 +259,6 @@
 	density = TRUE
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/bars/passage
@@ -270,7 +269,6 @@
 	density = TRUE
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/bars/passage/preopen
@@ -281,7 +279,6 @@
 	density = FALSE
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/bars/passage/shutter
@@ -293,7 +290,6 @@
 	opacity = TRUE
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/bars/passage/shutter/open
@@ -305,7 +301,6 @@
 	opacity = FALSE
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/bars/passage/steel
@@ -316,7 +311,6 @@
 	density = TRUE
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/bars/pipe
@@ -327,6 +321,7 @@
 	density = FALSE
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN | BLOCK_Z_IN_UP
+	plane = GAME_PLANE
 	layer = TABLE_LAYER
 
 /obj/structure/bars/rusty
@@ -338,7 +333,6 @@
 	dir = SOUTH
 	color = "#ffcd9f"
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/bars/shop
@@ -349,7 +343,6 @@
 	density = TRUE
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN
-	plane = ABOVE_GAME_PLANE
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/bars/shop/bronze
@@ -361,7 +354,6 @@
 	dir = SOUTH
 	color = "#ff9c1a"
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN
-	plane = ABOVE_GAME_PLANE
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/bars/steel
@@ -372,7 +364,6 @@
 	density = TRUE
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/bars/tough
@@ -383,7 +374,6 @@
 	density = TRUE
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/bearpelt
@@ -1334,7 +1324,6 @@
 	rockhill_variant = "brflowers_#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 3
-	plane = ABOVE_GAME_PLANE
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/ausbushes/fernybush
@@ -1346,7 +1335,6 @@
 	rockhill_variant = "fernybush_#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 3
-	plane = ABOVE_GAME_PLANE
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/ausbushes/fullgrass
@@ -1358,7 +1346,6 @@
 	rockhill_variant = "fullgrass_#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 3
-	plane = ABOVE_GAME_PLANE
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/ausbushes/grassybush
@@ -1370,7 +1357,6 @@
 	rockhill_variant = "grassybush_#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 4
-	plane = ABOVE_GAME_PLANE
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/ausbushes/lavendergrass
@@ -1382,7 +1368,6 @@
 	rockhill_variant = "lavendergrass_#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 4
-	plane = ABOVE_GAME_PLANE
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/ausbushes/leafybush
@@ -1394,7 +1379,6 @@
 	rockhill_variant = "leafybush_#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 3
-	plane = ABOVE_GAME_PLANE
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/ausbushes/palebush
@@ -1406,7 +1390,6 @@
 	rockhill_variant = "palebush_#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 4
-	plane = ABOVE_GAME_PLANE
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/ausbushes/pointybush
@@ -1418,7 +1401,6 @@
 	rockhill_variant = "pointybush_#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 4
-	plane = ABOVE_GAME_PLANE
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/ausbushes/ppflowers
@@ -1430,7 +1412,6 @@
 	rockhill_variant = "ppflowers_#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 3
-	plane = ABOVE_GAME_PLANE
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/ausbushes/sparsegrass
@@ -1442,7 +1423,6 @@
 	rockhill_variant = "sparsegrass_#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 3
-	plane = ABOVE_GAME_PLANE
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/ausbushes/stalkybush
@@ -1454,7 +1434,6 @@
 	rockhill_variant = "stalkybush_#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 3
-	plane = ABOVE_GAME_PLANE
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/ausbushes/sunnybush
@@ -1466,7 +1445,6 @@
 	rockhill_variant = "sunnybush_#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 3
-	plane = ABOVE_GAME_PLANE
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/ausbushes/ywflowers
@@ -1478,7 +1456,6 @@
 	rockhill_variant = "ywflowers_#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 3
-	plane = ABOVE_GAME_PLANE
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/hotspring_rocks
@@ -1497,7 +1474,6 @@
 	icon_state = "bigrock_grass"
 	density = TRUE
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/hotspring_rocks/small
@@ -1506,7 +1482,6 @@
 	icon_state = "stones_1"
 	density = FALSE
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/hotspring_rocks/small/four
@@ -1515,7 +1490,6 @@
 	icon_state = "stones_4"
 	density = FALSE
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/hotspring_rocks/small/three
@@ -1524,7 +1498,6 @@
 	icon_state = "stones_3"
 	density = FALSE
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/hotspring_rocks/small/two
@@ -1533,7 +1506,6 @@
 	icon_state = "stones_2"
 	density = FALSE
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/maple/b
@@ -1581,7 +1553,6 @@
 	icon_state = "mushroomclusterunhappy"
 	density = TRUE
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/newbranch
@@ -1602,7 +1573,6 @@
 	icon_state = "branch-extend"
 	density = FALSE
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN
-	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/flora/newbranch/leafless
@@ -1612,7 +1582,6 @@
 	icon_state = "branch-end1"
 	density = FALSE
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN
-	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/flora/newleaf
@@ -1637,7 +1606,6 @@
 	rockhill_variant = "corner-leaf#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 2
-	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/flora/newtree
@@ -1693,7 +1661,6 @@
 	icon_state = "bushb"
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = 4.5
 
 /obj/structure/flora/roguegrass/bush/jungle/large
@@ -1709,7 +1676,6 @@
 	rockhill_variant = "bush#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 3
-	plane = ABOVE_GAME_PLANE
 	layer = 4.5
 
 /obj/structure/flora/roguegrass/bush/wall
@@ -1724,7 +1690,6 @@
 	rockhill_variant = "bushwall#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 2
-	plane = ABOVE_GAME_PLANE
 	layer = 4.5
 
 /obj/structure/flora/roguegrass/bush/wall/tall
@@ -1740,7 +1705,6 @@
 	rockhill_variant = "tallbush#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 2
-	plane = ABOVE_GAME_PLANE
 	layer = 4.5
 
 /obj/structure/flora/roguegrass/bush/wall/tall/grown
@@ -1756,7 +1720,6 @@
 	rockhill_variant = "tallbush#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 2
-	plane = ABOVE_GAME_PLANE
 	layer = 4.5
 
 /obj/structure/flora/roguegrass/bush/westleach
@@ -1766,7 +1729,6 @@
 	icon_state = "bush1"
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = 4.5
 
 /obj/structure/flora/roguegrass/bush/winter
@@ -1779,7 +1741,6 @@
 	rockhill_variant = "bush#winter"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 4
-	plane = ABOVE_GAME_PLANE
 	layer = 4.5
 
 /obj/structure/flora/roguegrass/bush/winter/wall
@@ -1792,7 +1753,6 @@
 	rockhill_variant = "bush#winter"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 4
-	plane = ABOVE_GAME_PLANE
 	layer = 4.5
 
 /obj/structure/flora/roguegrass/herb/artemisia
@@ -1975,7 +1935,6 @@
 	rockhill_variant = "grassa#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 5
-	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/flora/roguegrass/jungle/sparse
@@ -1987,7 +1946,6 @@
 	rockhill_variant = "grassb#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 5
-	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/flora/roguegrass/maneater
@@ -1996,7 +1954,6 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/mob/monster/maneater.dmi'
 	icon_state = "maneater-hidden"
 	obj_flags = CAN_BE_HIT
-	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/flora/roguegrass/maneater/real
@@ -2005,7 +1962,6 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/mob/monster/maneater.dmi'
 	icon_state = "maneater-hidden"
 	obj_flags = CAN_BE_HIT
-	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/flora/roguegrass/maneater/real/juvenile
@@ -2014,7 +1970,6 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/mob/monster/maneater.dmi'
 	icon_state = "maneater-hidden"
 	obj_flags = CAN_BE_HIT
-	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/flora/roguegrass/pumpkin
@@ -2027,7 +1982,6 @@
 	rockhill_variant = "pumpkin#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 2
-	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/flora/roguegrass/pyroclasticflowers
@@ -2037,7 +1991,6 @@
 	icon_state = "pyroflower1"
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/flora/roguegrass/reedbush
@@ -2062,7 +2015,6 @@
 	rockhill_variant = "swampweed#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 3
-	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/flora/roguegrass/thorn_bush
@@ -2072,7 +2024,6 @@
 	icon_state = "thornbush"
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/flora/roguegrass/water
@@ -2081,7 +2032,6 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/foliage.dmi'
 	icon_state = "swampgrass"
 	obj_flags = CAN_BE_HIT
-	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/flora/roguegrass/water/reeds
@@ -2118,7 +2068,6 @@
 	pixel_x = -16
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = 4.5
 
 /obj/structure/flora/rogueshroom/happy/random
@@ -2134,7 +2083,6 @@
 	rockhill_variant = "happymush#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 5
-	plane = ABOVE_GAME_PLANE
 	layer = 4.5
 
 /obj/structure/flora/rogueshroom/unhappy/angel
@@ -2219,7 +2167,6 @@
 	rockhill_variant = "t#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 4
-	plane = ABOVE_GAME_PLANE
 	layer = 4.81
 
 /obj/structure/flora/roguetree/evil
@@ -2235,7 +2182,6 @@
 	rockhill_variant = "wv#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 2
-	plane = ABOVE_GAME_PLANE
 	layer = 4.81
 
 /obj/structure/flora/roguetree/pine
@@ -2251,7 +2197,6 @@
 	rockhill_variant = "pine#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 4
-	plane = ABOVE_GAME_PLANE
 	layer = 4.81
 
 /obj/structure/flora/roguetree/pine/dead
@@ -2267,7 +2212,6 @@
 	rockhill_variant = "dead#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 3
-	plane = ABOVE_GAME_PLANE
 	layer = 4.81
 
 /obj/structure/flora/roguetree/stump
@@ -2283,6 +2227,7 @@
 	rockhill_variant = "t#stump"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 4
+	plane = GAME_PLANE
 	layer = TABLE_LAYER
 
 /obj/structure/flora/roguetree/stump/burnt
@@ -2343,7 +2288,6 @@
 	rockhill_variant = "screaming#"
 	rockhill_variant_min = 1
 	rockhill_variant_max = 3
-	plane = ABOVE_GAME_PLANE
 	layer = 4.81
 
 /obj/structure/flora/roguetree/wise
@@ -2356,7 +2300,6 @@
 	alpha = 200
 	obj_flags = CAN_BE_HIT
 	icon_state = "mystical"
-	plane = ABOVE_GAME_PLANE
 	layer = 4.81
 
 /obj/structure/flora/sakura
@@ -2387,7 +2330,6 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/foliage.dmi'
 	icon_state = "tinymushroomsunhappy"
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/flora/tree/evil
@@ -2448,7 +2390,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/canopy/booth/booth02
@@ -2460,7 +2401,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/canopy/booth/booth_green
@@ -2472,7 +2412,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/canopy/booth/booth_green02
@@ -2484,7 +2423,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/canopy/green
@@ -2496,7 +2434,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/canopy/side
@@ -2508,7 +2445,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/canopy/side/end
@@ -2520,7 +2456,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/ceramicswheel
@@ -2707,7 +2642,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/littlebanners/bluewhite
@@ -2719,7 +2653,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/littlebanners/greenblue
@@ -2731,7 +2664,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/littlebanners/greenred
@@ -2743,7 +2675,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/littlebanners/greenwhite
@@ -2755,7 +2686,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/nest
@@ -3223,7 +3153,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/statue/abyssor
@@ -3236,7 +3165,6 @@
 	pixel_x = -16
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/statue/abyssor/dolomite
@@ -3249,7 +3177,6 @@
 	pixel_x = -16
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/statue/astrata
@@ -3261,7 +3188,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/statue/astrata/gold
@@ -3273,7 +3199,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/statue/eora
@@ -3286,7 +3211,6 @@
 	pixel_x = -16
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/statue/evil
@@ -3298,7 +3222,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/statue/femalestatue
@@ -3312,7 +3235,6 @@
 	pixel_y = -16
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/statue/femalestatue/zizo
@@ -3326,7 +3248,6 @@
 	pixel_y = -16
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/statue/femalestatue1
@@ -3340,7 +3261,6 @@
 	pixel_y = -16
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/statue/femalestatue2
@@ -3354,7 +3274,6 @@
 	pixel_y = -16
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/statue/gargoyle
@@ -3366,7 +3285,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/statue/gargoyle/candles
@@ -3378,7 +3296,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/statue/gargoyle/moss
@@ -3390,7 +3307,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/statue/gargoyle/moss/candles
@@ -3402,7 +3318,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/statue/knight
@@ -3414,7 +3329,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/statue/knight/interior
@@ -3426,7 +3340,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/statue/knight/interior/r
@@ -3438,7 +3351,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/statue/knight/r
@@ -3450,7 +3362,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/statue/knightalt
@@ -3462,7 +3373,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/statue/knightalt/r
@@ -3474,7 +3384,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/statue/myth
@@ -3486,7 +3395,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/statue/noc
@@ -3499,7 +3407,6 @@
 	pixel_x = -16
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/statue/pillar
@@ -3511,7 +3418,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/statue/psy
@@ -3524,7 +3430,6 @@
 	pixel_x = -32
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/statue/scare
@@ -3536,7 +3441,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/statue/small
@@ -3548,7 +3452,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/statue/spider
@@ -3560,7 +3463,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/statue/tdummy
@@ -3572,7 +3474,6 @@
 	opacity = 0
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/statue/valmora
@@ -3585,7 +3486,6 @@
 	pixel_x = -16
 	dir = SOUTH
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/wallclock
@@ -4377,7 +4277,6 @@
 	icon_state = "fur_alt"
 	density = FALSE
 	obj_flags = CAN_BE_HIT
-	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/globe
@@ -4424,7 +4323,6 @@
 	icon = 'modular_redtard/rockhill/icons/obj/structures/hotspring.dmi'
 	icon_state = "hotspring_border_1"
 	obj_flags = CAN_BE_HIT
-	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/hotspring/border/eight
@@ -4432,7 +4330,6 @@
 	icon = 'modular_redtard/rockhill/icons/obj/structures/hotspring.dmi'
 	icon_state = "hotspring_border_8"
 	obj_flags = CAN_BE_HIT
-	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/hotspring/border/eleven
@@ -4440,7 +4337,6 @@
 	icon = 'modular_redtard/rockhill/icons/obj/structures/hotspring.dmi'
 	icon_state = "hotspring_border_11"
 	obj_flags = CAN_BE_HIT
-	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/hotspring/border/five
@@ -4448,7 +4344,6 @@
 	icon = 'modular_redtard/rockhill/icons/obj/structures/hotspring.dmi'
 	icon_state = "hotspring_border_5"
 	obj_flags = CAN_BE_HIT
-	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/hotspring/border/four
@@ -4456,7 +4351,6 @@
 	icon = 'modular_redtard/rockhill/icons/obj/structures/hotspring.dmi'
 	icon_state = "hotspring_border_4"
 	obj_flags = CAN_BE_HIT
-	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/hotspring/border/nine
@@ -4464,7 +4358,6 @@
 	icon = 'modular_redtard/rockhill/icons/obj/structures/hotspring.dmi'
 	icon_state = "hotspring_border_9"
 	obj_flags = CAN_BE_HIT
-	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/hotspring/border/seven
@@ -4472,7 +4365,6 @@
 	icon = 'modular_redtard/rockhill/icons/obj/structures/hotspring.dmi'
 	icon_state = "hotspring_border_7"
 	obj_flags = CAN_BE_HIT
-	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/hotspring/border/six
@@ -4480,7 +4372,6 @@
 	icon = 'modular_redtard/rockhill/icons/obj/structures/hotspring.dmi'
 	icon_state = "hotspring_border_6"
 	obj_flags = CAN_BE_HIT
-	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/hotspring/border/ten
@@ -4488,7 +4379,6 @@
 	icon = 'modular_redtard/rockhill/icons/obj/structures/hotspring.dmi'
 	icon_state = "hotspring_border_10"
 	obj_flags = CAN_BE_HIT
-	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/hotspring/border/thirteen
@@ -4496,7 +4386,6 @@
 	icon = 'modular_redtard/rockhill/icons/obj/structures/hotspring.dmi'
 	icon_state = "hotspring_border_13"
 	obj_flags = CAN_BE_HIT
-	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/hotspring/border/three
@@ -4504,7 +4393,6 @@
 	icon = 'modular_redtard/rockhill/icons/obj/structures/hotspring.dmi'
 	icon_state = "hotspring_border_3"
 	obj_flags = CAN_BE_HIT
-	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/hotspring/border/twelve
@@ -4512,7 +4400,6 @@
 	icon = 'modular_redtard/rockhill/icons/obj/structures/hotspring.dmi'
 	icon_state = "hotspring_border_12"
 	obj_flags = CAN_BE_HIT
-	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/hotspring/border/two
@@ -4520,7 +4407,6 @@
 	icon = 'modular_redtard/rockhill/icons/obj/structures/hotspring.dmi'
 	icon_state = "hotspring_border_2"
 	obj_flags = CAN_BE_HIT
-	plane = FLOOR_PLANE
 	layer = ABOVE_OPEN_TURF_LAYER
 
 /obj/structure/ichor_stone
@@ -4665,7 +4551,6 @@
 	density = FALSE
 	pixel_y = 0
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/pillar/sand1
@@ -4699,7 +4584,6 @@
 	icon_state = "pillory_double"
 	density = TRUE
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = 4.5
 
 /obj/structure/pillory/reinforced
@@ -4709,7 +4593,6 @@
 	icon_state = "pillory_reinforced"
 	density = TRUE
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = 4.5
 
 /obj/structure/plough
@@ -5087,7 +4970,6 @@
 	density = FALSE
 	pixel_y = 32
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = ABOVE_MOB_LAYER
 
 /obj/structure/roguemachine/potionseller
@@ -5751,7 +5633,6 @@
 	opacity = 0
 	pixel_x = -16
 	obj_flags = CAN_BE_HIT
-	plane = ABOVE_GAME_PLANE
 	layer = 4.5
 
 /obj/structure/well/fountainswamp

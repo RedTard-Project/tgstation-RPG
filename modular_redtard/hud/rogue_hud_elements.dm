@@ -119,11 +119,17 @@
 	var/mob/living/owner = hud_owner?.mymob
 	if(isliving(owner))
 		RegisterSignals(owner, list(COMSIG_MOB_ROGUE_INTENT_CHANGED, COMSIG_MOB_SWAP_HANDS, COMSIG_MOB_UPDATE_HELD_ITEMS), PROC_REF(on_intents_changed))
-	update_appearance(UPDATE_OVERLAYS)
+	update_appearance(UPDATE_ICON_STATE|UPDATE_OVERLAYS)
 
 /atom/movable/screen/rogue/weapon_intents/proc/on_intents_changed(datum/source)
 	SIGNAL_HANDLER
-	update_appearance(UPDATE_OVERLAYS)
+	update_appearance(UPDATE_ICON_STATE|UPDATE_OVERLAYS)
+
+/// A hand with no intents at all shows no grid rather than its empty boxes.
+/atom/movable/screen/rogue/weapon_intents/update_icon_state()
+	var/mob/living/owner = get_mob()
+	icon_state = (isliving(owner) && length(owner.rogue_hand_intents())) ? initial(icon_state) : ""
+	return ..()
 
 /atom/movable/screen/rogue/weapon_intents/update_overlays()
 	. = ..()
@@ -576,6 +582,18 @@
 	. -= list("lhandactive", "rhandactive")
 	if(held_index && held_index == get_mob()?.active_hand_index)
 		. += "hand_active"
+
+/// As Ratwood, a worn thing dragged onto an empty hand goes into it: the only way to take off what a click uses instead (a
+/// scabbard draws its blade when clicked, so the sheathed sword's scabbard would never leave the belt).
+/atom/movable/screen/inventory/hand/rogue/mouse_drop_receive(atom/dropped, mob/user, params)
+	if(!isitem(dropped) || user != get_mob() || !held_index)
+		return
+	var/obj/item/worn = dropped
+	if(worn.loc != user || user.is_holding(worn) || user.get_item_for_held_index(held_index))
+		return
+	if(!user.can_perform_action(worn, FORBID_TELEKINESIS_REACH))
+		return
+	user.putItemFromInventoryInHandIfPossible(worn, held_index)
 
 /atom/movable/screen/inventory/rogue
 	layer = ROGUE_HUD_LAYER

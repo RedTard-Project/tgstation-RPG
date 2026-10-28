@@ -766,6 +766,17 @@
 | `/datum/species/on_species_gain()`, `on_species_loss()` с `..()` — третье переопределение модуля (после `rockhill/species.dm` и `rockhill/races.dm`) | 5 | `heritage/race_mechanics.dm` | `code/modules/mob/living/carbon/human/_species.dm` | Кнопки полёта и свечения | Сигнатуры |
 | Внутри модуля: `get_image`, `color_image`, `icon_render_key` у `rogue_feature` (из `rockhill/species.dm`); `rogue_apply_age` у человека (из `attributes/mob.dm`) | 1 | `heritage/customizers.dm`, `race_mechanics.dm` | — | Многоцветные признаки, бессмертие аасимара | — |
 
+## Исправления после проверки в игре (2026-10-28)
+| Что (тип, процедура, файл) | Ступень | Файл модуля | Оригинал ТГ | Поведение | При мерже проверить |
+|---|---|---|---|---|---|
+| `/datum/component/personal_crafting/get_environment()` с `..()` | 5 | `crafting/reach.dm` | `code/datums/components/crafting/_crafting.dm` | На medieval-картах из содержимого крафтера убирается всё, что не в руках: надетое — не ингредиент | Что `get_environment()` по-прежнему строится на `range()` и что `get_used_reqs()` берёт ингредиенты из него |
+| `/datum/component/personal_crafting/get_surroundings()` с `..()` | 5 | `crafting/reach.dm` | там же | Инструменты — из рук, с земли рядом, с пояса и бёдер, не из сумок: ключи `"tool_behaviour"` и `"tool_instances"` пересчитываются | Строковые значения `CONTENTS_TOOL_BEHAVIOUR` и `CONTENTS_POSSIBLE_TOOLS` (ТГ снимает их `#undef` после файла); что `check_tools()` читает именно их |
+| `/datum/component/personal_crafting/ui_static_data()` с `..()` | 5 | `crafting/reach.dm` | там же | К `desc` рецептов Ратвуда дописаны навык, сложность и шанс попытки | Что `data["recipes"]` — список списков с `"ref"` и `"desc"` |
+| `/obj/item/bodypart/can_be_grasped()` с `..()` | 5 | `combat/grab.dm` | `code/modules/mob/living/carbon/carbon_defense.dm` | На medieval-картах себя можно схватить за любую конечность | Что `self_grasp` по-прежнему решает по `can_be_grasped()` |
+| `/obj/item/flashlight/flare/torch/attack_self()`, `item_interaction()` с `..()` для modern | 5 | `rockhill/fires.dm` | `code/game/objects/items/devices/flashlight.dm` | В руке факел только гасится; зажигается горячим предметом и от огня | `ignition()` и его результат `SUCCESS` (`ROCKHILL_FLARE_IGNITED`), `turn_off()`, `light_on`, `fuel` |
+| `/atom/movable/screen/inventory/hand/rogue/mouse_drop_receive()` | 2 | `hud/rogue_hud_elements.dm` | `code/_onclick/drag_drop.dm` | Надетая вещь, перетащенная на пустую руку, переходит в неё | `putItemFromInventoryInHandIfPossible()`, `get_item_for_held_index()`; что руки HUD — по-прежнему этот тип |
+| Портер: `placement_lines()` сравнивает план с планом перенесённого родителя, а не с базовым | — | `tools/port_rockhill.py` | — | Решётка-пол (`GAME_PLANE_LOWER` у Ратвуда) больше не наследует `ABOVE_GAME_PLANE` от `/obj/structure/bars` | — |
+
 ## Тесты
 
 Тестовые файлы обёрнуты в собственные `#ifdef` (`UNIT_TESTS`, `REDTARD_TEST_FOCUS`, `REDTARD_LIGHT_BENCH`, `REDTARD_LIGHT_BENCH_CLIENT`), потому что Dream Maker дописывает их в блок `BEGIN_INCLUDE` модуля без условий.

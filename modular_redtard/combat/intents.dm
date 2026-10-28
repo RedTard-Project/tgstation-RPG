@@ -182,7 +182,13 @@ GLOBAL_LIST_EMPTY(rogue_intents)
 /obj/item/proc/rogue_intents()
 	if(length(rogue_alt_grip?.grip_intents))
 		return rogue_alt_grip.grip_intents
-	return (rogue_wielded && length(gripped_intents)) ? gripped_intents : possible_item_intents
+	var/list/intents = (rogue_wielded && length(gripped_intents)) ? gripped_intents : possible_item_intents
+	if(length(intents) || !rogue_combat_enabled())
+		return intents
+	// Ratwood's /obj/item has list(/datum/intent/use), which the porter leaves out where it is inherited: a thing with no
+	// intents of its own is used, not swung (no_attack), and the hand's intent grid shows USE instead of empty boxes.
+	var/static/list/use_only = list(/datum/intent/use)
+	return use_only
 
 /obj/item/proc/rogue_wdefense()
 	return wdefense + (rogue_wielded ? wdefense_wbonus : 0)

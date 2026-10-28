@@ -991,7 +991,6 @@
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
-	plane = ABOVE_GAME_PLANE
 	layer = WALL_OBJ_LAYER
 	base_state = "torchwall"
 	fueluse = FALSE
@@ -1008,7 +1007,6 @@
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
-	plane = ABOVE_GAME_PLANE
 	layer = WALL_OBJ_LAYER
 	base_state = "stonelantern"
 	fueluse = FALSE
@@ -1025,7 +1023,6 @@
 	light_range = 8
 	light_power = 1
 	light_color = "#f9ad80"
-	plane = ABOVE_GAME_PLANE
 	layer = WALL_OBJ_LAYER
 	base_state = "stonelantern_standing"
 	fueluse = FALSE
@@ -1043,7 +1040,6 @@
 	light_power = 1
 	light_color = "#f9ad80"
 	dir = EAST
-	plane = ABOVE_GAME_PLANE
 	layer = WALL_OBJ_LAYER
 	base_state = "torchwall"
 	fueluse = FALSE
@@ -1061,7 +1057,6 @@
 	light_power = 1
 	light_color = "#f9ad80"
 	dir = WEST
-	plane = ABOVE_GAME_PLANE
 	layer = WALL_OBJ_LAYER
 	base_state = "torchwall"
 	fueluse = FALSE
@@ -1091,7 +1086,6 @@
 	light_range = 10.9
 	light_power = 0.95
 	light_color = "#58dd90"
-	plane = ABOVE_GAME_PLANE
 	layer = 4.81
 
 /obj/machinery/light/roguestreet/orange
@@ -1102,7 +1096,6 @@
 	light_range = 10.9
 	light_power = 1
 	light_color = "#da8c45"
-	plane = ABOVE_GAME_PLANE
 	layer = 4.81
 
 /obj/machinery/light/roguestreet/orange/midlamp
@@ -1115,7 +1108,6 @@
 	light_range = 10.9
 	light_power = 1
 	light_color = "#da8c45"
-	plane = ABOVE_GAME_PLANE
 	layer = 4.81
 
 /obj/machinery/light/roguestreet/orange/walllamp
@@ -1127,7 +1119,6 @@
 	light_range = 7.8
 	light_power = 1
 	light_color = "#da8c45"
-	plane = ABOVE_GAME_PLANE
 	layer = 4.81
 
 /obj/machinery/light/roguestreet/walllamp
@@ -1139,5 +1130,4 @@
 	light_range = 7.8
 	light_power = 0.95
 	light_color = "#58dd90"
-	plane = ABOVE_GAME_PLANE
 	layer = 4.81

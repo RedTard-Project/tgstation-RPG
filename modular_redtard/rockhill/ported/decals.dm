@@ -90,7 +90,6 @@
 	icon = 'modular_redtard/rockhill/icons/modular/Mapping/icons/webbing.dmi'
 	icon_state = "cobweb2"
 	alpha = 200
-	plane = ABOVE_GAME_PLANE
 	layer = WALL_OBJ_LAYER
 
 /obj/effect/decal/cleanable/food/mess
