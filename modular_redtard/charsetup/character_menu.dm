@@ -86,13 +86,14 @@ GLOBAL_LIST_EMPTY(rogue_charsetup_open)
 	SIGNAL_HANDLER
 	SStgui.update_uis(src)
 
-/// TG's spritesheets: the preference icons (hair, underwear...) and the species portraits; and the foods and drinks of
-/// the culinary picker (culinary.dm).
+/// TG's spritesheets: the preference icons (hair, underwear...) and the species portraits; the foods and drinks of the
+/// culinary picker (culinary.dm) and the features of Vibelin's races (heritage/customizers.dm).
 /datum/rogue_charsetup/ui_assets(mob/user)
 	return list(
 		get_asset_datum(/datum/asset/spritesheet_batched/preferences),
 		get_asset_datum(/datum/asset/spritesheet_batched/species),
 		get_asset_datum(/datum/asset/spritesheet_batched/rogue_culinary),
+		get_asset_datum(/datum/asset/spritesheet_batched/rogue_customizers),
 	)
 
 /datum/rogue_charsetup/ui_static_data(mob/user)
@@ -113,6 +114,7 @@ GLOBAL_LIST_EMPTY(rogue_charsetup_open)
 		"job_bans" = job_bans,
 		"ages" = rogue_charsetup_age_catalog(lang),
 		"heritage" = rogue_charsetup_heritage_catalog(lang),
+		"customizers" = rogue_charsetup_customizer_catalog(lang),
 		"homelands" = rogue_charsetup_homeland_catalog(lang),
 		"culinary" = rogue_charsetup_culinary_catalog(lang),
 		"combat_music" = rogue_charsetup_combat_music_catalog(),
@@ -129,6 +131,7 @@ GLOBAL_LIST_EMPTY(rogue_charsetup_open)
 	return list(
 		"lang" = rogue_ui_lang(user.client),
 		"heritage_species" = heritage_species(),
+		"accents" = accent_choices(rogue_ui_lang(user.client)),
 		"active_slot" = prefs.default_slot,
 		"profiles" = prefs.create_character_profiles(),
 		"character_preferences" = compile_preferences(user),
@@ -251,6 +254,12 @@ GLOBAL_LIST_EMPTY(rogue_charsetup_open)
 			return select_faith(params["faith"])
 		if("select_patron")
 			return select_patron(params["patron"])
+		if("set_customizer")
+			return set_customizer(params["slot"], params["id"])
+		if("set_customizer_color")
+			return set_customizer_color(user, params["slot"], params["index"])
+		if("reset_customizer_colors")
+			return reset_customizer_colors(params["slot"])
 		if("listen_combat_music")
 			return preview_combat_music(user, params["track"])
 		if("stop_combat_music")
@@ -323,6 +332,7 @@ GLOBAL_LIST_EMPTY(rogue_charsetup_open)
 		if(!(preference.category in appearance) || !preference.is_randomizable() || !accessible(preference))
 			continue
 		prefs.write_preference(preference, preference.create_random_value(prefs))
+	randomize_customizers()
 	refresh_preview()
 
 /// TG's jobs middleware: a priority for a role the lobby offers, or null for never.

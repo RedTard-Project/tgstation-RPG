@@ -1690,6 +1690,190 @@ clay_crack_delay = 600
 # Percent chance every two seconds that fired pottery left in a burning oven past that time shatters (Ratwood: every oven tick).
 clay_crack_chance = 30
 
+# --- Husbandry (husbandry/, block 10): riding, tack, milking, manure.
+
+# Deciseconds it takes to saddle a beast (Ratwood saddle attack(): do_after 40).
+mount_saddle_time = 40
+
+# Deciseconds it takes to take the saddle off a mount (Ratwood attack_right(): 5 SECONDS).
+mount_unsaddle_time = 50
+
+# Deciseconds it takes to fit a caparison or a bard onto a saddled mount (Ratwood 5 SECONDS).
+mount_tack_time = 50
+
+# Deciseconds it takes to take a caparison or a bard off a mount (Ratwood attack_right(): 10 SECONDS).
+mount_untack_time = 100
+
+# Deciseconds a rider who can ride a little takes to get on a mount or off it (Ratwood time2mount 12).
+mount_time = 12
+
+# Deciseconds a rider without the riding skill takes to get on a mount (Ratwood 50).
+mount_time_unskilled = 50
+
+# Deciseconds a rider without the riding skill takes to get off a mount (Ratwood 30).
+dismount_time_unskilled = 30
+
+# Riding rank above which a rider gets on and off a mount at once (Ratwood: skill over 3).
+mount_quick_rank = 3
+
+# Deciseconds a rider thrown off a mount lies stunned: a dismount cut short, a door ridden through, a blow taken at a gallop (Ratwood violent_dismount(): Paralyze 50).
+mount_fall_time = 50
+
+# Deciseconds a tile a mount gains at a gallop, its rider running (Ratwood relaymove(): -1).
+mount_gallop_bonus = 1
+
+# Deciseconds a tile a mount gains under a rider without the riding skill (Ratwood -3).
+mount_unskilled_bonus = 3
+
+# Deciseconds a tile a mount gains under a trained rider, before the rider's rank (Ratwood 5 + rank / 6).
+mount_skill_bonus = 5
+
+# A trained rider's riding rank divided by this is taken off the mount's pace as well (Ratwood rank / 6).
+mount_rank_divisor = 6
+
+# Deciseconds a tile a mount gains under a Steppe Rider (Ratwood TRAIT_STEPPE_RIDER).
+mount_steppe_bonus = 0.25
+
+# Share of its health at or below which a mount is hurt and slows down (Ratwood updatehealth()).
+mount_hurt_share = 0.5
+
+# Deciseconds a tile a hurt mount is slower, and the least it then lags behind its own pace whoever rides it (Ratwood +2).
+mount_hurt_delay = 2
+
+# Pace factor of a mount walked by a rider in combat mode (Ratwood relaymove()).
+mount_combat_walk = 1.05
+
+# Pace factor of a mount galloped by a rider in combat mode (Ratwood relaymove()).
+mount_combat_gallop = 1.15
+
+# Pace factor of a mount walked by a rider in combat mode with a fixed eye, or backed up with a fixed eye out of it (Ratwood relaymove()).
+mount_fixed_walk = 1.03
+
+# Pace factor of a mount galloped that way (Ratwood relaymove()).
+mount_fixed_gallop = 1.06
+
+# Fastest pace of a mount, deciseconds a tile (Ratwood max(1, ...)).
+mount_min_delay = 1
+
+# Tiles a rider gallops for each gain of riding experience (Ratwood riding_xp_move_counter).
+riding_xp_moves = 5
+
+# Riding experience one gain gives per point of the rider's intelligence (Ratwood STAINT * 0.1).
+riding_xp_per_intelligence = 0.1
+
+# Factor on that experience for a rider without the riding skill (Ratwood).
+riding_xp_untrained = 2
+
+# Factor on that experience for a rider of apprentice rank or above (Ratwood).
+riding_xp_trained = 0.5
+
+# Deciseconds an apple fed to a mount by hand heals it and keeps it from holding a grudge (Ratwood mount_apple_healing 8 SECONDS).
+mount_apple_time = 80
+
+# Brute and burn damage a hand-fed apple heals a mount a second meanwhile (Ratwood healing_on_tick).
+mount_apple_heal = 1
+
+# Units of milk an udder holds (Ratwood create_reagents(100)).
+milk_udder_size = 100
+
+# Most units of milk a cow or a nanny goat has in her to begin with, at random from none (Ratwood rand(0, 20)).
+milk_start_max = 20
+
+# Units of milk a cow or a nanny goat makes out of each point of what she has eaten (Ratwood generateMilk()).
+milk_per_production = 1
+
+# Units an udder must hold before it can be milked (Ratwood has_reagent(milk, 5)).
+milk_min = 5
+
+# Deciseconds one milking takes (Ratwood do_after 20).
+milk_time = 20
+
+# Seconds a beast must have food in it to drop manure once (Ratwood pooprog: 100 lives of 2 seconds).
+manure_time = 200
+
+# Droppings that may lie on one tile before beasts drop no more there (not in Ratwood; 0 - no limit).
+manure_tile_cap = 1
+
+# --- Faith (faith/, block 11): devotion, prayer, miracles, the test of faith, the blessing of the holy book.
+
+# Progression of miracle tier 1, and the devotion limit of a devotee by default (Ratwood CLERIC_REQ_1).
+faith_devotion_tier1 = 250
+
+# Progression of miracle tier 2 (Ratwood CLERIC_REQ_2).
+faith_devotion_tier2 = 400
+
+# Progression of miracle tier 3 (Ratwood CLERIC_REQ_3).
+faith_devotion_tier3 = 750
+
+# Progression of miracle tier 4, and the devotion limit of a devotee who starts full (Ratwood CLERIC_REQ_4).
+faith_devotion_tier4 = 1000
+
+# Devotion a weakly devout role regains every regen step (Ratwood CLERIC_REGEN_WEAK).
+faith_regen_weak = 0.1
+
+# Devotion a devotee regains every regen step (Ratwood CLERIC_REGEN_DEVOTEE).
+faith_regen_devotee = 0.3
+
+# Devotion a lesser cleric regains every regen step (Ratwood CLERIC_REGEN_MINOR).
+faith_regen_minor = 0.5
+
+# Devotion the ordained clergy regain every regen step (Ratwood CLERIC_REGEN_MAJOR).
+faith_regen_major = 0.8
+
+# Devotion a witch regains every regen step (Ratwood CLERIC_REGEN_WITCH).
+faith_regen_witch = 1.5
+
+# Devotion a stigmatic regains every regen step (Ratwood CLERIC_REGEN_ABSOLVER / 2).
+faith_regen_stigmata = 2.5
+
+# Devotion an absolver regains every regen step (Ratwood CLERIC_REGEN_ABSOLVER).
+faith_regen_absolver = 5
+
+# Deciseconds of a regen step of devotion (Ratwood's processing tick, 2 seconds).
+faith_regen_interval = 20
+
+# Devotion and progression a devout role starts with when it does not start full (Ratwood).
+faith_start_devotion = 50
+
+# Devotion a cycle of Give Prayer brings before the bonus of the Miracles skill (Ratwood prayer_effectiveness).
+faith_prayer_devotion = 2
+
+# Deciseconds of a cycle of Give Prayer (Ratwood).
+faith_prayer_cycle = 30
+
+# Most cycles of one Give Prayer (Ratwood).
+faith_prayer_cycles = 50
+
+# Tiles within which an idol or a cross of the patron carries a prayer (Vibelin).
+faith_idol_range = 7
+
+# Shortest prayer a patron hears, in characters (Ratwood).
+faith_prayer_min_length = 15
+
+# Deciseconds within which a new prayer counts as the last one and brings no reward (Ratwood MT_PSYPRAY, 1 minute).
+faith_prayer_interval = 600
+
+# Fire stacks an offended patron sets on the one who insulted it in a prayer (Ratwood).
+faith_smite_fire_stacks = 20
+
+# Ranks of the Miracles skill a miracle needs per tier: tier 4 wants an expert.
+faith_ranks_per_tier = 1
+
+# Healing of the miracles on a fortified target, as a factor (Ratwood Fortify, +50%).
+faith_fortify_bonus = 1.5
+
+# Deciseconds of Test Faith before the victim confesses (Ratwood 10 seconds).
+faith_confess_time = 100
+
+# Tiles within which a cross must stand for Test Faith (Ratwood).
+faith_confess_cross_range = 5
+
+# Deciseconds the blessing of a holy book lasts (Azure Peak buff/blessed, 20 minutes).
+faith_blessed_duration = 12000
+
+# Fortune the blessing of a holy book gives (Azure Peak buff/blessed).
+faith_blessed_fortune = 1
+
 # --- Trade (economy/, block 7b): price by quality, regions, standing orders, ships and the harbor, coin machines.
 
 # Price factor of a ruined item (Ratwood ITEM_QUALITY_MULT_RUINED).
@@ -2363,3 +2547,29 @@ special_warhammer_swing_daze_intelligence = -2
 
 # Dazing Swing: self_immob_dur. Times are in deciseconds.
 special_warhammer_swing_self_immob_dur = 9
+
+# --- Races of Vibelin (heritage/, block 12): flight on wings, the triton's glow.
+
+# Deciseconds a harpy or a formikrag takes to take wing (Vibelin flight_startup 5 SECONDS).
+flight_startup = 50
+
+# Deciseconds a flier takes to land (Vibelin flight_wind_down 3 SECONDS).
+flight_wind_down = 30
+
+# Stamina a flier spends on each step in the air (Vibelin FLIGHT_DRAIN_AMOUNT).
+flight_move_stamina = 1.5
+
+# Stamina lost at which a flier can no longer take wing or stay up (Vibelin: no stamina left).
+flight_stamina_limit = 50
+
+# A blow knocks a flier out of the air with a chance of its damage divided by this, in percent (Vibelin prob(damage / 4)).
+flight_knockdown_divisor = 4
+
+# Deciseconds a flier knocked out of the air lies down (Vibelin Knockdown 2 SECONDS).
+flight_knockdown_time = 20
+
+# Range in tiles of a triton's bioluminescence (Vibelin moblight 2).
+bioluminescence_range = 2
+
+# Power of a triton's bioluminescence (Vibelin moblight 1).
+bioluminescence_power = 1

@@ -8,13 +8,16 @@ Vibelin's dark elf is not ported: Ratwood's (rogue_drow) stands for it. Every ra
     greyscale and coloured by the skin (TG's mutant colour);
   - its features: the default sprite of each ear, horn, snout, neck, tail and wing organ it has (the organ's
     accessory, or the first choice of its customizer) as a bodypart overlay of the head or the chest;
+  - its customizers: every accessory its organ customizers offer, ported as a feature like the default ones (each
+    colour key a state of its own, the uncoloured extra state, sprites of any size on a sheet of that size), and per
+    slot the features to pick from, whether it may go without and whether the colours may change (rogue_customizers);
   - its origins: the named skin colours of get_skin_list() (Vibelin's "Ancestry", "Progenitor"...) and the hair
     colours of get_hairc_list();
   - its attribute sheets (statsheet_male/statsheet_female), traits this build has, head features (hair, beard, lips,
     eye colour), whose clothes it wears (swap_*_clothes), offsets of worn things (offset_features_m/f), description;
   - its languages (grant_language of on_species_gain and after_creation; Vibelin's this build lacks are ported), voice
     (voicepack sounds as the tongue's emote sounds), eyes (night vision as TG's lighting cutoff) and name lists.
-The customization of the features (Vibelin's customizer choices) is not ported.
+The character menu picks the features (heritage/customizers.dm); the wagging tails and open wings are not ported.
 """
 
 import collections
@@ -30,9 +33,16 @@ import port_rockhill as porter
 OUT_DM = 'modular_redtard/heritage/ported/races.dm'
 BODIES_ICON = 'modular_redtard/heritage/icons/vibelin_bodies.dmi'
 WIDE_ICON = 'modular_redtard/heritage/icons/vibelin_wide.dmi'
+# Features of any other size, one sheet per size.
+SIZED_ICON = 'modular_redtard/heritage/icons/vibelin_{0}x{1}.dmi'
+FEATURE_PREFIX = '/datum/bodypart_overlay/simple/rogue_feature/'
 LANGUAGE_ICON = 'modular_redtard/heritage/icons/languages.dmi'
 SOUND_DIR = 'modular_redtard/heritage/sound'
 ROCKHILL_SOUND_DIR = 'modular_redtard/rockhill/sound'
+FLIGHT_SOUND = 'sound/mobs/wingflap.ogg'
+# The buttons of the race mechanics TG has no icon for: our state -> Vibelin's icon and state (its first frame).
+ACTIONS_ICON = 'modular_redtard/heritage/icons/actions.dmi'
+ACTION_STATES = {'bioluminescence': ('icons/mob/actions/roguespells.dmi', 'shieldsparkles')}
 NAMES_DIR = 'modular_redtard/heritage/strings/names'
 
 RACES = [
@@ -58,6 +68,15 @@ RACES = [
     '/datum/species/medicator',
     '/datum/species/rakshari',
     '/datum/species/ooze',
+    # Vibelin's beast races (modular_abel/races/furry, "alpha-test" there), without their body markings.
+    '/datum/species/tabaxi',
+    '/datum/species/vulpkanin',
+    '/datum/species/lupian',
+    '/datum/species/akula',
+    '/datum/species/anthromorph',
+    '/datum/species/lizardfolk',
+    '/datum/species/moth',
+    '/datum/species/aura',
 ]
 
 ZONES = ['head', 'chest', 'l_arm', 'r_arm', 'l_hand', 'r_hand', 'l_leg', 'r_leg']
@@ -71,15 +90,24 @@ PARTS = [
     ('r_leg', '/obj/item/bodypart/leg/right', 'BODY_ZONE_R_LEG'),
 ]
 LAYERS = {'BODY_BEHIND_LAYER': 'BEHIND', 'BODY_ADJ_LAYER': 'ADJ', 'BODY_FRONT_LAYER': 'FRONT'}
-# Vibelin's organ slot: the part it is drawn on and the worn flags that hide it.
+# Vibelin's organ slot: the part it is drawn on, the worn flags that hide it and the slot's name in rogue_customizers.
 FEATURE_SLOTS = {
-    'ORGAN_SLOT_EARS': ('head', 'HIDEEARS'),
-    'ORGAN_SLOT_HORNS': ('head', 'HIDEHAIR'),
-    'ORGAN_SLOT_SNOUT': ('head', 'HIDESNOUT'),
-    'ORGAN_SLOT_NECK_FEATURE': ('head', 'NONE'),
-    'ORGAN_SLOT_TAIL': ('chest', 'NONE'),
-    'ORGAN_SLOT_WINGS': ('chest', 'NONE'),
+    'ORGAN_SLOT_EARS': ('head', 'HIDEEARS', 'ears'),
+    'ORGAN_SLOT_HORNS': ('head', 'HIDEHAIR', 'horns'),
+    'ORGAN_SLOT_SNOUT': ('head', 'HIDESNOUT', 'snout'),
+    'ORGAN_SLOT_NECK_FEATURE': ('head', 'NONE', 'neck'),
+    'ORGAN_SLOT_TAIL': ('chest', 'NONE', 'tail'),
+    'ORGAN_SLOT_WINGS': ('chest', 'NONE', 'wings'),
 }
+# Vibelin's colour sources of a key (color_key_defaults) as what colours it here: the body ("skin", which is also the
+# mutant colour of a race with mutant colours) or the hair; the second and third mutant colours have no counterpart and
+# draw the sprite as it is (white).
+KEY_SOURCES = {
+    'KEY_SKIN_COLOR': 'skin', 'KEY_CHEST_COLOR': 'skin', 'KEY_MUT_COLOR_ONE': 'skin',
+    'KEY_HAIR_COLOR': 'hair', 'KEY_FACE_HAIR_COLOR': 'hair',
+}
+# The source of a key without color_key_defaults (Vibelin's default_define_for_color_key()).
+MUT_KEYS = ['KEY_MUT_COLOR_ONE', 'KEY_MUT_COLOR_TWO', 'KEY_MUT_COLOR_THREE']
 CUSTOMIZER_SLOTS = {
     'ears': 'ORGAN_SLOT_EARS', 'horns': 'ORGAN_SLOT_HORNS', 'snout': 'ORGAN_SLOT_SNOUT',
     'neck_feature': 'ORGAN_SLOT_NECK_FEATURE', 'tail': 'ORGAN_SLOT_TAIL', 'wings': 'ORGAN_SLOT_WINGS',
@@ -101,6 +129,27 @@ LANGUAGES = {
     '/datum/language/beast': ('/datum/language/rogue_beast', '7'),
 }
 GENERIC_VOICES = {'/datum/voicepack/male', '/datum/voicepack/female'}
+# Vibelin's accents (code/__DEFINES/accents.dm): word swaps from strings/accents, copied here.
+ACCENTS_DEFINES = 'code/__DEFINES/accents.dm'
+ACCENTS_DIR = 'modular_redtard/heritage/strings/accents'
+ACCENT_NONE = 'No Accent'
+# Vibelin's get_accent(): the accent of a race's native language (an elf's is the French one, a sun elf's the Russian).
+NATIVE_ACCENTS = {
+    'Old Psydonic': 'ACCENT_GRENZ', 'Psydonic': 'ACCENT_GRENZ', 'Zalad': 'ACCENT_ZALAD', 'Elfish': 'ACCENT_DELF',
+    'Dwarfish': 'ACCENT_DWARF', 'Infernal': 'ACCENT_TIEFLING', 'Orcish': 'ACCENT_HORC', 'Halfling': 'ACCENT_HALFLING',
+    'Utterances': 'ACCENT_KOBOLD', 'Rous': 'ACCENT_ROUSMAN', 'Deepspeak': 'ACCENT_TRITON', 'Pirate': 'ACCENT_PIRATE',
+    'Osslandic': 'ACCENT_OSSLAND', 'Rockhill': 'ACCENT_ROCKHILL',
+}
+ACCENT_VARIANTS = {'/datum/species/elf/sun': 'ACCENT_ELF'}
+# The languages of Vibelin's handle_speech() by name, as this build's types (with the halfling and kobold tongues,
+# which Vibelin's list forgets): a race speaks its native one without its accent.
+NATIVE_LANGUAGES = {
+    'Imperial': '/datum/language/common', 'Elfish': '/datum/language/rogue_elvish',
+    'Dwarfish': '/datum/language/rogue_dwarvish', 'Infernal': '/datum/language/rogue_infernal',
+    'Orcish': '/datum/language/rogue_orcish', 'Celestial': '/datum/language/rogue_celestial',
+    'Zalad': '/datum/language/rogue_zalad', 'Deepspeak': '/datum/language/rogue_deepspeak',
+    'Halfling': '/datum/language/rogue_halfling', 'Utterances': '/datum/language/rogue_kobold',
+}
 OFFSET_EXTRA = {'OFFSET_RING': ['ROGUE_OFFSET_RING']}
 CHANGESOURCE = 'MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT'
 STAT_PAIR = re.compile(r'\b(STAT_[A-Z]+)\s*=\s*(-?\d+)')
@@ -200,6 +249,28 @@ def leaf_of(accessory):
     return accessory[len('/datum/sprite_accessory/'):].replace('/', '_')
 
 
+def accent_table(root):
+    """Vibelin's accents: each ACCENT_* define's name, and by name the file and key of its word swaps."""
+    text = porter.strip_comments(open(os.path.join(root, ACCENTS_DEFINES), encoding='utf-8', errors='ignore').read())
+    names = dict(re.findall(r'^#define\s+(ACCENT_[A-Z_]+)\s+"([^"]+)"', text, re.M))
+    files = {}
+    for define, path, key in re.findall(r'(ACCENT_[A-Z_]+)\s*=\s*strings\(\s*"([^"]+)"\s*,\s*"([^"]+)"\s*\)', text):
+        if define in names:
+            files[names[define]] = (path, key)
+    return names, files
+
+
+def feature_id(path):
+    """A feature's id in rogue_customizers and the rogue_features preference: its type path past rogue_feature/."""
+    return path[len(FEATURE_PREFIX):]
+
+
+def list_items(raw):
+    """The items of a DM list(...) literal, as written."""
+    found = re.search(r'list\((.*)\)', raw or '', re.S)
+    return [item.strip() for item in found.group(1).split(',') if item.strip()] if found else []
+
+
 class Port:
     def __init__(self, base, root, procs, defines, attr_stats, offset_keys):
         self.base = base
@@ -212,6 +283,8 @@ class Port:
         self.sheets = {}
         self.body_states = []
         self.wide_states = []
+        # Features of other sizes: (width, height) -> states.
+        self.sized_states = {}
         self.features = {}
         self.blocks = []
         self.sounds = set()
@@ -219,6 +292,7 @@ class Port:
         self.languages_used = set()
         self.eyes = {}
         self.warnings = []
+        self.accent_names, self.accent_files = accent_table(root)
 
     def cells(self, rel):
         if rel not in self.sheets:
@@ -271,8 +345,34 @@ class Port:
                     return found[0].rstrip('/')
         return None
 
-    def feature(self, accessory, hidden_by):
-        """The overlay type of a sprite accessory, its states added to the sheet that fits its size."""
+    def sheet_for(self, size):
+        """The icon a feature of this sprite size is drawn from, as DM writes it, and the states of its sheet."""
+        if size == (32, 32):
+            return 'VIBELIN_BODIES_ICON', self.body_states
+        if size == (64, 32):
+            return 'VIBELIN_WIDE_ICON', self.wide_states
+        return f"'{SIZED_ICON.format(*size)}'", self.sized_states.setdefault(size, [])
+
+    def color_defaults(self, accessory, keys):
+        """What colours each of the accessory's colour keys by default, as Vibelin's get_default_colors(): its own colour
+        (default_colors), else the source of color_key_defaults, else the key's mutant colour; None leaves it uncoloured."""
+        if (self.base.resolve(accessory, 'use_static') or '').strip() in ('TRUE', '1'):
+            return [None] * keys
+        explicit = [None if item == 'null' else hex_color(item) for item in list_items(self.base.resolve(accessory, 'default_colors'))]
+        sources = list_items(self.base.resolve(accessory, 'color_key_defaults'))
+        out = []
+        for index in range(keys):
+            if index < len(explicit) and explicit[index]:
+                out.append(explicit[index])
+                continue
+            source = sources[index] if index < len(sources) and sources[index] != 'null' else MUT_KEYS[min(index, 2)]
+            out.append(KEY_SOURCES.get(source, '#FFFFFF'))
+        return out
+
+    def feature(self, accessory, hidden_by, slot):
+        """The overlay type of a sprite accessory, its states added to the sheet of its size: a state per layer
+        ("vib_<leaf>_<layer>"), past the first colour key one per key ("_2", "_3"), and the extra state drawn over them
+        ("_extra")."""
         if accessory in self.features:
             return self.features[accessory]
         self.features[accessory] = None
@@ -281,57 +381,139 @@ class Port:
         if not icon or not state or not os.path.exists(os.path.join(self.root, icon)):
             self.warnings.append(f'{accessory}: no sprite ({icon} {state})')
             return None
+        if (self.base.resolve(accessory, 'gendered_variants') or '').strip() in ('TRUE', '1'):
+            self.warnings.append(f'{accessory}: gendered sprites are not ported')
+            return None
         sheet = self.cells(icon)
         source = sheet.state_cells()
-        size = (sheet.frame_width, sheet.frame_height)
-        if size not in ((32, 32), (64, 32)):
-            self.warnings.append(f'{accessory}: {size[0]}x{size[1]} sprites are not ported')
-            return None
-        target = self.body_states if size == (32, 32) else self.wide_states
+        icon_ref, target = self.sheet_for((sheet.frame_width, sheet.frame_height))
+        keys = max(1, porter.number_value(self.base.resolve(accessory, 'color_keys')) or 1)
+        extra = (self.base.resolve(accessory, 'extra_state') or '').strip() in ('TRUE', '1')
         leaf = leaf_of(accessory)
         layers = []
+        extra_layers = []
         for token in re.findall(r'BODY_[A-Z]+_LAYER', self.base.resolve(accessory, 'relevant_layers') or ''):
             layer = LAYERS.get(token)
-            name = f'{state}_{layer}'
-            if layer and name in source and layer not in layers:
+            if not layer or layer in layers:
+                continue
+            names = [f'{state}_{layer}'] if keys == 1 else [f'{state}_{layer}_{key}' for key in range(1, keys + 1)]
+            if not all(name in source for name in names):
+                continue
+            for key, name in enumerate(names, 1):
                 dirs, _, cells = source[name]
-                target.append((f'vib_{leaf}_{layer}', dirs, cells[:dirs]))
-                layers.append(layer)
+                target.append((f'vib_{leaf}_{layer}' + (f'_{key}' if key > 1 else ''), dirs, cells[:dirs]))
+            if extra and f'{state}_{layer}_extra' in source:
+                dirs, _, cells = source[f'{state}_{layer}_extra']
+                target.append((f'vib_{leaf}_{layer}_extra', dirs, cells[:dirs]))
+                extra_layers.append(layer)
+            layers.append(layer)
         if not layers:
             self.warnings.append(f'{accessory}: none of its layers is in {icon}')
             return None
-        path = f'/datum/bodypart_overlay/simple/rogue_feature/vib_{leaf}'
-        block = [path, f"\ticon = {'VIBELIN_BODIES_ICON' if size == (32, 32) else 'VIBELIN_WIDE_ICON'}", f'\ticon_state = "vib_{leaf}"',
+        path = f'{FEATURE_PREFIX}vib_{leaf}'
+        block = [path, f'\ticon = {icon_ref}', f'\ticon_state = "vib_{leaf}"',
                  '\tlayers = list(' + ', '.join(f'"{layer}" = BODY_{layer}_LAYER' for layer in layers) + ')',
                  f'\thidden_by = {hidden_by}']
-        if size == (64, 32):
-            block.append('\trogue_pixel_x = -16')
-        keys = self.base.resolve(accessory, 'color_key_defaults') or ''
-        if (self.base.resolve(accessory, 'use_static') or '').strip() in ('TRUE', '1'):
-            pass
-        elif 'KEY_SKIN_COLOR' in keys:
+        pixel_x = porter.number_value(self.base.resolve(accessory, 'pixel_x')) or 0
+        pixel_y = porter.number_value(self.base.resolve(accessory, 'pixel_y')) or 0
+        if pixel_x:
+            block.append(f'\trogue_pixel_x = {pixel_x}')
+        defaults = self.color_defaults(accessory, keys)
+        if defaults[0] == 'skin':
             block.append('\tskin_coloured = TRUE')
-        elif 'KEY_HAIR_COLOR' in keys:
+        elif defaults[0] == 'hair':
             block.append('\trogue_hair_coloured = TRUE')
-        else:
-            colors = re.findall(r'"(#[0-9A-Fa-f]{6})"', self.base.resolve(accessory, 'default_colors') or '')
-            if colors:
-                block.append(f'\tdraw_color = "{colors[0].upper()}"')
+        elif defaults[0]:
+            block.append(f'\tdraw_color = "{defaults[0]}"')
+        name = text_of(self.base, accessory, 'name')
+        if name:
+            block.append(f'\tname = {name}')
+        block.append(f'\trogue_slot = "{slot}"')
+        if pixel_y:
+            block.append(f'\trogue_pixel_y = {pixel_y}')
+        if keys > 1:
+            names = re.findall(r'"(?:[^"\\]|\\.)*"', self.base.resolve(accessory, 'color_key_names') or '')
+            block.append(f'\trogue_color_keys = {keys}')
+            block.append('\trogue_color_defaults = list(' + ', '.join('null' if d is None else f'"{d}"' for d in defaults) + ')')
+            if len(names) >= keys:
+                block.append('\trogue_color_names = list(' + ', '.join(names[:keys]) + ')')
+        if extra_layers:
+            block.append('\trogue_extra = list(' + ', '.join(f'"{layer}"' for layer in extra_layers) + ')')
         self.blocks.append(block)
         self.features[accessory] = path
         return path
 
     def species_features(self, species):
+        """The race's default features by the part they are drawn on, and by slot the one each slot has (None for a slot
+        the race has bare)."""
         organs = dict(re.findall(r'(ORGAN_SLOT_[A-Z_]+)\s*=\s*(/obj/item/organ/[\w/]+)', self.base.resolve(species, 'organs') or ''))
-        out = collections.defaultdict(list)
-        for slot, (zone, hidden_by) in FEATURE_SLOTS.items():
-            if slot not in organs and slot not in self.customized_slots(species):
+        by_zone = collections.defaultdict(list)
+        by_slot = {}
+        for organ_slot, (zone, hidden_by, slot) in FEATURE_SLOTS.items():
+            if organ_slot not in organs and organ_slot not in self.customized_slots(species):
                 continue
-            accessory = self.accessory_for(species, slot, organs.get(slot, '').rstrip('/'))
-            path = self.feature(accessory, hidden_by) if accessory else None
+            accessory = self.accessory_for(species, organ_slot, organs.get(organ_slot, '').rstrip('/'))
+            path = self.feature(accessory, hidden_by, slot) if accessory else None
+            by_slot[slot] = path
             if path:
-                out[zone].append(path)
-        return out
+                by_zone[zone].append(path)
+        return by_zone, by_slot
+
+    def customizers(self, species, defaults):
+        """Vibelin's organ customizers of the race (rogue_customizers): per slot the choice's name, the feature a new
+        character has (Vibelin's default entry: none if the customizer is off by default, else the default accessory of
+        its default choice, else what the race's body has), whether it may go without, whether the colours may change,
+        and the features to pick from (every accessory of its choices that ports, the body's own first if they lack it)."""
+        lines = []
+        seen = set()
+        for customizer in re.findall(r'/datum/customizer/organ/[\w/]+', self.base.resolve(species, 'customizers') or ''):
+            customizer = customizer.rstrip('/')
+            organ_slot = CUSTOMIZER_SLOTS.get(customizer.split('/')[4])
+            if not organ_slot:
+                continue
+            _, hidden_by, slot = FEATURE_SLOTS[organ_slot]
+            if slot in seen:
+                continue
+            seen.add(slot)
+            choices = []
+            colors = False
+            name = None
+            picked = None
+            choice_types = [c.rstrip('/') for c in re.findall(r'/datum/customizer_choice/[\w/]+', self.base.resolve(customizer, 'customizer_choices') or '')]
+            default_choice = (self.base.resolve(customizer, 'default_choice') or '').strip().rstrip('/')
+            if default_choice not in choice_types:
+                default_choice = choice_types[0] if choice_types else None
+            for choice in choice_types:
+                name = name or text_of(self.base, choice, 'name')
+                if (self.base.resolve(choice, 'allows_accessory_color_customization') or '').strip() not in ('FALSE', '0'):
+                    colors = True
+                accessories = [a.rstrip('/') for a in re.findall(r'/datum/sprite_accessory/[\w/]+', self.base.resolve(choice, 'sprite_accessories') or '')]
+                for accessory in accessories:
+                    path = self.feature(accessory, hidden_by, slot)
+                    if path and path not in choices:
+                        choices.append(path)
+                if choice == default_choice and accessories:
+                    first = (self.base.resolve(choice, 'default_accessory') or '').strip().rstrip('/')
+                    picked = self.features.get(first if first in accessories else accessories[0])
+            body = defaults.get(slot)
+            if body and body not in choices:
+                choices.insert(0, body)
+            if not choices:
+                continue
+            disabling = (self.base.resolve(customizer, 'allows_disabling') or '').strip() in ('TRUE', '1')
+            if disabling and (self.base.resolve(customizer, 'default_disabled') or '').strip() in ('TRUE', '1'):
+                default = 'none'
+            else:
+                default = feature_id(picked or body or choices[0])
+            entry = [
+                f'"name" = {name or dm_string(slot.capitalize())}',
+                f'"default" = "{default}"',
+                f'"none" = {"TRUE" if disabling else "FALSE"}',
+                f'"colors" = {"TRUE" if colors else "FALSE"}',
+                '"choices" = list(' + ', '.join(f'"{feature_id(path)}"' for path in choices) + ')',
+            ]
+            lines.append(f'\t\t"{slot}" = list(' + ', '.join(entry) + '),')
+        return ['\trogue_customizers = list('] + lines + ['\t\t)'] if lines else []
 
     def customized_slots(self, species):
         slots = set()
@@ -464,7 +646,7 @@ class Port:
         path = f'/datum/species/vib_{vid}'
         name = text_of(self.base, species, 'name') or f'"{vid}"'
         body = self.body(species)
-        features = self.species_features(species)
+        features, slot_features = self.species_features(species)
         traits = re.findall(r'\b[A-Z][A-Z_]+\b', self.base.resolve(species, 'species_traits') or '')
         head_flags = HEAD_FLAGS_ALWAYS + [HEAD_FLAGS[t] for t in traits if t in HEAD_FLAGS]
         head = f'/obj/item/bodypart/head/{body}/{vid}'
@@ -503,6 +685,9 @@ class Port:
             block.append('\trogue_hair_colors = list(' + ', '.join(f'{dm_string(k)} = "{v}"' for k, v in hair.items()) + ')')
 
         block += self.offsets(species)
+        block += self.customizers(species, slot_features)
+        block += self.accents(species)
+        block += self.mechanics(species)
         male = self.sheet(species, 'statsheet_male', f'/datum/attribute_holder/sheet/vibelin_race/{vid}')
         if male:
             block.append(f'\trogue_race_sheet = {male}')
@@ -556,6 +741,56 @@ class Port:
         self.blocks.append(block)
         return path
 
+    def accents(self, species):
+        """The race's native language (as this build's type), the accent it speaks the other languages with, and the
+        accents it may pick instead (Vibelin's multiple_accents), by Vibelin's accent names ("No Accent" for none)."""
+        native = (text_of(self.base, species, 'native_language') or '"Imperial"').strip('"')
+        lines = []
+        if native in NATIVE_LANGUAGES:
+            lines.append(f'\trogue_native_language = {NATIVE_LANGUAGES[native]}')
+        own = self.accent_names.get(ACCENT_VARIANTS.get(species) or NATIVE_ACCENTS.get(native, ''))
+        if own:
+            lines.append(f'\trogue_accent = "{own}"')
+        picks = []
+        for value in re.findall(r'=\s*(ACCENT_[A-Z_]+|"[^"]*")', self.base.resolve(species, 'multiple_accents') or ''):
+            # Vibelin names a language there now and then ("Humen Accent" = "Imperial"): its native accent.
+            define = NATIVE_ACCENTS.get(value.strip('"'), 'ACCENT_NONE') if value.startswith('"') else value
+            name = self.accent_names.get(define)
+            if name and name not in picks:
+                picks.append(name)
+        if picks:
+            lines.append('\trogue_accents = list(' + ', '.join(f'"{name}"' for name in picks) + ')')
+        return lines
+
+    def mechanics(self, species):
+        """Vibelin's race mechanics this build has (heritage/race_mechanics.dm): flight on its wings (wings/flight, for the
+        races its flight_for_species names: whether it rises a level as it takes off, how long it stays up), the triton's
+        bioluminescence (granted in on_species_gain), and an ageless race (its only age is AGE_IMMORTAL)."""
+        lines = []
+        organs = dict(re.findall(r'(ORGAN_SLOT_[A-Z_]+)\s*=\s*(/obj/item/organ/[\w/]+)', self.base.resolve(species, 'organs') or ''))
+        wings = organs.get('ORGAN_SLOT_WINGS', '').rstrip('/')
+        if wings.startswith('/obj/item/organ/wings/flight'):
+            fliers = [define_value(t).strip('"') for t in re.findall(r'SPEC_ID_[A-Z0-9_]+', self.base.resolve(wings, 'flight_for_species') or '')]
+            vid = define_value((self.base.resolve(species, 'id') or '').strip()).strip('"')
+            if not fliers or vid in fliers:
+                lines.append('\trogue_flight = TRUE')
+                if (self.base.resolve(wings, 'can_takeoff') or '').strip() in ('FALSE', '0'):
+                    lines.append('\trogue_flight_takeoff = FALSE')
+                time = re.match(r'\s*(\d+)\s*SECONDS', self.base.resolve(wings, 'flight_time') or '')
+                if time:
+                    lines.append(f'\trogue_flight_time = {int(time.group(1)) * 10}')
+        body, _ = self.procs.find(self.base, species, 'on_species_gain')
+        if body and 'bioluminescence' in '\n'.join(body):
+            lines.append('\trogue_bioluminescence = TRUE')
+        if re.findall(r'AGE_[A-Z]+', self.base.resolve(species, 'possible_ages') or '') == ['AGE_IMMORTAL']:
+            lines.append('\trogue_ageless = TRUE')
+        return lines
+
+    def accent_block(self):
+        """The accents by name: the file of their word swaps (under ACCENTS_DIR's parent) and its key."""
+        entries = [f'\t"{name}" = list("{path}", "{key}"),' for name, (path, key) in sorted(self.accent_files.items())]
+        return ['GLOBAL_LIST_INIT(rogue_accents, list('] + entries + ['))']
+
     def language_blocks(self):
         icons = []
         blocks = []
@@ -608,11 +843,30 @@ def generate(base, root, files, defines):
             species[path] = ours
     port.blocks = port.language_blocks() + port.blocks
     port.blocks.append(['GLOBAL_LIST_INIT(rogue_vibelin_species, list('] + [f'\t"{k}" = {v},' for k, v in species.items()] + ['))'])
+    port.blocks.append(port.accent_block())
+    os.makedirs(ACCENTS_DIR, exist_ok=True)
+    for path, _ in sorted(set(port.accent_files.values())):
+        shutil.copyfile(os.path.join(root, 'strings', path), os.path.join(os.path.dirname(ACCENTS_DIR), path))
+    # The beat of wings that take off and land (heritage/race_mechanics.dm).
+    os.makedirs(SOUND_DIR, exist_ok=True)
+    shutil.copyfile(os.path.join(root, FLIGHT_SOUND), os.path.join(SOUND_DIR, os.path.basename(FLIGHT_SOUND)))
+    action_states = []
+    for ours, (icon, state) in ACTION_STATES.items():
+        sheet = port.cells(icon)
+        cells = sheet.state_cells()
+        if state in cells:
+            dirs, _, frames = cells[state]
+            action_states.append((ours, dirs, frames[:dirs]))
+            action_size = (sheet.frame_width, sheet.frame_height)
+    if action_states:
+        dmi.write_states(ACTIONS_ICON, action_size[0], action_size[1], action_states)
 
     os.makedirs(os.path.dirname(BODIES_ICON), exist_ok=True)
     dmi.write_states(BODIES_ICON, 32, 32, port.body_states)
     if port.wide_states:
         dmi.write_states(WIDE_ICON, 64, 32, port.wide_states)
+    for (width, height), states in sorted(port.sized_states.items()):
+        dmi.write_states(SIZED_ICON.format(width, height), width, height, states)
     for rel in sorted(port.sounds):
         ref = port.sound_ref(rel).strip("'")
         if ref.startswith(SOUND_DIR) and os.path.exists(os.path.join(root, rel)):
@@ -624,6 +878,7 @@ def generate(base, root, files, defines):
     header = '// Generated by modular_redtard/tools/port_vibelin.py (port_vibelin_races.py) from Vibelin: do not edit by hand.\n\n'
     open(OUT_DM, 'w', encoding='utf-8', newline='\n').write(header + '\n\n'.join('\n'.join(b) for b in port.blocks) + '\n')
     print(f'{OUT_DM}: {len(species)} races, {len(port.features)} features, {len(port.languages_used)} languages, '
-          f'{len(port.sounds)} voice sounds, {len(port.name_files)} name lists; {BODIES_ICON}: {len(port.body_states)} states')
+          f'{len(port.sounds)} voice sounds, {len(port.name_files)} name lists; {BODIES_ICON}: {len(port.body_states)} states, '
+          f'{WIDE_ICON}: {len(port.wide_states)}' + ''.join(f', {SIZED_ICON.format(*size)}: {len(states)}' for size, states in sorted(port.sized_states.items())))
     for warning in port.warnings:
         print('  warning:', warning)
