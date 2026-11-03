@@ -1,0 +1,80 @@
+# Faith (faith/, block 11): devotion, prayer, miracles, the test of faith, the blessing of the holy book.
+# Mechanics numbers: name = value, described by the # lines right above it; times are in deciseconds. The build compiles this file in, so its numbers are the defaults; a file of the same name in config/redtard_private/mechanics/values/ is read instead when present.
+
+# Progression of miracle tier 1, and the devotion limit of a devotee by default (Ratwood CLERIC_REQ_1).
+faith_devotion_tier1 = 250
+
+# Progression of miracle tier 2 (Ratwood CLERIC_REQ_2).
+faith_devotion_tier2 = 400
+
+# Progression of miracle tier 3 (Ratwood CLERIC_REQ_3).
+faith_devotion_tier3 = 750
+
+# Progression of miracle tier 4, and the devotion limit of a devotee who starts full (Ratwood CLERIC_REQ_4).
+faith_devotion_tier4 = 1000
+
+# Devotion a weakly devout role regains every regen step (Ratwood CLERIC_REGEN_WEAK).
+faith_regen_weak = 0.1
+
+# Devotion a devotee regains every regen step (Ratwood CLERIC_REGEN_DEVOTEE).
+faith_regen_devotee = 0.3
+
+# Devotion a lesser cleric regains every regen step (Ratwood CLERIC_REGEN_MINOR).
+faith_regen_minor = 0.5
+
+# Devotion the ordained clergy regain every regen step (Ratwood CLERIC_REGEN_MAJOR).
+faith_regen_major = 0.8
+
+# Devotion a witch regains every regen step (Ratwood CLERIC_REGEN_WITCH).
+faith_regen_witch = 1.5
+
+# Devotion a stigmatic regains every regen step (Ratwood CLERIC_REGEN_ABSOLVER / 2).
+faith_regen_stigmata = 2.5
+
+# Devotion an absolver regains every regen step (Ratwood CLERIC_REGEN_ABSOLVER).
+faith_regen_absolver = 5
+
+# Deciseconds of a regen step of devotion (Ratwood's processing tick, 2 seconds).
+faith_regen_interval = 20
+
+# Devotion and progression a devout role starts with when it does not start full (Ratwood).
+faith_start_devotion = 50
+
+# Devotion a cycle of Give Prayer brings before the bonus of the Miracles skill (Ratwood prayer_effectiveness).
+faith_prayer_devotion = 2
+
+# Deciseconds of a cycle of Give Prayer (Ratwood).
+faith_prayer_cycle = 30
+
+# Most cycles of one Give Prayer (Ratwood).
+faith_prayer_cycles = 50
+
+# Tiles within which an idol or a cross of the patron carries a prayer (Vibelin).
+faith_idol_range = 7
+
+# Shortest prayer a patron hears, in characters (Ratwood).
+faith_prayer_min_length = 15
+
+# Deciseconds within which a new prayer counts as the last one and brings no reward (Ratwood MT_PSYPRAY, 1 minute).
+faith_prayer_interval = 600
+
+# Fire stacks an offended patron sets on the one who insulted it in a prayer (Ratwood).
+faith_smite_fire_stacks = 20
+
+# Ranks of the Miracles skill a miracle needs per tier: tier 4 wants an expert.
+faith_ranks_per_tier = 1
+
+# Healing of the miracles on a fortified target, as a factor (Ratwood Fortify, +50%).
+faith_fortify_bonus = 1.5
+
+# Deciseconds of Test Faith before the victim confesses (Ratwood 10 seconds).
+faith_confess_time = 100
+
+# Tiles within which a cross must stand for Test Faith (Ratwood).
+faith_confess_cross_range = 5
+
+# Deciseconds the blessing of a holy book lasts (Azure Peak buff/blessed, 20 minutes).
+faith_blessed_duration = 12000
+
+# Fortune the blessing of a holy book gives (Azure Peak buff/blessed).
+faith_blessed_fortune = 1

@@ -1,0 +1,26 @@
+# Races of Vibelin (heritage/, block 12): flight on wings, the triton's glow.
+# Mechanics numbers: name = value, described by the # lines right above it; times are in deciseconds. The build compiles this file in, so its numbers are the defaults; a file of the same name in config/redtard_private/mechanics/values/ is read instead when present.
+
+# Deciseconds a harpy or a formikrag takes to take wing (Vibelin flight_startup 5 SECONDS).
+flight_startup = 50
+
+# Deciseconds a flier takes to land (Vibelin flight_wind_down 3 SECONDS).
+flight_wind_down = 30
+
+# Stamina a flier spends on each step in the air (Vibelin FLIGHT_DRAIN_AMOUNT).
+flight_move_stamina = 1.5
+
+# Stamina lost at which a flier can no longer take wing or stay up (Vibelin: no stamina left).
+flight_stamina_limit = 50
+
+# A blow knocks a flier out of the air with a chance of its damage divided by this, in percent (Vibelin prob(damage / 4)).
+flight_knockdown_divisor = 4
+
+# Deciseconds a flier knocked out of the air lies down (Vibelin Knockdown 2 SECONDS).
+flight_knockdown_time = 20
+
+# Range in tiles of a triton's bioluminescence (Vibelin moblight 2).
+bioluminescence_range = 2
+
+# Power of a triton's bioluminescence (Vibelin moblight 1).
+bioluminescence_power = 1

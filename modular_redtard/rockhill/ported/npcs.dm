@@ -3,6 +3,7 @@
 	rogue_aggressive = TRUE
 	faction = list("dundead")
 	race = /datum/species/skeleton
+	rogue_npc_look = list("name" = "Dwarven Skeleton")
 	rogue_npc_outfits = list(/datum/outfit/job/roguetown/dwarfskeleton)
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_NOHUNGER, TRAIT_EASYDISMEMBER, TRAIT_NOBREATH, TRAIT_BREADY, TRAIT_NOPAIN, TRAIT_TOXIMMUNE, TRAIT_LEECHIMMUNE, TRAIT_LIMBATTACHMENT, TRAIT_MEDIUMARMOR, TRAIT_HEAVYARMOR, TRAIT_CRITICAL_WEAKNESS, TRAIT_EXTREME_TEMPERATURE_IMMUNE)
 
@@ -11,10 +12,12 @@
 	rogue_aggressive = TRUE
 	faction = list("dundead")
 	race = /datum/species/skeleton
+	rogue_npc_look = list("name" = "Dwarven Skeleton")
 	rogue_npc_outfits = list(/datum/outfit/job/roguetown/dwarfskeleton/ambush/knight)
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_NOHUNGER, TRAIT_EASYDISMEMBER, TRAIT_NOBREATH, TRAIT_BREADY, TRAIT_NOPAIN, TRAIT_TOXIMMUNE, TRAIT_LEECHIMMUNE, TRAIT_LIMBATTACHMENT, TRAIT_MEDIUMARMOR, TRAIT_HEAVYARMOR, TRAIT_CRITICAL_WEAKNESS, TRAIT_EXTREME_TEMPERATURE_IMMUNE)
 
 /mob/living/carbon/human/species/elf/dark/drowraider
+	rogue_npc_rude = TRUE
 	rogue_npc = TRUE
 	rogue_aggressive = TRUE
 	rogue_flee_in_pain = TRUE
@@ -31,6 +34,7 @@
 	faction = list("orcs")
 	race = /datum/species/rogue_goblin/cave
 	use_random_name = FALSE
+	rogue_npc_look = list("name" = "goblin")
 	rogue_npc_outfits = list(/datum/outfit/job/roguetown/npc/goblin)
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_NOHUNGER, TRAIT_CRITICAL_WEAKNESS, TRAIT_BREADY, TRAIT_LEECHIMMUNE, TRAIT_TOXIMMUNE)
 
@@ -40,10 +44,14 @@
 	faction = list("orcs")
 	race = /datum/species/rogue_goblin/moon
 	use_random_name = FALSE
+	rogue_npc_look = list("name" = "goblin")
 	rogue_npc_outfits = list(/datum/outfit/job/roguetown/npc/goblin)
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_NOHUNGER, TRAIT_CRITICAL_WEAKNESS, TRAIT_BREADY, TRAIT_LEECHIMMUNE, TRAIT_TOXIMMUNE)
 
 /mob/living/carbon/human/species/goblin/npc
+	rogue_npc_rude = TRUE
+	rogue_npc_jump_chance = 60
+	rogue_npc_jump_distance = 3
 	rogue_npc = TRUE
 	rogue_aggressive = TRUE
 	rogue_flee_in_pain = TRUE
@@ -51,6 +59,7 @@
 	faction = list("orcs")
 	race = /datum/species/rogue_goblin
 	use_random_name = FALSE
+	rogue_npc_look = list("name" = "goblin")
 	rogue_npc_outfits = list(/datum/outfit/job/roguetown/npc/goblin)
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_NOHUNGER, TRAIT_CRITICAL_WEAKNESS, TRAIT_BREADY, TRAIT_LEECHIMMUNE, TRAIT_TOXIMMUNE)
 
@@ -62,6 +71,7 @@
 	faction = list("orcs")
 	race = /datum/species/rogue_goblin
 	use_random_name = FALSE
+	rogue_npc_look = list("name" = "goblin")
 	rogue_npc_outfits = list(/datum/outfit/job/roguetown/npc/goblin)
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_NOHUNGER, TRAIT_CRITICAL_WEAKNESS, TRAIT_BREADY, TRAIT_LEECHIMMUNE, TRAIT_TOXIMMUNE)
 
@@ -73,6 +83,7 @@
 	faction = list("orcs")
 	race = /datum/species/rogue_goblin/cave
 	use_random_name = FALSE
+	rogue_npc_look = list("name" = "goblin")
 	rogue_npc_outfits = list(/datum/outfit/job/roguetown/npc/goblin)
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_NOHUNGER, TRAIT_CRITICAL_WEAKNESS, TRAIT_BREADY, TRAIT_LEECHIMMUNE, TRAIT_TOXIMMUNE)
 
@@ -84,6 +95,7 @@
 	faction = list("orcs")
 	race = /datum/species/rogue_goblin/hell
 	use_random_name = FALSE
+	rogue_npc_look = list("name" = "goblin")
 	rogue_npc_outfits = list(/datum/outfit/job/roguetown/npc/goblin)
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_NOHUNGER, TRAIT_CRITICAL_WEAKNESS, TRAIT_BREADY, TRAIT_LEECHIMMUNE, TRAIT_TOXIMMUNE)
 
@@ -95,6 +107,7 @@
 	faction = list("orcs")
 	race = /datum/species/rogue_goblin/moon
 	use_random_name = FALSE
+	rogue_npc_look = list("name" = "goblin")
 	rogue_npc_outfits = list(/datum/outfit/job/roguetown/npc/goblin)
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_NOHUNGER, TRAIT_CRITICAL_WEAKNESS, TRAIT_BREADY, TRAIT_LEECHIMMUNE, TRAIT_TOXIMMUNE)
 
@@ -106,6 +119,7 @@
 	faction = list("orcs")
 	race = /datum/species/rogue_goblin/sea
 	use_random_name = FALSE
+	rogue_npc_look = list("name" = "goblin")
 	rogue_npc_outfits = list(/datum/outfit/job/roguetown/npc/goblin)
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_NOHUNGER, TRAIT_CRITICAL_WEAKNESS, TRAIT_BREADY, TRAIT_LEECHIMMUNE, TRAIT_TOXIMMUNE)
 
@@ -117,6 +131,7 @@
 	faction = list("orcs")
 	race = /datum/species/rogue_goblin/cave
 	use_random_name = FALSE
+	rogue_npc_look = list("name" = "goblin")
 	rogue_npc_outfits = list(/datum/outfit/job/roguetown/npc/goblin)
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_NOHUNGER, TRAIT_CRITICAL_WEAKNESS, TRAIT_BREADY, TRAIT_LEECHIMMUNE, TRAIT_TOXIMMUNE)
 
@@ -128,6 +143,7 @@
 	faction = list("orcs")
 	race = /datum/species/rogue_goblin/hell
 	use_random_name = FALSE
+	rogue_npc_look = list("name" = "goblin")
 	rogue_npc_outfits = list(/datum/outfit/job/roguetown/npc/goblin)
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_NOHUNGER, TRAIT_CRITICAL_WEAKNESS, TRAIT_BREADY, TRAIT_LEECHIMMUNE, TRAIT_TOXIMMUNE)
 
@@ -139,10 +155,12 @@
 	faction = list("orcs")
 	race = /datum/species/rogue_goblin/moon
 	use_random_name = FALSE
+	rogue_npc_look = list("name" = "goblin")
 	rogue_npc_outfits = list(/datum/outfit/job/roguetown/npc/goblin)
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_NOHUNGER, TRAIT_CRITICAL_WEAKNESS, TRAIT_BREADY, TRAIT_LEECHIMMUNE, TRAIT_TOXIMMUNE)
 
 /mob/living/carbon/human/species/human/northern/bog_deserters
+	rogue_npc_rude = TRUE
 	rogue_npc = TRUE
 	rogue_aggressive = TRUE
 	rogue_flee_in_pain = TRUE
@@ -151,6 +169,7 @@
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_NOHUNGER, TRAIT_LEECHIMMUNE, TRAIT_BREADY, TRAIT_MEDIUMARMOR, TRAIT_KNEESTINGER_IMMUNITY)
 
 /mob/living/carbon/human/species/human/northern/bum
+	rogue_npc_rude = TRUE
 	rogue_npc = TRUE
 	rogue_flee_in_pain = TRUE
 	rogue_def_intent = ROGUE_INTENT_DODGE
@@ -168,6 +187,7 @@
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_NOHUNGER, TRAIT_LEECHIMMUNE, TRAIT_BREADY)
 
 /mob/living/carbon/human/species/human/northern/highwayman
+	rogue_npc_rude = TRUE
 	rogue_npc = TRUE
 	rogue_aggressive = TRUE
 	rogue_flee_in_pain = TRUE
@@ -176,6 +196,7 @@
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_NOHUNGER, TRAIT_LEECHIMMUNE, TRAIT_BREADY, TRAIT_MEDIUMARMOR)
 
 /mob/living/carbon/human/species/npc/deadite
+	rogue_npc_jump_chance = 0
 	rogue_npc = TRUE
 	rogue_aggressive = TRUE
 	rogue_def_intent = ROGUE_INTENT_DODGE
@@ -184,6 +205,8 @@
 	rogue_npc_outfits = list(/datum/outfit/job/roguetown/deadite)
 
 /mob/living/carbon/human/species/orc/npc/berserker
+	rogue_npc_rude = TRUE
+	rogue_npc_jump_chance = 25
 	rogue_npc = TRUE
 	rogue_aggressive = TRUE
 	faction = list("orcs", "station")
@@ -194,6 +217,7 @@
 	rogue_npc_traits = list(TRAIT_LEECHIMMUNE, TRAIT_NOMOOD, TRAIT_NOHUNGER, TRAIT_BREADY)
 
 /mob/living/carbon/human/species/orc/npc/footsoldier
+	rogue_npc_rude = TRUE
 	rogue_npc = TRUE
 	rogue_aggressive = TRUE
 	faction = list("orcs", "station")
@@ -204,6 +228,7 @@
 	rogue_npc_traits = list(TRAIT_LEECHIMMUNE, TRAIT_NOMOOD, TRAIT_NOHUNGER, TRAIT_BREADY)
 
 /mob/living/carbon/human/species/orc/npc/marauder
+	rogue_npc_rude = TRUE
 	rogue_npc = TRUE
 	rogue_aggressive = TRUE
 	faction = list("orcs", "station")
@@ -214,6 +239,7 @@
 	rogue_npc_traits = list(TRAIT_LEECHIMMUNE, TRAIT_NOMOOD, TRAIT_NOHUNGER, TRAIT_BREADY)
 
 /mob/living/carbon/human/species/orc/npc/warlord
+	rogue_npc_rude = TRUE
 	rogue_npc = TRUE
 	rogue_aggressive = TRUE
 	faction = list("orcs", "station")
@@ -223,11 +249,23 @@
 	rogue_npc_outfits = list(/datum/outfit/job/roguetown/orc/npc/warlord)
 	rogue_npc_traits = list(TRAIT_LEECHIMMUNE, TRAIT_NOMOOD, TRAIT_NOHUNGER, TRAIT_BREADY)
 
+/mob/living/carbon/human/species/skeleton/npc
+	rogue_npc_rude = TRUE
+	rogue_npc_jump_chance = 0
+	rogue_npc = TRUE
+	rogue_aggressive = TRUE
+	faction = list("undead")
+	use_random_name = FALSE
+	rogue_npc_look = list("name" = "Skeleton")
+	rogue_npc_outfits = list(/datum/outfit/job/roguetown/npc/skeleton)
+	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_BREADY, TRAIT_NO_VOICEPACK_OVERRIDE, TRAIT_NOHUNGER, TRAIT_EASYDISMEMBER, TRAIT_NOBREATH, TRAIT_NOPAIN, TRAIT_TOXIMMUNE, TRAIT_LEECHIMMUNE, TRAIT_LIMBATTACHMENT, TRAIT_HEAVYARMOR, TRAIT_SILVER_WEAK, TRAIT_EXTREME_TEMPERATURE_IMMUNE)
+
 /mob/living/carbon/human/species/skeleton/npc/bogguard
 	rogue_npc = TRUE
 	rogue_aggressive = TRUE
 	faction = list("undead")
 	use_random_name = FALSE
+	rogue_npc_look = list("name" = "Skeleton")
 	rogue_npc_outfits = list(/datum/outfit/job/roguetown/npc/skeleton/npc/bogguard)
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_BREADY, TRAIT_NO_VOICEPACK_OVERRIDE, TRAIT_NOHUNGER, TRAIT_EASYDISMEMBER, TRAIT_NOBREATH, TRAIT_NOPAIN, TRAIT_TOXIMMUNE, TRAIT_LEECHIMMUNE, TRAIT_LIMBATTACHMENT, TRAIT_HEAVYARMOR, TRAIT_SILVER_WEAK, TRAIT_EXTREME_TEMPERATURE_IMMUNE)
 
@@ -236,6 +274,7 @@
 	rogue_aggressive = TRUE
 	faction = list("undead")
 	use_random_name = FALSE
+	rogue_npc_look = list("name" = "Skeleton")
 	rogue_npc_outfits = list(/datum/outfit/job/roguetown/npc/skeleton/npc/bogguard/master)
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_BREADY, TRAIT_NO_VOICEPACK_OVERRIDE, TRAIT_NOHUNGER, TRAIT_EASYDISMEMBER, TRAIT_NOBREATH, TRAIT_NOPAIN, TRAIT_TOXIMMUNE, TRAIT_LEECHIMMUNE, TRAIT_LIMBATTACHMENT, TRAIT_HEAVYARMOR, TRAIT_SILVER_WEAK, TRAIT_EXTREME_TEMPERATURE_IMMUNE)
 
@@ -244,6 +283,7 @@
 	rogue_aggressive = TRUE
 	faction = list("undead")
 	use_random_name = FALSE
+	rogue_npc_look = list("name" = "Skeleton")
 	rogue_npc_outfits = list(/datum/outfit/job/roguetown/skeleton/npc/cultist)
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_BREADY, TRAIT_NO_VOICEPACK_OVERRIDE, TRAIT_NOHUNGER, TRAIT_EASYDISMEMBER, TRAIT_NOBREATH, TRAIT_NOPAIN, TRAIT_TOXIMMUNE, TRAIT_LEECHIMMUNE, TRAIT_LIMBATTACHMENT, TRAIT_HEAVYARMOR, TRAIT_SILVER_WEAK, TRAIT_EXTREME_TEMPERATURE_IMMUNE)
 
@@ -252,6 +292,7 @@
 	rogue_aggressive = TRUE
 	faction = list("undead")
 	use_random_name = FALSE
+	rogue_npc_look = list("name" = "Skeleton")
 	rogue_npc_outfits = list(/datum/outfit/job/roguetown/npc/skeleton)
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_BREADY, TRAIT_NO_VOICEPACK_OVERRIDE, TRAIT_NOHUNGER, TRAIT_EASYDISMEMBER, TRAIT_NOBREATH, TRAIT_NOPAIN, TRAIT_TOXIMMUNE, TRAIT_LEECHIMMUNE, TRAIT_LIMBATTACHMENT, TRAIT_HEAVYARMOR, TRAIT_SILVER_WEAK, TRAIT_EXTREME_TEMPERATURE_IMMUNE)
 
@@ -260,6 +301,7 @@
 	rogue_aggressive = TRUE
 	faction = list("undead")
 	use_random_name = FALSE
+	rogue_npc_look = list("name" = "Skeleton")
 	rogue_npc_outfits = list(/datum/outfit/job/roguetown/skeleton/npc/easy)
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_BREADY, TRAIT_NO_VOICEPACK_OVERRIDE, TRAIT_NOHUNGER, TRAIT_EASYDISMEMBER, TRAIT_NOBREATH, TRAIT_NOPAIN, TRAIT_TOXIMMUNE, TRAIT_LEECHIMMUNE, TRAIT_LIMBATTACHMENT, TRAIT_HEAVYARMOR, TRAIT_SILVER_WEAK, TRAIT_EXTREME_TEMPERATURE_IMMUNE)
 
@@ -268,6 +310,7 @@
 	rogue_aggressive = TRUE
 	faction = list("undead")
 	use_random_name = FALSE
+	rogue_npc_look = list("name" = "Skeleton")
 	rogue_npc_outfits = list(/datum/outfit/job/roguetown/skeleton/npc/hard)
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_BREADY, TRAIT_NO_VOICEPACK_OVERRIDE, TRAIT_NOHUNGER, TRAIT_EASYDISMEMBER, TRAIT_NOBREATH, TRAIT_NOPAIN, TRAIT_TOXIMMUNE, TRAIT_LEECHIMMUNE, TRAIT_LIMBATTACHMENT, TRAIT_HEAVYARMOR, TRAIT_SILVER_WEAK, TRAIT_EXTREME_TEMPERATURE_IMMUNE)
 
@@ -276,6 +319,7 @@
 	rogue_aggressive = TRUE
 	faction = list("undead")
 	use_random_name = FALSE
+	rogue_npc_look = list("name" = "Skeleton")
 	rogue_npc_outfits = list(/datum/outfit/job/roguetown/skeleton/npc/hard_skills_only)
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_BREADY, TRAIT_NO_VOICEPACK_OVERRIDE, TRAIT_NOHUNGER, TRAIT_EASYDISMEMBER, TRAIT_NOBREATH, TRAIT_NOPAIN, TRAIT_TOXIMMUNE, TRAIT_LEECHIMMUNE, TRAIT_LIMBATTACHMENT, TRAIT_HEAVYARMOR, TRAIT_SILVER_WEAK, TRAIT_EXTREME_TEMPERATURE_IMMUNE)
 
@@ -284,6 +328,7 @@
 	rogue_aggressive = TRUE
 	faction = list("undead")
 	use_random_name = FALSE
+	rogue_npc_look = list("name" = "Skeleton")
 	rogue_npc_outfits = list(/datum/outfit/job/roguetown/skeleton/npc/hard, /datum/outfit/job/roguetown/skeleton/npc/medium, /datum/outfit/job/roguetown/skeleton/npc/pirate, /datum/outfit/job/roguetown/skeleton/npc/hard)
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_BREADY, TRAIT_NO_VOICEPACK_OVERRIDE, TRAIT_NOHUNGER, TRAIT_EASYDISMEMBER, TRAIT_NOBREATH, TRAIT_NOPAIN, TRAIT_TOXIMMUNE, TRAIT_LEECHIMMUNE, TRAIT_LIMBATTACHMENT, TRAIT_HEAVYARMOR, TRAIT_SILVER_WEAK, TRAIT_EXTREME_TEMPERATURE_IMMUNE)
 
@@ -292,6 +337,7 @@
 	rogue_aggressive = TRUE
 	faction = list("lich", "undead")
 	use_random_name = FALSE
+	rogue_npc_look = list("name" = "Skeleton")
 	rogue_npc_outfits = list(/datum/outfit/job/roguetown/skeleton/npc/hard, /datum/outfit/job/roguetown/skeleton/npc/medium, /datum/outfit/job/roguetown/skeleton/npc/pirate, /datum/outfit/job/roguetown/skeleton/npc/hard)
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_BREADY, TRAIT_NO_VOICEPACK_OVERRIDE, TRAIT_NOHUNGER, TRAIT_EASYDISMEMBER, TRAIT_NOBREATH, TRAIT_NOPAIN, TRAIT_TOXIMMUNE, TRAIT_LEECHIMMUNE, TRAIT_LIMBATTACHMENT, TRAIT_HEAVYARMOR, TRAIT_SILVER_WEAK, TRAIT_EXTREME_TEMPERATURE_IMMUNE)
 
@@ -300,6 +346,7 @@
 	rogue_aggressive = TRUE
 	faction = list("undead")
 	use_random_name = FALSE
+	rogue_npc_look = list("name" = "Skeleton")
 	rogue_npc_outfits = list(/datum/outfit/job/roguetown/skeleton/npc/medium)
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_BREADY, TRAIT_NO_VOICEPACK_OVERRIDE, TRAIT_NOHUNGER, TRAIT_EASYDISMEMBER, TRAIT_NOBREATH, TRAIT_NOPAIN, TRAIT_TOXIMMUNE, TRAIT_LEECHIMMUNE, TRAIT_LIMBATTACHMENT, TRAIT_HEAVYARMOR, TRAIT_SILVER_WEAK, TRAIT_EXTREME_TEMPERATURE_IMMUNE)
 
@@ -308,6 +355,7 @@
 	rogue_aggressive = TRUE
 	faction = list("undead")
 	use_random_name = FALSE
+	rogue_npc_look = list("name" = "Skeleton")
 	rogue_npc_outfits = list(/datum/outfit/job/roguetown/skeleton/npc/medium_skills_only)
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_BREADY, TRAIT_NO_VOICEPACK_OVERRIDE, TRAIT_NOHUNGER, TRAIT_EASYDISMEMBER, TRAIT_NOBREATH, TRAIT_NOPAIN, TRAIT_TOXIMMUNE, TRAIT_LEECHIMMUNE, TRAIT_LIMBATTACHMENT, TRAIT_HEAVYARMOR, TRAIT_SILVER_WEAK, TRAIT_EXTREME_TEMPERATURE_IMMUNE)
 
@@ -316,6 +364,7 @@
 	rogue_aggressive = TRUE
 	faction = list("undead")
 	use_random_name = FALSE
+	rogue_npc_look = list("name" = "Skeleton")
 	rogue_npc_outfits = list(/datum/outfit/job/roguetown/skeleton/npc/supereasy, /datum/outfit/job/roguetown/skeleton/npc/easy, /datum/outfit/job/roguetown/skeleton/npc/medium, /datum/outfit/job/roguetown/skeleton/npc/hard)
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_BREADY, TRAIT_NO_VOICEPACK_OVERRIDE, TRAIT_NOHUNGER, TRAIT_EASYDISMEMBER, TRAIT_NOBREATH, TRAIT_NOPAIN, TRAIT_TOXIMMUNE, TRAIT_LEECHIMMUNE, TRAIT_LIMBATTACHMENT, TRAIT_HEAVYARMOR, TRAIT_SILVER_WEAK, TRAIT_EXTREME_TEMPERATURE_IMMUNE)
 
@@ -324,6 +373,7 @@
 	rogue_aggressive = TRUE
 	faction = list("undead")
 	use_random_name = FALSE
+	rogue_npc_look = list("name" = "Skeleton")
 	rogue_npc_outfits = list(/datum/outfit/job/roguetown/skeleton/npc/miner)
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_BREADY, TRAIT_NO_VOICEPACK_OVERRIDE, TRAIT_NOHUNGER, TRAIT_EASYDISMEMBER, TRAIT_NOBREATH, TRAIT_NOPAIN, TRAIT_TOXIMMUNE, TRAIT_LEECHIMMUNE, TRAIT_LIMBATTACHMENT, TRAIT_HEAVYARMOR, TRAIT_SILVER_WEAK, TRAIT_EXTREME_TEMPERATURE_IMMUNE)
 
@@ -332,13 +382,16 @@
 	rogue_aggressive = TRUE
 	faction = list("undead")
 	use_random_name = FALSE
+	rogue_npc_look = list("name" = "Skeleton")
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_BREADY, TRAIT_NO_VOICEPACK_OVERRIDE, TRAIT_NOHUNGER, TRAIT_EASYDISMEMBER, TRAIT_NOBREATH, TRAIT_NOPAIN, TRAIT_TOXIMMUNE, TRAIT_LEECHIMMUNE, TRAIT_LIMBATTACHMENT, TRAIT_HEAVYARMOR, TRAIT_SILVER_WEAK, TRAIT_EXTREME_TEMPERATURE_IMMUNE)
+	rogue_npc_outfits = null
 
 /mob/living/carbon/human/species/skeleton/npc/pirate
 	rogue_npc = TRUE
 	rogue_aggressive = TRUE
 	faction = list("undead")
 	use_random_name = FALSE
+	rogue_npc_look = list("name" = "Skeleton")
 	rogue_npc_outfits = list(/datum/outfit/job/roguetown/skeleton/npc/pirate)
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_BREADY, TRAIT_NO_VOICEPACK_OVERRIDE, TRAIT_NOHUNGER, TRAIT_EASYDISMEMBER, TRAIT_NOBREATH, TRAIT_NOPAIN, TRAIT_TOXIMMUNE, TRAIT_LEECHIMMUNE, TRAIT_LIMBATTACHMENT, TRAIT_HEAVYARMOR, TRAIT_SILVER_WEAK, TRAIT_EXTREME_TEMPERATURE_IMMUNE)
 
@@ -347,6 +400,7 @@
 	rogue_aggressive = TRUE
 	faction = list("undead")
 	use_random_name = FALSE
+	rogue_npc_look = list("name" = "Skeleton")
 	rogue_npc_outfits = list(/datum/outfit/job/roguetown/skeleton/npc/rockhill)
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_BREADY, TRAIT_NO_VOICEPACK_OVERRIDE, TRAIT_NOHUNGER, TRAIT_EASYDISMEMBER, TRAIT_NOBREATH, TRAIT_NOPAIN, TRAIT_TOXIMMUNE, TRAIT_LEECHIMMUNE, TRAIT_LIMBATTACHMENT, TRAIT_HEAVYARMOR, TRAIT_SILVER_WEAK, TRAIT_EXTREME_TEMPERATURE_IMMUNE)
 
@@ -355,6 +409,7 @@
 	rogue_aggressive = TRUE
 	faction = list("undead")
 	use_random_name = FALSE
+	rogue_npc_look = list("name" = "Skeleton")
 	rogue_npc_outfits = list(/datum/outfit/job/roguetown/skeleton/npc/supereasy)
 	rogue_npc_traits = list(TRAIT_NOMOOD, TRAIT_BREADY, TRAIT_NO_VOICEPACK_OVERRIDE, TRAIT_NOHUNGER, TRAIT_EASYDISMEMBER, TRAIT_NOBREATH, TRAIT_NOPAIN, TRAIT_TOXIMMUNE, TRAIT_LEECHIMMUNE, TRAIT_LIMBATTACHMENT, TRAIT_HEAVYARMOR, TRAIT_SILVER_WEAK, TRAIT_EXTREME_TEMPERATURE_IMMUNE)
 

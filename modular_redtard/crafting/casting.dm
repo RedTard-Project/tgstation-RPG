@@ -3,22 +3,17 @@
 // minutes the mold gives a cast blade. A blade is laid on the anvil in place of a bar for the recipes that name it
 // (req_blade): no heat is needed, one bar fewer is added, and the work is finished on the anvil without a quench.
 
-/// Bars a crucible holds (Ratwood max_ingots).
-#define CRUCIBLE_MAX_INGOTS 5
-/// Heat at which the metal is molten (Ratwood heat_capacity).
-#define CRUCIBLE_HEAT_FULL 100
-/// Ratwood heat_rate and cool_rate: 10 and 5 per two-second hearth tick.
-#define CRUCIBLE_HEAT_PER_SECOND 5
-#define CRUCIBLE_COOL_PER_SECOND 2.5
-/// Every fourth bar of a metal put in counts twice (Ratwood duplication_threshold).
-#define CRUCIBLE_BONUS_EVERY 4
-/// Time to set a bar into the crucible on the hearth (Ratwood hearth attackby()).
-#define CRUCIBLE_ADD_TIME (1 SECONDS)
+// Numbers of config/redtard/mechanics/values/crafting.txt.
+#define CRUCIBLE_MAX_INGOTS rogue_value("crucible_max_ingots")
+#define CRUCIBLE_HEAT_FULL rogue_value("crucible_heat_full")
+#define CRUCIBLE_HEAT_PER_SECOND rogue_value("crucible_heat_per_second")
+#define CRUCIBLE_COOL_PER_SECOND rogue_value("crucible_cool_per_second")
+#define CRUCIBLE_BONUS_EVERY rogue_value("crucible_bonus_every")
+#define CRUCIBLE_ADD_TIME rogue_value("crucible_add_time")
 #define CRUCIBLE_PLACE_SOUND 'modular_redtard/survival/sound/shovel_drop.ogg'
 #define CRUCIBLE_MOLTEN_SOUND 'modular_redtard/rockhill/sound/items/firelight.ogg'
-/// Ratwood pour do_after and cooling_time (120 one-second ticks).
-#define MOLD_POUR_TIME (3 SECONDS)
-#define MOLD_COOLING_TIME (2 MINUTES)
+#define MOLD_POUR_TIME rogue_value("mold_pour_time")
+#define MOLD_COOLING_TIME rogue_value("mold_cooling_time")
 /// Ratwood overlay_color of iron blades.
 #define BLADE_IRON_COLOR "#808080"
 
@@ -209,7 +204,7 @@
 		var/obj/item/ingot/spilled = new metal(drop_location())
 		to_chat(user, span_notice("The crucible overflows! An extra [spilled.name] falls to the ground."))
 	if(bonus)
-		to_chat(user, span_notice(fits == 2 ? "As you add the ingot, it seems to multiply in the crucible!" : "The ingot starts to multiply but the crucible is almost full!"))
+		to_chat(user, span_notice((fits == 2 ? "As you add the ingot, it seems to multiply in the crucible!" : "The ingot starts to multiply but the crucible is almost full!")))
 	else
 		to_chat(user, span_info("You add the ingot to the crucible."))
 	heat_progress = 0

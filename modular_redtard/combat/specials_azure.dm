@@ -10,7 +10,7 @@
 /// hatchets, Dazing Swing to warhammers and flanged cudgels, Vicious Swing to the Graggarite greataxe, Hoardbite to the
 /// lirvan talon and Aureate Drakkyrcoil to the golden quarterstaff, but Ratwood's hatchets, warhammers and greataxe keep
 /// their own specials and the other items are not in Ratwood. Arcyne Descent is Ratwood's too: the porter writes it on
-/// Ratwood's tomes. Their numbers are in values.txt like every special's (special_<name>_<field>).
+/// Ratwood's tomes. Their numbers are in config/redtard/mechanics/values/specials.txt like every special's (special_<name>_<field>).
 
 /datum/special_intent/hatchet_twirl
 	name = "Hefty Flourish"

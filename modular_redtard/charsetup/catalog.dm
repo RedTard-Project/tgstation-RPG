@@ -125,6 +125,8 @@
 			"origins" = origins,
 			"origin_wording" = species.rogue_origin_wording ? rogue_chargen_term(ru, species.rogue_origin_wording) : null,
 			"hair_colors" = hair_colors,
+			// Vibelin's immortal races (heritage/race_mechanics.dm): no age band weakens them.
+			"ageless" = !!species.rogue_ageless,
 		))
 	return catalog
 

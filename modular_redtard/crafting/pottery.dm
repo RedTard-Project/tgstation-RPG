@@ -3,17 +3,16 @@
 // a little water; up to an expert the clay may collapse; the last spin shapes the piece, with a pottery quality by skill.
 // Azure Peak's wheel is only a station for its crafting recipes, which keep working here (the wheel stays the same type).
 
-/// Water a rewetting takes (Ratwood consume_wetting_water()).
-#define WHEEL_WATER 2
-/// Ratwood: refined clay dries out twice before it is shaped, kneaded clay once.
-#define WHEEL_REWETS_KNEADED 1
-#define WHEEL_REWETS_REFINED 2
-/// Ratwood spin time: the recipe's time split between its spins, 0.4 seconds slower per rank below journeyman.
-#define WHEEL_MIN_SPIN (0.6 SECONDS)
-#define WHEEL_SPIN_PER_RANK (0.4 SECONDS)
-/// Ratwood experience: 2 for a collapse; at least 2, else intelligence, plus 4 per rank of difficulty for a piece.
-#define WHEEL_RUIN_XP 2
-#define WHEEL_XP_PER_DIFFICULTY 4
+// Numbers of config/redtard/mechanics/values/crafting.txt.
+#define WHEEL_WATER rogue_value("wheel_water")
+#define WHEEL_REWETS_KNEADED rogue_value("wheel_rewets_kneaded")
+#define WHEEL_REWETS_REFINED rogue_value("wheel_rewets_refined")
+/// Ratwood spin time: the recipe's time split between its spins, slower per rank below journeyman.
+#define WHEEL_MIN_SPIN rogue_value("wheel_min_spin")
+#define WHEEL_SPIN_PER_RANK rogue_value("wheel_spin_per_rank")
+/// Ratwood experience: the ruin experience for a collapse; for a piece intelligence (at least the ruin experience) plus a share per rank of difficulty.
+#define WHEEL_RUIN_XP rogue_value("wheel_ruin_xp")
+#define WHEEL_XP_PER_DIFFICULTY rogue_value("wheel_xp_per_difficulty")
 #define WHEEL_SPIN_SOUND 'modular_redtard/rockhill/sound/foley/grindblade.ogg'
 #define WHEEL_RUIN_SOUND 'modular_redtard/crafting/sound/kneading.ogg'
 #define WHEEL_WET_SOUND 'modular_redtard/crafting/sound/splishy.ogg'

@@ -28,6 +28,7 @@
 	rockhill_area_text = "LABOR CAMP"
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/underdark.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = null
@@ -138,6 +139,7 @@
 	rockhill_area_text = "THE OTAVAN INQUISITION"
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	rogue_ceiling_protected = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/catacombs.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = null
@@ -292,6 +294,7 @@
 	rockhill_area_text = null
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/towngen.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = list("modular_redtard/rockhill/sound/area/music/area/septimus.ogg")
@@ -314,6 +317,7 @@
 	rockhill_area_text = null
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/academy.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = null
@@ -336,6 +340,7 @@
 	rockhill_area_text = null
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/bath.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = null
@@ -358,6 +363,7 @@
 	rockhill_area_text = null
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/catacombs.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = null
@@ -402,6 +408,7 @@
 	rockhill_area_text = null
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/church.ogg")
 	rockhill_music_dawn = list("modular_redtard/rockhill/sound/area/music/area/churchdawn.ogg")
 	rockhill_music_dusk = null
@@ -424,6 +431,7 @@
 	rockhill_area_text = null
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/catacombs.ogg")
 	rockhill_music_dawn = list("modular_redtard/rockhill/sound/area/music/area/churchdawn.ogg")
 	rockhill_music_dusk = null
@@ -446,6 +454,7 @@
 	rockhill_area_text = "THE HOUSE OF THE TEN"
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/church.ogg")
 	rockhill_music_dawn = list("modular_redtard/rockhill/sound/area/music/area/churchdawn.ogg")
 	rockhill_music_dusk = null
@@ -468,6 +477,7 @@
 	rockhill_area_text = "Rockhill Guild of Crafts"
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/dwarf.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = null
@@ -490,6 +500,7 @@
 	rockhill_area_text = "VALE ENGINEERS WORKSHOP"
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/harbor.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = null
@@ -512,6 +523,7 @@
 	rockhill_area_text = null
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/manorgarri.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = null
@@ -556,6 +568,7 @@
 	rockhill_area_text = "Tower of the Magos"
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/magiciantower.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = null
@@ -578,6 +591,7 @@
 	rockhill_area_text = "Rockhill Keep"
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/manor.ogg", "modular_redtard/rockhill/sound/area/music/area/manor2.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = null
@@ -600,6 +614,7 @@
 	rockhill_area_text = null
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/academy.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = null
@@ -622,6 +637,7 @@
 	rockhill_area_text = null
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/shop.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = null
@@ -644,6 +660,7 @@
 	rockhill_area_text = "VALE TAILOR'S SHOP"
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/towngen.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = list("modular_redtard/rockhill/sound/area/music/area/septimus.ogg")
@@ -666,6 +683,7 @@
 	rockhill_area_text = null
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/silence.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = null
@@ -688,6 +706,7 @@
 	rockhill_area_text = null
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/silence.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = null
@@ -710,6 +729,7 @@
 	rockhill_area_text = null
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/towngen.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = list("modular_redtard/rockhill/sound/area/music/area/septimus.ogg")
@@ -732,6 +752,7 @@
 	rockhill_area_text = null
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/towngen.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = list("modular_redtard/rockhill/sound/area/music/area/septimus.ogg")
@@ -800,6 +821,7 @@
 	rockhill_area_text = "Rockhill Harbor"
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/harbor.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = list("modular_redtard/rockhill/sound/area/music/area/septimus.ogg")
@@ -961,6 +983,7 @@
 	rockhill_area_text = null
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	rogue_ceiling_protected = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/bath.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = list("modular_redtard/rockhill/sound/area/music/area/septimus.ogg")
@@ -984,6 +1007,7 @@
 	rockhill_area_text = null
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/manorgarri.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = list("modular_redtard/rockhill/sound/area/music/area/septimus.ogg")
@@ -1122,6 +1146,7 @@
 	rockhill_area_text = "Old Church District"
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/townstreets.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = list("modular_redtard/rockhill/sound/area/music/area/septimus.ogg")
@@ -1145,6 +1170,7 @@
 	rockhill_area_text = "The Garden of the Dead"
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/townstreets.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = list("modular_redtard/rockhill/sound/area/music/area/septimus.ogg")
@@ -1191,6 +1217,7 @@
 	rockhill_area_text = "The Town of Rockhill"
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/townstreets.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = list("modular_redtard/rockhill/sound/area/music/area/septimus.ogg")
@@ -1214,6 +1241,7 @@
 	rockhill_area_text = null
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/townstreets.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = list("modular_redtard/rockhill/sound/area/music/area/septimus.ogg")
@@ -1237,6 +1265,7 @@
 	rockhill_area_text = null
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/townstreets.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = list("modular_redtard/rockhill/sound/area/music/area/septimus.ogg")
@@ -1260,6 +1289,7 @@
 	rockhill_area_text = null
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/townstreets.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = list("modular_redtard/rockhill/sound/area/music/area/septimus.ogg")
@@ -1283,6 +1313,7 @@
 	rockhill_area_text = null
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/townstreets.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = list("modular_redtard/rockhill/sound/area/music/area/septimus.ogg")
@@ -1556,6 +1587,7 @@
 	rockhill_area_text = "GOBLIN FORTRESS"
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	rogue_ceiling_protected = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/dungeon2.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = null
@@ -1622,6 +1654,7 @@
 	rockhill_area_text = null
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	rogue_ceiling_protected = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/catacombs.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = null
@@ -1644,6 +1677,7 @@
 	rockhill_area_text = null
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	rogue_ceiling_protected = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/underdark.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = null
@@ -1666,6 +1700,7 @@
 	rockhill_area_text = "Another Place"
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	rogue_ceiling_protected = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/inferno.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = null
@@ -1688,6 +1723,7 @@
 	rockhill_area_text = "Lost Encampment"
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	rogue_ceiling_protected = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/gobcamp.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = null
@@ -1710,6 +1746,7 @@
 	rockhill_area_text = null
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	rogue_ceiling_protected = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/scroll_of_nihilism.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = null
@@ -1732,6 +1769,7 @@
 	rockhill_area_text = null
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	rogue_ceiling_protected = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/scroll_of_nihilism.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = null
@@ -1754,6 +1792,7 @@
 	rockhill_area_text = "Crumbling Magician's Tower"
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	rogue_ceiling_protected = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/abandonedwizartorium.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = null
@@ -2084,6 +2123,7 @@
 	rockhill_area_text = null
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/catacombs.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = null
@@ -2106,6 +2146,8 @@
 	rockhill_area_text = null
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
+	rogue_ceiling_protected = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/catacombs.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = null
@@ -2128,6 +2170,8 @@
 	rockhill_area_text = null
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
+	rogue_ceiling_protected = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/catacombs.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = null
@@ -2150,6 +2194,7 @@
 	rockhill_area_text = null
 	rockhill_music_enabled = TRUE
 	rockhill_loops_enabled = TRUE
+	town_area = TRUE
 	rockhill_music = list("modular_redtard/rockhill/sound/area/music/area/sewers.ogg")
 	rockhill_music_dawn = null
 	rockhill_music_dusk = null

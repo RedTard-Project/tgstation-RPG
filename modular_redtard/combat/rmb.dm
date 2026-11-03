@@ -267,7 +267,7 @@ GLOBAL_LIST_INIT(rogue_rmb_intents, rogue_init_rmb_intents())
 	var/list/modifiers = params2list(params)
 	if(LAZYACCESS(modifiers, RIGHT_CLICK) || LAZYACCESS(modifiers, SHIFT_CLICK))
 		var/datum/rogue_rmb_intent/intent = owner.rogue_rmb_intent
-		to_chat(owner, span_info(intent ? "[intent.name]: [intent.desc]" : "No alt intent picked."))
+		to_chat(owner, span_info((intent ? "[intent.name]: [intent.desc]" : "No alt intent picked.")))
 		return
 	var/datum/hud/rogue/rogue_hud = hud
 	if(istype(rogue_hud))

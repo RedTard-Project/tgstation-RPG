@@ -19,13 +19,11 @@
 
 #define ROCKHILL_JOB_FLAGS (JOB_CREW_MANIFEST|JOB_CREW_MEMBER|JOB_NEW_PLAYER_JOINABLE|JOB_REOPEN_ON_ROUNDSTART_LOSS|JOB_ASSIGN_QUIRKS)
 
-#define ROCKHILL_BASE_STRENGTH 10
 #define TRAIT_BASHDOORS "bashdoors"
 
 #define ROCKHILL_SUNLIGHT_RANGE 3
 #define ROCKHILL_SUNLIGHT_POWER 1
 
-#define ROCKHILL_WINCH_TIME (105 - ROCKHILL_BASE_STRENGTH * 10)
 #define ROCKHILL_GATE_WIDTH 3
 
 #define COOLDOWN_ROCKHILL_TRAVEL "rockhill_travel"
@@ -33,7 +31,6 @@
 #define ROCKHILL_OAR /obj/item/rogueweapon/mace/oar
 #define ROCKHILL_TRAP_DAMAGE 50
 #define ROCKHILL_TRAP_WALL_RANGE 7
-#define ROCKHILL_LEVER_TIME (100 - ROCKHILL_BASE_STRENGTH * 10)
 #define ROCKHILL_HATCH_CYCLE (4 SECONDS)
 #define ROCKHILL_DAY_RATE 50
 #define ROCKHILL_DAY_START 288001
@@ -156,3 +153,9 @@
 #define ROCKHILL_LIGHTNING_CLICK_DELAY (6 SECONDS)
 #define ROCKHILL_FIREFLIES_MOOD 5
 #define ROCKHILL_FIREFLIES_MOOD_TIME (10 MINUTES)
+
+// Ratwood's trait of the Abyssor faithful and the sea peoples: cold water does not chill them (rockhill/swimming.dm); the
+// origins of homelands/ give it too. The ported traits (rockhill/ported/_traits.dm) lack it.
+#ifndef TRAIT_WATERLOVING
+#define TRAIT_WATERLOVING "Water loving"
+#endif

@@ -134,8 +134,12 @@
 	var/part = side == "r" ? (legs ? LEG_RIGHT : ARM_RIGHT) : (legs ? LEG_LEFT : ARM_LEFT)
 	if(rogue_sleeve_bare(side))
 		body_parts_covered &= ~part
+		if(!isnull(rogue_coverage))
+			rogue_coverage &= ~part
 	else
 		body_parts_covered |= part & initial(body_parts_covered)
+		if(!isnull(rogue_coverage))
+			rogue_coverage |= part & initial(rogue_coverage)
 	update_slot_icon()
 
 /// Ratwood: two seconds of pulling, then strength * 8 percent that the sleeve gives; a torn one leaves a scrap in the hand.
@@ -161,7 +165,7 @@
 /obj/item/clothing/examine(mob/user)
 	. = ..()
 	if(torn_sleeve_number)
-		. += span_notice(torn_sleeve_number == 1 ? "It has one torn sleeve." : "Both its sleeves have been torn!")
+		. += span_notice((torn_sleeve_number == 1 ? "It has one torn sleeve." : "Both its sleeves have been torn!"))
 	if(nodismemsleeves || !(rogue_sleeve_whole("r") || rogue_sleeve_whole("l")))
 		return
 	if(rogue_sleeves_on_legs())

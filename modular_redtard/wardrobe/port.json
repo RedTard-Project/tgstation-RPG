@@ -116,9 +116,13 @@
 		"salvage_result": "rogue_sleeve_scrap",
 		"armor_type": "rogue_armor"
 	},
+	"copies": {
+		"rogue_coverage": "body_parts_covered"
+	},
 	"kinds": {
 		"slot_flags": "flags",
 		"body_parts_covered": "flags",
+		"rogue_coverage": "flags",
 		"flags_inv": "flags",
 		"block2add": "flags",
 		"alternate_worn_layer": "mapped",
@@ -155,6 +159,16 @@
 			"LEFT_EYE": "HEAD",
 			"RIGHT_EYE": "HEAD",
 			"VITALS": "CHEST"
+		},
+		"rogue_coverage": {
+			"MOUTH": "ROGUE_COVER_MOUTH",
+			"NOSE": "ROGUE_COVER_NOSE",
+			"EARS": "ROGUE_COVER_EARS",
+			"HAIR": "ROGUE_COVER_HAIR",
+			"EYES": "ROGUE_COVER_EYES",
+			"LEFT_EYE": "ROGUE_COVER_LEFT_EYE",
+			"RIGHT_EYE": "ROGUE_COVER_RIGHT_EYE",
+			"VITALS": "ROGUE_COVER_VITALS"
 		},
 		"block2add": {
 			"FOV_DEFAULT": "",
@@ -216,6 +230,7 @@
 		"l_sleeve_status": "ROGUE_SLEEVE_NOMOD",
 		"rogue_sleeve_scrap": "/obj/item/natural/cloth",
 		"rogue_armor": "null",
+		"rogue_coverage": "NONE",
 		"boobed": "FALSE",
 		"boobed_detail": "TRUE",
 		"sleeved_detail": "TRUE",

@@ -25,8 +25,9 @@
 #define ROGUE_FORGING_ACTIVE 1
 #define ROGUE_FORGING_COMPLETE 2
 
-/// Seconds a bar stays hot after the forge or the smelter (Ratwood forge heat_time, smelter tongs).
-#define ROGUE_BAR_HEAT_TIME (20 SECONDS)
+/// Deciseconds a bar stays hot after the forge or the smelter (bar_heat_time of config/redtard/mechanics/values/crafting.txt;
+/// Ratwood forge heat_time, smelter tongs).
+#define ROGUE_BAR_HEAT_TIME rogue_value("bar_heat_time")
 
 #define ROGUE_SMITH_SOUNDS list('modular_redtard/rockhill/sound/items/bsmith1.ogg', 'modular_redtard/rockhill/sound/items/bsmith2.ogg', 'modular_redtard/rockhill/sound/items/bsmith3.ogg', 'modular_redtard/rockhill/sound/items/bsmith4.ogg')
 #define ROGUE_SMITH_FAIL_SOUND 'modular_redtard/rockhill/sound/items/bsmithfail.ogg'
@@ -46,6 +47,6 @@
 /// Ratwood pottery tiers (0 crude ... 5 masterwork) on the module's quality scale (crude 1 ... masterwork 6).
 #define ROGUE_POTTERY_QUALITY(tier) ((tier) + ROGUE_QUALITY_CRUDE)
 /// Ratwood pottery tier from which the piece shines like a polished masterwork (apply_pottery_quality_to_item()).
-#define ROGUE_POTTERY_SHINE_TIER 4
+#define ROGUE_POTTERY_SHINE_TIER rogue_value("pottery_shine_tier")
 /// Ratwood pottery tier from which the crafted piece carries a quality prefix.
-#define ROGUE_POTTERY_NAMED_TIER 3
+#define ROGUE_POTTERY_NAMED_TIER rogue_value("pottery_named_tier")

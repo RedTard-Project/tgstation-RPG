@@ -37,6 +37,7 @@ type BuildOptions = {
   focus: boolean;
   noBuild: boolean;
   noRun: boolean;
+  noDungeon: boolean;
   rawArgs: string[];
   parameterArgs: string[];
 };
@@ -94,6 +95,7 @@ function parseArgs(args: string[]): BuildOptions {
     focus: false,
     noBuild: false,
     noRun: false,
+    noDungeon: false,
     rawArgs: args,
     parameterArgs: [],
   };
@@ -131,6 +133,8 @@ function parseArgs(args: string[]): BuildOptions {
       options.noBuild = true;
     } else if (arg === '--no-run') {
       options.noRun = true;
+    } else if (arg === '--no-dungeon') {
+      options.noDungeon = true;
     } else if (!arg.startsWith('-') && targetIndex === -1) {
       options.target = arg;
       targetIndex = i;
@@ -250,13 +254,17 @@ async function runLowMemory(options: BuildOptions) {
   map.space_ruin_levels = 0;
   map.space_empty_levels = 1;
   map[LOWMEM_MARKER] = true;
+  // The dungeon level is skipped on load (maps/other_z.dm), like Ratwood's and Vanderlin's NO_DUNGEON.
+  if (options.noDungeon) {
+    map.no_dungeon = true;
+  }
   restoreNextMap();
   fs.mkdirSync('data', { recursive: true });
   if (fs.existsSync(NEXT_MAP)) {
     fs.renameSync(NEXT_MAP, NEXT_MAP_BACKUP);
   }
   fs.writeFileSync(NEXT_MAP, `${JSON.stringify(map, null, '\t')}\n`);
-  console.log(`modular_redtard: low-memory launch of ${map.map_name} on port ${options.port}: no mining level, no space ruins.`);
+  console.log(`modular_redtard: low-memory launch of ${map.map_name} on port ${options.port}: no mining level, no space ruins${options.noDungeon ? ', no dungeon' : ''}.`);
   try {
     await DreamDaemon({ dmbFile: FINAL_DMB, namedDmVersion: options.dmVersion }, options.port, '-trusted');
   } finally {

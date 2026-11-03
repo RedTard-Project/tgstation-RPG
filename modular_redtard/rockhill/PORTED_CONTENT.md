@@ -329,7 +329,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/turf/closed/wall/mineral/rogue/pipe/corners/four` | 1 |
 | `/turf/closed/wall/mineral/rogue/pipe/corners/one` | 1 |
 
-## structures.dm (539 types)
+## structures.dm (519 types)
 
 | Type | Tiles |
 |---|---|
@@ -378,17 +378,13 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/structure/fluff/walldeco/stone` | 115 |
 | `/obj/structure/fluff/nest` | 112 |
 | `/obj/structure/flora/rogueshroom` | 107 |
-| `/obj/structure/curtain/brown` | 106 |
 | `/obj/structure/flora/roguegrass/thorn_bush` | 103 |
 | `/obj/structure/underworld/barrier` | 96 |
 | `/obj/structure/fluff/statue/gargoyle/moss/candles` | 95 |
 | `/obj/structure/fluff/railing/corner` | 92 |
 | `/obj/structure/flora/newbranch/leafless` | 89 |
-| `/obj/structure/curtain/black` | 86 |
 | `/obj/structure/hotspring` | 83 |
 | `/obj/structure/roguetent` | 78 |
-| `/obj/structure/curtain/directional/black` | 77 |
-| `/obj/structure/curtain/magenta` | 76 |
 | `/obj/structure/fluff/statue/gargoyle/moss` | 76 |
 | `/obj/structure/fluff/walldeco/vinez/red` | 76 |
 | `/obj/structure/fluff/railing/corner/north_east` | 74 |
@@ -408,10 +404,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/structure/fluff/walldeco/psybanner` | 55 |
 | `/obj/structure/flora/ausbushes/grassybush` | 53 |
 | `/obj/structure/fluff/railing/wood/north` | 52 |
-| `/obj/structure/curtain/red` | 51 |
 | `/obj/structure/fermentation_keg/random/beer` | 50 |
-| `/obj/structure/curtain/directional/blue` | 49 |
-| `/obj/structure/curtain/directional/red` | 48 |
 | `/obj/structure/fluff/walldeco/maidendrape` | 48 |
 | `/obj/structure/bars/passage` | 47 |
 | `/obj/structure/fluff/statue/small` | 47 |
@@ -432,7 +425,6 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/structure/far_travel` | 39 |
 | `/obj/structure/fluff/walldeco/psybanner/red` | 39 |
 | `/obj/structure/roguemachine/scomm` | 39 |
-| `/obj/structure/curtain/directional/orange` | 38 |
 | `/obj/structure/fluff/pillow/magenta` | 38 |
 | `/obj/structure/fluff/statue/gargoyle/candles` | 38 |
 | `/obj/machinery/gear_painter` | 36 |
@@ -466,7 +458,6 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/structure/flora/roguetree/stump` | 23 |
 | `/obj/structure/fluff/statue/knight/interior` | 23 |
 | `/obj/structure/fluff/walldeco/painting/seraphina` | 23 |
-| `/obj/structure/curtain/directional/brown` | 22 |
 | `/obj/structure/fluff/clodpile` | 22 |
 | `/obj/structure/fluff/railing/wood/west` | 22 |
 | `/obj/structure/fluff/walldeco/bigpainting/lake` | 22 |
@@ -490,20 +481,17 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/structure/flora/roguegrass/bush/jungle/large` | 17 |
 | `/obj/structure/flora/roguegrass/maneater/real` | 17 |
 | `/obj/structure/fluff/walldeco/painting/queen` | 17 |
-| `/obj/structure/curtain/directional/drab` | 16 |
 | `/obj/structure/flora/roguegrass/herb/artemisia` | 16 |
 | `/obj/structure/fluff/littlebanners/bluewhite` | 16 |
 | `/obj/structure/fluff/psycross/copper` | 16 |
 | `/obj/structure/fluff/walldeco/vinez/offset` | 16 |
 | `/obj/structure/roguemachine/withdraw` | 16 |
-| `/obj/structure/curtain/directional/yellow` | 15 |
 | `/obj/structure/flora/roguegrass/herb/symphitum` | 15 |
 | `/obj/structure/fluff/alch` | 15 |
 | `/obj/structure/fluff/psycross/crafted` | 15 |
 | `/obj/structure/fluff/statue` | 15 |
 | `/obj/structure/fluff/walldeco/rpainting` | 15 |
 | `/obj/structure/roguemachine/vendor` | 15 |
-| `/obj/structure/curtain/directional/crafted` | 14 |
 | `/obj/structure/fluff/walldeco/bath/wallrope` | 14 |
 | `/obj/structure/hotspring/border/two` | 14 |
 | `/obj/structure/pillory` | 14 |
@@ -523,13 +511,11 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/structure/rogue/trophy/deer` | 13 |
 | `/obj/structure/bars/shop` | 12 |
 | `/obj/structure/bondage/x_pillory` | 12 |
-| `/obj/structure/curtain/green` | 12 |
 | `/obj/structure/flora/hotspring_rocks/grassy` | 12 |
 | `/obj/structure/flora/roguegrass/jungle/sparse` | 12 |
 | `/obj/structure/fluff/statue/knightalt/r` | 12 |
 | `/obj/structure/fluff/walldeco/fakewall` | 12 |
 | `/obj/structure/composter/halffull` | 11 |
-| `/obj/structure/curtain/directional/green` | 11 |
 | `/obj/structure/deadbody/peasant` | 11 |
 | `/obj/structure/flora/roguegrass/herb/manabloom` | 11 |
 | `/obj/structure/flora/roguegrass/herb/valeriana` | 11 |
@@ -565,7 +551,6 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/structure/roguemachine/mail/l` | 9 |
 | `/obj/structure/bonepile` | 8 |
 | `/obj/structure/bookcase/random_recipes` | 8 |
-| `/obj/structure/curtain/blue` | 8 |
 | `/obj/structure/flora/roguegrass/herb/urtica` | 8 |
 | `/obj/structure/fluff/customsign/arrow` | 8 |
 | `/obj/structure/hotspring/border/seven` | 8 |
@@ -654,8 +639,6 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/structure/bondage/torture_table` | 3 |
 | `/obj/structure/composter` | 3 |
 | `/obj/structure/composter/full` | 3 |
-| `/obj/structure/curtain/directional/magenta` | 3 |
-| `/obj/structure/curtain/yellow` | 3 |
 | `/obj/structure/deadbody/adventurer_leather` | 3 |
 | `/obj/structure/deadbody/greater_skeleton` | 3 |
 | `/obj/structure/deadbody/rogue` | 3 |
@@ -683,8 +666,6 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/structure/boatbell/fluff` | 2 |
 | `/obj/structure/bookcase/player_archive` | 2 |
 | `/obj/structure/broadcast_horn/paid` | 2 |
-| `/obj/structure/curtain/drab` | 2 |
-| `/obj/structure/curtain/orange` | 2 |
 | `/obj/structure/deadbody/old_knight` | 2 |
 | `/obj/structure/feedinghole` | 2 |
 | `/obj/structure/fermentation_keg/sourwine` | 2 |
@@ -728,7 +709,6 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/structure/broadcast_horn/loudmouth` | 1 |
 | `/obj/structure/broadcast_horn/loudmouth/guest` | 1 |
 | `/obj/structure/crabnest` | 1 |
-| `/obj/structure/curtain/purple` | 1 |
 | `/obj/structure/deadbody/necromancer` | 1 |
 | `/obj/structure/deadbody/warden` | 1 |
 | `/obj/structure/deadbody/wizard` | 1 |
@@ -1033,7 +1013,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/effect/lily_petal` | 1 |
 | `/obj/effect/lily_petal/three` | 1 |
 
-## items.dm (3130 types)
+## items.dm (3415 types)
 
 | Type | Tiles |
 |---|---|
@@ -2293,9 +2273,11 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/storage/keyring/manor/counsilroom/iii` | 1 |
 | `/obj/item/storage/keyring/priest` | 1 |
 | `/obj/item/toy/cards/deck/tarot/majorarcana` | 1 |
+| `/obj/item/alch` | 0 |
 | `/obj/item/alch/artemisia` | 0 |
 | `/obj/item/alch/atropa` | 0 |
 | `/obj/item/alch/benedictus` | 0 |
+| `/obj/item/alch/berrypowder` | 0 |
 | `/obj/item/alch/blessedseedpowder` | 0 |
 | `/obj/item/alch/bloomstone` | 0 |
 | `/obj/item/alch/euphrasia` | 0 |
@@ -2303,7 +2285,11 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/alch/manabloompowder` | 0 |
 | `/obj/item/alch/matricaria` | 0 |
 | `/obj/item/alch/mentha` | 0 |
+| `/obj/item/alch/ozium` | 0 |
 | `/obj/item/alch/paris` | 0 |
+| `/obj/item/alch/puresalt` | 0 |
+| `/obj/item/alch/seeddust` | 0 |
+| `/obj/item/alch/sinew` | 0 |
 | `/obj/item/alch/stonedust` | 0 |
 | `/obj/item/alch/symphitum` | 0 |
 | `/obj/item/alch/taraxacum` | 0 |
@@ -2328,6 +2314,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/ammo_casing/caseless/rogue/bolt/holy` | 0 |
 | `/obj/item/ammo_casing/caseless/rogue/bolt/water` | 0 |
 | `/obj/item/ammo_casing/caseless/rogue/heavy_bolt` | 0 |
+| `/obj/item/ammo_casing/caseless/rogue/heavy_bolt/holy` | 0 |
 | `/obj/item/ammo_casing/caseless/rogue/heavy_bolt/tempest` | 0 |
 | `/obj/item/ammo_casing/caseless/rogue/javelin` | 0 |
 | `/obj/item/ammo_casing/caseless/rogue/javelin/blacksteel` | 0 |
@@ -2347,15 +2334,20 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/ammo_casing/caseless/rogue/sling_bullet/steelblessed` | 0 |
 | `/obj/item/ammo_casing/caseless/rogue/sling_bullet/stone` | 0 |
 | `/obj/item/armorkit_empty` | 0 |
+| `/obj/item/azure_lipstick/jade` | 0 |
+| `/obj/item/azure_lipstick/purple` | 0 |
 | `/obj/item/bait/leech` | 0 |
 | `/obj/item/barometer` | 0 |
 | `/obj/item/black_rose` | 0 |
 | `/obj/item/bmbstrap` | 0 |
 | `/obj/item/bmbstrap/firebomb` | 0 |
+| `/obj/item/bodypart/l_arm/prosthetic/bronzeleft` | 0 |
 | `/obj/item/bodypart/l_arm/prosthetic/woodleft` | 0 |
 | `/obj/item/bodypart/l_leg/prosthetic` | 0 |
+| `/obj/item/bodypart/l_leg/prosthetic/bronzeleft` | 0 |
 | `/obj/item/bodypart/r_arm/prosthetic/woodright` | 0 |
 | `/obj/item/bodypart/r_leg/prosthetic` | 0 |
+| `/obj/item/bodypart/r_leg/prosthetic/bronzeright` | 0 |
 | `/obj/item/bomb/smoke` | 0 |
 | `/obj/item/bombard_barrel` | 0 |
 | `/obj/item/bombard_frame` | 0 |
@@ -2379,6 +2371,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/bouquet/rosa` | 0 |
 | `/obj/item/bouquet/salvia` | 0 |
 | `/obj/item/candle` | 0 |
+| `/obj/item/candle/candlestick/silver/single` | 0 |
 | `/obj/item/cannonball/canister` | 0 |
 | `/obj/item/cannonball/explosive` | 0 |
 | `/obj/item/cannonball/flare` | 0 |
@@ -2388,6 +2381,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/caparison/astrata` | 0 |
 | `/obj/item/caparison/eora` | 0 |
 | `/obj/item/caparison/fogbeast` | 0 |
+| `/obj/item/caparison/heartfelt` | 0 |
 | `/obj/item/caparison/psy` | 0 |
 | `/obj/item/carvedgem/amber/beaver` | 0 |
 | `/obj/item/carvedgem/amber/bust` | 0 |
@@ -2534,6 +2528,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/clothing/barding/chain` | 0 |
 | `/obj/item/clothing/barding/fogbeast` | 0 |
 | `/obj/item/clothing/barding/fogbeast/chain` | 0 |
+| `/obj/item/clothing/climbing_gear` | 0 |
 | `/obj/item/clothing/cloak/absolutionistrobe` | 0 |
 | `/obj/item/clothing/cloak/apron` | 0 |
 | `/obj/item/clothing/cloak/apron/waist/brown` | 0 |
@@ -2547,6 +2542,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/clothing/cloak/cape/puritan` | 0 |
 | `/obj/item/clothing/cloak/cape/purple` | 0 |
 | `/obj/item/clothing/cloak/captain` | 0 |
+| `/obj/item/clothing/cloak/citywatch/janissary` | 0 |
 | `/obj/item/clothing/cloak/citywatchcaptain` | 0 |
 | `/obj/item/clothing/cloak/cleric/ravox` | 0 |
 | `/obj/item/clothing/cloak/cotehardie` | 0 |
@@ -2571,10 +2567,12 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/clothing/cloak/psydontabard/alt` | 0 |
 | `/obj/item/clothing/cloak/raincloak/furcloak/black` | 0 |
 | `/obj/item/clothing/cloak/raincloak/furcloak/brown` | 0 |
+| `/obj/item/clothing/cloak/raincloak/furcloak/woad` | 0 |
 | `/obj/item/clothing/cloak/raincloak/green` | 0 |
 | `/obj/item/clothing/cloak/stabard` | 0 |
 | `/obj/item/clothing/cloak/stabard/black` | 0 |
 | `/obj/item/clothing/cloak/stabard/dungeon` | 0 |
+| `/obj/item/clothing/cloak/stabard/grenzelhoft` | 0 |
 | `/obj/item/clothing/cloak/stabard/grenzelmage` | 0 |
 | `/obj/item/clothing/cloak/stabard/surcoat/bailiff` | 0 |
 | `/obj/item/clothing/cloak/stabard/surcoat/councillor` | 0 |
@@ -2597,6 +2595,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/clothing/gloves/roguetown/angle/grenzelgloves/blacksmith` | 0 |
 | `/obj/item/clothing/gloves/roguetown/angle/grenzelgloves/freifechter` | 0 |
 | `/obj/item/clothing/gloves/roguetown/angle/gronn` | 0 |
+| `/obj/item/clothing/gloves/roguetown/angle/gronnfur` | 0 |
 | `/obj/item/clothing/gloves/roguetown/angle/pontifex` | 0 |
 | `/obj/item/clothing/gloves/roguetown/bandages` | 0 |
 | `/obj/item/clothing/gloves/roguetown/bandages/pugilist` | 0 |
@@ -2609,6 +2608,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/clothing/gloves/roguetown/eastgloves1` | 0 |
 | `/obj/item/clothing/gloves/roguetown/eastgloves2` | 0 |
 | `/obj/item/clothing/gloves/roguetown/fingerless` | 0 |
+| `/obj/item/clothing/gloves/roguetown/fingerless/shadowgloves` | 0 |
 | `/obj/item/clothing/gloves/roguetown/fingerless/shadowgloves/elflock` | 0 |
 | `/obj/item/clothing/gloves/roguetown/knuckles` | 0 |
 | `/obj/item/clothing/gloves/roguetown/knuckles/ancient` | 0 |
@@ -2667,6 +2667,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/clothing/head/roguetown/helmet/bascinet/pigface/roundface/iron` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/bascinet/pigface/roundface/iron/snouted` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/bascinet/pigface/roundface/snouted` | 0 |
+| `/obj/item/clothing/head/roguetown/helmet/bascinet/pigface/shadowplate` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/blacksteel/bucket` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/blacksteel/modern/armet/grenzelhoft` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/blacksteel/psychains` | 0 |
@@ -2702,6 +2703,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/clothing/head/roguetown/helmet/heavy/knight/gold` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/heavy/knight/gold/king` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/heavy/knight/psy/greatplume` | 0 |
+| `/obj/item/clothing/head/roguetown/helmet/heavy/knight/shadowplate` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/heavy/malum` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/heavy/matthios` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/heavy/necrahelm` | 0 |
@@ -2724,6 +2726,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/clothing/head/roguetown/helmet/heavy/volfplate/psydonic` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/heavy/xylixhelm` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/horned` | 0 |
+| `/obj/item/clothing/head/roguetown/helmet/janissaryhelm` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/kettle/` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/kettle/ancient` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/kettle/ancient/decrepit` | 0 |
@@ -2744,7 +2747,10 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/clothing/head/roguetown/helmet/sallet/visored/iron` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/sallet/visored/iron/snouted` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/sallet/visored/snouted` | 0 |
+| `/obj/item/clothing/head/roguetown/helmet/sallet/warden` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/sallet/warden/bear` | 0 |
+| `/obj/item/clothing/head/roguetown/helmet/sallet/warden/goat` | 0 |
+| `/obj/item/clothing/head/roguetown/helmet/sallet/warden/wolf` | 0 |
 | `/obj/item/clothing/head/roguetown/helmet/tricorn` | 0 |
 | `/obj/item/clothing/head/roguetown/inqhat` | 0 |
 | `/obj/item/clothing/head/roguetown/knitcap` | 0 |
@@ -2781,6 +2787,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/clothing/head/roguetown/roguehood/shroudwhite` | 0 |
 | `/obj/item/clothing/head/roguetown/roguehood/sojourner` | 0 |
 | `/obj/item/clothing/head/roguetown/roguehood/warden` | 0 |
+| `/obj/item/clothing/head/roguetown/roguehood/warden/antler` | 0 |
 | `/obj/item/clothing/head/roguetown/scarf` | 0 |
 | `/obj/item/clothing/head/roguetown/shawl` | 0 |
 | `/obj/item/clothing/head/roguetown/spellcasterhat` | 0 |
@@ -2833,6 +2840,9 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/clothing/mask/rogue/facemask/steel/confessor` | 0 |
 | `/obj/item/clothing/mask/rogue/facemask/steel/hound` | 0 |
 | `/obj/item/clothing/mask/rogue/facemask/steel/kazengun` | 0 |
+| `/obj/item/clothing/mask/rogue/facemask/steel/kazengun/full` | 0 |
+| `/obj/item/clothing/mask/rogue/facemask/steel/steppesman` | 0 |
+| `/obj/item/clothing/mask/rogue/facemask/steel/steppesman/anthro` | 0 |
 | `/obj/item/clothing/mask/rogue/facemask/yoruku_oni` | 0 |
 | `/obj/item/clothing/mask/rogue/goblin_mask` | 0 |
 | `/obj/item/clothing/mask/rogue/lordmask` | 0 |
@@ -2874,10 +2884,12 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/clothing/neck/roguetown/coif/padded/nomad` | 0 |
 | `/obj/item/clothing/neck/roguetown/collar` | 0 |
 | `/obj/item/clothing/neck/roguetown/collar/feldcollar` | 0 |
+| `/obj/item/clothing/neck/roguetown/collar/prisoner` | 0 |
 | `/obj/item/clothing/neck/roguetown/collar/surgcollar` | 0 |
 | `/obj/item/clothing/neck/roguetown/collar/woolen` | 0 |
 | `/obj/item/clothing/neck/roguetown/fencerguard` | 0 |
 | `/obj/item/clothing/neck/roguetown/fencerguard/generic` | 0 |
+| `/obj/item/clothing/neck/roguetown/fencerguard/inq` | 0 |
 | `/obj/item/clothing/neck/roguetown/gorget/bronze` | 0 |
 | `/obj/item/clothing/neck/roguetown/gorget/gold` | 0 |
 | `/obj/item/clothing/neck/roguetown/gorget/steel/ancient` | 0 |
@@ -2885,6 +2897,23 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/clothing/neck/roguetown/horus` | 0 |
 | `/obj/item/clothing/neck/roguetown/leather` | 0 |
 | `/obj/item/clothing/neck/roguetown/luckcharm` | 0 |
+| `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal` | 0 |
+| `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/anthrax` | 0 |
+| `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/atgervi` | 0 |
+| `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/blackoak` | 0 |
+| `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/condottiero` | 0 |
+| `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/desertrider` | 0 |
+| `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/forlorn` | 0 |
+| `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/freifechter` | 0 |
+| `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/grenzelhoft` | 0 |
+| `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/grudgebearer` | 0 |
+| `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/kazengun` | 0 |
+| `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/oathmarked` | 0 |
+| `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/routier` | 0 |
+| `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/steppesman` | 0 |
+| `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/underdweller` | 0 |
+| `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/vaquero` | 0 |
+| `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/warscholar` | 0 |
 | `/obj/item/clothing/neck/roguetown/ornateamulet` | 0 |
 | `/obj/item/clothing/neck/roguetown/psicross/bpearl` | 0 |
 | `/obj/item/clothing/neck/roguetown/psicross/decrepit` | 0 |
@@ -2896,6 +2925,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/clothing/neck/roguetown/psicross/silver/astrata/oathmarked` | 0 |
 | `/obj/item/clothing/neck/roguetown/psicross/silver/undivided` | 0 |
 | `/obj/item/clothing/neck/roguetown/psicross/weeping` | 0 |
+| `/obj/item/clothing/neck/roguetown/shalal` | 0 |
 | `/obj/item/clothing/neck/roguetown/skullamulet/gemerald` | 0 |
 | `/obj/item/clothing/neck/roguetown/talkstone` | 0 |
 | `/obj/item/clothing/ring/active/shimmeringlens` | 0 |
@@ -2963,8 +2993,10 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/clothing/shoes/roguetown/heels/color` | 0 |
 | `/obj/item/clothing/shoes/roguetown/sandals/ancient` | 0 |
 | `/obj/item/clothing/shoes/roguetown/shalal` | 0 |
+| `/obj/item/clothing/shoes/roguetown/shalal/reinforced` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/armordress` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/basiceast` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/basiceast/captainrobe` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/basiceast/captainrobe/decorative` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/basiceast/crafteast` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/basiceast/mentorsuit` | 0 |
@@ -2984,6 +3016,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/ancient` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/atgervi` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/bronze` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/janissary` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/ornate` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/zizo` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/corset/colored` | 0 |
@@ -2996,11 +3029,13 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/hierophant` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/hierophant/civilian` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/hierophant/nomad` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/otavan/inq` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/pontifex` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/shadowrobe` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/zyb` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/gambeson/lord` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/gambeson/winter_coat` | 0 |
+| `/obj/item/clothing/suit/roguetown/armor/gambeson/zyb` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/heartfelt` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/heartfelt/hand` | 0 |
 | `/obj/item/clothing/suit/roguetown/armor/kurche` | 0 |
@@ -3133,6 +3168,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/clothing/under/roguetown/heavy_leather_pants/eastpants1` | 0 |
 | `/obj/item/clothing/under/roguetown/heavy_leather_pants/eastpants2` | 0 |
 | `/obj/item/clothing/under/roguetown/heavy_leather_pants/grenzelpants` | 0 |
+| `/obj/item/clothing/under/roguetown/heavy_leather_pants/kazengun` | 0 |
 | `/obj/item/clothing/under/roguetown/heavy_leather_pants/nomadpants` | 0 |
 | `/obj/item/clothing/under/roguetown/heavy_leather_pants/otavan/generic` | 0 |
 | `/obj/item/clothing/under/roguetown/heavy_leather_pants/otavan/shepherd` | 0 |
@@ -3216,14 +3252,23 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/cooking/platter/carved/turq` | 0 |
 | `/obj/item/customblank` | 0 |
 | `/obj/item/customlock` | 0 |
+| `/obj/item/customlock/finished` | 0 |
 | `/obj/item/dildo/copper` | 0 |
 | `/obj/item/dildo/gold` | 0 |
 | `/obj/item/dildo/silver` | 0 |
+| `/obj/item/enchantmentscroll` | 0 |
 | `/obj/item/fertilizer` | 0 |
 | `/obj/item/fishingrod/blacksteel` | 0 |
 | `/obj/item/fishingrod/crafted` | 0 |
 | `/obj/item/flashlight/flare/torch/lantern/prelit` | 0 |
 | `/obj/item/flashlight/flare/torch/lantern/psycenser` | 0 |
+| `/obj/item/flashlight/flare/torch/lantern/pumpkin` | 0 |
+| `/obj/item/flashlight/flare/torch/lantern/pumpkin/frown` | 0 |
+| `/obj/item/flashlight/flare/torch/lantern/pumpkin/grin` | 0 |
+| `/obj/item/flashlight/flare/torch/lantern/pumpkin/psy` | 0 |
+| `/obj/item/flashlight/flare/torch/lantern/pumpkin/surprise` | 0 |
+| `/obj/item/flashlight/flare/torch/lantern/pumpkin/ten` | 0 |
+| `/obj/item/flashlight/flare/torch/lantern/pumpkin/woozy` | 0 |
 | `/obj/item/flashlight/flare/torch/lantern/pumpkin/zizo` | 0 |
 | `/obj/item/flashlight/flare/torch/lantern/voidlamptern` | 0 |
 | `/obj/item/flesh_decoy` | 0 |
@@ -3249,6 +3294,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow` | 0 |
 | `/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow/stalker` | 0 |
 | `/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow/stalker/lesser` | 0 |
+| `/obj/item/herbseed` | 0 |
 | `/obj/item/herbseed/artemisia` | 0 |
 | `/obj/item/herbseed/atropa` | 0 |
 | `/obj/item/herbseed/benedictus` | 0 |
@@ -3286,6 +3332,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/ingot/silverblessed/bullion` | 0 |
 | `/obj/item/ingot/steelholy` | 0 |
 | `/obj/item/ingot/weeping` | 0 |
+| `/obj/item/inqarticles/bmirror` | 0 |
 | `/obj/item/inqarticles/garrote` | 0 |
 | `/obj/item/jingle_bells` | 0 |
 | `/obj/item/kitchen/fork/carved/amber` | 0 |
@@ -3309,6 +3356,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/leechtick_bloated` | 0 |
 | `/obj/item/legwears/fishnet/white` | 0 |
 | `/obj/item/legwears/knee_high` | 0 |
+| `/obj/item/legwears/knee_high/white` | 0 |
 | `/obj/item/legwears/silk/white` | 0 |
 | `/obj/item/legwears/thigh_high/white` | 0 |
 | `/obj/item/legwears/white` | 0 |
@@ -3333,6 +3381,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/magic/melded/t5` | 0 |
 | `/obj/item/magic/obsidian` | 0 |
 | `/obj/item/magic/voidstone` | 0 |
+| `/obj/item/merctoken` | 0 |
 | `/obj/item/mimictrinket` | 0 |
 | `/obj/item/mini_flagpole/apothecary` | 0 |
 | `/obj/item/mini_flagpole/artificer` | 0 |
@@ -3351,6 +3400,8 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/mundane/puzzlebox/medium` | 0 |
 | `/obj/item/natural/bowstring` | 0 |
 | `/obj/item/natural/brick` | 0 |
+| `/obj/item/natural/bundle/bone/rdm` | 0 |
+| `/obj/item/natural/chaff/rice` | 0 |
 | `/obj/item/natural/clay/claybottleclassic` | 0 |
 | `/obj/item/natural/clay/claybrick` | 0 |
 | `/obj/item/natural/clay/claycup` | 0 |
@@ -3397,15 +3448,33 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/natural/cloth/bandage` | 0 |
 | `/obj/item/natural/cured/essence` | 0 |
 | `/obj/item/natural/dirtclod/sand` | 0 |
+| `/obj/item/natural/dirtclod/snow` | 0 |
 | `/obj/item/natural/fur/bobcat` | 0 |
+| `/obj/item/natural/fur/goat` | 0 |
+| `/obj/item/natural/fur/rabbit` | 0 |
 | `/obj/item/natural/fur/wolf` | 0 |
 | `/obj/item/natural/glass` | 0 |
 | `/obj/item/natural/glass/heated` | 0 |
 | `/obj/item/natural/head/direbear` | 0 |
 | `/obj/item/natural/head/fox` | 0 |
+| `/obj/item/natural/head/goat` | 0 |
+| `/obj/item/natural/head/honeyspider` | 0 |
+| `/obj/item/natural/head/mirelurker` | 0 |
+| `/obj/item/natural/head/mirespider` | 0 |
+| `/obj/item/natural/head/mirespider_paralytic` | 0 |
+| `/obj/item/natural/head/mole` | 0 |
+| `/obj/item/natural/head/rous` | 0 |
+| `/obj/item/natural/head/troll` | 0 |
+| `/obj/item/natural/head/troll/axe` | 0 |
 | `/obj/item/natural/head/volf` | 0 |
 | `/obj/item/natural/hide/cured` | 0 |
 | `/obj/item/natural/rabbitsfoot` | 0 |
+| `/obj/item/natural/rock/cinnabar` | 0 |
+| `/obj/item/natural/rock/copper` | 0 |
+| `/obj/item/natural/rock/elementalmote` | 0 |
+| `/obj/item/natural/rock/gold` | 0 |
+| `/obj/item/natural/rock/tin` | 0 |
+| `/obj/item/natural/shellplant/pumpkin` | 0 |
 | `/obj/item/natural/silk` | 0 |
 | `/obj/item/natural/thorn` | 0 |
 | `/obj/item/necro_relics/necro_crystal` | 0 |
@@ -3421,20 +3490,39 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/paper/scroll/writ_of_esteem/zybantine` | 0 |
 | `/obj/item/pearl` | 0 |
 | `/obj/item/pearl/blue` | 0 |
+| `/obj/item/perfume/cherry` | 0 |
+| `/obj/item/perfume/cinnamon` | 0 |
+| `/obj/item/perfume/frankincense` | 0 |
+| `/obj/item/perfume/jasmine` | 0 |
+| `/obj/item/perfume/lavender` | 0 |
+| `/obj/item/perfume/mint` | 0 |
+| `/obj/item/perfume/myrrh` | 0 |
+| `/obj/item/perfume/pear` | 0 |
+| `/obj/item/perfume/rose` | 0 |
+| `/obj/item/perfume/sandalwood` | 0 |
+| `/obj/item/perfume/strawberry` | 0 |
+| `/obj/item/perfume/vanilla` | 0 |
 | `/obj/item/phylactery` | 0 |
 | `/obj/item/portable_hookah` | 0 |
 | `/obj/item/powderflask` | 0 |
+| `/obj/item/psydonmusicbox` | 0 |
+| `/obj/item/pumpkinshell` | 0 |
 | `/obj/item/quicksilver/luxinfused` | 0 |
 | `/obj/item/quiver` | 0 |
 | `/obj/item/quiver/Warrows` | 0 |
 | `/obj/item/quiver/Wbolts` | 0 |
+| `/obj/item/quiver/bluntbolts` | 0 |
 | `/obj/item/quiver/bodkin` | 0 |
 | `/obj/item/quiver/bolts/` | 0 |
 | `/obj/item/quiver/heavybolts` | 0 |
+| `/obj/item/quiver/holybolts` | 0 |
 | `/obj/item/quiver/javelin/bronze` | 0 |
 | `/obj/item/quiver/poisonarrows` | 0 |
 | `/obj/item/quiver/pyroarrows` | 0 |
+| `/obj/item/quiver/pyrobolts` | 0 |
 | `/obj/item/quiver/sling` | 0 |
+| `/obj/item/quiver/zigs/cannabis` | 0 |
+| `/obj/item/quiver/zigs/nicotine` | 0 |
 | `/obj/item/reagent_containers/food/snacks` | 0 |
 | `/obj/item/reagent_containers/food/snacks/allspice` | 0 |
 | `/obj/item/reagent_containers/food/snacks/balefire` | 0 |
@@ -3453,6 +3541,8 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/reagent_containers/food/snacks/grown/coffeebeans` | 0 |
 | `/obj/item/reagent_containers/food/snacks/grown/coffeebeans_spiced` | 0 |
 | `/obj/item/reagent_containers/food/snacks/grown/coffeebeansroasted` | 0 |
+| `/obj/item/reagent_containers/food/snacks/grown/cucumber` | 0 |
+| `/obj/item/reagent_containers/food/snacks/grown/eggplant` | 0 |
 | `/obj/item/reagent_containers/food/snacks/grown/fruit/blackberry` | 0 |
 | `/obj/item/reagent_containers/food/snacks/grown/fruit/blackberry/skysugarbase` | 0 |
 | `/obj/item/reagent_containers/food/snacks/grown/fruit/blackberry_sugared` | 0 |
@@ -3497,37 +3587,75 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/reagent_containers/food/snacks/grown/sugarshape/tree` | 0 |
 | `/obj/item/reagent_containers/food/snacks/grown/sugarshape/zmark` | 0 |
 | `/obj/item/reagent_containers/food/snacks/grown/tea` | 0 |
+| `/obj/item/reagent_containers/food/snacks/grown/vegetable/turnip` | 0 |
 | `/obj/item/reagent_containers/food/snacks/pepper` | 0 |
 | `/obj/item/reagent_containers/food/snacks/pumpkinspice` | 0 |
 | `/obj/item/reagent_containers/food/snacks/roastseeds` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/alecod` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/applebread` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/applebreadslice` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/applecake` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/applecakeslice` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/applenutcake` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/applenutcakeslice` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/berrycake` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/berrycake/poison` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/berrycakeslice` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/berrycakeslice/poison` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/berrysalmon` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/blackberrycake` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/blackberrycakeslice` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/bookbread` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/bookbread_slice` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/breadslice/toast` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/breadslice/toast/buttered` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/bun` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/bun_grenz` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/bun_jamtallow` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/bun_raston` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/butterdough` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/butterdoughslice` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/buttersole` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/cake` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/cake_base` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/cakeslice` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/carrotcake` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/carrotcakeslice` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/carrotsteak` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/ccake` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/ccakeslice` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/ccakeuncooked` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/cheddarslice` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/cheddarslice/aged` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/cookie` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/cookier` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/cookieslice` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/cookieslicec` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/cookieslicer` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/dendorsalmon` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/dough_base` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/doughslice` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/eggplantcarved` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/eggplantmeat` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/eggplantstuffedraw` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/fishtomatoplate` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/fishtomatoplate_slice` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/flatdough` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/foodbase/cheesewheel` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/foodbase/chickentender` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/foodbase/cookie_raw` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/foodbase/cookier_raw` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/foodbase/halfcookie_raw` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/foodbase/halfcookier_raw` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw/apple` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw/berry` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw/cabbage` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw/crab` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw/fish` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw/meat` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw/mushroom` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/foodbase/handpieraw/potato` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/foodbase/nitzel` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/foodbase/piebottom` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/foodbase/schnitzel` | 0 |
@@ -3541,21 +3669,41 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/reagent_containers/food/snacks/rogue/friedegg/sausagebacon` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/friedegg/tiberian` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/friedegg/two` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/frostedcake` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/frostedcakeslice` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/frostedcakeuncooked` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/frosting` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/fruit/apple_sliced` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/fruit/pumpkin_sliced` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/frybirdbucket` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/frybread` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/fryfish/carp` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/fryfish/cod` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/fryfish/crab` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/fryfish/lobster` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/fryfish/lobster/meal` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/fryfish/plaice` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/fryfish/salmon` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/fryfish/sole` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/fryfish/sunny` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/garlickbass` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/handpie` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/handpie/apple` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/handpie/berry` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/handpie/cabbage` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/handpie/crab` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/handpie/fish` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/handpie/meat` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/handpie/potato` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/hcake` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/hcakeslice` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/hcakeuncooked` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/honey/spider` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/lemoncake` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/lemoncakeslice` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/lemoncoppiette` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/limecake` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/limecakeslice` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/meat` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/meat/bacon/fried` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/meat/brothbrique` | 0 |
@@ -3567,29 +3715,78 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/reagent_containers/food/snacks/rogue/meat/fatty/roast` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/meat/fish` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/meat/fish/fried` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/ham/boar` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/ham/sliced` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/ham/steamed` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/meat/mince/poultry` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/mince/rabbit` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/meat/mince/spider` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/meat/nitzel` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/meat/nitzel/schnitzel` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/meat/nitzel/wiener` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/pork_belly` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked/butter` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked/doublestacked` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked/spiced` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked/spiced/ducal` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet/fried` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/rabbit` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/rabbit/fried` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/rabbit/fried/garlick` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/rabbit/fried/garlick/cucumber` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/saiga` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/saiga/cooked` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/saiga_loins` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/saiga_loins/cooked` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/saiga_loins/cooked/sauced` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/saiga_loins_z` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/saiga_loins_z/cooked` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/saiga_loins_z/cooked/cubed` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/saiga_prime` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/saiga_prime/cooked` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/saiga_prime/cooked/choice` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/saiga_prime/cooked/choice/butter` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/saiga_prime_z` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/saiga_prime_z/cooked` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/saiga_prime_z/cooked/roses` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/saiga_ribs` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/saiga_ribs/cooked` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/saiga_ribs/cooked/glazed` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/saiga_ribs_z` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/saiga_ribs_z/cooked` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/saiga_ribs_z/cooked/crown` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/saiga_z` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/saiga_z/cooked` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/saiga_z/cooked/meatloaf` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/saiga_z/cooked/meatloaf_slice` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/meat/shellfish` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/meat/shellfish/fried` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/meat/spider/fried` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/steak/bear` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/steak/bear/fried` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/steak/beetle` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/steak/beetle/cooked` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/meat/steak/fried` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/meat/steak/gnoll` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/meat/steak/gnoll/seared` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/steak/rat` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/steak/rat/fried` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/steak/troll` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/steak/troll/fried` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/meat/steak/vilespawn` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/meat/steak/wolf/fried` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/meat/steak/wolf/fried/garlick` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meat/steak/wolf/fried/garlick/cucumber` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meattomatoplate` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/meattomatoplate_slice` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/menthacake` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/menthacakeslice` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/onionplaice` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/onionsteak` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/pastry` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/peacecake` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/peacecakeslice` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/pepperfish` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/pepperlobsta` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/peppersteak` | 0 |
@@ -3598,15 +3795,23 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/reagent_containers/food/snacks/rogue/pie/cooked/crab` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/pie/cooked/meat` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/pie/cooked/meat/fish` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/pie/cooked/meat/spider` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/pie/cooked/pot` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/pie/cooked/pumpkin` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/piedough` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/pieslice` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/pieslice/pumpkin` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/preserved/cabbage_fried` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/preserved/carrot_baked` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/preserved/eggplantstuffed` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/preserved/eggplantstuffedcheese` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/preserved/onion_fried` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/preserved/potato_baked` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/preserved/potato_fried` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/preserved/pumpkin_mashed` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/preserved/rice_cooked` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/psycrossbun` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/psycrossbun_jamtallowed` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/raisins/blackberry` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/raisins/lemon` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/raisins/lime` | 0 |
@@ -3615,16 +3820,40 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/reagent_containers/food/snacks/rogue/raisins/raspberry` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/raisins/strawberry` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/raisins/tangerine` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/raspberrycake` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/raspberrycakeslice` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/ricebeef` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/ricebeefcar` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/ricebird` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/ricebirdcar` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/ricecheese` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/riceegg` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/riceeggcheese` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/ricepork` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/riceporkcuc` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/riceshrimp` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/riceshrimpcar` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/ricewet` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/rocknutcake` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/rocknutcakeslice` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/sandwich/bacon` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/sandwich/cheese` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/sandwich/egg` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/sandwich/ham` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/sandwich/salami` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/sandwich/salo` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/steakcarrotonion` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/strawberrycake` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/strawberrycakeslice` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/tangerinecake` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/tangerinecakeslice` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/toastcrumbs` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/tomatoplate` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/tomatoplate_slice` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/trailmix` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/truffles/cooked` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/veg/cabbage_sliced` | 0 |
+| `/obj/item/reagent_containers/food/snacks/rogue/veg/cucumber_sliced` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/veg/garlick_clove` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/veg/potato_sliced` | 0 |
 | `/obj/item/reagent_containers/food/snacks/rogue/wienercabbage` | 0 |
@@ -3651,8 +3880,11 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/reagent_containers/food/snacks/sugarstatue/tree` | 0 |
 | `/obj/item/reagent_containers/food/snacks/sugarstatue/zmark` | 0 |
 | `/obj/item/reagent_containers/food/snacks/tallow/soft` | 0 |
+| `/obj/item/reagent_containers/food/snacks/veg/turnip_sliced` | 0 |
+| `/obj/item/reagent_containers/glass/bottle/alchemical/blessedwater` | 0 |
 | `/obj/item/reagent_containers/glass/bottle/alchemical/conpot` | 0 |
 | `/obj/item/reagent_containers/glass/bottle/alchemical/endpot` | 0 |
+| `/obj/item/reagent_containers/glass/bottle/alchemical/fermented_crab` | 0 |
 | `/obj/item/reagent_containers/glass/bottle/alchemical/intpot` | 0 |
 | `/obj/item/reagent_containers/glass/bottle/alchemical/lucpot` | 0 |
 | `/obj/item/reagent_containers/glass/bottle/alchemical/perpot` | 0 |
@@ -3666,6 +3898,9 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/reagent_containers/glass/bottle/frankenbrew/third` | 0 |
 | `/obj/item/reagent_containers/glass/bottle/revival` | 0 |
 | `/obj/item/reagent_containers/glass/bottle/rogue/beer/blackgoat` | 0 |
+| `/obj/item/reagent_containers/glass/bottle/rogue/beer/kgunshochu` | 0 |
+| `/obj/item/reagent_containers/glass/bottle/rogue/beer/nocshine` | 0 |
+| `/obj/item/reagent_containers/glass/bottle/rogue/beer/whipwine` | 0 |
 | `/obj/item/reagent_containers/glass/bottle/rogue/berrypoison` | 0 |
 | `/obj/item/reagent_containers/glass/bottle/rogue/stampoison` | 0 |
 | `/obj/item/reagent_containers/glass/bottle/rogue/stampot` | 0 |
@@ -3729,7 +3964,10 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/repair_kit/bad` | 0 |
 | `/obj/item/repair_kit/metal` | 0 |
 | `/obj/item/repair_kit/metal/bad` | 0 |
+| `/obj/item/restraints/legcuffs/beartrap/crafted` | 0 |
 | `/obj/item/rogue/instrument/ztratocaster` | 0 |
+| `/obj/item/roguecoin/inqcoin` | 0 |
+| `/obj/item/roguecoin/silver/pile/wretchpile` | 0 |
 | `/obj/item/roguegear` | 0 |
 | `/obj/item/roguegear/wood/reliable` | 0 |
 | `/obj/item/roguegear/wood/unstable` | 0 |
@@ -3737,6 +3975,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/roguegem/amber` | 0 |
 | `/obj/item/roguegem/amethyst/naledi` | 0 |
 | `/obj/item/roguegem/blood_diamond` | 0 |
+| `/obj/item/roguegem/chitin` | 0 |
 | `/obj/item/roguegem/coral` | 0 |
 | `/obj/item/roguegem/houndgem` | 0 |
 | `/obj/item/roguegem/jade` | 0 |
@@ -3745,6 +3984,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/roguegem/turq` | 0 |
 | `/obj/item/roguekey/bath` | 0 |
 | `/obj/item/roguekey/craftermaster` | 0 |
+| `/obj/item/roguekey/custom` | 0 |
 | `/obj/item/roguekey/fancyroomiv` | 0 |
 | `/obj/item/roguekey/fancyroomv` | 0 |
 | `/obj/item/roguekey/hand` | 0 |
@@ -3789,6 +4029,8 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/rogueweapon/flail/peasantwarflail/blacksteel` | 0 |
 | `/obj/item/rogueweapon/flail/peasantwarflail/matthios` | 0 |
 | `/obj/item/rogueweapon/flail/peasantwarflail/silver` | 0 |
+| `/obj/item/rogueweapon/flail/peasantwarflail/stalker` | 0 |
+| `/obj/item/rogueweapon/flail/peasantwarflail/stalker/alt` | 0 |
 | `/obj/item/rogueweapon/flail/peasantwarflail/steel` | 0 |
 | `/obj/item/rogueweapon/flail/sflail/ancient` | 0 |
 | `/obj/item/rogueweapon/flail/sflail/ancient/decrepit` | 0 |
@@ -3805,6 +4047,8 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/rogueweapon/greataxe/steel/doublehead/graggar` | 0 |
 | `/obj/item/rogueweapon/greatsword/ancient` | 0 |
 | `/obj/item/rogueweapon/greatsword/avantyne` | 0 |
+| `/obj/item/rogueweapon/greatsword/bsword/psy/unforgotten` | 0 |
+| `/obj/item/rogueweapon/greatsword/elvish` | 0 |
 | `/obj/item/rogueweapon/greatsword/grenz/flamberge` | 0 |
 | `/obj/item/rogueweapon/greatsword/grenz/flamberge/blacksteel` | 0 |
 | `/obj/item/rogueweapon/greatsword/grenz/oathmarked` | 0 |
@@ -3813,6 +4057,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/rogueweapon/halberd/bardiche` | 0 |
 | `/obj/item/rogueweapon/halberd/bardiche/ancient` | 0 |
 | `/obj/item/rogueweapon/halberd/bardiche/ancient/decrepit` | 0 |
+| `/obj/item/rogueweapon/halberd/bardiche/stalker` | 0 |
 | `/obj/item/rogueweapon/halberd/blacksteel` | 0 |
 | `/obj/item/rogueweapon/halberd/glaive` | 0 |
 | `/obj/item/rogueweapon/halberd/psyhalberd` | 0 |
@@ -3832,6 +4077,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/rogueweapon/huntingknife/idagger/navaja/freifechter` | 0 |
 | `/obj/item/rogueweapon/huntingknife/idagger/silver/psydagger` | 0 |
 | `/obj/item/rogueweapon/huntingknife/idagger/silver/stake/preblessed/psy` | 0 |
+| `/obj/item/rogueweapon/huntingknife/idagger/steel/corroded` | 0 |
 | `/obj/item/rogueweapon/huntingknife/idagger/steel/dirk` | 0 |
 | `/obj/item/rogueweapon/huntingknife/idagger/steel/elvish` | 0 |
 | `/obj/item/rogueweapon/huntingknife/idagger/steel/holysee` | 0 |
@@ -3870,6 +4116,8 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/rogueweapon/mace/gold/king` | 0 |
 | `/obj/item/rogueweapon/mace/maul` | 0 |
 | `/obj/item/rogueweapon/mace/maul/grand` | 0 |
+| `/obj/item/rogueweapon/mace/maul/spiked` | 0 |
+| `/obj/item/rogueweapon/mace/maul/steel` | 0 |
 | `/obj/item/rogueweapon/mace/oar` | 0 |
 | `/obj/item/rogueweapon/mace/steel/ancient/decrepit` | 0 |
 | `/obj/item/rogueweapon/mace/steel/silver` | 0 |
@@ -3941,6 +4189,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/rogueweapon/spellbook/greater` | 0 |
 | `/obj/item/rogueweapon/stoneaxe/battle/blacksteel` | 0 |
 | `/obj/item/rogueweapon/stoneaxe/battle/psyaxe` | 0 |
+| `/obj/item/rogueweapon/stoneaxe/battle/steppesman` | 0 |
 | `/obj/item/rogueweapon/stoneaxe/battle/steppesman/chupa` | 0 |
 | `/obj/item/rogueweapon/stoneaxe/boneaxe` | 0 |
 | `/obj/item/rogueweapon/stoneaxe/handaxe/copper` | 0 |
@@ -3975,6 +4224,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/rogueweapon/sword/long/church` | 0 |
 | `/obj/item/rogueweapon/sword/long/dec` | 0 |
 | `/obj/item/rogueweapon/sword/long/elf` | 0 |
+| `/obj/item/rogueweapon/sword/long/elf/stalker` | 0 |
 | `/obj/item/rogueweapon/sword/long/etruscan` | 0 |
 | `/obj/item/rogueweapon/sword/long/exe/berserk` | 0 |
 | `/obj/item/rogueweapon/sword/long/exe/berserk/dragonslayer` | 0 |
@@ -3984,17 +4234,22 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/rogueweapon/sword/long/exe/silver` | 0 |
 | `/obj/item/rogueweapon/sword/long/fencerguy` | 0 |
 | `/obj/item/rogueweapon/sword/long/greatkhopesh` | 0 |
+| `/obj/item/rogueweapon/sword/long/heirloom` | 0 |
 | `/obj/item/rogueweapon/sword/long/kriegmesser` | 0 |
 | `/obj/item/rogueweapon/sword/long/kriegmesser/silver` | 0 |
 | `/obj/item/rogueweapon/sword/long/kriegmesser/ssangsudo` | 0 |
+| `/obj/item/rogueweapon/sword/long/kriegmesser/stalker` | 0 |
 | `/obj/item/rogueweapon/sword/long/marlin` | 0 |
 | `/obj/item/rogueweapon/sword/long/oathkeeper` | 0 |
 | `/obj/item/rogueweapon/sword/long/psysword` | 0 |
 | `/obj/item/rogueweapon/sword/long/rhomphaia` | 0 |
 | `/obj/item/rogueweapon/sword/long/rhomphaia/copper` | 0 |
+| `/obj/item/rogueweapon/sword/long/rhomphaia/stalker` | 0 |
 | `/obj/item/rogueweapon/sword/long/shotel` | 0 |
 | `/obj/item/rogueweapon/sword/long/shotel/iron` | 0 |
+| `/obj/item/rogueweapon/sword/long/shotel/stalker` | 0 |
 | `/obj/item/rogueweapon/sword/long/silver` | 0 |
+| `/obj/item/rogueweapon/sword/long/stalker` | 0 |
 | `/obj/item/rogueweapon/sword/long/undivided` | 0 |
 | `/obj/item/rogueweapon/sword/rapier/blacksteel` | 0 |
 | `/obj/item/rogueweapon/sword/rapier/courtphysician` | 0 |
@@ -4007,6 +4262,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/rogueweapon/sword/sabre/dec` | 0 |
 | `/obj/item/rogueweapon/sword/sabre/elf` | 0 |
 | `/obj/item/rogueweapon/sword/sabre/freifechter` | 0 |
+| `/obj/item/rogueweapon/sword/sabre/hook/stalker` | 0 |
 | `/obj/item/rogueweapon/sword/sabre/mulyeog/rumahench` | 0 |
 | `/obj/item/rogueweapon/sword/sabre/newmoon` | 0 |
 | `/obj/item/rogueweapon/sword/sabre/shamshir` | 0 |
@@ -4014,6 +4270,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/rogueweapon/sword/short` | 0 |
 | `/obj/item/rogueweapon/sword/short/ancient` | 0 |
 | `/obj/item/rogueweapon/sword/short/ancient/decrepit` | 0 |
+| `/obj/item/rogueweapon/sword/short/elf` | 0 |
 | `/obj/item/rogueweapon/sword/short/falchion` | 0 |
 | `/obj/item/rogueweapon/sword/short/gladius` | 0 |
 | `/obj/item/rogueweapon/sword/short/gladius/ancient` | 0 |
@@ -4040,6 +4297,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/rogueweapon/whip/urumi/iron` | 0 |
 | `/obj/item/rogueweapon/whip/urumi/silver` | 0 |
 | `/obj/item/rogueweapon/whip/urumi/silver/psydonic` | 0 |
+| `/obj/item/rogueweapon/whip/urumi/spider` | 0 |
 | `/obj/item/rogueweapon/woodstaff/` | 0 |
 | `/obj/item/rogueweapon/woodstaff/implement` | 0 |
 | `/obj/item/rogueweapon/woodstaff/implement/amethyst` | 0 |
@@ -4078,7 +4336,9 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/seal/prelate` | 0 |
 | `/obj/item/seal/steward` | 0 |
 | `/obj/item/seal/watchcaptain` | 0 |
+| `/obj/item/seeds/fyritius` | 0 |
 | `/obj/item/seeds/treesap` | 0 |
+| `/obj/item/seeds/turnip` | 0 |
 | `/obj/item/smokeshell` | 0 |
 | `/obj/item/sprue_funnel` | 0 |
 | `/obj/item/storage/backpack/rogue/artibackpack` | 0 |
@@ -4121,6 +4381,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/storage/belt/rogue/surgery_bag/empty` | 0 |
 | `/obj/item/storage/belt/rogue/surgery_bag/full/improv` | 0 |
 | `/obj/item/storage/detpack` | 0 |
+| `/obj/item/storage/fancy/shhig` | 0 |
 | `/obj/item/storage/gadget/messkit` | 0 |
 | `/obj/item/storage/hip/headhook` | 0 |
 | `/obj/item/storage/hip/headhook/bronze` | 0 |
@@ -4155,6 +4416,8 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/storage/magebag/starter` | 0 |
 | `/obj/item/storage/magebag/witch` | 0 |
 | `/obj/item/storage/meatbag` | 0 |
+| `/obj/item/storage/roguebag/heartfelt/armorer` | 0 |
+| `/obj/item/storage/roguebag/slaver/master` | 0 |
 | `/obj/item/tent_kit` | 0 |
 | `/obj/item/tent_kit/ger` | 0 |
 | `/obj/item/tent_kit/yurt` | 0 |
@@ -4167,8 +4430,10 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/item/undies/leotard` | 0 |
 | `/obj/item/undies/loinclothunder` | 0 |
 | `/obj/item/undies/panties` | 0 |
+| `/obj/item/zadcage` | 0 |
+| `/obj/item/zadpack` | 0 |
 
-## projectiles.dm (38 types)
+## projectiles.dm (39 types)
 
 | Type | Tiles |
 |---|---|
@@ -4198,6 +4463,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/projectile/bullet/reusable/bolt/heavyblunt` | 0 |
 | `/obj/projectile/bullet/reusable/bolt/holy` | 0 |
 | `/obj/projectile/bullet/reusable/heavy_bolt` | 0 |
+| `/obj/projectile/bullet/reusable/heavy_bolt/holy` | 0 |
 | `/obj/projectile/bullet/reusable/heavy_bolt/tempest` | 0 |
 | `/obj/projectile/bullet/reusable/sling_bullet/ancient` | 0 |
 | `/obj/projectile/bullet/reusable/sling_bullet/blacksteel` | 0 |
@@ -4211,7 +4477,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/obj/projectile/bullet/reusable/sling_bullet/stone` | 0 |
 | `/obj/projectile/bullet/sling_bullet` | 0 |
 
-## humans.dm (40 types)
+## humans.dm (41 types)
 
 | Type | Tiles |
 |---|---|
@@ -4255,8 +4521,9 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/mob/living/carbon/human/species/dwarfskeleton/ambush/knight` | 1 |
 | `/mob/living/carbon/human/species/goblin/npc` | 1 |
 | `/mob/living/carbon/human/species/skeleton/npc/bogguard/master` | 1 |
+| `/mob/living/carbon/human/species/skeleton/npc` | 0 |
 
-## mobs.dm (79 types)
+## mobs.dm (82 types)
 
 | Type | Tiles |
 |---|---|
@@ -4332,6 +4599,9 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/mob/living/simple_animal/hostile/retaliate/rogue/cow/cowlet` | 0 |
 | `/mob/living/simple_animal/hostile/retaliate/rogue/goat/goatlet` | 0 |
 | `/mob/living/simple_animal/hostile/retaliate/rogue/goat/goatletboy` | 0 |
+| `/mob/living/simple_animal/hostile/retaliate/rogue/horse/male/black/tame/saddled` | 0 |
+| `/mob/living/simple_animal/hostile/retaliate/rogue/horse/male/brown/tame/saddled` | 0 |
+| `/mob/living/simple_animal/hostile/retaliate/rogue/horse/male/white/tame/saddled` | 0 |
 | `/mob/living/simple_animal/hostile/retaliate/rogue/mirespider` | 0 |
 | `/mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigaboy` | 0 |
 | `/mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigakid` | 0 |
@@ -4408,15 +4678,10 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 | `/turf/open/floor/carpet/purple` | 170 |
 | `/turf/open/floor/carpet/stellar` | 160 |
 
-## Not ported (5 types, dropped from the map)
+## Not ported (0 types, dropped from the map)
 
 | Type | Tiles |
 |---|---|
-| `/obj/effect/mapping_helpers/access/locker` | 83 |
-| `/obj/effect/waterfall` | 54 |
-| `/obj/effect/mapping_helpers/floor_clothing_equipper` | 36 |
-| `/obj/effect/waterfall/acid` | 17 |
-| `/obj/effect/mapping_helpers/secret_door_creator` | 15 |
 
 ## Icons
 
@@ -4503,13 +4768,16 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 - `modular_redtard/rockhill/icons/modular/Creechers/icons/piggie.dmi` from Ratwood `modular/Creechers/icons/piggie.dmi`
 - `modular_redtard/rockhill/icons/modular/Mapping/icons/webbing.dmi` from Ratwood `modular/Mapping/icons/webbing.dmi`
 - `modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_baked.dmi` from Ratwood `modular/Neu_Food/icons/cooked/cooked_baked.dmi`
+- `modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_cakes.dmi` from Ratwood `modular/Neu_Food/icons/cooked/cooked_cakes.dmi`
 - `modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_deep_fried.dmi` from Ratwood `modular/Neu_Food/icons/cooked/cooked_deep_fried.dmi`
 - `modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_egg.dmi` from Ratwood `modular/Neu_Food/icons/cooked/cooked_egg.dmi`
 - `modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_fruits.dmi` from Ratwood `modular/Neu_Food/icons/cooked/cooked_fruits.dmi`
 - `modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_meat.dmi` from Ratwood `modular/Neu_Food/icons/cooked/cooked_meat.dmi`
 - `modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_meat_meal.dmi` from Ratwood `modular/Neu_Food/icons/cooked/cooked_meat_meal.dmi`
+- `modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_meat_saiga.dmi` from Ratwood `modular/Neu_Food/icons/cooked/cooked_meat_saiga.dmi`
 - `modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_pastry.dmi` from Ratwood `modular/Neu_Food/icons/cooked/cooked_pastry.dmi`
 - `modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_pies.dmi` from Ratwood `modular/Neu_Food/icons/cooked/cooked_pies.dmi`
+- `modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_rice.dmi` from Ratwood `modular/Neu_Food/icons/cooked/cooked_rice.dmi`
 - `modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_seafood.dmi` from Ratwood `modular/Neu_Food/icons/cooked/cooked_seafood.dmi`
 - `modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_seafood_meal.dmi` from Ratwood `modular/Neu_Food/icons/cooked/cooked_seafood_meal.dmi`
 - `modular_redtard/rockhill/icons/modular/Neu_Food/icons/cooked/cooked_veggies.dmi` from Ratwood `modular/Neu_Food/icons/cooked/cooked_veggies.dmi`
@@ -4532,11 +4800,13 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 - `modular_redtard/rockhill/icons/modular/Neu_Food/icons/others/honey.dmi` from Ratwood `modular/Neu_Food/icons/others/honey.dmi`
 - `modular_redtard/rockhill/icons/modular/Neu_Food/icons/others/preserved_meat.dmi` from Ratwood `modular/Neu_Food/icons/others/preserved_meat.dmi`
 - `modular_redtard/rockhill/icons/modular/Neu_Food/icons/others/sweet.dmi` from Ratwood `modular/Neu_Food/icons/others/sweet.dmi`
+- `modular_redtard/rockhill/icons/modular/Neu_Food/icons/raw/raw_cakes.dmi` from Ratwood `modular/Neu_Food/icons/raw/raw_cakes.dmi`
 - `modular_redtard/rockhill/icons/modular/Neu_Food/icons/raw/raw_deep_fried.dmi` from Ratwood `modular/Neu_Food/icons/raw/raw_deep_fried.dmi`
 - `modular_redtard/rockhill/icons/modular/Neu_Food/icons/raw/raw_dough.dmi` from Ratwood `modular/Neu_Food/icons/raw/raw_dough.dmi`
 - `modular_redtard/rockhill/icons/modular/Neu_Food/icons/raw/raw_fish.dmi` from Ratwood `modular/Neu_Food/icons/raw/raw_fish.dmi`
 - `modular_redtard/rockhill/icons/modular/Neu_Food/icons/raw/raw_fruit.dmi` from Ratwood `modular/Neu_Food/icons/raw/raw_fruit.dmi`
 - `modular_redtard/rockhill/icons/modular/Neu_Food/icons/raw/raw_meat.dmi` from Ratwood `modular/Neu_Food/icons/raw/raw_meat.dmi`
+- `modular_redtard/rockhill/icons/modular/Neu_Food/icons/raw/raw_meat_saiga.dmi` from Ratwood `modular/Neu_Food/icons/raw/raw_meat_saiga.dmi`
 - `modular_redtard/rockhill/icons/modular/Neu_Food/icons/raw/raw_pies.dmi` from Ratwood `modular/Neu_Food/icons/raw/raw_pies.dmi`
 - `modular_redtard/rockhill/icons/modular/Neu_Food/icons/raw/raw_veggies.dmi` from Ratwood `modular/Neu_Food/icons/raw/raw_veggies.dmi`
 - `modular_redtard/rockhill/icons/modular/icons/mob/collars_leashes.dmi` from Ratwood `modular/icons/mob/collars_leashes.dmi`
@@ -4547,6 +4817,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 - `modular_redtard/rockhill/icons/modular/icons/obj/lewd/chastity.dmi` from Ratwood `modular/icons/obj/lewd/chastity.dmi`
 - `modular_redtard/rockhill/icons/modular/icons/obj/lewd/dildo.dmi` from Ratwood `modular/icons/obj/lewd/dildo.dmi`
 - `modular_redtard/rockhill/icons/modular/icons/obj/pillory.dmi` from Ratwood `modular/icons/obj/pillory.dmi`
+- `modular_redtard/rockhill/icons/modular_azurepeak/icons/clothing/mercmedals.dmi` from Ratwood `modular_azurepeak/icons/clothing/mercmedals.dmi`
 - `modular_redtard/rockhill/icons/modular_azurepeak/icons/obj/items/Hurlstrap.dmi` from Ratwood `modular_azurepeak/icons/obj/items/Hurlstrap.dmi`
 - `modular_redtard/rockhill/icons/modular_azurepeak/icons/obj/items/bombdolier.dmi` from Ratwood `modular_azurepeak/icons/obj/items/bombdolier.dmi`
 - `modular_redtard/rockhill/icons/modular_azurepeak/icons/obj/items/cosmetics.dmi` from Ratwood `modular_azurepeak/icons/obj/items/cosmetics.dmi`
@@ -4581,6 +4852,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 - `modular_redtard/rockhill/icons/modular_hearthstone/icons/obj/items/clothes/on_mob/dress.dmi` from Ratwood `modular_hearthstone/icons/obj/items/clothes/on_mob/dress.dmi`
 - `modular_redtard/rockhill/icons/modular_hearthstone/icons/obj/items/clothes/stockings.dmi` from Ratwood `modular_hearthstone/icons/obj/items/clothes/stockings.dmi`
 - `modular_redtard/rockhill/icons/modular_hearthstone/icons/obj/items/signalhorn.dmi` from Ratwood `modular_hearthstone/icons/obj/items/signalhorn.dmi`
+- `modular_redtard/rockhill/icons/modular_helmsguard/icons/mob/horse.dmi` from Ratwood `modular_helmsguard/icons/mob/horse.dmi`
 - `modular_redtard/rockhill/icons/modular_helmsguard/icons/obj/items/arquebus_items.dmi` from Ratwood `modular_helmsguard/icons/obj/items/arquebus_items.dmi`
 - `modular_redtard/rockhill/icons/modular_helmsguard/icons/weapons/arquebus.dmi` from Ratwood `modular_helmsguard/icons/weapons/arquebus.dmi`
 - `modular_redtard/rockhill/icons/modular_rmh/icons/clothing/armor/corset.dmi` from Ratwood `modular_rmh/icons/clothing/armor/corset.dmi`
@@ -4788,6 +5060,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 - `modular_redtard/rockhill/icons/roguetown/items/parasols64.dmi` from Ratwood `icons/roguetown/items/parasols64.dmi`
 - `modular_redtard/rockhill/icons/roguetown/items/perfume.dmi` from Ratwood `icons/roguetown/items/perfume.dmi`
 - `modular_redtard/rockhill/icons/roguetown/items/produce.dmi` from Ratwood `icons/roguetown/items/produce.dmi`
+- `modular_redtard/rockhill/icons/roguetown/items/smokebox.dmi` from Ratwood `icons/roguetown/items/smokebox.dmi`
 - `modular_redtard/rockhill/icons/roguetown/items/stamps.dmi` from Ratwood `icons/roguetown/items/stamps.dmi`
 - `modular_redtard/rockhill/icons/roguetown/items/surgery.dmi` from Ratwood `icons/roguetown/items/surgery.dmi`
 - `modular_redtard/rockhill/icons/roguetown/items/valuable.dmi` from Ratwood `icons/roguetown/items/valuable.dmi`
@@ -4836,6 +5109,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 - `modular_redtard/rockhill/icons/roguetown/misc/wallfireblue.dmi` from Ratwood `icons/roguetown/misc/wallfireblue.dmi`
 - `modular_redtard/rockhill/icons/roguetown/misc/waterwheel.dmi` from Ratwood `icons/roguetown/misc/waterwheel.dmi`
 - `modular_redtard/rockhill/icons/roguetown/misc/windmill.dmi` from Ratwood `icons/roguetown/misc/windmill.dmi`
+- `modular_redtard/rockhill/icons/roguetown/misc/zadcage.dmi` from Ratwood `icons/roguetown/misc/zadcage.dmi`
 - `modular_redtard/rockhill/icons/roguetown/misc/zadcote.dmi` from Ratwood `icons/roguetown/misc/zadcote.dmi`
 - `modular_redtard/rockhill/icons/roguetown/mob/cabbit.dmi` from Ratwood `icons/roguetown/mob/cabbit.dmi`
 - `modular_redtard/rockhill/icons/roguetown/mob/monster/badger.dmi` from Ratwood `icons/roguetown/mob/monster/badger.dmi`
@@ -4908,14 +5182,7 @@ Ratwood revision: `9139abc2da265927eda1f31d04364f942dcb6f4a` (2026-10-26).
 - `modular_redtard/rockhill/icons/turf/roguewall.dmi` from Ratwood `icons/turf/roguewall.dmi`
 - `modular_redtard/rockhill/icons/turf/walls/stone_wall.dmi` from Ratwood `icons/turf/walls/stone_wall.dmi`
 
-## Restricted assets (not copied)
-
-Their folder carries a proprietary licence that forbids redistribution and use outside Ratwood (`port.assets.restricted_licenses`). The port never copies them; the types that use them get no sprite.
-
-- `icons/roguetown/clothing/licensed-infraredbaron/LICENSE.md`: `/obj/item/clothing/cloak/citywatch`, `/obj/item/clothing/head/roguetown/duchess_hood`, `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/duchess`, `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/duke`, `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/hand`, `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/heir`, `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/heiress`, `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/magos`, `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/steward`
-- `modular_deserttown/icons/clothing/LICENSE.md`: `/obj/item/clothing/head/roguetown/turban`, `/obj/item/clothing/head/roguetown/turban/fancypurple`, `/obj/item/clothing/mask/rogue/exoticsilkmask/green`, `/obj/item/clothing/mask/rogue/exoticsilkmask/red`, `/obj/item/clothing/suit/roguetown/shirt/dress/thawb/beige`, `/obj/item/clothing/suit/roguetown/shirt/exoticsilkbra/green`, `/obj/item/clothing/suit/roguetown/shirt/exoticsilkbra/red`, `/obj/item/clothing/suit/roguetown/shirt/robe/bisht/beige`, `/obj/item/clothing/suit/roguetown/shirt/robe/bisht/bluegrey`, `/obj/item/clothing/under/roguetown/sirwal`, `/obj/item/clothing/under/roguetown/thong`, `/obj/item/storage/belt/rogue/leather/cloth/sash`, `/obj/item/storage/belt/rogue/leather/exoticsilkbelt/skirtgreen`, `/obj/item/storage/belt/rogue/leather/exoticsilkbelt/skirtred`, `/obj/item/storage/belt/rogue/leather/noblesash`
-
-## Items without a world sprite (44)
+## Items without a world sprite (49)
 
 Ratwood names an `icon_state` its sheet does not have (a sprite chosen at runtime, or a broken one). The port writes `icon_state = null`, as TG does for an item with no sprite, so the TG icon tests pass and the item stays listed here.
 
@@ -4923,29 +5190,34 @@ Ratwood names an `icon_state` its sheet does not have (a sprite chosen at runtim
 |---|---|---|
 | `/obj/item/book/rogue/secret/xylix` | `modular_redtard/rockhill/icons/roguetown/items/books.dmi` | `xylix_0` |
 | `/obj/item/clothing/cloak/cape/rogue` | `modular_redtard/rockhill/icons/roguetown/clothing/cloaks.dmi` | `roguecape` |
-| `/obj/item/clothing/cloak/citywatch` | `restricted licence` | `citywatch_cape` |
-| `/obj/item/clothing/head/roguetown/duchess_hood` | `restricted licence` | `duchess_hood` |
-| `/obj/item/clothing/head/roguetown/turban` | `restricted licence` | `turban` |
-| `/obj/item/clothing/head/roguetown/turban/fancypurple` | `restricted licence` | `purple_hood` |
+| `/obj/item/clothing/cloak/citywatch` | `excluded folder` | `citywatch_cape` |
+| `/obj/item/clothing/cloak/citywatch/janissary` | `excluded folder` | `jan` |
+| `/obj/item/clothing/head/roguetown/duchess_hood` | `excluded folder` | `duchess_hood` |
+| `/obj/item/clothing/head/roguetown/helmet/janissaryhelm` | `excluded folder` | `mamhelm` |
+| `/obj/item/clothing/head/roguetown/turban` | `excluded folder` | `turban` |
+| `/obj/item/clothing/head/roguetown/turban/fancypurple` | `excluded folder` | `purple_hood` |
 | `/obj/item/clothing/mask/cigarette/rollie/zigar/cheroot` | `modular_redtard/rockhill/icons/roguetown/items/lighting.dmi` | `stogieoff` |
-| `/obj/item/clothing/mask/rogue/exoticsilkmask/green` | `restricted licence` | `exoticsilkmaskg` |
-| `/obj/item/clothing/mask/rogue/exoticsilkmask/red` | `restricted licence` | `exoticsilkmaskr` |
-| `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/duchess` | `restricted licence` | `duchess` |
-| `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/duke` | `restricted licence` | `duke` |
-| `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/hand` | `restricted licence` | `hand` |
-| `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/heir` | `restricted licence` | `heir` |
-| `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/heiress` | `restricted licence` | `heiress` |
-| `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/magos` | `restricted licence` | `magos` |
-| `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/steward` | `restricted licence` | `steward` |
-| `/obj/item/clothing/suit/roguetown/shirt/dress/thawb/beige` | `restricted licence` | `thawb` |
-| `/obj/item/clothing/suit/roguetown/shirt/exoticsilkbra/green` | `restricted licence` | `exoticsilkbrag` |
-| `/obj/item/clothing/suit/roguetown/shirt/exoticsilkbra/red` | `restricted licence` | `exoticsilkbrar` |
-| `/obj/item/clothing/suit/roguetown/shirt/robe/bisht/beige` | `restricted licence` | `greythawb` |
-| `/obj/item/clothing/suit/roguetown/shirt/robe/bisht/bluegrey` | `restricted licence` | `bluethawb` |
+| `/obj/item/clothing/mask/rogue/exoticsilkmask/green` | `excluded folder` | `exoticsilkmaskg` |
+| `/obj/item/clothing/mask/rogue/exoticsilkmask/red` | `excluded folder` | `exoticsilkmaskr` |
+| `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/anthrax` | `modular_redtard/rockhill/icons/modular_azurepeak/icons/clothing/mercmedals.dmi` | `spider` |
+| `/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/janissary` | `excluded folder` | `mamaluke` |
+| `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/duchess` | `excluded folder` | `duchess` |
+| `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/duke` | `excluded folder` | `duke` |
+| `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/hand` | `excluded folder` | `hand` |
+| `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/heir` | `excluded folder` | `heir` |
+| `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/heiress` | `excluded folder` | `heiress` |
+| `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/magos` | `excluded folder` | `magos` |
+| `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/steward` | `excluded folder` | `steward` |
+| `/obj/item/clothing/suit/roguetown/shirt/dress/thawb/beige` | `excluded folder` | `thawb` |
+| `/obj/item/clothing/suit/roguetown/shirt/exoticsilkbra/green` | `excluded folder` | `exoticsilkbrag` |
+| `/obj/item/clothing/suit/roguetown/shirt/exoticsilkbra/red` | `excluded folder` | `exoticsilkbrar` |
+| `/obj/item/clothing/suit/roguetown/shirt/robe/bisht/beige` | `excluded folder` | `greythawb` |
+| `/obj/item/clothing/suit/roguetown/shirt/robe/bisht/bluegrey` | `excluded folder` | `bluethawb` |
 | `/obj/item/clothing/suit/roguetown/shirt/undershirt/easttats` | `modular_redtard/rockhill/icons/roguetown/clothing/shirts.dmi` | `easttats` |
-| `/obj/item/clothing/under/roguetown/sirwal` | `restricted licence` | `sirwal` |
-| `/obj/item/clothing/under/roguetown/thong` | `restricted licence` | `thong` |
+| `/obj/item/clothing/under/roguetown/sirwal` | `excluded folder` | `sirwal` |
+| `/obj/item/clothing/under/roguetown/thong` | `excluded folder` | `thong` |
 | `/obj/item/mobilestove` | `modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi` | `hobostovep` |
+| `/obj/item/natural/dirtclod/snow` | `modular_redtard/rockhill/icons/roguetown/items/natural.dmi` | `snow1` |
 | `/obj/item/natural/rock/random_ore` | `modular_redtard/rockhill/icons/roguetown/items/natural.dmi` | `stonerandom` |
 | `/obj/item/reagent_containers/food/snacks/fat/salo/slice` | `modular_redtard/rockhill/icons/modular/Neu_Food/icons/others/preserved_meat.dmi` | `saloslice` |
 | `/obj/item/reagent_containers/food/snacks/fish` | `modular_redtard/rockhill/icons/modular/Neu_Food/icons/raw/raw_fish.dmi` | `carp` |
@@ -4958,15 +5230,15 @@ Ratwood names an `icon_state` its sheet does not have (a sprite chosen at runtim
 | `/obj/item/roguekey` | `modular_redtard/rockhill/icons/roguetown/items/keys.dmi` | `iron` |
 | `/obj/item/rogueweapon/hammer` | `modular_redtard/rockhill/icons/roguetown/weapons/tools.dmi` | `hammer` |
 | `/obj/item/rogueweapon/woodstaff/implement/greater/sojourner` | `modular_redtard/rockhill/icons/obj/items/staffs.dmi` | `psystaff` |
-| `/obj/item/storage/belt/rogue/leather/cloth/sash` | `restricted licence` | `sashgrey` |
-| `/obj/item/storage/belt/rogue/leather/exoticsilkbelt/skirtgreen` | `restricted licence` | `exoticsilkskirt2` |
-| `/obj/item/storage/belt/rogue/leather/exoticsilkbelt/skirtred` | `restricted licence` | `exoticsilkskirt` |
-| `/obj/item/storage/belt/rogue/leather/noblesash` | `restricted licence` | `noblesash` |
+| `/obj/item/storage/belt/rogue/leather/cloth/sash` | `excluded folder` | `sashgrey` |
+| `/obj/item/storage/belt/rogue/leather/exoticsilkbelt/skirtgreen` | `excluded folder` | `exoticsilkskirt2` |
+| `/obj/item/storage/belt/rogue/leather/exoticsilkbelt/skirtred` | `excluded folder` | `exoticsilkskirt` |
+| `/obj/item/storage/belt/rogue/leather/noblesash` | `excluded folder` | `noblesash` |
 | `/obj/item/undies/loinclothunder` | `modular_redtard/rockhill/icons/roguetown/items/misc.dmi` | `loinclothunder` |
 | `/obj/machinery/light/rogue` | `modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi` | `tube` |
 | `/obj/machinery/light/rogue/campfire/pyre` | `modular_redtard/rockhill/icons/roguetown/misc/tallstructure.dmi` | `pyre1` |
 
-## Wearables without a worn sprite (351)
+## Wearables without a worn sprite (374)
 
 No sheet holds their worn state: `worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'` (one empty state) and `worn_icon_state = null`, the TG way to say "no worn sprite".
 
@@ -4996,6 +5268,7 @@ No sheet holds their worn state: `worn_icon = 'modular_redtard/rockhill/icons/bl
 - `/obj/item/ammo_casing/caseless/rogue/bolt/pyro`
 - `/obj/item/ammo_casing/caseless/rogue/bolt/water`
 - `/obj/item/ammo_casing/caseless/rogue/heavy_bolt`
+- `/obj/item/ammo_casing/caseless/rogue/heavy_bolt/holy`
 - `/obj/item/ammo_casing/caseless/rogue/heavy_bolt/tempest`
 - `/obj/item/ammo_casing/caseless/rogue/javelin`
 - `/obj/item/ammo_casing/caseless/rogue/javelin/blacksteel`
@@ -5023,6 +5296,7 @@ No sheet holds their worn state: `worn_icon = 'modular_redtard/rockhill/icons/bl
 - `/obj/item/clothing/barding/fogbeast/chain`
 - `/obj/item/clothing/cloak/cape/rogue`
 - `/obj/item/clothing/cloak/citywatch`
+- `/obj/item/clothing/cloak/citywatch/janissary`
 - `/obj/item/clothing/cloak/psyaltrist`
 - `/obj/item/clothing/cloak/undivided`
 - `/obj/item/clothing/gloves/roguetown/knuckles`
@@ -5036,12 +5310,30 @@ No sheet holds their worn state: `worn_icon = 'modular_redtard/rockhill/icons/bl
 - `/obj/item/clothing/gloves/roguetown/plate/shadowgauntlets`
 - `/obj/item/clothing/gloves/xylix`
 - `/obj/item/clothing/head/roguetown/duchess_hood`
+- `/obj/item/clothing/head/roguetown/helmet/janissaryhelm`
 - `/obj/item/clothing/head/roguetown/turban`
 - `/obj/item/clothing/head/roguetown/turban/fancypurple`
 - `/obj/item/clothing/mask/cigarette/rollie/zigar/cheroot`
 - `/obj/item/clothing/mask/rogue/exoticsilkmask/green`
 - `/obj/item/clothing/mask/rogue/exoticsilkmask/red`
 - `/obj/item/clothing/mask/rogue/facemask/carved/porcelainmask`
+- `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal`
+- `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/anthrax`
+- `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/atgervi`
+- `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/blackoak`
+- `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/condottiero`
+- `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/desertrider`
+- `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/forlorn`
+- `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/freifechter`
+- `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/grenzelhoft`
+- `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/grudgebearer`
+- `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/kazengun`
+- `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/oathmarked`
+- `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/routier`
+- `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/steppesman`
+- `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/underdweller`
+- `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/vaquero`
+- `/obj/item/clothing/neck/roguetown/luckcharm/mercmedal/warscholar`
 - `/obj/item/clothing/neck/roguetown/psicross/naledi`
 - `/obj/item/clothing/neck/roguetown/psicross/shell/bracelet`
 - `/obj/item/clothing/ring/active/shimmeringlens`
@@ -5077,6 +5369,7 @@ No sheet holds their worn state: `worn_icon = 'modular_redtard/rockhill/icons/bl
 - `/obj/item/clothing/ring/topazs`
 - `/obj/item/clothing/shoes/roguetown/boots/armor/dwarven`
 - `/obj/item/clothing/suit/roguetown/armor/armordress`
+- `/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/janissary`
 - `/obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/steppe`
 - `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/duchess`
 - `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/duke`
@@ -5131,6 +5424,7 @@ No sheet holds their worn state: `worn_icon = 'modular_redtard/rockhill/icons/bl
 - `/obj/item/roguekey/crafterguild`
 - `/obj/item/roguekey/craftermaster`
 - `/obj/item/roguekey/crier`
+- `/obj/item/roguekey/custom`
 - `/obj/item/roguekey/dungeon`
 - `/obj/item/roguekey/fancyroomi`
 - `/obj/item/roguekey/fancyroomii`
@@ -5199,6 +5493,7 @@ No sheet holds their worn state: `worn_icon = 'modular_redtard/rockhill/icons/bl
 - `/obj/item/roguekey/walls`
 - `/obj/item/roguekey/warden`
 - `/obj/item/rogueweapon/flail/peasantwarflail/matthios`
+- `/obj/item/rogueweapon/halberd/bardiche/stalker`
 - `/obj/item/rogueweapon/hoe`
 - `/obj/item/rogueweapon/hoe/blacksteel`
 - `/obj/item/rogueweapon/hoe/copper`
@@ -5447,6 +5742,7 @@ Area music and ambience are kept in the repository, as Ratwood keeps them, and r
 
 ## Sounds
 
+- `modular_redtard/rockhill/sound/blank.ogg` from Ratwood `sound/blank.ogg`
 - `modular_redtard/rockhill/sound/combat/Ranged/bow-draw-01.ogg` from Ratwood `sound/combat/Ranged/bow-draw-01.ogg`
 - `modular_redtard/rockhill/sound/combat/Ranged/crossbow-small-shot-02.ogg` from Ratwood `sound/combat/Ranged/crossbow-small-shot-02.ogg`
 - `modular_redtard/rockhill/sound/combat/Ranged/crossbow_big_shot.ogg` from Ratwood `sound/combat/Ranged/crossbow_big_shot.ogg`
@@ -5503,6 +5799,8 @@ Area music and ambience are kept in the repository, as Ratwood keeps them, and r
 - `modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg` from Ratwood `sound/combat/hits/bladed/genstab (1).ogg`
 - `modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg` from Ratwood `sound/combat/hits/bladed/genstab (2).ogg`
 - `modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg` from Ratwood `sound/combat/hits/bladed/genstab (3).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/bladed/genthrust (1).ogg` from Ratwood `sound/combat/hits/bladed/genthrust (1).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/bladed/genthrust (2).ogg` from Ratwood `sound/combat/hits/bladed/genthrust (2).ogg`
 - `modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (1).ogg` from Ratwood `sound/combat/hits/bladed/smallslash (1).ogg`
 - `modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (2).ogg` from Ratwood `sound/combat/hits/bladed/smallslash (2).ogg`
 - `modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (3).ogg` from Ratwood `sound/combat/hits/bladed/smallslash (3).ogg`
@@ -5525,8 +5823,25 @@ Area music and ambience are kept in the repository, as Ratwood keeps them, and r
 - `modular_redtard/rockhill/sound/combat/hits/hi_arrow2.ogg` from Ratwood `sound/combat/hits/hi_arrow2.ogg`
 - `modular_redtard/rockhill/sound/combat/hits/hi_bolt (1).ogg` from Ratwood `sound/combat/hits/hi_bolt (1).ogg`
 - `modular_redtard/rockhill/sound/combat/hits/hi_bolt (2).ogg` from Ratwood `sound/combat/hits/hi_bolt (2).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/hi_bolt (3).ogg` from Ratwood `sound/combat/hits/hi_bolt (3).ogg`
 - `modular_redtard/rockhill/sound/combat/hits/kick/kick.ogg` from Ratwood `sound/combat/hits/kick/kick.ogg`
+- `modular_redtard/rockhill/sound/combat/hits/onglass/glasshit.ogg` from Ratwood `sound/combat/hits/onglass/glasshit.ogg`
+- `modular_redtard/rockhill/sound/combat/hits/onmetal/grille (1).ogg` from Ratwood `sound/combat/hits/onmetal/grille (1).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/onmetal/grille (2).ogg` from Ratwood `sound/combat/hits/onmetal/grille (2).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/onmetal/grille (3).ogg` from Ratwood `sound/combat/hits/onmetal/grille (3).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/onmetal/metalimpact (1).ogg` from Ratwood `sound/combat/hits/onmetal/metalimpact (1).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/onmetal/metalimpact (2).ogg` from Ratwood `sound/combat/hits/onmetal/metalimpact (2).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/onmetal/sheet (1).ogg` from Ratwood `sound/combat/hits/onmetal/sheet (1).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/onmetal/sheet (2).ogg` from Ratwood `sound/combat/hits/onmetal/sheet (2).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/onstone/wallhit.ogg` from Ratwood `sound/combat/hits/onstone/wallhit.ogg`
+- `modular_redtard/rockhill/sound/combat/hits/onstone/wallhit2.ogg` from Ratwood `sound/combat/hits/onstone/wallhit2.ogg`
+- `modular_redtard/rockhill/sound/combat/hits/onstone/wallhit3.ogg` from Ratwood `sound/combat/hits/onstone/wallhit3.ogg`
 - `modular_redtard/rockhill/sound/combat/hits/onwood/destroyfurniture.ogg` from Ratwood `sound/combat/hits/onwood/destroyfurniture.ogg`
+- `modular_redtard/rockhill/sound/combat/hits/onwood/fence_hit1.ogg` from Ratwood `sound/combat/hits/onwood/fence_hit1.ogg`
+- `modular_redtard/rockhill/sound/combat/hits/onwood/fence_hit2.ogg` from Ratwood `sound/combat/hits/onwood/fence_hit2.ogg`
+- `modular_redtard/rockhill/sound/combat/hits/onwood/fence_hit3.ogg` from Ratwood `sound/combat/hits/onwood/fence_hit3.ogg`
+- `modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (1).ogg` from Ratwood `sound/combat/hits/onwood/woodimpact (1).ogg`
+- `modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (2).ogg` from Ratwood `sound/combat/hits/onwood/woodimpact (2).ogg`
 - `modular_redtard/rockhill/sound/combat/hits/pick/genpick (1).ogg` from Ratwood `sound/combat/hits/pick/genpick (1).ogg`
 - `modular_redtard/rockhill/sound/combat/hits/pick/genpick (2).ogg` from Ratwood `sound/combat/hits/pick/genpick (2).ogg`
 - `modular_redtard/rockhill/sound/combat/hits/punch/punch (1).ogg` from Ratwood `sound/combat/hits/punch/punch (1).ogg`
@@ -5564,19 +5879,32 @@ Area music and ambience are kept in the repository, as Ratwood keeps them, and r
 - `modular_redtard/rockhill/sound/combat/shieldbash_wood.ogg` from Ratwood `sound/combat/shieldbash_wood.ogg`
 - `modular_redtard/rockhill/sound/combat/shove.ogg` from Ratwood `sound/combat/shove.ogg`
 - `modular_redtard/rockhill/sound/combat/swingdelay_disrupted.ogg` from Ratwood `sound/combat/swingdelay_disrupted.ogg`
+- `modular_redtard/rockhill/sound/foley/breaksound.ogg` from Ratwood `sound/foley/breaksound.ogg`
+- `modular_redtard/rockhill/sound/foley/cartadd.ogg` from Ratwood `sound/foley/cartadd.ogg`
+- `modular_redtard/rockhill/sound/foley/cartdump.ogg` from Ratwood `sound/foley/cartdump.ogg`
 - `modular_redtard/rockhill/sound/foley/cloth_rip.ogg` from Ratwood `sound/foley/cloth_rip.ogg`
 - `modular_redtard/rockhill/sound/foley/coinphy (1).ogg` from Ratwood `sound/foley/coinphy (1).ogg`
 - `modular_redtard/rockhill/sound/foley/coinphy (2).ogg` from Ratwood `sound/foley/coinphy (2).ogg`
 - `modular_redtard/rockhill/sound/foley/coins1.ogg` from Ratwood `sound/foley/coins1.ogg`
 - `modular_redtard/rockhill/sound/foley/doors/creak.ogg` from Ratwood `sound/foley/doors/creak.ogg`
+- `modular_redtard/rockhill/sound/foley/doors/curtain.ogg` from Ratwood `sound/foley/doors/curtain.ogg`
 - `modular_redtard/rockhill/sound/foley/doors/lockmetal.ogg` from Ratwood `sound/foley/doors/lockmetal.ogg`
+- `modular_redtard/rockhill/sound/foley/dropsound/wooden_drop.ogg` from Ratwood `sound/foley/dropsound/wooden_drop.ogg`
+- `modular_redtard/rockhill/sound/foley/equip/rummaging-02.ogg` from Ratwood `sound/foley/equip/rummaging-02.ogg`
 - `modular_redtard/rockhill/sound/foley/grindblade.ogg` from Ratwood `sound/foley/grindblade.ogg`
+- `modular_redtard/rockhill/sound/foley/hit_rock.ogg` from Ratwood `sound/foley/hit_rock.ogg`
 - `modular_redtard/rockhill/sound/foley/ladder.ogg` from Ratwood `sound/foley/ladder.ogg`
 - `modular_redtard/rockhill/sound/foley/latch.ogg` from Ratwood `sound/foley/latch.ogg`
 - `modular_redtard/rockhill/sound/foley/nockarrow.ogg` from Ratwood `sound/foley/nockarrow.ogg`
+- `modular_redtard/rockhill/sound/foley/plantcross1.ogg` from Ratwood `sound/foley/plantcross1.ogg`
+- `modular_redtard/rockhill/sound/foley/plantcross2.ogg` from Ratwood `sound/foley/plantcross2.ogg`
+- `modular_redtard/rockhill/sound/foley/plantcross3.ogg` from Ratwood `sound/foley/plantcross3.ogg`
+- `modular_redtard/rockhill/sound/foley/plantcross4.ogg` from Ratwood `sound/foley/plantcross4.ogg`
 - `modular_redtard/rockhill/sound/foley/sewflesh.ogg` from Ratwood `sound/foley/sewflesh.ogg`
+- `modular_redtard/rockhill/sound/foley/shisha_gurgle.ogg` from Ratwood `sound/foley/shisha_gurgle.ogg`
 - `modular_redtard/rockhill/sound/foley/slap.ogg` from Ratwood `sound/foley/slap.ogg`
 - `modular_redtard/rockhill/sound/foley/slingload.ogg` from Ratwood `sound/foley/slingload.ogg`
+- `modular_redtard/rockhill/sound/foley/smash_rock.ogg` from Ratwood `sound/foley/smash_rock.ogg`
 - `modular_redtard/rockhill/sound/foley/torchfixtureput.ogg` from Ratwood `sound/foley/torchfixtureput.ogg`
 - `modular_redtard/rockhill/sound/foley/torchfixturetake.ogg` from Ratwood `sound/foley/torchfixturetake.ogg`
 - `modular_redtard/rockhill/sound/foley/woodclimb.ogg` from Ratwood `sound/foley/woodclimb.ogg`
@@ -5591,13 +5919,21 @@ Area music and ambience are kept in the repository, as Ratwood keeps them, and r
 - `modular_redtard/rockhill/sound/items/bsmithfail.ogg` from Ratwood `sound/items/bsmithfail.ogg`
 - `modular_redtard/rockhill/sound/items/firelight.ogg` from Ratwood `sound/items/firelight.ogg`
 - `modular_redtard/rockhill/sound/items/firesnuff.ogg` from Ratwood `sound/items/firesnuff.ogg`
+- `modular_redtard/rockhill/sound/items/flint.ogg` from Ratwood `sound/items/flint.ogg`
 - `modular_redtard/rockhill/sound/items/gem.ogg` from Ratwood `sound/items/gem.ogg`
 - `modular_redtard/rockhill/sound/items/quench_barrel1.ogg` from Ratwood `sound/items/quench_barrel1.ogg`
 - `modular_redtard/rockhill/sound/items/quench_barrel2.ogg` from Ratwood `sound/items/quench_barrel2.ogg`
+- `modular_redtard/rockhill/sound/misc/adrenaline_rush.ogg` from Ratwood `sound/misc/adrenaline_rush.ogg`
 - `modular_redtard/rockhill/sound/misc/area.ogg` from Ratwood `sound/misc/area.ogg`
 - `modular_redtard/rockhill/sound/misc/beep.ogg` from Ratwood `sound/misc/beep.ogg`
+- `modular_redtard/rockhill/sound/misc/bell_common.ogg` from Ratwood `sound/misc/bell_common.ogg`
+- `modular_redtard/rockhill/sound/misc/bleed (1).ogg` from Ratwood `sound/misc/bleed (1).ogg`
+- `modular_redtard/rockhill/sound/misc/bleed (2).ogg` from Ratwood `sound/misc/bleed (2).ogg`
+- `modular_redtard/rockhill/sound/misc/bleed (3).ogg` from Ratwood `sound/misc/bleed (3).ogg`
+- `modular_redtard/rockhill/sound/misc/boatbell.ogg` from Ratwood `sound/misc/boatbell.ogg`
 - `modular_redtard/rockhill/sound/misc/chestclose.ogg` from Ratwood `sound/misc/chestclose.ogg`
 - `modular_redtard/rockhill/sound/misc/chestopen.ogg` from Ratwood `sound/misc/chestopen.ogg`
+- `modular_redtard/rockhill/sound/misc/clockloop.ogg` from Ratwood `sound/misc/clockloop.ogg`
 - `modular_redtard/rockhill/sound/misc/coindispense.ogg` from Ratwood `sound/misc/coindispense.ogg`
 - `modular_redtard/rockhill/sound/misc/coininsert.ogg` from Ratwood `sound/misc/coininsert.ogg`
 - `modular_redtard/rockhill/sound/misc/cupboard_close.ogg` from Ratwood `sound/misc/cupboard_close.ogg`
@@ -5617,6 +5953,8 @@ Area music and ambience are kept in the repository, as Ratwood keeps them, and r
 - `modular_redtard/rockhill/sound/misc/midday.ogg` from Ratwood `sound/misc/midday.ogg`
 - `modular_redtard/rockhill/sound/misc/newday.ogg` from Ratwood `sound/misc/newday.ogg`
 - `modular_redtard/rockhill/sound/misc/nightfall.ogg` from Ratwood `sound/misc/nightfall.ogg`
+- `modular_redtard/rockhill/sound/misc/pressurepad_down.ogg` from Ratwood `sound/misc/pressurepad_down.ogg`
+- `modular_redtard/rockhill/sound/misc/pressurepad_up.ogg` from Ratwood `sound/misc/pressurepad_up.ogg`
 - `modular_redtard/rockhill/sound/misc/royal_decree.ogg` from Ratwood `sound/misc/royal_decree.ogg`
 - `modular_redtard/rockhill/sound/misc/royal_decree2.ogg` from Ratwood `sound/misc/royal_decree2.ogg`
 - `modular_redtard/rockhill/sound/misc/slide_wood (1).ogg` from Ratwood `sound/misc/slide_wood (1).ogg`
@@ -5624,6 +5962,14 @@ Area music and ambience are kept in the repository, as Ratwood keeps them, and r
 - `modular_redtard/rockhill/sound/misc/smelter_fin.ogg` from Ratwood `sound/misc/smelter_fin.ogg`
 - `modular_redtard/rockhill/sound/misc/smelter_sound.ogg` from Ratwood `sound/misc/smelter_sound.ogg`
 - `modular_redtard/rockhill/sound/misc/surrender.ogg` from Ratwood `sound/misc/surrender.ogg`
+- `modular_redtard/rockhill/sound/misc/treefall.ogg` from Ratwood `sound/misc/treefall.ogg`
+- `modular_redtard/rockhill/sound/misc/woodhit.ogg` from Ratwood `sound/misc/woodhit.ogg`
+- `modular_redtard/rockhill/sound/vo/mobs/ghost/skullpile_hit.ogg` from Ratwood `sound/vo/mobs/ghost/skullpile_hit.ogg`
+- `modular_redtard/rockhill/sound/vo/mobs/ghost/skullpile_loop.ogg` from Ratwood `sound/vo/mobs/ghost/skullpile_loop.ogg`
+- `modular_redtard/rockhill/sound/vo/mobs/plant/pain (1).ogg` from Ratwood `sound/vo/mobs/plant/pain (1).ogg`
+- `modular_redtard/rockhill/sound/vo/mobs/plant/pain (2).ogg` from Ratwood `sound/vo/mobs/plant/pain (2).ogg`
+- `modular_redtard/rockhill/sound/vo/mobs/plant/pain (3).ogg` from Ratwood `sound/vo/mobs/plant/pain (3).ogg`
+- `modular_redtard/rockhill/sound/vo/mobs/plant/pain (4).ogg` from Ratwood `sound/vo/mobs/plant/pain (4).ogg`
 - `modular_redtard/rockhill/sound/weather/rain/thunder_1.ogg` from Ratwood `sound/weather/rain/thunder_1.ogg`
 - `modular_redtard/rockhill/sound/weather/rain/thunder_2.ogg` from Ratwood `sound/weather/rain/thunder_2.ogg`
 - `modular_redtard/rockhill/sound/weather/rain/thunder_3.ogg` from Ratwood `sound/weather/rain/thunder_3.ogg`
@@ -5716,7 +6062,7 @@ Area music and ambience are kept in the repository, as Ratwood keeps them, and r
 | `/datum/job/roguetown/watchcaptain` | Watch Captain | /datum/job_department/rockhill_garrison |
 | `/datum/job/roguetown/wretch` | Wretch | /datum/job_department/rockhill_wanderers |
 
-## NPC people (40 types, 38 with a mind, 25 outfits)
+## NPC people (41 types, 39 with a mind, 25 outfits)
 
 | Type | Mind | Faction | Outfits |
 |---|---|---|---|
@@ -5743,6 +6089,7 @@ Area music and ambience are kept in the repository, as Ratwood keeps them, and r
 | `/mob/living/carbon/human/species/orc/npc/footsoldier` | hunts | orcs, station | `/datum/outfit/job/roguetown/orc/npc/footsoldier` |
 | `/mob/living/carbon/human/species/orc/npc/marauder` | hunts | orcs, station | `/datum/outfit/job/roguetown/orc/npc/marauder` |
 | `/mob/living/carbon/human/species/orc/npc/warlord` | hunts | orcs, station | `/datum/outfit/job/roguetown/orc/npc/warlord` |
+| `/mob/living/carbon/human/species/skeleton/npc` | hunts | undead | `/datum/outfit/job/roguetown/npc/skeleton` |
 | `/mob/living/carbon/human/species/skeleton/npc/bogguard` | hunts | undead | `/datum/outfit/job/roguetown/npc/skeleton/npc/bogguard` |
 | `/mob/living/carbon/human/species/skeleton/npc/bogguard/master` | hunts | undead | `/datum/outfit/job/roguetown/npc/skeleton/npc/bogguard/master` |
 | `/mob/living/carbon/human/species/skeleton/npc/cultist` | hunts | undead | `/datum/outfit/job/roguetown/skeleton/npc/cultist` |

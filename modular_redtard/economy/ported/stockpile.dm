@@ -10,6 +10,18 @@
 	passive_generation = 0
 	generation_price = 1
 
+/datum/roguestock/stockpile/sinew
+	name = "Sinew"
+	desc = "Tough animal tendon, of some alchemical and crafting use."
+	item_type = /obj/item/alch/sinew
+	category = "Alchemy"
+	base_price = 2
+	stockpile_amount = 0
+	stockpile_limit = 20
+	importexport_amt = 5
+	passive_generation = 0
+	generation_price = 1
+
 /datum/roguestock/stockpile/calendula
 	name = "Calendula"
 	desc = "Golden marigold flowers prized by apothecaries for healing salves."
@@ -103,6 +115,18 @@
 	item_type = /obj/item/reagent_containers/food/snacks/rogue/meat/poultry
 	category = "Animal"
 	base_price = 4
+	stockpile_amount = 2
+	stockpile_limit = 25
+	importexport_amt = 5
+	passive_generation = 0
+	generation_price = 1
+
+/datum/roguestock/stockpile/rabbit
+	name = "Cabbit Meat"
+	desc = "Edible flesh harvested from cabbits."
+	item_type = /obj/item/reagent_containers/food/snacks/rogue/meat/rabbit
+	category = "Animal"
+	base_price = 3
 	stockpile_amount = 2
 	stockpile_limit = 25
 	importexport_amt = 5
@@ -361,6 +385,18 @@
 	importexport_amt = 5
 	passive_generation = 0
 	generation_price = 2
+
+/datum/roguestock/stockpile/pumpkin
+	name = "Pumpkin"
+	desc = "The thick pumpkin rind shields a surprisingly dense fleshy interior."
+	item_type = /obj/item/natural/shellplant/pumpkin
+	category = "Fruit"
+	base_price = 3
+	stockpile_amount = 0
+	stockpile_limit = 40
+	importexport_amt = 5
+	passive_generation = 0
+	generation_price = 3
 
 /datum/roguestock/stockpile/iron_ingot
 	name = "Iron Ingot"
@@ -808,10 +844,46 @@
 	passive_generation = 0
 	generation_price = 1
 
+/datum/roguestock/stockpile/turnip
+	name = "Turnip"
+	desc = "A hardy root vegetable suitable for soups. Favored by the poor"
+	item_type = /obj/item/reagent_containers/food/snacks/grown/vegetable/turnip
+	category = "Vegetable"
+	base_price = 3
+	stockpile_amount = 10
+	stockpile_limit = 50
+	importexport_amt = 10
+	passive_generation = 0
+	generation_price = 1
+
 /datum/roguestock/stockpile/carrot
 	name = "Carrot"
 	desc = "A long vegetable said to help with eyesight."
 	item_type = /obj/item/reagent_containers/food/snacks/grown/carrot
+	category = "Vegetable"
+	base_price = 3
+	stockpile_amount = 10
+	stockpile_limit = 50
+	importexport_amt = 10
+	passive_generation = 0
+	generation_price = 1
+
+/datum/roguestock/stockpile/cucumber
+	name = "Cucumber"
+	desc = "A refreshing, long and green vegetable."
+	item_type = /obj/item/reagent_containers/food/snacks/grown/cucumber
+	category = "Vegetable"
+	base_price = 3
+	stockpile_amount = 10
+	stockpile_limit = 50
+	importexport_amt = 10
+	passive_generation = 0
+	generation_price = 1
+
+/datum/roguestock/stockpile/eggplant
+	name = "Eggplant"
+	desc = "A large, purple vegetable with a mild taste."
+	item_type = /obj/item/reagent_containers/food/snacks/grown/eggplant
 	category = "Vegetable"
 	base_price = 3
 	stockpile_amount = 10

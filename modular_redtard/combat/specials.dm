@@ -250,7 +250,7 @@
 	var/def_zone = rogue_zone_target(zone)
 	if(ishuman(target) && no_pen && !full_pen)
 		var/mob/living/carbon/human/armored = target
-		var/obj/item/clothing/worn = armored.rogue_best_armor(def_zone, rogue_bclass_to_armor(blade_class))
+		var/obj/item/clothing/worn = armored.rogue_best_armor(zone, rogue_bclass_to_armor(blade_class))
 		if(worn)
 			worn.rogue_armor_wear(damage)
 			howner.visible_message(span_warning("[name] strikes [target]'s [rogue_zone_name(zone)], but [worn] takes the blow!"))
@@ -259,7 +259,7 @@
 	if(!full_pen && ishuman(target))
 		var/mob/living/carbon/human/armored = target
 		var/datum/intent/intent = howner.rogue_strike_intent(weapon)
-		damage *= armored.rogue_armor_hit(def_zone, rogue_bclass_to_armor(blade_class), damage, intent ? intent.penfactor : ROGUE_PEN_NONE, rogue_wear_factor(weapon, intent), weapon, blade_class)
+		damage *= armored.rogue_armor_hit(zone, rogue_bclass_to_armor(blade_class), damage, intent ? intent.penfactor : ROGUE_PEN_NONE, rogue_wear_factor(weapon, intent), weapon, blade_class)
 	target.rogue_strike_notes = list()
 	var/damage_done = target.rogue_apply_armored_damage(damage, weapon ? weapon.damtype : BRUTE, def_zone, blocked, sharpness = rogue_bclass_sharpness(blade_class), attack_direction = get_dir(howner, target), attacking_item = weapon)
 	var/hit_sound = weapon ? weapon.hitsound : pick(GLOB.rogue_punch_hit_sounds)

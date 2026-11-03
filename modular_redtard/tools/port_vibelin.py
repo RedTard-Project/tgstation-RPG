@@ -2,8 +2,9 @@
 code/datums/gods and code/datums/culture, and its playable races (port_vibelin_races.py).
 
 The types keep Vibelin's paths (/datum/faith/..., /datum/patron/..., /datum/culture/...): TG has none of them, and
-Vibelin's Russian strings (localization/strings/chargen.txt) are keyed by those paths. Only the data is ported; a
-patron's prayers, devotion and miracles are Vanderlin's religion system and stay there. Species ids are Vibelin's
+Vibelin's Russian strings (localization/strings/chargen.txt) are keyed by those paths. Only the data is ported (with a
+culture's accent, heritage/accents.dm); a patron's prayers, devotion and miracles are Vanderlin's religion system and
+stay there. Species ids are Vibelin's
 mapped to this build's (VIBELIN_SPECIES_ID): "human" is TG's human, every other race is vib_<id>.
 
 Run from the repository root:  python modular_redtard/tools/port_vibelin.py [--vibelin ../Vibelin]
@@ -160,6 +161,7 @@ def main():
         print('patron traits this build lacks:', ', '.join(sorted(dropped_traits)))
 
     blocks = []
+    accent_names, _ = port_vibelin_races.accent_table(args.vibelin)
     for path in concrete(vibelin, ROOTS['culture']):
         block = [path]
         for var in ('name', 'description', 'pre_append'):
@@ -169,6 +171,10 @@ def main():
         ids = [species_id(porter.expand_define(t).strip('"')) for t in re.findall(r'SPEC_ID_[A-Z0-9_]+|"[a-z_]+"', vibelin.resolve(path, 'species') or '')]
         if ids:
             block.append('\tspecies = list(' + ', '.join(ids) + ')')
+        # The accent people of the culture may speak with (heritage/accents.dm).
+        accent = accent_names.get((vibelin.resolve(path, 'accent') or '').strip())
+        if accent and accent != port_vibelin_races.ACCENT_NONE:
+            block.append(f'\trogue_accent = "{accent}"')
         blocks.append(block)
     write('cultures', blocks)
 

@@ -16,11 +16,17 @@
 	swing_closed = FALSE
 	grant_resident_key = FALSE
 	resident_key_amount = 1
-	max_integrity = 2000
 	kickthresh = 15
 	repairable = TRUE
 	repair_cost_first = /obj/item/ingot/iron
 	repair_cost_second = /obj/item/ingot/iron
+	repair_skill = /datum/attribute/skill/craft/blacksmithing
+	max_integrity = 2000
+	resistance_flags = NONE
+	damage_deflection = 15
+	rockhill_dulling = "bash"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/combat/hits/onmetal/metalimpact (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/onmetal/metalimpact (2).ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 
 /obj/structure/mineral_door/rockhill/bars/tough
 	name = "tough bars"
@@ -40,11 +46,17 @@
 	swing_closed = FALSE
 	grant_resident_key = FALSE
 	resident_key_amount = 1
-	max_integrity = 2500
 	kickthresh = 15
 	repairable = TRUE
 	repair_cost_first = /obj/item/ingot/iron
 	repair_cost_second = /obj/item/ingot/iron
+	repair_skill = /datum/attribute/skill/craft/blacksmithing
+	max_integrity = 2500
+	resistance_flags = NONE
+	damage_deflection = 15
+	rockhill_dulling = "bash"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/combat/hits/onmetal/metalimpact (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/onmetal/metalimpact (2).ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 
 /obj/structure/mineral_door/rockhill/swing_door
 	name = "swing door"
@@ -64,11 +76,17 @@
 	swing_closed = TRUE
 	grant_resident_key = FALSE
 	resident_key_amount = 1
-	max_integrity = 500
 	kickthresh = 15
 	repairable = TRUE
 	repair_cost_first = /obj/item/grown/log/tree/small
 	repair_cost_second = /obj/item/grown/log/tree/small
+	repair_skill = /datum/attribute/skill/craft/carpentry
+	max_integrity = 500
+	resistance_flags = FLAMMABLE
+	damage_deflection = 12
+	rockhill_dulling = "bashchop"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (2).ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 
 /obj/structure/mineral_door/rockhill/wood
 	name = "door"
@@ -89,11 +107,17 @@
 	swing_closed = TRUE
 	grant_resident_key = FALSE
 	resident_key_amount = 1
-	max_integrity = 1000
 	kickthresh = 15
 	repairable = TRUE
 	repair_cost_first = /obj/item/grown/log/tree/small
 	repair_cost_second = /obj/item/grown/log/tree/small
+	repair_skill = /datum/attribute/skill/craft/carpentry
+	max_integrity = 1000
+	resistance_flags = FLAMMABLE
+	damage_deflection = 12
+	rockhill_dulling = "bashchop"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (2).ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 
 /obj/structure/mineral_door/rockhill/wood/bath/courtesan
 	name = "door"
@@ -116,12 +140,18 @@
 	resident_key_amount = 1
 	resident_key_type = /obj/item/roguekey/bath
 	resident_role = /datum/job/roguetown/nightmaiden
-	max_integrity = 1000
 	kickthresh = 15
 	repairable = TRUE
 	repair_cost_first = /obj/item/grown/log/tree/small
 	repair_cost_second = /obj/item/grown/log/tree/small
+	repair_skill = /datum/attribute/skill/craft/carpentry
 	resident_advclass = list("/datum/advclass/nightmaiden/concubine", "/datum/advclass/nightmaiden/courtesan", "/datum/advclass/nightmaiden/dominatrix")
+	max_integrity = 1000
+	resistance_flags = FLAMMABLE
+	damage_deflection = 12
+	rockhill_dulling = "bashchop"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (2).ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 
 /obj/structure/mineral_door/rockhill/wood/deadbolt
 	name = "door"
@@ -142,11 +172,17 @@
 	swing_closed = TRUE
 	grant_resident_key = FALSE
 	resident_key_amount = 1
-	max_integrity = 1000
 	kickthresh = 10
 	repairable = TRUE
 	repair_cost_first = /obj/item/grown/log/tree/small
 	repair_cost_second = /obj/item/grown/log/tree/small
+	repair_skill = /datum/attribute/skill/craft/carpentry
+	max_integrity = 1000
+	resistance_flags = FLAMMABLE
+	damage_deflection = 12
+	rockhill_dulling = "bashchop"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (2).ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 
 /obj/structure/mineral_door/rockhill/wood/deadbolt/shutter
 	name = "serving hatch"
@@ -167,11 +203,17 @@
 	swing_closed = TRUE
 	grant_resident_key = FALSE
 	resident_key_amount = 1
-	max_integrity = 250
 	kickthresh = 10
 	repairable = TRUE
 	repair_cost_first = /obj/item/grown/log/tree/small
 	repair_cost_second = /obj/item/grown/log/tree/small
+	repair_skill = /datum/attribute/skill/craft/carpentry
+	max_integrity = 250
+	resistance_flags = FLAMMABLE
+	damage_deflection = 12
+	rockhill_dulling = "bashchop"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (2).ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 
 /obj/structure/mineral_door/rockhill/wood/donjon
 	name = "door"
@@ -192,11 +234,17 @@
 	swing_closed = TRUE
 	grant_resident_key = FALSE
 	resident_key_amount = 1
-	max_integrity = 2000
 	kickthresh = 15
 	repairable = TRUE
 	repair_cost_first = /obj/item/grown/log/tree/small
 	repair_cost_second = /obj/item/ingot/iron
+	repair_skill = /datum/attribute/skill/craft/carpentry
+	max_integrity = 2000
+	resistance_flags = FLAMMABLE
+	damage_deflection = 12
+	rockhill_dulling = "bashchop"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/combat/hits/onmetal/metalimpact (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/onmetal/metalimpact (2).ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 
 /obj/structure/mineral_door/rockhill/wood/donjon/stone
 	name = "door"
@@ -217,11 +265,17 @@
 	swing_closed = TRUE
 	grant_resident_key = FALSE
 	resident_key_amount = 1
-	max_integrity = 1500
 	kickthresh = 15
 	repairable = TRUE
 	repair_cost_first = /obj/item/natural/stone
 	repair_cost_second = /obj/item/natural/stone
+	repair_skill = /datum/attribute/skill/craft/masonry
+	max_integrity = 1500
+	resistance_flags = FLAMMABLE
+	damage_deflection = 12
+	rockhill_dulling = "bashchop"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (2).ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 
 /obj/structure/mineral_door/rockhill/wood/donjon/stone/broken
 	name = "door"
@@ -242,11 +296,17 @@
 	swing_closed = TRUE
 	grant_resident_key = FALSE
 	resident_key_amount = 1
-	max_integrity = 1500
 	kickthresh = 15
 	repairable = FALSE
 	repair_cost_first = /obj/item/natural/stone
 	repair_cost_second = /obj/item/natural/stone
+	repair_skill = /datum/attribute/skill/craft/masonry
+	max_integrity = 1500
+	resistance_flags = FLAMMABLE
+	damage_deflection = 12
+	rockhill_dulling = "bashchop"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (2).ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 
 /obj/structure/mineral_door/rockhill/wood/donjon/stone/tough
 	name = "tough stone door"
@@ -267,11 +327,17 @@
 	swing_closed = TRUE
 	grant_resident_key = FALSE
 	resident_key_amount = 1
-	max_integrity = 2500
 	kickthresh = 15
 	repairable = TRUE
 	repair_cost_first = /obj/item/natural/stone
 	repair_cost_second = /obj/item/natural/stone
+	repair_skill = /datum/attribute/skill/craft/masonry
+	max_integrity = 2500
+	resistance_flags = FLAMMABLE
+	damage_deflection = 12
+	rockhill_dulling = "bashchop"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (2).ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 
 /obj/structure/mineral_door/rockhill/wood/donjon/tough
 	name = "tough reinforced door"
@@ -292,11 +358,17 @@
 	swing_closed = TRUE
 	grant_resident_key = FALSE
 	resident_key_amount = 1
-	max_integrity = 2500
 	kickthresh = 15
 	repairable = TRUE
 	repair_cost_first = /obj/item/grown/log/tree/small
 	repair_cost_second = /obj/item/ingot/iron
+	repair_skill = /datum/attribute/skill/craft/carpentry
+	max_integrity = 2500
+	resistance_flags = FLAMMABLE
+	damage_deflection = 12
+	rockhill_dulling = "bashchop"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/combat/hits/onmetal/metalimpact (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/onmetal/metalimpact (2).ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 
 /obj/structure/mineral_door/rockhill/wood/fancywood
 	name = "door"
@@ -317,11 +389,17 @@
 	swing_closed = TRUE
 	grant_resident_key = FALSE
 	resident_key_amount = 1
-	max_integrity = 1000
 	kickthresh = 15
 	repairable = TRUE
 	repair_cost_first = /obj/item/grown/log/tree/small
 	repair_cost_second = /obj/item/grown/log/tree/small
+	repair_skill = /datum/attribute/skill/craft/carpentry
+	max_integrity = 1000
+	resistance_flags = FLAMMABLE
+	damage_deflection = 12
+	rockhill_dulling = "bashchop"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (2).ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 
 /obj/structure/mineral_door/rockhill/wood/red
 	name = "door"
@@ -342,11 +420,17 @@
 	swing_closed = TRUE
 	grant_resident_key = FALSE
 	resident_key_amount = 1
-	max_integrity = 1000
 	kickthresh = 15
 	repairable = TRUE
 	repair_cost_first = /obj/item/grown/log/tree/small
 	repair_cost_second = /obj/item/grown/log/tree/small
+	repair_skill = /datum/attribute/skill/craft/carpentry
+	max_integrity = 1000
+	resistance_flags = FLAMMABLE
+	damage_deflection = 12
+	rockhill_dulling = "bashchop"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (2).ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 
 /obj/structure/mineral_door/rockhill/wood/towner
 	name = "door"
@@ -369,11 +453,17 @@
 	resident_key_amount = 1
 	resident_key_type = /obj/item/roguekey/townie
 	resident_role = /datum/job/roguetown/villager
-	max_integrity = 1000
 	kickthresh = 15
 	repairable = TRUE
 	repair_cost_first = /obj/item/grown/log/tree/small
 	repair_cost_second = /obj/item/grown/log/tree/small
+	repair_skill = /datum/attribute/skill/craft/carpentry
+	max_integrity = 1000
+	resistance_flags = FLAMMABLE
+	damage_deflection = 12
+	rockhill_dulling = "bashchop"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (2).ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 
 /obj/structure/mineral_door/rockhill/wood/towner/blacksmith
 	name = "door"
@@ -396,12 +486,18 @@
 	resident_key_amount = 1
 	resident_key_type = /obj/item/roguekey/townie
 	resident_role = /datum/job/roguetown/villager
-	max_integrity = 1000
 	kickthresh = 15
 	repairable = TRUE
 	repair_cost_first = /obj/item/grown/log/tree/small
 	repair_cost_second = /obj/item/grown/log/tree/small
+	repair_skill = /datum/attribute/skill/craft/carpentry
 	resident_advclass = list("/datum/advclass/blacksmith", "/datum/advclass/masterblacksmith")
+	max_integrity = 1000
+	resistance_flags = FLAMMABLE
+	damage_deflection = 12
+	rockhill_dulling = "bashchop"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (2).ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 
 /obj/structure/mineral_door/rockhill/wood/towner/generic
 	name = "door"
@@ -424,11 +520,17 @@
 	resident_key_amount = 1
 	resident_key_type = /obj/item/roguekey/townie
 	resident_role = /datum/job/roguetown/villager
-	max_integrity = 1000
 	kickthresh = 15
 	repairable = TRUE
 	repair_cost_first = /obj/item/grown/log/tree/small
 	repair_cost_second = /obj/item/grown/log/tree/small
+	repair_skill = /datum/attribute/skill/craft/carpentry
+	max_integrity = 1000
+	resistance_flags = FLAMMABLE
+	damage_deflection = 12
+	rockhill_dulling = "bashchop"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (2).ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 
 /obj/structure/mineral_door/rockhill/wood/towner/generic/two_keys
 	name = "door"
@@ -451,11 +553,17 @@
 	resident_key_amount = 2
 	resident_key_type = /obj/item/roguekey/townie
 	resident_role = /datum/job/roguetown/villager
-	max_integrity = 1000
 	kickthresh = 15
 	repairable = TRUE
 	repair_cost_first = /obj/item/grown/log/tree/small
 	repair_cost_second = /obj/item/grown/log/tree/small
+	repair_skill = /datum/attribute/skill/craft/carpentry
+	max_integrity = 1000
+	resistance_flags = FLAMMABLE
+	damage_deflection = 12
+	rockhill_dulling = "bashchop"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (2).ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 
 /obj/structure/mineral_door/rockhill/wood/towner/miner
 	name = "door"
@@ -478,12 +586,18 @@
 	resident_key_amount = 1
 	resident_key_type = /obj/item/roguekey/townie
 	resident_role = /datum/job/roguetown/villager
-	max_integrity = 1000
 	kickthresh = 15
 	repairable = TRUE
 	repair_cost_first = /obj/item/grown/log/tree/small
 	repair_cost_second = /obj/item/grown/log/tree/small
+	repair_skill = /datum/attribute/skill/craft/carpentry
 	resident_advclass = list("/datum/advclass/miner", "/datum/advclass/minermaster")
+	max_integrity = 1000
+	resistance_flags = FLAMMABLE
+	damage_deflection = 12
+	rockhill_dulling = "bashchop"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (2).ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 
 /obj/structure/mineral_door/rockhill/wood/towner/witch
 	name = "door"
@@ -506,12 +620,18 @@
 	resident_key_amount = 1
 	resident_key_type = /obj/item/roguekey/townie
 	resident_role = /datum/job/roguetown/villager
-	max_integrity = 1000
 	kickthresh = 15
 	repairable = TRUE
 	repair_cost_first = /obj/item/grown/log/tree/small
 	repair_cost_second = /obj/item/grown/log/tree/small
+	repair_skill = /datum/attribute/skill/craft/carpentry
 	resident_advclass = list("/datum/advclass/witch")
+	max_integrity = 1000
+	resistance_flags = FLAMMABLE
+	damage_deflection = 12
+	rockhill_dulling = "bashchop"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (2).ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 
 /obj/structure/mineral_door/rockhill/wood/violet
 	name = "door"
@@ -532,11 +652,17 @@
 	swing_closed = TRUE
 	grant_resident_key = FALSE
 	resident_key_amount = 1
-	max_integrity = 1000
 	kickthresh = 15
 	repairable = TRUE
 	repair_cost_first = /obj/item/grown/log/tree/small
 	repair_cost_second = /obj/item/grown/log/tree/small
+	repair_skill = /datum/attribute/skill/craft/carpentry
+	max_integrity = 1000
+	resistance_flags = FLAMMABLE
+	damage_deflection = 12
+	rockhill_dulling = "bashchop"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (2).ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 
 /obj/structure/mineral_door/rockhill/wood/window
 	name = "door"
@@ -557,11 +683,17 @@
 	swing_closed = TRUE
 	grant_resident_key = FALSE
 	resident_key_amount = 1
-	max_integrity = 1000
 	kickthresh = 15
 	repairable = TRUE
 	repair_cost_first = /obj/item/grown/log/tree/small
 	repair_cost_second = /obj/item/grown/log/tree/small
+	repair_skill = /datum/attribute/skill/craft/carpentry
+	max_integrity = 1000
+	resistance_flags = FLAMMABLE
+	damage_deflection = 12
+	rockhill_dulling = "bashchop"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (2).ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 
 /obj/structure/mineral_door/rockhill/wood/wretched
 	name = "door"
@@ -583,9 +715,15 @@
 	grant_resident_key = TRUE
 	resident_key_amount = 1
 	resident_key_type = /obj/item/roguekey/townie
-	max_integrity = 1000
 	kickthresh = 15
 	repairable = TRUE
 	repair_cost_first = /obj/item/grown/log/tree/small
 	repair_cost_second = /obj/item/grown/log/tree/small
+	repair_skill = /datum/attribute/skill/craft/carpentry
 	resident_advclass = list("/datum/advclass/witch", "/datum/advclass/wretch/licker", "/datum/advclass/wretch/deserter", "/datum/advclass/wretch/deserter/maa", "/datum/advclass/wretch/berserker", "/datum/advclass/wretch/roguemage", "/datum/advclass/wretch/necromancer", "/datum/advclass/wretch/heretic", "/datum/advclass/wretch/heretic/spy", "/datum/advclass/wretch/outlaw", "/datum/advclass/wretch/poacher", "/datum/advclass/wretch/plaguebearer", "/datum/advclass/wretch/pyromaniac", "/datum/advclass/wretch/vigilante", "/datum/advclass/wretch/blackoakwyrm", "/datum/advclass/wretch/antipope", "/datum/advclass/wretch/ancientchampion")
+	max_integrity = 1000
+	resistance_flags = FLAMMABLE
+	damage_deflection = 12
+	rockhill_dulling = "bashchop"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (2).ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')

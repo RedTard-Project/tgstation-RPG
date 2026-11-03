@@ -45,6 +45,8 @@ tools/bootstrap/python -I C:/Axis/ai-skills/scripts/dm_type_port.py modular_redt
 - Слоты Вайблина → наши (`ITEM_SLOT_SHIRT` → `ITEM_SLOT_ROGUE_SHIRT`, `ITEM_SLOT_ARMOR` → `ITEM_SLOT_OCLOTHING`,
   `ITEM_SLOT_PANTS` → `ITEM_SLOT_ICLOTHING` и т. д., та же таблица, что у портера `rockhill`).
 - `body_parts_covered`: части лица Вайблина (`MOUTH`, `NOSE`, `EARS`, `EYES`) → `HEAD`, `VITALS` → `CHEST`.
+  Рядом — `rogue_coverage` (ключ `copies`): то же покрытие Вайблина целиком, части лица, темя и живот — флагами
+  `ROGUE_COVER_*` (`clothing/_defines.dm`); по нему удар ищет броню на точной зоне (`combat/armor.dm`).
 - `flags_inv` — только ТГ-шные флаги; `HIDEBOOB`, `HIDECROTCH`, `HIDETAIL` у нас ничего не прячут и отброшены.
 - `block2add` → флаги конуса обзора `ROGUE_FOV_*` (см. `combat/fov.dm`).
 - Рукава: `sleevetype`, `nodismemsleeves` — как есть; `r_sleeve_status`, `l_sleeve_status` — `SLEEVE_*` → `ROGUE_SLEEVE_*`;

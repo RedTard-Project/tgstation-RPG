@@ -14,8 +14,10 @@ Private balance for modular_redtard. The server repository mounts this repositor
 
 What the module reads from here, before the public defaults in `config/redtard/`:
 
-- `mechanics/armor.txt`, `intents.txt`, `items.txt`, `formulas.txt`, `values.txt`: a file here replaces the public file of the
-  same name as a whole; a file that is missing here falls back to `config/redtard/mechanics/`.
+- `mechanics/armor.txt`, `intents.txt`, `items.txt`, `formulas.txt` and the number files of `mechanics/values/` (one per
+  block: `combat.txt`, `crafting.txt`, `treasury.txt` and so on): a file here replaces the public file of the same name as a
+  whole; a file that is missing here falls back to `config/redtard/mechanics/`, and a number missing from a values file
+  keeps its public default.
 - `config.txt`: loaded after `config/redtard/config.txt`; only the keys written here change, the rest keep the
   public values.
 
@@ -33,12 +35,13 @@ def main():
     target = os.path.abspath(args.target)
     if os.path.exists(target) and os.listdir(target):
         sys.exit(f"{target} is not empty")
-    os.makedirs(os.path.join(target, "mechanics"), exist_ok=True)
     copied = []
-    for name in sorted(os.listdir(os.path.join(PUBLIC, "mechanics"))):
-        if name.endswith(".txt"):
-            shutil.copyfile(os.path.join(PUBLIC, "mechanics", name), os.path.join(target, "mechanics", name))
-            copied.append(f"mechanics/{name}")
+    for folder in ("mechanics", "mechanics/values"):
+        os.makedirs(os.path.join(target, folder), exist_ok=True)
+        for name in sorted(os.listdir(os.path.join(PUBLIC, folder))):
+            if name.endswith(".txt"):
+                shutil.copyfile(os.path.join(PUBLIC, folder, name), os.path.join(target, folder, name))
+                copied.append(f"{folder}/{name}")
     if args.with_config:
         shutil.copyfile(os.path.join(PUBLIC, "config.txt"), os.path.join(target, "config.txt"))
         copied.append("config.txt")

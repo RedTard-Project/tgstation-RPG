@@ -399,6 +399,46 @@
 	if(hud.inventory_shown)
 		. += length(hud.screen_groups[HUD_GROUP_TOGGLEABLE_INVENTORY])
 
+/// The heart (Ratwood PR 2546 heart_hud_display): it empties with the blood lost, and poison and suffocation show over it
+/// while bleeding as well; the layer steps are the PR's.
+/datum/unit_test/rogue_hud/heart_layers
+
+/datum/unit_test/rogue_hud/heart_layers/Run()
+	var/mob/living/carbon/human/dummy = make_hud_user()
+	var/atom/movable/screen/healths/rogue/heart = dummy.hud_used.screen_objects[HUD_MOB_HEALTH]
+	TEST_ASSERT(istype(heart), "The rogue HUD has no heart")
+	dummy.set_blood_volume(200)
+	TEST_ASSERT_EQUAL(heart.heart_state(dummy), "dam60", "The heart did not follow the blood lost")
+	dummy.set_blood_volume(BLOOD_VOLUME_NORMAL)
+	TEST_ASSERT_EQUAL(heart.heart_state(dummy), "dam0", "The heart stayed empty with all the blood back")
+	dummy.set_blood_volume(392)
+	dummy.set_tox_loss(40)
+	dummy.set_oxy_loss(60)
+	TEST_ASSERT_EQUAL(heart.heart_state(dummy), "dam30", "The heart did not follow the blood lost alongside poison")
+	var/list/layers = heart.heart_layers(dummy)
+	TEST_ASSERT("toxloss40" in layers, "Poison is hidden while bleeding")
+	TEST_ASSERT("oxyloss60" in layers, "Suffocation is hidden while bleeding")
+	dummy.set_tox_loss(0)
+	TEST_ASSERT(!("toxloss40" in heart.heart_layers(dummy)), "Poison stayed on the heart after it was healed")
+	for(var/list/step as anything in list(list(10, "painloss20"), list(30, "painloss40"), list(60, "painloss60"), list(80, "painloss80"), list(150, "painloss100")))
+		TEST_ASSERT_EQUAL(heart.heart_layer_state("painloss", step[1], 30, 60), step[2], "Pain [step[1]]% shows the wrong step")
+	TEST_ASSERT_EQUAL(heart.heart_layer_state("painloss", 0, 30, 60), null, "The heart shows pain when there is none")
+
+/// The pain threshold is counted anew from willpower and the pain traits (Ratwood PR 2546 pain_threshold_is_live), so the
+/// heart agrees with the pain checks.
+/datum/unit_test/rogue_hud/pain_threshold
+
+/datum/unit_test/rogue_hud/pain_threshold/Run()
+	var/mob/living/carbon/human/dummy = make_hud_user()
+	dummy.rogue_adjust_stat(ROGUE_STAT_WILLPOWER, 14 - dummy.rogue_stat(ROGUE_STAT_WILLPOWER))
+	TEST_ASSERT_EQUAL(dummy.rogue_pain_threshold(), 14 * ROGUE_PAIN_PER_WILLPOWER, "The threshold ignored the current willpower")
+	ADD_TRAIT(dummy, TRAIT_ADRENALINE_RUSH, TRAIT_SOURCE_UNIT_TESTS)
+	TEST_ASSERT_EQUAL(dummy.rogue_pain_threshold(), (14 + ROGUE_PAIN_ADRENALINE_WILLPOWER) * ROGUE_PAIN_PER_WILLPOWER, "The threshold ignored adrenaline")
+	REMOVE_TRAIT(dummy, TRAIT_ADRENALINE_RUSH, TRAIT_SOURCE_UNIT_TESTS)
+	ADD_TRAIT(dummy, TRAIT_NOPAIN, TRAIT_SOURCE_UNIT_TESTS)
+	TEST_ASSERT_EQUAL(dummy.rogue_pain_threshold(), ROGUE_PAIN_NOPAIN_THRESHOLD, "The threshold ignored painlessness")
+	REMOVE_TRAIT(dummy, TRAIT_NOPAIN, TRAIT_SOURCE_UNIT_TESTS)
+
 #undef TEST_ASSERT
 #undef TEST_ASSERT_EQUAL
 #endif

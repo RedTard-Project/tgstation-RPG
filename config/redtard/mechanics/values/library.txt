@@ -1,0 +1,35 @@
+# Stage 7: library (library/)
+# Mechanics numbers: name = value, described by the # lines right above it; times are in deciseconds. The build compiles this file in, so its numbers are the defaults; a file of the same name in config/redtard_private/mechanics/values/ is read instead when present.
+
+# Deciseconds the printing press takes to print (Ratwood PRINTING_TIME).
+library_print_time = 250
+
+# Deciseconds the printing press recalibrates after a print (Ratwood PRINTER_COOLDOWN).
+library_print_cooldown = 600
+
+# Books a random bookcase is stocked with before Ratwood's random cut of 0 to 5 (Ratwood book_count).
+library_shelf_books = 10
+
+# Most extra books of an archive bookcase, 0 to this many (Ratwood bookcase/random/archive).
+library_shelf_extra_books = 10
+
+# Archived player books an archive-only bookcase holds (Ratwood bookcase/player_archive).
+library_archive_shelf_books = 15
+
+# Most pages of a manuscript (Ratwood).
+library_manuscript_pages = 8
+
+# Least percent chance that a book of a sorted bookcase is an archived player book; between the least and the most the chance is the number of archived books of that section not yet shelved this round (Ratwood clamp(n, 10, 90)).
+library_player_book_chance_min = 10
+
+# Most percent chance that a book of a sorted bookcase is an archived player book.
+library_player_book_chance_max = 90
+
+# Percent chance that a book of a random bookcase is a book crafting kit instead (Ratwood).
+library_book_kit_chance = 0.1
+
+# Reading skill experience an illiterate person gains trying to read a book, at most once a second (Ratwood book read()).
+library_read_xp_book = 4
+
+# Reading skill experience an illiterate person gains trying to read a written sheet or a manuscript (Ratwood paper read()).
+library_read_xp_paper = 2

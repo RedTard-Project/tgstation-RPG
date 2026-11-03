@@ -46,7 +46,7 @@
 			. += span_smallnotice("It is fine food.")
 		if(ROGUE_FARE_LAVISH)
 			. += span_smallnotice("It is lavish food.")
-	. += span_smallnotice(rogue_is_portable() ? "It can be eaten without a table." : "Eating this without a table would be disgraceful for a noble.")
+	. += span_smallnotice((rogue_is_portable() ? "It can be eaten without a table." : "Eating this without a table would be disgraceful for a noble."))
 
 /// Ratwood On_Consume(): what one bite means to the eater - a favourite or hated food, and for a noble, a yeoman or a courtier
 /// whether the fare befits them. FALSE when their disdain spoils the good effect of the bite.
@@ -177,6 +177,46 @@ GLOBAL_LIST_INIT(rogue_yeoman_positions, list("Merchant", "Innkeeper", "Archivis
 /// Sets a favourite or hated food or drink (for the character menu): the key and a food type or a reagent type.
 /mob/living/carbon/human/proc/rogue_set_culinary_preference(key, path)
 	LAZYSET(rogue_culinary, key, path)
+
+/// Ratwood human examine(): a royal servant (TRAIT_ROYALSERVANT) knows the tastes of the court - the favourite and hated food and
+/// drink of the lord, the prince, the hand, the steward, a councillor, the court physician, a knight, the court magician and
+/// the dungeoneer. Medieval maps only.
+/mob/living/carbon/human/examine(mob/user)
+	. = ..()
+	if(!rogue_survival_enabled() || !HAS_TRAIT(user, TRAIT_ROYALSERVANT))
+		return
+	var/static/list/court_roles = typecacheof(list(
+		/datum/job/roguetown/lord,
+		/datum/job/roguetown/prince,
+		/datum/job/roguetown/hand,
+		/datum/job/roguetown/steward,
+		/datum/job/roguetown/councillor,
+		/datum/job/roguetown/physician,
+		/datum/job/roguetown/knight,
+		/datum/job/roguetown/magician,
+		/datum/job/roguetown/dungeoneer,
+	))
+	var/datum/job/role = job ? SSjob.get_job(job) : null
+	if(!is_type_in_typecache(role, court_roles))
+		return
+	var/list/favourites = rogue_palate_names(rogue_culinary_preference(ROGUE_CULINARY_FAVOURITE_FOOD), rogue_culinary_preference(ROGUE_CULINARY_FAVOURITE_DRINK))
+	if(length(favourites) > 1)
+		. += span_notice("Their favourites are [english_list(favourites)].")
+	else if(length(favourites))
+		. += span_notice("Their favourite is [favourites[1]].")
+	var/list/hated = rogue_palate_names(rogue_culinary_preference(ROGUE_CULINARY_HATED_FOOD), rogue_culinary_preference(ROGUE_CULINARY_HATED_DRINK))
+	if(length(hated))
+		. += span_notice("They hate [english_list(hated)].")
+
+/// The names of a food type and a reagent type, the food first; none for what is not set.
+/proc/rogue_palate_names(food_type, drink_type)
+	. = list()
+	if(ispath(food_type, /obj/item))
+		var/obj/item/food = food_type
+		. += initial(food.name)
+	if(ispath(drink_type, /datum/reagent))
+		var/datum/reagent/drink = drink_type
+		. += initial(drink.name)
 
 /// A favourite or hated food or drink mood; the remark only when it is new (Ratwood can_apply()).
 /mob/living/carbon/human/proc/rogue_preference_mood(category, datum/mood_event/mood, remark)

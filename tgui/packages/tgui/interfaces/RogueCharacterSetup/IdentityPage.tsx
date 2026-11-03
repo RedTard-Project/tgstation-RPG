@@ -1,4 +1,4 @@
-// Vibelin's Identity page: name, pronouns and body, age and standing, then the species, faith, ancestry, culture,
+// Vibelin's Identity page: name, pronouns and body, age, accent and standing, then the species, faith, ancestry, culture,
 // homeland (Ratwood's origin) or food and drink picker. Pronouns are TG's gender and the body TG's body type (Vibelin
 // keeps the body as its gender and the pronouns apart); Vibelin's dominant hand and quirks have no system here; the
 // name declensions are on the profile page.
@@ -19,6 +19,7 @@ import { classes } from 'tgui-core/react';
 import { features } from '../PreferencesMenu/preferences/features';
 import { FeatureValueInput } from '../PreferencesMenu/preferences/features/base';
 import { GENDERS, Gender } from '../PreferencesMenu/preferences/gender';
+import { AccentField } from './accents';
 import {
   display,
   FieldBlock,
@@ -63,7 +64,10 @@ export function IdentityPage() {
   const speciesId = String(prefs.misc?.species ?? '');
   const species = data.species.find((entry) => entry.id === speciesId);
   const age = Number(prefs.non_contextual?.age ?? data.ages.min);
-  const band = ageBand(data.ages.bands, age);
+  // Vibelin's immortal races (an aasimar's only age) are not weakened by the years.
+  const band: AgeBand | undefined = species?.ageless
+    ? { name: tr('Immortal'), from: data.ages.min, stats: [] }
+    : ageBand(data.ages.bands, age);
   const [mode, setMode] = useState<PickerMode>('species');
   const modes: { id: PickerMode; label: string; icon: string }[] = [
     { id: 'species', label: tr('Species'), icon: 'users' },
@@ -189,6 +193,7 @@ export function IdentityPage() {
                 </Stack>
               </Tooltip>
             </FieldBlock>
+            <AccentField />
             <Box>
               {modes.map((entry) => (
                 <Button

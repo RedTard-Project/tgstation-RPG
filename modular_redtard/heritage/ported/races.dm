@@ -168,6 +168,8 @@
 	rogue_offsets = list(
 		"f" = list(OFFSET_BACK = list(0, -1), OFFSET_EARS = list(0, -1), OFFSET_FACE = list(0, -1), OFFSET_FACEMASK = list(0, -1), OFFSET_GLASSES = list(0, -1), OFFSET_HEAD = list(0, -1), OFFSET_NECK = list(0, -1), ROGUE_OFFSET_MOUTH = list(0, -1), ROGUE_OFFSET_RING = list(0, -1)),
 		)
+	rogue_native_language = /datum/language/common
+	rogue_accents = list("No Accent", "Grenzelhoft Accent", "Ossland Accent")
 	rogue_race_sheet = /datum/attribute_holder/sheet/vibelin_race/human
 	rogue_race_traits = list(TRAIT_NOMOBSWAP)
 	rogue_description = "Humens come from a vast swathe of cultures and ethnicities all around Psydonia, most of which have historically been at odds with both one another and other species. With their tenacity and overwhelming population, humens tend to outnumber the other species drastically. Their saturation leads to most world maps representing humen borders and states over other species'. Humens tend to find fortune easier than the other species, and are so diverse that no other trait is dominant..."
@@ -235,6 +237,8 @@
 	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
 	hidden_by = HIDEEARS
 	skin_coloured = TRUE
+	name = "ElfW"
+	rogue_slot = "ears"
 
 /obj/item/bodypart/head/vib_met_ft/elf
 	head_flags = HEAD_EYESPRITES | HEAD_EYEHOLES | HEAD_DEBRAIN | HEAD_EYECOLOR | HEAD_HAIR | HEAD_FACIAL_HAIR | HEAD_LIPS
@@ -242,6 +246,51 @@
 /obj/item/bodypart/head/vib_met_ft/elf/Initialize(mapload)
 	. = ..()
 	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/vib_ears_elfw, update = FALSE)
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_elf
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_elf"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Elf"
+	rogue_slot = "ears"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_elftw
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_elftw"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "ElfTW"
+	rogue_slot = "ears"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_elfww
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_elfww"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "ElfWW"
+	rogue_slot = "ears"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_elfwww
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_elfwww"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "ElfWWW"
+	rogue_slot = "ears"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_elfttw
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_elfttw"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "ElfTTW"
+	rogue_slot = "ears"
 
 /datum/attribute_holder/sheet/vibelin_race/elf
 	raw_attribute_list = list(
@@ -307,6 +356,12 @@
 		"m" = list(OFFSET_BACK = list(0, 2), OFFSET_BELT = list(0, 1), OFFSET_EARS = list(0, 1), OFFSET_FACE = list(0, 1), OFFSET_FACEMASK = list(0, 1), OFFSET_GLASSES = list(0, 1), OFFSET_HEAD = list(0, 1), OFFSET_HELD = list(0, 2), OFFSET_NECK = list(0, 1), OFFSET_SUIT = list(0, 2), OFFSET_S_STORE = list(0, 2), OFFSET_UNIFORM = list(0, 2), ROGUE_OFFSET_CLOAK = list(0, 2), ROGUE_OFFSET_MOUTH = list(0, 2), ROGUE_OFFSET_RING = list(0, 2), ROGUE_OFFSET_SHIRT = list(0, 2), ROGUE_OFFSET_WRISTS = list(0, 1)),
 		"f" = list(OFFSET_BELT = list(0, 1), OFFSET_GLOVES = list(0, 1), OFFSET_HELD = list(0, 1), OFFSET_SUIT = list(0, 1), OFFSET_S_STORE = list(0, 1), OFFSET_UNIFORM = list(0, 1), ROGUE_OFFSET_CLOAK = list(0, 1), ROGUE_OFFSET_SHIRT = list(0, 1), ROGUE_OFFSET_WRISTS = list(0, 1)),
 		)
+	rogue_customizers = list(
+		"ears" = list("name" = "Elf Ears", "default" = "vib_ears_elf", "none" = TRUE, "colors" = FALSE, "choices" = list("vib_ears_elf", "vib_ears_elfw", "vib_ears_elftw", "vib_ears_elfww", "vib_ears_elfwww", "vib_ears_elfttw")),
+		)
+	rogue_native_language = /datum/language/rogue_elvish
+	rogue_accent = "Dark-Elf Accent"
+	rogue_accents = list("Elf Accent", "Wintermare Accent", "Ossland Accent")
 	rogue_race_sheet = /datum/attribute_holder/sheet/vibelin_race/elf
 	rogue_race_traits = list(TRAIT_NOMOBSWAP)
 	rogue_worn_sex = "f"
@@ -369,13 +424,6 @@
 	icon_state = "vib_mem_ft_r_leg_m"
 	limb_id = "vib_mem_ft"
 	is_dimorphic = TRUE
-
-/datum/bodypart_overlay/simple/rogue_feature/vib_ears_elf
-	icon = VIBELIN_BODIES_ICON
-	icon_state = "vib_ears_elf"
-	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
-	hidden_by = HIDEEARS
-	skin_coloured = TRUE
 
 /obj/item/bodypart/head/vib_mem_ft/snowelf
 	head_flags = HEAD_EYESPRITES | HEAD_EYEHOLES | HEAD_DEBRAIN | HEAD_EYECOLOR | HEAD_HAIR | HEAD_FACIAL_HAIR | HEAD_LIPS
@@ -453,6 +501,12 @@
 		"m" = list(OFFSET_BELT = list(0, 1), OFFSET_GLOVES = list(0, 1), OFFSET_SUIT = list(0, 1), OFFSET_S_STORE = list(0, 1), OFFSET_UNIFORM = list(0, 1), ROGUE_OFFSET_CLOAK = list(0, 1), ROGUE_OFFSET_SHIRT = list(0, 1), ROGUE_OFFSET_WRISTS = list(0, 1)),
 		"f" = list(OFFSET_GLOVES = list(0, 1), OFFSET_HELD = list(0, 1), OFFSET_SUIT = list(0, 1), OFFSET_S_STORE = list(0, 1), OFFSET_UNIFORM = list(0, 1), ROGUE_OFFSET_CLOAK = list(0, 1), ROGUE_OFFSET_SHIRT = list(0, 1), ROGUE_OFFSET_WRISTS = list(0, 1)),
 		)
+	rogue_customizers = list(
+		"ears" = list("name" = "Elf Ears", "default" = "vib_ears_elf", "none" = TRUE, "colors" = FALSE, "choices" = list("vib_ears_elf", "vib_ears_elfw", "vib_ears_elftw", "vib_ears_elfww", "vib_ears_elfwww", "vib_ears_elfttw")),
+		)
+	rogue_native_language = /datum/language/rogue_elvish
+	rogue_accent = "Dark-Elf Accent"
+	rogue_accents = list("Elf Accent", "Wintermare Accent", "Ossland Accent")
 	rogue_race_sheet = /datum/attribute_holder/sheet/vibelin_race/snowelf
 	rogue_race_sheet_female = /datum/attribute_holder/sheet/vibelin_race/snowelf_female
 	rogue_race_traits = list(TRAIT_NOMOBSWAP)
@@ -535,6 +589,12 @@
 		"m" = list(OFFSET_BACK = list(0, 2), OFFSET_BELT = list(0, 1), OFFSET_EARS = list(0, 1), OFFSET_FACE = list(0, 1), OFFSET_FACEMASK = list(0, 1), OFFSET_GLASSES = list(0, 1), OFFSET_HEAD = list(0, 1), OFFSET_HELD = list(0, 2), OFFSET_NECK = list(0, 1), OFFSET_SUIT = list(0, 2), OFFSET_S_STORE = list(0, 2), OFFSET_UNIFORM = list(0, 2), ROGUE_OFFSET_CLOAK = list(0, 2), ROGUE_OFFSET_MOUTH = list(0, 2), ROGUE_OFFSET_RING = list(0, 2), ROGUE_OFFSET_SHIRT = list(0, 2), ROGUE_OFFSET_WRISTS = list(0, 1)),
 		"f" = list(OFFSET_BELT = list(0, 1), OFFSET_GLOVES = list(0, 1), OFFSET_HELD = list(0, 1), OFFSET_SUIT = list(0, 1), OFFSET_S_STORE = list(0, 1), OFFSET_UNIFORM = list(0, 1), ROGUE_OFFSET_CLOAK = list(0, 1), ROGUE_OFFSET_SHIRT = list(0, 1), ROGUE_OFFSET_WRISTS = list(0, 1)),
 		)
+	rogue_customizers = list(
+		"ears" = list("name" = "Elf Ears", "default" = "vib_ears_elf", "none" = TRUE, "colors" = FALSE, "choices" = list("vib_ears_elf", "vib_ears_elfw", "vib_ears_elftw", "vib_ears_elfww", "vib_ears_elfwww", "vib_ears_elfttw")),
+		)
+	rogue_native_language = /datum/language/rogue_elvish
+	rogue_accent = "Elf Accent"
+	rogue_accents = list("Elf Accent", "Wintermare Accent", "Ossland Accent")
 	rogue_race_sheet = /datum/attribute_holder/sheet/vibelin_race/elf_sun
 	rogue_race_traits = list(TRAIT_NOMOBSWAP)
 	rogue_worn_sex = "f"
@@ -654,6 +714,9 @@
 		"m" = list(OFFSET_BACK = list(0, -4), OFFSET_EARS = list(0, -4), OFFSET_FACE = list(0, -4), OFFSET_FACEMASK = list(0, -4), OFFSET_GLASSES = list(0, -4), OFFSET_HEAD = list(0, -4), OFFSET_HELD = list(0, -3), OFFSET_NECK = list(0, -4), ROGUE_OFFSET_MOUTH = list(0, -4)),
 		"f" = list(OFFSET_BACK = list(0, -5), OFFSET_EARS = list(0, -5), OFFSET_FACE = list(0, -5), OFFSET_FACEMASK = list(0, -5), OFFSET_GLASSES = list(0, -5), OFFSET_HEAD = list(0, -5), OFFSET_HELD = list(0, -4), OFFSET_NECK = list(0, -5), ROGUE_OFFSET_MOUTH = list(0, -5), ROGUE_OFFSET_RING = list(0, -4)),
 		)
+	rogue_native_language = /datum/language/rogue_dwarvish
+	rogue_accent = "Dwarf Accent"
+	rogue_accents = list("Dwarf Accent", "Ossland Accent", "Grenzelhoft Accent")
 	rogue_race_sheet = /datum/attribute_holder/sheet/vibelin_race/dwarf
 	rogue_race_traits = list(TRAIT_NOMOBSWAP)
 	rogue_description = "A proud and robust species of vertically challenged folk, dwarves are known for their martial strength and their tenacity towards their ancient customs of craft and honour. Dwarves hold a strong alliance with humenkind and have done so throughout history, as was their original purpose decreed by Psydon. A Dwarf, much like the rock that they carve their fortress out of, is stubborn and ancient. They are revered craftsmen, sculptors, smiths, and miners. As an old and mostly out-of-date saying goes, \"If you want it done right, lose 2 feet and grow a beard.\" Despite their cultural praise, a long-standing feud remains between dwarves and elves stemming from old industrial practices."
@@ -722,6 +785,9 @@
 		"m" = list(OFFSET_BACK = list(0, -4), OFFSET_EARS = list(0, -4), OFFSET_FACE = list(0, -4), OFFSET_FACEMASK = list(0, -4), OFFSET_GLASSES = list(0, -4), OFFSET_HEAD = list(0, -4), OFFSET_HELD = list(0, -3), OFFSET_NECK = list(0, -4), ROGUE_OFFSET_MOUTH = list(0, -4)),
 		"f" = list(OFFSET_BACK = list(0, -5), OFFSET_EARS = list(0, -5), OFFSET_FACE = list(0, -5), OFFSET_FACEMASK = list(0, -5), OFFSET_GLASSES = list(0, -5), OFFSET_HEAD = list(0, -5), OFFSET_HELD = list(0, -4), OFFSET_NECK = list(0, -5), ROGUE_OFFSET_MOUTH = list(0, -5), ROGUE_OFFSET_RING = list(0, -4)),
 		)
+	rogue_native_language = /datum/language/rogue_dwarvish
+	rogue_accent = "Dwarf Accent"
+	rogue_accents = list("Dwarf Accent", "Ossland Accent", "Grenzelhoft Accent")
 	rogue_race_sheet = /datum/attribute_holder/sheet/vibelin_race/dwarf_subterran
 	rogue_race_traits = list(TRAIT_NOMOBSWAP)
 	rogue_description = "Carvings of rock are replaced with holy tenets of caustic minerals and pools of acid, those who fail were too weak and those who succeed are the next generation. Following a now twisted version of Pestran teachings, most worship the Wurm, turning medicine into madness and plague into purity. Rituals of flesh searing and caustic air have turned them green, the deepest hues showing the most devout. There are some who find their way out of their stone cages. Those fortunate to wander into humen settlements, live just like their unscarred kin. Yet still remembering their old tenets, they may never see Pestra the same."
@@ -791,6 +857,8 @@
 	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
 	hidden_by = HIDEEARS
 	skin_coloured = TRUE
+	name = "Goblin"
+	rogue_slot = "ears"
 
 /obj/item/bodypart/head/vib_md_goblin_female/dwarf_orc
 	head_flags = HEAD_EYESPRITES | HEAD_EYEHOLES | HEAD_DEBRAIN | HEAD_EYECOLOR | HEAD_LIPS
@@ -798,6 +866,24 @@
 /obj/item/bodypart/head/vib_md_goblin_female/dwarf_orc/Initialize(mapload)
 	. = ..()
 	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/vib_ears_goblin, update = FALSE)
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_goblin_alt
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_goblin_alt"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Goblin Alt"
+	rogue_slot = "ears"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_goblin_small
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_goblin_small"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Goblin Small"
+	rogue_slot = "ears"
 
 /datum/attribute_holder/sheet/vibelin_race/dwarf_orc
 	raw_attribute_list = list(
@@ -860,6 +946,12 @@
 		"m" = list(OFFSET_BACK = list(0, -5), OFFSET_EARS = list(0, -4), OFFSET_FACE = list(0, -4), OFFSET_FACEMASK = list(0, -4), OFFSET_GLASSES = list(0, -4), OFFSET_HEAD = list(0, -4), OFFSET_HELD = list(0, -4), OFFSET_NECK = list(0, -5), ROGUE_OFFSET_MOUTH = list(0, -5), ROGUE_OFFSET_RING = list(0, -4)),
 		"f" = list(OFFSET_BACK = list(0, -5), OFFSET_EARS = list(0, -5), OFFSET_FACE = list(0, -5), OFFSET_FACEMASK = list(0, -5), OFFSET_GLASSES = list(0, -5), OFFSET_HEAD = list(0, -5), OFFSET_HELD = list(0, -4), OFFSET_NECK = list(0, -5), ROGUE_OFFSET_MOUTH = list(0, -5), ROGUE_OFFSET_RING = list(0, -4)),
 		)
+	rogue_customizers = list(
+		"ears" = list("name" = "Half-Orc Ears", "default" = "vib_ears_elf", "none" = FALSE, "colors" = FALSE, "choices" = list("vib_ears_elf", "vib_ears_elfw", "vib_ears_elftw", "vib_ears_elfww", "vib_ears_elfwww", "vib_ears_elfttw", "vib_ears_goblin", "vib_ears_goblin_alt", "vib_ears_goblin_small")),
+		)
+	rogue_native_language = /datum/language/rogue_orcish
+	rogue_accent = "Half-Orc Accent"
+	rogue_accents = list("Half-Orc Accent", "Dwarf Accent", "Ossland Accent")
 	rogue_race_sheet = /datum/attribute_holder/sheet/vibelin_race/dwarf_orc
 	rogue_race_sheet_female = /datum/attribute_holder/sheet/vibelin_race/dwarf_orc_female
 	rogue_race_traits = list(TRAIT_NOMOBSWAP)
@@ -965,6 +1057,8 @@
 		"m" = list(OFFSET_BACK = list(0, -5), OFFSET_EARS = list(0, -5), OFFSET_FACE = list(0, -5), OFFSET_FACEMASK = list(0, -5), OFFSET_GLASSES = list(0, -5), OFFSET_HEAD = list(0, -5), OFFSET_HELD = list(0, -4), OFFSET_NECK = list(0, -5), ROGUE_OFFSET_MOUTH = list(0, -5), ROGUE_OFFSET_RING = list(0, -4)),
 		"f" = list(OFFSET_BACK = list(0, -5), OFFSET_EARS = list(0, -5), OFFSET_FACE = list(0, -5), OFFSET_FACEMASK = list(0, -5), OFFSET_GLASSES = list(0, -5), OFFSET_HEAD = list(0, -5), OFFSET_HELD = list(0, -4), OFFSET_NECK = list(0, -5), ROGUE_OFFSET_MOUTH = list(0, -5), ROGUE_OFFSET_RING = list(0, -4)),
 		)
+	rogue_native_language = /datum/language/rogue_halfling
+	rogue_accent = "No Swearing!"
 	rogue_race_sheet = /datum/attribute_holder/sheet/vibelin_race/halfling
 	rogue_race_traits = list(TRAIT_NOMOBSWAP, TRAIT_LIGHT_STEP)
 	rogue_worn_sex = "f"
@@ -1022,6 +1116,11 @@
 	rogue_offsets = list(
 		"f" = list(OFFSET_BACK = list(0, -1), OFFSET_BELT = list(0, -1), OFFSET_EARS = list(0, -1), OFFSET_FACE = list(0, -1), OFFSET_FACEMASK = list(0, -1), OFFSET_GLASSES = list(0, -1), OFFSET_HEAD = list(0, -1), OFFSET_NECK = list(0, -1), ROGUE_OFFSET_MOUTH = list(0, -1), ROGUE_OFFSET_RING = list(0, -1)),
 		)
+	rogue_customizers = list(
+		"ears" = list("name" = "Elf Ears", "default" = "vib_ears_elf", "none" = TRUE, "colors" = FALSE, "choices" = list("vib_ears_elf", "vib_ears_elfw", "vib_ears_elftw", "vib_ears_elfww", "vib_ears_elfwww", "vib_ears_elfttw")),
+		)
+	rogue_native_language = /datum/language/common
+	rogue_accents = list("No Accent", "Dark-Elf Accent", "Wintermare Accent", "Ossland Accent")
 	rogue_race_sheet = /datum/attribute_holder/sheet/vibelin_race/halfelf
 	rogue_race_traits = list(TRAIT_NOMOBSWAP)
 	rogue_description = "Half-Elves are generally frowned upon by more conservative peoples, although as species tensions lower, more and more half-elves are being born- to the point that some scholars worry someday it may be impossible to distinguish the two species. Half-Elves are extraordinarily diverse, as they combine both Humen and Elvish culture. It is widely considered that Half-Elf culture is simply a melting pot of various others condensing into one vibrant entity. With their longevity spanning too long for a human and too short for an elf, they tend to congregate together. Depending on their heritage, Half-Elves tend to gain species traits depending on how strong their fathers, or mothers, genes were. Half-Elves typically struggle to find their own identity."
@@ -1078,6 +1177,11 @@
 	rogue_offsets = list(
 		"f" = list(OFFSET_BACK = list(0, -1), OFFSET_BELT = list(0, -1), OFFSET_EARS = list(0, -1), OFFSET_FACE = list(0, -1), OFFSET_FACEMASK = list(0, -1), OFFSET_GLASSES = list(0, -1), OFFSET_HEAD = list(0, -1), OFFSET_NECK = list(0, -1), ROGUE_OFFSET_MOUTH = list(0, -1), ROGUE_OFFSET_RING = list(0, -1)),
 		)
+	rogue_customizers = list(
+		"ears" = list("name" = "Elf Ears", "default" = "vib_ears_elf", "none" = TRUE, "colors" = FALSE, "choices" = list("vib_ears_elf", "vib_ears_elfw", "vib_ears_elftw", "vib_ears_elfww", "vib_ears_elfwww", "vib_ears_elfttw")),
+		)
+	rogue_native_language = /datum/language/common
+	rogue_accents = list("No Accent", "Dark-Elf Accent")
 	rogue_race_sheet = /datum/attribute_holder/sheet/vibelin_race/halfdrow
 	rogue_race_traits = list(TRAIT_NOMOBSWAP)
 	rogue_description = "The distinction between Half-Elves and 'Half-Drow' has been a subject of debate for centuries. While similar in physicality and longevity to their non-drow cousins, their origins cause them to face discrimination akin to their elven side. Groups of half-elves and half-drow have been known to congregate together and consider themselves one species. According to some radical academic scholars, they might be one and the same species indeed- yet the people of Psydonia certainly do not believe the same at large. THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. NOBLES EVEN MORE SO. PLAY AT YOUR OWN RISK."
@@ -1133,6 +1237,11 @@
 	rogue_offsets = list(
 		"f" = list(OFFSET_BACK = list(0, -1), OFFSET_BELT = list(0, -1), OFFSET_EARS = list(0, -1), OFFSET_FACE = list(0, -1), OFFSET_FACEMASK = list(0, -1), OFFSET_GLASSES = list(0, -1), OFFSET_HEAD = list(0, -1), OFFSET_NECK = list(0, -1), ROGUE_OFFSET_MOUTH = list(0, -1), ROGUE_OFFSET_RING = list(0, -1)),
 		)
+	rogue_customizers = list(
+		"ears" = list("name" = "Elf Ears", "default" = "vib_ears_elf", "none" = TRUE, "colors" = FALSE, "choices" = list("vib_ears_elf", "vib_ears_elfw", "vib_ears_elftw", "vib_ears_elfww", "vib_ears_elfwww", "vib_ears_elfttw")),
+		)
+	rogue_native_language = /datum/language/common
+	rogue_accents = list("No Accent", "Dark-Elf Accent")
 	rogue_race_sheet = /datum/attribute_holder/sheet/vibelin_race/half_snowelf
 	rogue_race_traits = list(TRAIT_NOMOBSWAP)
 	rogue_description = "After Zizo's ascension, only her own blood line amongst the snow elves survived, while most stayed within Subterra blending into the dark elf population, some left and produced children with other races. Half-snow elves are the result of these unions. WARNING: THIS IS A HEAVILY DISCRIMINATED AGAINST CHALLENGE SPECIES WITH ACTIVE SPECIES DETRIMENTS. YOU CAN AND WILL DIE A LOT; PLAY AT YOUR OWN RISK!"
@@ -1270,6 +1379,12 @@
 	rogue_offsets = list(
 		"m" = list(OFFSET_BACK = list(0, 1), OFFSET_BELT = list(0, 1), OFFSET_EARS = list(0, 1), OFFSET_FACE = list(0, 1), OFFSET_FACEMASK = list(0, 1), OFFSET_GLASSES = list(0, 1), OFFSET_GLOVES = list(0, 1), OFFSET_HEAD = list(0, 1), OFFSET_HELD = list(0, 1), OFFSET_NECK = list(0, 1), OFFSET_SUIT = list(0, 1), OFFSET_S_STORE = list(0, 1), OFFSET_UNIFORM = list(0, 1), ROGUE_OFFSET_CLOAK = list(0, 1), ROGUE_OFFSET_MOUTH = list(0, 1), ROGUE_OFFSET_RING = list(0, 1), ROGUE_OFFSET_SHIRT = list(0, 1), ROGUE_OFFSET_WRISTS = list(0, 1)),
 		)
+	rogue_customizers = list(
+		"ears" = list("name" = "Half-Orc Ears", "default" = "vib_ears_elf", "none" = FALSE, "colors" = FALSE, "choices" = list("vib_ears_elf", "vib_ears_elfw", "vib_ears_elftw", "vib_ears_elfww", "vib_ears_elfwww", "vib_ears_elfttw", "vib_ears_goblin", "vib_ears_goblin_alt", "vib_ears_goblin_small")),
+		)
+	rogue_native_language = /datum/language/rogue_orcish
+	rogue_accent = "Half-Orc Accent"
+	rogue_accents = list("Half-Orc Accent", "Ossland Accent")
 	rogue_race_sheet = /datum/attribute_holder/sheet/vibelin_race/halforc
 	rogue_race_sheet_female = /datum/attribute_holder/sheet/vibelin_race/halforc_female
 	rogue_race_traits = list(TRAIT_NOMOBSWAP)
@@ -1290,7 +1405,9 @@
 	icon_state = "vib_horns_tiefling"
 	layers = list("FRONT" = BODY_FRONT_LAYER)
 	hidden_by = HIDEHAIR
-	skin_coloured = TRUE
+	draw_color = "#575B68"
+	name = "TiebHorns"
+	rogue_slot = "horns"
 
 /datum/bodypart_overlay/simple/rogue_feature/vib_tail_tiefling
 	icon = VIBELIN_BODIES_ICON
@@ -1298,6 +1415,8 @@
 	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
 	hidden_by = NONE
 	skin_coloured = TRUE
+	name = "TiebTail"
+	rogue_slot = "tail"
 
 /obj/item/bodypart/head/vib_mm_fm/tiefling
 	head_flags = HEAD_EYESPRITES | HEAD_EYEHOLES | HEAD_DEBRAIN | HEAD_EYECOLOR | HEAD_HAIR | HEAD_FACIAL_HAIR | HEAD_LIPS
@@ -1312,6 +1431,249 @@
 /obj/item/bodypart/chest/vib_mm_fm/tiefling/Initialize(mapload)
 	. = ..()
 	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/vib_tail_tiefling, update = FALSE)
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_tiefling_alt
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_tiefling_alt"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "TiebHornies"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_simple
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_simple"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Simple"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_short
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_short"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Short"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_curled
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_curled"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Curled"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_ram
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_ram"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Ram"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_oni
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_oni"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Oni"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_oni_large
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_oni_large"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "ADJ" = BODY_ADJ_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Oni (Large)"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_broken
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_broken"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Broken"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_rbroken
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_rbroken"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Broken (Right)"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_lbroken
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_lbroken"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Broken (Left)"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_drake
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_drake"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Drake"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_antlers
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_antlers"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Antlers"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_ramalt
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_ramalt"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Ram Alt"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_smallantlers
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_smallantlers"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Small Antlers"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_liftedhorns
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_liftedhorns"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Lifted Horns"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_sideswept
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_sideswept"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Side Swept Horns"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_bigcurlyhorns
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_bigcurlyhorns"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Big Curly Horns"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_stabbers
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_stabbers"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Stabbers"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_unihorn
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_unihorn"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Unihorn"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_outstretched
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_outstretched"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Outstretched"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_halo
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_halo"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Halo"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_marauder
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_marauder"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Marauder"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_faceguard
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_faceguard"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Faceguard"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_doublehorns
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_doublehorns"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Double Horns"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_tiefling_heart
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_tiefling_heart"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	skin_coloured = TRUE
+	name = "TieftailHeart"
+	rogue_slot = "tail"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_tiefling_spear
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_tiefling_spear"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	skin_coloured = TRUE
+	name = "TieftailSpear"
+	rogue_slot = "tail"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_tiefling_drake
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_tiefling_drake"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	skin_coloured = TRUE
+	name = "TieftailDrake"
+	rogue_slot = "tail"
 
 /datum/attribute_holder/sheet/vibelin_race/tiefling
 	raw_attribute_list = list(
@@ -1350,6 +1712,13 @@
 	rogue_offsets = list(
 		"f" = list(OFFSET_BACK = list(0, -1), OFFSET_BELT = list(0, -1), OFFSET_EARS = list(0, -1), OFFSET_FACE = list(0, -1), OFFSET_FACEMASK = list(0, -1), OFFSET_GLASSES = list(0, -1), OFFSET_HEAD = list(0, -1), OFFSET_NECK = list(0, -1), ROGUE_OFFSET_MOUTH = list(0, -1), ROGUE_OFFSET_RING = list(0, -1)),
 		)
+	rogue_customizers = list(
+		"ears" = list("name" = "Tiefling Ears", "default" = "vib_ears_elf", "none" = FALSE, "colors" = FALSE, "choices" = list("vib_ears_elf", "vib_ears_elfw", "vib_ears_elftw", "vib_ears_elfww", "vib_ears_elfwww", "vib_ears_elfttw")),
+		"horns" = list("name" = "Horns", "default" = "vib_horns_tiefling", "none" = FALSE, "colors" = TRUE, "choices" = list("vib_horns_tiefling", "vib_horns_tiefling_alt", "vib_horns_simple", "vib_horns_short", "vib_horns_curled", "vib_horns_ram", "vib_horns_oni", "vib_horns_oni_large", "vib_horns_broken", "vib_horns_rbroken", "vib_horns_lbroken", "vib_horns_drake", "vib_horns_antlers", "vib_horns_ramalt", "vib_horns_smallantlers", "vib_horns_liftedhorns", "vib_horns_sideswept", "vib_horns_bigcurlyhorns", "vib_horns_stabbers", "vib_horns_unihorn", "vib_horns_outstretched", "vib_horns_halo", "vib_horns_marauder", "vib_horns_faceguard", "vib_horns_doublehorns")),
+		"tail" = list("name" = "Tail", "default" = "vib_tail_tiefling", "none" = FALSE, "colors" = FALSE, "choices" = list("vib_tail_tiefling", "vib_tail_tiefling_heart", "vib_tail_tiefling_spear", "vib_tail_tiefling_drake")),
+		)
+	rogue_native_language = /datum/language/rogue_infernal
+	rogue_accent = "Tiefling Accent"
 	rogue_race_sheet = /datum/attribute_holder/sheet/vibelin_race/tiefling
 	rogue_race_traits = list(TRAIT_NOMOBSWAP, TRAIT_NOFIRE)
 	rogue_description = "Their treatment ranges from shunning to distrust, depending on the region. Shopkeeps and merchants always keep a wary eye out for tiefling passersby. The resentment feed into itself, leading to higher rates of tiefling ire and thievery against other species. Many tieflings resign to seeking a solitary and nomadic life, huddled in groups outside the watchful eyes of others. They also tend to be extremely perceptive and paranoid, as luck is rarely on their side. Tieflings began appearing all over Psydonia after Baotha's ascension within the 21st century, and were exiled in droves as the world adapted. They are often mistaken as being related to her. Tieflings are incapable of reproducing with mortals, and thus are spawn of either devils, demons, or other tieflings. A tiefling may develop any number of hellish features, a wide range of horns, potential hooves, odd spines and spikes, or scales. Oddly positioned scales, hollow bones, and other varying oddities that appear consistently in Tiefling biology make them considerably fragile. It is not uncommon for a tiefling to be generally unpleasant to look at in the eye of the commonfolk. As if to make matters worse, their hellish progenitors have left them a destiny of misfortune, though perhaps their immunity to fire opens new opportunities for them... THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. NOBLES EVEN MORE SO. PLAY AT YOUR OWN RISK."
@@ -1417,6 +1786,8 @@
 	rogue_offsets = list(
 		"f" = list(OFFSET_BACK = list(0, -1), OFFSET_BELT = list(0, -1), OFFSET_EARS = list(0, -1), OFFSET_FACE = list(0, -1), OFFSET_FACEMASK = list(0, -1), OFFSET_GLASSES = list(0, -1), OFFSET_HEAD = list(0, -1), OFFSET_NECK = list(0, -1), ROGUE_OFFSET_MOUTH = list(0, -1), ROGUE_OFFSET_RING = list(0, -1)),
 		)
+	rogue_native_language = /datum/language/rogue_celestial
+	rogue_ageless = TRUE
 	rogue_race_sheet = /datum/attribute_holder/sheet/vibelin_race/aasimar
 	rogue_race_traits = list(TRAIT_NOMOBSWAP)
 	rogue_description = "Aasimar roaming alone on Psydonia often are those abandoned after serving their purpose. This species is often revered due to their celestial origin, but face great solitude as not many of their kind exist. Many an aasimar will detest the reverence in which they are greeted with, for their greatest failure or unuse that lead to their discarding is not subject for celebration. An aasimar may be crafted with any number of materials. Many resemble sculptures of stone or are ceramic in skin, but their insides are just as mortal as any other. Most Aasimar were created to serve The Ten, and few if any Psydonic Aasimar remain to this day- decrepit husks of what were once great warriors."
@@ -1483,6 +1854,8 @@
 	icon_state = "vib_horns_triton"
 	layers = list("FRONT" = BODY_FRONT_LAYER)
 	hidden_by = HIDEHAIR
+	name = "Triton Tusks"
+	rogue_slot = "horns"
 
 /datum/bodypart_overlay/simple/rogue_feature/vib_tail_triton
 	icon = VIBELIN_BODIES_ICON
@@ -1490,6 +1863,8 @@
 	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
 	hidden_by = NONE
 	skin_coloured = TRUE
+	name = "Triton Bell"
+	rogue_slot = "tail"
 
 /obj/item/bodypart/head/vib_triton/triton
 	head_flags = HEAD_EYESPRITES | HEAD_EYEHOLES | HEAD_DEBRAIN | HEAD_HAIR | HEAD_FACIAL_HAIR
@@ -1550,6 +1925,12 @@
 	rogue_offsets = list(
 		"f" = list(OFFSET_BACK = list(0, -1), OFFSET_EARS = list(0, -1), OFFSET_FACE = list(0, -1), OFFSET_FACEMASK = list(0, -1), OFFSET_GLASSES = list(0, -1), OFFSET_HEAD = list(0, -1), OFFSET_NECK = list(0, -1), ROGUE_OFFSET_MOUTH = list(0, -1), ROGUE_OFFSET_RING = list(0, -1)),
 		)
+	rogue_customizers = list(
+		"tail" = list("name" = "Triton Bell", "default" = "vib_tail_triton", "none" = FALSE, "colors" = FALSE, "choices" = list("vib_tail_triton")),
+		)
+	rogue_native_language = /datum/language/rogue_deepspeak
+	rogue_accent = "Triton Accent"
+	rogue_bioluminescence = TRUE
 	rogue_race_sheet = /datum/attribute_holder/sheet/vibelin_race/triton
 	rogue_race_sheet_female = /datum/attribute_holder/sheet/vibelin_race/triton_female
 	rogue_race_traits = list(TRAIT_NOMOBSWAP, TRAIT_NODROWN, TRAIT_SWIMMER)
@@ -1618,6 +1999,8 @@
 	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
 	hidden_by = NONE
 	skin_coloured = TRUE
+	name = "Kobold Curly"
+	rogue_slot = "tail"
 
 /obj/item/bodypart/head/vib_kobold/kobold
 	head_flags = HEAD_EYESPRITES | HEAD_EYEHOLES | HEAD_DEBRAIN
@@ -1627,6 +2010,15 @@
 /obj/item/bodypart/chest/vib_kobold/kobold/Initialize(mapload)
 	. = ..()
 	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/vib_tail_kobold, update = FALSE)
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_kobold_alt
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_kobold_alt"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	skin_coloured = TRUE
+	name = "Kobold Straight"
+	rogue_slot = "tail"
 
 /datum/attribute_holder/sheet/vibelin_race/kobold
 	raw_attribute_list = list(
@@ -1688,6 +2080,11 @@
 	rogue_offsets = list(
 		"f" = list(OFFSET_BACK = list(0, -5), OFFSET_EARS = list(0, -5), OFFSET_FACE = list(0, -5), OFFSET_FACEMASK = list(0, -5), OFFSET_GLASSES = list(0, -5), OFFSET_HEAD = list(0, -5), OFFSET_HELD = list(0, -4), OFFSET_NECK = list(0, -5), ROGUE_OFFSET_MOUTH = list(0, -5), ROGUE_OFFSET_RING = list(0, -4)),
 		)
+	rogue_customizers = list(
+		"tail" = list("name" = "Kobold Tail", "default" = "vib_tail_kobold", "none" = FALSE, "colors" = FALSE, "choices" = list("vib_tail_kobold", "vib_tail_kobold_alt")),
+		)
+	rogue_native_language = /datum/language/rogue_kobold
+	rogue_accent = "Scale-thing!"
 	rogue_race_sheet = /datum/attribute_holder/sheet/vibelin_race/kobold
 	rogue_worn_sex = "f"
 	rogue_description = "They are often in servitude to great beasts such as dragons and giants - trapping their lairs and utilizing pack tactics to dispose of ambitious adventurers and thieves alike. But in their lonesome, Kobolds are generally weak and quick to die, as they noticeably lack the meaningful amount of constitution, strength, and endurance that other species usually have. WARNING: THIS IS A HEAVILY DISCRIMINATED AGAINST CHALLENGE SPECIES WITH ACTIVE SPECIES DETRIMENTS. YOU CAN AND WILL DIE A LOT; PLAY AT YOUR OWN RISK!"
@@ -1756,6 +2153,8 @@
 	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
 	hidden_by = NONE
 	skin_coloured = TRUE
+	name = "Kobold Round"
+	rogue_slot = "tail"
 
 /datum/bodypart_overlay/simple/rogue_feature/vib_wings_kobold
 	icon = VIBELIN_BODIES_ICON
@@ -1763,6 +2162,8 @@
 	layers = list("BEHIND" = BODY_BEHIND_LAYER, "FRONT" = BODY_FRONT_LAYER)
 	hidden_by = NONE
 	skin_coloured = TRUE
+	name = "Kobold"
+	rogue_slot = "wings"
 
 /obj/item/bodypart/head/vib_kobold_alt/kobold_formikrag
 	head_flags = HEAD_EYESPRITES | HEAD_EYEHOLES | HEAD_DEBRAIN
@@ -1829,6 +2230,11 @@
 	rogue_offsets = list(
 		"f" = list(OFFSET_BACK = list(0, -5), OFFSET_EARS = list(0, -5), OFFSET_FACE = list(0, -5), OFFSET_FACEMASK = list(0, -5), OFFSET_GLASSES = list(0, -5), OFFSET_HEAD = list(0, -5), OFFSET_HELD = list(0, -4), OFFSET_NECK = list(0, -5), ROGUE_OFFSET_MOUTH = list(0, -5), ROGUE_OFFSET_RING = list(0, -4)),
 		)
+	rogue_native_language = /datum/language/rogue_kobold
+	rogue_accent = "Scale-thing!"
+	rogue_flight = TRUE
+	rogue_flight_takeoff = FALSE
+	rogue_flight_time = 50
 	rogue_race_sheet = /datum/attribute_holder/sheet/vibelin_race/kobold_formikrag
 	rogue_worn_sex = "f"
 	rogue_description = "Crawling out of the acid pools of the Subterra, consuming the local fauna and the rare Wurm's ichor, those which survive have become the ultimate vermin of those acidic lands. Having sprouted pitiful wings and garnered meagre resistance to the elements, the minerals and lighting of the pools have stripped their ability to consume stone and negated the need for strong vision. More stout than their \"normal\" kin, they are more accoustomed to taking beatings. Especially from Subterran wurm herders. WARNING: THIS IS A HEAVILY DISCRIMINATED AGAINST CHALLENGE SPECIES WITH ACTIVE SPECIES DETRIMENTS. YOU CAN AND WILL DIE A LOT; PLAY AT YOUR OWN RISK!"
@@ -1899,6 +2305,9 @@
 	layers = list("BEHIND" = BODY_BEHIND_LAYER, "FRONT" = BODY_FRONT_LAYER)
 	hidden_by = HIDEEARS
 	skin_coloured = TRUE
+	name = "Cat"
+	rogue_slot = "ears"
+	rogue_extra = list("BEHIND", "FRONT")
 
 /datum/bodypart_overlay/simple/rogue_feature/vib_tail_cat
 	icon = VIBELIN_BODIES_ICON
@@ -1906,6 +2315,8 @@
 	layers = list("FRONT" = BODY_FRONT_LAYER)
 	hidden_by = NONE
 	rogue_hair_coloured = TRUE
+	name = "Cat"
+	rogue_slot = "tail"
 
 /obj/item/bodypart/head/vib_mt_fm/hollowkin
 	head_flags = HEAD_EYESPRITES | HEAD_EYEHOLES | HEAD_DEBRAIN | HEAD_EYECOLOR | HEAD_HAIR | HEAD_FACIAL_HAIR | HEAD_LIPS
@@ -1919,6 +2330,784 @@
 /obj/item/bodypart/chest/vib_mt_fm/hollowkin/Initialize(mapload)
 	. = ..()
 	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/vib_tail_cat, update = FALSE)
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_bat
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_bat"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Bat"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_bigwolf
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_bigwolf"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Big Wolf"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_bigwolf_inner
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_bigwolf_inner"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Big Wolf (Inner)"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+	rogue_extra = list("ADJ", "FRONT")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_rabbit
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_rabbit"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Rabbit"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_bunny
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_bunny"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Bunny"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_big_rabbit_large
+	icon = 'modular_redtard/heritage/icons/vibelin_32x48.dmi'
+	icon_state = "vib_ears_big_rabbit_large"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Rabbit Ears (Large)"
+	rogue_slot = "ears"
+	rogue_color_keys = 3
+	rogue_color_defaults = list("skin", "#FFFFFF", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner", "Tips")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_cat_big
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_cat_big"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Cat, Big"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_cat_normal
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_cat_normal"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Cat, Normal"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_cow
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_cow"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Cow"
+	rogue_slot = "ears"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_eevee
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_eevee"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Eevee"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_fennec
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_fennec"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Fennec"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_fox
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_fox"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Fox"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_vulp
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_vulp"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Vulp"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_husky
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_husky"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Husky"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_jellyfish
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_jellyfish"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Jellyfish"
+	rogue_slot = "ears"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_kangaroo
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_kangaroo"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Kangaroo"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_lab
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_lab"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Dog, Long"
+	rogue_slot = "ears"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_murid
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_murid"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Murid"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_pede
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_pede"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Scolipede"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Details")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_shark
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_shark"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Shark"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_skunk
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_skunk"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "skunk"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_squirrel
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_squirrel"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Squirrel"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_wolf
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_wolf"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Wolf"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_perky
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_perky"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Perky"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_miqote
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_miqote"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Miqo'te"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_lunasune
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_lunasune"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Lunasune"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_possum
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_possum"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Possum"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_raccoon
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_raccoon"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Raccoon"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_mouse
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_mouse"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Mouse"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_big_acrador_long
+	icon = 'modular_redtard/heritage/icons/vibelin_32x48.dmi'
+	icon_state = "vib_ears_big_acrador_long"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Acrador (Long)"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_big_acrador_short
+	icon = 'modular_redtard/heritage/icons/vibelin_32x48.dmi'
+	icon_state = "vib_ears_big_acrador_short"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Acrador (Short)"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_uni
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_uni"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "ADJ" = BODY_ADJ_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Uni"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_curledramhorns
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_curledramhorns"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Curled Ram Horns"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_curledramhornsalt
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_curledramhornsalt"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Curled Ram Horns Alt"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_smallramhorns
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_smallramhorns"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Small Ram Horns"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_smallramhornsalt
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_smallramhornsalt"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Small Ram Horns Alt"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_longhorns
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_longhorns"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Longhorns"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_greathorns
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_greathorns"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Great Horns"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_bunhorns
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_bunhorns"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Bunny horns"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_monkey
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_monkey"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Monkey"
+	rogue_slot = "tail"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_batl
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_batl"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Bat (Long)"
+	rogue_slot = "tail"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("hair", "#FFFFFF")
+	rogue_color_names = list("Tail", "Tip")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_bats
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_bats"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Bat (Short)"
+	rogue_slot = "tail"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("hair", "#FFFFFF")
+	rogue_color_names = list("Tail", "Tip")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_catbig
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_catbig"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Cat, Big"
+	rogue_slot = "tail"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_twocat
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_twocat"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Cat, Double"
+	rogue_slot = "tail"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_cow
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_cow"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Cow"
+	rogue_slot = "tail"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_fennec
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_fennec"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Fennec"
+	rogue_slot = "tail"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("hair", "#FFFFFF")
+	rogue_color_names = list("Tail", "Tip")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_fox
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_fox"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Fox"
+	rogue_slot = "tail"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("hair", "#FFFFFF")
+	rogue_color_names = list("Tail", "Tip")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_fox2
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_fox2"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Fox 2"
+	rogue_slot = "tail"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_horse
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_horse"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Horse"
+	rogue_slot = "tail"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_husky
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_husky"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Husky"
+	rogue_slot = "tail"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("hair", "#FFFFFF")
+	rogue_color_names = list("Tail", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_kangaroo
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_kangaroo"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "kangaroo"
+	rogue_slot = "tail"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_kitsune
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_kitsune"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Kitsune"
+	rogue_slot = "tail"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("hair", "#FFFFFF")
+	rogue_color_names = list("Tails", "Tips")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_murid
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_murid"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Murid"
+	rogue_slot = "tail"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_rabbit
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_rabbit"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Rabbit"
+	rogue_slot = "tail"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_shark
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_shark"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Shark"
+	rogue_slot = "tail"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_australian_shepherd
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_australian_shepherd"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Australian Shepherd"
+	rogue_slot = "tail"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("hair", "#FFFFFF")
+	rogue_color_names = list("Tail", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_skunk
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_skunk"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Skunk"
+	rogue_slot = "tail"
+	rogue_color_keys = 3
+	rogue_color_defaults = list("hair", "#FFFFFF", "#FFFFFF")
+	rogue_color_names = list("Tail", "Inner", "Stripes")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_straighttail
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_straighttail"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Straight Tail"
+	rogue_slot = "tail"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_squirrel
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_squirrel"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Squirrel"
+	rogue_slot = "tail"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_tamamo_kitsune
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_tamamo_kitsune"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Tamamo Kitsune Tails"
+	rogue_slot = "tail"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("hair", "#FFFFFF")
+	rogue_color_names = list("Tails", "Tips")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_tiger
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_tiger"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Tiger"
+	rogue_slot = "tail"
+	rogue_color_keys = 3
+	rogue_color_defaults = list("hair", "#FFFFFF", "#FFFFFF")
+	rogue_color_names = list("Tail", "Tip", "Stripes")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_wolf
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_wolf"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Wolf"
+	rogue_slot = "tail"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_sharknofin
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_sharknofin"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Shark no fin"
+	rogue_slot = "tail"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_raptor
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_raptor"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Raptor"
+	rogue_slot = "tail"
+	rogue_color_keys = 3
+	rogue_color_defaults = list("hair", "#FFFFFF", "#FFFFFF")
+	rogue_color_names = list("Tail", "Details", "Details")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_deer
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_deer"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Deer"
+	rogue_slot = "tail"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("hair", "#FFFFFF")
+	rogue_color_names = list("Tail", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_raccoon
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_raccoon"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Raccoon"
+	rogue_slot = "tail"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("hair", "#FFFFFF")
+	rogue_color_names = list("Tail", "Stripes")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_sabresune
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_sabresune"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Sabresune"
+	rogue_slot = "tail"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("hair", "#FFFFFF")
+	rogue_color_names = list("Tails", "Tips")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_lizard_smooth
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_lizard_smooth"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Smooth"
+	rogue_slot = "tail"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_lizard_dtiger
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_lizard_dtiger"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Dark Tiger"
+	rogue_slot = "tail"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_lizard_ltiger
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_lizard_ltiger"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Light Tiger"
+	rogue_slot = "tail"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_lizard_spikes
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_lizard_spikes"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Spikes"
+	rogue_slot = "tail"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_rattlesnake
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_rattlesnake"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Rattlesnake"
+	rogue_slot = "tail"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("hair", "#FFFFFF")
+	rogue_color_names = list("Tail", "Tip")
 
 /datum/attribute_holder/sheet/vibelin_race/hollowkin
 	raw_attribute_list = list(
@@ -1960,6 +3149,12 @@
 		"m" = list(OFFSET_BACK = list(0, 1), OFFSET_BELT = list(0, 1), OFFSET_EARS = list(0, 1), OFFSET_FACE = list(0, 1), OFFSET_FACEMASK = list(0, 1), OFFSET_GLASSES = list(0, 1), OFFSET_GLOVES = list(0, 1), OFFSET_HEAD = list(0, 1), OFFSET_HELD = list(0, 1), OFFSET_NECK = list(0, 1), OFFSET_SUIT = list(0, 1), OFFSET_S_STORE = list(0, 1), OFFSET_UNIFORM = list(0, 1), ROGUE_OFFSET_CLOAK = list(0, 1), ROGUE_OFFSET_MOUTH = list(0, 1), ROGUE_OFFSET_RING = list(0, 1), ROGUE_OFFSET_SHIRT = list(0, 1), ROGUE_OFFSET_WRISTS = list(0, 1)),
 		"f" = list(OFFSET_BACK = list(0, -1), OFFSET_EARS = list(0, -1), OFFSET_FACE = list(0, -1), OFFSET_FACEMASK = list(0, -1), OFFSET_GLASSES = list(0, -1), OFFSET_HEAD = list(0, -1), OFFSET_NECK = list(0, -1), ROGUE_OFFSET_MOUTH = list(0, -1), ROGUE_OFFSET_RING = list(0, -1)),
 		)
+	rogue_customizers = list(
+		"ears" = list("name" = "Hollow-Kin Ears", "default" = "vib_ears_cat", "none" = TRUE, "colors" = TRUE, "choices" = list("vib_ears_cat", "vib_ears_bat", "vib_ears_bigwolf", "vib_ears_bigwolf_inner", "vib_ears_rabbit", "vib_ears_bunny", "vib_ears_big_rabbit_large", "vib_ears_cat_big", "vib_ears_cat_normal", "vib_ears_cow", "vib_ears_eevee", "vib_ears_elf", "vib_ears_fennec", "vib_ears_fox", "vib_ears_vulp", "vib_ears_husky", "vib_ears_jellyfish", "vib_ears_kangaroo", "vib_ears_lab", "vib_ears_murid", "vib_ears_pede", "vib_ears_shark", "vib_ears_skunk", "vib_ears_squirrel", "vib_ears_wolf", "vib_ears_perky", "vib_ears_miqote", "vib_ears_lunasune", "vib_ears_possum", "vib_ears_raccoon", "vib_ears_mouse", "vib_ears_big_acrador_long", "vib_ears_big_acrador_short")),
+		"horns" = list("name" = "Horns", "default" = "none", "none" = TRUE, "colors" = FALSE, "choices" = list("vib_horns_simple", "vib_horns_short", "vib_horns_curled", "vib_horns_ram", "vib_horns_uni", "vib_horns_oni", "vib_horns_oni_large", "vib_horns_broken", "vib_horns_rbroken", "vib_horns_lbroken", "vib_horns_drake", "vib_horns_antlers", "vib_horns_ramalt", "vib_horns_smallantlers", "vib_horns_curledramhorns", "vib_horns_curledramhornsalt", "vib_horns_smallramhorns", "vib_horns_smallramhornsalt", "vib_horns_liftedhorns", "vib_horns_sideswept", "vib_horns_stabbers", "vib_horns_unihorn", "vib_horns_longhorns", "vib_horns_outstretched", "vib_horns_halo", "vib_horns_greathorns", "vib_horns_bunhorns", "vib_horns_marauder", "vib_horns_faceguard", "vib_horns_doublehorns")),
+		"tail" = list("name" = "Hollow-Kin Tail", "default" = "vib_tail_cat", "none" = TRUE, "colors" = TRUE, "choices" = list("vib_tail_cat", "vib_tail_monkey", "vib_tail_batl", "vib_tail_bats", "vib_tail_catbig", "vib_tail_twocat", "vib_tail_cow", "vib_tail_fennec", "vib_tail_fox", "vib_tail_fox2", "vib_tail_horse", "vib_tail_husky", "vib_tail_kangaroo", "vib_tail_kitsune", "vib_tail_murid", "vib_tail_rabbit", "vib_tail_shark", "vib_tail_australian_shepherd", "vib_tail_skunk", "vib_tail_straighttail", "vib_tail_squirrel", "vib_tail_tamamo_kitsune", "vib_tail_tiger", "vib_tail_wolf", "vib_tail_sharknofin", "vib_tail_raptor", "vib_tail_deer", "vib_tail_raccoon", "vib_tail_sabresune", "vib_tail_lizard_smooth", "vib_tail_lizard_dtiger", "vib_tail_lizard_ltiger", "vib_tail_lizard_spikes", "vib_tail_rattlesnake")),
+		)
+	rogue_native_language = /datum/language/common
 	rogue_race_sheet = /datum/attribute_holder/sheet/vibelin_race/hollowkin
 	rogue_description = "Their true origin is much darker. Hollowkin are the product of dark-elven ingenuity and fleshcrafting. Their creation is a simple story of malice and greed- of sapient animal hybrid slave homunculi, a person turned product which they could market and sell to other great houses of modern Zizonic Subterra. The true nature of their existence is largely lost to the hollowkin through centuries. The dark elves still recall, of course, viciously mocking their creations from deep within their caves, declaring them but nothing more than animals or pets. Hollowkin react violently to dark-elven attempts at oppression, this leads to conflicts across the world of Psydonia. To the unaligned observer, hollowkin are often seen amongst bandit bands, working openly with Agents of Matthios, conflating the idea of freedom between the two deities. There is, of course, the old wives' tales that circulate... how hollowkin lead to infestations of Werewolves. Hollowkin are often denied nobility from this rumour alone. Whether this is true or not is unknown to the common person, but to those familiar with the horrendous magics used by the dark elves, they must only assume the worst. THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. PLAY AT YOUR OWN RISK."
 	rogue_lore = list(
@@ -2026,6 +3221,8 @@
 	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
 	hidden_by = NONE
 	rogue_hair_coloured = TRUE
+	name = "Hawk"
+	rogue_slot = "tail"
 
 /datum/bodypart_overlay/simple/rogue_feature/vib_wings_large_harpyswept
 	icon = VIBELIN_WIDE_ICON
@@ -2034,6 +3231,8 @@
 	hidden_by = NONE
 	rogue_pixel_x = -16
 	rogue_hair_coloured = TRUE
+	name = "Harpy (Swept)"
+	rogue_slot = "wings"
 
 /obj/item/bodypart/head/vib_harpy/harpy
 	head_flags = HEAD_EYESPRITES | HEAD_EYEHOLES | HEAD_DEBRAIN | HEAD_EYECOLOR | HEAD_HAIR | HEAD_FACIAL_HAIR | HEAD_LIPS
@@ -2083,6 +3282,12 @@
 		"m" = list(OFFSET_BACK = list(0, 1), OFFSET_BELT = list(0, 1), OFFSET_EARS = list(0, 1), OFFSET_FACEMASK = list(0, 1), OFFSET_GLASSES = list(0, 1), OFFSET_GLOVES = list(0, 1), OFFSET_HEAD = list(0, 1), OFFSET_HELD = list(0, 1), OFFSET_NECK = list(0, 1), OFFSET_SUIT = list(0, 1), OFFSET_S_STORE = list(0, 1), OFFSET_UNIFORM = list(0, 1), ROGUE_OFFSET_CLOAK = list(0, 1), ROGUE_OFFSET_MOUTH = list(0, 1), ROGUE_OFFSET_RING = list(0, 1), ROGUE_OFFSET_SHIRT = list(0, 1), ROGUE_OFFSET_WRISTS = list(0, 1)),
 		"f" = list(OFFSET_BELT = list(0, 1), OFFSET_GLOVES = list(0, 1), OFFSET_HELD = list(0, 1), OFFSET_SUIT = list(0, 1), OFFSET_S_STORE = list(0, 1), OFFSET_UNIFORM = list(0, 1), ROGUE_OFFSET_CLOAK = list(0, 1), ROGUE_OFFSET_SHIRT = list(0, 1), ROGUE_OFFSET_WRISTS = list(0, 1)),
 		)
+	rogue_customizers = list(
+		"tail" = list("name" = "Harpy Plumage", "default" = "vib_tail_hawk", "none" = TRUE, "colors" = FALSE, "choices" = list("vib_tail_hawk")),
+		"wings" = list("name" = "Wings", "default" = "vib_wings_large_harpyswept", "none" = FALSE, "colors" = TRUE, "choices" = list("vib_wings_large_harpyswept")),
+		)
+	rogue_native_language = /datum/language/common
+	rogue_flight = TRUE
 	rogue_race_sheet = /datum/attribute_holder/sheet/vibelin_race/harpy
 	rogue_race_traits = list(TRAIT_DODGEEXPERT)
 	rogue_description = "Harpies, or less ceremoniously known as 'magpies,' resemble the despised hollow-kin in appearance at first glance. One would rightfully assume they are similar in nature- with accuracy even, much to the harpies' chagrin. Harpies have been uplifted and reconnected to divinity by Eora, having developed culture of music and song which caught the attention of such a goddess. Their songs and voices may be their own, or proud mimicking other voices they've heard with unnatural accuracy. Whilst harpies may fly, their freedom is weighed by corruption of fleshcrafting to this day. Complete open-air freedom is still foreign to them. Harpies tend to live and gather in colonies at the tops of great sequoia forests and in nearby cliffs. Due to their laden flight, they must employ use of updrafts and proximity to large objects or structures to bolster their limited range and air-dancing performances. Their serene songs and blissful music can be heard echoing far below, guiding travelers and thieves both to respite... or treasure. For as lifted into grace as they might be, these 'magpies' earn such a nickname from instinctual Matthiosan greed and love for anything that shines. Yet if one can work past that distrust and compensate them well, harpies make for unparalleled couriers. Harpies and Feculents often find themselves in conflict, mirroring the quarrels of their patrons, whether of conscious faith or not."
@@ -2147,7 +3352,18 @@
 	icon_state = "vib_snout_thin_beak_bigbeak"
 	layers = list("ADJ" = BODY_ADJ_LAYER)
 	hidden_by = HIDESNOUT
-	skin_coloured = TRUE
+	draw_color = "#5E5E5E"
+	name = "Big Beak"
+	rogue_slot = "snout"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_neck_feature_fluff_medicator
+	icon = 'modular_redtard/heritage/icons/vibelin_45x34.dmi'
+	icon_state = "vib_neck_feature_fluff_medicator"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Medicator Fluff"
+	rogue_slot = "neck"
 
 /datum/bodypart_overlay/simple/rogue_feature/vib_tail_medicator
 	icon = VIBELIN_BODIES_ICON
@@ -2155,6 +3371,8 @@
 	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
 	hidden_by = NONE
 	rogue_hair_coloured = TRUE
+	name = "Medicator Plumage"
+	rogue_slot = "tail"
 
 /obj/item/bodypart/head/vib_medicator/medicator
 	head_flags = HEAD_EYESPRITES | HEAD_EYEHOLES | HEAD_DEBRAIN | HEAD_HAIR
@@ -2162,12 +3380,67 @@
 /obj/item/bodypart/head/vib_medicator/medicator/Initialize(mapload)
 	. = ..()
 	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/vib_snout_thin_beak_bigbeak, update = FALSE)
+	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/vib_neck_feature_fluff_medicator, update = FALSE)
 
 /obj/item/bodypart/chest/vib_medicator/medicator
 
 /obj/item/bodypart/chest/vib_medicator/medicator/Initialize(mapload)
 	. = ..()
 	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/vib_tail_medicator, update = FALSE)
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_thin_beak_bigbeakshort
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_thin_beak_bigbeakshort"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	draw_color = "#5E5E5E"
+	name = "Big Beak Short"
+	rogue_slot = "snout"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_thin_beak_slimbeak
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_thin_beak_slimbeak"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	draw_color = "#5E5E5E"
+	name = "Slim Beak"
+	rogue_slot = "snout"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_thin_beak_slimbeakshort
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_thin_beak_slimbeakshort"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	draw_color = "#5E5E5E"
+	name = "Slim Beak Short"
+	rogue_slot = "snout"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_thin_beak_slimbeakalt
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_thin_beak_slimbeakalt"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	draw_color = "#5E5E5E"
+	name = "Slim Beak Alt"
+	rogue_slot = "snout"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_thin_beak_hookbeak
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_thin_beak_hookbeak"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	draw_color = "#5E5E5E"
+	name = "Hook Beak"
+	rogue_slot = "snout"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_thin_beak_hookbeakbig
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_thin_beak_hookbeakbig"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	draw_color = "#5E5E5E"
+	name = "Hook Beak Big"
+	rogue_slot = "snout"
 
 /datum/attribute_holder/sheet/vibelin_race/medicator
 	raw_attribute_list = list(
@@ -2218,6 +3491,12 @@
 	rogue_offsets = list(
 		"f" = list(OFFSET_GLOVES = list(0, 1), OFFSET_HELD = list(0, 1), OFFSET_SUIT = list(0, 1), OFFSET_S_STORE = list(0, 1), OFFSET_UNIFORM = list(0, 1), ROGUE_OFFSET_CLOAK = list(0, 1), ROGUE_OFFSET_SHIRT = list(0, 1), ROGUE_OFFSET_WRISTS = list(0, 1)),
 		)
+	rogue_customizers = list(
+		"tail" = list("name" = "Medicator Plumage", "default" = "vib_tail_medicator", "none" = FALSE, "colors" = FALSE, "choices" = list("vib_tail_medicator")),
+		"snout" = list("name" = "Thin Beak", "default" = "vib_snout_thin_beak_slimbeak", "none" = FALSE, "colors" = FALSE, "choices" = list("vib_snout_thin_beak_bigbeak", "vib_snout_thin_beak_bigbeakshort", "vib_snout_thin_beak_slimbeak", "vib_snout_thin_beak_slimbeakshort", "vib_snout_thin_beak_slimbeakalt", "vib_snout_thin_beak_hookbeak", "vib_snout_thin_beak_hookbeakbig")),
+		"neck" = list("name" = "Medicator Fluff", "default" = "vib_neck_feature_fluff_medicator", "none" = FALSE, "colors" = FALSE, "choices" = list("vib_neck_feature_fluff_medicator")),
+		)
+	rogue_native_language = /datum/language/common
 	rogue_race_sheet = /datum/attribute_holder/sheet/vibelin_race/medicator
 	rogue_race_traits = list(TRAIT_NOMOBSWAP, TRAIT_NASTY_EATER)
 	rogue_worn_sex = "f"
@@ -2321,6 +3600,8 @@
 	rogue_offsets = list(
 		"f" = list(OFFSET_EARS = list(0, -1), OFFSET_FACEMASK = list(0, -1), OFFSET_GLASSES = list(0, -1), OFFSET_HEAD = list(0, -1), OFFSET_NECK = list(0, -1), OFFSET_SUIT = list(0, 1), OFFSET_S_STORE = list(0, 1), ROGUE_OFFSET_CLOAK = list(0, 1), ROGUE_OFFSET_MOUTH = list(0, -1), ROGUE_OFFSET_RING = list(0, -1), ROGUE_OFFSET_SHIRT = list(0, 2)),
 		)
+	rogue_native_language = /datum/language/rogue_zalad
+	rogue_accent = "Zalad Accent"
 	rogue_race_sheet = /datum/attribute_holder/sheet/vibelin_race/rakshari
 	rogue_race_traits = list(TRAIT_NOMOBSWAP)
 	rogue_description = "Over centuries, the Rakshari united under the banners of powerful Zalad merchant-kings and warlords, transforming their scattered clans into a dominant slaver force across the region. They would often raid weaker settlements and rival caravans, capturing slaves to fuel their expanding cities and economies. Practice of this was justified through religious doctrines, venerating strength and dominance as divine virtues. As they further attached themselves to Zaladin, however, their people would integrate more sophisticated forms of servitude, such as indentured contracts and debt bondage. THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. PLAY AT YOUR OWN RISK."
@@ -2365,6 +3646,7 @@
 		"m" = list(OFFSET_BACK = list(0, 1), OFFSET_BELT = list(0, 1), OFFSET_EARS = list(0, 1), OFFSET_FACE = list(0, 1), OFFSET_FACEMASK = list(0, 1), OFFSET_GLASSES = list(0, 1), OFFSET_GLOVES = list(0, 1), OFFSET_HEAD = list(0, 1), OFFSET_HELD = list(0, 1), OFFSET_NECK = list(0, 1), OFFSET_SUIT = list(0, 1), OFFSET_S_STORE = list(0, 1), OFFSET_UNIFORM = list(0, 1), ROGUE_OFFSET_CLOAK = list(0, 1), ROGUE_OFFSET_MOUTH = list(0, 1), ROGUE_OFFSET_RING = list(0, 1), ROGUE_OFFSET_SHIRT = list(0, 1), ROGUE_OFFSET_WRISTS = list(0, 1)),
 		"f" = list(OFFSET_BACK = list(0, -1), OFFSET_EARS = list(0, -1), OFFSET_FACE = list(0, -1), OFFSET_FACEMASK = list(0, -1), OFFSET_GLASSES = list(0, -1), OFFSET_HEAD = list(0, -1), OFFSET_NECK = list(0, -1), ROGUE_OFFSET_MOUTH = list(0, -1), ROGUE_OFFSET_RING = list(0, -1)),
 		)
+	rogue_native_language = /datum/language/common
 	rogue_race_sheet = /datum/attribute_holder/sheet/vibelin_race/ooze
 	rogue_race_traits = list(TRAIT_NOMOBSWAP, TRAIT_NASTY_EATER, TRAIT_EASYDISMEMBER, TRAIT_LIMBATTACHMENT, TRAIT_ZOMBIE_IMMUNE)
 	rogue_description = "True to their nature, Murklings adapt rapidly to their surroundings, but that adaptability carries a curse: their bodies absorb more than shape, and dusts and spirits can alter them past recovery. THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. PLAY AT YOUR OWN RISK."
@@ -2372,6 +3654,1854 @@
 		"True to their nature, Murklings adapt rapidly to their surroundings, but that adaptability carries a curse: their bodies absorb more than shape, and dusts and spirits can alter them past recovery.",
 		"THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. PLAY AT YOUR OWN RISK.",
 		)
+
+/obj/item/bodypart/head/vib_mta_fma
+	icon = VIBELIN_BODIES_ICON
+	icon_static = VIBELIN_BODIES_ICON
+	icon_greyscale = VIBELIN_BODIES_ICON
+	icon_state = "vib_mta_fma_head_m"
+	limb_id = "vib_mta_fma"
+	is_dimorphic = TRUE
+
+/obj/item/bodypart/chest/vib_mta_fma
+	icon = VIBELIN_BODIES_ICON
+	icon_static = VIBELIN_BODIES_ICON
+	icon_greyscale = VIBELIN_BODIES_ICON
+	icon_state = "vib_mta_fma_chest_m"
+	limb_id = "vib_mta_fma"
+	is_dimorphic = TRUE
+
+/obj/item/bodypart/arm/left/vib_mta_fma
+	icon = VIBELIN_BODIES_ICON
+	icon_static = VIBELIN_BODIES_ICON
+	icon_greyscale = VIBELIN_BODIES_ICON
+	icon_state = "vib_mta_fma_l_arm_m"
+	limb_id = "vib_mta_fma"
+	is_dimorphic = TRUE
+	rogue_sexed_hand = TRUE
+
+/obj/item/bodypart/arm/right/vib_mta_fma
+	icon = VIBELIN_BODIES_ICON
+	icon_static = VIBELIN_BODIES_ICON
+	icon_greyscale = VIBELIN_BODIES_ICON
+	icon_state = "vib_mta_fma_r_arm_m"
+	limb_id = "vib_mta_fma"
+	is_dimorphic = TRUE
+	rogue_sexed_hand = TRUE
+
+/obj/item/bodypart/leg/left/vib_mta_fma
+	icon = VIBELIN_BODIES_ICON
+	icon_static = VIBELIN_BODIES_ICON
+	icon_greyscale = VIBELIN_BODIES_ICON
+	icon_state = "vib_mta_fma_l_leg_m"
+	limb_id = "vib_mta_fma"
+	is_dimorphic = TRUE
+
+/obj/item/bodypart/leg/right/vib_mta_fma
+	icon = VIBELIN_BODIES_ICON
+	icon_static = VIBELIN_BODIES_ICON
+	icon_greyscale = VIBELIN_BODIES_ICON
+	icon_state = "vib_mta_fma_r_leg_m"
+	limb_id = "vib_mta_fma"
+	is_dimorphic = TRUE
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_cat
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_cat"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Cat"
+	rogue_slot = "snout"
+
+/obj/item/bodypart/head/vib_mta_fma/tabaxi
+	head_flags = HEAD_EYESPRITES | HEAD_EYEHOLES | HEAD_DEBRAIN | HEAD_EYECOLOR | HEAD_HAIR | HEAD_FACIAL_HAIR
+
+/obj/item/bodypart/head/vib_mta_fma/tabaxi/Initialize(mapload)
+	. = ..()
+	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/vib_ears_cat, update = FALSE)
+	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/vib_snout_cat, update = FALSE)
+
+/obj/item/bodypart/chest/vib_mta_fma/tabaxi
+
+/obj/item/bodypart/chest/vib_mta_fma/tabaxi/Initialize(mapload)
+	. = ..()
+	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/vib_tail_cat, update = FALSE)
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_scanid
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_scanid"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Mammal, Short"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_scanidalt
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_scanidalt"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Mammal, Short ALT"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_scanidalt2
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_scanidalt2"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Mammal, Short ALT 2"
+	rogue_slot = "snout"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_scanidalt3
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_scanidalt3"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Mammal, Short ALT 3"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_sharp
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_sharp"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Sharp"
+	rogue_slot = "snout"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_round
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_round"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Round"
+	rogue_slot = "snout"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_sharplight
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_sharplight"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Sharp + Light"
+	rogue_slot = "snout"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_roundlight
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_roundlight"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Round + Light"
+	rogue_slot = "snout"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_front_sharp
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_front_sharp"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Sharp (Top)"
+	rogue_slot = "snout"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_front_round
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_front_round"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Round (Top)"
+	rogue_slot = "snout"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_front_sharplight
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_front_sharplight"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Sharp + Light (Top)"
+	rogue_slot = "snout"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_front_roundlight
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_front_roundlight"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Round + Light (Top)"
+	rogue_slot = "snout"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_shortnosed
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_shortnosed"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Short Nosed"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Nose")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_stubby
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_stubby"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Stubby"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Mask", "Snout")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_stubbyalt
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_stubbyalt"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Stubby ALT"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Nose")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_leopard
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_leopard"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Leopard"
+	rogue_slot = "tail"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("hair", "#FFFFFF")
+	rogue_color_names = list("Tail", "Spots")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_axolotl
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_axolotl"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Axolotl"
+	rogue_slot = "ears"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_bear
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_bear"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Bear"
+	rogue_slot = "ears"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_bunny_perky
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_bunny_perky"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Bunny (Perky)"
+	rogue_slot = "ears"
+	rogue_color_keys = 3
+	rogue_color_defaults = list("skin", "#FFFFFF", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner", "Tips")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_curled
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_curled"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Curled Horn"
+	rogue_slot = "ears"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_deer
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_deer"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Deer"
+	rogue_slot = "ears"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_elephant
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_elephant"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Elephant"
+	rogue_slot = "ears"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_fish
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_fish"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Fish"
+	rogue_slot = "ears"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_otie
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_otie"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Otusian"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_sergal
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_sergal"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Sergal"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_antenna_simple1
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_antenna_simple1"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Insect antenna 1"
+	rogue_slot = "ears"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_antenna_simple2
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_antenna_simple2"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Insect antenna 2"
+	rogue_slot = "ears"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_antenna_simple3
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_antenna_simple3"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Insect antenna 3"
+	rogue_slot = "ears"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_antenna_fuzzball1
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_antenna_fuzzball1"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Fuzzball antenna 1"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_antenna_fuzzball2
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_antenna_fuzzball2"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Fuzzball antenna 2"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_cobrahood
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_cobrahood"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Cobra Hood"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_cobrahoodears
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_cobrahoodears"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Cobra Hood (Ears)"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_ears_sabresune
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_ears_sabresune"
+	layers = list("ADJ" = BODY_ADJ_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEEARS
+	skin_coloured = TRUE
+	name = "Sabresune"
+	rogue_slot = "ears"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Ears", "Inner")
+	rogue_extra = list("ADJ", "FRONT")
+
+/datum/attribute_holder/sheet/vibelin_race/tabaxi
+	raw_attribute_list = list(
+		ROGUE_STAT_CONSTITUTION = -1,
+		ROGUE_STAT_PERCEPTION = 1,
+		ROGUE_STAT_SPEED = 2,
+		ROGUE_STAT_STRENGTH = -1,
+		)
+
+/datum/language_holder/vib_tabaxi
+	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
+	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
+
+/obj/item/organ/tongue/rogue_race/vib_tabaxi
+
+/datum/species/vib_tabaxi
+	name = "Tabaxi"
+	id = "vib_tabaxi"
+	inherent_traits = list(TRAIT_MUTANT_COLORS)
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
+	rogue_playable = TRUE
+	rogue_vibelin_type = "/datum/species/tabaxi"
+	bodypart_overrides = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/vib_mta_fma/tabaxi,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/vib_mta_fma/tabaxi,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/vib_mta_fma,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/vib_mta_fma,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/vib_mta_fma,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/vib_mta_fma,
+		)
+	rogue_default_skin = "#DE7642"
+	rogue_origins = list("Orange" = "#DE7642", "Light grey" = "#A8AA97", "Dark grey" = "#677881", "Light orange" = "#DA672A", "Light brown" = "#6D4530", "White brown" = "#C69B83", "Dark brown" = "#3B2E27", "Black" = "#302A26")
+	rogue_origin_wording = "Ancestry"
+	rogue_hair_colors = list("blond - pale" = "#9D8D6E", "blond - dirty" = "#88754F", "blond - drywheat" = "#D5BA7B", "blond - strawberry" = "#C69B71", "brown - mud" = "#362E25", "brown - oats" = "#584A3B", "brown - grain" = "#58433B", "brown - soil" = "#48322A", "brown - bark" = "#2D1300", "black - oil" = "#181A1D", "black - cave" = "#201616", "black - rogue" = "#2B201B", "black - midnight" = "#1D1B2B", "red - berry" = "#B23434", "red - wine" = "#82534C", "red - sunset" = "#82462B", "red - blood" = "#822B2B", "red - maroon" = "#612929", "orange - rust" = "#BC5E35")
+	rogue_offsets = list(
+		"m" = list(OFFSET_BACK = list(0, 1), OFFSET_BELT = list(0, 1), OFFSET_EARS = list(0, 1), OFFSET_FACE = list(0, 1), OFFSET_FACEMASK = list(0, 1), OFFSET_GLASSES = list(0, 1), OFFSET_GLOVES = list(0, 1), OFFSET_HEAD = list(0, 1), OFFSET_HELD = list(0, 1), OFFSET_NECK = list(0, 1), OFFSET_SUIT = list(0, 1), OFFSET_S_STORE = list(0, 1), OFFSET_UNIFORM = list(0, 1), ROGUE_OFFSET_CLOAK = list(0, 1), ROGUE_OFFSET_MOUTH = list(0, 1), ROGUE_OFFSET_RING = list(0, 1), ROGUE_OFFSET_SHIRT = list(0, 1), ROGUE_OFFSET_WRISTS = list(0, 1)),
+		"f" = list(OFFSET_BACK = list(0, -1), OFFSET_EARS = list(0, -1), OFFSET_FACE = list(0, -1), OFFSET_FACEMASK = list(0, -1), OFFSET_GLASSES = list(0, -1), OFFSET_HEAD = list(0, -1), OFFSET_NECK = list(0, -1), ROGUE_OFFSET_MOUTH = list(0, -1), ROGUE_OFFSET_RING = list(0, -1)),
+		)
+	rogue_customizers = list(
+		"snout" = list("name" = "Tabaxian Snout", "default" = "vib_snout_cat", "none" = FALSE, "colors" = TRUE, "choices" = list("vib_snout_cat", "vib_snout_scanid", "vib_snout_scanidalt", "vib_snout_scanidalt2", "vib_snout_scanidalt3", "vib_snout_sharp", "vib_snout_round", "vib_snout_sharplight", "vib_snout_roundlight", "vib_snout_front_sharp", "vib_snout_front_round", "vib_snout_front_sharplight", "vib_snout_front_roundlight", "vib_snout_shortnosed", "vib_snout_stubby", "vib_snout_stubbyalt")),
+		"tail" = list("name" = "Tabaxi Tail", "default" = "vib_tail_cat", "none" = TRUE, "colors" = TRUE, "choices" = list("vib_tail_catbig", "vib_tail_cat", "vib_tail_tiger", "vib_tail_leopard")),
+		"ears" = list("name" = "Wild-Kin Ears", "default" = "none", "none" = TRUE, "colors" = TRUE, "choices" = list("vib_ears_cat", "vib_ears_axolotl", "vib_ears_bat", "vib_ears_bear", "vib_ears_bigwolf", "vib_ears_bigwolf_inner", "vib_ears_rabbit", "vib_ears_bunny", "vib_ears_big_rabbit_large", "vib_ears_bunny_perky", "vib_ears_cat_big", "vib_ears_cat_normal", "vib_ears_cow", "vib_ears_curled", "vib_ears_deer", "vib_ears_eevee", "vib_ears_elf", "vib_ears_elephant", "vib_ears_fennec", "vib_ears_fish", "vib_ears_fox", "vib_ears_vulp", "vib_ears_husky", "vib_ears_jellyfish", "vib_ears_kangaroo", "vib_ears_lab", "vib_ears_murid", "vib_ears_otie", "vib_ears_pede", "vib_ears_sergal", "vib_ears_shark", "vib_ears_skunk", "vib_ears_squirrel", "vib_ears_wolf", "vib_ears_perky", "vib_ears_antenna_simple1", "vib_ears_antenna_simple2", "vib_ears_antenna_simple3", "vib_ears_antenna_fuzzball1", "vib_ears_antenna_fuzzball2", "vib_ears_cobrahood", "vib_ears_cobrahoodears", "vib_ears_miqote", "vib_ears_lunasune", "vib_ears_sabresune", "vib_ears_possum", "vib_ears_raccoon", "vib_ears_mouse", "vib_ears_big_acrador_long", "vib_ears_big_acrador_short")),
+		)
+	rogue_native_language = /datum/language/common
+	rogue_race_sheet = /datum/attribute_holder/sheet/vibelin_race/tabaxi
+	rogue_race_traits = list(TRAIT_NOMOBSWAP)
+	rogue_description = "Hailing from the far East, the Tabaxi are a wandering people, driven by an insatiable curiosity and a restless need to roam, collect, and remember. Their clans value stories and secrets above gold, and a Tabaxi will travel a lifetime to glimpse a single wonder. THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. PLAY AT YOUR OWN RISK."
+	rogue_lore = list(
+		"Hailing from the far East, the Tabaxi are a wandering people, driven by an insatiable curiosity and a restless need to roam, collect, and remember. Their clans value stories and secrets above gold, and a Tabaxi will travel a lifetime to glimpse a single wonder.",
+		"THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. PLAY AT YOUR OWN RISK.",
+		)
+	species_language_holder = /datum/language_holder/vib_tabaxi
+	mutanttongue = /obj/item/organ/tongue/rogue_race/vib_tabaxi
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_vulp
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_vulp"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Vulp Two-shade"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Inner")
+
+/obj/item/bodypart/head/vib_mta_fma/vulpkanin
+	head_flags = HEAD_EYESPRITES | HEAD_EYEHOLES | HEAD_DEBRAIN | HEAD_EYECOLOR | HEAD_HAIR | HEAD_FACIAL_HAIR
+
+/obj/item/bodypart/head/vib_mta_fma/vulpkanin/Initialize(mapload)
+	. = ..()
+	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/vib_ears_fox, update = FALSE)
+	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/vib_snout_vulp, update = FALSE)
+
+/obj/item/bodypart/chest/vib_mta_fma/vulpkanin
+
+/obj/item/bodypart/chest/vib_mta_fma/vulpkanin/Initialize(mapload)
+	. = ..()
+	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/vib_tail_fox, update = FALSE)
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_lcanid
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_lcanid"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Mammal, Long"
+	rogue_slot = "snout"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_lcanidalt
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_lcanidalt"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Mammal, Long ALT"
+	rogue_slot = "snout"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_lcanidstriped
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_lcanidstriped"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Mammal, Long, Striped"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_lcanidstripedalt
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_lcanidstripedalt"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Mammal, Long, Striped ALT"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_hjackal
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_hjackal"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Jackal"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_front_husky
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_front_husky"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Husky (Top)"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_front_lcanid
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_front_lcanid"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Mammal, Long (Top)"
+	rogue_slot = "snout"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_front_lcanidalt
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_front_lcanidalt"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Mammal, Long ALT (Top)"
+	rogue_slot = "snout"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_front_lcanidstriped
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_front_lcanidstriped"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Mammal, Long, Striped (Top)"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_front_lcanidstripedalt
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_front_lcanidstripedalt"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Mammal, Long, Striped ALT (Top)"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_front_scanid
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_front_scanid"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Mammal, Short (Top)"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_front_scanidalt
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_front_scanidalt"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Mammal, Short ALT (Top)"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_front_scanidalt2
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_front_scanidalt2"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Mammal, Short ALT 2 (Top)"
+	rogue_slot = "snout"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_front_scanidalt3
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_front_scanidalt3"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Mammal, Short ALT 3 (Top)"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_front_wolf
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_front_wolf"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Mammal, Thick (Top)"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_front_wolfalt
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_front_wolfalt"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Mammal, Thick ALT (Top)"
+	rogue_slot = "snout"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_eevee
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_eevee"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Eevee"
+	rogue_slot = "tail"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("hair", "#FFFFFF")
+	rogue_color_names = list("Tail", "Tip")
+
+/datum/attribute_holder/sheet/vibelin_race/vulpkanin
+	raw_attribute_list = list(
+		ROGUE_STAT_CONSTITUTION = -1,
+		ROGUE_STAT_INTELLIGENCE = 1,
+		ROGUE_STAT_PERCEPTION = 2,
+		ROGUE_STAT_SPEED = 1,
+		ROGUE_STAT_STRENGTH = -1,
+		)
+
+/datum/language_holder/vib_vulpkanin
+	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
+	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
+
+/obj/item/organ/tongue/rogue_race/vib_vulpkanin
+
+/datum/species/vib_vulpkanin
+	name = "Venardine"
+	id = "vib_vulpkanin"
+	inherent_traits = list(TRAIT_MUTANT_COLORS)
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
+	rogue_playable = TRUE
+	rogue_vibelin_type = "/datum/species/vulpkanin"
+	bodypart_overrides = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/vib_mta_fma/vulpkanin,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/vib_mta_fma/vulpkanin,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/vib_mta_fma,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/vib_mta_fma,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/vib_mta_fma,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/vib_mta_fma,
+		)
+	rogue_default_skin = "#9C4F2A"
+	rogue_origins = list("Russet" = "#9C4F2A", "Red" = "#A5532B", "Sandy" = "#C08A52", "Grey" = "#7C7D77", "Silver" = "#9EA0A0", "Brown" = "#5C4327", "Cream" = "#D8C39C", "Black" = "#2C2722")
+	rogue_origin_wording = "Ancestry"
+	rogue_hair_colors = list("blond - pale" = "#9D8D6E", "blond - dirty" = "#88754F", "blond - drywheat" = "#D5BA7B", "blond - strawberry" = "#C69B71", "brown - mud" = "#362E25", "brown - oats" = "#584A3B", "brown - grain" = "#58433B", "brown - soil" = "#48322A", "brown - bark" = "#2D1300", "black - oil" = "#181A1D", "black - cave" = "#201616", "black - rogue" = "#2B201B", "black - midnight" = "#1D1B2B", "red - berry" = "#B23434", "red - wine" = "#82534C", "red - sunset" = "#82462B", "red - blood" = "#822B2B", "red - maroon" = "#612929", "orange - rust" = "#BC5E35")
+	rogue_offsets = list(
+		"m" = list(OFFSET_BACK = list(0, 1), OFFSET_BELT = list(0, 1), OFFSET_EARS = list(0, 1), OFFSET_FACE = list(0, 1), OFFSET_FACEMASK = list(0, 1), OFFSET_GLASSES = list(0, 1), OFFSET_GLOVES = list(0, 1), OFFSET_HEAD = list(0, 1), OFFSET_HELD = list(0, 1), OFFSET_NECK = list(0, 1), OFFSET_SUIT = list(0, 1), OFFSET_S_STORE = list(0, 1), OFFSET_UNIFORM = list(0, 1), ROGUE_OFFSET_CLOAK = list(0, 1), ROGUE_OFFSET_MOUTH = list(0, 1), ROGUE_OFFSET_RING = list(0, 1), ROGUE_OFFSET_SHIRT = list(0, 1), ROGUE_OFFSET_WRISTS = list(0, 1)),
+		"f" = list(OFFSET_BACK = list(0, -1), OFFSET_EARS = list(0, -1), OFFSET_FACE = list(0, -1), OFFSET_FACEMASK = list(0, -1), OFFSET_GLASSES = list(0, -1), OFFSET_HEAD = list(0, -1), OFFSET_NECK = list(0, -1), ROGUE_OFFSET_MOUTH = list(0, -1), ROGUE_OFFSET_RING = list(0, -1)),
+		)
+	rogue_customizers = list(
+		"snout" = list("name" = "Venardine Snout", "default" = "vib_snout_vulp", "none" = FALSE, "colors" = TRUE, "choices" = list("vib_snout_lcanid", "vib_snout_lcanidalt", "vib_snout_lcanidstriped", "vib_snout_lcanidstripedalt", "vib_snout_vulp", "vib_snout_hjackal", "vib_snout_front_husky", "vib_snout_front_lcanid", "vib_snout_front_lcanidalt", "vib_snout_front_lcanidstriped", "vib_snout_front_lcanidstripedalt", "vib_snout_front_scanid", "vib_snout_front_scanidalt", "vib_snout_front_scanidalt2", "vib_snout_front_scanidalt3", "vib_snout_front_wolf", "vib_snout_front_wolfalt")),
+		"tail" = list("name" = "Venardine Tail", "default" = "vib_tail_fox", "none" = TRUE, "colors" = TRUE, "choices" = list("vib_tail_fox", "vib_tail_fox2", "vib_tail_eevee", "vib_tail_fennec", "vib_tail_tamamo_kitsune")),
+		"ears" = list("name" = "Wild-Kin Ears", "default" = "none", "none" = TRUE, "colors" = TRUE, "choices" = list("vib_ears_cat", "vib_ears_axolotl", "vib_ears_bat", "vib_ears_bear", "vib_ears_bigwolf", "vib_ears_bigwolf_inner", "vib_ears_rabbit", "vib_ears_bunny", "vib_ears_big_rabbit_large", "vib_ears_bunny_perky", "vib_ears_cat_big", "vib_ears_cat_normal", "vib_ears_cow", "vib_ears_curled", "vib_ears_deer", "vib_ears_eevee", "vib_ears_elf", "vib_ears_elephant", "vib_ears_fennec", "vib_ears_fish", "vib_ears_fox", "vib_ears_vulp", "vib_ears_husky", "vib_ears_jellyfish", "vib_ears_kangaroo", "vib_ears_lab", "vib_ears_murid", "vib_ears_otie", "vib_ears_pede", "vib_ears_sergal", "vib_ears_shark", "vib_ears_skunk", "vib_ears_squirrel", "vib_ears_wolf", "vib_ears_perky", "vib_ears_antenna_simple1", "vib_ears_antenna_simple2", "vib_ears_antenna_simple3", "vib_ears_antenna_fuzzball1", "vib_ears_antenna_fuzzball2", "vib_ears_cobrahood", "vib_ears_cobrahoodears", "vib_ears_miqote", "vib_ears_lunasune", "vib_ears_sabresune", "vib_ears_possum", "vib_ears_raccoon", "vib_ears_mouse", "vib_ears_big_acrador_long", "vib_ears_big_acrador_short")),
+		)
+	rogue_native_language = /datum/language/common
+	rogue_race_sheet = /datum/attribute_holder/sheet/vibelin_race/vulpkanin
+	rogue_race_traits = list(TRAIT_NOMOBSWAP)
+	rogue_description = "THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. PLAY AT YOUR OWN RISK."
+	rogue_lore = list(
+		"THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. PLAY AT YOUR OWN RISK.",
+		)
+	species_language_holder = /datum/language_holder/vib_vulpkanin
+	mutanttongue = /obj/item/organ/tongue/rogue_race/vib_vulpkanin
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_wolf
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_wolf"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Mammal, Thick"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Inner")
+
+/obj/item/bodypart/head/vib_mta_fma/lupian
+	head_flags = HEAD_EYESPRITES | HEAD_EYEHOLES | HEAD_DEBRAIN | HEAD_EYECOLOR | HEAD_HAIR | HEAD_FACIAL_HAIR
+
+/obj/item/bodypart/head/vib_mta_fma/lupian/Initialize(mapload)
+	. = ..()
+	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/vib_ears_wolf, update = FALSE)
+	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/vib_snout_wolf, update = FALSE)
+
+/obj/item/bodypart/chest/vib_mta_fma/lupian
+
+/obj/item/bodypart/chest/vib_mta_fma/lupian/Initialize(mapload)
+	. = ..()
+	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/vib_tail_wolf, update = FALSE)
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_husky
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_husky"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Husky"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_wolfalt
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_wolfalt"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Mammal, Thick ALT"
+	rogue_slot = "snout"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_otie
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_otie"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Otie"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_front_otie
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_front_otie"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Otie (Top)"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_hpanda
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_hpanda"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Panda"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_otie
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_otie"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Otusian"
+	rogue_slot = "tail"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_shepherd
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_shepherd"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Shepherd"
+	rogue_slot = "tail"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("hair", "#FFFFFF")
+	rogue_color_names = list("Tail", "Inner")
+
+/datum/attribute_holder/sheet/vibelin_race/lupian
+	raw_attribute_list = list(
+		ROGUE_STAT_CONSTITUTION = 1,
+		ROGUE_STAT_INTELLIGENCE = 1,
+		ROGUE_STAT_PERCEPTION = 1,
+		ROGUE_STAT_SPEED = 1,
+		)
+
+/datum/language_holder/vib_lupian
+	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
+	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
+
+/obj/item/organ/tongue/rogue_race/vib_lupian
+
+/datum/species/vib_lupian
+	name = "Lupian"
+	id = "vib_lupian"
+	inherent_traits = list(TRAIT_MUTANT_COLORS)
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
+	rogue_playable = TRUE
+	rogue_vibelin_type = "/datum/species/lupian"
+	bodypart_overrides = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/vib_mta_fma/lupian,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/vib_mta_fma/lupian,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/vib_mta_fma,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/vib_mta_fma,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/vib_mta_fma,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/vib_mta_fma,
+		)
+	rogue_default_skin = "#7C7D77"
+	rogue_origins = list("Grey" = "#7C7D77", "Silver" = "#9EA0A0", "Slate" = "#5A5D63", "Brown" = "#5C4327", "Russet" = "#7A4A2C", "Cream" = "#D8C39C", "White" = "#D9D6CC", "Black" = "#2C2722")
+	rogue_origin_wording = "Ancestry"
+	rogue_hair_colors = list("blond - pale" = "#9D8D6E", "blond - dirty" = "#88754F", "blond - drywheat" = "#D5BA7B", "blond - strawberry" = "#C69B71", "brown - mud" = "#362E25", "brown - oats" = "#584A3B", "brown - grain" = "#58433B", "brown - soil" = "#48322A", "brown - bark" = "#2D1300", "black - oil" = "#181A1D", "black - cave" = "#201616", "black - rogue" = "#2B201B", "black - midnight" = "#1D1B2B", "red - berry" = "#B23434", "red - wine" = "#82534C", "red - sunset" = "#82462B", "red - blood" = "#822B2B", "red - maroon" = "#612929", "orange - rust" = "#BC5E35")
+	rogue_offsets = list(
+		"m" = list(OFFSET_BACK = list(0, 1), OFFSET_BELT = list(0, 1), OFFSET_EARS = list(0, 1), OFFSET_FACE = list(0, 1), OFFSET_FACEMASK = list(0, 1), OFFSET_GLASSES = list(0, 1), OFFSET_GLOVES = list(0, 1), OFFSET_HEAD = list(0, 1), OFFSET_HELD = list(0, 1), OFFSET_NECK = list(0, 1), OFFSET_SUIT = list(0, 1), OFFSET_S_STORE = list(0, 1), OFFSET_UNIFORM = list(0, 1), ROGUE_OFFSET_CLOAK = list(0, 1), ROGUE_OFFSET_MOUTH = list(0, 1), ROGUE_OFFSET_RING = list(0, 1), ROGUE_OFFSET_SHIRT = list(0, 1), ROGUE_OFFSET_WRISTS = list(0, 1)),
+		"f" = list(OFFSET_BACK = list(0, -1), OFFSET_EARS = list(0, -1), OFFSET_FACE = list(0, -1), OFFSET_FACEMASK = list(0, -1), OFFSET_GLASSES = list(0, -1), OFFSET_HEAD = list(0, -1), OFFSET_NECK = list(0, -1), ROGUE_OFFSET_MOUTH = list(0, -1), ROGUE_OFFSET_RING = list(0, -1)),
+		)
+	rogue_customizers = list(
+		"snout" = list("name" = "Lupian Snout", "default" = "vib_snout_wolf", "none" = FALSE, "colors" = TRUE, "choices" = list("vib_snout_husky", "vib_snout_lcanid", "vib_snout_lcanidalt", "vib_snout_scanid", "vib_snout_scanidalt", "vib_snout_scanidalt2", "vib_snout_scanidalt3", "vib_snout_wolf", "vib_snout_wolfalt", "vib_snout_otie", "vib_snout_hjackal", "vib_snout_front_husky", "vib_snout_front_lcanid", "vib_snout_front_lcanidalt", "vib_snout_front_wolf", "vib_snout_front_wolfalt", "vib_snout_front_otie", "vib_snout_hpanda", "vib_snout_vulp")),
+		"tail" = list("name" = "Lupian Tail", "default" = "vib_tail_wolf", "none" = TRUE, "colors" = TRUE, "choices" = list("vib_tail_otie", "vib_tail_shepherd", "vib_tail_australian_shepherd", "vib_tail_wolf", "vib_tail_fox", "vib_tail_fox2", "vib_tail_husky")),
+		"ears" = list("name" = "Wild-Kin Ears", "default" = "none", "none" = TRUE, "colors" = TRUE, "choices" = list("vib_ears_cat", "vib_ears_axolotl", "vib_ears_bat", "vib_ears_bear", "vib_ears_bigwolf", "vib_ears_bigwolf_inner", "vib_ears_rabbit", "vib_ears_bunny", "vib_ears_big_rabbit_large", "vib_ears_bunny_perky", "vib_ears_cat_big", "vib_ears_cat_normal", "vib_ears_cow", "vib_ears_curled", "vib_ears_deer", "vib_ears_eevee", "vib_ears_elf", "vib_ears_elephant", "vib_ears_fennec", "vib_ears_fish", "vib_ears_fox", "vib_ears_vulp", "vib_ears_husky", "vib_ears_jellyfish", "vib_ears_kangaroo", "vib_ears_lab", "vib_ears_murid", "vib_ears_otie", "vib_ears_pede", "vib_ears_sergal", "vib_ears_shark", "vib_ears_skunk", "vib_ears_squirrel", "vib_ears_wolf", "vib_ears_perky", "vib_ears_antenna_simple1", "vib_ears_antenna_simple2", "vib_ears_antenna_simple3", "vib_ears_antenna_fuzzball1", "vib_ears_antenna_fuzzball2", "vib_ears_cobrahood", "vib_ears_cobrahoodears", "vib_ears_miqote", "vib_ears_lunasune", "vib_ears_sabresune", "vib_ears_possum", "vib_ears_raccoon", "vib_ears_mouse", "vib_ears_big_acrador_long", "vib_ears_big_acrador_short")),
+		)
+	rogue_native_language = /datum/language/common
+	rogue_race_sheet = /datum/attribute_holder/sheet/vibelin_race/lupian
+	rogue_race_traits = list(TRAIT_NOMOBSWAP)
+	rogue_description = "THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. PLAY AT YOUR OWN RISK."
+	rogue_lore = list(
+		"THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. PLAY AT YOUR OWN RISK.",
+		)
+	species_language_holder = /datum/language_holder/vib_lupian
+	mutanttongue = /obj/item/organ/tongue/rogue_race/vib_lupian
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_sergal
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_sergal"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Sergal"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Inner")
+
+/obj/item/bodypart/head/vib_mta_fma/akula
+	head_flags = HEAD_EYESPRITES | HEAD_EYEHOLES | HEAD_DEBRAIN | HEAD_EYECOLOR | HEAD_HAIR
+
+/obj/item/bodypart/head/vib_mta_fma/akula/Initialize(mapload)
+	. = ..()
+	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/vib_ears_shark, update = FALSE)
+	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/vib_snout_sergal, update = FALSE)
+
+/obj/item/bodypart/chest/vib_mta_fma/akula
+
+/obj/item/bodypart/chest/vib_mta_fma/akula/Initialize(mapload)
+	. = ..()
+	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/vib_tail_shark, update = FALSE)
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_shark
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_shark"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Shark"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_sbeak
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_sbeak"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Corvid Beak"
+	rogue_slot = "snout"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_toucan
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_toucan"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Toucan"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Inner")
+
+/datum/attribute_holder/sheet/vibelin_race/akula
+	raw_attribute_list = list(
+		ROGUE_STAT_CONSTITUTION = 1,
+		ROGUE_STAT_INTELLIGENCE = -1,
+		ROGUE_STAT_SPEED = -1,
+		ROGUE_STAT_STRENGTH = 1,
+		)
+
+/datum/language_holder/vib_akula
+	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
+	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
+
+/obj/item/organ/tongue/rogue_race/vib_akula
+
+/datum/species/vib_akula
+	name = "Axian"
+	id = "vib_akula"
+	inherent_traits = list(TRAIT_MUTANT_COLORS)
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
+	rogue_playable = TRUE
+	rogue_vibelin_type = "/datum/species/akula"
+	bodypart_overrides = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/vib_mta_fma/akula,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/vib_mta_fma/akula,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/vib_mta_fma,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/vib_mta_fma,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/vib_mta_fma,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/vib_mta_fma,
+		)
+	rogue_default_skin = "#6D8A99"
+	rogue_origins = list("Blue" = "#6D8A99", "Steel" = "#7C878C", "Grey" = "#8A9196", "Slate" = "#5A6168", "Sand" = "#B6A884", "Pale" = "#C3C6C0", "Dark" = "#3A4146")
+	rogue_origin_wording = "Ancestry"
+	rogue_hair_colors = list("blond - pale" = "#9D8D6E", "blond - dirty" = "#88754F", "blond - drywheat" = "#D5BA7B", "blond - strawberry" = "#C69B71", "brown - mud" = "#362E25", "brown - oats" = "#584A3B", "brown - grain" = "#58433B", "brown - soil" = "#48322A", "brown - bark" = "#2D1300", "black - oil" = "#181A1D", "black - cave" = "#201616", "black - rogue" = "#2B201B", "black - midnight" = "#1D1B2B", "red - berry" = "#B23434", "red - wine" = "#82534C", "red - sunset" = "#82462B", "red - blood" = "#822B2B", "red - maroon" = "#612929", "orange - rust" = "#BC5E35")
+	rogue_offsets = list(
+		"m" = list(OFFSET_BACK = list(0, 1), OFFSET_BELT = list(0, 1), OFFSET_EARS = list(0, 1), OFFSET_FACE = list(0, 1), OFFSET_FACEMASK = list(0, 1), OFFSET_GLASSES = list(0, 1), OFFSET_GLOVES = list(0, 1), OFFSET_HEAD = list(0, 1), OFFSET_HELD = list(0, 1), OFFSET_NECK = list(0, 1), OFFSET_SUIT = list(0, 1), OFFSET_S_STORE = list(0, 1), OFFSET_UNIFORM = list(0, 1), ROGUE_OFFSET_CLOAK = list(0, 1), ROGUE_OFFSET_MOUTH = list(0, 1), ROGUE_OFFSET_RING = list(0, 1), ROGUE_OFFSET_SHIRT = list(0, 1), ROGUE_OFFSET_WRISTS = list(0, 1)),
+		"f" = list(OFFSET_BACK = list(0, -1), OFFSET_EARS = list(0, -1), OFFSET_FACE = list(0, -1), OFFSET_FACEMASK = list(0, -1), OFFSET_GLASSES = list(0, -1), OFFSET_HEAD = list(0, -1), OFFSET_NECK = list(0, -1), ROGUE_OFFSET_MOUTH = list(0, -1), ROGUE_OFFSET_RING = list(0, -1)),
+		)
+	rogue_customizers = list(
+		"snout" = list("name" = "Axian Snout", "default" = "vib_snout_sergal", "none" = FALSE, "colors" = TRUE, "choices" = list("vib_snout_sergal", "vib_snout_shark", "vib_snout_sbeak", "vib_snout_toucan")),
+		"tail" = list("name" = "Axian Tail", "default" = "vib_tail_shark", "none" = FALSE, "colors" = TRUE, "choices" = list("vib_tail_shark", "vib_tail_sharknofin")),
+		"ears" = list("name" = "Wild-Kin Ears", "default" = "none", "none" = TRUE, "colors" = TRUE, "choices" = list("vib_ears_cat", "vib_ears_axolotl", "vib_ears_bat", "vib_ears_bear", "vib_ears_bigwolf", "vib_ears_bigwolf_inner", "vib_ears_rabbit", "vib_ears_bunny", "vib_ears_big_rabbit_large", "vib_ears_bunny_perky", "vib_ears_cat_big", "vib_ears_cat_normal", "vib_ears_cow", "vib_ears_curled", "vib_ears_deer", "vib_ears_eevee", "vib_ears_elf", "vib_ears_elephant", "vib_ears_fennec", "vib_ears_fish", "vib_ears_fox", "vib_ears_vulp", "vib_ears_husky", "vib_ears_jellyfish", "vib_ears_kangaroo", "vib_ears_lab", "vib_ears_murid", "vib_ears_otie", "vib_ears_pede", "vib_ears_sergal", "vib_ears_shark", "vib_ears_skunk", "vib_ears_squirrel", "vib_ears_wolf", "vib_ears_perky", "vib_ears_antenna_simple1", "vib_ears_antenna_simple2", "vib_ears_antenna_simple3", "vib_ears_antenna_fuzzball1", "vib_ears_antenna_fuzzball2", "vib_ears_cobrahood", "vib_ears_cobrahoodears", "vib_ears_miqote", "vib_ears_lunasune", "vib_ears_sabresune", "vib_ears_possum", "vib_ears_raccoon", "vib_ears_mouse", "vib_ears_big_acrador_long", "vib_ears_big_acrador_short")),
+		)
+	rogue_native_language = /datum/language/common
+	rogue_race_sheet = /datum/attribute_holder/sheet/vibelin_race/akula
+	rogue_race_traits = list(TRAIT_NOMOBSWAP)
+	rogue_description = "THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. PLAY AT YOUR OWN RISK."
+	rogue_lore = list(
+		"THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. PLAY AT YOUR OWN RISK.",
+		)
+	species_language_holder = /datum/language_holder/vib_akula
+	mutanttongue = /obj/item/organ/tongue/rogue_race/vib_akula
+
+/obj/item/bodypart/head/vib_mta_fma/anthromorph
+	head_flags = HEAD_EYESPRITES | HEAD_EYEHOLES | HEAD_DEBRAIN | HEAD_EYECOLOR | HEAD_HAIR | HEAD_FACIAL_HAIR
+
+/obj/item/bodypart/head/vib_mta_fma/anthromorph/Initialize(mapload)
+	. = ..()
+	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/vib_ears_wolf, update = FALSE)
+	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/vib_snout_wolf, update = FALSE)
+
+/obj/item/bodypart/chest/vib_mta_fma/anthromorph
+
+/obj/item/bodypart/chest/vib_mta_fma/anthromorph/Initialize(mapload)
+	. = ..()
+	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/vib_tail_wolf, update = FALSE)
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_bug
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_bug"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Bug"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Eyes")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_elephant
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_elephant"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Elephant"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Horns")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_rhino
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_rhino"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Horn"
+	rogue_slot = "snout"
+	rogue_color_keys = 3
+	rogue_color_defaults = list("skin", "#FFFFFF", "#FFFFFF")
+	rogue_color_names = list("Snout", "Details", "Details")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_bovine
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_bovine"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Bovine"
+	rogue_slot = "snout"
+	rogue_color_keys = 3
+	rogue_color_defaults = list("skin", "#FFFFFF", "#FFFFFF")
+	rogue_color_names = list("Snout", "Details", "Details")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_rodent
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_rodent"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Rodent"
+	rogue_slot = "snout"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_tajaran
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_tajaran"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Tajaran, normal"
+	rogue_slot = "snout"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_otiesmile
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_otiesmile"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Otie Smile"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_pede
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_pede"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Scolipede"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_redpanda
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_redpanda"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "WahCoon"
+	rogue_slot = "snout"
+	rogue_color_keys = 3
+	rogue_color_defaults = list("skin", "#FFFFFF", "#FFFFFF")
+	rogue_color_names = list("Snout", "Details", "Details")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_redpandaalt
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_redpandaalt"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "WahCoon ALT"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Details")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_rat
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_rat"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Rat"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_hanubus
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_hanubus"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Anubus"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_hspots
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_hspots"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Hyena"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_hhorse
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_hhorse"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Horse"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_hzebra
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_hzebra"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Zebra"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_front_sergal
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_front_sergal"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Sergal (Top)"
+	rogue_slot = "snout"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("skin", "#FFFFFF")
+	rogue_color_names = list("Snout", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_axolotl
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_axolotl"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Axolotl"
+	rogue_slot = "tail"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_bee
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_bee"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Bee"
+	rogue_slot = "tail"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("hair", "#FFFFFF")
+	rogue_color_names = list("Abdomen", "Stripes")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_corvid
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_corvid"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Corvid"
+	rogue_slot = "tail"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_fish
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_fish"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Fish"
+	rogue_slot = "tail"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_insect
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_insect"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Insect"
+	rogue_slot = "tail"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_lab
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_lab"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Lab"
+	rogue_slot = "tail"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_orca
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_orca"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Orca"
+	rogue_slot = "tail"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_redpanda
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_redpanda"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Red Panda"
+	rogue_slot = "tail"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("hair", "#FFFFFF")
+	rogue_color_names = list("Tail", "Stripes")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_pede
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_pede"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Scolipede"
+	rogue_slot = "tail"
+	rogue_color_keys = 3
+	rogue_color_defaults = list("hair", "#FFFFFF", "#FFFFFF")
+	rogue_color_names = list("Tail", "Inner", "Details")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_sergal
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_sergal"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Sergal"
+	rogue_slot = "tail"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("hair", "#FFFFFF")
+	rogue_color_names = list("Tail", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_stripe
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_stripe"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Stripe"
+	rogue_slot = "tail"
+	rogue_color_keys = 2
+	rogue_color_defaults = list("hair", "#FFFFFF")
+	rogue_color_names = list("Tail", "Inner")
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_guilmon
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_guilmon"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Guilmon"
+	rogue_slot = "tail"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_lunasune
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_lunasune"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Lunasune"
+	rogue_slot = "tail"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_spade
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_spade"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Succubus Spade Tail"
+	rogue_slot = "tail"
+
+/datum/attribute_holder/sheet/vibelin_race/anthromorph
+	raw_attribute_list = list(
+		ROGUE_STAT_CONSTITUTION = 1,
+		ROGUE_STAT_PERCEPTION = 1,
+		)
+
+/datum/language_holder/vib_anthromorph
+	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
+	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
+
+/obj/item/organ/tongue/rogue_race/vib_anthromorph
+
+/datum/species/vib_anthromorph
+	name = "Wild-Kin"
+	id = "vib_anthromorph"
+	inherent_traits = list(TRAIT_MUTANT_COLORS)
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
+	rogue_playable = TRUE
+	rogue_vibelin_type = "/datum/species/anthromorph"
+	bodypart_overrides = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/vib_mta_fma/anthromorph,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/vib_mta_fma/anthromorph,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/vib_mta_fma,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/vib_mta_fma,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/vib_mta_fma,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/vib_mta_fma,
+		)
+	rogue_default_skin = "#FFF0E9"
+	rogue_origins = list("Ice Cap" = "#FFF0E9", "Arctic" = "#FFE0D1", "Tundra" = "#FCCCB3", "Continental" = "#EDC6B3", "Temperate" = "#E2B9A3", "Coastal" = "#D9A284", "Subtropical" = "#C9A893", "Tropical Dry" = "#BA9882", "Tropical Wet" = "#AC8369", "Desert" = "#9C6F52", "Oasis" = "#845A3A", "Steppe" = "#4E3729", "Volcanic" = "#3A1E22", "Island" = "#84674B", "Taiga" = "#734C37", "Swamp" = "#7B4F42")
+	rogue_origin_wording = "Ancestry"
+	rogue_hair_colors = list("blond - pale" = "#9D8D6E", "blond - dirty" = "#88754F", "blond - drywheat" = "#D5BA7B", "blond - strawberry" = "#C69B71", "brown - mud" = "#362E25", "brown - oats" = "#584A3B", "brown - grain" = "#58433B", "brown - soil" = "#48322A", "brown - bark" = "#2D1300", "black - oil" = "#181A1D", "black - cave" = "#201616", "black - rogue" = "#2B201B", "black - midnight" = "#1D1B2B", "red - berry" = "#B23434", "red - wine" = "#82534C", "red - sunset" = "#82462B", "red - blood" = "#822B2B", "red - maroon" = "#612929", "orange - rust" = "#BC5E35")
+	rogue_offsets = list(
+		"m" = list(OFFSET_BACK = list(0, 1), OFFSET_BELT = list(0, 1), OFFSET_EARS = list(0, 1), OFFSET_FACE = list(0, 1), OFFSET_FACEMASK = list(0, 1), OFFSET_GLASSES = list(0, 1), OFFSET_GLOVES = list(0, 1), OFFSET_HEAD = list(0, 1), OFFSET_HELD = list(0, 1), OFFSET_NECK = list(0, 1), OFFSET_SUIT = list(0, 1), OFFSET_S_STORE = list(0, 1), OFFSET_UNIFORM = list(0, 1), ROGUE_OFFSET_CLOAK = list(0, 1), ROGUE_OFFSET_MOUTH = list(0, 1), ROGUE_OFFSET_RING = list(0, 1), ROGUE_OFFSET_SHIRT = list(0, 1), ROGUE_OFFSET_WRISTS = list(0, 1)),
+		"f" = list(OFFSET_BACK = list(0, -1), OFFSET_EARS = list(0, -1), OFFSET_FACE = list(0, -1), OFFSET_FACEMASK = list(0, -1), OFFSET_GLASSES = list(0, -1), OFFSET_HEAD = list(0, -1), OFFSET_NECK = list(0, -1), ROGUE_OFFSET_MOUTH = list(0, -1), ROGUE_OFFSET_RING = list(0, -1)),
+		)
+	rogue_customizers = list(
+		"snout" = list("name" = "Wild-Kin Snout", "default" = "vib_snout_wolf", "none" = FALSE, "colors" = TRUE, "choices" = list("vib_snout_cat", "vib_snout_sharp", "vib_snout_round", "vib_snout_sharplight", "vib_snout_roundlight", "vib_snout_vulp", "vib_snout_shark", "vib_snout_bug", "vib_snout_elephant", "vib_snout_husky", "vib_snout_rhino", "vib_snout_bovine", "vib_snout_rodent", "vib_snout_lcanid", "vib_snout_lcanidalt", "vib_snout_lcanidstriped", "vib_snout_lcanidstripedalt", "vib_snout_scanid", "vib_snout_scanidalt", "vib_snout_scanidalt2", "vib_snout_scanidalt3", "vib_snout_tajaran", "vib_snout_wolf", "vib_snout_wolfalt", "vib_snout_otie", "vib_snout_otiesmile", "vib_snout_pede", "vib_snout_sergal", "vib_snout_toucan", "vib_snout_redpanda", "vib_snout_redpandaalt", "vib_snout_sbeak", "vib_snout_rat", "vib_snout_stubby", "vib_snout_hanubus", "vib_snout_hpanda", "vib_snout_hjackal", "vib_snout_hspots", "vib_snout_hhorse", "vib_snout_hzebra", "vib_snout_shortnosed", "vib_snout_stubbyalt", "vib_snout_front_sharp", "vib_snout_front_round", "vib_snout_front_sharplight", "vib_snout_front_roundlight", "vib_snout_front_husky", "vib_snout_front_lcanid", "vib_snout_front_lcanidalt", "vib_snout_front_scanid", "vib_snout_front_scanidalt", "vib_snout_front_wolf", "vib_snout_front_wolfalt", "vib_snout_front_otie", "vib_snout_front_sergal")),
+		"tail" = list("name" = "Wild-Kin Tail", "default" = "vib_tail_wolf", "none" = TRUE, "colors" = TRUE, "choices" = list("vib_tail_cat", "vib_tail_catbig", "vib_tail_twocat", "vib_tail_axolotl", "vib_tail_bats", "vib_tail_bee", "vib_tail_corvid", "vib_tail_cow", "vib_tail_eevee", "vib_tail_fennec", "vib_tail_fish", "vib_tail_fox", "vib_tail_fox2", "vib_tail_hawk", "vib_tail_horse", "vib_tail_husky", "vib_tail_insect", "vib_tail_kangaroo", "vib_tail_kitsune", "vib_tail_lab", "vib_tail_murid", "vib_tail_orca", "vib_tail_otie", "vib_tail_rabbit", "vib_tail_redpanda", "vib_tail_pede", "vib_tail_sergal", "vib_tail_shark", "vib_tail_shepherd", "vib_tail_australian_shepherd", "vib_tail_skunk", "vib_tail_stripe", "vib_tail_straighttail", "vib_tail_squirrel", "vib_tail_tamamo_kitsune", "vib_tail_tiger", "vib_tail_wolf", "vib_tail_guilmon", "vib_tail_sharknofin", "vib_tail_raptor", "vib_tail_lunasune", "vib_tail_spade", "vib_tail_leopard")),
+		"ears" = list("name" = "Wild-Kin Ears", "default" = "none", "none" = TRUE, "colors" = TRUE, "choices" = list("vib_ears_cat", "vib_ears_axolotl", "vib_ears_bat", "vib_ears_bear", "vib_ears_bigwolf", "vib_ears_bigwolf_inner", "vib_ears_rabbit", "vib_ears_bunny", "vib_ears_big_rabbit_large", "vib_ears_bunny_perky", "vib_ears_cat_big", "vib_ears_cat_normal", "vib_ears_cow", "vib_ears_curled", "vib_ears_deer", "vib_ears_eevee", "vib_ears_elf", "vib_ears_elephant", "vib_ears_fennec", "vib_ears_fish", "vib_ears_fox", "vib_ears_vulp", "vib_ears_husky", "vib_ears_jellyfish", "vib_ears_kangaroo", "vib_ears_lab", "vib_ears_murid", "vib_ears_otie", "vib_ears_pede", "vib_ears_sergal", "vib_ears_shark", "vib_ears_skunk", "vib_ears_squirrel", "vib_ears_wolf", "vib_ears_perky", "vib_ears_antenna_simple1", "vib_ears_antenna_simple2", "vib_ears_antenna_simple3", "vib_ears_antenna_fuzzball1", "vib_ears_antenna_fuzzball2", "vib_ears_cobrahood", "vib_ears_cobrahoodears", "vib_ears_miqote", "vib_ears_lunasune", "vib_ears_sabresune", "vib_ears_possum", "vib_ears_raccoon", "vib_ears_mouse", "vib_ears_big_acrador_long", "vib_ears_big_acrador_short")),
+		)
+	rogue_native_language = /datum/language/common
+	rogue_race_sheet = /datum/attribute_holder/sheet/vibelin_race/anthromorph
+	rogue_race_traits = list(TRAIT_NOMOBSWAP)
+	rogue_description = "THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. PLAY AT YOUR OWN RISK."
+	rogue_lore = list(
+		"THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. PLAY AT YOUR OWN RISK.",
+		)
+	species_language_holder = /datum/language_holder/vib_anthromorph
+	mutanttongue = /obj/item/organ/tongue/rogue_race/vib_anthromorph
+
+/obj/item/bodypart/head/vib_mta_fma/lizardfolk
+	head_flags = HEAD_EYESPRITES | HEAD_EYEHOLES | HEAD_DEBRAIN | HEAD_EYECOLOR
+
+/obj/item/bodypart/head/vib_mta_fma/lizardfolk/Initialize(mapload)
+	. = ..()
+	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/vib_snout_sharp, update = FALSE)
+
+/obj/item/bodypart/chest/vib_mta_fma/lizardfolk
+
+/obj/item/bodypart/chest/vib_mta_fma/lizardfolk/Initialize(mapload)
+	. = ..()
+	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/vib_tail_lizard_smooth, update = FALSE)
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_alienlizard
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_alienlizard"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Alien Lizard"
+	rogue_slot = "snout"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_snout_alienlizardteeth
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_snout_alienlizardteeth"
+	layers = list("ADJ" = BODY_ADJ_LAYER)
+	hidden_by = HIDESNOUT
+	skin_coloured = TRUE
+	name = "Alien Lizard Teeth"
+	rogue_slot = "snout"
+	rogue_extra = list("ADJ")
+
+/datum/attribute_holder/sheet/vibelin_race/lizardfolk
+	raw_attribute_list = list(
+		ROGUE_STAT_CONSTITUTION = 1,
+		ROGUE_STAT_PERCEPTION = -1,
+		ROGUE_STAT_SPEED = -1,
+		ROGUE_STAT_STRENGTH = 1,
+		)
+
+/datum/language_holder/vib_lizardfolk
+	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
+	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
+
+/obj/item/organ/tongue/rogue_race/vib_lizardfolk
+
+/datum/species/vib_lizardfolk
+	name = "Zardman"
+	id = "vib_lizardfolk"
+	inherent_traits = list(TRAIT_MUTANT_COLORS)
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
+	rogue_playable = TRUE
+	rogue_vibelin_type = "/datum/species/lizardfolk"
+	bodypart_overrides = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/vib_mta_fma/lizardfolk,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/vib_mta_fma/lizardfolk,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/vib_mta_fma,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/vib_mta_fma,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/vib_mta_fma,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/vib_mta_fma,
+		)
+	rogue_default_skin = "#4A6B3C"
+	rogue_origins = list("Green" = "#4A6B3C", "Olive" = "#6B6B3C", "Forest" = "#32502C", "Brown" = "#5C4327", "Tan" = "#9C8A5E", "Grey" = "#6A6F68", "Slate" = "#4A5258", "Black" = "#2C2722")
+	rogue_origin_wording = "Ancestry"
+	rogue_offsets = list(
+		"m" = list(OFFSET_BACK = list(0, 1), OFFSET_BELT = list(0, 1), OFFSET_EARS = list(0, 1), OFFSET_FACE = list(0, 1), OFFSET_FACEMASK = list(0, 1), OFFSET_GLASSES = list(0, 1), OFFSET_GLOVES = list(0, 1), OFFSET_HEAD = list(0, 1), OFFSET_HELD = list(0, 1), OFFSET_NECK = list(0, 1), OFFSET_SUIT = list(0, 1), OFFSET_S_STORE = list(0, 1), OFFSET_UNIFORM = list(0, 1), ROGUE_OFFSET_CLOAK = list(0, 1), ROGUE_OFFSET_MOUTH = list(0, 1), ROGUE_OFFSET_RING = list(0, 1), ROGUE_OFFSET_SHIRT = list(0, 1), ROGUE_OFFSET_WRISTS = list(0, 1)),
+		"f" = list(OFFSET_BACK = list(0, -1), OFFSET_EARS = list(0, -1), OFFSET_FACE = list(0, -1), OFFSET_FACEMASK = list(0, -1), OFFSET_GLASSES = list(0, -1), OFFSET_HEAD = list(0, -1), OFFSET_NECK = list(0, -1), ROGUE_OFFSET_MOUTH = list(0, -1), ROGUE_OFFSET_RING = list(0, -1)),
+		)
+	rogue_customizers = list(
+		"snout" = list("name" = "Zardman Snout", "default" = "vib_snout_sharp", "none" = FALSE, "colors" = TRUE, "choices" = list("vib_snout_sharp", "vib_snout_round", "vib_snout_sharplight", "vib_snout_roundlight", "vib_snout_front_sharp", "vib_snout_front_round", "vib_snout_front_sharplight", "vib_snout_front_roundlight", "vib_snout_stubby", "vib_snout_stubbyalt", "vib_snout_alienlizard", "vib_snout_alienlizardteeth")),
+		"tail" = list("name" = "Zardman Tail", "default" = "vib_tail_lizard_smooth", "none" = TRUE, "colors" = TRUE, "choices" = list("vib_tail_lizard_smooth", "vib_tail_lizard_dtiger", "vib_tail_lizard_ltiger", "vib_tail_lizard_spikes")),
+		)
+	rogue_native_language = /datum/language/common
+	rogue_race_sheet = /datum/attribute_holder/sheet/vibelin_race/lizardfolk
+	rogue_race_traits = list(TRAIT_NOMOBSWAP)
+	rogue_description = "THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. PLAY AT YOUR OWN RISK."
+	rogue_lore = list(
+		"THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. PLAY AT YOUR OWN RISK.",
+		)
+	species_language_holder = /datum/language_holder/vib_lizardfolk
+	mutanttongue = /obj/item/organ/tongue/rogue_race/vib_lizardfolk
+
+/obj/item/bodypart/head/vib_moth_male_moth_female
+	icon = VIBELIN_BODIES_ICON
+	icon_static = VIBELIN_BODIES_ICON
+	icon_greyscale = VIBELIN_BODIES_ICON
+	icon_state = "vib_moth_male_moth_female_head_m"
+	limb_id = "vib_moth_male_moth_female"
+	is_dimorphic = TRUE
+
+/obj/item/bodypart/chest/vib_moth_male_moth_female
+	icon = VIBELIN_BODIES_ICON
+	icon_static = VIBELIN_BODIES_ICON
+	icon_greyscale = VIBELIN_BODIES_ICON
+	icon_state = "vib_moth_male_moth_female_chest_m"
+	limb_id = "vib_moth_male_moth_female"
+	is_dimorphic = TRUE
+
+/obj/item/bodypart/arm/left/vib_moth_male_moth_female
+	icon = VIBELIN_BODIES_ICON
+	icon_static = VIBELIN_BODIES_ICON
+	icon_greyscale = VIBELIN_BODIES_ICON
+	icon_state = "vib_moth_male_moth_female_l_arm_m"
+	limb_id = "vib_moth_male_moth_female"
+	is_dimorphic = TRUE
+	rogue_sexed_hand = TRUE
+
+/obj/item/bodypart/arm/right/vib_moth_male_moth_female
+	icon = VIBELIN_BODIES_ICON
+	icon_static = VIBELIN_BODIES_ICON
+	icon_greyscale = VIBELIN_BODIES_ICON
+	icon_state = "vib_moth_male_moth_female_r_arm_m"
+	limb_id = "vib_moth_male_moth_female"
+	is_dimorphic = TRUE
+	rogue_sexed_hand = TRUE
+
+/obj/item/bodypart/leg/left/vib_moth_male_moth_female
+	icon = VIBELIN_BODIES_ICON
+	icon_static = VIBELIN_BODIES_ICON
+	icon_greyscale = VIBELIN_BODIES_ICON
+	icon_state = "vib_moth_male_moth_female_l_leg_m"
+	limb_id = "vib_moth_male_moth_female"
+	is_dimorphic = TRUE
+
+/obj/item/bodypart/leg/right/vib_moth_male_moth_female
+	icon = VIBELIN_BODIES_ICON
+	icon_static = VIBELIN_BODIES_ICON
+	icon_greyscale = VIBELIN_BODIES_ICON
+	icon_state = "vib_moth_male_moth_female_r_leg_m"
+	limb_id = "vib_moth_male_moth_female"
+	is_dimorphic = TRUE
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_wings_moth_plain
+	icon = 'modular_redtard/heritage/icons/vibelin_45x34.dmi'
+	icon_state = "vib_wings_moth_plain"
+	layers = list("BEHIND" = BODY_BEHIND_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = NONE
+	draw_color = "#FFFFFF"
+	name = "Plain"
+	rogue_slot = "wings"
+
+/obj/item/bodypart/head/vib_moth_male_moth_female/moth
+	head_flags = HEAD_EYESPRITES | HEAD_EYEHOLES | HEAD_DEBRAIN | HEAD_EYECOLOR | HEAD_HAIR | HEAD_FACIAL_HAIR
+
+/obj/item/bodypart/head/vib_moth_male_moth_female/moth/Initialize(mapload)
+	. = ..()
+	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/vib_ears_antenna_simple1, update = FALSE)
+
+/obj/item/bodypart/chest/vib_moth_male_moth_female/moth
+
+/obj/item/bodypart/chest/vib_moth_male_moth_female/moth/Initialize(mapload)
+	. = ..()
+	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/vib_wings_moth_plain, update = FALSE)
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_wings_moth_monarch
+	icon = 'modular_redtard/heritage/icons/vibelin_45x34.dmi'
+	icon_state = "vib_wings_moth_monarch"
+	layers = list("BEHIND" = BODY_BEHIND_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = NONE
+	draw_color = "#FFFFFF"
+	name = "Monarch"
+	rogue_slot = "wings"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_wings_moth_luna
+	icon = 'modular_redtard/heritage/icons/vibelin_45x34.dmi'
+	icon_state = "vib_wings_moth_luna"
+	layers = list("BEHIND" = BODY_BEHIND_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = NONE
+	draw_color = "#FFFFFF"
+	name = "Luna"
+	rogue_slot = "wings"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_wings_moth_atlas
+	icon = 'modular_redtard/heritage/icons/vibelin_45x34.dmi'
+	icon_state = "vib_wings_moth_atlas"
+	layers = list("BEHIND" = BODY_BEHIND_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = NONE
+	draw_color = "#FFFFFF"
+	name = "Atlas"
+	rogue_slot = "wings"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_wings_moth_reddish
+	icon = 'modular_redtard/heritage/icons/vibelin_45x34.dmi'
+	icon_state = "vib_wings_moth_reddish"
+	layers = list("BEHIND" = BODY_BEHIND_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = NONE
+	draw_color = "#FFFFFF"
+	name = "Reddish"
+	rogue_slot = "wings"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_wings_moth_royal
+	icon = 'modular_redtard/heritage/icons/vibelin_45x34.dmi'
+	icon_state = "vib_wings_moth_royal"
+	layers = list("BEHIND" = BODY_BEHIND_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = NONE
+	draw_color = "#FFFFFF"
+	name = "Royal"
+	rogue_slot = "wings"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_wings_moth_gothic
+	icon = 'modular_redtard/heritage/icons/vibelin_45x34.dmi'
+	icon_state = "vib_wings_moth_gothic"
+	layers = list("BEHIND" = BODY_BEHIND_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = NONE
+	draw_color = "#FFFFFF"
+	name = "Gothic"
+	rogue_slot = "wings"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_wings_moth_lovers
+	icon = 'modular_redtard/heritage/icons/vibelin_45x34.dmi'
+	icon_state = "vib_wings_moth_lovers"
+	layers = list("BEHIND" = BODY_BEHIND_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = NONE
+	draw_color = "#FFFFFF"
+	name = "Lovers"
+	rogue_slot = "wings"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_wings_moth_whitefly
+	icon = 'modular_redtard/heritage/icons/vibelin_45x34.dmi'
+	icon_state = "vib_wings_moth_whitefly"
+	layers = list("BEHIND" = BODY_BEHIND_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = NONE
+	draw_color = "#FFFFFF"
+	name = "White Fly"
+	rogue_slot = "wings"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_wings_moth_punished
+	icon = 'modular_redtard/heritage/icons/vibelin_45x34.dmi'
+	icon_state = "vib_wings_moth_punished"
+	layers = list("BEHIND" = BODY_BEHIND_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = NONE
+	draw_color = "#FFFFFF"
+	name = "Burnt Off"
+	rogue_slot = "wings"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_wings_moth_firewatch
+	icon = 'modular_redtard/heritage/icons/vibelin_45x34.dmi'
+	icon_state = "vib_wings_moth_firewatch"
+	layers = list("BEHIND" = BODY_BEHIND_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = NONE
+	draw_color = "#FFFFFF"
+	name = "Firewatch"
+	rogue_slot = "wings"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_wings_moth_deathhead
+	icon = 'modular_redtard/heritage/icons/vibelin_45x34.dmi'
+	icon_state = "vib_wings_moth_deathhead"
+	layers = list("BEHIND" = BODY_BEHIND_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = NONE
+	draw_color = "#FFFFFF"
+	name = "Deathshead"
+	rogue_slot = "wings"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_wings_moth_poison
+	icon = 'modular_redtard/heritage/icons/vibelin_45x34.dmi'
+	icon_state = "vib_wings_moth_poison"
+	layers = list("BEHIND" = BODY_BEHIND_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = NONE
+	draw_color = "#FFFFFF"
+	name = "Poison"
+	rogue_slot = "wings"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_wings_moth_ragged
+	icon = 'modular_redtard/heritage/icons/vibelin_45x34.dmi'
+	icon_state = "vib_wings_moth_ragged"
+	layers = list("BEHIND" = BODY_BEHIND_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = NONE
+	draw_color = "#FFFFFF"
+	name = "Ragged"
+	rogue_slot = "wings"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_wings_moth_moonfly
+	icon = 'modular_redtard/heritage/icons/vibelin_45x34.dmi'
+	icon_state = "vib_wings_moth_moonfly"
+	layers = list("BEHIND" = BODY_BEHIND_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = NONE
+	draw_color = "#FFFFFF"
+	name = "Moon Fly"
+	rogue_slot = "wings"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_wings_moth_snow
+	icon = 'modular_redtard/heritage/icons/vibelin_45x34.dmi'
+	icon_state = "vib_wings_moth_snow"
+	layers = list("BEHIND" = BODY_BEHIND_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = NONE
+	draw_color = "#FFFFFF"
+	name = "Snow"
+	rogue_slot = "wings"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_wings_moth_oakworm
+	icon = 'modular_redtard/heritage/icons/vibelin_45x34.dmi'
+	icon_state = "vib_wings_moth_oakworm"
+	layers = list("BEHIND" = BODY_BEHIND_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = NONE
+	draw_color = "#FFFFFF"
+	name = "Oak Worm"
+	rogue_slot = "wings"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_wings_moth_jungle
+	icon = 'modular_redtard/heritage/icons/vibelin_45x34.dmi'
+	icon_state = "vib_wings_moth_jungle"
+	layers = list("BEHIND" = BODY_BEHIND_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = NONE
+	draw_color = "#FFFFFF"
+	name = "Jungle"
+	rogue_slot = "wings"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_wings_moth_witchwing
+	icon = 'modular_redtard/heritage/icons/vibelin_45x34.dmi'
+	icon_state = "vib_wings_moth_witchwing"
+	layers = list("BEHIND" = BODY_BEHIND_LAYER, "FRONT" = BODY_FRONT_LAYER)
+	hidden_by = NONE
+	draw_color = "#FFFFFF"
+	name = "Witch Wing"
+	rogue_slot = "wings"
+
+/datum/attribute_holder/sheet/vibelin_race/moth
+	raw_attribute_list = list(
+		ROGUE_STAT_CONSTITUTION = -1,
+		ROGUE_STAT_PERCEPTION = 1,
+		ROGUE_STAT_SPEED = 1,
+		ROGUE_STAT_STRENGTH = -1,
+		)
+
+/datum/language_holder/vib_moth
+	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
+	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
+
+/obj/item/organ/tongue/rogue_race/vib_moth
+
+/datum/species/vib_moth
+	name = "Fluvian"
+	id = "vib_moth"
+	inherent_traits = list(TRAIT_MUTANT_COLORS)
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
+	rogue_playable = TRUE
+	rogue_vibelin_type = "/datum/species/moth"
+	bodypart_overrides = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/vib_moth_male_moth_female/moth,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/vib_moth_male_moth_female/moth,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/vib_moth_male_moth_female,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/vib_moth_male_moth_female,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/vib_moth_male_moth_female,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/vib_moth_male_moth_female,
+		)
+	rogue_default_skin = "#B7A98A"
+	rogue_origins = list("Tan" = "#B7A98A", "Brown" = "#8A6F4E", "Grey" = "#8F8C84", "Dark" = "#4A4239", "Pale" = "#CCC4B2", "Rust" = "#9C6A44", "White" = "#DED7C8")
+	rogue_origin_wording = "Ancestry"
+	rogue_hair_colors = list("blond - pale" = "#9D8D6E", "blond - dirty" = "#88754F", "blond - drywheat" = "#D5BA7B", "blond - strawberry" = "#C69B71", "brown - mud" = "#362E25", "brown - oats" = "#584A3B", "brown - grain" = "#58433B", "brown - soil" = "#48322A", "brown - bark" = "#2D1300", "black - oil" = "#181A1D", "black - cave" = "#201616", "black - rogue" = "#2B201B", "black - midnight" = "#1D1B2B", "red - berry" = "#B23434", "red - wine" = "#82534C", "red - sunset" = "#82462B", "red - blood" = "#822B2B", "red - maroon" = "#612929", "orange - rust" = "#BC5E35")
+	rogue_offsets = list(
+		"m" = list(OFFSET_BACK = list(0, 1), OFFSET_BELT = list(0, 1), OFFSET_EARS = list(0, 1), OFFSET_FACEMASK = list(0, 1), OFFSET_GLASSES = list(0, 1), OFFSET_GLOVES = list(0, 1), OFFSET_HEAD = list(0, 1), OFFSET_HELD = list(0, 1), OFFSET_NECK = list(0, 1), OFFSET_SUIT = list(0, 1), OFFSET_S_STORE = list(0, 1), OFFSET_UNIFORM = list(0, 1), ROGUE_OFFSET_CLOAK = list(0, 1), ROGUE_OFFSET_MOUTH = list(0, 1), ROGUE_OFFSET_RING = list(0, 1), ROGUE_OFFSET_SHIRT = list(0, 1), ROGUE_OFFSET_WRISTS = list(0, 1)),
+		"f" = list(OFFSET_BACK = list(0, -1), OFFSET_EARS = list(0, -1), OFFSET_FACE = list(0, -1), OFFSET_FACEMASK = list(0, -1), OFFSET_GLASSES = list(0, -1), OFFSET_HEAD = list(0, -1), OFFSET_NECK = list(0, -1), ROGUE_OFFSET_MOUTH = list(0, -1), ROGUE_OFFSET_RING = list(0, -1)),
+		)
+	rogue_customizers = list(
+		"ears" = list("name" = "Wild-Kin Ears", "default" = "none", "none" = TRUE, "colors" = TRUE, "choices" = list("vib_ears_cat", "vib_ears_axolotl", "vib_ears_bat", "vib_ears_bear", "vib_ears_bigwolf", "vib_ears_bigwolf_inner", "vib_ears_rabbit", "vib_ears_bunny", "vib_ears_big_rabbit_large", "vib_ears_bunny_perky", "vib_ears_cat_big", "vib_ears_cat_normal", "vib_ears_cow", "vib_ears_curled", "vib_ears_deer", "vib_ears_eevee", "vib_ears_elf", "vib_ears_elephant", "vib_ears_fennec", "vib_ears_fish", "vib_ears_fox", "vib_ears_vulp", "vib_ears_husky", "vib_ears_jellyfish", "vib_ears_kangaroo", "vib_ears_lab", "vib_ears_murid", "vib_ears_otie", "vib_ears_pede", "vib_ears_sergal", "vib_ears_shark", "vib_ears_skunk", "vib_ears_squirrel", "vib_ears_wolf", "vib_ears_perky", "vib_ears_antenna_simple1", "vib_ears_antenna_simple2", "vib_ears_antenna_simple3", "vib_ears_antenna_fuzzball1", "vib_ears_antenna_fuzzball2", "vib_ears_cobrahood", "vib_ears_cobrahoodears", "vib_ears_miqote", "vib_ears_lunasune", "vib_ears_sabresune", "vib_ears_possum", "vib_ears_raccoon", "vib_ears_mouse", "vib_ears_big_acrador_long", "vib_ears_big_acrador_short")),
+		"wings" = list("name" = "Fluvian Wings", "default" = "vib_wings_moth_plain", "none" = TRUE, "colors" = TRUE, "choices" = list("vib_wings_moth_plain", "vib_wings_moth_monarch", "vib_wings_moth_luna", "vib_wings_moth_atlas", "vib_wings_moth_reddish", "vib_wings_moth_royal", "vib_wings_moth_gothic", "vib_wings_moth_lovers", "vib_wings_moth_whitefly", "vib_wings_moth_punished", "vib_wings_moth_firewatch", "vib_wings_moth_deathhead", "vib_wings_moth_poison", "vib_wings_moth_ragged", "vib_wings_moth_moonfly", "vib_wings_moth_snow", "vib_wings_moth_oakworm", "vib_wings_moth_jungle", "vib_wings_moth_witchwing")),
+		)
+	rogue_native_language = /datum/language/common
+	rogue_race_sheet = /datum/attribute_holder/sheet/vibelin_race/moth
+	rogue_race_traits = list(TRAIT_NOMOBSWAP)
+	rogue_description = "THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. PLAY AT YOUR OWN RISK."
+	rogue_lore = list(
+		"THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. PLAY AT YOUR OWN RISK.",
+		)
+	species_language_holder = /datum/language_holder/vib_moth
+	mutanttongue = /obj/item/organ/tongue/rogue_race/vib_moth
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_aura_dragonhorn
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_aura_dragonhorn"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Dragon Horns"
+	rogue_slot = "horns"
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_tail_aura_dragontail
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_tail_aura_dragontail"
+	layers = list("FRONT" = BODY_FRONT_LAYER, "BEHIND" = BODY_BEHIND_LAYER)
+	hidden_by = NONE
+	rogue_hair_coloured = TRUE
+	name = "Dragon Tail"
+	rogue_slot = "tail"
+
+/obj/item/bodypart/head/vib_mt_fm/aura
+	head_flags = HEAD_EYESPRITES | HEAD_EYEHOLES | HEAD_DEBRAIN | HEAD_EYECOLOR | HEAD_HAIR | HEAD_FACIAL_HAIR | HEAD_LIPS
+
+/obj/item/bodypart/head/vib_mt_fm/aura/Initialize(mapload)
+	. = ..()
+	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/vib_horns_aura_dragonhorn, update = FALSE)
+
+/obj/item/bodypart/chest/vib_mt_fm/aura
+
+/obj/item/bodypart/chest/vib_mt_fm/aura/Initialize(mapload)
+	. = ..()
+	add_bodypart_overlay(new /datum/bodypart_overlay/simple/rogue_feature/vib_tail_aura_dragontail, update = FALSE)
+
+/datum/bodypart_overlay/simple/rogue_feature/vib_horns_aura_dragonfaceguard
+	icon = VIBELIN_BODIES_ICON
+	icon_state = "vib_horns_aura_dragonfaceguard"
+	layers = list("FRONT" = BODY_FRONT_LAYER)
+	hidden_by = HIDEHAIR
+	draw_color = "#575B68"
+	name = "Dragon Faceguard"
+	rogue_slot = "horns"
+
+/datum/attribute_holder/sheet/vibelin_race/aura
+	raw_attribute_list = list(
+		ROGUE_STAT_CONSTITUTION = 1,
+		ROGUE_STAT_WILLPOWER = 1,
+		)
+
+/datum/language_holder/vib_aura
+	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
+	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
+
+/obj/item/organ/tongue/rogue_race/vib_aura
+
+/datum/species/vib_aura
+	name = "Au'Ra"
+	id = "vib_aura"
+	inherent_traits = list(TRAIT_MUTANT_COLORS)
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
+	rogue_playable = TRUE
+	rogue_vibelin_type = "/datum/species/aura"
+	bodypart_overrides = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/vib_mt_fm/aura,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/vib_mt_fm/aura,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/vib_mt_fm,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/vib_mt_fm,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/vib_mt_fm,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/vib_mt_fm,
+		)
+	rogue_default_skin = "#E8D9C5"
+	rogue_origins = list("Азри" = "#E8D9C5", "Наиире" = "#5A4A52", "Pale" = "#D9CDBD", "Ashen" = "#8A8079", "Slate" = "#4A5258", "Crimson" = "#6B2A24")
+	rogue_origin_wording = "Ancestry"
+	rogue_hair_colors = list("blond - pale" = "#9D8D6E", "blond - dirty" = "#88754F", "blond - drywheat" = "#D5BA7B", "blond - strawberry" = "#C69B71", "brown - mud" = "#362E25", "brown - oats" = "#584A3B", "brown - grain" = "#58433B", "brown - soil" = "#48322A", "brown - bark" = "#2D1300", "black - oil" = "#181A1D", "black - cave" = "#201616", "black - rogue" = "#2B201B", "black - midnight" = "#1D1B2B", "red - berry" = "#B23434", "red - wine" = "#82534C", "red - sunset" = "#82462B", "red - blood" = "#822B2B", "red - maroon" = "#612929", "orange - rust" = "#BC5E35")
+	rogue_offsets = list(
+		"m" = list(OFFSET_BACK = list(0, 1), OFFSET_BELT = list(0, 1), OFFSET_EARS = list(0, 1), OFFSET_FACE = list(0, 1), OFFSET_FACEMASK = list(0, 1), OFFSET_GLASSES = list(0, 1), OFFSET_GLOVES = list(0, 1), OFFSET_HEAD = list(0, 1), OFFSET_HELD = list(0, 1), OFFSET_NECK = list(0, 1), OFFSET_SUIT = list(0, 1), OFFSET_S_STORE = list(0, 1), ROGUE_OFFSET_CLOAK = list(0, 1), ROGUE_OFFSET_MOUTH = list(0, 1), ROGUE_OFFSET_RING = list(0, 1), ROGUE_OFFSET_SHIRT = list(0, 1), ROGUE_OFFSET_WRISTS = list(0, 1)),
+		"f" = list(OFFSET_BACK = list(0, -1), OFFSET_EARS = list(0, -1), OFFSET_FACE = list(0, -1), OFFSET_FACEMASK = list(0, -1), OFFSET_GLASSES = list(0, -1), OFFSET_HEAD = list(0, -1), OFFSET_NECK = list(0, -1), ROGUE_OFFSET_MOUTH = list(0, -1), ROGUE_OFFSET_RING = list(0, -1)),
+		)
+	rogue_customizers = list(
+		"horns" = list("name" = "Horns", "default" = "vib_horns_aura_dragonhorn", "none" = TRUE, "colors" = FALSE, "choices" = list("vib_horns_aura_dragonhorn", "vib_horns_aura_dragonfaceguard")),
+		"tail" = list("name" = "Dragon Tail", "default" = "vib_tail_aura_dragontail", "none" = FALSE, "colors" = TRUE, "choices" = list("vib_tail_aura_dragontail")),
+		)
+	rogue_native_language = /datum/language/common
+	rogue_race_sheet = /datum/attribute_holder/sheet/vibelin_race/aura
+	rogue_race_traits = list(TRAIT_NOMOBSWAP)
+	rogue_description = "THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. PLAY AT YOUR OWN RISK."
+	rogue_lore = list(
+		"THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. PLAY AT YOUR OWN RISK.",
+		)
+	species_language_holder = /datum/language_holder/vib_aura
+	mutanttongue = /obj/item/organ/tongue/rogue_race/vib_aura
 
 GLOBAL_LIST_INIT(rogue_vibelin_species, list(
 	"/datum/species/human/northern" = /datum/species/vib_human,
@@ -2396,4 +5526,31 @@ GLOBAL_LIST_INIT(rogue_vibelin_species, list(
 	"/datum/species/medicator" = /datum/species/vib_medicator,
 	"/datum/species/rakshari" = /datum/species/vib_rakshari,
 	"/datum/species/ooze" = /datum/species/vib_ooze,
+	"/datum/species/tabaxi" = /datum/species/vib_tabaxi,
+	"/datum/species/vulpkanin" = /datum/species/vib_vulpkanin,
+	"/datum/species/lupian" = /datum/species/vib_lupian,
+	"/datum/species/akula" = /datum/species/vib_akula,
+	"/datum/species/anthromorph" = /datum/species/vib_anthromorph,
+	"/datum/species/lizardfolk" = /datum/species/vib_lizardfolk,
+	"/datum/species/moth" = /datum/species/vib_moth,
+	"/datum/species/aura" = /datum/species/vib_aura,
+))
+
+GLOBAL_LIST_INIT(rogue_accents, list(
+	"Dark-Elf Accent" = list("accents/french_replacement.json", "french"),
+	"Dwarf Accent" = list("accents/dwarf_replacement.json", "dwarf"),
+	"Elf Accent" = list("accents/russian_replacement.json", "russian"),
+	"Grenzelhoft Accent" = list("accents/grenz_replacement.json", "grenz"),
+	"Half-Orc Accent" = list("accents/halforc_replacement.json", "halforc"),
+	"Middle Speak (Old Half-Orc)" = list("accents/middlespeak.json", "full"),
+	"No Swearing!" = list("accents/halfling_replacement.json", "halfling"),
+	"Ossland Accent" = list("accents/ossland_replacement.json", "ossland"),
+	"Pirate Accent" = list("accents/pirate_replacement.json", "pirate"),
+	"Ratty Accent" = list("accents/rousman_replacement.json", "rous"),
+	"Rockhill Accent" = list("accents/rockhill_replacement.json", "rockhill"),
+	"Scale-thing!" = list("accents/kobold_replacement.json", "kobold"),
+	"Tiefling Accent" = list("accents/spanish_replacement.json", "spanish"),
+	"Triton Accent" = list("accents/triton_replacement.json", "triton"),
+	"Wintermare Accent" = list("accents/wintermare_replacement.json", "wintermare"),
+	"Zalad Accent" = list("accents/zalad_replacement.json", "arabic"),
 ))

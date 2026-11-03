@@ -391,7 +391,7 @@
 	full_name = "Look up (hold)"
 	description = "Look up while held; Lock looking up or down keeps it"
 	keybind_signal = COMSIG_KB_ROGUE_LOOK_UP_DOWN
-	hotkey_keys = list("ShiftF")
+	hotkey_keys = list("\[")
 
 /datum/keybinding/rogue/look_up/down(client/user, turf/target, mousepos_x, mousepos_y)
 	. = ..()
@@ -402,6 +402,28 @@
 	return TRUE
 
 /datum/keybinding/rogue/look_up/up(client/user, turf/target)
+	. = ..()
+	var/mob/living/carbon/human/owner = user.mob
+	if(!owner.rogue_look_locked)
+		owner.end_look()
+	return TRUE
+
+/datum/keybinding/rogue/look_down
+	name = "rogue_look_down"
+	full_name = "Look down (hold)"
+	description = "Look down while held; Lock looking up or down keeps it"
+	keybind_signal = COMSIG_KB_ROGUE_LOOK_DOWN_DOWN
+	hotkey_keys = list("]")
+
+/datum/keybinding/rogue/look_down/down(client/user, turf/target, mousepos_x, mousepos_y)
+	. = ..()
+	if(.)
+		return
+	var/mob/living/carbon/human/owner = user.mob
+	owner.look_down()
+	return TRUE
+
+/datum/keybinding/rogue/look_down/up(client/user, turf/target)
 	. = ..()
 	var/mob/living/carbon/human/owner = user.mob
 	if(!owner.rogue_look_locked)
@@ -467,7 +489,7 @@
 
 /datum/keybinding/rogue/hand/left
 	name = "rogue_hand_left"
-	hotkey_keys = list("Q")
+	hotkey_keys = list(UNBOUND_KEY)
 	full_name = "Left hand"
 	description = "Use your left hand"
 	keybind_signal = COMSIG_KB_ROGUE_HAND_LEFT_DOWN
@@ -475,7 +497,7 @@
 
 /datum/keybinding/rogue/hand/right
 	name = "rogue_hand_right"
-	hotkey_keys = list("E")
+	hotkey_keys = list(UNBOUND_KEY)
 	full_name = "Right hand"
 	description = "Use your right hand"
 	keybind_signal = COMSIG_KB_ROGUE_HAND_RIGHT_DOWN
@@ -483,7 +505,7 @@
 
 /datum/keybinding/rogue/drop
 	name = "rogue_drop"
-	hotkey_keys = list("Z")
+	hotkey_keys = list("Q")
 	full_name = "Drop"
 	description = "Drop what you hold in the active hand"
 	keybind_signal = COMSIG_KB_ROGUE_DROP_DOWN
@@ -501,7 +523,7 @@
 
 /datum/keybinding/rogue/resist
 	name = "rogue_resist"
-	hotkey_keys = list("X")
+	hotkey_keys = list("B")
 	full_name = "Resist"
 	description = "Break free of a grab, restraints or fire"
 	keybind_signal = COMSIG_KB_ROGUE_RESIST_DOWN
@@ -577,7 +599,7 @@
 
 /datum/keybinding/rogue/quick_equip/hip_left
 	name = "rogue_quick_hip_left"
-	hotkey_keys = list("AltQ")
+	hotkey_keys = list("CtrlQ")
 	full_name = "Hip, left"
 	description = "Put what you hold on the left hip cell, or into the pouch there, or take the last thing back"
 	slot = ITEM_SLOT_RPOCKET
@@ -585,7 +607,7 @@
 
 /datum/keybinding/rogue/quick_equip/hip_right
 	name = "rogue_quick_hip_right"
-	hotkey_keys = list("AltE")
+	hotkey_keys = list("CtrlE")
 	full_name = "Hip, right"
 	description = "Put what you hold on the right hip cell, or into the pouch there, or take the last thing back"
 	slot = ITEM_SLOT_LPOCKET
@@ -724,9 +746,6 @@
 /datum/keybinding/living/give/can_use(client/user)
 	return !rogue_layout_active(user) && ..()
 
-/datum/keybinding/living/look_up/can_use(client/user)
-	return !rogue_layout_active(user) && ..()
-
 /datum/keybinding/mob/stop_pulling/can_use(client/user)
 	return !rogue_layout_active(user) && ..()
 
@@ -734,12 +753,6 @@
 	return !rogue_layout_active(user) && ..()
 
 /datum/keybinding/dextrous/drop_item/can_use(client/user)
-	return !rogue_layout_active(user) && ..()
-
-/datum/keybinding/dextrous/activate_inhand/can_use(client/user)
-	return !rogue_layout_active(user) && ..()
-
-/datum/keybinding/dextrous/swap_hands/can_use(client/user)
 	return !rogue_layout_active(user) && ..()
 
 /datum/keybinding/human/quick_equip/can_use(client/user)
@@ -752,4 +765,15 @@
 	return !rogue_layout_active(user) && ..()
 
 /datum/keybinding/living/rest/can_use(client/user)
+	return !rogue_layout_active(user) && ..()
+
+// TG's X (swap hands, as Twilight Axis has it) works on the medieval layout; Shift+X there is Yield.
+/datum/keybinding/dextrous/swap_hands/column/can_use(client/user)
+	return !rogue_layout_active(user) && ..()
+
+// The medieval layout looks up and down on [ and ] (rogue_look_up, rogue_look_down); L is the special intent there.
+/datum/keybinding/living/look_up/can_use(client/user)
+	return !rogue_layout_active(user) && ..()
+
+/datum/keybinding/living/look_down/can_use(client/user)
 	return !rogue_layout_active(user) && ..()

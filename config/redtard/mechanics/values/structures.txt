@@ -1,0 +1,196 @@
+# Ratwood's town structures, furniture and dungeon devices (rockhill/: far travel, hand carts, bells, telescopes, hookahs, sword racks, arcyne walls, bone piles, pressure plates).
+# Mechanics numbers: name = value, described by the # lines right above it; times are in deciseconds. The build compiles this file in, so its numbers are the defaults; a file of the same name in config/redtard_private/mechanics/values/ is read instead when present.
+
+# Deciseconds before a far travel tile sends someone out of the round (Ratwood do_after 50).
+far_travel_time = 50
+
+# Tiles the one leaving and the one sending them may be from the far travel tile when they go (Ratwood get_dist 2).
+far_travel_range = 2
+
+# Weight a hand cart carries; an item weighs its size class (Ratwood maximum_capacity 60).
+handcart_capacity = 60
+
+# Weight of a creature in a hand cart (Ratwood arbitrary_living_creature_weight 10).
+handcart_creature_weight = 10
+
+# Deciseconds to load a creature into a hand cart, or to climb in lying down (Ratwood do_after 20).
+handcart_load_time = 20
+
+# Weight a hand cart carries with a wooden cog in its wheel (Ratwood cart_capacity 90).
+handcart_cog_capacity = 90
+
+# Weight a hand cart carries with a reliable wooden cog, the level 1 wheelbrace (Ratwood cart_capacity 120).
+handcart_reliable_cog_capacity = 120
+
+# Weight a hand cart carries with an unstable wooden cog, the level 2 wheelbrace (Ratwood cart_capacity 140).
+handcart_unstable_cog_capacity = 140
+
+# Deciseconds between two rings of a common bell (Ratwood last_ring + 15).
+bell_common_cooldown = 15
+
+# Deciseconds between two rings of a ship's bell (Ratwood last_ring + 50).
+boatbell_cooldown = 50
+
+# Deciseconds of ringing a service bell before its chime reaches those it calls (Ratwood do_after 10 SECONDS).
+service_bell_ring_time = 100
+
+# Deciseconds before a service bell can be rung again (Ratwood cooldown 10 MINUTES).
+service_bell_cooldown = 6000
+
+# Deciseconds before a church bell can be rung again (Ratwood cooldown 3 SECONDS).
+church_bell_cooldown = 30
+
+# Tiles a church bell is heard across (Ratwood ring_bell() and loud_message hearing_distance 150).
+church_bell_range = 150
+
+# Tiles within which a church bell is heard ringing up close rather than as a distant toll (Ratwood distance <= 7).
+church_bell_near_range = 7
+
+# Perception at or below which one far from a church bell hears only something somewhere (Ratwood loud_message STAPER <= 8).
+loud_message_perception = 8
+
+# Deciseconds of gazing through a telescope at Astrata or Noc (Ratwood do_after 25).
+telescope_gaze_time = 25
+
+# Burn to the head of one Astrata blinds through a telescope (Ratwood receive_damage(0, 5)).
+telescope_astrata_burn = 5
+
+# Deciseconds Noc's blessing from a telescope lasts (Ratwood nocblessing duration 30 MINUTES).
+noc_blessing_time = 18000
+
+# Intelligence Noc's blessing adds (Ratwood nocblessing effectedstats intelligence 1).
+noc_blessing_intelligence = 1
+
+# Units of smoking mix a hookah holds (Ratwood create_reagents(60)).
+hookah_volume = 60
+
+# Deciseconds of one puff from a hookah (Ratwood do_after_mob 2 SECONDS).
+hookah_puff_time = 20
+
+# Tiles a smoker may walk from the hookah before its mouthpiece flies out of the hand (Ratwood get_dist > 2).
+hookah_hose_range = 2
+
+# Deciseconds to lock or unlock a sword rack with an artificer's linker (Ratwood toggle_lock do_after 20).
+sword_rack_lock_time = 20
+
+# Deciseconds an arcyne wall stands before it fades (Ratwood forcefield_weak timeleft 20 SECONDS).
+arcyne_wall_time = 200
+
+# Deciseconds a bone pile takes to raise its haunt, at first and after each death (Ratwood addtimer 4 SECONDS).
+bonepile_haunt_delay = 40
+
+# Tiles a haunt may stray from its bone pile before it is pulled back to it (Ratwood offset > 8).
+haunt_leash_range = 8
+
+# Deciseconds to hide a pressure plate under dirt or to wipe the dirt away (Ratwood do_after 10).
+pressure_plate_conceal_time = 10
+
+# --- Block 3, task B8: doors, winches and levers, locks and keys, the lock imprinter, windows, hiding spots and candles (rockhill/doors.dm, locksmith.dm, windows.dm, hiding.dm, fires.dm; Ratwood mineral_doors.dm, keys.dm, closets.dm, contraptions.dm, roguewindow.dm, gate.dm, redstone.dm, components/hiding_spot.dm, items/candle.dm).
+
+# Percent chance per point of strength that a kick breaks the lock of a locked door, for one at least as strong as the door's kick threshold (Ratwood onkick() prob(STASTR * 0.5)).
+door_kick_chance_per_strength = 0.5
+
+# Damage a door basher (TRAIT_BASHDOORS) does to a locked door it walks into (Ratwood Bumped() take_damage 200).
+door_bash_damage = 200
+
+# Damage a door basher does to a window with a blow of the hand (Ratwood roguewindow attack_hand() take_damage 15).
+window_bash_damage = 15
+
+# Deciseconds to mend a door at rank 1 of its repair craft, divided by the rank (Ratwood repairdoor() 300 / skill).
+door_repair_time = 300
+
+# Deciseconds to mend a window at rank 1 of carpentry, divided by the rank (Ratwood repairwindow() 300 / skill).
+window_repair_time = 300
+
+# Deciseconds to crank a gate's winch before strength takes its share off (Ratwood winch 105 - STASTR * 10).
+winch_time = 105
+
+# Deciseconds each point of strength takes off cranking a winch.
+winch_time_per_strength = 10
+
+# Deciseconds to pull a lever before strength takes its share off (Ratwood lever 100 - STASTR * 10).
+lever_time = 100
+
+# Deciseconds each point of strength takes off pulling a lever.
+lever_time_per_strength = 10
+
+# Deciseconds of one try at a lock with no Lockpicking rank, also the longest try (Ratwood trypicklock() picktime 70).
+lockpick_time = 70
+
+# Deciseconds each Lockpicking rank takes off a try (Ratwood pickskill * 10).
+lockpick_time_per_rank = 10
+
+# Shortest try at a lock in deciseconds, before a hard lock adds to it (Ratwood clamp(picktime, 10, 70)).
+lockpick_time_min = 10
+
+# Deciseconds each level of difficulty adds to a try at a lock harder than the first level (Ratwood 10 * lockdifficulty).
+lockpick_difficulty_time = 10
+
+# Percent chance of a try to move the pins with no Lockpicking rank (Ratwood pickchance 35).
+lockpick_chance = 35
+
+# Percent chance each Lockpicking rank adds to a try (Ratwood pickskill * 10).
+lockpick_chance_per_rank = 10
+
+# Perception divided by this is added to the percent chance of a try (Ratwood STAPER / 5).
+lockpick_perception_divisor = 5
+
+# Highest percent chance of a try, before a hard lock divides it (Ratwood clamp(pickchance, 1, 95)).
+lockpick_chance_max = 95
+
+# A lock harder than the first level divides the chance of a try by its difficulty times this (Ratwood pickchance / (lockdifficulty * 0.75)).
+lockpick_difficulty_chance_factor = 0.75
+
+# Progress on the lock's strength of a good try with no Lockpicking rank (Ratwood moveup 10).
+lockpick_progress = 10
+
+# Progress each Lockpicking rank adds to a good try (Ratwood pickskill * 3).
+lockpick_progress_per_rank = 3
+
+# Most progress of one good try (Ratwood clamp(moveup, 10, 30)).
+lockpick_progress_max = 30
+
+# Lockpicking experience of a good try per point of intelligence (Ratwood add_sleep_experience(STAINT / 2)).
+lockpick_click_xp = 0.5
+
+# Lockpicking experience of a failed try per point of intelligence (Ratwood add_sleep_experience(STAINT / 4)).
+lockpick_clack_xp = 0.25
+
+# Lock strength of a door or chest a custom lock is fitted to (Ratwood customlock/finished attack_obj() lock_strength 100).
+custom_lock_strength = 100
+
+# Imprints or unlocks a lock imprinter gets from one unfinished lock put in it (Ratwood charge_per_source 4).
+imprinter_charges = 4
+
+# Engineering rank to read the mode of a lock imprinter (Ratwood lock_imprinter examine() skill >= 2).
+imprinter_mode_rank = 2
+
+# Engineering rank to read the lock ID a lock imprinter holds (Ratwood lock_imprinter examine() skill >= 4).
+imprinter_lockid_rank = 4
+
+# Engineering experience of an imprint per point of intelligence (Ratwood add_sleep_experience(STAINT)).
+imprinter_xp = 1
+
+# Deciseconds to hide in a hiding spot with no Sneaking rank (Ratwood hiding_spot 5 SECONDS).
+hiding_time = 50
+
+# Deciseconds each Sneaking rank takes off hiding (Ratwood sneak_level SECONDS).
+hiding_time_per_rank = 10
+
+# Shortest time to hide, in deciseconds (Ratwood max(1 SECONDS, ...)).
+hiding_time_min = 10
+
+# Wax of a new candle, in Ratwood's ticks of burning of two seconds each (Ratwood wax 1000).
+candle_wax = 1000
+
+# Wax a lit candle burns each second (Ratwood: one each tick of SSobj, every two seconds).
+candle_wax_per_second = 0.5
+
+# Wax above which a candle still looks whole (Ratwood update_icon() wax > 750).
+candle_wax_full = 750
+
+# Wax above which a candle looks half burned; below it the candle looks nearly gone (Ratwood update_icon() wax > 400).
+candle_wax_half = 400
+
+# Most wax left in a candle someone runs over, which tramples it out (Ratwood Crossed() wax = 100).
+candle_trampled_wax = 100

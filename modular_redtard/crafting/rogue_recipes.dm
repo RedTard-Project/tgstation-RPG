@@ -121,7 +121,7 @@
 	if(rogue.rogue_sound)
 		playsound(target, rogue.rogue_sound, 100, TRUE)
 	for(var/try_number in 1 to ROGUE_CRAFT_TRIES)
-		if(!do_after(user, 1 SECONDS, target = user))
+		if(!do_after(user, rogue_value("craft_try_time"), target = user))
 			return "."
 		target = rogue.rogue_target(user)
 		if(istext(target))

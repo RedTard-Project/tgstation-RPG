@@ -60,7 +60,7 @@
 		return ITEM_INTERACT_SUCCESS
 	if(istype(tool, /obj/item/grown/log/tree/stake))
 		set_anchored(!anchored)
-		to_chat(user, span_warning(anchored ? "You anchor [src]." : "The [src] can now be moved."))
+		to_chat(user, span_warning((anchored ? "You anchor [src]." : "The [src] can now be moved.")))
 		playsound(src, TANNING_STAKE_SOUND, 100, TRUE)
 		return ITEM_INTERACT_SUCCESS
 	if(hung_hide && (tool.get_sharpness() & SHARP_EDGED))

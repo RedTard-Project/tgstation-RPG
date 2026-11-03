@@ -332,7 +332,8 @@ GLOBAL_LIST_INIT(rogue_bind_catches, list(
 	if(attack_type != MELEE_ATTACK && attack_type != UNARMED_ATTACK)
 		return NONE
 	var/mob/living/attacker = isliving(hitby) ? hitby : get(hitby, /mob/living)
-	if(!isliving(attacker))
+	// One does not parry or dodge oneself: a grab of one's own limb (combat/grab.dm) went through check_block() too.
+	if(!isliving(attacker) || attacker == source)
 		return NONE
 	source.rogue_mark_in_combat()
 	attacker.rogue_mark_in_combat()

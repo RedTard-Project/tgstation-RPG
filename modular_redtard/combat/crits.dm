@@ -126,6 +126,8 @@ GLOBAL_LIST_INIT(rogue_chest_zones, list("chest", "stomach", "groin"))
 	. = FALSE
 	if(wounding_type && cause_wound_of_type_and_severity(wounding_type, limb, severity, severity, wound_source = ROGUE_CRIT_WOUND_SOURCE))
 		. = TRUE
+	if((wounding_type == WOUND_SLASH || wounding_type == WOUND_PIERCE) && severity >= WOUND_SEVERITY_CRITICAL)
+		rogue_open_artery(limb, special)
 	switch(special)
 		if(ROGUE_CRIT_BRAIN)
 			adjust_organ_loss(ORGAN_SLOT_BRAIN, ROGUE_CRIT_BRAIN_DAMAGE)
@@ -161,3 +163,23 @@ GLOBAL_LIST_INIT(rogue_chest_zones, list("chest", "stomach", "groin"))
 			. = TRUE
 		if(ROGUE_CRIT_DISEMBOWEL)
 			. = rogue_disembowel(attacker)
+
+/// Ratwood's artery wounds (wounds/types/arteries.dm): the critical cut or stab a crit leaves is an opened artery, that
+/// of the throat a torn carotid, that of the heart an aortic dissection, and bleeds at Ratwood's rate (combat/blood.dm).
+/// Opening it breaks one's stride (on_mob_gain(): paincrit, Slowdown(20), the sight shaken).
+/mob/living/carbon/proc/rogue_open_artery(obj/item/bodypart/limb, special)
+	var/opened = FALSE
+	for(var/datum/wound/wound as anything in limb.wounds)
+		if(wound.rogue_artery_opened || !wound.rogue_artery_bleed())
+			continue
+		wound.rogue_artery_opened = TRUE
+		if(special == ROGUE_CRIT_THROAT)
+			wound.rogue_artery = ROGUE_ARTERY_THROAT
+		else if(special == ROGUE_CRIT_HEART)
+			wound.rogue_artery = ROGUE_ARTERY_HEART
+		opened = TRUE
+	if(!opened)
+		return
+	INVOKE_ASYNC(src, TYPE_PROC_REF(/mob, emote), "paincrit", NONE, null, FALSE, FALSE, TRUE)
+	rogue_slowdown(ROGUE_ARTERY_SLOW)
+	shake_camera(src, 2, 2)

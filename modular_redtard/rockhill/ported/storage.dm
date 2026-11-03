@@ -55,7 +55,7 @@
 
 /datum/storage/rogue_grid/grid/meatsack/New()
 	. = ..()
-	set_holdable(list(/obj/item/alch/bone, /obj/item/alch/viscera, /obj/item/natural/fur, /obj/item/natural/head, /obj/item/natural/hide, /obj/item/reagent_containers/food/snacks/fat, /obj/item/reagent_containers/food/snacks/rogue/meat))
+	set_holdable(list(/obj/item/alch/bone, /obj/item/alch/sinew, /obj/item/alch/viscera, /obj/item/natural/fur, /obj/item/natural/head, /obj/item/natural/hide, /obj/item/reagent_containers/food/snacks/fat, /obj/item/reagent_containers/food/snacks/rogue/meat))
 
 /datum/storage/rogue_grid/grid/orestore
 	screen_max_columns = 8
