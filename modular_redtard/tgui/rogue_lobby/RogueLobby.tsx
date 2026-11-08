@@ -17,6 +17,7 @@ type RogueState = Partial<ServerState> & {
   activeCharacter?: string | null;
   readyJobs?: ReadyJob[];
   migrantQueued?: boolean;
+  inLobby?: boolean;
 };
 
 function mergeState(state: RogueState, update: RogueState): RogueState {
@@ -29,8 +30,8 @@ function sendAction(action: string) {
 }
 
 /**
- * TG's lobby menu as it is, over the map with the title screen, and Azure Peak's lobby beside it. Both hear the same
- * init and state messages as TG's menu.
+ * TG's lobby menu as it is, over the title screen in motion, and Azure Peak's lobby beside it. Both hear the same init
+ * and state messages as TG's menu. The title leaves with the lobby, so that it costs nothing during the round.
  */
 export function RogueLobby() {
   const [state, merge] = useReducer(mergeState, {});
@@ -42,9 +43,82 @@ export function RogueLobby() {
 
   return (
     <>
+      {!!state.inLobby && !state.transparent && <TitleAnimation />}
       <LobbyMenu />
       {!!state.gamePhase && <AzurePanel state={state} />}
     </>
+  );
+}
+
+/** The title screen in motion, sent as the rogue_lobby_title asset. */
+const TITLE_ASSET = 'rogue_lobby_title.webp';
+/** Class on the root while the title plays, so TG's still first frame gives way to it. */
+const ANIMATED_CLASS = 'rogue-lobby-title-animated';
+/** How long the menu waits for the title: five minutes, once a second. */
+const TITLE_FETCH_ATTEMPTS = 300;
+const TITLE_FETCH_RETRY_MS = 1000;
+
+/** The title once all of it is there: it is megabytes and comes after the menu, and a WebP states its own size. */
+async function fetchTitle(url: string): Promise<ArrayBuffer | null> {
+  try {
+    const response = await fetch(url, { cache: 'no-store' });
+    if (!response.ok) {
+      return null;
+    }
+    const data = await response.arrayBuffer();
+    const stated = data.byteLength > 8 && new DataView(data).getUint32(4, true);
+    return stated && stated + 8 === data.byteLength ? data : null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * The title screen in motion over TG's still picture of its first frame: a browser only gets that picture of a DMI, so
+ * the animation is a WebP of its own, which the browser plays and scales by itself. Until it arrives, and if it never
+ * does, TG's picture stays.
+ */
+function TitleAnimation() {
+  const [source, setSource] = useState<string>();
+
+  useEffect(() => {
+    let stopped = false;
+    let objectUrl: string | undefined;
+
+    (async () => {
+      for (let attempt = 0; attempt < TITLE_FETCH_ATTEMPTS && !stopped; attempt++) {
+        const url = assetMap[TITLE_ASSET];
+        const data = url ? await fetchTitle(url) : null;
+        if (data) {
+          if (!stopped) {
+            objectUrl = URL.createObjectURL(new Blob([data], { type: 'image/webp' }));
+            setSource(objectUrl);
+          }
+          return;
+        }
+        await new Promise((resolve) => setTimeout(resolve, TITLE_FETCH_RETRY_MS));
+      }
+    })();
+
+    return () => {
+      stopped = true;
+      if (objectUrl) {
+        URL.revokeObjectURL(objectUrl);
+      }
+      document.documentElement.classList.remove(ANIMATED_CLASS);
+    };
+  }, []);
+
+  if (!source) {
+    return null;
+  }
+  return (
+    <img
+      className="rogue-lobby-title"
+      src={source}
+      alt=""
+      onLoad={() => document.documentElement.classList.add(ANIMATED_CLASS)}
+    />
   );
 }
 
