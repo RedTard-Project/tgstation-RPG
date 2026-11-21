@@ -2434,7 +2434,7 @@
 				"file": "redtard_logo.dmi",
 				"name": "logo",
 				"kind": "dmi",
-				"origin": "RedTard logo, Logo_480x480_.gif supplied by the project owner (2026-10-13), converted by gif_to_dmi.py of ai-skills (scripts/gif_to_dmi.py) --every 4"
+				"origin": "RedTard logo, first frame of Logo_480x480_.gif supplied by the project owner (2026-10-13), converted by gif_to_dmi.py of ai-skills (scripts/gif_to_dmi.py) --every 528; the moving title is lobby/rogue_lobby_title.webp"
 			}
 		]
 	},
