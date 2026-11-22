@@ -85,13 +85,13 @@ trade_hails_per_day = 10
 # Piers: ships at port at once (Ratwood TRADE_SHIP_DOCK_SPOTS_BASE).
 trade_dock_spots = 10
 
-# Deciseconds a hailed ship stays at the pier (Ratwood TRADE_SHIP_DOCK_DURATION, 60 minutes).
+# Deciseconds a hailed ship stays at the pier (Ratwood TRADE_SHIP_DOCK_DURATION).
 trade_dock_time = 10
 
-# Deciseconds before a captain lets himself be sent away without the trade he hoped for (Ratwood TRADE_SHIP_SEND_AWAY_GRACE, 20 minutes).
+# Deciseconds before a captain lets himself be sent away without the trade he hoped for (Ratwood TRADE_SHIP_SEND_AWAY_GRACE).
 trade_send_away_grace = 10
 
-# Deciseconds of an idle harbor after which a ship comes into port unbidden, once a day (Ratwood AUTO_HAIL_IDLE_THRESHOLD, 15 minutes).
+# Deciseconds of an idle harbor after which a ship comes into port unbidden, once a day (Ratwood AUTO_HAIL_IDLE_THRESHOLD).
 trade_auto_hail_idle = 10
 
 # Mammons of trade a ship of the default size hopes for; a ship that gets it gives the merchant back a hail (Ratwood TRADE_SHIP_EXPECTED_FAVOR).
@@ -228,7 +228,7 @@ trade_price_recursion_max = 10
 # Markup of the pricing engine on the materials of a thing of an unlisted market category (Ratwood PRICING_ENGINE_DEFAULT_MARKUP).
 trade_markup_default = 10
 
-# Markup on the materials of armor, weapons, tools, valuables, decoration, pottery, components and engineering (Ratwood MARKUP_ARMOR_*, MARKUP_WEAPONS_*, MARKUP_TOOLS_* and the others at 1.5).
+# Markup on the materials of armor, weapons, tools, valuables, decoration, pottery, components and engineering (Ratwood MARKUP_ARMOR_*, MARKUP_WEAPONS_*, MARKUP_TOOLS_* and the others).
 trade_markup_crafted = 10
 
 # Markup on the materials of light and cloth armor (Ratwood MARKUP_ARMOR_LIGHT).

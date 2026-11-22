@@ -28,13 +28,13 @@ faith_regen_major = 10
 # Devotion a witch regains every regen step (Ratwood CLERIC_REGEN_WITCH).
 faith_regen_witch = 10
 
-# Devotion a stigmatic regains every regen step (Ratwood CLERIC_REGEN_ABSOLVER / 2).
+# Devotion a stigmatic regains every regen step (Ratwood CLERIC_REGEN_ABSOLVER).
 faith_regen_stigmata = 10
 
 # Devotion an absolver regains every regen step (Ratwood CLERIC_REGEN_ABSOLVER).
 faith_regen_absolver = 10
 
-# Deciseconds of a regen step of devotion (Ratwood's processing tick, 2 seconds).
+# Deciseconds of a regen step of devotion (Ratwood's processing tick).
 faith_regen_interval = 10
 
 # Devotion and progression a devout role starts with when it does not start full (Ratwood).
@@ -55,7 +55,7 @@ faith_idol_range = 10
 # Shortest prayer a patron hears, in characters (Ratwood).
 faith_prayer_min_length = 10
 
-# Deciseconds within which a new prayer counts as the last one and brings no reward (Ratwood MT_PSYPRAY, 1 minute).
+# Deciseconds within which a new prayer counts as the last one and brings no reward (Ratwood MT_PSYPRAY).
 faith_prayer_interval = 10
 
 # Fire stacks an offended patron sets on the one who insulted it in a prayer (Ratwood).
@@ -64,16 +64,16 @@ faith_smite_fire_stacks = 10
 # Ranks of the Miracles skill a miracle needs per tier: tier 4 wants an expert.
 faith_ranks_per_tier = 10
 
-# Healing of the miracles on a fortified target, as a factor (Ratwood Fortify, +50%).
+# Healing of the miracles on a fortified target, as a factor (Ratwood Fortify).
 faith_fortify_bonus = 10
 
-# Deciseconds of Test Faith before the victim confesses (Ratwood 10 seconds).
+# Deciseconds of Test Faith before the victim confesses (Ratwood).
 faith_confess_time = 10
 
 # Tiles within which a cross must stand for Test Faith (Ratwood).
 faith_confess_cross_range = 10
 
-# Deciseconds the blessing of a holy book lasts (Azure Peak buff/blessed, 20 minutes).
+# Deciseconds the blessing of a holy book lasts (Azure Peak buff/blessed).
 faith_blessed_duration = 10
 
 # Fortune the blessing of a holy book gives (Azure Peak buff/blessed).

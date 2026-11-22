@@ -1,3 +1,104 @@
 # Armor datums. The id is the path after /datum/rogue_armor/; items point at it with armor = id. Ratings are tiers, as in Ratwood and Azure Peak: blunt absorbs 0-5, slash, stab and piercing block 0-4 against the penetration tier of an intent, fire and acid reduce 0-5.
 # Fields: blunt, slash, stab, piercing, fire, acid, magic
 # Only overrides live here; every other value comes from the code. The full list of current values: Rogue Mechanics panel -> Export, or a world built with REDTARD_MECHANICS_EXPORT.
+
+# >>> port_azure_items.py: the ratings of the armor datums of modular_redtard/items_azure/rogue_armor.dm (Azure Peak's tiers), rewritten by tools/port_azure_items.py.
+
+[azure_brigandine]
+blunt = 10
+slash = 10
+stab = 10
+piercing = 10
+
+[azure_bronze]
+blunt = 10
+slash = 10
+stab = 10
+piercing = 10
+fire = 10
+
+[azure_indestructible]
+blunt = 10
+slash = 10
+stab = 10
+piercing = 10
+fire = 10
+
+[azure_maille]
+blunt = 10
+slash = 10
+stab = 10
+piercing = 10
+
+[azure_padded]
+blunt = 10
+slash = 10
+stab = 10
+piercing = 10
+fire = 10
+
+[azure_plate]
+blunt = 10
+slash = 10
+stab = 10
+piercing = 10
+
+[azure_plate_bsteel]
+blunt = 10
+slash = 10
+stab = 10
+piercing = 10
+fire = 10
+
+[gnoll_standard]
+blunt = 10
+slash = 10
+stab = 10
+piercing = 10
+fire = 10
+
+[gnoll_strong]
+blunt = 10
+slash = 10
+stab = 10
+piercing = 10
+fire = 10
+
+[gnoll_weak]
+blunt = 10
+slash = 10
+stab = 10
+piercing = 10
+fire = 10
+
+[insulated_brigandine]
+blunt = 10
+slash = 10
+stab = 10
+piercing = 10
+fire = 10
+
+[insulated_leather]
+blunt = 10
+slash = 10
+stab = 10
+piercing = 10
+fire = 10
+
+# <<< port_azure_items.py
+
+# >>> port_twilight_items.py: the ratings of the armor datums of modular_redtard/items_twilight/armor_datums.dm (Twilight Axis tiers), rewritten on every run of port_twilight_items.py; an override goes below the end line.
+
+[newmoon_hood]
+blunt = 10
+slash = 10
+stab = 10
+piercing = 10
+
+[newmoon_mask]
+blunt = 10
+slash = 10
+stab = 10
+piercing = 10
+
+# <<< port_twilight_items.py

@@ -31,7 +31,7 @@ treasury_indenture_max = 10
 # Longest term of a loan or indenture, in dawns.
 treasury_loan_term_max = 10
 
-# Deciseconds an unsigned loan writ, indenture or patronage writ lasts before it crumbles (Ratwood 2 minutes).
+# Deciseconds an unsigned loan writ, indenture or patronage writ lasts before it crumbles (Ratwood).
 treasury_writ_lifetime = 10
 
 # Mammons the Church keeps for charity, less the principal it has out in loans (Ratwood CHURCH_RESERVE_FLOOR).
@@ -58,7 +58,7 @@ treasury_fund_lump = 10
 # Lump sum the tavern's JAWBANK spills (Ratwood INNKEEPER_LUMP_PAYOUT).
 treasury_tavern_lump = 10
 
-# Deciseconds without a blow after which a JAWBANK forgets the blows counted toward a lump sum (Ratwood 1 minute).
+# Deciseconds without a blow after which a JAWBANK forgets the blows counted toward a lump sum (Ratwood).
 treasury_bash_reset = 10
 
 # Mammons a bathhouse attendant may draw from its fund each day until the Bathmaster changes it.
@@ -118,7 +118,7 @@ treasury_arms_poll_cap = 10
 # Share of every taxed sale the Zenitstadt Concordat tithes from the Crown's Purse to the Church, and the lowest levy it allows.
 treasury_concordat_tithe = 10
 
-# Deciseconds before a charter can change again (Ratwood DECREE_COOLDOWN, 30 minutes).
+# Deciseconds before a charter can change again (Ratwood DECREE_COOLDOWN).
 treasury_decree_cooldown = 10
 
 # Least the Burghers advance when the Crown cannot meet its payroll (Ratwood TREASURY_ARREARS_LOAN).

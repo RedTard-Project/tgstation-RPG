@@ -1,6 +1,6 @@
 # Formulas: name = expression. Functions: min, max, clamp, abs, round, floor, ceil, sqrt, if. Operators: + - * / % ^ < <= > >= == != and or not.
 
-# Damage multiplier from the attacker's strength (Ratwood STRENGTH_MULT up to STRENGTH_SOFTCAP 14, STRENGTH_CAPPEDMULT past it). min_strength is the weapon's need, halved when wielded, 0 if none. Inputs: strength, min_strength.
+# Damage multiplier from the attacker's strength (Ratwood STRENGTH_MULT up to STRENGTH_SOFTCAP, STRENGTH_CAPPEDMULT past it). min_strength is the weapon's need, reduced when wielded, 0 if none. Inputs: strength, min_strength.
 strength_factor = 10
 
 # Parry value of one weapon or of bare hands (Azure Peak): weapon skill rank and weapon defense. Inputs: skill, defense.
@@ -36,16 +36,16 @@ mining_swings = 10
 # Time of one attempt to pry a window with a knife, in deciseconds (Ratwood). Inputs: lockpicking, perception, speed, picklvl, open.
 window_pry_time = 10
 
-# Progress of one successful attempt; the window gives at 100 (reinforced 150) (Ratwood). Inputs: lockpicking, perception, speed, picklvl, open.
+# Progress of one successful attempt; the window gives when the progress reaches its limit, a higher one when reinforced (Ratwood). Inputs: lockpicking, perception, speed, picklvl, open.
 window_pry_progress = 10
 
 # Chance in percent that one attempt succeeds; a failure breaks the window (Ratwood). picklvl is the knife's lockpicking level. Inputs: lockpicking, perception, speed, picklvl, open.
 window_pry_chance = 10
 
-# Time to arm a floor trap by hand, in deciseconds (Ratwood). Needs crafting 1 or more. Inputs: crafting.
+# Time to arm a floor trap by hand, in deciseconds (Ratwood). Needs some crafting skill. Inputs: crafting.
 trap_set_time = 10
 
-# Time to disarm a floor trap by hand, in deciseconds (Ratwood). Needs crafting 1 or more. Inputs: crafting.
+# Time to disarm a floor trap by hand, in deciseconds (Ratwood). Needs some crafting skill. Inputs: crafting.
 trap_disarm_time = 10
 
 # Time to spring open or shut a mantrap held in hand, in deciseconds (Ratwood). Inputs: strength, crafting.
@@ -63,10 +63,10 @@ look_around_spot = 10
 # Bare-handed damage before the strike formula: a punch, twisting, chewing, headbutting (Ratwood get_punch_dmg after the Azure Peak unarmed rework). civilized is the Expert Pugilist trait, gloves the flat unarmed bonus of the worn gloves or knuckles, added after strength. Inputs: strength, civilized, gloves.
 unarmed_damage = 10
 
-# Chance in percent to tighten a grab, or to shove a grabbed foe down (Ratwood). Strength and wrestling are grabber minus target; noise is -5 to 5; modifier is 2 for a compliant target, +0.25 restrained, +0.05 lying, +-0.3 for combat readiness, +0.15 chokehold. Inputs: strength_diff, skill_diff, noise, modifier.
+# Chance in percent to tighten a grab, or to shove a grabbed foe down (Ratwood). Strength and wrestling are grabber minus target; noise is a small random spread; modifier is a factor built from the target's state: compliant, restrained, lying, combat readiness, chokehold. Inputs: strength_diff, skill_diff, noise, modifier.
 grab_chance = 10
 
-# Chance in percent to take the item from a grabbed hand (Ratwood); 20 more to knock it to the floor instead. weapon_skill is the holder's rank in the item's skill. Inputs: strength_diff, skill_diff, modifier, weapon_skill, wielded.
+# Chance in percent to take the item from a grabbed hand (Ratwood); more to knock it to the floor instead. weapon_skill is the holder's rank in the item's skill. Inputs: strength_diff, skill_diff, modifier, weapon_skill, wielded.
 grab_disarm_chance = 10
 
 # How long one pin holds a grabbed foe on the ground, in deciseconds (Ratwood). Inputs: strength_diff, skill_diff, modifier.

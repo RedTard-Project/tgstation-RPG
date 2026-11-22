@@ -1,37 +1,37 @@
 # Machines (economy/, block 9b): the CASTIFICO, the bathhouse hoard and TREASURE SEEKER, PURITY, the POTION SELLER, the scrappers, the COMMISSIONER, the navigator, the ZADCOTE and the HERMES parcels.
 # Mechanics numbers: name = value, described by the # lines right above it; times are in deciseconds. The build compiles this file in, so its numbers are the defaults; a file of the same name in config/redtard_private/mechanics/values/ is read instead when present.
 
-# Time the one turning someone in at the CASTIFICO works the chair before it reads the skull (Ratwood do_after 5 SECONDS).
+# Time the one turning someone in at the CASTIFICO works the chair before it reads the skull (Ratwood do_after).
 machines_castifico_analysis_time = 10
 
-# Time the CASTIFICO assesses the subject before it crushes the skull (Ratwood sleep 10 SECONDS).
+# Time the CASTIFICO assesses the subject before it crushes the skull (Ratwood sleep).
 machines_castifico_assessment_time = 10
 
-# Brute damage to the head of each of the CASTIFICO's two crushes (Ratwood 50).
+# Brute damage to the head of each of the CASTIFICO's crushes (Ratwood).
 machines_castifico_crush_damage = 10
 
 # Share of the bounties the CASTIFICO pays for a corpse (Ratwood half).
 machines_castifico_corpse_share = 10
 
-# Time a subject has to submit to the collar or to perish at the CASTIFICO (Ratwood 10 seconds).
+# Time a subject has to submit to the collar or to perish at the CASTIFICO (Ratwood).
 machines_castifico_choice_time = 10
 
-# Time a subject who submitted sleeps after the CASTIFICO (Ratwood Unconscious 15 SECONDS).
+# Time a subject who submitted sleeps after the CASTIFICO (Ratwood Unconscious).
 machines_castifico_sleep_time = 10
 
-# Brute damage to the hand of an outlaw who touches the CASTIFICO (Ratwood 10).
+# Brute damage to the hand of an outlaw who touches the CASTIFICO (Ratwood).
 machines_castifico_bite_damage = 10
 
-# Stun of an outlaw the CASTIFICO bites (Ratwood Stun 10).
+# Stun of an outlaw the CASTIFICO bites (Ratwood Stun).
 machines_castifico_bite_stun = 10
 
-# Base penance of the castifico collar before it falls off (Ratwood 5 MINUTES).
+# Base penance of the castifico collar before it falls off (Ratwood).
 machines_castifico_penance_base = 10
 
-# Minutes of penance added per mammon of the bounty paid for the wearer (Ratwood a minute per 10 mammons).
+# Minutes of penance added per mammon of the bounty paid for the wearer (Ratwood: a minute per fixed count of mammons).
 machines_castifico_penance_per_mammon = 10
 
-# Bounty below which the castifico collar adds no penance (Ratwood bounty_amount >= 10).
+# Bounty below which the castifico collar adds no penance (Ratwood bounty_amount).
 machines_castifico_penance_threshold = 10
 
 # Share of a treasure's worth the bathhouse hoard pays into the Bathhouse Fund each time it pays (Ratwood SSBMtreasury interest_rate).
@@ -40,22 +40,22 @@ machines_hoard_interest = 10
 # Each further treasure of a kind already counted is worth this share of the one before it (Ratwood multiple_item_penalty).
 machines_hoard_repeat_penalty = 10
 
-# Least time between payments of the hoard (Ratwood 5 MINUTES).
+# Least time between payments of the hoard (Ratwood).
 machines_hoard_period_min = 10
 
-# Most time between payments of the hoard (Ratwood 8 MINUTES).
+# Most time between payments of the hoard (Ratwood).
 machines_hoard_period_max = 10
 
 # Lines the hoard ledger keeps (Ratwood BM_HOARD_LOG_MAX).
 machines_hoard_log_size = 10
 
-# Share of the takings the PURITY's secret purse gets at first (Ratwood 10%).
+# Share of the takings the PURITY's secret purse gets at first (Ratwood).
 machines_purity_cut_base = 10
 
-# Share of the takings the secret purse gets once the first cut is bought (Ratwood DRUGRADE_MONEYA, 25%).
+# Share of the takings the secret purse gets once the first cut is bought (Ratwood DRUGRADE_MONEYA).
 machines_purity_cut_a = 10
 
-# Share of the takings the secret purse gets once the second cut is bought (Ratwood DRUGRADE_MONEYB, 50%).
+# Share of the takings the secret purse gets once the second cut is bought (Ratwood DRUGRADE_MONEYB).
 machines_purity_cut_b = 10
 
 # Mammons of the PURITY's budget the first cut costs (Ratwood PURITY_CUT_A_COST).
@@ -64,10 +64,10 @@ machines_purity_cut_a_cost = 10
 # Mammons of the PURITY's budget the second cut costs (Ratwood PURITY_CUT_B_COST).
 machines_purity_cut_b_cost = 10
 
-# Least time between cuts of the PURITY's takings (Ratwood 6 MINUTES).
+# Least time between cuts of the PURITY's takings (Ratwood).
 machines_purity_cut_period_min = 10
 
-# Most time between cuts of the PURITY's takings (Ratwood 8 MINUTES).
+# Most time between cuts of the PURITY's takings (Ratwood).
 machines_purity_cut_period_max = 10
 
 # Price of an empty bottle at the POTION SELLER until its owner changes it (Ratwood bottle_price).
@@ -76,7 +76,7 @@ machines_potion_bottle_price = 10
 # Empty bottles a POTION SELLER sells in a round (Ratwood bottle_sold_max).
 machines_potion_bottles = 10
 
-# Drams the POTION SELLER's vat holds (Ratwood 200*3).
+# Drams the POTION SELLER's vat holds (Ratwood).
 machines_potion_volume = 10
 
 # Mammons in a scrapper's coffer at round start (Ratwood seed_budget).
@@ -175,8 +175,8 @@ machines_zad_voyeur_duration = 10
 # Mammons of the scrying basin one scrying costs (Ratwood ZAD_VOYEUR_COST_MAMMON).
 machines_zad_voyeur_cost = 10
 
-# Percent chance the Guild's daily delivery at the HERMES is a rare powder (Ratwood prob(20)).
+# Percent chance the Guild's daily delivery at the HERMES is a rare powder (Ratwood prob).
 machines_mail_rare_drug_chance = 10
 
-# Triumphs a mercenary gets for posting a signed writ of commendation (Ratwood adjust_triumphs(3)).
+# Triumphs a mercenary gets for posting a signed writ of commendation (Ratwood adjust_triumphs).
 machines_mail_writ_triumphs = 10

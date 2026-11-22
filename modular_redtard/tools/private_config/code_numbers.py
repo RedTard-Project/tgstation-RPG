@@ -44,6 +44,7 @@ FOLDER_FILES = {
 	"farming": "farming.txt",
 	"husbandry": "husbandry.txt",
 	"library": "library.txt",
+	"magic": "magic.txt",
 	"pve": "pve.txt",
 	"ai": "pve.txt",
 	"heritage": "races.txt",

@@ -105,6 +105,25 @@
 			"loadouts": true
 		},
 		{
+			"prefix": "/datum/special_intent/greatsword_swing",
+			"exact": true,
+			"to": "/datum/special_intent/wave_swing/greatsword",
+			"when_declared": true,
+			"note": "K2d2 (2026-11-22): the owner took Azure Peak's special of greatswords (wave_swing) in place of Ratwood's greatsword_swing."
+		},
+		{
+			"prefix": "/datum/special_intent/greatsword_swing/white_stag",
+			"exact": true,
+			"to": "/datum/special_intent/wave_swing/greatsword/white_stag",
+			"when_declared": true
+		},
+		{
+			"prefix": "/datum/special_intent/greatflail_swing",
+			"to": "/datum/special_intent/flail_sweep",
+			"when_declared": true,
+			"note": "K2d2 (2026-11-22): Azure Peak has no greatflail_swing; its greatflails (peasantwarflail, the gilded flail of Matthios among them) keep the flail_sweep of flails."
+		},
+		{
 			"prefix": "/obj/structure/curtain",
 			"rebase": "/obj/structure/rockhill/curtain",
 			"port": {
@@ -1983,6 +2002,7 @@
 				"/obj/item/reagent_containers/glass/mortar"
 			]
 		},
+		"extra_types_file": "modular_redtard/rockhill/extra_items.txt",
 		"extra_types": [
 			"/obj/item/natural/rock/copper",
 			"/obj/item/natural/rock/tin",

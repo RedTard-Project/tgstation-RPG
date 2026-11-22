@@ -1,43 +1,43 @@
 # Husbandry (husbandry/, block 10): riding, tack, milking, manure.
 # Mechanics numbers: name = value, described by the # lines right above it; times are in deciseconds. The build compiles this file in, so its numbers are the defaults; a file of the same name in config/redtard_private/mechanics/values/ is read instead when present.
 
-# Deciseconds it takes to saddle a beast (Ratwood saddle attack(): do_after 40).
+# Deciseconds it takes to saddle a beast (Ratwood saddle attack(): do_after).
 mount_saddle_time = 10
 
-# Deciseconds it takes to take the saddle off a mount (Ratwood attack_right(): 5 SECONDS).
+# Deciseconds it takes to take the saddle off a mount (Ratwood attack_right).
 mount_unsaddle_time = 10
 
-# Deciseconds it takes to fit a caparison or a bard onto a saddled mount (Ratwood 5 SECONDS).
+# Deciseconds it takes to fit a caparison or a bard onto a saddled mount (Ratwood).
 mount_tack_time = 10
 
-# Deciseconds it takes to take a caparison or a bard off a mount (Ratwood attack_right(): 10 SECONDS).
+# Deciseconds it takes to take a caparison or a bard off a mount (Ratwood attack_right).
 mount_untack_time = 10
 
-# Deciseconds a rider who can ride a little takes to get on a mount or off it (Ratwood time2mount 12).
+# Deciseconds a rider who can ride a little takes to get on a mount or off it (Ratwood time2mount).
 mount_time = 10
 
-# Deciseconds a rider without the riding skill takes to get on a mount (Ratwood 50).
+# Deciseconds a rider without the riding skill takes to get on a mount (Ratwood).
 mount_time_unskilled = 10
 
-# Deciseconds a rider without the riding skill takes to get off a mount (Ratwood 30).
+# Deciseconds a rider without the riding skill takes to get off a mount (Ratwood).
 dismount_time_unskilled = 10
 
-# Riding rank above which a rider gets on and off a mount at once (Ratwood: skill over 3).
+# Riding rank above which a rider gets on and off a mount at once (Ratwood: skill over).
 mount_quick_rank = 10
 
-# Deciseconds a rider thrown off a mount lies stunned: a dismount cut short, a door ridden through, a blow taken at a gallop (Ratwood violent_dismount(): Paralyze 50).
+# Deciseconds a rider thrown off a mount lies stunned: a dismount cut short, a door ridden through, a blow taken at a gallop (Ratwood violent_dismount(): Paralyze).
 mount_fall_time = 10
 
-# Deciseconds a tile a mount gains at a gallop, its rider running (Ratwood relaymove(): -1).
+# Deciseconds a tile a mount gains at a gallop, its rider running (Ratwood relaymove).
 mount_gallop_bonus = 10
 
-# Deciseconds a tile a mount gains under a rider without the riding skill (Ratwood -3).
+# Deciseconds a tile a mount gains under a rider without the riding skill (Ratwood).
 mount_unskilled_bonus = 10
 
-# Deciseconds a tile a mount gains under a trained rider, before the rider's rank (Ratwood 5 + rank / 6).
+# Deciseconds a tile a mount gains under a trained rider, before the rider's rank (Ratwood + rank).
 mount_skill_bonus = 10
 
-# A trained rider's riding rank divided by this is taken off the mount's pace as well (Ratwood rank / 6).
+# A trained rider's riding rank divided by this is taken off the mount's pace as well (Ratwood rank).
 mount_rank_divisor = 10
 
 # Deciseconds a tile a mount gains under a Steppe Rider (Ratwood TRAIT_STEPPE_RIDER).
@@ -46,7 +46,7 @@ mount_steppe_bonus = 10
 # Share of its health at or below which a mount is hurt and slows down (Ratwood updatehealth()).
 mount_hurt_share = 10
 
-# Deciseconds a tile a hurt mount is slower, and the least it then lags behind its own pace whoever rides it (Ratwood +2).
+# Deciseconds a tile a hurt mount is slower, and the least it then lags behind its own pace whoever rides it (Ratwood).
 mount_hurt_delay = 10
 
 # Pace factor of a mount walked by a rider in combat mode (Ratwood relaymove()).
@@ -61,13 +61,13 @@ mount_fixed_walk = 10
 # Pace factor of a mount galloped that way (Ratwood relaymove()).
 mount_fixed_gallop = 10
 
-# Fastest pace of a mount, deciseconds a tile (Ratwood max(1, ...)).
+# Fastest pace of a mount, deciseconds a tile (Ratwood max(...)).
 mount_min_delay = 10
 
 # Tiles a rider gallops for each gain of riding experience (Ratwood riding_xp_move_counter).
 riding_xp_moves = 10
 
-# Riding experience one gain gives per point of the rider's intelligence (Ratwood STAINT * 0.1).
+# Riding experience one gain gives per point of the rider's intelligence (Ratwood STAINT).
 riding_xp_per_intelligence = 10
 
 # Factor on that experience for a rider without the riding skill (Ratwood).
@@ -76,104 +76,104 @@ riding_xp_untrained = 10
 # Factor on that experience for a rider of apprentice rank or above (Ratwood).
 riding_xp_trained = 10
 
-# Deciseconds an apple fed to a mount by hand heals it and keeps it from holding a grudge (Ratwood mount_apple_healing 8 SECONDS).
+# Deciseconds an apple fed to a mount by hand heals it and keeps it from holding a grudge (Ratwood mount_apple_healing).
 mount_apple_time = 10
 
 # Brute and burn damage a hand-fed apple heals a mount a second meanwhile (Ratwood healing_on_tick).
 mount_apple_heal = 10
 
-# Units of milk an udder holds (Ratwood create_reagents(100)).
+# Units of milk an udder holds (Ratwood create_reagents).
 milk_udder_size = 10
 
-# Most units of milk a cow or a nanny goat has in her to begin with, at random from none (Ratwood rand(0, 20)).
+# Most units of milk a cow or a nanny goat has in her to begin with, at random from none (Ratwood rand).
 milk_start_max = 10
 
 # Units of milk a cow or a nanny goat makes out of each point of what she has eaten (Ratwood generateMilk()).
 milk_per_production = 10
 
-# Units an udder must hold before it can be milked (Ratwood has_reagent(milk, 5)).
+# Units an udder must hold before it can be milked (Ratwood has_reagent(milk)).
 milk_min = 10
 
-# Deciseconds one milking takes (Ratwood do_after 20).
+# Deciseconds one milking takes (Ratwood do_after).
 milk_time = 10
 
-# Seconds a beast must have food in it to drop manure once (Ratwood pooprog: 100 lives of 2 seconds).
+# Seconds a beast must have food in it to drop manure once (Ratwood pooprog: lives).
 manure_time = 10
 
-# Droppings that may lie on one tile before beasts drop no more there (not in Ratwood; 0 - no limit).
+# Droppings that may lie on one tile before beasts drop no more there (not in Ratwood; zero means no limit).
 manure_tile_cap = 10
 
 # Saddlebags, cow tipping (husbandry/mounts.dm, husbandry/beasts.dm; block 4).
 
-# Deciseconds it takes a rider to look through the saddlebags of the mount under them (Ratwood MiddleClick(): 10).
+# Deciseconds it takes a rider to look through the saddlebags of the mount under them (Ratwood MiddleClick).
 mount_saddlebag_rider_time = 10
 
-# Deciseconds it takes to look through a mount's saddlebags from the ground (Ratwood MiddleClick(): 30).
+# Deciseconds it takes to look through a mount's saddlebags from the ground (Ratwood MiddleClick).
 mount_saddlebag_time = 10
 
-# Deciseconds a cow tipped over by a shove lies on its side (Ratwood cow attack_hand(): Paralyze 60).
+# Deciseconds a cow tipped over by a shove lies on its side (Ratwood cow attack_hand(): Paralyze).
 cow_tip_time = 10
 
 # Butchering and the meathook (husbandry/butchering.dm; block 4).
 
-# Deciseconds an unskilled butcher works a carcass open before the first cut (Ratwood MiddleClick(): 3 SECONDS).
+# Deciseconds an unskilled butcher works a carcass open before the first cut (Ratwood MiddleClick).
 butcher_start_time = 10
 
-# Deciseconds each rank of Butchering takes off that (Ratwood: skill * 30).
+# Deciseconds each rank of Butchering takes off that (Ratwood: skill).
 butcher_start_time_per_rank = 10
 
-# Deciseconds one cut takes an unskilled butcher (Ratwood butcher(): 30 - skill * 5).
+# Deciseconds one cut takes an unskilled butcher (Ratwood butcher).
 butcher_cut_time = 10
 
-# Deciseconds each rank of Butchering takes off a cut (Ratwood: skill * 5).
+# Deciseconds each rank of Butchering takes off a cut (Ratwood: skill).
 butcher_cut_time_per_rank = 10
 
-# The shortest cut in deciseconds (Ratwood max(5, ...)).
+# The shortest cut in deciseconds (Ratwood max(...)).
 butcher_cut_time_min = 10
 
-# Share of the time a cut takes on a meathook or with shears, which also need no working open (Ratwood on_meathook: 0.75).
+# Share of the time a cut takes on a meathook or with shears, which also need no working open (Ratwood on_meathook).
 butcher_meathook_factor = 10
 
-# Chance in percent an unskilled butcher botches a cut of a beast that has a botched yield (Ratwood: 70 - 20 * skill).
+# Chance in percent an unskilled butcher botches a cut of a beast that has a botched yield (Ratwood: scaled by skill).
 butcher_botch_chance = 10
 
-# What each rank of Butchering takes off that chance (Ratwood: 20).
+# What each rank of Butchering takes off that chance (Ratwood).
 butcher_botch_per_rank = 10
 
 # Butchering rank from which no cut is botched (Ratwood SKILL_LEVEL_JOURNEYMAN).
 butcher_botch_rank = 10
 
-# Chance in percent a Journeyman's cut of a beast that has a perfect yield is perfect (Ratwood: 10).
+# Chance in percent a Journeyman's cut of a beast that has a perfect yield is perfect (Ratwood).
 butcher_perfect_journeyman = 10
 
-# Chance in percent an Expert's cut is perfect (Ratwood: 50).
+# Chance in percent an Expert's cut is perfect (Ratwood).
 butcher_perfect_expert = 10
 
-# Chance in percent a Master's or a Legendary butcher's cut is perfect (Ratwood: 100).
+# Chance in percent a Master's or a Legendary butcher's cut is perfect (Ratwood).
 butcher_perfect_master = 10
 
-# Deciseconds a beast lies dead before its meat comes off rotten (Ratwood: rot amount over 10 MINUTES).
+# Deciseconds a beast lies dead before its meat comes off rotten (Ratwood: rot amount over).
 butcher_rot_time = 10
 
-# Butchering experience a cut gives per point of the butcher's intelligence (Ratwood add_sleep_experience(): STAINT * 0.5).
+# Butchering experience a cut gives per point of the butcher's intelligence (Ratwood add_sleep_experience(): STAINT).
 butcher_xp_per_intelligence = 10
 
-# Deciseconds it takes to hang a beast on a meathook (Ratwood do_mob(): 60).
+# Deciseconds it takes to hang a beast on a meathook (Ratwood do_mob).
 meathook_hang_time = 10
 
-# Deciseconds it takes to pull a beast down from a meathook (Ratwood do_after(): 300).
+# Deciseconds it takes to pull a beast down from a meathook (Ratwood do_after).
 meathook_unhook_time = 10
 
-# Deciseconds a beast hung on a meathook struggles before it breaks free (Ratwood do_after(): 1200).
+# Deciseconds a beast hung on a meathook struggles before it breaks free (Ratwood do_after).
 meathook_struggle_time = 10
 
-# Brute damage a living beast takes when hung on a meathook, when it struggles, and when it falls off (Ratwood adjustBruteLoss(30)).
+# Brute damage a living beast takes when hung on a meathook, when it struggles, and when it falls off (Ratwood adjustBruteLoss).
 meathook_damage = 10
 
-# Deciseconds a beast that falls off a meathook lies stunned (Ratwood AdjustParalyzed(20)).
+# Deciseconds a beast that falls off a meathook lies stunned (Ratwood AdjustParalyzed).
 meathook_fall_time = 10
 
-# Pieces more of every food a beast on a meathook yields to a usual cut (Ratwood butcher_results += 1).
+# Pieces more of every food a beast on a meathook yields to a usual cut (Ratwood butcher_results).
 meathook_meat_bonus = 10
 
 # Beekeeping (husbandry/apiary.dm; block 4). The hive, its bees, swarms and queens tick every 2 seconds, as Ratwood's.
@@ -181,175 +181,175 @@ meathook_meat_bonus = 10
 # Bees a hive holds at most without a queen (Ratwood max_bees).
 apiary_max_bees = 10
 
-# Bees more a hive holds per point of its queen's efficiency (Ratwood insert_queen(): 30 + efficiency * 10).
+# Bees more a hive holds per point of its queen's efficiency (Ratwood insert_queen).
 apiary_max_bees_per_efficiency = 10
 
 # Bees a stocked hive starts with, and a hive that takes in a queen has at least (Ratwood apiary/starter bee_count).
 apiary_starter_bees = 10
 
-# Honeycombs a hive stores at most (Ratwood stored_combs: 5).
+# Honeycombs a hive stores at most (Ratwood stored_combs).
 apiary_max_combs = 10
 
-# Pollen worked into comb for one honeycomb (Ratwood comb_progress over 100).
+# Pollen worked into comb for one honeycomb (Ratwood comb_progress over).
 apiary_comb_work = 10
 
-# Pollen each bee at home works into comb every 2 seconds, rounded up for the colony (Ratwood CEILING(bee_count * 0.5, 1)).
+# Pollen each bee at home works into comb every 2 seconds, rounded up for the colony (Ratwood CEILING(bee_count)).
 apiary_work_per_bee = 10
 
-# Comb work a new bee costs (Ratwood try_create_bees(): comb_progress - 10).
+# Comb work a new bee costs (Ratwood try_create_bees(): comb_progress).
 apiary_bee_cost = 10
 
-# Chance in percent every 2 seconds that a queen raises one more bee (Ratwood process(): prob(30)).
+# Chance in percent every 2 seconds that a queen raises one more bee (Ratwood process(): prob).
 apiary_queen_brood_chance = 10
 
-# Chance in percent every 2 seconds that a hive without a queen loses a bee (Ratwood process(): prob(5)).
+# Chance in percent every 2 seconds that a hive without a queen loses a bee (Ratwood process(): prob).
 apiary_queenless_loss = 10
 
-# Deciseconds it takes to take the honeycombs out of a hive (Ratwood attack_hand(): 2.5 SECONDS).
+# Deciseconds it takes to take the honeycombs out of a hive (Ratwood attack_hand).
 apiary_honey_time = 10
 
-# Deciseconds it takes a protected beekeeper to take the queen out (Ratwood attack_hand(): 5 SECONDS).
+# Deciseconds it takes a protected beekeeper to take the queen out (Ratwood attack_hand).
 apiary_queen_time = 10
 
-# Chance in percent bees swarm out angrily at whoever takes the queen, or the honey of an aggressive queen unprotected (Ratwood agitate_bees(80)).
+# Chance in percent bees swarm out angrily at whoever takes the queen, or the honey of an aggressive queen unprotected (Ratwood agitate_bees).
 apiary_agitate_chance = 10
 
-# Most bees that swarm out angrily at once (Ratwood rand(1, min(5, bee_count))).
+# Most bees that swarm out angrily at once (Ratwood rand, min of a cap and the bee count).
 apiary_agitate_max = 10
 
-# Two-second ticks bees that swarmed out stay angry (Ratwood agitate(user, 100)).
+# Two-second ticks bees that swarmed out stay angry (Ratwood agitate(user)).
 apiary_agitate_ticks = 10
 
-# Aggression in percent of the angry bees of a hive without a queen (Ratwood: 50).
+# Aggression in percent of the angry bees of a hive without a queen (Ratwood).
 apiary_queenless_aggression = 10
 
-# Chance in percent every 2 seconds that a healthy hive may fall sick at all (Ratwood check_for_disease(): 100 - 97).
+# Chance in percent every 2 seconds that a healthy hive may fall sick at all (Ratwood check_for_disease).
 apiary_disease_roll = 10
 
-# Chance in percent it then does (Ratwood: 2).
+# Chance in percent it then does (Ratwood).
 apiary_disease_chance = 10
 
-# The same chance with a sick hive in sight (Ratwood: 10).
+# The same chance with a sick hive in sight (Ratwood).
 apiary_disease_nearby_chance = 10
 
-# Tiles within which a sick hive makes another likelier to fall sick (Ratwood view(5)).
+# Tiles within which a sick hive makes another likelier to fall sick (Ratwood view).
 apiary_disease_range = 10
 
-# Percent a queen's disease resistance takes off that chance per point (Ratwood: resistance * 3).
+# Percent a queen's disease resistance takes off that chance per point (Ratwood: resistance).
 apiary_disease_resistance = 10
 
-# Severity out of 100 of a new disease (Ratwood: 10); at 100 the colony dies.
+# Severity out of 100 of a new disease (Ratwood); at 100 the colony dies.
 apiary_disease_start = 10
 
-# Severity a disease gains every hundred two-second ticks (Ratwood process_disease(): 10).
+# Severity a disease gains every hundred two-second ticks (Ratwood process_disease).
 apiary_disease_step = 10
 
-# Share of the severity of varroa mites that is the chance in percent every 2 seconds to kill a bee (Ratwood: severity / 10).
+# Share of the severity of varroa mites that is the chance in percent every 2 seconds to kill a bee (Ratwood: severity).
 apiary_mite_share = 10
 
 # Share of the severity of foulbrood that is the chance in percent every 2 seconds to spoil a point of comb work (Ratwood: severity).
 apiary_foulbrood_share = 10
 
-# Share of the severity of wax moths that is the chance in percent every 2 seconds to eat a honeycomb (Ratwood: severity / 5).
+# Share of the severity of wax moths that is the chance in percent every 2 seconds to eat a honeycomb (Ratwood: severity).
 apiary_moth_share = 10
 
-# Share of its size a hive must hold at home to grow ready to swarm (Ratwood: max_bees * 0.8).
+# Share of its size a hive must hold at home to grow ready to swarm (Ratwood: max_bees).
 apiary_swarm_share = 10
 
-# Deciseconds after the last swarm, or the round start, before a hive grows ready to swarm again (Ratwood: 5 MINUTES).
+# Deciseconds after the last swarm, or the round start, before a hive grows ready to swarm again (Ratwood).
 apiary_swarm_cooldown = 10
 
-# Readiness out of 100 a crowded hive gains every 2 seconds; at 100 a swarm leaves (Ratwood swarm_progress += 0.1).
+# Readiness out of 100 a crowded hive gains every 2 seconds; at 100 a swarm leaves (Ratwood swarm_progress).
 apiary_swarm_rate = 10
 
-# A bee going out joins a group on the wing of at most this many (Ratwood try_send_bees_out(): bee_count > 5).
+# A bee going out joins a group on the wing of at most this many (Ratwood try_send_bees_out(): bee_count).
 bee_group_join_max = 10
 
-# Tiles around its hive the bees look for crops and herbs to pollinate (Ratwood give_bee_target(): view(7)).
+# Tiles around its hive the bees look for crops and herbs to pollinate (Ratwood give_bee_target(): view).
 bee_target_range = 10
 
-# Deciseconds bees take to pollinate a crop or a herb, divided by their efficiency (Ratwood: 30 SECONDS).
+# Deciseconds bees take to pollinate a crop or a herb, divided by their efficiency (Ratwood).
 bee_pollinate_time = 10
 
-# Least pollen a bee gathers from a flower, times its efficiency (Ratwood rand(1, 2)).
+# Least pollen a bee gathers from a flower, times its efficiency (Ratwood rand).
 bee_pollen_min = 10
 
-# Most pollen a bee gathers from a flower, times its efficiency (Ratwood rand(1, 2)).
+# Most pollen a bee gathers from a flower, times its efficiency (Ratwood rand).
 bee_pollen_max = 10
 
-# Pollen per bee a group carries before it flies home (Ratwood: stored_pollen > 5 * bee_count).
+# Pollen per bee a group carries before it flies home (Ratwood: stored_pollen above a count per bee).
 bee_pollen_load = 10
 
-# Deciseconds bees back home rest before they count among the bees at home again (Ratwood on_bee_enter(): 30 SECONDS).
+# Deciseconds bees back home rest before they count among the bees at home again (Ratwood on_bee_enter).
 bee_rest_time = 10
 
 # Blocked moves after which bees give up on a flower, or slip into their hive anyway (Azure Peak max_target_move_failures).
 bee_blocked_moves = 10
 
-# Deciseconds bees leave a flower they gave up on alone (Azure Peak: 1 MINUTES).
+# Deciseconds bees leave a flower they gave up on alone (Azure Peak).
 bee_give_up_time = 10
 
-# Share of angry bees' aggression that is their chance in percent every 2 seconds to sting someone next to them (Ratwood attack_nearby_targets(): aggression / 100).
+# Share of angry bees' aggression that is their chance in percent every 2 seconds to sting someone next to them (Ratwood attack_nearby_targets(): aggression).
 bee_sting_share = 10
 
-# Toxin damage a sting does (Ratwood attack_mob(): adjustToxLoss(1)).
+# Toxin damage a sting does (Ratwood attack_mob(): adjustToxLoss).
 bee_sting_toxin = 10
 
-# Units of venom a sting leaves (Ratwood attack_mob(): 2).
+# Units of venom a sting leaves (Ratwood attack_mob).
 bee_sting_venom = 10
 
-# Tiles around a sting within which other bees may grow angry too (Ratwood view(3)).
+# Tiles around a sting within which other bees may grow angry too (Ratwood view).
 bee_sting_spread_range = 10
 
-# Chance in percent each of those grows angry (Ratwood prob(50)).
+# Chance in percent each of those grows angry (Ratwood prob).
 bee_sting_spread_chance = 10
 
-# Two-second ticks those bees stay angry (Ratwood agitate(H, 30)).
+# Two-second ticks those bees stay angry (Ratwood agitate(H)).
 bee_sting_spread_ticks = 10
 
-# Most a bee's efficiency strays from its queen's (Ratwood transfer_genetics(): rand(-10, 10) / 100).
+# Most a bee's efficiency strays from its queen's (Ratwood transfer_genetics(): rand).
 bee_trait_drift = 10
 
-# Most a bee's aggression strays from its queen's, in percent (Ratwood transfer_genetics(): rand(-5, 5)).
+# Most a bee's aggression strays from its queen's, in percent (Ratwood transfer_genetics(): rand).
 bee_aggression_drift = 10
 
-# Fewest bees that leave a hive with a swarm (Ratwood create_swarm(): rand(5, 10)).
+# Fewest bees that leave a hive with a swarm (Ratwood create_swarm(): rand).
 swarm_size_min = 10
 
-# Most bees that leave a hive with a swarm (Ratwood create_swarm(): rand(5, 10)).
+# Most bees that leave a hive with a swarm (Ratwood create_swarm(): rand).
 swarm_size_max = 10
 
-# Deciseconds a swarm looks for a home before it disperses and its queen dies (Ratwood swarm_timeout(): 5 MINUTES).
+# Deciseconds a swarm looks for a home before it disperses and its queen dies (Ratwood swarm_timeout).
 swarm_lifetime = 10
 
-# Two-second ticks between a swarm's looks for a place to settle (Ratwood search_time 20).
+# Two-second ticks between a swarm's looks for a place to settle (Ratwood search_time).
 swarm_search_ticks = 10
 
-# Chance in percent a swarm settles on a free tile it looks at (Ratwood find_new_home(): prob(20)).
+# Chance in percent a swarm settles on a free tile it looks at (Ratwood find_new_home(): prob).
 swarm_settle_chance = 10
 
-# Chance in percent every 2 seconds that a swarm drifts a tile (Ratwood process(): prob(50)).
+# Chance in percent every 2 seconds that a swarm drifts a tile (Ratwood process(): prob).
 swarm_wander_chance = 10
 
-# Most a swarm queen's efficiency and disease resistance stray from the old queen's (Ratwood create_swarm(): rand(-20, 20) / 100).
+# Most a swarm queen's efficiency and disease resistance stray from the old queen's (Ratwood create_swarm(): rand).
 swarm_trait_drift = 10
 
-# Most a swarm queen's aggression strays from the old queen's, in percent (Ratwood create_swarm(): rand(-10, 10)).
+# Most a swarm queen's aggression strays from the old queen's, in percent (Ratwood create_swarm(): rand).
 swarm_aggression_drift = 10
 
-# Most a queen raised in a hive strays from an efficiency and a disease resistance of 1 (Ratwood create_new_queen(): rand(80, 120) / 100).
+# Most a queen raised in a hive strays from an efficiency and a disease resistance of the neutral level (Ratwood create_new_queen(): rand).
 queen_trait_spread = 10
 
-# Most aggression in percent of a queen raised in a hive (Ratwood create_new_queen(): rand(0, 30)).
+# Most aggression in percent of a queen raised in a hive (Ratwood create_new_queen(): rand).
 queen_aggression_max = 10
 
-# Days a queen ages every 2 seconds (Ratwood queen_bee process(): 0.01).
+# Days a queen ages every 2 seconds (Ratwood queen_bee process).
 queen_age_rate = 10
 
-# Days after which a queen weakens (Ratwood: max_queen_age 30 * 0.7).
+# Days after which a queen weakens (Ratwood: max_queen_age).
 queen_old_age = 10
 
-# Health out of 100 an old queen loses every 2 seconds; at none she dies (Ratwood: 0.05).
+# Health out of 100 an old queen loses every 2 seconds; at none she dies (Ratwood).
 queen_decline = 10
 
 # --- From the code of modular_redtard (code_numbers.py, list b)
@@ -381,16 +381,16 @@ nest_seek_time = 10
 # How long held-out food or a beckon draws a beast, and how long a hen walks to a nest or nesting stuff (Ratwood return_action timers).
 lure_time = 10
 
-# A fertile egg grows rand(1, 2) every 2 seconds to 100 (Ratwood egg process()); TG's fertile_egg multiplies by the tick's seconds.
+# A fertile egg grows a random amount every 2 seconds to 100 (Ratwood egg process()); TG's fertile_egg multiplies by the tick's seconds.
 egg_hatch_growth = 10
 
-# A fed hen lays from a store of eggs: 1-4 a meal, at most 8 (Ratwood friendly chicken attackby()).
+# A fed hen lays from a store of eggs: a few a meal, with a cap (Ratwood friendly chicken attackby()).
 fed_eggs_max = 10
 
 # No fertile eggs while this many chickens live (Ratwood MAX_CHICKENS).
 max_chickens = 10
 
-# How far a hen looks for a nest or nesting stuff (Ratwood oview() at its world.view, 15x15).
+# How far a hen looks for a nest or nesting stuff (Ratwood oview() at its world.view).
 nest_sight = 10
 
 # Chance in percent that an egg laid by a fed hen is fertile.
@@ -399,19 +399,19 @@ fed_egg_fertile_chance = 10
 # Chance an egg is fertile: a nesting hen (Ratwood rogue chicken) and a fed one (Ratwood friendly chicken).
 egg_fertile_chance = 10
 
-# What laying an egg costs a hen, and what she must have over (Ratwood chicken Life(): production > 29, -30).
+# What laying an egg costs a hen, and what she must have over (Ratwood chicken Life(): production threshold and cost).
 egg_production = 10
 
 # How long a mother keeps trying to reach the father before she gives up until her next season.
 breed_seek_time = 10
 
-# Young of hers within this many tiles that stop her giving birth again, and how many (Ratwood: view(7), 3).
+# Young of hers within this many tiles that stop her giving birth again, and how many (Ratwood: view).
 breed_max_young = 10
 
-# Young of hers within this many tiles that stop her giving birth again, and how many (Ratwood: view(7), 3).
+# Young of hers within this many tiles that stop her giving birth again, and how many (Ratwood: view).
 breed_range = 10
 
-# A mother needs this much in her to give birth (Ratwood make_babies(): food < 10).
+# A mother needs this much in her to give birth (Ratwood make_babies(): food).
 breed_food = 10
 
 # Starvation (not in Ratwood): a kept beast with an empty meter this long starts losing this share of its health a second.
@@ -420,10 +420,10 @@ beast_starve_damage = 10
 # Starvation (not in Ratwood): a kept beast with an empty meter this long starts losing this share of its health a second.
 beast_starve_delay = 10
 
-# Hand-feeding heals (Ratwood adjustHealth(-rand(10, 20))).
+# Hand-feeding heals (Ratwood adjustHealth, a random amount).
 feed_heal_max = 10
 
-# Hand-feeding heals (Ratwood adjustHealth(-rand(10, 20))).
+# Hand-feeding heals (Ratwood adjustHealth, a random amount).
 feed_heal_min = 10
 
 # Full production meter of a beast.
@@ -432,19 +432,19 @@ beast_production_max = 10
 # Ratwood drains the meter and fills production by one point a Life (2 seconds).
 beast_food_per_second = 10
 
-# What one meal or one hand-feeding fills (Ratwood +30).
+# What one meal or one hand-feeding fills (Ratwood).
 beast_meal = 10
 
 # Food meter value below which a beast counts as hungry.
 beast_hungry = 10
 
-# Ratwood's food meter of a beast (simple_animal.dm food): full at 100, looks for food at 50 and below.
+# Ratwood's food meter of a beast (simple_animal.dm food): a full mark, and a lower one at and below which it looks for food.
 beast_food_max = 10
 
 # How far apart bee swarms and hives spread, in tiles.
 bee_spread = 10
 
-# Most bees drawn over a swarm (Ratwood min(bee_spawn, 10)), and how far apart the bees of a group are drawn (rand(12, -12)).
+# Most bees drawn over a swarm (Ratwood min(bee_spawn)), and how far apart the bees of a group are drawn (rand).
 bee_swarm_drawn = 10
 
 # Swarm build-up out of 100 past which the bees grow restless, the chance they show it, and the build-up that releases the swarm.
@@ -456,7 +456,7 @@ bee_swarm_restless_chance = 10
 # Swarm build-up out of 100 past which the bees grow restless, the chance they show it, and the build-up that releases the swarm.
 bee_swarm_restless = 10
 
-# Chance in percent a bee killed by mites is seen to fall (Ratwood prob(10)).
+# Chance in percent a bee killed by mites is seen to fall (Ratwood prob).
 bee_mite_fall_chance = 10
 
 # Disease progress that adds a step of severity, and the severity that kills the colony (Ratwood process_disease()).

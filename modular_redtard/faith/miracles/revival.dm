@@ -12,6 +12,7 @@
 	self_castable = FALSE
 	miracle_tier = ROGUE_MIRACLE_TIER_3
 	devotion_cost = 80
+	stamina_cost = 90
 	needs_holy_symbol = TRUE
 	miracle_forks = "Ratwood, Azure Peak, Twilight Axis"
 	miracle_gods = "Astrata T3"
@@ -64,6 +65,8 @@
 		to_chat(caster, span_warning("[body] will not return from the afterlife."))
 		refund()
 		return
+	// The revival lifts the rot, so whether the flesh had begun to rot is read first (Ratwood: "doubly so if having rotted").
+	var/was_rotted = body.has_status_effect(/datum/status_effect/rogue_rotted_corpse)
 	if(!body.heal_and_revive(mended_to))
 		to_chat(caster, span_warning("Nothing happens."))
 		refund()
@@ -71,3 +74,4 @@
 	body.visible_message(span_notice("[body] is revived by holy light!"), span_green("I awake from the void."))
 	body.emote("gasp")
 	body.set_jitter_if_lower(10 SECONDS)
+	rogue_revived(body, caster, was_rotted, type)

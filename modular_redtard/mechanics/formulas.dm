@@ -4,7 +4,7 @@
 GLOBAL_LIST_INIT(rogue_formula_definitions, list(
 	ROGUE_FORMULA_STRENGTH_FACTOR = list(
 		"10",
-		"Damage multiplier from the attacker's strength (Ratwood STRENGTH_MULT up to STRENGTH_SOFTCAP 14, STRENGTH_CAPPEDMULT past it). min_strength is the weapon's need, halved when wielded, 0 if none.",
+		"Damage multiplier from the attacker's strength (Ratwood STRENGTH_MULT up to STRENGTH_SOFTCAP, STRENGTH_CAPPEDMULT past it). min_strength is the weapon's need, reduced when wielded, 0 if none.",
 		list("strength", "min_strength"),
 	),
 	ROGUE_FORMULA_WEAPON_DEFENSE = list(
@@ -64,7 +64,7 @@ GLOBAL_LIST_INIT(rogue_formula_definitions, list(
 	),
 	ROGUE_FORMULA_WINDOW_PRY_PROGRESS = list(
 		"10",
-		"Progress of one successful attempt; the window gives at 100 (reinforced 150) (Ratwood).",
+		"Progress of one successful attempt; the window gives when the progress reaches its limit, a higher one when reinforced (Ratwood).",
 		list("lockpicking", "perception", "speed", "picklvl", "open"),
 	),
 	ROGUE_FORMULA_WINDOW_PRY_CHANCE = list(
@@ -74,12 +74,12 @@ GLOBAL_LIST_INIT(rogue_formula_definitions, list(
 	),
 	ROGUE_FORMULA_TRAP_SET_TIME = list(
 		"10",
-		"Time to arm a floor trap by hand, in deciseconds (Ratwood). Needs crafting 1 or more.",
+		"Time to arm a floor trap by hand, in deciseconds (Ratwood). Needs some crafting skill.",
 		list("crafting"),
 	),
 	ROGUE_FORMULA_TRAP_DISARM_TIME = list(
 		"10",
-		"Time to disarm a floor trap by hand, in deciseconds (Ratwood). Needs crafting 1 or more.",
+		"Time to disarm a floor trap by hand, in deciseconds (Ratwood). Needs some crafting skill.",
 		list("crafting"),
 	),
 	ROGUE_FORMULA_MANTRAP_SET_TIME = list(
@@ -109,12 +109,12 @@ GLOBAL_LIST_INIT(rogue_formula_definitions, list(
 	),
 	ROGUE_FORMULA_GRAB_CHANCE = list(
 		"10",
-		"Chance in percent to tighten a grab, or to shove a grabbed foe down (Ratwood). Strength and wrestling are grabber minus target; noise is -5 to 5; modifier is 2 for a compliant target, +0.25 restrained, +0.05 lying, +-0.3 for combat readiness, +0.15 chokehold.",
+		"Chance in percent to tighten a grab, or to shove a grabbed foe down (Ratwood). Strength and wrestling are grabber minus target; noise is a small random spread; modifier is a factor built from the target's state: compliant, restrained, lying, combat readiness, chokehold.",
 		list("strength_diff", "skill_diff", "noise", "modifier"),
 	),
 	ROGUE_FORMULA_GRAB_DISARM_CHANCE = list(
 		"10",
-		"Chance in percent to take the item from a grabbed hand (Ratwood); 20 more to knock it to the floor instead. weapon_skill is the holder's rank in the item's skill.",
+		"Chance in percent to take the item from a grabbed hand (Ratwood); more to knock it to the floor instead. weapon_skill is the holder's rank in the item's skill.",
 		list("strength_diff", "skill_diff", "modifier", "weapon_skill", "wielded"),
 	),
 	ROGUE_FORMULA_GRAB_PIN_TIME = list(

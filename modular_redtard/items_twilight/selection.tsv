@@ -1,0 +1,741 @@
+kind	type	name	pick
+armor	/obj/item/clothing/gloves/roguetown/plate/blacksteel/legate	legate's plate gauntlets	unique
+armor	/obj/item/clothing/gloves/roguetown/plate/legion	elyrian manica	unique
+armor	/obj/item/clothing/gloves/roguetown/plate/nightmare	nightmare tears gauntlets	unique
+armor	/obj/item/clothing/gloves/roguetown/plate/zizo/bloodraider	raider's gauntlets	unique
+armor	/obj/item/clothing/head/roguetown/dendormask/armored		unique
+armor	/obj/item/clothing/head/roguetown/helmet/bascinet/apostle/aventail/grandmaster	\improper Knight-Abbot's heavy burgonet	unique
+armor	/obj/item/clothing/head/roguetown/helmet/bascinet/apostle/grandmaster	\improper Knight-Abbot's heavy burgonet	unique
+armor	/obj/item/clothing/head/roguetown/helmet/blacksteel/legate	legate's helmet	unique
+armor	/obj/item/clothing/head/roguetown/helmet/grandmaster_habit	\improper Knight-Abbot's habited burgonet	unique
+armor	/obj/item/clothing/head/roguetown/helmet/grandmaster_habit/aventail		unique
+armor	/obj/item/clothing/head/roguetown/helmet/heavy/astratan/oldrw	plumed astrata helmet	unique
+armor	/obj/item/clothing/head/roguetown/helmet/heavy/barbute/legion	elyrian coolus	unique
+armor	/obj/item/clothing/head/roguetown/helmet/heavy/cataphract	cataphracts helm	twilight
+armor	/obj/item/clothing/head/roguetown/helmet/heavy/cataphract/sultan	sultan helm	twilight
+armor	/obj/item/clothing/head/roguetown/helmet/heavy/citywatch	watchman's helmet	unique
+armor	/obj/item/clothing/head/roguetown/helmet/heavy/citywatch/sheriff	sheriff's helmet	unique
+armor	/obj/item/clothing/head/roguetown/helmet/heavy/commandant	commandant's helmet	unique
+armor	/obj/item/clothing/head/roguetown/helmet/heavy/elven_helm/druidic	blessed druid helm	twilight
+armor	/obj/item/clothing/head/roguetown/helmet/heavy/eoran/resprite	eoran helmet	unique
+armor	/obj/item/clothing/head/roguetown/helmet/heavy/kabuto/zunari	zunari-kabuto	unique
+armor	/obj/item/clothing/head/roguetown/helmet/heavy/knight/armet/dasfox	archaic ceremonial valkyrhelm	unique
+armor	/obj/item/clothing/head/roguetown/helmet/heavy/knight/armet/grenzelhoft	armet w/plume hat	unique
+armor	/obj/item/clothing/head/roguetown/helmet/heavy/knight/armet/nightmare	nightmare tears helmet	unique
+armor	/obj/item/clothing/head/roguetown/helmet/heavy/knight/raneshi_hmamluk	masked mamluk helmet	unique
+armor	/obj/item/clothing/head/roguetown/helmet/heavy/knight/raneshi_hmamluk/raneshi_vmamluk	hound masked mamluk helmet	unique
+armor	/obj/item/clothing/head/roguetown/helmet/heavy/knight/skettle/grenzelhoft	slitted kettle helm w/plume hat	unique
+armor	/obj/item/clothing/head/roguetown/helmet/heavy/necran/oldrw	hooded necra helmet	unique
+armor	/obj/item/clothing/head/roguetown/helmet/heavy/ravoxhelm/oldrw	plumed ravox helmet	unique
+armor	/obj/item/clothing/head/roguetown/helmet/heavy/twilight_drow	scourge barbute	unique
+armor	/obj/item/clothing/head/roguetown/helmet/heavy/twilight_drow/volf	razormaw helm	unique
+armor	/obj/item/clothing/head/roguetown/helmet/heavy/zizo/bascinet/bloodraider	raider's helmet	unique
+armor	/obj/item/clothing/head/roguetown/helmet/raneshi_jarhelmet	raneshi jar helmet	unique
+armor	/obj/item/clothing/head/roguetown/helmet/sallet/morion	etruscan morion	unique
+armor	/obj/item/clothing/head/roguetown/helmet/sallet/warden/bear/vanguard	bearskull helm	unique
+armor	/obj/item/clothing/head/roguetown/helmet/sallet/warden/goat/vanguard	ramskull helm	unique
+armor	/obj/item/clothing/head/roguetown/helmet/sallet/warden/rat/vanguard	rouskull helm	unique
+armor	/obj/item/clothing/head/roguetown/helmet/sallet/warden/wolf/vanguard	volfskull helm	unique
+armor	/obj/item/clothing/head/roguetown/helmet/sallet/warden/wolf/wretch	accursed mask	unique
+armor	/obj/item/clothing/head/roguetown/helmet/tricorn/grenzel	reichsmarine tricorn	unique
+armor	/obj/item/clothing/mask/rogue/facemask/xylixmask/armored		unique
+armor	/obj/item/clothing/mask/rogue/yoruku_kitsune/armored	wooden kitsune mask	unique
+armor	/obj/item/clothing/mask/rogue/yoruku_oni/armored	wooden oni mask	unique
+armor	/obj/item/clothing/neck/roguetown/coif/baotha_ta	saccharine veil	unique
+armor	/obj/item/clothing/shoes/roguetown/boots/armor/baotha_ta	saccharine heels	unique
+armor	/obj/item/clothing/shoes/roguetown/boots/armor/blacksteel/legate	legate's caligae	unique
+armor	/obj/item/clothing/shoes/roguetown/boots/armor/iron/twilight_elven	elven rider boots	unique
+armor	/obj/item/clothing/shoes/roguetown/boots/armor/legion	elyrian greaves	unique
+armor	/obj/item/clothing/shoes/roguetown/boots/armor/nightmare	nightmare tears boots	unique
+armor	/obj/item/clothing/shoes/roguetown/boots/armor/shalal	plated babouche	twilight
+armor	/obj/item/clothing/shoes/roguetown/boots/armor/twilight_drow	scourge plated boots	unique
+armor	/obj/item/clothing/shoes/roguetown/boots/armor/zizo/bloodraider	raider's boots	unique
+armor	/obj/item/clothing/shoes/roguetown/felinetaur/plate	four steel plate boots	unique
+armor	/obj/item/clothing/suit/roguetown/armor/basiceast/yohei	black dobo robe	unique
+armor	/obj/item/clothing/suit/roguetown/armor/brigandine/agha	agha scale	twilight
+armor	/obj/item/clothing/suit/roguetown/armor/brigandine/harayoroi	hara-yoroi cuirass	unique
+armor	/obj/item/clothing/suit/roguetown/armor/brigandine/light/aristocratic	aristocratic coat	unique
+armor	/obj/item/clothing/suit/roguetown/armor/brigandine/light/commandant	commandant's coat	unique
+armor	/obj/item/clothing/suit/roguetown/armor/brigandine/light/handmade	\	unique
+armor	/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/fluted/robed/grandmaster	\improper Knight-Abbot's plated raiment	unique
+armor	/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/grenzelhoft	grenzelhoftian hip-shirt w/hauberk	unique
+armor	/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/iron/taur	tauric iron hauberk	unique
+armor	/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/taur	tauric haugerk	unique
+armor	/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/zydrasiconosash	gilded cloth sash	unique
+armor	/obj/item/clothing/suit/roguetown/armor/chainmail/iron/besilked	iron besilked haubergeon	unique
+armor	/obj/item/clothing/suit/roguetown/armor/gambeson/aria	aria bikini	unique
+armor	/obj/item/clothing/suit/roguetown/armor/gambeson/aristocratic	aristocratic shirt	unique
+armor	/obj/item/clothing/suit/roguetown/armor/gambeson/aristocratic/heavy		unique
+armor	/obj/item/clothing/suit/roguetown/armor/gambeson/baotha_ta	saccharine vestments	unique
+armor	/obj/item/clothing/suit/roguetown/armor/gambeson/bloodraider	raider's gambeson	unique
+armor	/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/grenadier	padded garb	unique
+armor	/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/hierophant/warscholar	war scholar's shawl	unique
+armor	/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/hussar	hussar shirt	unique
+armor	/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/inq/overseer	confessor shirt	unique
+armor	/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/taur	tauric padded gambeson	unique
+armor	/obj/item/clothing/suit/roguetown/armor/gambeson/hussar	hussar shirt	unique
+armor	/obj/item/clothing/suit/roguetown/armor/leather/druid/blessed	blessed druid armor	twilight
+armor	/obj/item/clothing/suit/roguetown/armor/leather/etrjacket	wanderer's jacket	unique
+armor	/obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/aristocratic	aristocratic coat	unique
+armor	/obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/commandant	commandant's coat	unique
+armor	/obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/confessor/overseer	confessor jacket	unique
+armor	/obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/hussar	hussar protective coat	unique
+armor	/obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/raneshen/new_coat	ranesheni scale coat	unique
+armor	/obj/item/clothing/suit/roguetown/armor/leather/jacket/artijacket/freeman	studied jacket	unique
+armor	/obj/item/clothing/suit/roguetown/armor/leather/studded/cult	ascension's robe	unique
+armor	/obj/item/clothing/suit/roguetown/armor/leather/studded/warden/vanguard	vanguard armor	unique
+armor	/obj/item/clothing/suit/roguetown/armor/leather/vest/open	open vest	twilight
+armor	/obj/item/clothing/suit/roguetown/armor/leather/vest/open/blue		twilight
+armor	/obj/item/clothing/suit/roguetown/armor/leather/vest/open/brown		twilight
+armor	/obj/item/clothing/suit/roguetown/armor/leather/vest/open/green		twilight
+armor	/obj/item/clothing/suit/roguetown/armor/leather/vest/open/orange		twilight
+armor	/obj/item/clothing/suit/roguetown/armor/leather/vest/open/purple		twilight
+armor	/obj/item/clothing/suit/roguetown/armor/leather/vest/open/random		twilight
+armor	/obj/item/clothing/suit/roguetown/armor/leather/vest/open/red		twilight
+armor	/obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/grenzelhoft	reichsmarine sailor's jacket	unique
+armor	/obj/item/clothing/suit/roguetown/armor/manual/arcyne_ward/crystalhide/druid	vine armor	unique
+armor	/obj/item/clothing/suit/roguetown/armor/manual/meditation/body/lunacy	lunacy skin	unique
+armor	/obj/item/clothing/suit/roguetown/armor/manual/meditation/chest/lunacy	lunacy core	unique
+armor	/obj/item/clothing/suit/roguetown/armor/manual/resting/padded/bailiff	scar-marred skin	unique
+armor	/obj/item/clothing/suit/roguetown/armor/plate/cataphract	cataphract armor	twilight
+armor	/obj/item/clothing/suit/roguetown/armor/plate/cataphract/sultan	sultan scale	twilight
+armor	/obj/item/clothing/suit/roguetown/armor/plate/cuirass/etrcuirass	etruscan cuirass	unique
+armor	/obj/item/clothing/suit/roguetown/armor/plate/cuirass/fencer/twilight_elven	elven rider cuirass	unique
+armor	/obj/item/clothing/suit/roguetown/armor/plate/cuirass/legion	elyrian lorica masculata	unique
+armor	/obj/item/clothing/suit/roguetown/armor/plate/cuirass/overseer	overseer's brigandine	unique
+armor	/obj/item/clothing/suit/roguetown/armor/plate/fluted/baotha_ta	saccharine plate armor	unique
+armor	/obj/item/clothing/suit/roguetown/armor/plate/fluted/zizo/bloodraider	raider's cuirass	unique
+armor	/obj/item/clothing/suit/roguetown/armor/plate/full/blacksteel/legate	legate's lorica musculata	unique
+armor	/obj/item/clothing/suit/roguetown/armor/plate/full/raneshen_plated	ranesheni plate armor	unique
+armor	/obj/item/clothing/suit/roguetown/armor/plate/full/robed/grandmaster	\improper Knight-Abbot's plated raiment	unique
+armor	/obj/item/clothing/suit/roguetown/armor/plate/full/taur	tauric plate armor	unique
+armor	/obj/item/clothing/suit/roguetown/armor/plate/legion	elyrian lorica segmentata	unique
+armor	/obj/item/clothing/suit/roguetown/armor/plate/raneshen_scale	ranesheni scalemail	unique
+armor	/obj/item/clothing/suit/roguetown/armor/plate/scale/inqcoat/overseer	confessor coat	unique
+armor	/obj/item/clothing/suit/roguetown/armor/plate/scale/nightmare	nightmare tears scales	unique
+armor	/obj/item/clothing/suit/roguetown/armor/plate/scale/townguard	watchman's armor	unique
+armor	/obj/item/clothing/suit/roguetown/armor/plate/scale/townguard/sheriff	sheriff's armor	unique
+armor	/obj/item/clothing/suit/roguetown/armor/plate/twilight_shadowplate	scourge half-plate	unique
+armor	/obj/item/clothing/suit/roguetown/armor/regenerating/baotha	masquerade	unique
+armor	/obj/item/clothing/suit/roguetown/armor/regenerating/skin/easttats		unique
+armor	/obj/item/clothing/suit/roguetown/armor/regenerating/skin/iconoclast	dragon's skin	unique
+armor	/obj/item/clothing/suit/roguetown/armor/regenerating/skin/oblate	vicarious skin	unique
+armor	/obj/item/clothing/suit/roguetown/armor/regenerating/skin/twilight_dragon_skin	draconic scales	unique
+armor	/obj/item/clothing/under/roguetown/platelegs/blacksteel/legate	legate's plate chausses	unique
+armor	/obj/item/clothing/under/roguetown/platelegs/zizo/bloodraider	raider's splinted leggings	unique
+armor	/obj/item/clothing/wrists/roguetown/bracers/cloth/monk/aria	aria wrists	unique
+armor	/obj/item/clothing/wrists/roguetown/bracers/leather/baotha_ta	saccharine cuffs	unique
+armor	/obj/item/clothing/wrists/roguetown/bracers/lunacy	lunacy bracers	unique
+armor	/obj/item/clothing/wrists/roguetown/bracers/witcher		unique
+armor	/obj/item/clothing/wrists/roguetown/bracers/witcher/bronze		unique
+armor	/obj/item/clothing/wrists/roguetown/bracers/witcher/silver		unique
+armor	/obj/item/clothing/wrists/roguetown/bracers/zizo/bloodraider	raider's bracers	unique
+armor	/obj/item/craft_kit/plate		unique
+armor	/obj/item/craft_kit/steel/plate		unique
+armor	/obj/item/enchantingkit/commandant_helmet	commandant's helmet morphing elixir	unique
+armor	/obj/item/enchantingkit/hellpossum_grandmaster_armor	'Grandmaster's Armor' morphing elixir	unique
+armor	/obj/item/enchantingkit/taur_armor_gambeson	tauric gambeson morphing elixir	unique
+armor	/obj/item/enchantingkit/taur_armor_hauberk	tauric hauberk morphing elixir	unique
+armor	/obj/item/enchantingkit/taur_armor_plate	tauric plate armor morphing elixir	unique
+armor	/obj/item/roguekey/watcharmory	Town Watch armory key	unique
+armor	/obj/item/rogueweapon/shield/bronze/great/moonlight_shield	moonlight shield	unique
+armor	/obj/item/rogueweapon/shield/tower/metal/scutum	scutum	unique
+armor	/obj/item/rogueweapon/shield/tower/zizo	cursed shield	unique
+clothing	/obj/item/clothing/cloak/cataphract_rais		unique
+clothing	/obj/item/clothing/cloak/commandant	commandant's cloak	twilight
+clothing	/obj/item/clothing/cloak/duelcape	duelist cape	twilight
+clothing	/obj/item/clothing/cloak/forrestercloak/vanguard	vanguard cloak	unique
+clothing	/obj/item/clothing/cloak/half/guard		unique
+clothing	/obj/item/clothing/cloak/half/newmoon	newmoon cloak	unique
+clothing	/obj/item/clothing/cloak/hussar_riding_jacket	hussar riding jacket	unique
+clothing	/obj/item/clothing/cloak/poncho/dittocloak	etruscan design cloak	unique
+clothing	/obj/item/clothing/cloak/raincloak/furcloak/guard		unique
+clothing	/obj/item/clothing/cloak/shadowcloak/cult	ascension's cloak	unique
+clothing	/obj/item/clothing/cloak/t_tabard/taur	tauric tabard	unique
+clothing	/obj/item/clothing/cloak/t_tabard/taur/tightened	tauric tightened tabard	unique
+clothing	/obj/item/clothing/cloak/thief_cloak/yohei	shadowed cloak	unique
+clothing	/obj/item/clothing/cloak/twilight_cape	hammerhold cape	twilight
+clothing	/obj/item/clothing/cloak/twilight_desert	desert cloak	twilight
+clothing	/obj/item/clothing/cloak/twilight_elven	elven cloak	twilight
+clothing	/obj/item/clothing/cloak/twilight_elven/short	elven shortcloak	twilight
+clothing	/obj/item/clothing/cloak/twilight_scarf	scarf	unique
+clothing	/obj/item/clothing/gloves/roguetown/angle/aristocratic	aristocratic gloves	unique
+clothing	/obj/item/clothing/gloves/roguetown/angle/twilight_elven	elven rider gloves	unique
+clothing	/obj/item/clothing/gloves/roguetown/bandages/pugilist/aria	aria bondaged gloves	unique
+clothing	/obj/item/clothing/gloves/roguetown/bloodraider	raiders gauntlets	unique
+clothing	/obj/item/clothing/gloves/roguetown/fingerless_leather/aristocratic	aristocratic gloves	unique
+clothing	/obj/item/clothing/gloves/roguetown/knuckles/psydon/relic	\	unique
+clothing	/obj/item/clothing/gloves/roguetown/leather/ponyhooves	pony hooves	twilight
+clothing	/obj/item/clothing/gloves/roguetown/otavan/inqgloves/overseer	silver-trimmed confessor gloves	unique
+clothing	/obj/item/clothing/gloves/roguetown/otavan/psygloves/overseer	confessor gloves	unique
+clothing	/obj/item/clothing/head/roguetown/bardhat/soundbreakerhat	soundbreaker hat	unique
+clothing	/obj/item/clothing/head/roguetown/chaperon/greyscale/bailiff	chaperon hat	twilight
+clothing	/obj/item/clothing/head/roguetown/chaperon/noble/mayor	Mayor's chaperon	unique
+clothing	/obj/item/clothing/head/roguetown/circlet/donator_mortosasye_golddiadem	gold diadem	twilight
+clothing	/obj/item/clothing/head/roguetown/crown/serpcrown/mortosuncrown	sun crown	unique
+clothing	/obj/item/clothing/head/roguetown/duelhat/dragontea	greathat	unique
+clothing	/obj/item/clothing/head/roguetown/duelhat/hussar_cap	hussar's fur cap	unique
+clothing	/obj/item/clothing/head/roguetown/duelhat/pretzel/skelet	old rebel's hat	unique
+clothing	/obj/item/clothing/head/roguetown/duelisthat/dragontea	etruscan design hat	unique
+clothing	/obj/item/clothing/head/roguetown/gasa/ronin	ronin gasa	unique
+clothing	/obj/item/clothing/head/roguetown/grenzelhofthat/decorated		unique
+clothing	/obj/item/clothing/head/roguetown/nightmare_crown	nightmare tears crown	unique
+clothing	/obj/item/clothing/head/roguetown/nunTA	nun hood	unique
+clothing	/obj/item/clothing/head/roguetown/onhelm/tw_d_castle_red	castle helmkleinod	twilight
+clothing	/obj/item/clothing/head/roguetown/onhelm/tw_d_dragon_red	dragon's dread	twilight
+clothing	/obj/item/clothing/head/roguetown/onhelm/tw_d_efreet	afreet helmkleinod	twilight
+clothing	/obj/item/clothing/head/roguetown/onhelm/tw_d_feathers	feathers accessory	unique
+clothing	/obj/item/clothing/head/roguetown/onhelm/tw_d_fish	gold fish helmkleinod	unique
+clothing	/obj/item/clothing/head/roguetown/onhelm/tw_d_graggar	bloodied star helmkleinod	twilight
+clothing	/obj/item/clothing/head/roguetown/onhelm/tw_d_lion	lion helmkleinod	twilight
+clothing	/obj/item/clothing/head/roguetown/onhelm/tw_d_oathtaker	oathkeeper's symbol	unique
+clothing	/obj/item/clothing/head/roguetown/onhelm/tw_d_peace	astrata's eye helmkleinod	twilight
+clothing	/obj/item/clothing/head/roguetown/onhelm/tw_d_skull	gold skull helmkleinod	unique
+clothing	/obj/item/clothing/head/roguetown/onhelm/tw_d_sun	sun helmkleinod	twilight
+clothing	/obj/item/clothing/head/roguetown/onhelm/tw_d_swan	swan on lake	unique
+clothing	/obj/item/clothing/head/roguetown/onhelm/tw_d_windmill	windmill helmkleinod	twilight
+clothing	/obj/item/clothing/head/roguetown/roguehood/newmoon	newmoon hood	twilight
+clothing	/obj/item/clothing/head/roguetown/roguehood/psydon/confessor/overseer	closed hood	unique
+clothing	/obj/item/clothing/head/roguetown/roguehood/psydon/warscholar	war scholar's pashmina	twilight
+clothing	/obj/item/clothing/head/roguetown/roguehood/shalal/hijab/yohei	shadowed hood	unique
+clothing	/obj/item/clothing/head/roguetown/roguehood/stargazer	stargazer hood	unique
+clothing	/obj/item/clothing/head/roguetown/sagesbighat	sage's big hat	unique
+clothing	/obj/item/clothing/head/roguetown/tengai	tengai	twilight
+clothing	/obj/item/clothing/head/roguetown/tiara	ornate golden tiara	unique
+clothing	/obj/item/clothing/head/roguetown/twilight_elven_hat	elven burka	unique
+clothing	/obj/item/clothing/head/roguetown/twilight_hammerhold_hat	kokoshnik	twilight
+clothing	/obj/item/clothing/head/roguetown/twilight_hammerhold_hat/peasant	hammerhold hat	twilight
+clothing	/obj/item/clothing/mask/rogue/blindfold/pony	pony blindfold	twilight
+clothing	/obj/item/clothing/mask/rogue/facemask/aria		unique
+clothing	/obj/item/clothing/mask/rogue/facemask/etrmask	conquistador mask	twilight
+clothing	/obj/item/clothing/mask/rogue/facemask/steel/kazengun/full/ogre	soldier's ogre mask	unique
+clothing	/obj/item/clothing/mask/rogue/facemask/steel/kazengun/full/yohei	steel oni mask	twilight
+clothing	/obj/item/clothing/mask/rogue/facemask/steel/kazengun/full/yohei/kitsune	steel kitsune mask	twilight
+clothing	/obj/item/clothing/mask/rogue/facemask/steel/kazengun/yohei	steel half-mask	twilight
+clothing	/obj/item/clothing/mask/rogue/facemask/steel/miragefen_rogue	bronze-decorated steel mask	unique
+clothing	/obj/item/clothing/mask/rogue/facemask/steel/owlmask	armored owl mask 	unique
+clothing	/obj/item/clothing/mask/rogue/facemask/steel/psythorns	mask of psydonian thorns	unique
+clothing	/obj/item/clothing/mask/rogue/lordmask/naledi/decorated		unique
+clothing	/obj/item/clothing/mask/rogue/lordmask/naledi/steel		unique
+clothing	/obj/item/clothing/mask/rogue/overseer_gold	golden confessor mask	unique
+clothing	/obj/item/clothing/mask/rogue/overseer_silver	silver confessor mask	unique
+clothing	/obj/item/clothing/mask/rogue/owlmask	owl mask 	unique
+clothing	/obj/item/clothing/mask/rogue/ragmask/bishop	bishop mask	unique
+clothing	/obj/item/clothing/mask/rogue/ragmask/newmoon	newmoon mask	unique
+clothing	/obj/item/clothing/mask/rogue/yoruku_kitsune	kitsune mask	twilight
+clothing	/obj/item/clothing/mask/rogue/yoruku_oni	oni mask	twilight
+clothing	/obj/item/clothing/neck/portalamulet/TA	Кровавый амулет разлома	unique
+clothing	/obj/item/clothing/neck/roguetown/bevor/blackpowder	blackpowder order coverall	unique
+clothing	/obj/item/clothing/neck/roguetown/chaincoif/chainmantle/bloodraider	raider's chain mantle	unique
+clothing	/obj/item/clothing/neck/roguetown/collar/bell/catbell	catbell collar	unique
+clothing	/obj/item/clothing/neck/roguetown/collar/bell/cowbell	cowbell collar	unique
+clothing	/obj/item/clothing/neck/roguetown/loveamulet	tears of love amulet	twilight
+clothing	/obj/item/clothing/neck/roguetown/psicross/astrata/dasfox	defiled Astratan periapt	unique
+clothing	/obj/item/clothing/neck/roguetown/psicross/inhumen/aalloy/cult	inverted psycross of ascension's	unique
+clothing	/obj/item/clothing/neck/roguetown/psicross/inhumen/gronn/spider	carved talisman	unique
+clothing	/obj/item/clothing/neck/roguetown/psicross/inhumen/matthios/moneta	pierced coin amulet	twilight
+clothing	/obj/item/clothing/ring/TAgriefflower	rosa ring	unique
+clothing	/obj/item/clothing/ring/baotha	snake ring	twilight
+clothing	/obj/item/clothing/ring/event_ring	event ring	unique
+clothing	/obj/item/clothing/shoes/roguetown/boots/leather/aria	aria feet bondage	unique
+clothing	/obj/item/clothing/shoes/roguetown/boots/leather/etrbootsm	wanderer's boots	unique
+clothing	/obj/item/clothing/shoes/roguetown/boots/leather/hussar	hussar cavalry boots	unique
+clothing	/obj/item/clothing/shoes/roguetown/boots/leather/reinforced/aristocratic	aristocratic boots	unique
+clothing	/obj/item/clothing/shoes/roguetown/boots/leather/twilight_etruscan_boots	etruscan jackboots	unique
+clothing	/obj/item/clothing/shoes/roguetown/boots/leather/twilight_etruscan_boots/heavy		unique
+clothing	/obj/item/clothing/shoes/roguetown/boots/nobleboot/aristocratic	aristocratic boots	unique
+clothing	/obj/item/clothing/shoes/roguetown/boots/pony	pony boots	twilight
+clothing	/obj/item/clothing/shoes/roguetown/felinetaur	four footwraps	unique
+clothing	/obj/item/clothing/suit/roguetown/shirt/dress/silkdress/donator_mortosasye_deepcutdress	deep cut dress	unique
+clothing	/obj/item/clothing/suit/roguetown/shirt/dress/silkdress/donator_mortosasye_sunrisegown	sunrise gown	unique
+clothing	/obj/item/clothing/suit/roguetown/shirt/dress/silkdress/steward/mayor	Mayor's silc dress	unique
+clothing	/obj/item/clothing/suit/roguetown/shirt/dress/stewarddress	steward's dress	twilight
+clothing	/obj/item/clothing/suit/roguetown/shirt/kamishimo/ronin	ronin kamishimo	unique
+clothing	/obj/item/clothing/suit/roguetown/shirt/padedetrshirt	padded etruscan shirt	unique
+clothing	/obj/item/clothing/suit/roguetown/shirt/robe/bishop	bishop robe	twilight
+clothing	/obj/item/clothing/suit/roguetown/shirt/robe/hierophant/warscholar	war scholar's kandys	unique
+clothing	/obj/item/clothing/suit/roguetown/shirt/robe/noc/stargazer	stargazer robe	unique
+clothing	/obj/item/clothing/suit/roguetown/shirt/robe/nunTA	nun dress	unique
+clothing	/obj/item/clothing/suit/roguetown/shirt/robe/spellcasterrobe/soundbreakerrobe	soundbreaker robes	unique
+clothing	/obj/item/clothing/suit/roguetown/shirt/tunic/silktunic/mayor	Mayor's silc tunic	unique
+clothing	/obj/item/clothing/suit/roguetown/shirt/twilight_elven	elven suit	twilight
+clothing	/obj/item/clothing/suit/roguetown/shirt/twilight_elven/coat	elven coat	unique
+clothing	/obj/item/clothing/suit/roguetown/shirt/twilight_elven/coat/alt	elven furcoat	twilight
+clothing	/obj/item/clothing/suit/roguetown/shirt/twilight_hammerhold	hammerhold shirt	twilight
+clothing	/obj/item/clothing/suit/roguetown/shirt/twilight_hammerhold/coat	boyar coat	twilight
+clothing	/obj/item/clothing/suit/roguetown/shirt/twilight_hammerhold/dress	hammerhold dress	twilight
+clothing	/obj/item/clothing/suit/roguetown/shirt/twilight_hammerhold/dress/furcoat	hammerhold mage coat	unique
+clothing	/obj/item/clothing/suit/roguetown/shirt/twilight_hammerhold/dress/furcoat/heavy		unique
+clothing	/obj/item/clothing/suit/roguetown/shirt/twilight_hammerhold/dress/robe	hammerhold robe	unique
+clothing	/obj/item/clothing/suit/roguetown/shirt/twilight_hammerhold/dress/robe/heavy		unique
+clothing	/obj/item/clothing/suit/roguetown/shirt/twilight_hammerhold/dress/robe/light		unique
+clothing	/obj/item/clothing/suit/roguetown/shirt/undershirt/bailiff	Bodyguard shirt	unique
+clothing	/obj/item/clothing/suit/roguetown/shirt/undershirt/etrshirt	low-cut shirt	unique
+clothing	/obj/item/clothing/under/roguetown/chainlegs/grenzelhoft	grenzelhoftian paumpers w/chain chausses	unique
+clothing	/obj/item/clothing/under/roguetown/chainlegs/kilt/legion	elyrian cingulum kilt	unique
+clothing	/obj/item/clothing/under/roguetown/chainlegs/nightmare	nightmare tears chausses	unique
+clothing	/obj/item/clothing/under/roguetown/chainlegs/twilight_drow	scourge chain chausses	unique
+clothing	/obj/item/clothing/under/roguetown/gambeson	gamboised cuisses	unique
+clothing	/obj/item/clothing/under/roguetown/gambeson/heavy	padded gamboised cuisses	unique
+clothing	/obj/item/clothing/under/roguetown/heavy_leather_pants/grenadier	padded pantaloons	unique
+clothing	/obj/item/clothing/under/roguetown/heavy_leather_pants/otavan/overseer	heavy trousers	unique
+clothing	/obj/item/clothing/under/roguetown/skirt/baotha_ta	saccharine fauldcoat	unique
+clothing	/obj/item/clothing/under/roguetown/trou/leather/aria	aria pants	unique
+clothing	/obj/item/clothing/under/roguetown/trou/leather/etrpants	wanderer's pants	unique
+clothing	/obj/item/clothing/under/roguetown/trou/leather/etrpants/donat		unique
+clothing	/obj/item/clothing/under/roguetown/trou/leather/hakama	hakama	twilight
+clothing	/obj/item/clothing/under/roguetown/trou/leather/hussar	hussar breeches	unique
+clothing	/obj/item/clothing/under/roguetown/trou/leather/pontifex/warscholar	war scholar's chaqchur	unique
+clothing	/obj/item/enchantingkit/morto_crown/obj/item/clothing/head/roguetown/crown/serpcrown		unique
+clothing	/obj/item/enchantingkit/rosy/rosecollar/obj/item/clothing/neck/roguetown/psicross/eora		unique
+food	/obj/item/reagent_containers/food/snacks/grown/fruit/banana	banana bush	unique
+food	/obj/item/reagent_containers/food/snacks/grown/fruit/melon	melon	unique
+food	/obj/item/reagent_containers/food/snacks/grown/fruit/watermelon	watermelon	unique
+food	/obj/item/reagent_containers/food/snacks/rogue/fruit/banana	banana	unique
+food	/obj/item/reagent_containers/food/snacks/rogue/fruit/melon_sliced	melon slice	unique
+food	/obj/item/reagent_containers/food/snacks/rogue/fruit/watermelon_sliced	watermelon slice	unique
+food	/obj/item/reagent_containers/food/snacks/rogue/meat/fatty/roast/ribs	roast pork ribs	unique
+food	/obj/item/reagent_containers/food/snacks/rogue/meat/ham/steamed/roasted	roast ham	unique
+other	/obj/item/alch/silverdust_blessed	blessed silver dust	unique
+other	/obj/item/artillery_assembly	Лафет	unique
+other	/obj/item/artillery_assembly/mortar	mortar carriage	unique
+other	/obj/item/artillery_barrel_assembly	artillery barrel blank	unique
+other	/obj/item/artillery_shell	Дружок, если ты это увидел то админы/маппер дурачки	unique
+other	/obj/item/artillery_shell/magic_fireball	arcane fireball	unique
+other	/obj/item/artillery_shell/mortar	mortar shell	unique
+other	/obj/item/ball	leather ball	twilight
+other	/obj/item/blueprint_planner	архитектурный чертеж	unique
+other	/obj/item/bodypart/taur/arachne	Arachne	unique
+other	/obj/item/bodypart/taur/feline/furry	Feline	unique
+other	/obj/item/book/granter/resident_manuscript	Грамота жителя	unique
+other	/obj/item/book/granter/resident_manuscript/blank	Чистая грамота жителя	unique
+other	/obj/item/book/granter/resident_manuscript/blank/church		unique
+other	/obj/item/book/granter/resident_manuscript/blank/commoner		unique
+other	/obj/item/book/granter/resident_manuscript/blank/craftsmen		unique
+other	/obj/item/book/granter/resident_manuscript/blank/enigma_crown		unique
+other	/obj/item/book/granter/resident_manuscript/blank/grenzelhoft_mission		unique
+other	/obj/item/book/granter/resident_manuscript/blank/guards		unique
+other	/obj/item/book/granter/resident_manuscript/blank/heartfelt_identity		unique
+other	/obj/item/book/granter/resident_manuscript/blank/heartfelt_noble		unique
+other	/obj/item/book/granter/resident_manuscript/blank/imperial		unique
+other	/obj/item/book/granter/resident_manuscript/blank/mages		unique
+other	/obj/item/book/granter/resident_manuscript/blank/mercenary		unique
+other	/obj/item/book/granter/resident_manuscript/blank/merchant		unique
+other	/obj/item/book/granter/resident_manuscript/blank/otava		unique
+other	/obj/item/book/granter/resident_manuscript/blank/retinue		unique
+other	/obj/item/book/granter/resident_manuscript/blank/valorian_church		unique
+other	/obj/item/book/granter/resident_manuscript/church		unique
+other	/obj/item/book/granter/resident_manuscript/commoner		unique
+other	/obj/item/book/granter/resident_manuscript/craftsmen		unique
+other	/obj/item/book/granter/resident_manuscript/enigma_crown		unique
+other	/obj/item/book/granter/resident_manuscript/fake	Подозрительная грамота жителя	unique
+other	/obj/item/book/granter/resident_manuscript/fake/church		unique
+other	/obj/item/book/granter/resident_manuscript/fake/commoner		unique
+other	/obj/item/book/granter/resident_manuscript/fake/craftsmen		unique
+other	/obj/item/book/granter/resident_manuscript/fake/enigma_crown		unique
+other	/obj/item/book/granter/resident_manuscript/fake/grenzelhoft_mission		unique
+other	/obj/item/book/granter/resident_manuscript/fake/guards		unique
+other	/obj/item/book/granter/resident_manuscript/fake/heartfelt_identity		unique
+other	/obj/item/book/granter/resident_manuscript/fake/heartfelt_noble		unique
+other	/obj/item/book/granter/resident_manuscript/fake/imperial		unique
+other	/obj/item/book/granter/resident_manuscript/fake/mages		unique
+other	/obj/item/book/granter/resident_manuscript/fake/mercenary		unique
+other	/obj/item/book/granter/resident_manuscript/fake/merchant		unique
+other	/obj/item/book/granter/resident_manuscript/fake/otava		unique
+other	/obj/item/book/granter/resident_manuscript/fake/retinue		unique
+other	/obj/item/book/granter/resident_manuscript/fake/valorian_church		unique
+other	/obj/item/book/granter/resident_manuscript/grenzelhoft_mission		unique
+other	/obj/item/book/granter/resident_manuscript/guards		unique
+other	/obj/item/book/granter/resident_manuscript/heartfelt_identity		unique
+other	/obj/item/book/granter/resident_manuscript/heartfelt_noble		unique
+other	/obj/item/book/granter/resident_manuscript/imperial		unique
+other	/obj/item/book/granter/resident_manuscript/mages		unique
+other	/obj/item/book/granter/resident_manuscript/mercenary		unique
+other	/obj/item/book/granter/resident_manuscript/merchant		unique
+other	/obj/item/book/granter/resident_manuscript/otava		unique
+other	/obj/item/book/granter/resident_manuscript/retinue		unique
+other	/obj/item/book/granter/resident_manuscript/roundstart		unique
+other	/obj/item/book/granter/resident_manuscript/valorian_church		unique
+other	/obj/item/book/granter/residentcard	Грамота жителя	unique
+other	/obj/item/book/granter/residentcardvirtue	Подорожная грамота	unique
+other	/obj/item/book/granter/residentcardvirtue/base	Бланк подорожной грамоты	unique
+other	/obj/item/book/granter/residentcardvirtue/fake	Подорожная грамота	unique
+other	/obj/item/book/granter/residentcardvirtue/roundstart		unique
+other	/obj/item/book/rogue/trophy_rules	Dairy of Exotic Discoveries	unique
+other	/obj/item/branding_iron	branding iron	unique
+other	/obj/item/branding_letters	branding letter kit	unique
+other	/obj/item/ccg_deck/stashed	card deck	unique
+other	/obj/item/chair/stool/bar/rogue/fancy	Fancy stool	twilight
+other	/obj/item/clock	bronze pocket clock	unique
+other	/obj/item/clock/iron	iron pocket clock	unique
+other	/obj/item/clock_capped	gold pocket clock	unique
+other	/obj/item/clock_capped/compas	gold artificied clock	unique
+other	/obj/item/clock_capped/silver	silver pocket clock	unique
+other	/obj/item/craft_kit	iron craftkit	unique
+other	/obj/item/craft_kit/brigandine_light		unique
+other	/obj/item/craft_kit/chainlegs		unique
+other	/obj/item/craft_kit/cuirass		unique
+other	/obj/item/craft_kit/full_chaincoif		unique
+other	/obj/item/craft_kit/halfplate		unique
+other	/obj/item/craft_kit/haubergeon		unique
+other	/obj/item/craft_kit/haubergeon_light		unique
+other	/obj/item/craft_kit/hauberk		unique
+other	/obj/item/craft_kit/kilt		unique
+other	/obj/item/craft_kit/lmailleboots		unique
+other	/obj/item/craft_kit/splintarms		unique
+other	/obj/item/craft_kit/splintlegs		unique
+other	/obj/item/craft_kit/steel	steel craftkit	unique
+other	/obj/item/craft_kit/steel/chainlegs		unique
+other	/obj/item/craft_kit/steel/cuirass		unique
+other	/obj/item/craft_kit/steel/full_chaincoif		unique
+other	/obj/item/craft_kit/steel/halfplate		unique
+other	/obj/item/craft_kit/steel/haubergeon		unique
+other	/obj/item/craft_kit/steel/haubergeon_light		unique
+other	/obj/item/craft_kit/steel/hauberk		unique
+other	/obj/item/craft_kit/steel/kilt		unique
+other	/obj/item/craft_kit/steel/lmailleboots		unique
+other	/obj/item/dye_brush/obj/item/reagent_containers/glass/cup/claycup		unique
+other	/obj/item/enchantingkit/aisuwand	Crystalline Rapier morphing elixir	unique
+other	/obj/item/enchantingkit/astratanhelm_oldrw	'Plumed Astrata Helmet' morphing elixer'	unique
+other	/obj/item/enchantingkit/commandant_blade	commandant's blade morphing elixir	unique
+other	/obj/item/enchantingkit/commandant_cane	commandant's cane morphing elixir	unique
+other	/obj/item/enchantingkit/commandant_coat	commandant's coat morphing elixir	unique
+other	/obj/item/enchantingkit/commandant_pistol	elegant pistol morphing elixir	unique
+other	/obj/item/enchantingkit/crowcane_blade	'Crow Cane Blade' morphing elixir	unique
+other	/obj/item/enchantingkit/crowcane_scabbard	'Crow Cane Scabbard' morphing elixir	unique
+other	/obj/item/enchantingkit/dasfox_cuirass	'archaic cermonial cuirass' morphing elixir	unique
+other	/obj/item/enchantingkit/dasfox_helm	'archaic valkyrhelm' morphing elixir	unique
+other	/obj/item/enchantingkit/donator_overseer_gold_mask	'Golden Confessor Mask' morphing elixir	unique
+other	/obj/item/enchantingkit/donator_overseer_silver_mask	'Silver Confessor Mask' morphing elixir	unique
+other	/obj/item/enchantingkit/eoran_helm_resprite	'Flower Eora Helmet' morphing elixer'	unique
+other	/obj/item/enchantingkit/etrpants	'Wanderer's pants' morphing elixer'	unique
+other	/obj/item/enchantingkit/etruscan_boots	'Etruscan jackboots' morphing elixer (Only woman, no small races)	unique
+other	/obj/item/enchantingkit/hammerhold_coat	'Hammerhold Mage Coat' morphing elixer'	unique
+other	/obj/item/enchantingkit/hammerhold_robe	'Hammerhold Robe' morphing elixer'	unique
+other	/obj/item/enchantingkit/hellpossum_grandmaster_habit	'Grandmaster's Habit' morphing elixir	unique
+other	/obj/item/enchantingkit/hellpossum_grandmaster_helm	'Grandmaster's Burgeonet' morphing elixir	unique
+other	/obj/item/enchantingkit/hussar_breeches	hussar breeches morphing elixir	unique
+other	/obj/item/enchantingkit/hussar_pistol	hussar pistol morphing elixir	unique
+other	/obj/item/enchantingkit/hussar_protective_coat	hussar protective coat morphing elixir	unique
+other	/obj/item/enchantingkit/hussar_sabre	hussar officer's sabre morphing elixir	unique
+other	/obj/item/enchantingkit/hussar_shirt	hussar shirt morphing elixir	unique
+other	/obj/item/enchantingkit/jagerrifle	'Jägerbüchse' morphing elixir	unique
+other	/obj/item/enchantingkit/jezail	'Jezail' morphing elixir	unique
+other	/obj/item/enchantingkit/kumie_boots	'Aristocratic boots' morphing elixer'	unique
+other	/obj/item/enchantingkit/kumie_coat	'Aristocratic Coat' morphing elixer'	unique
+other	/obj/item/enchantingkit/kumie_gloves	'Aristocratic gloves' morphing elixer'	unique
+other	/obj/item/enchantingkit/kumie_shirt	'Aristocratic Shirt' morphing elixer'	unique
+other	/obj/item/enchantingkit/morto_crown	'Sun Crown' morphing elixir	unique
+other	/obj/item/enchantingkit/morto_staff	'Frozen Vow' morphing elixir	unique
+other	/obj/item/enchantingkit/necranhelm_oldrw	'Hooded Necra Helmet' morphing elixer'	unique
+other	/obj/item/enchantingkit/nightmare_armet	Nightmare Tears Helmet morphing elixir	unique
+other	/obj/item/enchantingkit/nightmare_boots	Nightmare Tears Boots morphing elixir	unique
+other	/obj/item/enchantingkit/nightmare_chausses	Nightmare Tears Chausses morphing elixir	unique
+other	/obj/item/enchantingkit/nightmare_gauntlets	Nightmare Tears Gauntlets morphing elixir	unique
+other	/obj/item/enchantingkit/nightmare_scales	Nightmare Tears Scales morphing elixir	unique
+other	/obj/item/enchantingkit/ravoxhelm_oldrw	'Plumed Ravox Helmet' morphing elixer'	unique
+other	/obj/item/enchantingkit/rosy/rosecollar	'Rosestone Clasped Collar' morphing elixir	unique
+other	/obj/item/enchantingkit/sanguine_coat	'Sanguine Coat' morphing elixir	unique
+other	/obj/item/enchantingkit/sanguine_heels	'Sanguine Heels' morphing elixir	unique
+other	/obj/item/enchantingkit/sanguine_jacket	'Sanguine Jacket' morphing elixir	unique
+other	/obj/item/enchantingkit/sanguine_trousers	'Sanguine Trousers' morphing elixir	unique
+other	/obj/item/enchantingkit/sanguine_vest	'Sanguine Vest' morphing elixir	unique
+other	/obj/item/enchantingkit/strudel3_etruscan	'Etruscan Design Cloak' morphing elixir	unique
+other	/obj/item/enchantingkit/teppo	'Teppo' morphing elixir	unique
+other	/obj/item/flowercrown/rosa/resprite	crown of eora flowers	unique
+other	/obj/item/folding_peddler_stored	folding peddler	unique
+other	/obj/item/giantfur_small_stored	small fur roll	unique
+other	/obj/item/giantfur_stored	fur roll	unique
+other	/obj/item/ingot/steel/zizo	cursed ancient ingot	unique
+other	/obj/item/magic_icicle	magic icicle	unique
+other	/obj/item/manor_delivery	package	unique
+other	/obj/item/martial_master_proxy	martial strike	unique
+other	/obj/item/melee/new_touch_attack/asperges	\improper rite of asperges	unique
+other	/obj/item/melee/new_touch_attack/shroud	слабый туман	unique
+other	/obj/item/melee/touch_attack/TAloversruin	Baotha's Touch	unique
+other	/obj/item/metal_stake	metal stake	unique
+other	/obj/item/mortar_barrel	barrel of the mortar	unique
+other	/obj/item/mortar_barrel_assembly	mortar barrel blank	unique
+other	/obj/item/mortar_used_barrel	damaged mortar barrel	unique
+other	/obj/item/mortar_wheel	mortar carriage wheel	unique
+other	/obj/item/natural/clay/xylixmask	uncooked xylixian mask	unique
+other	/obj/item/necro_relics/necro_crystal/twilight_axis		unique
+other	/obj/item/ointment	debug ointment	unique
+other	/obj/item/ointment/brute	calendula ointment	unique
+other	/obj/item/ointment/brute/t2	caleleaf ointment	unique
+other	/obj/item/ointment/burn	taraxacum ointment	unique
+other	/obj/item/ointment/burn/t2	taraxaleaf ointment	unique
+other	/obj/item/ointment/wound	leech ointment	unique
+other	/obj/item/ointment/wound/t2	caleechtar ointment	unique
+other	/obj/item/organ/horns/aura		unique
+other	/obj/item/organ/penis/tapered_knot	tapered penis	unique
+other	/obj/item/organ/tail/dragontail	dragon tail	twilight
+other	/obj/item/organ/wings/angel	aasimar wings	unique
+other	/obj/item/paper/inquisition_suspicion	writ of heretical suspicion	unique
+other	/obj/item/pocketsand	pocket sand	unique
+other	/obj/item/quicksilver/TA/luxinfused	absolving silver	twilight
+other	/obj/item/reagent_containers/glass/bottle/alchemical/love_potion	love potion	twilight
+other	/obj/item/reagent_containers/powder/corps_dust	corps dust	unique
+other	/obj/item/reagent_containers/powder/grave_powder	grave powder	unique
+other	/obj/item/reagent_containers/powder/inferrum	inferrum	unique
+other	/obj/item/reagent_containers/powder/smartium	smartium	unique
+other	/obj/item/recipe_book/base_icon_state		unique
+other	/obj/item/recipe_book/combo_core_library	Combat Schools Compendium	unique
+other	/obj/item/recipe_book/hag_grimoire/datum/hag_boon/item/wyrd_cross		unique
+other	/obj/item/recipe_book/zizo	The Tome: ???	unique
+other	/obj/item/roguebin/pottedschrub_red	plant pot	unique
+other	/obj/item/roguebin/pottedschrub_tundra	plant pot	unique
+other	/obj/item/roguecoin/gold/matthios		unique
+other	/obj/item/roguecoin/goldkrona	krona	unique
+other	/obj/item/roguecoin/grout	grout	unique
+other	/obj/item/roguecoin/shucoin	shu	unique
+other	/obj/item/roguekey/folding_peddler	peddler key	unique
+other	/obj/item/roguekey/mage/driderboss	Drider's key	unique
+other	/obj/item/roguekey/mage/forgottenking	forgotten king' key	unique
+other	/obj/item/roguekey/mansion	Rockhill Mansion	unique
+other	/obj/item/roguekey/mayor	Mayor key	unique
+other	/obj/item/roguekey/rh_mage_1	Magicians quarter I	unique
+other	/obj/item/roguekey/rh_mage_2	Magicians quarter II	unique
+other	/obj/item/roguekey/rh_mage_3	Magicians quarter III	unique
+other	/obj/item/roguekey/rh_mage_4	Magicians quarter IV	unique
+other	/obj/item/roguekey/townsheriff	Sheriff key	unique
+other	/obj/item/rug_black_stored	black rug roll	unique
+other	/obj/item/rug_purple_stored	purple rug roll	unique
+other	/obj/item/rug_stored	red rug roll	unique
+other	/obj/item/seeds/banana		unique
+other	/obj/item/seeds/melon		unique
+other	/obj/item/seeds/watermelon		unique
+other	/obj/item/shamanic_totem	Packed totem	unique
+other	/obj/item/shamanic_totem_block	totem block	unique
+other	/obj/item/shamanic_totem_block/abyssor	kraken block	unique
+other	/obj/item/shamanic_totem_block/baotha	leopard block	unique
+other	/obj/item/shamanic_totem_block/dendor	Overgrown block	unique
+other	/obj/item/shamanic_totem_block/graggar	moose block	unique
+other	/obj/item/shamanic_totem_block/matthios	bear block	unique
+other	/obj/item/shamanic_totem_block/zizo	wolf block	unique
+other	/obj/item/sharpener/ignited	ignited stone	unique
+other	/obj/item/signal_horn/vanguard_battle	vanguard battle horn	unique
+other	/obj/item/signal_horna	signal horn	twilight
+other	/obj/item/signal_hornn/blue	town guard horn	unique
+other	/obj/item/signal_hornn/green	vanguard's horn	unique
+other	/obj/item/signal_hornn/red	sergeant's horn	unique
+other	/obj/item/soundbreaker_proxy	soundbreaking strike	unique
+other	/obj/item/steel_scrap	steel scrap	unique
+other	/obj/item/storage/backpack/rogue/backpack_trader	traders chests	unique
+other	/obj/item/storage/backpack/rogue/satchel/citywatch	watchman's satchel	unique
+other	/obj/item/storage/belt/rogue/leather/aria	aria belt	unique
+other	/obj/item/storage/belt/rogue/leather/citywatch	watchman's belt	unique
+other	/obj/item/storage/belt/rogue/leather/overseer	confessor belt pouch	unique
+other	/obj/item/storage/belt/rogue/leather/twilight_holsterbelt/black	black holster belt	unique
+other	/obj/item/storage/belt/rogue/leather/twilight_holsterbelt/blackpowder	blackpowder order holster belt	unique
+other	/obj/item/storage/belt/rogue/leather/twilight_holsterbelt/commandant	officer's belt	unique
+other	/obj/item/storage/belt/rogue/leather/twilight_holsterbelt/hussar	hussar sash	unique
+other	/obj/item/storage/belt/rogue/leather/twilight_holsterbelt/lord	plaque holster belt	unique
+other	/obj/item/storage/belt/rogue/pouch/i_scrap		unique
+other	/obj/item/storage/belt/rogue/pouch/i_scrap/obj/item/ingot/iron		unique
+other	/obj/item/storage/belt/rogue/pouch/kronas		unique
+other	/obj/item/storage/belt/rogue/pouch/s_scrap		unique
+other	/obj/item/storage/belt/rogue/pouch/s_scrap/obj/item/ingot/steel		unique
+other	/obj/item/storage/belt/rogue/pouch/shucoin		unique
+other	/obj/item/storage/belt/rogue/pouch/t1_oint		unique
+other	/obj/item/storage/belt/rogue/pouch/t1_oint/obj/item/ointment/wound		unique
+other	/obj/item/storage/belt/rogue/pouch/t2_oint		unique
+other	/obj/item/storage/belt/rogue/pouch/t2_oint/obj/item/ointment/wound/t2		unique
+other	/obj/item/tat_trader_lootbox	sealed trader cache	unique
+other	/obj/item/tat_trader_lootbox/cheap	cheap trader cache	unique
+other	/obj/item/tat_trader_lootbox/clothes	Sewing trader cache	unique
+other	/obj/item/tat_trader_lootbox/expensive	luxury trader cache	unique
+other	/obj/item/tat_trader_lootbox/medium	merchant trader cache	unique
+other	/obj/item/tat_trader_lootbox/potion	Alchemical trader cache	unique
+other	/obj/item/twilight_gunbarrel	steel barrel	unique
+other	/obj/item/twilight_gunlock	gunlock	unique
+other	/obj/item/twilight_gunstock	steel stock	unique
+other	/obj/item/twilight_ironbarrel	iron barrel	unique
+other	/obj/item/twilight_powderflask	powderflask	unique
+other	/obj/item/twilight_powderflask/arcyne	powderflask	unique
+other	/obj/item/twilight_powderflask/corrosive	powderflask	unique
+other	/obj/item/twilight_powderflask/fyre	powderflask	unique
+other	/obj/item/twilight_powderflask/holyfyre	powderflask	unique
+other	/obj/item/twilight_powderflask/terror	powderflask	unique
+other	/obj/item/twilight_powderflask/thunder	powderflask	unique
+other	/obj/item/twilight_powderflask/volf	powderflask	unique
+other	/obj/item/twilight_powderflask_empty	powderflask	unique
+other	/obj/item/twilight_ramrod	ramrod	twilight
+other	/obj/item/twilight_simplestock	iron stock	unique
+tool	/obj/item/flashlight/flare/torch/lantern/scrap	iron scrap lamptern	unique
+tool	/obj/item/rope/chain/fake/ice	ice chains	unique
+tool	/obj/item/storage/keyring/apothecaryenigma		unique
+tool	/obj/item/storage/keyring/apprenticeenigma		unique
+tool	/obj/item/storage/keyring/azeb		unique
+tool	/obj/item/storage/keyring/azebagha		unique
+tool	/obj/item/storage/keyring/bailiff		unique
+tool	/obj/item/storage/keyring/cataphract		unique
+tool	/obj/item/storage/keyring/courtphysician		unique
+tool	/obj/item/storage/keyring/harem		unique
+tool	/obj/item/storage/keyring/knightenigma		unique
+tool	/obj/item/storage/keyring/magicianenigma		unique
+tool	/obj/item/storage/keyring/mayor		unique
+tool	/obj/item/storage/keyring/rockhillmansion		unique
+tool	/obj/item/storage/keyring/slave		unique
+tool	/obj/item/storage/keyring/slavemaster		unique
+tool	/obj/item/storage/keyring/vanguard_enigma		unique
+tool	/obj/item/storage/keyring/veteran_d		unique
+tool	/obj/item/storage/keyring/warden_enigma		unique
+tool	/obj/item/storage/keyring/watchman		unique
+weapon	/obj/item/ammo_box/magazine/internal/shot/twilight_bloodlock		unique
+weapon	/obj/item/ammo_box/magazine/internal/shot/twilight_runelock		twilight
+weapon	/obj/item/ammo_box/magazine/internal/twilight_firearm	firearm internal magazine	unique
+weapon	/obj/item/ammo_box/magazine/internal/twilight_firearm/handgonne	handgonne internal magazine	unique
+weapon	/obj/item/ammo_box/magazine/internal/twilight_firearm/mortar	mortar internal magazine	unique
+weapon	/obj/item/ammo_casing/caseless/rogue/twilight_cannonball	lead cannonball	unique
+weapon	/obj/item/ammo_casing/caseless/rogue/twilight_cannonball/grapeshot	lead grapeshot	unique
+weapon	/obj/item/ammo_casing/caseless/rogue/twilight_lead	lead sphere	unique
+weapon	/obj/item/ammo_casing/caseless/rogue/twilight_lead/paper	paper cartridge	unique
+weapon	/obj/item/ammo_casing/caseless/rogue/twilight_lead/runelock	runed sphere	unique
+weapon	/obj/item/ammo_casing/caseless/rogue/twilight_lead/runelock/blessed	blessed runed sphere	unique
+weapon	/obj/item/ammo_casing/caseless/rogue/twilight_lead/silver	silver sphere	unique
+weapon	/obj/item/clothing/head/roguetown/bucklehat/gunslinger	gunslinger's hat	unique
+weapon	/obj/item/clothing/head/roguetown/duelhat/gunslinger	dragoon's hat	unique
+weapon	/obj/item/clothing/shoes/roguetown/grenzelhoft/gunslinger	travel boots	unique
+weapon	/obj/item/enchantingkit/weapon/arra_amdir/obj/item/rogueweapon/greataxe		unique
+weapon	/obj/item/enchantingkit/weapon/eiren	'Regret' morphing elixir	unique
+weapon	/obj/item/enchantingkit/weapon/eiren/obj/item/rogueweapon/greatsword		unique
+weapon	/obj/item/enchantingkit/weapon/eirensabre	'Lunae' morphing elixir	unique
+weapon	/obj/item/enchantingkit/weapon/eirensabre2	'Cinis' morphing elixir	unique
+weapon	/obj/item/enchantingkit/weapon/eirensword	'stygian longsword' morphing elixir	unique
+weapon	/obj/item/enchantingkit/weapon/eirensword/obj/item/rogueweapon/sword/long		unique
+weapon	/obj/item/enchantingkit/weapon/herverdict	'Her Verdict' morphing elixir	unique
+weapon	/obj/item/enchantingkit/weapon/koruu_kukri/warden/obj/item/rogueweapon/huntingknife		unique
+weapon	/obj/item/enchantingkit/weapon/stinketh_shashka	'fencer's shashka' morphing elixir	unique
+weapon	/obj/item/enchantingkit/weapon/stinketh_shashka/obj/item/rogueweapon/sword/sabre/steppesman		unique
+weapon	/obj/item/enchantingkit/weapon/triumph_weaponkit_dadao	'Dadao' messer morphing elixir	unique
+weapon	/obj/item/enchantingkit/weapon/triumph_weaponkit_dadao/obj/item/rogueweapon/sword/falx		unique
+weapon	/obj/item/enchantingkit/weapon/triumph_weaponkit_gdadao	'Greatdadao' longsword morphing elixir	unique
+weapon	/obj/item/enchantingkit/weapon/triumph_weaponkit_gdadao/obj/item/rogueweapon/sword/long/kriegmesser		unique
+weapon	/obj/item/enchantingkit/weapon/triumph_weaponkit_wodao	'Wodao' sabre morphing elixir	unique
+weapon	/obj/item/enchantingkit/weapon/triumph_weaponkit_wodao/obj/item/rogueweapon/sword/cutlass		unique
+weapon	/obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow/yumi	yumi bow	unique
+weapon	/obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve/autumn	autumnwoad recurve bow	unique
+weapon	/obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve/hankyu	hankyu bow	unique
+weapon	/obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve/watchman		unique
+weapon	/obj/item/gun/ballistic/revolver/grenadelauncher/twilight_runelock	runelock pistol	unique
+weapon	/obj/item/gun/ballistic/revolver/grenadelauncher/twilight_runelock/rifle	\	unique
+weapon	/obj/item/gun/ballistic/revolver/grenadelauncher/twilight_runelock/rifle/twilight_bloodlock	bloodlock rifle	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm	gunpowder weapon	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/arquebus	arquebus rifle	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/arquebus/bayonet	arquebus rifle	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/arquebus/bayonet/decorated	decorated arquebus rifle	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/arquebus/bayonet/jagerrifle	\	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/arquebus/decorated	decorated arquebus rifle	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/arquebus/jagerrifle	\	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/arquebus/jezail	jezail	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/arquebus/teppo	teppo	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/arquebus_pistol	arquebus pistol	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/arquebus_pistol/commandant	elegant pistol	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/arquebus_pistol/hussar	hussar pistol	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/arquebus_pistol/mortar	hand mortar	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/arquebus_pistol/umbra	\	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/axtgonne	axtbüchse	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/barker	barker	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/barker/arti_barker1	ignited barker	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/barker/arti_barker2	hunter's barker	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/barker/arti_barker3	shepherd's barker	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/barker/barker_light	barker with lamptern	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/barker/barker_light/dendor1	hermit's barker	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/barker/barker_light/dendor2	guiding light	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/barker/barker_staff		unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/barker/barker_staff/amethyst	amythortz focused barker	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/barker/barker_staff/gemerald	gemerald focused barker	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/barker/barker_staff/rontz	rontz focused barker	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/barker/barker_staff/sapphire	sapphire focused barker	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/barker/barker_staff/toper	toper focused barker	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/barker/jezail	jezail	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/barker/teppo	teppo	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/flintgonne	hakenbüchse	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/flintgonne/jezail	jezail	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/flintgonne/teppo	teppo	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/handgonne	culverin	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/handgonne/purgatory	\	unique
+weapon	/obj/item/gun/ballistic/twilight_firearm/hunt_arquebus	hunting arquebus	unique
+weapon	/obj/item/melee/touch_attack/rogueweapon/TAastratagrasp	Burning Hand	unique
+weapon	/obj/item/melee/touch_attack/rogueweapon/TAravoxgrasp	Justice Hand	unique
+weapon	/obj/item/quiver/twilight_bullet	ammo bag	unique
+weapon	/obj/item/quiver/twilight_bullet/cannonball	cannonball bag	unique
+weapon	/obj/item/quiver/twilight_bullet/paper	cartridge bag	unique
+weapon	/obj/item/quiver/twilight_bullet/runicbag	pharetra	twilight
+weapon	/obj/item/rogueweapon/beast_claws	Beast claws	unique
+weapon	/obj/item/rogueweapon/eirenxiv/eirensword	stygian longsword	unique
+weapon	/obj/item/rogueweapon/example/dadao	dadao	unique
+weapon	/obj/item/rogueweapon/example/eiren_greatsword	Regret	unique
+weapon	/obj/item/rogueweapon/example/eiren_sabre	Lunae	unique
+weapon	/obj/item/rogueweapon/example/eiren_sabre_alt	Cinis	unique
+weapon	/obj/item/rogueweapon/example/gdadao	greatdadao	unique
+weapon	/obj/item/rogueweapon/example/wodao	wodao	unique
+weapon	/obj/item/rogueweapon/greataxe/steel/doublehead/zizo	cursed greataxe	unique
+weapon	/obj/item/rogueweapon/greatsword/bsword/psy/relic		twilight
+weapon	/obj/item/rogueweapon/greatsword/grenz/flamberge/relevement	relevement	unique
+weapon	/obj/item/rogueweapon/greatsword/miaodao	miaodao	unique
+weapon	/obj/item/rogueweapon/greatsword/zwei/eiren/steel	Regret	unique
+weapon	/obj/item/rogueweapon/greatsword/zwei/inverserun/steel	Votive Thorns	unique
+weapon	/obj/item/rogueweapon/halberd/bardiche/scythe/martyr	divine scythe	unique
+weapon	/obj/item/rogueweapon/halberd/bardiche/twilight_necrascythe	\	unique
+weapon	/obj/item/rogueweapon/halberd/glaive/zizo		unique
+weapon	/obj/item/rogueweapon/halberd/psyhalberd/relic		twilight
+weapon	/obj/item/rogueweapon/handclaw/gronn/silver/psy	psydonic claws	unique
+weapon	/obj/item/rogueweapon/huntingknife/idagger/silver/elvish/bandit		unique
+weapon	/obj/item/rogueweapon/huntingknife/idagger/silver/psydagger/parrying	psydonic parrying dagger	unique
+weapon	/obj/item/rogueweapon/huntingknife/idagger/steel/cursed	cursed dagger	unique
+weapon	/obj/item/rogueweapon/huntingknife/idagger/steel/curved_dagger	curved dagger	unique
+weapon	/obj/item/rogueweapon/huntingknife/idagger/steel/necra	osteotome	unique
+weapon	/obj/item/rogueweapon/huntingknife/idagger/steel/parrying/eora	misericorde	unique
+weapon	/obj/item/rogueweapon/huntingknife/throwingknife/steel/noc	twilight fang	unique
+weapon	/obj/item/rogueweapon/knuckledusters/psy/relic	\	unique
+weapon	/obj/item/rogueweapon/mace/goden/steel/tetsubo	tetsubo	unique
+weapon	/obj/item/rogueweapon/mace/maul/grand/moonlight_hammer	moonlight hammer	unique
+weapon	/obj/item/rogueweapon/mace/steel/zizo	cursed mace	unique
+weapon	/obj/item/rogueweapon/scabbard/sheath/royal/donat		unique
+weapon	/obj/item/rogueweapon/scabbard/sword/cane_bb	cane sheath	unique
+weapon	/obj/item/rogueweapon/scabbard/sword/commandant	commandant's cane	unique
+weapon	/obj/item/rogueweapon/scabbard/sword/crowcane	crow cane	unique
+weapon	/obj/item/rogueweapon/scabbard/sword/hussar	hussar officer's scabbard	unique
+weapon	/obj/item/rogueweapon/scabbard/sword/kazengun/miaodao	lacquered kazengun scabbard	unique
+weapon	/obj/item/rogueweapon/scabbard/sword/royal/donat		unique
+weapon	/obj/item/rogueweapon/spear/boar/kazengun	jūmonji yari	unique
+weapon	/obj/item/rogueweapon/spear/matthios_standard	people's banner	unique
+weapon	/obj/item/rogueweapon/spear/partizan/baotha_ta	saccharine swordspear	unique
+weapon	/obj/item/rogueweapon/spear/partizan/moonlight_spear	moonlight spear	unique
+weapon	/obj/item/rogueweapon/spear/zizo		unique
+weapon	/obj/item/rogueweapon/stoneaxe/battle/zizo	cursed battle axe	unique
+weapon	/obj/item/rogueweapon/stoneaxe/bronze	dolabra	unique
+weapon	/obj/item/rogueweapon/stoneaxe/woodcut/wardenpick/jager	Arbeitsklinge	unique
+weapon	/obj/item/rogueweapon/sword/long/kriegmesser/donat_astrata	\	unique
+weapon	/obj/item/rogueweapon/sword/long/oathbreaker_matthios	\	unique
+weapon	/obj/item/rogueweapon/sword/rapier/aisu	crystalline rapier	unique
+weapon	/obj/item/rogueweapon/sword/rapier/commandant	commandant's blade	unique
+weapon	/obj/item/rogueweapon/sword/rapier/crowcane	crow cane blade	unique
+weapon	/obj/item/rogueweapon/sword/rapier/ferramancy	arcyne rapier	twilight
+weapon	/obj/item/rogueweapon/sword/rapier/foldsword	pathmaker	unique
+weapon	/obj/item/rogueweapon/sword/rapier/moonlight_rapier	moonlight rapier	unique
+weapon	/obj/item/rogueweapon/sword/rapier/psy/folding	psydonian folding blade	unique
+weapon	/obj/item/rogueweapon/sword/rapier/psy/folding/relic	\	twilight
+weapon	/obj/item/rogueweapon/sword/rapier/silver/psy/smallsword		unique
+weapon	/obj/item/rogueweapon/sword/rapier/silver/psyrapier	psydonic foil	unique
+weapon	/obj/item/rogueweapon/sword/sabre/commandant	commandant's blade	unique
+weapon	/obj/item/rogueweapon/sword/sabre/crowcane	crow cane blade	unique
+weapon	/obj/item/rogueweapon/sword/sabre/hussar	hussar officer's sabre	unique
+weapon	/obj/item/rogueweapon/sword/sabre/moonlight_sabre	moonlight sabre	unique
+weapon	/obj/item/rogueweapon/sword/sabre/shamshir/steel	steel shamshir	unique
+weapon	/obj/item/rogueweapon/sword/sabre/threaded	threaded sword	unique
+weapon	/obj/item/rogueweapon/sword/sabre/threaded/silver	silver threaded sword	unique
+weapon	/obj/item/rogueweapon/sword/sabre/zizo	cursed sword	unique
+weapon	/obj/item/rogueweapon/twilight_dragon_claw	dragon claw	unique
+weapon	/obj/item/rogueweapon/twilight_dragon_claw/left		unique
+weapon	/obj/item/rogueweapon/twilight_dragon_claw/right		unique
+weapon	/obj/item/rogueweapon/whip/witcher_chain		unique
+weapon	/obj/item/rogueweapon/whip/witcher_chain/bronze	bronze battle chain	unique
+weapon	/obj/item/rogueweapon/whip/witcher_chain/silver	silver battle chain	unique
+weapon	/obj/item/rogueweapon/woodstaff/implement/grand/magos/morto	Frozen Vow	unique
+weapon	/obj/item/rogueweapon/woodstaff/implement/grand/naledi/warscholar	naledian greater staff	unique
+weapon	/obj/item/rogueweapon/woodstaff/implement/morto	Frozen Vow	unique
+weapon	/obj/item/rogueweapon/woodstaff/quarterstaff/bostaff	bo staff	unique
+weapon	/obj/item/rogueweapon/zizo/neant	ascend's neant	unique

@@ -15,6 +15,23 @@
 	noaa = TRUE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
+/datum/intent/arc/bow/short
+	name = "arc"
+	desc = "Fires the shot in an arc that allows it to passes through mob in the way. Will also tracks the target IF you have your cursor over them. This also allows you to aims at a target above or below."
+	icon_state = "inarc"
+	blade_class = "blunt"
+	item_d_type = "blunt"
+	warnie = "aimwarn"
+	attack_verb = list("hits", "strikes")
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	tranged = TRUE
+	tshield = FALSE
+	noaa = TRUE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
+
 /datum/intent/arc/crossbow
 	name = "arc"
 	desc = "Fires the shot in an arc that allows it to passes through mob in the way. Will also tracks the target IF you have your cursor over them. This also allows you to aims at a target above or below."
@@ -162,6 +179,22 @@
 	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg')
 
+/datum/intent/axe/bash/dolabra/pioneer
+	name = "bash"
+	desc = ""
+	icon_state = "inbash"
+	blade_class = "blunt"
+	item_d_type = "blunt"
+	attack_verb = list("bashes", "clubs")
+	demolition_mod = 4.5
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg')
+
 /datum/intent/axe/chop
 	name = "chop"
 	desc = ""
@@ -256,6 +289,23 @@
 	attack_verb = list("chops", "hacks")
 	swingdelay_type = 2
 	demolition_mod = 3
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genchop (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (3).ogg')
+
+/datum/intent/axe/chop/long/woodcutter/pioneer
+	name = "chop"
+	desc = ""
+	icon_state = "inchop"
+	blade_class = "chopping"
+	item_d_type = "slash"
+	attack_verb = list("chops", "hacks")
+	swingdelay_type = 2
+	demolition_mod = 4.5
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -369,6 +419,22 @@
 	item_d_type = "slash"
 	attack_verb = list("cuts", "slashes")
 	demolition_mod = 1.3
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (3).ogg')
+
+/datum/intent/axe/cut/long/dolabra/pioneer
+	name = "cut"
+	desc = ""
+	icon_state = "incut"
+	blade_class = "slash"
+	item_d_type = "slash"
+	attack_verb = list("cuts", "slashes")
+	demolition_mod = 4.5
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -809,6 +875,21 @@
 	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/metalblunt (3).ogg')
 
+/datum/intent/dagger/thrust/quick
+	name = "quick thrust"
+	desc = ""
+	icon_state = "inshank"
+	blade_class = "stabbing"
+	item_d_type = "stab"
+	attack_verb = list("quickly thrusts")
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
+
 /datum/intent/dagger/thrust/weak
 	name = "lopsided thrust"
 	desc = ""
@@ -1028,6 +1109,21 @@
 	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/flailhit.ogg')
 
+/datum/intent/flail/smash/ranged/psywhip
+	name = "Meteor Strike"
+	desc = "Swing the weight of your whip around your body, using the angular momentum to deliver a devastating strike, propelling your enemy back and savaging them at the same time."
+	icon_state = "insmash"
+	blade_class = "smashing"
+	item_d_type = "blunt"
+	attack_verb = list("smashes")
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/flailhit.ogg')
+
 /datum/intent/flail/strike
 	name = "flailing strike"
 	desc = ""
@@ -1165,6 +1261,22 @@
 	unarmed = FALSE
 	tranged = FALSE
 	tshield = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
+
+/datum/intent/grab/upgrade
+	name = "upgrade grab"
+	desc = ""
+	icon_state = "ingrab"
+	blade_class = "blunt"
+	item_d_type = "blunt"
+	attack_verb = list("hits", "strikes")
+	canparry = FALSE
+	candodge = FALSE
+	no_attack = TRUE
+	unarmed = TRUE
+	tranged = FALSE
+	tshield = FALSE
+	noaa = TRUE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
 
 /datum/intent/grapple
@@ -1963,6 +2075,23 @@
 	no_early_release = TRUE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
 
+/datum/intent/pick/ranged/dolabra/pioneer
+	name = "ranged pick"
+	desc = ""
+	icon_state = "inpick"
+	blade_class = "stab"
+	item_d_type = "stab"
+	attack_verb = list("stabs", "impales")
+	demolition_mod = 4.5
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
+	no_early_release = TRUE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
+
 /datum/intent/pour
 	name = "feed"
 	desc = ""
@@ -2161,6 +2290,23 @@
 	hitsound = list('modular_redtard/rockhill/sound/combat/shieldbash_wood.ogg')
 
 /datum/intent/shoot/bow
+	name = "shoot"
+	desc = ""
+	icon_state = "inshoot"
+	blade_class = "blunt"
+	item_d_type = "stab"
+	warnie = "aimwarn"
+	attack_verb = list("hits", "strikes")
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	tranged = TRUE
+	tshield = FALSE
+	noaa = TRUE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
+
+/datum/intent/shoot/bow/short
 	name = "shoot"
 	desc = ""
 	icon_state = "inshoot"
@@ -3289,6 +3435,21 @@
 	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genchop (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (3).ogg')
 
+/datum/intent/sword/chop/short
+	name = "chop"
+	desc = ""
+	icon_state = "inchop"
+	blade_class = "chopping"
+	item_d_type = "slash"
+	attack_verb = list("chops", "hacks")
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genchop (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (3).ogg')
+
 /datum/intent/sword/chop/shotel
 	name = "chop"
 	desc = ""
@@ -4370,3 +4531,63 @@
 	tranged = FALSE
 	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/bluntsmall (2).ogg')
+
+/datum/intent/wing/cut
+	name = "cut"
+	desc = ""
+	icon_state = "incut"
+	blade_class = "slash"
+	item_d_type = "slash"
+	attack_verb = list("cuts", "slashes")
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (3).ogg')
+
+/datum/intent/wing/grab
+	name = "talon grab"
+	desc = ""
+	icon_state = "ingrab"
+	blade_class = "stab"
+	item_d_type = "blunt"
+	attack_verb = list("digs", "impales")
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
+
+/datum/intent/wing/pick
+	name = "talon pick"
+	desc = ""
+	icon_state = "inpick"
+	blade_class = "stab"
+	item_d_type = "blunt"
+	attack_verb = list("stabs", "impales")
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genstab (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genstab (3).ogg')
+
+/datum/intent/wing/shred
+	name = "shred"
+	desc = ""
+	icon_state = "inchop"
+	blade_class = "chopping"
+	item_d_type = "slash"
+	attack_verb = list("shreds")
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (3).ogg')

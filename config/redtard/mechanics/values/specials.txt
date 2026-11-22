@@ -7,16 +7,16 @@ special_axe_swing_cooldown = 10
 # Hefty Swing: delay. Times are in deciseconds.
 special_axe_swing_delay = 10
 
-# Hefty Swing: stamcost. Times are in deciseconds.
+# Hefty Swing: stamcost. Times are in deciseconds. The number is Vibelin's (K2g).
 special_axe_swing_stamcost = 10
 
-# Hefty Swing: immob_dur. Times are in deciseconds.
+# Hefty Swing: immob_dur. Times are in deciseconds. The number is Vibelin's (K2g).
 special_axe_swing_immob_dur = 10
 
 # Hefty Swing: exposed_dur. Times are in deciseconds.
 special_axe_swing_exposed_dur = 10
 
-# Hefty Swing: bonus. Times are in deciseconds.
+# Hefty Swing: bonus. Times are in deciseconds. The number is Vibelin's (K2g).
 special_axe_swing_bonus = 10
 
 # Flail Sweep: cooldown. Times are in deciseconds.
@@ -25,7 +25,7 @@ special_flail_sweep_cooldown = 10
 # Flail Sweep: delay. Times are in deciseconds.
 special_flail_sweep_delay = 10
 
-# Flail Sweep: stamcost. Times are in deciseconds.
+# Flail Sweep: stamcost. Times are in deciseconds. The number is Vibelin's (K2g).
 special_flail_sweep_stamcost = 10
 
 # Flail Sweep: slow_init. Times are in deciseconds.
@@ -76,7 +76,7 @@ special_greatsword_swing_cooldown = 10
 # Great Swing: delay. Times are in deciseconds.
 special_greatsword_swing_delay = 10
 
-# Great Swing: stamcost. Times are in deciseconds.
+# Great Swing: stamcost. Times are in deciseconds. The number is Vibelin's (K2g).
 special_greatsword_swing_stamcost = 10
 
 # Great Swing: dam. Times are in deciseconds.
@@ -124,7 +124,7 @@ special_ground_smash_cooldown = 10
 # Ground Smash: delay. Times are in deciseconds.
 special_ground_smash_delay = 10
 
-# Ground Smash: stamcost. Times are in deciseconds.
+# Ground Smash: stamcost. Times are in deciseconds. The number is Vibelin's (K2g).
 special_ground_smash_stamcost = 10
 
 # Ground Smash: slow_dur. Times are in deciseconds.
@@ -220,7 +220,7 @@ special_martyr_volcano_slam_fire_stacks = 10
 # Volcanic Blaze Slam: self_immob_dur. Times are in deciseconds.
 special_martyr_volcano_slam_self_immob_dur = 10
 
-# Piercing Lunge: cooldown. Times are in deciseconds.
+# Piercing Lunge: cooldown. Times are in deciseconds. The number is Vibelin's (K2g).
 special_piercing_lunge_cooldown = 10
 
 # Piercing Lunge: delay. Times are in deciseconds.
@@ -235,7 +235,7 @@ special_piercing_lunge_winded = 10
 # Piercing Lunge: open_dur. Times are in deciseconds.
 special_piercing_lunge_open_dur = 10
 
-# Backstep: cooldown. Times are in deciseconds.
+# Backstep: cooldown. Times are in deciseconds. The number is Vibelin's (K2g).
 special_polearm_backstep_cooldown = 10
 
 # Backstep: delay. Times are in deciseconds.
@@ -253,7 +253,7 @@ special_polearm_backstep_slow_dur = 10
 # Backstep: min_dist. Times are in deciseconds.
 special_polearm_backstep_min_dist = 10
 
-# Backstep: open_dur. Times are in deciseconds.
+# Backstep: open_dur. Times are in deciseconds. The number is Vibelin's (K2g).
 special_polearm_backstep_open_dur = 10
 
 # Shin Prod: cooldown. Times are in deciseconds.
@@ -262,7 +262,7 @@ special_shin_swipe_cooldown = 10
 # Shin Prod: delay. Times are in deciseconds.
 special_shin_swipe_delay = 10
 
-# Shin Prod: stamcost. Times are in deciseconds.
+# Shin Prod: stamcost. Times are in deciseconds. The number is Vibelin's (K2g).
 special_shin_swipe_stamcost = 10
 
 # Shin Prod: eff_dur. Times are in deciseconds.
@@ -286,13 +286,13 @@ special_side_sweep_stamcost = 10
 # Distracting Swipe: eff_dur. Times are in deciseconds.
 special_side_sweep_eff_dur = 10
 
-# Upper Cut: cooldown. Times are in deciseconds.
+# Upper Cut: cooldown. Times are in deciseconds. The number is Vibelin's (K2g).
 special_upper_cut_cooldown = 10
 
-# Upper Cut: delay. Times are in deciseconds.
+# Upper Cut: delay. Times are in deciseconds. The number is Vibelin's (K2g).
 special_upper_cut_delay = 10
 
-# Upper Cut: stamcost. Times are in deciseconds.
+# Upper Cut: stamcost. Times are in deciseconds. The number is Vibelin's (K2g).
 special_upper_cut_stamcost = 10
 
 # Upper Cut: knockdown_dur. Times are in deciseconds.
@@ -301,10 +301,10 @@ special_upper_cut_knockdown_dur = 10
 # Upper Cut: self_immob_dur. Times are in deciseconds.
 special_upper_cut_self_immob_dur = 10
 
-# Upper Cut: dam. Times are in deciseconds.
+# Upper Cut: dam. Times are in deciseconds. The number is Vibelin's (K2g).
 special_upper_cut_dam = 10
 
-# Upper Cut: finisher_dam. Times are in deciseconds.
+# Upper Cut: finisher_dam. Times are in deciseconds. The number is Vibelin's (K2g).
 special_upper_cut_finisher_dam = 10
 
 # Whip Coil: cooldown. Times are in deciseconds.
@@ -316,10 +316,10 @@ special_whip_coil_delay = 10
 # Whip Coil: stamcost. Times are in deciseconds.
 special_whip_coil_stamcost = 10
 
-# Whip Coil: range. Times are in deciseconds.
+# Whip Coil: range. Times are in deciseconds. The number is Vibelin's (K2g).
 special_whip_coil_range = 10
 
-# Whip Coil: immob_dur. Times are in deciseconds.
+# Whip Coil: immob_dur. Times are in deciseconds. The number is Vibelin's (K2g).
 special_whip_coil_immob_dur = 10
 
 # Whip Coil: dam. Times are in deciseconds.
@@ -367,7 +367,7 @@ special_dagger_dash_delay = 10
 # Dagger Dash: stamcost. Times are in deciseconds.
 special_dagger_dash_stamcost = 10
 
-# Quarterstaff Sweep: cooldown. Times are in deciseconds.
+# Quarterstaff Sweep: cooldown. Times are in deciseconds. The number is Vibelin's (K2g).
 special_quarterstaff_sweep_cooldown = 10
 
 # Quarterstaff Sweep: delay. Times are in deciseconds.
@@ -555,3 +555,250 @@ special_permafrost_stamcost = 10
 
 # Permafrost: active_dur. Times are in deciseconds.
 special_permafrost_active_dur = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list k2a)
+
+# Hefty Swing: how long the wielder cannot act after starting it. Times are in deciseconds.
+special_axe_swing_self_clickcd = 10
+
+# Dagger Dash: how long the speed of the dagger boost lasts. Times are in deciseconds.
+special_dagger_dash_boost_dur = 10
+
+# Drakkyrmaw: hit delay of the first (nearest) bite mark. Times are in deciseconds.
+special_drakkyrmaw_bite_bite_delay_1 = 10
+
+# Drakkyrmaw: hit delay of the second bite mark. Times are in deciseconds.
+special_drakkyrmaw_bite_bite_delay_2 = 10
+
+# Drakkyrmaw: hit delay of the third bite mark. Times are in deciseconds.
+special_drakkyrmaw_bite_bite_delay_3 = 10
+
+# Drakkyrmaw: hit delay of the fourth bite mark. Times are in deciseconds.
+special_drakkyrmaw_bite_bite_delay_4 = 10
+
+# Greatflail Swing: damage multiplier of the second wave.
+special_greatflail_swing_wave_2_share = 10
+
+# Greatflail Swing: damage multiplier of the third wave and later.
+special_greatflail_swing_wave_3_share = 10
+
+# Greatflail Swing: share of the damage the last wave strikes again at the armor alone.
+special_greatflail_swing_last_share = 10
+
+# Greatflail Swing: most victims counted for the after-effects of the sweep.
+special_greatflail_swing_max_swept = 10
+
+# Greatflail Swing: immobilization of a victim swept with one other, before a second per victim is added. Times are in deciseconds.
+special_greatflail_swing_immobilize_init = 10
+
+# Greatflail Swing: exposure of a victim swept with one other, before a second per victim is added. Times are in deciseconds.
+special_greatflail_swing_exposed_init = 10
+
+# Greatflail Swing: off balance of a victim swept with four others, before a second per victim is added. Times are in deciseconds.
+special_greatflail_swing_offbalance_init = 10
+
+# Great Swing: hit delay of the first wave; the later waves wait the delay. Times are in deciseconds.
+special_greatsword_swing_first_delay = 10
+
+# Great Swing: damage multiplier of the second wave.
+special_greatsword_swing_wave_2_share = 10
+
+# Great Swing: damage multiplier of the third wave and later.
+special_greatsword_swing_wave_3_share = 10
+
+# Great Swing: share of the damage the last wave strikes again at the armor alone.
+special_greatsword_swing_last_share = 10
+
+# Great Swing: hit delay of the first wave; the later waves wait the delay. Times are in deciseconds.
+special_greatsword_swing_white_stag_first_delay = 10
+
+# Great Swing: damage multiplier of the second wave.
+special_greatsword_swing_white_stag_wave_2_share = 10
+
+# Great Swing: damage multiplier of the third wave and later.
+special_greatsword_swing_white_stag_wave_3_share = 10
+
+# Great Swing: share of the damage the last wave strikes again at the armor alone.
+special_greatsword_swing_white_stag_last_share = 10
+
+# Martyr's Blaze: the weapon damage of the blaze is divided by this.
+special_martyr_damage_divisor = 10
+
+# Blazing Axe Sweep: the weapon damage of the blaze is divided by this.
+special_martyr_blazing_sweep_damage_divisor = 10
+
+# Blazing Sword Sweep: the weapon damage of the blaze is divided by this.
+special_martyr_blazing_sweep_sword_damage_divisor = 10
+
+# Blazing Trident Strike: the weapon damage of the blaze is divided by this.
+special_martyr_blazing_trident_damage_divisor = 10
+
+# Volcanic Blaze Slam: the weapon damage of the blaze is divided by this.
+special_martyr_volcano_slam_damage_divisor = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list k2d2)
+
+# Wave Swing (Azure Peak wave_swing, the parent of the others): cooldown before a special can be used again. Times are in deciseconds.
+special_wave_swing_cooldown = 10
+
+# Wave Swing (Azure Peak wave_swing, the parent of the others): hit delay of a wave after its marks appear (of the first wave too when it has no delay of its own). Times are in deciseconds.
+special_wave_swing_delay = 10
+
+# Wave Swing (Azure Peak wave_swing, the parent of the others): stamina spent on use (a share of the maximum when below 1).
+special_wave_swing_stamcost = 10
+
+# Wave Swing (Azure Peak wave_swing, the parent of the others): base damage of a wave's cut, times the share of the wave.
+special_wave_swing_dam = 10
+
+# Wave Swing (Azure Peak wave_swing, the parent of the others): damage multiplier of the first wave.
+special_wave_swing_wave_1_share = 10
+
+# Wave Swing (Azure Peak wave_swing, the parent of the others): damage multiplier of the second wave.
+special_wave_swing_wave_2_share = 10
+
+# Wave Swing (Azure Peak wave_swing, the parent of the others): damage multiplier of the third wave.
+special_wave_swing_wave_3_share = 10
+
+# Wave Swing (Azure Peak wave_swing, the parent of the others): share of the base damage the last wave strikes again at the armor alone.
+special_wave_swing_last_share = 10
+
+# Wave Swing (Azure Peak wave_swing, the parent of the others): how long a creature caught in a wave is slowed. Times are in deciseconds.
+special_wave_swing_slow_dur = 10
+
+# Wave Swing (Azure Peak wave_swing, the parent of the others): how long the user stands rooted. Times are in deciseconds.
+special_wave_swing_self_immob = 10
+
+# Wave Swing (Azure Peak wave_swing, the parent of the others): how long the user cannot act. Times are in deciseconds.
+special_wave_swing_self_clickcd = 10
+
+# Wave Swing (Azure Peak wave_swing, the parent of the others): how long the user stays vulnerable. Times are in deciseconds.
+special_wave_swing_self_vuln = 10
+
+# Wave Swing (Azure Peak wave_swing, the parent of the others): how long the exposing wave, and then the last wave, leave a standing victim exposed (only a special with an exposing wave). Times are in deciseconds.
+special_wave_swing_expose_dur = 10
+
+# Great Swing (Azure Peak wave_swing/greatsword): cooldown before a special can be used again. Times are in deciseconds.
+special_wave_swing_greatsword_cooldown = 10
+
+# Great Swing (Azure Peak wave_swing/greatsword): hit delay of a wave after its marks appear (of the first wave too when it has no delay of its own). Times are in deciseconds.
+special_wave_swing_greatsword_delay = 10
+
+# Great Swing (Azure Peak wave_swing/greatsword): hit delay of the first wave; the later waves wait the delay. Times are in deciseconds.
+special_wave_swing_greatsword_first_delay = 10
+
+# Great Swing (Azure Peak wave_swing/greatsword): stamina spent on use (a share of the maximum when below 1). The number is Vibelin's (K2g).
+special_wave_swing_greatsword_stamcost = 10
+
+# Great Swing (Azure Peak wave_swing/greatsword): base damage of a wave's cut, times the share of the wave.
+special_wave_swing_greatsword_dam = 10
+
+# Great Swing (Azure Peak wave_swing/greatsword): damage multiplier of the first wave.
+special_wave_swing_greatsword_wave_1_share = 10
+
+# Great Swing (Azure Peak wave_swing/greatsword): damage multiplier of the second wave.
+special_wave_swing_greatsword_wave_2_share = 10
+
+# Great Swing (Azure Peak wave_swing/greatsword): damage multiplier of the third wave.
+special_wave_swing_greatsword_wave_3_share = 10
+
+# Great Swing (Azure Peak wave_swing/greatsword): share of the base damage the last wave strikes again at the armor alone.
+special_wave_swing_greatsword_last_share = 10
+
+# Great Swing (Azure Peak wave_swing/greatsword): how long a creature caught in a wave is slowed. Times are in deciseconds.
+special_wave_swing_greatsword_slow_dur = 10
+
+# Great Swing (Azure Peak wave_swing/greatsword): how long the user stands rooted. Times are in deciseconds.
+special_wave_swing_greatsword_self_immob = 10
+
+# Great Swing (Azure Peak wave_swing/greatsword): how long the user cannot act. Times are in deciseconds.
+special_wave_swing_greatsword_self_clickcd = 10
+
+# Great Swing (Azure Peak wave_swing/greatsword): how long the user stays vulnerable. Times are in deciseconds.
+special_wave_swing_greatsword_self_vuln = 10
+
+# Great Swing (Azure Peak wave_swing/greatsword): how long the exposing wave, and then the last wave, leave a standing victim exposed (only a special with an exposing wave). Times are in deciseconds.
+special_wave_swing_greatsword_expose_dur = 10
+
+# Great Swing of the White Stag (Azure Peak wave_swing/greatsword/white_stag): cooldown before a special can be used again. Times are in deciseconds.
+special_wave_swing_greatsword_white_stag_cooldown = 10
+
+# Great Swing of the White Stag (Azure Peak wave_swing/greatsword/white_stag): hit delay of a wave after its marks appear (of the first wave too when it has no delay of its own). Times are in deciseconds.
+special_wave_swing_greatsword_white_stag_delay = 10
+
+# Great Swing of the White Stag (Azure Peak wave_swing/greatsword/white_stag): hit delay of the first wave; the later waves wait the delay. Times are in deciseconds.
+special_wave_swing_greatsword_white_stag_first_delay = 10
+
+# Great Swing of the White Stag (Azure Peak wave_swing/greatsword/white_stag): stamina spent on use (a share of the maximum when below 1).
+special_wave_swing_greatsword_white_stag_stamcost = 10
+
+# Great Swing of the White Stag (Azure Peak wave_swing/greatsword/white_stag): base damage of a wave's cut, times the share of the wave.
+special_wave_swing_greatsword_white_stag_dam = 10
+
+# Great Swing of the White Stag (Azure Peak wave_swing/greatsword/white_stag): damage multiplier of the first wave.
+special_wave_swing_greatsword_white_stag_wave_1_share = 10
+
+# Great Swing of the White Stag (Azure Peak wave_swing/greatsword/white_stag): damage multiplier of the second wave.
+special_wave_swing_greatsword_white_stag_wave_2_share = 10
+
+# Great Swing of the White Stag (Azure Peak wave_swing/greatsword/white_stag): damage multiplier of the third wave.
+special_wave_swing_greatsword_white_stag_wave_3_share = 10
+
+# Great Swing of the White Stag (Azure Peak wave_swing/greatsword/white_stag): share of the base damage the last wave strikes again at the armor alone.
+special_wave_swing_greatsword_white_stag_last_share = 10
+
+# Great Swing of the White Stag (Azure Peak wave_swing/greatsword/white_stag): how long a creature caught in a wave is slowed. Times are in deciseconds.
+special_wave_swing_greatsword_white_stag_slow_dur = 10
+
+# Great Swing of the White Stag (Azure Peak wave_swing/greatsword/white_stag): how long the user stands rooted. Times are in deciseconds.
+special_wave_swing_greatsword_white_stag_self_immob = 10
+
+# Great Swing of the White Stag (Azure Peak wave_swing/greatsword/white_stag): how long the user cannot act. Times are in deciseconds.
+special_wave_swing_greatsword_white_stag_self_clickcd = 10
+
+# Great Swing of the White Stag (Azure Peak wave_swing/greatsword/white_stag): how long the user stays vulnerable. Times are in deciseconds.
+special_wave_swing_greatsword_white_stag_self_vuln = 10
+
+# Great Swing of the White Stag (Azure Peak wave_swing/greatsword/white_stag): how long the exposing wave, and then the last wave, leave a standing victim exposed (only a special with an exposing wave). Times are in deciseconds.
+special_wave_swing_greatsword_white_stag_expose_dur = 10
+
+# Vicious Swing (Azure Peak wave_swing/vicious): cooldown before a special can be used again. Times are in deciseconds.
+special_wave_swing_vicious_cooldown = 10
+
+# Vicious Swing (Azure Peak wave_swing/vicious): hit delay of a wave after its marks appear (of the first wave too when it has no delay of its own). Times are in deciseconds.
+special_wave_swing_vicious_delay = 10
+
+# Vicious Swing (Azure Peak wave_swing/vicious): stamina spent on use (a share of the maximum when below 1).
+special_wave_swing_vicious_stamcost = 10
+
+# Vicious Swing (Azure Peak wave_swing/vicious): base damage of a wave's cut, times the share of the wave.
+special_wave_swing_vicious_dam = 10
+
+# Vicious Swing (Azure Peak wave_swing/vicious): damage multiplier of the first wave.
+special_wave_swing_vicious_wave_1_share = 10
+
+# Vicious Swing (Azure Peak wave_swing/vicious): damage multiplier of the second wave.
+special_wave_swing_vicious_wave_2_share = 10
+
+# Vicious Swing (Azure Peak wave_swing/vicious): damage multiplier of the third wave.
+special_wave_swing_vicious_wave_3_share = 10
+
+# Vicious Swing (Azure Peak wave_swing/vicious): damage multiplier of the fourth wave.
+special_wave_swing_vicious_wave_4_share = 10
+
+# Vicious Swing (Azure Peak wave_swing/vicious): share of the base damage the last wave strikes again at the armor alone.
+special_wave_swing_vicious_last_share = 10
+
+# Vicious Swing (Azure Peak wave_swing/vicious): how long a creature caught in a wave is slowed. Times are in deciseconds.
+special_wave_swing_vicious_slow_dur = 10
+
+# Vicious Swing (Azure Peak wave_swing/vicious): how long the user stands rooted. Times are in deciseconds.
+special_wave_swing_vicious_self_immob = 10
+
+# Vicious Swing (Azure Peak wave_swing/vicious): how long the user cannot act. Times are in deciseconds.
+special_wave_swing_vicious_self_clickcd = 10
+
+# Vicious Swing (Azure Peak wave_swing/vicious): how long the user stays vulnerable. Times are in deciseconds.
+special_wave_swing_vicious_self_vuln = 10
+
+# Vicious Swing (Azure Peak wave_swing/vicious): how long the exposing wave, and then the last wave, leave a standing victim exposed (only a special with an exposing wave). Times are in deciseconds.
+special_wave_swing_vicious_expose_dur = 10

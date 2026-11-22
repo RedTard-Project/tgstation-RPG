@@ -1,3 +1,15 @@
+/datum/rogue_armor/b100_s65_t130_p20_f0_a0
+	blunt = 100
+	slash = 65
+	stab = 130
+	piercing = 20
+
+/datum/rogue_armor/b100_s65_t130_p40_f0_a0
+	blunt = 100
+	slash = 65
+	stab = 130
+	piercing = 40
+
 /datum/rogue_armor/b10_s80_t100_p100_f100_a0
 	blunt = 10
 	slash = 80

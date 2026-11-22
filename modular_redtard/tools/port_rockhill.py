@@ -1096,6 +1096,12 @@ def main():
     else:
         sync_source(cfg['source'])
     port = cfg['port']
+    # The Ratwood items the port carries beyond the map (extra_types_file: one type per line, the K3 selection of the
+    # missing Ratwood items); they join extra_types, so each comes with its ancestors, sprites and numbers.
+    if port.get('extra_types_file'):
+        listed = [line.strip() for line in open(port['extra_types_file'], encoding='utf-8') if line.strip() and not line.startswith('#')]
+        port['extra_types'] = list(dict.fromkeys(list(port.get('extra_types', [])) + listed))
+        print('extra types from', port['extra_types_file'] + ':', len(listed))
     rules = cfg['replacements']
     print('parsing', code_root)
     types, _ = parse_codebase(code_root)

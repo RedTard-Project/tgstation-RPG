@@ -360,6 +360,52 @@
 	var/obj/item/natural/bone/bone = allocate(__IMPLIED_TYPE__)
 	TEST_ASSERT(istype(rogue_grind_recipe(bone), /datum/alch_grind_recipe/natural_bone), "Natural bone has no mortar recipe")
 
+/// K2d1: a spear stuck in the arm by a crit gives pull out and twist; a twist is a second crit and frees it; a kick at the
+/// holder breaks the hold and leaves the spear in the arm, taken out as an arrow; a mace never sticks.
+/datum/unit_test/rogue_stuck_weapon
+
+/datum/unit_test/rogue_stuck_weapon/Run()
+	var/mob/living/carbon/human/consistent/attacker = allocate(__IMPLIED_TYPE__)
+	var/mob/living/carbon/human/consistent/victim = allocate(__IMPLIED_TYPE__)
+	var/obj/item/rogueweapon/spear/spear = allocate(__IMPLIED_TYPE__)
+	attacker.AddElement(/datum/element/rogue_combat)
+	attacker.put_in_active_hand(spear)
+	var/obj/item/bodypart/arm = victim.get_bodypart(BODY_ZONE_L_ARM)
+	var/datum/intent/thrust = attacker.rogue_strike_intent(spear)
+	TEST_ASSERT(victim.rogue_stick_weapon(attacker, spear, arm, BCLASS_STAB, thrust), "A spear crit did not stick in the arm")
+	TEST_ASSERT(spear.rogue_stuck, "The spear is not held as stuck")
+	var/list/stuck_intents = attacker.rogue_hand_intents()
+	TEST_ASSERT_EQUAL(length(stuck_intents), 2, "A stuck spear should offer pull out and twist")
+	TEST_ASSERT(stuck_intents[1] == /datum/intent/rogue_stuck/pull_out && stuck_intents[2] == /datum/intent/rogue_stuck/twist, "A stuck spear offers other intents")
+	TEST_ASSERT(attacker.rogue_select_intent(2), "Could not pick twist")
+	var/brute_before = victim.get_brute_loss()
+	attacker.next_move = 0
+	spear.melee_attack_chain(attacker, victim)
+	TEST_ASSERT(!spear.rogue_stuck, "Twisting did not free the spear")
+	TEST_ASSERT(attacker.is_holding(spear), "The twisted spear left the hand")
+	TEST_ASSERT(victim.get_brute_loss() > brute_before, "Twisting did no harm")
+	var/datum/wound/pierce/stab_wound = locate(/datum/wound/pierce) in arm.wounds
+	TEST_ASSERT(stab_wound, "Twisting a spear did not leave a piercing crit")
+	TEST_ASSERT(!(/datum/intent/rogue_stuck/twist in attacker.rogue_hand_intents()), "The freed spear still offers twist")
+	TEST_ASSERT(victim.rogue_stick_weapon(attacker, spear, arm, BCLASS_STAB, thrust), "The spear did not stick again")
+	// The kick's own steps (rogue_try_kick()), without its swing and block rolls: it comes, then lands as plain damage.
+	var/mob/living/carbon/human/consistent/kicker = allocate(__IMPLIED_TYPE__)
+	var/datum/rogue_strike/kick = new(kicker, attacker, null, null, ROGUE_STRIKE_KICK)
+	kick.incoming()
+	qdel(kick)
+	attacker.apply_damage(5, BRUTE, BODY_ZONE_CHEST)
+	TEST_ASSERT(!spear.rogue_stuck, "A kick at the holder did not break the hold")
+	TEST_ASSERT(!attacker.is_holding(spear), "The holder kept the spear after the kick")
+	TEST_ASSERT(spear.loc == victim && (spear in arm.embedded_objects), "The spear did not stay in the arm")
+	spear.get_embed().remove_embedding(attacker)
+	TEST_ASSERT(!(spear in arm.embedded_objects), "The spear did not come out as an arrow does")
+	TEST_ASSERT(attacker.is_holding(spear), "The spear taken out is not in the hand")
+	attacker.dropItemToGround(spear)
+	var/obj/item/rogueweapon/mace/mace = allocate(__IMPLIED_TYPE__)
+	attacker.put_in_active_hand(mace)
+	TEST_ASSERT(!mace.rogue_can_stick(BCLASS_BLUNT), "A blunt blow can stick")
+	TEST_ASSERT(!victim.rogue_stick_weapon(attacker, mace, arm, BCLASS_BLUNT, attacker.rogue_strike_intent(mace)), "A mace stuck in the arm")
+
 #undef TEST_ASSERT
 #undef TEST_ASSERT_EQUAL
 #endif

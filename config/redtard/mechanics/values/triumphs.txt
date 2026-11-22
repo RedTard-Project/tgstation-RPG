@@ -25,7 +25,7 @@ triumph_board_size = 10
 # Least triumphs to be on the leaderboard (Ratwood).
 triumph_board_min = 10
 
-# Deciseconds after spawning before a character earns their role's round contributor points at round end (Ratwood 45 minutes).
+# Deciseconds after spawning before a character earns their role's round contributor points at round end (Ratwood).
 pq_rcp_round_time = 10
 
 # Round contributor points per point of PQ (Ratwood).

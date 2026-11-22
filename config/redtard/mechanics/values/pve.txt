@@ -37,13 +37,13 @@ pve_fireball_damage = 10
 # Burn of a fireball on everyone else within a tile of where it lands, but the shooter's kin.
 pve_fireball_splash = 10
 
-# Deciseconds between an infernal watcher's fireballs (Ratwood ranged_cooldown 6 SECONDS).
+# Deciseconds between an infernal watcher's fireballs (Ratwood ranged_cooldown).
 pve_watcher_shot_cooldown = 10
 
 # Burn of the fiend's great fireball, which also sets its target alight.
 pve_great_fireball_damage = 10
 
-# Deciseconds between the fiend's fireballs (Ratwood ranged_cooldown 50).
+# Deciseconds between the fiend's fireballs (Ratwood ranged_cooldown).
 pve_fiend_shot_cooldown = 10
 
 # Damage of the lump of earth the colossus throws (Ratwood earthenchunk).
@@ -55,7 +55,7 @@ pve_colossus_shot_cooldown = 10
 # Damage of the mire lurker's web glob (Ratwood /obj/projectile/bullet/spider).
 pve_web_glob_damage = 10
 
-# Deciseconds a web glob holds its target in place (Ratwood Immobilize(15)).
+# Deciseconds a web glob holds its target in place (Ratwood Immobilize).
 pve_web_glob_hold = 10
 
 # Deciseconds between the mire lurker's web globs (Ratwood ranged_cooldown_time).
@@ -67,7 +67,7 @@ pve_stone_throw_cooldown = 10
 # Deciseconds a cave troll eyes its target before it digs out a rock (Ratwood cast_time).
 pve_stone_throw_aim = 10
 
-# Deciseconds a cave troll digs the rock out before it throws (Ratwood sleep(20)).
+# Deciseconds a cave troll digs the rock out before it throws (Ratwood sleep).
 pve_stone_throw_dig = 10
 
 # Tiles a cave troll throws a rock (Ratwood range); never at someone next to it.
@@ -94,10 +94,10 @@ pve_quake_cooldown = 10
 # Deciseconds between the marking of a quake and the ground rupturing (Ratwood).
 pve_quake_delay = 10
 
-# Deciseconds a quake throws its victims down (Ratwood Paralyze(50)).
+# Deciseconds a quake throws its victims down (Ratwood Paralyze).
 pve_quake_paralyze = 10
 
-# Deciseconds the rocks a quake thrusts up stay (Ratwood QDEL_IN 200).
+# Deciseconds the rocks a quake thrusts up stay (Ratwood QDEL_IN).
 pve_quake_rock_time = 10
 
 # Deciseconds after the behemoth's blow lands before it flings the one it hit (Ratwood yeet).
@@ -106,7 +106,7 @@ pve_fling_delay = 10
 # Tiles the behemoth flings the one it hit (Ratwood).
 pve_fling_range = 10
 
-# Damage of the behemoth's fling, past armor (Ratwood adjustBruteLoss(30)).
+# Damage of the behemoth's fling, past armor (Ratwood adjustBruteLoss).
 pve_fling_damage = 10
 
 # Deciseconds between the colossus's stomps (Ratwood stomp_cd).
@@ -115,7 +115,7 @@ pve_stomp_cooldown = 10
 # Tiles the colossus's stomp flings everyone next to it (Ratwood).
 pve_stomp_range = 10
 
-# Damage of the colossus's stomp, past armor (Ratwood adjustBruteLoss(60)).
+# Damage of the colossus's stomp, past armor (Ratwood adjustBruteLoss).
 pve_stomp_damage = 10
 
 # Deciseconds between the fiend's meteor storms (Ratwood flame_cd).
@@ -142,13 +142,13 @@ pve_summon_cap = 10
 # Deciseconds between a hell hound's bites that set someone on fire (Ratwood flame_cd).
 pve_ignite_cooldown = 10
 
-# Fire stacks a hell hound's bite gives (Ratwood adjust_fire_stacks(5)).
+# Fire stacks a hell hound's bite gives (Ratwood adjust_fire_stacks).
 pve_ignite_stacks = 10
 
 # Deciseconds between a glimmerwing's blows that dust someone with fae powder (Ratwood drug_cd).
 pve_dust_cooldown = 10
 
-# Toxin damage of a glimmerwing's fae powder (Ratwood adjustToxLoss(15)).
+# Toxin damage of a glimmerwing's fae powder (Ratwood adjustToxLoss).
 pve_dust_toxin = 10
 
 # Deciseconds fae powder sharpens wits and will and slows the feet of the one dusted (Ratwood seelie_drugs).
@@ -172,10 +172,10 @@ pve_rage_phase_two = 10
 # Share of health below which a minotaur enters its third phase (Vibelin).
 pve_rage_phase_three = 10
 
-# Damage a minotaur's blows gain in its second phase (Vibelin: enrage bonus 5 and phase bonus 5).
+# Damage a minotaur's blows gain in its second phase (Vibelin: enrage bonus and phase bonus).
 pve_rage_bonus_two = 10
 
-# Damage a minotaur's blows gain in its third phase (Vibelin: 15 and 10).
+# Damage a minotaur's blows gain in its third phase (Vibelin: enrage bonus and phase bonus).
 pve_rage_bonus_three = 10
 
 # Damage a minotaur's blows gain at full rage, less with less rage (Vibelin).
@@ -211,7 +211,7 @@ pve_fury_cooldown = 10
 # Deciseconds a minotaur raises its weapon before fire erupts (Vibelin).
 pve_fury_windup = 10
 
-# Burn of each of the two flares of a patch of erupting fire (Vibelin: 5 a tick for 4 seconds); a raging inferno burns 1.6 times as hard.
+# Burn of each of the two flares of a patch of erupting fire (Vibelin: damage a tick for a few seconds); a raging inferno burns harder by a factor.
 pve_fury_damage = 10
 
 # Deciseconds between a minotaur's shockwaves, in its third phase (Vibelin).
@@ -223,7 +223,7 @@ pve_slam_rage = 10
 # Deciseconds a minotaur raises its fists before the shockwave (Vibelin).
 pve_slam_windup = 10
 
-# Damage of the shockwave a tile from the minotaur, 5 less per tile further, past armor (Vibelin).
+# Damage of the shockwave a tile from the minotaur, less for every tile further, past armor (Vibelin).
 pve_slam_damage = 10
 
 # Percent chance a web holds whoever walks into it for a moment, unless they walk webs (Ratwood stickyweb).
@@ -241,7 +241,7 @@ pve_mire_web_projectile_pass = 10
 # Least deciseconds between two webs a beespider spins.
 pve_web_interval = 10
 
-# Most webs within 3 tiles of a beespider for it to spin another.
+# Most webs within a short range of a beespider for it to spin another.
 pve_web_cap = 10
 
 # Tiles from a beespider within which it takes a nest as its home; a colony on the map with no nest that near weaves one at round start.
@@ -250,10 +250,10 @@ pve_nest_range = 10
 # Most spiders inside a nest (Vibelin mob_home max_mobs).
 pve_nest_capacity = 10
 
-# Percent chance per second that an idle beespider sets out for its nest (Vibelin 15).
+# Percent chance per second that an idle beespider sets out for its nest (Vibelin).
 pve_nest_enter_chance = 10
 
-# Percent chance per second that a beespider inside its nest comes out (Vibelin 35).
+# Percent chance per second that a beespider inside its nest comes out (Vibelin).
 pve_nest_leave_chance = 10
 
 # Tiles from a nest within which a stranger sends the spiders inside swarming out (Vibelin proximity monitor).
@@ -277,7 +277,7 @@ pve_cocoon_time = 10
 # Deciseconds of struggling to break out of a cocoon (Ratwood).
 pve_cocoon_breakout = 10
 
-# Damage of each kind a cocoon heals per second, plus a twentieth for each point of constitution, strength and willpower over 10 (Azure spider_cocoon).
+# Damage of each kind a cocoon heals per second, plus a share for each point of constitution, strength and willpower over the baseline (Azure spider_cocoon).
 pve_cocoon_heal = 10
 
 # Blood a cocoon gives back per second, plus half a unit for each of those points (Azure spider_cocoon).
@@ -306,7 +306,7 @@ npc_special_min_int = 10
 # Deciseconds an NPC waits before it looks again for a potion, a cloth or allies it did not find.
 npc_search_pause = 10
 
-# Brute or burn damage from which an NPC drinks a healing potion it carries (Vibelin use_healing_drink: 20).
+# Brute or burn damage from which an NPC drinks a healing potion it carries (Vibelin use_healing_drink).
 npc_potion_damage = 10
 
 # Deciseconds between two potions an NPC drinks (Vibelin consume_healing_drink action_cooldown).
@@ -315,19 +315,19 @@ npc_potion_cooldown = 10
 # Deciseconds between two bandages an NPC puts on out of a fight (Vibelin apply_bandage action_cooldown).
 npc_bandage_cooldown = 10
 
-# Brute or burn damage from which an NPC calls its own kind to help (Vibelin call_for_help: 40).
+# Brute or burn damage from which an NPC calls its own kind to help (Vibelin call_for_help).
 npc_help_damage = 10
 
 # Deciseconds between two calls for help of an NPC (Vibelin call_for_help action_cooldown).
 npc_help_cooldown = 10
 
-# Tiles within which an NPC's call for help is answered (Vibelin: max_target_distance - 1).
+# Tiles within which an NPC's call for help is answered (Vibelin: max_target_distance).
 npc_help_range = 10
 
 # Share of its health below which an NPC strikes and backs off (Vibelin HARASS_HEALTH_THRESHOLD).
 npc_harass_health = 10
 
-# Share of its stamina spent past which an NPC strikes and backs off, times its share of health (Vibelin HARASS_STAMINA_THRESHOLD of 100).
+# Share of its stamina spent past which an NPC strikes and backs off, times its share of health (Vibelin HARASS_STAMINA_THRESHOLD).
 npc_harass_fatigue = 10
 
 # Tiles an NPC backs off after its blow (Vibelin HARASS_RETREAT_DIST).
@@ -339,10 +339,10 @@ npc_harass_pause = 10
 # Deciseconds more it keeps back for every point of stamina spent past the threshold (Vibelin HARASS_STAMINA_COOLDOWN_SCALE).
 npc_harass_pause_per_stamina = 10
 
-# How many times longer it keeps back at no health than at full (Vibelin lerp(1.5, 1, health)).
+# How many times longer it keeps back at no health than at full (Vibelin lerp(health)).
 npc_harass_hurt_factor = 10
 
-# Tiles within which an NPC sees the others of its kind fighting its foe when it flanks (Vibelin view(10)).
+# Tiles within which an NPC sees the others of its kind fighting its foe when it flanks (Vibelin view).
 npc_flank_range = 10
 
 # Tiles from the foe of an NPC's flanking spot (Vibelin FLANK_RADIUS).
@@ -363,10 +363,10 @@ npc_flank_recheck = 10
 # Tiles closer than which an NPC with a bow, crossbow or sling fights in melee instead (Vibelin ARCHER_NPC_MIN_RANGE).
 npc_shot_min_range = 10
 
-# Tiles within which an NPC shoots a foe it sees, and keeps to while it can shoot (Vibelin ARCHER_NPC_MIN_RANGE + 4).
+# Tiles within which an NPC shoots a foe it sees, and keeps to while it can shoot (Vibelin ARCHER_NPC_MIN_RANGE).
 npc_shot_range = 10
 
-# Most deciseconds an NPC draws a shot, whatever the intent's own draw (Vibelin min(chargetime, 1 SECONDS)).
+# Most deciseconds an NPC draws a shot, whatever the intent's own draw (Vibelin min(chargetime)).
 npc_shot_draw_max = 10
 
 # Deciseconds an NPC remembers its launcher and quiver, and does not try to shoot after a shot went wrong (Vibelin ARCHER_NPC_EQUIPMENT_CACHE_TIME).
@@ -390,7 +390,7 @@ npc_loot_interval = 10
 # How many cloths, healing potions and throwing knives or javelins each an NPC gathers at most.
 npc_loot_carry = 10
 
-# Deciseconds an NPC leaves alone a thing it could not take (Vibelin: 5 minutes on the loot blacklist).
+# Deciseconds an NPC leaves alone a thing it could not take (Vibelin: on the loot blacklist).
 npc_loot_ignore = 10
 
 # Deciseconds an NPC walks to a thing before it gives up on it.
@@ -432,13 +432,13 @@ npc_grab_clumsy_use = 10
 # Deciseconds between two glances of an NPC for sneakers (Ratwood next_seek).
 npc_sneak_seek = 10
 
-# Tiles within which an NPC glances for sneakers (Ratwood view(7)).
+# Tiles within which an NPC glances for sneakers (Ratwood view).
 npc_sneak_range = 10
 
-# Percent chance a point of an NPC's perception to spot a sneaker (Ratwood npc_detect_sneak: 4 * STAPER).
+# Percent chance a point of an NPC's perception to spot a sneaker (Ratwood npc_detect_sneak: * STAPER).
 npc_sneak_per_perception = 10
 
-# Percent less chance to spot a sneaker at a passing glance (Ratwood npc_detect_sneak(L, -20)).
+# Percent less chance to spot a sneaker at a passing glance (Ratwood npc_detect_sneak(L)).
 npc_sneak_passive = 10
 
 # Percent less chance to spot a sneaker for every rank of their Sneaking (Ratwood sneak_bonus).
@@ -447,7 +447,7 @@ npc_sneak_skill = 10
 # Percent more chance to spot a sneaker whose armour is too heavy for them (Ratwood check_armor_skill(): armor is loud).
 npc_sneak_loud_armor = 10
 
-# Percent more or less chance to spot a sneaker for every point of their fortune below or above 10 (Ratwood badluck(5), goodluck(5)).
+# Percent more or less chance to spot a sneaker for every point of their fortune below or above the baseline (Ratwood badluck(), goodluck).
 npc_sneak_luck = 10
 
 # Percent more chance to spot a hidden attacker when the NPC is below half its health (Ratwood retaliate()).

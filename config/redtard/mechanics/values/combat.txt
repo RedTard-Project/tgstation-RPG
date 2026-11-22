@@ -12,7 +12,7 @@ unarmed_base_wdef_bare = 10
 # Parry defense of hands in bracers or gloves for a civilized barbarian (Azure Peak).
 unarmed_base_wdef_equipped = 10
 
-# Deciseconds between two parry attempts (Azure Peak); the defend alt intent ignores it.
+# Deciseconds between two parry attempts (Azure Peak); the defend alt intent ignores it. The number is Vibelin's (K2g).
 parry_delay = 10
 
 # Extra stamina of a parry in armor one is not trained for (Azure Peak).
@@ -21,16 +21,16 @@ parry_untrained_drain = 10
 # Integrity a parrying weapon loses (Azure Peak).
 parry_integrity_damage = 10
 
-# Longest delay between two dodges (Azure Peak CLICK_CD_DODGE); the delay itself starts at 0 and grows with dodges, feints and baits. The defend alt intent ignores it.
+# Longest delay between two dodges (Azure Peak CLICK_CD_DODGE); the delay itself starts from nothing and grows with dodges, feints and baits. The defend alt intent ignores it.
 dodge_delay = 10
 
-# Base stamina of a dodge (Azure Peak).
+# Base stamina of a dodge (Azure Peak). The number is Vibelin's (K2g).
 dodge_stamina_drain = 10
 
 # Least stamina a dodge costs (Azure Peak).
 dodge_min_drain = 10
 
-# Combat skill experience per point of intelligence after a parry exchange (Azure Peak).
+# Combat skill experience per point of intelligence after a parry exchange (Azure Peak). The number is Vibelin's (K2g).
 xp_per_int = 10
 
 # Share of that experience against someone without a mind.
@@ -63,13 +63,13 @@ sneak_light = 10
 # Divisor of the sneaking rank in the hiding light threshold.
 sneak_light_per_rank = 10
 
-# Sneaking slowdown as a share of the walk delay at sneaking rank 0 (Azure Peak).
+# Sneaking slowdown as a share of the walk delay at the lowest sneaking rank (Azure Peak).
 sneak_slow_base = 10
 
 # Share of the walk delay removed from that slowdown per sneaking rank.
 sneak_slow_per_rank = 10
 
-# Deciseconds a sneaker takes to fade out at sneaking rank 0 (Azure Peak).
+# Deciseconds a sneaker takes to fade out at the lowest sneaking rank (Azure Peak).
 sneak_fade = 10
 
 # Deciseconds of fading removed per sneaking rank.
@@ -90,7 +90,7 @@ kick_swing = 10
 # Kick damage before the strength factor (Azure Peak).
 kick_damage = 10
 
-# Deciseconds the kicker is off balance after a kick.
+# Deciseconds the kicker is off balance after a kick. The number is Vibelin's (K2g).
 kick_offbalance = 10
 
 # Percent chance per point of strength that a kick throws the target a tile back.
@@ -108,16 +108,16 @@ jump_walk_range = 10
 # Jump length in tiles at a run.
 jump_run_range = 10
 
-# Stamina of a jump at a walk.
+# Stamina of a jump at a walk. The number is Vibelin's (K2g).
 jump_walk_stamina = 10
 
 # Stamina of a jump at a run.
 jump_run_stamina = 10
 
-# Deciseconds off balance after a jump at a walk.
+# Deciseconds off balance after a jump at a walk. The number is Vibelin's (K2g).
 jump_walk_offbalance = 10
 
-# Deciseconds off balance after a jump at a run.
+# Deciseconds off balance after a jump at a run. The number is Vibelin's (K2g).
 jump_run_offbalance = 10
 
 # Damage of a bite on something that is not a humanoid (a humanoid's bite is the bite_damage formula).
@@ -132,7 +132,7 @@ steal_unaware_factor = 10
 # Margin below which a failed theft is noticed by everyone around.
 steal_fumble = 10
 
-# Percent chance to work a ring loose at stealing rank 0.
+# Percent chance to work a ring loose at the lowest stealing rank.
 steal_ring_base = 10
 
 # Percent chance added per stealing rank to work a ring loose.
@@ -168,13 +168,13 @@ look_around_range = 10
 # Deciseconds a found sneaker stays revealed.
 look_around_reveal = 10
 
-# Deciseconds between grab actions before speed is subtracted (Ratwood: twice the melee delay).
+# Deciseconds between grab actions before speed is subtracted (Ratwood: a multiple of the melee delay).
 grab_action_delay = 10
 
 # Grab modifier against a compliant target (Ratwood).
 grab_compliant_modifier = 10
 
-# Grab modifier added against a restrained target (Ratwood).
+# Grab modifier added against a restrained target (Ratwood). The number is Vibelin's (K2g).
 grab_restrained_bonus = 10
 
 # Grab modifier added against a target lying under a standing grabber (Ratwood).
@@ -201,13 +201,13 @@ grab_choke_cost_max = 10
 # Least stamina of a limb twist (Ratwood).
 grab_twist_cost_min = 10
 
-# Most stamina of a limb twist (Ratwood).
+# Most stamina of a limb twist (Ratwood). The number is Vibelin's (K2g).
 grab_twist_cost_max = 10
 
 # Least stamina of shoving a grabbed foe down (Ratwood).
 grab_shove_cost_min = 10
 
-# Most stamina of shoving a grabbed foe down (Ratwood).
+# Most stamina of shoving a grabbed foe down (Ratwood). The number is Vibelin's (K2g).
 grab_shove_cost_max = 10
 
 # Least stamina of one pin (Ratwood).
@@ -216,7 +216,7 @@ grab_pin_cost_min = 10
 # Most stamina of one pin (Ratwood).
 grab_pin_cost_max = 10
 
-# Stamina per decisecond of pin time for every further pin (Ratwood: 1 / 1.5).
+# Stamina per decisecond of pin time for every further pin (Ratwood).
 grab_pin_cost_time_factor = 10
 
 # Deciseconds the first pin's stun is shorter than its hold (Ratwood).
@@ -228,7 +228,7 @@ grab_pin_decay = 10
 # Least stamina of wresting an item away (Ratwood).
 grab_disarm_cost_min = 10
 
-# Most stamina of wresting an item away (Ratwood).
+# Most stamina of wresting an item away (Ratwood). The number is Vibelin's (K2g).
 grab_disarm_cost_max = 10
 
 # Percent added to the disarm chance for knocking the item to the floor instead (Ratwood).
@@ -240,10 +240,10 @@ grab_disarm_stun = 10
 # Deciseconds before attacking with a weapon just taken (Ratwood).
 grab_disarm_click = 10
 
-# Deciseconds the grabber is held after a failed grab (Ratwood).
+# Deciseconds the grabber is held after a failed grab (Ratwood). The number is Vibelin's (K2g).
 grab_struggle_user = 10
 
-# Deciseconds the target is held after a failed grab (Ratwood).
+# Deciseconds the target is held after a failed grab (Ratwood). The number is Vibelin's (K2g).
 grab_struggle_target = 10
 
 # Deciseconds a shoved-down foe lies (Ratwood).
@@ -252,7 +252,7 @@ grab_knockdown_base = 10
 # Deciseconds added per point of wrestling lead (Ratwood).
 grab_knockdown_per_skill = 10
 
-# Percent chance a choked victim makes a sound (Ratwood).
+# Percent chance a choked victim makes a sound (Ratwood). The number is Vibelin's (K2g).
 grab_choke_emote_chance = 10
 
 # Share of bare-handed damage a headbutt deals to the target (Ratwood).
@@ -267,7 +267,7 @@ grab_headbutt_user_hold = 10
 # Chewing damage factor with a strong bite (Ratwood).
 bite_strong_factor = 10
 
-# Damage factor of a blow in the strong alt intent (Azure Peak: +15%).
+# Damage factor of a blow in the strong alt intent (Azure Peak).
 rmb_strong_damage_factor = 10
 
 # Stamina factor of a blow in the strong alt intent.
@@ -285,7 +285,7 @@ rmb_weak_damage_factor = 10
 # Least deciseconds between two blows, whatever the alt intent (Azure Peak).
 strike_min_click = 10
 
-# Critical miss chance in percent per point of fortune below 10 (Azure Peak); only against a standing, conscious target.
+# Critical miss chance in percent per point of fortune below the baseline (Azure Peak); only against a standing, conscious target.
 strike_miss_luck = 10
 
 # Damage above which an edged blow spills blood on the floor, the weapon and the attacker (Azure Peak).
@@ -309,7 +309,7 @@ blade_dull_start = 10
 # Share of sharpness at which those bonuses are gone (Azure Peak SHARPNESS_TIER1_FLOOR).
 blade_dull_floor = 10
 
-# Share of sharpness below which the whole blow weakens to twice the share (Azure Peak SHARPNESS_TIER2_THRESHOLD).
+# Share of sharpness below which the whole blow weakens to a multiple of the share (Azure Peak SHARPNESS_TIER2_THRESHOLD). The number is Vibelin's (K2g).
 blade_chip_start = 10
 
 # Share of a whetstone's sharpening the first stroke gives (Azure Peak).
@@ -336,7 +336,7 @@ pen_projectile_passthrough = 10
 # Percent of TG armour penetration counted as one penetration tier for projectiles that do not carry a tier.
 pen_percent_per_tier = 10
 
-# Blunt damage reduction per absorption tier when a blow wears the armor: the armor takes damage / (1 + this * tier) (Ratwood BLUNT_DR_COEFFICIENT).
+# Blunt damage reduction per absorption tier when a blow wears the armor: the armor takes the damage divided by a factor that grows with this and the tier (Ratwood BLUNT_DR_COEFFICIENT).
 armor_blunt_dr = 10
 
 # Armor wear factor of a stopped blow against an exposed defender (Ratwood EXPOSED_INTEG_MOD).
@@ -378,7 +378,7 @@ conceded_duration = 10
 # Strength, perception, speed and fortune a yielder loses for that time (Ratwood conceded).
 conceded_penalty = 10
 
-# Deciseconds after one's own swing during which a thrown item is deflected at double chance (Ratwood PROJ_PARRY_TIMER).
+# Deciseconds after one's own swing during which a thrown item is deflected at a raised chance (Ratwood PROJ_PARRY_TIMER).
 deflect_window = 10
 
 # Percent chance per weapon skill rank to deflect a thrown item one faces in combat mode (Ratwood).
@@ -405,10 +405,10 @@ alt_grip_know_rank = 10
 # Percent chance a shove moves its target a tile, before strength against constitution (Ratwood disarm).
 shove_chance = 10
 
-# Share of health at which a beast that fled from its wounds turns back to fight (Ratwood volf, ai_flee_while_injured 0.75).
+# Share of health at which a beast that fled from its wounds turns back to fight (Ratwood volf, ai_flee_while_injured).
 beast_flee_stop = 10
 
-# Share of health below which a Ratwood NPC that flees in pain runs from its foe (Ratwood flee_in_pain: pain at 90% of ten times willpower).
+# Share of health below which a Ratwood NPC that flees in pain runs from its foe (Ratwood flee_in_pain: a share of the pain threshold).
 npc_flee_health = 10
 
 # Share of health at which such an NPC turns back to fight.
@@ -438,10 +438,10 @@ npc_weakpoint_time = 10
 # Blows an NPC aims at the same zone before it chooses another (Vibelin; Ratwood ATTACKS_UNTIL_SWITCHING_UP).
 npc_zone_blows = 10
 
-# Percent chance an NPC steps back to a side tile after a blow (Vibelin HUMAN_NPC_BASE_JUKE_CHANCE; Ratwood 5).
+# Percent chance an NPC steps back to a side tile after a blow (Vibelin HUMAN_NPC_BASE_JUKE_CHANCE; Ratwood).
 npc_juke_chance = 10
 
-# Percent added to that chance per point of speed over 10 (Vibelin, Ratwood).
+# Percent added to that chance per point of speed over the baseline (Vibelin, Ratwood).
 npc_juke_per_speed = 10
 
 # Deciseconds before an NPC can step back again (Vibelin).
@@ -465,13 +465,13 @@ sleeve_tear_time = 10
 # Perception the sun takes from light-sensitive eyes under the open sky by day (Ratwood sun_blinded).
 sun_blind_perception = 10
 
-# Percent of brightness left to what is behind one's back. Ratwood's cone shades it with black at most 35% opaque; TG's plate leaves about a fifth.
+# Percent of brightness left to what is behind one's back. Ratwood's cone shades it with black that stays partly transparent; TG's plate leaves a smaller part.
 fov_behind_brightness = 10
 
-# Percent of colour left to what is behind one's back; 100 keeps it all (Ratwood), TG greys it out.
+# Percent of colour left to what is behind one's back; the top of the scale keeps it all (Ratwood), TG greys it out.
 fov_behind_saturation = 10
 
-# Blur of what is behind one's back, in pixels; 0 turns it off (Ratwood none, TG 1.8).
+# Blur of what is behind one's back, in pixels; 0 turns it off (Ratwood none, TG).
 fov_behind_blur = 10
 
 # Pixels over which the edge of the cone fades: a blur of the cone's mask itself; 0 keeps the mask's own edge.
@@ -480,7 +480,7 @@ fov_edge_blur = 10
 # Percent a stat comparison adds or takes per point of difference, once the stats differ by more than one (Ratwood generic_stat_comparison).
 stat_compare_step = 10
 
-# Default deciseconds someone stays exposed: no parry or dodge, +20 to be hit precisely, the next blow pops it (Azure Peak).
+# Default deciseconds someone stays exposed: no parry or dodge, a bonus to be hit precisely, the next blow pops it (Azure Peak).
 exposed_duration = 10
 
 # Deciseconds of one slowdown step (Azure Peak Slowdown counts life ticks).
@@ -546,7 +546,7 @@ bind_rank = 10
 # Percent chance to bind when both aim at the chest (Azure Peak).
 bind_chest_chance = 10
 
-# Deciseconds a bind lasts: +20 to parry the bound foe (Azure Peak).
+# Deciseconds a bind lasts: a bonus to parry the bound foe (Azure Peak).
 bind_duration = 10
 
 # Deciseconds between two binds (Azure Peak BIND_CD).
@@ -624,7 +624,7 @@ disarm_range = 10
 # Deciseconds a disarmed fighter cannot act (Azure Peak).
 disarm_click = 10
 
-# Deciseconds between two baits (Azure Peak BAIT_RCLICK_CD).
+# Deciseconds between two baits (Azure Peak BAIT_RCLICK_CD). The number is Vibelin's (K2g).
 bait_cooldown = 10
 
 # Deciseconds a baited fighter cannot be baited again (Azure Peak).
@@ -705,10 +705,10 @@ crit_severe_share = 10
 # Deciseconds of stun from a crushing blow to the groin (Azure Peak).
 crit_groin_stun = 10
 
-# Deciseconds unconscious after a knockout crit to the head (Azure Peak).
+# Deciseconds unconscious after a knockout crit to the head (Azure Peak). The number is Vibelin's (K2g).
 crit_knockout = 10
 
-# Extra deciseconds when knocked out from behind (Azure Peak).
+# Extra deciseconds when knocked out from behind (Azure Peak). The number is Vibelin's (K2g).
 crit_knockout_behind = 10
 
 # Brain damage of a skull crit.
@@ -816,7 +816,7 @@ limbguard_glove_damage = 10
 # Edge a weapon loses when it strikes a guarded limb (Azure Peak LGUARD_SHARPNESS_LOSS).
 limbguard_edge_loss = 10
 
-# Integrity a blunt weapon loses when it strikes a guarded limb; a weapon with an edge loses half (Azure Peak LGUARD_INTEG_LOSS).
+# Integrity a blunt weapon loses when it strikes a guarded limb; a weapon with an edge loses less (Azure Peak LGUARD_INTEG_LOSS).
 limbguard_integrity_loss = 10
 
 # Integrity a weapon keeps after striking a guarded limb (Azure Peak).
@@ -840,7 +840,7 @@ dual_wield_stamina = 10
 # Least blow damage that can sever a limb (Azure Peak).
 dismember_min_force = 10
 
-# Share of its damage a limb needs before it can be severed (Ratwood CRIT_DISMEMBER_DAMAGE_THRESHOLD after the Azure Peak armor rework).
+# Share of its damage a limb needs before it can be severed (Ratwood CRIT_DISMEMBER_DAMAGE_THRESHOLD after the Azure Peak armor rework). The number is Vibelin's (K2g).
 dismember_damage_share = 10
 
 # Edge share at or below which a blade severs nothing (Azure Peak).
@@ -953,7 +953,7 @@ tempo_parry_stamina_3 = 10
 
 # --- Combat: combat music and perception in ranged combat (combat/music.dm, combat/ranged.dm)
 
-# Combat music volume as a share of the area music volume preference, at most 100 (Ratwood: 1.2 of the combat music volume).
+# Combat music volume as a share of the area music volume preference, capped at the full preference (Ratwood: a share of the combat music volume).
 cmode_music_volume = 10
 
 # Perception at which what a bow or sling shoots deals its own damage, and below which a gun's shots spread wider (Azure Peak RANGED_PER_DAMAGE_BASELINE).
@@ -971,13 +971,13 @@ ranged_per_damage_capped_step = 10
 # Least damage factor of a bow's or sling's shot from low perception (Azure Peak RANGED_PER_DAMAGE_FLOOR).
 ranged_per_damage_floor = 10
 
-# Perception above which a shot keeps to the aimed body part further, and below which it strays sooner (Ratwood: 8+ PER).
+# Perception above which a shot keeps to the aimed body part further, and below which it strays sooner (Ratwood: PER over a base).
 ranged_per_accuracy_base = 10
 
-# Points of TG accurate_range a shot gains or loses per point of perception from that base (Ratwood crossbows and slings: 3 that fall off with range and 1 that does not).
+# Points of TG accurate_range a shot gains or loses per point of perception from that base (Ratwood crossbows and slings: one part falls off with range and one does not).
 ranged_per_accuracy_step = 10
 
-# Points of TG accurate_range a shot gains per rank of the launcher's skill (Ratwood: +5 per level).
+# Points of TG accurate_range a shot gains per rank of the launcher's skill (Ratwood: per level).
 ranged_skill_accuracy_step = 10
 
 # Degrees a gun's shots may stray more per point of perception below the baseline (Azure Peak ARCHER_NPC_SPREAD_PER_POINT).
@@ -985,19 +985,19 @@ ranged_per_spread_step = 10
 
 # --- Block 5: Ratwood bows, crossbows and slings (combat/launchers.dm, combat/quivers.dm)
 
-# Deciseconds of a bow's draw before skill (Ratwood bows.dm get_chargetime(): 10 minus the skill steps).
+# Deciseconds of a bow's draw before skill (Ratwood bows.dm get_chargetime(): minus the skill steps).
 launcher_bow_draw_base = 10
 
 # Deciseconds of a bow's draw taken off per rank of bows (Ratwood).
 launcher_bow_draw_skill_step = 10
 
-# Deciseconds a heavy bow adds to the draw before strength (Ratwood heavy_bow: 10 minus strength / 2).
+# Deciseconds a heavy bow adds to the draw before strength (Ratwood heavy_bow: minus strength).
 launcher_bow_heavy_draw_base = 10
 
-# Points of strength per decisecond a heavy bow's draw gets shorter (Ratwood STASTR / 2).
+# Points of strength per decisecond a heavy bow's draw gets shorter (Ratwood STASTR).
 launcher_bow_heavy_strength_divisor = 10
 
-# Deciseconds of a bow's draw before perception; each point of perception takes one off (Ratwood 20 - STAPER).
+# Deciseconds of a bow's draw before perception; each point of perception takes one off (Ratwood STAPER).
 launcher_bow_draw_perception_base = 10
 
 # Shortest draw of a bow shot, deciseconds (Ratwood).
@@ -1036,10 +1036,10 @@ launcher_sling_arc_draw_base = 10
 # Deciseconds of a sling's swing taken off per rank of slings (Ratwood).
 launcher_sling_draw_skill_step = 10
 
-# Points of perception per decisecond a sling's swing gets shorter (Ratwood STAPER / 2).
+# Points of perception per decisecond a sling's swing gets shorter (Ratwood STAPER).
 launcher_sling_draw_perception_divisor = 10
 
-# Points of strength per decisecond a sling's swing gets shorter (Ratwood STASTR / 5).
+# Points of strength per decisecond a sling's swing gets shorter (Ratwood STASTR).
 launcher_sling_draw_strength_divisor = 10
 
 # Shortest swing of a sling, deciseconds (Ratwood).
@@ -1048,7 +1048,7 @@ launcher_sling_draw_min = 10
 # Perception past which a bow's or sling's shot gains less damage per point (Ratwood RANGED_STAT_SOFTCAP).
 launcher_per_softcap = 10
 
-# Damage factor a bow's or sling's shot gains per point of perception up to the softcap, counted from zero (Ratwood RANGED_STAT_MULT: 2 at perception 10).
+# Damage factor a bow's or sling's shot gains per point of perception up to the softcap, counted from zero (Ratwood RANGED_STAT_MULT).
 launcher_per_damage_step = 10
 
 # Damage factor a bow's or sling's shot gains per point of perception past the softcap (Ratwood RANGED_STAT_CAPPEDMULT).
@@ -1060,13 +1060,13 @@ launcher_crossbow_per_min = 10
 # Most perception a perception crossbow counts for damage (Ratwood).
 launcher_crossbow_per_max = 10
 
-# Divisor of that perception: the bolt's damage factor (Ratwood perception / 10).
+# Divisor of that perception: the bolt's damage factor (Ratwood perception).
 launcher_crossbow_per_divisor = 10
 
 # Force of a plain stone; a sling's stone adds its force above this to the shot (Ratwood).
 launcher_sling_stone_force = 10
 
-# Perception above which a bow's shot keeps to the aimed part longer (Ratwood bows: (PER - 9) * 4 that falls off with range).
+# Perception above which a bow's shot keeps to the aimed part longer (Ratwood bows: PER, a bonus that falls off with range).
 launcher_bow_accuracy_base = 10
 
 # Accuracy of a bow's shot per point of perception from that base, times the bow's accfactor; falls off with range (Ratwood).
@@ -1120,7 +1120,7 @@ launcher_face_max = 10
 # Least chance to hit the aimed part (Ratwood).
 launcher_zone_min = 10
 
-# Degrees a shot let go at no draw at all may stray; less the further the draw (Ratwood 150 - 150 * charge).
+# Degrees a shot let go at no draw at all may stray; less the further the draw (Ratwood charge).
 launcher_uncharged_spread = 10
 
 # Accuracy a bow's shot loses when let go before the full draw (Ratwood).
@@ -1132,7 +1132,7 @@ launcher_uncharged_embed_factor = 10
 # Damage a shot must deal through armor to stick in the body part (Ratwood check_projectile_embed).
 launcher_embed_min_damage = 10
 
-# Experience of the launcher's skill per point of intelligence for a shot that hits a living target, below the skill's training cap (Ratwood STAINT * 4).
+# Experience of the launcher's skill per point of intelligence for a shot that hits a living target, below the skill's training cap (Ratwood STAINT).
 launcher_hit_xp_per_int = 10
 
 # Deciseconds of a crossbow's cocking taken off its reload time per point of strength (Ratwood reloadtime - STASTR).
@@ -1141,12 +1141,12 @@ launcher_crossbow_cock_strength_step = 10
 # Tiles an arcing shot may fly past the clicked tile before it lands (the module: TG stops a projectile on the tile its range runs out).
 launcher_arc_extra_range = 10
 
-# Deciseconds to take one round out of a quiver or to pick one up from the floor into it (Ratwood do_after 5).
+# Deciseconds to take one round out of a quiver or to pick one up from the floor into it (Ratwood do_after).
 launcher_quiver_time = 10
 
 # --- Pain and blood (combat/pain.dm, combat/blood.dm; Ratwood carbon/life.dm, living/blood.dm, wounds/types/). Ratwood counts per Life tick of 2 seconds, as TG does.
 
-# Blood from which the body feels its loss, of the normal 560 (Ratwood BLOOD_VOLUME_SAFE).
+# Blood from which the body feels its loss, of the normal amount (Ratwood BLOOD_VOLUME_SAFE).
 blood_safe = 10
 
 # Blood below which the body grows faint (Ratwood BLOOD_VOLUME_OKAY).
@@ -1158,10 +1158,10 @@ blood_bad = 10
 # Blood below which it chokes three times as fast (Ratwood BLOOD_VOLUME_SURVIVE).
 blood_survive = 10
 
-# Blood the body makes back each Life tick while it has less than the normal 560 (Ratwood handle_blood()); it does not wait for the bleeding to stop.
+# Blood the body makes back each Life tick while it has less than the normal amount (Ratwood handle_blood()); it does not wait for the bleeding to stop.
 blood_regen = 10
 
-# Constitution at which bleeding is as it is: above it the body bleeds slower, below faster (Ratwood bleed(): STACON - 10).
+# Constitution at which bleeding is as it is: above it the body bleeds slower, below faster (Ratwood bleed(): STACON).
 bleed_con_base = 10
 
 # Share by which bleeding slows for each point of constitution above the base, and quickens for each below; only for a body with a mind (Ratwood CONSTITUTION_BLEEDRATE_MOD).
@@ -1179,67 +1179,67 @@ bleed_crit_resistance = 10
 # Bleeding of the critically weak (TRAIT_CRITICAL_WEAKNESS), as a multiple (Ratwood).
 bleed_crit_weakness = 10
 
-# Bleeding of one who yields, as a share (Ratwood: a surrendering body bleeds a quarter, as if all its limbs were held).
+# Bleeding of one who yields, as a share (Ratwood: a surrendering body bleeds a fraction, as if all its limbs were held).
 bleed_yield = 10
 
-# Chance in percent each Life tick that low blood shows: a word, blurred eyes and, when drained, a faint (Ratwood prob(3)).
+# Chance in percent each Life tick that low blood shows: a word, blurred eyes and, when drained, a faint (Ratwood prob).
 bleed_sign_chance = 10
 
-# Blurred eyes when the blood runs low (Ratwood blur_eyes(6): six Life ticks).
+# Blurred eyes when the blood runs low (Ratwood blur_eyes: Life ticks).
 bleed_blur = 10
 
-# Shortest faint of a drained body (Ratwood Unconscious(rand(5 SECONDS, 10 SECONDS))).
+# Shortest faint of a drained body (Ratwood Unconscious(rand)).
 bleed_faint_min = 10
 
 # Longest faint of a drained body.
 bleed_faint_max = 10
 
-# Suffocation each Life tick below the bad blood level (Ratwood adjustOxyLoss(1)).
+# Suffocation each Life tick below the bad blood level (Ratwood adjustOxyLoss).
 bleed_oxy_bad = 10
 
-# Suffocation each Life tick below the survival level (Ratwood adjustOxyLoss(3)).
+# Suffocation each Life tick below the survival level (Ratwood adjustOxyLoss).
 bleed_oxy_survive = 10
 
-# Suffocation that heals each Life tick while the blood is above the bad level (Ratwood adjustOxyLoss(-1.6)).
+# Suffocation that heals each Life tick while the blood is above the bad level (Ratwood adjustOxyLoss).
 bleed_oxy_heal = 10
 
-# Blood lost in a Life tick past which the bleeding is heard, softly (Ratwood bleed (1).ogg past 1); not while lying.
+# Blood lost in a Life tick past which the bleeding is heard, softly (Ratwood bleed .ogg); not while lying.
 bleed_sound_low = 10
 
-# Past which it is heard louder (Ratwood bleed (2).ogg past 2).
+# Past which it is heard louder (Ratwood bleed .ogg).
 bleed_sound_mid = 10
 
-# Past which it is heard loudest (Ratwood bleed (3).ogg past 3).
+# Past which it is heard loudest (Ratwood bleed .ogg).
 bleed_sound_high = 10
 
-# Speed of a dizzy body, blood below the safe level (Ratwood debuff/bleeding: SPD -1).
+# Speed of a dizzy body, blood below the safe level (Ratwood debuff/bleeding: SPD).
 bleed_dizzy_speed = 10
 
-# Strength of a faint body, blood below the okay level (Ratwood debuff/bleedingworse: STR -1, SPD -2).
+# Strength of a faint body, blood below the okay level (Ratwood debuff/bleedingworse: STR, SPD).
 bleed_faint_strength = 10
 
 # Speed of a faint body.
 bleed_faint_speed = 10
 
-# Strength of a drained body, blood below the bad level (Ratwood debuff/bleedingworst: STR -3, SPD -4).
+# Strength of a drained body, blood below the bad level (Ratwood debuff/bleedingworst: STR, SPD).
 bleed_drained_strength = 10
 
 # Speed of a drained body.
 bleed_drained_speed = 10
 
-# Blood per second the stump of a severed limb loses, without clotting (Ratwood /datum/wound/dismemberment: 25 per Life tick).
+# Blood per second the stump of a severed limb loses, without clotting (Ratwood /datum/wound/dismemberment: per Life tick).
 stump_bleed = 10
 
-# Pain of a stump (Ratwood woundpain 100).
+# Pain of a stump (Ratwood woundpain).
 stump_pain = 10
 
-# What searing has to close of each stump before it stops bleeding (Ratwood whp 75).
+# What searing has to close of each stump before it stops bleeding (Ratwood whp).
 stump_integrity = 10
 
-# What one searing closes (Ratwood cauterize_wound(): heal_wound(40)).
+# What one searing closes (Ratwood cauterize_wound(): heal_wound).
 stump_cautery = 10
 
-# Deciseconds one searing of a stump takes (TG's slash cautery base, 3 seconds).
+# Deciseconds one searing of a stump takes (TG's slash cautery base).
 stump_cautery_time = 10
 
 # How much longer searing one's own stump takes (TG's self penalty).
@@ -1248,37 +1248,37 @@ stump_cautery_self = 10
 # Burn one searing deals to the chest.
 stump_cautery_burn = 10
 
-# Blood per second an opened artery of a limb loses: a critical cut or stab (Ratwood /datum/wound/artery: ARTERY_LIMB_BLEEDRATE, 20 per Life tick).
+# Blood per second an opened artery of a limb loses: a critical cut or stab (Ratwood /datum/wound/artery: ARTERY_LIMB_BLEEDRATE, per Life tick).
 artery_bleed = 10
 
-# Blood per second a torn carotid loses, the critical of the throat (Ratwood artery/neck: 50 per Life tick).
+# Blood per second a torn carotid loses, the critical of the throat (Ratwood artery/neck: per Life tick).
 artery_bleed_neck = 10
 
-# Blood per second an aortic dissection loses, the critical of the heart (Ratwood artery/chest: 50 per Life tick).
+# Blood per second an aortic dissection loses, the critical of the heart (Ratwood artery/chest: per Life tick).
 artery_bleed_chest = 10
 
-# Slowdown on opening an artery (Ratwood artery on_mob_gain(): Slowdown(20)).
+# Slowdown on opening an artery (Ratwood artery on_mob_gain(): Slowdown).
 artery_slow = 10
 
-# Pain of an opened artery of a limb (Ratwood woundpain 50).
+# Pain of an opened artery of a limb (Ratwood woundpain).
 pain_artery = 10
 
-# Pain of a torn carotid (Ratwood 60).
+# Pain of a torn carotid (Ratwood).
 pain_artery_neck = 10
 
-# Pain of an aortic dissection (Ratwood 100).
+# Pain of an aortic dissection (Ratwood).
 pain_artery_chest = 10
 
-# Pain of a moderate cut or stab of TG (Ratwood small dynamic wounds and bruises, 10).
+# Pain of a moderate cut or stab of TG (Ratwood small dynamic wounds and bruises).
 pain_cut_moderate = 10
 
-# Pain of a severe cut or stab of TG (Ratwood large bruise, 25).
+# Pain of a severe cut or stab of TG (Ratwood large bruise).
 pain_cut_severe = 10
 
-# Pain of a dislocation (Ratwood dislocation 40).
+# Pain of a dislocation (Ratwood dislocation).
 pain_dislocation = 10
 
-# Pain of a fracture or a split skull (Ratwood fracture 100).
+# Pain of a fracture or a split skull (Ratwood fracture).
 pain_fracture = 10
 
 # Pain of a moderate burn.
@@ -1287,91 +1287,91 @@ pain_burn_moderate = 10
 # Pain of a severe burn.
 pain_burn_severe = 10
 
-# Pain of a critical burn (Ratwood worst burn, 80).
+# Pain of a critical burn (Ratwood worst burn).
 pain_burn_critical = 10
 
-# Most pain the chest can give, wounds included (Ratwood max_pain_damage 150).
+# Most pain the chest can give, wounds included (Ratwood max_pain_damage).
 pain_max_chest = 10
 
-# Most pain the head can give (Ratwood 125).
+# Most pain the head can give (Ratwood).
 pain_max_head = 10
 
-# Most pain another limb can give (Ratwood 100).
+# Most pain another limb can give (Ratwood).
 pain_max_limb = 10
 
-# Pain one bears per point of willpower (Ratwood pain_threshold = STAWIL * 10).
+# Pain one bears per point of willpower (Ratwood pain_threshold = STAWIL).
 pain_per_willpower = 10
 
-# Pain the painless (TRAIT_NOPAIN) bear, for the heart: they never break under pain (Ratwood get_pain_threshold(), PR 2546).
+# Pain the painless (TRAIT_NOPAIN) bear, for the heart: they never break under pain (Ratwood get_pain_threshold(), PR).
 pain_nopain_threshold = 10
 
-# Willpower adrenaline adds to that (Ratwood (STAWIL + 5) * 10).
+# Willpower adrenaline adds to that (Ratwood (STAWIL)).
 pain_adrenaline_willpower = 10
 
-# Share of a limb's pain left under adrenaline (Ratwood: halved).
+# Share of a limb's pain left under adrenaline (Ratwood: reduced).
 pain_adrenaline_share = 10
 
-# Deciseconds between two weighings of the pain (Ratwood mob_timers painstun + 100).
+# Deciseconds between two weighings of the pain (Ratwood mob_timers painstun).
 pain_check_interval = 10
 
-# Deciseconds until the next weighing after the pain broke one (Ratwood + 160).
+# Deciseconds until the next weighing after the pain broke one (Ratwood).
 pain_crit_interval = 10
 
-# Pain, in percent of what one bears, from which one moans (Ratwood 80).
+# Pain, in percent of what one bears, from which one moans (Ratwood).
 pain_moan_share = 10
 
-# Pain from which one may break (Ratwood 100).
+# Pain from which one may break (Ratwood).
 pain_break_share = 10
 
-# Chance in percent to break under such pain, before willpower takes its share (Ratwood 40 - STAWIL * 2).
+# Chance in percent to break under such pain, before willpower takes its share (Ratwood STAWIL).
 pain_break_base = 10
 
 # Chance in percent each point of willpower takes from that.
 pain_break_per_willpower = 10
 
-# Least chance in percent to break (Ratwood max(probby, 10)).
+# Least chance in percent to break (Ratwood max(probby)).
 pain_break_floor = 10
 
-# Willpower from which one may endure pain that would break another, as with Psydonian grit (Ratwood STAWIL >= 15).
+# Willpower from which one may endure pain that would break another, as with Psydonian grit (Ratwood STAWIL).
 pain_endure_willpower = 10
 
-# Chance in percent to endure it (Ratwood prob(25)).
+# Chance in percent to endure it (Ratwood prob).
 pain_endure_chance = 10
 
-# Deciseconds one is held while enduring (Ratwood Immobilize(15)).
+# Deciseconds one is held while enduring (Ratwood Immobilize).
 pain_endure_hold = 10
 
-# Deciseconds the pain holds one when it breaks one (Ratwood paincrit(): Immobilize(10)).
+# Deciseconds the pain holds one when it breaks one (Ratwood paincrit(): Immobilize).
 paincrit_hold = 10
 
-# Deciseconds after that until the fall (Ratwood addtimer 10).
+# Deciseconds after that until the fall (Ratwood addtimer).
 paincrit_delay = 10
 
-# Deciseconds of the stun and the fall that follow (Ratwood Stun(110), Knockdown(110)).
+# Deciseconds of the stun and the fall that follow (Ratwood Stun, Knockdown).
 paincrit_stun = 10
 
-# Deciseconds of stuttering from pain (Ratwood stuttering += 5: five Life ticks).
+# Deciseconds of stuttering from pain (Ratwood stuttering: Life ticks).
 pain_stutter = 10
 
-# Chance in percent of a moan at high pain while lying (Ratwood prob(3)).
+# Chance in percent of a moan at high pain while lying (Ratwood prob).
 pain_lying_moan_chance = 10
 
-# A brute hit above this wakes a sleeper and may draw a cry (Ratwood species apply_damage(): damage over 5).
+# A brute hit above this wakes a sleeper and may draw a cry (Ratwood species apply_damage(): damage).
 pain_cry_damage = 10
 
-# Chance in percent of the cry for each point of the hit (Ratwood prob(damage * 3)).
+# Chance in percent of the cry for each point of the hit (Ratwood prob(damage)).
 pain_cry_chance = 10
 
-# The cry is a scream from a hit above constitution times this (Ratwood STACON * 10 / 3).
+# The cry is a scream from a hit above constitution times this (Ratwood STACON).
 pain_scream_con_factor = 10
 
-# A hit above constitution times this holds the struck and shakes their sight (Ratwood STACON * 3.5).
+# A hit above constitution times this holds the struck and shakes their sight (Ratwood STACON).
 pain_hold_con_factor = 10
 
-# Deciseconds of that hold (Ratwood Immobilize(5)).
+# Deciseconds of that hold (Ratwood Immobilize).
 pain_hold = 10
 
-# A hit above this slows the struck by a tenth of it (Ratwood: over 10, Slowdown(clamp(damage / 10, 1, 5))).
+# A hit above this slows the struck by a share of it (Ratwood: Slowdown of a clamped share of the damage).
 pain_slow_damage = 10
 
 # Least slowdown from a hit.
@@ -1380,66 +1380,66 @@ pain_slow_min = 10
 # Most slowdown from a hit.
 pain_slow_max = 10
 
-# Deciseconds of sleep a hit takes away (Ratwood AdjustSleeping(-50)).
+# Deciseconds of sleep a hit takes away (Ratwood AdjustSleeping).
 pain_wake = 10
 
 # A burn above this may draw a cry, with its damage as the chance in percent (Ratwood).
 pain_burn_cry_damage = 10
 
-# Constitution and willpower together above which one may stand losing a limb (Ratwood get_delimb_survival_chance(): STACON + STAWIL - 10).
+# Constitution and willpower together above which one may stand losing a limb (Ratwood get_delimb_survival_chance(): STACON + STAWIL).
 delimb_survive_base = 10
 
-# Chance in percent to stand it per point above that (Ratwood * 2).
+# Chance in percent to stand it per point above that (Ratwood).
 delimb_survive_share = 10
 
-# Chance in percent Psydonian grit adds to that (Ratwood + 20).
+# Chance in percent Psydonian grit adds to that (Ratwood).
 delimb_grit_bonus = 10
 
-# Willpower from which standing the loss of a limb brings an adrenaline rush (Ratwood STAWIL > 14).
+# Willpower from which standing the loss of a limb brings an adrenaline rush (Ratwood STAWIL).
 delimb_adrenaline_willpower = 10
 
-# Deciseconds of an adrenaline rush: it halves pain and stops bleeding (Ratwood buff/adrenaline_rush, 18 seconds).
+# Deciseconds of an adrenaline rush: it cuts pain and stops bleeding (Ratwood buff/adrenaline_rush).
 adrenaline_duration = 10
 
-# Deciseconds Psydonian grit adds to it (Ratwood rush.duration += 4 SECONDS).
+# Deciseconds Psydonian grit adds to it (Ratwood rush.duration).
 adrenaline_grit_bonus = 10
 
-# Blood an adrenaline rush gives back (Ratwood blood_restore = 30).
+# Blood an adrenaline rush gives back (Ratwood blood_restore).
 adrenaline_blood = 10
 
-# Willpower of an adrenaline rush (Ratwood effectedstats WIL +1).
+# Willpower of an adrenaline rush (Ratwood effectedstats WIL).
 adrenaline_willpower = 10
 
 # --- Field medicine (combat/medicine.dm; Ratwood rogueitems/needle.dm sew(), natural/clothfibersthorn.dm bandage(), bodypart_wounds.dm process_bandage()).
 
-# Blood per second a sewn stump still loses (Ratwood /datum/wound/dismemberment sewn_bleed_rate: 0.25 per Life tick).
+# Blood per second a sewn stump still loses (Ratwood /datum/wound/dismemberment sewn_bleed_rate: per Life tick).
 stump_sewn_bleed = 10
 
-# Pain of a sewn stump (Ratwood sewn_woundpain 20).
+# Pain of a sewn stump (Ratwood sewn_woundpain).
 stump_sewn_pain = 10
 
-# Deciseconds one stitch takes (Ratwood do_after 2 SECONDS).
+# Deciseconds one stitch takes (Ratwood do_after).
 sew_stitch_time = 10
 
-# How far each stitch gets the sewing, per rank of Medicine plus one (Ratwood moveup = (skill + 1) * 5).
+# How far each stitch gets the sewing, per rank of Medicine plus one (Ratwood moveup from the skill).
 sew_step_per_rank = 10
 
-# Blood a stitch holds back per Life tick, per rank of Medicine (Ratwood bleed_rate - skill / 2).
+# Blood a stitch holds back per Life tick, per rank of Medicine (Ratwood bleed_rate less a share of the skill).
 sew_hold_per_rank = 10
 
-# Least blood a stitch holds back per Life tick (Ratwood max(skill / 2, 1)).
+# Least blood a stitch holds back per Life tick (Ratwood max(skill)).
 sew_hold_min = 10
 
-# How far the stitches must get to sew a moderate cut or stab (Ratwood small slash 25).
+# How far the stitches must get to sew a moderate cut or stab (Ratwood small slash).
 sew_threshold_moderate = 10
 
-# How far for a severe cut or stab (Ratwood slash 50).
+# How far for a severe cut or stab (Ratwood slash).
 sew_threshold_severe = 10
 
-# How far for an opened artery, a critical cut or stab (Ratwood artery: the default 100).
+# How far for an opened artery, a critical cut or stab (Ratwood artery: the default).
 sew_threshold_artery = 10
 
-# How far for one stump (Ratwood dismemberment sew_threshold 100, "absolutely awful to sew up").
+# How far for one stump (Ratwood dismemberment sew_threshold, "absolutely awful to sew up").
 sew_threshold_stump = 10
 
 # Medicine learned per stitch, times intelligence (Ratwood SEW_EXP_PER_STEP).
@@ -1451,55 +1451,55 @@ sew_xp_finish = 10
 # The threshold that earns the full finishing experience (Ratwood SEW_HP_EXP_NORMALIZER).
 sew_xp_normalizer = 10
 
-# Bleeding a clean bandage stops outright, per Life tick, once it has held back its share (Ratwood: bleed_rate <= 1).
+# Bleeding a clean bandage stops outright, per Life tick, once it has held back its share (Ratwood: bleed_rate).
 bandage_stop = 10
 
-# Share of the time a rank of Medicine takes off bandaging and unbandaging (Ratwood 15% per level).
+# Share of the time a rank of Medicine takes off bandaging and unbandaging (Ratwood per level).
 bandage_time_per_rank = 10
 
-# Deciseconds taking a bandage off takes, before Medicine (Ratwood 5 SECONDS).
+# Deciseconds taking a bandage off takes, before Medicine (Ratwood).
 unbandage_time = 10
 
-# Units of a potion or blessed water a cloth soaks up to heal the wounds it binds (Ratwood 10).
+# Units of a potion or blessed water a cloth soaks up to heal the wounds it binds (Ratwood).
 soak_units = 10
 
-# Deciseconds soaking a cloth takes (Ratwood 3 seconds).
+# Deciseconds soaking a cloth takes (Ratwood).
 soak_time = 10
 
-# Medicine a soaked bandage spends each Ratwood tick while it heals (Ratwood 0.25).
+# Medicine a soaked bandage spends each Ratwood tick while it heals (Ratwood).
 soak_spend = 10
 
-# What a small cut takes to mend before it closes (Ratwood slash/small whp 15); potions and soaked bandages mend it.
+# What a small cut takes to mend before it closes (Ratwood slash/small whp); potions and soaked bandages mend it.
 wound_health_cut_moderate = 10
 
-# What a cut takes to mend before it closes (Ratwood slash whp 30).
+# What a cut takes to mend before it closes (Ratwood slash whp).
 wound_health_cut_severe = 10
 
-# What a small stab takes to mend before it closes (Ratwood puncture/small whp 20).
+# What a small stab takes to mend before it closes (Ratwood puncture/small whp).
 wound_health_stab_moderate = 10
 
-# What a stab takes to mend before it closes (Ratwood puncture whp 40).
+# What a stab takes to mend before it closes (Ratwood puncture whp).
 wound_health_stab_severe = 10
 
-# What a dislocation or a broken bone of a limb or the body takes to mend (Ratwood dislocation and fracture whp 40).
+# What a dislocation or a broken bone of a limb or the body takes to mend (Ratwood dislocation and fracture whp).
 wound_health_bone = 10
 
-# What a broken skull takes to mend (Ratwood fracture/head whp 150).
+# What a broken skull takes to mend (Ratwood fracture/head whp).
 wound_health_skull = 10
 
-# What a small burn takes to mend (Ratwood small burns, whp 20).
+# What a small burn takes to mend (Ratwood small burns, whp).
 wound_health_burn_moderate = 10
 
-# What a burn takes to mend (Ratwood burns, whp 40).
+# What a burn takes to mend (Ratwood burns, whp).
 wound_health_burn_severe = 10
 
-# What a charred burn takes to mend (Ratwood charring whp 60).
+# What a charred burn takes to mend (Ratwood charring whp).
 wound_health_burn_critical = 10
 
-# What an opened artery of a limb (a critical cut or stab) takes to mend (Ratwood artery whp 50).
+# What an opened artery of a limb (a critical cut or stab) takes to mend (Ratwood artery whp).
 wound_health_artery = 10
 
-# What an opened artery of the neck or the heart takes to mend (Ratwood artery/neck and artery/chest whp 100).
+# What an opened artery of the neck or the heart takes to mend (Ratwood artery/neck and artery/chest whp).
 wound_health_artery_vital = 10
 
 # --- Wounds and healing (block 1, task B1: combat/wounds.dm, combat/medicine.dm, combat/leeches.dm, survival/sleep.dm; Ratwood datums/wounds/, bodypart_wounds.dm manage_dynamic_wound(), needle.dm sew(), carbon/life.dm handle_sleep(), roguejobs/fisher/leeches.dm). Ratwood's dynamic wounds count a Life tick of 2 seconds: bleeding is blood a Life tick, health is what mending takes before the wound closes (whp), pain is woundpain, sewing is how far the stitches must get.
@@ -1510,10 +1510,10 @@ dynamic_clot_per_hit = 10
 # Bleeding a Life tick a dynamic wound clots down to, added with every blow of its kind (Ratwood CLOT_THRESHOLD_INCREASE_PER_HIT).
 dynamic_clot_floor_per_hit = 10
 
-# Least clotting of a dynamic wound that is not an artery's, a Life tick's (Ratwood max(0.01, clotting_rate)).
+# Least clotting of a dynamic wound that is not an artery's, a Life tick's (Ratwood max of a floor and clotting_rate).
 dynamic_clot_min = 10
 
-# Clotting a Life tick of a bite from its first blow on (Ratwood /datum/wound/dynamic clotting_rate 0.4).
+# Clotting a Life tick of a bite from its first blow on (Ratwood /datum/wound/dynamic clotting_rate).
 dynamic_clot_base = 10
 
 # Bleeding a Life tick a dynamic wound clots down to once it bleeds like an artery and stops clotting further (Ratwood CLOT_THRESHOLD_ARTERY); it bleeds at most the artery_bleed of the pain and blood section.
@@ -1522,19 +1522,19 @@ dynamic_artery_clot_floor = 10
 # What a keen edge, above blade_dull_start of its sharpness, adds to how far a weapon's blow got through armor (Ratwood get_pen_info() sharpness_bonus).
 dynamic_pen_edge_bonus = 10
 
-# What a heavy weapon adds to the wielder's strength over 10 for how far its blow got through armor (Ratwood get_pen_info(): WBALANCE_HEAVY + 2).
+# What a heavy weapon adds to the wielder's strength over the baseline for how far its blow got through armor (Ratwood get_pen_info(): WBALANCE_HEAVY).
 dynamic_pen_heavy_bonus = 10
 
-# The most the wielder's balance adds to how far a weapon's blow got through armor, but for heavy weapons (Ratwood min(balance_bonus, 4)).
+# The most the wielder's balance adds to how far a weapon's blow got through armor, but for heavy weapons (Ratwood min(balance_bonus)).
 dynamic_pen_balance_cap = 10
 
-# Health of a fresh hematoma, the wound of blunt blows (Ratwood dynamic/bruise whp 5).
+# Health of a fresh hematoma, the wound of blunt blows (Ratwood dynamic/bruise whp).
 dynamic_bruise_health = 10
 
-# Pain of a fresh hematoma (Ratwood woundpain 5).
+# Pain of a fresh hematoma (Ratwood woundpain).
 dynamic_bruise_pain = 10
 
-# What a hematoma mends by itself each Life tick (Ratwood passive_healing 0.5).
+# What a hematoma mends by itself each Life tick (Ratwood passive_healing).
 dynamic_bruise_passive = 10
 
 # Health a hematoma gains per point of damage of a blunt blow (Ratwood BRUISE_UPG_WHPRATE).
@@ -1546,22 +1546,22 @@ dynamic_bruise_pain_per_damage = 10
 # What a hematoma mends by itself each Life tick more with every blow (Ratwood BRUISE_UPG_SELFHEAL).
 dynamic_bruise_selfheal = 10
 
-# Health of a fresh slash, the wound of cuts and chops (Ratwood dynamic/slash whp 15).
+# Health of a fresh slash, the wound of cuts and chops (Ratwood dynamic/slash whp).
 dynamic_slash_health = 10
 
-# Bleeding a Life tick of a fresh slash (Ratwood bleed_rate 1).
+# Bleeding a Life tick of a fresh slash (Ratwood bleed_rate).
 dynamic_slash_bleed = 10
 
-# How far the stitches must get to sew a fresh slash (Ratwood sew_threshold 25).
+# How far the stitches must get to sew a fresh slash (Ratwood sew_threshold).
 dynamic_slash_sew = 10
 
-# Pain of a fresh slash (Ratwood woundpain 5).
+# Pain of a fresh slash (Ratwood woundpain).
 dynamic_slash_pain = 10
 
-# Clotting a Life tick of a fresh slash (Ratwood clotting_rate 0.05).
+# Clotting a Life tick of a fresh slash (Ratwood clotting_rate).
 dynamic_slash_clot = 10
 
-# Bleeding a Life tick a fresh slash clots down to (Ratwood clotting_threshold 0.25).
+# Bleeding a Life tick a fresh slash clots down to (Ratwood clotting_threshold).
 dynamic_slash_clot_floor = 10
 
 # Health a slash gains per point of damage of a cut (Ratwood SLASH_UPG_WHPRATE).
@@ -1570,7 +1570,7 @@ dynamic_slash_health_per_damage = 10
 # Bleeding a Life tick a cut adds to a slash on bare skin or an exposed body (Ratwood SLASH_UPG_CLAMP_RAW).
 dynamic_slash_bleed_bare = 10
 
-# Bleeding a Life tick a weapon's cut adds over armor it barely got through (Ratwood pen_info 1-2).
+# Bleeding a Life tick a weapon's cut adds over armor it barely got through (Ratwood pen_info).
 dynamic_slash_bleed_pen_low = 10
 
 # Bleeding a Life tick a weapon's cut adds over armor it got through fairly (pen_info 3-4).
@@ -1579,7 +1579,7 @@ dynamic_slash_bleed_pen_fair = 10
 # Bleeding a Life tick a weapon's cut adds over armor it got through well (pen_info 5-6).
 dynamic_slash_bleed_pen_good = 10
 
-# Bleeding a Life tick a weapon's cut adds over armor it went clean through (pen_info 7-8, Ratwood SLASH_UPG_CLAMP_ARMORED).
+# Bleeding a Life tick a weapon's cut adds over armor it went clean through (pen_info, Ratwood SLASH_UPG_CLAMP_ARMORED).
 dynamic_slash_bleed_pen_full = 10
 
 # How much farther the stitches must get per point of damage of a cut (Ratwood SLASH_UPG_SEWRATE).
@@ -1591,22 +1591,22 @@ dynamic_slash_pain_per_damage = 10
 # Most bleeding a Life tick of a slash under armor (Ratwood SLASH_ARMORED_BLEED_CLAMP).
 dynamic_slash_armor_cap = 10
 
-# Health of a fresh puncture, the wound of stabs (Ratwood dynamic/puncture whp 1).
+# Health of a fresh puncture, the wound of stabs (Ratwood dynamic/puncture whp).
 dynamic_puncture_health = 10
 
-# Bleeding a Life tick of a fresh puncture (Ratwood bleed_rate 1).
+# Bleeding a Life tick of a fresh puncture (Ratwood bleed_rate).
 dynamic_puncture_bleed = 10
 
-# How far the stitches must get to sew a fresh puncture (Ratwood sew_threshold 20).
+# How far the stitches must get to sew a fresh puncture (Ratwood sew_threshold).
 dynamic_puncture_sew = 10
 
-# Pain of a fresh puncture (Ratwood woundpain 0).
+# Pain of a fresh puncture (Ratwood woundpain).
 dynamic_puncture_pain = 10
 
-# Clotting a Life tick of a fresh puncture (Ratwood clotting_rate 0.01).
+# Clotting a Life tick of a fresh puncture (Ratwood clotting_rate).
 dynamic_puncture_clot = 10
 
-# Bleeding a Life tick a fresh puncture clots down to (Ratwood clotting_threshold 0.2).
+# Bleeding a Life tick a fresh puncture clots down to (Ratwood clotting_threshold).
 dynamic_puncture_clot_floor = 10
 
 # Health a puncture gains per point of damage of a stab (Ratwood PUNC_UPG_WHPRATE).
@@ -1615,7 +1615,7 @@ dynamic_puncture_health_per_damage = 10
 # Bleeding a Life tick a stab adds to a puncture on bare skin or an exposed body (Ratwood PUNC_UPG_CLAMP_RAW).
 dynamic_puncture_bleed_bare = 10
 
-# Bleeding a Life tick a weapon's stab adds over armor it barely got through (Ratwood pen_info 1-2).
+# Bleeding a Life tick a weapon's stab adds over armor it barely got through (Ratwood pen_info).
 dynamic_puncture_bleed_pen_low = 10
 
 # Bleeding a Life tick a weapon's stab adds over armor it got through fairly (pen_info 3-4).
@@ -1636,22 +1636,22 @@ dynamic_puncture_pain_per_damage = 10
 # Most bleeding a Life tick of a puncture under armor (Ratwood PUNC_ARMORED_BLEED_CLAMP).
 dynamic_puncture_armor_cap = 10
 
-# Health of a fresh gouge, the wound of picks and piercing shots (Ratwood dynamic/gouge whp 1).
+# Health of a fresh gouge, the wound of picks and piercing shots (Ratwood dynamic/gouge whp).
 dynamic_gouge_health = 10
 
-# Bleeding a Life tick of a fresh gouge (Ratwood bleed_rate 1).
+# Bleeding a Life tick of a fresh gouge (Ratwood bleed_rate).
 dynamic_gouge_bleed = 10
 
-# How far the stitches must get to sew a fresh gouge (Ratwood sew_threshold 20).
+# How far the stitches must get to sew a fresh gouge (Ratwood sew_threshold).
 dynamic_gouge_sew = 10
 
-# Pain of a fresh gouge (Ratwood woundpain 0).
+# Pain of a fresh gouge (Ratwood woundpain).
 dynamic_gouge_pain = 10
 
-# Clotting a Life tick of a fresh gouge (Ratwood clotting_rate 0.01).
+# Clotting a Life tick of a fresh gouge (Ratwood clotting_rate).
 dynamic_gouge_clot = 10
 
-# Bleeding a Life tick a fresh gouge clots down to (Ratwood clotting_threshold 0.2).
+# Bleeding a Life tick a fresh gouge clots down to (Ratwood clotting_threshold).
 dynamic_gouge_clot_floor = 10
 
 # Health a gouge gains per point of damage (Ratwood GOUGE_UPG_WHPRATE).
@@ -1660,7 +1660,7 @@ dynamic_gouge_health_per_damage = 10
 # Bleeding a Life tick a gouge gains per point of damage (Ratwood GOUGE_UPG_BLEEDRATE).
 dynamic_gouge_bleed_per_damage = 10
 
-# Least bleeding a Life tick a blow adds to a gouge (Ratwood clamp(..., 0.1, ...)).
+# Least bleeding a Life tick a blow adds to a gouge (Ratwood clamp(..., ...)).
 dynamic_gouge_bleed_least = 10
 
 # Most bleeding a Life tick a blow adds to a gouge under armor (Ratwood GOUGE_UPG_CLAMP_ARMORED).
@@ -1678,19 +1678,19 @@ dynamic_gouge_pain_per_damage = 10
 # Most bleeding a Life tick of a gouge under armor (Ratwood GOUGE_ARMORED_BLEED_CLAMP).
 dynamic_gouge_armor_cap = 10
 
-# Health of a fresh bite (Ratwood dynamic/bite whp 30).
+# Health of a fresh bite (Ratwood dynamic/bite whp).
 dynamic_bite_health = 10
 
-# Bleeding a Life tick of a fresh bite (Ratwood bleed_rate 0.5).
+# Bleeding a Life tick of a fresh bite (Ratwood bleed_rate).
 dynamic_bite_bleed = 10
 
-# How far the stitches must get to sew a fresh bite (Ratwood sew_threshold 50).
+# How far the stitches must get to sew a fresh bite (Ratwood sew_threshold).
 dynamic_bite_sew = 10
 
-# Pain of a fresh bite (Ratwood woundpain 10).
+# Pain of a fresh bite (Ratwood woundpain).
 dynamic_bite_pain = 10
 
-# What a bite mends by itself each Life tick (Ratwood passive_healing 0.5).
+# What a bite mends by itself each Life tick (Ratwood passive_healing).
 dynamic_bite_passive = 10
 
 # Health a bite gains per point of damage (Ratwood BITE_UPG_WHPRATE).
@@ -1699,7 +1699,7 @@ dynamic_bite_health_per_damage = 10
 # Bleeding a Life tick a bite gains per point of damage (Ratwood BITE_UPG_BLEEDRATE).
 dynamic_bite_bleed_per_damage = 10
 
-# Least bleeding a Life tick a bite adds (Ratwood clamp(..., 0.1, ...)).
+# Least bleeding a Life tick a bite adds (Ratwood clamp(..., ...)).
 dynamic_bite_bleed_least = 10
 
 # Most bleeding a Life tick a bite adds under armor (Ratwood BITE_UPG_CLAMP_ARMORED).
@@ -1717,19 +1717,19 @@ dynamic_bite_pain_per_damage = 10
 # Most bleeding a Life tick of a bite under armor (Ratwood BITE_ARMORED_BLEED_CLAMP).
 dynamic_bite_armor_cap = 10
 
-# Health of a fresh lashing, the wound of a whip (Ratwood dynamic/lashing whp 30).
+# Health of a fresh lashing, the wound of a whip (Ratwood dynamic/lashing whp).
 dynamic_lashing_health = 10
 
-# How far the stitches must get to sew a fresh lashing (Ratwood sew_threshold, the default 100).
+# How far the stitches must get to sew a fresh lashing (Ratwood sew_threshold, the default).
 dynamic_lashing_sew = 10
 
-# Pain of a fresh lashing (Ratwood woundpain 10).
+# Pain of a fresh lashing (Ratwood woundpain).
 dynamic_lashing_pain = 10
 
-# Clotting a Life tick of a fresh lashing (Ratwood clotting_rate 0.02).
+# Clotting a Life tick of a fresh lashing (Ratwood clotting_rate).
 dynamic_lashing_clot = 10
 
-# Bleeding a Life tick a fresh lashing clots down to (Ratwood clotting_threshold 0.2).
+# Bleeding a Life tick a fresh lashing clots down to (Ratwood clotting_threshold).
 dynamic_lashing_clot_floor = 10
 
 # Health a lashing gains per point of damage (Ratwood LASHING_UPG_WHPRATE).
@@ -1738,7 +1738,7 @@ dynamic_lashing_health_per_damage = 10
 # Bleeding a Life tick a lashing gains per point of damage (Ratwood LASHING_UPG_BLEEDRATE).
 dynamic_lashing_bleed_per_damage = 10
 
-# Least bleeding a Life tick a lash adds (Ratwood clamp(..., 0.1, ...)).
+# Least bleeding a Life tick a lash adds (Ratwood clamp(..., ...)).
 dynamic_lashing_bleed_least = 10
 
 # Most bleeding a Life tick a lash adds under armor (Ratwood LASHING_UPG_CLAMP_ARMORED).
@@ -1756,19 +1756,19 @@ dynamic_lashing_pain_per_damage = 10
 # Most bleeding a Life tick of a lashing under armor (Ratwood LASHING_ARMORED_BLEED_CLAMP).
 dynamic_lashing_armor_cap = 10
 
-# Health of a fresh flogging, the wound of the whip's punishing intent (Ratwood dynamic/punish whp 30).
+# Health of a fresh flogging, the wound of the whip's punishing intent (Ratwood dynamic/punish whp).
 dynamic_flogging_health = 10
 
-# How far the stitches must get to sew a fresh flogging (Ratwood sew_threshold, the default 100).
+# How far the stitches must get to sew a fresh flogging (Ratwood sew_threshold, the default).
 dynamic_flogging_sew = 10
 
-# Pain of a fresh flogging (Ratwood woundpain 10).
+# Pain of a fresh flogging (Ratwood woundpain).
 dynamic_flogging_pain = 10
 
-# Clotting a Life tick of a fresh flogging (Ratwood clotting_rate 0.02).
+# Clotting a Life tick of a fresh flogging (Ratwood clotting_rate).
 dynamic_flogging_clot = 10
 
-# Bleeding a Life tick a fresh flogging clots down to (Ratwood clotting_threshold 0.2).
+# Bleeding a Life tick a fresh flogging clots down to (Ratwood clotting_threshold).
 dynamic_flogging_clot_floor = 10
 
 # Health a flogging gains per point of damage (Ratwood PUNISH_UPG_WHPRATE).
@@ -1777,7 +1777,7 @@ dynamic_flogging_health_per_damage = 10
 # Bleeding a Life tick a flogging gains per point of damage (Ratwood PUNISH_UPG_BLEEDRATE).
 dynamic_flogging_bleed_per_damage = 10
 
-# Least bleeding a Life tick a stroke adds (Ratwood clamp(..., 0.1, ...)).
+# Least bleeding a Life tick a stroke adds (Ratwood clamp(..., ...)).
 dynamic_flogging_bleed_least = 10
 
 # Most bleeding a Life tick a stroke adds under armor (Ratwood PUNISH_UPG_CLAMP_ARMORED).
@@ -1798,183 +1798,183 @@ dynamic_flogging_selfheal = 10
 # Most bleeding a Life tick of a flogging under armor (Ratwood PUNISH_ARMORED_BLEED_CLAMP).
 dynamic_flogging_armor_cap = 10
 
-# What a wound mends a Life tick of sleep, times the quality of the bed and the sleep heal multiplier of the config (Ratwood sleep_healing 1, the default: dislocations, burns, dynamic and sewn wounds).
+# What a wound mends a Life tick of sleep, times the quality of the bed and the sleep heal multiplier of the config (Ratwood sleep_healing, the default: dislocations, burns, dynamic and sewn wounds).
 wound_sleep_healing = 10
 
-# What an opened artery, a critical cut or stab of TG, mends a Life tick of sleep (Ratwood artery sleep_healing 0.5).
+# What an opened artery, a critical cut or stab of TG, mends a Life tick of sleep (Ratwood artery sleep_healing).
 artery_sleep_healing = 10
 
-# What a broken bone or a split skull mends a Life tick of sleep: none until it is set (Ratwood fracture sleep_healing 0).
+# What a broken bone or a split skull mends a Life tick of sleep: none until it is set (Ratwood fracture sleep_healing).
 fracture_sleep_healing = 10
 
-# What a stump mends a Life tick of sleep: none, it is seared shut (Ratwood dismemberment sleep_healing 0).
+# What a stump mends a Life tick of sleep: none, it is seared shut (Ratwood dismemberment sleep_healing).
 stump_sleep_healing = 10
 
-# What a sewn wound mends by itself each Life tick (Ratwood sew_wound(): passive_healing at least 1).
+# What a sewn wound mends by itself each Life tick (Ratwood sew_wound(): passive_healing at least).
 sewn_passive_healing = 10
 
-# Pain of a sewn cut or stab of TG below critical (Ratwood sewn_woundpain of its slashes and punctures, 0).
+# Pain of a sewn cut or stab of TG below critical (Ratwood sewn_woundpain of its slashes and punctures).
 sewn_cut_pain = 10
 
-# Health left to mend of a sewn moderate cut, at most (Ratwood slash/small sewn_whp 5).
+# Health left to mend of a sewn moderate cut, at most (Ratwood slash/small sewn_whp).
 sewn_cut_moderate_health = 10
 
-# Bleeding a Life tick of a sewn moderate cut (Ratwood slash/small sewn_bleed_rate 0.01).
+# Bleeding a Life tick of a sewn moderate cut (Ratwood slash/small sewn_bleed_rate).
 sewn_cut_moderate_bleed = 10
 
-# Health left to mend of a sewn severe cut, at most (Ratwood slash sewn_whp 10).
+# Health left to mend of a sewn severe cut, at most (Ratwood slash sewn_whp).
 sewn_cut_severe_health = 10
 
-# Bleeding a Life tick of a sewn severe cut (Ratwood slash sewn_bleed_rate 0.02).
+# Bleeding a Life tick of a sewn severe cut (Ratwood slash sewn_bleed_rate).
 sewn_cut_severe_bleed = 10
 
-# Health left to mend of a sewn moderate stab, at most (Ratwood puncture/small sewn_whp 10).
+# Health left to mend of a sewn moderate stab, at most (Ratwood puncture/small sewn_whp).
 sewn_stab_moderate_health = 10
 
-# Bleeding a Life tick of a sewn moderate stab (Ratwood puncture/small sewn_bleed_rate 0.02).
+# Bleeding a Life tick of a sewn moderate stab (Ratwood puncture/small sewn_bleed_rate).
 sewn_stab_moderate_bleed = 10
 
-# Health left to mend of a sewn severe stab, at most (Ratwood puncture sewn_whp 20).
+# Health left to mend of a sewn severe stab, at most (Ratwood puncture sewn_whp).
 sewn_stab_severe_health = 10
 
-# Bleeding a Life tick of a sewn severe stab (Ratwood puncture sewn_bleed_rate 0.04).
+# Bleeding a Life tick of a sewn severe stab (Ratwood puncture sewn_bleed_rate).
 sewn_stab_severe_bleed = 10
 
-# Health left to mend of a sewn artery of a limb, at most (Ratwood artery sewn_whp 20).
+# Health left to mend of a sewn artery of a limb, at most (Ratwood artery sewn_whp).
 sewn_artery_health = 10
 
-# Bleeding a Life tick of a sewn artery of a limb (Ratwood artery sewn_bleed_rate 0.2).
+# Bleeding a Life tick of a sewn artery of a limb (Ratwood artery sewn_bleed_rate).
 sewn_artery_bleed = 10
 
-# Pain of a sewn artery of a limb (Ratwood artery sewn_woundpain 20).
+# Pain of a sewn artery of a limb (Ratwood artery sewn_woundpain).
 sewn_artery_pain = 10
 
-# Health left to mend of a sewn torn carotid, at most (Ratwood artery/neck sewn_whp 25).
+# Health left to mend of a sewn torn carotid, at most (Ratwood artery/neck sewn_whp).
 sewn_throat_health = 10
 
-# Bleeding a Life tick of a sewn torn carotid (Ratwood artery/neck sewn_bleed_rate 0.5).
+# Bleeding a Life tick of a sewn torn carotid (Ratwood artery/neck sewn_bleed_rate).
 sewn_throat_bleed = 10
 
-# Pain of a sewn torn carotid (Ratwood artery/neck sewn_woundpain 30).
+# Pain of a sewn torn carotid (Ratwood artery/neck sewn_woundpain).
 sewn_throat_pain = 10
 
-# Health left to mend of a sewn aortic dissection, at most (Ratwood artery/chest sewn_whp 35).
+# Health left to mend of a sewn aortic dissection, at most (Ratwood artery/chest sewn_whp).
 sewn_heart_health = 10
 
-# Bleeding a Life tick of a sewn aortic dissection (Ratwood artery/chest sewn_bleed_rate 0.8).
+# Bleeding a Life tick of a sewn aortic dissection (Ratwood artery/chest sewn_bleed_rate).
 sewn_heart_bleed = 10
 
-# Pain of a sewn aortic dissection (Ratwood artery/chest sewn_woundpain 50).
+# Pain of a sewn aortic dissection (Ratwood artery/chest sewn_woundpain).
 sewn_heart_pain = 10
 
-# What a cloth soaked in a health potion heals a Ratwood tick under a bandage, wounds and damage (Ratwood medicine_quality 1).
+# What a cloth soaked in a health potion heals a Ratwood tick under a bandage, wounds and damage (Ratwood medicine_quality).
 soak_lyfeblood_quality = 10
 
-# How long a cloth soaked in a health potion keeps it, spent soak_spend a tick (Ratwood medicine_amount 10).
+# How long a cloth soaked in a health potion keeps it, spent soak_spend a tick (Ratwood medicine_amount).
 soak_lyfeblood_amount = 10
 
-# What a cloth soaked in a strong health potion heals a Ratwood tick under a bandage (Ratwood medicine_quality 2).
+# What a cloth soaked in a strong health potion heals a Ratwood tick under a bandage (Ratwood medicine_quality).
 soak_strong_lyfeblood_quality = 10
 
-# How long a cloth soaked in a strong health potion keeps it (Ratwood medicine_amount 10).
+# How long a cloth soaked in a strong health potion keeps it (Ratwood medicine_amount).
 soak_strong_lyfeblood_amount = 10
 
-# What a cloth soaked in aqua vitae heals a Ratwood tick under a bandage: slower than a potion, more in all (Ratwood medicine_quality 0.5); on once the drink exists.
+# What a cloth soaked in aqua vitae heals a Ratwood tick under a bandage: slower than a potion, more in all (Ratwood medicine_quality); on once the drink exists.
 soak_aqua_vitae_quality = 10
 
-# How long a cloth soaked in aqua vitae keeps it (Ratwood medicine_amount 60).
+# How long a cloth soaked in aqua vitae keeps it (Ratwood medicine_amount).
 soak_aqua_vitae_amount = 10
 
-# What a cloth soaked in blessed water heals a Ratwood tick under a bandage (Ratwood medicine_quality 0.2).
+# What a cloth soaked in blessed water heals a Ratwood tick under a bandage (Ratwood medicine_quality).
 soak_blessed_water_quality = 10
 
-# How long a cloth soaked in blessed water keeps it (Ratwood medicine_amount 20).
+# How long a cloth soaked in blessed water keeps it (Ratwood medicine_amount).
 soak_blessed_water_amount = 10
 
-# Blood a leech drinks each Life tick, before its nature (Ratwood blood_sucking 2; an evil leech drinks up to twice it, at least 1).
+# Blood a leech drinks each Life tick, before its nature (Ratwood blood_sucking; an evil leech drinks more of it, at least).
 leech_suck = 10
 
-# Toxins a leech draws out each Life tick, before its nature (Ratwood toxin_healing -2; a gentle leech up to twice it, at least 1).
+# Toxins a leech draws out each Life tick, before its nature (Ratwood toxin_healing; a gentle leech draws more of it, at least).
 leech_cleanse = 10
 
-# Blood a leech holds before it drops off full (Ratwood blood_maximum, BLOOD_VOLUME_SURVIVE 122).
+# Blood a leech holds before it drops off full (Ratwood blood_maximum, BLOOD_VOLUME_SURVIVE).
 leech_blood_max = 10
 
-# Blood a leech digests of what it holds each Life tick, on a body or off it (Ratwood drainage 1).
+# Blood a leech digests of what it holds each Life tick, on a body or off it (Ratwood drainage).
 leech_digest = 10
 
-# Damage to the limb when a leech is ripped off (Ratwood embedded_unsafe_removal_pain_multiplier 8 times its size 1).
+# Damage to the limb when a leech is ripped off (Ratwood embedded_unsafe_removal_pain_multiplier times its size).
 leech_rip_damage = 10
 
-# Deciseconds setting a leech on someone takes, before the Medicine skill (Ratwood (70 - Medicine * 10) / 2).
+# Deciseconds setting a leech on someone takes, before the Medicine skill (Ratwood: falls with Medicine).
 leech_place_time = 10
 
 # Deciseconds each rank of Medicine takes off setting a leech.
 leech_place_per_rank = 10
 
-# Blood a cheele drinks, or gives, each Life tick (Ratwood cheele blood_sucking 5).
+# Blood a cheele drinks, or gives, each Life tick (Ratwood cheele blood_sucking).
 cheele_suck = 10
 
-# What a cheele keeps of the blood it drinks, as a multiple (Ratwood blood_multiplier 3).
+# What a cheele keeps of the blood it drinks, as a multiple (Ratwood blood_multiplier).
 cheele_blood_factor = 10
 
-# Blood a cheele holds when it is made (Ratwood blood_storage, BLOOD_VOLUME_OKAY 336).
+# Blood a cheele holds when it is made (Ratwood blood_storage, BLOOD_VOLUME_OKAY).
 cheele_blood = 10
 
-# Blood a cheele holds before it drops off full (Ratwood blood_maximum, BLOOD_VOLUME_MAXIMUM 1120).
+# Blood a cheele holds before it drops off full (Ratwood blood_maximum, BLOOD_VOLUME_MAXIMUM).
 cheele_blood_max = 10
 
-# Blood a squeezed cheele fills a body up to before it drops off (Ratwood BLOOD_VOLUME_MAXIMUM 1120).
+# Blood a squeezed cheele fills a body up to before it drops off (Ratwood BLOOD_VOLUME_MAXIMUM).
 cheele_blood_cap = 10
 
 # --- Weapons and gear (block 4, task B13: combat/integrity.dm, special_weapons.dm, keep_standard.dm, training_dummy.dm, azure_weapons.dm, clash.dm; Ratwood obj_defense.dm, rogueweapon.dm, species.dm equip_delay_self_check(), melee/special.dm, standard_bearer.dm, fluff.dm tdummy, rmb_intents.dm; Azure Peak spells_status_effects.dm).
 
-# A broken weapon's force falls to this part of itself, in one hand and wielded (Ratwood obj_break(): force /= 5).
+# A broken weapon's force falls to this part of itself, in one hand and wielded (Ratwood obj_break(): force).
 broken_force_divisor = 10
 
-# A broken weapon's armour penetration falls to this part of itself (Ratwood obj_break(): armor_penetration /= 5).
+# A broken weapon's armour penetration falls to this part of itself (Ratwood obj_break(): armor_penetration).
 broken_penetration_divisor = 10
 
-# A broken weapon's defense falls to this part of itself (Ratwood obj_break(): wdefense /= 2).
+# A broken weapon's defense falls to this part of itself (Ratwood obj_break(): wdefense).
 broken_defense_divisor = 10
 
-# The wielded defense bonus of a broken weapon that had one (Ratwood obj_break(): wdefense_wbonus = -3).
+# The wielded defense bonus of a broken weapon that had one (Ratwood obj_break(): wdefense_wbonus).
 broken_wielded_defense = 10
 
-# Deciseconds of equip_delay_self over which putting an item on oneself is told to those around (Ratwood: over 10).
+# Deciseconds of equip_delay_self over which putting an item on oneself is told to those around (Ratwood).
 equip_message_delay = 10
 
-# Paces within which the master's rod and the staff of the shepherd strike (Ratwood get_dist() 7).
+# Paces within which the master's rod and the staff of the shepherd strike (Ratwood get_dist()).
 rod_range = 10
 
-# Shock damage of the rod's electrocute and the staff's smite (Ratwood electrocute_act(5)).
+# Shock damage of the rod's electrocute and the staff's smite (Ratwood electrocute_act).
 rod_shock_damage = 10
 
-# Deciseconds a rod's silence lasts (Ratwood set_silence(20 SECONDS)).
+# Deciseconds a rod's silence lasts (Ratwood set_silence).
 rod_silence = 10
 
-# Deciseconds before the master's rod works again after electrocuting (Ratwood 20 SECONDS).
+# Deciseconds before the master's rod works again after electrocuting (Ratwood).
 scepter_shock_cooldown = 10
 
-# Deciseconds before the master's rod works again after silencing (Ratwood 10 SECONDS).
+# Deciseconds before the master's rod works again after silencing (Ratwood).
 scepter_silence_cooldown = 10
 
-# Deciseconds before the staff of the shepherd works again after smiting (Ratwood 10 SECONDS).
+# Deciseconds before the staff of the shepherd works again after smiting (Ratwood).
 aries_smite_cooldown = 10
 
-# Deciseconds before the staff of the shepherd works again after silencing (Ratwood 5 SECONDS).
+# Deciseconds before the staff of the shepherd works again after silencing (Ratwood).
 aries_silence_cooldown = 10
 
-# Fire stacks the staff's smite sets on its target (Ratwood adjust_fire_stacks(3) of blessed fire).
+# Fire stacks the staff's smite sets on its target (Ratwood adjust_fire_stacks of blessed fire).
 aries_smite_fire_stacks = 10
 
-# Charge of a full stunmace (Ratwood charge 100).
+# Charge of a full stunmace (Ratwood charge).
 stunmace_charge = 10
 
-# The stunmace will not switch on at this charge or less (Ratwood "It's out of juice", 33).
+# The stunmace will not switch on at this charge or less (Ratwood "It's out of juice").
 stunmace_low_charge = 10
 
-# Force of a switched-on stunmace, one-handed (Ratwood force 6).
+# Force of a switched-on stunmace, one-handed (Ratwood force).
 stunmace_on_force = 10
 
 # Charge a switched-on stunmace spends every second (Ratwood a unit every two-second tick).
@@ -1983,130 +1983,130 @@ stunmace_drain = 10
 # Charge a switched-off stunmace regains every second (Ratwood a unit every two-second tick).
 stunmace_recharge = 10
 
-# Shock damage of the stunmace on a spent foe, and on its holder when water shorts it out (Ratwood electrocute_act(5)).
+# Shock damage of the stunmace on a spent foe, and on its holder when water shorts it out (Ratwood electrocute_act).
 stunmace_shock_damage = 10
 
-# Charge a shock of the stunmace costs (Ratwood 6).
+# Charge a shock of the stunmace costs (Ratwood).
 stunmace_shock_cost = 10
 
-# Charge the stunmace's sapping of a foe who is not spent costs (Ratwood 3).
+# Charge the stunmace's sapping of a foe who is not spent costs (Ratwood).
 stunmace_sap_cost = 10
 
-# Energy a struck foe loses to the switched-on stunmace (Ratwood energy_add(-10)).
+# Energy a struck foe loses to the switched-on stunmace (Ratwood energy_add).
 stunmace_energy_drain = 10
 
-# Stamina a struck foe loses to the switched-on stunmace (Ratwood stamina_add(5)).
+# Stamina a struck foe loses to the switched-on stunmace (Ratwood stamina_add).
 stunmace_stamina = 10
 
-# Fire stacks the burning hay of a militia spear sets on whom it strikes (Ratwood adjust_fire_stacks(5)).
+# Fire stacks the burning hay of a militia spear sets on whom it strikes (Ratwood adjust_fire_stacks).
 militia_spear_fire_stacks = 10
 
-# Fortune of a man-at-arms whom the ducal standard's runes accept (Ratwood change_stat(STATKEY_LCK, 3)).
+# Fortune of a man-at-arms whom the ducal standard's runes accept (Ratwood change_stat(STATKEY_LCK)).
 standard_fortune = 10
 
-# Perception of a man-at-arms whom the ducal standard's runes accept (Ratwood change_stat(STATKEY_PER, 2)).
+# Perception of a man-at-arms whom the ducal standard's runes accept (Ratwood change_stat(STATKEY_PER)).
 standard_perception = 10
 
-# Mood of a man-at-arms while the standard's runes accept him (Ratwood stressevent keep_standard, stressadd -4).
+# Mood of a man-at-arms while the standard's runes accept him (Ratwood stressevent keep_standard, stressadd).
 standard_mood = 10
 
-# Mood of a guard in sight when the standard is planted (Ratwood stressevent keep_standard_lesser, stressadd -3).
+# Mood of a guard in sight when the standard is planted (Ratwood stressevent keep_standard_lesser, stressadd).
 standard_plant_mood = 10
 
-# Deciseconds that mood lasts (Ratwood 3 MINUTES).
+# Deciseconds that mood lasts (Ratwood).
 standard_plant_mood_time = 10
 
-# Deciseconds a command of the standard keeps its bearer planting it (Ratwood do_after 8 SECONDS).
+# Deciseconds a command of the standard keeps its bearer planting it (Ratwood do_after).
 standard_plant_time = 10
 
-# Least stamina a command of the standard costs its bearer (Ratwood stamina_add(rand(15, 35))).
+# Least stamina a command of the standard costs its bearer (Ratwood stamina_add(rand)).
 standard_stamina_min = 10
 
 # Most stamina a command of the standard costs its bearer.
 standard_stamina_max = 10
 
-# Energy the Recuperate command costs its bearer (Ratwood energy_add(-200)).
+# Energy the Recuperate command costs its bearer (Ratwood energy_add).
 standard_recuperate_cost = 10
 
-# Energy the Steady command costs its bearer (Ratwood energy_add(-300)).
+# Energy the Steady command costs its bearer (Ratwood energy_add).
 standard_steady_cost = 10
 
-# Paces within which guards in sight heed the Plant, Recuperate and Steady commands (Ratwood viewers(7)).
+# Paces within which guards in sight heed the Plant, Recuperate and Steady commands (Ratwood viewers).
 standard_sight = 10
 
-# Paces within which every guard on the level hears the Rally command (Ratwood orange(75)).
+# Paces within which every guard on the level hears the Rally command (Ratwood orange).
 standard_rally_range = 10
 
-# Healing a second of the Recuperate command (Ratwood buff/healing 0.2, a bard's weakest song).
+# Healing a second of the Recuperate command (Ratwood buff/healing, a bard's weakest song).
 standard_heal = 10
 
-# Energy the Recuperate command gives a guard below his most (Ratwood energy_add(100)).
+# Energy the Recuperate command gives a guard below his most (Ratwood energy_add).
 standard_energy_gift = 10
 
-# Deciseconds the Steady command lightens a guard's step (Ratwood buff/standard_steady, 2 MINUTES).
+# Deciseconds the Steady command lightens a guard's step (Ratwood buff/standard_steady).
 standard_steady_duration = 10
 
-# Fortune the Steady command gives a guard (Ratwood effectedstats STATKEY_LCK = 1).
+# Fortune the Steady command gives a guard (Ratwood effectedstats STATKEY_LCK).
 standard_steady_fortune = 10
 
-# Integrity the standard's runes mend at a time (Ratwood repair_amount 20).
+# Integrity the standard's runes mend at a time (Ratwood repair_amount).
 standard_mend_amount = 10
 
-# Deciseconds between the runes' mending (Ratwood repair_time 3 MINUTES).
+# Deciseconds between the runes' mending (Ratwood repair_time).
 standard_mend_time = 10
 
-# Deciseconds of a stroke on the practice dummy (Ratwood do_after 1 SECONDS).
+# Deciseconds of a stroke on the practice dummy (Ratwood do_after).
 dummy_stroke_time = 10
 
-# Sharpness a stroke on the practice dummy wears off the blade (Ratwood remove_bintegrity(5)).
+# Sharpness a stroke on the practice dummy wears off the blade (Ratwood remove_bintegrity).
 dummy_blade_wear = 10
 
-# Least stamina a stroke on the practice dummy costs (Ratwood stamina_add(rand(4, 6))).
+# Least stamina a stroke on the practice dummy costs (Ratwood stamina_add(rand)).
 dummy_stamina_min = 10
 
 # Most stamina a stroke on the practice dummy costs.
 dummy_stamina_max = 10
 
-# The practice dummy teaches a weapon skill below this learned rank (Ratwood can_train_combat_skill() with SKILL_LEVEL_APPRENTICE, 2; journeyman is 3).
+# The practice dummy teaches a weapon skill below this learned rank (Ratwood can_train_combat_skill() with SKILL_LEVEL_APPRENTICE; the journeyman level is the next).
 dummy_train_cap = 10
 
-# Percent a stroke teaches per point of fortune (Ratwood STALUC / 10 * 100).
+# Percent a stroke teaches per point of fortune (Ratwood STALUC).
 dummy_chance_per_fortune = 10
 
-# Most percent a stroke teaches; the rest the dummy ripostes (Ratwood min(probby, 99)).
+# Most percent a stroke teaches; the rest the dummy ripostes (Ratwood min(probby)).
 dummy_chance_max = 10
 
-# Below this intelligence nothing is learned from the dummy, it only ripostes (Ratwood STAINT < 3).
+# Below this intelligence nothing is learned from the dummy, it only ripostes (Ratwood STAINT).
 dummy_min_intelligence = 10
 
-# Experience of the weapon's skill per point of intelligence of a teaching stroke (Ratwood STAINT * 0.35).
+# Experience of the weapon's skill per point of intelligence of a teaching stroke (Ratwood STAINT).
 dummy_xp_per_int = 10
 
-# Deciseconds the dummy's riposte knocks the trainee down, before throwing him back two paces (Ratwood AdjustKnockdown(1)).
+# Deciseconds the dummy's riposte knocks the trainee down, before throwing him back (Ratwood AdjustKnockdown).
 dummy_riposte_knockdown = 10
 
-# Deciseconds a bait between two wearers of duelist's rings takes the target's balance (Ratwood OffBalance(4 SECONDS)).
+# Deciseconds a bait between two wearers of duelist's rings takes the target's balance (Ratwood OffBalance).
 duelist_bait_offbalance = 10
 
-# Deciseconds that bait holds the target in place (Ratwood Immobilize(4 SECONDS)).
+# Deciseconds that bait holds the target in place (Ratwood Immobilize).
 duelist_bait_hold = 10
 
-# Deciseconds the deathfrost axe's frostbite lasts (Azure Peak buff/frostbite 6 SECONDS).
+# Deciseconds the deathfrost axe's frostbite lasts (Azure Peak buff/frostbite).
 frostbite_duration = 10
 
-# Speed the frostbite takes (Azure Peak effectedstats speed -2).
+# Speed the frostbite takes (Azure Peak effectedstats speed).
 frostbite_speed = 10
 
-# Movement slowdown of the frostbite (Azure Peak multiplicative_slowdown 4).
+# Movement slowdown of the frostbite (Azure Peak multiplicative_slowdown).
 frostbite_slowdown = 10
 
-# Deciseconds the frostbite tints its victim blue (Azure Peak 20 SECONDS).
+# Deciseconds the frostbite tints its victim blue (Azure Peak).
 frostbite_tint = 10
 
-# Stamina the frostbite takes at once (Azure Peak stamina_add(25)).
+# Stamina the frostbite takes at once (Azure Peak stamina_add).
 frostbite_stamina = 10
 
-# Stamina the frostbite takes every second until the victim is spent, which thaws it (Azure Peak stamina_add(5)).
+# Stamina the frostbite takes every second until the victim is spent, which thaws it (Azure Peak stamina_add).
 frostbite_stamina_tick = 10
 
 # --- From the code of modular_redtard (code_numbers.py, list b)
@@ -2220,3 +2220,449 @@ round_extend_limit = 10
 
 # Time one extension of the round adds.
 round_extend_cooldown = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list k2a)
+
+# Click delay of a grab action on a foe with a mind (Azure Peak CLICK_CD_WRESTLING); anything else takes a melee click. Times are in deciseconds.
+grab_wrestling_delay = 10
+
+# Bad luck multiplier of tightening a grab, before the roll (Azure Peak grippedby(): badluck).
+grab_badluck_upgrade = 10
+
+# Bad luck multiplier after a failed tightening: the grab slips (Azure Peak grippedby()).
+grab_badluck_struggle = 10
+
+# Bad luck multiplier of a choke (Azure Peak grabbing attack()).
+grab_badluck_choke = 10
+
+# Bad luck multiplier of twisting a held limb (Azure Peak grabbing attack()).
+grab_badluck_twist = 10
+
+# Bad luck multiplier of smashing a held limb into a floor, wall or object (Azure Peak attack_turf(), attack_obj()).
+grab_badluck_smash = 10
+
+# Bad luck multiplier of a shove or pin; a shove of a standing foe rolls it again (Azure Peak grabbing attack()).
+grab_badluck_shove = 10
+
+# Bad luck multiplier of disarming a held hand (Azure Peak grabbing attack()).
+grab_badluck_disarm = 10
+
+# Bad luck multiplier of taking a hostage (Azure Peak grabbing attack()).
+grab_badluck_hostage = 10
+
+# A choke is divided by a factor that grows with this and the cut tier of the armor on the neck (Azure Peak).
+grab_choke_neck_tier_factor = 10
+
+# Stamina a choke drains from a breathing victim, per point of suffocation (Azure Peak).
+grab_choke_stamina_factor = 10
+
+# Chance in percent that one holding a grip lets go when struck (Azure Peak attacked_by() release_prob).
+grab_release_chance = 10
+
+# Chance in percent added when the struck arm is the one holding the grip (Azure Peak).
+grab_release_holding_arm = 10
+
+# Chance in percent added at a fully damaged struck part, in proportion to its damage (Azure Peak).
+grab_release_limb_damage = 10
+
+# Energy the critically wounded lose on top in combat mode, per life tick (Azure Peak TRAIT_HIGHER_CMODE_DRAIN: a multiple of the usual drain on top).
+critwounded_combat_drain = 10
+
+# How long one stays critically wounded after an opened artery, a broken bone or bleeding out (Azure Peak CRITICAL_WOUNDED_DEBUFF_DURATION). Times are in deciseconds.
+critwounded_duration = 10
+
+# Below the bad blood level a body without a mind chokes this many times faster (Azure Peak).
+bleed_oxy_mindless_factor = 10
+
+# Least time between two death rattles of the bled-out (Azure Peak last_gasp). Times are in deciseconds.
+bleed_gasp_interval_min = 10
+
+# Most time between two death rattles of the bled-out (Azure Peak last_gasp). Times are in deciseconds.
+bleed_gasp_interval_max = 10
+
+# Chance in percent that a bled-out player's rattle also shows as a line (Azure Peak).
+bleed_gasp_emote_chance = 10
+
+# Weight of burn damage in a limb's pain against brute damage (Azure Peak BURN_PAIN_WEIGHT).
+pain_burn_weight = 10
+
+# Slowdown of a heavy hit per point of its damage (Azure Peak apply_slowdown()). Times are in deciseconds.
+pain_slow_per_damage = 10
+
+# Least slowdown of a heavy hit (Azure Peak). Times are in deciseconds.
+pain_slow_min_time = 10
+
+# Most slowdown of a heavy hit (Azure Peak). Times are in deciseconds.
+pain_slow_max_time = 10
+
+# A hematoma is called minor from this much health (it does not bleed) on (Azure Peak severity_stages).
+dynamic_bruise_stage_minor = 10
+
+# A hematoma is called moderate from this much health (it does not bleed) on (Azure Peak severity_stages).
+dynamic_bruise_stage_moderate = 10
+
+# A hematoma is called big from this much health (it does not bleed) on (Azure Peak severity_stages).
+dynamic_bruise_stage_big = 10
+
+# A hematoma is called massive from this much health (it does not bleed) on (Azure Peak severity_stages).
+dynamic_bruise_stage_massive = 10
+
+# A hematoma is called immense from this much health (it does not bleed) on (Azure Peak severity_stages).
+dynamic_bruise_stage_immense = 10
+
+# A slash is called light from this much bleeding per Life tick on (Azure Peak severity_stages).
+dynamic_slash_stage_light = 10
+
+# A slash is called deep from this much bleeding per Life tick on (Azure Peak severity_stages).
+dynamic_slash_stage_deep = 10
+
+# A slash is called severe from this much bleeding per Life tick on (Azure Peak severity_stages).
+dynamic_slash_stage_severe = 10
+
+# A slash is called gnarly from this much bleeding per Life tick on (Azure Peak severity_stages).
+dynamic_slash_stage_gnarly = 10
+
+# A slash is called lethal from this much bleeding per Life tick on (Azure Peak severity_stages).
+dynamic_slash_stage_lethal = 10
+
+# A puncture is called shallow from this much bleeding per Life tick on (Azure Peak severity_stages).
+dynamic_puncture_stage_shallow = 10
+
+# A puncture is called deep from this much bleeding per Life tick on (Azure Peak severity_stages).
+dynamic_puncture_stage_deep = 10
+
+# A puncture is called gnarly from this much bleeding per Life tick on (Azure Peak severity_stages).
+dynamic_puncture_stage_gnarly = 10
+
+# A puncture is called vicious from this much bleeding per Life tick on (Azure Peak severity_stages).
+dynamic_puncture_stage_vicious = 10
+
+# A puncture is called lethal from this much bleeding per Life tick on (Azure Peak severity_stages).
+dynamic_puncture_stage_lethal = 10
+
+# A gouge is called shallow from this much bleeding per Life tick on (Azure Peak severity_stages).
+dynamic_gouge_stage_shallow = 10
+
+# A gouge is called deep from this much bleeding per Life tick on (Azure Peak severity_stages).
+dynamic_gouge_stage_deep = 10
+
+# A gouge is called gnarly from this much bleeding per Life tick on (Azure Peak severity_stages).
+dynamic_gouge_stage_gnarly = 10
+
+# A gouge is called vicious from this much bleeding per Life tick on (Azure Peak severity_stages).
+dynamic_gouge_stage_vicious = 10
+
+# A gouge is called lethal from this much bleeding per Life tick on (Azure Peak severity_stages).
+dynamic_gouge_stage_lethal = 10
+
+# A bite is called shallow from this much bleeding per Life tick on (Azure Peak severity_stages).
+dynamic_bite_stage_shallow = 10
+
+# A bite is called deep from this much bleeding per Life tick on (Azure Peak severity_stages).
+dynamic_bite_stage_deep = 10
+
+# A bite is called gnarly from this much bleeding per Life tick on (Azure Peak severity_stages).
+dynamic_bite_stage_gnarly = 10
+
+# A bite is called lethal from this much bleeding per Life tick on (Azure Peak severity_stages).
+dynamic_bite_stage_lethal = 10
+
+# A bite is called impossible from this much bleeding per Life tick on (Azure Peak severity_stages).
+dynamic_bite_stage_impossible = 10
+
+# A lashing is called light from this much bleeding per Life tick on (Azure Peak severity_stages).
+dynamic_lashing_stage_light = 10
+
+# A lashing is called deep from this much bleeding per Life tick on (Azure Peak severity_stages).
+dynamic_lashing_stage_deep = 10
+
+# A lashing is called severe from this much bleeding per Life tick on (Azure Peak severity_stages).
+dynamic_lashing_stage_severe = 10
+
+# A lashing is called gnarly from this much bleeding per Life tick on (Azure Peak severity_stages).
+dynamic_lashing_stage_gnarly = 10
+
+# A lashing is called lethal from this much bleeding per Life tick on (Azure Peak severity_stages).
+dynamic_lashing_stage_lethal = 10
+
+# A flogging is called light from this much bleeding per Life tick on (Azure Peak severity_stages).
+dynamic_flogging_stage_light = 10
+
+# A flogging is called deep from this much bleeding per Life tick on (Azure Peak severity_stages).
+dynamic_flogging_stage_deep = 10
+
+# A flogging is called severe from this much bleeding per Life tick on (Azure Peak severity_stages).
+dynamic_flogging_stage_severe = 10
+
+# A flogging is called gnarly from this much bleeding per Life tick on (Azure Peak severity_stages).
+dynamic_flogging_stage_gnarly = 10
+
+# A flogging is called lethal from this much bleeding per Life tick on (Azure Peak severity_stages).
+dynamic_flogging_stage_lethal = 10
+
+# Chance in percent per point of damage that a bloody blow sprays the blood of the struck behind them (Azure Peak bodypart_attacked_by()).
+crit_blood_spray_per_damage = 10
+
+# Chance in percent a brittle limb (broken, or numb from a break) adds to breaking a bone of the body or a limb (Azure Peak TRAIT_BRITTLE).
+crit_brittle_bonus = 10
+
+# Chance in percent a brittle head adds to cracking the skull (Azure Peak TRAIT_BRITTLE).
+crit_brittle_bonus_head = 10
+
+# Slowdown after an opened artery or a broken bone (Azure Peak apply_slowdown() on gaining them). Times are in deciseconds.
+crit_wound_slow_time = 10
+
+# How long a limb a crit broke gives out, and stays brittle (Azure Peak temporary_crit_paralysis()). Times are in deciseconds.
+crit_fracture_paralysis = 10
+
+# Knockout of a cracked skull (Azure Peak fracture/head knockout). Times are in deciseconds.
+crit_skull_knockout = 10
+
+# Extra slowness of steps for each broken leg and a broken head (Azure Peak FRACTURED_ADD_SLOWDOWN; a multiplicative movespeed slowdown).
+crit_fracture_slowdown = 10
+
+# Bleeding of a bone a crit broke, per Life tick, when fresh (Azure Peak fracture bleed_rate).
+crit_fracture_bleed = 10
+
+# How much that bleeding clots each Life tick (Azure Peak fracture clotting_rate).
+crit_fracture_clot = 10
+
+# The least that bleeding clots down to, per Life tick (Azure Peak fracture clotting_threshold).
+crit_fracture_clot_floor = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list k2b)
+
+# Share of the rest of a bow's or sling's draw above its floor left at no rank of the launcher's skill (Azure Peak ranged_draw_curve).
+launcher_draw_curve_0 = 10
+
+# Share of the rest of a bow's or sling's draw above its floor left at the first rank of the launcher's skill (Azure Peak ranged_draw_curve).
+launcher_draw_curve_1 = 10
+
+# Share of the rest of a bow's or sling's draw above its floor left at the second rank of the launcher's skill (Azure Peak ranged_draw_curve).
+launcher_draw_curve_2 = 10
+
+# Share of the rest of a bow's or sling's draw above its floor left at the third rank of the launcher's skill (Azure Peak ranged_draw_curve).
+launcher_draw_curve_3 = 10
+
+# Share of the rest of a bow's or sling's draw above its floor left at the fourth rank of the launcher's skill (Azure Peak ranged_draw_curve).
+launcher_draw_curve_4 = 10
+
+# Share of the rest of a bow's or sling's draw above its floor left at the fifth rank of the launcher's skill (Azure Peak ranged_draw_curve).
+launcher_draw_curve_5 = 10
+
+# Share of the rest of a bow's or sling's draw above its floor left at the sixth rank of the launcher's skill (Azure Peak ranged_draw_curve).
+launcher_draw_curve_6 = 10
+
+# Strength below which a heavy bow (longbows) draws slower (Azure Peak RANGED_DRAW_STR_BASELINE).
+launcher_draw_strength_baseline = 10
+
+# Deciseconds a heavy bow's draw gets longer per point of strength below the baseline (Azure Peak LONGBOW_DRAW_PER_STR).
+launcher_heavy_draw_per_strength = 10
+
+# Deciseconds an arcing shot adds to the base of the draw (Azure Peak RANGED_ARC_DRAW_EXTRA).
+launcher_arc_draw_extra = 10
+
+# Deciseconds an arcing shot adds to the floor of the draw (Azure Peak RANGED_ARC_DRAW_FLOOR_EXTRA).
+launcher_arc_draw_floor_extra = 10
+
+# Deciseconds an arcing shot adds to the floor of a slurbow's aim, in place of the common one (Azure Peak SLURBOW_ARC_DRAW_FLOOR_EXTRA).
+launcher_arc_draw_floor_extra_slurbow = 10
+
+# Deciseconds of a plain bow's draw at no rank of archery (Azure Peak BOW_DRAW_BASE).
+launcher_draw_base_bow = 10
+
+# Shortest draw of a plain bow, deciseconds (Azure Peak BOW_DRAW_FLOOR).
+launcher_draw_floor_bow = 10
+
+# Deciseconds of a short bow's draw at no rank of archery (Azure Peak SHORTBOW_DRAW_BASE; Ratwood's base bow is the short bow).
+launcher_draw_base_shortbow = 10
+
+# Shortest draw of a short bow, deciseconds (Azure Peak SHORTBOW_DRAW_FLOOR).
+launcher_draw_floor_shortbow = 10
+
+# Deciseconds of a recurve bow's draw at no rank of archery (Azure Peak BOW_DRAW_BASE: the recurve draws as the plain bow).
+launcher_draw_base_recurve = 10
+
+# Shortest draw of a recurve bow, deciseconds (Azure Peak BOW_DRAW_FLOOR).
+launcher_draw_floor_recurve = 10
+
+# Deciseconds of a longbow's draw at no rank of archery (Azure Peak LONGBOW_DRAW_BASE).
+launcher_draw_base_longbow = 10
+
+# Shortest draw of a longbow, deciseconds (Azure Peak LONGBOW_DRAW_FLOOR).
+launcher_draw_floor_longbow = 10
+
+# Deciseconds of a sling's swing at no rank of slings (Azure Peak SLING_DRAW_BASE).
+launcher_draw_base_sling = 10
+
+# Shortest swing of a sling, deciseconds (Azure Peak SLING_DRAW_FLOOR).
+launcher_draw_floor_sling = 10
+
+# Deciseconds of a crossbow's aim at no rank of crossbows (Azure Peak CROSSBOW_DRAW_BASE).
+launcher_draw_base_crossbow = 10
+
+# Shortest aim of a crossbow, deciseconds (Azure Peak CROSSBOW_DRAW_FLOOR).
+launcher_draw_floor_crossbow = 10
+
+# Deciseconds of a crossbow's aim taken off per rank of crossbows (Azure Peak CROSSBOW_DRAW_PER_SKILL).
+launcher_draw_per_skill_crossbow = 10
+
+# Deciseconds of a slurbow's aim at no rank of crossbows (Azure Peak SLURBOW_DRAW_BASE).
+launcher_draw_base_slurbow = 10
+
+# Shortest aim of a slurbow, deciseconds (Azure Peak SLURBOW_DRAW_FLOOR).
+launcher_draw_floor_slurbow = 10
+
+# Deciseconds of a slurbow's aim taken off per rank of crossbows (Azure Peak SLURBOW_DRAW_PER_SKILL).
+launcher_draw_per_skill_slurbow = 10
+
+# Deciseconds of a heavy crossbow's aim at no rank of crossbows (Azure Peak HEAVY_CROSSBOW_DRAW_BASE).
+launcher_draw_base_heavy_crossbow = 10
+
+# Shortest aim of a heavy crossbow, deciseconds (Azure Peak HEAVY_CROSSBOW_DRAW_FLOOR).
+launcher_draw_floor_heavy_crossbow = 10
+
+# Deciseconds of a heavy crossbow's aim taken off per rank of crossbows (Azure Peak HEAVY_CROSSBOW_DRAW_PER_SKILL).
+launcher_draw_per_skill_heavy_crossbow = 10
+
+# Factor of a one-handed crossbow's aim without a free hand (Azure Peak CROSSBOW_ONEHANDED_DRAW_MULT).
+launcher_crossbow_onehanded_draw_mult = 10
+
+# Factor of a one-handed crossbow's arcing aim without a free hand (Azure Peak CROSSBOW_ONEHANDED_ARC_DRAW_MULT).
+launcher_crossbow_onehanded_arc_draw_mult = 10
+
+# Peak aim of a launcher's shot at no rank of its skill, before the launcher's accfactor (Azure Peak ACC_RANGED_BASE).
+launcher_aim_base = 10
+
+# Peak aim a launcher's shot gains per rank of its skill, before the launcher's accfactor (Azure Peak ACC_RANGED_PER_SKILL).
+launcher_aim_per_skill = 10
+
+# Peak aim of a round not fired from a launcher by a person (Azure Peak ACC_RANGED_NPC_BASE).
+launcher_aim_npc_base = 10
+
+# Tiles a shot flies before its aim falls off (Azure Peak ACC_RANGED_VISUAL_REACH).
+launcher_aim_visual_reach = 10
+
+# Aim a shot loses per tile past the visual reach (Azure Peak ACC_RANGED_FARSIGHT_PENALTY).
+launcher_aim_farsight_penalty = 10
+
+# Aim a shot loses at a target on another level (Azure Peak ACC_RANGED_ZCROSS_PENALTY).
+launcher_aim_zcross_penalty = 10
+
+# Least aim of a shot, and its aim outside the round's sweetspot (Azure Peak ACC_RANGED_FLOOR).
+launcher_aim_floor = 10
+
+# Highest chance to hit the head, neck, arms or legs without steady aim (Azure Peak RANGED_MAX_PRECISE_HIT_CHANCE).
+launcher_aim_precise_max = 10
+
+# Degrees a fully drawn shot may stray at the worst tremble of a held draw (Azure Peak RANGED_HOLD_SPREAD_MAX).
+launcher_hold_spread_max = 10
+
+# Factor of the stamina an NPC pays for a shot or a let-down draw (Azure Peak RANGED_NPC_DRAIN_MULT).
+launcher_npc_drain_mult = 10
+
+# Share of a launcher's shot stamina a draw let down without a shot costs, times how far it was drawn (Azure Peak RANGED_LETDOWN_DRAIN_MULT).
+launcher_letdown_drain_mult = 10
+
+# Stamina a plain bow's shot costs (Azure Peak BOW_RELEASEDRAIN).
+launcher_release_drain_bow = 10
+
+# Stamina a short bow's shot costs (Azure Peak SHORTBOW_RELEASEDRAIN).
+launcher_release_drain_shortbow = 10
+
+# Stamina a recurve bow's shot costs (Azure Peak RECURVE_RELEASEDRAIN).
+launcher_release_drain_recurve = 10
+
+# Stamina a longbow's shot costs (Azure Peak LONGBOW_RELEASEDRAIN).
+launcher_release_drain_longbow = 10
+
+# Stamina a sling's shot costs (Azure Peak SLING_RELEASEDRAIN).
+launcher_release_drain_sling = 10
+
+# Deciseconds a full ranged draw is held without trembling or draining, at the perception baseline (Azure Peak RANGED_HOLD_GRACE).
+ranged_hold_grace = 10
+
+# Perception at which a full ranged draw is held for the plain free hold (Azure Peak RANGED_HOLD_GRACE_PER_BASELINE).
+ranged_hold_grace_perception_baseline = 10
+
+# Deciseconds of free hold a point of perception adds or takes away from the baseline (Azure Peak RANGED_HOLD_GRACE_PER_BONUS).
+ranged_hold_grace_per_perception = 10
+
+# Deciseconds past the free hold to the worst tremble of a held draw (Azure Peak RANGED_HOLD_RAMP_WINDOW).
+ranged_hold_ramp_window = 10
+
+# How much more a held draw drains at the worst tremble: the drain is times one plus this times the tremble (Azure Peak RANGED_HOLD_RAMP).
+ranged_hold_ramp = 10
+
+# Tiles to the target under which an arrow falls off (Azure Peak MIN_ARROW_RANGE).
+ammo_arrow_min_range = 10
+
+# Tiles to the target over which an arrow falls off (Azure Peak MAX_ARROW_RANGE).
+ammo_arrow_max_range = 10
+
+# Factor of an arrow's damage outside its sweetspot (Azure Peak DAM_FALLOFF_ARROW).
+ammo_arrow_falloff = 10
+
+# Tiles to the target under which a bolt falls off (Azure Peak MIN_BOLT_RANGE).
+ammo_bolt_min_range = 10
+
+# Tiles to the target over which a bolt falls off (Azure Peak MAX_BOLT_RANGE).
+ammo_bolt_max_range = 10
+
+# Factor of a bolt's damage outside its sweetspot (Azure Peak DAM_FALLOFF_BOLT).
+ammo_bolt_falloff = 10
+
+# Tiles to the target under which a heavy bolt aims only at the chest (Azure Peak MIN_BOLT_RANGE); its damage does not fall off.
+ammo_heavy_bolt_min_range = 10
+
+# Tiles to the target over which a heavy bolt aims only at the chest (Azure Peak MAX_BOLT_RANGE).
+ammo_heavy_bolt_max_range = 10
+
+# Tiles to the target under which a sling bullet falls off (Azure Peak MIN_BULLET_RANGE).
+ammo_sling_min_range = 10
+
+# Tiles to the target over which a sling bullet falls off (Azure Peak MAX_BULLET_RANGE).
+ammo_sling_max_range = 10
+
+# Factor of a sling bullet's damage outside its sweetspot (Azure Peak DAM_FALLOFF_BULLET).
+ammo_sling_falloff = 10
+
+# Aim a sling bullet's heft adds to the shot (Azure Peak SLING_AIM).
+ammo_sling_aim_mod = 10
+
+# Aim a loose stone or breaking sling shot's heft adds to the shot (Azure Peak SLING_AIM of the plain sling bullet).
+ammo_stone_aim_mod = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list k2v)
+
+# Share of a melee blow added per penetration point (Azure Peak get_pen_info()) when it passes armor whose block tier the intent's penetration reaches, over pen_passthrough_min; the armor then wears by the blow times one less this per point (Azure Peak PEN_PASSTHROUGH_RATIO).
+pen_passthrough_per_point = 10
+
+# Share of a projectile that passes armor whose block tier its penetration is over; the armor wears by the same share of it (Azure Peak PEN_PASSTHROUGH_PROJ_MORE).
+pen_projectile_passthrough_more = 10
+
+# Damage reduction per tier of the best layer when a blunt blow or fire wears the armor: the layers take the blow over one plus this times that tier (Azure Peak DR tier formula of checkarmor()).
+armor_dr_tier_coefficient = 10
+
+# Armor wear factor of a stopped blow against a vulnerable defender (Azure Peak VULN_INTEG_MOD).
+armor_vulnerable_integ_mod = 10
+
+# Integrity a parrying weapon loses against a bare-handed attacker; a shield loses it times the attacking intent's armor wear factor (Azure Peak INTEG_PARRY_DECAY_UNARMED).
+parry_unarmed_attacker_wear = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list k2d1)
+
+# Percent chance that a stabbing or cutting crit which opens an artery leaves its weapon stuck in the part (Azure Peak embed_chance of artery wounds).
+stuck_weapon_chance_artery = 10
+
+# Percent chance that a stab crit into the skull, an eye or an ear leaves its weapon stuck there (Azure Peak embed_chance of the brain, eye and ear fractures).
+stuck_weapon_chance_organ = 10
+
+# Stun of the one a weapon sticks in (Azure Peak Stun() on embedding). Times are in deciseconds.
+stuck_weapon_stun = 10
+
+# How long the one who struck can hold the target by the stuck weapon; then the hold breaks and the weapon stays in the part. Times are in deciseconds.
+stuck_weapon_hold_time = 10
+
+# Damage of twisting a stuck weapon, as a share of the weapon's force; the sure crit comes on top of it.
+stuck_weapon_twist_damage = 10

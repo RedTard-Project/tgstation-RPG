@@ -91,7 +91,7 @@
 /datum/special_intent/axe_swing/rogue_npc_odds(mob/living/user, atom/target)
 	return rogue_npc_front(user)
 
-/datum/special_intent/greatsword_swing/rogue_npc_odds(mob/living/user, atom/target)
+/datum/special_intent/wave_swing/rogue_npc_odds(mob/living/user, atom/target)
 	return rogue_npc_ring(user, 2)
 
 /datum/special_intent/limbguard/rogue_npc_odds(mob/living/user, atom/target)

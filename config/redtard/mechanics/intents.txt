@@ -1,3 +1,4112 @@
 # Attack intents. The id is the path after /datum/intent/; items list them with intents = id, id.
 # Fields: name, desc, strike_class, armor_type, damage_factor, penetration_factor, click_delay, stamina_cost, miss_cost, reach, charge_time, charge_drain, charge_slowdown, swing_delay, swing_delay_type, effective_range, effective_range_type, armor_wear_factor, sharpness_penalty, can_parry, can_dodge, no_attack
 # Only overrides live here; every other value comes from the code. The full list of current values: Rogue Mechanics panel -> Export, or a world built with REDTARD_MECHANICS_EXPORT.
+
+# >>> port_rockhill.py: the numbers of the intents of modular_redtard/rockhill/ported/intents.dm (Azure Peak's where Azure has the intent, else Ratwood's), rewritten on every run of the porter; an override goes below the end line (a later line of an entry wins).
+
+[arc/bow]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+charge_slowdown = 10
+swing_delay = 10
+
+[arc/bow/short]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+charge_slowdown = 10
+swing_delay = 10
+
+[arc/crossbow]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_slowdown = 10
+swing_delay = 10
+
+[arc/crossbow/heavy]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+charge_slowdown = 10
+swing_delay = 10
+
+[arc/crossbow/slurbow]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_slowdown = 10
+swing_delay = 10
+
+[arc/firearm]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_slowdown = 10
+swing_delay = 10
+
+[arc/sling]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+charge_slowdown = 10
+swing_delay = 10
+
+[attach]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[axe/bash]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[axe/bash/battle]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[axe/bash/dolabra]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[axe/bash/dolabra/pioneer]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[axe/chop]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[axe/chop/arbelos]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[axe/chop/frost]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[axe/chop/halberd]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[axe/chop/heavy]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[axe/chop/long]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[axe/chop/long/woodcutter]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[axe/chop/long/woodcutter/pioneer]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[axe/chop/scythe]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[axe/chop/stone]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[axe/cut]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[axe/cut/arbelos]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[axe/cut/frost]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[axe/cut/handaxe]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[axe/cut/long]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[axe/cut/long/bronze]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[axe/cut/long/dolabra/pioneer]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[axe/cut/lunge]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+effective_range = 10
+sharpness_penalty = 10
+
+[axe/rangedthrust]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+effective_range = 10
+
+[axe/sweep]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[axe/thrust]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[bite]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[bless]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[buttstroke]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[buttstroke/heavy]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[cast]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[claw/chop]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[claw/chop/gronn]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[claw/cut]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[claw/cut/gronn]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[claw/rend]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[dagger/chop]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[dagger/chop/bronze]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[dagger/chop/cleaver]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[dagger/chop/wood]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[dagger/cut]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[dagger/cut/blunt]
+damage_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[dagger/cut/heavy]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[dagger/cut/light]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[dagger/cut/quick]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[dagger/cut/rend]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[dagger/cut/wood]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[dagger/sucker_punch]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[dagger/thrust]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[dagger/thrust/blunt]
+damage_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[dagger/thrust/bronze]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[dagger/thrust/combat]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[dagger/thrust/cutlery]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[dagger/thrust/fork]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[dagger/thrust/pick]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[dagger/thrust/pick/blunt]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[dagger/thrust/pick/wood]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[dagger/thrust/quick]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[dagger/thrust/weak]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[dagger/thrust/wood]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[effect/daze]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[effect/daze/freisabre]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[effect/daze/longsword]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[effect/daze/longsword/clinch]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[effect/daze/longsword/clinch/quarterstaff]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[effect/daze/quarterstaff]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[effect/hobble]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[effect/hobble/quarterstaff]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[fill]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[flail/bash]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[flail/smash]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[flail/smash/matthiosflail]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[flail/smash/militia]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[flail/smash/ranged]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[flail/smash/ranged/psywhip]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[flail/strike]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[flail/strike/matthiosflail]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[flail/strikerange]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[flail/sweep]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[flailthresh]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[food]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[forge]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[garrote/choke]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[garrote/grab]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[grab/upgrade]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[grapple]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[hit]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[katar/cut]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[katar/thrust]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[katar/thrust/arbelos]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[lance]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[lance/onehand]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[lord_electrocute]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[lord_silence]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[lordbash]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[mace/bash/ranged]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[mace/rangedthrust]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[mace/rangedthrust/short]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[mace/slap]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[mace/slap/pig]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[mace/smash]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+
+[mace/smash/crush]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+
+[mace/smash/crush/demolish]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+
+[mace/smash/eaglebeak]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+
+[mace/smash/flail]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[mace/smash/flail/golgotha]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[mace/smash/flail/matthiosflail]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[mace/smash/flailchop]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[mace/smash/flailrange]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[mace/smash/goden]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[mace/smash/grand]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+
+[mace/smash/lesser]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+
+[mace/smash/quarterstaff]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+
+[mace/smash/quarterstaff/long]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+
+[mace/smash/shield]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+
+[mace/smash/shield/metal]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+
+[mace/smash/shield/metal/great]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+
+[mace/smash/wood]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+
+[mace/smash/wood/ranged]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+
+[mace/strike]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[mace/strike/dislocate]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[mace/strike/dislocate/quarterstaff]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[mace/strike/goden]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[mace/strike/grand]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[mace/strike/pan]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[mace/strike/poleaxe]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[mace/strike/shovel]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[mace/strike/wallop]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[mace/strike/wood]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[mace/sweep]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[mace/warhammer/pick]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[mace/warhammer/pick/ranged]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[mace/warhammer/stab]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[mace/warhammer/stab/lesser]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[magos_electrocute]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[maul/spiked]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[pforkdump]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[pick]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[pick/bad]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[pick/ranged]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[pick/ranged/dolabra]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[pick/ranged/dolabra/pioneer]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[pour]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[priest_silence]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[priest_smite]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[reel]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[rend]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[rend/apophis]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[rend/krieg]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[rend/reach]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[rend/reach/partizan]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[shield/bash]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[shield/bash/metal]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[shield/block]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[shoot/bow]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+charge_slowdown = 10
+swing_delay = 10
+
+[shoot/bow/short]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+charge_slowdown = 10
+swing_delay = 10
+
+[shoot/crossbow]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_slowdown = 10
+swing_delay = 10
+
+[shoot/crossbow/heavy]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+charge_slowdown = 10
+swing_delay = 10
+
+[shoot/crossbow/slurbow]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_slowdown = 10
+swing_delay = 10
+
+[shoot/firearm]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_slowdown = 10
+swing_delay = 10
+
+[shovelscoop]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[simple/bite]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[simple/bite/bear]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[simple/bite/bigrat]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[simple/bite/honeyspider]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[simple/bite/mirespider]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[simple/bite/mirespider_lurker]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[simple/bite/mirespider_paralytic]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[simple/bite/volf]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[simple/claw]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[simple/claw/deepone_unarmed]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[simple/claw/mole]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[simple/claw/skeleton]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[simple/dreamfiend_ancient]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[simple/elemental_unarmed]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[simple/elementalt2_unarmed]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[simple/headbutt]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[simple/headbutt/saiga]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[simple/horse]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[simple/minotaur_axe]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[simple/minotaur_unarmed]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[simple/slash]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[simple/spear/skeleton]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[simple/troll_axe]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[smelt]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[smoke]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[snip]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[spear/bash]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[spear/bash/eaglebeak]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[spear/bash/polehammer]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[spear/bash/quarterstaff]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[spear/bash/quarterstaff/long]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[spear/bash/quarterstaff/overhead]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[spear/bash/quarterstaff/rapid]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[spear/bash/ranged]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[spear/bash/ranged/quarterstaff]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[spear/bash/ranged/woodstaff]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[spear/bash/staff]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[spear/bash/staff/onehand]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[spear/bash/woodstaff]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[spear/cast]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[spear/cut]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[spear/cut/bardiche/cleave]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[spear/cut/bardiche/cleave/chop]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[spear/cut/glaive]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[spear/cut/glaive/sweep]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[spear/cut/halberd]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[spear/cut/naginata]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[spear/cut/naginata/sweep]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[spear/cut/oneh]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+sharpness_penalty = 10
+
+[spear/cut/oneh/pike]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+sharpness_penalty = 10
+
+[spear/cut/scythe]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[spear/cut/short]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[spear/dismount]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+effective_range = 10
+
+[spear/thrust]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+effective_range = 10
+
+[spear/thrust/azurean]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+effective_range = 10
+
+[spear/thrust/azurean/oneh]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+effective_range = 10
+
+[spear/thrust/azurean/pick]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+effective_range = 10
+
+[spear/thrust/bad]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[spear/thrust/blunted]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+effective_range = 10
+armor_wear_factor = 10
+
+[spear/thrust/lance]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+effective_range = 10
+
+[spear/thrust/militia]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+effective_range = 10
+
+[spear/thrust/oneh]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+sharpness_penalty = 10
+
+[spear/thrust/oneh/training]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+sharpness_penalty = 10
+
+[spear/thrust/pike]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+effective_range = 10
+
+[spear/thrust/pike/skewer]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+effective_range = 10
+
+[spear/thrust/quarterstaff]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[spear/thrust/quarterstaff/long]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[spear/thrust/short]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+effective_range = 10
+
+[spear/thrust/training]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+effective_range = 10
+
+[special/magicarc]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[splash]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[stab]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[stab/militia]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[swing/sling]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+charge_slowdown = 10
+swing_delay = 10
+
+[sword/chop]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/chop/cleave]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[sword/chop/cleave/super]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[sword/chop/falx]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/chop/heavy]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/chop/long]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/chop/militia]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/chop/powerstrike]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/chop/sabre]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/chop/short]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/chop/shotel]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/cut]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/cut/arming]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/cut/exe/cleave]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/cut/exe/sweep]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/cut/falx]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/cut/falx/heavy]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/cut/krieg]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/cut/light]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/cut/long]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/cut/militia]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/cut/rapier]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/cut/rend]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[sword/cut/sabre]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/cut/sabre/heavy]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/cut/sabre/master]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/cut/sabre/slow]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/cut/short]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/cut/short/banded]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/cut/zhanmadao]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/cut/zhanmadao/sweep]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/cut/zwei]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/cut/zwei/cleave]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/cut/zwei/sweep]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/disarm]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/disarm/quarterstaff]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/disarm/range]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/strike]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[sword/strike/bad]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[sword/strike/bash/mordhau]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[sword/strike/bash/mordhau/smash]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[sword/strike/cancel]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[sword/strike/penalty]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[sword/thrust]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/thrust/arming]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/thrust/blunt]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[sword/thrust/estoc]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/thrust/estoc/lunge]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/thrust/exe]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[sword/thrust/heavy]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/thrust/hook]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/thrust/long]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/thrust/long/deep]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/thrust/long/deep/halfsword]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/thrust/long/halfsword]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/thrust/long/halfsword/jab]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/thrust/long/halfsword/lesser]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/thrust/rapier]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/thrust/rapier/lunge]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/thrust/sabre]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/thrust/short]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/thrust/zhanmadao]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/thrust/zwei]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[tie]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[till]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[unarmed/claw]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[unarmed/help]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[unarmed/punch]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[use]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[use/flaregun]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_slowdown = 10
+swing_delay = 10
+
+[use/peel]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[whip/belt/buckle]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[whip/belt/tip]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[whip/crack]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[whip/crack/blunt]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[whip/crack/urumi]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[whip/crack/urumi/heavy]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[whip/lash]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[whip/lash/holy]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[whip/lash/master]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[whip/lash/urumi]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[whip/lash/urumi/heavy]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[whip/punish]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[whip/thrust]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+effective_range = 10
+
+[whip/thrust/heavy]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+effective_range = 10
+
+[whips]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[wing/cut]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[wing/grab]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[wing/pick]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[wing/shred]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+# <<< port_rockhill.py
+
+# >>> port_azure_items.py: the numbers of the intents of modular_redtard/items_azure/intents.dm (Azure Peak's), rewritten by tools/port_azure_items.py.
+
+[auto]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[dagger/chop/wood]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[dagger/cut/quick]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[dagger/cut/wood]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[dagger/thrust/cutlery]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[drill]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[effect/daze/longsword/clinch/quarterstaff]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[hand/draw]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[katar/lirvasbite]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[mace/boom]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[mace/lesserdemolish]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[mace/slap/pig]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[mace/smash/crush/demolish]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+
+[mace/smash/quarterstaff/long]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+
+[mace/strike/dislocate/quarterstaff]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[spear/bash/quarterstaff/long]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[spear/bash/quarterstaff/overhead]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+armor_wear_factor = 10
+
+[spear/bash/quarterstaff/rapid]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[spear/cut/oneh/pike]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+sharpness_penalty = 10
+
+[spear/cut/short]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[spear/thrust/azurean]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[spear/thrust/azurean/oneh]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[spear/thrust/azurean/pick]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[spear/thrust/oneh/training]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+sharpness_penalty = 10
+armor_wear_factor = 10
+
+[spear/thrust/pike]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+effective_range = 10
+
+[spear/thrust/pike/skewer]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+effective_range = 10
+
+[spear/thrust/quarterstaff/long]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+effective_range = 10
+
+[spear/thrust/short]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[spear/thrust/training]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+effective_range = 10
+armor_wear_factor = 10
+
+[sword/chop/powerstrike]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+
+[sword/cut/militia]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/cut/short/banded]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/cut/zhanmadao]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/cut/zhanmadao/sweep]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[sword/thrust/zhanmadao]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[use/peel]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+# <<< port_azure_items.py
+
+# >>> k2g_vibelin_numbers: K2g (2026-11-22), numbers of intents from Vibelin where it has the same intent path, else Azure Peak; the penetration factor stays Azure's (Vibelin's is percent of a 0-100 armor). Rewritten by .cache/modular_redtard/agents/k2/k2g_intents.py --write.
+
+[axe/chop]
+damage_factor = 10
+miss_cost = 10
+swing_delay = 10
+
+[axe/cut]
+damage_factor = 10
+click_delay = 10
+miss_cost = 10
+
+[axe/thrust]
+damage_factor = 10
+miss_cost = 10
+reach = 10
+swing_delay = 10
+
+[claw/cut]
+damage_factor = 10
+miss_cost = 10
+swing_delay = 10
+
+[claw/rend]
+damage_factor = 10
+miss_cost = 10
+swing_delay = 10
+
+[dagger/chop]
+click_delay = 10
+swing_delay = 10
+
+[dagger/chop/cleaver]
+damage_factor = 10
+click_delay = 10
+swing_delay = 10
+
+[dagger/cut]
+swing_delay = 10
+
+[dagger/thrust]
+click_delay = 10
+swing_delay = 10
+
+[effect/daze]
+damage_factor = 10
+swing_delay = 10
+
+[effect/hobble]
+click_delay = 10
+
+[flail/strike]
+damage_factor = 10
+miss_cost = 10
+swing_delay = 10
+
+[flail/strike/matthiosflail]
+damage_factor = 10
+miss_cost = 10
+swing_delay = 10
+
+[katar/cut]
+damage_factor = 10
+miss_cost = 10
+
+[katar/thrust]
+miss_cost = 10
+
+[mace/smash]
+damage_factor = 10
+click_delay = 10
+miss_cost = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+
+[mace/smash/wood]
+damage_factor = 10
+click_delay = 10
+miss_cost = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+
+[mace/strike]
+miss_cost = 10
+
+[mace/strike/shovel]
+miss_cost = 10
+
+[mace/strike/wood]
+miss_cost = 10
+
+[mace/warhammer/stab]
+damage_factor = 10
+miss_cost = 10
+
+[pick]
+click_delay = 10
+swing_delay = 10
+
+[rend]
+damage_factor = 10
+click_delay = 10
+miss_cost = 10
+swing_delay = 10
+
+[rend/reach]
+damage_factor = 10
+click_delay = 10
+miss_cost = 10
+swing_delay = 10
+
+[shield/block]
+charge_time = 10
+
+[shovelscoop]
+miss_cost = 10
+
+[simple/bite]
+swing_delay = 10
+
+[simple/bite/bear]
+swing_delay = 10
+
+[simple/bite/mirespider]
+swing_delay = 10
+
+[simple/bite/mirespider_lurker]
+click_delay = 10
+swing_delay = 10
+
+[simple/bite/mirespider_paralytic]
+swing_delay = 10
+
+[simple/bite/volf]
+swing_delay = 10
+
+[simple/claw]
+swing_delay = 10
+
+[simple/claw/deepone_unarmed]
+swing_delay = 10
+
+[simple/minotaur_axe]
+reach = 10
+charge_time = 10
+
+[simple/minotaur_unarmed]
+click_delay = 10
+
+[simple/slash]
+swing_delay = 10
+
+[splash]
+reach = 10
+
+[sword/chop]
+click_delay = 10
+miss_cost = 10
+swing_delay = 10
+
+[sword/chop/cleave]
+damage_factor = 10
+click_delay = 10
+miss_cost = 10
+charge_time = 10
+charge_drain = 10
+swing_delay = 10
+
+[sword/chop/long]
+damage_factor = 10
+click_delay = 10
+miss_cost = 10
+swing_delay = 10
+
+[sword/chop/militia]
+miss_cost = 10
+swing_delay = 10
+
+[sword/cut]
+damage_factor = 10
+miss_cost = 10
+
+[sword/cut/long]
+damage_factor = 10
+click_delay = 10
+miss_cost = 10
+reach = 10
+
+[sword/cut/rapier]
+damage_factor = 10
+click_delay = 10
+miss_cost = 10
+
+[sword/cut/short]
+click_delay = 10
+miss_cost = 10
+
+[sword/cut/zwei]
+damage_factor = 10
+miss_cost = 10
+reach = 10
+swing_delay = 10
+
+[sword/disarm]
+damage_factor = 10
+
+[sword/strike]
+damage_factor = 10
+swing_delay = 10
+
+[sword/thrust]
+miss_cost = 10
+
+[sword/thrust/estoc]
+damage_factor = 10
+miss_cost = 10
+swing_delay = 10
+
+[sword/thrust/hook]
+miss_cost = 10
+
+[sword/thrust/long]
+click_delay = 10
+miss_cost = 10
+reach = 10
+swing_delay = 10
+
+[sword/thrust/rapier]
+damage_factor = 10
+click_delay = 10
+miss_cost = 10
+
+[sword/thrust/short]
+damage_factor = 10
+click_delay = 10
+miss_cost = 10
+
+[sword/thrust/zwei]
+click_delay = 10
+miss_cost = 10
+reach = 10
+swing_delay = 10
+
+[unarmed/claw]
+stamina_cost = 10
+miss_cost = 10
+
+[unarmed/punch]
+click_delay = 10
+miss_cost = 10
+
+[whip/crack]
+damage_factor = 10
+reach = 10
+
+[whip/lash]
+click_delay = 10
+miss_cost = 10
+reach = 10
+swing_delay = 10
+
+# <<< k2g_vibelin_numbers

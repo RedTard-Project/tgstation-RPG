@@ -3,16 +3,16 @@
 
 # --- Stage 2: survival - firing clay in an oven (crafting/pottery.dm)
 
-# Deciseconds of baking that fire a raw clay piece in an oven (Ratwood cooktime 30 SECONDS); an oven bakes at half speed, faster with the cooking skill of whoever last used it.
+# Deciseconds of baking that fire a raw clay piece in an oven (Ratwood cooktime); an oven bakes at half speed, faster with the cooking skill of whoever last used it.
 clay_fire_time = 10
 
-# Deciseconds of baking that fire refined clay (Ratwood 1 MINUTES).
+# Deciseconds of baking that fire refined clay (Ratwood).
 clay_fire_time_refined = 10
 
-# Deciseconds of baking that fire a raw porcelain piece (Ratwood 45 SECONDS).
+# Deciseconds of baking that fire a raw porcelain piece (Ratwood).
 clay_fire_time_porcelain = 10
 
-# Deciseconds after its firing that fired pottery may stay in a burning oven before the heat cracks it (Ratwood 1 MINUTES).
+# Deciseconds after its firing that fired pottery may stay in a burning oven before the heat cracks it (Ratwood).
 clay_crack_delay = 10
 
 # Percent chance every two seconds that fired pottery left in a burning oven past that time shatters (Ratwood: every oven tick).
@@ -50,10 +50,10 @@ crucible_max_ingots = 10
 # Heat at which the metal in a crucible is molten (Ratwood heat_capacity).
 crucible_heat_full = 10
 
-# Heat a crucible on a lit hearth gains per second (Ratwood heat_rate: 10 per two-second tick).
+# Heat a crucible on a lit hearth gains per second (Ratwood heat_rate: per tick).
 crucible_heat_per_second = 10
 
-# Heat a crucible off the fire loses per second (Ratwood cool_rate: 5 per two-second tick).
+# Heat a crucible off the fire loses per second (Ratwood cool_rate: per tick).
 crucible_cool_per_second = 10
 
 # Every this-many-th bar of one metal put into a crucible counts twice (Ratwood duplication_threshold); not 0.
@@ -65,7 +65,7 @@ crucible_add_time = 10
 # Deciseconds to pour molten metal into a mold (Ratwood).
 mold_pour_time = 10
 
-# Deciseconds a filled mold takes to cool into a blade (Ratwood 120 one-second ticks).
+# Deciseconds a filled mold takes to cool into a blade (Ratwood ticks).
 mold_cooling_time = 10
 
 # Units of water a quench takes from a bin (Ratwood roguebin attackby()).
@@ -101,7 +101,7 @@ pottery_shine_tier = 10
 # Health of a bar being worked on the anvil per quality step of its metal: the bar has this times (quality + 1).
 forging_health_per_quality = 10
 
-# Progress a good strike on a cast blade starts from instead of 1 (Ratwood advance_recipe()).
+# Progress a good strike on a cast blade starts from instead of the usual first step (Ratwood advance_recipe()).
 forging_blade_breakthrough = 10
 
 # Deciseconds between two strikes of a smith working a bar on the anvil.
@@ -113,13 +113,13 @@ grindwheel_sharpen_time = 10
 # Deciseconds a bar stays hot after the forge or a lit smelter (Ratwood forge heat_time).
 bar_heat_time = 10
 
-# Deciseconds of one try of a hand craft; a craft is tried again until it works, up to 100 tries (Ratwood construct_item()).
+# Deciseconds of one try of a hand craft; a craft is tried again until it works (Ratwood construct_item()).
 craft_try_time = 10
 
 # Percent chance a sewing repair fails at sewing rank 0; it falls evenly to 0 at sew_no_fail_rank (Ratwood needle).
 sew_fail_chance = 10
 
-# Sewing rank from which a repair never fails (Ratwood: journeyman, 3); not 0.
+# Sewing rank from which a repair never fails (Ratwood: journeyman); not 0.
 sew_no_fail_rank = 10
 
 # Integrity a sewing repair restores at sewing rank 0 (Ratwood).
@@ -155,7 +155,7 @@ repair_kit_windup = 10
 # Experience of each mend of a repair kit, times intelligence.
 repair_kit_xp = 10
 
-# Percent chance a strike at the artificer's table below the recipe's level ruins the material at rank 0; good luck takes 1 off (Ratwood).
+# Percent chance a strike at the artificer's table below the recipe's level ruins the material at rank 0; good luck takes some off (Ratwood).
 artificer_fail_chance = 10
 
 # Percent the artificer's ruin chance falls per rank (Ratwood).
@@ -193,5 +193,5 @@ repair_kit_used_up_chance_2 = 10
 # Percent chance in /obj/item/repair_kit/used_up().
 repair_kit_used_up_chance = 10
 
-# Ratwood's tries per craft (construct_item(): 100 one-second do_afters).
+# Ratwood's tries per craft (construct_item(): one-second do_afters).
 craft_tries = 10

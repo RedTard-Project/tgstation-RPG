@@ -111,7 +111,8 @@
 	to_chat(caster, span_notice("I bless [cast_on], and it glows with holy love!"))
 
 /// Ratwood beasttame "Tame Beast" (acolyte/dendor.dm): Dendor's whisper soothes a beast of a kind that can be tamed; it
-/// calms down and takes the caster for a friend, as if fed by hand (husbandry/taming.dm).
+/// calms down and takes the caster for a friend, as if fed by hand (husbandry/taming.dm). Two charges (miracle.dm): one comes
+/// back in ten seconds, and when both are spent the pair comes back in a minute.
 /datum/action/cooldown/spell/pointed/rogue_miracle/tame_beast
 	name = "Tame Beast"
 	desc = "Pacify a beast of a kind that can be tamed with Dendor's blessing: it calms down and takes me for a friend."
@@ -120,11 +121,15 @@
 	sound = 'modular_redtard/faith/sound/churn.ogg'
 	invocation = "Be still and calm, brotherbeast."
 	invocation_type = INVOCATION_WHISPER
-	cooldown_time = 10 SECONDS
+	cooldown_time = 0
+	max_charges = 2
+	charge_time = 10 SECONDS
+	empty_charge_time = 1 MINUTES
 	cast_range = 5
 	self_castable = FALSE
 	miracle_tier = ROGUE_MIRACLE_TIER_2
 	devotion_cost = 20
+	stamina_cost = 30
 	needs_holy_symbol = TRUE
 	miracle_forks = "Ratwood"
 	miracle_gods = "Dendor T2"
@@ -223,6 +228,7 @@
 	cast_range = 3
 	miracle_tier = ROGUE_MIRACLE_TIER_1
 	devotion_cost = 25
+	stamina_cost = 30
 	needs_holy_symbol = TRUE
 	miracle_forks = "Ratwood, Azure Peak, Twilight Axis"
 	miracle_gods = "Noc T1 (Azure Peak and Twilight Axis T2)"

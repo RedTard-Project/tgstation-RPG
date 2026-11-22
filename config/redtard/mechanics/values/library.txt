@@ -7,10 +7,10 @@ library_print_time = 10
 # Deciseconds the printing press recalibrates after a print (Ratwood PRINTER_COOLDOWN).
 library_print_cooldown = 10
 
-# Books a random bookcase is stocked with before Ratwood's random cut of 0 to 5 (Ratwood book_count).
+# Books a random bookcase is stocked with before Ratwood's random cut (Ratwood book_count).
 library_shelf_books = 10
 
-# Most extra books of an archive bookcase, 0 to this many (Ratwood bookcase/random/archive).
+# Most extra books of an archive bookcase, from none to this many (Ratwood bookcase/random/archive).
 library_shelf_extra_books = 10
 
 # Archived player books an archive-only bookcase holds (Ratwood bookcase/player_archive).
@@ -19,7 +19,7 @@ library_archive_shelf_books = 10
 # Most pages of a manuscript (Ratwood).
 library_manuscript_pages = 10
 
-# Least percent chance that a book of a sorted bookcase is an archived player book; between the least and the most the chance is the number of archived books of that section not yet shelved this round (Ratwood clamp(n, 10, 90)).
+# Least percent chance that a book of a sorted bookcase is an archived player book; between the least and the most the chance is the number of archived books of that section not yet shelved this round (Ratwood clamp(n,)).
 library_player_book_chance_min = 10
 
 # Most percent chance that a book of a sorted bookcase is an archived player book.

@@ -123,6 +123,7 @@
 #define HUD_ROGUE_EYE "rogue_eye"
 #define HUD_ROGUE_ADVSETUP "rogue_advsetup"
 #define HUD_ROGUE_ENERGY "rogue_energy"
+#define HUD_ROGUE_MANA "rogue_mana"
 #define HUD_ROGUE_FEINT "rogue_feint"
 
 #define COMSIG_MOB_ROGUE_HUD_INTENT_CLICK "mob_rogue_hud_intent_click"

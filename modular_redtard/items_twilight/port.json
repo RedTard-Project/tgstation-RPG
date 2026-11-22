@@ -1,0 +1,290 @@
+{
+	"source": "../Twilight-Axis-Fork",
+	"source_env": "REDTARD_TWILIGHT_ROOT",
+	"dme": "roguetown.dme",
+	"selection": "modular_redtard/items_twilight/selection.tsv",
+	"selection_lists": ".cache/modular_redtard/agents/k1/k1v_lists",
+	"assets": "modular_redtard/items_twilight/assets",
+	"staged": ".cache/modular_redtard/agents/k3/staged/k3v/items.txt",
+	"work": ".cache/modular_redtard/agents/k3",
+	"module_dirs": [
+		"code",
+		"modular_redtard"
+	],
+	"target_defines": [
+		"code/__DEFINES",
+		"modular_redtard"
+	],
+	"reuse_dirs": [
+		"modular_redtard/rockhill/icons",
+		"modular_redtard/rockhill/sound",
+		"modular_redtard/wardrobe/icons"
+	],
+	"kinds": [
+		"weapon",
+		"armor",
+		"clothing",
+		"tool",
+		"food",
+		"other"
+	],
+	"out": {
+		"weapon": {
+			"file": "modular_redtard/items_twilight/weapons.dm",
+			"note": "Weapons, shields and weapon-like items only Twilight Axis has."
+		},
+		"armor": {
+			"file": "modular_redtard/items_twilight/armor.dm",
+			"note": "Armor only Twilight Axis has."
+		},
+		"clothing": {
+			"file": "modular_redtard/items_twilight/clothing.dm",
+			"note": "Clothing only Twilight Axis has."
+		},
+		"tool": {
+			"file": "modular_redtard/items_twilight/tools.dm",
+			"note": "Tools only Twilight Axis has."
+		},
+		"food": {
+			"file": "modular_redtard/items_twilight/food.dm",
+			"note": "Food only Twilight Axis has."
+		},
+		"other": {
+			"file": "modular_redtard/items_twilight/other.dm",
+			"note": "Other items only Twilight Axis has."
+		}
+	},
+	"header": [
+		"Written by modular_redtard/tools/port_twilight_items.py from modular_redtard/items_twilight/port.json; do not edit by hand.",
+		"Items only Twilight Axis has (the K1v lists), each flattened through Twilight Axis's own inheritance. Their numbers",
+		"(integrity, force, defense, strength) are not here: they are in the private config/redtard_private/mechanics/items.txt."
+	],
+	"table_note": "the numbers of the types of modular_redtard/items_twilight/*.dm (Twilight Axis's own items), rewritten on every run of port_twilight_items.py; an override goes below the end line (a later line of an entry wins).",
+	"exclude": [
+		"/obj/item/gun",
+		"/obj/item/ammo_casing",
+		"/obj/item/ammo_box",
+		"/obj/item/quiver",
+		"/obj/item/book/granter",
+		"/obj/item/melee/touch_attack",
+		"/obj/item/organ",
+		"/obj/item/bodypart",
+		"/obj/item/roguecoin",
+		"/obj/item/recipe_book",
+		"/obj/item/necro_relics",
+		"/obj/item/paper",
+		"/obj/item/book",
+		"/obj/item/reagent_containers",
+		"/obj/item/natural/clay",
+		"/obj/item/chair",
+		"/obj/item/roguebin"
+	],
+	"bad_ancestors": [],
+	"skill_paths": {
+		"/datum/skill/": "/datum/attribute/skill/"
+	},
+	"vars": [
+		"name",
+		"desc",
+		"icon",
+		"icon_state",
+		"w_class",
+		"force",
+		"throwforce",
+		"worn_icon",
+		"worn_icon_state",
+		"pixel_x",
+		"pixel_y",
+		"slot_flags",
+		"body_parts_covered",
+		"alternate_worn_layer",
+		"rogue_sleeved",
+		"valid_blade",
+		"sheathe_icon",
+		"worn_x_dimension",
+		"worn_y_dimension",
+		"inhand_x_dimension",
+		"inhand_y_dimension",
+		"rogue_grid_width",
+		"rogue_grid_height",
+		"rogue_force_wielded",
+		"wdefense",
+		"wdefense_wbonus",
+		"wlength",
+		"wbalance",
+		"minstr",
+		"can_parry",
+		"armour_penetration",
+		"associated_skill",
+		"possible_item_intents",
+		"gripped_intents",
+		"parrysound",
+		"rogue_armor",
+		"armor_class",
+		"rogue_blocksound",
+		"material_category",
+		"chunkcolor",
+		"unarmed_bonus",
+		"alt_grips",
+		"block2add",
+		"flags_inv",
+		"detail_tag",
+		"detail_color",
+		"altdetail_tag",
+		"altdetail_color",
+		"boobed",
+		"boobed_detail",
+		"sleeved_detail",
+		"max_integrity",
+		"integrity_failure",
+		"max_blade_int",
+		"sharpening_factor",
+		"spark_chance",
+		"special",
+		"coverage",
+		"intdamage_factor",
+		"smeltresult",
+		"anvilrepair",
+		"sewrepair",
+		"rogue_sleeve_scrap",
+		"rogue_salvage_amount",
+		"sellprice",
+		"lockid",
+		"rockhill_keys"
+	],
+	"rename": {
+		"worn_icon": "mob_overlay_icon",
+		"worn_icon_state": "item_state",
+		"rogue_sleeved": "sleeved",
+		"rogue_grid_width": "grid_width",
+		"rogue_grid_height": "grid_height",
+		"armour_penetration": "armor_penetration",
+		"rogue_blocksound": "blocksound",
+		"rogue_force_wielded": "force_wielded",
+		"rogue_sleeve_scrap": "salvage_result",
+		"rogue_salvage_amount": "salvage_amount",
+		"rogue_armor": "armor",
+		"rockhill_keys": "keys"
+	},
+	"table_fields": {
+		"max_integrity": "integrity",
+		"force": "force",
+		"rogue_force_wielded": "force_wielded",
+		"throwforce": "throw_force",
+		"armour_penetration": "penetration",
+		"intdamage_factor": "armor_wear_factor",
+		"unarmed_bonus": "unarmed_bonus",
+		"wdefense": "defense",
+		"wdefense_wbonus": "wielded_defense_bonus",
+		"minstr": "min_strength"
+	},
+	"clothing_only": [
+		"block2add",
+		"detail_tag",
+		"detail_color",
+		"altdetail_tag",
+		"altdetail_color",
+		"boobed_detail",
+		"sleeved_detail",
+		"rogue_armor",
+		"armor_class",
+		"rogue_blocksound",
+		"material_category",
+		"chunkcolor",
+		"rogue_sleeve_scrap",
+		"rogue_salvage_amount"
+	],
+	"typelist_prefix": {
+		"alt_grips": "/datum/alt_grip",
+		"rockhill_keys": "/obj/item/roguekey"
+	},
+	"defaults": {
+		"boobed": "FALSE",
+		"boobed_detail": "TRUE",
+		"sleeved_detail": "TRUE",
+		"rogue_sleeved": "null",
+		"chunkcolor": "\"#5e5e5e\"",
+		"rogue_sleeve_scrap": "/obj/item/natural/cloth"
+	},
+	"maps": {
+		"block2add": {
+			"FOV_BEHIND": "ROGUE_FOV_BEHIND",
+			"FOV_RIGHT": "ROGUE_FOV_RIGHT",
+			"FOV_LEFT": "ROGUE_FOV_LEFT",
+			"FOV_RIGHT|FOV_LEFT": "ROGUE_FOV_RIGHT | ROGUE_FOV_LEFT",
+			"FOV_LEFT|FOV_RIGHT": "ROGUE_FOV_RIGHT | ROGUE_FOV_LEFT",
+			"null": "NONE"
+		},
+		"alternate_worn_layer": {
+			"CLOAK_BEHIND_LAYER": "BODY_BEHIND_LAYER",
+			"TABARD_LAYER": "ROGUE_TABARD_LAYER",
+			"UNDER_CLOAK_LAYER": "ROGUE_UNDER_CLOAK_LAYER",
+			"NECK_LAYER": "NECK_LAYER",
+			"SHIRT_LAYER": "ROGUE_SHIRT_LAYER",
+			"WRISTS_LAYER": "ROGUE_WRISTS_LAYER",
+			"8.9": "(HANDS_LAYER - 0.1)"
+		}
+	},
+	"state_flags": [
+		{
+			"var": "rogue_female_worn",
+			"icon_var": "worn_icon",
+			"state_var": "worn_icon_state",
+			"suffix": "_f"
+		}
+	],
+	"icon_size_vars": [
+		{
+			"icon_var": "worn_icon",
+			"x": "worn_x_dimension",
+			"y": "worn_y_dimension"
+		}
+	],
+	"var_kinds": {
+		"flags_inv": "flags",
+		"block2add": "mapped",
+		"alternate_worn_layer": "mapped",
+		"possible_item_intents": "intents",
+		"gripped_intents": "intents",
+		"alt_grips": "typelist",
+		"valid_blade": "path",
+		"special": "path",
+		"smeltresult": "path",
+		"rogue_sleeve_scrap": "path",
+		"rogue_armor_path": "path",
+		"associated_skill": "skill",
+		"anvilrepair": "skill",
+		"parrysound": "sounds",
+		"rogue_armor": "armor",
+		"rogue_blocksound": "string",
+		"detail_color": "string",
+		"altdetail_color": "string",
+		"chunkcolor": "string",
+		"sheathe_icon": "string",
+		"detail_tag": "string",
+		"altdetail_tag": "string",
+		"rogue_sleeved": "icon",
+		"rockhill_keys": "typelist",
+		"lockid": "string"
+	},
+	"skip_zero": [
+		"max_blade_int",
+		"sharpening_factor",
+		"spark_chance",
+		"coverage",
+		"sellprice",
+		"material_category",
+		"integrity_failure"
+	],
+	"clothing_skip_zero": [
+		"force",
+		"force_wielded",
+		"defense",
+		"wielded_defense_bonus",
+		"penetration",
+		"min_strength"
+	],
+	"armor_dm": "modular_redtard/items_twilight/armor_datums.dm",
+	"armor_staged": ".cache/modular_redtard/agents/k3/staged/k3v/armor.txt",
+	"armor_note": "the ratings of the armor datums of modular_redtard/items_twilight/armor_datums.dm (Twilight Axis tiers), rewritten on every run of port_twilight_items.py; an override goes below the end line."
+}

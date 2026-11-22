@@ -263,7 +263,9 @@
 	if(!full_pen && ishuman(target))
 		var/mob/living/carbon/human/armored = target
 		var/datum/intent/intent = howner.rogue_strike_intent(weapon)
-		damage *= armored.rogue_armor_hit(zone, rogue_bclass_to_armor(blade_class), damage, intent ? intent.penfactor : ROGUE_PEN_NONE, rogue_wear_factor(weapon, intent), weapon, blade_class)
+		// Azure Peak apply_generic_weapon_damage(): a special strikes with no penetration (PEN_NONE), whatever the intent in
+		// hand, so armor of any tier stops it and wears; only full_pen gets through.
+		damage *= armored.rogue_armor_hit(zone, rogue_bclass_to_armor(blade_class), damage, ROGUE_PEN_NONE, rogue_wear_factor(weapon, intent), weapon, blade_class)
 	target.rogue_strike_notes = list()
 	var/damage_done = target.rogue_apply_armored_damage(damage, weapon ? weapon.damtype : BRUTE, def_zone, blocked, sharpness = rogue_bclass_sharpness(blade_class), attack_direction = get_dir(howner, target), attacking_item = weapon)
 	var/hit_sound = weapon ? weapon.hitsound : pick(GLOB.rogue_punch_hit_sounds)
@@ -511,7 +513,61 @@
 		victim.rogue_open(tune("open_dur"))
 	playsound(marked, length(caught) ? 'modular_redtard/rockhill/sound/combat/sp_whip_hit.ogg' : 'modular_redtard/rockhill/sound/combat/sp_whip_whiff.ogg', 100, TRUE)
 
-/datum/special_intent/greatsword_swing
+/// Azure Peak wave_swing: a committed swing in waves around the user. The user stands rooted, open and slow to act; every
+/// creature in a wave is slowed, a standing one is cut in the chest for dam times the share of its wave. The last wave
+/// (the last of wave_shares) strikes the armor once more for last_share of dam without getting through. With expose_wave
+/// set, that wave exposes its standing victims right before it hits and the last wave exposes them after its hit.
+/datum/special_intent/wave_swing
+	name = "Wave Swing"
+	desc = "Swing your weapon around you in waves, each harder than the last. Always targets the chest."
+	post_icon_state = "sweep_fx"
+	requires_wielding = TRUE
+	tunables = list("cooldown", "delay", "stamcost", "dam", "wave_1_share", "wave_2_share", "wave_3_share", "last_share", "slow_dur", "self_immob", "self_clickcd", "self_vuln", "expose_dur")
+	/// Tunable names of the damage shares of the waves, in order; the last name is the last wave.
+	var/list/wave_shares = list("wave_1_share", "wave_2_share", "wave_3_share")
+	/// The wave that exposes its victims before hitting them (the shape of the manoeuvre, as in Azure Peak); none by default.
+	var/expose_wave
+	var/dam
+	var/wave_1_share
+	var/wave_2_share
+	var/wave_3_share
+	var/last_share
+	var/slow_dur
+	var/self_immob
+	var/self_clickcd
+	var/self_vuln
+	var/expose_dur
+	var/hitcount = 0
+
+/datum/special_intent/wave_swing/on_create()
+	hitcount = 0
+	howner.Immobilize(tune("self_immob"))
+	howner.apply_status_effect(/datum/status_effect/rogue_vulnerable, tune("self_vuln"))
+	howner.rogue_delay_action(tune("self_clickcd"))
+
+/// Azure Peak counts the wave as it strikes, not as it is marked: a wave marked when an earlier one strikes counts after it.
+/datum/special_intent/wave_swing/post_delay(list/turfs)
+	hitcount++
+	. = ..()
+	playsound(howner, 'modular_redtard/rockhill/sound/combat/wooshes/bladed/wooshlarge (3).ogg', 100, TRUE)
+
+/datum/special_intent/wave_swing/apply_hit(turf/marked)
+	var/last_wave = hitcount == length(wave_shares)
+	var/share_name = LAZYACCESS(wave_shares, hitcount)
+	var/share = (share_name && tune(share_name)) || 1
+	for(var/mob/living/victim as anything in victims(marked))
+		victim.rogue_slow_for(tune("slow_dur"))
+		if(victim.body_position == STANDING_UP)
+			if(expose_wave && hitcount == expose_wave)
+				victim.apply_status_effect(/datum/status_effect/rogue/exposed, tune("expose_dur"))
+			weapon_damage(victim, tune("dam") * share, BODY_ZONE_CHEST, BCLASS_CUT)
+			if(last_wave)
+				weapon_damage(victim, tune("dam") * tune("last_share"), BODY_ZONE_CHEST, BCLASS_CUT, no_pen = TRUE)
+				if(expose_wave)
+					victim.apply_status_effect(/datum/status_effect/rogue/exposed, tune("expose_dur"))
+		playsound(marked, 'modular_redtard/rockhill/sound/combat/sp_gsword_hit.ogg', 100, TRUE)
+
+/datum/special_intent/wave_swing/greatsword
 	name = "Great Swing"
 	desc = "Swing your greatsword all around you in a ring of Judgement. Always targets the chest."
 	tile_coordinates = list(
@@ -519,120 +575,31 @@
 		list(0,1, 10), list(1,1, 10), list(-1,1, 10), list(1,-3, 10), list(0,-3, 10), list(-1,-3, 10), list(-2,0, 10), list(-2,-1, 10), list(-2,-2, 10), list(2,0, 10), list(2,-1, 10), list(2,-2, 10),
 		list(0,0, 17), list(1,0, 17), list(1,-1, 17), list(1,-2, 17), list(0,-2, 17), list(-1,-2, 17), list(-1,-1, 17), list(-1,0, 17),
 	)
-	post_icon_state = "sweep_fx"
 	pre_icon_state = "fx_trap_long"
 	sfx_pre_delay = 'modular_redtard/rockhill/sound/combat/rend_hit.ogg'
 	respect_adjacency = FALSE
-	requires_wielding = TRUE
 	custom_delays = list("first_delay")
-	tunables = list("cooldown", "delay", "first_delay", "stamcost", "dam", "wave_2_share", "wave_3_share", "last_share", "slow_dur", "self_immob", "self_clickcd", "self_vuln")
+	tunables = list("cooldown", "delay", "first_delay", "stamcost", "dam", "wave_1_share", "wave_2_share", "wave_3_share", "last_share", "slow_dur", "self_immob", "self_clickcd", "self_vuln", "expose_dur")
 	var/first_delay
-	var/dam
-	var/wave_2_share
-	var/wave_3_share
-	var/last_share
-	var/slow_dur
-	var/self_immob
-	var/self_clickcd
-	var/self_vuln
-	var/hitcount = 0
 
-/datum/special_intent/greatsword_swing/on_create()
-	hitcount = 0
-	howner.Immobilize(tune("self_immob"))
-	howner.apply_status_effect(/datum/status_effect/rogue_vulnerable, tune("self_vuln"))
-	howner.rogue_delay_action(tune("self_clickcd"))
+/datum/special_intent/wave_swing/greatsword/white_stag
+	requires_wielding = FALSE
 
-/datum/special_intent/greatsword_swing/process_grid(list/turfs, hit_delay)
-	hitcount++
-	return ..()
-
-/datum/special_intent/greatsword_swing/post_delay(list/turfs)
-	. = ..()
-	playsound(howner, 'modular_redtard/rockhill/sound/combat/wooshes/bladed/wooshlarge (3).ogg', 100, TRUE)
-
-/datum/special_intent/greatsword_swing/apply_hit(turf/marked)
-	for(var/mob/living/victim as anything in victims(marked))
-		victim.rogue_slowdown(tune("slow_dur"))
-		if(victim.body_position != STANDING_UP)
-			continue
-		var/wave_damage = tune("dam") * (hitcount == 2 ? tune("wave_2_share") : (hitcount >= 3 ? tune("wave_3_share") : 1))
-		weapon_damage(victim, wave_damage, BODY_ZONE_CHEST, BCLASS_CUT)
-		if(hitcount >= 3)
-			weapon_damage(victim, tune("dam") * tune("last_share"), BODY_ZONE_CHEST, BCLASS_CUT, no_pen = TRUE)
-		playsound(marked, 'modular_redtard/rockhill/sound/combat/sp_gsword_hit.ogg', 100, TRUE)
-
-/datum/special_intent/greatsword_swing/white_stag
-
-/datum/special_intent/greatflail_swing
-	name = "Greatflail Swing"
-	desc = "Swing your greatflail all around you in a ring of Judgement."
+/datum/special_intent/wave_swing/vicious
+	name = "Vicious Swing"
+	desc = "A swing of your blade, in all quadrants. The last two swings expose."
 	tile_coordinates = list(
-		list(0,0), list(1,0), list(1,-1), list(1,-2), list(0,-2), list(-1,-2), list(-1,-1), list(-1,0),
-		list(0,1, 7), list(1,1, 7), list(-1,1, 7), list(1,-3, 7), list(0,-3, 7), list(-1,-3, 7), list(-2,0, 7), list(-2,-1, 7), list(-2,-2, 7), list(2,0, 7), list(2,-1, 7), list(2,-2, 7),
-		list(0,0, 14), list(1,0, 14), list(1,-1, 14), list(1,-2, 14), list(0,-2, 14), list(-1,-2, 14), list(-1,-1, 14), list(-1,0, 14),
+		list(-1,0), list(0,0), list(1,0),
+		list(-1,-2, 4), list(-1,-1, 4), list(-1,0, 4),
+		list(-1,-2, 8), list(0,-2, 8), list(1,-2, 8),
+		list(1,-2, 12), list(1,-1, 12), list(1,0, 12),
 	)
-	post_icon_state = "sweep_fx"
-	pre_icon_state = "fx_trap_long"
-	sfx_pre_delay = 'modular_redtard/rockhill/sound/combat/flail_sweep.ogg'
-	respect_adjacency = FALSE
-	tunables = list("cooldown", "delay", "stamcost", "dam", "wave_2_share", "wave_3_share", "last_share", "slow_dur", "self_immob", "self_clickcd", "self_vuln", "max_swept", "immobilize_init", "exposed_init", "offbalance_init")
-	var/dam
-	var/wave_2_share
-	var/wave_3_share
-	var/last_share
-	var/slow_dur
-	var/self_immob
-	var/self_clickcd
-	var/self_vuln
-	var/max_swept
-	var/immobilize_init
-	var/exposed_init
-	var/offbalance_init
-	var/hitcount = 0
-	var/list/swept = list()
-
-/datum/special_intent/greatflail_swing/on_create()
-	hitcount = 0
-	howner.Immobilize(tune("self_immob"))
-	howner.apply_status_effect(/datum/status_effect/rogue_vulnerable, tune("self_vuln"))
-	howner.rogue_delay_action(tune("self_clickcd"))
-
-/datum/special_intent/greatflail_swing/process_grid(list/turfs, hit_delay)
-	hitcount++
-	return ..()
-
-/datum/special_intent/greatflail_swing/apply_hit(turf/marked)
-	for(var/mob/living/victim as anything in victims(marked))
-		victim.rogue_slowdown(tune("slow_dur"))
-		if(victim.body_position != STANDING_UP)
-			continue
-		swept |= victim
-		var/wave_damage = tune("dam") * (hitcount == 2 ? tune("wave_2_share") : (hitcount >= 3 ? tune("wave_3_share") : 1))
-		weapon_damage(victim, wave_damage, BODY_ZONE_CHEST, BCLASS_BLUNT)
-		if(hitcount >= 3)
-			weapon_damage(victim, tune("dam") * tune("last_share"), BODY_ZONE_CHEST, BCLASS_BLUNT, no_pen = TRUE)
-		playsound(marked, 'modular_redtard/rockhill/sound/combat/flail_sweep_hit_major.ogg', 100, TRUE)
-
-/datum/special_intent/greatflail_swing/post_delay(list/turfs)
-	swept = list()
-	. = ..()
-	var/count = min(length(swept), tune("max_swept"))
-	for(var/mob/living/victim as anything in swept)
-		if(QDELETED(victim))
-			continue
-		victim.rogue_slowdown(tune("slow_dur") + count)
-		if(count >= 2)
-			victim.Immobilize(tune("immobilize_init") + count SECONDS)
-			victim.apply_status_effect(/datum/status_effect/rogue/exposed, tune("exposed_init") + count SECONDS)
-		if(count >= 3)
-			victim.Knockdown(rogue_value("greatflail_swing_post_delay_knockdown"))
-		if(count >= 5)
-			knock_off_balance(victim, tune("offbalance_init") + count SECONDS)
-			victim.Stun(rogue_value("greatflail_swing_post_delay_stun"))
-		fling(victim, get_edge_target_turf(howner, get_dir(howner, victim)), clamp(count, 1, 5))
-	swept = list()
-	playsound(howner, 'modular_redtard/rockhill/sound/combat/wooshes/bladed/wooshlarge (3).ogg', 100, TRUE)
+	sfx_pre_delay = 'modular_redtard/rockhill/sound/combat/wooshes/bladed/wooshlarge (2).ogg'
+	sfx_post_delay = 'modular_redtard/rockhill/sound/combat/sp_axe_swing1.ogg'
+	wave_shares = list("wave_1_share", "wave_2_share", "wave_3_share", "wave_4_share")
+	expose_wave = 3
+	tunables = list("cooldown", "delay", "stamcost", "dam", "wave_1_share", "wave_2_share", "wave_3_share", "wave_4_share", "last_share", "slow_dur", "self_immob", "self_clickcd", "self_vuln", "expose_dur")
+	var/wave_4_share
 
 /datum/special_intent/upper_cut
 	name = "Upper Cut"

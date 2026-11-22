@@ -379,13 +379,13 @@
 	var/used = FALSE
 
 /obj/item/rogueweapon/halberd/blacksteel
-	selection = list(/datum/special_intent/polearm_backstep, /datum/special_intent/axe_swing, /datum/special_intent/greatsword_swing)
+	selection = list(/datum/special_intent/polearm_backstep, /datum/special_intent/axe_swing, /datum/special_intent/wave_swing/greatsword)
 
 /obj/item/rogueweapon/eaglebeak/blacksteel
 	selection = list(/datum/special_intent/polearm_backstep, /datum/special_intent/flail_sweep, /datum/special_intent/ground_smash)
 
 /obj/item/rogueweapon/greatsword/grenz/flamberge/blacksteel
-	selection = list(/datum/special_intent/greatsword_swing, /datum/special_intent/side_sweep, /datum/special_intent/limbguard)
+	selection = list(/datum/special_intent/wave_swing/greatsword, /datum/special_intent/side_sweep, /datum/special_intent/limbguard)
 
 /obj/item/rogueweapon/sword/long/blacksteel
 	selection = list(/datum/special_intent/side_sweep, /datum/special_intent/axe_swing, /datum/special_intent/piercing_lunge, /datum/special_intent/polearm_backstep, /datum/special_intent/flail_sweep)

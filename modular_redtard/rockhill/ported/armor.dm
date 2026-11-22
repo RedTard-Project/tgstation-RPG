@@ -28,6 +28,9 @@
 /datum/armor/rockhill_brigandine
 	fire = 38
 
+/datum/armor/rockhill_brigandine_hands
+	fire = 38
+
 /datum/armor/rockhill_bronze
 	fire = 29
 	acid = 29

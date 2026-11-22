@@ -3,40 +3,40 @@
 
 # --- How a step goes (Ratwood _surgery_step.dm)
 
-# What one rank of Medicine above a step's median adds to its chance, as a share (Ratwood skill_bonuses 1).
+# What one rank of Medicine above a step's median adds to its chance, as a share (Ratwood skill_bonuses).
 surgery_skill_bonus_1 = 10
 
-# What two ranks above the median add (Ratwood skill_bonuses 2).
+# What two ranks above the median add (Ratwood skill_bonuses).
 surgery_skill_bonus_2 = 10
 
-# What three ranks above the median add (Ratwood skill_bonuses 3).
+# What three ranks above the median add (Ratwood skill_bonuses).
 surgery_skill_bonus_3 = 10
 
-# What four ranks above the median add (Ratwood skill_bonuses 4).
+# What four ranks above the median add (Ratwood skill_bonuses).
 surgery_skill_bonus_4 = 10
 
-# What five ranks above the median add (Ratwood skill_bonuses 5).
+# What five ranks above the median add (Ratwood skill_bonuses).
 surgery_skill_bonus_5 = 10
 
-# What six ranks above the median add (Ratwood skill_bonuses 6).
+# What six ranks above the median add (Ratwood skill_bonuses).
 surgery_skill_bonus_6 = 10
 
-# What one rank of Medicine below a step's median adds to its chance, a negative share (Ratwood skill_maluses 1).
+# What one rank of Medicine below a step's median adds to its chance, a negative share (Ratwood skill_maluses).
 surgery_skill_malus_1 = 10
 
-# What two ranks below the median add (Ratwood skill_maluses 2).
+# What two ranks below the median add (Ratwood skill_maluses).
 surgery_skill_malus_2 = 10
 
-# What three ranks below the median add (Ratwood skill_maluses 3).
+# What three ranks below the median add (Ratwood skill_maluses).
 surgery_skill_malus_3 = 10
 
-# What four ranks below the median add (Ratwood skill_maluses 4).
+# What four ranks below the median add (Ratwood skill_maluses).
 surgery_skill_malus_4 = 10
 
-# What five ranks below the median add (Ratwood skill_maluses 5).
+# What five ranks below the median add (Ratwood skill_maluses).
 surgery_skill_malus_5 = 10
 
-# What six ranks below the median add (Ratwood skill_maluses 6).
+# What six ranks below the median add (Ratwood skill_maluses).
 surgery_skill_malus_6 = 10
 
 # The chance of a step on a patient standing, as a share (Ratwood get_location_modifier()).
@@ -72,7 +72,7 @@ surgery_master_speed = 10
 # The share of a step's time a Legendary physician takes off.
 surgery_legendary_speed = 10
 
-# Dream experience of Medicine a step done gives, times intelligence times the step's least rank (Ratwood STAINT * skill_min / 2).
+# Dream experience of Medicine a step done gives, times intelligence times the step's least rank (Ratwood STAINT * skill_min).
 surgery_experience = 10
 
 # --- Bad humours of a failed step (Ratwood failure(), /datum/reagent/infection)
@@ -139,7 +139,7 @@ surgery_infection_spread_most = 10
 
 # --- The cautery
 
-# Deciseconds a cautery iron held to a lit fire stays hot (Ratwood fire_act(20)).
+# Deciseconds a cautery iron held to a lit fire stays hot (Ratwood fire_act).
 surgery_cautery_heat_time = 10
 
 # --- Incise (Ratwood /datum/surgery_step/incise)
@@ -222,7 +222,7 @@ surgery_cauterize_welder = 10
 # Chance of cauterizing with anything hot enough to burn.
 surgery_cauterize_hot = 10
 
-# What the searing mends of each wound that can be seared (Ratwood heal_wound(40)); a stump owes 75 of searing.
+# What the searing mends of each wound that can be seared (Ratwood heal_wound); a stump owes a fixed amount of searing.
 surgery_cauterize_heal = 10
 
 # Burns the searing deals the limb.
@@ -302,13 +302,13 @@ surgery_set_bone_bonesetter = 10
 # Chance of setting bones by hand.
 surgery_set_bone_hand = 10
 
-# The share of a broken bone's health setting mends at once (Ratwood heal_wound(whp / 1.6)).
+# The share of a broken bone's health setting mends at once (Ratwood heal_wound(whp)).
 surgery_set_bone_heal = 10
 
-# What a set bone mends by itself each Ratwood tick (Ratwood passive_healing 1).
+# What a set bone mends by itself each Ratwood tick (Ratwood passive_healing).
 surgery_set_bone_passive = 10
 
-# What a set bone mends each tick of sleep, before the bed (Ratwood sleep_healing 1).
+# What a set bone mends each tick of sleep, before the bed (Ratwood sleep_healing).
 surgery_set_bone_sleep = 10
 
 # --- Bloodletting (Ratwood /datum/surgery_step/cutvein, bloodlet)
@@ -397,7 +397,7 @@ surgery_organs_organ = 10
 # Deciseconds of one breath given.
 surgery_cpr_time = 10
 
-# The least rank of Medicine to breathe for someone (0: none).
+# The least rank of Medicine to breathe for someone (none).
 surgery_cpr_skill_min = 10
 
 # The median rank of Medicine for breathing for someone.
@@ -450,13 +450,13 @@ surgery_remove_prosthetic_saw = 10
 # Toughness of a wooden prosthetic (Ratwood max_damage of the right arm and the legs).
 surgery_prosthetic_wood_damage = 10
 
-# Toughness of a wooden left arm (Ratwood max_damage 20).
+# Toughness of a wooden left arm (Ratwood max_damage).
 surgery_prosthetic_wood_left_arm_damage = 10
 
 # Toughness of a bronze prosthetic (Ratwood max_damage of the right arm and the legs).
 surgery_prosthetic_bronze_damage = 10
 
-# Toughness of a bronze left arm (Ratwood max_damage 110).
+# Toughness of a bronze left arm (Ratwood max_damage).
 surgery_prosthetic_bronze_left_arm_damage = 10
 
 # Toughness of an iron prosthetic.
@@ -547,7 +547,7 @@ surgery_replant_sewn_health = 10
 # How much a limb sewn on hurts (Ratwood sewn_woundpain).
 surgery_replant_sewn_pain = 10
 
-# What a sewn vein or limb mends by itself each Ratwood tick (Ratwood sew_wound(): passive_healing 1).
+# What a sewn vein or limb mends by itself each Ratwood tick (Ratwood sew_wound(): passive_healing).
 surgery_sewn_passive = 10
 
 # --- From the code of modular_redtard (code_numbers.py, list b)

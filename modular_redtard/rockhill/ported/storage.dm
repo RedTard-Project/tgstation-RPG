@@ -95,6 +95,9 @@
 	screen_max_rows = 8
 	max_specific_storage = WEIGHT_CLASS_HUGE
 
+/datum/storage/rogue_grid/roguetown/book
+	max_slots = 1
+
 /datum/storage/rogue_grid/roguetown/coin_pouch
 	screen_max_columns = 1
 	screen_max_rows = 4
@@ -155,7 +158,7 @@
 
 /datum/storage/rogue_grid/roguetown/surgery_bag/New()
 	. = ..()
-	set_holdable(list(/obj/item/leechtick_bloated, /obj/item/natural/bundle/cloth/bandage, /obj/item/natural/cloth, /obj/item/natural/worms/leech, /obj/item/needle, /obj/item/reagent_containers/lux, /obj/item/reagent_containers/lux_impure, /obj/item/rogueweapon/surgery))
+	set_holdable(list(/obj/item/leechtick, /obj/item/leechtick_bloated, /obj/item/natural/bundle/cloth/bandage, /obj/item/natural/cloth, /obj/item/natural/worms/leech, /obj/item/needle, /obj/item/reagent_containers/lux, /obj/item/reagent_containers/lux_impure, /obj/item/rogueweapon/surgery))
 
 /datum/storage/rogue_grid/grid/headhook/bronze
 	screen_max_columns = 6
@@ -171,8 +174,17 @@
 	max_specific_storage = WEIGHT_CLASS_NORMAL
 	rogue_not_while_equipped = FALSE
 
+/datum/storage/rogue_grid/roguetown/backpack/timesoldier
+	screen_max_columns = 6
+	screen_max_rows = 8
+	max_specific_storage = WEIGHT_CLASS_NORMAL
+
 /datum/storage/rogue_grid/roguetown/belt/cloth
 	screen_max_columns = 1
+
+/datum/storage/rogue_grid/roguetown/belt/holster_belt
+	screen_max_columns = 2
+	screen_max_rows = 2
 
 /datum/storage/rogue_grid/roguetown/belt/knife_belt
 	screen_max_columns = 1

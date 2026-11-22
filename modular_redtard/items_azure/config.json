@@ -1,0 +1,33 @@
+{
+	"source": {"name": "Azure Peak", "root": "../Azure-Peak-Fork", "env": "REDTARD_AZURE_ROOT"},
+	"picks": ["azure", "vibelin(numbers)+azure(intents)"],
+	"vibelin": {
+		"root": "../Vibelin",
+		"dme": "vanderlin.dme",
+		"env": "REDTARD_VIBELIN_ROOT",
+		"dm_type_port": "../ai-skills/scripts",
+		"kinds": ["weapon", "armor"],
+		"exclude": "^(armor_brush|book/|id$|natural/|quiver|reagent_containers/|storage/|rogueweapon/(scabbard|surgery|hoe|pitchfork|sickle|scythe|thresher|huntingknife/scissors))"
+	},
+	"exclude": [
+		{"match": "^/obj/item/.*/(?:obj|datum)/", "reason": "not a type: a list entry the K1v inventory read as one"},
+		{"prefix": "/obj/item/bodypart", "reason": "bodypart: not an item of the port"},
+		{"prefix": "/obj/item/organ", "reason": "organ: surgery, not ported"},
+		{"prefix": "/obj/item/book/granter", "reason": "granter book: teaches Azure Peak's recipes or spells, whose datums the module lacks"},
+		{"file": "code/modules/crafting/recipe_books/", "reason": "recipe book: reads Azure Peak's crafting datums, not the module's"},
+		{"file": "code/modules/roguetown/roguemachine/abyssorcult/", "reason": "material of Azure Peak's Abyssor dream machine: the machine is not in the module"},
+		{"file": "code/controllers/subsystem/rogue/fog_event/", "reason": "item of Azure Peak's fog event: the event is not in the module"},
+		{"file": "code/game/objects/items/surgery_bag.dm", "reason": "surgery: not ported"},
+		{"prefix": "/obj/item/enchantingkit","reason": "modkit: turns another item into a reskin, the module has no modkit system"},
+		{"file": "code/controllers/subsystem/rogue/triumphs/", "reason": "triumph modkit and its display items: no triumph shop of modkits in the module"},
+		{"file": "code/game/objects/items/donator_modkit.dm", "reason": "donator modkit: the module has no modkit system"},
+		{"file": "code/modules/mob/living/carbon/human/species_types/wildshape/", "reason": "body weapon of a wildshape form: no wildshape in the module"},
+		{"file": "code/modules/jobs/job_types/roguetown/adventurer/types/antag/", "reason": "antagonist gear"},
+		{"file": "code/modules/antagonists/", "reason": "antagonist gear"},
+		{"file": "code/modules/vampire_neu/", "reason": "antagonist gear (vampire covens)"},
+		{"file": "code/modules/spells/", "reason": "made by a spell: magic is block M"},
+		{"file": "code/modules/surgery/", "reason": "surgery: not ported"},
+		{"file": "code/modules/roguetown/roguejobs/engineer/prosthetic.dm", "reason": "prosthetic limb: a bodypart, not an item of the port"},
+		{"file": "code/modules/mob/living/simple_animal/", "reason": "body weapon of a mob"}
+	]
+}

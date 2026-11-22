@@ -137,6 +137,8 @@ GLOBAL_LIST_INIT(rogue_splatter_classes, list(BCLASS_CUT, BCLASS_CHOP, BCLASS_ST
 			else
 				INVOKE_ASYNC(src, TYPE_PROC_REF(/mob, emote), "paincrit", NONE, null, FALSE, FALSE, TRUE)
 			log_combat(attacker, src, "critically struck", null, "(ZONE: [zone]) (CLASS: [blade_class])")
+			// K2d1: the weapon may stick in the part (combat/stuck_weapon.dm).
+			rogue_mark_stick(blade_class, attempt, attacker)
 			return TRUE
 	return knockout
 
