@@ -4,7 +4,7 @@
 /// rest (rockhill/config.json, port.destruction); a structure without rockhill_dulling keeps TG's damage.
 
 /// Armor penetration of a Ratwood blow on a structure: all of it (PENETRATE_ARMOUR() of 100 leaves no armor).
-#define ROCKHILL_BLOW_PENETRATION 100
+#define ROCKHILL_BLOW_PENETRATION rogue_value("rockhill_blow_penetration")
 
 /obj/structure
 	/// The blows that hurt it (Ratwood blade_dulling): "cut" - only cutting and chopping ones (trees, bushes, grass), "bash" -

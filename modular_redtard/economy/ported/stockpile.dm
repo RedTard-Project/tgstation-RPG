@@ -724,10 +724,58 @@
 	passive_generation = 0
 	generation_price = 1
 
+/datum/roguestock/stockpile/salmon
+	name = "Salmon"
+	desc = "Whole slab of salmon."
+	item_type = /obj/item/reagent_containers/food/snacks/fish/salmon
+	category = "Seafood"
+	base_price = 4
+	stockpile_amount = 0
+	stockpile_limit = 10
+	importexport_amt = 10
+	passive_generation = 0
+	generation_price = 4
+
+/datum/roguestock/stockpile/bass
+	name = "Seabass"
+	desc = "Whole slab of bass."
+	item_type = /obj/item/reagent_containers/food/snacks/fish/bass
+	category = "Seafood"
+	base_price = 4
+	stockpile_amount = 0
+	stockpile_limit = 10
+	importexport_amt = 10
+	passive_generation = 0
+	generation_price = 4
+
+/datum/roguestock/stockpile/carp
+	name = "Carp"
+	desc = "Whole slab of carp."
+	item_type = /obj/item/reagent_containers/food/snacks/fish/carp
+	category = "Seafood"
+	base_price = 4
+	stockpile_amount = 0
+	stockpile_limit = 15
+	importexport_amt = 10
+	passive_generation = 0
+	generation_price = 4
+
 /datum/roguestock/stockpile/sole
 	name = "Sole"
 	desc = "Whole slab of sole."
 	item_type = /obj/item/reagent_containers/food/snacks/fish/sole
+	category = "Seafood"
+	base_price = 4
+	stockpile_amount = 0
+	stockpile_limit = 10
+	importexport_amt = 10
+	passive_generation = 0
+	generation_price = 4
+
+/datum/roguestock/stockpile/cod
+	name = "Cod"
+	desc = "Whole slab of cod."
+	item_type = /obj/item/reagent_containers/food/snacks/fish/cod
 	category = "Seafood"
 	base_price = 4
 	stockpile_amount = 0
@@ -748,10 +796,34 @@
 	passive_generation = 0
 	generation_price = 4
 
+/datum/roguestock/stockpile/clam
+	name = "Clam"
+	desc = "Whole slab of clam."
+	item_type = /obj/item/reagent_containers/food/snacks/fish/clam
+	category = "Seafood"
+	base_price = 4
+	stockpile_amount = 0
+	stockpile_limit = 10
+	importexport_amt = 10
+	passive_generation = 0
+	generation_price = 4
+
 /datum/roguestock/stockpile/lobster
 	name = "Lobster"
 	desc = "Whole slab of lobster."
 	item_type = /obj/item/reagent_containers/food/snacks/fish/lobster
+	category = "Seafood"
+	base_price = 4
+	stockpile_amount = 0
+	stockpile_limit = 10
+	importexport_amt = 10
+	passive_generation = 0
+	generation_price = 4
+
+/datum/roguestock/stockpile/shrimp
+	name = "Shrimp"
+	desc = "Whole slab of shrimp."
+	item_type = /obj/item/reagent_containers/food/snacks/fish/shrimp
 	category = "Seafood"
 	base_price = 4
 	stockpile_amount = 0

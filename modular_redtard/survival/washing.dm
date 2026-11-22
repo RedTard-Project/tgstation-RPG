@@ -15,7 +15,7 @@
 #define SEWER_MOOD "rogue_sewer"
 #define BATH_MOOD "rogue_bath"
 /// A helmet of this stab armour or more spoils a soak, as body armour does (Ratwood relaxing_bath()).
-#define BATH_HELMET_STAB 70
+#define BATH_HELMET_STAB rogue_value("bath_helmet_stab")
 
 // --- Washing at water
 
@@ -178,13 +178,13 @@
 		soapy = TRUE
 	if(rogue_bath_overdressed())
 		gained -= 1
-		if(prob(10))
+		if(prob(rogue_value("human_rogue_bath_soak_chance")))
 			to_chat(src, span_warning("I'm not getting the most out of this with my outer clothes on."))
 		if(!soapy)
 			to_chat(src, span_warning("I'm not getting anything out of this. I should at least remove my armor and my helmet, or use some soap."))
 			return FALSE
 	soak["count"] += gained
-	if(prob(30))
+	if(prob(rogue_value("human_rogue_bath_soak_chance_2")))
 		playsound(src, pick(SOAK_SOUNDS), 50, FALSE)
 	apply_status_effect(/datum/status_effect/rogue_miracle_heal, strength)
 	if(rogue_energy < rogue_max_energy)

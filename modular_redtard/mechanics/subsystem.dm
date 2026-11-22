@@ -8,8 +8,13 @@ SUBSYSTEM_DEF(rogue_mechanics)
 	init_stage = INITSTAGE_EARLY
 
 /datum/controller/subsystem/rogue_mechanics/Initialize()
-	if(GLOB.rogue_mechanics)
+	var/datum/rogue_mechanics/mechanics = GLOB.rogue_mechanics
+	if(mechanics)
 		log_world("Rogue mechanics: the registry was loaded on first use, before its subsystem initialized.")
+		// Built before the config was loaded, it read the default folder; a server started with another one reads again.
+		if(mechanics.loaded_directory != config.directory)
+			log_world("Rogue mechanics: reloading from [config.directory] (first read from [mechanics.loaded_directory]).")
+			mechanics.load()
 	rogue_mechanics()
 	return SS_INIT_SUCCESS
 

@@ -1,37 +1,43 @@
-GLOBAL_LIST_INIT(rogue_formula_precedence, list(
-	"or" = 1,
-	"and" = 2,
-	"==" = 3,
-	"!=" = 3,
-	"<" = 3,
-	"<=" = 3,
-	">" = 3,
-	">=" = 3,
-	"+" = 4,
-	"-" = 4,
-	"*" = 5,
-	"/" = 5,
-	"%" = 5,
-	"^" = 6,
-	"neg" = 7,
-	"not" = 7,
-))
+// The parser's tables are procs, not GLOB lists: the registry may be built while the global variables are still being
+// initialized (a reagent's New() in init_chemical_reagent_list() asks for a value), and a GLOB list is null until its own
+// turn comes. A proc static with an initializer is no better, those run after GLOB. Nothing here may read a GLOB var.
 
-GLOBAL_LIST_INIT(rogue_formula_right_assoc, list("^" = TRUE, "neg" = TRUE, "not" = TRUE))
+/// Binding strength of an operator; null for a token that is not one.
+/proc/rogue_formula_precedence(operator)
+	switch(operator)
+		if("or")
+			return 1
+		if("and")
+			return 2
+		if("==", "!=", "<", "<=", ">", ">=")
+			return 3
+		if("+", "-")
+			return 4
+		if("*", "/", "%")
+			return 5
+		if("^")
+			return 6
+		if("neg", "not")
+			return 7
+	return null
 
-GLOBAL_LIST_INIT(rogue_formula_unary, list("neg" = TRUE, "not" = TRUE))
+/proc/rogue_formula_right_assoc(operator)
+	return operator == "^" || operator == "neg" || operator == "not"
 
-GLOBAL_LIST_INIT(rogue_formula_functions, list(
-	"min" = ROGUE_FORMULA_ANY_ARGS,
-	"max" = ROGUE_FORMULA_ANY_ARGS,
-	"clamp" = 3,
-	"abs" = 1,
-	"round" = 1,
-	"floor" = 1,
-	"ceil" = 1,
-	"sqrt" = 1,
-	"if" = 3,
-))
+/// Argument count of a formula function (ROGUE_FORMULA_ANY_ARGS for any), null for an unknown name.
+/proc/rogue_formula_function_args(name)
+	switch(name)
+		if("min", "max")
+			return ROGUE_FORMULA_ANY_ARGS
+		if("clamp", "if")
+			return 3
+		if("abs", "round", "floor", "ceil", "sqrt")
+			return 1
+	return null
+
+/// The function names, for the header of an exported formulas.txt.
+/proc/rogue_formula_function_names()
+	return list("min", "max", "clamp", "abs", "round", "floor", "ceil", "sqrt", "if")
 
 /datum/rogue_formula
 	var/id
@@ -99,7 +105,7 @@ GLOBAL_LIST_INIT(rogue_formula_functions, list(
 			stack.len -= argc
 			stack += rogue_formula_call(step[1], arguments)
 			continue
-		if(GLOB.rogue_formula_unary[step])
+		if(step == "neg" || step == "not")
 			var/operand = stack[length(stack)]
 			stack[length(stack)] = step == "neg" ? -operand : !operand
 			continue
@@ -240,7 +246,7 @@ GLOBAL_LIST_INIT(rogue_formula_functions, list(
 				return "missing operator before \"[token[1]]\""
 			var/name = token[1]
 			if(index < token_count && tokens[index + 1] == "(")
-				if(isnull(GLOB.rogue_formula_functions[name]))
+				if(isnull(rogue_formula_function_args(name)))
 					return "unknown function \"[name]\""
 				operators += list(list(name))
 			else
@@ -275,7 +281,7 @@ GLOBAL_LIST_INIT(rogue_formula_functions, list(
 				if(argc != ROGUE_FORMULA_GROUP)
 					var/list/pending_call = operators[length(operators)]
 					operators.len--
-					var/wanted = GLOB.rogue_formula_functions[pending_call[1]]
+					var/wanted = rogue_formula_function_args(pending_call[1])
 					if(wanted != ROGUE_FORMULA_ANY_ARGS && wanted != argc)
 						return "\"[pending_call[1]]\" takes [wanted] arguments, got [argc]"
 					output += list(list(pending_call[1], argc))
@@ -294,13 +300,13 @@ GLOBAL_LIST_INIT(rogue_formula_functions, list(
 							return "missing value before \"[token]\""
 				else if(token == "not")
 					return "missing operator before \"not\""
-				var/precedence = GLOB.rogue_formula_precedence[operator]
-				var/right_assoc = GLOB.rogue_formula_right_assoc[operator]
+				var/precedence = rogue_formula_precedence(operator)
+				var/right_assoc = rogue_formula_right_assoc(operator)
 				while(length(operators))
 					var/top = operators[length(operators)]
 					if(!istext(top) || top == "(")
 						break
-					var/top_precedence = GLOB.rogue_formula_precedence[top]
+					var/top_precedence = rogue_formula_precedence(top)
 					if(top_precedence > precedence || (top_precedence == precedence && !right_assoc))
 						output += top
 						operators.len--

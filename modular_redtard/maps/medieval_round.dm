@@ -1,7 +1,7 @@
 #define ROGUE_ROUND_CONTINUE "Continue Playing"
 #define ROGUE_ROUND_END "End Round"
-#define ROGUE_ROUND_EXTEND_COOLDOWN (1 MINUTES)
-#define ROGUE_ROUND_EXTEND_LIMIT 3
+#define ROGUE_ROUND_EXTEND_COOLDOWN rogue_value("round_extend_cooldown")
+#define ROGUE_ROUND_EXTEND_LIMIT rogue_value("round_extend_limit")
 
 /datum/config_entry/number/rogue_round_minutes
 	default = 165

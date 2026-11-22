@@ -200,7 +200,7 @@
 	if(user.bodytemperature < BODYTEMP_NORMAL)
 		user.adjust_bodytemperature(min(ROGUE_HAND_WARMTH, BODYTEMP_NORMAL - user.bodytemperature))
 	var/first = TRUE
-	while(do_after(user, 10.5 SECONDS, target = src) && lit)
+	while(do_after(user, rogue_value("campfire_rest_by_fire_time"), target = src) && lit)
 		user.apply_status_effect(/datum/status_effect/rogue_fire_sleep/respite)
 		user.add_mood_event("rogue_campfire", /datum/mood_event/rogue_campfire)
 		if(first)

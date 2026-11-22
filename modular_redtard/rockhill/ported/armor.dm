@@ -6,7 +6,7 @@
 	acid = 29
 
 /datum/armor/clothing_under/rockhill_leather
-	fire = 44
+	fire = 29
 
 /datum/armor/clothing_under/rockhill_leather_npc
 	fire = 29
@@ -26,6 +26,9 @@
 	acid = 50
 
 /datum/armor/rockhill_brigandine
+	fire = 38
+
+/datum/armor/rockhill_brigandine_hands
 	fire = 38
 
 /datum/armor/rockhill_bronze
@@ -52,13 +55,13 @@
 	acid = 50
 
 /datum/armor/rockhill_leather
-	fire = 44
+	fire = 29
 
 /datum/armor/rockhill_leather_feet
-	fire = 44
+	fire = 29
 
 /datum/armor/rockhill_leather_hands
-	fire = 44
+	fire = 29
 
 /datum/armor/rockhill_leather_npc
 	fire = 29

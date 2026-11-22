@@ -2,23 +2,20 @@
 
 #define ROGUE_BLESSED_FOOD_FILTER "rogue_blessed_food"
 
-/// Azure Peak's orison of filling (spells/orison.dm create_water()): with a hand held over a container at arm's length, water
-/// streams from the caster's fingertips, more at a time the more skilled, until it is full or the prayer stops.
+/// The orison of filling (Ratwood's modular_azurepeak spells/orison.dm create_water(), Azure Peak's and Twilight Axis's alike): with a
+/// hand held over a container at arm's length, water streams from the caster's fingertips, until it is full, the devotion runs
+/// out or the prayer stops. The water is blessed, which mends the body from within and burns the undead, if the patron of the
+/// caster hates the undead, and cursed if it does not. Each trickle takes some devotion and some stamina: the more skilled the
+/// caster, the quicker and the richer a trickle, but the stamina one takes grows with the skill.
 /datum/action/cooldown/spell/pointed/rogue_miracle/orison_water
 	name = "Orison of Water"
-	desc = "Beseech the gods for water: it streams from my fingertips into a container at arm's length while I hold still."
+	desc = "Beseech the gods for water: it streams from my fingertips into a container at arm's length while I hold still. It is blessed water, or cursed water if my patron does not hate the undead. Each trickle costs devotion and stamina."
 	button_icon_state = "thaumaturgy"
-	cooldown_time = 10 SECONDS
-	cast_range = 1
+	value_key = "orison_water"
 	self_castable = FALSE
 	miracle_tier = ROGUE_MIRACLE_TIER_0
-	devotion_cost = 5
-	miracle_forks = "Azure Peak, Twilight Axis, Ratwood"
+	miracle_forks = "Ratwood, Azure Peak, Twilight Axis"
 	miracle_gods = "every god's orison T0"
-	/// Time of a trickle (Azure 1.5 seconds).
-	var/trickle_time = 1.5 SECONDS
-	/// Water a trickle pours per rank in miracles (Azure holy_skill * 5), and at least.
-	var/water_per_rank = 5
 
 /datum/action/cooldown/spell/pointed/rogue_miracle/orison_water/is_valid_target(atom/cast_on)
 	. = ..()
@@ -37,10 +34,22 @@
 
 /datum/action/cooldown/spell/pointed/rogue_miracle/orison_water/proc/pour(mob/living/carbon/human/caster, atom/vessel)
 	caster.visible_message(span_info("[caster] closes [caster.p_their()] eyes in prayer and extends a hand over [vessel] as water begins to stream from [caster.p_their()] fingertips..."), span_notice("I utter forth a plea for succour, and hold my hand out above [vessel]..."))
-	var/amount = max(caster.rogue_skill_rank(/datum/attribute/skill/magic/holy), 1) * water_per_rank
-	while(!QDELETED(vessel) && vessel.reagents && !vessel.reagents.holder_full() && do_after(caster, trickle_time, target = vessel))
-		vessel.reagents.add_reagent(/datum/reagent/water, amount)
-		if(prob(80))
+	var/rank = caster.rogue_skill_rank(/datum/attribute/skill/magic/holy)
+	var/drip_time = max(rogue_value("orison_water_drip_time") - rank * rogue_value("orison_water_drip_rank"), rogue_value("orison_water_drip_least"))
+	var/trickle = max(rank, 1) + rogue_value("orison_water_amount_extra")
+	var/devotion_per_trickle = rogue_value("orison_water_devotion")
+	var/stamina_per_trickle = max(rogue_value("orison_water_stamina_min"), rank)
+	var/water_type = /datum/reagent/water/blessed
+	if(caster.rogue_patron && !caster.rogue_patron.rogue_faith_undead_hater)
+		water_type = /datum/reagent/water/cursed
+	while(!QDELETED(vessel) && vessel.reagents && !vessel.reagents.holder_full() && do_after(caster, drip_time, target = vessel))
+		if(!caster.rogue_devotion || caster.rogue_devotion.devotion < devotion_per_trickle)
+			to_chat(caster, span_warning("My devotion is exhausted - the water ceases to flow."))
+			break
+		vessel.reagents.add_reagent(water_type, trickle)
+		caster.rogue_devotion.adjust(-devotion_per_trickle, silent = TRUE)
+		caster.adjust_stamina_loss(stamina_per_trickle)
+		if(prob(rogue_value("orison_water_pour_chance")))
 			playsound(caster, 'sound/effects/slosh.ogg', 30, TRUE)
 
 /// Ratwood blessed_food (acolyte/eora.dm): a blessed dish heals whoever eats of it - but its blesser - the better, the finer
@@ -50,6 +59,8 @@
 	var/datum/weakref/blesser
 	/// Healing every second of the aura a bite brings (Ratwood quality + skill / 5).
 	var/healing = 1
+	/// A master of the miracles blessed it: it also hastens whoever eats it (Ratwood haste, and the golden hue).
+	var/hastes = FALSE
 
 /datum/component/rogue_blessed_food/Initialize(mob/living/caster, holy_rank)
 	if(!istype(parent, /obj/item/reagent_containers/food))
@@ -57,8 +68,9 @@
 	var/obj/item/reagent_containers/food/dish = parent
 	blesser = WEAKREF(caster)
 	healing = ((dish.rogue_faretype || 3) + holy_rank / 5) / 2
+	hastes = holy_rank >= rogue_value("eora_food_haste_rank")
 	dish.rogue_faretype = max(dish.rogue_faretype, clamp(holy_rank, 1, 5))
-	dish.add_filter(ROGUE_BLESSED_FOOD_FILTER, 1, list("type" = "outline", "color" = holy_rank >= 5 ? "#f0b000" : "#ff00ff", "size" = 1))
+	dish.add_filter(ROGUE_BLESSED_FOOD_FILTER, 1, list("type" = "outline", "color" = holy_rank >= rogue_value("eora_food_haste_rank") ? "#f0b000" : "#ff00ff", "size" = 1))
 
 /datum/component/rogue_blessed_food/RegisterWithParent()
 	RegisterSignal(parent, COMSIG_FOOD_EATEN, PROC_REF(on_eaten))
@@ -72,6 +84,8 @@
 		eater.visible_message(span_notice("The divine energy fizzles harmlessly around [eater]."))
 		return
 	eater.apply_status_effect(/datum/status_effect/rogue_miracle_heal, healing)
+	if(hastes)
+		eater.apply_status_effect(/datum/status_effect/rogue_miracle_stats/haste, rogue_value("eora_food_haste_time"))
 
 /// Ratwood bless_food "Bless Food" (acolyte/eora.dm, in Azure Peak and Twilight Axis too): a dish that heals whoever eats it.
 /datum/action/cooldown/spell/pointed/rogue_miracle/bless_food
@@ -111,7 +125,8 @@
 	to_chat(caster, span_notice("I bless [cast_on], and it glows with holy love!"))
 
 /// Ratwood beasttame "Tame Beast" (acolyte/dendor.dm): Dendor's whisper soothes a beast of a kind that can be tamed; it
-/// calms down and takes the caster for a friend, as if fed by hand (husbandry/taming.dm).
+/// calms down and takes the caster for a friend, as if fed by hand (husbandry/taming.dm). Two charges (miracle.dm): one comes
+/// back in ten seconds, and when both are spent the pair comes back in a minute.
 /datum/action/cooldown/spell/pointed/rogue_miracle/tame_beast
 	name = "Tame Beast"
 	desc = "Pacify a beast of a kind that can be tamed with Dendor's blessing: it calms down and takes me for a friend."
@@ -120,11 +135,10 @@
 	sound = 'modular_redtard/faith/sound/churn.ogg'
 	invocation = "Be still and calm, brotherbeast."
 	invocation_type = INVOCATION_WHISPER
-	cooldown_time = 10 SECONDS
-	cast_range = 5
+	value_key = "tame_beast"
+	uses_charges = TRUE
 	self_castable = FALSE
 	miracle_tier = ROGUE_MIRACLE_TIER_2
-	devotion_cost = 20
 	needs_holy_symbol = TRUE
 	miracle_forks = "Ratwood"
 	miracle_gods = "Dendor T2"
@@ -223,6 +237,7 @@
 	cast_range = 3
 	miracle_tier = ROGUE_MIRACLE_TIER_1
 	devotion_cost = 25
+	stamina_cost = 30
 	needs_holy_symbol = TRUE
 	miracle_forks = "Ratwood, Azure Peak, Twilight Axis"
 	miracle_gods = "Noc T1 (Azure Peak and Twilight Axis T2)"

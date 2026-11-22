@@ -1,61 +1,54 @@
-/// Ratwood's bows, crossbows and slings (code/game/objects/items/rogueweapons/ranged/: bows.dm, crossbows.dm, slings.dm,
-/// ammo.dm) on TG's guns. The porter grafts Ratwood's launchers onto /obj/item/gun/ballistic/rogue_launcher/{bow,crossbow,sling},
-/// its ammunition onto /obj/item/ammo_casing/rogue and its projectiles onto /obj/projectile/rogue_ammo, and carries their
-/// numbers (damfactor, accfactor, penfactor, reload time, the caliber of the internal magazine, the projectile's damage,
-/// tier of penetration, speed, accuracy, chance to stick, what is left where it lands). What Ratwood does in code is here:
-/// the draw of the shot is the charge of the intent (combat/charge.dm), its time set by skill, perception and strength
-/// (get_chargetime()); letting go early strays the shot by up to launcher_uncharged_spread degrees; perception scales a
-/// bow's and a sling's damage, a crossbow deals its bolt's damage times its damfactor (slurbows also by perception); the
-/// aimed body part is kept by the shot's accuracy, which falls off with range, and is harder for small parts; an arrow that
-/// gets through the armor may stick in the body part (TG embedding), and a reusable round is left where it lands.
-#define ROGUE_LAUNCHER_BOW_DRAW_BASE rogue_value("launcher_bow_draw_base")
-#define ROGUE_LAUNCHER_BOW_DRAW_SKILL_STEP rogue_value("launcher_bow_draw_skill_step")
-#define ROGUE_LAUNCHER_BOW_HEAVY_DRAW_BASE rogue_value("launcher_bow_heavy_draw_base")
-#define ROGUE_LAUNCHER_BOW_HEAVY_STRENGTH_DIVISOR rogue_value("launcher_bow_heavy_strength_divisor")
-#define ROGUE_LAUNCHER_BOW_DRAW_PERCEPTION_BASE rogue_value("launcher_bow_draw_perception_base")
-#define ROGUE_LAUNCHER_BOW_DRAW_MIN rogue_value("launcher_bow_draw_min")
-#define ROGUE_LAUNCHER_BOW_ARC_DRAW_MIN rogue_value("launcher_bow_arc_draw_min")
-#define ROGUE_LAUNCHER_CROSSBOW_DRAW_SKILL_STEP rogue_value("launcher_crossbow_draw_skill_step")
-#define ROGUE_LAUNCHER_CROSSBOW_DRAW_PERCEPTION_STEP rogue_value("launcher_crossbow_draw_perception_step")
-#define ROGUE_LAUNCHER_CROSSBOW_DRAW_MIN rogue_value("launcher_crossbow_draw_min")
-#define ROGUE_LAUNCHER_CROSSBOW_ARC_SKILL_STEP rogue_value("launcher_crossbow_arc_skill_step")
-#define ROGUE_LAUNCHER_CROSSBOW_ARC_PERCEPTION_BASE rogue_value("launcher_crossbow_arc_perception_base")
-#define ROGUE_LAUNCHER_CROSSBOW_ARC_PERCEPTION_STEP rogue_value("launcher_crossbow_arc_perception_step")
-#define ROGUE_LAUNCHER_CROSSBOW_ARC_FALLBACK rogue_value("launcher_crossbow_arc_fallback")
-#define ROGUE_LAUNCHER_SLING_DRAW_BASE rogue_value("launcher_sling_draw_base")
-#define ROGUE_LAUNCHER_SLING_ARC_DRAW_BASE rogue_value("launcher_sling_arc_draw_base")
-#define ROGUE_LAUNCHER_SLING_DRAW_SKILL_STEP rogue_value("launcher_sling_draw_skill_step")
-#define ROGUE_LAUNCHER_SLING_DRAW_PERCEPTION_DIVISOR rogue_value("launcher_sling_draw_perception_divisor")
-#define ROGUE_LAUNCHER_SLING_DRAW_STRENGTH_DIVISOR rogue_value("launcher_sling_draw_strength_divisor")
-#define ROGUE_LAUNCHER_SLING_DRAW_MIN rogue_value("launcher_sling_draw_min")
-#define ROGUE_LAUNCHER_PER_SOFTCAP rogue_value("launcher_per_softcap")
-#define ROGUE_LAUNCHER_PER_DAMAGE_STEP rogue_value("launcher_per_damage_step")
-#define ROGUE_LAUNCHER_PER_DAMAGE_CAPPED_STEP rogue_value("launcher_per_damage_capped_step")
+/// Bows, crossbows and slings on TG's guns, shooting by Azure Peak (code/modules/projectiles/guns/ballistic/launchers.dm,
+/// code/game/objects/items/rogueweapons/ranged/: bows.dm, crossbows.dm, slings.dm, _ammo.dm; projectile.dm get_aim_at();
+/// accuracy_checks.dm bullet_hit_accuracy_check()). The porter grafts Ratwood's launchers onto
+/// /obj/item/gun/ballistic/rogue_launcher/{bow,crossbow,sling}, its ammunition onto /obj/item/ammo_casing/rogue and its
+/// projectiles onto /obj/projectile/rogue_ammo, and carries their numbers (damfactor, accfactor, penfactor, reload time, the
+/// caliber of the internal magazine, the projectile's damage, tier of penetration, speed, chance to stick, what is left
+/// where it lands). Azure Peak's code is here:
+/// - the draw of the shot is the charge of the intent (combat/charge.dm), its time set by the launcher's kind: a floor plus
+///   the rest of the base by the curve of the skill's rank (bows, slings), or the base less a step per rank down to the
+///   floor (crossbows); a heavy bow draws slower below the strength baseline, an arcing shot slower still, a one-handed
+///   crossbow held in one hand slower; perception plays no part;
+/// - the shot's aim peaks at (base + per rank) times the launcher's accfactor plus the round's own aim_mod; past the visual
+///   reach it falls off per tile, across a level by a flat penalty; outside the round's sweetspot it is nil (only the
+///   chest); small parts are harder unless the launcher aims steady;
+/// - outside the sweetspot the round's damage falls off by its factor;
+/// - let go before the full draw the shot strays (up to launcher_uncharged_spread degrees) and hits weaker (a bow's also
+///   aims worse and sticks less); held past the free hold it trembles (combat/charge.dm); a shot and a let-down draw cost
+///   stamina; perception scales a bow's and a sling's damage (combat/ranged.dm rogue_per_damage_factor());
+/// - a crossbow deals its bolt's damage times its damfactor (slurbows also by perception, Ratwood); an arrow that gets
+///   through the armor may stick in the body part (TG embedding), and a reusable round is left where it lands.
+/// The numbers of a launcher's kind (rogue_draw_kind) are launcher_draw_base_<kind>, launcher_draw_floor_<kind>,
+/// launcher_draw_per_skill_<kind>, launcher_arc_draw_floor_extra_<kind> and launcher_release_drain_<kind>; those of a
+/// round's kind (rogue_range_kind) are ammo_<kind>_min_range, _max_range, _falloff, _aim_mod and _charge_time_mult.
+#define ROGUE_LAUNCHER_DRAW_STRENGTH_BASELINE rogue_value("launcher_draw_strength_baseline")
+#define ROGUE_LAUNCHER_HEAVY_DRAW_PER_STRENGTH rogue_value("launcher_heavy_draw_per_strength")
+#define ROGUE_LAUNCHER_ARC_DRAW_EXTRA rogue_value("launcher_arc_draw_extra")
+#define ROGUE_LAUNCHER_ARC_DRAW_FLOOR_EXTRA rogue_value("launcher_arc_draw_floor_extra")
+#define ROGUE_LAUNCHER_ONEHANDED_DRAW_MULT rogue_value("launcher_crossbow_onehanded_draw_mult")
+#define ROGUE_LAUNCHER_ONEHANDED_ARC_DRAW_MULT rogue_value("launcher_crossbow_onehanded_arc_draw_mult")
+#define ROGUE_LAUNCHER_AIM_BASE rogue_value("launcher_aim_base")
+#define ROGUE_LAUNCHER_AIM_PER_SKILL rogue_value("launcher_aim_per_skill")
+#define ROGUE_LAUNCHER_AIM_NPC_BASE rogue_value("launcher_aim_npc_base")
+#define ROGUE_LAUNCHER_AIM_VISUAL_REACH rogue_value("launcher_aim_visual_reach")
+#define ROGUE_LAUNCHER_AIM_FARSIGHT_PENALTY rogue_value("launcher_aim_farsight_penalty")
+#define ROGUE_LAUNCHER_AIM_ZCROSS_PENALTY rogue_value("launcher_aim_zcross_penalty")
+#define ROGUE_LAUNCHER_AIM_FLOOR rogue_value("launcher_aim_floor")
+#define ROGUE_LAUNCHER_AIM_PRECISE_MAX rogue_value("launcher_aim_precise_max")
+#define ROGUE_LAUNCHER_MOUNTED_ACCURACY_FACTOR rogue_value("launcher_mounted_accuracy_factor")
+#define ROGUE_LAUNCHER_PRECISE_PENALTY rogue_value("launcher_precise_penalty")
+#define ROGUE_LAUNCHER_ULTRA_PRECISE_PENALTY rogue_value("launcher_ultra_precise_penalty")
+#define ROGUE_LAUNCHER_ZONE_MIN rogue_value("launcher_zone_min")
+#define ROGUE_LAUNCHER_UNCHARGED_SPREAD rogue_value("launcher_uncharged_spread")
+#define ROGUE_LAUNCHER_HOLD_SPREAD_MAX rogue_value("launcher_hold_spread_max")
+#define ROGUE_LAUNCHER_UNCHARGED_ACCURACY_PENALTY rogue_value("launcher_uncharged_accuracy_penalty")
+#define ROGUE_LAUNCHER_UNCHARGED_EMBED_FACTOR rogue_value("launcher_uncharged_embed_factor")
+#define ROGUE_LAUNCHER_NPC_DRAIN_MULT rogue_value("launcher_npc_drain_mult")
+#define ROGUE_LAUNCHER_LETDOWN_DRAIN_MULT rogue_value("launcher_letdown_drain_mult")
 #define ROGUE_LAUNCHER_CROSSBOW_PER_MIN rogue_value("launcher_crossbow_per_min")
 #define ROGUE_LAUNCHER_CROSSBOW_PER_MAX rogue_value("launcher_crossbow_per_max")
 #define ROGUE_LAUNCHER_CROSSBOW_PER_DIVISOR rogue_value("launcher_crossbow_per_divisor")
 #define ROGUE_LAUNCHER_SLING_STONE_FORCE rogue_value("launcher_sling_stone_force")
-#define ROGUE_LAUNCHER_BOW_ACCURACY_BASE rogue_value("launcher_bow_accuracy_base")
-#define ROGUE_LAUNCHER_BOW_ACCURACY_STEP rogue_value("launcher_bow_accuracy_step")
-#define ROGUE_LAUNCHER_BOW_BONUS_BASE rogue_value("launcher_bow_bonus_base")
-#define ROGUE_LAUNCHER_BOW_BONUS_STEP rogue_value("launcher_bow_bonus_step")
-#define ROGUE_LAUNCHER_ACCURACY_BASE rogue_value("launcher_accuracy_base")
-#define ROGUE_LAUNCHER_ACCURACY_STEP rogue_value("launcher_accuracy_step")
-#define ROGUE_LAUNCHER_BONUS_BASE rogue_value("launcher_bonus_base")
-#define ROGUE_LAUNCHER_BONUS_STEP rogue_value("launcher_bonus_step")
-#define ROGUE_LAUNCHER_SKILL_ACCURACY_STEP rogue_value("launcher_skill_accuracy_step")
-#define ROGUE_LAUNCHER_ACCURACY_FALLOFF rogue_value("launcher_accuracy_falloff")
-#define ROGUE_LAUNCHER_ACCURACY_FLOOR rogue_value("launcher_accuracy_floor")
-#define ROGUE_LAUNCHER_MOUNTED_ACCURACY_FACTOR rogue_value("launcher_mounted_accuracy_factor")
-#define ROGUE_LAUNCHER_PRECISE_PENALTY rogue_value("launcher_precise_penalty")
-#define ROGUE_LAUNCHER_PRECISE_MAX rogue_value("launcher_precise_max")
-#define ROGUE_LAUNCHER_ULTRA_PRECISE_PENALTY rogue_value("launcher_ultra_precise_penalty")
-#define ROGUE_LAUNCHER_ULTRA_PRECISE_MAX rogue_value("launcher_ultra_precise_max")
-#define ROGUE_LAUNCHER_FACE_MAX rogue_value("launcher_face_max")
-#define ROGUE_LAUNCHER_ZONE_MIN rogue_value("launcher_zone_min")
-#define ROGUE_LAUNCHER_UNCHARGED_SPREAD rogue_value("launcher_uncharged_spread")
-#define ROGUE_LAUNCHER_UNCHARGED_ACCURACY_PENALTY rogue_value("launcher_uncharged_accuracy_penalty")
-#define ROGUE_LAUNCHER_UNCHARGED_EMBED_FACTOR rogue_value("launcher_uncharged_embed_factor")
 #define ROGUE_LAUNCHER_EMBED_MIN_DAMAGE rogue_value("launcher_embed_min_damage")
 #define ROGUE_LAUNCHER_HIT_XP_PER_INT rogue_value("launcher_hit_xp_per_int")
 #define ROGUE_LAUNCHER_CROSSBOW_COCK_STRENGTH_STEP rogue_value("launcher_crossbow_cock_strength_step")
@@ -76,16 +69,29 @@ GLOBAL_LIST_INIT(rogue_ranged_ultra_precise_zones, list(BODY_ZONE_PRECISE_L_HAND
 GLOBAL_LIST_INIT(rogue_ranged_precise_zones, list(BODY_ZONE_HEAD, "neck", BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
 GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECISE_EYES, "skull", "ears", "nose", BODY_ZONE_PRECISE_MOUTH))
 
-/// Damage factor of a muscle-powered shot by perception (Ratwood per_scaling in bows.dm and slings.dm: 2 at perception 10).
-/proc/rogue_launcher_per_scaling(perception)
-	var/softcap = ROGUE_LAUNCHER_PER_SOFTCAP
-	return 1 + min(perception, softcap) * ROGUE_LAUNCHER_PER_DAMAGE_STEP + max(perception - softcap, 0) * ROGUE_LAUNCHER_PER_DAMAGE_CAPPED_STEP
-
-// Charge of a ranged intent (Ratwood get_chargetime(), can_charge(), prewarning() of the intent).
+// Charge of a ranged intent (Azure Peak get_chargetime(), can_charge(), prewarning() of the intent).
 
 /datum/intent
-	/// Base aiming time of a crossbow intent (Ratwood basetime), read by rogue_chargetime().
+	/// Ratwood's base aiming time of a crossbow intent; the porter still carries it, the draw is the launcher's now.
 	var/basetime = 0
+	/// Held past the free hold, the full charge trembles and drains more (Azure Peak hold_grace, hold_ramp: shooting,
+	/// arcing and swinging intents, not crossbows).
+	var/rogue_hold_strain = FALSE
+
+/datum/intent/shoot
+	rogue_hold_strain = TRUE
+
+/datum/intent/arc
+	rogue_hold_strain = TRUE
+
+/datum/intent/swing
+	rogue_hold_strain = TRUE
+
+/datum/intent/shoot/crossbow
+	rogue_hold_strain = FALSE
+
+/datum/intent/arc/crossbow
+	rogue_hold_strain = FALSE
 
 /// How long the charge of this intent takes for this fighter and item; the intent's own charge time by default.
 /datum/intent/proc/rogue_chargetime(mob/living/carbon/human/fighter, obj/item/held)
@@ -99,27 +105,36 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 /datum/intent/proc/rogue_prewarning(mob/living/carbon/human/fighter, obj/item/held)
 	return
 
+/// The draw of the launcher held, or the intent's own charge time when it has none (Azure Peak: the draw lives on the
+/// launcher so players and NPCs share one curve).
+/proc/rogue_launcher_chargetime(datum/intent/intent, mob/living/carbon/human/fighter, obj/item/held, arcing)
+	var/obj/item/gun/ballistic/rogue_launcher/launcher = held
+	if(istype(launcher) && intent.chargetime)
+		var/time = launcher.rogue_draw_time(fighter, arcing)
+		if(time)
+			return time
+	return intent.chargetime
+
+/datum/intent/shoot/rogue_chargetime(mob/living/carbon/human/fighter, obj/item/held)
+	return rogue_launcher_chargetime(src, fighter, held, FALSE)
+
+/datum/intent/arc/rogue_chargetime(mob/living/carbon/human/fighter, obj/item/held)
+	return rogue_launcher_chargetime(src, fighter, held, TRUE)
+
+/datum/intent/swing/rogue_chargetime(mob/living/carbon/human/fighter, obj/item/held)
+	return rogue_launcher_chargetime(src, fighter, held, FALSE)
+
 /datum/intent/shoot/rogue_prewarning(mob/living/carbon/human/fighter, obj/item/held)
 	fighter.visible_message(span_warning("[fighter] aims [held]!"))
 
 /datum/intent/arc/rogue_prewarning(mob/living/carbon/human/fighter, obj/item/held)
 	fighter.visible_message(span_warning("[fighter] aims [held]!"))
 
-/proc/rogue_bow_draw_time(mob/living/carbon/human/fighter, obj/item/held)
-	var/obj/item/gun/ballistic/rogue_launcher/bow = held
-	. = ROGUE_LAUNCHER_BOW_DRAW_BASE - fighter.rogue_skill_rank(/datum/attribute/skill/combat/bows) * ROGUE_LAUNCHER_BOW_DRAW_SKILL_STEP
-	if(istype(bow) && bow.heavy_bow)
-		. += ROGUE_LAUNCHER_BOW_HEAVY_DRAW_BASE - fighter.rogue_stat(ROGUE_STAT_STRENGTH) / ROGUE_LAUNCHER_BOW_HEAVY_STRENGTH_DIVISOR
-	. += ROGUE_LAUNCHER_BOW_DRAW_PERCEPTION_BASE - fighter.rogue_stat(ROGUE_STAT_PERCEPTION)
-
 /proc/rogue_bow_can_draw(mob/living/carbon/human/fighter, obj/item/held)
 	if(fighter.usable_hands < 2 || fighter.get_inactive_held_item())
 		to_chat(fighter, span_warning("I need a free hand to draw [held]!"))
 		return FALSE
 	return TRUE
-
-/datum/intent/shoot/bow/rogue_chargetime(mob/living/carbon/human/fighter, obj/item/held)
-	return max(rogue_bow_draw_time(fighter, held), ROGUE_LAUNCHER_BOW_DRAW_MIN)
 
 /datum/intent/shoot/bow/rogue_can_charge(mob/living/carbon/human/fighter, obj/item/held)
 	return rogue_bow_can_draw(fighter, held)
@@ -128,9 +143,6 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 	fighter.visible_message(span_warning("[fighter] draws [held]!"))
 	playsound(fighter, ROGUE_SOUND_BOW_DRAW, 100, FALSE)
 
-/datum/intent/arc/bow/rogue_chargetime(mob/living/carbon/human/fighter, obj/item/held)
-	return max(rogue_bow_draw_time(fighter, held), ROGUE_LAUNCHER_BOW_ARC_DRAW_MIN)
-
 /datum/intent/arc/bow/rogue_can_charge(mob/living/carbon/human/fighter, obj/item/held)
 	return rogue_bow_can_draw(fighter, held)
 
@@ -138,48 +150,33 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 	fighter.visible_message(span_warning("[fighter] draws [held] in an arc!"))
 	playsound(fighter, ROGUE_SOUND_BOW_DRAW, 100, FALSE)
 
-/proc/rogue_crossbow_can_aim(mob/living/carbon/human/fighter)
+/// Both hands free for the crossbow; a one-handed crossbow aims in one hand too, only slower (Azure Peak can_charge()).
+/proc/rogue_crossbow_can_aim(mob/living/carbon/human/fighter, obj/item/held)
+	var/obj/item/gun/ballistic/rogue_launcher/crossbow/crossbow = held
+	if(istype(crossbow) && crossbow.rogue_onehanded)
+		return TRUE
+	return rogue_has_free_hand(fighter)
+
+/proc/rogue_has_free_hand(mob/living/carbon/human/fighter)
 	return fighter.usable_hands >= 2 && !fighter.get_inactive_held_item()
 
-/datum/intent/shoot/crossbow/rogue_chargetime(mob/living/carbon/human/fighter, obj/item/held)
-	var/time = chargetime + basetime - fighter.rogue_skill_rank(/datum/attribute/skill/combat/crossbows) * ROGUE_LAUNCHER_CROSSBOW_DRAW_SKILL_STEP
-	time -= fighter.rogue_stat(ROGUE_STAT_PERCEPTION) * ROGUE_LAUNCHER_CROSSBOW_DRAW_PERCEPTION_STEP
-	return max(time, ROGUE_LAUNCHER_CROSSBOW_DRAW_MIN)
-
 /datum/intent/shoot/crossbow/rogue_can_charge(mob/living/carbon/human/fighter, obj/item/held)
-	return rogue_crossbow_can_aim(fighter)
+	return rogue_crossbow_can_aim(fighter, held)
 
 /datum/intent/shoot/crossbow/heavy/rogue_prewarning(mob/living/carbon/human/fighter, obj/item/held)
 	fighter.visible_message(span_warning("[fighter] readies [held]!"))
 	playsound(fighter, ROGUE_SOUND_CROSSBOW_READY, 100, FALSE)
 
-/datum/intent/arc/crossbow/rogue_chargetime(mob/living/carbon/human/fighter, obj/item/held)
-	var/time = chargetime + basetime - fighter.rogue_skill_rank(/datum/attribute/skill/combat/crossbows) * ROGUE_LAUNCHER_CROSSBOW_ARC_SKILL_STEP
-	time += ROGUE_LAUNCHER_CROSSBOW_ARC_PERCEPTION_BASE - fighter.rogue_stat(ROGUE_STAT_PERCEPTION) * ROGUE_LAUNCHER_CROSSBOW_ARC_PERCEPTION_STEP
-	return time > 0 ? time : ROGUE_LAUNCHER_CROSSBOW_ARC_FALLBACK
-
 /datum/intent/arc/crossbow/rogue_can_charge(mob/living/carbon/human/fighter, obj/item/held)
-	return rogue_crossbow_can_aim(fighter)
+	return rogue_crossbow_can_aim(fighter, held)
 
 /datum/intent/arc/crossbow/heavy/rogue_prewarning(mob/living/carbon/human/fighter, obj/item/held)
 	fighter.visible_message(span_warning("[fighter] readies [held] for a precise shot!"))
 	playsound(fighter, ROGUE_SOUND_CROSSBOW_READY, 100, FALSE)
 
-/proc/rogue_sling_swing_time(mob/living/carbon/human/fighter, base)
-	. = base - fighter.rogue_skill_rank(/datum/attribute/skill/combat/slings) * ROGUE_LAUNCHER_SLING_DRAW_SKILL_STEP
-	. -= fighter.rogue_stat(ROGUE_STAT_PERCEPTION) / ROGUE_LAUNCHER_SLING_DRAW_PERCEPTION_DIVISOR
-	. -= fighter.rogue_stat(ROGUE_STAT_STRENGTH) / ROGUE_LAUNCHER_SLING_DRAW_STRENGTH_DIVISOR
-	return max(., ROGUE_LAUNCHER_SLING_DRAW_MIN)
-
-/datum/intent/swing/sling/rogue_chargetime(mob/living/carbon/human/fighter, obj/item/held)
-	return rogue_sling_swing_time(fighter, ROGUE_LAUNCHER_SLING_DRAW_BASE)
-
 /datum/intent/swing/sling/rogue_prewarning(mob/living/carbon/human/fighter, obj/item/held)
 	fighter.visible_message(span_warning("[fighter] swings the [held]!"))
 	playsound(fighter, ROGUE_SOUND_SLING_DRAW, 100, FALSE)
-
-/datum/intent/arc/sling/rogue_chargetime(mob/living/carbon/human/fighter, obj/item/held)
-	return rogue_sling_swing_time(fighter, ROGUE_LAUNCHER_SLING_ARC_DRAW_BASE)
 
 /datum/intent/arc/sling/rogue_prewarning(mob/living/carbon/human/fighter, obj/item/held)
 	fighter.visible_message(span_warning("[fighter] swings the [held] in an arc!"))
@@ -241,6 +238,26 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 /obj/item/ammo_casing/rogue/add_weapon_description()
 	return
 
+/// Azure Peak get_mechanics_examine() of ammunition: the sweetspot and what the round's heft does to the aim.
+/obj/item/ammo_casing/rogue/examine(mob/user)
+	. = ..()
+	var/obj/projectile/rogue_ammo/shot = loaded_projectile
+	if(!istype(shot))
+		return
+	var/list/sweetspot = shot.rogue_sweetspot_examine("This projectile")
+	if(length(sweetspot))
+		. += span_info("Projectiles have maximum and minimum falloff ranges, with particular falloff factors for damage.")
+		. += sweetspot
+	if(shot.rogue_aim_mod < 0)
+		. += span_info("Its heft throws off my aim by <b>[-shot.rogue_aim_mod]</b>.")
+
+/// Multiplier of the draw of a launcher loaded with this round (Azure Peak charge_time_mult: heavy sling ammunition).
+/obj/item/ammo_casing/rogue/proc/rogue_charge_time_mult()
+	var/obj/projectile/rogue_ammo/shot = loaded_projectile
+	if(!istype(shot) || !shot.rogue_range_kind)
+		return 1
+	return rogue_value_or("ammo_[shot.rogue_range_kind]_charge_time_mult", 1)
+
 /// An arrow that sticks in a body part (Ratwood add_embedded_object()): it does not hurt more on entering, and thrown later it
 /// does not stick on its own.
 /datum/embedding/rogue_projectile
@@ -249,7 +266,7 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 	ignore_throwspeed_threshold = TRUE
 
 /// Base of Ratwood's projectiles (the porter grafts their branches onto it). Ratwood's speed is deciseconds per tile
-/// (rogue_tile_time), TG's tiles per decisecond. TG's own aim falloff is off: the body part is chosen by Ratwood's accuracy
+/// (rogue_tile_time), TG's tiles per decisecond. TG's own aim falloff is off: the body part is chosen by Azure Peak's aim
 /// (rogue_ranged_zone()) when the shot reaches a living target.
 /obj/projectile/rogue_ammo
 	name = "arrow"
@@ -272,9 +289,23 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 	var/rogue_bclass
 	/// Damage factor against a creature without a mind (Ratwood npc_simple_damage_mult).
 	var/rogue_npc_damage_mult = 1
-	/// Accuracy that falls off with range (Ratwood accuracy) and accuracy that does not (Ratwood bonus_accuracy).
+	/// Ratwood's accuracy of the round; the porter still carries them, the aim is Azure Peak's now (rogue_aim_peak).
 	var/rogue_accuracy = 65
 	var/rogue_bonus_accuracy = 0
+	/// Peak of the shot's aim, set by the launcher when it fires (Azure Peak aim_peak); an NPC's default otherwise.
+	var/rogue_aim_peak = 0
+	/// The launcher aims steady: no penalty and no ceiling for small parts (Azure Peak steady_aim).
+	var/rogue_steady_aim = FALSE
+	/// Kind of round whose sweetspot, falloff and aim the numbers name (ammo_<kind>_...), and those numbers: the distance
+	/// in tiles of full force, the damage factor outside it, the aim the round's heft adds (Azure Peak min_range,
+	/// max_range, dam_falloff_factor, aim_mod).
+	var/rogue_range_kind
+	var/rogue_min_range = 0
+	var/rogue_max_range = 0
+	var/rogue_falloff = 1
+	var/rogue_aim_mod = 0
+	/// The falloff was weighed for the target the shot struck.
+	var/rogue_falloff_done = FALSE
 	/// What is left where it lands (Ratwood ammo_type of a reusable projectile).
 	var/rogue_drop_type
 	var/rogue_reusable = FALSE
@@ -316,43 +347,96 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 	if(rogue_tile_time > 0)
 		speed = 1 / rogue_tile_time
 	sharpness = rogue_bclass_sharpness(rogue_bclass)
+	rogue_aim_peak = ROGUE_LAUNCHER_AIM_NPC_BASE
+	if(rogue_range_kind)
+		rogue_min_range = rogue_value_or("ammo_[rogue_range_kind]_min_range", 0)
+		rogue_max_range = rogue_value_or("ammo_[rogue_range_kind]_max_range", 0)
+		rogue_falloff = rogue_value_or("ammo_[rogue_range_kind]_falloff", 1)
+		rogue_aim_mod = rogue_value_or("ammo_[rogue_range_kind]_aim_mod", 0)
 	return ..()
 
 /obj/projectile/rogue_ammo/prehit_pierce(atom/target)
 	. = ..()
-	if(. != PROJECTILE_PIERCE_NONE || !isliving(target))
+	if(. != PROJECTILE_PIERCE_NONE)
 		return
-	if(rogue_arc && original && get_turf(target) != get_turf(original))
+	if(isliving(target) && rogue_arc && original && get_turf(target) != get_turf(original))
 		return PROJECTILE_PIERCE_PHASE
+	rogue_apply_falloff(target)
+	if(!isliving(target))
+		return
 	var/zone = rogue_ranged_zone(target, rogue_aimed_zone || def_zone)
 	rogue_struck_zone = zone
 	def_zone = GLOB.rogue_major_zones[zone] || check_zone(zone)
 
-/// Accuracy left after the flight: Ratwood takes 10 off per tile while it is above 20; the bonus never falls off.
-/obj/projectile/rogue_ammo/proc/rogue_hit_chance()
-	var/accuracy = rogue_accuracy
-	var/floor = ROGUE_LAUNCHER_ACCURACY_FLOOR
-	var/falloff = ROGUE_LAUNCHER_ACCURACY_FALLOFF
-	if(accuracy > floor && starting && falloff > 0)
-		accuracy -= falloff * min(get_dist(starting, get_turf(src)), CEILING((accuracy - floor) / falloff, 1))
-	return accuracy + rogue_bonus_accuracy
+/// Tiles from where the shot was fired to the spot, across levels by the map alone (Azure Peak get_aim_from()).
+/obj/projectile/rogue_ammo/proc/rogue_flight_distance(turf/spot)
+	return max(abs(spot.x - starting.x), abs(spot.y - starting.y))
 
-/// Ratwood bullet_hit_accuracy_check(): the aimed part, else its parent part, else the chest. Small parts are harder.
+/// The spot is short of or past the round's sweetspot (Azure Peak check_range(): on the level it was fired on only).
+/obj/projectile/rogue_ammo/proc/rogue_outside_sweetspot(turf/spot)
+	if(!starting || !istype(spot) || spot.z != starting.z)
+		return FALSE
+	var/distance = get_dist(spot, starting)
+	return (rogue_min_range && distance < rogue_min_range) || (rogue_max_range && distance > rogue_max_range)
+
+/// Outside the sweetspot the round deals its damage times its falloff (Azure Peak process_hit()).
+/obj/projectile/rogue_ammo/proc/rogue_apply_falloff(atom/target)
+	if(rogue_falloff_done)
+		return
+	rogue_falloff_done = TRUE
+	if(damage && rogue_falloff != 1 && rogue_outside_sweetspot(get_turf(target)))
+		damage = round(damage * rogue_falloff)
+
+/// Chance to keep to the aimed part at the target (Azure Peak get_aim_at()): nil outside the sweetspot, the peak plus the
+/// round's aim within the visual reach, less per tile past it and across a level.
+/obj/projectile/rogue_ammo/proc/rogue_aim_from(atom/target)
+	var/turf/spot = get_turf(target)
+	if(!starting || !istype(spot))
+		return rogue_aim_peak + rogue_aim_mod
+	var/distance = rogue_flight_distance(spot)
+	var/aim_floor = ROGUE_LAUNCHER_AIM_FLOOR
+	if((rogue_min_range && distance < rogue_min_range) || (rogue_max_range && distance > rogue_max_range))
+		return aim_floor
+	var/aim = rogue_aim_peak + rogue_aim_mod
+	var/reach = ROGUE_LAUNCHER_AIM_VISUAL_REACH
+	if(distance > reach)
+		aim -= (distance - reach) * ROGUE_LAUNCHER_AIM_FARSIGHT_PENALTY
+	if(spot.z != starting.z)
+		aim -= ROGUE_LAUNCHER_AIM_ZCROSS_PENALTY
+	return max(aim_floor, aim)
+
+/// Azure Peak bullet_hit_accuracy_check(): the aimed part, else its parent part, else the chest. Small parts are harder
+/// unless the launcher aims steady: the head, neck and limbs within a floor and a ceiling, the hands and feet more, the
+/// face most.
 /obj/projectile/rogue_ammo/proc/rogue_ranged_zone(mob/living/victim, zone)
-	var/chance = rogue_hit_chance()
-	var/zone_min = ROGUE_LAUNCHER_ZONE_MIN
-	if((zone in GLOB.rogue_ranged_face_zones) && victim.mind)
-		chance = clamp(chance - ROGUE_LAUNCHER_ULTRA_PRECISE_PENALTY - ROGUE_LAUNCHER_PRECISE_PENALTY, zone_min, ROGUE_LAUNCHER_FACE_MAX)
-	else if((zone in GLOB.rogue_ranged_face_zones) || (zone in GLOB.rogue_ranged_ultra_precise_zones))
-		chance = clamp(chance - ROGUE_LAUNCHER_ULTRA_PRECISE_PENALTY, zone_min, ROGUE_LAUNCHER_ULTRA_PRECISE_MAX)
-	else if(zone in GLOB.rogue_ranged_precise_zones)
-		chance = clamp(chance - ROGUE_LAUNCHER_PRECISE_PENALTY, zone_min, ROGUE_LAUNCHER_PRECISE_MAX)
+	var/chance = rogue_aim_from(victim)
+	if(!rogue_steady_aim)
+		if(zone in GLOB.rogue_ranged_face_zones)
+			chance -= ROGUE_LAUNCHER_ULTRA_PRECISE_PENALTY + ROGUE_LAUNCHER_PRECISE_PENALTY
+		else if(zone in GLOB.rogue_ranged_ultra_precise_zones)
+			chance -= ROGUE_LAUNCHER_ULTRA_PRECISE_PENALTY
+		else if(zone in GLOB.rogue_ranged_precise_zones)
+			chance = clamp(chance - ROGUE_LAUNCHER_PRECISE_PENALTY, ROGUE_LAUNCHER_ZONE_MIN, ROGUE_LAUNCHER_AIM_PRECISE_MAX)
 	if(prob(chance))
 		return zone
 	var/parent = GLOB.rogue_major_zones[zone] || BODY_ZONE_CHEST
 	if(parent != zone && prob(chance))
 		return parent
 	return BODY_ZONE_CHEST
+
+/// Examine lines of the round's sweetspot (Azure Peak get_sweetspot_examine()); empty when it has none.
+/obj/projectile/rogue_ammo/proc/rogue_sweetspot_examine(subject)
+	. = list()
+	if(!rogue_min_range && !rogue_max_range)
+		return
+	if(rogue_min_range && rogue_max_range)
+		. += span_info("[subject] has a sweetspot between <b>[rogue_min_range]</b> and <b>[rogue_max_range]</b> tiles, where it delivers full force.")
+	else if(rogue_max_range)
+		. += span_info("[subject] has a sweetspot up to <b>[rogue_max_range]</b> tiles, where it delivers full force.")
+	else
+		. += span_info("[subject] has a sweetspot beyond <b>[rogue_min_range]</b> tiles, where it delivers full force.")
+	if(rogue_falloff != 1)
+		. += span_info("Outside the sweetspot, its damage is reduced to <b>[rogue_falloff * 100]%</b>.")
 
 /obj/projectile/rogue_ammo/on_hit(atom/target, blocked = 0, pierce_hit)
 	var/mob/living/victim = isliving(target) ? target : null
@@ -457,9 +541,31 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 			new drop_type(spot)
 	return ..()
 
+// Kinds of the ported rounds by Azure Peak's ammunition (ammo_arrows.dm, ammo_bolts.dm, ammo_bullets.dm): arrows, bolts,
+// heavy bolts and reusable sling bullets have a sweetspot; a sling bullet's heft throws the aim off, the loose stone's too.
+
+/obj/projectile/bullet/reusable/arrow
+	rogue_range_kind = "arrow"
+
+/obj/projectile/bullet/reusable/bolt
+	rogue_range_kind = "bolt"
+
+/obj/projectile/bullet/reusable/heavy_bolt
+	rogue_range_kind = "heavy_bolt"
+
+/obj/projectile/bullet/reusable/sling_bullet
+	rogue_range_kind = "sling"
+
+/obj/projectile/bullet/sling_bullet
+	rogue_range_kind = "stone"
+
+/obj/projectile/bullet/bolt
+	rogue_range_kind = "bolt"
+
 // Ratwood's projectiles with an effect of their own (ammo.dm on_hit()).
 
 /obj/projectile/bullet/arrow/pyro
+	rogue_range_kind = "arrow"
 	rogue_fire_stacks = 4
 	rogue_fire_burn = 10
 
@@ -468,6 +574,7 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 	rogue_fire_burn = 15
 
 /obj/projectile/bullet/arrow/water
+	rogue_range_kind = "arrow"
 	rogue_extinguishes = TRUE
 
 /obj/projectile/bullet/bolt/water
@@ -536,9 +643,28 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 	/// The skill that aims it and that its hits train, and the rank up to which they do.
 	var/rogue_launch_skill
 	var/rogue_trained_cap = ROGUE_LAUNCHER_TRAIN_CAP
+	/// Kind whose draw and stamina numbers the launcher takes (launcher_draw_base_<kind> and the rest; Azure Peak draw_base,
+	/// draw_floor, draw_per_skill, release_drain of the launcher's type).
+	var/rogue_draw_kind
+	/// The draw follows the curve of the skill's rank (Azure Peak uses_draw_curve: bows, slings) instead of a step per rank.
+	var/rogue_draw_curve = FALSE
+	/// The launcher aims steady: no penalty and no ceiling for small parts (Azure Peak steady_aim: bows, crossbows).
+	var/rogue_steady_aim = FALSE
+	/// A shot let go early also aims worse and sticks less (Azure Peak early_release_acc_penalty and embed_mult of bows).
+	var/rogue_early_release_penalty = FALSE
+	/// Unstable hold of the draw when the shot is let go, read before the charge is taken.
+	var/rogue_last_instability = 0
 
 /obj/item/gun/ballistic/rogue_launcher/add_weapon_description()
 	return
+
+/obj/item/gun/ballistic/rogue_launcher/examine(mob/user)
+	. = ..()
+	if(rogue_steady_aim)
+		. += span_info("This weapon has <b>steady aim</b>: I can pick out a limb, hand, foot or face as easily as the chest.")
+	var/obj/projectile/rogue_ammo/shot = chambered?.loaded_projectile
+	if(istype(shot))
+		. += shot.rogue_sweetspot_examine("The loaded [chambered.name]")
 
 /// The intent the holder shoots with, if the holder has intents.
 /obj/item/gun/ballistic/rogue_launcher/proc/rogue_fire_intent(mob/living/user)
@@ -546,6 +672,31 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 		return null
 	var/mob/living/carbon/human/archer = user
 	return archer.rogue_strike_intent(src)
+
+/// Deciseconds of the draw for this fighter (Azure Peak get_draw_time()): 0 for a launcher of no kind, the intent's own
+/// charge time then.
+/obj/item/gun/ballistic/rogue_launcher/proc/rogue_draw_time(mob/living/carbon/human/fighter, arcing)
+	if(!rogue_draw_kind || !fighter)
+		return 0
+	var/time = rogue_value("launcher_draw_base_[rogue_draw_kind]")
+	var/floor_time = rogue_value("launcher_draw_floor_[rogue_draw_kind]")
+	if(arcing)
+		time += ROGUE_LAUNCHER_ARC_DRAW_EXTRA
+		var/floor_extra = rogue_value_or("launcher_arc_draw_floor_extra_[rogue_draw_kind]", null)
+		floor_time += isnull(floor_extra) ? ROGUE_LAUNCHER_ARC_DRAW_FLOOR_EXTRA : floor_extra
+	if(rogue_launch_skill)
+		var/rank = fighter.rogue_skill_rank(rogue_launch_skill)
+		if(rogue_draw_curve)
+			time = floor_time + (time - floor_time) * rogue_value("launcher_draw_curve_[rank]")
+		else
+			time -= rank * rogue_value_or("launcher_draw_per_skill_[rogue_draw_kind]", 0)
+	if(heavy_bow)
+		time += max(0, ROGUE_LAUNCHER_DRAW_STRENGTH_BASELINE - fighter.rogue_stat(ROGUE_STAT_STRENGTH)) * ROGUE_LAUNCHER_HEAVY_DRAW_PER_STRENGTH
+	time = max(time, floor_time)
+	var/obj/item/ammo_casing/rogue/round = chambered
+	if(istype(round))
+		time *= round.rogue_charge_time_mult()
+	return time
 
 /obj/item/gun/ballistic/rogue_launcher/try_fire_gun(atom/target, mob/living/user, params)
 	var/datum/intent/intent = rogue_fire_intent(user)
@@ -568,33 +719,76 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 	if(message && istype(user) && !suppressed)
 		user.visible_message(span_danger("[user] shoots [src]!"), span_danger("I shoot [src]!"), vision_distance = COMBAT_MESSAGE_RANGE)
 
-/// Share of the draw the shot gets: the charge of the intent, full for a holder without intents or without a client.
+/// Share of the draw the shot gets: the charge of the intent, full for a holder without intents or without a client. The
+/// tremble of a held draw is kept in rogue_last_instability.
 /obj/item/gun/ballistic/rogue_launcher/proc/rogue_draw_share(mob/living/user)
+	rogue_last_instability = 0
 	var/datum/intent/intent = rogue_fire_intent(user)
 	if(!intent?.chargetime || !user.client)
 		return 1
 	var/mob/living/carbon/human/archer = user
+	var/datum/component/rogue_charge/charge = archer.GetComponent(/datum/component/rogue_charge)
+	if(charge?.intent == intent)
+		rogue_last_instability = charge.hold_instability()
 	return clamp(archer.rogue_take_charge(intent), 0, 1)
+
+/// Degrees the shot may stray (Azure Peak get_ranged_spread()): let go early, by the share of the draw it lacks; held past
+/// the free hold, by its tremble. An NPC's launcher does not stray: its aim is its own.
+/obj/item/gun/ballistic/rogue_launcher/proc/rogue_ranged_spread(share)
+	if(share < 1)
+		return ROGUE_LAUNCHER_UNCHARGED_SPREAD * (1 - share)
+	return rogue_last_instability * ROGUE_LAUNCHER_HOLD_SPREAD_MAX
 
 /obj/item/gun/ballistic/rogue_launcher/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	spread = 0
-	var/obj/projectile/rogue_ammo/shot = chambered?.loaded_projectile
+	var/obj/item/ammo_casing/round = chambered
+	var/obj/projectile/rogue_ammo/shot = round?.loaded_projectile
+	var/prepared = FALSE
 	if(istype(shot) && isliving(user) && !fire_cd)
 		var/share = rogue_draw_share(user)
-		if(share < 1)
-			spread = ROGUE_LAUNCHER_UNCHARGED_SPREAD * (1 - share)
+		spread = rogue_ranged_spread(share)
 		rogue_prepare_shot(shot, user, target, share)
-	return ..()
+		prepared = TRUE
+	. = ..()
+	if(prepared && (QDELETED(round) || round.loaded_projectile != shot))
+		rogue_pay_release_drain(user)
 
-/// Sets the shot up from its type's numbers for this shooter (Ratwood process_fire()); always from the type's values, so a
-/// shot that did not go off is not counted twice.
+/// Stamina a shot or a let-down draw costs (Azure Peak get_shot_drain()): an NPC pays less.
+/obj/item/gun/ballistic/rogue_launcher/proc/rogue_shot_drain(mob/living/user, drain)
+	if(!drain || !user)
+		return 0
+	if(!user.client)
+		drain *= ROGUE_LAUNCHER_NPC_DRAIN_MULT
+	return drain
+
+/// Stamina of the shot let go (Azure Peak pay_release_drain()).
+/obj/item/gun/ballistic/rogue_launcher/proc/rogue_pay_release_drain(mob/living/user)
+	if(!rogue_draw_kind)
+		return
+	var/cost = rogue_shot_drain(user, rogue_value_or("launcher_release_drain_[rogue_draw_kind]", 0))
+	if(cost)
+		user.adjust_stamina_loss(cost)
+
+/// Stamina of a draw let down without a shot, by how far it was drawn (Azure Peak pay_letdown_drain()).
+/obj/item/gun/ballistic/rogue_launcher/proc/rogue_pay_letdown_drain(mob/living/user, draw_share)
+	if(!rogue_draw_kind)
+		return
+	var/drain = rogue_value_or("launcher_release_drain_[rogue_draw_kind]", 0) * ROGUE_LAUNCHER_LETDOWN_DRAIN_MULT * clamp(draw_share, 0, 1)
+	var/cost = rogue_shot_drain(user, drain)
+	if(cost)
+		user.adjust_stamina_loss(cost)
+
+/// Sets the shot up from its type's numbers for this shooter (Azure Peak process_fire(), apply_ranged_accuracy()); always
+/// from the type's values, so a shot that did not go off is not counted twice.
 /obj/item/gun/ballistic/rogue_launcher/proc/rogue_prepare_shot(obj/projectile/rogue_ammo/shot, mob/living/user, atom/target, share)
 	shot.damage = initial(shot.damage)
 	shot.armour_penetration = initial(shot.armour_penetration)
-	shot.rogue_accuracy = initial(shot.rogue_accuracy)
-	shot.rogue_bonus_accuracy = initial(shot.rogue_bonus_accuracy)
 	shot.rogue_embed_chance = initial(shot.rogue_embed_chance)
 	shot.range = initial(shot.range)
+	shot.rogue_falloff_done = FALSE
+	var/rank = rogue_launch_skill ? user.rogue_skill_rank(rogue_launch_skill) : 0
+	shot.rogue_aim_peak = (ROGUE_LAUNCHER_AIM_BASE + rank * ROGUE_LAUNCHER_AIM_PER_SKILL) * accfactor
+	shot.rogue_steady_aim = rogue_steady_aim
 	shot.rogue_aimed_zone = user.rogue_precise_zone()
 	shot.rogue_trained_skill = rogue_launch_skill
 	shot.rogue_trained_cap = rogue_trained_cap
@@ -603,18 +797,21 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 		shot.range = max(CEILING(get_dist_euclidean(user, target), 1), 1) + ROGUE_LAUNCHER_ARC_EXTRA_RANGE
 	rogue_modify_shot(shot, user, share)
 	if(user.buckled)
-		var/factor = ROGUE_LAUNCHER_MOUNTED_ACCURACY_FACTOR
-		shot.rogue_accuracy = max(ROGUE_LAUNCHER_ZONE_MIN, shot.rogue_accuracy * factor)
-		shot.rogue_bonus_accuracy = max(0, shot.rogue_bonus_accuracy * factor)
+		shot.rogue_aim_peak = max(0, shot.rogue_aim_peak * ROGUE_LAUNCHER_MOUNTED_ACCURACY_FACTOR)
 
-/// What the launcher's kind does to the shot: perception, skill, damage factors.
+/// What the launcher's kind does to the shot: damage factors, the early release.
 /obj/item/gun/ballistic/rogue_launcher/proc/rogue_modify_shot(obj/projectile/rogue_ammo/shot, mob/living/user, share)
-	var/perception = user.rogue_stat(ROGUE_STAT_PERCEPTION)
-	shot.rogue_accuracy += accfactor * (perception - ROGUE_LAUNCHER_ACCURACY_BASE) * ROGUE_LAUNCHER_ACCURACY_STEP
-	shot.rogue_bonus_accuracy += (perception - ROGUE_LAUNCHER_BONUS_BASE) * ROGUE_LAUNCHER_BONUS_STEP
-	if(rogue_launch_skill)
-		shot.rogue_bonus_accuracy += user.rogue_skill_rank(rogue_launch_skill) * ROGUE_LAUNCHER_SKILL_ACCURACY_STEP
 	shot.damage *= damfactor
+
+/// A shot let go before the full draw (Azure Peak apply_early_release_penalty()): its damage by the share of the draw; a
+/// bow's also aims worse and sticks less.
+/obj/item/gun/ballistic/rogue_launcher/proc/rogue_early_release(obj/projectile/rogue_ammo/shot, mob/living/user, share)
+	if(share >= 1 || !user.client)
+		return
+	shot.damage *= share
+	if(rogue_early_release_penalty)
+		shot.rogue_embed_chance *= ROGUE_LAUNCHER_UNCHARGED_EMBED_FACTOR
+		shot.rogue_aim_peak -= ROGUE_LAUNCHER_UNCHARGED_ACCURACY_PENALTY
 
 /// The round on the launcher's sprite: Ratwood draws the ammunition's own sprite over it.
 /obj/item/gun/ballistic/rogue_launcher/proc/rogue_round_overlay()
@@ -622,8 +819,9 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 		return null
 	return mutable_appearance(chambered.icon, chambered.icon_state)
 
-// Bows (Ratwood bows.dm): a free hand to draw and to shoot, the arrow falls out when the bow leaves the hands, perception scales
-// the damage, a shot let go before the full draw strays, sticks less and hits weaker.
+// Bows (Azure Peak bows.dm): a free hand to draw and to shoot, the arrow falls out when the bow leaves the hands, the draw
+// by the curve of the archery rank, perception scales the damage, a shot let go before the full draw strays, aims worse,
+// sticks less and hits weaker. Ratwood's base bow is the short bow, its recurve Azure Peak's plain bow.
 
 /obj/item/gun/ballistic/rogue_launcher/bow
 	name = "bow"
@@ -632,17 +830,23 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/arrow
 	cartridge_wording = "arrow"
 	rogue_launch_skill = /datum/attribute/skill/combat/bows
+	rogue_draw_kind = "bow"
+	rogue_draw_curve = TRUE
+	rogue_steady_aim = TRUE
+	rogue_early_release_penalty = TRUE
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/bow
+	rogue_draw_kind = "shortbow"
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
+	rogue_draw_kind = "recurve"
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow
+	rogue_draw_kind = "longbow"
 
 /obj/item/gun/ballistic/rogue_launcher/bow/rogue_modify_shot(obj/projectile/rogue_ammo/shot, mob/living/user, share)
-	var/perception = user.rogue_stat(ROGUE_STAT_PERCEPTION)
-	shot.rogue_accuracy += accfactor * (perception - ROGUE_LAUNCHER_BOW_ACCURACY_BASE) * ROGUE_LAUNCHER_BOW_ACCURACY_STEP
-	shot.rogue_bonus_accuracy += (perception - ROGUE_LAUNCHER_BOW_BONUS_BASE) * ROGUE_LAUNCHER_BOW_BONUS_STEP
-	shot.rogue_bonus_accuracy += user.rogue_skill_rank(rogue_launch_skill) * ROGUE_LAUNCHER_SKILL_ACCURACY_STEP
-	if(share < 1)
-		shot.damage *= share
-		shot.rogue_embed_chance *= ROGUE_LAUNCHER_UNCHARGED_EMBED_FACTOR
-		shot.rogue_accuracy -= ROGUE_LAUNCHER_UNCHARGED_ACCURACY_PENALTY
-	shot.damage *= damfactor * rogue_launcher_per_scaling(perception)
+	rogue_early_release(shot, user, share)
+	shot.damage *= damfactor * rogue_per_damage_factor(user.rogue_stat(ROGUE_STAT_PERCEPTION))
 
 /obj/item/gun/ballistic/rogue_launcher/bow/update_overlays()
 	. = ..()
@@ -656,8 +860,11 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 
 /obj/item/gun/ballistic/rogue_launcher/bow/examine(mob/user)
 	. = ..()
+	. += span_info("My <b>ARCHERY</b> skill defines how precise my shots are and how fast I can draw.")
+	. += span_info("Bows increase in damage the higher your <b>PERCEPTION</b>.")
+	. += span_info("When I shoot a target too close or too far away, I will only hit the chest.")
 	if(heavy_bow)
-		. += span_notice("<b>Has a heavy draw.</b>")
+		. += span_notice("<b>Has a heavy draw:</b> it draws slower for characters with low <b>STRENGTH</b>.")
 
 /obj/item/gun/ballistic/rogue_launcher/bow/equipped(mob/user, slot, initial)
 	. = ..()
@@ -681,9 +888,10 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 	chambered.forceMove(spot)
 	update_appearance()
 
-// Crossbows (Ratwood crossbows.dm): cocked in hand with all one's strength (reload time less strength), loaded with a bolt only
-// when cocked and held in the other hand; the bolt deals its damage times the crossbow's damfactor whatever the stats
-// (slurbows: also by perception), the crossbow's penfactor changes the bolt's tier.
+// Crossbows (Azure Peak crossbows.dm): cocked in hand with all one's strength (reload time less strength), loaded with a bolt
+// only when cocked and held in the other hand; aimed in both hands, a one-handed crossbow in one too but slower; the aim
+// takes the base less a step per rank of crossbows; the bolt deals its damage times the crossbow's damfactor whatever the
+// stats (slurbows: also by perception, Ratwood), the crossbow's penfactor changes the bolt's tier.
 
 /obj/item/gun/ballistic/rogue_launcher/crossbow
 	name = "crossbow"
@@ -693,15 +901,33 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 	cartridge_wording = "bolt"
 	must_hold_to_load = TRUE
 	rogue_launch_skill = /datum/attribute/skill/combat/crossbows
+	rogue_draw_kind = "crossbow"
+	rogue_steady_aim = TRUE
 	var/cocked = FALSE
 	/// Sprite name without the trailing "0" of Ratwood's state ("crossbow0" -> "crossbow"): 0 uncocked, 1 cocked, 2 loaded.
 	var/rogue_state_base
+	/// Aimed and shot in one hand too, at a slower aim (Azure Peak onehanded: slurbows).
+	var/rogue_onehanded = FALSE
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/heavy
+	rogue_draw_kind = "heavy_crossbow"
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow
+	rogue_draw_kind = "slurbow"
+	rogue_onehanded = TRUE
 
 /obj/item/gun/ballistic/rogue_launcher/crossbow/Initialize(mapload)
 	var/state = initial(icon_state)
 	if(state && copytext(state, -1) == "0")
 		rogue_state_base = copytext(state, 1, -1)
 	return ..()
+
+/// A one-handed crossbow aimed without a free hand aims slower (Azure Peak crossbow get_draw_time()).
+/obj/item/gun/ballistic/rogue_launcher/crossbow/rogue_draw_time(mob/living/carbon/human/fighter, arcing)
+	. = ..()
+	if(!. || !rogue_onehanded || rogue_has_free_hand(fighter))
+		return
+	. *= arcing ? ROGUE_LAUNCHER_ONEHANDED_ARC_DRAW_MULT : ROGUE_LAUNCHER_ONEHANDED_DRAW_MULT
 
 /obj/item/gun/ballistic/rogue_launcher/crossbow/update_icon_state()
 	. = ..()
@@ -719,12 +945,16 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 
 /obj/item/gun/ballistic/rogue_launcher/crossbow/examine(mob/user)
 	. = ..()
-	. += span_info("Crossbows increase in accuracy with a higher <b>PERCEPTION</b>, but deal a static amount of damage regardless of character stats.")
+	. += span_info("Crossbows deal a static amount of damage regardless of character stats.")
+	. += span_info("My <b>CROSSBOWS</b> skill defines how precise my shots are and how fast I can draw.")
+	. += span_info("When I shoot a target too close or too far away, I will only hit the chest.")
 	. += span_info("Crossbows cannot be nocked directly from their quiver and require time to load.")
 	if(penfactor < 0)
 		. += span_info("This weapon <b>reduces</b> bolt penetration by <b>[abs(penfactor)]</b> tier(s).")
 	else if(penfactor > 0)
 		. += span_info("This weapon <b>increases</b> bolt penetration by <b>[penfactor]</b> tier(s).")
+	if(rogue_onehanded)
+		. += span_info("This weapon can be used in one hand, at the penalty of aim time.")
 	if(cocked)
 		. += span_notice("It is cocked.")
 
@@ -775,8 +1005,9 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 	cocked = TRUE
 	update_appearance()
 
-// Slings (Ratwood slings.dm): no free hand needed; loads sling bullets or a plain stone, whose force above a plain stone's
-// adds to the shot and which is gone once thrown; perception scales the damage, a swing let go early hits weaker.
+// Slings (Azure Peak slings.dm): no free hand needed; loads sling bullets or a plain stone, whose force above a plain stone's
+// adds to the shot and which is gone once thrown; the swing by the curve of the slings rank, perception scales the damage,
+// a swing let go early strays and hits weaker.
 
 /obj/item/gun/ballistic/rogue_launcher/sling
 	name = "sling"
@@ -787,6 +1018,8 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 	cartridge_wording = "stone"
 	rogue_launch_skill = /datum/attribute/skill/combat/slings
 	rogue_trained_cap = ROGUE_SLING_TRAIN_CAP
+	rogue_draw_kind = "sling"
+	rogue_draw_curve = TRUE
 	/// A plain stone loaded in place of a sling bullet, and its force above a plain stone's.
 	var/obj/item/rogue_temp_stone
 	var/rogue_stone_bonus = 0
@@ -800,6 +1033,12 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 	if(gone == rogue_temp_stone)
 		rogue_temp_stone = null
 		rogue_stone_bonus = 0
+
+/obj/item/gun/ballistic/rogue_launcher/sling/examine(mob/user)
+	. = ..()
+	. += span_info("My <b>SLINGS</b> skill defines how precise my shots are and how fast I can swing.")
+	. += span_info("Slings increase in damage the higher your <b>PERCEPTION</b>.")
+	. += span_info("When I shoot a target too close or too far away, I will only hit the chest.")
 
 /obj/item/gun/ballistic/rogue_launcher/sling/update_icon_state()
 	. = ..()
@@ -844,9 +1083,8 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 /obj/item/gun/ballistic/rogue_launcher/sling/rogue_modify_shot(obj/projectile/rogue_ammo/shot, mob/living/user, share)
 	. = ..()
 	shot.rogue_embed_chance = 0
-	if(share < 1)
-		shot.damage *= share
-	shot.damage = shot.damage * rogue_launcher_per_scaling(user.rogue_stat(ROGUE_STAT_PERCEPTION)) + (rogue_temp_stone ? rogue_stone_bonus : 0)
+	rogue_early_release(shot, user, share)
+	shot.damage = shot.damage * rogue_per_damage_factor(user.rogue_stat(ROGUE_STAT_PERCEPTION)) + (rogue_temp_stone ? rogue_stone_bonus : 0)
 
 /obj/item/gun/ballistic/rogue_launcher/sling/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	. = ..()
@@ -854,54 +1092,34 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 		QDEL_NULL(rogue_temp_stone)
 		rogue_stone_bonus = 0
 
-#undef ROGUE_LAUNCHER_BOW_DRAW_BASE
-#undef ROGUE_LAUNCHER_BOW_DRAW_SKILL_STEP
-#undef ROGUE_LAUNCHER_BOW_HEAVY_DRAW_BASE
-#undef ROGUE_LAUNCHER_BOW_HEAVY_STRENGTH_DIVISOR
-#undef ROGUE_LAUNCHER_BOW_DRAW_PERCEPTION_BASE
-#undef ROGUE_LAUNCHER_BOW_DRAW_MIN
-#undef ROGUE_LAUNCHER_BOW_ARC_DRAW_MIN
-#undef ROGUE_LAUNCHER_CROSSBOW_DRAW_SKILL_STEP
-#undef ROGUE_LAUNCHER_CROSSBOW_DRAW_PERCEPTION_STEP
-#undef ROGUE_LAUNCHER_CROSSBOW_DRAW_MIN
-#undef ROGUE_LAUNCHER_CROSSBOW_ARC_SKILL_STEP
-#undef ROGUE_LAUNCHER_CROSSBOW_ARC_PERCEPTION_BASE
-#undef ROGUE_LAUNCHER_CROSSBOW_ARC_PERCEPTION_STEP
-#undef ROGUE_LAUNCHER_CROSSBOW_ARC_FALLBACK
-#undef ROGUE_LAUNCHER_SLING_DRAW_BASE
-#undef ROGUE_LAUNCHER_SLING_ARC_DRAW_BASE
-#undef ROGUE_LAUNCHER_SLING_DRAW_SKILL_STEP
-#undef ROGUE_LAUNCHER_SLING_DRAW_PERCEPTION_DIVISOR
-#undef ROGUE_LAUNCHER_SLING_DRAW_STRENGTH_DIVISOR
-#undef ROGUE_LAUNCHER_SLING_DRAW_MIN
-#undef ROGUE_LAUNCHER_PER_SOFTCAP
-#undef ROGUE_LAUNCHER_PER_DAMAGE_STEP
-#undef ROGUE_LAUNCHER_PER_DAMAGE_CAPPED_STEP
+#undef ROGUE_LAUNCHER_DRAW_STRENGTH_BASELINE
+#undef ROGUE_LAUNCHER_HEAVY_DRAW_PER_STRENGTH
+#undef ROGUE_LAUNCHER_ARC_DRAW_EXTRA
+#undef ROGUE_LAUNCHER_ARC_DRAW_FLOOR_EXTRA
+#undef ROGUE_LAUNCHER_ONEHANDED_DRAW_MULT
+#undef ROGUE_LAUNCHER_ONEHANDED_ARC_DRAW_MULT
+#undef ROGUE_LAUNCHER_AIM_BASE
+#undef ROGUE_LAUNCHER_AIM_PER_SKILL
+#undef ROGUE_LAUNCHER_AIM_NPC_BASE
+#undef ROGUE_LAUNCHER_AIM_VISUAL_REACH
+#undef ROGUE_LAUNCHER_AIM_FARSIGHT_PENALTY
+#undef ROGUE_LAUNCHER_AIM_ZCROSS_PENALTY
+#undef ROGUE_LAUNCHER_AIM_FLOOR
+#undef ROGUE_LAUNCHER_AIM_PRECISE_MAX
+#undef ROGUE_LAUNCHER_MOUNTED_ACCURACY_FACTOR
+#undef ROGUE_LAUNCHER_PRECISE_PENALTY
+#undef ROGUE_LAUNCHER_ULTRA_PRECISE_PENALTY
+#undef ROGUE_LAUNCHER_ZONE_MIN
+#undef ROGUE_LAUNCHER_UNCHARGED_SPREAD
+#undef ROGUE_LAUNCHER_HOLD_SPREAD_MAX
+#undef ROGUE_LAUNCHER_UNCHARGED_ACCURACY_PENALTY
+#undef ROGUE_LAUNCHER_UNCHARGED_EMBED_FACTOR
+#undef ROGUE_LAUNCHER_NPC_DRAIN_MULT
+#undef ROGUE_LAUNCHER_LETDOWN_DRAIN_MULT
 #undef ROGUE_LAUNCHER_CROSSBOW_PER_MIN
 #undef ROGUE_LAUNCHER_CROSSBOW_PER_MAX
 #undef ROGUE_LAUNCHER_CROSSBOW_PER_DIVISOR
 #undef ROGUE_LAUNCHER_SLING_STONE_FORCE
-#undef ROGUE_LAUNCHER_BOW_ACCURACY_BASE
-#undef ROGUE_LAUNCHER_BOW_ACCURACY_STEP
-#undef ROGUE_LAUNCHER_BOW_BONUS_BASE
-#undef ROGUE_LAUNCHER_BOW_BONUS_STEP
-#undef ROGUE_LAUNCHER_ACCURACY_BASE
-#undef ROGUE_LAUNCHER_ACCURACY_STEP
-#undef ROGUE_LAUNCHER_BONUS_BASE
-#undef ROGUE_LAUNCHER_BONUS_STEP
-#undef ROGUE_LAUNCHER_SKILL_ACCURACY_STEP
-#undef ROGUE_LAUNCHER_ACCURACY_FALLOFF
-#undef ROGUE_LAUNCHER_ACCURACY_FLOOR
-#undef ROGUE_LAUNCHER_MOUNTED_ACCURACY_FACTOR
-#undef ROGUE_LAUNCHER_PRECISE_PENALTY
-#undef ROGUE_LAUNCHER_PRECISE_MAX
-#undef ROGUE_LAUNCHER_ULTRA_PRECISE_PENALTY
-#undef ROGUE_LAUNCHER_ULTRA_PRECISE_MAX
-#undef ROGUE_LAUNCHER_FACE_MAX
-#undef ROGUE_LAUNCHER_ZONE_MIN
-#undef ROGUE_LAUNCHER_UNCHARGED_SPREAD
-#undef ROGUE_LAUNCHER_UNCHARGED_ACCURACY_PENALTY
-#undef ROGUE_LAUNCHER_UNCHARGED_EMBED_FACTOR
 #undef ROGUE_LAUNCHER_EMBED_MIN_DAMAGE
 #undef ROGUE_LAUNCHER_HIT_XP_PER_INT
 #undef ROGUE_LAUNCHER_CROSSBOW_COCK_STRENGTH_STEP

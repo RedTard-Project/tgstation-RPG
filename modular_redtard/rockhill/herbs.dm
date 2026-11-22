@@ -4,8 +4,8 @@
 // events/minor/herb_growth.dm and moderate/herb_spreading.dm, herb_wither.dm) that keep lists of the herbs.
 
 /// How long a hand rummages in a herb (Ratwood do_after rand(3, 5) deciseconds).
-#define ROCKHILL_HERB_PICK_MIN 3
-#define ROCKHILL_HERB_PICK_MAX 5
+#define ROCKHILL_HERB_PICK_MIN rogue_value("rockhill_herb_pick_min")
+#define ROCKHILL_HERB_PICK_MAX rogue_value("rockhill_herb_pick_max")
 /// Ratwood CLICK_CD_INTENTCAP: the pause after reaching into a herb.
 #define ROCKHILL_HERB_CLICK_CD 6
 

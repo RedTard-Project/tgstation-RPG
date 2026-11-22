@@ -70,7 +70,7 @@
 	judging = TRUE
 	submission = TRUE
 	playsound(src, CASTIFICO_SOUND_SNAP, 100, TRUE, -1)
-	wanted.Paralyze(3 SECONDS)
+	wanted.Paralyze(rogue_value("arrestchair_judge_paralyze"))
 	var/list/datum/rogue_bounty/bounties = bounties_on(wanted)
 	say(pick("Performing intra-cranial inspection...", "Analyzing skull structure...", "Commencing cephalic dissection..."))
 	sleep(1 SECONDS)
@@ -218,10 +218,10 @@
 	if(!subject)
 		say("CANNOT BEGIN WITHOUT SUBJECT BUCKLED.")
 		return
-	if(!do_after(user, 3 SECONDS, subject) || QDELETED(src) || subject.buckled != src)
+	if(!do_after(user, rogue_value("freedomchair_free_subject_time"), subject) || QDELETED(src) || subject.buckled != src)
 		return
 	playsound(src, CASTIFICO_SOUND_OPEN, 100, TRUE, -1)
-	subject.Paralyze(3 SECONDS)
+	subject.Paralyze(rogue_value("freedomchair_free_subject_paralyze"))
 	var/obj/item/collar = subject.get_item_by_slot(ITEM_SLOT_NECK)
 	if(!collar?.GetComponent(/datum/component/rogue_castifico_collar))
 		say("ANALYSIS COMPLETE. NO CURSED COLLAR FOUND. ABORT.")

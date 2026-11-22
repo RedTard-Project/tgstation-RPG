@@ -265,8 +265,8 @@
 #define ROGUE_FOV_BEHIND (1<<2)
 /// How far the view reaches to one side of the facing, in degrees: open, with the back hidden, with that side hidden.
 #define ROGUE_FOV_SIDE 135
-#define ROGUE_FOV_SIDE_BEHIND 90
-#define ROGUE_FOV_SIDE_BLOCKED 45
+#define ROGUE_FOV_SIDE_BEHIND rogue_value("fov_side_behind")
+#define ROGUE_FOV_SIDE_BLOCKED rogue_value("fov_side_blocked")
 #define ROGUE_FOV_BEHIND_BRIGHTNESS rogue_value("fov_behind_brightness")
 #define ROGUE_FOV_BEHIND_SATURATION rogue_value("fov_behind_saturation")
 #define ROGUE_FOV_BEHIND_BLUR rogue_value("fov_behind_blur")
@@ -335,7 +335,6 @@
 #define ROGUE_COMPLIANCE_SOURCE "rogue_compliance"
 #define ROGUE_ALERT_ICON 'modular_redtard/icons/hud/rogue_alerts.dmi'
 
-#define ROGUE_GRAB_ACTION_DELAY rogue_value("grab_action_delay")
 #define ROGUE_GRAB_COMPLIANT_MODIFIER rogue_value("grab_compliant_modifier")
 #define ROGUE_GRAB_RESTRAINED_BONUS rogue_value("grab_restrained_bonus")
 #define ROGUE_GRAB_PRONE_BONUS rogue_value("grab_prone_bonus")
@@ -428,7 +427,6 @@
 #define ROGUE_PEN_PERCENT_PER_TIER rogue_value("pen_percent_per_tier")
 #define ROGUE_ARMOR_BLUNT_DR rogue_value("armor_blunt_dr")
 #define ROGUE_ARMOR_EXPOSED_WEAR rogue_value("armor_exposed_wear")
-#define ROGUE_ARMOR_VULNERABLE_WEAR rogue_value("armor_vulnerable_wear")
 #define ROGUE_ARMOR_FAILURE_SHARE rogue_value("armor_failure_share")
 #define ROGUE_EFFECTIVE_RANGE_DAMAGE rogue_value("effective_range_damage")
 #define ROGUE_EFFECTS_ICON 'modular_redtard/rockhill/icons/effects/effects.dmi'
@@ -501,7 +499,6 @@
 #define ROGUE_ARTERY_BLEED rogue_value("artery_bleed")
 #define ROGUE_ARTERY_BLEED_NECK rogue_value("artery_bleed_neck")
 #define ROGUE_ARTERY_BLEED_CHEST rogue_value("artery_bleed_chest")
-#define ROGUE_ARTERY_SLOW rogue_value("artery_slow")
 #define ROGUE_PAIN_ARTERY rogue_value("pain_artery")
 #define ROGUE_PAIN_ARTERY_NECK rogue_value("pain_artery_neck")
 #define ROGUE_PAIN_ARTERY_CHEST rogue_value("pain_artery_chest")
@@ -540,8 +537,6 @@
 #define ROGUE_PAIN_HOLD_CON_FACTOR rogue_value("pain_hold_con_factor")
 #define ROGUE_PAIN_HOLD rogue_value("pain_hold")
 #define ROGUE_PAIN_SLOW_DAMAGE rogue_value("pain_slow_damage")
-#define ROGUE_PAIN_SLOW_MIN rogue_value("pain_slow_min")
-#define ROGUE_PAIN_SLOW_MAX rogue_value("pain_slow_max")
 #define ROGUE_PAIN_WAKE rogue_value("pain_wake")
 #define ROGUE_PAIN_BURN_CRY_DAMAGE rogue_value("pain_burn_cry_damage")
 #define ROGUE_DELIMB_SURVIVE_BASE rogue_value("delimb_survive_base")

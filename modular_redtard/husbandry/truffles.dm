@@ -48,7 +48,7 @@
 		visible_message(span_notice("The pig munches the potato, looking partially satisfied."))
 	else
 		visible_message(span_notice("The pig munches the potato, completely indifferent."))
-	playsound(src, 'modular_redtard/husbandry/sound/eat.ogg', rand(30, 60), TRUE)
+	playsound(src, 'modular_redtard/husbandry/sound/eat.ogg', rand(rogue_value("trufflepig_item_interaction_roll_min"), rogue_value("trufflepig_item_interaction_roll_max")), TRUE)
 	qdel(tool)
 	return ITEM_INTERACT_SUCCESS
 
@@ -56,7 +56,7 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/trufflepig/proc/rogue_sniff()
 	if(!COOLDOWN_FINISHED(src, rogue_sniff_cooldown))
 		return
-	COOLDOWN_START(src, rogue_sniff_cooldown, 2 SECONDS)
+	COOLDOWN_START(src, rogue_sniff_cooldown, rogue_value("trufflepig_rogue_sniff_rogue_sniff_cooldown"))
 	playsound(src, pick(ROGUE_PIG_SOUNDS), 100, TRUE, -1)
 	rogue_sniff_step()
 	addtimer(CALLBACK(src, PROC_REF(rogue_sniff_step)), 1 SECONDS)

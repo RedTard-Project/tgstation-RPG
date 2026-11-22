@@ -96,7 +96,7 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 		"perception" = perception,
 		"grab_state" = grab_state,
 		"target_prone" = target.body_position == LYING_DOWN,
-		"target_open" = !!target.has_status_effect(/datum/status_effect/rogue_vulnerable),
+		"target_open" = (target.has_status_effect(/datum/status_effect/rogue_vulnerable) || target.has_status_effect(/datum/status_effect/rogue/exposed)) ? 1 : 0,
 		"low_aim" = body_position == LYING_DOWN && (zone in GLOB.rogue_low_zones),
 		"weapon_skill" = rogue_weapon_rank(weapon),
 		"stab" = blade_class == BCLASS_STAB,
@@ -187,7 +187,7 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 		target.apply_status_effect(/datum/status_effect/rogue/intent_debuff, intent)
 	var/edged = weapon?.max_blade_int && intent.get_sharpness()
 	var/sharp_ratio = edged ? weapon.rogue_edge_ratio() : 1
-	if(edged && sharp_ratio < ROGUE_BLADE_CHIP_START && prob(33))
+	if(edged && sharp_ratio < ROGUE_BLADE_CHIP_START && prob(rogue_value("human_rogue_resolve_strike_chance")))
 		to_chat(src, span_info("The blade is dull..."))
 	strike.damage = rogue_formula_value(ROGUE_FORMULA_STRIKE_DAMAGE, list(
 		"force" = force,
@@ -234,7 +234,7 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 	if(ishuman(src) && damtype == BRUTE)
 		var/mob/living/carbon/human/armored = src
 		armor_hit = armored.rogue_best_armor(zone, intent.item_d_type)
-		damage *= armored.rogue_armor_hit(zone, intent.item_d_type, damage, penetration, rogue_wear_factor(weapon, intent), weapon, intent.blade_class)
+		damage *= armored.rogue_armor_hit(zone, intent.item_d_type, damage, penetration, rogue_wear_factor(weapon, intent), weapon, intent.blade_class, attacker)
 	var/damage_done = rogue_apply_armored_damage(
 		damage = damage,
 		damagetype = damtype,

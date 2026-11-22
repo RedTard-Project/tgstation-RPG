@@ -3,13 +3,11 @@
 /// new_player_panel.dm, subsystem/lobby.dm, NewPlayerPanel.tsx): the welcome, the character one plays as, the classes
 /// the ready players took, keybindings, and Azure's wait before late joining. It runs its own bundle,
 /// tgui-rogue-lobby (modular_redtard/tgui/rogue_lobby), which draws TG's LobbyMenu unchanged and Azure's panel over it;
-/// the module build makes it. On other maps TG's lobby runs untouched.
+/// the module build makes it. The title screen moves there: a browser only gets the first frame of a DMI, so the menu plays
+/// a WebP of its own over TG's still picture. On other maps TG's lobby runs untouched.
 
 /// TG's LOBBY_TITLE_ASSET_NAME (code/modules/lobby_menu/lobby_menu.dm undefines it after itself): the title screen picture.
 #define ROGUE_LOBBY_TITLE_ASSET "lobby_title_screen.png"
-/// The title screen file itself: TG's asset holds only its first frame, while an animated DMI is a PNG of all its frames
-/// with their delays in the description, so the menu plays it as BYOND plays it on the map.
-#define ROGUE_LOBBY_TITLE_SHEET "rogue_lobby_title.png"
 
 /// Minutes after the round starts before anyone may join late (Azure timetojoin); 0 lets them join at once.
 /datum/config_entry/number/rogue_latejoin_delay
@@ -26,19 +24,10 @@
 	if(!rogue_lobby_enabled())
 		return ..()
 	register_lobby_title_asset()
-	rogue_register_lobby_title_sheet()
-	UNTIL(SSassets.transport.get_asset_url(ROGUE_LOBBY_TITLE_ASSET) && SSassets.transport.get_asset_url(ROGUE_LOBBY_TITLE_SHEET))
+	UNTIL(SSassets.transport.get_asset_url(ROGUE_LOBBY_TITLE_ASSET))
 	if(!src)
 		return
 	lobby_menu = new /datum/lobby_menu/rogue(src)
-
-/proc/rogue_register_lobby_title_sheet()
-	var/static/registered = FALSE
-	if(registered)
-		return
-	registered = TRUE
-	UNTIL(SStitle.file_path)
-	SSassets.transport.register_asset(ROGUE_LOBBY_TITLE_SHEET, file(SStitle.file_path))
 
 /// Azure's lobby fonts: MedievalSharp for the panel, Parisienne and its stroke data for the handwritten welcome (tegaki).
 /datum/asset/simple/namespaced/rogue_lobby_font
@@ -51,9 +40,26 @@
 		"rogue_lobby_fonts.css" = file("modular_redtard/tgui/rogue_lobby/rogue_lobby_fonts.css"),
 	)
 
+/// The title screen in motion. The browser plays it in its own process, so the game client spends nothing on the frames,
+/// and BYOND sends it once: browse_rsc transmits nothing the client's cache already has.
+/datum/asset/simple/rogue_lobby_title
+	assets = list(
+		"rogue_lobby_title.webp" = file("modular_redtard/lobby/rogue_lobby_title.webp"),
+	)
+
 /datum/lobby_menu/rogue
 
-/// TG's assets (our bundle draws TG's menu) and Azure's font, with our bundle in place of tgui-lobby.
+/// TG only hides the page. The moving title leaves with the lobby, so that it costs nothing during the round.
+/datum/lobby_menu/rogue/update_visibility()
+	. = ..()
+	if(!rogue_in_lobby())
+		send_update(list("inLobby" = FALSE))
+
+/datum/lobby_menu/rogue/proc/rogue_in_lobby()
+	return istype(client?.mob, /mob/dead/new_player) && !client.interviewee
+
+/// TG's assets (our bundle draws TG's menu), Azure's font and the moving title, with our bundle in place of tgui-lobby.
+/// The title goes last: it is the biggest and the menu does not wait for it.
 /datum/lobby_menu/rogue/initialize_browser()
 	window.initialize(
 		strict_mode = TRUE,
@@ -64,7 +70,8 @@
 	window.send_asset(get_asset_datum(/datum/asset/simple/namespaced/lobby_menu_sounds))
 	window.send_asset(get_asset_datum(/datum/asset/simple/namespaced/lobby_menu_icons))
 	window.send_asset(get_asset_datum(/datum/asset/simple/namespaced/rogue_lobby_font))
-	SSassets.transport.send_assets(client, list(ROGUE_LOBBY_TITLE_ASSET, ROGUE_LOBBY_TITLE_SHEET))
+	SSassets.transport.send_assets(client, ROGUE_LOBBY_TITLE_ASSET)
+	window.send_asset(get_asset_datum(/datum/asset/simple/rogue_lobby_title))
 
 /datum/lobby_menu/rogue/send_init()
 	. = ..()
@@ -74,7 +81,8 @@
 	. = ..()
 	send_update(rogue_state())
 
-/// What Azure's panel shows beside TG's menu: the server's name, the character the player plays as, the classes.
+/// What Azure's panel shows beside TG's menu: the server's name, the character the player plays as, the classes; and
+/// whether the title plays.
 /datum/lobby_menu/rogue/proc/rogue_state(full = FALSE)
 	. = list(
 		"activeCharacter" = client?.prefs?.read_preference(/datum/preference/name/real_name),
@@ -83,7 +91,7 @@
 	)
 	if(full)
 		.["serverName"] = CONFIG_GET(string/servername) || world.name
-		.["titleSheetUrl"] = SSassets.transport.get_asset_url(ROGUE_LOBBY_TITLE_SHEET)
+		.["inLobby"] = rogue_in_lobby()
 
 /datum/lobby_menu/rogue/on_message(type, payload, href_list)
 	if(type != "action")
@@ -157,4 +165,3 @@
 	return built
 
 #undef ROGUE_LOBBY_TITLE_ASSET
-#undef ROGUE_LOBBY_TITLE_SHEET

@@ -7,9 +7,9 @@
 // bathing are survival/washing.dm, drawing water survival/vessels.dm, drinking survival/thirst.dm, fishing rockhill/fishing.dm.
 
 /// Ratwood water this cold or colder chills whoever wades in it and cools whoever washes in it (turf temperature <= 250).
-#define WATER_COLD 250
+#define WATER_COLD rogue_value("rockhill_water_cold")
 /// Ratwood water this warm or warmer is a bath: washing in it warms the cold and cools the hot (temperature >= 300).
-#define WATER_WARM 300
+#define WATER_WARM rogue_value("rockhill_water_warm")
 
 /turf/open/water/rockhill
 	/// Ratwood temperature: the water's own temperature in kelvin, which chills (WATER_COLD) or soothes (WATER_WARM).

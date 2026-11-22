@@ -9,7 +9,7 @@
 /// dreams, by intelligence. The steps themselves are in combat/surgery/steps.dm.
 
 /// Ratwood can make a step quicker than this share of its time, no quicker.
-#define ROGUE_SURGERY_SPEED_MIN 0.1
+#define ROGUE_SURGERY_SPEED_MIN rogue_value("surgery_speed_min")
 
 /datum/surgery_operation
 	/// One of Ratwood's operations (combat/surgery/): a medieval body offers these and only these (rogue_surgery element).

@@ -291,6 +291,23 @@
 	TEST_ASSERT(wearer.equip_to_slot_if_possible(bevor, ITEM_SLOT_NECK), "Could not put the bevor on")
 	TEST_ASSERT_EQUAL(wearer.rogue_best_armor(BODY_ZONE_PRECISE_MOUTH, ROGUE_ARMOR_SLASH), bevor, "A worn bevor does not stop a cut to the mouth")
 	TEST_ASSERT_NULL(wearer.rogue_best_armor("l_eye", ROGUE_ARMOR_SLASH), "A worn bevor stops a cut to the eye")
+	// Azure Peak's blunt layers: cloth without a tier is no layer, lets the blow through and does not wear; a padded coat
+	// takes the blow whole off the body and wears.
+	var/obj/item/clothing/suit/roguetown/shirt/undershirt/shirt = allocate(__IMPLIED_TYPE__)
+	var/mob/living/carbon/human/consistent/clothed = allocate(__IMPLIED_TYPE__)
+	TEST_ASSERT(clothed.equip_to_slot_if_possible(shirt, ITEM_SLOT_OCLOTHING), "Could not put the shirt on")
+	TEST_ASSERT(!length(clothed.rogue_dr_layers(BODY_ZONE_CHEST, ROGUE_ARMOR_BLUNT)), "A shirt without a blunt tier is a blunt layer")
+	var/shirt_integrity = shirt.atom_integrity
+	TEST_ASSERT_EQUAL(clothed.rogue_armor_hit(BODY_ZONE_CHEST, ROGUE_ARMOR_BLUNT, 20), 1, "A blunt blow did not pass a shirt")
+	TEST_ASSERT_EQUAL(shirt.atom_integrity, shirt_integrity, "A blunt blow wore a shirt without a blunt tier")
+	var/obj/item/clothing/suit/roguetown/armor/gambeson/gambeson = allocate(__IMPLIED_TYPE__)
+	var/mob/living/carbon/human/consistent/padded = allocate(__IMPLIED_TYPE__)
+	TEST_ASSERT(padded.equip_to_slot_if_possible(gambeson, ITEM_SLOT_OCLOTHING), "Could not put the gambeson on")
+	TEST_ASSERT((gambeson in padded.rogue_dr_layers(BODY_ZONE_CHEST, ROGUE_ARMOR_BLUNT)), "A gambeson is no blunt layer")
+	TEST_ASSERT((gambeson in padded.rogue_dr_layers(BODY_ZONE_CHEST, ROGUE_ARMOR_FIRE)), "A gambeson is no fire layer")
+	var/gambeson_integrity = gambeson.atom_integrity
+	TEST_ASSERT_EQUAL(padded.rogue_armor_hit(BODY_ZONE_CHEST, ROGUE_ARMOR_BLUNT, 20), 0, "A gambeson did not take a blunt blow")
+	TEST_ASSERT(gambeson.atom_integrity < gambeson_integrity, "A blunt blow did not wear the gambeson")
 
 /datum/unit_test/rogue_alchemy
 
@@ -342,6 +359,94 @@
 			TEST_ASSERT(cauldron.reagents.get_reagent_amount(/datum/reagent/medicine/antidote) >= 100, "Coal dust and salt did not brew an antidote")
 	var/obj/item/natural/bone/bone = allocate(__IMPLIED_TYPE__)
 	TEST_ASSERT(istype(rogue_grind_recipe(bone), /datum/alch_grind_recipe/natural_bone), "Natural bone has no mortar recipe")
+
+/// K2d1: a spear stuck in the arm by a crit gives pull out and twist; a twist is a second crit and frees it; a kick at the
+/// holder breaks the hold and leaves the spear in the arm, taken out as an arrow; a mace never sticks.
+/datum/unit_test/rogue_stuck_weapon
+
+/datum/unit_test/rogue_stuck_weapon/Run()
+	var/mob/living/carbon/human/consistent/attacker = allocate(__IMPLIED_TYPE__)
+	var/mob/living/carbon/human/consistent/victim = allocate(__IMPLIED_TYPE__)
+	var/obj/item/rogueweapon/spear/spear = allocate(__IMPLIED_TYPE__)
+	attacker.AddElement(/datum/element/rogue_combat)
+	attacker.put_in_active_hand(spear)
+	var/obj/item/bodypart/arm = victim.get_bodypart(BODY_ZONE_L_ARM)
+	var/datum/intent/thrust = attacker.rogue_strike_intent(spear)
+	TEST_ASSERT(victim.rogue_stick_weapon(attacker, spear, arm, BCLASS_STAB, thrust), "A spear crit did not stick in the arm")
+	TEST_ASSERT(spear.rogue_stuck, "The spear is not held as stuck")
+	var/list/stuck_intents = attacker.rogue_hand_intents()
+	TEST_ASSERT_EQUAL(length(stuck_intents), 2, "A stuck spear should offer pull out and twist")
+	TEST_ASSERT(stuck_intents[1] == /datum/intent/rogue_stuck/pull_out && stuck_intents[2] == /datum/intent/rogue_stuck/twist, "A stuck spear offers other intents")
+	TEST_ASSERT(attacker.rogue_select_intent(2), "Could not pick twist")
+	var/brute_before = victim.get_brute_loss()
+	// D2: the twist's harm is fixed, whatever the weapon's force (owner, 2026-11-22).
+	var/spear_force = spear.force
+	spear.force = 1000
+	attacker.next_move = 0
+	spear.melee_attack_chain(attacker, victim)
+	spear.force = spear_force
+	TEST_ASSERT(!spear.rogue_stuck, "Twisting did not free the spear")
+	TEST_ASSERT(attacker.is_holding(spear), "The twisted spear left the hand")
+	var/twist_harm = victim.get_brute_loss() - brute_before
+	TEST_ASSERT(twist_harm > 0, "Twisting did no harm")
+	TEST_ASSERT(abs(twist_harm - rogue_value("stuck_weapon_twist_force")) < 0.1, "Twisting did [twist_harm] harm instead of its fixed [rogue_value("stuck_weapon_twist_force")]")
+	var/datum/wound/pierce/stab_wound = locate(/datum/wound/pierce) in arm.wounds
+	TEST_ASSERT(stab_wound, "Twisting a spear did not leave a piercing crit")
+	TEST_ASSERT(!(/datum/intent/rogue_stuck/twist in attacker.rogue_hand_intents()), "The freed spear still offers twist")
+	TEST_ASSERT(victim.rogue_stick_weapon(attacker, spear, arm, BCLASS_STAB, thrust), "The spear did not stick again")
+	// The kick's own steps (rogue_try_kick()), without its swing and block rolls: it comes, then lands as plain damage.
+	var/mob/living/carbon/human/consistent/kicker = allocate(__IMPLIED_TYPE__)
+	var/datum/rogue_strike/kick = new(kicker, attacker, null, null, ROGUE_STRIKE_KICK)
+	kick.incoming()
+	qdel(kick)
+	attacker.apply_damage(5, BRUTE, BODY_ZONE_CHEST)
+	TEST_ASSERT(!spear.rogue_stuck, "A kick at the holder did not break the hold")
+	TEST_ASSERT(!attacker.is_holding(spear), "The holder kept the spear after the kick")
+	TEST_ASSERT(spear.loc == victim && (spear in arm.embedded_objects), "The spear did not stay in the arm")
+	spear.get_embed().remove_embedding(attacker)
+	TEST_ASSERT(!(spear in arm.embedded_objects), "The spear did not come out as an arrow does")
+	TEST_ASSERT(attacker.is_holding(spear), "The spear taken out is not in the hand")
+	attacker.dropItemToGround(spear)
+	var/obj/item/rogueweapon/mace/mace = allocate(__IMPLIED_TYPE__)
+	attacker.put_in_active_hand(mace)
+	TEST_ASSERT(!mace.rogue_can_stick(BCLASS_BLUNT), "A blunt blow can stick")
+	TEST_ASSERT(!victim.rogue_stick_weapon(attacker, mace, arm, BCLASS_BLUNT, attacker.rogue_strike_intent(mace)), "A mace stuck in the arm")
+
+/// D2: Roguetown's crit (combat/crit.dm). Bruises do not lower health or fell the body; suffocation past its mark and lost
+/// blood fell it, it breathes on while down and wakes when they pass; toxins down to the death mark kill it.
+/datum/unit_test/rogue_crit
+
+/datum/unit_test/rogue_crit/Run()
+	var/mob/living/carbon/human/consistent/victim = allocate(__IMPLIED_TYPE__)
+	victim.rogue_enable_crit()
+	TEST_ASSERT(victim.rogue_crit, "Roguetown's crit did not switch on")
+	victim.apply_damage(150, BRUTE, BODY_ZONE_CHEST, wound_bonus = CANT_WOUND)
+	victim.apply_damage(40, BRUTE, BODY_ZONE_L_ARM, wound_bonus = CANT_WOUND)
+	TEST_ASSERT(victim.get_brute_loss() > 100, "The bruises did not land")
+	TEST_ASSERT_EQUAL(victim.health, victim.maxHealth, "Bruises lowered health")
+	TEST_ASSERT_EQUAL(victim.stat, STABLE, "Bruises felled the body")
+	victim.adjust_oxy_loss(victim.rogue_crit_oxy + 1)
+	TEST_ASSERT_EQUAL(victim.stat, HARD_CRIT, "Suffocation past the mark did not fell the body")
+	TEST_ASSERT(HAS_TRAIT(victim, TRAIT_KNOCKEDOUT), "The body felled by suffocation is not unconscious")
+	// TG's breathe() takes a breath from a body in HARD_CRIT right after this signal; the crit gives it back first.
+	victim.losebreath = 0
+	SEND_SIGNAL(victim, COMSIG_CARBON_PRE_BREATHE, 1)
+	TEST_ASSERT_EQUAL(victim.losebreath, -1, "The unconscious body was not given its breath back")
+	victim.losebreath = 0
+	victim.adjust_oxy_loss(-victim.get_oxy_loss())
+	TEST_ASSERT_EQUAL(victim.stat, STABLE, "The body did not wake when its breath came back")
+	var/blood = victim.get_blood_volume()
+	victim.set_blood_volume(victim.rogue_crit_blood)
+	SEND_SIGNAL(victim, COMSIG_LIVING_LIFE, 1)
+	TEST_ASSERT_EQUAL(victim.stat, HARD_CRIT, "A bled-out body stayed awake")
+	victim.set_blood_volume(blood)
+	SEND_SIGNAL(victim, COMSIG_LIVING_LIFE, 1)
+	TEST_ASSERT_EQUAL(victim.stat, STABLE, "The body did not wake when its blood came back")
+	if(victim.dead_threshold < victim.hardcrit_threshold)
+		victim.adjust_tox_loss(victim.health - victim.hardcrit_threshold, forced = TRUE)
+		TEST_ASSERT_EQUAL(victim.stat, HARD_CRIT, "Toxins down to the mark did not fell the body")
+	victim.adjust_tox_loss(victim.health - victim.dead_threshold, forced = TRUE)
+	TEST_ASSERT_EQUAL(victim.stat, DEAD, "Toxins down to the death mark did not kill")
 
 #undef TEST_ASSERT
 #undef TEST_ASSERT_EQUAL

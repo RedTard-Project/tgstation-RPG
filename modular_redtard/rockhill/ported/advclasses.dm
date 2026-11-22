@@ -11,17 +11,12 @@
 	gloves = /obj/item/clothing/gloves/roguetown/otavan/psygloves
 	wrists = /obj/item/clothing/neck/roguetown/psicross/silver
 	shoes = /obj/item/clothing/shoes/roguetown/boots/psydonboots
-	belt = /obj/item/storage/belt/rogue/leather/stakebelt
 	back = /obj/item/storage/backpack/rogue/satchel/otavan
-	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/arbalest
-	l_pocket = /obj/item/rogueweapon/huntingknife/idagger/silver/stake/preblessed/psy
-	r_pocket = /obj/item/quiver/heavybolts
 	backpack_contents = list(
 		/obj/item/roguekey/inquisition = 1,
 		/obj/item/grapplinghook = 1,
 		/obj/item/paper/inqslip/arrival/ortho = 1,
 		/obj/item/storage/belt/rogue/pouch/coins/mid = 1,
-		/obj/item/ammo_casing/caseless/rogue/heavy_bolt/tempest = 1,
 		)
 
 /datum/attribute_holder/sheet/job/rockhill_class/arbalist
@@ -55,6 +50,7 @@
 		TRAIT_STEELHEARTED,
 		TRAIT_INQUISITION,
 		)
+	maximum_slots = 1
 	rogue_subclass_languages = list("/datum/language/otavan")
 	rogue_stashed_items = list(
 		"Tome of Psydon" = /obj/item/book/rogue/bibble/psy,
@@ -718,8 +714,8 @@
 	name = "Monk"
 	jobtype = /datum/job/roguetown/adventurer
 	uniform = /obj/item/clothing/under/roguetown/tights/black
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
-	suit = /obj/item/clothing/suit/roguetown/shirt/robe/monk
+	shirt = /obj/item/clothing/suit/roguetown/armor/regenerating/skin/body/monk
+	suit = /obj/item/clothing/suit/roguetown/armor/regenerating/skin/chest/monk
 	cloak = /obj/item/clothing/cloak/psydontabard
 	head = /obj/item/clothing/head/roguetown/headband/monk
 	mask = /obj/item/clothing/head/roguetown/roguehood/psydon
@@ -742,6 +738,7 @@
 		ROGUE_STAT_CONSTITUTION = 1,
 		ROGUE_STAT_WILLPOWER = 2,
 		/datum/attribute/skill/combat/polearms = 20,
+		/datum/attribute/skill/combat/staves = 30,
 		/datum/attribute/skill/combat/unarmed = 30,
 		/datum/attribute/skill/combat/wrestling = 30,
 		/datum/attribute/skill/magic/holy = 20,
@@ -845,6 +842,7 @@
 		ROGUE_STAT_SPEED = 1,
 		ROGUE_STAT_WILLPOWER = 1,
 		/datum/attribute/skill/combat/polearms = 20,
+		/datum/attribute/skill/combat/staves = 30,
 		/datum/attribute/skill/combat/unarmed = 10,
 		/datum/attribute/skill/combat/wrestling = 20,
 		/datum/attribute/skill/craft/carpentry = 20,
@@ -1017,6 +1015,8 @@
 		/obj/item/inqarticles/garrote = 1,
 		/obj/item/grapplinghook = 1,
 		/obj/item/paper/inqslip/arrival/ortho = 1,
+		/obj/item/inqhound = 1,
+		/obj/item/inqscanner = 1,
 		)
 
 /datum/attribute_holder/sheet/job/rockhill_class/confessor
@@ -1026,6 +1026,7 @@
 		ROGUE_STAT_STRENGTH = -1,
 		ROGUE_STAT_WILLPOWER = 3,
 		/datum/attribute/skill/combat/crossbows = 40,
+		/datum/attribute/skill/combat/firearms = 40,
 		/datum/attribute/skill/combat/unarmed = 30,
 		/datum/attribute/skill/combat/wrestling = 30,
 		/datum/attribute/skill/misc/athletics = 40,
@@ -1050,6 +1051,7 @@
 		TRAIT_PERFECT_TRACKER,
 		TRAIT_SLEUTH,
 		TRAIT_PURITAN_ADVENTURER,
+		TRAIT_FUSILIER,
 		TRAIT_OUTLANDER,
 		TRAIT_STEELHEARTED,
 		TRAIT_INQUISITION,
@@ -1756,12 +1758,13 @@
 	name = "Disciple"
 	jobtype = /datum/job/roguetown/orthodoxist
 	uniform = /obj/item/clothing/under/roguetown/heavy_leather_pants/otavan
-	suit = /obj/item/clothing/suit/roguetown/armor/regenerating/skin/disciple
+	shirt = /obj/item/clothing/suit/roguetown/armor/regenerating/skin/body/disciple
+	suit = /obj/item/clothing/suit/roguetown/armor/regenerating/skin/chest/disciple
 	cloak = /obj/item/clothing/cloak/psydontabard/alt
 	head = /obj/item/clothing/head/roguetown/roguehood/psydon
 	mask = /obj/item/clothing/head/roguetown/helmet/blacksteel/psythorns
 	neck = /obj/item/clothing/neck/roguetown/psicross/silver
-	gloves = /obj/item/clothing/gloves/roguetown/bandages/pugilist
+	gloves = /obj/item/clothing/gloves/roguetown/bandages/abboteer
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/psythorns
 	shoes = /obj/item/clothing/shoes/roguetown/boots/psydonboots
 	belt = /obj/item/storage/belt/rogue/leather/rope/dark
@@ -1798,6 +1801,7 @@
 	rockhill_traits = list(
 		TRAIT_CIVILIZEDBARBARIAN,
 		TRAIT_CICERONE,
+		TRAIT_BLOOD_RESISTANCE,
 		TRAIT_OUTLANDER,
 		TRAIT_STEELHEARTED,
 		TRAIT_INQUISITION,
@@ -2057,7 +2061,6 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/bronze
 	belt = /obj/item/storage/belt/rogue/leather
 	back = /obj/item/storage/backpack/rogue/satchel
-	l_pocket = /obj/item/quiver/javelin/bronze
 	r_pocket = /obj/item/rogueweapon/scabbard/sword
 	r_hand = /obj/item/rogueweapon/sword/long/broadsword/bronze
 	backpack_contents = list(
@@ -2147,7 +2150,7 @@
 		TRAIT_DARKVISION,
 		TRAIT_OUTLANDER,
 		)
-	rogue_allowed_races = list("/datum/species/elf/dark", "/datum/species/human/halfelf")
+	rogue_allowed_races = list("/datum/species/arachnid", "/datum/species/elf/dark", "/datum/species/human/halfelf")
 	rogue_subclass_languages = list("/datum/language/otavan")
 
 /datum/outfit/job/roguetown/rockhill_class/foreigner/dunewell
@@ -2787,6 +2790,7 @@
 		ROGUE_STAT_STRENGTH = -1,
 		ROGUE_STAT_WILLPOWER = 3,
 		/datum/attribute/skill/combat/polearms = 30,
+		/datum/attribute/skill/combat/staves = 30,
 		/datum/attribute/skill/combat/unarmed = 30,
 		/datum/attribute/skill/combat/wrestling = 40,
 		/datum/attribute/skill/craft/alchemy = 30,
@@ -2861,71 +2865,6 @@
 		TRAIT_OUTLANDER,
 		)
 
-/datum/outfit/job/roguetown/rockhill_class/guildsman/artificer
-	name = "Artificer"
-	jobtype = /datum/job/roguetown/guildsman
-	uniform = /obj/item/clothing/under/roguetown/trou/artipants
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/artificer
-	suit = /obj/item/clothing/suit/roguetown/armor/leather/jacket/artijacket
-	cloak = /obj/item/clothing/cloak/apron/waist/brown
-	head = /obj/item/clothing/head/roguetown/articap
-	gloves = /obj/item/clothing/gloves/roguetown/angle/grenzelgloves/blacksmith
-	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
-	belt = /obj/item/storage/belt/rogue/leather
-	back = /obj/item/storage/backpack/rogue/backpack
-	l_pocket = /obj/item/roguekey/crafterguild
-	r_pocket = /obj/item/storage/belt/rogue/pouch/coins/mid
-	backpack_contents = list(
-		/obj/item/rogueweapon/hammer/steel = 1,
-		/obj/item/lockpickring/mundane = 1,
-		/obj/item/recipe_book/blacksmithing = 1,
-		/obj/item/recipe_book/engineering = 1,
-		/obj/item/recipe_book/ceramics = 1,
-		/obj/item/recipe_book/builder = 1,
-		/obj/item/clothing/mask/rogue/spectacles/golden = 1,
-		/obj/item/mini_flagpole/artificer = 1,
-		/obj/item/rogueweapon/spellbook = 1,
-		)
-
-/datum/attribute_holder/sheet/job/rockhill_class/guildsman/artificer
-	raw_attribute_list = list(
-		ROGUE_STAT_CONSTITUTION = 1,
-		ROGUE_STAT_INTELLIGENCE = 3,
-		ROGUE_STAT_PERCEPTION = 1,
-		ROGUE_STAT_STRENGTH = 1,
-		ROGUE_STAT_WILLPOWER = 2,
-		/datum/attribute/skill/combat/axes = 20,
-		/datum/attribute/skill/combat/maces = 20,
-		/datum/attribute/skill/combat/unarmed = 20,
-		/datum/attribute/skill/combat/wrestling = 20,
-		/datum/attribute/skill/craft/alchemy = 20,
-		/datum/attribute/skill/craft/armorsmithing = 20,
-		/datum/attribute/skill/craft/blacksmithing = 20,
-		/datum/attribute/skill/craft/carpentry = 20,
-		/datum/attribute/skill/craft/ceramics = 30,
-		/datum/attribute/skill/craft/crafting = 20,
-		/datum/attribute/skill/craft/engineering = 50,
-		/datum/attribute/skill/craft/masonry = 20,
-		/datum/attribute/skill/craft/smelting = 40,
-		/datum/attribute/skill/craft/weaponsmithing = 20,
-		/datum/attribute/skill/magic/arcane = 20,
-		/datum/attribute/skill/misc/climbing = 30,
-		/datum/attribute/skill/misc/lockpicking = 40,
-		/datum/attribute/skill/misc/reading = 20,
-		)
-
-/datum/rockhill_advclass/guildsman/artificer
-	name = "Artificer"
-	outfit = /datum/outfit/job/roguetown/rockhill_class/guildsman/artificer
-	desc = "You are an Artificer, oft known by the longer name of Artificer-Enchanter. You have basic training in the arts of smithing, and can substitute for a blacksmith's work if needed. But your true calling is the creation and enchantment of magical items, alongside feats of engineering, creating mechanical and magical wonders whose art of creation has been passed down from a certain elven Artificer..."
-	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/guildsman/artificer
-	rockhill_traits = list(
-		TRAIT_ARCYNE,
-		TRAIT_ALCHEMY_EXPERT,
-		TRAIT_TRAINED_SMITH,
-		TRAIT_SMITHING_EXPERT,
-		)
-
 /datum/outfit/job/roguetown/rockhill_class/guildsman/blacksmith
 	name = "Guild Blacksmith"
 	jobtype = /datum/job/roguetown/guildsman
@@ -2950,19 +2889,22 @@
 	raw_attribute_list = list(
 		ROGUE_STAT_CONSTITUTION = 2,
 		ROGUE_STAT_FORTUNE = 1,
-		ROGUE_STAT_INTELLIGENCE = 2,
-		ROGUE_STAT_STRENGTH = 3,
-		ROGUE_STAT_WILLPOWER = 2,
-		/datum/attribute/skill/combat/axes = 20,
-		/datum/attribute/skill/combat/maces = 20,
+		ROGUE_STAT_INTELLIGENCE = 1,
+		ROGUE_STAT_STRENGTH = 2,
+		ROGUE_STAT_WILLPOWER = 1,
+		/datum/attribute/skill/combat/axes = 10,
+		/datum/attribute/skill/combat/maces = 30,
 		/datum/attribute/skill/combat/unarmed = 20,
-		/datum/attribute/skill/combat/wrestling = 30,
+		/datum/attribute/skill/combat/wrestling = 20,
 		/datum/attribute/skill/craft/armorsmithing = 50,
 		/datum/attribute/skill/craft/blacksmithing = 50,
+		/datum/attribute/skill/craft/carpentry = 20,
 		/datum/attribute/skill/craft/crafting = 30,
 		/datum/attribute/skill/craft/engineering = 20,
+		/datum/attribute/skill/craft/masonry = 20,
 		/datum/attribute/skill/craft/smelting = 50,
 		/datum/attribute/skill/craft/weaponsmithing = 50,
+		/datum/attribute/skill/labor/mining = 30,
 		/datum/attribute/skill/misc/reading = 20,
 		)
 
@@ -2974,6 +2916,7 @@
 	rockhill_traits = list(
 		TRAIT_TRAINED_SMITH,
 		TRAIT_SMITHING_EXPERT,
+		TRAIT_LEGENDARY_MINER,
 		)
 
 /datum/outfit/job/roguetown/rockhill_class/guildsman/engineer
@@ -2984,62 +2927,58 @@
 	suit = /obj/item/clothing/suit/roguetown/armor/leather/jacket/artijacket
 	cloak = /obj/item/clothing/cloak/apron/waist/brown
 	head = /obj/item/clothing/head/roguetown/articap
-	mask = /obj/item/clothing/mask/rogue/spectacles/golden
 	gloves = /obj/item/clothing/gloves/roguetown/angle/grenzelgloves/blacksmith
-	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
-	belt = /obj/item/storage/belt/rogue/leather
-	back = /obj/item/storage/backpack/rogue/backpack
-	backr = /obj/item/rogueweapon/stoneaxe/woodcut/steel/woodcutter
-	l_pocket = /obj/item/flashlight/flare/torch/lantern
-	r_pocket = /obj/item/rogueweapon/pick/steel
+	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced/short
+	belt = /obj/item/storage/belt/rogue/leather/black
+	back = /obj/item/storage/backpack/rogue/artibackpack/engineer
+	backr = /obj/item/rogueweapon/pick/woodcutter/dolabra/albranze
+	l_pocket = /obj/item/flashlight/flare/torch/lantern/bronzelamptern
+	r_pocket = /obj/item/roguekey/crafterguild
 	backpack_contents = list(
-		/obj/item/rogueweapon/hammer/steel = 1,
-		/obj/item/rogueweapon/chisel = 1,
-		/obj/item/rogueweapon/handsaw = 1,
+		/obj/item/rogueweapon/hammer/bronze = 1,
+		/obj/item/rogueweapon/chisel/bronze = 1,
+		/obj/item/rogueweapon/handsaw/bronze = 1,
 		/obj/item/lockpickring/mundane = 1,
-		/obj/item/recipe_book/blacksmithing = 1,
-		/obj/item/recipe_book/engineering = 1,
-		/obj/item/recipe_book/ceramics = 1,
-		/obj/item/recipe_book/builder = 1,
 		/obj/item/recipe_book/survival = 1,
 		/obj/item/contraption/linker = 1,
 		/obj/item/mini_flagpole/artificer = 1,
-		/obj/item/storage/belt/rogue/pouch/coins/mid = 1,
 		/obj/item/mini_flagpole/blacksmith = 1,
+		/obj/item/storage/belt/rogue/pouch/coins/mid = 1,
 		/obj/item/rogueweapon/blowrod = 1,
-		/obj/item/dye_brush = 1,
-		/obj/item/roguekey/crafterguild = 1,
-		/obj/item/rogueweapon/huntingknife = 1,
+		/obj/item/rogueweapon/huntingknife/bronze = 1,
+		/obj/item/rogueweapon/shovel/bronze/spade = 1,
 		/obj/item/flint = 1,
+		/obj/item/dye_brush = 1,
+		/obj/item/rogueweapon/scabbard/sheath = 1,
+		/obj/item/clothing/mask/rogue/spectacles/golden = 1,
 		)
 
 /datum/attribute_holder/sheet/job/rockhill_class/guildsman/engineer
 	raw_attribute_list = list(
 		ROGUE_STAT_CONSTITUTION = 1,
-		ROGUE_STAT_FORTUNE = 2,
-		ROGUE_STAT_INTELLIGENCE = 3,
+		ROGUE_STAT_INTELLIGENCE = 2,
 		ROGUE_STAT_PERCEPTION = 1,
 		ROGUE_STAT_STRENGTH = 1,
 		ROGUE_STAT_WILLPOWER = 2,
 		/datum/attribute/skill/combat/axes = 30,
-		/datum/attribute/skill/combat/firearms = 30,
-		/datum/attribute/skill/combat/maces = 20,
+		/datum/attribute/skill/combat/maces = 10,
 		/datum/attribute/skill/combat/unarmed = 20,
-		/datum/attribute/skill/combat/wrestling = 30,
+		/datum/attribute/skill/combat/wrestling = 20,
 		/datum/attribute/skill/craft/alchemy = 20,
 		/datum/attribute/skill/craft/armorsmithing = 30,
 		/datum/attribute/skill/craft/blacksmithing = 30,
-		/datum/attribute/skill/craft/carpentry = 40,
+		/datum/attribute/skill/craft/carpentry = 50,
 		/datum/attribute/skill/craft/ceramics = 40,
 		/datum/attribute/skill/craft/crafting = 40,
 		/datum/attribute/skill/craft/engineering = 50,
-		/datum/attribute/skill/craft/masonry = 40,
+		/datum/attribute/skill/craft/masonry = 50,
 		/datum/attribute/skill/craft/smelting = 40,
 		/datum/attribute/skill/craft/weaponsmithing = 30,
 		/datum/attribute/skill/labor/lumberjacking = 30,
 		/datum/attribute/skill/labor/mining = 30,
+		/datum/attribute/skill/magic/arcane = 20,
 		/datum/attribute/skill/misc/athletics = 40,
-		/datum/attribute/skill/misc/climbing = 30,
+		/datum/attribute/skill/misc/climbing = 40,
 		/datum/attribute/skill/misc/lockpicking = 40,
 		/datum/attribute/skill/misc/reading = 20,
 		/datum/attribute/skill/misc/swimming = 20,
@@ -3048,17 +2987,15 @@
 /datum/rockhill_advclass/guildsman/engineer
 	name = "Guild Engineer"
 	outfit = /datum/outfit/job/roguetown/rockhill_class/guildsman/engineer
-	desc = "You are an engineer, Once trained under architects and artificers you now have the experience to surpass them both. Your calling is the works of artificing and architecture, be it smithing, constructing or the arcane machinery you do it all, your experience demands respect."
+	desc = "You are an engineer, hailing from the artificers of old, you now combine the teachings of engineering with architecture. You now fit the role of both designer and constructor, working with wood or working with machinery, you are a respected craftsman and highly sought after for your experience is endless."
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/guildsman/engineer
 	rockhill_traits = list(
 		TRAIT_MASTER_CARPENTER,
 		TRAIT_MASTER_MASON,
 		TRAIT_HOMESTEAD_EXPERT,
-		TRAIT_ALCHEMY_EXPERT,
-		TRAIT_FUSILIER,
+		TRAIT_ENGINEER,
+		TRAIT_ARCYNE,
 		TRAIT_LEGENDARY_MINER,
-		TRAIT_TRAINED_SMITH,
-		TRAIT_SMITHING_EXPERT,
 		)
 
 /datum/outfit/job/roguetown/rockhill_class/hand/advisor
@@ -3515,6 +3452,7 @@
 		ROGUE_STAT_WILLPOWER = 1,
 		/datum/attribute/skill/combat/knives = 20,
 		/datum/attribute/skill/combat/polearms = 30,
+		/datum/attribute/skill/combat/staves = 40,
 		/datum/attribute/skill/combat/swords = 20,
 		/datum/attribute/skill/combat/unarmed = 20,
 		/datum/attribute/skill/combat/wrestling = 20,
@@ -3536,6 +3474,7 @@
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/heartfelt/lord/archmage
 	rockhill_traits = list(
 		TRAIT_NOBLE,
+		TRAIT_ARCYNE,
 		TRAIT_INTELLECTUAL,
 		TRAIT_HEARTFELT,
 		TRAIT_ALCHEMY_EXPERT,
@@ -4096,6 +4035,7 @@
 		ROGUE_STAT_STRENGTH = -1,
 		ROGUE_STAT_WILLPOWER = 1,
 		/datum/attribute/skill/combat/polearms = 40,
+		/datum/attribute/skill/combat/staves = 40,
 		/datum/attribute/skill/combat/unarmed = 40,
 		/datum/attribute/skill/combat/wrestling = 40,
 		/datum/attribute/skill/craft/alchemy = 40,
@@ -4344,7 +4284,7 @@
 		ROGUE_STAT_SPEED = 1,
 		ROGUE_STAT_STRENGTH = -1,
 		/datum/attribute/skill/combat/knives = 10,
-		/datum/attribute/skill/combat/polearms = 20,
+		/datum/attribute/skill/combat/staves = 20,
 		/datum/attribute/skill/craft/alchemy = 20,
 		/datum/attribute/skill/craft/crafting = 20,
 		/datum/attribute/skill/magic/arcane = 10,
@@ -4357,6 +4297,7 @@
 	desc = "Despite your standing, sociability is not your strong suit, and you have kept mostly to yourself and your books. This hardly makes you a favourite among the lords and ladies of the court, and an exit from your room is often met with amusement from nobility and servants alike. At least you're always welcome in the mage's tower."
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/heir/bookworm
 	rockhill_traits = list(
+		TRAIT_ARCYNE,
 		TRAIT_GOODWRITER,
 		TRAIT_MAGEDEXTERITY,
 		TRAIT_NOBLE,
@@ -6375,6 +6316,8 @@
 		/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1,
 		/obj/item/rogueweapon/scabbard/sheath/royal = 1,
 		/obj/item/reagent_containers/glass/bottle/rogue/healthpot = 1,
+		/obj/item/inqhound = 1,
+		/obj/item/inqscanner = 1,
 		)
 
 /datum/attribute_holder/sheet/job/rockhill_class/marshal/classic
@@ -6428,6 +6371,8 @@
 		/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1,
 		/obj/item/rogueweapon/scabbard/sheath/royal = 1,
 		/obj/item/reagent_containers/glass/bottle/rogue/healthpot = 1,
+		/obj/item/inqhound = 1,
+		/obj/item/inqscanner = 1,
 		)
 
 /datum/attribute_holder/sheet/job/rockhill_class/marshal/kcommander
@@ -6529,12 +6474,14 @@
 	suit = /obj/item/clothing/suit/roguetown/armor/leather/heavy/atgervi
 	head = /obj/item/clothing/head/roguetown/helmet/leather/shaman_hood
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
-	gloves = /obj/item/clothing/gloves/roguetown/plate/atgervi
+	gloves = /obj/item/clothing/gloves/roguetown/angle/gronnfur
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/atgervi
 	belt = /obj/item/storage/belt/rogue/leather
 	back = /obj/item/storage/backpack/rogue/satchel/black
 	l_pocket = /obj/item/flashlight/flare/torch
+	l_hand = /obj/item/rogueweapon/handclaw/gronn
+	r_hand = /obj/item/rogueweapon/handclaw/gronn
 	backpack_contents = list(
 		/obj/item/roguekey/mercenary = 1,
 		/obj/item/rogueweapon/huntingknife = 1,
@@ -6569,7 +6516,7 @@
 	rockhill_traits = list(
 		TRAIT_STRONGBITE,
 		TRAIT_CIVILIZEDBARBARIAN,
-		TRAIT_CRITICAL_RESISTANCE,
+		TRAIT_BLOOD_RESISTANCE,
 		TRAIT_NOPAINSTUN,
 		TRAIT_STEELHEARTED,
 		TRAIT_OUTLANDER,
@@ -6825,7 +6772,7 @@
 		TRAIT_STEELHEARTED,
 		TRAIT_OUTLANDER,
 		)
-	rogue_allowed_races = list("/datum/species/elf/dark", "/datum/species/human/halfelf")
+	rogue_allowed_races = list("/datum/species/arachnid", "/datum/species/elf/dark", "/datum/species/human/halfelf")
 
 /datum/outfit/job/roguetown/rockhill_class/mercenary/crocsass
 	name = "Crocs de l'araignée Assassin"
@@ -6894,7 +6841,7 @@
 		TRAIT_STEELHEARTED,
 		TRAIT_OUTLANDER,
 		)
-	rogue_allowed_races = list("/datum/species/elf/dark", "/datum/species/human/halfelf")
+	rogue_allowed_races = list("/datum/species/arachnid", "/datum/species/elf/dark", "/datum/species/human/halfelf")
 
 /datum/outfit/job/roguetown/rockhill_class/mercenary/desert_rider
 	name = "Desert Rider Janissary"
@@ -6969,14 +6916,16 @@
 	belt = /obj/item/storage/belt/rogue/leather/shalal
 	back = /obj/item/storage/backpack/rogue/satchel/black
 	l_pocket = /obj/item/rogueweapon/scabbard/sword
+	r_pocket = /obj/item/rogueweapon/scabbard/sword
 	l_hand = /obj/item/rogueweapon/sword/sabre/shamshir
+	r_hand = /obj/item/rogueweapon/sword/sabre/shamshir
 	backpack_contents = list(
 		/obj/item/roguekey/mercenary = 1,
 		/obj/item/rogueweapon/huntingknife/idagger/steel/kukri = 1,
 		/obj/item/rogueweapon/scabbard/sheath = 1,
-		/obj/item/rogueweapon/spellbook = 1,
 		/obj/item/flashlight/flare/torch = 1,
 		/obj/item/storage/belt/rogue/pouch/coins/poor = 1,
+		/obj/item/rogueweapon/spellbook/greater = 1,
 		)
 
 /datum/attribute_holder/sheet/job/rockhill_class/mercenary/desert_rider/almah
@@ -7006,7 +6955,7 @@
 	desc = "Almah are those skilled in both magyck and swordsmanship, but excelling in nothing."
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/mercenary/desert_rider/almah
 	rockhill_traits = list(
-		TRAIT_MEDIUMARMOR,
+		TRAIT_ARCYNE,
 		TRAIT_STEELHEARTED,
 		TRAIT_OUTLANDER,
 		)
@@ -7631,7 +7580,7 @@
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/grenzelhoft
 	suit = /obj/item/clothing/suit/roguetown/armor/plate/blacksteel_half_plate
 	head = /obj/item/clothing/head/roguetown/grenzelhofthat
-	neck = /obj/item/clothing/neck/roguetown/gorget
+	neck = /obj/item/clothing/neck/roguetown/gorget/steel
 	gloves = /obj/item/clothing/gloves/roguetown/angle/grenzelgloves
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	shoes = /obj/item/clothing/shoes/roguetown/boots/grenzelhoft
@@ -7689,7 +7638,7 @@
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/grenzelhoft
 	suit = /obj/item/clothing/suit/roguetown/armor/brigandine/light
 	head = /obj/item/clothing/head/roguetown/grenzelhofthat
-	neck = /obj/item/clothing/neck/roguetown/gorget
+	neck = /obj/item/clothing/neck/roguetown/gorget/steel
 	gloves = /obj/item/clothing/gloves/roguetown/angle/grenzelgloves
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	shoes = /obj/item/clothing/shoes/roguetown/boots/grenzelhoft
@@ -7713,7 +7662,7 @@
 		ROGUE_STAT_SPEED = 2,
 		ROGUE_STAT_STRENGTH = 1,
 		ROGUE_STAT_WILLPOWER = 2,
-		/datum/attribute/skill/combat/axes = 30,
+		/datum/attribute/skill/combat/axes = 40,
 		/datum/attribute/skill/combat/crossbows = 50,
 		/datum/attribute/skill/combat/knives = 20,
 		/datum/attribute/skill/combat/swords = 30,
@@ -7751,7 +7700,7 @@
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/grenzelhoft
 	suit = /obj/item/clothing/suit/roguetown/armor/plate/blacksteel_half_plate
 	head = /obj/item/clothing/head/roguetown/grenzelhofthat
-	neck = /obj/item/clothing/neck/roguetown/gorget
+	neck = /obj/item/clothing/neck/roguetown/gorget/steel
 	gloves = /obj/item/clothing/gloves/roguetown/angle/grenzelgloves
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	shoes = /obj/item/clothing/shoes/roguetown/boots/grenzelhoft
@@ -8289,7 +8238,7 @@
 	name = "Ruma Clan Gun-in"
 	jobtype = /datum/job/roguetown/mercenary
 	uniform = /obj/item/clothing/under/roguetown/heavy_leather_pants/eastpants2
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/easttats
+	shirt = /obj/item/clothing/suit/roguetown/armor/regenerating/skin/body/ruma
 	suit = /obj/item/clothing/suit/roguetown/shirt/undershirt/eastshirt2
 	cloak = /obj/item/clothing/cloak/eastcloak1
 	gloves = /obj/item/clothing/gloves/roguetown/eastgloves2
@@ -8343,7 +8292,7 @@
 	name = "Ruma Clan Sasu"
 	jobtype = /datum/job/roguetown/mercenary
 	uniform = /obj/item/clothing/under/roguetown/heavy_leather_pants/eastpants2
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/easttats
+	shirt = /obj/item/clothing/suit/roguetown/armor/regenerating/skin/body/ruma
 	suit = /obj/item/clothing/suit/roguetown/shirt/undershirt/eastshirt2
 	cloak = /obj/item/clothing/cloak/eastcloak1
 	gloves = /obj/item/clothing/gloves/roguetown/eastgloves2
@@ -8503,7 +8452,6 @@
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/mercenary/vaquero
 	rockhill_traits = list(
 		TRAIT_DODGEEXPERT,
-		TRAIT_DECEIVING_MEEKNESS,
 		TRAIT_MEDIUMARMOR,
 		TRAIT_EQUESTRIAN,
 		TRAIT_STEELHEARTED,
@@ -8587,7 +8535,7 @@
 	suit = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/pontifex
 	head = /obj/item/clothing/head/roguetown/roguehood/pontifex
 	mask = /obj/item/clothing/mask/rogue/lordmask/naledi
-	gloves = /obj/item/clothing/gloves/roguetown/angle/pontifex
+	gloves = /obj/item/clothing/gloves/roguetown/bandages/pontifex
 	wrists = /obj/item/clothing/neck/roguetown/psicross/naledi
 	shoes = /obj/item/clothing/shoes/roguetown/sandals
 	belt = /obj/item/storage/belt/rogue/leather/black
@@ -8668,7 +8616,8 @@
 		ROGUE_STAT_SPEED = 2,
 		ROGUE_STAT_WILLPOWER = 2,
 		/datum/attribute/skill/combat/crossbows = 20,
-		/datum/attribute/skill/combat/polearms = 30,
+		/datum/attribute/skill/combat/polearms = 20,
+		/datum/attribute/skill/combat/staves = 30,
 		/datum/attribute/skill/combat/unarmed = 30,
 		/datum/attribute/skill/combat/wrestling = 20,
 		/datum/attribute/skill/craft/alchemy = 20,
@@ -10291,6 +10240,8 @@
 	rogue_subclass_languages = list("/datum/language/otavan")
 	rogue_stashed_items = list(
 		"Tome of Psydon" = /obj/item/book/rogue/bibble/psy,
+		"HOUND" = /obj/item/inqhound,
+		"SNIFFER" = /obj/item/inqscanner,
 		)
 
 /datum/outfit/job/roguetown/rockhill_class/puritan/inspector
@@ -10299,15 +10250,14 @@
 	uniform = /obj/item/clothing/under/roguetown/heavy_leather_pants/otavan
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/inq
 	suit = /obj/item/clothing/suit/roguetown/armor/plate/scale/inqcoat
+	cloak = /obj/item/storage/backpack/rogue/satchel/beltpack
 	head = /obj/item/clothing/head/roguetown/inqhat
 	mask = /obj/item/clothing/mask/rogue/spectacles/inq/spawnpair
 	neck = /obj/item/clothing/neck/roguetown/gorget/steel
 	gloves = /obj/item/clothing/gloves/roguetown/otavan/psygloves
 	wrists = /obj/item/clothing/neck/roguetown/psicross/silver
 	shoes = /obj/item/clothing/shoes/roguetown/boots/otavan/inqboots
-	belt = /obj/item/storage/belt/rogue/leather/knifebelt/black/psydon
 	back = /obj/item/storage/backpack/rogue/satchel/otavan
-	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow
 	backpack_contents = list(
 		/obj/item/storage/keyring/puritan = 1,
 		/obj/item/lockpickring/mundane = 1,
@@ -10364,6 +10314,8 @@
 	rogue_subclass_languages = list("/datum/language/otavan")
 	rogue_stashed_items = list(
 		"Tome of Psydon" = /obj/item/book/rogue/bibble/psy,
+		"HOUND" = /obj/item/inqhound,
+		"SNIFFER" = /obj/item/inqscanner,
 		)
 
 /datum/outfit/job/roguetown/rockhill_class/puritan/ordinator
@@ -10422,6 +10374,8 @@
 	rogue_subclass_languages = list("/datum/language/otavan")
 	rogue_stashed_items = list(
 		"Tome of Psydon" = /obj/item/book/rogue/bibble/psy,
+		"HOUND" = /obj/item/inqhound,
+		"SNIFFER" = /obj/item/inqscanner,
 		)
 
 /datum/outfit/job/roguetown/rockhill_class/ranger
@@ -10804,7 +10758,6 @@
 	rockhill_traits = list(
 		TRAIT_DODGEEXPERT,
 		TRAIT_NUTCRACKER,
-		TRAIT_DECEIVING_MEEKNESS,
 		TRAIT_OUTLANDER,
 		)
 	rogue_social_rank = 2
@@ -11050,6 +11003,7 @@
 		ROGUE_STAT_STRENGTH = -1,
 		ROGUE_STAT_WILLPOWER = 2,
 		/datum/attribute/skill/combat/polearms = 10,
+		/datum/attribute/skill/combat/staves = 30,
 		/datum/attribute/skill/combat/unarmed = 10,
 		/datum/attribute/skill/combat/wrestling = 10,
 		/datum/attribute/skill/craft/alchemy = 20,
@@ -11077,6 +11031,7 @@
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/runaway_prisoner_mage
 	rockhill_traits = list(
 		TRAIT_CRITICAL_RESISTANCE,
+		TRAIT_ARCYNE,
 		TRAIT_ALCHEMY_EXPERT,
 		)
 
@@ -11613,9 +11568,10 @@
 /datum/outfit/job/roguetown/rockhill_class/sfighter/amazon
 	name = "Amazon"
 	jobtype = /datum/job/roguetown/rockhill_migrant
-	uniform = /obj/item/clothing/under/roguetown/heavy_leather_pants/shorts
+	uniform = /obj/item/clothing/under/roguetown/trou/leathertights/kneelpads
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/bikini
 	suit = /obj/item/clothing/suit/roguetown/armor/leather/bikini
+	cloak = /obj/item/clothing/cloak/volfmantle/shoulderpad/lightleather
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	gloves = /obj/item/clothing/gloves/roguetown/fingerless_leather
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
@@ -11703,8 +11659,10 @@
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/sfighter/barbarian
 	rockhill_traits = list(
 		TRAIT_STEELHEARTED,
-		TRAIT_CRITICAL_RESISTANCE,
+		TRAIT_IGNOREDAMAGESLOWDOWN,
+		TRAIT_BLOOD_RESISTANCE,
 		TRAIT_NOPAINSTUN,
+		TRAIT_RAGE,
 		TRAIT_OUTLANDER,
 		)
 	rogue_allowed_races = list("/datum/species/human/northern", "/datum/species/human/halfelf", "/datum/species/elf/dark", "/datum/species/elf/wood", "/datum/species/dwarf/mountain", "/datum/species/tieberian", "/datum/species/aasimar", "/datum/species/lizardfolk", "/datum/species/lupian", "/datum/species/tabaxi", "/datum/species/vulpkanin", "/datum/species/akula", "/datum/species/moth", "/datum/species/dracon", "/datum/species/anthromorph", "/datum/species/anthromorphsmall", "/datum/species/demihuman", "/datum/species/halforc", "/datum/species/kobold", "/datum/species/goblinp", "/datum/species/dullahan", "/datum/species/lamia", "/datum/species/dwarf/gnome", "/datum/species/harpy", "/datum/species/arachnid")
@@ -11740,8 +11698,7 @@
 /datum/attribute_holder/sheet/job/rockhill_class/sfighter/duelist
 	raw_attribute_list = list(
 		ROGUE_STAT_INTELLIGENCE = 2,
-		ROGUE_STAT_SPEED = 1,
-		ROGUE_STAT_STRENGTH = 1,
+		ROGUE_STAT_SPEED = 2,
 		ROGUE_STAT_WILLPOWER = 1,
 		/datum/attribute/skill/combat/knives = 20,
 		/datum/attribute/skill/combat/shields = 20,
@@ -11762,7 +11719,6 @@
 	rockhill_traits = list(
 		TRAIT_STEELHEARTED,
 		TRAIT_DODGEEXPERT,
-		TRAIT_DECEIVING_MEEKNESS,
 		TRAIT_OUTLANDER,
 		)
 	rogue_social_rank = 2
@@ -12336,6 +12292,7 @@
 	desc = "An unlucky slave, captured from their home, moved to the Zybantines and trained for slave labor and obediency, for long enough to where you can only faintly remember who you were before... You are now being transported from the deserts to harsher lands to be sold."
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/slaver/slave/arcyne
 	rockhill_traits = list(
+		TRAIT_ARCYNE,
 		TRAIT_GOODLOVER,
 		TRAIT_OUTLANDER,
 		)
@@ -12505,10 +12462,12 @@
 	jobtype = /datum/job/roguetown/orthodoxist
 	uniform = /obj/item/clothing/under/roguetown/heavy_leather_pants/otavan
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/inq
+	suit = /obj/item/clothing/armor/leather/jacket/leathercoat/duelcoat
 	cloak = /obj/item/clothing/cloak/psydontabard/alt
 	head = /obj/item/clothing/head/roguetown/roguehood/sojourner
 	mask = /obj/item/clothing/mask/rogue/lordmask/naledi/sojourner
-	neck = /obj/item/clothing/neck/roguetown/psicross/g
+	neck = /obj/item/clothing/neck/roguetown/psicross/silver/sojourner
+	gloves = /obj/item/clothing/gloves/roguetown/otavan/psygloves
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/cloth/naledi
 	shoes = /obj/item/clothing/shoes/roguetown/boots/psydonboots
 	belt = /obj/item/storage/belt/rogue/leather/rope/dark
@@ -12519,7 +12478,6 @@
 	backpack_contents = list(
 		/obj/item/roguekey/inquisition = 1,
 		/obj/item/paper/inqslip/arrival/ortho = 1,
-		/obj/item/roguegem/amethyst/naledi = 1,
 		/obj/item/rogueweapon/spellbook = 1,
 		)
 
@@ -12529,7 +12487,7 @@
 		ROGUE_STAT_PERCEPTION = 2,
 		ROGUE_STAT_SPEED = -1,
 		ROGUE_STAT_STRENGTH = -1,
-		/datum/attribute/skill/combat/polearms = 20,
+		/datum/attribute/skill/combat/polearms = 30,
 		/datum/attribute/skill/combat/unarmed = 20,
 		/datum/attribute/skill/combat/wrestling = 20,
 		/datum/attribute/skill/craft/alchemy = 30,
@@ -12547,6 +12505,7 @@
 	desc = "Naledi scholars, bereft of their home, were sent around Grimoria searching for purpose. They'd found it in Otava, within the hallowed halls that honed their gifts and refined the knowledge they'd held. Attached to the Inquisitor, you've one purpose. Show them that the fall wasn't pointless."
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/sojourner
 	rockhill_traits = list(
+		TRAIT_ARCYNE,
 		TRAIT_ALCHEMY_EXPERT,
 		TRAIT_NALEDI,
 		TRAIT_MAGEDEXTERITY,
@@ -12748,6 +12707,125 @@
 		TRAIT_SQUIRE_REPAIR,
 		TRAIT_EXPERT_HUNTER,
 		)
+
+/datum/outfit/job/roguetown/rockhill_class/templar/crusader
+	name = "Templar"
+	jobtype = /datum/job/roguetown/templar
+	uniform = /obj/item/clothing/under/roguetown/chainlegs
+	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
+	cloak = /obj/item/clothing/cloak/templar/astratan
+	neck = /obj/item/clothing/neck/roguetown/chaincoif
+	gloves = /obj/item/clothing/gloves/roguetown/chain
+	wrists = /obj/item/clothing/neck/roguetown/psicross/astrata
+	shoes = /obj/item/clothing/shoes/roguetown/boots/armor
+	belt = /obj/item/storage/belt/rogue/leather/black
+	back = /obj/item/storage/backpack/rogue/satchel
+	backr = /obj/item/rogueweapon/shield/tower/metal
+	l_pocket = /obj/item/rogueweapon/scabbard/sword
+	backpack_contents = list(
+		/obj/item/ritechalk = 1,
+		/obj/item/rogueweapon/scabbard/sheath = 1,
+		/obj/item/storage/belt/rogue/pouch/coins/mid = 1,
+		/obj/item/storage/keyring/churchie = 1,
+		)
+
+/datum/attribute_holder/sheet/job/rockhill_class/templar/crusader
+	raw_attribute_list = list(
+		ROGUE_STAT_CONSTITUTION = 2,
+		ROGUE_STAT_STRENGTH = 2,
+		ROGUE_STAT_WILLPOWER = 3,
+		/datum/attribute/skill/combat/axes = 30,
+		/datum/attribute/skill/combat/bows = 20,
+		/datum/attribute/skill/combat/crossbows = 20,
+		/datum/attribute/skill/combat/maces = 30,
+		/datum/attribute/skill/combat/shields = 30,
+		/datum/attribute/skill/combat/swords = 30,
+		/datum/attribute/skill/combat/unarmed = 30,
+		/datum/attribute/skill/combat/whipsflails = 30,
+		/datum/attribute/skill/combat/wrestling = 40,
+		/datum/attribute/skill/magic/holy = 30,
+		/datum/attribute/skill/misc/athletics = 40,
+		/datum/attribute/skill/misc/climbing = 30,
+		/datum/attribute/skill/misc/medicine = 10,
+		/datum/attribute/skill/misc/reading = 30,
+		)
+
+/datum/rockhill_advclass/templar/crusader
+	name = "Templar"
+	outfit = /datum/outfit/job/roguetown/rockhill_class/templar/crusader
+	desc = "You are a templar of the Church, trained in heavy weaponry and zealous warfare. You are the instrument of your God's wrath, clad in steel and faith."
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/templar/crusader
+	rockhill_traits = list(
+		TRAIT_HEAVYARMOR,
+		TRAIT_RITUALIST,
+		TRAIT_STEELHEARTED,
+		)
+	rogue_subclass_languages = list("/datum/language/grenzelhoftian")
+	rogue_stashed_items = list(
+		"The Verses and Acts of the Ten" = /obj/item/book/rogue/bibble,
+		)
+
+/datum/outfit/job/roguetown/rockhill_class/templar/noc_spellblade
+	name = "Noccite Warmage"
+	jobtype = /datum/job/roguetown/templar
+	uniform = /obj/item/clothing/under/roguetown/chainlegs
+	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
+	suit = /obj/item/clothing/suit/roguetown/armor/plate/half/fluted
+	cloak = /obj/item/clothing/cloak/tabard/crusader/noc
+	head = /obj/item/clothing/head/roguetown/helmet/heavy/nochelm
+	neck = /obj/item/clothing/neck/roguetown/chaincoif
+	gloves = /obj/item/clothing/gloves/roguetown/chain
+	wrists = /obj/item/clothing/wrists/roguetown/bracers/jackchain
+	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
+	belt = /obj/item/storage/belt/rogue/leather/black
+	back = /obj/item/storage/backpack/rogue/satchel
+	backr = /obj/item/rogueweapon/shield/heater
+	l_pocket = /obj/item/clothing/neck/roguetown/psicross/noc
+	r_pocket = /obj/item/rogueweapon/scabbard/sword
+	backpack_contents = list(
+		/obj/item/storage/belt/rogue/pouch/coins/mid = 1,
+		/obj/item/ritechalk = 1,
+		/obj/item/rope/chain = 1,
+		/obj/item/rogueweapon/scabbard/sheath = 1,
+		/obj/item/storage/keyring/churchie = 1,
+		/obj/item/rogueweapon/spellbook = 1,
+		)
+
+/datum/attribute_holder/sheet/job/rockhill_class/templar/noc_spellblade
+	raw_attribute_list = list(
+		ROGUE_STAT_CONSTITUTION = 1,
+		ROGUE_STAT_INTELLIGENCE = 1,
+		ROGUE_STAT_PERCEPTION = 1,
+		ROGUE_STAT_STRENGTH = 1,
+		ROGUE_STAT_WILLPOWER = 2,
+		/datum/attribute/skill/combat/knives = 30,
+		/datum/attribute/skill/combat/shields = 30,
+		/datum/attribute/skill/combat/unarmed = 20,
+		/datum/attribute/skill/combat/wrestling = 30,
+		/datum/attribute/skill/magic/arcane = 20,
+		/datum/attribute/skill/magic/holy = 10,
+		/datum/attribute/skill/misc/athletics = 30,
+		/datum/attribute/skill/misc/climbing = 30,
+		/datum/attribute/skill/misc/medicine = 10,
+		/datum/attribute/skill/misc/reading = 30,
+		/datum/attribute/skill/misc/swimming = 20,
+		)
+
+/datum/rockhill_advclass/templar/noc_spellblade
+	name = "Noccite Warmage"
+	outfit = /datum/outfit/job/roguetown/rockhill_class/templar/noc_spellblade
+	desc = "You are a Noccite Warmage - A devotee of the Holy Church. While other templars don blessed heavy armor and clerical teachings, you chose a different path Wielder of both Blessed Blades and Magycks, you are an Warmage, the Will of the Tutor-God. You swore a sacred covenant, to Protect the Church and it's acolytes. Be a reminder that the night is full of stars and that fear is a blade dulled by knowledge."
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/templar/noc_spellblade
+	rockhill_traits = list(
+		TRAIT_MEDIUMARMOR,
+		TRAIT_ARCYNE,
+		TRAIT_UNCONVERTIBLE,
+		TRAIT_RITUALIST,
+		TRAIT_STEELHEARTED,
+		)
+	maximum_slots = 2
+	rogue_allowed_patrons = list(/datum/patron/divine/noc)
+	rogue_subclass_languages = list("/datum/language/grenzelhoftian")
 
 /datum/outfit/job/roguetown/rockhill_class/thug
 	name = "Thug"
@@ -13191,6 +13269,7 @@
 		TRAIT_SEWING_EXPERT,
 		TRAIT_SURVIVAL_EXPERT,
 		TRAIT_HOMESTEAD_EXPERT,
+		TRAIT_MAGEDEXTERITY,
 		)
 	rogue_subclass_languages = list("/datum/language/elvish", "/datum/language/dwarvish", "/datum/language/celestial", "/datum/language/hellspeak", "/datum/language/orcish", "/datum/language/grenzelhoftian", "/datum/language/otavan", "/datum/language/etruscan", "/datum/language/gronnic", "/datum/language/hammerholdian", "/datum/language/kazengunese", "/datum/language/draconic", "/datum/language/aavnic")
 	rogue_social_rank = 3
@@ -14047,6 +14126,7 @@
 	jobtype = /datum/job/roguetown/wapprentice
 	uniform = /obj/item/clothing/under/roguetown/tights/random
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
+	head = /obj/item/clothing/head/roguetown/roguehood
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	shoes = /obj/item/clothing/shoes/roguetown/gladiator
 	belt = /obj/item/storage/belt/rogue/leather
@@ -14086,6 +14166,7 @@
 	desc = "Your master once saw potential in you, although you are uncertain if they still do, given how rigorous and difficult your studies have been. The path to using magic is a treacherous and untamed one, and you are still decades away from calling yourself even a journeyman in the field. Listen and serve, and someday you will earn your hat."
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/wapprentice/apprentice
 	rockhill_traits = list(
+		TRAIT_ARCYNE,
 		TRAIT_HOMESTEAD_EXPERT,
 		TRAIT_ALCHEMY_EXPERT,
 		TRAIT_MAGEDEXTERITY,
@@ -14289,6 +14370,7 @@
 	suit = /obj/item/clothing/suit/roguetown/shirt/robe/phys
 	head = /obj/item/clothing/head/roguetown/witchhat
 	mask = /obj/item/clothing/head/roguetown/roguehood/black
+	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
 	gloves = /obj/item/clothing/gloves/roguetown/leather/black
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	belt = /obj/item/storage/belt/rogue/leather/black
@@ -14408,7 +14490,7 @@
 	backpack_contents = list(
 		/obj/item/flashlight/flare/torch/lantern/prelit = 1,
 		/obj/item/rope/chain = 1,
-		/obj/item/rogueweapon/huntingknife = 1,
+		/obj/item/rogueweapon/huntingknife/idagger/steel/kris/zizo = 1,
 		/obj/item/rogueweapon/scabbard/sheath = 1,
 		)
 
@@ -14420,7 +14502,7 @@
 		ROGUE_STAT_SPEED = -3,
 		ROGUE_STAT_STRENGTH = 3,
 		ROGUE_STAT_WILLPOWER = 2,
-		/datum/attribute/skill/combat/knives = 30,
+		/datum/attribute/skill/combat/knives = 40,
 		/datum/attribute/skill/combat/maces = 40,
 		/datum/attribute/skill/combat/polearms = 30,
 		/datum/attribute/skill/combat/shields = 40,
@@ -14524,13 +14606,13 @@
 	suit = /obj/item/clothing/suit/roguetown/armor/leather/heavy/coat
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak/brown
 	head = /obj/item/clothing/head/roguetown/helmet/heavy/volfplate/berserker
-	neck = /obj/item/clothing/neck/roguetown/leather
-	gloves = /obj/item/clothing/gloves/roguetown/plate
+	neck = /obj/item/clothing/neck/roguetown/coif/heavypadding
+	gloves = /obj/item/clothing/gloves/roguetown/bandages/pugilist
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
-	belt = /obj/item/storage/belt/rogue/leather
+	belt = /obj/item/storage/belt/rogue/leather/rope/upgraded/dark
 	back = /obj/item/storage/backpack/rogue/satchel
-	l_pocket = /obj/item/storage/hip/headhook
+	r_pocket = /obj/item/rogueweapon/katar
 	backpack_contents = list(
 		/obj/item/rogueweapon/huntingknife/combat = 1,
 		/obj/item/flashlight/flare/torch/lantern/prelit = 1,
@@ -14543,12 +14625,12 @@
 /datum/attribute_holder/sheet/job/rockhill_class/wretch/berserker
 	raw_attribute_list = list(
 		ROGUE_STAT_CONSTITUTION = 2,
-		ROGUE_STAT_INTELLIGENCE = -1,
-		ROGUE_STAT_PERCEPTION = -1,
+		ROGUE_STAT_INTELLIGENCE = -2,
 		ROGUE_STAT_SPEED = 1,
 		ROGUE_STAT_STRENGTH = 3,
 		ROGUE_STAT_WILLPOWER = 1,
 		/datum/attribute/skill/combat/axes = 30,
+		/datum/attribute/skill/combat/knives = 40,
 		/datum/attribute/skill/combat/maces = 30,
 		/datum/attribute/skill/combat/swords = 30,
 		/datum/attribute/skill/combat/unarmed = 30,
@@ -14571,14 +14653,16 @@
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/wretch/berserker
 	rockhill_traits = list(
 		TRAIT_STRONGBITE,
-		TRAIT_CRITICAL_RESISTANCE,
+		TRAIT_IGNOREDAMAGESLOWDOWN,
 		TRAIT_NOPAINSTUN,
+		TRAIT_RAGE,
 		TRAIT_STEELHEARTED,
 		TRAIT_OUTLAW,
 		TRAIT_HERESIARCH,
 		TRAIT_SELF_SUSTENANCE,
 		TRAIT_ZURCH,
 		)
+	maximum_slots = 2
 	rogue_allowed_races = list("/datum/species/human/northern", "/datum/species/human/halfelf", "/datum/species/elf/dark", "/datum/species/elf/wood", "/datum/species/dwarf/mountain", "/datum/species/tieberian", "/datum/species/aasimar", "/datum/species/lizardfolk", "/datum/species/lupian", "/datum/species/tabaxi", "/datum/species/vulpkanin", "/datum/species/akula", "/datum/species/moth", "/datum/species/dracon", "/datum/species/anthromorph", "/datum/species/anthromorphsmall", "/datum/species/demihuman", "/datum/species/halforc", "/datum/species/kobold", "/datum/species/goblinp", "/datum/species/dullahan", "/datum/species/lamia", "/datum/species/dwarf/gnome", "/datum/species/harpy", "/datum/species/arachnid")
 	rogue_stashed_items = list(
 		"Sewing Kit" = /obj/item/repair_kit,
@@ -14641,7 +14725,7 @@
 /datum/rockhill_advclass/wretch/blackoakwyrm
 	name = "Black Oak Pariah"
 	outfit = /datum/outfit/job/roguetown/rockhill_class/wretch/blackoakwyrm
-	desc = "Carrying extreme beliefs not even befit of the Black Oaks, you have decided to secede yourself from the group and everyone else. This land was once great...and now, wave after wave of monsters and outsiders trample your home. Your people were the ones that settled these lands, and the foreign-backed Crown, deceitful and arrogant, has denied your people the rewards they deserve! Your extensive training in the Black Oaks has given you skill in both blades and magycks. A bounty from the crown follows you, as you had already done enough to be officially condemned by the group that was not committed to the cause due to the lure of coin."
+	desc = "Carrying extreme beliefs not even befit of the Black Oaks, you have found yourself seceded from the group. They come in waves. Your people were the ones that settled these lands, and now you find them trampled by monster and outside alike. The foreign-backed Crown, deceitful and arrogant, has denied your people the harvest they so dutifully sowed. Your extensive training in the Black Oaks has given you skill in elven weaponry and an arcane acuity. Whether you fight openly with a blade, or stalk in the trees above with a bow, a bounty from the crown follows, and the condemned scorn of those that were once your comrades."
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/wretch/blackoakwyrm
 	rockhill_traits = list(
 		TRAIT_AZURENATIVE,
@@ -14651,30 +14735,105 @@
 		TRAIT_ARCYNE,
 		TRAIT_WOODWALKER,
 		TRAIT_EXPERT_HUNTER,
+		TRAIT_LONGSTRIDER,
 		TRAIT_STEELHEARTED,
 		TRAIT_OUTLAW,
 		TRAIT_HERESIARCH,
 		TRAIT_SELF_SUSTENANCE,
 		TRAIT_ZURCH,
 		)
-	maximum_slots = 1
+	maximum_slots = 3
 	rogue_allowed_races = list("/datum/species/human/halfelf", "/datum/species/elf/wood", "/datum/species/elf/dark")
 	rogue_stashed_items = list(
 		"Sewing Kit" = /obj/item/repair_kit,
 		"Stashed Funds" = /obj/item/roguecoin/silver/pile/wretchpile,
 		)
 
-/datum/outfit/job/roguetown/rockhill_class/wretch/deserter
-	name = "Disgraced Knight"
+/datum/outfit/job/roguetown/rockhill_class/wretch/deserter/maa
+	name = "Deserter"
 	jobtype = /datum/job/roguetown/wretch
 	uniform = /obj/item/clothing/under/roguetown/chainlegs
-	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
-	suit = /obj/item/clothing/suit/roguetown/armor/brigandine
+	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
+	suit = /obj/item/clothing/suit/roguetown/armor/plate/cuirass
+	cloak = /obj/item/clothing/cloak/stabard/bog
+	head = /obj/item/clothing/head/roguetown/helmet/bascinet/pigface
+	mask = /obj/item/clothing/head/roguetown/roguehood/bogman
+	neck = /obj/item/clothing/neck/roguetown/bevor
+	gloves = /obj/item/clothing/gloves/roguetown/chain
+	wrists = /obj/item/clothing/wrists/roguetown/bracers
+	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/iron
+	belt = /obj/item/storage/belt/rogue/leather
+	back = /obj/item/storage/backpack/rogue/satchel
+	backr = /obj/item/rogueweapon/shield/heater
+	l_pocket = /obj/item/rogueweapon/mace/cudgel
+	r_pocket = /obj/item/rogueweapon/mace/warhammer/steel
+	backpack_contents = list(
+		/obj/item/natural/cloth = 1,
+		/obj/item/rogueweapon/huntingknife/combat/messer = 1,
+		/obj/item/rope/chain = 1,
+		/obj/item/storage/belt/rogue/pouch/coins/poor = 1,
+		/obj/item/flashlight/flare/torch/lantern/prelit = 1,
+		/obj/item/rogueweapon/scabbard/sheath = 1,
+		)
+
+/datum/attribute_holder/sheet/job/rockhill_class/wretch/deserter/maa
+	raw_attribute_list = list(
+		ROGUE_STAT_CONSTITUTION = 2,
+		ROGUE_STAT_INTELLIGENCE = 1,
+		ROGUE_STAT_PERCEPTION = 2,
+		ROGUE_STAT_STRENGTH = 2,
+		ROGUE_STAT_WILLPOWER = 2,
+		/datum/attribute/skill/combat/axes = 40,
+		/datum/attribute/skill/combat/crossbows = 30,
+		/datum/attribute/skill/combat/knives = 30,
+		/datum/attribute/skill/combat/maces = 40,
+		/datum/attribute/skill/combat/polearms = 40,
+		/datum/attribute/skill/combat/shields = 30,
+		/datum/attribute/skill/combat/swords = 40,
+		/datum/attribute/skill/combat/unarmed = 30,
+		/datum/attribute/skill/combat/whipsflails = 30,
+		/datum/attribute/skill/combat/wrestling = 40,
+		/datum/attribute/skill/craft/carpentry = 20,
+		/datum/attribute/skill/craft/masonry = 20,
+		/datum/attribute/skill/labor/lumberjacking = 20,
+		/datum/attribute/skill/misc/athletics = 40,
+		/datum/attribute/skill/misc/climbing = 40,
+		/datum/attribute/skill/misc/medicine = 20,
+		/datum/attribute/skill/misc/reading = 10,
+		/datum/attribute/skill/misc/swimming = 30,
+		/datum/attribute/skill/misc/tracking = 10,
+		)
+
+/datum/rockhill_advclass/wretch/deserter/maa
+	name = "Deserter"
+	outfit = /datum/outfit/job/roguetown/rockhill_class/wretch/deserter/maa
+	desc = "You had your post. You had your duty. Dissatisfied, lacking in morale, or simply thinking yourself better than it. - You decided to walk. Now it follows you everywhere you go."
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/wretch/deserter/maa
+	rockhill_traits = list(
+		TRAIT_MEDIUMARMOR,
+		TRAIT_BOGWALKER,
+		TRAIT_STEELHEARTED,
+		TRAIT_OUTLAW,
+		TRAIT_HERESIARCH,
+		TRAIT_SELF_SUSTENANCE,
+		TRAIT_ZURCH,
+		)
+	rogue_stashed_items = list(
+		"Armor Plates" = /obj/item/repair_kit/metal,
+		)
+
+/datum/outfit/job/roguetown/rockhill_class/wretch/deserter_knight
+	name = "Disgraced Knight"
+	jobtype = /datum/job/roguetown/wretch
+	uniform = /obj/item/clothing/under/roguetown/platelegs
+	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
+	suit = /obj/item/clothing/suit/roguetown/armor/plate/full
+	cloak = /obj/item/clothing/cloak/tabard/black
 	neck = /obj/item/clothing/neck/roguetown/bevor
 	gloves = /obj/item/clothing/gloves/roguetown/plate
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor
-	belt = /obj/item/storage/belt/rogue/leather/steel
+	belt = /obj/item/storage/belt/rogue/leather/steel/tasset
 	back = /obj/item/storage/backpack/rogue/satchel
 	backr = /obj/item/rogueweapon/scabbard/gwstrap
 	l_pocket = /obj/item/storage/belt/rogue/pouch/coins/poor
@@ -14687,9 +14846,10 @@
 		/obj/item/reagent_containers/glass/bottle/alchemical/healthpot = 1,
 		)
 
-/datum/attribute_holder/sheet/job/rockhill_class/wretch/deserter
+/datum/attribute_holder/sheet/job/rockhill_class/wretch/deserter_knight
 	raw_attribute_list = list(
-		ROGUE_STAT_CONSTITUTION = 2,
+		ROGUE_STAT_CONSTITUTION = 3,
+		ROGUE_STAT_PERCEPTION = 2,
 		ROGUE_STAT_STRENGTH = 2,
 		ROGUE_STAT_WILLPOWER = 3,
 		/datum/attribute/skill/combat/axes = 40,
@@ -14701,90 +14861,26 @@
 		/datum/attribute/skill/combat/unarmed = 30,
 		/datum/attribute/skill/combat/whipsflails = 40,
 		/datum/attribute/skill/combat/wrestling = 40,
+		/datum/attribute/skill/labor/butchering = 20,
 		/datum/attribute/skill/misc/athletics = 40,
 		/datum/attribute/skill/misc/climbing = 40,
+		/datum/attribute/skill/misc/hunting = 20,
+		/datum/attribute/skill/misc/medicine = 20,
 		/datum/attribute/skill/misc/reading = 30,
 		/datum/attribute/skill/misc/riding = 40,
 		/datum/attribute/skill/misc/swimming = 40,
 		)
 
-/datum/rockhill_advclass/wretch/deserter
+/datum/rockhill_advclass/wretch/deserter_knight
 	name = "Disgraced Knight"
-	outfit = /datum/outfit/job/roguetown/rockhill_class/wretch/deserter
+	outfit = /datum/outfit/job/roguetown/rockhill_class/wretch/deserter_knight
 	desc = "You were once a venerated and revered knight - now, a traitor who abandoned your liege. You lyve the lyfe of an outlaw, shunned and looked down upon by society."
-	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/wretch/deserter
+	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/wretch/deserter_knight
 	rockhill_traits = list(
 		TRAIT_HEAVYARMOR,
 		TRAIT_EQUESTRIAN,
 		TRAIT_DISGRACED_NOBLE,
-		TRAIT_STEELHEARTED,
-		TRAIT_OUTLAW,
-		TRAIT_HERESIARCH,
-		TRAIT_SELF_SUSTENANCE,
-		TRAIT_ZURCH,
-		)
-	maximum_slots = 2
-	rogue_stashed_items = list(
-		"Armor Plates" = /obj/item/repair_kit/metal,
-		)
-
-/datum/outfit/job/roguetown/rockhill_class/wretch/deserter/maa
-	name = "Fighter"
-	jobtype = /datum/job/roguetown/wretch
-	uniform = /obj/item/clothing/under/roguetown/splintlegs
-	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
-	suit = /obj/item/clothing/suit/roguetown/armor/brigandine
-	cloak = /obj/item/clothing/cloak/stabard/surcoat
-	neck = /obj/item/clothing/neck/roguetown/gorget/steel
-	gloves = /obj/item/clothing/gloves/roguetown/plate/iron
-	wrists = /obj/item/clothing/wrists/roguetown/splintarms
-	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/iron
-	belt = /obj/item/storage/belt/rogue/leather
-	back = /obj/item/storage/backpack/rogue/satchel
-	backr = /obj/item/rogueweapon/shield/iron
-	l_pocket = /obj/item/rogueweapon/mace/cudgel
-	r_pocket = /obj/item/rogueweapon/mace/warhammer
-	backpack_contents = list(
-		/obj/item/natural/cloth = 1,
-		/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1,
-		/obj/item/rope/chain = 1,
-		/obj/item/storage/belt/rogue/pouch/coins/poor = 1,
-		/obj/item/flashlight/flare/torch/lantern/prelit = 1,
-		/obj/item/rogueweapon/scabbard/sheath = 1,
-		)
-
-/datum/attribute_holder/sheet/job/rockhill_class/wretch/deserter/maa
-	raw_attribute_list = list(
-		ROGUE_STAT_CONSTITUTION = 1,
-		ROGUE_STAT_INTELLIGENCE = 1,
-		ROGUE_STAT_PERCEPTION = 1,
-		ROGUE_STAT_STRENGTH = 2,
-		ROGUE_STAT_WILLPOWER = 2,
-		/datum/attribute/skill/combat/axes = 40,
-		/datum/attribute/skill/combat/crossbows = 40,
-		/datum/attribute/skill/combat/knives = 30,
-		/datum/attribute/skill/combat/maces = 40,
-		/datum/attribute/skill/combat/polearms = 40,
-		/datum/attribute/skill/combat/shields = 30,
-		/datum/attribute/skill/combat/swords = 40,
-		/datum/attribute/skill/combat/unarmed = 30,
-		/datum/attribute/skill/combat/whipsflails = 30,
-		/datum/attribute/skill/combat/wrestling = 40,
-		/datum/attribute/skill/misc/athletics = 40,
-		/datum/attribute/skill/misc/climbing = 40,
-		/datum/attribute/skill/misc/reading = 10,
-		/datum/attribute/skill/misc/riding = 30,
-		/datum/attribute/skill/misc/swimming = 30,
-		/datum/attribute/skill/misc/tracking = 10,
-		)
-
-/datum/rockhill_advclass/wretch/deserter/maa
-	name = "Fighter"
-	outfit = /datum/outfit/job/roguetown/rockhill_class/wretch/deserter/maa
-	desc = "It matters not what cause you swing your weapon for, in the end you fight the same way your ancestors and their ancestors did: clad in metal and intimately intertwined with gore and death."
-	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/wretch/deserter/maa
-	rockhill_traits = list(
-		TRAIT_MEDIUMARMOR,
+		TRAIT_BOGWALKER,
 		TRAIT_STEELHEARTED,
 		TRAIT_OUTLAW,
 		TRAIT_HERESIARCH,
@@ -14886,11 +14982,12 @@
 	raw_attribute_list = list(
 		ROGUE_STAT_CONSTITUTION = 2,
 		ROGUE_STAT_STRENGTH = 2,
-		ROGUE_STAT_WILLPOWER = 3,
+		ROGUE_STAT_WILLPOWER = 2,
 		/datum/attribute/skill/combat/axes = 30,
 		/datum/attribute/skill/combat/maces = 30,
 		/datum/attribute/skill/combat/polearms = 30,
 		/datum/attribute/skill/combat/shields = 30,
+		/datum/attribute/skill/combat/staves = 30,
 		/datum/attribute/skill/combat/swords = 30,
 		/datum/attribute/skill/combat/unarmed = 30,
 		/datum/attribute/skill/combat/whipsflails = 30,
@@ -14929,7 +15026,6 @@
 	suit = /obj/item/clothing/suit/roguetown/shirt/robe/monk
 	head = /obj/item/clothing/head/roguetown/headband/monk
 	neck = /obj/item/clothing/neck/roguetown/leather
-	gloves = /obj/item/clothing/gloves/roguetown/bandages/pugilist
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/heavy
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
 	belt = /obj/item/storage/belt/rogue/leather
@@ -14968,7 +15064,7 @@
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/wretch/heretic/monk
 	rockhill_traits = list(
 		TRAIT_RITUALIST,
-		TRAIT_CRITICAL_RESISTANCE,
+		TRAIT_BLOOD_RESISTANCE,
 		TRAIT_STEELHEARTED,
 		TRAIT_OUTLAW,
 		TRAIT_HERESIARCH,
@@ -14984,13 +15080,26 @@
 /datum/outfit/job/roguetown/rockhill_class/wretch/heretic/spy
 	name = "Heretic Spy"
 	jobtype = /datum/job/roguetown/wretch
+	cloak = /obj/item/clothing/cloak/raincloak/mortus
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	belt = /obj/item/storage/belt/rogue/leather
-	l_pocket = /obj/item/rogueweapon/scabbard/sword
-	l_hand = /obj/item/rogueweapon/sword/rapier
+	back = /obj/item/storage/backpack/rogue/satchel
+	l_pocket = /obj/item/rogueweapon/scabbard/sheath
+	r_pocket = /obj/item/rogueweapon/scabbard/sheath
+	r_hand = /obj/item/rogueweapon/huntingknife/idagger/steel/parrying
+	backpack_contents = list(
+		/obj/item/storage/belt/rogue/pouch/coins/poor = 1,
+		/obj/item/lockpickring/mundane = 1,
+		/obj/item/flashlight/flare/torch/lantern/prelit = 1,
+		/obj/item/rope/chain = 1,
+		/obj/item/storage/roguebag = 1,
+		/obj/item/ritechalk = 1,
+		/obj/item/reagent_containers/glass/bottle/alchemical/healthpot = 1,
+		)
 
 /datum/attribute_holder/sheet/job/rockhill_class/wretch/heretic/spy
 	raw_attribute_list = list(
+		ROGUE_STAT_FORTUNE = 1,
 		ROGUE_STAT_INTELLIGENCE = 1,
 		ROGUE_STAT_PERCEPTION = 2,
 		ROGUE_STAT_SPEED = 2,
@@ -15045,7 +15154,6 @@
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/wretch/licker
 	rockhill_traits = list(
 		TRAIT_STEELHEARTED,
-		TRAIT_SILVER_WEAK,
 		TRAIT_OUTLAW,
 		TRAIT_HERESIARCH,
 		TRAIT_SELF_SUSTENANCE,
@@ -15057,6 +15165,8 @@
 /datum/outfit/job/roguetown/rockhill_class/wretch/lunacyembracer
 	name = "Lunacy Embracer"
 	jobtype = /datum/job/roguetown/wretch
+	l_hand = /obj/item/rogueweapon/handclaw/gronn
+	r_hand = /obj/item/rogueweapon/handclaw/gronn
 
 /datum/attribute_holder/sheet/job/rockhill_class/wretch/lunacyembracer
 	raw_attribute_list = list(
@@ -15093,6 +15203,7 @@
 	rockhill_traits = list(
 		TRAIT_NUDIST,
 		TRAIT_CRITICAL_RESISTANCE,
+		TRAIT_BLOOD_RESISTANCE,
 		TRAIT_NOPAINSTUN,
 		TRAIT_DODGEEXPERT,
 		TRAIT_CIVILIZEDBARBARIAN,
@@ -15104,6 +15215,8 @@
 		TRAIT_OUTDOORSMAN,
 		TRAIT_WOODSMAN,
 		TRAIT_WILDERNESSGUIDE,
+		TRAIT_DEATHBYSNUSNU,
+		TRAIT_RAGE,
 		TRAIT_STEELHEARTED,
 		TRAIT_OUTLAW,
 		TRAIT_HERESIARCH,
@@ -15215,7 +15328,9 @@
 		ROGUE_STAT_PERCEPTION = 2,
 		ROGUE_STAT_SPEED = 1,
 		ROGUE_STAT_WILLPOWER = 1,
-		/datum/attribute/skill/combat/polearms = 30,
+		/datum/attribute/skill/combat/arcyne = 40,
+		/datum/attribute/skill/combat/polearms = 20,
+		/datum/attribute/skill/combat/staves = 30,
 		/datum/attribute/skill/combat/unarmed = 30,
 		/datum/attribute/skill/combat/wrestling = 30,
 		/datum/attribute/skill/craft/alchemy = 40,
@@ -15257,51 +15372,51 @@
 	uniform = /obj/item/clothing/under/roguetown/heavy_leather_pants
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 	suit = /obj/item/clothing/suit/roguetown/armor/leather/heavy/coat
-	cloak = /obj/item/clothing/cloak/raincloak/mortus
+	cloak = /obj/item/clothing/cloak/stabard/dungeon
 	head = /obj/item/clothing/head/roguetown/helmet/kettle
 	mask = /obj/item/clothing/mask/rogue/ragmask/black
-	neck = /obj/item/clothing/neck/roguetown/gorget
+	neck = /obj/item/clothing/neck/roguetown/coif/heavypadding
 	gloves = /obj/item/clothing/gloves/roguetown/fingerless_leather
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/heavy
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
-	belt = /obj/item/storage/belt/rogue/leather
-	back = /obj/item/storage/backpack/rogue/satchel
-	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
+	belt = /obj/item/storage/belt/rogue/leather/knifebelt/black/steel
+	back = /obj/item/storage/backpack/rogue/satchel/short
+	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow
 	l_pocket = /obj/item/rogueweapon/scabbard/sword
 	r_pocket = /obj/item/quiver/bolts
 	l_hand = /obj/item/rogueweapon/sword/rapier
-	r_hand = /obj/item/rogueweapon/mace/cudgel
 	backpack_contents = list(
-		/obj/item/storage/belt/rogue/pouch/coins/poor = 1,
 		/obj/item/lockpickring/mundane = 1,
 		/obj/item/flashlight/flare/torch/lantern/prelit = 1,
 		/obj/item/rope/chain = 1,
 		/obj/item/storage/roguebag = 1,
-		/obj/item/ammo_casing/caseless/rogue/bolt/water = 3,
 		/obj/item/reagent_containers/glass/bottle/alchemical/healthpot = 1,
+		/obj/item/rogueweapon/scabbard/sheath = 1,
+		/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1,
 		)
 
 /datum/attribute_holder/sheet/job/rockhill_class/wretch/outlaw
 	raw_attribute_list = list(
+		ROGUE_STAT_INTELLIGENCE = 2,
 		ROGUE_STAT_PERCEPTION = 1,
 		ROGUE_STAT_SPEED = 3,
+		ROGUE_STAT_STRENGTH = -1,
 		ROGUE_STAT_WILLPOWER = 2,
-		/datum/attribute/skill/combat/crossbows = 30,
-		/datum/attribute/skill/combat/knives = 30,
+		/datum/attribute/skill/combat/crossbows = 40,
+		/datum/attribute/skill/combat/knives = 40,
 		/datum/attribute/skill/combat/maces = 20,
 		/datum/attribute/skill/combat/swords = 30,
 		/datum/attribute/skill/combat/unarmed = 30,
 		/datum/attribute/skill/combat/whipsflails = 30,
 		/datum/attribute/skill/combat/wrestling = 30,
-		/datum/attribute/skill/craft/crafting = 20,
 		/datum/attribute/skill/misc/athletics = 40,
-		/datum/attribute/skill/misc/climbing = 60,
-		/datum/attribute/skill/misc/lockpicking = 50,
+		/datum/attribute/skill/misc/climbing = 50,
+		/datum/attribute/skill/misc/lockpicking = 40,
 		/datum/attribute/skill/misc/reading = 10,
-		/datum/attribute/skill/misc/sneaking = 50,
+		/datum/attribute/skill/misc/sneaking = 40,
 		/datum/attribute/skill/misc/stealing = 50,
 		/datum/attribute/skill/misc/swimming = 30,
-		/datum/attribute/skill/misc/tracking = 30,
+		/datum/attribute/skill/misc/tracking = 40,
 		)
 
 /datum/rockhill_advclass/wretch/outlaw
@@ -15311,74 +15426,9 @@
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/wretch/outlaw
 	rockhill_traits = list(
 		TRAIT_DODGEEXPERT,
-		TRAIT_STEELHEARTED,
-		TRAIT_OUTLAW,
-		TRAIT_HERESIARCH,
-		TRAIT_SELF_SUSTENANCE,
-		TRAIT_ZURCH,
-		)
-	rogue_subclass_languages = list("/datum/language/thievescant")
-	rogue_stashed_items = list(
-		"Sewing Kit" = /obj/item/repair_kit,
-		)
-
-/datum/outfit/job/roguetown/rockhill_class/wretch/outlaw/marauder
-	name = "Marauder"
-	jobtype = /datum/job/roguetown/wretch
-	uniform = /obj/item/clothing/under/roguetown/heavy_leather_pants
-	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
-	suit = /obj/item/clothing/suit/roguetown/armor/plate/half/iron
-	cloak = /obj/item/clothing/cloak/stabard/dungeon
-	head = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
-	mask = /obj/item/clothing/mask/rogue/ragmask/black
-	neck = /obj/item/clothing/neck/roguetown/gorget
-	gloves = /obj/item/clothing/gloves/roguetown/angle
-	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/heavy
-	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
-	belt = /obj/item/storage/belt/rogue/leather
-	back = /obj/item/storage/backpack/rogue/satchel
-	backr = /obj/item/rogueweapon/shield/iron
-	r_hand = /obj/item/rogueweapon/mace/cudgel
-	backpack_contents = list(
-		/obj/item/storage/belt/rogue/pouch/coins/poor = 1,
-		/obj/item/flashlight/flare/torch/lantern/prelit = 1,
-		/obj/item/rope/chain = 1,
-		/obj/item/storage/roguebag = 1,
-		/obj/item/reagent_containers/glass/bottle/alchemical/healthpot = 1,
-		)
-
-/datum/attribute_holder/sheet/job/rockhill_class/wretch/outlaw/marauder
-	raw_attribute_list = list(
-		ROGUE_STAT_CONSTITUTION = 2,
-		ROGUE_STAT_INTELLIGENCE = -1,
-		ROGUE_STAT_SPEED = 1,
-		ROGUE_STAT_STRENGTH = 2,
-		ROGUE_STAT_WILLPOWER = 2,
-		/datum/attribute/skill/combat/axes = 30,
-		/datum/attribute/skill/combat/crossbows = 30,
-		/datum/attribute/skill/combat/knives = 20,
-		/datum/attribute/skill/combat/maces = 30,
-		/datum/attribute/skill/combat/polearms = 30,
-		/datum/attribute/skill/combat/shields = 20,
-		/datum/attribute/skill/combat/unarmed = 30,
-		/datum/attribute/skill/combat/wrestling = 40,
-		/datum/attribute/skill/craft/crafting = 20,
-		/datum/attribute/skill/misc/athletics = 40,
-		/datum/attribute/skill/misc/climbing = 60,
-		/datum/attribute/skill/misc/reading = 10,
-		/datum/attribute/skill/misc/sneaking = 40,
-		/datum/attribute/skill/misc/stealing = 40,
-		/datum/attribute/skill/misc/swimming = 30,
-		/datum/attribute/skill/misc/tracking = 40,
-		)
-
-/datum/rockhill_advclass/wretch/outlaw/marauder
-	name = "Marauder"
-	outfit = /datum/outfit/job/roguetown/rockhill_class/wretch/outlaw/marauder
-	desc = "You are a brigand and a pillager - you prefer to get your coins with direct means from unfortunate victims."
-	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/wretch/outlaw/marauder
-	rockhill_traits = list(
 		TRAIT_MEDIUMARMOR,
+		TRAIT_GRAVEROBBER,
+		TRAIT_BOGWALKER,
 		TRAIT_STEELHEARTED,
 		TRAIT_OUTLAW,
 		TRAIT_HERESIARCH,
@@ -15393,23 +15443,23 @@
 /datum/outfit/job/roguetown/rockhill_class/wretch/plaguebearer
 	name = "Malpractitioner"
 	jobtype = /datum/job/roguetown/wretch
-	uniform = /obj/item/clothing/under/roguetown/trou/leather/mourning
+	uniform = /obj/item/clothing/under/roguetown/heavy_leather_pants
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
-	suit = /obj/item/clothing/suit/roguetown/shirt/robe/physician
+	suit = /obj/item/clothing/suit/roguetown/shirt/robe/physician/plaguebearer
 	head = /obj/item/clothing/head/roguetown/physician
-	mask = /obj/item/clothing/mask/rogue/physician
+	mask = /obj/item/clothing/mask/rogue/physician/plaguebearer
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	gloves = /obj/item/clothing/gloves/roguetown/angle
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/heavy
-	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
+	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
 	belt = /obj/item/storage/belt/rogue/leather/black
 	back = /obj/item/storage/backpack/rogue/satchel
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
 	l_pocket = /obj/item/quiver/poisonarrows
-	r_pocket = /obj/item/storage/belt/rogue/pouch/coins/poor
-	r_hand = /obj/item/storage/belt/rogue/surgery_bag/full/physician
+	l_hand = /obj/item/storage/belt/rogue/surgery_bag/full/physician
 	backpack_contents = list(
 		/obj/item/reagent_containers/glass/bottle/rogue/poison = 1,
+		/obj/item/storage/belt/rogue/pouch/coins/poor = 1,
 		/obj/item/reagent_containers/glass/bottle/rogue/stampoison = 1,
 		/obj/item/recipe_book/alchemy = 1,
 		/obj/item/flashlight/flare/torch/lantern/prelit = 1,
@@ -15421,8 +15471,9 @@
 /datum/attribute_holder/sheet/job/rockhill_class/wretch/plaguebearer
 	raw_attribute_list = list(
 		ROGUE_STAT_CONSTITUTION = 2,
-		ROGUE_STAT_INTELLIGENCE = 4,
+		ROGUE_STAT_INTELLIGENCE = 2,
 		ROGUE_STAT_PERCEPTION = 3,
+		ROGUE_STAT_WILLPOWER = 2,
 		/datum/attribute/skill/combat/knives = 20,
 		/datum/attribute/skill/combat/unarmed = 30,
 		/datum/attribute/skill/combat/wrestling = 40,
@@ -15474,14 +15525,13 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced
 	belt = /obj/item/storage/belt/rogue/leather
 	back = /obj/item/storage/backpack/rogue/satchel
-	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
-	l_pocket = /obj/item/quiver/arrows
+	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/longbow
+	l_pocket = /obj/item/quiver/bodkin
 	r_pocket = /obj/item/rogueweapon/scabbard/sheath
 	r_hand = /obj/item/rogueweapon/huntingknife/idagger/steel
 	backpack_contents = list(
 		/obj/item/bait = 1,
 		/obj/item/rogueweapon/huntingknife/combat/messer = 1,
-		/obj/item/rogueweapon/scabbard/sheath = 1,
 		/obj/item/storage/belt/rogue/pouch/coins/poor = 1,
 		/obj/item/flashlight/flare/torch/lantern/prelit = 1,
 		/obj/item/rope/chain = 1,
@@ -15494,26 +15544,24 @@
 		ROGUE_STAT_PERCEPTION = 2,
 		ROGUE_STAT_SPEED = 2,
 		ROGUE_STAT_WILLPOWER = 2,
-		/datum/attribute/skill/combat/axes = 30,
-		/datum/attribute/skill/combat/bows = 40,
-		/datum/attribute/skill/combat/crossbows = 40,
+		/datum/attribute/skill/combat/axes = 20,
+		/datum/attribute/skill/combat/bows = 50,
 		/datum/attribute/skill/combat/knives = 40,
-		/datum/attribute/skill/combat/maces = 30,
-		/datum/attribute/skill/combat/slings = 40,
+		/datum/attribute/skill/combat/maces = 20,
 		/datum/attribute/skill/combat/unarmed = 20,
 		/datum/attribute/skill/combat/wrestling = 20,
-		/datum/attribute/skill/craft/cooking = 10,
-		/datum/attribute/skill/craft/crafting = 20,
+		/datum/attribute/skill/craft/cooking = 20,
+		/datum/attribute/skill/craft/crafting = 30,
 		/datum/attribute/skill/craft/tanning = 20,
 		/datum/attribute/skill/labor/butchering = 40,
 		/datum/attribute/skill/misc/athletics = 40,
 		/datum/attribute/skill/misc/climbing = 40,
-		/datum/attribute/skill/misc/hunting = 20,
-		/datum/attribute/skill/misc/reading = 10,
+		/datum/attribute/skill/misc/hunting = 40,
+		/datum/attribute/skill/misc/reading = 20,
 		/datum/attribute/skill/misc/sneaking = 30,
 		/datum/attribute/skill/misc/stealing = 20,
 		/datum/attribute/skill/misc/swimming = 20,
-		/datum/attribute/skill/misc/tracking = 50,
+		/datum/attribute/skill/misc/tracking = 40,
 		)
 
 /datum/rockhill_advclass/wretch/poacher
@@ -15576,7 +15624,7 @@
 		/datum/attribute/skill/combat/wrestling = 40,
 		/datum/attribute/skill/craft/alchemy = 40,
 		/datum/attribute/skill/craft/crafting = 20,
-		/datum/attribute/skill/craft/engineering = 10,
+		/datum/attribute/skill/craft/engineering = 40,
 		/datum/attribute/skill/labor/farming = 10,
 		/datum/attribute/skill/misc/athletics = 40,
 		/datum/attribute/skill/misc/climbing = 40,
@@ -15592,6 +15640,7 @@
 	rockhill_traits = list(
 		TRAIT_MEDIUMARMOR,
 		TRAIT_ALCHEMY_EXPERT,
+		TRAIT_EXPLOSIVE_SUPPLY,
 		TRAIT_STEELHEARTED,
 		TRAIT_OUTLAW,
 		TRAIT_HERESIARCH,
@@ -15717,6 +15766,7 @@
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill_class/wretch/vigilante
 	rockhill_traits = list(
 		TRAIT_PERFECT_TRACKER,
+		TRAIT_BLOOD_RESISTANCE,
 		TRAIT_STEELHEARTED,
 		TRAIT_OUTLAW,
 		TRAIT_HERESIARCH,

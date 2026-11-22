@@ -28,7 +28,7 @@
 		held_items[ware] = list("NAME" = ware.name, "PRICE" = starting_stock[path_text])
 	update_appearance()
 	if(will_hawk)
-		addtimer(CALLBACK(src, PROC_REF(hawk)), rand(1 MINUTES, 2 MINUTES), TIMER_DELETE_ME)
+		addtimer(CALLBACK(src, PROC_REF(hawk)), rand(rogue_value("vendor_initialize_roll_min"), rogue_value("vendor_initialize_roll_max")), TIMER_DELETE_ME)
 
 /obj/structure/roguemachine/vendor/Destroy()
 	for(var/obj/item/ware as anything in held_items.Copy())
@@ -119,7 +119,7 @@
 					ware_name += "s"
 					break
 		say("[ware_name] for sale! [held_items[ware]["PRICE"]] mammons!")
-	addtimer(CALLBACK(src, PROC_REF(hawk)), rand(1 MINUTES, 2 MINUTES), TIMER_DELETE_ME)
+	addtimer(CALLBACK(src, PROC_REF(hawk)), rand(rogue_value("vendor_hawk_roll_min"), rogue_value("vendor_hawk_roll_max")), TIMER_DELETE_ME)
 
 /obj/structure/roguemachine/vendor/interact(mob/user)
 	if(!ishuman(user))

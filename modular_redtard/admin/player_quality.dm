@@ -4,8 +4,8 @@
 /// the log playerquality.txt, commends.json and rcp.json in data/player_saves/<c>/<ckey>/; data/roundsplayed.json), so
 /// saves brought over from a Ratwood server keep it.
 
-#define ROGUE_PQ_FLOOR -100
-#define ROGUE_PQ_CAP 500
+#define ROGUE_PQ_FLOOR rogue_value("pq_floor")
+#define ROGUE_PQ_CAP rogue_value("pq_cap")
 
 /// A file of the server's own records. Every record of PQ, triumphs and their tables is reached through this proc or
 /// rogue_player_save_path(), so moving them out of data/ is one change here.

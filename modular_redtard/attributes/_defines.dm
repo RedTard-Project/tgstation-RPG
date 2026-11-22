@@ -16,8 +16,8 @@
 
 #define ROGUE_SKILL_MIN 0
 #define ROGUE_SKILL_MAX 60
-#define ROGUE_SKILL_PER_RANK 10
-#define ROGUE_SKILL_DEFAULT_CAP 30
+#define ROGUE_SKILL_PER_RANK rogue_value("skill_per_rank")
+#define ROGUE_SKILL_DEFAULT_CAP rogue_value("skill_default_cap")
 #define ROGUE_SKILL_RANK_MAX 6
 
 #define ROGUE_SKILL_LEVEL_NONE 0
@@ -36,8 +36,8 @@
 #define ROGUE_SKILL_XP_MASTER 3100
 #define ROGUE_SKILL_XP_LEGENDARY 6300
 
-#define ROGUE_SKILL_GOVERNING_POSITIVE 0.5
-#define ROGUE_SKILL_GOVERNING_NEGATIVE 3
+#define ROGUE_SKILL_GOVERNING_POSITIVE rogue_value("skill_governing_positive")
+#define ROGUE_SKILL_GOVERNING_NEGATIVE rogue_value("skill_governing_negative")
 #define ROGUE_SKILL_XP_CATCHUP_MAX 5
 #define ROGUE_SKILL_XP_CATCHUP_RANGE 10
 
@@ -72,13 +72,13 @@
 #define ROGUE_SKILL_DIFFICULTY_HARD "Hard"
 #define ROGUE_SKILL_DIFFICULTY_VERY_HARD "Very Hard"
 
-#define ROGUE_AGE_MIDDLE 40
-#define ROGUE_AGE_OLD 60
+#define ROGUE_AGE_MIDDLE rogue_value("age_middle")
+#define ROGUE_AGE_OLD rogue_value("age_old")
 
-#define ROGUE_SPEED_STEP 0.1
-#define ROGUE_SPEED_FASTEST -0.5
-#define ROGUE_SPEED_FASTEST_UNCAPPED -2
-#define ROGUE_SPEED_SLOWEST 1
+#define ROGUE_SPEED_STEP rogue_value("speed_step")
+#define ROGUE_SPEED_FASTEST rogue_value("speed_fastest")
+#define ROGUE_SPEED_FASTEST_UNCAPPED rogue_value("speed_fastest_uncapped")
+#define ROGUE_SPEED_SLOWEST rogue_value("speed_slowest")
 
 #define TRAIT_ROGUE_NO_SKILLS "rogue_no_skills"
 #define TRAIT_ROGUE_NO_EXPERIENCE "rogue_no_experience"

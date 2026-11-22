@@ -10,7 +10,7 @@
 #define RICE_WASH_TIME rogue_value("survival_rice_wash_time")
 #define RICE_KNEAD_TIME rogue_value("survival_rice_knead_time")
 /// Share of the cook's intelligence washing and kneading rice teaches (Ratwood adjust_experience(STAINT * 0.8)).
-#define RICE_EXPERIENCE 0.8
+#define RICE_EXPERIENCE rogue_value("rice_experience")
 
 /// Ratwood attackby() of one food: on a table, a tool or an ingredient in the hand turns the food into another - dough and
 /// butter into butterdough, a rolling pin into flatdough, a knife into crackers. The most specific combo of a food wins.

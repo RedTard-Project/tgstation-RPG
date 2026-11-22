@@ -21,17 +21,17 @@
 
 #define TRAIT_BASHDOORS "bashdoors"
 
-#define ROCKHILL_SUNLIGHT_RANGE 3
-#define ROCKHILL_SUNLIGHT_POWER 1
+#define ROCKHILL_SUNLIGHT_RANGE rogue_value("rockhill_sunlight_range")
+#define ROCKHILL_SUNLIGHT_POWER rogue_value("rockhill_sunlight_power")
 
 #define ROCKHILL_GATE_WIDTH 3
 
 #define COOLDOWN_ROCKHILL_TRAVEL "rockhill_travel"
-#define ROCKHILL_PEEK_TIME (1 SECONDS)
+#define ROCKHILL_PEEK_TIME rogue_value("rockhill_peek_time")
 #define ROCKHILL_OAR /obj/item/rogueweapon/mace/oar
-#define ROCKHILL_TRAP_DAMAGE 50
-#define ROCKHILL_TRAP_WALL_RANGE 7
-#define ROCKHILL_HATCH_CYCLE (4 SECONDS)
+#define ROCKHILL_TRAP_DAMAGE rogue_value("rockhill_trap_damage")
+#define ROCKHILL_TRAP_WALL_RANGE rogue_value("rockhill_trap_wall_range")
+#define ROCKHILL_HATCH_CYCLE rogue_value("rockhill_hatch_cycle")
 #define ROCKHILL_DAY_RATE 50
 #define ROCKHILL_DAY_START 288001
 #define ROCKHILL_DAY_TRANSITION (1 HOURS / ROCKHILL_DAY_RATE)
@@ -53,11 +53,11 @@
 #define ROCKHILL_CALENDAR_DEFAULT_COLOR "#7c5b10"
 #define ROCKHILL_CALENDAR_EVENTS_FILE "modular_redtard/rockhill/strings/calendar_events.json"
 #define ROCKHILL_TIME_TIPS_FILE "modular_redtard/rockhill/strings/timechangetips.txt"
-#define ROCKHILL_DUNGEON_TRAVEL_TIME (3 SECONDS)
-#define ROCKHILL_DUNGEON_MARKERS_PER_FIRE 4
-#define ROCKHILL_DUNGEON_ENTRY_SPACING 70
-#define ROCKHILL_DUNGEON_ENTRY_CHANCE 10
-#define ROCKHILL_DUNGEON_REQUIRED_ENTRIES 2
+#define ROCKHILL_DUNGEON_TRAVEL_TIME rogue_value("rockhill_dungeon_travel_time")
+#define ROCKHILL_DUNGEON_MARKERS_PER_FIRE rogue_value("rockhill_dungeon_markers_per_fire")
+#define ROCKHILL_DUNGEON_ENTRY_SPACING rogue_value("rockhill_dungeon_entry_spacing")
+#define ROCKHILL_DUNGEON_ENTRY_CHANCE rogue_value("rockhill_dungeon_entry_chance")
+#define ROCKHILL_DUNGEON_REQUIRED_ENTRIES rogue_value("rockhill_dungeon_required_entries")
 #define ROCKHILL_SECRET_DOOR_RANGE 1
 #define ROCKHILL_SECRET_DOOR_SLIDE (1 SECONDS)
 #define ROCKHILL_SECRET_DOOR_SHIFT -22
@@ -68,11 +68,11 @@
 #define COMSIG_GLOB_ROCKHILL_TIME_OF_DAY "!rockhill_time_of_day"
 
 #define COMSIG_KB_LIVING_ROGUE_LOOK_LOCK_DOWN "keybinding_living_rogue_look_lock_down"
-#define ROCKHILL_WEATHER_MIN_STRENGTH 0.3
-#define ROCKHILL_WEATHER_MAX_DELAY (10 MINUTES)
-#define ROCKHILL_LIGHTNING_RANGE 7
-#define ROCKHILL_LIGHTNING_MIN_DELAY (5 SECONDS)
-#define ROCKHILL_LIGHTNING_MAX_DELAY (40 SECONDS)
+#define ROCKHILL_WEATHER_MIN_STRENGTH rogue_value("rockhill_weather_min_strength")
+#define ROCKHILL_WEATHER_MAX_DELAY rogue_value("rockhill_weather_max_delay")
+#define ROCKHILL_LIGHTNING_RANGE rogue_value("rockhill_lightning_range")
+#define ROCKHILL_LIGHTNING_MIN_DELAY rogue_value("rockhill_lightning_min_delay")
+#define ROCKHILL_LIGHTNING_MAX_DELAY rogue_value("rockhill_lightning_max_delay")
 #define ROCKHILL_RIPPLE_RANGE 6
 #define ROCKHILL_RIPPLE_MIN_DELAY (2 SECONDS)
 #define ROCKHILL_RIPPLE_MAX_DELAY (6 SECONDS)
@@ -80,25 +80,25 @@
 #define ROCKHILL_RIPPLE_MAX 3
 #define ROCKHILL_OVERLAY_LIGHT_PLATE "Overlight plate"
 #define ZTRAIT_ROCKHILL_WEATHER "Rockhill Weather"
-#define ROCKHILL_KNEESTINGER_DAMAGE 30
+#define ROCKHILL_KNEESTINGER_DAMAGE rogue_value("rockhill_kneestinger_damage")
 #define ROCKHILL_KNEESTINGER_RESHOCK (30 SECONDS)
 #define ROCKHILL_KNEESTINGER_IDLE (0.2 SECONDS)
 #define ROCKHILL_KNEESTINGER_STATES 3
 #define ROCKHILL_KNEESTINGER_SHIFT_X 4
 #define ROCKHILL_KNEESTINGER_SHIFT_Y 5
-#define ROCKHILL_KNEESTINGER_THROW 5
+#define ROCKHILL_KNEESTINGER_THROW rogue_value("rockhill_kneestinger_throw")
 #ifndef TRAIT_KNEESTINGER_IMMUNITY
 #define TRAIT_KNEESTINGER_IMMUNITY "Blessing of Dendor"
 #endif
 #define ROCKHILL_ADVCLASS_UNLIMITED -1
-#define ROCKHILL_ADVCLASS_CHOICE_TIME (2 MINUTES)
+#define ROCKHILL_ADVCLASS_CHOICE_TIME rogue_value("rockhill_advclass_choice_time")
 #define ROCKHILL_ADVCLASS_TRAIT "rockhill_class_select"
-#define ROCKHILL_FIRE_SPENT_MIN 0.1
-#define ROCKHILL_FIRE_SPENT_MAX 0.3
-#define ROCKHILL_FIRE_FULL_MARGIN (5 SECONDS)
-#define ROCKHILL_FIRE_CROSS_STACKS 1
-#define ROCKHILL_FIRE_TOPPLE_PER_STRENGTH 8
-#define ROCKHILL_FIRE_RAISE_TIME (3 SECONDS)
+#define ROCKHILL_FIRE_SPENT_MIN rogue_value("rockhill_fire_spent_min")
+#define ROCKHILL_FIRE_SPENT_MAX rogue_value("rockhill_fire_spent_max")
+#define ROCKHILL_FIRE_FULL_MARGIN rogue_value("rockhill_fire_full_margin")
+#define ROCKHILL_FIRE_CROSS_STACKS rogue_value("rockhill_fire_cross_stacks")
+#define ROCKHILL_FIRE_TOPPLE_PER_STRENGTH rogue_value("rockhill_fire_topple_per_strength")
+#define ROCKHILL_FIRE_RAISE_TIME rogue_value("rockhill_fire_raise_time")
 #define ROCKHILL_FIRE_LIGHT_SOUND 'modular_redtard/rockhill/sound/items/firelight.ogg'
 #define ROCKHILL_FIRE_SNUFF_SOUND 'modular_redtard/rockhill/sound/items/firesnuff.ogg'
 #define ROCKHILL_FIRE_KICK_SOUND 'modular_redtard/rockhill/sound/combat/hits/blunt/woodblunt (1).ogg'
@@ -115,30 +115,30 @@
 #define ROCKHILL_VEIN_CINNABAR "cinnabar"
 #define ROCKHILL_VEIN_GEM "gem"
 #define ROCKHILL_VEIN_MOTE "elementalmote"
-#define ROCKHILL_ROCK_INTEGRITY 1000
+#define ROCKHILL_ROCK_INTEGRITY rogue_value("rockhill_rock_integrity")
 #define ROCKHILL_MINE_SWING_TIME CLICK_CD_MELEE
-#define ROCKHILL_MINE_STAMINA 5
-#define ROCKHILL_MINE_XP_PER_INT 0.2
-#define ROCKHILL_MINE_EXTRA_STONE_CHANCE 30
-#define ROCKHILL_MINE_ORE_CHANCE 33
-#define ROCKHILL_MINE_EXTRA_ROCK_CHANCE 23
-#define ROCKHILL_MINE_LUCK_MULTIPLIER 2
+#define ROCKHILL_MINE_STAMINA rogue_value("rockhill_mine_stamina")
+#define ROCKHILL_MINE_XP_PER_INT rogue_value("rockhill_mine_xp_per_int")
+#define ROCKHILL_MINE_EXTRA_STONE_CHANCE rogue_value("rockhill_mine_extra_stone_chance")
+#define ROCKHILL_MINE_ORE_CHANCE rogue_value("rockhill_mine_ore_chance")
+#define ROCKHILL_MINE_EXTRA_ROCK_CHANCE rogue_value("rockhill_mine_extra_rock_chance")
+#define ROCKHILL_MINE_LUCK_MULTIPLIER rogue_value("rockhill_mine_luck_multiplier")
 #define ROCKHILL_MINED_FLOOR /turf/open/floor/rogue/naturalstone
 #define ROCKHILL_MINE_SOUNDS list('modular_redtard/rockhill/sound/combat/hits/pick/genpick (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/pick/genpick (2).ogg')
-#define ROCKHILL_BOULDER_CLIMB_TIME (3 SECONDS)
+#define ROCKHILL_BOULDER_CLIMB_TIME rogue_value("rockhill_boulder_climb_time")
 #define ROCKHILL_WINDOW_LOCK 100
 #define ROCKHILL_WINDOW_LOCK_REINFORCED 150
-#define ROCKHILL_WINDOW_KNIFE_DAMAGE 10
-#define ROCKHILL_WINDOW_CRASH_RANGE 14
+#define ROCKHILL_WINDOW_KNIFE_DAMAGE rogue_value("rockhill_window_knife_damage")
+#define ROCKHILL_WINDOW_CRASH_RANGE rogue_value("rockhill_window_crash_range")
 #define ROCKHILL_WINDOW_PICK_GOOD_SOUND pick('modular_redtard/rockhill/sound/doors/pickgood1.ogg', 'modular_redtard/rockhill/sound/doors/pickgood2.ogg')
 #define ROCKHILL_WINDOW_PICK_BAD_SOUND 'modular_redtard/rockhill/sound/doors/pickbad.ogg'
-#define ROCKHILL_TRAP_MIN_CRAFTING 1
+#define ROCKHILL_TRAP_MIN_CRAFTING rogue_value("rockhill_trap_min_crafting")
 #define ROCKHILL_TRAP_DISARMED_ALPHA 255
 #define ROCKHILL_TRAP_FADE (1 SECONDS)
-#define ROCKHILL_MANTRAP_BADLUCK 5
+#define ROCKHILL_MANTRAP_BADLUCK rogue_value("rockhill_mantrap_badluck")
 #define ROCKHILL_MANTRAP_HIDDEN_ALPHA 90
-#define ROCKHILL_MANTRAP_HIDDEN_PER_CRAFTING 5
-#define ROCKHILL_MANTRAP_TOOL_DAMAGE 20
+#define ROCKHILL_MANTRAP_HIDDEN_PER_CRAFTING rogue_value("rockhill_mantrap_hidden_per_crafting")
+#define ROCKHILL_MANTRAP_TOOL_DAMAGE rogue_value("rockhill_mantrap_tool_damage")
 #define ROCKHILL_RAIN_TEMPERATURE_SHIFT -8
 #define ROCKHILL_STORM_TEMPERATURE_SHIFT -15
 #define ROCKHILL_SNOW_TEMPERATURE_SHIFT -25
@@ -146,11 +146,11 @@
 #define ROCKHILL_HEAT_TEMPERATURE_SHIFT 20
 #define ROCKHILL_RAIN_WET_STACKS 1
 #define ROCKHILL_STORM_WET_STACKS 3
-#define ROCKHILL_RAIN_WASH_CHANCE 10
-#define ROCKHILL_LIGHTNING_BADLUCK 4
-#define ROCKHILL_LIGHTNING_DAMAGE 1
-#define ROCKHILL_LIGHTNING_IMMOBILIZE (0.5 SECONDS)
-#define ROCKHILL_LIGHTNING_CLICK_DELAY (6 SECONDS)
+#define ROCKHILL_RAIN_WASH_CHANCE rogue_value("rockhill_rain_wash_chance")
+#define ROCKHILL_LIGHTNING_BADLUCK rogue_value("rockhill_lightning_badluck")
+#define ROCKHILL_LIGHTNING_DAMAGE rogue_value("rockhill_lightning_damage")
+#define ROCKHILL_LIGHTNING_IMMOBILIZE rogue_value("rockhill_lightning_immobilize")
+#define ROCKHILL_LIGHTNING_CLICK_DELAY rogue_value("rockhill_lightning_click_delay")
 #define ROCKHILL_FIREFLIES_MOOD 5
 #define ROCKHILL_FIREFLIES_MOOD_TIME (10 MINUTES)
 

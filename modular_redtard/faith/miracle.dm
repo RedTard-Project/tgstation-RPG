@@ -37,10 +37,42 @@
 	var/miracle_gods = ""
 	/// The cast went wrong after it began: no devotion is spent and the cooldown comes back.
 	var/miracle_failed = FALSE
+	/// Stamina a cast takes (Ratwood releasedrain). A miracle pays it flat: the skill, the mind and the armour of the caster do
+	/// not sway it (Ratwood calculate_fatigue_drain() lets a miracle off all of them).
+	var/stamina_cost = 0
+	/// The name the numbers of this miracle go by in faith.txt: miracle_<value_key>_devotion, _stamina, _cooldown and _range,
+	/// and with uses_charges also _charges, _charge_time and _empty_time. New() reads them into the vars above; a miracle with
+	/// no value_key keeps what its type says. No number of balance is written in the code of a miracle, it is in the numbers.
+	var/value_key
+	/// Charges instead of a cooldown (Ratwood charge_type "charges"). A cast spends one; one comes back every charge_time, and
+	/// with none left the lot comes back after empty_charge_time. Such a miracle has no cooldown_time. How many, and the times,
+	/// are the numbers of its value_key; max_charges is 0 until New() reads it.
+	var/uses_charges = FALSE
+	var/max_charges = 0
+	var/charges = 0
+	var/charge_time = 0
+	var/empty_charge_time = 0
+	var/charge_timer
 
 /datum/action/cooldown/spell/pointed/rogue_miracle/New(Target)
+	if(value_key)
+		devotion_cost = rogue_value("miracle_[value_key]_devotion")
+		stamina_cost = rogue_value("miracle_[value_key]_stamina")
+		cooldown_time = rogue_value("miracle_[value_key]_cooldown")
+		cast_range = rogue_value("miracle_[value_key]_range")
+		if(uses_charges)
+			max_charges = rogue_value("miracle_[value_key]_charges")
+			charge_time = rogue_value("miracle_[value_key]_charge_time")
+			empty_charge_time = rogue_value("miracle_[value_key]_empty_time")
 	. = ..()
-	desc = "[desc]<br>Tier [miracle_tier]. Devotion: [devotion_cost].[needs_holy_symbol ? " Needs a holy symbol." : ""]"
+	charges = max_charges
+	desc = "[desc]<br>Tier [miracle_tier]. Devotion: [devotion_cost].[stamina_cost ? " Stamina: [stamina_cost]." : ""][max_charges ? " [max_charges] charges: one is regained in [DisplayTimeText(charge_time)], all of them in [DisplayTimeText(empty_charge_time)] when none are left." : ""][needs_holy_symbol ? " Needs a holy symbol." : ""]"
+
+/datum/action/cooldown/spell/pointed/rogue_miracle/Destroy()
+	if(charge_timer)
+		deltimer(charge_timer)
+		charge_timer = null
+	return ..()
 
 /datum/action/cooldown/spell/pointed/rogue_miracle/can_cast_spell(feedback = TRUE)
 	. = ..()
@@ -67,6 +99,10 @@
 		if(feedback)
 			to_chat(owner, span_warning("I need a holy symbol, worn or in hand, to call upon [src]."))
 		return FALSE
+	if(max_charges && charges <= 0)
+		if(feedback)
+			to_chat(owner, span_warning("[src] is exhausted and must recover before it can be used again."))
+		return FALSE
 	return TRUE
 
 /datum/action/cooldown/spell/pointed/rogue_miracle/is_valid_target(atom/cast_on)
@@ -83,10 +119,42 @@
 	var/mob/living/carbon/human/devotee = owner
 	if(miracle_failed)
 		reset_spell_cooldown()
-	else if(devotion_cost && istype(devotee) && devotee.rogue_devotion)
-		devotee.rogue_devotion.adjust(-devotion_cost)
-		to_chat(devotee, "<font color='purple'>I lost [devotion_cost] devotion.</font>")
+	else
+		if(devotion_cost && istype(devotee) && devotee.rogue_devotion)
+			devotee.rogue_devotion.adjust(-devotion_cost)
+			to_chat(devotee, "<font color='purple'>I lost [devotion_cost] devotion.</font>")
+		if(stamina_cost && istype(devotee))
+			devotee.adjust_stamina_loss(stamina_cost)
+		if(max_charges && owner)
+			spend_charge()
 	return ..()
+
+/// A charge goes. The first spent starts the slow regain; the last one starts the long wait for the whole lot.
+/datum/action/cooldown/spell/pointed/rogue_miracle/proc/spend_charge()
+	charges = max(charges - 1, 0)
+	if(charges <= 0)
+		if(charge_timer)
+			deltimer(charge_timer)
+		charge_timer = addtimer(CALLBACK(src, PROC_REF(refill_charges)), empty_charge_time, TIMER_STOPPABLE)
+		to_chat(owner, span_warning("[src] is spent. It will take [DisplayTimeText(empty_charge_time)] to recover."))
+	else if(!charge_timer)
+		charge_timer = addtimer(CALLBACK(src, PROC_REF(regain_charge)), charge_time, TIMER_STOPPABLE)
+		to_chat(owner, span_notice("[src]: [charges] of [max_charges] charges left."))
+	build_all_button_icons()
+
+/datum/action/cooldown/spell/pointed/rogue_miracle/proc/regain_charge()
+	charge_timer = null
+	charges = min(charges + 1, max_charges)
+	if(charges < max_charges)
+		charge_timer = addtimer(CALLBACK(src, PROC_REF(regain_charge)), charge_time, TIMER_STOPPABLE)
+	build_all_button_icons()
+
+/datum/action/cooldown/spell/pointed/rogue_miracle/proc/refill_charges()
+	charge_timer = null
+	charges = max_charges
+	if(owner)
+		to_chat(owner, span_notice("[src] has recovered."))
+	build_all_button_icons()
 
 /// The cast went wrong after it began (Ratwood revert_cast()): nothing is spent. Returns FALSE for cast() to return.
 /datum/action/cooldown/spell/pointed/rogue_miracle/proc/fail(message)
@@ -100,6 +168,14 @@
 	var/mob/living/carbon/human/devotee = owner
 	if(devotion_cost && istype(devotee) && devotee.rogue_devotion)
 		devotee.rogue_devotion.adjust(devotion_cost)
+	if(stamina_cost && istype(devotee))
+		devotee.adjust_stamina_loss(-stamina_cost)
+	if(max_charges)
+		charges = min(charges + 1, max_charges)
+		if(charges >= max_charges && charge_timer)
+			deltimer(charge_timer)
+			charge_timer = null
+		build_all_button_icons()
 	reset_spell_cooldown()
 
 /// Ratwood's Psydonite: the devout of the weeping god turn most miracles away.
@@ -139,6 +215,11 @@
 		basket += by_name[key]
 	return basket
 
+/// The devotion one cast of a miracle type costs: its value if it has a value_key, else what the type says.
+/proc/rogue_miracle_devotion(datum/action/cooldown/spell/pointed/rogue_miracle/miracle_type)
+	var/key = initial(miracle_type.value_key)
+	return key ? rogue_value("miracle_[key]_devotion") : initial(miracle_type.devotion_cost)
+
 /// What the basket says of a miracle type: name, tier, devotion, forks and gods.
 /proc/rogue_miracle_summary(datum/action/cooldown/spell/pointed/rogue_miracle/miracle_type)
-	return "[initial(miracle_type.name)] (tier [initial(miracle_type.miracle_tier)], [initial(miracle_type.devotion_cost)] devotion; [initial(miracle_type.miracle_forks)]: [initial(miracle_type.miracle_gods)])"
+	return "[initial(miracle_type.name)] (tier [initial(miracle_type.miracle_tier)], [rogue_miracle_devotion(miracle_type)] devotion; [initial(miracle_type.miracle_forks)]: [initial(miracle_type.miracle_gods)])"

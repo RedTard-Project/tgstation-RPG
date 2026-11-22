@@ -22,22 +22,22 @@
 #define BEE_DISEASE_FOULBROOD "foulbrood"
 #define BEE_DISEASE_MOTHS "wax_moths"
 /// Ratwood's bounds of a queen's and her bees' traits (the clamp() of create_swarm() and transfer_genetics()).
-#define BEE_TRAIT_MIN 0.5
-#define BEE_TRAIT_MAX 2
+#define BEE_TRAIT_MIN rogue_value("bee_trait_min")
+#define BEE_TRAIT_MAX rogue_value("bee_trait_max")
 /// Ratwood's queens come in one of these golds (create_new_queen()).
 #define BEE_QUEEN_COLORS list("#FFD700", "#FFA500", "#FFFF00", "#DAA520")
 /// Disease progress that adds a step of severity, and the severity that kills the colony (Ratwood process_disease()).
-#define BEE_DISEASE_PROGRESS 100
-#define BEE_DISEASE_FATAL 100
+#define BEE_DISEASE_PROGRESS rogue_value("bee_disease_progress")
+#define BEE_DISEASE_FATAL rogue_value("bee_disease_fatal")
 /// Chance in percent a bee killed by mites is seen to fall (Ratwood prob(10)).
-#define BEE_MITE_FALL_CHANCE 10
+#define BEE_MITE_FALL_CHANCE rogue_value("bee_mite_fall_chance")
 /// Swarm build-up out of 100 past which the bees grow restless, the chance they show it, and the build-up that releases the swarm.
-#define BEE_SWARM_RESTLESS 80
-#define BEE_SWARM_RESTLESS_CHANCE 10
-#define BEE_SWARM_READY 100
+#define BEE_SWARM_RESTLESS rogue_value("bee_swarm_restless")
+#define BEE_SWARM_RESTLESS_CHANCE rogue_value("bee_swarm_restless_chance")
+#define BEE_SWARM_READY rogue_value("bee_swarm_ready")
 /// Most bees drawn over a swarm (Ratwood min(bee_spawn, 10)), and how far apart the bees of a group are drawn (rand(12, -12)).
-#define BEE_SWARM_DRAWN 10
-#define BEE_SPREAD 12
+#define BEE_SWARM_DRAWN rogue_value("bee_swarm_drawn")
+#define BEE_SPREAD rogue_value("bee_spread")
 /// Ratwood's medicinal honey of poppies (apiary.dm), not in the port yet.
 #define BEE_POPPY_HONEY "/obj/item/reagent_containers/food/snacks/rogue/honey/healing"
 

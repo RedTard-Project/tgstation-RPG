@@ -3,7 +3,7 @@
 
 /obj/item/storage/belt/rogue/pouch/coins/poor/PopulateContents()
 	new /obj/item/roguecoin/copper/pile(src)
-	if(prob(50))
+	if(prob(rogue_value("poor_populatecontents_chance")))
 		new /obj/item/roguecoin/copper/pile(src)
 
 /obj/item/storage/belt/rogue/pouch/coins/mid/PopulateContents()
@@ -12,16 +12,16 @@
 
 /obj/item/storage/belt/rogue/pouch/coins/rich/PopulateContents()
 	new /obj/item/roguecoin/silver/pile(src)
-	if(prob(50))
+	if(prob(rogue_value("rich_populatecontents_chance")))
 		new /obj/item/roguecoin/silver/pile(src)
 	new /obj/item/roguecoin/gold/pile(src)
-	if(prob(50))
+	if(prob(rogue_value("rich_populatecontents_chance_2")))
 		new /obj/item/roguecoin/gold/pile(src)
 
 /obj/item/storage/belt/rogue/pouch/coins/veryrich/PopulateContents()
 	new /obj/item/roguecoin/gold/pile(src)
 	new /obj/item/roguecoin/gold/pile(src)
-	if(prob(50))
+	if(prob(rogue_value("veryrich_populatecontents_chance")))
 		new /obj/item/roguecoin/gold/pile(src)
 
 /// A virtue's purse of zenarii.

@@ -1545,7 +1545,8 @@
 	rockhill_dulling = "bashchop"
 	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (2).ogg')
 	rockhill_break_sounds = list('modular_redtard/rockhill/sound/combat/hits/onwood/destroyfurniture.ogg')
-	rockhill_debris = list(/obj/item/grown/log/tree/small = 0, /obj/item/roguegear = 0)
+	rockhill_debris = list(/obj/item/grown/log/tree/small = 1)
+	rockhill_static_debris = list(/obj/item/grown/log/tree/small = 0, /obj/item/roguegear/bronze = 0)
 	layer = TABLE_LAYER
 
 /obj/structure/table/wood/rockhill/finer
@@ -1693,6 +1694,20 @@
 	desc = ""
 	icon = 'modular_redtard/rockhill/icons/obj/structures.dmi'
 	icon_state = "fancy_table_blue"
+	density = TRUE
+	max_integrity = 70
+	resistance_flags = FLAMMABLE
+	rockhill_dulling = "bashchop"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/onwood/woodimpact (2).ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/combat/hits/onwood/destroyfurniture.ogg')
+	rockhill_debris = list(/obj/item/grown/log/tree/small = 1)
+	layer = TABLE_LAYER
+
+/obj/structure/table/wood/rockhill/wood/fancy/green
+	name = "fancy table"
+	desc = ""
+	icon = 'modular_redtard/rockhill/icons/obj/structures.dmi'
+	icon_state = "fancy_table_green"
 	density = TRUE
 	max_integrity = 70
 	resistance_flags = FLAMMABLE

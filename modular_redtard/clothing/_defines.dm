@@ -61,7 +61,7 @@
 /// Percent chance per step that something which can be spat out slips out of the mouth (clothing/mouth.dm).
 #define ROGUE_MOUTH_SLIP_CHANCE rogue_value("mouth_slip_chance")
 /// Ratwood burns a smoke down by one every object tick of two seconds (clothing/smoking.dm).
-#define ROGUE_SMOKE_TICK_SECONDS 2
+#define ROGUE_SMOKE_TICK_SECONDS rogue_value("smoke_tick_seconds")
 
 /// State of one sleeve or trouser leg (clothing/sleeve_status.dm; Ratwood SLEEVE_*, the porter maps them): whole, torn off, rolled
 /// up, or one that can be neither torn nor rolled.

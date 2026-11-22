@@ -1636,8 +1636,8 @@
 	rockhill_music_dawn = null
 	rockhill_music_dusk = null
 	rockhill_music_night = null
-	rockhill_loop_day = list("modular_redtard/rockhill/sound/area/ambience/riverday (1).ogg", "modular_redtard/rockhill/sound/area/ambience/riverday (2).ogg", "modular_redtard/rockhill/sound/area/ambience/riverday (3).ogg")
-	rockhill_loop_night = list("modular_redtard/rockhill/sound/area/ambience/rivernight (1).ogg", "modular_redtard/rockhill/sound/area/ambience/rivernight (2).ogg", "modular_redtard/rockhill/sound/area/ambience/rivernight (3).ogg")
+	rockhill_loop_day = list("modular_redtard/rockhill/sound/area/ambience/cavewater (1).ogg", "modular_redtard/rockhill/sound/area/ambience/cavewater (2).ogg", "modular_redtard/rockhill/sound/area/ambience/cavewater (3).ogg")
+	rockhill_loop_night = list("modular_redtard/rockhill/sound/area/ambience/cavewater (1).ogg", "modular_redtard/rockhill/sound/area/ambience/cavewater (2).ogg", "modular_redtard/rockhill/sound/area/ambience/cavewater (3).ogg")
 	rockhill_oneshot_day = list("modular_redtard/rockhill/sound/area/ambience/noises/cave (1).ogg", "modular_redtard/rockhill/sound/area/ambience/noises/cave (2).ogg", "modular_redtard/rockhill/sound/area/ambience/noises/cave (3).ogg")
 	rockhill_oneshot_night = list("modular_redtard/rockhill/sound/area/ambience/noises/cave (1).ogg", "modular_redtard/rockhill/sound/area/ambience/noises/cave (2).ogg", "modular_redtard/rockhill/sound/area/ambience/noises/cave (3).ogg")
 

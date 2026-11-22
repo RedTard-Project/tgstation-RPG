@@ -12,14 +12,14 @@
 /// Ship size (Ratwood TRADE_SHIP_DEFAULT_TONNAGE, TONNAGE_VARIANCE, TONNAGE_SCALE_SPAN, TONNAGE_SCALE_CAP): a ship's cargo and
 /// the trade it hopes for grow with its tonnage over the default, up to twice.
 #define ROGUE_SHIP_DEFAULT_TONNAGE 100
-#define ROGUE_SHIP_TONNAGE_VARIANCE 0.3
-#define ROGUE_SHIP_TONNAGE_SCALE_SPAN 700
-#define ROGUE_SHIP_TONNAGE_SCALE_CAP 2
+#define ROGUE_SHIP_TONNAGE_VARIANCE rogue_value("ship_tonnage_variance")
+#define ROGUE_SHIP_TONNAGE_SCALE_SPAN rogue_value("ship_tonnage_scale_span")
+#define ROGUE_SHIP_TONNAGE_SCALE_CAP rogue_value("ship_tonnage_scale_cap")
 /// Optional cargo lines a ship carries besides the ones it always does (Ratwood TRADE_SHIP_BULK_LINES_MIN/MAX).
-#define ROGUE_SHIP_BULK_LINES_MIN 2
-#define ROGUE_SHIP_BULK_LINES_MAX 5
+#define ROGUE_SHIP_BULK_LINES_MIN rogue_value("ship_bulk_lines_min")
+#define ROGUE_SHIP_BULK_LINES_MAX rogue_value("ship_bulk_lines_max")
 /// A ship's offered price swings by up to a tenth either way (Ratwood build_bulk_line() jitter).
-#define ROGUE_SHIP_PRICE_JITTER 0.1
+#define ROGUE_SHIP_PRICE_JITTER rogue_value("ship_price_jitter")
 
 /// Keys of a ship's cargo line and of a standing order's mix entry.
 #define ROGUE_LINE_GOOD "good"

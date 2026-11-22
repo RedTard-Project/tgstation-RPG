@@ -772,10 +772,111 @@
 /datum/anvil_recipe/armor/decorated/belt
 	name = "Plated Belt, Gold"
 	category = "Armor"
+	display_category = "Armor (Belts)"
 	req_bar = /obj/item/ingot/gold
 	created_item = /obj/item/storage/belt/rogue/leather/plaquegold
 	craftdiff = 3
 	appro_skill = /datum/attribute/skill/craft/armorsmithing
+
+/datum/anvil_recipe/armor/decorated/gilded_chestplate
+	name = "Fencer Cuirass, Decorated (+1 Steel Cuirass, +1 Steel, +2 Silk)"
+	category = "Armor"
+	display_category = "Armor (Chestpieces)"
+	req_bar = /obj/item/ingot/gold
+	created_item = /obj/item/clothing/suit/roguetown/armor/plate/half/fencer/decorated
+	craftdiff = 3
+	appro_skill = /datum/attribute/skill/craft/armorsmithing
+	additional_items = list(/obj/item/clothing/suit/roguetown/armor/plate/half, /obj/item/ingot/steel, /obj/item/natural/silk, /obj/item/natural/silk)
+
+/datum/anvil_recipe/armor/decorated/gilded_chestplatefluted
+	name = "Fencer Cuirass, Decorated (+1 Fencer's Cuirass)"
+	category = "Armor"
+	display_category = "Armor (Chestpieces)"
+	req_bar = /obj/item/ingot/gold
+	created_item = /obj/item/clothing/suit/roguetown/armor/plate/half/fencer/decorated
+	craftdiff = 3
+	appro_skill = /datum/attribute/skill/craft/armorsmithing
+	additional_items = list(/obj/item/clothing/suit/roguetown/armor/plate/half/fencer)
+
+/datum/anvil_recipe/armor/decorated/gilded_cuirass
+	name = "Fluted Cuirass, Decorated (+1 Steel Cuirass, +1 Steel)"
+	category = "Armor"
+	display_category = "Armor (Chestpieces)"
+	req_bar = /obj/item/ingot/gold
+	created_item = /obj/item/clothing/suit/roguetown/armor/plate/half/fluted/decorated
+	craftdiff = 3
+	appro_skill = /datum/attribute/skill/craft/armorsmithing
+	additional_items = list(/obj/item/clothing/suit/roguetown/armor/plate/half, /obj/item/ingot/steel)
+
+/datum/anvil_recipe/armor/decorated/gilded_cuirassfluted
+	name = "Fluted Cuirass, Decorated (+1 Fluted Cuirass)"
+	category = "Armor"
+	display_category = "Armor (Chestpieces)"
+	req_bar = /obj/item/ingot/gold
+	created_item = /obj/item/clothing/suit/roguetown/armor/plate/half/fluted/decorated
+	craftdiff = 3
+	appro_skill = /datum/attribute/skill/craft/armorsmithing
+	additional_items = list(/obj/item/clothing/suit/roguetown/armor/plate/half/fluted)
+
+/datum/anvil_recipe/armor/decorated/gilded_fullplate
+	name = "Fluted Plate Armor, Decorated (+1 Steel Plate Armor, +1 Steel)"
+	category = "Armor"
+	display_category = "Armor (Chestpieces)"
+	req_bar = /obj/item/ingot/gold
+	created_item = /obj/item/clothing/suit/roguetown/armor/plate/full/fluted/decorated
+	craftdiff = 3
+	appro_skill = /datum/attribute/skill/craft/armorsmithing
+	additional_items = list(/obj/item/clothing/suit/roguetown/armor/plate/full, /obj/item/ingot/steel)
+
+/datum/anvil_recipe/armor/decorated/gilded_fullplatefluted
+	name = "Fluted Plate Armor, Decorated (+1 Fluted Plate Armor)"
+	category = "Armor"
+	display_category = "Armor (Chestpieces)"
+	req_bar = /obj/item/ingot/gold
+	created_item = /obj/item/clothing/suit/roguetown/armor/plate/full/fluted/decorated
+	craftdiff = 3
+	appro_skill = /datum/attribute/skill/craft/armorsmithing
+	additional_items = list(/obj/item/clothing/suit/roguetown/armor/plate/full/fluted)
+
+/datum/anvil_recipe/armor/decorated/gilded_halfplate
+	name = "Fluted Halfplate, Decorated (+1 Steel Halfplate, +1 Steel)"
+	category = "Armor"
+	display_category = "Armor (Chestpieces)"
+	req_bar = /obj/item/ingot/gold
+	created_item = /obj/item/clothing/suit/roguetown/armor/plate/fluted/decorated
+	craftdiff = 3
+	appro_skill = /datum/attribute/skill/craft/armorsmithing
+	additional_items = list(/obj/item/clothing/suit/roguetown/armor/plate, /obj/item/ingot/steel)
+
+/datum/anvil_recipe/armor/decorated/gilded_halfplatefluted
+	name = "Fluted Halfplate, Decorated (+1 Fluted Halfplate)"
+	category = "Armor"
+	display_category = "Armor (Chestpieces)"
+	req_bar = /obj/item/ingot/gold
+	created_item = /obj/item/clothing/suit/roguetown/armor/plate/fluted/decorated
+	craftdiff = 3
+	appro_skill = /datum/attribute/skill/craft/armorsmithing
+	additional_items = list(/obj/item/clothing/suit/roguetown/armor/plate/fluted)
+
+/datum/anvil_recipe/armor/decorated/gilded_knighthelm
+	name = "Knight's Helmet, Decorated (+1 Steel Knight's Helmet, +1 Silk)"
+	category = "Armor"
+	display_category = "Armor (Helmets)"
+	req_bar = /obj/item/ingot/gold
+	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/knight/gilded
+	craftdiff = 3
+	appro_skill = /datum/attribute/skill/craft/armorsmithing
+	additional_items = list(/obj/item/clothing/head/roguetown/helmet/heavy/knight, /obj/item/natural/silk)
+
+/datum/anvil_recipe/armor/decorated/gilded_sallet
+	name = "Sallet, Decorated (+1 Steel Sallet, +1 Silk)"
+	category = "Armor"
+	display_category = "Armor (Helmets)"
+	req_bar = /obj/item/ingot/gold
+	created_item = /obj/item/clothing/head/roguetown/helmet/sallet/visored/gilded
+	craftdiff = 3
+	appro_skill = /datum/attribute/skill/craft/armorsmithing
+	additional_items = list(/obj/item/clothing/head/roguetown/helmet/sallet, /obj/item/natural/silk)
 
 /datum/anvil_recipe/armor/decorated/mask
 	name = "Mask, Gold"
@@ -1524,6 +1625,26 @@
 	craftdiff = 2
 	appro_skill = /datum/attribute/skill/craft/armorsmithing
 
+/datum/anvil_recipe/armor/iron/maskmaille
+	name = "Maille Mask, Iron"
+	category = "Armor"
+	display_category = "Armor (Masks)"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/mask/rogue/facemask/maille
+	req_blade = /obj/item/blade/iron_plate
+	craftdiff = 2
+	appro_skill = /datum/attribute/skill/craft/armorsmithing
+
+/datum/anvil_recipe/armor/iron/maskmaillefluted
+	name = "Fluted Maille Mask, Iron"
+	category = "Armor"
+	display_category = "Armor (Masks)"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/mask/rogue/facemask/maille/fluted
+	req_blade = /obj/item/blade/iron_plate
+	craftdiff = 2
+	appro_skill = /datum/attribute/skill/craft/armorsmithing
+
 /datum/anvil_recipe/armor/iron/plategauntlets
 	name = "Plate Gauntlets, Iron"
 	category = "Armor"
@@ -1641,6 +1762,33 @@
 	craftdiff = 2
 	appro_skill = /datum/attribute/skill/craft/armorsmithing
 
+/datum/anvil_recipe/armor/mask_rogue_facemask_xylixmask
+	name = "xylixian mask"
+	category = "Armor"
+	display_category = "Armor (Masks)"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/mask/rogue/facemask/xylixmask
+	craftdiff = 2
+	appro_skill = /datum/attribute/skill/craft/armorsmithing
+
+/datum/anvil_recipe/armor/mask_rogue_spectacles_sglasses
+	name = "smokey onyxa spectacles"
+	category = "Armor"
+	display_category = "Armor (Masks)"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/mask/rogue/spectacles/sglasses
+	craftdiff = 2
+	appro_skill = /datum/attribute/skill/craft/armorsmithing
+
+/datum/anvil_recipe/armor/mask_rogue_spectacles_thin
+	name = "thin-lensed spectacles"
+	category = "Armor"
+	display_category = "Armor (Masks)"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/mask/rogue/spectacles/thin
+	craftdiff = 2
+	appro_skill = /datum/attribute/skill/craft/armorsmithing
+
 /datum/anvil_recipe/armor/silver/belt
 	name = "Plated Belt, Silver"
 	category = "Armor"
@@ -1666,6 +1814,17 @@
 	display_category = "Armor (Helmets)"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/astratahelm
+	req_blade = /obj/item/blade/steel_plate
+	craftdiff = 3
+	appro_skill = /datum/attribute/skill/craft/armorsmithing
+	additional_items = list(/obj/item/ingot/steel)
+
+/datum/anvil_recipe/armor/steel/aventailbascinet
+	name = "Bascinet, Aventailed, Steel (+1 Steel)"
+	category = "Armor"
+	display_category = "Armor (Helmets)"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/head/roguetown/helmet/bascinet/aventail
 	req_blade = /obj/item/blade/steel_plate
 	craftdiff = 3
 	appro_skill = /datum/attribute/skill/craft/armorsmithing
@@ -1922,6 +2081,17 @@
 	appro_skill = /datum/attribute/skill/craft/armorsmithing
 	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel)
 
+/datum/anvil_recipe/armor/steel/frogmouthgreatplume
+	name = "Froggemund Helmet With Greatplume, Steel (+2 Steel)"
+	category = "Armor"
+	display_category = "Armor (Helmets)"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/frogmouth/greatplume
+	req_blade = /obj/item/blade/steel_plate
+	craftdiff = 3
+	appro_skill = /datum/attribute/skill/craft/armorsmithing
+	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel)
+
 /datum/anvil_recipe/armor/steel/fullchaincoif
 	name = "Full Chain Coif, Steel (+1 steel)"
 	category = "Armor"
@@ -2009,6 +2179,17 @@
 	appro_skill = /datum/attribute/skill/craft/armorsmithing
 	additional_items = list(/obj/item/ingot/steel)
 
+/datum/anvil_recipe/armor/steel/heavyaventailbascinet
+	name = "Visored Bascinet, Aventailed, Steel (+2 Steel, +1 Cured Leather)"
+	category = "Armor"
+	display_category = "Armor (Helmets)"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/aventail
+	req_blade = /obj/item/blade/steel_plate
+	craftdiff = 3
+	appro_skill = /datum/attribute/skill/craft/armorsmithing
+	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel, /obj/item/natural/hide/cured)
+
 /datum/anvil_recipe/armor/steel/helmetarmet
 	name = "Armet, Steel (+1 Steel)"
 	category = "Armor"
@@ -2026,6 +2207,38 @@
 	display_category = "Armor (Helmets)"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/knight/armet/snouted
+	req_blade = /obj/item/blade/steel_plate
+	craftdiff = 3
+	appro_skill = /datum/attribute/skill/craft/armorsmithing
+	additional_items = list(/obj/item/ingot/steel)
+
+/datum/anvil_recipe/armor/steel/helmetbarbute
+	name = "Barbute, Steel"
+	category = "Armor"
+	display_category = "Armor (Helmets)"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/barbute
+	req_blade = /obj/item/blade/steel_plate
+	craftdiff = 3
+	appro_skill = /datum/attribute/skill/craft/armorsmithing
+
+/datum/anvil_recipe/armor/steel/helmetbarbutedunk
+	name = "Barbute, Great, Steel (+1 Steel, +1 Cured Leather)"
+	category = "Armor"
+	display_category = "Armor (Helmets)"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/barbute/great
+	req_blade = /obj/item/blade/steel_plate
+	craftdiff = 3
+	appro_skill = /datum/attribute/skill/craft/armorsmithing
+	additional_items = list(/obj/item/ingot/steel, /obj/item/natural/hide/cured)
+
+/datum/anvil_recipe/armor/steel/helmetbarbutevisor
+	name = "Barbute, Visored, Steel (+1 Steel)"
+	category = "Armor"
+	display_category = "Armor (Helmets)"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/barbute/visor
 	req_blade = /obj/item/blade/steel_plate
 	craftdiff = 3
 	appro_skill = /datum/attribute/skill/craft/armorsmithing
@@ -2074,6 +2287,17 @@
 	appro_skill = /datum/attribute/skill/craft/armorsmithing
 	additional_items = list(/obj/item/ingot/steel)
 
+/datum/anvil_recipe/armor/steel/helmetknightarmetgreatplume
+	name = "Knight's Greatplumed Armet, Steel (+1 Steel)"
+	category = "Armor"
+	display_category = "Armor (Helmets)"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/knight/greatplume
+	req_blade = /obj/item/blade/steel_plate
+	craftdiff = 3
+	appro_skill = /datum/attribute/skill/craft/armorsmithing
+	additional_items = list(/obj/item/ingot/steel)
+
 /datum/anvil_recipe/armor/steel/helmetnasal
 	name = "Nasal Helmet, Steel"
 	category = "Armor"
@@ -2083,6 +2307,17 @@
 	req_blade = /obj/item/blade/steel_plate
 	craftdiff = 3
 	appro_skill = /datum/attribute/skill/craft/armorsmithing
+
+/datum/anvil_recipe/armor/steel/helmetowl
+	name = "Strigidae Armet, Steel (+1 Steel)"
+	category = "Armor"
+	display_category = "Armor (Helmets)"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/head/roguetown/helmet/heavy/knight/armet/owl
+	req_blade = /obj/item/blade/steel_plate
+	craftdiff = 3
+	appro_skill = /datum/attribute/skill/craft/armorsmithing
+	additional_items = list(/obj/item/ingot/steel)
 
 /datum/anvil_recipe/armor/steel/helmetpig
 	name = "Pigface Helmet, Steel (+1 Steel)"
@@ -2222,6 +2457,26 @@
 	craftdiff = 3
 	appro_skill = /datum/attribute/skill/craft/armorsmithing
 
+/datum/anvil_recipe/armor/steel/maillemask
+	name = "Maille Mask, Steel"
+	category = "Armor"
+	display_category = "Armor (Masks)"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/mask/rogue/facemask/steel/maille
+	req_blade = /obj/item/blade/steel_plate
+	craftdiff = 3
+	appro_skill = /datum/attribute/skill/craft/armorsmithing
+
+/datum/anvil_recipe/armor/steel/maillemaskfluted
+	name = "Fluted Maille Mask, Steel"
+	category = "Armor"
+	display_category = "Armor (Masks)"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/mask/rogue/facemask/steel/maille/fluted
+	req_blade = /obj/item/blade/steel_plate
+	craftdiff = 3
+	appro_skill = /datum/attribute/skill/craft/armorsmithing
+
 /datum/anvil_recipe/armor/steel/mask
 	name = "Mask, Steel"
 	category = "Armor"
@@ -2327,6 +2582,17 @@
 	appro_skill = /datum/attribute/skill/craft/armorsmithing
 	additional_items = list(/obj/item/ingot/steel)
 
+/datum/anvil_recipe/armor/steel/saventail
+	name = "Aventail, Steel (+1 Steel)"
+	category = "Armor"
+	display_category = "Armor (Neck)"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/clothing/neck/roguetown/gorget/aventail
+	req_blade = /obj/item/blade/steel_plate
+	craftdiff = 3
+	appro_skill = /datum/attribute/skill/craft/armorsmithing
+	additional_items = list(/obj/item/ingot/steel)
+
 /datum/anvil_recipe/armor/steel/savoyard
 	name = "Savoyard Helmet, Steel (+1 Steel)"
 	category = "Armor"
@@ -2412,6 +2678,15 @@
 	req_blade = /obj/item/blade/steel_plate
 	craftdiff = 3
 	appro_skill = /datum/attribute/skill/craft/armorsmithing
+
+/datum/anvil_recipe/armor/studdedbikini
+	name = "Studded Leather Corslet (+ Leather Corslet)"
+	category = "Armor"
+	display_category = "Armor (Chestpieces)"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/clothing/suit/roguetown/armor/leather/studded/bikini
+	appro_skill = /datum/attribute/skill/craft/armorsmithing
+	additional_items = list(/obj/item/clothing/suit/roguetown/armor/leather)
 
 /datum/anvil_recipe/armor/studdedhood
 	name = "Studded Leather Hood"
@@ -2724,6 +2999,13 @@
 	req_bar = /obj/item/ingot/bronze
 	created_item = /obj/item/reagent_containers/glass/bowl/bronze
 
+/datum/anvil_recipe/tools/bronze/chisel
+	name = "Chisel, Bronze"
+	category = "Utilities"
+	req_bar = /obj/item/ingot/bronze
+	created_item = /obj/item/rogueweapon/chisel/bronze
+	craftdiff = 1
+
 /datum/anvil_recipe/tools/bronze/fork
 	name = "Fork, Bronze (x2)"
 	category = "Utilities"
@@ -2740,6 +3022,22 @@
 	created_item = /obj/item/reagent_containers/glass/cup/bronzegob
 	createditem_num = 2
 	craftdiff = 1
+
+/datum/anvil_recipe/tools/bronze/hammer
+	name = "Hammer, Bronze (+1 Stick)"
+	category = "Tools"
+	req_bar = /obj/item/ingot/bronze
+	created_item = /obj/item/rogueweapon/hammer/bronze
+	craftdiff = 1
+	additional_items = list(/obj/item/grown/log/tree/stick)
+
+/datum/anvil_recipe/tools/bronze/handsaw
+	name = "Handsaw, Bronze (+1 Stick)"
+	category = "Utilities"
+	req_bar = /obj/item/ingot/bronze
+	created_item = /obj/item/rogueweapon/handsaw/bronze
+	craftdiff = 1
+	additional_items = list(/obj/item/grown/log/tree/stick)
 
 /datum/anvil_recipe/tools/bronze/pan
 	name = "Frypan, Bronze"
@@ -2771,6 +3069,22 @@
 	display_category = "Tools (Cookware)"
 	req_bar = /obj/item/ingot/bronze
 	created_item = /obj/item/reagent_containers/glass/bucket/pot/bronze
+
+/datum/anvil_recipe/tools/bronze/shovel
+	name = "Shovel, Bronze (+2 Sticks)"
+	category = "Tools"
+	req_bar = /obj/item/ingot/bronze
+	created_item = /obj/item/rogueweapon/shovel/bronze
+	craftdiff = 1
+	additional_items = list(/obj/item/grown/log/tree/stick, /obj/item/grown/log/tree/stick)
+
+/datum/anvil_recipe/tools/bronze/spade
+	name = "Spade, Bronze (+1 Sticks)"
+	category = "Tools"
+	req_bar = /obj/item/ingot/bronze
+	created_item = /obj/item/rogueweapon/shovel/bronze/spade
+	craftdiff = 1
+	additional_items = list(/obj/item/grown/log/tree/stick)
 
 /datum/anvil_recipe/tools/bronze/spoon
 	name = "Spoon, Bronze (x2)"
@@ -2992,11 +3306,11 @@
 	additional_items = list(/obj/item/grown/log/tree/stick)
 
 /datum/anvil_recipe/tools/decrepit/tongs
-	name = "Tongs, Decrepit"
+	name = "Tongs, Ancient"
 	category = "Tools"
 	display_category = "Tools (Smithing & Workshop)"
 	req_bar = /obj/item/ingot/decrepit
-	created_item = /obj/item/rogueweapon/tongs/ancient/decrepit
+	created_item = /obj/item/rogueweapon/tongs/ancient
 	craftdiff = 1
 
 /datum/anvil_recipe/tools/gold/cups
@@ -5384,6 +5698,17 @@
 	craftdiff = 2
 	appro_skill = /datum/attribute/skill/craft/weaponsmithing
 	additional_items = list(/obj/item/ingot/iron)
+
+/datum/anvil_recipe/weapons/iron/nodachi
+	name = "Western Nodachi, Iron (+2 Iron)"
+	category = "Weapons"
+	display_category = "Weapons (Swords)"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/rogueweapon/greatsword/nodachi/iron
+	req_blade = /obj/item/blade/iron_sword
+	craftdiff = 2
+	appro_skill = /datum/attribute/skill/craft/weaponsmithing
+	additional_items = list(/obj/item/ingot/iron, /obj/item/ingot/iron)
 
 /datum/anvil_recipe/weapons/iron/peasantwarflail
 	name = "Greatflail, Iron (+1 Iron, +2 Small Log)"

@@ -26,16 +26,16 @@
 #define FISH_CAGE "cage"
 #define FISH_ABYSSOR "abyssor"
 /// Ratwood luck bonus to rare fish and treasure: per point of fortune over the middling, up to five points, then per point.
-#define FISH_LUCK_FIRST_STEPS 5
-#define FISH_LUCK_FIRST_STEP 0.05
-#define FISH_LUCK_LATER_STEP 0.01
+#define FISH_LUCK_FIRST_STEPS rogue_value("fish_luck_first_steps")
+#define FISH_LUCK_FIRST_STEP rogue_value("fish_luck_first_step")
+#define FISH_LUCK_LATER_STEP rogue_value("fish_luck_later_step")
 /// Ratwood TRAIT_CAUTIOUS_FISHER: more rare fish and treasure, and thrice as much less danger.
-#define FISH_CAUTIOUS_BONUS 0.2
-#define FISH_CAUTIOUS_DANGER 3
+#define FISH_CAUTIOUS_BONUS rogue_value("fish_cautious_bonus")
+#define FISH_CAUTIOUS_DANGER rogue_value("fish_cautious_danger")
 /// Ratwood Abyssor's anglers: danger, treasure and rare fish.
-#define FISH_ABYSSOR_DANGER 1.1
-#define FISH_ABYSSOR_TREASURE 0.9
-#define FISH_ABYSSOR_RARE 1.25
+#define FISH_ABYSSOR_DANGER rogue_value("fish_abyssor_danger")
+#define FISH_ABYSSOR_TREASURE rogue_value("fish_abyssor_treasure")
+#define FISH_ABYSSOR_RARE rogue_value("fish_abyssor_rare")
 #define FISH_CAST_SOUND 'modular_redtard/rockhill/sound/items/fishing_plouf.ogg'
 #define FISH_OUT_SOUND 'modular_redtard/survival/sound/fish_out.ogg'
 #define FISH_JUMPSCARES list('modular_redtard/rockhill/sound/misc/jumpscare (1).ogg', 'modular_redtard/rockhill/sound/misc/jumpscare (2).ogg', 'modular_redtard/rockhill/sound/misc/jumpscare (3).ogg', 'modular_redtard/rockhill/sound/misc/jumpscare (4).ogg')

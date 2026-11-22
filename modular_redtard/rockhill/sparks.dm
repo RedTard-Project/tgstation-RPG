@@ -3,7 +3,7 @@
 // Elsewhere a spark is TG's. Things that catch from a spark: the fires and torches here, grass and trees (rockhill/flora.dm).
 
 /// A flint strikes again a second after the last strike (Ratwood flintcd + 10).
-#define ROCKHILL_FLINT_COOLDOWN (1 SECONDS)
+#define ROCKHILL_FLINT_COOLDOWN rogue_value("rockhill_flint_cooldown")
 /// Ratwood sound/items/flint.ogg (the porter copies it, extra_sounds).
 #define ROCKHILL_FLINT_SOUND 'modular_redtard/rockhill/sound/items/flint.ogg'
 

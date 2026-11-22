@@ -129,8 +129,8 @@
 	fire_stacks = 2
 
 /// Ratwood /obj/projectile/earthenchunk of the colossus: a slow lump of earth. Ratwood's "magic" armor flag has no TG
-/// counterpart; ENERGY, as for the deep one devout's bolts. Ratwood's chance that the chunk breaks into elemental crawlers is
-/// left out: the crawlers are not ported.
+/// counterpart; ENERGY, as for the deep one devout's bolts. Now and then the chunk breaks apart where it hits into earthen
+/// crawlers of the colossus's side (B12b; the crawler is in pve/mobs.dm).
 /obj/projectile/rogue_pve/earth_chunk
 	name = "elemental chunk"
 	icon = ROGUE_PVE_NATURAL_ICON
@@ -140,6 +140,26 @@
 	range = 10
 	speed = 0.25
 	hitsound = ROGUE_PVE_SOUND_STONE_HIT
+
+/obj/projectile/rogue_pve/earth_chunk/on_hit(atom/target, blocked = 0, pierce_hit)
+	. = ..()
+	if(pierce_hit || !prob(rogue_value("pve_earth_chunk_split_chance")))
+		return
+	var/turf/spot = get_turf(src)
+	if(!spot)
+		return
+	var/list/spots = list()
+	for(var/turf/open/near in RANGE_TURFS(1, spot))
+		if(!near.is_blocked_turf(exclude_mobs = TRUE))
+			spots += near
+	if(!length(spots))
+		return
+	spot.visible_message(span_notice("[src] breaks apart, scattering minor elementals about!"))
+	var/mob/living/thrower = isliving(firer) ? firer : null
+	for(var/i in 1 to rogue_value("pve_earth_chunk_crawlers"))
+		var/mob/living/crawler = new /mob/living/simple_animal/hostile/retaliate/rogue/elemental/crawler(pick(spots))
+		if(thrower)
+			crawler.faction = thrower.faction.Copy()
 
 /// Ratwood /obj/projectile/bullet/spider of the mire lurker: a glob of web that holds its target, leaves it open to blows
 /// and spins a thin web where it lands.

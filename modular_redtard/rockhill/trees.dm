@@ -77,7 +77,7 @@
 		to_chat(user, span_warning("I can't climb here."))
 		return TRUE
 	user.visible_message(span_warning("[user] starts to climb [src]."), span_warning("I start to climb [src]..."))
-	if(do_after(user, 3 SECONDS, src))
+	if(do_after(user, rogue_value("newtree_attack_hand_time"), src))
 		user.zMove(target = target, z_move_flags = ZMOVE_CHECK_PULLEDBY | ZMOVE_ALLOW_BUCKLED | ZMOVE_INCLUDE_PULLED)
 	return TRUE
 

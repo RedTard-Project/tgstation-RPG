@@ -89,7 +89,7 @@ GLOBAL_LIST_EMPTY(rockhill_gates)
 	victim.emote("scream")
 	part?.force_wound_upwards(/datum/wound/blunt/bone/severe)
 	victim.apply_damage(90, BRUTE, zone)
-	victim.Paralyze(8 SECONDS)
+	victim.Paralyze(rogue_value("gate_crush_paralyze"))
 
 /obj/structure/rockhill/gate_filler
 	name = ""

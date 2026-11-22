@@ -1,0 +1,115 @@
+# Magic (magic/, block M1): mana, the price, charge and experience of spells, staves and tomes, and the numbers of the basket's spells (spell_<type>_<tunable>, block M2).
+# Mechanics numbers: name = value, described by the # lines right above it; times are in deciseconds. The build compiles this file in, so its numbers are the defaults; a file of the same name in config/redtard_private/mechanics/values/ is read instead when present.
+
+# --- From the code of modular_redtard (code_numbers.py, list m1)
+
+# Mana a person's pool can never pass (Vibelin CARBON_BASE_MANA_CAPACITY).
+magic_mana_capacity = 10
+
+# Soft cap of a person's mana before the Arcyne skill: refills stop there and anything above bleeds away (Vibelin BASE_CARBON_MANA_SOFTCAP).
+magic_mana_softcap = 10
+
+# Soft cap added by every rank of the Arcyne skill, counting at least one rank (Vibelin get_softcap()).
+magic_mana_softcap_per_rank = 10
+
+# Mana a pool starts with (Vibelin's starting amount of a mana pool).
+magic_mana_start = 10
+
+# Mana a magic user regains every second up to the soft cap. Vibelin has no single number: the leylines share their refill among all magic users; an estimate for the owner to set.
+magic_mana_regen = 10
+
+# How slowly mana above the soft cap bleeds away: every second the excess over this divisor is lost, at least one (Vibelin BASE_CARBON_MANA_EXPONENTIAL_DIVISOR).
+magic_mana_overflow_divisor = 10
+
+# Share of a spell's price taken off by every rank of its skill (Vibelin get_adjusted_cost()).
+magic_cost_per_skill_rank = 10
+
+# Share of a spell's price taken off by every point of its characteristic above the middle, added below it (Vibelin get_adjusted_cost()).
+magic_cost_per_stat_point = 10
+
+# Share of a spell's charge taken off by every rank of its skill (Vibelin get_adjusted_charge_time()).
+magic_charge_per_skill_rank = 10
+
+# Share of a spell's charge taken off by every point of its characteristic above the middle, added below it (Vibelin get_adjusted_charge_time()).
+magic_charge_per_stat_point = 10
+
+# Shortest charge of a spell that has one (Vibelin get_adjusted_charge_time()).
+magic_charge_min = 10
+
+# Longest a spell may be held charging before it is dropped (Vibelin start_casting() spell_timeout).
+magic_charge_timeout = 10
+
+# Factor of the charge under Leyline's Clarity (Ratwood TRAIT_LEYLINE_HASTE).
+magic_leyline_haste = 10
+
+# Factor of the price and the cooldown of an offensive spell cast with a weapon in hand (Ratwood weapon_cast_penalized).
+magic_weapon_penalty = 10
+
+# Experience of a cast: the characteristic plus the price times this, halved (Vibelin experience_modifier).
+magic_experience_modifier = 10
+
+# The same for a projectile spell, which earns more when its bolt strikes (Vibelin projectile experience_modifier).
+magic_experience_modifier_projectile = 10
+
+# Share of the price that a bolt striking the living teaches once more (Vibelin on_cast_hit()).
+magic_experience_hit_share = 10
+
+# Learned rank of the skill from which casting teaches nothing more (Vibelin experience_max_skill, Expert).
+magic_experience_rank_cap = 10
+
+# Tiles an arcing bolt flies past the spot it was aimed at.
+magic_arc_extra_range = 10
+
+# Share of a spell's price a lesser staff or tome gives back (Ratwood IMPLEMENT_REFUND_LESSER).
+magic_implement_refund_lesser = 10
+
+# Share of a spell's price a greater staff or tome gives back (Ratwood IMPLEMENT_REFUND_GREATER).
+magic_implement_refund_greater = 10
+
+# Share of a spell's price a grand staff or tome gives back (Ratwood IMPLEMENT_REFUND_GRAND).
+magic_implement_refund_grand = 10
+
+# Time over which a staff or tome gives the share back (Ratwood residual focus).
+magic_residual_focus_duration = 10
+
+# Time before a staff or tome takes the colour of another spell (Ratwood IMPLEMENT_ATTUNE_COOLDOWN).
+magic_implement_attune_cooldown = 10
+
+# Arcyne Bolt: mana (Vibelin spell_cost).
+spell_projectile_arcyne_bolt_cost = 10
+
+# Arcyne Bolt: cooldown (Vibelin cooldown_time).
+spell_projectile_arcyne_bolt_cooldown = 10
+
+# Arcyne Bolt: charge (Vibelin charge_time).
+spell_projectile_arcyne_bolt_charge = 10
+
+# Arcyne Bolt: slowdown while charging (Vibelin charge_slowdown).
+spell_projectile_arcyne_bolt_slowdown = 10
+
+# Arcyne Bolt: damage of a bolt (Vibelin /obj/projectile/magic/arcyne_bolt damage).
+spell_projectile_arcyne_bolt_damage = 10
+
+# Arcyne Bolt: deciseconds a tile of the bolt (Vibelin projectile speed).
+spell_projectile_arcyne_bolt_tile_time = 10
+
+# Arcyne Bolt: reach in tiles (Vibelin cast_range).
+spell_projectile_arcyne_bolt_range = 10
+
+# Smoke Burst: mana (Vibelin spell_cost).
+spell_projectile_smoke_burst_cost = 10
+
+# Smoke Burst: cooldown (Vibelin cooldown_time).
+spell_projectile_smoke_burst_cooldown = 10
+
+# Smoke Burst: charge (Vibelin charge_time).
+spell_projectile_smoke_burst_charge = 10
+
+# Smoke Burst: slowdown while charging (Vibelin CHARGING_SLOWDOWN_SMALL).
+spell_projectile_smoke_burst_slowdown = 10
+
+# Smoke Burst: deciseconds a tile of the ball (Vibelin projectile speed).
+spell_projectile_smoke_burst_tile_time = 10
+
+# Smoke Burst: tiles of smoke around the burst (Vibelin smoke_range).
+spell_projectile_smoke_burst_smoke_range = 10

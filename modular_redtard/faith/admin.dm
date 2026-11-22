@@ -75,7 +75,7 @@
 /proc/rogue_admin_show_basket(client/user)
 	var/list/rows = list("<table><tr><th>Miracle</th><th>Tier</th><th>Devotion</th><th>Symbol</th><th>Forks</th><th>Gods there</th><th>Type</th></tr>")
 	for(var/datum/action/cooldown/spell/pointed/rogue_miracle/miracle_type as anything in rogue_miracle_basket())
-		rows += "<tr><td>[initial(miracle_type.name)]</td><td>[initial(miracle_type.miracle_tier)]</td><td>[initial(miracle_type.devotion_cost)]</td><td>[initial(miracle_type.needs_holy_symbol) ? "yes" : ""]</td><td>[initial(miracle_type.miracle_forks)]</td><td>[initial(miracle_type.miracle_gods)]</td><td>[miracle_type]</td></tr>"
+		rows += "<tr><td>[initial(miracle_type.name)]</td><td>[initial(miracle_type.miracle_tier)]</td><td>[rogue_miracle_devotion(miracle_type)]</td><td>[initial(miracle_type.needs_holy_symbol) ? "yes" : ""]</td><td>[initial(miracle_type.miracle_forks)]</td><td>[initial(miracle_type.miracle_gods)]</td><td>[miracle_type]</td></tr>"
 	rows += "</table>"
 	var/datum/browser/popup = new(user.mob, "rogue_miracle_basket", "The Basket of Miracles", 900, 600)
 	popup.set_content(jointext(rows, ""))

@@ -392,6 +392,13 @@
 	dir = 4
 	icon_state = "roofgc1"
 
+/turf/open/floor/rogue/rooftop/green/corner1/dirnine
+	name = "roof"
+	desc = "Overlapping wooden shingles protect the building and its inhabitants from the rain."
+	icon = 'modular_redtard/rockhill/icons/turf/roguefloor.dmi'
+	dir = 9
+	icon_state = "roofgc1"
+
 /turf/open/floor/rogue/rooftop/green/corner1/dirone
 	name = "roof"
 	desc = "Overlapping wooden shingles protect the building and its inhabitants from the rain."

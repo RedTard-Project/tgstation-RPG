@@ -21,9 +21,7 @@
 #define BB_ROGUE_BEAST_CORPSE "rogue_beast_corpse"
 #define BB_ROGUE_BEAST_NEXT_MEAL "rogue_beast_next_meal"
 /// How long a meal sates a hunter (Vibelin's hunger refills over time).
-#define ROGUE_BEAST_MEAL_COOLDOWN (3 MINUTES)
-/// How long a beast tears at a corpse for every limb (Vibelin's do_after).
-#define ROGUE_BEAST_BITE_TIME (10 SECONDS)
+#define ROGUE_BEAST_MEAL_COOLDOWN rogue_value("beast_meal_cooldown")
 
 /mob/living/basic/rockhill
 	/// Vibelin's way of life for the beast (ROGUE_BEAST_*); null keeps TG's plain fighting mind.
@@ -143,12 +141,15 @@
 	behavior_nodes = rogue_beast_pastime(list(BT_DESC_TYPE = /datum/bt_node/ai_behavior/rogue_lie_in_wait), /datum/bt_node/ai_behavior/acquire_target/update_combat_targets, vision_range = 3)
 	return ..()
 
-/// Tears at the corpse: a limb for every ROGUE_BEAST_BITE_TIME, the body gone at the end (Vibelin eat_dead_body).
+/// Tears at the corpse: a limb for every bite time, the body gone at the end (Vibelin eat_dead_body).
 /datum/bt_node/ai_behavior/rogue_eat_corpse
-	time_between_perform = ROGUE_BEAST_BITE_TIME
 	var/target_key
 	/// The first round only starts the meal: the first limb comes off a bite time later.
 	var/started = FALSE
+
+/datum/bt_node/ai_behavior/rogue_eat_corpse/New()
+	time_between_perform = rogue_value("beast_bite_time")
+	return ..()
 
 /datum/bt_node/ai_behavior/rogue_eat_corpse/setup(datum/ai_controller/controller)
 	var/mob/living/corpse = controller.blackboard[target_key]
@@ -363,4 +364,3 @@
 #undef BB_ROGUE_BEAST_CORPSE
 #undef BB_ROGUE_BEAST_NEXT_MEAL
 #undef ROGUE_BEAST_MEAL_COOLDOWN
-#undef ROGUE_BEAST_BITE_TIME

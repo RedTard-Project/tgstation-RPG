@@ -52,7 +52,7 @@
 		var/experience = intelligence * rogue_value("dummy_xp_per_int")
 		if(experience > 0)
 			user.rogue_adjust_experience(skill, experience)
-		playsound(loc, pick(DUMMY_HIT_SOUNDS), rand(50, 100), FALSE)
+		playsound(loc, pick(DUMMY_HIT_SOUNDS), rand(rogue_value("tdummy_rogue_training_stroke_roll_min"), rogue_value("tdummy_rogue_training_stroke_roll_max")), FALSE)
 		return DUMMY_TRAINED
 	user.visible_message(span_danger("[user] trains on [src], but [src] ripostes!"))
 	user.Knockdown(rogue_value("dummy_riposte_knockdown"))

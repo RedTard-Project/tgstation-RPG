@@ -1,10 +1,10 @@
 /// Ratwood fallingas thresholds (carbon/life.dm handle_sleep()): Life ticks with closed eyes until sleep, on a bed and on the ground.
-#define ROGUE_FALL_ASLEEP_BED 12
-#define ROGUE_FALL_ASLEEP_GROUND 25
+#define ROGUE_FALL_ASLEEP_BED rogue_value("fall_asleep_bed")
+#define ROGUE_FALL_ASLEEP_GROUND rogue_value("fall_asleep_ground")
 /// Mattress wear per point of brute damage to the bed: it snaps at half the damage that breaks the frame.
-#define ROGUE_MATTRESS_WEAR_PER_DAMAGE 2
+#define ROGUE_MATTRESS_WEAR_PER_DAMAGE rogue_value("mattress_wear_per_damage")
 /// Ratwood handle_sleep(): a bodypart that bleeds this much a Life tick or more does not mend in sleep (get_bleed_rate() >= 1).
-#define ROGUE_SLEEP_BLEED_LIMIT 1
+#define ROGUE_SLEEP_BLEED_LIMIT rogue_value("sleep_bleed_limit")
 
 /// Medieval maps: a player human falls asleep with closed eyes, heals in sleep by the bed's quality and is warmed by fires.
 /mob/living/carbon/human/Initialize(mapload)
@@ -45,7 +45,7 @@
 		told_blocked = FALSE
 		sleep_heal(source, seconds_per_tick)
 		if(source.rogue_eyes_closed)
-			source.Sleeping(30 SECONDS)
+			source.Sleeping(rogue_value("sleeper_on_life_sleeping"))
 		return
 	var/quality = source.rogue_sleep_quality()
 	if(!source.rogue_eyes_closed || source.stat != STABLE || (!quality && source.body_position != LYING_DOWN))
@@ -68,7 +68,7 @@
 		falling++
 	if(falling > (quality ? ROGUE_FALL_ASLEEP_BED : ROGUE_FALL_ASLEEP_GROUND))
 		falling = 0
-		source.Sleeping(30 SECONDS)
+		source.Sleeping(rogue_value("sleeper_on_life_sleeping_2"))
 
 /// Ratwood: a heavy helmet (stab armour over 70) or medium or heavy body armour keeps one awake, unless it cannot come off; the
 /// exhausted (third step of night fatigue, survival/fatigue.dm) sleep in anything.
@@ -167,7 +167,7 @@
 	if(. || has_buckled_mobs())
 		return
 	user.visible_message(span_notice("[user] begins rolling up \the [src]."))
-	if(!do_after(user, 2 SECONDS, target = src) || has_buckled_mobs())
+	if(!do_after(user, rogue_value("bedroll_attack_hand_time"), target = src) || has_buckled_mobs())
 		return TRUE
 	var/obj/item/bedroll/rolled = new(drop_location())
 	rolled.color = color
@@ -186,7 +186,7 @@
 	if(!bedroll_fits(user, spot))
 		return TRUE
 	user.visible_message(span_notice("[user] begins placing \the [src] down on the ground."))
-	if(!do_after(user, 2 SECONDS, target = spot) || !bedroll_fits(user, spot))
+	if(!do_after(user, rogue_value("bedroll_attack_self_time"), target = spot) || !bedroll_fits(user, spot))
 		return TRUE
 	var/obj/structure/bed/rockhill/rogue/bedroll/laid = new(spot)
 	laid.color = color
