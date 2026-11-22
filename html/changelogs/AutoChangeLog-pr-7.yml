@@ -1,0 +1,15 @@
+author: "trueroguan"
+delete-after: True
+changes:
+  - rscadd: "Azure Peak combat: intents, grabs, wounds, crits, blood and pain, embedded weapons"
+  - rscadd: "Roguetown crit: unconsciousness instead of the TG soft and hard crit"
+  - rscadd: "Items from Azure Peak, Twilight Axis, Vibelin and Ratwood"
+  - rscadd: "Magic base: mana, charged spells, staves and tomes"
+  - rscadd: "Bombs, grenades, firearms and the bombard"
+  - rscadd: "Ropes, chains, nets, pillories, nooses and meat hooks"
+  - rscadd: "Man-eaters, mimics, dryad vines and colossus crawlers"
+  - rscadd: "55 new miracles and the Thaumaturgy and Lay Hands orisons"
+  - balance: "Combat numbers of items now come from Vibelin"
+  - bugfix: "The lobby title is animated again"
+  - config: "Mechanic numbers moved to the private repository"
+  - server: "Without access to the config/redtard_private submodule every mechanic number falls back to 10"
