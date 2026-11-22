@@ -1,0 +1,18 @@
+author: "trueroguan"
+delete-after: True
+changes:
+  - rscadd: "Ratwood wounds, bleeding and pain; field medicine and leeches"
+  - rscadd: "Surgery: amputation, setting bones, cauterizing, organ operations, CPR and prosthetics"
+  - rscadd: "Alchemy: potions, poisons and blessed water; alcohol, drugs and brewing"
+  - rscadd: "Farming: soil, crops, saplings, composting and threshing"
+  - rscadd: "Corpses rot; digging, graves and burial"
+  - rscadd: "Examine shows the role and estate of people you know"
+  - rscadd: "Faith: devotion, patrons, amulets, confession and holy books"
+  - rscadd: "Fishing, swimming, bathing, washing and thirst"
+  - rscadd: "Riding with saddles, caparisons and bards; milking, apiaries and butchering"
+  - rscadd: "Locks and keys, candles, tents, curtains, handcarts and other furniture"
+  - rscadd: "New machines and shops: CASTIFICO, TREASURE SEEKER, BRASSFACE, PURITY, ZADCOTE, MARQUETTE, mail"
+  - rscadd: "Weapons break and can be repaired; special weapons, training dummy, Azure specials"
+  - rscadd: "Human NPCs bandage themselves, drink potions, shoot and flank"
+  - balance: "Putting armour on takes time, less with higher speed"
+  - config: "Mechanics numbers are split into per-block files in config/redtard/mechanics/values"
