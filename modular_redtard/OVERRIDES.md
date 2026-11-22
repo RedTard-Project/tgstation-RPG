@@ -1000,7 +1000,7 @@
 | Что (тип, процедура, файл) | Ступень | Файл модуля | Оригинал ТГ | Поведение | При мерже проверить |
 |---|---|---|---|---|---|
 | Процедур ТГ не переопределено. Компонент `rogue_explosive` на бомбах обеих веток (Азура `/obj/item/explosive/*`, Ратвуда `bomb`, `tntstick`, `satchel_bomb`, `impact_grenade/*`); переменная `/mob/living/var/rogue_bomb_hit_at` | 2–3 | `combat/explosives.dm` | — | Фитиль, удар, цепная реакция, растяжки, осколки, газы | Взрывы через `explosion()` ТГ: сигнатура |
-| `/obj/item/gun/ballistic/rogue_launcher/firearm` и `/blunderbuss`, свойства видов ружей `GLOB.rogue_firearm_kinds`; `/obj/item/rogueweapon/palantir`, бомбарда и заряды | 2 | `combat/firearms.dm`, `combat/bombards.dm` | — | Огнестрел Ратвуда на пусковых модуля, бомбарда по палантиру | Ружья Ратвуда — после прививки портером `/obj/item/gun/ballistic/firearm` к `rogue_launcher/firearm` (`rockhill/config.json`) |
+| `/obj/item/gun/ballistic/rogue_launcher/firearm` и `/blunderbuss`, свойства видов ружей `GLOB.rogue_firearm_kinds`; `/obj/item/rogueweapon/palantir`, бомбарда и заряды | 2 | `combat/firearms.dm`, `combat/bombards.dm` | — | Огнестрел Ратвуда на пусковых модуля, бомбарда по палантиру | Ружья Ратвуда привиты портером: `/obj/item/gun/ballistic/firearm` → `rogue_launcher/firearm` (`rockhill/config.json`, `graft_overrides`) |
 
 ### Чудеса (`faith/miracles/`, Б16а, Б16б)
 | Что (тип, процедура, файл) | Ступень | Файл модуля | Оригинал ТГ | Поведение | При мерже проверить |
