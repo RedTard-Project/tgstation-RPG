@@ -1,0 +1,3 @@
+[submodule "config/redtard_private"]
+	path = config/redtard_private
+	url = https://github.com/RedTard-Project/tg-rpg-private.git
