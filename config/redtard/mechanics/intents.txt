@@ -159,6 +159,16 @@ reach = 10
 charge_time = 10
 swing_delay = 10
 
+[axe/chop/demolition]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
 [axe/chop/frost]
 damage_factor = 10
 penetration_factor = 10
@@ -250,6 +260,16 @@ charge_time = 10
 swing_delay = 10
 
 [axe/cut/arbelos]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[axe/cut/demolition]
 damage_factor = 10
 penetration_factor = 10
 click_delay = 10
@@ -1538,6 +1558,16 @@ charge_time = 10
 swing_delay = 10
 
 [pick/bad]
+damage_factor = 10
+penetration_factor = 10
+click_delay = 10
+stamina_cost = 10
+miss_cost = 10
+reach = 10
+charge_time = 10
+swing_delay = 10
+
+[pick/demolition]
 damage_factor = 10
 penetration_factor = 10
 click_delay = 10

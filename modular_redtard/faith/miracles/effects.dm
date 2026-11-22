@@ -80,7 +80,8 @@
 		var/mob/living/carbon/human/patient = owner
 		patient.rogue_pain_mult /= pain_mult
 
-/// Ratwood lightningstruck (spells_status_effects.dm): shocked, slowed and disoriented, one cannot swing a blade or think.
+/// Ratwood lightningstruck (spells_status_effects.dm): shocked, slowed for as long as it lasts and wound down by the shock, and
+/// disoriented: one cannot swing a blade or think.
 /datum/status_effect/rogue_miracle_stats/lightningstruck
 	id = "rogue_lightningstruck"
 	start_message = "<span class='warning'>Shocked, slowed and disoriented, I cannot swing my blade or think properly.</span>"
@@ -93,4 +94,38 @@
 
 /datum/status_effect/rogue_miracle_stats/lightningstruck/on_apply()
 	. = ..()
-	owner.rogue_slowdown(rogue_value("faith_lightning_slowdown"))
+	owner.rogue_slow_for(duration)
+	owner.adjust_stamina_loss(rogue_value("faith_lightning_stamina"))
+
+#define ROGUE_HASTE_FILTER "rogue_haste_glow"
+
+/// Ratwood buff/haste (Eora's master food, Azure Peak's haste): the body moves with uncanny swiftness, Speed up, a faint gold
+/// glow about it.
+/datum/status_effect/rogue_miracle_stats/haste
+	id = "rogue_haste"
+	alert_type = /atom/movable/screen/alert/status_effect/rogue_haste
+	start_message = "<span class='warning'>My limbs move with uncanny swiftness.</span>"
+	end_message = "<span class='warning'>My body move slowly again...</span>"
+
+/datum/status_effect/rogue_miracle_stats/haste/stat_changes()
+	return list(ROGUE_STAT_SPEED = rogue_value("haste_speed"))
+
+/datum/status_effect/rogue_miracle_stats/haste/new_duration()
+	return rogue_value("haste_time")
+
+/datum/status_effect/rogue_miracle_stats/haste/on_apply()
+	. = ..()
+	if(!owner.get_filter(ROGUE_HASTE_FILTER))
+		owner.add_filter(ROGUE_HASTE_FILTER, 2, list("type" = "outline", "color" = "#F0E68C", "alpha" = 25, "size" = 1))
+
+/datum/status_effect/rogue_miracle_stats/haste/on_remove()
+	owner.remove_filter(ROGUE_HASTE_FILTER)
+	return ..()
+
+/atom/movable/screen/alert/status_effect/rogue_haste
+	name = "Haste"
+	desc = "I am magically hastened."
+	icon = ROGUE_COMBAT_ALERTS_ICON
+	icon_state = "buff"
+
+#undef ROGUE_HASTE_FILTER

@@ -2,7 +2,7 @@
 /// code/modules/spells/roguetown/acolyte/astrata.dm; Azure Peak and Twilight Axis have the Gaze and the Immolation too, Azure
 /// Peak's Gaze is T1 and lasts twice as long). Ignition, Anastasis and Fortify are in daily.dm, light.dm, revival.dm, healing.dm.
 
-#define ROGUE_ASTRATA_ICON 'modular_redtard/faith/miracles/icons/astratamiracles_ratwood.dmi'
+#define ROGUE_ASTRATA_ICON 'modular_redtard/faith/icons/astratamiracles_ratwood.dmi'
 #define ROGUE_IMMOLATION_FILTER "rogue_immolation"
 
 /// Ratwood buff/astrata_gaze: the cone of the view is gone for a while, and the eyes of the devout are sharper; it lasts
@@ -50,15 +50,14 @@
 /datum/action/cooldown/spell/pointed/rogue_miracle/astratan_gaze
 	name = "Astratan Gaze"
 	desc = "Remove the limit on my vision, letting me see behind me for a time. It lasts longer in the light of day and with the skill in miracles, and gives a bonus to perception to the skilled."
-	button_icon = ROGUE_MIRACLES_ASTRATA_ICON
+	button_icon = ROGUE_ASTRATA_ICON
 	button_icon_state = "gaze"
 	sound = 'modular_redtard/faith/sound/bless.ogg'
 	invocation = "Astrata show me true."
 	invocation_type = INVOCATION_SHOUT
 	click_to_activate = FALSE
-	cooldown_time = 120 SECONDS
+	value_key = "astratan_gaze"
 	miracle_tier = ROGUE_MIRACLE_TIER_0
-	devotion_cost = 30
 	miracle_forks = "Ratwood, Azure Peak, Twilight Axis"
 	miracle_gods = "Astrata T0 (Azure Peak T1)"
 
@@ -196,19 +195,15 @@
 /datum/action/cooldown/spell/pointed/rogue_miracle/immolation
 	name = "Immolation"
 	desc = "Ignite a target in holy flames, burning those that surround them. The fire burns brighter within devout Astratans, and with the skill of the caster."
-	button_icon = ROGUE_MIRACLES_ASTRATA_ICON
+	button_icon = ROGUE_ASTRATA_ICON
 	button_icon_state = "immolation"
 	sound = 'sound/effects/magic/fireball.ogg'
 	invocation = "By sacred fire, be cleansed!"
 	invocation_type = INVOCATION_SHOUT
-	cooldown_time = 600 SECONDS
-	cast_range = 2
+	value_key = "immolation"
 	miracle_tier = ROGUE_MIRACLE_TIER_4
-	devotion_cost = 60
 	miracle_forks = "Ratwood, Azure Peak (T4)"
 	miracle_gods = "Astrata T4"
-	/// The prayer before the fire (Ratwood 1 second).
-	var/prayer_time = 1 SECONDS
 
 /datum/action/cooldown/spell/pointed/rogue_miracle/immolation/is_valid_target(atom/cast_on)
 	. = ..()
@@ -227,7 +222,7 @@
 
 /datum/action/cooldown/spell/pointed/rogue_miracle/immolation/proc/light(mob/living/carbon/caster, mob/living/carbon/target)
 	caster.visible_message(span_danger("[caster] begins lighting [target] ablaze with strange, divine fire!"))
-	if(!do_after(caster, prayer_time, target = target))
+	if(!do_after(caster, rogue_value("faith_immolation_prayer"), target = target))
 		to_chat(caster, span_warning("Astratan might requires unwavering focus to channel!"))
 		refund()
 		return
@@ -250,10 +245,7 @@
 /// any other way, unmakes it. Thrown, it lands as a lightning strike on a creature and on the ground around it, a quarter
 /// less far from the centre; the undead are struck harder; the struck are shocked and slowed.
 /obj/item/rogueweapon/light_spear/conjured
-	item_flags = SLOWS_WHILE_IN_HAND
-	slowdown = 2
-	throw_speed = 2
-	throwforce = 15
+	embed_type = null
 	/// The strike on its own tile and, a ring further out, a share of it (Ratwood strike_damage 25, ring 0.75).
 	var/strike_damage = 0
 	var/ring_share = 0
@@ -262,11 +254,13 @@
 
 /obj/item/rogueweapon/light_spear/conjured/Initialize(mapload)
 	. = ..()
+	item_flags |= SLOWS_WHILE_IN_HAND
+	slowdown = rogue_value("faith_spear_slowdown")
+	throw_speed = rogue_value("faith_spear_throw_speed")
+	throwforce = rogue_value("faith_spear_throwforce")
 	strike_damage = rogue_value("faith_spear_damage")
 	ring_share = rogue_value("faith_spear_ring")
 	strike_delay = rogue_value("faith_spear_delay")
-	// Nobody carries it for long.
-	addtimer(CALLBACK(src, PROC_REF(vanish)), rogue_value("faith_spear_lifetime"))
 
 /obj/item/rogueweapon/light_spear/conjured/proc/vanish()
 	if(QDELETED(src) || struck)
@@ -301,18 +295,18 @@
 		hit.electrocute_act(1, src, 1, SHOCK_NOSTUN)
 	var/turf/centre = get_turf(hit_atom)
 	alpha = 0
-	new /obj/effect/temp_visual/rogue_thunderstrike(centre, 4)
+	new /obj/effect/temp_visual/rogue_thunderstrike(centre, strike_delay * 0.4)
 	addtimer(CALLBACK(src, PROC_REF(strike), centre, 1), strike_delay)
 	for(var/turf/ring in range(1, centre))
 		if(get_dist(centre, ring) != 1 || !(ring in view(centre)))
 			continue
-		new /obj/effect/temp_visual/rogue_thunderstrike(ring, 8)
+		new /obj/effect/temp_visual/rogue_thunderstrike(ring, strike_delay * 0.8)
 		addtimer(CALLBACK(src, PROC_REF(strike), ring, ring_share), strike_delay)
-	addtimer(CALLBACK(src, GLOBAL_PROC_REF(qdel), src), strike_delay + 1 SECONDS)
+	QDEL_IN(src, strike_delay * 2)
 
 /obj/item/rogueweapon/light_spear/conjured/proc/strike(turf/where, share)
 	playsound(where, 'sound/effects/magic/lightningbolt.ogg', 50, TRUE)
-	new /obj/effect/temp_visual/rogue_thunderstrike(where, 3, TRUE)
+	new /obj/effect/temp_visual/rogue_thunderstrike(where, strike_delay * 0.3, TRUE)
 	for(var/mob/living/victim in where)
 		var/damage = strike_damage * share
 		if(victim.mob_biotypes & MOB_UNDEAD)
@@ -324,8 +318,8 @@
 /obj/effect/temp_visual/rogue_thunderstrike
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "electricity3"
-	duration = 4
-	layer = MASSIVE_OBJ_LAYER
+	duration = 1
+	layer = ABOVE_ALL_MOB_LAYER
 	light_range = 2
 	light_color = "#fff1a8"
 
@@ -340,15 +334,14 @@
 /datum/action/cooldown/spell/pointed/rogue_miracle/summon_spear
 	name = "Summon Spear"
 	desc = "An ancient miracle, honed by those who served as Astrata's martial arm in the second era. Beseech Astrata for a spear of light: throw it far, and it strikes as lightning."
-	button_icon = ROGUE_MIRACLES_ASTRATA_ICON
+	button_icon = ROGUE_ASTRATA_ICON
 	button_icon_state = "spear"
 	sound = 'sound/effects/magic/lightningbolt.ogg'
 	invocation = "Lady of Order, guide my hand!"
 	invocation_type = INVOCATION_SHOUT
 	click_to_activate = FALSE
-	cooldown_time = 30 SECONDS
+	value_key = "summon_spear"
 	miracle_tier = ROGUE_MIRACLE_TIER_1
-	devotion_cost = 50
 	needs_holy_symbol = TRUE
 	miracle_forks = "Ratwood"
 	miracle_gods = "Astrata T1"

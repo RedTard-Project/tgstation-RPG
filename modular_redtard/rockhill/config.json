@@ -912,6 +912,7 @@
 					"/obj/item/gun/ballistic/revolver/grenadelauncher/bow": "/obj/item/gun/ballistic/rogue_launcher/bow",
 					"/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow": "/obj/item/gun/ballistic/rogue_launcher/crossbow",
 					"/obj/item/gun/ballistic/revolver/grenadelauncher/sling": "/obj/item/gun/ballistic/rogue_launcher/sling",
+					"/obj/item/gun/ballistic/firearm": "/obj/item/gun/ballistic/rogue_launcher/firearm",
 					"/obj/item/quiver": "/obj/item/rogue_quiver"
 				},
 				"graft_override_vars": {

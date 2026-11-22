@@ -2656,3 +2656,673 @@ crit_unconscious_oxy = 10
 
 # Damage of twisting a stuck weapon, dealt with the weapon's own damage type whatever its force; the sure crit comes on top of it.
 stuck_weapon_twist_force = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list b14)
+
+# Deciseconds a body struck by a blast is spared the next one (Azure Peak BOMB_HIT_IMMUNITY_DURATION).
+explosive_hit_immunity = 10
+
+# Tiles around a blast within which every bomb lying on the ground goes off too (Azure Peak detonate()).
+explosive_chain_range = 10
+
+# Chance to blast a foe to bits that a bomb set off by an Explosive Specialist's blast gets (Azure Peak tripcrit 100).
+explosive_chain_crit = 10
+
+# Chance per point of fortune a Specialist's blast gets to blast a foe to bits (Azure Peak STALUC * 2).
+explosive_crit_per_luck = 10
+
+# Chance added to a shrapnel crit against a downed foe (Azure Peak).
+explosive_crit_downed_bonus = 10
+
+# Most health of a body a blast can tear apart (Azure Peak can_be_gibbed()).
+explosive_gib_health_cap = 10
+
+# Deciseconds of a bottle bomb's fuse, least (Azure Peak fuze 40 fast ticks).
+explosive_bottle_fuse_min = 10
+
+# Deciseconds of a bottle bomb's fuse, most (Azure Peak fuze 60 fast ticks).
+explosive_bottle_fuse_max = 10
+
+# Percent chance a thrown bottle bomb fails to go off (Azure Peak prob2fail).
+explosive_bottle_fail = 10
+
+# Burn damage of a bottle bomb to everyone around (Azure Peak PVE_damage).
+explosive_bottle_damage = 10
+
+# Tiles around a bottle bomb whose bodies it burns.
+explosive_bottle_burn_range = 10
+
+# Light explosion range of a bottle bomb.
+explosive_bottle_light_range = 10
+
+# Tiles of ground a lit or set-off bottle bomb sets alight (Azure Peak firerange).
+explosive_bottle_fire_range = 10
+
+# Tiles of ground an unlit thrown bottle bomb sets alight.
+explosive_bottle_fire_range_cold = 10
+
+# Chance per rank of engineering a Specialist's bottle bomb gets to blast a burning foe to bits.
+explosive_bottle_crit_per_skill = 10
+
+# Most chance a bottle bomb gets to blast a burning foe to bits, before a trap's bonus.
+explosive_bottle_crit_cap = 10
+
+# Deciseconds of a blastpowder stick's fuse, least (Azure Peak fuze 50 fast ticks).
+explosive_stick_fuse_min = 10
+
+# Deciseconds of a blastpowder stick's fuse, most.
+explosive_stick_fuse_max = 10
+
+# Blunt damage of a blastpowder stick at its centre, falling off with distance (Azure Peak PVE_damage).
+explosive_stick_damage = 10
+
+# Tiles of a blastpowder stick's blast on bodies.
+explosive_stick_blast_range = 10
+
+# Factor of the damage a blastpowder stick deals to structures (0: none).
+explosive_stick_raze_factor = 10
+
+# Devastation range of a blastpowder stick's explosion.
+explosive_stick_devastation_range = 10
+
+# Heavy range of a blastpowder stick's explosion.
+explosive_stick_heavy_range = 10
+
+# Light range of a blastpowder stick's explosion.
+explosive_stick_light_range = 10
+
+# Flame range of a blastpowder stick's explosion.
+explosive_stick_flame_range = 10
+
+# Deciseconds of a blastpowder satchel's fuse, least.
+explosive_satchel_fuse_min = 10
+
+# Deciseconds of a blastpowder satchel's fuse, most.
+explosive_satchel_fuse_max = 10
+
+# Blunt damage of a blastpowder satchel at its centre.
+explosive_satchel_damage = 10
+
+# Tiles of a blastpowder satchel's blast on bodies.
+explosive_satchel_blast_range = 10
+
+# Factor of the damage a blastpowder satchel deals to structures (Azure Peak razes: double).
+explosive_satchel_raze_factor = 10
+
+# Devastation range of a blastpowder satchel's explosion.
+explosive_satchel_devastation_range = 10
+
+# Heavy range of a blastpowder satchel's explosion.
+explosive_satchel_heavy_range = 10
+
+# Light range of a blastpowder satchel's explosion.
+explosive_satchel_light_range = 10
+
+# Flame range of a blastpowder satchel's explosion.
+explosive_satchel_flame_range = 10
+
+# Deciseconds of the admins' mega satchel's fuse, least.
+explosive_mega_fuse_min = 10
+
+# Deciseconds of the admins' mega satchel's fuse, most.
+explosive_mega_fuse_max = 10
+
+# Blunt damage of the mega satchel at its centre.
+explosive_mega_damage = 10
+
+# Tiles of the mega satchel's blast on bodies.
+explosive_mega_blast_range = 10
+
+# Factor of the damage the mega satchel deals to structures.
+explosive_mega_raze_factor = 10
+
+# Devastation range of the mega satchel's explosion.
+explosive_mega_devastation_range = 10
+
+# Heavy range of the mega satchel's explosion.
+explosive_mega_heavy_range = 10
+
+# Light range of the mega satchel's explosion.
+explosive_mega_light_range = 10
+
+# Flame range of the mega satchel's explosion.
+explosive_mega_flame_range = 10
+
+# Blunt damage of a shrapnel grenade to its own tile (Azure Peak PVE_damage).
+explosive_shrapnel_damage = 10
+
+# Shards a shrapnel grenade flings about.
+explosive_shrapnel_shards = 10
+
+# Degrees each shard's flight strays from even spacing.
+explosive_shrapnel_scatter = 10
+
+# Heavy range of a shrapnel grenade's explosion.
+explosive_shrapnel_heavy_range = 10
+
+# Light range of a shrapnel grenade's explosion.
+explosive_shrapnel_light_range = 10
+
+# Chance per rank of engineering a Specialist's shrapnel grenade gets to blast a foe to bits.
+explosive_shrapnel_crit_per_skill = 10
+
+# Damage of a flung shard.
+explosive_shard_damage = 10
+
+# Tiles a flung shard flies.
+explosive_shard_range = 10
+
+# Percent chance a shard that struck sticks in a limb.
+explosive_shard_embed_chance = 10
+
+# Brute damage to the limb when the armor over it stops a shard from sticking.
+explosive_shrapnel_armor_damage = 10
+
+# Pain factor of a stuck shard (Azure Peak embedded_pain_multiplier).
+explosive_shrapnel_pain_mult = 10
+
+# Percent chance a pulled-out glass shard breaks into debris (Azure Peak: 75).
+explosive_glass_shard_break_chance = 10
+
+# Tiles of a smoke belcher's cloud.
+explosive_smoke_smoke_range = 10
+
+# Tiles of a poison gas belcher's cloud.
+explosive_poison_gas_smoke_range = 10
+
+# Tiles of a healing gas belcher's cloud.
+explosive_healing_gas_smoke_range = 10
+
+# Tiles of a burning gas belcher's cloud.
+explosive_fire_gas_smoke_range = 10
+
+# Tiles of a blinding gas belcher's cloud.
+explosive_blind_gas_smoke_range = 10
+
+# Tiles of a silent gas belcher's cloud.
+explosive_mute_gas_smoke_range = 10
+
+# Tiles of a smoke bomb's cloud.
+explosive_smokebomb_smoke_range = 10
+
+# Deciseconds a poison gas cloud lasts.
+explosive_poison_gas_lifetime = 10
+
+# Deciseconds a healing gas cloud lasts.
+explosive_healing_gas_lifetime = 10
+
+# Deciseconds a burning gas cloud lasts.
+explosive_fire_gas_lifetime = 10
+
+# Deciseconds a blinding gas cloud lasts.
+explosive_blind_gas_lifetime = 10
+
+# Deciseconds a silent gas cloud lasts.
+explosive_mute_gas_lifetime = 10
+
+# Toxin damage of a breath of poison gas.
+explosive_poison_gas_toxin = 10
+
+# Brute damage a breath of healing gas mends.
+explosive_healing_gas_brute = 10
+
+# Burn damage a breath of healing gas mends.
+explosive_healing_gas_burn = 10
+
+# Suffocation a breath of healing gas mends.
+explosive_healing_gas_oxy = 10
+
+# Toxin damage a breath of healing gas mends.
+explosive_healing_gas_toxin = 10
+
+# Fire stacks a touch of burning gas sets on a body.
+explosive_fire_gas_stacks = 10
+
+# Deciseconds of blindness from blinding gas, at most.
+explosive_blind_gas_time = 10
+
+# Deciseconds of silence from silent gas (Azure Peak silent 20 Life ticks).
+explosive_mute_gas_time = 10
+
+# Deciseconds a blast staggers a body (Azure Peak staggered).
+explosive_stagger_time = 10
+
+# Perception, speed and constitution a staggered body loses.
+explosive_stagger_stat = 10
+
+# Slowdown of a staggered body's steps.
+explosive_stagger_slowdown = 10
+
+# Deciseconds of a trip bomb's fuse once its wire is stepped on (Azure Peak 1 second).
+explosive_trip_fuse = 10
+
+# Deciseconds of a trip bomb's fuse set by an Explosive Specialist (Azure Peak 0.25 seconds).
+explosive_trip_fuse_expert = 10
+
+# Deciseconds to set up or disarm a trip bomb.
+explosive_trap_time = 10
+
+# Deciseconds less per rank of crafting to set up or disarm a trip bomb (Azure Peak: per level of traps).
+explosive_trap_time_per_skill = 10
+
+# Deciseconds an Explosive Specialist takes to set up or disarm a trip bomb.
+explosive_trap_time_expert = 10
+
+# Percent chance a bomb goes off when setting it up is broken off.
+explosive_trap_fumble_chance = 10
+
+# Percent chance per rank of crafting that a broken-off disarming does not set the bomb off.
+explosive_disarm_chance_per_skill = 10
+
+# Opacity of a trip bomb and wire hidden under dirt, before skill.
+explosive_trap_hide_alpha = 10
+
+# Opacity less per rank of crafting of a hidden trip bomb or wire.
+explosive_trap_hide_alpha_per_skill = 10
+
+# Opacity of a trip bomb and wire an Explosive Specialist sets up.
+explosive_trap_expert_alpha = 10
+
+# Fortune above which a foot may miss the wire.
+explosive_tripwire_luck_base = 10
+
+# Percent chance per point of fortune above the base that a foot misses the wire.
+explosive_tripwire_luck_step = 10
+
+# Deciseconds the one who steps on the wire is slowed.
+explosive_tripwire_slowdown = 10
+
+# Deciseconds a dull-witted or mindless one who steps on the wire is held in place.
+explosive_tripwire_immobilize = 10
+
+# Intelligence or perception at or under which the wire holds one in place.
+explosive_tripwire_wits = 10
+
+# Chance to blast a foe to bits a sprung trip bomb adds.
+explosive_tripwire_crit = 10
+
+# Deciseconds of a firearm's aim before rank and perception (Ratwood basetime 120).
+firearm_aim_base = 10
+
+# Deciseconds of a firearm's arcing aim before rank and perception (Ratwood basetime 140 + chargetime 1).
+firearm_arc_aim_base = 10
+
+# Deciseconds less of a firearm's aim per rank of Firearms.
+firearm_aim_per_skill = 10
+
+# Deciseconds less of a firearm's aim per point of perception.
+firearm_aim_per_perception = 10
+
+# Least deciseconds of a firearm's aim.
+firearm_aim_floor = 10
+
+# Deciseconds to pour smokepowder in or ram a ball home (Ratwood load_time).
+firearm_load_time = 10
+
+# Deciseconds less to load per rank of Firearms.
+firearm_load_time_per_skill = 10
+
+# Degrees a ball let go with no aim at all strays, less by the share of the aim taken (Ratwood 150).
+firearm_uncharged_spread = 10
+
+# Experience of Firearms per point of intelligence from a shot at full aim (Ratwood STAINT * 4).
+firearm_full_aim_xp_per_int = 10
+
+# Percent chance of a burn and of a recoil below the trained rank of Firearms (Ratwood 50).
+firearm_accident_chance_untrained = 10
+
+# Percent chance of a burn and of a recoil from the trained rank up (Ratwood 10).
+firearm_accident_chance_trained = 10
+
+# Rank of Firearms from which the lower accident chance applies.
+firearm_accident_trained_rank = 10
+
+# Rank of Firearms from which a shot never goes wrong.
+firearm_accident_safe_rank = 10
+
+# Least burn damage of a shot gone wrong.
+firearm_burn_min = 10
+
+# Most burn damage of a shot gone wrong.
+firearm_burn_max = 10
+
+# Percent chance a burnt shooter drops the weapon and falls.
+firearm_burn_drop_chance = 10
+
+# Least deciseconds a fumbling shooter is floored.
+firearm_fumble_knockdown_min = 10
+
+# Most deciseconds a fumbling shooter is floored.
+firearm_fumble_knockdown_max = 10
+
+# Deciseconds a fumbling shooter is held in place.
+firearm_fumble_immobilize = 10
+
+# Most tiles the recoil throws a shooter back.
+firearm_recoil_distance = 10
+
+# Speed of the recoil's throw.
+firearm_recoil_speed = 10
+
+# Least deciseconds a handgonne's fuse burns before the shot.
+firearm_handgonne_delay_min = 10
+
+# Most deciseconds a handgonne's fuse burns before the shot.
+firearm_handgonne_delay_max = 10
+
+# Least deciseconds a flintgonne's flint takes before the shot.
+firearm_flintgonne_delay_min = 10
+
+# Most deciseconds a flintgonne's flint takes before the shot.
+firearm_flintgonne_delay_max = 10
+
+# Least deciseconds a fusil's flint takes before the shot.
+firearm_fusil_delay_min = 10
+
+# Most deciseconds a fusil's flint takes before the shot.
+firearm_fusil_delay_max = 10
+
+# Sides of the die a struck person's constitution must meet to stay standing (Ratwood 1d12).
+firearm_stagger_roll = 10
+
+# Least deciseconds a struck person is floored.
+firearm_stagger_knockdown_min = 10
+
+# Most deciseconds a struck person is floored.
+firearm_stagger_knockdown_max = 10
+
+# Least deciseconds a struck person is held in place.
+firearm_stagger_immobilize_min = 10
+
+# Most deciseconds a struck person is held in place.
+firearm_stagger_immobilize_max = 10
+
+# Slowdown ticks of a person a ball struck who stays standing (Ratwood stumble_strength 4).
+firearm_stumble = 10
+
+# Slowdown ticks of a person a grapeshot pellet struck who stays standing.
+firearm_grapeshot_stumble = 10
+
+# Damage factor of a lead ball against an opened guard (Ratwood: exposed or vulnerable).
+firearm_lead_open_mult = 10
+
+# Fire stacks a silver ball sets on the silver-weak.
+firearm_silver_fire_stacks = 10
+
+# Pellets of a charge of grapeshot.
+firearm_grapeshot_pellets = 10
+
+# Degrees grapeshot pellets spread.
+firearm_grapeshot_variance = 10
+
+# Deciseconds to set a bombard's target.
+bombard_aim_time = 10
+
+# Deciseconds to dial a bombard's adjustment.
+bombard_dial_time = 10
+
+# Most tiles a bombard's dials shift the shot.
+bombard_dial_max = 10
+
+# Tiles of distance per tile a bombard shell may stray.
+bombard_offset_per_tiles = 10
+
+# Fewest tiles to a bombard's target.
+bombard_min_range = 10
+
+# Most tiles to a light bombard's target.
+bombard_max_range = 10
+
+# Deciseconds to fill a bombard with smokepowder.
+bombard_powder_time = 10
+
+# Deciseconds to ram a bombard's powder.
+bombard_ram_time = 10
+
+# Deciseconds to load a charge into a bombard.
+bombard_load_time = 10
+
+# Deciseconds from a bombard's shot to the shell's whistle above the target.
+bombard_travel_time = 10
+
+# Deciseconds from the whistle to the shell's landing.
+bombard_fall_time = 10
+
+# Deciseconds to pack a bombard up.
+bombard_pack_time = 10
+
+# Tiles within which a bombard's shot is heard.
+bombard_fire_hearing = 10
+
+# Tiles within which a falling shell's whistle is heard.
+bombard_whistle_hearing = 10
+
+# Tiles within which a shell's landing is heard.
+bombard_impact_hearing = 10
+
+# Tiles within which a palantir's whine is heard.
+bombard_palantir_hearing = 10
+
+# Deciseconds a palantir takes to find a leyline point.
+bombard_palantir_time = 10
+
+# Tiles around a bombard whose onlookers' view shakes when it fires.
+bombard_shake_range = 10
+
+# Devastation range of a high explosive bombard charge.
+bombard_he_devastation_range = 10
+
+# Heavy range of a high explosive bombard charge.
+bombard_he_heavy_range = 10
+
+# Light range of a high explosive bombard charge.
+bombard_he_light_range = 10
+
+# Flame range of a high explosive bombard charge.
+bombard_he_flame_range = 10
+
+# Tiles around a flare charge within which people are flashed and blinded.
+bombard_flare_range = 10
+
+# Deciseconds of blindness from a flare charge (Ratwood blind_eyes 6).
+bombard_flare_blind_time = 10
+
+# Flash range of a flare charge's explosion.
+bombard_flare_flash_range = 10
+
+# Tiles of a smoke charge's cloud.
+bombard_smoke_range = 10
+
+# Flash range of a smoke charge's explosion.
+bombard_smoke_flash_range = 10
+
+# Shrapnel projectiles of a canister charge.
+bombard_canister_shards = 10
+
+# Damage of a canister charge's shrapnel.
+bombard_canister_damage = 10
+
+# Tiles a canister charge's shrapnel flies.
+bombard_canister_shard_range = 10
+
+# Deciseconds from a canister charge's burst to its blast.
+bombard_canister_delay = 10
+
+# Light range of a canister charge's blast.
+bombard_canister_light_range = 10
+
+# Flash range of a canister charge's blast.
+bombard_canister_flash_range = 10
+
+# Deciseconds a lit incendiary charge burns before it goes off on its own (Ratwood 100 fast ticks).
+bombard_incendiary_fuse = 10
+
+# Flame range of a lit incendiary charge.
+bombard_incendiary_flame_range = 10
+
+# Flame range of an unlit incendiary charge.
+bombard_incendiary_cold_flame_range = 10
+
+# Light range of an incendiary charge's explosion.
+bombard_incendiary_light_range = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list b15)
+
+# Multiplier of the bleeding of a part held in a loose grip by someone else (Azure Peak bleed_suppressing); grips on one part multiply.
+grab_bleed_passive = 10
+
+# Multiplier of the bleeding of a part held in a tight grip by someone else (Azure Peak bleed_suppressing of an aggressive grab).
+grab_bleed_aggressive = 10
+
+# Base percent chance to break free of a grip (Azure Peak resist_grab() resist_chance).
+grab_resist_base = 10
+
+# Percent added to the chance to break free for every rank of wrestling above the holder's (Azure Peak resist_grab()).
+grab_resist_per_skill = 10
+
+# Most percent the holder's better wrestling takes from the chance to break free (Azure Peak resist_grab()).
+grab_resist_skill_floor = 10
+
+# Percent added to the chance to break free for every point of constitution above the holder's strength (willpower for a loose hold) (Azure Peak resist_grab()).
+grab_resist_per_stat = 10
+
+# Share taken from the chance to break free while restrained (Azure Peak resist_grab() combat_modifier).
+grab_resist_restrained = 10
+
+# Share added to the chance to break free when standing over a holder who lies down (Azure Peak resist_grab() combat_modifier).
+grab_resist_prone_holder = 10
+
+# Share added to the chance to break free in combat stance against a holder who is not, taken away the other way round (Azure Peak resist_grab()).
+grab_resist_combat = 10
+
+# Share taken from the chance to break free of a tight grip (Azure Peak resist_grab() agg_grab).
+grab_resist_aggressive = 10
+
+# Share taken from the chance to break free for every chokehold on one (Azure Peak resist_grab()).
+grab_resist_chokehold = 10
+
+# Least percent chance a pacifist has to slip free of a grip (Azure Peak resist_grab()).
+grab_resist_pacifist_floor = 10
+
+# Least percent chance to break free of a grip (Azure Peak resist_grab() clamp).
+grab_resist_min = 10
+
+# Most percent chance to break free of a grip (Azure Peak resist_grab() clamp).
+grab_resist_max = 10
+
+# Bad luck multiplier of a try to break free of a grip (Azure Peak resist_grab() badluck).
+grab_badluck_resist = 10
+
+# Deciseconds the feet are held after trying to break free of a grip by walking (Azure Peak resist_grab() move_delay).
+grab_resist_move_delay = 10
+
+# Least stamina a try to break free of a grip costs (Azure Peak resist_grab() stamina_add).
+grab_resist_cost_min = 10
+
+# Most stamina a try to break free of a grip costs (Azure Peak resist_grab() stamina_add).
+grab_resist_cost_max = 10
+
+# Deciseconds more a holder whose loose hold was broken waits before acting (Azure Peak resist_grab() changeNext_move).
+grab_resist_loose_recovery = 10
+
+# Deciseconds a pacifist holder in combat stance is knocked down when someone breaks their grip (Azure Peak resist_grab()).
+grab_resist_pacifist_knockdown = 10
+
+# Least stamina scruffing someone costs (Ratwood scruff).
+grab_scruff_cost_min = 10
+
+# Most stamina scruffing someone costs (Ratwood scruff).
+grab_scruff_cost_max = 10
+
+# Deciseconds one scruffed goes limp (Ratwood scruff Paralyze()).
+grab_scruff_paralyze = 10
+
+# Bad luck multiplier of twisting what is stuck in a held part (Azure Peak twistitem).
+grab_badluck_twist_item = 10
+
+# Least stamina twisting what is stuck in a held part costs (Azure Peak twistitem).
+grab_twist_item_cost_min = 10
+
+# Most stamina twisting what is stuck in a held part costs (Azure Peak twistitem).
+grab_twist_item_cost_max = 10
+
+# Least brute damage of twisting what is stuck in a held part (Azure Peak twistitemlimb()).
+grab_twist_item_damage_min = 10
+
+# Most brute damage of twisting what is stuck in a held part (Azure Peak twistitemlimb()).
+grab_twist_item_damage_max = 10
+
+# Bad luck multiplier of ripping out what is stuck in a held part (Azure Peak remove).
+grab_badluck_remove = 10
+
+# Multiplier of TG's harm of a rough removal when what is stuck is ripped out of a held part (Azure Peak removeembeddeditem()).
+grab_remove_damage_factor = 10
+
+# Deciseconds to tie someone's arms or legs with a rope or a chain (Azure Peak try_cuff_arms() and try_cuff_legs() do_mob).
+bind_tie_time = 10
+
+# Multiplier of the time to tie up one who yields or complies (Azure Peak surrender_mod).
+bind_surrender_factor = 10
+
+# Movement slowdown of bound legs (Azure Peak MOVESPEED_ID_CUFFED_LEG_SLOWDOWN multiplicative_slowdown).
+bind_legs_slowdown = 10
+
+# Deciseconds to slip out of a rope at middling strength (Azure Peak rope slipouttime).
+bind_rope_slip_time = 10
+
+# Deciseconds to break a rope by TG's fast way (Azure Peak rope breakouttime).
+bind_rope_break_time = 10
+
+# Deciseconds to slip out of a chain at middling strength (Azure Peak chain slipouttime).
+bind_chain_slip_time = 10
+
+# Deciseconds to break a chain by TG's fast way (Azure Peak chain breakouttime).
+bind_chain_break_time = 10
+
+# Strength above which one snaps a rope or a chain at once (Azure Peak cuff_resist() STASTR).
+bind_snap_strength = 10
+
+# Share of the time to slip out of a binding taken off for every point of strength above the middling (Azure Peak cuff_resist() time_mod).
+bind_slip_per_strength = 10
+
+# Tiles a net flies when thrown (Azure Peak net throw_range).
+net_throw_range = 10
+
+# Tiles a net flew at most for a point-blank throw that only holds the target a moment (Azure Peak ensnare()).
+net_close_range = 10
+
+# Deciseconds a point-blank net holds its target (Azure Peak ensnare() Immobilize).
+net_close_hold = 10
+
+# Tiles a net flew at least for an expert throw (Azure Peak ensnare()).
+net_far_range = 10
+
+# Deciseconds a net thrown from some way off holds its target (Azure Peak ensnare() Immobilize).
+net_mid_hold = 10
+
+# Deciseconds a net thrown from some way off keeps its target off balance (Azure Peak ensnare() OffBalance).
+net_mid_off_balance = 10
+
+# Deciseconds a net thrown from some way off leaves its target exposed (Azure Peak ensnare() vulnerable).
+net_mid_exposed = 10
+
+# Deciseconds a net thrown from some way off clings to its target (Azure Peak ensnare() netted).
+net_mid_time = 10
+
+# Deciseconds an expertly thrown net knocks its target down (Azure Peak ensnare() Knockdown).
+net_far_knockdown = 10
+
+# Deciseconds an expertly thrown net leaves its target exposed (Azure Peak ensnare() exposed).
+net_far_exposed = 10
+
+# Deciseconds an expertly thrown net clings to its target (Azure Peak ensnare() netted).
+net_far_time = 10
+
+# Movement slowdown while a net clings (Azure Peak MOVESPEED_ID_NET_SLOWDOWN).
+net_slowdown = 10
+
+# Speed taken while a net clings (Azure Peak netted effectedstats).
+net_speed_malus = 10
+
+# Willpower taken while a net clings (Azure Peak netted effectedstats).
+net_will_malus = 10

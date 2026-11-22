@@ -229,6 +229,23 @@
 	tshield = FALSE
 	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genchop (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (3).ogg')
 
+/datum/intent/axe/chop/demolition
+	name = "chop"
+	desc = ""
+	icon_state = "inchop"
+	blade_class = "chopping"
+	item_d_type = "slash"
+	attack_verb = list("chops", "hacks")
+	swingdelay_type = 2
+	demolition_mod = 7
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/genchop (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/genchop (3).ogg')
+
 /datum/intent/axe/chop/halberd
 	name = "chop"
 	desc = ""
@@ -372,6 +389,22 @@
 	item_d_type = "slash"
 	attack_verb = list("cuts", "slashes")
 	demolition_mod = 2.5
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (3).ogg')
+
+/datum/intent/axe/cut/demolition
+	name = "cut"
+	desc = ""
+	icon_state = "incut"
+	blade_class = "slash"
+	item_d_type = "slash"
+	attack_verb = list("cuts", "slashes")
+	demolition_mod = 7
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -2034,6 +2067,22 @@
 	blade_class = "stab"
 	item_d_type = "stab"
 	attack_verb = list("picks", "impales")
+	canparry = TRUE
+	candodge = TRUE
+	no_attack = FALSE
+	unarmed = FALSE
+	tranged = FALSE
+	tshield = FALSE
+	hitsound = list('modular_redtard/rockhill/sound/combat/hits/pick/genpick (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/pick/genpick (2).ogg')
+
+/datum/intent/pick/demolition
+	name = "pick"
+	desc = ""
+	icon_state = "inpick"
+	blade_class = "stab"
+	item_d_type = "stab"
+	attack_verb = list("picks", "impales")
+	demolition_mod = 4
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE

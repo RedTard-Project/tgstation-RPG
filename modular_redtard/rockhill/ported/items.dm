@@ -65,7 +65,7 @@
 	parent_type = /obj/item/rockhill
 
 /obj/item/gun/ballistic/firearm
-	parent_type = /obj/item/rockhill
+	parent_type = /obj/item/gun/ballistic/rogue_launcher/firearm
 
 /obj/item/hunting_map
 	parent_type = /obj/item/rockhill
@@ -97290,9 +97290,10 @@
 	wlength = 1
 	can_parry = TRUE
 	associated_skill = /datum/attribute/skill/combat/axes
-	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/mace/smash, /datum/intent/shovelscoop)
+	possible_item_intents = list(/datum/intent/axe/cut/demolition, /datum/intent/axe/chop/demolition, /datum/intent/mace/smash, /datum/intent/shovelscoop)
+	gripped_intents = list(/datum/intent/axe/cut/demolition, /datum/intent/axe/chop/demolition, /datum/intent/mace/smash, /datum/intent/pick/demolition)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 260
+	max_blade_int = 500
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	inhand_icon_state = "sabre"

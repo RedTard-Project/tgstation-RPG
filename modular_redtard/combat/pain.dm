@@ -134,6 +134,8 @@
 		if(adrenaline)
 			pain *= ROGUE_PAIN_ADRENALINE_SHARE
 		. += pain
+	// Ratwood physiology pain_mod: miracles that make the wounds hurt more (faith/miracles/effects.dm rogue_inflamed).
+	. *= rogue_pain_mult
 
 /// What pain the will bears, counted anew each time (Ratwood get_pain_threshold(), PR 2546): willpower times ten, five more
 /// willpower under adrenaline, the painless 250. The pain checks and the heart both read it.

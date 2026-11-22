@@ -22,6 +22,8 @@
 #define BB_ROGUE_PVE_WEB_SPOT "rogue_pve_web_spot"
 /// When a spider may spin its next web.
 #define BB_ROGUE_PVE_NEXT_WEB "rogue_pve_next_web"
+/// The mire lurker a mire crawler follows (B12b).
+#define BB_ROGUE_PVE_LURKER "rogue_pve_lurker"
 
 /// Ratwood's sounds of this stage.
 #define ROGUE_PVE_SOUND_BOW 'modular_redtard/pve/sound/flatbow_shot.ogg'

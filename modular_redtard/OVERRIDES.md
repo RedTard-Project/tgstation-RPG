@@ -978,6 +978,37 @@
 | `/obj/item/bodypart/proc/rogue_brittle()`, `rogue_end_crit_paralysis()`; `/mob/living/proc/rogue_slow_for()`, `rogue_critwound()`; `/mob/living/carbon/proc/rogue_fracture_gained()`, `rogue_update_fracture_slowdown()`, `rogue_crit_wound_shock()`; `/mob/living/carbon/human/proc/rogue_death_rattle()`; `/datum/wound/blunt/bone/rogue_artery_bleed()` | 3 | `combat/crits.dm`, `status.dm`, `blood.dm` | Перелом от крита (паралич, хрупкость, кровотечение, замедление), замедление по времени, хрип обескровленного |
 | `/obj/item/gun/ballistic/rogue_launcher` и `/obj/item/ammo_casing/rogue`: `examine()` с `..()` | 5 | `combat/launchers.dm` | Свои типы: зона стрелы, «steady aim» |
 
+## Блок 5 (2026-11-22): порох, путы и PvE, чудеса
+
+### Захваты, путы, колодки (`combat/`, Б15)
+| Что (тип, процедура, файл) | Ступень | Файл модуля | Оригинал ТГ | Поведение | При мерже проверить |
+|---|---|---|---|---|---|
+| `/mob/living/carbon/human/resist_grab()` (на medieval-картах без `..()`) | 5 | `combat/grab.dm` | `code/modules/mob/living/living.dm` (`/mob/living/resist_grab`) | Вырывание по Азуру: борьба, CON против STR/WIL, стойки, выносливость, удача | Сигнатура `resist_grab(moving_resist)`, возвращаемое значение |
+| `/mob/living/carbon/human/grab()` (`..()`, кроме второго захвата) | 5 | `combat/grab.dm` | `code/modules/mob/living/living_defense.dm` | Вторая рука берёт другую часть того же человека | Сигнатура `grab(mob/living/target)` |
+| `/mob/living/carbon/human/cuff_resist()` (`..()` со своим временем или `INSTANT_CUFFBREAK`) | 5 | `combat/bindings.dm` | `code/modules/mob/living/carbon/human/human.dm` | Время выпутывания из верёвки и цепи по силе | Сигнатура `cuff_resist(cuffs, breakouttime, cuff_break)` |
+| `/obj/item/bodypart/rogue_bleed_factor()` (модульная, второе звено с `..()`) | 3 | `combat/grab_bleed.dm` (в `.dme` строго после `combat/blood.dm`) | — | Хватка на части тела держит кровь | Порядок include |
+| Переменные модуля на типах ТГ: `/obj/item/bodypart/var/rogue_grips`, `/obj/item/hand_item/rogue_grab/var/held_part`; интенты `/datum/intent/grab/scruff`, `twistitem`, `remove`; `/datum/status_effect/rogue_netted`, модификаторы скорости `rogue_leg_bound`, `rogue_netted` | 2–3 | `combat/grab.dm`, `combat/bindings.dm` | — | Две хватки, scruff, выкручивание и извлечение застрявшего, связанные ноги, сеть | Имена не заняты ТГ |
+| Портированные: `/obj/item/rope` (`Initialize`, `interact_with_atom`, `dropped`), `/obj/item/net` (`Initialize`, `throw_impact`); `/obj/structure/pillory` (`buckle_mob`, `user_buckle_mob`, `user_unbuckle_mob` без `..()` при защёлке и замке, `attack_hand_secondary`, `item_interaction`, `hitby`, `post_buckle_mob`, `post_unbuckle_mob`, `examine`, `Initialize`); `/obj/structure/noose` (`user_buckle_mob` без `..()`, `user_unbuckle_mob`, `post_*_mob`, `process`, `Destroy`); `/obj/structure/meathook` (`attack_hand`, `item_interaction`, `post_*_mob` с `..()`, поверх `husbandry/butchering.dm`) | 1–2 | `combat/bindings.dm`, `combat/pillory.dm` | — | Связывание, сеть, колодки с ключом, петли, люди на крюке | Что ТГ-процедуры баклов (`buckle_mob`, `user_buckle_mob`) не сменили сигнатуру |
+
+### PvE (`pve/`, Б12б)
+| Что (тип, процедура, файл) | Ступень | Файл модуля | Оригинал ТГ | Поведение | При мерже проверить |
+|---|---|---|---|---|---|
+| Портированные: людоед `/obj/structure/flora/roguegrass/maneater/real` (`Initialize`, `Destroy`, `process`, `atom_break`, `attackby`, `user_buckle_mob`, `user_unbuckle_mob`), `/obj/item/maneaterseed/interact_with_atom()`; `/obj/structure/vine/Initialize()`; `/obj/projectile/rogue_pve/earth_chunk/on_hit()` с `..()`; мимик (`Initialize`, `examine` без `..()` пока притворяется, `death`, `rogue_hide`, `rogue_ambush`, `rogue_pve_idle_roots`), дриада (`Initialize`, `death`), болотный ползун (`rogue_pve_idle_roots`) | 1–2 | `pve/maneater.dm`, `pve/vines.dm`, `pve/projectiles.dm`, `pve/mimic.dm` | — | Людоеды, лозы, ком колосса, мимики, ползуны за скрытнем | Лозы карты (69 записей словаря) теперь цепляют ноги |
+| Новые типы: моб `/mob/living/simple_animal/hostile/retaliate/rogue/elemental/crawler`, умение `rogue_pve/dryad_vines`, узел ИИ `rogue_pve_find_lurker`, ключ `BB_ROGUE_PVE_LURKER`, модификатор `rogue_pve_dryad_vines` | 2 | `pve/mobs.dm`, `pve/vines.dm`, `pve/_defines.dm` | — | Земляной ползун, лозы дриады, ползуны за скрытнем | — |
+
+### Порох и бомбы (`combat/`, Б14)
+| Что (тип, процедура, файл) | Ступень | Файл модуля | Оригинал ТГ | Поведение | При мерже проверить |
+|---|---|---|---|---|---|
+| Процедур ТГ не переопределено. Компонент `rogue_explosive` на бомбах обеих веток (Азура `/obj/item/explosive/*`, Ратвуда `bomb`, `tntstick`, `satchel_bomb`, `impact_grenade/*`); переменная `/mob/living/var/rogue_bomb_hit_at` | 2–3 | `combat/explosives.dm` | — | Фитиль, удар, цепная реакция, растяжки, осколки, газы | Взрывы через `explosion()` ТГ: сигнатура |
+| `/obj/item/gun/ballistic/rogue_launcher/firearm` и `/blunderbuss`, свойства видов ружей `GLOB.rogue_firearm_kinds`; `/obj/item/rogueweapon/palantir`, бомбарда и заряды | 2 | `combat/firearms.dm`, `combat/bombards.dm` | — | Огнестрел Ратвуда на пусковых модуля, бомбарда по палантиру | Ружья Ратвуда — после прививки портером `/obj/item/gun/ballistic/firearm` к `rogue_launcher/firearm` (`rockhill/config.json`) |
+
+### Чудеса (`faith/miracles/`, Б16а, Б16б)
+| Что (тип, процедура, файл) | Ступень | Файл модуля | Оригинал ТГ | Поведение | При мерже проверить |
+|---|---|---|---|---|---|
+| Процедур ТГ не переопределено. Общая процедура чуда `rogue_miracle` (`value_key`, выносливость, заряды); статусы `rogue_miracle_stats`, `rogue_inflamed`, `lightningstruck`, `haste`; `/mob/living/carbon/human/var/rogue_pain_mult` (читает `rogue_complex_pain()` в `combat/pain.dm`); сигнал `COMSIG_LIVING_MIRACLE_HEAL_APPLY` (`_signals.dm`) | 2–3 | `faith/miracle.dm`, `faith/miracles/effects.dm`, `_signals.dm` | — | 55 новых чудес и два орисона; чудеса тратят выносливость; множители боли возвращает сам статус | — |
+| `/obj/item/chameleon/rogue_parlor_trick/make_copy()` (свой подтип проектора хамелеона ТГ) | 2 | `faith/miracles/xylix.dm` | `code/game/objects/items/devices/chameleonproj.dm` | Парлор-трюк Mimicry | Сигнатура `make_copy` |
+| Портированные и новые подтипы: `/obj/item/net/unholy_grasp` (`dropped`, `throw_impact`), `/obj/item/rogueweapon/light_spear/conjured`, `ignition/enkindle`, `anastasis/undivided`, `rogue_inflamed/pain_only`; арена `/area/rogue/indoors/ravoxarena` и флаги `/obj/structure/fluff/ravox/*`; двойник `/mob/living/basic/rogue_xylix_double`, кровать `/obj/structure/bed/rockhill/rogue/eora`, цветок `/obj/item/clothing/head/peaceflower` | 1–2 | `faith/miracles/*.dm` | — | Чудеса Астраты, Равокса, Граггара, Малума, Матиоса, Абиссора, Псайдона, Undivided, Ксайликса, Нока, Эоры | — |
+
 ## Тесты
 
 Тестовые файлы обёрнуты в собственные `#ifdef` (`UNIT_TESTS`, `REDTARD_TEST_FOCUS`, `REDTARD_LIGHT_BENCH`, `REDTARD_LIGHT_BENCH_CLIENT`), потому что Dream Maker дописывает их в блок `BEGIN_INCLUDE` модуля без условий.

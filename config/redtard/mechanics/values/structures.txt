@@ -394,3 +394,47 @@ traveltile_travel_cooldown = 10
 
 # Deciseconds it takes to work a tree by hand.
 newtree_attack_hand_time = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list b15)
+
+# Strength at which one locked in a pillory breaks it open (Azure Peak pillory user_unbuckle_mob() STASTR).
+pillory_break_strength = 10
+
+# Deciseconds one strong enough takes to break a pillory open (Azure Peak pillory user_unbuckle_mob()).
+pillory_break_time = 10
+
+# Deciseconds one in a latched, unlocked pillory struggles to force the latch (Azure Peak pillory user_unbuckle_mob()).
+pillory_unlatch_time = 10
+
+# Deciseconds to tie a noose over someone else's neck (Azure Peak noose user_buckle_mob()).
+noose_tie_time = 10
+
+# Brute damage of falling when the noose or the gallows is destroyed (Azure Peak noose Destroy()).
+noose_fall_damage = 10
+
+# Deciseconds one is knocked down falling when the noose or the gallows is destroyed (Azure Peak noose Destroy()).
+noose_fall_knockdown = 10
+
+# Deciseconds a headless body is knocked down dropping from the noose (Azure Peak noose process()).
+noose_drop_knockdown = 10
+
+# Suffocation damage of hanging, every tick of the noose (Azure Peak noose process()).
+noose_choke_damage = 10
+
+# Percent chance, every tick of the noose, that one hanging gasps (Azure Peak noose process()).
+noose_gasp_chance = 10
+
+# Percent chance, every tick of the noose, that a battered dead head comes off (Azure Peak noose process()).
+noose_behead_chance = 10
+
+# Brute damage of a dead head before the noose can tear it off (Azure Peak noose process()).
+noose_behead_damage = 10
+
+# Strength above which one struggles out of a noose much sooner (Azure Peak resist_buckle() STASTR).
+noose_strong_strength = 10
+
+# Deciseconds to struggle out of a noose (Azure Peak resist_buckle(): the base minute and the noose's breakoutextra).
+noose_struggle_time = 10
+
+# Deciseconds one strong enough takes to struggle out of a noose (Azure Peak resist_buckle() of the strong).
+noose_struggle_time_strong = 10

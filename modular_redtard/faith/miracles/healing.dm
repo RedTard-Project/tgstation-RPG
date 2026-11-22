@@ -33,6 +33,7 @@
 	var/amount = healing * seconds_between_ticks
 	if(owner.has_status_effect(/datum/status_effect/rogue_fortify))
 		amount *= rogue_value("faith_fortify_bonus")
+	SEND_SIGNAL(owner, COMSIG_LIVING_MIRACLE_HEAL_APPLY, amount, src)
 	new /obj/effect/temp_visual/heal(get_turf(owner), "#c7aa5c")
 	if(owner.get_blood_volume() < BLOOD_VOLUME_NORMAL)
 		owner.adjust_blood_volume(amount, maximum = BLOOD_VOLUME_NORMAL)

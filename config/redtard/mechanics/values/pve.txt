@@ -528,3 +528,122 @@ minotaur_fury_rogue_erupt_chance = 10
 
 # Percent chance in /obj/structure/spider/stickyweb/atom_deconstruct().
 stickyweb_atom_deconstruct_chance = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list b15)
+
+# Share of a maneater's integrity below which it dies (Ratwood maneater integrity_failure).
+pve_maneater_break_fraction = 10
+
+# Deciseconds a maneater waits after eating before it seizes or eats again (Ratwood maneater Crossed() last_eat).
+pve_maneater_eat_cooldown = 10
+
+# Deciseconds a juvenile maneater waits after eating before it eats again (Ratwood juvenile Crossed() last_eat).
+pve_maneater_juvenile_eat_cooldown = 10
+
+# Deciseconds between the chews of a maneater (Ratwood begin_eat() timer).
+pve_maneater_chew_time = 10
+
+# Damage of a maneater's chew (Ratwood begin_eat()).
+pve_maneater_chew_damage = 10
+
+# Percent chance that a maneater's first chew takes off the limb, doubled with every chew (Ratwood begin_eat() chew_factor).
+pve_maneater_limb_chance = 10
+
+# Nutrition a maneater gets from a limb, an organ or meat dropped into it (Ratwood seednutrition).
+pve_maneater_food_item = 10
+
+# Nutrition a maneater gets from a limb it chews off (Ratwood seednutrition).
+pve_maneater_food_limb = 10
+
+# Nutrition a maneater gets from a body it swallows (Ratwood seednutrition).
+pve_maneater_food_body = 10
+
+# Nutrition a maneater needs to spit out a seed (Ratwood max_seednutrition).
+pve_maneater_seed_nutrition = 10
+
+# Nutrition a juvenile maneater needs to spit out a seed (Ratwood juvenile max_seednutrition).
+pve_maneater_juvenile_seed_nutrition = 10
+
+# Deciseconds after it last woke that a maneater hides again, with no one in its jaws (Ratwood maneater process()).
+pve_maneater_hide_time = 10
+
+# Deciseconds of every try to break free of a maneater (Ratwood user_unbuckle_mob() do_after).
+pve_maneater_struggle_time = 10
+
+# Percent chance to break free of a maneater for every point of strength (Ratwood user_unbuckle_mob() time2mount).
+pve_maneater_free_per_strength = 10
+
+# Multiplier of the chance to break free of a maneater after every failed try (Ratwood user_unbuckle_mob() break_factor).
+pve_maneater_free_growth = 10
+
+# Deciseconds between the growths of a juvenile maneater (Ratwood juvenile growth_time).
+pve_maneater_growth_time = 10
+
+# Deciseconds to plant a maneater seed (Ratwood maneaterseed afterattack() do_after).
+pve_maneater_plant_time = 10
+
+# Deciseconds a vine holds the feet, less one for every point of strength (Ratwood vine Crossed() stuck_time).
+pve_vine_hold = 10
+
+# Deciseconds a vine holds the feet of one cursed by Dendor, less one for every point of strength (Ratwood vine Crossed()).
+pve_vine_hold_cursed = 10
+
+# Percent chance a vine's thorns nick whoever walks into it (Ratwood vine Crossed()).
+pve_vine_cut_chance = 10
+
+# Brute damage of a vine's thorns (Ratwood vine Crossed()).
+pve_vine_cut_damage = 10
+
+# Movement slowdown taken off a dryad on vines (Ratwood dryad Move() move_to_delay).
+pve_dryad_vine_haste = 10
+
+# Deciseconds between the dryad's vine spreads (Ratwood dryad vine_cd).
+pve_dryad_vines_cooldown = 10
+
+# Tiles from its foe at which a dryad spreads its vines (Ratwood dryad MoveToTarget()).
+pve_dryad_vines_reach = 10
+
+# Tiles around the dryad its vines spread to (Ratwood dryad vine() RANGE_TURFS).
+pve_dryad_vines_radius = 10
+
+# Tiles a mire crawler looks for a mire lurker to follow (Ratwood find_lurker_to_follow() view).
+pve_lurker_follow_find_range = 10
+
+# Tiles from its lurker beyond which a mire crawler stops following it (Ratwood being_a_minion/mirespider).
+pve_lurker_follow_range = 10
+
+# Percent chance a colossus's chunk breaks apart into earthen crawlers where it hits (Ratwood earthenchunk on_hit()).
+pve_earth_chunk_split_chance = 10
+
+# Earthen crawlers a breaking chunk scatters (Ratwood earthenchunk reinforcement_count).
+pve_earth_chunk_crawlers = 10
+
+# Health of an earthen crawler (Ratwood crawler maxHealth).
+pve_crawler_health = 10
+
+# Least damage of an earthen crawler's blow (Ratwood crawler melee_damage_lower).
+pve_crawler_damage_min = 10
+
+# Most damage of an earthen crawler's blow (Ratwood crawler melee_damage_upper).
+pve_crawler_damage_max = 10
+
+# Percent chance an earthen crawler parries (Ratwood crawler defprob).
+pve_crawler_defprob = 10
+
+# Share of its health below which an earthen crawler flees (Ratwood crawler retreat_health).
+pve_crawler_retreat_health = 10
+
+# Strength of an earthen crawler (Ratwood crawler STASTR).
+pve_crawler_strength = 10
+
+# Constitution of an earthen crawler (Ratwood crawler STACON).
+pve_crawler_constitution = 10
+
+# Willpower of an earthen crawler (Ratwood crawler STAWIL).
+pve_crawler_willpower = 10
+
+# Speed of an earthen crawler (Ratwood crawler STASPD).
+pve_crawler_speed = 10
+
+# Elemental motes an earthen crawler leaves when it dies (Ratwood crawler death()).
+pve_crawler_motes = 10

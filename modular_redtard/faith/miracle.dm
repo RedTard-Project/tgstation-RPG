@@ -40,15 +40,30 @@
 	/// Stamina a cast takes (Ratwood releasedrain). A miracle pays it flat: the skill, the mind and the armour of the caster do
 	/// not sway it (Ratwood calculate_fatigue_drain() lets a miracle off all of them).
 	var/stamina_cost = 0
-	/// Charges instead of a cooldown (Ratwood charge_type "charges"; 0 - a plain cooldown). A cast spends one; one comes back
-	/// every charge_time, and with none left the lot comes back after empty_charge_time. Such a miracle has no cooldown_time.
+	/// The name the numbers of this miracle go by in faith.txt: miracle_<value_key>_devotion, _stamina, _cooldown and _range,
+	/// and with uses_charges also _charges, _charge_time and _empty_time. New() reads them into the vars above; a miracle with
+	/// no value_key keeps what its type says. No number of balance is written in the code of a miracle, it is in the numbers.
+	var/value_key
+	/// Charges instead of a cooldown (Ratwood charge_type "charges"). A cast spends one; one comes back every charge_time, and
+	/// with none left the lot comes back after empty_charge_time. Such a miracle has no cooldown_time. How many, and the times,
+	/// are the numbers of its value_key; max_charges is 0 until New() reads it.
+	var/uses_charges = FALSE
 	var/max_charges = 0
 	var/charges = 0
-	var/charge_time = 10 SECONDS
-	var/empty_charge_time = 1 MINUTES
+	var/charge_time = 0
+	var/empty_charge_time = 0
 	var/charge_timer
 
 /datum/action/cooldown/spell/pointed/rogue_miracle/New(Target)
+	if(value_key)
+		devotion_cost = rogue_value("miracle_[value_key]_devotion")
+		stamina_cost = rogue_value("miracle_[value_key]_stamina")
+		cooldown_time = rogue_value("miracle_[value_key]_cooldown")
+		cast_range = rogue_value("miracle_[value_key]_range")
+		if(uses_charges)
+			max_charges = rogue_value("miracle_[value_key]_charges")
+			charge_time = rogue_value("miracle_[value_key]_charge_time")
+			empty_charge_time = rogue_value("miracle_[value_key]_empty_time")
 	. = ..()
 	charges = max_charges
 	desc = "[desc]<br>Tier [miracle_tier]. Devotion: [devotion_cost].[stamina_cost ? " Stamina: [stamina_cost]." : ""][max_charges ? " [max_charges] charges: one is regained in [DisplayTimeText(charge_time)], all of them in [DisplayTimeText(empty_charge_time)] when none are left." : ""][needs_holy_symbol ? " Needs a holy symbol." : ""]"
@@ -200,6 +215,11 @@
 		basket += by_name[key]
 	return basket
 
+/// The devotion one cast of a miracle type costs: its value if it has a value_key, else what the type says.
+/proc/rogue_miracle_devotion(datum/action/cooldown/spell/pointed/rogue_miracle/miracle_type)
+	var/key = initial(miracle_type.value_key)
+	return key ? rogue_value("miracle_[key]_devotion") : initial(miracle_type.devotion_cost)
+
 /// What the basket says of a miracle type: name, tier, devotion, forks and gods.
 /proc/rogue_miracle_summary(datum/action/cooldown/spell/pointed/rogue_miracle/miracle_type)
-	return "[initial(miracle_type.name)] (tier [initial(miracle_type.miracle_tier)], [initial(miracle_type.devotion_cost)] devotion; [initial(miracle_type.miracle_forks)]: [initial(miracle_type.miracle_gods)])"
+	return "[initial(miracle_type.name)] (tier [initial(miracle_type.miracle_tier)], [rogue_miracle_devotion(miracle_type)] devotion; [initial(miracle_type.miracle_forks)]: [initial(miracle_type.miracle_gods)])"

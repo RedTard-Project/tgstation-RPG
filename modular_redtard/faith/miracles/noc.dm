@@ -57,17 +57,12 @@
 	sound = 'modular_redtard/faith/sound/churn.ogg'
 	invocation = "Noc blinds thee of thy sins!"
 	invocation_type = INVOCATION_SHOUT
-	cooldown_time = 30 SECONDS
-	cast_range = 7
+	value_key = "shroud_of_noc"
 	self_castable = FALSE
 	miracle_tier = ROGUE_MIRACLE_TIER_2
-	devotion_cost = 15
-	stamina_cost = 30
 	needs_holy_symbol = TRUE
 	miracle_forks = "Ratwood"
 	miracle_gods = "Noc T2"
-	/// Darkness per rank of the caster in miracles (Ratwood 3 seconds).
-	var/blind_per_rank = 3 SECONDS
 
 /datum/action/cooldown/spell/pointed/rogue_miracle/shroud_of_noc/is_valid_target(atom/cast_on)
 	. = ..()
@@ -82,7 +77,7 @@
 	var/mob/living/caster = owner
 	var/rank = max(caster.rogue_skill_rank(/datum/attribute/skill/magic/holy), 1)
 	cast_on.visible_message(span_warning("[owner] points at [cast_on]'s eyes!"), span_warning("My eyes are covered in darkness!"))
-	cast_on.apply_status_effect(/datum/status_effect/rogue_magical_blindness, rank * blind_per_rank, round(rank / 2))
+	cast_on.apply_status_effect(/datum/status_effect/rogue_magical_blindness, rank * rogue_value("noc_shroud_time_rank"), round(rank * rogue_value("noc_shroud_perception_rank")))
 
 /// Ratwood Silence's mute: the voice goes still for a time.
 /datum/status_effect/rogue_silenced
@@ -120,19 +115,12 @@
 	sound = 'modular_redtard/faith/sound/zizo_snuff.ogg'
 	invocation = "Lunaria Silentium!"
 	invocation_type = INVOCATION_SHOUT
-	cooldown_time = 30 SECONDS
-	cast_range = 7
+	value_key = "silence"
 	self_castable = FALSE
 	miracle_tier = ROGUE_MIRACLE_TIER_3
-	devotion_cost = 100
-	stamina_cost = 30
 	needs_holy_symbol = TRUE
 	miracle_forks = "Ratwood"
 	miracle_gods = "Noc T3"
-	/// The prayer before the silence falls (Ratwood chargetime 5 seconds).
-	var/prayer_time = 5 SECONDS
-	/// Silence per rank of the caster in miracles (Ratwood 5 seconds).
-	var/silence_per_rank = 5 SECONDS
 
 /datum/action/cooldown/spell/pointed/rogue_miracle/silence/is_valid_target(atom/cast_on)
 	. = ..()
@@ -148,14 +136,14 @@
 
 /datum/action/cooldown/spell/pointed/rogue_miracle/silence/proc/still_voice(mob/living/carbon/human/caster, mob/living/carbon/target)
 	caster.visible_message(span_warning("[caster] stretches out a hand towards [target] and the air around [target.p_them()] begins to still..."), span_notice("I call upon Noc to still the voice of [target]..."))
-	if(!do_after(caster, prayer_time, target = target, timed_action_flags = IGNORE_USER_LOC_CHANGE | IGNORE_TARGET_LOC_CHANGE))
+	if(!do_after(caster, rogue_value("noc_silence_prayer"), target = target, timed_action_flags = IGNORE_USER_LOC_CHANGE | IGNORE_TARGET_LOC_CHANGE))
 		to_chat(caster, span_warning("My prayer was interrupted!"))
 		refund()
 		return
 	if(QDELETED(target) || target.can_block_magic(MAGIC_RESISTANCE_HOLY))
 		return
 	playsound(get_turf(target), 'modular_redtard/faith/sound/zizo_snuff.ogg', 80, TRUE)
-	target.apply_status_effect(/datum/status_effect/rogue_silenced, max(caster.rogue_skill_rank(/datum/attribute/skill/magic/holy), 1) * silence_per_rank)
+	target.apply_status_effect(/datum/status_effect/rogue_silenced, max(caster.rogue_skill_rank(/datum/attribute/skill/magic/holy), 1) * rogue_value("noc_silence_time_rank"))
 
 /// Ratwood magicshield's TRAIT_ANTIMAGIC: magic does not touch them while it lasts.
 /datum/status_effect/rogue_moonlit_ward
@@ -198,18 +186,11 @@
 	sound = 'modular_redtard/faith/sound/antimagic.ogg'
 	invocation = "No spell shall touch thee!"
 	invocation_type = INVOCATION_SHOUT
-	cooldown_time = 60 SECONDS
-	cast_range = 7
+	value_key = "moonlit_ward"
 	miracle_tier = ROGUE_MIRACLE_TIER_2
-	devotion_cost = 100
-	stamina_cost = 30
 	needs_holy_symbol = TRUE
 	miracle_forks = "Ratwood"
 	miracle_gods = "Noc T2"
-	/// The prayer before the ward is raised (Ratwood chargetime 3 seconds).
-	var/prayer_time = 3 SECONDS
-	/// Ward per rank of the caster in miracles (Ratwood 5 seconds).
-	var/ward_per_rank = 5 SECONDS
 
 /datum/action/cooldown/spell/pointed/rogue_miracle/moonlit_ward/is_valid_target(atom/cast_on)
 	. = ..()
@@ -225,13 +206,13 @@
 
 /datum/action/cooldown/spell/pointed/rogue_miracle/moonlit_ward/proc/raise_ward(mob/living/carbon/human/caster, mob/living/target)
 	caster.visible_message(span_notice("[caster] raises a hand and moonlight gathers around [target]..."), span_notice("I call upon Noc to ward [target == caster ? "myself" : target] from magic..."))
-	if(!do_after(caster, prayer_time, target = target, timed_action_flags = IGNORE_USER_LOC_CHANGE | IGNORE_TARGET_LOC_CHANGE))
+	if(!do_after(caster, rogue_value("noc_ward_prayer"), target = target, timed_action_flags = IGNORE_USER_LOC_CHANGE | IGNORE_TARGET_LOC_CHANGE))
 		to_chat(caster, span_warning("My prayer was interrupted!"))
 		refund()
 		return
 	if(QDELETED(target) || HAS_TRAIT(target, TRAIT_ANTIMAGIC))
 		return
-	target.apply_status_effect(/datum/status_effect/rogue_moonlit_ward, max(caster.rogue_skill_rank(/datum/attribute/skill/magic/holy), 1) * ward_per_rank)
+	target.apply_status_effect(/datum/status_effect/rogue_moonlit_ward, max(caster.rogue_skill_rank(/datum/attribute/skill/magic/holy), 1) * rogue_value("noc_ward_time_rank"))
 
 /// Peering ahead: the view is shifted towards the spot looked at until the gazer moves or the time runs out.
 /datum/status_effect/rogue_noc_gaze
@@ -267,13 +248,13 @@
 /datum/status_effect/rogue_noc_gaze/on_remove()
 	UnregisterSignal(owner, list(COMSIG_MOVABLE_MOVED, COMSIG_MOB_LOGOUT))
 	if(shifted)
-		animate(shifted, pixel_x = 0, pixel_y = 0, time = 0.6 SECONDS)
+		animate(shifted, pixel_x = 0, pixel_y = 0, time = rogue_value("noc_gaze_slide"))
 		shifted = null
 	return ..()
 
 /datum/status_effect/rogue_noc_gaze/proc/shift_view()
 	shifted = owner.client
-	animate(shifted, pixel_x = shift_x, pixel_y = shift_y, time = 0.6 SECONDS)
+	animate(shifted, pixel_x = shift_x, pixel_y = shift_y, time = rogue_value("noc_gaze_slide"))
 
 /datum/status_effect/rogue_noc_gaze/proc/on_moved(datum/source)
 	SIGNAL_HANDLER
@@ -290,17 +271,11 @@
 	invocation = "Noc guide my gaze."
 	invocation_type = INVOCATION_WHISPER
 	antimagic_flags = NONE
-	cooldown_time = 5 SECONDS
-	cast_range = 7
+	value_key = "noc_gaze"
 	self_castable = FALSE
 	miracle_tier = ROGUE_MIRACLE_TIER_0
-	devotion_cost = 5
 	miracle_forks = "Ratwood"
 	miracle_gods = "none: in no patron's list"
-	/// How long the view holds if the devotee stands still.
-	var/gaze_time = 10 SECONDS
-	/// Nearest spot that can be peered at, in tiles (Ratwood: farther than 2).
-	var/nearest = 3
 
 /datum/action/cooldown/spell/pointed/rogue_miracle/noc_gaze/is_valid_target(atom/cast_on)
 	. = ..()
@@ -309,6 +284,7 @@
 	if(!owner.client)
 		return FALSE
 	var/distance = get_dist(owner, get_turf(cast_on))
+	var/nearest = rogue_value("noc_gaze_nearest")
 	if(distance < nearest || distance > cast_range)
 		to_chat(owner, span_warning("I can only peer at a spot [nearest] to [cast_range] tiles away."))
 		return FALSE
@@ -317,6 +293,7 @@
 	. = ..()
 	var/turf/spot = get_turf(cast_on)
 	var/turf/here = get_turf(owner)
-	owner.apply_status_effect(/datum/status_effect/rogue_noc_gaze, gaze_time, (spot.x - here.x) * ICON_SIZE_X, (spot.y - here.y) * ICON_SIZE_Y)
+	var/mob/living/caster = owner
+	caster.apply_status_effect(/datum/status_effect/rogue_noc_gaze, rogue_value("noc_gaze_time"), (spot.x - here.x) * ICON_SIZE_X, (spot.y - here.y) * ICON_SIZE_Y)
 
 #undef ROGUE_MIRACLES_NOC_RATWOOD_ICON

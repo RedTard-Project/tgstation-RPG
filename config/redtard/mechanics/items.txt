@@ -28702,6 +28702,13 @@ throw_force = 10
 defense = 10
 wielded_defense_bonus = 10
 
+[rogueweapon/light_spear/conjured]
+integrity = 10
+force = 10
+throw_force = 10
+defense = 10
+wielded_defense_bonus = 10
+
 [rogueweapon/lordscepter]
 integrity = 10
 force = 10
