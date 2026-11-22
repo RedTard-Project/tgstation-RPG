@@ -50,7 +50,7 @@
 	icon_dead = "chicken_brown_dead"
 	health = 15
 	maxHealth = 15
-	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/grown/wheat, /obj/item/reagent_containers/food/snacks/grown/oat)
+	rogue_food_types = list(/obj/item/reagent_containers/food/snacks/grown/wheat, /obj/item/reagent_containers/food/snacks/grown/oat, /obj/item/reagent_containers/food/snacks/grown/bakersroot)
 	rogue_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat = 1)
 
 /mob/living/simple_animal/hostile/retaliate/bat

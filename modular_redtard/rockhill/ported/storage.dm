@@ -165,6 +165,12 @@
 	screen_max_columns = 8
 	screen_max_rows = 10
 
+/datum/storage/rogue_grid/roguetown/backpack/arti
+	screen_max_columns = 6
+	screen_max_rows = 7
+	max_specific_storage = WEIGHT_CLASS_NORMAL
+	rogue_not_while_equipped = FALSE
+
 /datum/storage/rogue_grid/roguetown/belt/cloth
 	screen_max_columns = 1
 

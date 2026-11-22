@@ -15,7 +15,7 @@
 
 /obj/structure/trap/shock/trap_effect(mob/living/victim)
 	victim.electrocute_act(30, src, flags = SHOCK_NOGLOVES)
-	victim.Paralyze(5 SECONDS)
+	victim.Paralyze(rogue_value("shock_trap_effect_paralyze"))
 
 /obj/structure/trap/bomb/trap_effect(mob/living/victim)
 	explosion(src, light_impact_range = 1, flame_range = 2, smoke = TRUE, explosion_cause = src)
@@ -43,7 +43,7 @@
 	for(var/obj/item/carried in victim.get_all_contents())
 		carried.extinguish()
 	playsound(src, 'modular_redtard/rockhill/sound/foley/water_land2.ogg', 70, TRUE)
-	victim.Paralyze(1 SECONDS)
+	victim.Paralyze(rogue_value("water_trap_effect_paralyze"))
 
 /obj/structure/trap/wall_projectile
 	var/turf/closed/home_wall

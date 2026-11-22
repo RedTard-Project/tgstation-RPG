@@ -1,5 +1,5 @@
 /// Ratwood's structures have no armor: a door basher's blow goes through all of it (PENETRATE_ARMOUR() of 100).
-#define ROCKHILL_DOOR_BASH_PENETRATION 100
+#define ROCKHILL_DOOR_BASH_PENETRATION rogue_value("rockhill_blow_penetration")
 
 /mob/living/carbon/human
 	var/received_resident_key = FALSE

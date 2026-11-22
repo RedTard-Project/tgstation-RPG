@@ -358,6 +358,97 @@ class Codebase:
         return None
 
 
+# The globals parse_codebase() fills besides the types: a second code tree read for one part of the port (Azure Peak's
+# intents) must leave Ratwood's procs, outfits and defines as they are.
+PARSE_GLOBALS = ('DEFINE_VALUES', 'PROCS', 'PRE_EQUIP', 'ONMOB', 'INIT_BODIES', 'FILL_BODIES', 'STORAGE_NEW', 'SKIN_LISTS', 'OUTFIT_PROCS', 'HUMAN_PROCS')
+
+
+class SideSource:
+    """A second code tree the port reads beside Ratwood (read only, never synced or touched by git): its types, its
+    defines, its folder (for the files it names) and how its var names differ from Ratwood's."""
+
+    def __init__(self, name, root, rename):
+        self.name = name
+        self.root = root
+        self.rename = rename
+        saved = {key: globals()[key] for key in PARSE_GLOBALS}
+        for key in PARSE_GLOBALS:
+            globals()[key] = type(saved[key])(set) if isinstance(saved[key], collections.defaultdict) else type(saved[key])()
+        try:
+            types, _ = parse_codebase(root)
+            self.defines = globals()['DEFINE_VALUES']
+        finally:
+            for key, value in saved.items():
+                globals()[key] = value
+        self.cb = Codebase(types)
+
+    def has(self, path):
+        return path in self.cb.types
+
+
+SIDE = {}
+
+
+class source_defines:
+    """Reads a side source's values with its own defines (with source_defines(side): ...); None keeps Ratwood's."""
+
+    def __init__(self, side):
+        self.side = side
+
+    def __enter__(self):
+        self.saved = globals()['DEFINE_VALUES']
+        if self.side is not None:
+            globals()['DEFINE_VALUES'] = self.side.defines
+        return self
+
+    def __exit__(self, *exc):
+        globals()['DEFINE_VALUES'] = self.saved
+        return False
+
+
+def load_side_sources(port):
+    """Azure Peak beside Ratwood (port.intents.azure): the folder from the environment variable it names, else its path
+    relative to the repository root. Without the folder the port keeps Ratwood's intents and says so."""
+    spec = port.get('intents', {}).get('azure')
+    if not spec:
+        return
+    root = os.environ.get(spec.get('env', ''), '') or spec['root']
+    if not any(f.endswith('.dme') for f in (os.listdir(root) if os.path.isdir(root) else [])):
+        print(f"azure: no code tree at {root} (set {spec.get('env')}); intents stay Ratwood's")
+        return
+    side = SideSource('azure', root, spec.get('rename', {}))
+    SIDE['azure'] = side
+    print('azure types:', len(side.cb.types), 'from', root)
+
+
+def azure_weapon(path):
+    """A ported item that takes Azure Peak's intents (port.intents.azure.items): a weapon Azure has, not a tool whose
+    work the module reads from Ratwood's intents (tilling, threshing, digging)."""
+    side = SIDE.get('azure')
+    spec = CONFIG_PORT[0].get('intents', {}).get('azure', {}).get('items', {})
+    if not side or not side.has(path):
+        return False
+    return any(boundary_match(path, p) for p in spec.get('prefixes', [])) and not any(boundary_match(path, p) for p in spec.get('except', []))
+
+
+CONFIG_PORT = [{}]
+AZURE_LISTS = collections.Counter()
+
+
+def azure_intents(path, name, ratwood):
+    """Azure Peak's intents of a weapon (possible_item_intents or gripped_intents). Azure's one-handed list empty while
+    Ratwood's is not (a define Azure lacks) keeps the weapon Ratwood's; an empty two-handed list is Azure's: the weapon is
+    not wielded there."""
+    side = SIDE['azure']
+    with source_defines(side):
+        entries = intent_paths(side.cb, side.cb.resolve(path, name))
+    if not entries and ratwood and name == 'possible_item_intents':
+        AZURE_LISTS['kept Ratwood (Azure list empty)'] += 1
+        return ratwood
+    AZURE_LISTS['changed' if entries != ratwood else 'same'] += 1
+    return entries
+
+
 def declared_paths(roots, exclude):
     declared = set()
     exclude = [os.path.normpath(e) for e in exclude]
@@ -1010,6 +1101,9 @@ def main():
     types, _ = parse_codebase(code_root)
     rw = Codebase(types)
     print('ratwood types:', len(types))
+    CONFIG_PORT[0] = port
+    load_side_sources(port)
+    check_tables(port)
     declared = declared_paths(DECLARATION_ROOTS, [OUT_DIR])
     tg_declared = declared_paths(['code'], [])
     tg_names = tg_defines('code')
@@ -1484,6 +1578,20 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
         rel = exact_case(CHECKOUT, ICON_LITERAL.match(raw.strip()).group(1))
         src = os.path.join(CHECKOUT, rel)
         if not os.path.exists(src) or not asset_allowed(rel):
+            return None
+        sounds[src] = f"{SOUND_DIR}/{rel[len('sound/'):] if rel.startswith('sound/') else rel}"
+        return f"'{sounds[src]}'"
+
+    def side_sound_ref(raw):
+        """A sound an Azure Peak intent names: Ratwood's copy of the file where the cache has it, else Azure's own."""
+        ref = sound_ref(raw)
+        side = SIDE.get('azure')
+        if ref or not side:
+            return ref
+        rel = exact_case(side.root, ICON_LITERAL.match(raw.strip()).group(1))
+        src = os.path.join(side.root, rel)
+        skipped = CONFIG_PORT[0].get('intents', {}).get('azure', {}).get('sound_skip', [])
+        if not os.path.exists(src) or any(rel.startswith(prefix) for prefix in skipped):
             return None
         sounds[src] = f"{SOUND_DIR}/{rel[len('sound/'):] if rel.startswith('sound/') else rel}"
         return f"'{sounds[src]}'"
@@ -2005,6 +2113,12 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                     continue
                 if name in cat.get('intent_lists', []):
                     entries = intent_paths(rw, value)
+                    if azure_weapon(path):
+                        ratwood_entries = entries
+                        entries = azure_intents(path, name, entries)
+                        if not entries and ratwood_entries:
+                            # Azure clears a list Ratwood keeps: written cleared, or the type would inherit its parent's.
+                            block.append(f'\t{name} = null')
                     if entries and tuple(entries) != DEFAULT_INTENTS:
                         USED_INTENTS.update(entries)
                         block.append(f'\t{name} = list(' + ', '.join(entries) + ')')
@@ -2215,6 +2329,9 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                 if (rw.resolve(path, 'outdoors') or '').strip() in ('TRUE', '1'):
                     outdoor_areas.append(path)
             report_rows[cat['file']].append((path, usage[path]))
+        for kind, table_spec in port.get('tables', {}).items():
+            if isinstance(table_spec, dict) and table_spec.get('dm') == cat['file']:
+                blocks = extract_table(port, kind, blocks, cat.get('inherited_vars', {}))
         text = '\n\n'.join('\n'.join(b) for b in blocks) + '\n'
         open(f"{OUT_DIR}/{cat['file']}", 'w', encoding='utf-8', newline='\n').write(text)
         print(f"{cat['file']}: {len(paths)} types")
@@ -2230,7 +2347,12 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
     open(f'{OUT_DIR}/rogue_armor.dm', 'w', encoding='utf-8', newline='\n').write('\n'.join(rogue_armor_lines).rstrip() + '\n')
     print(f'rogue_armor.dm: {len(ROGUE_ARMOR_DATUMS)} armor datums')
     generate_alt_grips(rw, port.get('alt_grips', {}), sorted(grip_paths))
-    generate_intents(rw, port.get('intents', {}), sound_ref, valid)
+    if AZURE_LISTS:
+        print('weapon intent lists from Azure Peak:', ', '.join(f'{k} {v}' for k, v in sorted(AZURE_LISTS.items())))
+    generate_intents(rw, port.get('intents', {}), sound_ref, valid, side_sound_ref)
+    for kind in ('items', 'intents'):
+        inherited_table_rows(port, kind, declared - tg_declared)
+    write_tables(port)
 
     armor_lines = []
     for path, fields in sorted(ARMOR_DATUMS.items()):
@@ -2467,7 +2589,11 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                 out.write(f'- `{dest}` from Ratwood `{rel}`\n')
         if sounds:
             out.write('\n## Sounds\n\n')
+            side = SIDE.get('azure')
             for src, dest in sorted(sounds.items(), key=lambda kv: kv[1]):
+                if side and same_path(os.path.commonpath([os.path.abspath(src), os.path.abspath(side.root)]), side.root):
+                    out.write(f"- `{dest}` from Azure Peak `{os.path.relpath(src, side.root).replace(os.sep, '/')}`\n")
+                    continue
                 rel = os.path.relpath(src, CHECKOUT).replace('\\', '/')
                 out.write(f'- `{dest}` from Ratwood `{rel}`\n')
     if port.get('bake'):
@@ -2909,50 +3035,219 @@ def intent_effect_lines(rw, path, spec):
     return lines
 
 
-def generate_intents(rw, spec, sound_ref, valid=frozenset()):
-    renames = spec.get('rename', {})
+def intent_number(raw):
+    """A number of an intent: a define, or an expression of defines and time units (Azure Peak writes 1.3 SECONDS)."""
+    number = define_value_number(raw)
+    return number if number is not None else food_number(raw)
+
+
+def generate_intents(rw, spec, sound_ref, valid=frozenset(), side_sound_ref=None):
+    """The intents the port uses. One Azure Peak has (port.intents.azure) is written from Azure's code, its numbers and
+    sounds included; one only Ratwood has stays Ratwood's. The numbers leave the types for the intents table
+    (extract_table())."""
+    side = SIDE.get('azure')
+    blocks = []
+    fetch_sources([f for path in USED_INTENTS if not (side and side.has(path)) for f in sound_files(rw.resolve(path, 'hitsound'))])
+    taken = collections.Counter()
+    for path in sorted(USED_INTENTS):
+        source = side if side and side.has(path) else None
+        taken['azure' if source else 'ratwood'] += 1
+        with source_defines(source):
+            block = intent_block(source.cb if source else rw, path, spec, sound_ref if source is None else side_sound_ref, valid, source.rename if source else spec.get('rename', {}))
+        if source and spec.get('icon'):
+            # An Azure sprite of the intent the module's sheet lacks (the fishing cast): Ratwood's sprite of it.
+            states = HUD_STATES.setdefault(spec['icon'], set(dmi.state_names(spec['icon'])))
+            for i, line in enumerate(block):
+                if line.startswith('	icon_state = ') and line.split(' = ', 1)[1].strip('"') not in states:
+                    ratwood = string_value(rw.resolve(path, 'icon_state'))
+                    if ratwood and ratwood.strip('"') in states:
+                        block[i] = f'	icon_state = {ratwood}'
+                    else:
+                        del block[i]
+                    break
+        blocks.append(block)
+    blocks = extract_table(CONFIG_PORT[0], 'intents', blocks)
+    open(f"{OUT_DIR}/{spec.get('file', 'intents.dm')}", 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
+    print(f"{spec.get('file', 'intents.dm')}: {len(blocks)} intents ({taken['azure']} from Azure Peak, {taken['ratwood']} from Ratwood)")
+
+
+def intent_block(rw, path, spec, sound_ref, valid, renames):
     numeric = spec.get('numeric', [])
     flags = spec.get('flags', [])
     strings = spec.get('strings', [])
-    blocks = []
-    fetch_sources([f for path in USED_INTENTS for f in sound_files(rw.resolve(path, 'hitsound'))])
-    for path in sorted(USED_INTENTS):
-        block = [path]
-        for name in strings:
-            value = string_value(rw.resolve(path, renames.get(name, name)))
-            if value is None:
-                value = expand_define(rw.resolve(path, renames.get(name, name)) or '')
-                value = value if STRING_LITERAL.match(value) else None
-            if value is not None and not (value == '""' and name in spec.get('strings_skip_empty', [])):
-                block.append(f'\t{name} = {value}')
-        verbs = string_list(rw.resolve(path, 'attack_verb'))
-        if verbs:
-            block.append('\tattack_verb = list(' + ', '.join(verbs) + ')')
-        defaults = spec.get('numeric_defaults', {})
-        for name in numeric:
-            number = define_value_number(rw.resolve(path, renames.get(name, name)))
-            if number is not None and (name not in defaults or number != defaults[name]):
-                block.append(f'\t{name} = {number}')
-        true_only = spec.get('flags_true_only', [])
-        for name in flags:
-            value = (rw.resolve(path, renames.get(name, name)) or '').strip()
-            if value in ('TRUE', 'FALSE', '0', '1'):
-                if name in true_only and value not in ('TRUE', '1'):
-                    continue
-                block.append(f"\t{name} = {'TRUE' if value in ('TRUE', '1') else 'FALSE'}")
-        for name in spec.get('paths', []):
-            raw = (rw.resolve(path, name) or '').strip()
-            if raw.startswith('/') and raw in valid:
-                block.append(f'\t{name} = {raw}')
-        if spec.get('effects'):
-            block += intent_effect_lines(rw, path, spec['effects'])
-        sounds = sound_files(rw.resolve(path, 'hitsound'))
-        refs = [ref for ref in (sound_ref(f"'{f}'") for f in sounds) if ref]
-        if refs:
-            block.append('\thitsound = list(' + ', '.join(refs) + ')')
-        blocks.append(block)
-    open(f"{OUT_DIR}/{spec.get('file', 'intents.dm')}", 'w', encoding='utf-8', newline='\n').write('\n\n'.join('\n'.join(b) for b in blocks) + '\n')
-    print(f"{spec.get('file', 'intents.dm')}: {len(blocks)} intents")
+    block = [path]
+    for name in strings:
+        value = string_value(rw.resolve(path, renames.get(name, name)))
+        if value is None:
+            value = expand_define(rw.resolve(path, renames.get(name, name)) or '')
+            value = value if STRING_LITERAL.match(value) else None
+        if value is not None and not (value == '""' and name in spec.get('strings_skip_empty', [])):
+            block.append(f'\t{name} = {value}')
+    verbs = string_list(rw.resolve(path, 'attack_verb'))
+    if verbs:
+        block.append('\tattack_verb = list(' + ', '.join(verbs) + ')')
+    defaults = spec.get('numeric_defaults', {})
+    for name in numeric:
+        number = intent_number(rw.resolve(path, renames.get(name, name)))
+        if number is not None and (name not in defaults or number != defaults[name]):
+            block.append(f'\t{name} = {number}')
+    true_only = spec.get('flags_true_only', [])
+    for name in flags:
+        value = (rw.resolve(path, renames.get(name, name)) or '').strip()
+        if value in ('TRUE', 'FALSE', '0', '1'):
+            if name in true_only and value not in ('TRUE', '1'):
+                continue
+            block.append(f"\t{name} = {'TRUE' if value in ('TRUE', '1') else 'FALSE'}")
+    for name in spec.get('paths', []):
+        raw = (rw.resolve(path, name) or '').strip()
+        if raw.startswith('/') and raw in valid:
+            block.append(f'\t{name} = {raw}')
+    if spec.get('effects'):
+        block += intent_effect_lines(rw, path, spec['effects'])
+    sounds = sound_files(rw.resolve(path, 'hitsound'))
+    refs = [ref for ref in (sound_ref(f"'{f}'") for f in sounds) if ref]
+    if refs:
+        block.append('\thitsound = list(' + ', '.join(refs) + ')')
+    return block
+
+
+# --- Number tables --------------------------------------------------------------------------------------------------
+# The balance numbers the port used to write into its types (an item's force, integrity and defense, an intent's damage
+# factor and delays) live in the private repository's tables (config/redtard_private/mechanics/items.txt, intents.txt):
+# the type keeps the rest, mechanics/apply.dm sets the numbers when the item or intent is made. port.tables says which
+# vars go and under which field of mechanics/categories.dm; the open tables (every number 10) are written by
+# tools/private_config/code_numbers.py sync.
+TABLE_ROWS = collections.defaultdict(dict)
+HUD_STATES = {}
+TABLE_TYPES = collections.defaultdict(set)
+TABLE_NUMBER_LINE = re.compile(r'^\t([A-Za-z_][A-Za-z0-9_]*) = (-?\d+(?:\.\d+)?)$')
+
+
+def tables_dir(port):
+    return port.get('tables', {}).get('private_dir', '')
+
+
+def check_tables(port):
+    if port.get('tables') and not os.path.isdir(tables_dir(port)):
+        raise SystemExit(f"{tables_dir(port)} is missing: the port's numbers go to the private repository (port.tables); mount it first")
+
+
+def extract_table(port, kind, blocks, inherited_vars=()):
+    """Takes the number lines of port.tables.<kind>.fields out of the blocks into TABLE_ROWS[kind] (type -> field ->
+    number); the blocks come back without them."""
+    spec = port.get('tables', {}).get(kind)
+    if not spec:
+        return blocks
+    fields = spec['fields']
+    inherited = [var for var in inherited_vars if var in fields]
+    order = list(fields.values())
+    out = []
+    for block in blocks:
+        path = block[0]
+        if not path.startswith(spec['root'] + '/'):
+            out.append(block)
+            continue
+        TABLE_TYPES[kind].add(path)
+        kept = [path]
+        row = dict(TABLE_ROWS[kind].get(path, {}))
+        for line in block[1:]:
+            found = TABLE_NUMBER_LINE.match(line)
+            if found and found.group(1) in fields:
+                row[fields[found.group(1)]] = found.group(2)
+            else:
+                kept.append(line)
+        if row:
+            TABLE_ROWS[kind][path] = OrderedDict(sorted(row.items(), key=lambda kv: order.index(kv[0])))
+        out.append(kept)
+    # A var the port states only where it differs from the ported parent's (inherited_vars: an item's integrity) was the
+    # parent's line in DM; in the table each type needs its own entry, the nearest ported type's above it.
+    for path in sorted(TABLE_TYPES[kind]):
+        for var in inherited:
+            field = fields[var]
+            if field in TABLE_ROWS[kind].get(path, {}):
+                continue
+            at = path.rsplit('/', 1)[0]
+            while at.count('/') >= 2 and at not in TABLE_TYPES[kind]:
+                at = at.rsplit('/', 1)[0]
+            if field in TABLE_ROWS[kind].get(at, {}):
+                row = TABLE_ROWS[kind].setdefault(path, OrderedDict())
+                row[field] = TABLE_ROWS[kind][at][field]
+                TABLE_ROWS[kind][path] = OrderedDict(sorted(row.items(), key=lambda kv: order.index(kv[0])))
+    left = collections.Counter()
+    for block in out:
+        for line in block[1:]:
+            found = TABLE_NUMBER_LINE.match(line)
+            if found and found.group(1) in spec.get('later', {}):
+                left[found.group(1)] += 1
+    print(f"{kind} table: {sum(len(r) for r in TABLE_ROWS[kind].values())} numbers of {len(TABLE_ROWS[kind])} types"
+          + (('; still in the types (no field yet): ' + ', '.join(f'{k} {v}' for k, v in sorted(left.items()))) if left else ''))
+    return out
+
+
+def inherited_table_rows(port, kind, module_types):
+    """A type the module declares below a ported one (a fire dagger under the steel dagger, a frost chop under the chop)
+    inherited the ported numbers from its parent's lines; with the numbers in the table it gets its own entry, the
+    nearest ported type's, for each var no module type on the way sets by hand."""
+    spec = port.get('tables', {}).get(kind)
+    if not spec:
+        return
+    rows = TABLE_ROWS[kind]
+    ported = TABLE_TYPES[kind]
+    hand = hand_set_vars(set(spec['fields']))
+    added = 0
+    for path in sorted(module_types):
+        if path in ported or not path.startswith(spec['root'] + '/'):
+            continue
+        row = OrderedDict()
+        for var, field in spec['fields'].items():
+            at = path
+            while at.count('/') >= 2 and at not in ported and var not in hand.get(at, ()):
+                at = at.rsplit('/', 1)[0]
+            if at in ported and field in rows.get(at, {}):
+                row[field] = rows[at][field]
+        if row:
+            rows[path] = row
+            added += 1
+    if added:
+        print(f'{kind} table: {added} module types below ported ones take their numbers')
+
+
+def write_tables(port):
+    """The porter's section of each private table: between its begin and end lines, right after the file's header, so
+    that what stands below (overrides by hand, other generators' sections) wins: a later line of an entry wins."""
+    tables = port.get('tables')
+    if not tables:
+        return
+    name = tables.get('section', 'port_rockhill.py')
+    begin, end = f'# >>> {name}', f'# <<< {name}'
+    for kind in ('items', 'intents'):
+        spec = tables.get(kind)
+        if not spec:
+            continue
+        target = os.path.join(tables_dir(port), spec['file'])
+        lines = open(target, encoding='utf-8').read().replace('\r\n', '\n').split('\n') if os.path.exists(target) else []
+        if any(line.startswith(begin) for line in lines):
+            first = next(i for i, line in enumerate(lines) if line.startswith(begin))
+            last = next((i for i, line in enumerate(lines) if i > first and line.startswith(end)), len(lines) - 1)
+            lines = lines[:first] + lines[last + 1:]
+        header = []
+        while lines and lines[0].startswith('#'):
+            header.append(lines.pop(0))
+        while lines and not lines[0].strip():
+            lines.pop(0)
+        while lines and not lines[-1].strip():
+            lines.pop()
+        root = spec['root'] + '/'
+        section = [f"{begin}: {spec['note']}", '']
+        for path in sorted(TABLE_ROWS[kind]):
+            section.append(f'[{path[len(root):]}]')
+            section += [f'{field} = {value}' for field, value in TABLE_ROWS[kind][path].items()]
+            section.append('')
+        section.append(end)
+        text = '\n'.join(header + [''] + section + ([''] + lines if lines else [])) + '\n'
+        with open(target, 'w', encoding='utf-8', newline='\n') as out:
+            out.write(text)
+        print(f"{target}: {len(TABLE_ROWS[kind])} {kind}")
 
 
 def slot_flags_value(raw):

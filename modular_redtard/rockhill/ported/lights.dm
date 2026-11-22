@@ -795,6 +795,25 @@
 	crossfire = FALSE
 	status = LIGHT_BURNED
 
+/obj/machinery/light/rogue/hearth/wooden_spit
+	name = "wooden spit"
+	desc = "A wooden spit set over a campfire. It can hold the same cookware as a hearth."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/campfire_spit.dmi'
+	icon_state = "spit_1"
+	density = FALSE
+	light_range = 8
+	light_power = 1
+	light_color = "#f9ad80"
+	rockhill_variant = "spit_#"
+	rockhill_variant_min = 1
+	rockhill_variant_max = 4
+	layer = TABLE_LAYER
+	base_state = "hearth"
+	fueluse = 15 MINUTES
+	no_refuel = FALSE
+	crossfire = TRUE
+	status = LIGHT_OK
+
 /obj/machinery/light/rogue/lanternpost
 	name = "lantern post"
 	desc = "A small lamptern dangles from a wooden post. The metal frame around the inner flame casts shadows on its surroundings."

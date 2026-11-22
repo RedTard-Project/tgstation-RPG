@@ -13,7 +13,7 @@ GLOBAL_LIST_EMPTY(rogue_cleave_patterns)
 /datum/cleave_pattern
 	var/list/tile_offsets = list()
 	var/list/diagonal_offsets
-	var/max_targets = 1
+	var/max_targets
 	var/respect_dir = TRUE
 	var/user_relative = FALSE
 	var/desc = "Cleaves into nearby targets."
@@ -22,7 +22,7 @@ GLOBAL_LIST_EMPTY(rogue_cleave_patterns)
 	return "cleave_[replacetext(copytext("[type]", length("/datum/cleave_pattern/") + 1), "/", "_")]_max_targets"
 
 /datum/cleave_pattern/proc/target_limit()
-	return rogue_value_or(value_key(), max_targets)
+	return rogue_value_or(value_key(), 1)
 
 /datum/cleave_pattern/proc/facing_dir(mob/living/user, turf/origin)
 	var/turf/user_turf = get_turf(user)
@@ -85,20 +85,17 @@ GLOBAL_LIST_EMPTY(rogue_cleave_patterns)
 
 /datum/cleave_pattern/wide_sweep
 	tile_offsets = list(list(-1, 0), list(1, 0), list(0, -1), list(0, 1))
-	max_targets = 2
 	desc = "Sweeps wide, cleaving up to two nearby targets."
 
 /datum/cleave_pattern/horizontal_sweep
 	tile_offsets = list(list(-1, 0), list(0, 0), list(1, 0))
 	diagonal_offsets = list(list(-1, 0), list(0, 0), list(0, -1))
-	max_targets = 2
 	desc = "Sweeps horizontally, cleaving up to two additional targets."
 
 /datum/cleave_pattern/frontal_arc
 	tile_offsets = list(list(-1, 0), list(1, 0), list(-1, 1), list(0, 1), list(1, 1))
 	diagonal_offsets = list(list(-1, 1), list(0, 1), list(1, 0), list(1, -1))
 	user_relative = TRUE
-	max_targets = 4
 	desc = "Sweeps in a massive arc, hitting up to four targets to the sides and ahead."
 
 /datum/cleave_pattern/lance
@@ -108,7 +105,6 @@ GLOBAL_LIST_EMPTY(rogue_cleave_patterns)
 /datum/cleave_pattern/frontal_t
 	tile_offsets = list(list(-1, 1), list(0, 1), list(1, 1), list(0, 2))
 	user_relative = TRUE
-	max_targets = 2
 	desc = "Cleaves in a T-shaped pattern directly ahead."
 
 /obj/effect/temp_visual/dir_setting/rogue_cleave

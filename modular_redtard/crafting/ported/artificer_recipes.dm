@@ -142,7 +142,7 @@
 	i_type = "Tools"
 	required_item = /obj/item/ingot/bronze
 	created_item = /obj/item/construct_skill_core
-	additional_items = list(/obj/item/roguegear, /obj/item/roguegear)
+	additional_items = list(/obj/item/roguegear/bronze, /obj/item/roguegear/bronze)
 	hammers_per_item = 10
 	skill_level = 3
 	appro_skill = /datum/attribute/skill/craft/engineering
@@ -175,24 +175,6 @@
 	additional_items = list(/obj/item/ingot/gilbranze, /obj/item/ingot/gilbranze, /obj/item/roguegear/bronze, /obj/item/roguegear/bronze)
 	hammers_per_item = 12
 	skill_level = 4
-
-/datum/artificer_recipe/contraptions/bombardbarrel
-	name = "Bombard Barrel (+5 iron ingot + 1 repaired sanded barrel)"
-	i_type = "Contraptions"
-	required_item = /obj/item/ingot/iron
-	created_item = /obj/item/bombard_barrel
-	additional_items = list(/obj/item/ingot/iron, /obj/item/ingot/iron, /obj/item/ingot/iron, /obj/item/bombard_sandedrepairedbarrel)
-	hammers_per_item = 8
-	skill_level = 5
-
-/datum/artificer_recipe/contraptions/bombardframe
-	name = "Bombard Frame (+1 Steel Ingot, +2 Bronze Cog, +3 Wooden Plank)"
-	i_type = "Contraptions"
-	required_item = /obj/item/ingot/steel
-	created_item = /obj/item/bombard_frame
-	additional_items = list(/obj/item/natural/wood/plank, /obj/item/natural/wood/plank, /obj/item/natural/wood/plank, /obj/item/roguegear/bronze, /obj/item/roguegear/bronze, /obj/item/ingot/steel)
-	hammers_per_item = 8
-	skill_level = 3
 
 /datum/artificer_recipe/contraptions/coolingbackpack
 	name = "Cooling Backpack (+1 bronze gear, +Backpack)"
@@ -227,7 +209,7 @@
 	created_item = /obj/item/dmusicbox
 	additional_items = list(/obj/item/roguegear/bronze, /obj/item/roguegear/bronze, /obj/item/ingot/bronze, /obj/item/ingot/bronze, /obj/item/roguegem/amethyst)
 	hammers_per_item = 6
-	skill_level = 6
+	skill_level = 5
 
 /datum/artificer_recipe/contraptions/emeraldchoker
 	name = "emerald choker (+1 cog, +Gold, +1 Gemerald, Arcyne)"
@@ -280,11 +262,11 @@
 	skill_level = 4
 
 /datum/artificer_recipe/contraptions/mess_kit
-	name = "Mess Kit (+2 Iron)"
+	name = "Mess Kit (+1 Iron)"
 	i_type = "Contraptions"
 	required_item = /obj/item/ingot/iron
 	created_item = /obj/item/storage/gadget/messkit
-	additional_items = list(/obj/item/ingot/iron, /obj/item/ingot/iron)
+	additional_items = list(/obj/item/ingot/iron)
 	hammers_per_item = 5
 	skill_level = 2
 
@@ -314,42 +296,6 @@
 	additional_items = list(/obj/item/roguegear/bronze, /obj/item/storage/roguebag)
 	hammers_per_item = 12
 	skill_level = 3
-
-/datum/artificer_recipe/contraptions/partiallyrefinedbarrel
-	name = "Partially refined barrel (3 iron ingot + rough iron barrel)"
-	i_type = "Contraptions"
-	required_item = /obj/item/ingot/iron
-	created_item = /obj/item/bombard_partiallyrefinedbarrel
-	additional_items = list(/obj/item/ingot/iron, /obj/item/ingot/iron, /obj/item/ingot/iron, /obj/item/bombard_roughbarrel)
-	hammers_per_item = 10
-	skill_level = 5
-
-/datum/artificer_recipe/contraptions/repairedsandedbarrel
-	name = "Repair Sanded Barrel (+3 iron, +1 Sanded Iron Barrel)"
-	i_type = "Contraptions"
-	required_item = /obj/item/ingot/iron
-	created_item = /obj/item/bombard_sandedrepairedbarrel
-	additional_items = list(/obj/item/ingot/iron, /obj/item/ingot/iron, /obj/item/ingot/iron, /obj/item/bombard_sandedbarrel)
-	hammers_per_item = 10
-	skill_level = 5
-
-/datum/artificer_recipe/contraptions/roughironbarrel
-	name = "Rough Iron Barrel (+3 iron)"
-	i_type = "Contraptions"
-	required_item = /obj/item/ingot/iron
-	created_item = /obj/item/bombard_roughbarrel
-	additional_items = list(/obj/item/ingot/iron, /obj/item/ingot/iron, /obj/item/ingot/iron)
-	hammers_per_item = 8
-	skill_level = 5
-
-/datum/artificer_recipe/contraptions/sandedbarrel
-	name = "Sanded Iron Barrel (+3 sand, +2 stone dust, +1 Partially Refined Iron Barrel)"
-	i_type = "Contraptions"
-	required_item = /obj/item/ingot/iron
-	created_item = /obj/item/bombard_sandedbarrel
-	additional_items = list(/obj/item/natural/dirtclod/sand, /obj/item/natural/dirtclod/sand, /obj/item/natural/dirtclod/sand, /obj/item/alch/stonedust, /obj/item/alch/stonedust, /obj/item/bombard_partiallyrefinedbarrel)
-	hammers_per_item = 8
-	skill_level = 5
 
 /datum/artificer_recipe/contraptions/scomstone
 	name = "SCOM Stone (+1 cog, +1 Gemerald, Arcyne)"
@@ -394,11 +340,20 @@
 	hammers_per_item = 12
 	skill_level = 3
 
+/datum/artificer_recipe/contraptions/steamshield
+	name = "Steam Shield (+1 wood plank)(+1 Bronze gear)(+1 bronze ingot)"
+	i_type = "Contraptions"
+	required_item = /obj/item/ingot/bronze
+	created_item = /obj/item/rogueweapon/shield/steam
+	additional_items = list(/obj/item/roguegear/bronze, /obj/item/natural/wood/plank, /obj/item/ingot/bronze)
+	hammers_per_item = 12
+	skill_level = 4
+
 /datum/artificer_recipe/contraptions/volticgauntlet
 	name = "Voltic Gauntlet (+1 Tin ingot)(+2 Bronze gear)(+1 cinnabar ore)"
 	i_type = "Contraptions"
 	required_item = /obj/item/ingot/bronze
-	created_item = /obj/item/clothing/gloves/roguetown/contraption/voltic
+	created_item = /obj/item/clothing/gloves/roguetown/chain/contraption/voltic
 	additional_items = list(/obj/item/roguegear/bronze, /obj/item/roguegear/bronze, /obj/item/ingot/tin, /obj/item/rogueore/cinnabar)
 	hammers_per_item = 12
 	skill_level = 4
@@ -417,7 +372,7 @@
 	i_type = "General"
 	required_item = /obj/item/ingot/bronze
 	created_item = list(/obj/item/smokeshell, /obj/item/smokeshell, /obj/item/smokeshell)
-	additional_items = list(/obj/item/roguegear)
+	additional_items = list(/obj/item/roguegear/bronze)
 	hammers_per_item = 5
 	skill_level = 3
 
@@ -609,16 +564,6 @@
 	created_item = /obj/item/rogueweapon/shield/heater/crafted
 	additional_items = list(/obj/item/natural/wood/plank = 1, /obj/item/natural/hide/cured = 1)
 	hammers_per_item = 6
-	skill_level = 3
-	appro_skill = /datum/attribute/skill/craft/engineering
-
-/datum/artificer_recipe/wood/weapons/steamshield
-	name = "Steam Shield (+1 wood plank)(+2 Bronze gear)(+2 bronze ingot)"
-	i_type = "Weapons"
-	required_item = /obj/item/natural/wood/plank
-	created_item = /obj/item/rogueweapon/shield/steam
-	additional_items = list(/obj/item/roguegear/bronze, /obj/item/roguegear/bronze, /obj/item/natural/wood/plank, /obj/item/ingot/bronze, /obj/item/ingot/bronze)
-	hammers_per_item = 12
 	skill_level = 3
 	appro_skill = /datum/attribute/skill/craft/engineering
 

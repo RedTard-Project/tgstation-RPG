@@ -27,7 +27,7 @@
 /datum/rogue_armor/brigandine
 	blunt = 2
 	slash = 3
-	stab = 3
+	stab = 2
 	piercing = 2
 	fire = 3
 
@@ -48,11 +48,11 @@
 	acid = 5
 
 /datum/rogue_armor/leather
-	blunt = 3
-	slash = 3
+	blunt = 5
+	slash = 2
 	stab = 2
 	piercing = 3
-	fire = 4
+	fire = 2
 
 /datum/rogue_armor/leather_npc
 	blunt = 3
@@ -65,7 +65,7 @@
 	blunt = 1
 	slash = 3
 	stab = 3
-	piercing = 2
+	piercing = 1
 	fire = 1
 
 /datum/rogue_armor/padded
@@ -85,7 +85,7 @@
 	blunt = 1
 	slash = 3
 	stab = 3
-	piercing = 3
+	piercing = 2
 	fire = 1
 
 /datum/rogue_armor/plate_bsteel

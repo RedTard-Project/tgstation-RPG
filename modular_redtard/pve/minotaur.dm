@@ -140,7 +140,7 @@
 		if(spot != center && !spot.density)
 			spots += spot
 	for(var/i in 1 to min(3 + phase * 2, length(spots)))
-		addtimer(CALLBACK(src, PROC_REF(rogue_zone), pick_n_take(spots), phase >= 3 && prob(40)), i * 3)
+		addtimer(CALLBACK(src, PROC_REF(rogue_zone), pick_n_take(spots), phase >= 3 && prob(rogue_value("minotaur_fury_rogue_erupt_chance"))), i * 3)
 	if(phase < 3)
 		return
 	var/turf/front = get_step(owner, owner.dir)
@@ -151,7 +151,7 @@
 	for(var/mob/living/smashed in front)
 		if(!rogue_pve_is_foe(owner, smashed))
 			continue
-		smashed.Knockdown(2 SECONDS)
+		smashed.Knockdown(rogue_value("minotaur_fury_rogue_erupt_knockdown"))
 		rogue_pve_strike(owner, smashed, ROGUE_PVE_FURY_DAMAGE * 1.5, armored = FALSE)
 
 /datum/action/cooldown/mob_cooldown/rogue_pve/minotaur_fury/proc/rogue_zone(turf/spot, strong)
@@ -185,8 +185,8 @@
 	color = "#ffff00"
 	transform = matrix() * 0.5
 	animate(src, alpha = 200, color = "#ff5500", transform = matrix(), time = 1 SECONDS)
-	addtimer(CALLBACK(src, PROC_REF(rogue_flare)), 1.5 SECONDS)
-	addtimer(CALLBACK(src, PROC_REF(rogue_flare)), 2.5 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(rogue_flare)), rogue_value("pve_fury_zone_initialize_delay"))
+	addtimer(CALLBACK(src, PROC_REF(rogue_flare)), rogue_value("pve_fury_zone_initialize_delay_2"))
 
 /obj/effect/temp_visual/rogue_pve_fury_zone/proc/rogue_flare()
 	color = "#ff0000"
@@ -198,7 +198,7 @@
 		if(!rogue_pve_is_foe(caster, burnt))
 			continue
 		burnt.apply_damage(damage, BURN, spread_damage = TRUE)
-		if(prob(20))
+		if(prob(rogue_value("pve_fury_zone_rogue_flare_chance")))
 			burnt.Knockdown(knockdown)
 
 /obj/effect/temp_visual/rogue_pve_fury_zone/strong
@@ -248,7 +248,7 @@
 	if(QDELETED(owner) || !center)
 		return
 	for(var/turf/open/spot in range(radius, center))
-		if(get_dist(spot, center) == radius && prob(20))
+		if(get_dist(spot, center) == radius && prob(rogue_value("minotaur_slam_rogue_shockwave_chance")))
 			new /obj/effect/temp_visual/small_smoke/halfsecond(spot)
 	var/damage = ROGUE_PVE_SLAM_DAMAGE - radius * 5
 	for(var/mob/living/shaken in range(radius, center))

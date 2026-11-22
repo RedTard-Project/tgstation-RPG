@@ -120,10 +120,11 @@
 	rogue_verb_simple = "mix"
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
-/datum/crafting_recipe/roguetown/alchemy/frankenbrew_small
+/datum/crafting_recipe/roguetown/alchemy/frankenbrew_impure
 	name = "reanimation elixir (impure lux)"
-	result = /obj/item/reagent_containers/glass/bottle/frankenbrew/third
-	reqs = list(/obj/item/reagent_containers/glass/bottle = 1, /obj/item/reagent_containers/food/snacks/grown/manabloom = 1, /obj/item/reagent_containers/lux_impure = 1, /obj/item/alch/calendula = 1, /datum/reagent/water = 49)
+	result = /obj/item/reagent_containers/glass/bottle/frankenbrew
+	reqs = list(/obj/item/reagent_containers/glass/bottle = 2, /obj/item/reagent_containers/food/snacks/grown/manabloom = 1, /obj/item/reagent_containers/lux_impure = 1, /obj/item/alch/calendula = 1, /datum/reagent/water = 98)
+	rogue_results = list(/obj/item/reagent_containers/glass/bottle/frankenbrew)
 	category = "Alchemy"
 	rogue_skill = /datum/attribute/skill/craft/alchemy
 	rogue_difficulty = 4
@@ -973,6 +974,17 @@
 	category = "Arcane Magic"
 	rogue_skill = /datum/attribute/skill/magic/arcane
 	rogue_difficulty = 2
+	rogue_on_table = TRUE
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/blacksmith/mailledhauberk
+	name = "layer a steel cuirass atop hauberk"
+	result = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/heavy
+	reqs = list(/obj/item/clothing/suit/roguetown/armor/plate/half = 1, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk = 1)
+	blacklist = list(/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/ancient, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/ancient/decrepit, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/atgervi, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/bronze, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/fluted, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/heavy, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/heavy/ancient, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/heavy/decorated, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/iron, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/janissary, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/ornate, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/zizo, /obj/item/clothing/suit/roguetown/armor/plate/half/ancient, /obj/item/clothing/suit/roguetown/armor/plate/half/ancient/decrepit, /obj/item/clothing/suit/roguetown/armor/plate/half/copper, /obj/item/clothing/suit/roguetown/armor/plate/half/fencer, /obj/item/clothing/suit/roguetown/armor/plate/half/fencer/decorated, /obj/item/clothing/suit/roguetown/armor/plate/half/fencer/psydon, /obj/item/clothing/suit/roguetown/armor/plate/half/fluted, /obj/item/clothing/suit/roguetown/armor/plate/half/fluted/decorated, /obj/item/clothing/suit/roguetown/armor/plate/half/fluted/ornate, /obj/item/clothing/suit/roguetown/armor/plate/half/iron, /obj/item/clothing/suit/roguetown/armor/plate/half/iron/goblin)
+	category = "Crafting"
+	rogue_skill = /datum/attribute/skill/craft/crafting
+	rogue_difficulty = 0
 	rogue_on_table = TRUE
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
@@ -1844,14 +1856,16 @@
 	result = /obj/item/ammo_casing/caseless/rogue/bolt/bronze
 	reqs = list(/obj/item/natural/wood/plank = 3, /obj/item/ingot/bronze = 1)
 	rogue_results = list(/obj/item/ammo_casing/caseless/rogue/bolt/bronze, /obj/item/ammo_casing/caseless/rogue/bolt/bronze, /obj/item/ammo_casing/caseless/rogue/bolt/bronze, /obj/item/ammo_casing/caseless/rogue/bolt/bronze, /obj/item/ammo_casing/caseless/rogue/bolt/bronze, /obj/item/ammo_casing/caseless/rogue/bolt/bronze, /obj/item/ammo_casing/caseless/rogue/bolt/bronze, /obj/item/ammo_casing/caseless/rogue/bolt/bronze, /obj/item/ammo_casing/caseless/rogue/bolt/bronze, /obj/item/ammo_casing/caseless/rogue/bolt/bronze, /obj/item/ammo_casing/caseless/rogue/bolt/bronze, /obj/item/ammo_casing/caseless/rogue/bolt/bronze, /obj/item/ammo_casing/caseless/rogue/bolt/bronze, /obj/item/ammo_casing/caseless/rogue/bolt/bronze, /obj/item/ammo_casing/caseless/rogue/bolt/bronze, /obj/item/ammo_casing/caseless/rogue/bolt/bronze, /obj/item/ammo_casing/caseless/rogue/bolt/bronze, /obj/item/ammo_casing/caseless/rogue/bolt/bronze, /obj/item/ammo_casing/caseless/rogue/bolt/bronze)
-	category = "Crafting"
-	rogue_skill = /datum/attribute/skill/craft/crafting
+	category = "Engineering"
+	rogue_skill = /datum/attribute/skill/craft/engineering
+	rogue_difficulty = 3
+	rogue_structure = /obj/machinery/artificer_table
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
 /datum/crafting_recipe/roguetown/engineering/canistershotimpact
 	name = "canister shot, bombard charge"
 	result = /obj/item/cannonball/canister
-	reqs = list(/obj/item/ammo_casing/caseless/bullet/grapeshot = 3, /obj/item/alch/coaldust = 1, /obj/item/paper/parchment = 4)
+	reqs = list(/obj/item/ammo_casing/caseless/bullet/grapeshot = 3, /obj/item/alch/coaldust = 2, /obj/item/paper/parchment = 4)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 5
@@ -1908,7 +1922,6 @@
 	name = "flame trap"
 	result = /obj/structure/trap/flame
 	reqs = list(/obj/item/roguegear/bronze = 1, /obj/item/natural/clay = 2, /obj/item/roguegem/amethyst = 2, /obj/item/alch/irondust = 1, /obj/item/alch/firedust = 1)
-	blacklist = list(/obj/item/roguegem/amethyst/naledi)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 5
@@ -1938,11 +1951,13 @@
 
 /datum/crafting_recipe/roguetown/engineering/heavyboltsten
 	name = "Heavy Bolts 10x"
-	result = /obj/projectile/bullet/reusable/heavy_bolt
+	result = /obj/item/ammo_casing/caseless/rogue/heavy_bolt
 	reqs = list(/obj/item/natural/wood/plank = 4, /obj/item/ingot/iron = 2)
-	rogue_results = list(/obj/projectile/bullet/reusable/heavy_bolt, /obj/projectile/bullet/reusable/heavy_bolt, /obj/projectile/bullet/reusable/heavy_bolt, /obj/projectile/bullet/reusable/heavy_bolt, /obj/projectile/bullet/reusable/heavy_bolt, /obj/projectile/bullet/reusable/heavy_bolt, /obj/projectile/bullet/reusable/heavy_bolt, /obj/projectile/bullet/reusable/heavy_bolt, /obj/projectile/bullet/reusable/heavy_bolt)
-	category = "Crafting"
-	rogue_skill = /datum/attribute/skill/craft/crafting
+	rogue_results = list(/obj/item/ammo_casing/caseless/rogue/heavy_bolt, /obj/item/ammo_casing/caseless/rogue/heavy_bolt, /obj/item/ammo_casing/caseless/rogue/heavy_bolt, /obj/item/ammo_casing/caseless/rogue/heavy_bolt, /obj/item/ammo_casing/caseless/rogue/heavy_bolt, /obj/item/ammo_casing/caseless/rogue/heavy_bolt, /obj/item/ammo_casing/caseless/rogue/heavy_bolt, /obj/item/ammo_casing/caseless/rogue/heavy_bolt, /obj/item/ammo_casing/caseless/rogue/heavy_bolt)
+	category = "Engineering"
+	rogue_skill = /datum/attribute/skill/craft/engineering
+	rogue_difficulty = 3
+	rogue_structure = /obj/machinery/artificer_table
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
 /datum/crafting_recipe/roguetown/engineering/highexplosiveimpact
@@ -2037,7 +2052,7 @@
 /datum/crafting_recipe/roguetown/engineering/incendiaryimpact
 	name = "incendiary shell, bombard charge"
 	result = /obj/item/cannonball/incendiary
-	reqs = list(/obj/item/alch/firedust = 2, /obj/item/alch/coaldust = 1, /obj/item/paper/parchment = 4)
+	reqs = list(/obj/item/alch/coaldust = 4, /obj/item/paper/parchment = 4)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 5
@@ -2099,16 +2114,6 @@
 	rogue_structure = /obj/machinery/artificer_table
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
-/datum/crafting_recipe/roguetown/engineering/palantir
-	name = "bombard targeting palantir"
-	result = /obj/item/rogueweapon/palantir
-	reqs = list(/obj/item/roguegear/bronze = 2, /obj/item/ingot/bronze = 1, /obj/item/paper/parchment = 2, /obj/item/rogueore/cinnabar = 1)
-	category = "Engineering"
-	rogue_skill = /datum/attribute/skill/craft/engineering
-	rogue_difficulty = 6
-	rogue_structure = /obj/machinery/artificer_table
-	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
-
 /datum/crafting_recipe/roguetown/engineering/passage
 	name = "passage"
 	result = /obj/structure/bars/passage
@@ -2116,6 +2121,30 @@
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 2
+	rogue_verb = "engineers"
+	rogue_verb_simple = "engineer"
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/engineering/peddlercart
+	name = "peddler cart"
+	result = /obj/structure/roguemachine/vendor/mobile/crafted
+	reqs = list(/obj/item/grown/log/tree/small = 1, /obj/item/ingot/iron = 1, /obj/item/natural/glass = 1, /obj/item/roguegear/bronze = 2)
+	blacklist = list(/obj/item/grown/log/tree/small/essence, /obj/item/natural/glass/heated)
+	category = "Engineering"
+	rogue_skill = /datum/attribute/skill/craft/engineering
+	rogue_difficulty = 4
+	rogue_verb = "engineers"
+	rogue_verb_simple = "engineer"
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/engineering/potioncart
+	name = "potion cart"
+	result = /obj/structure/roguemachine/potionseller/mobile/crafted
+	reqs = list(/obj/item/grown/log/tree/small = 1, /obj/item/ingot/iron = 1, /obj/item/natural/glass = 2, /obj/item/roguegear/bronze = 2)
+	blacklist = list(/obj/item/grown/log/tree/small/essence, /obj/item/natural/glass/heated)
+	category = "Engineering"
+	rogue_skill = /datum/attribute/skill/craft/engineering
+	rogue_difficulty = 4
 	rogue_verb = "engineers"
 	rogue_verb_simple = "engineer"
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
@@ -2224,7 +2253,6 @@
 	name = "saw blades trap"
 	result = /obj/structure/trap/saw_blades
 	reqs = list(/obj/item/roguegear/bronze = 3, /obj/item/natural/clay = 2, /obj/item/roguegem/amethyst = 2, /obj/item/alch/irondust = 1, /obj/item/natural/whetstone = 1)
-	blacklist = list(/obj/item/roguegem/amethyst/naledi)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 5
@@ -2248,7 +2276,6 @@
 	name = "shock trap"
 	result = /obj/structure/trap/shock
 	reqs = list(/obj/item/roguegear/bronze = 1, /obj/item/natural/clay = 2, /obj/item/roguegem/amethyst = 2, /obj/item/alch/irondust = 1, /obj/item/alch/magicdust = 1)
-	blacklist = list(/obj/item/roguegem/amethyst/naledi)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 6
@@ -2294,7 +2321,7 @@
 	reqs = list(/obj/item/ingot/steel = 2, /obj/item/natural/fibers = 1, /obj/item/natural/wood/plank = 2)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
-	rogue_difficulty = 5
+	rogue_difficulty = 4
 	rogue_structure = /obj/machinery/artificer_table
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
@@ -2312,7 +2339,7 @@
 /datum/crafting_recipe/roguetown/engineering/smokeimpact
 	name = "smoke shell, bombard charge"
 	result = /obj/item/cannonball/smoke
-	reqs = list(/obj/item/bomb/smoke = 3, /obj/item/alch/coaldust = 1, /obj/item/paper/parchment = 4)
+	reqs = list(/obj/item/bomb/smoke = 3, /obj/item/alch/coaldust = 2, /obj/item/paper/parchment = 4)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 5
@@ -3226,6 +3253,17 @@
 	rogue_difficulty = 2
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
+/datum/crafting_recipe/roguetown/gemcarving/head_roguetown_circlet_carvedgem_porcelain
+	name = "porcelain circlet"
+	result = /obj/item/clothing/head/roguetown/circlet/carvedgem/porcelain
+	reqs = list(/obj/item/natural/clay/porcelain = 1)
+	tool_paths = list(/obj/item/rogueweapon/chisel)
+	blacklist = list(/obj/item/natural/clay/porcelain/bauble, /obj/item/natural/clay/porcelain/bowl, /obj/item/natural/clay/porcelain/bust, /obj/item/natural/clay/porcelain/cameo, /obj/item/natural/clay/porcelain/comb, /obj/item/natural/clay/porcelain/cup, /obj/item/natural/clay/porcelain/duck, /obj/item/natural/clay/porcelain/fancycup, /obj/item/natural/clay/porcelain/fancyteacup, /obj/item/natural/clay/porcelain/fancyteapot, /obj/item/natural/clay/porcelain/fancyvase, /obj/item/natural/clay/porcelain/figurine, /obj/item/natural/clay/porcelain/fish, /obj/item/natural/clay/porcelain/fork, /obj/item/natural/clay/porcelain/mask, /obj/item/natural/clay/porcelain/obelisk, /obj/item/natural/clay/porcelain/platter, /obj/item/natural/clay/porcelain/rungu, /obj/item/natural/clay/porcelain/spoon, /obj/item/natural/clay/porcelain/statue, /obj/item/natural/clay/porcelain/tablet, /obj/item/natural/clay/porcelain/teapot, /obj/item/natural/clay/porcelain/turtle, /obj/item/natural/clay/porcelain/urn, /obj/item/natural/clay/porcelain/vase)
+	category = "Masonry"
+	rogue_skill = /datum/attribute/skill/craft/masonry
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
 /datum/crafting_recipe/roguetown/gemcarving/jade/bracelet
 	name = "jade bracelets"
 	result = /obj/item/clothing/wrists/roguetown/gem/jadebracelet
@@ -3479,6 +3517,28 @@
 	category = "Masonry"
 	rogue_skill = /datum/attribute/skill/craft/masonry
 	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/gemcarving/mask_rogue_xylixmask_ceramic
+	name = "ceramic mask"
+	result = /obj/item/clothing/mask/rogue/xylixmask/ceramic
+	reqs = list(/obj/item/natural/clay/porcelain = 1)
+	tool_paths = list(/obj/item/rogueweapon/chisel)
+	blacklist = list(/obj/item/natural/clay/porcelain/bauble, /obj/item/natural/clay/porcelain/bowl, /obj/item/natural/clay/porcelain/bust, /obj/item/natural/clay/porcelain/cameo, /obj/item/natural/clay/porcelain/comb, /obj/item/natural/clay/porcelain/cup, /obj/item/natural/clay/porcelain/duck, /obj/item/natural/clay/porcelain/fancycup, /obj/item/natural/clay/porcelain/fancyteacup, /obj/item/natural/clay/porcelain/fancyteapot, /obj/item/natural/clay/porcelain/fancyvase, /obj/item/natural/clay/porcelain/figurine, /obj/item/natural/clay/porcelain/fish, /obj/item/natural/clay/porcelain/fork, /obj/item/natural/clay/porcelain/mask, /obj/item/natural/clay/porcelain/obelisk, /obj/item/natural/clay/porcelain/platter, /obj/item/natural/clay/porcelain/rungu, /obj/item/natural/clay/porcelain/spoon, /obj/item/natural/clay/porcelain/statue, /obj/item/natural/clay/porcelain/tablet, /obj/item/natural/clay/porcelain/teapot, /obj/item/natural/clay/porcelain/turtle, /obj/item/natural/clay/porcelain/urn, /obj/item/natural/clay/porcelain/vase)
+	category = "Masonry"
+	rogue_skill = /datum/attribute/skill/craft/masonry
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/gemcarving/mask_rogue_xylixmask_weathered
+	name = "weathered mask"
+	result = /obj/item/clothing/mask/rogue/xylixmask/weathered
+	reqs = list(/obj/item/natural/clay/porcelain = 1)
+	tool_paths = list(/obj/item/rogueweapon/chisel)
+	blacklist = list(/obj/item/natural/clay/porcelain/bauble, /obj/item/natural/clay/porcelain/bowl, /obj/item/natural/clay/porcelain/bust, /obj/item/natural/clay/porcelain/cameo, /obj/item/natural/clay/porcelain/comb, /obj/item/natural/clay/porcelain/cup, /obj/item/natural/clay/porcelain/duck, /obj/item/natural/clay/porcelain/fancycup, /obj/item/natural/clay/porcelain/fancyteacup, /obj/item/natural/clay/porcelain/fancyteapot, /obj/item/natural/clay/porcelain/fancyvase, /obj/item/natural/clay/porcelain/figurine, /obj/item/natural/clay/porcelain/fish, /obj/item/natural/clay/porcelain/fork, /obj/item/natural/clay/porcelain/mask, /obj/item/natural/clay/porcelain/obelisk, /obj/item/natural/clay/porcelain/platter, /obj/item/natural/clay/porcelain/rungu, /obj/item/natural/clay/porcelain/spoon, /obj/item/natural/clay/porcelain/statue, /obj/item/natural/clay/porcelain/tablet, /obj/item/natural/clay/porcelain/teapot, /obj/item/natural/clay/porcelain/turtle, /obj/item/natural/clay/porcelain/urn, /obj/item/natural/clay/porcelain/vase)
+	category = "Masonry"
+	rogue_skill = /datum/attribute/skill/craft/masonry
+	rogue_difficulty = 3
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
 /datum/crafting_recipe/roguetown/gemcarving/onyxa/amulet
@@ -5180,6 +5240,39 @@
 	rogue_verb_simple = "construct"
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
+/datum/crafting_recipe/roguetown/leather/belt_rogue_leather_belthooks
+	name = "belt hooks"
+	result = /obj/item/storage/belt/rogue/leather/belthooks
+	reqs = list(/obj/item/natural/hide/cured = 1, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_difficulty = 2
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/leather/belt_rogue_leather_hammerhold_sash
+	name = "hammerhold sash"
+	result = /obj/item/storage/belt/rogue/leather/hammerhold_sash
+	reqs = list(/obj/item/natural/hide/cured = 1, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_difficulty = 2
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/leather/belt_rogue_leather_iron
+	name = "iron belt"
+	result = /obj/item/storage/belt/rogue/leather/iron
+	reqs = list(/obj/item/natural/hide/cured = 1, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_difficulty = 2
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
 /datum/crafting_recipe/roguetown/leather/bikini
 	name = "leather corslet"
 	result = /obj/item/clothing/suit/roguetown/armor/leather/bikini
@@ -5202,6 +5295,27 @@
 	rogue_structure = /obj/machinery/tanningrack
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
+/datum/crafting_recipe/roguetown/leather/cloak_bandolier
+	name = "bandolier"
+	result = /obj/item/clothing/cloak/bandolier
+	reqs = list(/obj/item/natural/hide/cured = 2, /obj/item/rope = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/leather/cloak_bandolier_inq
+	name = "inquisitorial bandolier"
+	result = /obj/item/clothing/cloak/bandolier/inq
+	reqs = list(/obj/item/natural/hide/cured = 1, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_difficulty = 2
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
 /datum/crafting_recipe/roguetown/leather/cloakfur
 	name = "fur cloak"
 	result = /obj/item/clothing/cloak/raincloak/furcloak/crafted
@@ -5216,6 +5330,17 @@
 /datum/crafting_recipe/roguetown/leather/container/backpack
 	name = "backpack"
 	result = /obj/item/storage/backpack/rogue/backpack
+	reqs = list(/obj/item/natural/hide/cured = 3, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_difficulty = 3
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/leather/container/backpack_rogue_backpack_trader
+	name = "trader's pack"
+	result = /obj/item/storage/backpack/rogue/backpack/trader
 	reqs = list(/obj/item/natural/hide/cured = 3, /obj/item/natural/fibers = 1)
 	tool_paths = list(/obj/item/needle)
 	category = "Skincrafting"
@@ -5881,6 +6006,126 @@
 	rogue_structure = /obj/machinery/tanningrack
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
+/datum/crafting_recipe/roguetown/leather/gloves_roguetown_fingerless_shadowgloves_spymaster
+	name = "hand's gloves"
+	result = /obj/item/clothing/gloves/roguetown/fingerless/shadowgloves/spymaster
+	reqs = list(/obj/item/natural/hide/cured = 1, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_difficulty = 2
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/leather/gloves_roguetown_rosa
+	name = "ivory gloves"
+	result = /obj/item/clothing/gloves/roguetown/rosa
+	reqs = list(/obj/item/natural/hide/cured = 1, /obj/item/natural/silk = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_difficulty = 5
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/leather/gloves_roguetown_rosa_eight
+	name = "courtly gloves"
+	result = /obj/item/clothing/gloves/roguetown/rosa/eight
+	reqs = list(/obj/item/natural/hide/cured = 1, /obj/item/natural/silk = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_difficulty = 5
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/leather/gloves_roguetown_rosa_five
+	name = "sable gloves"
+	result = /obj/item/clothing/gloves/roguetown/rosa/five
+	reqs = list(/obj/item/natural/hide/cured = 1, /obj/item/natural/silk = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_difficulty = 5
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/leather/gloves_roguetown_rosa_four
+	name = "obsidian gloves"
+	result = /obj/item/clothing/gloves/roguetown/rosa/four
+	reqs = list(/obj/item/natural/hide/cured = 1, /obj/item/natural/silk = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_difficulty = 5
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/leather/gloves_roguetown_rosa_nine
+	name = "royal gloves"
+	result = /obj/item/clothing/gloves/roguetown/rosa/nine
+	reqs = list(/obj/item/natural/hide/cured = 1, /obj/item/natural/silk = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_difficulty = 5
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/leather/gloves_roguetown_rosa_seven
+	name = "regal gloves"
+	result = /obj/item/clothing/gloves/roguetown/rosa/seven
+	reqs = list(/obj/item/natural/hide/cured = 1, /obj/item/natural/silk = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_difficulty = 5
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/leather/gloves_roguetown_rosa_six
+	name = "maroon gloves"
+	result = /obj/item/clothing/gloves/roguetown/rosa/six
+	reqs = list(/obj/item/natural/hide/cured = 1, /obj/item/natural/silk = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_difficulty = 5
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/leather/gloves_roguetown_rosa_ten
+	name = "stately gloves"
+	result = /obj/item/clothing/gloves/roguetown/rosa/ten
+	reqs = list(/obj/item/natural/hide/cured = 1, /obj/item/natural/silk = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_difficulty = 5
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/leather/gloves_roguetown_rosa_three
+	name = "silvered gloves"
+	result = /obj/item/clothing/gloves/roguetown/rosa/three
+	reqs = list(/obj/item/natural/hide/cured = 1, /obj/item/natural/silk = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_difficulty = 5
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/leather/head_roguetown_headband_fur
+	name = "fur headband"
+	result = /obj/item/clothing/head/roguetown/headband/fur
+	reqs = list(/obj/item/natural/hide/cured = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
 /datum/crafting_recipe/roguetown/leather/heavygloves
 	name = "heavy leather gloves"
 	result = /obj/item/clothing/gloves/roguetown/angle
@@ -5907,6 +6152,16 @@
 	name = "leather hood"
 	result = /obj/item/clothing/head/roguetown/roguehood
 	reqs = list(/obj/item/natural/hide/cured = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/leather/leathermask
+	name = "leather mask"
+	result = /obj/item/clothing/mask/rogue/facemask/leather
+	reqs = list(/obj/item/natural/hide/cured = 2)
 	tool_paths = list(/obj/item/needle)
 	category = "Skincrafting"
 	rogue_skill = /datum/attribute/skill/craft/tanning
@@ -6017,6 +6272,138 @@
 	rogue_structure = /obj/machinery/tanningrack
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
+/datum/crafting_recipe/roguetown/leather/shoes_roguetown_boots_hammerhold_boots
+	name = "hammerhold boots"
+	result = /obj/item/clothing/shoes/roguetown/boots/hammerhold_boots
+	reqs = list(/obj/item/natural/hide/cured = 1, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_difficulty = 2
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/leather/shoes_roguetown_courtphysician
+	name = "sanguine shoes"
+	result = /obj/item/clothing/shoes/roguetown/courtphysician
+	reqs = list(/obj/item/natural/hide/cured = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_difficulty = 3
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/leather/shoes_roguetown_courtphysician_female
+	name = "sanguine heels"
+	result = /obj/item/clothing/shoes/roguetown/courtphysician/female
+	reqs = list(/obj/item/natural/hide/cured = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_difficulty = 3
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/leather/shoes_roguetown_hammerhold_shoes
+	name = "hammerhold shoes"
+	result = /obj/item/clothing/shoes/roguetown/hammerhold_shoes
+	reqs = list(/obj/item/natural/hide/cured = 1, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_difficulty = 2
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/leather/shoes_roguetown_rosa
+	name = "ivory shoes"
+	result = /obj/item/clothing/shoes/roguetown/rosa
+	reqs = list(/obj/item/natural/hide/cured = 1, /obj/item/natural/silk = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_difficulty = 5
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/leather/shoes_roguetown_rosa_eight
+	name = "courtly shoes"
+	result = /obj/item/clothing/shoes/roguetown/rosa/eight
+	reqs = list(/obj/item/natural/hide/cured = 1, /obj/item/natural/silk = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_difficulty = 5
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/leather/shoes_roguetown_rosa_five
+	name = "sable shoes"
+	result = /obj/item/clothing/shoes/roguetown/rosa/five
+	reqs = list(/obj/item/natural/hide/cured = 1, /obj/item/natural/silk = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_difficulty = 5
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/leather/shoes_roguetown_rosa_four
+	name = "obsidian shoes"
+	result = /obj/item/clothing/shoes/roguetown/rosa/four
+	reqs = list(/obj/item/natural/hide/cured = 1, /obj/item/natural/silk = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_difficulty = 5
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/leather/shoes_roguetown_rosa_nine
+	name = "royal shoes"
+	result = /obj/item/clothing/shoes/roguetown/rosa/nine
+	reqs = list(/obj/item/natural/hide/cured = 1, /obj/item/natural/silk = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_difficulty = 5
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/leather/shoes_roguetown_rosa_seven
+	name = "regal shoes"
+	result = /obj/item/clothing/shoes/roguetown/rosa/seven
+	reqs = list(/obj/item/natural/hide/cured = 1, /obj/item/natural/silk = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_difficulty = 5
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/leather/shoes_roguetown_rosa_ten
+	name = "stately shoes"
+	result = /obj/item/clothing/shoes/roguetown/rosa/ten
+	reqs = list(/obj/item/natural/hide/cured = 1, /obj/item/natural/silk = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_difficulty = 5
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/leather/shoes_roguetown_rosa_three
+	name = "silvered shoes"
+	result = /obj/item/clothing/shoes/roguetown/rosa/three
+	reqs = list(/obj/item/natural/hide/cured = 1, /obj/item/natural/silk = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_difficulty = 5
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
 /datum/crafting_recipe/roguetown/leather/skillbook
 	name = "unfinished skillbook"
 	result = /obj/item/skillbook/unfinished
@@ -6045,6 +6432,39 @@
 	category = "Skincrafting"
 	rogue_skill = /datum/attribute/skill/craft/tanning
 	rogue_difficulty = 4
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/leather/suit_roguetown_shirt_tunic_rosacoat
+	name = "regal coat"
+	result = /obj/item/clothing/suit/roguetown/shirt/tunic/rosacoat
+	reqs = list(/obj/item/natural/hide/cured = 2, /obj/item/natural/silk = 2, /obj/item/alch/rosa = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_difficulty = 5
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/leather/suit_roguetown_shirt_tunic_rosacoat_four
+	name = "stately coat"
+	result = /obj/item/clothing/suit/roguetown/shirt/tunic/rosacoat/four
+	reqs = list(/obj/item/natural/hide/cured = 2, /obj/item/natural/silk = 2, /obj/item/alch/rosa = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_difficulty = 5
+	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/leather/suit_roguetown_shirt_tunic_rosacoat_two
+	name = "courtly coat"
+	result = /obj/item/clothing/suit/roguetown/shirt/tunic/rosacoat/two
+	reqs = list(/obj/item/natural/hide/cured = 2, /obj/item/natural/silk = 2, /obj/item/alch/rosa = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Skincrafting"
+	rogue_skill = /datum/attribute/skill/craft/tanning
+	rogue_difficulty = 5
 	rogue_structure = /obj/machinery/tanningrack
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
@@ -6597,6 +7017,36 @@
 	rogue_difficulty = 2
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
+/datum/crafting_recipe/roguetown/sewing/belt_rogue_leather_battleskirt_loincloth
+	name = "cloth loincloth"
+	result = /obj/item/storage/belt/rogue/leather/battleskirt/loincloth
+	reqs = list(/obj/item/natural/cloth = 3, /obj/item/natural/hide/cured = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/belt_rogue_leather_beltshawl
+	name = "belt shawl"
+	result = /obj/item/storage/belt/rogue/leather/beltshawl
+	reqs = list(/obj/item/natural/cloth = 3)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/belt_rogue_leather_sash_maid
+	name = "cloth sash"
+	result = /obj/item/storage/belt/rogue/leather/sash/maid
+	reqs = list(/obj/item/natural/cloth = 1, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
 /datum/crafting_recipe/roguetown/sewing/bikini
 	name = "bikini (1 fibers, 2 cloth)"
 	result = /obj/item/undies/bikini
@@ -7007,6 +7457,446 @@
 	rogue_diagonal = FALSE
 	rogue_skip_quality = FALSE
 
+/datum/crafting_recipe/roguetown/sewing/cloak_absolutionistrobe_black
+	name = "blessed robe"
+	result = /obj/item/clothing/cloak/absolutionistrobe/black
+	reqs = list(/obj/item/natural/cloth = 3, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_apron_waist_maid
+	name = "maid apron"
+	result = /obj/item/clothing/cloak/apron/waist/maid
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_bishop
+	name = "bishop cape"
+	result = /obj/item/clothing/cloak/bishop
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_cape_inquisitorgold
+	name = "golden order cloak"
+	result = /obj/item/clothing/cloak/cape/inquisitorgold
+	reqs = list(/obj/item/natural/cloth = 4, /obj/item/natural/fibers = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_cape_inquisitorsilver
+	name = "silver order cloak"
+	result = /obj/item/clothing/cloak/cape/inquisitorsilver
+	reqs = list(/obj/item/natural/cloth = 4, /obj/item/natural/fibers = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_desert
+	name = "desert cloak"
+	result = /obj/item/clothing/cloak/desert
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_elven
+	name = "elven cloak"
+	result = /obj/item/clothing/cloak/elven
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_elven_short
+	name = "elven shortcloak"
+	result = /obj/item/clothing/cloak/elven/short
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_etrcape
+	name = "wanderer's cape"
+	result = /obj/item/clothing/cloak/etrcape
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_half_duelcape
+	name = "duelist cape"
+	result = /obj/item/clothing/cloak/half/duelcape
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_half_shadowcloak_spymaster
+	name = "hand's cloak"
+	result = /obj/item/clothing/cloak/half/shadowcloak/spymaster
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_poncho_fancycoat
+	name = "fancy coat"
+	result = /obj/item/clothing/cloak/poncho/fancycoat
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_poncho_fancycoat_trimmed
+	name = "trimmed fancy coat"
+	result = /obj/item/clothing/cloak/poncho/fancycoat/trimmed
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_rangercloak
+	name = "ranger cloak"
+	result = /obj/item/clothing/cloak/rangercloak
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_sash
+	name = "sash"
+	result = /obj/item/clothing/cloak/sash
+	reqs = list(/obj/item/natural/cloth = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 0
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_sash_dupatta
+	name = "dupatta"
+	result = /obj/item/clothing/cloak/sash/dupatta
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_scaledcloak
+	name = "scaled cloak"
+	result = /obj/item/clothing/cloak/scaledcloak
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_scarf
+	name = "scarf"
+	result = /obj/item/clothing/cloak/scarf
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_scout
+	name = "scout cloak"
+	result = /obj/item/clothing/cloak/scout
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_sheriff
+	name = "sheriff's cloak"
+	result = /obj/item/clothing/cloak/sheriff
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_sleevedtabard
+	name = "sleeved tabard"
+	result = /obj/item/clothing/cloak/sleevedtabard
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_tabard_psydontabard_black
+	name = "blessed tabard"
+	result = /obj/item/clothing/cloak/tabard/psydontabard/black
+	reqs = list(/obj/item/natural/cloth = 3, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_tabard_psydontabard_white
+	name = "traditional tabard"
+	result = /obj/item/clothing/cloak/tabard/psydontabard/white
+	reqs = list(/obj/item/natural/cloth = 3, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_tabard_psydontabard_white_alt
+	name = "opened traditional tabard"
+	result = /obj/item/clothing/cloak/tabard/psydontabard/white/alt
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_tabard_stabard_crusader
+	name = "surcoat of the golden order"
+	result = /obj/item/clothing/cloak/tabard/stabard/crusader
+	reqs = list(/obj/item/natural/cloth = 3, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_tabard_stabard_crusader_astrata
+	name = "surcoat of the golden order (astrata)"
+	result = /obj/item/clothing/cloak/tabard/stabard/crusader/astrata
+	reqs = list(/obj/item/natural/cloth = 3, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_tabard_stabard_crusader_bsteel
+	name = "surcoat of the blacksteel order"
+	result = /obj/item/clothing/cloak/tabard/stabard/crusader/bsteel
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_tabard_stabard_crusader_heavy
+	name = "overvestments"
+	result = /obj/item/clothing/cloak/tabard/stabard/crusader/heavy
+	reqs = list(/obj/item/natural/cloth = 3, /obj/item/natural/fibers = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_tabard_stabard_crusader_see
+	name = "surcoat of the golden order (see)"
+	result = /obj/item/clothing/cloak/tabard/stabard/crusader/see
+	reqs = list(/obj/item/natural/cloth = 3, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_tabard_stabard_crusader_t
+	name = "surcoat of the silver order"
+	result = /obj/item/clothing/cloak/tabard/stabard/crusader/t
+	reqs = list(/obj/item/natural/cloth = 3, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_tabard_stabard_crusader_t_astrata
+	name = "surcoat of the silver order (astrata)"
+	result = /obj/item/clothing/cloak/tabard/stabard/crusader/t/astrata
+	reqs = list(/obj/item/natural/cloth = 3, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_tabard_stabard_crusader_t_see
+	name = "surcoat of the silver order (see)"
+	result = /obj/item/clothing/cloak/tabard/stabard/crusader/t/see
+	reqs = list(/obj/item/natural/cloth = 3, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_tabard_stabard_surcoat_short
+	name = "short jupon"
+	result = /obj/item/clothing/cloak/tabard/stabard/surcoat/short
+	reqs = list(/obj/item/natural/cloth = 3, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 4
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_tabard_toga
+	name = "toga"
+	result = /obj/item/clothing/cloak/tabard/toga
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_tabard_toga_alt
+	name = "bared toga"
+	result = /obj/item/clothing/cloak/tabard/toga/alt
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_tabard_toga_dress
+	name = "toga (dress)"
+	result = /obj/item/clothing/cloak/tabard/toga/dress
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_tabard_toga_dress_alt
+	name = "bared toga (alt)"
+	result = /obj/item/clothing/cloak/tabard/toga/dress/alt
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_templar_astratancleric
+	name = "astratan cloak"
+	result = /obj/item/clothing/cloak/templar/astratancleric
+	reqs = list(/obj/item/natural/cloth = 3, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 4
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_templar_astratancleric_grey
+	name = "frayed cloak"
+	result = /obj/item/clothing/cloak/templar/astratancleric/grey
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_templar_eoran_alt
+	name = "eoran tabard"
+	result = /obj/item/clothing/cloak/templar/eoran/alt
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_templar_necrancleric
+	name = "necran cloak"
+	result = /obj/item/clothing/cloak/templar/necrancleric
+	reqs = list(/obj/item/natural/cloth = 3, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 4
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_templar_ravoxcleric
+	name = "justice cloak"
+	result = /obj/item/clothing/cloak/templar/ravoxcleric
+	reqs = list(/obj/item/natural/cloth = 3, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 4
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_templar_see_alt
+	name = "see templar tabard"
+	result = /obj/item/clothing/cloak/templar/see_alt
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/cloak_templar_seecleric
+	name = "see devotee tabard"
+	result = /obj/item/clothing/cloak/templar/seecleric
+	reqs = list(/obj/item/natural/cloth = 3, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
 /datum/crafting_recipe/roguetown/sewing/clothbedsheet
 	name = "bedsheet, cloth"
 	result = /obj/item/bedsheet/rogue/cloth
@@ -7331,7 +8221,7 @@
 /datum/crafting_recipe/roguetown/sewing/gerkit
 	name = "Ger Kit"
 	result = /obj/item/tent_kit/ger
-	reqs = list(/obj/item/natural/cloth = 20, /obj/item/natural/fibers = 12, /obj/item/natural/silk = 12, /obj/item/grown/log/tree/stick = 20)
+	reqs = list(/obj/item/natural/cloth = 10, /obj/item/natural/fibers = 6, /obj/item/grown/log/tree/stick = 10)
 	tool_paths = list(/obj/item/needle)
 	category = "Sewing"
 	rogue_skill = /datum/attribute/skill/craft/sewing
@@ -7504,6 +8394,303 @@
 	name = "fur hat"
 	result = /obj/item/clothing/head/roguetown/hatfur
 	reqs = list(/obj/item/natural/cloth = 1, /obj/item/natural/fibers = 1, /obj/item/natural/fur = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/head_roguetown_antlers
+	name = "old antlers"
+	result = /obj/item/clothing/head/roguetown/antlers
+	reqs = list(/obj/item/natural/bone = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/head_roguetown_courtphysician
+	name = "sanguine hat"
+	result = /obj/item/clothing/head/roguetown/courtphysician
+	reqs = list(/obj/item/natural/silk = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/head_roguetown_courtphysician_female
+	name = "sanguine cap"
+	result = /obj/item/clothing/head/roguetown/courtphysician/female
+	reqs = list(/obj/item/natural/silk = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/head_roguetown_deserthood
+	name = "desert hood"
+	result = /obj/item/clothing/head/roguetown/deserthood
+	reqs = list(/obj/item/natural/cloth = 1, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/head_roguetown_doublehennin
+	name = "dual hennin"
+	result = /obj/item/clothing/head/roguetown/doublehennin
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/head_roguetown_duelhat_etrhat
+	name = "wanderer's hat"
+	result = /obj/item/clothing/head/roguetown/duelhat/etrhat
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/head_roguetown_duelhat_etrusca
+	name = "etruscan duelist hat"
+	result = /obj/item/clothing/head/roguetown/duelhat/etrusca
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/head_roguetown_durag
+	name = "durag"
+	result = /obj/item/clothing/head/roguetown/durag
+	reqs = list(/obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 0
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/head_roguetown_eaststrawhat
+	name = "worn rice hat"
+	result = /obj/item/clothing/head/roguetown/eaststrawhat
+	reqs = list(/obj/item/natural/fibers = 3)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/head_roguetown_elven_hat
+	name = "elven burka"
+	result = /obj/item/clothing/head/roguetown/elven_hat
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/head_roguetown_explorerhat
+	name = "explorer's hat"
+	result = /obj/item/clothing/head/roguetown/explorerhat
+	reqs = list(/obj/item/natural/cloth = 1, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/head_roguetown_flamboyant
+	name = "flamboyant hat"
+	result = /obj/item/clothing/head/roguetown/flamboyant
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/head_roguetown_flotsam
+	name = "flotsam bonnet"
+	result = /obj/item/clothing/head/roguetown/flotsam
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/head_roguetown_gasa
+	name = "gasa"
+	result = /obj/item/clothing/head/roguetown/gasa
+	reqs = list(/obj/item/natural/fibers = 3)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/head_roguetown_hammerhold_hat
+	name = "kokoshnik"
+	result = /obj/item/clothing/head/roguetown/hammerhold_hat
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/head_roguetown_hammerhold_hat_peasant
+	name = "hammerhold hat"
+	result = /obj/item/clothing/head/roguetown/hammerhold_hat/peasant
+	reqs = list(/obj/item/natural/cloth = 1, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/head_roguetown_hscarf
+	name = "head scarf"
+	result = /obj/item/clothing/head/roguetown/hscarf
+	reqs = list(/obj/item/natural/silk = 4)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/head_roguetown_longveil
+	name = "long veil"
+	result = /obj/item/clothing/head/roguetown/longveil
+	reqs = list(/obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 0
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/head_roguetown_maidhead
+	name = "maid headdress"
+	result = /obj/item/clothing/head/roguetown/maidhead
+	reqs = list(/obj/item/natural/cloth = 1, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/head_roguetown_menacing_executioner
+	name = "executioners hood"
+	result = /obj/item/clothing/head/roguetown/menacing/executioner
+	reqs = list(/obj/item/natural/cloth = 1, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/head_roguetown_nightcap
+	name = "nitecap"
+	result = /obj/item/clothing/head/roguetown/nightcap
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/head_roguetown_nun_hood
+	name = "nun hood"
+	result = /obj/item/clothing/head/roguetown/nun_hood
+	reqs = list(/obj/item/natural/cloth = 1, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/head_roguetown_onhelm_tw_d_horns
+	name = "horns helmkleinod"
+	result = /obj/item/clothing/head/roguetown/onhelm/tw_d_horns
+	reqs = list(/obj/item/natural/cloth = 1, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/head_roguetown_roguehood_bishop
+	name = "bishop hood"
+	result = /obj/item/clothing/head/roguetown/roguehood/bishop
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/head_roguetown_roguehood_burgerhood
+	name = "noble hood"
+	result = /obj/item/clothing/head/roguetown/roguehood/burgerhood
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/silk = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/head_roguetown_roningasa
+	name = "roningasa"
+	result = /obj/item/clothing/head/roguetown/roningasa
+	reqs = list(/obj/item/natural/fibers = 3)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/head_roguetown_sandogasa
+	name = "sandogasa"
+	result = /obj/item/clothing/head/roguetown/sandogasa
+	reqs = list(/obj/item/natural/fibers = 3)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/head_roguetown_stewardtophat
+	name = "top hat"
+	result = /obj/item/clothing/head/roguetown/stewardtophat
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/head_roguetown_tiyon
+	name = "tiyon"
+	result = /obj/item/clothing/head/roguetown/tiyon
+	reqs = list(/obj/item/natural/cloth = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 0
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/head_roguetown_torioigasa
+	name = "torioigasa"
+	result = /obj/item/clothing/head/roguetown/torioigasa
+	reqs = list(/obj/item/natural/fibers = 3)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/head_roguetown_veiledhat
+	name = "veiled hat"
+	result = /obj/item/clothing/head/roguetown/veiledhat
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
 	tool_paths = list(/obj/item/needle)
 	category = "Sewing"
 	rogue_skill = /datum/attribute/skill/craft/sewing
@@ -7825,6 +9012,73 @@
 	rogue_difficulty = 3
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
+/datum/crafting_recipe/roguetown/sewing/mask_rogue_blindfold_psydon
+	name = "blessed blindfold"
+	result = /obj/item/clothing/mask/rogue/blindfold/psydon
+	reqs = list(/obj/item/natural/cloth = 1, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/mask_rogue_eyepatch_fake
+	name = "eyepatch"
+	result = /obj/item/clothing/mask/rogue/eyepatch/fake
+	reqs = list(/obj/item/natural/cloth = 1, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/mask_rogue_eyepatch_left_fake
+	name = "eyepatch (fake)"
+	result = /obj/item/clothing/mask/rogue/eyepatch/left/fake
+	reqs = list(/obj/item/natural/cloth = 1, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/mask_rogue_faceveil
+	name = "simple veil"
+	result = /obj/item/clothing/mask/rogue/faceveil
+	reqs = list(/obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 0
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/mask_rogue_physician_feld
+	name = "feldsher's mask"
+	result = /obj/item/clothing/mask/rogue/physician/feld
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/bouquet/calendula = 1, /obj/item/natural/bone = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 4
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/mask_rogue_physician_phys
+	name = "physicker's mask"
+	result = /obj/item/clothing/mask/rogue/physician/phys
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/bouquet/calendula = 1, /obj/item/natural/bone = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/mask_rogue_shepherd_shadowmask_spymaster
+	name = "hand's halfmask"
+	result = /obj/item/clothing/mask/rogue/shepherd/shadowmask/spymaster
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
 /datum/crafting_recipe/roguetown/sewing/maskgreen
 	name = "exotic silk mask (green)"
 	result = /obj/item/clothing/mask/rogue/exoticsilkmask/green
@@ -7883,6 +9137,35 @@
 	category = "Sewing"
 	rogue_skill = /datum/attribute/skill/craft/sewing
 	rogue_difficulty = 4
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/neck_roguetown_collar_fur
+	name = "fur collar"
+	result = /obj/item/clothing/neck/roguetown/collar/fur
+	reqs = list(/obj/item/natural/fur = 1, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/neck_roguetown_cravat
+	name = "cravat"
+	result = /obj/item/clothing/neck/roguetown/cravat
+	reqs = list(/obj/item/natural/cloth = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/neck_roguetown_ruffle
+	name = "ruffled collar"
+	result = /obj/item/clothing/neck/roguetown/ruffle
+	reqs = list(/obj/item/natural/cloth = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
 /datum/crafting_recipe/roguetown/sewing/necra
@@ -8023,6 +9306,15 @@
 	category = "Sewing"
 	rogue_skill = /datum/attribute/skill/craft/sewing
 	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/paddedmask
+	name = "padded mask"
+	result = /obj/item/clothing/mask/rogue/facemask/padded
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
 /datum/crafting_recipe/roguetown/sewing/panties
@@ -8708,6 +10000,396 @@
 	rogue_skill = /datum/attribute/skill/craft/sewing
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_courtphysician
+	name = "sanguine vest"
+	result = /obj/item/clothing/suit/roguetown/shirt/courtphysician
+	reqs = list(/obj/item/natural/silk = 3)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_courtphysician_female
+	name = "sanguine blouse"
+	result = /obj/item/clothing/suit/roguetown/shirt/courtphysician/female
+	reqs = list(/obj/item/natural/silk = 3)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_desertbra
+	name = "desert bra"
+	result = /obj/item/clothing/suit/roguetown/shirt/desertbra
+	reqs = list(/obj/item/natural/fibers = 5)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_dress_blue
+	name = "light blue dress"
+	result = /obj/item/clothing/suit/roguetown/shirt/dress/blue
+	reqs = list(/obj/item/natural/cloth = 3, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 4
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_dress_etrdress
+	name = "low-cut dress"
+	result = /obj/item/clothing/suit/roguetown/shirt/dress/etrdress
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_dress_etrdress2
+	name = "embroidered dress"
+	result = /obj/item/clothing/suit/roguetown/shirt/dress/etrdress2
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_dress_etrdress3
+	name = "strapless gown"
+	result = /obj/item/clothing/suit/roguetown/shirt/dress/etrdress3
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_dress_green
+	name = "light green dress"
+	result = /obj/item/clothing/suit/roguetown/shirt/dress/green
+	reqs = list(/obj/item/natural/cloth = 3, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 4
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_dress_maidfancy
+	name = "valorian maid dress"
+	result = /obj/item/clothing/suit/roguetown/shirt/dress/maidfancy
+	reqs = list(/obj/item/natural/cloth = 3, /obj/item/natural/fibers = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_dress_nightgown
+	name = "nightgown"
+	result = /obj/item/clothing/suit/roguetown/shirt/dress/nightgown
+	reqs = list(/obj/item/natural/cloth = 3, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_dress_saree
+	name = "saree"
+	result = /obj/item/clothing/suit/roguetown/shirt/dress/saree
+	reqs = list(/obj/item/natural/cloth = 3, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 4
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_dress_silkdress_bishop
+	name = "bishop's cassock"
+	result = /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/bishop
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_dress_tavern
+	name = "tavern dress"
+	result = /obj/item/clothing/suit/roguetown/shirt/dress/tavern
+	reqs = list(/obj/item/natural/cloth = 3, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 4
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_elven
+	name = "elven suit"
+	result = /obj/item/clothing/suit/roguetown/shirt/elven
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_elven_coat
+	name = "elven coat"
+	result = /obj/item/clothing/suit/roguetown/shirt/elven/coat
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_elven_coat_alt
+	name = "elven furcoat"
+	result = /obj/item/clothing/suit/roguetown/shirt/elven/coat/alt
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_explorer
+	name = "explorer's vest"
+	result = /obj/item/clothing/suit/roguetown/shirt/explorer
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_fancyjacket
+	name = "fancy jacket"
+	result = /obj/item/clothing/suit/roguetown/shirt/fancyjacket
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_fancyjacket_triumph_padded
+	name = "dark jacket"
+	result = /obj/item/clothing/suit/roguetown/shirt/fancyjacket/triumph_padded
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_hammerhold
+	name = "hammerhold shirt"
+	result = /obj/item/clothing/suit/roguetown/shirt/hammerhold
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_hammerhold_coat
+	name = "noble coat"
+	result = /obj/item/clothing/suit/roguetown/shirt/hammerhold/coat
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_haori
+	name = "haori"
+	result = /obj/item/clothing/suit/roguetown/shirt/haori
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_kamishimo
+	name = "kamishimo"
+	result = /obj/item/clothing/suit/roguetown/shirt/kamishimo
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_kazengun_jacket
+	name = "kazengun jacket"
+	result = /obj/item/clothing/suit/roguetown/shirt/kazengun_jacket
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_kimono
+	name = "kimono"
+	result = /obj/item/clothing/suit/roguetown/shirt/kimono
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_kimono2
+	name = "long sleeved kimono"
+	result = /obj/item/clothing/suit/roguetown/shirt/kimono2
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_robe_abyssor_leader
+	name = "sylveric robe"
+	result = /obj/item/clothing/suit/roguetown/shirt/robe/abyssor_leader
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_robe_abyssor_painter
+	name = "rainfall robe"
+	result = /obj/item/clothing/suit/roguetown/shirt/robe/abyssor_painter
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_robe_abyssor_painter_sea
+	name = "sea robe"
+	result = /obj/item/clothing/suit/roguetown/shirt/robe/abyssor_painter_sea
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_robe_bared
+	name = "bared robe"
+	result = /obj/item/clothing/suit/roguetown/shirt/robe/bared
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_robe_eora_resprite
+	name = "eoran robe"
+	result = /obj/item/clothing/suit/roguetown/shirt/robe/eora/resprite
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_robe_eora_resprite_pink
+	name = "eoran robe (pink)"
+	result = /obj/item/clothing/suit/roguetown/shirt/robe/eora/resprite/pink
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_robe_hag
+	name = "hedge robe"
+	result = /obj/item/clothing/suit/roguetown/shirt/robe/hag
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_robe_leopard
+	name = "leopard robe"
+	result = /obj/item/clothing/suit/roguetown/shirt/robe/leopard
+	reqs = list(/obj/item/natural/cloth = 3, /obj/item/natural/fibers = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 4
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_robe_leopard_alt
+	name = "open leopard robe"
+	result = /obj/item/clothing/suit/roguetown/shirt/robe/leopard/alt
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_robe_nun_dress
+	name = "nun dress"
+	result = /obj/item/clothing/suit/roguetown/shirt/robe/nun_dress
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_silkbra
+	name = "giltsilk bra"
+	result = /obj/item/clothing/suit/roguetown/shirt/silkbra
+	reqs = list(/obj/item/natural/silk = 5)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 6
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_undershirt_etrdoublet
+	name = "doublet"
+	result = /obj/item/clothing/suit/roguetown/shirt/undershirt/etrdoublet
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/suit_roguetown_shirt_yoroihitatare
+	name = "yoroihitatare"
+	result = /obj/item/clothing/suit/roguetown/shirt/yoroihitatare
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
 /datum/crafting_recipe/roguetown/sewing/surgcollar
 	name = "surgeon's collar"
 	result = /obj/item/clothing/neck/roguetown/collar/surgcollar
@@ -8760,7 +10442,7 @@
 /datum/crafting_recipe/roguetown/sewing/tentkit
 	name = "Small Tent Kit"
 	result = /obj/item/tent_kit
-	reqs = list(/obj/item/natural/cloth = 10, /obj/item/natural/fibers = 6, /obj/item/natural/silk = 6, /obj/item/grown/log/tree/stick = 10)
+	reqs = list(/obj/item/natural/cloth = 12, /obj/item/rope = 1)
 	tool_paths = list(/obj/item/needle)
 	category = "Sewing"
 	rogue_skill = /datum/attribute/skill/craft/sewing
@@ -8859,6 +10541,75 @@
 	rogue_tech_node = null
 	rogue_diagonal = FALSE
 	rogue_skip_quality = FALSE
+
+/datum/crafting_recipe/roguetown/sewing/under_roguetown_loincloth_deprived
+	name = "large loincloth"
+	result = /obj/item/clothing/under/roguetown/loincloth/deprived
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/under_roguetown_skirt_courtphysician
+	name = "sanguine skirt"
+	result = /obj/item/clothing/under/roguetown/skirt/courtphysician
+	reqs = list(/obj/item/natural/silk = 3)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/under_roguetown_skirt_desert
+	name = "desert skirt"
+	result = /obj/item/clothing/under/roguetown/skirt/desert
+	reqs = list(/obj/item/natural/cloth = 1, /obj/item/natural/fibers = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 4
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/under_roguetown_skirt_formal
+	name = "knee-high skirt"
+	result = /obj/item/clothing/under/roguetown/skirt/formal
+	reqs = list(/obj/item/natural/cloth = 1, /obj/item/natural/fibers = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 4
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/under_roguetown_skirt_short
+	name = "short skirt"
+	result = /obj/item/clothing/under/roguetown/skirt/short
+	reqs = list(/obj/item/natural/cloth = 1, /obj/item/natural/fibers = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 4
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/under_roguetown_tights_dhoti
+	name = "dhoti"
+	result = /obj/item/clothing/under/roguetown/tights/dhoti
+	reqs = list(/obj/item/natural/cloth = 3, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 4
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/sewing/under_roguetown_tights_hose
+	name = "cloth hosen"
+	result = /obj/item/clothing/under/roguetown/tights/hose
+	reqs = list(/obj/item/natural/cloth = 3, /obj/item/natural/fibers = 2)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
 /datum/crafting_recipe/roguetown/sewing/undervestments
 	name = "undervestments"
@@ -9082,7 +10833,7 @@
 /datum/crafting_recipe/roguetown/sewing/yurtkit
 	name = "Yurt Kit"
 	result = /obj/item/tent_kit/yurt
-	reqs = list(/obj/item/natural/cloth = 30, /obj/item/natural/fibers = 18, /obj/item/natural/silk = 18, /obj/item/grown/log/tree/stick = 30)
+	reqs = list(/obj/item/natural/cloth = 15, /obj/item/natural/fibers = 9, /obj/item/grown/log/tree/stick = 15)
 	tool_paths = list(/obj/item/needle)
 	category = "Sewing"
 	rogue_skill = /datum/attribute/skill/craft/sewing
@@ -9930,6 +11681,17 @@
 /datum/crafting_recipe/roguetown/structure/fancytableblue
 	name = "fancy wooden table(blue)"
 	result = /obj/structure/table/wood/rockhill/wood/fancy/blue
+	reqs = list(/obj/item/natural/wood/plank = 1, /obj/item/natural/silk = 1)
+	category = "Carpentry"
+	rogue_skill = /datum/attribute/skill/craft/carpentry
+	rogue_difficulty = 3
+	rogue_verb = "constructs"
+	rogue_verb_simple = "construct"
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
+
+/datum/crafting_recipe/roguetown/structure/fancytablegreen
+	name = "fancy wooden table(green)"
+	result = /obj/structure/table/wood/rockhill/wood/fancy/green
 	reqs = list(/obj/item/natural/wood/plank = 1, /obj/item/natural/silk = 1)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
@@ -11746,6 +13508,19 @@
 	rogue_diagonal = FALSE
 	rogue_skip_quality = FALSE
 
+/datum/crafting_recipe/roguetown/structure/wooden_spit
+	name = "wooden spit"
+	result = /obj/machinery/light/rogue/hearth/wooden_spit
+	reqs = list(/obj/item/grown/log/tree/stick = 2)
+	category = "Crafting"
+	rogue_skill = /datum/attribute/skill/craft/crafting
+	rogue_difficulty = 0
+	rogue_structure = /obj/machinery/light/rogue/campfire
+	rogue_ignore_density = TRUE
+	rogue_verb = "sets up"
+	rogue_verb_simple = "set up"
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/Building-01.ogg'
+
 /datum/crafting_recipe/roguetown/structure/woolbed
 	name = "bed, wood"
 	result = /obj/structure/bed/rockhill/rogue/inn/wool
@@ -11906,6 +13681,17 @@
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
+/datum/crafting_recipe/roguetown/survival/ancientmailledhauberk
+	name = "layer an ancient cuirass atop hauberk"
+	result = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/heavy/ancient
+	reqs = list(/obj/item/clothing/suit/roguetown/armor/plate/half/ancient = 1, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/ancient = 1)
+	blacklist = list(/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/ancient/decrepit, /obj/item/clothing/suit/roguetown/armor/plate/half/ancient/decrepit)
+	category = "Crafting"
+	rogue_skill = /datum/attribute/skill/craft/crafting
+	rogue_difficulty = 0
+	rogue_on_table = TRUE
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
 /datum/crafting_recipe/roguetown/survival/antlerhood
 	name = "antlerhood"
 	result = /obj/item/clothing/head/roguetown/antlerhood
@@ -11936,7 +13722,6 @@
 	blacklist = list(/obj/item/natural/cloth/bandage)
 	category = "Medicine"
 	rogue_skill = /datum/attribute/skill/misc/medicine
-	rogue_difficulty = 2
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
 /datum/crafting_recipe/roguetown/survival/billhook
@@ -12298,6 +14083,17 @@
 	rogue_difficulty = 2
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
+/datum/crafting_recipe/roguetown/survival/decoratedmailledhauberk
+	name = "layer a decorated cuirass atop hauberk"
+	result = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/heavy/decorated
+	reqs = list(/obj/item/clothing/suit/roguetown/armor/plate/half/fluted/decorated = 1, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk = 1)
+	blacklist = list(/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/ancient, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/ancient/decrepit, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/atgervi, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/bronze, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/fluted, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/heavy, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/heavy/ancient, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/heavy/decorated, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/iron, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/janissary, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/ornate, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/zizo)
+	category = "Crafting"
+	rogue_skill = /datum/attribute/skill/craft/crafting
+	rogue_difficulty = 0
+	rogue_on_table = TRUE
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
 /datum/crafting_recipe/roguetown/survival/decorative_mentorhat
 	name = "decorative bamboo hat"
 	result = /obj/item/clothing/head/roguetown/mentorhat/decorative
@@ -12354,6 +14150,16 @@
 	blacklist = list(/obj/item/natural/fur/bobcat, /obj/item/natural/fur/direbear, /obj/item/natural/fur/fox, /obj/item/natural/fur/goat, /obj/item/natural/fur/rabbit, /obj/item/natural/fur/rat, /obj/item/natural/fur/wolf)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/survival/fiberfuse
+	name = "fiber fuse (2 Fibers + 1 Fat)"
+	result = /obj/item/cannon_fuse/fiber
+	reqs = list(/obj/item/natural/fibers = 2, /obj/item/reagent_containers/food/snacks/fat = 1)
+	blacklist = list(/obj/item/reagent_containers/food/snacks/fat/salo, /obj/item/reagent_containers/food/snacks/fat/salo/slice)
+	category = "Crafting"
+	rogue_skill = /datum/attribute/skill/craft/crafting
+	rogue_difficulty = 3
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
 /datum/crafting_recipe/roguetown/survival/fishingcage
@@ -12443,6 +14249,17 @@
 	rogue_verb_simple = "tied"
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
+/datum/crafting_recipe/roguetown/survival/flutedmailledhauberk
+	name = "layer a fluted cuirass atop hauberk"
+	result = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/fluted
+	reqs = list(/obj/item/clothing/suit/roguetown/armor/plate/half/fluted = 1, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk = 1)
+	blacklist = list(/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/ancient, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/ancient/decrepit, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/atgervi, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/bronze, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/fluted, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/heavy, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/heavy/ancient, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/heavy/decorated, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/iron, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/janissary, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/ornate, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/zizo, /obj/item/clothing/suit/roguetown/armor/plate/half/fluted/decorated, /obj/item/clothing/suit/roguetown/armor/plate/half/fluted/ornate)
+	category = "Crafting"
+	rogue_skill = /datum/attribute/skill/craft/crafting
+	rogue_difficulty = 0
+	rogue_on_table = TRUE
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
 /datum/crafting_recipe/roguetown/survival/fork
 	name = "fork (x3) (1 small log)"
 	result = /obj/item/kitchen/fork
@@ -12481,6 +14298,19 @@
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_difficulty = 2
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/survival/head_roguetown_onhelm_tw_d_basic
+	name = "helm's chaperon"
+	result = /obj/item/clothing/head/roguetown/onhelm/tw_d_basic
+	reqs = list(/obj/item/natural/cloth = 3)
+	tool_paths = list(/obj/item/needle)
+	blacklist = list(/obj/item/natural/cloth/bandage)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 2
+	rogue_verb = "sews"
+	rogue_verb_simple = "sew"
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
 /datum/crafting_recipe/roguetown/survival/heatershield
@@ -12625,6 +14455,17 @@
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
+/datum/crafting_recipe/roguetown/survival/ornatemailledhauberk
+	name = "layer a psydonic cuirass atop hauberk"
+	result = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/ornate
+	reqs = list(/obj/item/clothing/suit/roguetown/armor/plate/half/fluted/ornate = 1, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk = 1)
+	blacklist = list(/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/ancient, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/ancient/decrepit, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/atgervi, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/bronze, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/fluted, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/heavy, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/heavy/ancient, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/heavy/decorated, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/iron, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/janissary, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/ornate, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/zizo)
+	category = "Crafting"
+	rogue_skill = /datum/attribute/skill/craft/crafting
+	rogue_difficulty = 0
+	rogue_on_table = TRUE
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
 /datum/crafting_recipe/roguetown/survival/paperscroll
 	name = "scroll of parchment (x3)"
 	result = /obj/item/paper/scroll
@@ -12634,6 +14475,16 @@
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_structure = /obj/machinery/tanningrack
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/survival/parchmentfuse
+	name = "parchment fuse (2 Parchment + 1 Fat)"
+	result = /obj/item/cannon_fuse/parchment
+	reqs = list(/obj/item/paper/parchment = 2, /obj/item/reagent_containers/food/snacks/fat = 1)
+	blacklist = list(/obj/item/reagent_containers/food/snacks/fat/salo, /obj/item/reagent_containers/food/snacks/fat/salo/slice)
+	category = "Crafting"
+	rogue_skill = /datum/attribute/skill/craft/crafting
+	rogue_difficulty = 3
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
 /datum/crafting_recipe/roguetown/survival/pearlcross
@@ -12663,7 +14514,7 @@
 	result = /obj/item/rogueweapon/greataxe/militia
 	reqs = list(/obj/item/rogueweapon/shovel = 1, /obj/item/grown/log/tree/small = 2, /obj/item/rope = 1)
 	tool_paths = list(/obj/item/rogueweapon/hammer)
-	blacklist = list(/obj/item/grown/log/tree/small/essence, /obj/item/rogueweapon/shovel/blacksteel, /obj/item/rogueweapon/shovel/decrepit, /obj/item/rogueweapon/shovel/silver, /obj/item/rogueweapon/shovel/small, /obj/item/rope/chain, /obj/item/rope/chain/bindingshackles, /obj/item/rope/chain/bindingshackles/t2, /obj/item/rope/chain/bindingshackles/t3, /obj/item/rope/chain/bindingshackles/t4, /obj/item/rope/chain/bindingshackles/t5, /obj/item/rope/inqarticles/inquirycord)
+	blacklist = list(/obj/item/grown/log/tree/small/essence, /obj/item/rogueweapon/shovel/blacksteel, /obj/item/rogueweapon/shovel/bronze, /obj/item/rogueweapon/shovel/bronze/spade, /obj/item/rogueweapon/shovel/decrepit, /obj/item/rogueweapon/shovel/silver, /obj/item/rogueweapon/shovel/small, /obj/item/rope/chain, /obj/item/rope/chain/bindingshackles, /obj/item/rope/chain/bindingshackles/t2, /obj/item/rope/chain/bindingshackles/t3, /obj/item/rope/chain/bindingshackles/t4, /obj/item/rope/chain/bindingshackles/t5, /obj/item/rope/inqarticles/inquirycord)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
 	rogue_difficulty = 2
@@ -12713,7 +14564,7 @@
 	result = /obj/item/rogueweapon/pick/militia
 	reqs = list(/obj/item/rogueweapon/pick = 1, /obj/item/natural/whetstone = 1)
 	tool_paths = list(/obj/item/rogueweapon/hammer)
-	blacklist = list(/obj/item/rogueweapon/pick/blacksteel, /obj/item/rogueweapon/pick/bronze, /obj/item/rogueweapon/pick/copper, /obj/item/rogueweapon/pick/decrepit, /obj/item/rogueweapon/pick/militia, /obj/item/rogueweapon/pick/militia/steel, /obj/item/rogueweapon/pick/steel, /obj/item/rogueweapon/pick/stone)
+	blacklist = list(/obj/item/rogueweapon/pick/blacksteel, /obj/item/rogueweapon/pick/bronze, /obj/item/rogueweapon/pick/copper, /obj/item/rogueweapon/pick/decrepit, /obj/item/rogueweapon/pick/militia, /obj/item/rogueweapon/pick/militia/steel, /obj/item/rogueweapon/pick/steel, /obj/item/rogueweapon/pick/stone, /obj/item/rogueweapon/pick/woodcutter/dolabra/albranze)
 	category = "Carpentry"
 	rogue_skill = /datum/attribute/skill/craft/carpentry
 	rogue_difficulty = 2
@@ -13457,7 +15308,7 @@
 	name = "untie cloth belt"
 	result = /obj/item/natural/cloth
 	reqs = list(/obj/item/storage/belt/rogue/leather/cloth = 1)
-	blacklist = list(/obj/item/storage/belt/rogue/leather/cloth/lady, /obj/item/storage/belt/rogue/leather/cloth/sash)
+	blacklist = list(/obj/item/storage/belt/rogue/leather/cloth/lady, /obj/item/storage/belt/rogue/leather/cloth/sash, /obj/item/storage/belt/rogue/leather/cloth/upgraded)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_difficulty = 0
@@ -13469,7 +15320,7 @@
 	name = "untie rope belt"
 	result = /obj/item/rope
 	reqs = list(/obj/item/storage/belt/rogue/leather/rope = 1)
-	blacklist = list(/obj/item/storage/belt/rogue/leather/rope/dark)
+	blacklist = list(/obj/item/storage/belt/rogue/leather/rope/dark, /obj/item/storage/belt/rogue/leather/rope/upgraded, /obj/item/storage/belt/rogue/leather/rope/upgraded/dark)
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_difficulty = 0
@@ -14231,6 +16082,32 @@
 	rogue_verb_simple = "set up"
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
+/datum/crafting_recipe/roguetown/turfs/tentdoor/leather
+	name = "leather tent door (1 stick, 1 leather)"
+	result = /obj/structure/roguetent/leather
+	reqs = list(/obj/item/grown/log/tree/stick = 1, /obj/item/natural/hide/cured = 1)
+	rogue_results = null
+	tool_paths = null
+	parts = null
+	blacklist = null
+	category = "Crafting"
+	rogue_skill = /datum/attribute/skill/craft/crafting
+	rogue_difficulty = 1
+	rogue_structure = null
+	rogue_on_table = FALSE
+	rogue_on_tile = FALSE
+	rogue_on_wall = FALSE
+	rogue_build_same = FALSE
+	rogue_ignore_density = FALSE
+	rogue_verb = "sets up"
+	rogue_verb_simple = "set up"
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+	rogue_xp = -1
+	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
+
 /datum/crafting_recipe/roguetown/turfs/tentwall
 	name = "tent wall (1 stick, 1 cloth)"
 	result = /turf/closed/wall/mineral/rogue/tent
@@ -14699,6 +16576,26 @@
 	rogue_structure = /obj/machinery/loom
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
+/datum/crafting_recipe/roguetown/weaving/cloak_rosa
+	name = "regal cloak"
+	result = /obj/item/clothing/cloak/rosa
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1, /obj/item/alch/rosa = 1)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 4
+	rogue_structure = /obj/machinery/loom
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/weaving/cloak_rosa_two
+	name = "courtly cloak"
+	result = /obj/item/clothing/cloak/rosa/two
+	reqs = list(/obj/item/natural/silk = 2, /obj/item/natural/cloth = 1, /obj/item/alch/rosa = 1)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 4
+	rogue_structure = /obj/machinery/loom
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
 /datum/crafting_recipe/roguetown/weaving/dendorrobe
 	name = "dendor robes"
 	result = /obj/item/clothing/suit/roguetown/shirt/robe/dendor
@@ -14726,6 +16623,36 @@
 	category = "Sewing"
 	rogue_skill = /datum/attribute/skill/craft/sewing
 	rogue_difficulty = 3
+	rogue_structure = /obj/machinery/loom
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/weaving/head_roguetown_roguehood_eorahood
+	name = "opera hood"
+	result = /obj/item/clothing/head/roguetown/roguehood/eorahood
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/silk = 1)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_structure = /obj/machinery/loom
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/weaving/head_roguetown_roguehood_ravox
+	name = "ravox hood"
+	result = /obj/item/clothing/head/roguetown/roguehood/ravox
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/silk = 1)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_structure = /obj/machinery/loom
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/weaving/head_roguetown_roguehood_see
+	name = "see hood"
+	result = /obj/item/clothing/head/roguetown/roguehood/see
+	reqs = list(/obj/item/natural/cloth = 2, /obj/item/natural/silk = 1)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 4
 	rogue_structure = /obj/machinery/loom
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
@@ -14827,6 +16754,86 @@
 	rogue_structure = /obj/machinery/loom
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
+/datum/crafting_recipe/roguetown/weaving/suit_roguetown_shirt_robe_ravox
+	name = "ravox robe"
+	result = /obj/item/clothing/suit/roguetown/shirt/robe/ravox
+	reqs = list(/obj/item/natural/cloth = 3, /obj/item/natural/silk = 1)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 4
+	rogue_structure = /obj/machinery/loom
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/weaving/suit_roguetown_shirt_robe_see
+	name = "see robe"
+	result = /obj/item/clothing/suit/roguetown/shirt/robe/see
+	reqs = list(/obj/item/natural/cloth = 3, /obj/item/natural/silk = 1)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 4
+	rogue_structure = /obj/machinery/loom
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/weaving/suit_roguetown_shirt_robe_seecleric
+	name = "see clerical robe"
+	result = /obj/item/clothing/suit/roguetown/shirt/robe/seecleric
+	reqs = list(/obj/item/natural/cloth = 3, /obj/item/natural/silk = 1)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 3
+	rogue_structure = /obj/machinery/loom
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/weaving/suit_roguetown_shirt_tunic_rosa
+	name = "ivory dress"
+	result = /obj/item/clothing/suit/roguetown/shirt/tunic/rosa
+	reqs = list(/obj/item/natural/silk = 3, /obj/item/natural/cloth = 2, /obj/item/alch/rosa = 1)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 4
+	rogue_structure = /obj/machinery/loom
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/weaving/suit_roguetown_shirt_tunic_rosa_five
+	name = "sable dress"
+	result = /obj/item/clothing/suit/roguetown/shirt/tunic/rosa/five
+	reqs = list(/obj/item/natural/silk = 3, /obj/item/natural/cloth = 2, /obj/item/alch/rosa = 1)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 4
+	rogue_structure = /obj/machinery/loom
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/weaving/suit_roguetown_shirt_tunic_rosa_four
+	name = "obsidian dress"
+	result = /obj/item/clothing/suit/roguetown/shirt/tunic/rosa/four
+	reqs = list(/obj/item/natural/silk = 3, /obj/item/natural/cloth = 2, /obj/item/alch/rosa = 1)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 4
+	rogue_structure = /obj/machinery/loom
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/weaving/suit_roguetown_shirt_tunic_rosa_six
+	name = "maroon dress"
+	result = /obj/item/clothing/suit/roguetown/shirt/tunic/rosa/six
+	reqs = list(/obj/item/natural/silk = 3, /obj/item/natural/cloth = 2, /obj/item/alch/rosa = 1)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 4
+	rogue_structure = /obj/machinery/loom
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
+/datum/crafting_recipe/roguetown/weaving/suit_roguetown_shirt_tunic_rosa_three
+	name = "velvet dress"
+	result = /obj/item/clothing/suit/roguetown/shirt/tunic/rosa/three
+	reqs = list(/obj/item/natural/silk = 3, /obj/item/natural/cloth = 2, /obj/item/alch/rosa = 1)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 4
+	rogue_structure = /obj/machinery/loom
+	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
+
 /datum/crafting_recipe/roguetown/weaving/webbing
 	name = "webbed leggings"
 	result = /obj/item/clothing/under/roguetown/webs
@@ -14845,17 +16852,6 @@
 	rogue_skill = /datum/attribute/skill/craft/crafting
 	rogue_sound = 'modular_redtard/rockhill/sound/foley/bandage.ogg'
 
-/datum/crafting_recipe/roguetown/alchemy/herozium
-	// Azure Peak
-	name = "herozium"
-	result = /obj/item/reagent_containers/powder/herozium
-	reqs = list(/obj/item/reagent_containers/powder/ozium = 1, /datum/reagent/buff/strength = 15, /obj/item/ash = 2)
-	category = "Alchemy"
-	rogue_skill = /datum/attribute/skill/craft/alchemy
-	rogue_difficulty = 4
-	rogue_structure = /obj/structure/fluff/alch
-	rogue_verb_simple = "mix"
-
 /datum/crafting_recipe/roguetown/alchemy/moon_purest
 	// Azure Peak
 	name = "purified moondust"
@@ -14864,28 +16860,6 @@
 	category = "Alchemy"
 	rogue_skill = /datum/attribute/skill/craft/alchemy
 	rogue_difficulty = 4
-	rogue_structure = /obj/structure/fluff/alch
-	rogue_verb_simple = "mix"
-
-/datum/crafting_recipe/roguetown/alchemy/spice_compost
-	// Azure Peak
-	name = "spice (compost)"
-	result = /obj/item/reagent_containers/powder/spice
-	reqs = list(/obj/item/ash = 2, /obj/item/compost = 2, /datum/reagent/berrypoison = 2)
-	category = "Alchemy"
-	rogue_skill = /datum/attribute/skill/craft/alchemy
-	rogue_difficulty = 3
-	rogue_structure = /obj/structure/fluff/alch
-	rogue_verb_simple = "mix"
-
-/datum/crafting_recipe/roguetown/alchemy/spice_poo
-	// Azure Peak
-	name = "spice (nightsoil)"
-	result = /obj/item/reagent_containers/powder/spice
-	reqs = list(/obj/item/ash = 2, /obj/item/natural/poo = 1, /datum/reagent/berrypoison = 2)
-	category = "Alchemy"
-	rogue_skill = /datum/attribute/skill/craft/alchemy
-	rogue_difficulty = 3
 	rogue_structure = /obj/structure/fluff/alch
 	rogue_verb_simple = "mix"
 
@@ -15205,41 +17179,12 @@
 	name = "engineer's launcher"
 	result = /obj/structure/englauncher
 	reqs = list(/obj/item/roguegear = 1, /obj/item/natural/wood/plank = 4, /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow = 1)
-	blacklist = list(/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/arbalest, /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/heavy, /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow, /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow/stalker, /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow/stalker/lesser, /obj/item/roguegear/bronze, /obj/item/roguegear/wood, /obj/item/roguegear/wood/basic, /obj/item/roguegear/wood/reliable, /obj/item/roguegear/wood/unstable)
+	blacklist = list(/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/heavy, /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow, /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow/stalker, /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow/stalker/lesser, /obj/item/roguegear/bronze, /obj/item/roguegear/wood, /obj/item/roguegear/wood/basic, /obj/item/roguegear/wood/reliable, /obj/item/roguegear/wood/unstable)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 4
 	rogue_verb = "engineers"
 	rogue_verb_simple = "engineer"
-
-/datum/crafting_recipe/roguetown/engineering/bbomb_expert
-	// Azure Peak
-	name = "bottle bomb (clod jury rig)"
-	result = /obj/item/bomb
-	reqs = list(/obj/item/natural/dirtclod = 3, /obj/item/ash = 2, /obj/item/natural/fibers = 2)
-	blacklist = list(/obj/item/natural/dirtclod/sand, /obj/item/natural/dirtclod/snow)
-	category = "Engineering"
-	rogue_skill = /datum/attribute/skill/craft/engineering
-	rogue_difficulty = 4
-
-/datum/crafting_recipe/roguetown/engineering/bbomb_expert_2
-	// Azure Peak
-	name = "bottle bomb (glass jury rig)"
-	result = /obj/item/bomb
-	reqs = list(/obj/item/natural/glass_shard = 1, /obj/item/ash = 2, /obj/item/natural/fibers = 2)
-	category = "Engineering"
-	rogue_skill = /datum/attribute/skill/craft/engineering
-	rogue_difficulty = 4
-
-/datum/crafting_recipe/roguetown/engineering/bombtrap
-	// Azure Peak
-	name = "bomb trap (engineered)"
-	result = /obj/structure/trap/bomb
-	reqs = list(/obj/item/roguegear = 1, /obj/item/natural/clay = 1, /obj/item/roguegem/amethyst = 1, /obj/item/impact_grenade/explosion = 1)
-	blacklist = list(/obj/item/roguegear/bronze, /obj/item/roguegear/wood, /obj/item/roguegear/wood/basic, /obj/item/roguegear/wood/reliable, /obj/item/roguegear/wood/unstable, /obj/item/roguegem/amethyst/naledi)
-	category = "Engineering"
-	rogue_skill = /datum/attribute/skill/craft/engineering
-	rogue_difficulty = 6
 
 /datum/crafting_recipe/roguetown/engineering/floorgrille
 	// Azure Peak
@@ -15265,34 +17210,6 @@
 	rogue_verb = "engineers"
 	rogue_verb_simple = "engineer"
 
-/datum/crafting_recipe/roguetown/engineering/impactexplosive_expert
-	// Azure Peak
-	name = "impact grenades (fyritius jury rig)"
-	result = /obj/item/impact_grenade/explosion
-	reqs = list(/obj/item/scrap = 1, /obj/item/reagent_containers/food/snacks/grown/rogue/fyritius = 1, /obj/item/natural/fibers = 3)
-	blacklist = list(/obj/item/reagent_containers/food/snacks/grown/rogue/fyritius/bloodied)
-	category = "Engineering"
-	rogue_skill = /datum/attribute/skill/craft/engineering
-	rogue_difficulty = 4
-
-/datum/crafting_recipe/roguetown/engineering/impactexplosive_expert_2
-	// Azure Peak
-	name = "impact grenades (infernal jury rig)"
-	result = /obj/item/impact_grenade/explosion
-	reqs = list(/obj/item/scrap = 1, /obj/item/magic/infernal/ash = 1, /obj/item/natural/fibers = 3)
-	category = "Engineering"
-	rogue_skill = /datum/attribute/skill/craft/engineering
-	rogue_difficulty = 4
-
-/datum/crafting_recipe/roguetown/engineering/impactexplosive_expert_3
-	// Azure Peak
-	name = "impact grenades (coal dust jury rig)"
-	result = /obj/item/impact_grenade/explosion
-	reqs = list(/obj/item/scrap = 1, /obj/item/alch/coaldust = 1, /obj/item/natural/fibers = 3)
-	category = "Engineering"
-	rogue_skill = /datum/attribute/skill/craft/engineering
-	rogue_difficulty = 4
-
 /datum/crafting_recipe/roguetown/engineering/pressure_plate
 	// Azure Peak
 	name = "pressure plate"
@@ -15310,7 +17227,7 @@
 	name = "rock trap (engineered)"
 	result = /obj/structure/trap/rock_fall
 	reqs = list(/obj/item/roguegear = 1, /obj/item/natural/clay = 1, /obj/item/roguegem/amethyst = 1, /obj/item/natural/rock = 1)
-	blacklist = list(/obj/item/natural/rock/cinnabar, /obj/item/natural/rock/coal, /obj/item/natural/rock/copper, /obj/item/natural/rock/elementalmote, /obj/item/natural/rock/gem, /obj/item/natural/rock/gold, /obj/item/natural/rock/iron, /obj/item/natural/rock/random, /obj/item/natural/rock/random_ore, /obj/item/natural/rock/salt, /obj/item/natural/rock/silver, /obj/item/natural/rock/tin, /obj/item/roguegear/bronze, /obj/item/roguegear/wood, /obj/item/roguegear/wood/basic, /obj/item/roguegear/wood/reliable, /obj/item/roguegear/wood/unstable, /obj/item/roguegem/amethyst/naledi)
+	blacklist = list(/obj/item/natural/rock/cinnabar, /obj/item/natural/rock/coal, /obj/item/natural/rock/copper, /obj/item/natural/rock/elementalmote, /obj/item/natural/rock/gem, /obj/item/natural/rock/gold, /obj/item/natural/rock/iron, /obj/item/natural/rock/random, /obj/item/natural/rock/random_ore, /obj/item/natural/rock/salt, /obj/item/natural/rock/silver, /obj/item/natural/rock/tin, /obj/item/roguegear/bronze, /obj/item/roguegear/wood, /obj/item/roguegear/wood/basic, /obj/item/roguegear/wood/reliable, /obj/item/roguegear/wood/unstable)
 	category = "Engineering"
 	rogue_skill = /datum/attribute/skill/craft/engineering
 	rogue_difficulty = 4
@@ -15631,6 +17548,16 @@
 	rogue_skill = /datum/attribute/skill/craft/sewing
 	rogue_difficulty = 4
 
+/datum/crafting_recipe/roguetown/sewing/psydoninq
+	// Azure Peak
+	name = "tabard, psydonian orthodoxist"
+	result = /obj/item/clothing/cloak/tabard/psydontabard
+	reqs = list(/obj/item/natural/cloth = 3, /obj/item/natural/fibers = 1)
+	tool_paths = list(/obj/item/needle)
+	category = "Sewing"
+	rogue_skill = /datum/attribute/skill/craft/sewing
+	rogue_difficulty = 4
+
 /datum/crafting_recipe/roguetown/sewing/tailor/otavangambeson
 	// Azure Peak
 	name = "otavan gambeson"
@@ -15683,6 +17610,56 @@
 	rogue_verb = "constructs"
 	rogue_verb_simple = "construct"
 
+/datum/crafting_recipe/roguetown/structure/chest_wood_plain
+	// Azure Peak
+	name = "chest (wooden)"
+	result = /obj/structure/closet/crate/wooden/rockhill/crate/roguecloset/inn/chest
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	category = "Carpentry"
+	rogue_skill = /datum/attribute/skill/craft/carpentry
+	rogue_verb = "constructs"
+	rogue_verb_simple = "construct"
+
+/datum/crafting_recipe/roguetown/structure/chest_wood_plain_alt
+	// Azure Peak
+	name = "chest (wooden, old, alt)"
+	result = /obj/structure/closet/crate/wooden/rockhill/crate/chest/old_crate
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	category = "Carpentry"
+	rogue_skill = /datum/attribute/skill/craft/carpentry
+	rogue_verb = "constructs"
+	rogue_verb_simple = "construct"
+
+/datum/crafting_recipe/roguetown/structure/chest_wood_sturdy
+	// Azure Peak
+	name = "chest (wooden, sturdy)"
+	result = /obj/structure/closet/crate/wooden/rockhill/crate/chest/neu
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	category = "Carpentry"
+	rogue_skill = /datum/attribute/skill/craft/carpentry
+	rogue_verb = "constructs"
+	rogue_verb_simple = "construct"
+
+/datum/crafting_recipe/roguetown/structure/closet_wood_inn
+	// Azure Peak
+	name = "closet (wide, inn)"
+	result = /obj/structure/closet/crate/wooden/rockhill/crate/roguecloset/inn/south
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	category = "Carpentry"
+	rogue_skill = /datum/attribute/skill/craft/carpentry
+	rogue_verb = "constructs"
+	rogue_verb_simple = "construct"
+
+/datum/crafting_recipe/roguetown/structure/drawer_wood
+	// Azure Peak
+	name = "drawer (small)"
+	result = /obj/structure/closet/crate/wooden/rockhill/crate/drawer/inn
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	category = "Carpentry"
+	rogue_skill = /datum/attribute/skill/craft/carpentry
+	rogue_verb = "constructs"
+	rogue_verb_simple = "construct"
+
 /datum/crafting_recipe/roguetown/structure/graggar_cross_meat
 	// Azure Peak
 	name = "revered vicious cross"
@@ -15727,6 +17704,42 @@
 	rogue_verb = "builds"
 	rogue_verb_simple = "build"
 
+/datum/crafting_recipe/roguetown/structure/shelf_big
+	// Azure Peak
+	name = "wooden shelf (big)"
+	result = /obj/structure/rack/rockhill/rogue/shelf/biggest
+	reqs = list(/obj/item/grown/log/tree/stick = 4)
+	category = "Carpentry"
+	rogue_skill = /datum/attribute/skill/craft/carpentry
+	rogue_difficulty = 0
+	rogue_ignore_density = TRUE
+	rogue_verb = "constructs"
+	rogue_verb_simple = "construct"
+
+/datum/crafting_recipe/roguetown/structure/shelf_medium
+	// Azure Peak
+	name = "wooden shelf (medium)"
+	result = /obj/structure/rack/rockhill/rogue/shelf/big
+	reqs = list(/obj/item/grown/log/tree/stick = 3)
+	category = "Carpentry"
+	rogue_skill = /datum/attribute/skill/craft/carpentry
+	rogue_difficulty = 0
+	rogue_ignore_density = TRUE
+	rogue_verb = "constructs"
+	rogue_verb_simple = "construct"
+
+/datum/crafting_recipe/roguetown/structure/statue/noc
+	// Azure Peak
+	name = "statue of Noc"
+	result = /obj/structure/fluff/statue/noc
+	reqs = list(/obj/item/ingot/silver = 1, /obj/item/natural/stone = 2)
+	tool_paths = list(/obj/item/rogueweapon/hammer)
+	category = "Masonry"
+	rogue_skill = /datum/attribute/skill/craft/masonry
+	rogue_difficulty = 3
+	rogue_verb = "constructs"
+	rogue_verb_simple = "construct"
+
 /datum/crafting_recipe/roguetown/structure/zizo_cross_gold
 	// Azure Peak
 	name = "gilded profane cross"
@@ -15759,6 +17772,33 @@
 	rogue_structure = /obj/machinery/light/rogue/oven
 	rogue_verb = "chars"
 	rogue_verb_simple = "char"
+
+/datum/crafting_recipe/roguetown/survival/clothbelt/upgraded
+	// Azure Peak
+	name = "pouch-fitted cloth belt"
+	result = /obj/item/storage/belt/rogue/leather/cloth/upgraded
+	reqs = list(/obj/item/storage/belt/rogue/leather/cloth = 1, /obj/item/storage/belt/rogue/pouch = 1)
+	rogue_results = null
+	tool_paths = null
+	parts = null
+	blacklist = null
+	category = "Crafting"
+	rogue_skill = /datum/attribute/skill/craft/crafting
+	rogue_difficulty = 1
+	rogue_structure = null
+	rogue_on_table = FALSE
+	rogue_on_tile = FALSE
+	rogue_on_wall = FALSE
+	rogue_build_same = FALSE
+	rogue_ignore_density = FALSE
+	rogue_verb = "tie"
+	rogue_verb_simple = "tie"
+	rogue_sound = null
+	rogue_xp = -1
+	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
 
 /datum/crafting_recipe/roguetown/survival/collar
 	// Azure Peak
@@ -15821,6 +17861,17 @@
 	rogue_on_table = TRUE
 	rogue_verb = "hammers out"
 	rogue_verb_simple = "hammer out"
+
+/datum/crafting_recipe/roguetown/survival/mailledhauberk
+	// Azure Peak
+	name = "layer a steel cuirass atop hauberk"
+	result = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/heavy
+	reqs = list(/obj/item/clothing/suit/roguetown/armor/plate/cuirass = 1, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk = 1)
+	blacklist = list(/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/ancient, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/ancient/decrepit, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/atgervi, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/bronze, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/fluted, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/heavy, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/heavy/ancient, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/heavy/decorated, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/iron, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/janissary, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/ornate, /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/zizo, /obj/item/clothing/suit/roguetown/armor/plate/cuirass/fluted/gold, /obj/item/clothing/suit/roguetown/armor/plate/cuirass/fluted/gold/heroic)
+	category = "Crafting"
+	rogue_skill = /datum/attribute/skill/craft/crafting
+	rogue_difficulty = 0
+	rogue_on_table = TRUE
 
 /datum/crafting_recipe/roguetown/survival/peasantry/hoe
 	// Azure Peak
@@ -16061,6 +18112,33 @@
 	category = "Crafting"
 	rogue_skill = /datum/attribute/skill/craft/crafting
 
+/datum/crafting_recipe/roguetown/survival/ropebelt/upgraded
+	// Azure Peak
+	name = "pouch-fitted rope belt"
+	result = /obj/item/storage/belt/rogue/leather/rope/upgraded
+	reqs = list(/obj/item/storage/belt/rogue/leather/rope = 1, /obj/item/storage/belt/rogue/pouch = 1)
+	rogue_results = null
+	tool_paths = null
+	parts = null
+	blacklist = null
+	category = "Crafting"
+	rogue_skill = /datum/attribute/skill/craft/crafting
+	rogue_difficulty = 1
+	rogue_structure = null
+	rogue_on_table = FALSE
+	rogue_on_tile = FALSE
+	rogue_on_wall = FALSE
+	rogue_build_same = FALSE
+	rogue_ignore_density = FALSE
+	rogue_verb = "ties"
+	rogue_verb_simple = "tie"
+	rogue_sound = null
+	rogue_xp = -1
+	crafting_flags = NONE
+	rogue_tech_node = null
+	rogue_diagonal = FALSE
+	rogue_skip_quality = FALSE
+
 /datum/crafting_recipe/roguetown/survival/silvtankard
 	// Azure Peak
 	name = "tankards, silver (x2)"
@@ -16194,3 +18272,14 @@
 	rogue_skill = /datum/attribute/skill/craft/sewing
 	rogue_difficulty = 3
 	rogue_structure = /obj/machinery/loom
+
+/datum/crafting_recipe/roguetown/woodcarving/chessboard
+	// Azure Peak
+	name = "folded chessboard"
+	result = /obj/item/chessboard_folded
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	tool_paths = list(/obj/item/rogueweapon/huntingknife)
+	blacklist = list(/obj/item/grown/log/tree/small/essence)
+	category = "Crafting"
+	rogue_skill = /datum/attribute/skill/craft/crafting
+	rogue_difficulty = 2

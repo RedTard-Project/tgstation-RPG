@@ -219,7 +219,7 @@
 
 /// Ratwood's /datum/component/rot/corpse/goblin: a goblin left dead this long rots down to bones, drawn as the goblin
 /// skeleton of goblins.dmi whatever its kind; brought back to life, it stays bones.
-#define ROGUE_GOBLIN_SKELETON_TIME (20 MINUTES)
+#define ROGUE_GOBLIN_SKELETON_TIME rogue_value("rockhill_goblin_skeleton_time")
 /// The sprite kind of a goblin's bones in ROGUE_BODIES_ICON (the porter writes goblin_skel_chest, _decap_chest, _severed).
 #define ROGUE_GOBLIN_SKELETON_KIND "goblin_skel"
 

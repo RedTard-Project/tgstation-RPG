@@ -24,12 +24,14 @@
 #define TRAIT_BETTER_SLEEP "Better Sleep"
 #define TRAIT_BEWINGED "Bewinged"
 #define TRAIT_BIGGUY "Big Guy"
+#define TRAIT_BITENORECOIL "Sturdy Fangs"
 #define TRAIT_BLACKBAGGER "Apprehension Techniques"
 #define TRAIT_BLACKLEG "Blackleg"
 #define TRAIT_BLACKOAK "Heritage Vision"
 #define TRAIT_BLOODLOSS_IMMUNE "bloodloss_immune"
 #define TRAIT_BLOODPOOL_BORN "Bloodpool Born"
 #define TRAIT_BLOOD_RESISTANCE "Thick Blooded"
+#define TRAIT_BOGWALKER "Bog Walker"
 #define TRAIT_BOMBER_EXPERT "Explosive Specialist"
 #define TRAIT_BREADY "Battleready"
 #define TRAIT_CABAL "Of the Cabal"
@@ -103,6 +105,7 @@
 #define TRAIT_EASYDECAPITATION "Easy Decapitation"
 #define TRAIT_EFFICIENT_WEAVER "Efficient Weaver"
 #define TRAIT_EMPATH "Empath"
+#define TRAIT_ENGINEER "Engineer's Knowledge"
 #define TRAIT_ENGINEERING_GOGGLES "Engineering Goggles"
 #define TRAIT_EORAN_CALM "Eoran Calm"
 #define TRAIT_EORAN_CONTENTED "Eoran Contented"
@@ -179,6 +182,7 @@
 #define TRAIT_MIRROR_MAGIC "Mirror Magic"
 #define TRAIT_MISSING_NOSE "Missing Nose"
 #define TRAIT_MONK_ROBE "Holy Vestatures"
+#define TRAIT_MONSTROUS "Monstrous"
 #define TRAIT_NALEDI "Naledi Complex"
 #define TRAIT_NASTY_EATER "Inhumen Digestion"
 #define TRAIT_NATURALARMOR "Tough Skin"
@@ -207,6 +211,7 @@
 #define TRAIT_OUTLANDER "Outlander"
 #define TRAIT_OUTLAW "Outlaw"
 #define TRAIT_OVERTHERETIC "Overt Heretic"
+#define TRAIT_OVERWEIGHT "Corpulent"
 #define TRAIT_OWNED_SLAVE "Owned Slave"
 #define TRAIT_PERFECT_TRACKER "Huntmaster"
 #define TRAIT_PERMAMUTE "Permanent Mute"
@@ -218,6 +223,7 @@
 #define TRAIT_PSYDONITE "Psydonite's Devotion"
 #define TRAIT_PURITAN "Otavan Emissary"
 #define TRAIT_PURITAN_ADVENTURER "Interrogator"
+#define TRAIT_RAGE "Rage"
 #define TRAIT_RAW_EATER "Raw Diet"
 #define TRAIT_REDOLENT "Redolent"
 #define TRAIT_RESIDENT "Resident"
@@ -267,6 +273,7 @@
 #define TRAIT_TRAINED_SMITH "Trained Smith"
 #define TRAIT_TRIBAL "Island Tribe-member"
 #define TRAIT_UNCAPPED_SPEED "Speed Unbound"
+#define TRAIT_UNCONVERTIBLE "Unconvertible"
 #define TRAIT_UNDERDARK_CHEF "Underdark Chef"
 #define TRAIT_UNLYCKERABLE "Lycker Immunity"
 #define TRAIT_UNSEEMLY "Ugly"
@@ -319,11 +326,13 @@ GLOBAL_LIST_INIT(rogue_trait_descriptions, list(
 	TRAIT_BETTER_SLEEP = span_info("I recover more energy when sleeping."),
 	TRAIT_BEWINGED = span_notice("I flutter my wings during a leap, allowing me to jump farther!"),
 	TRAIT_BIGGUY = span_info("My immense frame and size allows me to smash through wooden doors, and throw people more easily."),
+	TRAIT_BITENORECOIL = span_info("My fangs are sturdy, and I do not suffer recoil when biting."),
 	TRAIT_BLACKBAGGER = span_info("I've been trained to properly abduct individuals through the use of seizing garrotes and blackbags."),
 	TRAIT_BLACKLEG = span_warning("My people have an inherent connection to Xylix. This grants me the ability to rig coin flips and dice rolls in my favour."),
 	TRAIT_BLACKOAK = span_warning("The Black Oaks can spot <b>any</b> foreigners and outsiders, no matter how long they've lived in the Vale. I can spot an invader at a glance."),
 	TRAIT_BLOODLOSS_IMMUNE = span_notice("While I may bleed, I will feel nothing from it."),
 	TRAIT_BLOOD_RESISTANCE = span_info("My body is taut, and my blood runs slower. I bleed far less than others."),
+	TRAIT_BOGWALKER = span_info("The bog's blessing graces me. Kneestingers and leeches will not harm me, and I cannot trigger ambushes within the bog unless sprinting."),
 	TRAIT_BOMBER_EXPERT = span_greentext("I know explosives inside and out. I can draw grenades from a bombdolier instantly, and I've learned how to squeeze an extra bomb out of my supply runs."),
 	TRAIT_BREADY = span_info("Defensive stance does not passively fatigue me. I regain energy slowly over time."),
 	TRAIT_CABAL = span_info("In secret, I have studied the ways of Her ascension."),
@@ -392,6 +401,7 @@ GLOBAL_LIST_INIT(rogue_trait_descriptions, list(
 	TRAIT_EASYDISMEMBER = span_info("My limbs are frail and fragile. They can be dismembered with greater ease, including my neck."),
 	TRAIT_EFFICIENT_WEAVER = span_info("I can weave cloth on a loom more efficiently than others can."),
 	TRAIT_EMPATH = span_info("I can notice when people are in pain."),
+	TRAIT_ENGINEER = span_info("I have been trained to create specialized weapons and machines."),
 	TRAIT_ENGINEERING_GOGGLES = span_warning("I can see structural details others can't."),
 	TRAIT_EORAN_CALM = span_notice("Eora has touched me, granting me some calm. She protects me from the peaks of my stress."),
 	TRAIT_EORAN_CONTENTED = span_info("I feel much at ease."),
@@ -459,6 +469,7 @@ GLOBAL_LIST_INIT(rogue_trait_descriptions, list(
 	TRAIT_MIRROR_MAGIC = span_info("Mirror, mirror on the wall, who's the fairest of them all?"),
 	TRAIT_MISSING_NOSE = span_warning("I struggle to breathe."),
 	TRAIT_MONK_ROBE = span_notice("I feel closer to the gods in my meager robes.. I feel vigorous, empowered by their light!"),
+	TRAIT_MONSTROUS = span_warning("My body is fundamentally inhumen. Nothing can hide this."),
 	TRAIT_NALEDI = span_info("I hail from the Fallen lands of Naledi. My blood and knowledge storied in yils of texts and techniques. My birthright is my pride."),
 	TRAIT_NATURALARMOR = span_info("Whether by natural or other means, my skin is strong enough to resist being pierced and cut."),
 	TRAIT_NECRAS_VOW = span_warning("I've pledged myself to Necra. If I fall, I am Hers."),
@@ -482,6 +493,7 @@ GLOBAL_LIST_INIT(rogue_trait_descriptions, list(
 	TRAIT_OUTDOORSMAN = span_info("My experience in the wilds allows me to fall asleep on surfaces like treebranches as if they were beds."),
 	TRAIT_OUTLANDER = span_info("Those of the realm see me as not of their land."),
 	TRAIT_OUTLAW = span_info("This land's nervelocks and castificos reject my touch."),
+	TRAIT_OVERWEIGHT = span_warning("I've indulged deeply in lyfe's pleasures, and my waistline has taken a toll."),
 	TRAIT_OWNED_SLAVE = span_info("I am a marked slave, previously broken and now owned by a Master."),
 	TRAIT_PACIFISM = span_info("I cannot harm another living being."),
 	TRAIT_PERFECT_TRACKER = span_info("I am a master at pursuing those I hunt. I can discern every last detail within a spotted track, and any attempts to hide said-tracks will fail to deceive me."),
@@ -513,7 +525,7 @@ GLOBAL_LIST_INIT(rogue_trait_descriptions, list(
 	TRAIT_SHARPER_BLADES = span_info("My blades go dull slower, ensuring they stay sharp longer."),
 	TRAIT_SHATTER_WEAKNESS = span_danger("My form is especially brittle and frail. A critical, shattering blow to my chest or spine will kill me instantly."),
 	TRAIT_SILVER_BLESSED = span_info("I have been baptized in fire. Blessed silverdust flows through my blood, protecting me from both vampyrism and lycanthropy."),
-	TRAIT_SILVER_WEAK = span_warning("Silver is the greatest threat to my lyfe. Blows from silver weapons will set me alight, inhibit my ability to regenerate, and - if blessed - can outright destroy my vessel."),
+	TRAIT_SILVER_WEAK = span_warning("Silver is the greatest threat to my lyfe. Blows from silver weapons will set me alight, inhibit my ability to regenerate, and - if blessed - can strike me down in a single blow."),
 	TRAIT_SIMPLESPEECH = span_info("I can not say hard words."),
 	TRAIT_SKILLBLESSED = span_greentext("I've reunited with an old friend of mine. All is well."),
 	TRAIT_SLEUTH = span_info("I can track more frequently, and the act is not impaired by movement. I can examine tracks right away."),

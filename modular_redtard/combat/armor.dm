@@ -244,18 +244,16 @@ GLOBAL_LIST_INIT(rogue_zone_coverage, list(
 		color = chunk_color
 	return ..()
 
-/// Worn clothing in Ratwood's outermost-first order (get_ordered_coverage_layers()), the layers a blunt blow goes through;
-/// cloaks and back items are not among them.
+/// Everything worn but the pockets, in Azure Peak's order (get_best_worn_armor(), get_best_worn_armor_layered()): the cloak,
+/// the back items and the belt among them. The order is the depth of a blunt blow's layers (rogue_dr_layers()).
 /mob/living/carbon/human/proc/rogue_armor_slots()
-	. = list(wear_suit, head, wear_mask, glasses, ears, wear_neck, gloves, shoes, wear_wrists, wear_shirt, w_uniform, belt, s_store)
+	. = list(head, wear_mask, wear_wrists, gloves, wear_neck, wear_cloak, wear_suit, wear_shirt, shoes, w_uniform, wear_backr, back, belt, s_store, glasses, ears)
 	if(length(wear_rings))
 		. += wear_rings
 
-/// Everything worn that can stop a cut, a stab or a shot: the layers, then the cloak and the back items, which Ratwood's
-/// get_best_worn_armor() counts as well.
+/// Everything worn that can stop a cut, a stab or a shot: the same slots as the layers (Azure Peak).
 /mob/living/carbon/human/proc/rogue_guard_slots()
-	. = rogue_armor_slots()
-	. += list(wear_cloak, back, wear_backr)
+	return rogue_armor_slots()
 
 /mob/living/carbon/human/proc/rogue_best_armor(zone, armor_type)
 	var/best_value = 0
@@ -281,41 +279,96 @@ GLOBAL_LIST_INIT(rogue_zone_coverage, list(
 		if(worn.rogue_covers_zone(zone) && worn.get_rogue_armor())
 			. += worn
 
-/// Every unbroken garment covering the zone, armor or cloth, outermost first: what a blunt blow wears (Ratwood
-/// get_ordered_coverage_layers()).
-/mob/living/carbon/human/proc/rogue_coverage_layers(zone)
+/// The layers a blunt blow or fire wears (Azure Peak get_best_worn_armor_layered()): every intact garment over the zone with a
+/// tier against it, in rogue_armor_slots() order; fire takes any real armor (a blunt, slash, stab or piercing tier) even
+/// without a fire tier. Cloth without a tier is no layer.
+/mob/living/carbon/human/proc/rogue_dr_layers(zone, armor_type)
 	. = list()
 	for(var/obj/item/clothing/worn in rogue_armor_slots())
-		if(worn.rogue_covers_zone(zone) && worn.rogue_intact())
+		if(!worn.rogue_covers_zone(zone))
+			continue
+		var/datum/rogue_armor/armor = worn.get_rogue_armor()
+		if(!armor)
+			continue
+		if(armor.get_rating(armor_type) > 0 || (armor_type == ROGUE_ARMOR_FIRE && (armor.blunt > 0 || armor.slash > 0 || armor.stab > 0 || armor.piercing > 0)))
 			. += worn
 
-/// Share of a blow's damage that reaches the body under the armor tier system of Azure Peak and Ratwood, wearing the armor on the way.
-/// Slash and stab compare the intent's penetration tier with the block tier of the best covering item (the cloak and the back
-/// items count): a tier at or above it lets pen_passthrough_min + tier * pen_passthrough_per_tier through and spares the armor,
-/// a lower one is stopped and the armor takes the blow. Piercing (projectiles) passes a fixed share at or above the tier. Blunt
-/// is absorbed whole by any blunt tier among the layers and wears every garment over the zone. The zone is the precise one the
-/// blow lands on (rogue_covers_zone()). Burn damage is left to the TG armor of the item (see the porter: fire and acid tiers
-/// become TG armor).
-/mob/living/carbon/human/proc/rogue_armor_hit(zone, armor_type, damage, penetration = ROGUE_PEN_NONE, wear_factor = 1, obj/item/weapon, bclass)
-	if(!armor_type || armor_type == ROGUE_ARMOR_FIRE || armor_type == ROGUE_ARMOR_ACID || armor_type == ROGUE_ARMOR_MAGIC)
+/// Azure Peak get_pen_info(): how far a blow that reaches the armor's tier gets through it, in points from pen_info_min to
+/// pen_info_max: twice the tiers the penetration is over the armor's (the least points when they match), a keen edge, and
+/// the attacker's balance: strength over 10 (heavy weapons more and uncapped), the better of speed and strength for swift
+/// ones, strength for bare hands. A blade worn to blade_dull_floor keeps no balance. Azure Peak also works out the intent's
+/// damage factor there but never adds it, so it is left out.
+/proc/rogue_armor_pen_points(mob/living/attacker, obj/item/weapon, penetration, tier)
+	if(!penetration)
+		return rogue_value("pen_info_min")
+	. = penetration == tier ? rogue_value("pen_info_min") : (penetration - tier) * 2
+	var/strength = attacker ? attacker.rogue_stat(ROGUE_STAT_STRENGTH) - ROGUE_ATTRIBUTE_MIDDLING : 0
+	if(!weapon)
+		. += strength
+		return clamp(., rogue_value("pen_info_min"), rogue_value("pen_info_max"))
+	var/balanced = !!attacker
+	if(weapon.get_sharpness() && weapon.max_blade_int)
+		var/edge = weapon.rogue_edge_ratio()
+		if(edge > ROGUE_BLADE_DULL_START)
+			. += rogue_value("dynamic_pen_edge_bonus")
+		if(edge <= ROGUE_BLADE_DULL_FLOOR)
+			balanced = FALSE
+	if(balanced)
+		switch(weapon.wbalance)
+			if(WBALANCE_HEAVY)
+				. += strength + rogue_value("dynamic_pen_heavy_bonus")
+			if(WBALANCE_SWIFT)
+				. += min(max(attacker.rogue_stat(ROGUE_STAT_SPEED) - ROGUE_ATTRIBUTE_MIDDLING, strength), rogue_value("dynamic_pen_balance_cap"))
+			else
+				. += min(strength, rogue_value("dynamic_pen_balance_cap"))
+	return clamp(., rogue_value("pen_info_min"), rogue_value("pen_info_max"))
+
+/// Share of a blow's damage that reaches the body under Azure Peak's armor tiers (run_armor_check(), checkarmor()), wearing the
+/// armor on the way. Slash and stab compare the penetration tier with the block tier of the best covering item: a lower one is
+/// stopped and the armor takes the whole blow (more against an exposed or vulnerable defender); one that reaches it lets
+/// pen_passthrough_min + pen_passthrough_per_point per point (rogue_armor_pen_points()) through and wears the armor by the
+/// blow times one less pen_passthrough_per_point per point. Points are counted only for a melee blow, which names its
+/// attacker or comes from a held weapon; any other blow that reaches the tier (a thrown item, a beast) passes whole and wears
+/// the armor whole, as Azure Peak passes no pen_info there. Piercing (projectiles) passes and wears pen_projectile_passthrough
+/// of the blow at the armor's tier and pen_projectile_passthrough_more over it. A blade chipped to blade_chip_start gets
+/// through no armor.
+/// Blunt and fire go to rogue_layered_armor_hit(). The zone is the precise one the blow lands on (rogue_covers_zone()).
+/// no_debuff: the blow cannot pop an exposed or vulnerable defender (Azure Peak: projectiles cannot).
+/mob/living/carbon/human/proc/rogue_armor_hit(zone, armor_type, damage, penetration = ROGUE_PEN_NONE, wear_factor = 1, obj/item/weapon, bclass, mob/living/attacker, no_debuff = FALSE)
+	if(!armor_type || armor_type == ROGUE_ARMOR_ACID || armor_type == ROGUE_ARMOR_MAGIC)
 		return 1
 	wear_factor *= rogue_tempo_factor("armor_wear")
-	if(armor_type == ROGUE_ARMOR_BLUNT)
-		return rogue_blunt_armor_hit(zone, damage, wear_factor, bclass)
+	if(armor_type == ROGUE_ARMOR_BLUNT || armor_type == ROGUE_ARMOR_FIRE)
+		return rogue_layered_armor_hit(zone, armor_type, damage, wear_factor, bclass, no_debuff)
 	var/obj/item/clothing/used = rogue_best_armor(zone, armor_type)
 	var/tier = used ? used.get_rogue_armor().get_rating(armor_type) : 0
-	if(used?.rogue_blocksound)
+	if(tier <= 0)
+		return 1
+	if(used.rogue_blocksound)
 		var/block_sound = rogue_armor_sound(used.rogue_blocksound, bclass || BCLASS_BLUNT)
 		if(block_sound)
 			playsound(src, block_sound, 100)
-	. = 1
-	if(tier > 0)
-		if(armor_type == ROGUE_ARMOR_PIERCING)
-			. = penetration >= tier ? ROGUE_PEN_PROJECTILE_PASSTHROUGH : 0
-		else
-			. = (penetration >= tier && penetration > 0) ? min(ROGUE_PEN_PASSTHROUGH_MIN + penetration * ROGUE_PEN_PASSTHROUGH_PER_TIER, 1) : 0
-		if(!.)
-			used.rogue_armor_wear(damage * wear_factor * rogue_armor_pop_factor())
+	. = 0
+	var/wear = damage
+	if(armor_type == ROGUE_ARMOR_PIERCING)
+		if(penetration == tier)
+			. = ROGUE_PEN_PROJECTILE_PASSTHROUGH
+		else if(penetration > tier)
+			. = rogue_value("pen_projectile_passthrough_more")
+		if(.)
+			wear = damage * .
+	else if(penetration >= tier)
+		// A blow of a held weapon that names no attacker (a special, combat/specials.dm) counts the holder's points.
+		if(!attacker && isliving(weapon?.loc))
+			attacker = weapon.loc
+		var/per_point = rogue_value("pen_passthrough_per_point")
+		var/points = attacker ? rogue_armor_pen_points(attacker, weapon, penetration, tier) : 0
+		. = points ? min(ROGUE_PEN_PASSTHROUGH_MIN + points * per_point, 1) : 1
+		wear = damage * max(1 - points * per_point, 0)
+	if(.)
+		used.rogue_armor_wear(wear * wear_factor)
+	else
+		used.rogue_armor_wear(wear * wear_factor * (no_debuff ? 1 : rogue_armor_pop_factor()))
 	if(weapon?.max_blade_int && weapon.get_sharpness() && weapon.rogue_edge_ratio() <= ROGUE_BLADE_CHIP_START)
 		return 0
 
@@ -326,50 +379,76 @@ GLOBAL_LIST_INIT(rogue_zone_coverage, list(
 	var/tier = used ? used.get_rogue_armor().get_rating(ROGUE_ARMOR_PIERCING) : 0
 	if(tier <= 0)
 		return 1
-	return rogue_attack_penetration(shot) >= tier ? ROGUE_PEN_PROJECTILE_PASSTHROUGH : 0
+	var/penetration = rogue_attack_penetration(shot)
+	if(penetration == tier)
+		return ROGUE_PEN_PROJECTILE_PASSTHROUGH
+	return penetration > tier ? rogue_value("pen_projectile_passthrough_more") : 0
 
-/// Ratwood's blunt branch of checkarmor(): the best blunt tier among the garments over the zone takes the blow whole, and every
-/// garment wears, the outer ones the most (the wear over 1, 2, 3... by depth; what a layer cannot take goes on inward; an
-/// exposed defender's layers take it whole). Cloth without a blunt tier lets the blow through and wears all the same.
-/mob/living/carbon/human/proc/rogue_blunt_armor_hit(zone, damage, wear_factor, bclass)
-	var/list/layers = rogue_coverage_layers(zone)
+/// Azure Peak's damage-reduction branch of checkarmor(), for blunt blows and fire: any layer over the zone (rogue_dr_layers())
+/// takes the whole blow off the body. The layers wear by the blow over 1 + armor_dr_tier_coefficient times the best layer's
+/// tier: blunt wears every layer by that over its depth (1, 2, 3...), an exposed defender's layers each take it whole (and no
+/// more), a vulnerable defender's armor_vulnerable_integ_mod more; fire wears only the best layer.
+/mob/living/carbon/human/proc/rogue_layered_armor_hit(zone, armor_type, damage, wear_factor, bclass, no_debuff = FALSE)
+	var/list/layers = rogue_dr_layers(zone, armor_type)
 	if(!length(layers))
 		return 1
+	var/obj/item/clothing/best
 	var/tier = 0
 	for(var/obj/item/clothing/worn as anything in layers)
-		var/datum/rogue_armor/armor = worn.get_rogue_armor()
-		if(armor)
-			tier = max(tier, armor.blunt)
-	var/full = has_status_effect(/datum/status_effect/rogue/exposed)
-	rogue_armor_pop_factor()
-	var/wear = damage / (1 + ROGUE_ARMOR_BLUNT_DR * tier) * wear_factor
+		var/value = worn.get_rogue_armor().get_rating(armor_type)
+		if(!best || value > tier)
+			best = worn
+			tier = value
+	var/wear = damage * wear_factor
+	if(tier > 0)
+		wear /= 1 + rogue_value("armor_dr_tier_coefficient") * tier
+	var/full = FALSE
+	if(!no_debuff)
+		switch(rogue_armor_pop())
+			if("exposed")
+				full = TRUE
+			if("vulnerable")
+				wear *= rogue_value("armor_vulnerable_integ_mod")
+	if(armor_type == ROGUE_ARMOR_FIRE)
+		best.rogue_armor_wear(wear)
+		if(best.rogue_blocksound)
+			var/block_sound = rogue_armor_sound(best.rogue_blocksound, bclass || BCLASS_BURN)
+			if(block_sound)
+				playsound(src, block_sound, 100)
+		return 0
 	var/depth = 1
-	var/overflow = 0
 	var/sounded = FALSE
 	for(var/obj/item/clothing/worn as anything in layers)
-		var/amount = (full ? wear : wear / depth) + overflow
-		overflow = max(amount - worn.atom_integrity, 0)
-		worn.rogue_armor_wear(amount)
+		worn.rogue_armor_wear(full ? wear : wear / depth)
 		if(!sounded && worn.rogue_blocksound)
 			var/block_sound = rogue_armor_sound(worn.rogue_blocksound, bclass || BCLASS_BLUNT)
 			if(block_sound)
 				playsound(src, block_sound, 100)
 				sounded = TRUE
 		depth++
-	return tier ? 0 : 1
+	return 0
 
-/// A blow the armor stopped "pops" an exposed or vulnerable defender and wears the armor harder (Ratwood EXPOSED_INTEG_MOD, VULN_INTEG_MOD).
-/mob/living/proc/rogue_armor_pop_factor()
+/// A blow the armor stopped "pops" an exposed or vulnerable defender: takes the status, tells it and says which one it took
+/// ("exposed", "vulnerable" or null).
+/mob/living/proc/rogue_armor_pop()
 	if(remove_status_effect(/datum/status_effect/rogue/exposed))
 		playsound(src, 'modular_redtard/rockhill/sound/combat/exposed_pop.ogg', 100, TRUE)
 		visible_message(span_danger("[src] suffers a savage hit to [p_their()] armor while exposed, sending [p_them()] reeling!"))
 		emote("pain")
-		return ROGUE_ARMOR_EXPOSED_WEAR
+		return "exposed"
 	if(remove_status_effect(/datum/status_effect/rogue_vulnerable))
 		playsound(src, 'modular_redtard/rockhill/sound/combat/vulnerable_pop.ogg', 100, TRUE)
 		visible_message(span_danger("[src] is struck while vulnerable, leaving a dent in [p_their()] armor!"))
 		emote("groan")
-		return ROGUE_ARMOR_VULNERABLE_WEAR
+		return "vulnerable"
+
+/// The armor wear factor of a stopped cut, stab or shot after rogue_armor_pop() (Azure Peak EXPOSED_INTEG_MOD, VULN_INTEG_MOD).
+/mob/living/proc/rogue_armor_pop_factor()
+	switch(rogue_armor_pop())
+		if("exposed")
+			return ROGUE_ARMOR_EXPOSED_WEAR
+		if("vulnerable")
+			return rogue_value("armor_vulnerable_integ_mod")
 	return 1
 
 /mob/living/carbon/human/proc/rogue_highest_armor_class()
@@ -431,7 +510,7 @@ GLOBAL_LIST_INIT(rogue_zone_coverage, list(
 	if(!armor_type)
 		return
 	var/obj/item/weapon = isitem(attacking_item) ? attacking_item : null
-	damage_mods += source.rogue_armor_hit(rogue_armor_zone(def_zone, attacking_item), armor_type, damage, rogue_attack_penetration(attacking_item), weapon ? weapon.intdamage_factor : 1, weapon, weapon?.rogue_current_bclass)
+	damage_mods += source.rogue_armor_hit(rogue_armor_zone(def_zone, attacking_item), armor_type, damage, rogue_attack_penetration(attacking_item), weapon ? weapon.intdamage_factor : 1, weapon, weapon?.rogue_current_bclass, no_debuff = istype(attacking_item, /obj/projectile))
 
 /// Set while our own blow applies damage it already ran through the armor, so the damage signal does not take armor twice.
 /mob/living/var/rogue_armor_resolved = FALSE

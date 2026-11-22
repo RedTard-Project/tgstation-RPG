@@ -18,12 +18,12 @@
 #define ROGUE_CONDITION_REMOVE "remove"
 #define ROGUE_CONDITION_ADD "add"
 /// Urgent order sizes by the trade price of a good (Ratwood spawn_urgent_for_event()): dear goods come in few units.
-#define URGENT_DEAR_PRICE 40
-#define URGENT_MIDDLING_PRICE 15
+#define URGENT_DEAR_PRICE rogue_value("urgent_dear_price")
+#define URGENT_MIDDLING_PRICE rogue_value("urgent_middling_price")
 /// A condition that adds a cargo line names no quantity or price: Ratwood's small bulk line at a fair price.
-#define CONDITION_DEFAULT_QTY_MIN 7
-#define CONDITION_DEFAULT_QTY_MAX 13
-#define CONDITION_DEFAULT_PRICE_MOD 0.85
+#define CONDITION_DEFAULT_QTY_MIN rogue_value("condition_default_qty_min")
+#define CONDITION_DEFAULT_QTY_MAX rogue_value("condition_default_qty_max")
+#define CONDITION_DEFAULT_PRICE_MOD rogue_value("condition_default_price_mod")
 
 /// Road to each region of the realm, as Rockhill's map knows them (Ratwood map_adjustment_rockhill.dm blockade_route_map).
 GLOBAL_LIST_INIT(rogue_blockade_routes, list(
@@ -439,11 +439,11 @@ GLOBAL_LIST_INIT(rogue_raider_names, list(
 			continue
 		var/units
 		if(good.base_price >= URGENT_DEAR_PRICE)
-			units = rand(3, 5)
+			units = rand(rogue_value("trade_spawn_urgent_order_roll_min"), rogue_value("trade_spawn_urgent_order_roll_max"))
 		else if(good.base_price >= URGENT_MIDDLING_PRICE)
-			units = rand(6, 12)
+			units = rand(rogue_value("trade_spawn_urgent_order_roll_min_2"), rogue_value("trade_spawn_urgent_order_roll_max_2"))
 		else
-			units = rand(12, 25)
+			units = rand(rogue_value("trade_spawn_urgent_order_roll_min_3"), rogue_value("trade_spawn_urgent_order_roll_max_3"))
 		required[good] = units
 	if(!length(required))
 		return null

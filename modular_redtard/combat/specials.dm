@@ -69,11 +69,12 @@
 	var/use_clickloc = FALSE
 	var/respect_dir = TRUE
 	var/turf/click_loc
-	var/cooldown = 30 SECONDS
-	var/range = 0
-	var/stamcost = 0
+	var/cooldown
+	var/range
+	var/stamcost
 	var/cancelled = FALSE
-	var/delay = 1 SECONDS
+	var/delay
+	/// Tunable names of the hit delays of the first waves, in order; a wave past the list waits the tunable delay.
 	var/list/custom_delays = list()
 	var/fade_delay = 0.5 SECONDS
 	var/respect_adjacency = TRUE
@@ -94,8 +95,10 @@
 /datum/special_intent/proc/value_key()
 	return "special_[replacetext(copytext("[type]", length("/datum/special_intent/") + 1), "/", "_")]"
 
+/// A number of the special: specials.txt holds it as special_<type>_<name> (the registry declares every name of `tunables`).
+/// The types carry no numbers; a name that is not a tunable of the type is none (0).
 /datum/special_intent/proc/tune(var_name)
-	return rogue_value_or("[value_key()]_[var_name]", vars[var_name])
+	return rogue_value_or("[value_key()]_[var_name]", 0)
 
 /datum/special_intent/proc/apply_cost(mob/living/user)
 	var/cost = tune("stamcost")
@@ -180,7 +183,8 @@
 	for(var/key in affected_turfs)
 		wave_index++
 		var/wave_delay = text2num(key)
-		var/hit_delay = LAZYACCESS(custom_delays, wave_index) || tune("delay")
+		var/delay_name = LAZYACCESS(custom_delays, wave_index)
+		var/hit_delay = (delay_name && tune(delay_name)) || tune("delay")
 		if(wave_delay)
 			addtimer(CALLBACK(src, PROC_REF(process_grid), affected_turfs[key], hit_delay), wave_delay)
 		else
@@ -299,13 +303,10 @@
 	pre_icon = ROGUE_TELEGRAPH_ICON
 	pre_icon_state = "warning"
 	sfx_post_delay = 'modular_redtard/rockhill/sound/combat/sidesweep_hit.ogg'
-	delay = 0.6 SECONDS
-	cooldown = 17 SECONDS
 	requires_wielding = TRUE
-	stamcost = 25
 	tunables = list("cooldown", "delay", "stamcost", "eff_dur")
-	var/eff_dur = 4 SECONDS
-	var/dam = 20
+	var/eff_dur
+	var/dam
 
 /datum/special_intent/side_sweep/process_attack()
 	tile_coordinates = howner.active_hand_index == 1 ? list(list(0,0), list(-1,0), list(-1,-1)) : list(list(0,0), list(1,0), list(1,-1))
@@ -326,13 +327,10 @@
 	pre_icon = ROGUE_TELEGRAPH_ICON
 	pre_icon_state = "warning"
 	sfx_post_delay = 'modular_redtard/rockhill/sound/combat/shin_swipe.ogg'
-	delay = 0.5 SECONDS
-	cooldown = 20 SECONDS
-	stamcost = 15
 	tunables = list("cooldown", "delay", "stamcost", "eff_dur", "hobble_dur", "open_dur")
-	var/eff_dur = 5
-	var/hobble_dur = 4
-	var/open_dur = 3 SECONDS
+	var/eff_dur
+	var/hobble_dur
+	var/open_dur
 	var/dam
 
 /datum/special_intent/shin_swipe/process_attack()
@@ -354,12 +352,9 @@
 	pre_icon = ROGUE_TELEGRAPH_ICON
 	pre_icon_state = "warning"
 	sfx_post_delay = 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg'
-	delay = 0.5 SECONDS
-	cooldown = 25 SECONDS
-	stamcost = 20
 	tunables = list("cooldown", "delay", "stamcost", "winded", "open_dur")
-	var/winded = 30
-	var/open_dur = 3 SECONDS
+	var/winded
+	var/open_dur
 	var/dam
 
 /datum/special_intent/piercing_lunge/process_attack()
@@ -381,16 +376,13 @@
 	pre_icon = ROGUE_TELEGRAPH_ICON
 	pre_icon_state = "warning"
 	requires_wielding = TRUE
-	delay = 0.7 SECONDS
-	cooldown = 25 SECONDS
-	stamcost = 25
 	tunables = list("cooldown", "delay", "stamcost", "slow_dur", "knockdown_dur", "offbalance_dur", "self_immob_dur", "dam", "open_dur")
-	var/slow_dur = 5
-	var/knockdown_dur = 2 SECONDS
-	var/offbalance_dur = 5 SECONDS
-	var/self_immob_dur = 1.1 SECONDS
-	var/dam = 200
-	var/open_dur = 2.5 SECONDS
+	var/slow_dur
+	var/knockdown_dur
+	var/offbalance_dur
+	var/self_immob_dur
+	var/dam
+	var/open_dur
 
 /datum/special_intent/ground_smash/on_create()
 	howner.Immobilize(tune("self_immob_dur"))
@@ -398,7 +390,7 @@
 
 /datum/special_intent/ground_smash/apply_hit(turf/marked)
 	for(var/mob/living/victim as anything in victims(marked))
-		var/distance = rand(1, 3)
+		var/distance = rand(rogue_value("ground_smash_apply_hit_roll_min"), rogue_value("ground_smash_apply_hit_roll_max"))
 		fling(victim, get_ranged_target_turf(victim, turn(get_dir(victim, howner), pick(90, 270)), distance), distance)
 		victim.rogue_slowdown(tune("slow_dur"))
 		if(is_off_balance(victim))
@@ -419,15 +411,13 @@
 	pre_icon_state = "warning"
 	sfx_pre_delay = 'modular_redtard/rockhill/sound/combat/flail_sweep.ogg'
 	respect_adjacency = FALSE
-	delay = 0.7 SECONDS
-	cooldown = 25 SECONDS
 	tunables = list("cooldown", "delay", "stamcost", "slow_init", "exposed_init", "offbalance_init", "knockdown", "immobilize_init", "dam")
-	var/slow_init = 2
-	var/exposed_init = 3 SECONDS
-	var/offbalance_init = 1.5 SECONDS
-	var/knockdown = 2 SECONDS
-	var/immobilize_init = 1 SECONDS
-	var/dam = 20
+	var/slow_init
+	var/exposed_init
+	var/offbalance_init
+	var/knockdown
+	var/immobilize_init
+	var/dam
 	var/list/swept = list()
 
 /datum/special_intent/flail_sweep/on_create()
@@ -461,7 +451,7 @@
 		victim.drop_all_held_items()
 	if(count >= 5)
 		knock_off_balance(victim, tune("offbalance_init") + count SECONDS)
-		victim.Stun(5 SECONDS)
+		victim.Stun(rogue_value("flail_sweep_sweep_effect_stun"))
 	playsound(howner, count < 3 ? 'modular_redtard/rockhill/sound/combat/flail_sweep_hit_minor.ogg' : 'modular_redtard/rockhill/sound/combat/flail_sweep_hit_major.ogg', 100, TRUE)
 	fling(victim, get_edge_target_turf(howner, get_dir(howner, victim)), clamp(count, 1, 5))
 
@@ -473,13 +463,11 @@
 	pre_icon_state = "warning"
 	requires_wielding = TRUE
 	respect_adjacency = FALSE
-	delay = 0.5 SECONDS
-	cooldown = 25 SECONDS
-	stamcost = 15
-	tunables = list("cooldown", "delay", "stamcost", "immob_dur", "exposed_dur", "bonus")
-	var/immob_dur = 3.5 SECONDS
-	var/exposed_dur = 6 SECONDS
-	var/bonus = 50
+	tunables = list("cooldown", "delay", "stamcost", "immob_dur", "exposed_dur", "bonus", "self_clickcd")
+	var/immob_dur
+	var/exposed_dur
+	var/bonus
+	var/self_clickcd
 	var/dam
 
 /datum/special_intent/axe_swing/process_attack()
@@ -488,8 +476,8 @@
 	return ..()
 
 /datum/special_intent/axe_swing/on_create()
-	howner.Immobilize(0.9 SECONDS)
-	howner.rogue_delay_action(0.9 SECONDS)
+	howner.Immobilize(rogue_value("axe_swing_on_create_immobilize"))
+	howner.rogue_delay_action(tune("self_clickcd"))
 	playsound(howner, 'modular_redtard/rockhill/sound/combat/rend_start.ogg', 100, TRUE)
 
 /datum/special_intent/axe_swing/apply_hit(turf/marked)
@@ -510,14 +498,10 @@
 	sfx_pre_delay = 'modular_redtard/rockhill/sound/combat/sp_whip_start.ogg'
 	respect_adjacency = FALSE
 	use_clickloc = TRUE
-	delay = 0.4 SECONDS
-	cooldown = 15 SECONDS
-	range = 4
-	stamcost = 20
 	tunables = list("cooldown", "delay", "stamcost", "range", "immob_dur", "dam", "open_dur")
-	var/immob_dur = 3.5 SECONDS
-	var/dam = 30
-	var/open_dur = 2 SECONDS
+	var/immob_dur
+	var/dam
+	var/open_dur
 
 /datum/special_intent/whip_coil/apply_hit(turf/marked)
 	var/list/caught = victims(marked)
@@ -539,17 +523,18 @@
 	pre_icon_state = "fx_trap_long"
 	sfx_pre_delay = 'modular_redtard/rockhill/sound/combat/rend_hit.ogg'
 	respect_adjacency = FALSE
-	delay = 0.7 SECONDS
-	cooldown = 30 SECONDS
 	requires_wielding = TRUE
-	custom_delays = list(1 SECONDS)
-	stamcost = 25
-	tunables = list("cooldown", "delay", "stamcost", "dam", "slow_dur", "self_immob", "self_clickcd", "self_vuln")
-	var/dam = 60
-	var/slow_dur = 2
-	var/self_immob = 2.5 SECONDS
-	var/self_clickcd = 3 SECONDS
-	var/self_vuln = 3 SECONDS
+	custom_delays = list("first_delay")
+	tunables = list("cooldown", "delay", "first_delay", "stamcost", "dam", "wave_2_share", "wave_3_share", "last_share", "slow_dur", "self_immob", "self_clickcd", "self_vuln")
+	var/first_delay
+	var/dam
+	var/wave_2_share
+	var/wave_3_share
+	var/last_share
+	var/slow_dur
+	var/self_immob
+	var/self_clickcd
+	var/self_vuln
 	var/hitcount = 0
 
 /datum/special_intent/greatsword_swing/on_create()
@@ -571,15 +556,13 @@
 		victim.rogue_slowdown(tune("slow_dur"))
 		if(victim.body_position != STANDING_UP)
 			continue
-		var/wave_damage = tune("dam") * (hitcount == 2 ? 1.5 : (hitcount >= 3 ? 2 : 1))
+		var/wave_damage = tune("dam") * (hitcount == 2 ? tune("wave_2_share") : (hitcount >= 3 ? tune("wave_3_share") : 1))
 		weapon_damage(victim, wave_damage, BODY_ZONE_CHEST, BCLASS_CUT)
 		if(hitcount >= 3)
-			weapon_damage(victim, tune("dam") * 0.8, BODY_ZONE_CHEST, BCLASS_CUT, no_pen = TRUE)
+			weapon_damage(victim, tune("dam") * tune("last_share"), BODY_ZONE_CHEST, BCLASS_CUT, no_pen = TRUE)
 		playsound(marked, 'modular_redtard/rockhill/sound/combat/sp_gsword_hit.ogg', 100, TRUE)
 
 /datum/special_intent/greatsword_swing/white_stag
-	dam = 80
-	cooldown = 25 SECONDS
 
 /datum/special_intent/greatflail_swing
 	name = "Greatflail Swing"
@@ -593,15 +576,19 @@
 	pre_icon_state = "fx_trap_long"
 	sfx_pre_delay = 'modular_redtard/rockhill/sound/combat/flail_sweep.ogg'
 	respect_adjacency = FALSE
-	delay = 0.7 SECONDS
-	cooldown = 30 SECONDS
-	stamcost = 25
-	tunables = list("cooldown", "delay", "stamcost", "dam", "slow_dur", "self_immob", "self_clickcd", "self_vuln")
-	var/dam = 60
-	var/slow_dur = 2
-	var/self_immob = 2.2 SECONDS
-	var/self_clickcd = 2.1 SECONDS
-	var/self_vuln = 2.3 SECONDS
+	tunables = list("cooldown", "delay", "stamcost", "dam", "wave_2_share", "wave_3_share", "last_share", "slow_dur", "self_immob", "self_clickcd", "self_vuln", "max_swept", "immobilize_init", "exposed_init", "offbalance_init")
+	var/dam
+	var/wave_2_share
+	var/wave_3_share
+	var/last_share
+	var/slow_dur
+	var/self_immob
+	var/self_clickcd
+	var/self_vuln
+	var/max_swept
+	var/immobilize_init
+	var/exposed_init
+	var/offbalance_init
 	var/hitcount = 0
 	var/list/swept = list()
 
@@ -621,28 +608,28 @@
 		if(victim.body_position != STANDING_UP)
 			continue
 		swept |= victim
-		var/wave_damage = tune("dam") * (hitcount == 2 ? 1.5 : (hitcount >= 3 ? 2 : 1))
+		var/wave_damage = tune("dam") * (hitcount == 2 ? tune("wave_2_share") : (hitcount >= 3 ? tune("wave_3_share") : 1))
 		weapon_damage(victim, wave_damage, BODY_ZONE_CHEST, BCLASS_BLUNT)
 		if(hitcount >= 3)
-			weapon_damage(victim, tune("dam") * 0.8, BODY_ZONE_CHEST, BCLASS_BLUNT, no_pen = TRUE)
+			weapon_damage(victim, tune("dam") * tune("last_share"), BODY_ZONE_CHEST, BCLASS_BLUNT, no_pen = TRUE)
 		playsound(marked, 'modular_redtard/rockhill/sound/combat/flail_sweep_hit_major.ogg', 100, TRUE)
 
 /datum/special_intent/greatflail_swing/post_delay(list/turfs)
 	swept = list()
 	. = ..()
-	var/count = min(length(swept), 9)
+	var/count = min(length(swept), tune("max_swept"))
 	for(var/mob/living/victim as anything in swept)
 		if(QDELETED(victim))
 			continue
 		victim.rogue_slowdown(tune("slow_dur") + count)
 		if(count >= 2)
-			victim.Immobilize(1 SECONDS + count SECONDS)
-			victim.apply_status_effect(/datum/status_effect/rogue/exposed, 3 SECONDS + count SECONDS)
+			victim.Immobilize(tune("immobilize_init") + count SECONDS)
+			victim.apply_status_effect(/datum/status_effect/rogue/exposed, tune("exposed_init") + count SECONDS)
 		if(count >= 3)
-			victim.Knockdown(2 SECONDS)
+			victim.Knockdown(rogue_value("greatflail_swing_post_delay_knockdown"))
 		if(count >= 5)
-			knock_off_balance(victim, 1.5 SECONDS + count SECONDS)
-			victim.Stun(5 SECONDS)
+			knock_off_balance(victim, tune("offbalance_init") + count SECONDS)
+			victim.Stun(rogue_value("greatflail_swing_post_delay_stun"))
 		fling(victim, get_edge_target_turf(howner, get_dir(howner, victim)), clamp(count, 1, 5))
 	swept = list()
 	playsound(howner, 'modular_redtard/rockhill/sound/combat/wooshes/bladed/wooshlarge (3).ogg', 100, TRUE)
@@ -653,14 +640,11 @@
 	tile_coordinates = list(list(0,0))
 	post_icon_state = "kick_fx"
 	pre_icon_state = "trap"
-	delay = 1.2 SECONDS
-	cooldown = 30 SECONDS
-	stamcost = 25
 	tunables = list("cooldown", "delay", "stamcost", "knockdown_dur", "self_immob_dur", "dam", "finisher_dam")
-	var/knockdown_dur = 1 SECONDS
-	var/self_immob_dur = 1.5 SECONDS
-	var/dam = 50
-	var/finisher_dam = 200
+	var/knockdown_dur
+	var/self_immob_dur
+	var/dam
+	var/finisher_dam
 
 /datum/special_intent/upper_cut/on_create()
 	howner.rogue_off_balance(tune("self_immob_dur"))
@@ -674,7 +658,7 @@
 		var/zone = BODY_ZONE_CHEST
 		if(victim.rogue_is_open())
 			victim.Knockdown(tune("knockdown_dur"))
-			distance = rand(2, 4)
+			distance = rand(rogue_value("upper_cut_apply_hit_roll_min"), rogue_value("upper_cut_apply_hit_roll_max"))
 			damage = tune("finisher_dam")
 			zone = BODY_ZONE_HEAD
 			playsound(howner, 'modular_redtard/rockhill/sound/combat/tf2crit.ogg', 100, TRUE)
@@ -688,8 +672,6 @@
 	name = "Limb Guard"
 	desc = "Raise your shield to protect a limb. You will deflect projectiles and anyone striking that limb will be severely penalized. You cannot regain stamina while this is active. It can be cancelled by jumping, kicking or by using the special again with the same shield out."
 	respect_adjacency = FALSE
-	cooldown = 60 SECONDS
-	stamcost = 25
 
 /datum/special_intent/limbguard/apply_cost(mob/living/user)
 	if(user.remove_status_effect(/datum/status_effect/rogue/limbguard) || user.has_status_effect(/datum/status_effect/rogue/guard))
@@ -710,14 +692,11 @@
 	sfx_post_delay = 'modular_redtard/rockhill/sound/combat/rend_hit.ogg'
 	sfx_pre_delay = 'modular_redtard/rockhill/sound/combat/polearm_woosh.ogg'
 	respect_adjacency = FALSE
-	delay = 0.5 SECONDS
-	cooldown = 25 SECONDS
-	stamcost = 15
 	tunables = list("cooldown", "delay", "stamcost", "dam", "slow_dur", "min_dist", "open_dur")
-	var/dam = 30
-	var/slow_dur = 5
-	var/min_dist = 3
-	var/open_dur = 3 SECONDS
+	var/dam
+	var/slow_dur
+	var/min_dist
+	var/open_dur
 	var/push_dir
 
 /datum/special_intent/polearm_backstep/process_attack()
@@ -738,18 +717,16 @@
 	name = "Martyr's Blaze"
 	pre_icon_state = "trap"
 	post_icon_state = "sweep_fx"
-	delay = 0.7 SECONDS
-	stamcost = 25
-	tunables = list("cooldown", "delay", "stamcost", "fire_stacks", "self_immob_dur")
-	var/fire_stacks = 4
-	var/self_immob_dur = 1 SECONDS
+	tunables = list("cooldown", "delay", "stamcost", "fire_stacks", "self_immob_dur", "damage_divisor")
+	var/fire_stacks
+	var/self_immob_dur
 	var/blade_class = BCLASS_CUT
-	var/damage_divisor = 1
+	var/damage_divisor
 	var/start_text
 	var/dam
 
 /datum/special_intent/martyr/process_attack()
-	dam = iparent.force * max(stat_share(ROGUE_STAT_STRENGTH) + stat_share(ROGUE_STAT_PERCEPTION), 1) / damage_divisor
+	dam = iparent.force * max(stat_share(ROGUE_STAT_STRENGTH) + stat_share(ROGUE_STAT_PERCEPTION), 1) / (tune("damage_divisor") || 1)
 	return ..()
 
 /datum/special_intent/martyr/on_create()
@@ -772,15 +749,11 @@
 		list(-1,0), list(0,0), list(1,0), list(-1,1), list(0,1), list(1,1), list(-1,2), list(0,2), list(1,2),
 		list(-1,0, 30), list(0,0, 30), list(1,0, 30), list(-1,1, 30), list(0,1, 30), list(1,1, 30), list(-1,2, 30), list(0,2, 30), list(1,2, 30),
 	)
-	delay = 1.2 SECONDS
 	fade_delay = 1 SECONDS
 	post_icon_state = "strike"
 	sfx_pre_delay = 'modular_redtard/rockhill/sound/combat/ground_smash_start.ogg'
 	sfx_post_delay = 'modular_redtard/rockhill/sound/combat/ground_smash1.ogg'
-	cooldown = 60 SECONDS
-	fire_stacks = 5
 	blade_class = BCLASS_BLUNT
-	damage_divisor = 1.5
 	start_text = "I slam the ground with volcanic fury!"
 
 /datum/special_intent/martyr_blazing_sweep
@@ -793,7 +766,6 @@
 	)
 	sfx_pre_delay = 'modular_redtard/rockhill/sound/combat/wooshes/bladed/wooshlarge (1).ogg'
 	sfx_post_delay = 'modular_redtard/rockhill/sound/combat/sp_axe_swing1.ogg'
-	cooldown = 50 SECONDS
 	blade_class = BCLASS_CHOP
 	start_text = "I unleash a blazing sweep with the martyr's axe in two furious waves!"
 
@@ -807,8 +779,6 @@
 	)
 	sfx_pre_delay = 'modular_redtard/rockhill/sound/combat/wooshes/bladed/wooshlarge (1).ogg'
 	sfx_post_delay = 'modular_redtard/rockhill/sound/combat/sidesweep_hit.ogg'
-	cooldown = 50 SECONDS
-	self_immob_dur = 2 SECONDS
 	start_text = "I unleash a blazing sword sweep around myself in two furious waves!"
 
 /datum/special_intent/martyr_blazing_trident
@@ -820,8 +790,6 @@
 	)
 	sfx_pre_delay = 'modular_redtard/rockhill/sound/combat/wooshes/bladed/wooshlarge (1).ogg'
 	sfx_post_delay = 'modular_redtard/rockhill/sound/combat/sidesweep_hit.ogg'
-	cooldown = 30 SECONDS
-	self_immob_dur = 0.5 SECONDS
 	blade_class = BCLASS_STAB
 	start_text = "I thrust my trident forward and bring down the power stored in it."
 
@@ -834,12 +802,9 @@
 	pre_icon_state = "warning"
 	sfx_pre_delay = 'modular_redtard/rockhill/sound/combat/wooshes/blunt/wooshmed (1).ogg'
 	sfx_post_delay = 'modular_redtard/rockhill/sound/combat/hits/blunt/genblunt (1).ogg'
-	delay = 0.6 SECONDS
-	cooldown = 25 SECONDS
 	requires_wielding = TRUE
-	stamcost = 20
 	tunables = list("cooldown", "delay", "stamcost", "open_dur")
-	var/open_dur = 3 SECONDS
+	var/open_dur
 	var/dam
 
 /datum/special_intent/quarterstaff_sweep/process_attack()
@@ -856,8 +821,9 @@
 	name = "Dagger Dash"
 	desc = "Become quicker on your feet and pass through other beings for a short time. Boost scales with worn armor."
 	respect_adjacency = FALSE
-	cooldown = 90 SECONDS
-	stamcost = 25
+	tunables = list("cooldown", "delay", "stamcost", "boost_dur")
+	/// How long the speed of the dagger boost lasts (special_dagger_dash_boost_dur, read by the boost).
+	var/boost_dur
 
 /datum/special_intent/dagger_dash/process_attack()
 	SHOULD_CALL_PARENT(FALSE)
@@ -910,7 +876,7 @@
 	var/obj/item/held_dagger
 
 /datum/status_effect/rogue/dagger_boost/on_creation(mob/living/new_owner, speed_bonus)
-	base_duration = 30 SECONDS
+	base_duration = rogue_value("special_dagger_dash_boost_dur")
 	src.speed_bonus = speed_bonus || 1
 	held_dagger = new_owner.get_active_held_item()
 	return ..(new_owner)

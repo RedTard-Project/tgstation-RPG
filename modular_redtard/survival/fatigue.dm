@@ -10,7 +10,7 @@
 /// The status icons of the steps (Ratwood icons/mob/screen_alert.dmi: sleepy, sleepy2, sleepy3).
 #define FATIGUE_ICON 'modular_redtard/survival/icons/fatigue.dmi'
 /// The most steps of fatigue (Ratwood sleepytime/t3).
-#define FATIGUE_MAX 3
+#define FATIGUE_MAX rogue_value("fatigue_max")
 /// The mood category the steps share: the stress of a new step replaces the last one's.
 #define FATIGUE_MOOD "rogue_fatigue"
 #define FATIGUE_OWL_MOOD "rogue_night_owl"

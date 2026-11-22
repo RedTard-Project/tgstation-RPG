@@ -2,10 +2,10 @@
 # Mechanics numbers: name = value, described by the # lines right above it; times are in deciseconds. The build compiles this file in, so its numbers are the defaults; a file of the same name in config/redtard_private/mechanics/values/ is read instead when present.
 
 # Deciseconds the printing press takes to print (Ratwood PRINTING_TIME).
-library_print_time = 250
+library_print_time = 10
 
 # Deciseconds the printing press recalibrates after a print (Ratwood PRINTER_COOLDOWN).
-library_print_cooldown = 600
+library_print_cooldown = 10
 
 # Books a random bookcase is stocked with before Ratwood's random cut of 0 to 5 (Ratwood book_count).
 library_shelf_books = 10
@@ -14,22 +14,27 @@ library_shelf_books = 10
 library_shelf_extra_books = 10
 
 # Archived player books an archive-only bookcase holds (Ratwood bookcase/player_archive).
-library_archive_shelf_books = 15
+library_archive_shelf_books = 10
 
 # Most pages of a manuscript (Ratwood).
-library_manuscript_pages = 8
+library_manuscript_pages = 10
 
 # Least percent chance that a book of a sorted bookcase is an archived player book; between the least and the most the chance is the number of archived books of that section not yet shelved this round (Ratwood clamp(n, 10, 90)).
 library_player_book_chance_min = 10
 
 # Most percent chance that a book of a sorted bookcase is an archived player book.
-library_player_book_chance_max = 90
+library_player_book_chance_max = 10
 
 # Percent chance that a book of a random bookcase is a book crafting kit instead (Ratwood).
-library_book_kit_chance = 0.1
+library_book_kit_chance = 10
 
 # Reading skill experience an illiterate person gains trying to read a book, at most once a second (Ratwood book read()).
-library_read_xp_book = 4
+library_read_xp_book = 10
 
 # Reading skill experience an illiterate person gains trying to read a written sheet or a manuscript (Ratwood paper read()).
-library_read_xp_paper = 2
+library_read_xp_paper = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list b)
+
+# Deciseconds of the cooldown ROGUE_READING_XP_COOLDOWN in /mob/living/carbon/human/rogue_try_reading().
+human_rogue_try_reading_rogue_reading_xp_cooldown = 10

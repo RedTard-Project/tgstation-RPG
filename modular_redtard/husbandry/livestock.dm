@@ -289,7 +289,7 @@ GLOBAL_LIST_EMPTY(rogue_hens)
 		beast.heal_overall_damage(rand(ROGUE_FEED_HEAL_MIN, ROGUE_FEED_HEAL_MAX))
 	var/datum/component/egg_layer/layer = beast.GetComponent(/datum/component/egg_layer)
 	if(layer && layer.eggs_left < ROGUE_FED_EGGS_MAX)
-		layer.eggs_left += rand(1, 4)
+		layer.eggs_left += rand(rogue_value("livestock_on_ate_roll_min"), rogue_value("livestock_on_ate_roll_max"))
 
 /// One meal in the meter; grazing (TG's find_food, gated on BB_NEXT_FOOD_EAT) waits until the beast is hungry again.
 /datum/component/rogue_livestock/proc/fill(mob/living/basic/rockhill/beast)

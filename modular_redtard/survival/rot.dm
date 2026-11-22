@@ -93,7 +93,7 @@
 		qdel(src)
 		return
 	if(!food.become_rotten())
-		rot_timer = addtimer(CALLBACK(src, PROC_REF(check_rot)), 10 SECONDS, TIMER_STOPPABLE | TIMER_DELETE_ME)
+		rot_timer = addtimer(CALLBACK(src, PROC_REF(check_rot)), rogue_value("rot_check_rot_delay"), TIMER_STOPPABLE | TIMER_DELETE_ME)
 		return
 	if(!QDELETED(src))
 		qdel(src)

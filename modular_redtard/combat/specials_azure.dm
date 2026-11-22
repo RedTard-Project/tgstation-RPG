@@ -19,14 +19,11 @@
 	pre_icon = ROGUE_TELEGRAPH_ICON
 	pre_icon_state = "warning"
 	respect_adjacency = FALSE
-	delay = 0.5 SECONDS
-	cooldown = 25 SECONDS
-	stamcost = 20
 	tunables = list("cooldown", "delay", "stamcost", "bonus", "immob_dur", "exposed_dur", "self_immob_dur")
-	var/bonus = 25
-	var/immob_dur = 1.5 SECONDS
-	var/exposed_dur = 3 SECONDS
-	var/self_immob_dur = 0.9 SECONDS
+	var/bonus
+	var/immob_dur
+	var/exposed_dur
+	var/self_immob_dur
 	var/dam
 
 /datum/special_intent/hatchet_twirl/process_attack()
@@ -54,16 +51,13 @@
 	pre_icon = ROGUE_TELEGRAPH_ICON
 	pre_icon_state = "warning"
 	respect_adjacency = FALSE
-	delay = 0.5 SECONDS
-	cooldown = 25 SECONDS
-	stamcost = 15
 	tunables = list("cooldown", "delay", "stamcost", "bonus", "slow_dur", "daze_dur", "daze_perception", "daze_intelligence", "self_immob_dur")
-	var/bonus = 25
-	var/slow_dur = 3
-	var/daze_dur = 5 SECONDS
-	var/daze_perception = -2
-	var/daze_intelligence = -2
-	var/self_immob_dur = 0.9 SECONDS
+	var/bonus
+	var/slow_dur
+	var/daze_dur
+	var/daze_perception
+	var/daze_intelligence
+	var/self_immob_dur
 	var/dam
 
 /datum/special_intent/warhammer_swing/process_attack()
@@ -102,20 +96,17 @@
 	sfx_post_delay = 'modular_redtard/rockhill/sound/combat/sp_axe_swing1.ogg'
 	respect_adjacency = FALSE
 	requires_wielding = TRUE
-	delay = 0.7 SECONDS
-	cooldown = 20 SECONDS
-	stamcost = 30
 	tunables = list("cooldown", "delay", "stamcost", "dam", "wave_bonus", "last_share", "slow_dur", "exposed_dur", "self_immob", "self_clickcd", "self_vuln")
-	var/dam = 60
-	/// Damage share added by every wave after the first (Azure Peak: x1, x1.5, x2, x2.5).
-	var/wave_bonus = 0.5
+	var/dam
+	/// Damage share added by every wave after the first (Azure Peak's waves grow evenly).
+	var/wave_bonus
 	/// Share of the damage the last wave strikes again at the armor alone.
-	var/last_share = 0.8
-	var/slow_dur = 2
-	var/exposed_dur = 3 SECONDS
-	var/self_immob = 2.5 SECONDS
-	var/self_clickcd = 3 SECONDS
-	var/self_vuln = 3 SECONDS
+	var/last_share
+	var/slow_dur
+	var/exposed_dur
+	var/self_immob
+	var/self_clickcd
+	var/self_vuln
 	/// The waves' turf lists in the order they were drawn, and the number of the wave landing now.
 	var/list/waves = list()
 	var/landing_wave = 0
@@ -159,17 +150,19 @@
 	pre_icon_state = "bite"
 	post_icon_state = "bite"
 	respect_adjacency = FALSE
-	delay = 0.85 SECONDS
-	custom_delays = list(0.85 SECONDS, 0.7 SECONDS, 0.55 SECONDS, 0.4 SECONDS)
-	cooldown = 30 SECONDS
-	stamcost = 20
-	tunables = list("cooldown", "delay", "stamcost", "dam", "fire_stacks", "slow_dur", "exposed_dur", "self_immob_dur")
+	custom_delays = list("bite_delay_1", "bite_delay_2", "bite_delay_3", "bite_delay_4")
+	tunables = list("cooldown", "delay", "stamcost", "bite_delay_1", "bite_delay_2", "bite_delay_3", "bite_delay_4", "dam", "fire_stacks", "slow_dur", "exposed_dur", "self_immob_dur")
+	/// Hit delays of the four bite marks, the nearest first (Azure Peak's custom delays).
+	var/bite_delay_1
+	var/bite_delay_2
+	var/bite_delay_3
+	var/bite_delay_4
 	/// Azure Peak's bite only burns, drags and exposes: no weapon damage.
-	var/dam = 0
-	var/fire_stacks = 2
-	var/slow_dur = 3
-	var/exposed_dur = 3 SECONDS
-	var/self_immob_dur = 0.9 SECONDS
+	var/dam
+	var/fire_stacks
+	var/slow_dur
+	var/exposed_dur
+	var/self_immob_dur
 
 /datum/special_intent/drakkyrmaw_bite/on_create()
 	howner.Immobilize(tune("self_immob_dur"))
@@ -202,15 +195,12 @@
 	sfx_post_delay = 'modular_redtard/rockhill/sound/combat/ground_smash2.ogg'
 	respect_adjacency = FALSE
 	requires_wielding = TRUE
-	delay = 0.45 SECONDS
-	cooldown = 30 SECONDS
-	stamcost = 25
 	tunables = list("cooldown", "delay", "stamcost", "fire_stacks", "slow_dur", "exposed_dur", "self_immob_dur")
-	var/fire_stacks = 2
-	/// Slowdown steps; Azure Peak passes 2 SECONDS to a proc that counts life ticks, read here as 2 steps.
-	var/slow_dur = 2
-	var/exposed_dur = 3 SECONDS
-	var/self_immob_dur = 1.2 SECONDS
+	var/fire_stacks
+	/// Slowdown steps; Azure Peak passes seconds to a proc that counts life ticks, read here as as many steps.
+	var/slow_dur
+	var/exposed_dur
+	var/self_immob_dur
 	var/dam
 
 /datum/special_intent/gilded_dragon_sweep/process_attack()
@@ -240,14 +230,11 @@
 	post_icon_state = "kick_fx"
 	pre_icon = ROGUE_TELEGRAPH_ICON
 	pre_icon_state = "warning"
-	delay = 1.2 SECONDS
-	cooldown = 30 SECONDS
-	stamcost = 25
 	tunables = list("cooldown", "delay", "stamcost", "knockdown_dur", "self_immob_dur", "dam", "finisher_dam")
-	var/knockdown_dur = 1 SECONDS
-	var/self_immob_dur = 1.5 SECONDS
-	var/dam = 50
-	var/finisher_dam = 200
+	var/knockdown_dur
+	var/self_immob_dur
+	var/dam
+	var/finisher_dam
 
 /datum/special_intent/arcyne_descent/on_create()
 	howner.rogue_off_balance(tune("self_immob_dur"))
@@ -271,7 +258,7 @@
 		var/zone = aimed_zone(victim)
 		if(victim.rogue_is_open())
 			victim.Knockdown(tune("knockdown_dur"))
-			distance = rand(2, 4)
+			distance = rand(rogue_value("arcyne_descent_apply_hit_roll_min"), rogue_value("arcyne_descent_apply_hit_roll_max"))
 			damage = tune("finisher_dam")
 			zone = BODY_ZONE_HEAD
 			playsound(howner, 'modular_redtard/combat/sound/misc/meteorimpact.ogg', 100, TRUE)

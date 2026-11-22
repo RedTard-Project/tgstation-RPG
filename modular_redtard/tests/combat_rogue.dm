@@ -291,6 +291,23 @@
 	TEST_ASSERT(wearer.equip_to_slot_if_possible(bevor, ITEM_SLOT_NECK), "Could not put the bevor on")
 	TEST_ASSERT_EQUAL(wearer.rogue_best_armor(BODY_ZONE_PRECISE_MOUTH, ROGUE_ARMOR_SLASH), bevor, "A worn bevor does not stop a cut to the mouth")
 	TEST_ASSERT_NULL(wearer.rogue_best_armor("l_eye", ROGUE_ARMOR_SLASH), "A worn bevor stops a cut to the eye")
+	// Azure Peak's blunt layers: cloth without a tier is no layer, lets the blow through and does not wear; a padded coat
+	// takes the blow whole off the body and wears.
+	var/obj/item/clothing/suit/roguetown/shirt/undershirt/shirt = allocate(__IMPLIED_TYPE__)
+	var/mob/living/carbon/human/consistent/clothed = allocate(__IMPLIED_TYPE__)
+	TEST_ASSERT(clothed.equip_to_slot_if_possible(shirt, ITEM_SLOT_OCLOTHING), "Could not put the shirt on")
+	TEST_ASSERT(!length(clothed.rogue_dr_layers(BODY_ZONE_CHEST, ROGUE_ARMOR_BLUNT)), "A shirt without a blunt tier is a blunt layer")
+	var/shirt_integrity = shirt.atom_integrity
+	TEST_ASSERT_EQUAL(clothed.rogue_armor_hit(BODY_ZONE_CHEST, ROGUE_ARMOR_BLUNT, 20), 1, "A blunt blow did not pass a shirt")
+	TEST_ASSERT_EQUAL(shirt.atom_integrity, shirt_integrity, "A blunt blow wore a shirt without a blunt tier")
+	var/obj/item/clothing/suit/roguetown/armor/gambeson/gambeson = allocate(__IMPLIED_TYPE__)
+	var/mob/living/carbon/human/consistent/padded = allocate(__IMPLIED_TYPE__)
+	TEST_ASSERT(padded.equip_to_slot_if_possible(gambeson, ITEM_SLOT_OCLOTHING), "Could not put the gambeson on")
+	TEST_ASSERT((gambeson in padded.rogue_dr_layers(BODY_ZONE_CHEST, ROGUE_ARMOR_BLUNT)), "A gambeson is no blunt layer")
+	TEST_ASSERT((gambeson in padded.rogue_dr_layers(BODY_ZONE_CHEST, ROGUE_ARMOR_FIRE)), "A gambeson is no fire layer")
+	var/gambeson_integrity = gambeson.atom_integrity
+	TEST_ASSERT_EQUAL(padded.rogue_armor_hit(BODY_ZONE_CHEST, ROGUE_ARMOR_BLUNT, 20), 0, "A gambeson did not take a blunt blow")
+	TEST_ASSERT(gambeson.atom_integrity < gambeson_integrity, "A blunt blow did not wear the gambeson")
 
 /datum/unit_test/rogue_alchemy
 

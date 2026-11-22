@@ -1391,6 +1391,24 @@
 	cost = 20
 	contains = list(/obj/item/storage/pill_bottle/dice/dice_poker)
 
+/datum/rogue_supply_pack/games/chessboard
+	name = "Foldable Chessboard"
+	group = "Games"
+	cost = 25
+	contains = list(/obj/item/chessboard_folded)
+
+/datum/rogue_supply_pack/games/arlette_booster
+	name = "Arlette Card Booster"
+	group = "Games"
+	cost = 15
+	contains = list(/obj/item/ccg_card_booster)
+
+/datum/rogue_supply_pack/games/arlette_booster_premium
+	name = "Premium Arlette Card Booster"
+	group = "Games"
+	cost = 30
+	contains = list(/obj/item/ccg_card_booster/premium)
+
 /datum/rogue_supply_pack/instruments/mbox
 	name = "Music Box"
 	group = "Instruments"
@@ -1800,12 +1818,6 @@
 	group = "Gems"
 	cost = 24
 	contains = list(/obj/item/carvedgem/rose/rawrose)
-
-/datum/rogue_supply_pack/potions/rotcure
-	name = "Rot Cure Potion"
-	group = "Potions"
-	cost = 300
-	contains = list(/obj/item/reagent_containers/glass/bottle/alchemical/rogue/rotcure, /obj/item/reagent_containers/glass/bottle/alchemical/rogue/rotcure)
 
 /datum/rogue_supply_pack/potions/healthpot
 	name = "Healing Potion"
@@ -3170,6 +3182,24 @@
 	cost = 90
 	contains = list(/obj/item/clothing/head/roguetown/helmet/heavy/bucket)
 
+/datum/rogue_supply_pack/armor_steel/helmet_barbute
+	name = "Helmet, Barbute"
+	group = "Armor (Steel)"
+	cost = 50
+	contains = list(/obj/item/clothing/head/roguetown/helmet/heavy/barbute)
+
+/datum/rogue_supply_pack/armor_steel/helmet_barbute_visor
+	name = "Helmet, Barbute with Visor"
+	group = "Armor (Steel)"
+	cost = 90
+	contains = list(/obj/item/clothing/head/roguetown/helmet/heavy/barbute/visor)
+
+/datum/rogue_supply_pack/armor_steel/helmet_barbute_great
+	name = "Helmet, Barbute, Great"
+	group = "Armor (Steel)"
+	cost = 90
+	contains = list(/obj/item/clothing/head/roguetown/helmet/heavy/barbute/great)
+
 /datum/rogue_supply_pack/armor_steel/helmet_pigface
 	name = "Helmet, Pigface"
 	group = "Armor (Steel)"
@@ -3212,6 +3242,12 @@
 	cost = 90
 	contains = list(/obj/item/clothing/head/roguetown/helmet/heavy/knight/armet)
 
+/datum/rogue_supply_pack/armor_steel/helmet_knight_armetgreatplume
+	name = "Helmet, Armet, Greatplumed"
+	group = "Armor (Steel)"
+	cost = 95
+	contains = list(/obj/item/clothing/head/roguetown/helmet/heavy/knight/greatplume)
+
 /datum/rogue_supply_pack/armor_steel/helmet_savoyard
 	name = "Helmet, Savoyard"
 	group = "Armor (Steel)"
@@ -3230,6 +3266,24 @@
 	cost = 90
 	contains = list(/obj/item/clothing/head/roguetown/helmet/heavy/beakhelm)
 
+/datum/rogue_supply_pack/armor_steel/helmet_aventailbascinet
+	name = "Helmet, Bascinet, Aventailed"
+	group = "Armor (Steel)"
+	cost = 90
+	contains = list(/obj/item/clothing/head/roguetown/helmet/bascinet/aventail)
+
+/datum/rogue_supply_pack/armor_steel/helmet_heavyaventailbascinet
+	name = "Helmet, Visored Bascinet, Aventailed"
+	group = "Armor (Steel)"
+	cost = 140
+	contains = list(/obj/item/clothing/head/roguetown/helmet/heavy/aventail)
+
+/datum/rogue_supply_pack/armor_steel/helmet_frogmouth
+	name = "Helmet, Plumed Froggemund"
+	group = "Armor (Steel)"
+	cost = 145
+	contains = list(/obj/item/clothing/head/roguetown/helmet/heavy/frogmouth/greatplume)
+
 /datum/rogue_supply_pack/armor_steel/bevor
 	name = "Bevor"
 	group = "Armor (Steel)"
@@ -3242,15 +3296,21 @@
 	cost = 50
 	contains = list(/obj/item/clothing/neck/roguetown/gorget/steel)
 
+/datum/rogue_supply_pack/armor_steel/aventail_steel
+	name = "Aventail"
+	group = "Armor (Steel)"
+	cost = 90
+	contains = list(/obj/item/clothing/neck/roguetown/gorget/aventail)
+
 /datum/rogue_supply_pack/armor_steel/boots_steel
 	name = "Plated Boots"
 	group = "Armor (Steel)"
 	cost = 50
 	contains = list(/obj/item/clothing/shoes/roguetown/boots/armor)
 
-/datum/rogue_supply_pack/armor_iron/mailleboots_steel
+/datum/rogue_supply_pack/armor_steel/mailleboots_steel
 	name = "Maille Boots"
-	group = "Armor (Iron)"
+	group = "Armor (Steel)"
 	cost = 50
 	contains = list(/obj/item/clothing/shoes/roguetown/boots/maille)
 
@@ -3929,6 +3989,13 @@
 	not_in_public = TRUE
 	contains = list(/obj/item/rogueweapon/sword/long/kriegmesser)
 
+/datum/rogue_supply_pack/kazengun/nodachi
+	name = "Nodachi"
+	group = "Cultural Stock"
+	cost = 300
+	not_in_public = TRUE
+	contains = list(/obj/item/rogueweapon/greatsword/nodachi)
+
 /datum/rogue_supply_pack/kazengun/haraate
 	name = "Haraate Brigandine"
 	group = "Cultural Stock"
@@ -4064,7 +4131,7 @@
 	cost = 200
 	not_in_public = TRUE
 	no_name_quantity = TRUE
-	contains = list(/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/pontifex, /obj/item/clothing/suit/roguetown/shirt/robe/pointfex, /obj/item/clothing/head/roguetown/roguehood/pontifex, /obj/item/clothing/under/roguetown/trou/leather/pontifex, /obj/item/clothing/mask/rogue/lordmask/naledi, /obj/item/clothing/neck/roguetown/psicross/naledi, /obj/item/clothing/shoes/roguetown/sandals, /obj/item/clothing/gloves/roguetown/angle/pontifex)
+	contains = list(/obj/item/clothing/suit/roguetown/armor/gambeson/heavy/pontifex, /obj/item/clothing/suit/roguetown/shirt/robe/pointfex, /obj/item/clothing/head/roguetown/roguehood/pontifex, /obj/item/clothing/under/roguetown/trou/leather/pontifex, /obj/item/clothing/mask/rogue/lordmask/naledi, /obj/item/clothing/neck/roguetown/psicross/naledi, /obj/item/clothing/shoes/roguetown/sandals, /obj/item/clothing/gloves/roguetown/bandages/pontifex)
 
 /datum/rogue_supply_pack/naledi/psicross
 	name = "Naledi Psicross"

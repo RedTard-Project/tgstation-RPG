@@ -56,12 +56,19 @@
 	ADD_TRAIT(target, TRAIT_ROGUE_WOUNDS, ELEMENT_TRAIT(type))
 	RegisterSignal(target, COMSIG_HUMAN_ON_HANDLE_BLOOD, PROC_REF(on_handle_blood))
 	RegisterSignal(target, COMSIG_CARBON_GAIN_WOUND, PROC_REF(on_gain_wound))
+	RegisterSignal(target, COMSIG_CARBON_POST_LOSE_WOUND, PROC_REF(on_lose_wound))
 	RegisterSignal(target, COMSIG_LIVING_LIFE, PROC_REF(on_life))
 
 /datum/element/rogue_blood/Detach(datum/source, ...)
 	REMOVE_TRAIT(source, TRAIT_ROGUE_WOUNDS, ELEMENT_TRAIT(type))
-	UnregisterSignal(source, list(COMSIG_HUMAN_ON_HANDLE_BLOOD, COMSIG_CARBON_GAIN_WOUND, COMSIG_LIVING_LIFE))
+	UnregisterSignal(source, list(COMSIG_HUMAN_ON_HANDLE_BLOOD, COMSIG_CARBON_GAIN_WOUND, COMSIG_CARBON_POST_LOSE_WOUND, COMSIG_LIVING_LIFE))
 	return ..()
+
+/// A healed or replaced fracture no longer slows one (combat/crits.dm rogue_update_fracture_slowdown()).
+/datum/element/rogue_blood/proc/on_lose_wound(mob/living/carbon/human/source, datum/wound/wound, obj/item/bodypart/limb)
+	SIGNAL_HANDLER
+	if(istype(wound, /datum/wound/blunt/bone))
+		source.rogue_update_fracture_slowdown()
 
 /// Ratwood handle_embedded_objects() -> on_embed_life(): each Life tick, living or dead, the leeches on the limbs drink, or a
 /// squeezed cheele gives (combat/leeches.dm).
@@ -145,13 +152,14 @@
 /mob/living/carbon/human/proc/rogue_bleed_amount(amount)
 	if(HAS_TRAIT(src, TRAIT_ADRENALINE_RUSH))
 		return 0
+	// Azure Peak get_bleed_mod(): thick blood and critical resistance count for every body, not only one with a mind.
+	if(HAS_TRAIT(src, TRAIT_CRITICAL_RESISTANCE))
+		amount *= ROGUE_BLEED_CRIT_RESISTANCE
+	else if(HAS_TRAIT(src, TRAIT_BLOOD_RESISTANCE))
+		amount *= ROGUE_BLEED_THICK_BLOOD
 	if(mind)
 		var/constitution = min(rogue_stat(ROGUE_STAT_CONSTITUTION), ROGUE_BLEED_CON_CAP)
 		amount -= amount * (constitution - ROGUE_BLEED_CON_BASE) * ROGUE_BLEED_CON_SHARE
-		if(HAS_TRAIT(src, TRAIT_BLOOD_RESISTANCE))
-			amount *= ROGUE_BLEED_THICK_BLOOD
-		else if(HAS_TRAIT(src, TRAIT_CRITICAL_RESISTANCE))
-			amount *= ROGUE_BLEED_CRIT_RESISTANCE
 		if(HAS_TRAIT(src, TRAIT_CRITICAL_WEAKNESS))
 			amount *= ROGUE_BLEED_CRIT_WEAKNESS
 	if(rogue_yielding)
@@ -197,9 +205,40 @@
 		Unconscious(rand(ROGUE_BLEED_FAINT_MIN, ROGUE_BLEED_FAINT_MAX))
 		to_chat(src, span_warning("I feel drained."))
 	if(volume <= ROGUE_BLOOD_BAD)
-		adjust_oxy_loss((volume <= ROGUE_BLOOD_SURVIVE ? ROGUE_BLEED_OXY_SURVIVE : ROGUE_BLEED_OXY_BAD) * ticks)
+		// Azure Peak: one with a mind is left critically wounded; a body without one chokes faster, so the dying do not linger.
+		if(mind)
+			rogue_critwound()
+		var/choke = volume <= ROGUE_BLOOD_SURVIVE ? ROGUE_BLEED_OXY_SURVIVE : ROGUE_BLEED_OXY_BAD
+		if(!mind)
+			choke *= rogue_value("bleed_oxy_mindless_factor")
+		adjust_oxy_loss(choke * ticks)
+		rogue_death_rattle()
 	else if(get_oxy_loss())
 		adjust_oxy_loss(-ROGUE_BLEED_OXY_HEAL * ticks)
+
+/mob/living/carbon/human
+	/// When the bled-out body rattles for breath next (Azure Peak last_gasp).
+	var/rogue_next_gasp = 0
+
+/// Azure Peak's death rattle below the bad blood level: a choking gasp every few seconds; a player's also shows over them
+/// to those who would notice.
+/mob/living/carbon/human/proc/rogue_death_rattle()
+	if(world.time < rogue_next_gasp || stat == DEAD)
+		return
+	rogue_next_gasp = world.time + rand(rogue_value("bleed_gasp_interval_min"), rogue_value("bleed_gasp_interval_max"))
+	if(!HAS_TRAIT(src, TRAIT_NOBREATH))
+		var/gasp_sound
+		if(gender == MALE)
+			gasp_sound = 'modular_redtard/rockhill/sound/vo/male/gen/choke.ogg'
+		else if(gender == FEMALE)
+			gasp_sound = pick('modular_redtard/rockhill/sound/vo/female/gen/choke (1).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/choke (2).ogg', 'modular_redtard/rockhill/sound/vo/female/gen/choke (3).ogg')
+		if(gasp_sound)
+			playsound(src, gasp_sound, 50, FALSE, ignore_walls = FALSE)
+	if(!mind?.key)
+		return
+	balloon_alert_to_viewers("[pick("gasp", "choke", "gag", "wheeze", "gurgle", "sputter")]! (dying)")
+	if(prob(rogue_value("bleed_gasp_emote_chance")))
+		INVOKE_ASYNC(src, TYPE_PROC_REF(/mob, emote), "me", EMOTE_VISIBLE, "struggles to breathe, deathly pale!")
 
 /// Puts on the debuff of the step and takes off the others, only when the step changes (as Ratwood's bleeding_tier).
 /mob/living/carbon/human/proc/rogue_set_bleed_tier(tier)

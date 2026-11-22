@@ -151,9 +151,6 @@
 /obj/effect/landmark/start/rockhill/prince
 	name = JOB_ROCKHILL_PRINCE
 
-/obj/effect/landmark/start/rockhill/prisonerb
-	name = JOB_ASSISTANT
-
 /obj/effect/landmark/start/rockhill/prisonerr
 	name = JOB_ROCKHILL_PRISONER_TOWN
 
@@ -180,9 +177,6 @@
 
 /obj/effect/landmark/start/rockhill/servant
 	name = JOB_ROCKHILL_SERVANT
-
-/obj/effect/landmark/start/rockhill/sheriff
-	name = JOB_ROCKHILL_WATCH_CAPTAIN
 
 /obj/effect/landmark/start/rockhill/shophand
 	name = JOB_ROCKHILL_SHOPHAND
@@ -222,6 +216,9 @@
 
 /obj/effect/landmark/start/rockhill/wapprentice
 	name = JOB_ROCKHILL_MAGICIANS_ASSOCIATE
+
+/obj/effect/landmark/start/rockhill/watchcaptain
+	name = JOB_ROCKHILL_WATCH_CAPTAIN
 
 /obj/effect/landmark/start/rockhill/wretch
 	name = JOB_ROCKHILL_WRETCH

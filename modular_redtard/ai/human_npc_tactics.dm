@@ -470,7 +470,7 @@ GLOBAL_LIST_INIT(rogue_npc_healing_reagents, list(
 	return null
 
 /mob/living/carbon/human/proc/rogue_npc_taunt(mob/living/foe)
-	if(usable_hands && !HAS_TRAIT(src, TRAIT_RESTRAINED) && prob(50))
+	if(usable_hands && !HAS_TRAIT(src, TRAIT_RESTRAINED) && prob(rogue_value("human_rogue_npc_taunt_chance")))
 		point_at(foe)
 		return
 	emote("laugh")

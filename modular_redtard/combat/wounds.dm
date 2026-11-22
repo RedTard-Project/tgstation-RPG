@@ -9,8 +9,8 @@
 /// TG's wounds (arteries, fractures; combat/crits.dm), which keep the module's pain and wound health tables.
 
 /// Ratwood's clamp of pen_info (get_pen_info()).
-#define ROGUE_PEN_INFO_MIN 1
-#define ROGUE_PEN_INFO_MAX 8
+#define ROGUE_PEN_INFO_MIN rogue_value("pen_info_min")
+#define ROGUE_PEN_INFO_MAX rogue_value("pen_info_max")
 /// One series of wounds for each kind, so a limb keeps one wound of each kind beside TG's wounds.
 #define ROGUE_SERIES_BRUISE "rogue_wound_series_bruise"
 #define ROGUE_SERIES_SLASH "rogue_wound_series_slash"
@@ -236,8 +236,8 @@
 		. += balance
 	return clamp(., ROGUE_PEN_INFO_MIN, ROGUE_PEN_INFO_MAX)
 
-/// Ratwood's severity_names of the kind: the adjective a wound takes once its bleeding (its health, while it does not bleed)
-/// reaches the number, in order.
+/// Azure Peak's severity_stages of the kind (five steps where Ratwood had four): the adjective a wound takes once its bleeding
+/// (its health, while it does not bleed) reaches the number, in order; the numbers are dynamic_<kind>_stage_<word>.
 /datum/wound/rogue/dynamic/proc/rogue_severity_names()
 	return list()
 
@@ -305,9 +305,7 @@
 	rogue_update_name()
 	return ..()
 
-/datum/wound/rogue/dynamic/bruise/rogue_severity_names()
-	var/static/list/names = list("minor" = 20, "moderate" = 60, "big" = 120, "massive" = 180)
-	return names
+	return list("minor" = rogue_value("dynamic_bruise_stage_minor"), "moderate" = rogue_value("dynamic_bruise_stage_moderate"), "big" = rogue_value("dynamic_bruise_stage_big"), "massive" = rogue_value("dynamic_bruise_stage_massive"), "immense" = rogue_value("dynamic_bruise_stage_immense"))
 
 /// Ratwood dynamic/slash: painful, hard to sew and to heal, held back by armor.
 /datum/wound/rogue/dynamic/slash
@@ -338,9 +336,7 @@
 	rogue_update_name()
 	return ..()
 
-/datum/wound/rogue/dynamic/slash/rogue_severity_names()
-	var/static/list/names = list("light" = 5, "deep" = 10, "gnarly" = 15, "lethal" = 20)
-	return names
+	return list("light" = rogue_value("dynamic_slash_stage_light"), "deep" = rogue_value("dynamic_slash_stage_deep"), "severe" = rogue_value("dynamic_slash_stage_severe"), "gnarly" = rogue_value("dynamic_slash_stage_gnarly"), "lethal" = rogue_value("dynamic_slash_stage_lethal"))
 
 /// Ratwood dynamic/puncture, of stabs: not as painful, bleeds more through armor, easier to sew and to heal.
 /datum/wound/rogue/dynamic/puncture
@@ -371,9 +367,7 @@
 	rogue_update_name()
 	return ..()
 
-/datum/wound/rogue/dynamic/puncture/rogue_severity_names()
-	var/static/list/names = list("shallow" = 3, "deep" = 6, "gnarly" = 9, "vicious" = 12, "lethal" = 20)
-	return names
+	return list("shallow" = rogue_value("dynamic_puncture_stage_shallow"), "deep" = rogue_value("dynamic_puncture_stage_deep"), "gnarly" = rogue_value("dynamic_puncture_stage_gnarly"), "vicious" = rogue_value("dynamic_puncture_stage_vicious"), "lethal" = rogue_value("dynamic_puncture_stage_lethal"))
 
 /// Ratwood dynamic/gouge, of picks and piercing shots: hardly hurts or bleeds, but cannot be seared shut.
 /datum/wound/rogue/dynamic/gouge
@@ -401,9 +395,7 @@
 	rogue_update_name()
 	return ..()
 
-/datum/wound/rogue/dynamic/gouge/rogue_severity_names()
-	var/static/list/names = list("shallow" = 2, "deep" = 4, "gnarly" = 8, "vicious" = 12, "lethal" = 20)
-	return names
+	return list("shallow" = rogue_value("dynamic_gouge_stage_shallow"), "deep" = rogue_value("dynamic_gouge_stage_deep"), "gnarly" = rogue_value("dynamic_gouge_stage_gnarly"), "vicious" = rogue_value("dynamic_gouge_stage_vicious"), "lethal" = rogue_value("dynamic_gouge_stage_lethal"))
 
 /// Ratwood dynamic/bite: hurts a great deal and bleeds freely, but armor stops most of it; it mends by itself.
 /datum/wound/rogue/dynamic/bite
@@ -431,9 +423,7 @@
 	rogue_update_name()
 	return ..()
 
-/datum/wound/rogue/dynamic/bite/rogue_severity_names()
-	var/static/list/names = list("shallow" = 3, "deep" = 8, "gnarly" = 12, "lethal" = 15, "impossible" = 20)
-	return names
+	return list("shallow" = rogue_value("dynamic_bite_stage_shallow"), "deep" = rogue_value("dynamic_bite_stage_deep"), "gnarly" = rogue_value("dynamic_bite_stage_gnarly"), "lethal" = rogue_value("dynamic_bite_stage_lethal"), "impossible" = rogue_value("dynamic_bite_stage_impossible"))
 
 /// Ratwood dynamic/lashing, of the whip: painful, bleeds hugely on bare skin, next to nothing through armor; cannot be seared.
 /datum/wound/rogue/dynamic/lashing
@@ -460,9 +450,7 @@
 	rogue_update_name()
 	return ..()
 
-/datum/wound/rogue/dynamic/lashing/rogue_severity_names()
-	var/static/list/names = list("light" = 5, "deep" = 10, "gnarly" = 15, "lethal" = 20)
-	return names
+	return list("light" = rogue_value("dynamic_lashing_stage_light"), "deep" = rogue_value("dynamic_lashing_stage_deep"), "severe" = rogue_value("dynamic_lashing_stage_severe"), "gnarly" = rogue_value("dynamic_lashing_stage_gnarly"), "lethal" = rogue_value("dynamic_lashing_stage_lethal"))
 
 /// Ratwood dynamic/punish, the whip's punishing intent: very painful, hardly bleeds, mends by itself the more it is beaten.
 /datum/wound/rogue/dynamic/punish
@@ -491,9 +479,7 @@
 	rogue_update_name()
 	return ..()
 
-/datum/wound/rogue/dynamic/punish/rogue_severity_names()
-	var/static/list/names = list("light" = 5, "deep" = 10, "gnarly" = 15, "lethal" = 20)
-	return names
+	return list("light" = rogue_value("dynamic_flogging_stage_light"), "deep" = rogue_value("dynamic_flogging_stage_deep"), "severe" = rogue_value("dynamic_flogging_stage_severe"), "gnarly" = rogue_value("dynamic_flogging_stage_gnarly"), "lethal" = rogue_value("dynamic_flogging_stage_lethal"))
 
 /// The pregen data of the dynamic wounds: only ever opened by a blow of their kind (never rolled by TG), on a limb of flesh
 /// that bleeds (Ratwood can_bloody_wound()), one of each kind on a limb.

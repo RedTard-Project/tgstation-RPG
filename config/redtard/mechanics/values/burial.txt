@@ -4,120 +4,120 @@
 # --- The rot of the dead
 
 # Deciseconds a corpse lies dead before its flesh rots: the limbs take the colour of rot, the flies come (Ratwood 20 MINUTES).
-rot_flesh_time = 12000
+rot_flesh_time = 10
 
 # Deciseconds a corpse lies dead before its rotted limbs fall to bones (Ratwood 40 MINUTES).
-rot_bones_time = 24000
+rot_bones_time = 10
 
 # Deciseconds dead after which a body nobody is in turns to dust once it is bones (Ratwood 35 MINUTES; bones come at rot_bones_time).
-rot_dust_time = 21000
+rot_dust_time = 10
 
 # Constitution a rotted body loses until it lives again or the rot is cured (Ratwood debuff/rotted_zombie, -8).
-rot_constitution_penalty = 8
+rot_constitution_penalty = 10
 
 # 1: rotted limbs give out and serve no body raised from them until the rot is cured (Ratwood BODYPART_DISABLED_ROT); 0: they serve.
-rot_limbs_give_out = 1
+rot_limbs_give_out = 10
 
 # --- Earth by hand and by shovel
 
 # Clods a hand takes from a tile of dirt before it is a road (Ratwood dirt_amt).
-dirt_clods = 3
+dirt_clods = 10
 
 # Fatigue a scoop that deepens a hole costs before strength (Ratwood stamina_add(60 - STR * 5)).
-dig_fatigue = 60
+dig_fatigue = 10
 
 # Fatigue each point of strength takes off a scoop (Ratwood 5; never under 1).
-dig_fatigue_per_strength = 5
+dig_fatigue_per_strength = 10
 
 # Chance in percent per point of strength that a scoop deepens a hole while the digger has failed fewer than dig_free_fails times (Ratwood prob(STR * 5)).
-dig_chance_per_strength = 5
+dig_chance_per_strength = 10
 
 # Failed scoops after which a hole deepens with every scoop (Ratwood faildirt < 2).
-dig_free_fails = 2
+dig_free_fails = 10
 
 # Deciseconds a grave robber's strong scoop takes to tear a pit out of the earth (Ratwood 5 SECONDS).
-graverobber_pit_time = 50
+graverobber_pit_time = 10
 
 # Clods thrown about by a grave robber tearing a pit (Ratwood 3).
-graverobber_pit_clods = 3
+graverobber_pit_clods = 10
 
 # Clods a pile holds at most, and Ratwood's count at which clods on a tile heap into a pile (the clods there, the one thrown down, plus one).
-clodpile_clods = 5
+clodpile_clods = 10
 
 # --- Mud
 
 # Slowdown of a road gone to mud by water (Ratwood become_muddy() slowdown 2).
-mud_slowdown = 2
+mud_slowdown = 10
 
 # Mud a step on dirt, a road or mud puts on the shoes (Ratwood bloodiness 20); 0 keeps shoes clean and leaves no muddy footprints.
-dirt_mud_per_step = 20
+dirt_mud_per_step = 10
 
 # Mud a pair of shoes holds at most (Ratwood MAX_SHOE_BLOODINESS 100).
-shoe_mud_max = 100
+shoe_mud_max = 10
 
 # Mud a step onto a tile without muddy prints wears off the shoes (Ratwood BLOOD_LOSS_PER_STEP 5).
-shoe_mud_per_step = 5
+shoe_mud_per_step = 10
 
 # Mud left on the shoes above which a step leaves muddy footprints (Ratwood BLOOD_LOSS_IN_SPREAD 20).
-shoe_mud_print_above = 20
+shoe_mud_print_above = 10
 
 # --- Holes and graves
 
 # Chance in percent that a hole dug in mud turns up bait (Ratwood 55).
-hole_bait_chance = 55
+hole_bait_chance = 10
 
 # Chance in percent that the bait is a leech or grubs rather than worms (Ratwood 20).
-hole_leech_chance = 20
+hole_leech_chance = 10
 
 # Chance in percent that the leech is grubs instead (Ratwood 5).
-hole_grubs_chance = 5
+hole_grubs_chance = 10
 
 # Chance in percent that a hole dug in mud turns up clay (Ratwood 25).
-hole_mud_clay_chance = 25
+hole_mud_clay_chance = 10
 
 # Chance in percent that a hole dug in dry dirt turns up a stone (Ratwood 23).
-hole_stone_chance = 23
+hole_stone_chance = 10
 
 # Chance in percent that a hole dug in dry dirt turns up clay (Ratwood 18).
-hole_clay_chance = 18
+hole_clay_chance = 10
 
 # Deciseconds it takes to stuff someone into a hole (Ratwood do_after_mob 40).
-hole_stuff_time = 40
+hole_stuff_time = 10
 
 # Deciseconds someone buried claws at the dirt before a hand breaks the surface (Ratwood 15 SECONDS).
-grave_claw_time = 150
+grave_claw_time = 10
 
 # Deciseconds more to climb out of the grave (Ratwood 10 SECONDS).
-grave_climb_time = 100
+grave_climb_time = 10
 
 # Fortune lost by who robs a marked grave without the grave robber's trade (Ratwood debuff/cursed, -3).
-grave_curse_fortune = 3
+grave_curse_fortune = 10
 
 # Deciseconds the grave robber's curse lasts (Ratwood 10 MINUTES).
-grave_curse_time = 6000
+grave_curse_time = 10
 
 # Chance in percent that an old grave of the map holds a restless skeleton (Ratwood lootroll 1 of 4).
-grave_skeleton_chance = 25
+grave_skeleton_chance = 10
 
 # Chance in percent that an old grave of the map holds a chest (Ratwood lootroll 2 of 4).
-grave_chest_chance = 25
+grave_chest_chance = 10
 
 # --- The dead bodies of the map
 
 # Deciseconds a search of a dead body takes (Ratwood 5 SECONDS).
-body_search_time = 50
+body_search_time = 10
 
 # Fortune under which a search may come up empty (Ratwood STALUC < 10).
 body_unlucky_fortune = 10
 
 # Chance in percent that an unlucky search comes up empty (Ratwood 40).
-body_unlucky_empty_chance = 40
+body_unlucky_empty_chance = 10
 
 # Fortune from which a search pulls out two things (Ratwood 13).
-body_two_finds_fortune = 13
+body_two_finds_fortune = 10
 
 # Fortune from which a search pulls out three things (Ratwood 16).
-body_three_finds_fortune = 16
+body_three_finds_fortune = 10
 
 # Fortune from which a search draws from the body's lucky table, where it has one (Ratwood 14).
-body_lucky_fortune = 14
+body_lucky_fortune = 10

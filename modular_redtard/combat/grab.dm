@@ -142,10 +142,14 @@ GLOBAL_LIST_INIT(rogue_zone_names, list(
 	zone = grab_zone || BODY_ZONE_CHEST
 	name = "[target.name]'s [rogue_zone_name(zone)]"
 	RegisterSignal(target, COMSIG_QDELETING, PROC_REF(on_grabbed_deleted))
+	if(isliving(loc))
+		RegisterSignal(loc, COMSIG_ROGUE_STRIKE_LANDED, PROC_REF(on_holder_struck))
 
 /obj/item/hand_item/rogue_grab/Destroy()
 	set_hostage(FALSE)
 	var/mob/living/holder = loc
+	if(istype(holder))
+		UnregisterSignal(holder, COMSIG_ROGUE_STRIKE_LANDED)
 	if(grabbed)
 		UnregisterSignal(grabbed, COMSIG_QDELETING)
 		if(istype(holder) && holder.pulling == grabbed)
@@ -155,6 +159,7 @@ GLOBAL_LIST_INIT(rogue_zone_names, list(
 
 /obj/item/hand_item/rogue_grab/dropped(mob/user, silent)
 	set_hostage(FALSE)
+	UnregisterSignal(user, COMSIG_ROGUE_STRIKE_LANDED)
 	if(grabbed && user.pulling == grabbed)
 		user.stop_pulling()
 	return ..()
@@ -162,6 +167,26 @@ GLOBAL_LIST_INIT(rogue_zone_names, list(
 /obj/item/hand_item/rogue_grab/proc/on_grabbed_deleted(datum/source)
 	SIGNAL_HANDLER
 	qdel(src)
+
+/// Azure Peak's attacked_by(): one struck while holding a grip may let go, the more likely when struck on the arm that
+/// holds it and the more hurt the struck part is.
+/obj/item/hand_item/rogue_grab/proc/on_holder_struck(mob/living/holder, datum/rogue_strike/strike)
+	SIGNAL_HANDLER
+	if(QDELETED(src) || holder.pulling != grabbed)
+		return
+	var/release_chance = rogue_value("grab_release_chance")
+	var/struck_zone = rogue_zone_target(strike.zone)
+	var/hand_index = holder.get_held_index_of_item(src)
+	if(hand_index && struck_zone == (IS_LEFT_INDEX(hand_index) ? BODY_ZONE_L_ARM : BODY_ZONE_R_ARM))
+		release_chance += rogue_value("grab_release_holding_arm")
+	var/obj/item/bodypart/struck_part = holder.get_bodypart(struck_zone)
+	if(struck_part?.max_damage)
+		release_chance += struck_part.get_damage() / struck_part.max_damage * rogue_value("grab_release_limb_damage")
+	if(!prob(release_chance))
+		return
+	INVOKE_ASYNC(holder, TYPE_PROC_REF(/mob, emote), "painmoan", NONE, null, FALSE, FALSE, TRUE)
+	holder.visible_message(span_warning("<b>[holder]</b> lets go of their hold!"))
+	holder.stop_pulling()
 
 /obj/item/hand_item/rogue_grab/rogue_intents()
 	var/mob/living/holder = loc
@@ -191,7 +216,8 @@ GLOBAL_LIST_INIT(rogue_zone_names, list(
 			grabber.rogue_headbutt(src)
 		return ITEM_INTERACT_BLOCKING
 	if(interacting_with == grabbed)
-		grabber.changeNext_move(max(ROGUE_GRAB_ACTION_DELAY - grabber.rogue_stat(ROGUE_STAT_SPEED), CLICK_CD_GRABBING))
+		// Azure Peak's grabbing attack(): wrestling one with a mind takes CLICK_CD_WRESTLING, anything else a melee click.
+		grabber.changeNext_move(grabbed.mind && grabbed != grabber ? rogue_value("grab_wrestling_delay") : CLICK_CD_MELEE)
 		intent.grab_target(src, grabber)
 		return ITEM_INTERACT_SUCCESS
 	if(isturf(interacting_with) || isstructure(interacting_with))
@@ -288,7 +314,7 @@ GLOBAL_LIST_INIT(rogue_zone_names, list(
 	return list(
 		"strength_diff" = rogue_stat(ROGUE_STAT_STRENGTH) - target.rogue_stat(ROGUE_STAT_STRENGTH),
 		"skill_diff" = rogue_skill_rank(/datum/attribute/skill/combat/wrestling) - target.rogue_skill_rank(/datum/attribute/skill/combat/wrestling),
-		"noise" = rand(-5, 5),
+		"noise" = rand(rogue_value("human_rogue_grab_values_roll_min"), rogue_value("human_rogue_grab_values_roll_max")),
 		"modifier" = rogue_grab_modifier(target, grip),
 	)
 
@@ -319,12 +345,12 @@ GLOBAL_LIST_INIT(rogue_zone_names, list(
 	adjust_stamina_loss(rand(ROGUE_GRAB_UPGRADE_COST_MIN, ROGUE_GRAB_UPGRADE_COST_MAX))
 	var/certain = target.stat != STABLE || HAS_TRAIT(target, TRAIT_RESTRAINED) || target.has_status_effect(/datum/status_effect/rogue_compliance)
 	if(!certain)
-		if(rogue_badluck(10))
+		if(rogue_badluck(rogue_value("grab_badluck_upgrade")))
 			rogue_badluck_message(src)
 			return FALSE
 		if(!prob(rogue_formula_value(ROGUE_FORMULA_GRAB_CHANCE, rogue_grab_values(target, grip))))
 			rogue_grab_struggle(target)
-			if(rogue_badluck(5))
+			if(rogue_badluck(rogue_value("grab_badluck_struggle")))
 				rogue_badluck_message(src)
 				stop_pulling()
 			return FALSE
@@ -341,21 +367,29 @@ GLOBAL_LIST_INIT(rogue_zone_names, list(
 	if(buckled)
 		to_chat(src, span_warning("I can't do this while buckled!"))
 		return FALSE
-	if(!iscarbon(target) || grab_state < GRAB_AGGRESSIVE || rogue_grab_bad_luck(2))
+	if(!iscarbon(target) || grab_state < GRAB_AGGRESSIVE || rogue_grab_bad_luck(rogue_value("grab_badluck_choke")))
 		return FALSE
 	changeNext_move(CLICK_CD_GRABBING)
+	playsound(target, ROGUE_GRAB_STRUGGLE_SOUND, 100, FALSE, -1)
 	adjust_stamina_loss(rand(ROGUE_GRAB_CHOKE_COST_MIN, ROGUE_GRAB_CHOKE_COST_MAX))
-	if(target.get_all_covered_flags() & NECK)
-		to_chat(src, span_warning("I can't reach [target]'s throat!"))
-		return FALSE
-	if(prob(ROGUE_GRAB_CHOKE_EMOTE_CHANCE))
-		target.emote("choke")
 	var/chokehold = grip.is_chokehold(src)
-	target.adjust_oxy_loss(rogue_formula_value(ROGUE_FORMULA_CHOKE_DAMAGE, list(
+	var/choke_damage = rogue_formula_value(ROGUE_FORMULA_CHOKE_DAMAGE, list(
 		"strength" = rogue_stat(ROGUE_STAT_STRENGTH),
 		"chokehold" = chokehold,
 		"held_back" = target.pulling == src && target.grab_state >= GRAB_AGGRESSIVE,
-	)))
+	))
+	// Azure Peak: a collar does not stop the choke, its cut tier softens it.
+	if(ishuman(target))
+		var/mob/living/carbon/human/collared = target
+		var/neck_tier = collared.rogue_armor_tier(ROGUE_ZONE_NECK, ROGUE_ARMOR_SLASH)
+		if(neck_tier > 0)
+			choke_damage /= 1 + rogue_value("grab_choke_neck_tier_factor") * neck_tier
+	if(!HAS_TRAIT(target, TRAIT_NOBREATH))
+		if(target.get_stamina_loss() < target.max_stamina)
+			target.adjust_stamina_loss(choke_damage * rogue_value("grab_choke_stamina_factor"))
+		if(prob(ROGUE_GRAB_CHOKE_EMOTE_CHANCE))
+			target.emote("choke")
+	target.adjust_oxy_loss(choke_damage)
 	var/verb = pick("chokes", "strangles")
 	target.visible_message(span_danger("[src] [verb] [target][chokehold ? " with a chokehold" : ""]!"), span_userdanger("[src] [verb] me[chokehold ? " with a chokehold" : ""]!"), span_hear("I hear a sickening sound of pugilism!"), COMBAT_MESSAGE_RANGE, src)
 	to_chat(src, span_danger("I [verb == "chokes" ? "choke" : "strangle"] [target][chokehold ? " with a chokehold" : ""]!"))
@@ -371,7 +405,7 @@ GLOBAL_LIST_INIT(rogue_zone_names, list(
 	if(buckled)
 		to_chat(src, span_warning("I can't do this while buckled!"))
 		return FALSE
-	if(!iscarbon(target) || grab_state < GRAB_AGGRESSIVE || rogue_grab_bad_luck(2))
+	if(!iscarbon(target) || grab_state < GRAB_AGGRESSIVE || rogue_grab_bad_luck(rogue_value("grab_badluck_twist")))
 		return FALSE
 	adjust_stamina_loss(rand(ROGUE_GRAB_TWIST_COST_MIN, ROGUE_GRAB_TWIST_COST_MAX))
 	playsound(target, pick('modular_redtard/rockhill/sound/combat/hits/blunt/genblunt (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/genblunt (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/blunt/genblunt (3).ogg'), 100, FALSE, -1)
@@ -394,7 +428,7 @@ GLOBAL_LIST_INIT(rogue_zone_names, list(
 		return FALSE
 	if(isclosedturf(place) && target.body_position != STANDING_UP)
 		return FALSE
-	if(rogue_grab_bad_luck(4))
+	if(rogue_grab_bad_luck(rogue_value("grab_badluck_smash")))
 		return FALSE
 	changeNext_move(CLICK_CD_GRABBING)
 	var/damage = rogue_formula_value(ROGUE_FORMULA_GRAB_SMASH_DAMAGE, list("punch" = rogue_unarmed_damage(), "unarmed" = rogue_skill_rank(/datum/attribute/skill/combat/unarmed)))
@@ -427,7 +461,7 @@ GLOBAL_LIST_INIT(rogue_zone_names, list(
 	if(buckled)
 		to_chat(src, span_warning("I can't do this while buckled!"))
 		return FALSE
-	if(rogue_grab_bad_luck(4))
+	if(rogue_grab_bad_luck(rogue_value("grab_badluck_shove")))
 		return FALSE
 	if(body_position != STANDING_UP)
 		to_chat(src, span_warning("I must stand.."))
@@ -438,6 +472,9 @@ GLOBAL_LIST_INIT(rogue_zone_names, list(
 			to_chat(src, span_warning("I must be above them."))
 			return FALSE
 		return rogue_grab_pin(grip, values)
+	// Azure Peak rolls bad luck a second time before shoving a standing foe down.
+	if(rogue_grab_bad_luck(rogue_value("grab_badluck_shove")))
+		return FALSE
 	adjust_stamina_loss(rand(ROGUE_GRAB_SHOVE_COST_MIN, ROGUE_GRAB_SHOVE_COST_MAX))
 	if(target.has_status_effect(/datum/status_effect/rogue_compliance) || prob(rogue_formula_value(ROGUE_FORMULA_GRAB_CHANCE, values)))
 		target.visible_message(span_danger("[src] shoves [target] to the ground!"), span_userdanger("[src] shoves me to the ground!"), span_hear("I hear a sickening sound of pugilism!"), COMBAT_MESSAGE_RANGE)
@@ -470,7 +507,7 @@ GLOBAL_LIST_INIT(rogue_zone_names, list(
 
 /mob/living/carbon/human/proc/rogue_grab_disarm(obj/item/hand_item/rogue_grab/grip)
 	var/mob/living/target = grip.grabbed
-	if(rogue_grab_bad_luck(4))
+	if(rogue_grab_bad_luck(rogue_value("grab_badluck_disarm")))
 		return FALSE
 	var/obj/item/held_item = target.get_item_for_held_index(grip.zone == "l_hand" ? LEFT_HANDS : RIGHT_HANDS)
 	adjust_stamina_loss(rand(ROGUE_GRAB_DISARM_COST_MIN, ROGUE_GRAB_DISARM_COST_MAX))
@@ -484,7 +521,11 @@ GLOBAL_LIST_INIT(rogue_zone_names, list(
 	var/chance = rogue_formula_value(ROGUE_FORMULA_GRAB_DISARM_CHANCE, values)
 	rogue_mark_in_combat()
 	if(prob(chance))
-		target.dropItemToGround(held_item)
+		// Azure Peak: what cannot leave the hand (dropItemToGround() fails) stays with its holder.
+		if(!target.dropItemToGround(held_item))
+			target.visible_message(span_warning("[src] tries to take [held_item] from [target]'s hand, but can't pry it away!"), span_userdanger("[src] tries to take [held_item] from my hand, but I keep my grip!"), span_hear("I hear a sickening sound of pugilism!"), COMBAT_MESSAGE_RANGE)
+			stop_pulling()
+			return FALSE
 		stop_pulling()
 		put_in_active_hand(held_item)
 		target.visible_message(span_danger("[src] takes [held_item] from [target]'s hand!"), span_userdanger("[src] takes [held_item] from my hand!"), span_hear("I hear a sickening sound of pugilism!"), COMBAT_MESSAGE_RANGE)
@@ -493,7 +534,9 @@ GLOBAL_LIST_INIT(rogue_zone_names, list(
 		log_combat(src, target, "took [held_item] from")
 		return TRUE
 	if(prob(chance + ROGUE_GRAB_DISARM_DROP_BONUS))
-		target.dropItemToGround(held_item)
+		if(!target.dropItemToGround(held_item))
+			target.visible_message(span_warning("[src] tries to disarm [target] of [held_item], but can't pry it away!"), span_userdanger("[src] tries to disarm me of [held_item], but I keep my grip!"), span_hear("I hear a sickening sound of pugilism!"), COMBAT_MESSAGE_RANGE)
+			return FALSE
 		target.visible_message(span_danger("[src] disarms [target] of [held_item]!"), span_userdanger("[src] disarms me of [held_item]!"), span_hear("I hear a sickening sound of pugilism!"), COMBAT_MESSAGE_RANGE)
 		target.Stun(ROGUE_GRAB_DISARM_STUN)
 		log_combat(src, target, "disarmed [held_item] from")
@@ -509,7 +552,7 @@ GLOBAL_LIST_INIT(rogue_zone_names, list(
 	if(buckled)
 		to_chat(src, span_warning("I can't do this while buckled!"))
 		return FALSE
-	if(!ishuman(target) || grab_state < GRAB_AGGRESSIVE || !combat_mode || rogue_grab_bad_luck(4))
+	if(!ishuman(target) || grab_state < GRAB_AGGRESSIVE || !combat_mode || rogue_grab_bad_luck(rogue_value("grab_badluck_hostage")))
 		return FALSE
 	if(target.combat_mode)
 		to_chat(src, span_warning("[target] is too prepared for combat to be taken hostage."))

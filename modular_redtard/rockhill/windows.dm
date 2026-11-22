@@ -1,5 +1,5 @@
 /// Ratwood's structures have no armor: a door basher's blow goes through all of it (PENETRATE_ARMOUR() of 100).
-#define ROCKHILL_WINDOW_BASH_PENETRATION 100
+#define ROCKHILL_WINDOW_BASH_PENETRATION rogue_value("rockhill_blow_penetration")
 
 /obj/structure/roguewindow
 	max_integrity = 200

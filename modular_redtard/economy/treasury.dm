@@ -12,7 +12,6 @@
  */
 SUBSYSTEM_DEF(rogue_treasury)
 	name = "Treasury"
-	wait = ROGUE_TREASURY_TICK
 	runlevels = RUNLEVEL_GAME
 	dependencies = list(
 		/datum/controller/subsystem/mapping,
@@ -36,7 +35,8 @@ SUBSYSTEM_DEF(rogue_treasury)
 	/// Below this the Crown buys nothing at the stockpile (Ratwood stockpile_purchase_floor).
 	var/stockpile_purchase_floor = 1000
 	/// Share of a good's limit the Crown keeps before it ships the surplus abroad; sequestration lowers it (Ratwood autoexport_percentage).
-	var/autoexport_share = ROGUE_AUTOEXPORT_SHARE
+	/// Set in Initialize(): a rogue_value() cannot be a var default.
+	var/autoexport_share = 0
 	/// Mammons of goods the realm traded through the stockpile (Ratwood economic_output).
 	var/economic_output = 0
 	var/total_export = 0
@@ -59,13 +59,16 @@ SUBSYSTEM_DEF(rogue_treasury)
 	if(!rogue_economy_enabled())
 		can_fire = FALSE
 		return SS_INIT_NO_NEED
+	// A rogue_value() cannot be a compile-time default: the tick and the export share are read here, before the first fire.
+	wait = ROGUE_TREASURY_TICK
+	autoexport_share = ROGUE_AUTOEXPORT_SHARE
 	stockpile_purchase_floor = CONFIG_GET(number/rogue_stockpile_floor)
 	tax_rates[ROGUE_TAX_IMPORT] = CONFIG_GET(number/rogue_import_tariff) / 100
 	tax_rates[ROGUE_TAX_CONTRACT] = rogue_value("treasury_contract_levy") / 100
 	auto_import_floor = round(rogue_value("trade_auto_import_purse_floor"))
 	crown_purse = new("Crown's Purse")
 	funds[ROGUE_FUND_CROWN] = crown_purse
-	mint(crown_purse, CONFIG_GET(number/rogue_crown_purse) + rand(500, 1500), "Treasury of the realm")
+	mint(crown_purse, CONFIG_GET(number/rogue_crown_purse) + rand(rogue_value("treasury_initialize_roll_min"), rogue_value("treasury_initialize_roll_max")), "Treasury of the realm")
 	for(var/datum/bank_account/rogue/fund/fund_type as anything in subtypesof(/datum/bank_account/rogue/fund))
 		var/datum/bank_account/rogue/fund/fund = new fund_type(initial(fund_type.account_holder))
 		funds[fund.fund_id] = fund

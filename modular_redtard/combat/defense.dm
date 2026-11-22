@@ -204,7 +204,15 @@ GLOBAL_LIST_INIT(rogue_bind_catches, list(
 	if(attack_intent?.sharpness_penalty)
 		attacker_weapon?.rogue_dull(attack_intent.sharpness_penalty, attacker)
 	if(weapon_parry)
-		used_weapon.take_damage((ROGUE_PARRY_INTEGRITY_DAMAGE + (strong_attack ? ROGUE_STRONG_INTEGRITY_WEAR : 0)) * rogue_tempo_factor("parry_wear"), BRUTE, "", FALSE)
+		// Azure Peak parry.dm: a bare-handed attacker wears the parrying weapon by its own number, untouched by tempo; heavy
+		// blows chew through a shield by the higher of the attacking intent's demolition and armor wear factors, fists by the
+		// wear factor alone.
+		var/wear = (attacker_weapon ? ROGUE_PARRY_INTEGRITY_DAMAGE : rogue_value("parry_unarmed_attacker_wear")) + (strong_attack ? ROGUE_STRONG_INTEGRITY_WEAR : 0)
+		if(istype(used_weapon, /obj/item/rogueweapon/shield) && attack_intent)
+			wear *= attacker_weapon ? max(attack_intent.demolition_mod, attack_intent.intent_intdamage_factor) : attack_intent.intent_intdamage_factor
+		if(attacker_weapon)
+			wear *= rogue_tempo_factor("parry_wear")
+		used_weapon.take_damage(wear, BRUTE, "", FALSE)
 		if(used_weapon.get_sharpness())
 			used_weapon.rogue_dull(ROGUE_BLADE_PARRY_WEAR + (strong_attack ? ROGUE_BLADE_STRONG_WEAR : 0), src)
 	else
@@ -254,7 +262,7 @@ GLOBAL_LIST_INIT(rogue_bind_catches, list(
 		to_chat(src, span_boldwarning("There's nowhere to dodge to!"))
 		return FALSE
 	if(!rogue_armor_trained() || legcuffed)
-		Knockdown(1)
+		Knockdown(rogue_value("human_rogue_attempt_dodge_knockdown"))
 		drop_all_held_items()
 		to_chat(src, span_warning("I can't dodge in such unfitting armor! I'm knocked down!"))
 		return FALSE

@@ -186,6 +186,14 @@
 	slices_num = 3
 	rogue_faretype = ROGUE_FARE_POOR
 
+/obj/item/reagent_containers/food/snacks/grown/bakersroot
+	food_reagents = list(/datum/reagent/toxin/bad_food = 6)
+	foodtypes = VEGETABLES
+	tastes = list("earthy starch" = 1)
+	eat_effect = /datum/status_effect/rogue_food/bad_meal
+	bitesize = 1
+	rogue_faretype = ROGUE_FARE_POOR
+
 /obj/item/reagent_containers/food/snacks/grown/carrot
 	tastes = list("carrot" = 1)
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/preserved/carrot_baked

@@ -265,8 +265,8 @@
 #define ROGUE_FOV_BEHIND (1<<2)
 /// How far the view reaches to one side of the facing, in degrees: open, with the back hidden, with that side hidden.
 #define ROGUE_FOV_SIDE 135
-#define ROGUE_FOV_SIDE_BEHIND 90
-#define ROGUE_FOV_SIDE_BLOCKED 45
+#define ROGUE_FOV_SIDE_BEHIND rogue_value("fov_side_behind")
+#define ROGUE_FOV_SIDE_BLOCKED rogue_value("fov_side_blocked")
 #define ROGUE_FOV_BEHIND_BRIGHTNESS rogue_value("fov_behind_brightness")
 #define ROGUE_FOV_BEHIND_SATURATION rogue_value("fov_behind_saturation")
 #define ROGUE_FOV_BEHIND_BLUR rogue_value("fov_behind_blur")

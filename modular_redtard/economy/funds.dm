@@ -248,7 +248,7 @@
 	playsound(src, ROGUE_SOUND_COIN_INSERT, 100, FALSE, -1)
 	update_appearance()
 	SStgui.update_uis(src)
-	if(prob(50))
+	if(prob(rogue_value("vaultbank_item_interaction_chance")))
 		say(pick(GLOB.rogue_jawbank_fed_lines))
 		playsound(src, ROGUE_SOUND_MACHINE_TALK, 100, FALSE, -1)
 	return ITEM_INTERACT_SUCCESS
@@ -278,11 +278,11 @@
 		playsound(src, ROGUE_SOUND_MACHINE_NO, 70, TRUE)
 		say("YOU'VE TAKEN ENOUGH.")
 		return
-	var/extorted = clamp(round(weapon.force * rand(60, 140) / 100), 1, bashable)
+	var/extorted = clamp(round(weapon.force * rand(rogue_value("vaultbank_knock_coins_loose_roll_min"), rogue_value("vaultbank_knock_coins_loose_roll_max")) / 100), 1, bashable)
 	spill(fund, extorted, "Vaultbank knock-loose")
 	visible_message(span_danger("[src] coughed up [extorted] mammon!"))
 	log_game("JAWBANK: [key_name(user)] knocked [extorted]m loose from [fund.account_holder]")
-	if(prob(50))
+	if(prob(rogue_value("vaultbank_knock_coins_loose_chance")))
 		say(pick(GLOB.rogue_jawbank_hit_lines))
 		playsound(src, ROGUE_SOUND_SEAL, 100, FALSE, -1)
 	hits_since_lump++
@@ -295,7 +295,7 @@
 	var/lump = min(round(lump_payout()), bashable)
 	spill(fund, lump, "Vaultbank knock-loose lump-sum")
 	visible_message(span_notice("[src] just spat up a total of [lump] mammon - <b>A lump sum!</b>"))
-	if(prob(50))
+	if(prob(rogue_value("vaultbank_knock_coins_loose_chance_2")))
 		say(pick(GLOB.rogue_jawbank_anguish_lines))
 		playsound(src, ROGUE_SOUND_JAWBANK_ANGUISH, 100, FALSE, -1)
 	alert_officers("Someone knocked a lump-sum loose from [src] at [alert_location]!")

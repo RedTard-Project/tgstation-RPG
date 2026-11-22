@@ -17,6 +17,9 @@ GLOBAL_DATUM(rogue_mechanics, /datum/rogue_mechanics)
 		CRASH("Unknown rogue value [id]")
 	return value.number
 
+/// For an id built at run time that may have no entry (rmb_<intent>_<factor>, vein_spread_<vein>, a type's tunable).
+/// The fallback means "none" (0, 1 or null) and is never a balance number: a number lives in the value files
+/// (check_mechanics.py rejects a number literal fallback other than 0 or 1).
 /proc/rogue_value_or(id, fallback)
 	var/datum/rogue_formula/value = rogue_mechanics().formulas[id]
 	return value?.is_value ? value.number : fallback
@@ -39,17 +42,27 @@ GLOBAL_DATUM(rogue_mechanics, /datum/rogue_mechanics)
 	for(var/special_type in subtypesof(/datum/special_intent))
 		var/datum/special_intent/special = new special_type
 		for(var/tunable in special.tunables)
-			var/id = "[special.value_key()]_[tunable]"
-			formulas[id] = new /datum/rogue_formula(id, "[special.vars[tunable] || 0]", "[special.name]: [tunable]. Times are in deciseconds.", null, TRUE)
+			declare_type_value("[special.value_key()]_[tunable]", special.vars[tunable] || 0, "[special.name]: [tunable]. Times are in deciseconds.")
 		qdel(special)
 	for(var/pattern_type in subtypesof(/datum/cleave_pattern))
 		var/datum/cleave_pattern/pattern = new pattern_type
-		formulas[pattern.value_key()] = new /datum/rogue_formula(pattern.value_key(), "[pattern.max_targets]", "Most extra targets of a cleave: [pattern.desc]", null, TRUE)
+		declare_type_value(pattern.value_key(), pattern.max_targets, "Most extra targets of a cleave: [pattern.desc]")
 		qdel(pattern)
 	load()
 
-/// The open value files of config/redtard/mechanics/values/, one per block, compiled into the build: their numbers are the
-/// defaults. A file literal cannot be built from a name, so a new file of the folder is listed here too (CI checks both agree).
+/// A value made from a type: a special's tunable or a cleave pattern's target limit. The compiled-in specials.txt declares
+/// it already (10 in the open repository), and that stays its default; the type's own number is used only for an id the
+/// file lacks, which check_mechanics.py reports. The type numbers move out of the types in K2a.
+/datum/rogue_mechanics/proc/declare_type_value(id, number, desc)
+	var/datum/rogue_formula/declared = formulas[id]
+	if(declared?.is_value)
+		return
+	formulas[id] = new /datum/rogue_formula(id, "[number]", desc, null, TRUE)
+
+/// The open value files of config/redtard/mechanics/values/, one per block, compiled into the build: their numbers (all 10
+/// in the open repository) are the defaults, the private files of the same name hold the real ones. A file literal cannot
+/// be built from a name, so a new file of the folder is listed here too (CI checks both agree). A private file is never
+/// written as a literal: a literal compiles it into the .rsc (CI checks that too).
 /proc/rogue_value_files()
 	return list(
 		"alchemy.txt" = 'config/redtard/mechanics/values/alchemy.txt',

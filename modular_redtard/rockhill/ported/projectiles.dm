@@ -70,7 +70,7 @@
 	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
 	icon_state = "musketball_proj"
 	damage = 30
-	armour_penetration = 90
+	armour_penetration = 4
 	range = 15
 	rogue_tile_time = 0.1
 	rogue_embed_chance = 100
@@ -84,9 +84,9 @@
 	name = "lead sphere"
 	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
 	icon_state = "musketball_proj"
-	damage = 80
-	armour_penetration = 90
-	range = 30
+	damage = 90
+	armour_penetration = 4
+	range = 7
 	rogue_tile_time = 0.1
 	rogue_embed_chance = 100
 	rogue_bclass = "pierce"
@@ -427,21 +427,6 @@
 	rogue_drop_type = /obj/item/ammo_casing/caseless/rogue/heavy_bolt/holy
 	rogue_poison_type = /datum/reagent/water/blessed
 	rogue_poison_amount = 5
-
-/obj/projectile/bullet/reusable/heavy_bolt/tempest
-	name = "tempest bolt"
-	desc = ""
-	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
-	icon_state = "bolt_proj"
-	damage = 25
-	armour_penetration = 4
-	range = 30
-	rogue_tile_time = 0.5
-	rogue_embed_chance = 100
-	rogue_bclass = "pierce"
-	rogue_npc_damage_mult = 7
-	hitsound = 'modular_redtard/rockhill/sound/combat/hits/hi_bolt (1).ogg'
-	rogue_drop_type = /obj/item/ammo_casing/caseless/rogue/heavy_bolt/tempest
 
 /obj/projectile/bullet/reusable/sling_bullet/ancient
 	name = "ancient sling bullet"

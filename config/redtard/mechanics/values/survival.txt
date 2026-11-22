@@ -4,331 +4,519 @@
 # --- Night fatigue and coffee (survival/fatigue.dm, survival/soups.dm caffeine)
 
 # Movement slowdown of the third step of night fatigue, Exhausted (Ratwood SLEEP_TIER3 multiplicative_slowdown).
-survival_exhausted_slowdown = 1.25
+survival_exhausted_slowdown = 10
 
 # Units of caffeine taken in that lift the second step of night fatigue, and every step with it (Ratwood caffeine: 20).
-survival_coffee_fatigued = 20
+survival_coffee_fatigued = 10
 
 # Units of caffeine taken in that lift the third step of night fatigue, and every step with it (Ratwood caffeine: 40).
-survival_coffee_exhausted = 40
+survival_coffee_exhausted = 10
 
 # Dream points coffee gives when it lifts the first step of night fatigue (Ratwood sleep_adv_points += 2).
-survival_coffee_points_tired = 2
+survival_coffee_points_tired = 10
 
 # Dream points coffee gives when it lifts the second step (Ratwood sleep_adv_points += 4).
-survival_coffee_points_fatigued = 4
+survival_coffee_points_fatigued = 10
 
 # Dream points coffee gives when it lifts the third step (Ratwood sleep_adv_points += 6).
-survival_coffee_points_exhausted = 6
+survival_coffee_points_exhausted = 10
 
 # --- Dishes (survival/kneading.dm)
 
 # Deciseconds of packing fresh cheese into a cloth to begin a cheese wheel (Ratwood 3 SECONDS).
-survival_cheese_pack_time = 30
+survival_cheese_pack_time = 10
 
 # Deciseconds a closed cheese wheel matures before it is a wheel of cheese (Ratwood 5 MINUTES).
-survival_cheese_ageing = 3000
+survival_cheese_ageing = 10
 
 # Units of water that wash rice (Ratwood wet(): 10).
 survival_rice_water = 10
 
 # Deciseconds of washing rice with water (Ratwood 2 SECONDS).
-survival_rice_wash_time = 20
+survival_rice_wash_time = 10
 
 # Deciseconds of kneading wet rice into washed rice (Ratwood 3 SECONDS).
-survival_rice_knead_time = 30
+survival_rice_knead_time = 10
 
 # --- Fired pottery (crafting/kiln_quality.dm; Ratwood clay.dm apply_pottery_quality(), ceramics.dm pottery_throw_shatter())
 
 # Price factor of crude fired pottery (pottery tier 0).
-survival_kiln_price_crude = 0.4
+survival_kiln_price_crude = 10
 
 # Price factor of poor fired pottery (pottery tier 1).
-survival_kiln_price_poor = 0.6
+survival_kiln_price_poor = 10
 
 # Price factor of plain fired pottery (pottery tier 2).
-survival_kiln_price_plain = 0.8
+survival_kiln_price_plain = 10
 
 # Price factor of fine fired pottery (pottery tier 3).
-survival_kiln_price_fine = 1.1
+survival_kiln_price_fine = 10
 
 # Price factor of flawless fired pottery (pottery tier 4).
-survival_kiln_price_flawless = 1.2
+survival_kiln_price_flawless = 10
 
 # Price factor of masterwork fired pottery (pottery tier 5).
-survival_kiln_price_masterwork = 1.5
+survival_kiln_price_masterwork = 10
 
 # Percent chance that a fragile clay vessel shatters when thrown (Ratwood pottery_shatter_chance).
-survival_pottery_shatter_chance = 100
+survival_pottery_shatter_chance = 10
 
 # --- Water: fishing, swimming, washing, wood bins, thirst (rockhill/fishing.dm, rockhill/swimming.dm, survival/washing.dm, survival/vessels.dm, survival/thirst.dm; block 4, B11; Ratwood turfs/open/water.dm, roguejobs/fisher, farming/bin.dm, hydration)
 
 # Tiles from the angler a fishing line reaches (Ratwood rod: range(user, 5)).
-fishing_cast_range = 5
+fishing_cast_range = 10
 
 # Deciseconds an unskilled angler waits for a bite (Ratwood rod: 120).
-fishing_cast_time = 120
+fishing_cast_time = 10
 
 # Deciseconds each rank of Fishing takes off the wait for a bite (Ratwood: 20).
-fishing_cast_time_per_rank = 20
+fishing_cast_time_per_rank = 10
 
 # Deciseconds the wait for a bite never goes below (Ratwood: 20).
-fishing_cast_time_min = 20
+fishing_cast_time_min = 10
 
 # Percent the chance of a bite loses without the Fishing skill, bait or not (Ratwood: 50).
-fishing_unskilled_penalty = 50
+fishing_unskilled_penalty = 10
 
 # Percent the chance of a bite loses at no rank, less fishing_skill_penalty_per_rank a rank (Ratwood 100 - (40 + rank x 10)).
-fishing_skill_penalty = 60
+fishing_skill_penalty = 10
 
 # Percent of that penalty each rank of Fishing takes off, none left at legendary (Ratwood: 10).
 fishing_skill_penalty_per_rank = 10
 
 # Deciseconds an unskilled angler has to pull away once something tugs the line (Ratwood: 30).
-fishing_bite_window = 30
+fishing_bite_window = 10
 
 # Deciseconds each rank of Fishing adds to that (Ratwood: 10).
 fishing_bite_window_per_rank = 10
 
 # Percent chance a reeled-in catch eats the bait, less fishing_bait_loss_per_rank a rank (Ratwood: 80).
-fishing_bait_loss_caught = 80
+fishing_bait_loss_caught = 10
 
 # Percent chance a fish that got away takes the bait, less fishing_bait_loss_per_rank a rank (Ratwood: 100).
-fishing_bait_loss_escaped = 100
+fishing_bait_loss_escaped = 10
 
 # Percent each rank of Fishing takes off losing the bait (Ratwood: 10).
 fishing_bait_loss_per_rank = 10
 
 # Fishing experience per point of intelligence for a creature pulled out of the water (Ratwood STAINT x 2).
-fishing_xp_creature = 2
+fishing_xp_creature = 10
 
 # Fishing experience per point of intelligence for a catch, rounded to two (Ratwood round(STAINT, 2)).
-fishing_xp_catch = 1
+fishing_xp_catch = 10
 
 # Fishing experience per point of intelligence for a cast without a bite (Ratwood STAINT / 2).
-fishing_xp_pity = 0.5
+fishing_xp_pity = 10
 
 # Weight of a legendary fish among the rarities (Ratwood gold = 1).
-fishing_rarity_legendary = 1
+fishing_rarity_legendary = 10
 
 # Weight of an ultra-rare fish (Ratwood ultra = 40).
-fishing_rarity_ultra = 40
+fishing_rarity_ultra = 10
 
 # Weight of a rare fish (Ratwood rare = 50).
-fishing_rarity_rare = 50
+fishing_rarity_rare = 10
 
 # Weight of a common fish (Ratwood com = 900).
-fishing_rarity_common = 900
+fishing_rarity_common = 10
 
 # Price factor of a legendary fish (Ratwood sellprice x 10).
 fishing_price_legendary = 10
 
 # Price factor of an ultra-rare fish (Ratwood sellprice x 4).
-fishing_price_ultra = 4
+fishing_price_ultra = 10
 
 # Price factor of a rare fish (Ratwood sellprice x 2).
-fishing_price_rare = 2
+fishing_price_rare = 10
 
 # Deciseconds a legendary fisher takes to set, empty or take up a crayfish cage (Ratwood get_skill_delay(rank, 1, 6) seconds).
 fishing_cage_deploy_fast = 10
 
 # Deciseconds an unskilled one takes (Ratwood: 6 seconds).
-fishing_cage_deploy_slow = 60
+fishing_cage_deploy_slow = 10
 
 # Deciseconds of putting bait into a crayfish cage (Ratwood 3 SECONDS).
-fishing_cage_bait_time = 30
+fishing_cage_bait_time = 10
 
 # Deciseconds a legendary fisher's baited cage takes to catch (Ratwood get_skill_delay(rank, 5, 40) seconds).
-fishing_cage_catch_fast = 50
+fishing_cage_catch_fast = 10
 
 # Deciseconds an unskilled fisher's baited cage takes (Ratwood: 40 seconds).
-fishing_cage_catch_slow = 400
+fishing_cage_catch_slow = 10
 
 # Fishing experience for taking a catch out of a cage (Ratwood add_sleep_experience(user, fishing, 20)).
-fishing_cage_xp = 20
+fishing_cage_xp = 10
 
 # Stamina a stroke out of deep water costs in light or no armour (Ratwood BASE_STAM_DRAIN 15).
-swim_drain = 15
+swim_drain = 10
 
 # Stamina a stroke costs in medium armour (Ratwood MEDIUM_ARMOR_PENALTY 20).
-swim_drain_medium = 20
+swim_drain_medium = 10
 
 # Stamina a stroke costs in heavy armour (Ratwood HEAVY_ARMOR_PENALTY 30).
-swim_drain_heavy = 30
+swim_drain_heavy = 10
 
 # The least stamina a stroke costs however good the swimmer (Ratwood MIN_STAM_DRAIN 2).
-swim_drain_min = 2
+swim_drain_min = 10
 
 # Stamina each rank of Swimming takes off a stroke (Ratwood STAM_PER_LEVEL 5).
-swim_drain_per_rank = 5
+swim_drain_per_rank = 10
 
 # Stamina a stroke costs over that in armour one is not trained to wear (Ratwood UNSKILLED_ARMOR_PENALTY 40).
-swim_drain_untrained = 40
+swim_drain_untrained = 10
 
 # Stamina the blessing of Abyssor takes off a stroke (Ratwood TRAIT_ABYSSOR_SWIM: 5).
-swim_abyssor_bonus = 5
+swim_abyssor_bonus = 10
 
 # Swimming experience a stroke gives per point of intelligence in light or no armour (Ratwood BASE_XP_GAIN 0.5).
-swim_xp = 0.5
+swim_xp = 10
 
 # Swimming experience a stroke gives per point of intelligence in medium armour (Ratwood MEDIUM_XP_GAIN 0.05).
-swim_xp_medium = 0.05
+swim_xp_medium = 10
 
 # Swimming experience a stroke gives per point of intelligence in heavy armour (Ratwood HEAVY_XP_GAIN 0.01).
-swim_xp_heavy = 0.01
+swim_xp_heavy = 10
 
 # Deciseconds a swimmer out of stamina is held fast, and then knocked down (Ratwood Immobilize(30), Knockdown(30)).
-swim_exhausted_stun = 30
+swim_exhausted_stun = 10
 
 # Deciseconds after being held fast that the exhausted swimmer goes under (Ratwood 1 SECONDS).
 swim_exhausted_delay = 10
 
 # Burn the cursed of Abyssor take on touching water (Ratwood TRAIT_CURSE_ABYSSOR: 25).
-swim_cursed_burn = 25
+swim_cursed_burn = 10
 
 # Kelvin cold water takes off a body for each tile waded into (Ratwood: 5).
-swim_cold_chill = 5
+swim_cold_chill = 10
 
 # Kelvin cold water never chills a body below (Ratwood: 10 over its first cold level; here the TG cold damage limit, 270).
-swim_cold_floor = 270
+swim_cold_floor = 10
 
 # Percent chance a walking wader picks up a leech on a bog tile (Ratwood swamp: 3).
-leech_swamp_chance = 3
+leech_swamp_chance = 10
 
 # Percent chance a running wader picks up a leech on a bog tile (Ratwood swamp: 6).
-leech_swamp_run_chance = 6
+leech_swamp_run_chance = 10
 
 # Percent chance a sneaking wader picks up a leech on a bog tile (Ratwood swamp: 1).
-leech_swamp_sneak_chance = 1
+leech_swamp_sneak_chance = 10
 
 # Percent chance a walking wader picks up a leech on a deep bog tile (Ratwood swamp/deep: 6).
-leech_deep_chance = 6
+leech_deep_chance = 10
 
 # Percent chance a running wader picks up a leech on a deep bog tile (Ratwood swamp/deep: 12).
-leech_deep_run_chance = 12
+leech_deep_run_chance = 10
 
 # Percent chance a sneaking wader picks up a leech on a deep bog tile (Ratwood swamp/deep: 2).
-leech_deep_sneak_chance = 2
+leech_deep_sneak_chance = 10
 
 # Percent chance washing in a bog or a sewer leaves a leech on the washer (Ratwood prob(20)).
-leech_wash_chance = 20
+leech_wash_chance = 10
 
 # Brute, burn and toxins the healing hot spring mends at a time, and twice that of breath (Ratwood heal_amount 20).
-thermal_heal = 20
+thermal_heal = 10
 
 # Deciseconds between the mendings of the healing hot spring (Ratwood heal_interval 5 SECONDS).
-thermal_heal_interval = 50
+thermal_heal_interval = 10
 
 # Deciseconds of washing oneself or a thing in water, a hot spring or a wood bin (Ratwood 3 SECONDS).
-wash_time = 30
+wash_time = 10
 
 # Kelvin washing in cold water takes off a body, never below swim_cold_floor (Ratwood: 75).
-wash_cooling = 75
+wash_cooling = 10
 
 # Kelvin a bath or a hot spring warms a cold body or cools a hot one, towards the normal (Ratwood: 75).
-wash_bath_warmth = 75
+wash_bath_warmth = 10
 
 # Deciseconds of each soak of a relaxing bath (Ratwood 105, like the campfire).
-bath_soak_time = 105
+bath_soak_time = 10
 
 # Soaks a relaxing bath takes to lift a step of night fatigue (Ratwood soak_threshold 12, two minutes).
-bath_soak_goal = 12
+bath_soak_goal = 10
 
 # Soaks a bath starts over from after lifting one of several steps of fatigue (Ratwood soak_count = 3).
-bath_soak_restart = 3
+bath_soak_restart = 10
 
 # Healing a second of a soak (Ratwood buff/healing healing_on_tick 1).
-bath_heal = 1
+bath_heal = 10
 
 # Healing a second of a soak for the faithful of Eora and Baotha (Ratwood buff_strength 2).
-bath_heal_blessed = 2
+bath_heal_blessed = 10
 
 # Energy each soak gives back (Ratwood energy_add(100)).
-bath_energy = 100
+bath_energy = 10
 
 # Dream points a soak gives when it lifts a step of fatigue (Ratwood sleep_adv_points += 3).
-bath_dream_points = 3
+bath_dream_points = 10
 
 # Triumphs a soak gives when it lifts a step of fatigue (Ratwood adjust_triumphs(1)).
-bath_triumphs = 1
+bath_triumphs = 10
 
 # Cleanings the herbal soap of Ratwood lasts (Ratwood uses 100).
-soap_uses = 100
+soap_uses = 10
 
 # Deciseconds herbal soap takes to clean a thing (Ratwood cleanspeed 20).
-soap_clean_time = 20
+soap_clean_time = 10
 
 # Deciseconds of scrubbing a bather with soap (Ratwood do_after 50).
-soap_scrub_time = 50
+soap_scrub_time = 10
 
 # Deciseconds one slipping on herbal soap is knocked down (Ratwood slippery 1 SECONDS).
 soap_slip = 10
 
 # Deciseconds of sweeping a tile with a broom (Ratwood do_after 30).
-broom_sweep_time = 30
+broom_sweep_time = 10
 
 # Units a wood bin holds (Ratwood create_reagents(600)).
-bin_volume = 600
+bin_volume = 10
 
 # Units of water a water bin of the map starts with (Ratwood roguebin/water: 500).
-bin_start_water = 500
+bin_start_water = 10
 
 # Units of water one wash in a wood bin takes (Ratwood: 5).
-bin_wash_water = 5
+bin_wash_water = 10
 
 # Kelvin washing in a wood bin takes off a body, never below swim_cold_floor (Ratwood: 50).
-bin_wash_cooling = 50
+bin_wash_cooling = 10
 
 # Percent chance per point of strength that a kick knocks a wood bin over (Ratwood STASTR x 8).
-bin_kick_chance = 8
+bin_kick_chance = 10
 
 # Tiles the water of a knocked-over wood bin splashes around (Ratwood chem_splash(loc, 2)).
-bin_splash_range = 2
+bin_splash_range = 10
 
 # Deciseconds of standing a knocked-over wood bin up (Ratwood do_after 30).
-bin_upright_time = 30
+bin_upright_time = 10
 
 # Units of water rain pours into a standing wood bin under the open sky a second (Ratwood gives a bin 100 units each time rain touches it).
-bin_rain_water = 1
+bin_rain_water = 10
 
 # The least hydration one who joins the round late starts with (Ratwood HYDRATION_LEVEL_START_MIN 500; those who begin the round start full).
-thirst_start_min = 500
+thirst_start_min = 10
 
 # The most hydration one who joins late starts with (Ratwood HYDRATION_LEVEL_START_MAX 600).
-thirst_start_max = 600
+thirst_start_max = 10
 
 # Hydration lost a second of life (Ratwood HUNGER_FACTOR 0.15 a Life tick of two seconds).
-thirst_drain = 0.075
+thirst_drain = 10
 
 # Factor of that loss in a body hotter than the TG heat damage limit (Ratwood: x 1.5 over its normal).
-thirst_hot_factor = 1.5
+thirst_hot_factor = 10
 
 # Factor of that loss for a hemophage (Ratwood: x 0.8).
-thirst_hemophage_factor = 0.8
+thirst_hemophage_factor = 10
 
 # Hydration lost a step (Ratwood Move(): 0.05).
-thirst_step = 0.05
+thirst_step = 10
 
 # Hydration lost a step over that when running (Ratwood: 0.1).
-thirst_run_step = 0.1
+thirst_run_step = 10
 
 # Hydration lost when throwing up (Ratwood vomit(): lost_nutrition 10).
 thirst_vomit = 10
 
 # Units of one mouthful from open water or a fountain (Ratwood drink_act(): 5).
-drink_sip = 5
+drink_sip = 10
 
 # Deciseconds of one mouthful (Ratwood 2.5 SECONDS).
-drink_sip_time = 25
+drink_sip_time = 10
 
 # Mouthfuls from open water before one has had enough (Ratwood: 40).
-drink_water_sips = 40
+drink_water_sips = 10
 
 # Mouthfuls from a fountain before one has had enough (Ratwood: 30).
-drink_fountain_sips = 30
+drink_fountain_sips = 10
 
 # Mouthfuls from the mana fountain before one has had enough (Ratwood: 25).
-drink_mana_sips = 25
+drink_mana_sips = 10
 
 # Units of mana potion in one mouthful from the mana fountain (Ratwood: 2).
-drink_mana_sip = 2
+drink_mana_sip = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list c)
+
+# How often one nose notices a smell (Ratwood SMELL_COOLDOWN).
+smell_cooldown = 10
+
+# How far a smell carries, and within what distance it is "unmistakable" or plain rather than "subtle".
+smell_normal_range = 10
+
+# How far a smell carries, and within what distance it is "unmistakable" or plain rather than "subtle".
+smell_strong_range = 10
+
+# How far a smell carries, and within what distance it is "unmistakable" or plain rather than "subtle".
+smell_range = 10
+
+# Ratwood cooking smells (temporary_pollution_emission of cooked_smell, pollution.dm smell_act()). How long fresh cooking smells, and how often it reaches the noses around.
+smell_interval = 10
+
+# Ratwood cooking smells (temporary_pollution_emission of cooked_smell, pollution.dm smell_act()). How long fresh cooking smells, and how often it reaches the noses around.
+smell_duration = 10
+
+# Ratwood nausea of a noble forced to eat food for the desperate while not starving.
+noble_poor_food_nausea = 10
+
+# Chance in percent of the picky eater's remark (Ratwood prob()).
+picky_remark_chance = 10
+
+# Pouring between vessels: the most measures in one go and the time of each (glass attack_obj()).
+pour_time = 10
+
+# Pouring between vessels: the most measures in one go and the time of each (glass attack_obj()).
+pour_rounds = 10
+
+# Time to fill a bowl from a pot (pot attackby()).
+bowl_fill_time = 10
+
+# A spoonful from a bowl: how much and how long (bowl attackby()).
+spoon_time = 10
+
+# A spoonful from a bowl: how much and how long (bowl attackby()).
+spoon_sip = 10
+
+# Ratwood vessels and water (code/modules/reagents/reagent_containers/glass.dm, turfs/open/water.dm, structures/well.dm). Water a vessel takes from open water at once, and the time it takes (turf/open/water attackby()).
+water_fill_time = 10
+
+# Ratwood vessels and water (code/modules/reagents/reagent_containers/glass.dm, turfs/open/water.dm, structures/well.dm). Water a vessel takes from open water at once, and the time it takes (turf/open/water attackby()).
+water_fill = 10
+
+# Servings of filling a pie bottom takes before its roof.
+pie_fillings = 10
+
+# Milk one pinch of salt turns salted, salted milk one stick of butter takes, salted milk one fresh cheese takes.
+milk_per_cheese = 10
+
+# Milk one pinch of salt turns salted, salted milk one stick of butter takes, salted milk one fresh cheese takes.
+milk_per_butter = 10
+
+# Milk one pinch of salt turns salted, salted milk one stick of butter takes, salted milk one fresh cheese takes.
+milk_per_salt = 10
+
+# Water flour takes to become wet flour.
+flour_water = 10
+
+# Deep frying in tallow: the time and the tallow one fry takes (DEEP_FRY_TIME, OIL_CONSUMED).
+deep_fry_oil = 10
+
+# Deep frying in tallow: the time and the tallow one fry takes (DEEP_FRY_TIME, OIL_CONSUMED).
+deep_fry_time = 10
+
+# Time to put an ingredient into the pot, or fat to melt, before the cook's skill.
+stew_step = 10
+
+# Water one ingredient takes at once, and the last unit it takes when the stew is done (VOLUME_PER_STEW_COOK, _AFTER).
+stew_water_after = 10
+
+# Water one ingredient takes at once, and the last unit it takes when the stew is done (VOLUME_PER_STEW_COOK, _AFTER).
+stew_water = 10
+
+# A pot boils and takes stew ingredients from this temperature (MIN_STEW_TEMPERATURE).
+stew_temperature = 10
+
+# Ratwood pot on the hearth (code/game/objects/lighting/rogue_fires.dm, modular/Neu_Food/code/recipes/stew_recipes.dm). The temperature a hearth heats its pot towards, and how much of the gap one round closes (try_cook()).
+hearth_heat_coeff = 10
+
+# Ratwood pot on the hearth (code/game/objects/lighting/rogue_fires.dm, modular/Neu_Food/code/recipes/stew_recipes.dm). The temperature a hearth heats its pot towards, and how much of the gap one round closes (try_cook()).
+hearth_heat = 10
+
+# Dirty water: nausea and toxins per tick to whoever drinks it without a strong stomach (water/gross on_mob_life()).
+gross_water_toxin = 10
+
+# Dirty water: nausea and toxins per tick to whoever drinks it without a strong stomach (water/gross on_mob_life()).
+gross_water_nausea = 10
+
+# The most jitter a caffeine overdose builds up.
+caffeine_jitter_max = 10
+
+# Jitter per tick of a caffeine overdose (Ratwood Jitter()).
+caffeine_jitter = 10
+
+# Chance in percent per tick of a heart attack from a caffeine overdose.
+caffeine_heart_chance = 10
+
+# Energy caffeine gives per tick (caffeine on_mob_life()).
+caffeine_energy = 10
+
+# Blood every Ratwood soup gives per tick to someone below normal blood (soup on_mob_life()).
+soup_blood = 10
+
+# ...by this much a second (Ratwood campfire_stamina).
+fire_rest_warmth = 10
+
+# The rest by a fire warms a body this much colder than normal (Ratwood: under a set temperature)...
+fire_rest_cold = 10
+
+# Body heat of warming the hands at a brazier (Ratwood firebowl attack_right()).
+brazier_warmth = 10
+
+# Body heat of warming the hands at a campfire, fireplace or hearth (Ratwood hand warming), up to normal.
+hand_warmth = 10
+
+# Ratwood floor heat has a cap (floor.dm set_heat()).
+floor_heat_max = 10
+
+# Body heat the Ratwood fires give per heat level of the floor and Life tick (species.dm handle_environment()).
+floor_warmth_per_heat = 10
+
+# Ratwood nausea to TG disgust (a raw bite makes Ratwood vomit; TG's gross" is a bit less)."
+nausea_to_disgust = 10
+
+# The most steps of fatigue (Ratwood sleepytime).
+fatigue_max = 10
+
+# Share of the cook's intelligence washing and kneading rice teaches (Ratwood adjust_experience(STAINT * share)).
+rice_experience = 10
+
+# Deciseconds before the timer fires in /datum/component/rogue_rot/check_rot().
+rot_check_rot_delay = 10
+
+# Deciseconds the action takes (do_after) in /obj/item/bedroll/attack_self().
+bedroll_attack_self_time = 10
+
+# Deciseconds the action takes (do_after) in /obj/structure/bed/rockhill/rogue/bedroll/attack_hand().
+bedroll_attack_hand_time = 10
+
+# Deciseconds of Sleeping() in /datum/component/rogue_sleeper/on_life().
+sleeper_on_life_sleeping_2 = 10
+
+# Deciseconds of Sleeping() in /datum/component/rogue_sleeper/on_life().
+sleeper_on_life_sleeping = 10
+
+# Ratwood handle_sleep(): a bodypart that bleeds at least this much a Life tick does not mend in sleep (get_bleed_rate()).
+sleep_bleed_limit = 10
+
+# Mattress wear per point of brute damage to the bed: it snaps at half the damage that breaks the frame.
+mattress_wear_per_damage = 10
+
+# Ratwood fallingas thresholds (carbon/life.dm handle_sleep()): Life ticks with closed eyes until sleep, on a bed and on the ground.
+fall_asleep_ground = 10
+
+# Ratwood fallingas thresholds (carbon/life.dm handle_sleep()): Life ticks with closed eyes until sleep, on a bed and on the ground.
+fall_asleep_bed = 10
+
+# Ratwood HYDRATION_LEVEL_*: the most, glad of it from, a little thirsty below, thirsty below, parched below.
+thirst_parched = 10
+
+# Ratwood HYDRATION_LEVEL_*: the most, glad of it from, a little thirsty below, thirsty below, parched below.
+thirst_thirsty = 10
+
+# Ratwood HYDRATION_LEVEL_*: the most, glad of it from, a little thirsty below, thirsty below, parched below.
+thirst_little = 10
+
+# Ratwood HYDRATION_LEVEL_*: the most, glad of it from, a little thirsty below, thirsty below, parched below.
+thirst_quenched = 10
+
+# Ratwood HYDRATION_LEVEL_*: the most, glad of it from, a little thirsty below, thirsty below, parched below.
+thirst_full = 10
+
+# Deciseconds the action takes (do_after) in /obj/machinery/light/rogue/campfire/rest_by_fire().
+campfire_rest_by_fire_time = 10
+
+# Percent chance in /mob/living/carbon/human/rogue_bath_soak().
+human_rogue_bath_soak_chance_2 = 10
+
+# Percent chance in /mob/living/carbon/human/rogue_bath_soak().
+human_rogue_bath_soak_chance = 10
+
+# A helmet of this stab armour or more spoils a soak, as body armour does (Ratwood relaxing_bath()).
+bath_helmet_stab = 10

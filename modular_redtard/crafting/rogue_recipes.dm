@@ -9,7 +9,7 @@
 /// and craft experience for the skill on success.
 
 /// Ratwood's tries per craft (construct_item(): 100 one-second do_afters).
-#define ROGUE_CRAFT_TRIES 100
+#define ROGUE_CRAFT_TRIES rogue_value("craft_tries")
 
 /datum/crafting_recipe/roguetown
 	abstract_type = /datum/crafting_recipe/roguetown

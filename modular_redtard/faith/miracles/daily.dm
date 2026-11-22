@@ -40,7 +40,7 @@
 	var/amount = max(caster.rogue_skill_rank(/datum/attribute/skill/magic/holy), 1) * water_per_rank
 	while(!QDELETED(vessel) && vessel.reagents && !vessel.reagents.holder_full() && do_after(caster, trickle_time, target = vessel))
 		vessel.reagents.add_reagent(/datum/reagent/water, amount)
-		if(prob(80))
+		if(prob(rogue_value("orison_water_pour_chance")))
 			playsound(caster, 'sound/effects/slosh.ogg', 30, TRUE)
 
 /// Ratwood blessed_food (acolyte/eora.dm): a blessed dish heals whoever eats of it - but its blesser - the better, the finer
