@@ -120,17 +120,22 @@
 /mob/living/carbon/human/proc/rogue_complex_pain()
 	. = 0
 	var/adrenaline = HAS_TRAIT(src, TRAIT_ADRENALINE_RUSH)
+	// Azure Peak BURN_PAIN_WEIGHT: a burn hurts less than a bruise of the same damage. Limbs that are not flesh (prostheses)
+	// do not hurt at all.
+	var/burn_weight = rogue_value("pain_burn_weight")
 	for(var/obj/item/bodypart/limb as anything in bodyparts)
 		if(!(limb.biological_state & BIO_FLESH))
 			continue
 		var/most = limb.rogue_max_pain()
-		var/pain = (limb.brute_dam + limb.burn_dam) / limb.max_damage * most
+		var/pain = (limb.brute_dam + limb.burn_dam * burn_weight) / limb.max_damage * most
 		for(var/datum/wound/wound as anything in limb.wounds)
 			pain += wound.rogue_pain()
 		pain = min(pain, most)
 		if(adrenaline)
 			pain *= ROGUE_PAIN_ADRENALINE_SHARE
 		. += pain
+	// Ratwood physiology pain_mod: miracles that make the wounds hurt more (faith/miracles/effects.dm rogue_inflamed).
+	. *= rogue_pain_mult
 
 /// What pain the will bears, counted anew each time (Ratwood get_pain_threshold(), PR 2546): willpower times ten, five more
 /// willpower under adrenaline, the painless 250. The pain checks and the heart both read it.
@@ -186,10 +191,10 @@
 	emote("painmoan")
 	adjust_stutter(ROGUE_PAIN_STUTTER)
 
-/// Ratwood's paincrit(): the pain breaks one. A scream and a moment held, then the stun and the fall.
+/// Ratwood's paincrit(): the pain breaks one. A scream (Azure Peak's painscream) and a moment held, then the stun and the fall.
 /mob/living/carbon/human/proc/rogue_paincrit()
 	Immobilize(ROGUE_PAINCRIT_HOLD)
-	emote("paincrit", forced = TRUE)
+	emote("painscream", forced = TRUE)
 	adjust_stutter(ROGUE_PAIN_STUTTER)
 	addtimer(CALLBACK(src, PROC_REF(Stun), ROGUE_PAINCRIT_STUN), ROGUE_PAINCRIT_DELAY)
 	addtimer(CALLBACK(src, PROC_REF(Knockdown), ROGUE_PAINCRIT_STUN), ROGUE_PAINCRIT_DELAY)
@@ -240,8 +245,9 @@
 				Immobilize(ROGUE_PAIN_HOLD)
 				shake_camera(src, 2, 2)
 				adjust_stutter(ROGUE_PAIN_STUTTER)
+			// Azure Peak apply_slowdown(): the slowdown of a hit lasts longer the harder it is, within bounds.
 			if(damage > ROGUE_PAIN_SLOW_DAMAGE && !HAS_TRAIT(src, TRAIT_IGNOREDAMAGESLOWDOWN))
-				rogue_slowdown(clamp(damage / ROGUE_PAIN_SLOW_DAMAGE, ROGUE_PAIN_SLOW_MIN, ROGUE_PAIN_SLOW_MAX))
+				rogue_slow_for(clamp(damage * rogue_value("pain_slow_per_damage"), rogue_value("pain_slow_min_time"), rogue_value("pain_slow_max_time")))
 				shake_camera(src, 1, 1)
 		if(BURN)
 			if(damage > ROGUE_PAIN_BURN_CRY_DAMAGE && prob(damage))

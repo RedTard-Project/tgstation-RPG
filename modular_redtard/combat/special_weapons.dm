@@ -379,13 +379,13 @@
 	var/used = FALSE
 
 /obj/item/rogueweapon/halberd/blacksteel
-	selection = list(/datum/special_intent/polearm_backstep, /datum/special_intent/axe_swing, /datum/special_intent/greatsword_swing)
+	selection = list(/datum/special_intent/polearm_backstep, /datum/special_intent/axe_swing, /datum/special_intent/wave_swing/greatsword)
 
 /obj/item/rogueweapon/eaglebeak/blacksteel
 	selection = list(/datum/special_intent/polearm_backstep, /datum/special_intent/flail_sweep, /datum/special_intent/ground_smash)
 
 /obj/item/rogueweapon/greatsword/grenz/flamberge/blacksteel
-	selection = list(/datum/special_intent/greatsword_swing, /datum/special_intent/side_sweep, /datum/special_intent/limbguard)
+	selection = list(/datum/special_intent/wave_swing/greatsword, /datum/special_intent/side_sweep, /datum/special_intent/limbguard)
 
 /obj/item/rogueweapon/sword/long/blacksteel
 	selection = list(/datum/special_intent/side_sweep, /datum/special_intent/axe_swing, /datum/special_intent/piercing_lunge, /datum/special_intent/polearm_backstep, /datum/special_intent/flail_sweep)
@@ -497,6 +497,9 @@
 /obj/item/rogueweapon/shield
 	/// Parries with the skill of the weapon in the active hand (Ratwood's buckler and the captain's 'Order').
 	var/rogue_buckler = FALSE
+	/// The shield's own skill, taken before it first borrows one: items.txt may set the skill, so initial() is not it.
+	var/rogue_buckler_own_skill
+	var/rogue_buckler_skill_taken = FALSE
 
 /obj/item/rogueweapon/shield/buckler
 	rogue_buckler = TRUE
@@ -527,7 +530,8 @@
 
 /obj/item/rogueweapon/shield/proc/rogue_buckler_release(mob/user)
 	UnregisterSignal(user, list(COMSIG_MOB_SWAP_HANDS, COMSIG_MOB_EQUIPPED_ITEM, COMSIG_ROGUE_STRIKE_INCOMING, COMSIG_MOB_UNEQUIPPED_ITEM))
-	associated_skill = initial(associated_skill)
+	if(rogue_buckler_skill_taken)
+		associated_skill = rogue_buckler_own_skill
 
 /obj/item/rogueweapon/shield/proc/on_holder_hands(mob/living/source)
 	SIGNAL_HANDLER
@@ -541,9 +545,12 @@
 
 /// Ratwood bucklerskill(): the active hand's weapon's skill if it parries with a combat skill, else the shield skill.
 /obj/item/rogueweapon/shield/proc/rogue_buckler_skill(mob/living/holder, obj/item/leaving)
+	if(!rogue_buckler_skill_taken)
+		rogue_buckler_skill_taken = TRUE
+		rogue_buckler_own_skill = associated_skill
 	var/obj/item/mainhand = holder.get_active_held_item()
 	if(!mainhand || mainhand == src || mainhand == leaving || !mainhand.can_parry || !ispath(mainhand.associated_skill, /datum/attribute/skill/combat))
-		associated_skill = initial(associated_skill)
+		associated_skill = rogue_buckler_own_skill
 		return
 	associated_skill = mainhand.associated_skill
 

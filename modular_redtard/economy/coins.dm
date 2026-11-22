@@ -94,9 +94,9 @@
 /obj/item/roguecoin/interact(mob/user)
 	if(get_amount() > 1 || !base_type || !COOLDOWN_FINISHED(src, flip_cooldown))
 		return FALSE
-	COOLDOWN_START(src, flip_cooldown, 3 SECONDS)
+	COOLDOWN_START(src, flip_cooldown, rogue_value("roguecoin_interact_flip_cooldown"))
 	playsound(user, ROGUE_SOUND_COIN_DROP, 100, FALSE)
-	heads_tails = rigged_outcome ? rigged_outcome == 1 : prob(50)
+	heads_tails = rigged_outcome ? rigged_outcome == 1 : prob(rogue_value("roguecoin_interact_chance"))
 	rigged_outcome = 0
 	user.visible_message(span_info("[user] flips the coin. [heads_tails ? "Heads" : "Tails"]!"))
 	update_appearance(UPDATE_ICON)
@@ -154,16 +154,16 @@
 	plural_name = "otavan marques"
 
 /// Ratwood's piles: 4 to 19 coins unless a number is given.
-/obj/item/roguecoin/copper/pile/Initialize(mapload, new_amount = rand(4, 19), merge = TRUE, list/mat_override, mat_amt = 1)
+/obj/item/roguecoin/copper/pile/Initialize(mapload, new_amount = rand(rogue_value("pile_initialize_roll_min"), rogue_value("pile_initialize_roll_max")), merge = TRUE, list/mat_override, mat_amt = 1)
 	return ..(mapload, new_amount, merge, mat_override, mat_amt)
 
-/obj/item/roguecoin/silver/pile/Initialize(mapload, new_amount = rand(4, 19), merge = TRUE, list/mat_override, mat_amt = 1)
+/obj/item/roguecoin/silver/pile/Initialize(mapload, new_amount = rand(rogue_value("pile_initialize_roll_min_2"), rogue_value("pile_initialize_roll_max_2")), merge = TRUE, list/mat_override, mat_amt = 1)
 	return ..(mapload, new_amount, merge, mat_override, mat_amt)
 
-/obj/item/roguecoin/gold/pile/Initialize(mapload, new_amount = rand(4, 19), merge = TRUE, list/mat_override, mat_amt = 1)
+/obj/item/roguecoin/gold/pile/Initialize(mapload, new_amount = rand(rogue_value("pile_initialize_roll_min_3"), rogue_value("pile_initialize_roll_max_3")), merge = TRUE, list/mat_override, mat_amt = 1)
 	return ..(mapload, new_amount, merge, mat_override, mat_amt)
 
-/obj/item/roguecoin/gilbranze/pile/Initialize(mapload, new_amount = rand(4, 19), merge = TRUE, list/mat_override, mat_amt = 1)
+/obj/item/roguecoin/gilbranze/pile/Initialize(mapload, new_amount = rand(rogue_value("pile_initialize_roll_min_4"), rogue_value("pile_initialize_roll_max_4")), merge = TRUE, list/mat_override, mat_amt = 1)
 	return ..(mapload, new_amount, merge, mat_override, mat_amt)
 
 /// Twenty mammons in silver for those who were ready at round start (Ratwood readyuppile).
@@ -171,7 +171,7 @@
 	return ..(mapload, new_amount, merge, mat_override, mat_amt)
 
 /// A virtue's purse: 8 to 12 zenarii (Ratwood virtuepile).
-/obj/item/roguecoin/gold/virtuepile/Initialize(mapload, new_amount = rand(8, 12), merge = TRUE, list/mat_override, mat_amt = 1)
+/obj/item/roguecoin/gold/virtuepile/Initialize(mapload, new_amount = rand(rogue_value("virtuepile_initialize_roll_min"), rogue_value("virtuepile_initialize_roll_max")), merge = TRUE, list/mat_override, mat_amt = 1)
 	return ..(mapload, new_amount, merge, mat_override, mat_amt)
 
 /// Coin kinds a machine pays out, largest first (Ratwood budget2change()).

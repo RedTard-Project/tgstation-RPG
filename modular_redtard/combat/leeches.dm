@@ -113,7 +113,7 @@
 			adjectives += pick("evil", "malevolent", "misanthropic")
 			descs += span_danger("This one is bursting with hatred!")
 		if(5)
-			if(prob(3))
+			if(prob(rogue_value("leech_rogue_leech_lore_chance")))
 				adjectives += pick("average", "ordinary", "boring")
 				descs += "This one is extremely boring to look at."
 		if(-INFINITY to 1)
@@ -121,9 +121,9 @@
 			descs += "<span class='dead'>This one yearns for nothing but death.</span>"
 		else
 			var/adjective_amount = 1
-			if(prob(5))
+			if(prob(rogue_value("leech_rogue_leech_lore_chance_2")))
 				adjective_amount = 3
-			else if(prob(30))
+			else if(prob(rogue_value("leech_rogue_leech_lore_chance_3")))
 				adjective_amount = 2
 			for(var/count in 1 to adjective_amount)
 				var/adjective = pick_weight(possible_adjectives)

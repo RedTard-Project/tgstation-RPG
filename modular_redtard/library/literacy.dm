@@ -31,5 +31,5 @@
 			experience = ROGUE_READ_XP_PAPER
 	if(experience <= 0)
 		return
-	TIMER_COOLDOWN_START(src, ROGUE_READING_XP_COOLDOWN, 1 SECONDS)
+	TIMER_COOLDOWN_START(src, ROGUE_READING_XP_COOLDOWN, rogue_value("human_rogue_try_reading_rogue_reading_xp_cooldown"))
 	rogue_adjust_experience(ROGUE_READING_SKILL, experience)

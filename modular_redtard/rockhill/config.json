@@ -105,6 +105,25 @@
 			"loadouts": true
 		},
 		{
+			"prefix": "/datum/special_intent/greatsword_swing",
+			"exact": true,
+			"to": "/datum/special_intent/wave_swing/greatsword",
+			"when_declared": true,
+			"note": "K2d2 (2026-11-22): the owner took Azure Peak's special of greatswords (wave_swing) in place of Ratwood's greatsword_swing."
+		},
+		{
+			"prefix": "/datum/special_intent/greatsword_swing/white_stag",
+			"exact": true,
+			"to": "/datum/special_intent/wave_swing/greatsword/white_stag",
+			"when_declared": true
+		},
+		{
+			"prefix": "/datum/special_intent/greatflail_swing",
+			"to": "/datum/special_intent/flail_sweep",
+			"when_declared": true,
+			"note": "K2d2 (2026-11-22): Azure Peak has no greatflail_swing; its greatflails (peasantwarflail, the gilded flail of Matthios among them) keep the flail_sweep of flails."
+		},
+		{
 			"prefix": "/obj/structure/curtain",
 			"rebase": "/obj/structure/rockhill/curtain",
 			"port": {
@@ -893,6 +912,7 @@
 					"/obj/item/gun/ballistic/revolver/grenadelauncher/bow": "/obj/item/gun/ballistic/rogue_launcher/bow",
 					"/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow": "/obj/item/gun/ballistic/rogue_launcher/crossbow",
 					"/obj/item/gun/ballistic/revolver/grenadelauncher/sling": "/obj/item/gun/ballistic/rogue_launcher/sling",
+					"/obj/item/gun/ballistic/firearm": "/obj/item/gun/ballistic/rogue_launcher/firearm",
 					"/obj/item/quiver": "/obj/item/rogue_quiver"
 				},
 				"graft_override_vars": {
@@ -1983,6 +2003,7 @@
 				"/obj/item/reagent_containers/glass/mortar"
 			]
 		},
+		"extra_types_file": "modular_redtard/rockhill/extra_items.txt",
 		"extra_types": [
 			"/obj/item/natural/rock/copper",
 			"/obj/item/natural/rock/tin",
@@ -2130,9 +2151,44 @@
 		},
 		"intents": {
 			"file": "intents.dm",
+			"icon": "modular_redtard/icons/mob/rogueintents.dmi",
 			"rename": {
 				"canparry": "parriable_intent",
 				"candodge": "dodgeable_intent"
+			},
+			"azure": {
+				"root": "../Azure-Peak-Fork",
+				"env": "REDTARD_AZURE_ROOT",
+				"sound_skip": [
+					"sound/misc/mat/"
+				],
+				"rename": {},
+				"items": {
+					"prefixes": [
+						"/obj/item/rogueweapon",
+						"/obj/item/gun"
+					],
+					"except": [
+						"/obj/item/rogueweapon/surgery",
+						"/obj/item/rogueweapon/scabbard",
+						"/obj/item/rogueweapon/pick",
+						"/obj/item/rogueweapon/hammer",
+						"/obj/item/rogueweapon/shovel",
+						"/obj/item/rogueweapon/tongs",
+						"/obj/item/rogueweapon/sickle",
+						"/obj/item/rogueweapon/scythe",
+						"/obj/item/rogueweapon/pitchfork",
+						"/obj/item/rogueweapon/thresher",
+						"/obj/item/rogueweapon/hoe",
+						"/obj/item/rogueweapon/spellbook",
+						"/obj/item/rogueweapon/handsaw",
+						"/obj/item/rogueweapon/chisel",
+						"/obj/item/rogueweapon/fishspear",
+						"/obj/item/rogueweapon/blowrod",
+						"/obj/item/rogueweapon/lordscepter",
+						"/obj/item/rogueweapon/woodstaff/aries"
+					]
+				}
 			},
 			"strings": [
 				"name",
@@ -2202,6 +2258,60 @@
 					"STATKEY_WIL": "ROGUE_STAT_WILLPOWER",
 					"STATKEY_SPD": "ROGUE_STAT_SPEED",
 					"STATKEY_LCK": "ROGUE_STAT_FORTUNE"
+				}
+			}
+		},
+		"tables": {
+			"private_dir": "config/redtard_private/mechanics",
+			"section": "port_rockhill.py",
+			"items": {
+				"file": "items.txt",
+				"dm": "items.dm",
+				"root": "/obj/item",
+				"note": "the numbers of the items of modular_redtard/rockhill/ported/items.dm (Ratwood's), rewritten on every run of the porter; an override goes below the end line (a later line of an entry wins).",
+				"fields": {
+					"max_integrity": "integrity",
+					"force": "force",
+					"rogue_force_wielded": "force_wielded",
+					"throwforce": "throw_force",
+					"armour_penetration": "penetration",
+					"intdamage_factor": "armor_wear_factor",
+					"unarmed_bonus": "unarmed_bonus",
+					"wdefense": "defense",
+					"wdefense_wbonus": "wielded_defense_bonus",
+					"minstr": "min_strength"
+				},
+				"later": {
+					"max_blade_int": "sharpness",
+					"sharpening_factor": "sharpening",
+					"spark_chance": "spark_chance",
+					"integrity_failure": "break_share",
+					"coverage": "shield_coverage",
+					"sellprice": "price"
+				}
+			},
+			"intents": {
+				"file": "intents.txt",
+				"root": "/datum/intent",
+				"note": "the numbers of the intents of modular_redtard/rockhill/ported/intents.dm (Azure Peak's where Azure has the intent, else Ratwood's), rewritten on every run of the porter; an override goes below the end line (a later line of an entry wins).",
+				"fields": {
+					"damfactor": "damage_factor",
+					"penfactor": "penetration_factor",
+					"clickcd": "click_delay",
+					"releasedrain": "stamina_cost",
+					"misscost": "miss_cost",
+					"reach": "reach",
+					"chargetime": "charge_time",
+					"chargedrain": "charge_drain",
+					"charging_slowdown": "charge_slowdown",
+					"swingdelay": "swing_delay",
+					"effective_range": "effective_range",
+					"sharpness_penalty": "sharpness_penalty",
+					"intent_intdamage_factor": "armor_wear_factor"
+				},
+				"later": {
+					"demolition_mod": "demolition",
+					"basetime": "aim_base_time"
 				}
 			}
 		},
@@ -2434,7 +2544,7 @@
 				"file": "redtard_logo.dmi",
 				"name": "logo",
 				"kind": "dmi",
-				"origin": "RedTard logo, Logo_480x480_.gif supplied by the project owner (2026-10-13), converted by gif_to_dmi.py of ai-skills (scripts/gif_to_dmi.py) --every 4"
+				"origin": "RedTard logo, first frame of Logo_480x480_.gif supplied by the project owner (2026-10-13), converted by gif_to_dmi.py of ai-skills (scripts/gif_to_dmi.py) --every 528; the moving title is lobby/rogue_lobby_title.webp"
 			}
 		]
 	},

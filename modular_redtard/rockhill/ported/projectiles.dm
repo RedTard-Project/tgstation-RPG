@@ -1,9 +1,6 @@
 /obj/projectile/bullet/bolt
 	parent_type = /obj/projectile/rogue_ammo
 
-/obj/projectile/bullet/firearm
-	parent_type = /obj/projectile/rogue_ammo
-
 /obj/projectile/bullet/reusable
 	parent_type = /obj/projectile/rogue_ammo/reusable
 
@@ -65,12 +62,28 @@
 	hitsound = 'modular_redtard/rockhill/sound/blank.ogg'
 	rogue_drop_type = /obj/item/ammo_casing/caseless/rogue/bolt/water
 
+/obj/projectile/bullet/firearm
+	parent_type = /obj/projectile/rogue_ammo
+	name = "PARENT SMOKEPOWDER PROJECTILE"
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
+	icon_state = "musketball_proj"
+	damage = 90
+	armour_penetration = 4
+	range = 7
+	rogue_tile_time = 0.1
+	rogue_embed_chance = 100
+	rogue_bclass = "pierce"
+	rogue_npc_damage_mult = 4
+	rogue_accuracy = 90
+	hitsound = 'modular_redtard/rockhill/sound/combat/hits/hi_arrow2.ogg'
+	rogue_drop_type = /obj/item/ammo_casing/caseless/bullet
+
 /obj/projectile/bullet/firearm/grapeshot
 	name = "grapeshot"
 	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
 	icon_state = "musketball_proj"
 	damage = 30
-	armour_penetration = 90
+	armour_penetration = 4
 	range = 15
 	rogue_tile_time = 0.1
 	rogue_embed_chance = 100
@@ -84,9 +97,9 @@
 	name = "lead sphere"
 	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
 	icon_state = "musketball_proj"
-	damage = 80
-	armour_penetration = 90
-	range = 30
+	damage = 90
+	armour_penetration = 4
+	range = 7
 	rogue_tile_time = 0.1
 	rogue_embed_chance = 100
 	rogue_bclass = "pierce"
@@ -94,6 +107,149 @@
 	rogue_accuracy = 90
 	hitsound = 'modular_redtard/rockhill/sound/combat/hits/hi_arrow2.ogg'
 	rogue_drop_type = /obj/item/ammo_casing/caseless/bullet/lead
+
+/obj/projectile/bullet/firearm/lead/runelock
+	name = "PARENT RUNELOCK PROJECTILE"
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
+	icon_state = "musketball_proj"
+	damage = 90
+	armour_penetration = 4
+	range = 12
+	rogue_tile_time = 0.6
+	rogue_embed_chance = 100
+	rogue_bclass = "pierce"
+	rogue_npc_damage_mult = 4
+	rogue_accuracy = 90
+	hitsound = 'modular_redtard/rockhill/sound/combat/hits/hi_bolt (2).ogg'
+	rogue_drop_type = /obj/item/ammo_casing/caseless/bullet/lead/runelock
+
+/obj/projectile/bullet/firearm/lead/runelock/blessed
+	name = "blessed sphere"
+	desc = "A small, perfectly round sphere crafted from pure silver. These munitions are forged by the finest Otavan smiths and blessed personally by the Grandmaster. Lethal against the undead, but also highly effective against other heretics."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
+	icon_state = "musketball_blessed"
+	damage = 120
+	armour_penetration = 0
+	range = 12
+	rogue_tile_time = 0.6
+	rogue_embed_chance = 100
+	rogue_bclass = "pierce"
+	rogue_npc_damage_mult = 4
+	rogue_accuracy = 90
+	hitsound = 'modular_redtard/rockhill/sound/combat/hits/hi_bolt (2).ogg'
+	rogue_drop_type = /obj/item/ammo_casing/caseless/bullet/lead/runelock/blessed
+
+/obj/projectile/bullet/firearm/lead/runelock/heavy
+	name = "heavy runed sphere"
+	desc = "You shoudnt be seeing this."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
+	icon_state = "musketball_runed"
+	damage = 100
+	armour_penetration = 4
+	range = 25
+	rogue_tile_time = 0.4
+	rogue_embed_chance = 100
+	rogue_bclass = "pierce"
+	rogue_npc_damage_mult = 4
+	rogue_accuracy = 90
+	hitsound = 'modular_redtard/rockhill/sound/combat/hits/hi_bolt (2).ogg'
+	rogue_drop_type = /obj/item/ammo_casing/caseless/bullet/lead/runelock/heavy
+
+/obj/projectile/bullet/firearm/lead/runelock/heavy/blessed
+	name = "heavy blessed runed sphere"
+	desc = "A large, perfectly round sphere crafted from pure silver. These munitions are forged by the finest Otavan smiths and blessed personally by the Grandmaster. The expanded runework nessesites firing it from a rifle."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
+	icon_state = "musketball_blessed"
+	damage = 240
+	armour_penetration = 0
+	range = 25
+	rogue_tile_time = 0.4
+	rogue_embed_chance = 100
+	rogue_bclass = "pierce"
+	rogue_npc_damage_mult = 4
+	rogue_accuracy = 90
+	hitsound = 'modular_redtard/rockhill/sound/combat/hits/hi_bolt (2).ogg'
+	rogue_drop_type = /obj/item/ammo_casing/caseless/bullet/lead/runelock/heavy/blessed
+
+/obj/projectile/bullet/firearm/lead/runelock/heavy/entropy
+	name = "entrophy sphere"
+	desc = "You feel lesser for even gazing at this."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
+	icon_state = "musketball_blessed"
+	damage = 120
+	armour_penetration = 4
+	range = 25
+	rogue_tile_time = 0.4
+	rogue_embed_chance = 100
+	rogue_bclass = "pierce"
+	rogue_npc_damage_mult = 4
+	rogue_accuracy = 90
+	hitsound = 'modular_redtard/rockhill/sound/combat/hits/hi_bolt (2).ogg'
+	rogue_drop_type = /obj/item/ammo_casing/caseless/bullet/lead/runelock/heavy/entropy
+
+/obj/projectile/bullet/firearm/lead/runelock/heavy/runed
+	name = "heavy runed sphere"
+	desc = "A large, perfectly round metal sphere covered in Psydonite runes. Lethal at high velocity."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
+	icon_state = "musketball_runed"
+	damage = 90
+	armour_penetration = 4
+	range = 25
+	rogue_tile_time = 0.4
+	rogue_embed_chance = 100
+	rogue_bclass = "pierce"
+	rogue_npc_damage_mult = 4
+	rogue_accuracy = 90
+	hitsound = 'modular_redtard/rockhill/sound/combat/hits/hi_bolt (2).ogg'
+	rogue_drop_type = /obj/item/ammo_casing/caseless/bullet/lead/runelock/heavy/runed
+
+/obj/projectile/bullet/firearm/lead/runelock/heavy/tracker
+	name = "mark"
+	desc = "You can't escape the hunters mark."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
+	icon_state = "musketball_silver"
+	damage = 80
+	armour_penetration = 4
+	range = 25
+	rogue_tile_time = 0.4
+	rogue_embed_chance = 100
+	rogue_bclass = "pierce"
+	rogue_npc_damage_mult = 4
+	rogue_accuracy = 90
+	hitsound = 'modular_redtard/rockhill/sound/combat/hits/hi_bolt (2).ogg'
+	rogue_drop_type = /obj/item/ammo_casing/caseless/bullet/lead/runelock/heavy/tracker
+
+/obj/projectile/bullet/firearm/lead/runelock/runed
+	name = "runed sphere"
+	desc = "A small, perfectly round metal sphere covered in Psydonite runes. Lethal at high velocity."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
+	icon_state = "musketball_runed"
+	damage = 45
+	armour_penetration = 4
+	range = 12
+	rogue_tile_time = 0.6
+	rogue_embed_chance = 100
+	rogue_bclass = "pierce"
+	rogue_npc_damage_mult = 4
+	rogue_accuracy = 90
+	hitsound = 'modular_redtard/rockhill/sound/combat/hits/hi_bolt (2).ogg'
+	rogue_drop_type = /obj/item/ammo_casing/caseless/bullet/lead/runelock/runed
+
+/obj/projectile/bullet/firearm/lead/silver
+	name = "silver sphere"
+	desc = "A small silver sphere. Softer than a lead bullet, but highly effective against the undead."
+	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
+	icon_state = "musketball_proj"
+	damage = 120
+	armour_penetration = 0
+	range = 7
+	rogue_tile_time = 0.1
+	rogue_embed_chance = 100
+	rogue_bclass = "pierce"
+	rogue_npc_damage_mult = 4
+	rogue_accuracy = 90
+	hitsound = 'modular_redtard/rockhill/sound/combat/hits/hi_arrow2.ogg'
+	rogue_drop_type = /obj/item/ammo_casing/caseless/bullet/lead/silver
 
 /obj/projectile/bullet/reusable/arrow
 	name = "arrow"
@@ -428,20 +584,20 @@
 	rogue_poison_type = /datum/reagent/water/blessed
 	rogue_poison_amount = 5
 
-/obj/projectile/bullet/reusable/heavy_bolt/tempest
-	name = "tempest bolt"
+/obj/projectile/bullet/reusable/heavy_bolt/lux
+	name = "lux projectile"
 	desc = ""
 	icon = 'modular_redtard/rockhill/icons/roguetown/weapons/ammo.dmi'
 	icon_state = "bolt_proj"
-	damage = 25
-	armour_penetration = 4
+	damage = 10
+	armour_penetration = 100
 	range = 30
-	rogue_tile_time = 0.5
+	rogue_tile_time = 0.3
 	rogue_embed_chance = 100
 	rogue_bclass = "pierce"
 	rogue_npc_damage_mult = 7
 	hitsound = 'modular_redtard/rockhill/sound/combat/hits/hi_bolt (1).ogg'
-	rogue_drop_type = /obj/item/ammo_casing/caseless/rogue/heavy_bolt/tempest
+	rogue_drop_type = /obj/item/ammo_casing/caseless/rogue/heavy_bolt/lux
 
 /obj/projectile/bullet/reusable/sling_bullet/ancient
 	name = "ancient sling bullet"

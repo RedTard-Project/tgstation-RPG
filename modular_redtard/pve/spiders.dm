@@ -126,7 +126,7 @@
 
 /obj/structure/spider/stickyweb/atom_deconstruct(disassembled = TRUE)
 	. = ..()
-	if(rogue_pve_ratwood && rogue_pve_silk && prob(50))
+	if(rogue_pve_ratwood && rogue_pve_silk && prob(rogue_value("stickyweb_atom_deconstruct_chance")))
 		new /obj/item/natural/silk(get_turf(src))
 
 /// Ratwood stickyweb/mirespider: the thin web the mire lurker's globs leave.

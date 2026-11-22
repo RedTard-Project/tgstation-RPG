@@ -48,6 +48,39 @@
 	rogue_pve_shot_style = ROGUE_PVE_SKIRMISHER
 	rogue_pve_ability_types = list(/datum/action/cooldown/mob_cooldown/rogue_pve/stomp)
 
+/// Ratwood's earthen crawler (summons/elemental/crawler.dm), not among the ported creatures: the small elemental a colossus's
+/// chunk breaks into. Its numbers come from pve.txt; it fights as the other elementals do and leaves elemental motes.
+/mob/living/simple_animal/hostile/retaliate/rogue/elemental/crawler
+	name = "earthen crawler"
+	icon = 'modular_redtard/rockhill/icons/mob/summonable/32x32.dmi'
+	icon_state = "crawler"
+	icon_living = "crawler"
+	icon_dead = "vvd"
+	rogue_can_dodge = TRUE
+	rogue_mob_intents = list(/datum/intent/simple/elemental_unarmed)
+	rogue_aggressive = TRUE
+
+/mob/living/simple_animal/hostile/retaliate/rogue/elemental/crawler/Initialize(mapload)
+	maxHealth = rogue_value("pve_crawler_health")
+	health = maxHealth
+	melee_damage_lower = rogue_value("pve_crawler_damage_min")
+	melee_damage_upper = rogue_value("pve_crawler_damage_max")
+	rogue_defprob = rogue_value("pve_crawler_defprob")
+	rogue_retreat_health = rogue_value("pve_crawler_retreat_health")
+	rogue_mob_stats = list(
+		ROGUE_STAT_STRENGTH = rogue_value("pve_crawler_strength"),
+		ROGUE_STAT_CONSTITUTION = rogue_value("pve_crawler_constitution"),
+		ROGUE_STAT_WILLPOWER = rogue_value("pve_crawler_willpower"),
+		ROGUE_STAT_SPEED = rogue_value("pve_crawler_speed"),
+	)
+	return ..()
+
+/mob/living/simple_animal/hostile/retaliate/rogue/elemental/crawler/death(gibbed)
+	. = ..()
+	var/turf/spot = drop_location()
+	for(var/i in 1 to rogue_value("pve_crawler_motes"))
+		new /obj/item/magic/elemental/mote(spot)
+
 // Fighters with special abilities.
 
 /mob/living/simple_animal/hostile/retaliate/rogue/troll/cave
@@ -137,9 +170,9 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/mirespider
 	rogue_pve_webwalker = TRUE
 
-/// Ratwood's lurker only spits (its mind has no melee) and leaves the biting to the mire crawlers that follow it; the
-/// crawlers' following is not ported, so here it closes in and bites (its 35-70 bite, "slow attacks, devastating
-/// consequences") and spits its glob from two tiles away and further.
+/// Ratwood's lurker only spits (its mind has no melee) and leaves the biting to the mire crawlers that follow it (they do
+/// since B12b, pve/vines.dm); here it also closes in and bites (its 35-70 bite, "slow attacks, devastating consequences")
+/// and spits its glob from two tiles away and further.
 /mob/living/simple_animal/hostile/rogue/mirespider_lurker
 	rogue_pve_webwalker = TRUE
 	rogue_pve_cocoons = TRUE

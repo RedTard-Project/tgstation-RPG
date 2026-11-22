@@ -222,3 +222,36 @@
 	name = "Dazed"
 	desc = "A hard blow left me reeling."
 	icon_state = "dazed"
+
+/// Slows one down for a time (Azure Peak apply_slowdown()), where rogue_slowdown() counts Ratwood's life ticks.
+/mob/living/proc/rogue_slow_for(duration)
+	if(duration > 0 && !HAS_TRAIT(src, TRAIT_STUNIMMUNE))
+		apply_status_effect(/datum/status_effect/rogue/slowed, duration)
+
+/// Azure Peak's critically wounded (debuff/critwounded, TRAIT_HIGHER_CMODE_DRAIN): an opened artery, a broken bone or the
+/// bottom of one's blood leave one short of breath; standing in combat mode drains energy faster until it wears off.
+/datum/status_effect/rogue/critwounded
+	id = "rogue_critwounded"
+	alert_type = /atom/movable/screen/alert/status_effect/rogue/critwounded
+	tick_interval = ROGUE_ENERGY_TICK_SECONDS SECONDS
+
+/datum/status_effect/rogue/critwounded/on_creation(mob/living/new_owner, set_duration)
+	base_duration = rogue_value("critwounded_duration")
+	return ..()
+
+/datum/status_effect/rogue/critwounded/tick(seconds_between_ticks)
+	if(!ishuman(owner) || !owner.combat_mode || owner.stat == DEAD)
+		return
+	var/mob/living/carbon/human/winded = owner
+	winded.rogue_energy_add(-rogue_value("critwounded_combat_drain") * seconds_between_ticks / ROGUE_ENERGY_TICK_SECONDS)
+
+/atom/movable/screen/alert/status_effect/rogue/critwounded
+	name = "Critically Dazed"
+	desc = "My body has taken a crippling blow, I feel increasingly sluggish, my head spins and my feet are unsteady. I must give myself tyme to recover from fighting, as being in a defensive stance is more exhausting."
+	icon = 'modular_redtard/combat/icons/rogue_critwounded.dmi'
+	icon_state = "critwounded"
+
+/// Puts on the critically wounded debuff (Azure Peak: only on one with a mind whose blood loss matters, for the blood).
+/mob/living/proc/rogue_critwound()
+	if(!has_status_effect(/datum/status_effect/rogue/critwounded))
+		apply_status_effect(/datum/status_effect/rogue/critwounded)

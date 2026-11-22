@@ -40,7 +40,7 @@ GLOBAL_LIST_INIT(rogue_kiln_prefixes, list("crude", "poor", null, "fine", "flawl
 /obj/item/proc/rogue_apply_kiln_quality(tier)
 	var/prefix = GLOB.rogue_kiln_prefixes[clamp(tier, 0, length(GLOB.rogue_kiln_prefixes) - 1) + 1]
 	if(prefix)
-		name = "[prefix] [initial(name)]"
+		name = "[prefix] [rogue_unprefixed_name()]"
 	if(sellprice > 0)
 		var/general = isnull(rogue_quality) ? 1 : rogue_quality_price_mult(rogue_quality)
 		sellprice = max(round(sellprice * rogue_kiln_price_factor(tier) / general), 1)

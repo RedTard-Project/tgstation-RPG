@@ -9,7 +9,7 @@
 #define ROGUE_MECHANICS_FORMULAS_FILE "formulas.txt"
 #define ROGUE_MECHANICS_VALUES_DIR "values"
 #define ROGUE_MECHANICS_TYPE_VALUES_FILE "specials.txt"
-#define ROGUE_MECHANICS_FORMULAS_HEADER "# Formulas: name = expression. Functions: [jointext(GLOB.rogue_formula_functions, ", ")]. Operators: + - * / % ^ < <= > >= == != and or not."
+#define ROGUE_MECHANICS_FORMULAS_HEADER "# Formulas: name = expression. Functions: [jointext(rogue_formula_function_names(), ", ")]. Operators: + - * / % ^ < <= > >= == != and or not."
 #define ROGUE_MECHANICS_VALUES_HEADER "# Mechanics numbers: name = value, described by the # lines right above it; times are in deciseconds. A file of the same name in config/redtard_private/mechanics/values/ is read instead of this one."
 #define ROGUE_MECHANICS_COMMENT "#"
 #define ROGUE_MECHANICS_NONE "none"

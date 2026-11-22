@@ -1,3 +1,15 @@
+/datum/rogue_armor/b100_s65_t130_p20_f0_a0
+	blunt = 100
+	slash = 65
+	stab = 130
+	piercing = 20
+
+/datum/rogue_armor/b100_s65_t130_p40_f0_a0
+	blunt = 100
+	slash = 65
+	stab = 130
+	piercing = 40
+
 /datum/rogue_armor/b10_s80_t100_p100_f100_a0
 	blunt = 10
 	slash = 80
@@ -27,7 +39,7 @@
 /datum/rogue_armor/brigandine
 	blunt = 2
 	slash = 3
-	stab = 3
+	stab = 2
 	piercing = 2
 	fire = 3
 
@@ -48,11 +60,11 @@
 	acid = 5
 
 /datum/rogue_armor/leather
-	blunt = 3
-	slash = 3
+	blunt = 5
+	slash = 2
 	stab = 2
 	piercing = 3
-	fire = 4
+	fire = 2
 
 /datum/rogue_armor/leather_npc
 	blunt = 3
@@ -65,7 +77,7 @@
 	blunt = 1
 	slash = 3
 	stab = 3
-	piercing = 2
+	piercing = 1
 	fire = 1
 
 /datum/rogue_armor/padded
@@ -85,7 +97,7 @@
 	blunt = 1
 	slash = 3
 	stab = 3
-	piercing = 3
+	piercing = 2
 	fire = 1
 
 /datum/rogue_armor/plate_bsteel

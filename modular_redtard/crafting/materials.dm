@@ -6,6 +6,9 @@
 /obj/item/var/sewrepair = FALSE
 /// Quality tier stamped by the smelter or the anvil, ROGUE_QUALITY_*; null - no quality (Ratwood item_quality, has_item_quality).
 /obj/item/var/rogue_quality
+/// The name before a quality prefix, taken the first time one is added: items.txt or the translation may rename the item
+/// after it was compiled, so initial(name) is not it (rogue_unprefixed_name()).
+/obj/item/var/rogue_base_name
 /// Repaired by an unskilled hand: it holds only 60% until a craftsman finishes it (Ratwood shoddy_repair).
 /obj/item/var/shoddy_repair = FALSE
 
@@ -34,6 +37,12 @@
 			return "masterwork"
 	return null
 
+/// The item's name without a quality prefix; see rogue_base_name.
+/obj/item/proc/rogue_unprefixed_name()
+	if(isnull(rogue_base_name))
+		rogue_base_name = name
+	return rogue_base_name
+
 /obj/item/examine(mob/user)
 	. = ..()
 	if(shoddy_repair)
@@ -59,7 +68,7 @@
 /obj/item/ingot/proc/rogue_set_ingot_quality(quality)
 	rogue_quality = quality
 	var/prefix = rogue_quality_prefix(quality)
-	name = prefix ? "[prefix] [initial(name)]" : initial(name)
+	name = prefix ? "[prefix] [rogue_unprefixed_name()]" : rogue_unprefixed_name()
 	switch(quality)
 		if(ROGUE_QUALITY_AWFUL)
 			desc = "[initial(desc)] It is practically scrap."

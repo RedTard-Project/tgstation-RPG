@@ -1,0 +1,836 @@
+{
+	"source": "../Vibelin",
+	"dme": "vanderlin.dme",
+	"lists": ".cache/modular_redtard/agents/k1/k1v_lists",
+	"pair_sources": {
+		"azure": [
+			"../Azure-Peak-Fork",
+			"roguetown.dme"
+		],
+		"twilight": [
+			"../Twilight-Axis-Fork",
+			"roguetown.dme"
+		],
+		"ratwood": [
+			".cache/ratwood",
+			"roguetown.dme"
+		]
+	},
+	"pair_generic_tokens": [
+		"obj",
+		"item",
+		"weapon",
+		"weapons",
+		"rogueweapon",
+		"roguetown",
+		"rogue",
+		"clothing",
+		"melee",
+		"natural",
+		"reagent_containers",
+		"food",
+		"snacks",
+		"neu",
+		"misc",
+		"new",
+		"old"
+	],
+	"pair_families": {
+		"blade": [
+			"sword",
+			"swords",
+			"greatsword",
+			"estoc",
+			"rapier",
+			"sabre",
+			"scimitar",
+			"katana",
+			"kaskara",
+			"khopesh",
+			"longsword",
+			"shortsword"
+		],
+		"knife": [
+			"knife",
+			"knives",
+			"dagger",
+			"huntingknife",
+			"idagger",
+			"sdagger",
+			"throwingknife",
+			"cleaver",
+			"stiletto"
+		],
+		"mace": [
+			"mace",
+			"maces",
+			"goden",
+			"cudgel",
+			"warhammer",
+			"club",
+			"cane",
+			"morningstar"
+		],
+		"polearm": [
+			"polearm",
+			"spear",
+			"halberd",
+			"woodstaff",
+			"eaglebeak",
+			"glaive",
+			"bardiche",
+			"quarterstaff",
+			"staff",
+			"lance"
+		],
+		"axe": [
+			"axe",
+			"axes",
+			"stoneaxe",
+			"greataxe",
+			"woodcut",
+			"battleaxe"
+		],
+		"flail": [
+			"flail",
+			"flails"
+		],
+		"whip": [
+			"whip",
+			"whips"
+		],
+		"claw": [
+			"katar",
+			"knuckles",
+			"handclaw",
+			"claw"
+		],
+		"scabbard": [
+			"scabbard",
+			"sheath",
+			"sheaths"
+		],
+		"ranged": [
+			"gun",
+			"ballistic",
+			"bow",
+			"crossbow",
+			"cross",
+			"sling",
+			"ammo_casing",
+			"arrow",
+			"bolt",
+			"ammo_holder",
+			"quiver",
+			"ammopouch",
+			"ammo_box"
+		],
+		"shield": [
+			"shield",
+			"shields"
+		],
+		"headwear": [
+			"head",
+			"helmet",
+			"hood",
+			"hat",
+			"mask",
+			"face",
+			"crown",
+			"circlet"
+		],
+		"neckwear": [
+			"neck",
+			"amulet",
+			"necklace",
+			"gorget",
+			"collar",
+			"psicross"
+		],
+		"body": [
+			"armor",
+			"suit",
+			"shirt",
+			"gambeson",
+			"tunic",
+			"robe",
+			"dress",
+			"chest",
+			"cuirass",
+			"brigandine",
+			"plate"
+		],
+		"legwear": [
+			"pants",
+			"under",
+			"trousers",
+			"skirt",
+			"chausses"
+		],
+		"handwear": [
+			"gloves",
+			"gauntlets",
+			"bracers",
+			"wrists"
+		],
+		"footwear": [
+			"shoes",
+			"boots",
+			"sandals"
+		],
+		"cloak": [
+			"cloak",
+			"cape",
+			"tabard"
+		],
+		"ring": [
+			"ring",
+			"rings"
+		],
+		"food": [
+			"food",
+			"snacks",
+			"rogue",
+			"drinks",
+			"meat",
+			"fruit",
+			"grown",
+			"produce",
+			"bread",
+			"cheese",
+			"pie"
+		],
+		"container": [
+			"reagent_containers",
+			"glass",
+			"bottle",
+			"cup",
+			"bowl",
+			"pot",
+			"storage",
+			"bag",
+			"sack",
+			"pouch",
+			"belt"
+		],
+		"tool": [
+			"tool",
+			"tools",
+			"hammer",
+			"tongs",
+			"saw",
+			"chisel",
+			"hoe",
+			"shovel",
+			"pick",
+			"pickaxe",
+			"needle",
+			"fishingrod",
+			"lockpick",
+			"key",
+			"torch",
+			"lantern"
+		],
+		"material": [
+			"ingot",
+			"natural",
+			"stone",
+			"ore",
+			"log",
+			"wood",
+			"cloth",
+			"fibers",
+			"hide",
+			"bone"
+		]
+	},
+	"assets": "modular_redtard/items_vibelin/icons",
+	"shared_assets": [
+		"modular_redtard/wardrobe/icons"
+	],
+	"bake": {
+		"manifest": "modular_redtard/items_vibelin/onmob_bake.json",
+		"dir": "modular_redtard/items_vibelin/icons/baked",
+		"mask32": "modular_redtard/icons/mob/onmob_mask.dmi",
+		"mask64": "modular_redtard/icons/mob/onmob_mask_64.dmi"
+	},
+	"target_defines": [
+		"code/__DEFINES",
+		"modular_redtard"
+	],
+	"target_types": [
+		"code",
+		"modular_redtard"
+	],
+	"target_items": [
+		"modular_redtard/rockhill/ported/items.dm"
+	],
+	"table": {
+		"section": "port_vibelin_items.py",
+		"note": "the numbers of the items of modular_redtard/items_vibelin/ (Vibelin's own, K3g), rewritten on every run of tools/port_vibelin_items.py; an override goes below the end line.",
+		"out": ".cache/modular_redtard/agents/k3/staged/k3g/items.txt"
+	},
+	"groups": {
+		"weapon": {
+			"file": "weapons.dm",
+			"header": "Vibelin's own melee weapons (K3g): swords, knives, maces, polearms, flails, whips, axes, knuckles, katars and claws, under the module's weapon roots.",
+			"rebase": [
+				{
+					"prefix": "/obj/item/weapon/sword",
+					"to": "/obj/item/rogueweapon/sword/vibelin"
+				},
+				{
+					"prefix": "/obj/item/weapon/knife",
+					"to": "/obj/item/rogueweapon/huntingknife/vibelin"
+				},
+				{
+					"prefix": "/obj/item/weapon/mace",
+					"to": "/obj/item/rogueweapon/mace/vibelin"
+				},
+				{
+					"prefix": "/obj/item/weapon/polearm",
+					"to": "/obj/item/rogueweapon/spear/vibelin"
+				},
+				{
+					"prefix": "/obj/item/weapon/polearm/halberd",
+					"to": "/obj/item/rogueweapon/halberd/vibelin"
+				},
+				{
+					"prefix": "/obj/item/weapon/polearm/eaglebeak",
+					"to": "/obj/item/rogueweapon/eaglebeak/vibelin"
+				},
+				{
+					"prefix": "/obj/item/weapon/polearm/woodstaff",
+					"to": "/obj/item/rogueweapon/woodstaff/vibelin"
+				},
+				{
+					"prefix": "/obj/item/weapon/flail",
+					"to": "/obj/item/rogueweapon/flail/vibelin"
+				},
+				{
+					"prefix": "/obj/item/weapon/whip",
+					"to": "/obj/item/rogueweapon/whip/vibelin"
+				},
+				{
+					"prefix": "/obj/item/weapon/axe",
+					"to": "/obj/item/rogueweapon/stoneaxe/vibelin"
+				},
+				{
+					"prefix": "/obj/item/weapon/greataxe",
+					"to": "/obj/item/rogueweapon/greataxe/vibelin"
+				},
+				{
+					"prefix": "/obj/item/weapon/knuckles",
+					"to": "/obj/item/rogueweapon/katar/vibelin_knuckles"
+				},
+				{
+					"prefix": "/obj/item/weapon/katar",
+					"to": "/obj/item/rogueweapon/katar/vibelin"
+				},
+				{
+					"prefix": "/obj/item/weapon/handclaw",
+					"to": "/obj/item/rogueweapon/handclaw/vibelin"
+				},
+				{
+					"prefix": "/obj/item/weapon/shield",
+					"to": "/obj/item/rogueweapon/shield/vibelin"
+				}
+			],
+			"skip": [
+				{
+					"prefix": "/obj/item/weapon/scabbard",
+					"reason": "scabbards: the module's own scabbards (rockhill/scabbards.dm) take blades by valid_blade, Vibelin's by lists of its own types"
+				},
+				{
+					"prefix": "/obj/item/weapon/briar_claw",
+					"reason": "a druid's summoned claw, made by a spell of Vibelin"
+				},
+				{
+					"prefix": "/obj/item/weapon/clenched_fist",
+					"reason": "a spell's fist, made by a spell of Vibelin"
+				},
+				{
+					"prefix": "/obj/item/weapon/handclaw/werewolf",
+					"reason": "werewolf claws: antagonist body parts"
+				},
+				{
+					"prefix": "/obj/item/weapon/surgery",
+					"reason": "surgery tools: the module's surgery is Ratwood's"
+				},
+				{
+					"prefix": "/obj/item/gun",
+					"reason": "launchers: Vibelin's guns (muskets, puffers, airguns, blowguns, its bows) shoot through its own magazines and projectiles; the module's launchers are Ratwood's and Azure's (K2b)"
+				},
+				{
+					"prefix": "/obj/item/ammo_casing",
+					"reason": "ammunition of Vibelin's launchers (see launchers)"
+				},
+				{
+					"prefix": "/obj/item/ammo_box",
+					"reason": "magazines of Vibelin's launchers (see launchers)"
+				},
+				{
+					"prefix": "/obj/item/ammo_holder",
+					"reason": "Vibelin's quivers and pouches hold its own ammunition (see launchers)"
+				},
+				{
+					"prefix": "/obj/item/melee/touch_attack",
+					"reason": "a spell's touch, made by a spell (block M)"
+				}
+			],
+			"abstract": [
+				"/obj/item/weapon"
+			]
+		},
+		"clothing": {
+			"file": "clothing.dm",
+			"header": "Vibelin's own clothing and armor (K3g): its core gear, beside the wardrobe (wardrobe/ported.dm) it took from modular_abel, under the module's clothing roots.",
+			"rebase": [
+				{
+					"prefix": "/obj/item/clothing/head",
+					"to": "/obj/item/clothing/head/roguetown/vibelin"
+				},
+				{
+					"prefix": "/obj/item/clothing/face",
+					"to": "/obj/item/clothing/mask/rogue/vibelin"
+				},
+				{
+					"prefix": "/obj/item/clothing/neck",
+					"to": "/obj/item/clothing/neck/roguetown/vibelin"
+				},
+				{
+					"prefix": "/obj/item/clothing/cloak",
+					"to": "/obj/item/clothing/cloak/vibelin"
+				},
+				{
+					"prefix": "/obj/item/clothing/shirt",
+					"to": "/obj/item/clothing/suit/roguetown/shirt/vibelin"
+				},
+				{
+					"prefix": "/obj/item/clothing/armor",
+					"to": "/obj/item/clothing/suit/roguetown/armor/vibelin"
+				},
+				{
+					"prefix": "/obj/item/clothing/pants",
+					"to": "/obj/item/clothing/under/roguetown/vibelin"
+				},
+				{
+					"prefix": "/obj/item/clothing/gloves",
+					"to": "/obj/item/clothing/gloves/roguetown/vibelin"
+				},
+				{
+					"prefix": "/obj/item/clothing/shoes",
+					"to": "/obj/item/clothing/shoes/roguetown/vibelin"
+				},
+				{
+					"prefix": "/obj/item/clothing/wrists",
+					"to": "/obj/item/clothing/wrists/roguetown/vibelin"
+				},
+				{
+					"prefix": "/obj/item/clothing/ring",
+					"to": "/obj/item/clothing/ring/vibelin"
+				}
+			],
+			"skip": [
+				{
+					"prefix": "/obj/item/clothing/head/takuhatsugasa",
+					"reason": "Vibelin's own head.dmi has no takuhatsugasa state: no sprite to carry (K3 assembler)"
+				},
+				{
+					"prefix": "/obj/item/clothing/head/mob_holder",
+					"reason": "a held mob, made by picking a creature up"
+				},
+				{
+					"prefix": "/obj/item/clothing/head/helmet/skullcap/cult",
+					"reason": "cult gear of an antagonist"
+				},
+				{
+					"prefix": "/obj/item/clothing/neck/psycross/silver/werewolf",
+					"reason": "antagonist gear"
+				}
+			],
+			"engine": {
+				"from": "modular_redtard/wardrobe/port.json",
+				"drop_vars": [
+					"max_integrity",
+					"item_path"
+				],
+				"add_vars": [
+					"armor_class"
+				],
+				"kinds": {
+					"armor_class": "mapped"
+				},
+				"maps": {
+					"armor_class": {
+						"AC_LIGHT": "ARMOR_CLASS_LIGHT",
+						"AC_MEDIUM": "ARMOR_CLASS_MEDIUM",
+						"AC_HEAVY": "ARMOR_CLASS_HEAVY",
+						"ARMOR_CLASS_NONE": "ARMOR_CLASS_NONE",
+						"0": "ARMOR_CLASS_NONE"
+					}
+				},
+				"defaults": {
+					"armor_class": "ARMOR_CLASS_NONE"
+				}
+			},
+			"slot_worn_sheets": {
+				"ITEM_SLOT_HEAD": "icons/roguetown/clothing/onmob/head.dmi",
+				"ITEM_SLOT_MASK": "icons/roguetown/clothing/onmob/masks.dmi",
+				"ITEM_SLOT_NECK": "icons/roguetown/clothing/onmob/neck.dmi",
+				"ITEM_SLOT_GLOVES": "icons/roguetown/clothing/onmob/gloves.dmi",
+				"ITEM_SLOT_RING": "icons/roguetown/clothing/onmob/rings.dmi",
+				"ITEM_SLOT_MOUTH": "icons/roguetown/clothing/onmob/mouth_items.dmi",
+				"ITEM_SLOT_BELT": "icons/roguetown/clothing/onmob/belts.dmi"
+			},
+			"resets": {
+				"rogue_armor": "null",
+				"armor_class": "ARMOR_CLASS_NONE",
+				"rogue_coverage": "NONE",
+				"body_parts_covered": "NONE",
+				"flags_inv": "NONE",
+				"block2add": "NONE",
+				"alternate_worn_layer": "null",
+				"sleevetype": "null",
+				"nodismemsleeves": "FALSE",
+				"r_sleeve_status": "ROGUE_SLEEVE_NOMOD",
+				"l_sleeve_status": "ROGUE_SLEEVE_NOMOD",
+				"rogue_sleeve_scrap": "/obj/item/natural/cloth",
+				"rogue_salvage_amount": "0",
+				"detail_tag": "null",
+				"detail_color": "null",
+				"altdetail_tag": "null",
+				"altdetail_color": "null",
+				"boobed": "FALSE",
+				"rogue_female_worn": "FALSE",
+				"color": "null",
+				"sewrepair": "FALSE",
+				"material_category": "null",
+				"sleeved_detail": "TRUE",
+				"boobed_detail": "TRUE"
+			}
+		},
+		"decor": {
+			"file": "decor.dm",
+			"header": "Vibelin's own decorative items (K3g): statues, carved gems, gems and toys, under the module's roots of their kind.",
+			"rebase": [
+				{
+					"prefix": "/obj/item/statue",
+					"to": "/obj/item/roguestatue/vibelin"
+				},
+				{
+					"prefix": "/obj/item/carvedgem",
+					"to": "/obj/item/carvedgem/vibelin"
+				},
+				{
+					"prefix": "/obj/item/gem",
+					"to": "/obj/item/roguegem/vibelin"
+				},
+				{
+					"prefix": "/obj/item/child_toy",
+					"to": "/obj/item/toy/vibelin"
+				},
+				{
+					"prefix": "/obj/item/orphan_toy",
+					"to": "/obj/item/toy/vibelin_orphan"
+				}
+			],
+			"skip": [],
+			"abstract": [
+				"/obj/item/statue/stone"
+			],
+			"look": true,
+			"engine": {
+				"vars": [
+					"name",
+					"desc",
+					"icon",
+					"icon_state",
+					"w_class",
+					"color"
+				],
+				"kinds": {
+					"color": "string",
+					"w_class": "literal"
+				},
+				"maps": {},
+				"defaults": {
+					"color": "null"
+				}
+			}
+		},
+		"skipped": {
+			"rebase": [],
+			"skip": [
+				{
+					"prefix": "/obj/item/reagent_containers",
+					"reason": "food and drink: the module's food is Ratwood's (survival/, alchemy/) with its own nutrition and cooking tables; Vibelin's cooking (ingredient buffs, toppings, faretype) is another system, so its dishes need a survival-side port"
+				},
+				{
+					"prefix": "/obj/item/grown",
+					"reason": "food and drink: the module's food is Ratwood's (survival/, alchemy/) with its own nutrition and cooking tables; Vibelin's cooking (ingredient buffs, toppings, faretype) is another system, so its dishes need a survival-side port"
+				},
+				{
+					"prefix": "/obj/item/plate",
+					"reason": "dishes of Vibelin's cooking (see food)"
+				},
+				{
+					"prefix": "/obj/item/key",
+					"reason": "keys to the doors of Vibelin's own maps (lockid)"
+				},
+				{
+					"prefix": "/obj/item/fishing",
+					"reason": "Vibelin's fishing tackle (lures, lines, hooks): the module's fishing is Ratwood's"
+				},
+				{
+					"prefix": "/obj/item/fishingrod",
+					"reason": "Vibelin's fishing tackle: the module's fishing is Ratwood's"
+				},
+				{
+					"prefix": "/obj/item/needle",
+					"reason": "sewing tools work through the module's (Ratwood's) sewing"
+				},
+				{
+					"prefix": "/obj/item/rope",
+					"reason": "nets and ropes work through Vibelin's restraint code"
+				},
+				{
+					"prefix": "/obj/item/enchantingkit",
+					"reason": "reskin kits of Vibelin's enchanting (turn one armor into another): a system the module lacks"
+				},
+				{
+					"prefix": "/obj/item/organ",
+					"reason": "organs of Vibelin's species bodies"
+				},
+				{
+					"prefix": "/obj/item/bodypart",
+					"reason": "body parts of Vibelin's species"
+				},
+				{
+					"prefix": "/obj/item/natural",
+					"reason": "crafting materials of Vibelin's recipes: the module's crafting is Ratwood's"
+				},
+				{
+					"prefix": "/obj/item/ore",
+					"reason": "materials of Vibelin's smithing"
+				},
+				{
+					"prefix": "/obj/item/ingot",
+					"reason": "materials of Vibelin's smithing"
+				},
+				{
+					"prefix": "/obj/item/mould",
+					"reason": "moulds of Vibelin's smithing"
+				},
+				{
+					"prefix": "/obj/item/alch",
+					"reason": "alchemy ingredients of Vibelin's alchemy"
+				},
+				{
+					"prefix": "/obj/item/dye_pack",
+					"reason": "Vibelin's dyeing"
+				},
+				{
+					"prefix": "/obj/item/book",
+					"reason": "books, granters and recipe books work through Vibelin's code"
+				},
+				{
+					"prefix": "/obj/item/recipe_book",
+					"reason": "recipe books of Vibelin's crafting"
+				},
+				{
+					"prefix": "/obj/item/spellbook",
+					"reason": "spellbooks of Vibelin's magic (block M)"
+				},
+				{
+					"prefix": "/obj/item/arcyne_spellobject",
+					"reason": "arcane objects of Vibelin's magic (block M)"
+				},
+				{
+					"prefix": "/obj/item/mana_battery",
+					"reason": "mana crystals of Vibelin's magic (block M)"
+				},
+				{
+					"prefix": "/obj/item/scrying",
+					"reason": "scrying orbs of Vibelin's magic"
+				},
+				{
+					"prefix": "/obj/item/paper",
+					"reason": "scrolls and papers of Vibelin's code"
+				},
+				{
+					"prefix": "/obj/item/storage",
+					"reason": "Vibelin's storage containers"
+				},
+				{
+					"prefix": "/obj/item/gravedecor",
+					"reason": "grave decor of Vibelin's burial"
+				},
+				{
+					"prefix": "/obj/item/dendor_blessing",
+					"reason": "an item a miracle makes"
+				},
+				{
+					"prefix": "/obj/item/rotation_contraption",
+					"reason": "Vibelin's mechanisms (rotation network)"
+				},
+				{
+					"prefix": "/obj/item/gear",
+					"reason": "Vibelin's mechanisms (rotation network)"
+				},
+				{
+					"prefix": "/obj/item/melee/touch_attack",
+					"reason": "a spell's touch, made by a spell (block M)"
+				},
+				{
+					"prefix": "/obj/item/restraints",
+					"reason": "restraints work through Vibelin's code"
+				},
+				{
+					"prefix": "/obj/item/clothing/head/mob_holder",
+					"reason": "a held mob"
+				}
+			]
+		}
+	},
+	"intent_aliases": {
+		"/datum/intent/polearm/bash": "/datum/intent/spear/bash",
+		"/datum/intent/polearm/thrust": "/datum/intent/spear/thrust",
+		"/datum/intent/polearm/cut": "/datum/intent/spear/cut",
+		"/datum/intent/polearm/chop": "/datum/intent/axe/chop/halberd",
+		"/datum/intent/knuckles/strike": "/datum/intent/mace/strike",
+		"/datum/intent/knuckles/smash": "/datum/intent/mace/smash",
+		"/datum/intent/katana/cut": "/datum/intent/sword/cut",
+		"/datum/intent/katana/arc": "/datum/intent/sword/chop",
+		"/datum/intent/katana/precision_cut": "/datum/intent/sword/cut",
+		"/datum/intent/sword/lunge": "/datum/intent/sword/thrust",
+		"/datum/intent/claw/lunge": "/datum/intent/claw/cut",
+		"/datum/intent/mace/thrust": "/datum/intent/stab",
+		"/datum/intent/mace/warhammer/impale": "/datum/intent/mace/warhammer/stab",
+		"/datum/intent/flail/cut": "/datum/intent/flail/strike",
+		"/datum/intent/whip/cut": "/datum/intent/whip/lash",
+		"/datum/intent/oracle_smite": "/datum/intent/priest_smite",
+		"/datum/intent/oracle_silence": "/datum/intent/priest_silence"
+	},
+	"intent_drop": [
+		"/datum/intent/whip",
+		"/datum/intent/peculate",
+		"/datum/intent/plex_dash"
+	],
+	"intent_drop_prefixes": [
+		"/datum/intent/simple"
+	],
+	"skill_map": {
+		"/datum/attribute/skill/combat/axesmaces": {
+			"/obj/item/weapon/axe": "/datum/attribute/skill/combat/axes",
+			"/obj/item/weapon/greataxe": "/datum/attribute/skill/combat/axes",
+			"": "/datum/attribute/skill/combat/maces"
+		},
+		"/datum/attribute/skill/combat/polearms/staves": {
+			"": "/datum/attribute/skill/combat/staves"
+		},
+		"/datum/attribute/skill/craft/weapon_repair": {
+			"": "/datum/attribute/skill/craft/weaponsmithing"
+		},
+		"/datum/attribute/skill/craft/armor_repair": {
+			"": "/datum/attribute/skill/craft/armorsmithing"
+		}
+	},
+	"material_ingots": {
+		"/datum/material/iron": "/obj/item/ingot/iron",
+		"/datum/material/steel": "/obj/item/ingot/steel",
+		"/datum/material/bronze": "/obj/item/ingot/bronze",
+		"/datum/material/copper": "/obj/item/ingot/copper",
+		"/datum/material/silver": "/obj/item/ingot/silver",
+		"/datum/material/gold": "/obj/item/ingot/gold",
+		"/datum/material/blacksteel": "/obj/item/ingot/blacksteel",
+		"/datum/material/tin": "/obj/item/ingot/tin"
+	},
+	"slot_flags": {
+		"ITEM_SLOT_PANTS": "ITEM_SLOT_ICLOTHING",
+		"ITEM_SLOT_SHIRT": "ITEM_SLOT_ROGUE_SHIRT",
+		"ITEM_SLOT_ARMOR": "ITEM_SLOT_OCLOTHING",
+		"ITEM_SLOT_SHOES": "ITEM_SLOT_FEET",
+		"ITEM_SLOT_RING": "ITEM_SLOT_ROGUE_RING",
+		"ITEM_SLOT_MOUTH": "ITEM_SLOT_ROGUE_MOUTH",
+		"ITEM_SLOT_CLOAK": "ITEM_SLOT_ROGUE_CLOAK",
+		"ITEM_SLOT_BACK_R": "ITEM_SLOT_BACK",
+		"ITEM_SLOT_BACK_L": "ITEM_SLOT_BACK",
+		"ITEM_SLOT_HIP": "ITEM_SLOT_POCKETS",
+		"ITEM_SLOT_WRISTS": "ITEM_SLOT_ROGUE_WRISTS"
+	},
+	"numbers": {
+		"integrity": {
+			"var": "max_integrity",
+			"scale": {
+				"weapon": 0.42
+			},
+			"round": 5
+		},
+		"force": {
+			"var": "force"
+		},
+		"force_wielded": {
+			"var": "force_wielded",
+			"skip_zero": true
+		},
+		"throw_force": {
+			"var": "throwforce"
+		},
+		"defense": {
+			"var": "wdefense",
+			"skip_zero": true
+		},
+		"min_strength": {
+			"var": "minstr",
+			"skip_zero": true
+		}
+	},
+	"resets": {
+		"worn_icon": "null",
+		"worn_icon_state": "null",
+		"rogue_sleeved": "null",
+		"sheathe_icon": "null",
+		"worn_x_dimension": "32",
+		"worn_y_dimension": "32",
+		"wlength": "WLENGTH_NORMAL",
+		"wbalance": "WBALANCE_NORMAL",
+		"can_parry": "FALSE",
+		"associated_skill": "null",
+		"possible_item_intents": "null",
+		"gripped_intents": "null",
+		"max_blade_int": "0",
+		"special": "null",
+		"smeltresult": "null",
+		"anvilrepair": "null",
+		"pixel_x": "0",
+		"pixel_y": "0",
+		"lefthand_file": "null",
+		"righthand_file": "null",
+		"inhand_icon_state": "null",
+		"inhand_x_dimension": "32",
+		"inhand_y_dimension": "32",
+		"rogue_baked_inhand": "FALSE",
+		"rogue_onmob_sheet": "null"
+	},
+	"keep_inherited": [
+		"parent_type",
+		"parrysound",
+		"integrity_failure",
+		"equip_delay_self",
+		"picklvl",
+		"sewrepair",
+		"rogue_grid_width",
+		"rogue_grid_height",
+		"name",
+		"desc",
+		"icon",
+		"icon_state",
+		"w_class",
+		"slot_flags"
+	],
+	"no_rule_reason": "no port rule for this root: the item works through Vibelin's own code the module lacks",
+	"ported_elsewhere": {
+		"/obj/item/clothing/armor/regenerating/skin/easttats": "same item as Ratwood's /obj/item/clothing/suit/roguetown/armor/regenerating/skin/body/ruma, which the Ratwood porter brings for its advclass outfits (K3 assembler)"
+	}
+}

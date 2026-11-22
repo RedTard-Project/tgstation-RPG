@@ -10,11 +10,11 @@
 // begin the round get full hydration (Ratwood's ready-up bonus); others start a little thirsty.
 
 /// Ratwood HYDRATION_LEVEL_*: the most, glad of it from, a little thirsty below, thirsty below, parched below.
-#define THIRST_FULL 1000
-#define THIRST_QUENCHED 999
-#define THIRST_LITTLE 600
-#define THIRST_THIRSTY 350
-#define THIRST_PARCHED 100
+#define THIRST_FULL rogue_value("thirst_full")
+#define THIRST_QUENCHED rogue_value("thirst_quenched")
+#define THIRST_LITTLE rogue_value("thirst_little")
+#define THIRST_THIRSTY rogue_value("thirst_thirsty")
+#define THIRST_PARCHED rogue_value("thirst_parched")
 #define THIRST_ICON 'modular_redtard/survival/icons/thirst.dmi'
 /// Mood categories: the step of thirst (Ratwood drym, thirst, parched) and being glad of a full belly of water (hydrated).
 #define THIRST_MOOD "rogue_thirst"

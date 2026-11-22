@@ -90,6 +90,7 @@
 	self_castable = FALSE
 	miracle_tier = ROGUE_MIRACLE_TIER_0
 	devotion_cost = 10
+	stamina_cost = 30
 	miracle_forks = "Ratwood, Azure Peak, Twilight Axis"
 	miracle_gods = "Astrata T0, Malum T0, the Ten Undivided T0"
 

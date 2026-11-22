@@ -155,56 +155,56 @@
 
 /obj/effect/decal/cleanable/sigil
 	name = "sigils"
-	desc = "Strange runics."
-	icon = 'modular_redtard/rockhill/icons/effects/sigils.dmi'
+	desc = "Strange runics. They hurt your eyes."
+	icon = 'modular_redtard/rockhill/icons/obj/sigils.dmi'
 	icon_state = "center"
 
 /obj/effect/decal/cleanable/sigil/E
 	name = "sigils"
-	desc = "Strange runics."
-	icon = 'modular_redtard/rockhill/icons/effects/sigils.dmi'
+	desc = "Strange runics. They hurt your eyes."
+	icon = 'modular_redtard/rockhill/icons/obj/sigils.dmi'
 	icon_state = "E"
 
 /obj/effect/decal/cleanable/sigil/N
 	name = "sigils"
-	desc = "Strange runics."
-	icon = 'modular_redtard/rockhill/icons/effects/sigils.dmi'
+	desc = "Strange runics. They hurt your eyes."
+	icon = 'modular_redtard/rockhill/icons/obj/sigils.dmi'
 	icon_state = "N"
 
 /obj/effect/decal/cleanable/sigil/NE
 	name = "sigils"
-	desc = "Strange runics."
-	icon = 'modular_redtard/rockhill/icons/effects/sigils.dmi'
+	desc = "Strange runics. They hurt your eyes."
+	icon = 'modular_redtard/rockhill/icons/obj/sigils.dmi'
 	icon_state = "NE"
 
 /obj/effect/decal/cleanable/sigil/NW
 	name = "sigils"
-	desc = "Strange runics."
-	icon = 'modular_redtard/rockhill/icons/effects/sigils.dmi'
+	desc = "Strange runics. They hurt your eyes."
+	icon = 'modular_redtard/rockhill/icons/obj/sigils.dmi'
 	icon_state = "NW"
 
 /obj/effect/decal/cleanable/sigil/S
 	name = "sigils"
-	desc = "Strange runics."
-	icon = 'modular_redtard/rockhill/icons/effects/sigils.dmi'
+	desc = "Strange runics. They hurt your eyes."
+	icon = 'modular_redtard/rockhill/icons/obj/sigils.dmi'
 	icon_state = "S"
 
 /obj/effect/decal/cleanable/sigil/SE
 	name = "sigils"
-	desc = "Strange runics."
-	icon = 'modular_redtard/rockhill/icons/effects/sigils.dmi'
+	desc = "Strange runics. They hurt your eyes."
+	icon = 'modular_redtard/rockhill/icons/obj/sigils.dmi'
 	icon_state = "SE"
 
 /obj/effect/decal/cleanable/sigil/SW
 	name = "sigils"
-	desc = "Strange runics."
-	icon = 'modular_redtard/rockhill/icons/effects/sigils.dmi'
+	desc = "Strange runics. They hurt your eyes."
+	icon = 'modular_redtard/rockhill/icons/obj/sigils.dmi'
 	icon_state = "SW"
 
 /obj/effect/decal/cleanable/sigil/W
 	name = "sigils"
-	desc = "Strange runics."
-	icon = 'modular_redtard/rockhill/icons/effects/sigils.dmi'
+	desc = "Strange runics. They hurt your eyes."
+	icon = 'modular_redtard/rockhill/icons/obj/sigils.dmi'
 	icon_state = "W"
 
 /obj/effect/decal/cobble/mossy

@@ -12,17 +12,17 @@
 #define ROGUE_TAX_IMPORT "import tariff"
 
 /// How often the treasury imports and exports the stockpile (Ratwood treasury.dm, TREASURY_TICK_AMOUNT).
-#define ROGUE_TREASURY_TICK (6 MINUTES)
+#define ROGUE_TREASURY_TICK rogue_value("treasury_tick")
 /// Share of a stockpile's limit the Crown keeps before it exports the surplus (Ratwood autoexport_percentage).
-#define ROGUE_AUTOEXPORT_SHARE 0.6
+#define ROGUE_AUTOEXPORT_SHARE rogue_value("autoexport_share")
 /// Import/export spread of Ratwood's pricing engine (IMPORT_EXPORT_SPREAD): what a stockpile pays and sells for.
-#define ROGUE_TRADE_SPREAD 0.25
+#define ROGUE_TRADE_SPREAD rogue_value("trade_spread")
 /// Fresh estates pay this much more on the first payout (Ratwood ESTATE_STARTER_BONUS).
-#define ROGUE_ESTATE_STARTER_BONUS 30
+#define ROGUE_ESTATE_STARTER_BONUS rogue_value("estate_starter_bonus")
 /// The most a NERVELOCK pays out in one withdrawal, in coins (Ratwood atm_tgui.dm).
-#define ROGUE_WITHDRAW_COINS_MAX 20
+#define ROGUE_WITHDRAW_COINS_MAX rogue_value("withdraw_coins_max")
 /// The most a single item or transfer can be worth (Ratwood give_money_account(): "No exponentials, please!").
-#define ROGUE_TRANSFER_MAX 10000
+#define ROGUE_TRANSFER_MAX rogue_value("transfer_max")
 
 /// Machine sounds, Ratwood's (sound/misc, sound/foley).
 #define ROGUE_SOUND_COIN_INSERT 'modular_redtard/rockhill/sound/misc/coininsert.ogg'

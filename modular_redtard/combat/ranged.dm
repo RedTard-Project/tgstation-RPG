@@ -7,7 +7,8 @@
 /// archer spread). What a muscle-powered launcher shoots (rogue_per_damage: TG bows; Azure Peak per_scales_damage) hits
 /// harder with perception: by ranged_per_damage_step per point from ranged_per_baseline up to ranged_per_softcap and by
 /// ranged_per_damage_capped_step past it, never under ranged_per_damage_floor (Azure Peak get_per_damage_scaling()).
-/// Ratwood's own bows, crossbows and slings and what they shoot follow Ratwood's numbers instead (combat/launchers.dm).
+/// The ported bows, crossbows and slings aim by Azure Peak's own rules instead (combat/launchers.dm); their bows and slings
+/// take the same perception damage factor.
 #define ROGUE_RANGED_PER_BASELINE rogue_value("ranged_per_baseline")
 #define ROGUE_RANGED_PER_SOFTCAP rogue_value("ranged_per_softcap")
 #define ROGUE_RANGED_PER_DAMAGE_STEP rogue_value("ranged_per_damage_step")

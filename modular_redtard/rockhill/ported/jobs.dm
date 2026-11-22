@@ -243,6 +243,7 @@
 	rockhill_advclass = "/datum/advclass/archivist"
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/archivist
 	rockhill_traits = list(
+		TRAIT_ARCYNE,
 		TRAIT_INTELLECTUAL,
 		TRAIT_SEEPRICES_SHITTY,
 		TRAIT_GOODWRITER,
@@ -390,7 +391,7 @@
 	rockhill_traits = list(
 		TRAIT_EMPATH,
 		)
-	rogue_allowed_patrons = list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/abyssor, /datum/patron/divine/ravox, /datum/patron/divine/necra, /datum/patron/divine/malum, /datum/patron/divine/eora)
+	rogue_allowed_patrons = list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/abyssor, /datum/patron/divine/ravox, /datum/patron/divine/necra, /datum/patron/divine/malum, /datum/patron/divine/eora, /datum/patron/psydon)
 	rogue_social_rank = 4
 
 /datum/job/roguetown/churchling
@@ -646,18 +647,16 @@
 	departments_list = list(
 		/datum/job_department/rockhill_yeomen,
 		)
-	rockhill_advclass = "/datum/advclass/guildsman/artificer"
+	rockhill_advclass = "/datum/advclass/guildsman/blacksmith"
 	rockhill_advclasses = list(
-		/datum/rockhill_advclass/guildsman/artificer,
 		/datum/rockhill_advclass/guildsman/blacksmith,
 		/datum/rockhill_advclass/guildsman/engineer,
 		)
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/guildsman
 	rockhill_traits = list(
-		TRAIT_ARCYNE,
-		TRAIT_ALCHEMY_EXPERT,
 		TRAIT_TRAINED_SMITH,
 		TRAIT_SMITHING_EXPERT,
+		TRAIT_LEGENDARY_MINER,
 		)
 	rogue_social_rank = 3
 	rogue_advjob_examine = TRUE
@@ -1613,6 +1612,10 @@
 		/datum/job_department/rockhill_church,
 		)
 	rockhill_advclass = "/datum/advclass/templar/crusader"
+	rockhill_advclasses = list(
+		/datum/rockhill_advclass/templar/crusader,
+		/datum/rockhill_advclass/templar/noc_spellblade,
+		)
 	attribute_sheet = /datum/attribute_holder/sheet/job/rockhill/templar
 	rockhill_traits = list(
 		TRAIT_HEAVYARMOR,
@@ -1819,10 +1822,10 @@
 	mind_traits = list(
 		"Hidden Domiciles",
 		)
-	rockhill_advclass = "/datum/advclass/wretch/deserter"
+	rockhill_advclass = "/datum/advclass/wretch/deserter_knight"
 	rockhill_advclasses = list(
 		/datum/rockhill_advclass/wretch/licker,
-		/datum/rockhill_advclass/wretch/deserter,
+		/datum/rockhill_advclass/wretch/deserter_knight,
 		/datum/rockhill_advclass/wretch/deserter/maa,
 		/datum/rockhill_advclass/wretch/berserker,
 		/datum/rockhill_advclass/wretch/roguemage,
@@ -1831,7 +1834,6 @@
 		/datum/rockhill_advclass/wretch/heretic/spy,
 		/datum/rockhill_advclass/wretch/heretic/monk,
 		/datum/rockhill_advclass/wretch/outlaw,
-		/datum/rockhill_advclass/wretch/outlaw/marauder,
 		/datum/rockhill_advclass/wretch/lunacyembracer,
 		/datum/rockhill_advclass/wretch/poacher,
 		/datum/rockhill_advclass/wretch/plaguebearer,
@@ -1849,6 +1851,7 @@
 		TRAIT_HEAVYARMOR,
 		TRAIT_EQUESTRIAN,
 		TRAIT_DISGRACED_NOBLE,
+		TRAIT_BOGWALKER,
 		TRAIT_STEELHEARTED,
 		TRAIT_OUTLAW,
 		TRAIT_HERESIARCH,
@@ -1890,8 +1893,8 @@
 	name = JOB_ROCKHILL_ADVENTURER
 	jobtype = /datum/job/roguetown/adventurer
 	uniform = /obj/item/clothing/under/roguetown/tights/black
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
-	suit = /obj/item/clothing/suit/roguetown/shirt/robe/monk
+	shirt = /obj/item/clothing/suit/roguetown/armor/regenerating/skin/body/monk
+	suit = /obj/item/clothing/suit/roguetown/armor/regenerating/skin/chest/monk
 	cloak = /obj/item/clothing/cloak/psydontabard
 	head = /obj/item/clothing/head/roguetown/headband/monk
 	mask = /obj/item/clothing/head/roguetown/roguehood/psydon
@@ -1913,8 +1916,8 @@
 	name = JOB_ROCKHILL_COURT_AGENT
 	jobtype = /datum/job/roguetown/adventurer/courtagent
 	uniform = /obj/item/clothing/under/roguetown/tights/black
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
-	suit = /obj/item/clothing/suit/roguetown/shirt/robe/monk
+	shirt = /obj/item/clothing/suit/roguetown/armor/regenerating/skin/body/monk
+	suit = /obj/item/clothing/suit/roguetown/armor/regenerating/skin/chest/monk
 	cloak = /obj/item/clothing/cloak/psydontabard
 	head = /obj/item/clothing/head/roguetown/headband/monk
 	mask = /obj/item/clothing/head/roguetown/roguehood/psydon
@@ -1936,8 +1939,8 @@
 	name = JOB_ROCKHILL_ENSLAVED_ADVENTURER
 	jobtype = /datum/job/roguetown/adventurer/courtslave
 	uniform = /obj/item/clothing/under/roguetown/tights/black
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
-	suit = /obj/item/clothing/suit/roguetown/shirt/robe/monk
+	shirt = /obj/item/clothing/suit/roguetown/armor/regenerating/skin/body/monk
+	suit = /obj/item/clothing/suit/roguetown/armor/regenerating/skin/chest/monk
 	cloak = /obj/item/clothing/cloak/psydontabard
 	head = /obj/item/clothing/head/roguetown/headband/monk
 	mask = /obj/item/clothing/head/roguetown/roguehood/psydon
@@ -2314,27 +2317,21 @@
 /datum/outfit/job/roguetown/guildsman
 	name = JOB_ROCKHILL_GUILDSMAN
 	jobtype = /datum/job/roguetown/guildsman
-	uniform = /obj/item/clothing/under/roguetown/trou/artipants
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/artificer
-	suit = /obj/item/clothing/suit/roguetown/armor/leather/jacket/artijacket
-	cloak = /obj/item/clothing/cloak/apron/waist/brown
-	head = /obj/item/clothing/head/roguetown/articap
+	uniform = /obj/item/clothing/under/roguetown/trou
+	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt
+	cloak = /obj/item/clothing/cloak/apron/blacksmith
+	head = /obj/item/clothing/head/roguetown/hatblu
 	gloves = /obj/item/clothing/gloves/roguetown/angle/grenzelgloves/blacksmith
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	belt = /obj/item/storage/belt/rogue/leather
-	back = /obj/item/storage/backpack/rogue/backpack
-	l_pocket = /obj/item/roguekey/crafterguild
-	r_pocket = /obj/item/storage/belt/rogue/pouch/coins/mid
+	back = /obj/item/storage/backpack/rogue/satchel
+	l_pocket = /obj/item/storage/belt/rogue/pouch/coins/poor
+	r_pocket = /obj/item/roguekey/crafterguild
 	backpack_contents = list(
-		/obj/item/rogueweapon/hammer/steel = 1,
-		/obj/item/lockpickring/mundane = 1,
+		/obj/item/rogueweapon/hammer/iron = 1,
+		/obj/item/rogueweapon/tongs = 1,
 		/obj/item/recipe_book/blacksmithing = 1,
-		/obj/item/recipe_book/engineering = 1,
-		/obj/item/recipe_book/ceramics = 1,
-		/obj/item/recipe_book/builder = 1,
-		/obj/item/clothing/mask/rogue/spectacles/golden = 1,
-		/obj/item/mini_flagpole/artificer = 1,
-		/obj/item/rogueweapon/spellbook = 1,
+		/obj/item/mini_flagpole/blacksmith = 1,
 		)
 
 /datum/outfit/job/roguetown/hand
@@ -2601,6 +2598,8 @@
 		/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1,
 		/obj/item/rogueweapon/scabbard/sheath/royal = 1,
 		/obj/item/reagent_containers/glass/bottle/rogue/healthpot = 1,
+		/obj/item/inqhound = 1,
+		/obj/item/inqscanner = 1,
 		)
 
 /datum/outfit/job/roguetown/martyr
@@ -2853,15 +2852,14 @@
 	uniform = /obj/item/clothing/under/roguetown/heavy_leather_pants/otavan
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/inq
 	suit = /obj/item/clothing/suit/roguetown/armor/plate/scale/inqcoat
+	cloak = /obj/item/storage/backpack/rogue/satchel/beltpack
 	head = /obj/item/clothing/head/roguetown/inqhat
 	mask = /obj/item/clothing/mask/rogue/spectacles/inq/spawnpair
 	neck = /obj/item/clothing/neck/roguetown/gorget/steel
 	gloves = /obj/item/clothing/gloves/roguetown/otavan/psygloves
 	wrists = /obj/item/clothing/neck/roguetown/psicross/silver
 	shoes = /obj/item/clothing/shoes/roguetown/boots/otavan/inqboots
-	belt = /obj/item/storage/belt/rogue/leather/knifebelt/black/psydon
 	back = /obj/item/storage/backpack/rogue/satchel/otavan
-	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow/slurbow
 	backpack_contents = list(
 		/obj/item/storage/keyring/puritan = 1,
 		/obj/item/lockpickring/mundane = 1,
@@ -3236,14 +3234,15 @@
 /datum/outfit/job/roguetown/wretch
 	name = JOB_ROCKHILL_WRETCH
 	jobtype = /datum/job/roguetown/wretch
-	uniform = /obj/item/clothing/under/roguetown/chainlegs
-	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
-	suit = /obj/item/clothing/suit/roguetown/armor/brigandine
+	uniform = /obj/item/clothing/under/roguetown/platelegs
+	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
+	suit = /obj/item/clothing/suit/roguetown/armor/plate/full
+	cloak = /obj/item/clothing/cloak/tabard/black
 	neck = /obj/item/clothing/neck/roguetown/bevor
 	gloves = /obj/item/clothing/gloves/roguetown/plate
 	wrists = /obj/item/clothing/wrists/roguetown/bracers
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor
-	belt = /obj/item/storage/belt/rogue/leather/steel
+	belt = /obj/item/storage/belt/rogue/leather/steel/tasset
 	back = /obj/item/storage/backpack/rogue/satchel
 	backr = /obj/item/rogueweapon/scabbard/gwstrap
 	l_pocket = /obj/item/storage/belt/rogue/pouch/coins/poor

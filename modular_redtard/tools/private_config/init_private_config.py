@@ -7,23 +7,36 @@ REPO = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),
 PUBLIC = os.path.join(REPO, "config", "redtard")
 README = """# redtard private config
 
-Private balance for modular_redtard. The server repository mounts this repository as a git submodule at
-`config/redtard_private/`:
+Приватный баланс modular_redtard. Репозиторий сервера подключает его сабмодулем в `config/redtard_private/`:
 
-    git submodule add <url of this repository> config/redtard_private
+    git submodule add <адрес этого репозитория> config/redtard_private
 
-What the module reads from here, before the public defaults in `config/redtard/`:
+## Главное правило механик
 
-- `mechanics/armor.txt`, `intents.txt`, `items.txt`, `formulas.txt` and the number files of `mechanics/values/` (one per
-  block: `combat.txt`, `crafting.txt`, `treasury.txt` and so on): a file here replaces the public file of the same name as a
-  whole; a file that is missing here falls back to `config/redtard/mechanics/`, and a number missing from a values file
-  keeps its public default.
-- `config.txt`: loaded after `config/redtard/config.txt`; only the keys written here change, the rest keep the
-  public values.
+Числа механик живут здесь. В открытом репозитории (`config/redtard/mechanics/`) у каждого числа остаются только имя и
+описание, а значение там — 10. Без этой папки (CI, открытые клоны) сервер собирается и работает, все числа механик — 10.
+Число в коде модуля пишется как `rogue_value("имя")`, а не дефайном и не литералом.
 
-The Rogue Mechanics admin panel saves formulas and values here when this folder exists.
+## Что модуль читает отсюда
 
-Without access to this repository (CI, public clones) the server builds and runs on the public defaults.
+- `mechanics/values/*.txt` — файлы чисел, по одному на блок (`combat.txt`, `crafting.txt`, `treasury.txt` и так далее):
+  строки `#` с описанием, под ними `имя = число`, пустая строка между записями; время — в децисекундах. Файл здесь
+  заменяет открытый файл того же имени целиком; имя, которого здесь нет, берёт открытое значение (10).
+- `mechanics/armor.txt`, `intents.txt`, `items.txt`, `formulas.txt` — таблицы и формулы, по тому же правилу.
+- `config.txt` — читается после `config/redtard/config.txt` и меняет только записанные в нём ключи.
+
+Панель Rogue Mechanics сохраняет формулы и числа сюда, когда эта папка есть.
+
+## Инструменты (`modular_redtard/tools/private_config/`)
+
+- `code_numbers.py find` — опись чисел кода модуля; `apply <список>` — замена их на `rogue_value()`;
+  `merge` — перенос новых записей сюда; `sync` — открытые файлы по этим: те же имена и описания, число 10;
+  `sync --check` — проверка без записи; `sync --verify <ревизия>` — числа здесь равны открытым числам той ревизии.
+- `init_private_config.py <папка>` — заготовка такого репозитория по открытым файлам (их числа — 10, настоящие
+  вписываются сюда).
+
+Новое число: запись в нужный файл здесь, затем `code_numbers.py sync`. Новый файл чисел — ещё и строка в
+`rogue_value_files()` (`modular_redtard/mechanics/registry.dm`).
 """
 
 

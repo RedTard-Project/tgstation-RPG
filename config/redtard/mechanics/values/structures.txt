@@ -1,196 +1,440 @@
 # Ratwood's town structures, furniture and dungeon devices (rockhill/: far travel, hand carts, bells, telescopes, hookahs, sword racks, arcyne walls, bone piles, pressure plates).
 # Mechanics numbers: name = value, described by the # lines right above it; times are in deciseconds. The build compiles this file in, so its numbers are the defaults; a file of the same name in config/redtard_private/mechanics/values/ is read instead when present.
 
-# Deciseconds before a far travel tile sends someone out of the round (Ratwood do_after 50).
-far_travel_time = 50
+# Deciseconds before a far travel tile sends someone out of the round (Ratwood do_after).
+far_travel_time = 10
 
-# Tiles the one leaving and the one sending them may be from the far travel tile when they go (Ratwood get_dist 2).
-far_travel_range = 2
+# Tiles the one leaving and the one sending them may be from the far travel tile when they go (Ratwood get_dist).
+far_travel_range = 10
 
-# Weight a hand cart carries; an item weighs its size class (Ratwood maximum_capacity 60).
-handcart_capacity = 60
+# Weight a hand cart carries; an item weighs its size class (Ratwood maximum_capacity).
+handcart_capacity = 10
 
-# Weight of a creature in a hand cart (Ratwood arbitrary_living_creature_weight 10).
+# Weight of a creature in a hand cart (Ratwood arbitrary_living_creature_weight).
 handcart_creature_weight = 10
 
-# Deciseconds to load a creature into a hand cart, or to climb in lying down (Ratwood do_after 20).
-handcart_load_time = 20
+# Deciseconds to load a creature into a hand cart, or to climb in lying down (Ratwood do_after).
+handcart_load_time = 10
 
-# Weight a hand cart carries with a wooden cog in its wheel (Ratwood cart_capacity 90).
-handcart_cog_capacity = 90
+# Weight a hand cart carries with a wooden cog in its wheel (Ratwood cart_capacity).
+handcart_cog_capacity = 10
 
-# Weight a hand cart carries with a reliable wooden cog, the level 1 wheelbrace (Ratwood cart_capacity 120).
-handcart_reliable_cog_capacity = 120
+# Weight a hand cart carries with a reliable wooden cog, the level 1 wheelbrace (Ratwood cart_capacity).
+handcart_reliable_cog_capacity = 10
 
-# Weight a hand cart carries with an unstable wooden cog, the level 2 wheelbrace (Ratwood cart_capacity 140).
-handcart_unstable_cog_capacity = 140
+# Weight a hand cart carries with an unstable wooden cog, the level 2 wheelbrace (Ratwood cart_capacity).
+handcart_unstable_cog_capacity = 10
 
-# Deciseconds between two rings of a common bell (Ratwood last_ring + 15).
-bell_common_cooldown = 15
+# Deciseconds between two rings of a common bell (Ratwood last_ring).
+bell_common_cooldown = 10
 
-# Deciseconds between two rings of a ship's bell (Ratwood last_ring + 50).
-boatbell_cooldown = 50
+# Deciseconds between two rings of a ship's bell (Ratwood last_ring).
+boatbell_cooldown = 10
 
-# Deciseconds of ringing a service bell before its chime reaches those it calls (Ratwood do_after 10 SECONDS).
-service_bell_ring_time = 100
+# Deciseconds of ringing a service bell before its chime reaches those it calls (Ratwood do_after).
+service_bell_ring_time = 10
 
-# Deciseconds before a service bell can be rung again (Ratwood cooldown 10 MINUTES).
-service_bell_cooldown = 6000
+# Deciseconds before a service bell can be rung again (Ratwood cooldown).
+service_bell_cooldown = 10
 
-# Deciseconds before a church bell can be rung again (Ratwood cooldown 3 SECONDS).
-church_bell_cooldown = 30
+# Deciseconds before a church bell can be rung again (Ratwood cooldown).
+church_bell_cooldown = 10
 
-# Tiles a church bell is heard across (Ratwood ring_bell() and loud_message hearing_distance 150).
-church_bell_range = 150
+# Tiles a church bell is heard across (Ratwood ring_bell() and loud_message hearing_distance).
+church_bell_range = 10
 
-# Tiles within which a church bell is heard ringing up close rather than as a distant toll (Ratwood distance <= 7).
-church_bell_near_range = 7
+# Tiles within which a church bell is heard ringing up close rather than as a distant toll (Ratwood distance).
+church_bell_near_range = 10
 
-# Perception at or below which one far from a church bell hears only something somewhere (Ratwood loud_message STAPER <= 8).
-loud_message_perception = 8
+# Perception at or below which one far from a church bell hears only something somewhere (Ratwood loud_message STAPER).
+loud_message_perception = 10
 
-# Deciseconds of gazing through a telescope at Astrata or Noc (Ratwood do_after 25).
-telescope_gaze_time = 25
+# Deciseconds of gazing through a telescope at Astrata or Noc (Ratwood do_after).
+telescope_gaze_time = 10
 
-# Burn to the head of one Astrata blinds through a telescope (Ratwood receive_damage(0, 5)).
-telescope_astrata_burn = 5
+# Burn to the head of one Astrata blinds through a telescope (Ratwood receive_damage).
+telescope_astrata_burn = 10
 
-# Deciseconds Noc's blessing from a telescope lasts (Ratwood nocblessing duration 30 MINUTES).
-noc_blessing_time = 18000
+# Deciseconds Noc's blessing from a telescope lasts (Ratwood nocblessing duration).
+noc_blessing_time = 10
 
-# Intelligence Noc's blessing adds (Ratwood nocblessing effectedstats intelligence 1).
-noc_blessing_intelligence = 1
+# Intelligence Noc's blessing adds (Ratwood nocblessing effectedstats intelligence).
+noc_blessing_intelligence = 10
 
-# Units of smoking mix a hookah holds (Ratwood create_reagents(60)).
-hookah_volume = 60
+# Units of smoking mix a hookah holds (Ratwood create_reagents).
+hookah_volume = 10
 
-# Deciseconds of one puff from a hookah (Ratwood do_after_mob 2 SECONDS).
-hookah_puff_time = 20
+# Deciseconds of one puff from a hookah (Ratwood do_after_mob).
+hookah_puff_time = 10
 
-# Tiles a smoker may walk from the hookah before its mouthpiece flies out of the hand (Ratwood get_dist > 2).
-hookah_hose_range = 2
+# Tiles a smoker may walk from the hookah before its mouthpiece flies out of the hand (Ratwood get_dist).
+hookah_hose_range = 10
 
-# Deciseconds to lock or unlock a sword rack with an artificer's linker (Ratwood toggle_lock do_after 20).
-sword_rack_lock_time = 20
+# Deciseconds to lock or unlock a sword rack with an artificer's linker (Ratwood toggle_lock do_after).
+sword_rack_lock_time = 10
 
-# Deciseconds an arcyne wall stands before it fades (Ratwood forcefield_weak timeleft 20 SECONDS).
-arcyne_wall_time = 200
+# Deciseconds an arcyne wall stands before it fades (Ratwood forcefield_weak timeleft).
+arcyne_wall_time = 10
 
-# Deciseconds a bone pile takes to raise its haunt, at first and after each death (Ratwood addtimer 4 SECONDS).
-bonepile_haunt_delay = 40
+# Deciseconds a bone pile takes to raise its haunt, at first and after each death (Ratwood addtimer).
+bonepile_haunt_delay = 10
 
-# Tiles a haunt may stray from its bone pile before it is pulled back to it (Ratwood offset > 8).
-haunt_leash_range = 8
+# Tiles a haunt may stray from its bone pile before it is pulled back to it (Ratwood offset).
+haunt_leash_range = 10
 
-# Deciseconds to hide a pressure plate under dirt or to wipe the dirt away (Ratwood do_after 10).
+# Deciseconds to hide a pressure plate under dirt or to wipe the dirt away (Ratwood do_after).
 pressure_plate_conceal_time = 10
 
 # --- Block 3, task B8: doors, winches and levers, locks and keys, the lock imprinter, windows, hiding spots and candles (rockhill/doors.dm, locksmith.dm, windows.dm, hiding.dm, fires.dm; Ratwood mineral_doors.dm, keys.dm, closets.dm, contraptions.dm, roguewindow.dm, gate.dm, redstone.dm, components/hiding_spot.dm, items/candle.dm).
 
-# Percent chance per point of strength that a kick breaks the lock of a locked door, for one at least as strong as the door's kick threshold (Ratwood onkick() prob(STASTR * 0.5)).
-door_kick_chance_per_strength = 0.5
+# Percent chance per point of strength that a kick breaks the lock of a locked door, for one at least as strong as the door's kick threshold (Ratwood onkick() prob(STASTR)).
+door_kick_chance_per_strength = 10
 
-# Damage a door basher (TRAIT_BASHDOORS) does to a locked door it walks into (Ratwood Bumped() take_damage 200).
-door_bash_damage = 200
+# Damage a door basher (TRAIT_BASHDOORS) does to a locked door it walks into (Ratwood Bumped() take_damage).
+door_bash_damage = 10
 
-# Damage a door basher does to a window with a blow of the hand (Ratwood roguewindow attack_hand() take_damage 15).
-window_bash_damage = 15
+# Damage a door basher does to a window with a blow of the hand (Ratwood roguewindow attack_hand() take_damage).
+window_bash_damage = 10
 
-# Deciseconds to mend a door at rank 1 of its repair craft, divided by the rank (Ratwood repairdoor() 300 / skill).
-door_repair_time = 300
+# Deciseconds to mend a door at rank 1 of its repair craft, divided by the rank (Ratwood repairdoor() / skill).
+door_repair_time = 10
 
-# Deciseconds to mend a window at rank 1 of carpentry, divided by the rank (Ratwood repairwindow() 300 / skill).
-window_repair_time = 300
+# Deciseconds to mend a window at rank 1 of carpentry, divided by the rank (Ratwood repairwindow() / skill).
+window_repair_time = 10
 
-# Deciseconds to crank a gate's winch before strength takes its share off (Ratwood winch 105 - STASTR * 10).
-winch_time = 105
+# Deciseconds to crank a gate's winch before strength takes its share off (Ratwood winch - STASTR).
+winch_time = 10
 
 # Deciseconds each point of strength takes off cranking a winch.
 winch_time_per_strength = 10
 
-# Deciseconds to pull a lever before strength takes its share off (Ratwood lever 100 - STASTR * 10).
-lever_time = 100
+# Deciseconds to pull a lever before strength takes its share off (Ratwood lever - STASTR).
+lever_time = 10
 
 # Deciseconds each point of strength takes off pulling a lever.
 lever_time_per_strength = 10
 
-# Deciseconds of one try at a lock with no Lockpicking rank, also the longest try (Ratwood trypicklock() picktime 70).
-lockpick_time = 70
+# Deciseconds of one try at a lock with no Lockpicking rank, also the longest try (Ratwood trypicklock() picktime).
+lockpick_time = 10
 
-# Deciseconds each Lockpicking rank takes off a try (Ratwood pickskill * 10).
+# Deciseconds each Lockpicking rank takes off a try (Ratwood pickskill).
 lockpick_time_per_rank = 10
 
-# Shortest try at a lock in deciseconds, before a hard lock adds to it (Ratwood clamp(picktime, 10, 70)).
+# Shortest try at a lock in deciseconds, before a hard lock adds to it (Ratwood clamp(picktime,)).
 lockpick_time_min = 10
 
-# Deciseconds each level of difficulty adds to a try at a lock harder than the first level (Ratwood 10 * lockdifficulty).
+# Deciseconds each level of difficulty adds to a try at a lock harder than the first level (Ratwood * lockdifficulty).
 lockpick_difficulty_time = 10
 
-# Percent chance of a try to move the pins with no Lockpicking rank (Ratwood pickchance 35).
-lockpick_chance = 35
+# Percent chance of a try to move the pins with no Lockpicking rank (Ratwood pickchance).
+lockpick_chance = 10
 
-# Percent chance each Lockpicking rank adds to a try (Ratwood pickskill * 10).
+# Percent chance each Lockpicking rank adds to a try (Ratwood pickskill).
 lockpick_chance_per_rank = 10
 
-# Perception divided by this is added to the percent chance of a try (Ratwood STAPER / 5).
-lockpick_perception_divisor = 5
+# Perception divided by this is added to the percent chance of a try (Ratwood STAPER).
+lockpick_perception_divisor = 10
 
-# Highest percent chance of a try, before a hard lock divides it (Ratwood clamp(pickchance, 1, 95)).
-lockpick_chance_max = 95
+# Highest percent chance of a try, before a hard lock divides it (Ratwood clamp(pickchance,)).
+lockpick_chance_max = 10
 
-# A lock harder than the first level divides the chance of a try by its difficulty times this (Ratwood pickchance / (lockdifficulty * 0.75)).
-lockpick_difficulty_chance_factor = 0.75
+# A lock harder than the first level divides the chance of a try by its difficulty times this (Ratwood pickchance / (lockdifficulty)).
+lockpick_difficulty_chance_factor = 10
 
-# Progress on the lock's strength of a good try with no Lockpicking rank (Ratwood moveup 10).
+# Progress on the lock's strength of a good try with no Lockpicking rank (Ratwood moveup).
 lockpick_progress = 10
 
-# Progress each Lockpicking rank adds to a good try (Ratwood pickskill * 3).
-lockpick_progress_per_rank = 3
+# Progress each Lockpicking rank adds to a good try (Ratwood pickskill).
+lockpick_progress_per_rank = 10
 
-# Most progress of one good try (Ratwood clamp(moveup, 10, 30)).
-lockpick_progress_max = 30
+# Most progress of one good try (Ratwood clamp(moveup,)).
+lockpick_progress_max = 10
 
-# Lockpicking experience of a good try per point of intelligence (Ratwood add_sleep_experience(STAINT / 2)).
-lockpick_click_xp = 0.5
+# Lockpicking experience of a good try per point of intelligence (Ratwood add_sleep_experience(STAINT)).
+lockpick_click_xp = 10
 
-# Lockpicking experience of a failed try per point of intelligence (Ratwood add_sleep_experience(STAINT / 4)).
-lockpick_clack_xp = 0.25
+# Lockpicking experience of a failed try per point of intelligence (Ratwood add_sleep_experience(STAINT)).
+lockpick_clack_xp = 10
 
-# Lock strength of a door or chest a custom lock is fitted to (Ratwood customlock/finished attack_obj() lock_strength 100).
-custom_lock_strength = 100
+# Lock strength of a door or chest a custom lock is fitted to (Ratwood customlock/finished attack_obj() lock_strength).
+custom_lock_strength = 10
 
-# Imprints or unlocks a lock imprinter gets from one unfinished lock put in it (Ratwood charge_per_source 4).
-imprinter_charges = 4
+# Imprints or unlocks a lock imprinter gets from one unfinished lock put in it (Ratwood charge_per_source).
+imprinter_charges = 10
 
-# Engineering rank to read the mode of a lock imprinter (Ratwood lock_imprinter examine() skill >= 2).
-imprinter_mode_rank = 2
+# Engineering rank to read the mode of a lock imprinter (Ratwood lock_imprinter examine() skill).
+imprinter_mode_rank = 10
 
-# Engineering rank to read the lock ID a lock imprinter holds (Ratwood lock_imprinter examine() skill >= 4).
-imprinter_lockid_rank = 4
+# Engineering rank to read the lock ID a lock imprinter holds (Ratwood lock_imprinter examine() skill).
+imprinter_lockid_rank = 10
 
 # Engineering experience of an imprint per point of intelligence (Ratwood add_sleep_experience(STAINT)).
-imprinter_xp = 1
+imprinter_xp = 10
 
-# Deciseconds to hide in a hiding spot with no Sneaking rank (Ratwood hiding_spot 5 SECONDS).
-hiding_time = 50
+# Deciseconds to hide in a hiding spot with no Sneaking rank (Ratwood hiding_spot).
+hiding_time = 10
 
 # Deciseconds each Sneaking rank takes off hiding (Ratwood sneak_level SECONDS).
 hiding_time_per_rank = 10
 
-# Shortest time to hide, in deciseconds (Ratwood max(1 SECONDS, ...)).
+# Shortest time to hide, in deciseconds (Ratwood max(...)).
 hiding_time_min = 10
 
-# Wax of a new candle, in Ratwood's ticks of burning of two seconds each (Ratwood wax 1000).
-candle_wax = 1000
+# Wax of a new candle, in Ratwood's ticks of burning of two seconds each (Ratwood wax).
+candle_wax = 10
 
-# Wax a lit candle burns each second (Ratwood: one each tick of SSobj, every two seconds).
-candle_wax_per_second = 0.5
+# Wax a lit candle burns each second (Ratwood: each tick of SSobj).
+candle_wax_per_second = 10
 
-# Wax above which a candle still looks whole (Ratwood update_icon() wax > 750).
-candle_wax_full = 750
+# Wax above which a candle still looks whole (Ratwood update_icon() wa).
+candle_wax_full = 10
 
-# Wax above which a candle looks half burned; below it the candle looks nearly gone (Ratwood update_icon() wax > 400).
-candle_wax_half = 400
+# Wax above which a candle looks half burned; below it the candle looks nearly gone (Ratwood update_icon() wa).
+candle_wax_half = 10
 
-# Most wax left in a candle someone runs over, which tramples it out (Ratwood Crossed() wax = 100).
-candle_trampled_wax = 100
+# Most wax left in a candle someone runs over, which tramples it out (Ratwood Crossed() wa).
+candle_trampled_wax = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list a)
+
+# Deciseconds the click delay after a lightning strike lasts.
+rockhill_lightning_click_delay = 10
+
+# Deciseconds a lightning strike immobilizes.
+rockhill_lightning_immobilize = 10
+
+# Damage of a lightning strike.
+rockhill_lightning_damage = 10
+
+# Bad luck a lightning strike gives.
+rockhill_lightning_badluck = 10
+
+# Percent chance rain washes someone outdoors.
+rockhill_rain_wash_chance = 10
+
+# Damage a mantrap does to a tool used on it.
+rockhill_mantrap_tool_damage = 10
+
+# Hiding of a mantrap per level of crafting skill of its setter.
+rockhill_mantrap_hidden_per_crafting = 10
+
+# Bad luck that a mantrap gives its victim.
+rockhill_mantrap_badluck = 10
+
+# Least crafting skill needed to set a trap.
+rockhill_trap_min_crafting = 10
+
+# Range at which a smashed window is heard.
+rockhill_window_crash_range = 10
+
+# Damage a knife does to a window lock.
+rockhill_window_knife_damage = 10
+
+# Deciseconds it takes to climb a boulder.
+rockhill_boulder_climb_time = 10
+
+# How much luck multiplies the mining chances.
+rockhill_mine_luck_multiplier = 10
+
+# Percent chance of an extra rock from a mined rock.
+rockhill_mine_extra_rock_chance = 10
+
+# Percent chance of ore from a mined vein.
+rockhill_mine_ore_chance = 10
+
+# Percent chance of an extra stone from a mined rock.
+rockhill_mine_extra_stone_chance = 10
+
+# Mining experience gained per point of intelligence.
+rockhill_mine_xp_per_int = 10
+
+# Stamina a mining swing costs.
+rockhill_mine_stamina = 10
+
+# Integrity of a rock wall.
+rockhill_rock_integrity = 10
+
+# Deciseconds it takes to raise a fire.
+rockhill_fire_raise_time = 10
+
+# Topple chance per point of strength of a fire kicked.
+rockhill_fire_topple_per_strength = 10
+
+# Fire stacks a fire gives to whoever crosses it.
+rockhill_fire_cross_stacks = 10
+
+# Deciseconds of burn time at which a fire counts as full.
+rockhill_fire_full_margin = 10
+
+# Largest share of fuel a fire burns in one cycle.
+rockhill_fire_spent_max = 10
+
+# Smallest share of fuel a fire burns in one cycle.
+rockhill_fire_spent_min = 10
+
+# Deciseconds a player has to pick an advanced class.
+rockhill_advclass_choice_time = 10
+
+# How far a kneestinger throws its victim.
+rockhill_kneestinger_throw = 10
+
+# Damage of a kneestinger.
+rockhill_kneestinger_damage = 10
+
+# Deciseconds, the longest wait between lightning strikes.
+rockhill_lightning_max_delay = 10
+
+# Deciseconds, the shortest wait between lightning strikes.
+rockhill_lightning_min_delay = 10
+
+# Range of a lightning strike.
+rockhill_lightning_range = 10
+
+# Deciseconds, the longest wait before the next weather.
+rockhill_weather_max_delay = 10
+
+# Weakest strength a weather can start with.
+rockhill_weather_min_strength = 10
+
+# How many dungeon entries a map must get.
+rockhill_dungeon_required_entries = 10
+
+# Percent chance of a dungeon entry at a candidate spot.
+rockhill_dungeon_entry_chance = 10
+
+# Minimum distance between two dungeon entries.
+rockhill_dungeon_entry_spacing = 10
+
+# How many dungeon markers a fire generates.
+rockhill_dungeon_markers_per_fire = 10
+
+# Deciseconds it takes to travel through a dungeon entrance.
+rockhill_dungeon_travel_time = 10
+
+# Deciseconds between the openings of a hatch trap.
+rockhill_hatch_cycle = 10
+
+# Range at which a wall trap fires.
+rockhill_trap_wall_range = 10
+
+# Damage of a dungeon trap.
+rockhill_trap_damage = 10
+
+# Deciseconds it takes to peek through something (windows, doors).
+rockhill_peek_time = 10
+
+# Power of the sunlight on outdoor tiles.
+rockhill_sunlight_power = 10
+
+# Range of the sunlight on outdoor tiles.
+rockhill_sunlight_range = 10
+
+# Armor penetration of a blow on a structure: it goes through all armor.
+rockhill_blow_penetration = 10
+
+# Rare fish multiplier of Abyssor anglers.
+fish_abyssor_rare = 10
+
+# Treasure multiplier of Abyssor anglers.
+fish_abyssor_treasure = 10
+
+# Danger multiplier of Abyssor anglers.
+fish_abyssor_danger = 10
+
+# How much less danger a cautious fisher meets.
+fish_cautious_danger = 10
+
+# Bonus to rare fish and treasure of a cautious fisher.
+fish_cautious_bonus = 10
+
+# Luck bonus to rare fish and treasure per point of fortune past the first steps.
+fish_luck_later_step = 10
+
+# Luck bonus to rare fish and treasure per point of fortune within the first steps.
+fish_luck_first_step = 10
+
+# Points of fortune over the middling counted at the first step of luck bonus.
+fish_luck_first_steps = 10
+
+# Deciseconds of paralysis of whoever a closing gate crushes.
+gate_crush_paralyze = 10
+
+# Longest deciseconds of rummaging in a herb.
+rockhill_herb_pick_max = 10
+
+# Shortest deciseconds of rummaging in a herb.
+rockhill_herb_pick_min = 10
+
+# Deciseconds before a flint strikes again.
+rockhill_flint_cooldown = 10
+
+# Deciseconds a goblin corpse lies before it turns to bones.
+rockhill_goblin_skeleton_time = 10
+
+# Water at or above this temperature is a bath.
+rockhill_water_warm = 10
+
+# Water at or below this temperature chills whoever wades in it.
+rockhill_water_cold = 10
+
+# Range at which a bell is heard.
+rockhill_bell_range = 10
+
+# Range at which a common bell is heard.
+rockhill_bell_common_range = 10
+
+# Deciseconds of paralysis from a water trap.
+water_trap_effect_paralyze = 10
+
+# Deciseconds of paralysis from a shock trap.
+shock_trap_effect_paralyze = 10
+
+# Deciseconds before one can use a travel tile again.
+traveltile_travel_cooldown = 10
+
+# Deciseconds it takes to work a tree by hand.
+newtree_attack_hand_time = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list b15)
+
+# Strength at which one locked in a pillory breaks it open (Azure Peak pillory user_unbuckle_mob() STASTR).
+pillory_break_strength = 10
+
+# Deciseconds one strong enough takes to break a pillory open (Azure Peak pillory user_unbuckle_mob()).
+pillory_break_time = 10
+
+# Deciseconds one in a latched, unlocked pillory struggles to force the latch (Azure Peak pillory user_unbuckle_mob()).
+pillory_unlatch_time = 10
+
+# Deciseconds to tie a noose over someone else's neck (Azure Peak noose user_buckle_mob()).
+noose_tie_time = 10
+
+# Brute damage of falling when the noose or the gallows is destroyed (Azure Peak noose Destroy()).
+noose_fall_damage = 10
+
+# Deciseconds one is knocked down falling when the noose or the gallows is destroyed (Azure Peak noose Destroy()).
+noose_fall_knockdown = 10
+
+# Deciseconds a headless body is knocked down dropping from the noose (Azure Peak noose process()).
+noose_drop_knockdown = 10
+
+# Suffocation damage of hanging, every tick of the noose (Azure Peak noose process()).
+noose_choke_damage = 10
+
+# Percent chance, every tick of the noose, that one hanging gasps (Azure Peak noose process()).
+noose_gasp_chance = 10
+
+# Percent chance, every tick of the noose, that a battered dead head comes off (Azure Peak noose process()).
+noose_behead_chance = 10
+
+# Brute damage of a dead head before the noose can tear it off (Azure Peak noose process()).
+noose_behead_damage = 10
+
+# Strength above which one struggles out of a noose much sooner (Azure Peak resist_buckle() STASTR).
+noose_strong_strength = 10
+
+# Deciseconds to struggle out of a noose (Azure Peak resist_buckle(): the base minute and the noose's breakoutextra).
+noose_struggle_time = 10
+
+# Deciseconds one strong enough takes to struggle out of a noose (Azure Peak resist_buckle() of the strong).
+noose_struggle_time_strong = 10

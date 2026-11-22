@@ -46,29 +46,29 @@
 #define ROGUE_NPC_SPECIAL_OPENER rogue_value("npc_special_opener")
 #define ROGUE_NPC_SPECIAL_MIN_INT rogue_value("npc_special_min_int")
 /// Azure Peak: after a special the next blow waits this many times the usual click delay.
-#define ROGUE_NPC_SPECIAL_RECOVERY 1.8
+#define ROGUE_NPC_SPECIAL_RECOVERY rogue_value("npc_special_recovery")
 
 /// Vibelin's stance weights and their shifts.
-#define ROGUE_NPC_STRONG_WEIGHT 45
-#define ROGUE_NPC_SWIFT_WEIGHT 40
-#define ROGUE_NPC_FEINT_WEIGHT 15
-#define ROGUE_NPC_TIRED_SHIFT 20
-#define ROGUE_NPC_SKILLED_STRONG 15
-#define ROGUE_NPC_GUARD_FEINT 25
+#define ROGUE_NPC_STRONG_WEIGHT rogue_value("npc_strong_weight")
+#define ROGUE_NPC_SWIFT_WEIGHT rogue_value("npc_swift_weight")
+#define ROGUE_NPC_FEINT_WEIGHT rogue_value("npc_feint_weight")
+#define ROGUE_NPC_TIRED_SHIFT rogue_value("npc_tired_shift")
+#define ROGUE_NPC_SKILLED_STRONG rogue_value("npc_skilled_strong")
+#define ROGUE_NPC_GUARD_FEINT rogue_value("npc_guard_feint")
 /// Share of stamina spent past which the NPC drops the strong stance.
-#define ROGUE_NPC_SPENT 0.6
+#define ROGUE_NPC_SPENT rogue_value("npc_spent")
 /// Share of stamina spent past which strong gives way to swift.
-#define ROGUE_NPC_TIRED 0.4
+#define ROGUE_NPC_TIRED rogue_value("npc_tired")
 /// Share of stamina spent past which the NPC no longer feints.
-#define ROGUE_NPC_FEINT_FATIGUE 0.7
+#define ROGUE_NPC_FEINT_FATIGUE rogue_value("npc_feint_fatigue")
 /// Brute or burn on a limb from which a trained eye sees it as wounded.
-#define ROGUE_NPC_WOUND_SEEN 20
+#define ROGUE_NPC_WOUND_SEEN rogue_value("npc_wound_seen")
 /// Weapon skill ranks of Vibelin's checks (novice, journeyman, expert).
 #define ROGUE_NPC_RANK_NOVICE 1
 #define ROGUE_NPC_RANK_JOURNEYMAN 3
 #define ROGUE_NPC_RANK_EXPERT 4
 /// Share a weak point is kept longer per tile of reach past the first.
-#define ROGUE_NPC_REACH_TIME 0.1
+#define ROGUE_NPC_REACH_TIME rogue_value("npc_reach_time")
 #define ROGUE_NPC_TRAIT "rogue_npc"
 
 /mob/living/carbon/human

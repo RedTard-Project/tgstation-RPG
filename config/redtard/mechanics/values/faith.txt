@@ -2,79 +2,2166 @@
 # Mechanics numbers: name = value, described by the # lines right above it; times are in deciseconds. The build compiles this file in, so its numbers are the defaults; a file of the same name in config/redtard_private/mechanics/values/ is read instead when present.
 
 # Progression of miracle tier 1, and the devotion limit of a devotee by default (Ratwood CLERIC_REQ_1).
-faith_devotion_tier1 = 250
+faith_devotion_tier1 = 10
 
 # Progression of miracle tier 2 (Ratwood CLERIC_REQ_2).
-faith_devotion_tier2 = 400
+faith_devotion_tier2 = 10
 
 # Progression of miracle tier 3 (Ratwood CLERIC_REQ_3).
-faith_devotion_tier3 = 750
+faith_devotion_tier3 = 10
 
 # Progression of miracle tier 4, and the devotion limit of a devotee who starts full (Ratwood CLERIC_REQ_4).
-faith_devotion_tier4 = 1000
+faith_devotion_tier4 = 10
 
 # Devotion a weakly devout role regains every regen step (Ratwood CLERIC_REGEN_WEAK).
-faith_regen_weak = 0.1
+faith_regen_weak = 10
 
 # Devotion a devotee regains every regen step (Ratwood CLERIC_REGEN_DEVOTEE).
-faith_regen_devotee = 0.3
+faith_regen_devotee = 10
 
 # Devotion a lesser cleric regains every regen step (Ratwood CLERIC_REGEN_MINOR).
-faith_regen_minor = 0.5
+faith_regen_minor = 10
 
 # Devotion the ordained clergy regain every regen step (Ratwood CLERIC_REGEN_MAJOR).
-faith_regen_major = 0.8
+faith_regen_major = 10
 
 # Devotion a witch regains every regen step (Ratwood CLERIC_REGEN_WITCH).
-faith_regen_witch = 1.5
+faith_regen_witch = 10
 
-# Devotion a stigmatic regains every regen step (Ratwood CLERIC_REGEN_ABSOLVER / 2).
-faith_regen_stigmata = 2.5
+# Devotion a stigmatic regains every regen step (Ratwood CLERIC_REGEN_ABSOLVER).
+faith_regen_stigmata = 10
 
 # Devotion an absolver regains every regen step (Ratwood CLERIC_REGEN_ABSOLVER).
-faith_regen_absolver = 5
+faith_regen_absolver = 10
 
-# Deciseconds of a regen step of devotion (Ratwood's processing tick, 2 seconds).
-faith_regen_interval = 20
+# Deciseconds of a regen step of devotion (Ratwood's processing tick).
+faith_regen_interval = 10
 
 # Devotion and progression a devout role starts with when it does not start full (Ratwood).
-faith_start_devotion = 50
+faith_start_devotion = 10
 
 # Devotion a cycle of Give Prayer brings before the bonus of the Miracles skill (Ratwood prayer_effectiveness).
-faith_prayer_devotion = 2
+faith_prayer_devotion = 10
 
 # Deciseconds of a cycle of Give Prayer (Ratwood).
-faith_prayer_cycle = 30
+faith_prayer_cycle = 10
 
 # Most cycles of one Give Prayer (Ratwood).
-faith_prayer_cycles = 50
+faith_prayer_cycles = 10
 
 # Tiles within which an idol or a cross of the patron carries a prayer (Vibelin).
-faith_idol_range = 7
+faith_idol_range = 10
 
 # Shortest prayer a patron hears, in characters (Ratwood).
-faith_prayer_min_length = 15
+faith_prayer_min_length = 10
 
-# Deciseconds within which a new prayer counts as the last one and brings no reward (Ratwood MT_PSYPRAY, 1 minute).
-faith_prayer_interval = 600
+# Deciseconds within which a new prayer counts as the last one and brings no reward (Ratwood MT_PSYPRAY).
+faith_prayer_interval = 10
 
 # Fire stacks an offended patron sets on the one who insulted it in a prayer (Ratwood).
-faith_smite_fire_stacks = 20
+faith_smite_fire_stacks = 10
 
 # Ranks of the Miracles skill a miracle needs per tier: tier 4 wants an expert.
-faith_ranks_per_tier = 1
+faith_ranks_per_tier = 10
 
-# Healing of the miracles on a fortified target, as a factor (Ratwood Fortify, +50%).
-faith_fortify_bonus = 1.5
+# Healing of the miracles on a fortified target, as a factor (Ratwood Fortify).
+faith_fortify_bonus = 10
 
-# Deciseconds of Test Faith before the victim confesses (Ratwood 10 seconds).
-faith_confess_time = 100
+# Deciseconds of Test Faith before the victim confesses (Ratwood).
+faith_confess_time = 10
 
 # Tiles within which a cross must stand for Test Faith (Ratwood).
-faith_confess_cross_range = 5
+faith_confess_cross_range = 10
 
-# Deciseconds the blessing of a holy book lasts (Azure Peak buff/blessed, 20 minutes).
-faith_blessed_duration = 12000
+# Deciseconds the blessing of a holy book lasts (Azure Peak buff/blessed).
+faith_blessed_duration = 10
 
 # Fortune the blessing of a holy book gives (Azure Peak buff/blessed).
-faith_blessed_fortune = 1
+faith_blessed_fortune = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list b)
+
+# Percent chance in /datum/action/cooldown/spell/pointed/rogue_miracle/orison_water/pour().
+orison_water_pour_chance = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list d_sborshchik)
+
+# PQ given once for each body to whoever calls it back from death (Ratwood PQ_GAIN_REVIVE).
+pq_gain_revive = 10
+
+# How long a body called back from death is sick with it (Ratwood debuff/revived). Times are in deciseconds.
+revival_sickness_time = 10
+
+# Points lost from every stat by a body called back from death (Ratwood debuff/revived).
+revival_sickness_penalty = 10
+
+# Points lost from every stat by a body called back after it had begun to rot (Ratwood debuff/rotted, "doubly so").
+revival_sickness_penalty_rotted = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list b16a)
+
+# Devotion one cast of Astratan Gaze costs.
+miracle_astratan_gaze_devotion = 10
+
+# Stamina one cast of Astratan Gaze takes.
+miracle_astratan_gaze_stamina = 10
+
+# Deciseconds before Astratan Gaze can be cast again.
+miracle_astratan_gaze_cooldown = 10
+
+# Tiles away Astratan Gaze can be cast at.
+miracle_astratan_gaze_range = 10
+
+# Deciseconds Astratan Gaze lasts for each rank of the caster in miracles (Ratwood).
+faith_gaze_time = 10
+
+# Factor Astratan Gaze lasts longer by in the light of day and dawn (Ratwood).
+faith_gaze_day_factor = 10
+
+# Devotion one cast of Immolation costs.
+miracle_immolation_devotion = 10
+
+# Stamina one cast of Immolation takes.
+miracle_immolation_stamina = 10
+
+# Deciseconds before Immolation can be cast again.
+miracle_immolation_cooldown = 10
+
+# Tiles away Immolation can be cast at.
+miracle_immolation_range = 10
+
+# Deciseconds of prayer before the holy fire is lit (Ratwood).
+faith_immolation_prayer = 10
+
+# Deciseconds the holy fire of Immolation burns (Ratwood).
+faith_immolation_time = 10
+
+# Damage the cutting of Immolation adds up to each second (Ratwood base_damage).
+faith_immolation_damage = 10
+
+# Share of that damage the one it burns on takes (Ratwood self_damage).
+faith_immolation_self = 10
+
+# Strength of the cutting of Immolation against one creature (Ratwood damage_amplifier).
+faith_immolation_amplifier = 10
+
+# Rank in miracles from which the caster makes Immolation burn better (Ratwood).
+faith_immolation_skill_rank = 10
+
+# What a skilled caster takes off the share of damage the burning one takes.
+faith_immolation_skill_relief = 10
+
+# What a skilled caster adds to the strength of the cutting.
+faith_immolation_skill_boost = 10
+
+# What a devout Astratan on fire takes off the share of damage they take.
+faith_immolation_devout_relief = 10
+
+# What a devout Astratan on fire adds to the strength of the cutting.
+faith_immolation_devout_boost = 10
+
+# Tiles the caster may stand away from the one they hold the fire on (Ratwood max_distance).
+faith_immolation_range = 10
+
+# Tiles around the burning one that the holy flames cut.
+faith_immolation_aura = 10
+
+# Damage the burning one takes each second with no one around (Ratwood).
+faith_immolation_idle = 10
+
+# Strength the cutting gains for each creature past the first (Ratwood target_bonus).
+faith_immolation_crowd = 10
+
+# Factor of the damage beasts and other creatures without limbs take (Ratwood simple_mob_bonus).
+faith_immolation_beast = 10
+
+# Deciseconds between the lines the cutting flames say (Ratwood message_cooldown).
+faith_immolation_message_gap = 10
+
+# Devotion one cast of Summon Spear costs.
+miracle_summon_spear_devotion = 10
+
+# Stamina one cast of Summon Spear takes.
+miracle_summon_spear_stamina = 10
+
+# Deciseconds before Summon Spear can be cast again.
+miracle_summon_spear_cooldown = 10
+
+# Tiles away Summon Spear can be cast at.
+miracle_summon_spear_range = 10
+
+# Slowdown a spear of light in the hand brings (Ratwood).
+faith_spear_slowdown = 10
+
+# Speed of a thrown spear of light (Ratwood).
+faith_spear_throw_speed = 10
+
+# Force of a thrown spear of light on impact (Ratwood).
+faith_spear_throwforce = 10
+
+# Shock the lightning of a spear of light deals at its centre (Ratwood strike_damage).
+faith_spear_damage = 10
+
+# Share of that shock the ring around the centre takes (Ratwood).
+faith_spear_ring = 10
+
+# Deciseconds before the lightning of a spear of light strikes (Ratwood step_delay).
+faith_spear_delay = 10
+
+# Shock the lightning adds against the undead (Ratwood).
+faith_spear_undead = 10
+
+# Deciseconds a creature struck by the lightning of a spear of light stays shocked (Ratwood).
+faith_spear_shock_time = 10
+
+# Devotion one cast of Divine Strike costs.
+miracle_divine_strike_devotion = 10
+
+# Stamina one cast of Divine Strike takes.
+miracle_divine_strike_stamina = 10
+
+# Deciseconds before Divine Strike can be cast again.
+miracle_divine_strike_cooldown = 10
+
+# Tiles away Divine Strike can be cast at.
+miracle_divine_strike_range = 10
+
+# Deciseconds a blessed strike of Ravox waits for a blow to land (Ratwood).
+faith_divine_strike_time = 10
+
+# Speed a body bound by the chains of Ravox loses (Ratwood ravox_burden).
+faith_ravox_burden_speed = 10
+
+# Willpower a body bound by the chains of Ravox loses.
+faith_ravox_burden_willpower = 10
+
+# Deciseconds the chains of Ravox hold.
+faith_ravox_burden_time = 10
+
+# Devotion one cast of Call to Arms costs.
+miracle_call_to_arms_devotion = 10
+
+# Stamina one cast of Call to Arms takes.
+miracle_call_to_arms_stamina = 10
+
+# Deciseconds before Call to Arms can be cast again.
+miracle_call_to_arms_cooldown = 10
+
+# Tiles away Call to Arms can be cast at.
+miracle_call_to_arms_range = 10
+
+# Tiles around the caster in which Call to Arms reaches (Ratwood).
+faith_call_to_arms_range = 10
+
+# Deciseconds the gift or the curse of Call to Arms lasts (Ratwood).
+faith_call_to_arms_time = 10
+
+# Strength Call to Arms gives (Ratwood).
+faith_call_to_arms_strength = 10
+
+# Willpower Call to Arms gives (Ratwood).
+faith_call_to_arms_willpower = 10
+
+# Constitution Call to Arms gives (Ratwood).
+faith_call_to_arms_constitution = 10
+
+# Willpower Call to Arms takes from the inhumen (Ratwood).
+faith_call_to_arms_curse_willpower = 10
+
+# Constitution Call to Arms takes from the inhumen (Ratwood).
+faith_call_to_arms_curse_constitution = 10
+
+# Devotion one cast of Persistence costs.
+miracle_persistence_devotion = 10
+
+# Stamina one cast of Persistence takes.
+miracle_persistence_stamina = 10
+
+# Deciseconds before Persistence can be cast again.
+miracle_persistence_cooldown = 10
+
+# Tiles away Persistence can be cast at.
+miracle_persistence_range = 10
+
+# Deciseconds the undead bleed and hurt more under Persistence (Ratwood).
+faith_persistence_undead_time = 10
+
+# Factor the bleeding and the pain of the undead grow by under Persistence (Ratwood).
+faith_persistence_undead_mult = 10
+
+# Share of the bleeding Persistence stops with no blood spilled around (Ratwood situational_bonus).
+faith_persistence_bonus = 10
+
+# Tiles around the one healed in which spilled blood helps Persistence (Ratwood).
+faith_persistence_blood_range = 10
+
+# What each spill of blood adds to the share Persistence stops (Ratwood).
+faith_persistence_blood_step = 10
+
+# The most share of the bleeding Persistence can stop (Ratwood).
+faith_persistence_bonus_cap = 10
+
+# Share of the pain of a wound that is left after Persistence (Ratwood).
+faith_persistence_pain_left = 10
+
+# Devotion one cast of Tug of War costs.
+miracle_tug_of_war_devotion = 10
+
+# Stamina one cast of Tug of War takes.
+miracle_tug_of_war_stamina = 10
+
+# Deciseconds before Tug of War can be cast again.
+miracle_tug_of_war_cooldown = 10
+
+# Tiles away Tug of War can be cast at.
+miracle_tug_of_war_range = 10
+
+# Tiles the chain of Tug of War pulls the target (Ratwood pull_distance).
+faith_tug_pull = 10
+
+# Slowdown, in ticks, the chain of Tug of War leaves on the target (Ratwood).
+faith_tug_slowdown = 10
+
+# Percent chance Tug of War gains against the undead (Ratwood).
+faith_tug_undead_chance = 10
+
+# Percent chance Tug of War gains or loses for each stat the caster has over or under the target (Ratwood).
+faith_tug_stat_step = 10
+
+# Percent chance Tug of War gains for each rank of the caster in miracles (Ratwood).
+faith_tug_skill_step = 10
+
+# Ranks in miracles after the first that give Tug of War one more tile (Ratwood).
+faith_tug_ranks_per_pull = 10
+
+# Stats the caster must beat the target in, more than this, for Tug of War to pull farther and slow more (Ratwood).
+faith_tug_majority = 10
+
+# Devotion one cast of Challenge costs.
+miracle_challenge_devotion = 10
+
+# Stamina one cast of Challenge takes.
+miracle_challenge_stamina = 10
+
+# Deciseconds before Challenge can be cast again.
+miracle_challenge_cooldown = 10
+
+# Tiles away Challenge can be cast at.
+miracle_challenge_range = 10
+
+# Deciseconds a trial of Ravox lasts (Ratwood).
+faith_challenge_time = 10
+
+# Deciseconds before the end of the trial that the flag throws everyone back (Ratwood).
+faith_challenge_warning = 10
+
+# Tiles around the flag that are cleared when the trial ends (Ratwood).
+faith_challenge_push_range = 10
+
+# Deciseconds of stun a creature thrown back by the flag gets (Ratwood).
+faith_challenge_push_stun = 10
+
+# Tiles the flag throws a creature at most (Ratwood).
+faith_challenge_push_throw = 10
+
+# Tiles the flag throws a creature at least (Ratwood).
+faith_challenge_push_least = 10
+
+# Deciseconds of stun a creature slammed by the flag itself gets (Ratwood).
+faith_challenge_slam_stun = 10
+
+# Damage a creature slammed by the flag itself takes (Ratwood).
+faith_challenge_slam_damage = 10
+
+# Devotion one cast of Bloodrush costs.
+miracle_bloodrage_devotion = 10
+
+# Stamina one cast of Bloodrush takes.
+miracle_bloodrage_stamina = 10
+
+# Deciseconds before Bloodrush can be cast again.
+miracle_bloodrage_cooldown = 10
+
+# Tiles away Bloodrush can be cast at.
+miracle_bloodrage_range = 10
+
+# Devotion one cast of Call to Slaughter costs.
+miracle_call_to_slaughter_devotion = 10
+
+# Stamina one cast of Call to Slaughter takes.
+miracle_call_to_slaughter_stamina = 10
+
+# Deciseconds before Call to Slaughter can be cast again.
+miracle_call_to_slaughter_cooldown = 10
+
+# Tiles away Call to Slaughter can be cast at.
+miracle_call_to_slaughter_range = 10
+
+# Tiles around the caster in which Call to Slaughter reaches (Ratwood).
+faith_call_to_slaughter_range = 10
+
+# Deciseconds the gift or the curse of Call to Slaughter lasts (Ratwood).
+faith_call_to_slaughter_time = 10
+
+# Strength Call to Slaughter gives the inhumen (Ratwood).
+faith_call_to_slaughter_strength = 10
+
+# Willpower Call to Slaughter gives the inhumen (Ratwood).
+faith_call_to_slaughter_willpower = 10
+
+# Constitution Call to Slaughter gives the inhumen (Ratwood).
+faith_call_to_slaughter_constitution = 10
+
+# Willpower Call to Slaughter takes from the rest (Ratwood).
+faith_call_to_slaughter_curse_willpower = 10
+
+# Constitution Call to Slaughter takes from the rest (Ratwood).
+faith_call_to_slaughter_curse_constitution = 10
+
+# Devotion one cast of Unholy Grasp costs.
+miracle_unholy_grasp_devotion = 10
+
+# Stamina one cast of Unholy Grasp takes.
+miracle_unholy_grasp_stamina = 10
+
+# Deciseconds before Unholy Grasp can be cast again.
+miracle_unholy_grasp_cooldown = 10
+
+# Tiles away Unholy Grasp can be cast at.
+miracle_unholy_grasp_range = 10
+
+# Speed a creature in a net of gore loses (Ratwood netted).
+faith_gore_net_speed = 10
+
+# Willpower a creature in a net of gore loses (Ratwood netted).
+faith_gore_net_willpower = 10
+
+# Deciseconds a creature of ordinary strength is held by a net of gore (Ratwood slipouttime).
+faith_gore_net_time = 10
+
+# The least deciseconds a net of gore holds anyone (Ratwood slipouttime).
+faith_gore_net_time_least = 10
+
+# Strength above which a creature slips out of a net of gore faster (Ratwood).
+faith_gore_net_strong = 10
+
+# Deciseconds each point of strength above that takes off the hold of a net of gore (Ratwood).
+faith_gore_net_strength_step = 10
+
+# Devotion one cast of Revel in Slaughter costs.
+miracle_revel_in_slaughter_devotion = 10
+
+# Stamina one cast of Revel in Slaughter takes.
+miracle_revel_in_slaughter_stamina = 10
+
+# Deciseconds before Revel in Slaughter can be cast again.
+miracle_revel_in_slaughter_cooldown = 10
+
+# Tiles away Revel in Slaughter can be cast at.
+miracle_revel_in_slaughter_range = 10
+
+# Tiles around the caster in which Revel in Slaughter takes the spilled blood (Ratwood).
+faith_revel_range = 10
+
+# Factor the bleeding or the pain of the target grows by under Revel in Slaughter (Ratwood).
+faith_revel_mult = 10
+
+# Deciseconds the target bleeds more under Revel in Slaughter (Ratwood).
+faith_revel_bleed_time = 10
+
+# Deciseconds the target hurts more under Revel in Slaughter (Ratwood).
+faith_revel_pain_time = 10
+
+# Devotion one cast of Vigorous Exchange costs.
+miracle_vigorous_exchange_devotion = 10
+
+# Stamina one cast of Vigorous Exchange takes.
+miracle_vigorous_exchange_stamina = 10
+
+# Deciseconds before Vigorous Exchange can be cast again.
+miracle_vigorous_exchange_cooldown = 10
+
+# Tiles away Vigorous Exchange can be cast at.
+miracle_vigorous_exchange_range = 10
+
+# Energy Vigorous Exchange gives the caster back (Ratwood starminatoregen).
+faith_vigorous_energy = 10
+
+# Factor of that energy that is taken from the caster and handed to another instead (Ratwood).
+faith_vigorous_other_factor = 10
+
+# Devotion one cast of Heat Metal costs.
+miracle_heat_metal_devotion = 10
+
+# Stamina one cast of Heat Metal takes.
+miracle_heat_metal_stamina = 10
+
+# Deciseconds before Heat Metal can be cast again.
+miracle_heat_metal_cooldown = 10
+
+# Tiles away Heat Metal can be cast at.
+miracle_heat_metal_range = 10
+
+# Burn damage the hand takes from a hot weapon it is made to drop (Ratwood).
+faith_heat_metal_hand = 10
+
+# Burn damage each limb takes from hot armour it is covered by (Ratwood).
+faith_heat_metal_worn = 10
+
+# Devotion one cast of Hammerfall costs.
+miracle_hammerfall_devotion = 10
+
+# Stamina one cast of Hammerfall takes.
+miracle_hammerfall_stamina = 10
+
+# Deciseconds before Hammerfall can be cast again.
+miracle_hammerfall_cooldown = 10
+
+# Tiles away Hammerfall can be cast at.
+miracle_hammerfall_range = 10
+
+# Tiles around the mark that Hammerfall breaks and throws down (Ratwood).
+faith_hammerfall_radius = 10
+
+# Tiles around the mark in which the screens shake (Ratwood shakeradius).
+faith_hammerfall_quake = 10
+
+# Deciseconds between the mark of fire and the quake (Ratwood).
+faith_hammerfall_delay = 10
+
+# Damage Hammerfall does to structures and walls (Ratwood structure_damage).
+faith_hammerfall_damage = 10
+
+# Deciseconds of fall the quake gives (Ratwood).
+faith_hammerfall_knockdown = 10
+
+# Devotion one cast of The Crafter's Covenant costs.
+miracle_crafter_covenant_devotion = 10
+
+# Stamina one cast of The Crafter's Covenant takes.
+miracle_crafter_covenant_stamina = 10
+
+# Deciseconds before The Crafter's Covenant can be cast again.
+miracle_crafter_covenant_cooldown = 10
+
+# Tiles away The Crafter's Covenant can be cast at.
+miracle_crafter_covenant_range = 10
+
+# Deciseconds of prayer the Crafter's Covenant takes (Ratwood chargetime).
+faith_covenant_prayer = 10
+
+# Factor the worth of the sacrifice is divided by to give what it can buy (Ratwood divine_tax).
+faith_covenant_tax = 10
+
+# Devotion one cast of Appraise costs.
+miracle_appraise_devotion = 10
+
+# Stamina one cast of Appraise takes.
+miracle_appraise_stamina = 10
+
+# Deciseconds before Appraise can be cast again.
+miracle_appraise_cooldown = 10
+
+# Tiles away Appraise can be cast at.
+miracle_appraise_range = 10
+
+# Devotion one cast of Transact costs.
+miracle_transact_devotion = 10
+
+# Stamina one cast of Transact takes.
+miracle_transact_stamina = 10
+
+# Deciseconds before Transact can be cast again.
+miracle_transact_cooldown = 10
+
+# Tiles away Transact can be cast at.
+miracle_transact_range = 10
+
+# The least worth of an item that Transact will burn (Ratwood).
+faith_transact_least = 10
+
+# Share of the worth of the burned item that Transact turns into healing or harm (Ratwood).
+faith_transact_share = 10
+
+# Devotion one cast of Equalize costs.
+miracle_equalize_devotion = 10
+
+# Stamina one cast of Equalize takes.
+miracle_equalize_stamina = 10
+
+# Deciseconds before Equalize can be cast again.
+miracle_equalize_cooldown = 10
+
+# Tiles away Equalize can be cast at.
+miracle_equalize_range = 10
+
+# Strength, speed and constitution Equalize takes from the target and gives the caster (Ratwood).
+faith_equalize_stat = 10
+
+# Deciseconds Equalize lasts (Ratwood).
+faith_equalize_time = 10
+
+# Devotion one cast of Churn Wealthy costs.
+miracle_churn_wealthy_devotion = 10
+
+# Stamina one cast of Churn Wealthy takes.
+miracle_churn_wealthy_stamina = 10
+
+# Deciseconds before Churn Wealthy can be cast again.
+miracle_churn_wealthy_cooldown = 10
+
+# Tiles away Churn Wealthy can be cast at.
+miracle_churn_wealthy_range = 10
+
+# Wealth in mammons at or below which Churn Wealthy finds nothing to hold against the target (Ratwood).
+faith_churn_least = 10
+
+# Wealth Churn Wealthy adds for a noble, so that they are always smitten at least moderately (Ratwood).
+faith_churn_noble_bonus = 10
+
+# Wealth in mammons up to which the weight of wealth is of the first kind for Churn Wealthy (Ratwood).
+faith_churn_1_wealth = 10
+
+# Burn damage Churn Wealthy does at the first weight of wealth (Ratwood).
+faith_churn_1_damage = 10
+
+# Fire stacks Churn Wealthy sets on the target at the first weight of wealth (Ratwood).
+faith_churn_1_stacks = 10
+
+# Deciseconds of stun Churn Wealthy gives at the first weight of wealth (Ratwood).
+faith_churn_1_stun = 10
+
+# Tiles of the blast of Churn Wealthy at the first weight of wealth, 0 for none (Ratwood).
+faith_churn_1_blast = 10
+
+# Wealth in mammons up to which the weight of wealth is of the second kind for Churn Wealthy (Ratwood).
+faith_churn_2_wealth = 10
+
+# Burn damage Churn Wealthy does at the second weight of wealth (Ratwood).
+faith_churn_2_damage = 10
+
+# Fire stacks Churn Wealthy sets on the target at the second weight of wealth (Ratwood).
+faith_churn_2_stacks = 10
+
+# Deciseconds of stun Churn Wealthy gives at the second weight of wealth (Ratwood).
+faith_churn_2_stun = 10
+
+# Tiles of the blast of Churn Wealthy at the second weight of wealth, 0 for none (Ratwood).
+faith_churn_2_blast = 10
+
+# Wealth in mammons up to which the weight of wealth is of the third kind for Churn Wealthy (Ratwood).
+faith_churn_3_wealth = 10
+
+# Burn damage Churn Wealthy does at the third weight of wealth (Ratwood).
+faith_churn_3_damage = 10
+
+# Fire stacks Churn Wealthy sets on the target at the third weight of wealth (Ratwood).
+faith_churn_3_stacks = 10
+
+# Deciseconds of stun Churn Wealthy gives at the third weight of wealth (Ratwood).
+faith_churn_3_stun = 10
+
+# Tiles of the blast of Churn Wealthy at the third weight of wealth, 0 for none (Ratwood).
+faith_churn_3_blast = 10
+
+# Wealth in mammons up to which the weight of wealth is of the fourth kind for Churn Wealthy (Ratwood).
+faith_churn_4_wealth = 10
+
+# Burn damage Churn Wealthy does at the fourth weight of wealth (Ratwood).
+faith_churn_4_damage = 10
+
+# Fire stacks Churn Wealthy sets on the target at the fourth weight of wealth (Ratwood).
+faith_churn_4_stacks = 10
+
+# Deciseconds of stun Churn Wealthy gives at the fourth weight of wealth (Ratwood).
+faith_churn_4_stun = 10
+
+# Tiles of the blast of Churn Wealthy at the fourth weight of wealth, 0 for none (Ratwood).
+faith_churn_4_blast = 10
+
+# Wealth in mammons up to which the weight of wealth is of the fifth kind for Churn Wealthy (Ratwood).
+faith_churn_5_wealth = 10
+
+# Burn damage Churn Wealthy does at the fifth weight of wealth (Ratwood).
+faith_churn_5_damage = 10
+
+# Fire stacks Churn Wealthy sets on the target at the fifth weight of wealth (Ratwood).
+faith_churn_5_stacks = 10
+
+# Deciseconds of stun Churn Wealthy gives at the fifth weight of wealth (Ratwood).
+faith_churn_5_stun = 10
+
+# Tiles of the blast of Churn Wealthy at the fifth weight of wealth, 0 for none (Ratwood).
+faith_churn_5_blast = 10
+
+# Wealth in mammons up to which the weight of wealth is of the sixth kind for Churn Wealthy (Ratwood).
+faith_churn_6_wealth = 10
+
+# Burn damage Churn Wealthy does at the sixth weight of wealth (Ratwood).
+faith_churn_6_damage = 10
+
+# Fire stacks Churn Wealthy sets on the target at the sixth weight of wealth (Ratwood).
+faith_churn_6_stacks = 10
+
+# Deciseconds of stun Churn Wealthy gives at the sixth weight of wealth (Ratwood).
+faith_churn_6_stun = 10
+
+# Tiles of the blast of Churn Wealthy at the sixth weight of wealth, 0 for none (Ratwood).
+faith_churn_6_blast = 10
+
+# Burn damage Churn Wealthy does at the seventh weight of wealth (Ratwood).
+faith_churn_7_damage = 10
+
+# Fire stacks Churn Wealthy sets on the target at the seventh weight of wealth (Ratwood).
+faith_churn_7_stacks = 10
+
+# Deciseconds of stun Churn Wealthy gives at the seventh weight of wealth (Ratwood).
+faith_churn_7_stun = 10
+
+# Tiles of the blast of Churn Wealthy at the seventh weight of wealth, 0 for none (Ratwood).
+faith_churn_7_blast = 10
+
+# Deciseconds between the first blast and the rending of a man past a fortune (Ratwood).
+faith_churn_rend_delay = 10
+
+# Gems that fall from a man torn apart by Churn Wealthy (Ratwood).
+faith_churn_gems = 10
+
+# Most limbs that are torn off a man rent into coin and gem (Ratwood).
+faith_churn_limbs = 10
+
+# Devotion one cast of Depth Bends costs.
+miracle_depth_bends_devotion = 10
+
+# Stamina one cast of Depth Bends takes.
+miracle_depth_bends_stamina = 10
+
+# Deciseconds before Depth Bends can be cast again.
+miracle_depth_bends_cooldown = 10
+
+# Tiles away Depth Bends can be cast at.
+miracle_depth_bends_range = 10
+
+# Stamina Depth Bends drains for each rank of the caster in miracles (Ratwood base_fatdrain).
+faith_bends_drain = 10
+
+# Deciseconds Depth Bends makes the target dizzy.
+faith_bends_dizzy = 10
+
+# Deciseconds Depth Bends blurs the target's sight.
+faith_bends_blur = 10
+
+# Devotion one cast of Undertow costs.
+miracle_undertow_devotion = 10
+
+# Stamina one cast of Undertow takes.
+miracle_undertow_stamina = 10
+
+# Deciseconds before Undertow can be cast again.
+miracle_undertow_cooldown = 10
+
+# Tiles away Undertow can be cast at.
+miracle_undertow_range = 10
+
+# Deciseconds of fall Undertow gives a target standing in water (Ratwood).
+faith_undertow_knockdown = 10
+
+# Deciseconds Undertow puts a target on land off balance (Ratwood).
+faith_undertow_offbalance = 10
+
+# Devotion one cast of Second Wind costs.
+miracle_second_wind_devotion = 10
+
+# Stamina one cast of Second Wind takes.
+miracle_second_wind_stamina = 10
+
+# Deciseconds before Second Wind can be cast again.
+miracle_second_wind_cooldown = 10
+
+# Tiles away Second Wind can be cast at.
+miracle_second_wind_range = 10
+
+# Share of stamina and of energy Second Wind gives back for each rank in miracles (Ratwood stamregenmod).
+faith_second_wind_share = 10
+
+# Devotion one cast of Aquatic Compulsion costs.
+miracle_aquatic_compulsion_devotion = 10
+
+# Stamina one cast of Aquatic Compulsion takes.
+miracle_aquatic_compulsion_stamina = 10
+
+# Deciseconds before Aquatic Compulsion can be cast again.
+miracle_aquatic_compulsion_cooldown = 10
+
+# Tiles away Aquatic Compulsion can be cast at.
+miracle_aquatic_compulsion_range = 10
+
+# How strongly Aquatic Compulsion draws common catch (Ratwood commonFishingMod).
+faith_compel_common = 10
+
+# How strongly Aquatic Compulsion draws rare catch (Ratwood).
+faith_compel_rare = 10
+
+# How strongly Aquatic Compulsion draws treasure (Ratwood).
+faith_compel_treasure = 10
+
+# How strongly Aquatic Compulsion draws trash (Ratwood).
+faith_compel_trash = 10
+
+# How strongly Aquatic Compulsion draws dangerous catch (Ratwood).
+faith_compel_danger = 10
+
+# How strongly Aquatic Compulsion draws the cerulean aril (Ratwood).
+faith_compel_cerulean = 10
+
+# Tiles the fish of Aquatic Compulsion flies toward the caster (Ratwood).
+faith_compel_throw = 10
+
+# Devotion one cast of Abyssal Healing costs.
+miracle_abyssal_healing_devotion = 10
+
+# Stamina one cast of Abyssal Healing takes.
+miracle_abyssal_healing_stamina = 10
+
+# Deciseconds before Abyssal Healing can be cast again.
+miracle_abyssal_healing_cooldown = 10
+
+# Tiles away Abyssal Healing can be cast at.
+miracle_abyssal_healing_range = 10
+
+# The connection with Abyssor of Abyssal Healing at its fullest (Ratwood max_slickness).
+faith_abyssheal_slickness = 10
+
+# The same for a caster past the third rank in miracles (Ratwood).
+faith_abyssheal_slickness_greater = 10
+
+# Rank in miracles above which the connection is the greater one (Ratwood).
+faith_abyssheal_greater_rank = 10
+
+# Tiles around the caster in which water helps Abyssal Healing (Ratwood).
+faith_abyssheal_range = 10
+
+# What each tile of water adds to the healing of Abyssal Healing (Ratwood).
+faith_abyssheal_water_step = 10
+
+# The most the tiles of water add to the healing of Abyssal Healing (Ratwood).
+faith_abyssheal_water_cap = 10
+
+# What each tile of deep sea adds on top (Ratwood).
+faith_abyssheal_deep_step = 10
+
+# Share of the connection at or below which the caster is warned it is weakening (Ratwood).
+faith_abyssheal_weak_share = 10
+
+# Healing every second the aura of Abyssal Healing gives at the full connection (Ratwood base_healing).
+faith_abyssheal_healing = 10
+
+# The least healing every second the aura of Abyssal Healing gives (Ratwood).
+faith_abyssheal_healing_least = 10
+
+# Burns Abyssal Healing mends at once (Ratwood).
+faith_abyssheal_burn = 10
+
+# Burns it mends at once on top of that with water near the caster (Ratwood).
+faith_abyssheal_burn_water = 10
+
+# Damage Abyssal Healing does to the undead (Ratwood).
+faith_abyssheal_crush = 10
+
+# Devotion one cast of Summon Dreamfiend costs.
+miracle_call_dreamfiend_devotion = 10
+
+# Stamina one cast of Summon Dreamfiend takes.
+miracle_call_dreamfiend_stamina = 10
+
+# Deciseconds before Summon Dreamfiend can be cast again.
+miracle_call_dreamfiend_cooldown = 10
+
+# Tiles away Summon Dreamfiend can be cast at.
+miracle_call_dreamfiend_range = 10
+
+# Tiles around the target within which a summoned dreamfiend appears (Ratwood outer_tele_radius).
+faith_dreamfiend_outer = 10
+
+# Tiles around the target within which it does not appear (Ratwood inner_tele_radius).
+faith_dreamfiend_inner = 10
+
+# Devotion one cast of Abyssal Infusion costs.
+miracle_abyssal_infusion_devotion = 10
+
+# Stamina one cast of Abyssal Infusion takes.
+miracle_abyssal_infusion_stamina = 10
+
+# Deciseconds before Abyssal Infusion can be cast again.
+miracle_abyssal_infusion_cooldown = 10
+
+# Tiles away Abyssal Infusion can be cast at.
+miracle_abyssal_infusion_range = 10
+
+# Deciseconds before Abyssal Strength can be called upon again.
+miracle_abyssal_strength_cooldown = 10
+
+# Deciseconds Abyssal Strength lasts (Ratwood).
+faith_abyssal_time = 10
+
+# Strength Abyssal Strength gives at its first stage (Ratwood).
+faith_abyssal_strength_base = 10
+
+# Strength it gives more at each stage after the first (Ratwood).
+faith_abyssal_strength_step = 10
+
+# Constitution and willpower Abyssal Strength gives before the stages count (Ratwood).
+faith_abyssal_stat_base = 10
+
+# Constitution and willpower it gives for each stage (Ratwood).
+faith_abyssal_stat_step = 10
+
+# Where the loss of fortune and speed under Abyssal Strength starts from (Ratwood).
+faith_abyssal_malus_base = 10
+
+# What each stage takes off fortune and speed (Ratwood).
+faith_abyssal_malus_step = 10
+
+# What each stage takes off perception (Ratwood).
+faith_abyssal_perception_step = 10
+
+# Casts in one stage after which the next stage comes (Ratwood: more than this).
+faith_abyssal_casts_per_stage = 10
+
+# Percent chance a dreamfiend comes at the first stage of Abyssal Strength (Ratwood).
+faith_abyssal_chance_1_base = 10
+
+# What each cast in the first stage adds to that chance (Ratwood).
+faith_abyssal_chance_1_step = 10
+
+# Percent chance a dreamfiend comes at the second stage (Ratwood).
+faith_abyssal_chance_2_base = 10
+
+# What each cast in the second stage adds to that chance (Ratwood).
+faith_abyssal_chance_2_step = 10
+
+# Percent chance a dreamfiend comes at the last stage on the first cast (Ratwood).
+faith_abyssal_chance_3_start = 10
+
+# The most that chance grows by with every cast at the last stage, at random (Ratwood).
+faith_abyssal_chance_3_growth = 10
+
+# Devotion one cast of Abyssal Revival costs.
+miracle_abyssal_revival_devotion = 10
+
+# Stamina one cast of Abyssal Revival takes.
+miracle_abyssal_revival_stamina = 10
+
+# Deciseconds before Abyssal Revival can be cast again.
+miracle_abyssal_revival_cooldown = 10
+
+# Tiles away Abyssal Revival can be cast at.
+miracle_abyssal_revival_range = 10
+
+# Deciseconds of prayer Abyssal Revival takes (Ratwood chargetime).
+faith_revival_prayer = 10
+
+# Tiles around the body within which the sea must be for Abyssal Revival (Ratwood structure_range).
+faith_revival_sea_range = 10
+
+# Tiles around the body within which the fish must lie (Ratwood item_radius).
+faith_revival_item_range = 10
+
+# Damage of each kind the revived body is mended down to (TG heal_and_revive).
+faith_revival_mend = 10
+
+# Healing every second of the aura a revival by Abyssor leaves on the body (Ratwood).
+faith_revival_healing = 10
+
+# Soles Abyssal Revival burns (Ratwood).
+faith_revival_sole = 10
+
+# Cod Abyssal Revival burns (Ratwood).
+faith_revival_cod = 10
+
+# Bass Abyssal Revival burns (Ratwood).
+faith_revival_bass = 10
+
+# Plaice Abyssal Revival burns (Ratwood).
+faith_revival_plaice = 10
+
+# Lobsters Abyssal Revival burns (Ratwood).
+faith_revival_lobster = 10
+
+# Percent chance the dreamfiend that stalks one revived by Abyssor is an ancient one (Ratwood).
+faith_curse_ancient_chance = 10
+
+# Strength the curse of the dreamfiend gives (Ratwood).
+faith_curse_strength = 10
+
+# Intelligence the curse of the dreamfiend takes (Ratwood).
+faith_curse_intelligence = 10
+
+# Fortune the curse of the dreamfiend takes (Ratwood).
+faith_curse_fortune = 10
+
+# Speed the curse of the dreamfiend takes (Ratwood).
+faith_curse_speed = 10
+
+# Perception the curse of the dreamfiend takes (Ratwood).
+faith_curse_perception = 10
+
+# Deciseconds after the revival before the cursed one may confront the dreamfiend (Ratwood).
+faith_confront_wait = 10
+
+# Deciseconds before Confront Terror can be cast again.
+miracle_confront_terror_cooldown = 10
+
+# Tiles around the haunted one within which the dreamfiend of the curse appears (Ratwood).
+faith_confront_outer = 10
+
+# Tiles around the haunted one within which it does not appear (Ratwood).
+faith_confront_inner = 10
+
+# Devotion one cast of Boot-Check costs.
+miracle_check_boot_devotion = 10
+
+# Stamina one cast of Boot-Check takes.
+miracle_check_boot_stamina = 10
+
+# Deciseconds before Boot-Check can be cast again.
+miracle_check_boot_cooldown = 10
+
+# Tiles away Boot-Check can be cast at.
+miracle_check_boot_range = 10
+
+# Devotion one cast of ENDURE costs.
+miracle_psydon_endure_devotion = 10
+
+# Stamina one cast of ENDURE takes.
+miracle_psydon_endure_stamina = 10
+
+# Deciseconds before ENDURE can be cast again.
+miracle_psydon_endure_cooldown = 10
+
+# Tiles away ENDURE can be cast at.
+miracle_psydon_endure_range = 10
+
+# Healing every second the aura of ENDURE gives at the least (Ratwood psyhealing).
+faith_psy_endure_healing = 10
+
+# Brute and burn damage together above which the one ENDURE heals has endured much (Ratwood).
+faith_psy_endure_damage = 10
+
+# Wounds above which the one ENDURE heals has endured much (Ratwood).
+faith_psy_endure_wounds = 10
+
+# Healing every second ENDURE gives more for each way the one it heals has endured much (Ratwood).
+faith_psy_endure_bonus = 10
+
+# Blood the caster of ENDURE gives (Ratwood).
+faith_psy_endure_blood = 10
+
+# Damage ENDURE does to the undead (Ratwood).
+faith_psy_endure_undead = 10
+
+# Healing ENDURE gives more to one who wears a wooden cross (Ratwood psicross_bonus).
+faith_psy_heal_wood = 10
+
+# Healing ENDURE gives more to one who wears a decrepit cross (Ratwood).
+faith_psy_heal_decrepit = 10
+
+# Healing ENDURE gives more to one who wears a plain cross (Ratwood).
+faith_psy_heal_plain = 10
+
+# Healing ENDURE gives more to one who wears a silver or a golden cross (Ratwood).
+faith_psy_heal_silver = 10
+
+# Devotion one cast of RESPITE costs.
+miracle_psydon_respite_devotion = 10
+
+# Stamina one cast of RESPITE takes.
+miracle_psydon_respite_stamina = 10
+
+# Deciseconds before RESPITE can be cast again.
+miracle_psydon_respite_cooldown = 10
+
+# Tiles away RESPITE can be cast at.
+miracle_psydon_respite_range = 10
+
+# Deciseconds of standing still for each mending of RESPITE (Ratwood).
+faith_psy_respite_time = 10
+
+# Devotion each mending of RESPITE costs (Ratwood).
+faith_psy_respite_devotion = 10
+
+# Blood each mending of RESPITE costs (Ratwood).
+faith_psy_respite_blood = 10
+
+# Brute and burn damage each mending of RESPITE heals at the least (Ratwood).
+faith_psy_respite_heal = 10
+
+# What RESPITE mends more for one who wears a wooden cross (Ratwood psicross_bonus).
+faith_psy_mend_wood = 10
+
+# What RESPITE mends more for one who wears a decrepit cross (Ratwood).
+faith_psy_mend_decrepit = 10
+
+# What RESPITE mends more for one who wears a plain cross (Ratwood).
+faith_psy_mend_plain = 10
+
+# What RESPITE mends more for one who wears a silver or a golden cross (Ratwood).
+faith_psy_mend_silver = 10
+
+# Damage of one kind above which RESPITE mends more, the first step (Ratwood sit_bonus).
+faith_psy_sit_1_damage = 10
+
+# What RESPITE mends more of that damage at the first step (Ratwood sit_bonus).
+faith_psy_sit_1_heal = 10
+
+# Damage of one kind above which RESPITE mends more, the second step (Ratwood sit_bonus).
+faith_psy_sit_2_damage = 10
+
+# What RESPITE mends more of that damage at the second step (Ratwood sit_bonus).
+faith_psy_sit_2_heal = 10
+
+# Damage of one kind above which RESPITE mends more, the third step (Ratwood sit_bonus).
+faith_psy_sit_3_damage = 10
+
+# What RESPITE mends more of that damage at the third step (Ratwood sit_bonus).
+faith_psy_sit_3_heal = 10
+
+# Damage of one kind above which RESPITE mends more, the fourth step (Ratwood sit_bonus).
+faith_psy_sit_4_damage = 10
+
+# What RESPITE mends more of that damage at the fourth step (Ratwood sit_bonus).
+faith_psy_sit_4_heal = 10
+
+# Damage of one kind above which RESPITE mends more, the fifth step (Ratwood sit_bonus).
+faith_psy_sit_5_damage = 10
+
+# What RESPITE mends more of that damage at the fifth step (Ratwood sit_bonus).
+faith_psy_sit_5_heal = 10
+
+# Damage of one kind above which RESPITE mends more, the sixth step (Ratwood sit_bonus).
+faith_psy_sit_6_damage = 10
+
+# What RESPITE mends more of that damage at the sixth step (Ratwood sit_bonus).
+faith_psy_sit_6_heal = 10
+
+# Damage the cross of the Archenemy does to one who calls on Psydon wearing it (Ratwood).
+faith_psy_archenemy_damage = 10
+
+# Devotion one cast of Enkindle costs.
+miracle_enkindle_devotion = 10
+
+# Stamina one cast of Enkindle takes.
+miracle_enkindle_stamina = 10
+
+# Deciseconds before Enkindle can be cast again.
+miracle_enkindle_cooldown = 10
+
+# Tiles away Enkindle can be cast at.
+miracle_enkindle_range = 10
+
+# Devotion one cast of Recuperation costs.
+miracle_recuperation_devotion = 10
+
+# Stamina one cast of Recuperation takes.
+miracle_recuperation_stamina = 10
+
+# Deciseconds before Recuperation can be cast again.
+miracle_recuperation_cooldown = 10
+
+# Tiles away Recuperation can be cast at.
+miracle_recuperation_range = 10
+
+# Energy Recuperation gives for each rank of the caster in miracles (Azure Peak energytoregen).
+faith_recup_energy = 10
+
+# Factor of that energy the caster has back when it is cast on themselves (Azure Peak).
+faith_recup_self_factor = 10
+
+# Factor of that energy another is given, taken from the caster (Azure Peak).
+faith_recup_other_factor = 10
+
+# Deciseconds the regeneration of energy lasts on the caster (Azure Peak).
+faith_recup_time = 10
+
+# Deciseconds the regeneration of energy lasts on another (Azure Peak).
+faith_recup_time_other = 10
+
+# Energy the regeneration gives every second (Azure Peak).
+faith_recup_tick = 10
+
+# Factor of that energy for one not in combat (Azure Peak).
+faith_recup_rest_factor = 10
+
+# Devotion one cast of Twinned Gaze costs.
+miracle_twinned_gaze_devotion = 10
+
+# Stamina one cast of Twinned Gaze takes.
+miracle_twinned_gaze_stamina = 10
+
+# Deciseconds before Twinned Gaze can be cast again.
+miracle_twinned_gaze_cooldown = 10
+
+# Tiles away Twinned Gaze can be cast at.
+miracle_twinned_gaze_range = 10
+
+# Deciseconds Twinned Gaze lasts for each rank of the caster in miracles (Azure Peak).
+faith_twinned_time = 10
+
+# Factor Twinned Gaze lasts longer by in full day and in full night (Azure Peak).
+faith_twinned_day_factor = 10
+
+# Rank in miracles from which Twinned Gaze gives sight in the dark (Azure Peak).
+faith_twinned_dark_rank = 10
+
+# Rank in miracles above which Twinned Gaze gives the full night sight (Azure Peak).
+faith_twinned_night_rank = 10
+
+# Devotion one cast of Perseverance costs.
+miracle_perseverance_devotion = 10
+
+# Stamina one cast of Perseverance takes.
+miracle_perseverance_stamina = 10
+
+# Deciseconds before Perseverance can be cast again.
+miracle_perseverance_cooldown = 10
+
+# Tiles away Perseverance can be cast at.
+miracle_perseverance_range = 10
+
+# Mood the relief of Perseverance gives the living (Azure Peak).
+faith_persev_mood = 10
+
+# Deciseconds that relief lasts (Azure Peak).
+faith_persev_mood_time = 10
+
+# Share of the pain of a wound that Perseverance eases for a caster of no rank (Azure Peak).
+faith_persev_relief = 10
+
+# What each rank of the caster in miracles adds to that share (Azure Peak).
+faith_persev_relief_rank = 10
+
+# Devotion one cast of Gallows Humor costs.
+miracle_gallows_humor_devotion = 10
+
+# Stamina one cast of Gallows Humor takes.
+miracle_gallows_humor_stamina = 10
+
+# Deciseconds before Gallows Humor can be cast again.
+miracle_gallows_humor_cooldown = 10
+
+# Tiles away Gallows Humor can be cast at.
+miracle_gallows_humor_range = 10
+
+# Deciseconds a mindless creature is held still by Gallows Humor (Azure Peak).
+faith_gallows_mindless = 10
+
+# Deciseconds the terror of Gallows Humor sours the mood (Azure Peak).
+faith_gallows_time = 10
+
+# Mood Gallows Humor takes off (Azure Peak stressadd).
+faith_gallows_mood = 10
+
+# Deciseconds that bad mood lasts (Azure Peak).
+faith_gallows_mood_time = 10
+
+# Perception the light of the Ten gives the caster of Ten United (Azure Peak).
+faith_guiding_perception = 10
+
+# Deciseconds the light of the Ten lasts (Azure Peak).
+faith_guiding_time = 10
+
+# Tiles the light of the Ten shines (Azure Peak).
+faith_guiding_light = 10
+
+# Devotion one cast of Ten United costs.
+miracle_ten_united_devotion = 10
+
+# Stamina one cast of Ten United takes.
+miracle_ten_united_stamina = 10
+
+# Deciseconds before Ten United can be cast again.
+miracle_ten_united_cooldown = 10
+
+# Tiles away Ten United can be cast at.
+miracle_ten_united_range = 10
+
+# Tiles around the caster in which the worshippers of the Ten are strengthened (Azure Peak).
+faith_ten_range = 10
+
+# Constitution Ten United gives (Azure Peak).
+faith_ten_constitution = 10
+
+# Willpower Ten United gives (Azure Peak).
+faith_ten_willpower = 10
+
+# Fortune Ten United gives (Azure Peak).
+faith_ten_fortune = 10
+
+# Deciseconds Ten United lasts (Azure Peak).
+faith_ten_time = 10
+
+# Devotion one cast of Lesser Anastasis costs.
+miracle_lesser_anastasis_devotion = 10
+
+# Stamina one cast of Lesser Anastasis takes.
+miracle_lesser_anastasis_stamina = 10
+
+# Deciseconds before Lesser Anastasis can be cast again.
+miracle_lesser_anastasis_cooldown = 10
+
+# Tiles away Lesser Anastasis can be cast at.
+miracle_lesser_anastasis_range = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list b16b)
+
+# Strength a lightning-struck body loses (effects.dm).
+faith_lightning_strength = 10
+
+# Perception a lightning-struck body loses.
+faith_lightning_perception = 10
+
+# Intelligence a lightning-struck body loses.
+faith_lightning_intelligence = 10
+
+# Deciseconds a lightning-struck body stays shocked, if the strike names no time of its own.
+faith_lightning_time = 10
+
+# Stamina the shock of a lightning strike takes from the body it strikes.
+faith_lightning_stamina = 10
+
+# Devotion one cast of Tame Beast costs.
+miracle_tame_beast_devotion = 10
+
+# Stamina one cast of Tame Beast takes.
+miracle_tame_beast_stamina = 10
+
+# Deciseconds before Tame Beast can be cast again.
+miracle_tame_beast_cooldown = 10
+
+# Tiles away Tame Beast can be cast at.
+miracle_tame_beast_range = 10
+
+# Charges of Tame Beast.
+miracle_tame_beast_charges = 10
+
+# Deciseconds in which one spent charge of Tame Beast comes back.
+miracle_tame_beast_charge_time = 10
+
+# Deciseconds in which both charges of Tame Beast come back once none are left.
+miracle_tame_beast_empty_time = 10
+
+# Devotion one cast of Shroud of Noc costs.
+miracle_shroud_of_noc_devotion = 10
+
+# Stamina one cast of Shroud of Noc takes.
+miracle_shroud_of_noc_stamina = 10
+
+# Deciseconds before Shroud of Noc can be cast again.
+miracle_shroud_of_noc_cooldown = 10
+
+# Tiles away Shroud of Noc can be cast at.
+miracle_shroud_of_noc_range = 10
+
+# Deciseconds of darkness Shroud of Noc lays on the eyes for each rank of the caster in miracles.
+noc_shroud_time_rank = 10
+
+# Perception Shroud of Noc takes for each rank of the caster in miracles (rounded down).
+noc_shroud_perception_rank = 10
+
+# Devotion one cast of Silence costs.
+miracle_silence_devotion = 10
+
+# Stamina one cast of Silence takes.
+miracle_silence_stamina = 10
+
+# Deciseconds before Silence can be cast again.
+miracle_silence_cooldown = 10
+
+# Tiles away Silence can be cast at.
+miracle_silence_range = 10
+
+# Deciseconds of prayer before Silence falls.
+noc_silence_prayer = 10
+
+# Deciseconds of silence for each rank of the caster in miracles.
+noc_silence_time_rank = 10
+
+# Devotion one cast of Moonlit Ward costs.
+miracle_moonlit_ward_devotion = 10
+
+# Stamina one cast of Moonlit Ward takes.
+miracle_moonlit_ward_stamina = 10
+
+# Deciseconds before Moonlit Ward can be cast again.
+miracle_moonlit_ward_cooldown = 10
+
+# Tiles away Moonlit Ward can be cast at.
+miracle_moonlit_ward_range = 10
+
+# Deciseconds of prayer before the Moonlit Ward is raised.
+noc_ward_prayer = 10
+
+# Deciseconds of ward for each rank of the caster in miracles.
+noc_ward_time_rank = 10
+
+# Devotion one cast of Noc's Gaze costs.
+miracle_noc_gaze_devotion = 10
+
+# Stamina one cast of Noc's Gaze takes.
+miracle_noc_gaze_stamina = 10
+
+# Deciseconds before Noc's Gaze can be cast again.
+miracle_noc_gaze_cooldown = 10
+
+# Tiles away Noc's Gaze can be cast at.
+miracle_noc_gaze_range = 10
+
+# Tiles, the nearest spot Noc's Gaze can peer at.
+noc_gaze_nearest = 10
+
+# Deciseconds Noc's Gaze holds the view if the devotee stands still.
+noc_gaze_time = 10
+
+# Deciseconds the view takes to slide to the spot of Noc's Gaze and back.
+noc_gaze_slide = 10
+
+# Deciseconds the turn of The Wheel changes the target's luck for.
+xylix_wheel_time = 10
+
+# The Wheel changes Fortune by a whole number from minus this to plus this.
+xylix_wheel_spread = 10
+
+# Devotion one cast of The Wheel costs.
+miracle_wheel_devotion = 10
+
+# Stamina one cast of The Wheel takes.
+miracle_wheel_stamina = 10
+
+# Deciseconds before The Wheel can be cast again.
+miracle_wheel_cooldown = 10
+
+# Tiles away The Wheel can be cast at.
+miracle_wheel_range = 10
+
+# Devotion one cast of Ventriloquism costs.
+miracle_ventriloquism_devotion = 10
+
+# Stamina one cast of Ventriloquism takes.
+miracle_ventriloquism_stamina = 10
+
+# Deciseconds before Ventriloquism can be cast again.
+miracle_ventriloquism_cooldown = 10
+
+# Tiles away Ventriloquism can be cast at.
+miracle_ventriloquism_range = 10
+
+# Devotion one cast of Master's Illusion costs.
+miracle_masters_illusion_devotion = 10
+
+# Stamina one cast of Master's Illusion takes.
+miracle_masters_illusion_stamina = 10
+
+# Deciseconds before Master's Illusion can be cast again.
+miracle_masters_illusion_cooldown = 10
+
+# Tiles away Master's Illusion can be cast at.
+miracle_masters_illusion_range = 10
+
+# Deciseconds Master's Illusion hides the caster at the least.
+xylix_illusion_base = 10
+
+# Deciseconds more Master's Illusion hides the caster for each two ranks in miracles.
+xylix_illusion_step = 10
+
+# Deciseconds, the longest Master's Illusion hides the caster.
+xylix_illusion_cap = 10
+
+# Share of the hiding time that the double of Master's Illusion stands for.
+xylix_illusion_double_share = 10
+
+# Deciseconds, the shortest the double of Master's Illusion stands.
+xylix_illusion_double_min = 10
+
+# Health of the double of Master's Illusion.
+xylix_illusion_double_health = 10
+
+# Devotion one cast of Vicious Mockery costs.
+miracle_mockery_devotion = 10
+
+# Stamina one cast of Vicious Mockery takes.
+miracle_mockery_stamina = 10
+
+# Deciseconds before Vicious Mockery can be cast again.
+miracle_mockery_cooldown = 10
+
+# Tiles away Vicious Mockery can be cast at.
+miracle_mockery_range = 10
+
+# Deciseconds Vicious Mockery lasts on its target.
+xylix_mockery_time = 10
+
+# Strength Vicious Mockery takes.
+xylix_mockery_strength = 10
+
+# Speed Vicious Mockery takes.
+xylix_mockery_speed = 10
+
+# Willpower Vicious Mockery takes.
+xylix_mockery_willpower = 10
+
+# Intelligence Vicious Mockery takes.
+xylix_mockery_intelligence = 10
+
+# Devotion one cast of Xylixian Slip costs.
+miracle_slip_devotion = 10
+
+# Stamina one cast of Xylixian Slip takes.
+miracle_slip_stamina = 10
+
+# Deciseconds before Xylixian Slip can be cast again.
+miracle_slip_cooldown = 10
+
+# Tiles away Xylixian Slip can be cast at.
+miracle_slip_range = 10
+
+# Tiles Xylixian Slip leaps, counting the tile the caster stands on.
+xylix_slip_distance = 10
+
+# Deciseconds the caster is off balance after Xylixian Slip.
+xylix_slip_offbalance = 10
+
+# Tiles, the least an off-balance caster stumbles sideways when Xylixian Slip fails.
+xylix_slip_stumble_min = 10
+
+# Tiles, the most an off-balance caster stumbles sideways when Xylixian Slip fails.
+xylix_slip_stumble_max = 10
+
+# Deciseconds an off-balance caster is knocked down by a failed Xylixian Slip.
+xylix_slip_knockdown = 10
+
+# Devotion one cast of Abscond costs.
+miracle_abscond_devotion = 10
+
+# Stamina one cast of Abscond takes.
+miracle_abscond_stamina = 10
+
+# Deciseconds before Abscond can be cast again.
+miracle_abscond_cooldown = 10
+
+# Tiles away Abscond can be cast at.
+miracle_abscond_range = 10
+
+# Deciseconds the caster must stand still before Abscond takes them away.
+xylix_abscond_delay = 10
+
+# Tiles, the nearest spot Abscond can take the caster to.
+xylix_abscond_nearest = 10
+
+# Devotion one cast of Mimicry costs.
+miracle_mimicry_devotion = 10
+
+# Stamina one cast of Mimicry takes.
+miracle_mimicry_stamina = 10
+
+# Deciseconds before Mimicry can be cast again.
+miracle_mimicry_cooldown = 10
+
+# Tiles away Mimicry can be cast at.
+miracle_mimicry_range = 10
+
+# Devotion one cast of Xylix's Fortune costs.
+miracle_xylix_luck_devotion = 10
+
+# Stamina one cast of Xylix's Fortune takes.
+miracle_xylix_luck_stamina = 10
+
+# Deciseconds before Xylix's Fortune can be cast again.
+miracle_xylix_luck_cooldown = 10
+
+# Tiles away Xylix's Fortune can be cast at.
+miracle_xylix_luck_range = 10
+
+# Luck Xylix's Fortune loses for each cast the devotee has made.
+xylix_luck_use_penalty = 10
+
+# Luck Xylix's Fortune gains for each full wait step since the last cast.
+xylix_luck_idle_gain = 10
+
+# Deciseconds of waiting that make one step of luck for Xylix's Fortune.
+xylix_luck_idle_step = 10
+
+# Weight of Xylix in the draw of Xylix's Fortune, before luck moves it.
+xylix_luck_weight_xylix = 10
+
+# Share of the luck of the devotee that is taken from the weight of Xylix in Xylix's Fortune (a negative share adds to it).
+xylix_luck_share_xylix = 10
+
+# Deciseconds the favor of Xylix from Xylix's Fortune lasts.
+xylix_favor_xylix_time = 10
+
+# Weight of Ravox in the draw of Xylix's Fortune, before luck moves it.
+xylix_luck_weight_ravox = 10
+
+# Share of the luck of the devotee that is taken from the weight of Ravox in Xylix's Fortune (a negative share adds to it).
+xylix_luck_share_ravox = 10
+
+# Deciseconds the favor of Ravox from Xylix's Fortune lasts.
+xylix_favor_ravox_time = 10
+
+# Weight of Eora in the draw of Xylix's Fortune, before luck moves it.
+xylix_luck_weight_eora = 10
+
+# Share of the luck of the devotee that is taken from the weight of Eora in Xylix's Fortune (a negative share adds to it).
+xylix_luck_share_eora = 10
+
+# Deciseconds the favor of Eora from Xylix's Fortune lasts.
+xylix_favor_eora_time = 10
+
+# Weight of Nothing in the draw of Xylix's Fortune, before luck moves it.
+xylix_luck_weight_nothing = 10
+
+# Share of the luck of the devotee that is taken from the weight of Nothing in Xylix's Fortune (a negative share adds to it).
+xylix_luck_share_nothing = 10
+
+# Weight of Malum in the draw of Xylix's Fortune, before luck moves it.
+xylix_luck_weight_malum = 10
+
+# Share of the luck of the devotee that is taken from the weight of Malum in Xylix's Fortune (a negative share adds to it).
+xylix_luck_share_malum = 10
+
+# Deciseconds the favor of Malum from Xylix's Fortune lasts.
+xylix_favor_malum_time = 10
+
+# Weight of Noc in the draw of Xylix's Fortune, before luck moves it.
+xylix_luck_weight_noc = 10
+
+# Share of the luck of the devotee that is taken from the weight of Noc in Xylix's Fortune (a negative share adds to it).
+xylix_luck_share_noc = 10
+
+# Deciseconds the favor of Noc from Xylix's Fortune lasts.
+xylix_favor_noc_time = 10
+
+# Weight of Abyssor in the draw of Xylix's Fortune, before luck moves it.
+xylix_luck_weight_abyssor = 10
+
+# Share of the luck of the devotee that is taken from the weight of Abyssor in Xylix's Fortune (a negative share adds to it).
+xylix_luck_share_abyssor = 10
+
+# Deciseconds the favor of Abyssor from Xylix's Fortune lasts.
+xylix_favor_abyssor_time = 10
+
+# Weight of Necra in the draw of Xylix's Fortune, before luck moves it.
+xylix_luck_weight_necra = 10
+
+# Share of the luck of the devotee that is taken from the weight of Necra in Xylix's Fortune (a negative share adds to it).
+xylix_luck_share_necra = 10
+
+# Deciseconds the favor of Necra from Xylix's Fortune lasts.
+xylix_favor_necra_time = 10
+
+# Weight of Pestra in the draw of Xylix's Fortune, before luck moves it.
+xylix_luck_weight_pestra = 10
+
+# Share of the luck of the devotee that is taken from the weight of Pestra in Xylix's Fortune (a negative share adds to it).
+xylix_luck_share_pestra = 10
+
+# Deciseconds the favor of Pestra from Xylix's Fortune lasts.
+xylix_favor_pestra_time = 10
+
+# Weight of Astrata in the draw of Xylix's Fortune, before luck moves it.
+xylix_luck_weight_astrata = 10
+
+# Share of the luck of the devotee that is taken from the weight of Astrata in Xylix's Fortune (a negative share adds to it).
+xylix_luck_share_astrata = 10
+
+# Deciseconds the favor of Astrata from Xylix's Fortune lasts.
+xylix_favor_astrata_time = 10
+
+# Weight of Zizo in the draw of Xylix's Fortune, before luck moves it.
+xylix_luck_weight_zizo = 10
+
+# Share of the luck of the devotee that is taken from the weight of Zizo in Xylix's Fortune (a negative share adds to it).
+xylix_luck_share_zizo = 10
+
+# Deciseconds the favor of Zizo from Xylix's Fortune lasts.
+xylix_favor_zizo_time = 10
+
+# Weight of Dendor in the draw of Xylix's Fortune, before luck moves it.
+xylix_luck_weight_dendor = 10
+
+# Share of the luck of the devotee that is taken from the weight of Dendor in Xylix's Fortune (a negative share adds to it).
+xylix_luck_share_dendor = 10
+
+# Deciseconds the favor of Dendor from Xylix's Fortune lasts.
+xylix_favor_dendor_time = 10
+
+# Weight of Baotha in the draw of Xylix's Fortune, before luck moves it.
+xylix_luck_weight_baotha = 10
+
+# Share of the luck of the devotee that is taken from the weight of Baotha in Xylix's Fortune (a negative share adds to it).
+xylix_luck_share_baotha = 10
+
+# Deciseconds the favor of Baotha from Xylix's Fortune lasts.
+xylix_favor_baotha_time = 10
+
+# Weight of Graggar in the draw of Xylix's Fortune, before luck moves it.
+xylix_luck_weight_graggar = 10
+
+# Share of the luck of the devotee that is taken from the weight of Graggar in Xylix's Fortune (a negative share adds to it).
+xylix_luck_share_graggar = 10
+
+# Deciseconds the favor of Graggar from Xylix's Fortune lasts.
+xylix_favor_graggar_time = 10
+
+# Weight of Matthios in the draw of Xylix's Fortune, before luck moves it.
+xylix_luck_weight_matthios = 10
+
+# Share of the luck of the devotee that is taken from the weight of Matthios in Xylix's Fortune (a negative share adds to it).
+xylix_luck_share_matthios = 10
+
+# Deciseconds the favor of Matthios from Xylix's Fortune lasts.
+xylix_favor_matthios_time = 10
+
+# Least Fortune the favor of Xylix from Xylix's Fortune changes by.
+xylix_favor_xylix_fortune_min = 10
+
+# Most Fortune the favor of Xylix from Xylix's Fortune changes by.
+xylix_favor_xylix_fortune_max = 10
+
+# Least Constitution the favor of Astrata from Xylix's Fortune changes by.
+xylix_favor_astrata_constitution_min = 10
+
+# Most Constitution the favor of Astrata from Xylix's Fortune changes by.
+xylix_favor_astrata_constitution_max = 10
+
+# Least Willpower the favor of Astrata from Xylix's Fortune changes by.
+xylix_favor_astrata_willpower_min = 10
+
+# Most Willpower the favor of Astrata from Xylix's Fortune changes by.
+xylix_favor_astrata_willpower_max = 10
+
+# Least Intelligence the favor of Noc from Xylix's Fortune changes by.
+xylix_favor_noc_intelligence_min = 10
+
+# Most Intelligence the favor of Noc from Xylix's Fortune changes by.
+xylix_favor_noc_intelligence_max = 10
+
+# Least Speed the favor of Noc from Xylix's Fortune changes by.
+xylix_favor_noc_speed_min = 10
+
+# Most Speed the favor of Noc from Xylix's Fortune changes by.
+xylix_favor_noc_speed_max = 10
+
+# Least every stat the favor of Zizo from Xylix's Fortune changes by.
+xylix_favor_zizo_stat_min = 10
+
+# Most every stat the favor of Zizo from Xylix's Fortune changes by.
+xylix_favor_zizo_stat_max = 10
+
+# Least Strength the favor of Ravox from Xylix's Fortune changes by.
+xylix_favor_ravox_strength_min = 10
+
+# Most Strength the favor of Ravox from Xylix's Fortune changes by.
+xylix_favor_ravox_strength_max = 10
+
+# Least Speed the favor of Ravox from Xylix's Fortune changes by.
+xylix_favor_ravox_speed_min = 10
+
+# Most Speed the favor of Ravox from Xylix's Fortune changes by.
+xylix_favor_ravox_speed_max = 10
+
+# Least Willpower the favor of Ravox from Xylix's Fortune changes by.
+xylix_favor_ravox_willpower_min = 10
+
+# Most Willpower the favor of Ravox from Xylix's Fortune changes by.
+xylix_favor_ravox_willpower_max = 10
+
+# Least Constitution the favor of Malum from Xylix's Fortune changes by.
+xylix_favor_malum_constitution_min = 10
+
+# Most Constitution the favor of Malum from Xylix's Fortune changes by.
+xylix_favor_malum_constitution_max = 10
+
+# Least Willpower the favor of Malum from Xylix's Fortune changes by.
+xylix_favor_malum_willpower_min = 10
+
+# Most Willpower the favor of Malum from Xylix's Fortune changes by.
+xylix_favor_malum_willpower_max = 10
+
+# Least Speed the favor of Baotha from Xylix's Fortune changes by.
+xylix_favor_baotha_speed_min = 10
+
+# Most Speed the favor of Baotha from Xylix's Fortune changes by.
+xylix_favor_baotha_speed_max = 10
+
+# Drunkenness the favor of Baotha from Xylix's Fortune gives.
+xylix_favor_baotha_drunk = 10
+
+# Percent chance the favor of Graggar from Xylix's Fortune also breaks a bone.
+xylix_favor_graggar_fracture = 10
+
+# Mammons, the least the favor of Matthios from Xylix's Fortune takes from the nervelock.
+xylix_favor_matthios_min = 10
+
+# Mammons, the most the favor of Matthios from Xylix's Fortune takes from the nervelock.
+xylix_favor_matthios_max = 10
+
+# Brute and burn damage the favor of Eora from Xylix's Fortune heals each second.
+xylix_favor_eora_heal = 10
+
+# Toxin damage the favor of Pestra from Xylix's Fortune cleanses.
+xylix_favor_pestra_toxin = 10
+
+# Brute and burn damage the favor of Pestra from Xylix's Fortune mends, each.
+xylix_favor_pestra_heal = 10
+
+# Power of the shock the favor of Dendor from Xylix's Fortune gives its bearer.
+xylix_favor_dendor_shock = 10
+
+# Percent chance the favor of Abyssor from Xylix's Fortune drowns its bearer instead of reviving them.
+xylix_favor_abyssor_drown_chance = 10
+
+# Stamina the favor of Abyssor from Xylix's Fortune takes or gives.
+xylix_favor_abyssor_stamina = 10
+
+# Oxygen damage the drowning favor of Abyssor does.
+xylix_favor_abyssor_oxygen = 10
+
+# Breaths the drowning favor of Abyssor makes the bearer lose.
+xylix_favor_abyssor_breath = 10
+
+# Deciseconds the drowning favor of Abyssor leaves the bearer dizzy.
+xylix_favor_abyssor_dizzy = 10
+
+# Deciseconds the drowning favor of Abyssor blurs the bearer's eyes.
+xylix_favor_abyssor_blur = 10
+
+# Speed the haste status gives.
+haste_speed = 10
+
+# Deciseconds the haste status lasts when nothing gives a time of its own.
+haste_time = 10
+
+# Rank in miracles from which food blessed by Eora's Bless Food also hastens whoever eats it (and glows gold).
+eora_food_haste_rank = 10
+
+# Deciseconds of haste that master-blessed food gives.
+eora_food_haste_time = 10
+
+# Strength the wearer of an Eoran bud gains.
+eora_bud_strength = 10
+
+# Perception the wearer of an Eoran bud gains.
+eora_bud_perception = 10
+
+# Devotion one cast of Eoran Bloom costs.
+miracle_eoran_bloom_devotion = 10
+
+# Stamina one cast of Eoran Bloom takes.
+miracle_eoran_bloom_stamina = 10
+
+# Deciseconds before Eoran Bloom can be cast again.
+miracle_eoran_bloom_cooldown = 10
+
+# Tiles away Eoran Bloom can be cast at.
+miracle_eoran_bloom_range = 10
+
+# Deciseconds of prayer before Eoran Bloom makes a flower grow.
+eora_bloom_prayer = 10
+
+# Devotion one cast of Heartweave costs.
+miracle_heartweave_devotion = 10
+
+# Stamina one cast of Heartweave takes.
+miracle_heartweave_stamina = 10
+
+# Deciseconds before Heartweave can be cast again.
+miracle_heartweave_cooldown = 10
+
+# Tiles away Heartweave can be cast at.
+miracle_heartweave_range = 10
+
+# Deciseconds the caster must stand by their ward for Heartweave to bind them.
+eora_heartweave_prayer = 10
+
+# Deciseconds a bond of Heartweave lasts.
+eora_bond_time = 10
+
+# Tiles apart the halves of a bond of Heartweave can be before it breaks.
+eora_bond_distance = 10
+
+# Share of the ward's damage and healing that the bond of Heartweave carries over, before the caster's skill adds to it.
+eora_bond_share = 10
+
+# Share more the bond of Heartweave carries over for each rank of the caster in miracles.
+eora_bond_share_rank = 10
+
+# Rank in miracles from which the bond of Heartweave carries a share more.
+eora_bond_bonus_rank = 10
+
+# Share more the bond of Heartweave carries over for a caster of high rank.
+eora_bond_share_bonus = 10
+
+# Percent chance that damage carried over by Heartweave opens a wound on the caster, for a caster without rank.
+eora_bond_wound_base = 10
+
+# Percent less chance of that wound for each rank of the caster in miracles.
+eora_bond_wound_rank = 10
+
+# Devotion one cast of Eora's Rest costs.
+miracle_eoras_rest_devotion = 10
+
+# Stamina one cast of Eora's Rest takes.
+miracle_eoras_rest_stamina = 10
+
+# Deciseconds before Eora's Rest can be cast again.
+miracle_eoras_rest_cooldown = 10
+
+# Tiles away Eora's Rest can be cast at.
+miracle_eoras_rest_range = 10
+
+# Rank in miracles from which the caster of Eora's Rest may keep a second bed.
+eora_rest_rank_second_bed = 10
+
+# Rank in miracles from which the caster of Eora's Rest may keep a third bed.
+eora_rest_rank_third_bed = 10
+
+# Integrity of a flower bed of Eora's Rest.
+eora_bed_integrity = 10
+
+# How well one sleeps on a flower bed of Eora's Rest (the sleep quality of beds).
+eora_bed_sleepy = 10
+
+# Deciseconds between two mendings by a flower bed.
+eora_bed_cooldown = 10
+
+# Deciseconds one mending by a flower bed lasts.
+eora_bed_time = 10
+
+# Brute, burn and toxin damage and blood a flower bed mends each second.
+eora_bed_healing = 10
+
+# Oxygen damage a flower bed mends each second.
+eora_bed_oxygen = 10
+
+# Brain damage a flower bed mends each second.
+eora_bed_brain = 10
+
+# Devotion one cast of Eora's Blessing costs.
+miracle_eoras_blessing_devotion = 10
+
+# Stamina one cast of Eora's Blessing takes.
+miracle_eoras_blessing_stamina = 10
+
+# Deciseconds before Eora's Blessing can be cast again.
+miracle_eoras_blessing_cooldown = 10
+
+# Tiles away Eora's Blessing can be cast at.
+miracle_eoras_blessing_range = 10
+
+# Deciseconds of Eora's calm for each rank of the caster in miracles (at least one rank).
+eora_blessing_time_rank = 10
+
+# How far above the lowest step of hunger or thirst Eora's Blessing lifts a body, for a caster of little skill.
+eora_blessing_margin = 10
+
+# Up to this rank in miracles the Blessing of Eora lifts hunger and thirst only a little; above it, to full.
+eora_blessing_low_ranks = 10
+
+# Above this rank in miracles the Blessing of Eora gives the greater mood.
+eora_blessing_greater_above = 10
+
+# Mood the Blessing of Eora gives.
+eora_blessing_mood = 10
+
+# Deciseconds the mood of the Blessing of Eora lasts.
+eora_blessing_mood_time = 10
+
+# Mood the Blessing of Eora gives when the caster is skilled.
+eora_blessing_greater_mood = 10
+
+# Deciseconds the greater mood of the Blessing of Eora lasts.
+eora_blessing_greater_mood_time = 10
+
+# Devotion one cast of Massage costs.
+miracle_massage_devotion = 10
+
+# Stamina one cast of Massage takes.
+miracle_massage_stamina = 10
+
+# Deciseconds before Massage can be cast again.
+miracle_massage_cooldown = 10
+
+# Tiles away Massage can be cast at.
+miracle_massage_range = 10
+
+# Deciseconds, the shortest a massage takes.
+massage_time_least = 10
+
+# Deciseconds a massage may be longer by, one step at a time.
+massage_time_step = 10
+
+# How many lengths a massage may have, from the shortest in steps.
+massage_time_options = 10
+
+# Fortune below which the masseur's luck does not help the massage.
+massage_luck_base = 10
+
+# Points added to the roll of a massage for each point of Fortune above the base.
+massage_luck_step = 10
+
+# A massage whose roll is up to this is an ok one.
+massage_ok_up_to = 10
+
+# A massage whose roll is above the ok one and up to this is a good one; above it, a great one.
+massage_good_up_to = 10
+
+# Deciseconds the stats of a massage last.
+massage_time = 10
+
+# Constitution an ok massage gives.
+massage_ok_constitution = 10
+
+# Constitution a good massage gives.
+massage_good_constitution = 10
+
+# Speed a good massage gives.
+massage_good_speed = 10
+
+# Strength a good massage gives.
+massage_good_strength = 10
+
+# Constitution a great massage gives.
+massage_great_constitution = 10
+
+# Speed a great massage gives.
+massage_great_speed = 10
+
+# Strength a great massage gives.
+massage_great_strength = 10
+
+# Fortune a great massage gives.
+massage_great_fortune = 10
+
+# Percent chance a client who strays from the massage is spared a cramp.
+massage_cramp_spare = 10
+
+# Strength a sore muscle takes.
+massage_sore_strength = 10
+
+# Willpower a sore muscle takes.
+massage_sore_willpower = 10
+
+# Deciseconds muscle soreness lasts if it is not slept off.
+massage_sore_time = 10
+
+# Devotion one cast of the Orison of Water costs.
+miracle_orison_water_devotion = 10
+
+# Stamina one cast of the Orison of Water takes.
+miracle_orison_water_stamina = 10
+
+# Deciseconds before the Orison of Water can be cast again.
+miracle_orison_water_cooldown = 10
+
+# Tiles away the Orison of Water can be cast at.
+miracle_orison_water_range = 10
+
+# Deciseconds a trickle of the Orison of Water takes for a caster without rank in miracles.
+orison_water_drip_time = 10
+
+# Deciseconds each rank in miracles takes off a trickle of the Orison of Water.
+orison_water_drip_rank = 10
+
+# Deciseconds, the shortest a trickle of the Orison of Water can take.
+orison_water_drip_least = 10
+
+# Units of water a trickle of the Orison of Water pours beyond the caster's rank in miracles (at least one rank).
+orison_water_amount_extra = 10
+
+# Devotion each trickle of the Orison of Water takes.
+orison_water_devotion = 10
+
+# Stamina each trickle of the Orison of Water takes at the least; a caster of higher rank in miracles pays their rank.
+orison_water_stamina_min = 10
+
+# Devotion one cast of Thaumaturgy costs.
+miracle_thaumaturgy_devotion = 10
+
+# Stamina one cast of Thaumaturgy takes.
+miracle_thaumaturgy_stamina = 10
+
+# Deciseconds before Thaumaturgy can be cast again.
+miracle_thaumaturgy_cooldown = 10
+
+# Tiles away Thaumaturgy can be cast at.
+miracle_thaumaturgy_range = 10
+
+# Deciseconds of prayer Thaumaturgy takes to empower the voice, for a caster without rank.
+thaumaturgy_prayer_base = 10
+
+# Deciseconds each rank in miracles takes off the prayer of Thaumaturgy.
+thaumaturgy_prayer_rank = 10
+
+# Deciseconds the empowered voice of Thaumaturgy waits to be used.
+thaumaturgy_time = 10
+
+# Tiles farther than normal the empowered voice carries, beyond the caster's rank in miracles.
+thaumaturgy_voice_extra = 10
+
+# Tiles around the target in which Thaumaturgy makes flames flicker, before the caster's rank in miracles adds to it.
+thaumaturgy_flame_range = 10
+
+# Flickers Thaumaturgy gives a light for each rank of the caster in miracles.
+thaumaturgy_flicker_rank = 10
+
+# Devotion each flame Thaumaturgy touches costs the caster, besides the cost of the prayer.
+thaumaturgy_flame_devotion = 10
+
+# Devotion one cast of Lay Hands costs.
+miracle_lay_hands_devotion = 10
+
+# Stamina one cast of Lay Hands takes.
+miracle_lay_hands_stamina = 10
+
+# Deciseconds before Lay Hands can be cast again.
+miracle_lay_hands_cooldown = 10
+
+# Tiles away Lay Hands can be cast at.
+miracle_lay_hands_range = 10
+
+# Deciseconds of prayer Lay Hands takes before the channeling begins, for a caster without rank.
+lay_hands_prayer_base = 10
+
+# Deciseconds each rank in miracles takes off the prayer of Lay Hands.
+lay_hands_prayer_rank = 10
+
+# Deciseconds one cycle of channeling by Lay Hands takes, for a caster without rank.
+lay_hands_cycle_base = 10
+
+# Deciseconds each rank in miracles takes off a cycle of Lay Hands.
+lay_hands_cycle_rank = 10
+
+# Healing every second the laying of hands gives, for a caster without rank.
+lay_hands_power_base = 10
+
+# Healing every second more for each rank of the caster in miracles.
+lay_hands_power_rank = 10
+
+# Healing every second, the most the laying of hands can give.
+lay_hands_power_max = 10
+
+# Devotion one cycle of Lay Hands costs a caster without rank; each rank in miracles makes it one less.
+lay_hands_devotion_base = 10
+
+# Devotion, the least one cycle of Lay Hands can cost.
+lay_hands_devotion_min = 10
+
+# Devotion, the most one cycle of Lay Hands can cost.
+lay_hands_devotion_max = 10
+
+# Deciseconds the healing of Lay Hands lasts without being renewed by the next cycle.
+lay_hands_time = 10
+
+# Share of its healing the laying of hands gives to blood, suffocation, toxins and the brain.
+lay_hands_other_share = 10

@@ -3,8 +3,8 @@
 /// to look into, signs to carve words on.
 
 #define ROCKHILL_SIGN_MAX_LENGTH 200
-#define ROCKHILL_BELL_COMMON_RANGE 8
-#define ROCKHILL_BELL_RANGE 5
+#define ROCKHILL_BELL_COMMON_RANGE rogue_value("rockhill_bell_common_range")
+#define ROCKHILL_BELL_RANGE rogue_value("rockhill_bell_range")
 #define ROCKHILL_CHURCH_BELL_TOLL_VOLUME 35
 
 /// What a clock face tells (Ratwood clock examine()): the hour and the day of the week.

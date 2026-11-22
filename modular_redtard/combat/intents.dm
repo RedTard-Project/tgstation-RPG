@@ -180,6 +180,9 @@ GLOBAL_LIST_EMPTY(rogue_intents)
 	user?.rogue_refresh_intents()
 
 /obj/item/proc/rogue_intents()
+	// K2d1: a weapon stuck in a body offers pull out and twist instead (combat/stuck_weapon.dm).
+	if(rogue_stuck)
+		return rogue_stuck.intents()
 	if(length(rogue_alt_grip?.grip_intents))
 		return rogue_alt_grip.grip_intents
 	var/list/intents = (rogue_wielded && length(gripped_intents)) ? gripped_intents : possible_item_intents

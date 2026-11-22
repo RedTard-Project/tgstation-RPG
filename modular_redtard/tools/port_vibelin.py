@@ -8,6 +8,9 @@ stay there. Species ids are Vibelin's
 mapped to this build's (VIBELIN_SPECIES_ID): "human" is TG's human, every other race is vib_<id>.
 
 Run from the repository root:  python modular_redtard/tools/port_vibelin.py [--vibelin ../Vibelin]
+
+Vibelin's own items (weapons, clothing and armor, decor: items_vibelin/) are written by port_vibelin_items.py, which
+--items runs instead of the backgrounds (its own options: port_vibelin_items.py --help).
 """
 
 import argparse
@@ -106,9 +109,15 @@ def write(name, blocks):
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--vibelin', default='../Vibelin')
+    parser.add_argument('--items', action='store_true', help="write Vibelin's own items (port_vibelin_items.py) instead")
     args = parser.parse_args()
     if not os.path.exists('tgstation.dme'):
         sys.exit('run from the repository root')
+    if args.items:
+        import port_vibelin_items
+        sys.argv = [port_vibelin_items.__file__]
+        port_vibelin_items.main()
+        return
     defines = build_defines()
     print('parsing Vibelin', args.vibelin)
     porter.included_files = vibelin_files

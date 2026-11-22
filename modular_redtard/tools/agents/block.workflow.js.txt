@@ -1,0 +1,61 @@
+export const meta = {
+  name: 'redtard-block',
+  description: 'Блоки плана modular_redtard: исполнители параллельно (не больше 5 сразу), зависимые ждут своих задач, сборщик идёт последним',
+  phases: [{ title: 'Подготовка' }, { title: 'Работа' }, { title: 'Сборка' }],
+}
+
+const REPORT = {
+  type: 'object',
+  properties: {
+    ok: { type: 'boolean', description: 'true, если задача сделана и следующие агенты могут на неё опираться' },
+    summary: { type: 'string', description: 'Итог по-русски, не длиннее 600 знаков: что сделано и что нет' },
+    report_file: { type: 'string', description: 'Путь к файлу отчёта' },
+    blockers: { type: 'array', items: { type: 'string' }, description: 'Что мешает или требует решения владельца; пустой список, если ничего' },
+  },
+  required: ['ok', 'summary', 'report_file', 'blockers'],
+}
+
+const limit = args.limit || 5
+let active = 0
+const waiting = []
+const acquire = () => {
+  if (active < limit) {
+    active++
+    return Promise.resolve()
+  }
+  return new Promise(resolve => waiting.push(resolve))
+}
+const release = () => {
+  const next = waiting.shift()
+  if (next) next()
+  else active--
+}
+const failed = (summary, blockers) => ({ ok: false, summary, report_file: '', blockers })
+
+const done = {}
+const run = async a => {
+  const needs = a.needs || []
+  const deps = await Promise.all(needs.map(k => done[k]))
+  const bad = needs.filter((k, i) => !(deps[i] && deps[i].ok))
+  if (bad.length && !a.always) {
+    log(`${a.key}: пропущен, не готово: ${bad.join(', ')}`)
+    return failed(`Пропущен: не готово ${bad.join(', ')}`, bad)
+  }
+  const note = needs.length
+    ? '\n\nИтоги задач, от которых ты зависишь:\n' + needs.map((k, i) => `- ${k}: ${deps[i] && deps[i].ok ? 'готово' : 'НЕ готово'}. ${deps[i] ? deps[i].summary : ''}`).join('\n')
+    : ''
+  await acquire()
+  try {
+    const result = await agent(`${args.common}\n\n${a.prompt}${note}`, { label: a.key, phase: a.phase, schema: REPORT, model: a.model, effort: a.effort })
+    return result || failed('Агент не вернул отчёт', ['нет отчёта'])
+  } catch (error) {
+    return failed(`Ошибка запуска: ${error}`, ['ошибка запуска'])
+  } finally {
+    release()
+  }
+}
+
+for (const a of args.agents) done[a.key] = run(a)
+const out = {}
+for (const a of args.agents) out[a.key] = await done[a.key]
+return out

@@ -221,7 +221,7 @@
 	rockhill_dulling = "bashchop"
 	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/blank.ogg')
 	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
-	rockhill_debris = list(/obj/item/roguegear = 2, /obj/item/natural/wood/plank = 2, /obj/item/natural/stone = 2)
+	rockhill_static_debris = list(/obj/item/roguegear/bronze = 3, /obj/item/natural/wood/plank = 4, /obj/item/natural/stone = 4, /obj/item/ingot/iron = 2)
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/autosmither
@@ -237,7 +237,7 @@
 	rockhill_dulling = "bashchop"
 	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/blank.ogg')
 	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
-	rockhill_debris = list(/obj/item/roguegear = 2, /obj/item/natural/wood/plank = 2, /obj/item/ingot/steel = 1)
+	rockhill_static_debris = list(/obj/item/roguegear/bronze = 4, /obj/item/natural/wood/plank = 4, /obj/item/ingot/steel = 2)
 	layer = BELOW_OBJ_LAYER
 
 /obj/structure/barricade/crude
@@ -1078,8 +1078,8 @@
 	icon_state = "base"
 	density = FALSE
 	obj_flags = CAN_BE_HIT
-	rockhill_loot = list(/obj/item/storage/belt/rogue/pouch/coins/mid = 25, /obj/item/storage/belt/rogue/pouch/coins/rich = 8, /obj/item/rogueweapon/spear = 12, /obj/item/rogueweapon/halberd = 5, /obj/item/rogueweapon/stoneaxe/woodcut/wardenpick = 10, /obj/item/rogueweapon/huntingknife/idagger/steel = 10, /obj/item/quiver/arrows = 12, /obj/item/clothing/cloak/wardencloak = 8, /obj/item/clothing/suit/roguetown/armor/leather/studded/warden = 6, /obj/item/clothing/suit/roguetown/armor/leather/heavy = 10, /obj/item/clothing/suit/roguetown/armor/chainmail = 6, /obj/item/clothing/head/roguetown/helmet/sallet/warden = 5, /obj/item/clothing/head/roguetown/helmet/sallet/warden/wolf = 3, /obj/item/clothing/head/roguetown/helmet/sallet/warden/goat = 3, /obj/item/clothing/head/roguetown/helmet/sallet/warden/bear = 3, /obj/item/clothing/head/roguetown/roguehood/warden = 5, /obj/item/clothing/head/roguetown/roguehood/warden/antler = 3, /obj/item/reagent_containers/glass/bottle/rogue/healthpot = 15, /obj/item/flashlight/flare/torch = 15, /obj/item/flint = 10)
-	rockhill_loot_lucky = list(/obj/item/storage/belt/rogue/pouch/coins/rich = 20, /obj/item/rogueweapon/halberd = 20, /obj/item/rogueweapon/stoneaxe/woodcut/wardenpick = 15, /obj/item/clothing/cloak/wardencloak = 15, /obj/item/clothing/suit/roguetown/armor/leather/studded/warden = 15, /obj/item/clothing/head/roguetown/helmet/sallet/warden/wolf = 10, /obj/item/clothing/head/roguetown/helmet/sallet/warden/goat = 10, /obj/item/clothing/head/roguetown/helmet/sallet/warden/bear = 10, /obj/item/clothing/head/roguetown/roguehood/warden/antler = 8, /obj/item/reagent_containers/glass/bottle/rogue/healthpot = 15)
+	rockhill_loot = list(/obj/item/storage/belt/rogue/pouch/coins/mid = 25, /obj/item/storage/belt/rogue/pouch/coins/rich = 8, /obj/item/rogueweapon/spear = 12, /obj/item/rogueweapon/halberd = 5, /obj/item/rogueweapon/stoneaxe/woodcut/wardenpick = 10, /obj/item/rogueweapon/huntingknife/idagger/steel = 10, /obj/item/quiver/arrows = 12, /obj/item/clothing/cloak/wardencloak = 8, /obj/item/clothing/suit/roguetown/armor/leather/studded/warden = 6, /obj/item/clothing/suit/roguetown/armor/leather/heavy = 10, /obj/item/clothing/suit/roguetown/armor/chainmail = 6, /obj/item/clothing/head/roguetown/helmet/sallet/warden = 5, /obj/item/clothing/head/roguetown/helmet/sallet/warden/wolf = 3, /obj/item/clothing/head/roguetown/helmet/sallet/warden/goat = 3, /obj/item/clothing/head/roguetown/helmet/sallet/warden/bear = 3, /obj/item/clothing/head/roguetown/helmet/sallet/warden/rat = 3, /obj/item/clothing/head/roguetown/roguehood/warden = 5, /obj/item/clothing/head/roguetown/roguehood/warden/antler = 3, /obj/item/reagent_containers/glass/bottle/rogue/healthpot = 15, /obj/item/flashlight/flare/torch = 15, /obj/item/flint = 10)
+	rockhill_loot_lucky = list(/obj/item/storage/belt/rogue/pouch/coins/rich = 20, /obj/item/rogueweapon/halberd = 20, /obj/item/rogueweapon/stoneaxe/woodcut/wardenpick = 15, /obj/item/clothing/cloak/wardencloak = 15, /obj/item/clothing/suit/roguetown/armor/leather/studded/warden = 15, /obj/item/clothing/head/roguetown/helmet/sallet/warden/wolf = 10, /obj/item/clothing/head/roguetown/helmet/sallet/warden/goat = 10, /obj/item/clothing/head/roguetown/helmet/sallet/warden/bear = 10, /obj/item/clothing/head/roguetown/helmet/sallet/warden/rat = 10, /obj/item/clothing/head/roguetown/roguehood/warden/antler = 8, /obj/item/reagent_containers/glass/bottle/rogue/healthpot = 15)
 	rockhill_poses = list("warden", "wa10", "wa20", "wa30", "wa40", "warden_skele", "wsk10", "wsk20", "wsk30", "wsk40")
 	max_integrity = 300
 	resistance_flags = NONE
@@ -5838,8 +5838,8 @@
 	layer = BELOW_MOB_LAYER
 
 /obj/structure/fluff/walldeco/wantedposter
-	name = "bandit notice"
-	desc = "A place for posters displaying the faces of roving bandits. Let's see if there are any this week..."
+	name = "wanted poster"
+	desc = "A board of posters naming the realm's outlaws and the bounties on their heads. Let's see who is wanted this week..."
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/decoration.dmi'
 	icon_state = "wanted1"
 	density = FALSE
@@ -5857,8 +5857,8 @@
 	layer = BELOW_MOB_LAYER
 
 /obj/structure/fluff/walldeco/wantedposter/l
-	name = "bandit notice"
-	desc = "A place for posters displaying the faces of roving bandits. Let's see if there are any this week..."
+	name = "wanted poster"
+	desc = "A board of posters naming the realm's outlaws and the bounties on their heads. Let's see who is wanted this week..."
 	icon = 'modular_redtard/rockhill/icons/roguetown/misc/decoration.dmi'
 	icon_state = "wanted1"
 	density = FALSE
@@ -6166,7 +6166,7 @@
 	rockhill_dulling = "bashchop"
 	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/blank.ogg')
 	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
-	rockhill_debris = list(/obj/item/magic/infernal/core = 1)
+	rockhill_static_debris = list(/obj/item/magic/infernal/core = 1, /obj/item/ingot/steel = 1)
 	layer = BELOW_MOB_LAYER
 
 /obj/structure/kybraxor
@@ -6996,6 +6996,36 @@
 	rockhill_debris = list(/obj/item/grown/log/tree/small = 0, /obj/item/roguegear = 0, /obj/item/natural/glass = 0)
 	layer = BELOW_OBJ_LAYER
 
+/obj/structure/roguemachine/potionseller/mobile
+	name = "potion cart"
+	desc = "A smaller, wheeled POTION SELLER that can be moved around."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/machines.dmi'
+	icon_state = "svendorcart1"
+	density = TRUE
+	obj_flags = CAN_BE_HIT
+	max_integrity = 400
+	resistance_flags = NONE
+	rockhill_dulling = "bash"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/blank.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
+	rockhill_debris = list(/obj/item/grown/log/tree/small = 0, /obj/item/roguegear = 0, /obj/item/natural/glass = 0)
+	layer = BELOW_OBJ_LAYER
+
+/obj/structure/roguemachine/potionseller/mobile/crafted
+	name = "potion cart"
+	desc = "A smaller, wheeled POTION SELLER that can be moved around."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/machines.dmi'
+	icon_state = "svendorcart1"
+	density = TRUE
+	obj_flags = CAN_BE_HIT
+	max_integrity = 400
+	resistance_flags = NONE
+	rockhill_dulling = "bash"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/blank.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
+	rockhill_debris = list(/obj/item/grown/log/tree/small = 0, /obj/item/roguegear = 0, /obj/item/natural/glass = 0)
+	layer = BELOW_OBJ_LAYER
+
 /obj/structure/roguemachine/rosewall
 	name = "The Rosewall"
 	desc = "A rosewood board scented with bath-oils, hung with perfumed slips of parchment. The bathhouse's workers pin their offerings here for any passerby to peruse."
@@ -7319,6 +7349,34 @@
 	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 	layer = BELOW_OBJ_LAYER
 
+/obj/structure/roguemachine/vendor/mobile
+	name = "peddler cart"
+	desc = "A smaller, wheeled PEDDLER that can be moved around."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/machines.dmi'
+	icon_state = "svendorcart1"
+	density = TRUE
+	obj_flags = CAN_BE_HIT
+	max_integrity = 400
+	resistance_flags = NONE
+	rockhill_dulling = "bash"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/blank.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
+	layer = BELOW_OBJ_LAYER
+
+/obj/structure/roguemachine/vendor/mobile/crafted
+	name = "peddler cart"
+	desc = "A smaller, wheeled PEDDLER that can be moved around."
+	icon = 'modular_redtard/rockhill/icons/roguetown/misc/machines.dmi'
+	icon_state = "svendorcart1"
+	density = TRUE
+	obj_flags = CAN_BE_HIT
+	max_integrity = 400
+	resistance_flags = NONE
+	rockhill_dulling = "bash"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/blank.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
+	layer = BELOW_OBJ_LAYER
+
 /obj/structure/roguemachine/withdraw
 	name = "vomitorium"
 	desc = "A magitech wall device connected to the local trade network. Users can buy basic goods, crafting materials, and food for a price from these units, either from in-town or imported for a heftier price."
@@ -7369,6 +7427,21 @@
 	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
 	layer = BELOW_MOB_LAYER
 	smoothing_groups = SMOOTH_GROUP_ROCKHILL_STRUCTURE_ROGUETENT
+
+/obj/structure/roguetent/leather
+	name = "tent flap"
+	icon = 'modular_redtard/rockhill/icons/turf/roguewall.dmi'
+	icon_state = "tent_door1"
+	density = TRUE
+	opacity = TRUE
+	color = "#7a4a2b"
+	obj_flags = CAN_BE_HIT
+	max_integrity = 300
+	resistance_flags = NONE
+	rockhill_dulling = "bashchop"
+	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/blank.ogg')
+	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
+	layer = BELOW_MOB_LAYER
 
 /obj/structure/roguethrone
 	parent_type = /obj/structure/rockhill
@@ -7998,6 +8071,7 @@
 	rockhill_dulling = "bashchop"
 	rockhill_hit_sounds = list('modular_redtard/rockhill/sound/blank.ogg')
 	rockhill_break_sounds = list('modular_redtard/rockhill/sound/foley/breaksound.ogg')
+	rockhill_static_debris = list(/obj/item/natural/wood/plank = 4, /obj/item/natural/cloth = 2, /obj/item/grown/log/tree/stick = 2)
 	plane = ABOVE_GAME_PLANE
 	layer = 4.5
 

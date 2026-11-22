@@ -128,7 +128,7 @@
 	qdel(src)
 
 /obj/structure/tree_sapling/proc/drop_withered_loot()
-	if(prob(20))
+	if(prob(rogue_value("tree_sapling_drop_withered_loot_chance")))
 		new /obj/item/grown/log/tree/small(get_turf(src))
 		return
 	new /obj/item/grown/log/tree/stick(get_turf(src))
@@ -137,7 +137,7 @@
 /obj/structure/tree_sapling/atom_destruction(damage_flag)
 	if(stage == ROGUE_TREESAP_YOUNG && !dead)
 		new /obj/item/grown/log/tree(get_turf(src))
-		if(prob(50))
+		if(prob(rogue_value("tree_sapling_atom_destruction_chance")))
 			new /obj/item/grown/log/tree/stick(get_turf(src))
 	return ..()
 
@@ -325,7 +325,7 @@
 	looty = list()
 	if(bushtype)
 		looty += bushtype
-	if(prob(66))
+	if(prob(rogue_value("bush_sapling_loot_replenish_chance")))
 		looty += /obj/item/natural/thorn
 	looty += /obj/item/natural/fibers
 
@@ -484,7 +484,7 @@
 		return ITEM_INTERACT_SUCCESS
 	if(istype(tool, /obj/item/rogueweapon/shovel))
 		to_chat(user, span_notice("I begin uprooting [src]..."))
-		if(do_after(user, 2 SECONDS, target = src))
+		if(do_after(user, rogue_value("soil_seedling_item_interaction_time"), target = src))
 			qdel(src)
 		return ITEM_INTERACT_SUCCESS
 	return ..()

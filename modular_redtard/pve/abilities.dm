@@ -81,7 +81,7 @@
 	if(QDELETED(owner) || !target || get_turf(target) != aimed)
 		return
 	rogue_pve_strike(owner, target, ROGUE_PVE_STONE_THROW_DAMAGE, pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_CHEST, BODY_ZONE_HEAD))
-	target.Paralyze(0.5 SECONDS)
+	target.Paralyze(rogue_value("stone_throw_rogue_land_paralyze"))
 	to_chat(target, span_userdanger("I'm hit by a big rock!"))
 
 /// Vibelin ground_slam of the axe troll: it rears back, the line to its foe is marked, and a moment later the axe comes down on

@@ -33,6 +33,7 @@
 	var/amount = healing * seconds_between_ticks
 	if(owner.has_status_effect(/datum/status_effect/rogue_fortify))
 		amount *= rogue_value("faith_fortify_bonus")
+	SEND_SIGNAL(owner, COMSIG_LIVING_MIRACLE_HEAL_APPLY, amount, src)
 	new /obj/effect/temp_visual/heal(get_turf(owner), "#c7aa5c")
 	if(owner.get_blood_volume() < BLOOD_VOLUME_NORMAL)
 		owner.adjust_blood_volume(amount, maximum = BLOOD_VOLUME_NORMAL)
@@ -79,6 +80,7 @@
 	cast_range = 4
 	miracle_tier = ROGUE_MIRACLE_TIER_1
 	devotion_cost = 10
+	stamina_cost = 30
 	miracle_forks = "Ratwood, Azure Peak, Twilight Axis"
 	miracle_gods = "every god of the Ten and the Inhumen T1"
 	/// Healing every second of the aura (Ratwood healing).
@@ -127,6 +129,7 @@
 	cast_range = 4
 	miracle_tier = ROGUE_MIRACLE_TIER_2
 	devotion_cost = 20
+	stamina_cost = 30
 	needs_holy_symbol = TRUE
 	miracle_forks = "Ratwood, Azure Peak, Twilight Axis"
 	miracle_gods = "Astrata T2, Pestra T3"
@@ -164,6 +167,7 @@
 	self_castable = FALSE
 	miracle_tier = ROGUE_MIRACLE_TIER_1
 	devotion_cost = 50
+	stamina_cost = 30
 	miracle_forks = "Ratwood, Azure Peak, Twilight Axis"
 	miracle_gods = "every god of the Ten and the Inhumen T1, Xylix T2"
 	/// Blood the caster gives up per pulse, by their rank in miracles (Ratwood blood_price; below apprentice the first).
@@ -223,6 +227,7 @@
 	cast_range = 1
 	miracle_tier = ROGUE_MIRACLE_TIER_4
 	devotion_cost = 100
+	stamina_cost = 15
 	miracle_forks = "Ratwood"
 	miracle_gods = "Xylix T4"
 	/// The prayer before the wounds close (Ratwood 4.5 seconds), shorter by a step per rank in miracles.
@@ -271,6 +276,7 @@
 	cast_range = 2
 	miracle_tier = ROGUE_MIRACLE_TIER_0
 	devotion_cost = 0
+	stamina_cost = 10
 	miracle_forks = "Ratwood, Azure Peak, Twilight Axis"
 	miracle_gods = "Pestra T0"
 
