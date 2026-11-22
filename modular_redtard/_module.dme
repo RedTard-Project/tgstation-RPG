@@ -90,6 +90,7 @@
 #include "combat\music.dm"
 #include "combat\ported_music.dm"
 #include "combat\mob.dm"
+#include "combat\crit.dm"
 #include "mechanics\formula.dm"
 #include "mechanics\formulas.dm"
 #include "mechanics\categories.dm"
@@ -160,6 +161,7 @@
 #include "faith\faith.dm"
 #include "faith\devotion.dm"
 #include "faith\miracle.dm"
+#include "faith\revived.dm"
 #include "faith\miracles\healing.dm"
 #include "faith\miracles\revival.dm"
 #include "faith\miracles\light.dm"
@@ -443,6 +445,7 @@
 #include "tests\husbandry_rogue.dm"
 #include "tests\water_rogue.dm"
 #include "tests\surgery_rogue.dm"
+#include "tests\mechanics_rogue.dm"
 #endif
 
 #ifdef REDTARD_TEST_FOCUS
@@ -515,6 +518,7 @@
 #include "combat\clash.dm"
 #include "combat\cleave.dm"
 #include "combat\core.dm"
+#include "combat\crit.dm"
 #include "combat\crits.dm"
 #include "combat\cursor.dm"
 #include "combat\defense.dm"
@@ -729,6 +733,7 @@
 #include "tests\light_shots.dm"
 #include "tests\localization_rogue.dm"
 #include "tests\mechanics_export.dm"
+#include "tests\mechanics_rogue.dm"
 #include "triumphs\roles.dm"
 #include "triumphs\round.dm"
 #include "triumphs\shop.dm"

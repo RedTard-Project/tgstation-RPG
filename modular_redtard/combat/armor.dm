@@ -537,7 +537,8 @@ GLOBAL_LIST_INIT(rogue_zone_coverage, list(
 
 /obj/item/bodypart/check_woundings_mods(wounding_type, injury_roll, damage, wound_bonus, exposed_wound_bonus, wound_clothing)
 	. = ..()
-	if(!ishuman(owner))
+	// Medieval maps only: on a modern map the wound rolls stay tg's.
+	if(!ishuman(owner) || !rogue_combat_enabled())
 		return
 	var/mob/living/carbon/human/human_owner = owner
 	. *= rogue_formula_value(ROGUE_FORMULA_WOUND_CONSTITUTION, list("constitution" = human_owner.rogue_stat(ROGUE_STAT_CONSTITUTION)))

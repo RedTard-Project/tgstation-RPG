@@ -379,11 +379,17 @@
 	TEST_ASSERT(stuck_intents[1] == /datum/intent/rogue_stuck/pull_out && stuck_intents[2] == /datum/intent/rogue_stuck/twist, "A stuck spear offers other intents")
 	TEST_ASSERT(attacker.rogue_select_intent(2), "Could not pick twist")
 	var/brute_before = victim.get_brute_loss()
+	// D2: the twist's harm is fixed, whatever the weapon's force (owner, 2026-11-22).
+	var/spear_force = spear.force
+	spear.force = 1000
 	attacker.next_move = 0
 	spear.melee_attack_chain(attacker, victim)
+	spear.force = spear_force
 	TEST_ASSERT(!spear.rogue_stuck, "Twisting did not free the spear")
 	TEST_ASSERT(attacker.is_holding(spear), "The twisted spear left the hand")
-	TEST_ASSERT(victim.get_brute_loss() > brute_before, "Twisting did no harm")
+	var/twist_harm = victim.get_brute_loss() - brute_before
+	TEST_ASSERT(twist_harm > 0, "Twisting did no harm")
+	TEST_ASSERT(abs(twist_harm - rogue_value("stuck_weapon_twist_force")) < 0.1, "Twisting did [twist_harm] harm instead of its fixed [rogue_value("stuck_weapon_twist_force")]")
 	var/datum/wound/pierce/stab_wound = locate(/datum/wound/pierce) in arm.wounds
 	TEST_ASSERT(stab_wound, "Twisting a spear did not leave a piercing crit")
 	TEST_ASSERT(!(/datum/intent/rogue_stuck/twist in attacker.rogue_hand_intents()), "The freed spear still offers twist")
@@ -405,6 +411,42 @@
 	attacker.put_in_active_hand(mace)
 	TEST_ASSERT(!mace.rogue_can_stick(BCLASS_BLUNT), "A blunt blow can stick")
 	TEST_ASSERT(!victim.rogue_stick_weapon(attacker, mace, arm, BCLASS_BLUNT, attacker.rogue_strike_intent(mace)), "A mace stuck in the arm")
+
+/// D2: Roguetown's crit (combat/crit.dm). Bruises do not lower health or fell the body; suffocation past its mark and lost
+/// blood fell it, it breathes on while down and wakes when they pass; toxins down to the death mark kill it.
+/datum/unit_test/rogue_crit
+
+/datum/unit_test/rogue_crit/Run()
+	var/mob/living/carbon/human/consistent/victim = allocate(__IMPLIED_TYPE__)
+	victim.rogue_enable_crit()
+	TEST_ASSERT(victim.rogue_crit, "Roguetown's crit did not switch on")
+	victim.apply_damage(150, BRUTE, BODY_ZONE_CHEST, wound_bonus = CANT_WOUND)
+	victim.apply_damage(40, BRUTE, BODY_ZONE_L_ARM, wound_bonus = CANT_WOUND)
+	TEST_ASSERT(victim.get_brute_loss() > 100, "The bruises did not land")
+	TEST_ASSERT_EQUAL(victim.health, victim.maxHealth, "Bruises lowered health")
+	TEST_ASSERT_EQUAL(victim.stat, STABLE, "Bruises felled the body")
+	victim.adjust_oxy_loss(victim.rogue_crit_oxy + 1)
+	TEST_ASSERT_EQUAL(victim.stat, HARD_CRIT, "Suffocation past the mark did not fell the body")
+	TEST_ASSERT(HAS_TRAIT(victim, TRAIT_KNOCKEDOUT), "The body felled by suffocation is not unconscious")
+	// TG's breathe() takes a breath from a body in HARD_CRIT right after this signal; the crit gives it back first.
+	victim.losebreath = 0
+	SEND_SIGNAL(victim, COMSIG_CARBON_PRE_BREATHE, 1)
+	TEST_ASSERT_EQUAL(victim.losebreath, -1, "The unconscious body was not given its breath back")
+	victim.losebreath = 0
+	victim.adjust_oxy_loss(-victim.get_oxy_loss())
+	TEST_ASSERT_EQUAL(victim.stat, STABLE, "The body did not wake when its breath came back")
+	var/blood = victim.get_blood_volume()
+	victim.set_blood_volume(victim.rogue_crit_blood)
+	SEND_SIGNAL(victim, COMSIG_LIVING_LIFE, 1)
+	TEST_ASSERT_EQUAL(victim.stat, HARD_CRIT, "A bled-out body stayed awake")
+	victim.set_blood_volume(blood)
+	SEND_SIGNAL(victim, COMSIG_LIVING_LIFE, 1)
+	TEST_ASSERT_EQUAL(victim.stat, STABLE, "The body did not wake when its blood came back")
+	if(victim.dead_threshold < victim.hardcrit_threshold)
+		victim.adjust_tox_loss(victim.health - victim.hardcrit_threshold, forced = TRUE)
+		TEST_ASSERT_EQUAL(victim.stat, HARD_CRIT, "Toxins down to the mark did not fell the body")
+	victim.adjust_tox_loss(victim.health - victim.dead_threshold, forced = TRUE)
+	TEST_ASSERT_EQUAL(victim.stat, DEAD, "Toxins down to the death mark did not kill")
 
 #undef TEST_ASSERT
 #undef TEST_ASSERT_EQUAL

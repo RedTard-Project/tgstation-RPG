@@ -6130,10 +6130,6 @@ force = 10
 integrity = 10
 force = 10
 
-[clothing/head/roguetown/helmet/kettle/]
-integrity = 10
-force = 10
-
 [clothing/head/roguetown/helmet/kettle/aalloy]
 integrity = 10
 force = 10
@@ -8378,10 +8374,6 @@ force = 10
 integrity = 10
 force = 10
 
-[clothing/mask/rogue/facemask/]
-integrity = 10
-force = 10
-
 [clothing/mask/rogue/facemask/aalloy]
 integrity = 10
 force = 10
@@ -9367,10 +9359,6 @@ integrity = 10
 force = 10
 
 [clothing/neck/roguetown/chaincoif]
-integrity = 10
-force = 10
-
-[clothing/neck/roguetown/chaincoif/]
 integrity = 10
 force = 10
 
@@ -12783,10 +12771,6 @@ integrity = 10
 force = 10
 
 [clothing/suit/roguetown/armor/plate]
-integrity = 10
-force = 10
-
-[clothing/suit/roguetown/armor/plate/]
 integrity = 10
 force = 10
 
@@ -19242,9 +19226,6 @@ force = 10
 force = 10
 
 [quiver/bolts]
-force = 10
-
-[quiver/bolts/]
 force = 10
 
 [quiver/bullet]
@@ -31851,15 +31832,6 @@ defense = 10
 wielded_defense_bonus = 10
 min_strength = 10
 
-[rogueweapon/stoneaxe/woodcut/]
-integrity = 10
-force = 10
-force_wielded = 10
-throw_force = 10
-defense = 10
-wielded_defense_bonus = 10
-min_strength = 10
-
 [rogueweapon/stoneaxe/woodcut/aaxe]
 integrity = 10
 force = 10
@@ -35340,14 +35312,6 @@ throw_force = 10
 defense = 10
 wielded_defense_bonus = 10
 
-[rogueweapon/woodstaff/]
-integrity = 10
-force = 10
-force_wielded = 10
-throw_force = 10
-defense = 10
-wielded_defense_bonus = 10
-
 [rogueweapon/woodstaff/aries]
 integrity = 10
 force = 10
@@ -36224,10 +36188,6 @@ integrity = 10
 force = 10
 
 [storage/belt/rogue/leather]
-integrity = 10
-force = 10
-
-[storage/belt/rogue/leather/]
 integrity = 10
 force = 10
 

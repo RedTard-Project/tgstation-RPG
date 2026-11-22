@@ -30,6 +30,8 @@
 	RegisterSignal(holder, COMSIG_QDELETING, PROC_REF(on_holder_deleted))
 	RegisterSignal(holder, COMSIG_MOB_GET_STATUS_TAB_ITEMS, PROC_REF(on_status_tab))
 	RegisterSignals(holder, list(SIGNAL_ADDTRAIT(TRAIT_ARCYNE), SIGNAL_REMOVETRAIT(TRAIT_ARCYNE)), PROC_REF(on_attunement_changed))
+	// Death stops the refill and a revival starts it again (process() never refills the dead).
+	RegisterSignal(holder, COMSIG_MOB_STATCHANGE, PROC_REF(on_attunement_changed))
 	update_processing()
 	changed()
 
@@ -37,7 +39,7 @@
 	if(processing)
 		STOP_PROCESSING(SSprocessing, src)
 	if(holder)
-		UnregisterSignal(holder, list(COMSIG_QDELETING, COMSIG_MOB_GET_STATUS_TAB_ITEMS, SIGNAL_ADDTRAIT(TRAIT_ARCYNE), SIGNAL_REMOVETRAIT(TRAIT_ARCYNE)))
+		UnregisterSignal(holder, list(COMSIG_QDELETING, COMSIG_MOB_GET_STATUS_TAB_ITEMS, SIGNAL_ADDTRAIT(TRAIT_ARCYNE), SIGNAL_REMOVETRAIT(TRAIT_ARCYNE), COMSIG_MOB_STATCHANGE))
 		holder.rogue_mana = null
 		SEND_SIGNAL(holder, COMSIG_MOB_ROGUE_MANA_CHANGED, 0)
 		holder = null
@@ -67,7 +69,7 @@
 	return min(base_softcap + max(1, holder.rogue_skill_rank(/datum/attribute/skill/magic/arcane)) * rogue_value("magic_mana_softcap_per_rank"), capacity)
 
 /datum/rogue_mana/proc/update_processing()
-	var/needed = (HAS_TRAIT(holder, TRAIT_ARCYNE) && amount < softcap()) || amount > softcap() || residual_left > 0
+	var/needed = (HAS_TRAIT(holder, TRAIT_ARCYNE) && holder.stat != DEAD && amount < softcap()) || amount > softcap() || residual_left > 0
 	if(needed && !processing)
 		processing = TRUE
 		START_PROCESSING(SSprocessing, src)

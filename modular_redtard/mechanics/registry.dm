@@ -24,19 +24,24 @@ GLOBAL_DATUM(rogue_mechanics, /datum/rogue_mechanics)
 	var/datum/rogue_formula/value = rogue_mechanics().formulas[id]
 	return value?.is_value ? value.number : fallback
 
+/// Built on the first rogue_value() or rogue_formula_value(), whenever that is: a reagent's New() asks while GLOB is still
+/// initializing, before the config is loaded. So New() and load() read no GLOB var and nothing that waits for a subsystem.
 /datum/rogue_mechanics
 	var/list/categories = list()
 	var/list/tables = list()
 	var/list/formulas = list()
 	var/list/problems = list()
 	var/loaded_at
+	/// The config folder load() read from: SSrogue_mechanics loads again when the config, loaded later, names another one.
+	var/loaded_directory
 
 /datum/rogue_mechanics/New()
 	for(var/category_type in subtypesof(/datum/rogue_mechanics_category))
 		var/datum/rogue_mechanics_category/category = new category_type
 		categories[category.name] = category
-	for(var/id in GLOB.rogue_formula_definitions)
-		var/list/definition = GLOB.rogue_formula_definitions[id]
+	var/list/definitions = rogue_formula_definitions()
+	for(var/id in definitions)
+		var/list/definition = definitions[id]
 		formulas[id] = new /datum/rogue_formula(id, definition[1], definition[2], definition[3])
 	declare_values()
 	for(var/special_type in subtypesof(/datum/special_intent))
@@ -140,6 +145,7 @@ GLOBAL_DATUM(rogue_mechanics, /datum/rogue_mechanics)
 		tables[name] = read_category(category)
 	read_formulas()
 	loaded_at = world.time
+	loaded_directory = config?.directory
 	for(var/problem in problems)
 		log_config("Rogue mechanics: [problem]")
 
@@ -164,6 +170,10 @@ GLOBAL_DATUM(rogue_mechanics, /datum/rogue_mechanics)
 		if(line[1] == "\[")
 			current = null
 			current_id = trim(copytext(line, 2, findtext(line, "]")))
+			// The porters keep a source's own spelling, and Ratwood writes some type blocks with a closing slash
+			// (/obj/item/.../kettle/), which DM reads as the same type.
+			while(length(current_id) > 1 && copytext(current_id, -1) == "/")
+				current_id = copytext(current_id, 1, -1)
 			var/path = category.path_of(current_id)
 			if(!path)
 				problems += "[where]: no [category.root]/[current_id]"

@@ -76,6 +76,8 @@ GLOBAL_LIST_INIT(rogue_stuck_pull_intents, list(/datum/intent/rogue_stuck/pull_o
 /// The hold of a stuck weapon: the holder keeps the weapon in hand, neither of the two may step away from the other, and the
 /// weapon's intents are pull out and twist. It ends with either of them, or when the holder lets go of the weapon, falls
 /// unconscious or holds it too long; a kick or a shove at either, a throw apart, or letting go leaves the weapon in the part.
+/// Falling unconscious is the HARD_CRIT stat (on_holder_stat); a knockout or sleep sets no stat in this /tg/station, it blocks the
+/// hands instead, which drops the weapon and ends the hold through on_weapon_dropped.
 /datum/rogue_stuck_weapon
 	var/mob/living/carbon/human/holder
 	var/mob/living/carbon/victim
@@ -191,8 +193,8 @@ GLOBAL_LIST_INIT(rogue_stuck_pull_intents, list(/datum/intent/rogue_stuck/pull_o
 	qdel(src)
 	return TRUE
 
-/// Twist: harm by the weapon's force and a sure crit of its own kind of harm (critical resistance still holds it off), then
-/// the weapon comes free.
+/// Twist: a little fixed harm of the weapon's own damage type, whatever its force (owner, 2026-11-22), and a sure crit of its
+/// own kind of harm (critical resistance still holds it off), then the weapon comes free.
 /datum/rogue_stuck_weapon/proc/twist()
 	if(QDELETED(src) || !twist_wound)
 		return FALSE
@@ -202,7 +204,7 @@ GLOBAL_LIST_INIT(rogue_stuck_pull_intents, list(/datum/intent/rogue_stuck/pull_o
 	var/obj/item/blade = weapon
 	twister.changeNext_move(CLICK_CD_MELEE)
 	twister.do_attack_animation(twisted, used_item = blade)
-	twisted.apply_damage(blade.force * rogue_value("stuck_weapon_twist_damage"), BRUTE, part, wound_bonus = CANT_WOUND, sharpness = (twist_wound == WOUND_PIERCE ? SHARP_POINTY : SHARP_EDGED), attacking_item = blade)
+	twisted.apply_damage(rogue_value("stuck_weapon_twist_force"), blade.damtype, part, wound_bonus = CANT_WOUND, sharpness = (twist_wound == WOUND_PIERCE ? SHARP_POINTY : SHARP_EDGED), attacking_item = blade)
 	twisted.visible_message(span_danger("[twister] twists [blade] in [twisted]'s [part.plaintext_zone]!"), span_userdanger("[twister] twists [blade] in my [part.plaintext_zone]!"))
 	if(twisted.rogue_resist_crit())
 		twisted.visible_message(span_crit("Critical resistance! [twisted] resists a wound!"))

@@ -240,7 +240,7 @@ GLOBAL_LIST_INIT(rogue_anvil_recipes, init_rogue_anvil_recipes())
 	rogue_quality = quality
 	var/prefix = rogue_quality_prefix(quality)
 	if(prefix)
-		name = "[prefix] [initial(name)]"
+		name = "[prefix] [rogue_unprefixed_name()]"
 	if(modifier < 1 && uses_integrity)
 		modify_max_integrity(max_integrity * modifier, FALSE)
 	if(quality == ROGUE_QUALITY_MASTERWORK)

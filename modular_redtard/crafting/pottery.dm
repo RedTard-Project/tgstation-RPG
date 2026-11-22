@@ -60,7 +60,7 @@ GLOBAL_LIST_INIT(rogue_pottery_ruin_chance, list(50, 30, 20, 10, 5))
 /obj/item/proc/rogue_apply_pottery_quality(tier)
 	rogue_quality = ROGUE_POTTERY_QUALITY(tier)
 	if(tier >= ROGUE_POTTERY_NAMED_TIER)
-		name = "[rogue_quality_prefix(rogue_quality)] [initial(name)]"
+		name = "[rogue_quality_prefix(rogue_quality)] [rogue_unprefixed_name()]"
 	if(tier >= ROGUE_POTTERY_SHINE_TIER)
 		rogue_shine()
 

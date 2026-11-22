@@ -168,9 +168,6 @@ look_around_range = 10
 # Deciseconds a found sneaker stays revealed.
 look_around_reveal = 10
 
-# Deciseconds between grab actions before speed is subtracted (Ratwood: a multiple of the melee delay).
-grab_action_delay = 10
-
 # Grab modifier against a compliant target (Ratwood).
 grab_compliant_modifier = 10
 
@@ -341,9 +338,6 @@ armor_blunt_dr = 10
 
 # Armor wear factor of a stopped blow against an exposed defender (Ratwood EXPOSED_INTEG_MOD).
 armor_exposed_wear = 10
-
-# Armor wear factor of a stopped blow against a vulnerable defender (Ratwood VULN_INTEG_MOD).
-armor_vulnerable_wear = 10
 
 # Share of its integrity at which armor stops protecting (Ratwood clothing integrity_failure).
 armor_failure_share = 10
@@ -1257,9 +1251,6 @@ artery_bleed_neck = 10
 # Blood per second an aortic dissection loses, the critical of the heart (Ratwood artery/chest: per Life tick).
 artery_bleed_chest = 10
 
-# Slowdown on opening an artery (Ratwood artery on_mob_gain(): Slowdown).
-artery_slow = 10
-
 # Pain of an opened artery of a limb (Ratwood woundpain).
 pain_artery = 10
 
@@ -1373,12 +1364,6 @@ pain_hold = 10
 
 # A hit above this slows the struck by a share of it (Ratwood: Slowdown of a clamped share of the damage).
 pain_slow_damage = 10
-
-# Least slowdown from a hit.
-pain_slow_min = 10
-
-# Most slowdown from a hit.
-pain_slow_max = 10
 
 # Deciseconds of sleep a hit takes away (Ratwood AdjustSleeping).
 pain_wake = 10
@@ -2141,12 +2126,6 @@ upper_cut_apply_hit_roll_max = 10
 # Lowest roll of rand() in /datum/special_intent/upper_cut/apply_hit().
 upper_cut_apply_hit_roll_min = 10
 
-# Deciseconds of Stun() in /datum/special_intent/greatflail_swing/post_delay().
-greatflail_swing_post_delay_stun = 10
-
-# Deciseconds of Knockdown() in /datum/special_intent/greatflail_swing/post_delay().
-greatflail_swing_post_delay_knockdown = 10
-
 # Deciseconds of Immobilize() in /datum/special_intent/axe_swing/on_create().
 axe_swing_on_create_immobilize = 10
 
@@ -2664,5 +2643,16 @@ stuck_weapon_stun = 10
 # How long the one who struck can hold the target by the stuck weapon; then the hold breaks and the weapon stays in the part. Times are in deciseconds.
 stuck_weapon_hold_time = 10
 
-# Damage of twisting a stuck weapon, as a share of the weapon's force; the sure crit comes on top of it.
-stuck_weapon_twist_damage = 10
+# --- From the code of modular_redtard (code_numbers.py, list d2)
+
+# Health at or below which a body falls unconscious (Azure Peak HEALTH_THRESHOLD_FULLCRIT); such a body's health counts only the worse of its suffocation and toxins, as Azure Peak's updatehealth().
+crit_unconscious_health = 10
+
+# Health at or below which a body dies (Azure Peak HEALTH_THRESHOLD_DEAD); such a body's health counts only the worse of its suffocation and toxins.
+crit_death_health = 10
+
+# Suffocation above which a body falls unconscious whatever its health (Azure Peak update_stat()).
+crit_unconscious_oxy = 10
+
+# Damage of twisting a stuck weapon, dealt with the weapon's own damage type whatever its force; the sure crit comes on top of it.
+stuck_weapon_twist_force = 10

@@ -84,13 +84,26 @@
 	var/pre_icon_state = "blip"
 	var/post_icon_state = "strike"
 	var/list/tunables = list("cooldown", "delay", "stamcost")
+	/// Waves deployed and not struck yet. The special lives on the weapon, which may outlive its user, so it lets go of the
+	/// user and the weapon once none is left (release()): otherwise a dropped weapon keeps a deleted body (a hard delete).
+	var/pending_waves = 0
 
 /datum/special_intent/Destroy(force)
+	release()
+	affected_turfs = null
+	return ..()
+
+/// Lets go of the user, the weapon and the clicked turf of the last deploy.
+/datum/special_intent/proc/release()
 	howner = null
 	iparent = null
 	click_loc = null
-	affected_turfs = null
-	return ..()
+
+/// A wave was struck or dropped; the last one releases the special.
+/datum/special_intent/proc/wave_done()
+	pending_waves = max(pending_waves - 1, 0)
+	if(!pending_waves)
+		release()
 
 /datum/special_intent/proc/value_key()
 	return "special_[replacetext(copytext("[type]", length("/datum/special_intent/") + 1), "/", "_")]"
@@ -136,8 +149,13 @@
 	iparent = parent
 	click_loc = use_clickloc ? get_turf(target) : null
 	if(use_clickloc && !click_loc)
+		if(!pending_waves)
+			release()
 		return
 	process_attack()
+	// A special without waves (a guard, a dash) or whose waves all struck at once holds nothing past this point.
+	if(!pending_waves)
+		release()
 
 /datum/special_intent/proc/process_attack()
 	SHOULD_CALL_PARENT(TRUE)
@@ -182,6 +200,7 @@
 	var/wave_index = 0
 	for(var/key in affected_turfs)
 		wave_index++
+		pending_waves++
 		var/wave_delay = text2num(key)
 		var/delay_name = LAZYACCESS(custom_delays, wave_index)
 		var/hit_delay = (delay_name && tune(delay_name)) || tune("delay")
@@ -192,13 +211,19 @@
 
 /datum/special_intent/proc/process_grid(list/turfs, hit_delay)
 	if(cancelled || QDELETED(howner))
+		wave_done()
 		return
 	for(var/turf/marked as anything in turfs)
 		var/obj/effect/temp_visual/rogue_special/marker = new(marked, hit_delay)
 		marker.icon = pre_icon
 		marker.icon_state = pre_icon_state
 	pre_delay(turfs)
-	addtimer(CALLBACK(src, PROC_REF(post_delay), turfs), hit_delay)
+	addtimer(CALLBACK(src, PROC_REF(strike_wave), turfs), hit_delay)
+
+/// The timed strike of a wave: post_delay() of the type, then the wave counts as done.
+/datum/special_intent/proc/strike_wave(list/turfs)
+	post_delay(turfs)
+	wave_done()
 
 /datum/special_intent/proc/on_create()
 	return

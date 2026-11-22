@@ -83,3 +83,17 @@ faith_blessed_fortune = 10
 
 # Percent chance in /datum/action/cooldown/spell/pointed/rogue_miracle/orison_water/pour().
 orison_water_pour_chance = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list d_sborshchik)
+
+# PQ given once for each body to whoever calls it back from death (Ratwood PQ_GAIN_REVIVE).
+pq_gain_revive = 10
+
+# How long a body called back from death is sick with it (Ratwood debuff/revived). Times are in deciseconds.
+revival_sickness_time = 10
+
+# Points lost from every stat by a body called back from death (Ratwood debuff/revived).
+revival_sickness_penalty = 10
+
+# Points lost from every stat by a body called back after it had begun to rot (Ratwood debuff/rotted, "doubly so").
+revival_sickness_penalty_rotted = 10

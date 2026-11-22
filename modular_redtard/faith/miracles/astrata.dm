@@ -233,7 +233,10 @@
 		return
 	// Ratwood reads the skill of the target here, which is no one's meaning: the caster's skill counts.
 	var/rank = caster.rogue_skill_rank(/datum/attribute/skill/magic/holy)
-	var/astratan = ishuman(target) && istype(target:rogue_patron, /datum/patron/divine/astrata)
+	var/astratan = FALSE
+	if(ishuman(target))
+		var/mob/living/carbon/human/lit = target
+		astratan = istype(lit.rogue_patron, /datum/patron/divine/astrata)
 	if(target != caster)
 		caster.apply_status_effect(/datum/status_effect/rogue_immolation, caster, target, rank, astratan)
 	target.apply_status_effect(/datum/status_effect/rogue_immolation/burning, caster, target, rank, astratan)

@@ -3149,12 +3149,15 @@ def extract_table(port, kind, blocks, inherited_vars=()):
     order = list(fields.values())
     out = []
     for block in blocks:
-        path = block[0]
+        # Ratwood writes some type blocks with a trailing slash (/obj/item/clothing/head/roguetown/helmet/kettle/): DM reads
+        # them as the same type, text2path() does not, so the table key drops it and the numbers join the type's own row.
+        # The DM line stays as the source wrote it.
+        path = block[0].rstrip('/')
         if not path.startswith(spec['root'] + '/'):
             out.append(block)
             continue
         TABLE_TYPES[kind].add(path)
-        kept = [path]
+        kept = [block[0]]
         row = dict(TABLE_ROWS[kind].get(path, {}))
         for line in block[1:]:
             found = TABLE_NUMBER_LINE.match(line)

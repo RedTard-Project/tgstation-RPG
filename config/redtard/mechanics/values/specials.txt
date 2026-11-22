@@ -46,78 +46,6 @@ special_flail_sweep_immobilize_init = 10
 # Flail Sweep: dam. Times are in deciseconds.
 special_flail_sweep_dam = 10
 
-# Greatflail Swing: cooldown. Times are in deciseconds.
-special_greatflail_swing_cooldown = 10
-
-# Greatflail Swing: delay. Times are in deciseconds.
-special_greatflail_swing_delay = 10
-
-# Greatflail Swing: stamcost. Times are in deciseconds.
-special_greatflail_swing_stamcost = 10
-
-# Greatflail Swing: dam. Times are in deciseconds.
-special_greatflail_swing_dam = 10
-
-# Greatflail Swing: slow_dur. Times are in deciseconds.
-special_greatflail_swing_slow_dur = 10
-
-# Greatflail Swing: self_immob. Times are in deciseconds.
-special_greatflail_swing_self_immob = 10
-
-# Greatflail Swing: self_clickcd. Times are in deciseconds.
-special_greatflail_swing_self_clickcd = 10
-
-# Greatflail Swing: self_vuln. Times are in deciseconds.
-special_greatflail_swing_self_vuln = 10
-
-# Great Swing: cooldown. Times are in deciseconds.
-special_greatsword_swing_cooldown = 10
-
-# Great Swing: delay. Times are in deciseconds.
-special_greatsword_swing_delay = 10
-
-# Great Swing: stamcost. Times are in deciseconds. The number is Vibelin's (K2g).
-special_greatsword_swing_stamcost = 10
-
-# Great Swing: dam. Times are in deciseconds.
-special_greatsword_swing_dam = 10
-
-# Great Swing: slow_dur. Times are in deciseconds.
-special_greatsword_swing_slow_dur = 10
-
-# Great Swing: self_immob. Times are in deciseconds.
-special_greatsword_swing_self_immob = 10
-
-# Great Swing: self_clickcd. Times are in deciseconds.
-special_greatsword_swing_self_clickcd = 10
-
-# Great Swing: self_vuln. Times are in deciseconds.
-special_greatsword_swing_self_vuln = 10
-
-# Great Swing: cooldown. Times are in deciseconds.
-special_greatsword_swing_white_stag_cooldown = 10
-
-# Great Swing: delay. Times are in deciseconds.
-special_greatsword_swing_white_stag_delay = 10
-
-# Great Swing: stamcost. Times are in deciseconds.
-special_greatsword_swing_white_stag_stamcost = 10
-
-# Great Swing: dam. Times are in deciseconds.
-special_greatsword_swing_white_stag_dam = 10
-
-# Great Swing: slow_dur. Times are in deciseconds.
-special_greatsword_swing_white_stag_slow_dur = 10
-
-# Great Swing: self_immob. Times are in deciseconds.
-special_greatsword_swing_white_stag_self_immob = 10
-
-# Great Swing: self_clickcd. Times are in deciseconds.
-special_greatsword_swing_white_stag_self_clickcd = 10
-
-# Great Swing: self_vuln. Times are in deciseconds.
-special_greatsword_swing_white_stag_self_vuln = 10
-
 # Ground Smash: cooldown. Times are in deciseconds.
 special_ground_smash_cooldown = 10
 
@@ -575,51 +503,6 @@ special_drakkyrmaw_bite_bite_delay_3 = 10
 
 # Drakkyrmaw: hit delay of the fourth bite mark. Times are in deciseconds.
 special_drakkyrmaw_bite_bite_delay_4 = 10
-
-# Greatflail Swing: damage multiplier of the second wave.
-special_greatflail_swing_wave_2_share = 10
-
-# Greatflail Swing: damage multiplier of the third wave and later.
-special_greatflail_swing_wave_3_share = 10
-
-# Greatflail Swing: share of the damage the last wave strikes again at the armor alone.
-special_greatflail_swing_last_share = 10
-
-# Greatflail Swing: most victims counted for the after-effects of the sweep.
-special_greatflail_swing_max_swept = 10
-
-# Greatflail Swing: immobilization of a victim swept with one other, before a second per victim is added. Times are in deciseconds.
-special_greatflail_swing_immobilize_init = 10
-
-# Greatflail Swing: exposure of a victim swept with one other, before a second per victim is added. Times are in deciseconds.
-special_greatflail_swing_exposed_init = 10
-
-# Greatflail Swing: off balance of a victim swept with four others, before a second per victim is added. Times are in deciseconds.
-special_greatflail_swing_offbalance_init = 10
-
-# Great Swing: hit delay of the first wave; the later waves wait the delay. Times are in deciseconds.
-special_greatsword_swing_first_delay = 10
-
-# Great Swing: damage multiplier of the second wave.
-special_greatsword_swing_wave_2_share = 10
-
-# Great Swing: damage multiplier of the third wave and later.
-special_greatsword_swing_wave_3_share = 10
-
-# Great Swing: share of the damage the last wave strikes again at the armor alone.
-special_greatsword_swing_last_share = 10
-
-# Great Swing: hit delay of the first wave; the later waves wait the delay. Times are in deciseconds.
-special_greatsword_swing_white_stag_first_delay = 10
-
-# Great Swing: damage multiplier of the second wave.
-special_greatsword_swing_white_stag_wave_2_share = 10
-
-# Great Swing: damage multiplier of the third wave and later.
-special_greatsword_swing_white_stag_wave_3_share = 10
-
-# Great Swing: share of the damage the last wave strikes again at the armor alone.
-special_greatsword_swing_white_stag_last_share = 10
 
 # Martyr's Blaze: the weapon damage of the blaze is divided by this.
 special_martyr_damage_divisor = 10
