@@ -100,6 +100,10 @@
 		damage = min(damage, max_damage - get_damage())
 		if(damage <= 0)
 			return null
+	else
+		// A surgeon's cut on a limb at its most damage is opened all the same, but no bigger than the room left (review
+		// VR2r, finding 12): else it would outlast the limb's damage, out of reach of what heals it.
+		damage = max(min(damage, max_damage - get_damage()), DAMAGE_PRECISION)
 	var/datum/rogue_injury/injury = rogue_add_injury(kind, damage, surgical)
 	if(injury)
 		rogue_raise_damage(damage, kind & ROGUE_INJURY_FIRE)
@@ -199,10 +203,10 @@
 			injury.rogue_armor_told = TRUE
 			playsound(owner, 'modular_redtard/combat/sound/misc/armored_wound.ogg', 100, TRUE)
 			owner.rogue_strike_note(span_crit("The wound tears open from [owner]'s <b>[plaintext_zone]</b>, the armor won't let it go any further!"))
-	else if(raw_bleed >= numbers.armor_artery_bleed && !rogue_artery_torn())
+	// Told only when the artery's crit took (review VR2r, finding 7): one already on the part, or no cut open, refuses it.
+	else if(raw_bleed >= numbers.armor_artery_bleed && !rogue_artery_torn() && rogue_add_wound(/datum/wound/rogue/artery, TRUE))
 		playsound(owner, 'modular_redtard/combat/sound/misc/wound_tear.ogg', 100, TRUE)
 		owner.rogue_strike_note(span_crit("The wound gushes open from [owner]'s <b>[plaintext_zone]</b>, nicking an artery!"))
-		rogue_add_wound(/datum/wound/rogue/artery, TRUE)
 	if(fresh && damage >= numbers.announce_min_damage)
 		var/what = injury.get_desc(FALSE)
 		if(what)
@@ -288,12 +292,14 @@
 	rogue_raise_damage(-amount, fire, updating_health)
 
 /// What TG does after a limb's damage changes (heal_damage()): the limb may give out, the body's health and look follow.
-/obj/item/bodypart/proc/rogue_after_damage_change()
+/// The Life tick passes updating_health FALSE and counts the body's health once for all its parts (review VR2r, finding 9).
+/obj/item/bodypart/proc/rogue_after_damage_change(updating_health = TRUE)
 	if(!owner)
 		return
 	if(can_be_disabled)
 		update_disabled()
-	owner.updatehealth()
+	if(updating_health)
+		owner.updatehealth()
 	if(update_bodypart_damage_state())
 		owner.update_damage_overlays()
 
@@ -363,7 +369,7 @@
 				. = TRUE
 	rogue_infection_life(seconds_per_tick, numbers)
 	if(.)
-		rogue_after_damage_change()
+		rogue_after_damage_change(FALSE)
 
 /// Vibelin get_injuries_desc() and the infection of the limb (check_for_injuries()): a line for each kind of injury, counted
 /// ("pair of", "several", "ton of") and told as bleeding, treated, inflamed; then the limb's infection.
@@ -437,11 +443,19 @@
 		if(length(lines))
 			. += span_warning("[p_They()] [p_have()] [english_list(lines)] on [p_their()] [limb.plaintext_zone].")
 
-/// A full heal (TG fully_heal() with HEAL_WOUNDS: revival, an admin, a cure-all) wipes the germs of the limbs too; the
-/// injuries go with the damage.
+/// A full heal (TG fully_heal() with HEAL_WOUNDS: revival, an admin, a cure-all) wipes the germs of the limbs too, and their
+/// pain and the body's shock (review VR2r, finding 6); the injuries go with the damage.
 /mob/living/carbon/fully_heal(heal_flags = HEAL_ALL)
 	. = ..()
 	if(!(heal_flags & HEAL_WOUNDS))
 		return
 	for(var/obj/item/bodypart/limb as anything in bodyparts)
 		limb.rogue_clear_germs()
+		limb.rogue_pain_dam = 0
+		limb.rogue_last_shock = 0
+	rogue_traumatic_shock = 0
+	rogue_shock_stage = 0
+	rogue_shock_highest = 0
+	rogue_remove_shock_penalty()
+	remove_movespeed_modifier(/datum/movespeed_modifier/rogue_shock)
+	rogue_pain_hud_dirty = TRUE

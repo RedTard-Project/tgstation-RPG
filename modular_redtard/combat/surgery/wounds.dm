@@ -3,9 +3,10 @@
 /// - the incision is a surgical injury of the limb (Vibelin create_injury(WOUND_SLASH, ..., surgical = TRUE)): it bleeds and
 ///   never heals by itself until it is sutured; a needle sews it shut, which closes the site of the operation (TG's surgical
 ///   states of the limb), and the site closed by other means (searing, TG's tools) sutures it;
-/// - the cut vein of a bloodletting (Ratwood /datum/wound/slash/vein) and the replantation of a limb put back on (Ratwood
-///   /datum/wound/artery/reattachment) are crits on Vibelin's fields, sewn by Ratwood's stitching; the replantation bleeds
-///   hard and keeps the limb from use until it is sewn;
+/// - the cut vein of a bloodletting is a surgical injury too (combat/surgery/steps.dm rogue_cut_vein()), sewn and closed with
+///   the site as the incision;
+/// - the replantation of a limb put back on (Ratwood /datum/wound/artery/reattachment) is a crit on Vibelin's fields, sewn by
+///   Ratwood's stitching; it bleeds hard and keeps the limb from use until it is sewn;
 /// - searing (Ratwood cauterize_wound()) of TG's wounds; Vibelin's crits sear their own way (combat/wounds.dm);
 /// - a broken bone of TG set (Ratwood set_bone()) mends a part at once, then by itself and in sleep;
 /// - a limb put back in place closes the stump it left on the chest (Ratwood attach_limb()).
@@ -137,11 +138,11 @@
 		RegisterSignal(src, COMSIG_BODYPART_UPDATING_SURGERY_STATE, PROC_REF(rogue_surgery_site_changed), override = TRUE)
 	return injury
 
-/// The open incisions of surgery on this limb: surgical injuries not sutured yet.
+/// The open incisions of surgery on this limb: surgical cuts not sutured yet (only a cut is sewn: review VR2r, finding 3).
 /obj/item/bodypart/proc/rogue_open_incisions()
 	. = list()
 	for(var/datum/rogue_injury/injury as anything in rogue_injuries)
-		if((injury.injury_flags & ROGUE_INJ_SURGICAL) && !(injury.injury_flags & ROGUE_INJ_SUTURED))
+		if((injury.injury_flags & ROGUE_INJ_SURGICAL) && (injury.kind & ROGUE_INJURY_SEWABLE) && !(injury.injury_flags & ROGUE_INJ_SUTURED))
 			. += injury
 
 /// The site of the operation was closed (searing, TG's tools, the last incision sewn): its incisions are sutured, and they
@@ -216,56 +217,13 @@
 	site.remove_surgical_state(ALL_SURGERY_STATES_UNSET_ON_CLOSE)
 
 // ---------------------------------------------------------------------------------------------------------------------------
-// The cut vein and the replantation: crits of surgery on Vibelin's fields (whp, woundpain, passive_healing), sewn by Ratwood's
-// stitching (combat/medicine.dm rogue_stitch_wound()). Ratwood's numbers of their bleeding are a Life tick's; a crit bleeds by
-// the second (rogue_set_bleed()). They do not make the limb take more damage.
+// The replantation: a crit of surgery on Vibelin's fields (whp, woundpain, passive_healing), sewn by Ratwood's stitching
+// (combat/medicine.dm rogue_stitch_wound()). Ratwood's numbers of its bleeding are a Life tick's; a crit bleeds by the second
+// (rogue_set_bleed()). It does not make the limb take more damage.
 
 /// Blood a Life tick the crit bleeds when surgery opens it (Ratwood bleed_rate of the fresh wound).
 /datum/wound/rogue/proc/rogue_surgery_bleed()
 	return 0
-
-/// Ratwood /datum/wound/slash/vein: the vein a bloodletting opens. It bleeds and does not clot or mend by itself; sewn, it
-/// bleeds little and mends.
-/datum/wound/rogue/vein
-	name = "cut vein"
-	desc = "An opened vein, letting blood out."
-	treat_text = "Sew it shut with a needle, or sear it."
-	treat_text_short = "Sew or sear it"
-	examine_desc = "bleeds from an opened vein"
-	occur_text = "has a vein opened"
-	can_cauterize = TRUE
-	/// Sewn: it bleeds little and mends.
-	var/rogue_sewn = FALSE
-
-/datum/wound/rogue/vein/New()
-	. = ..()
-	whp = rogue_value("surgery_vein_health")
-	damage_multiplier_penalty = 1
-
-/datum/wound/rogue/vein/rogue_surgery_bleed()
-	return rogue_value("surgery_vein_bleed")
-
-/datum/wound/rogue/vein/rogue_sew_threshold()
-	return rogue_sewn ? 0 : rogue_value("surgery_vein_sew")
-
-/// Ratwood sew_wound(): sewn, the vein bleeds little (sewn_bleed_rate), has less to mend (sewn_whp) and mends by itself.
-/datum/wound/rogue/vein/rogue_sew_done()
-	rogue_sewn = TRUE
-	rogue_sew_progress = 0
-	rogue_stitched = 0
-	name = "sewn vein"
-	whp = min(whp, rogue_value("surgery_vein_sewn_health"))
-	passive_healing = max(passive_healing, rogue_value("surgery_sewn_passive"))
-	rogue_set_bleed(rogue_value("surgery_vein_sewn_bleed") / ROGUE_LIFE_TICK)
-
-/datum/wound/rogue/vein/rogue_sleep_healing()
-	return rogue_sewn ? ..() : 0
-
-/datum/wound/rogue/vein/rogue_cauterizable()
-	return TRUE
-
-/datum/wound/rogue/vein/rogue_soaks_bandage()
-	return !rogue_sewn
 
 /// Ratwood /datum/wound/artery/reattachment: a limb put back on bleeds as from an opened artery, hurts and will not serve until
 /// it is sewn; sewn, it bleeds little, hurts less and mends.
@@ -333,14 +291,6 @@
 	wound_path_to_generate = /datum/wound/rogue/incision
 	wound_series = ROGUE_WOUND_SERIES_INCISION
 
-/datum/wound_pregen_data/rogue_surgery/vein
-	abstract = FALSE
-	wound_path_to_generate = /datum/wound/rogue/vein
-	wound_series = ROGUE_WOUND_SERIES_VEIN
-	required_limb_biostate = (BIO_FLESH|BIO_BLOODED)
-	ignore_cannot_bleed = FALSE
-	viable_zones = list(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
-
 /datum/wound_pregen_data/rogue_surgery/replantation
 	abstract = FALSE
 	wound_path_to_generate = /datum/wound/rogue/replantation
@@ -348,8 +298,8 @@
 	required_limb_biostate = (BIO_FLESH|BIO_BLOODED)
 	ignore_cannot_bleed = FALSE
 
-/// Opens one of surgery's wounds on the limb (steps.dm, prosthetics.dm): the incision as a surgical injury, the vein and the
-/// replantation as crits bleeding at their fresh rate. Returns the injury or the crit, null if the limb cannot take it.
+/// Opens one of surgery's wounds on the limb (prosthetics.dm): the incision as a surgical injury, the replantation as a crit
+/// bleeding at its fresh rate. Returns the injury or the crit, null if the limb cannot take it.
 /obj/item/bodypart/proc/rogue_surgery_wound(wound_type, wound_source)
 	if(ispath(wound_type, /datum/wound/rogue/incision))
 		return rogue_surgery_incision()

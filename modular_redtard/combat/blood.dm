@@ -193,19 +193,24 @@
 	var/alive = stat != DEAD
 	var/ticks = seconds_per_tick / ROGUE_LIFE_TICK
 	var/busy = FALSE
+	var/healed = FALSE
 	for(var/obj/item/bodypart/limb as anything in bodyparts)
 		for(var/obj/item/natural/worms/leech/leech as anything in limb.rogue_leeches)
 			leech.rogue_leech_tick(src, ticks)
 		if(!limb.rogue_needs_life())
 			continue
 		busy = TRUE
-		limb.rogue_injury_life(seconds_per_tick)
+		if(limb.rogue_injury_life(seconds_per_tick))
+			healed = TRUE
 		if(LAZYLEN(limb.wounds))
 			for(var/datum/wound/rogue/crit in limb.wounds.Copy())
 				crit.rogue_on_life(seconds_per_tick)
 		limb.rogue_bandage_tick(seconds_per_tick)
 		if(alive)
 			limb.rogue_pain_decay(seconds_per_tick, numbers)
+	// The parts that healed this tick count the body's health once (rogue_after_damage_change(FALSE) above).
+	if(healed)
+		updatehealth()
 	if(!alive)
 		return
 	if(busy || rogue_traumatic_shock > 0)
@@ -263,10 +268,10 @@
 	if(circulation < BLOOD_VOLUME_NORMAL * numbers.blood_excess_share || !length(bodyparts) || !SPT_PROB(numbers.blood_excess_artery_chance, seconds_per_tick))
 		return
 	var/obj/item/bodypart/limb = pick(bodyparts)
-	if(limb.rogue_artery_torn())
+	// Told only when the artery's crit took (review VR2r, finding 7).
+	if(limb.rogue_artery_torn() || !limb.rogue_add_wound(/datum/wound/rogue/artery))
 		return
 	to_chat(src, span_userdanger("Blood starts to tear my arteries apart!"))
-	limb.rogue_add_wound(/datum/wound/rogue/artery)
 
 /// Ratwood's bleed(): constitution slows or quickens the bleeding of a body with a mind, as thick blood, critical
 /// resistance and weakness do; one who yields bleeds a quarter.

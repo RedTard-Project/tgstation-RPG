@@ -174,12 +174,30 @@ GLOBAL_VAR_INIT(rogue_wound_numbers_revision, -1)
 /datum/wound/rogue/second_wind()
 	return
 
-/// The crit opens (Vibelin apply_to_bodypart(), on_bodypart_gain(), on_mob_gain()), once TG has put it on the limb.
+/datum/wound/rogue
+	/// Its opening has had its effects. TG puts a crit on again when its limb is attached again (try_attach_limb()) or the crit
+	/// is moved to another limb: then only what lasts comes back (rogue_on_regain()).
+	var/rogue_gained = FALSE
+
+/// The crit opens (Vibelin apply_to_bodypart(), on_bodypart_gain(), on_mob_gain()), once TG has put it on the limb; put on
+/// again, what lasts of it comes back.
 /datum/wound/rogue/apply_wound(obj/item/bodypart/limb, silent = FALSE, datum/wound/old_wound = null, smited = FALSE, attack_direction = null, wound_source = "Unknown", replacing = FALSE)
 	. = ..()
 	if(QDELETED(src) || !src.limb || !victim)
 		return
+	if(rogue_gained)
+		rogue_on_regain()
+		return
+	rogue_gained = TRUE
 	rogue_on_gain()
+
+/// The limb with the crit is on a body again: what lasts while the crit is on comes back, without the pain, the knockout,
+/// the cry and the shock of its opening. Every lasting effect rogue_on_gain() of a kind sets and rogue_on_loss() takes off
+/// is set again here.
+/datum/wound/rogue/proc/rogue_on_regain()
+	rogue_update_disabling()
+	limb.rogue_update_limb_efficiency()
+	victim.update_health_hud()
 
 /// The crit closes or is taken off: its effects end (Vibelin on_bodypart_loss(), on_mob_loss()).
 /datum/wound/rogue/remove_wound(ignore_limb, replaced = FALSE, destroying = FALSE)
@@ -683,10 +701,11 @@ GLOBAL_VAR_INIT(rogue_wound_numbers_revision, -1)
 	return WOUND_BURN
 
 /// TG's force_wound_upwards() may not be overridden (SHOULD_NOT_OVERRIDE): a TG wound it puts on a medieval body is turned
-/// here, as apply_wound() starts (combat/chat.dm), into the crit or injury of rogue_tg_wound(). Smites and the promotions
-/// of a wound already there stay TG's. Returns TRUE when it was turned (the TG wound is then deleted).
+/// here, as apply_wound() starts (combat/chat.dm), into the crit or injury of rogue_tg_wound(). Smites, the promotions
+/// of a wound already there and a wound put on again with its limb attached again (try_attach_limb(): drop_limb() keeps
+/// the wound's limb) stay TG's. Returns TRUE when it was turned (the TG wound is then deleted).
 /datum/wound/proc/rogue_turn_into_crit(obj/item/bodypart/limb, smited, datum/wound/old_wound, replacing, wound_source)
-	if(smited || old_wound || replacing || !limb?.owner || !HAS_TRAIT(limb.owner, TRAIT_ROGUE_WOUNDS))
+	if(smited || old_wound || replacing || (limb && src.limb == limb) || !limb?.owner || !HAS_TRAIT(limb.owner, TRAIT_ROGUE_WOUNDS))
 		return FALSE
 	var/kind = rogue_tg_wounding_type()
 	if(!kind)

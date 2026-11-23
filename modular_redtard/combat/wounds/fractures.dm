@@ -51,6 +51,11 @@
 	if(old_victim && !QDELETED(old_victim))
 		old_victim.rogue_update_fracture_slowdown()
 
+/datum/wound/rogue/fracture/rogue_on_regain()
+	. = ..()
+	limb.rogue_set_brittle(REF(src), TRUE)
+	victim.rogue_update_fracture_slowdown()
+
 /datum/wound/rogue/fracture/rogue_settable()
 	return can_set && !bone_set
 
@@ -103,6 +108,14 @@
 		rogue_paralyze_body(old_victim, FALSE)
 		old_victim.remove_traits(list(TRAIT_DEAF, TRAIT_NOPAIN), REF(src))
 		old_victim.cure_nearsighted(REF(src))
+
+/datum/wound/rogue/fracture/head/rogue_on_regain()
+	. = ..()
+	ADD_TRAIT(victim, TRAIT_DISFIGURED, REF(src))
+	if(paralysis)
+		rogue_paralyze_body(victim, TRUE)
+		victim.add_traits(list(TRAIT_DEAF, TRAIT_NOPAIN), REF(src))
+		victim.become_nearsighted(REF(src))
 
 /datum/wound/rogue/fracture/head/rogue_on_life(seconds_per_tick)
 	. = ..()
@@ -191,6 +204,10 @@
 	. = ..()
 	old_victim?.cure_nearsighted(REF(src))
 
+/datum/wound/rogue/fracture/head/eyes/rogue_on_regain()
+	. = ..()
+	victim.become_nearsighted(REF(src))
+
 /// Vibelin fracture/head/ears: the temporal bone caved in paralyzes.
 /datum/wound/rogue/fracture/head/ears
 	name = "depressed temporal fracture"
@@ -222,6 +239,10 @@
 	. = ..()
 	if(old_victim)
 		REMOVE_TRAIT(old_victim, TRAIT_ANOSMIA, REF(src))
+
+/datum/wound/rogue/fracture/head/nose/rogue_on_regain()
+	. = ..()
+	ADD_TRAIT(victim, TRAIT_ANOSMIA, REF(src))
 
 /// Vibelin fracture/mouth: the broken jaw.
 /datum/wound/rogue/fracture/mouth
@@ -265,6 +286,11 @@
 		return
 	rogue_paralyze_body(old_victim, FALSE)
 	REMOVE_TRAIT(old_victim, TRAIT_NOPAIN, REF(src))
+
+/datum/wound/rogue/fracture/neck/rogue_on_regain()
+	. = ..()
+	rogue_paralyze_body(victim, TRUE)
+	ADD_TRAIT(victim, TRAIT_NOPAIN, REF(src))
 
 /datum/wound/rogue/fracture/neck/rogue_on_life(seconds_per_tick)
 	. = ..()
@@ -332,6 +358,10 @@
 	. = ..()
 	old_victim?.remove_traits(list(TRAIT_PARALYSIS_L_LEG, TRAIT_PARALYSIS_R_LEG), REF(src))
 
+/datum/wound/rogue/fracture/groin/rogue_on_regain()
+	. = ..()
+	victim.add_traits(list(TRAIT_PARALYSIS_L_LEG, TRAIT_PARALYSIS_R_LEG), REF(src))
+
 /// Vibelin dislocation: a twisted joint, out of its socket; it mends by itself, a leg out of joint slows one, and a brittle
 /// limb breaks instead (the fracture rolls, the dislocation does not).
 /datum/wound/rogue/dislocation
@@ -372,6 +402,11 @@
 	if(old_victim && !QDELETED(old_victim))
 		old_victim.rogue_update_fracture_slowdown()
 
+/datum/wound/rogue/dislocation/rogue_on_regain()
+	. = ..()
+	limb.rogue_set_brittle(REF(src), TRUE)
+	victim.rogue_update_fracture_slowdown()
+
 /datum/wound/rogue/dislocation/rogue_settable()
 	return can_relocate
 
@@ -402,6 +437,10 @@
 	. = ..()
 	if(old_victim)
 		rogue_paralyze_body(old_victim, FALSE)
+
+/datum/wound/rogue/dislocation/neck/rogue_on_regain()
+	. = ..()
+	rogue_paralyze_body(victim, TRUE)
 
 /// Vibelin FRACTURED_ADD_SLOWDOWN, DISLOCATED_ADD_SLOWDOWN: each leg broken or out of joint slows one's steps until it heals.
 /mob/living/carbon/proc/rogue_update_fracture_slowdown()

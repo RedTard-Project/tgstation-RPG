@@ -98,6 +98,8 @@
 #include "combat\medicine.dm"
 #include "combat\splints.dm"
 #include "combat\leeches.dm"
+// Organ hits and the TG speed and limp fields of crits (block VR2); after combat\wounds.dm: it overrides rogue_load_numbers()
+#include "combat\organ_hits.dm"
 #include "combat\beasts.dm"
 #include "combat\ranged.dm"
 #include "combat\launchers.dm"
@@ -390,6 +392,9 @@
 #include "combat\surgery\operation.dm"
 #include "combat\surgery\wounds.dm"
 #include "combat\surgery\steps.dm"
+// Vibelin operations and teeth (block VR2): on the limb/rogue and basic/rogue bases of operation.dm
+#include "combat\surgery\steps_vibelin.dm"
+#include "combat\teeth.dm"
 #include "combat\surgery\prosthetics.dm"
 // Stage 6: PvE depth (pve/)
 #include "pve\_defines.dm"

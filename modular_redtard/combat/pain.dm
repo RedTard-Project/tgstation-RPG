@@ -376,6 +376,8 @@
 		var/datum/embedding/embed = lodged.get_embed()
 		if(embed)
 			pain += embed.pain_mult * lodged.w_class * numbers.pain_embedded_factor
+	// Hurt organs under the part (combat/organ_hits.dm, Vibelin organ.get_shock()).
+	pain += rogue_organ_pain()
 	if(painkillers)
 		pain -= owner.rogue_get_chem_effect(ROGUE_CE_PAINKILLER) / numbers.pain_painkiller_divisor
 	return clamp(FLOOR(pain * multiplier, DAMAGE_PRECISION), 0, rogue_max_pain(numbers))

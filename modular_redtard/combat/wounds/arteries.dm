@@ -73,18 +73,21 @@
 
 /// Vibelin apply_to_bodypart(): the artery tears (through, for a critical one) as the crit goes on, so the blood element
 /// already sees it bleed when TG tells of the new wound (the bandage soaks through); it is as it was if the crit does not take.
+/// Put on again with its limb attached again, the artery is torn already (it was not mended as the limb came off).
 /datum/wound/rogue/artery/apply_wound(obj/item/bodypart/limb, silent = FALSE, datum/wound/old_wound = null, smited = FALSE, attack_direction = null, wound_source = "Unknown", replacing = FALSE)
+	var/tearing = limb && !rogue_own_artery && !rogue_gained
 	var/was = limb?.rogue_artery_health
-	if(limb && !rogue_own_artery)
+	if(tearing)
 		limb.rogue_tear_artery(severity >= WOUND_SEVERITY_CRITICAL)
 	. = ..()
-	if(limb && !rogue_own_artery && (QDELETED(src) || src.limb != limb))
+	if(tearing && (QDELETED(src) || src.limb != limb))
 		limb.rogue_artery_health = was
 
-/// The artery is mended once its wound is gone, unless the limb itself goes.
+/// The artery is mended once its wound is gone, unless the limb itself goes or only comes off the body (drop_limb() has
+/// already let go of its owner): then the torn artery stays with the limb.
 /datum/wound/rogue/artery/rogue_on_loss(obj/item/bodypart/old_limb, mob/living/carbon/old_victim, replaced, destroying)
 	. = ..()
-	if(old_limb && !destroying && !rogue_own_artery)
+	if(old_limb && !destroying && !rogue_own_artery && old_limb.owner)
 		old_limb.rogue_mend_artery()
 
 /// Vibelin artery on_life(): unsewn, it bleeds by how much of the artery is torn; sewn, as its sewn state.

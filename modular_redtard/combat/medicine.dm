@@ -395,7 +395,8 @@
 		var/desc = injury.get_desc()
 		var/cutoff = rogue_injury_autoheal_cutoff(injury)
 		var/surgical = injury.injury_flags & ROGUE_INJ_SURGICAL
-		var/heal = min(rogue_value("sew_injury_heal"), injury.damage - cutoff)
+		// The cutoff is of one injury, the damage of all the merged ones (review VR2r, finding 13).
+		var/heal = min(rogue_value("sew_injury_heal"), injury.damage - cutoff * injury.amount)
 		if(heal > 0)
 			injury.heal_damage(heal)
 		if(!QDELETED(injury) && rogue_injury_size(injury) > cutoff)

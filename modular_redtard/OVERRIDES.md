@@ -1056,6 +1056,22 @@
 | `/obj/item/tourniquet/improvised`: `do_apply_tourniquet()`, `on_applied_to_limb()`, `on_removed_from_limb()`; `/obj/item/splint` в слоте `ROGUE_LIMB_ITEM_SPLINT` через `apply_item()` | 2 | `combat/splints.dm` | `code/game/objects/items/tourniquet.dm`, `_bodyparts.dm apply_item()` | Жгут Вайблина: не на шею, без урона, паралич конечности, ишемия и некроз, брызги при снятии; шина — свой слот прикладываемых вещей ТГ | Сигнатуры процедур жгута ТГ, `LIMB_ITEM_TOURNIQUET`, `apply_item(item, category)` и сигналы `COMSIG_ITEM_APPLIED_TO_LIMB`/`UNAPPLIED_FROM_LIMB` |
 | `/mob/living/carbon/human/examine()`, `Topic()` (дополнение строки Б1: строка шины и ключ `rogue_unsplint`) | 5 | `combat/medicine.dm` | `human/examine.dm`, `human.dm` | Шина видна при осмотре, снимается ссылкой | Что ключ `rogue_unsplint` не занят ТГ |
 
+## Блок ВР2 (2026-11-23): хирургия, зубы, органы
+
+Только на medieval-картах: операции модуля заперты (`OPERATION_LOCKED`) и предлагаются элементом `rogue_surgery` (`rogue_combat_enabled()`), остальное — на теле с `TRAIT_ROGUE_WOUNDS`. Заменяет строку блока 4 про `/datum/surgery_operation/limb/rogue/on_failure()` (лихорадки-реагента больше нет).
+
+| Что (тип, процедура, файл) | Ступень | Файл модуля | Оригинал ТГ | Поведение | При мерже проверить |
+|---|---|---|---|---|---|
+| `/datum/surgery_operation/New()` с `..()` | 5 | `combat/surgery/operation.dm` | `code/modules/surgery/operations/_operation.dm` | Операции модуля (`rogue_medieval`) читают свои числа (`rogue_read_numbers()`); у операций ТГ ничего | Что `GLOB.operations` создаёт операции один раз при инициализации |
+| `/datum/surgery_operation/basic/rogue` (новая база): `get_tool_quality()`, `snowflake_check_availability()`, `get_time_modifiers()`, `pre_preop()`, `on_success()`, `on_failure()`; те же на `limb/rogue` (`on_failure()` — injury провала) | 3 | там же | `_operation.dm` | Бросок 3d20 Вайблина в `pre_preop()`: проигрыш ставит `OPERATION_FORCE_FAIL` ТГ, свой провал ТГ держится под порогом скорости | Что `try_perform()` проверяет `OPERATION_FORCE_FAIL` после `do_after`, что `GET_FAILURE_CHANCE` при скорости 2,5 даёт 0 |
+| `/datum/surgery_operation/limb/organ_manipulation/internal/rogue`: `rogue_read_numbers()`, `rogue_implements()`, `get_tool_quality()`, `snowflake_check_availability()`, `get_time_modifiers()`, `pre_preop()`, `on_success()`, `on_failure()` | 3 | `combat/surgery/steps.dm` | `operations/organ_manipulation.dm` | Органы ТГ на орудиях, навыке и броске модуля | Имена подтипов органов ТГ |
+| `/datum/surgery_operation/basic/rogue/tend_wounds`: `state_check()`, `get_radial_options()`, `can_loop()`, `on_preop()`; `/limb/rogue/plastic_surgery/pre_preop()` | 3 | `combat/surgery/steps_vibelin.dm` | `_operation.dm` | Обработка ран Вайблина на injury модуля; имя пластики выбирается до броска | — |
+| `/datum/surgery_operation/limb/rogue/mouth_to_mouth`: `on_failure()`, `can_loop()` | 3 | `combat/surgery/steps.dm` | `_operation.dm` | Провал без повреждения, петля до провала (было) | — |
+| `/obj/item/bodypart/head/on_adding()`, `on_removal()` с `..()` | 5 | `combat/teeth.dm` | `code/modules/surgery/bodyparts/_bodyparts.dm` | Голова с выбитыми зубами приносит шепелявость новому телу (ТГ зовёт `on_adding()` до `update_owner()` — статус ставится `new_owner`) и уносит со старого; нетронутые зубы — ничего | Порядок `on_adding()`/`update_owner()` в `add_bodypart()` |
+| Поля ТГ `/datum/wound`: `interaction_efficiency_penalty`, `limp_slowdown`, `limp_chance` — задаются критам модуля в переопределении `/datum/wound/rogue/rogue_load_numbers()` | 3 | `combat/organ_hits.dm` | `code/datums/wounds/_wounds.dm` | Медленные руки и хромота критов работают машиной ТГ (`actionspeed`, `/datum/status_effect/limp`) | Что `apply_wound()` зовёт `add_or_remove_actionspeed_mod()` и `start_limping_if_we_should()` |
+| `/datum/rogue_injury/Destroy()` (дополнение строки ВР1) | 3 | `combat/injuries/_injury.dm` | — | Хирургическое повреждение, ушедшее не иглой (зажило, вылечено), закрывает место операции | — |
+| `/mob/living/carbon/fully_heal()` (дополнение строки ВР1) | 5 | `combat/injuries/bodypart.dm` | `carbon.dm` | При `HEAL_WOUNDS` снимает ещё боль частей и шок тела | Флаг `HEAL_WOUNDS` |
+
 ## Тесты
 
 Тестовые файлы обёрнуты в собственные `#ifdef` (`UNIT_TESTS`, `REDTARD_TEST_FOCUS`, `REDTARD_LIGHT_BENCH`, `REDTARD_LIGHT_BENCH_CLIENT`), потому что Dream Maker дописывает их в блок `BEGIN_INCLUDE` модуля без условий.

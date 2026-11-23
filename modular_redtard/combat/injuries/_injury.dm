@@ -77,9 +77,14 @@ GLOBAL_DATUM(rogue_injury_numbers, /datum/rogue_injury_numbers)
 	init_stage(damage)
 
 /datum/rogue_injury/Destroy()
-	if(limb)
-		LAZYREMOVE(limb.rogue_injuries, src)
+	var/obj/item/bodypart/part = limb
+	if(part)
+		LAZYREMOVE(part.rogue_injuries, src)
 		limb = null
+		// An incision mended by other means than the needle (healed, bandaged and closed by itself, wiped by a full heal)
+		// closes its site, as the sewn one does (review VR2r, finding 5). The limb's own Destroy() nulls limb first.
+		if((injury_flags & ROGUE_INJ_SURGICAL) && !QDELETED(part))
+			part.rogue_close_surgical_site()
 	return ..()
 
 /// The type's numbers (cached per type for a revision of the mechanics numbers): its stages and its fields.

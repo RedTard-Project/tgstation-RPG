@@ -121,9 +121,15 @@ GLOBAL_LIST_INIT(rogue_dirty_filth, typecacheof(list(
 /obj/item/bodypart/proc/rogue_germ_sync(seconds_per_tick, datum/rogue_injury_numbers/numbers, antibiotics)
 	if(!length(rogue_injuries))
 		return
-	var/ground = rogue_ground_germs(numbers)
+	// The ground is looked at only once an injury would take its germs (review VR2r, finding 10: the walk over the turf was
+	// made for every hurt part every tick); the roll and the comparison are independent, so the odds are the same.
+	var/ground
 	for(var/datum/rogue_injury/injury as anything in rogue_injuries)
-		if(injury.germ_level < ground && injury.infection_check(seconds_per_tick, numbers))
+		if(!injury.infection_check(seconds_per_tick, numbers))
+			continue
+		if(isnull(ground))
+			ground = rogue_ground_germs(numbers)
+		if(injury.germ_level < ground)
 			injury.adjust_germ_level(min(injury.infection_rate * seconds_per_tick, ground - injury.germ_level))
 	if(antibiotics >= numbers.spread_antibiotic_stop)
 		return

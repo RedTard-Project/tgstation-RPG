@@ -205,6 +205,25 @@
 	var/aqua_vitae = text2path("/datum/reagent/consumable/ethanol/aqua_vitae")
 	TEST_ASSERT(!aqua_vitae || soakings[aqua_vitae], "Aqua vitae exists, but cloth cannot be soaked in it")
 
+/// A limb attached again keeps its crit without opening it twice: the pain of the break does not land again, the arm is
+/// numb and brittle again.
+/datum/unit_test/rogue_wounds/reattached_crit
+
+/datum/unit_test/rogue_wounds/reattached_crit/Run()
+	var/mob/living/carbon/human/patient = make_patient()
+	var/obj/item/bodypart/arm = patient.get_bodypart(BODY_ZONE_L_ARM)
+	var/datum/wound/rogue/fracture/fracture = arm.rogue_add_wound(/datum/wound/rogue/fracture)
+	TEST_ASSERT(fracture, "Could not break the arm")
+	arm.rogue_end_crit_paralysis()
+	var/pain = arm.rogue_pain_dam
+	arm.drop_limb()
+	TEST_ASSERT(!arm.rogue_brittle(), "A limb off the body stays brittle by its break")
+	TEST_ASSERT(arm.try_attach_limb(patient), "Could not attach the arm again")
+	TEST_ASSERT(!QDELETED(fracture) && (fracture in arm.wounds), "The break did not come back with the arm")
+	TEST_ASSERT(arm.rogue_pain_dam <= pain, "The break opened again on the arm attached again: its pain landed twice")
+	TEST_ASSERT(arm.bodypart_disabled, "The broken arm attached again is not numb")
+	TEST_ASSERT(arm.rogue_brittle(), "The broken arm attached again is not brittle")
+
 #undef TEST_ASSERT
 #undef TEST_ASSERT_EQUAL
 #endif

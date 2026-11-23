@@ -1,15 +1,20 @@
-/// Ratwood's steps of surgery (code/modules/surgery/surgeries/), each one of TG's operations on a medieval body
-/// (combat/surgery/operation.dm), in TG's surgical states of the limb:
-/// - incise (cut skin, vessels bleeding, the incision wound), clamp the bleeders, retract the incision (skin open);
-/// - cauterize: sears the limb's wounds that can be seared and closes the site;
-/// - saw the bone (a compound fracture of TG), amputate, set the broken bones, relocate a dislocation;
-/// - cut a vein and force the bad blood out (bloodletting), remove what is lodged in the limb (and its leeches);
-/// - manipulate organs (TG's organ manipulation, Ratwood's tools and ranks), mouth to mouth;
+/// Ratwood's steps of surgery (code/modules/surgery/surgeries/), each one of TG's operations on a medieval body, rolled on
+/// Vibelin's 3d20 (combat/surgery/operation.dm), in TG's surgical states of the limb, on Vibelin's model of the body (block VR1):
+/// - incise (cut skin, vessels bleeding, a surgical injury of the limb), clamp the bleeders, retract the incision (skin open);
+/// - cauterize: sears the limb's crits and cuts that can be seared and closes the site;
+/// - saw the bone (a fracture of Vibelin's, a surgical one on the head), amputate, set the broken bones, relocate a dislocation;
+/// - cut a vein (a surgical injury that bleeds until sewn) and force the bad blood out (bloodletting), remove what is lodged in
+///   the limb (and its leeches);
+/// - manipulate organs (TG's organ manipulation, Ratwood's tools and skill), mouth to mouth;
 /// - implant a limb on a stump (a severed limb, put back with a replantation to sew, or a prosthetic), replace a broken limb
 ///   with a prosthetic, saw a prosthetic off;
-/// - burn the rot out of a corpse's chest (Ratwood's hearth surgery, burial/corpse_rot.dm rogue_remove_rot()).
-/// Not ported: the drill (no medieval drill), healing (Ratwood locks it behind a tech), plastic surgery, frostbite, external
-/// and molded organs, the construct's and the other hearth surgeries, the revival chair.
+/// - burn the rot out of a body through its chest (Ratwood's hearth surgery, burial/corpse_rot.dm rogue_remove_rot()), and the
+///   germs of its limbs with it (Vibelin cure_rot).
+/// Each step reads its numbers in rogue_read_numbers(): its time, Vibelin's requirement of the roll, the least and the median
+/// skill of Medicine (skill values, ten to a rank: Ratwood's ranks times ten), and the quality of each implement (Vibelin
+/// implements: 1 for the intended one, more for a worse one). Vibelin's own steps are in steps_vibelin.dm.
+/// Not ported: the drill (no medieval drill), healing behind a tech (Vibelin's tend wounds is in steps_vibelin.dm), frostbite,
+/// external and molded organs, the construct's and the other hearth surgeries, the revival chair.
 
 /// The zones of Ratwood's limb steps: arms and legs.
 #define ROGUE_SURGERY_LIMB_ZONES list(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
@@ -17,20 +22,69 @@
 #define ROGUE_SURGERY_SEVERABLE_ZONES list(BODY_ZONE_HEAD, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 /// The radial sprites of TG's surgery.
 #define ROGUE_SURGERY_RADIAL 'icons/hud/surgery_radial.dmi'
+/// The injuries searing closes (Ratwood's seared dynamic slashes, punctures and bites).
+#define ROGUE_SURGERY_SEARABLE_INJURIES (ROGUE_INJURY_SLASH|ROGUE_INJURY_PUNCTURE|ROGUE_INJURY_BITE)
 
-/// Ratwood's SURGERY_BROKEN: a fracture of TG from severe up, or a cracked skull.
+/datum/surgery_operation
+	/// The step's implements to their quality (Vibelin implements), read with its numbers (rogue_read_numbers()); null for a
+	/// step that gives them another way.
+	var/list/rogue_step_qualities
+
+/datum/surgery_operation/limb/rogue/rogue_implements()
+	rogue_refresh_numbers()
+	return rogue_step_qualities || ..()
+
+/datum/surgery_operation/basic/rogue/rogue_implements()
+	rogue_refresh_numbers()
+	return rogue_step_qualities || ..()
+
+/datum/rogue_injury
+	/// The vein a bloodletting opened (cut vein): a surgical cut that bleeds until it is sewn, seared or closed with the site.
+	var/rogue_vein = FALSE
+
+/// Ratwood SURGERY_BROKEN: a broken bone of Vibelin's, or of TG's from severe up (a smite's, an admin's), or a cracked skull.
 /obj/item/bodypart/proc/rogue_broken_bone()
 	for(var/datum/wound/wound as anything in wounds)
-		if(istype(wound, /datum/wound/cranial_fissure) || (istype(wound, /datum/wound/blunt/bone) && wound.severity >= WOUND_SEVERITY_SEVERE))
+		if(istype(wound, /datum/wound/rogue/fracture) || istype(wound, /datum/wound/cranial_fissure))
+			return TRUE
+		if(istype(wound, /datum/wound/blunt/bone) && wound.severity >= WOUND_SEVERITY_SEVERE)
 			return TRUE
 	return FALSE
 
-/// A broken bone of this limb not set yet (Ratwood can_set).
+/// A broken bone of this limb not set yet (Ratwood can_set, Vibelin fix_bones): a dislocation is relocated instead.
 /obj/item/bodypart/proc/rogue_settable_bone()
 	for(var/datum/wound/wound as anything in wounds)
-		if(wound.rogue_settable())
+		if(!istype(wound, /datum/wound/rogue/dislocation) && wound.rogue_settable())
 			return TRUE
 	return FALSE
+
+/// A joint out of its socket: Vibelin's dislocation, or TG's (a smite's, an admin's).
+/obj/item/bodypart/proc/rogue_dislocated()
+	return (locate(/datum/wound/rogue/dislocation) in wounds) || (locate(/datum/wound/blunt/bone/moderate) in wounds)
+
+/// A cut searing would close: an injury of the searable kinds not sutured yet.
+/obj/item/bodypart/proc/rogue_searable_injury()
+	for(var/datum/rogue_injury/injury as anything in rogue_injuries)
+		if((injury.kind & ROGUE_SURGERY_SEARABLE_INJURIES) && !(injury.injury_flags & ROGUE_INJ_SUTURED))
+			return TRUE
+	return FALSE
+
+/// Ratwood cutvein on Vibelin's model: the vein is a surgical cut of the limb (rogue_create_injury(..., surgical = TRUE)), big
+/// enough to bleed; the site watches it as it watches the incision (combat/surgery/wounds.dm). Returns the injury, or null.
+/obj/item/bodypart/proc/rogue_cut_vein()
+	var/datum/rogue_injury/vein = rogue_create_injury(ROGUE_INJURY_SLASH, rogue_value("surgery_vein_damage"), TRUE)
+	if(!vein)
+		return null
+	vein.rogue_vein = TRUE
+	RegisterSignal(src, COMSIG_BODYPART_UPDATING_SURGERY_STATE, PROC_REF(rogue_surgery_site_changed), override = TRUE)
+	return vein
+
+/// Ratwood SURGERY_CUTVEIN: the open vein of the limb, not sewn or seared yet; null for none.
+/obj/item/bodypart/proc/rogue_open_vein()
+	for(var/datum/rogue_injury/injury as anything in rogue_injuries)
+		if(injury.rogue_vein && !QDELETED(injury) && !(injury.injury_flags & ROGUE_INJ_SUTURED))
+			return injury
+	return null
 
 /// The patient's cry of pain, a groan when they feel none (Ratwood: a groan under ozium).
 /proc/rogue_surgery_cry(mob/living/patient, cry = "painscream")
@@ -38,7 +92,8 @@
 		return
 	INVOKE_ASYNC(patient, TYPE_PROC_REF(/mob, emote), HAS_TRAIT(patient, TRAIT_NOPAIN) ? "groan" : cry)
 
-/// Ratwood /datum/surgery_step/incise: the first cut, which opens the limb and its vessels.
+/// Ratwood /datum/surgery_step/incise, Vibelin incise_skin: the first cut, which opens the limb and its vessels - a surgical
+/// injury of the limb.
 /datum/surgery_operation/limb/rogue/incise
 	name = "incise"
 	desc = "Make an incision in a patient's limb to reach what lies beneath."
@@ -48,17 +103,13 @@
 	success_sound = 'sound/items/handling/surgery/scalpel2.ogg'
 	any_surgery_states_blocked = ALL_SURGERY_SKIN_STATES
 
-/datum/surgery_operation/limb/rogue/incise/rogue_chances()
-	return list(TOOL_SCALPEL = rogue_value("surgery_incise_scalpel"), ROGUE_IMPLEMENT_SHARP = rogue_value("surgery_incise_sharp"))
-
-/datum/surgery_operation/limb/rogue/incise/rogue_time()
-	return rogue_value("surgery_incise_time")
-
-/datum/surgery_operation/limb/rogue/incise/rogue_skill_min()
-	return rogue_value("surgery_incise_skill_min")
-
-/datum/surgery_operation/limb/rogue/incise/rogue_skill_median()
-	return rogue_value("surgery_incise_skill_median")
+/datum/surgery_operation/limb/rogue/incise/rogue_read_numbers()
+	. = ..()
+	time = rogue_value("surgery_incise_time")
+	rogue_dice_requirement = rogue_value("surgery_incise_dice")
+	rogue_skill_min = rogue_value("surgery_incise_least_skill")
+	rogue_skill_median = rogue_value("surgery_incise_median_skill")
+	rogue_step_qualities = list(TOOL_SCALPEL = rogue_value("surgery_incise_q_scalpel"), ROGUE_IMPLEMENT_SHARP = rogue_value("surgery_incise_q_sharp"))
 
 /datum/surgery_operation/limb/rogue/incise/get_default_radial_image()
 	return image(ROGUE_SURGERY_RADIAL, "make_incision")
@@ -70,7 +121,7 @@
 
 /datum/surgery_operation/limb/rogue/incise/rogue_effect(obj/item/bodypart/limb, mob/living/surgeon, tool, list/operation_args)
 	limb.add_surgical_state(SURGERY_SKIN_CUT|SURGERY_VESSELS_UNCLAMPED)
-	limb.rogue_surgery_wound(/datum/wound/rogue/incision, "surgery")
+	limb.rogue_surgery_incision()
 	display_results(surgeon, limb.owner, span_notice("Blood pools around the incision in [FORMAT_LIMB_OWNER(limb)]."),
 		span_notice("Blood pools around the incision in [FORMAT_LIMB_OWNER(limb)]."),
 		span_notice("Blood pools around the incision in [FORMAT_LIMB_OWNER(limb)]."))
@@ -85,17 +136,13 @@
 	all_surgery_states_required = SURGERY_VESSELS_UNCLAMPED
 	any_surgery_states_required = ALL_SURGERY_SKIN_STATES
 
-/datum/surgery_operation/limb/rogue/clamp/rogue_chances()
-	return list(TOOL_HEMOSTAT = rogue_value("surgery_clamp_hemostat"), TOOL_WIRECUTTER = rogue_value("surgery_clamp_wirecutter"), ROGUE_TOOL_IMPROVISED_HEMOSTAT = rogue_value("surgery_clamp_improvised"))
-
-/datum/surgery_operation/limb/rogue/clamp/rogue_time()
-	return rogue_value("surgery_clamp_time")
-
-/datum/surgery_operation/limb/rogue/clamp/rogue_skill_min()
-	return rogue_value("surgery_clamp_skill_min")
-
-/datum/surgery_operation/limb/rogue/clamp/rogue_skill_median()
-	return rogue_value("surgery_clamp_skill_median")
+/datum/surgery_operation/limb/rogue/clamp/rogue_read_numbers()
+	. = ..()
+	time = rogue_value("surgery_clamp_time")
+	rogue_dice_requirement = rogue_value("surgery_clamp_dice")
+	rogue_skill_min = rogue_value("surgery_clamp_least_skill")
+	rogue_skill_median = rogue_value("surgery_clamp_median_skill")
+	rogue_step_qualities = list(TOOL_HEMOSTAT = rogue_value("surgery_clamp_q_hemostat"), TOOL_WIRECUTTER = rogue_value("surgery_clamp_q_wirecutter"), ROGUE_TOOL_IMPROVISED_HEMOSTAT = rogue_value("surgery_clamp_q_improvised"))
 
 /datum/surgery_operation/limb/rogue/clamp/get_default_radial_image()
 	return image(ROGUE_SURGERY_RADIAL, "clamp_bleeders")
@@ -122,17 +169,13 @@
 	success_sound = 'sound/items/handling/surgery/retractor2.ogg'
 	all_surgery_states_required = SURGERY_SKIN_CUT
 
-/datum/surgery_operation/limb/rogue/retract/rogue_chances()
-	return list(TOOL_RETRACTOR = rogue_value("surgery_retract_retractor"), TOOL_SCREWDRIVER = rogue_value("surgery_retract_screwdriver"), TOOL_WIRECUTTER = rogue_value("surgery_retract_wirecutter"), ROGUE_TOOL_IMPROVISED_RETRACTOR = rogue_value("surgery_retract_improvised"))
-
-/datum/surgery_operation/limb/rogue/retract/rogue_time()
-	return rogue_value("surgery_retract_time")
-
-/datum/surgery_operation/limb/rogue/retract/rogue_skill_min()
-	return rogue_value("surgery_retract_skill_min")
-
-/datum/surgery_operation/limb/rogue/retract/rogue_skill_median()
-	return rogue_value("surgery_retract_skill_median")
+/datum/surgery_operation/limb/rogue/retract/rogue_read_numbers()
+	. = ..()
+	time = rogue_value("surgery_retract_time")
+	rogue_dice_requirement = rogue_value("surgery_retract_dice")
+	rogue_skill_min = rogue_value("surgery_retract_least_skill")
+	rogue_skill_median = rogue_value("surgery_retract_median_skill")
+	rogue_step_qualities = list(TOOL_RETRACTOR = rogue_value("surgery_retract_q_retractor"), TOOL_SCREWDRIVER = rogue_value("surgery_retract_q_screwdriver"), TOOL_WIRECUTTER = rogue_value("surgery_retract_q_wirecutter"), ROGUE_TOOL_IMPROVISED_RETRACTOR = rogue_value("surgery_retract_q_improvised"))
 
 /datum/surgery_operation/limb/rogue/retract/get_default_radial_image()
 	return image(ROGUE_SURGERY_RADIAL, "retract_skin")
@@ -149,9 +192,13 @@
 		span_notice("[surgeon] retracts [FORMAT_LIMB_OWNER(limb)]."),
 		span_notice("[surgeon] retracts [FORMAT_LIMB_OWNER(limb)]."))
 
-/// Ratwood /datum/surgery_step/cauterize: every wound of the limb that can be seared is (cauterize_wound()), the site of the
-/// operation is closed, and the searing burns and hurts. Ratwood's dynamic slashes, punctures and bites, the opened arteries
-/// and the stumps sear; bruises, gouges and lashings do not.
+/// Vibelin retract_skin on_failure(): the skin is torn a little.
+/datum/surgery_operation/limb/rogue/retract/rogue_failure_effect(obj/item/bodypart/limb, mob/living/surgeon, tool, list/operation_args)
+	limb.receive_damage(brute = rogue_value("surgery_retract_fail_damage"), wound_bonus = CANT_WOUND, damage_source = isitem(tool) ? tool : null)
+
+/// Ratwood /datum/surgery_step/cauterize: every crit of the limb that can be seared is (cauterize_wound()), its cuts, stabs
+/// and bites are seared shut, the site of the operation is closed, and the searing burns and hurts. Bruises and lashings do
+/// not sear.
 /datum/surgery_operation/limb/rogue/cauterize
 	name = "cauterize wounds"
 	desc = "Sear the wounds of a limb shut, and close the site of an operation."
@@ -160,26 +207,22 @@
 	preop_sound = 'sound/items/handling/surgery/cautery1.ogg'
 	success_sound = 'sound/items/handling/surgery/cautery2.ogg'
 
-/datum/surgery_operation/limb/rogue/cauterize/rogue_chances()
-	return list(TOOL_CAUTERY = rogue_value("surgery_cauterize_cautery"), TOOL_WELDER = rogue_value("surgery_cauterize_welder"), ROGUE_IMPLEMENT_HOT = rogue_value("surgery_cauterize_hot"))
-
-/datum/surgery_operation/limb/rogue/cauterize/rogue_time()
-	return rogue_value("surgery_cauterize_time")
-
-/datum/surgery_operation/limb/rogue/cauterize/rogue_skill_min()
-	return rogue_value("surgery_cauterize_skill_min")
-
-/datum/surgery_operation/limb/rogue/cauterize/rogue_skill_median()
-	return rogue_value("surgery_cauterize_skill_median")
+/datum/surgery_operation/limb/rogue/cauterize/rogue_read_numbers()
+	. = ..()
+	time = rogue_value("surgery_cauterize_time")
+	rogue_dice_requirement = rogue_value("surgery_cauterize_dice")
+	rogue_skill_min = rogue_value("surgery_cauterize_least_skill")
+	rogue_skill_median = rogue_value("surgery_cauterize_median_skill")
+	rogue_step_qualities = list(TOOL_CAUTERY = rogue_value("surgery_cauterize_q_cautery"), TOOL_WELDER = rogue_value("surgery_cauterize_q_welder"), ROGUE_IMPLEMENT_HOT = rogue_value("surgery_cauterize_q_hot"))
 
 /datum/surgery_operation/limb/rogue/cauterize/get_default_radial_image()
 	return image(ROGUE_SURGERY_RADIAL, "mend_incision")
 
-/// Ratwood validate_bodypart(): a limb with wounds; or the site of an operation to close.
+/// Ratwood validate_bodypart(): a limb with wounds or cuts to sear; or the site of an operation to close.
 /datum/surgery_operation/limb/rogue/cauterize/state_check(obj/item/bodypart/limb)
 	if(!..())
 		return FALSE
-	return LAZYLEN(limb.wounds) || LIMB_HAS_ANY_SURGERY_STATE(limb, ALL_SURGERY_STATES_UNSET_ON_CLOSE)
+	return LAZYLEN(limb.wounds) || limb.rogue_searable_injury() || LIMB_HAS_ANY_SURGERY_STATE(limb, ALL_SURGERY_STATES_UNSET_ON_CLOSE)
 
 /datum/surgery_operation/limb/rogue/cauterize/on_preop(obj/item/bodypart/limb, mob/living/surgeon, tool, list/operation_args)
 	display_results(surgeon, limb.owner, span_notice("I begin to cauterize the wounds on [FORMAT_LIMB_OWNER(limb)]..."),
@@ -195,12 +238,15 @@
 	for(var/datum/wound/wound as anything in LAZYCOPY(limb.wounds))
 		if(!QDELETED(wound))
 			wound.rogue_cauterize(searing)
+	if(!QDELETED(limb))
+		limb.rogue_flag_injuries(ROGUE_SURGERY_SEARABLE_INJURIES, ROGUE_INJ_SUTURED)
 	if(LIMB_HAS_ANY_SURGERY_STATE(limb, ALL_SURGERY_STATES_UNSET_ON_CLOSE))
 		limb.remove_surgical_state(ALL_SURGERY_STATES_UNSET_ON_CLOSE)
 	limb.receive_damage(burn = rogue_value("surgery_cauterize_burn"), wound_bonus = CANT_WOUND, damage_source = isitem(tool) ? tool : null)
 	rogue_surgery_cry(patient)
 
-/// Ratwood /datum/surgery_step/saw: the bone is sawn through - a compound fracture, as surgery means it.
+/// Ratwood /datum/surgery_step/saw, Vibelin saw_bones: the bone is sawn through - Vibelin's fracture of the limb (a surgical
+/// one of the skull, which knocks no one out); a bone already broken but set is put out of its setting again.
 /datum/surgery_operation/limb/rogue/saw
 	name = "saw bone"
 	desc = "Saw through the bone of an opened limb."
@@ -211,17 +257,13 @@
 	all_surgery_states_required = SURGERY_SKIN_OPEN
 	any_surgery_states_blocked = ALL_SURGERY_BONE_STATES
 
-/datum/surgery_operation/limb/rogue/saw/rogue_chances()
-	return list(TOOL_SAW = rogue_value("surgery_saw_saw"), TOOL_SHOVEL = rogue_value("surgery_saw_shovel"), ROGUE_IMPLEMENT_SHARP = rogue_value("surgery_saw_sharp"))
-
-/datum/surgery_operation/limb/rogue/saw/rogue_time()
-	return rogue_value("surgery_saw_time")
-
-/datum/surgery_operation/limb/rogue/saw/rogue_skill_min()
-	return rogue_value("surgery_saw_skill_min")
-
-/datum/surgery_operation/limb/rogue/saw/rogue_skill_median()
-	return rogue_value("surgery_saw_skill_median")
+/datum/surgery_operation/limb/rogue/saw/rogue_read_numbers()
+	. = ..()
+	time = rogue_value("surgery_saw_time")
+	rogue_dice_requirement = rogue_value("surgery_saw_dice")
+	rogue_skill_min = rogue_value("surgery_saw_least_skill")
+	rogue_skill_median = rogue_value("surgery_saw_median_skill")
+	rogue_step_qualities = list(TOOL_SAW = rogue_value("surgery_saw_q_saw"), TOOL_SHOVEL = rogue_value("surgery_saw_q_shovel"), ROGUE_IMPLEMENT_SHARP = rogue_value("surgery_saw_q_sharp"))
 
 /datum/surgery_operation/limb/rogue/saw/get_default_radial_image()
 	return image(ROGUE_SURGERY_RADIAL, "saw_bones")
@@ -235,16 +277,31 @@
 		span_notice("[surgeon] begins to saw through the bone in [FORMAT_LIMB_OWNER(limb)]."),
 		span_notice("[surgeon] begins to saw through the bone in [FORMAT_LIMB_OWNER(limb)]."))
 
-/// Ratwood ignores critical resistance here: a proper surgical procedure, not a crit.
+/// Ratwood and Vibelin ignore critical resistance here: a proper surgical procedure, not a crit.
 /datum/surgery_operation/limb/rogue/saw/rogue_effect(obj/item/bodypart/limb, mob/living/surgeon, tool, list/operation_args)
-	display_results(surgeon, limb.owner, span_notice("I saw [FORMAT_LIMB_OWNER(limb)] open."),
+	var/mob/living/carbon/patient = limb.owner
+	display_results(surgeon, patient, span_notice("I saw [FORMAT_LIMB_OWNER(limb)] open."),
 		span_notice("[surgeon] saws [FORMAT_LIMB_OWNER(limb)] open!"),
 		span_notice("[surgeon] saws [FORMAT_LIMB_OWNER(limb)] open!"))
-	if(HAS_TRAIT(limb.owner, TRAIT_NOPAIN))
-		rogue_surgery_cry(limb.owner, "groan")
-	limb.force_wound_upwards(/datum/wound/blunt/bone/critical, wound_source = "surgery")
+	rogue_surgery_cry(patient)
+	if(HAS_TRAIT(patient, TRAIT_ROGUE_WOUNDS))
+		var/datum/wound/rogue/fracture/broken = limb.rogue_has_wound(/datum/wound/rogue/fracture)
+		if(broken)
+			broken.bone_set = FALSE
+		else
+			limb.rogue_add_wound(limb.rogue_tg_crit_type(WOUND_BLUNT, WOUND_SEVERITY_CRITICAL, "surgery"), silent = TRUE)
+	else
+		limb.force_wound_upwards(/datum/wound/blunt/bone/critical, wound_source = "surgery")
 	if(!QDELETED(limb) && !LIMB_HAS_SURGERY_STATE(limb, SURGERY_BONE_SAWED))
 		limb.add_surgical_state(SURGERY_BONE_SAWED)
+
+/// Vibelin saw_bones on_failure(): the bones ache and crack.
+/datum/surgery_operation/limb/rogue/saw/rogue_failure_effect(obj/item/bodypart/limb, mob/living/surgeon, tool, list/operation_args)
+	display_results(surgeon, limb.owner, span_warning("I fail to saw [FORMAT_LIMB_OWNER(limb)] open!"),
+		span_warning("[surgeon] fails to saw [FORMAT_LIMB_OWNER(limb)] open!"),
+		span_warning("[surgeon] fails to saw [FORMAT_LIMB_OWNER(limb)] open!"))
+	limb.receive_damage(brute = rogue_value("surgery_saw_fail_damage"), wound_bonus = CANT_WOUND, damage_source = isitem(tool) ? tool : null)
+	rogue_surgery_cry(limb.owner)
 
 /// Ratwood /datum/surgery_step/amputate: an opened limb with its bone broken is cut off. It leaves no bleeding stump: the
 /// limb comes off as surgery takes it (Ratwood drop_limb()).
@@ -258,17 +315,13 @@
 	any_surgery_states_required = ALL_SURGERY_SKIN_STATES
 	rogue_zones = ROGUE_SURGERY_SEVERABLE_ZONES
 
-/datum/surgery_operation/limb/rogue/amputate/rogue_chances()
-	return list(TOOL_SCALPEL = rogue_value("surgery_amputate_scalpel"), TOOL_SAW = rogue_value("surgery_amputate_saw"), ROGUE_IMPLEMENT_SHARP = rogue_value("surgery_amputate_sharp"))
-
-/datum/surgery_operation/limb/rogue/amputate/rogue_time()
-	return rogue_value("surgery_amputate_time")
-
-/datum/surgery_operation/limb/rogue/amputate/rogue_skill_min()
-	return rogue_value("surgery_amputate_skill_min")
-
-/datum/surgery_operation/limb/rogue/amputate/rogue_skill_median()
-	return rogue_value("surgery_amputate_skill_median")
+/datum/surgery_operation/limb/rogue/amputate/rogue_read_numbers()
+	. = ..()
+	time = rogue_value("surgery_amputate_time")
+	rogue_dice_requirement = rogue_value("surgery_amputate_dice")
+	rogue_skill_min = rogue_value("surgery_amputate_least_skill")
+	rogue_skill_median = rogue_value("surgery_amputate_median_skill")
+	rogue_step_qualities = list(TOOL_SCALPEL = rogue_value("surgery_amputate_q_scalpel"), TOOL_SAW = rogue_value("surgery_amputate_q_saw"), ROGUE_IMPLEMENT_SHARP = rogue_value("surgery_amputate_q_sharp"))
 
 /datum/surgery_operation/limb/rogue/amputate/get_default_radial_image()
 	return image(ROGUE_SURGERY_RADIAL, "amputate")
@@ -292,7 +345,8 @@
 	log_combat(surgeon, patient, "amputated", isitem(tool) ? tool : null, "([limb.plaintext_zone])")
 	limb.drop_limb()
 
-/// Ratwood /datum/surgery_step/relocate_bone: a dislocated joint is put back in place, through clothes, without a cut.
+/// Ratwood /datum/surgery_step/relocate_bone, Vibelin relocation: a dislocated joint is put back in place, through clothes,
+/// without a cut.
 /datum/surgery_operation/limb/rogue/relocate
 	name = "relocate bones"
 	desc = "Put a dislocated joint back in place."
@@ -300,38 +354,38 @@
 	time = 6.4 SECONDS
 	operation_flags = OPERATION_LOCKED | OPERATION_NO_WIKI | OPERATION_SELF_OPERABLE | OPERATION_STANDING_ALLOWED | OPERATION_IGNORE_CLOTHES
 
-/datum/surgery_operation/limb/rogue/relocate/rogue_chances()
-	return list(TOOL_BONESET = rogue_value("surgery_relocate_bonesetter"), IMPLEMENT_HAND = rogue_value("surgery_relocate_hand"))
-
-/datum/surgery_operation/limb/rogue/relocate/rogue_time()
-	return rogue_value("surgery_relocate_time")
-
-/datum/surgery_operation/limb/rogue/relocate/rogue_skill_min()
-	return rogue_value("surgery_relocate_skill_min")
-
-/datum/surgery_operation/limb/rogue/relocate/rogue_skill_median()
-	return rogue_value("surgery_relocate_skill_median")
+/datum/surgery_operation/limb/rogue/relocate/rogue_read_numbers()
+	. = ..()
+	time = rogue_value("surgery_relocate_time")
+	rogue_dice_requirement = rogue_value("surgery_relocate_dice")
+	rogue_skill_min = rogue_value("surgery_relocate_least_skill")
+	rogue_skill_median = rogue_value("surgery_relocate_median_skill")
+	rogue_step_qualities = list(TOOL_BONESET = rogue_value("surgery_relocate_q_bonesetter"), IMPLEMENT_HAND = rogue_value("surgery_relocate_q_hand"))
 
 /datum/surgery_operation/limb/rogue/relocate/get_default_radial_image()
 	return image(/obj/item/rogueweapon/surgery/bonesetter)
 
 /datum/surgery_operation/limb/rogue/relocate/state_check(obj/item/bodypart/limb)
-	return ..() && (locate(/datum/wound/blunt/bone/moderate) in limb.wounds)
+	return ..() && limb.rogue_dislocated()
 
 /datum/surgery_operation/limb/rogue/relocate/on_preop(obj/item/bodypart/limb, mob/living/surgeon, tool, list/operation_args)
 	display_results(surgeon, limb.owner, span_notice("I begin to set the bone in [FORMAT_LIMB_OWNER(limb)]..."),
 		span_notice("[surgeon] begins to relocate the bone in [FORMAT_LIMB_OWNER(limb)]."),
 		span_notice("[surgeon] begins to relocate the bone in [FORMAT_LIMB_OWNER(limb)]."))
 
+/// Vibelin relocate_bone(): the joint set back in place is gone (combat/wounds/fractures.dm); TG's dislocation as Ratwood's.
 /datum/surgery_operation/limb/rogue/relocate/rogue_effect(obj/item/bodypart/limb, mob/living/surgeon, tool, list/operation_args)
 	display_results(surgeon, limb.owner, span_notice("I successfully relocate the bone in [FORMAT_LIMB_OWNER(limb)]."),
 		span_notice("[surgeon] successfully relocates the bone in [FORMAT_LIMB_OWNER(limb)]!"),
 		span_notice("[surgeon] successfully relocates the bone in [FORMAT_LIMB_OWNER(limb)]!"))
+	for(var/datum/wound/rogue/dislocation/joint in LAZYCOPY(limb.wounds))
+		if(!QDELETED(joint))
+			joint.rogue_set_bone()
 	for(var/datum/wound/blunt/bone/moderate/dislocation in LAZYCOPY(limb.wounds))
 		qdel(dislocation)
 
-/// Ratwood /datum/surgery_step/set_bone: the broken bones of an opened limb are set; they mend a part at once, the rest by
-/// themselves and in sleep (combat/surgery/wounds.dm).
+/// Ratwood /datum/surgery_step/set_bone, Vibelin fix_bones: the broken bones of an opened limb are set; they mend a part at
+/// once, the rest by themselves and in sleep (combat/wounds/fractures.dm, combat/surgery/wounds.dm).
 /datum/surgery_operation/limb/rogue/set_bone
 	name = "set bones"
 	desc = "Set the broken bones of an opened limb, so that they mend."
@@ -339,17 +393,13 @@
 	time = 6.4 SECONDS
 	all_surgery_states_required = SURGERY_SKIN_OPEN
 
-/datum/surgery_operation/limb/rogue/set_bone/rogue_chances()
-	return list(TOOL_BONESET = rogue_value("surgery_set_bone_bonesetter"), IMPLEMENT_HAND = rogue_value("surgery_set_bone_hand"))
-
-/datum/surgery_operation/limb/rogue/set_bone/rogue_time()
-	return rogue_value("surgery_set_bone_time")
-
-/datum/surgery_operation/limb/rogue/set_bone/rogue_skill_min()
-	return rogue_value("surgery_set_bone_skill_min")
-
-/datum/surgery_operation/limb/rogue/set_bone/rogue_skill_median()
-	return rogue_value("surgery_set_bone_skill_median")
+/datum/surgery_operation/limb/rogue/set_bone/rogue_read_numbers()
+	. = ..()
+	time = rogue_value("surgery_set_bone_time")
+	rogue_dice_requirement = rogue_value("surgery_set_bone_dice")
+	rogue_skill_min = rogue_value("surgery_set_bone_least_skill")
+	rogue_skill_median = rogue_value("surgery_set_bone_median_skill")
+	rogue_step_qualities = list(TOOL_BONESET = rogue_value("surgery_set_bone_q_bonesetter"), IMPLEMENT_HAND = rogue_value("surgery_set_bone_q_hand"))
 
 /datum/surgery_operation/limb/rogue/set_bone/get_default_radial_image()
 	return image(ROGUE_SURGERY_RADIAL, "fix_bones")
@@ -367,10 +417,19 @@
 		span_notice("[surgeon] successfully sets the bone in [FORMAT_LIMB_OWNER(limb)]!"),
 		span_notice("[surgeon] successfully sets the bone in [FORMAT_LIMB_OWNER(limb)]!"))
 	for(var/datum/wound/wound as anything in LAZYCOPY(limb.wounds))
-		if(!QDELETED(wound))
+		if(!QDELETED(wound) && !istype(wound, /datum/wound/rogue/dislocation))
 			wound.rogue_set_bone()
 
-/// Ratwood /datum/surgery_step/cutvein: with the bleeders clamped, a vein of an arm or a leg is opened for the bloodletting.
+/// Vibelin fix_bones on_failure(): the bone slides back out of place.
+/datum/surgery_operation/limb/rogue/set_bone/rogue_failure_effect(obj/item/bodypart/limb, mob/living/surgeon, tool, list/operation_args)
+	display_results(surgeon, limb.owner, span_warning("I fail to set the bone in [FORMAT_LIMB_OWNER(limb)]! It's more out of place!"),
+		span_warning("[surgeon] fails to set the bone in [FORMAT_LIMB_OWNER(limb)]!"),
+		span_warning("[surgeon] fails to set the bone in [FORMAT_LIMB_OWNER(limb)]!"))
+	limb.receive_damage(brute = rogue_value("surgery_set_bone_fail_damage"), wound_bonus = CANT_WOUND)
+	rogue_surgery_cry(limb.owner)
+
+/// Ratwood /datum/surgery_step/cutvein: with the bleeders clamped, a vein of an arm or a leg is opened for the bloodletting - a
+/// surgical cut of the limb that bleeds until it is sewn or seared (rogue_cut_vein()).
 /datum/surgery_operation/limb/rogue/cut_vein
 	name = "cut vein"
 	desc = "Open a vein of a clamped limb, to let the bad blood out."
@@ -381,23 +440,19 @@
 	all_surgery_states_required = SURGERY_VESSELS_CLAMPED
 	rogue_zones = ROGUE_SURGERY_LIMB_ZONES
 
-/datum/surgery_operation/limb/rogue/cut_vein/rogue_chances()
-	return list(TOOL_SCALPEL = rogue_value("surgery_cut_vein_scalpel"), ROGUE_IMPLEMENT_SHARP = rogue_value("surgery_cut_vein_sharp"))
-
-/datum/surgery_operation/limb/rogue/cut_vein/rogue_time()
-	return rogue_value("surgery_cut_vein_time")
-
-/datum/surgery_operation/limb/rogue/cut_vein/rogue_skill_min()
-	return rogue_value("surgery_cut_vein_skill_min")
-
-/datum/surgery_operation/limb/rogue/cut_vein/rogue_skill_median()
-	return rogue_value("surgery_cut_vein_skill_median")
+/datum/surgery_operation/limb/rogue/cut_vein/rogue_read_numbers()
+	. = ..()
+	time = rogue_value("surgery_cut_vein_time")
+	rogue_dice_requirement = rogue_value("surgery_cut_vein_dice")
+	rogue_skill_min = rogue_value("surgery_cut_vein_least_skill")
+	rogue_skill_median = rogue_value("surgery_cut_vein_median_skill")
+	rogue_step_qualities = list(TOOL_SCALPEL = rogue_value("surgery_cut_vein_q_scalpel"), ROGUE_IMPLEMENT_SHARP = rogue_value("surgery_cut_vein_q_sharp"))
 
 /datum/surgery_operation/limb/rogue/cut_vein/get_default_radial_image()
 	return image(ROGUE_SURGERY_RADIAL, "incise_organs")
 
 /datum/surgery_operation/limb/rogue/cut_vein/state_check(obj/item/bodypart/limb)
-	return ..() && !(locate(/datum/wound/rogue/vein) in limb.wounds)
+	return ..() && limb.can_bleed() && !limb.rogue_open_vein()
 
 /datum/surgery_operation/limb/rogue/cut_vein/on_preop(obj/item/bodypart/limb, mob/living/surgeon, tool, list/operation_args)
 	display_results(surgeon, limb.owner, span_notice("I begin to cut [limb.owner]'s vein on [limb.plaintext_zone]..."),
@@ -405,7 +460,8 @@
 		span_notice("[surgeon] begins to cut [limb.owner]'s vein on [limb.plaintext_zone]."))
 
 /datum/surgery_operation/limb/rogue/cut_vein/rogue_effect(obj/item/bodypart/limb, mob/living/surgeon, tool, list/operation_args)
-	limb.rogue_surgery_wound(/datum/wound/rogue/vein, "bloodletting")
+	if(!limb.rogue_cut_vein())
+		return
 	display_results(surgeon, limb.owner, span_notice("Blood drips out of the cut vein in [FORMAT_LIMB_OWNER(limb)]."),
 		span_notice("Blood drips out of the cut vein in [FORMAT_LIMB_OWNER(limb)]."),
 		span_notice("Blood drips out of the cut vein in [FORMAT_LIMB_OWNER(limb)]."))
@@ -420,24 +476,20 @@
 	success_sound = 'sound/items/handling/surgery/organ2.ogg'
 	rogue_zones = ROGUE_SURGERY_LIMB_ZONES
 
-/datum/surgery_operation/limb/rogue/bloodlet/rogue_chances()
-	return list(IMPLEMENT_HAND = rogue_value("surgery_bloodlet_hand"))
-
-/datum/surgery_operation/limb/rogue/bloodlet/rogue_time()
-	return rogue_value("surgery_bloodlet_time")
-
-/datum/surgery_operation/limb/rogue/bloodlet/rogue_skill_min()
-	return rogue_value("surgery_bloodlet_skill_min")
-
-/datum/surgery_operation/limb/rogue/bloodlet/rogue_skill_median()
-	return rogue_value("surgery_bloodlet_skill_median")
+/datum/surgery_operation/limb/rogue/bloodlet/rogue_read_numbers()
+	. = ..()
+	time = rogue_value("surgery_bloodlet_time")
+	rogue_dice_requirement = rogue_value("surgery_bloodlet_dice")
+	rogue_skill_min = rogue_value("surgery_bloodlet_least_skill")
+	rogue_skill_median = rogue_value("surgery_bloodlet_median_skill")
+	rogue_step_qualities = list(IMPLEMENT_HAND = rogue_value("surgery_bloodlet_q_hand"))
 
 /datum/surgery_operation/limb/rogue/bloodlet/get_default_radial_image()
 	return image(ROGUE_SURGERY_RADIAL, "unclamp_bleeders")
 
-/// Ratwood surgery_flags SURGERY_CUTVEIN: a cut vein on the limb.
+/// Ratwood surgery_flags SURGERY_CUTVEIN: an open vein on the limb.
 /datum/surgery_operation/limb/rogue/bloodlet/state_check(obj/item/bodypart/limb)
-	return ..() && (locate(/datum/wound/rogue/vein) in limb.wounds)
+	return ..() && limb.rogue_open_vein()
 
 /datum/surgery_operation/limb/rogue/bloodlet/on_preop(obj/item/bodypart/limb, mob/living/surgeon, tool, list/operation_args)
 	display_results(surgeon, limb.owner, span_notice("I begin to force the blood out of [limb.owner]'s vein in [limb.plaintext_zone]..."),
@@ -452,8 +504,8 @@
 	patient.adjust_tox_loss(-rogue_value("surgery_bloodlet_toxin"))
 	patient.adjust_blood_volume(-rogue_value("surgery_bloodlet_blood"))
 
-/// Ratwood /datum/surgery_step/remove_object: through an incision, everything lodged in the limb is taken out, the leeches on
-/// it too.
+/// Ratwood /datum/surgery_step/remove_object, Vibelin embedded_removal: through an incision, everything lodged in the limb is
+/// taken out, the leeches on it too.
 /datum/surgery_operation/limb/rogue/remove_object
 	name = "remove embedded objects"
 	desc = "Take out what is lodged in a limb, through an incision."
@@ -463,17 +515,13 @@
 	success_sound = 'sound/items/handling/surgery/organ1.ogg'
 	any_surgery_states_required = ALL_SURGERY_SKIN_STATES
 
-/datum/surgery_operation/limb/rogue/remove_object/rogue_chances()
-	return list(TOOL_HEMOSTAT = rogue_value("surgery_remove_object_hemostat"), ROGUE_TOOL_IMPROVISED_HEMOSTAT = rogue_value("surgery_remove_object_improvised"), IMPLEMENT_HAND = rogue_value("surgery_remove_object_hand"))
-
-/datum/surgery_operation/limb/rogue/remove_object/rogue_time()
-	return rogue_value("surgery_remove_object_time")
-
-/datum/surgery_operation/limb/rogue/remove_object/rogue_skill_min()
-	return rogue_value("surgery_remove_object_skill_min")
-
-/datum/surgery_operation/limb/rogue/remove_object/rogue_skill_median()
-	return rogue_value("surgery_remove_object_skill_median")
+/datum/surgery_operation/limb/rogue/remove_object/rogue_read_numbers()
+	. = ..()
+	time = rogue_value("surgery_remove_object_time")
+	rogue_dice_requirement = rogue_value("surgery_remove_object_dice")
+	rogue_skill_min = rogue_value("surgery_remove_object_least_skill")
+	rogue_skill_median = rogue_value("surgery_remove_object_median_skill")
+	rogue_step_qualities = list(TOOL_HEMOSTAT = rogue_value("surgery_remove_object_q_hemostat"), ROGUE_TOOL_IMPROVISED_HEMOSTAT = rogue_value("surgery_remove_object_q_improvised"), IMPLEMENT_HAND = rogue_value("surgery_remove_object_q_hand"))
 
 /datum/surgery_operation/limb/rogue/remove_object/get_default_radial_image()
 	return image(/obj/item/rogueweapon/surgery/hemostat)
@@ -513,17 +561,13 @@
 	operation_flags = OPERATION_LOCKED | OPERATION_NO_WIKI | OPERATION_LOOPING
 	rogue_zones = list(BODY_ZONE_HEAD)
 
-/datum/surgery_operation/limb/rogue/mouth_to_mouth/rogue_chances()
-	return list(IMPLEMENT_HAND = rogue_value("surgery_cpr_hand"))
-
-/datum/surgery_operation/limb/rogue/mouth_to_mouth/rogue_time()
-	return rogue_value("surgery_cpr_time")
-
-/datum/surgery_operation/limb/rogue/mouth_to_mouth/rogue_skill_min()
-	return rogue_value("surgery_cpr_skill_min")
-
-/datum/surgery_operation/limb/rogue/mouth_to_mouth/rogue_skill_median()
-	return rogue_value("surgery_cpr_skill_median")
+/datum/surgery_operation/limb/rogue/mouth_to_mouth/rogue_read_numbers()
+	. = ..()
+	time = rogue_value("surgery_cpr_time")
+	rogue_dice_requirement = rogue_value("surgery_cpr_dice")
+	rogue_skill_min = rogue_value("surgery_cpr_least_skill")
+	rogue_skill_median = rogue_value("surgery_cpr_median_skill")
+	rogue_step_qualities = list(IMPLEMENT_HAND = rogue_value("surgery_cpr_q_hand"))
 
 /datum/surgery_operation/limb/rogue/mouth_to_mouth/get_default_radial_image()
 	return get_generic_limb_radial_image(BODY_ZONE_PRECISE_MOUTH)
@@ -546,18 +590,19 @@
 		span_notice("[surgeon] gives [limb.owner] a breath of air."))
 	limb.owner.adjust_oxy_loss(-rogue_value("surgery_cpr_oxygen"))
 
-/// Ratwood mouth_to_mouth failure(): no air gets in, and that is all.
+/// Ratwood mouth_to_mouth failure(): no air gets in, and that is all - no injury, no lesson.
 /datum/surgery_operation/limb/rogue/mouth_to_mouth/on_failure(obj/item/bodypart/limb, mob/living/surgeon, tool, list/operation_args)
 	operation_args[ROGUE_OPERATION_FAILED] = TRUE
 	display_results(surgeon, limb.owner, span_warning("I failed!"), span_warning("[surgeon] failed!"),
 		span_notice("[surgeon] failed to get air into [limb.owner]'s lungs."), TRUE)
+	rogue_show_roll(surgeon, operation_args)
 
-/// Ratwood repeating: breath after breath, while the patient still chokes, until a breath fails; each breath is rolled anew.
+/// Ratwood repeating: breath after breath, while the patient still chokes, until a breath fails; each breath is rolled anew
+/// (operation.dm rogue_next_roll()).
 /datum/surgery_operation/limb/rogue/mouth_to_mouth/can_loop(mob/living/patient, obj/item/bodypart/limb, mob/living/surgeon, tool, list/operation_args)
-	if(operation_args[ROGUE_OPERATION_FAILED] || !..())
+	if(operation_args[ROGUE_OPERATION_FAILED])
 		return FALSE
-	rogue_roll(limb, surgeon, tool, operation_args)
-	return TRUE
+	return ..()
 
 /// Ratwood /datum/surgery_step/add_prosthetic: a limb is put on a stump - a severed one of the patient's own kind, sewn on
 /// after (the replantation bleeds hard until it is), or a prosthetic. A prosthetic can also be put on without surgery
@@ -574,17 +619,13 @@
 	/// Radial options, one for each type of limb.
 	var/list/rogue_options
 
-/datum/surgery_operation/limb/rogue/attach_limb/rogue_chances()
-	return list(ROGUE_IMPLEMENT_LIMB = rogue_value("surgery_attach_limb"))
-
-/datum/surgery_operation/limb/rogue/attach_limb/rogue_time()
-	return rogue_value("surgery_attach_time")
-
-/datum/surgery_operation/limb/rogue/attach_limb/rogue_skill_min()
-	return rogue_value("surgery_attach_skill_min")
-
-/datum/surgery_operation/limb/rogue/attach_limb/rogue_skill_median()
-	return rogue_value("surgery_attach_skill_median")
+/datum/surgery_operation/limb/rogue/attach_limb/rogue_read_numbers()
+	. = ..()
+	time = rogue_value("surgery_attach_time")
+	rogue_dice_requirement = rogue_value("surgery_attach_dice")
+	rogue_skill_min = rogue_value("surgery_attach_least_skill")
+	rogue_skill_median = rogue_value("surgery_attach_median_skill")
+	rogue_step_qualities = list(ROGUE_IMPLEMENT_LIMB = rogue_value("surgery_attach_q_limb"))
 
 /datum/surgery_operation/limb/rogue/attach_limb/rogue_implement(tool)
 	return rogue_part_zone(tool) ? ROGUE_IMPLEMENT_LIMB : null
@@ -611,13 +652,18 @@
 			return FALSE
 	return ..()
 
+/// The radial option's words for the limb in hand.
+/datum/surgery_operation/limb/rogue/attach_limb/proc/rogue_option_words(obj/item/tool)
+	return list("implant [tool.name]", "Put [tool.name] on the stump of the patient's missing limb.")
+
 /datum/surgery_operation/limb/rogue/attach_limb/get_radial_options(obj/item/bodypart/limb, obj/item/tool, operating_zone)
 	var/key = "[tool.type]-[tool.name]"
 	var/datum/radial_menu_choice/option = LAZYACCESS(rogue_options, key)
 	if(!option)
+		var/list/words = rogue_option_words(tool)
 		option = new()
-		option.name = "implant [tool.name]"
-		option.info = "Put [tool.name] on the stump of the patient's missing limb."
+		option.name = words[1]
+		option.info = words[2]
 		option.image = image(icon = tool.icon, icon_state = tool.icon_state)
 		LAZYSET(rogue_options, key, option)
 	return option
@@ -652,17 +698,13 @@
 	/// Radial options, one for each type of prosthetic.
 	var/list/rogue_options
 
-/datum/surgery_operation/limb/rogue/replace_limb/rogue_chances()
-	return list(ROGUE_IMPLEMENT_LIMB = rogue_value("surgery_replace_limb"))
-
-/datum/surgery_operation/limb/rogue/replace_limb/rogue_time()
-	return rogue_value("surgery_replace_time")
-
-/datum/surgery_operation/limb/rogue/replace_limb/rogue_skill_min()
-	return rogue_value("surgery_replace_skill_min")
-
-/datum/surgery_operation/limb/rogue/replace_limb/rogue_skill_median()
-	return rogue_value("surgery_replace_skill_median")
+/datum/surgery_operation/limb/rogue/replace_limb/rogue_read_numbers()
+	. = ..()
+	time = rogue_value("surgery_replace_time")
+	rogue_dice_requirement = rogue_value("surgery_replace_dice")
+	rogue_skill_min = rogue_value("surgery_replace_least_skill")
+	rogue_skill_median = rogue_value("surgery_replace_median_skill")
+	rogue_step_qualities = list(ROGUE_IMPLEMENT_LIMB = rogue_value("surgery_replace_q_limb"))
 
 /datum/surgery_operation/limb/rogue/replace_limb/rogue_implement(tool)
 	return rogue_prosthetic_zone_of(tool) ? ROGUE_IMPLEMENT_LIMB : null
@@ -722,7 +764,8 @@
 		span_notice("[surgeon] successfully augments [patient]'s [new_limb.plaintext_zone]!"))
 	log_combat(surgeon, patient, "augmented", new_limb, "([new_limb.plaintext_zone])")
 
-/// Ratwood /datum/surgery_step/remove_prosthetic: a prosthetic is sawn off at its base, back into the thing it was made from.
+/// Ratwood /datum/surgery_step/remove_prosthetic, Vibelin amputate/pegleg/medical: a prosthetic is sawn off at its base, back
+/// into the thing it was made from.
 /datum/surgery_operation/limb/rogue/remove_prosthetic
 	name = "remove prosthetic"
 	desc = "Saw a prosthetic off at its base."
@@ -733,17 +776,13 @@
 	rogue_flesh_only = FALSE
 	rogue_zones = ROGUE_SURGERY_LIMB_ZONES
 
-/datum/surgery_operation/limb/rogue/remove_prosthetic/rogue_chances()
-	return list(TOOL_SAW = rogue_value("surgery_remove_prosthetic_saw"))
-
-/datum/surgery_operation/limb/rogue/remove_prosthetic/rogue_time()
-	return rogue_value("surgery_remove_prosthetic_time")
-
-/datum/surgery_operation/limb/rogue/remove_prosthetic/rogue_skill_min()
-	return rogue_value("surgery_remove_prosthetic_skill_min")
-
-/datum/surgery_operation/limb/rogue/remove_prosthetic/rogue_skill_median()
-	return rogue_value("surgery_remove_prosthetic_skill_median")
+/datum/surgery_operation/limb/rogue/remove_prosthetic/rogue_read_numbers()
+	. = ..()
+	time = rogue_value("surgery_remove_prosthetic_time")
+	rogue_dice_requirement = rogue_value("surgery_remove_prosthetic_dice")
+	rogue_skill_min = rogue_value("surgery_remove_prosthetic_least_skill")
+	rogue_skill_median = rogue_value("surgery_remove_prosthetic_median_skill")
+	rogue_step_qualities = list(TOOL_SAW = rogue_value("surgery_remove_prosthetic_q_saw"))
 
 /datum/surgery_operation/limb/rogue/remove_prosthetic/get_default_radial_image()
 	return image(ROGUE_SURGERY_RADIAL, "saw_bones")
@@ -765,11 +804,21 @@
 		span_notice("[surgeon] saws through the base of [limb.owner]'s prosthetic [limb.plaintext_zone]!"))
 	limb.drop_limb()
 
-/// Ratwood's hearth /datum/surgery_step/burn_rot: through an incision in the chest, the rot is burnt out of a body - a corpse
-/// rotted or gone to bones is sound flesh again and may be brought back (burial/corpse_rot.dm).
+/// A prosthetic's limb takes no injury when a step on it fails: there is no flesh to cut.
+/datum/surgery_operation/limb/rogue/remove_prosthetic/rogue_fail_kind(tool)
+	return null
+
+/// A failed implanting leaves no injury: the step's limb is TG's stump, which can be neither bandaged nor sewn
+/// (review VR2r, finding 15).
+/datum/surgery_operation/limb/rogue/attach_limb/rogue_fail_kind(tool)
+	return null
+
+/// Ratwood's hearth /datum/surgery_step/burn_rot, Vibelin cure_rot: through an incision in the chest, the rot is burnt out of a
+/// body - a corpse rotted or gone to bones is sound flesh again and may be brought back (burial/corpse_rot.dm) - and the germs
+/// of its limbs and their injuries are burnt out with it, a living body's too.
 /datum/surgery_operation/limb/rogue/burn_rot
 	name = "burn rot"
-	desc = "Burn the rot out of a body through an incision in its chest."
+	desc = "Burn the rot and the infection out of a body through an incision in its chest."
 	implements = list(TOOL_CAUTERY = 1, /obj/item/clothing/neck/roguetown/psicross = 1, TOOL_WELDER = 1, ROGUE_IMPLEMENT_HOT = 1)
 	time = 8 SECONDS
 	preop_sound = 'sound/items/handling/surgery/cautery1.ogg'
@@ -777,17 +826,13 @@
 	any_surgery_states_required = ALL_SURGERY_SKIN_STATES
 	rogue_zones = list(BODY_ZONE_CHEST)
 
-/datum/surgery_operation/limb/rogue/burn_rot/rogue_chances()
-	return list(TOOL_CAUTERY = rogue_value("surgery_burn_rot_cautery"), /obj/item/clothing/neck/roguetown/psicross = rogue_value("surgery_burn_rot_psicross"), TOOL_WELDER = rogue_value("surgery_burn_rot_welder"), ROGUE_IMPLEMENT_HOT = rogue_value("surgery_burn_rot_hot"))
-
-/datum/surgery_operation/limb/rogue/burn_rot/rogue_time()
-	return rogue_value("surgery_burn_rot_time")
-
-/datum/surgery_operation/limb/rogue/burn_rot/rogue_skill_min()
-	return rogue_value("surgery_burn_rot_skill_min")
-
-/datum/surgery_operation/limb/rogue/burn_rot/rogue_skill_median()
-	return rogue_value("surgery_burn_rot_skill_median")
+/datum/surgery_operation/limb/rogue/burn_rot/rogue_read_numbers()
+	. = ..()
+	time = rogue_value("surgery_burn_rot_time")
+	rogue_dice_requirement = rogue_value("surgery_burn_rot_dice")
+	rogue_skill_min = rogue_value("surgery_burn_rot_least_skill")
+	rogue_skill_median = rogue_value("surgery_burn_rot_median_skill")
+	rogue_step_qualities = list(TOOL_CAUTERY = rogue_value("surgery_burn_rot_q_cautery"), /obj/item/clothing/neck/roguetown/psicross = rogue_value("surgery_burn_rot_q_psicross"), TOOL_WELDER = rogue_value("surgery_burn_rot_q_welder"), ROGUE_IMPLEMENT_HOT = rogue_value("surgery_burn_rot_q_hot"))
 
 /datum/surgery_operation/limb/rogue/burn_rot/get_default_radial_image()
 	return image(/obj/item/rogueweapon/surgery/cautery)
@@ -797,9 +842,24 @@
 		span_notice("[surgeon] begins to burn the rot from [limb.owner]'s heart."),
 		span_notice("[surgeon] begins to burn the rot from [limb.owner]'s heart."))
 
+/// Germs in any limb of the body or its injuries.
+/proc/rogue_body_has_germs(mob/living/carbon/patient)
+	for(var/obj/item/bodypart/part as anything in patient.bodyparts)
+		if(part.rogue_germ_level > 0)
+			return TRUE
+		for(var/datum/rogue_injury/injury as anything in part.rogue_injuries)
+			if(injury.germ_level > 0)
+				return TRUE
+	return FALSE
+
 /datum/surgery_operation/limb/rogue/burn_rot/rogue_effect(obj/item/bodypart/limb, mob/living/surgeon, tool, list/operation_args)
 	var/mob/living/carbon/patient = limb.owner
-	if(!patient.rogue_remove_rot())
+	var/germs = rogue_body_has_germs(patient)
+	var/rot = patient.rogue_remove_rot()
+	if(germs)
+		for(var/obj/item/bodypart/part as anything in patient.bodyparts)
+			part.rogue_clear_germs()
+	if(!rot && !germs)
 		to_chat(surgeon, span_warning("The surgery fails to remove the rot."))
 		return
 	display_results(surgeon, patient, span_notice("I burn away the rot inside of [patient]."),
@@ -808,7 +868,7 @@
 
 /// Ratwood /datum/surgery_step/manipulate_organs, on TG's organ manipulation: through an opened limb (the skull and the chest
 /// sawn too, for the brain and the chest's organs) an organ is taken out with forceps, a crowbar or the hand, or one in hand
-/// put in. TG's organ choice stays; Ratwood's tools, ranks, chance and fever come with the module's operations.
+/// put in. TG's organ choice stays; Ratwood's tools and skill and Vibelin's roll come with the module's operations.
 /datum/surgery_operation/limb/organ_manipulation/internal/rogue
 	name = "manipulate organs"
 	desc = "Take an organ out of an opened limb, or put one in."
@@ -821,17 +881,17 @@
 	random_item_organ_pool = null
 	rogue_medieval = TRUE
 
-/datum/surgery_operation/limb/organ_manipulation/internal/rogue/rogue_chances()
-	return list(TOOL_HEMOSTAT = rogue_value("surgery_organs_hemostat"), ROGUE_TOOL_IMPROVISED_HEMOSTAT = rogue_value("surgery_organs_improvised"), TOOL_CROWBAR = rogue_value("surgery_organs_crowbar"), IMPLEMENT_HAND = rogue_value("surgery_organs_hand"), /obj/item/organ = rogue_value("surgery_organs_organ"))
+/datum/surgery_operation/limb/organ_manipulation/internal/rogue/rogue_read_numbers()
+	. = ..()
+	time = rogue_value("surgery_organs_time")
+	rogue_dice_requirement = rogue_value("surgery_organs_dice")
+	rogue_skill_min = rogue_value("surgery_organs_least_skill")
+	rogue_skill_median = rogue_value("surgery_organs_median_skill")
+	rogue_step_qualities = list(TOOL_HEMOSTAT = rogue_value("surgery_organs_q_hemostat"), ROGUE_TOOL_IMPROVISED_HEMOSTAT = rogue_value("surgery_organs_q_improvised"), TOOL_CROWBAR = rogue_value("surgery_organs_q_crowbar"), IMPLEMENT_HAND = rogue_value("surgery_organs_q_hand"), /obj/item/organ = rogue_value("surgery_organs_q_organ"))
 
-/datum/surgery_operation/limb/organ_manipulation/internal/rogue/rogue_time()
-	return rogue_value("surgery_organs_time")
-
-/datum/surgery_operation/limb/organ_manipulation/internal/rogue/rogue_skill_min()
-	return rogue_value("surgery_organs_skill_min")
-
-/datum/surgery_operation/limb/organ_manipulation/internal/rogue/rogue_skill_median()
-	return rogue_value("surgery_organs_skill_median")
+/datum/surgery_operation/limb/organ_manipulation/internal/rogue/rogue_implements()
+	rogue_refresh_numbers()
+	return rogue_step_qualities || ..()
 
 /datum/surgery_operation/limb/organ_manipulation/internal/rogue/get_tool_quality(tool = IMPLEMENT_HAND)
 	return rogue_tool_quality(tool)
@@ -850,7 +910,7 @@
 
 /datum/surgery_operation/limb/organ_manipulation/internal/rogue/on_success(obj/item/bodypart/limb, mob/living/surgeon, obj/item/tool, list/operation_args)
 	. = ..()
-	rogue_learn(surgeon)
+	rogue_succeed(limb, surgeon, tool, operation_args)
 
 /datum/surgery_operation/limb/organ_manipulation/internal/rogue/on_failure(obj/item/bodypart/limb, mob/living/surgeon, tool, list/operation_args)
 	rogue_fail(limb, surgeon, tool, operation_args)
@@ -858,3 +918,4 @@
 #undef ROGUE_SURGERY_LIMB_ZONES
 #undef ROGUE_SURGERY_SEVERABLE_ZONES
 #undef ROGUE_SURGERY_RADIAL
+#undef ROGUE_SURGERY_SEARABLE_INJURIES

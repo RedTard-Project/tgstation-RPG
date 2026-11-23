@@ -122,6 +122,10 @@
 	if(old_victim)
 		REMOVE_TRAIT(old_victim, TRAIT_DISFIGURED, REF(src))
 
+/datum/wound/rogue/facial/disfigurement/rogue_on_regain()
+	. = ..()
+	ADD_TRAIT(victim, TRAIT_DISFIGURED, REF(src))
+
 /// Vibelin facial/disfigurement/nose: the nose cut off; one smells nothing; mortal.
 /datum/wound/rogue/facial/disfigurement/nose
 	name = "rhinotomy"
@@ -141,6 +145,10 @@
 	. = ..()
 	if(old_victim)
 		REMOVE_TRAIT(old_victim, TRAIT_ANOSMIA, REF(src))
+
+/datum/wound/rogue/facial/disfigurement/nose/rogue_on_regain()
+	. = ..()
+	ADD_TRAIT(victim, TRAIT_ANOSMIA, REF(src))
 
 /// Vibelin /datum/wound/cbt: a torsion of the groin; it stuns, numbs, makes one retch; mortal. Its chance is the blow's damage
 /// alone, twice for a striker with the Nutcracker trait. A critically resistant body is spared.

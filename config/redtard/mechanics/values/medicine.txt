@@ -519,3 +519,98 @@ bleed_grasp_factor = 10
 
 # Share of a part's bleeding left with its vessels clamped (Vibelin get_bleed_multiplier()).
 bleed_clamped_factor = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list vr2v)
+
+# Share of its most damage a body part must have taken before a blow may reach an organ under it (Vibelin organ_damage_requirement = max_damage * 0.2).
+organ_hit_required_share = 10
+
+# The least blow that may reach an organ, and the scale of the chance (Vibelin ORGAN_MINIMUM_DAMAGE).
+organ_hit_minimum = 10
+
+# What the least blow is multiplied by for stabs and blunt blows, which reach organs easier (Vibelin WOUND_PUNCTURE, WOUND_BLUNT).
+organ_hit_minimum_pierce_blunt = 10
+
+# What the least blow is multiplied by for burns, which reach organs harder (Vibelin WOUND_BURN, WOUND_INTENSE_BURN).
+organ_hit_minimum_burn = 10
+
+# The most damage of a blow counted for the organs (Vibelin MAX_CONSIDERED_ORGAN_DAMAGE_ROLL).
+organ_hit_damage_cap = 10
+
+# Chance in percent of a blow of the least damage to reach an organ; it grows with the blow (Vibelin organ_hit_chance = 30 * damage / minimum).
+organ_hit_chance_factor = 10
+
+# Share of the blow the organ reached takes (Vibelin internal_damage_modifier).
+organ_hit_damage_factor = 10
+
+# Damage taken off what the organ reached takes (Vibelin internal_damage_reduction).
+organ_hit_damage_reduction = 10
+
+# Damage an organ takes from one blow from which it hurts at once (Vibelin "MY ORGAN HURTS!").
+organ_hit_pain_damage = 10
+
+# Least power of that pain (Vibelin rand(25, 35)).
+organ_hit_pain_min = 10
+
+# Most power of that pain (Vibelin rand(25, 35)).
+organ_hit_pain_max = 10
+
+# How likely the brain is to be the organ a blow to the head reaches, against the others (Vibelin organ_volume * 10).
+organ_hit_weight_brain = 10
+
+# How likely the heart is to be the organ a blow to the chest reaches (Vibelin organ_volume * 10).
+organ_hit_weight_heart = 10
+
+# How likely the lungs are to be reached (Vibelin organ_volume * 10).
+organ_hit_weight_lungs = 10
+
+# How likely the liver is to be reached (Vibelin organ_volume * 10).
+organ_hit_weight_liver = 10
+
+# How likely the stomach is to be reached (Vibelin organ_volume * 10).
+organ_hit_weight_stomach = 10
+
+# How likely the appendix is to be reached (Vibelin organ_volume * 10).
+organ_hit_weight_appendix = 10
+
+# How likely the eyes are to be reached (Vibelin organ_volume * 10, rounded up).
+organ_hit_weight_eyes = 10
+
+# How likely the ears are to be reached (Vibelin organ_volume * 10, rounded up).
+organ_hit_weight_ears = 10
+
+# How likely the tongue is to be reached (Vibelin organ_volume * 10).
+organ_hit_weight_tongue = 10
+
+# Pain of the brain per point of its damage (Vibelin pain_multiplier).
+organ_pain_brain = 10
+
+# Pain of the heart per point of its damage (Vibelin pain_multiplier).
+organ_pain_heart = 10
+
+# Pain of the lungs per point of their damage (Vibelin pain_multiplier).
+organ_pain_lungs = 10
+
+# Pain of the liver per point of its damage (Vibelin pain_multiplier).
+organ_pain_liver = 10
+
+# Pain of the stomach per point of its damage (Vibelin pain_multiplier).
+organ_pain_stomach = 10
+
+# Pain of the appendix per point of its damage (Vibelin pain_multiplier).
+organ_pain_appendix = 10
+
+# Pain of the eyes per point of their damage (Vibelin pain_multiplier / 2).
+organ_pain_eyes = 10
+
+# Pain of the ears per point of their damage (Vibelin pain_multiplier / 2).
+organ_pain_ears = 10
+
+# Pain of the tongue per point of its damage (Vibelin pain_multiplier).
+organ_pain_tongue = 10
+
+# Teeth a full mouth holds, and a pile of teeth at most (Vibelin max_teeth, maxamount).
+teeth_max = 10
+
+# Bite damage each fang of the jaw adds (Vibelin fang_bonus).
+teeth_fang_bite_bonus = 10
