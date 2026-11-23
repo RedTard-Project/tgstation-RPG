@@ -161,8 +161,9 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 		if(broken || QDELETED(target) || incapacitated || !target.IsReachableBy(src, weapon ? weapon.reach : 1) || (weapon && (QDELETED(weapon) || !is_holding(weapon))) || rogue_strike_intent(weapon) != intent)
 			return FALSE
 	strike.paired = rogue_dual_wield_step(weapon)
-	if(intent.releasedrain)
-		adjust_stamina_loss(intent.releasedrain * rogue_rmb_factor("stamina_factor"))
+	var/stamina_cost = rogue_strike_stamina(intent, !!weapon)
+	if(stamina_cost)
+		adjust_stamina_loss(stamina_cost)
 	do_attack_animation(target, weapon ? null : ATTACK_EFFECT_PUNCH, weapon)
 	rogue_swung()
 	target.lastattacker = real_name

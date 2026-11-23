@@ -1,7 +1,7 @@
 // Money and trade on medieval maps: Ratwood's coins, NERVELOCK accounts, Crown's treasury and trading machines.
 
 /// The most coins one pile holds (Ratwood coins.dm, MAX_COIN_STACK_SIZE).
-#define ROGUE_COIN_PILE_MAX 20
+#define ROGUE_COIN_PILE_MAX rogue_value("coin_pile_max")
 
 /// Coin kinds a machine pays change in (Ratwood budget2change()), largest first.
 #define ROGUE_COIN_GOLD "GOLD"

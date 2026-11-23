@@ -75,73 +75,8 @@
 		if(victim.body_position == STANDING_UP)
 			weapon_damage(victim, dam, BODY_ZONE_HEAD, BCLASS_BLUNT, no_pen = TRUE)
 		victim.apply_status_effect(/datum/status_effect/rogue/dazed, tune("daze_dur"), list(ROGUE_STAT_PERCEPTION = tune("daze_perception"), ROGUE_STAT_INTELLIGENCE = tune("daze_intelligence")))
-		victim.rogue_slowdown(tune("slow_dur"))
+		victim.rogue_slow_for(tune("slow_dur"))
 	playsound(marked, 'modular_redtard/rockhill/sound/combat/flail_sweep_hit_minor.ogg', 100, TRUE)
-
-/// Four swings around the wielder, each wave harder than the one before. Unlike Azure Peak, which counts a wave when it is
-/// drawn (so its later hits land with the multiplier of a wave still to come), a hit counts the wave it belongs to.
-/datum/special_intent/vicious_swipe
-	name = "Vicious Swing"
-	desc = "A swing of your blade, in all quadrants. The last two swings expose. Always targets the chest."
-	tile_coordinates = list(
-		list(-1,0), list(0,0), list(1,0),
-		list(-1,-2, 0.4 SECONDS), list(-1,-1, 0.4 SECONDS), list(-1,0, 0.4 SECONDS),
-		list(-1,-2, 0.8 SECONDS), list(0,-2, 0.8 SECONDS), list(1,-2, 0.8 SECONDS),
-		list(1,-2, 1.2 SECONDS), list(1,-1, 1.2 SECONDS), list(1,0, 1.2 SECONDS),
-	)
-	post_icon_state = "sweep_fx"
-	pre_icon = ROGUE_TELEGRAPH_ICON
-	pre_icon_state = "warning"
-	sfx_pre_delay = 'modular_redtard/rockhill/sound/combat/wooshes/bladed/wooshlarge (2).ogg'
-	sfx_post_delay = 'modular_redtard/rockhill/sound/combat/sp_axe_swing1.ogg'
-	respect_adjacency = FALSE
-	requires_wielding = TRUE
-	tunables = list("cooldown", "delay", "stamcost", "dam", "wave_bonus", "last_share", "slow_dur", "exposed_dur", "self_immob", "self_clickcd", "self_vuln")
-	var/dam
-	/// Damage share added by every wave after the first (Azure Peak's waves grow evenly).
-	var/wave_bonus
-	/// Share of the damage the last wave strikes again at the armor alone.
-	var/last_share
-	var/slow_dur
-	var/exposed_dur
-	var/self_immob
-	var/self_clickcd
-	var/self_vuln
-	/// The waves' turf lists in the order they were drawn, and the number of the wave landing now.
-	var/list/waves = list()
-	var/landing_wave = 0
-
-/datum/special_intent/vicious_swipe/Destroy(force)
-	waves = null
-	return ..()
-
-/datum/special_intent/vicious_swipe/on_create()
-	waves = list()
-	howner.Immobilize(tune("self_immob"))
-	howner.apply_status_effect(/datum/status_effect/rogue_vulnerable, tune("self_vuln"))
-	howner.rogue_delay_action(tune("self_clickcd"))
-
-/datum/special_intent/vicious_swipe/process_grid(list/turfs, hit_delay)
-	waves += list(turfs)
-	return ..()
-
-/datum/special_intent/vicious_swipe/post_delay(list/turfs)
-	landing_wave = max(waves.Find(turfs), 1)
-	. = ..()
-	playsound(howner, 'modular_redtard/rockhill/sound/combat/wooshes/bladed/wooshlarge (3).ogg', 100, TRUE)
-
-/datum/special_intent/vicious_swipe/apply_hit(turf/marked)
-	var/total_waves = length(affected_turfs)
-	for(var/mob/living/victim as anything in victims(marked))
-		victim.rogue_slowdown(tune("slow_dur"))
-		if(victim.body_position != STANDING_UP)
-			continue
-		weapon_damage(victim, tune("dam") * (1 + (landing_wave - 1) * tune("wave_bonus")), BODY_ZONE_CHEST, BCLASS_CUT)
-		if(landing_wave >= total_waves)
-			weapon_damage(victim, tune("dam") * tune("last_share"), BODY_ZONE_CHEST, BCLASS_CUT, no_pen = TRUE)
-		if(landing_wave >= total_waves - 1)
-			victim.apply_status_effect(/datum/status_effect/rogue/exposed, tune("exposed_dur"))
-		playsound(marked, 'modular_redtard/rockhill/sound/combat/sp_gsword_hit.ogg', 100, TRUE)
 
 /datum/special_intent/drakkyrmaw_bite
 	name = "Drakkyrmaw: Hoardbite"
@@ -172,7 +107,7 @@
 
 /datum/special_intent/drakkyrmaw_bite/apply_hit(turf/marked)
 	for(var/mob/living/victim as anything in victims(marked))
-		victim.rogue_slowdown(tune("slow_dur"))
+		victim.rogue_slow_for(tune("slow_dur"))
 		victim.adjust_fire_stacks(tune("fire_stacks"))
 		victim.ignite_mob()
 		fling(victim, get_step_towards(victim, howner), 1)
@@ -197,7 +132,7 @@
 	requires_wielding = TRUE
 	tunables = list("cooldown", "delay", "stamcost", "fire_stacks", "slow_dur", "exposed_dur", "self_immob_dur")
 	var/fire_stacks
-	/// Slowdown steps; Azure Peak passes seconds to a proc that counts life ticks, read here as as many steps.
+	/// Slowdown time, in deciseconds (Azure Peak apply_slowdown()).
 	var/slow_dur
 	var/exposed_dur
 	var/self_immob_dur
@@ -215,7 +150,7 @@
 /datum/special_intent/gilded_dragon_sweep/apply_hit(turf/marked)
 	for(var/mob/living/victim as anything in victims(marked))
 		fling(victim, get_ranged_target_turf(get_turf(victim), get_dir(howner, victim), 1), 1)
-		victim.rogue_slowdown(tune("slow_dur"))
+		victim.rogue_slow_for(tune("slow_dur"))
 		victim.adjust_fire_stacks(tune("fire_stacks"))
 		victim.ignite_mob()
 		weapon_damage(victim, dam, BODY_ZONE_CHEST, BCLASS_BLUNT, no_pen = TRUE)

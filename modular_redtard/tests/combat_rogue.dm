@@ -327,12 +327,13 @@
 	drinker.reagents.clear_reagents()
 	var/datum/wound/cut = drinker.cause_wound_of_type_and_severity(WOUND_SLASH, chest, WOUND_SEVERITY_MODERATE)
 	TEST_ASSERT(istype(cut), "Could not cut the chest")
-	TEST_ASSERT(drinker.rogue_heal_wounds(ROGUE_WOUND_HEALTH_CUT_MODERATE), "Mending did not mend the cut")
+	// A body off the medieval maps (no blood element): the cut stays TG's wound, mended by the fallback health of Ratwood.
+	TEST_ASSERT(drinker.rogue_heal_wounds(cut.rogue_health_max()), "Mending did not mend the cut")
 	TEST_ASSERT(QDELETED(cut), "A cut mended whole did not close")
 	var/obj/item/natural/cloth/cloth = allocate(__IMPLIED_TYPE__)
 	cloth.rogue_medicine = /datum/reagent/medicine/healthpot
 	cloth.rogue_medicine_quality = 1
-	cloth.rogue_medicine_left = ROGUE_SOAK_SPEND
+	cloth.rogue_medicine_left = rogue_value("soak_spend")
 	brute_before = chest.brute_dam
 	cloth.rogue_medicine_tick(chest, 1)
 	TEST_ASSERT(chest.brute_dam < brute_before, "A bandage soaked in a potion did not heal the limb")

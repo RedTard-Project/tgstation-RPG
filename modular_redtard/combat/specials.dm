@@ -469,7 +469,7 @@
 		return
 	if(with_damage)
 		weapon_damage(victim, tune("dam") * count, BODY_ZONE_CHEST, BCLASS_BLUNT, no_pen = TRUE)
-	victim.rogue_slowdown(tune("slow_init") + count)
+	victim.rogue_slow_for(tune("slow_init") + count SECONDS)
 	if(count >= 2)
 		victim.Immobilize(tune("immobilize_init") + count SECONDS)
 		victim.apply_status_effect(/datum/status_effect/rogue/exposed, tune("exposed_init") + count SECONDS)

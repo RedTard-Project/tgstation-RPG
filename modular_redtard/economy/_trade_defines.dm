@@ -11,7 +11,7 @@
 
 /// Ship size (Ratwood TRADE_SHIP_DEFAULT_TONNAGE, TONNAGE_VARIANCE, TONNAGE_SCALE_SPAN, TONNAGE_SCALE_CAP): a ship's cargo and
 /// the trade it hopes for grow with its tonnage over the default, up to twice.
-#define ROGUE_SHIP_DEFAULT_TONNAGE 100
+#define ROGUE_SHIP_DEFAULT_TONNAGE rogue_value("ship_default_tonnage")
 #define ROGUE_SHIP_TONNAGE_VARIANCE rogue_value("ship_tonnage_variance")
 #define ROGUE_SHIP_TONNAGE_SCALE_SPAN rogue_value("ship_tonnage_scale_span")
 #define ROGUE_SHIP_TONNAGE_SCALE_CAP rogue_value("ship_tonnage_scale_cap")

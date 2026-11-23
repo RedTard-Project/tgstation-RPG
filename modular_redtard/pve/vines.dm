@@ -10,7 +10,7 @@
 
 /obj/structure/vine/Initialize(mapload)
 	. = ..()
-	if(!rogue_combat_enabled())
+	if(!rogue_medieval_map())
 		return
 	var/static/list/loc_connections = list(COMSIG_ATOM_ENTERED = PROC_REF(rogue_pve_on_entered))
 	AddElement(/datum/element/connect_loc, loc_connections)
@@ -48,7 +48,7 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/fae/dryad/Initialize(mapload)
 	. = ..()
-	if(rogue_combat_enabled())
+	if(rogue_medieval_map())
 		RegisterSignal(src, COMSIG_MOVABLE_MOVED, PROC_REF(rogue_pve_on_moved))
 
 /// Ratwood dryad Move(): on vines it moves fast, off them slowly.
@@ -62,7 +62,7 @@
 /// Ratwood dryad death(): the vines it can see wither.
 /mob/living/simple_animal/hostile/retaliate/rogue/fae/dryad/death(gibbed)
 	. = ..()
-	if(!rogue_combat_enabled())
+	if(!rogue_medieval_map())
 		return
 	for(var/obj/structure/vine/withered in view(src))
 		qdel(withered)

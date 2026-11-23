@@ -564,15 +564,15 @@
 			"skip": [
 				{
 					"prefix": "/obj/item/reagent_containers",
-					"reason": "food and drink: the module's food is Ratwood's (survival/, alchemy/) with its own nutrition and cooking tables; Vibelin's cooking (ingredient buffs, toppings, faretype) is another system, so its dishes need a survival-side port"
+					"reason": "food, drink and vessels: ported by tools/port_vibelin_food.py (items_vibelin/food.dm, vessels.dm; H2g)"
 				},
 				{
 					"prefix": "/obj/item/grown",
-					"reason": "food and drink: the module's food is Ratwood's (survival/, alchemy/) with its own nutrition and cooking tables; Vibelin's cooking (ingredient buffs, toppings, faretype) is another system, so its dishes need a survival-side port"
+					"reason": "food and drink: ported by tools/port_vibelin_food.py (H2g)"
 				},
 				{
 					"prefix": "/obj/item/plate",
-					"reason": "dishes of Vibelin's cooking (see food)"
+					"reason": "platters: ported by tools/port_vibelin_food.py (items_vibelin/vessels.dm; H2g)"
 				},
 				{
 					"prefix": "/obj/item/key",
@@ -712,6 +712,10 @@
 		"/datum/intent/oracle_smite": "/datum/intent/priest_smite",
 		"/datum/intent/oracle_silence": "/datum/intent/priest_silence"
 	},
+	"special_map": {
+		"/datum/special_intent/greatsword_swing": "/datum/special_intent/wave_swing/greatsword"
+	},
+	"special_map_note": "H2g (2026-11-22): Vibelin's greatsword_swing is its greatsword ring; the module took Azure Peak's wave_swing of greatswords in its place (K2d2), as the Rockhill porter does for Ratwood's.",
 	"intent_drop": [
 		"/datum/intent/whip",
 		"/datum/intent/peculate",
@@ -763,9 +767,9 @@
 		"integrity": {
 			"var": "max_integrity",
 			"scale": {
-				"weapon": 0.42
+				"weapon": 1.0
 			},
-			"round": 5
+			"scale_note": "H1b (2026-11-22): the owner set the factor of Vibelin's own weapon integrity to 1.0 (it was 0.42); the defines decide the rest later."
 		},
 		"force": {
 			"var": "force"
@@ -783,6 +787,16 @@
 		},
 		"min_strength": {
 			"var": "minstr",
+			"skip_zero": true
+		},
+		"sharpness": {
+			"var": "max_blade_int",
+			"groups": ["weapon"],
+			"note": "H1b (2026-11-22): the edge of a weapon goes to the table like Rockhill's (0 too, so that a blunt Vibelin weapon does not take the edge of the Rockhill parent it is rebased under)."
+		},
+		"shield_coverage": {
+			"var": "coverage",
+			"groups": ["weapon"],
 			"skip_zero": true
 		}
 	},
@@ -829,8 +843,5 @@
 		"w_class",
 		"slot_flags"
 	],
-	"no_rule_reason": "no port rule for this root: the item works through Vibelin's own code the module lacks",
-	"ported_elsewhere": {
-		"/obj/item/clothing/armor/regenerating/skin/easttats": "same item as Ratwood's /obj/item/clothing/suit/roguetown/armor/regenerating/skin/body/ruma, which the Ratwood porter brings for its advclass outfits (K3 assembler)"
-	}
+	"no_rule_reason": "no port rule for this root: the item works through Vibelin's own code the module lacks"
 }

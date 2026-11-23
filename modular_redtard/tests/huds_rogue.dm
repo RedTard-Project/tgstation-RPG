@@ -424,20 +424,31 @@
 		TEST_ASSERT_EQUAL(heart.heart_layer_state("painloss", step[1], 30, 60), step[2], "Pain [step[1]]% shows the wrong step")
 	TEST_ASSERT_EQUAL(heart.heart_layer_state("painloss", 0, 30, 60), null, "The heart shows pain when there is none")
 
-/// The pain threshold is counted anew from willpower and the pain traits (Ratwood PR 2546 pain_threshold_is_live), so the
-/// heart agrees with the pain checks.
-/datum/unit_test/rogue_hud/pain_threshold
+/// Pain on a part becomes traumatic shock (Vibelin getShock()), painkillers take the edge off it, the painless feel none,
+/// and the pain eases away; the heart is redrawn when the shock stage changes.
+/datum/unit_test/rogue_hud/pain_shock
 
-/datum/unit_test/rogue_hud/pain_threshold/Run()
+/datum/unit_test/rogue_hud/pain_shock/Run()
 	var/mob/living/carbon/human/dummy = make_hud_user()
-	dummy.rogue_adjust_stat(ROGUE_STAT_WILLPOWER, 14 - dummy.rogue_stat(ROGUE_STAT_WILLPOWER))
-	TEST_ASSERT_EQUAL(dummy.rogue_pain_threshold(), 14 * ROGUE_PAIN_PER_WILLPOWER, "The threshold ignored the current willpower")
-	ADD_TRAIT(dummy, TRAIT_ADRENALINE_RUSH, TRAIT_SOURCE_UNIT_TESTS)
-	TEST_ASSERT_EQUAL(dummy.rogue_pain_threshold(), (14 + ROGUE_PAIN_ADRENALINE_WILLPOWER) * ROGUE_PAIN_PER_WILLPOWER, "The threshold ignored adrenaline")
-	REMOVE_TRAIT(dummy, TRAIT_ADRENALINE_RUSH, TRAIT_SOURCE_UNIT_TESTS)
+	var/obj/item/bodypart/arm = dummy.get_bodypart(BODY_ZONE_L_ARM)
+	TEST_ASSERT(arm.rogue_add_pain(arm.rogue_max_pain()), "The arm took no pain")
+	TEST_ASSERT(dummy.rogue_complex_pain() > 0, "Pain on the arm made no shock")
+	var/full = arm.rogue_get_shock(TRUE)
+	dummy.rogue_add_chem_effect(ROGUE_CE_PAINKILLER, arm.rogue_max_pain(), "unit test")
+	TEST_ASSERT(arm.rogue_get_shock(TRUE) < full, "A painkiller did not dull the arm")
+	TEST_ASSERT_EQUAL(arm.rogue_get_shock(FALSE), full, "The arm's own pain counted the painkiller")
+	dummy.rogue_remove_chem_effect(ROGUE_CE_PAINKILLER, "unit test")
+	TEST_ASSERT_EQUAL(dummy.rogue_get_chem_effect(ROGUE_CE_PAINKILLER), 0, "The painkiller stayed after it was taken away")
 	ADD_TRAIT(dummy, TRAIT_NOPAIN, TRAIT_SOURCE_UNIT_TESTS)
-	TEST_ASSERT_EQUAL(dummy.rogue_pain_threshold(), ROGUE_PAIN_NOPAIN_THRESHOLD, "The threshold ignored painlessness")
+	TEST_ASSERT_EQUAL(dummy.rogue_complex_pain(), 0, "The painless feel shock")
 	REMOVE_TRAIT(dummy, TRAIT_NOPAIN, TRAIT_SOURCE_UNIT_TESTS)
+	dummy.rogue_pain_hud_dirty = FALSE
+	dummy.rogue_shock_stage = rogue_physiology().shock_stage_8 / 2
+	dummy.rogue_update_shock_hud(rogue_physiology())
+	TEST_ASSERT(dummy.rogue_pain_hud_dirty, "The heart was not told the shock stage changed")
+	dummy.rogue_shock_stage = 0
+	arm.rogue_remove_pain(arm.rogue_pain_dam)
+	TEST_ASSERT_EQUAL(arm.rogue_pain_dam, 0, "The pain did not ease away")
 
 #undef TEST_ASSERT
 #undef TEST_ASSERT_EQUAL

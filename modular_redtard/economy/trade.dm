@@ -957,7 +957,8 @@ SUBSYSTEM_DEF(rogue_trade)
 	var/captain
 	var/ship_type = "Ship"
 	var/port_of_origin = ""
-	var/tonnage = ROGUE_SHIP_DEFAULT_TONNAGE
+	/// Rolled in New() around the tonnage of its ship type (ship_default_tonnage of trade.txt without one).
+	var/tonnage
 	var/state = ROGUE_SHIP_OFFSHORE
 	var/docked_at = 0
 	var/dock_expires_at = 0

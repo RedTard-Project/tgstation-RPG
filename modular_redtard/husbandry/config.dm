@@ -19,4 +19,4 @@
 
 /// Whether the Ratwood husbandry runs: on medieval maps, as the rest of the rogue mechanics.
 /proc/rogue_husbandry_enabled()
-	return rogue_combat_enabled()
+	return rogue_medieval_map()

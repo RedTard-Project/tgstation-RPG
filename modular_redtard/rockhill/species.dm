@@ -51,7 +51,7 @@
 
 /// Ratwood's playable races are picked by players on medieval maps, beside what the config allows.
 /datum/species/check_roundstart_eligible()
-	if(rogue_playable && rogue_combat_enabled())
+	if(rogue_playable && rogue_medieval_map())
 		return TRUE
 	return ..()
 

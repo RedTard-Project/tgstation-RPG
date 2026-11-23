@@ -113,3 +113,100 @@ spell_projectile_smoke_burst_tile_time = 10
 
 # Smoke Burst: tiles of smoke around the burst (Vibelin smoke_range).
 spell_projectile_smoke_burst_smoke_range = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list h1g)
+
+# Skill an untrained Arcyne sub-skill (Pyromancy, Hydromancy, Cryomancy, Geomancy, Aeromancy, Astrapomancy, Vitamancy) stands below Arcyne Magic (Vibelin skills/magic.dm default_attributes).
+magic_subskill_default = 10
+
+# Share of the experience an Arcyne sub-skill learns that Arcyne Magic learns too (Vibelin skills/magic.dm shared_xp_percent).
+magic_subskill_shared = 10
+
+# Skill untrained Dark Magic, the sub-skill of the Necromancy form, stands below Arcyne Magic (Vibelin skills/magic.dm arcane/death).
+magic_subskill_dark_default = 10
+
+# Share of the experience Dark Magic learns that Arcyne Magic learns too (Vibelin skills/magic.dm arcane/death).
+magic_subskill_dark_shared = 10
+
+# Form points a Court Magician starts with (Vibelin nobility/magician.dm form_points).
+magic_points_court_magician_form = 10
+
+# Technique points a Court Magician starts with (Vibelin nobility/magician.dm).
+magic_points_court_magician_technique = 10
+
+# Form points a ruler who casts starts with: Magocrat, Archmagos of Heartfelt (Vibelin special trait The Thinker).
+magic_points_thinker_form = 10
+
+# Technique points a ruler who casts starts with (Vibelin special trait The Thinker).
+magic_points_thinker_technique = 10
+
+# Form points a Magician's Apprentice starts with (Vibelin apprentices/wapprentice.dm after_spawn, adults).
+magic_points_apprentice_form = 10
+
+# Technique points a Magician's Apprentice starts with (Vibelin apprentices/wapprentice.dm).
+magic_points_apprentice_technique = 10
+
+# Form points an adventuring mage starts with: Sorcerer, Spellsinger, Arcyne Trickster, Magician's Associate, Sojourner, Naledi Pontifex and Vizier (Vibelin adventurer Mage form_points).
+magic_points_mage_form = 10
+
+# Technique points an adventuring mage starts with (Vibelin adventurer Mage).
+magic_points_mage_technique = 10
+
+# Form points a spellblade starts with: Spellblade, New Moon Spellblade, Noccite Warmage (Vibelin mercenary Spellsword form_points).
+magic_points_spellsword_form = 10
+
+# Technique points a spellblade starts with (Vibelin mercenary Spellsword technique_points).
+magic_points_spellsword_technique = 10
+
+# Technique points a spellblade puts straight into Imbue (Vibelin mercenary Spellsword after_spawn).
+magic_points_spellsword_imbue = 10
+
+# Form points a mercenary mage starts with: Gefechtsgelehrter, Desert Rider Almah, Naledi Hierophant (Vibelin mercenary Sellmage form_points).
+magic_points_sellmage_form = 10
+
+# Technique points a mercenary mage starts with (Vibelin mercenary Sellmage technique_points).
+magic_points_sellmage_technique = 10
+
+# Form points a Necromancer starts with (Vibelin wretch Necromancer form_points).
+magic_points_necromancer_form = 10
+
+# Technique points a Necromancer starts with (Vibelin wretch Necromancer technique_points).
+magic_points_necromancer_technique = 10
+
+# Form points a Rogue Mage starts with (Vibelin antag Rogue Mage form_points).
+magic_points_rogue_mage_form = 10
+
+# Technique points a Rogue Mage starts with (Vibelin antag Rogue Mage).
+magic_points_rogue_mage_technique = 10
+
+# Form points an old Rogue Mage starts with on top (Vibelin antag Rogue Mage after_spawn).
+magic_points_rogue_mage_old_form = 10
+
+# Form points any other role with Arcyne Training starts with: archivist, engineer, advisors and the rest; Vibelin's least for a role versed in the arcyne, the Magician's Apprentice.
+magic_points_arcyne_form = 10
+
+# Technique points any other role with Arcyne Training starts with (as Vibelin's Magician's Apprentice).
+magic_points_arcyne_technique = 10
+
+# Points of the spellbook an Arcyne Insight scroll gives its reader, form or technique by the scroll (Vibelin granters.dm spell_points).
+magic_insight_points = 10
+
+# Weight of an Arcyne Insight scroll among the finds of a loot chest (Vibelin crates_lockers/chest.dm lootbox).
+magic_insight_chest_weight = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list v0m)
+
+# Tiles a projectile spell reaches when it has no spell_<type>_range of its own (Vibelin SPELL_RANGE_PROJECTILE).
+magic_range_projectile = 10
+
+# Tiles a spell aimed at the ground reaches when it has no spell_<type>_range of its own; the kind of every spell that names none (Vibelin SPELL_RANGE_GROUND).
+magic_range_ground = 10
+
+# Tiles a spell of the two-screens kind reaches when it has no spell_<type>_range of its own (Vibelin SPELL_RANGE_TWO_SCREENS).
+magic_range_two_screens = 10
+
+# Tiles a spell of the aura kind reaches when it has no spell_<type>_range of its own (Vibelin SPELL_RANGE_AURA).
+magic_range_aura = 10
+
+# Tiles a spell of the adjacent kind reaches when it has no spell_<type>_range of its own (Vibelin SPELL_RANGE_ADJACENT).
+magic_range_adjacent = 10

@@ -88,7 +88,7 @@
 
 /obj/structure/trap/attack_hand(mob/living/user, list/modifiers)
 	. = ..()
-	if(. || !rogue_combat_enabled() || !iscarbon(user) || !isturf(loc))
+	if(. || !rogue_medieval_map() || !iscarbon(user) || !isturf(loc))
 		return
 	var/action = rockhill_armed ? "disarm" : "arm"
 	var/crafting = user.rogue_skill_rank(/datum/attribute/skill/craft/crafting)

@@ -7,6 +7,22 @@ GLOBAL_LIST_INIT(rockhill_month_names, list("Psyrise", "Eora", "Dendor", "Astrat
 GLOBAL_LIST_INIT(rockhill_seasons, list("Spring", "Summer", "Autumn", "Winter"))
 GLOBAL_LIST_INIT(rockhill_season_phases, list("Early", "Mid", "Late"))
 
+/// Server setting (ROCKHILL_CALENDAR_EPOCH_YEAR in config/redtard/config.txt): the year of the realm's calendar, written
+/// on dates, decrees and notes.
+/datum/config_entry/number/rockhill_calendar_epoch_year
+	default = 1513
+
+/// Server setting (ROCKHILL_CALENDAR_YEARS_PER_CYCLE): years of the calendar in one cycle of rounds.
+/datum/config_entry/number/rockhill_calendar_years_per_cycle
+	default = 1
+	min_val = 1
+
+/// Server setting (ROCKHILL_CALENDAR_DAYS_IN_MONTH): days in a month of the calendar. The twelve months and the seven
+/// days of the week stay in the code: they have names (rockhill_month_names, rockhill_day_names).
+/datum/config_entry/number/rockhill_calendar_days_in_month
+	default = 28
+	min_val = 1
+
 /proc/rockhill_time_tips()
 	return world.file2list(ROCKHILL_TIME_TIPS_FILE) - ""
 

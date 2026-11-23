@@ -111,7 +111,7 @@ GLOBAL_LIST_INIT(rogue_adjust_styles, rogue_init_adjust_styles())
 		playsound(src, style.toggle_sound, 50, TRUE, -1)
 	wearer.refresh_obscured()
 	update_slot_icon()
-	if((wearer.head == src || wearer.wear_mask == src) && rogue_combat_enabled())
+	if((wearer.head == src || wearer.wear_mask == src) && rogue_medieval_map())
 		wearer.rogue_update_fov()
 	return TRUE
 
@@ -144,12 +144,12 @@ GLOBAL_LIST_INIT(rogue_adjust_styles, rogue_init_adjust_styles())
 
 /mob/living/carbon/human/is_mouth_covered(check_flags = ALL)
 	. = ..()
-	if(!. && (check_flags & ITEM_SLOT_HEAD) && head && (head.rogue_coverage & ROGUE_COVER_MOUTH) && rogue_combat_enabled())
+	if(!. && (check_flags & ITEM_SLOT_HEAD) && head && (head.rogue_coverage & ROGUE_COVER_MOUTH) && rogue_medieval_map())
 		return head
 
 /mob/living/carbon/human/is_eyes_covered(check_flags = ALL)
 	. = ..()
-	if(!. && (check_flags & ITEM_SLOT_HEAD) && head && (head.rogue_coverage & ROGUE_COVER_EYES) == ROGUE_COVER_EYES && rogue_combat_enabled())
+	if(!. && (check_flags & ITEM_SLOT_HEAD) && head && (head.rogue_coverage & ROGUE_COVER_EYES) == ROGUE_COVER_EYES && rogue_medieval_map())
 		return head
 
 // Ratwood's adjustable items (Initialize() of each type adds adjustable_clothing with these flags); their children adjust alike.

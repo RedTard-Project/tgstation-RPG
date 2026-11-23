@@ -15,7 +15,7 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/mimic/Initialize(mapload)
 	. = ..()
-	if(!rogue_combat_enabled())
+	if(!rogue_medieval_map())
 		return
 	if(mapload)
 		for(var/obj/item/loot in loc)
@@ -32,7 +32,7 @@
 
 /// Ratwood disguise().
 /mob/living/simple_animal/hostile/retaliate/rogue/mimic/rogue_hide()
-	if(stat != STABLE || !rogue_combat_enabled())
+	if(stat != STABLE || !rogue_medieval_map())
 		return
 	rogue_pve_disguised = TRUE
 	name = initial(rogue_pve_chest_type.name)

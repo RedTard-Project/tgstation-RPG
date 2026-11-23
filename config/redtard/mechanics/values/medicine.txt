@@ -1,0 +1,521 @@
+# Medicine (block VR1): germs and infection (germ_*, infection_*), pain, shock, pulse and blood of the body (combat/pain.dm, blood.dm, heart.dm), and treatment: bandages, sewing, splints, tourniquets, leeches (combat/medicine.dm, splints.dm, leeches.dm).
+# Mechanics numbers: name = value, described by the # lines right above it; times are in deciseconds. The build compiles this file in, so its numbers are the defaults; a file of the same name in config/redtard_private/mechanics/values/ is read instead when present.
+
+# --- From the code of modular_redtard (code_numbers.py, list vr1a)
+
+# Germs of an injury or a limb at which it is inflamed: it no longer mends by itself, and the limb runs a fever (Vibelin INFECTION_LEVEL_ONE).
+germ_infection_one = 10
+
+# Germs of an injury or a limb at which it is pus-ridden and hurts (Vibelin INFECTION_LEVEL_TWO).
+germ_infection_two = 10
+
+# Germs of a limb of a living body at which gangrene takes it: the limb rots (Vibelin INFECTION_LEVEL_THREE).
+germ_infection_three = 10
+
+# Germs of clean ground: an open injury gathers germs up to it (Vibelin GERM_LEVEL_START_MAX).
+germ_env_clean = 10
+
+# Germs of dirty ground (earth, grass, mud, filth on the floor): an open injury gathers germs up to it (Vibelin GERM_LEVEL_FILTHY).
+germ_env_dirty = 10
+
+# Germs a blow of a weapon or teeth leaves in the injury it opens (Vibelin incoming_germ: an ambient weapon's germs, a third, halved).
+germ_blow_start = 10
+
+# Germs of a blow every point of the antibiotic chemical effect kills (Vibelin bodypart_attacked_by()).
+germ_blow_antibiotic_factor = 10
+
+# Least damage per injury at which an injury can be infected (Vibelin infection_check()).
+infection_min_damage = 10
+
+# Damage per injury below which a treated injury cannot be infected (Vibelin infection_check()).
+infection_treated_max = 10
+
+# Percent a second per point of damage a bleeding bruise on dirty ground takes germs (Vibelin infection_check()).
+infection_chance_blunt = 10
+
+# Percent a second per point of damage a burn on dirty ground takes germs (Vibelin infection_check()).
+infection_chance_burn = 10
+
+# Percent a second per point of damage a cut on dirty ground takes germs (Vibelin infection_check()).
+infection_chance_slash = 10
+
+# Percent a second per point of damage a puncture on dirty ground takes germs (Vibelin infection_check()).
+infection_chance_puncture = 10
+
+# Percent a second per point of damage a lash on dirty ground takes germs (Vibelin infection_check()).
+infection_chance_lash = 10
+
+# Percent a second per point of damage a bite on dirty ground takes germs (Vibelin leaves bites out of infection_check(); the module counts them as cuts).
+infection_chance_bite = 10
+
+# Germs of an injury that make a point of the chance a second its limb takes germs from it, though the limb has more (Vibelin handle_germ_sync()).
+germ_limb_spread_divisor = 10
+
+# Most points of that chance before the share below (Vibelin handle_germ_sync()).
+germ_limb_spread_max = 10
+
+# Share of those points that is the percent chance a second (Vibelin handle_germ_sync(): halved).
+germ_limb_spread_share = 10
+
+# Antibiotic chemical effect at which the limb takes no more germs from its injuries (Vibelin handle_germ_sync()).
+germ_antibiotic_stop = 10
+
+# Percent chance a second the body fights off the germs of a slightly infected limb with a working artery (Vibelin handle_germ_effects(): immunity 100 times 0.3).
+germ_immunity_chance = 10
+
+# Germs a second the body fights off a slightly infected limb (Vibelin handle_germ_effects()).
+germ_immunity_cleanse = 10
+
+# Germs a second a limb with a torn artery gathers: dry gangrene (Vibelin handle_germ_effects()).
+germ_dry_gangrene = 10
+
+# Antibiotic chemical effect at which an infection no longer grows by itself (Vibelin handle_germ_effects()).
+germ_growth_antibiotic_stop = 10
+
+# Germs of a limb that give a percent chance a second its infection grows by itself (Vibelin handle_germ_effects(): germ_level / 6 * 0.005).
+germ_growth_chance_divisor = 10
+
+# Germs a second an infection grows by itself (Vibelin handle_germ_effects(), full immunity).
+germ_growth_rate = 10
+
+# Antibiotic chemical effect at which an inflamed limb runs no fever (Vibelin handle_germ_effects()).
+germ_fever_antibiotic_stop = 10
+
+# Kelvins below the heat damage limit the fever of a fully infected limb reaches (Vibelin handle_germ_effects()).
+germ_fever_margin = 10
+
+# Percent chance a second a slightly infected limb feels warm and swollen (Vibelin handle_germ_effects()).
+germ_warning_chance = 10
+
+# Pain of the warning of a slightly infected limb (Vibelin handle_germ_effects()).
+germ_warning_pain = 10
+
+# Percent chance a second an inflamed limb feels hot (Vibelin handle_germ_effects()).
+germ_fever_chance = 10
+
+# Pain of the hot feeling of an inflamed limb (Vibelin handle_germ_effects()).
+germ_fever_pain = 10
+
+# Antibiotic chemical effect at which a pus-ridden limb no longer leaks pus (Vibelin handle_germ_effects()).
+germ_pus_antibiotic_stop = 10
+
+# Percent chance a second a pus-ridden limb leaks pus (Vibelin handle_germ_effects()).
+germ_pus_chance = 10
+
+# Pain of a pus-ridden limb leaking pus (Vibelin handle_germ_effects()).
+germ_pus_pain = 10
+
+# Antibiotic chemical effect that cures at once a limb not yet inflamed with a working artery (Vibelin handle_antibiotics()).
+germ_antibiotic_cure = 10
+
+# Germs a second every point of the antibiotic chemical effect kills in an inflamed limb (Vibelin SANITIZATION_ANTIBIOTIC).
+germ_antibiotic_rate = 10
+
+# Germs a second more a lying body on antibiotics fights off a limb (Vibelin SANITIZATION_LYING).
+germ_lying_cleanse = 10
+
+# Body temperature in kelvins below which germs stop (Vibelin update_germs(): -15 C).
+germ_cold_stop = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list vr1g)
+
+# Units of reagents a cloth holds of what it is soaked in, which seep from a bandage into the limb (Vibelin cloth volume).
+bandage_reagent_volume = 10
+
+# Share of the time a needle takes, per point of perception above the middling, taken off (Vibelin perception_mod).
+sew_perception_per_point = 10
+
+# Share of the time a needle takes taken off at the most Medicine, given back below journeyman (Vibelin doctor_mod).
+sew_skill_factor = 10
+
+# Least share of its time a stitch of an injury can take, however good the doctor.
+sew_time_min_factor = 10
+
+# Deciseconds a stitch of an injury takes at least (Vibelin sew_wounds()).
+sew_injury_time = 10
+
+# Deciseconds a stitch of an injury takes more, per point of the size of one of its wounds (Vibelin damage_per_injury()).
+sew_injury_time_per_damage = 10
+
+# Most deciseconds the size of an injury adds to a stitch (Vibelin sew_wounds()).
+sew_injury_time_extra_max = 10
+
+# Damage of an injury a stitch closes at most, never below the size it heals from by itself (Vibelin sew_wounds()).
+sew_injury_heal = 10
+
+# Medicine experience of a stitch of an injury, per point of intelligence (Vibelin learning boon).
+sew_injury_xp = 10
+
+# Deciseconds splinting a limb takes (Vibelin do_splint()).
+splint_time = 10
+
+# Deciseconds taking a splint off takes (Vibelin do_remove_splint()).
+unsplint_time = 10
+
+# Mending by itself a splint adds to each crit of its limb it does not hold (Vibelin splint wound_healing).
+splint_healing = 10
+
+# Brute of one blow on a splinted limb that snaps the splint (Vibelin SPLINT_BREAK_THRESHOLD).
+splint_break_damage = 10
+
+# Pain a snapped splint gives its limb, least (Vibelin remove_splint()).
+splint_break_pain_min = 10
+
+# Pain a snapped splint gives its limb, most.
+splint_break_pain_max = 10
+
+# Deciseconds tying a tourniquet on oneself takes (Vibelin do_apply_tourniquet()).
+tourniquet_self_time = 10
+
+# Deciseconds tying a tourniquet on another takes (Vibelin do_apply_tourniquet()).
+tourniquet_time = 10
+
+# Deciseconds under a tourniquet before the limb starves: pain and cold (Vibelin TOURNIQUET_ISCHEMIA_DELAY).
+tourniquet_ischemia_delay = 10
+
+# Deciseconds under a tourniquet before the limb dies (Vibelin TOURNIQUET_NECROSIS_DELAY).
+tourniquet_necrosis_delay = 10
+
+# Chance a second that a starved limb hurts (Vibelin TOURNIQUET_DAMAGE_PROB).
+tourniquet_pain_chance = 10
+
+# Pain a starved limb gets at once, least (Vibelin on_life()).
+tourniquet_pain_min = 10
+
+# Pain a starved limb gets at once, most.
+tourniquet_pain_max = 10
+
+# Chance a second that a starved limb is felt cold and distant (Vibelin on_life()).
+tourniquet_message_chance = 10
+
+# Power of the pain of that feeling (Vibelin custom_pain()).
+tourniquet_message_pain = 10
+
+# Blood that sprays from a starved limb that still bleeds when the tourniquet comes off, least (Vibelin remove_tourniquet()).
+tourniquet_release_bleed_min = 10
+
+# Blood that sprays then, most.
+tourniquet_release_bleed_max = 10
+
+# Pain of that spray, least (Vibelin remove_tourniquet()).
+tourniquet_release_pain_min = 10
+
+# Pain of that spray, most.
+tourniquet_release_pain_max = 10
+
+# How much more a leech drinks and cleanses from a limb with an open incision (Vibelin on_embed_life()).
+leech_open_wound_factor = 10
+
+# Share of its drinking a leech gets from one leeches shun (Vibelin TRAIT_LEECHIMMUNE).
+leech_immune_factor = 10
+
+# Blood the parasite drinks or gives each Life tick (Vibelin blood_sucking).
+parasite_suck = 10
+
+# Toxins the parasite draws out each Life tick (Vibelin toxin_healing).
+parasite_cleanse = 10
+
+# Blood the parasite holds when found (Vibelin BLOOD_VOLUME_SURVIVE, on TG's volume of blood).
+parasite_blood = 10
+
+# Most blood the parasite holds (Vibelin BLOOD_VOLUME_BAD, on TG's volume of blood).
+parasite_blood_max = 10
+
+# Chance each Life tick that the host of an abyssoid leech praises Abyssor (Vibelin on_embed_life()).
+abyssoid_pray_chance = 10
+
+# Damage of the surgical injury an incision opens (Vibelin BLEED_DAMAGE_RATIO share).
+surgery_incision_damage = 10
+
+# Deciseconds a stitch of a crit takes (Vibelin do_sewing_step()).
+sew_crit_time = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list vr1v)
+
+# Most pain a body part holds, as a share of its most damage (Vibelin max_pain_damage).
+pain_max_factor = 10
+
+# Pain a body part eases by itself in a second (Vibelin pain_heal_tick with the pain system speed).
+pain_heal_per_second = 10
+
+# How many times faster pain eases lying down (Vibelin pain_heal_rest_multiplier).
+pain_heal_rest_factor = 10
+
+# Painkiller power per point of pain it takes off (Vibelin PAINKILLER_DIVISOR).
+pain_painkiller_divisor = 10
+
+# Share of a part's pain left while a hand holds it (Vibelin get_shock() grabbedby).
+pain_grab_factor = 10
+
+# Pain of a lodged thing per its pain multiplier and size (Vibelin embedded_pain_multiplier * w_class).
+pain_embedded_factor = 10
+
+# Chance in percent that the pain message names a less hurt part than the worst (Vibelin handle_shock()).
+pain_limb_pick_chance = 10
+
+# Part shock from which its pain message says it hurts badly (Vibelin handle_shock()).
+pain_limb_bad = 10
+
+# Part shock from which its pain message says it hurts terribly (Vibelin handle_shock()).
+pain_limb_terrible = 10
+
+# Chance in percent per second of a mild pain message of the worst part (Vibelin handle_shock()).
+pain_limb_message_chance = 10
+
+# Chance in percent per second of a bad or terrible pain message of the worst part (Vibelin handle_shock()).
+pain_limb_message_chance_bad = 10
+
+# Pain per point of brute damage of a hit (Vibelin SHOCK_MOD_BRUTE).
+pain_damage_brute = 10
+
+# Pain per point of burn damage of a hit (Vibelin SHOCK_MOD_BURN).
+pain_damage_burn = 10
+
+# Chance in percent per point of a hit's pain that it draws a cry (Vibelin receive_damage()).
+pain_scream_share = 10
+
+# Least felt power of a custom pain that is told and cried out (Vibelin PAIN_EMOTE_MINIMUM).
+pain_emote_minimum = 10
+
+# Power of a pain from which it draws a cry rather than a moan.
+pain_emote_cry = 10
+
+# Power of a pain from which it draws a scream.
+pain_emote_scream = 10
+
+# Deciseconds between two pain messages, plus the power of the pain (Vibelin PAIN_MESSAGE_COOLDOWN).
+pain_message_cooldown = 10
+
+# Deciseconds between two pain cries, plus the power of the pain (Vibelin PAIN_EMOTE_COOLDOWN).
+pain_emote_cooldown = 10
+
+# Fewest deciseconds before another custom pain is felt, plus its power (Vibelin custom_pain()).
+pain_next_min = 10
+
+# Most deciseconds before another custom pain is felt, plus its power (Vibelin custom_pain()).
+pain_next_max = 10
+
+# Shock stage 1: a sting (Vibelin SHOCK_STAGE_1).
+shock_stage_1 = 10
+
+# Shock stage 2: heavy eyes, a stutter, and slowed at middling willpower (Vibelin SHOCK_STAGE_2).
+shock_stage_2 = 10
+
+# Shock stage 3: the pain distracts (Vibelin SHOCK_STAGE_3).
+shock_stage_3 = 10
+
+# Shock stage 4: held, then knocked down now and then; a stopped heart throws the body here (Vibelin SHOCK_STAGE_4, soft crit).
+shock_stage_4 = 10
+
+# Shock stage 5: knocked down longer, gasping (Vibelin SHOCK_STAGE_5).
+shock_stage_5 = 10
+
+# Shock stage 6: blacking out now and then (Vibelin SHOCK_STAGE_6).
+shock_stage_6 = 10
+
+# Shock stage 7: stunned and kept down (Vibelin SHOCK_STAGE_7, hard crit).
+shock_stage_7 = 10
+
+# Shock stage 8, the last: collapse; also the top of the traumatic shock scale (Vibelin SHOCK_STAGE_8).
+shock_stage_8 = 10
+
+# How far below the last triggered stage the stage must fall before that stage triggers again (Vibelin SHOCK_STAGE_HYSTERESIS).
+shock_hysteresis = 10
+
+# Share of a part's most pain that counts as fully hurt in the traumatic shock (Vibelin getShock()).
+shock_limb_full_share = 10
+
+# Most a part counts in the traumatic shock, in parts fully hurt (Vibelin getShock()).
+shock_limb_overshoot = 10
+
+# Weight of each next hurt part in the traumatic shock against the one before (Vibelin SHOCK_STACK_DECAY).
+shock_stack_decay = 10
+
+# Weight of each next part when no part hurts (Vibelin SHOCK_USELESS_DECAY).
+shock_useless_decay = 10
+
+# Parts the traumatic shock is weighed against, so that a lost limb does not lower it (Vibelin SHOCK_STACK_MAX_LIMBS).
+shock_stack_limbs = 10
+
+# Shock stage gained per second at middling willpower (Vibelin PAIN_SYSTEM_SPEED_MODIFIER).
+shock_speed = 10
+
+# How much slower the shock stage falls than it climbs, at middling willpower (Vibelin SHOCK_RECOVERY_COEFF).
+shock_recovery = 10
+
+# Share of the shock stage the traumatic shock must pass for the stage to climb faster (Vibelin handle_shock_stage()).
+shock_growth_share = 10
+
+# Slowdown of a body in shock past the second stage (Vibelin MOVESPEED_ID_SHOCK).
+shock_slowdown = 10
+
+# Slowdown of a body whose heart has stopped (Vibelin MOVESPEED_ID_CARDIAC_ARREST).
+shock_arrest_slowdown = 10
+
+# Traumatic shock from which pain takes perception, intelligence and speed now and then (Vibelin PAIN_SHOCK_PENALTY).
+shock_penalty_pain = 10
+
+# Willpower times this is the shock per point of that penalty (Vibelin handle_shock()).
+shock_penalty_divisor = 10
+
+# Most chance in percent per second of the penalty (Vibelin handle_shock(): 60, halved).
+shock_penalty_chance_cap = 10
+
+# Traumatic shock per percent per second of chance of the penalty at middling willpower (Vibelin handle_shock(): 2, the chance halved).
+shock_penalty_chance_divisor = 10
+
+# Most perception, intelligence and speed a sharp pain takes (Vibelin SHOCK_PENALTY_CAP).
+shock_penalty_cap = 10
+
+# Deciseconds the shock penalty lasts (Vibelin SHOCK_PENALTY_COOLDOWN_DURATION).
+shock_penalty_duration = 10
+
+# Chance in percent per second of a stutter past the second shock stage (Vibelin handle_shock_stage()).
+shock_stutter_chance = 10
+
+# Deciseconds of that stutter.
+shock_stutter = 10
+
+# Power of the sting at the first shock stage (Vibelin handle_shock_stage()).
+shock_stage1_pain = 10
+
+# Power of the distraction at the third shock stage (Vibelin handle_shock_stage()).
+shock_stage3_pain = 10
+
+# Deciseconds a body is held on reaching the fourth shock stage (Vibelin handle_shock_stage()).
+shock_stage4_hold = 10
+
+# Chance in percent per second of a fall at the fourth shock stage (Vibelin handle_shock_stage()).
+shock_stage4_chance = 10
+
+# Deciseconds of that fall.
+shock_stage4_knockdown = 10
+
+# Chance in percent per second of a fall at the fifth shock stage (Vibelin handle_shock_stage()).
+shock_stage5_chance = 10
+
+# Deciseconds of that fall.
+shock_stage5_knockdown = 10
+
+# Chance in percent per second of a gasp at the fifth shock stage (Vibelin handle_shock_stage()).
+shock_stage5_gasp_chance = 10
+
+# Chance in percent per second of a black-out at the sixth shock stage (Vibelin handle_shock_stage()).
+shock_stage6_chance = 10
+
+# Deciseconds of that black-out.
+shock_stage6_unconscious = 10
+
+# Deciseconds of the stun on reaching the seventh shock stage (Vibelin handle_shock_stage()).
+shock_stage7_stun = 10
+
+# Deciseconds a body is kept down each tick at the seventh shock stage (Vibelin handle_shock_stage()).
+shock_stage7_knockdown = 10
+
+# Chance in percent per second of a black-out at the seventh shock stage (Vibelin handle_shock_stage()).
+shock_stage7_chance = 10
+
+# Deciseconds of that black-out.
+shock_stage7_unconscious = 10
+
+# Power of the pain of the collapse at the last shock stage (Vibelin handle_shock_stage()).
+shock_stage8_pain = 10
+
+# Deciseconds of the black-out of the collapse at the last shock stage (Vibelin handle_shock_stage()).
+shock_stage8_unconscious = 10
+
+# Deciseconds a body is kept out each tick while it stays at the last shock stage (Vibelin handle_shock_stage()).
+shock_stage8_hold_unconscious = 10
+
+# Deciseconds before a body makes its own endorphins again (Vibelin ENDORPHINATION_COOLDOWN_DURATION).
+endorphin_cooldown = 10
+
+# Share of that pause for the Psydonian grit (Vibelin endorphinate()).
+endorphin_grit_cooldown_factor = 10
+
+# Painkiller power of the body's own endorphins (Vibelin endorphin reagent).
+endorphin_painkiller = 10
+
+# Willpower the endorphins last as long as at the least (Vibelin endorphinate(): endurance, at least this).
+endorphin_min_willpower = 10
+
+# Willpower the endorphins last as long as at the most (Vibelin endorphinate(): endurance, at most this).
+endorphin_max_willpower = 10
+
+# Deciseconds the endorphins last per point of willpower (Vibelin endorphin metabolism).
+endorphin_time_per_willpower = 10
+
+# Pulse power of stimulants a heart bears without harm (Vibelin handle_pulse()).
+pulse_chem_safe = 10
+
+# Chance in percent per second, per square of the stimulants past that, that they hurt the heart (Vibelin handle_pulse()).
+pulse_chem_damage_share = 10
+
+# Heart damage of a racing pulse or too many stimulants (Vibelin handle_pulse()).
+heart_pulse_damage = 10
+
+# Chance in percent per second that a thready pulse hurts the heart (Vibelin handle_pulse()).
+pulse_thready_damage_chance = 10
+
+# Chance in percent per second that a very fast pulse hurts the heart (Vibelin handle_pulse()).
+pulse_faster_damage_chance = 10
+
+# Share of the blood a stopped heart of the living still moves (Vibelin get_blood_circulation()).
+circulation_pulse_none = 10
+
+# Share of the blood a slow pulse moves (Vibelin get_blood_circulation()).
+circulation_pulse_slow = 10
+
+# Share of the blood a fast pulse moves (Vibelin get_blood_circulation()).
+circulation_pulse_fast = 10
+
+# Share of the blood a very fast or thready pulse moves (Vibelin get_blood_circulation()).
+circulation_pulse_faster = 10
+
+# Least share of the blood even a ruined heart moves (Vibelin get_blood_circulation()).
+heart_min_efficiency = 10
+
+# Share of the blood more that carries air under a weak oxygenating drink (Vibelin get_blood_oxygenation(), tirimol).
+oxygenated_weak = 10
+
+# Share of the blood more that carries air under a strong one (Vibelin get_blood_oxygenation(), dexalin plus).
+oxygenated_strong = 10
+
+# Oxygenating power from which a drink counts as strong (Vibelin get_blood_oxygenation()).
+oxygenated_strong_power = 10
+
+# TG's blood volume per unit of Vibelin's (560 / 1200): Vibelin's bleeding rates are counted on its own volume.
+blood_volume_scale = 10
+
+# Circulating blood, in normal volumes, past which arteries start to tear (Vibelin BLOOD_VOLUME_EXCESS).
+blood_excess_share = 10
+
+# Chance in percent per second that such blood tears an artery (Vibelin handle_blood() of the heart).
+blood_excess_artery_chance = 10
+
+# Share of the bleeding at a slow pulse (Vibelin handle_blood() of the heart).
+bleed_pulse_slow = 10
+
+# Share of the bleeding at a fast pulse (Vibelin handle_blood() of the heart).
+bleed_pulse_fast = 10
+
+# Share of the bleeding at a very fast or thready pulse (Vibelin handle_blood() of the heart).
+bleed_pulse_faster = 10
+
+# Share of the bleeding of a body bled near out (Vibelin BLEEDOUT).
+bleed_bleedout_factor = 10
+
+# Share of a part's most damage in burns from which it bleeds by itself (Vibelin get_bleed_rate()).
+bleed_burnt_share = 10
+
+# Bleeding per second of such a part, on Vibelin's volume (Vibelin BLEED_DAMAGE_RATIO / 10).
+bleed_burnt_rate = 10
+
+# Share of a part's bleeding left under a tourniquet (Vibelin get_bleed_multiplier(): a tourniquet stops it).
+bleed_tourniquet_factor = 10
+
+# Share of a part's bleeding left while one's own hand presses it (TG grasp).
+bleed_grasp_factor = 10
+
+# Share of a part's bleeding left with its vessels clamped (Vibelin get_bleed_multiplier()).
+bleed_clamped_factor = 10

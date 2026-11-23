@@ -162,7 +162,6 @@
 	blade_class = "smashing"
 	item_d_type = "blunt"
 	attack_verb = list("demolishes", "crushes", "wrecks")
-	demolition_mod = 3
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -193,7 +192,6 @@
 	blade_class = "smashing"
 	item_d_type = "blunt"
 	attack_verb = list("demolishes", "crushes", "wrecks")
-	demolition_mod = 3.5
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE

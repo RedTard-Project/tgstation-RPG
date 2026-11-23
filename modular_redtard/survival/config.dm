@@ -33,7 +33,7 @@
 
 /// Whether the Ratwood survival mechanics run: on medieval maps, as the rest of the rogue mechanics.
 /proc/rogue_survival_enabled()
-	return rogue_combat_enabled()
+	return rogue_medieval_map()
 
 /// Ratwood add_sleep_experience(user, cooking, STAINT * share) after a cooking step: cooking experience by intelligence
 /// (dreamt from Apprentice on, crafting/experience.dm).

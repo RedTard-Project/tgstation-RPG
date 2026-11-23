@@ -62,7 +62,7 @@
 #define ROGUE_STEW_WATER rogue_value("stew_water")
 #define ROGUE_STEW_WATER_AFTER rogue_value("stew_water_after")
 /// Default simmering time of a stew ingredient (STEW_COOKING_TIME).
-#define ROGUE_STEW_TIME (60 SECONDS)
+#define ROGUE_STEW_TIME rogue_value("stew_time")
 /// Time to put an ingredient into the pot, or fat to melt, before the cook's skill.
 #define ROGUE_STEW_STEP rogue_value("stew_step")
 /// Deep frying in tallow: the time and the tallow one fry takes (DEEP_FRY_TIME, OIL_CONSUMED).
@@ -70,9 +70,10 @@
 #define ROGUE_DEEP_FRY_OIL rogue_value("deep_fry_oil")
 
 // Ratwood kneading and pastry (modular/Neu_Food/code/raw, NeuFood.dm, others/dairy.dm).
-/// Ratwood short_cooktime and long_cooktime of a hand step before the cook's skill.
-#define ROGUE_COOK_SHORT (2 SECONDS)
-#define ROGUE_COOK_LONG (3 SECONDS)
+/// Ratwood short_cooktime and long_cooktime of a hand step before the cook's skill (a food combo names one by its value,
+/// cook_short or cook_long).
+#define ROGUE_COOK_SHORT rogue_value("cook_short")
+#define ROGUE_COOK_LONG rogue_value("cook_long")
 /// Water flour takes to become wet flour.
 #define ROGUE_FLOUR_WATER rogue_value("flour_water")
 /// Milk one pinch of salt turns salted, salted milk one stick of butter takes, salted milk one fresh cheese takes.
@@ -86,9 +87,6 @@
 /// Water a vessel takes from open water at once, and the time it takes (turf/open/water attackby()).
 #define ROGUE_WATER_FILL rogue_value("water_fill")
 #define ROGUE_WATER_FILL_TIME rogue_value("water_fill_time")
-/// Water a bucket draws from a well or a vessel from a fountain, and the time it takes.
-#define ROGUE_WELL_WATER 250
-#define ROGUE_WELL_TIME (1 SECONDS)
 /// A spoonful from a bowl: how much and how long (bowl attackby()).
 #define ROGUE_SPOON_SIP rogue_value("spoon_sip")
 #define ROGUE_SPOON_TIME rogue_value("spoon_time")

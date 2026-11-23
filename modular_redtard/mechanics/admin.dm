@@ -88,6 +88,7 @@ ADMIN_VERB(rogue_armor_compare, R_DEBUG, "View Armor Comparison", "Browse and co
 				formula.error = failure
 				to_chat(user, span_warning("[formula.id] did not change: [failure]"))
 				return TRUE
+			mechanics.revision++
 			message_admins("[key_name_admin(user)] set the rogue formula [formula.id] to: [formula.text]")
 			log_admin("[key_name(user)] set the rogue formula [formula.id] from [old_text] to [formula.text]")
 			return TRUE
@@ -96,6 +97,7 @@ ADMIN_VERB(rogue_armor_compare, R_DEBUG, "View Armor Comparison", "Browse and co
 			if(!formula)
 				return
 			formula.reset()
+			mechanics.revision++
 			log_admin("[key_name(user)] reset the rogue formula [formula.id].")
 			return TRUE
 		if("try_formula")

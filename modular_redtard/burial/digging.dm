@@ -3,8 +3,9 @@
 /// snow left patchy). The shovel's scoop breaks dirt and grass into a road and a road into a hole (burial/graves.dm), digs
 /// a hole deeper and fills it back with the clod it carries; a clod on the blade mends a road into dirt, sinks in water,
 /// or drops where the shovel is put. The scoop takes snow off the dirt under it, sand into a clod, a clod off the ground.
-/// A clod thrown down where three more lie heaps them into a pile the shovel takes from and puts back. A road by water is
-/// mud, slow to walk; all dirt cakes the shoes of who walks it, and muddy shoes leave footprints (Ratwood human Move()).
+/// A clod thrown down where three more lie heaps them into a pile the shovel takes from and puts back. Dirt is slow to
+/// walk and the road is not (Vibelin's roguefloor.dm: dirt and mud slow, road and grass do not); a road by water is mud,
+/// slow too; all dirt cakes the shoes of who walks it, and muddy shoes leave footprints (Ratwood human Move()).
 /// Not ported: digging on in a loop (Ratwood's middle click on dirt), the snow clod (until the porter brings
 /// /obj/item/natural/dirtclod/snow a hand takes no snow), the sand pile, dirt turning to mud in water and rain (Ratwood
 /// water_level), snow footprints and the steps' sound in mud, the walking stick and Longstrider against the mud.
@@ -292,7 +293,15 @@ GLOBAL_LIST_INIT(rogue_scoopable_snow, typecacheof(list(
 	if(rogue_hand_clod(user, /obj/item/natural/dirtclod/sand, "scoops up some sand"))
 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
-// --- Mud
+// --- Slow ground and mud
+
+/// Vibelin /turf/open/floor/dirt slowdown: plain dirt is slow to walk on a medieval map; its road (Vibelin slowdown 0) is
+/// not, nor the grass. Taking the clods of a tile or breaking it with a shovel makes it a road, mending a road makes it dirt
+/// again: each is a new turf, so the slowdown follows.
+/turf/open/floor/rogue/dirt/Initialize(mapload)
+	. = ..()
+	if(!istype(src, /turf/open/floor/rogue/dirt/road) && rogue_medieval_map())
+		slowdown = rogue_value("dirt_slowdown")
 
 /// Ratwood road update_water() as the road loads: a road by water is mud.
 /turf/open/floor/rogue/dirt/road/Initialize(mapload)

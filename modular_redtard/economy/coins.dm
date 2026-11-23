@@ -7,7 +7,8 @@
 	gender = NEUTER
 	singular_name = "coin"
 	merge_type = /obj/item/roguecoin
-	max_amount = ROGUE_COIN_PILE_MAX
+	/// coin_pile_max of trade.txt, set in Initialize() before the stack splits what is over it.
+	max_amount = null
 	full_w_class = WEIGHT_CLASS_TINY
 	resistance_flags = FIRE_PROOF
 	drop_sound = ROGUE_SOUND_COIN_DROP
@@ -25,6 +26,11 @@
 	/// One or two coins are drawn at a fifth of their size on the floor (Ratwood dropshrink).
 	var/shrunk = FALSE
 	COOLDOWN_DECLARE(flip_cooldown)
+
+/obj/item/roguecoin/Initialize(mapload, new_amount = amount, merge = TRUE, list/mat_override = null, mat_amt = 1)
+	if(isnull(max_amount))
+		max_amount = ROGUE_COIN_PILE_MAX
+	return ..()
 
 /obj/item/roguecoin/get_real_price()
 	return sellprice * get_amount()
@@ -183,8 +189,8 @@ GLOBAL_LIST_INIT(rogue_coin_kinds, list(
 
 /// Worth of one coin of a kind in mammons.
 /proc/rogue_coin_value(kind)
-	var/obj/item/roguecoin/coin_type = GLOB.rogue_coin_kinds[kind]
-	return coin_type ? max(1, initial(coin_type.sellprice)) : 0
+	var/coin_type = GLOB.rogue_coin_kinds[kind]
+	return coin_type ? max(1, rogue_base_price(coin_type)) : 0
 
 /// Machines take zennies, ziliquae and zenarii, not dungeon psila (Ratwood: every machine refuses gilbranze).
 /proc/rogue_coin_accepted(obj/item/thing)

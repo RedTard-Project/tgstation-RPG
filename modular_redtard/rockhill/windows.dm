@@ -123,16 +123,21 @@
 
 /obj/structure/roguewindow/openclose
 	var/lockdir
-	var/window_lock_strength = ROCKHILL_WINDOW_LOCK
+	/// Name of the lock's mechanics value (structures.txt): Initialize() reads it into window_lock_strength.
+	var/window_lock_key = "rockhill_window_lock"
+	/// Prying progress the lock takes to give.
+	var/window_lock_strength
 
 /obj/structure/roguewindow/openclose/reinforced
 	max_integrity = 800
 	integrity_failure = 0.1
-	window_lock_strength = ROCKHILL_WINDOW_LOCK_REINFORCED
+	window_lock_key = "rockhill_window_lock_reinforced"
 	repair_cost_first = /obj/item/ingot/iron
 
 /obj/structure/roguewindow/openclose/Initialize(mapload)
 	. = ..()
+	if(isnull(window_lock_strength))
+		window_lock_strength = rogue_value(window_lock_key)
 	lockdir = dir
 	RegisterSignal(SSdcs, COMSIG_GLOB_ROCKHILL_TIME_OF_DAY, PROC_REF(on_time_of_day))
 	update_appearance(UPDATE_ICON_STATE)

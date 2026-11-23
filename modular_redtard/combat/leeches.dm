@@ -3,7 +3,10 @@
 /// body's Life, combat/blood.dm) until it is full or the body is dry, then drops off; ripped off early it tears the skin. Each wild
 /// leech has a nature (leech_lore()): an evil one drinks more and cleanses less, and is named and coloured for it. A cheele,
 /// Pestra's, squeezed in the hand, gives back the blood it holds instead. Off a body a leech slowly digests what it drank
-/// (process(), counted when it is looked at or set on someone).
+/// (process(), counted when it is looked at or set on someone). Vibelin's additions (modules/fishing/leeches.dm): a leech drinks
+/// and cleanses more from a limb with an open incision, lets go of bones and of what is not flesh, and barely
+/// drinks from one leeches shun; Vibelin's parasite is a cheele of its own, and the abyssoid leech drinks nothing and has its
+/// host praise Abyssor.
 
 /// Ratwood leech_lore(): the scale of a leech's evil, and how far its nature moves its drinking and its cleansing (up to twice
 /// its base each), never below one.
@@ -204,13 +207,18 @@
 
 /// Ratwood on_embed_life(), each Life tick of the body it is on, living or dead: it draws toxins out, then drinks blood, or a
 /// squeezed cheele gives the blood it holds; full, empty, or with the body dry, it drops off. One past Journey's End is not
-/// drunk from.
+/// drunk from. Vibelin: it lets go of bones and of a limb that is not flesh, drinks and cleanses more where an incision is
+/// open (get_cut(TRUE, TRUE)), and drinks little from one leeches shun (TRAIT_LEECHIMMUNE).
 /obj/item/natural/worms/leech/proc/rogue_leech_tick(mob/living/carbon/human/host, ticks)
 	rogue_digest()
-	host.adjust_tox_loss(-rogue_cleanse * ticks)
+	var/obj/item/bodypart/limb = rogue_limb
+	if(limb && (limb.rogue_skeleton || !IS_ORGANIC_LIMB(limb)))
+		rogue_drop_off()
+		return
+	var/list/numbers = rogue_treatment_numbers()
 	var/volume = host.get_blood_volume()
 	if(rogue_giving)
-		var/cap = rogue_value("cheele_blood_cap")
+		var/cap = numbers["cheele_blood_cap"]
 		var/given = min(cap - volume, rogue_blood, rogue_suck * ticks)
 		if(given > 0)
 			host.adjust_blood_volume(given, maximum = cap)
@@ -218,14 +226,28 @@
 		if(rogue_blood <= 0 || host.get_blood_volume() >= cap)
 			rogue_drop_off()
 		return
+	var/factor = limb?.rogue_open_incision() ? numbers["leech_open_wound_factor"] : 1
+	host.adjust_tox_loss(-rogue_cleanse * factor * ticks)
 	if(HAS_TRAIT(host, TRAIT_JOURNEYS_END))
 		return
-	var/drunk = min(rogue_blood_max - rogue_blood, volume, rogue_suck * ticks)
+	var/drunk = min(rogue_blood_max - rogue_blood, volume, rogue_suck * ticks) * factor
+	if(HAS_TRAIT(host, TRAIT_LEECHIMMUNE))
+		drunk *= numbers["leech_immune_factor"]
 	if(drunk > 0)
 		host.adjust_blood_volume(-drunk)
 		rogue_blood += drunk * rogue_blood_factor
 	if(rogue_blood >= rogue_blood_max || host.get_blood_volume() <= 0)
 		rogue_drop_off()
+
+/// Vibelin get_cut(surgical_only = TRUE, ignore_gauze = TRUE): an incision of surgery on this limb, not sewn shut, still open
+/// and bleeding (bandage or not).
+/obj/item/bodypart/proc/rogue_open_incision()
+	for(var/datum/rogue_injury/injury as anything in rogue_injuries)
+		if(!(injury.injury_flags & ROGUE_INJ_SURGICAL) || (injury.injury_flags & ROGUE_INJ_SUTURED) || !(injury.kind & ROGUE_INJURY_SLASH))
+			continue
+		if(injury.is_bleeding(TRUE))
+			return TRUE
+	return FALSE
 
 /// Ratwood remove_embedded_object(): it lets go, onto the ground under the body.
 /obj/item/natural/worms/leech/proc/rogue_drop_off()
@@ -255,7 +277,8 @@
 /// Ratwood process(): a leech digests what it holds, a little each Life tick, on a body or off it.
 /obj/item/natural/worms/leech/proc/rogue_digest()
 	if(rogue_digests && rogue_blood > 0)
-		rogue_blood = max(rogue_blood - rogue_value("leech_digest") * (world.time - rogue_fed_at) / (ROGUE_LIFE_TICK SECONDS), 0)
+		var/list/numbers = rogue_treatment_numbers()
+		rogue_blood = max(rogue_blood - numbers["leech_digest"] * (world.time - rogue_fed_at) / (ROGUE_LIFE_TICK SECONDS), 0)
 	rogue_fed_at = world.time
 
 /// Ratwood's cheele attack_self(): squeezed, it turns from drawing blood to giving it, and back.
@@ -263,9 +286,55 @@
 	. = ..()
 	if(. || !rogue_combat_enabled())
 		return
+	rogue_squeeze(user)
+	return TRUE
+
+/// Squeezed, a cheele or a parasite turns from drawing blood to giving it, and back.
+/obj/item/natural/worms/leech/proc/rogue_squeeze(mob/user)
 	rogue_giving = !rogue_giving
 	user.visible_message(span_notice("[user] squeezes [src]."), span_notice("I squeeze [src]. It will now [rogue_giving ? "infuse" : "extract"] blood."))
+
+/// Vibelin's parasite: a domesticated freek, always the same (consistent); it drinks and cleanses much, holds blood from the
+/// start, digests nothing, and squeezed gives blood as a cheele does.
+/obj/item/natural/worms/leech/parasite
+	name = "the parasite"
+	desc = "A foul, wriggling creecher. Known to suck whole villages of their blood, these rare freeks have been domesticated for medical purposes."
+	icon = 'modular_redtard/combat/icons/rogue_treatment.dmi'
+	icon_state = "parasite"
+	inhand_icon_state = null
+	color = null
+
+/obj/item/natural/worms/leech/parasite/rogue_set_nature()
+	rogue_suck = rogue_value("parasite_suck")
+	rogue_cleanse = rogue_value("parasite_cleanse")
+	rogue_blood = rogue_value("parasite_blood")
+	rogue_blood_max = rogue_value("parasite_blood_max")
+	rogue_rip_damage = rogue_value("leech_rip_damage")
+	rogue_digests = FALSE
+
+/obj/item/natural/worms/leech/parasite/rogue_leech_lore()
+	return
+
+/obj/item/natural/worms/leech/parasite/attack_self(mob/user, modifiers)
+	. = ..()
+	if(. || !rogue_combat_enabled())
+		return
+	rogue_squeeze(user)
 	return TRUE
+
+/// Vibelin's abyssoid leech, sent by Abyssor: it drinks nothing and digests nothing, and now and then its host praises Abyssor.
+/obj/item/natural/worms/leech/abyssoid/rogue_set_nature()
+	. = ..()
+	rogue_suck = 0
+	rogue_digests = FALSE
+
+/obj/item/natural/worms/leech/abyssoid/rogue_leech_tick(mob/living/carbon/human/host, ticks)
+	. = ..()
+	if(QDELETED(src) || rogue_limb?.owner != host || host.stat != STABLE)
+		return
+	var/list/numbers = rogue_treatment_numbers()
+	if(prob(numbers["abyssoid_pray_chance"] * ticks))
+		INVOKE_ASYNC(host, TYPE_PROC_REF(/atom/movable, say), pick("PRAISE ABYSSOR!", "REMEMBER ABYSSOR!", "ABYSSOR LIVES!", "GLORY TO ABYSSOR!", "ABYSSOR IS COMING!"), null, list(), TRUE, null, FALSE, "abyssoid leech")
 
 #undef LEECH_EVILNESS_MAX
 #undef LEECH_NATURE_SPREAD

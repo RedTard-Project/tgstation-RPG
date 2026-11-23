@@ -57,6 +57,20 @@ FOLDER_FILES = {
 	"migrants": "triumphs.txt",
 }
 DEFAULT_FILE = "combat.txt"  # "Combat and the rest: ... combat/, ai/, hud/ and others"
+# Files of combat/ whose numbers go to a file of their own (block VR1: the body model of medicine), by path prefix.
+PATH_FILES = {
+	"combat/surgery/": "surgery.txt",
+	"combat/injuries/": "injuries.txt",
+	"combat/_medical_defines.dm": "medicine.txt",
+	"combat/pain.dm": "medicine.txt",
+	"combat/blood.dm": "medicine.txt",
+	"combat/grab_bleed.dm": "medicine.txt",
+	"combat/heart.dm": "medicine.txt",
+	"combat/chem_effects.dm": "medicine.txt",
+	"combat/medicine.dm": "medicine.txt",
+	"combat/splints.dm": "medicine.txt",
+	"combat/leeches.dm": "medicine.txt",
+}
 
 TIME_UNITS = {"MILLISECONDS": "*0.01", "DECISECONDS": "*1", "SECONDS": "*10", "MINUTES": "*600", "HOURS": "*36000"}
 NUMERIC_EXPR = re.compile(r"^[\s\d.()+\-*/]*$")
@@ -505,8 +519,10 @@ def command_find(args):
 			row["places"].insert(0, f"{line_const}: {row['file']}:{row['line']}")
 		row["const"] = short_places(row["places"])
 		row["values_file"] = FOLDER_FILES.get(row["folder"], DEFAULT_FILE)
-		if row["file"].startswith("combat/surgery/"):
-			row["values_file"] = "surgery.txt"
+		for prefix, values_file in PATH_FILES.items():
+			if row["file"].startswith(prefix):
+				row["values_file"] = values_file
+				break
 		row["name"] = unique_name(row["name"], taken)
 		if not row["desc"]:
 			row["desc"] = f"TODO describe #define {row['text']} of {row['file']}" if row["kind"] == "define" else "TODO"

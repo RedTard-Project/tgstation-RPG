@@ -6542,7 +6542,7 @@ Ratwood names an `icon_state` its sheet does not have (a sprite chosen at runtim
 | `/obj/machinery/light/rogue` | `modular_redtard/rockhill/icons/roguetown/misc/lighting.dmi` | `tube` |
 | `/obj/machinery/light/rogue/campfire/pyre` | `modular_redtard/rockhill/icons/roguetown/misc/tallstructure.dmi` | `pyre1` |
 
-## Wearables without a worn sprite (607)
+## Wearables without a worn sprite (594)
 
 No sheet holds their worn state: `worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'` (one empty state) and `worn_icon_state = null`, the TG way to say "no worn sprite".
 
@@ -6620,7 +6620,6 @@ No sheet holds their worn state: `worn_icon = 'modular_redtard/rockhill/icons/bl
 - `/obj/item/clothing/cloak/citywatch`
 - `/obj/item/clothing/cloak/citywatch/janissary`
 - `/obj/item/clothing/cloak/dunestalker`
-- `/obj/item/clothing/cloak/psyaltrist`
 - `/obj/item/clothing/cloak/raincloak/amir`
 - `/obj/item/clothing/cloak/templar`
 - `/obj/item/clothing/cloak/undivided`
@@ -6636,7 +6635,6 @@ No sheet holds their worn state: `worn_icon = 'modular_redtard/rockhill/icons/bl
 - `/obj/item/clothing/gloves/roguetown/knuckles/psydon/old`
 - `/obj/item/clothing/gloves/roguetown/nomagic`
 - `/obj/item/clothing/gloves/roguetown/plate/dwarven`
-- `/obj/item/clothing/gloves/roguetown/plate/shadowgauntlets`
 - `/obj/item/clothing/gloves/xylix`
 - `/obj/item/clothing/head/hooded/rainhood/amirhood`
 - `/obj/item/clothing/head/mob_holder`
@@ -6763,7 +6761,6 @@ No sheet holds their worn state: `worn_icon = 'modular_redtard/rockhill/icons/bl
 - `/obj/item/clothing/ring/topazs`
 - `/obj/item/clothing/shoes/roguetown`
 - `/obj/item/clothing/shoes/roguetown/boots/armor/dwarven`
-- `/obj/item/clothing/suit/roguetown/armor/armordress`
 - `/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/janissary`
 - `/obj/item/clothing/suit/roguetown/armor/leather/newkeep`
 - `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/duchess`
@@ -6773,19 +6770,14 @@ No sheet holds their worn state: `worn_icon = 'modular_redtard/rockhill/icons/bl
 - `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/heiress`
 - `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/magos`
 - `/obj/item/clothing/suit/roguetown/armor/leather/newkeep/steward`
-- `/obj/item/clothing/suit/roguetown/armor/plate/fluted/shadowplate`
 - `/obj/item/clothing/suit/roguetown/armor/plate/full/dwarven`
 - `/obj/item/clothing/suit/roguetown/armor/plate/full/dwarven/smith`
 - `/obj/item/clothing/suit/roguetown/armor/regenerating/skin/body/disciple`
 - `/obj/item/clothing/suit/roguetown/armor/regenerating/skin/body/monk`
 - `/obj/item/clothing/suit/roguetown/armor/regenerating/skin/chest/disciple`
 - `/obj/item/clothing/suit/roguetown/armor/regenerating/skin/chest/monk`
-- `/obj/item/clothing/suit/roguetown/armor/silkcoat`
 - `/obj/item/clothing/suit/roguetown/shirt`
 - `/obj/item/clothing/suit/roguetown/shirt/dress/amiradress`
-- `/obj/item/clothing/suit/roguetown/shirt/dress/etrdress`
-- `/obj/item/clothing/suit/roguetown/shirt/dress/etrdress2`
-- `/obj/item/clothing/suit/roguetown/shirt/dress/etrdress3`
 - `/obj/item/clothing/suit/roguetown/shirt/dress/thawb`
 - `/obj/item/clothing/suit/roguetown/shirt/dress/thawb/beige`
 - `/obj/item/clothing/suit/roguetown/shirt/dress/thawb/black`
@@ -6798,7 +6790,6 @@ No sheet holds their worn state: `worn_icon = 'modular_redtard/rockhill/icons/bl
 - `/obj/item/clothing/suit/roguetown/shirt/exoticsilkbra/green`
 - `/obj/item/clothing/suit/roguetown/shirt/exoticsilkbra/red`
 - `/obj/item/clothing/suit/roguetown/shirt/jafar`
-- `/obj/item/clothing/suit/roguetown/shirt/kimono`
 - `/obj/item/clothing/suit/roguetown/shirt/robe/bisht`
 - `/obj/item/clothing/suit/roguetown/shirt/robe/bisht/beige`
 - `/obj/item/clothing/suit/roguetown/shirt/robe/bisht/black`
@@ -6810,10 +6801,6 @@ No sheet holds their worn state: `worn_icon = 'modular_redtard/rockhill/icons/bl
 - `/obj/item/clothing/suit/roguetown/shirt/robe/bisht/purple`
 - `/obj/item/clothing/suit/roguetown/shirt/robe/bisht/random`
 - `/obj/item/clothing/suit/roguetown/shirt/robe/bisht/red`
-- `/obj/item/clothing/suit/roguetown/shirt/robe/nun_dress`
-- `/obj/item/clothing/suit/roguetown/shirt/robe/sofiavest`
-- `/obj/item/clothing/suit/roguetown/shirt/shadowshirt`
-- `/obj/item/clothing/suit/roguetown/shirt/shadowshirt/elflock`
 - `/obj/item/clothing/suit/roguetown/shirt/sultan`
 - `/obj/item/clothing/suit/roguetown/shirt/sultana`
 - `/obj/item/clothing/under/roguetown`

@@ -1,19 +1,31 @@
 GLOBAL_VAR_INIT(rogue_skill_xp_modifier, 1)
 
+/// The experience each skill rank starts at (skill_xp_* of combat.txt), from none to Legendary. Read once, and again after
+/// the mechanics numbers are reloaded: experience is counted on every gain.
+GLOBAL_LIST_EMPTY(rogue_skill_xp_floors)
+GLOBAL_VAR(rogue_skill_xp_floors_revision)
+
+/proc/rogue_skill_xp_floors()
+	var/revision = rogue_mechanics_revision()
+	if(!length(GLOB.rogue_skill_xp_floors) || GLOB.rogue_skill_xp_floors_revision != revision)
+		GLOB.rogue_skill_xp_floors = list(ROGUE_SKILL_XP_NONE, ROGUE_SKILL_XP_NOVICE, ROGUE_SKILL_XP_APPRENTICE, ROGUE_SKILL_XP_JOURNEYMAN, ROGUE_SKILL_XP_EXPERT, ROGUE_SKILL_XP_MASTER, ROGUE_SKILL_XP_LEGENDARY)
+		GLOB.rogue_skill_xp_floors_revision = revision
+	return GLOB.rogue_skill_xp_floors
+
 /datum/attribute_holder/proc/xp_for_level(level)
+	var/list/floors = rogue_skill_xp_floors()
 	level = clamp(ROGUE_NULLTOZERO(level), skill_min, skill_max)
 	if(level >= ROGUE_SKILL_LEVEL_LEGENDARY)
-		return ROGUE_SKILL_XP_LEGENDARY
-	var/static/list/floors = list(ROGUE_SKILL_XP_NONE, ROGUE_SKILL_XP_NOVICE, ROGUE_SKILL_XP_APPRENTICE, ROGUE_SKILL_XP_JOURNEYMAN, ROGUE_SKILL_XP_EXPERT, ROGUE_SKILL_XP_MASTER, ROGUE_SKILL_XP_LEGENDARY)
+		return floors[length(floors)]
 	var/tier = floor(level / ROGUE_SKILL_PER_RANK)
 	var/progress = (level - tier * ROGUE_SKILL_PER_RANK) / ROGUE_SKILL_PER_RANK
 	return floors[tier + 1] + progress * (floors[tier + 2] - floors[tier + 1])
 
 /datum/attribute_holder/proc/level_for_xp(xp)
-	var/static/list/floors = list(ROGUE_SKILL_XP_NONE, ROGUE_SKILL_XP_NOVICE, ROGUE_SKILL_XP_APPRENTICE, ROGUE_SKILL_XP_JOURNEYMAN, ROGUE_SKILL_XP_EXPERT, ROGUE_SKILL_XP_MASTER, ROGUE_SKILL_XP_LEGENDARY)
+	var/list/floors = rogue_skill_xp_floors()
 	if(xp <= ROGUE_SKILL_XP_NONE)
 		return ROGUE_SKILL_LEVEL_NONE
-	if(xp >= ROGUE_SKILL_XP_LEGENDARY)
+	if(xp >= floors[length(floors)])
 		return ROGUE_SKILL_LEVEL_LEGENDARY
 	for(var/tier in length(floors) - 1 to 1 step -1)
 		if(xp >= floors[tier])

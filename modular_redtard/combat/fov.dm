@@ -20,9 +20,10 @@
 	var/block2add = NONE
 
 /mob/living/carbon/human
-	/// How far the view reaches to each side of where the human faces, in degrees.
-	var/rogue_fov_left = ROGUE_FOV_SIDE
-	var/rogue_fov_right = ROGUE_FOV_SIDE
+	/// How far the view reaches to each side of where the human faces, in degrees. Null until rogue_update_fov(): the sides are
+	/// even then, so in_fov() leaves TG's own check.
+	var/rogue_fov_left
+	var/rogue_fov_right
 	/// State of the cone in the vision_cone sheet; null leaves TG's own mask.
 	var/rogue_fov_mask
 

@@ -377,3 +377,58 @@ tree_sapling_atom_destruction_chance = 10
 
 # Percent chance a withered tree sapling drops its loot.
 tree_sapling_drop_withered_loot_chance = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list c)
+
+# Most crop health a soil holds; a crop at none is dead. The crop health shares of farming.txt are against it.
+soil_max_health = 10
+
+# Most fibers trimming a mature bush gives.
+farm_bush_trim_fibers_max = 10
+
+# Fewest fibers trimming a mature bush gives.
+farm_bush_trim_fibers_min = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list h4a)
+
+# Deciseconds of growth a slow-growing crop needs to mature, at the normal rate (Ratwood SLOW_GROWING: trees, pumpkins, carrots).
+farm_crop_growing_slow = 10
+
+# Deciseconds of growth a fast-growing crop needs to mature, at the normal rate (Ratwood FAST_GROWING).
+farm_crop_growing_fast = 10
+
+# Deciseconds of growth a very fast-growing crop needs to mature, at the normal rate (Ratwood VERY_FAST_GROWING: rice, sunflowers).
+farm_crop_growing_very_fast = 10
+
+# Deciseconds of growth a crop that names no speed of its own needs to mature, at the normal rate (Ratwood plant_def maturation_time).
+farm_crop_maturation_time = 10
+
+# Deciseconds of growth a crop needs for each harvest after it matured, unless it names its own (Ratwood plant_def produce_time).
+farm_crop_produce_time = 10
+
+# Deciseconds of growth a quick-yielding crop needs for each harvest (Ratwood: wheat, oat, rice, westleach).
+farm_crop_produce_time_fast = 10
+
+# Soil nutrition an extremely hungry crop eats to mature (Ratwood HUNGRINESS_EXTREME: trees, bushes).
+farm_crop_hunger_extreme = 10
+
+# Soil nutrition a demanding crop eats to mature (Ratwood HUNGRINESS_DEMANDING: pumpkins, eggplants).
+farm_crop_hunger_demanding = 10
+
+# Soil nutrition a crop of normal appetite eats to mature, and a bush for each harvest (Ratwood HUNGRINESS_NORMAL).
+farm_crop_hunger_normal = 10
+
+# Soil nutrition a crop of tiny appetite eats to mature (Ratwood HUNGRINESS_TINY: potatoes, turnips, sunflowers, carrots).
+farm_crop_hunger_tiny = 10
+
+# Soil nutrition a crop eats for each harvest, unless it names its own (Ratwood plant_def produce_nutrition).
+farm_crop_produce_nutrition = 10
+
+# Soil nutrition poppies eat to mature (Ratwood poppy).
+farm_crop_poppy_hunger = 10
+
+# Soil nutrition a rocknut tree eats to mature (Ratwood nut).
+farm_crop_nut_hunger = 10
+
+# Soil nutrition a rocknut tree eats for each harvest (Ratwood nut).
+farm_crop_nut_produce_nutrition = 10

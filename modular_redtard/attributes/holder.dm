@@ -1,11 +1,12 @@
 /datum/attribute_holder
 	var/mob/living/parent
-	var/attribute_default = ROGUE_ATTRIBUTE_DEFAULT
-	var/attribute_min = ROGUE_ATTRIBUTE_MIN
-	var/attribute_max = ROGUE_ATTRIBUTE_MAX
+	/// The bounds and the default of a body's attributes; null takes the numbers of combat.txt in New() (a sheet sets its own).
+	var/attribute_default
+	var/attribute_min
+	var/attribute_max
 	var/skill_default = null
 	var/skill_min = ROGUE_SKILL_MIN
-	var/skill_max = ROGUE_SKILL_MAX
+	var/skill_max
 	var/list/attribute_list = list()
 	var/list/raw_attribute_list = list()
 	var/list/attribute_modification
@@ -16,6 +17,14 @@
 
 /datum/attribute_holder/New(mob/living/new_parent)
 	. = ..()
+	if(isnull(attribute_default))
+		attribute_default = ROGUE_ATTRIBUTE_DEFAULT
+	if(isnull(attribute_min))
+		attribute_min = ROGUE_ATTRIBUTE_MIN
+	if(isnull(attribute_max))
+		attribute_max = ROGUE_ATTRIBUTE_MAX
+	if(isnull(skill_max))
+		skill_max = ROGUE_SKILL_MAX
 	for(var/attribute_type in GLOB.rogue_attributes)
 		var/is_skill = ispath(attribute_type, ROGUE_SKILL)
 		if(!(attribute_type in raw_attribute_list))

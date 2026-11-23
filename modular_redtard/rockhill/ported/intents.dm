@@ -91,7 +91,6 @@
 	item_d_type = "blunt"
 	warnie = "aimwarn"
 	attack_verb = list("hits", "strikes")
-	basetime = 140
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -170,7 +169,6 @@
 	blade_class = "blunt"
 	item_d_type = "blunt"
 	attack_verb = list("bashes", "clubs")
-	demolition_mod = 3
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -186,7 +184,6 @@
 	blade_class = "blunt"
 	item_d_type = "blunt"
 	attack_verb = list("bashes", "clubs")
-	demolition_mod = 4.5
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -203,7 +200,6 @@
 	item_d_type = "slash"
 	attack_verb = list("chops", "hacks")
 	swingdelay_type = 2
-	demolition_mod = 2.5
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -220,7 +216,6 @@
 	item_d_type = "slash"
 	attack_verb = list("chops", "hacks")
 	swingdelay_type = 2
-	demolition_mod = 2.5
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -237,7 +232,6 @@
 	item_d_type = "slash"
 	attack_verb = list("chops", "hacks")
 	swingdelay_type = 2
-	demolition_mod = 7
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -254,7 +248,6 @@
 	item_d_type = "slash"
 	attack_verb = list("chops", "hacks")
 	swingdelay_type = 2
-	demolition_mod = 2.5
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -271,7 +264,6 @@
 	item_d_type = "slash"
 	attack_verb = list("chops", "hacks")
 	swingdelay_type = 3
-	demolition_mod = 2.5
 	canparry = FALSE
 	candodge = FALSE
 	no_attack = FALSE
@@ -288,7 +280,6 @@
 	item_d_type = "slash"
 	attack_verb = list("chops", "hacks")
 	swingdelay_type = 2
-	demolition_mod = 1.5
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -305,7 +296,6 @@
 	item_d_type = "slash"
 	attack_verb = list("chops", "hacks")
 	swingdelay_type = 2
-	demolition_mod = 3
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -322,7 +312,6 @@
 	item_d_type = "slash"
 	attack_verb = list("chops", "hacks")
 	swingdelay_type = 2
-	demolition_mod = 4.5
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -339,7 +328,6 @@
 	item_d_type = "slash"
 	attack_verb = list("chops", "hacks")
 	swingdelay_type = 2
-	demolition_mod = 2.5
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -356,7 +344,6 @@
 	item_d_type = "slash"
 	attack_verb = list("chops", "hacks")
 	swingdelay_type = 2
-	demolition_mod = 2.5
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -372,7 +359,6 @@
 	blade_class = "slash"
 	item_d_type = "slash"
 	attack_verb = list("cuts", "slashes")
-	demolition_mod = 2.5
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -388,7 +374,6 @@
 	blade_class = "slash"
 	item_d_type = "slash"
 	attack_verb = list("cuts", "slashes")
-	demolition_mod = 2.5
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -404,7 +389,6 @@
 	blade_class = "slash"
 	item_d_type = "slash"
 	attack_verb = list("cuts", "slashes")
-	demolition_mod = 7
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -420,7 +404,6 @@
 	blade_class = "slash"
 	item_d_type = "slash"
 	attack_verb = list("cuts", "slashes")
-	demolition_mod = 2.5
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -451,7 +434,6 @@
 	blade_class = "slash"
 	item_d_type = "slash"
 	attack_verb = list("cuts", "slashes")
-	demolition_mod = 1.3
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -467,7 +449,6 @@
 	blade_class = "slash"
 	item_d_type = "slash"
 	attack_verb = list("cuts", "slashes")
-	demolition_mod = 4.5
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -484,7 +465,6 @@
 	item_d_type = "slash"
 	attack_verb = list("lunges and chops", "lunges and hacks")
 	effective_range_type = 1
-	demolition_mod = 2.5
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -518,7 +498,6 @@
 	blade_class = "slash"
 	item_d_type = "slash"
 	attack_verb = list("sweeps through", "cuts across")
-	demolition_mod = 2
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -687,7 +666,6 @@
 	blade_class = "chopping"
 	item_d_type = "slash"
 	attack_verb = list("rends")
-	demolition_mod = 0.05
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -1548,7 +1526,6 @@
 	blade_class = "smashing"
 	item_d_type = "blunt"
 	attack_verb = list("crushes")
-	demolition_mod = 1.25
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -1669,7 +1646,6 @@
 	blade_class = "smashing"
 	item_d_type = "blunt"
 	attack_verb = list("smashes")
-	demolition_mod = 1.25
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -1835,7 +1811,6 @@
 	blade_class = "blunt"
 	item_d_type = "blunt"
 	attack_verb = list("strikes", "hits")
-	demolition_mod = 1.25
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -1926,7 +1901,6 @@
 	blade_class = "blunt"
 	item_d_type = "blunt"
 	attack_verb = list("sweeps through", "smashes across")
-	demolition_mod = 1.25
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -2082,7 +2056,6 @@
 	blade_class = "stab"
 	item_d_type = "stab"
 	attack_verb = list("picks", "impales")
-	demolition_mod = 4
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -2114,7 +2087,6 @@
 	blade_class = "stab"
 	item_d_type = "stab"
 	attack_verb = list("stabs", "impales")
-	demolition_mod = 3
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -2131,7 +2103,6 @@
 	blade_class = "stab"
 	item_d_type = "stab"
 	attack_verb = list("stabs", "impales")
-	demolition_mod = 4.5
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -2210,7 +2181,6 @@
 	item_d_type = "slash"
 	attack_verb = list("rends", "cleaves")
 	swingdelay_type = 2
-	demolition_mod = 0.05
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -2228,7 +2198,6 @@
 	item_d_type = "slash"
 	attack_verb = list("rends", "cleaves")
 	swingdelay_type = 2
-	demolition_mod = 0.05
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -2246,7 +2215,6 @@
 	item_d_type = "slash"
 	attack_verb = list("rends", "cleaves")
 	swingdelay_type = 2
-	demolition_mod = 0.05
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -2264,7 +2232,6 @@
 	item_d_type = "slash"
 	attack_verb = list("rends", "cleaves")
 	swingdelay_type = 2
-	demolition_mod = 0.05
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -2282,7 +2249,6 @@
 	item_d_type = "stab"
 	attack_verb = list("skewers", "cleaves")
 	swingdelay_type = 2
-	demolition_mod = 0.05
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -2431,7 +2397,6 @@
 	item_d_type = "stab"
 	warnie = "aimwarn"
 	attack_verb = list("hits", "strikes")
-	basetime = 120
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -3583,7 +3548,6 @@
 	blade_class = "slash"
 	item_d_type = "slash"
 	attack_verb = list("cuts", "slashes")
-	demolition_mod = 1.25
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE
@@ -3600,7 +3564,6 @@
 	item_d_type = "slash"
 	attack_verb = list("cuts", "slashes")
 	swingdelay_type = 3
-	demolition_mod = 3
 	canparry = FALSE
 	candodge = FALSE
 	no_attack = FALSE
@@ -3676,7 +3639,6 @@
 	blade_class = "chopping"
 	item_d_type = "slash"
 	attack_verb = list("rends", "cleaves")
-	demolition_mod = 0.05
 	canparry = TRUE
 	candodge = TRUE
 	no_attack = FALSE

@@ -571,13 +571,12 @@ class VibelinPorter(engine.Porter):
         balance = self.number(resolve('wbalance'))
         if balance is not None:
             written['wbalance'] = 'WBALANCE_SWIFT' if balance > 0 else 'WBALANCE_HEAVY' if balance < 0 else 'WBALANCE_NORMAL'
-        blade = self.number(resolve('max_blade_int'))
-        if blade:
-            written['max_blade_int'] = self.fmt(blade)
         special = resolve('weapon_special')
         if special and special.strip() != 'null':
-            if special.strip() in self.target_types:
-                written['special'] = special.strip()
+            # A special the module replaced by its own (port.json special_map: greatsword_swing -> wave_swing/greatsword).
+            special = cfg.get('special_map', {}).get(special.strip(), special.strip())
+            if special in self.target_types:
+                written['special'] = special
             else:
                 self.dropped[f'special = {special[:60]}'] += 1
         smelt = resolve('smeltresult')
@@ -591,9 +590,6 @@ class VibelinPorter(engine.Porter):
             value = self.number(resolve(theirs))
             if value:
                 written[ours] = self.fmt(value)
-        coverage = self.number(resolve('coverage'))
-        if coverage:
-            written['coverage'] = self.fmt(coverage)
         self.look(path, written)
         return written
 
@@ -684,6 +680,8 @@ class VibelinPorter(engine.Porter):
     def numbers(self, path, target, group_name):
         entry = collections.OrderedDict()
         for field, spec in self.cfg['numbers'].items():
+            if spec.get('groups') and group_name not in spec['groups']:
+                continue
             value = self.number(self.src.resolve(path, spec['var']))
             if value is None:
                 continue
@@ -709,13 +707,43 @@ class VibelinPorter(engine.Porter):
             return None, None, self.cfg['no_rule_reason']
         return best[0], best[1], None
 
+    def in_module_pairs(self, rows):
+        """Vibelin path -> reason, for the selected rows held as a pair ("pair (...)" verdicts) whose matched type is
+        declared somewhere in modular_redtard/ outside items_vibelin/."""
+        header = re.compile(r'^(/obj/item(?:/[A-Za-z0-9_]+)+)/?\s*$')
+        declared = {}
+        own = os.path.join(FOLDER, '')
+        for dp, _dn, fn in os.walk(rel('modular_redtard')):
+            if os.path.join(dp, '').startswith(own):
+                continue
+            for name in fn:
+                if not name.endswith('.dm'):
+                    continue
+                path = os.path.join(dp, name)
+                with open(path, encoding='utf-8', errors='replace') as handle:
+                    for line in handle:
+                        found = header.match(line)
+                        if found:
+                            declared.setdefault(found.group(1), os.path.relpath(path, REPO).replace('\\', '/'))
+        out = {}
+        for row in rows:
+            if not row['verdict'].startswith('pair'):
+                continue
+            for match in (m for m in row['match'].split(',') if m):
+                if match in declared:
+                    out[row['type']] = f'its pair {match} is in the module already ({declared[match]})'
+                    break
+        return out
+
     def port(self, wanted, lists, dry_run):
         rows = [r for r in read_tsv(SELECTION) if r['pick'] == 'vibelin']
         chosen = collections.defaultdict(list)
         skipped = []
-        # port.json "ported_elsewhere": exact Vibelin paths (not their subtypes) whose pair another build's porter brings
-        # anyway, e.g. as a dependency of its outfits; the item would come twice.
-        elsewhere = self.cfg.get('ported_elsewhere', {})
+        # A Vibelin type whose K1v pair the module declares by now (another build's porter brings it anyway, e.g. as a
+        # dependency of its outfits) would come twice: it stays out, exact path only. Counted on every run (H1b), not
+        # kept by hand; port.json "ported_elsewhere" may still add paths with a reason.
+        elsewhere = dict(self.in_module_pairs(rows))
+        elsewhere.update(self.cfg.get('ported_elsewhere', {}))
         for row in [r for r in rows if r['type'] in elsewhere]:
             skipped.append({'kind': row['kind'], 'type': row['type'], 'name': row['name'], 'group': '', 'reason': elsewhere[row['type']]})
         rows = [r for r in rows if r['type'] not in elsewhere]

@@ -315,7 +315,7 @@ GLOBAL_LIST_EMPTY(rockhill_lit_fires)
 /// Ratwood's torch (flashlight.dm): a flame lights it - a fire, a lit torch, a spark (fire_act()) - and using it in hand
 /// only snuffs a lit one. TG's flare lights itself in hand and never goes out from it.
 /obj/item/flashlight/flare/torch/attack_self(mob/user)
-	if(!rogue_combat_enabled())
+	if(!rogue_medieval_map())
 		return ..()
 	if(!fuel)
 		to_chat(user, span_warning("[src] doesn't have any pitch left!"))
@@ -329,7 +329,7 @@ GLOBAL_LIST_EMPTY(rockhill_lit_fires)
 
 /// Anything hot lights an unlit torch: a lit torch held to it, as Ratwood's lit torch sets what it touches alight.
 /obj/item/flashlight/flare/torch/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
-	if(!rogue_combat_enabled() || light_on || !tool.get_temperature())
+	if(!rogue_medieval_map() || light_on || !tool.get_temperature())
 		return ..()
 	if(ignition(user) == ROCKHILL_FLARE_IGNITED)
 		playsound(src, 'modular_redtard/rockhill/sound/items/firelight.ogg', 100, TRUE)

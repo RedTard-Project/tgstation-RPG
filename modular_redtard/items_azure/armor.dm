@@ -20,7 +20,6 @@
 	chunkcolor = "#532e25"
 	smeltresult = /obj/item/ingot/aaslag
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "agauntlets"
 	rogue_female_worn = TRUE
@@ -37,6 +36,7 @@
 	icon = 'modular_redtard/items_azure/icons/clothing/donor_clothes.dmi'
 	icon_state = "chiv_agauntlets"
 	w_class = WEIGHT_CLASS_SMALL
+	worn_icon = 'modular_redtard/items_azure/icons/clothing/onmob/donor_clothes.dmi'
 	slot_flags = ITEM_SLOT_GLOVES
 	body_parts_covered = HAND_LEFT|HAND_RIGHT
 	rogue_sleeved = 'modular_redtard/items_azure/icons/roguetown/clothing/onmob/gloves.dmi'
@@ -51,10 +51,8 @@
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
-	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
-	worn_icon_state = null
+	worn_icon_state = "chiv_agauntlets_f"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_righthand.dmi'
 	inhand_icon_state = null
@@ -84,7 +82,6 @@
 	smeltresult = /obj/item/ingot/avantyne
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "zizoplategauntlets_med"
 	rogue_female_worn = TRUE
@@ -117,7 +114,6 @@
 	smeltresult = /obj/item/ingot/component/baotha
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "baothagloves"
 	rogue_female_worn = TRUE
@@ -149,7 +145,6 @@
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "bkgloves"
 	rogue_female_worn = TRUE
@@ -209,7 +204,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "bkgloves"
 	rogue_female_worn = TRUE
@@ -242,7 +236,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "dominion_cestus"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -273,7 +266,6 @@
 	smeltresult = /obj/item/ingot/component/graggar
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "graggarplategloves_heavy"
 	rogue_female_worn = TRUE
@@ -304,7 +296,6 @@
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "bandedgloves"
 	rogue_female_worn = TRUE
@@ -337,7 +328,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "kazengungauntlets"
 	rogue_female_worn = TRUE
@@ -368,7 +358,6 @@
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "agauntlets"
 	rogue_female_worn = TRUE
@@ -401,7 +390,6 @@
 	smeltresult = /obj/item/ingot/component/zizo
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "zizogauntlets"
 	rogue_female_worn = TRUE
@@ -435,7 +423,6 @@
 	smeltresult = /obj/item/ingot/component/baotha
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_EYES | ROGUE_COVER_MOUTH
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "baothahelm"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -469,7 +456,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "apostleburgeonet"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -535,7 +521,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -570,7 +555,6 @@
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "iklappvisier"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -603,7 +587,6 @@
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "ibascinet"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -670,7 +653,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "burgeonet"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -704,7 +686,6 @@
 	smeltresult = /obj/item/ingot/drow
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "stalkerino_smilehelm"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -738,7 +719,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "dakken_zizbarb"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -772,7 +752,6 @@
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "ihounskull"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -806,7 +785,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "spaz_helm"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -840,7 +818,6 @@
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "ipigface"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -874,7 +851,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "astrata_impressed"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -914,7 +890,6 @@
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "grenzelblack"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/special/grenzelhats_lefthand.dmi'
@@ -950,7 +925,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "elven_barbute_full"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -986,7 +960,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "elven_barbute_winged"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -1018,7 +991,6 @@
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_NOSE
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "headcage"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -1052,7 +1024,6 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDESNOUT
 	smeltresult = /obj/item/ingot/aaslag
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_NOSE
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "ancientbarbute"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -1087,7 +1058,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "limehelm"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -1122,7 +1092,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "astrataclerichelm"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -1189,7 +1158,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "limeastratahelm"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -1224,7 +1192,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS | NECK
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "lamprey_stechhelm"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -1259,7 +1226,6 @@
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS | NECK
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "iavenheavy"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -1326,7 +1292,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "capbarbute"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/special/captain_lefthand.dmi'
@@ -1425,7 +1390,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "dakken_zizhelm"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -1460,7 +1424,6 @@
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "ibarbute"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -1495,7 +1458,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "dakken_zizbarb"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -1530,7 +1492,6 @@
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "ibarbute_visor"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -1565,7 +1526,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "spaz_helm"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -1600,7 +1560,6 @@
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "ibeakhelmet"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -1635,7 +1594,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "crusader_helmt2"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/special/crusader_lefthand.dmi'
@@ -1767,7 +1725,6 @@
 	smeltresult = /obj/item/ingot/gold
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "topfhelm_gold"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -1834,7 +1791,6 @@
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "itopfhelm"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -1869,7 +1825,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "burgonet_s"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -1904,7 +1859,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "crusader_helmt2"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/special/crusader_lefthand.dmi'
@@ -1943,7 +1897,6 @@
 	smeltresult = /obj/item/rogueore/coal
 	anvilrepair = /datum/attribute/skill/craft/carpentry
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS | NECK
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
 	worn_icon_state = "awelfhead"
@@ -2003,7 +1956,6 @@
 	smeltresult = /obj/item/ingot/component/graggar
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "graggarplatehelm_heavy"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -2037,7 +1989,6 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDESNOUT
 	smeltresult = /obj/item/ingot/aaslag
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "ancientsavoyard"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -2072,7 +2023,6 @@
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "iguardhelm"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -2107,7 +2057,6 @@
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "isavoyard"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -2142,7 +2091,6 @@
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "ancientsavoyard"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -2176,7 +2124,6 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDESNOUT
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "silverarmet"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/special/martyr_lefthand.dmi'
@@ -2212,7 +2159,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "seebascinet"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -2247,7 +2193,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "kazengunheavyhelm"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -2281,7 +2226,6 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDESNOUT
 	smeltresult = /obj/item/ingot/aaslag
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "ancientknight"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -2316,7 +2260,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "dakken_zizbarb"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -2351,7 +2294,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "spaz_helm"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -2386,7 +2328,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "knight"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -2421,7 +2362,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "knight"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -2456,7 +2396,6 @@
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "iknight"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -2491,7 +2430,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "knightclassic"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -2558,7 +2496,6 @@
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "ancientknight"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -2593,7 +2530,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "rockhillarmet"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -2660,7 +2596,6 @@
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "iskettle"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -2697,7 +2632,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	icon_state = null
 	inhand_icon_state = null
@@ -2730,7 +2664,6 @@
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "bascinet"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -3118,7 +3051,6 @@
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "ancientbarbute"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -3152,7 +3084,6 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDESNOUT
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "keeperhelm"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -3188,7 +3119,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "ryan_maimedhelm"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -3223,7 +3153,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "ravoxclerichelmet"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -3290,7 +3219,6 @@
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "igatehelm"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -3325,7 +3253,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "silversallet"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -3359,7 +3286,6 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDESNOUT
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "crusader_bucket"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -3395,7 +3321,6 @@
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "ivolfplate"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -3429,7 +3354,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "volfplate"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -3464,7 +3388,6 @@
 	smeltresult = /obj/item/ingot/component/zizo
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "zizobascinet"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -3499,7 +3422,6 @@
 	smeltresult = /obj/item/ingot/component/zizo
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "zizofrogmouth"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -3534,7 +3456,6 @@
 	smeltresult = /obj/item/ingot/component/zizo
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "volfplate_avantyne"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -3567,7 +3488,6 @@
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_EYES | ROGUE_COVER_NOSE
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "plate_helm_item"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/mob/monster/hobgoblins_lefthand.dmi'
@@ -3598,7 +3518,6 @@
 	chunkcolor = "#532e25"
 	smeltresult = /obj/item/ingot/aaslag
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "ancientkettle"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -3633,7 +3552,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "kazengunmedhelm"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -3665,7 +3583,6 @@
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "ancientkettle"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -3702,7 +3619,6 @@
 	sewrepair = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_EYES | ROGUE_COVER_NOSE
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	icon_state = null
 	inhand_icon_state = null
@@ -3738,7 +3654,6 @@
 	sewrepair = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_EYES | ROGUE_COVER_NOSE
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
 	worn_icon_state = "atgervi_shaman"
@@ -3769,7 +3684,6 @@
 	sewrepair = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_EYES | ROGUE_COVER_NOSE
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
 	worn_icon_state = "saigahead"
@@ -3796,7 +3710,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_NOSE
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "nasal"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -3857,7 +3770,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "burgeonet_t"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -3892,7 +3804,6 @@
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_EYES | ROGUE_COVER_NOSE
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "ibandedhelm"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -3924,7 +3835,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "raneshen"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -3958,7 +3868,6 @@
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_EYES | ROGUE_COVER_NOSE
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "chiv_adeathmask"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -3992,7 +3901,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_EYES | ROGUE_COVER_NOSE
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "gsallet"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -4030,7 +3938,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_EYES | ROGUE_COVER_NOSE
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "grenzelvisor"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/special/grenzelhats_lefthand.dmi'
@@ -4064,7 +3971,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_EYES | ROGUE_COVER_NOSE
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "mgrinningsallet"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -4098,7 +4004,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_EYES | ROGUE_COVER_NOSE
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "limehelm"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -4132,7 +4037,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_EYES | ROGUE_COVER_NOSE
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "psyallet"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -4166,7 +4070,6 @@
 	smeltresult = /obj/item/ingot/drow
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "chiv_drowhelm"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -4198,7 +4101,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "skullcap"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -4231,7 +4133,6 @@
 	sewrepair = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_NOSE
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "tricorn"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -4262,7 +4163,6 @@
 	sewrepair = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_NOSE
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "tricorn_skull"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -4294,7 +4194,6 @@
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "iwingedcap"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -4327,7 +4226,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = ROGUE_COVER_FACE
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "birdmask"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -4363,7 +4261,6 @@
 	smeltresult = /obj/item/ingot/component/baotha
 	sewrepair = TRUE
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_NOSE | NECK
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "baothacoif"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/neck_lefthand.dmi'
@@ -4395,7 +4292,6 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR | HIDESNOUT
 	sewrepair = TRUE
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_NOSE | ROGUE_COVER_MOUTH | NECK
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "fullpadded"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/neck_lefthand.dmi'
@@ -4425,7 +4321,6 @@
 	material_category = 1
 	chunkcolor = "#532e25"
 	smeltresult = /obj/item/ingot/aaslag
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "ancientgorget"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/neck_lefthand.dmi'
@@ -4458,7 +4353,6 @@
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = ROGUE_COVER_MOUTH | NECK
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "iaventailbase"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/neck_lefthand.dmi'
@@ -4490,7 +4384,6 @@
 	material_category = 2
 	sellprice = 300
 	smeltresult = /obj/item/ingot/gold
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "goldgorget"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/neck_lefthand.dmi'
@@ -4520,7 +4413,6 @@
 	material_category = 2
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "ancientgorget"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/neck_lefthand.dmi'
@@ -4550,7 +4442,6 @@
 	material_category = 2
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "sgorget"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/neck_lefthand.dmi'
@@ -4580,7 +4471,6 @@
 	material_category = 2
 	smeltresult = /obj/item/ingot/component/graggar
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "graggargorget"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/neck_lefthand.dmi'
@@ -4608,7 +4498,6 @@
 	sleeved_detail = null
 	sewrepair = TRUE
 	rogue_sleeve_scrap = null
-	integrity_failure = 0.1
 	equip_delay_self = 30
 	worn_icon_state = "eastsandals"
 	rogue_female_worn = TRUE
@@ -4625,6 +4514,7 @@
 	icon = 'modular_redtard/items_azure/icons/clothing/donor_clothes.dmi'
 	icon_state = "chiv_aboots"
 	w_class = WEIGHT_CLASS_NORMAL
+	worn_icon = 'modular_redtard/items_azure/icons/clothing/onmob/donor_clothes.dmi'
 	slot_flags = ITEM_SLOT_FEET
 	body_parts_covered = FOOT_LEFT|FOOT_RIGHT
 	rogue_sleeved = null
@@ -4640,11 +4530,9 @@
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 30
 	rogue_salvage_amount = 1
-	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
-	worn_icon_state = null
+	worn_icon_state = "chiv_aboots_f"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_righthand.dmi'
 	inhand_icon_state = null
@@ -4677,7 +4565,6 @@
 	smeltresult = /obj/item/ingot/avantyne
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 30
 	rogue_salvage_amount = 1
 	worn_icon_state = "zizoboots"
@@ -4712,7 +4599,6 @@
 	smeltresult = /obj/item/ingot/component/baotha
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 30
 	rogue_salvage_amount = 1
 	worn_icon_state = "baothaboots"
@@ -4747,7 +4633,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 30
 	rogue_salvage_amount = 1
 	worn_icon_state = "feetplate"
@@ -4782,7 +4667,6 @@
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 30
 	rogue_salvage_amount = 1
 	worn_icon_state = "bkboots"
@@ -4846,7 +4730,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 30
 	rogue_salvage_amount = 1
 	worn_icon_state = "bkboots"
@@ -4881,7 +4764,6 @@
 	sellprice = 300
 	smeltresult = /obj/item/ingot/gold
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 30
 	rogue_salvage_amount = 1
 	worn_icon_state = "goldgreaves"
@@ -4915,7 +4797,6 @@
 	smeltresult = /obj/item/ingot/copper
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 30
 	rogue_salvage_amount = 1
 	worn_icon_state = "csoldierboots"
@@ -4933,6 +4814,7 @@
 	icon = 'modular_redtard/items_azure/icons/roguetown/clothing/armor.dmi'
 	icon_state = "armordressalt"
 	w_class = WEIGHT_CLASS_NORMAL
+	worn_icon = 'modular_redtard/items_azure/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
@@ -4953,11 +4835,9 @@
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
-	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
-	worn_icon_state = null
+	worn_icon_state = "armordressalt_f"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/armor_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/armor_righthand.dmi'
 	inhand_icon_state = null
@@ -4995,7 +4875,6 @@
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	rogue_sleeve_scrap = /obj/item/natural/silk
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 2
 	worn_icon_state = "winterdress"
@@ -5032,7 +4911,6 @@
 	sewrepair = TRUE
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "eastsuit2"
@@ -5071,7 +4949,6 @@
 	sewrepair = TRUE
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "eastsuit3"
@@ -5109,7 +4986,6 @@
 	sewrepair = TRUE
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "eastsuit1"
@@ -5152,7 +5028,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "capplate"
@@ -5192,7 +5067,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "kazengunmedium"
@@ -5234,7 +5108,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "coat_of_plates"
@@ -5325,6 +5198,7 @@
 	icon = 'modular_redtard/items_azure/icons/clothing/donor_clothes.dmi'
 	icon_state = "rhynnbrigandine"
 	w_class = WEIGHT_CLASS_BULKY
+	worn_icon = 'modular_redtard/items_azure/icons/clothing/onmob/donor_clothes.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST|GROIN
 	rogue_sleeved = 'modular_redtard/items_azure/icons/clothing/onmob/donor_sleeves_armor.dmi'
@@ -5345,11 +5219,9 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
-	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
-	worn_icon_state = null
+	worn_icon_state = "rhynnbrigandine_f"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_righthand.dmi'
 	inhand_icon_state = null
@@ -5387,7 +5259,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "fencerbrig"
@@ -5429,7 +5300,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "woodwalkerbrig"
@@ -5507,7 +5377,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "pyrocoat"
@@ -5549,7 +5418,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "kazengunheavy"
@@ -5586,7 +5454,6 @@
 	smeltresult = /obj/item/ingot/aaslag
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "ancientchain"
@@ -5623,7 +5490,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "haubergeon"
@@ -5692,7 +5558,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "cropmailleb"
@@ -5729,7 +5594,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "cropmailles"
@@ -5766,7 +5630,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "elven_chain"
@@ -5803,7 +5666,6 @@
 	smeltresult = /obj/item/ingot/aaslag
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "ancienthauberk"
@@ -5873,7 +5735,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "chainkinib"
@@ -5892,6 +5753,7 @@
 	icon = 'modular_redtard/items_azure/icons/clothing/donor_clothes.dmi'
 	icon_state = "dasfox_elfmaille"
 	w_class = WEIGHT_CLASS_NORMAL
+	worn_icon = 'modular_redtard/items_azure/icons/clothing/onmob/donor_clothes.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_sleeved = 'modular_redtard/items_azure/icons/clothing/onmob/donor_sleeves_armor.dmi'
@@ -5909,11 +5771,9 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
-	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
-	worn_icon_state = null
+	worn_icon_state = "dasfox_elfmaille_f"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_righthand.dmi'
 	inhand_icon_state = null
@@ -5947,7 +5807,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "chainkinis"
@@ -5987,7 +5846,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "robedplate"
@@ -6024,7 +5882,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "hauberk"
@@ -6061,7 +5918,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "graggarhauberk"
@@ -6098,7 +5954,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "gcuirasshauberk"
@@ -6137,7 +5992,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "rockhillmaille"
@@ -6174,7 +6028,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "chainkinii"
@@ -6211,7 +6064,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "icuirasshauberk"
@@ -6346,7 +6198,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "matthioshauberk"
@@ -6386,7 +6237,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "robedplate"
@@ -6423,7 +6273,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "ancienthauberk"
@@ -6494,7 +6343,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "woodwalkerbrig"
@@ -6565,7 +6413,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "cropmaillei"
@@ -6602,7 +6449,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "elven_chain"
@@ -6639,7 +6485,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "haubyrnie"
@@ -6741,7 +6586,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "ollanius_hoeburk"
@@ -6778,7 +6622,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "ancientchain"
@@ -6817,7 +6660,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "woodwalkerbrig"
@@ -6893,7 +6735,6 @@
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	rogue_coverage = CHEST | GROIN | ARMS
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "baothagamb"
@@ -6933,7 +6774,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "gambeson"
@@ -6973,7 +6813,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "darming"
@@ -7013,7 +6852,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "cropgambeson"
@@ -7053,7 +6891,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "djacket"
@@ -7072,6 +6909,7 @@
 	icon = 'modular_redtard/items_azure/icons/clothing/donor_clothes.dmi'
 	icon_state = "dasfox_elfgamb"
 	w_class = WEIGHT_CLASS_NORMAL
+	worn_icon = 'modular_redtard/items_azure/icons/clothing/onmob/donor_clothes.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/azure_rockhill_padded
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
@@ -7092,11 +6930,9 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
-	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
-	worn_icon_state = null
+	worn_icon_state = "dasfox_elfgamb_f"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_righthand.dmi'
 	inhand_icon_state = null
@@ -7133,7 +6969,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "darming"
@@ -7173,7 +7008,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "cropgambeson"
@@ -7213,7 +7047,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "djacket"
@@ -7254,7 +7087,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "grenzelshirt"
@@ -7330,7 +7162,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "handgambeson"
@@ -7440,7 +7271,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "desertrobe"
@@ -7480,7 +7310,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "gambesonp"
@@ -7519,7 +7348,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "leathertunic"
@@ -7556,7 +7384,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "monkleather"
@@ -7597,7 +7424,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "sherwani"
@@ -7637,7 +7463,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "sanshoom_prowlerrobe"
@@ -7677,7 +7502,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "shadowrobe"
@@ -7717,7 +7541,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "gambesonp"
@@ -7736,6 +7559,7 @@
 	icon = 'modular_redtard/items_azure/icons/clothing/donor_clothes.dmi'
 	icon_state = "formfit"
 	w_class = WEIGHT_CLASS_NORMAL
+	worn_icon = 'modular_redtard/items_azure/icons/clothing/onmob/donor_clothes.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/azure_rockhill_padded
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
@@ -7756,11 +7580,9 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
-	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
-	worn_icon_state = null
+	worn_icon_state = "formfit_f"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_righthand.dmi'
 	inhand_icon_state = null
@@ -7796,7 +7618,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "gambeson"
@@ -7835,7 +7656,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "darming"
@@ -7874,7 +7694,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "djacket"
@@ -7914,7 +7733,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "dgamb"
@@ -7987,7 +7805,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "dgamb"
@@ -8027,7 +7844,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "sherwani"
@@ -8067,7 +7883,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "sanshoom_prowlerrobe"
@@ -8106,7 +7921,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "leathercuirass"
@@ -8145,7 +7959,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "plackartleather"
@@ -8184,7 +7997,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "heartplatel"
@@ -8223,7 +8035,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "freijacket"
@@ -8262,7 +8073,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "atgervi_shaman_coat"
@@ -8281,6 +8091,7 @@
 	icon = 'modular_redtard/items_azure/icons/clothing/donor_clothes.dmi'
 	icon_state = "squid_grimecoat"
 	w_class = WEIGHT_CLASS_NORMAL
+	worn_icon = 'modular_redtard/items_azure/icons/clothing/onmob/donor_clothes.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
@@ -8300,11 +8111,9 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
-	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
-	worn_icon_state = null
+	worn_icon_state = "squid_grimecoat_f"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_righthand.dmi'
 	inhand_icon_state = null
@@ -8320,6 +8129,7 @@
 	icon = 'modular_redtard/items_azure/icons/clothing/donor_clothes.dmi'
 	icon_state = "squid_fraycoat"
 	w_class = WEIGHT_CLASS_NORMAL
+	worn_icon = 'modular_redtard/items_azure/icons/clothing/onmob/donor_clothes.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
@@ -8339,11 +8149,9 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
-	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
-	worn_icon_state = null
+	worn_icon_state = "squid_fraycoat_f"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_righthand.dmi'
 	inhand_icon_state = null
@@ -8379,7 +8187,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "hatangafur"
@@ -8419,7 +8226,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "gravecoat"
@@ -8458,7 +8264,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "lampcoat1"
@@ -8530,7 +8335,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "pangolin"
@@ -8569,7 +8373,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "chargahfur"
@@ -8608,7 +8411,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "leathercuirass"
@@ -8647,7 +8449,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "plackartleather"
@@ -8688,7 +8489,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "freijacket"
@@ -8727,7 +8527,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "leathercuirass"
@@ -8766,7 +8565,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "leatherjacketo"
@@ -8806,7 +8604,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "doccoat"
@@ -8914,7 +8711,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "shadowvest"
@@ -8988,7 +8784,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "butlercoat"
@@ -9028,7 +8823,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "leather_armor_item"
@@ -9067,7 +8861,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "artijacket"
@@ -9107,7 +8900,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "leathercuirass"
@@ -9147,7 +8939,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "plackartleather"
@@ -9187,7 +8978,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "leathercuirass"
@@ -9227,7 +9017,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "leathercuirass"
@@ -9269,7 +9058,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "woodwalkerbrig"
@@ -9324,6 +9112,7 @@
 	icon = 'modular_redtard/items_azure/icons/clothing/donor_clothes.dmi'
 	icon_state = "squid_grimecoat"
 	w_class = WEIGHT_CLASS_NORMAL
+	worn_icon = 'modular_redtard/items_azure/icons/clothing/onmob/donor_clothes.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST
 	rogue_sleeved = 'modular_redtard/items_azure/icons/clothing/onmob/donor_sleeves_armor.dmi'
@@ -9341,11 +9130,9 @@
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	rogue_coverage = CHEST
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
-	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
-	worn_icon_state = null
+	worn_icon_state = "squid_grimecoat_f"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_righthand.dmi'
 	inhand_icon_state = null
@@ -9361,6 +9148,7 @@
 	icon = 'modular_redtard/items_azure/icons/clothing/donor_clothes.dmi'
 	icon_state = "squid_fraycoat"
 	w_class = WEIGHT_CLASS_NORMAL
+	worn_icon = 'modular_redtard/items_azure/icons/clothing/onmob/donor_clothes.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST
 	rogue_sleeved = 'modular_redtard/items_azure/icons/clothing/onmob/donor_sleeves_armor.dmi'
@@ -9378,11 +9166,9 @@
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	rogue_coverage = CHEST
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
-	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
-	worn_icon_state = null
+	worn_icon_state = "squid_fraycoat_f"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_righthand.dmi'
 	inhand_icon_state = null
@@ -9417,7 +9203,6 @@
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	rogue_coverage = CHEST
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "eirencoat"
@@ -9437,6 +9222,7 @@
 	icon = 'modular_redtard/items_azure/icons/clothing/donor_clothes.dmi'
 	icon_state = "wyrd_cloak"
 	w_class = WEIGHT_CLASS_NORMAL
+	worn_icon = 'modular_redtard/items_azure/icons/clothing/onmob/donor_clothes.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST
 	rogue_sleeved = 'modular_redtard/items_azure/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
@@ -9453,11 +9239,9 @@
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	rogue_coverage = CHEST
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
-	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
-	worn_icon_state = null
+	worn_icon_state = "wyrd_cloak_f"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_righthand.dmi'
 	inhand_icon_state = null
@@ -9495,7 +9279,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
@@ -10369,7 +10152,6 @@
 	smeltresult = /obj/item/ingot/aaslag
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "ancientplate"
@@ -10408,7 +10190,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "bkhalfarmor"
@@ -10480,7 +10261,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "bkarmor"
@@ -10517,7 +10297,6 @@
 	smeltresult = /obj/item/ingot/aaslag
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "ancientcuirass"
@@ -10536,6 +10315,7 @@
 	icon = 'modular_redtard/items_azure/icons/clothing/donor_clothes.dmi'
 	icon_state = "chiv_acuirass"
 	w_class = WEIGHT_CLASS_NORMAL
+	worn_icon = 'modular_redtard/items_azure/icons/clothing/onmob/donor_clothes.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST
 	rogue_sleeved = 'modular_redtard/items_azure/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
@@ -10554,11 +10334,9 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
-	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
-	worn_icon_state = null
+	worn_icon_state = "chiv_acuirass_f"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_righthand.dmi'
 	inhand_icon_state = null
@@ -10594,7 +10372,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "bcuirass"
@@ -10632,7 +10409,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "plackartb"
@@ -10673,7 +10449,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	icon_state = null
@@ -10709,7 +10484,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_coverage = CHEST
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "copperchest"
@@ -10747,7 +10521,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "plackarts"
@@ -10785,7 +10558,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "gcuirass"
@@ -10823,7 +10595,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "fencercuirass"
@@ -11108,6 +10879,7 @@
 	icon = 'modular_redtard/items_azure/icons/clothing/donor_clothes.dmi'
 	icon_state = "chiv_acuirass"
 	w_class = WEIGHT_CLASS_NORMAL
+	worn_icon = 'modular_redtard/items_azure/icons/clothing/onmob/donor_clothes.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST|LEG_LEFT|LEG_RIGHT
 	rogue_sleeved = 'modular_redtard/items_azure/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
@@ -11126,11 +10898,9 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
-	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
-	worn_icon_state = null
+	worn_icon_state = "chiv_acuirass_f"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_righthand.dmi'
 	inhand_icon_state = null
@@ -11165,7 +10935,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "apostlecuirass"
@@ -11205,7 +10974,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "gildedcuirass"
@@ -11243,7 +11011,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "gflutedcuirass"
@@ -11282,7 +11049,6 @@
 	smeltresult = /obj/item/ingot/gold
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "goldcuirass"
@@ -11320,7 +11086,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "grinningcuirass"
@@ -11358,7 +11123,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "seecuirass"
@@ -11396,7 +11160,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "ornatecuirass"
@@ -11572,7 +11335,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "robedcuirass"
@@ -11612,7 +11374,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "woodwalkerbrig"
@@ -11685,7 +11446,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "heartplates"
@@ -11722,7 +11482,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "plackarti"
@@ -11760,7 +11519,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "igcuirass"
@@ -11798,7 +11556,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "plate_armor_item"
@@ -11836,7 +11593,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "heartplatei"
@@ -11875,7 +11631,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "plate_armor_item"
@@ -11914,7 +11669,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "ancientcuirass"
@@ -11954,7 +11708,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "woodwalkerbrig"
@@ -12027,7 +11780,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "plackarts"
@@ -12065,7 +11817,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "ghalfplate"
@@ -12103,7 +11854,6 @@
 	anvilrepair = /datum/attribute/skill/craft/carpentry
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "awelfchest"
@@ -12155,6 +11905,7 @@
 	icon = 'modular_redtard/items_azure/icons/clothing/donor_clothes.dmi'
 	icon_state = "dasfox_elfmaille"
 	w_class = WEIGHT_CLASS_NORMAL
+	worn_icon = 'modular_redtard/items_azure/icons/clothing/onmob/donor_clothes.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_sleeved = 'modular_redtard/items_azure/icons/clothing/onmob/donor_sleeves_armor.dmi'
@@ -12173,11 +11924,9 @@
 	anvilrepair = /datum/attribute/skill/craft/carpentry
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
-	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
-	worn_icon_state = null
+	worn_icon_state = "dasfox_elfmaille_f"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_righthand.dmi'
 	inhand_icon_state = null
@@ -12212,7 +11961,6 @@
 	anvilrepair = /datum/attribute/skill/craft/carpentry
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "welfchestalt"
@@ -12251,7 +11999,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 60
 	rogue_salvage_amount = 1
 	worn_icon_state = "zizoplatechest_med"
@@ -12289,7 +12036,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 60
 	rogue_salvage_amount = 1
 	worn_icon_state = "baothaplate"
@@ -12327,7 +12073,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 60
 	rogue_salvage_amount = 1
 	worn_icon_state = "plackarts"
@@ -12365,7 +12110,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 60
 	rogue_salvage_amount = 1
 	worn_icon_state = "gflutedhalfplate"
@@ -12403,7 +12147,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 60
 	rogue_salvage_amount = 1
 	worn_icon_state = "gpsycuirass"
@@ -12441,7 +12184,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 60
 	rogue_salvage_amount = 1
 	worn_icon_state = "ghalfplate"
@@ -12479,7 +12221,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 60
 	rogue_salvage_amount = 1
 	worn_icon_state = "zizoplatechest_med"
@@ -12517,7 +12258,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 120
 	rogue_salvage_amount = 1
 	worn_icon_state = "apostleplate"
@@ -12556,7 +12296,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 60
 	rogue_salvage_amount = 1
 	worn_icon_state = "bkarmor"
@@ -12628,7 +12367,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 120
 	rogue_salvage_amount = 1
 	worn_icon_state = "platecorsletnerd"
@@ -12666,7 +12404,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 120
 	rogue_salvage_amount = 1
 	worn_icon_state = "gplate"
@@ -12704,7 +12441,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 120
 	rogue_salvage_amount = 1
 	worn_icon_state = "triheartfelt"
@@ -12742,7 +12478,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 120
 	rogue_salvage_amount = 1
 	worn_icon_state = "apostleplate"
@@ -12780,7 +12515,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 120
 	rogue_salvage_amount = 1
 	worn_icon_state = "gplate"
@@ -12821,7 +12555,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 120
 	rogue_salvage_amount = 1
 	worn_icon_state = "robedplate"
@@ -12859,7 +12592,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 120
 	rogue_salvage_amount = 1
 	worn_icon_state = "graggarplate_heavy"
@@ -12898,7 +12630,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_coverage = CHEST | GROIN | ARMS | LEGS
-	integrity_failure = 0.1
 	equip_delay_self = 80
 	rogue_salvage_amount = 1
 	worn_icon_state = "iplatekini"
@@ -12936,7 +12667,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 120
 	rogue_salvage_amount = 1
 	worn_icon_state = "iplatecorsletnerd"
@@ -12974,7 +12704,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 120
 	rogue_salvage_amount = 1
 	worn_icon_state = "igplate"
@@ -13015,7 +12744,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 120
 	rogue_salvage_amount = 1
 	worn_icon_state = "robedplate"
@@ -13053,7 +12781,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "heartplates"
@@ -13091,7 +12818,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_coverage = CHEST | GROIN
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "ihalfplatekini"
@@ -13128,7 +12854,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "ighalfplate"
@@ -13166,7 +12891,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "ancientplate"
@@ -13238,7 +12962,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "clamellar"
@@ -13276,7 +12999,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "inqcoata"
@@ -13348,7 +13070,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "ilamellar"
@@ -13385,7 +13106,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "leathercoat"
@@ -13424,7 +13144,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	worn_icon_state = "silverhalfplate"
@@ -13465,7 +13184,6 @@
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | CHEST | ROGUE_COVER_VITALS | GROIN | ARMS | HANDS | LEGS | FEET
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
@@ -13495,7 +13213,6 @@
 	sewrepair = TRUE
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
@@ -13804,7 +13521,6 @@
 	boobed = TRUE
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
@@ -13836,7 +13552,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS | NECK | CHEST | ROGUE_COVER_VITALS | GROIN | ARMS | HANDS | LEGS | FEET
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
@@ -13871,7 +13586,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
@@ -14051,7 +13765,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	worn_icon_state = "priestunder"
@@ -14116,7 +13829,6 @@
 	flags_inv = NONE
 	smeltresult = /obj/item/ingot/aaslag
 	sleevetype = "leg"
-	integrity_failure = 0.1
 	equip_delay_self = 30
 	rogue_salvage_amount = 2
 	worn_icon_state = "ancientpants"
@@ -14134,6 +13846,7 @@
 	icon = 'modular_redtard/items_azure/icons/clothing/donor_clothes.dmi'
 	icon_state = "chiv_achaussus"
 	w_class = WEIGHT_CLASS_NORMAL
+	worn_icon = 'modular_redtard/items_azure/icons/clothing/onmob/donor_clothes.dmi'
 	slot_flags = ITEM_SLOT_ICLOTHING
 	body_parts_covered = GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_sleeved = 'modular_redtard/items_azure/icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
@@ -14150,11 +13863,9 @@
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "leg"
-	integrity_failure = 0.1
 	equip_delay_self = 30
 	rogue_salvage_amount = 2
-	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
-	worn_icon_state = null
+	worn_icon_state = "chiv_achaussus_f"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_righthand.dmi'
 	inhand_icon_state = null
@@ -14186,7 +13897,6 @@
 	smeltresult = /obj/item/ingot/avantyne
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "leg"
-	integrity_failure = 0.1
 	equip_delay_self = 30
 	rogue_salvage_amount = 2
 	worn_icon_state = "zizoplatelegs_med"
@@ -14220,7 +13930,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "leg"
-	integrity_failure = 0.1
 	equip_delay_self = 30
 	rogue_salvage_amount = 2
 	worn_icon_state = "bklegs"
@@ -14254,7 +13963,6 @@
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "leg"
-	integrity_failure = 0.1
 	equip_delay_self = 30
 	rogue_salvage_amount = 2
 	worn_icon_state = "ancientpants"
@@ -14289,7 +13997,6 @@
 	smeltresult = /obj/item/ingot/component/zizo
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "leg"
-	integrity_failure = 0.1
 	equip_delay_self = 30
 	rogue_salvage_amount = 2
 	worn_icon_state = "zizoplatelegs"
@@ -14322,7 +14029,6 @@
 	chunkcolor = "#532e25"
 	smeltresult = /obj/item/ingot/aaslag
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "ancientbracers"
 	rogue_female_worn = TRUE
@@ -14394,6 +14100,7 @@
 	icon = 'modular_redtard/items_azure/icons/clothing/donor_clothes.dmi'
 	icon_state = "chiv_abracers"
 	w_class = WEIGHT_CLASS_NORMAL
+	worn_icon = 'modular_redtard/items_azure/icons/clothing/onmob/donor_clothes.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_WRISTS
 	body_parts_covered = ARM_LEFT|ARM_RIGHT
 	rogue_sleeved = 'modular_redtard/items_azure/icons/roguetown/clothing/onmob/wrists.dmi'
@@ -14408,10 +14115,8 @@
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
-	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
-	worn_icon_state = null
+	worn_icon_state = "chiv_abracers_f"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_righthand.dmi'
 	inhand_icon_state = null
@@ -14439,7 +14144,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -14472,7 +14176,6 @@
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "bsbracersclassic"
 	rogue_female_worn = TRUE
@@ -14532,7 +14235,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "splintarms"
 	rogue_female_worn = TRUE
@@ -14563,7 +14265,6 @@
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -14596,7 +14297,6 @@
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "bchainsleevesalt"
 	rogue_female_worn = TRUE
@@ -14627,7 +14327,6 @@
 	material_category = 2
 	sewrepair = TRUE
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "nocwrappings"
 	rogue_female_worn = TRUE
@@ -14659,7 +14358,6 @@
 	material_category = 2
 	sewrepair = TRUE
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "nocwrappings"
 	rogue_female_worn = TRUE
@@ -14691,7 +14389,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "decapauldron"
 	rogue_female_worn = TRUE
@@ -14722,7 +14419,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "steelpauldron"
 	rogue_female_worn = TRUE
@@ -14755,7 +14451,6 @@
 	sellprice = 300
 	smeltresult = /obj/item/ingot/gold
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "goldbracers"
 	rogue_female_worn = TRUE
@@ -14786,7 +14481,6 @@
 	smeltresult = /obj/item/ingot/component/graggar
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "graggarbracers"
 	rogue_female_worn = TRUE
@@ -14845,7 +14539,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "bracers"
 	rogue_female_worn = TRUE
@@ -14875,7 +14568,6 @@
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -14907,7 +14599,6 @@
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "ichainsleevesalt"
 	rogue_female_worn = TRUE
@@ -14938,7 +14629,6 @@
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "jackchain"
 	rogue_female_worn = TRUE
@@ -14972,7 +14662,6 @@
 	sewrepair = TRUE
 	sleevetype = "shirt"
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	worn_icon_state = "baothabracers"
 	rogue_female_worn = TRUE
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/wrists_lefthand.dmi'
@@ -15003,7 +14692,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "goldpauldron"
 	rogue_female_worn = TRUE
@@ -15034,7 +14722,6 @@
 	smeltresult = /obj/item/ingot/component/matthios
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "matthiosbracers"
 	rogue_female_worn = TRUE
@@ -15065,7 +14752,6 @@
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "ancientbracers"
 	rogue_female_worn = TRUE
@@ -15151,7 +14837,6 @@
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "ironsplintarms"
 	rogue_female_worn = TRUE
@@ -15177,7 +14862,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
 	inhand_icon_state = null
@@ -15201,7 +14885,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
 	inhand_icon_state = null
@@ -15225,7 +14908,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
 	inhand_icon_state = null
@@ -15251,9 +14933,7 @@
 	possible_item_intents = list(/datum/intent/shield/block, /datum/intent/mace/smash/shield/metal, /datum/intent/effect/daze)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 25
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/shields32_lefthand.dmi'
@@ -15281,10 +14961,8 @@
 	possible_item_intents = list(/datum/intent/shield/block, /datum/intent/mace/smash/shield/metal/great, /datum/intent/effect/daze)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 60
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/shields32_lefthand.dmi'
@@ -15312,10 +14990,8 @@
 	possible_item_intents = list(/datum/intent/shield/block, /datum/intent/mace/smash/shield/metal/great, /datum/intent/effect/daze)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 75
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/shields32_lefthand.dmi'
@@ -15343,9 +15019,7 @@
 	possible_item_intents = list(/datum/intent/shield/block, /datum/intent/mace/smash/shield/metal, /datum/intent/effect/daze)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 30
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/shields32_lefthand.dmi'
@@ -15377,10 +15051,8 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	sellprice = 100
 	special = /datum/special_intent/limbguard
-	coverage = 10
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/special/captain_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/special/captain_righthand.dmi'
 	inhand_icon_state = null
@@ -15409,9 +15081,7 @@
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 10
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
 	inhand_icon_state = null
@@ -15441,10 +15111,8 @@
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 10
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/shields32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/shields32_righthand.dmi'
 	inhand_icon_state = null
@@ -15470,9 +15138,7 @@
 	possible_item_intents = list(/datum/intent/mace/smash/shield/metal, /datum/intent/shield/block)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 30
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/shields32_lefthand.dmi'
@@ -15501,10 +15167,8 @@
 	possible_item_intents = list(/datum/intent/mace/smash/shield/metal, /datum/intent/shield/block)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 30
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/shields32_lefthand.dmi'
@@ -15531,9 +15195,7 @@
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 55
 	smeltresult = /obj/item/ingot/aaslag
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/shields32_lefthand.dmi'
@@ -15560,10 +15222,8 @@
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 75
 	smeltresult = /obj/item/ingot/avantyne
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/shields32_lefthand.dmi'
@@ -15590,10 +15250,8 @@
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 55
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
@@ -15621,10 +15279,8 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	sellprice = 60
 	special = /datum/special_intent/limbguard
-	coverage = 55
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/shields32_lefthand.dmi'
@@ -15651,10 +15307,8 @@
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 55
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/shields32_lefthand.dmi'
@@ -15681,10 +15335,8 @@
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 50
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/shields32_lefthand.dmi'
@@ -15711,10 +15363,8 @@
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 55
 	smeltresult = /obj/item/ingot/component/zizo
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/shields32_lefthand.dmi'
@@ -15741,10 +15391,8 @@
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/towershield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 55
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/shields32_lefthand.dmi'
@@ -15772,9 +15420,7 @@
 	possible_item_intents = list(/datum/intent/shield/bash, /datum/intent/shield/block, /datum/intent/mace/smash/shield)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/towershield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 40
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/shields32_lefthand.dmi'
@@ -15800,6 +15446,5 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	integrity_failure = 0
 	icon_state = null
 	inhand_icon_state = null

@@ -17,5 +17,5 @@
 
 /datum/job/assistant/after_spawn(mob/living/spawned, client/player_client)
 	. = ..()
-	if(rogue_combat_enabled() || SSmapping.current_map?.rogue_lowmem)
+	if(rogue_combat_enabled())
 		spawned.rogue_max_attributes()

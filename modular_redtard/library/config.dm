@@ -6,7 +6,7 @@
 /// Whether the Ratwood library runs (books, shelves, the press, manuscripts): on medieval maps, as the rest of the rogue
 /// mechanics.
 /proc/rogue_library_enabled()
-	return rogue_combat_enabled()
+	return rogue_medieval_map()
 
 /proc/rogue_book_archive_enabled()
 	return CONFIG_GET(flag/rogue_book_archive)

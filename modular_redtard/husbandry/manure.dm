@@ -15,7 +15,7 @@
 	if(!beast.rogue_manure_type)
 		return
 	manure += seconds_per_tick
-	if(manure < ROGUE_MANURE_TIME || !isturf(beast.loc))
+	if(manure < manure_time || !isturf(beast.loc))
 		return
 	var/cap = ROGUE_MANURE_TILE_CAP
 	if(cap > 0)

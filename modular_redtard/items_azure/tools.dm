@@ -264,7 +264,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hand/draw)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -282,7 +281,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/fishing_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/fishing_righthand.dmi'
 	inhand_icon_state = null
@@ -637,7 +635,6 @@
 	rogue_grid_height = 96
 	possible_item_intents = list(/datum/intent/cast, /datum/intent/auto, /datum/intent/spear/bash)
 	sellprice = 15
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/tools_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/tools_righthand.dmi'
 	inhand_icon_state = null
@@ -659,7 +656,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 96
 	possible_item_intents = list(/datum/intent/cast, /datum/intent/auto, /datum/intent/spear/bash)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/tools_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/tools_righthand.dmi'
 	inhand_icon_state = null
@@ -681,7 +677,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 96
 	possible_item_intents = list(/datum/intent/cast, /datum/intent/auto, /datum/intent/spear/bash)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/tools_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/tools_righthand.dmi'
 	inhand_icon_state = null
@@ -703,7 +698,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/lighting_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/lighting_righthand.dmi'
 	inhand_icon_state = null
@@ -725,7 +719,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -747,7 +740,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -769,7 +761,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -790,7 +781,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -814,7 +804,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -837,7 +826,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -860,7 +848,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -883,7 +870,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -906,7 +892,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -929,7 +914,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -952,7 +936,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -975,7 +958,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -998,7 +980,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -1021,7 +1002,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -1044,7 +1024,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -1067,7 +1046,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -1090,7 +1068,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -1113,7 +1090,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -1136,7 +1112,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -1159,7 +1134,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -1182,7 +1156,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -1205,7 +1178,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -1228,7 +1200,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -1251,7 +1222,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -1274,7 +1244,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null

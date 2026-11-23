@@ -123,16 +123,15 @@
 	var/obj/item/rogueweapon/surgery/cautery/cautery = allocate(__IMPLIED_TYPE__)
 	cautery.rogue_heat(10 SECONDS)
 	var/obj/item/bodypart/arm = patient.get_bodypart(BODY_ZONE_L_ARM)
-	patient.apply_damage(15, BRUTE, arm, wound_bonus = 100, sharpness = SHARP_EDGED)
-	var/datum/wound/rogue/dynamic/slash/slash = arm.get_wound_type(/datum/wound/rogue/dynamic/slash)
-	TEST_ASSERT(slash, "A cut did not open a slash")
-	var/health = slash.rogue_health
+	// Block VR1: a critical TG slash on a medieval body is a cut injury and a torn artery (combat/wounds.dm); searing closes
+	// the artery. A broken bone cannot be seared. (Block VR2 rewrites this test on its roll.)
+	var/datum/wound/rogue/artery/artery = patient.cause_wound_of_type_and_severity(WOUND_SLASH, arm, WOUND_SEVERITY_CRITICAL)
+	TEST_ASSERT(istype(artery), "A critical cut did not tear the artery")
 	var/datum/surgery_operation/cauterize = rogue_operation(/datum/surgery_operation/limb/rogue/cauterize)
 	UNLINT(cauterize.success(arm, surgeon, cautery, list()))
-	TEST_ASSERT(QDELETED(slash) || slash.rogue_health <= health - rogue_value("surgery_cauterize_heal") + 0.01, "Searing did not mend the slash")
-	patient.apply_damage(10, BRUTE, arm)
-	var/datum/wound/rogue/dynamic/bruise/bruise = arm.get_wound_type(/datum/wound/rogue/dynamic/bruise)
-	TEST_ASSERT(bruise && !bruise.rogue_cauterizable(), "A hematoma can be seared")
+	TEST_ASSERT(QDELETED(artery) || !artery.rogue_cauterizable(), "Searing did not close the artery")
+	var/datum/wound/rogue/fracture/fracture = arm.rogue_add_wound(/datum/wound/rogue/fracture, TRUE)
+	TEST_ASSERT(fracture && !fracture.rogue_cauterizable(), "A broken bone can be seared")
 	patient.rogue_add_stump()
 	var/datum/wound/rogue_stump/stump = locate() in patient.all_wounds
 	TEST_ASSERT(stump, "Could not leave a stump")

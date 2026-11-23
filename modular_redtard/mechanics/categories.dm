@@ -1,3 +1,7 @@
+/// A share of 0-1 the table writes in percent (break_percent = 20 is integrity_failure 0.2): the open table's 10 is then a
+/// tenth, not ten times the whole.
+#define ROGUE_KIND_PERCENT "percent"
+
 /datum/rogue_mechanics_category
 	var/name
 	var/file
@@ -73,6 +77,8 @@
 		"can_parry" = list("canparry", ROGUE_KIND_BOOL),
 		"can_dodge" = list("candodge", ROGUE_KIND_BOOL),
 		"no_attack" = list("no_attack", ROGUE_KIND_BOOL),
+		"demolition" = list("demolition_mod", ROGUE_KIND_NUM),
+		"aim_base_time" = list("basetime", ROGUE_KIND_NUM),
 	)
 
 /datum/rogue_mechanics_category/items
@@ -100,6 +106,12 @@
 		"min_strength" = list("minstr", ROGUE_KIND_NUM),
 		"skill" = list("associated_skill", ROGUE_KIND_SKILL),
 		"can_parry" = list("can_parry", ROGUE_KIND_BOOL),
+		"sharpness" = list("max_blade_int", ROGUE_KIND_NUM),
+		"sharpening" = list("sharpening_factor", ROGUE_KIND_NUM),
+		"spark_chance" = list("spark_chance", ROGUE_KIND_NUM),
+		"break_percent" = list("integrity_failure", ROGUE_KIND_PERCENT),
+		"shield_coverage" = list("coverage", ROGUE_KIND_NUM),
+		"price" = list("sellprice", ROGUE_KIND_NUM),
 	)
 
 /datum/rogue_mechanics_category/items/exported_types()
@@ -114,10 +126,15 @@
 /datum/rogue_mechanics_category/items/apply(datum/target, list/values)
 	var/obj/item/thing = target
 	var/ratio = thing.max_integrity ? thing.get_integrity() / thing.max_integrity : 1
+	var/price = thing.sellprice
 	. = ..()
-	if(!(thing.flags_1 & INITIALIZED_1) || !("integrity" in values))
+	if(!(thing.flags_1 & INITIALIZED_1))
 		return
-	thing.update_integrity(thing.max_integrity * ratio)
+	// A reload leaves the worth of what exists alone (it has drifted, or quality and the kiln set it): new items take the
+	// table's price, as when the price was the type's.
+	thing.sellprice = price
+	if("integrity" in values)
+		thing.update_integrity(thing.max_integrity * ratio)
 
 /proc/rogue_mechanics_copy(value)
 	if(islist(value))
@@ -130,6 +147,9 @@
 		if(ROGUE_KIND_NUM)
 			var/number = text2num(text)
 			return isnull(number) ? "not a number: [text]" : list(number)
+		if(ROGUE_KIND_PERCENT)
+			var/number = text2num(text)
+			return isnull(number) ? "not a number: [text]" : list(number / 100)
 		if(ROGUE_KIND_TEXT)
 			return list(text)
 		if(ROGUE_KIND_BOOL)
@@ -179,6 +199,8 @@
 	switch(kind)
 		if(ROGUE_KIND_NUM)
 			return "[isnum(value) ? value : 0]"
+		if(ROGUE_KIND_PERCENT)
+			return "[isnum(value) ? round(value * 100, 0.01) : 0]"
 		if(ROGUE_KIND_BOOL)
 			return value ? "yes" : "no"
 		if(ROGUE_KIND_TEXT)
@@ -210,3 +232,5 @@
 		if(ROGUE_KIND_BALANCE)
 			return list("heavy" = WBALANCE_HEAVY, "normal" = WBALANCE_NORMAL, "swift" = WBALANCE_SWIFT)
 	return list()
+
+#undef ROGUE_KIND_PERCENT

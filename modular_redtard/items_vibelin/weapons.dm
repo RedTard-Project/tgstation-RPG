@@ -19,7 +19,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 300
 	special = /datum/special_intent/ground_smash
 	smeltresult = /obj/item/ingot/blacksteel
 	rogue_grid_width = 64
@@ -147,7 +146,6 @@
 	can_parry = FALSE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 160
 	special = /datum/special_intent/flail_sweep
 	rogue_grid_width = 32
 	rogue_grid_height = 96
@@ -411,7 +409,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 300
 	special = /datum/special_intent/axe_swing
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -446,7 +443,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 400
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -481,7 +477,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 200
 	special = /datum/special_intent/axe_swing
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -522,7 +517,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 200
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -557,7 +551,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 200
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -592,7 +585,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 200
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/iron
 	rogue_grid_width = 64
@@ -627,7 +619,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 200
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/iron
 	rogue_grid_width = 64
@@ -662,7 +653,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 200
 	special = /datum/special_intent/axe_swing
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -697,7 +687,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 300
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -732,7 +721,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 300
 	special = /datum/special_intent/polearm_backstep
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -767,7 +755,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 300
 	special = /datum/special_intent/polearm_backstep
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -802,7 +789,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 300
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -837,7 +823,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 300
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/silverblessed
 	rogue_grid_width = 64
@@ -872,7 +857,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 300
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/silverblessed
 	rogue_grid_width = 64
@@ -907,7 +891,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 300
 	special = /datum/special_intent/polearm_backstep
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -945,7 +928,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 300
 	smeltresult = /obj/item/ingot/iron
 	rogue_grid_width = 32
 	rogue_grid_height = 96
@@ -979,7 +961,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 250
 	smeltresult = /obj/item/ingot/blacksteel
 	rogue_grid_width = 32
 	rogue_grid_height = 96
@@ -1010,7 +991,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 250
 	rogue_grid_width = 32
 	rogue_grid_height = 96
 	lefthand_file = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/32/fists_claws_lefthand.dmi'
@@ -1041,7 +1021,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 250
 	rogue_grid_width = 32
 	rogue_grid_height = 96
 	lefthand_file = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/32/fists_claws_lefthand.dmi'
@@ -1072,7 +1051,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 250
 	smeltresult = /obj/item/ingot/silver
 	rogue_grid_width = 32
 	rogue_grid_height = 96
@@ -1109,7 +1087,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 150
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 32
 	rogue_grid_height = 64
@@ -1143,7 +1120,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 100
 	smeltresult = /obj/item/ingot/iron
 	rogue_grid_width = 32
 	rogue_grid_height = 64
@@ -1174,7 +1150,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 200
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	lefthand_file = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/32/knives_lefthand.dmi'
@@ -1205,7 +1180,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 200
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	lefthand_file = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/32/knives_lefthand.dmi'
@@ -1236,7 +1210,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 190
 	smeltresult = /obj/item/ingot/bronze
 	rogue_grid_width = 32
 	rogue_grid_height = 64
@@ -1267,7 +1240,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 150
 	smeltresult = /obj/item/ingot/iron
 	rogue_grid_width = 32
 	rogue_grid_height = 64
@@ -1298,7 +1270,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 150
 	smeltresult = /obj/item/ingot/iron
 	rogue_grid_width = 32
 	rogue_grid_height = 64
@@ -1332,7 +1303,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 160
 	smeltresult = /obj/item/ingot/silver
 	rogue_grid_width = 32
 	rogue_grid_height = 64
@@ -1363,7 +1333,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 160
 	smeltresult = /obj/item/ingot/silver
 	rogue_grid_width = 32
 	rogue_grid_height = 64
@@ -1397,7 +1366,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 32
 	rogue_grid_height = 64
@@ -1428,7 +1396,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 32
 	rogue_grid_height = 64
@@ -1462,7 +1429,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 32
 	rogue_grid_height = 64
@@ -1493,7 +1459,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 32
 	rogue_grid_height = 64
@@ -1524,7 +1489,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 32
 	rogue_grid_height = 64
@@ -1555,7 +1519,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 32
 	rogue_grid_height = 64
@@ -1589,7 +1552,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 32
 	rogue_grid_height = 64
@@ -1620,7 +1582,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 32
 	rogue_grid_height = 64
@@ -1651,7 +1612,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 160
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	lefthand_file = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/32/knives_lefthand.dmi'
@@ -1682,7 +1642,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 160
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	lefthand_file = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/32/knives_lefthand.dmi'
@@ -1713,7 +1672,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 50000
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	lefthand_file = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/32/knives_lefthand.dmi'
@@ -1747,7 +1705,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 150
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 32
 	rogue_grid_height = 64
@@ -1778,7 +1735,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 150
 	smeltresult = /obj/item/ingot/iron
 	rogue_grid_width = 32
 	rogue_grid_height = 64
@@ -1812,7 +1768,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 35
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	lefthand_file = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/gems/gem_jade_lefthand.dmi'
@@ -1843,7 +1798,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 35
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	lefthand_file = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/gems/gem_opal_lefthand.dmi'
@@ -1877,7 +1831,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 150
 	smeltresult = /obj/item/ingot/bronze
 	rogue_grid_width = 32
 	rogue_grid_height = 64
@@ -1908,7 +1861,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 150
 	smeltresult = /obj/item/ingot/iron
 	rogue_grid_width = 32
 	rogue_grid_height = 64
@@ -1939,7 +1891,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 150
 	smeltresult = /obj/item/ingot/iron
 	rogue_grid_width = 32
 	rogue_grid_height = 64
@@ -1973,7 +1924,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 150
 	smeltresult = /obj/item/ingot/silver
 	rogue_grid_width = 32
 	rogue_grid_height = 64
@@ -2007,7 +1957,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 150
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 32
 	rogue_grid_height = 64
@@ -2038,7 +1987,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 150
 	smeltresult = /obj/item/ingot/iron
 	rogue_grid_width = 32
 	rogue_grid_height = 64
@@ -2069,7 +2017,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 150
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	lefthand_file = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/32/knives_lefthand.dmi'
@@ -2100,7 +2047,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 150
 	smeltresult = /obj/item/ingot/iron
 	rogue_grid_width = 32
 	rogue_grid_height = 64
@@ -2134,7 +2080,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/silverblessed
 	inhand_icon_state = null
 	inhand_x_dimension = 32
@@ -2163,7 +2108,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/silverblessed
 	inhand_icon_state = null
 	inhand_x_dimension = 32
@@ -2192,7 +2136,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/silverblessed
 	inhand_icon_state = null
 	inhand_x_dimension = 32
@@ -2232,7 +2175,6 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/32/fists_claws_onmob.dmi'
-	max_blade_int = 0
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_icon_state = null
@@ -2264,7 +2206,6 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/32/fists_claws_onmob.dmi'
-	max_blade_int = 0
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_icon_state = null
@@ -2296,7 +2237,6 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/32/fists_claws_onmob.dmi'
-	max_blade_int = 0
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_icon_state = null
@@ -2328,7 +2268,6 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/32/patron_onmob.dmi'
-	max_blade_int = 0
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_icon_state = null
@@ -2360,7 +2299,6 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/32/fists_claws_onmob.dmi'
-	max_blade_int = 0
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_icon_state = null
@@ -2392,7 +2330,6 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/32/psydonite_onmob.dmi'
-	max_blade_int = 0
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_icon_state = null
@@ -2424,7 +2361,6 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/32/psydonite_onmob.dmi'
-	max_blade_int = 0
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_icon_state = null
@@ -2456,7 +2392,6 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/32/psydonite_onmob.dmi'
-	max_blade_int = 0
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_icon_state = null
@@ -2488,7 +2423,6 @@
 	inhand_y_dimension = 64
 	rogue_baked_inhand = TRUE
 	rogue_onmob_sheet = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/32/fists_claws_onmob.dmi'
-	max_blade_int = 0
 	rogue_sleeved = null
 	sheathe_icon = null
 	worn_icon_state = null
@@ -2983,7 +2917,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 150
 	smeltresult = /obj/item/ingot/iron
 	rogue_grid_width = 32
 	rogue_grid_height = 64
@@ -3015,7 +2948,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 190
 	smeltresult = /obj/item/ingot/bronze
 	rogue_grid_width = 32
 	rogue_grid_height = 64
@@ -3047,7 +2979,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/silver
 	rogue_grid_width = 32
 	rogue_grid_height = 64
@@ -3079,7 +3010,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 250
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 32
 	rogue_grid_height = 64
@@ -3142,7 +3072,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 300
 	special = /datum/special_intent/ground_smash
 	smeltresult = /obj/item/ingot/iron
 	rogue_grid_width = 32
@@ -3177,7 +3106,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 300
 	special = /datum/special_intent/ground_smash
 	smeltresult = /obj/item/ingot/copper
 	rogue_grid_width = 32
@@ -3212,7 +3140,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/ground_smash
 	smeltresult = /obj/item/ingot/silverblessed
 	rogue_grid_width = 32
@@ -3247,7 +3174,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 300
 	special = /datum/special_intent/ground_smash
 	smeltresult = /obj/item/ingot/iron
 	rogue_grid_width = 32
@@ -3283,7 +3209,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/ground_smash
 	rogue_grid_width = 32
 	rogue_grid_height = 64
@@ -3318,7 +3243,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/ground_smash
 	rogue_grid_width = 32
 	rogue_grid_height = 64
@@ -3353,7 +3277,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/ground_smash
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 32
@@ -3773,7 +3696,6 @@
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_NORMAL
 	smeltresult = /obj/item/ingot/bronze
-	coverage = 60
 	lefthand_file = 'modular_redtard/items_vibelin/icons/baked/modular_abel/gear/icons/weapons_32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_vibelin/icons/baked/modular_abel/gear/icons/weapons_32_righthand.dmi'
 	inhand_icon_state = null
@@ -3802,7 +3724,6 @@
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_SWIFT
 	smeltresult = /obj/item/ingot/iron
-	coverage = 10
 	lefthand_file = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/32/shields_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/32/shields_righthand.dmi'
 	inhand_icon_state = null
@@ -3830,7 +3751,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_HEAVY
-	coverage = 70
 	lefthand_file = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/32/shields_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/32/shields_righthand.dmi'
 	inhand_icon_state = null
@@ -3856,7 +3776,6 @@
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_HEAVY
 	smeltresult = /obj/item/ingot/steel
-	coverage = 50
 	lefthand_file = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/32/psydonite_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/32/psydonite_righthand.dmi'
 	inhand_icon_state = null
@@ -3884,7 +3803,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 200
 	rogue_grid_width = 64
 	rogue_grid_height = 96
 	pixel_x = -16
@@ -3922,7 +3840,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 200
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -3960,7 +3877,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 150
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -3995,7 +3911,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 190
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/bronze
 	rogue_grid_width = 64
@@ -4030,7 +3945,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 150
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/iron
 	rogue_grid_width = 64
@@ -4065,7 +3979,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 240
 	special = /datum/special_intent/polearm_backstep
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -4100,7 +4013,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 60
 	special = /datum/special_intent/polearm_backstep
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -4138,7 +4050,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 200
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/bronze
 	rogue_grid_width = 64
@@ -4173,7 +4084,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 200
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/bronze
 	rogue_grid_width = 64
@@ -4208,7 +4118,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 70
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/copper
 	rogue_grid_width = 64
@@ -4243,7 +4152,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 150
 	special = /datum/special_intent/polearm_backstep
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -4278,7 +4186,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 200
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -4313,7 +4220,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 200
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/blacksteel
 	rogue_grid_width = 64
@@ -4348,7 +4254,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 50
 	special = /datum/special_intent/polearm_backstep
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -4383,7 +4288,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 60
 	special = /datum/special_intent/polearm_backstep
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -4418,7 +4322,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 125
 	special = /datum/special_intent/polearm_backstep
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -4459,7 +4362,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 330
 	special = /datum/special_intent/axe_swing
 	rogue_grid_width = 32
 	rogue_grid_height = 64
@@ -4494,7 +4396,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 200
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/iron
 	rogue_grid_width = 32
@@ -4527,7 +4428,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 150
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/iron
 	rogue_grid_width = 32
@@ -4560,7 +4460,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 240
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/silverblessed
 	rogue_grid_width = 32
@@ -4593,7 +4492,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 200
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/silver
 	rogue_grid_width = 32
@@ -4629,7 +4527,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 32
@@ -4662,7 +4559,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 150
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/iron
 	rogue_grid_width = 32
@@ -4695,7 +4591,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/iron
 	rogue_grid_width = 64
@@ -4727,7 +4622,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 240
 	special = /datum/special_intent/shin_swipe
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -4759,7 +4653,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 250
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/bronze
 	rogue_grid_width = 64
@@ -4791,7 +4684,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -4823,7 +4715,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -4855,7 +4746,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/iron
 	rogue_grid_width = 64
@@ -4887,7 +4777,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -4920,7 +4809,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -4953,7 +4841,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -4989,7 +4876,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -5024,7 +4910,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/iron
 	rogue_grid_width = 64
@@ -5062,7 +4947,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/silver
 	rogue_grid_width = 64
@@ -5097,7 +4981,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/silver
 	rogue_grid_width = 64
@@ -5132,7 +5015,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 50000
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -5166,7 +5048,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -5201,7 +5082,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -5236,7 +5116,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -5271,7 +5150,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/silver
 	rogue_grid_width = 64
@@ -5309,7 +5187,7 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 300
+	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -5324,7 +5202,6 @@
 	rogue_onmob_sheet = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/64/swords_onmob.dmi'
 	rogue_sleeved = null
 	sheathe_icon = null
-	special = null
 	worn_icon_state = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -5344,7 +5221,7 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 240
+	special = /datum/special_intent/wave_swing/greatsword
 	rogue_grid_width = 64
 	rogue_grid_height = 96
 	pixel_x = -16
@@ -5359,7 +5236,6 @@
 	rogue_sleeved = null
 	sheathe_icon = null
 	smeltresult = null
-	special = null
 	worn_icon_state = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -5379,7 +5255,7 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 350
+	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/gold
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -5394,7 +5270,6 @@
 	rogue_onmob_sheet = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/64/swords_onmob.dmi'
 	rogue_sleeved = null
 	sheathe_icon = null
-	special = null
 	worn_icon_state = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -5414,7 +5289,7 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 200
+	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/iron
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -5429,7 +5304,6 @@
 	rogue_onmob_sheet = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/64/swords_onmob.dmi'
 	rogue_sleeved = null
 	sheathe_icon = null
-	special = null
 	worn_icon_state = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -5449,7 +5323,7 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 300
+	special = /datum/special_intent/wave_swing/greatsword
 	rogue_grid_width = 64
 	rogue_grid_height = 96
 	pixel_x = -16
@@ -5464,7 +5338,6 @@
 	rogue_sleeved = null
 	sheathe_icon = null
 	smeltresult = null
-	special = null
 	worn_icon_state = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -5484,7 +5357,7 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 350
+	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/iron
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -5499,7 +5372,6 @@
 	rogue_onmob_sheet = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/64/swords_onmob.dmi'
 	rogue_sleeved = null
 	sheathe_icon = null
-	special = null
 	worn_icon_state = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -5519,7 +5391,7 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 350
+	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/silver
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -5534,7 +5406,6 @@
 	rogue_onmob_sheet = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/64/swords_onmob.dmi'
 	rogue_sleeved = null
 	sheathe_icon = null
-	special = null
 	worn_icon_state = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -5554,7 +5425,7 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 300
+	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/silver
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -5569,7 +5440,6 @@
 	rogue_onmob_sheet = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/64/psydonite_onmob.dmi'
 	rogue_sleeved = null
 	sheathe_icon = null
-	special = null
 	worn_icon_state = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -5589,7 +5459,7 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 300
+	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/silver
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -5604,7 +5474,6 @@
 	rogue_onmob_sheet = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/64/psydonite_onmob.dmi'
 	rogue_sleeved = null
 	sheathe_icon = null
-	special = null
 	worn_icon_state = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -5624,7 +5493,7 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 300
+	special = /datum/special_intent/wave_swing/greatsword
 	rogue_grid_width = 64
 	rogue_grid_height = 96
 	pixel_x = -16
@@ -5639,7 +5508,6 @@
 	rogue_sleeved = null
 	sheathe_icon = null
 	smeltresult = null
-	special = null
 	worn_icon_state = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -5662,7 +5530,7 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 300
+	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -5677,7 +5545,6 @@
 	rogue_onmob_sheet = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/64/swords_onmob.dmi'
 	rogue_sleeved = null
 	sheathe_icon = null
-	special = null
 	worn_icon_state = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
@@ -5697,7 +5564,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 180
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -5732,7 +5598,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -5767,7 +5632,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 240
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/silver
 	rogue_grid_width = 64
@@ -5802,7 +5666,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 240
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/silver
 	rogue_grid_width = 64
@@ -5837,7 +5700,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -5872,7 +5734,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -5907,7 +5768,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -5942,7 +5802,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/side_sweep
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -5977,7 +5836,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/silver
 	rogue_grid_width = 64
@@ -6012,7 +5870,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/silver
 	rogue_grid_width = 64
@@ -6047,7 +5904,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -6082,7 +5938,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 100
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/copper
 	rogue_grid_width = 64
@@ -6117,7 +5972,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -6155,7 +6009,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 240
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/silver
 	rogue_grid_width = 64
@@ -6190,7 +6043,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 240
 	special = /datum/special_intent/side_sweep
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -6225,7 +6077,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 50000
 	special = /datum/special_intent/side_sweep
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -6259,7 +6110,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/side_sweep
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -6297,7 +6147,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 300
 	special = /datum/special_intent/piercing_lunge
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -6334,7 +6183,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 400
 	special = /datum/special_intent/piercing_lunge
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -6368,7 +6216,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 300
 	special = /datum/special_intent/piercing_lunge
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -6400,7 +6247,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 300
 	special = /datum/special_intent/piercing_lunge
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -6434,7 +6280,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 300
 	special = /datum/special_intent/piercing_lunge
 	smeltresult = /obj/item/ingot/silverblessed
 	rogue_grid_width = 64
@@ -6468,7 +6313,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 300
 	special = /datum/special_intent/piercing_lunge
 	smeltresult = /obj/item/ingot/silverblessed
 	rogue_grid_width = 64
@@ -6502,7 +6346,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 240
 	special = /datum/special_intent/piercing_lunge
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -6536,7 +6379,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 300
 	special = /datum/special_intent/piercing_lunge
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -6573,7 +6415,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -6605,7 +6446,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 300
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -6637,7 +6477,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 250
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/bronze
 	rogue_grid_width = 64
@@ -6669,7 +6508,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -6701,7 +6539,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -6733,7 +6570,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -6768,7 +6604,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -6800,7 +6635,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 300
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -6832,7 +6666,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/iron
 	rogue_grid_width = 64
@@ -6864,7 +6697,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_HEAVY
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/iron
 	rogue_grid_width = 64
@@ -6896,7 +6728,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 300
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -6928,7 +6759,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 250
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/bronze
 	rogue_grid_width = 64
@@ -6960,7 +6790,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/iron
 	rogue_grid_width = 64
@@ -6992,7 +6821,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 240
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/silver
 	rogue_grid_width = 64
@@ -7024,7 +6852,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 240
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
@@ -7056,7 +6883,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 160
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/iron
 	rogue_grid_width = 64
@@ -7088,7 +6914,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 300
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -7120,7 +6945,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 300
 	rogue_grid_width = 64
 	rogue_grid_height = 96
 	lefthand_file = 'modular_redtard/items_vibelin/icons/baked/icons/roguetown/weapons/32/swords_lefthand.dmi'
@@ -7152,7 +6976,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 250
 	smeltresult = /obj/item/ingot/bronze
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -7184,7 +7007,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 300
 	smeltresult = /obj/item/ingot/iron
 	rogue_grid_width = 32
 	rogue_grid_height = 96
@@ -7216,7 +7038,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 300
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -7251,7 +7072,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/iron
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -7283,7 +7103,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 300
 	smeltresult = /obj/item/ingot/silverblessed
 	rogue_grid_width = 32
 	rogue_grid_height = 96
@@ -7315,7 +7134,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_SHORT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 250
 	smeltresult = /obj/item/ingot/silver
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -7347,7 +7165,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 240
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/silver
 	rogue_grid_width = 64
@@ -7379,7 +7196,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_NORMAL
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 240
 	special = /datum/special_intent/shin_swipe
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -7693,7 +7509,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_GREAT
 	wbalance = WBALANCE_SWIFT
-	max_blade_int = 200
 	special = /datum/special_intent/whip_coil
 	smeltresult = /obj/item/ingot/steel
 	rogue_grid_width = 32
@@ -7728,7 +7543,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 100
 	special = /datum/special_intent/quarterstaff_sweep
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -7762,7 +7576,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 100
 	special = /datum/special_intent/quarterstaff_sweep
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -7796,7 +7609,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 100
 	special = /datum/special_intent/quarterstaff_sweep
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -7833,7 +7645,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 100
 	special = /datum/special_intent/quarterstaff_sweep
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -7867,7 +7678,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 100
 	special = /datum/special_intent/quarterstaff_sweep
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -7901,7 +7711,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 100
 	special = /datum/special_intent/quarterstaff_sweep
 	rogue_grid_width = 64
 	rogue_grid_height = 96
@@ -7935,7 +7744,6 @@
 	can_parry = TRUE
 	wlength = WLENGTH_LONG
 	wbalance = WBALANCE_NORMAL
-	max_blade_int = 100
 	special = /datum/special_intent/quarterstaff_sweep
 	rogue_grid_width = 64
 	rogue_grid_height = 96

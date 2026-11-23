@@ -1,0 +1,110 @@
+{
+	"note": "H2g (2026-11-22): config of tools/port_vibelin_food.py - Vibelin's own food, drink and vessels (rows of selection.tsv whose pick is vibelin) for the module's food (survival/, Ratwood's). Read beside items_vibelin/port.json, whose source, assets, defines, slot flags, material ingots and numbers it shares.",
+	"target_items": [
+		"modular_redtard/rockhill/ported/items.dm",
+		"modular_redtard/survival/ported/food.dm",
+		"modular_redtard/items_azure/other.dm",
+		"modular_redtard/items_azure/food.dm"
+	],
+	"bake": {
+		"manifest": "modular_redtard/items_vibelin/food_onmob_bake.json",
+		"dir": "modular_redtard/items_vibelin/icons/baked_food",
+		"mask32": "modular_redtard/icons/mob/onmob_mask.dmi",
+		"mask64": "modular_redtard/icons/mob/onmob_mask_64.dmi"
+	},
+	"table": {
+		"section": "port_vibelin_food.py",
+		"note": "the numbers of the food and vessels of modular_redtard/items_vibelin/food.dm and vessels.dm (Vibelin's own, H2g), rewritten on every run of tools/port_vibelin_food.py; an override goes below the end line.",
+		"out": ".cache/modular_redtard/agents/h2/staged/h2g/items.txt",
+		"private": "config/redtard_private/mechanics/items.txt",
+		"private_after": "# <<< port_vibelin_items.py"
+	},
+	"module_scan": "modular_redtard",
+	"module_scan_skip": ["modular_redtard/items_vibelin"],
+	"groups": {
+		"food": {
+			"file": "food.dm",
+			"header": "Vibelin's own food (H2g): dishes, dough, produce and meat under the module's food (survival/: TG edible, grill and oven, Ratwood's bites, rot, slicing and recipes).",
+			"rebase": [
+				{"prefix": "/obj/item/reagent_containers/food/snacks", "to": "/obj/item/reagent_containers/food/snacks/vibelin"}
+			],
+			"abstract": ["/obj/item/reagent_containers/food/snacks"],
+			"keep": ["possible_item_intents", "gripped_intents", "smeltresult", "lefthand_file", "righthand_file", "inhand_icon_state", "inhand_x_dimension", "inhand_y_dimension"]
+		},
+		"vessels": {
+			"file": "vessels.dm",
+			"header": "Vibelin's own vessels (H2g): bottles, cups, bowls, teapots, powders, pills and platters under the module's vessels (survival/vessels.dm, TG cups and plates).",
+			"rebase": [
+				{"prefix": "/obj/item/reagent_containers/glass/bottle", "to": "/obj/item/reagent_containers/glass/bottle/vibelin"},
+				{"prefix": "/obj/item/reagent_containers/glass/cup", "to": "/obj/item/reagent_containers/glass/cup/vibelin"},
+				{"prefix": "/obj/item/reagent_containers/glass/bowl", "to": "/obj/item/reagent_containers/glass/bowl/vibelin"},
+				{"prefix": "/obj/item/reagent_containers/glass/carafe", "to": "/obj/item/reagent_containers/glass/carafe/vibelin"},
+				{"prefix": "/obj/item/reagent_containers/powder", "to": "/obj/item/reagent_containers/powder/vibelin"},
+				{"prefix": "/obj/item/reagent_containers/pill", "to": "/obj/item/reagent_containers/pill/vibelin"},
+				{"prefix": "/obj/item/reagent_containers/lux", "to": "/obj/item/reagent_containers/lux/vibelin"},
+				{"prefix": "/obj/item/reagent_containers/lux_tainted", "to": "/obj/item/reagent_containers/lux/vibelin_tainted"},
+				{"prefix": "/obj/item/plate", "to": "/obj/item/plate/vibelin"}
+			],
+			"abstract": ["/obj/item/reagent_containers/powder"],
+			"keep": ["possible_item_intents", "gripped_intents", "volume", "amount_per_transfer_from_this", "possible_transfer_amounts"],
+			"resets": {"sellprice": "0", "list_reagents": "null"}
+		}
+	},
+	"skip": [
+		{"prefix": "/obj/item/reagent_containers/syringe", "reason": "a syringe: TG's syringe draws its own fill states (syringe_0 ...) over the sprite, Vibelin's sheet has none"},
+		{"prefix": "/obj/item/grown/log", "reason": "not food: a log of Vibelin's bamboo, a crafting material of its carpentry"}
+	],
+	"path_aliases": {"/obj/item/plate": "/obj/item/cooking/platter"},
+	"path_generic": ["rogue", "carved"],
+	"icon_fallbacks": ["icons/roguetown/items/produce.dmi"],
+	"twin_skip":["/obj/item/reagent_containers/food/snacks/rotten"],
+	"twin_skip_note": "Vibelin's rotten forms (moldy bread, rotten mince) share the path end and the sprite of a fresh food of the module, which rots in place: they are no duplicates.",
+	"path_note": "A Vibelin type is a duplicate when the module has a food or vessel of its name, at its path (after path_aliases, without the path_generic steps: Ratwood's rogue/breadslice/toast is Vibelin's breadslice/toast, carved/amber its amber), or of its last path step and its sprite. Vibelin renamed the stones of its carved cups, bowls and platters (petriamber, aoetal, joapstone ...); the path finds them.",
+	"vessel_vars": ["volume", "amount_per_transfer_from_this", "possible_transfer_amounts", "spillable"],
+	"plate_vars": ["max_items", "max_x_offset", "max_height_offset", "placement_offset"],
+	"plate_fragile": ["clay", "shell", "amber", "coral", "jade", "opal", "rose", "turq", "onyxa"],
+	"vitamin_reagent": "/datum/reagent/consumable/nutriment/vitamin",
+	"nutriment_reagent": "/datum/reagent/consumable/nutriment",
+	"eat_effects": {
+		"/datum/status_effect/debuff/uncookedfood": "/datum/status_effect/rogue_food/uncooked",
+		"/datum/status_effect/debuff/burnedfood": "/datum/status_effect/rogue_food/burned",
+		"/datum/status_effect/debuff/rotfood": "/datum/status_effect/rogue_food/rotten",
+		"/datum/status_effect/debuff/badmeal": "/datum/status_effect/rogue_food/bad_meal",
+		"/datum/status_effect/buff/foodbuff": "/datum/status_effect/rogue_food_buff/great_snack"
+	},
+	"eat_effects_note": "Vibelin's foodbuff (+1 constitution, +1 endurance, 15 minutes) is closest to the module's great snack (+1 constitution, +1 willpower, 10 minutes).",
+	"fare": {"1": "ROGUE_FARE_IMPOVERISHED", "2": "ROGUE_FARE_POOR", "3": "ROGUE_FARE_NEUTRAL", "4": "ROGUE_FARE_FINE", "5": "ROGUE_FARE_LAVISH"},
+	"module_defaults": {
+		"food_reagents": "list(/datum/reagent/consumable/nutriment = 1)",
+		"foodtypes": "NONE",
+		"tastes": "null",
+		"eat_effect": "null",
+		"cooked_type": "null",
+		"fried_type": "null",
+		"cooktime": "0",
+		"burntime": "3000",
+		"bitesize": "3",
+		"rotprocess": "0",
+		"warming": "3000",
+		"become_rot_type": "null",
+		"slice_path": "null",
+		"slices_num": "0",
+		"slice_bclass": "BCLASS_CUT",
+		"slice_batch": "TRUE",
+		"rogue_faretype": "ROGUE_FARE_IMPOVERISHED",
+		"rogue_portable": "TRUE",
+		"rogue_cooked_smell": "null",
+		"sellprice": "0"
+	},
+	"recipes": {
+		"file": "food_recipes.dm",
+		"target": "/datum/rogue_food_recipe/vibelin",
+		"default_step": 20,
+		"oven": "/datum/container_craft/oven",
+		"pan": "/datum/container_craft/pan",
+		"pot": "/datum/container_craft/cooking",
+		"table": "/datum/repeatable_crafting_recipe/cooking",
+		"orderless": "/datum/orderless_slapcraft/food",
+		"module_recipe_files": ["modular_redtard/survival/recipes.dm", "modular_redtard/survival/kneading.dm", "modular_redtard/survival/ported/food.dm", "modular_redtard/items_azure/food_data.dm"]
+	}
+}

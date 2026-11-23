@@ -1,4 +1,5 @@
-/mob/living/var/rockhill_kneestinger_time = -ROCKHILL_KNEESTINGER_RESHOCK
+/// world.time of the last kneestinger sting; null - never stung.
+/mob/living/var/rockhill_kneestinger_time
 
 /obj/structure/rockhill/kneestinger
 	name = "kneestingers"
@@ -37,7 +38,8 @@
 
 /obj/structure/rockhill/kneestinger/proc/zap(mob/living/victim)
 	victim.throwing?.finalize(FALSE)
-	var/damage = world.time < victim.rockhill_kneestinger_time + ROCKHILL_KNEESTINGER_RESHOCK ? ROCKHILL_KNEESTINGER_DAMAGE / 2 : ROCKHILL_KNEESTINGER_DAMAGE
+	var/recent = !isnull(victim.rockhill_kneestinger_time) && world.time < victim.rockhill_kneestinger_time + ROCKHILL_KNEESTINGER_RESHOCK
+	var/damage = recent ? ROCKHILL_KNEESTINGER_DAMAGE / 2 : ROCKHILL_KNEESTINGER_DAMAGE
 	if(!victim.electrocute_act(damage, src))
 		return FALSE
 	victim.rockhill_kneestinger_time = world.time

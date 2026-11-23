@@ -5,11 +5,14 @@
 /// not, from 8), and by ranged_skill_accuracy_step per rank of the launcher's skill (Ratwood: 5 per level). A gun spreads
 /// its shots more by ranged_per_spread_step degrees per point of perception below ranged_per_baseline (Azure Peak's
 /// archer spread). What a muscle-powered launcher shoots (rogue_per_damage: TG bows; Azure Peak per_scales_damage) hits
-/// harder with perception: by ranged_per_damage_step per point from ranged_per_baseline up to ranged_per_softcap and by
-/// ranged_per_damage_capped_step past it, never under ranged_per_damage_floor (Azure Peak get_per_damage_scaling()).
+/// harder with perception, as on Ratwood (bows.dm and slings.dm per_scaling, owner's decision 2026-11-22): its damage is
+/// multiplied by 1 plus ranged_per_damage_step per point of perception from ranged_per_damage_baseline up to
+/// ranged_per_softcap and ranged_per_damage_capped_step per point past it, never under ranged_per_damage_floor (Ratwood
+/// counts from zero: at perception 10 the factor is 2).
 /// The ported bows, crossbows and slings aim by Azure Peak's own rules instead (combat/launchers.dm); their bows and slings
 /// take the same perception damage factor.
 #define ROGUE_RANGED_PER_BASELINE rogue_value("ranged_per_baseline")
+#define ROGUE_RANGED_PER_DAMAGE_BASELINE rogue_value("ranged_per_damage_baseline")
 #define ROGUE_RANGED_PER_SOFTCAP rogue_value("ranged_per_softcap")
 #define ROGUE_RANGED_PER_DAMAGE_STEP rogue_value("ranged_per_damage_step")
 #define ROGUE_RANGED_PER_DAMAGE_CAPPED_STEP rogue_value("ranged_per_damage_capped_step")
@@ -26,9 +29,9 @@
 /obj/item/gun/ballistic/bow
 	rogue_per_damage = TRUE
 
-/// Azure Peak's perception damage factor of a muscle-powered launcher.
+/// Ratwood's perception damage factor of a muscle-powered launcher (bows.dm and slings.dm per_scaling).
 /proc/rogue_per_damage_factor(perception)
-	var/baseline = ROGUE_RANGED_PER_BASELINE
+	var/baseline = ROGUE_RANGED_PER_DAMAGE_BASELINE
 	var/softcap = ROGUE_RANGED_PER_SOFTCAP
 	var/factor = 1 + (min(perception, softcap) - baseline) * ROGUE_RANGED_PER_DAMAGE_STEP + max(perception - softcap, 0) * ROGUE_RANGED_PER_DAMAGE_CAPPED_STEP
 	return max(factor, ROGUE_RANGED_PER_DAMAGE_FLOOR)
@@ -55,6 +58,7 @@
 		bonus_spread_values[MAX_BONUS_SPREAD_INDEX] += shortfall * ROGUE_RANGED_PER_SPREAD_STEP
 
 #undef ROGUE_RANGED_PER_BASELINE
+#undef ROGUE_RANGED_PER_DAMAGE_BASELINE
 #undef ROGUE_RANGED_PER_SOFTCAP
 #undef ROGUE_RANGED_PER_DAMAGE_STEP
 #undef ROGUE_RANGED_PER_DAMAGE_CAPPED_STEP

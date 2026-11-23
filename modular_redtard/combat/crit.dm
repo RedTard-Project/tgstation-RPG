@@ -15,7 +15,7 @@
 #define ROGUE_CRIT_BEATEN "beaten down"
 
 /proc/rogue_crit_enabled()
-	return rogue_combat_enabled() || SSmapping.current_map?.rogue_lowmem
+	return rogue_combat_enabled()
 
 /mob/living/carbon
 	/// Whether this body falls and dies as in Roguetown (rogue_enable_crit()); TG's crit otherwise.

@@ -16,13 +16,13 @@
 	var/mob/living/carbon/human/consistent/patient = allocate(__IMPLIED_TYPE__)
 	patient.AddElement(/datum/element/rogue_blood)
 	var/obj/item/bodypart/arm = patient.get_bodypart(BODY_ZONE_L_ARM)
-	patient.apply_damage(15, BRUTE, arm, wound_bonus = 100, sharpness = SHARP_EDGED)
-	var/datum/wound/rogue/dynamic/slash/slash = arm.get_wound_type(/datum/wound/rogue/dynamic/slash)
-	TEST_ASSERT(slash, "A cut did not open a slash")
-	var/health = slash.rogue_health
+	// Block VR1: a cut is an injury now, a crit is what rogue_heal_wounds() mends (Vibelin heal_wounds()).
+	var/datum/wound/rogue/dislocation/crit = arm.rogue_add_wound(/datum/wound/rogue/dislocation, TRUE)
+	TEST_ASSERT(crit, "Could not dislocate the arm")
+	var/health = crit.whp
 	patient.reagents.add_reagent(/datum/reagent/consumable/soup/stew/lavishchicken, 10)
 	patient.reagents.metabolize(patient, SSMOBS_DT, can_overdose = TRUE)
-	TEST_ASSERT(QDELETED(slash) || slash.rogue_health < health, "Lavish frybird stew did not mend the slash")
+	TEST_ASSERT(QDELETED(crit) || crit.whp < health, "Lavish frybird stew did not mend the dislocation")
 	var/datum/reagent/consumable/soup/stew/plain = /datum/reagent/consumable/soup/stew/meat
 	TEST_ASSERT_EQUAL(initial(plain.rogue_wound_heal), 0, "A meat stew mends wounds, Ratwood's only chicken stews do")
 	patient.reagents.clear_reagents()

@@ -1,5 +1,11 @@
 /datum/map_config/var/map_era = MAP_ERA_MODERN
 
+/// The round runs on a medieval map: the gate of everything medieval that is not the fight itself. The light launch turns
+/// the module's combat on on any map (rogue_combat_enabled(), combat/mob.dm), and nothing else: the lobby, the character
+/// menu, the races, survival, crafting, PvE and the world of Rockhill stay with the era of the map.
+/proc/rogue_medieval_map()
+	return SSmapping.current_map?.map_era == MAP_ERA_MEDIEVAL
+
 /datum/map_config/LoadConfig(filename, error_if_missing)
 	. = ..()
 	if(!.)

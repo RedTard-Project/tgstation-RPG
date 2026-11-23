@@ -133,10 +133,11 @@ GLOBAL_LIST_INIT(rogue_dream_xp_per_rank, list(40, 65, 125, 160, 220, 350))
 		var/share = round(amount * neighbours[neighbour])
 		if(share > 0)
 			adjust_xp(neighbour, share)
+	var/datum/attribute/skill/skill = GET_ROGUE_ATTRIBUTE(skill_type)
+	share_parent_xp(skill, amount)
 	SStgui.update_uis(src)
 	if(silent)
 		return TRUE
-	var/datum/attribute/skill/skill = GET_ROGUE_ATTRIBUTE(skill_type)
 	var/skill_name = LOWER_TEXT(skill.name)
 	if(!one_before && can_advance(skill_type, 1))
 		to_chat(sleeper, span_nicegreen(pick("I'm getting a better grasp at [skill_name]...", "With some rest, I feel like I can get better at [skill_name]...", "[skill.name] starts making more sense to me...")))
@@ -145,6 +146,24 @@ GLOBAL_LIST_INIT(rogue_dream_xp_per_rank, list(40, 65, 125, 160, 220, 350))
 		to_chat(sleeper, span_nicegreen("My [skill_name] can no longer improve without some rest and meditation..."))
 		level_up_sound()
 	return TRUE
+
+/// Banked experience of a skill that shares with the skills it defaults to (shared_xp_percent: the sub-skills of Arcyne
+/// Magic) gives them their share too, the way awake experience does (attributes/experience.dm share_parent_skill_xp()): a
+/// parent below Apprentice and awake learns it at once, the rest waits in the bank like the skill's own.
+/datum/component/rogue_dreams/proc/share_parent_xp(datum/attribute/skill/skill, amount)
+	if(!istype(skill) || !skill.shared_xp_percent || !LAZYLEN(skill.default_attributes))
+		return
+	var/shared_amount = floor(amount * skill.shared_xp_percent)
+	if(shared_amount <= 0)
+		return
+	var/mob/living/sleeper = parent
+	for(var/parent_skill in skill.default_attributes)
+		if(!ispath(parent_skill, ROGUE_SKILL))
+			continue
+		if(sleeper.rogue_learned_rank(parent_skill) < ROGUE_RANK_APPRENTICE && !ROGUE_IS_DREAMING(sleeper))
+			sleeper.rogue_adjust_experience(parent_skill, shared_amount, TRUE)
+		else if(sleeper.rogue_learned_rank(parent_skill) < ROGUE_RANK_LEGENDARY)
+			adjust_xp(parent_skill, shared_amount)
 
 /datum/component/rogue_dreams/proc/level_up_sound()
 	if(!COOLDOWN_FINISHED(src, level_up_cooldown))
@@ -322,7 +341,7 @@ SUBSYSTEM_DEF(rogue_dreams)
 
 /datum/controller/subsystem/rogue_dreams/proc/on_job_after_spawn(datum/source, datum/job/job, mob/living/spawned, client/player_client)
 	SIGNAL_HANDLER
-	if(ishuman(spawned) && rogue_combat_enabled() && CONFIG_GET(flag/rogue_sleep_xp))
+	if(ishuman(spawned) && rogue_medieval_map() && CONFIG_GET(flag/rogue_sleep_xp))
 		spawned.AddComponent(/datum/component/rogue_dreams)
 
 /datum/controller/subsystem/rogue_dreams/proc/on_time_of_day(datum/source, datum/rockhill_clock_step/phase/old_phase, datum/rockhill_clock_step/phase/new_phase)

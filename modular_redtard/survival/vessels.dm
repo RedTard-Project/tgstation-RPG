@@ -385,11 +385,24 @@
 
 /// Ratwood wells give a bucket water, fountains fill any vessel; the dubious well poisons, the swamp fountain is dirty.
 /obj/structure/well
-	/// What one draw gives.
-	var/list/rogue_well_reagents = list(/datum/reagent/water = ROGUE_WELL_WATER)
+	/// What one draw gives: each reagent and the name of the mechanics value (survival.txt) of its amount, which Initialize()
+	/// reads.
+	var/list/rogue_well_reagents = list(/datum/reagent/water = "well_water")
 	/// Only a bucket reaches the water (Ratwood wells; fountains take any vessel).
 	var/rogue_well_bucket_only = TRUE
-	var/rogue_well_time = ROGUE_WELL_TIME
+	/// Name of the mechanics value of the time one draw takes, which Initialize() reads into rogue_well_time.
+	var/rogue_well_time_key = "well_time"
+	var/rogue_well_time
+
+/obj/structure/well/Initialize(mapload)
+	. = ..()
+	var/list/amounts = list()
+	for(var/reagent in rogue_well_reagents)
+		var/amount = rogue_well_reagents[reagent]
+		amounts[reagent] = istext(amount) ? rogue_value(amount) : amount
+	rogue_well_reagents = amounts
+	if(isnull(rogue_well_time))
+		rogue_well_time = rogue_value(rogue_well_time_key)
 
 /obj/structure/well/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
 	if(!istype(tool, /obj/item/reagent_containers/glass) || !length(rogue_well_reagents))
@@ -403,15 +416,15 @@
 	return rogue_draw_into(user, tool, src, rogue_well_reagents, rogue_well_time)
 
 /obj/structure/well/poisoned
-	rogue_well_reagents = list(/datum/reagent/water = ROGUE_WELL_WATER / 5, /datum/reagent/toxin = ROGUE_WELL_WATER / 5)
-	rogue_well_time = ROGUE_WELL_TIME * 3
+	rogue_well_reagents = list(/datum/reagent/water = "well_poisoned_water", /datum/reagent/toxin = "well_poisoned_toxin")
+	rogue_well_time_key = "well_poisoned_time"
 
 /obj/structure/well/fountain
 	rogue_well_bucket_only = FALSE
 
 /obj/structure/well/fountainswamp
 	rogue_well_bucket_only = FALSE
-	rogue_well_reagents = list(/datum/reagent/water/gross = ROGUE_WELL_WATER)
+	rogue_well_reagents = list(/datum/reagent/water/gross = "well_water")
 
 // Wood bins (Ratwood farming/bin.dm, big_liquid_containers.dm) on medieval maps: a washbin holds six hundred units of what is
 // poured into it (the water bins of the map come with water, clean or dirty) and things besides. A hand opens it; a right click

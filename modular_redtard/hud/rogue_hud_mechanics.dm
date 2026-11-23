@@ -66,6 +66,23 @@
 
 /datum/element/rogue_energy
 	element_flags = ELEMENT_DETACH_ON_HOST_DESTROY
+	/// The energy numbers (ROGUE_ENERGY_*), read once and again only when the mechanics numbers change (a reload, a value set
+	/// in the Rogue Mechanics panel): on_life() runs every Life of every human and on_moved() every running step.
+	var/run_cost
+	var/combat_drain
+	var/sleep_gain
+	var/rest_gain
+	var/ground_factor
+	/// The revision of the mechanics numbers (rogue_mechanics_revision()) the ones above were read at.
+	var/numbers_revision = -1
+
+/datum/element/rogue_energy/proc/read_numbers()
+	run_cost = ROGUE_ENERGY_RUN_COST
+	combat_drain = ROGUE_ENERGY_COMBAT_DRAIN
+	sleep_gain = ROGUE_ENERGY_SLEEP_GAIN
+	rest_gain = ROGUE_ENERGY_REST_GAIN
+	ground_factor = ROGUE_ENERGY_GROUND_FACTOR
+	numbers_revision = rogue_mechanics_revision()
 
 /datum/element/rogue_energy/Attach(datum/target)
 	. = ..()
@@ -92,7 +109,9 @@
 	SIGNAL_HANDLER
 	if(forced || !isturf(source.loc) || source.buckled || source.move_intent != MOVE_INTENT_RUN || source.body_position != STANDING_UP)
 		return
-	source.rogue_energy_add(-ROGUE_ENERGY_RUN_COST)
+	if(numbers_revision != rogue_mechanics_revision())
+		read_numbers()
+	source.rogue_energy_add(-run_cost)
 
 /datum/element/rogue_energy/proc/on_move_intent(mob/living/carbon/human/source)
 	SIGNAL_HANDLER
@@ -104,18 +123,20 @@
 	SIGNAL_HANDLER
 	if(source.stat == DEAD)
 		return
+	if(numbers_revision != rogue_mechanics_revision())
+		read_numbers()
 	source.rogue_update_max_energy()
 	var/factor = seconds_per_tick / ROGUE_ENERGY_TICK_SECONDS
 	var/quality = source.rogue_sleep_quality()
 	var/change = 0
 	if(source.combat_mode)
-		change -= ROGUE_ENERGY_COMBAT_DRAIN
+		change -= combat_drain
 	if(source.IsSleeping())
-		change += ROGUE_ENERGY_SLEEP_GAIN * (quality || ROGUE_ENERGY_GROUND_FACTOR)
+		change += sleep_gain * (quality || ground_factor)
 	else if(quality)
-		change += ROGUE_ENERGY_REST_GAIN * quality
+		change += rest_gain * quality
 	else if(source.body_position == LYING_DOWN)
-		change += ROGUE_ENERGY_REST_GAIN
+		change += rest_gain
 	source.rogue_energy_add(change * factor)
 
 /mob/living/proc/rogue_sleep_quality()

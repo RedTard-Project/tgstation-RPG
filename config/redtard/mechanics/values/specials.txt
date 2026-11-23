@@ -28,13 +28,13 @@ special_flail_sweep_delay = 10
 # Flail Sweep: stamcost. Times are in deciseconds. The number is Vibelin's (K2g).
 special_flail_sweep_stamcost = 10
 
-# Flail Sweep: slow_init. Times are in deciseconds.
+# Flail Sweep: slow_init, the slowdown before a second for every creature swept is added. Times are in deciseconds. Source: Azure Peak.
 special_flail_sweep_slow_init = 10
 
 # Flail Sweep: exposed_init. Times are in deciseconds.
 special_flail_sweep_exposed_init = 10
 
-# Flail Sweep: offbalance_init. Times are in deciseconds.
+# Flail Sweep: offbalance_init. Times are in deciseconds. Source: Azure Peak.
 special_flail_sweep_offbalance_init = 10
 
 # Flail Sweep: knockdown. Times are in deciseconds.
@@ -55,7 +55,7 @@ special_ground_smash_delay = 10
 # Ground Smash: stamcost. Times are in deciseconds. The number is Vibelin's (K2g).
 special_ground_smash_stamcost = 10
 
-# Ground Smash: slow_dur. Times are in deciseconds.
+# Ground Smash: slow_dur. The number counts slowdown steps of slow_tick each (Ratwood Slowdown() counts life ticks).
 special_ground_smash_slow_dur = 10
 
 # Ground Smash: knockdown_dur. Times are in deciseconds.
@@ -73,19 +73,19 @@ special_ground_smash_dam = 10
 # Ground Smash: open_dur. Times are in deciseconds.
 special_ground_smash_open_dur = 10
 
-# Martyr's Blaze: cooldown. Times are in deciseconds.
+# Martyr's Blaze: cooldown. Times are in deciseconds. Source: the module; the base type of the blazes; Azure Peak has only the four blazes, whose own entries carry its numbers.
 special_martyr_cooldown = 10
 
-# Martyr's Blaze: delay. Times are in deciseconds.
+# Martyr's Blaze: delay. Times are in deciseconds. Source: the module; the base type of the blazes; Azure Peak has only the four blazes, whose own entries carry its numbers.
 special_martyr_delay = 10
 
-# Martyr's Blaze: stamcost. Times are in deciseconds.
+# Martyr's Blaze: stamcost. Times are in deciseconds. Source: the module; the base type of the blazes; Azure Peak has only the four blazes, whose own entries carry its numbers.
 special_martyr_stamcost = 10
 
-# Martyr's Blaze: fire_stacks. Times are in deciseconds.
+# Martyr's Blaze: fire_stacks. Times are in deciseconds. Source: the module; the base type of the blazes; Azure Peak has only the four blazes, whose own entries carry its numbers.
 special_martyr_fire_stacks = 10
 
-# Martyr's Blaze: self_immob_dur. Times are in deciseconds.
+# Martyr's Blaze: self_immob_dur. Times are in deciseconds. Source: the module; the base type of the blazes; Azure Peak has only the four blazes, whose own entries carry its numbers.
 special_martyr_self_immob_dur = 10
 
 # Blazing Axe Sweep: cooldown. Times are in deciseconds.
@@ -160,7 +160,7 @@ special_piercing_lunge_stamcost = 10
 # Piercing Lunge: winded. Times are in deciseconds.
 special_piercing_lunge_winded = 10
 
-# Piercing Lunge: open_dur. Times are in deciseconds.
+# Piercing Lunge: open_dur. Times are in deciseconds. Source: Azure Peak.
 special_piercing_lunge_open_dur = 10
 
 # Backstep: cooldown. Times are in deciseconds. The number is Vibelin's (K2g).
@@ -175,7 +175,7 @@ special_polearm_backstep_stamcost = 10
 # Backstep: dam. Times are in deciseconds.
 special_polearm_backstep_dam = 10
 
-# Backstep: slow_dur. Times are in deciseconds.
+# Backstep: slow_dur. The number counts slowdown steps of slow_tick each (Ratwood Slowdown() counts life ticks).
 special_polearm_backstep_slow_dur = 10
 
 # Backstep: min_dist. Times are in deciseconds.
@@ -193,13 +193,13 @@ special_shin_swipe_delay = 10
 # Shin Prod: stamcost. Times are in deciseconds. The number is Vibelin's (K2g).
 special_shin_swipe_stamcost = 10
 
-# Shin Prod: eff_dur. Times are in deciseconds.
+# Shin Prod: eff_dur, the slowdown. The number counts slowdown steps of slow_tick each (Ratwood Slowdown() counts life ticks).
 special_shin_swipe_eff_dur = 10
 
-# Shin Prod: hobble_dur. Times are in deciseconds.
+# Shin Prod: hobble_dur, more slowdown in place of Ratwood's hobbled debuff. The number counts slowdown steps of slow_tick each (Ratwood Slowdown() counts life ticks). Source: Azure Peak.
 special_shin_swipe_hobble_dur = 10
 
-# Shin Prod: open_dur. Times are in deciseconds.
+# Shin Prod: open_dur. Times are in deciseconds. Source: Azure Peak.
 special_shin_swipe_open_dur = 10
 
 # Distracting Swipe: cooldown. Times are in deciseconds.
@@ -253,28 +253,28 @@ special_whip_coil_immob_dur = 10
 # Whip Coil: dam. Times are in deciseconds.
 special_whip_coil_dam = 10
 
-# Whip Coil: open_dur. Times are in deciseconds.
+# Whip Coil: open_dur. Times are in deciseconds. Source: Azure Peak.
 special_whip_coil_open_dur = 10
 
-# Most extra targets of a cleave: Cleaves into an adjacent target.
+# Most extra targets of a cleave: Cleaves into an adjacent target. Source: Azure Peak.
 cleave_adjacent_max_targets = 10
 
-# Most extra targets of a cleave: Cleaves forward into a second target.
+# Most extra targets of a cleave: Cleaves forward into a second target. Source: Azure Peak.
 cleave_forward_cleave_max_targets = 10
 
-# Most extra targets of a cleave: Sweeps in a massive arc, hitting up to four targets to the sides and ahead.
+# Most extra targets of a cleave: Sweeps in a massive arc, hitting up to four targets to the sides and ahead. Source: Azure Peak.
 cleave_frontal_arc_max_targets = 10
 
-# Most extra targets of a cleave: Cleaves in a T-shaped pattern directly ahead.
+# Most extra targets of a cleave: Cleaves in a T-shaped pattern directly ahead. Source: Azure Peak.
 cleave_frontal_t_max_targets = 10
 
-# Most extra targets of a cleave: Sweeps horizontally, cleaving up to two additional targets.
+# Most extra targets of a cleave: Sweeps horizontally, cleaving up to two additional targets. Source: Azure Peak.
 cleave_horizontal_sweep_max_targets = 10
 
-# Most extra targets of a cleave: Lances forward, skewering a target three tiles ahead and anyone behind them.
+# Most extra targets of a cleave: Lances forward, skewering a target three tiles ahead and anyone behind them. Source: Azure Peak.
 cleave_lance_max_targets = 10
 
-# Most extra targets of a cleave: Sweeps wide, cleaving up to two nearby targets.
+# Most extra targets of a cleave: Sweeps wide, cleaving up to two nearby targets. Source: Azure Peak.
 cleave_wide_sweep_max_targets = 10
 
 # Limb Guard: cooldown. Times are in deciseconds.
@@ -304,7 +304,7 @@ special_quarterstaff_sweep_delay = 10
 # Quarterstaff Sweep: stamcost. Times are in deciseconds.
 special_quarterstaff_sweep_stamcost = 10
 
-# Quarterstaff Sweep: open_dur. Times are in deciseconds.
+# Quarterstaff Sweep: open_dur. Times are in deciseconds. Source: Azure Peak.
 special_quarterstaff_sweep_open_dur = 10
 
 # Arcyne Descent: cooldown. Times are in deciseconds.
@@ -316,7 +316,7 @@ special_arcyne_descent_delay = 10
 # Arcyne Descent: stamcost. Times are in deciseconds.
 special_arcyne_descent_stamcost = 10
 
-# Arcyne Descent: knockdown_dur. Times are in deciseconds.
+# Arcyne Descent: knockdown_dur. Times are in deciseconds. Source: Azure Peak.
 special_arcyne_descent_knockdown_dur = 10
 
 # Arcyne Descent: self_immob_dur. Times are in deciseconds.
@@ -325,7 +325,7 @@ special_arcyne_descent_self_immob_dur = 10
 # Arcyne Descent: dam. Times are in deciseconds.
 special_arcyne_descent_dam = 10
 
-# Arcyne Descent: finisher_dam. Times are in deciseconds.
+# Arcyne Descent: finisher_dam. Times are in deciseconds. Source: Azure Peak.
 special_arcyne_descent_finisher_dam = 10
 
 # Drakkyrmaw: Hoardbite: cooldown. Times are in deciseconds.
@@ -343,13 +343,13 @@ special_drakkyrmaw_bite_dam = 10
 # Drakkyrmaw: Hoardbite: fire_stacks. Times are in deciseconds.
 special_drakkyrmaw_bite_fire_stacks = 10
 
-# Drakkyrmaw: Hoardbite: slow_dur. Times are in deciseconds.
+# Drakkyrmaw: Hoardbite: slow_dur. Times are in deciseconds. Source: Azure Peak (apply_slowdown).
 special_drakkyrmaw_bite_slow_dur = 10
 
-# Drakkyrmaw: Hoardbite: exposed_dur. Times are in deciseconds.
+# Drakkyrmaw: Hoardbite: exposed_dur. Times are in deciseconds. Source: Azure Peak.
 special_drakkyrmaw_bite_exposed_dur = 10
 
-# Drakkyrmaw: Hoardbite: self_immob_dur. Times are in deciseconds.
+# Drakkyrmaw: Hoardbite: self_immob_dur. Times are in deciseconds. Source: Azure Peak.
 special_drakkyrmaw_bite_self_immob_dur = 10
 
 # Aureate Drakkyrcoil: cooldown. Times are in deciseconds.
@@ -361,16 +361,16 @@ special_gilded_dragon_sweep_delay = 10
 # Aureate Drakkyrcoil: stamcost. Times are in deciseconds.
 special_gilded_dragon_sweep_stamcost = 10
 
-# Aureate Drakkyrcoil: fire_stacks. Times are in deciseconds.
+# Aureate Drakkyrcoil: fire_stacks. Times are in deciseconds. Source: Azure Peak.
 special_gilded_dragon_sweep_fire_stacks = 10
 
-# Aureate Drakkyrcoil: slow_dur. Times are in deciseconds.
+# Aureate Drakkyrcoil: slow_dur. Times are in deciseconds. Source: Azure Peak (apply_slowdown).
 special_gilded_dragon_sweep_slow_dur = 10
 
-# Aureate Drakkyrcoil: exposed_dur. Times are in deciseconds.
+# Aureate Drakkyrcoil: exposed_dur. Times are in deciseconds. Source: Azure Peak.
 special_gilded_dragon_sweep_exposed_dur = 10
 
-# Aureate Drakkyrcoil: self_immob_dur. Times are in deciseconds.
+# Aureate Drakkyrcoil: self_immob_dur. Times are in deciseconds. Source: Azure Peak.
 special_gilded_dragon_sweep_self_immob_dur = 10
 
 # Hefty Flourish: cooldown. Times are in deciseconds.
@@ -382,50 +382,17 @@ special_hatchet_twirl_delay = 10
 # Hefty Flourish: stamcost. Times are in deciseconds.
 special_hatchet_twirl_stamcost = 10
 
-# Hefty Flourish: bonus. Times are in deciseconds.
+# Hefty Flourish: bonus. Times are in deciseconds. Source: Azure Peak.
 special_hatchet_twirl_bonus = 10
 
-# Hefty Flourish: immob_dur. Times are in deciseconds.
+# Hefty Flourish: immob_dur. Times are in deciseconds. Source: Azure Peak.
 special_hatchet_twirl_immob_dur = 10
 
-# Hefty Flourish: exposed_dur. Times are in deciseconds.
+# Hefty Flourish: exposed_dur. Times are in deciseconds. Source: Azure Peak.
 special_hatchet_twirl_exposed_dur = 10
 
-# Hefty Flourish: self_immob_dur. Times are in deciseconds.
+# Hefty Flourish: self_immob_dur. Times are in deciseconds. Source: Azure Peak.
 special_hatchet_twirl_self_immob_dur = 10
-
-# Vicious Swing: cooldown. Times are in deciseconds.
-special_vicious_swipe_cooldown = 10
-
-# Vicious Swing: delay. Times are in deciseconds.
-special_vicious_swipe_delay = 10
-
-# Vicious Swing: stamcost. Times are in deciseconds.
-special_vicious_swipe_stamcost = 10
-
-# Vicious Swing: dam. Times are in deciseconds.
-special_vicious_swipe_dam = 10
-
-# Vicious Swing: wave_bonus. Times are in deciseconds.
-special_vicious_swipe_wave_bonus = 10
-
-# Vicious Swing: last_share. Times are in deciseconds.
-special_vicious_swipe_last_share = 10
-
-# Vicious Swing: slow_dur. Times are in deciseconds.
-special_vicious_swipe_slow_dur = 10
-
-# Vicious Swing: exposed_dur. Times are in deciseconds.
-special_vicious_swipe_exposed_dur = 10
-
-# Vicious Swing: self_immob. Times are in deciseconds.
-special_vicious_swipe_self_immob = 10
-
-# Vicious Swing: self_clickcd. Times are in deciseconds.
-special_vicious_swipe_self_clickcd = 10
-
-# Vicious Swing: self_vuln. Times are in deciseconds.
-special_vicious_swipe_self_vuln = 10
 
 # Dazing Swing: cooldown. Times are in deciseconds.
 special_warhammer_swing_cooldown = 10
@@ -436,22 +403,22 @@ special_warhammer_swing_delay = 10
 # Dazing Swing: stamcost. Times are in deciseconds.
 special_warhammer_swing_stamcost = 10
 
-# Dazing Swing: bonus. Times are in deciseconds.
+# Dazing Swing: bonus. Times are in deciseconds. Source: Azure Peak.
 special_warhammer_swing_bonus = 10
 
-# Dazing Swing: slow_dur. Times are in deciseconds.
+# Dazing Swing: slow_dur. Times are in deciseconds. Source: Azure Peak (lesserslow_dur, apply_slowdown).
 special_warhammer_swing_slow_dur = 10
 
-# Dazing Swing: daze_dur. Times are in deciseconds.
+# Dazing Swing: daze_dur. Times are in deciseconds. Source: Azure Peak.
 special_warhammer_swing_daze_dur = 10
 
-# Dazing Swing: daze_perception. Times are in deciseconds.
+# Dazing Swing: daze_perception. Times are in deciseconds. Source: Azure Peak.
 special_warhammer_swing_daze_perception = 10
 
-# Dazing Swing: daze_intelligence. Times are in deciseconds.
+# Dazing Swing: daze_intelligence. Times are in deciseconds. Source: Azure Peak.
 special_warhammer_swing_daze_intelligence = 10
 
-# Dazing Swing: self_immob_dur. Times are in deciseconds.
+# Dazing Swing: self_immob_dur. Times are in deciseconds. Source: Azure Peak.
 special_warhammer_swing_self_immob_dur = 10
 
 # Ignite Dagger: cooldown. Times are in deciseconds.
@@ -460,7 +427,7 @@ special_ignite_dagger_cooldown = 10
 # Ignite Dagger: stamcost. Times are in deciseconds.
 special_ignite_dagger_stamcost = 10
 
-# Ignite Dagger: active_dur. Times are in deciseconds.
+# Ignite Dagger: active_dur. Times are in deciseconds. Source: Azure Peak.
 special_ignite_dagger_active_dur = 10
 
 # Coat Blade: cooldown. Times are in deciseconds.
@@ -469,10 +436,10 @@ special_coat_blade_cooldown = 10
 # Coat Blade: stamcost. Times are in deciseconds.
 special_coat_blade_stamcost = 10
 
-# Coat Blade: active_dur. Times are in deciseconds.
+# Coat Blade: active_dur. Times are in deciseconds. Source: Azure Peak.
 special_coat_blade_active_dur = 10
 
-# Coat Blade: force_loss. Times are in deciseconds.
+# Coat Blade: force_loss. Times are in deciseconds. Source: Azure Peak.
 special_coat_blade_force_loss = 10
 
 # Permafrost: cooldown. Times are in deciseconds.
@@ -481,42 +448,42 @@ special_permafrost_cooldown = 10
 # Permafrost: stamcost. Times are in deciseconds.
 special_permafrost_stamcost = 10
 
-# Permafrost: active_dur. Times are in deciseconds.
+# Permafrost: active_dur. Times are in deciseconds. Source: Azure Peak.
 special_permafrost_active_dur = 10
 
 # --- From the code of modular_redtard (code_numbers.py, list k2a)
 
-# Hefty Swing: how long the wielder cannot act after starting it. Times are in deciseconds.
+# Hefty Swing: how long the wielder cannot act after starting it. Times are in deciseconds. Source: Azure Peak.
 special_axe_swing_self_clickcd = 10
 
-# Dagger Dash: how long the speed of the dagger boost lasts. Times are in deciseconds.
+# Dagger Dash: how long the speed of the dagger boost lasts. Times are in deciseconds. Source: Azure Peak.
 special_dagger_dash_boost_dur = 10
 
-# Drakkyrmaw: hit delay of the first (nearest) bite mark. Times are in deciseconds.
+# Drakkyrmaw: hit delay of the first (nearest) bite mark. Times are in deciseconds. Source: Azure Peak.
 special_drakkyrmaw_bite_bite_delay_1 = 10
 
-# Drakkyrmaw: hit delay of the second bite mark. Times are in deciseconds.
+# Drakkyrmaw: hit delay of the second bite mark. Times are in deciseconds. Source: Azure Peak.
 special_drakkyrmaw_bite_bite_delay_2 = 10
 
-# Drakkyrmaw: hit delay of the third bite mark. Times are in deciseconds.
+# Drakkyrmaw: hit delay of the third bite mark. Times are in deciseconds. Source: Azure Peak.
 special_drakkyrmaw_bite_bite_delay_3 = 10
 
-# Drakkyrmaw: hit delay of the fourth bite mark. Times are in deciseconds.
+# Drakkyrmaw: hit delay of the fourth bite mark. Times are in deciseconds. Source: Azure Peak.
 special_drakkyrmaw_bite_bite_delay_4 = 10
 
-# Martyr's Blaze: the weapon damage of the blaze is divided by this.
+# Martyr's Blaze: the weapon damage of the blaze is divided by this. Source: the module; the base type of the blazes; Azure Peak has only the four blazes, whose own entries carry its numbers.
 special_martyr_damage_divisor = 10
 
-# Blazing Axe Sweep: the weapon damage of the blaze is divided by this.
+# Blazing Axe Sweep: the weapon damage of the blaze is divided by this. Source: Azure Peak.
 special_martyr_blazing_sweep_damage_divisor = 10
 
-# Blazing Sword Sweep: the weapon damage of the blaze is divided by this.
+# Blazing Sword Sweep: the weapon damage of the blaze is divided by this. Source: Azure Peak.
 special_martyr_blazing_sweep_sword_damage_divisor = 10
 
-# Blazing Trident Strike: the weapon damage of the blaze is divided by this.
+# Blazing Trident Strike: the weapon damage of the blaze is divided by this. Source: Azure Peak.
 special_martyr_blazing_trident_damage_divisor = 10
 
-# Volcanic Blaze Slam: the weapon damage of the blaze is divided by this.
+# Volcanic Blaze Slam: the weapon damage of the blaze is divided by this. Source: Azure Peak.
 special_martyr_volcano_slam_damage_divisor = 10
 
 # --- From the code of modular_redtard (code_numbers.py, list k2d2)
@@ -611,7 +578,7 @@ special_wave_swing_greatsword_white_stag_delay = 10
 # Great Swing of the White Stag (Azure Peak wave_swing/greatsword/white_stag): hit delay of the first wave; the later waves wait the delay. Times are in deciseconds.
 special_wave_swing_greatsword_white_stag_first_delay = 10
 
-# Great Swing of the White Stag (Azure Peak wave_swing/greatsword/white_stag): stamina spent on use (a share of the maximum when below 1).
+# Great Swing of the White Stag (Azure Peak wave_swing/greatsword/white_stag): stamina spent on use (a share of the maximum when below 1). The number is the owner's (2026-11-22), the same as of the Great Swing.
 special_wave_swing_greatsword_white_stag_stamcost = 10
 
 # Great Swing of the White Stag (Azure Peak wave_swing/greatsword/white_stag): base damage of a wave's cut, times the share of the wave.

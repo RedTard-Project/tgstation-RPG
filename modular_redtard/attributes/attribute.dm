@@ -94,9 +94,18 @@ GLOBAL_LIST_EMPTY(rogue_diceroll_modifier_cache)
 	var/list/default_attributes
 	var/difficulty = ROGUE_SKILL_DIFFICULTY_AVERAGE
 	var/list/dreams
-	var/catchup_level_range = ROGUE_SKILL_XP_CATCHUP_RANGE
-	var/catchup_multiplier = ROGUE_SKILL_XP_CATCHUP_MAX
+	/// Catch-up of a skill behind its default (attributes/experience.dm); null takes skill_xp_catchup_* of combat.txt in New().
+	var/catchup_level_range
+	var/catchup_multiplier
 	var/shared_xp_percent = 0
+
+/// The skills are made while GLOB initializes (rogue_attributes), which rogue_value() allows.
+/datum/attribute/skill/New()
+	. = ..()
+	if(isnull(catchup_level_range))
+		catchup_level_range = ROGUE_SKILL_XP_CATCHUP_RANGE
+	if(isnull(catchup_multiplier))
+		catchup_multiplier = ROGUE_SKILL_XP_CATCHUP_MAX
 
 /datum/attribute/skill/description_from_level(level)
 	if(isnull(level))

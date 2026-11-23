@@ -1,9 +1,10 @@
 /// Vibelin's spell (code/modules/spells/spell.dm) on TG's /datum/action/cooldown/spell: the base of every spell of the
 /// basket (block M2). What Vibelin adds to TG's spell and this one keeps:
-/// - a price in mana (or stamina) that the Arcyne skill and Intelligence lower or raise (get_adjusted_cost()), paid once the
-///   spell went off; a spell that fizzled (fail()) costs nothing and gives its cooldown back;
+/// - a price in mana (or stamina) that its skill (Arcyne or a form's sub-skill, skills.dm) and Intelligence lower or raise
+///   (get_adjusted_cost()), paid once the spell went off; a spell that fizzled (fail()) costs nothing and gives its
+///   cooldown back;
 /// - a charge: a pointed spell is armed with its button, then the mouse is held over the target and let go once charged
-///   (start_casting(), try_casting()); a spell cast on oneself charges as a channel instead (Vibelin do_after()); the Arcyne
+///   (start_casting(), try_casting()); a spell cast on oneself charges as a channel instead (Vibelin do_after()); its
 ///   skill and Intelligence shorten the charge (get_adjusted_charge_time());
 /// - experience in its skill for every cast, waiting for sleep from Apprentice on (Vibelin handle_exp());
 /// - a form and a technique that the spellbook buys it with (mastery.dm);
@@ -56,7 +57,11 @@
 	var/spell_color
 	/// Pointed spells: may be cast on oneself; tiles of reach; a person on the clicked tile is aimed at.
 	var/self_cast_possible = TRUE
-	var/cast_range = ROGUE_SPELL_RANGE_GROUND
+	/// Tiles of reach, set by New(): the spell's own spell_<type>_range, else the kind's. The kind (Vibelin SPELL_RANGE_*, as
+	/// Vibelin writes cast_range = SPELL_RANGE_PROJECTILE) is a name in magic.txt: magic_range_projectile, _ground,
+	/// _two_screens, _aura, _adjacent.
+	var/cast_range
+	var/cast_range_key = "magic_range_ground"
 	var/aim_assist = TRUE
 	var/active_msg
 	var/deactive_msg
@@ -84,10 +89,9 @@
 	cooldown_time = tune("cooldown")
 	charge_time = tune("charge")
 	charge_slowdown = tune("slowdown")
-	// A reach of its own (Vibelin cast_range = 12) instead of the kind's (ROGUE_SPELL_RANGE_*).
+	// A reach of its own (Vibelin cast_range = 12) instead of the kind's (cast_range_key).
 	var/range = tune("range")
-	if(range > 0)
-		cast_range = range
+	cast_range = range > 0 ? range : rogue_value(cast_range_key)
 	if(!spell_color && required_form)
 		spell_color = GLOB.rogue_spell_form_colors[required_form]
 	if(!active_msg)
@@ -163,7 +167,7 @@
 	if(base <= 0)
 		return 0
 	var/mob/living/caster = owner
-	var/factor = 1 - caster.rogue_skill_rank(associated_skill) * rogue_value("magic_cost_per_skill_rank")
+	var/factor = 1 - caster.rogue_magic_rank(associated_skill) * rogue_value("magic_cost_per_skill_rank")
 	factor -= (caster.rogue_stat(associated_stat) - ROGUE_ATTRIBUTE_MIDDLING) * rogue_value("magic_cost_per_stat_point")
 	if(weapon_cast_penalized && check_weapon_in_hand())
 		factor *= rogue_value("magic_weapon_penalty")
@@ -174,7 +178,7 @@
 	if(charge_time <= 0)
 		return 0
 	var/mob/living/caster = owner
-	var/factor = 1 - caster.rogue_skill_rank(associated_skill) * rogue_value("magic_charge_per_skill_rank")
+	var/factor = 1 - caster.rogue_magic_rank(associated_skill) * rogue_value("magic_charge_per_skill_rank")
 	factor -= (caster.rogue_stat(associated_stat) - ROGUE_ATTRIBUTE_MIDDLING) * rogue_value("magic_charge_per_stat_point")
 	if(HAS_TRAIT(caster, TRAIT_LEYLINE_HASTE))
 		factor *= rogue_value("magic_leyline_haste")
@@ -413,7 +417,8 @@
 	build_all_button_icons(UPDATE_BUTTON_STATUS|UPDATE_BUTTON_BACKGROUND)
 	if(charge_slowdown)
 		owner.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/rogue_spell_charge, multiplicative_slowdown = charge_slowdown)
-	playsound(owner, ROGUE_SPELL_CHARGE_SOUND, 50, FALSE)
+	// On a channel of its own, so end_charging() can cut it off (Vibelin CHANNEL_CHARGED_SPELL; TG has the same channel).
+	playsound(owner, ROGUE_SPELL_CHARGE_SOUND, 50, FALSE, channel = CHANNEL_CHARGED_SPELL)
 	owner.add_filter(ROGUE_SPELL_CHARGE_FILTER, 2, list("type" = "outline", "color" = spell_color || "#9932CC", "alpha" = 120, "size" = 1))
 	if(owner.client)
 		owner.client.mouse_override_icon = ROGUE_SPELL_CHARGING_CURSOR
@@ -438,6 +443,9 @@
 	if(!owner)
 		return
 	UnregisterSignal(owner, list(COMSIG_LIVING_DEATH, COMSIG_MOB_LOGOUT, COMSIG_MOVABLE_MOVED))
+	// Vibelin end_charging(): the charge sound stops for the caster and, by a silent sound on its channel, for those near.
+	owner.stop_sound_channel(CHANNEL_CHARGED_SPELL)
+	playsound(owner, sound(null, repeat = 0), 50, FALSE, channel = CHANNEL_CHARGED_SPELL)
 	owner.remove_movespeed_modifier(/datum/movespeed_modifier/rogue_spell_charge)
 	owner.remove_filter(ROGUE_SPELL_CHARGE_FILTER)
 	if(owner.client)

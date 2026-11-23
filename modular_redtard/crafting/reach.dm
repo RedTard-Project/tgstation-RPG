@@ -5,7 +5,7 @@
 /// Worn things are no ingredients: of the crafter's own contents only what is held stays.
 /datum/component/personal_crafting/get_environment(atom/a, list/blacklist = null, radius_range = 1)
 	. = ..()
-	if(!ismob(a) || !rogue_combat_enabled())
+	if(!ismob(a) || !rogue_medieval_map())
 		return
 	var/mob/crafter = a
 	for(var/obj/item/worn in crafter.contents)
@@ -16,7 +16,7 @@
 /// from a bag. The keys are TG's CONTENTS_TOOL_BEHAVIOUR and CONTENTS_POSSIBLE_TOOLS, undefined after _crafting.dm.
 /datum/component/personal_crafting/get_surroundings(atom/source, list/blacklist = null)
 	. = ..()
-	if(!ismob(source) || !rogue_combat_enabled())
+	if(!ismob(source) || !rogue_medieval_map())
 		return
 	var/mob/crafter = source
 	var/list/tools = list()
@@ -37,7 +37,7 @@
 /// is no failed craft, the crafter tries again each second until it works or they stop.
 /datum/component/personal_crafting/ui_static_data(mob/user)
 	. = ..()
-	if(!isliving(user) || !rogue_combat_enabled())
+	if(!isliving(user) || !rogue_medieval_map())
 		return
 	for(var/list/entry as anything in .["recipes"])
 		var/datum/crafting_recipe/roguetown/recipe = locate(entry["ref"])

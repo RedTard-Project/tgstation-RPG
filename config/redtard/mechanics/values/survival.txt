@@ -520,3 +520,34 @@ human_rogue_bath_soak_chance = 10
 
 # A helmet of this stab armour or more spoils a soak, as body armour does (Ratwood relaxing_bath()).
 bath_helmet_stab = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list a)
+
+# How long the mood of a too bright sky lasts (Ratwood stressevent/sunlit); it is renewed while the sky is overhead.
+sunlit_mood_time = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list h4a)
+
+# Deciseconds a stew ingredient simmers in the pot before the cook's skill, the measure of the stew table (Ratwood STEW_COOKING_TIME); a recipe takes a share or a multiple of it.
+stew_time = 10
+
+# Deciseconds of a short hand step of cooking, before the cook's skill (Ratwood short_cooktime).
+cook_short = 10
+
+# Deciseconds of a long hand step of cooking, before the cook's skill (Ratwood long_cooktime).
+cook_long = 10
+
+# Water one draw from a well or a fountain gives (a dirty fountain gives as much dirty water).
+well_water = 10
+
+# Deciseconds one draw from a well or a fountain takes.
+well_time = 10
+
+# Water one draw from the dubious well gives.
+well_poisoned_water = 10
+
+# Toxin one draw from the dubious well gives along with its water.
+well_poisoned_toxin = 10
+
+# Deciseconds one draw from the dubious well takes.
+well_poisoned_time = 10

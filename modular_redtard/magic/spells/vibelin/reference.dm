@@ -10,6 +10,7 @@
 	sound = 'modular_redtard/magic/sound/vlightning.ogg'
 	tunables = list("cost", "cooldown", "charge", "slowdown", "damage", "tile_time", "range")
 	required_form = ROGUE_FORM_ARCANE
+	associated_skill = /datum/attribute/skill/magic/arcane
 	invocation = "MAGIC MISSILE!!!"
 	invocation_type = INVOCATION_SHOUT
 	projectile_type = /obj/projectile/magic/rogue/arcyne_bolt
@@ -30,6 +31,7 @@
 	button_icon_state = "smoke_burst"
 	sound = 'modular_redtard/magic/sound/firesnuff.ogg'
 	required_form = ROGUE_FORM_FIRE
+	associated_skill = /datum/attribute/skill/magic/arcane/fire
 	invocation = "Evomere Fumum!"
 	invocation_type = INVOCATION_SHOUT
 	weapon_cast_penalized = FALSE

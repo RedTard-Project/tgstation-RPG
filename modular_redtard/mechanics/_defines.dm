@@ -60,6 +60,10 @@
 #define ROGUE_FORMULA_STRIKE_DAMAGE "strike_damage"
 #define ROGUE_FORMULA_CRIT_CHANCE "crit_chance"
 #define ROGUE_FORMULA_BEAST_DODGE_CHANCE "beast_dodge_chance"
+#define ROGUE_FORMULA_ANVIL_STRIKE_CHANCE "anvil_strike_chance"
+#define ROGUE_FORMULA_ANVIL_STRIKE_PROGRESS "anvil_strike_progress"
+#define ROGUE_FORMULA_ANVIL_STRIKE_QUALITY "anvil_strike_quality"
+#define ROGUE_FORMULA_ANVIL_GOODS_TIER "anvil_goods_tier"
 
 #define VV_HK_ROGUE_ATTRIBUTES "rogue_attributes"
 #define ROGUE_ATTRIBUTE_EDITOR_MODIFIER "attribute_editor"

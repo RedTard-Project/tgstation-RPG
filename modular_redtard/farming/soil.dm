@@ -4,6 +4,10 @@
 /// flattens back into dirt. It works on SSobj every 2 seconds (Ratwood SSprocessing every second) at Ratwood's rates, which are
 /// per decisecond, and its look is redrawn only when one of the thresholds it shows is crossed. Soil cannot be broken (Ratwood
 /// max_integrity 0), so a blow with a tool always reaches the farm work below.
+
+/// The numbers a soil reads on every pass (/datum/rogue_soil_rates below): process() refreshes them, the rest reads them here.
+#define SOIL_RATES (GLOB.rogue_soil_rates || rogue_soil_rates())
+
 /obj/structure/soil
 	obj_flags = NONE
 	resistance_flags = INDESTRUCTIBLE
@@ -13,8 +17,9 @@
 	var/weeds = 0
 	/// Amount of nutrition in the soil. The crop eats it to mature and to make produce; it also makes the weeds grow.
 	var/nutrition = 0
-	/// Crop health. At zero the crop is dead: it no longer grows nor makes produce and has to be uprooted.
-	var/plant_health = ROGUE_SOIL_MAX_HEALTH
+	/// Crop health. At zero the crop is dead: it no longer grows nor makes produce and has to be uprooted. Null takes
+	/// soil_max_health of farming.txt in Initialize().
+	var/plant_health
 	/// The crop planted here, one of the shared definitions of GLOB.rogue_plant_defs.
 	var/datum/plant_def/plant = null
 	/// Deciseconds of growth so far.
@@ -42,7 +47,10 @@
 
 /obj/structure/soil/Initialize(mapload)
 	. = ..()
-	soil_decay_time = rogue_value("farm_soil_decay_time")
+	var/datum/rogue_soil_rates/rates = rogue_soil_rates()
+	if(isnull(plant_health))
+		plant_health = rates.max_health
+	soil_decay_time = rates.soil_decay_time
 	var/static/list/loc_connections = list(COMSIG_ATOM_ENTERED = PROC_REF(on_entered))
 	AddElement(/datum/element/connect_loc, loc_connections)
 	if(rogue_farming_enabled())
@@ -336,23 +344,29 @@
 	pollination_time = rogue_value("farm_pollination_time")
 
 /obj/structure/soil/proc/adjust_water(adjust_amount)
-	water = clamp(water + adjust_amount, 0, ROGUE_SOIL_MAX_WATER)
+	var/datum/rogue_soil_rates/rates = SOIL_RATES
+	water = clamp(water + adjust_amount, 0, rates.max_water)
 
 /obj/structure/soil/proc/adjust_nutrition(adjust_amount)
-	nutrition = clamp(nutrition + adjust_amount, 0, ROGUE_SOIL_MAX_NUTRITION)
+	var/datum/rogue_soil_rates/rates = SOIL_RATES
+	nutrition = clamp(nutrition + adjust_amount, 0, rates.max_nutrition)
 
 /obj/structure/soil/proc/adjust_weeds(adjust_amount)
-	weeds = clamp(weeds + adjust_amount, 0, ROGUE_SOIL_MAX_WEEDS)
+	var/datum/rogue_soil_rates/rates = SOIL_RATES
+	weeds = clamp(weeds + adjust_amount, 0, rates.max_weeds)
 
 /obj/structure/soil/proc/adjust_plant_health(adjust_amount)
 	if(!plant || plant_dead)
 		return
-	plant_health = clamp(plant_health + adjust_amount, 0, ROGUE_SOIL_MAX_HEALTH)
+	var/datum/rogue_soil_rates/rates = SOIL_RATES
+	plant_health = clamp(plant_health + adjust_amount, 0, rates.max_health)
 	if(plant_health <= 0)
 		plant_dead = TRUE
 		produce_ready = FALSE
 
 /obj/structure/soil/process(seconds_per_tick)
+	// Refreshes the numbers the pass reads (once, and again after a reload); the procs below read them off GLOB.
+	var/datum/rogue_soil_rates/rates = rogue_soil_rates()
 	var/dt = seconds_per_tick * (1 SECONDS)
 	process_weeds(dt)
 	process_plant(dt)
@@ -361,28 +375,29 @@
 		decay_soil()
 		return PROCESS_KILL
 	if(rogue_rain_falls_on(src))
-		adjust_water(rogue_value("farm_rain_water") * seconds_per_tick)
+		adjust_water(rates.rain_water * seconds_per_tick)
 	rogue_refresh_look()
 
 /obj/structure/soil/proc/process_weeds(dt)
+	var/datum/rogue_soil_rates/rates = SOIL_RATES
 	var/rate = dt / (1 MINUTES)
 	// Blessed soil will have the weeds die
 	if(blessed_time > 0 || fertilized_time > 0)
-		adjust_weeds(-rate * rogue_value("farm_weed_bless_decay"))
+		adjust_weeds(-rate * rates.weed_bless_decay)
 	if(plant?.weed_immune)
 		// Weeds die if the plant is immune to them
-		adjust_weeds(-rate * rogue_value("farm_weed_immune_decay"))
+		adjust_weeds(-rate * rates.weed_immune_decay)
 		return
 	if(water <= 0)
 		// Weeds die without water in soil
-		adjust_weeds(-rate * rogue_value("farm_weed_decay"))
+		adjust_weeds(-rate * rates.weed_decay)
 		return
 	// Weeds eat water and nutrition to grow
-	var/weed_factor = weeds / ROGUE_SOIL_MAX_WEEDS
-	adjust_water(-rate * weed_factor * rogue_value("farm_weed_water_use"))
-	adjust_nutrition(-rate * weed_factor * rogue_value("farm_weed_nutrition_use"))
+	var/weed_factor = weeds / rates.max_weeds
+	adjust_water(-rate * weed_factor * rates.weed_water_use)
+	adjust_nutrition(-rate * weed_factor * rates.weed_nutrition_use)
 	if(nutrition > 0)
-		adjust_weeds(rate * rogue_value("farm_weed_growth"))
+		adjust_weeds(rate * rates.weed_growth)
 
 /obj/structure/soil/proc/process_plant(dt)
 	if(!plant || plant_dead)
@@ -391,46 +406,49 @@
 	process_plant_health(dt)
 
 /obj/structure/soil/proc/process_plant_health(dt)
+	var/datum/rogue_soil_rates/rates = SOIL_RATES
 	var/rate = dt / (1 MINUTES)
 	var/drain_rate = plant.water_drain_rate
 	// Lots of weeds harm the plant
-	if(weeds >= ROGUE_SOIL_MAX_WEEDS * rogue_value("farm_weeds_overgrown"))
-		adjust_plant_health(-rate * rogue_value("farm_crop_weed_harm"))
+	if(weeds >= rates.max_weeds * rates.weeds_overgrown)
+		adjust_plant_health(-rate * rates.crop_weed_harm)
 	// Regenerate plant health if we dont drain water, or we have the water
 	if(drain_rate <= 0 || water > 0)
-		adjust_plant_health(rate * rogue_value("farm_crop_regrowth"))
+		adjust_plant_health(rate * rates.crop_regrowth)
 	if(drain_rate > 0)
 		// If we're dry and we want to drain water, we lose health
 		if(water <= 0)
-			adjust_plant_health(-rate * rogue_value("farm_crop_wilt"))
+			adjust_plant_health(-rate * rates.crop_wilt)
 		else
 			adjust_water(-dt * drain_rate)
 	// Blessed plants heal!!
 	if(blessed_time > 0)
-		adjust_plant_health(rate * rogue_value("farm_crop_bless_heal"))
+		adjust_plant_health(rate * rates.crop_bless_heal)
 
 /// Ratwood get_natural_growth_bonuses(): the share of growth blessed soil adds. Ratwood's Living Light (a sanctified tree) and
 /// Rune of Dendor add to it there; neither is in the port.
 /obj/structure/soil/proc/get_natural_growth_bonus()
-	var/blessed_bonus = blessed_time > 0 ? rogue_value("farm_blessed_growth_bonus") : 0
-	return min(blessed_bonus, rogue_value("farm_growth_bonus_cap"))
+	var/datum/rogue_soil_rates/rates = SOIL_RATES
+	var/blessed_bonus = blessed_time > 0 ? rates.blessed_growth_bonus : 0
+	return min(blessed_bonus, rates.growth_bonus_cap)
 
 /// Ratwood get_environmental_growth_multiplier(): how fast this soil grows things whatever grows in it (saplings and seedlings
 /// too): tilled, fertilized, pollinated and blessed soil faster, weedy soil slower. Ratwood's god-given world traits (Dendor's
 /// fertility, drought) are not in the port.
 /obj/structure/soil/proc/get_environmental_growth_multiplier()
+	var/datum/rogue_soil_rates/rates = SOIL_RATES
 	var/multiplier = 1
 	if(tilled_time > 0)
-		multiplier *= rogue_value("farm_tilled_growth")
+		multiplier *= rates.tilled_growth
 	if(fertilized_time > 0)
-		multiplier *= rogue_value("farm_fertilized_growth")
+		multiplier *= rates.fertilized_growth
 	if(pollination_time > 0)
-		multiplier *= rogue_value("farm_pollinated_growth")
+		multiplier *= rates.pollinated_growth
 	multiplier *= 1 + get_natural_growth_bonus()
-	var/slowdown = rogue_value("farm_growth_slowdown")
-	if(weeds >= ROGUE_SOIL_MAX_WEEDS * rogue_value("farm_weeds_overgrown"))
+	var/slowdown = rates.growth_slowdown
+	if(weeds >= rates.max_weeds * rates.weeds_overgrown)
 		multiplier *= slowdown
-	if(weeds >= ROGUE_SOIL_MAX_WEEDS * rogue_value("farm_weeds_some"))
+	if(weeds >= rates.max_weeds * rates.weeds_some)
 		multiplier *= slowdown
 	return multiplier
 
@@ -450,10 +468,11 @@
 	if(!can_crop_grow())
 		return 0
 	var/multiplier = get_environmental_growth_multiplier()
-	var/slowdown = rogue_value("farm_growth_slowdown")
-	if(plant_health <= ROGUE_SOIL_MAX_HEALTH * rogue_value("farm_crop_dying"))
+	var/datum/rogue_soil_rates/rates = SOIL_RATES
+	var/slowdown = rates.growth_slowdown
+	if(plant_health <= rates.max_health * rates.crop_dying)
 		multiplier *= slowdown
-	if(plant_health <= ROGUE_SOIL_MAX_HEALTH * rogue_value("farm_crop_sick"))
+	if(plant_health <= rates.max_health * rates.crop_sick)
 		multiplier *= slowdown
 	return multiplier
 
@@ -491,18 +510,19 @@
 
 /obj/structure/soil/proc/process_soil(dt)
 	// If plant exists and is not dead, nutriment or water is not zero, reset the decay timer
+	var/datum/rogue_soil_rates/rates = SOIL_RATES
 	if(nutrition > 0 || water > 0 || (plant && plant_health > 0))
-		soil_decay_time = rogue_value("farm_soil_decay_time")
+		soil_decay_time = rates.soil_decay_time
 	else
 		// Otherwise, "decay" the soil
 		soil_decay_time = max(soil_decay_time - dt, 0)
 	var/rate = dt / (1 MINUTES)
-	adjust_water(-rate * rogue_value("farm_soil_water_decay"))
-	adjust_nutrition(-rate * rogue_value("farm_soil_nutrition_decay") * (blessed_time > 0 ? rogue_value("farm_blessed_nutrition_decay") : 1))
+	adjust_water(-rate * rates.soil_water_decay)
+	adjust_nutrition(-rate * rates.soil_nutrition_decay * (blessed_time > 0 ? rates.blessed_nutrition_decay : 1))
 	// Ratwood sets the nutrition of fertilized soil to 100 and never counts the fertilizer down; here it keeps the soil from
 	// falling below and runs out.
 	if(fertilized_time > 0)
-		nutrition = max(nutrition, rogue_value("farm_fertilizer_nutrition"))
+		nutrition = max(nutrition, rates.fertilizer_nutrition)
 		fertilized_time = max(fertilized_time - dt, 0)
 	tilled_time = max(tilled_time - dt, 0)
 	blessed_time = max(blessed_time - dt, 0)
@@ -554,7 +574,8 @@
 	if(plant)
 		return
 	plant = new_plant
-	plant_health = ROGUE_SOIL_MAX_HEALTH
+	var/datum/rogue_soil_rates/rates = SOIL_RATES
+	plant_health = rates.max_health
 	growth_time = 0
 	produce_time = 0
 	matured = FALSE
@@ -575,9 +596,10 @@
 /// Every threshold the look shows, packed in one number: tilled, the water and nutrition shades, the crop's look and health
 /// shade and the weeds.
 /obj/structure/soil/proc/rogue_look_key()
+	var/datum/rogue_soil_rates/rates = SOIL_RATES
 	. = (tilled_time > 0) ? 1 : 0
-	. += 2 * rogue_shade(water, ROGUE_SOIL_MAX_WATER)
-	. += 8 * rogue_shade(nutrition, ROGUE_SOIL_MAX_NUTRITION)
+	. += 2 * rogue_shade(water, rates.max_water)
+	. += 8 * rogue_shade(nutrition, rates.max_nutrition)
 	. += 32 * crop_look()
 	. += 256 * rogue_crop_shade()
 	. += 1024 * rogue_weed_shade()
@@ -594,17 +616,19 @@
 /obj/structure/soil/proc/rogue_crop_shade()
 	if(!plant || plant_dead)
 		return 0
-	if(plant_health <= ROGUE_SOIL_MAX_HEALTH * rogue_value("farm_crop_dying"))
+	var/datum/rogue_soil_rates/rates = SOIL_RATES
+	if(plant_health <= rates.max_health * rates.crop_dying)
 		return 2
-	if(plant_health <= ROGUE_SOIL_MAX_HEALTH * rogue_value("farm_crop_sick"))
+	if(plant_health <= rates.max_health * rates.crop_sick)
 		return 1
 	return 0
 
 /// 0 no weeds to see, 1 weeds growing out, 2 overrun.
 /obj/structure/soil/proc/rogue_weed_shade()
-	if(weeds >= ROGUE_SOIL_MAX_WEEDS * rogue_value("farm_weeds_overgrown"))
+	var/datum/rogue_soil_rates/rates = SOIL_RATES
+	if(weeds >= rates.max_weeds * rates.weeds_overgrown)
 		return 2
-	if(weeds >= ROGUE_SOIL_MAX_WEEDS * rogue_value("farm_weeds_some"))
+	if(weeds >= rates.max_weeds * rates.weeds_some)
 		return 1
 	return 0
 
@@ -770,3 +794,83 @@
 		. += span_info("A seedling is germinating here.")
 		if(can_read_growth_timers)
 			. += span_info("Estimated time to bloom: [DisplayTimeText(rogue_time_at_rate(seedling.grow_duration - seedling.growth_progress, multiplier))] (at current growth rate).")
+
+/// The farming.txt numbers a soil reads on every pass of SSobj (review 2026-11-22, finding 10: eighteen rogue_value() calls a
+/// pass): read once, and again only after the mechanics numbers are reloaded (rogue_mechanics_revision() changed).
+GLOBAL_DATUM(rogue_soil_rates, /datum/rogue_soil_rates)
+
+/proc/rogue_soil_rates()
+	var/revision = rogue_mechanics_revision()
+	var/datum/rogue_soil_rates/rates = GLOB.rogue_soil_rates
+	if(!rates || rates.revision != revision)
+		rates = new
+		rates.revision = revision
+		GLOB.rogue_soil_rates = rates
+	return rates
+
+/datum/rogue_soil_rates
+	var/revision
+	var/max_health
+	var/max_water
+	var/max_nutrition
+	var/max_weeds
+	var/rain_water
+	var/weed_bless_decay
+	var/weed_immune_decay
+	var/weed_decay
+	var/weed_water_use
+	var/weed_nutrition_use
+	var/weed_growth
+	var/weeds_overgrown
+	var/weeds_some
+	var/crop_weed_harm
+	var/crop_regrowth
+	var/crop_wilt
+	var/crop_bless_heal
+	var/crop_dying
+	var/crop_sick
+	var/blessed_growth_bonus
+	var/growth_bonus_cap
+	var/tilled_growth
+	var/fertilized_growth
+	var/pollinated_growth
+	var/growth_slowdown
+	var/soil_decay_time
+	var/soil_water_decay
+	var/soil_nutrition_decay
+	var/blessed_nutrition_decay
+	var/fertilizer_nutrition
+
+/datum/rogue_soil_rates/New()
+	max_health = ROGUE_SOIL_MAX_HEALTH
+	max_water = ROGUE_SOIL_MAX_WATER
+	max_nutrition = ROGUE_SOIL_MAX_NUTRITION
+	max_weeds = ROGUE_SOIL_MAX_WEEDS
+	rain_water = rogue_value("farm_rain_water")
+	weed_bless_decay = rogue_value("farm_weed_bless_decay")
+	weed_immune_decay = rogue_value("farm_weed_immune_decay")
+	weed_decay = rogue_value("farm_weed_decay")
+	weed_water_use = rogue_value("farm_weed_water_use")
+	weed_nutrition_use = rogue_value("farm_weed_nutrition_use")
+	weed_growth = rogue_value("farm_weed_growth")
+	weeds_overgrown = rogue_value("farm_weeds_overgrown")
+	weeds_some = rogue_value("farm_weeds_some")
+	crop_weed_harm = rogue_value("farm_crop_weed_harm")
+	crop_regrowth = rogue_value("farm_crop_regrowth")
+	crop_wilt = rogue_value("farm_crop_wilt")
+	crop_bless_heal = rogue_value("farm_crop_bless_heal")
+	crop_dying = rogue_value("farm_crop_dying")
+	crop_sick = rogue_value("farm_crop_sick")
+	blessed_growth_bonus = rogue_value("farm_blessed_growth_bonus")
+	growth_bonus_cap = rogue_value("farm_growth_bonus_cap")
+	tilled_growth = rogue_value("farm_tilled_growth")
+	fertilized_growth = rogue_value("farm_fertilized_growth")
+	pollinated_growth = rogue_value("farm_pollinated_growth")
+	growth_slowdown = rogue_value("farm_growth_slowdown")
+	soil_decay_time = rogue_value("farm_soil_decay_time")
+	soil_water_decay = rogue_value("farm_soil_water_decay")
+	soil_nutrition_decay = rogue_value("farm_soil_nutrition_decay")
+	blessed_nutrition_decay = rogue_value("farm_blessed_nutrition_decay")
+	fertilizer_nutrition = rogue_value("farm_fertilizer_nutrition")
+
+#undef SOIL_RATES

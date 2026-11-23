@@ -24,10 +24,35 @@
 	var/falling = 0
 	/// The "can't sleep in armour" line was shown.
 	var/told_blocked = FALSE
+	/// The sleep numbers, read once for all sleepers: on_life() runs every Life of every player human, sleep_heal() for every
+	/// bodypart. Ticks to fall asleep on a bed and on the ground, the Sleeping() it gives and keeps up, the bleeding that stops a
+	/// bodypart mending, the quality of the bare ground, the cold a good bed warms. Read again only when the mechanics numbers
+	/// change (a reload, a value set in the Rogue Mechanics panel).
+	var/static/fall_asleep_bed
+	var/static/fall_asleep_ground
+	var/static/sleeping_keep
+	var/static/sleeping_fall
+	var/static/bleed_limit
+	var/static/ground_quality
+	var/static/rest_cold
+	/// The revision of the mechanics numbers (rogue_mechanics_revision()) the ones above were read at.
+	var/static/numbers_revision = -1
+
+/datum/component/rogue_sleeper/proc/read_numbers()
+	fall_asleep_bed = ROGUE_FALL_ASLEEP_BED
+	fall_asleep_ground = ROGUE_FALL_ASLEEP_GROUND
+	sleeping_keep = rogue_value("sleeper_on_life_sleeping")
+	sleeping_fall = rogue_value("sleeper_on_life_sleeping_2")
+	bleed_limit = ROGUE_SLEEP_BLEED_LIMIT
+	ground_quality = ROGUE_ENERGY_GROUND_FACTOR
+	rest_cold = ROGUE_FIRE_REST_COLD
+	numbers_revision = rogue_mechanics_revision()
 
 /datum/component/rogue_sleeper/Initialize()
 	if(!ishuman(parent))
 		return COMPONENT_INCOMPATIBLE
+	if(numbers_revision != rogue_mechanics_revision())
+		read_numbers()
 
 /datum/component/rogue_sleeper/RegisterWithParent()
 	RegisterSignal(parent, COMSIG_LIVING_LIFE, PROC_REF(on_life))
@@ -40,12 +65,14 @@
 	if(!source.client || source.stat == DEAD || HAS_TRAIT(source, TRAIT_NOSLEEP))
 		falling = 0
 		return
+	if(numbers_revision != rogue_mechanics_revision())
+		read_numbers()
 	if(source.IsSleeping())
 		falling = 0
 		told_blocked = FALSE
 		sleep_heal(source, seconds_per_tick)
 		if(source.rogue_eyes_closed)
-			source.Sleeping(rogue_value("sleeper_on_life_sleeping"))
+			source.Sleeping(sleeping_keep)
 		return
 	var/quality = source.rogue_sleep_quality()
 	if(!source.rogue_eyes_closed || source.stat != STABLE || (!quality && source.body_position != LYING_DOWN))
@@ -66,9 +93,9 @@
 		falling += fatigue >= 3 ? 2 : (fatigue == 2 ? 1 : 0)
 	else if(fatigue >= 3)
 		falling++
-	if(falling > (quality ? ROGUE_FALL_ASLEEP_BED : ROGUE_FALL_ASLEEP_GROUND))
+	if(falling > (quality ? fall_asleep_bed : fall_asleep_ground))
 		falling = 0
-		source.Sleeping(rogue_value("sleeper_on_life_sleeping_2"))
+		source.Sleeping(sleeping_fall)
 
 /// Ratwood: a heavy helmet (stab armour over 70) or medium or heavy body armour keeps one awake, unless it cannot come off; the
 /// exhausted (third step of night fatigue, survival/fatigue.dm) sleep in anything.
@@ -88,10 +115,11 @@
 /// Ratwood healing in sleep, per two seconds: brute and burn of every bodypart that bleeds less than a unit a Life tick (bandage
 /// counted, combat/blood.dm), and each of its wounds by the wound's sleep_healing (combat/medicine.dm rogue_sleep_healing(),
 /// heal_wound(sleep_healing * sleepy_mod)), toxins, blood, by the quality of the bed (0.5 on the ground). A bedroll or better
-/// warms a cold sleeper.
+/// warms a cold sleeper. On a body of Vibelin's model (TRAIT_ROGUE_WOUNDS) the damage of a limb is its injuries, which heal by
+/// themselves and twice as far in sleep (combat/injuries/): sleep mends only the crits there, so nothing heals twice.
 /datum/component/rogue_sleeper/proc/sleep_heal(mob/living/carbon/human/source, seconds_per_tick)
-	var/quality = source.rogue_sleep_quality() || ROGUE_ENERGY_GROUND_FACTOR
-	if(quality >= 2 && source.bodytemperature < BODYTEMP_NORMAL - ROGUE_FIRE_REST_COLD)
+	var/quality = source.rogue_sleep_quality() || ground_quality
+	if(quality >= 2 && source.bodytemperature < BODYTEMP_NORMAL - rest_cold)
 		source.adjust_bodytemperature(0.5 * seconds_per_tick / 2)
 	if(source.nutrition <= 0 && !HAS_TRAIT(source, TRAIT_NOHUNGER))
 		return
@@ -99,10 +127,11 @@
 	if(amount <= 0)
 		return
 	var/need_update = FALSE
+	var/injuries_heal_themselves = HAS_TRAIT(source, TRAIT_ROGUE_WOUNDS)
 	for(var/obj/item/bodypart/part as anything in source.bodyparts)
-		if(part.rogue_limb_bleed_rate() * ROGUE_LIFE_TICK >= ROGUE_SLEEP_BLEED_LIMIT)
+		if(part.rogue_limb_bleed_rate() * ROGUE_LIFE_TICK >= bleed_limit)
 			continue
-		if(part.heal_damage(amount, amount, updating_health = FALSE, required_bodytype = BODYTYPE_ORGANIC))
+		if(!injuries_heal_themselves && part.heal_damage(amount, amount, updating_health = FALSE, required_bodytype = BODYTYPE_ORGANIC))
 			need_update = TRUE
 		for(var/datum/wound/wound as anything in LAZYCOPY(part.wounds))
 			var/sleep_healing = wound.rogue_sleep_healing()

@@ -24,3 +24,8 @@ bioluminescence_range = 10
 
 # Power of a triton's bioluminescence (Vibelin moblight).
 bioluminescence_power = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list a)
+
+# How long the mood of prejudice lasts (Ratwood /datum/stressevent/prejudice): someone from a resented homeland is around.
+prejudice_mood_time = 10

@@ -91,6 +91,23 @@ GLOBAL_LIST_INIT(rogue_rmb_intents, rogue_init_rmb_intents())
 /mob/living/carbon/human/rogue_rmb_factor(factor_name)
 	return rogue_rmb_intent ? rogue_value_or("rmb_[rogue_rmb_intent.name]_[factor_name]", 1) : 1
 
+/// The stamina a blow takes, as Azure Peak: an armed blow in an alt intent adds rmb_<intent>_stamina_extra to the release
+/// drain (EXTRA_STAMDRAIN_SWIFSTRONG; swift only while the intent's own click delay is above rmb_swift_stamina_click_cap,
+/// CLICK_CD_INTENTCAP), an unarmed one multiplies it by rmb_<intent>_unarmed_stamina_factor and rounds up.
+/mob/living/proc/rogue_strike_stamina(datum/intent/intent, armed = TRUE)
+	return intent.releasedrain
+
+/mob/living/carbon/human/rogue_strike_stamina(datum/intent/intent, armed = TRUE)
+	. = intent.releasedrain
+	if(!rogue_rmb_intent)
+		return
+	if(!armed)
+		var/factor = rogue_value_or("rmb_[rogue_rmb_intent.name]_unarmed_stamina_factor", 1)
+		return factor == 1 ? . : ceil(. * factor)
+	if(istype(rogue_rmb_intent, /datum/rogue_rmb_intent/swift) && intent.clickcd <= rogue_value("rmb_swift_stamina_click_cap"))
+		return
+	. += rogue_value_or("rmb_[rogue_rmb_intent.name]_stamina_extra", 0)
+
 /// Picks an alt intent. As in Ratwood (swap_rmb_intent()) one is always picked: picking it again keeps it.
 /mob/living/carbon/human/proc/rogue_select_rmb_intent(intent_type)
 	var/datum/rogue_rmb_intent/picked = GLOB.rogue_rmb_intents[intent_type]

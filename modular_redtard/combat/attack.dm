@@ -56,5 +56,6 @@
 	MODIFY_ATTACK_FORCE_MULTIPLIER(attack_modifiers, intent.damfactor * rogue_strength_factor(source, user) * user.rogue_rmb_factor("damage_factor"))
 	user.changeNext_move(intent.clickcd * user.rogue_rmb_factor("click_factor"))
 	user.rogue_mark_in_combat()
-	if(intent.releasedrain)
-		user.adjust_stamina_loss(intent.releasedrain * user.rogue_rmb_factor("stamina_factor"))
+	var/stamina_cost = user.rogue_strike_stamina(intent)
+	if(stamina_cost)
+		user.adjust_stamina_loss(stamina_cost)

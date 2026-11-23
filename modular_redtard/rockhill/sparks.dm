@@ -17,7 +17,7 @@
 /obj/effect/particle_effect/sparks/sparks_touched(datum/source, atom/singed)
 	SIGNAL_HANDLER
 	. = ..()
-	if(!QDELETED(singed) && isturf(singed.loc) && rogue_combat_enabled())
+	if(!QDELETED(singed) && isturf(singed.loc) && rogue_medieval_map())
 		INVOKE_ASYNC(singed, TYPE_PROC_REF(/atom, spark_act))
 
 /// Ratwood /obj/machinery/light/rogue spark_act(): a spark lights a fire with fuel to burn - a campfire, a hearth, a brazier.

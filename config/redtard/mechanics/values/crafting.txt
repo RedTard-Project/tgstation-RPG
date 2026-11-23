@@ -195,3 +195,62 @@ repair_kit_used_up_chance = 10
 
 # Ratwood's tries per craft (construct_item(): one-second do_afters).
 craft_tries = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list h4b)
+
+# Experience of a missed anvil strike: the smith's intelligence divided by the recipe's rank plus this.
+forging_xp_miss_offset = 10
+
+# Experience of a landed anvil strike: the smith's intelligence divided by the recipe's rank plus this.
+forging_xp_hit_offset = 10
+
+# Skill quality a bar on the anvil loses when a missed strike ruins it.
+forging_ruin_quality_loss = 10
+
+# Extra health an untrained smith knocks off a bar when a missed strike ruins it (the recipe's rank comes off on top).
+forging_ruin_damage_untrained = 10
+
+# Extra health a novice to journeyman smith knocks off a ruined bar: this divided by the rank, rounded down.
+forging_ruin_damage_low_ranks = 10
+
+# Extra health an expert smith knocks off a ruined bar.
+forging_ruin_damage_expert = 10
+
+# Bad luck multiplier of a master or legendary smith ruining a bar: on bad luck the recipe's rank comes off the bar's health again.
+forging_ruin_badluck = 10
+
+# A deft strike mends the bar while its health is below this.
+forging_breakthrough_heal_limit = 10
+
+# Health a deft strike gives back to a damaged bar.
+forging_breakthrough_heal = 10
+
+# Lowest skill quality roll of a landed strike per smithing rank (anvil_strike_quality's roll).
+forging_quality_roll_min = 10
+
+# Highest skill quality roll of a landed strike per smithing rank (anvil_strike_quality's roll).
+forging_quality_roll_max = 10
+
+# Integrity factor of ruined forged goods.
+forging_integrity_ruined = 10
+
+# Integrity factor of awful forged goods.
+forging_integrity_awful = 10
+
+# Integrity factor of crude forged goods.
+forging_integrity_crude = 10
+
+# Integrity factor of rough forged goods.
+forging_integrity_rough = 10
+
+# Integrity factor of standard forged goods; only a factor below one cuts the item's integrity.
+forging_integrity_standard = 10
+
+# Integrity factor of fine forged goods.
+forging_integrity_fine = 10
+
+# Integrity factor of flawless forged goods.
+forging_integrity_flawless = 10
+
+# Integrity factor of masterwork forged goods.
+forging_integrity_masterwork = 10

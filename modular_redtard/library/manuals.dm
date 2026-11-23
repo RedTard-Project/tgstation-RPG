@@ -281,5 +281,4 @@
 /proc/rogue_manual_price(path)
 	if(!ispath(path, /atom/movable))
 		return 0
-	var/atom/movable/thing = path
-	return initial(thing.sellprice)
+	return rogue_base_price(path)

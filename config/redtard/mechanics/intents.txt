@@ -72,6 +72,7 @@ reach = 10
 charge_time = 10
 charge_slowdown = 10
 swing_delay = 10
+aim_base_time = 10
 
 [arc/sling]
 damage_factor = 10
@@ -127,6 +128,7 @@ reach = 10
 charge_time = 10
 swing_delay = 10
 armor_wear_factor = 10
+demolition = 10
 
 [axe/bash/dolabra/pioneer]
 damage_factor = 10
@@ -138,6 +140,7 @@ reach = 10
 charge_time = 10
 swing_delay = 10
 armor_wear_factor = 10
+demolition = 10
 
 [axe/chop]
 damage_factor = 10
@@ -148,6 +151,7 @@ miss_cost = 10
 reach = 10
 charge_time = 10
 swing_delay = 10
+demolition = 10
 
 [axe/chop/arbelos]
 damage_factor = 10
@@ -158,6 +162,7 @@ miss_cost = 10
 reach = 10
 charge_time = 10
 swing_delay = 10
+demolition = 10
 
 [axe/chop/demolition]
 damage_factor = 10
@@ -168,6 +173,7 @@ miss_cost = 10
 reach = 10
 charge_time = 10
 swing_delay = 10
+demolition = 10
 
 [axe/chop/frost]
 damage_factor = 10
@@ -178,6 +184,7 @@ miss_cost = 10
 reach = 10
 charge_time = 10
 swing_delay = 10
+demolition = 10
 
 [axe/chop/halberd]
 damage_factor = 10
@@ -188,6 +195,7 @@ miss_cost = 10
 reach = 10
 charge_time = 10
 swing_delay = 10
+demolition = 10
 
 [axe/chop/heavy]
 damage_factor = 10
@@ -198,6 +206,7 @@ miss_cost = 10
 reach = 10
 charge_time = 10
 swing_delay = 10
+demolition = 10
 
 [axe/chop/long]
 damage_factor = 10
@@ -208,6 +217,7 @@ miss_cost = 10
 reach = 10
 charge_time = 10
 swing_delay = 10
+demolition = 10
 
 [axe/chop/long/woodcutter]
 damage_factor = 10
@@ -218,6 +228,7 @@ miss_cost = 10
 reach = 10
 charge_time = 10
 swing_delay = 10
+demolition = 10
 
 [axe/chop/long/woodcutter/pioneer]
 damage_factor = 10
@@ -228,6 +239,7 @@ miss_cost = 10
 reach = 10
 charge_time = 10
 swing_delay = 10
+demolition = 10
 
 [axe/chop/scythe]
 damage_factor = 10
@@ -238,6 +250,7 @@ miss_cost = 10
 reach = 10
 charge_time = 10
 swing_delay = 10
+demolition = 10
 
 [axe/chop/stone]
 damage_factor = 10
@@ -248,6 +261,7 @@ miss_cost = 10
 reach = 10
 charge_time = 10
 swing_delay = 10
+demolition = 10
 
 [axe/cut]
 damage_factor = 10
@@ -258,6 +272,7 @@ miss_cost = 10
 reach = 10
 charge_time = 10
 swing_delay = 10
+demolition = 10
 
 [axe/cut/arbelos]
 damage_factor = 10
@@ -268,6 +283,7 @@ miss_cost = 10
 reach = 10
 charge_time = 10
 swing_delay = 10
+demolition = 10
 
 [axe/cut/demolition]
 damage_factor = 10
@@ -278,6 +294,7 @@ miss_cost = 10
 reach = 10
 charge_time = 10
 swing_delay = 10
+demolition = 10
 
 [axe/cut/frost]
 damage_factor = 10
@@ -288,6 +305,7 @@ miss_cost = 10
 reach = 10
 charge_time = 10
 swing_delay = 10
+demolition = 10
 
 [axe/cut/handaxe]
 damage_factor = 10
@@ -298,6 +316,7 @@ miss_cost = 10
 reach = 10
 charge_time = 10
 swing_delay = 10
+demolition = 10
 
 [axe/cut/long]
 damage_factor = 10
@@ -318,6 +337,7 @@ miss_cost = 10
 reach = 10
 charge_time = 10
 swing_delay = 10
+demolition = 10
 
 [axe/cut/long/dolabra/pioneer]
 damage_factor = 10
@@ -328,6 +348,7 @@ miss_cost = 10
 reach = 10
 charge_time = 10
 swing_delay = 10
+demolition = 10
 
 [axe/cut/lunge]
 damage_factor = 10
@@ -340,6 +361,7 @@ charge_time = 10
 swing_delay = 10
 effective_range = 10
 sharpness_penalty = 10
+demolition = 10
 
 [axe/rangedthrust]
 damage_factor = 10
@@ -361,6 +383,7 @@ miss_cost = 10
 reach = 10
 charge_time = 10
 swing_delay = 10
+demolition = 10
 
 [axe/thrust]
 damage_factor = 10
@@ -476,6 +499,7 @@ reach = 10
 charge_time = 10
 swing_delay = 10
 armor_wear_factor = 10
+demolition = 10
 
 [dagger/chop]
 damage_factor = 10
@@ -1162,6 +1186,7 @@ reach = 10
 charge_time = 10
 charge_drain = 10
 swing_delay = 10
+demolition = 10
 
 [mace/smash/crush/demolish]
 damage_factor = 10
@@ -1173,6 +1198,7 @@ reach = 10
 charge_time = 10
 charge_drain = 10
 swing_delay = 10
+demolition = 10
 
 [mace/smash/eaglebeak]
 damage_factor = 10
@@ -1267,6 +1293,7 @@ reach = 10
 charge_time = 10
 charge_drain = 10
 swing_delay = 10
+demolition = 10
 
 [mace/smash/lesser]
 damage_factor = 10
@@ -1410,6 +1437,7 @@ reach = 10
 charge_time = 10
 swing_delay = 10
 armor_wear_factor = 10
+demolition = 10
 
 [mace/strike/pan]
 damage_factor = 10
@@ -1476,6 +1504,7 @@ reach = 10
 charge_time = 10
 swing_delay = 10
 armor_wear_factor = 10
+demolition = 10
 
 [mace/warhammer/pick]
 damage_factor = 10
@@ -1576,6 +1605,7 @@ miss_cost = 10
 reach = 10
 charge_time = 10
 swing_delay = 10
+demolition = 10
 
 [pick/ranged]
 damage_factor = 10
@@ -1596,6 +1626,7 @@ miss_cost = 10
 reach = 10
 charge_time = 10
 swing_delay = 10
+demolition = 10
 
 [pick/ranged/dolabra/pioneer]
 damage_factor = 10
@@ -1606,6 +1637,7 @@ miss_cost = 10
 reach = 10
 charge_time = 10
 swing_delay = 10
+demolition = 10
 
 [pour]
 damage_factor = 10
@@ -1657,6 +1689,7 @@ reach = 10
 charge_time = 10
 swing_delay = 10
 armor_wear_factor = 10
+demolition = 10
 
 [rend/apophis]
 damage_factor = 10
@@ -1668,6 +1701,7 @@ reach = 10
 charge_time = 10
 swing_delay = 10
 armor_wear_factor = 10
+demolition = 10
 
 [rend/krieg]
 damage_factor = 10
@@ -1679,6 +1713,7 @@ reach = 10
 charge_time = 10
 swing_delay = 10
 armor_wear_factor = 10
+demolition = 10
 
 [rend/reach]
 damage_factor = 10
@@ -1690,6 +1725,7 @@ reach = 10
 charge_time = 10
 swing_delay = 10
 armor_wear_factor = 10
+demolition = 10
 
 [rend/reach/partizan]
 damage_factor = 10
@@ -1701,6 +1737,7 @@ reach = 10
 charge_time = 10
 swing_delay = 10
 armor_wear_factor = 10
+demolition = 10
 
 [shield/bash]
 damage_factor = 10
@@ -1802,6 +1839,7 @@ reach = 10
 charge_time = 10
 charge_slowdown = 10
 swing_delay = 10
+aim_base_time = 10
 
 [shovelscoop]
 damage_factor = 10
@@ -2739,6 +2777,7 @@ miss_cost = 10
 reach = 10
 charge_time = 10
 swing_delay = 10
+demolition = 10
 
 [sword/cut/falx/heavy]
 damage_factor = 10
@@ -2749,6 +2788,7 @@ miss_cost = 10
 reach = 10
 charge_time = 10
 swing_delay = 10
+demolition = 10
 
 [sword/cut/krieg]
 damage_factor = 10
@@ -2810,6 +2850,7 @@ reach = 10
 charge_time = 10
 swing_delay = 10
 armor_wear_factor = 10
+demolition = 10
 
 [sword/cut/sabre]
 damage_factor = 10
@@ -3607,6 +3648,7 @@ miss_cost = 10
 reach = 10
 charge_time = 10
 swing_delay = 10
+demolition = 10
 
 [mace/slap/pig]
 damage_factor = 10
@@ -3629,6 +3671,7 @@ reach = 10
 charge_time = 10
 charge_drain = 10
 swing_delay = 10
+demolition = 10
 
 [mace/smash/quarterstaff/long]
 damage_factor = 10

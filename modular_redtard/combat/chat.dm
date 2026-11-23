@@ -19,7 +19,11 @@
 /// TG tells a wound on a line of its own, and before the strike that dealt it, as the damage lands first. During a
 /// strike the wound is told on the strike's line instead: as a crit when a crit dealt it, otherwise in Ratwood's
 /// colour for its kind (rogue_chat_class()), in bold from critical up, as TG does; its sound still plays.
+/// On a medieval body a TG wound (forced by force_wound_upwards(), which may not be overridden) becomes a crit or an injury
+/// first (combat/wounds.dm rogue_turn_into_crit()); the crits of the module tell themselves (rogue_add_wound()).
 /datum/wound/apply_wound(obj/item/bodypart/limb, silent = FALSE, datum/wound/old_wound = null, smited = FALSE, attack_direction = null, wound_source = "Unknown", replacing = FALSE)
+	if(rogue_turn_into_crit(limb, smited, old_wound, replacing, wound_source))
+		return FALSE
 	var/mob/living/carbon/struck = limb?.owner
 	if(silent || !islist(struck?.rogue_strike_notes))
 		return ..()
@@ -38,7 +42,8 @@
 		playsound(struck, sound_effect, sound_volume + (20 * severity), TRUE, falloff_exponent = SOUND_FALLOFF_EXPONENT + 2, ignore_walls = FALSE, falloff_distance = 0)
 
 /// The chat class a wound is told in on a strike's line: Ratwood's colour for a wound of its kind (the classes of its
-/// wounds' check_name and of its limb examine), by the TG wound's type and severity.
+/// wounds' check_name and of its limb examine), by the TG wound's type and severity; a crit of the module has its own
+/// (rogue_chat_span, the span of Vibelin's check_name: bone, artery, necrosis, userdanger).
 /datum/wound/proc/rogue_chat_class()
 	return "danger"
 

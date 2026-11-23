@@ -160,7 +160,6 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/alch/airdust
@@ -909,7 +908,6 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -945,7 +943,6 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -960,7 +957,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/ammo_lefthand.dmi'
@@ -1214,7 +1210,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/ammo_lefthand.dmi'
@@ -1501,7 +1496,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/ammo_lefthand.dmi'
@@ -1722,7 +1716,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/ammo_lefthand.dmi'
@@ -1791,7 +1784,6 @@
 	associated_skill = /datum/attribute/skill/combat/polearms
 	possible_item_intents = list(/datum/intent/sword/thrust, /datum/intent/spear/bash, /datum/intent/spear/cut)
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/ammo_lefthand.dmi'
@@ -1958,7 +1950,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	possible_item_intents = list(/datum/intent/hit)
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/ammo_lefthand.dmi'
@@ -2203,7 +2194,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -2224,7 +2214,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -2245,7 +2234,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/artefactsten_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/artefactsten_righthand.dmi'
 	inhand_icon_state = null
@@ -2263,7 +2251,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/artefactsten_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/artefactsten_righthand.dmi'
 	inhand_icon_state = null
@@ -2283,8 +2270,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 10
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/artefactsten_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/artefactsten_righthand.dmi'
 	inhand_icon_state = null
@@ -2302,7 +2287,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/artefactsten_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/artefactsten_righthand.dmi'
 	inhand_icon_state = null
@@ -2320,7 +2304,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/artefactsten_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/artefactsten_righthand.dmi'
 	inhand_icon_state = null
@@ -2338,7 +2321,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/artefactsten_lefthand.dmi'
@@ -2359,7 +2341,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/objects_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/objects_righthand.dmi'
 	inhand_icon_state = null
@@ -2394,7 +2375,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_azurepeak/icons/obj/items/cosmetics_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_azurepeak/icons/obj/items/cosmetics_righthand.dmi'
 	inhand_icon_state = null
@@ -2412,7 +2392,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_azurepeak/icons/obj/items/cosmetics_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_azurepeak/icons/obj/items/cosmetics_righthand.dmi'
 	inhand_icon_state = null
@@ -2430,7 +2409,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_azurepeak/icons/obj/items/cosmetics_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_azurepeak/icons/obj/items/cosmetics_righthand.dmi'
 	inhand_icon_state = null
@@ -2451,7 +2429,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -2548,7 +2525,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -2569,7 +2545,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -2587,7 +2562,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/beds_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/beds_righthand.dmi'
 	inhand_icon_state = null
@@ -2605,7 +2579,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/beds_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/beds_righthand.dmi'
 	inhand_icon_state = null
@@ -2623,7 +2596,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/beds_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/beds_righthand.dmi'
 	inhand_icon_state = null
@@ -2641,7 +2613,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/beds_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/beds_righthand.dmi'
 	inhand_icon_state = null
@@ -2659,7 +2630,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/beds_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/beds_righthand.dmi'
 	inhand_icon_state = null
@@ -2677,7 +2647,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/beds_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/beds_righthand.dmi'
 	inhand_icon_state = null
@@ -2696,7 +2665,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/mob/actions/pestramiracles_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/mob/actions/pestramiracles_righthand.dmi'
 	inhand_icon_state = null
@@ -2718,7 +2686,6 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/blade/iron_axe
@@ -2938,9 +2905,7 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 35
 	sewrepair = TRUE
-	integrity_failure = 0
 	equip_delay_self = 50
 	worn_icon_state = "bombdolier1"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_azurepeak/icons/obj/items/bombdolier_lefthand.dmi'
@@ -2962,7 +2927,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 35
 	sewrepair = TRUE
 	worn_icon_state = "bombdolier1"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_azurepeak/icons/obj/items/bombdolier_lefthand.dmi'
@@ -2984,10 +2948,8 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 30
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/engineering
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -3007,9 +2969,7 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 30
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -3029,9 +2989,7 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 30
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -3051,7 +3009,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 30
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/engineering
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
@@ -3074,7 +3031,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/mob/human_parts_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/mob/human_parts_righthand.dmi'
 	inhand_icon_state = null
@@ -3113,7 +3069,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 30
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/engineering
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
@@ -3135,7 +3090,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 30
 	anvilrepair = /datum/attribute/skill/craft/carpentry
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
@@ -3156,9 +3110,7 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 30
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -3178,7 +3130,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 30
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/engineering
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
@@ -3202,7 +3153,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -3262,7 +3212,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	possible_item_intents = list(/datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/stationary/bombard_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/stationary/bombard_righthand.dmi'
 	inhand_icon_state = null
@@ -3282,7 +3231,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	possible_item_intents = list(/datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/stationary/bombard_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/stationary/bombard_righthand.dmi'
 	inhand_icon_state = null
@@ -3302,7 +3250,6 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/book/granter/spell/random
@@ -3317,7 +3264,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/library_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/library_righthand.dmi'
 	inhand_icon_state = null
@@ -3338,7 +3284,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/library_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/library_righthand.dmi'
 	inhand_icon_state = null
@@ -3359,7 +3304,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/library_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/library_righthand.dmi'
 	inhand_icon_state = null
@@ -3382,7 +3326,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -3407,7 +3350,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -3432,7 +3374,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -3458,7 +3399,6 @@
 	associated_skill = /datum/attribute/skill/misc/reading
 	possible_item_intents = list(/datum/intent/use, /datum/intent/bless)
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -3527,7 +3467,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -3552,7 +3491,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -3577,7 +3515,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -3602,7 +3539,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -3627,7 +3563,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -3652,7 +3587,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -3677,7 +3611,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -3702,7 +3635,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -3727,7 +3659,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -3752,7 +3683,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -3777,7 +3707,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -3802,7 +3731,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -3827,7 +3755,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -3852,7 +3779,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -3877,7 +3803,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -3902,7 +3827,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -3925,7 +3849,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -3950,7 +3873,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -3973,7 +3895,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -3997,7 +3918,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -4024,7 +3944,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	icon_state = null
 	inhand_icon_state = null
 	bookfile = "xylix.json"
@@ -4044,7 +3963,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -4067,7 +3985,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -4092,7 +4009,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -4117,7 +4033,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -4142,7 +4057,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -4162,7 +4076,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -4183,7 +4096,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/brewing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/brewing_righthand.dmi'
 	inhand_icon_state = null
@@ -4204,7 +4116,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -4225,7 +4136,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -4246,7 +4156,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -4267,7 +4176,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -4289,7 +4197,6 @@
 	gripped_intents = list(/datum/intent/use, /datum/intent/mace/strike/wood)
 	firefuel = 10 MINUTES
 	smeltresult = /obj/item/ash
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/tools_lefthand.dmi'
@@ -4310,7 +4217,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/bodybag_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/bodybag_righthand.dmi'
 	inhand_icon_state = null
@@ -4333,7 +4239,6 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	integrity_failure = 0
 	inhand_icon_state = null
 	start_lit = FALSE
 	infinite = FALSE
@@ -4374,7 +4279,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
-	sellprice = 40
 	inhand_icon_state = null
 	start_lit = FALSE
 	infinite = TRUE
@@ -4395,7 +4299,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
-	sellprice = 40
 	inhand_icon_state = null
 	start_lit = TRUE
 	infinite = TRUE
@@ -4416,7 +4319,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
-	sellprice = 30
 	inhand_icon_state = null
 	start_lit = FALSE
 	infinite = TRUE
@@ -4437,7 +4339,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
-	sellprice = 30
 	inhand_icon_state = null
 	start_lit = TRUE
 	infinite = TRUE
@@ -4458,7 +4359,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
-	sellprice = 60
 	inhand_icon_state = null
 	start_lit = FALSE
 	infinite = TRUE
@@ -4479,7 +4379,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
-	sellprice = 60
 	inhand_icon_state = null
 	start_lit = TRUE
 	infinite = TRUE
@@ -4500,7 +4399,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
-	sellprice = 50
 	inhand_icon_state = null
 	start_lit = FALSE
 	infinite = TRUE
@@ -4521,7 +4419,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
-	sellprice = 50
 	inhand_icon_state = null
 	start_lit = TRUE
 	infinite = TRUE
@@ -4581,7 +4478,6 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	sellprice = 30
 	inhand_icon_state = null
 	start_lit = FALSE
 	infinite = FALSE
@@ -4601,7 +4497,6 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	sellprice = 30
 	inhand_icon_state = null
 	start_lit = TRUE
 	infinite = FALSE
@@ -4659,7 +4554,6 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	sellprice = 50
 	inhand_icon_state = null
 	start_lit = FALSE
 	infinite = TRUE
@@ -4679,7 +4573,6 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	sellprice = 50
 	inhand_icon_state = null
 	start_lit = TRUE
 	infinite = TRUE
@@ -4771,7 +4664,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_twilight_axis/icons/cannon/cannon_fuse_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_twilight_axis/icons/cannon/cannon_fuse_righthand.dmi'
 	inhand_icon_state = null
@@ -4789,7 +4681,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_twilight_axis/icons/cannon/cannon_fuse_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_twilight_axis/icons/cannon/cannon_fuse_righthand.dmi'
 	inhand_icon_state = null
@@ -4807,7 +4698,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/stationary/bombard_projectiles_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/stationary/bombard_projectiles_righthand.dmi'
 	inhand_icon_state = null
@@ -4825,7 +4715,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/stationary/bombard_projectiles_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/stationary/bombard_projectiles_righthand.dmi'
 	inhand_icon_state = null
@@ -4843,7 +4732,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/stationary/bombard_projectiles_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/stationary/bombard_projectiles_righthand.dmi'
 	inhand_icon_state = null
@@ -4861,7 +4749,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/stationary/bombard_projectiles_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/stationary/bombard_projectiles_righthand.dmi'
 	inhand_icon_state = null
@@ -4879,7 +4766,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/stationary/bombard_projectiles_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/stationary/bombard_projectiles_righthand.dmi'
 	inhand_icon_state = null
@@ -4898,7 +4784,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/paint_supplies/canvas_32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/paint_supplies/canvas_32_righthand.dmi'
 	inhand_icon_state = null
@@ -4917,7 +4802,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -5022,7 +4906,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_amber_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_amber_righthand.dmi'
 	inhand_icon_state = null
@@ -5308,7 +5191,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_righthand.dmi'
 	inhand_icon_state = null
@@ -5328,7 +5210,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 64
-	sellprice = 35
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_righthand.dmi'
 	inhand_icon_state = null
@@ -5348,7 +5229,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 64
-	sellprice = 25
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_righthand.dmi'
 	inhand_icon_state = null
@@ -5368,7 +5248,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_righthand.dmi'
 	inhand_icon_state = null
@@ -5388,7 +5267,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 25
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_righthand.dmi'
 	inhand_icon_state = null
@@ -5408,7 +5286,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 25
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_righthand.dmi'
 	inhand_icon_state = null
@@ -5428,7 +5305,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 25
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_righthand.dmi'
 	inhand_icon_state = null
@@ -5448,7 +5324,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 20
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_righthand.dmi'
 	inhand_icon_state = null
@@ -5468,7 +5343,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 20
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_righthand.dmi'
 	inhand_icon_state = null
@@ -5488,7 +5362,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 30
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_righthand.dmi'
 	inhand_icon_state = null
@@ -5508,7 +5381,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_righthand.dmi'
 	inhand_icon_state = null
@@ -5528,7 +5400,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 30
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_righthand.dmi'
 	inhand_icon_state = null
@@ -5548,7 +5419,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 20
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_righthand.dmi'
 	inhand_icon_state = null
@@ -5568,7 +5438,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 64
-	sellprice = 30
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_righthand.dmi'
 	inhand_icon_state = null
@@ -5588,7 +5457,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 20
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_righthand.dmi'
 	inhand_icon_state = null
@@ -5608,7 +5476,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_coral_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_coral_righthand.dmi'
 	inhand_icon_state = null
@@ -5894,7 +5761,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_jade_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_jade_righthand.dmi'
 	inhand_icon_state = null
@@ -6161,7 +6027,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_onyxa_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_onyxa_righthand.dmi'
 	inhand_icon_state = null
@@ -6447,7 +6312,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_opal_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_opal_righthand.dmi'
 	inhand_icon_state = null
@@ -6717,8 +6581,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 30
-	integrity_failure = 0
 	icon_state = null
 	inhand_icon_state = null
 
@@ -6734,7 +6596,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 30
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -6754,7 +6615,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 40
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -6774,7 +6634,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 25
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -6794,7 +6653,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 40
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -6814,7 +6672,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 40
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -6834,7 +6691,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 40
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -6854,7 +6710,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 30
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -6874,7 +6729,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 30
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -6894,7 +6748,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 45
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -6914,7 +6767,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 45
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -6934,7 +6786,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 30
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -6954,7 +6805,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 55
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -6974,7 +6824,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 45
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -6994,7 +6843,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 30
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -7014,7 +6862,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_rose_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_rose_righthand.dmi'
 	inhand_icon_state = null
@@ -7224,7 +7071,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_rose_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_rose_righthand.dmi'
 	inhand_icon_state = null
@@ -7339,7 +7185,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_righthand.dmi'
 	inhand_icon_state = null
@@ -7511,7 +7356,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_righthand.dmi'
 	inhand_icon_state = null
@@ -7531,7 +7375,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_righthand.dmi'
 	inhand_icon_state = null
@@ -7608,7 +7451,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 64
-	sellprice = 30
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_righthand.dmi'
 	inhand_icon_state = null
@@ -7647,7 +7489,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_turq_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_turq_righthand.dmi'
 	inhand_icon_state = null
@@ -7932,7 +7773,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/icons/obj/leashes_collars_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/icons/obj/leashes_collars_righthand.dmi'
 	inhand_icon_state = null
@@ -7970,7 +7810,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_twilight_axis/icons/obj/gwynt_objs_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_twilight_axis/icons/obj/gwynt_objs_righthand.dmi'
 	inhand_icon_state = null
@@ -8009,7 +7848,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_twilight_axis/icons/obj/gwynt_objs_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_twilight_axis/icons/obj/gwynt_objs_righthand.dmi'
 	inhand_icon_state = null
@@ -8029,7 +7867,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_twilight_axis/icons/obj/gwynt_objs_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_twilight_axis/icons/obj/gwynt_objs_righthand.dmi'
 	inhand_icon_state = null
@@ -8049,7 +7886,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_twilight_axis/icons/obj/gwynt_objs_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_twilight_axis/icons/obj/gwynt_objs_righthand.dmi'
 	inhand_icon_state = null
@@ -8071,7 +7907,6 @@
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
 	gripped_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/chairs_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/chairs_righthand.dmi'
 	inhand_icon_state = null
@@ -8156,7 +7991,6 @@
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
 	gripped_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/structure_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/structure_righthand.dmi'
 	inhand_icon_state = null
@@ -8196,7 +8030,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -8218,7 +8051,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/icons/obj/lewd/chastity_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/icons/obj/lewd/chastity_righthand.dmi'
 	inhand_icon_state = null
@@ -8539,7 +8371,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 96
 	rogue_grid_height = 64
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/chess/chess_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/chess/chess_righthand.dmi'
 	inhand_icon_state = null
@@ -8558,7 +8389,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -8579,7 +8409,6 @@
 	worn_y_dimension = 32
 	material_category = 2
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "coat"
 	rogue_female_worn = TRUE
@@ -8603,7 +8432,6 @@
 	worn_y_dimension = 32
 	material_category = 2
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "jacket"
 	rogue_female_worn = TRUE
@@ -8631,7 +8459,6 @@
 	detail_tag = "_detail"
 	detail_color = "#2b292e"
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "butlercoat"
 	rogue_female_worn = TRUE
@@ -8661,7 +8488,6 @@
 	detail_color = "#FFFFFF"
 	boobed = TRUE
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "bwleathercoat"
 	rogue_female_worn = TRUE
@@ -8685,7 +8511,6 @@
 	rogue_armor = /datum/rogue_armor/padded
 	material_category = 2
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -8804,7 +8629,6 @@
 	worn_y_dimension = 32
 	material_category = 2
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_backr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/back_r.dmi'
 	worn_icon_state = "climbing_gear"
@@ -8832,7 +8656,6 @@
 	rogue_grid_height = 64
 	material_category = 2
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -9271,7 +9094,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	material_category = 2
-	sellprice = 50
 	sewrepair = TRUE
 	sleevetype = "shirt"
 	rogue_sleeve_scrap = /obj/item/natural/fur
@@ -9725,7 +9547,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	material_category = 2
-	sellprice = 50
 	sewrepair = TRUE
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
@@ -9749,7 +9570,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	material_category = 2
-	sellprice = 50
 	sewrepair = TRUE
 	icon_state = null
 	inhand_icon_state = null
@@ -10010,7 +9830,6 @@
 	rogue_grid_height = 64
 	material_category = 2
 	boobed = TRUE
-	sellprice = 80
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "bear_cloak"
@@ -10621,7 +10440,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	material_category = 2
-	sellprice = 50
 	sewrepair = TRUE
 	sleevetype = "shirt"
 	inhand_icon_state = null
@@ -10674,7 +10492,6 @@
 	material_category = 2
 	flags_inv = NONE
 	boobed = TRUE
-	sellprice = 300
 	sewrepair = TRUE
 	sleevetype = "silvertabard"
 	rogue_coverage = CHEST | GROIN
@@ -10833,7 +10650,6 @@
 	rogue_grid_height = 64
 	material_category = 2
 	flags_inv = NONE
-	sellprice = 100
 	sewrepair = TRUE
 	rogue_coverage = CHEST | GROIN
 	inhand_icon_state = null
@@ -11032,6 +10848,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_ROGUE_CLOAK
 	rogue_sleeved = null
 	worn_x_dimension = 32
@@ -11044,8 +10861,7 @@
 	sewrepair = TRUE
 	sleevetype = "shirt"
 	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
-	worn_icon_state = null
+	worn_icon_state = "psaltertabard_f"
 
 /obj/item/clothing/cloak/psydontabard
 	name = "psydonian tabard"
@@ -11198,7 +11014,6 @@
 	rogue_grid_height = 64
 	material_category = 2
 	boobed = TRUE
-	sellprice = 25
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "rain_cloak"
@@ -11375,7 +11190,6 @@
 	rogue_grid_height = 64
 	material_category = 2
 	boobed = TRUE
-	sellprice = 55
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "furgrey"
@@ -14353,7 +14167,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	material_category = 2
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "tribal"
@@ -14553,7 +14366,6 @@
 	material_category = 2
 	sewrepair = TRUE
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -14581,7 +14393,6 @@
 	rogue_armor = /datum/rogue_armor/leather
 	rogue_blocksound = "soft"
 	material_category = 2
-	sellprice = 12
 	sewrepair = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/fur
 	inhand_icon_state = null
@@ -14610,7 +14421,6 @@
 	rogue_armor = /datum/rogue_armor/leather
 	rogue_blocksound = "soft"
 	material_category = 2
-	sellprice = 12
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "atgervi_raider_gloves"
@@ -14638,7 +14448,6 @@
 	rogue_armor = /datum/rogue_armor/leather
 	rogue_blocksound = "soft"
 	material_category = 2
-	sellprice = 12
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "grenzelgloves"
@@ -14666,7 +14475,6 @@
 	rogue_armor = /datum/rogue_armor/leather
 	rogue_blocksound = "soft"
 	material_category = 2
-	sellprice = 12
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "grenzelgloves"
@@ -14694,7 +14502,6 @@
 	rogue_armor = /datum/rogue_armor/leather
 	rogue_blocksound = "soft"
 	material_category = 2
-	sellprice = 12
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "freigloves"
@@ -14722,7 +14529,6 @@
 	rogue_armor = /datum/rogue_armor/leather
 	rogue_blocksound = "soft"
 	material_category = 2
-	sellprice = 12
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "gronnleathergloves"
@@ -14750,7 +14556,6 @@
 	rogue_armor = /datum/rogue_armor/leather
 	rogue_blocksound = "soft"
 	material_category = 2
-	sellprice = 12
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "gronnfurgloves"
@@ -16224,6 +16029,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/gloves.dmi'
 	slot_flags = ITEM_SLOT_GLOVES
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|HAND_LEFT|HAND_RIGHT
@@ -16240,8 +16046,7 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
-	worn_icon_state = null
+	worn_icon_state = "shadowgauntlets_f"
 
 /obj/item/clothing/gloves/roguetown/plate/zizo
 	name = "avantyne plate gauntlets"
@@ -16504,11 +16309,9 @@
 	rogue_grid_height = 32
 	rogue_blocksound = "soft"
 	material_category = 2
-	sellprice = 12
 	sewrepair = TRUE
 	sleevetype = "shirt"
 	rogue_sleeve_scrap = /obj/item/natural/fur
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -16538,7 +16341,6 @@
 	detail_tag = "_detail"
 	sewrepair = TRUE
 	rogue_coverage = HEAD
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "desert_hood"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_twilight_axis/icons/roguetown/clothing/head_lefthand.dmi'
@@ -16567,7 +16369,6 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
 	sewrepair = TRUE
 	rogue_coverage = HEAD
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "rain_hood"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -16674,7 +16475,6 @@
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
 	sewrepair = TRUE
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
-	integrity_failure = 0.1
 	equip_delay_self = 3600
 	rogue_salvage_amount = 1
 	worn_icon_state = "blackbag"
@@ -16705,7 +16505,6 @@
 	material_category = 2
 	sewrepair = TRUE
 	rogue_coverage = HEAD
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	inhand_icon_state = "that"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -16730,7 +16529,6 @@
 	material_category = 2
 	sewrepair = TRUE
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	icon_state = null
 	inhand_icon_state = "that"
@@ -17288,7 +17086,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 50
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "circlet"
@@ -17312,7 +17109,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 50
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_sleeve_scrap = null
 	inhand_icon_state = null
@@ -17337,7 +17133,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 65
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "circlet_amber"
@@ -17361,7 +17156,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 20
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "circlet_shell"
@@ -17385,7 +17179,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 75
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "circlet_coral"
@@ -17409,7 +17202,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 65
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "circlet_jade"
@@ -17433,7 +17225,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 45
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "circlet_onyxa"
@@ -17457,7 +17248,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 95
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "circlet_opal"
@@ -17481,7 +17271,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 50
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "circlet_porcelain"
@@ -17505,7 +17294,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 30
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "circlet_rose"
@@ -17529,7 +17317,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 25
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "circlet_shell"
@@ -17553,7 +17340,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 90
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "circlet_turq"
@@ -17674,7 +17460,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 100
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = "that"
 	worn_icon_state = "serpcrowno"
@@ -17721,7 +17506,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 200
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = "that"
 	worn_icon_state = "serpcrown"
@@ -17745,7 +17529,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 100
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = "that"
 	worn_icon_state = "serpcrowno"
@@ -18573,7 +18356,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = "that"
 	worn_icon_state = "headdress"
@@ -18597,7 +18379,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = "that"
 	worn_icon_state = "headdressalt"
@@ -20753,7 +20534,6 @@
 	chunkcolor = "#8c9599"
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDESNOUT
-	sellprice = 1000
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	worn_icon_state = "silverbascinet"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/martyr_lefthand.dmi'
@@ -22492,7 +22272,6 @@
 	rogue_blocksound = "soft"
 	material_category = 2
 	chunkcolor = "#8c9599"
-	sellprice = 10
 	sewrepair = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_NOSE
@@ -22524,7 +22303,6 @@
 	rogue_blocksound = "soft"
 	material_category = 2
 	chunkcolor = "#8c9599"
-	sellprice = 15
 	sewrepair = TRUE
 	worn_icon_state = "leatherhelm"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -22556,7 +22334,6 @@
 	chunkcolor = "#8c9599"
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEHAIR | HIDEEARS | HIDEFACE
-	sellprice = 10
 	sewrepair = TRUE
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_EYES | ROGUE_COVER_NOSE | NECK
 	worn_icon_state = "studhood"
@@ -22589,7 +22366,6 @@
 	chunkcolor = "#8c9599"
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEHAIR | HIDEEARS | HIDEFACE
-	sellprice = 10
 	sewrepair = TRUE
 	worn_icon_state = "studhood"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_stonehedge/icons/clothing/armor/head_lefthand.dmi'
@@ -22620,7 +22396,6 @@
 	material_category = 2
 	chunkcolor = "#8c9599"
 	flags_inv = HIDEHAIR
-	sellprice = 10
 	sewrepair = TRUE
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS
 	worn_icon_state = "chapnaled"
@@ -22685,7 +22460,6 @@
 	material_category = 2
 	chunkcolor = "#8c9599"
 	flags_inv = HIDEEARS | HIDEFACE | HIDESNOUT
-	sellprice = 10
 	sewrepair = TRUE
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS | ROGUE_COVER_EYES | ROGUE_COVER_NOSE
 	inhand_icon_state = null
@@ -22711,7 +22485,6 @@
 	material_category = 2
 	chunkcolor = "#8c9599"
 	flags_inv = HIDEEARS | HIDEFACE
-	sellprice = 10
 	sewrepair = TRUE
 	worn_icon_state = "gronnfurhood"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/special/gronn_lefthand.dmi'
@@ -22742,7 +22515,6 @@
 	material_category = 2
 	chunkcolor = "#8c9599"
 	flags_inv = HIDEEARS | HIDEEYES | HIDEFACE | HIDEHAIR | HIDEMASK | HIDESNOUT
-	sellprice = 10
 	sewrepair = TRUE
 	rogue_coverage = HEAD | ROGUE_COVER_HEAD_PARTS
 	worn_icon_state = "arsonist"
@@ -22773,7 +22545,6 @@
 	rogue_blocksound = "soft"
 	material_category = 2
 	chunkcolor = "#8c9599"
-	sellprice = 10
 	sewrepair = TRUE
 	rogue_coverage = HEAD | ROGUE_COVER_HAIR | ROGUE_COVER_EARS
 	worn_icon_state = "volfhead"
@@ -23721,7 +23492,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 19
 	sewrepair = TRUE
 	inhand_icon_state = "that"
 	worn_icon_state = "hennin"
@@ -24258,7 +24028,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 5
 	sewrepair = TRUE
 	inhand_icon_state = "that"
 	worn_icon_state = "nun"
@@ -24306,7 +24075,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 100
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = null
 	inhand_icon_state = "that"
@@ -24330,7 +24098,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 100
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "consortcrown"
@@ -24503,7 +24270,6 @@
 	rogue_grid_height = 32
 	rogue_blocksound = "soft"
 	material_category = 2
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "papakha"
@@ -24550,7 +24316,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 77
 	sewrepair = TRUE
 	inhand_icon_state = "that"
 	worn_icon_state = "priest"
@@ -24647,7 +24412,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 100
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sewrepair = TRUE
 	icon_state = null
@@ -26630,7 +26394,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 100
 	sewrepair = TRUE
 	inhand_icon_state = "that"
 	worn_icon_state = "wizardhatgen"
@@ -26746,7 +26509,6 @@
 	material_category = 2
 	spitoutmouth = FALSE
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	icon_state = null
 	inhand_icon_state = "cigoff"
@@ -26918,7 +26680,6 @@
 	material_category = 2
 	muteinmouth = FALSE
 	spitoutmouth = FALSE
-	sellprice = 6
 	sewrepair = TRUE
 	worn_icon_state = "pipeoff"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/lighting_lefthand.dmi'
@@ -28119,7 +27880,6 @@
 	flags_inv = HIDEFACE | HIDEHAIR | HIDEFACIALHAIR | HIDESNOUT
 	sewrepair = TRUE
 	rogue_coverage = HEAD
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -28172,7 +27932,6 @@
 	flags_inv = HIDEFACE | HIDESNOUT
 	sewrepair = TRUE
 	rogue_coverage = HEAD
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -28376,7 +28135,6 @@
 	material_category = 2
 	sewrepair = TRUE
 	rogue_coverage = ROGUE_COVER_FACE
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -28570,7 +28328,6 @@
 	block2add = ROGUE_FOV_RIGHT
 	sewrepair = TRUE
 	rogue_coverage = ROGUE_COVER_EYES
-	integrity_failure = 0.5
 	inhand_icon_state = null
 	worn_icon_state = "eyepatch"
 
@@ -28944,7 +28701,6 @@
 	material_category = 2
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEFACE
-	sellprice = 70
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_sleeve_scrap = null
 	inhand_icon_state = null
@@ -28975,7 +28731,6 @@
 	material_category = 2
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEFACE
-	sellprice = 70
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "mask_amber"
@@ -29005,7 +28760,6 @@
 	material_category = 2
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEFACE
-	sellprice = 80
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "mask_coral"
@@ -29035,7 +28789,6 @@
 	material_category = 2
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEFACE
-	sellprice = 70
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "mask_jade"
@@ -29065,7 +28818,6 @@
 	material_category = 2
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEFACE
-	sellprice = 50
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "mask_onyxa"
@@ -29095,7 +28847,6 @@
 	material_category = 2
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEFACE
-	sellprice = 100
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "mask_opal"
@@ -29124,7 +28875,6 @@
 	material_category = 2
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEFACE
-	sellprice = 45
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -29155,7 +28905,6 @@
 	material_category = 2
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEFACE
-	sellprice = 35
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "mask_rose"
@@ -29185,7 +28934,6 @@
 	material_category = 2
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEFACE
-	sellprice = 30
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "mask_shell"
@@ -29215,7 +28963,6 @@
 	material_category = 2
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEFACE
-	sellprice = 95
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "mask_turq"
@@ -29274,7 +29021,6 @@
 	material_category = 2
 	block2add = ROGUE_FOV_BEHIND
 	flags_inv = HIDEFACE | HIDESNOUT
-	sellprice = 100
 	smeltresult = /obj/item/ingot/gold
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
@@ -30007,7 +29753,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 50
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "lmask"
@@ -30031,7 +29776,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 50
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "lmask_l"
@@ -30133,7 +29877,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 20
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "lmask"
@@ -30646,7 +30389,6 @@
 	material_category = 2
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_coverage = ROGUE_COVER_EYES
-	integrity_failure = 0.5
 	inhand_icon_state = null
 	worn_icon_state = "glasses"
 
@@ -31079,7 +30821,6 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -31103,7 +30844,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -31267,7 +31007,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 60
 	inhand_icon_state = null
 	worn_icon_state = "amulet_amber"
 
@@ -31291,7 +31030,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 20
 	inhand_icon_state = null
 	worn_icon_state = "amulet_shell"
 
@@ -31315,7 +31053,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 70
 	inhand_icon_state = null
 	worn_icon_state = "amulet_coral"
 
@@ -31339,7 +31076,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 60
 	inhand_icon_state = null
 	worn_icon_state = "amulet_jade"
 
@@ -31363,7 +31099,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 40
 	inhand_icon_state = null
 	worn_icon_state = "amulet_onyxa"
 
@@ -31387,7 +31122,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 90
 	inhand_icon_state = null
 	worn_icon_state = "amulet_opal"
 
@@ -31411,7 +31145,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 25
 	inhand_icon_state = null
 	worn_icon_state = "amulet_rose"
 
@@ -31435,7 +31168,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 25
 	inhand_icon_state = null
 	worn_icon_state = "amulet_shell"
 
@@ -31459,7 +31191,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 85
 	inhand_icon_state = null
 	worn_icon_state = "amulet_turq"
 
@@ -32151,7 +31882,6 @@
 	rogue_armor = /datum/rogue_armor/plate_bsteel
 	rogue_blocksound = "plate"
 	material_category = 2
-	sellprice = 666
 	static_price = TRUE
 	smeltresult = /obj/item/riddleofsteel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
@@ -32577,7 +32307,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 80
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "horus"
@@ -32605,7 +32334,6 @@
 	rogue_armor = /datum/rogue_armor/leather
 	rogue_blocksound = "soft"
 	material_category = 2
-	sellprice = 10
 	sewrepair = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	inhand_icon_state = null
@@ -32632,7 +32360,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 15
 	rogue_sleeve_scrap = /obj/item/natural/fibers
 	inhand_icon_state = null
 	worn_icon_state = "luckcharm"
@@ -32657,7 +32384,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 15
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -32681,7 +32407,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 15
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -32707,7 +32432,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 15
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -32732,7 +32456,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 15
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -32757,7 +32480,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 15
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -32782,7 +32504,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 15
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -32807,7 +32528,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 15
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -32832,7 +32552,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 15
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -32857,7 +32576,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 15
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -32882,7 +32600,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 15
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -32907,7 +32624,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 15
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -32932,7 +32648,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 15
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -32957,7 +32672,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 15
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -32982,7 +32696,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 15
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -33007,7 +32720,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 15
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -33032,7 +32744,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 15
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -33057,7 +32768,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 15
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -33082,7 +32792,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 100
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "ornateamulet"
@@ -33107,7 +32816,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "ornateamulet"
@@ -33133,7 +32841,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "psycross"
@@ -33159,7 +32866,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_sleeve_scrap = /obj/item/pearl/blue
 	inhand_icon_state = null
@@ -33186,7 +32892,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "gronnabyssor"
@@ -33212,7 +32917,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "astrata"
@@ -33237,7 +32941,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -33264,7 +32967,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 220
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_sleeve_scrap = /obj/item/pearl/blue
 	rogue_salvage_amount = 3
@@ -33291,7 +32993,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -33319,7 +33020,6 @@
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 1
 	chunkcolor = "#532e25"
-	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "psycross_a"
@@ -33345,7 +33045,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "dendor"
@@ -33371,7 +33070,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "gronndendor"
@@ -33397,7 +33095,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "eora"
@@ -33423,7 +33120,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 100
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "psycross_g"
@@ -33449,7 +33145,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "zcross_iron"
@@ -33476,7 +33171,6 @@
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 1
 	chunkcolor = "#532e25"
-	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "zcross_a"
@@ -33502,7 +33196,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 100
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "zcross_g"
@@ -33528,7 +33221,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "malum"
@@ -33553,7 +33245,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -33580,7 +33271,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 333
 	smeltresult = /obj/item/riddleofsteel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	equip_delay_self = 33
@@ -33607,7 +33297,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -33634,7 +33323,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "necra"
@@ -33660,7 +33348,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "noc"
@@ -33685,7 +33372,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -33712,7 +33398,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 80
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_sleeve_scrap = /obj/item/pearl
 	rogue_salvage_amount = 3
@@ -33740,7 +33425,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "pestra"
@@ -33766,7 +33450,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "ravox"
@@ -33791,7 +33474,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -33843,7 +33525,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 25
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_sleeve_scrap = /obj/item/oystershell
 	rogue_salvage_amount = 5
@@ -33870,7 +33551,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 15
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	rogue_salvage_amount = 3
 	inhand_icon_state = null
@@ -33898,7 +33578,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 50
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "psycross_s"
@@ -33924,7 +33603,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 50
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "astrata"
@@ -33950,7 +33628,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 50
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "astrata"
@@ -33976,7 +33653,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 100
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "psycross_g"
@@ -34002,7 +33678,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 50
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "undivided_s"
@@ -34028,7 +33703,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "undivided"
@@ -34054,7 +33728,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "undivided"
@@ -34080,7 +33753,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 666
 	smeltresult = /obj/item/ingot/weeping
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	equip_delay_self = 66
@@ -34134,7 +33806,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/special/magicarc)
 	material_category = 2
-	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "xylix"
@@ -34182,7 +33853,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 30
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "shalal"
@@ -34207,7 +33877,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 100
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "skullamulet"
@@ -34232,7 +33901,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 222
 	smeltresult = /obj/item/roguegem/green
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
@@ -34258,7 +33926,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	material_category = 2
-	sellprice = 70
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "talkstone"
@@ -34277,7 +33944,6 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -34302,7 +33968,6 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -34327,7 +33992,6 @@
 	rogue_grid_height = 32
 	material_category = 2
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -34355,7 +34019,6 @@
 	material_category = 2
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -34397,7 +34060,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 100
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "ruby"
@@ -34438,7 +34100,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 20
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "ring_amber"
@@ -34458,7 +34119,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 3
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -34479,7 +34139,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 3
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -34500,7 +34159,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 70
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -34542,7 +34200,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 20
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "ring_shell"
@@ -34563,7 +34220,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 70
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "ring_coral"
@@ -34583,7 +34239,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 11
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -34604,7 +34259,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 270
 	smeltresult = /obj/item/roguegem/diamond
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
@@ -34626,7 +34280,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 370
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -34647,7 +34300,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 230
 	smeltresult = /obj/item/roguegem/diamond
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
@@ -34669,7 +34321,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 666
 	smeltresult = /obj/item/ingot/draconic
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
@@ -34691,7 +34342,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -34712,7 +34362,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 195
 	smeltresult = /obj/item/roguegem/green
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
@@ -34734,7 +34383,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 295
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -34755,7 +34403,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 155
 	smeltresult = /obj/item/roguegem/green
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
@@ -34803,7 +34450,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 45
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "ring_g"
@@ -34824,7 +34470,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 60
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "ring_jade"
@@ -34844,7 +34489,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 100
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -34865,7 +34509,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 100
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -34886,7 +34529,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 100
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -34907,7 +34549,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 100
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -34928,7 +34569,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 100
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -34949,7 +34589,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 100
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -34970,7 +34609,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 100
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -34991,7 +34629,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 100
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -35012,7 +34649,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 100
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -35033,7 +34669,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 125
 	smeltresult = /obj/item/ash
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
@@ -35056,7 +34691,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 40
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "ring_onyxa"
@@ -35077,7 +34711,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 90
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "ring_opal"
@@ -35097,7 +34730,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 245
 	smeltresult = /obj/item/roguegem/blue
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
@@ -35119,7 +34751,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 345
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -35140,7 +34771,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 205
 	smeltresult = /obj/item/roguegem/blue
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
@@ -35163,7 +34793,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 25
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "ring_rose"
@@ -35183,7 +34812,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 255
 	smeltresult = /obj/item/roguegem/ruby
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
@@ -35205,7 +34833,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 355
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -35226,7 +34853,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 215
 	smeltresult = /obj/item/roguegem/ruby
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
@@ -35248,7 +34874,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 200
 	smeltresult = /obj/item/roguegem/violet
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
@@ -35270,7 +34895,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 300
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -35291,7 +34915,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 160
 	smeltresult = /obj/item/roguegem/violet
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
@@ -35314,7 +34937,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 20
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "ring_shell"
@@ -35334,7 +34956,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 135
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -35355,7 +34976,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 90
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -35376,7 +34996,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 150
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -35397,7 +35016,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 195
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -35419,7 +35037,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 33
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "ring_s"
@@ -35439,7 +35056,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 222
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -35460,7 +35076,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 777
 	smeltresult = /obj/item/riddleofsteel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
@@ -35482,7 +35097,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 222
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -35503,7 +35117,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 222
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -35524,7 +35137,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 222
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -35545,7 +35157,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 180
 	smeltresult = /obj/item/roguegem/yellow
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
@@ -35567,7 +35178,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 380
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -35588,7 +35198,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 140
 	smeltresult = /obj/item/roguegem/yellow
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
@@ -35611,7 +35220,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	material_category = 2
-	sellprice = 85
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "ring_turq"
@@ -35636,7 +35244,6 @@
 	sleeved_detail = null
 	sewrepair = TRUE
 	rogue_sleeve_scrap = null
-	integrity_failure = 0.1
 	equip_delay_self = 30
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -37590,6 +37197,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
@@ -37612,12 +37220,10 @@
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
-	worn_icon_state = null
+	worn_icon_state = "armordress_f"
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/armor_onmob.dmi'
 
 /obj/item/clothing/suit/roguetown/armor/armordress/winterdress
@@ -37680,11 +37286,9 @@
 	material_category = 2
 	flags_inv = NONE
 	boobed = TRUE
-	sellprice = 20
 	sewrepair = TRUE
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
@@ -37717,7 +37321,6 @@
 	material_category = 2
 	flags_inv = NONE
 	boobed = TRUE
-	sellprice = 25
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "eastsuit4"
@@ -37747,7 +37350,6 @@
 	material_category = 2
 	flags_inv = NONE
 	boobed = TRUE
-	sellprice = 25
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "eastsuit4"
@@ -37779,7 +37381,6 @@
 	material_category = 2
 	flags_inv = NONE
 	boobed = TRUE
-	sellprice = 20
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "eastsuit2"
@@ -37811,7 +37412,6 @@
 	material_category = 2
 	flags_inv = NONE
 	boobed = TRUE
-	sellprice = 20
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "eastsuit1"
@@ -37841,7 +37441,6 @@
 	material_category = 2
 	flags_inv = NONE
 	boobed = TRUE
-	sellprice = 20
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "eastsuit1"
@@ -37880,7 +37479,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
@@ -37918,7 +37516,6 @@
 	boobed = TRUE
 	boobed_detail = FALSE
 	sleeved_detail = FALSE
-	sellprice = 363
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
@@ -38198,7 +37795,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
@@ -38906,7 +38502,6 @@
 	nodismemsleeves = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
 	rogue_coverage = CHEST
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
@@ -38972,7 +38567,6 @@
 	sleevetype = "shirt"
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
@@ -39819,7 +39413,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
@@ -39888,7 +39481,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
@@ -39926,7 +39518,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	rogue_sleeve_scrap = /obj/item/natural/hide/cured
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
@@ -40247,7 +39838,6 @@
 	chunkcolor = "#7e5d17"
 	flags_inv = NONE
 	boobed = TRUE
-	sellprice = 100
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "hatangafur"
@@ -40627,7 +40217,6 @@
 	chunkcolor = "#7e5d17"
 	flags_inv = NONE
 	boobed = TRUE
-	sellprice = 50
 	sewrepair = TRUE
 	sleevetype = null
 	icon_state = null
@@ -40658,7 +40247,6 @@
 	chunkcolor = "#7e5d17"
 	flags_inv = NONE
 	boobed = TRUE
-	sellprice = 50
 	sewrepair = TRUE
 	icon_state = null
 	inhand_icon_state = null
@@ -40688,7 +40276,6 @@
 	chunkcolor = "#7e5d17"
 	flags_inv = NONE
 	boobed = TRUE
-	sellprice = 50
 	sewrepair = TRUE
 	icon_state = null
 	inhand_icon_state = null
@@ -40718,7 +40305,6 @@
 	chunkcolor = "#7e5d17"
 	flags_inv = NONE
 	boobed = TRUE
-	sellprice = 50
 	sewrepair = TRUE
 	icon_state = null
 	inhand_icon_state = null
@@ -40748,7 +40334,6 @@
 	chunkcolor = "#7e5d17"
 	flags_inv = NONE
 	boobed = TRUE
-	sellprice = 50
 	sewrepair = TRUE
 	icon_state = null
 	inhand_icon_state = null
@@ -40778,7 +40363,6 @@
 	chunkcolor = "#7e5d17"
 	flags_inv = NONE
 	boobed = TRUE
-	sellprice = 50
 	sewrepair = TRUE
 	icon_state = null
 	inhand_icon_state = null
@@ -40808,7 +40392,6 @@
 	chunkcolor = "#7e5d17"
 	flags_inv = NONE
 	boobed = TRUE
-	sellprice = 50
 	sewrepair = TRUE
 	icon_state = null
 	inhand_icon_state = null
@@ -40837,7 +40420,6 @@
 	chunkcolor = "#7e5d17"
 	flags_inv = NONE
 	boobed = TRUE
-	sellprice = 50
 	sewrepair = TRUE
 	icon_state = null
 	inhand_icon_state = null
@@ -41462,7 +41044,6 @@
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
 	rogue_coverage = CHEST
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
@@ -41528,7 +41109,6 @@
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 40
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
@@ -42236,6 +41816,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_plate
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
@@ -42256,8 +41837,7 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
-	worn_icon_state = null
+	worn_icon_state = "shadowplate_f"
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/armor_onmob.dmi'
 
 /obj/item/clothing/suit/roguetown/armor/plate/full
@@ -42616,7 +42196,6 @@
 	chunkcolor = "#a9c1ca"
 	flags_inv = NONE
 	boobed = TRUE
-	sellprice = 1000
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "silverarmor"
 	inhand_icon_state = null
@@ -43475,7 +43054,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
@@ -43510,7 +43088,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
@@ -43545,7 +43122,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	icon_state = null
@@ -43581,7 +43157,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
@@ -43616,7 +43191,6 @@
 	nodismemsleeves = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
@@ -43631,6 +43205,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/armor.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING
 	armor_type = /datum/armor/rockhill_leather
 	body_parts_covered = CHEST|GROIN|LEG_LEFT|LEG_RIGHT
@@ -43650,12 +43225,10 @@
 	sewrepair = TRUE
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
-	worn_icon_state = null
+	worn_icon_state = "bliaut_f"
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/armor_onmob.dmi'
 
 /obj/item/clothing/suit/roguetown/armor/workervest
@@ -43683,7 +43256,6 @@
 	boobed = TRUE
 	sewrepair = TRUE
 	nodismemsleeves = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
@@ -43711,7 +43283,6 @@
 	boobed = TRUE
 	sewrepair = TRUE
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	equip_delay_self = 25
 	rogue_salvage_amount = 2
 	inhand_icon_state = null
@@ -44056,6 +43627,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/modular_twilight_axis/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_sleeved = null
@@ -44071,8 +43643,7 @@
 	sewrepair = TRUE
 	sleevetype = null
 	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
-	worn_icon_state = null
+	worn_icon_state = "etrdress1_f"
 
 /obj/item/clothing/suit/roguetown/shirt/dress/etrdress2
 	name = "embroidered dress"
@@ -44082,6 +43653,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/modular_twilight_axis/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_sleeved = 'modular_redtard/rockhill/icons/modular_twilight_axis/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
@@ -44096,8 +43668,7 @@
 	boobed = TRUE
 	sewrepair = TRUE
 	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
-	worn_icon_state = null
+	worn_icon_state = "etrdress2_f"
 
 /obj/item/clothing/suit/roguetown/shirt/dress/etrdress3
 	name = "strapless gown"
@@ -44107,6 +43678,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/modular_twilight_axis/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 	rogue_sleeved = 'modular_redtard/rockhill/icons/modular_twilight_axis/icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
@@ -44122,8 +43694,7 @@
 	detail_color = "#ffffff"
 	sewrepair = TRUE
 	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
-	worn_icon_state = null
+	worn_icon_state = "etrdress3_f"
 
 /obj/item/clothing/suit/roguetown/shirt/dress/gen
 	name = "dress"
@@ -46072,7 +45643,6 @@
 	detail_color = "#414143"
 	altdetail_tag = "_detailalt"
 	altdetail_color = "#c08955"
-	sellprice = 25
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "fencingshirt"
@@ -46105,7 +45675,6 @@
 	detail_color = "#414143"
 	altdetail_tag = "_detailalt"
 	altdetail_color = "#c08955"
-	sellprice = 25
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "fencingshirt"
@@ -46312,6 +45881,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/modular_twilight_axis/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST|GROIN
 	rogue_sleeved = 'modular_redtard/rockhill/icons/modular_twilight_axis/icons/roguetown/clothing/onmob/shirts.dmi'
@@ -46326,8 +45896,7 @@
 	boobed = TRUE
 	sewrepair = TRUE
 	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
-	worn_icon_state = null
+	worn_icon_state = "white_kimono_f"
 
 /obj/item/clothing/suit/roguetown/shirt/kimono2
 	name = "long sleeved kimono"
@@ -46618,7 +46187,6 @@
 	material_category = 2
 	flags_inv = NONE
 	boobed = TRUE
-	sellprice = 100
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "archivist"
@@ -47436,7 +47004,6 @@
 	material_category = 2
 	flags_inv = NONE
 	boobed = TRUE
-	sellprice = 30
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "merrobe"
@@ -47643,6 +47210,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/modular_twilight_axis/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST|GROIN
 	rogue_sleeved = 'modular_redtard/rockhill/icons/modular_twilight_axis/icons/roguetown/clothing/onmob/shirts.dmi'
@@ -47657,8 +47225,7 @@
 	boobed = TRUE
 	sewrepair = TRUE
 	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
-	worn_icon_state = null
+	worn_icon_state = "nun_dress_f"
 
 /obj/item/clothing/suit/roguetown/shirt/robe/phys
 	name = "physicker's robe"
@@ -47940,6 +47507,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/modular_azurepeak/icons/clothing/onmob/donor_clothes.dmi'
 	slot_flags = ITEM_SLOT_OCLOTHING|ITEM_SLOT_ROGUE_CLOAK|ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN|LEG_LEFT|LEG_RIGHT
 	rogue_sleeved = 'modular_redtard/rockhill/icons/modular_azurepeak/icons/clothing/onmob/donor_sleeves_armor.dmi'
@@ -47956,8 +47524,7 @@
 	sleevetype = "sofiavest"
 	nodismemsleeves = TRUE
 	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
-	worn_icon_state = null
+	worn_icon_state = "sofiavest_f"
 
 /obj/item/clothing/suit/roguetown/shirt/robe/spellcasterrobe
 	name = "spellsinger robes"
@@ -48087,7 +47654,6 @@
 	material_category = 2
 	flags_inv = NONE
 	boobed = TRUE
-	sellprice = 100
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "wizardrobes"
@@ -48100,6 +47666,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT
 	body_parts_covered = CHEST
 	rogue_sleeved = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/helpers/sleeves_shirts.dmi'
@@ -48116,8 +47683,7 @@
 	r_sleeve_status = ROGUE_SLEEVE_TORN
 	l_sleeve_status = ROGUE_SLEEVE_TORN
 	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
-	worn_icon_state = null
+	worn_icon_state = "shadowshirt_f"
 
 /obj/item/clothing/suit/roguetown/shirt/shadowshirt/elflock
 	name = "silk shirt"
@@ -48127,6 +47693,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	lefthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/mob/inhands/clothing_righthand.dmi'
+	worn_icon = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/shirts.dmi'
 	slot_flags = ITEM_SLOT_ROGUE_SHIRT
 	armor_type = /datum/armor/rockhill_padded
 	body_parts_covered = CHEST|FOOT_LEFT|FOOT_RIGHT|GROIN|LEG_LEFT|LEG_RIGHT
@@ -48143,8 +47710,7 @@
 	boobed = TRUE
 	sewrepair = TRUE
 	inhand_icon_state = null
-	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
-	worn_icon_state = null
+	worn_icon_state = "shadowshirt_f"
 
 /obj/item/clothing/suit/roguetown/shirt/shortshirt
 	name = "shirt"
@@ -49636,7 +49202,6 @@
 	sleevetype = "leg"
 	r_sleeve_status = ROGUE_SLEEVE_NORMAL
 	l_sleeve_status = ROGUE_SLEEVE_NORMAL
-	integrity_failure = 0.1
 	equip_delay_self = 30
 	rogue_salvage_amount = 2
 	inhand_icon_state = null
@@ -49979,7 +49544,6 @@
 	rogue_blocksound = "soft"
 	material_category = 2
 	flags_inv = NONE
-	sellprice = 18
 	sewrepair = TRUE
 	r_sleeve_status = ROGUE_SLEEVE_NOMOD
 	l_sleeve_status = ROGUE_SLEEVE_NOMOD
@@ -50012,7 +49576,6 @@
 	rogue_blocksound = "soft"
 	material_category = 2
 	flags_inv = NONE
-	sellprice = 18
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "overseerpants"
@@ -50042,7 +49605,6 @@
 	rogue_blocksound = "soft"
 	material_category = 2
 	flags_inv = NONE
-	sellprice = 18
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "eastpants1"
@@ -50072,7 +49634,6 @@
 	rogue_blocksound = "soft"
 	material_category = 2
 	flags_inv = NONE
-	sellprice = 18
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "eastpants2"
@@ -50104,7 +49665,6 @@
 	flags_inv = NONE
 	detail_tag = "_detail"
 	detail_color = "#FFFFFF"
-	sellprice = 18
 	sewrepair = TRUE
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
@@ -50135,7 +49695,6 @@
 	rogue_blocksound = "soft"
 	material_category = 2
 	flags_inv = NONE
-	sellprice = 18
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "baggypants"
@@ -50165,7 +49724,6 @@
 	rogue_blocksound = "soft"
 	material_category = 2
 	flags_inv = NONE
-	sellprice = 18
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "baggypants"
@@ -50195,7 +49753,6 @@
 	rogue_blocksound = "soft"
 	material_category = 2
 	flags_inv = NONE
-	sellprice = 18
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "nomadpants"
@@ -50225,7 +49782,6 @@
 	rogue_blocksound = "soft"
 	material_category = 2
 	flags_inv = NONE
-	sellprice = 18
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "fencerpants"
@@ -50257,7 +49813,6 @@
 	flags_inv = NONE
 	detail_tag = "_detail"
 	detail_color = "#5E4440"
-	sellprice = 18
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "fencingbreeches"
@@ -50287,7 +49842,6 @@
 	rogue_blocksound = "soft"
 	material_category = 2
 	flags_inv = NONE
-	sellprice = 18
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "shepherdpants"
@@ -50317,7 +49871,6 @@
 	rogue_blocksound = "soft"
 	material_category = 2
 	flags_inv = NONE
-	sellprice = 18
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "shadowpants"
@@ -50347,7 +49900,6 @@
 	rogue_blocksound = "chain"
 	material_category = 2
 	flags_inv = NONE
-	sellprice = 18
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "shadowpants"
@@ -50377,7 +49929,6 @@
 	rogue_blocksound = "soft"
 	material_category = 2
 	flags_inv = NONE
-	sellprice = 18
 	sewrepair = TRUE
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
@@ -50721,7 +50272,6 @@
 	rogue_blocksound = "plate"
 	material_category = 2
 	flags_inv = NONE
-	sellprice = 1000
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	sleevetype = "silverlegs"
 	inhand_icon_state = null
@@ -52545,7 +52095,6 @@
 	worn_y_dimension = 32
 	material_category = 2
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -52573,7 +52122,6 @@
 	material_category = 2
 	sewrepair = TRUE
 	sleevetype = "shirt"
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -53071,7 +52619,6 @@
 	rogue_armor = /datum/rogue_armor/padded
 	rogue_blocksound = "soft"
 	material_category = 2
-	sellprice = 10
 	sewrepair = TRUE
 	rogue_salvage_amount = 1
 	inhand_icon_state = null
@@ -53175,7 +52722,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	material_category = 2
-	sellprice = 65
 	inhand_icon_state = null
 	worn_icon_state = "br_amber"
 	rogue_female_worn = TRUE
@@ -53198,7 +52744,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	material_category = 2
-	sellprice = 25
 	inhand_icon_state = null
 	worn_icon_state = "br_shell"
 	rogue_female_worn = TRUE
@@ -53221,7 +52766,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	material_category = 2
-	sellprice = 75
 	inhand_icon_state = null
 	worn_icon_state = "br_coral"
 	rogue_female_worn = TRUE
@@ -53244,7 +52788,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	material_category = 2
-	sellprice = 65
 	inhand_icon_state = null
 	worn_icon_state = "br_jade"
 	rogue_female_worn = TRUE
@@ -53267,7 +52810,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	material_category = 2
-	sellprice = 45
 	inhand_icon_state = null
 	worn_icon_state = "br_onyxa"
 	rogue_female_worn = TRUE
@@ -53290,7 +52832,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	material_category = 2
-	sellprice = 95
 	inhand_icon_state = null
 	worn_icon_state = "br_opal"
 	rogue_female_worn = TRUE
@@ -53313,7 +52854,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	material_category = 2
-	sellprice = 30
 	inhand_icon_state = null
 	worn_icon_state = "br_rose"
 	rogue_female_worn = TRUE
@@ -53336,7 +52876,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	material_category = 2
-	sellprice = 25
 	inhand_icon_state = null
 	worn_icon_state = "br_shell"
 	rogue_female_worn = TRUE
@@ -53359,7 +52898,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	material_category = 2
-	sellprice = 90
 	inhand_icon_state = null
 	worn_icon_state = "br_turq"
 	rogue_female_worn = TRUE
@@ -53502,7 +53040,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/objects_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/objects_righthand.dmi'
 	inhand_icon_state = null
@@ -53522,7 +53059,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	smeltresult = /obj/item/ingot/bronze
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -53565,7 +53101,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/construction/bundle/nail
@@ -53601,7 +53136,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/crafting_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/crafting_righthand.dmi'
 	inhand_icon_state = null
@@ -53621,7 +53155,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/crafting_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/crafting_righthand.dmi'
 	inhand_icon_state = null
@@ -53641,7 +53174,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	smeltresult = /obj/item/ingot/bronze
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -53663,7 +53195,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	smeltresult = /obj/item/ingot/bronze
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/gadgets_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/gadgets_righthand.dmi'
 	inhand_icon_state = null
@@ -53683,7 +53214,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	smeltresult = /obj/item/ingot/gold
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -53703,7 +53233,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	smeltresult = /obj/item/ingot/iron
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -53725,7 +53254,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	smeltresult = /obj/item/ingot/bronze
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/wrenches_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/wrenches_righthand.dmi'
 	inhand_icon_state = null
@@ -53768,7 +53296,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	smeltresult = /obj/item/ingot/bronze
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -53791,7 +53318,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/snip)
 	smeltresult = /obj/item/ingot/bronze
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -53811,7 +53337,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	smeltresult = /obj/item/ingot/bronze
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -53831,7 +53356,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	smeltresult = /obj/item/ingot/steel
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -53853,7 +53377,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	smeltresult = /obj/item/ingot/bronze
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -53879,7 +53402,6 @@
 	associated_skill = /datum/attribute/skill/craft/cooking
 	possible_item_intents = list(/datum/intent/mace/strike/pan)
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/pan_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/pan_righthand.dmi'
 	inhand_icon_state = null
@@ -53931,7 +53453,6 @@
 	can_parry = TRUE
 	associated_skill = /datum/attribute/skill/craft/cooking
 	possible_item_intents = list(/datum/intent/mace/strike/pan)
-	sellprice = 25
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/pan_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/pan_righthand.dmi'
@@ -53957,7 +53478,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/cooking/platter/bronze
@@ -54012,7 +53532,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 60
 	inhand_icon_state = null
 
 /obj/item/cooking/platter/carved/coral
@@ -54031,7 +53550,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 70
 	inhand_icon_state = null
 
 /obj/item/cooking/platter/carved/jade
@@ -54050,7 +53568,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 60
 	inhand_icon_state = null
 
 /obj/item/cooking/platter/carved/onyxa
@@ -54069,7 +53586,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 40
 	inhand_icon_state = null
 
 /obj/item/cooking/platter/carved/opal
@@ -54088,7 +53604,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 90
 	inhand_icon_state = null
 
 /obj/item/cooking/platter/carved/porcelain
@@ -54107,7 +53622,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 30
 	inhand_icon_state = null
 
 /obj/item/cooking/platter/carved/rose
@@ -54126,7 +53640,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 25
 	inhand_icon_state = null
 
 /obj/item/cooking/platter/carved/shell
@@ -54145,7 +53658,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 20
 	inhand_icon_state = null
 
 /obj/item/cooking/platter/carved/turq
@@ -54164,7 +53676,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 85
 	inhand_icon_state = null
 
 /obj/item/cooking/platter/copper
@@ -54183,7 +53694,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 8
 	inhand_icon_state = null
 
 /obj/item/cooking/platter/decrepit
@@ -54220,7 +53730,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 60
 	inhand_icon_state = null
 
 /obj/item/cooking/platter/pewter
@@ -54239,7 +53748,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 11
 	inhand_icon_state = null
 
 /obj/item/cooking/platter/silver
@@ -54258,7 +53766,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 48
 	inhand_icon_state = null
 
 /obj/item/cooking/skewer
@@ -54272,7 +53779,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	possible_item_intents = list(/datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -54291,8 +53797,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 100
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -54309,7 +53813,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_deserttown/icons/cushions_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_deserttown/icons/cushions_righthand.dmi'
 	inhand_icon_state = null
@@ -54326,7 +53829,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_deserttown/icons/cushions_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_deserttown/icons/cushions_righthand.dmi'
 	inhand_icon_state = null
@@ -54343,7 +53845,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_deserttown/icons/cushions_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_deserttown/icons/cushions_righthand.dmi'
 	inhand_icon_state = null
@@ -54362,7 +53863,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/keys_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/keys_righthand.dmi'
 	inhand_icon_state = null
@@ -54381,7 +53881,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/keys_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/keys_righthand.dmi'
 	inhand_icon_state = null
@@ -54417,7 +53916,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -54435,8 +53933,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 150
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/icons/obj/lewd/dildo_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/icons/obj/lewd/dildo_righthand.dmi'
 	inhand_icon_state = null
@@ -54454,8 +53950,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 12
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/icons/obj/lewd/dildo_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/icons/obj/lewd/dildo_righthand.dmi'
 	inhand_icon_state = null
@@ -54473,8 +53967,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 5
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/icons/obj/lewd/dildo_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/icons/obj/lewd/dildo_righthand.dmi'
 	inhand_icon_state = null
@@ -54492,8 +53984,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 50
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/icons/obj/lewd/dildo_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/icons/obj/lewd/dildo_righthand.dmi'
 	inhand_icon_state = null
@@ -54511,8 +54001,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 5
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/icons/obj/lewd/dildo_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/icons/obj/lewd/dildo_righthand.dmi'
 	inhand_icon_state = null
@@ -54530,8 +54018,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 30
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/icons/obj/lewd/dildo_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/icons/obj/lewd/dildo_righthand.dmi'
 	inhand_icon_state = null
@@ -54549,8 +54035,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 10
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/icons/obj/lewd/dildo_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/icons/obj/lewd/dildo_righthand.dmi'
 	inhand_icon_state = null
@@ -54568,8 +54052,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 1
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/icons/obj/lewd/dildo_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/icons/obj/lewd/dildo_righthand.dmi'
 	inhand_icon_state = null
@@ -54590,7 +54072,6 @@
 	worn_y_dimension = 32
 	gripped_intents = list(/datum/intent/hit)
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/machines_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/machines_righthand.dmi'
 	inhand_icon_state = null
@@ -54608,7 +54089,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/valuable_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/valuable_righthand.dmi'
 	inhand_icon_state = null
@@ -54629,7 +54109,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -54650,7 +54129,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -54671,7 +54149,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -54690,7 +54167,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
@@ -54715,7 +54191,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 96
 	possible_item_intents = list(/datum/intent/cast, /datum/intent/spear/bash)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/tools_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/tools_righthand.dmi'
 	inhand_icon_state = null
@@ -54779,7 +54254,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 96
 	possible_item_intents = list(/datum/intent/cast, /datum/intent/spear/bash)
-	sellprice = 8
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/tools_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/tools_righthand.dmi'
 	inhand_icon_state = null
@@ -54801,7 +54275,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 96
 	possible_item_intents = list(/datum/intent/cast, /datum/intent/spear/bash)
-	sellprice = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/tools_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/tools_righthand.dmi'
 	inhand_icon_state = null
@@ -54821,7 +54294,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/rav/obj/cult_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/rav/obj/cult_righthand.dmi'
 	inhand_icon_state = null
@@ -54844,7 +54316,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/lighting_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/lighting_righthand.dmi'
 	inhand_icon_state = null
@@ -54950,7 +54421,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
-	sellprice = 8
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/lighting_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/lighting_righthand.dmi'
 	inhand_icon_state = null
@@ -54972,7 +54442,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
-	sellprice = 8
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/lighting_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/lighting_righthand.dmi'
 	inhand_icon_state = null
@@ -54994,7 +54463,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
-	sellprice = 8
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/lighting_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/lighting_righthand.dmi'
 	inhand_icon_state = null
@@ -55016,7 +54484,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
-	sellprice = 8
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/lighting_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/lighting_righthand.dmi'
 	inhand_icon_state = null
@@ -55038,7 +54505,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
-	sellprice = 8
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/lighting_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/lighting_righthand.dmi'
 	inhand_icon_state = null
@@ -55060,7 +54526,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
-	sellprice = 8
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/lighting_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/lighting_righthand.dmi'
 	inhand_icon_state = null
@@ -55082,7 +54547,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
-	sellprice = 8
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/lighting_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/lighting_righthand.dmi'
 	inhand_icon_state = null
@@ -55104,7 +54568,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
-	sellprice = 8
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/lighting_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/lighting_righthand.dmi'
 	inhand_icon_state = null
@@ -55149,7 +54612,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/mace/strike)
 	smeltresult = /obj/item/rogueore/coal
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/lighting_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/lighting_righthand.dmi'
 	inhand_icon_state = null
@@ -55169,7 +54631,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	possible_item_intents = list(/datum/intent/hit)
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/lighting_lefthand.dmi'
@@ -55190,7 +54651,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/structures/heart_items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/structures/heart_items_righthand.dmi'
 	inhand_icon_state = null
@@ -55209,7 +54669,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/structures/heart_items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/structures/heart_items_righthand.dmi'
 	inhand_icon_state = null
@@ -55232,7 +54691,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/lighting_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/lighting_righthand.dmi'
 	inhand_icon_state = null
@@ -55258,7 +54716,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon_state = "calendula_crown"
 
@@ -55280,7 +54737,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon_state = "manabloom_crown"
 
@@ -55302,7 +54758,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon_state = "matricaria_crown"
 
@@ -55324,7 +54779,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon_state = "rosa_crown"
 
@@ -55388,7 +54842,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon_state = "salvia_crown"
 
@@ -55405,7 +54858,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/gadgets_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/gadgets_righthand.dmi'
 	inhand_icon_state = "foldingTableStored~2"
@@ -55462,7 +54914,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_azurepeak/icons/obj/items/eora_pom_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_azurepeak/icons/obj/items/eora_pom_righthand.dmi'
 	inhand_icon_state = null
@@ -55480,7 +54931,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/mob/familiars_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/mob/familiars_righthand.dmi'
 	inhand_icon_state = null
@@ -55503,7 +54953,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	possible_item_intents = list(/datum/intent/grab/upgrade)
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/grabbing/bite
@@ -55541,7 +54990,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/grapple, /datum/intent/attach, /datum/intent/reel)
-	integrity_failure = 0
 	inhand_icon_state = "grappler"
 
 /obj/item/grown/log/tree/bowpartial
@@ -55558,7 +55006,6 @@
 	possible_item_intents = list(/datum/intent/hit)
 	firefuel = 10 MINUTES
 	smeltresult = /obj/item/rogueore/coal
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_righthand.dmi'
 	inhand_icon_state = null
@@ -55622,7 +55069,6 @@
 	possible_item_intents = list(/datum/intent/hit)
 	firefuel = 20 MINUTES
 	smeltresult = /obj/item/rogueore/coal/charcoal
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_righthand.dmi'
 	inhand_icon_state = null
@@ -55668,7 +55114,6 @@
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/stab, /datum/intent/pick)
 	firefuel = 1 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_righthand.dmi'
 	inhand_icon_state = null
@@ -55692,7 +55137,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_righthand.dmi'
 	inhand_icon_state = null
@@ -55720,7 +55164,6 @@
 	gripped_intents = list(/datum/intent/shoot/firearm, /datum/intent/arc/firearm, /datum/intent/hit)
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/engineering
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_helmsguard/icons/weapons/arquebus_lefthand.dmi'
@@ -55751,7 +55194,6 @@
 	possible_item_intents = list(/datum/intent/shoot/firearm, /datum/intent/arc/firearm, /datum/intent/mace/strike/wood)
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/engineering
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/guns32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/guns32_righthand.dmi'
 	inhand_icon_state = null
@@ -55778,7 +55220,6 @@
 	gripped_intents = list(/datum/intent/shoot/firearm, /datum/intent/arc/firearm, /datum/intent/hit)
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/engineering
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_helmsguard/icons/weapons/flintgonne_lefthand.dmi'
@@ -55835,7 +55276,6 @@
 	gripped_intents = list(/datum/intent/shoot/firearm, /datum/intent/arc/firearm, /datum/intent/hit)
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/engineering
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_helmsguard/icons/weapons/handgonne_lefthand.dmi'
@@ -55859,7 +55299,6 @@
 	worn_y_dimension = 32
 	possible_item_intents = list(/datum/intent/mace/strike/wood)
 	gripped_intents = list(/datum/intent/shoot/firearm, /datum/intent/arc/firearm, /datum/intent/hit)
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/timesoldier/sprites/nu_guns_lefthand.dmi'
@@ -55885,7 +55324,6 @@
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/shoot/bow, /datum/intent/arc/bow, /datum/intent/hit)
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/arrow
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/32_righthand.dmi'
 	inhand_icon_state = null
@@ -56168,7 +55606,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/bolt
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_lefthand.dmi'
@@ -56407,7 +55844,6 @@
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/swing/sling, /datum/intent/arc/sling, /datum/intent/hit)
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/sling
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_righthand.dmi'
 	inhand_icon_state = null
@@ -56435,7 +55871,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -56456,7 +55891,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -56477,7 +55911,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -56499,7 +55932,6 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/heart_blood_canister
@@ -56513,7 +55945,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/structures/heart_items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/structures/heart_items_righthand.dmi'
 	inhand_icon_state = null
@@ -56549,7 +55980,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/structures/heart_items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/structures/heart_items_righthand.dmi'
 	inhand_icon_state = null
@@ -56585,7 +56015,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/structures/heart_items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/structures/heart_items_righthand.dmi'
 	inhand_icon_state = null
@@ -56608,7 +56037,6 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/herbseed
@@ -56621,7 +56049,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_righthand.dmi'
 	inhand_icon_state = null
@@ -56897,7 +56324,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	possible_item_intents = list(/datum/intent/smoke, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -56916,7 +56342,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/hourglass_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/hourglass_righthand.dmi'
 	inhand_icon_state = null
@@ -56934,7 +56359,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -56952,7 +56376,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -56991,9 +56414,7 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 15
 	sewrepair = TRUE
-	integrity_failure = 0
 	equip_delay_self = 50
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -57016,7 +56437,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -57036,7 +56456,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -57151,9 +56570,7 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 1
 	smeltresult = /obj/item/ingot/aaslag
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -57173,9 +56590,7 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 100
 	smeltresult = /obj/item/ingot/blacksteel
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -57195,9 +56610,7 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 25
 	smeltresult = /obj/item/ingot/bronze
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -57217,9 +56630,7 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 1
 	smeltresult = /obj/item/ingot/iron
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -57239,7 +56650,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 1
 	smeltresult = /obj/item/ingot/iron
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_righthand.dmi'
@@ -57260,7 +56670,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 1
 	smeltresult = /obj/item/ingot/iron
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_righthand.dmi'
@@ -57281,7 +56690,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 33
 	smeltresult = /obj/item/roguegem/blood_diamond
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_righthand.dmi'
@@ -57302,7 +56710,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 1
 	smeltresult = /obj/item/rogueore/iron
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_righthand.dmi'
@@ -57323,9 +56730,7 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 10
 	smeltresult = /obj/item/ingot/copper
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -57345,9 +56750,7 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 33
 	smeltresult = /obj/item/ingot/aaslag
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -57367,9 +56770,7 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 333
 	smeltresult = /obj/item/ingot/draconic
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -57389,9 +56790,7 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 111
 	smeltresult = /obj/item/ingot/gilbranze
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -57411,7 +56810,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 111
 	smeltresult = /obj/item/ingot/gilbranze
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_righthand.dmi'
@@ -57432,9 +56830,7 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 100
 	smeltresult = /obj/item/ingot/gold
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -57454,9 +56850,7 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 15
 	smeltresult = /obj/item/ingot/iron
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -57476,9 +56870,7 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 80
 	smeltresult = /obj/item/ingot/silver
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -57498,9 +56890,7 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 100
 	smeltresult = /obj/item/ingot/silverblessed
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -57520,7 +56910,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 100
 	smeltresult = /obj/item/ingot/silverblessed/bullion
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_righthand.dmi'
@@ -57541,9 +56930,7 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 20
 	smeltresult = /obj/item/ingot/steel
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -57563,9 +56950,7 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 20
 	smeltresult = /obj/item/ingot/steel
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -57585,9 +56970,7 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 15
 	smeltresult = /obj/item/ingot/tin
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -57607,9 +56990,7 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 222
 	smeltresult = /obj/item/ingot/weeping
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -57629,7 +57010,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -57651,7 +57031,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	gripped_intents = list(/datum/intent/garrote/grab, /datum/intent/garrote/choke)
-	integrity_failure = 0.01
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -57672,7 +57051,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -57692,7 +57070,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -57714,7 +57091,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -57735,7 +57111,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
@@ -57758,7 +57133,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -57778,9 +57152,6 @@
 	worn_y_dimension = 32
 	wbalance = 1
 	possible_item_intents = list(/datum/intent/use, /datum/intent/dagger/thrust/fork)
-	sellprice = 10
-	max_blade_int = 40
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_righthand.dmi'
 	inhand_icon_state = null
@@ -57799,9 +57170,6 @@
 	worn_y_dimension = 32
 	wbalance = 1
 	possible_item_intents = list(/datum/intent/use, /datum/intent/dagger/thrust/fork)
-	sellprice = 55
-	max_blade_int = 40
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_righthand.dmi'
 	inhand_icon_state = null
@@ -57820,9 +57188,6 @@
 	worn_y_dimension = 32
 	wbalance = 1
 	possible_item_intents = list(/datum/intent/use, /datum/intent/dagger/thrust/fork)
-	sellprice = 65
-	max_blade_int = 40
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_righthand.dmi'
 	inhand_icon_state = null
@@ -57841,9 +57206,6 @@
 	worn_y_dimension = 32
 	wbalance = 1
 	possible_item_intents = list(/datum/intent/use, /datum/intent/dagger/thrust/fork)
-	sellprice = 55
-	max_blade_int = 40
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_righthand.dmi'
 	inhand_icon_state = null
@@ -57862,9 +57224,6 @@
 	worn_y_dimension = 32
 	wbalance = 1
 	possible_item_intents = list(/datum/intent/use, /datum/intent/dagger/thrust/fork)
-	sellprice = 35
-	max_blade_int = 40
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_righthand.dmi'
 	inhand_icon_state = null
@@ -57883,9 +57242,6 @@
 	worn_y_dimension = 32
 	wbalance = 1
 	possible_item_intents = list(/datum/intent/use, /datum/intent/dagger/thrust/fork)
-	sellprice = 85
-	max_blade_int = 40
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_righthand.dmi'
 	inhand_icon_state = null
@@ -57904,9 +57260,6 @@
 	worn_y_dimension = 32
 	wbalance = 1
 	possible_item_intents = list(/datum/intent/use, /datum/intent/dagger/thrust/fork)
-	sellprice = 25
-	max_blade_int = 40
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_righthand.dmi'
 	inhand_icon_state = null
@@ -57925,9 +57278,6 @@
 	worn_y_dimension = 32
 	wbalance = 1
 	possible_item_intents = list(/datum/intent/use, /datum/intent/dagger/thrust/fork)
-	sellprice = 20
-	max_blade_int = 40
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_righthand.dmi'
 	inhand_icon_state = null
@@ -57946,9 +57296,6 @@
 	worn_y_dimension = 32
 	wbalance = 1
 	possible_item_intents = list(/datum/intent/use, /datum/intent/dagger/thrust/fork)
-	sellprice = 15
-	max_blade_int = 40
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_righthand.dmi'
 	inhand_icon_state = null
@@ -57967,9 +57314,6 @@
 	worn_y_dimension = 32
 	wbalance = 1
 	possible_item_intents = list(/datum/intent/use, /datum/intent/dagger/thrust/fork)
-	sellprice = 80
-	max_blade_int = 40
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_righthand.dmi'
 	inhand_icon_state = null
@@ -57989,8 +57333,6 @@
 	worn_y_dimension = 32
 	wbalance = 1
 	possible_item_intents = list(/datum/intent/use, /datum/intent/dagger/thrust/fork)
-	max_blade_int = 40
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_righthand.dmi'
 	inhand_icon_state = null
@@ -58010,9 +57352,6 @@
 	worn_y_dimension = 32
 	wbalance = 1
 	possible_item_intents = list(/datum/intent/use, /datum/intent/dagger/thrust/fork)
-	sellprice = 30
-	max_blade_int = 40
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_righthand.dmi'
 	inhand_icon_state = null
@@ -58032,9 +57371,6 @@
 	worn_y_dimension = 32
 	wbalance = 1
 	possible_item_intents = list(/datum/intent/use, /datum/intent/dagger/thrust/fork)
-	sellprice = 6
-	max_blade_int = 40
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_righthand.dmi'
 	inhand_icon_state = null
@@ -58054,9 +57390,6 @@
 	worn_y_dimension = 32
 	wbalance = 1
 	possible_item_intents = list(/datum/intent/use, /datum/intent/dagger/thrust/fork)
-	sellprice = 24
-	max_blade_int = 40
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_righthand.dmi'
 	inhand_icon_state = null
@@ -58076,9 +57409,6 @@
 	worn_y_dimension = 32
 	wbalance = 1
 	possible_item_intents = list(/datum/intent/use, /datum/intent/dagger/thrust/fork)
-	sellprice = 6
-	max_blade_int = 40
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/fork_righthand.dmi'
 	inhand_icon_state = null
@@ -58097,8 +57427,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 10
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_righthand.dmi'
 	inhand_icon_state = null
@@ -58116,8 +57444,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 55
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_righthand.dmi'
 	inhand_icon_state = null
@@ -58135,8 +57461,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 65
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_righthand.dmi'
 	inhand_icon_state = null
@@ -58154,8 +57478,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 55
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_righthand.dmi'
 	inhand_icon_state = null
@@ -58173,8 +57495,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 35
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_righthand.dmi'
 	inhand_icon_state = null
@@ -58192,8 +57512,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 85
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_righthand.dmi'
 	inhand_icon_state = null
@@ -58211,8 +57529,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 25
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_righthand.dmi'
 	inhand_icon_state = null
@@ -58230,8 +57546,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 20
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_righthand.dmi'
 	inhand_icon_state = null
@@ -58249,8 +57563,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 15
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_righthand.dmi'
 	inhand_icon_state = null
@@ -58268,8 +57580,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 80
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_righthand.dmi'
 	inhand_icon_state = null
@@ -58288,8 +57598,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 5
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_righthand.dmi'
 	inhand_icon_state = null
@@ -58308,8 +57616,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 30
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_righthand.dmi'
 	inhand_icon_state = null
@@ -58328,8 +57634,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 6
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_righthand.dmi'
 	inhand_icon_state = null
@@ -58348,8 +57652,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 24
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_righthand.dmi'
 	inhand_icon_state = null
@@ -58368,8 +57670,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 6
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/spoon_righthand.dmi'
 	inhand_icon_state = null
@@ -58391,7 +57691,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/icons/obj/leashes_collars_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/icons/obj/leashes_collars_righthand.dmi'
 	inhand_icon_state = null
@@ -58450,7 +57749,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/structures/heart_items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/structures/heart_items_righthand.dmi'
 	inhand_icon_state = null
@@ -58469,8 +57767,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 40
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/structures/heart_items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/structures/heart_items_righthand.dmi'
 	inhand_icon_state = null
@@ -58490,7 +57786,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_hearthstone/icons/obj/items/clothes/stockings_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_hearthstone/icons/obj/items/clothes/stockings_righthand.dmi'
 	inhand_icon_state = null
@@ -58510,7 +57805,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_hearthstone/icons/obj/items/clothes/stockings_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_hearthstone/icons/obj/items/clothes/stockings_righthand.dmi'
 	inhand_icon_state = null
@@ -58530,7 +57824,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_hearthstone/icons/obj/items/clothes/stockings_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_hearthstone/icons/obj/items/clothes/stockings_righthand.dmi'
 	inhand_icon_state = null
@@ -58645,7 +57938,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_hearthstone/icons/obj/items/clothes/stockings_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_hearthstone/icons/obj/items/clothes/stockings_righthand.dmi'
 	inhand_icon_state = null
@@ -58684,7 +57976,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_hearthstone/icons/obj/items/clothes/stockings_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_hearthstone/icons/obj/items/clothes/stockings_righthand.dmi'
 	inhand_icon_state = null
@@ -58704,7 +57995,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_hearthstone/icons/obj/items/clothes/stockings_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_hearthstone/icons/obj/items/clothes/stockings_righthand.dmi'
 	inhand_icon_state = null
@@ -58724,7 +58014,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_hearthstone/icons/obj/items/clothes/stockings_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_hearthstone/icons/obj/items/clothes/stockings_righthand.dmi'
 	inhand_icon_state = null
@@ -58858,7 +58147,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_hearthstone/icons/obj/items/clothes/stockings_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_hearthstone/icons/obj/items/clothes/stockings_righthand.dmi'
 	inhand_icon_state = null
@@ -58897,7 +58185,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_hearthstone/icons/obj/items/clothes/stockings_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_hearthstone/icons/obj/items/clothes/stockings_righthand.dmi'
 	inhand_icon_state = null
@@ -58923,7 +58210,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/listenstone
@@ -58945,8 +58231,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
-	sellprice = 200
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon_state = "listenstone"
 
@@ -58965,7 +58249,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	associated_skill = /datum/attribute/skill/misc/lockpicking
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -59040,7 +58323,6 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -59094,7 +58376,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 64
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -59114,7 +58395,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -59134,8 +58414,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 50
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -59155,8 +58433,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 2
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -59176,8 +58452,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 250
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -59197,8 +58471,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 15
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -59218,8 +58490,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 50
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -59239,8 +58509,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 2
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -59260,8 +58528,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 250
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -59281,8 +58547,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 15
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -59302,8 +58566,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 2
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -59323,8 +58585,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 50
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -59344,8 +58604,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 15
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -59365,8 +58623,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 250
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -59386,7 +58642,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -59406,7 +58661,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -59426,8 +58680,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 2
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -59447,8 +58699,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 15
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -59468,8 +58718,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 50
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -59489,8 +58737,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 250
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -59510,7 +58756,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -59530,7 +58775,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/shards_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/shards_righthand.dmi'
 	inhand_icon_state = null
@@ -59550,7 +58794,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -59571,7 +58814,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -59590,8 +58832,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 30
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/mob/monster/maneater_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/mob/monster/maneater_righthand.dmi'
 	inhand_icon_state = null
@@ -59612,7 +58852,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -59638,7 +58877,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -59656,8 +58894,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	firefuel = 30 SECONDS
-	sellprice = 2
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_azurepeak/icons/clothing/mercmedals_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_azurepeak/icons/clothing/mercmedals_righthand.dmi'
 	inhand_icon_state = null
@@ -59676,7 +58912,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/structure_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/structure_righthand.dmi'
 	inhand_icon_state = null
@@ -59695,7 +58930,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -59714,7 +58948,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/flagpole_mini_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/flagpole_mini_righthand.dmi'
 	inhand_icon_state = null
@@ -59960,7 +59193,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	integrity_failure = 0
 	icon_state = null
 	inhand_icon_state = null
 
@@ -59974,7 +59206,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/anvil_casting_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/anvil_casting_righthand.dmi'
 	inhand_icon_state = null
@@ -59992,7 +59223,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/anvil_casting_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/anvil_casting_righthand.dmi'
 	inhand_icon_state = null
@@ -60010,7 +59240,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/anvil_casting_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/anvil_casting_righthand.dmi'
 	inhand_icon_state = null
@@ -60028,7 +59257,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/anvil_casting_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/anvil_casting_righthand.dmi'
 	inhand_icon_state = null
@@ -60046,7 +59274,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/anvil_casting_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/anvil_casting_righthand.dmi'
 	inhand_icon_state = null
@@ -60064,7 +59291,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/anvil_casting_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/anvil_casting_righthand.dmi'
 	inhand_icon_state = null
@@ -60084,8 +59310,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 5
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_azurepeak/icons/obj/items/mundanities_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_azurepeak/icons/obj/items/mundanities_righthand.dmi'
 	inhand_icon_state = null
@@ -60104,8 +59328,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 150
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_azurepeak/icons/obj/items/mundanities_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_azurepeak/icons/obj/items/mundanities_righthand.dmi'
 	inhand_icon_state = null
@@ -60124,8 +59346,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 15
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_azurepeak/icons/obj/items/mundanities_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_azurepeak/icons/obj/items/mundanities_righthand.dmi'
 	inhand_icon_state = null
@@ -60146,7 +59366,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_righthand.dmi'
 	inhand_icon_state = null
@@ -60173,7 +59392,6 @@
 	rogue_grid_height = 32
 	spitoutmouth = FALSE
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/natural/brick
@@ -60194,8 +59412,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
-	sellprice = 3
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/natural/bundle
@@ -60214,7 +59430,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/natural/bundle/bone
@@ -60571,7 +59786,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_righthand.dmi'
 	inhand_icon_state = null
@@ -60593,7 +59807,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_righthand.dmi'
 	inhand_icon_state = null
@@ -60615,7 +59828,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_righthand.dmi'
 	inhand_icon_state = null
@@ -60638,7 +59850,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_righthand.dmi'
 	inhand_icon_state = null
@@ -60975,7 +60186,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
-	sellprice = 5
 	smeltresult = /obj/item/natural/glass/heated
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_righthand.dmi'
@@ -61697,8 +60907,6 @@
 	rogue_grid_height = 32
 	spitoutmouth = FALSE
 	firefuel = 5 MINUTES
-	sellprice = 4
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon_state = "cloth"
 
@@ -61721,7 +60929,6 @@
 	rogue_grid_height = 32
 	spitoutmouth = FALSE
 	firefuel = 5 MINUTES
-	sellprice = 4
 	inhand_icon_state = null
 
 /obj/item/natural/cured/essence
@@ -61736,8 +60943,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 20
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_righthand.dmi'
 	inhand_icon_state = null
@@ -61757,7 +60962,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_righthand.dmi'
 	inhand_icon_state = null
@@ -61797,7 +61001,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	spitoutmouth = FALSE
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_righthand.dmi'
 	inhand_icon_state = null
@@ -61847,8 +61050,6 @@
 	rogue_grid_height = 32
 	spitoutmouth = FALSE
 	firefuel = 5 MINUTES
-	sellprice = 2
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/natural/fur
@@ -61863,7 +61064,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_righthand.dmi'
 	inhand_icon_state = null
@@ -61902,7 +61102,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 28
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_righthand.dmi'
 	inhand_icon_state = null
@@ -61998,7 +61197,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_righthand.dmi'
 	inhand_icon_state = null
@@ -62056,8 +61254,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 64
-	sellprice = 6
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/crafting_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/crafting_righthand.dmi'
 	inhand_icon_state = null
@@ -62077,7 +61273,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 64
-	sellprice = 6
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/crafting_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/crafting_righthand.dmi'
 	inhand_icon_state = null
@@ -62103,7 +61298,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/stab)
 	smeltresult = /obj/item/natural/glass/heated
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/natural/head
@@ -62121,7 +61315,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/natural/head/boar
@@ -62136,7 +61329,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 64
-	sellprice = 45
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_righthand.dmi'
 	inhand_icon_state = null
@@ -62156,7 +61348,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 64
-	sellprice = 20
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_righthand.dmi'
 	inhand_icon_state = null
@@ -62176,7 +61367,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 96
 	rogue_grid_height = 96
-	sellprice = 150
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_righthand.dmi'
 	inhand_icon_state = null
@@ -62196,7 +61386,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 96
 	rogue_grid_height = 96
-	sellprice = 225
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_righthand.dmi'
 	inhand_icon_state = null
@@ -62216,7 +61405,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 6
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_righthand.dmi'
 	inhand_icon_state = null
@@ -62236,7 +61424,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_righthand.dmi'
 	inhand_icon_state = null
@@ -62256,7 +61443,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_righthand.dmi'
 	inhand_icon_state = null
@@ -62276,7 +61462,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 96
 	rogue_grid_height = 96
-	sellprice = 50
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_righthand.dmi'
 	inhand_icon_state = null
@@ -62296,7 +61481,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 20
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_righthand.dmi'
 	inhand_icon_state = null
@@ -62316,7 +61500,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_righthand.dmi'
 	inhand_icon_state = null
@@ -62336,7 +61519,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_righthand.dmi'
 	inhand_icon_state = null
@@ -62356,7 +61538,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 64
-	sellprice = 20
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_righthand.dmi'
 	inhand_icon_state = null
@@ -62376,7 +61557,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_righthand.dmi'
 	inhand_icon_state = null
@@ -62396,7 +61576,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 12
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_righthand.dmi'
 	inhand_icon_state = null
@@ -62416,7 +61595,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 96
 	rogue_grid_height = 96
-	sellprice = 30
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_righthand.dmi'
 	inhand_icon_state = null
@@ -62436,7 +61614,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 96
 	rogue_grid_height = 96
-	sellprice = 50
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_righthand.dmi'
 	inhand_icon_state = null
@@ -62456,7 +61633,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 96
 	rogue_grid_height = 96
-	sellprice = 70
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_righthand.dmi'
 	inhand_icon_state = null
@@ -62476,7 +61652,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_righthand.dmi'
 	inhand_icon_state = null
@@ -62497,7 +61672,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 500
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_big_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/bounty_heads_big_righthand.dmi'
 	inhand_icon_state = null
@@ -62517,8 +61691,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 8
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_righthand.dmi'
 	inhand_icon_state = null
@@ -62538,7 +61710,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 8
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_righthand.dmi'
 	inhand_icon_state = null
@@ -62558,7 +61729,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_righthand.dmi'
 	inhand_icon_state = null
@@ -62616,8 +61786,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 10
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_righthand.dmi'
 	inhand_icon_state = null
@@ -62639,7 +61807,6 @@
 	rogue_grid_height = 96
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	gripped_intents = list(/datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_righthand.dmi'
 	inhand_icon_state = null
@@ -62932,7 +62099,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/riding
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_lefthand.dmi'
@@ -62954,7 +62120,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_righthand.dmi'
 	inhand_icon_state = null
@@ -62985,7 +62150,6 @@
 	rogue_grid_height = 32
 	spitoutmouth = FALSE
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/natural/stone
@@ -63007,9 +62171,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	possible_item_intents = list(/datum/intent/hit)
-	sharpening_factor = 12
-	spark_chance = 35
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/natural/stone/sending
@@ -63031,8 +62192,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	possible_item_intents = list(/datum/intent/hit)
-	sharpening_factor = 12
-	spark_chance = 35
 	inhand_icon_state = null
 
 /obj/item/natural/stoneblock
@@ -63048,8 +62207,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
-	sellprice = 2
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/crafting_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/crafting_righthand.dmi'
 	inhand_icon_state = null
@@ -63071,7 +62228,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/stab)
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_righthand.dmi'
 	inhand_icon_state = null
@@ -63097,9 +62253,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit, /datum/intent/dagger/cut)
-	sharpening_factor = 21
-	spark_chance = 80
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/natural/wood/plank
@@ -63115,9 +62268,7 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 224
 	firefuel = 5 MINUTES
-	sellprice = 4
 	smeltresult = /obj/item/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/crafting_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/crafting_righthand.dmi'
 	inhand_icon_state = null
@@ -63137,7 +62288,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/natural_righthand.dmi'
 	inhand_icon_state = null
@@ -63234,8 +62384,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 10
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -63255,7 +62403,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/gems_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/gems_righthand.dmi'
 	inhand_icon_state = null
@@ -63301,7 +62448,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/needle/decrepit
@@ -63374,7 +62520,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -63410,7 +62555,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/rav/obj/cult_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/rav/obj/cult_righthand.dmi'
 	inhand_icon_state = null
@@ -63431,7 +62575,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/surgery_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/surgery_righthand.dmi'
 	inhand_icon_state = null
@@ -63452,7 +62595,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/surgery_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/surgery_righthand.dmi'
 	inhand_icon_state = null
@@ -63473,8 +62615,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 3
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_righthand.dmi'
 	inhand_icon_state = null
@@ -63495,7 +62635,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/paint_supplies/paint_items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/paint_supplies/paint_items_righthand.dmi'
 	inhand_icon_state = null
@@ -63516,7 +62655,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/paint_supplies/paint_items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/paint_supplies/paint_items_righthand.dmi'
 	inhand_icon_state = null
@@ -63537,7 +62675,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	rogue_coverage = HEAD
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = "paper~2"
@@ -63558,7 +62695,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	rogue_coverage = HEAD
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = "paper~2"
@@ -63596,7 +62732,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	rogue_coverage = HEAD
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -63617,7 +62752,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	rogue_coverage = HEAD
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -63714,7 +62848,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	rogue_coverage = HEAD
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -63736,7 +62869,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	rogue_coverage = HEAD
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = "paper~2"
@@ -63758,7 +62890,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	rogue_coverage = HEAD
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = "paper~2"
@@ -63780,9 +62911,7 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	firefuel = 30 SECONDS
-	sellprice = 2
 	rogue_coverage = HEAD
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -63802,7 +62931,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	firefuel = 30 SECONDS
-	sellprice = 2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -63821,7 +62949,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	firefuel = 30 SECONDS
-	sellprice = 2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -63841,7 +62968,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	firefuel = 30 SECONDS
-	sellprice = 2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = "book_0~2"
@@ -63864,7 +62990,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/mace/strike)
 	firefuel = 30 SECONDS
-	sellprice = 2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -63884,7 +63009,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	firefuel = 30 SECONDS
-	sellprice = 2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -63903,7 +63027,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	firefuel = 30 SECONDS
-	sellprice = 2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -63922,7 +63045,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	firefuel = 30 SECONDS
-	sellprice = 2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -63941,7 +63063,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	firefuel = 30 SECONDS
-	sellprice = 2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -63961,7 +63082,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	firefuel = 30 SECONDS
-	sellprice = 2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -63981,7 +63101,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	firefuel = 30 SECONDS
-	sellprice = 2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -64001,7 +63120,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	firefuel = 30 SECONDS
-	sellprice = 2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -64023,7 +63141,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	rogue_coverage = HEAD
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -64045,7 +63162,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	rogue_coverage = HEAD
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = "paper~2"
@@ -64065,8 +63181,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 20
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/gems_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/gems_righthand.dmi'
 	inhand_icon_state = null
@@ -64085,7 +63199,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 60
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/gems_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/gems_righthand.dmi'
 	inhand_icon_state = null
@@ -64103,7 +63216,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/perfume_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/perfume_righthand.dmi'
 	inhand_icon_state = null
@@ -64121,7 +63233,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/perfume_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/perfume_righthand.dmi'
 	inhand_icon_state = null
@@ -64139,7 +63250,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/perfume_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/perfume_righthand.dmi'
 	inhand_icon_state = null
@@ -64157,7 +63267,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/perfume_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/perfume_righthand.dmi'
 	inhand_icon_state = null
@@ -64175,7 +63284,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/perfume_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/perfume_righthand.dmi'
 	inhand_icon_state = null
@@ -64193,7 +63301,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/perfume_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/perfume_righthand.dmi'
 	inhand_icon_state = null
@@ -64211,7 +63318,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/perfume_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/perfume_righthand.dmi'
 	inhand_icon_state = null
@@ -64229,7 +63335,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/perfume_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/perfume_righthand.dmi'
 	inhand_icon_state = null
@@ -64247,7 +63352,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/perfume_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/perfume_righthand.dmi'
 	inhand_icon_state = null
@@ -64265,7 +63369,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/perfume_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/perfume_righthand.dmi'
 	inhand_icon_state = null
@@ -64283,7 +63386,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/perfume_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/perfume_righthand.dmi'
 	inhand_icon_state = null
@@ -64301,7 +63403,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/perfume_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/perfume_righthand.dmi'
 	inhand_icon_state = null
@@ -64319,7 +63420,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/perfume_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/perfume_righthand.dmi'
 	inhand_icon_state = null
@@ -64338,7 +63438,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/wizard_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/wizard_righthand.dmi'
 	inhand_icon_state = null
@@ -64359,7 +63458,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -64382,7 +63480,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/smoke, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -64403,7 +63500,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_helmsguard/icons/obj/items/arquebus_items_lefthand.dmi'
@@ -64426,7 +63522,6 @@
 	worn_y_dimension = 32
 	possible_item_intents = list(/datum/intent/hit)
 	gripped_intents = list(/datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -64445,7 +63540,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_righthand.dmi'
 	inhand_icon_state = null
@@ -64464,7 +63558,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_azurepeak/icons/obj/items/quicksilver_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_azurepeak/icons/obj/items/quicksilver_righthand.dmi'
 	inhand_icon_state = null
@@ -64503,7 +63596,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sewrepair = TRUE
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/ammo_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/ammo_righthand.dmi'
 	inhand_icon_state = null
@@ -65088,7 +64180,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_helmsguard/icons/obj/items/arquebus_items_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_helmsguard/icons/obj/items/arquebus_items_righthand.dmi'
 	inhand_icon_state = null
@@ -65109,7 +64200,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/ration_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/ration_righthand.dmi'
 	inhand_icon_state = null
@@ -65129,7 +64219,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_azurepeak/icons/obj/items/eora_pom_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_azurepeak/icons/obj/items/eora_pom_righthand.dmi'
 	inhand_icon_state = null
@@ -65153,7 +64242,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/destroy_sound
@@ -65207,7 +64295,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
-	sellprice = 30
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_righthand.dmi'
@@ -65334,7 +64421,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
-	sellprice = 70
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_azurepeak/icons/obj/items/tincans_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_azurepeak/icons/obj/items/tincans_righthand.dmi'
@@ -65819,7 +64905,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
-	sellprice = 10
 	smeltresult = /obj/item/ash
 	icon_state = null
 	inhand_icon_state = null
@@ -65840,7 +64925,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
-	sellprice = 15
 	smeltresult = /obj/item/ash
 	icon_state = null
 	inhand_icon_state = null
@@ -65858,7 +64942,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
-	sellprice = 10
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_righthand.dmi'
@@ -65880,7 +64963,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
-	sellprice = 15
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_righthand.dmi'
@@ -65902,7 +64984,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
-	sellprice = 7
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_righthand.dmi'
@@ -65927,7 +65008,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
-	sellprice = 10
 	smeltresult = /obj/item/ash
 	icon_state = null
 	inhand_icon_state = null
@@ -65945,7 +65025,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
-	sellprice = 15
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_righthand.dmi'
@@ -65970,7 +65049,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
-	sellprice = 40
 	smeltresult = /obj/item/ash
 	icon_state = null
 	inhand_icon_state = null
@@ -65988,7 +65066,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
-	sellprice = 10
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_righthand.dmi'
@@ -66013,7 +65090,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
-	sellprice = 10
 	smeltresult = /obj/item/ash
 	icon_state = null
 	inhand_icon_state = null
@@ -66031,7 +65107,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
-	sellprice = 10
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_righthand.dmi'
@@ -66053,7 +65128,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
-	sellprice = 10
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_righthand.dmi'
@@ -66075,7 +65149,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
-	sellprice = 10
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_righthand.dmi'
@@ -66100,7 +65173,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
-	sellprice = 10
 	smeltresult = /obj/item/ash
 	icon_state = null
 	inhand_icon_state = null
@@ -66121,7 +65193,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
-	sellprice = 5
 	smeltresult = /obj/item/ash
 	icon_state = null
 	inhand_icon_state = null
@@ -66139,7 +65210,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
-	sellprice = 5
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_righthand.dmi'
@@ -66161,7 +65231,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
-	sellprice = 5
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_righthand.dmi'
@@ -66183,7 +65252,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
-	sellprice = 5
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_righthand.dmi'
@@ -66205,7 +65273,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
-	sellprice = 5
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_righthand.dmi'
@@ -66230,7 +65297,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
-	sellprice = 5
 	smeltresult = /obj/item/ash
 	icon_state = null
 	inhand_icon_state = null
@@ -66248,7 +65314,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
-	sellprice = 15
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_righthand.dmi'
@@ -66270,7 +65335,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
-	sellprice = 15
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_righthand.dmi'
@@ -66292,7 +65356,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
-	sellprice = 17
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_righthand.dmi'
@@ -66317,7 +65380,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
-	sellprice = 5
 	smeltresult = /obj/item/ash
 	icon_state = null
 	inhand_icon_state = null
@@ -66335,7 +65397,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
-	sellprice = 5
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_righthand.dmi'
@@ -66357,7 +65418,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
-	sellprice = 5
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_righthand.dmi'
@@ -66379,7 +65439,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
-	sellprice = 3
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_righthand.dmi'
@@ -66401,7 +65460,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
-	sellprice = 15
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_righthand.dmi'
@@ -66423,7 +65481,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
-	sellprice = 5
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_righthand.dmi'
@@ -66445,7 +65502,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
-	sellprice = 20
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_fish_righthand.dmi'
@@ -66510,7 +65566,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
-	sellprice = 55
 	smeltresult = /obj/item/ash
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -66847,7 +65902,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
-	sellprice = 23
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_righthand.dmi'
@@ -67270,7 +66324,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
-	sellprice = 3
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_righthand.dmi'
@@ -67586,7 +66639,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
-	sellprice = 137
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_righthand.dmi'
@@ -74998,7 +74050,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
-	sellprice = 118
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_meat_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_meat_righthand.dmi'
@@ -75020,7 +74071,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
-	sellprice = 118
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_meat_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cooked/cooked_meat_righthand.dmi'
@@ -75126,7 +74176,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
-	sellprice = 118
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_meat_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_meat_righthand.dmi'
@@ -75148,7 +74197,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
-	sellprice = 118
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_meat_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/raw/raw_meat_righthand.dmi'
@@ -78231,7 +77279,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
-	sellprice = 5
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Creechers/icons/piggie_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Creechers/icons/piggie_righthand.dmi'
@@ -78253,7 +77300,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
-	sellprice = 5
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Creechers/icons/piggie_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Creechers/icons/piggie_righthand.dmi'
@@ -78610,7 +77656,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
-	sellprice = 15
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_righthand.dmi'
@@ -78632,7 +77677,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
-	sellprice = 15
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_righthand.dmi'
@@ -78654,7 +77698,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
-	sellprice = 15
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_righthand.dmi'
@@ -78676,7 +77719,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
-	sellprice = 15
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_righthand.dmi'
@@ -78698,7 +77740,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
-	sellprice = 15
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_righthand.dmi'
@@ -78720,7 +77761,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
-	sellprice = 15
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_righthand.dmi'
@@ -78742,7 +77782,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
-	sellprice = 15
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_righthand.dmi'
@@ -78764,7 +77803,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
-	sellprice = 15
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_righthand.dmi'
@@ -78786,7 +77824,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
-	sellprice = 15
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_righthand.dmi'
@@ -78808,7 +77845,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
-	sellprice = 15
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_righthand.dmi'
@@ -78830,7 +77866,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
-	sellprice = 15
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_righthand.dmi'
@@ -78852,7 +77887,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
-	sellprice = 15
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_righthand.dmi'
@@ -78874,7 +77908,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
-	sellprice = 15
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_righthand.dmi'
@@ -78896,7 +77929,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
-	sellprice = 15
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_righthand.dmi'
@@ -78918,7 +77950,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
-	sellprice = 15
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_righthand.dmi'
@@ -78940,7 +77971,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
-	sellprice = 15
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_righthand.dmi'
@@ -78962,7 +77992,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
-	sellprice = 15
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_righthand.dmi'
@@ -78984,7 +78013,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
-	sellprice = 15
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_righthand.dmi'
@@ -79006,7 +78034,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
-	sellprice = 15
 	smeltresult = /obj/item/ash
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/others/sweet_righthand.dmi'
@@ -79158,7 +78185,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	inhand_icon_state = null
 	volume = 50
 	amount_per_transfer_from_this = 10
@@ -79209,7 +78235,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 1
 	inhand_icon_state = null
 	volume = 30
 	amount_per_transfer_from_this = 10
@@ -79234,7 +78259,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 1
 	inhand_icon_state = null
 	volume = 30
 	amount_per_transfer_from_this = 10
@@ -79259,7 +78283,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 2
 	inhand_icon_state = null
 	volume = 30
 	amount_per_transfer_from_this = 10
@@ -79284,7 +78307,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 1
 	inhand_icon_state = null
 	volume = 30
 	amount_per_transfer_from_this = 10
@@ -79309,7 +78331,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 1
 	inhand_icon_state = null
 	volume = 30
 	amount_per_transfer_from_this = 10
@@ -79334,7 +78355,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 1
 	inhand_icon_state = null
 	volume = 30
 	amount_per_transfer_from_this = 10
@@ -79359,7 +78379,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 1
 	inhand_icon_state = null
 	volume = 30
 	amount_per_transfer_from_this = 10
@@ -79384,7 +78403,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 1
 	inhand_icon_state = null
 	volume = 30
 	amount_per_transfer_from_this = 10
@@ -79409,7 +78427,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 1
 	inhand_icon_state = null
 	volume = 30
 	amount_per_transfer_from_this = 10
@@ -79434,7 +78451,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 1
 	inhand_icon_state = null
 	volume = 30
 	amount_per_transfer_from_this = 10
@@ -79459,7 +78475,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 1
 	inhand_icon_state = null
 	volume = 30
 	amount_per_transfer_from_this = 10
@@ -79484,7 +78499,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 1
 	inhand_icon_state = null
 	volume = 30
 	amount_per_transfer_from_this = 10
@@ -79509,7 +78523,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 1
 	inhand_icon_state = null
 	volume = 30
 	amount_per_transfer_from_this = 10
@@ -79534,7 +78547,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 1
 	inhand_icon_state = null
 	volume = 30
 	amount_per_transfer_from_this = 10
@@ -79559,7 +78571,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 1
 	inhand_icon_state = null
 	volume = 30
 	amount_per_transfer_from_this = 10
@@ -79584,7 +78595,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 1
 	inhand_icon_state = null
 	volume = 30
 	amount_per_transfer_from_this = 10
@@ -79609,7 +78619,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 1
 	inhand_icon_state = null
 	volume = 30
 	amount_per_transfer_from_this = 10
@@ -79634,7 +78643,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 1
 	inhand_icon_state = null
 	volume = 30
 	amount_per_transfer_from_this = 10
@@ -79659,7 +78667,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 1
 	inhand_icon_state = null
 	volume = 30
 	amount_per_transfer_from_this = 10
@@ -79684,7 +78691,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 1
 	inhand_icon_state = null
 	volume = 30
 	amount_per_transfer_from_this = 10
@@ -79705,7 +78711,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 4
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -80330,7 +79335,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -80357,7 +79361,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -80384,7 +79387,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -80411,7 +79413,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -80438,7 +79439,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -80465,7 +79465,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -80492,7 +79491,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -80519,7 +79517,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -80546,7 +79543,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -80573,7 +79569,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -80600,7 +79595,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 7
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -80627,7 +79621,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 7
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -82279,7 +81272,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 1
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_righthand.dmi'
 	inhand_icon_state = null
@@ -82304,7 +81296,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_righthand.dmi'
 	inhand_icon_state = null
@@ -82329,7 +81320,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 55
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_righthand.dmi'
 	inhand_icon_state = null
@@ -82354,7 +81344,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 65
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_righthand.dmi'
 	inhand_icon_state = null
@@ -82379,7 +81368,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 55
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_righthand.dmi'
 	inhand_icon_state = null
@@ -82404,7 +81392,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 33
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_righthand.dmi'
 	inhand_icon_state = null
@@ -82429,7 +81416,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 85
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_righthand.dmi'
 	inhand_icon_state = null
@@ -82454,7 +81440,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 25
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_righthand.dmi'
 	inhand_icon_state = null
@@ -82479,7 +81464,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 20
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_righthand.dmi'
 	inhand_icon_state = null
@@ -82504,7 +81488,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_righthand.dmi'
 	inhand_icon_state = null
@@ -82529,7 +81512,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 80
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_righthand.dmi'
 	inhand_icon_state = null
@@ -82554,7 +81536,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_righthand.dmi'
 	inhand_icon_state = null
@@ -82579,7 +81560,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 120
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_righthand.dmi'
 	inhand_icon_state = null
@@ -82604,7 +81584,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 20
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_righthand.dmi'
 	inhand_icon_state = null
@@ -82629,7 +81608,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 96
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_righthand.dmi'
 	inhand_icon_state = null
@@ -82654,7 +81632,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 20
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/bowl_righthand.dmi'
 	inhand_icon_state = null
@@ -82790,7 +81767,6 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	gripped_intents = list(/datum/intent/pour)
 	flags_inv = HIDEHAIR
-	sellprice = 60
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/pot_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/pot_righthand.dmi'
 	inhand_icon_state = null
@@ -82818,7 +81794,6 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	gripped_intents = list(/datum/intent/pour)
 	flags_inv = HIDEHAIR
-	sellprice = 70
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/pot_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/pot_righthand.dmi'
 	inhand_icon_state = null
@@ -82846,7 +81821,6 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	gripped_intents = list(/datum/intent/pour)
 	flags_inv = HIDEHAIR
-	sellprice = 60
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/pot_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/pot_righthand.dmi'
 	inhand_icon_state = null
@@ -82874,7 +81848,6 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	gripped_intents = list(/datum/intent/pour)
 	flags_inv = HIDEHAIR
-	sellprice = 40
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/pot_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/pot_righthand.dmi'
 	inhand_icon_state = null
@@ -82902,7 +81875,6 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	gripped_intents = list(/datum/intent/pour)
 	flags_inv = HIDEHAIR
-	sellprice = 90
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/pot_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/pot_righthand.dmi'
 	inhand_icon_state = null
@@ -82930,7 +81902,6 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	gripped_intents = list(/datum/intent/pour)
 	flags_inv = HIDEHAIR
-	sellprice = 25
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/pot_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/pot_righthand.dmi'
 	inhand_icon_state = null
@@ -82958,7 +81929,6 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	gripped_intents = list(/datum/intent/pour)
 	flags_inv = HIDEHAIR
-	sellprice = 20
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/pot_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/pot_righthand.dmi'
 	inhand_icon_state = null
@@ -82986,7 +81956,6 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	gripped_intents = list(/datum/intent/pour)
 	flags_inv = HIDEHAIR
-	sellprice = 85
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/pot_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/pot_righthand.dmi'
 	inhand_icon_state = null
@@ -83095,7 +82064,6 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	gripped_intents = list(/datum/intent/pour)
 	flags_inv = HIDEHAIR
-	sellprice = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/unused_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/unused_righthand.dmi'
 	inhand_icon_state = null
@@ -83123,7 +82091,6 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	gripped_intents = list(/datum/intent/pour)
 	flags_inv = HIDEHAIR
-	sellprice = 75
 	smeltresult = /obj/item/ingot/blacksteel
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/unused_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/unused_righthand.dmi'
@@ -83152,7 +82119,6 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	gripped_intents = list(/datum/intent/pour)
 	flags_inv = HIDEHAIR
-	sellprice = 45
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/unused_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/unused_righthand.dmi'
 	inhand_icon_state = null
@@ -83207,7 +82173,6 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	gripped_intents = list(/datum/intent/pour)
 	flags_inv = HIDEHAIR
-	sellprice = 20
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/pot_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/pot_righthand.dmi'
 	inhand_icon_state = null
@@ -83235,7 +82200,6 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	gripped_intents = list(/datum/intent/pour)
 	flags_inv = HIDEHAIR
-	sellprice = 24
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/pot_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/pot_righthand.dmi'
 	inhand_icon_state = null
@@ -83266,7 +82230,6 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	gripped_intents = list(/datum/intent/pour)
 	flags_inv = HIDEHAIR
-	sellprice = 30
 	icon_state = null
 	inhand_icon_state = "pot"
 	volume = 120
@@ -83293,7 +82256,6 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	gripped_intents = list(/datum/intent/pour)
 	flags_inv = HIDEHAIR
-	sellprice = 35
 	icon_state = null
 	inhand_icon_state = "pot"
 	volume = 120
@@ -83317,7 +82279,6 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	gripped_intents = list(/datum/intent/pour)
 	flags_inv = HIDEHAIR
-	sellprice = 35
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = "clayporcelainfancyteapot2~2"
@@ -83393,7 +82354,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 7
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -83419,7 +82379,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 7
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -83445,7 +82404,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 7
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -83471,7 +82429,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 7
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -83497,7 +82454,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 55
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -83523,7 +82479,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 65
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -83549,7 +82504,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 65
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -83575,7 +82529,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 75
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -83601,7 +82554,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 55
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -83627,7 +82579,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 65
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -83653,7 +82604,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 35
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -83679,7 +82629,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 45
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -83705,7 +82654,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 85
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -83731,7 +82679,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 95
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -83757,7 +82704,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 20
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -83783,7 +82729,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 30
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -83809,7 +82754,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 15
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -83835,7 +82779,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 25
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -83861,7 +82804,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 80
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -83887,7 +82829,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 90
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -83913,7 +82854,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -83939,7 +82879,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 12
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -83965,7 +82904,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 2
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
@@ -83991,7 +82929,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 2
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/cooking_righthand.dmi'
@@ -84017,7 +82954,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -84043,7 +82979,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 5
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -84069,7 +83004,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 50
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -84095,7 +83029,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 50
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -84121,7 +83054,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 600
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -84147,7 +83079,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 40
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -84173,7 +83104,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 25
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -84199,7 +83129,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 40
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -84225,7 +83154,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 48
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -84251,7 +83179,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 48
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -84277,7 +83204,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 20
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -84303,7 +83229,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 7
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -84329,7 +83254,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -84355,7 +83279,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 12
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -84381,7 +83304,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 8
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
@@ -84431,7 +83353,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	sellprice = 3
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
 	inhand_icon_state = null
@@ -84501,8 +83422,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 100
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_righthand.dmi'
 	inhand_icon_state = null
@@ -84522,7 +83441,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 100
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_azurepeak/icons/obj/items/eora_pom_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_azurepeak/icons/obj/items/eora_pom_righthand.dmi'
 	inhand_icon_state = null
@@ -84542,8 +83460,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 15
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_righthand.dmi'
 	inhand_icon_state = null
@@ -84563,7 +83479,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/peppermill_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/peppermill_righthand.dmi'
 	inhand_icon_state = null
@@ -84583,8 +83498,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 10
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_righthand.dmi'
 	inhand_icon_state = null
@@ -84654,7 +83567,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 30
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_righthand.dmi'
 	inhand_icon_state = null
@@ -84724,7 +83636,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_righthand.dmi'
 	inhand_icon_state = null
@@ -84748,7 +83659,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 30
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_righthand.dmi'
 	inhand_icon_state = null
@@ -84772,7 +83682,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_righthand.dmi'
 	inhand_icon_state = null
@@ -84842,7 +83751,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_righthand.dmi'
 	inhand_icon_state = "flour~2"
@@ -84866,7 +83774,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 10
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_righthand.dmi'
 	inhand_icon_state = null
@@ -84890,7 +83797,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 25
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_righthand.dmi'
 	inhand_icon_state = null
@@ -84914,7 +83820,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	sellprice = 123
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_righthand.dmi'
 	inhand_icon_state = null
@@ -84938,7 +83843,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Mapping/icons/webbing_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Mapping/icons/webbing_righthand.dmi'
 	inhand_icon_state = null
@@ -84958,7 +83862,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -84978,7 +83881,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -84998,7 +83900,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -85018,7 +83919,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -85038,7 +83938,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -85058,7 +83957,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -85078,7 +83976,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -85098,7 +83995,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -85119,7 +84015,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -85145,7 +84040,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/repair_kit/bad
@@ -85217,7 +84111,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 256
 	rogue_grid_height = 256
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -85264,7 +84157,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	smeltresult = /obj/item/ingot/iron
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -85286,8 +84178,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 400
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/gems_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/gems_righthand.dmi'
 	inhand_icon_state = null
@@ -85310,7 +84200,6 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/rogue/instrument
@@ -85331,7 +84220,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	can_parry = TRUE
-	integrity_failure = 0
 	worn_icon_backr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/back_r.dmi'
 	icon_state = null
 	inhand_icon_state = null
@@ -85732,9 +84620,7 @@
 	associated_skill = /datum/attribute/skill/combat/axes
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/axe/cut/long, /datum/intent/axe/chop/long, /datum/intent/spear/bash)
-	max_blade_int = 300
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/music_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/music_righthand.dmi'
 	inhand_icon_state = null
@@ -85752,9 +84638,7 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 100
 	static_price = TRUE
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -85772,7 +84656,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 200
 	static_price = TRUE
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
@@ -85791,7 +84674,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 200
 	static_price = TRUE
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
@@ -85810,7 +84692,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 200
 	static_price = TRUE
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
@@ -85830,7 +84711,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/structure_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/structure_righthand.dmi'
 	inhand_icon_state = null
@@ -85926,9 +84806,7 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	sellprice = 1
 	static_price = TRUE
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/roguecoin/copper/pile
@@ -85946,7 +84824,6 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	sellprice = 1
 	static_price = TRUE
 	inhand_icon_state = null
 
@@ -85965,9 +84842,7 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	sellprice = 3
 	static_price = TRUE
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/roguecoin/gilbranze/pile
@@ -85985,7 +84860,6 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	sellprice = 3
 	static_price = TRUE
 	inhand_icon_state = null
 
@@ -86004,9 +84878,7 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	sellprice = 10
 	static_price = TRUE
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/roguecoin/gold/pile
@@ -86024,7 +84896,6 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	sellprice = 10
 	static_price = TRUE
 	inhand_icon_state = null
 
@@ -86044,7 +84915,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	static_price = TRUE
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/roguecoin/silver
@@ -86062,9 +84932,7 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	sellprice = 5
 	static_price = TRUE
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/roguecoin/silver/pile
@@ -86082,7 +84950,6 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	sellprice = 5
 	static_price = TRUE
 	inhand_icon_state = null
 
@@ -86101,7 +84968,6 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	sellprice = 5
 	static_price = TRUE
 	inhand_icon_state = null
 
@@ -86118,7 +84984,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -86233,7 +85098,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/gems_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/gems_righthand.dmi'
 	inhand_icon_state = null
@@ -86252,7 +85116,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 50
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_amber_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_amber_righthand.dmi'
 	inhand_icon_state = null
@@ -86289,7 +85152,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 188
 	smeltresult = /obj/item/ingot/component/glutcrystal
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/gems_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/gems_righthand.dmi'
@@ -86309,7 +85171,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 88
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/gems_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/gems_righthand.dmi'
 	inhand_icon_state = null
@@ -86328,7 +85189,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_righthand.dmi'
 	inhand_icon_state = "raw_shell~2"
@@ -86347,7 +85207,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 60
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_coral_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_coral_righthand.dmi'
 	inhand_icon_state = null
@@ -86366,7 +85225,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 121
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/gems_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/gems_righthand.dmi'
 	inhand_icon_state = null
@@ -86385,7 +85243,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 42
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/gems_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/gems_righthand.dmi'
 	inhand_icon_state = null
@@ -86422,7 +85279,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 50
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_jade_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_jade_righthand.dmi'
 	inhand_icon_state = null
@@ -86441,7 +85297,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 30
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_onyxa_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_onyxa_righthand.dmi'
 	inhand_icon_state = null
@@ -86460,7 +85315,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 80
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_opal_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_opal_righthand.dmi'
 	inhand_icon_state = null
@@ -86479,7 +85333,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 5
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_shell_righthand.dmi'
 	inhand_icon_state = null
@@ -86534,7 +85387,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 100
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/gems_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/gems_righthand.dmi'
 	inhand_icon_state = null
@@ -86553,7 +85405,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 75
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_turq_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_turq_righthand.dmi'
 	inhand_icon_state = null
@@ -86572,7 +85423,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 56
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/gems_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/gems_righthand.dmi'
 	inhand_icon_state = null
@@ -86591,7 +85441,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 34
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/gems_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/gems_righthand.dmi'
 	inhand_icon_state = null
@@ -86616,7 +85465,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -88589,7 +87437,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/machines_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/machines_righthand.dmi'
 	inhand_icon_state = null
@@ -88607,7 +87454,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/machines_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/machines_righthand.dmi'
 	inhand_icon_state = null
@@ -88659,7 +87505,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/zadcote_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/zadcote_righthand.dmi'
 	inhand_icon_state = null
@@ -88734,8 +87579,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 5
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/rogueore/coal
@@ -88755,9 +87598,7 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	firefuel = 30 MINUTES
-	sellprice = 1
 	smeltresult = /obj/item/rogueore/coal
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/rogueore/coal/charcoal
@@ -88777,7 +87618,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	firefuel = 15 MINUTES
-	sellprice = 1
 	smeltresult = /obj/item/rogueore/coal/charcoal
 	inhand_icon_state = null
 
@@ -88797,9 +87637,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 3
 	smeltresult = /obj/item/ingot/copper
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/rogueore/gold
@@ -88818,9 +87656,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 10
 	smeltresult = /obj/item/ingot/gold
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/rogueore/iron
@@ -88839,9 +87675,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 5
 	smeltresult = /obj/item/ingot/iron
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/rogueore/silver
@@ -88860,9 +87694,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 8
 	smeltresult = /obj/item/ingot/silver
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/rogueore/tin
@@ -88881,9 +87713,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	sellprice = 4
 	smeltresult = /obj/item/ingot/tin
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/roguestatue/blacksteel
@@ -88902,9 +87732,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 160
 	smeltresult = /obj/item/ingot/blacksteel
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/roguestatue/clay
@@ -88923,8 +87751,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 25
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/roguestatue/clay/design1
@@ -88943,7 +87769,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 25
 	inhand_icon_state = null
 
 /obj/item/roguestatue/clay/design2
@@ -88962,7 +87787,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 25
 	inhand_icon_state = null
 
 /obj/item/roguestatue/clay/design3
@@ -88981,7 +87805,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 25
 	inhand_icon_state = null
 
 /obj/item/roguestatue/clay/design4
@@ -89000,7 +87823,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 25
 	inhand_icon_state = null
 
 /obj/item/roguestatue/clay/design5
@@ -89019,7 +87841,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 25
 	inhand_icon_state = null
 
 /obj/item/roguestatue/decrepit
@@ -89038,9 +87859,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 77
 	smeltresult = /obj/item/ingot/aaslag
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/roguestatue/glass
@@ -89059,8 +87878,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 55
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/roguestatue/glass/design1
@@ -89079,7 +87896,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 55
 	inhand_icon_state = null
 
 /obj/item/roguestatue/glass/design2
@@ -89098,7 +87914,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 55
 	inhand_icon_state = null
 
 /obj/item/roguestatue/glass/design3
@@ -89117,7 +87932,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 55
 	inhand_icon_state = null
 
 /obj/item/roguestatue/glass/design4
@@ -89136,7 +87950,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 55
 	inhand_icon_state = null
 
 /obj/item/roguestatue/glass/design5
@@ -89155,7 +87968,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 55
 	inhand_icon_state = null
 
 /obj/item/roguestatue/gold
@@ -89174,9 +87986,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 120
 	smeltresult = /obj/item/ingot/gold
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/roguestatue/gold/loot
@@ -89195,7 +88005,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 45
 	smeltresult = /obj/item/ingot/gold
 	inhand_icon_state = null
 
@@ -89215,9 +88024,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 20
 	smeltresult = /obj/item/ingot/iron
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/roguestatue/silver
@@ -89236,9 +88043,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 90
 	smeltresult = /obj/item/ingot/silver
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/roguestatue/steel
@@ -89257,9 +88062,7 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 40
 	smeltresult = /obj/item/ingot/steel
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/rogueweapon/blowrod
@@ -89280,7 +88083,6 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/tools_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/tools_righthand.dmi'
 	inhand_icon_state = null
@@ -89308,9 +88110,7 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/stab)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 300
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/crafting_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/crafting_righthand.dmi'
 	inhand_icon_state = null
@@ -89338,7 +88138,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/stab)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 500
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/crafting_lefthand.dmi'
@@ -89368,7 +88167,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/stab)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 400
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/crafting_lefthand.dmi'
@@ -89402,7 +88200,6 @@
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_righthand.dmi'
 	inhand_icon_state = null
@@ -89462,7 +88259,6 @@
 	possible_item_intents = list(/datum/intent/spear/bash/polehammer, /datum/intent/mace/smash/eaglebeak)
 	gripped_intents = list(/datum/intent/spear/bash/polehammer, /datum/intent/mace/smash/eaglebeak, /datum/intent/spear/thrust/bad)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 150
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -89494,8 +88290,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/bad)
 	gripped_intents = list(/datum/intent/spear/thrust/bad, /datum/intent/spear/bash/eaglebeak, /datum/intent/mace/smash/eaglebeak, /datum/intent/mace/warhammer/pick/ranged)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	sellprice = 120
-	max_blade_int = 200
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -89526,11 +88320,9 @@
 	possible_item_intents = list(/datum/intent/sword/thrust, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/thrust/estoc, /datum/intent/sword/thrust/estoc/lunge, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 400
 	special = /datum/special_intent/piercing_lunge
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_righthand.dmi'
 	inhand_icon_state = null
@@ -89557,10 +88349,8 @@
 	associated_skill = /datum/attribute/skill/combat/polearms
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/bash, /datum/intent/spear/cast)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_righthand.dmi'
 	inhand_icon_state = null
@@ -89590,7 +88380,6 @@
 	special = /datum/special_intent/flail_sweep
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/blunt32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/blunt32_righthand.dmi'
 	inhand_icon_state = null
@@ -89742,7 +88531,7 @@
 	possible_item_intents = list(/datum/intent/flail/strike/matthiosflail)
 	gripped_intents = list(/datum/intent/flail/strike/matthiosflail, /datum/intent/mace/smash/flail/matthiosflail, /datum/intent/flail/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	special = /datum/special_intent/flail_sweep
+	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/blunt64_lefthand.dmi'
@@ -89775,8 +88564,7 @@
 	possible_item_intents = list(/datum/intent/flail/strike/matthiosflail)
 	gripped_intents = list(/datum/intent/flail/strike/matthiosflail, /datum/intent/flail/smash/matthiosflail, /datum/intent/flail/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	sellprice = 250
-	special = /datum/special_intent/flail_sweep
+	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/gold
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -89877,7 +88665,7 @@
 	possible_item_intents = list(/datum/intent/flail/strike/matthiosflail, /datum/intent/dagger/sucker_punch)
 	gripped_intents = list(/datum/intent/flail/strike/matthiosflail, /datum/intent/mace/smash/flail/matthiosflail, /datum/intent/flail/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	special = /datum/special_intent/flail_sweep
+	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/blunt64_lefthand.dmi'
@@ -90142,11 +88930,9 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/axe/cut/long, /datum/intent/axe/chop/long, /datum/intent/axe/chop/heavy, /datum/intent/axe/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_righthand.dmi'
 	inhand_icon_state = null
@@ -90174,7 +88960,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/thrust, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/axe/cut/long, /datum/intent/axe/chop/long, /datum/intent/axe/rangedthrust, /datum/intent/axe/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 500
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -90205,7 +88990,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/axe/cut/long/bronze, /datum/intent/axe/chop/long, /datum/intent/axe/chop/heavy, /datum/intent/axe/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 400
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -90237,7 +89021,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/rend/reach, /datum/intent/axe/chop/long, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 130
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/rogueore/coal
 	anvilrepair = /datum/attribute/skill/craft/carpentry
@@ -90269,7 +89052,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/rend/reach, /datum/intent/axe/chop/long, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/carpentry
@@ -90300,7 +89082,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/axe/cut/long, /datum/intent/axe/chop/long, /datum/intent/mace/strike/poleaxe, /datum/intent/spear/thrust/militia)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 350
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -90331,7 +89112,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/axe/cut/long, /datum/intent/axe/chop/long, /datum/intent/mace/strike/poleaxe, /datum/intent/spear/thrust/militia)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 350
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -90362,7 +89142,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/axe/cut/long, /datum/intent/axe/chop/long, /datum/intent/axe/chop/heavy, /datum/intent/axe/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 250
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -90393,7 +89172,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/axe/cut/long, /datum/intent/axe/chop/long, /datum/intent/axe/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 230
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -90424,7 +89202,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/axe/cut/long, /datum/intent/axe/chop/long, /datum/intent/axe/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 400
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_lefthand.dmi'
@@ -90454,7 +89231,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/axe/cut/long, /datum/intent/axe/chop/long, /datum/intent/axe/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 250
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -90485,7 +89261,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	gripped_intents = list(/datum/intent/axe/cut/long, /datum/intent/axe/chop/long, /datum/intent/axe/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -90517,11 +89292,9 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
-	max_blade_int = 300
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_righthand.dmi'
 	inhand_icon_state = null
@@ -90550,7 +89323,6 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
-	max_blade_int = 300
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -90582,7 +89354,6 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
-	max_blade_int = 300
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/aaslag
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_lefthand.dmi'
@@ -90613,7 +89384,6 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/estoc, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
-	max_blade_int = 500
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -90645,7 +89415,6 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/chop/heavy, /datum/intent/sword/thrust/estoc/lunge, /datum/intent/sword/thrust/estoc)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/broadsword/forgotten_blade)
-	max_blade_int = 300
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -90677,8 +89446,6 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/rend, /datum/intent/sword/thrust/zwei, /datum/intent/sword/strike/bad)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = null
-	sellprice = 60
-	max_blade_int = 300
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -90710,7 +89477,6 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
-	max_blade_int = 240
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -90742,7 +89508,6 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
-	max_blade_int = 180
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -90774,7 +89539,6 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
-	max_blade_int = 200
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -90806,7 +89570,6 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/strike/bad)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
-	max_blade_int = 220
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -90838,7 +89601,6 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
-	max_blade_int = 200
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -90869,7 +89631,6 @@
 	possible_item_intents = list(/datum/intent/sword/chop, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
-	max_blade_int = 240
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -90900,7 +89661,6 @@
 	possible_item_intents = list(/datum/intent/sword/chop, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -90932,7 +89692,6 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
-	max_blade_int = 300
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -90964,7 +89723,6 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/heavy, /datum/intent/sword/chop/cleave, /datum/intent/rend)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
-	max_blade_int = 300
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -90996,7 +89754,6 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
-	max_blade_int = 300
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -91028,7 +89785,6 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
-	max_blade_int = 220
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -91060,7 +89816,6 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
-	max_blade_int = 220
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -91092,7 +89847,6 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
-	max_blade_int = 220
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -91123,11 +89877,9 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/axe/chop/halberd, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_righthand.dmi'
 	inhand_icon_state = null
@@ -91155,7 +89907,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/bad, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/cut, /datum/intent/spear/cut/bardiche/cleave, /datum/intent/spear/cut/glaive/sweep, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -91186,7 +89937,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/bad, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/cut, /datum/intent/spear/cut/bardiche/cleave, /datum/intent/spear/cut/glaive/sweep, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -91217,7 +89967,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/bad, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/cut, /datum/intent/spear/cut/bardiche/cleave, /datum/intent/spear/cut/glaive/sweep, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/aaslag
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_lefthand.dmi'
@@ -91247,7 +89996,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut/glaive, /datum/intent/axe/chop/scythe, /datum/intent/dagger/sucker_punch)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut/glaive/sweep, /datum/intent/spear/cut/bardiche/cleave/chop, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 160
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -91281,7 +90029,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/axe/chop/halberd, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 400
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -91312,8 +90059,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/bad, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/cut/glaive, /datum/intent/spear/cut/glaive/sweep, /datum/intent/spear/thrust, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	sellprice = 250
-	max_blade_int = 200
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -91344,7 +90089,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/cut/glaive, /datum/intent/spear/cut/glaive/sweep, /datum/intent/spear/thrust, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 160
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -91375,7 +90119,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut/halberd, /datum/intent/sword/chop, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -91411,7 +90154,6 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	smeltresult = /obj/item/ash
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	icon_state = null
 	inhand_icon_state = "sabre"
 
@@ -91723,10 +90465,8 @@
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	possible_item_intents = list(/datum/intent/claw/cut, /datum/intent/claw/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 300
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/unarmed32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/unarmed32_righthand.dmi'
 	inhand_icon_state = null
@@ -91754,7 +90494,6 @@
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	possible_item_intents = list(/datum/intent/claw/cut/gronn, /datum/intent/claw/chop/gronn, /datum/intent/claw/rend)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 350
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/unarmed32_lefthand.dmi'
@@ -91784,7 +90523,6 @@
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	possible_item_intents = list(/datum/intent/claw/cut/gronn, /datum/intent/claw/chop/gronn, /datum/intent/claw/rend)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/unarmed32_lefthand.dmi'
@@ -91814,7 +90552,6 @@
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	possible_item_intents = list(/datum/intent/claw/cut, /datum/intent/claw/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 180
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/unarmed32_lefthand.dmi'
@@ -91844,10 +90581,8 @@
 	associated_skill = /datum/attribute/skill/combat/axes
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 300
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/crafting_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/crafting_righthand.dmi'
 	inhand_icon_state = null
@@ -91875,7 +90610,6 @@
 	associated_skill = /datum/attribute/skill/combat/axes
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 400
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/crafting_lefthand.dmi'
@@ -91905,7 +90639,6 @@
 	associated_skill = /datum/attribute/skill/combat/axes
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 400
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/crafting_lefthand.dmi'
@@ -91937,7 +90670,6 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -92014,7 +90746,6 @@
 	possible_item_intents = list(/datum/intent/till, /datum/intent/pick)
 	gripped_intents = list(/datum/intent/till, /datum/intent/pick, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	sellprice = 15
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	inhand_icon_state = null
@@ -92067,10 +90798,8 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/dagger/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -92100,7 +90829,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/bronze, /datum/intent/dagger/sucker_punch, /datum/intent/dagger/thrust/bronze)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
@@ -92132,7 +90860,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver, /datum/intent/dagger/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
@@ -92168,7 +90895,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	inhand_icon_state = null
@@ -92194,7 +90920,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut/heavy, /datum/intent/dagger/chop/cleaver, /datum/intent/dagger/sucker_punch, /datum/intent/dagger/thrust/combat)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
@@ -92226,7 +90951,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/bronze, /datum/intent/dagger/sucker_punch, /datum/intent/dagger/thrust/bronze)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 250
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
@@ -92258,7 +90982,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut/rend, /datum/intent/dagger/chop/cleaver, /datum/intent/dagger/cut/heavy, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -92291,7 +91014,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/dagger/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
@@ -92322,7 +91044,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -92355,7 +91076,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 250
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -92388,7 +91108,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -92421,7 +91140,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -92459,7 +91177,6 @@
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	gripped_intents = list(/datum/intent/wing/cut, /datum/intent/wing/shred, /datum/intent/wing/grab, /datum/intent/wing/pick)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -92487,8 +91204,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	sellprice = 30
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -92521,8 +91236,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/chop, /datum/intent/dagger/thrust/pick)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	sellprice = 50
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -92555,7 +91268,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -92588,7 +91300,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
@@ -92620,7 +91331,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -92653,7 +91363,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -92686,7 +91395,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -92719,7 +91427,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -92752,7 +91459,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/rogueore/coal
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -92785,7 +91491,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -92818,7 +91523,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -92851,7 +91555,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/aaslag
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
@@ -92883,7 +91586,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -92916,7 +91618,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
@@ -92948,7 +91649,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -92981,7 +91681,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 333
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -93014,7 +91713,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -93047,7 +91745,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -93080,7 +91777,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut/light, /datum/intent/dagger/thrust, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -93113,7 +91809,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut/rend, /datum/intent/dagger/chop/cleaver, /datum/intent/dagger/cut/heavy, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -93146,7 +91841,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -93179,7 +91873,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -93212,7 +91905,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -93245,7 +91937,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/cut, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -93278,7 +91969,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -93311,7 +92001,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut/heavy, /datum/intent/dagger/thrust/weak, /datum/intent/dagger/cut/rend, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -93344,7 +92033,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust/wood, /datum/intent/dagger/sucker_punch, /datum/intent/dagger/thrust/pick/wood)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ash
 	anvilrepair = /datum/attribute/skill/craft/carpentry
@@ -93377,7 +92065,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/snip, /datum/intent/dagger/thrust, /datum/intent/dagger/cut)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_lefthand.dmi'
@@ -93409,7 +92096,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/snip, /datum/intent/dagger/thrust, /datum/intent/dagger/cut)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_lefthand.dmi'
@@ -93441,7 +92127,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 100
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
@@ -93472,7 +92157,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 50
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_jade_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_jade_righthand.dmi'
@@ -93503,7 +92187,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 50
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_opal_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/gems/gem_opal_righthand.dmi'
@@ -93534,7 +92217,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
@@ -93565,7 +92247,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver, /datum/intent/snip, /datum/intent/dagger/thrust/quick)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 250
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
@@ -93596,7 +92277,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
@@ -93627,7 +92307,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
@@ -93658,7 +92337,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
@@ -93689,7 +92367,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
@@ -93720,7 +92397,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
@@ -93751,7 +92427,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
@@ -93780,10 +92455,8 @@
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	possible_item_intents = list(/datum/intent/katar/cut, /datum/intent/katar/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/unarmed32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/unarmed32_righthand.dmi'
 	inhand_icon_state = null
@@ -93811,7 +92484,6 @@
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	possible_item_intents = list(/datum/intent/katar/cut, /datum/intent/katar/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/unarmed32_lefthand.dmi'
@@ -93841,7 +92513,6 @@
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	possible_item_intents = list(/datum/intent/axe/chop/arbelos, /datum/intent/axe/cut/arbelos, /datum/intent/katar/thrust/arbelos)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 150
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/unarmed32_lefthand.dmi'
@@ -93871,7 +92542,6 @@
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	possible_item_intents = list(/datum/intent/katar/cut, /datum/intent/katar/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/unarmed32_lefthand.dmi'
@@ -93901,7 +92571,6 @@
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/thrust/pick)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/unarmed32_lefthand.dmi'
@@ -93931,7 +92600,6 @@
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/thrust/pick)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/unarmed32_lefthand.dmi'
@@ -93957,7 +92625,6 @@
 	possible_item_intents = list(/datum/intent/hit)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_righthand.dmi'
 	inhand_icon_state = null
@@ -93987,7 +92654,6 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_righthand.dmi'
 	inhand_icon_state = null
@@ -94017,7 +92683,6 @@
 	special = /datum/special_intent/ground_smash
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/blunt32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/blunt32_righthand.dmi'
 	inhand_icon_state = null
@@ -94230,7 +92895,6 @@
 	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/strike/wallop)
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/strike/wallop, /datum/intent/mace/smash, /datum/intent/effect/daze)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	sellprice = 55
 	special = /datum/special_intent/ground_smash
 	smeltresult = /obj/item/ash
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -94295,7 +92959,6 @@
 	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/strike/wallop, /datum/intent/effect/daze)
 	gripped_intents = null
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	sellprice = 35
 	special = /datum/special_intent/ground_smash
 	smeltresult = /obj/item/ash
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -94538,7 +93201,6 @@
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/effect/daze)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	sellprice = 300
 	special = /datum/special_intent/ground_smash
 	smeltresult = /obj/item/ingot/gold
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/blunt32_lefthand.dmi'
@@ -94953,7 +93615,6 @@
 	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/strike/dislocate)
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/effect/daze, /datum/intent/mace/strike/dislocate)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	sellprice = 150
 	special = /datum/special_intent/ground_smash
 	smeltresult = /obj/item/ingot/gold
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -95259,7 +93920,6 @@
 	possible_item_intents = list(/datum/intent/mace/strike/wood)
 	gripped_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood, /datum/intent/effect/daze)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	sellprice = 8
 	special = /datum/special_intent/ground_smash
 	smeltresult = /obj/item/ash
 	anvilrepair = /datum/attribute/skill/craft/carpentry
@@ -95320,7 +93980,6 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/tools_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/tools_righthand.dmi'
 	inhand_icon_state = null
@@ -95377,7 +94036,6 @@
 	possible_item_intents = list(/datum/intent/pick/bad, /datum/intent/axe/chop, /datum/intent/axe/cut, /datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/pick, /datum/intent/axe/chop, /datum/intent/till, /datum/intent/flailthresh)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 225
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/tools_lefthand.dmi'
@@ -95436,7 +94094,6 @@
 	possible_item_intents = list(/datum/intent/pick/bad)
 	gripped_intents = list(/datum/intent/pick)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	sellprice = 15
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/tools_lefthand.dmi'
@@ -95467,7 +94124,6 @@
 	possible_item_intents = list(/datum/intent/pick/bad)
 	gripped_intents = list(/datum/intent/pick, /datum/intent/stab/militia)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 140
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/carpentry
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_lefthand.dmi'
@@ -95499,7 +94155,6 @@
 	possible_item_intents = list(/datum/intent/pick/bad)
 	gripped_intents = list(/datum/intent/pick, /datum/intent/stab/militia)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 180
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_lefthand.dmi'
@@ -95586,7 +94241,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash/dolabra, /datum/intent/pick)
 	gripped_intents = list(/datum/intent/axe/cut/long, /datum/intent/axe/chop/long/woodcutter, /datum/intent/axe/bash/dolabra, /datum/intent/pick/ranged/dolabra)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 1200
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -95619,7 +94273,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash/dolabra, /datum/intent/pick)
 	gripped_intents = list(/datum/intent/axe/cut/long, /datum/intent/axe/chop/long/woodcutter, /datum/intent/axe/bash/dolabra, /datum/intent/pick/ranged/dolabra)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 1200
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -95652,7 +94305,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash/dolabra, /datum/intent/pick)
 	gripped_intents = list(/datum/intent/axe/cut/long, /datum/intent/axe/chop/long/woodcutter, /datum/intent/axe/bash/dolabra, /datum/intent/pick/ranged/dolabra)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 1200
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -95685,7 +94337,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash/dolabra/pioneer, /datum/intent/pick)
 	gripped_intents = list(/datum/intent/axe/cut/long/dolabra/pioneer, /datum/intent/axe/chop/long/woodcutter/pioneer, /datum/intent/axe/bash/dolabra/pioneer, /datum/intent/pick/ranged/dolabra/pioneer)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 1200
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/gold
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -95718,7 +94369,6 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/tools_lefthand.dmi'
@@ -95806,7 +94456,6 @@
 	possible_item_intents = list(/datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/bash, /datum/intent/spear/thrust, /datum/intent/pforkdump)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	sellprice = 15
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -95835,7 +94484,6 @@
 	wlength = 1
 	possible_item_intents = list(/datum/intent/shield/bash)
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_azurepeak/icons/obj/items/scabbard_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_azurepeak/icons/obj/items/scabbard_righthand.dmi'
 	inhand_icon_state = null
@@ -96266,10 +94914,8 @@
 	possible_item_intents = list(/datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/cut/scythe, /datum/intent/spear/bash, /datum/intent/mace/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 120
 	smeltresult = /obj/item/rogueore/coal
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_righthand.dmi'
 	inhand_icon_state = null
@@ -96299,9 +94945,7 @@
 	possible_item_intents = list(/datum/intent/shield/bash, /datum/intent/shield/block, /datum/intent/mace/smash/shield)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/towershield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 80
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.2
 	inhand_icon_state = "atgervi_shield"
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -96324,9 +94968,7 @@
 	possible_item_intents = list(/datum/intent/shield/block, /datum/intent/mace/smash/shield/metal, /datum/intent/effect/daze)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 60
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/shields32_lefthand.dmi'
@@ -96354,7 +94996,6 @@
 	possible_item_intents = list(/datum/intent/shield/block, /datum/intent/mace/smash/shield/metal/great, /datum/intent/effect/daze)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 75
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -96386,10 +95027,8 @@
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 10
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/shields32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/shields32_righthand.dmi'
 	inhand_icon_state = null
@@ -96418,7 +95057,6 @@
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 10
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/shields32_lefthand.dmi'
@@ -96449,7 +95087,6 @@
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 10
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/shields32_lefthand.dmi'
@@ -96479,12 +95116,9 @@
 	associated_skill = /datum/attribute/skill/combat/shields
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
-	sellprice = 100
 	special = /datum/special_intent/limbguard
-	coverage = 10
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/special/captain_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/special/captain_righthand.dmi'
 	inhand_icon_state = null
@@ -96509,10 +95143,8 @@
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 75
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/shields32_lefthand.dmi'
@@ -96539,7 +95171,6 @@
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 75
 	smeltresult = /obj/item/ingot/aaslag
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -96568,10 +95199,8 @@
 	possible_item_intents = list(/datum/intent/shield/bash, /datum/intent/shield/block, /datum/intent/mace/smash/shield)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/towershield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 50
 	smeltresult = /obj/item/ash
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.2
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/shields32_lefthand.dmi'
@@ -96598,9 +95227,7 @@
 	associated_skill = /datum/attribute/skill/combat/shields
 	possible_item_intents = list(/datum/intent/shield/bash, /datum/intent/shield/block, /datum/intent/mace/smash/shield)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/towershield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (3).ogg')
-	sellprice = 6
 	special = /datum/special_intent/limbguard
-	coverage = 50
 	smeltresult = /obj/item/ash
 	anvilrepair = /datum/attribute/skill/craft/carpentry
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -96630,10 +95257,8 @@
 	possible_item_intents = list(/datum/intent/mace/smash/shield/metal, /datum/intent/shield/block)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 50
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/shields32_lefthand.dmi'
@@ -96661,7 +95286,6 @@
 	possible_item_intents = list(/datum/intent/mace/smash/shield/metal, /datum/intent/shield/block)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 40
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -96691,7 +95315,6 @@
 	possible_item_intents = list(/datum/intent/mace/smash/shield/metal, /datum/intent/shield/block)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 50
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -96721,9 +95344,7 @@
 	possible_item_intents = list(/datum/intent/shield/bash, /datum/intent/shield/block, /datum/intent/mace/smash/shield)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/towershield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 60
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.2
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/shields32_lefthand.dmi'
@@ -96750,10 +95371,8 @@
 	possible_item_intents = list(/datum/intent/shield/bash, /datum/intent/shield/block, /datum/intent/mace/smash/shield)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/towershield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 70
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/shields32_lefthand.dmi'
@@ -96780,7 +95399,6 @@
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 70
 	smeltresult = /obj/item/ingot/steelholy
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -96809,7 +95427,6 @@
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 70
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -96838,7 +95455,6 @@
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 70
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -96867,7 +95483,6 @@
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 70
 	smeltresult = /obj/item/ingot/aaslag
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -96895,7 +95510,6 @@
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal, /datum/intent/effect/daze)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 85
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -96924,7 +95538,6 @@
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 90
 	smeltresult = /obj/item/ingot/gold
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -96952,9 +95565,7 @@
 	associated_skill = /datum/attribute/skill/combat/shields
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block, /datum/intent/mace/smash/shield/metal)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/metalshield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/metalshield (3).ogg')
-	sellprice = 300
 	special = /datum/special_intent/limbguard
-	coverage = 90
 	smeltresult = /obj/item/ingot/gold
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -96983,7 +95594,6 @@
 	possible_item_intents = list(/datum/intent/shield/bash, /datum/intent/shield/block, /datum/intent/mace/smash/shield)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/towershield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 55
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -97012,7 +95622,6 @@
 	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/towershield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 70
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/carpentry
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -97042,10 +95651,8 @@
 	possible_item_intents = list(/datum/intent/shield/bash, /datum/intent/shield/block, /datum/intent/mace/smash/shield)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/towershield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (3).ogg')
 	special = /datum/special_intent/limbguard
-	coverage = 60
 	smeltresult = /obj/item/ash
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.2
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/shields32_lefthand.dmi'
@@ -97072,9 +95679,7 @@
 	associated_skill = /datum/attribute/skill/combat/shields
 	possible_item_intents = list(/datum/intent/shield/bash, /datum/intent/shield/block, /datum/intent/mace/smash/shield)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/shield/towershield (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/shield/towershield (3).ogg')
-	sellprice = 6
 	special = /datum/special_intent/limbguard
-	coverage = 60
 	smeltresult = /obj/item/ash
 	anvilrepair = /datum/attribute/skill/craft/carpentry
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -97111,10 +95716,8 @@
 	possible_item_intents = list(/datum/intent/shovelscoop, /datum/intent/mace/strike/shovel)
 	gripped_intents = list(/datum/intent/shovelscoop, /datum/intent/mace/strike/shovel, /datum/intent/axe/chop/stone)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 300
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	inhand_icon_state = "sabre"
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/tools_onmob.dmi'
 
@@ -97142,7 +95745,6 @@
 	possible_item_intents = list(/datum/intent/shovelscoop, /datum/intent/mace/strike/shovel)
 	gripped_intents = list(/datum/intent/shovelscoop, /datum/intent/mace/strike/shovel, /datum/intent/axe/chop/stone)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 450
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	inhand_icon_state = "sabre"
@@ -97172,7 +95774,6 @@
 	possible_item_intents = list(/datum/intent/shovelscoop, /datum/intent/mace/strike/shovel)
 	gripped_intents = list(/datum/intent/shovelscoop, /datum/intent/mace/strike/shovel, /datum/intent/axe/chop/stone)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 300
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	inhand_icon_state = "sabre"
@@ -97201,7 +95802,6 @@
 	associated_skill = /datum/attribute/skill/combat/maces
 	possible_item_intents = list(/datum/intent/shovelscoop, /datum/intent/mace/strike/shovel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 300
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	inhand_icon_state = "sabre"
@@ -97231,8 +95831,6 @@
 	possible_item_intents = list(/datum/intent/shovelscoop, /datum/intent/mace/strike/shovel)
 	gripped_intents = list(/datum/intent/shovelscoop, /datum/intent/mace/strike/shovel, /datum/intent/axe/chop/stone)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	sellprice = 15
-	max_blade_int = 300
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	inhand_icon_state = "sabre"
@@ -97257,7 +95855,6 @@
 	possible_item_intents = list(/datum/intent/spear/bash, /datum/intent/special/magicarc)
 	gripped_intents = list(/datum/intent/spear/bash/ranged/quarterstaff, /datum/intent/spear/thrust/quarterstaff, /datum/intent/axe/chop/stone, /datum/intent/shovelscoop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 300
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/carpentry
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -97293,7 +95890,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut/demolition, /datum/intent/axe/chop/demolition, /datum/intent/mace/smash, /datum/intent/shovelscoop)
 	gripped_intents = list(/datum/intent/axe/cut/demolition, /datum/intent/axe/chop/demolition, /datum/intent/mace/smash, /datum/intent/pick/demolition)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 500
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	inhand_icon_state = "sabre"
@@ -97325,7 +95921,6 @@
 	possible_item_intents = list(/datum/intent/shovelscoop, /datum/intent/mace/strike/shovel)
 	gripped_intents = list(/datum/intent/shovelscoop, /datum/intent/mace/strike/shovel, /datum/intent/axe/chop/stone)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 300
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	inhand_icon_state = "sabre"
@@ -97376,10 +95971,8 @@
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/dagger/cut)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 300
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/tools_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/tools_righthand.dmi'
 	inhand_icon_state = null
@@ -97406,7 +95999,6 @@
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/dagger/cut)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 450
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/tools_lefthand.dmi'
@@ -97435,7 +96027,6 @@
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/dagger/cut)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 300
 	smeltresult = /obj/item/ingot/copper
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/tools_lefthand.dmi'
@@ -97464,8 +96055,6 @@
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/dagger/cut)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	sellprice = 15
-	max_blade_int = 300
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/tools_lefthand.dmi'
@@ -97495,11 +96084,9 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 180
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_righthand.dmi'
 	inhand_icon_state = null
@@ -97527,7 +96114,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 180
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -97558,7 +96144,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 180
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/aaslag
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_lefthand.dmi'
@@ -97588,7 +96173,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -97619,7 +96203,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash, /datum/intent/spear/dismount)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_lefthand.dmi'
@@ -97649,7 +96232,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 400
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -97680,7 +96262,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -97711,7 +96292,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -97742,7 +96322,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -97773,7 +96352,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 80
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_righthand.dmi'
@@ -97802,7 +96380,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 225
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -97833,7 +96410,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 225
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -97864,7 +96440,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 180
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -97895,7 +96470,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 225
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -97926,7 +96500,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash, /datum/intent/spear/dismount)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 100
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -97957,7 +96530,6 @@
 	possible_item_intents = list(/datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/bash/ranged, /datum/intent/mace/smash/eaglebeak)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 260
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -97988,7 +96560,6 @@
 	possible_item_intents = list(/datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/axe/cut/long, /datum/intent/spear/bash/ranged, /datum/intent/mace/smash/eaglebeak)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -98019,7 +96590,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust, /datum/intent/lance/onehand, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/thrust/lance, /datum/intent/lance, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -98050,7 +96620,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust, /datum/intent/lance/onehand, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/thrust/lance, /datum/intent/lance, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -98081,7 +96650,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 120
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/rogueore/coal
 	anvilrepair = /datum/attribute/skill/craft/carpentry
@@ -98112,7 +96680,6 @@
 	possible_item_intents = list(/datum/intent/spear/cut/naginata, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/cut/naginata, /datum/intent/spear/cut/naginata/sweep, /datum/intent/rend/reach, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 150
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -98143,8 +96710,6 @@
 	possible_item_intents = list(/datum/intent/spear/cut/naginata, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/rend/reach, /datum/intent/spear/cut/naginata, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	sellprice = 60
-	max_blade_int = 200
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -98174,7 +96739,6 @@
 	associated_skill = /datum/attribute/skill/combat/polearms
 	possible_item_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 230
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -98205,7 +96769,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 230
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -98237,7 +96800,6 @@
 	possible_item_intents = list(/datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/rend/reach/partizan)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -98268,7 +96830,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 180
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -98299,7 +96860,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 180
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -98330,7 +96890,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 180
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -98361,7 +96920,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 70
 	special = /datum/special_intent/polearm_backstep
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_lefthand.dmi'
@@ -98391,7 +96949,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 70
 	special = /datum/special_intent/polearm_backstep
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/misc32_lefthand.dmi'
@@ -98421,7 +96978,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/bash, /datum/intent/spear/cast)
 	gripped_intents = null
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 175
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -98452,10 +97008,8 @@
 	possible_item_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	firefuel = 2 MINUTES
-	sellprice = 34
 	special = /datum/special_intent/arcyne_descent
 	sewrepair = TRUE
-	integrity_failure = 0.3
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -98483,7 +97037,6 @@
 	possible_item_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	firefuel = 2 MINUTES
-	sellprice = 121
 	special = /datum/special_intent/arcyne_descent
 	sewrepair = TRUE
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
@@ -98513,7 +97066,6 @@
 	possible_item_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	firefuel = 2 MINUTES
-	sellprice = 42
 	special = /datum/special_intent/arcyne_descent
 	sewrepair = TRUE
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/books_lefthand.dmi'
@@ -98542,10 +97094,8 @@
 	possible_item_intents = list(/datum/intent/axe/chop/stone)
 	gripped_intents = list(/datum/intent/axe/chop/stone)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 100
 	special = /datum/special_intent/axe_swing
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/axes32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/axes32_righthand.dmi'
 	inhand_icon_state = null
@@ -98572,7 +97122,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash/battle)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/chop/heavy, /datum/intent/axe/bash/battle)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -98602,7 +97151,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash/battle, /datum/intent/axe/thrust)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/chop/heavy, /datum/intent/axe/bash/battle)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 500
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -98632,7 +97180,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash/battle)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/chop/heavy, /datum/intent/axe/bash/battle)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -98662,7 +97209,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash/battle)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/chop/heavy, /datum/intent/axe/bash/battle)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -98692,7 +97238,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/mace/smash)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/mace/smash, /datum/intent/axe/bash/battle)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -98724,7 +97269,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/cut/lunge, /datum/intent/sword/disarm)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/mace/smash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -98754,7 +97298,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 100
 	special = /datum/special_intent/axe_swing
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/axes32_lefthand.dmi'
@@ -98784,7 +97327,6 @@
 	associated_skill = /datum/attribute/skill/combat/axes
 	possible_item_intents = list(/datum/intent/axe/cut/handaxe, /datum/intent/axe/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 400
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -98815,7 +97357,6 @@
 	associated_skill = /datum/attribute/skill/combat/axes
 	possible_item_intents = list(/datum/intent/axe/cut/handaxe, /datum/intent/axe/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 400
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/copper
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -98847,7 +97388,6 @@
 	associated_skill = /datum/attribute/skill/combat/axes
 	possible_item_intents = list(/datum/intent/axe/chop/stone)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 100
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -98879,7 +97419,6 @@
 	associated_skill = /datum/attribute/skill/combat/axes
 	possible_item_intents = list(/datum/intent/axe/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 150
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -98914,7 +97453,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash/battle)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash/battle)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 500
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -98941,7 +97479,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 400
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -98971,7 +97508,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 400
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -99001,7 +97537,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 550
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -99031,7 +97566,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 550
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -99061,7 +97595,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash/battle)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 500
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -99090,7 +97623,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/mace/warhammer/pick, /datum/intent/axe/bash)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/mace/warhammer/pick, /datum/intent/axe/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 400
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -99119,7 +97651,6 @@
 	associated_skill = /datum/attribute/skill/combat/axes
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/chop/heavy, /datum/intent/axe/bash/battle)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 400
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -99149,7 +97680,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 500
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -99179,7 +97709,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 500
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -99209,7 +97738,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 500
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/aaslag
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/axes32_lefthand.dmi'
@@ -99238,7 +97766,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 250
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -99268,7 +97795,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 500
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/gold
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -99297,7 +97823,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	gripped_intents = list(/datum/intent/axe/cut/long, /datum/intent/axe/chop/long, /datum/intent/axe/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 500
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -99328,7 +97853,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/mace/warhammer/pick, /datum/intent/axe/bash)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/mace/warhammer/pick, /datum/intent/axe/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 400
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -99359,9 +97883,7 @@
 	can_parry = TRUE
 	associated_skill = /datum/attribute/skill/combat/knives
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/surgery_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/surgery_righthand.dmi'
 	inhand_icon_state = null
@@ -99390,9 +97912,7 @@
 	associated_skill = /datum/attribute/skill/combat/maces
 	possible_item_intents = list(/datum/intent/use, /datum/intent/mace/strike, /datum/intent/mace/smash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/surgery_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/surgery_righthand.dmi'
 	inhand_icon_state = null
@@ -99420,7 +97940,6 @@
 	can_parry = TRUE
 	associated_skill = /datum/attribute/skill/combat/maces
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/surgery_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/surgery_righthand.dmi'
@@ -99449,7 +97968,6 @@
 	can_parry = TRUE
 	associated_skill = /datum/attribute/skill/combat/maces
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/surgery_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/surgery_righthand.dmi'
@@ -99478,7 +97996,6 @@
 	can_parry = TRUE
 	associated_skill = /datum/attribute/skill/combat/maces
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/surgery_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/surgery_righthand.dmi'
@@ -99508,9 +98025,7 @@
 	associated_skill = /datum/attribute/skill/combat/maces
 	possible_item_intents = list(/datum/intent/use, /datum/intent/mace/strike, /datum/intent/mace/smash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/surgery_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/surgery_righthand.dmi'
 	inhand_icon_state = null
@@ -99538,9 +98053,7 @@
 	can_parry = TRUE
 	associated_skill = /datum/attribute/skill/combat/knives
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/surgery_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/surgery_righthand.dmi'
 	inhand_icon_state = null
@@ -99568,7 +98081,6 @@
 	can_parry = TRUE
 	associated_skill = /datum/attribute/skill/combat/knives
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/surgery_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/surgery_righthand.dmi'
@@ -99597,9 +98109,7 @@
 	associated_skill = /datum/attribute/skill/misc/medicine
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 100
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/artefactsten_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/artefactsten_righthand.dmi'
 	inhand_icon_state = null
@@ -99627,9 +98137,7 @@
 	can_parry = TRUE
 	associated_skill = /datum/attribute/skill/combat/knives
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/surgery_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/surgery_righthand.dmi'
 	inhand_icon_state = null
@@ -99657,7 +98165,6 @@
 	can_parry = TRUE
 	associated_skill = /datum/attribute/skill/combat/knives
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/surgery_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/surgery_righthand.dmi'
@@ -99687,9 +98194,7 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/surgery_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/surgery_righthand.dmi'
 	inhand_icon_state = null
@@ -99718,7 +98223,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/surgery_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/surgery_righthand.dmi'
@@ -99748,9 +98252,7 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/surgery_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/surgery_righthand.dmi'
 	inhand_icon_state = null
@@ -99779,7 +98281,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/surgery_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/surgery_righthand.dmi'
@@ -99808,11 +98309,9 @@
 	possible_item_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/swords32_righthand.dmi'
@@ -99841,8 +98340,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	sellprice = 150
-	max_blade_int = 350
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -99873,7 +98370,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 250
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -99904,8 +98400,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust/sabre, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	sellprice = 100
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -99936,7 +98430,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -99967,7 +98460,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -99998,8 +98490,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	sellprice = 200
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -100030,7 +98520,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -100062,7 +98551,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/rend, /datum/intent/sword/chop/militia, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/carpentry
@@ -100094,7 +98582,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/chop/militia, /datum/intent/sword/thrust/long/deep, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/rend, /datum/intent/sword/chop/militia, /datum/intent/sword/thrust/long/deep, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 350
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -100124,7 +98611,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/falx, /datum/intent/sword/chop/falx, /datum/intent/sword/cut/falx/heavy, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 250
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -100155,7 +98641,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/falx, /datum/intent/sword/chop/falx, /datum/intent/sword/cut/falx/heavy, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 250
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -100187,7 +98672,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 50
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/gold
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
@@ -100218,8 +98702,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	sellprice = 300
-	max_blade_int = 75
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/gold
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
@@ -100249,7 +98731,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -100282,7 +98763,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 330
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -100315,7 +98795,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 400
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -100350,7 +98829,6 @@
 	gripped_intents = list(/datum/intent/sword/chop/heavy, /datum/intent/sword/thrust/heavy, /datum/intent/sword/cut/light, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/broadsword)
-	max_blade_int = 230
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -100385,7 +98863,6 @@
 	gripped_intents = list(/datum/intent/sword/chop/heavy, /datum/intent/sword/thrust/heavy, /datum/intent/sword/cut/light, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/broadsword)
-	max_blade_int = 295
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -100420,7 +98897,6 @@
 	gripped_intents = list(/datum/intent/sword/chop/heavy, /datum/intent/sword/thrust/heavy, /datum/intent/sword/cut/light, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/broadsword)
-	max_blade_int = 330
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -100453,7 +98929,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 250
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -100486,7 +98961,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 305
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -100519,7 +98993,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 330
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -100552,8 +99025,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	sellprice = 50
-	max_blade_int = 330
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -100588,8 +99059,6 @@
 	gripped_intents = list(/datum/intent/sword/cut/sabre/slow, /datum/intent/pick/bad, /datum/intent/sword/chop/sabre, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = null
-	sellprice = 50
-	max_blade_int = 330
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -100622,7 +99091,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 300
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -100656,7 +99124,6 @@
 	gripped_intents = list(/datum/intent/sword/chop/heavy, /datum/intent/sword/cut/exe/cleave, /datum/intent/sword/cut/exe/sweep, /datum/intent/sword/cut/rend)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = null
-	max_blade_int = 330
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -100692,7 +99159,6 @@
 	possible_item_intents = list(/datum/intent/sword/chop/heavy, /datum/intent/sword/cut/rend, /datum/intent/sword/thrust/exe, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/chop/cleave, /datum/intent/sword/cut/rend, /datum/intent/sword/cut/exe/sweep, /datum/intent/sword/thrust/heavy)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 400
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -100728,9 +99194,7 @@
 	possible_item_intents = list(/datum/intent/sword/chop/cleave, /datum/intent/sword/cut/rend, /datum/intent/sword/thrust/exe, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/chop/cleave/super, /datum/intent/sword/cut/rend, /datum/intent/sword/cut/exe/sweep, /datum/intent/sword/thrust/heavy)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 555
 	special = /datum/special_intent/side_sweep
-	coverage = 65
 	smeltresult = /obj/item/rogueweapon/sword/long/exe/berserk
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -100765,7 +99229,6 @@
 	possible_item_intents = list(/datum/intent/sword/chop/heavy, /datum/intent/sword/cut/rend, /datum/intent/sword/thrust/exe, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/chop/cleave, /datum/intent/sword/cut/rend, /datum/intent/sword/cut/exe/sweep, /datum/intent/sword/thrust/heavy)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 666
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -100800,7 +99263,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/chop/heavy, /datum/intent/sword/thrust/exe, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/chop/heavy, /datum/intent/sword/cut/exe/cleave, /datum/intent/sword/cut/exe/sweep, /datum/intent/sword/cut/rend)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 363
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/gold
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -100835,7 +99297,6 @@
 	possible_item_intents = list(/datum/intent/sword/chop/heavy, /datum/intent/sword/thrust/heavy, /datum/intent/sword/cut, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/thrust/exe, /datum/intent/sword/cut/exe/cleave, /datum/intent/sword/cut/exe/sweep, /datum/intent/sword/cut/rend)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 330
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -100870,7 +99331,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/chop/heavy, /datum/intent/sword/thrust/exe, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/chop/heavy, /datum/intent/sword/cut/exe/cleave, /datum/intent/sword/cut/exe/sweep, /datum/intent/sword/cut/rend)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 330
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -100907,7 +99367,6 @@
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust/long, /datum/intent/sword/thrust/long/halfsword/lesser, /datum/intent/sword/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 275
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -100942,7 +99401,6 @@
 	gripped_intents = list(/datum/intent/rend/apophis, /datum/intent/sword/chop/sabre, /datum/intent/sword/thrust/sabre, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 300
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -100977,7 +99435,6 @@
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike, /datum/intent/sword/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 330
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -101010,7 +99467,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 300
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -101045,7 +99501,6 @@
 	gripped_intents = list(/datum/intent/sword/cut/krieg, /datum/intent/sword/thrust/long/deep, /datum/intent/sword/strike, /datum/intent/rend/krieg)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = null
-	max_blade_int = 330
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -101079,7 +99534,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut/rend, /datum/intent/sword/chop/heavy, /datum/intent/sword/thrust/heavy, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut/rend, /datum/intent/sword/chop/heavy, /datum/intent/sword/thrust/heavy, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 330
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -101113,7 +99567,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut/rend, /datum/intent/sword/chop/heavy, /datum/intent/sword/thrust/heavy, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut/krieg, /datum/intent/sword/thrust/long/deep, /datum/intent/sword/strike, /datum/intent/rend/krieg)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 330
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -101147,7 +99600,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut/krieg, /datum/intent/sword/chop/falx, /datum/intent/sword/strike, /datum/intent/rend/krieg)
 	gripped_intents = list(/datum/intent/sword/cut/krieg, /datum/intent/sword/thrust/long/deep, /datum/intent/rend, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 330
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -101181,7 +99633,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut/krieg, /datum/intent/sword/chop/falx, /datum/intent/rend/krieg, /datum/intent/dagger/sucker_punch)
 	gripped_intents = list(/datum/intent/sword/cut/krieg, /datum/intent/sword/chop/militia, /datum/intent/rend/krieg, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 330
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -101216,8 +99667,6 @@
 	gripped_intents = list(/datum/intent/sword/cut/long, /datum/intent/sword/strike, /datum/intent/sword/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	sellprice = 42
-	max_blade_int = 330
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -101251,7 +99700,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/strike)
 	gripped_intents = null
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 200
 	special = /datum/special_intent/martyr_blazing_sweep_sword
 	smeltresult = /obj/item/ingot/gold
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -101285,7 +99733,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 330
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -101318,7 +99765,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 330
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -101351,7 +99797,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 330
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -101386,7 +99831,6 @@
 	gripped_intents = list(/datum/intent/sword/cut/falx, /datum/intent/sword/chop/falx, /datum/intent/sword/cut/falx/heavy, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 330
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -101421,7 +99865,6 @@
 	gripped_intents = list(/datum/intent/sword/cut/falx, /datum/intent/sword/chop/falx, /datum/intent/sword/cut/falx/heavy, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 330
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/copper
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -101456,7 +99899,6 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/chop/militia, /datum/intent/pick/bad, /datum/intent/sword/disarm/range)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = null
-	max_blade_int = 330
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -101490,7 +99932,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/chop/shotel)
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/chop/shotel)
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 150
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -101524,7 +99965,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/chop/shotel)
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/chop/shotel)
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 100
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -101558,7 +99998,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/chop/long, /datum/intent/dagger/sucker_punch)
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/chop/long, /datum/intent/dagger/sucker_punch)
 	alt_grips = null
-	max_blade_int = 150
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -101591,7 +100030,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 330
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -101626,7 +100064,6 @@
 	gripped_intents = list(/datum/intent/sword/thrust/estoc, /datum/intent/sword/thrust/estoc/lunge, /datum/intent/sword/cut/rapier, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = null
-	max_blade_int = 330
 	special = /datum/special_intent/piercing_lunge
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -101661,7 +100098,6 @@
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/sword/thrust/blunt, /datum/intent/sword/strike/penalty, /datum/intent/sword/strike/cancel)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 330
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -101694,7 +100130,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 330
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -101728,7 +100163,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 400
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -101762,7 +100196,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier, /datum/intent/sword/thrust/rapier/lunge)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/piercing_lunge
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -101795,7 +100228,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier, /datum/intent/sword/thrust/rapier/lunge)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 400
 	special = /datum/special_intent/piercing_lunge
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -101828,7 +100260,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/piercing_lunge
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -101861,7 +100292,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier, /datum/intent/sword/thrust/rapier/lunge)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/piercing_lunge
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -101894,7 +100324,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier, /datum/intent/sword/thrust/rapier/lunge)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/piercing_lunge
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -101927,7 +100356,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier, /datum/intent/sword/thrust/rapier/lunge)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/piercing_lunge
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -101960,7 +100388,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier, /datum/intent/sword/thrust/rapier/lunge)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 225
 	special = /datum/special_intent/piercing_lunge
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -101993,7 +100420,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier, /datum/intent/sword/thrust/rapier/lunge)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/piercing_lunge
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -102024,7 +100450,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/cut/sabre/heavy, /datum/intent/sword/thrust/sabre, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -102055,7 +100480,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/cut/sabre/heavy, /datum/intent/sword/thrust/sabre, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -102086,7 +100510,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/cut/sabre/heavy, /datum/intent/sword/thrust/sabre, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/aaslag
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
@@ -102116,7 +100539,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust, /datum/intent/sword/chop/falx)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -102147,7 +100569,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/cut/sabre/heavy, /datum/intent/sword/thrust/sabre, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -102178,7 +100599,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/cut/sabre/heavy, /datum/intent/sword/thrust/sabre, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -102209,7 +100629,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/cut/sabre/heavy, /datum/intent/sword/thrust/sabre, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -102240,7 +100659,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/cut/sabre/heavy, /datum/intent/sword/thrust/sabre, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/gold
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -102271,7 +100689,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre/master, /datum/intent/sword/thrust/sabre, /datum/intent/effect/daze/freisabre, /datum/intent/rend)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 275
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -102304,7 +100721,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust/hook, /datum/intent/dagger/sucker_punch, /datum/intent/sword/disarm)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -102335,7 +100751,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/cut/sabre/heavy, /datum/intent/sword/thrust/sabre, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -102366,8 +100781,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/cut/sabre/heavy, /datum/intent/sword/thrust/sabre, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	sellprice = 50
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -102398,7 +100811,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/cut/sabre/heavy, /datum/intent/sword/thrust/sabre, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -102429,7 +100841,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 150
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -102462,7 +100873,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/chop, /datum/intent/sword/cut/sabre/heavy, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -102493,7 +100903,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/cut/sabre/heavy, /datum/intent/sword/thrust/sabre, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -102524,7 +100933,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust/sabre, /datum/intent/sword/chop, /datum/intent/rend)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -102556,7 +100964,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -102588,7 +100995,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -102620,7 +101026,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/aaslag
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
@@ -102651,8 +101056,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	sellprice = 40
-	max_blade_int = 300
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -102684,7 +101087,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 250
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -102716,7 +101118,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -102748,7 +101149,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -102780,7 +101180,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/aaslag
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
@@ -102811,7 +101210,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/gold
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -102843,7 +101241,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -102875,7 +101272,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -102907,7 +101303,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/axe/chop, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 250
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -102939,7 +101334,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust, /datum/intent/axe/chop, /datum/intent/sword/cut/sabre/heavy)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -102970,7 +101364,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/axe/chop, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 250
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -103002,7 +101395,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/axe/chop, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 250
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/copper
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -103033,7 +101425,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/axe/chop, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 250
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -103064,7 +101455,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/axe/chop, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 250
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -103096,7 +101486,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -103128,7 +101517,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -103160,7 +101548,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/chop/short)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -103191,7 +101578,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 230
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -103221,7 +101607,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash/battle)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/gold
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -103251,7 +101636,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 100
 	special = /datum/special_intent/shin_swipe
 	anvilrepair = /datum/attribute/skill/craft/crafting
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
@@ -103279,7 +101663,6 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/tools_lefthand.dmi'
@@ -103332,7 +101715,6 @@
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/flailthresh, /datum/intent/mace/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	sellprice = 15
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -103365,7 +101747,6 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/tools_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/tools_righthand.dmi'
 	inhand_icon_state = null
@@ -103480,7 +101861,6 @@
 	special = /datum/special_intent/whip_coil
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	sewrepair = TRUE
-	integrity_failure = 0.2
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/whips32_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/whips32_righthand.dmi'
 	inhand_icon_state = null
@@ -103762,7 +102142,6 @@
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/lash, /datum/intent/whip/crack, /datum/intent/whip/punish)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 100
 	special = /datum/special_intent/whip_coil
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -103794,7 +102173,6 @@
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/lash/urumi, /datum/intent/whip/crack/urumi, /datum/intent/whip/thrust, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 280
 	special = /datum/special_intent/whip_coil
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -103826,7 +102204,6 @@
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/lash/urumi/heavy, /datum/intent/whip/crack/urumi/heavy, /datum/intent/whip/thrust/heavy, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 100
 	special = /datum/special_intent/whip_coil
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -103858,7 +102235,6 @@
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/lash/urumi, /datum/intent/whip/crack/urumi, /datum/intent/whip/thrust, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/whip_coil
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -103890,7 +102266,6 @@
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/lash/urumi/heavy, /datum/intent/whip/crack/urumi/heavy, /datum/intent/whip/thrust/heavy, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 150
 	special = /datum/special_intent/whip_coil
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -103922,7 +102297,6 @@
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/lash/urumi, /datum/intent/whip/crack/urumi, /datum/intent/whip/thrust, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -103954,7 +102328,6 @@
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/lash/urumi, /datum/intent/whip/crack/urumi, /datum/intent/whip/thrust, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -103986,7 +102359,6 @@
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/lash/urumi, /datum/intent/whip/crack/urumi, /datum/intent/whip/thrust, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 100
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -104018,7 +102390,6 @@
 	gripped_intents = list(/datum/intent/spear/bash/ranged/woodstaff, /datum/intent/mace/smash/wood/ranged)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.2
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/weapons/64_lefthand.dmi'
@@ -104137,7 +102508,6 @@
 	possible_item_intents = list(/datum/intent/spear/bash/staff/onehand)
 	gripped_intents = list(/datum/intent/spear/bash/staff, /datum/intent/mace/smash/wood)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	sellprice = 34
 	special = /datum/special_intent/quarterstaff_sweep
 	anvilrepair = /datum/attribute/skill/craft/carpentry
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -104169,7 +102539,6 @@
 	possible_item_intents = list(/datum/intent/spear/bash/staff/onehand)
 	gripped_intents = list(/datum/intent/spear/bash/staff, /datum/intent/mace/smash/wood)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	sellprice = 34
 	special = /datum/special_intent/quarterstaff_sweep
 	anvilrepair = /datum/attribute/skill/craft/carpentry
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -104201,7 +102570,6 @@
 	possible_item_intents = list(/datum/intent/spear/bash/staff/onehand)
 	gripped_intents = list(/datum/intent/spear/bash/staff, /datum/intent/mace/smash/wood)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	sellprice = 121
 	special = /datum/special_intent/quarterstaff_sweep
 	anvilrepair = /datum/attribute/skill/craft/carpentry
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -104233,7 +102601,6 @@
 	possible_item_intents = list(/datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/bash/staff, /datum/intent/mace/smash/wood)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	sellprice = 121
 	special = /datum/special_intent/quarterstaff_sweep
 	anvilrepair = /datum/attribute/skill/craft/carpentry
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -104265,7 +102632,6 @@
 	possible_item_intents = list(/datum/intent/spear/bash/staff/onehand, /datum/intent/magos_electrocute)
 	gripped_intents = list(/datum/intent/spear/bash/staff, /datum/intent/mace/smash/wood/ranged, /datum/intent/magos_electrocute)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	sellprice = 121
 	special = /datum/special_intent/quarterstaff_sweep
 	anvilrepair = /datum/attribute/skill/craft/carpentry
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -104297,7 +102663,6 @@
 	possible_item_intents = list(/datum/intent/spear/bash/staff/onehand)
 	gripped_intents = list(/datum/intent/spear/bash/staff, /datum/intent/mace/smash/wood)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	sellprice = 121
 	special = /datum/special_intent/quarterstaff_sweep
 	anvilrepair = /datum/attribute/skill/craft/carpentry
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -104329,7 +102694,6 @@
 	possible_item_intents = list(/datum/intent/spear/bash/staff/onehand)
 	gripped_intents = list(/datum/intent/spear/bash/staff, /datum/intent/mace/smash/wood)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	sellprice = 121
 	special = /datum/special_intent/quarterstaff_sweep
 	anvilrepair = /datum/attribute/skill/craft/carpentry
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -104361,7 +102725,6 @@
 	possible_item_intents = list(/datum/intent/spear/bash/staff/onehand)
 	gripped_intents = list(/datum/intent/spear/bash/staff, /datum/intent/mace/smash/wood)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	sellprice = 42
 	special = /datum/special_intent/quarterstaff_sweep
 	anvilrepair = /datum/attribute/skill/craft/carpentry
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -104393,7 +102756,6 @@
 	possible_item_intents = list(/datum/intent/spear/bash/staff/onehand)
 	gripped_intents = list(/datum/intent/spear/bash/staff, /datum/intent/mace/smash/wood)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	sellprice = 42
 	special = /datum/special_intent/quarterstaff_sweep
 	anvilrepair = /datum/attribute/skill/craft/carpentry
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -104425,7 +102787,6 @@
 	possible_item_intents = list(/datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/bash/staff, /datum/intent/mace/smash/wood)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	sellprice = 42
 	special = /datum/special_intent/quarterstaff_sweep
 	anvilrepair = /datum/attribute/skill/craft/carpentry
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -104457,7 +102818,6 @@
 	possible_item_intents = list(/datum/intent/spear/bash/staff/onehand)
 	gripped_intents = list(/datum/intent/spear/bash/staff, /datum/intent/mace/smash/wood)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	sellprice = 42
 	special = /datum/special_intent/quarterstaff_sweep
 	anvilrepair = /datum/attribute/skill/craft/carpentry
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -104489,7 +102849,6 @@
 	possible_item_intents = list(/datum/intent/spear/bash/staff/onehand)
 	gripped_intents = list(/datum/intent/spear/bash/staff, /datum/intent/mace/smash/wood)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	sellprice = 42
 	special = /datum/special_intent/quarterstaff_sweep
 	anvilrepair = /datum/attribute/skill/craft/carpentry
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -104521,7 +102880,6 @@
 	possible_item_intents = list(/datum/intent/spear/bash/staff/onehand)
 	gripped_intents = list(/datum/intent/spear/bash/staff, /datum/intent/mace/smash/wood)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	sellprice = 42
 	special = /datum/special_intent/quarterstaff_sweep
 	anvilrepair = /datum/attribute/skill/craft/carpentry
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -104553,8 +102911,6 @@
 	possible_item_intents = list(/datum/intent/spear/bash, /datum/intent/special/magicarc)
 	gripped_intents = list(/datum/intent/spear/thrust/blunted, /datum/intent/special/magicarc, /datum/intent/mace/smash/wood/ranged)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	sellprice = 42
-	max_blade_int = 180
 	special = /datum/special_intent/quarterstaff_sweep
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/carpentry
@@ -104587,7 +102943,6 @@
 	possible_item_intents = list(/datum/intent/spear/bash, /datum/intent/spear/cut)
 	gripped_intents = list(/datum/intent/pick/ranged, /datum/intent/spear/thrust, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 140
 	smeltresult = /obj/item/rogueore/coal
 	anvilrepair = /datum/attribute/skill/craft/carpentry
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -104829,7 +103184,6 @@
 	possible_item_intents = list(/datum/intent/tie)
 	firefuel = 5 MINUTES
 	sewrepair = TRUE
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -105013,7 +103367,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/rotation_contraption/horizontal
@@ -105031,7 +103384,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/rotation_contraption/large_cog
@@ -105049,7 +103401,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/rotation_contraption/minecart_rail
@@ -105067,7 +103418,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/rotation_contraption/minecart_rail/railbreak
@@ -105102,7 +103452,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/rotation_contraption/vertical
@@ -105120,7 +103469,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/rotation_contraption/waterwheel
@@ -105138,7 +103486,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 96
 	rogue_grid_height = 96
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/satchel_bomb
@@ -105153,7 +103500,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -105179,8 +103525,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
-	sellprice = 100
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -105202,7 +103546,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
-	sellprice = 20
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -105224,7 +103567,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
-	sellprice = 20
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -105246,7 +103588,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
-	sellprice = 100
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -105265,7 +103606,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -105283,7 +103623,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/stamps_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/stamps_righthand.dmi'
 	inhand_icon_state = null
@@ -105301,7 +103640,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/stamps_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/stamps_righthand.dmi'
 	inhand_icon_state = null
@@ -105319,7 +103657,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/stamps_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/stamps_righthand.dmi'
 	inhand_icon_state = null
@@ -105337,7 +103674,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/stamps_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/stamps_righthand.dmi'
 	inhand_icon_state = null
@@ -105355,7 +103691,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/stamps_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/stamps_righthand.dmi'
 	inhand_icon_state = null
@@ -105373,7 +103708,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/stamps_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/stamps_righthand.dmi'
 	inhand_icon_state = null
@@ -105391,7 +103725,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/stamps_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/stamps_righthand.dmi'
 	inhand_icon_state = null
@@ -105409,7 +103742,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/stamps_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/stamps_righthand.dmi'
 	inhand_icon_state = null
@@ -105427,7 +103759,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/stamps_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/stamps_righthand.dmi'
 	inhand_icon_state = null
@@ -105445,7 +103776,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/stamps_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/stamps_righthand.dmi'
 	inhand_icon_state = null
@@ -105463,7 +103793,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/stamps_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/stamps_righthand.dmi'
 	inhand_icon_state = null
@@ -105481,7 +103810,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/stamps_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/stamps_righthand.dmi'
 	inhand_icon_state = null
@@ -105499,7 +103827,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/stamps_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/stamps_righthand.dmi'
 	inhand_icon_state = null
@@ -105517,7 +103844,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/hydroponics/seeds_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/hydroponics/seeds_righthand.dmi'
 	inhand_icon_state = null
@@ -105551,7 +103877,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/hydroponics/seeds_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/hydroponics/seeds_righthand.dmi'
 	inhand_icon_state = null
@@ -105569,7 +103894,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/hydroponics/seeds_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/hydroponics/seeds_righthand.dmi'
 	inhand_icon_state = null
@@ -105587,7 +103911,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/hydroponics/seeds_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/hydroponics/seeds_righthand.dmi'
 	inhand_icon_state = null
@@ -105605,7 +103928,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/hydroponics/seeds_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/hydroponics/seeds_righthand.dmi'
 	inhand_icon_state = null
@@ -105623,7 +103945,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/hydroponics/seeds_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/hydroponics/seeds_righthand.dmi'
 	inhand_icon_state = null
@@ -105641,7 +103962,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/hydroponics/seeds_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/hydroponics/seeds_righthand.dmi'
 	inhand_icon_state = null
@@ -105659,7 +103979,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/hydroponics/seeds_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/hydroponics/seeds_righthand.dmi'
 	inhand_icon_state = null
@@ -105677,7 +103996,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/hydroponics/seeds_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/hydroponics/seeds_righthand.dmi'
 	inhand_icon_state = null
@@ -105695,7 +104013,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/hydroponics/seeds_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/hydroponics/seeds_righthand.dmi'
 	inhand_icon_state = null
@@ -105713,7 +104030,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/hydroponics/seeds_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/hydroponics/seeds_righthand.dmi'
 	inhand_icon_state = null
@@ -105731,7 +104047,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/hydroponics/seeds_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/hydroponics/seeds_righthand.dmi'
 	inhand_icon_state = null
@@ -105750,7 +104065,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/flora/ausflora_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/flora/ausflora_righthand.dmi'
 	inhand_icon_state = null
@@ -105768,7 +104082,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/hydroponics/seeds_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/hydroponics/seeds_righthand.dmi'
 	inhand_icon_state = null
@@ -105789,7 +104102,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/shafts_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/shafts_righthand.dmi'
 	inhand_icon_state = null
@@ -105868,7 +104180,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/flaregun_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/flaregun_righthand.dmi'
 	inhand_icon_state = null
@@ -105895,7 +104206,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use/flaregun)
-	integrity_failure = 0
 	inhand_icon_state = "flaregun"
 	rogue_onmob_sheet = 'modular_redtard/rockhill/icons/baked/roguetown/items/flaregun_onmob.dmi'
 
@@ -105933,7 +104243,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_hearthstone/icons/obj/items/signalhorn_lefthand.dmi'
@@ -105955,7 +104264,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -105974,7 +104282,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_hearthstone/icons/mob/skeletons_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_hearthstone/icons/mob/skeletons_righthand.dmi'
 	inhand_icon_state = null
@@ -105995,7 +104302,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -106014,7 +104320,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/items_and_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/items_and_weapons_righthand.dmi'
 	inhand_icon_state = null
@@ -106041,8 +104346,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
-	sellprice = 20
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/sprue_funnel
@@ -106056,7 +104359,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/anvil_casting_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/anvil_casting_righthand.dmi'
 	inhand_icon_state = null
@@ -106075,7 +104377,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	worn_icon_state = "artibackpack"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/storage_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/storage_righthand.dmi'
@@ -106116,8 +104417,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 15
-	integrity_failure = 0
 	worn_icon_state = "backpack"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/storage_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/storage_righthand.dmi'
@@ -106138,7 +104437,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 15
 	worn_icon_state = "rucksack_untied"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/storage_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/storage_righthand.dmi'
@@ -106159,7 +104457,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 15
 	worn_icon_state = "backpack"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/timesoldier/sprites/gear_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/timesoldier/sprites/gear_righthand.dmi'
@@ -106180,7 +104477,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 15
 	worn_icon_state = "backpack_trader"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_twilight_axis/icons/roguetown/clothing/back_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_twilight_axis/icons/roguetown/clothing/back_righthand.dmi'
@@ -106202,9 +104498,7 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 10
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon_backr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/back_r.dmi'
 	worn_icon_state = "satchel"
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/storage_lefthand.dmi'
@@ -106227,7 +104521,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 10
 	sewrepair = TRUE
 	worn_icon_state = "satchel"
 	rogue_female_worn = TRUE
@@ -106251,7 +104544,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 10
 	sewrepair = TRUE
 	worn_icon_backr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/back_r.dmi'
 	worn_icon_state = "satchel"
@@ -106275,7 +104567,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 10
 	sewrepair = TRUE
 	worn_icon_backr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/back_r.dmi'
 	worn_icon_state = "satchel"
@@ -106299,7 +104590,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 10
 	sewrepair = TRUE
 	worn_icon_backr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/back_r.dmi'
 	worn_icon_state = "osatchel"
@@ -106324,7 +104614,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 10
 	sewrepair = TRUE
 	worn_icon_backr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/back_r.dmi'
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/storage_lefthand.dmi'
@@ -106348,7 +104637,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 10
 	sewrepair = TRUE
 	worn_icon_backr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/back_r.dmi'
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/timesoldier/sprites/gear_lefthand.dmi'
@@ -106374,7 +104662,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 64
-	integrity_failure = 0
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -106401,7 +104688,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "leather"
@@ -106428,7 +104714,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "leather"
@@ -106455,7 +104740,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "overseerbelt"
@@ -106482,7 +104766,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	inhand_icon_state = null
 	worn_icon_state = "battleskirt"
 	rogue_female_worn = TRUE
@@ -106508,7 +104791,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	inhand_icon_state = null
 	worn_icon_state = "battleskirt"
 	rogue_female_worn = TRUE
@@ -106534,7 +104816,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	inhand_icon_state = null
 	worn_icon_state = "battleskirt"
 	rogue_female_worn = TRUE
@@ -106561,7 +104842,6 @@
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
 	flags_inv = NONE
-	sellprice = 10
 	inhand_icon_state = null
 	worn_icon_state = "breechcloth"
 	rogue_female_worn = TRUE
@@ -106588,7 +104868,6 @@
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
 	flags_inv = NONE
-	sellprice = 10
 	inhand_icon_state = null
 	worn_icon_state = "breechclothalt"
 	rogue_female_worn = TRUE
@@ -106615,7 +104894,6 @@
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
 	flags_inv = NONE
-	sellprice = 10
 	inhand_icon_state = null
 	worn_icon_state = "breechcloth"
 	rogue_female_worn = TRUE
@@ -106641,7 +104919,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	inhand_icon_state = null
 	worn_icon_state = "faulds"
 	rogue_female_worn = TRUE
@@ -106667,7 +104944,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	inhand_icon_state = null
 	worn_icon_state = "loincloth"
 	rogue_female_worn = TRUE
@@ -106693,7 +104969,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "belthooks"
@@ -106719,7 +104994,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "beltshawl"
@@ -106746,7 +105020,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "blackbelt"
@@ -106773,7 +105046,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "cloth"
@@ -106800,7 +105072,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "cloth"
@@ -106827,7 +105098,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "cloth"
@@ -106851,7 +105121,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	icon_state = null
 	inhand_icon_state = null
@@ -106876,7 +105145,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	icon_state = null
 	inhand_icon_state = null
@@ -106901,7 +105169,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	icon_state = null
 	inhand_icon_state = null
@@ -106926,7 +105193,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	icon_state = null
 	inhand_icon_state = null
@@ -106951,7 +105217,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	icon_state = null
 	inhand_icon_state = null
@@ -106976,7 +105241,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	icon_state = null
 	inhand_icon_state = null
@@ -107001,7 +105265,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	icon_state = null
 	inhand_icon_state = null
@@ -107029,7 +105292,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "cloth"
@@ -107056,7 +105318,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "belt_double"
@@ -107083,7 +105344,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "blackknife"
@@ -107109,7 +105369,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "exoticsilkbelt"
@@ -107133,7 +105392,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	icon_state = null
 	inhand_icon_state = null
@@ -107158,7 +105416,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	icon_state = null
 	inhand_icon_state = null
@@ -107186,7 +105443,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "hammerhold_sash"
@@ -107213,7 +105469,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "ironplaque"
@@ -107237,7 +105492,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 30
 	sewrepair = TRUE
 	icon_state = null
 	inhand_icon_state = null
@@ -107265,7 +105519,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "knife"
@@ -107292,7 +105545,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "blackknife"
@@ -107318,7 +105570,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "blackknife"
@@ -107344,7 +105595,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "blackknife"
@@ -107370,7 +105620,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "blackknife"
@@ -107396,7 +105645,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "blackknife"
@@ -107422,7 +105670,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "knife"
@@ -107446,7 +105693,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 5
 	sewrepair = TRUE
 	icon_state = null
 	inhand_icon_state = null
@@ -107474,7 +105720,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 50
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "goldplaque"
@@ -107501,7 +105746,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 50
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "stewardbelt"
@@ -107528,7 +105772,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 30
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "silverplaque"
@@ -107555,7 +105798,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "rope"
@@ -107582,7 +105824,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "rope"
@@ -107609,7 +105850,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "rope"
@@ -107636,7 +105876,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "rope"
@@ -107663,7 +105902,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "clothsash"
@@ -107690,7 +105928,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "maidsash"
@@ -107717,7 +105954,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 5
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "shalal"
@@ -107744,7 +105980,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 5
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "shalal"
@@ -107771,7 +106006,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 30
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "steelplaque"
@@ -107798,7 +106032,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 35
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
 	inhand_icon_state = null
 	worn_icon_state = "steeltasset"
@@ -107822,7 +106055,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 30
 	sewrepair = TRUE
 	icon_state = null
 	inhand_icon_state = null
@@ -107850,7 +106082,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "butlersuspenders"
@@ -107877,7 +106108,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "butlersuspenderscolorable"
@@ -107904,7 +106134,6 @@
 	wbalance = 1
 	associated_skill = /datum/attribute/skill/combat/whipsflails
 	possible_item_intents = list(/datum/intent/whip/belt/tip, /datum/intent/whip/belt/buckle)
-	sellprice = 10
 	sewrepair = TRUE
 	inhand_icon_state = null
 	worn_icon_state = "holsterbelt"
@@ -108327,7 +106556,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/library_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/library_righthand.dmi'
 	inhand_icon_state = null
@@ -108347,7 +106575,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	worn_icon_hipl = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_l.dmi'
 	worn_icon_hipr = 'modular_redtard/rockhill/icons/roguetown/clothing/onmob/belt_r.dmi'
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/storage_lefthand.dmi'
@@ -108368,7 +106595,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/smokebox_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/smokebox_righthand.dmi'
 	inhand_icon_state = null
@@ -108391,7 +106617,6 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	integrity_failure = 0
 	icon_state = null
 	inhand_icon_state = null
 	storage_type = /datum/storage/rogue_grid
@@ -108430,7 +106655,6 @@
 	worn_y_dimension = 32
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/belts_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/belts_righthand.dmi'
 	inhand_icon_state = null
@@ -108473,7 +106697,6 @@
 	worn_y_dimension = 32
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -108497,7 +106720,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -110534,7 +108756,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/storage_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/storage_righthand.dmi'
 	inhand_icon_state = null
@@ -110630,7 +108851,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/storage_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/storage_righthand.dmi'
 	inhand_icon_state = "gamesatchel~2"
@@ -110651,7 +108871,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/dice_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/dice_righthand.dmi'
 	inhand_icon_state = null
@@ -110838,7 +109057,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon_state = "cbag"
 	storage_type = /datum/storage/rogue_grid/roguetown/sack
@@ -110987,8 +109205,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	sellprice = 40
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular/Neu_Food/icons/cookware/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -111009,7 +109225,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 96
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/structure_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/structure_righthand.dmi'
 	inhand_icon_state = null
@@ -111067,7 +109282,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -111088,7 +109302,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/obj/toy_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/obj/toy_righthand.dmi'
 	inhand_icon_state = null
@@ -111107,7 +109320,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_righthand.dmi'
 	inhand_icon_state = null
@@ -111126,7 +109338,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/produce_righthand.dmi'
 	inhand_icon_state = null
@@ -111145,7 +109356,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -111168,9 +109378,7 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	sellprice = 15
 	sewrepair = TRUE
-	integrity_failure = 0
 	equip_delay_self = 50
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/modular_azurepeak/icons/obj/items/twstrap_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/modular_azurepeak/icons/obj/items/twstrap_righthand.dmi'
@@ -111189,7 +109397,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/underworld/enigma_husks_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/underworld/enigma_husks_righthand.dmi'
 	inhand_icon_state = null
@@ -111229,7 +109436,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -111376,7 +109582,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/zadcage_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/misc/zadcage_righthand.dmi'
 	inhand_icon_state = null
@@ -111395,7 +109600,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/storage_lefthand.dmi'
 	righthand_file = 'modular_redtard/rockhill/icons/baked/roguetown/clothing/storage_righthand.dmi'
 	inhand_icon_state = null
