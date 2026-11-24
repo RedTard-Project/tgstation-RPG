@@ -9,6 +9,10 @@
 		"kinds": ["weapon", "armor"],
 		"exclude": "^(armor_brush|book/|id$|natural/|quiver|reagent_containers/|storage/|rogueweapon/(scabbard|surgery|hoe|pitchfork|sickle|scythe|thresher|huntingknife/scissors))"
 	},
+	"extended_by_module": {
+		"files": ["modular_redtard/combat/explosives.dm"],
+		"note": "H1b (2026-11-22): these files add behaviour to Azure Peak's types this tool ports (the bombs of items_azure/other.dm); their declarations do not count as the module declaring the type."
+	},
 	"exclude": [
 		{"match": "^/obj/item/.*/(?:obj|datum)/", "reason": "not a type: a list entry the K1v inventory read as one"},
 		{"prefix": "/obj/item/bodypart", "reason": "bodypart: not an item of the port"},

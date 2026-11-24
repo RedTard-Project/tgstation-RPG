@@ -79,7 +79,8 @@ GLOBAL_LIST_INIT(rogue_anvil_recipes, init_rogue_anvil_recipes())
 	var/progress = 0
 	var/skill_quality = 0
 	var/material_quality = 0
-	var/bar_health = 100
+	/// Set in Initialize() from the bar's quality (forging_health_per_quality).
+	var/bar_health = 0
 	var/hits = 0
 	var/breakthroughs = 0
 	/// Materials worked in so far, the bar included (Ratwood num_of_materials).
@@ -141,44 +142,46 @@ GLOBAL_LIST_INIT(rogue_anvil_recipes, init_rogue_anvil_recipes())
 		return FALSE
 	var/rank = user.rogue_skill_rank(recipe.appro_skill)
 	var/intelligence = user.rogue_stat(ROGUE_STAT_INTELLIGENCE)
-	var/chance
-	if(!rank && !recipe.craftdiff)
-		chance = 35
-	else if(rank < recipe.craftdiff)
-		chance = 10
-	else
-		chance = min(45 * rank, 100)
+	var/chance = rogue_formula_value(ROGUE_FORMULA_ANVIL_STRIKE_CHANCE, list("rank" = rank, "difficulty" = recipe.craftdiff))
 	hits++
 	if(!prob(chance))
-		user.rogue_craft_experience(recipe.appro_skill, intelligence / (recipe.craftdiff + 3))
+		user.rogue_craft_experience(recipe.appro_skill, intelligence / (recipe.craftdiff + rogue_value("forging_xp_miss_offset")))
 		if(prob(chance))
 			user.visible_message(span_warning("[user] fumbles the bar!"))
 			return FALSE
 		user.visible_message(span_warning("[user] ruins the bar!"))
-		skill_quality -= 1
+		skill_quality -= rogue_value("forging_ruin_quality_loss")
 		bar_health -= recipe.craftdiff
 		switch(rank)
-			if(0)
-				bar_health -= 25
-			if(1 to 3)
-				bar_health -= floor(20 / rank)
-			if(4)
-				bar_health -= 5
-			if(5 to 6)
-				if(user.rogue_badluck(4))
+			if(ROGUE_RANK_NONE)
+				bar_health -= rogue_value("forging_ruin_damage_untrained")
+			if(ROGUE_RANK_NOVICE to ROGUE_RANK_JOURNEYMAN)
+				bar_health -= floor(rogue_value("forging_ruin_damage_low_ranks") / rank)
+			if(ROGUE_RANK_EXPERT)
+				bar_health -= rogue_value("forging_ruin_damage_expert")
+			if(ROGUE_RANK_MASTER to ROGUE_RANK_LEGENDARY)
+				if(user.rogue_badluck(rogue_value("forging_ruin_badluck")))
 					bar_health -= recipe.craftdiff
 		if(bar_health <= 0)
 			user.visible_message(span_danger("[user] destroys the bar!"))
 			qdel(parent)
 		return FALSE
-	var/moveup = ((from_blade && breakthrough) ? FORGING_BLADE_BREAKTHROUGH : 1) + round(rank * 6 * user.rogue_stat(ROGUE_STAT_STRENGTH) / 10 * (breakthrough ? 1.5 : 1)) - recipe.craftdiff
+	var/moveup = rogue_formula_value(ROGUE_FORMULA_ANVIL_STRIKE_PROGRESS, list(
+		"rank" = rank,
+		"strength" = user.rogue_stat(ROGUE_STAT_STRENGTH),
+		"breakthrough" = breakthrough,
+		"difficulty" = recipe.craftdiff,
+		"blade" = from_blade,
+		"blade_start" = FORGING_BLADE_BREAKTHROUGH,
+	))
 	progress = clamp(progress + moveup, 0, recipe.max_progress)
-	skill_quality += rand(rank * 12, rank * 14) * moveup
-	user.rogue_craft_experience(recipe.appro_skill, intelligence / (recipe.craftdiff + 1))
+	var/roll = rand(rank * rogue_value("forging_quality_roll_min"), rank * rogue_value("forging_quality_roll_max"))
+	skill_quality += rogue_formula_value(ROGUE_FORMULA_ANVIL_STRIKE_QUALITY, list("roll" = roll, "rank" = rank, "progress" = moveup))
+	user.rogue_craft_experience(recipe.appro_skill, intelligence / (recipe.craftdiff + rogue_value("forging_xp_hit_offset")))
 	if(breakthrough)
 		user.visible_message(span_deadsay("[user] deftly strikes the bar!"))
-		if(bar_health < 100)
-			bar_health += 20
+		if(bar_health < rogue_value("forging_breakthrough_heal_limit"))
+			bar_health += rogue_value("forging_breakthrough_heal")
 	else
 		user.visible_message(span_info("[user] strikes the bar!"))
 	if(progress < recipe.max_progress)
@@ -199,35 +202,40 @@ GLOBAL_LIST_INIT(rogue_anvil_recipes, init_rogue_anvil_recipes())
 /// Ratwood handle_creation(): hits per material, breakthroughs, the bars' quality and the smith's strikes make the tier.
 /datum/component/rogue_forging/proc/create_goods(turf/where, mob/living/user)
 	var/hits_per_material = ceil(hits / materials) - breakthroughs
-	var/bar_tier = floor(material_quality / materials) - 4
-	var/tier = floor((skill_quality / materials) / 1500) + bar_tier - floor(hits_per_material * 0.25)
+	var/tier = rogue_formula_value(ROGUE_FORMULA_ANVIL_GOODS_TIER, list(
+		"skill_quality" = skill_quality,
+		"materials" = materials,
+		"material_quality" = material_quality,
+		"hits_per_material" = hits_per_material,
+	))
+	// The tier steps are Ratwood's quality ladder, one quality per tier; the formula sets where a work lands on it.
 	var/quality
 	var/modifier
 	switch(tier)
 		if(-INFINITY to -2)
 			quality = ROGUE_QUALITY_RUINED
-			modifier = 0.3
+			modifier = rogue_value("forging_integrity_ruined")
 		if(-1)
 			quality = ROGUE_QUALITY_AWFUL
-			modifier = 0.5
+			modifier = rogue_value("forging_integrity_awful")
 		if(0)
 			quality = ROGUE_QUALITY_CRUDE
-			modifier = 0.8
+			modifier = rogue_value("forging_integrity_crude")
 		if(1)
 			quality = ROGUE_QUALITY_ROUGH
-			modifier = 0.9
+			modifier = rogue_value("forging_integrity_rough")
 		if(2)
 			quality = ROGUE_QUALITY_STANDARD
-			modifier = 1
+			modifier = rogue_value("forging_integrity_standard")
 		if(3)
 			quality = ROGUE_QUALITY_FINE
-			modifier = 1.1
+			modifier = rogue_value("forging_integrity_fine")
 		if(4)
 			quality = ROGUE_QUALITY_FLAWLESS
-			modifier = 1.2
+			modifier = rogue_value("forging_integrity_flawless")
 		else
 			quality = ROGUE_QUALITY_MASTERWORK
-			modifier = 1.3
+			modifier = rogue_value("forging_integrity_masterwork")
 	for(var/i in 1 to recipe.createditem_num)
 		var/obj/item/made = new recipe.created_item(where)
 		made.rogue_apply_forged_quality(quality, modifier)

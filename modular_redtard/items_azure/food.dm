@@ -34,7 +34,6 @@
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap)
 	sellprice = 20
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_fish_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_fish_righthand.dmi'
 	inhand_icon_state = null
@@ -58,7 +57,6 @@
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/food)
 	sellprice = 40
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_fish_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_fish_righthand.dmi'
 	inhand_icon_state = null
@@ -80,7 +78,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/produce_righthand.dmi'
 	inhand_icon_state = null
@@ -102,7 +99,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_fruit_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_fruit_righthand.dmi'
 	inhand_icon_state = null
@@ -124,7 +120,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/produce_righthand.dmi'
 	inhand_icon_state = null
@@ -146,7 +141,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/produce_righthand.dmi'
 	inhand_icon_state = null
@@ -172,7 +166,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/grown/rogue/blend/avantare
@@ -546,7 +539,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_objects_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_objects_righthand.dmi'
 	inhand_icon_state = null
@@ -568,7 +560,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_objects_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_objects_righthand.dmi'
 	inhand_icon_state = null
@@ -593,7 +584,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	icon_state = null
 	inhand_icon_state = null
 
@@ -611,7 +601,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_teas_and_brews/icons/obj/tar_brick_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_teas_and_brews/icons/obj/tar_brick_righthand.dmi'
 	inhand_icon_state = null
@@ -633,7 +622,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_teas_and_brews/icons/obj/tea_mixes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_teas_and_brews/icons/obj/tea_mixes_righthand.dmi'
 	inhand_icon_state = null
@@ -655,7 +643,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_teas_and_brews/icons/obj/tea_mixes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_teas_and_brews/icons/obj/tea_mixes_righthand.dmi'
 	inhand_icon_state = null
@@ -677,7 +664,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_teas_and_brews/icons/obj/tea_mixes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_teas_and_brews/icons/obj/tea_mixes_righthand.dmi'
 	inhand_icon_state = null
@@ -699,7 +685,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_righthand.dmi'
 	inhand_icon_state = null
@@ -784,7 +769,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/produce_righthand.dmi'
 	inhand_icon_state = null
@@ -806,7 +790,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/produce_righthand.dmi'
 	inhand_icon_state = null
@@ -828,7 +811,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_righthand.dmi'
 	inhand_icon_state = null
@@ -850,7 +832,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_righthand.dmi'
 	inhand_icon_state = null
@@ -872,7 +853,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_corn_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_corn_righthand.dmi'
 	inhand_icon_state = null
@@ -894,7 +874,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_corn_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_corn_righthand.dmi'
 	inhand_icon_state = null
@@ -916,7 +895,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_corn_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_corn_righthand.dmi'
 	inhand_icon_state = null
@@ -938,7 +916,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_corn_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_corn_righthand.dmi'
 	inhand_icon_state = null
@@ -960,7 +937,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_corn_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_corn_righthand.dmi'
 	inhand_icon_state = null
@@ -982,7 +958,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_corn_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_corn_righthand.dmi'
 	inhand_icon_state = null
@@ -1004,7 +979,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_corn_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_corn_righthand.dmi'
 	inhand_icon_state = null
@@ -1026,7 +1000,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_cakes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_cakes_righthand.dmi'
 	inhand_icon_state = null
@@ -1048,7 +1021,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_cakes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_cakes_righthand.dmi'
 	inhand_icon_state = null
@@ -1070,7 +1042,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_cakes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_cakes_righthand.dmi'
 	inhand_icon_state = null
@@ -1092,7 +1063,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_cakes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_cakes_righthand.dmi'
 	inhand_icon_state = null
@@ -1114,7 +1084,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_cakes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_cakes_righthand.dmi'
 	inhand_icon_state = null
@@ -1136,7 +1105,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_cakes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_cakes_righthand.dmi'
 	inhand_icon_state = null
@@ -1158,7 +1126,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_cakes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_cakes_righthand.dmi'
 	inhand_icon_state = null
@@ -1180,7 +1147,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_cakes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_cakes_righthand.dmi'
 	inhand_icon_state = null
@@ -1202,7 +1168,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_cakes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_cakes_righthand.dmi'
 	inhand_icon_state = null
@@ -1224,7 +1189,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_corn_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_corn_righthand.dmi'
 	inhand_icon_state = null
@@ -1246,7 +1210,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_corn_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_corn_righthand.dmi'
 	inhand_icon_state = null
@@ -1268,7 +1231,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_corn_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_corn_righthand.dmi'
 	inhand_icon_state = null
@@ -1290,7 +1252,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_corn_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_corn_righthand.dmi'
 	inhand_icon_state = null
@@ -1312,7 +1273,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_corn_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_corn_righthand.dmi'
 	inhand_icon_state = null
@@ -1334,7 +1294,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_corn_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_corn_righthand.dmi'
 	inhand_icon_state = null
@@ -1356,7 +1315,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_corn_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_corn_righthand.dmi'
 	inhand_icon_state = null
@@ -1378,7 +1336,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_corn_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_corn_righthand.dmi'
 	inhand_icon_state = null
@@ -1400,7 +1357,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_corn_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_corn_righthand.dmi'
 	inhand_icon_state = null
@@ -1422,7 +1378,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_righthand.dmi'
 	inhand_icon_state = null
@@ -1444,7 +1399,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_righthand.dmi'
 	inhand_icon_state = null
@@ -1466,7 +1420,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_righthand.dmi'
 	inhand_icon_state = null
@@ -1488,7 +1441,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_veggies_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_veggies_righthand.dmi'
 	inhand_icon_state = null
@@ -1510,7 +1462,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_righthand.dmi'
 	inhand_icon_state = null
@@ -1532,7 +1483,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_righthand.dmi'
 	inhand_icon_state = null
@@ -1554,7 +1504,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_righthand.dmi'
 	inhand_icon_state = null
@@ -1576,7 +1525,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_righthand.dmi'
 	inhand_icon_state = null
@@ -1598,7 +1546,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_righthand.dmi'
 	inhand_icon_state = null
@@ -1620,7 +1567,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_righthand.dmi'
 	inhand_icon_state = null
@@ -1642,7 +1588,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_egg_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_egg_righthand.dmi'
 	inhand_icon_state = null
@@ -1664,7 +1609,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_righthand.dmi'
 	inhand_icon_state = null
@@ -1686,7 +1630,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_righthand.dmi'
 	inhand_icon_state = null
@@ -1708,7 +1651,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_righthand.dmi'
 	inhand_icon_state = null
@@ -1730,7 +1672,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_righthand.dmi'
 	inhand_icon_state = null
@@ -1752,7 +1693,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_righthand.dmi'
 	inhand_icon_state = null
@@ -1774,7 +1714,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_righthand.dmi'
 	inhand_icon_state = null
@@ -1796,7 +1735,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_righthand.dmi'
 	inhand_icon_state = null
@@ -1818,7 +1756,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_righthand.dmi'
 	inhand_icon_state = null
@@ -1840,7 +1777,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_veggies_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_veggies_righthand.dmi'
 	inhand_icon_state = null
@@ -1866,7 +1802,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/reagent_containers/food/snacks/rogue/filetmeal/cucumber
@@ -2051,7 +1986,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_righthand.dmi'
 	inhand_icon_state = null
@@ -2073,7 +2007,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_righthand.dmi'
 	inhand_icon_state = null
@@ -2095,7 +2028,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_righthand.dmi'
 	inhand_icon_state = null
@@ -2117,7 +2049,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_righthand.dmi'
 	inhand_icon_state = null
@@ -2139,7 +2070,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_righthand.dmi'
 	inhand_icon_state = null
@@ -2161,7 +2091,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_righthand.dmi'
 	inhand_icon_state = null
@@ -2183,7 +2112,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_righthand.dmi'
 	inhand_icon_state = null
@@ -2205,7 +2133,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_righthand.dmi'
 	inhand_icon_state = null
@@ -2227,7 +2154,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_righthand.dmi'
 	inhand_icon_state = null
@@ -2249,7 +2175,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_righthand.dmi'
 	inhand_icon_state = null
@@ -2271,7 +2196,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_righthand.dmi'
 	inhand_icon_state = null
@@ -2293,7 +2217,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_righthand.dmi'
 	inhand_icon_state = null
@@ -2318,7 +2241,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	icon_state = null
 	inhand_icon_state = null
 	rogue_baked_inhand = FALSE
@@ -2337,7 +2259,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_seafood_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_seafood_righthand.dmi'
 	inhand_icon_state = null
@@ -2359,7 +2280,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_griddles_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_griddles_righthand.dmi'
 	inhand_icon_state = null
@@ -2465,7 +2385,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_dough_righthand.dmi'
 	inhand_icon_state = null
@@ -2487,7 +2406,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_corn_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_corn_righthand.dmi'
 	inhand_icon_state = null
@@ -2509,7 +2427,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_pasta_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_pasta_righthand.dmi'
 	inhand_icon_state = null
@@ -2531,7 +2448,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_pasta_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_pasta_righthand.dmi'
 	inhand_icon_state = null
@@ -2553,7 +2469,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_pasta_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_pasta_righthand.dmi'
 	inhand_icon_state = null
@@ -2575,7 +2490,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_pasta_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_pasta_righthand.dmi'
 	inhand_icon_state = null
@@ -2597,7 +2511,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_righthand.dmi'
 	inhand_icon_state = null
@@ -2619,7 +2532,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_meat_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_meat_righthand.dmi'
 	inhand_icon_state = null
@@ -2683,7 +2595,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_meat_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_meat_righthand.dmi'
 	inhand_icon_state = null
@@ -2747,7 +2658,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_deep_fried_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_deep_fried_righthand.dmi'
 	inhand_icon_state = null
@@ -2770,7 +2680,6 @@
 	associated_skill = /datum/attribute/skill/craft/cooking
 	possible_item_intents = list(/datum/intent/food, /datum/intent/mace/slap/pig)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_meat_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_meat_righthand.dmi'
 	inhand_icon_state = null
@@ -2792,7 +2701,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_meat_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_meat_righthand.dmi'
 	inhand_icon_state = null
@@ -2814,7 +2722,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_meat_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_meat_righthand.dmi'
 	inhand_icon_state = null
@@ -2836,7 +2743,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_meat_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_meat_righthand.dmi'
 	inhand_icon_state = null
@@ -2879,7 +2785,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_meat_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_meat_righthand.dmi'
 	inhand_icon_state = null
@@ -2901,7 +2806,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_meat_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_meat_righthand.dmi'
 	inhand_icon_state = null
@@ -2923,7 +2827,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_meat_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_meat_righthand.dmi'
 	inhand_icon_state = null
@@ -2966,7 +2869,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_meat_meal_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_meat_meal_righthand.dmi'
 	inhand_icon_state = null
@@ -2988,7 +2890,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_meat_meal_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_meat_meal_righthand.dmi'
 	inhand_icon_state = null
@@ -3010,7 +2911,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_meat_meal_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_meat_meal_righthand.dmi'
 	inhand_icon_state = null
@@ -3032,7 +2932,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_meat_meal_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_meat_meal_righthand.dmi'
 	inhand_icon_state = null
@@ -3054,7 +2953,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_meat_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_meat_righthand.dmi'
 	inhand_icon_state = null
@@ -3076,7 +2974,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_meat_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_meat_righthand.dmi'
 	inhand_icon_state = null
@@ -3098,7 +2995,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_meat_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_meat_righthand.dmi'
 	inhand_icon_state = null
@@ -3183,7 +3079,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_rice_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_rice_righthand.dmi'
 	inhand_icon_state = null
@@ -3205,7 +3100,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_rice_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_rice_righthand.dmi'
 	inhand_icon_state = null
@@ -3227,7 +3121,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/others/sweet_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/others/sweet_righthand.dmi'
 	inhand_icon_state = null
@@ -3249,7 +3142,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_meat_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_meat_righthand.dmi'
 	inhand_icon_state = null
@@ -3313,7 +3205,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_pasta_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_pasta_righthand.dmi'
 	inhand_icon_state = null
@@ -3335,7 +3226,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_omelette_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_omelette_righthand.dmi'
 	inhand_icon_state = null
@@ -3357,7 +3247,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_omelette_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_omelette_righthand.dmi'
 	inhand_icon_state = null
@@ -3379,7 +3268,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_omelette_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_omelette_righthand.dmi'
 	inhand_icon_state = null
@@ -3401,7 +3289,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_omelette_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_omelette_righthand.dmi'
 	inhand_icon_state = null
@@ -3423,7 +3310,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_omelette_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_omelette_righthand.dmi'
 	inhand_icon_state = null
@@ -3445,7 +3331,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_omelette_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_omelette_righthand.dmi'
 	inhand_icon_state = null
@@ -3467,7 +3352,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_omelette_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_omelette_righthand.dmi'
 	inhand_icon_state = null
@@ -3489,7 +3373,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_omelette_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_omelette_righthand.dmi'
 	inhand_icon_state = null
@@ -3511,7 +3394,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_omelette_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_omelette_righthand.dmi'
 	inhand_icon_state = null
@@ -3533,7 +3415,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_omelette_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_omelette_righthand.dmi'
 	inhand_icon_state = null
@@ -3555,7 +3436,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_veggies_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_veggies_righthand.dmi'
 	inhand_icon_state = null
@@ -3577,7 +3457,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_seafood_meal_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_seafood_meal_righthand.dmi'
 	inhand_icon_state = null
@@ -3620,7 +3499,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_veggies_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_veggies_righthand.dmi'
 	inhand_icon_state = null
@@ -3642,7 +3520,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_righthand.dmi'
 	inhand_icon_state = null
@@ -3664,7 +3541,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_pasta_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_pasta_righthand.dmi'
 	inhand_icon_state = null
@@ -3686,7 +3562,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_seafood_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_seafood_righthand.dmi'
 	inhand_icon_state = null
@@ -3708,7 +3583,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_pasta_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_pasta_righthand.dmi'
 	inhand_icon_state = null
@@ -3730,7 +3604,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_pasta_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_pasta_righthand.dmi'
 	inhand_icon_state = null
@@ -3752,7 +3625,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_seafood_meal_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_seafood_meal_righthand.dmi'
 	inhand_icon_state = null
@@ -3774,7 +3646,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_seafood_meal_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_seafood_meal_righthand.dmi'
 	inhand_icon_state = null
@@ -3817,7 +3688,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_seafood_meal_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_seafood_meal_righthand.dmi'
 	inhand_icon_state = null
@@ -3839,7 +3709,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_deep_fried_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_deep_fried_righthand.dmi'
 	inhand_icon_state = null
@@ -3861,7 +3730,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_righthand.dmi'
 	inhand_icon_state = null
@@ -3883,7 +3751,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_righthand.dmi'
 	inhand_icon_state = null
@@ -3905,7 +3772,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_righthand.dmi'
 	inhand_icon_state = null
@@ -3927,7 +3793,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/food)
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cooked/cooked_baked_righthand.dmi'
 	inhand_icon_state = null
@@ -3950,7 +3815,6 @@
 	possible_item_intents = list(/datum/intent/food)
 	sellprice = 23
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/produce_righthand.dmi'
 	inhand_icon_state = null
@@ -3973,7 +3837,6 @@
 	possible_item_intents = list(/datum/intent/food)
 	sellprice = 137
 	smeltresult = /obj/item/natural/ash
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/produce_righthand.dmi'
 	inhand_icon_state = null
@@ -3992,7 +3855,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/storage_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/storage_righthand.dmi'
 	inhand_icon_state = null

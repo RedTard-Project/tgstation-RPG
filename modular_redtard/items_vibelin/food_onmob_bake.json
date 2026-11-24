@@ -1,0 +1,6 @@
+{
+	"canvas": 64,
+	"mask32": "modular_redtard/icons/mob/onmob_mask.dmi",
+	"mask64": "modular_redtard/icons/mob/onmob_mask_64.dmi",
+	"sheets": []
+}

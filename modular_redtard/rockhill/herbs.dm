@@ -7,7 +7,7 @@
 #define ROCKHILL_HERB_PICK_MIN rogue_value("rockhill_herb_pick_min")
 #define ROCKHILL_HERB_PICK_MAX rogue_value("rockhill_herb_pick_max")
 /// Ratwood CLICK_CD_INTENTCAP: the pause after reaching into a herb.
-#define ROCKHILL_HERB_CLICK_CD 6
+#define ROCKHILL_HERB_CLICK_CD rogue_value("rockhill_herb_click_cd")
 
 /obj/structure/flora/roguegrass/herb
 	/// Ratwood herbtype: what a hand picks from the herb, an /obj/item/alch ingredient (the manabloom gives its flower); the

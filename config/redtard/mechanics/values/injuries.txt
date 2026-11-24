@@ -1,0 +1,1654 @@
+# Injuries (combat/injuries/, block VR1): the stages, sizes and fields of the Vibelin injury types (injury_<type>_<field>, injury_pick_*), the healing, bleeding and pain of injuries and the Azure armor over them (injury_armor_*).
+# Mechanics numbers: name = value, described by the # lines right above it; times are in deciseconds. The build compiles this file in, so its numbers are the defaults; a file of the same name in config/redtard_private/mechanics/values/ is read instead when present.
+
+# --- From the code of modular_redtard (code_numbers.py, list vr1a)
+
+# Blood a second the injury loses per injury_bleed_damage_ratio of its damage while it bleeds (Vibelin bleed_rate), for an injury that sets none of its own.
+injury_bleed_rate = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), for an injury that sets none of its own.
+injury_bleed_threshold = 10
+
+# Most damage per injury at which the untreated injury still mends by itself; twice that asleep (Vibelin autoheal_cutoff), for an injury that sets none of its own.
+injury_autoheal_cutoff = 10
+
+# Germs a second the open injury gathers on dirty ground, and passes to its limb (Vibelin infection_rate), for an injury that sets none of its own.
+injury_infection_rate = 10
+
+# How much more the injury hurts than its damage (Vibelin pain_modifier), for an injury that sets none of its own.
+injury_pain_modifier = 10
+
+# Damage a second the injury mends by itself whatever else (Vibelin base_autoheal_amount), for an injury that sets none of its own.
+injury_base_autoheal = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), of every bruise.
+injury_bruise_bleed_threshold = 10
+
+# Most damage per injury at which the untreated injury still mends by itself; twice that asleep (Vibelin autoheal_cutoff), of every bruise.
+injury_bruise_autoheal_cutoff = 10
+
+# Blood a second the injury loses per injury_bleed_damage_ratio of its damage while it bleeds (Vibelin bleed_rate), of every bruise.
+injury_bruise_bleed_rate = 10
+
+# How much more the injury hurts than its damage (Vibelin pain_modifier), of every bruise.
+injury_bruise_pain_modifier = 10
+
+# Most damage per injury at which the untreated injury still mends by itself; twice that asleep (Vibelin autoheal_cutoff), of every burn.
+injury_burn_autoheal_cutoff = 10
+
+# Germs a second the open injury gathers on dirty ground, and passes to its limb (Vibelin infection_rate), of every burn.
+injury_burn_infection_rate = 10
+
+# Blood a second the injury loses per injury_bleed_damage_ratio of its damage while it bleeds (Vibelin bleed_rate), of every burn.
+injury_burn_bleed_rate = 10
+
+# Most damage per injury at which the untreated injury still mends by itself; twice that asleep (Vibelin autoheal_cutoff), of every divine wound.
+injury_divine_autoheal_cutoff = 10
+
+# Germs a second the open injury gathers on dirty ground, and passes to its limb (Vibelin infection_rate), of every divine wound.
+injury_divine_infection_rate = 10
+
+# Most damage per injury at which the untreated injury still mends by itself; twice that asleep (Vibelin autoheal_cutoff), of every intense burn.
+injury_intense_burn_autoheal_cutoff = 10
+
+# Germs a second the open injury gathers on dirty ground, and passes to its limb (Vibelin infection_rate), of every intense burn.
+injury_intense_burn_infection_rate = 10
+
+# How much more the injury hurts than its damage (Vibelin pain_modifier), of every intense burn.
+injury_intense_burn_pain_modifier = 10
+
+# Blood a second the injury loses per injury_bleed_damage_ratio of its damage while it bleeds (Vibelin bleed_rate), of every intense burn.
+injury_intense_burn_bleed_rate = 10
+
+# Most damage per injury at which the untreated injury still mends by itself; twice that asleep (Vibelin autoheal_cutoff), of every internal bruise.
+injury_internal_bruise_autoheal_cutoff = 10
+
+# Most damage per injury at which the untreated injury still mends by itself; twice that asleep (Vibelin autoheal_cutoff), of every lash.
+injury_lash_autoheal_cutoff = 10
+
+# Germs a second the open injury gathers on dirty ground, and passes to its limb (Vibelin infection_rate), of every lash.
+injury_lash_infection_rate = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), of every lash.
+injury_lash_bleed_threshold = 10
+
+# Damage per injury from which a small bite reads "ugly bite mark" (Vibelin stages, worst first).
+injury_bite_small_stage_1 = 10
+
+# Damage per injury from which a small bite reads "bite mark" (Vibelin stages, worst first).
+injury_bite_small_stage_2 = 10
+
+# Damage per injury from which a small bite reads "small bite" (Vibelin stages, worst first).
+injury_bite_small_stage_3 = 10
+
+# Damage per injury from which a small bite reads "bruised bite" (Vibelin stages, worst first).
+injury_bite_small_stage_4 = 10
+
+# Damage per injury from which a small bite reads "small bruise" (Vibelin stages, worst first).
+injury_bite_small_stage_5 = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), of a small bite.
+injury_bite_small_bleed_threshold = 10
+
+# Damage per injury from which a deep bite reads "ugly deep bite" (Vibelin stages, worst first).
+injury_bite_deep_stage_1 = 10
+
+# Damage per injury from which a deep bite reads "deep bite" (Vibelin stages, worst first).
+injury_bite_deep_stage_2 = 10
+
+# Damage per injury from which a deep bite reads "deep tooth mark" (Vibelin stages, worst first).
+injury_bite_deep_stage_3 = 10
+
+# Damage per injury from which a deep bite reads "clotted bite" (Vibelin stages, worst first).
+injury_bite_deep_stage_4 = 10
+
+# Damage per injury from which a deep bite reads "bruised scab" (Vibelin stages, worst first).
+injury_bite_deep_stage_5 = 10
+
+# Damage per injury from which a deep bite reads "ragged scar" (Vibelin stages, worst first).
+injury_bite_deep_stage_6 = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), of a deep bite.
+injury_bite_deep_bleed_threshold = 10
+
+# Damage per injury from which a flesh bite reads "ugly torn bite wound" (Vibelin stages, worst first).
+injury_bite_flesh_stage_1 = 10
+
+# Damage per injury from which a flesh bite reads "torn bite wound" (Vibelin stages, worst first).
+injury_bite_flesh_stage_2 = 10
+
+# Damage per injury from which a flesh bite reads "bite wound" (Vibelin stages, worst first).
+injury_bite_flesh_stage_3 = 10
+
+# Damage per injury from which a flesh bite reads "blood soaked bite clot" (Vibelin stages, worst first).
+injury_bite_flesh_stage_4 = 10
+
+# Damage per injury from which a flesh bite reads "large bruised scab" (Vibelin stages, worst first).
+injury_bite_flesh_stage_5 = 10
+
+# Damage per injury from which a flesh bite reads "ragged scar" (Vibelin stages, worst first).
+injury_bite_flesh_stage_6 = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), of a flesh bite.
+injury_bite_flesh_bleed_threshold = 10
+
+# Damage per injury from which a gaping bite reads "gaping bite wound" (Vibelin stages, worst first).
+injury_bite_gaping_stage_1 = 10
+
+# Damage per injury from which a gaping bite reads "large blood soaked bite clot" (Vibelin stages, worst first).
+injury_bite_gaping_stage_2 = 10
+
+# Damage per injury from which a gaping bite reads "blood soaked bite clot" (Vibelin stages, worst first).
+injury_bite_gaping_stage_3 = 10
+
+# Damage per injury from which a gaping bite reads "small ragged scar" (Vibelin stages, worst first).
+injury_bite_gaping_stage_4 = 10
+
+# Damage per injury from which a gaping bite reads "small puckered scar" (Vibelin stages, worst first).
+injury_bite_gaping_stage_5 = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), of a gaping bite.
+injury_bite_gaping_bleed_threshold = 10
+
+# Damage per injury from which a gaping big bite reads "big gaping bite wound" (Vibelin stages, worst first).
+injury_bite_gaping_big_stage_1 = 10
+
+# Damage per injury from which a gaping big bite reads "healing gaping bite wound" (Vibelin stages, worst first).
+injury_bite_gaping_big_stage_2 = 10
+
+# Damage per injury from which a gaping big bite reads "large blood soaked bite clot" (Vibelin stages, worst first).
+injury_bite_gaping_big_stage_3 = 10
+
+# Damage per injury from which a gaping big bite reads "large ragged scar" (Vibelin stages, worst first).
+injury_bite_gaping_big_stage_4 = 10
+
+# Damage per injury from which a gaping big bite reads "large puckered scar" (Vibelin stages, worst first).
+injury_bite_gaping_big_stage_5 = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), of a gaping big bite.
+injury_bite_gaping_big_bleed_threshold = 10
+
+# Damage per injury from which a massive bite reads "massive bite wound" (Vibelin stages, worst first).
+injury_bite_massive_stage_1 = 10
+
+# Damage per injury from which a massive bite reads "massive healing bite wound" (Vibelin stages, worst first).
+injury_bite_massive_stage_2 = 10
+
+# Damage per injury from which a massive bite reads "massive blood soaked bite clot" (Vibelin stages, worst first).
+injury_bite_massive_stage_3 = 10
+
+# Damage per injury from which a massive bite reads "massive ragged scar" (Vibelin stages, worst first).
+injury_bite_massive_stage_4 = 10
+
+# Damage per injury from which a massive bite reads "massive jagged bite scar" (Vibelin stages, worst first).
+injury_bite_massive_stage_5 = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), of a massive bite.
+injury_bite_massive_bleed_threshold = 10
+
+# Damage per injury from which a small bruise reads "mild bruise" (Vibelin stages, worst first).
+injury_bruise_small_stage_1 = 10
+
+# Damage per injury from which a small bruise reads "small bruise" (Vibelin stages, worst first).
+injury_bruise_small_stage_2 = 10
+
+# Damage per injury from which a small bruise reads "tiny bruise" (Vibelin stages, worst first).
+injury_bruise_small_stage_3 = 10
+
+# Damage per injury from which a small bruise reads "tiny hematoma" (Vibelin stages, worst first).
+injury_bruise_small_stage_4 = 10
+
+# Damage per injury from which a moderate bruise reads "big bruise" (Vibelin stages, worst first).
+injury_bruise_moderate_stage_1 = 10
+
+# Damage per injury from which a moderate bruise reads "moderate bruise" (Vibelin stages, worst first).
+injury_bruise_moderate_stage_2 = 10
+
+# Damage per injury from which a moderate bruise reads "mild bruise" (Vibelin stages, worst first).
+injury_bruise_moderate_stage_3 = 10
+
+# Damage per injury from which a moderate bruise reads "small bruise" (Vibelin stages, worst first).
+injury_bruise_moderate_stage_4 = 10
+
+# Damage per injury from which a moderate bruise reads "small healing bruise" (Vibelin stages, worst first).
+injury_bruise_moderate_stage_5 = 10
+
+# Damage per injury from which a moderate bruise reads "small hematoma" (Vibelin stages, worst first).
+injury_bruise_moderate_stage_6 = 10
+
+# Damage per injury from which a large bruise reads "enormous bruise" (Vibelin stages, worst first).
+injury_bruise_large_stage_1 = 10
+
+# Damage per injury from which a large bruise reads "large bruise" (Vibelin stages, worst first).
+injury_bruise_large_stage_2 = 10
+
+# Damage per injury from which a large bruise reads "moderate bruise" (Vibelin stages, worst first).
+injury_bruise_large_stage_3 = 10
+
+# Damage per injury from which a large bruise reads "mild bruise" (Vibelin stages, worst first).
+injury_bruise_large_stage_4 = 10
+
+# Damage per injury from which a large bruise reads "small bruise" (Vibelin stages, worst first).
+injury_bruise_large_stage_5 = 10
+
+# Damage per injury from which a large bruise reads "small healing bruise" (Vibelin stages, worst first).
+injury_bruise_large_stage_6 = 10
+
+# Damage per injury from which a large bruise reads "small hematoma" (Vibelin stages, worst first).
+injury_bruise_large_stage_7 = 10
+
+# Damage per injury from which a huge bruise reads "gigantic bruise" (Vibelin stages, worst first).
+injury_bruise_huge_stage_1 = 10
+
+# Damage per injury from which a huge bruise reads "huge bruise" (Vibelin stages, worst first).
+injury_bruise_huge_stage_2 = 10
+
+# Damage per injury from which a huge bruise reads "large bruise" (Vibelin stages, worst first).
+injury_bruise_huge_stage_3 = 10
+
+# Damage per injury from which a huge bruise reads "moderate bruise" (Vibelin stages, worst first).
+injury_bruise_huge_stage_4 = 10
+
+# Damage per injury from which a huge bruise reads "mild angry bruise" (Vibelin stages, worst first).
+injury_bruise_huge_stage_5 = 10
+
+# Damage per injury from which a huge bruise reads "mild bruise" (Vibelin stages, worst first).
+injury_bruise_huge_stage_6 = 10
+
+# Damage per injury from which a huge bruise reads "mild healing bruise" (Vibelin stages, worst first).
+injury_bruise_huge_stage_7 = 10
+
+# Damage per injury from which a huge bruise reads "mild hematoma" (Vibelin stages, worst first).
+injury_bruise_huge_stage_8 = 10
+
+# Damage per injury from which a monumental bruise reads "monumental bruise" (Vibelin stages, worst first).
+injury_bruise_monumental_stage_1 = 10
+
+# Damage per injury from which a monumental bruise reads "huge bruise" (Vibelin stages, worst first).
+injury_bruise_monumental_stage_2 = 10
+
+# Damage per injury from which a monumental bruise reads "large angry bruise" (Vibelin stages, worst first).
+injury_bruise_monumental_stage_3 = 10
+
+# Damage per injury from which a monumental bruise reads "large bruise" (Vibelin stages, worst first).
+injury_bruise_monumental_stage_4 = 10
+
+# Damage per injury from which a monumental bruise reads "moderate angry bruise" (Vibelin stages, worst first).
+injury_bruise_monumental_stage_5 = 10
+
+# Damage per injury from which a monumental bruise reads "moderate bruise" (Vibelin stages, worst first).
+injury_bruise_monumental_stage_6 = 10
+
+# Damage per injury from which a monumental bruise reads "moderate healing bruise" (Vibelin stages, worst first).
+injury_bruise_monumental_stage_7 = 10
+
+# Damage per injury from which a monumental bruise reads "moderate hematoma" (Vibelin stages, worst first).
+injury_bruise_monumental_stage_8 = 10
+
+# Damage per injury from which a moderate burn reads "ripped burn" (Vibelin stages, worst first).
+injury_burn_moderate_stage_1 = 10
+
+# Damage per injury from which a moderate burn reads "moderate burn" (Vibelin stages, worst first).
+injury_burn_moderate_stage_2 = 10
+
+# Damage per injury from which a moderate burn reads "healing moderate burn" (Vibelin stages, worst first).
+injury_burn_moderate_stage_3 = 10
+
+# Damage per injury from which a moderate burn reads "fresh skin" (Vibelin stages, worst first).
+injury_burn_moderate_stage_4 = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), of a moderate burn.
+injury_burn_moderate_bleed_threshold = 10
+
+# Damage per injury from which a large burn reads "ripped large burn" (Vibelin stages, worst first).
+injury_burn_large_stage_1 = 10
+
+# Damage per injury from which a large burn reads "large burn" (Vibelin stages, worst first).
+injury_burn_large_stage_2 = 10
+
+# Damage per injury from which a large burn reads "healing large burn" (Vibelin stages, worst first).
+injury_burn_large_stage_3 = 10
+
+# Damage per injury from which a large burn reads "fresh burn scar" (Vibelin stages, worst first).
+injury_burn_large_stage_4 = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), of a large burn.
+injury_burn_large_bleed_threshold = 10
+
+# Damage per injury from which a severe burn reads "ripped severe burn" (Vibelin stages, worst first).
+injury_burn_severe_stage_1 = 10
+
+# Damage per injury from which a severe burn reads "severe burn" (Vibelin stages, worst first).
+injury_burn_severe_stage_2 = 10
+
+# Damage per injury from which a severe burn reads "healing severe burn" (Vibelin stages, worst first).
+injury_burn_severe_stage_3 = 10
+
+# Damage per injury from which a severe burn reads "burn scar" (Vibelin stages, worst first).
+injury_burn_severe_stage_4 = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), of a severe burn.
+injury_burn_severe_bleed_threshold = 10
+
+# Damage per injury from which a deep burn reads "ripped deep burn" (Vibelin stages, worst first).
+injury_burn_deep_stage_1 = 10
+
+# Damage per injury from which a deep burn reads "deep burn" (Vibelin stages, worst first).
+injury_burn_deep_stage_2 = 10
+
+# Damage per injury from which a deep burn reads "healing deep burn" (Vibelin stages, worst first).
+injury_burn_deep_stage_3 = 10
+
+# Damage per injury from which a deep burn reads "large burn scar" (Vibelin stages, worst first).
+injury_burn_deep_stage_4 = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), of a deep burn.
+injury_burn_deep_bleed_threshold = 10
+
+# Damage per injury from which a carbonised burn reads "carbonised area" (Vibelin stages, worst first).
+injury_burn_carbonised_stage_1 = 10
+
+# Damage per injury from which a carbonised burn reads "healing carbonised area" (Vibelin stages, worst first).
+injury_burn_carbonised_stage_2 = 10
+
+# Damage per injury from which a carbonised burn reads "massive burn scar" (Vibelin stages, worst first).
+injury_burn_carbonised_stage_3 = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), of a carbonised burn.
+injury_burn_carbonised_bleed_threshold = 10
+
+# Damage per injury from which a smite divine wound reads "raw smite wound" (Vibelin stages, worst first).
+injury_divine_smite_stage_1 = 10
+
+# Damage per injury from which a smite divine wound reads "smite wound" (Vibelin stages, worst first).
+injury_divine_smite_stage_2 = 10
+
+# Damage per injury from which a smite divine wound reads "healing smite wound" (Vibelin stages, worst first).
+injury_divine_smite_stage_3 = 10
+
+# Damage per injury from which a smite divine wound reads "fading smite mark" (Vibelin stages, worst first).
+injury_divine_smite_stage_4 = 10
+
+# Damage per injury from which a brand divine wound reads "raw divine brand" (Vibelin stages, worst first).
+injury_divine_brand_stage_1 = 10
+
+# Damage per injury from which a brand divine wound reads "divine brand" (Vibelin stages, worst first).
+injury_divine_brand_stage_2 = 10
+
+# Damage per injury from which a brand divine wound reads "healing divine brand" (Vibelin stages, worst first).
+injury_divine_brand_stage_3 = 10
+
+# Damage per injury from which a brand divine wound reads "brand scar" (Vibelin stages, worst first).
+injury_divine_brand_stage_4 = 10
+
+# Damage per injury from which a severe divine wound reads "raw severe brand" (Vibelin stages, worst first).
+injury_divine_severe_stage_1 = 10
+
+# Damage per injury from which a severe divine wound reads "severe divine brand" (Vibelin stages, worst first).
+injury_divine_severe_stage_2 = 10
+
+# Damage per injury from which a severe divine wound reads "healing divine brand" (Vibelin stages, worst first).
+injury_divine_severe_stage_3 = 10
+
+# Damage per injury from which a severe divine wound reads "deep brand scar" (Vibelin stages, worst first).
+injury_divine_severe_stage_4 = 10
+
+# Damage per injury from which a wrath divine wound reads "raw wrath wound" (Vibelin stages, worst first).
+injury_divine_wrath_stage_1 = 10
+
+# Damage per injury from which a wrath divine wound reads "wrath wound" (Vibelin stages, worst first).
+injury_divine_wrath_stage_2 = 10
+
+# Damage per injury from which a wrath divine wound reads "healing wrath wound" (Vibelin stages, worst first).
+injury_divine_wrath_stage_3 = 10
+
+# Damage per injury from which a wrath divine wound reads "wrath scar" (Vibelin stages, worst first).
+injury_divine_wrath_stage_4 = 10
+
+# Damage per injury from which a condemned divine wound reads "condemned flesh" (Vibelin stages, worst first).
+injury_divine_condemned_stage_1 = 10
+
+# Damage per injury from which a condemned divine wound reads "healing condemned flesh" (Vibelin stages, worst first).
+injury_divine_condemned_stage_2 = 10
+
+# Damage per injury from which a condemned divine wound reads "condemnation scar" (Vibelin stages, worst first).
+injury_divine_condemned_stage_3 = 10
+
+# Damage per injury from which a moderate intense burn reads "ripped burn" (Vibelin stages, worst first).
+injury_intense_burn_moderate_stage_1 = 10
+
+# Damage per injury from which a moderate intense burn reads "moderate burn" (Vibelin stages, worst first).
+injury_intense_burn_moderate_stage_2 = 10
+
+# Damage per injury from which a moderate intense burn reads "healing moderate burn" (Vibelin stages, worst first).
+injury_intense_burn_moderate_stage_3 = 10
+
+# Damage per injury from which a moderate intense burn reads "fresh skin" (Vibelin stages, worst first).
+injury_intense_burn_moderate_stage_4 = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), of a moderate intense burn.
+injury_intense_burn_moderate_bleed_threshold = 10
+
+# Damage per injury from which a large intense burn reads "ripped large burn" (Vibelin stages, worst first).
+injury_intense_burn_large_stage_1 = 10
+
+# Damage per injury from which a large intense burn reads "large burn" (Vibelin stages, worst first).
+injury_intense_burn_large_stage_2 = 10
+
+# Damage per injury from which a large intense burn reads "healing large burn" (Vibelin stages, worst first).
+injury_intense_burn_large_stage_3 = 10
+
+# Damage per injury from which a large intense burn reads "fresh burn scar" (Vibelin stages, worst first).
+injury_intense_burn_large_stage_4 = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), of a large intense burn.
+injury_intense_burn_large_bleed_threshold = 10
+
+# Damage per injury from which a severe intense burn reads "ripped severe burn" (Vibelin stages, worst first).
+injury_intense_burn_severe_stage_1 = 10
+
+# Damage per injury from which a severe intense burn reads "severe burn" (Vibelin stages, worst first).
+injury_intense_burn_severe_stage_2 = 10
+
+# Damage per injury from which a severe intense burn reads "healing severe burn" (Vibelin stages, worst first).
+injury_intense_burn_severe_stage_3 = 10
+
+# Damage per injury from which a severe intense burn reads "burn scar" (Vibelin stages, worst first).
+injury_intense_burn_severe_stage_4 = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), of a severe intense burn.
+injury_intense_burn_severe_bleed_threshold = 10
+
+# Damage per injury from which a deep intense burn reads "ripped deep burn" (Vibelin stages, worst first).
+injury_intense_burn_deep_stage_1 = 10
+
+# Damage per injury from which a deep intense burn reads "deep burn" (Vibelin stages, worst first).
+injury_intense_burn_deep_stage_2 = 10
+
+# Damage per injury from which a deep intense burn reads "healing deep burn" (Vibelin stages, worst first).
+injury_intense_burn_deep_stage_3 = 10
+
+# Damage per injury from which a deep intense burn reads "large burn scar" (Vibelin stages, worst first).
+injury_intense_burn_deep_stage_4 = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), of a deep intense burn.
+injury_intense_burn_deep_bleed_threshold = 10
+
+# Damage per injury from which a carbonised intense burn reads "carbonised area" (Vibelin stages, worst first).
+injury_intense_burn_carbonised_stage_1 = 10
+
+# Damage per injury from which a carbonised intense burn reads "healing carbonised area" (Vibelin stages, worst first).
+injury_intense_burn_carbonised_stage_2 = 10
+
+# Damage per injury from which a carbonised intense burn reads "massive burn scar" (Vibelin stages, worst first).
+injury_intense_burn_carbonised_stage_3 = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), of a carbonised intense burn.
+injury_intense_burn_carbonised_bleed_threshold = 10
+
+# Damage per injury from which a minor internal bruise reads "internal bruise" (Vibelin stages, worst first).
+injury_internal_bruise_minor_stage_1 = 10
+
+# Damage per injury from which a minor internal bruise reads "fading internal bruise" (Vibelin stages, worst first).
+injury_internal_bruise_minor_stage_2 = 10
+
+# Damage per injury from which a moderate internal bruise reads "internal bruise" (Vibelin stages, worst first).
+injury_internal_bruise_moderate_stage_1 = 10
+
+# Damage per injury from which a moderate internal bruise reads "fading internal bruise" (Vibelin stages, worst first).
+injury_internal_bruise_moderate_stage_2 = 10
+
+# Damage per injury from which a severe internal bruise reads "internal bruise" (Vibelin stages, worst first).
+injury_internal_bruise_severe_stage_1 = 10
+
+# Damage per injury from which a severe internal bruise reads "fading internal bruise" (Vibelin stages, worst first).
+injury_internal_bruise_severe_stage_2 = 10
+
+# Damage per injury from which a critical internal bruise reads "internal bruise" (Vibelin stages, worst first).
+injury_internal_bruise_critical_stage_1 = 10
+
+# Damage per injury from which a critical internal bruise reads "fading internal bruise" (Vibelin stages, worst first).
+injury_internal_bruise_critical_stage_2 = 10
+
+# Damage per injury from which a catastrophic internal bruise reads "internal bruise" (Vibelin stages, worst first).
+injury_internal_bruise_catastrophic_stage_1 = 10
+
+# Damage per injury from which a catastrophic internal bruise reads "fading internal bruise" (Vibelin stages, worst first).
+injury_internal_bruise_catastrophic_stage_2 = 10
+
+# Damage per injury from which a welt lash reads "ripped welt" (Vibelin stages, worst first).
+injury_lash_welt_stage_1 = 10
+
+# Damage per injury from which a welt lash reads "welt" (Vibelin stages, worst first).
+injury_lash_welt_stage_2 = 10
+
+# Damage per injury from which a welt lash reads "healing welt" (Vibelin stages, worst first).
+injury_lash_welt_stage_3 = 10
+
+# Damage per injury from which a welt lash reads "fading welt" (Vibelin stages, worst first).
+injury_lash_welt_stage_4 = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), of a welt lash.
+injury_lash_welt_bleed_threshold = 10
+
+# Damage per injury from which a lash lash reads "ripped lash" (Vibelin stages, worst first).
+injury_lash_lash_stage_1 = 10
+
+# Damage per injury from which a lash lash reads "lash" (Vibelin stages, worst first).
+injury_lash_lash_stage_2 = 10
+
+# Damage per injury from which a lash lash reads "healing lash" (Vibelin stages, worst first).
+injury_lash_lash_stage_3 = 10
+
+# Damage per injury from which a lash lash reads "lash scar" (Vibelin stages, worst first).
+injury_lash_lash_stage_4 = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), of a lash lash.
+injury_lash_lash_bleed_threshold = 10
+
+# Damage per injury from which a severe lash reads "ripped severe lash" (Vibelin stages, worst first).
+injury_lash_severe_stage_1 = 10
+
+# Damage per injury from which a severe lash reads "severe lash" (Vibelin stages, worst first).
+injury_lash_severe_stage_2 = 10
+
+# Damage per injury from which a severe lash reads "healing severe lash" (Vibelin stages, worst first).
+injury_lash_severe_stage_3 = 10
+
+# Damage per injury from which a severe lash reads "deep lash scar" (Vibelin stages, worst first).
+injury_lash_severe_stage_4 = 10
+
+# Damage per injury from which a deep lash reads "ripped deep lash" (Vibelin stages, worst first).
+injury_lash_deep_stage_1 = 10
+
+# Damage per injury from which a deep lash reads "deep lash" (Vibelin stages, worst first).
+injury_lash_deep_stage_2 = 10
+
+# Damage per injury from which a deep lash reads "healing deep lash" (Vibelin stages, worst first).
+injury_lash_deep_stage_3 = 10
+
+# Damage per injury from which a deep lash reads "flensed scar" (Vibelin stages, worst first).
+injury_lash_deep_stage_4 = 10
+
+# Damage per injury from which a flayed lash reads "flayed area" (Vibelin stages, worst first).
+injury_lash_flayed_stage_1 = 10
+
+# Damage per injury from which a flayed lash reads "healing flayed area" (Vibelin stages, worst first).
+injury_lash_flayed_stage_2 = 10
+
+# Damage per injury from which a flayed lash reads "massive lash scar" (Vibelin stages, worst first).
+injury_lash_flayed_stage_3 = 10
+
+# Damage per injury from which a small puncture reads "puncture" (Vibelin stages, worst first).
+injury_puncture_small_stage_1 = 10
+
+# Damage per injury from which a small puncture reads "healing puncture" (Vibelin stages, worst first).
+injury_puncture_small_stage_2 = 10
+
+# Damage per injury from which a small puncture reads "small round scab" (Vibelin stages, worst first).
+injury_puncture_small_stage_3 = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), of a small puncture.
+injury_puncture_small_bleed_threshold = 10
+
+# Damage per injury from which a flesh puncture reads "puncture wound" (Vibelin stages, worst first).
+injury_puncture_flesh_stage_1 = 10
+
+# Damage per injury from which a flesh puncture reads "round blood soaked clot" (Vibelin stages, worst first).
+injury_puncture_flesh_stage_2 = 10
+
+# Damage per injury from which a flesh puncture reads "large scab" (Vibelin stages, worst first).
+injury_puncture_flesh_stage_3 = 10
+
+# Damage per injury from which a flesh puncture reads "small round scar" (Vibelin stages, worst first).
+injury_puncture_flesh_stage_4 = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), of a flesh puncture.
+injury_puncture_flesh_bleed_threshold = 10
+
+# Damage per injury from which a gaping puncture reads "gaping hole" (Vibelin stages, worst first).
+injury_puncture_gaping_stage_1 = 10
+
+# Damage per injury from which a gaping puncture reads "large round blood soaked clot" (Vibelin stages, worst first).
+injury_puncture_gaping_stage_2 = 10
+
+# Damage per injury from which a gaping puncture reads "round blood soaked clot" (Vibelin stages, worst first).
+injury_puncture_gaping_stage_3 = 10
+
+# Damage per injury from which a gaping puncture reads "small round angry scar" (Vibelin stages, worst first).
+injury_puncture_gaping_stage_4 = 10
+
+# Damage per injury from which a gaping puncture reads "small round scar" (Vibelin stages, worst first).
+injury_puncture_gaping_stage_5 = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), of a gaping puncture.
+injury_puncture_gaping_bleed_threshold = 10
+
+# Damage per injury from which a gaping big puncture reads "big gaping hole" (Vibelin stages, worst first).
+injury_puncture_gaping_big_stage_1 = 10
+
+# Damage per injury from which a gaping big puncture reads "healing gaping hole" (Vibelin stages, worst first).
+injury_puncture_gaping_big_stage_2 = 10
+
+# Damage per injury from which a gaping big puncture reads "large round blood soaked clot" (Vibelin stages, worst first).
+injury_puncture_gaping_big_stage_3 = 10
+
+# Damage per injury from which a gaping big puncture reads "large round angry scar" (Vibelin stages, worst first).
+injury_puncture_gaping_big_stage_4 = 10
+
+# Damage per injury from which a gaping big puncture reads "large round scar" (Vibelin stages, worst first).
+injury_puncture_gaping_big_stage_5 = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), of a gaping big puncture.
+injury_puncture_gaping_big_bleed_threshold = 10
+
+# Damage per injury from which a massive puncture reads "massive hole" (Vibelin stages, worst first).
+injury_puncture_massive_stage_1 = 10
+
+# Damage per injury from which a massive puncture reads "massive healing hole" (Vibelin stages, worst first).
+injury_puncture_massive_stage_2 = 10
+
+# Damage per injury from which a massive puncture reads "massive round blood soaked clot" (Vibelin stages, worst first).
+injury_puncture_massive_stage_3 = 10
+
+# Damage per injury from which a massive puncture reads "massive round angry scar" (Vibelin stages, worst first).
+injury_puncture_massive_stage_4 = 10
+
+# Damage per injury from which a massive puncture reads "massive round jagged scar" (Vibelin stages, worst first).
+injury_puncture_massive_stage_5 = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), of a massive puncture.
+injury_puncture_massive_bleed_threshold = 10
+
+# Damage per injury from which a small cut reads "ugly ripped cut" (Vibelin stages, worst first).
+injury_slash_small_stage_1 = 10
+
+# Damage per injury from which a small cut reads "ripped cut" (Vibelin stages, worst first).
+injury_slash_small_stage_2 = 10
+
+# Damage per injury from which a small cut reads "cut" (Vibelin stages, worst first).
+injury_slash_small_stage_3 = 10
+
+# Damage per injury from which a small cut reads "healing cut" (Vibelin stages, worst first).
+injury_slash_small_stage_4 = 10
+
+# Damage per injury from which a small cut reads "small scab" (Vibelin stages, worst first).
+injury_slash_small_stage_5 = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), of a small cut.
+injury_slash_small_bleed_threshold = 10
+
+# Damage per injury from which a deep cut reads "ugly deep ripped cut" (Vibelin stages, worst first).
+injury_slash_deep_stage_1 = 10
+
+# Damage per injury from which a deep cut reads "deep ripped cut" (Vibelin stages, worst first).
+injury_slash_deep_stage_2 = 10
+
+# Damage per injury from which a deep cut reads "deep cut" (Vibelin stages, worst first).
+injury_slash_deep_stage_3 = 10
+
+# Damage per injury from which a deep cut reads "clotted cut" (Vibelin stages, worst first).
+injury_slash_deep_stage_4 = 10
+
+# Damage per injury from which a deep cut reads "scab" (Vibelin stages, worst first).
+injury_slash_deep_stage_5 = 10
+
+# Damage per injury from which a deep cut reads "fresh scar" (Vibelin stages, worst first).
+injury_slash_deep_stage_6 = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), of a deep cut.
+injury_slash_deep_bleed_threshold = 10
+
+# Damage per injury from which a flesh cut reads "ugly ripped flesh wound" (Vibelin stages, worst first).
+injury_slash_flesh_stage_1 = 10
+
+# Damage per injury from which a flesh cut reads "ugly flesh wound" (Vibelin stages, worst first).
+injury_slash_flesh_stage_2 = 10
+
+# Damage per injury from which a flesh cut reads "flesh wound" (Vibelin stages, worst first).
+injury_slash_flesh_stage_3 = 10
+
+# Damage per injury from which a flesh cut reads "blood soaked clot" (Vibelin stages, worst first).
+injury_slash_flesh_stage_4 = 10
+
+# Damage per injury from which a flesh cut reads "large scab" (Vibelin stages, worst first).
+injury_slash_flesh_stage_5 = 10
+
+# Damage per injury from which a flesh cut reads "fresh scar" (Vibelin stages, worst first).
+injury_slash_flesh_stage_6 = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), of a flesh cut.
+injury_slash_flesh_bleed_threshold = 10
+
+# Damage per injury from which a gaping cut reads "gaping wound" (Vibelin stages, worst first).
+injury_slash_gaping_stage_1 = 10
+
+# Damage per injury from which a gaping cut reads "large blood soaked clot" (Vibelin stages, worst first).
+injury_slash_gaping_stage_2 = 10
+
+# Damage per injury from which a gaping cut reads "blood soaked clot" (Vibelin stages, worst first).
+injury_slash_gaping_stage_3 = 10
+
+# Damage per injury from which a gaping cut reads "small angry scar" (Vibelin stages, worst first).
+injury_slash_gaping_stage_4 = 10
+
+# Damage per injury from which a gaping cut reads "small straight scar" (Vibelin stages, worst first).
+injury_slash_gaping_stage_5 = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), of a gaping cut.
+injury_slash_gaping_bleed_threshold = 10
+
+# Damage per injury from which a gaping big cut reads "big gaping wound" (Vibelin stages, worst first).
+injury_slash_gaping_big_stage_1 = 10
+
+# Damage per injury from which a gaping big cut reads "healing gaping wound" (Vibelin stages, worst first).
+injury_slash_gaping_big_stage_2 = 10
+
+# Damage per injury from which a gaping big cut reads "large blood soaked clot" (Vibelin stages, worst first).
+injury_slash_gaping_big_stage_3 = 10
+
+# Damage per injury from which a gaping big cut reads "large angry scar" (Vibelin stages, worst first).
+injury_slash_gaping_big_stage_4 = 10
+
+# Damage per injury from which a gaping big cut reads "large straight scar" (Vibelin stages, worst first).
+injury_slash_gaping_big_stage_5 = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), of a gaping big cut.
+injury_slash_gaping_big_bleed_threshold = 10
+
+# Damage per injury from which a massive cut reads "massive wound" (Vibelin stages, worst first).
+injury_slash_massive_stage_1 = 10
+
+# Damage per injury from which a massive cut reads "massive healing wound" (Vibelin stages, worst first).
+injury_slash_massive_stage_2 = 10
+
+# Damage per injury from which a massive cut reads "massive blood soaked clot" (Vibelin stages, worst first).
+injury_slash_massive_stage_3 = 10
+
+# Damage per injury from which a massive cut reads "massive angry scar" (Vibelin stages, worst first).
+injury_slash_massive_stage_4 = 10
+
+# Damage per injury from which a massive cut reads "massive jagged scar" (Vibelin stages, worst first).
+injury_slash_massive_stage_5 = 10
+
+# Damage per injury above which the injury bleeds and needs treating to stop (Vibelin bleed_threshold), of a massive cut.
+injury_slash_massive_bleed_threshold = 10
+
+# Damage per injury from which a small bite of a prosthesis reads "ugly crushed dent" (Vibelin mechanical stages, worst first).
+injury_bite_small_mech_stage_1 = 10
+
+# Damage per injury from which a small bite of a prosthesis reads "crushed dent" (Vibelin mechanical stages, worst first).
+injury_bite_small_mech_stage_2 = 10
+
+# Damage per injury from which a small bite of a prosthesis reads "dent" (Vibelin mechanical stages, worst first).
+injury_bite_small_mech_stage_3 = 10
+
+# Damage per injury from which a small bite of a prosthesis reads "healing dent" (Vibelin mechanical stages, worst first).
+injury_bite_small_mech_stage_4 = 10
+
+# Damage per injury from which a small bite of a prosthesis reads "small dent" (Vibelin mechanical stages, worst first).
+injury_bite_small_mech_stage_5 = 10
+
+# Damage per injury from which a deep bite of a prosthesis reads "ugly deep puncture dent" (Vibelin mechanical stages, worst first).
+injury_bite_deep_mech_stage_1 = 10
+
+# Damage per injury from which a deep bite of a prosthesis reads "deep puncture dent" (Vibelin mechanical stages, worst first).
+injury_bite_deep_mech_stage_2 = 10
+
+# Damage per injury from which a deep bite of a prosthesis reads "deep dent" (Vibelin mechanical stages, worst first).
+injury_bite_deep_mech_stage_3 = 10
+
+# Damage per injury from which a deep bite of a prosthesis reads "dent" (Vibelin mechanical stages, worst first).
+injury_bite_deep_mech_stage_4 = 10
+
+# Damage per injury from which a deep bite of a prosthesis reads "small dent" (Vibelin mechanical stages, worst first).
+injury_bite_deep_mech_stage_5 = 10
+
+# Damage per injury from which a deep bite of a prosthesis reads "hairline crack" (Vibelin mechanical stages, worst first).
+injury_bite_deep_mech_stage_6 = 10
+
+# Damage per injury from which a flesh bite of a prosthesis reads "ugly crushed puncture wound" (Vibelin mechanical stages, worst first).
+injury_bite_flesh_mech_stage_1 = 10
+
+# Damage per injury from which a flesh bite of a prosthesis reads "crushed puncture wound" (Vibelin mechanical stages, worst first).
+injury_bite_flesh_mech_stage_2 = 10
+
+# Damage per injury from which a flesh bite of a prosthesis reads "puncture wound" (Vibelin mechanical stages, worst first).
+injury_bite_flesh_mech_stage_3 = 10
+
+# Damage per injury from which a flesh bite of a prosthesis reads "shallow puncture" (Vibelin mechanical stages, worst first).
+injury_bite_flesh_mech_stage_4 = 10
+
+# Damage per injury from which a flesh bite of a prosthesis reads "large dent" (Vibelin mechanical stages, worst first).
+injury_bite_flesh_mech_stage_5 = 10
+
+# Damage per injury from which a flesh bite of a prosthesis reads "small dent" (Vibelin mechanical stages, worst first).
+injury_bite_flesh_mech_stage_6 = 10
+
+# Damage per injury from which a gaping bite of a prosthesis reads "gaping crush wound" (Vibelin mechanical stages, worst first).
+injury_bite_gaping_mech_stage_1 = 10
+
+# Damage per injury from which a gaping bite of a prosthesis reads "large crush wound" (Vibelin mechanical stages, worst first).
+injury_bite_gaping_mech_stage_2 = 10
+
+# Damage per injury from which a gaping bite of a prosthesis reads "shallow crush wound" (Vibelin mechanical stages, worst first).
+injury_bite_gaping_mech_stage_3 = 10
+
+# Damage per injury from which a gaping bite of a prosthesis reads "small jagged crack" (Vibelin mechanical stages, worst first).
+injury_bite_gaping_mech_stage_4 = 10
+
+# Damage per injury from which a gaping bite of a prosthesis reads "small crack" (Vibelin mechanical stages, worst first).
+injury_bite_gaping_mech_stage_5 = 10
+
+# Damage per injury from which a gaping big bite of a prosthesis reads "big gaping crush wound" (Vibelin mechanical stages, worst first).
+injury_bite_gaping_big_mech_stage_1 = 10
+
+# Damage per injury from which a gaping big bite of a prosthesis reads "melding gaping crush wound" (Vibelin mechanical stages, worst first).
+injury_bite_gaping_big_mech_stage_2 = 10
+
+# Damage per injury from which a gaping big bite of a prosthesis reads "large puncture wound" (Vibelin mechanical stages, worst first).
+injury_bite_gaping_big_mech_stage_3 = 10
+
+# Damage per injury from which a gaping big bite of a prosthesis reads "large jagged crack" (Vibelin mechanical stages, worst first).
+injury_bite_gaping_big_mech_stage_4 = 10
+
+# Damage per injury from which a gaping big bite of a prosthesis reads "large crack" (Vibelin mechanical stages, worst first).
+injury_bite_gaping_big_mech_stage_5 = 10
+
+# Damage per injury from which a massive bite of a prosthesis reads "massive crush wound" (Vibelin mechanical stages, worst first).
+injury_bite_massive_mech_stage_1 = 10
+
+# Damage per injury from which a massive bite of a prosthesis reads "massive melding crush wound" (Vibelin mechanical stages, worst first).
+injury_bite_massive_mech_stage_2 = 10
+
+# Damage per injury from which a massive bite of a prosthesis reads "massive soldering crush wound" (Vibelin mechanical stages, worst first).
+injury_bite_massive_mech_stage_3 = 10
+
+# Damage per injury from which a massive bite of a prosthesis reads "massive jagged crack" (Vibelin mechanical stages, worst first).
+injury_bite_massive_mech_stage_4 = 10
+
+# Damage per injury from which a massive bite of a prosthesis reads "massive splintered crack" (Vibelin mechanical stages, worst first).
+injury_bite_massive_mech_stage_5 = 10
+
+# Damage per injury from which a small bruise of a prosthesis reads "mild dent" (Vibelin mechanical stages, worst first).
+injury_bruise_small_mech_stage_1 = 10
+
+# Damage per injury from which a small bruise of a prosthesis reads "small dent" (Vibelin mechanical stages, worst first).
+injury_bruise_small_mech_stage_2 = 10
+
+# Damage per injury from which a small bruise of a prosthesis reads "tiny dent" (Vibelin mechanical stages, worst first).
+injury_bruise_small_mech_stage_3 = 10
+
+# Damage per injury from which a small bruise of a prosthesis reads "tiny depression" (Vibelin mechanical stages, worst first).
+injury_bruise_small_mech_stage_4 = 10
+
+# Damage per injury from which a moderate bruise of a prosthesis reads "big dent" (Vibelin mechanical stages, worst first).
+injury_bruise_moderate_mech_stage_1 = 10
+
+# Damage per injury from which a moderate bruise of a prosthesis reads "moderate dent" (Vibelin mechanical stages, worst first).
+injury_bruise_moderate_mech_stage_2 = 10
+
+# Damage per injury from which a moderate bruise of a prosthesis reads "mild dent" (Vibelin mechanical stages, worst first).
+injury_bruise_moderate_mech_stage_3 = 10
+
+# Damage per injury from which a moderate bruise of a prosthesis reads "small dent" (Vibelin mechanical stages, worst first).
+injury_bruise_moderate_mech_stage_4 = 10
+
+# Damage per injury from which a moderate bruise of a prosthesis reads "small healing dent" (Vibelin mechanical stages, worst first).
+injury_bruise_moderate_mech_stage_5 = 10
+
+# Damage per injury from which a moderate bruise of a prosthesis reads "small depression" (Vibelin mechanical stages, worst first).
+injury_bruise_moderate_mech_stage_6 = 10
+
+# Damage per injury from which a large bruise of a prosthesis reads "enormous dent" (Vibelin mechanical stages, worst first).
+injury_bruise_large_mech_stage_1 = 10
+
+# Damage per injury from which a large bruise of a prosthesis reads "large dent" (Vibelin mechanical stages, worst first).
+injury_bruise_large_mech_stage_2 = 10
+
+# Damage per injury from which a large bruise of a prosthesis reads "moderate dent" (Vibelin mechanical stages, worst first).
+injury_bruise_large_mech_stage_3 = 10
+
+# Damage per injury from which a large bruise of a prosthesis reads "mild dent" (Vibelin mechanical stages, worst first).
+injury_bruise_large_mech_stage_4 = 10
+
+# Damage per injury from which a large bruise of a prosthesis reads "small dent" (Vibelin mechanical stages, worst first).
+injury_bruise_large_mech_stage_5 = 10
+
+# Damage per injury from which a large bruise of a prosthesis reads "small healing dent" (Vibelin mechanical stages, worst first).
+injury_bruise_large_mech_stage_6 = 10
+
+# Damage per injury from which a large bruise of a prosthesis reads "small depression" (Vibelin mechanical stages, worst first).
+injury_bruise_large_mech_stage_7 = 10
+
+# Damage per injury from which a huge bruise of a prosthesis reads "gigantic dent" (Vibelin mechanical stages, worst first).
+injury_bruise_huge_mech_stage_1 = 10
+
+# Damage per injury from which a huge bruise of a prosthesis reads "huge dent" (Vibelin mechanical stages, worst first).
+injury_bruise_huge_mech_stage_2 = 10
+
+# Damage per injury from which a huge bruise of a prosthesis reads "large dent" (Vibelin mechanical stages, worst first).
+injury_bruise_huge_mech_stage_3 = 10
+
+# Damage per injury from which a huge bruise of a prosthesis reads "moderate dent" (Vibelin mechanical stages, worst first).
+injury_bruise_huge_mech_stage_4 = 10
+
+# Damage per injury from which a huge bruise of a prosthesis reads "mild angry dent" (Vibelin mechanical stages, worst first).
+injury_bruise_huge_mech_stage_5 = 10
+
+# Damage per injury from which a huge bruise of a prosthesis reads "mild dent" (Vibelin mechanical stages, worst first).
+injury_bruise_huge_mech_stage_6 = 10
+
+# Damage per injury from which a huge bruise of a prosthesis reads "mild healing dent" (Vibelin mechanical stages, worst first).
+injury_bruise_huge_mech_stage_7 = 10
+
+# Damage per injury from which a huge bruise of a prosthesis reads "mild depression" (Vibelin mechanical stages, worst first).
+injury_bruise_huge_mech_stage_8 = 10
+
+# Damage per injury from which a monumental bruise of a prosthesis reads "monumental dent" (Vibelin mechanical stages, worst first).
+injury_bruise_monumental_mech_stage_1 = 10
+
+# Damage per injury from which a monumental bruise of a prosthesis reads "huge dent" (Vibelin mechanical stages, worst first).
+injury_bruise_monumental_mech_stage_2 = 10
+
+# Damage per injury from which a monumental bruise of a prosthesis reads "large angry dent" (Vibelin mechanical stages, worst first).
+injury_bruise_monumental_mech_stage_3 = 10
+
+# Damage per injury from which a monumental bruise of a prosthesis reads "large dent" (Vibelin mechanical stages, worst first).
+injury_bruise_monumental_mech_stage_4 = 10
+
+# Damage per injury from which a monumental bruise of a prosthesis reads "moderate angry dent" (Vibelin mechanical stages, worst first).
+injury_bruise_monumental_mech_stage_5 = 10
+
+# Damage per injury from which a monumental bruise of a prosthesis reads "moderate dent" (Vibelin mechanical stages, worst first).
+injury_bruise_monumental_mech_stage_6 = 10
+
+# Damage per injury from which a monumental bruise of a prosthesis reads "moderate healing dent" (Vibelin mechanical stages, worst first).
+injury_bruise_monumental_mech_stage_7 = 10
+
+# Damage per injury from which a monumental bruise of a prosthesis reads "moderate depression" (Vibelin mechanical stages, worst first).
+injury_bruise_monumental_mech_stage_8 = 10
+
+# Damage per injury from which a moderate burn of a prosthesis reads "ripped scorch" (Vibelin mechanical stages, worst first).
+injury_burn_moderate_mech_stage_1 = 10
+
+# Damage per injury from which a moderate burn of a prosthesis reads "moderate scorch" (Vibelin mechanical stages, worst first).
+injury_burn_moderate_mech_stage_2 = 10
+
+# Damage per injury from which a moderate burn of a prosthesis reads "healing moderate scorch" (Vibelin mechanical stages, worst first).
+injury_burn_moderate_mech_stage_3 = 10
+
+# Damage per injury from which a moderate burn of a prosthesis reads "fresh singe" (Vibelin mechanical stages, worst first).
+injury_burn_moderate_mech_stage_4 = 10
+
+# Damage per injury from which a large burn of a prosthesis reads "ripped large scorch" (Vibelin mechanical stages, worst first).
+injury_burn_large_mech_stage_1 = 10
+
+# Damage per injury from which a large burn of a prosthesis reads "large scorch" (Vibelin mechanical stages, worst first).
+injury_burn_large_mech_stage_2 = 10
+
+# Damage per injury from which a large burn of a prosthesis reads "healing large scorch" (Vibelin mechanical stages, worst first).
+injury_burn_large_mech_stage_3 = 10
+
+# Damage per injury from which a large burn of a prosthesis reads "fresh singe" (Vibelin mechanical stages, worst first).
+injury_burn_large_mech_stage_4 = 10
+
+# Damage per injury from which a severe burn of a prosthesis reads "ripped severe scorch" (Vibelin mechanical stages, worst first).
+injury_burn_severe_mech_stage_1 = 10
+
+# Damage per injury from which a severe burn of a prosthesis reads "severe scorch" (Vibelin mechanical stages, worst first).
+injury_burn_severe_mech_stage_2 = 10
+
+# Damage per injury from which a severe burn of a prosthesis reads "healing severe scorch" (Vibelin mechanical stages, worst first).
+injury_burn_severe_mech_stage_3 = 10
+
+# Damage per injury from which a severe burn of a prosthesis reads "singing" (Vibelin mechanical stages, worst first).
+injury_burn_severe_mech_stage_4 = 10
+
+# Damage per injury from which a deep burn of a prosthesis reads "ripped deep scorch" (Vibelin mechanical stages, worst first).
+injury_burn_deep_mech_stage_1 = 10
+
+# Damage per injury from which a deep burn of a prosthesis reads "deep scorch" (Vibelin mechanical stages, worst first).
+injury_burn_deep_mech_stage_2 = 10
+
+# Damage per injury from which a deep burn of a prosthesis reads "healing deep scorch" (Vibelin mechanical stages, worst first).
+injury_burn_deep_mech_stage_3 = 10
+
+# Damage per injury from which a deep burn of a prosthesis reads "large singing" (Vibelin mechanical stages, worst first).
+injury_burn_deep_mech_stage_4 = 10
+
+# Damage per injury from which a carbonised burn of a prosthesis reads "warped area" (Vibelin mechanical stages, worst first).
+injury_burn_carbonised_mech_stage_1 = 10
+
+# Damage per injury from which a carbonised burn of a prosthesis reads "healing warped area" (Vibelin mechanical stages, worst first).
+injury_burn_carbonised_mech_stage_2 = 10
+
+# Damage per injury from which a carbonised burn of a prosthesis reads "massive singing" (Vibelin mechanical stages, worst first).
+injury_burn_carbonised_mech_stage_3 = 10
+
+# Damage per injury from which a smite divine wound of a prosthesis reads "raw smite wound" (Vibelin mechanical stages, worst first).
+injury_divine_smite_mech_stage_1 = 10
+
+# Damage per injury from which a smite divine wound of a prosthesis reads "smite wound" (Vibelin mechanical stages, worst first).
+injury_divine_smite_mech_stage_2 = 10
+
+# Damage per injury from which a smite divine wound of a prosthesis reads "healing smite wound" (Vibelin mechanical stages, worst first).
+injury_divine_smite_mech_stage_3 = 10
+
+# Damage per injury from which a smite divine wound of a prosthesis reads "fading smite mark" (Vibelin mechanical stages, worst first).
+injury_divine_smite_mech_stage_4 = 10
+
+# Damage per injury from which a brand divine wound of a prosthesis reads "raw divine brand" (Vibelin mechanical stages, worst first).
+injury_divine_brand_mech_stage_1 = 10
+
+# Damage per injury from which a brand divine wound of a prosthesis reads "divine brand" (Vibelin mechanical stages, worst first).
+injury_divine_brand_mech_stage_2 = 10
+
+# Damage per injury from which a brand divine wound of a prosthesis reads "healing divine brand" (Vibelin mechanical stages, worst first).
+injury_divine_brand_mech_stage_3 = 10
+
+# Damage per injury from which a brand divine wound of a prosthesis reads "brand scar" (Vibelin mechanical stages, worst first).
+injury_divine_brand_mech_stage_4 = 10
+
+# Damage per injury from which a severe divine wound of a prosthesis reads "raw severe brand" (Vibelin mechanical stages, worst first).
+injury_divine_severe_mech_stage_1 = 10
+
+# Damage per injury from which a severe divine wound of a prosthesis reads "severe divine brand" (Vibelin mechanical stages, worst first).
+injury_divine_severe_mech_stage_2 = 10
+
+# Damage per injury from which a severe divine wound of a prosthesis reads "healing divine brand" (Vibelin mechanical stages, worst first).
+injury_divine_severe_mech_stage_3 = 10
+
+# Damage per injury from which a severe divine wound of a prosthesis reads "deep brand scar" (Vibelin mechanical stages, worst first).
+injury_divine_severe_mech_stage_4 = 10
+
+# Damage per injury from which a wrath divine wound of a prosthesis reads "raw wrath wound" (Vibelin mechanical stages, worst first).
+injury_divine_wrath_mech_stage_1 = 10
+
+# Damage per injury from which a wrath divine wound of a prosthesis reads "wrath wound" (Vibelin mechanical stages, worst first).
+injury_divine_wrath_mech_stage_2 = 10
+
+# Damage per injury from which a wrath divine wound of a prosthesis reads "healing wrath wound" (Vibelin mechanical stages, worst first).
+injury_divine_wrath_mech_stage_3 = 10
+
+# Damage per injury from which a wrath divine wound of a prosthesis reads "wrath scar" (Vibelin mechanical stages, worst first).
+injury_divine_wrath_mech_stage_4 = 10
+
+# Damage per injury from which a condemned divine wound of a prosthesis reads "condemned flesh" (Vibelin mechanical stages, worst first).
+injury_divine_condemned_mech_stage_1 = 10
+
+# Damage per injury from which a condemned divine wound of a prosthesis reads "healing condemned flesh" (Vibelin mechanical stages, worst first).
+injury_divine_condemned_mech_stage_2 = 10
+
+# Damage per injury from which a condemned divine wound of a prosthesis reads "condemnation scar" (Vibelin mechanical stages, worst first).
+injury_divine_condemned_mech_stage_3 = 10
+
+# Damage per injury from which a minor internal bruise of a prosthesis reads "internal stress" (Vibelin mechanical stages, worst first).
+injury_internal_bruise_minor_mech_stage_1 = 10
+
+# Damage per injury from which a minor internal bruise of a prosthesis reads "fading internal stress" (Vibelin mechanical stages, worst first).
+injury_internal_bruise_minor_mech_stage_2 = 10
+
+# Damage per injury from which a moderate internal bruise of a prosthesis reads "internal stress" (Vibelin mechanical stages, worst first).
+injury_internal_bruise_moderate_mech_stage_1 = 10
+
+# Damage per injury from which a moderate internal bruise of a prosthesis reads "fading internal stress" (Vibelin mechanical stages, worst first).
+injury_internal_bruise_moderate_mech_stage_2 = 10
+
+# Damage per injury from which a severe internal bruise of a prosthesis reads "internal stress" (Vibelin mechanical stages, worst first).
+injury_internal_bruise_severe_mech_stage_1 = 10
+
+# Damage per injury from which a severe internal bruise of a prosthesis reads "fading internal stress" (Vibelin mechanical stages, worst first).
+injury_internal_bruise_severe_mech_stage_2 = 10
+
+# Damage per injury from which a critical internal bruise of a prosthesis reads "internal stress" (Vibelin mechanical stages, worst first).
+injury_internal_bruise_critical_mech_stage_1 = 10
+
+# Damage per injury from which a critical internal bruise of a prosthesis reads "fading internal stress" (Vibelin mechanical stages, worst first).
+injury_internal_bruise_critical_mech_stage_2 = 10
+
+# Damage per injury from which a catastrophic internal bruise of a prosthesis reads "internal stress" (Vibelin mechanical stages, worst first).
+injury_internal_bruise_catastrophic_mech_stage_1 = 10
+
+# Damage per injury from which a catastrophic internal bruise of a prosthesis reads "fading internal stress" (Vibelin mechanical stages, worst first).
+injury_internal_bruise_catastrophic_mech_stage_2 = 10
+
+# Damage per injury from which a welt lash of a prosthesis reads "ripped gouge" (Vibelin mechanical stages, worst first).
+injury_lash_welt_mech_stage_1 = 10
+
+# Damage per injury from which a welt lash of a prosthesis reads "gouge mark" (Vibelin mechanical stages, worst first).
+injury_lash_welt_mech_stage_2 = 10
+
+# Damage per injury from which a welt lash of a prosthesis reads "healing gouge" (Vibelin mechanical stages, worst first).
+injury_lash_welt_mech_stage_3 = 10
+
+# Damage per injury from which a welt lash of a prosthesis reads "fading gouge" (Vibelin mechanical stages, worst first).
+injury_lash_welt_mech_stage_4 = 10
+
+# Damage per injury from which a lash lash of a prosthesis reads "ripped deep gouge" (Vibelin mechanical stages, worst first).
+injury_lash_lash_mech_stage_1 = 10
+
+# Damage per injury from which a lash lash of a prosthesis reads "deep gouge" (Vibelin mechanical stages, worst first).
+injury_lash_lash_mech_stage_2 = 10
+
+# Damage per injury from which a lash lash of a prosthesis reads "healing deep gouge" (Vibelin mechanical stages, worst first).
+injury_lash_lash_mech_stage_3 = 10
+
+# Damage per injury from which a lash lash of a prosthesis reads "scoring mark" (Vibelin mechanical stages, worst first).
+injury_lash_lash_mech_stage_4 = 10
+
+# Damage per injury from which a severe lash of a prosthesis reads "ripped severe gouge" (Vibelin mechanical stages, worst first).
+injury_lash_severe_mech_stage_1 = 10
+
+# Damage per injury from which a severe lash of a prosthesis reads "severe gouge" (Vibelin mechanical stages, worst first).
+injury_lash_severe_mech_stage_2 = 10
+
+# Damage per injury from which a severe lash of a prosthesis reads "healing severe gouge" (Vibelin mechanical stages, worst first).
+injury_lash_severe_mech_stage_3 = 10
+
+# Damage per injury from which a severe lash of a prosthesis reads "deep scoring" (Vibelin mechanical stages, worst first).
+injury_lash_severe_mech_stage_4 = 10
+
+# Damage per injury from which a deep lash of a prosthesis reads "ripped chassis gash" (Vibelin mechanical stages, worst first).
+injury_lash_deep_mech_stage_1 = 10
+
+# Damage per injury from which a deep lash of a prosthesis reads "chassis gash" (Vibelin mechanical stages, worst first).
+injury_lash_deep_mech_stage_2 = 10
+
+# Damage per injury from which a deep lash of a prosthesis reads "healing chassis gash" (Vibelin mechanical stages, worst first).
+injury_lash_deep_mech_stage_3 = 10
+
+# Damage per injury from which a deep lash of a prosthesis reads "chassis scarring" (Vibelin mechanical stages, worst first).
+injury_lash_deep_mech_stage_4 = 10
+
+# Damage per injury from which a flayed lash of a prosthesis reads "stripped plating" (Vibelin mechanical stages, worst first).
+injury_lash_flayed_mech_stage_1 = 10
+
+# Damage per injury from which a flayed lash of a prosthesis reads "healing stripped plating" (Vibelin mechanical stages, worst first).
+injury_lash_flayed_mech_stage_2 = 10
+
+# Damage per injury from which a flayed lash of a prosthesis reads "plating scar" (Vibelin mechanical stages, worst first).
+injury_lash_flayed_mech_stage_3 = 10
+
+# Damage per injury from which a small puncture of a prosthesis reads "perforation" (Vibelin mechanical stages, worst first).
+injury_puncture_small_mech_stage_1 = 10
+
+# Damage per injury from which a small puncture of a prosthesis reads "small perforation" (Vibelin mechanical stages, worst first).
+injury_puncture_small_mech_stage_2 = 10
+
+# Damage per injury from which a small puncture of a prosthesis reads "small nick" (Vibelin mechanical stages, worst first).
+injury_puncture_small_mech_stage_3 = 10
+
+# Damage per injury from which a flesh puncture of a prosthesis reads "large rupture" (Vibelin mechanical stages, worst first).
+injury_puncture_flesh_mech_stage_1 = 10
+
+# Damage per injury from which a flesh puncture of a prosthesis reads "perforation" (Vibelin mechanical stages, worst first).
+injury_puncture_flesh_mech_stage_2 = 10
+
+# Damage per injury from which a flesh puncture of a prosthesis reads "large nick" (Vibelin mechanical stages, worst first).
+injury_puncture_flesh_mech_stage_3 = 10
+
+# Damage per injury from which a flesh puncture of a prosthesis reads "small round nick" (Vibelin mechanical stages, worst first).
+injury_puncture_flesh_mech_stage_4 = 10
+
+# Damage per injury from which a gaping puncture of a prosthesis reads "gaping rupture" (Vibelin mechanical stages, worst first).
+injury_puncture_gaping_mech_stage_1 = 10
+
+# Damage per injury from which a gaping puncture of a prosthesis reads "large rupture" (Vibelin mechanical stages, worst first).
+injury_puncture_gaping_mech_stage_2 = 10
+
+# Damage per injury from which a gaping puncture of a prosthesis reads "large perforation" (Vibelin mechanical stages, worst first).
+injury_puncture_gaping_mech_stage_3 = 10
+
+# Damage per injury from which a gaping puncture of a prosthesis reads "small deep nick" (Vibelin mechanical stages, worst first).
+injury_puncture_gaping_mech_stage_4 = 10
+
+# Damage per injury from which a gaping puncture of a prosthesis reads "small nick" (Vibelin mechanical stages, worst first).
+injury_puncture_gaping_mech_stage_5 = 10
+
+# Damage per injury from which a gaping big puncture of a prosthesis reads "big gaping rupture" (Vibelin mechanical stages, worst first).
+injury_puncture_gaping_big_mech_stage_1 = 10
+
+# Damage per injury from which a gaping big puncture of a prosthesis reads "gaping rupture" (Vibelin mechanical stages, worst first).
+injury_puncture_gaping_big_mech_stage_2 = 10
+
+# Damage per injury from which a gaping big puncture of a prosthesis reads "large rupture" (Vibelin mechanical stages, worst first).
+injury_puncture_gaping_big_mech_stage_3 = 10
+
+# Damage per injury from which a gaping big puncture of a prosthesis reads "large perforation" (Vibelin mechanical stages, worst first).
+injury_puncture_gaping_big_mech_stage_4 = 10
+
+# Damage per injury from which a gaping big puncture of a prosthesis reads "large nick" (Vibelin mechanical stages, worst first).
+injury_puncture_gaping_big_mech_stage_5 = 10
+
+# Damage per injury from which a massive puncture of a prosthesis reads "massive gaping rupture" (Vibelin mechanical stages, worst first).
+injury_puncture_massive_mech_stage_1 = 10
+
+# Damage per injury from which a massive puncture of a prosthesis reads "massive rupture" (Vibelin mechanical stages, worst first).
+injury_puncture_massive_mech_stage_2 = 10
+
+# Damage per injury from which a massive puncture of a prosthesis reads "massive pierce" (Vibelin mechanical stages, worst first).
+injury_puncture_massive_mech_stage_3 = 10
+
+# Damage per injury from which a massive puncture of a prosthesis reads "massive perforation" (Vibelin mechanical stages, worst first).
+injury_puncture_massive_mech_stage_4 = 10
+
+# Damage per injury from which a massive puncture of a prosthesis reads "massive jagged nick" (Vibelin mechanical stages, worst first).
+injury_puncture_massive_mech_stage_5 = 10
+
+# Damage per injury from which a small cut of a prosthesis reads "ugly ripped laceration" (Vibelin mechanical stages, worst first).
+injury_slash_small_mech_stage_1 = 10
+
+# Damage per injury from which a small cut of a prosthesis reads "ripped laceration" (Vibelin mechanical stages, worst first).
+injury_slash_small_mech_stage_2 = 10
+
+# Damage per injury from which a small cut of a prosthesis reads "laceration" (Vibelin mechanical stages, worst first).
+injury_slash_small_mech_stage_3 = 10
+
+# Damage per injury from which a small cut of a prosthesis reads "healing cut" (Vibelin mechanical stages, worst first).
+injury_slash_small_mech_stage_4 = 10
+
+# Damage per injury from which a small cut of a prosthesis reads "small tear" (Vibelin mechanical stages, worst first).
+injury_slash_small_mech_stage_5 = 10
+
+# Damage per injury from which a deep cut of a prosthesis reads "ugly deep ripped laceration" (Vibelin mechanical stages, worst first).
+injury_slash_deep_mech_stage_1 = 10
+
+# Damage per injury from which a deep cut of a prosthesis reads "deep ripped laceration" (Vibelin mechanical stages, worst first).
+injury_slash_deep_mech_stage_2 = 10
+
+# Damage per injury from which a deep cut of a prosthesis reads "deep laceration" (Vibelin mechanical stages, worst first).
+injury_slash_deep_mech_stage_3 = 10
+
+# Damage per injury from which a deep cut of a prosthesis reads "laceration" (Vibelin mechanical stages, worst first).
+injury_slash_deep_mech_stage_4 = 10
+
+# Damage per injury from which a deep cut of a prosthesis reads "tear" (Vibelin mechanical stages, worst first).
+injury_slash_deep_mech_stage_5 = 10
+
+# Damage per injury from which a deep cut of a prosthesis reads "small tear" (Vibelin mechanical stages, worst first).
+injury_slash_deep_mech_stage_6 = 10
+
+# Damage per injury from which a flesh cut of a prosthesis reads "ugly ripped gash" (Vibelin mechanical stages, worst first).
+injury_slash_flesh_mech_stage_1 = 10
+
+# Damage per injury from which a flesh cut of a prosthesis reads "ugly gash" (Vibelin mechanical stages, worst first).
+injury_slash_flesh_mech_stage_2 = 10
+
+# Damage per injury from which a flesh cut of a prosthesis reads "gash" (Vibelin mechanical stages, worst first).
+injury_slash_flesh_mech_stage_3 = 10
+
+# Damage per injury from which a flesh cut of a prosthesis reads "shallow gash" (Vibelin mechanical stages, worst first).
+injury_slash_flesh_mech_stage_4 = 10
+
+# Damage per injury from which a flesh cut of a prosthesis reads "large tear" (Vibelin mechanical stages, worst first).
+injury_slash_flesh_mech_stage_5 = 10
+
+# Damage per injury from which a flesh cut of a prosthesis reads "small tear" (Vibelin mechanical stages, worst first).
+injury_slash_flesh_mech_stage_6 = 10
+
+# Damage per injury from which a gaping cut of a prosthesis reads "gaping gash" (Vibelin mechanical stages, worst first).
+injury_slash_gaping_mech_stage_1 = 10
+
+# Damage per injury from which a gaping cut of a prosthesis reads "large gash" (Vibelin mechanical stages, worst first).
+injury_slash_gaping_mech_stage_2 = 10
+
+# Damage per injury from which a gaping cut of a prosthesis reads "shallow gash" (Vibelin mechanical stages, worst first).
+injury_slash_gaping_mech_stage_3 = 10
+
+# Damage per injury from which a gaping cut of a prosthesis reads "small angry tear" (Vibelin mechanical stages, worst first).
+injury_slash_gaping_mech_stage_4 = 10
+
+# Damage per injury from which a gaping cut of a prosthesis reads "small straight tear" (Vibelin mechanical stages, worst first).
+injury_slash_gaping_mech_stage_5 = 10
+
+# Damage per injury from which a gaping big cut of a prosthesis reads "big gaping gash" (Vibelin mechanical stages, worst first).
+injury_slash_gaping_big_mech_stage_1 = 10
+
+# Damage per injury from which a gaping big cut of a prosthesis reads "melding gaping gash" (Vibelin mechanical stages, worst first).
+injury_slash_gaping_big_mech_stage_2 = 10
+
+# Damage per injury from which a gaping big cut of a prosthesis reads "large laceration" (Vibelin mechanical stages, worst first).
+injury_slash_gaping_big_mech_stage_3 = 10
+
+# Damage per injury from which a gaping big cut of a prosthesis reads "large angry tear" (Vibelin mechanical stages, worst first).
+injury_slash_gaping_big_mech_stage_4 = 10
+
+# Damage per injury from which a gaping big cut of a prosthesis reads "large straight tear" (Vibelin mechanical stages, worst first).
+injury_slash_gaping_big_mech_stage_5 = 10
+
+# Damage per injury from which a massive cut of a prosthesis reads "massive gash" (Vibelin mechanical stages, worst first).
+injury_slash_massive_mech_stage_1 = 10
+
+# Damage per injury from which a massive cut of a prosthesis reads "massive melding gash" (Vibelin mechanical stages, worst first).
+injury_slash_massive_mech_stage_2 = 10
+
+# Damage per injury from which a massive cut of a prosthesis reads "massive soldering gash" (Vibelin mechanical stages, worst first).
+injury_slash_massive_mech_stage_3 = 10
+
+# Damage per injury from which a massive cut of a prosthesis reads "massive angry tear" (Vibelin mechanical stages, worst first).
+injury_slash_massive_mech_stage_4 = 10
+
+# Damage per injury from which a massive cut of a prosthesis reads "massive jagged tear" (Vibelin mechanical stages, worst first).
+injury_slash_massive_mech_stage_5 = 10
+
+# Least damage of a blow of the cut kind on flesh that opens a massive injury (Vibelin get_injury_type()).
+injury_pick_slash_massive = 10
+
+# Least damage of a blow of the cut kind on flesh that opens a gaping big injury (Vibelin get_injury_type()).
+injury_pick_slash_gaping_big = 10
+
+# Least damage of a blow of the cut kind on flesh that opens a gaping injury (Vibelin get_injury_type()).
+injury_pick_slash_gaping = 10
+
+# Least damage of a blow of the cut kind on flesh that opens a flesh injury (Vibelin get_injury_type()).
+injury_pick_slash_flesh = 10
+
+# Least damage of a blow of the cut kind on flesh that opens a deep injury (Vibelin get_injury_type()).
+injury_pick_slash_deep = 10
+
+# Least damage of a blow of the puncture kind on flesh that opens a massive injury (Vibelin get_injury_type()).
+injury_pick_puncture_massive = 10
+
+# Least damage of a blow of the puncture kind on flesh that opens a gaping big injury (Vibelin get_injury_type()).
+injury_pick_puncture_gaping_big = 10
+
+# Least damage of a blow of the puncture kind on flesh that opens a gaping injury (Vibelin get_injury_type()).
+injury_pick_puncture_gaping = 10
+
+# Least damage of a blow of the puncture kind on flesh that opens a flesh injury (Vibelin get_injury_type()).
+injury_pick_puncture_flesh = 10
+
+# Least damage of a blow of the bruise kind on flesh that opens a monumental injury (Vibelin get_injury_type()).
+injury_pick_bruise_monumental = 10
+
+# Least damage of a blow of the bruise kind on flesh that opens a huge injury (Vibelin get_injury_type()).
+injury_pick_bruise_huge = 10
+
+# Least damage of a blow of the bruise kind on flesh that opens a large injury (Vibelin get_injury_type()).
+injury_pick_bruise_large = 10
+
+# Least damage of a blow of the bruise kind on flesh that opens a moderate injury (Vibelin get_injury_type()).
+injury_pick_bruise_moderate = 10
+
+# Least damage of a blow of the burn kind on flesh that opens a carbonised injury (Vibelin get_injury_type()).
+injury_pick_burn_carbonised = 10
+
+# Least damage of a blow of the burn kind on flesh that opens a deep injury (Vibelin get_injury_type()).
+injury_pick_burn_deep = 10
+
+# Least damage of a blow of the burn kind on flesh that opens a severe injury (Vibelin get_injury_type()).
+injury_pick_burn_severe = 10
+
+# Least damage of a blow of the burn kind on flesh that opens a large injury (Vibelin get_injury_type()).
+injury_pick_burn_large = 10
+
+# Least damage of a blow of the intense burn kind on flesh that opens a carbonised injury (Vibelin get_injury_type()).
+injury_pick_intense_burn_carbonised = 10
+
+# Least damage of a blow of the intense burn kind on flesh that opens a deep injury (Vibelin get_injury_type()).
+injury_pick_intense_burn_deep = 10
+
+# Least damage of a blow of the intense burn kind on flesh that opens a severe injury (Vibelin get_injury_type()).
+injury_pick_intense_burn_severe = 10
+
+# Least damage of a blow of the intense burn kind on flesh that opens a large injury (Vibelin get_injury_type()).
+injury_pick_intense_burn_large = 10
+
+# Least damage of a blow of the lash kind on flesh that opens a flayed injury (Vibelin get_injury_type()).
+injury_pick_lash_flayed = 10
+
+# Least damage of a blow of the lash kind on flesh that opens a deep injury (Vibelin get_injury_type()).
+injury_pick_lash_deep = 10
+
+# Least damage of a blow of the lash kind on flesh that opens a severe injury (Vibelin get_injury_type()).
+injury_pick_lash_severe = 10
+
+# Least damage of a blow of the lash kind on flesh that opens a lash injury (Vibelin get_injury_type()).
+injury_pick_lash_lash = 10
+
+# Least damage of a blow of the bite kind on flesh that opens a massive injury (Vibelin get_injury_type()).
+injury_pick_bite_massive = 10
+
+# Least damage of a blow of the bite kind on flesh that opens a gaping big injury (Vibelin get_injury_type()).
+injury_pick_bite_gaping_big = 10
+
+# Least damage of a blow of the bite kind on flesh that opens a gaping injury (Vibelin get_injury_type()).
+injury_pick_bite_gaping = 10
+
+# Least damage of a blow of the bite kind on flesh that opens a flesh injury (Vibelin get_injury_type()).
+injury_pick_bite_flesh = 10
+
+# Least damage of a blow of the bite kind on flesh that opens a deep injury (Vibelin get_injury_type()).
+injury_pick_bite_deep = 10
+
+# Least damage of a blow of the internal bruise kind on flesh that opens a catastrophic injury (Vibelin get_injury_type()).
+injury_pick_internal_bruise_catastrophic = 10
+
+# Least damage of a blow of the internal bruise kind on flesh that opens a critical injury (Vibelin get_injury_type()).
+injury_pick_internal_bruise_critical = 10
+
+# Least damage of a blow of the internal bruise kind on flesh that opens a severe injury (Vibelin get_injury_type()).
+injury_pick_internal_bruise_severe = 10
+
+# Least damage of a blow of the internal bruise kind on flesh that opens a moderate injury (Vibelin get_injury_type()).
+injury_pick_internal_bruise_moderate = 10
+
+# Least damage of a blow of the divine wound kind on flesh that opens a condemned injury (Vibelin get_injury_type()).
+injury_pick_divine_condemned = 10
+
+# Least damage of a blow of the divine wound kind on flesh that opens a wrath injury (Vibelin get_injury_type()).
+injury_pick_divine_wrath = 10
+
+# Least damage of a blow of the divine wound kind on flesh that opens a severe injury (Vibelin get_injury_type()).
+injury_pick_divine_severe = 10
+
+# Least damage of a blow of the divine wound kind on flesh that opens a brand injury (Vibelin get_injury_type()).
+injury_pick_divine_brand = 10
+
+# Least damage of a blow of the cut kind on a prosthesis that opens a massive injury (Vibelin get_injury_type()).
+injury_pick_mech_slash_massive = 10
+
+# Least damage of a blow of the cut kind on a prosthesis that opens a gaping big injury (Vibelin get_injury_type()).
+injury_pick_mech_slash_gaping_big = 10
+
+# Least damage of a blow of the cut kind on a prosthesis that opens a gaping injury (Vibelin get_injury_type()).
+injury_pick_mech_slash_gaping = 10
+
+# Least damage of a blow of the cut kind on a prosthesis that opens a flesh injury (Vibelin get_injury_type()).
+injury_pick_mech_slash_flesh = 10
+
+# Least damage of a blow of the cut kind on a prosthesis that opens a deep injury (Vibelin get_injury_type()).
+injury_pick_mech_slash_deep = 10
+
+# Least damage of a blow of the puncture kind on a prosthesis that opens a massive injury (Vibelin get_injury_type()).
+injury_pick_mech_puncture_massive = 10
+
+# Least damage of a blow of the puncture kind on a prosthesis that opens a gaping big injury (Vibelin get_injury_type()).
+injury_pick_mech_puncture_gaping_big = 10
+
+# Least damage of a blow of the puncture kind on a prosthesis that opens a gaping injury (Vibelin get_injury_type()).
+injury_pick_mech_puncture_gaping = 10
+
+# Least damage of a blow of the puncture kind on a prosthesis that opens a flesh injury (Vibelin get_injury_type()).
+injury_pick_mech_puncture_flesh = 10
+
+# Least damage of a blow of the bruise kind on a prosthesis that opens a monumental injury (Vibelin get_injury_type()).
+injury_pick_mech_bruise_monumental = 10
+
+# Least damage of a blow of the bruise kind on a prosthesis that opens a huge injury (Vibelin get_injury_type()).
+injury_pick_mech_bruise_huge = 10
+
+# Least damage of a blow of the bruise kind on a prosthesis that opens a large injury (Vibelin get_injury_type()).
+injury_pick_mech_bruise_large = 10
+
+# Least damage of a blow of the bruise kind on a prosthesis that opens a moderate injury (Vibelin get_injury_type()).
+injury_pick_mech_bruise_moderate = 10
+
+# Least damage of a blow of the burn kind on a prosthesis that opens a carbonised injury (Vibelin get_injury_type()).
+injury_pick_mech_burn_carbonised = 10
+
+# Least damage of a blow of the burn kind on a prosthesis that opens a deep injury (Vibelin get_injury_type()).
+injury_pick_mech_burn_deep = 10
+
+# Least damage of a blow of the burn kind on a prosthesis that opens a severe injury (Vibelin get_injury_type()).
+injury_pick_mech_burn_severe = 10
+
+# Least damage of a blow of the burn kind on a prosthesis that opens a large injury (Vibelin get_injury_type()).
+injury_pick_mech_burn_large = 10
+
+# Least damage of a blow of the intense burn kind on a prosthesis that opens a carbonised injury (Vibelin get_injury_type()).
+injury_pick_mech_intense_burn_carbonised = 10
+
+# Least damage of a blow of the intense burn kind on a prosthesis that opens a deep injury (Vibelin get_injury_type()).
+injury_pick_mech_intense_burn_deep = 10
+
+# Least damage of a blow of the intense burn kind on a prosthesis that opens a severe injury (Vibelin get_injury_type()).
+injury_pick_mech_intense_burn_severe = 10
+
+# Least damage of a blow of the intense burn kind on a prosthesis that opens a large injury (Vibelin get_injury_type()).
+injury_pick_mech_intense_burn_large = 10
+
+# Least damage of a blow of the lash kind on a prosthesis that opens a flayed injury (Vibelin get_injury_type()).
+injury_pick_mech_lash_flayed = 10
+
+# Least damage of a blow of the lash kind on a prosthesis that opens a deep injury (Vibelin get_injury_type()).
+injury_pick_mech_lash_deep = 10
+
+# Least damage of a blow of the lash kind on a prosthesis that opens a severe injury (Vibelin get_injury_type()).
+injury_pick_mech_lash_severe = 10
+
+# Least damage of a blow of the lash kind on a prosthesis that opens a lash injury (Vibelin get_injury_type()).
+injury_pick_mech_lash_lash = 10
+
+# Least damage of a blow of the bite kind on a prosthesis that opens a massive injury (Vibelin get_injury_type()).
+injury_pick_mech_bite_massive = 10
+
+# Least damage of a blow of the bite kind on a prosthesis that opens a gaping big injury (Vibelin get_injury_type()).
+injury_pick_mech_bite_gaping_big = 10
+
+# Least damage of a blow of the bite kind on a prosthesis that opens a gaping injury (Vibelin get_injury_type()).
+injury_pick_mech_bite_gaping = 10
+
+# Least damage of a blow of the bite kind on a prosthesis that opens a flesh injury (Vibelin get_injury_type()).
+injury_pick_mech_bite_flesh = 10
+
+# Least damage of a blow of the bite kind on a prosthesis that opens a deep injury (Vibelin get_injury_type()).
+injury_pick_mech_bite_deep = 10
+
+# Least damage of a blow of the internal bruise kind on a prosthesis that opens a catastrophic injury (Vibelin get_injury_type()).
+injury_pick_mech_internal_bruise_catastrophic = 10
+
+# Least damage of a blow of the internal bruise kind on a prosthesis that opens a critical injury (Vibelin get_injury_type()).
+injury_pick_mech_internal_bruise_critical = 10
+
+# Least damage of a blow of the internal bruise kind on a prosthesis that opens a severe injury (Vibelin get_injury_type()).
+injury_pick_mech_internal_bruise_severe = 10
+
+# Least damage of a blow of the internal bruise kind on a prosthesis that opens a moderate injury (Vibelin get_injury_type()).
+injury_pick_mech_internal_bruise_moderate = 10
+
+# Least damage of a blow of the divine wound kind on a prosthesis that opens a condemned injury (Vibelin get_injury_type()).
+injury_pick_mech_divine_condemned = 10
+
+# Least damage of a blow of the divine wound kind on a prosthesis that opens a wrath injury (Vibelin get_injury_type()).
+injury_pick_mech_divine_wrath = 10
+
+# Least damage of a blow of the divine wound kind on a prosthesis that opens a severe injury (Vibelin get_injury_type()).
+injury_pick_mech_divine_severe = 10
+
+# Least damage of a blow of the divine wound kind on a prosthesis that opens a brand injury (Vibelin get_injury_type()).
+injury_pick_mech_divine_brand = 10
+
+# Damage of an injury that bleeds its bleed_rate of blood a second (Vibelin BLEED_DAMAGE_RATIO).
+injury_bleed_damage_ratio = 10
+
+# Least blood a second a bleeding injury loses (Vibelin get_bleed_rate()).
+injury_bleed_least = 10
+
+# Pain an injury of a blow gives per point of its damage, before its pain_modifier (Vibelin SHOCK_MOD_BRUTE).
+injury_pain_brute_factor = 10
+
+# Pain a burn gives per point of its damage, before its pain_modifier (Vibelin SHOCK_MOD_BURN).
+injury_pain_burn_factor = 10
+
+# Least damage of a blow that may widen an injury already on the limb instead of opening a new one (Vibelin create_injury()).
+injury_widen_min_damage = 10
+
+# Percent chance a blow widens an injury already on the limb (Vibelin create_injury()).
+injury_widen_chance = 10
+
+# Percent the chance to widen grows by for every injury on the limb past the first (Vibelin create_injury(), number_injuries).
+injury_widen_chance_per_injury = 10
+
+# Highest percent chance a blow widens an injury already on the limb (Vibelin create_injury()).
+injury_widen_chance_max = 10
+
+# How many times the damage of its worst stage one injury can carry when widened (Vibelin can_worsen()).
+injury_worsen_cap_factor = 10
+
+# Damage a second an injury that may mend by itself mends per point of constitution (Vibelin update_injuries()).
+injury_heal_per_constitution = 10
+
+# How many times faster injuries mend in sleep (Vibelin update_injuries()).
+injury_sleep_heal_factor = 10
+
+# How many times worse an untreated injury may be and still mend by itself in sleep (Vibelin can_autoheal()).
+injury_sleep_cutoff_factor = 10
+
+# Antitoxin chemical effect at which toxins no longer stop injuries from mending (Vibelin update_injuries() CE_ANTITOX).
+injury_antitox_block = 10
+
+# Least damage of a new injury from a blow that is told in the strike's line, so scratches do not crowd the chat.
+injury_announce_min_damage = 10
+
+# Damage per injury below which a mending injury in its last stage is drawn faded at examine (Vibelin get_injuries_desc()).
+injury_faint_damage = 10
+
+# Share of the limb's health burnt at which a new intense burn costs blood to blistering (Vibelin intense_burn apply_to_bodypart()).
+injury_intense_burn_fluid_share = 10
+
+# Damage of an intense burn that costs the survival volume of blood to blistering (Vibelin BLOOD_VOLUME_SURVIVE * damage / 150).
+injury_intense_burn_fluid_divisor = 10
+
+# Blood a second at which an injury is told as badly bleeding at examine (Vibelin BLEED_RATE_NOTICABLE).
+injury_badly_bleeding = 10
+
+# Most blood a second a cut bleeds under armor of the limb that is not exposed (Azure Peak dynamic slash armor cap, on Vibelin's scale of bleeding).
+injury_armor_cap_slash = 10
+
+# Most blood a second a puncture bleeds under armor of the limb that is not exposed (Azure Peak dynamic puncture armor cap, on Vibelin's scale of bleeding).
+injury_armor_cap_puncture = 10
+
+# Most blood a second a bite bleeds under armor of the limb that is not exposed (Azure Peak dynamic bite armor cap, on Vibelin's scale of bleeding).
+injury_armor_cap_bite = 10
+
+# Most blood a second a lash bleeds under armor of the limb that is not exposed (Azure Peak dynamic lashing armor cap, on Vibelin's scale of bleeding).
+injury_armor_cap_lash = 10
+
+# Most blood a second a bruise bleeds under armor of the limb that is not exposed (Azure Peak armor cap, on Vibelin's scale of bleeding).
+injury_armor_cap_blunt = 10
+
+# Share of its bleeding an injury keeps under armor a weapon barely got through, pen_info 1-2, or of a blow of no weapon (Azure Peak pen bleed over bare bleed).
+injury_armor_pen_low = 10
+
+# Share of its bleeding an injury keeps under armor a weapon got through fairly, pen_info 3-4 (Azure Peak pen bleed over bare bleed).
+injury_armor_pen_fair = 10
+
+# Share of its bleeding an injury keeps under armor a weapon got through well, pen_info 5-6 (Azure Peak pen bleed over bare bleed).
+injury_armor_pen_good = 10
+
+# Share of its bleeding an injury keeps under armor a weapon went clean through, pen_info 7-8 (Azure Peak pen bleed over bare bleed).
+injury_armor_pen_full = 10
+
+# What a keen edge, above blade_dull_start of its sharpness, adds to how far a weapon's blow got through armor (Azure Peak get_pen_info() sharpness_bonus).
+injury_armor_pen_edge_bonus = 10
+
+# What a heavy weapon adds to the wielder's strength over the baseline for how far its blow got through armor (Azure Peak get_pen_info(): WBALANCE_HEAVY).
+injury_armor_pen_heavy_bonus = 10
+
+# The most the wielder's balance adds to how far a weapon's blow got through armor, but for heavy weapons (Azure Peak min(balance_bonus)).
+injury_armor_pen_balance_cap = 10
+
+# Blood a second of one injury on bare skin at which its growth tears the limb's artery (Azure Peak dynamic upgrade(): ARTERY_LIMB_BLEEDRATE, on Vibelin's scale).
+injury_armor_artery_bleed = 10

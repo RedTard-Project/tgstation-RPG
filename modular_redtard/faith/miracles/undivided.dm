@@ -202,6 +202,15 @@
 			bleeder.rogue_set_bleed(bleeder.rogue_clot_floor)
 		else if(!istype(bleeder) && wound.blood_flow > 0)
 			wound.set_blood_flow(0)
+	// Block VR1: on a medieval body the pain is the limb's and the blood the injuries' (combat/injuries/). The limb's pain eases
+	// by the same relief; each bleeding injury mends down to where it stops bleeding, as a crit's bleeding drops to its floor.
+	affecting.rogue_remove_pain(affecting.rogue_pain_dam * relief)
+	for(var/datum/rogue_injury/injury as anything in affecting.rogue_injuries?.Copy())
+		if(QDELETED(injury) || !injury.is_bleeding())
+			continue
+		var/excess = (injury.damage_per_injury() - injury.bleed_threshold) * injury.amount
+		if(excess > 0)
+			injury.heal_damage(excess)
 
 /// Azure Peak debuff/gallowshumor: a terrible secret learnt; for a while the mood is the worse for it.
 /datum/status_effect/rogue_gallows_humor

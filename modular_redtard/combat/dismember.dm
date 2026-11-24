@@ -2,13 +2,23 @@ GLOBAL_LIST_INIT(rogue_dismember_sounds, list('modular_redtard/rockhill/sound/co
 GLOBAL_LIST_INIT(rogue_extremity_zones, list("l_hand", "r_hand", "l_foot", "r_foot"))
 GLOBAL_LIST_INIT(rogue_disembowel_slots, list(ORGAN_SLOT_STOMACH, ORGAN_SLOT_APPENDIX))
 
+/// The edge the item was made with (Ratwood initial(max_blade_int)): its number in the items table (sharpness), else the
+/// type's; the whetstone wears max_blade_int down from it. The number left the types for the private table, so initial()
+/// alone would be 0.
+/obj/item/proc/rogue_full_blade_int()
+	var/list/values = rogue_mechanics().values_for("items", type)
+	var/full = values?["sharpness"]
+	if(!isnum(full))
+		full = initial(max_blade_int)
+	return max(full, max_blade_int, 1)
+
 /obj/item/proc/rogue_dismember_chance(obj/item/bodypart/limb, mob/living/attacker, datum/intent/intent, damage, zone)
 	if(!intent?.get_sharpness() || !limb.can_dismember(src))
 		return 0
 	var/force = damage
 	var/pristine = TRUE
 	if(max_blade_int)
-		var/edge = blade_int / initial(max_blade_int)
+		var/edge = blade_int / rogue_full_blade_int()
 		if(edge <= ROGUE_DISMEMBER_DULL_SHARE)
 			return 0
 		force *= edge

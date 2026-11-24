@@ -8,8 +8,9 @@
 	} \
 } while (FALSE)
 
-/// Ratwood's wounds and healing (combat/wounds.dm, medicine.dm, leeches.dm, pain.dm, survival/sleep.dm). The test map is not a
-/// medieval one, so the patient is given the blood element by hand, as a medieval map gives it to every human.
+/// Vibelin's crits (combat/wounds.dm, combat/wounds/, combat/crits.dm) and the healing that still stands on them (leeches,
+/// soaked cloth, sleep). The test map is not a medieval one, so the patient is given the blood element by hand, as a
+/// medieval map gives it to every human.
 /datum/unit_test/rogue_wounds
 	abstract_type = /datum/unit_test/rogue_wounds
 
@@ -18,34 +19,7 @@
 	patient.AddElement(/datum/element/rogue_blood)
 	return patient
 
-/// Blows open the dynamic wound of their kind and grow it, instead of TG's rolled wounds.
-/datum/unit_test/rogue_wounds/dynamic
-
-/datum/unit_test/rogue_wounds/dynamic/Run()
-	var/mob/living/carbon/human/patient = make_patient()
-	var/obj/item/bodypart/arm = patient.get_bodypart(BODY_ZONE_L_ARM)
-	patient.apply_damage(15, BRUTE, arm, wound_bonus = 100, sharpness = SHARP_EDGED)
-	var/datum/wound/rogue/dynamic/slash/slash = arm.get_wound_type(/datum/wound/rogue/dynamic/slash)
-	TEST_ASSERT(slash, "A cut did not open a slash")
-	TEST_ASSERT_NULL(arm.get_wound_type(/datum/wound/slash/flesh), "A cut still rolled TG's cut")
-	TEST_ASSERT(slash.blood_flow > 0, "A slash does not bleed")
-	TEST_ASSERT(slash.rogue_pain() > rogue_value("dynamic_slash_pain"), "The cut did not grow the slash's pain")
-	TEST_ASSERT(patient.rogue_complex_pain() > 0, "The slash does not hurt")
-	var/health = slash.rogue_health
-	var/bleed = slash.rogue_bleed()
-	patient.apply_damage(15, BRUTE, arm, sharpness = SHARP_EDGED)
-	TEST_ASSERT(slash.rogue_health > health && slash.rogue_bleed() > bleed, "A second cut did not grow the slash")
-	TEST_ASSERT_EQUAL(length(arm.wounds), 1, "A second cut opened another wound")
-	patient.apply_damage(10, BRUTE, arm)
-	TEST_ASSERT(arm.get_wound_type(/datum/wound/rogue/dynamic/bruise), "A blunt blow did not leave a hematoma")
-	var/obj/item/knife/kitchen/knife = allocate(__IMPLIED_TYPE__)
-	knife.rogue_current_bclass = BCLASS_STAB
-	patient.apply_damage(10, BRUTE, arm, sharpness = SHARP_POINTY, attacking_item = knife)
-	TEST_ASSERT(arm.get_wound_type(/datum/wound/rogue/dynamic/puncture), "A knife's stab did not leave a puncture")
-	patient.apply_damage(10, BRUTE, arm, wound_bonus = CANT_WOUND, sharpness = SHARP_EDGED)
-	TEST_ASSERT_EQUAL(length(arm.wounds), 3, "A hit that may not wound opened a wound")
-
-/// The kind of a blow, as the damage tells it, and the wound of each kind.
+/// The kind of a blow, as the damage tells it.
 /datum/unit_test/rogue_wounds/blow_class
 
 /datum/unit_test/rogue_wounds/blow_class/Run()
@@ -58,83 +32,118 @@
 	TEST_ASSERT_EQUAL(rogue_wound_blow_class(WOUND_SLASH, NORTH, knife), BCLASS_CHOP, "A chop is not told by the intent it was struck with")
 	TEST_ASSERT_EQUAL(rogue_wound_blow_class(WOUND_PIERCE, NORTH, knife), BCLASS_STAB, "A thrust TG saw as a stab kept the cut of the hand's intent")
 	TEST_ASSERT_EQUAL(rogue_wound_blow_class(WOUND_BLUNT, NORTH, knife), BCLASS_CHOP, "A chop on a mangled limb lost its kind")
-	TEST_ASSERT_EQUAL(rogue_dynamic_wound_type(BCLASS_LASHING), /datum/wound/rogue/dynamic/lashing, "A lash leaves no lashing")
-	TEST_ASSERT_EQUAL(rogue_dynamic_wound_type(BCLASS_PIERCE), /datum/wound/rogue/dynamic/gouge, "An arrow leaves no gouge")
-	TEST_ASSERT_NULL(rogue_dynamic_wound_type(BCLASS_BURN), "Charring leaves a dynamic wound")
 
-/// A dynamic wound clots and mends by itself, its pain easing by half of what it mends; mended whole, it closes.
-/datum/unit_test/rogue_wounds/healing
+/// On a medieval body TG rolls no wounds: cuts, stabs, blows and burns leave none.
+/datum/unit_test/rogue_wounds/no_tg_wounds
 
-/datum/unit_test/rogue_wounds/healing/Run()
+/datum/unit_test/rogue_wounds/no_tg_wounds/Run()
 	var/mob/living/carbon/human/patient = make_patient()
 	var/obj/item/bodypart/arm = patient.get_bodypart(BODY_ZONE_L_ARM)
-	patient.apply_damage(10, BRUTE, arm)
-	var/datum/wound/rogue/dynamic/bruise/bruise = arm.get_wound_type(/datum/wound/rogue/dynamic/bruise)
-	TEST_ASSERT(bruise, "A blunt blow did not leave a hematoma")
-	var/health = bruise.rogue_health
-	var/pain = bruise.rogue_pain()
-	patient.rogue_pain_hud_dirty = FALSE
-	bruise.handle_process(SSMOBS_DT)
-	var/healed = health - bruise.rogue_health
-	TEST_ASSERT(healed > 0, "A hematoma did not mend by itself")
-	TEST_ASSERT(abs(pain - bruise.rogue_pain() - healed / 2) < 0.1, "The hematoma's pain did not ease by half of what it mended")
-	TEST_ASSERT(patient.rogue_pain_hud_dirty, "The heart was not told the pain eased")
-	bruise.rogue_heal_wound(bruise.rogue_health)
-	TEST_ASSERT(QDELETED(bruise), "A hematoma mended whole did not close")
-	patient.apply_damage(15, BRUTE, arm, sharpness = SHARP_EDGED)
-	var/datum/wound/rogue/dynamic/slash/slash = arm.get_wound_type(/datum/wound/rogue/dynamic/slash)
-	TEST_ASSERT(slash, "A cut did not open a slash")
-	var/bleed = slash.rogue_bleed()
-	slash.handle_process(SSMOBS_DT)
-	TEST_ASSERT(slash.rogue_bleed() < bleed, "A slash did not clot")
+	patient.apply_damage(15, BRUTE, arm, wound_bonus = 100, sharpness = SHARP_EDGED)
+	patient.apply_damage(15, BRUTE, arm, wound_bonus = 100, sharpness = SHARP_POINTY)
+	patient.apply_damage(15, BRUTE, arm, wound_bonus = 100)
+	patient.apply_damage(15, BURN, arm, wound_bonus = 100)
+	TEST_ASSERT_EQUAL(length(arm.wounds), 0, "A blow rolled a TG wound on a medieval body")
 
-/// The pain of TG's wounds and of a stump eases by half of what is mended (Ratwood heal_wound()).
+/// A TG wound asked for on a medieval body becomes the crit of its kind: a broken bone numbs and slows, a dislocation slows,
+/// a critical cut tears the artery and bleeds; force_wound_upwards() is turned too.
+/datum/unit_test/rogue_wounds/tg_translation
+
+/datum/unit_test/rogue_wounds/tg_translation/Run()
+	var/mob/living/carbon/human/patient = make_patient()
+	var/obj/item/bodypart/arm = patient.get_bodypart(BODY_ZONE_L_ARM)
+	var/datum/wound/rogue/fracture/fracture = patient.cause_wound_of_type_and_severity(WOUND_BLUNT, arm, WOUND_SEVERITY_SEVERE)
+	TEST_ASSERT(istype(fracture), "A severe blunt wound did not break the bone")
+	TEST_ASSERT_NULL(arm.get_wound_type(/datum/wound/blunt/bone), "A severe blunt wound was still TG's")
+	TEST_ASSERT(HAS_TRAIT(arm, TRAIT_PARALYSIS), "A broken arm is not numbed")
+	TEST_ASSERT(arm.rogue_brittle(), "A broken arm is not brittle")
+	TEST_ASSERT(fracture.rogue_bleed() > 0, "A fresh break does not bleed")
+	var/obj/item/bodypart/leg = patient.get_bodypart(BODY_ZONE_R_LEG)
+	var/datum/wound/rogue/dislocation/dislocation = patient.cause_wound_of_type_and_severity(WOUND_BLUNT, leg, WOUND_SEVERITY_MODERATE)
+	TEST_ASSERT(istype(dislocation), "A moderate blunt wound on a leg did not put it out of joint")
+	TEST_ASSERT(patient.has_movespeed_modifier(/datum/movespeed_modifier/rogue_fracture), "A leg out of joint does not slow one")
+	var/obj/item/bodypart/other_arm = patient.get_bodypart(BODY_ZONE_R_ARM)
+	other_arm.force_wound_upwards(/datum/wound/blunt/bone/severe)
+	TEST_ASSERT(other_arm.rogue_has_wound(/datum/wound/rogue/fracture), "force_wound_upwards() did not break the bone as a crit")
+	TEST_ASSERT_NULL(other_arm.get_wound_type(/datum/wound/blunt/bone), "force_wound_upwards() left TG's wound")
+	var/obj/item/bodypart/left_leg = patient.get_bodypart(BODY_ZONE_L_LEG)
+	var/datum/wound/rogue/artery/artery = patient.cause_wound_of_type_and_severity(WOUND_SLASH, left_leg, WOUND_SEVERITY_CRITICAL)
+	TEST_ASSERT(istype(artery), "A critical cut did not tear the artery")
+	TEST_ASSERT(left_leg.rogue_artery_torn(), "The torn artery is whole")
+	TEST_ASSERT(artery.rogue_bleed() > 0, "A torn artery does not bleed")
+	TEST_ASSERT_EQUAL(artery.blood_flow, 0, "A crit bleeds by TG's flow")
+
+/// A crit mends by its health and closes; a set bone bleeds less and mends; a dislocation set back is gone; a leg mended no
+/// longer slows one.
+/datum/unit_test/rogue_wounds/mending
+
+/datum/unit_test/rogue_wounds/mending/Run()
+	var/mob/living/carbon/human/patient = make_patient()
+	var/obj/item/bodypart/leg = patient.get_bodypart(BODY_ZONE_L_LEG)
+	var/datum/wound/rogue/fracture/fracture = leg.rogue_add_wound(/datum/wound/rogue/fracture)
+	TEST_ASSERT(fracture, "Could not break the leg")
+	TEST_ASSERT(fracture.rogue_settable(), "A fresh break cannot be set")
+	var/health = fracture.whp
+	TEST_ASSERT(fracture.rogue_set_bone(), "Could not set the bone")
+	TEST_ASSERT(fracture.bone_set && !fracture.rogue_settable(), "A set bone can be set again")
+	TEST_ASSERT(fracture.whp < health, "Setting the bone did not mend it")
+	TEST_ASSERT(fracture.passive_healing > 0, "A set bone does not mend by itself")
+	fracture.rogue_heal_wound(fracture.whp)
+	TEST_ASSERT(QDELETED(fracture), "A break mended whole did not close")
+	TEST_ASSERT(!leg.rogue_brittle(), "A mended leg stays brittle")
+	TEST_ASSERT(!patient.has_movespeed_modifier(/datum/movespeed_modifier/rogue_fracture), "A mended leg still slows one")
+	var/obj/item/bodypart/arm = patient.get_bodypart(BODY_ZONE_L_ARM)
+	var/datum/wound/rogue/dislocation/dislocation = arm.rogue_add_wound(/datum/wound/rogue/dislocation)
+	TEST_ASSERT(dislocation, "Could not put the arm out of joint")
+	TEST_ASSERT(dislocation.rogue_set_bone() && QDELETED(dislocation), "A dislocation set back in place stayed")
+
+/// A needle sews a torn artery stitch by stitch: sewn, the artery is whole and the wound bleeds only its sewn trickle.
+/datum/unit_test/rogue_wounds/sewing
+
+/datum/unit_test/rogue_wounds/sewing/Run()
+	var/mob/living/carbon/human/patient = make_patient()
+	var/mob/living/carbon/human/doctor = allocate(/mob/living/carbon/human/consistent)
+	var/obj/item/bodypart/arm = patient.get_bodypart(BODY_ZONE_L_ARM)
+	var/datum/wound/rogue/artery/artery = patient.cause_wound_of_type_and_severity(WOUND_SLASH, arm, WOUND_SEVERITY_CRITICAL)
+	TEST_ASSERT(istype(artery), "A critical cut did not tear the artery")
+	TEST_ASSERT(artery.rogue_sewable(), "A torn artery cannot be sewn")
+	var/stitches = 0
+	while(!artery.rogue_is_sewn() && stitches < 100)
+		artery.rogue_sew_step(doctor, null)
+		stitches++
+	TEST_ASSERT(artery.rogue_is_sewn(), "The artery was never sewn")
+	TEST_ASSERT(!artery.rogue_sewable(), "A sewn artery can be sewn again")
+	TEST_ASSERT(!arm.rogue_artery_torn(), "The sewn artery is still torn")
+	TEST_ASSERT_EQUAL(artery.rogue_bleed(), artery.sewn_bleed_rate, "A sewn artery does not bleed its sewn trickle")
+
+/// The crit roll: a crushing blunt blow on a beaten, brittle limb breaks it (brittle skips the damage share a break asks,
+/// whatever the numbers); a blow of no damage deals no crit.
+/datum/unit_test/rogue_wounds/crit_roll
+
+/datum/unit_test/rogue_wounds/crit_roll/Run()
+	var/mob/living/carbon/human/patient = make_patient()
+	var/obj/item/bodypart/arm = patient.get_bodypart(BODY_ZONE_L_ARM)
+	arm.receive_damage(arm.max_damage * 0.95, wound_bonus = CANT_WOUND)
+	TEST_ASSERT(arm.rogue_crit_paralysis(10 SECONDS), "Could not numb the arm")
+	TEST_ASSERT(arm.rogue_brittle(), "A numbed arm is not brittle")
+	TEST_ASSERT(patient.rogue_try_crit(BCLASS_BLUNT, 1000, null, BODY_ZONE_L_ARM), "A crushing blow on a beaten arm dealt no crit")
+	TEST_ASSERT(arm.rogue_has_wound(/datum/wound/rogue/fracture), "A crushing blow on a beaten arm did not break it")
+	TEST_ASSERT(!patient.rogue_try_crit(BCLASS_BLUNT, 0, null, BODY_ZONE_L_ARM), "A blow of no damage dealt a crit")
+
+/// Pain relief eases a crit's pain by half of what it is told, never below its sewn pain.
 /datum/unit_test/rogue_wounds/pain_eased
 
 /datum/unit_test/rogue_wounds/pain_eased/Run()
 	var/mob/living/carbon/human/patient = make_patient()
 	var/obj/item/bodypart/arm = patient.get_bodypart(BODY_ZONE_L_ARM)
-	var/datum/wound/fracture = patient.cause_wound_of_type_and_severity(WOUND_BLUNT, arm, WOUND_SEVERITY_SEVERE)
+	var/datum/wound/rogue/fracture/fracture = arm.rogue_add_wound(/datum/wound/rogue/fracture)
 	TEST_ASSERT(fracture, "Could not break the arm")
-	TEST_ASSERT_EQUAL(fracture.rogue_pain(), ROGUE_PAIN_FRACTURE, "A broken bone does not hurt as Ratwood's fracture")
-	fracture.rogue_heal_wound(10)
-	TEST_ASSERT_EQUAL(fracture.rogue_pain(), ROGUE_PAIN_FRACTURE - 5, "Mending 10 of a broken bone did not ease 5 of its pain")
-	patient.rogue_add_stump()
-	var/datum/wound/rogue_stump/stump = locate() in patient.all_wounds
-	TEST_ASSERT(stump, "Could not leave a stump")
-	var/stump_pain = stump.rogue_pain()
-	stump.rogue_heal_wound(10)
-	TEST_ASSERT_EQUAL(stump.rogue_pain(), stump_pain - 5, "Mending 10 of a stump did not ease 5 of its pain")
+	var/pain = fracture.rogue_pain()
+	TEST_ASSERT(pain > 0, "A broken bone does not hurt")
+	fracture.rogue_ease_pain(2)
+	TEST_ASSERT_EQUAL(fracture.rogue_pain(), max(pain - 1, fracture.sewn_woundpain), "Easing 2 of a broken bone's pain did not ease 1")
 
-/// A sewn cut of TG stays as its sewn tail, bleeding and hurting a little; a sewn dynamic wound is gone.
-/datum/unit_test/rogue_wounds/sewing
-
-/datum/unit_test/rogue_wounds/sewing/Run()
-	var/mob/living/carbon/human/patient = make_patient()
-	var/obj/item/bodypart/arm = patient.get_bodypart(BODY_ZONE_L_ARM)
-	var/datum/wound/cut = patient.cause_wound_of_type_and_severity(WOUND_SLASH, arm, WOUND_SEVERITY_CRITICAL)
-	TEST_ASSERT(cut, "Could not open an artery")
-	TEST_ASSERT(cut.rogue_sew_threshold() > 0, "An opened artery cannot be sewn")
-	cut.rogue_sew_done()
-	TEST_ASSERT(QDELETED(cut), "The sewn artery stayed as it was")
-	var/datum/wound/rogue/sewn/sewn = arm.get_wound_type(/datum/wound/rogue/sewn)
-	TEST_ASSERT(sewn, "A sewn artery left no sewn wound")
-	TEST_ASSERT_EQUAL(sewn.rogue_pain(), rogue_value("sewn_artery_pain"), "A sewn artery does not hurt as Ratwood's")
-	TEST_ASSERT(abs(sewn.rogue_bleed() - rogue_value("sewn_artery_bleed")) < 0.001, "A sewn artery does not bleed as Ratwood's")
-	TEST_ASSERT(sewn.rogue_health > 0 && sewn.rogue_health <= rogue_value("sewn_artery_health"), "A sewn artery has more to mend than Ratwood's")
-	TEST_ASSERT_EQUAL(sewn.rogue_sew_threshold(), 0, "A sewn wound can be sewn again")
-	sewn.rogue_heal_wound(sewn.rogue_health)
-	TEST_ASSERT(QDELETED(sewn), "A sewn artery mended whole did not close")
-	patient.apply_damage(15, BRUTE, arm, sharpness = SHARP_EDGED)
-	var/datum/wound/rogue/dynamic/slash/slash = arm.get_wound_type(/datum/wound/rogue/dynamic/slash)
-	TEST_ASSERT(slash?.rogue_sew_threshold() > 0, "A slash cannot be sewn")
-	var/flow = slash.blood_flow
-	slash.rogue_stitch(0.1)
-	TEST_ASSERT(slash.blood_flow < flow, "A stitch did not stem the slash")
-	slash.rogue_sew_done()
-	TEST_ASSERT(QDELETED(slash), "A sewn slash did not close")
-
-/// The bandage shows on the body, and a new bleeding wound under it soaks through it.
+/// The bandage shows on the body and comes off with the cloth.
 /datum/unit_test/rogue_wounds/bandage
 
 /datum/unit_test/rogue_wounds/bandage/Run()
@@ -148,24 +157,21 @@
 		if(overlay.icon_state == "l_arm_b")
 			drawn = TRUE
 	TEST_ASSERT(drawn, "The bandage is not drawn on the arm")
-	patient.apply_damage(15, BRUTE, arm, sharpness = SHARP_EDGED)
-	TEST_ASSERT(cloth.rogue_soaked, "A new cut under the bandage did not soak through it")
 	cloth.forceMove(get_turf(patient))
 	TEST_ASSERT_NULL(arm.rogue_bandage, "The bandage taken off is still on the arm")
 
-/// Sleep mends the wounds of a limb that does not bleed.
+/// Sleep mends the crits of a limb that does not bleed.
 /datum/unit_test/rogue_wounds/sleep
 
 /datum/unit_test/rogue_wounds/sleep/Run()
 	var/mob/living/carbon/human/patient = make_patient()
 	var/obj/item/bodypart/arm = patient.get_bodypart(BODY_ZONE_L_ARM)
-	patient.apply_damage(10, BRUTE, arm)
-	var/datum/wound/rogue/dynamic/bruise/bruise = arm.get_wound_type(/datum/wound/rogue/dynamic/bruise)
-	TEST_ASSERT(bruise, "A blunt blow did not leave a hematoma")
-	var/health = bruise.rogue_health
+	var/datum/wound/rogue/dislocation/dislocation = arm.rogue_add_wound(/datum/wound/rogue/dislocation)
+	TEST_ASSERT(dislocation, "Could not put the arm out of joint")
+	var/health = dislocation.whp
 	var/datum/component/rogue_sleeper/sleeper = patient.AddComponent(/datum/component/rogue_sleeper)
 	sleeper.sleep_heal(patient, SSMOBS_DT)
-	TEST_ASSERT(QDELETED(bruise) || bruise.rogue_health < health, "Sleep did not mend the hematoma")
+	TEST_ASSERT(QDELETED(dislocation) || dislocation.whp < health, "Sleep did not mend the dislocation")
 
 /// A leech draws toxins out and drinks blood until it is full, then drops off.
 /datum/unit_test/rogue_wounds/leech
@@ -198,6 +204,25 @@
 	TEST_ASSERT(soakings[/datum/reagent/water/blessed], "Cloth cannot be soaked in blessed water")
 	var/aqua_vitae = text2path("/datum/reagent/consumable/ethanol/aqua_vitae")
 	TEST_ASSERT(!aqua_vitae || soakings[aqua_vitae], "Aqua vitae exists, but cloth cannot be soaked in it")
+
+/// A limb attached again keeps its crit without opening it twice: the pain of the break does not land again, the arm is
+/// numb and brittle again.
+/datum/unit_test/rogue_wounds/reattached_crit
+
+/datum/unit_test/rogue_wounds/reattached_crit/Run()
+	var/mob/living/carbon/human/patient = make_patient()
+	var/obj/item/bodypart/arm = patient.get_bodypart(BODY_ZONE_L_ARM)
+	var/datum/wound/rogue/fracture/fracture = arm.rogue_add_wound(/datum/wound/rogue/fracture)
+	TEST_ASSERT(fracture, "Could not break the arm")
+	arm.rogue_end_crit_paralysis()
+	var/pain = arm.rogue_pain_dam
+	arm.drop_limb()
+	TEST_ASSERT(!arm.rogue_brittle(), "A limb off the body stays brittle by its break")
+	TEST_ASSERT(arm.try_attach_limb(patient), "Could not attach the arm again")
+	TEST_ASSERT(!QDELETED(fracture) && (fracture in arm.wounds), "The break did not come back with the arm")
+	TEST_ASSERT(arm.rogue_pain_dam <= pain, "The break opened again on the arm attached again: its pain landed twice")
+	TEST_ASSERT(arm.bodypart_disabled, "The broken arm attached again is not numb")
+	TEST_ASSERT(arm.rogue_brittle(), "The broken arm attached again is not brittle")
 
 #undef TEST_ASSERT
 #undef TEST_ASSERT_EQUAL

@@ -128,6 +128,7 @@
 			"target_key" = BB_CURRENT_TARGET,
 			"targeting_strategy" = BB_TARGETING_STRATEGY,
 			"hiding_location_key" = BB_CURRENT_TARGET_HIDING_LOCATION,
+			"max_range" = ROGUE_PVE_SIGHT,
 			"min_range" = (shooter ? 0 : 2),
 		))
 	var/list/movement
@@ -236,7 +237,7 @@
 /// TG's shot with Ratwood's check_friendly_fire, and a skirmisher strikes rather than shoots up close.
 /datum/bt_node/ai_behavior/basic_ranged_attack/rogue_pve
 	avoid_friendly_fire = TRUE
-	max_range = ROGUE_PVE_SIGHT
+	// max_range: ROGUE_PVE_SIGHT, given by the mind's tree (rogue_pve_combat()), since the number is read at run time.
 	/// Below this distance it does not shoot.
 	var/min_range = 0
 

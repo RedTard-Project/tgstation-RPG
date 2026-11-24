@@ -370,28 +370,29 @@
 	playsound(src, pick(GLOB.rogue_swing_sounds["bladed_large"]), 100, TRUE, -1)
 	return TRUE
 
-// The blacksteel weapons' choice of a special (Ratwood attack_right() and examine()).
+// The blacksteel weapons' choice of a special (Ratwood attack_right() and examine(); the sets and their order are Azure
+// Peak's special_picks, owner's decision 2026-11-22).
 
 /obj/item/rogueweapon
-	/// Ratwood selection: specials the weapon's own may be swapped for, once.
+	/// Azure Peak special_picks (Ratwood selection): specials the weapon's own may be swapped for, once, in this order.
 	var/list/selection
 	/// The special was chosen already (Ratwood used).
 	var/used = FALSE
 
 /obj/item/rogueweapon/halberd/blacksteel
-	selection = list(/datum/special_intent/polearm_backstep, /datum/special_intent/axe_swing, /datum/special_intent/wave_swing/greatsword)
+	selection = list(/datum/special_intent/polearm_backstep, /datum/special_intent/quarterstaff_sweep, /datum/special_intent/axe_swing, /datum/special_intent/wave_swing/vicious)
 
 /obj/item/rogueweapon/eaglebeak/blacksteel
-	selection = list(/datum/special_intent/polearm_backstep, /datum/special_intent/flail_sweep, /datum/special_intent/ground_smash)
+	selection = list(/datum/special_intent/polearm_backstep, /datum/special_intent/flail_sweep, /datum/special_intent/quarterstaff_sweep, /datum/special_intent/ground_smash)
 
 /obj/item/rogueweapon/greatsword/grenz/flamberge/blacksteel
-	selection = list(/datum/special_intent/wave_swing/greatsword, /datum/special_intent/side_sweep, /datum/special_intent/limbguard)
+	selection = list(/datum/special_intent/wave_swing/greatsword, /datum/special_intent/wave_swing/vicious, /datum/special_intent/side_sweep, /datum/special_intent/limbguard)
 
 /obj/item/rogueweapon/sword/long/blacksteel
-	selection = list(/datum/special_intent/side_sweep, /datum/special_intent/axe_swing, /datum/special_intent/piercing_lunge, /datum/special_intent/polearm_backstep, /datum/special_intent/flail_sweep)
+	selection = list(/datum/special_intent/side_sweep, /datum/special_intent/axe_swing, /datum/special_intent/piercing_lunge, /datum/special_intent/polearm_backstep, /datum/special_intent/limbguard, /datum/special_intent/dagger_dash, /datum/special_intent/flail_sweep)
 
 /obj/item/rogueweapon/sword/rapier/blacksteel
-	selection = list(/datum/special_intent/piercing_lunge, /datum/special_intent/polearm_backstep)
+	selection = list(/datum/special_intent/piercing_lunge, /datum/special_intent/polearm_backstep, /datum/special_intent/dagger_dash, /datum/special_intent/limbguard)
 
 /obj/item/rogueweapon/attack_hand_secondary(mob/user, list/modifiers)
 	. = ..()

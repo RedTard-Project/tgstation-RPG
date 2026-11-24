@@ -5,6 +5,18 @@ GLOBAL_VAR_INIT(rockhill_clock_shift, 0)
 GLOBAL_VAR(rockhill_clock_frozen)
 GLOBAL_LIST_INIT(rockhill_day_names, list("MOON'S DAE", "TIW'S DAE", "WEDDING'S DAE", "THULE'S DAE", "FREYJA'S DAE", "SATURN'S DAE", "SUN'S DAE"))
 
+/// Server setting (ROCKHILL_DAY_RATE in config/redtard/config.txt): how many times faster than real time the clock of a
+/// medieval map runs (50: a day of the realm in about half an hour).
+/datum/config_entry/number/rockhill_day_rate
+	default = 50
+	min_val = 1
+
+/// Server setting (ROCKHILL_DAY_START): the time of day a round starts at, in deciseconds after midnight
+/// (288001: 8:00 and one decisecond).
+/datum/config_entry/number/rockhill_day_start
+	default = 288001
+	min_val = 0
+
 /datum/rockhill_clock_step
 	var/name
 	var/start

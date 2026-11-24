@@ -200,6 +200,15 @@
 			bleeder.rogue_set_bleed(max(bleeder.rogue_clot_floor, bleeder.rogue_bleed() - difference * bonus))
 		else if(!istype(bleeder) && wound.blood_flow > 0)
 			wound.adjust_blood_flow(-wound.blood_flow * bonus)
+	// Block VR1: on a medieval body the pain is the limb's and the blood the injuries' (combat/injuries/). The limb's pain eases
+	// to the same share; each bleeding injury mends that share of the way down to where it stops bleeding.
+	affecting.rogue_remove_pain(affecting.rogue_pain_dam * (1 - rogue_value("faith_persistence_pain_left")))
+	for(var/datum/rogue_injury/injury as anything in affecting.rogue_injuries?.Copy())
+		if(QDELETED(injury) || !injury.is_bleeding())
+			continue
+		var/excess = (injury.damage_per_injury() - injury.bleed_threshold) * injury.amount
+		if(excess > 0)
+			injury.heal_damage(min(excess * bonus, excess))
 
 /// Ratwood tug_of_war "Tug of War" (T0 of Ravox): a chain of Ravox pulls the target toward the caster; it holds firmer the
 /// better its stats are than the caster's, and a stronger caster, the undead and a skilled caster pull farther.

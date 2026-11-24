@@ -1,19 +1,40 @@
-/// The holy symbols (Ratwood clothing/rogueclothes/neck.dm psicross, the porter's 29 amulets): worn or held, one carries the
-/// prayers of the faithful to the patrons it belongs to (faith.dm) and lets miracles that need a holy symbol be called
-/// (miracle.dm). Used in hand, it is prayed with: Give Prayer for a devotee, a whispered prayer for anyone else.
+/// The holy symbols (Ratwood clothing/rogueclothes/neck.dm psicross, the porter's 29 amulets, and Vibelin's psycross the
+/// item porter brought - the Great Hunt's bone amulet among them): worn or held, one carries the prayers of the faithful to
+/// the patrons it belongs to (faith.dm) and lets miracles that need a holy symbol be called (miracle.dm). Used in hand, it
+/// is prayed with: Give Prayer for a devotee, a whispered prayer for anyone else.
 
 /obj/item/clothing/neck/roguetown/psicross/examine(mob/user)
 	. = ..()
+	. += rogue_symbol_examine(type)
+
+/obj/item/clothing/neck/roguetown/psicross/attack_self(mob/user, modifiers)
+	if(rogue_pray_with_symbol(user))
+		return TRUE
+	return ..()
+
+/obj/item/clothing/neck/roguetown/vibelin/psycross/examine(mob/user)
+	. = ..()
+	. += rogue_symbol_examine(type)
+
+/obj/item/clothing/neck/roguetown/vibelin/psycross/attack_self(mob/user, modifiers)
+	if(rogue_pray_with_symbol(user))
+		return TRUE
+	return ..()
+
+/// The line a holy symbol of this type adds to its examine on a medieval map: the patrons whose prayers it carries.
+/proc/rogue_symbol_examine(symbol_type)
+	. = list()
 	if(!rogue_faith_enabled())
 		return
-	var/list/patrons = rogue_symbol_patrons(type)
+	var/list/patrons = rogue_symbol_patrons(symbol_type)
 	if(length(patrons))
 		. += span_info("A holy symbol of [english_list(patrons)]. Worn or held, it carries a prayer to them.")
 
-/obj/item/clothing/neck/roguetown/psicross/attack_self(mob/user, modifiers)
+/// A holy symbol used in hand on a medieval map: its holder prays, if they follow a patron. TRUE if the prayer was begun.
+/proc/rogue_pray_with_symbol(mob/user)
 	var/mob/living/carbon/human/believer = user
 	if(!rogue_faith_enabled() || !istype(believer) || !believer.rogue_patron)
-		return ..()
+		return FALSE
 	if(believer.rogue_devotion)
 		INVOKE_ASYNC(believer.rogue_devotion, TYPE_PROC_REF(/datum/rogue_devotion, pray))
 	else

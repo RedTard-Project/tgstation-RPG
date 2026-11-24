@@ -13,7 +13,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/alchemy_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/alchemy_righthand.dmi'
 	inhand_icon_state = null
@@ -31,7 +30,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -202,7 +200,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/alchemy_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/alchemy_righthand.dmi'
 	inhand_icon_state = null
@@ -220,7 +217,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/alchemy_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/alchemy_righthand.dmi'
 	inhand_icon_state = null
@@ -238,7 +234,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/alchemy_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/alchemy_righthand.dmi'
 	inhand_icon_state = null
@@ -256,7 +251,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/alchemy_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/alchemy_righthand.dmi'
 	inhand_icon_state = null
@@ -274,7 +268,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/alchemy_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/alchemy_righthand.dmi'
 	inhand_icon_state = null
@@ -297,7 +290,6 @@
 	muteinmouth = FALSE
 	spitoutmouth = FALSE
 	sellprice = 4
-	integrity_failure = 0
 	worn_icon_state = "azurosa"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_objects_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_objects_righthand.dmi'
@@ -317,7 +309,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sellprice = 8
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/alchemy_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/alchemy_righthand.dmi'
 	inhand_icon_state = null
@@ -551,7 +542,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/alchemy_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/alchemy_righthand.dmi'
 	inhand_icon_state = null
@@ -570,7 +560,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/alchemy_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/alchemy_righthand.dmi'
 	inhand_icon_state = null
@@ -607,7 +596,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -627,7 +615,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -646,7 +633,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	firefuel = 30 SECONDS
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -667,7 +653,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -690,7 +675,6 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/book/rogue/lamplighter
@@ -708,7 +692,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -732,7 +715,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -755,7 +737,6 @@
 	rogue_grid_height = 32
 	associated_skill = /datum/attribute/skill/misc/reading
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -775,7 +756,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -796,7 +776,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -816,7 +795,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_objects_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_objects_righthand.dmi'
 	inhand_icon_state = null
@@ -834,7 +812,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_righthand.dmi'
 	inhand_icon_state = null
@@ -852,7 +829,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_righthand.dmi'
 	inhand_icon_state = null
@@ -876,7 +852,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/carpet
@@ -890,7 +865,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/natural_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/natural_righthand.dmi'
 	inhand_icon_state = null
@@ -945,7 +919,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/structure_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/structure_righthand.dmi'
 	inhand_icon_state = null
@@ -1004,7 +977,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/carvedwood_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/carvedwood_righthand.dmi'
 	inhand_icon_state = null
@@ -1536,7 +1508,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -1580,7 +1551,6 @@
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	possible_item_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
 	gripped_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/chairs_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/chairs_righthand.dmi'
 	inhand_icon_state = null
@@ -1603,7 +1573,6 @@
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	possible_item_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
 	gripped_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/chairs_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/chairs_righthand.dmi'
 	inhand_icon_state = null
@@ -1626,7 +1595,6 @@
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	possible_item_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
 	gripped_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/chairs_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/chairs_righthand.dmi'
 	inhand_icon_state = null
@@ -1648,7 +1616,6 @@
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	possible_item_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
 	gripped_intents = list(/datum/intent/mace/strike/wood, /datum/intent/mace/smash/wood)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/structure_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/structure_righthand.dmi'
 	inhand_icon_state = null
@@ -1667,7 +1634,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -1693,7 +1659,6 @@
 	associated_skill = /datum/attribute/skill/craft/cooking
 	possible_item_intents = list(/datum/intent/mace/strike/pan)
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/pan_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/pan_righthand.dmi'
 	inhand_icon_state = null
@@ -1721,7 +1686,6 @@
 	associated_skill = /datum/attribute/skill/craft/cooking
 	possible_item_intents = list(/datum/intent/mace/strike/pan)
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/pan_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/pan_righthand.dmi'
 	inhand_icon_state = null
@@ -1748,7 +1712,6 @@
 	associated_skill = /datum/attribute/skill/craft/cooking
 	possible_item_intents = list(/datum/intent/hit, /datum/intent/mace/smash/wood)
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/pan_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/pan_righthand.dmi'
 	inhand_icon_state = null
@@ -1774,7 +1737,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/debug/vheslynevent
@@ -1788,7 +1750,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -1809,7 +1770,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cards/playingcards_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cards/playingcards_righthand.dmi'
 	inhand_icon_state = null
@@ -1903,7 +1863,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sellprice = 100
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/doppel_heart_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/doppel_heart_righthand.dmi'
 	inhand_icon_state = null
@@ -1924,7 +1883,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hand/draw)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -1945,7 +1903,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hand/draw)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -1966,7 +1923,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hand/draw)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -1987,7 +1943,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hand/draw)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -2008,7 +1963,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hand/draw)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -2073,7 +2027,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/explosive/fused
@@ -2396,7 +2349,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	integrity_failure = 0
 	worn_icon_state = "briar_crown"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -2419,7 +2371,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	integrity_failure = 0
 	worn_icon_state = "fyritius_crown"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_righthand.dmi'
@@ -2442,7 +2393,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 32
-	integrity_failure = 0
 	worn_icon_state = "azurosa_crown"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_objects_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_objects_righthand.dmi'
@@ -2464,7 +2414,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 64
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/gadgets_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/gadgets_righthand.dmi'
 	inhand_icon_state = null
@@ -2485,7 +2434,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 64
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/gadgets_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/gadgets_righthand.dmi'
 	inhand_icon_state = null
@@ -2506,7 +2454,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/valuable_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/valuable_righthand.dmi'
 	inhand_icon_state = null
@@ -3668,7 +3615,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	smeltresult = /obj/item/goldslag
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -3687,7 +3633,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -3704,7 +3649,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/produce_righthand.dmi'
 	inhand_icon_state = null
@@ -3721,7 +3665,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/produce_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/produce_righthand.dmi'
 	inhand_icon_state = null
@@ -3739,7 +3682,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -3757,7 +3699,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/books_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/books_righthand.dmi'
 	inhand_icon_state = null
@@ -3780,7 +3721,6 @@
 	possible_item_intents = list(/datum/intent/use, /datum/intent/food)
 	sellprice = 33
 	smeltresult = /obj/item/ingot/aaslag
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -3802,7 +3742,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/food)
 	sellprice = 130
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -3824,7 +3763,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/food)
 	sellprice = 7
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -3847,7 +3785,6 @@
 	possible_item_intents = list(/datum/intent/use, /datum/intent/food)
 	sellprice = 1
 	smeltresult = /obj/item/ingot/iron
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -3870,7 +3807,6 @@
 	possible_item_intents = list(/datum/intent/use, /datum/intent/food)
 	sellprice = 1
 	smeltresult = /obj/item/ingot/iron
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -3893,7 +3829,6 @@
 	possible_item_intents = list(/datum/intent/use, /datum/intent/food)
 	sellprice = 1
 	smeltresult = /obj/item/ingot/iron
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -3916,7 +3851,6 @@
 	possible_item_intents = list(/datum/intent/use, /datum/intent/food)
 	sellprice = 66
 	smeltresult = /obj/item/ingot/iron
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -3942,7 +3876,6 @@
 	possible_item_intents = list(/datum/intent/use, /datum/intent/food)
 	sellprice = 111
 	smeltresult = /obj/item/ingot/iron
-	integrity_failure = 0
 	icon_state = null
 	inhand_icon_state = null
 	rogue_baked_inhand = FALSE
@@ -3962,7 +3895,6 @@
 	possible_item_intents = list(/datum/intent/use, /datum/intent/food)
 	sellprice = 1
 	smeltresult = /obj/item/ingot/iron
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -3984,7 +3916,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/food)
 	sellprice = 3
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -4007,7 +3938,6 @@
 	possible_item_intents = list(/datum/intent/use, /datum/intent/food)
 	sellprice = 30
 	smeltresult = /obj/item/ingot/iron
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -4029,7 +3959,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/food)
 	sellprice = 12
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -4051,7 +3980,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/food)
 	sellprice = 9
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -4073,7 +4001,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/food)
 	sellprice = 555
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -4096,7 +4023,6 @@
 	possible_item_intents = list(/datum/intent/use, /datum/intent/food)
 	sellprice = 444
 	smeltresult = /obj/item/ingot/lithmyc
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -4119,7 +4045,6 @@
 	possible_item_intents = list(/datum/intent/use, /datum/intent/food)
 	sellprice = 111
 	smeltresult = /obj/item/ingot/purifiedaalloy
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -4141,7 +4066,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/food)
 	sellprice = 9
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -4164,7 +4088,6 @@
 	possible_item_intents = list(/datum/intent/use, /datum/intent/food)
 	sellprice = 256
 	smeltresult = /obj/item/ingot/purifiedaalloy
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -4183,7 +4106,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	possible_item_intents = list(/datum/intent/bless)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -4203,8 +4125,6 @@
 	worn_y_dimension = 32
 	wbalance = 1
 	possible_item_intents = list(/datum/intent/use, /datum/intent/dagger/thrust/cutlery)
-	max_blade_int = 40
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/fork_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/fork_righthand.dmi'
 	inhand_icon_state = null
@@ -4225,8 +4145,6 @@
 	worn_y_dimension = 32
 	wbalance = 1
 	possible_item_intents = list(/datum/intent/use, /datum/intent/dagger/thrust/cutlery)
-	max_blade_int = 40
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/spoon_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/spoon_righthand.dmi'
 	inhand_icon_state = null
@@ -4245,7 +4163,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/clothes/stockings_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/clothes/stockings_righthand.dmi'
 	inhand_icon_state = null
@@ -4282,7 +4199,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/clothes/stockings_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/clothes/stockings_righthand.dmi'
 	inhand_icon_state = null
@@ -4319,7 +4235,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/clothes/stockings_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/clothes/stockings_righthand.dmi'
 	inhand_icon_state = null
@@ -4356,7 +4271,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/clothes/stockings_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/clothes/stockings_righthand.dmi'
 	inhand_icon_state = null
@@ -4393,7 +4307,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/clothes/stockings_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/clothes/stockings_righthand.dmi'
 	inhand_icon_state = null
@@ -4430,7 +4343,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/clothes/stockings_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/clothes/stockings_righthand.dmi'
 	inhand_icon_state = null
@@ -4468,7 +4380,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -4488,7 +4399,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -4508,7 +4418,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -4528,7 +4437,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -4551,7 +4459,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/magic/familiar/familiar_vestige
@@ -4585,7 +4492,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/mercmedals_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/clothing/mercmedals_righthand.dmi'
 	inhand_icon_state = null
@@ -4607,7 +4513,6 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/mutation_reagent
@@ -4621,7 +4526,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/alchemy_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/alchemy_righthand.dmi'
 	inhand_icon_state = null
@@ -4641,7 +4545,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/objects_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/objects_righthand.dmi'
 	inhand_icon_state = null
@@ -4680,7 +4583,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/objects_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/objects_righthand.dmi'
 	inhand_icon_state = null
@@ -4722,7 +4624,6 @@
 	rogue_grid_height = 32
 	spitoutmouth = FALSE
 	firefuel = 5 MINUTES
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/natural_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/natural_righthand.dmi'
 	inhand_icon_state = null
@@ -4743,7 +4644,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -4765,7 +4665,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -4787,7 +4686,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -4809,7 +4707,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -4831,7 +4728,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -4853,7 +4749,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -4875,7 +4770,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -4897,7 +4791,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -4919,7 +4812,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -4941,7 +4833,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -4964,7 +4855,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/reagent_containers/glass/bottle/clayamphorabaked
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -4987,7 +4877,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/clothing/neck/roguetown/carved/porcelainamulet
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5010,7 +4899,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/reagent_containers/glass/bottle/claybamanabaked
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5033,7 +4921,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/natural/clay/porcelain/bauble
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5056,7 +4943,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/natural/clay/porcelain/beaver
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5079,7 +4965,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/reagent_containers/glass/bowl/carved/porcelain
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5102,7 +4987,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/natural/clay/porcelain/box
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5125,7 +5009,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/natural/clay/porcelain/bust
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5148,7 +5031,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/natural/clay/porcelain/cameo
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5171,7 +5053,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/reagent_containers/glass/carafe/porcelain
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5194,7 +5075,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/natural/clay/porcelain/carp
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5217,7 +5097,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/natural/clay/porcelain/caryatid
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5240,7 +5119,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/clothing/head/roguetown/circlet/carvedgem/porcelain
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5263,7 +5141,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/natural/clay/porcelain/comb
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5286,7 +5163,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/reagent_containers/glass/cup/carved/porcelain
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5309,7 +5185,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/reagent_containers/glass/cup/carved/porcelainfancy
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5332,7 +5207,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/natural/clay/porcelain/display
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5355,7 +5229,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/natural/clay/porcelain/duck
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5378,7 +5251,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/natural/clay/porcelain/figurine
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5401,7 +5273,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/natural/clay/porcelain/fish
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5424,7 +5295,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/reagent_containers/glass/bottle/clayfootbaked
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5446,7 +5316,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5469,7 +5338,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/natural/clay/porcelain/heart
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5492,7 +5360,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/natural/clay/porcelain/moon
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5515,7 +5382,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/reagent_containers/glass/cup/mug
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
 	inhand_icon_state = null
@@ -5538,7 +5404,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/natural/clay/porcelain/obelisk
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5561,7 +5426,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/natural/clay/porcelain/octopus
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5583,7 +5447,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5606,7 +5469,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/reagent_containers/glass/bucket/pot/porcelain
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5629,7 +5491,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/clothing/ring/porcelain
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5652,7 +5513,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/reagent_containers/glass/bottle/clayskinnybaked
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5674,7 +5534,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5697,7 +5556,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/natural/clay/porcelain/statuette
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5720,7 +5578,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/natural/clay/porcelain/sun
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5743,7 +5600,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/natural/clay/porcelain/tablet
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5766,7 +5622,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/reagent_containers/glass/bottle/claytallbaked
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5789,7 +5644,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/natural/clay/porcelain/turtle
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5812,7 +5666,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	smeltresult = /obj/item/natural/clay/porcelain/urn
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -5854,7 +5707,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	smeltresult = /obj/item/natural/glass
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/natural_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/natural_righthand.dmi'
 	inhand_icon_state = null
@@ -5875,7 +5727,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	sellprice = 25
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/natural_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/natural_righthand.dmi'
 	inhand_icon_state = null
@@ -5896,7 +5747,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	sellprice = 110
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/bounty_heads_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/bounty_heads_righthand.dmi'
 	inhand_icon_state = null
@@ -5917,7 +5767,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	sellprice = 40
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/bounty_heads_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/bounty_heads_righthand.dmi'
 	inhand_icon_state = null
@@ -5938,7 +5787,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	sellprice = 20
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/bounty_heads_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/bounty_heads_righthand.dmi'
 	inhand_icon_state = null
@@ -5959,7 +5807,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	sellprice = 10
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/bounty_heads_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/bounty_heads_righthand.dmi'
 	inhand_icon_state = null
@@ -5980,7 +5827,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	sellprice = 25
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/bounty_heads_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/bounty_heads_righthand.dmi'
 	inhand_icon_state = null
@@ -6001,7 +5847,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	sellprice = 40
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/bounty_heads_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/bounty_heads_righthand.dmi'
 	inhand_icon_state = null
@@ -6022,7 +5867,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	sellprice = 225
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/bounty_heads_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/bounty_heads_righthand.dmi'
 	inhand_icon_state = null
@@ -6043,7 +5887,6 @@
 	rogue_grid_width = 96
 	rogue_grid_height = 96
 	sellprice = 80
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/bounty_heads_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/bounty_heads_righthand.dmi'
 	inhand_icon_state = null
@@ -6064,7 +5907,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	sellprice = 30
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/bounty_heads_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/bounty_heads_righthand.dmi'
 	inhand_icon_state = null
@@ -6086,7 +5928,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	spitoutmouth = FALSE
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/natural_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/natural_righthand.dmi'
 	inhand_icon_state = null
@@ -6109,7 +5950,6 @@
 	rogue_grid_height = 96
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	gripped_intents = list(/datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/helpers/spawnerhelpers_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/helpers/spawnerhelpers_righthand.dmi'
 	inhand_icon_state = null
@@ -6129,7 +5969,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/natural_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/natural_righthand.dmi'
 	inhand_icon_state = null
@@ -6151,7 +5990,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	rogue_coverage = HEAD
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -6172,7 +6010,6 @@
 	worn_y_dimension = 32
 	firefuel = 30 SECONDS
 	rogue_coverage = HEAD
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = "scroll~2"
@@ -6195,7 +6032,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	rogue_coverage = HEAD
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -6216,7 +6052,6 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	integrity_failure = 0
 	icon_state = null
 	inhand_icon_state = null
 
@@ -6230,7 +6065,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/perfume_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/perfume_righthand.dmi'
 	inhand_icon_state = null
@@ -6249,7 +6083,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/icons/mob/sprite_accessory/piercings/rings_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/icons/mob/sprite_accessory/piercings/rings_righthand.dmi'
 	inhand_icon_state = null
@@ -6406,7 +6239,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/ration_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/ration_righthand.dmi'
 	inhand_icon_state = null
@@ -6428,7 +6260,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/alchemy_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/alchemy_righthand.dmi'
 	inhand_icon_state = null
@@ -6456,7 +6287,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/alchemy_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/alchemy_righthand.dmi'
 	inhand_icon_state = null
@@ -6484,7 +6314,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/alchemy_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/alchemy_righthand.dmi'
 	inhand_icon_state = null
@@ -6512,7 +6341,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/bottle_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/bottle_righthand.dmi'
 	inhand_icon_state = null
@@ -6539,7 +6367,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/bottle_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/bottle_righthand.dmi'
 	inhand_icon_state = null
@@ -6566,7 +6393,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/bottle_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/bottle_righthand.dmi'
 	inhand_icon_state = null
@@ -6593,7 +6419,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/bottle_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/bottle_righthand.dmi'
 	inhand_icon_state = null
@@ -6620,7 +6445,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/bottle_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/bottle_righthand.dmi'
 	inhand_icon_state = null
@@ -6647,7 +6471,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/bottle_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/bottle_righthand.dmi'
 	inhand_icon_state = null
@@ -6674,7 +6497,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/bottle_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/bottle_righthand.dmi'
 	inhand_icon_state = null
@@ -6701,7 +6523,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -6728,7 +6549,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -6755,7 +6575,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -6783,7 +6602,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -6811,7 +6629,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -6839,7 +6656,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -6866,7 +6682,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -6893,7 +6708,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -6920,7 +6734,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -6948,7 +6761,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -6976,7 +6788,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/alcohol_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/alcohol_righthand.dmi'
 	inhand_icon_state = null
@@ -7003,7 +6814,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/alcohol_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/alcohol_righthand.dmi'
 	inhand_icon_state = null
@@ -7030,7 +6840,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -7083,7 +6892,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -7110,7 +6918,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -7137,7 +6944,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -7164,7 +6970,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -7191,7 +6996,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -7218,7 +7022,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -7245,7 +7048,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -7274,7 +7076,6 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	gripped_intents = list(/datum/intent/pour)
 	flags_inv = HIDEHAIR
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/pot_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/pot_righthand.dmi'
 	inhand_icon_state = null
@@ -7303,7 +7104,6 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	gripped_intents = list(/datum/intent/pour)
 	flags_inv = HIDEHAIR
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/pot_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/pot_righthand.dmi'
 	inhand_icon_state = null
@@ -7330,7 +7130,6 @@
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	gripped_intents = list(/datum/intent/pour)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/cooking_righthand.dmi'
 	inhand_icon_state = null
@@ -7456,7 +7255,6 @@
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
 	inhand_icon_state = null
@@ -7483,7 +7281,6 @@
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
 	inhand_icon_state = null
@@ -7511,7 +7308,6 @@
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	sellprice = 5
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
 	inhand_icon_state = null
@@ -7537,7 +7333,6 @@
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
 	inhand_icon_state = null
@@ -7564,7 +7359,6 @@
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
 	inhand_icon_state = null
@@ -7641,7 +7435,6 @@
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/cup_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/cup_righthand.dmi'
 	inhand_icon_state = null
@@ -7667,7 +7460,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	sellprice = 1
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/hag/hag_items_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/hag/hag_items_righthand.dmi'
 	inhand_icon_state = null
@@ -7690,7 +7482,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	integrity_failure = 0
 	icon_state = null
 	inhand_icon_state = null
 
@@ -7868,7 +7659,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_corn_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_corn_righthand.dmi'
 	inhand_icon_state = null
@@ -7893,7 +7683,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	can_parry = TRUE
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_music_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_music_righthand.dmi'
 	inhand_icon_state = null
@@ -7915,7 +7704,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	can_parry = TRUE
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_music_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_music_righthand.dmi'
 	inhand_icon_state = null
@@ -7937,7 +7725,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	can_parry = TRUE
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_music_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_music_righthand.dmi'
 	inhand_icon_state = null
@@ -7959,7 +7746,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	can_parry = TRUE
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_music_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_music_righthand.dmi'
 	inhand_icon_state = null
@@ -7979,7 +7765,6 @@
 	worn_y_dimension = 32
 	sellprice = 40
 	static_price = TRUE
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/decoration_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/decoration_righthand.dmi'
 	inhand_icon_state = null
@@ -7999,7 +7784,6 @@
 	worn_y_dimension = 32
 	sellprice = 40
 	static_price = TRUE
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/decoration_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/decoration_righthand.dmi'
 	inhand_icon_state = null
@@ -8019,7 +7803,6 @@
 	worn_y_dimension = 32
 	sellprice = 40
 	static_price = TRUE
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/decoration_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/decoration_righthand.dmi'
 	inhand_icon_state = null
@@ -8040,7 +7823,6 @@
 	worn_y_dimension = 32
 	sellprice = 3
 	static_price = TRUE
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/valuable_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/valuable_righthand.dmi'
 	inhand_icon_state = null
@@ -8060,7 +7842,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	possible_item_intents = list(/datum/intent/use, /datum/intent/food)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/helpers/spawnerhelpers_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/helpers/spawnerhelpers_righthand.dmi'
 	inhand_icon_state = null
@@ -8082,7 +7863,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -8106,7 +7886,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -8176,7 +7955,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -8223,7 +8001,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -8316,7 +8093,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -8340,7 +8116,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -8364,7 +8139,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -8710,7 +8484,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -8734,7 +8507,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -8758,7 +8530,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -8782,7 +8553,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -8806,7 +8576,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -8830,7 +8599,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -8900,7 +8668,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -8924,7 +8691,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -8948,7 +8714,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -8972,7 +8737,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -8996,7 +8760,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -9020,7 +8783,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -9711,7 +9473,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -9735,7 +9496,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -9759,7 +9519,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -9783,7 +9542,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -9807,7 +9565,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -9831,7 +9588,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -9855,7 +9611,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -9879,7 +9634,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -9903,7 +9657,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -9927,7 +9680,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -9951,7 +9703,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -9975,7 +9726,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -9999,7 +9749,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -10115,7 +9864,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -10139,7 +9887,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -10163,7 +9910,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -10187,7 +9933,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -10214,7 +9959,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -10233,7 +9977,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -10257,7 +10000,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/keys_lefthand.dmi'
@@ -10553,7 +10295,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/machines_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/machines_righthand.dmi'
 	inhand_icon_state = null
@@ -10571,7 +10312,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/zadcote_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/zadcote_righthand.dmi'
 	inhand_icon_state = null
@@ -10594,7 +10334,6 @@
 	possible_item_intents = list(/datum/intent/use, /datum/intent/food)
 	sellprice = 100
 	smeltresult = /obj/item/ingot/lithmyc
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/ore_righthand.dmi'
 	inhand_icon_state = null
@@ -10615,7 +10354,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	smeltresult = /obj/item/ingot/aalloy
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/valuable_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/valuable_righthand.dmi'
 	inhand_icon_state = null
@@ -10636,7 +10374,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	smeltresult = /obj/item/ingot/bronze
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/valuable_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/valuable_righthand.dmi'
 	inhand_icon_state = null
@@ -10659,7 +10396,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/rotation_contraption/roller
@@ -10677,7 +10413,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/rotation_contraption/windmill
@@ -10695,7 +10430,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/runicflask
@@ -10713,7 +10447,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	sellprice = 15
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged/runicflask_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged/runicflask_righthand.dmi'
 	inhand_icon_state = null
@@ -10757,7 +10490,6 @@
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hit)
 	sellprice = 100
-	integrity_failure = 0
 	worn_icon_state = "handpin"
 	rogue_female_worn = TRUE
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/special/hand_lefthand.dmi'
@@ -10778,7 +10510,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/hydroponics/seeds_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/hydroponics/seeds_righthand.dmi'
 	inhand_icon_state = null
@@ -10797,7 +10528,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/hydroponics/seeds_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/hydroponics/seeds_righthand.dmi'
 	inhand_icon_state = null
@@ -10816,7 +10546,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_corn_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/raw/raw_corn_righthand.dmi'
 	inhand_icon_state = null
@@ -10835,7 +10564,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items_and_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items_and_weapons_righthand.dmi'
 	inhand_icon_state = null
@@ -10854,7 +10582,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/soaps_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/soaps_righthand.dmi'
 	inhand_icon_state = null
@@ -10873,7 +10600,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/soaps_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/soaps_righthand.dmi'
 	inhand_icon_state = null
@@ -10892,7 +10618,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/soaps_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/soaps_righthand.dmi'
 	inhand_icon_state = null
@@ -10911,7 +10636,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/soaps_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/soaps_righthand.dmi'
 	inhand_icon_state = null
@@ -10930,7 +10654,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/soaps_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/soaps_righthand.dmi'
 	inhand_icon_state = null
@@ -10949,7 +10672,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/soaps_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/soaps_righthand.dmi'
 	inhand_icon_state = null
@@ -10968,7 +10690,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/soaps_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/soaps_righthand.dmi'
 	inhand_icon_state = null
@@ -10987,7 +10708,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/soaps_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/soaps_righthand.dmi'
 	inhand_icon_state = null
@@ -11007,7 +10727,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon_state = "case"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_righthand.dmi'
@@ -11051,7 +10770,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon_state = "beltedpackl"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_righthand.dmi'
@@ -11075,7 +10793,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon_state = "naman_tassetbuttpack"
 	rogue_female_worn = TRUE
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -11100,7 +10817,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon_backr = 'modular_redtard/items_azure/icons/roguetown/clothing/onmob/back_r.dmi'
 	worn_icon_state = "case"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -11125,7 +10841,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon_state = "clothbackpack"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/storage_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/storage_righthand.dmi'
@@ -11150,7 +10865,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon_backr = 'modular_redtard/items_azure/icons/roguetown/clothing/onmob/back_r.dmi'
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/storage_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/storage_righthand.dmi'
@@ -11175,7 +10889,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon_backr = 'modular_redtard/items_azure/icons/roguetown/clothing/onmob/back_r.dmi'
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/storage_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/storage_righthand.dmi'
@@ -11199,7 +10912,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon_backr = 'modular_redtard/items_azure/icons/roguetown/clothing/onmob/back_r.dmi'
 	worn_icon_state = "tailchel"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/storage_lefthand.dmi'
@@ -11226,7 +10938,6 @@
 	wlength = 3
 	associated_skill = /datum/attribute/skill/craft/cooking
 	gripped_intents = list(/datum/intent/use/peel)
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/bakers_peel_lefthand.dmi'
@@ -11250,7 +10961,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 64
-	integrity_failure = 0
 	worn_icon_state = "faulds"
 	rogue_female_worn = TRUE
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/belts_lefthand.dmi'
@@ -11277,7 +10987,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 64
-	integrity_failure = 0
 	worn_icon_state = "battleskirt"
 	rogue_female_worn = TRUE
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/belts_lefthand.dmi'
@@ -11305,7 +11014,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon_state = "cloth"
 	rogue_female_worn = TRUE
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/belts_lefthand.dmi'
@@ -11333,7 +11041,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon_state = "clothsash"
 	rogue_female_worn = TRUE
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/belts_lefthand.dmi'
@@ -11361,7 +11068,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon_state = "leatherbases"
 	rogue_female_worn = TRUE
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -11389,7 +11095,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon_state = "chainbaseb"
 	rogue_female_worn = TRUE
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -11417,7 +11122,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon_state = "plackartb"
 	rogue_female_worn = TRUE
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -11445,7 +11149,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon_state = "furbases"
 	rogue_female_worn = TRUE
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -11473,7 +11176,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon_state = "chainbasei"
 	rogue_female_worn = TRUE
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -11501,7 +11203,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon_state = "plackarti"
 	rogue_female_worn = TRUE
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -11529,7 +11230,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon_state = "plackartleather"
 	rogue_female_worn = TRUE
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -11557,7 +11257,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon_state = "chainbases"
 	rogue_female_worn = TRUE
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -11585,7 +11284,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon_state = "plackarts"
 	rogue_female_worn = TRUE
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -11613,7 +11311,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	integrity_failure = 0
 	worn_icon_state = "irontasset"
 	rogue_female_worn = TRUE
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/belts_lefthand.dmi'
@@ -11641,7 +11338,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	integrity_failure = 0
 	worn_icon_state = "stewardbelt"
 	rogue_female_worn = TRUE
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/belts_lefthand.dmi'
@@ -11670,7 +11366,6 @@
 	rogue_grid_height = 64
 	flags_inv = NONE
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon_state = "silkbelt"
 	rogue_female_worn = TRUE
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/belts_lefthand.dmi'
@@ -11697,7 +11392,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	sellprice = 50
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/belts_lefthand.dmi'
@@ -11725,7 +11419,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	integrity_failure = 0
 	worn_icon_state = "naman_tassetbuttpack"
 	rogue_female_worn = TRUE
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -11753,7 +11446,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon_state = "knife"
 	rogue_female_worn = TRUE
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/belts_lefthand.dmi'
@@ -12106,7 +11798,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon_state = "ulqbelt"
 	rogue_female_worn = TRUE
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -12134,7 +11825,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 64
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon_state = "ulqsusbelt"
 	rogue_female_worn = TRUE
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/clothing/donor_clothes_lefthand.dmi'
@@ -12165,7 +11855,6 @@
 	rogue_grid_height = 64
 	sellprice = 15
 	sewrepair = TRUE
-	integrity_failure = 0
 	equip_delay_self = 50
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -12194,7 +11883,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon_hipl = 'modular_redtard/items_azure/icons/roguetown/clothing/onmob/belt_l.dmi'
 	worn_icon_hipr = 'modular_redtard/items_azure/icons/roguetown/clothing/onmob/belt_r.dmi'
 	worn_icon_state = "pouch"
@@ -12221,7 +11909,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon_hipl = 'modular_redtard/items_azure/icons/roguetown/clothing/onmob/belt_l.dmi'
 	worn_icon_hipr = 'modular_redtard/items_azure/icons/roguetown/clothing/onmob/belt_r.dmi'
 	worn_icon_state = "pouch"
@@ -12248,7 +11935,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon_hipl = 'modular_redtard/items_azure/icons/roguetown/clothing/onmob/belt_l.dmi'
 	worn_icon_hipr = 'modular_redtard/items_azure/icons/roguetown/clothing/onmob/belt_r.dmi'
 	worn_icon_state = "pouch"
@@ -12275,7 +11961,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon_hipl = 'modular_redtard/items_azure/icons/roguetown/clothing/onmob/belt_l.dmi'
 	worn_icon_hipr = 'modular_redtard/items_azure/icons/roguetown/clothing/onmob/belt_r.dmi'
 	worn_icon_state = "pouch"
@@ -12355,7 +12040,6 @@
 	rogue_grid_height = 64
 	sellprice = 50
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon_hipl = 'modular_redtard/items_azure/icons/roguetown/clothing/onmob/belt_l.dmi'
 	worn_icon_hipr = 'modular_redtard/items_azure/icons/roguetown/clothing/onmob/belt_r.dmi'
 	worn_icon_state = "pouch_merchant"
@@ -12382,7 +12066,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon_hipl = 'modular_redtard/items_azure/icons/roguetown/clothing/onmob/belt_l.dmi'
 	worn_icon_hipr = 'modular_redtard/items_azure/icons/roguetown/clothing/onmob/belt_r.dmi'
 	worn_icon_state = "pouch"
@@ -12409,7 +12092,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon_hipl = 'modular_redtard/items_azure/icons/roguetown/clothing/onmob/belt_l.dmi'
 	worn_icon_hipr = 'modular_redtard/items_azure/icons/roguetown/clothing/onmob/belt_r.dmi'
 	worn_icon_state = "pouch"
@@ -12435,7 +12117,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/storage_lefthand.dmi'
@@ -12460,7 +12141,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/storage_lefthand.dmi'
@@ -12490,7 +12170,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon_state = "cbag"
 	storage_type = /datum/storage/rogue_grid/roguetown/sack
@@ -12513,7 +12192,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon_state = "cbag"
 	storage_type = /datum/storage/rogue_grid/roguetown/sack
@@ -12536,7 +12214,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon_state = "cbag"
 	storage_type = /datum/storage/rogue_grid/roguetown/sack
@@ -12559,7 +12236,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon_state = "cbag"
 	storage_type = /datum/storage/rogue_grid/roguetown/sack
@@ -12582,7 +12258,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon_state = "cbag"
 	storage_type = /datum/storage/rogue_grid/roguetown/sack
@@ -12605,7 +12280,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon_state = "cbag"
 	storage_type = /datum/storage/rogue_grid/roguetown/sack
@@ -12628,7 +12302,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon_state = "cbag"
 	storage_type = /datum/storage/rogue_grid/roguetown/sack
@@ -12651,7 +12324,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	flags_inv = HIDEEARS | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon_state = "cbag"
 	storage_type = /datum/storage/rogue_grid/roguetown/sack
@@ -12672,7 +12344,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 32
-	integrity_failure = 0
 	inhand_icon_state = "Picnic basket"
 	storage_type = /datum/storage/rogue_grid/roguetown/basket
 
@@ -12690,7 +12361,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	sellprice = 15
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/misc_righthand.dmi'
 	inhand_icon_state = null
@@ -12711,7 +12381,6 @@
 	worn_y_dimension = 32
 	rogue_grid_width = 64
 	rogue_grid_height = 64
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/gadgets_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/misc/gadgets_righthand.dmi'
 	inhand_icon_state = null
@@ -12730,7 +12399,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/lighting_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/lighting_righthand.dmi'
 	inhand_icon_state = null
@@ -12752,7 +12420,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sewrepair = TRUE
-	integrity_failure = 0
 	equip_delay_self = 50
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -12780,7 +12447,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	icon_state = null
 	inhand_icon_state = null
 	rogue_baked_inhand = FALSE
@@ -12798,7 +12464,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/mob/sprite_accessory/underwear_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/mob/sprite_accessory/underwear_righthand.dmi'
 	inhand_icon_state = null
@@ -12822,7 +12487,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 32
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	icon_state = null
 	inhand_icon_state = null
 	rogue_baked_inhand = FALSE
@@ -12844,7 +12508,6 @@
 	inhand_y_dimension = 64
 	rogue_grid_width = 32
 	rogue_grid_height = 64
-	integrity_failure = 0
 	inhand_icon_state = null
 
 /obj/item/waxputty_used
@@ -12858,7 +12521,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/waxputty_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/waxputty_righthand.dmi'
 	inhand_icon_state = null

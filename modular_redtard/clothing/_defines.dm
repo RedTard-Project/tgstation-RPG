@@ -117,4 +117,4 @@
 #define ROGUE_SUN_GLARE_TICK (2 SECONDS)
 /// Ratwood stressevent/sunlit: +2 stress for a minute, renewed while the sky is overhead.
 #define ROGUE_SUNLIT_MOOD (-2 * ROGUE_STRESS_TO_MOOD)
-#define ROGUE_SUNLIT_MOOD_TIME (1 MINUTES)
+#define ROGUE_SUNLIT_MOOD_TIME rogue_value("sunlit_mood_time")

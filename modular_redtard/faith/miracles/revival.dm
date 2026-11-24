@@ -7,21 +7,12 @@
 	button_icon = ROGUE_MIRACLES_ASTRATA_ICON
 	button_icon_state = "revive"
 	sound = 'modular_redtard/faith/sound/revive.ogg'
-	cooldown_time = 2 MINUTES
-	cast_range = 1
+	value_key = "anastasis"
 	self_castable = FALSE
 	miracle_tier = ROGUE_MIRACLE_TIER_3
-	devotion_cost = 80
-	stamina_cost = 90
 	needs_holy_symbol = TRUE
 	miracle_forks = "Ratwood, Azure Peak, Twilight Axis"
 	miracle_gods = "Astrata T3"
-	/// The prayer before the soul returns (Ratwood chargetime 5 seconds).
-	var/prayer_time = 5 SECONDS
-	/// How far a cross may stand (Ratwood oview(5)).
-	var/cross_range = 5
-	/// Damage of each kind the body is mended down to (TG heal_and_revive()).
-	var/mended_to = 50
 
 /datum/action/cooldown/spell/pointed/rogue_miracle/anastasis/is_valid_target(atom/cast_on)
 	. = ..()
@@ -39,7 +30,7 @@
 	. = ..()
 	if(. & SPELL_CANCEL_CAST)
 		return
-	if(!(locate(/obj/structure/fluff/psycross) in oview(cross_range, owner)))
+	if(!(locate(/obj/structure/fluff/psycross) in oview(rogue_value("faith_anastasis_cross_range"), owner)))
 		to_chat(owner, span_warning("I need a holy cross nearby."))
 		return . | SPELL_CANCEL_CAST
 
@@ -49,7 +40,8 @@
 
 /datum/action/cooldown/spell/pointed/rogue_miracle/anastasis/proc/call_back(mob/living/carbon/human/caster, mob/living/body)
 	caster.visible_message(span_notice("[caster] raises [caster.p_their()] hands over [body], calling upon the gods..."), span_notice("I call upon the gods to return [body] to this world..."))
-	if(!do_after(caster, prayer_time, target = body))
+	// The prayer before the soul returns (Ratwood chargetime 5 seconds).
+	if(!do_after(caster, rogue_value("faith_anastasis_prayer"), target = body))
 		to_chat(caster, span_warning("My prayer was interrupted!"))
 		refund()
 		return
@@ -67,11 +59,12 @@
 		return
 	// The revival lifts the rot, so whether the flesh had begun to rot is read first (Ratwood: "doubly so if having rotted").
 	var/was_rotted = body.has_status_effect(/datum/status_effect/rogue_rotted_corpse)
-	if(!body.heal_and_revive(mended_to))
+	// Damage of each kind the body is mended down to (TG heal_and_revive()).
+	if(!body.heal_and_revive(rogue_value("faith_anastasis_mended")))
 		to_chat(caster, span_warning("Nothing happens."))
 		refund()
 		return
 	body.visible_message(span_notice("[body] is revived by holy light!"), span_green("I awake from the void."))
 	body.emote("gasp")
-	body.set_jitter_if_lower(10 SECONDS)
+	body.set_jitter_if_lower(rogue_value("faith_anastasis_jitter"))
 	rogue_revived(body, caster, was_rotted, type)

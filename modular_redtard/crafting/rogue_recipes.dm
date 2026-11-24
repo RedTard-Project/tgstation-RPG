@@ -198,7 +198,7 @@
 
 /// Medieval maps show Ratwood's recipes and no others, without those behind a locked tech node; every other map keeps TG's.
 /datum/component/personal_crafting/get_visible_recipes(mob/user)
-	var/medieval = rogue_combat_enabled()
+	var/medieval = rogue_medieval_map()
 	. = list()
 	for(var/datum/crafting_recipe/recipe as anything in ..())
 		if(istype(recipe, /datum/crafting_recipe/roguetown) != medieval)

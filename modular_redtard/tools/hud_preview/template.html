@@ -1,0 +1,1307 @@
+<title>Макет ХУДа Рогатауна</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@500;700&family=Alegreya+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: the game's client window (the map with the HUD, the splitter, the right pane of verbs and chat) is the stage
+   on the left, a narrow column of controls stands on the right and drops under the stage on a narrow screen. One dark
+   look by choice: the page judges a HUD that lives on black. */
+:root {
+  color-scheme: dark;
+  --ground: #0b0d0c;
+  --panel: #141816;
+  --raised: #1c211e;
+  --line: #2e342f;
+  --text: #dbd8cc;
+  --muted: #8d948b;
+  --accent: #d79b3c;
+  --accent-ink: #1b1407;
+  --warn: #d0694f;
+  --ok: #8fb47a;
+  --mark: #6f9fd8;
+  --pane: #131313;
+  --pane-raised: #202020;
+  --pane-line: #333333;
+  --pane-text: #cfcfcf;
+  --pane-dim: #7f7f7f;
+  --pane-hot: #6a2b2b;
+  --font-display: "Alegreya SC", Georgia, "Times New Roman", serif;
+  --font-body: "Alegreya Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", Consolas, "Courier New", monospace;
+}
+body {
+  background: var(--ground);
+  color: var(--text);
+  font: 17px/1.45 var(--font-body);
+}
+.page {
+  max-width: 1560px;
+  margin: 0 auto;
+  padding-block: 22px 36px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px 24px;
+}
+.top > div { min-width: 0; }
+h1 {
+  margin: 0;
+  font: 700 34px/1.1 var(--font-display);
+  letter-spacing: 0.02em;
+  text-wrap: balance;
+}
+.lede {
+  margin: 6px 0 0;
+  max-width: 68ch;
+  color: var(--muted);
+}
+.save {
+  max-width: 44ch;
+  padding: 8px 12px;
+  border-left: 3px solid var(--line);
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.35;
+}
+.save[data-kind="ok"] { border-left-color: var(--ok); color: var(--text); }
+.save[data-kind="busy"] { border-left-color: var(--accent); }
+.save[data-kind="bad"] { border-left-color: var(--warn); color: var(--text); }
+
+.work {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 20px;
+  align-items: start;
+}
+@media (max-width: 940px) {
+  .work { grid-template-columns: minmax(0, 1fr); }
+}
+.stage-wrap { min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.stage {
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+.client {
+  position: relative;
+  background: #000;
+  outline: 1px solid var(--line);
+}
+.window {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  background: #000;
+  touch-action: none;
+  cursor: default;
+}
+.handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: var(--pane-line);
+}
+.grip {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 5;
+  width: 16px;
+  margin-left: -8px;
+  cursor: col-resize;
+  touch-action: none;
+}
+.grip:hover, .grip:focus-visible { background: rgba(215, 155, 60, 0.35); outline: 0; }
+.sidepane {
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+  background: var(--pane);
+}
+.sidepane-inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  transform-origin: 0 0;
+  color: var(--pane-text);
+  font: 14px/1.35 Verdana, "Segoe UI", system-ui, sans-serif;
+}
+.sp-buttons { position: relative; flex: none; height: 32px; }
+.sp-buttons span {
+  position: absolute;
+  top: 5px;
+  height: 22px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 1px solid var(--pane-line);
+  background: var(--pane-raised);
+  font-size: 10px;
+  line-height: 20px;
+  text-align: center;
+  white-space: nowrap;
+}
+.sp-buttons .hot { background: var(--pane-hot); }
+.sp-stat {
+  flex: 0 0 40%;
+  min-height: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 10px 12px;
+  border-top: 1px solid var(--pane-line);
+  border-bottom: 4px solid var(--pane-line);
+}
+.sp-tabs { display: flex; flex-wrap: wrap; gap: 6px 20px; color: var(--pane-dim); font-size: 19px; }
+.sp-tabs .on { color: var(--pane-text); box-shadow: 0 3px 0 var(--pane-text); }
+.sp-verbs { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 8px 16px; font-size: 15px; }
+.sp-chat { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; }
+.sp-chat-tabs { flex: none; display: flex; gap: 18px; padding: 8px 12px; border-bottom: 1px solid var(--pane-line); color: var(--pane-dim); font-size: 17px; }
+.sp-chat-tabs .on { color: var(--pane-text); box-shadow: 0 3px 0 var(--pane-text); }
+.sp-lines { flex: 1 1 0; min-height: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; gap: 8px; padding: 10px 12px; font-size: 15px; }
+.sp-lines p { margin: 0; }
+.sp-lines .dim { color: var(--pane-dim); }
+.sp-input { flex: none; display: flex; align-items: center; gap: 10px; height: 30px; padding: 0 12px; border-top: 1px solid var(--pane-line); font-weight: bold; }
+.sp-input i { flex: 1; height: 18px; background: var(--pane-raised); }
+.window:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.screen {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: 0 0;
+}
+.screen > * {
+  position: absolute;
+  image-rendering: pixelated;
+  pointer-events: none;
+}
+.piece { background-repeat: no-repeat; background-size: 100% 100%; }
+.field { z-index: 1; }
+.zone { z-index: 9000; }
+.zone-dark { background: rgba(111, 159, 216, 0.16); box-shadow: inset 0 0 0 1px rgba(111, 159, 216, 0.5); }
+.zone-field { box-shadow: inset 0 0 0 1px var(--accent); }
+.grid {
+  z-index: 9001;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+.alert-slot {
+  z-index: 8000;
+  width: 32px;
+  height: 32px;
+  box-sizing: border-box;
+  border: 1px dashed var(--mark);
+  color: var(--mark);
+  font: 500 9px/30px var(--font-mono);
+  text-align: center;
+}
+.buff-slot { border-color: var(--ok); color: var(--ok); }
+.action-slot { border-color: var(--muted); color: var(--muted); }
+.pick {
+  z-index: 9500;
+  box-shadow: 0 0 0 1px var(--accent), 0 0 0 2px rgba(0, 0, 0, 0.7);
+}
+.stage-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+.stage-note b { color: var(--text); font-weight: 500; }
+
+.side { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  min-width: 0;
+}
+.box h2 {
+  margin: 0;
+  font: 700 19px/1.2 var(--font-display);
+  letter-spacing: 0.04em;
+  color: var(--accent);
+}
+.row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.row > label { color: var(--muted); }
+.field-label { display: flex; flex-direction: column; gap: 4px; color: var(--muted); font-size: 15px; min-width: 0; }
+.check { display: flex; align-items: flex-start; gap: 8px; cursor: pointer; }
+.check input { margin-top: 5px; accent-color: var(--accent); }
+select, input[type="number"], input[type="text"], textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 7px 9px;
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--text);
+  font: inherit;
+}
+input[type="number"] { width: 6.2em; font-family: var(--font-mono); font-size: 15px; font-variant-numeric: tabular-nums; }
+input[type="text"], textarea, .mono { font-family: var(--font-mono); font-size: 14px; }
+textarea { min-height: 7em; resize: vertical; white-space: pre; }
+button {
+  padding: 7px 12px;
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+button:hover:not(:disabled) { border-color: var(--accent); }
+button:disabled { opacity: 0.45; cursor: default; }
+button.main { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 700; }
+select:focus-visible, input:focus-visible, textarea:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.nudge { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.nudge button { padding: 6px 0; font-family: var(--font-mono); }
+.facts { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 12px; margin: 0; font-size: 15px; }
+.facts dt { color: var(--muted); }
+.facts dd { margin: 0; overflow-wrap: anywhere; }
+.hint { margin: 0; color: var(--muted); font-size: 15px; }
+.hint.bad { color: var(--warn); }
+.changes { display: flex; flex-direction: column; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.changes li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 8px; align-items: start; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+.changes li:last-child { border-bottom: 0; padding-bottom: 0; }
+.changes .what { grid-column: 1; }
+.changes .how { grid-column: 1; color: var(--muted); overflow-wrap: anywhere; }
+.changes .how b { color: var(--text); font-weight: 500; }
+.changes button { grid-column: 2; grid-row: 1 / span 2; padding: 4px 9px; }
+</style>
+
+<div class="page">
+  <header class="top">
+    <div>
+      <h1>Макет ХУДа</h1>
+      <p class="lede">Окно игры, собранное из раскладки в коде модуля: карта с ХУДом и правая панель с вербами и чатом. Элементы ХУДа можно двигать мышью или стрелками: правки сохраняются сами, а код от них не меняется — в него их переносят отдельно.</p>
+    </div>
+    <div class="save" id="saveState" role="status" aria-live="polite" data-kind="busy">Подключаю хранилище правок…</div>
+  </header>
+
+  <main class="work">
+    <section class="stage-wrap" aria-label="Окно игры">
+      <div class="stage" id="stage">
+        <div class="client" id="client">
+          <div class="window" id="window" tabindex="0" aria-label="Окно карты: щёлкните по элементу, чтобы выбрать его, тяните, чтобы сдвинуть">
+            <div class="screen" id="screen"></div>
+          </div>
+          <div class="handle" id="handle"></div>
+          <div class="grip" id="grip" role="separator" aria-orientation="vertical" tabindex="0" aria-label="Граница карты и правой панели: тяните или двигайте стрелками влево и вправо"></div>
+          <div class="sidepane" id="sidepane" aria-hidden="true">
+            <div class="sidepane-inner" id="sideInner">
+              <div class="sp-buttons">
+                <span style="left:0;width:14.4%">Menu</span>
+                <span style="left:15%;width:13.4%">Hotkeys</span>
+                <span style="left:29%;width:13.4%">Emotes</span>
+                <span style="left:43%;width:13.4%">Fullscreen</span>
+                <span class="hot" style="left:57%;width:13.4%">Reconnect</span>
+                <span style="left:85%;width:14%">Toggle Stat Panel</span>
+              </div>
+              <div class="sp-stat">
+                <div class="sp-tabs"><span>Status</span><span class="on">IC</span><span>OOC</span><span>Rogue Systems</span></div>
+                <div class="sp-verbs">
+                  <span>Activate Held Object</span><span>Drop</span><span>Examine</span><span>Give</span>
+                  <span>Look Down</span><span>Look Up</span><span>Me</span><span>Point To</span>
+                  <span>Pull</span><span>Resist</span><span>Rest</span><span>Say</span>
+                  <span>Sleep</span><span>Stop Pulling</span><span>Subtle</span><span>Toggle Combat Mode</span>
+                  <span>Toggle Throw Mode</span><span>Whisper</span>
+                </div>
+              </div>
+              <div class="sp-chat">
+                <div class="sp-chat-tabs"><span class="on">Main</span><span>+</span></div>
+                <div class="sp-lines">
+                  <p class="dim">Панель вербов и чат показаны условно: важна их ширина.</p>
+                  <p>Вы осматриваетесь.</p>
+                  <p>Где-то рядом скрипит дверь.</p>
+                </div>
+                <div class="sp-input"><span>Say</span><i></i><span>Say</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="stage-note" id="stageNote"></p>
+    </section>
+
+    <aside class="side">
+      <section class="box" aria-labelledby="hWindow">
+        <h2 id="hWindow">Окно игры</h2>
+        <label class="field-label" for="preset">Окно клиента
+          <select id="preset">
+            <option value="2000x1164@1232">Как на вашем скриншоте: 2000 × 1164</option>
+            <option value="1920x1009@fit">Full HD, окно развёрнуто: 1920 × 1009</option>
+            <option value="1920x1080@fit">Full HD, полный экран: 1920 × 1080</option>
+            <option value="2560x1369@fit">2560 × 1440, окно развёрнуто: 2560 × 1369</option>
+            <option value="1366x697@fit">Ноутбук 1366 × 768: 1366 × 697</option>
+            <option value="custom">Свой размер</option>
+          </select>
+        </label>
+        <div class="row">
+          <input type="number" id="clientW" min="500" max="8000" step="10" aria-label="Ширина окна клиента, пикселей">
+          <span aria-hidden="true">×</span>
+          <input type="number" id="clientH" min="300" max="6000" step="10" aria-label="Высота окна клиента, пикселей">
+          <span class="hint">пикселей</span>
+        </div>
+        <label class="field-label" for="splitMode">Правая панель: вербы и чат
+          <select id="splitMode">
+            <option value="fit">Как подгоняет ТГ (Fit Viewport)</option>
+            <option value="manual">Граница вручную</option>
+          </select>
+        </label>
+        <div class="row">
+          <label for="mapW">Ширина карты</label>
+          <input type="number" id="mapW" min="200" max="8000" step="10">
+          <span class="hint">пикселей</span>
+        </div>
+        <p class="hint">Границу карты и панели можно тянуть прямо на макете.</p>
+        <label class="check"><input type="checkbox" id="frameOn" checked> <span>Подгонять черноту под окно (настройка ROGUE_HUD_FRAME)</span></label>
+      </section>
+
+      <section class="box" aria-labelledby="hShow">
+        <h2 id="hShow">Что показать</h2>
+        <label class="check"><input type="checkbox" id="showInventory"> <span>Инвентарь раскрыт</span></label>
+        <label class="check"><input type="checkbox" id="showRmb"> <span>Список ПКМ-намерений раскрыт</span></label>
+        <label class="check"><input type="checkbox" id="showDoll" checked> <span>Горгулья</span></label>
+        <label class="check"><input type="checkbox" id="showMana"> <span>Мана (видна только магам)</span></label>
+        <label class="check"><input type="checkbox" id="showAlerts"> <span>Места алертов (1–6), баффов (Б) и кнопок действий ТГ (Д)</span></label>
+        <label class="check"><input type="checkbox" id="showGrid"> <span>Разметка: клетки, поле, чёрные бордюры</span></label>
+        <label class="field-label" for="scene">Сцена под ХУДом
+          <select id="scene">
+            <option value="dark">Тёмное подземелье</option>
+            <option value="light">Светлый день</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="box" aria-labelledby="hPiece">
+        <h2 id="hPiece">Элемент</h2>
+        <label class="field-label" for="pieceSelect">Выбран
+          <select id="pieceSelect"></select>
+        </label>
+        <dl class="facts" id="pieceFacts"></dl>
+        <label class="field-label" for="placeInput">Место (screen_loc)
+          <input type="text" id="placeInput" spellcheck="false" autocomplete="off">
+        </label>
+        <p class="hint" id="placeHint"></p>
+        <div class="nudge" role="group" aria-label="Сдвинуть на пиксель; с Shift — на восемь">
+          <button type="button" id="nudgeLeft" aria-label="Влево">←</button>
+          <button type="button" id="nudgeUp" aria-label="Вверх">↑</button>
+          <button type="button" id="nudgeDown" aria-label="Вниз">↓</button>
+          <button type="button" id="nudgeRight" aria-label="Вправо">→</button>
+        </div>
+        <label class="check"><input type="checkbox" id="linkSame" checked> <span>Двигать вместе всё, что стоит в одном месте</span></label>
+        <button type="button" id="resetPiece">Вернуть как в коде</button>
+      </section>
+
+      <section class="box" aria-labelledby="hChanges">
+        <h2 id="hChanges">Правки</h2>
+        <p class="hint" id="changesHint"></p>
+        <ul class="changes" id="changes"></ul>
+        <textarea id="exportText" readonly hidden aria-label="Правки текстом"></textarea>
+        <div class="row">
+          <button type="button" class="main" id="copyChanges">Скопировать правки</button>
+          <button type="button" id="resetAll">Сбросить все</button>
+        </div>
+      </section>
+    </aside>
+  </main>
+</div>
+
+<script>
+(() => {
+'use strict';
+const HUD = /*HUD_DATA*/null;
+const ICON = HUD.icon;
+const VIEW = { w: HUD.view[0], h: HUD.view[1] };
+const FRAME = HUD.frame;
+const BASE = HUD.defines;
+const STORE_KEY = 'rogue-hud-layout-edits';
+const DOC_PATH = 'layout/edits';
+/** Pixels of the splitter's handle between the map and the right pane, and the least width TG's Fit Viewport leaves the
+    right pane (code/modules/client/verbs/ooc.dm). */
+const HANDLE = 4;
+const SIDE_LEAST = 300;
+const $ = id => document.getElementById(id);
+
+const state = {
+  client: { w: 2000, h: 1164 },
+  split: { mode: 'manual', map: 1232 },
+  ctrl: { w: 1232, h: 1164 },
+  frameOn: true,
+  show: { inventory: false, rmb: false, doll: true, mana: false, alerts: false, grid: false },
+  scene: 'dark',
+  link: true,
+  selected: null,
+  moves: {},
+};
+
+// ---- screen_loc, as BYOND reads it ----
+function parseAxis(text, anchors) {
+  const match = /^([A-Z]+)([+-]\d+)?(?::(-?\d+))?$/.exec(text.trim());
+  if (!match || !anchors.includes(match[1])) return null;
+  return { anchor: match[1], tiles: match[2] ? parseInt(match[2], 10) : 0, px: match[3] ? parseInt(match[3], 10) : 0 };
+}
+function parseLoc(text) {
+  if (typeof text !== 'string') return null;
+  const parts = text.split(',');
+  if (parts.length !== 2) return null;
+  const x = parseAxis(parts[0], ['WEST', 'EAST', 'CENTER']);
+  const y = parseAxis(parts[1], ['SOUTH', 'NORTH', 'CENTER']);
+  return x && y ? { x, y } : null;
+}
+function formatAxis(axis) {
+  return axis.anchor + (axis.tiles ? (axis.tiles > 0 ? '+' : '') + axis.tiles : '') + (axis.px ? ':' + axis.px : '');
+}
+function formatLoc(loc) { return formatAxis(loc.x) + ',' + formatAxis(loc.y); }
+function shifted(text, dx, dy) {
+  const loc = parseLoc(text);
+  if (!loc) return text;
+  loc.x.px += dx;
+  loc.y.px += dy;
+  return formatLoc(loc);
+}
+function foldAxis(axis) {
+  if (Math.abs(axis.px) >= ICON) {
+    const whole = Math.trunc(axis.px / ICON);
+    axis.tiles += whole;
+    axis.px -= whole * ICON;
+  }
+  return axis;
+}
+
+// ---- the frame: fit_frame() of hud/rogue_frame.dm ----
+function fitFrame(width, height, enabled) {
+  let left = 1, right = 0, top = 0, bottom = 1;
+  if (enabled && width >= FRAME.minControl && height >= FRAME.minControl) {
+    const leastColumns = VIEW.w + 1;
+    const leastRows = VIEW.h + 1;
+    const rows = Math.max(leastRows, Math.ceil(leastColumns * height / width - FRAME.overhang));
+    const tile = height / rows;
+    const columns = Math.max(leastColumns, Math.floor(width / tile + FRAME.overhang));
+    const spare = columns - VIEW.w;
+    left = Math.min(Math.ceil(spare / 2), FRAME.maxColumns);
+    right = Math.min(Math.floor(spare / 2), FRAME.maxColumns);
+    const extraRows = Math.min(rows - leastRows, FRAME.maxRows * 2);
+    top = Math.floor(extraRows / 2);
+    bottom = 1 + extraRows - top;
+  }
+  return { left, right, top, bottom };
+}
+const COLUMN = /^WEST-1(?::(-?\d+))?,/;
+const BOTTOM = /,SOUTH-1(?::(-?\d+))?$/;
+/** How the client window is split into the map and the right pane. TG's Fit Viewport makes the map as wide as its height
+    times the shape of the view and leaves the right pane its least width; a player may also drag the splitter. */
+function clientLayout() {
+  const client = state.client;
+  let mapWidth = state.split.mode === 'fit'
+    ? Math.min(Math.floor(client.h * VIEW.w / VIEW.h), client.w - SIDE_LEAST)
+    : state.split.map;
+  mapWidth = Math.max(200, Math.min(mapWidth, client.w - HANDLE - 40));
+  return { mapWidth, sideWidth: client.w - mapWidth - HANDLE };
+}
+function geometry() {
+  const fit = fitFrame(state.ctrl.w, state.ctrl.h, state.frameOn);
+  const cols = VIEW.w + fit.left + fit.right;
+  const rows = VIEW.h + fit.top + fit.bottom;
+  // BYOND stretches the whole screen to fit the control and leaves the rest blank.
+  const tile = Math.min(state.ctrl.w / cols, state.ctrl.h / rows);
+  return { fit, cols, rows, tile, fieldLeft: fit.left * ICON, fieldBottom: fit.bottom * ICON };
+}
+/** Icon pixels from the screen's lower left corner to the lower left corner of an element standing at `text`. */
+function spot(text, geo) {
+  const loc = parseLoc(text);
+  if (!loc) return null;
+  const x = loc.x.anchor === 'WEST' ? 0 : loc.x.anchor === 'EAST' ? VIEW.w - 1 : (VIEW.w - 1) / 2;
+  const y = loc.y.anchor === 'SOUTH' ? 0 : loc.y.anchor === 'NORTH' ? VIEW.h - 1 : (VIEW.h - 1) / 2;
+  return { x: geo.fieldLeft + (x + loc.x.tiles) * ICON + loc.x.px, y: geo.fieldBottom + (y + loc.y.tiles) * ICON + loc.y.px };
+}
+
+// ---- the elements ----
+const cur = name => (name in state.moves ? state.moves[name] : BASE[name]);
+const pieces = HUD.elements.map(element => ({
+  ...element,
+  sprite: HUD.sprites[element.sprite],
+  handle: element.kind === 'frame' ? null : (element.define || element.follows || null),
+  node: null,
+  at: null,
+}));
+const handles = [];
+for (const piece of pieces) {
+  if (piece.define && piece.kind !== 'frame' && !handles.includes(piece.define)) handles.push(piece.define);
+}
+const namesOf = name => pieces.filter(piece => piece.define === name).map(piece => piece.label).join(', ');
+
+function visible(piece) {
+  if (piece.group === 'inventory') return state.show.inventory;
+  if (piece.group === 'rmb') return state.show.rmb;
+  if (piece.group === 'doll') return state.show.doll;
+  if (piece.id === 'HUD_ROGUE_MANA') return state.show.mana;
+  return true;
+}
+function locOf(piece) {
+  if (piece.follows) {
+    const loc = parseLoc(cur(piece.follows));
+    if (!loc) return null;
+    loc.y.px += piece.dy;
+    return formatLoc(loc);
+  }
+  return piece.define ? cur(piece.define) : piece.loc;
+}
+/** Where an element's picture lies: BYOND draws a scaled element (a ring cell) about the middle of its icon. */
+function shapeOf(piece, at) {
+  const scale = piece.scale || 1;
+  const width = piece.sprite.w * scale;
+  const height = piece.sprite.h * scale;
+  return { left: at.x - piece.ox + (piece.sprite.w - width) / 2, bottom: at.y - piece.oy + (piece.sprite.h - height) / 2, width, height };
+}
+/** The box of the drawn part of an element, in icon pixels from the screen's lower left corner. */
+function drawnBox(piece, at) {
+  const sprite = piece.sprite;
+  const shape = shapeOf(piece, at);
+  const scale = piece.scale || 1;
+  return {
+    left: shape.left + sprite.box[0] * scale,
+    right: shape.left + sprite.box[2] * scale,
+    bottom: shape.bottom + (sprite.h - sprite.box[3]) * scale,
+    top: shape.bottom + (sprite.h - sprite.box[1]) * scale,
+  };
+}
+function groupOf(name) {
+  if (!name) return [];
+  if (!state.link) return [name];
+  const place = cur(name);
+  return handles.filter(other => cur(other) === place);
+}
+function zoneOf(text) {
+  const column = COLUMN.test(text);
+  const bottom = BOTTOM.test(text);
+  if (column && bottom) return 'угол: колонка и нижний ряд';
+  if (column) return 'левая колонка — стоит на черноте вплотную к рамке поля';
+  if (bottom) return 'нижний ряд — стоит на черноте вплотную к нижнему краю поля';
+  return 'поле — стоит относительно игрового поля';
+}
+
+// ---- the stage ----
+const screenEl = $('screen');
+const windowEl = $('window');
+const stageEl = $('stage');
+const clientEl = $('client');
+const handleEl = $('handle');
+const gripEl = $('grip');
+const sideEl = $('sidepane');
+const sideInner = $('sideInner');
+const fieldEl = document.createElement('canvas');
+fieldEl.className = 'field';
+screenEl.appendChild(fieldEl);
+for (const piece of pieces) {
+  const node = document.createElement('div');
+  node.className = 'piece';
+  node.style.backgroundImage = 'url(' + piece.sprite.src + ')';
+  node.style.zIndex = String(Math.round(piece.layer * 100));
+  screenEl.appendChild(node);
+  piece.node = node;
+}
+const gridEl = document.createElement('div');
+gridEl.className = 'grid';
+screenEl.appendChild(gridEl);
+const zoneEls = ['zone zone-dark', 'zone zone-dark', 'zone zone-dark', 'zone zone-dark', 'zone zone-field'].map(name => {
+  const node = document.createElement('div');
+  node.className = name;
+  screenEl.appendChild(node);
+  return node;
+});
+/** Places the game fills on the run, drawn as dashed boxes: alerts, buffs, TG's action buttons. */
+function slots(count, kind, letter) {
+  return Array.from({ length: count }, (unused, index) => {
+    const node = document.createElement('div');
+    node.className = 'alert-slot' + (kind ? ' ' + kind : '');
+    node.textContent = letter + (index + 1);
+    screenEl.appendChild(node);
+    return node;
+  });
+}
+const alertEls = slots(HUD.alerts.slots, '', '');
+const buffEls = slots(HUD.buffs.slots, 'buff-slot', 'Б');
+// check_against_view() of hud/rogue_hud_bridges.dm: as many buttons in a row as fit, ten at most as in TG.
+const actionColumns = Math.max(1, Math.min(10, Math.floor((VIEW.w * ICON - HUD.actions.inset - HUD.actions.left - ICON) / (ICON + 2)) + 1));
+const actionEls = slots(actionColumns * HUD.actions.rows, 'action-slot', 'Д');
+const pickEl = document.createElement('div');
+pickEl.className = 'pick';
+screenEl.appendChild(pickEl);
+
+let geo = geometry();
+
+function putBox(node, left, bottom, width, height) {
+  node.hidden = width <= 0 || height <= 0;
+  node.style.left = left + 'px';
+  node.style.bottom = bottom + 'px';
+  node.style.width = width + 'px';
+  node.style.height = height + 'px';
+}
+function hash(x, y) {
+  let n = (x * 374761393 + y * 668265263) >>> 0;
+  n = ((n ^ (n >>> 13)) * 1274126177) >>> 0;
+  return ((n ^ (n >>> 16)) >>> 0) / 4294967295;
+}
+function drawScene() {
+  const width = VIEW.w * ICON;
+  const height = VIEW.h * ICON;
+  fieldEl.width = width;
+  fieldEl.height = height;
+  const pen = fieldEl.getContext('2d');
+  const dark = state.scene === 'dark';
+  const tone = dark ? [44, 47, 50] : [112, 134, 88];
+  for (let ty = 0; ty < VIEW.h; ty++) {
+    for (let tx = 0; tx < VIEW.w; tx++) {
+      const lift = Math.round((hash(tx, ty) - 0.5) * (dark ? 12 : 22));
+      pen.fillStyle = 'rgb(' + (tone[0] + lift) + ',' + (tone[1] + lift) + ',' + (tone[2] + lift) + ')';
+      pen.fillRect(tx * ICON, ty * ICON, ICON, ICON);
+      pen.fillStyle = dark ? 'rgba(0,0,0,0.4)' : 'rgba(0,0,0,0.1)';
+      pen.fillRect(tx * ICON, ty * ICON, ICON, 1);
+      pen.fillRect(tx * ICON, ty * ICON, 1, ICON);
+    }
+  }
+  const cx = Math.floor(VIEW.w / 2) * ICON + ICON / 2;
+  const cy = Math.floor(VIEW.h / 2) * ICON + ICON / 2;
+  if (dark) {
+    const glow = pen.createRadialGradient(cx, cy, ICON, cx, cy, width * 0.62);
+    glow.addColorStop(0, 'rgba(0,0,0,0)');
+    glow.addColorStop(1, 'rgba(0,0,0,0.93)');
+    pen.fillStyle = glow;
+    pen.fillRect(0, 0, width, height);
+  }
+  pen.fillStyle = dark ? '#b7ad96' : '#3a3327';
+  pen.fillRect(cx - 5, cy - 6, 10, 15);
+  pen.beginPath();
+  pen.arc(cx, cy - 10, 4.5, 0, Math.PI * 2);
+  pen.fill();
+}
+function alertPlace(index) {
+  // get_ui_alert_placement() of hud/rogue_hud.dm: a row from the frame's inner top left corner
+  const across = HUD.alerts.inset + (index - 1) * HUD.alerts.step;
+  return 'WEST+' + Math.floor(across / ICON) + ':' + across % ICON + ',NORTH:-' + HUD.alerts.inset;
+}
+function buffPlace(index) {
+  // get_ui_buff_placement() of hud/rogue_hud.dm: the column under the gargoyle
+  const offset = (6 - index) * ICON + 29 - index * 2 - HUD.buffs.drop;
+  const rows = Math.floor(offset / ICON);
+  return HUD.buffs.column + ',CENTER' + (rows < 0 ? '' : '+') + rows + ':' + (offset - rows * ICON);
+}
+function actionPlace(index) {
+  // rogueui_action_place() of hud/rogue_hud_bridges.dm: rows filled left to right, the first one the lowest
+  const column = (index - 1) % actionColumns;
+  const row = Math.floor((index - 1) / actionColumns);
+  const across = HUD.actions.left + column * (ICON + 2);
+  const up = HUD.actions.inset + row * ICON;
+  return 'WEST+' + Math.floor(across / ICON) + ':' + across % ICON + ',SOUTH+' + Math.floor(up / ICON) + ':' + up % ICON;
+}
+
+function render() {
+  const split = clientLayout();
+  state.ctrl = { w: split.mapWidth, h: state.client.h };
+  geo = geometry();
+  const room = stageEl.clientWidth || 320;
+  const tall = Math.min(Math.max(360, window.innerHeight * 0.86), 1100);
+  const css = Math.min(room / state.client.w, tall / state.client.h);
+  clientEl.style.width = Math.round(state.client.w * css) + 'px';
+  clientEl.style.height = Math.round(state.client.h * css) + 'px';
+  windowEl.style.width = state.ctrl.w * css + 'px';
+  windowEl.style.height = state.ctrl.h * css + 'px';
+  handleEl.style.left = state.ctrl.w * css + 'px';
+  handleEl.style.width = Math.max(1, HANDLE * css) + 'px';
+  gripEl.style.left = (state.ctrl.w + HANDLE / 2) * css + 'px';
+  sideEl.style.left = (state.ctrl.w + HANDLE) * css + 'px';
+  sideEl.style.width = split.sideWidth * css + 'px';
+  sideEl.style.height = state.client.h * css + 'px';
+  sideInner.style.width = split.sideWidth + 'px';
+  sideInner.style.height = state.client.h + 'px';
+  sideInner.style.transform = 'scale(' + css + ')';
+  const scale = geo.tile / ICON * css;
+  const offsetX = (state.ctrl.w - geo.cols * geo.tile) / 2 * css;
+  const offsetY = (state.ctrl.h - geo.rows * geo.tile) / 2 * css;
+  screenEl.style.width = geo.cols * ICON + 'px';
+  screenEl.style.height = geo.rows * ICON + 'px';
+  screenEl.style.transform = 'translate(' + offsetX + 'px,' + offsetY + 'px) scale(' + scale + ')';
+
+  const fieldWidth = VIEW.w * ICON;
+  const fieldHeight = VIEW.h * ICON;
+  putBox(fieldEl, geo.fieldLeft, geo.fieldBottom, fieldWidth, fieldHeight);
+  for (const piece of pieces) {
+    piece.at = null;
+    if (!visible(piece)) {
+      piece.node.hidden = true;
+      continue;
+    }
+    if (piece.kind === 'frame') {
+      // The picture is drawn for a field of its own size and is stretched over any other.
+      putBox(piece.node, geo.fieldLeft, geo.fieldBottom, fieldWidth, fieldHeight);
+      continue;
+    }
+    const at = spot(locOf(piece), geo);
+    if (!at) {
+      piece.node.hidden = true;
+      continue;
+    }
+    piece.at = at;
+    const shape = shapeOf(piece, at);
+    putBox(piece.node, shape.left, shape.bottom, shape.width, shape.height);
+  }
+
+  gridEl.hidden = !state.show.grid;
+  const screenWidth = geo.cols * ICON;
+  const screenHeight = geo.rows * ICON;
+  const fieldTop = geo.fieldBottom + fieldHeight;
+  const fieldRight = geo.fieldLeft + fieldWidth;
+  putBox(zoneEls[0], 0, 0, geo.fieldLeft, screenHeight);
+  putBox(zoneEls[1], geo.fieldLeft, 0, fieldWidth, geo.fieldBottom);
+  putBox(zoneEls[2], fieldRight, 0, screenWidth - fieldRight, screenHeight);
+  putBox(zoneEls[3], geo.fieldLeft, fieldTop, fieldWidth, screenHeight - fieldTop);
+  putBox(zoneEls[4], geo.fieldLeft, geo.fieldBottom, fieldWidth, fieldHeight);
+  for (const node of zoneEls) node.hidden = node.hidden || !state.show.grid;
+  for (const [nodes, place] of [[alertEls, alertPlace], [buffEls, buffPlace], [actionEls, actionPlace]]) {
+    nodes.forEach((node, index) => {
+      const at = spot(place(index + 1), geo);
+      putBox(node, at.x, at.y, ICON, ICON);
+      node.hidden = !state.show.alerts;
+    });
+  }
+
+  const picked = groupOf(state.selected);
+  let box = null;
+  for (const piece of pieces) {
+    if (!piece.at || !picked.includes(piece.handle)) continue;
+    const own = drawnBox(piece, piece.at);
+    box = box ? { left: Math.min(box.left, own.left), right: Math.max(box.right, own.right), bottom: Math.min(box.bottom, own.bottom), top: Math.max(box.top, own.top) } : own;
+  }
+  if (box) putBox(pickEl, box.left, box.bottom, box.right - box.left, box.top - box.bottom);
+  else pickEl.hidden = true;
+
+  const fit = geo.fit;
+  const note = $('stageNote');
+  note.textContent = '';
+  const add = (text, strong) => {
+    const node = document.createElement(strong ? 'b' : 'span');
+    node.textContent = text;
+    note.appendChild(node);
+  };
+  add('Окно клиента ' + state.client.w + ' × ' + state.client.h + ': ');
+  add('карта ' + state.ctrl.w + ' × ' + state.ctrl.h, true);
+  add(', правая панель ' + split.sideWidth + ' px (' + Math.round(split.sideWidth / state.client.w * 100) + '% ширины окна). Экран ');
+  add(geo.cols + ' × ' + geo.rows + ' клеток', true);
+  add(': поле ' + VIEW.w + ' × ' + VIEW.h + ', чёрных столбцов слева ' + fit.left + ', справа ' + fit.right + ', чёрных рядов сверху ' + fit.top + ', под полем ' + fit.bottom + '. Клетка в игре ≈ ');
+  add(geo.tile.toFixed(1) + ' px', true);
+  add(', значок увеличен в ' + (geo.tile / ICON).toFixed(2) + ' раза.');
+}
+
+// ---- picking and moving ----
+function pointerSpot(event) {
+  const rect = screenEl.getBoundingClientRect();
+  return {
+    x: (event.clientX - rect.left) / rect.width * geo.cols * ICON,
+    y: (rect.bottom - event.clientY) / rect.height * geo.rows * ICON,
+  };
+}
+function pieceAt(x, y) {
+  let best = null;
+  for (const piece of pieces) {
+    if (!piece.handle || !piece.at) continue;
+    const box = drawnBox(piece, piece.at);
+    if (x >= box.left && x < box.right && y >= box.bottom && y < box.top && (!best || piece.layer >= best.layer)) best = piece;
+  }
+  return best;
+}
+function setPlace(name, text) {
+  if (text === BASE[name]) delete state.moves[name];
+  else state.moves[name] = text;
+}
+/** After a move the place is written tidily: whole tiles go to the tile count, the element stays where it is drawn. */
+function settle(name) {
+  const text = cur(name);
+  const loc = parseLoc(text);
+  if (!loc) return text;
+  foldAxis(loc.x);
+  foldAxis(loc.y);
+  return formatLoc(loc);
+}
+function moveBy(dx, dy) {
+  const names = groupOf(state.selected);
+  if (!names.length) return;
+  for (const name of names) setPlace(name, shifted(cur(name), dx, dy));
+  render();
+  for (const name of names) setPlace(name, settle(name));
+  commit();
+}
+function select(name) {
+  state.selected = name && handles.includes(name) ? name : null;
+  renderPiece();
+  render();
+}
+
+let drag = null;
+windowEl.addEventListener('pointerdown', event => {
+  if (event.button !== 0) return;
+  const at = pointerSpot(event);
+  const hit = pieceAt(at.x, at.y);
+  select(hit ? hit.handle : null);
+  if (!hit) return;
+  const start = {};
+  for (const name of groupOf(state.selected)) start[name] = cur(name);
+  drag = { id: event.pointerId, from: at, start, moved: false };
+  windowEl.setPointerCapture(event.pointerId);
+  event.preventDefault();
+  windowEl.focus({ preventScroll: true });
+});
+windowEl.addEventListener('pointermove', event => {
+  if (!drag || event.pointerId !== drag.id) return;
+  const at = pointerSpot(event);
+  const dx = Math.round(at.x - drag.from.x);
+  const dy = Math.round(at.y - drag.from.y);
+  if (!dx && !dy && !drag.moved) return;
+  drag.moved = true;
+  for (const name of Object.keys(drag.start)) setPlace(name, shifted(drag.start[name], dx, dy));
+  render();
+  renderPiece();
+});
+function endDrag(event) {
+  if (!drag || event.pointerId !== drag.id) return;
+  const names = Object.keys(drag.start);
+  const moved = drag.moved;
+  drag = null;
+  if (!moved) return;
+  for (const name of names) setPlace(name, settle(name));
+  commit();
+}
+windowEl.addEventListener('pointerup', endDrag);
+windowEl.addEventListener('pointercancel', endDrag);
+windowEl.addEventListener('keydown', event => {
+  const step = event.shiftKey ? 8 : 1;
+  const moves = { ArrowLeft: [-step, 0], ArrowRight: [step, 0], ArrowUp: [0, step], ArrowDown: [0, -step] };
+  if (!moves[event.key] || !state.selected) return;
+  event.preventDefault();
+  moveBy(moves[event.key][0], moves[event.key][1]);
+});
+
+// ---- the side column ----
+const pieceSelect = $('pieceSelect');
+{
+  const none = document.createElement('option');
+  none.value = '';
+  none.textContent = 'ничего — щёлкните по элементу';
+  pieceSelect.appendChild(none);
+  for (const name of handles.slice().sort((a, b) => namesOf(a).localeCompare(namesOf(b), 'ru'))) {
+    const option = document.createElement('option');
+    option.value = name;
+    option.textContent = namesOf(name);
+    pieceSelect.appendChild(option);
+  }
+}
+function fact(list, term, value) {
+  const dt = document.createElement('dt');
+  dt.textContent = term;
+  const dd = document.createElement('dd');
+  dd.textContent = value;
+  if (term === 'В коде' || term === 'Имя в коде') dd.className = 'mono';
+  list.append(dt, dd);
+}
+function renderPiece() {
+  const name = state.selected;
+  pieceSelect.value = name || '';
+  const facts = $('pieceFacts');
+  facts.textContent = '';
+  const input = $('placeInput');
+  const hint = $('placeHint');
+  hint.className = 'hint';
+  const controls = [input, $('nudgeLeft'), $('nudgeUp'), $('nudgeDown'), $('nudgeRight'), $('resetPiece')];
+  for (const control of controls) control.disabled = !name;
+  if (!name) {
+    input.value = '';
+    hint.textContent = 'Тяните элемент мышью; выбранный двигают и стрелки клавиатуры (с Shift — по восемь пикселей).';
+    return;
+  }
+  const place = cur(name);
+  const together = groupOf(name).filter(other => other !== name);
+  fact(facts, 'Имя в коде', name);
+  fact(facts, 'В коде', BASE[name]);
+  fact(facts, 'Зона', zoneOf(place));
+  if (together.length) fact(facts, 'Вместе с ним', together.map(namesOf).join('; '));
+  if (document.activeElement !== input) input.value = place;
+  $('resetPiece').disabled = !(name in state.moves);
+  const shown = pieces.some(piece => piece.define === name && piece.at);
+  if (!shown) {
+    hint.textContent = 'Сейчас элемент скрыт: включите его в разделе «Что показать».';
+    return;
+  }
+  const outside = pieces.some(piece => {
+    if (piece.define !== name || !piece.at) return false;
+    const box = drawnBox(piece, piece.at);
+    return box.left < 0 || box.bottom < 0 || box.right > geo.cols * ICON || box.top > geo.rows * ICON;
+  });
+  if (outside) {
+    hint.className = 'hint bad';
+    hint.textContent = 'Элемент выходит за экран: в игре BYOND добавит под него лишний бордюр и уменьшит поле.';
+  } else {
+    hint.textContent = 'Место пишется как в BYOND: якорь, клетки и пиксели, например WEST-1:5,NORTH-2:15.';
+  }
+}
+function exportText() {
+  const names = Object.keys(state.moves).sort();
+  return names.map(name => name + ' = "' + state.moves[name] + '"   // было "' + BASE[name] + '"').join('\n');
+}
+function renderChanges() {
+  const list = $('changes');
+  list.textContent = '';
+  const names = Object.keys(state.moves).sort();
+  for (const name of names) {
+    const item = document.createElement('li');
+    const what = document.createElement('span');
+    what.className = 'what';
+    what.textContent = namesOf(name);
+    const how = document.createElement('span');
+    how.className = 'how mono';
+    how.append(name + ': ' + BASE[name] + ' → ');
+    const now = document.createElement('b');
+    now.textContent = state.moves[name];
+    how.appendChild(now);
+    const undo = document.createElement('button');
+    undo.type = 'button';
+    undo.textContent = 'Вернуть';
+    undo.setAttribute('aria-label', 'Вернуть как в коде: ' + namesOf(name));
+    undo.addEventListener('click', () => {
+      delete state.moves[name];
+      commit();
+    });
+    item.append(what, how, undo);
+    list.appendChild(item);
+  }
+  $('changesHint').textContent = names.length
+    ? 'Сдвинуто мест: ' + names.length + (fileMode
+      ? '. Что и куда сдвинуть, записано в hud_layout_changes.txt рядом с программой.'
+      : '. Скажите Claude «перенеси правки макета в код» — он возьмёт их отсюда.')
+    : 'Пока ничего не сдвинуто: макет совпадает с кодом от ' + HUD.generated + '.';
+  const text = $('exportText');
+  text.hidden = !names.length;
+  text.value = exportText();
+  $('copyChanges').disabled = !names.length;
+  $('resetAll').disabled = !names.length;
+}
+function commit() {
+  touched = true;
+  render();
+  renderPiece();
+  renderChanges();
+  queueSave();
+}
+
+// ---- keeping the edits ----
+let docRef = null;
+let saving = false;
+let unsaved = false;
+let saveTimer = 0;
+const SAVE_TEXT = {
+  local: ['bad', 'Хранилище артефакта недоступно: правки лежат только в этом браузере. Нажмите «Скопировать правки» и пришлите их в чат.'],
+  ready: ['ok', 'Правки сохраняются в артефакте: Claude читает их отсюда.'],
+  file: ['ok', 'Правки записываются в файл hud_layout_changes.txt рядом с программой.'],
+  filed: ['ok', 'Рекомендации записаны в hud_layout_changes.txt рядом с программой.'],
+  nofile: ['bad', 'Программа редактора не отвечает: запустите её снова. Правки пока лежат в этом браузере.'],
+  busy: ['busy', 'Сохраняю правки…'],
+  saved: ['ok', 'Правки сохранены в артефакте.'],
+  slow: ['busy', 'Хранилище правок пока не отвечает; двигать элементы уже можно.'],
+  readonly: ['bad', 'Этому зрителю нельзя сохранять правки в артефакт. Нажмите «Скопировать правки» и пришлите их в чат.'],
+  error: ['bad', 'Правки не сохранились в артефакт. Они остались в этом браузере; скопируйте их кнопкой «Скопировать правки».'],
+};
+function setSave(kind) {
+  const node = $('saveState');
+  node.dataset.kind = SAVE_TEXT[kind][0];
+  node.textContent = SAVE_TEXT[kind][1];
+}
+function adopt(moves) {
+  if (!moves || typeof moves !== 'object') return;
+  for (const name of Object.keys(moves)) {
+    if (handles.includes(name) && parseLoc(moves[name]) && moves[name] !== BASE[name]) state.moves[name] = moves[name];
+  }
+}
+function keepLocal() {
+  try {
+    localStorage.setItem(STORE_KEY, JSON.stringify(state.moves));
+  } catch (error) { /* the page works without browser storage */ }
+}
+function queueSave() {
+  keepLocal();
+  if (!docRef && !fileMode) return;
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(flush, 700);
+}
+async function flush() {
+  if (saving) {
+    unsaved = true;
+    return;
+  }
+  saving = true;
+  setSave('busy');
+  const was = {};
+  for (const name of Object.keys(state.moves)) was[name] = BASE[name];
+  try {
+    if (fileMode) {
+      const answer = await fetch('edits', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(report()) });
+      if (!answer.ok) throw new Error('not written');
+      setSave('filed');
+    } else {
+      await docRef.set({ moves: { ...state.moves }, was, saved: new Date().toISOString(), layout: HUD.generated });
+      setSave('saved');
+    }
+  } catch (error) {
+    setSave(fileMode ? 'nofile' : error && error.code === 'invalid_argument' ? 'readonly' : 'error');
+  }
+  saving = false;
+  if (unsaved) {
+    unsaved = false;
+    flush();
+  }
+}
+/** What the editor program writes its recommendations from: the places, and how far each moved on the screen as it is
+    laid out now. */
+function report() {
+  const shifts = {};
+  for (const name of Object.keys(state.moves)) {
+    const from = spot(BASE[name], geo);
+    const to = spot(state.moves[name], geo);
+    shifts[name] = from && to ? [Math.round(to.x - from.x), Math.round(to.y - from.y)] : null;
+  }
+  return { moves: { ...state.moves }, shifts, client: state.client, map: state.ctrl };
+}
+/** The page is served by the editor program on this computer (hud_editor.py): the edits live in its files. */
+let fileMode = false;
+async function connectFile() {
+  try {
+    const answer = await fetch('edits');
+    if (!answer.ok) throw new Error('no edits');
+    const stored = await answer.json();
+    const mine = { ...state.moves };
+    state.moves = {};
+    adopt(stored.moves);
+    if (touched) Object.assign(state.moves, mine);
+    fileMode = true;
+    setSave('file');
+    render();
+    renderPiece();
+    renderChanges();
+    keepLocal();
+    if (touched) queueSave();
+  } catch (error) {
+    setSave('nofile');
+  }
+}
+async function connect() {
+  if (location.protocol === 'http:' && (location.hostname === '127.0.0.1' || location.hostname === 'localhost')) {
+    await connectFile();
+    return;
+  }
+  const api = window.claude;
+  let db = null;
+  if (api && typeof api.use === 'function') {
+    try {
+      db = await api.use('db');
+    } catch (error) {
+      db = null;
+    }
+  }
+  if (!db) {
+    setSave('local');
+    return;
+  }
+  const slow = setTimeout(() => setSave('slow'), 10000);
+  try {
+    const ref = db.doc(DOC_PATH);
+    const snapshot = await ref.get();
+    clearTimeout(slow);
+    // What was moved here before the store answered stays; the rest comes from the store.
+    const mine = { ...state.moves };
+    const stored = snapshot.exists ? snapshot.data() : null;
+    if (stored && stored.moves && !touched) {
+      state.moves = {};
+      adopt(stored.moves);
+    } else if (stored) {
+      adopt(stored.moves);
+      Object.assign(state.moves, mine);
+    }
+    docRef = ref;
+    setSave('ready');
+    render();
+    renderPiece();
+    renderChanges();
+    keepLocal();
+    if (touched) queueSave();
+  } catch (error) {
+    clearTimeout(slow);
+    setSave('error');
+  }
+}
+/** An element has been moved in this visit: what is on the page is newer than what the store holds. */
+let touched = false;
+
+// ---- controls ----
+function syncSize() {
+  const split = clientLayout();
+  $('clientW').value = state.client.w;
+  $('clientH').value = state.client.h;
+  $('splitMode').value = state.split.mode;
+  $('mapW').value = split.mapWidth;
+  $('mapW').disabled = state.split.mode === 'fit';
+  const key = state.client.w + 'x' + state.client.h + '@' + (state.split.mode === 'fit' ? 'fit' : state.split.map);
+  const preset = $('preset');
+  preset.value = Array.from(preset.options).some(option => option.value === key) ? key : 'custom';
+}
+function refreshWindow() {
+  syncSize();
+  render();
+  renderPiece();
+}
+$('preset').addEventListener('change', event => {
+  const match = /^(\d+)x(\d+)@(fit|\d+)$/.exec(event.target.value);
+  if (match) {
+    state.client = { w: parseInt(match[1], 10), h: parseInt(match[2], 10) };
+    state.split = match[3] === 'fit' ? { mode: 'fit', map: state.split.map } : { mode: 'manual', map: parseInt(match[3], 10) };
+  }
+  refreshWindow();
+});
+for (const id of ['clientW', 'clientH']) {
+  $(id).addEventListener('change', () => {
+    const clamp = (value, least, most) => Math.min(most, Math.max(least, Math.round(Number(value) || 0)));
+    state.client = { w: clamp($('clientW').value, 500, 8000), h: clamp($('clientH').value, 300, 6000) };
+    refreshWindow();
+  });
+}
+$('splitMode').addEventListener('change', event => {
+  // The border stays where it stands when the player takes it into their own hands.
+  state.split = { mode: event.target.value === 'fit' ? 'fit' : 'manual', map: clientLayout().mapWidth };
+  refreshWindow();
+});
+function splitTo(mapWidth) {
+  state.split = { mode: 'manual', map: Math.round(mapWidth) };
+  refreshWindow();
+}
+$('mapW').addEventListener('change', event => splitTo(Number(event.target.value) || 0));
+let splitDrag = null;
+gripEl.addEventListener('pointerdown', event => {
+  if (event.button !== 0) return;
+  splitDrag = event.pointerId;
+  gripEl.setPointerCapture(event.pointerId);
+  event.preventDefault();
+});
+gripEl.addEventListener('pointermove', event => {
+  if (splitDrag !== event.pointerId) return;
+  const rect = clientEl.getBoundingClientRect();
+  splitTo((event.clientX - rect.left) / rect.width * state.client.w - HANDLE / 2);
+});
+function endSplit(event) {
+  if (splitDrag === event.pointerId) splitDrag = null;
+}
+gripEl.addEventListener('pointerup', endSplit);
+gripEl.addEventListener('pointercancel', endSplit);
+gripEl.addEventListener('keydown', event => {
+  if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+  event.preventDefault();
+  const step = event.shiftKey ? 50 : 10;
+  splitTo(clientLayout().mapWidth + (event.key === 'ArrowLeft' ? -step : step));
+});
+$('frameOn').addEventListener('change', event => {
+  state.frameOn = event.target.checked;
+  render();
+  renderPiece();
+});
+const toggles = { showInventory: 'inventory', showRmb: 'rmb', showDoll: 'doll', showMana: 'mana', showAlerts: 'alerts', showGrid: 'grid' };
+for (const id of Object.keys(toggles)) {
+  $(id).addEventListener('change', event => {
+    state.show[toggles[id]] = event.target.checked;
+    render();
+    renderPiece();
+  });
+}
+$('scene').addEventListener('change', event => {
+  state.scene = event.target.value;
+  drawScene();
+});
+$('linkSame').addEventListener('change', event => {
+  state.link = event.target.checked;
+  render();
+  renderPiece();
+});
+pieceSelect.addEventListener('change', event => select(event.target.value || null));
+$('placeInput').addEventListener('change', event => {
+  const name = state.selected;
+  if (!name) return;
+  const text = event.target.value.trim().replace(/\s+/g, '');
+  const hint = $('placeHint');
+  if (!parseLoc(text)) {
+    hint.className = 'hint bad';
+    hint.textContent = 'Не похоже на место BYOND. Пример: CENTER-3:12,SOUTH-1 — якоря WEST, EAST, CENTER и SOUTH, NORTH, CENTER.';
+    return;
+  }
+  setPlace(name, text);
+  event.target.blur();
+  commit();
+});
+const nudges = { nudgeLeft: [-1, 0], nudgeRight: [1, 0], nudgeUp: [0, 1], nudgeDown: [0, -1] };
+for (const id of Object.keys(nudges)) {
+  $(id).addEventListener('click', event => {
+    const step = event.shiftKey ? 8 : 1;
+    moveBy(nudges[id][0] * step, nudges[id][1] * step);
+  });
+}
+$('resetPiece').addEventListener('click', () => {
+  for (const name of groupOf(state.selected)) delete state.moves[name];
+  commit();
+});
+$('resetAll').addEventListener('click', () => {
+  state.moves = {};
+  commit();
+});
+$('copyChanges').addEventListener('click', async event => {
+  const button = event.currentTarget;
+  const text = $('exportText');
+  try {
+    await navigator.clipboard.writeText(exportText());
+    button.textContent = 'Скопировано';
+  } catch (error) {
+    text.hidden = false;
+    text.focus();
+    text.select();
+    button.textContent = 'Выделено — нажмите Ctrl+C';
+  }
+  setTimeout(() => { button.textContent = 'Скопировать правки'; }, 2200);
+});
+
+// ---- start ----
+try {
+  adopt(JSON.parse(localStorage.getItem(STORE_KEY) || 'null'));
+} catch (error) { /* nothing kept in this browser */ }
+syncSize();
+drawScene();
+render();
+renderPiece();
+renderChanges();
+if (typeof ResizeObserver === 'function') new ResizeObserver(() => render()).observe(stageEl);
+else window.addEventListener('resize', render);
+connect();
+})();
+</script>

@@ -22,8 +22,9 @@
 	var/sharp_tool = FALSE
 	var/result
 	var/result_count = 1
-	/// Ratwood short_cooktime or long_cooktime, before the cook's skill.
-	var/time = ROGUE_COOK_SHORT
+	/// Name of the mechanics value (survival.txt) of its time before the cook's skill: Ratwood short_cooktime (cook_short) or
+	/// long_cooktime (cook_long).
+	var/time_key = "cook_short"
 	var/sound = 'modular_redtard/survival/sound/kneading.ogg'
 	var/message
 	/// The tool stays (a rolling pin, a knife); an ingredient is used up.
@@ -48,7 +49,7 @@
 		to_chat(user, span_notice(message))
 	if(sound)
 		playsound(food, sound, 100, TRUE, -1)
-	if(!do_after(user, time / rogue_cook_divisor(user), target = food) || QDELETED(food) || QDELETED(held))
+	if(!do_after(user, rogue_value(time_key) / rogue_cook_divisor(user), target = food) || QDELETED(food) || QDELETED(held))
 		return ITEM_INTERACT_BLOCKING
 	user.rogue_cooking_experience()
 	var/turf/spot = get_turf(food)
@@ -98,7 +99,7 @@ GLOBAL_LIST_INIT(rogue_food_combos, init_rogue_food_combos())
 	base = /obj/item/reagent_containers/food/snacks/rogue/dough
 	tool = /obj/item/reagent_containers/food/snacks/butterslice
 	result = /obj/item/reagent_containers/food/snacks/rogue/butterdough
-	time = ROGUE_COOK_LONG
+	time_key = "cook_long"
 	sound = 'modular_redtard/survival/sound/kneading_alt.ogg'
 	message = "Kneading butter into the dough..."
 
@@ -106,7 +107,7 @@ GLOBAL_LIST_INIT(rogue_food_combos, init_rogue_food_combos())
 	base = /obj/item/reagent_containers/food/snacks/rogue/dough
 	tool = /obj/item/kitchen/rollingpin
 	result = /obj/item/reagent_containers/food/snacks/rogue/flatdough
-	time = ROGUE_COOK_LONG
+	time_key = "cook_long"
 	sound = 'modular_redtard/survival/sound/rollingpin.ogg'
 	message = "Rolling the dough flat and thin..."
 	keep_tool = TRUE
@@ -122,7 +123,7 @@ GLOBAL_LIST_INIT(rogue_food_combos, init_rogue_food_combos())
 	sharp_tool = TRUE
 	result = /obj/item/reagent_containers/food/snacks/rogue/foodbase/hardtack_raw
 	result_count = 2
-	time = ROGUE_COOK_LONG
+	time_key = "cook_long"
 	sound = 'modular_redtard/survival/sound/rollingpin.ogg'
 	message = "Scoring lines into the flatdough..."
 	keep_tool = TRUE
@@ -141,7 +142,7 @@ GLOBAL_LIST_INIT(rogue_food_combos, init_rogue_food_combos())
 	base = /obj/item/reagent_containers/food/snacks/rogue/meat
 	tool = /obj/item/kitchen/rollingpin
 	result = /obj/item/reagent_containers/food/snacks/rogue/foodbase/nitzel
-	time = ROGUE_COOK_LONG
+	time_key = "cook_long"
 	sound = 'modular_redtard/survival/sound/rollingpin.ogg'
 	message = "Tenderizing the meat into a nitzel..."
 	keep_tool = TRUE
@@ -166,7 +167,7 @@ GLOBAL_LIST_INIT(rogue_food_combos, init_rogue_food_combos())
 	base = /obj/item/reagent_containers/food/snacks/fat
 	tool = /obj/item/reagent_containers/food/snacks/rogue/meat/mince
 	result = /obj/item/reagent_containers/food/snacks/rogue/meat/sausage
-	time = ROGUE_COOK_LONG
+	time_key = "cook_long"
 	sound = 'modular_redtard/survival/sound/food_drop.ogg'
 	message = "Stuffing a wiener..."
 

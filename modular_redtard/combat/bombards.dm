@@ -367,7 +367,7 @@ GLOBAL_VAR_INIT(rogue_bombard_shift_y, rand(-ROGUE_BOMBARD_OBFUSCATION, ROGUE_BO
 
 /obj/item/cannonball/explosive/rogue_detonate(turf/target)
 	..()
-	explosion(target, devastation_range = rogue_value("bombard_he_devastation_range"), heavy_impact_range = rogue_value("bombard_he_heavy_range"), light_impact_range = rogue_value("bombard_he_light_range"), flame_range = rogue_value("bombard_he_flame_range"), explosion_cause = src)
+	explosion(target, devastation_range = rogue_value("bombard_he_devastation_range"), heavy_impact_range = rogue_value("bombard_he_heavy_range"), light_impact_range = rogue_value("bombard_he_light_range"), flash_range = rogue_value("bombard_he_flash_range"), explosion_cause = src)
 
 /// Flashes and blinds everyone around (Ratwood flare).
 /obj/item/cannonball/flare/rogue_detonate(turf/target)

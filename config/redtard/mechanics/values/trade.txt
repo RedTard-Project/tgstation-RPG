@@ -634,3 +634,11 @@ treasury_initialize_roll_max = 10
 
 # Lowest roll of rand() in /datum/controller/subsystem/rogue_treasury/Initialize().
 treasury_initialize_roll_min = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list c)
+
+# Coins of one kind in one pile.
+coin_pile_max = 10
+
+# Tonnage of a trade ship whose realm lists no ship types; a ship's cargo grows with its tonnage over this.
+ship_default_tonnage = 10

@@ -3,6 +3,8 @@
 /// is stuck the one who struck holds the target in a hold of its own, and the weapon offers two intents instead of its own:
 /// pull out (no more harm) and twist (a sure crit of the weapon's own kind of harm, then the weapon comes free). A kick or a
 /// shove at either of them breaks the hold, and the weapon stays in the part as an arrow does and comes out the same way.
+/// The one it is stuck in may also wrench free by resisting (owner, 2026-11-22): a roll of their strength against the holder's,
+/// a try every stuck_weapon_break_cooldown, and a failed one costs stamina; freed, they leave the weapon in the part.
 
 /// The blows that may leave a weapon stuck: stabbing and cutting ones. Blunt ones never do.
 GLOBAL_LIST_INIT(rogue_stick_classes, list(BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB, BCLASS_PICK, BCLASS_PIERCE))
@@ -94,6 +96,8 @@ GLOBAL_LIST_INIT(rogue_stuck_pull_intents, list(/datum/intent/rogue_stuck/pull_o
 	var/list/kicked_until
 	var/hold_timer
 	var/next_move_note = 0
+	/// When the victim may next try to wrench free by resisting.
+	var/next_break_try = 0
 
 /datum/rogue_stuck_weapon/New(mob/living/carbon/human/holder, mob/living/carbon/victim, obj/item/weapon, obj/item/bodypart/limb, blade_class, datum/intent/intent)
 	src.holder = holder
@@ -115,6 +119,7 @@ GLOBAL_LIST_INIT(rogue_stuck_pull_intents, list(/datum/intent/rogue_stuck/pull_o
 		RegisterSignal(party, COMSIG_MOB_AFTER_APPLY_DAMAGE, PROC_REF(on_damaged))
 		RegisterSignal(party, COMSIG_LIVING_DISARM_HIT, PROC_REF(on_shoved))
 	RegisterSignal(holder, COMSIG_MOB_STATCHANGE, PROC_REF(on_holder_stat))
+	RegisterSignal(victim, COMSIG_LIVING_RESIST, PROC_REF(on_victim_resist))
 	RegisterSignals(weapon, list(COMSIG_QDELETING), PROC_REF(on_weapon_deleted))
 	RegisterSignal(weapon, COMSIG_ITEM_DROPPED, PROC_REF(on_weapon_dropped))
 	RegisterSignals(weapon, list(COMSIG_ITEM_INTERACTING_WITH_ATOM, COMSIG_ITEM_INTERACTING_WITH_ATOM_SECONDARY), PROC_REF(on_weapon_used))
@@ -132,7 +137,7 @@ GLOBAL_LIST_INIT(rogue_stuck_pull_intents, list(/datum/intent/rogue_stuck/pull_o
 	if(old_holder)
 		UnregisterSignal(old_holder, list(COMSIG_QDELETING, COMSIG_MOVABLE_PRE_MOVE, COMSIG_MOVABLE_MOVED, COMSIG_ROGUE_STRIKE_INCOMING, COMSIG_MOB_AFTER_APPLY_DAMAGE, COMSIG_LIVING_DISARM_HIT, COMSIG_MOB_STATCHANGE))
 	if(victim)
-		UnregisterSignal(victim, list(COMSIG_QDELETING, COMSIG_MOVABLE_PRE_MOVE, COMSIG_MOVABLE_MOVED, COMSIG_ROGUE_STRIKE_INCOMING, COMSIG_MOB_AFTER_APPLY_DAMAGE, COMSIG_LIVING_DISARM_HIT))
+		UnregisterSignal(victim, list(COMSIG_QDELETING, COMSIG_MOVABLE_PRE_MOVE, COMSIG_MOVABLE_MOVED, COMSIG_ROGUE_STRIKE_INCOMING, COMSIG_MOB_AFTER_APPLY_DAMAGE, COMSIG_LIVING_DISARM_HIT, COMSIG_LIVING_RESIST))
 	if(limb)
 		UnregisterSignal(limb, list(COMSIG_BODYPART_REMOVED, COMSIG_QDELETING))
 	if(old_weapon)
@@ -294,6 +299,26 @@ GLOBAL_LIST_INIT(rogue_stuck_pull_intents, list(/datum/intent/rogue_stuck/pull_o
 /datum/rogue_stuck_weapon/proc/on_shoved(mob/living/source, mob/living/attacker, zone, obj/item/used)
 	SIGNAL_HANDLER
 	INVOKE_ASYNC(src, PROC_REF(break_hold), (source == holder ? "is shoved away" : "is shoved free"))
+
+/// The victim resists (TG execute_resist(), before grabs and buckles): while a try is due it is spent on the stuck weapon. The
+/// chance is stuck_weapon_break_base plus stuck_weapon_break_per_stat per point of the victim's strength over the holder's,
+/// within stuck_weapon_break_min and stuck_weapon_break_max; a failed try costs stuck_weapon_break_fail_stamina stamina.
+/datum/rogue_stuck_weapon/proc/on_victim_resist(mob/living/source)
+	SIGNAL_HANDLER
+	if(world.time < next_break_try)
+		return NONE
+	next_break_try = world.time + rogue_value("stuck_weapon_break_cooldown")
+	var/chance = rogue_value("stuck_weapon_break_base") + (victim.rogue_stat(ROGUE_STAT_STRENGTH) - holder.rogue_stat(ROGUE_STAT_STRENGTH)) * rogue_value("stuck_weapon_break_per_stat")
+	chance = clamp(chance, rogue_value("stuck_weapon_break_min"), rogue_value("stuck_weapon_break_max"))
+	if(!prob(chance))
+		victim.adjust_stamina_loss(rogue_value("stuck_weapon_break_fail_stamina"))
+		victim.visible_message(span_warning("[victim] struggles against [weapon] stuck in [victim.p_their()] [limb.plaintext_zone]!"), span_warning("I struggle against [weapon] in my [limb.plaintext_zone]!"), ignored_mobs = holder)
+		to_chat(holder, span_warning("[victim] struggles against my [weapon.name]!"))
+		playsound(victim, 'modular_redtard/combat/sound/bindings/grabstruggle.ogg', 50, TRUE, -1)
+		return COMPONENT_BLOCK_RESIST
+	log_combat(victim, holder, "wrenched free of a stuck weapon", weapon)
+	INVOKE_ASYNC(src, PROC_REF(break_hold), "is wrenched away by [victim]")
+	return COMPONENT_BLOCK_RESIST
 
 /datum/rogue_stuck_weapon/proc/on_holder_stat(mob/living/source, new_stat, old_stat)
 	SIGNAL_HANDLER

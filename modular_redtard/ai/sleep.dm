@@ -14,7 +14,7 @@
 	max_val = 60
 
 /proc/rogue_mob_sleep_enabled()
-	return CONFIG_GET(flag/rogue_mob_sleep) && rogue_combat_enabled()
+	return CONFIG_GET(flag/rogue_mob_sleep) && rogue_medieval_map()
 
 /// A fresh run lives only the awake; a resumed one goes on with the list it was building.
 /datum/controller/subsystem/mobs/fire(resumed = FALSE)

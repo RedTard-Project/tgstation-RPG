@@ -58,7 +58,7 @@
 	dupe_mode = COMPONENT_DUPE_UNIQUE
 	var/datum/weakref/blesser
 	/// Healing every second of the aura a bite brings (Ratwood quality + skill / 5).
-	var/healing = 1
+	var/healing = 0
 	/// A master of the miracles blessed it: it also hastens whoever eats it (Ratwood haste, and the golden hue).
 	var/hastes = FALSE
 
@@ -67,7 +67,7 @@
 		return COMPONENT_INCOMPATIBLE
 	var/obj/item/reagent_containers/food/dish = parent
 	blesser = WEAKREF(caster)
-	healing = ((dish.rogue_faretype || 3) + holy_rank / 5) / 2
+	healing = ((dish.rogue_faretype || rogue_value("faith_blessed_food_fare")) + holy_rank / rogue_value("faith_blessed_food_rank_divisor")) / rogue_value("faith_blessed_food_divisor")
 	hastes = holy_rank >= rogue_value("eora_food_haste_rank")
 	dish.rogue_faretype = max(dish.rogue_faretype, clamp(holy_rank, 1, 5))
 	dish.add_filter(ROGUE_BLESSED_FOOD_FILTER, 1, list("type" = "outline", "color" = holy_rank >= rogue_value("eora_food_haste_rank") ? "#f0b000" : "#ff00ff", "size" = 1))
@@ -94,16 +94,12 @@
 	button_icon = ROGUE_MIRACLES_EORA_ICON
 	button_icon_state = "bread"
 	sound = 'modular_redtard/faith/sound/magnet.ogg'
-	cooldown_time = 90 SECONDS
-	cast_range = 1
+	value_key = "bless_food"
 	self_castable = FALSE
 	miracle_tier = ROGUE_MIRACLE_TIER_1
-	devotion_cost = 25
 	needs_holy_symbol = TRUE
 	miracle_forks = "Ratwood, Azure Peak, Twilight Axis"
 	miracle_gods = "Eora T1"
-	/// Ratwood: the cooldown is six seconds shorter per rank in miracles.
-	var/cooldown_per_rank = 6 SECONDS
 
 /datum/action/cooldown/spell/pointed/rogue_miracle/bless_food/is_valid_target(atom/cast_on)
 	. = ..()
@@ -121,7 +117,8 @@
 	var/mob/living/caster = owner
 	var/rank = caster.rogue_skill_rank(/datum/attribute/skill/magic/holy)
 	cast_on.AddComponent(/datum/component/rogue_blessed_food, caster, rank)
-	cooldown_time = max(initial(cooldown_time) - cooldown_per_rank * rank, 0)
+	// Ratwood: the cooldown is shorter per rank in miracles; its base is the number of the miracle, not initial().
+	cooldown_time = max(rogue_value("miracle_[value_key]_cooldown") - rogue_value("faith_bless_food_cooldown_rank") * rank, 0)
 	to_chat(caster, span_notice("I bless [cast_on], and it glows with holy love!"))
 
 /// Ratwood beasttame "Tame Beast" (acolyte/dendor.dm): Dendor's whisper soothes a beast of a kind that can be tamed; it
@@ -166,9 +163,15 @@
 /// quarter of an hour.
 /datum/status_effect/rogue_nitevision
 	id = "rogue_nitevision"
-	duration = 15 MINUTES
 	status_type = STATUS_EFFECT_REFRESH
 	alert_type = null
+
+/datum/status_effect/rogue_nitevision/on_creation(mob/living/new_owner)
+	duration = rogue_value("faith_nitevision_time")
+	return ..()
+
+/datum/status_effect/rogue_nitevision/refresh(effect)
+	duration = rogue_value("faith_nitevision_time")
 
 /datum/status_effect/rogue_nitevision/on_apply()
 	ADD_TRAIT(owner, TRAIT_NIGHT_VISION, ROGUE_FAITH_TRAIT)
@@ -185,33 +188,30 @@
 	button_icon = ROGUE_MIRACLES_NOC_ICON
 	button_icon_state = "noc_sight"
 	click_to_activate = FALSE
-	cooldown_time = 90 SECONDS
+	value_key = "nitevision"
 	miracle_tier = ROGUE_MIRACLE_TIER_0
-	devotion_cost = 20
 	miracle_forks = "Azure Peak, Twilight Axis"
 	miracle_gods = "Noc T0"
 
 /datum/action/cooldown/spell/pointed/rogue_miracle/nitevision/cast(atom/cast_on)
 	. = ..()
 	owner.visible_message(span_notice("[owner] mutters an incantation and a dim pulse of light radiates out from [owner.p_them()]."))
-	for(var/mob/living/beside in range(1, owner))
+	for(var/mob/living/beside in range(rogue_value("faith_nitevision_reach"), owner))
 		beside.apply_status_effect(/datum/status_effect/rogue_nitevision)
 
 /// Ratwood invisibility/miracle (Azure Peak and Twilight Axis noc/invisibility "Moon Shroud"): the target fades out of sight for
 /// five seconds per rank of the caster in miracles; casting, attacking or being hurt brings them back.
 /datum/status_effect/rogue_moon_shroud
 	id = "rogue_moon_shroud"
-	duration = 5 SECONDS
 	status_type = STATUS_EFFECT_REFRESH
 	alert_type = null
 
 /datum/status_effect/rogue_moon_shroud/on_creation(mob/living/new_owner, shroud_time)
-	if(shroud_time)
-		duration = shroud_time
+	duration = shroud_time || rogue_value("faith_moon_shroud_time")
 	return ..()
 
 /datum/status_effect/rogue_moon_shroud/refresh(effect, shroud_time)
-	duration = max(duration, shroud_time || initial(duration))
+	duration = max(duration, shroud_time || rogue_value("faith_moon_shroud_time"))
 
 /datum/status_effect/rogue_moon_shroud/on_apply()
 	owner.visible_message(span_warning("[owner] starts to fade into thin air!"), span_notice("I start to become invisible!"))
@@ -233,16 +233,11 @@
 	desc = "Make another, or myself, invisible for a while: longer the more skilled I am. Casting, attacking or being hurt ends it."
 	button_icon = ROGUE_MIRACLES_NOC_ICON
 	button_icon_state = "invisibility"
-	cooldown_time = 30 SECONDS
-	cast_range = 3
+	value_key = "moon_shroud"
 	miracle_tier = ROGUE_MIRACLE_TIER_1
-	devotion_cost = 25
-	stamina_cost = 30
 	needs_holy_symbol = TRUE
 	miracle_forks = "Ratwood, Azure Peak, Twilight Axis"
 	miracle_gods = "Noc T1 (Azure Peak and Twilight Axis T2)"
-	/// Invisibility per rank of the caster in miracles (Ratwood 5 seconds), and at least.
-	var/shroud_per_rank = 5 SECONDS
 
 /datum/action/cooldown/spell/pointed/rogue_miracle/moon_shroud/is_valid_target(atom/cast_on)
 	. = ..()
@@ -255,6 +250,6 @@
 	if(cast_on.can_block_magic(MAGIC_RESISTANCE_HOLY))
 		return
 	var/mob/living/caster = owner
-	cast_on.apply_status_effect(/datum/status_effect/rogue_moon_shroud, max(caster.rogue_skill_rank(/datum/attribute/skill/magic/holy), 1) * shroud_per_rank)
+	cast_on.apply_status_effect(/datum/status_effect/rogue_moon_shroud, max(caster.rogue_skill_rank(/datum/attribute/skill/magic/holy), 1) * rogue_value("faith_moon_shroud_time"))
 
 #undef ROGUE_BLESSED_FOOD_FILTER

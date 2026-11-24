@@ -7,7 +7,7 @@
 #define ROGUE_PVE_SKIRMISHER "skirmisher"
 
 /// Tiles a creature sees a foe at to shoot it or to throw at it (TG basic_ranged_attack max_range).
-#define ROGUE_PVE_SIGHT 9
+#define ROGUE_PVE_SIGHT rogue_value("pve_sight")
 
 /// Source of the traits this stage gives.
 #define ROGUE_PVE_TRAIT "rogue_pve"

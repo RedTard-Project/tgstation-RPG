@@ -23,8 +23,6 @@
 	. = ..()
 	add_screen_object(/atom/movable/screen/rogue/placeholder/grain, HUD_ROGUE_GRAIN, group_key = FALSE)
 	add_screen_object(/atom/movable/screen/rogue/placeholder/scannies, HUD_ROGUE_SCANNIES, group_key = FALSE)
-	add_screen_object(/atom/movable/screen/rogue/panel_toggle, HUD_ROGUE_PANEL_TOGGLE, HUD_GROUP_STATIC)
-	add_screen_object(/atom/movable/screen/rogue/panel_strip, HUD_ROGUE_PANEL_STRIP, HUD_GROUP_ROGUE_PANEL)
 
 /datum/hud/rogue/proc/group_shown(group_key)
 	return !(group_key in folded_groups)
@@ -35,6 +33,9 @@
 	return viewer
 
 /datum/hud/rogue/proc/toggle_group(group_key, mob/viewer)
+	// The left column stands beside the field and is never folded (owner's decision 2026-11-23).
+	if(group_key == HUD_GROUP_ROGUE_PANEL)
+		return TRUE
 	var/mob/watched = watched_mob(viewer)
 	var/datum/hud/rogue/watched_hud = watched.hud_used
 	var/list/pieces = istype(watched_hud) ? watched_hud.screen_groups[group_key] : null
@@ -55,7 +56,7 @@
 			return HUD_ROGUE_DOLL_TOGGLE
 		if(HUD_GROUP_ROGUE_RMB)
 			return HUD_ROGUE_RMB_BUTTON
-	return HUD_ROGUE_PANEL_TOGGLE
+	return null
 
 /datum/hud/rogue/proc/toggle_inventory(mob/viewer)
 	var/mob/watched = watched_mob(viewer)
@@ -69,12 +70,36 @@
 	screen_objects[HUD_HUMAN_TOGGLE_INVENTORY]?.update_appearance()
 	return inventory_shown
 
+/// Alerts stand in a row along the top of the field, from the inner left corner of its frame to the right (owner's
+/// decision 2026-11-24).
 /datum/hud/rogue/get_ui_alert_placement(index)
-	if(index > 5)
+	if(index > rogueui_alert_slots)
 		return ""
-	var/offset = (6 - index) * ICON_SIZE_Y + 29 - index * 2 - rogueui_alert_drop
+	var/across = rogueui_alert_inset + (index - 1) * rogueui_alert_step
+	return "WEST+[round(across / ICON_SIZE_X)]:[across % ICON_SIZE_X],NORTH:-[rogueui_alert_inset]"
+
+/// Buffs stand where TG's alerts stood, lowered under the gargoyle and its button: a column inside the field's frame.
+/datum/hud/rogue/proc/get_ui_buff_placement(index)
+	if(index > rogueui_buff_slots)
+		return ""
+	var/offset = (6 - index) * ICON_SIZE_Y + 29 - index * 2 - rogueui_buff_drop
 	var/rows = round(offset / ICON_SIZE_Y)
-	return "EAST-1:28,CENTER[rows < 0 ? "" : "+"][rows]:[offset - rows * ICON_SIZE_Y]"
+	return "EAST-1:22,CENTER[rows < 0 ? "" : "+"][rows]:[offset - rows * ICON_SIZE_Y]"
+
+/// TG places every alert by its number in the mob's list; here the alerts of status effects (the buffs and the debuffs)
+/// are counted apart from the rest and go to their own column.
+/datum/hud/rogue/reorganize_alerts(mob/viewmob)
+	. = ..()
+	if(!. || hud_version != HUD_STYLE_STANDARD)
+		return
+	var/alerts_placed = 0
+	var/buffs_placed = 0
+	for(var/category in mymob.alerts)
+		var/atom/movable/screen/alert/alert = mymob.alerts[category]
+		if(istype(alert, /atom/movable/screen/alert/status_effect))
+			alert.screen_loc = get_ui_buff_placement(++buffs_placed)
+		else
+			alert.screen_loc = get_ui_alert_placement(++alerts_placed)
 
 /datum/hud/rogue/show_hud(version = 0, mob/viewmob)
 	. = ..()
@@ -154,7 +179,7 @@
 	add_screen_object(/atom/movable/screen/rogue/feint, HUD_ROGUE_FEINT, HUD_GROUP_ROGUE_PANEL)
 
 /datum/hud/rogue/human/proc/rmb_screen_loc(index)
-	return "CENTER+1:20,SOUTH:[rogueui_rmb_menu_base + (index - 1) * rogueui_rmb_menu_step]"
+	return rogueui_rmb_menu_slot(index)
 
 /datum/hud/rogue/human/show_hud(version = 0, mob/viewmob)
 	. = ..()

@@ -55,7 +55,6 @@
 	var/no_group = "none"
 	var/list/states_missing_in_azure = list(HUD_ROGUE_GIVE)
 	var/list/expected = list(
-		HUD_ROGUE_PANEL_TOGGLE = list(/atom/movable/screen/rogue/panel_toggle, rogueui_panel_toggle, hud_icon, "template_small", 24, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_HUMAN_TOGGLE_INVENTORY = list(/atom/movable/screen/human/toggle/rogue, rogueui_inventory_toggle, hud_icon, "back", 24, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_ROGUE_GRAIN = list(/atom/movable/screen/rogue/placeholder/grain, "1,1", 'modular_redtard/icons/hud/grain.dmi', "grain", 13, HUD_PLANE, no_group),
 		HUD_ROGUE_SCANNIES = list(/atom/movable/screen/rogue/placeholder/scannies, "WEST:16,SOUTH:0", 'modular_redtard/icons/mob/roguehudback2.dmi', "crt", CURSE_LAYER + 0.2, FULLSCREEN_PLANE, no_group),
@@ -65,12 +64,12 @@
 		HUD_ROGUE_WEAPON_INTENTS = list(/atom/movable/screen/rogue/weapon_intents, rogueui_intents, 'modular_redtard/icons/hud/rogue_intent_grid.dmi', "grid", 24, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_MOB_MOOD = list(/atom/movable/screen/mood/rogue, rogueui_stress, hud_icon, null, 24, HUD_PLANE, HUD_GROUP_STATIC),
 		HUD_ROGUE_RMB_BUTTON = list(/atom/movable/screen/rogue/rmb_intent, rogueui_rmb_button, hud_icon, "rmbintent", 24, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_ROGUE_RMB_SLOT(1) = list(/atom/movable/screen/rogue/rmb_choice, "CENTER+1:20,SOUTH:25", hud_icon, "rmbstrong", 24, HUD_PLANE, HUD_GROUP_ROGUE_RMB),
-		HUD_ROGUE_RMB_SLOT(2) = list(/atom/movable/screen/rogue/rmb_choice, "CENTER+1:20,SOUTH:45", hud_icon, "rmbswift", 24, HUD_PLANE, HUD_GROUP_ROGUE_RMB),
-		HUD_ROGUE_RMB_SLOT(3) = list(/atom/movable/screen/rogue/rmb_choice, "CENTER+1:20,SOUTH:65", hud_icon, "rmbaimed", 24, HUD_PLANE, HUD_GROUP_ROGUE_RMB),
-		HUD_ROGUE_RMB_SLOT(4) = list(/atom/movable/screen/rogue/rmb_choice, "CENTER+1:20,SOUTH:85", hud_icon, "rmbfeint", 24, HUD_PLANE, HUD_GROUP_ROGUE_RMB),
-		HUD_ROGUE_RMB_SLOT(5) = list(/atom/movable/screen/rogue/rmb_choice, "CENTER+1:20,SOUTH:105", hud_icon, "rmbdef", 24, HUD_PLANE, HUD_GROUP_ROGUE_RMB),
-		HUD_ROGUE_RMB_SLOT(6) = list(/atom/movable/screen/rogue/rmb_choice, "CENTER+1:20,SOUTH:125", hud_icon, "rmbweak", 24, HUD_PLANE, HUD_GROUP_ROGUE_RMB),
+		HUD_ROGUE_RMB_SLOT(1) = list(/atom/movable/screen/rogue/rmb_choice, "CENTER+1:20,SOUTH-1:25", hud_icon, "rmbstrong", 24, HUD_PLANE, HUD_GROUP_ROGUE_RMB),
+		HUD_ROGUE_RMB_SLOT(2) = list(/atom/movable/screen/rogue/rmb_choice, "CENTER+1:20,SOUTH-1:45", hud_icon, "rmbswift", 24, HUD_PLANE, HUD_GROUP_ROGUE_RMB),
+		HUD_ROGUE_RMB_SLOT(3) = list(/atom/movable/screen/rogue/rmb_choice, "CENTER+1:20,SOUTH-1:65", hud_icon, "rmbaimed", 24, HUD_PLANE, HUD_GROUP_ROGUE_RMB),
+		HUD_ROGUE_RMB_SLOT(4) = list(/atom/movable/screen/rogue/rmb_choice, "CENTER+1:20,SOUTH-1:85", hud_icon, "rmbfeint", 24, HUD_PLANE, HUD_GROUP_ROGUE_RMB),
+		HUD_ROGUE_RMB_SLOT(5) = list(/atom/movable/screen/rogue/rmb_choice, "CENTER+1:20,SOUTH-1:105", hud_icon, "rmbdef", 24, HUD_PLANE, HUD_GROUP_ROGUE_RMB),
+		HUD_ROGUE_RMB_SLOT(6) = list(/atom/movable/screen/rogue/rmb_choice, "CENTER+1:20,SOUTH-1:125", hud_icon, "rmbweak", 24, HUD_PLANE, HUD_GROUP_ROGUE_RMB),
 		HUD_MOB_HEALTH = list(/atom/movable/screen/healths/rogue, rogueui_blood, heat_icon, "dam0", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 		HUD_ROGUE_QUAD_INTENTS = list(/atom/movable/screen/rogue/quad_intents, rogueui_quad, hud_icon, "mmbintents0", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 		HUD_ROGUE_DEF_INTENT = list(/atom/movable/screen/rogue/def_intent, rogueui_def, hud_icon, "def2n", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
@@ -118,10 +117,15 @@
 		HUD_MOB_ZONE_SELECTOR = list(/atom/movable/screen/zone_sel/rogue, rogueui_targetdoll, 'modular_redtard/icons/mob/roguehud64.dmi', null, 24, HUD_PLANE, HUD_GROUP_ROGUE_DOLL),
 		HUD_ROGUE_DOLL_BACK = list(/atom/movable/screen/rogue/doll_back, rogueui_doll_back, 'modular_redtard/icons/hud/rogue_doll_back.dmi', "doll_back", 23, HUD_PLANE, HUD_GROUP_ROGUE_DOLL),
 		HUD_ROGUE_DOLL_TOGGLE = list(/atom/movable/screen/rogue/panel_toggle/doll, rogueui_doll_toggle, hud_icon, "template_small", 24, HUD_PLANE, HUD_GROUP_STATIC),
-		HUD_ROGUE_PANEL_STRIP = list(/atom/movable/screen/rogue/panel_strip, rogueui_panel_strip, 'modular_redtard/icons/hud/rogue_panel.dmi', "strip", 23, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_FIELD_FRAME = list(/atom/movable/screen/rogue/field_frame, rogueui_field_frame, 'modular_redtard/icons/hud/rogue_frame.dmi', "frame", 22, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_DARK_LEFT = list(/atom/movable/screen/rogue/darkness/left, rogueui_dark_left, 'modular_redtard/icons/hud/rogue_panel.dmi', "fill", 23, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_DARK_BOTTOM = list(/atom/movable/screen/rogue/darkness/bottom, rogueui_dark_bottom, 'modular_redtard/icons/hud/rogue_panel.dmi', "fill", 23, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_DARK_RIGHT = list(/atom/movable/screen/rogue/darkness/spare, "CENTER", 'modular_redtard/icons/hud/rogue_panel.dmi', "fill", 23, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_DARK_TOP = list(/atom/movable/screen/rogue/darkness/spare, "CENTER", 'modular_redtard/icons/hud/rogue_panel.dmi', "fill", 23, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 		HUD_ROGUE_BUILD = list(/atom/movable/screen/rogue/build, rogueui_build, 'modular_redtard/icons/hud/rogue_panel.dmi', "build", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 		HUD_MOB_STAMINA = list(/atom/movable/screen/stamina/rogue, rogueui_fat, heat_icon, "stam100", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 		HUD_ROGUE_ENERGY = list(/atom/movable/screen/rogue/energy, rogueui_fat, heat_icon, "energy100", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
+		HUD_ROGUE_MANA = list(/atom/movable/screen/rogue/mana, rogueui_mana, 'modular_redtard/magic/icons/mana.dmi', "", 24, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 		HUD_ROGUE_FEINT = list(/atom/movable/screen/rogue/feint, rogueui_feint, 'modular_redtard/icons/mob/roguefeint.dmi', "feintbar100", 24.1, HUD_PLANE, HUD_GROUP_ROGUE_PANEL),
 	)
 	for(var/hud_key in expected)
@@ -424,20 +428,31 @@
 		TEST_ASSERT_EQUAL(heart.heart_layer_state("painloss", step[1], 30, 60), step[2], "Pain [step[1]]% shows the wrong step")
 	TEST_ASSERT_EQUAL(heart.heart_layer_state("painloss", 0, 30, 60), null, "The heart shows pain when there is none")
 
-/// The pain threshold is counted anew from willpower and the pain traits (Ratwood PR 2546 pain_threshold_is_live), so the
-/// heart agrees with the pain checks.
-/datum/unit_test/rogue_hud/pain_threshold
+/// Pain on a part becomes traumatic shock (Vibelin getShock()), painkillers take the edge off it, the painless feel none,
+/// and the pain eases away; the heart is redrawn when the shock stage changes.
+/datum/unit_test/rogue_hud/pain_shock
 
-/datum/unit_test/rogue_hud/pain_threshold/Run()
+/datum/unit_test/rogue_hud/pain_shock/Run()
 	var/mob/living/carbon/human/dummy = make_hud_user()
-	dummy.rogue_adjust_stat(ROGUE_STAT_WILLPOWER, 14 - dummy.rogue_stat(ROGUE_STAT_WILLPOWER))
-	TEST_ASSERT_EQUAL(dummy.rogue_pain_threshold(), 14 * ROGUE_PAIN_PER_WILLPOWER, "The threshold ignored the current willpower")
-	ADD_TRAIT(dummy, TRAIT_ADRENALINE_RUSH, TRAIT_SOURCE_UNIT_TESTS)
-	TEST_ASSERT_EQUAL(dummy.rogue_pain_threshold(), (14 + ROGUE_PAIN_ADRENALINE_WILLPOWER) * ROGUE_PAIN_PER_WILLPOWER, "The threshold ignored adrenaline")
-	REMOVE_TRAIT(dummy, TRAIT_ADRENALINE_RUSH, TRAIT_SOURCE_UNIT_TESTS)
+	var/obj/item/bodypart/arm = dummy.get_bodypart(BODY_ZONE_L_ARM)
+	TEST_ASSERT(arm.rogue_add_pain(arm.rogue_max_pain()), "The arm took no pain")
+	TEST_ASSERT(dummy.rogue_complex_pain() > 0, "Pain on the arm made no shock")
+	var/full = arm.rogue_get_shock(TRUE)
+	dummy.rogue_add_chem_effect(ROGUE_CE_PAINKILLER, arm.rogue_max_pain(), "unit test")
+	TEST_ASSERT(arm.rogue_get_shock(TRUE) < full, "A painkiller did not dull the arm")
+	TEST_ASSERT_EQUAL(arm.rogue_get_shock(FALSE), full, "The arm's own pain counted the painkiller")
+	dummy.rogue_remove_chem_effect(ROGUE_CE_PAINKILLER, "unit test")
+	TEST_ASSERT_EQUAL(dummy.rogue_get_chem_effect(ROGUE_CE_PAINKILLER), 0, "The painkiller stayed after it was taken away")
 	ADD_TRAIT(dummy, TRAIT_NOPAIN, TRAIT_SOURCE_UNIT_TESTS)
-	TEST_ASSERT_EQUAL(dummy.rogue_pain_threshold(), ROGUE_PAIN_NOPAIN_THRESHOLD, "The threshold ignored painlessness")
+	TEST_ASSERT_EQUAL(dummy.rogue_complex_pain(), 0, "The painless feel shock")
 	REMOVE_TRAIT(dummy, TRAIT_NOPAIN, TRAIT_SOURCE_UNIT_TESTS)
+	dummy.rogue_pain_hud_dirty = FALSE
+	dummy.rogue_shock_stage = rogue_physiology().shock_stage_8 / 2
+	dummy.rogue_update_shock_hud(rogue_physiology())
+	TEST_ASSERT(dummy.rogue_pain_hud_dirty, "The heart was not told the shock stage changed")
+	dummy.rogue_shock_stage = 0
+	arm.rogue_remove_pain(arm.rogue_pain_dam)
+	TEST_ASSERT_EQUAL(arm.rogue_pain_dam, 0, "The pain did not ease away")
 
 #undef TEST_ASSERT
 #undef TEST_ASSERT_EQUAL

@@ -1692,6 +1692,13 @@ def generate(cfg, port, rules, rw, declared, tg_declared, tg_names, usage, extra
                 put('rogue_female_worn', 'TRUE')
                 FEMALE_USERS.add(path)
             return
+        # H1b (2026-11-22): a women's only thing (Azure Peak's donator dresses, allowed_sex = list(FEMALE)) has nothing but
+        # the "_f" state in its sheet: that state is its worn sprite, for whoever wears it.
+        female_only = next((state + FEMALE_WORN_SUFFIX for state in (text('icon_state'), text('worn_icon_state'))
+                            if state and state + FEMALE_WORN_SUFFIX in sheet_states_here), None)
+        if female_only:
+            put('worn_icon_state', f'"{female_only}"')
+            return
         if sheet or any(slot in flags for slot in TG_WORN_SLOTS) or boundary_match(path, '/obj/item/clothing'):
             BLANK_USERS.add(path)
             put('worn_icon', f"'{BLANK_WORN}'")
@@ -3145,7 +3152,12 @@ def extract_table(port, kind, blocks, inherited_vars=()):
     if not spec:
         return blocks
     fields = spec['fields']
-    inherited = [var for var in inherited_vars if var in fields]
+    # A share of 0-1 (integrity_failure) is written in percent: the open table's 10 is then a tenth, not ten times the
+    # whole; mechanics/categories.dm divides it back.
+    percent = set(spec.get('percent', ()))
+    # fill_from_parent (sellprice): a var the port leaves out where the source's value is the default, so in DM the type
+    # had the ported parent's line; the table gives it the same, as an inherited var.
+    inherited = [var for var in list(inherited_vars) + list(spec.get('fill_from_parent', ())) if var in fields]
     order = list(fields.values())
     out = []
     for block in blocks:
@@ -3162,7 +3174,10 @@ def extract_table(port, kind, blocks, inherited_vars=()):
         for line in block[1:]:
             found = TABLE_NUMBER_LINE.match(line)
             if found and found.group(1) in fields:
-                row[fields[found.group(1)]] = found.group(2)
+                value = found.group(2)
+                if found.group(1) in percent:
+                    value = f'{float(value) * 100:.4f}'.rstrip('0').rstrip('.')
+                row[fields[found.group(1)]] = value
             else:
                 kept.append(line)
         if row:

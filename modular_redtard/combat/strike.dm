@@ -161,8 +161,9 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 		if(broken || QDELETED(target) || incapacitated || !target.IsReachableBy(src, weapon ? weapon.reach : 1) || (weapon && (QDELETED(weapon) || !is_holding(weapon))) || rogue_strike_intent(weapon) != intent)
 			return FALSE
 	strike.paired = rogue_dual_wield_step(weapon)
-	if(intent.releasedrain)
-		adjust_stamina_loss(intent.releasedrain * rogue_rmb_factor("stamina_factor"))
+	var/stamina_cost = rogue_strike_stamina(intent, !!weapon)
+	if(stamina_cost)
+		adjust_stamina_loss(stamina_cost)
 	do_attack_animation(target, weapon ? null : ATTACK_EFFECT_PUNCH, weapon)
 	rogue_swung()
 	target.lastattacker = real_name
@@ -248,11 +249,17 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 	)
 	strike.damage_done = damage_done
 	LAZYSET(strike.attack_modifiers, DAMAGE_DONE, damage_done)
-	if(damage_done <= 0)
+	// A limb at its most damage takes none of a blow (TG's cap), though the blow got past the armor: it still rolls its
+	// organs and crits and may be severed, by what got through (review VR2r, finding 1).
+	var/landed = damage_done
+	var/obj/item/bodypart/struck_limb = get_bodypart(def_zone)
+	if(struck_limb && damtype == BRUTE && blocked < 100 && struck_limb.get_damage() >= struck_limb.max_damage - DAMAGE_PRECISION)
+		landed = max(landed, damage * (100 - blocked) / 100)
+	if(landed <= 0)
 		var/integrity = armor_hit?.rogue_integrity_text()
 		rogue_strike_notes += integrity ? "[ROGUE_ARMOR_BLOCKED_TEXT] [integrity]" : ROGUE_ARMOR_BLOCKED_TEXT
 	var/hit_sound = pick(GLOB.rogue_no_damage_sounds)
-	if(damage_done > 0)
+	if(landed > 0)
 		hit_sound = length(intent.hitsound) ? pick(intent.hitsound) : (weapon ? weapon.hitsound : pick(GLOB.rogue_punch_hit_sounds))
 	if(hit_sound)
 		playsound(src, hit_sound, 100, FALSE, -1)
@@ -263,8 +270,9 @@ GLOBAL_LIST_INIT(rogue_no_damage_sounds, list('modular_redtard/rockhill/sound/co
 			attacker.add_mob_blood(src)
 	// Everything the blow did lands before its line is told, so the line carries it all (combat/chat.dm): the armor,
 	// a crit and its wounds, then a severed limb.
-	if(damage_done > 0)
-		rogue_try_crit(intent.blade_class, damage_done, attacker, zone)
+	if(landed > 0)
+		rogue_strike_organs(intent.blade_class, landed, attacker, zone)
+		rogue_try_crit(intent.blade_class, landed, attacker, zone)
 		rogue_try_dismember(weapon, intent, attacker, zone, damage)
 	rogue_strike_message(attacker, weapon, intent, zone, struck_name)
 	rogue_strike_notes = null

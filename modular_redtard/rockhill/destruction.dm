@@ -167,7 +167,7 @@
 
 /// Ratwood's stump: an axe's chopping blow splits it into firewood instead of hurting it, a shovel digs it out.
 /obj/structure/flora/roguetree/stump/attacked_by(obj/item/attacking_item, mob/living/user, list/modifiers, list/attack_modifiers)
-	if(!isliving(user) || !rogue_combat_enabled())
+	if(!isliving(user) || !rogue_medieval_map())
 		return ..()
 	var/datum/intent/intent = user.rogue_hand_intent(user.get_held_index_of_item(attacking_item))
 	if(intent?.blade_class != BCLASS_CHOP)
@@ -176,7 +176,7 @@
 	return 0
 
 /obj/structure/flora/roguetree/stump/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
-	if(!istype(tool, /obj/item/rogueweapon/shovel) || !rogue_combat_enabled())
+	if(!istype(tool, /obj/item/rogueweapon/shovel) || !rogue_medieval_map())
 		return ..()
 	INVOKE_ASYNC(src, PROC_REF(rockhill_dig_out), user)
 	return ITEM_INTERACT_SUCCESS

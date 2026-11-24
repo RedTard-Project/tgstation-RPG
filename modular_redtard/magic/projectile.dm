@@ -7,7 +7,7 @@
 /datum/action/cooldown/spell/rogue/projectile
 	abstract_spell_type = /datum/action/cooldown/spell/rogue/projectile
 	self_cast_possible = FALSE
-	cast_range = ROGUE_SPELL_RANGE_PROJECTILE
+	cast_range_key = "magic_range_projectile"
 	weapon_cast_penalized = TRUE
 	experience_modifier_key = "magic_experience_modifier_projectile"
 	tunables = list("cost", "cooldown", "charge", "slowdown", "damage", "tile_time")

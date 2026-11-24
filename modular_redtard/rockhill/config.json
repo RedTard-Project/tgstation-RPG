@@ -119,9 +119,9 @@
 		},
 		{
 			"prefix": "/datum/special_intent/greatflail_swing",
-			"to": "/datum/special_intent/flail_sweep",
+			"to": "/datum/special_intent/wave_swing/greatsword",
 			"when_declared": true,
-			"note": "K2d2 (2026-11-22): Azure Peak has no greatflail_swing; its greatflails (peasantwarflail, the gilded flail of Matthios among them) keep the flail_sweep of flails."
+			"note": "H1b (2026-11-22): the owner gave greatflails a ring, like greatswords: Ratwood's greatflail_swing is its greatsword ring, so it becomes Azure Peak's wave_swing of greatswords (K2d2 had kept the flail_sweep of flails)."
 		},
 		{
 			"prefix": "/obj/structure/curtain",
@@ -2279,16 +2279,22 @@
 					"unarmed_bonus": "unarmed_bonus",
 					"wdefense": "defense",
 					"wdefense_wbonus": "wielded_defense_bonus",
-					"minstr": "min_strength"
-				},
-				"later": {
+					"minstr": "min_strength",
 					"max_blade_int": "sharpness",
 					"sharpening_factor": "sharpening",
 					"spark_chance": "spark_chance",
-					"integrity_failure": "break_share",
+					"integrity_failure": "break_percent",
 					"coverage": "shield_coverage",
 					"sellprice": "price"
-				}
+				},
+				"fill_from_parent": [
+					"sellprice"
+				],
+				"fill_from_parent_note": "H3g (2026-11-22): a type without its own price had the ported parent's in DM (the port skips Ratwood's sellprice = 0, skip_default), and keeps it: the nearest ported type's price above it. 14 types (wooden cup, flour and the other powders, wooden and reform psicross, goblin leather helmet, naledi and zizite masks) are 0 in Ratwood.",
+				"percent": [
+					"integrity_failure"
+				],
+				"percent_note": "H1b (2026-11-22): a share of 0-1 goes to the table in percent (integrity_failure 0.2 -> break_percent = 20; mechanics/categories.dm divides by 100), so that the open table's 10 is a tenth, not ten times the item's integrity."
 			},
 			"intents": {
 				"file": "intents.txt",
@@ -2307,9 +2313,7 @@
 					"swingdelay": "swing_delay",
 					"effective_range": "effective_range",
 					"sharpness_penalty": "sharpness_penalty",
-					"intent_intdamage_factor": "armor_wear_factor"
-				},
-				"later": {
+					"intent_intdamage_factor": "armor_wear_factor",
 					"demolition_mod": "demolition",
 					"basetime": "aim_base_time"
 				}

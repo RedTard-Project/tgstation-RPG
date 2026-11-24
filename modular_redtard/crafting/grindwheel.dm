@@ -31,7 +31,7 @@
 
 /// Ratwood restore_bintegrity(): the maximum edge and the edge itself return to the blade's original.
 /obj/item/proc/rogue_restore_edge()
-	max_blade_int = initial(max_blade_int)
+	max_blade_int = rogue_full_blade_int()
 	blade_int = max_blade_int
 
 /// Ratwood: carpentry rank cuts the time (4 seconds - 0.5 per rank) and the waste (40% - 10% per rank, all of it untrained).

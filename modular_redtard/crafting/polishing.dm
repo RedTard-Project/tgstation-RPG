@@ -155,20 +155,35 @@
 /datum/component/rogue_polish/process(seconds_per_tick)
 	var/obj/item/item = parent
 	if(isturf(item.loc))
-		if(prob(rogue_value("polish_process_chance")))
-			new /obj/effect/temp_visual/rogue_glint(item.loc)
-		if(prob(rogue_value("polish_process_chance_2")))
-			new /obj/effect/temp_visual/rogue_glint(item.loc, 2)
-		if(prob(rogue_value("polish_process_chance_3")))
-			new /obj/effect/temp_visual/rogue_glint(item.loc, 3)
+		var/list/chances = rogue_glint_chances()
+		for(var/spread in 1 to 3)
+			if(prob(chances[spread]))
+				new /obj/effect/temp_visual/rogue_glint(item.loc, spread)
 	else if(isliving(item.loc) && istype(item, /obj/item/clothing/suit/roguetown/armor))
+		var/list/chances = rogue_glint_chances()
 		var/turf/worn_at = get_turf(item)
-		if(prob(rogue_value("polish_process_chance_4")))
-			new /obj/effect/temp_visual/rogue_glint(worn_at)
-		if(prob(rogue_value("polish_process_chance_5")))
-			new /obj/effect/temp_visual/rogue_glint(worn_at, 2)
-		if(prob(rogue_value("polish_process_chance_6")))
-			new /obj/effect/temp_visual/rogue_glint(worn_at, 3)
+		for(var/spread in 1 to 3)
+			if(prob(chances[spread + 3]))
+				new /obj/effect/temp_visual/rogue_glint(worn_at, spread)
+
+/// The glint chances of a shining piece on the ground (spread 1 to 3) and worn (the same, 4 to 6), read for every polished
+/// item on every pass of SSobj (review 2026-11-22, finding 10): read once, and again after the mechanics numbers are reloaded.
+GLOBAL_LIST_EMPTY(rogue_glint_chances)
+GLOBAL_VAR(rogue_glint_chances_revision)
+
+/proc/rogue_glint_chances()
+	var/revision = rogue_mechanics_revision()
+	if(!length(GLOB.rogue_glint_chances) || GLOB.rogue_glint_chances_revision != revision)
+		GLOB.rogue_glint_chances = list(
+			rogue_value("polish_process_chance"),
+			rogue_value("polish_process_chance_2"),
+			rogue_value("polish_process_chance_3"),
+			rogue_value("polish_process_chance_4"),
+			rogue_value("polish_process_chance_5"),
+			rogue_value("polish_process_chance_6"),
+		)
+		GLOB.rogue_glint_chances_revision = revision
+	return GLOB.rogue_glint_chances
 
 /obj/effect/temp_visual/rogue_glint
 	name = "glint"

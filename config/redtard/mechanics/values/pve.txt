@@ -647,3 +647,16 @@ pve_crawler_speed = 10
 
 # Elemental motes an earthen crawler leaves when it dies (Ratwood crawler death()).
 pve_crawler_motes = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list b)
+
+# Most pieces of silk a snipped spider web yields.
+pve_web_silk_max = 10
+
+# Fewest pieces of silk a snipped spider web yields.
+pve_web_silk_min = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list h3b)
+
+# Tiles a creature sees a foe at to shoot it or to throw at it (TG basic_ranged_attack max_range).
+pve_sight = 10

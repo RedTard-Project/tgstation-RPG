@@ -88,10 +88,23 @@
 	var/self_share = 0
 	var/damage_amplifier = 0
 	var/next_message = 0
+	/// The numbers tick() reads every second, taken once in on_creation().
+	var/caster_range = 0
+	var/aura_range = 0
+	var/idle_damage = 0
+	var/crowd_amplifier = 0
+	var/beast_factor = 0
+	var/message_gap = 0
 
 /datum/status_effect/rogue_immolation/on_creation(mob/living/new_owner, mob/living/carbon/caster_mob, mob/living/carbon/partner_mob, rank, astratan)
 	caster = WEAKREF(caster_mob)
 	partner = WEAKREF(partner_mob)
+	caster_range = rogue_value("faith_immolation_range")
+	aura_range = rogue_value("faith_immolation_aura")
+	idle_damage = rogue_value("faith_immolation_idle")
+	crowd_amplifier = rogue_value("faith_immolation_crowd")
+	beast_factor = rogue_value("faith_immolation_beast")
+	message_gap = rogue_value("faith_immolation_message_gap")
 	duration = rogue_value("faith_immolation_time")
 	base_damage = rogue_value("faith_immolation_damage")
 	self_share = rogue_value("faith_immolation_self")
@@ -131,7 +144,7 @@
 /datum/status_effect/rogue_immolation/tick(seconds_between_ticks)
 	var/mob/living/carbon/caster_mob = caster?.resolve()
 	var/mob/living/carbon/partner_mob = partner?.resolve()
-	if(QDELETED(caster_mob) || QDELETED(partner_mob) || partner_mob.stat == DEAD || caster_mob.stat != STABLE || get_dist(partner_mob, caster_mob) > rogue_value("faith_immolation_range"))
+	if(QDELETED(caster_mob) || QDELETED(partner_mob) || partner_mob.stat == DEAD || caster_mob.stat != STABLE || get_dist(partner_mob, caster_mob) > caster_range)
 		put_out()
 		return
 
@@ -154,16 +167,16 @@
 	// Ratwood: the healing of a miracle does not take on the one that burns.
 	partner_mob.remove_status_effect(/datum/status_effect/rogue_miracle_heal)
 	var/list/victims = list()
-	for(var/mob/living/victim in view(rogue_value("faith_immolation_aura"), partner_mob))
+	for(var/mob/living/victim in view(aura_range, partner_mob))
 		if(victim == partner_mob || victim == caster_mob || victim.stat == DEAD)
 			continue
 		victims += victim
 	var/count = length(victims)
 	if(!count)
 		// Ratwood: the flame still burns the one it is on a little.
-		partner_mob.adjust_brute_loss(rogue_value("faith_immolation_idle"))
+		partner_mob.adjust_brute_loss(idle_damage)
 		return
-	var/each = base_damage * (damage_amplifier + rogue_value("faith_immolation_crowd") * (count - 1)) / count
+	var/each = base_damage * (damage_amplifier + crowd_amplifier * (count - 1)) / count
 	var/speak = world.time >= next_message
 	for(var/mob/living/victim as anything in victims)
 		if(iscarbon(victim))
@@ -183,11 +196,11 @@
 				cut.visible_message(span_danger("[cut]'s [struck.name] is dismembered violently by cutting flames!"))
 				struck.dismember()
 		else
-			victim.adjust_brute_loss(each * rogue_value("faith_immolation_beast"))
+			victim.adjust_brute_loss(each * beast_factor)
 			if(speak)
 				victim.visible_message(span_danger("[victim] is cut by holy flames!"))
 	if(speak)
-		next_message = world.time + rogue_value("faith_immolation_message_gap")
+		next_message = world.time + message_gap
 	partner_mob.adjust_brute_loss(base_damage * self_share)
 
 /// Ratwood immolation "Immolation" (T4 of Astrata): the fire is lit on the target after a short prayer; a caster that

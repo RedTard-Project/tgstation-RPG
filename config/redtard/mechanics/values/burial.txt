@@ -15,7 +15,7 @@ rot_dust_time = 10
 # Constitution a rotted body loses until it lives again or the rot is cured (Ratwood debuff/rotted_zombie).
 rot_constitution_penalty = 10
 
-# 1: rotted limbs give out and serve no body raised from them until the rot is cured (Ratwood BODYPART_DISABLED_ROT); 0: they serve.
+# 1: rotted limbs and limbs gone to bones give out and serve no body that is not undead, a body raised from them included, until the rot is cured; an undead body uses them (Azure Peak is_disabled() BODYPART_DISABLED_ROT; owner's decision 2026-11-22: rot of the revived as on Azure); 0: they serve.
 rot_limbs_give_out = 10
 
 # --- Earth by hand and by shovel
@@ -46,7 +46,7 @@ clodpile_clods = 10
 
 # --- Mud
 
-# Slowdown of a road gone to mud by water (Ratwood become_muddy() slowdown).
+# Slowdown of a road gone to mud by water (Ratwood become_muddy() slowdown; Vibelin's mud is as slow).
 mud_slowdown = 10
 
 # Mud a step on dirt, a road or mud puts on the shoes (Ratwood bloodiness); 0 keeps shoes clean and leaves no muddy footprints.
@@ -121,3 +121,13 @@ body_three_finds_fortune = 10
 
 # Fortune from which a search draws from the body's lucky table, where it has one (Ratwood).
 body_lucky_fortune = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list h2b)
+
+# Slowdown of plain dirt on a medieval map; its road and the grass have none (Vibelin roguefloor.dm /turf/open/floor/dirt slowdown; owner's decision 2026-11-22: slowdown on plain ground as on Vibelin).
+dirt_slowdown = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list a)
+
+# Ratwood CLICK_CD_INTENTCAP: the pause before a search begins.
+search_click_cd = 10

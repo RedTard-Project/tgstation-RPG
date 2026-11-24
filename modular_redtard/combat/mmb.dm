@@ -159,7 +159,8 @@
 		return FALSE
 	var/strong = HAS_TRAIT(src, TRAIT_STRONGBITE)
 	if(strong || LAZYLEN(limb.wounds))
-		bitten.apply_damage(rogue_formula_value(ROGUE_FORMULA_BITE_DAMAGE, list("strength" = rogue_stat(ROGUE_STAT_STRENGTH), "strong_bite" = strong)), BRUTE, limb.body_zone, sharpness = SHARP_POINTY)
+		// The jaw's crits and missing teeth weaken the bite, fangs add to it (combat/teeth.dm).
+		bitten.apply_damage(rogue_bite_damage(rogue_formula_value(ROGUE_FORMULA_BITE_DAMAGE, list("strength" = rogue_stat(ROGUE_STAT_STRENGTH), "strong_bite" = strong))), BRUTE, limb.body_zone, sharpness = SHARP_POINTY)
 		playsound(bitten, pick('modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (3).ogg'), 100, TRUE, -1)
 	playsound(bitten, 'sound/items/weapons/bite.ogg', 50, TRUE, -1)
 	var/part = rogue_zone_name(zone)
@@ -181,7 +182,7 @@
 	changeNext_move(CLICK_CD_GRABBING)
 	rogue_mark_in_combat()
 	rogue_reveal_sneak()
-	var/damage = rogue_unarmed_damage() * (HAS_TRAIT(src, TRAIT_STRONGBITE) ? ROGUE_BITE_STRONG_FACTOR : 1)
+	var/damage = rogue_bite_damage(rogue_unarmed_damage() * (HAS_TRAIT(src, TRAIT_STRONGBITE) ? ROGUE_BITE_STRONG_FACTOR : 1))
 	do_attack_animation(bitten, ATTACK_EFFECT_BITE)
 	bitten.apply_damage(damage, BRUTE, rogue_zone_target(held_bite.zone), sharpness = SHARP_POINTY)
 	playsound(bitten, pick('modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (2).ogg', 'modular_redtard/rockhill/sound/combat/hits/bladed/smallslash (3).ogg'), 100, FALSE, -1)

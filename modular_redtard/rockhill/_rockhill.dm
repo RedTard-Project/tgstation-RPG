@@ -37,6 +37,7 @@
 #include "ladders.dm"
 #include "traveltiles.dm"
 #include "dungeon.dm"
+#include "dungeon_queue.dm"
 #include "map_helpers.dm"
 #include "effects.dm"
 #include "traps.dm"

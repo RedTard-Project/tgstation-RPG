@@ -397,7 +397,7 @@
 	if(istype(tool, /obj/item/rogueweapon/huntingknife/scissors) && istype(user.rogue_active_intent(), /datum/intent/snip) && stage == ROGUE_BUSHSAP_MATURE && !dead)
 		to_chat(user, span_notice("I begin trimming [src]..."))
 		if(do_after(user, rogue_value("farm_bush_trim_time"), target = src))
-			var/num_fibers = rand(1, 2)
+			var/num_fibers = rand(rogue_value("farm_bush_trim_fibers_min"), rogue_value("farm_bush_trim_fibers_max"))
 			for(var/i in 1 to num_fibers)
 				new /obj/item/natural/fibers(user.loc)
 			to_chat(user, span_notice("I trim back the overgrowth and collect [num_fibers] [num_fibers == 1 ? "fiber" : "fibers"]."))

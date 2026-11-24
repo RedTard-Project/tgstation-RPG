@@ -5,7 +5,7 @@
 /// rockhill_loot, rockhill_loot_lucky, rockhill_poses from loot_table, loot_table_lucky, pose_states).
 
 /// Ratwood CLICK_CD_INTENTCAP: the pause before a search begins.
-#define ROGUE_SEARCH_CLICK_CD 6
+#define ROGUE_SEARCH_CLICK_CD rogue_value("search_click_cd")
 
 /obj/structure/deadbody
 	/// What a search may turn up, by weight (Ratwood loot_table).

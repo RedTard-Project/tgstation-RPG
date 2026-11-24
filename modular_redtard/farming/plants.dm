@@ -1,16 +1,10 @@
 // Ratwood's crop data by hand: code/modules/farming/plant_def.dm (the crops), seeds.dm and roguejobs/alchemist/herb_seeds.dm
 // (what every seed grows and what it is), produce.dm and rogueitems/magic/magic_resources.dm (what seeds produce gives).
 
-#define SLOW_GROWING (6 MINUTES)
-#define FAST_GROWING (5 MINUTES)
-#define VERY_FAST_GROWING (4 MINUTES)
-#define HUNGRINESS_EXTREME 60
-#define HUNGRINESS_DEMANDING 35
-#define HUNGRINESS_NORMAL 25
-#define HUNGRINESS_TINY 15
-
 /// A Ratwood crop: one definition per crop, shared by every soil that grows it (farming/soil.dm). Times are deciseconds of growth
-/// at the normal rate; maturing eats maturation_nutrition from the soil, every later harvest produce_nutrition.
+/// at the normal rate; maturing eats maturation_nutrition from the soil, every later harvest produce_nutrition. The growth and
+/// appetite of a type are names of mechanics values (farming.txt: Ratwood's SLOW_GROWING, HUNGRINESS_* and the rest), which
+/// New() reads into the same vars once.
 /datum/plant_def
 	abstract_type = /datum/plant_def
 	/// Name of the plant
@@ -22,9 +16,9 @@
 	/// Loot the plant yields for uprooting it once matured: a type a time, or type = count.
 	var/list/uproot_loot
 	/// Deciseconds the plant needs to mature, before it starts making produce
-	var/maturation_time = 6 MINUTES
+	var/maturation_time = "farm_crop_maturation_time"
 	/// Deciseconds the plant needs for each harvest
-	var/produce_time = 3 MINUTES
+	var/produce_time = "farm_crop_produce_time"
 	/// What a harvest yields. Text while the porter has not brought the item: it becomes the type once it is compiled in.
 	var/produce_type
 	/// Least produce of a harvest
@@ -32,9 +26,9 @@
 	/// Most produce of a harvest
 	var/produce_amount_max = 3
 	/// How much nutrition the plant needs to mature fully
-	var/maturation_nutrition = HUNGRINESS_NORMAL
+	var/maturation_nutrition = "farm_crop_hunger_normal"
 	/// How much nutrition the plant needs for each harvest
-	var/produce_nutrition = 20
+	var/produce_nutrition = "farm_crop_produce_nutrition"
 	/// If not perennial, the plant uproots itself on its first harvest
 	var/perennial = FALSE
 	/// Whether the plant is immune to weeds and chokes them out
@@ -52,6 +46,9 @@
 
 /datum/plant_def/New()
 	. = ..()
+	for(var/number_var in list("maturation_time", "produce_time", "maturation_nutrition", "produce_nutrition"))
+		if(istext(vars[number_var]))
+			vars[number_var] = rogue_value(vars[number_var])
 	var/static/list/random_colors = list("#fffbf7", "#f3c877", "#5e533e", "#db7f62", "#f39945")
 	seed_color = pick(random_colors)
 	if(istext(produce_type))
@@ -97,7 +94,7 @@ GLOBAL_LIST_INIT(rogue_plant_defs, rogue_build_plant_defs())
 	produce_type = /obj/item/reagent_containers/food/snacks/grown/cabbage/rogue
 	produce_amount_min = 3
 	produce_amount_max = 4
-	maturation_time = FAST_GROWING
+	maturation_time = "farm_crop_growing_fast"
 
 /datum/plant_def/onion
 	name = "onion patch"
@@ -105,7 +102,7 @@ GLOBAL_LIST_INIT(rogue_plant_defs, rogue_build_plant_defs())
 	produce_type = /obj/item/reagent_containers/food/snacks/grown/onion/rogue
 	produce_amount_min = 3
 	produce_amount_max = 4
-	maturation_time = FAST_GROWING
+	maturation_time = "farm_crop_growing_fast"
 
 /datum/plant_def/wheat
 	name = "wheat stalks"
@@ -114,8 +111,8 @@ GLOBAL_LIST_INIT(rogue_plant_defs, rogue_build_plant_defs())
 	produce_amount_min = 3
 	produce_amount_max = 5
 	uproot_loot = list(/obj/item/natural/fibers, /obj/item/natural/fibers)
-	maturation_time = FAST_GROWING
-	produce_time = 2 MINUTES
+	maturation_time = "farm_crop_growing_fast"
+	produce_time = "farm_crop_produce_time_fast"
 
 /datum/plant_def/oat
 	name = "oat stalks"
@@ -124,8 +121,8 @@ GLOBAL_LIST_INIT(rogue_plant_defs, rogue_build_plant_defs())
 	produce_amount_min = 3
 	produce_amount_max = 5
 	uproot_loot = list(/obj/item/natural/fibers, /obj/item/natural/fibers)
-	maturation_time = FAST_GROWING
-	produce_time = 2 MINUTES
+	maturation_time = "farm_crop_growing_fast"
+	produce_time = "farm_crop_produce_time_fast"
 
 // Rice are faster growing but drain way more water
 /datum/plant_def/rice
@@ -135,8 +132,8 @@ GLOBAL_LIST_INIT(rogue_plant_defs, rogue_build_plant_defs())
 	produce_amount_min = 3
 	produce_amount_max = 5
 	uproot_loot = list(/obj/item/natural/fibers, /obj/item/natural/fibers)
-	maturation_time = VERY_FAST_GROWING
-	produce_time = 2 MINUTES
+	maturation_time = "farm_crop_growing_very_fast"
+	produce_time = "farm_crop_produce_time_fast"
 	water_drain_rate = 4 / (1 MINUTES)
 
 /datum/plant_def/pipeweed
@@ -145,8 +142,8 @@ GLOBAL_LIST_INIT(rogue_plant_defs, rogue_build_plant_defs())
 	produce_type = /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweed
 	produce_amount_min = 3
 	produce_amount_max = 5
-	maturation_time = FAST_GROWING
-	produce_time = 2 MINUTES
+	maturation_time = "farm_crop_growing_fast"
+	produce_time = "farm_crop_produce_time_fast"
 
 //................ Perennial Trees ............................... (No replanting needed)
 // Long growth time, fast-ish produce time. High initial nutrition cost.
@@ -157,9 +154,9 @@ GLOBAL_LIST_INIT(rogue_plant_defs, rogue_build_plant_defs())
 	produce_amount_min = 2
 	produce_amount_max = 4
 	uproot_loot = list(/obj/item/grown/log/tree/small)
-	maturation_nutrition = HUNGRINESS_EXTREME
-	maturation_time = SLOW_GROWING
-	produce_time = 3 MINUTES
+	maturation_nutrition = "farm_crop_hunger_extreme"
+	maturation_time = "farm_crop_growing_slow"
+	produce_time = "farm_crop_produce_time"
 
 /datum/plant_def/tree/apple
 	name = "apple tree"
@@ -200,9 +197,9 @@ GLOBAL_LIST_INIT(rogue_plant_defs, rogue_build_plant_defs())
 	produce_amount_min = 2
 	produce_amount_max = 3
 	uproot_loot = list(/obj/item/grown/log/tree/stick)
-	maturation_nutrition = HUNGRINESS_EXTREME
-	produce_nutrition = HUNGRINESS_NORMAL
-	maturation_time = FAST_GROWING
+	maturation_nutrition = "farm_crop_hunger_extreme"
+	produce_nutrition = "farm_crop_hunger_normal"
+	maturation_time = "farm_crop_growing_fast"
 
 /datum/plant_def/bush/berry
 	name = "jackberry bush"
@@ -249,7 +246,7 @@ GLOBAL_LIST_INIT(rogue_plant_defs, rogue_build_plant_defs())
 	produce_type = /obj/item/reagent_containers/food/snacks/grown/potato/rogue
 	produce_amount_min = 3
 	produce_amount_max = 5
-	maturation_nutrition = HUNGRINESS_TINY
+	maturation_nutrition = "farm_crop_hunger_tiny"
 	water_drain_rate = 1 / (1 MINUTES)
 
 /datum/plant_def/turnip
@@ -258,8 +255,8 @@ GLOBAL_LIST_INIT(rogue_plant_defs, rogue_build_plant_defs())
 	produce_type = "/obj/item/reagent_containers/food/snacks/grown/vegetable/turnip"
 	produce_amount_min = 4
 	produce_amount_max = 6
-	maturation_nutrition = HUNGRINESS_TINY
-	maturation_time = FAST_GROWING
+	maturation_nutrition = "farm_crop_hunger_tiny"
+	maturation_time = "farm_crop_growing_fast"
 	water_drain_rate = 1 / (1 MINUTES)
 
 //................ Water-efficient plants ...............................
@@ -278,8 +275,8 @@ GLOBAL_LIST_INIT(rogue_plant_defs, rogue_build_plant_defs())
 	produce_type = /obj/item/reagent_containers/food/snacks/grown/sunflower
 	produce_amount_min = 3
 	produce_amount_max = 4
-	maturation_nutrition = HUNGRINESS_TINY
-	maturation_time = VERY_FAST_GROWING
+	maturation_nutrition = "farm_crop_hunger_tiny"
+	maturation_time = "farm_crop_growing_very_fast"
 	water_drain_rate = 1 / (2 MINUTES)
 
 /datum/plant_def/fyritiusflower
@@ -288,7 +285,7 @@ GLOBAL_LIST_INIT(rogue_plant_defs, rogue_build_plant_defs())
 	produce_type = /obj/item/reagent_containers/food/snacks/grown/rogue/fyritius
 	produce_amount_min = 1
 	produce_amount_max = 3 // Let's keep the production rate low because it is an anti-antag item
-	maturation_time = FAST_GROWING
+	maturation_time = "farm_crop_growing_fast"
 
 /datum/plant_def/manabloom
 	name = "manabloom"
@@ -296,7 +293,7 @@ GLOBAL_LIST_INIT(rogue_plant_defs, rogue_build_plant_defs())
 	produce_amount_min = 1
 	produce_amount_max = 3
 	produce_type = /obj/item/reagent_containers/food/snacks/grown/manabloom
-	maturation_time = FAST_GROWING
+	maturation_time = "farm_crop_growing_fast"
 
 /datum/plant_def/garlick
 	name = "garlick sprouts"
@@ -311,7 +308,7 @@ GLOBAL_LIST_INIT(rogue_plant_defs, rogue_build_plant_defs())
 	produce_type = /obj/item/reagent_containers/food/snacks/grown/rogue/poppy
 	produce_amount_min = 1
 	produce_amount_max = 2
-	maturation_nutrition = 30
+	maturation_nutrition = "farm_crop_poppy_hunger"
 	water_drain_rate = 1 / (2 MINUTES)
 
 /datum/plant_def/nut
@@ -321,10 +318,10 @@ GLOBAL_LIST_INIT(rogue_plant_defs, rogue_build_plant_defs())
 	uproot_loot = list(/obj/item/grown/log/tree/small)
 	perennial = TRUE
 	produce_amount_max = 3
-	maturation_nutrition = 60
-	produce_nutrition = 35
-	maturation_time = 6 MINUTES
-	produce_time = 3 MINUTES
+	maturation_nutrition = "farm_crop_nut_hunger"
+	produce_nutrition = "farm_crop_nut_produce_nutrition"
+	maturation_time = "farm_crop_maturation_time"
+	produce_time = "farm_crop_produce_time"
 	water_drain_rate = 1 / (2 MINUTES)
 
 /datum/plant_def/coffee
@@ -348,9 +345,9 @@ GLOBAL_LIST_INIT(rogue_plant_defs, rogue_build_plant_defs())
 	produce_amount_min = 2
 	produce_amount_max = 4
 	uproot_loot = list(/obj/item/natural/fibers = 3)
-	maturation_nutrition = HUNGRINESS_DEMANDING
-	maturation_time = SLOW_GROWING
-	produce_time = 3 MINUTES
+	maturation_nutrition = "farm_crop_hunger_demanding"
+	maturation_time = "farm_crop_growing_slow"
+	produce_time = "farm_crop_produce_time"
 
 /datum/plant_def/carrot
 	name = "carrot tops"
@@ -358,8 +355,8 @@ GLOBAL_LIST_INIT(rogue_plant_defs, rogue_build_plant_defs())
 	produce_type = /obj/item/reagent_containers/food/snacks/grown/carrot
 	produce_amount_min = 1
 	produce_amount_max = 3
-	maturation_nutrition = HUNGRINESS_TINY
-	maturation_time = SLOW_GROWING
+	maturation_nutrition = "farm_crop_hunger_tiny"
+	maturation_time = "farm_crop_growing_slow"
 
 /datum/plant_def/cucumber
 	name = "cucumber vines"
@@ -374,7 +371,7 @@ GLOBAL_LIST_INIT(rogue_plant_defs, rogue_build_plant_defs())
 	produce_type = "/obj/item/reagent_containers/food/snacks/grown/eggplant"
 	produce_amount_min = 2
 	produce_amount_max = 4
-	maturation_nutrition = HUNGRINESS_DEMANDING
+	maturation_nutrition = "farm_crop_hunger_demanding"
 
 /// What each Ratwood seed grows (Ratwood plant_def_type of crop seeds, makes_herb of herb seeds, the sapling of tree and bush
 /// seeds), by the seed's own type and no other (TG seed packs have subtypes Ratwood does not): a plant definition grows in soil, a
@@ -522,11 +519,3 @@ GLOBAL_LIST_INIT(rogue_produce_seeds, rogue_produce_seed_table())
 		var/seed_type = istext(row[2]) ? text2path(row[2]) : row[2]
 		if(produce_type && seed_type)
 			.[produce_type] = seed_type
-
-#undef SLOW_GROWING
-#undef FAST_GROWING
-#undef VERY_FAST_GROWING
-#undef HUNGRINESS_EXTREME
-#undef HUNGRINESS_DEMANDING
-#undef HUNGRINESS_NORMAL
-#undef HUNGRINESS_TINY

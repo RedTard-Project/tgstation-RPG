@@ -7,7 +7,7 @@
 
 /// Ratwood chicken Life(): lay in the nest she stands in, or find one, or make one.
 /datum/component/rogue_livestock/proc/try_nest(mob/living/basic/rockhill/hen)
-	if(production < ROGUE_EGG_PRODUCTION || !isturf(hen.loc) || hen.rogue_is_angry())
+	if(production < egg_production || !isturf(hen.loc) || hen.rogue_is_angry())
 		return
 	var/turf/here = hen.loc
 	if(locate(/obj/structure/fluff/nest) in here)
@@ -106,7 +106,7 @@
 /mob/living/simple_animal/chick
 	ai_controller = /datum/ai_controller/basic_controller/simple/simple_skittish
 	rogue_adult_type = /mob/living/simple_animal/hostile/retaliate/rogue/chicken
-	rogue_growth_rate = ROGUE_CHICK_GROWTH
+	rogue_growth_key = "chick_growth"
 
 /// The rogue chicken nests (Ratwood rogue chicken Life()); the friendly one lays as it is fed.
 /mob/living/simple_animal/hostile/retaliate/rogue/chicken

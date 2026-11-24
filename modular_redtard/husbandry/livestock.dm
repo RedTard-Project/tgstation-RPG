@@ -26,8 +26,9 @@
 	/// Lays in a nest out of what she eats (Ratwood rogue chicken); otherwise a hen lays from the store a feeding gives (Ratwood
 	/// friendly chicken).
 	var/rogue_lays_in_nest = FALSE
-	/// How much of its growing up the young does a second (100 - grown).
-	var/rogue_growth_rate = ROGUE_YOUNG_GROWTH
+	/// Name of the mechanics value (husbandry.txt) of how much of its growing up the young does a second (100 - grown),
+	/// read once when the young is set up.
+	var/rogue_growth_key = "young_growth"
 	/// Eats weepvines (Ratwood saiga and goat find_food(), goat Life()).
 	var/rogue_eats_vines = FALSE
 	/// A taunt is a challenge it answers by charging (Ratwood taunted(): bull, billy goat, saiga buck, swine).
@@ -65,12 +66,13 @@ GLOBAL_LIST_EMPTY(rogue_hens)
 	if(rogue_is_father())
 		ADD_TRAIT(src, TRAIT_MOB_BREEDER, ROGUE_HUSBANDRY_TRAIT)
 	if(rogue_adult_type)
+		var/growth_rate = rogue_value(rogue_growth_key)
 		AddComponent(/datum/component/growth_and_differentiation, \
 			growth_time = null, \
 			growth_path = rogue_adult_type, \
 			growth_probability = 100, \
-			lower_growth_value = rogue_growth_rate, \
-			upper_growth_value = rogue_growth_rate, \
+			lower_growth_value = growth_rate, \
+			upper_growth_value = growth_rate, \
 			optional_checks = CALLBACK(src, PROC_REF(rogue_can_grow)))
 		RegisterSignal(src, COMSIG_MOB_CHANGED_TYPE, PROC_REF(rogue_on_grown))
 	if(rogue_is_livestock())
@@ -216,10 +218,34 @@ GLOBAL_LIST_EMPTY(rogue_hens)
 	var/starving = FALSE
 	/// When a mother next looks for a father (Ratwood next_scan_time; 0 - her first season has not started).
 	var/next_breed_scan = 0
+	/// The numbers of the food meter, read once for all beasts, since on_life() runs every Life of every one: food a second,
+	/// the most production, hungry, a nesting hen's laying cost, seconds of food between droppings, starving delay and damage.
+	/// Read again only when the mechanics numbers change (a reload, a value set in the Rogue Mechanics panel).
+	var/static/food_per_second
+	var/static/production_max
+	var/static/hungry
+	var/static/egg_production
+	var/static/manure_time
+	var/static/starve_delay
+	var/static/starve_damage
+	/// The revision of the mechanics numbers (rogue_mechanics_revision()) the ones above were read at.
+	var/static/numbers_revision = -1
+
+/datum/component/rogue_livestock/proc/read_numbers()
+	food_per_second = ROGUE_BEAST_FOOD_PER_SECOND
+	production_max = ROGUE_BEAST_PRODUCTION_MAX
+	hungry = ROGUE_BEAST_HUNGRY
+	egg_production = ROGUE_EGG_PRODUCTION
+	manure_time = ROGUE_MANURE_TIME
+	starve_delay = ROGUE_BEAST_STARVE_DELAY
+	starve_damage = ROGUE_BEAST_STARVE_DAMAGE
+	numbers_revision = rogue_mechanics_revision()
 
 /datum/component/rogue_livestock/Initialize()
 	if(!istype(parent, /mob/living/basic/rockhill))
 		return COMPONENT_INCOMPATIBLE
+	if(numbers_revision != rogue_mechanics_revision())
+		read_numbers()
 	var/mob/living/basic/rockhill/beast = parent
 	if(beast.rogue_is_mother())
 		beast.AddComponent(/datum/component/breed, \
@@ -249,10 +275,12 @@ GLOBAL_LIST_EMPTY(rogue_hens)
 	SIGNAL_HANDLER
 	if(beast.stat != STABLE)
 		return
-	var/drain = ROGUE_BEAST_FOOD_PER_SECOND * seconds_per_tick * CONFIG_GET(number/rogue_beast_hunger_rate)
+	if(numbers_revision != rogue_mechanics_revision())
+		read_numbers()
+	var/drain = food_per_second * seconds_per_tick * CONFIG_GET(number/rogue_beast_hunger_rate)
 	if(food > 0)
 		food = max(food - drain, 0)
-		production = min(production + ROGUE_BEAST_FOOD_PER_SECOND * seconds_per_tick, ROGUE_BEAST_PRODUCTION_MAX)
+		production = min(production + food_per_second * seconds_per_tick, production_max)
 		starved_for = 0
 		starving = FALSE
 		digest(beast, seconds_per_tick)
@@ -260,7 +288,7 @@ GLOBAL_LIST_EMPTY(rogue_hens)
 		starve(beast, seconds_per_tick)
 	if(QDELETED(beast) || beast.stat != STABLE)
 		return
-	if(beast.rogue_eats_vines && food <= ROGUE_BEAST_HUNGRY)
+	if(beast.rogue_eats_vines && food <= hungry)
 		graze_vines(beast)
 	if(beast.rogue_is_mother())
 		try_breed(beast)
@@ -273,12 +301,12 @@ GLOBAL_LIST_EMPTY(rogue_hens)
 	if(!beast.rogue_is_kept() || !CONFIG_GET(flag/rogue_beast_starvation))
 		return
 	starved_for += seconds_per_tick SECONDS
-	if(starved_for < ROGUE_BEAST_STARVE_DELAY)
+	if(starved_for < starve_delay)
 		return
 	if(!starving)
 		starving = TRUE
 		beast.visible_message(span_warning("[beast] looks starved."))
-	beast.adjust_brute_loss(beast.maxHealth * ROGUE_BEAST_STARVE_DAMAGE * seconds_per_tick)
+	beast.adjust_brute_loss(beast.maxHealth * starve_damage * seconds_per_tick)
 
 /// Whatever it ate, grazing or from a hand (TG's basic_eating): the meter fills (Ratwood +30), a hand-feeding heals, and the
 /// beast looks for food again once the meter is down to hungry.

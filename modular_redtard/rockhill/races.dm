@@ -80,7 +80,7 @@
 
 /datum/species/on_species_gain(mob/living/carbon/human/human_who_gained_species, datum/species/old_species, pref_load, regenerate_icons = TRUE, replace_missing = TRUE)
 	. = ..()
-	if(rogue_combat_enabled() && rogue_has_plain_voice())
+	if(rogue_medieval_map() && rogue_has_plain_voice())
 		human_who_gained_species.AddElement(/datum/element/rogue_human_voice)
 
 /datum/species/on_species_loss(mob/living/carbon/human/human, datum/species/new_species, pref_load)

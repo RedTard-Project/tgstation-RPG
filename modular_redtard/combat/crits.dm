@@ -1,18 +1,27 @@
-GLOBAL_LIST_INIT(rogue_fracture_classes, list(BCLASS_BLUNT, BCLASS_SMASH, BCLASS_CHOP, BCLASS_PUNCH))
+/// Vibelin's crits (modules/surgery/bodyparts/bodypart_wounds.dm try_crit(), the chest's and the head's) on Azure Peak's
+/// strike: every kind of crit of combat/wounds/ that may land on the struck zone rolls its own chance (get_crit_prob(): the
+/// limb's damage share and the blow's damage, a strong or aimed blow and a brittle limb counting more where the kind takes
+/// them), and one of those that came up opens. A blow to the head may knock one out instead (30 seconds, the owner's
+/// number), a blow to the groin may stun. Azure Peak's critical resistance holds off a crit or a knockout, a weak blow deals
+/// none, a bloody blow may spray the blood of the struck behind it, and the weapon may stick (combat/stuck_weapon.dm).
+
+GLOBAL_LIST_INIT(rogue_fracture_classes, list(BCLASS_BLUNT, BCLASS_SMASH, BCLASS_CHOP, BCLASS_PICK, BCLASS_PUNCH))
 GLOBAL_LIST_INIT(rogue_artery_classes, list(BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB, BCLASS_PICK, BCLASS_BITE, BCLASS_PIERCE))
 GLOBAL_LIST_INIT(rogue_artery_strong_classes, list(BCLASS_CHOP, BCLASS_PICK))
+/// Vibelin ARTERY_HEART_BCLASSES: the blows that reach the aorta through whole ribs.
 GLOBAL_LIST_INIT(rogue_artery_heart_classes, list(BCLASS_PICK, BCLASS_PIERCE))
 GLOBAL_LIST_INIT(rogue_stab_classes, list(BCLASS_STAB, BCLASS_PICK, BCLASS_PIERCE))
 GLOBAL_LIST_INIT(rogue_head_zones, list("head", "skull", "nose", "ears", "r_eye", "l_eye", BODY_ZONE_PRECISE_EYES, "mouth", "neck"))
 GLOBAL_LIST_INIT(rogue_eye_zones, list("r_eye", "l_eye", BODY_ZONE_PRECISE_EYES))
-GLOBAL_LIST_INIT(rogue_knockout_zones, list("head", "skull"))
+/// Vibelin's knockout zones of the head (nose, ears, skull, eyes) and Azure Peak's head.
+GLOBAL_LIST_INIT(rogue_knockout_zones, list("head", "skull", "nose", "ears", "r_eye", "l_eye", BODY_ZONE_PRECISE_EYES))
+/// Vibelin NO_KNOCKOUT_BCLASSES.
+GLOBAL_LIST_INIT(rogue_no_knockout_classes, list(BCLASS_CHOP, BCLASS_PICK))
+/// Vibelin CBT_BCLASSES: the blows that may stun through the groin.
+GLOBAL_LIST_INIT(rogue_cbt_classes, list(BCLASS_BLUNT, BCLASS_SMASH, BCLASS_CHOP, BCLASS_PICK, BCLASS_PUNCH, BCLASS_TWIST))
 GLOBAL_LIST_INIT(rogue_chest_zones, list("chest", "stomach", "groin"))
 /// Azure Peak splatter_bclasses: the blows that may spray the blood of the struck behind them.
 GLOBAL_LIST_INIT(rogue_splatter_classes, list(BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB, BCLASS_PICK, BCLASS_PIERCE, BCLASS_BLUNT, BCLASS_SMASH))
-
-/// Azure Peak TRAIT_BRITTLE of a limb, while the paralysis of a fracture lasts: its next crit breaks bone more easily.
-#define ROGUE_TRAIT_BRITTLE "rogue_brittle"
-#define ROGUE_CRIT_PARALYSIS_SOURCE "rogue_crit_paralysis"
 
 /proc/rogue_bclass_sharpness(blade_class)
 	switch(blade_class)
@@ -42,12 +51,31 @@ GLOBAL_LIST_INIT(rogue_splatter_classes, list(BCLASS_CUT, BCLASS_CHOP, BCLASS_ST
 		return FALSE
 	return resistance.stacks <= (mind ? ROGUE_CRIT_RESIST_STACKS : ROGUE_CRIT_RESIST_STACKS_NPC)
 
+/// The crit formula of the module (ROGUE_FORMULA_CRIT_CHANCE): Vibelin's knockout chance of the head.
 /mob/living/proc/rogue_crit_chance(share, damage, divisor, bonus)
 	return rogue_formula_value(ROGUE_FORMULA_CRIT_CHANCE, list("limb_damage" = share, "damage" = damage, "divisor" = divisor, "bonus" = bonus))
+
+/// One of each kind of crit a blow may deal (Vibelin GLOB.primordial_wounds), to ask for its chance; built again when the
+/// mechanics numbers change.
+/proc/rogue_crit_primordials()
+	var/static/list/primordials
+	var/static/revision = -1
+	if(primordials && revision == rogue_mechanics_revision())
+		return primordials
+	QDEL_LIST(primordials)
+	primordials = list()
+	for(var/datum/wound/rogue/path as anything in subtypesof(/datum/wound/rogue))
+		if(initial(path.abstract_type) == path || !initial(path.can_roll))
+			continue
+		primordials += new path
+	revision = rogue_mechanics_revision()
+	return primordials
 
 /mob/living/proc/rogue_try_crit(blade_class, damage, mob/living/attacker, zone)
 	return FALSE
 
+/// The strike's crit (strike.dm, specials.dm): a weak blow deals none; a bloody one may spray the blood of the struck behind
+/// it, crit or not; then the struck limb rolls its crits.
 /mob/living/carbon/rogue_try_crit(blade_class, damage, mob/living/attacker, zone)
 	if(!blade_class || damage <= 0 || HAS_TRAIT(src, TRAIT_GODMODE))
 		return FALSE
@@ -59,217 +87,103 @@ GLOBAL_LIST_INIT(rogue_splatter_classes, list(BCLASS_CUT, BCLASS_CHOP, BCLASS_ST
 	// Azure Peak bodypart_attacked_by(): a bloody blow may spray the blood of the struck behind them, crit or not.
 	if(attacker && attacker != src && (blade_class in GLOB.rogue_splatter_classes) && prob(damage * rogue_value("crit_blood_spray_per_damage")))
 		spray_blood(get_dir(attacker, src))
-	var/share = limb.get_damage() / limb.max_damage
-	if(share <= ROGUE_CRIT_LIMB_THRESHOLD)
+	return limb.rogue_try_crit(blade_class, damage, attacker, zone || limb.body_zone)
+
+/// Vibelin try_crit() of the limb: the crits that may land on the zone each roll; one of those that came up opens. The head
+/// may be knocked out instead, the groin stunned. Returns the crit opened, TRUE for a knockout or a crit resisted, FALSE.
+/obj/item/bodypart/proc/rogue_try_crit(bclass, damage, mob/living/attacker, zone)
+	var/mob/living/carbon/struck = owner
+	if(!struck || !bclass || damage <= 0 || HAS_TRAIT(struck, TRAIT_GODMODE))
 		return FALSE
+	zone ||= body_zone
 	if(attacker?.rogue_goodluck(2))
 		damage += ROGUE_CRIT_LUCK_BONUS
-	var/strong = attacker?.rogue_rmb_is(/datum/rogue_rmb_intent/strong)
-	var/aimed = attacker?.rogue_rmb_is(/datum/rogue_rmb_intent/aimed)
-	var/list/attempts = list()
+	var/share = get_damage() / max_damage
+	// Vibelin chest try_crit(): a blow to the groin may stun, twice as likely from a nutcracker.
+	if(zone == BODY_ZONE_PRECISE_GROIN && (bclass in GLOB.rogue_cbt_classes))
+		var/factor = (attacker && HAS_TRAIT(attacker, TRAIT_NUTCRACKER)) ? rogue_value("wound_cbt_nutcracker") : 1
+		if(prob(damage * factor))
+			INVOKE_ASYNC(struck, TYPE_PROC_REF(/mob, emote), "scream", NONE, null, FALSE, FALSE, TRUE)
+			struck.Stun(ROGUE_CRIT_GROIN_STUN)
 	var/knockout = FALSE
-	// Azure Peak: a limb already broken (or still numb from a break) breaks again more easily.
-	var/brittle = limb.rogue_brittle()
-	if(zone in GLOB.rogue_head_zones)
-		if(blade_class in GLOB.rogue_fracture_classes)
-			var/chance = rogue_crit_chance(share, damage, ROGUE_CRIT_DAMAGE_DIVISOR, strong)
-			if(stat == STABLE && (zone in GLOB.rogue_knockout_zones) && blade_class != BCLASS_CHOP && prob(chance))
-				knockout = TRUE
-			if(prob(chance + (brittle ? rogue_value("crit_brittle_bonus_head") : 0)))
-				attempts += list(list(WOUND_BLUNT, limb.get_wound_type(/datum/wound/blunt/bone) ? WOUND_SEVERITY_CRITICAL : WOUND_SEVERITY_SEVERE, zone == "skull" ? ROGUE_CRIT_BRAIN : null))
-		if(blade_class in GLOB.rogue_artery_classes)
-			var/chance = rogue_crit_chance(share, damage, ROGUE_CRIT_DAMAGE_DIVISOR, blade_class == BCLASS_CHOP ? strong : aimed)
-			if(prob(chance))
-				attempts += list(list((blade_class in GLOB.rogue_stab_classes) ? WOUND_PIERCE : WOUND_SLASH, WOUND_SEVERITY_CRITICAL, zone == "neck" ? ROGUE_CRIT_THROAT : null))
-				if(blade_class in GLOB.rogue_stab_classes)
-					if(zone in GLOB.rogue_eye_zones)
-						attempts += list(list(null, null, ROGUE_CRIT_EYES))
-					else if(zone == "ears")
-						attempts += list(list(null, null, ROGUE_CRIT_EARS))
-					else if(zone == "mouth")
-						attempts += list(list(null, null, ROGUE_CRIT_TONGUE))
-					else if(zone == "nose")
-						attempts += list(list(null, null, ROGUE_CRIT_NOSE))
-					else if(zone in GLOB.rogue_knockout_zones)
-						attempts += list(list(null, null, ROGUE_CRIT_BRAIN))
-	else if(zone in GLOB.rogue_chest_zones)
-		if((blade_class in GLOB.rogue_fracture_classes) && zone != "stomach" && prob(rogue_crit_chance(share, damage, ROGUE_CRIT_DAMAGE_DIVISOR, strong) + (brittle ? rogue_value("crit_brittle_bonus") : 0)))
-			attempts += list(list(WOUND_BLUNT, share >= ROGUE_CRIT_SEVERE_SHARE ? WOUND_SEVERITY_CRITICAL : WOUND_SEVERITY_SEVERE, null))
-		if((blade_class in GLOB.rogue_fracture_classes) && zone == "groin" && prob(damage))
-			Stun(ROGUE_CRIT_GROIN_STUN)
-		if(blade_class in GLOB.rogue_artery_classes)
-			var/chance = rogue_crit_chance(share, damage, ROGUE_CRIT_CHEST_DIVISOR, (blade_class in GLOB.rogue_artery_strong_classes) ? strong : aimed)
-			if(prob(chance))
-				if(zone == "stomach")
-					attempts += list(list(null, null, ROGUE_CRIT_DISEMBOWEL))
-				var/heart = limb.get_wound_type(/datum/wound/blunt/bone) || (blade_class in GLOB.rogue_artery_heart_classes) || HAS_TRAIT(src, TRAIT_CRITICAL_WEAKNESS)
-				attempts += list(list((blade_class in GLOB.rogue_stab_classes) ? WOUND_PIERCE : WOUND_SLASH, WOUND_SEVERITY_CRITICAL, heart ? ROGUE_CRIT_HEART : null))
-		if(blade_class == BCLASS_LASHING && HAS_TRAIT(src, TRAIT_CRITICAL_WEAKNESS) && prob(rogue_crit_chance(share, damage, ROGUE_CRIT_CHEST_DIVISOR, strong)))
-			attempts += list(list(WOUND_SLASH, WOUND_SEVERITY_CRITICAL, null))
-	else
-		// Azure Peak: twisting a brittle limb breaks it instead of putting it out of joint.
-		if(blade_class == BCLASS_TWIST && prob(rogue_crit_chance(share, damage, ROGUE_CRIT_DAMAGE_DIVISOR, strong)))
-			attempts += list(list(WOUND_BLUNT, brittle ? WOUND_SEVERITY_SEVERE : WOUND_SEVERITY_MODERATE, null))
-		if((blade_class in GLOB.rogue_fracture_classes) && prob(rogue_crit_chance(share, damage, ROGUE_CRIT_DAMAGE_DIVISOR, strong) + (brittle ? rogue_value("crit_brittle_bonus") : 0)))
-			attempts += list(list(WOUND_BLUNT, share >= ROGUE_CRIT_SEVERE_SHARE ? WOUND_SEVERITY_CRITICAL : WOUND_SEVERITY_MODERATE, null))
-		if((blade_class in GLOB.rogue_artery_classes) && prob(rogue_crit_chance(share, damage, ROGUE_CRIT_DAMAGE_DIVISOR, (blade_class in GLOB.rogue_artery_strong_classes) ? strong : aimed)))
-			attempts += list(list((blade_class in GLOB.rogue_stab_classes) ? WOUND_PIERCE : WOUND_SLASH, WOUND_SEVERITY_CRITICAL, null))
-		if(blade_class == BCLASS_LASHING && HAS_TRAIT(src, TRAIT_CRITICAL_WEAKNESS))
-			attempts += list(list(WOUND_SLASH, WOUND_SEVERITY_CRITICAL, null))
-	if(blade_class == BCLASS_BURN && prob(rogue_crit_chance(share, damage, ROGUE_CRIT_DAMAGE_DIVISOR, FALSE)))
-		attempts += list(list(WOUND_BURN, WOUND_SEVERITY_CRITICAL, null))
-	if(!length(attempts) && !knockout)
+	// Vibelin head try_crit(): a blow of the breaking kind to the head may knock one out instead of a crit.
+	if(body_zone == BODY_ZONE_HEAD && struck.stat == STABLE && (zone in GLOB.rogue_knockout_zones) && (bclass in GLOB.rogue_fracture_classes) && !(bclass in GLOB.rogue_no_knockout_classes))
+		var/counted = damage
+		if(rogue_brittle())
+			counted += rogue_value("wound_knockout_brittle")
+		if(attacker?.rogue_rmb_is(/datum/rogue_rmb_intent/strong))
+			counted += rogue_value("wound_knockout_strong")
+		var/chance = struck.rogue_crit_chance(share, counted, rogue_value("wound_knockout_divisor"), 0)
+		if(HAS_TRAIT(struck, TRAIT_CRITICAL_RESISTANCE))
+			chance -= rogue_value("wound_base_resistance_malus")
+		knockout = prob(chance)
+	var/list/candidates = list()
+	if(!knockout)
+		for(var/datum/wound/rogue/primordial as anything in rogue_crit_primordials())
+			if(!primordial.rogue_can_apply(src, zone, bclass))
+				continue
+			if(prob(primordial.get_crit_prob(bclass, damage, share, attacker, src)))
+				candidates += primordial.type
+	if(!knockout && !length(candidates))
 		return FALSE
-	if(rogue_resist_crit())
-		rogue_strike_note(span_crit("Critical resistance! [src] resists a [knockout ? "knockout" : "wound"]!"))
+	if(struck.rogue_resist_crit())
+		struck.rogue_strike_note(span_crit("Critical resistance! [struck] resists a [knockout ? "knockout" : "wound"]!"))
 		return TRUE
 	if(knockout)
-		var/from_behind = attacker && dir == get_dir(attacker, src)
-		rogue_strike_note(rogue_crit_text("[src] is knocked out[from_behind ? " FROM BEHIND" : ""]!"))
-		Unconscious(ROGUE_CRIT_KNOCKOUT + (from_behind ? ROGUE_CRIT_KNOCKOUT_BEHIND : 0))
-	for(var/list/attempt as anything in shuffle(attempts))
-		if(rogue_apply_crit(limb, attempt[1], attempt[2], attempt[3], attacker))
-			playsound(src, 'modular_redtard/rockhill/sound/combat/crit.ogg', 100, TRUE)
-			// Azure Peak: the crit breaks the struck (paincrit); a burn's shakes the one who dealt it instead.
-			if(blade_class == BCLASS_BURN)
-				if(attacker && attacker != src)
-					shake_camera(attacker, 2, 2)
-			else
-				INVOKE_ASYNC(src, TYPE_PROC_REF(/mob, emote), "paincrit", NONE, null, FALSE, FALSE, TRUE)
-			log_combat(attacker, src, "critically struck", null, "(ZONE: [zone]) (CLASS: [blade_class])")
-			// K2d1: the weapon may stick in the part (combat/stuck_weapon.dm).
-			rogue_mark_stick(blade_class, attempt, attacker)
-			return TRUE
-	return knockout
-
-/mob/living/carbon/proc/rogue_apply_crit(obj/item/bodypart/limb, wounding_type, severity, special, mob/living/attacker)
-	. = FALSE
-	if(wounding_type && cause_wound_of_type_and_severity(wounding_type, limb, severity, severity, wound_source = ROGUE_CRIT_WOUND_SOURCE))
-		. = TRUE
-		if(wounding_type == WOUND_BLUNT && severity >= WOUND_SEVERITY_SEVERE)
-			rogue_fracture_gained(limb)
-	if((wounding_type == WOUND_SLASH || wounding_type == WOUND_PIERCE) && severity >= WOUND_SEVERITY_CRITICAL)
-		rogue_open_artery(limb, special)
-	switch(special)
-		if(ROGUE_CRIT_BRAIN)
-			adjust_organ_loss(ORGAN_SLOT_BRAIN, ROGUE_CRIT_BRAIN_DAMAGE)
-			. = TRUE
-		if(ROGUE_CRIT_EYES)
-			var/obj/item/organ/eyes/eyes = get_organ_slot(ORGAN_SLOT_EYES)
-			if(eyes)
-				eyes.apply_organ_damage(ROGUE_CRIT_EYE_DAMAGE)
-				rogue_strike_note(rogue_crit_text(pick("The eye is poked!", "The eye is gouged!", "The eye is destroyed!")))
-				. = TRUE
-		if(ROGUE_CRIT_EARS)
-			var/obj/item/organ/ears/ears = get_organ_slot(ORGAN_SLOT_EARS)
-			if(ears)
-				ears.apply_organ_damage(ROGUE_CRIT_EAR_DAMAGE)
-				rogue_strike_note(rogue_crit_text(pick("The eardrums are gored!", "The eardrums are ruptured!")))
-				. = TRUE
-		if(ROGUE_CRIT_TONGUE)
-			var/obj/item/organ/tongue/tongue = get_organ_slot(ORGAN_SLOT_TONGUE)
-			if(tongue)
-				tongue.apply_organ_damage(ROGUE_CRIT_TONGUE_DAMAGE)
-				rogue_strike_note(rogue_crit_text("The tongue is cut!"))
-				. = TRUE
-		if(ROGUE_CRIT_NOSE)
-			ADD_TRAIT(src, TRAIT_DISFIGURED, ROGUE_CRIT_SOURCE)
-			rogue_strike_note(rogue_crit_text(pick("The nose is mangled beyond recognition!", "The nose is destroyed!")))
-			. = TRUE
-		if(ROGUE_CRIT_THROAT)
-			losebreath += ROGUE_CRIT_THROAT_BREATH
-			rogue_strike_note(rogue_crit_text("Blood sprays from [src]'s throat!"))
-			. = TRUE
-		if(ROGUE_CRIT_HEART)
-			adjust_organ_loss(ORGAN_SLOT_HEART, ROGUE_CRIT_HEART_DAMAGE)
-			. = TRUE
-		if(ROGUE_CRIT_DISEMBOWEL)
-			. = rogue_disembowel(attacker)
-
-/// Ratwood's artery wounds (wounds/types/arteries.dm): the critical cut or stab a crit leaves is an opened artery, that
-/// of the throat a torn carotid, that of the heart an aortic dissection, and bleeds at Ratwood's rate (combat/blood.dm).
-/// Opening it breaks one's stride (on_mob_gain(): paincrit, Slowdown(20), the sight shaken).
-/mob/living/carbon/proc/rogue_open_artery(obj/item/bodypart/limb, special)
-	var/opened = FALSE
-	for(var/datum/wound/wound as anything in limb.wounds)
-		if(wound.rogue_artery_opened || istype(wound, /datum/wound/blunt) || !wound.rogue_artery_bleed())
+		var/from_behind = attacker && struck.dir == get_dir(attacker, struck)
+		struck.rogue_strike_note(rogue_crit_text("[struck] is knocked out[from_behind ? " FROM BEHIND" : ""]!"))
+		struck.Unconscious(ROGUE_CRIT_KNOCKOUT + (from_behind ? ROGUE_CRIT_KNOCKOUT_BEHIND : 0))
+		log_combat(attacker, struck, "knocked out", null, "(ZONE: [zone]) (CLASS: [bclass])")
+		return TRUE
+	for(var/path in shuffle(candidates))
+		var/datum/wound/rogue/crit = rogue_add_wound(path, FALSE, TRUE)
+		if(!crit)
 			continue
-		wound.rogue_artery_opened = TRUE
-		if(special == ROGUE_CRIT_THROAT)
-			wound.rogue_artery = ROGUE_ARTERY_THROAT
-		else if(special == ROGUE_CRIT_HEART)
-			wound.rogue_artery = ROGUE_ARTERY_HEART
-		opened = TRUE
-	if(!opened)
-		return
-	rogue_crit_wound_shock()
+		// Azure Peak: a burn's crit shakes the one who dealt it.
+		if(bclass == BCLASS_BURN && attacker && attacker != struck)
+			shake_camera(attacker, 2, 2)
+		log_combat(attacker, struck, "critically struck", null, "(ZONE: [zone]) (CLASS: [bclass]) (WOUND: [crit.name])")
+		// K2d1: the weapon may stick in the part (combat/stuck_weapon.dm).
+		struck.rogue_mark_stick(bclass, crit.rogue_stick_attempt(bclass), attacker)
+		return crit
+	return FALSE
 
-/// Azure Peak's artery and fracture on_mob_gain(): a long slowdown, the sight shaken, and one with a mind is left critically
-/// wounded. The paincrit is the crit's own (rogue_try_crit()).
+/// What combat/stuck_weapon.dm reads of a crit for the chance its weapon sticks: list(TG wounding kind, TG severity, organ crit).
+/datum/wound/rogue/proc/rogue_stick_attempt(bclass)
+	return list(null, null, null)
+
+/datum/wound/rogue/artery/rogue_stick_attempt(bclass)
+	return list(rogue_bclass_to_wound(bclass), WOUND_SEVERITY_CRITICAL, null)
+
+/datum/wound/rogue/facial/ears/rogue_stick_attempt(bclass)
+	return list(null, null, ROGUE_CRIT_EARS)
+
+/datum/wound/rogue/facial/eyes/rogue_stick_attempt(bclass)
+	return list(null, null, ROGUE_CRIT_EYES)
+
+/datum/wound/rogue/fracture/head/brain/rogue_stick_attempt(bclass)
+	return list(null, null, ROGUE_CRIT_BRAIN)
+
+/// A crit dealt by its TG kind and severity (combat/stuck_weapon.dm twist): on a medieval body the crit of rogue_tg_crit_type()
+/// opens at once, told as a crit; a disembowelment spills the guts (combat/dismember.dm); elsewhere TG's wound.
+/mob/living/carbon/proc/rogue_apply_crit(obj/item/bodypart/limb, wounding_type, severity, special, mob/living/attacker)
+	if(special == ROGUE_CRIT_DISEMBOWEL)
+		return rogue_disembowel(attacker)
+	if(!limb || !wounding_type)
+		return FALSE
+	if(!HAS_TRAIT(src, TRAIT_ROGUE_WOUNDS))
+		return !!cause_wound_of_type_and_severity(wounding_type, limb, severity, severity, wound_source = ROGUE_CRIT_WOUND_SOURCE)
+	var/crit_type = limb.rogue_tg_crit_type(wounding_type, severity, ROGUE_CRIT_WOUND_SOURCE)
+	if(!crit_type)
+		return FALSE
+	var/datum/wound/rogue/crit = new crit_type
+	crit.rogue_forced = TRUE
+	return !!limb.rogue_add_wound(crit, FALSE, TRUE)
+
+/// Azure Peak's on_mob_gain() of a crit: a long slowdown, the sight shaken, and one with a mind is left critically wounded.
+/// The emote is the crit's own (gain_emote).
 /mob/living/carbon/proc/rogue_crit_wound_shock()
 	rogue_slow_for(rogue_value("crit_wound_slow_time"))
 	shake_camera(src, 2, 2)
 	if(mind)
 		rogue_critwound()
-
-/// Azure Peak's fracture (wounds/types/fractures.dm), on the bone a crit broke: the limb gives out for a while and stays
-/// brittle so long, the break bleeds hard but clots fast, and a broken leg, skull or neck slows one's steps until it heals.
-/// A cracked skull knocks one out briefly instead of numbing the head.
-/mob/living/carbon/proc/rogue_fracture_gained(obj/item/bodypart/limb)
-	var/datum/wound/blunt/bone/fracture = limb.get_wound_type(/datum/wound/blunt/bone)
-	if(!fracture || fracture.severity < WOUND_SEVERITY_SEVERE)
-		return
-	fracture.rogue_fracture_at = world.time
-	if(limb.body_zone == BODY_ZONE_HEAD)
-		rogue_strike_note(rogue_crit_text("The skull cracks!"))
-		Unconscious(rogue_value("crit_skull_knockout"))
-	else if(!HAS_TRAIT(limb, ROGUE_TRAIT_BRITTLE))
-		ADD_TRAIT(limb, TRAIT_PARALYSIS, ROGUE_CRIT_PARALYSIS_SOURCE)
-		ADD_TRAIT(limb, ROGUE_TRAIT_BRITTLE, ROGUE_CRIT_PARALYSIS_SOURCE)
-		addtimer(CALLBACK(limb, TYPE_PROC_REF(/obj/item/bodypart, rogue_end_crit_paralysis)), rogue_value("crit_fracture_paralysis"))
-	rogue_update_fracture_slowdown()
-	rogue_crit_wound_shock()
-
-/// The limb a fracture numbed comes back (Azure Peak remove_crit_paralysis()).
-/obj/item/bodypart/proc/rogue_end_crit_paralysis()
-	REMOVE_TRAIT(src, TRAIT_PARALYSIS, ROGUE_CRIT_PARALYSIS_SOURCE)
-	REMOVE_TRAIT(src, ROGUE_TRAIT_BRITTLE, ROGUE_CRIT_PARALYSIS_SOURCE)
-
-/// Azure Peak TRAIT_BRITTLE: the limb is broken, or still numb from a break.
-/obj/item/bodypart/proc/rogue_brittle()
-	if(HAS_TRAIT(src, ROGUE_TRAIT_BRITTLE))
-		return TRUE
-	var/datum/wound/blunt/bone/bone = get_wound_type(/datum/wound/blunt/bone)
-	return bone && bone.severity >= WOUND_SEVERITY_SEVERE
-
-/// Azure Peak FRACTURED_ADD_SLOWDOWN: each broken leg and a broken head (skull or neck) slow one's steps until they heal.
-/mob/living/carbon/proc/rogue_update_fracture_slowdown()
-	var/broken = 0
-	for(var/obj/item/bodypart/limb as anything in bodyparts)
-		if(limb.body_zone != BODY_ZONE_L_LEG && limb.body_zone != BODY_ZONE_R_LEG && limb.body_zone != BODY_ZONE_HEAD)
-			continue
-		var/datum/wound/blunt/bone/bone = limb.get_wound_type(/datum/wound/blunt/bone)
-		if(bone && bone.severity >= WOUND_SEVERITY_SEVERE)
-			broken++
-	if(broken)
-		add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/rogue_fracture, multiplicative_slowdown = broken * rogue_value("crit_fracture_slowdown"))
-	else
-		remove_movespeed_modifier(/datum/movespeed_modifier/rogue_fracture)
-
-/datum/movespeed_modifier/rogue_fracture
-	variable = TRUE
-
-/datum/wound
-	/// When a crit broke this bone (Azure Peak's fracture bleeding counts from then); 0 for a bone not broken by a crit.
-	var/rogue_fracture_at = 0
-
-/// Azure Peak's fracture bleeds hard, then clots fast down to a trickle: counted from when the crit broke it, a Life tick's
-/// numbers turned to a second's.
-/datum/wound/blunt/bone/rogue_artery_bleed()
-	if(!rogue_fracture_at || severity < WOUND_SEVERITY_SEVERE)
-		return 0
-	var/ticks = (world.time - rogue_fracture_at) / (ROGUE_LIFE_TICK SECONDS)
-	return max(rogue_value("crit_fracture_bleed") - rogue_value("crit_fracture_clot") * ticks, rogue_value("crit_fracture_clot_floor")) / ROGUE_LIFE_TICK
-
-#undef ROGUE_TRAIT_BRITTLE
-#undef ROGUE_CRIT_PARALYSIS_SOURCE

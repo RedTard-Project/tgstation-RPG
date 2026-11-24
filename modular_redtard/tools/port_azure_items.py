@@ -76,6 +76,13 @@ RESETS = {
 # Vibelin's combat numbers of a "vibelin(numbers)+azure(intents)" pair (K2g's rules, k2/k2g.md): field -> Vibelin var.
 VIBELIN_FIELDS = OrderedDict((('force', 'force'), ('force_wielded', 'force_wielded'), ('throw_force', 'throwforce'), ('defense', 'wdefense'), ('min_strength', 'minstr'), ('unarmed_bonus', 'unarmed_bonus'), ('integrity', 'max_integrity')))
 VIBELIN_ROOTS = {'/atom', '/atom/movable', '/obj', '/obj/item', '/obj/item/clothing', '/obj/item/clothing/gloves', '/obj/item/weapon'}
+# H1b (2026-11-22): K1v name pairs that are other items (checked by type, sprite and description in both forks); these
+# keep Azure's numbers.
+FALSE_VIBELIN_PAIRS = {
+    '/obj/item/clothing/suit/roguetown/armor/plate/fluted/donator_gothic_ornate': "the ornate Psydonian gothic plate (gpsycuirass), not Vibelin's plain gothic half-plate",
+    '/obj/item/rogueweapon/huntingknife/throwingknife/triumph': "a throwing knife; Vibelin's pair is its abstract base knife",
+    '/obj/item/rogueweapon/woodstaff/polearm': "Azure's walking-stick staff; Vibelin's shillelagh is a club of its own, which port_vibelin_items.py brings",
+}
 UNITS = {'SECONDS': '*10', 'SECOND': '*10', 'MINUTES': '*600', 'MINUTE': '*600', 'DECISECONDS': '*1', 'DECISECOND': '*1', 'HOURS': '*36000'}
 SAFE = re.compile(r'^[\d.\s+\-*/()%]*$')
 TOKEN = re.compile(r'[A-Za-z_][A-Za-z0-9_]*')
@@ -162,6 +169,25 @@ def read_selection(picks):
         else:
             others[row['type']] = row['pick']
     return mine, others
+
+
+def extended_paths(files):
+    """Every type path (and its parents) a block, proc or var line of these files names, like pr.declared_paths()."""
+    found = set()
+    for name in files:
+        for line in open(name, encoding='utf-8', errors='ignore'):
+            m = re.match(r'^(/[A-Za-z0-9_/]+)(\()?', line)
+            if not m:
+                continue
+            parts = m.group(1).rstrip('/').split('/')
+            if m.group(2):
+                parts = parts[:-1]
+            for keyword in ('proc', 'verb', 'var'):
+                if keyword in parts:
+                    parts = parts[:parts.index(keyword)]
+            for k in range(2, len(parts) + 1):
+                found.add('/'.join(parts[:k]))
+    return found
 
 
 def excluded(row, rules):
@@ -256,9 +282,9 @@ def fmt(v):
 
 
 def vibelin_numbers(spec, rows, pairs, kinds):
-    """K2g's rules: force, force_wielded, throw_force, defense from Vibelin; integrity from Vibelin on armor only (its
-    weapon integrity has a scale of its own); min_strength where Vibelin sets one; penetration and the wielded defense
-    bonus stay Azure's (Vibelin counts percent points, has no bonus)."""
+    """K2g's rules: force, force_wielded, throw_force, defense and integrity from Vibelin (weapon integrity too: the
+    owner's decision of H1b, 2026-11-22); min_strength where Vibelin sets one; penetration and the wielded defense
+    bonus stay Azure's (Vibelin counts percent points, has no bonus). FALSE_VIBELIN_PAIRS keep Azure's numbers."""
     if not pairs:
         return [], 0
     vib = Vibelin(spec)
@@ -269,10 +295,12 @@ def vibelin_numbers(spec, rows, pairs, kinds):
         oid = path[len('/obj/item/'):]
         if kinds[path] not in spec['kinds'] or skip.match(oid):
             continue
+        if path in FALSE_VIBELIN_PAIRS:
+            log.append((path, match, '-', '', '', 'false pair: ' + FALSE_VIBELIN_PAIRS[path]))
+            continue
         if match not in vib.types:
             log.append((path, match, '-', '', '', 'no Vibelin type'))
             continue
-        weapon = kinds[path] == 'weapon' or oid.startswith(('rogueweapon/', 'gun/', 'ammo_casing/'))
         row = rows.setdefault(path, OrderedDict())
         for field, var in VIBELIN_FIELDS.items():
             ours = row.get(field)
@@ -280,8 +308,6 @@ def vibelin_numbers(spec, rows, pairs, kinds):
             if field in ('force_wielded', 'min_strength') and not vv:
                 vv = None
             if field == 'unarmed_bonus' and vv == 1 and ours is None:
-                vv = None
-            if field == 'integrity' and weapon:
                 vv = None
             if vv is None or (ours is None and vv == 0):
                 continue
@@ -388,6 +414,12 @@ def main():
     rules = [rule for rule in rules if not (rule.get('when_declared') and (rule.get('to') or rule.get('rebase')) not in declared)]
 
     mine, others = read_selection(picks)
+    # Module files that only add behaviour to Azure's types this tool ports (combat/explosives.dm on /obj/item/explosive):
+    # their declarations do not make the types "declared already" (H1b, 2026-11-22).
+    extended = extended_paths(own.get('extended_by_module', {}).get('files', [])) & set(mine)
+    if extended:
+        declared = declared - extended
+        print('types the module only extends:', len(extended))
     skipped = OrderedDict()
     chosen = OrderedDict()
     for path, row in mine.items():

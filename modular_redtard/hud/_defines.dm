@@ -1,5 +1,5 @@
-#define ROGUE_HUD_MAX_SCREEN_OBJECTS 72
-#define ROGUE_HUD_MAX_SHOWN_OBJECTS 38
+#define ROGUE_HUD_MAX_SCREEN_OBJECTS 76
+#define ROGUE_HUD_MAX_SHOWN_OBJECTS 42
 
 #define ROGUE_HUD_STUB_TEXT "не реализовано"
 
@@ -8,6 +8,7 @@
 #define ROGUE_HUD_ICON_BACK 'modular_redtard/icons/mob/roguehudback2.dmi'
 #define ROGUE_HUD_ICON_PANEL 'modular_redtard/icons/mob/roguehud_panel.dmi'
 #define ROGUE_HUD_ICON_STRIP 'modular_redtard/icons/hud/rogue_panel.dmi'
+#define ROGUE_HUD_ICON_FRAME 'modular_redtard/icons/hud/rogue_frame.dmi'
 #define ROGUE_HUD_ICON_DOLL_BACK 'modular_redtard/icons/hud/rogue_doll_back.dmi'
 #define ROGUE_HUD_ICON_INTENT_GRID 'modular_redtard/icons/hud/rogue_intent_grid.dmi'
 #define ROGUE_HUD_ICON_INTENTS 'modular_redtard/icons/mob/rogueintents.dmi'
@@ -24,64 +25,89 @@
 #define ROGUE_SCANNIES_LAYER (CURSE_LAYER + 0.2)
 
 #define rogueui_backhudl "WEST:16,SOUTH:0"
-#define rogueui_panel_strip "WEST,SOUTH to WEST,NORTH"
-#define rogueui_panel_toggle "WEST:2,SOUTH"
-#define rogueui_panel_width 36
+// The left column stands beside the field, not over it (owner's decision 2026-11-23): one tile to the west of the view,
+// which BYOND adds to the screen as a border. It is exactly one tile wide, the least a 32 px element needs.
+// The row under the field (2026-11-24) is the same for the bottom: with the column alone the screen was 16x15, and the
+// window, fitted to a square view, showed an empty bar under it. The row makes that bar the HUD's own, one button high;
+// the hands, the intents and the RMB button stand on it, the inventory button in the corner under the column.
+// Both are plain darkness with the buttons on it, and Roguetown's frame goes around the field (2026-11-24).
+// These are the places of the least screen; the frame (hud/rogue_frame.dm) adds black borders to fit the player's map
+// window and moves the column (x of WEST-1) and the bottom row (y of SOUTH-1) within them.
+#define rogueui_field_frame "WEST,SOUTH"
+#define rogueui_dark_left "WEST-1,SOUTH-1 to WEST-1,NORTH"
+#define rogueui_dark_bottom "WEST,SOUTH-1 to EAST,SOUTH-1"
 
-#define rogueui_inventory_toggle "WEST+1:8,SOUTH"
-#define rogueui_mask "WEST+1:8,SOUTH+5"
-#define rogueui_head "WEST+2:8,SOUTH+5"
-#define rogueui_mouth "WEST+3:8,SOUTH+5"
-#define rogueui_backr "WEST+1:8,SOUTH+4"
-#define rogueui_cloak "WEST+2:8,SOUTH+4"
-#define rogueui_backl "WEST+3:8,SOUTH+4"
-#define rogueui_neck "WEST+1:8,SOUTH+3"
-#define rogueui_armor "WEST+2:8,SOUTH+3"
-#define rogueui_wrists "WEST+3:8,SOUTH+3"
-#define rogueui_ring1 "WEST+1,SOUTH+2:8"
-#define rogueui_ring2 "WEST+1:16,SOUTH+2:8"
-#define rogueui_ring3 "WEST+1,SOUTH+2:-8"
-#define rogueui_ring4 "WEST+1:16,SOUTH+2:-8"
-#define rogueui_shirt "WEST+2:8,SOUTH+2"
-#define rogueui_gloves "WEST+3:8,SOUTH+2"
-#define rogueui_beltr "WEST+1:8,SOUTH+1"
-#define rogueui_belt "WEST+2:8,SOUTH+1"
-#define rogueui_beltl "WEST+3:8,SOUTH+1"
-#define rogueui_pants "WEST+2:8,SOUTH"
-#define rogueui_shoes "WEST+3:8,SOUTH"
+// The inventory opens over the field from its left edge; its button is in the corner of the column and the bottom row.
+#define rogueui_inventory_toggle "WEST-1,SOUTH-1"
+#define rogueui_mask "WEST:10,SOUTH+5:10"
+#define rogueui_head "WEST+1:10,SOUTH+5:10"
+#define rogueui_mouth "WEST+2:10,SOUTH+5:10"
+#define rogueui_backr "WEST:10,SOUTH+4:10"
+#define rogueui_cloak "WEST+1:10,SOUTH+4:10"
+#define rogueui_backl "WEST+2:10,SOUTH+4:10"
+#define rogueui_neck "WEST:10,SOUTH+3:10"
+#define rogueui_armor "WEST+1:10,SOUTH+3:10"
+#define rogueui_wrists "WEST+2:10,SOUTH+3:10"
+#define rogueui_ring1 "WEST:2,SOUTH+2:18"
+#define rogueui_ring2 "WEST:18,SOUTH+2:18"
+#define rogueui_ring3 "WEST:2,SOUTH+2:2"
+#define rogueui_ring4 "WEST:18,SOUTH+2:2"
+#define rogueui_shirt "WEST+1:10,SOUTH+2:10"
+#define rogueui_gloves "WEST+2:10,SOUTH+2:10"
+#define rogueui_beltr "WEST:10,SOUTH+1:10"
+#define rogueui_belt "WEST+1:10,SOUTH+1:10"
+#define rogueui_beltl "WEST+2:10,SOUTH+1:10"
+#define rogueui_pants "WEST+1:10,SOUTH:10"
+#define rogueui_shoes "WEST+2:10,SOUTH:10"
 
-#define rogueui_stress "WEST:2,NORTH-1"
-#define rogueui_blood "WEST:7,NORTH-2:15"
-#define rogueui_fat "WEST:5,NORTH-4:13"
-#define rogueui_craft "WEST:2,NORTH-5:11"
-#define rogueui_skills "WEST:2,NORTH-5:11"
-#define rogueui_build "WEST,NORTH-6:9"
-#define rogueui_def "WEST:2,NORTH-7:23"
-#define rogueui_cmode "WEST:2,NORTH-8:21"
-#define rogueui_drop "WEST:2,NORTH-9:19"
-#define rogueui_throw "WEST:2,NORTH-9:19"
-#define rogueui_give "WEST:2,NORTH-9:19"
-#define rogueui_eye "WEST:2,NORTH-10:17"
-#define rogueui_moves "WEST:2,NORTH-11:15"
-#define rogueui_quad "WEST:2,NORTH-12:13"
-#define rogueui_stance "WEST:2,NORTH-13:11"
+// The elements of the left column.
+#define rogueui_stress "WEST-1,NORTH-1"
+#define rogueui_blood "WEST-1:5,NORTH-2:8"
+#define rogueui_fat "WEST-1:6,NORTH-5:30"
+#define rogueui_craft "WEST-1,NORTH-6:28"
+#define rogueui_skills "WEST-1,NORTH-6:28"
+#define rogueui_build "WEST-1,NORTH-7:26"
+#define rogueui_def "WEST-1,NORTH-7:8"
+#define rogueui_cmode "WEST-1,NORTH-8:6"
+#define rogueui_drop "WEST-1,NORTH-9:4"
+#define rogueui_throw "WEST-1,NORTH-9:4"
+#define rogueui_give "WEST-1,NORTH-9:4"
+#define rogueui_eye "WEST-1,NORTH-10:2"
+#define rogueui_moves "WEST-1,NORTH-11"
+#define rogueui_quad "WEST-1,NORTH-13:30"
+#define rogueui_stance "WEST-1,NORTH-14:28"
 
-#define rogueui_hand_left "CENTER-1:16,SOUTH"
-#define rogueui_hand_right "CENTER:16,SOUTH"
-#define rogueui_clickdelay_left "CENTER-1:16,SOUTH"
-#define rogueui_clickdelay_right "CENTER:16,SOUTH"
-#define rogueui_clickdelay_mid "CENTER,SOUTH"
-#define rogueui_intents "CENTER-3:12,SOUTH"
-#define rogueui_rmb_button "CENTER+1:20,SOUTH"
+// The block of the bottom row.
+#define rogueui_hand_left "CENTER-1:16,SOUTH-1"
+#define rogueui_hand_right "CENTER:16,SOUTH-1"
+#define rogueui_clickdelay_left "CENTER-1:16,SOUTH-1"
+#define rogueui_clickdelay_right "CENTER:16,SOUTH-1"
+#define rogueui_clickdelay_mid "CENTER,SOUTH-1"
+#define rogueui_intents "CENTER-3:12,SOUTH-1"
+#define rogueui_rmb_button "CENTER+1:20,SOUTH-1"
+// The list of RMB intents opens upward from its button, over the field.
+#define rogueui_rmb_menu_slot(index) "CENTER+1:20,SOUTH-1:[rogueui_rmb_menu_base + (index - 1) * rogueui_rmb_menu_step]"
 #define rogueui_rmb_menu_base 25
 #define rogueui_rmb_menu_step 20
-#define rogueui_feint "WEST:2,NORTH"
-#define rogueui_defdelay "WEST:2,NORTH"
+#define rogueui_feint "WEST-1,NORTH"
+#define rogueui_defdelay "WEST-1,NORTH"
 
-#define rogueui_targetdoll "EAST-1,NORTH-1"
-#define rogueui_doll_back "EAST-1,NORTH-1"
-#define rogueui_doll_toggle "EAST:-2,NORTH-2"
-#define rogueui_alert_drop 72
+#define rogueui_targetdoll "EAST-1:-10,NORTH-1:-10"
+#define rogueui_doll_back "EAST-1:-10,NORTH-1:-10"
+#define rogueui_doll_toggle "EAST:-8,NORTH-3:24"
+// Alerts stand in a row along the top of the field from the inner left corner of its frame, left to right; buffs (the
+// alerts of status effects) stand in the column under the gargoyle and its button, where TG's alerts stood.
+#define rogueui_alert_slots 6
+#define rogueui_alert_inset 10
+#define rogueui_alert_step 34
+#define rogueui_buff_slots 5
+#define rogueui_buff_drop 72
+// TG's action buttons stand a little right of the inventory's outermost cell, in rows filled left to right that grow
+// up from the inner bottom edge of the field's frame: pixels from the field's left edge to the first button, pixels kept
+// clear at the bottom and at the right, and the most rows.
+#define rogueui_action_left 110
+#define rogueui_action_inset 10
+#define rogueui_action_rows 3
 #define rogueui_fov_blocker "SOUTH,WEST"
 #define rogueui_advsetup "CENTER-1,CENTER-1:16"
 
@@ -91,8 +117,11 @@
 #define rogueui_ring_position(index) (index == 1 ? rogueui_ring1 : (index == 2 ? rogueui_ring2 : (index == 3 ? rogueui_ring3 : rogueui_ring4)))
 #define rogueui_hand_position(index) (index == 1 ? rogueui_hand_left : (index == 2 ? rogueui_hand_right : null))
 
-#define HUD_ROGUE_PANEL_TOGGLE "rogue_panel_toggle"
-#define HUD_ROGUE_PANEL_STRIP "rogue_panel_strip"
+#define HUD_ROGUE_FIELD_FRAME "rogue_field_frame"
+#define HUD_ROGUE_DARK_LEFT "rogue_dark_left"
+#define HUD_ROGUE_DARK_BOTTOM "rogue_dark_bottom"
+#define HUD_ROGUE_DARK_RIGHT "rogue_dark_right"
+#define HUD_ROGUE_DARK_TOP "rogue_dark_top"
 #define HUD_ROGUE_BUILD "rogue_build"
 #define HUD_ROGUE_DOLL_TOGGLE "rogue_doll_toggle"
 #define HUD_ROGUE_DOLL_BACK "rogue_doll_back"
@@ -161,7 +190,6 @@
 #define COMSIG_KB_ROGUE_YIELD_DOWN "keybinding_rogue_yield_down"
 #define COMSIG_KB_ROGUE_STOP_PULLING_DOWN "keybinding_rogue_stop_pulling_down"
 #define COMSIG_KB_ROGUE_ATTRIBUTES_DOWN "keybinding_rogue_attributes_down"
-#define COMSIG_KB_ROGUE_PANEL_DOWN "keybinding_rogue_panel_down"
 #define COMSIG_KB_ROGUE_DOLL_DOWN "keybinding_rogue_doll_down"
 #define COMSIG_KB_ROGUE_INVENTORY_DOWN "keybinding_rogue_inventory_down"
 #define COMSIG_KB_ROGUE_HAND_LEFT_DOWN "keybinding_rogue_hand_left_down"

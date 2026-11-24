@@ -14,6 +14,16 @@
 	/// Bought from the Crown's stockpile, so selling it back adds nothing to the Crown's trade tally (Ratwood stockpile_withdrawn).
 	var/stockpile_withdrawn = FALSE
 
+/// What a type is worth before drift and quality (Ratwood initial(sellprice)): its price in the items table, else the
+/// type's. The porter moved Ratwood's prices to the private table, so initial() alone would be 0.
+/proc/rogue_base_price(path)
+	var/list/values = rogue_mechanics().values_for("items", path)
+	var/price = values?["price"]
+	if(isnum(price))
+		return price
+	var/atom/movable/thing = path
+	return initial(thing.sellprice)
+
 /// Ratwood randomize_price(): a thing not priced exactly is worth up to 13% more or less, settled when it is first priced.
 /atom/movable/proc/randomize_price()
 	if(sellprice && !static_price)
@@ -23,7 +33,7 @@
 
 /// What the thing fetches in mammons (Ratwood get_real_price()).
 /atom/movable/proc/get_real_price()
-	if(sellprice == initial(sellprice))
+	if(sellprice == rogue_base_price(type))
 		randomize_price()
 	return sellprice
 

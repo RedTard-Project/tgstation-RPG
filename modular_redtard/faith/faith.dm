@@ -1,10 +1,10 @@
 /// Faith on medieval maps (Ratwood code/datums/gods/_patron.dm, Vibelin's can_pray()): the patrons of heritage/ hear prayers
 /// and judge them, lend their clergy devotion (devotion.dm) and miracles (miracle.dm). A patron hears a prayer only from a
 /// church of the Ten, within sight of one of its idols or crosses, or through one of its holy symbols worn or held
-/// (Vibelin). The prayer to a patron is the "pray" emote; TG's Pray verb is left as it is, the way to call the admins on
-/// every map. Modern maps keep TG's chaplain.
+/// (Vibelin); the Archdevils hear theirs anywhere (Vibelin). The prayer to a patron is the "pray" emote; TG's Pray verb is
+/// left as it is, the way to call the admins on every map. Modern maps keep TG's chaplain.
 /proc/rogue_faith_enabled()
-	return SSmapping.current_map?.map_era == MAP_ERA_MEDIEVAL
+	return rogue_medieval_map()
 
 #define ROGUE_TEN_SYMBOLS \
 	/obj/item/clothing/neck/roguetown/psicross, \
@@ -128,6 +128,38 @@
 		/obj/structure/fluff/psycross/zizocross/stone,
 		/obj/structure/fluff/statue/femalestatue/zizo,
 		)
+
+/// Vibelin's own faiths (their symbols and idols: alternate_symbols.dm): no word offends their patrons (Vibelin sets
+/// profane_words for the Ten alone).
+/datum/patron/alternate
+	rogue_faith_profanity = null
+
+/// Vibelin associated_objects of the Great Hunt: its bone amulet, blessed or not; no idol. The Proven inherit it.
+/datum/patron/alternate/great_hunt
+	rogue_faith_symbols = list(
+		/obj/item/clothing/neck/roguetown/vibelin/psycross/great_hunt,
+		/obj/item/clothing/neck/roguetown/vibelin/psycross/great_hunt/divine_link,
+		)
+
+/// Nothing at Vibelin: the module's one symbol and one idol (alternate_symbols.dm).
+/datum/patron/alternate/wurm
+	rogue_faith_symbols = list(/obj/item/clothing/neck/roguetown/psicross/pestra/wood/wurm)
+	rogue_faith_idols = list(/obj/structure/fluff/psycross/crafted/wurm)
+
+/datum/patron/archdevil
+	rogue_faith_profanity = null
+
+/// Vibelin archdevil can_pray(): the archdevils hear their followers anywhere, with no symbol, idol or church.
+/datum/patron/archdevil/rogue_hears(mob/living/carbon/human/follower)
+	return TRUE
+
+/// Vibelin archdevil hear_prayer(): only a prayer too short goes unheard; no word offends them, no name pleases them, and
+/// prayers close together are not counted as one.
+/datum/patron/archdevil/rogue_judge_prayer(mob/living/carbon/human/follower, prayer)
+	if(length(prayer) < rogue_value("faith_prayer_min_length"))
+		to_chat(follower, span_danger("My prayer was kinda short..."))
+		return FALSE
+	return TRUE
 
 /// Vibelin can_pray(): the follower is in a church of this patron, near one of its idols, or wears or holds its symbol.
 /datum/patron/proc/rogue_hears(mob/living/carbon/human/follower)

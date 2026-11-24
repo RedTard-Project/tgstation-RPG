@@ -4,7 +4,8 @@
 /// fall to bones and the body bleeds no more. A body nobody is in turns to dust once it is bones (Ratwood looks for bones
 /// from 35 minutes on). Lying in the physician's, the church or the graveyard keeps the rot from working on a body, though
 /// its time still runs, as at Ratwood. Life ends the rot and its debuff (Ratwood's revival lifts that), not what it did:
-/// rogue_remove_rot() undoes it - Pestra's cure, an admin's rejuvenation. Goblins rot their own way (rockhill/species.dm),
+/// as at Azure Peak, a body raised from rot keeps its rotted and bony limbs, of no use to it unless it is undead, until
+/// rogue_remove_rot() undoes it - Pestra's cure, an admin's healing. Goblins rot their own way (rockhill/species.dm),
 /// skeletons do not rot. As Ratwood's SSroguerot the rot ticks every two seconds.
 /// For later blocks: rogue_start_rot(), rogue_rot_amount(), rogue_rot_stage(), rogue_has_rot(), rogue_remove_rot() on the
 /// body, COMSIG_LIVING_ROGUE_ROT_TICK and COMSIG_LIVING_ROGUE_ROT_STAGE from it (burial/_defines.dm).
@@ -24,7 +25,7 @@ PROCESSING_SUBSYSTEM_DEF(rogue_rot)
 
 /// Every human that dies on a medieval map starts to rot.
 /datum/controller/subsystem/processing/rogue_rot/Initialize()
-	if(rogue_combat_enabled())
+	if(rogue_medieval_map())
 		RegisterSignal(SSdcs, COMSIG_GLOB_MOB_DEATH, PROC_REF(on_mob_death))
 	return SS_INIT_SUCCESS
 
@@ -141,9 +142,10 @@ GLOBAL_LIST_INIT(rogue_rot_sanctuaries, typecacheof(list(
 		stage = new_stage
 		SEND_SIGNAL(corpse, COMSIG_LIVING_ROGUE_ROT_STAGE, new_stage, old_stage)
 
-/// Ratwood revive(): a body that lives again stops rotting and loses the debuff (Ratwood's revival lifts it), not the
-/// rotted flesh; an admin's rejuvenation undoes the rot too (Ratwood fully_heal(admin_revive)). A failed revival changes
-/// nothing.
+/// Azure Peak's revival (acolyte/resurrect.dm, surgeries_hearth/revival.dm, rot/corpse/process()): a body that lives
+/// again stops rotting and loses the debuff (rotted_zombie), not the rotted flesh - its rotted and bony limbs stay of no use
+/// until the rot is cured (BODYPART_DISABLED_ROT); an admin's rejuvenation undoes the rot too (fully_heal(admin_revive)).
+/// A failed revival changes nothing.
 /datum/component/rogue_corpse_rot/proc/on_revive(mob/living/carbon/source, full_heal_flags)
 	SIGNAL_HANDLER
 	if(source.stat == DEAD)
@@ -151,6 +153,7 @@ GLOBAL_LIST_INIT(rogue_rot_sanctuaries, typecacheof(list(
 	source.remove_status_effect(/datum/status_effect/rogue_rotted_corpse)
 	if(full_heal_flags & HEAL_ADMIN)
 		source.rogue_remove_rot()
+	source.rogue_update_rot_limbs()
 	if(!QDELETED(src))
 		qdel(src)
 
@@ -251,6 +254,19 @@ GLOBAL_LIST_INIT(rogue_rot_sanctuaries, typecacheof(list(
 	SEND_SIGNAL(src, COMSIG_LIVING_ROGUE_ROT_STAGE, ROGUE_ROT_FRESH, old_stage)
 	return TRUE
 
+/// Azure fully_heal(admin_revive): an admin's healing washes the rot out of any body, a living one too - not only of a
+/// corpse being raised (on_revive()). The rot's count starts over on any full heal (the rot's on_full_heal()).
+/mob/living/carbon/fully_heal(heal_flags = HEAL_ALL)
+	. = ..()
+	if((heal_flags & HEAL_ADMIN) && rogue_has_rot())
+		rogue_remove_rot()
+
+/// Whether the rotted and bony limbs give out on this body is looked at again (Azure is_disabled() asks it on every
+/// check): for a body that has turned undead or stopped being so - a deadite rising, a vampire, its cure.
+/mob/living/carbon/proc/rogue_update_rot_limbs()
+	for(var/obj/item/bodypart/part as anything in bodyparts)
+		part.rogue_update_rot_paralysis()
+
 /obj/item/bodypart
 	/// Rotted flesh (Ratwood rotted): the colour of rot, and no use to a living body until the rot is cured.
 	var/rogue_rotted = FALSE
@@ -264,18 +280,40 @@ GLOBAL_LIST_INIT(rogue_rot_sanctuaries, typecacheof(list(
 	return !rogue_skeleton && IS_ORGANIC_LIMB(src) && (biological_state & BIO_FLESH)
 
 /// Ratwood rotted = TRUE: the flesh takes the colour of rot (on a limb drawn in the body's colour) and gives out
-/// (BODYPART_DISABLED_ROT; Ratwood spares the undead, here a deadite's rising lifts it). The owner's body is redrawn by
-/// whoever rots it.
+/// (rogue_update_rot_paralysis()). The owner's body is redrawn by whoever rots it.
 /obj/item/bodypart/proc/rogue_rot_flesh()
 	if(rogue_rotted)
 		return FALSE
 	rogue_rotted = TRUE
 	if(should_draw_greyscale)
 		add_color_override(ROGUE_ROT_SKIN_COLOR, ROGUE_LIMB_COLOR_ROT)
-	if(rogue_value("rot_limbs_give_out"))
-		ADD_TRAIT(src, TRAIT_PARALYSIS, ROGUE_ROT_TRAIT)
+	rogue_update_rot_paralysis()
 	RegisterSignal(src, COMSIG_BODYPART_CHECKED_FOR_INJURY, PROC_REF(rogue_rot_injury_line))
+	RegisterSignal(src, COMSIG_BODYPART_ATTACHED, PROC_REF(rogue_rot_on_attached))
 	return TRUE
+
+/// Azure is_disabled(): a rotted limb, or one gone to bones, is of no use (BODYPART_DISABLED_ROT) to a body that is not
+/// undead - "vampires can use rotten limbs" - until the rot is cured; TG's TRAIT_NOLIMBDISABLE still spares it. Alive or
+/// dead, raised or not: what lifts it is the cure (rogue_remove_rot()) or an undead body. Bones of the rot are rotted too
+/// (rogue_skeletonize()); a goblin's bones (rockhill/species.dm) are its own and stay as they are.
+/obj/item/bodypart/proc/rogue_rot_gives_out(mob/living/carbon/body = owner)
+	if(!rogue_rotted)
+		return FALSE
+	if(!rogue_value("rot_limbs_give_out"))
+		return FALSE
+	return !(body?.mob_biotypes & MOB_UNDEAD)
+
+/// Puts on or takes off the limb's rot paralysis by rogue_rot_gives_out().
+/obj/item/bodypart/proc/rogue_update_rot_paralysis(mob/living/carbon/body = owner)
+	if(rogue_rot_gives_out(body))
+		ADD_TRAIT(src, TRAIT_PARALYSIS, ROGUE_ROT_TRAIT)
+	else
+		REMOVE_TRAIT(src, TRAIT_PARALYSIS, ROGUE_ROT_TRAIT)
+
+/// A rotted limb sewn onto another body serves it as that body's nature decides (Azure asks the owner on every check).
+/obj/item/bodypart/proc/rogue_rot_on_attached(obj/item/bodypart/source, mob/living/carbon/new_owner, special, lazy)
+	SIGNAL_HANDLER
+	rogue_update_rot_paralysis(new_owner)
 
 /// Ratwood skeletonize(): the rotted flesh falls away to bones, drawn as TG's skeleton - no hair, eyes or ears on a skull,
 /// no colour of flesh. The owner's body is redrawn by whoever does it.
@@ -339,6 +377,8 @@ GLOBAL_LIST_INIT(rogue_rot_sanctuaries, typecacheof(list(
 
 /// Ratwood clean_body_parts(): flesh again, of its own colour, and of use.
 /obj/item/bodypart/proc/rogue_clean_rot()
+	// Block VR1: the germs of a gangrene go with the rot it was, or the limb would rot again at once (combat/injuries/infection.dm).
+	rogue_clear_germs()
 	if(rogue_skeleton)
 		rogue_restore_flesh()
 	if(!rogue_rotted)
@@ -346,7 +386,7 @@ GLOBAL_LIST_INIT(rogue_rot_sanctuaries, typecacheof(list(
 	rogue_rotted = FALSE
 	remove_color_override(ROGUE_LIMB_COLOR_ROT)
 	REMOVE_TRAIT(src, TRAIT_PARALYSIS, ROGUE_ROT_TRAIT)
-	UnregisterSignal(src, COMSIG_BODYPART_CHECKED_FOR_INJURY)
+	UnregisterSignal(src, list(COMSIG_BODYPART_CHECKED_FOR_INJURY, COMSIG_BODYPART_ATTACHED))
 
 /// Ratwood's limb status "is necrotic" / "is skeletonized", in the check of one's own body.
 /obj/item/bodypart/proc/rogue_rot_injury_line(obj/item/bodypart/source, mob/living/carbon/human/examiner, list/check_list, list/limb_damage)

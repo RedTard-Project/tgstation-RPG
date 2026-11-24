@@ -16,7 +16,7 @@
 	min_val = 0
 
 /proc/rogue_lobby_enabled()
-	return rogue_combat_enabled()
+	return rogue_medieval_map()
 
 /// TG's start of the lobby menu, with the medieval one in its place on medieval maps.
 /client/initialize_lobby_menu()

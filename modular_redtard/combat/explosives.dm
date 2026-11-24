@@ -866,7 +866,9 @@ GLOBAL_LIST_INIT(rogue_gas_effects, list(
 	smoker.adjust_tox_loss(-rogue_value("explosive_healing_gas_toxin"), updating_health = FALSE)
 	smoker.updatehealth()
 	for(var/datum/wound/wound as anything in LAZYCOPY(smoker.all_wounds))
-		if(wound.blood_flow > 0)
+		// A crit of block VR1 keeps blood_flow at 0 and bleeds by rogue_bleed() (combat/wounds.dm).
+		var/datum/wound/rogue/crit = wound
+		if(wound.blood_flow > 0 || (istype(crit) && crit.rogue_bleed() > 0))
 			wound.remove_wound()
 	smoker.emote("cough")
 

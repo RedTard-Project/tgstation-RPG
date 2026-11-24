@@ -2165,3 +2165,278 @@ lay_hands_time = 10
 
 # Share of its healing the laying of hands gives to blood, suffocation, toxins and the brain.
 lay_hands_other_share = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list h4v)
+
+# Devotion one cast of Bless Food costs.
+miracle_bless_food_devotion = 10
+
+# Stamina one cast of Bless Food takes.
+miracle_bless_food_stamina = 10
+
+# Deciseconds before Bless Food can be cast again.
+miracle_bless_food_cooldown = 10
+
+# Tiles away Bless Food can be cast at.
+miracle_bless_food_range = 10
+
+# Deciseconds the cooldown of Bless Food is shorter for each rank of the caster in miracles (Ratwood).
+faith_bless_food_cooldown_rank = 10
+
+# Quality of a dish taken when it has none, in the healing of a blessed dish (Ratwood).
+faith_blessed_food_fare = 10
+
+# Ranks of the blesser in miracles that add one point of quality to the healing of a blessed dish (Ratwood skill / 5).
+faith_blessed_food_rank_divisor = 10
+
+# Divisor of the quality of a blessed dish and the skill of its blesser in its healing every second (Ratwood).
+faith_blessed_food_divisor = 10
+
+# Devotion one cast of Nitevision costs.
+miracle_nitevision_devotion = 10
+
+# Stamina one cast of Nitevision takes.
+miracle_nitevision_stamina = 10
+
+# Deciseconds before Nitevision can be cast again.
+miracle_nitevision_cooldown = 10
+
+# Tiles away Nitevision can be cast at.
+miracle_nitevision_range = 10
+
+# Deciseconds Nitevision lets those it touches see in the dark.
+faith_nitevision_time = 10
+
+# Tiles around the caster in which Nitevision gives sight in the dark.
+faith_nitevision_reach = 10
+
+# Devotion one cast of Moon Shroud costs.
+miracle_moon_shroud_devotion = 10
+
+# Stamina one cast of Moon Shroud takes.
+miracle_moon_shroud_stamina = 10
+
+# Deciseconds before Moon Shroud can be cast again.
+miracle_moon_shroud_cooldown = 10
+
+# Tiles away Moon Shroud can be cast at.
+miracle_moon_shroud_range = 10
+
+# Deciseconds of invisibility Moon Shroud gives for each rank of the caster in miracles, and when none is given (Ratwood).
+faith_moon_shroud_time = 10
+
+# Devotion one cast of Orison of Light costs.
+miracle_orison_light_devotion = 10
+
+# Stamina one cast of Orison of Light takes.
+miracle_orison_light_stamina = 10
+
+# Deciseconds before Orison of Light can be cast again.
+miracle_orison_light_cooldown = 10
+
+# Tiles away Orison of Light can be cast at.
+miracle_orison_light_range = 10
+
+# Deciseconds of the prayer of the Orison of Light before the rank of the caster shortens it (Azure Peak).
+faith_orison_light_prayer = 10
+
+# Deciseconds the prayer of the Orison of Light is shorter for each rank of the caster in miracles.
+faith_orison_light_prayer_rank = 10
+
+# Shortest prayer of the Orison of Light, in deciseconds.
+faith_orison_light_prayer_least = 10
+
+# Tiles the glow of the Orison of Light reaches over the rank of the caster in miracles (Azure Peak: 4 + rank - 3).
+faith_orison_light_glow_extra = 10
+
+# Least tiles the glow of the Orison of Light reaches (Azure Peak).
+faith_orison_light_glow_least = 10
+
+# Most tiles the glow of the Orison of Light reaches (Azure Peak).
+faith_orison_light_glow_most = 10
+
+# Deciseconds a holy glow lasts, and the time each further Orison of Light adds (Azure Peak).
+faith_holy_light_time = 10
+
+# Devotion one cast of Ignition costs.
+miracle_ignition_devotion = 10
+
+# Stamina one cast of Ignition takes.
+miracle_ignition_stamina = 10
+
+# Deciseconds before Ignition can be cast again.
+miracle_ignition_cooldown = 10
+
+# Tiles away Ignition can be cast at.
+miracle_ignition_range = 10
+
+# Temperature of the fire Ignition lights on a flammable object (Ratwood fire_act).
+faith_ignition_heat = 10
+
+# Volume of the fire Ignition lights on a flammable object (Ratwood fire_act).
+faith_ignition_volume = 10
+
+# Deciseconds a healing aura of the miracles lasts (Ratwood buff/healing).
+faith_heal_aura_time = 10
+
+# Healing every second of a healing aura that is not given its own (Ratwood healing_on_tick).
+faith_heal_aura_healing = 10
+
+# Bleeding of each wound a healing aura stops per point of healing it gives.
+faith_heal_aura_bleed = 10
+
+# Deciseconds the fortifying of a body lasts, during which it takes all healing of the miracles better (Ratwood buff/fortify).
+faith_fortify_time = 10
+
+# Devotion one cast of Miracle costs.
+miracle_lesser_heal_devotion = 10
+
+# Stamina one cast of Miracle takes.
+miracle_lesser_heal_stamina = 10
+
+# Deciseconds before Miracle can be cast again.
+miracle_lesser_heal_cooldown = 10
+
+# Tiles away Miracle can be cast at.
+miracle_lesser_heal_range = 10
+
+# Healing every second of the aura of Miracle (Ratwood healing).
+faith_lesser_heal_healing = 10
+
+# Tiles around the caster with Astrata's resonance in which Miracle fortifies the living or burns the undead.
+faith_lesser_heal_resonance_range = 10
+
+# Burn damage Miracle does to an undead around a caster with Astrata's resonance.
+faith_lesser_heal_resonance_burn = 10
+
+# Burn damage Miracle does to the undead it is cast on.
+faith_lesser_heal_burn = 10
+
+# Brute damage Miracle does to a body with something embedded in it.
+faith_lesser_heal_embedded = 10
+
+# Devotion one cast of Fortify costs.
+miracle_fortify_devotion = 10
+
+# Stamina one cast of Fortify takes.
+miracle_fortify_stamina = 10
+
+# Deciseconds before Fortify can be cast again.
+miracle_fortify_cooldown = 10
+
+# Tiles away Fortify can be cast at.
+miracle_fortify_range = 10
+
+# Burn damage Fortify does to the undead it is cast on.
+faith_fortify_burn = 10
+
+# Brute and burn damage Fortify mends at once on a creature that is not flesh of a person.
+faith_fortify_beast_heal = 10
+
+# Devotion one cast of Blood Transfer Miracle costs.
+miracle_blood_transfer_devotion = 10
+
+# Stamina one cast of Blood Transfer Miracle takes.
+miracle_blood_transfer_stamina = 10
+
+# Deciseconds before Blood Transfer Miracle can be cast again.
+miracle_blood_transfer_cooldown = 10
+
+# Tiles away Blood Transfer Miracle can be cast at.
+miracle_blood_transfer_range = 10
+
+# Blood the caster gives up in each pulse of the Blood Transfer Miracle at rank 0 in miracles (Ratwood blood_price).
+faith_blood_transfer_price_0 = 10
+
+# Blood the caster gives up in each pulse of the Blood Transfer Miracle at rank 1 in miracles (Ratwood blood_price).
+faith_blood_transfer_price_1 = 10
+
+# Blood the caster gives up in each pulse of the Blood Transfer Miracle at rank 2 in miracles (Ratwood blood_price).
+faith_blood_transfer_price_2 = 10
+
+# Blood the caster gives up in each pulse of the Blood Transfer Miracle at rank 3 in miracles (Ratwood blood_price).
+faith_blood_transfer_price_3 = 10
+
+# Blood the caster gives up in each pulse of the Blood Transfer Miracle at rank 4 in miracles (Ratwood blood_price).
+faith_blood_transfer_price_4 = 10
+
+# Blood the caster gives up in each pulse of the Blood Transfer Miracle at rank 5 in miracles (Ratwood blood_price).
+faith_blood_transfer_price_5 = 10
+
+# Blood the caster gives up in each pulse of the Blood Transfer Miracle at rank 6 in miracles (every rank above it too) (Ratwood blood_price).
+faith_blood_transfer_price_6 = 10
+
+# Blood the target gets in each pulse of the Blood Transfer Miracle (Ratwood).
+faith_blood_transfer_given = 10
+
+# Blood more the target gets in each pulse for each rank of the caster in miracles, above the rank below.
+faith_blood_transfer_given_rank = 10
+
+# Rank in miracles above which the target gets more blood in each pulse of the Blood Transfer Miracle.
+faith_blood_transfer_given_above = 10
+
+# Deciseconds of a pulse of the Blood Transfer Miracle.
+faith_blood_transfer_pulse = 10
+
+# Pulses of the Blood Transfer Miracle for every price paid in blood out of the blood of the caster.
+faith_blood_transfer_pulse_factor = 10
+
+# Share of the blood that keeps a body alive below which the caster of the Blood Transfer Miracle stops giving.
+faith_blood_transfer_survive_share = 10
+
+# Devotion one cast of Wound Miracle costs.
+miracle_wound_heal_devotion = 10
+
+# Stamina one cast of Wound Miracle takes.
+miracle_wound_heal_stamina = 10
+
+# Deciseconds before Wound Miracle can be cast again.
+miracle_wound_heal_cooldown = 10
+
+# Tiles away Wound Miracle can be cast at.
+miracle_wound_heal_range = 10
+
+# Deciseconds of the prayer of the Wound Miracle before the rank of the caster shortens it (Ratwood).
+faith_wound_heal_prayer = 10
+
+# Deciseconds the prayer of the Wound Miracle is shorter for each rank of the caster in miracles.
+faith_wound_heal_prayer_rank = 10
+
+# Shortest prayer of the Wound Miracle, in deciseconds.
+faith_wound_heal_prayer_least = 10
+
+# Devotion one cast of Diagnose costs.
+miracle_diagnose_devotion = 10
+
+# Stamina one cast of Diagnose takes.
+miracle_diagnose_stamina = 10
+
+# Deciseconds before Diagnose can be cast again.
+miracle_diagnose_cooldown = 10
+
+# Tiles away Diagnose can be cast at.
+miracle_diagnose_range = 10
+
+# Devotion one cast of Anastasis costs.
+miracle_anastasis_devotion = 10
+
+# Stamina one cast of Anastasis takes.
+miracle_anastasis_stamina = 10
+
+# Deciseconds before Anastasis can be cast again.
+miracle_anastasis_cooldown = 10
+
+# Tiles away Anastasis can be cast at.
+miracle_anastasis_range = 10
+
+# Deciseconds of the prayer of Anastasis before the soul returns (Ratwood chargetime).
+faith_anastasis_prayer = 10
+
+# Tiles within which a holy cross must stand for Anastasis to be cast (Ratwood oview).
+faith_anastasis_cross_range = 10
+
+# Damage of each kind a body called back by Anastasis is mended down to.
+faith_anastasis_mended = 10
+
+# Deciseconds a body called back by Anastasis jitters.
+faith_anastasis_jitter = 10

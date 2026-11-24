@@ -22,9 +22,6 @@
 #define ROGUE_BREED_MAX_YOUNG rogue_value("breed_max_young")
 /// How long a mother keeps trying to reach the father before she gives up until her next season.
 #define ROGUE_BREED_SEEK_TIME rogue_value("breed_seek_time")
-/// Growth of the young a second: Ratwood 0.5 a Life (2 seconds) to 100; the chick rand(1, 2) a Life.
-#define ROGUE_YOUNG_GROWTH 0.25
-#define ROGUE_CHICK_GROWTH 0.75
 
 /// What laying an egg costs a hen, and what she must have over (Ratwood chicken Life(): production > 29, -30).
 #define ROGUE_EGG_PRODUCTION rogue_value("egg_production")

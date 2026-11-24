@@ -526,7 +526,7 @@
 		refuse("[indenture.debtor_name]'s coffers are too thin to make a payment.")
 		return
 	playsound(src, ROGUE_SOUND_COIN_INSERT, 100, FALSE, -1)
-	say(indenture in treasury.loans ? "[paid]m transferred. [indenture.remaining_due()]m remains on the indenture." : "Indenture repaid in full. [paid]m transferred to [indenture.lender.fund_label].")
+	say((indenture in treasury.loans) ? "[paid]m transferred. [indenture.remaining_due()]m remains on the indenture." : "Indenture repaid in full. [paid]m transferred to [indenture.lender.fund_label].")
 
 /// The officer signs a patronage writ for someone else to claim (Ratwood draft_patronage_writ()).
 /obj/structure/roguemachine/vaultbank/proc/draft_patronage(mob/living/carbon/human/user)

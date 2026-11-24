@@ -14,7 +14,7 @@ GLOBAL_LIST_EMPTY(rogue_lord_titles)
 
 /// Who people are by the look of them, and whom one knows by face, on medieval maps.
 /proc/rogue_people_enabled()
-	return rogue_combat_enabled()
+	return rogue_medieval_map()
 
 /mob/living/carbon/human
 	/// Ratwood social_rank: the standing of the person (ROGUE_SOCIAL_RANK_*), the role's or its subclass's; null - none.

@@ -24,6 +24,13 @@ GLOBAL_DATUM(rogue_mechanics, /datum/rogue_mechanics)
 	var/datum/rogue_formula/value = rogue_mechanics().formulas[id]
 	return value?.is_value ? value.number : fallback
 
+/// The revision of the mechanics numbers: it grows with every load and with every value or formula the Rogue Mechanics panel
+/// sets or resets (0 before the registry is built). Code that keeps numbers read once - the hot paths: energy, sleep,
+/// livestock, soil, glint, experience floors - compares it and reads its numbers again when it has moved, so a reload and a
+/// value set in the panel reach them as they reach every plain rogue_value() call.
+/proc/rogue_mechanics_revision()
+	return GLOB.rogue_mechanics ? GLOB.rogue_mechanics.revision : 0
+
 /// Built on the first rogue_value() or rogue_formula_value(), whenever that is: a reagent's New() asks while GLOB is still
 /// initializing, before the config is loaded. So New() and load() read no GLOB var and nothing that waits for a subsystem.
 /datum/rogue_mechanics
@@ -32,6 +39,8 @@ GLOBAL_DATUM(rogue_mechanics, /datum/rogue_mechanics)
 	var/list/formulas = list()
 	var/list/problems = list()
 	var/loaded_at
+	/// Grows with every load() and with every value or formula the panel sets or resets (rogue_mechanics_revision()).
+	var/revision = 0
 	/// The config folder load() read from: SSrogue_mechanics loads again when the config, loaded later, names another one.
 	var/loaded_directory
 
@@ -78,9 +87,11 @@ GLOBAL_DATUM(rogue_mechanics, /datum/rogue_mechanics)
 		"farming.txt" = 'config/redtard/mechanics/values/farming.txt',
 		"flora.txt" = 'config/redtard/mechanics/values/flora.txt',
 		"husbandry.txt" = 'config/redtard/mechanics/values/husbandry.txt',
+		"injuries.txt" = 'config/redtard/mechanics/values/injuries.txt',
 		"library.txt" = 'config/redtard/mechanics/values/library.txt',
 		"machines.txt" = 'config/redtard/mechanics/values/machines.txt',
 		"magic.txt" = 'config/redtard/mechanics/values/magic.txt',
+		"medicine.txt" = 'config/redtard/mechanics/values/medicine.txt',
 		"pve.txt" = 'config/redtard/mechanics/values/pve.txt',
 		"races.txt" = 'config/redtard/mechanics/values/races.txt',
 		"specials.txt" = 'config/redtard/mechanics/values/specials.txt',
@@ -145,6 +156,7 @@ GLOBAL_DATUM(rogue_mechanics, /datum/rogue_mechanics)
 		tables[name] = read_category(category)
 	read_formulas()
 	loaded_at = world.time
+	revision++
 	loaded_directory = config?.directory
 	for(var/problem in problems)
 		log_config("Rogue mechanics: [problem]")

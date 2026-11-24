@@ -67,7 +67,7 @@ GLOBAL_LIST_INIT(rogue_sun_hiding_weathers, typecacheof(list(
 
 /datum/status_effect/rogue/sun_blinded/proc/rogue_refresh_view()
 	var/mob/living/carbon/human/eyes = owner
-	if(istype(eyes) && rogue_combat_enabled())
+	if(istype(eyes) && rogue_medieval_map())
 		eyes.rogue_update_fov()
 
 /atom/movable/screen/alert/status_effect/rogue/sun_blinded
@@ -85,5 +85,9 @@ GLOBAL_LIST_INIT(rogue_sun_hiding_weathers, typecacheof(list(
 
 /datum/mood_event/rogue_sunlit
 	description = "IT'S TOO BRIGHT!"
+
+/// The numbers come from the mechanics values when the event is made (add_mood_event() makes a new one each time).
+/datum/mood_event/rogue_sunlit/New(category)
+	. = ..()
 	mood_change = ROGUE_SUNLIT_MOOD
 	timeout = ROGUE_SUNLIT_MOOD_TIME

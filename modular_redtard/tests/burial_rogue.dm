@@ -43,6 +43,36 @@
 	corpse.revive(HEAL_ALL)
 	TEST_ASSERT_NULL(corpse.GetComponent(/datum/component/rogue_corpse_rot), "A body alive again still rots")
 
+/// Azure Peak's rot of the revived (burial/corpse_rot.dm): a body raised from rot stops rotting and loses the debuff, not
+/// the rotted flesh - its rotted limb stays of no use to it, unless the body is undead, until an admin's healing (or the
+/// cure) washes the rot out.
+/datum/unit_test/rogue_revived_rot
+
+/datum/unit_test/rogue_revived_rot/Run()
+	var/mob/living/carbon/human/consistent/corpse = allocate(__IMPLIED_TYPE__)
+	corpse.death()
+	var/datum/component/rogue_corpse_rot/rot = corpse.rogue_start_rot()
+	TEST_ASSERT_NOTNULL(rot, "A human corpse does not rot")
+	rot.amount = rogue_value("rot_flesh_time") + 1
+	rot.rot_tick()
+	var/obj/item/bodypart/arm = corpse.get_bodypart(BODY_ZONE_L_ARM)
+	TEST_ASSERT(arm.rogue_rotted, "A limb did not rot past the rot time")
+	corpse.revive(HEAL_ALL)
+	TEST_ASSERT_NULL(corpse.GetComponent(/datum/component/rogue_corpse_rot), "A body alive again still rots")
+	TEST_ASSERT(!corpse.has_status_effect(/datum/status_effect/rogue_rotted_corpse), "A body alive again keeps the debuff of rot")
+	TEST_ASSERT(arm.rogue_rotted, "Revival cured the rotted limb")
+	if(rogue_value("rot_limbs_give_out"))
+		TEST_ASSERT(HAS_TRAIT_FROM(arm, TRAIT_PARALYSIS, ROGUE_ROT_TRAIT), "The rotted limb of a revived body serves it")
+		corpse.mob_biotypes |= MOB_UNDEAD
+		corpse.rogue_update_rot_limbs()
+		TEST_ASSERT(!HAS_TRAIT_FROM(arm, TRAIT_PARALYSIS, ROGUE_ROT_TRAIT), "An undead body cannot use its rotted limb")
+		corpse.mob_biotypes &= ~MOB_UNDEAD
+		corpse.rogue_update_rot_limbs()
+		TEST_ASSERT(HAS_TRAIT_FROM(arm, TRAIT_PARALYSIS, ROGUE_ROT_TRAIT), "The rotted limb serves a body no longer undead")
+	corpse.fully_heal(ADMIN_HEAL_ALL)
+	TEST_ASSERT(!arm.rogue_rotted, "An admin's healing left the limb of a living body rotted")
+	TEST_ASSERT(!HAS_TRAIT_FROM(arm, TRAIT_PARALYSIS, ROGUE_ROT_TRAIT), "An admin's healing left the limb of no use")
+
 /// A body nobody is in turns to dust once it is bones (Ratwood dusts the bodies of NPCs).
 /datum/unit_test/rogue_corpse_dust
 
@@ -119,6 +149,8 @@
 	var/mob/living/carbon/human/consistent/digger = allocate(__IMPLIED_TYPE__, run_loc_floor_top_right)
 	var/turf/open/floor/rogue/dirt/ground = run_loc_floor_bottom_left
 	ground.ChangeTurf(/turf/open/floor/rogue/dirt)
+	// Vibelin: plain dirt is slow to walk on a medieval map (the test map is not one), its road is not.
+	TEST_ASSERT_EQUAL(ground.slowdown, (rogue_medieval_map() ? rogue_value("dirt_slowdown") : 0), "Plain dirt is not as slow to walk as on Vibelin")
 	for(var/i in 1 to rogue_value("dirt_clods"))
 		TEST_ASSERT(!istype(ground, /turf/open/floor/rogue/dirt/road), "Dirt became a road before its clods ran out")
 		TEST_ASSERT_EQUAL(ground.attack_hand_secondary(digger, list()), SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN, "A free hand took no clod of dirt")
@@ -126,6 +158,7 @@
 		TEST_ASSERT(istype(clod), "The clod is not in the hand")
 		qdel(clod)
 	TEST_ASSERT(istype(ground, /turf/open/floor/rogue/dirt/road), "Dirt with its clods taken did not become a road")
+	TEST_ASSERT_EQUAL(ground.slowdown, 0, "A dirt road is slow to walk")
 
 	var/obj/item/rogueweapon/shovel/shovel = allocate(__IMPLIED_TYPE__, run_loc_floor_top_right)
 	var/turf/field = get_step(run_loc_floor_bottom_left, NORTH)

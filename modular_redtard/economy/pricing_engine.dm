@@ -71,7 +71,7 @@ GLOBAL_LIST_EMPTY(rogue_derived_categories)
 
 /// A thing the porter left without a price is worth its derived price, drifting like any other (Ratwood get_real_price()).
 /obj/item/get_real_price()
-	if(!sellprice && !initial(sellprice))
+	if(!sellprice && !rogue_base_price(type))
 		var/derived = rogue_derived_price(type)
 		if(derived)
 			sellprice = derived

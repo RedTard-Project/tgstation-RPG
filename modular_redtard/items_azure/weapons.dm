@@ -14,7 +14,6 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -50,7 +49,6 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -69,7 +67,6 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -88,7 +85,6 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -107,7 +103,6 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -126,7 +121,6 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	integrity_failure = 0
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -480,7 +474,6 @@
 	worn_y_dimension = 32
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	integrity_failure = 0
 	icon_state = null
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
@@ -502,7 +495,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 96
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
-	integrity_failure = 0
 	equip_delay_self = 20
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ammo_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ammo_righthand.dmi'
@@ -527,7 +519,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 96
 	possible_item_intents = list(/datum/intent/mace/strike)
-	integrity_failure = 0
 	equip_delay_self = 20
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ammo_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ammo_righthand.dmi'
@@ -552,7 +543,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 96
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
-	integrity_failure = 0
 	equip_delay_self = 20
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ammo_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ammo_righthand.dmi'
@@ -577,7 +567,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 96
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
-	integrity_failure = 0
 	equip_delay_self = 20
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ammo_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ammo_righthand.dmi'
@@ -602,7 +591,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 96
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
-	integrity_failure = 0
 	equip_delay_self = 20
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ammo_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ammo_righthand.dmi'
@@ -627,7 +615,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 96
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/dagger/thrust/pick)
-	integrity_failure = 0
 	equip_delay_self = 20
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ammo_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ammo_righthand.dmi'
@@ -652,7 +639,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 96
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/dagger/thrust/pick)
-	integrity_failure = 0
 	equip_delay_self = 20
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ammo_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ammo_righthand.dmi'
@@ -676,7 +662,6 @@
 	associated_skill = /datum/attribute/skill/combat/polearms
 	possible_item_intents = list(/datum/intent/sword/thrust, /datum/intent/spear/bash, /datum/intent/spear/cut)
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ammo_lefthand.dmi'
@@ -701,7 +686,6 @@
 	associated_skill = /datum/attribute/skill/combat/polearms
 	possible_item_intents = list(/datum/intent/sword/thrust, /datum/intent/spear/bash, /datum/intent/spear/cut)
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ammo_lefthand.dmi'
@@ -725,7 +709,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	possible_item_intents = list(/datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged/sling_mob_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged/sling_mob_righthand.dmi'
 	inhand_icon_state = null
@@ -747,7 +730,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	possible_item_intents = list(/datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged/sling_mob_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged/sling_mob_righthand.dmi'
 	inhand_icon_state = null
@@ -769,7 +751,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	possible_item_intents = list(/datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged/sling_mob_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged/sling_mob_righthand.dmi'
 	inhand_icon_state = null
@@ -791,7 +772,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	possible_item_intents = list(/datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged/sling_mob_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged/sling_mob_righthand.dmi'
 	inhand_icon_state = null
@@ -813,7 +793,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	possible_item_intents = list(/datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged/sling_mob_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged/sling_mob_righthand.dmi'
 	inhand_icon_state = null
@@ -835,7 +814,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	possible_item_intents = list(/datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged/sling_mob_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged/sling_mob_righthand.dmi'
 	inhand_icon_state = null
@@ -857,7 +835,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/dagger/thrust/pick)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ammo_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ammo_righthand.dmi'
 	inhand_icon_state = null
@@ -922,7 +899,6 @@
 	material_category = 2
 	sellprice = 50
 	anvilrepair = /datum/attribute/skill/craft/armorsmithing
-	integrity_failure = 0.1
 	rogue_salvage_amount = 1
 	worn_icon_state = "sparrowcrown"
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/clothing/head_lefthand.dmi'
@@ -945,7 +921,6 @@
 	rogue_grid_width = 64
 	rogue_grid_height = 32
 	possible_item_intents = list(/datum/intent/hand/draw)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/magic_resources_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/magic_resources_righthand.dmi'
 	inhand_icon_state = null
@@ -967,7 +942,6 @@
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/shoot/bow, /datum/intent/arc/bow, /datum/intent/hit)
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/arrow
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged32_righthand.dmi'
 	inhand_icon_state = null
@@ -995,7 +969,6 @@
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/shoot/bow, /datum/intent/arc/bow, /datum/intent/hit)
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/arrow
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged32_lefthand.dmi'
@@ -1028,7 +1001,6 @@
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/shoot/bow, /datum/intent/arc/bow, /datum/intent/hit)
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/arrow
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged32_righthand.dmi'
 	inhand_icon_state = null
@@ -1059,7 +1031,6 @@
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/shoot/bow/short, /datum/intent/arc/bow/short, /datum/intent/hit)
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/arrow
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged32_righthand.dmi'
 	inhand_icon_state = null
@@ -1115,7 +1086,6 @@
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/shoot/bow, /datum/intent/arc/bow, /datum/intent/hit)
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/arrow
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged32_righthand.dmi'
 	inhand_icon_state = null
@@ -1144,7 +1114,6 @@
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/shoot/bow, /datum/intent/arc/bow, /datum/intent/hit)
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/arrow
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged32_righthand.dmi'
 	inhand_icon_state = null
@@ -1173,7 +1142,6 @@
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/shoot/bow, /datum/intent/arc/bow, /datum/intent/hit)
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/arrow
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged32_righthand.dmi'
 	inhand_icon_state = null
@@ -1204,7 +1172,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/bolt
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged32_lefthand.dmi'
@@ -1239,7 +1206,6 @@
 	smeltresult = /obj/item/ingot/drow
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/bolt
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
@@ -1274,7 +1240,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/heavy_bolt
-	integrity_failure = 0
 	equip_delay_self = 30
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -1310,7 +1275,6 @@
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/heavy_bolt
-	integrity_failure = 0
 	equip_delay_self = 30
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -1380,7 +1344,6 @@
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/bolt
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged32_lefthand.dmi'
@@ -1415,7 +1378,6 @@
 	possible_item_intents = list(/datum/intent/shoot/crossbow/slurbow, /datum/intent/arc/crossbow/slurbow, /datum/intent/buttstroke)
 	smeltresult = /obj/item/ingot/drow
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
 	inhand_icon_state = null
@@ -1448,7 +1410,6 @@
 	possible_item_intents = list(/datum/intent/shoot/crossbow/slurbow, /datum/intent/arc/crossbow/slurbow, /datum/intent/buttstroke)
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged32_righthand.dmi'
 	inhand_icon_state = null
@@ -1480,7 +1441,6 @@
 	can_parry = TRUE
 	possible_item_intents = list(/datum/intent/hit)
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/sling
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ranged32_lefthand.dmi'
@@ -1539,7 +1499,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sewrepair = TRUE
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ammo_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ammo_righthand.dmi'
 	inhand_icon_state = null
@@ -1561,7 +1520,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sewrepair = TRUE
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ammo_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ammo_righthand.dmi'
 	inhand_icon_state = null
@@ -1670,7 +1628,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sewrepair = TRUE
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ammo_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ammo_righthand.dmi'
 	inhand_icon_state = null
@@ -1693,7 +1650,6 @@
 	worn_y_dimension = 32
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/engineering
-	integrity_failure = 0
 	equip_delay_self = 50
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -1787,7 +1743,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sewrepair = TRUE
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ammo_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ammo_righthand.dmi'
 	inhand_icon_state = null
@@ -1831,7 +1786,6 @@
 	worn_x_dimension = 32
 	worn_y_dimension = 32
 	sewrepair = TRUE
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ammo_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ammo_righthand.dmi'
 	inhand_icon_state = null
@@ -1918,7 +1872,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	sewrepair = TRUE
-	integrity_failure = 0
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/ammo_lefthand.dmi'
@@ -1944,7 +1897,6 @@
 	rogue_grid_width = 32
 	rogue_grid_height = 64
 	possible_item_intents = list(/datum/intent/pour, /datum/intent/fill, /datum/intent/splash, /datum/intent/hit)
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/bowl_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/modular/Neu_Food/icons/cookware/bowl_righthand.dmi'
 	inhand_icon_state = null
@@ -1975,9 +1927,7 @@
 	can_parry = TRUE
 	associated_skill = /datum/attribute/skill/combat/knives
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 300
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/crafting_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/crafting_righthand.dmi'
 	inhand_icon_state = null
@@ -2004,7 +1954,6 @@
 	can_parry = TRUE
 	associated_skill = /datum/attribute/skill/combat/knives
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 300
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/crafting_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/items/crafting_righthand.dmi'
@@ -2033,7 +1982,6 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/engineering
-	integrity_failure = 0.1
 	inhand_icon_state = "sabre"
 
 /obj/item/rogueweapon/contraption/folding_table_stored
@@ -2770,7 +2718,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -2794,7 +2741,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -2825,7 +2771,6 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -2850,7 +2795,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -2878,10 +2822,8 @@
 	possible_item_intents = list(/datum/intent/sword/thrust, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/thrust/estoc, /datum/intent/sword/thrust/estoc/lunge, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 400
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -2910,10 +2852,8 @@
 	possible_item_intents = list(/datum/intent/sword/thrust, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/thrust/estoc, /datum/intent/sword/thrust/estoc/lunge, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 400
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -2938,7 +2878,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -2962,7 +2901,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -2986,7 +2924,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -3010,7 +2947,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -3034,7 +2970,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -3058,7 +2993,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
 	inhand_icon_state = null
@@ -3082,7 +3016,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -3106,7 +3039,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
 	inhand_icon_state = null
@@ -3130,7 +3062,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
 	inhand_icon_state = null
@@ -3154,7 +3085,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
 	inhand_icon_state = null
@@ -3178,7 +3108,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
 	inhand_icon_state = null
@@ -3204,7 +3133,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -3228,7 +3156,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
 	inhand_icon_state = null
@@ -3252,7 +3179,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -3276,7 +3202,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -3302,7 +3227,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -3328,7 +3252,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -3352,7 +3275,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -3376,7 +3298,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -3400,7 +3321,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -3424,7 +3344,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
 	inhand_icon_state = null
@@ -3448,7 +3367,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -3472,7 +3390,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
 	inhand_icon_state = null
@@ -3496,7 +3413,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -3522,7 +3438,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -3546,7 +3461,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -3571,7 +3485,6 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	smeltresult = /obj/item/ingot/drow
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -3595,7 +3508,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -3619,7 +3531,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -3643,7 +3554,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -3667,7 +3577,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -3693,10 +3602,8 @@
 	can_parry = TRUE
 	associated_skill = /datum/attribute/skill/combat/polearms
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 2600
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_righthand.dmi'
 	inhand_icon_state = null
@@ -3725,7 +3632,6 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	special = /datum/special_intent/flail_sweep
 	smeltresult = /obj/item/ingot/aaslag
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_righthand.dmi'
 	inhand_icon_state = null
@@ -3755,7 +3661,6 @@
 	special = /datum/special_intent/flail_sweep
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_righthand.dmi'
 	inhand_icon_state = null
@@ -3785,7 +3690,6 @@
 	special = /datum/special_intent/flail_sweep
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_righthand.dmi'
 	inhand_icon_state = null
@@ -3819,7 +3723,6 @@
 	special = /datum/special_intent/flail_sweep
 	smeltresult = /obj/item/ingot/drow
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -3886,7 +3789,6 @@
 	special = /datum/special_intent/flail_sweep
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt64_righthand.dmi'
 	inhand_icon_state = null
@@ -3949,7 +3851,6 @@
 	special = /datum/special_intent/flail_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
 	inhand_icon_state = null
@@ -3980,7 +3881,6 @@
 	special = /datum/special_intent/flail_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_righthand.dmi'
 	inhand_icon_state = null
@@ -4010,7 +3910,6 @@
 	special = /datum/special_intent/flail_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_righthand.dmi'
 	inhand_icon_state = null
@@ -4040,7 +3939,6 @@
 	special = /datum/special_intent/flail_sweep
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_righthand.dmi'
 	inhand_icon_state = null
@@ -4070,7 +3968,6 @@
 	special = /datum/special_intent/flail_sweep
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_righthand.dmi'
 	inhand_icon_state = null
@@ -4128,9 +4025,7 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/axe/cut/long, /datum/intent/axe/chop/long, /datum/intent/axe/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 250
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/axes64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/axes64_righthand.dmi'
 	inhand_icon_state = null
@@ -4161,7 +4056,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/axe/cut/long, /datum/intent/axe/chop/long, /datum/intent/axe/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 500
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/axes64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/axes64_righthand.dmi'
@@ -4190,10 +4084,8 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/axe/cut/long, /datum/intent/axe/chop/long, /datum/intent/axe/chop/heavy, /datum/intent/axe/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 250
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -4222,10 +4114,8 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	gripped_intents = list(/datum/intent/axe/cut/long, /datum/intent/axe/chop/long, /datum/intent/axe/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 250
 	special = /datum/special_intent/martyr_blazing_sweep
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/axes64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/axes64_righthand.dmi'
 	inhand_icon_state = null
@@ -4254,10 +4144,8 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/axe/cut/long, /datum/intent/axe/chop/long, /datum/intent/axe/chop/heavy, /datum/intent/axe/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 250
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -4286,11 +4174,9 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/axe/cut/long, /datum/intent/axe/chop/long, /datum/intent/mace/strike/poleaxe, /datum/intent/spear/thrust/militia)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/axes64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/axes64_righthand.dmi'
 	inhand_icon_state = null
@@ -4318,7 +4204,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/axe/cut/long, /datum/intent/axe/chop/long, /datum/intent/mace/strike/poleaxe, /datum/intent/spear/thrust/militia)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -4349,7 +4234,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/axe/cut/long, /datum/intent/axe/chop/long, /datum/intent/mace/strike/poleaxe, /datum/intent/spear/thrust/militia)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -4380,10 +4264,8 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/axe/cut/long, /datum/intent/axe/chop/long, /datum/intent/axe/chop/heavy, /datum/intent/axe/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -4413,10 +4295,8 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
-	max_blade_int = 300
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/aaslag
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_righthand.dmi'
 	inhand_icon_state = null
@@ -4445,11 +4325,9 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
-	max_blade_int = 300
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -4479,11 +4357,9 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
 	sellprice = 120
-	max_blade_int = 300
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_righthand.dmi'
 	inhand_icon_state = null
@@ -4512,11 +4388,9 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
-	max_blade_int = 300
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -4545,11 +4419,9 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
-	max_blade_int = 240
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -4578,10 +4450,8 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
-	max_blade_int = 180
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/aaslag
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_righthand.dmi'
 	inhand_icon_state = null
@@ -4610,11 +4480,9 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
-	max_blade_int = 200
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_righthand.dmi'
 	inhand_icon_state = null
@@ -4643,11 +4511,9 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
-	max_blade_int = 180
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_righthand.dmi'
 	inhand_icon_state = null
@@ -4676,11 +4542,9 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
-	max_blade_int = 240
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_righthand.dmi'
 	inhand_icon_state = null
@@ -4709,11 +4573,9 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
-	max_blade_int = 300
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -4742,11 +4604,9 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
-	max_blade_int = 300
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -4775,11 +4635,9 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
-	max_blade_int = 300
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_righthand.dmi'
 	inhand_icon_state = null
@@ -4808,11 +4666,9 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
-	max_blade_int = 300
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_righthand.dmi'
 	inhand_icon_state = null
@@ -4841,7 +4697,6 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/zwei, /datum/intent/sword/cut/zwei/cleave, /datum/intent/sword/cut/zwei/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
-	max_blade_int = 300
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -4873,7 +4728,6 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/thrust/heavy, /datum/intent/sword/chop/cleave, /datum/intent/rend)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/greatsword, /datum/alt_grip/halfsword/greatsword)
-	max_blade_int = 400
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -4905,11 +4759,9 @@
 	gripped_intents = list(/datum/intent/sword/cut/zhanmadao, /datum/intent/rend, /datum/intent/sword/thrust/zhanmadao, /datum/intent/sword/cut/zhanmadao/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedlarge (3).ogg')
 	alt_grips = null
-	max_blade_int = 300
 	special = /datum/special_intent/wave_swing/greatsword
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_righthand.dmi'
 	inhand_icon_state = null
@@ -4938,10 +4790,8 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/bad, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/cut, /datum/intent/spear/cut/bardiche/cleave, /datum/intent/spear/cut/glaive/sweep, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/aaslag
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_righthand.dmi'
 	inhand_icon_state = null
@@ -4970,11 +4820,9 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/cut/bardiche/cleave, /datum/intent/spear/cut/glaive/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_righthand.dmi'
 	inhand_icon_state = null
@@ -5003,11 +4851,9 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/bad, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/cut, /datum/intent/spear/cut/bardiche/cleave, /datum/intent/spear/cut/glaive/sweep, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_righthand.dmi'
 	inhand_icon_state = null
@@ -5036,11 +4882,9 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/bad, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/cut/bardiche/cleave, /datum/intent/spear/cut/glaive/sweep, /datum/intent/axe/chop/scythe)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_righthand.dmi'
 	inhand_icon_state = null
@@ -5069,10 +4913,8 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/axe/chop/halberd, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 280
 	special = /datum/special_intent/polearm_backstep
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_righthand.dmi'
 	inhand_icon_state = null
@@ -5102,11 +4944,9 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/axe/chop/halberd, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 280
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -5136,11 +4976,9 @@
 	gripped_intents = list(/datum/intent/spear/cut/glaive, /datum/intent/spear/cut/glaive/sweep, /datum/intent/spear/thrust, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	sellprice = 60
-	max_blade_int = 230
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_righthand.dmi'
 	inhand_icon_state = null
@@ -5170,11 +5008,9 @@
 	gripped_intents = list(/datum/intent/spear/cut/glaive, /datum/intent/spear/cut/glaive/sweep, /datum/intent/spear/thrust, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	sellprice = 250
-	max_blade_int = 250
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/special/captainglaive_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/special/captainglaive_righthand.dmi'
 	inhand_icon_state = null
@@ -5203,11 +5039,9 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/cut/glaive, /datum/intent/spear/cut/glaive/sweep, /datum/intent/spear/thrust, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -5236,11 +5070,9 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/axe/chop/halberd, /datum/intent/spear/dismount)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 280
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_righthand.dmi'
 	inhand_icon_state = null
@@ -5269,7 +5101,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/axe/chop/halberd, /datum/intent/spear/dismount)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 280
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -5301,11 +5132,9 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/axe/chop/halberd, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 280
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = "lime_swordspear~2"
@@ -5335,11 +5164,9 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/axe/chop/halberd, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 280
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_righthand.dmi'
 	inhand_icon_state = null
@@ -5368,11 +5195,9 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/axe/chop/halberd, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 280
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_righthand.dmi'
 	inhand_icon_state = null
@@ -5401,7 +5226,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/axe/chop/halberd, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 280
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -5433,7 +5257,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/axe/chop/halberd, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 380
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -5465,7 +5288,6 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/tools_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/tools_righthand.dmi'
 	inhand_icon_state = null
@@ -5494,7 +5316,6 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/tools_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/tools_righthand.dmi'
 	inhand_icon_state = null
@@ -5521,10 +5342,8 @@
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	possible_item_intents = list(/datum/intent/claw/cut, /datum/intent/claw/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 150
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/unarmed32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/unarmed32_righthand.dmi'
 	inhand_icon_state = null
@@ -5552,10 +5371,8 @@
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	possible_item_intents = list(/datum/intent/claw/cut, /datum/intent/claw/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 150
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/unarmed32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/unarmed32_righthand.dmi'
 	inhand_icon_state = null
@@ -5582,7 +5399,6 @@
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash/lesser, /datum/intent/mace/rangedthrust/short)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 150
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/unarmed32_lefthand.dmi'
@@ -5612,10 +5428,8 @@
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 333
 	smeltresult = /obj/item/ingot/component/graggar
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/unarmed32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/unarmed32_righthand.dmi'
 	inhand_icon_state = null
@@ -5643,10 +5457,8 @@
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	possible_item_intents = list(/datum/intent/claw/cut, /datum/intent/claw/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 333
 	smeltresult = /obj/item/ingot/component/graggar
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/unarmed32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/unarmed32_righthand.dmi'
 	inhand_icon_state = null
@@ -5674,7 +5486,6 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	smeltresult = /obj/item/ingot/aalloy
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -5699,7 +5510,6 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	inhand_icon_state = null
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -5725,10 +5535,8 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -5758,10 +5566,8 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut/heavy, /datum/intent/dagger/chop/cleaver, /datum/intent/dagger/sucker_punch, /datum/intent/dagger/thrust/weak)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -5791,10 +5597,8 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut/heavy, /datum/intent/dagger/chop/cleaver, /datum/intent/dagger/sucker_punch, /datum/intent/dagger/thrust/combat)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 300
 	smeltresult = /obj/item/ingot/component/graggar
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -5824,10 +5628,8 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut/heavy, /datum/intent/dagger/chop/cleaver, /datum/intent/dagger/sucker_punch, /datum/intent/dagger/thrust/combat)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
 	inhand_icon_state = null
@@ -5857,10 +5659,8 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut/heavy, /datum/intent/dagger/chop/cleaver, /datum/intent/dagger/sucker_punch, /datum/intent/dagger/thrust/combat)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -5890,10 +5690,8 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut/heavy, /datum/intent/dagger/chop/cleaver, /datum/intent/dagger/sucker_punch, /datum/intent/dagger/thrust/combat)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 50
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/gems/gem_jade_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/gems/gem_jade_righthand.dmi'
 	inhand_icon_state = null
@@ -5923,11 +5721,9 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut/heavy, /datum/intent/dagger/chop/cleaver, /datum/intent/dagger/cut/rend, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -5957,10 +5753,8 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut/heavy, /datum/intent/dagger/chop/cleaver, /datum/intent/dagger/sucker_punch, /datum/intent/dagger/thrust/combat)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 50
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/gems/gem_opal_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/gems/gem_opal_righthand.dmi'
 	inhand_icon_state = null
@@ -5990,10 +5784,8 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut/heavy, /datum/intent/dagger/chop/cleaver, /datum/intent/dagger/sucker_punch, /datum/intent/dagger/thrust/combat)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -6023,10 +5815,8 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/aaslag
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -6056,11 +5846,9 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/avantyne
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -6090,11 +5878,9 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut/quick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 250
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -6124,11 +5910,9 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 250
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -6158,11 +5942,9 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -6193,11 +5975,9 @@
 	possible_item_intents = list(/datum/intent/dagger/thrust/pick, /datum/intent/dagger/thrust/quick, /datum/intent/dagger/cut, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	sellprice = 5
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/rogueore/coal
 	anvilrepair = /datum/attribute/skill/craft/crafting
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -6228,7 +6008,6 @@
 	possible_item_intents = list(/datum/intent/dagger/thrust/pick, /datum/intent/dagger/thrust/quick, /datum/intent/dagger/cut, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
 	sellprice = 5
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/rogueore/coal
 	anvilrepair = /datum/attribute/skill/craft/crafting
@@ -6260,11 +6039,9 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/templar_daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/templar_daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -6294,11 +6071,9 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/templar_daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/templar_daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -6328,11 +6103,9 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/component/baotha
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -6362,10 +6135,8 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -6396,11 +6167,9 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/drow
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -6430,11 +6199,9 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -6464,7 +6231,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -6496,7 +6262,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -6528,11 +6293,9 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/templar_daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/templar_daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -6562,11 +6325,9 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/templar_daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/templar_daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -6596,11 +6357,9 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
 	inhand_icon_state = null
@@ -6630,11 +6389,9 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
 	inhand_icon_state = null
@@ -6664,11 +6421,9 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/templar_daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/templar_daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -6698,11 +6453,9 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/templar_daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/templar_daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -6732,11 +6485,9 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/component/matthios
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -6766,11 +6517,9 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/templar_daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/templar_daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -6800,11 +6549,9 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/templar_daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/templar_daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -6834,11 +6581,9 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -6868,11 +6613,9 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/special/hand32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/special/hand32_righthand.dmi'
 	inhand_icon_state = null
@@ -6902,11 +6645,9 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -6936,11 +6677,9 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/templar_daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/templar_daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -6970,10 +6709,8 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/cut, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 50
 	special = /datum/special_intent/dagger_dash
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/gems/gem_rose_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/gems/gem_rose_righthand.dmi'
 	inhand_icon_state = null
@@ -7004,11 +6741,9 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
 	inhand_icon_state = null
@@ -7038,11 +6773,9 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -7072,7 +6805,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -7104,7 +6836,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/gold
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -7136,7 +6867,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/bronze, /datum/intent/dagger/sucker_punch, /datum/intent/dagger/thrust/combat)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 333
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/gold
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -7168,7 +6898,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -7200,7 +6929,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut/heavy, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 250
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -7232,7 +6960,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust/pick, /datum/intent/dagger/thrust/quick, /datum/intent/dagger/cut, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/rogueore/coal
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -7264,7 +6991,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust/pick, /datum/intent/dagger/thrust/quick, /datum/intent/dagger/cut, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 270
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/rogueore/coal
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -7296,7 +7022,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust/pick, /datum/intent/dagger/thrust/quick, /datum/intent/dagger/cut, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/rogueore/coal
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -7328,7 +7053,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust/pick, /datum/intent/dagger/thrust/quick, /datum/intent/dagger/cut, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/rogueore/coal
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -7360,11 +7084,9 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/drow
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -7394,11 +7116,9 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust/blunt, /datum/intent/dagger/cut/blunt, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -7428,11 +7148,9 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/templar_daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/templar_daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -7462,11 +7180,9 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/component/zizo
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -7496,11 +7212,9 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/thrust/pick, /datum/intent/dagger/sucker_punch)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/dagger_dash
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -7530,10 +7244,8 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/dagger/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/dream_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/dream_weapons_righthand.dmi'
 	inhand_icon_state = null
@@ -7563,9 +7275,7 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -7595,9 +7305,7 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -7627,9 +7335,7 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -7659,9 +7365,7 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -7691,7 +7395,6 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/dagger/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
@@ -7721,9 +7424,7 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver, /datum/intent/snip, /datum/intent/dagger/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 250
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -7753,9 +7454,7 @@
 	associated_skill = /datum/attribute/skill/combat/knives
 	possible_item_intents = list(/datum/intent/dagger/cut/wood, /datum/intent/dagger/chop/wood, /datum/intent/dagger/sucker_punch, /datum/intent/dagger/thrust/wood)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 100
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/daggers32_righthand.dmi'
 	inhand_icon_state = null
@@ -7785,10 +7484,8 @@
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	possible_item_intents = list(/datum/intent/katar/cut, /datum/intent/katar/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/unarmed32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/unarmed32_righthand.dmi'
 	inhand_icon_state = null
@@ -7816,10 +7513,8 @@
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	possible_item_intents = list(/datum/intent/katar/cut, /datum/intent/katar/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
 	inhand_icon_state = null
@@ -7847,11 +7542,9 @@
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	possible_item_intents = list(/datum/intent/katar/cut, /datum/intent/katar/thrust, /datum/intent/katar/lirvasbite)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 999
 	special = /datum/special_intent/drakkyrmaw_bite
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/unarmed32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/unarmed32_righthand.dmi'
 	inhand_icon_state = null
@@ -7879,10 +7572,8 @@
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/thrust/pick, /datum/intent/mace/smash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/special/freifechter32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/special/freifechter32_righthand.dmi'
 	inhand_icon_state = null
@@ -7910,10 +7601,8 @@
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	possible_item_intents = list(/datum/intent/katar/cut, /datum/intent/katar/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/unarmed32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/unarmed32_righthand.dmi'
 	inhand_icon_state = null
@@ -7941,10 +7630,8 @@
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	possible_item_intents = list(/datum/intent/katar/cut, /datum/intent/katar/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/unarmed32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/unarmed32_righthand.dmi'
 	inhand_icon_state = null
@@ -7972,7 +7659,6 @@
 	associated_skill = /datum/attribute/skill/combat/unarmed
 	possible_item_intents = list(/datum/intent/katar/cut, /datum/intent/katar/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedsmall (3).ogg')
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/unarmed32_lefthand.dmi'
@@ -7998,7 +7684,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -8022,7 +7707,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -8046,7 +7730,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
 	inhand_icon_state = null
@@ -8116,7 +7799,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -8145,7 +7827,6 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	special = /datum/special_intent/ground_smash
 	smeltresult = /obj/item/ingot/aaslag
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_righthand.dmi'
 	inhand_icon_state = null
@@ -8175,7 +7856,6 @@
 	special = /datum/special_intent/ground_smash
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_righthand.dmi'
 	inhand_icon_state = null
@@ -8207,7 +7887,6 @@
 	special = /datum/special_intent/warhammer_swing
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_righthand.dmi'
 	inhand_icon_state = null
@@ -8361,7 +8040,6 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_righthand.dmi'
 	inhand_icon_state = null
@@ -8394,7 +8072,6 @@
 	special = /datum/special_intent/ground_smash
 	smeltresult = /obj/item/ingot/drow
 	anvilrepair = /datum/attribute/skill/craft/sewing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -8426,7 +8103,6 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	special = /datum/special_intent/ground_smash
 	smeltresult = /obj/item/ingot/aaslag
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt64_righthand.dmi'
 	inhand_icon_state = null
@@ -8458,7 +8134,6 @@
 	special = /datum/special_intent/ground_smash
 	smeltresult = /obj/item/ingot/steelholy
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/mob/monster/pufferboss_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/mob/monster/pufferboss_righthand.dmi'
 	inhand_icon_state = null
@@ -8489,7 +8164,6 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	special = /datum/special_intent/martyr_volcano_slam
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt64_righthand.dmi'
 	inhand_icon_state = null
@@ -8522,7 +8196,6 @@
 	special = /datum/special_intent/ground_smash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -8554,7 +8227,6 @@
 	special = /datum/special_intent/ground_smash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt64_lefthand.dmi'
@@ -8588,7 +8260,6 @@
 	special = /datum/special_intent/ground_smash
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt64_righthand.dmi'
 	inhand_icon_state = null
@@ -8620,7 +8291,6 @@
 	special = /datum/special_intent/ground_smash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt64_righthand.dmi'
 	inhand_icon_state = null
@@ -8652,7 +8322,6 @@
 	special = /datum/special_intent/ground_smash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt64_righthand.dmi'
 	inhand_icon_state = null
@@ -8684,7 +8353,6 @@
 	special = /datum/special_intent/ground_smash
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt64_righthand.dmi'
 	inhand_icon_state = null
@@ -8745,7 +8413,6 @@
 	special = /datum/special_intent/ground_smash
 	smeltresult = /obj/item/ingot/lithmyc
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_righthand.dmi'
 	inhand_icon_state = null
@@ -8775,7 +8442,6 @@
 	special = /datum/special_intent/ground_smash
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
 	inhand_icon_state = null
@@ -8805,7 +8471,6 @@
 	special = /datum/special_intent/ground_smash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
 	inhand_icon_state = null
@@ -8835,7 +8500,6 @@
 	special = /datum/special_intent/ground_smash
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_righthand.dmi'
 	inhand_icon_state = null
@@ -8894,7 +8558,6 @@
 	special = /datum/special_intent/ground_smash
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_righthand.dmi'
 	inhand_icon_state = null
@@ -8924,7 +8587,6 @@
 	special = /datum/special_intent/ground_smash
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
 	inhand_icon_state = null
@@ -8952,7 +8614,6 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	special = /datum/special_intent/warhammer_swing
 	smeltresult = /obj/item/ingot/aaslag
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_righthand.dmi'
 	inhand_icon_state = null
@@ -8978,11 +8639,9 @@
 	associated_skill = /datum/attribute/skill/combat/maces
 	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/sword/cut, /datum/intent/mace/warhammer/pick, /datum/intent/mace/smash/lesser)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 100
 	special = /datum/special_intent/warhammer_swing
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_righthand.dmi'
 	inhand_icon_state = null
@@ -9008,11 +8667,9 @@
 	associated_skill = /datum/attribute/skill/combat/maces
 	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/sword/cut, /datum/intent/mace/warhammer/pick, /datum/intent/mace/smash/lesser)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 175
 	special = /datum/special_intent/warhammer_swing
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_righthand.dmi'
 	inhand_icon_state = null
@@ -9038,11 +8695,9 @@
 	associated_skill = /datum/attribute/skill/combat/maces
 	possible_item_intents = list(/datum/intent/mace/strike, /datum/intent/sword/cut, /datum/intent/mace/warhammer/pick, /datum/intent/mace/smash/lesser)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 175
 	special = /datum/special_intent/warhammer_swing
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_righthand.dmi'
 	inhand_icon_state = null
@@ -9071,7 +8726,6 @@
 	special = /datum/special_intent/warhammer_swing
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
 	inhand_icon_state = null
@@ -9100,7 +8754,6 @@
 	special = /datum/special_intent/warhammer_swing
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_righthand.dmi'
 	inhand_icon_state = null
@@ -9130,7 +8783,6 @@
 	special = /datum/special_intent/ground_smash
 	smeltresult = /obj/item/natural/ash
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_righthand.dmi'
 	inhand_icon_state = null
@@ -9159,7 +8811,6 @@
 	special = /datum/special_intent/ground_smash
 	smeltresult = /obj/item/natural/ash
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/blunt32_righthand.dmi'
 	inhand_icon_state = null
@@ -9183,7 +8834,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -9207,7 +8857,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
 	inhand_icon_state = null
@@ -9235,7 +8884,6 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/tools_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/tools_righthand.dmi'
 	inhand_icon_state = null
@@ -9263,10 +8911,8 @@
 	can_parry = TRUE
 	associated_skill = /datum/attribute/skill/combat/axes
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/misc32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/misc32_righthand.dmi'
 	inhand_icon_state = null
@@ -9295,7 +8941,6 @@
 	sellprice = 15
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/tools_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/tools_righthand.dmi'
 	inhand_icon_state = null
@@ -9321,7 +8966,6 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	smeltresult = /obj/item/ingot/aalloy
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/tools_lefthand.dmi'
@@ -9349,7 +8993,6 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/tools_lefthand.dmi'
@@ -9375,7 +9018,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -9402,7 +9044,6 @@
 	wlength = 1
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	equip_delay_self = 50
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -9433,7 +9074,6 @@
 	wlength = 1
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/scabbard_lefthand.dmi'
@@ -9465,7 +9105,6 @@
 	sellprice = 50
 	special = /datum/special_intent/limbguard
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/scabbard_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/scabbard_righthand.dmi'
 	inhand_icon_state = null
@@ -9493,7 +9132,6 @@
 	can_parry = TRUE
 	associated_skill = /datum/attribute/skill/combat/swords
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/scabbard_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/scabbard_righthand.dmi'
 	inhand_icon_state = null
@@ -9520,7 +9158,6 @@
 	wlength = 1
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/scabbard_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/scabbard_righthand.dmi'
 	inhand_icon_state = null
@@ -9547,7 +9184,6 @@
 	wlength = 1
 	anvilrepair = /datum/attribute/skill/craft/blacksmithing
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/scabbard_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/scabbard_righthand.dmi'
 	inhand_icon_state = null
@@ -9573,10 +9209,8 @@
 	can_parry = TRUE
 	associated_skill = /datum/attribute/skill/labor/farming
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 120
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_righthand.dmi'
 	inhand_icon_state = null
@@ -9602,10 +9236,8 @@
 	can_parry = TRUE
 	associated_skill = /datum/attribute/skill/labor/farming
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 120
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_righthand.dmi'
 	inhand_icon_state = null
@@ -9636,10 +9268,8 @@
 	can_parry = TRUE
 	associated_skill = /datum/attribute/skill/combat/axes
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 300
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	inhand_icon_state = "sabre"
 	rogue_onmob_sheet = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/tools_onmob.dmi'
 
@@ -9666,7 +9296,6 @@
 	associated_skill = /datum/attribute/skill/combat/axes
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	inhand_icon_state = "sabre"
 	rogue_onmob_sheet = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/tools_onmob.dmi'
 
@@ -9692,10 +9321,8 @@
 	can_parry = TRUE
 	associated_skill = /datum/attribute/skill/combat/axes
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 300
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	inhand_icon_state = "sabre"
 	rogue_onmob_sheet = null
 
@@ -9714,10 +9341,8 @@
 	wlength = 1
 	can_parry = TRUE
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 300
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/tools_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/tools_righthand.dmi'
 	inhand_icon_state = null
@@ -9741,10 +9366,8 @@
 	wlength = 1
 	can_parry = TRUE
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 300
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/tools_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/tools_righthand.dmi'
 	inhand_icon_state = null
@@ -9772,10 +9395,8 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 180
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/aaslag
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_righthand.dmi'
 	inhand_icon_state = null
@@ -9803,11 +9424,9 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 150
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_righthand.dmi'
 	inhand_icon_state = null
@@ -9835,11 +9454,9 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash, /datum/intent/spear/dismount)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/avantyne
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
@@ -9869,11 +9486,9 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -9901,11 +9516,9 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -9933,11 +9546,9 @@
 	possible_item_intents = list(/datum/intent/dagger/sucker_punch, /datum/intent/sword/strike, /datum/intent/spear/cut/oneh/pike)
 	gripped_intents = list(/datum/intent/spear/thrust/pike, /datum/intent/spear/thrust/pike/skewer)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/special/freifechter_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/special/freifechter_righthand.dmi'
 	inhand_icon_state = null
@@ -9965,7 +9576,6 @@
 	possible_item_intents = list(/datum/intent/dagger/sucker_punch, /datum/intent/sword/strike, /datum/intent/spear/cut/oneh/pike)
 	gripped_intents = list(/datum/intent/spear/thrust/pike, /datum/intent/spear/thrust/pike/skewer)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -9996,7 +9606,6 @@
 	possible_item_intents = list(/datum/intent/dagger/sucker_punch, /datum/intent/sword/strike, /datum/intent/spear/cut/oneh/pike)
 	gripped_intents = list(/datum/intent/spear/thrust/pike, /datum/intent/spear/thrust/pike/skewer)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -10027,11 +9636,9 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_righthand.dmi'
 	inhand_icon_state = null
@@ -10059,11 +9666,9 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 225
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 20
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -10094,11 +9699,9 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 225
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 20
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -10129,11 +9732,9 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 230
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_righthand.dmi'
 	inhand_icon_state = null
@@ -10161,11 +9762,9 @@
 	possible_item_intents = list(/datum/intent/spear/thrust, /datum/intent/lance/onehand, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/thrust/lance, /datum/intent/lance, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -10193,11 +9792,9 @@
 	possible_item_intents = list(/datum/intent/spear/thrust, /datum/intent/lance/onehand, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/thrust/lance, /datum/intent/lance, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -10225,11 +9822,9 @@
 	possible_item_intents = list(/datum/intent/spear/thrust, /datum/intent/lance/onehand, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/thrust/lance, /datum/intent/lance, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -10257,11 +9852,9 @@
 	possible_item_intents = list(/datum/intent/spear/cut/naginata, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/cut/naginata, /datum/intent/spear/cut/naginata/sweep, /datum/intent/rend/reach, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 220
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -10289,11 +9882,9 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 180
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_righthand.dmi'
 	inhand_icon_state = null
@@ -10321,11 +9912,9 @@
 	possible_item_intents = list(/datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/rend/reach/partizan)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = "chiv_aspear~2"
@@ -10354,11 +9943,9 @@
 	possible_item_intents = list(/datum/intent/sword/thrust/long, /datum/intent/sword/cut/long, /datum/intent/sword/strike, /datum/intent/sword/thrust/heavy)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/rend/reach/partizan, /datum/intent/spear/cut/glaive/sweep)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 400
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/component/baotha
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 20
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -10390,10 +9977,8 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/rend/reach/partizan, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 250
 	special = /datum/special_intent/martyr_blazing_trident
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_righthand.dmi'
 	inhand_icon_state = null
@@ -10423,11 +10008,9 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 180
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
 	inhand_icon_state = null
@@ -10455,11 +10038,9 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/short, /datum/intent/spear/cut/short)
 	gripped_intents = list(/datum/intent/spear/thrust/short, /datum/intent/spear/cut/short, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 180
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_righthand.dmi'
 	inhand_icon_state = null
@@ -10487,11 +10068,9 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 180
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_righthand.dmi'
 	inhand_icon_state = null
@@ -10519,7 +10098,6 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 180
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -10550,11 +10128,9 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/azurean/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust/azurean, /datum/intent/spear/thrust/azurean/pick, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 180
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_righthand.dmi'
 	inhand_icon_state = null
@@ -10582,11 +10158,9 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh/training, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/spear/thrust/training, /datum/intent/spear/bash, /datum/intent/mace/smash/wood)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 180
 	special = /datum/special_intent/polearm_backstep
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_righthand.dmi'
 	inhand_icon_state = null
@@ -10614,10 +10188,8 @@
 	possible_item_intents = list(/datum/intent/spear/thrust/oneh, /datum/intent/spear/cut/oneh)
 	gripped_intents = list(/datum/intent/spear/thrust, /datum/intent/spear/cut, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
-	max_blade_int = 50
 	special = /datum/special_intent/polearm_backstep
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_righthand.dmi'
 	inhand_icon_state = null
@@ -10645,11 +10217,9 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/mace/warhammer/pick, /datum/intent/axe/bash/battle)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/mace/warhammer/pick, /datum/intent/axe/bash/battle)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/axes32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/axes32_righthand.dmi'
 	inhand_icon_state = null
@@ -10676,10 +10246,8 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash/battle)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/chop/heavy, /datum/intent/axe/bash/battle)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 50
 	special = /datum/special_intent/axe_swing
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/gems/gem_coral_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/gems/gem_coral_righthand.dmi'
 	inhand_icon_state = null
@@ -10707,11 +10275,9 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash/battle)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/chop/heavy, /datum/intent/axe/bash/battle)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
 	inhand_icon_state = null
@@ -10738,11 +10304,9 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash/battle)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/chop/heavy, /datum/intent/axe/bash/battle)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 260
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/axes32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/axes32_righthand.dmi'
 	inhand_icon_state = null
@@ -10769,11 +10333,9 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/chop/heavy, /datum/intent/axe/bash/battle)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/chop/heavy, /datum/intent/axe/bash/battle)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/axes32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/axes32_righthand.dmi'
 	inhand_icon_state = null
@@ -10800,7 +10362,6 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/chop/heavy, /datum/intent/axe/bash/battle)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/chop/heavy, /datum/intent/axe/bash/battle)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -10830,11 +10391,9 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/spear/bash)
 	gripped_intents = list(/datum/intent/axe/cut/long, /datum/intent/axe/chop/long, /datum/intent/spear/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 350
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -10867,11 +10426,9 @@
 	associated_skill = /datum/attribute/skill/combat/axes
 	possible_item_intents = list(/datum/intent/axe/cut/handaxe, /datum/intent/axe/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 350
 	special = /datum/special_intent/hatchet_twirl
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/axes32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/axes32_righthand.dmi'
 	inhand_icon_state = null
@@ -10900,7 +10457,6 @@
 	associated_skill = /datum/attribute/skill/combat/axes
 	possible_item_intents = list(/datum/intent/axe/cut/handaxe, /datum/intent/axe/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 350
 	special = /datum/special_intent/hatchet_twirl
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -10930,10 +10486,8 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 400
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/aaslag
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/axes32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/axes32_righthand.dmi'
 	inhand_icon_state = null
@@ -10960,11 +10514,9 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 450
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/axes32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/axes32_righthand.dmi'
 	inhand_icon_state = null
@@ -10991,11 +10543,9 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 500
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
 	inhand_icon_state = null
@@ -11022,10 +10572,8 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash, /datum/intent/axe/thrust)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 500
 	smeltresult = /obj/item/ingot/component/graggar
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/axes32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/axes32_righthand.dmi'
 	inhand_icon_state = null
@@ -11053,11 +10601,9 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 500
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/axes32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/axes32_righthand.dmi'
 	inhand_icon_state = null
@@ -11083,11 +10629,9 @@
 	associated_skill = /datum/attribute/skill/combat/axes
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 250
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/axes32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/axes32_righthand.dmi'
 	inhand_icon_state = null
@@ -11117,11 +10661,9 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash/battle)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 333
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/axes32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/axes32_righthand.dmi'
 	inhand_icon_state = null
@@ -11148,11 +10690,9 @@
 	possible_item_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	gripped_intents = list(/datum/intent/axe/cut, /datum/intent/axe/chop, /datum/intent/axe/bash)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/wood/parrywood (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/wood/parrywood (3).ogg')
-	max_blade_int = 400
 	special = /datum/special_intent/axe_swing
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/axes32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/axes32_righthand.dmi'
 	inhand_icon_state = null
@@ -11180,10 +10720,8 @@
 	possible_item_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 50
 	special = /datum/special_intent/shin_swipe
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/gems/gem_amber_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/gems/gem_amber_righthand.dmi'
@@ -11213,11 +10751,9 @@
 	possible_item_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/short, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/avantyne
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_righthand.dmi'
@@ -11246,11 +10782,9 @@
 	possible_item_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 350
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_righthand.dmi'
@@ -11280,11 +10814,9 @@
 	possible_item_intents = list(/datum/intent/sword/chop/heavy, /datum/intent/sword/thrust/heavy, /datum/intent/sword/cut/light, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/chop/heavy, /datum/intent/sword/thrust/heavy, /datum/intent/sword/cut/light, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 180
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_righthand.dmi'
@@ -11313,11 +10845,9 @@
 	possible_item_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_righthand.dmi'
@@ -11346,11 +10876,9 @@
 	possible_item_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
@@ -11382,11 +10910,9 @@
 	possible_item_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	icon_state = null
 	inhand_icon_state = null
@@ -11412,11 +10938,9 @@
 	possible_item_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
@@ -11445,11 +10969,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier, /datum/intent/sword/thrust/rapier/lunge)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 230
 	special = /datum/special_intent/piercing_lunge
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
@@ -11479,7 +11001,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier, /datum/intent/sword/thrust/rapier/lunge)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 230
 	special = /datum/special_intent/piercing_lunge
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -11509,11 +11030,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/falx, /datum/intent/sword/chop/falx, /datum/intent/sword/cut/falx/heavy, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 230
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_righthand.dmi'
@@ -11541,7 +11060,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/falx, /datum/intent/sword/chop/falx, /datum/intent/sword/cut/falx/heavy, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -11574,11 +11092,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 320
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
@@ -11611,11 +11127,9 @@
 	gripped_intents = list(/datum/intent/sword/thrust/estoc, /datum/intent/sword/thrust/estoc/lunge, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 320
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_righthand.dmi'
@@ -11648,7 +11162,6 @@
 	gripped_intents = list(/datum/intent/sword/thrust/estoc, /datum/intent/sword/thrust/estoc/lunge, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 320
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -11684,7 +11197,6 @@
 	gripped_intents = list(/datum/intent/sword/thrust/estoc, /datum/intent/sword/thrust/estoc/lunge, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 320
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -11717,11 +11229,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 320
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
@@ -11752,11 +11262,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 400
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/avantyne
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_righthand.dmi'
 	inhand_icon_state = null
@@ -11788,11 +11296,9 @@
 	gripped_intents = list(/datum/intent/sword/chop/heavy, /datum/intent/sword/thrust/heavy, /datum/intent/sword/cut/light, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/broadsword)
-	max_blade_int = 230
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_righthand.dmi'
@@ -11825,7 +11331,6 @@
 	gripped_intents = list(/datum/intent/sword/chop/heavy, /datum/intent/sword/thrust/heavy, /datum/intent/sword/cut/light, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/broadsword)
-	max_blade_int = 230
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -11860,7 +11365,6 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/chop/heavy, /datum/intent/sword/thrust/estoc/lunge, /datum/intent/sword/thrust/estoc)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/broadsword/forgotten_blade)
-	max_blade_int = 230
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -11895,7 +11399,6 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/chop/heavy, /datum/intent/sword/thrust/estoc/lunge, /datum/intent/sword/thrust/estoc)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/broadsword/forgotten_blade)
-	max_blade_int = 400
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -11930,7 +11433,6 @@
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/chop/heavy, /datum/intent/sword/thrust/estoc/lunge, /datum/intent/sword/thrust/estoc)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/broadsword/forgotten_blade)
-	max_blade_int = 230
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -11963,11 +11465,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 370
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_righthand.dmi'
@@ -11998,7 +11498,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 370
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -12031,11 +11530,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 320
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
@@ -12066,11 +11563,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 320
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
@@ -12101,11 +11596,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 320
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
@@ -12136,11 +11629,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 320
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
@@ -12171,11 +11662,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 320
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
@@ -12207,11 +11696,9 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
 	sellprice = 50
-	max_blade_int = 300
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_righthand.dmi'
@@ -12243,7 +11730,6 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
 	sellprice = 20
-	max_blade_int = 230
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -12276,11 +11762,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 300
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/special/freifechter_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/special/freifechter_righthand.dmi'
@@ -12311,7 +11795,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 300
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -12344,11 +11827,9 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/chop/heavy, /datum/intent/sword/thrust/exe, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/chop/heavy, /datum/intent/sword/cut/exe/cleave, /datum/intent/sword/cut/exe/sweep, /datum/intent/sword/cut/rend)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 330
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -12381,11 +11862,9 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/chop/heavy, /datum/intent/sword/thrust/exe, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/chop/heavy, /datum/intent/sword/cut/exe/cleave, /datum/intent/sword/cut/exe/sweep, /datum/intent/sword/cut/rend)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 330
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -12418,11 +11897,9 @@
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/chop/heavy, /datum/intent/sword/thrust/exe, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/chop/heavy, /datum/intent/sword/cut/exe/cleave, /datum/intent/sword/cut/exe/sweep, /datum/intent/sword/cut/rend)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 330
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
@@ -12457,11 +11934,9 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
 	sellprice = 250
-	max_blade_int = 320
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/special/hand64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/special/hand64_righthand.dmi'
@@ -12494,11 +11969,9 @@
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust, /datum/intent/sword/chop)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 777
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_righthand.dmi'
@@ -12529,11 +12002,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 320
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_righthand.dmi'
@@ -12567,11 +12038,9 @@
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
 	sellprice = 363
 	static_price = TRUE
-	max_blade_int = 320
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_righthand.dmi'
@@ -12607,7 +12076,6 @@
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
 	sellprice = 999
 	static_price = TRUE
-	max_blade_int = 9999
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -12644,7 +12112,6 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
 	static_price = TRUE
-	max_blade_int = 9999
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -12681,7 +12148,6 @@
 	alt_grips = null
 	sellprice = 777
 	static_price = TRUE
-	max_blade_int = 666
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -12716,11 +12182,9 @@
 	possible_item_intents = list(/datum/intent/sword/cut/krieg, /datum/intent/sword/chop/falx, /datum/intent/sword/strike, /datum/intent/rend/krieg)
 	gripped_intents = list(/datum/intent/sword/cut/krieg, /datum/intent/sword/thrust/long/deep, /datum/intent/sword/strike, /datum/intent/rend/krieg)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 320
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_righthand.dmi'
@@ -12752,11 +12216,9 @@
 	possible_item_intents = list(/datum/intent/sword/cut/krieg, /datum/intent/sword/chop/falx, /datum/intent/sword/strike, /datum/intent/rend/krieg)
 	gripped_intents = list(/datum/intent/sword/cut/krieg, /datum/intent/sword/thrust/long/deep, /datum/intent/sword/strike, /datum/intent/rend/krieg)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 320
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_righthand.dmi'
@@ -12787,11 +12249,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 320
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_righthand.dmi'
@@ -12822,11 +12282,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 320
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
@@ -12857,11 +12315,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 320
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_righthand.dmi'
@@ -12892,11 +12348,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 320
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
@@ -12927,11 +12381,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 400
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_righthand.dmi'
 	inhand_icon_state = null
@@ -12961,11 +12413,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 320
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_righthand.dmi'
@@ -12996,11 +12446,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	alt_grips = list(/datum/alt_grip/mordhau/sword, /datum/alt_grip/halfsword)
-	max_blade_int = 320
 	special = /datum/special_intent/side_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_righthand.dmi'
@@ -13032,11 +12480,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier, /datum/intent/sword/thrust/rapier/lunge)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 230
 	special = /datum/special_intent/piercing_lunge
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
@@ -13067,11 +12513,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier, /datum/intent/sword/thrust/rapier/lunge)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 230
 	special = /datum/special_intent/piercing_lunge
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
@@ -13102,11 +12546,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier, /datum/intent/sword/thrust/rapier/lunge)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 250
 	special = /datum/special_intent/piercing_lunge
 	smeltresult = /obj/item/ingot/avantyne
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_righthand.dmi'
@@ -13137,7 +12579,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier, /datum/intent/sword/thrust/rapier/lunge)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 333
 	special = /datum/special_intent/piercing_lunge
 	smeltresult = /obj/item/ingot/avantyne
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -13170,11 +12611,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier, /datum/intent/sword/thrust/rapier/lunge)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 230
 	special = /datum/special_intent/piercing_lunge
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
@@ -13205,11 +12644,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier, /datum/intent/sword/thrust/rapier/lunge)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 230
 	special = /datum/special_intent/piercing_lunge
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
@@ -13240,11 +12677,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier, /datum/intent/sword/thrust/rapier/lunge)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 230
 	special = /datum/special_intent/piercing_lunge
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_righthand.dmi'
@@ -13275,11 +12710,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier, /datum/intent/sword/thrust/rapier/lunge)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 230
 	special = /datum/special_intent/piercing_lunge
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords64_righthand.dmi'
@@ -13310,7 +12743,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier, /datum/intent/sword/thrust/rapier/lunge)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 330
 	special = /datum/special_intent/piercing_lunge
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -13341,10 +12773,8 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/cut/sabre/heavy, /datum/intent/sword/thrust/sabre, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 230
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/aaslag
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_righthand.dmi'
@@ -13374,11 +12804,9 @@
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/cut/sabre/heavy, /datum/intent/sword/thrust/sabre, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	sellprice = 100
-	max_blade_int = 230
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/blacksteel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/special/captain_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/special/captain_righthand.dmi'
@@ -13407,11 +12835,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/cut/sabre/heavy, /datum/intent/sword/thrust/sabre, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 230
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
@@ -13440,11 +12866,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/cut/sabre/heavy, /datum/intent/sword/thrust/sabre, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 230
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
@@ -13473,11 +12897,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/cut/sabre/heavy, /datum/intent/sword/thrust/sabre, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 230
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
@@ -13506,11 +12928,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/cut/sabre/heavy, /datum/intent/sword/thrust/sabre, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 230
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
@@ -13539,11 +12959,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/cut/sabre/heavy, /datum/intent/sword/thrust/sabre, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 230
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
@@ -13572,11 +12990,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/cut/sabre/heavy, /datum/intent/sword/thrust/sabre, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 230
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_righthand.dmi'
@@ -13606,11 +13022,9 @@
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/cut/sabre/heavy, /datum/intent/sword/thrust/sabre, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
 	sellprice = 100
-	max_blade_int = 230
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_righthand.dmi'
@@ -13639,11 +13053,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust, /datum/intent/sword/chop/falx)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 230
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_righthand.dmi'
@@ -13672,11 +13084,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/cut/sabre/heavy, /datum/intent/sword/thrust/sabre, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 230
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_righthand.dmi'
@@ -13707,11 +13117,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/chop, /datum/intent/sword/cut/sabre/heavy, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 230
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
@@ -13742,11 +13150,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/chop, /datum/intent/sword/cut/sabre/heavy, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 230
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_righthand.dmi'
@@ -13775,11 +13181,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/cut/sabre/heavy, /datum/intent/sword/thrust/sabre, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedthin (3).ogg')
-	max_blade_int = 230
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_righthand.dmi'
@@ -13808,10 +13212,8 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/aaslag
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_righthand.dmi'
@@ -13841,11 +13243,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 150
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_righthand.dmi'
@@ -13875,11 +13275,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
@@ -13911,11 +13309,9 @@
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	sellprice = 40
-	max_blade_int = 220
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_righthand.dmi'
@@ -13944,10 +13340,8 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/aaslag
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_righthand.dmi'
@@ -13977,11 +13371,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 300
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_righthand.dmi'
@@ -14012,11 +13404,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/militia, /datum/intent/sword/chop/militia, /datum/intent/sword/thrust/short, /datum/intent/sword/strike/bad)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_righthand.dmi'
@@ -14045,11 +13435,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/short/banded, /datum/intent/sword/chop/powerstrike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_righthand.dmi'
@@ -14080,11 +13468,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/chop/short)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_righthand.dmi'
@@ -14113,11 +13499,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/axe/chop, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_righthand.dmi'
@@ -14147,11 +13531,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/axe/chop, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_righthand.dmi'
@@ -14182,11 +13564,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/axe/chop, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_righthand.dmi'
@@ -14215,11 +13595,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 150
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_righthand.dmi'
@@ -14249,7 +13627,6 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -14281,7 +13658,6 @@
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
 	sellprice = 70
-	max_blade_int = 225
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
@@ -14312,10 +13688,8 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/axe/chop, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 50
 	special = /datum/special_intent/shin_swipe
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/gems/gem_onyxa_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/gems/gem_onyxa_righthand.dmi'
@@ -14346,11 +13720,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/aaslag
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_righthand.dmi'
@@ -14380,11 +13752,9 @@
 	associated_skill = /datum/attribute/skill/combat/swords
 	possible_item_intents = list(/datum/intent/sword/cut/short, /datum/intent/sword/thrust/short, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_righthand.dmi'
@@ -14414,11 +13784,9 @@
 	possible_item_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_righthand.dmi'
@@ -14447,11 +13815,9 @@
 	possible_item_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_righthand.dmi'
@@ -14480,11 +13846,9 @@
 	possible_item_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/cut/arming, /datum/intent/sword/thrust/arming, /datum/intent/sword/strike)
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (1).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (2).ogg', 'modular_redtard/rockhill/sound/combat/parry/bladed/bladedmedium (3).ogg')
-	max_blade_int = 200
 	special = /datum/special_intent/shin_swipe
 	smeltresult = /obj/item/ingot/component/zizo
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	equip_delay_self = 15
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/swords32_righthand.dmi'
@@ -14509,7 +13873,6 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	smeltresult = /obj/item/ingot/aalloy
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/tools_lefthand.dmi'
@@ -14535,7 +13898,6 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/tools_lefthand.dmi'
@@ -14565,7 +13927,6 @@
 	associated_skill = /datum/attribute/skill/craft/blacksmithing
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/tools_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/tools_righthand.dmi'
 	inhand_icon_state = null
@@ -14595,7 +13956,6 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	smeltresult = /obj/item/ingot/bronze
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/tools_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/tools_righthand.dmi'
 	inhand_icon_state = null
@@ -14623,7 +13983,6 @@
 	associated_skill = /datum/attribute/skill/craft/blacksmithing
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/tools_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/tools_righthand.dmi'
 	inhand_icon_state = null
@@ -14656,7 +14015,6 @@
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/whips32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/whips32_righthand.dmi'
 	inhand_icon_state = null
@@ -14689,7 +14047,6 @@
 	smeltresult = /obj/item/ingot/iron
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/whips32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/whips32_righthand.dmi'
 	inhand_icon_state = null
@@ -14722,7 +14079,6 @@
 	smeltresult = /obj/item/ingot/silverblessed
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/whips32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/whips32_righthand.dmi'
 	inhand_icon_state = null
@@ -14754,7 +14110,6 @@
 	special = /datum/special_intent/whip_coil
 	anvilrepair = /datum/attribute/skill/craft/weaponsmithing
 	sewrepair = TRUE
-	integrity_failure = 0.1
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/whips32_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/whips32_righthand.dmi'
 	inhand_icon_state = null
@@ -14784,7 +14139,6 @@
 	sellprice = 240
 	special = /datum/special_intent/quarterstaff_sweep
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
@@ -14817,7 +14171,6 @@
 	sellprice = 12
 	special = /datum/special_intent/quarterstaff_sweep
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
@@ -14850,7 +14203,6 @@
 	sellprice = 50
 	special = /datum/special_intent/quarterstaff_sweep
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
@@ -14883,7 +14235,6 @@
 	sellprice = 50
 	special = /datum/special_intent/quarterstaff_sweep
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
@@ -14916,7 +14267,6 @@
 	sellprice = 50
 	special = /datum/special_intent/quarterstaff_sweep
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
@@ -14949,7 +14299,6 @@
 	sellprice = 25
 	special = /datum/special_intent/quarterstaff_sweep
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
@@ -15110,7 +14459,6 @@
 	sellprice = 25
 	special = /datum/special_intent/quarterstaff_sweep
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
@@ -15143,7 +14491,6 @@
 	sellprice = 12
 	special = /datum/special_intent/quarterstaff_sweep
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
@@ -15175,7 +14522,6 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	special = /datum/special_intent/quarterstaff_sweep
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
@@ -15211,7 +14557,6 @@
 	special = /datum/special_intent/gilded_dragon_sweep
 	smeltresult = /obj/item/natural/ash
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
@@ -15245,7 +14590,6 @@
 	special = /datum/special_intent/quarterstaff_sweep
 	smeltresult = /obj/item/natural/ash
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
@@ -15314,7 +14658,6 @@
 	special = /datum/special_intent/quarterstaff_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
@@ -15349,7 +14692,6 @@
 	special = /datum/special_intent/quarterstaff_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items/donor_weapons_64_lefthand.dmi'
@@ -15384,7 +14726,6 @@
 	special = /datum/special_intent/quarterstaff_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
@@ -15419,7 +14760,6 @@
 	special = /datum/special_intent/quarterstaff_sweep
 	smeltresult = /obj/item/ingot/steel
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
@@ -15454,7 +14794,6 @@
 	special = /datum/special_intent/quarterstaff_sweep
 	smeltresult = /obj/item/ingot/silver
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
@@ -15522,7 +14861,6 @@
 	special = /datum/special_intent/quarterstaff_sweep
 	smeltresult = /obj/item/natural/ash
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
@@ -15554,7 +14892,6 @@
 	parrysound = list('modular_redtard/rockhill/sound/combat/parry/parrygen.ogg')
 	special = /datum/special_intent/quarterstaff_sweep
 	anvilrepair = /datum/attribute/skill/craft/carpentry
-	integrity_failure = 0.1
 	worn_icon = 'modular_redtard/rockhill/icons/blank_worn.dmi'
 	worn_icon_state = null
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/roguetown/weapons/polearms64_lefthand.dmi'
@@ -15576,7 +14913,6 @@
 	rogue_sleeved = null
 	worn_x_dimension = 32
 	worn_y_dimension = 32
-	integrity_failure = 0
 	lefthand_file = 'modular_redtard/items_azure/icons/baked/obj/items_and_weapons_lefthand.dmi'
 	righthand_file = 'modular_redtard/items_azure/icons/baked/obj/items_and_weapons_righthand.dmi'
 	inhand_icon_state = null

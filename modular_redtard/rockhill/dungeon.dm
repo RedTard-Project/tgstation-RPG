@@ -139,6 +139,10 @@ GLOBAL_LIST_EMPTY(rockhill_dungeon_exits)
 	return ..()
 
 /obj/structure/rockhill/dungeon_entry/proc/use(mob/living/user)
+	if(!SSrockhill_dungeon.entries_open())
+		balloon_alert(user, "sealed for now!")
+		to_chat(user, span_warning("The way below is still sealed. Come back a little later."))
+		return
 	if(!can_enter || !length(dungeon_exits))
 		return
 	var/obj/structure/rockhill/dungeon_exit/exit = pick(dungeon_exits)
@@ -220,10 +224,14 @@ SUBSYSTEM_DEF(rockhill_dungeon)
 	wait = 1 SECONDS
 	runlevels = RUNLEVEL_LOBBY | RUNLEVELS_DEFAULT
 	var/list/datum/map_template/dungeon/templates
+	/// Template types not parsed yet; every one is parsed before the first marker is taken.
+	var/list/template_types_left
 	var/list/parent_weights
 	var/list/placed_types = list()
 	var/created_since = 0
 	var/unlinked_entries = 0
+	/// Templates loaded this round.
+	var/templates_loaded = 0
 	/// Z-levels templates were loaded on since their area turf lists were last rebuilt.
 	var/list/loaded_zlevels = list()
 
@@ -232,18 +240,28 @@ SUBSYSTEM_DEF(rockhill_dungeon)
 		can_fire = FALSE
 		return SS_INIT_NO_NEED
 	templates = list()
-	for(var/template_type in valid_subtypesof(/datum/map_template/dungeon))
-		var/datum/map_template/dungeon/template = new template_type
-		templates[template] = template.rarity
+	template_types_left = valid_subtypesof(/datum/map_template/dungeon)
 	parent_weights = list()
 	for(var/datum/map_template/dungeon/parent_type as anything in subtypesof(/datum/map_template/dungeon))
 		if(initial(parent_type.abstract_type) == parent_type && initial(parent_type.type_weight))
 			parent_weights[parent_type] = initial(parent_type.type_weight)
 	unlinked_entries = length(GLOB.rockhill_unlinked_dungeon_entries)
+	// The lobby build (dungeon_queue.dm) parses the templates and lays the rooms in its fires; without it all is built now.
+	if(rogue_dungeon_in_lobby() && start_lobby_build())
+		return SS_INIT_SUCCESS
+	while(length(template_types_left))
+		prepare_next_template()
 	while(length(GLOB.rockhill_dungeon_markers))
 		process_marker(GLOB.rockhill_dungeon_markers[1])
 	rebuild_area_turfs()
 	return SS_INIT_SUCCESS
+
+/// Parses the next template. The parse that sizes it is kept for its loads (keep_cached_map), so each map is read once.
+/datum/controller/subsystem/rockhill_dungeon/proc/prepare_next_template()
+	var/template_type = template_types_left[length(template_types_left)]
+	template_types_left.len--
+	var/datum/map_template/dungeon/template = new template_type(null, null, TRUE)
+	templates[template] = template.rarity
 
 /// The area turf lists of the levels templates were loaded on, set right in one pass (maps/area_turfs.dm).
 /datum/controller/subsystem/rockhill_dungeon/proc/rebuild_area_turfs()
@@ -251,14 +269,37 @@ SUBSYSTEM_DEF(rockhill_dungeon)
 	loaded_zlevels.Cut()
 
 /datum/controller/subsystem/rockhill_dungeon/fire(resumed)
+	if(building)
+		lobby_build_fire()
+		return
+	// Templates are left unparsed here only when the controller restarted the subsystem in the middle of a lobby build.
+	while(length(template_types_left))
+		prepare_next_template()
+		if(MC_TICK_CHECK)
+			return
+	var/per_fire = ROCKHILL_DUNGEON_MARKERS_PER_FIRE
 	var/processed = 0
-	while(length(GLOB.rockhill_dungeon_markers) && processed < ROCKHILL_DUNGEON_MARKERS_PER_FIRE)
+	while(length(GLOB.rockhill_dungeon_markers) && processed < per_fire)
 		process_marker(GLOB.rockhill_dungeon_markers[1])
 		processed++
 		if(MC_TICK_CHECK)
 			return
 	if(!length(GLOB.rockhill_dungeon_markers) && length(loaded_zlevels))
 		rebuild_area_turfs()
+		if(build_started)
+			log_world("Rockhill dungeon: the rest of a cut-short lobby build is laid, [round((world.time - build_started) / 10, 0.1)] s after it started: [templates_loaded] templates, [build_errors] errors.")
+			build_started = 0
+
+/datum/controller/subsystem/rockhill_dungeon/Recover()
+	templates = SSrockhill_dungeon.templates
+	template_types_left = SSrockhill_dungeon.template_types_left
+	parent_weights = SSrockhill_dungeon.parent_weights
+	placed_types = SSrockhill_dungeon.placed_types
+	created_since = SSrockhill_dungeon.created_since
+	unlinked_entries = SSrockhill_dungeon.unlinked_entries
+	templates_loaded = SSrockhill_dungeon.templates_loaded
+	loaded_zlevels = SSrockhill_dungeon.loaded_zlevels
+	recover_lobby_build(SSrockhill_dungeon)
 
 /datum/controller/subsystem/rockhill_dungeon/proc/process_marker(obj/effect/rockhill/dungeon_helper/marker)
 	GLOB.rockhill_dungeon_markers -= marker
@@ -284,6 +325,8 @@ SUBSYSTEM_DEF(rockhill_dungeon)
 	return placed_types[/datum/map_template/dungeon/entry] < ROCKHILL_DUNGEON_REQUIRED_ENTRIES
 
 /datum/controller/subsystem/rockhill_dungeon/proc/place_from(picked_type, turf/creator, direction, inside_type)
+	if(!templates)
+		return FALSE
 	var/list/candidates = templates.Copy()
 	while(length(candidates))
 		var/datum/map_template/dungeon/template = pick_weight(candidates)
@@ -297,6 +340,7 @@ SUBSYSTEM_DEF(rockhill_dungeon)
 		placed_types[template.type]++
 		placed_types[/datum/map_template/dungeon/entry] += istype(template, /datum/map_template/dungeon/entry) ? 1 : 0
 		loaded_zlevels |= corner.z
+		templates_loaded++
 		created_since++
 		return TRUE
 	return FALSE

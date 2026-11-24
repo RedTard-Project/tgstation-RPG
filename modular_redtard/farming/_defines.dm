@@ -2,7 +2,7 @@
 
 /// The most a soil holds of crop health, water, nutrition and weeds (Ratwood MAX_PLANT_HEALTH, MAX_PLANT_WATER,
 /// MAX_PLANT_NUTRITION, MAX_PLANT_WEEDS). The shares and rates of config/redtard/mechanics/values/farming.txt are against these.
-#define ROGUE_SOIL_MAX_HEALTH 100
+#define ROGUE_SOIL_MAX_HEALTH rogue_value("soil_max_health")
 #define ROGUE_SOIL_MAX_WATER rogue_value("soil_max_water")
 #define ROGUE_SOIL_MAX_NUTRITION rogue_value("soil_max_nutrition")
 #define ROGUE_SOIL_MAX_WEEDS rogue_value("soil_max_weeds")

@@ -16,6 +16,8 @@
 	var/earned_technique_points = 0
 	/// Spell types learned here -> the spell given for it.
 	var/list/learned = list()
+	/// The role's points were given (points.dm): a job and its class both spawning the mage give them once.
+	var/role_points_given = FALSE
 
 /datum/rogue_spell_mastery/New(mob/living/carbon/human/new_holder)
 	. = ..()

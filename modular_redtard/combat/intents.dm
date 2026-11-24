@@ -20,7 +20,9 @@ GLOBAL_LIST_EMPTY(rogue_intents)
 	var/candodge = TRUE
 	var/damfactor = 1
 	var/penfactor = 0
-	var/clickcd = ROGUE_CLICK_CD_MELEE
+	/// Click delay after a blow; none means the default, the mechanics value intent_click_delay, which New() sets (a subtype or
+	/// the intents table names its own).
+	var/clickcd
 	var/releasedrain = 1
 	var/misscost = 1
 	var/reach = 1
@@ -62,6 +64,11 @@ GLOBAL_LIST_EMPTY(rogue_intents)
 	var/tranged = FALSE
 	var/tshield = FALSE
 
+/datum/intent/New()
+	if(isnull(clickcd))
+		clickcd = rogue_value("intent_click_delay")
+	return ..()
+
 /datum/intent/proc/out_of_effective_range(distance)
 	switch(effective_range_type)
 		if(ROGUE_EFF_RANGE_EXACT)
@@ -80,12 +87,13 @@ GLOBAL_LIST_EMPTY(rogue_intents)
 			return SHARP_POINTY
 	return NONE
 
+/// Ratwood's speed bands of the intent examine, by click delay.
 /datum/intent/proc/speed_text()
 	if(clickcd <= 8)
 		return "<font color='#4af'>Very Quick</font>"
 	if(clickcd <= 10)
 		return "<font color='#8f8'>Quick</font>"
-	if(clickcd <= ROGUE_CLICK_CD_MELEE)
+	if(clickcd <= 12)
 		return "Normal"
 	if(clickcd <= 14)
 		return "<font color='#fa4'>Sluggish</font>"

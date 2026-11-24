@@ -159,4 +159,24 @@
 			"Dodge chance in percent of a creature (Azure Peak SIMPLEMOB_DODGE_*). weapon_skill is the attacker's rank with the weapon, fatigue the creature's dodge fatigue.",
 			list("defender_speed", "attacker_speed", "weapon_skill", "fatigue"),
 		),
+		ROGUE_FORMULA_ANVIL_STRIKE_CHANCE = list(
+			"10",
+			"Chance in percent that a hammer strike on the anvil lands (Ratwood on_hammered_on_anvil()); a missed strike can ruin the bar with the same chance. rank is the smith's rank in the recipe's skill, difficulty the recipe's rank.",
+			list("rank", "difficulty"),
+		),
+		ROGUE_FORMULA_ANVIL_STRIKE_PROGRESS = list(
+			"10",
+			"Progress of one landed strike toward the recipe's stage (Ratwood advance_recipe()); the stage is done at its max_progress. breakthrough: a deft strike; blade: the work began from a cast blade; blade_start is forging_blade_breakthrough.",
+			list("rank", "strength", "breakthrough", "difficulty", "blade", "blade_start"),
+		),
+		ROGUE_FORMULA_ANVIL_STRIKE_QUALITY = list(
+			"10",
+			"Skill quality one landed strike adds to the work (Ratwood advance_recipe()). roll is a random whole number from rank times forging_quality_roll_min to rank times forging_quality_roll_max; progress is the strike's anvil_strike_progress.",
+			list("roll", "rank", "progress"),
+		),
+		ROGUE_FORMULA_ANVIL_GOODS_TIER = list(
+			"10",
+			"Quality tier of forged goods (Ratwood handle_creation()): each tier is one quality step, from ruined to masterwork (the steps are in create_goods() of crafting/forging.dm). materials counts the bar and every material added; material_quality is the sum of their qualities; hits_per_material is strikes per material less the deft ones.",
+			list("skill_quality", "materials", "material_quality", "hits_per_material"),
+		),
 	)

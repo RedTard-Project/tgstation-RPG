@@ -62,11 +62,12 @@
 	var/share = amount / max(softcap(), 1)
 	items += "Mana: [share < 0.1 ? "Very Low" : (share < 0.3 ? "Low" : (share < 0.6 ? "Medium" : (share < 1 ? "High" : "Overflowing")))]"
 
-/// Vibelin get_softcap(): the base and a step per rank of the Arcyne skill, at least one rank; only a mob with a mind grows it.
+/// Vibelin get_softcap(): the base and a step per rank of the Arcyne skill (the main one, not a form's sub-skill), the
+/// fraction of a rank kept, at least one rank; only a mob with a mind grows it.
 /datum/rogue_mana/proc/softcap()
 	if(!holder?.mind)
 		return base_softcap
-	return min(base_softcap + max(1, holder.rogue_skill_rank(/datum/attribute/skill/magic/arcane)) * rogue_value("magic_mana_softcap_per_rank"), capacity)
+	return min(base_softcap + max(1, holder.rogue_magic_rank(/datum/attribute/skill/magic/arcane)) * rogue_value("magic_mana_softcap_per_rank"), capacity)
 
 /datum/rogue_mana/proc/update_processing()
 	var/needed = (HAS_TRAIT(holder, TRAIT_ARCYNE) && holder.stat != DEAD && amount < softcap()) || amount > softcap() || residual_left > 0

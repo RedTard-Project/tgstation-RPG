@@ -313,7 +313,7 @@
 	brewing = FALSE
 	ready_to_bottle = TRUE
 	made_item = selected_recipe.name
-	sellprice = selected_recipe.sell_value + initial(sellprice)
+	sellprice = selected_recipe.sell_value + rogue_base_price(type)
 	start_time = 0
 	heated_progress_time = 0
 	if(selected_recipe.ages)
@@ -360,7 +360,7 @@
 	tapped = FALSE
 	beer_left = 0
 	age_start_time = 0
-	sellprice = initial(sellprice)
+	sellprice = rogue_base_price(type)
 	rogue_set_look(open_icon_state)
 
 /// Whether the keg may take this recipe now: a new one, or one brewed on what it has finished.
@@ -381,7 +381,7 @@
 	beer_left = 0
 	age_start_time = 0
 	start_time = 0
-	sellprice = initial(sellprice)
+	sellprice = rogue_base_price(type)
 	recipe_crop_stocks.Cut()
 	if(force)
 		QDEL_NULL(selected_recipe)

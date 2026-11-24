@@ -1,4 +1,5 @@
-// Ratwood's surgery (code/modules/surgery/) on TG's operations (code/modules/surgery/operations/): the defines its files share.
+// The module's surgery - Ratwood's and Vibelin's operations on TG's (code/modules/surgery/operations/), rolled Vibelin's way:
+// the defines its files share.
 
 /// Ratwood's improvised tools (surgery_tools_rogue.dm): the stone blade, the wooden clamp and the wooden retractor.
 #define ROGUE_TOOL_IMPROVISED_SCALPEL "improvised_scalpel"
@@ -13,8 +14,12 @@
 /// Ratwood's /obj/item/bodypart implement: a limb for the zone, a severed one or a prosthetic.
 #define ROGUE_IMPLEMENT_LIMB "rogue_limb"
 
-/// Keys of an operation's arguments: the chance Ratwood's roll was made against, and that a step of the operation failed.
-#define ROGUE_OPERATION_CHANCE "rogue_chance"
+/// Keys of an operation's arguments (combat/surgery/operation.dm): the result of Vibelin's roll (ROGUE_DICE_*), the requirement
+/// it was rolled against (null for a step failed on purpose), that the step is failed on purpose (TG's intent or Ratwood's), and
+/// that a step of the operation failed.
+#define ROGUE_OPERATION_ROLL "rogue_roll"
+#define ROGUE_OPERATION_REQUIREMENT "rogue_requirement"
+#define ROGUE_OPERATION_ON_PURPOSE "rogue_on_purpose"
 #define ROGUE_OPERATION_FAILED "rogue_failed"
 
 /// Source of the free operation a medieval body is given: at Ratwood nobody needs drapes to be operated on.
@@ -22,7 +27,6 @@
 
 /// One series for each wound surgery leaves, beside the series of the other wounds.
 #define ROGUE_WOUND_SERIES_INCISION "rogue_wound_series_incision"
-#define ROGUE_WOUND_SERIES_VEIN "rogue_wound_series_vein"
 #define ROGUE_WOUND_SERIES_REPLANTATION "rogue_wound_series_replantation"
 
 /// What a prosthetic is made of (Ratwood limb_material and the artificer's contraptions).

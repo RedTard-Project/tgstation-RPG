@@ -32,8 +32,8 @@
 #define ROCKHILL_TRAP_DAMAGE rogue_value("rockhill_trap_damage")
 #define ROCKHILL_TRAP_WALL_RANGE rogue_value("rockhill_trap_wall_range")
 #define ROCKHILL_HATCH_CYCLE rogue_value("rockhill_hatch_cycle")
-#define ROCKHILL_DAY_RATE 50
-#define ROCKHILL_DAY_START 288001
+#define ROCKHILL_DAY_RATE CONFIG_GET(number/rockhill_day_rate)
+#define ROCKHILL_DAY_START CONFIG_GET(number/rockhill_day_start)
 #define ROCKHILL_DAY_TRANSITION (1 HOURS / ROCKHILL_DAY_RATE)
 #define ROCKHILL_DAWN "dawn"
 #define ROCKHILL_DAY "day"
@@ -42,10 +42,10 @@
 #define ROCKHILL_CLOCK "clock"
 #define ROCKHILL_SOUND_MUSIC "music"
 #define ROCKHILL_SOUND_LOOP "loop"
-#define ROCKHILL_CALENDAR_EPOCH_YEAR 1513
-#define ROCKHILL_CALENDAR_YEARS_PER_CYCLE 1
+#define ROCKHILL_CALENDAR_EPOCH_YEAR CONFIG_GET(number/rockhill_calendar_epoch_year)
+#define ROCKHILL_CALENDAR_YEARS_PER_CYCLE CONFIG_GET(number/rockhill_calendar_years_per_cycle)
 #define ROCKHILL_CALENDAR_MONTHS 12
-#define ROCKHILL_CALENDAR_DAYS_IN_MONTH 28
+#define ROCKHILL_CALENDAR_DAYS_IN_MONTH CONFIG_GET(number/rockhill_calendar_days_in_month)
 #define ROCKHILL_CALENDAR_DAYS_IN_WEEK 7
 #define ROCKHILL_CALENDAR_DAYS_IN_YEAR (ROCKHILL_CALENDAR_MONTHS * ROCKHILL_CALENDAR_DAYS_IN_MONTH)
 #define ROCKHILL_CALENDAR_WEEKS_IN_YEAR (ROCKHILL_CALENDAR_DAYS_IN_YEAR / ROCKHILL_CALENDAR_DAYS_IN_WEEK)
@@ -81,7 +81,7 @@
 #define ROCKHILL_OVERLAY_LIGHT_PLATE "Overlight plate"
 #define ZTRAIT_ROCKHILL_WEATHER "Rockhill Weather"
 #define ROCKHILL_KNEESTINGER_DAMAGE rogue_value("rockhill_kneestinger_damage")
-#define ROCKHILL_KNEESTINGER_RESHOCK (30 SECONDS)
+#define ROCKHILL_KNEESTINGER_RESHOCK rogue_value("rockhill_kneestinger_reshock")
 #define ROCKHILL_KNEESTINGER_IDLE (0.2 SECONDS)
 #define ROCKHILL_KNEESTINGER_STATES 3
 #define ROCKHILL_KNEESTINGER_SHIFT_X 4
@@ -126,8 +126,6 @@
 #define ROCKHILL_MINED_FLOOR /turf/open/floor/rogue/naturalstone
 #define ROCKHILL_MINE_SOUNDS list('modular_redtard/rockhill/sound/combat/hits/pick/genpick (1).ogg', 'modular_redtard/rockhill/sound/combat/hits/pick/genpick (2).ogg')
 #define ROCKHILL_BOULDER_CLIMB_TIME rogue_value("rockhill_boulder_climb_time")
-#define ROCKHILL_WINDOW_LOCK 100
-#define ROCKHILL_WINDOW_LOCK_REINFORCED 150
 #define ROCKHILL_WINDOW_KNIFE_DAMAGE rogue_value("rockhill_window_knife_damage")
 #define ROCKHILL_WINDOW_CRASH_RANGE rogue_value("rockhill_window_crash_range")
 #define ROCKHILL_WINDOW_PICK_GOOD_SOUND pick('modular_redtard/rockhill/sound/doors/pickgood1.ogg', 'modular_redtard/rockhill/sound/doors/pickgood2.ogg')
@@ -139,20 +137,13 @@
 #define ROCKHILL_MANTRAP_HIDDEN_ALPHA 90
 #define ROCKHILL_MANTRAP_HIDDEN_PER_CRAFTING rogue_value("rockhill_mantrap_hidden_per_crafting")
 #define ROCKHILL_MANTRAP_TOOL_DAMAGE rogue_value("rockhill_mantrap_tool_damage")
-#define ROCKHILL_RAIN_TEMPERATURE_SHIFT -8
-#define ROCKHILL_STORM_TEMPERATURE_SHIFT -15
-#define ROCKHILL_SNOW_TEMPERATURE_SHIFT -25
-#define ROCKHILL_BLIZZARD_TEMPERATURE_SHIFT -45
-#define ROCKHILL_HEAT_TEMPERATURE_SHIFT 20
-#define ROCKHILL_RAIN_WET_STACKS 1
-#define ROCKHILL_STORM_WET_STACKS 3
 #define ROCKHILL_RAIN_WASH_CHANCE rogue_value("rockhill_rain_wash_chance")
 #define ROCKHILL_LIGHTNING_BADLUCK rogue_value("rockhill_lightning_badluck")
 #define ROCKHILL_LIGHTNING_DAMAGE rogue_value("rockhill_lightning_damage")
 #define ROCKHILL_LIGHTNING_IMMOBILIZE rogue_value("rockhill_lightning_immobilize")
 #define ROCKHILL_LIGHTNING_CLICK_DELAY rogue_value("rockhill_lightning_click_delay")
-#define ROCKHILL_FIREFLIES_MOOD 5
-#define ROCKHILL_FIREFLIES_MOOD_TIME (10 MINUTES)
+#define ROCKHILL_FIREFLIES_MOOD rogue_value("rockhill_fireflies_mood")
+#define ROCKHILL_FIREFLIES_MOOD_TIME rogue_value("rockhill_fireflies_mood_time")
 
 // Ratwood's trait of the Abyssor faithful and the sea peoples: cold water does not chill them (rockhill/swimming.dm); the
 // origins of homelands/ give it too. The ported traits (rockhill/ported/_traits.dm) lack it.

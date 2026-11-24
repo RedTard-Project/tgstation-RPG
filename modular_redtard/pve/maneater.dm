@@ -26,7 +26,7 @@
 
 /obj/structure/flora/roguegrass/maneater/real/Initialize(mapload)
 	. = ..()
-	if(!rogue_combat_enabled())
+	if(!rogue_medieval_map())
 		return
 	integrity_failure = rogue_value("pve_maneater_break_fraction")
 	var/static/list/loc_connections = list(COMSIG_ATOM_ENTERED = PROC_REF(rogue_on_entered))
@@ -175,7 +175,7 @@
 
 /obj/structure/flora/roguegrass/maneater/real/atom_break(damage_flag)
 	. = ..()
-	if(rogue_dead || !rogue_combat_enabled())
+	if(rogue_dead || !rogue_medieval_map())
 		return
 	rogue_dead = TRUE
 	STOP_PROCESSING(SSobj, src)
@@ -184,7 +184,7 @@
 
 /obj/structure/flora/roguegrass/maneater/real/attackby(obj/item/attacking_item, mob/user, list/modifiers, list/attack_modifiers)
 	. = ..()
-	if(!rogue_dead && rogue_combat_enabled())
+	if(!rogue_dead && rogue_medieval_map())
 		rogue_wake()
 
 /obj/structure/flora/roguegrass/maneater/real/user_buckle_mob(mob/living/M, mob/user, check_loc = TRUE)
@@ -224,7 +224,7 @@
 
 /obj/structure/flora/roguegrass/maneater/real/juvenile/Initialize(mapload)
 	. = ..()
-	if(!rogue_combat_enabled())
+	if(!rogue_medieval_map())
 		return
 	transform = transform.Scale(0.75, 0.75)
 	addtimer(CALLBACK(src, PROC_REF(rogue_grow)), rogue_value("pve_maneater_growth_time"), TIMER_DELETE_ME)
@@ -266,7 +266,7 @@
 /// spot, it grows into a juvenile that spares its planter.
 /obj/item/maneaterseed/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
 	var/turf/spot = get_turf(interacting_with)
-	if(!rogue_combat_enabled() || !(istype(spot, /turf/open/floor/rogue/dirt) || istype(spot, /turf/open/floor/rogue/grass)))
+	if(!rogue_medieval_map() || !(istype(spot, /turf/open/floor/rogue/dirt) || istype(spot, /turf/open/floor/rogue/grass)))
 		return ..()
 	for(var/turf/near in range(2, spot))
 		if(locate(/obj/structure/flora/roguegrass/maneater) in near)

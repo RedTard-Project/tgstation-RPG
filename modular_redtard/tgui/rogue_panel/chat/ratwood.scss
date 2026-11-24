@@ -1,5 +1,5 @@
 // Ratwood's chat (tgui-panel/styles: main.scss, tgchat/chat-dark.scss, components/roguefont.scss): black backing,
-// outlined parchment text, Pterra, and its palette, with the combat classes the module's crits, wounds and armor
+// outlined parchment text and its palette, with the combat classes the module's crits, wounds and armor
 // print (crit, artery, bone, armoralert and the rest). The races' speech fonts are in speech_fonts.scss.
 //
 // Both of TG's themes take it. The dark one is Ratwood's own; the light one sets the same look on a parchment backing
@@ -7,15 +7,15 @@
 // at 4.5:1 or better; a few are pushed further or toned down to stay apart from their neighbours (necrosis from
 // infection, dead from deadsay, bone from yellow).
 //
-// Pterra has no Cyrillic, so a Russian chat reads in a book face that has it; English reads in Pterra as on Ratwood.
+// The face is not Ratwood's Pterra, which has no Cyrillic, but Mookmania of Twilight Axis, in both languages.
 @use 'sass:map';
 @use 'faces' as *;
 @use 'speech_fonts';
 
 @font-face {
-  font-family: 'Pterra';
-  src: url('../fonts/pterra.ttf') format('truetype');
-  size-adjust: $pterra-scale;
+  font-family: $chat;
+  src: url('../fonts/Mookmania.otf') format('opentype');
+  size-adjust: $chat-scale;
 }
 
 $dark: (
@@ -110,11 +110,7 @@ $light: (
 
   body {
     color: map.get($c, text);
-    font-family: $book;
-  }
-
-  body.rogue-lang-en {
-    font-family: 'Pterra', $book;
+    font-family: $chat, $book;
   }
 
   a:link {

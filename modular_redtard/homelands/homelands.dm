@@ -10,7 +10,7 @@
 #define ROGUE_HOMELAND_TRAIT "rogue_homeland"
 /// Ratwood /datum/stressevent/prejudice: stressadd 2 for 2 minutes.
 #define ROGUE_PREJUDICE_MOOD (-2 * ROGUE_STRESS_TO_MOOD)
-#define ROGUE_PREJUDICE_MOOD_TIME (2 MINUTES)
+#define ROGUE_PREJUDICE_MOOD_TIME rogue_value("prejudice_mood_time")
 /// Ratwood apply_prefs_origin(): a character without an origin hails from Ferentia.
 #define ROGUE_DEFAULT_HOMELAND "Ferentia"
 
@@ -172,7 +172,9 @@
 	target.rogue_set_homeland(homelands[value] || homelands[ROGUE_DEFAULT_HOMELAND])
 
 /// Ratwood /datum/stressevent/prejudice: someone from a land one resents is around.
-/datum/mood_event/rogue_prejudice
+/// The numbers come from the mechanics values when the event is made (add_mood_event() makes a new one each time).
+/datum/mood_event/rogue_prejudice/New(category)
+	. = ..()
 	mood_change = ROGUE_PREJUDICE_MOOD
 	timeout = ROGUE_PREJUDICE_MOOD_TIME
 

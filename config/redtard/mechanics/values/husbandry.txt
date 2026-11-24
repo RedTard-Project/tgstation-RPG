@@ -485,3 +485,11 @@ trufflepig_item_interaction_roll_max = 10
 
 # Lowest roll of rand() in /mob/living/simple_animal/hostile/retaliate/rogue/trufflepig/item_interaction().
 trufflepig_item_interaction_roll_min = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list h4a)
+
+# How much of its growing up a young beast does a second, out of 100 (Ratwood: a share each Life, two seconds, to 100).
+young_growth = 10
+
+# How much of its growing up a chick does a second, out of 100 (Ratwood chick Life(): a random share each Life, to 100).
+chick_growth = 10

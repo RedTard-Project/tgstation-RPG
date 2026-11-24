@@ -6,7 +6,7 @@
 // (Ratwood consider_ambush(), threat regions) and the special items hidden in trees and mushrooms (attack_right()).
 
 /// Ratwood CLICK_CD_INTENTCAP: the pause after reaching into a plant.
-#define ROCKHILL_FLORA_CLICK_CD 6
+#define ROCKHILL_FLORA_CLICK_CD rogue_value("rockhill_flora_click_cd")
 /// How far a bush, fire flowers or swampweed sit off their tile's centre (Ratwood pixel_x += rand(-3, 3)).
 #define ROCKHILL_PLANT_SHIFT_X 3
 /// How far up wild pumpkins sit (Ratwood pixel_y += rand(0, 6)).
@@ -405,7 +405,7 @@ GLOBAL_LIST_INIT(rockhill_plant_rustle, list(
 /// interaction on a hand's click: a click the hiding spot takes then stays taken, and the list of books stays shut.
 /obj/structure/bookcase/Initialize(mapload)
 	. = ..()
-	if(!mapload || . == INITIALIZE_HINT_QDEL || !rogue_combat_enabled())
+	if(!mapload || . == INITIALIZE_HINT_QDEL || !rogue_medieval_map())
 		return
 	AddComponent(/datum/component/rockhill_hiding_spot)
 	interaction_flags_atom &= ~INTERACT_ATOM_ATTACK_HAND

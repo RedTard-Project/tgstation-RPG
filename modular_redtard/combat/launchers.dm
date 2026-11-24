@@ -56,9 +56,6 @@
 
 /// Ratwood draws the nocked arrow 20 pixels up and right on the bow's sprite.
 #define ROGUE_BOW_ARROW_SHIFT 20
-/// Training caps of a launcher's skill from shooting (Ratwood can_train_combat_skill(): Expert, slings Legendary).
-#define ROGUE_LAUNCHER_TRAIN_CAP 4
-#define ROGUE_SLING_TRAIN_CAP 6
 #define ROGUE_SOUND_BOW_DRAW 'modular_redtard/rockhill/sound/combat/Ranged/bow-draw-01.ogg'
 #define ROGUE_SOUND_SLING_DRAW 'modular_redtard/rockhill/sound/combat/Ranged/sling-draw-01.ogg'
 #define ROGUE_SOUND_CROSSBOW_COCK 'modular_redtard/rockhill/sound/combat/Ranged/crossbow_medium_reload-01.ogg'
@@ -326,7 +323,7 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 	var/rogue_drowsy = 0
 	/// The launcher's skill that a hit trains, and the rank up to which it does.
 	var/rogue_trained_skill
-	var/rogue_trained_cap = ROGUE_LAUNCHER_TRAIN_CAP
+	var/rogue_trained_cap
 	/// Fire stacks and burn of a pyroclastic round (Ratwood on_hit()).
 	var/rogue_fire_stacks = 0
 	var/rogue_fire_burn = 0
@@ -642,7 +639,10 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 	var/hasloadedsprite = FALSE
 	/// The skill that aims it and that its hits train, and the rank up to which they do.
 	var/rogue_launch_skill
-	var/rogue_trained_cap = ROGUE_LAUNCHER_TRAIN_CAP
+	var/rogue_trained_cap
+	/// Name of the mechanics value (combat.txt) of that rank: Initialize() reads it into rogue_trained_cap (Ratwood
+	/// can_train_combat_skill()).
+	var/rogue_trained_cap_key = "launcher_train_cap"
 	/// Kind whose draw and stamina numbers the launcher takes (launcher_draw_base_<kind> and the rest; Azure Peak draw_base,
 	/// draw_floor, draw_per_skill, release_drain of the launcher's type).
 	var/rogue_draw_kind
@@ -777,6 +777,11 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 	var/cost = rogue_shot_drain(user, drain)
 	if(cost)
 		user.adjust_stamina_loss(cost)
+
+/obj/item/gun/ballistic/rogue_launcher/Initialize(mapload)
+	if(isnull(rogue_trained_cap))
+		rogue_trained_cap = rogue_value(rogue_trained_cap_key)
+	return ..()
 
 /// Sets the shot up from its type's numbers for this shooter (Azure Peak process_fire(), apply_ranged_accuracy()); always
 /// from the type's values, so a shot that did not go off is not counted twice.
@@ -1017,7 +1022,7 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/rogue_launcher/sling
 	cartridge_wording = "stone"
 	rogue_launch_skill = /datum/attribute/skill/combat/slings
-	rogue_trained_cap = ROGUE_SLING_TRAIN_CAP
+	rogue_trained_cap_key = "sling_train_cap"
 	rogue_draw_kind = "sling"
 	rogue_draw_curve = TRUE
 	/// A plain stone loaded in place of a sling bullet, and its force above a plain stone's.
@@ -1125,8 +1130,6 @@ GLOBAL_LIST_INIT(rogue_ranged_face_zones, list("r_eye", "l_eye", BODY_ZONE_PRECI
 #undef ROGUE_LAUNCHER_CROSSBOW_COCK_STRENGTH_STEP
 #undef ROGUE_LAUNCHER_ARC_EXTRA_RANGE
 #undef ROGUE_BOW_ARROW_SHIFT
-#undef ROGUE_LAUNCHER_TRAIN_CAP
-#undef ROGUE_SLING_TRAIN_CAP
 #undef ROGUE_SOUND_BOW_DRAW
 #undef ROGUE_SOUND_SLING_DRAW
 #undef ROGUE_SOUND_CROSSBOW_COCK

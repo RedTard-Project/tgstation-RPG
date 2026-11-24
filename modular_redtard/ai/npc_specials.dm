@@ -124,9 +124,6 @@
 /datum/special_intent/warhammer_swing/rogue_npc_odds(mob/living/user, atom/target)
 	return rogue_npc_front(user)
 
-/datum/special_intent/vicious_swipe/rogue_npc_odds(mob/living/user, atom/target)
-	return rogue_npc_ring(user, 2)
-
 /datum/special_intent/drakkyrmaw_bite/rogue_npc_odds(mob/living/user, atom/target)
 	return rogue_npc_line(user, 4)
 

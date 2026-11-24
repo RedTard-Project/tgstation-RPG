@@ -8,17 +8,17 @@
 /// suffocation, toxin and brain damage mend, blood comes back up to normal and bleeding slows. Fortify makes it stronger.
 /datum/status_effect/rogue_miracle_heal
 	id = "rogue_miracle_heal"
-	duration = 10 SECONDS
 	tick_interval = 1 SECONDS
 	alert_type = null
 	/// Healing every second (Ratwood healing_on_tick).
-	var/healing = 1
+	var/healing = 0
 	/// Bleeding (TG blood_flow of each wound) stopped per point of healing.
-	var/bleed_mend = 0.1
+	var/bleed_mend = 0
 
 /datum/status_effect/rogue_miracle_heal/on_creation(mob/living/new_owner, new_healing)
-	if(!isnull(new_healing))
-		healing = new_healing
+	duration = rogue_value("faith_heal_aura_time")
+	bleed_mend = rogue_value("faith_heal_aura_bleed")
+	healing = isnull(new_healing) ? rogue_value("faith_heal_aura_healing") : new_healing
 	return ..()
 
 /datum/status_effect/rogue_miracle_heal/on_apply()
@@ -53,9 +53,15 @@
 /// Ratwood buff/fortify: for a minute all healing of the miracles takes better (faith_fortify_bonus).
 /datum/status_effect/rogue_fortify
 	id = "rogue_fortify"
-	duration = 1 MINUTES
 	alert_type = null
 	status_type = STATUS_EFFECT_REFRESH
+
+/datum/status_effect/rogue_fortify/on_creation(mob/living/new_owner)
+	duration = rogue_value("faith_fortify_time")
+	return ..()
+
+/datum/status_effect/rogue_fortify/refresh(effect)
+	duration = rogue_value("faith_fortify_time")
 
 /datum/status_effect/rogue_fortify/on_apply()
 	if(!owner.get_filter(ROGUE_FORTIFY_FILTER))
@@ -76,15 +82,10 @@
 	desc = "Heals the target over time. Burns the undead instead, and tears the wounds of one with something embedded in them."
 	button_icon_state = "heal"
 	sound = 'modular_redtard/faith/sound/heal.ogg'
-	cooldown_time = 10 SECONDS
-	cast_range = 4
+	value_key = "lesser_heal"
 	miracle_tier = ROGUE_MIRACLE_TIER_1
-	devotion_cost = 10
-	stamina_cost = 30
 	miracle_forks = "Ratwood, Azure Peak, Twilight Axis"
 	miracle_gods = "every god of the Ten and the Inhumen T1"
-	/// Healing every second of the aura (Ratwood healing).
-	var/healing = 2.5
 
 /datum/action/cooldown/spell/pointed/rogue_miracle/lesser_heal/is_valid_target(atom/cast_on)
 	. = ..()
@@ -95,16 +96,16 @@
 /datum/action/cooldown/spell/pointed/rogue_miracle/lesser_heal/cast(mob/living/cast_on)
 	. = ..()
 	if(HAS_TRAIT(owner, TRAIT_RESONANCE))
-		for(var/mob/living/carbon/fortified in view(2, get_turf(owner)))
+		for(var/mob/living/carbon/fortified in view(rogue_value("faith_lesser_heal_resonance_range"), get_turf(owner)))
 			if(burns_undead(fortified))
-				fortified.adjust_fire_loss(5)
+				fortified.adjust_fire_loss(rogue_value("faith_lesser_heal_resonance_burn"))
 			else
 				fortified.apply_status_effect(/datum/status_effect/rogue_fortify)
 	if(turned_away(cast_on))
 		return
 	if(burns_undead(cast_on))
 		cast_on.visible_message(span_danger("[cast_on] is burned by holy light!"), span_userdanger("I'm burned by holy light!"))
-		cast_on.adjust_fire_loss(10)
+		cast_on.adjust_fire_loss(rogue_value("faith_lesser_heal_burn"))
 		return
 	if(cast_on.has_status_effect(/datum/status_effect/rogue_miracle_heal))
 		return fail("[cast_on] is already under the effects of a healing aura!")
@@ -112,10 +113,11 @@
 		var/mob/living/carbon/patient = cast_on
 		if(patient.has_embedded_objects())
 			patient.visible_message(span_danger("The wounds of [patient] tear and rip around the embedded objects!"), span_userdanger("Agonising pain shoots through my body as the miracle tries to sew around the embedded objects!"))
-			patient.adjust_brute_loss(20)
+			patient.adjust_brute_loss(rogue_value("faith_lesser_heal_embedded"))
 			patient.emote("scream")
 			return
-	cast_on.apply_status_effect(/datum/status_effect/rogue_miracle_heal, healing)
+	// Healing every second of the aura (Ratwood healing).
+	cast_on.apply_status_effect(/datum/status_effect/rogue_miracle_heal, rogue_value("faith_lesser_heal_healing"))
 	cast_on.visible_message(span_info("A choral sound comes from above and [cast_on] is healed!"), span_notice("I am bathed in healing choral hymns!"))
 
 /// Ratwood heal "Fortify" (Azure Peak and Twilight Axis miracle/fortify): the target takes all healing better for a minute;
@@ -125,11 +127,8 @@
 	desc = "For a minute the target receives all healing half again as well. Mends a beast at once; burns the undead."
 	button_icon_state = "fortify"
 	sound = 'modular_redtard/faith/sound/heal.ogg'
-	cooldown_time = 20 SECONDS
-	cast_range = 4
+	value_key = "fortify"
 	miracle_tier = ROGUE_MIRACLE_TIER_2
-	devotion_cost = 20
-	stamina_cost = 30
 	needs_holy_symbol = TRUE
 	miracle_forks = "Ratwood, Azure Peak, Twilight Axis"
 	miracle_gods = "Astrata T2, Pestra T3"
@@ -146,13 +145,14 @@
 		return
 	if(burns_undead(cast_on))
 		cast_on.visible_message(span_danger("[cast_on] is burned by holy light!"), span_userdanger("I'm burned by holy light!"))
-		cast_on.adjust_fire_loss(25)
+		cast_on.adjust_fire_loss(rogue_value("faith_fortify_burn"))
 		return
 	cast_on.visible_message(span_info("A wreath of gentle light passes over [cast_on]!"), span_notice("I'm bathed in holy light!"))
 	if(iscarbon(cast_on))
 		cast_on.apply_status_effect(/datum/status_effect/rogue_fortify)
 		return
-	cast_on.heal_overall_damage(50, 50)
+	var/beast_heal = rogue_value("faith_fortify_beast_heal")
+	cast_on.heal_overall_damage(beast_heal, beast_heal)
 
 /// Ratwood blood_heal "Blood Transfer Miracle" (Azure Peak and Twilight Axis miracle/bloodmiracle "Lyfeblood Transfer"): a
 /// strand of blood from the caster to the target while the caster stands still; the more skilled the caster, the less of
@@ -162,21 +162,11 @@
 	desc = "Transfers my own blood to the target. The more skilled I am in miracles, the less of my blood it takes."
 	button_icon_state = "bloodheal"
 	sound = 'modular_redtard/faith/sound/bloodheal.ogg'
-	cooldown_time = 45 SECONDS
-	cast_range = 7
+	value_key = "blood_transfer"
 	self_castable = FALSE
 	miracle_tier = ROGUE_MIRACLE_TIER_1
-	devotion_cost = 50
-	stamina_cost = 30
 	miracle_forks = "Ratwood, Azure Peak, Twilight Axis"
 	miracle_gods = "every god of the Ten and the Inhumen T1, Xylix T2"
-	/// Blood the caster gives up per pulse, by their rank in miracles (Ratwood blood_price; below apprentice the first).
-	var/static/list/blood_prices = list(5, 5, 3.75, 2.5, 2, 1.625, 1.25)
-	/// Blood the target gets per pulse (Ratwood 7.5), and more per rank above novice.
-	var/blood_given = 7.5
-	var/blood_given_per_rank = 1
-	/// Time of a pulse.
-	var/pulse = 0.5 SECONDS
 
 /datum/action/cooldown/spell/pointed/rogue_miracle/blood_transfer/is_valid_target(atom/cast_on)
 	. = ..()
@@ -199,13 +189,16 @@
 	caster.visible_message(span_warning("Tiny strands of red link between [caster] and [target], blood being transferred!"))
 	playsound(caster, 'modular_redtard/faith/sound/bloodheal_start.ogg', 100, TRUE)
 	var/rank = caster.rogue_skill_rank(/datum/attribute/skill/magic/holy)
-	var/price = blood_prices[clamp(rank + 1, 1, length(blood_prices))]
-	var/given = blood_given + (rank > 1 ? blood_given_per_rank * rank : 0)
-	var/pulses = round(caster.get_blood_volume() / price) * 2
+	// Blood the caster gives up per pulse, by their rank in miracles (Ratwood blood_price; faith_blood_transfer_price_0 to _6, the last for every rank above).
+	var/price = rogue_value("faith_blood_transfer_price_[clamp(rank, 0, 6)]")
+	// Blood the target gets per pulse (Ratwood 7.5), and more per rank above novice.
+	var/given = rogue_value("faith_blood_transfer_given") + (rank > rogue_value("faith_blood_transfer_given_above") ? rogue_value("faith_blood_transfer_given_rank") * rank : 0)
+	var/pulse = rogue_value("faith_blood_transfer_pulse")
+	var/pulses = round(caster.get_blood_volume() / price) * rogue_value("faith_blood_transfer_pulse_factor")
 	var/datum/beam/strand = caster.Beam(target, icon_state = "blood", time = pulses * pulse)
 	var/told = FALSE
 	for(var/i in 1 to pulses)
-		if(QDELETED(caster) || QDELETED(target) || caster.get_blood_volume() <= BLOOD_VOLUME_SURVIVE / 2 || !do_after(caster, pulse, target = target))
+		if(QDELETED(caster) || QDELETED(target) || caster.get_blood_volume() <= BLOOD_VOLUME_SURVIVE * rogue_value("faith_blood_transfer_survive_share") || !do_after(caster, pulse, target = target))
 			break
 		target.adjust_blood_volume(given, maximum = BLOOD_VOLUME_NORMAL)
 		caster.adjust_blood_volume(-price)
@@ -223,16 +216,10 @@
 	desc = "Closes all wounds of the limb I aim at and mends it, after a short prayer. Not with something lodged in it."
 	button_icon_state = "woundheal"
 	sound = 'modular_redtard/faith/sound/woundheal.ogg'
-	cooldown_time = 2 MINUTES
-	cast_range = 1
+	value_key = "wound_heal"
 	miracle_tier = ROGUE_MIRACLE_TIER_4
-	devotion_cost = 100
-	stamina_cost = 15
 	miracle_forks = "Ratwood"
 	miracle_gods = "Xylix T4"
-	/// The prayer before the wounds close (Ratwood 4.5 seconds), shorter by a step per rank in miracles.
-	var/delay = 4.5 SECONDS
-	var/delay_per_rank = 0.5 SECONDS
 
 /datum/action/cooldown/spell/pointed/rogue_miracle/wound_heal/is_valid_target(atom/cast_on)
 	. = ..()
@@ -254,7 +241,8 @@
 	INVOKE_ASYNC(src, PROC_REF(close_wounds), owner, cast_on, limb)
 
 /datum/action/cooldown/spell/pointed/rogue_miracle/wound_heal/proc/close_wounds(mob/living/carbon/human/caster, mob/living/carbon/patient, obj/item/bodypart/limb)
-	var/time = max(delay - delay_per_rank * caster.rogue_skill_rank(/datum/attribute/skill/magic/holy), 1 SECONDS)
+	// The prayer before the wounds close (Ratwood 4.5 seconds), shorter by a step per rank in miracles.
+	var/time = max(rogue_value("faith_wound_heal_prayer") - rogue_value("faith_wound_heal_prayer_rank") * caster.rogue_skill_rank(/datum/attribute/skill/magic/holy), rogue_value("faith_wound_heal_prayer_least"))
 	if(!do_after(caster, time, target = patient) || QDELETED(limb) || limb.owner != patient)
 		to_chat(caster, span_warning("I was interrupted!"))
 		refund()
@@ -272,11 +260,8 @@
 	button_icon = ROGUE_MIRACLES_PESTRA_ICON
 	button_icon_state = "diagnose"
 	sound = 'modular_redtard/faith/sound/diagnose.ogg'
-	cooldown_time = 5 SECONDS
-	cast_range = 2
+	value_key = "diagnose"
 	miracle_tier = ROGUE_MIRACLE_TIER_0
-	devotion_cost = 0
-	stamina_cost = 10
 	miracle_forks = "Ratwood, Azure Peak, Twilight Axis"
 	miracle_gods = "Pestra T0"
 

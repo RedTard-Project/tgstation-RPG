@@ -213,12 +213,12 @@
 	boons = list()
 	for(var/datum/anvil_recipe/recipe as anything in GLOB.rogue_anvil_recipes)
 		var/price = 0
-		var/obj/item/bar = recipe.req_bar
+		var/bar = recipe.req_bar
 		var/obj/item/made = recipe.created_item
 		if(bar)
-			price += initial(bar.sellprice)
-		for(var/obj/item/material as anything in recipe.additional_items)
-			price += initial(material.sellprice)
+			price += rogue_base_price(bar)
+		for(var/material in recipe.additional_items)
+			price += rogue_base_price(material)
 		if(price <= 0 || !made)
 			continue
 		boons += list(list(initial(made.name), made, price))

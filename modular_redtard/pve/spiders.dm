@@ -96,7 +96,7 @@
 
 /// TG's own web elsewhere and its other kinds (sealed, genetic...) stay as they are.
 /obj/structure/spider/stickyweb/proc/rogue_pve_wants_ratwood()
-	return type == /obj/structure/spider/stickyweb && rogue_combat_enabled()
+	return type == /obj/structure/spider/stickyweb && rogue_medieval_map()
 
 /// Ratwood's web: its sprite in a random look and turn, no smoothing, a see-through tint that still blocks sight; TG's
 /// stamina drain gives way to Ratwood's hold.
@@ -147,7 +147,7 @@
 /// Ratwood's decorative web of the port holds as Ratwood's does.
 /obj/structure/spider/stickyweb/solo/Initialize(mapload)
 	. = ..()
-	if(rogue_combat_enabled())
+	if(rogue_medieval_map())
 		RegisterSignal(src, COMSIG_MOVABLE_CROSS, PROC_REF(rogue_pve_on_cross))
 
 /obj/structure/spider/stickyweb/solo/proc/rogue_pve_on_cross(datum/source, atom/movable/mover)
@@ -157,11 +157,11 @@
 /// The port makes it a Rockhill structure, not a TG web, so it lets shots through as Ratwood's web does by itself.
 /obj/structure/spider/stickyweb/solo/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
-	if(. && isprojectile(mover) && rogue_combat_enabled())
+	if(. && isprojectile(mover) && rogue_medieval_map())
 		return prob(ROGUE_PVE_WEB_PROJECTILE_PASS)
 
 /obj/structure/spider/stickyweb/solo/item_interaction(mob/living/user, obj/item/tool, list/modifiers)
-	if(rogue_combat_enabled() && rogue_pve_try_snip(src, user, tool))
+	if(rogue_medieval_map() && rogue_pve_try_snip(src, user, tool))
 		return ITEM_INTERACT_SUCCESS
 	return ..()
 
@@ -190,7 +190,7 @@
 	if(!do_after(user, time, web) || QDELETED(web))
 		return
 	var/turf/spot = get_turf(web)
-	for(var/i in 1 to rand(1, 2))
+	for(var/i in 1 to rand(rogue_value("pve_web_silk_min"), rogue_value("pve_web_silk_max")))
 		new /obj/item/natural/silk(spot)
 	user.visible_message(span_notice("[user] snips [web] up into silk."))
 	playsound(spot, 'sound/items/tools/wirecutter_cut.ogg', 70, TRUE)
@@ -204,7 +204,7 @@
 /datum/bt_node/ai_behavior/rogue_pve_find_web_spot/perform(seconds_per_tick, datum/ai_controller/controller)
 	var/mob/living/spider = controller.pawn
 	var/turf/home = get_turf(spider)
-	if(!isturf(spider.loc) || !home || !rogue_combat_enabled())
+	if(!isturf(spider.loc) || !home || !rogue_medieval_map())
 		return AI_BEHAVIOR_DELAY | AI_BEHAVIOR_FAILED
 	var/webs = 0
 	for(var/obj/structure/spider/stickyweb/web in range(3, home))
@@ -527,7 +527,7 @@
 /// A spider at the start of the round weaves a nest where its colony has none near; a spider born or brought later moves into
 /// a nest near it, if any.
 /mob/living/basic/rockhill/proc/rogue_pve_settle(mapload)
-	if(QDELETED(src) || stat == DEAD || !ai_controller || HAS_TRAIT(src, TRAIT_TAMED) || !rogue_combat_enabled())
+	if(QDELETED(src) || stat == DEAD || !ai_controller || HAS_TRAIT(src, TRAIT_TAMED) || !rogue_medieval_map())
 		return
 	var/obj/structure/rogue_pve_spider_nest/nest = locate() in range(ROGUE_PVE_NEST_RANGE, src)
 	if(!nest)

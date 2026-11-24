@@ -293,11 +293,18 @@
 		damage *= armored.rogue_armor_hit(zone, rogue_bclass_to_armor(blade_class), damage, ROGUE_PEN_NONE, rogue_wear_factor(weapon, intent), weapon, blade_class)
 	target.rogue_strike_notes = list()
 	var/damage_done = target.rogue_apply_armored_damage(damage, weapon ? weapon.damtype : BRUTE, def_zone, blocked, sharpness = rogue_bclass_sharpness(blade_class), attack_direction = get_dir(howner, target), attacking_item = weapon)
+	// A limb at its most damage takes none of the blow (TG's cap): its organs and crits still roll by what got through
+	// (review VR2r, finding 1; as rogue_take_strike()).
+	var/landed = damage_done
+	var/obj/item/bodypart/struck_limb = target.get_bodypart(def_zone)
+	if(struck_limb && (weapon ? weapon.damtype : BRUTE) == BRUTE && blocked < 100 && struck_limb.get_damage() >= struck_limb.max_damage - DAMAGE_PRECISION)
+		landed = max(landed, damage * (100 - blocked) / 100)
 	var/hit_sound = weapon ? weapon.hitsound : pick(GLOB.rogue_punch_hit_sounds)
-	if(damage_done > 0 && hit_sound)
+	if(landed > 0 && hit_sound)
 		playsound(target, hit_sound, 80, TRUE)
-	if(damage_done > 0)
-		target.rogue_try_crit(blade_class, damage_done, howner, zone)
+	if(landed > 0)
+		target.rogue_strike_organs(blade_class, landed, howner, zone)
+		target.rogue_try_crit(blade_class, landed, howner, zone)
 	if(damage_done > 0 && full_pen)
 		target.rogue_strike_notes.Insert(1, "<b>It pierces through to their flesh!</b>")
 	var/notes = length(target.rogue_strike_notes) ? " [jointext(target.rogue_strike_notes, " ")]" : ""
@@ -469,7 +476,7 @@
 		return
 	if(with_damage)
 		weapon_damage(victim, tune("dam") * count, BODY_ZONE_CHEST, BCLASS_BLUNT, no_pen = TRUE)
-	victim.rogue_slowdown(tune("slow_init") + count)
+	victim.rogue_slow_for(tune("slow_init") + count SECONDS)
 	if(count >= 2)
 		victim.Immobilize(tune("immobilize_init") + count SECONDS)
 		victim.apply_status_effect(/datum/status_effect/rogue/exposed, tune("exposed_init") + count SECONDS)

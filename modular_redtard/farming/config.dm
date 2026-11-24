@@ -1,7 +1,7 @@
 /// Whether the Ratwood farming runs: on medieval maps, as the rest of the rogue mechanics. It decides whether soil, saplings and
 /// composters work by themselves and whether TG seed packs take the Ratwood look; the soil itself is only ever on medieval maps.
 /proc/rogue_farming_enabled()
-	return rogue_combat_enabled()
+	return rogue_medieval_map()
 
 /// Ratwood get_farming_effort_multiplier(): how much a farmer's work tells, 1 unskilled and more for every farming rank.
 /mob/living/proc/rogue_farming_effort()

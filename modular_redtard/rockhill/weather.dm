@@ -130,12 +130,22 @@ GLOBAL_LIST_EMPTY(rockhill_weather_sounds)
 	var/rockhill_warning
 	var/datum/looping_sound/outdoor_sound
 	var/datum/looping_sound/indoor_sound
+	/// Names of this weather's mechanics values (structures.txt): New() reads them into the two vars below once.
+	var/rockhill_temperature_key
+	var/rockhill_wet_key
 	var/rockhill_temperature_shift = 0
 	var/rockhill_wet_stacks = 0
 	var/rockhill_clean = NONE
 	var/rockhill_douses_fires = FALSE
 	var/datum/mood_event/rockhill_mood
 	COOLDOWN_DECLARE(lightning_cooldown)
+
+/datum/weather/particle/rockhill/New(list/z_levels, list/weather_data)
+	if(rockhill_temperature_key)
+		rockhill_temperature_shift = rogue_value(rockhill_temperature_key)
+	if(rockhill_wet_key)
+		rockhill_wet_stacks = rogue_value(rockhill_wet_key)
+	return ..()
 
 /datum/weather/particle/rockhill/setup_weather_areas(list/forced_areas)
 	return ..(forced_areas || rockhill_sky_areas())
@@ -330,8 +340,8 @@ GLOBAL_LIST_EMPTY(rockhill_weather_sounds)
 	optimal_severity = 53
 	severity_variation = 13
 	weather_flags = WEATHER_INDOORS | WEATHER_STRICT_ALERT | WEATHER_MOBS
-	rockhill_temperature_shift = ROCKHILL_RAIN_TEMPERATURE_SHIFT
-	rockhill_wet_stacks = ROCKHILL_RAIN_WET_STACKS
+	rockhill_temperature_key = "rockhill_rain_temperature_shift"
+	rockhill_wet_key = "rockhill_rain_wet_stacks"
 	rockhill_clean = CLEAN_WASH
 	rockhill_douses_fires = TRUE
 	rockhill_warning = span_greenannounce("Grey clouds gather up above the realm, beholding the gift of life.")
@@ -349,8 +359,8 @@ GLOBAL_LIST_EMPTY(rockhill_weather_sounds)
 	severity_steps = 50
 	lightning_strikes = 6
 	weather_flags = WEATHER_INDOORS | WEATHER_STRICT_ALERT | WEATHER_MOBS
-	rockhill_temperature_shift = ROCKHILL_STORM_TEMPERATURE_SHIFT
-	rockhill_wet_stacks = ROCKHILL_STORM_WET_STACKS
+	rockhill_temperature_key = "rockhill_storm_temperature_shift"
+	rockhill_wet_key = "rockhill_storm_wet_stacks"
 	rockhill_clean = CLEAN_SCRUB
 	rockhill_douses_fires = TRUE
 	rockhill_warning = span_greenannounce("Dark clouds gather up above the realm, sparks arcing between heavenly reaches.")
@@ -366,7 +376,7 @@ GLOBAL_LIST_EMPTY(rockhill_weather_sounds)
 	optimal_severity = 62
 	severity_variation = 25
 	weather_flags = WEATHER_INDOORS | WEATHER_STRICT_ALERT | WEATHER_MOBS
-	rockhill_temperature_shift = ROCKHILL_SNOW_TEMPERATURE_SHIFT
+	rockhill_temperature_key = "rockhill_snow_temperature_shift"
 	rockhill_warning = span_greenannounce("The air chills across the realm, soft white specs appearing near warm breaths.")
 	telegraph_message = span_greenannounce("Flakes swirl as snow starts to drift down from the sky.")
 	outdoor_sound = /datum/looping_sound/rockhill_weather/snow
@@ -382,7 +392,7 @@ GLOBAL_LIST_EMPTY(rockhill_weather_sounds)
 	severity_variation = 50
 	severity_steps = 50
 	weather_flags = WEATHER_INDOORS | WEATHER_STRICT_ALERT | WEATHER_MOBS
-	rockhill_temperature_shift = ROCKHILL_BLIZZARD_TEMPERATURE_SHIFT
+	rockhill_temperature_key = "rockhill_blizzard_temperature_shift"
 	rockhill_warning = span_greenannounce("Heavy clouds build in the sky as the air chills across the realm, soft white specs appearing near warm breaths.")
 	telegraph_message = span_greenannounce("Heavy snow begins to fall thick and fast.")
 	outdoor_sound = /datum/looping_sound/rockhill_weather/snow
@@ -429,7 +439,7 @@ GLOBAL_LIST_EMPTY(rockhill_weather_sounds)
 	severity_variation = 50
 	severity_steps = 50
 	weather_flags = WEATHER_INDOORS | WEATHER_STRICT_ALERT | WEATHER_MOBS
-	rockhill_temperature_shift = ROCKHILL_HEAT_TEMPERATURE_SHIFT
+	rockhill_temperature_key = "rockhill_heat_temperature_shift"
 	rockhill_warning = span_greenannounce("A brutal heatwave rolls across the realm, warping the very air.")
 	telegraph_message = span_greenannounce("The air becomes stifling and unbearably still.")
 	outdoor_sound = /datum/looping_sound/rockhill_weather/sandstorm
@@ -598,5 +608,9 @@ ADMIN_VERB(rockhill_run_weather, R_ADMIN|R_FUN, "Weather - Particle", "Start a R
 
 /datum/mood_event/rockhill_fireflies
 	description = "What wonderous fireflies..."
+
+/// The numbers come from the mechanics values when the event is made (add_mood_event() makes a new one each time).
+/datum/mood_event/rockhill_fireflies/New(category)
+	. = ..()
 	mood_change = ROCKHILL_FIREFLIES_MOOD
 	timeout = ROCKHILL_FIREFLIES_MOOD_TIME

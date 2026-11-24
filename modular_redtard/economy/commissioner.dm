@@ -160,8 +160,7 @@
 		if(good.item_type == path)
 			return max(1, round(good.base_price * good.global_price_mod * rogue_value("machines_commission_markup")))
 	var/list/derived = GLOB.rogue_derived_prices
-	var/obj/item/material = path
-	var/worth = derived[path] || initial(material.sellprice)
+	var/worth = derived[path] || rogue_base_price(path)
 	return worth > 0 ? max(1, round(worth * rogue_value("machines_commission_markup"))) : 0
 
 /obj/structure/roguemachine/escrow/proc/excluded(path)

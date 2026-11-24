@@ -5,6 +5,12 @@
 	var/list/map_json = .
 	if(islist(map_json))
 		rogue_lowmem = !!map_json[ROGUE_LOWMEM_MARKER]
+		// The light launch is for a quick test round (maps/lowmem.dm): the preview icons TG regenerates at every start on a
+		// developer's machine (GENERATE_ASSETS_IN_INIT of TG's config, the Map Previews and Greyscale Previews
+		// subsystems, 3.3 s) are of no use to it. The current map's config is loaded in SSmapping.PreInit(), before
+		// either of them initializes.
+		if(rogue_lowmem)
+			CONFIG_SET(flag/generate_assets_in_init, FALSE)
 	return .
 
 /mob/living/proc/rogue_max_attributes()
@@ -17,5 +23,5 @@
 
 /datum/job/assistant/after_spawn(mob/living/spawned, client/player_client)
 	. = ..()
-	if(rogue_combat_enabled() || SSmapping.current_map?.rogue_lowmem)
+	if(rogue_combat_enabled())
 		spawned.rogue_max_attributes()

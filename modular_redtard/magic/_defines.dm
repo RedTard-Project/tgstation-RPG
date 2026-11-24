@@ -34,14 +34,6 @@
 #define ROGUE_MASTERY_RANK_EXPERT 4
 #define ROGUE_MASTERY_RANK_MASTER 6
 
-/// Vibelin's spell ranges in tiles (SPELL_RANGE_*): how far a spell of its kind reaches. Not balance: they are the kinds a
-/// spell picks from, the way Vibelin writes cast_range = SPELL_RANGE_PROJECTILE.
-#define ROGUE_SPELL_RANGE_PROJECTILE 10
-#define ROGUE_SPELL_RANGE_GROUND 7
-#define ROGUE_SPELL_RANGE_TWO_SCREENS 14
-#define ROGUE_SPELL_RANGE_AURA 4
-#define ROGUE_SPELL_RANGE_ADJACENT 1
-
 /// What Vibelin's spell_requirements have and TG's lack (rogue_requirements of a spell).
 #define ROGUE_SPELL_REQUIRES_NO_MOVE (1<<0)
 #define ROGUE_SPELL_CASTABLE_WHILE_MOUNTED (1<<1)
@@ -61,8 +53,9 @@
 #define ROGUE_SPELL_CHARGE_SOUND 'modular_redtard/combat/sound/magic/charging.ogg'
 #define ROGUE_SPELL_CAST_SOUND 'modular_redtard/combat/sound/magic/whiteflame.ogg'
 
-/// Where the mana orb sits on the medieval HUD: right of the stamina orb (rogueui_fat). To be checked in game.
-#define rogueui_mana "WEST+2:5,NORTH-4:13"
+/// Where the mana orb sits on the medieval HUD: right of the stamina orb (rogueui_fat), which stands in the left column
+/// beside the field; the orb itself is over the field's first tiles. To be checked in game.
+#define rogueui_mana "WEST-1:-22,NORTH-5:30"
 
 /// Mana changed on a mob: (amount after the change).
 #define COMSIG_MOB_ROGUE_MANA_CHANGED "mob_rogue_mana_changed"

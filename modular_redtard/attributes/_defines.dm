@@ -9,13 +9,13 @@
 #define ROGUE_STAT_SPEED /datum/attribute/stat/speed
 #define ROGUE_STAT_FORTUNE /datum/attribute/stat/fortune
 
-#define ROGUE_ATTRIBUTE_MIN 1
-#define ROGUE_ATTRIBUTE_MAX 20
-#define ROGUE_ATTRIBUTE_MIDDLING 10
+#define ROGUE_ATTRIBUTE_MIN rogue_value("attribute_min")
+#define ROGUE_ATTRIBUTE_MAX rogue_value("attribute_max")
+#define ROGUE_ATTRIBUTE_MIDDLING rogue_value("attribute_middling")
 #define ROGUE_ATTRIBUTE_DEFAULT ROGUE_ATTRIBUTE_MIDDLING
 
 #define ROGUE_SKILL_MIN 0
-#define ROGUE_SKILL_MAX 60
+#define ROGUE_SKILL_MAX rogue_value("skill_max")
 #define ROGUE_SKILL_PER_RANK rogue_value("skill_per_rank")
 #define ROGUE_SKILL_DEFAULT_CAP rogue_value("skill_default_cap")
 #define ROGUE_SKILL_RANK_MAX 6
@@ -29,17 +29,17 @@
 #define ROGUE_SKILL_LEVEL_LEGENDARY 60
 
 #define ROGUE_SKILL_XP_NONE 0
-#define ROGUE_SKILL_XP_NOVICE 100
-#define ROGUE_SKILL_XP_APPRENTICE 300
-#define ROGUE_SKILL_XP_JOURNEYMAN 700
-#define ROGUE_SKILL_XP_EXPERT 1500
-#define ROGUE_SKILL_XP_MASTER 3100
-#define ROGUE_SKILL_XP_LEGENDARY 6300
+#define ROGUE_SKILL_XP_NOVICE rogue_value("skill_xp_novice")
+#define ROGUE_SKILL_XP_APPRENTICE rogue_value("skill_xp_apprentice")
+#define ROGUE_SKILL_XP_JOURNEYMAN rogue_value("skill_xp_journeyman")
+#define ROGUE_SKILL_XP_EXPERT rogue_value("skill_xp_expert")
+#define ROGUE_SKILL_XP_MASTER rogue_value("skill_xp_master")
+#define ROGUE_SKILL_XP_LEGENDARY rogue_value("skill_xp_legendary")
 
 #define ROGUE_SKILL_GOVERNING_POSITIVE rogue_value("skill_governing_positive")
 #define ROGUE_SKILL_GOVERNING_NEGATIVE rogue_value("skill_governing_negative")
-#define ROGUE_SKILL_XP_CATCHUP_MAX 5
-#define ROGUE_SKILL_XP_CATCHUP_RANGE 10
+#define ROGUE_SKILL_XP_CATCHUP_MAX rogue_value("skill_xp_catchup_max")
+#define ROGUE_SKILL_XP_CATCHUP_RANGE rogue_value("skill_xp_catchup_range")
 
 #define ROGUE_DICE_CRIT_SUCCESS 2
 #define ROGUE_DICE_SUCCESS 1

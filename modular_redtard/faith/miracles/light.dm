@@ -6,16 +6,15 @@
 /// Azure Peak light_buff: a holy glow around a living creature, five minutes more with every orison.
 /datum/status_effect/rogue_holy_light
 	id = "rogue_holy_light"
-	duration = 5 MINUTES
 	status_type = STATUS_EFFECT_REFRESH
 	alert_type = null
 	/// How far the glow reaches; a skilled caster's goes further.
-	var/glow_range = 4
+	var/glow_range = 0
 	var/obj/effect/dummy/lighting_obj/moblight/glow
 
 /datum/status_effect/rogue_holy_light/on_creation(mob/living/new_owner, new_range)
-	if(new_range)
-		glow_range = new_range
+	duration = rogue_value("faith_holy_light_time")
+	glow_range = new_range || rogue_value("faith_orison_light_glow_least")
 	return ..()
 
 /datum/status_effect/rogue_holy_light/on_apply()
@@ -27,7 +26,7 @@
 	return TRUE
 
 /datum/status_effect/rogue_holy_light/refresh(effect, new_range)
-	duration += initial(duration)
+	duration += rogue_value("faith_holy_light_time")
 	if(new_range > glow_range)
 		glow_range = new_range
 		glow?.set_light_range(glow_range)
@@ -46,15 +45,10 @@
 	name = "Orison of Light"
 	desc = "Ask for a light to guide the way: a living creature at arm's length glows for five minutes, longer with every prayer."
 	button_icon_state = "thaumaturgy"
-	cooldown_time = 10 SECONDS
-	cast_range = 1
+	value_key = "orison_light"
 	miracle_tier = ROGUE_MIRACLE_TIER_0
-	devotion_cost = 5
 	miracle_forks = "Azure Peak, Twilight Axis, Ratwood"
 	miracle_gods = "every god's orison T0"
-	/// The prayer (Azure 3.5 seconds), shorter by a step per rank in miracles.
-	var/prayer_time = 3.5 SECONDS
-	var/prayer_time_per_rank = 0.3 SECONDS
 
 /datum/action/cooldown/spell/pointed/rogue_miracle/orison_light/is_valid_target(atom/cast_on)
 	. = ..()
@@ -72,10 +66,11 @@
 		caster.visible_message(span_notice("[caster] closes [caster.p_their()] eyes and places a glowing hand upon [caster.p_their()] chest..."), span_notice("Gods above, I ask but for a light to guide the way..."))
 	else
 		caster.visible_message(span_notice("[caster] reaches gently towards [target], beads of light glimmering at [caster.p_their()] fingertips..."), span_notice("Gods above, I ask but for a light to guide the way..."))
-	if(!do_after(caster, max(prayer_time - prayer_time_per_rank * rank, 0.5 SECONDS), target = target))
+	// The prayer (Azure 3.5 seconds), shorter by a step per rank in miracles.
+	if(!do_after(caster, max(rogue_value("faith_orison_light_prayer") - rogue_value("faith_orison_light_prayer_rank") * rank, rogue_value("faith_orison_light_prayer_least")), target = target))
 		refund()
 		return
-	target.apply_status_effect(/datum/status_effect/rogue_holy_light, clamp(4 + rank - 3, 4, 7))
+	target.apply_status_effect(/datum/status_effect/rogue_holy_light, clamp(rank + rogue_value("faith_orison_light_glow_extra"), rogue_value("faith_orison_light_glow_least"), rogue_value("faith_orison_light_glow_most")))
 
 /// Ratwood ignition "Ignition" (acolyte/astrata.dm; Azure Peak miracle/ignition for Astrata, Malum and the Ten, Twilight Axis
 /// TAignition; Ratwood's Malum's Fire works alike): a pointed finger lights a torch, a candle, a hearth or anything that burns.
@@ -85,12 +80,9 @@
 	button_icon = ROGUE_MIRACLES_ASTRATA_ICON
 	button_icon_state = "ignite"
 	sound = 'modular_redtard/faith/sound/heal.ogg'
-	cooldown_time = 5 SECONDS
-	cast_range = 15
+	value_key = "ignition"
 	self_castable = FALSE
 	miracle_tier = ROGUE_MIRACLE_TIER_0
-	devotion_cost = 10
-	stamina_cost = 30
 	miracle_forks = "Ratwood, Azure Peak, Twilight Axis"
 	miracle_gods = "Astrata T0, Malum T0, the Ten Undivided T0"
 
@@ -121,7 +113,7 @@
 		if(!fire.lit)
 			return fail("I point at [fire], but it fails to catch fire.")
 	else
-		cast_on.fire_act(1000, 1000)
+		cast_on.fire_act(rogue_value("faith_ignition_heat"), rogue_value("faith_ignition_volume"))
 	owner.visible_message("<font color='yellow'>[owner] points at [cast_on], igniting it with sacred flames!</font>")
 
 #undef ROGUE_HOLY_LIGHT_FILTER

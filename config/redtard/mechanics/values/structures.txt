@@ -438,3 +438,54 @@ noose_struggle_time = 10
 
 # Deciseconds one strong enough takes to struggle out of a noose (Azure Peak resist_buckle() of the strong).
 noose_struggle_time_strong = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list h2a)
+
+# Deciseconds the dungeon may build in the lobby before its entries open anyway and the rest is laid at the pace of a round (module safeguard against a failed or stalled build).
+rockhill_dungeon_lobby_build_timeout = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list a)
+
+# Deciseconds after a kneestinger sting during which a new sting does only half damage (Ratwood kneestingers).
+rockhill_kneestinger_reshock = 10
+
+# Mood a fireflies night gives to those out under it (Rockhill weather, Ratwood stressevent/fireflies).
+rockhill_fireflies_mood = 10
+
+# How long the mood of a fireflies night lasts.
+rockhill_fireflies_mood_time = 10
+
+# Ratwood CLICK_CD_INTENTCAP: the pause after reaching into a plant.
+rockhill_flora_click_cd = 10
+
+# Ratwood CLICK_CD_INTENTCAP: the pause after reaching into a herb.
+rockhill_herb_click_cd = 10
+
+# --- From the code of modular_redtard (code_numbers.py, list h4a)
+
+# Degrees gentle rain moves the body temperature of someone outdoors toward, from normal (negative chills).
+rockhill_rain_temperature_shift = 10
+
+# Degrees a rain storm moves the body temperature of someone outdoors toward, from normal (negative chills).
+rockhill_storm_temperature_shift = 10
+
+# Degrees snowfall moves the body temperature of someone outdoors toward, from normal (negative chills).
+rockhill_snow_temperature_shift = 10
+
+# Degrees a snow storm moves the body temperature of someone outdoors toward, from normal (negative chills).
+rockhill_blizzard_temperature_shift = 10
+
+# Degrees a heatwave moves the body temperature of someone outdoors toward, from normal.
+rockhill_heat_temperature_shift = 10
+
+# Wet stacks gentle rain adds to someone outdoors on each weather pass.
+rockhill_rain_wet_stacks = 10
+
+# Wet stacks a rain storm adds to someone outdoors on each weather pass.
+rockhill_storm_wet_stacks = 10
+
+# Prying progress a knife must build up to open the lock of a window that opens and closes.
+rockhill_window_lock = 10
+
+# Prying progress a knife must build up to open the lock of a reinforced window.
+rockhill_window_lock_reinforced = 10
